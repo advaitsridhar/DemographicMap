@@ -134,7 +134,12 @@ const pw = require(process.env.PW_MODULE);
   const page = ctx.pages()[0] || await ctx.newPage();
   const log = [];
   page.on("pageerror", (e) => log.push("pageerror: " + e.message));
-  page.on("console", (m) => { if (m.type() === "error") log.push("error: " + m.text().slice(0, 300)); });
+  page.on("console", (m) => {
+    if (m.type() !== "error") return;
+    const first = m.args()[0];
+    const said = first ? first.evaluate((e) => (e && (e.message || (e.error && e.error.message))) || String(e)) : Promise.resolve(m.text());
+    said.then((t) => log.push("error: " + String(t).slice(0, 200)), () => log.push("error: " + m.text().slice(0, 200)));
+  });
   page.on("response", (r) => { if (/pmtiles/.test(r.url()) && r.status() !== 206) log.push(`tile ${r.status()} ${r.url().slice(-22)} ${r.request().headers().range || ""}`); });
   const out = { label };
   try {
@@ -146,7 +151,11 @@ const pw = require(process.env.PW_MODULE);
       out["z" + zoom + (out["z" + zoom] ? " again" : "")] = await page.evaluate(() => {
         const m = window.WorldMap.getMap();
         const f = m.queryRenderedFeatures({ layers: ["admin1-fill", "admin2-fill"] }).filter((x) => x.properties.shapeGroup === "GTM");
-        return `${new Set(f.filter((x) => x.state && x.state.color).map((x) => x.properties.shapeID)).size}/${new Set(f.map((x) => x.properties.shapeID)).size} drawn`;
+        const count = (layer) => {
+          const g = f.filter((x) => x.layer.id === layer);
+          return `${new Set(g.filter((x) => x.state && x.state.color).map((x) => x.properties.shapeID)).size}/${new Set(g.map((x) => x.properties.shapeID)).size}`;
+        };
+        return `admin1 ${count("admin1-fill")}, admin2 ${count("admin2-fill")} drawn`;
       });
     }
   } catch (e) { out.error = String(e).slice(0, 300); }
