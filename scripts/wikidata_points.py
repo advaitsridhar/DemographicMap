@@ -24,6 +24,14 @@ also writes the items' Wikidata populations as records bound to their
 polygons (data/processed/wikidata_points_<level>.json), for the units no
 office table reaches.
 
+A coordinate and a name agreeing is not enough when the unit was redrawn
+under the same name. Ukraine's raion items are mostly the 136 raions of
+2020, which absorbed the cities and several old raions each -- Kremenets
+Raion's 143,191 is three of the map's pre-2020 raions -- and Kenya's
+constituency items carry 2009 counts for constituencies redrawn in 2012.
+Both were placed and left out; their polygons keep a gap rather than a
+bigger unit's figure.
+
 Usage:
     python -m scripts.wikidata_points --fetch JPN P429 6
     python -m scripts.wikidata_points --fetch-class VNM Q2616791
