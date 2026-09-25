@@ -66,6 +66,9 @@ REGIONS = [
 # Latin American mestizo.
 ETHNIC_NAMES: dict[str, dict[str, str | dict[str, float]]] = {
     "BRA": {"mixed": "Pardo"},
+    # Guatemala's 2018 census asks ladina(o), which the Factbook writes as
+    # Mestizo -- its 56.0% is INE's ladino share.
+    "GTM": {"Mestizo": "Ladino"},
     "DOM": {"mixed": {"Mestizo or Indio": 58.0, "Mulatto": 12.4}},
     "MOZ": {"Mestizo": "Mestico"},
 }
