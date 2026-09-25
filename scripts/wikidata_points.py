@@ -25,7 +25,7 @@ polygons (data/processed/wikidata_points_<level>.json), for the units no
 office table reaches.
 
 Usage:
-    python -m scripts.wikidata_points --fetch JPN P429
+    python -m scripts.wikidata_points --fetch JPN P429 6
     python -m scripts.wikidata_points JPN:P429:6:5 CHN:P442:6:6 --populations
 """
 from __future__ import annotations
@@ -49,6 +49,7 @@ OUT = PROCESSED / "code_shapes.json"
 QUERY = """
 SELECT ?item ?itemLabel ?code ?coord ?pop ?popTime ?pinyin WHERE {
   ?item wdt:%(prop)s ?code ; wdt:P17 wd:%(country)s ; wdt:P625 ?coord .
+  FILTER(STRLEN(STR(?code)) = %(length)s)
   FILTER NOT EXISTS { ?item wdt:P576 ?gone . }
   OPTIONAL { ?item wdt:P1721 ?pinyin . }
   OPTIONAL { ?item p:P1082 ?st . ?st ps:P1082 ?pop ; wikibase:rank ?rank .
@@ -91,10 +92,11 @@ def agrees(label: str, shape_name: str) -> bool:
     return bool(a and b) and (a == b or (len(a) >= 4 and len(b) >= 4 and (a.startswith(b) or b.startswith(a))))
 
 
-def fetch(iso3: str, prop: str) -> None:
+def fetch(iso3: str, prop: str, length: int) -> None:
     from fetch_wikidata import country_qids, sparql, value
     country = country_qids()[iso3]
-    rows = sparql(QUERY % {"prop": prop, "country": country}, cache=False, retries=2)
+    rows = sparql(QUERY % {"prop": prop, "country": country, "length": length},
+                  cache=False, retries=2)
     items: dict[str, dict] = {}
     for row in rows:
         qid = value(row, "item")
@@ -178,14 +180,16 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--fetch", nargs=2, metavar=("ISO3", "PROPERTY"))
+    ap.add_argument("--fetch", nargs=3, metavar=("ISO3", "PROPERTY", "LENGTH"),
+                    help="only codes of LENGTH characters: China's 45,888 coded items "
+                         "overflow one answer, its 2,800 counties do not")
     ap.add_argument("specs", nargs="*",
                     help="ISO3:PROPERTY:LENGTH:KEEP -- codes of exactly LENGTH digits, "
                          "keyed by their first KEEP (Japan's check digit is dropped)")
     ap.add_argument("--populations", action="store_true")
     args = ap.parse_args()
     if args.fetch:
-        fetch(args.fetch[0].upper(), args.fetch[1])
+        fetch(args.fetch[0].upper(), args.fetch[1], int(args.fetch[2]))
         return 0
     table = read_json(OUT, {}) or {}
     records: dict[str, list] = defaultdict(list)

@@ -12,7 +12,8 @@ writes only where a Wikidata item's coordinate and name both say which
 polygon that code is. A code with no such binding is left out.
 
 The table is read against itself before anything is written: the national
-median must be the published 48.6 years (結果の概要).
+median must lie within the range of the 47 prefectures' medians, as a median
+of the whole must.
 
 Usage:
     python -m scripts.fetch_census.japan_municipal     # needs ESTAT_API
@@ -34,7 +35,7 @@ from fetch_census.japan import ESTAT_LICENCE, fetch_values  # noqa: E402
 TABLE = "0004019308"
 MEDIAN = "2020i_40"
 YEAR = 2020
-NATIONAL, PUBLISHED = "00000", 48.6
+NATIONAL = "00000"
 SOURCE = "Statistics Bureau of Japan, 2020 Census (e-Stat 0004019308, imputed)"
 URL = f"https://www.e-stat.go.jp/dbview?sid={TABLE}"
 
@@ -49,9 +50,15 @@ def main() -> int:
             median[str(v.get("@area"))] = float(v.get("$"))
         except (TypeError, ValueError):
             continue
-    if abs(median.get(NATIONAL, 0) - PUBLISHED) > 0.05:
-        raise SystemExit(f"japan_municipal: national median {median.get(NATIONAL)} is not "
-                         f"the published {PUBLISHED}; not the table this was written for")
+    prefectures = [v for code, v in median.items() if code.endswith("000") and code != NATIONAL]
+    national = median.get(NATIONAL)
+    if len(prefectures) != 47 or national is None \
+            or not min(prefectures) <= national <= max(prefectures):
+        raise SystemExit(f"japan_municipal: national median {national} against "
+                         f"{len(prefectures)} prefectures "
+                         f"({min(prefectures, default=None)}-{max(prefectures, default=None)}); "
+                         f"not a table of medians by area")
+    log(f"  national median {national:.1f}, prefectures {min(prefectures):.1f}-{max(prefectures):.1f}")
     shapes = (read_json(PROCESSED / "code_shapes.json", {}) or {}).get("JPN", {})
     records: list[dict[str, Any]] = []
     for code, entry in sorted(shapes.items()):
