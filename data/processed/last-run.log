@@ -19,6 +19,7 @@
   18 Nayarit: 20 municipios, median 29 (17-35)
   19 Nuevo León: 51 municipios, median 30 (25-43)
   https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_oax_01_poblacion.xlsx: not a workbook
+  20: no workbook; 570 municipios keep a gap
   21 Puebla: 217 municipios, median 28 (21-45)
   22 Querétaro: 18 municipios, median 29 (24-32)
   23 Quintana Roo: 11 municipios, median 28 (25-30)
@@ -33,4 +34,5 @@
   30 Veracruz de Ignacio de la Llave: 212 municipios, median 31 (19-40)
   31 Yucatán: 106 municipios, median 30 (20-35)
   32 Zacatecas: 58 municipios, median 28 (24-39)
-mexico_age: no workbook for 20 ('oax',)
+  2469 municipios (0 not in ITER); 59,498,547 men, 62,383,329 women
+  wrote data/processed/mexico_municipality_age.json (2924 kB)
