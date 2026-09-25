@@ -40,7 +40,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, read_json, write_json  # noqa: E402
+from common import NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, read_json, repair, write_json  # noqa: E402
 
 DEST = RAW / "wikidata_points"
 BOUNDARIES = RAW / "boundaries"
@@ -128,7 +128,8 @@ def shapes_of(iso3: str) -> list[dict]:
             for feat in src:
                 p = feat["properties"]
                 if p["shapeGroup"] == iso3 and feat["geometry"]:
-                    out.append({"level": level, "id": p["shapeID"], "name": p.get("shapeName"),
+                    out.append({"level": level, "id": p["shapeID"],
+                                "name": repair(p.get("shapeName") or ""),
                                 "geom": shape(feat["geometry"])})
     return out
 

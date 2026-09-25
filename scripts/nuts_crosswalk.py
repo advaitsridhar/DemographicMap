@@ -29,7 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import PROCESSED, RAW, log, write_json  # noqa: E402
+from common import PROCESSED, RAW, log, repair, write_json  # noqa: E402
 
 GEOMETRY = RAW / "eurostat"
 BOUNDARIES = RAW / "boundaries"
@@ -68,7 +68,10 @@ def load_shapes(countries: set[str]) -> list[dict]:
                 props = feat["properties"]
                 if props["shapeGroup"] in countries and feat["geometry"]:
                     out.append({"level": level, "id": props["shapeID"],
-                                "group": props["shapeGroup"], "name": props.get("shapeName"),
+                                "group": props["shapeGroup"],
+                                # As the build reads it: the file double-encodes
+                                # some names ("BRAGANÃ\x87A").
+                                "name": repair(props.get("shapeName") or ""),
                                 "geom": shape(feat["geometry"]).buffer(0)})
     return out
 
