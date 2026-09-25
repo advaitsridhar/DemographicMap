@@ -1,6 +1,7 @@
-ibge_sidra: state (n3)
-  religion: table 9537 v/140 answered
-  median_age: 27 localities
-  sex_ratio: 27 localities
-  wrote data/processed/brazil_state.json (79 kB)
-  27 records
+ibge_sidra: municipality (n6)
+  religion variant v/140 failed (HTTP Error 400: Bad Request)
+  religion: table 9537 v/140 answered state by state (5570 municipalities)
+  median_age: 5570 localities
+  sex_ratio: 5570 localities
+  wrote data/processed/brazil_municipality.json (14783 kB)
+  5571 records
