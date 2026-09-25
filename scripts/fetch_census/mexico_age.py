@@ -226,8 +226,9 @@ def main() -> int:
         if code in stated and stated[code] != median:
             raise SystemExit(f"mexico_age: {name}'s median is {median} in the national "
                              f"workbook and {stated[code]} in its own")
+        state_name = (iter_states.get(code) or {}).get("name") or name
         records.append(record(
-            f"MEX-{code}000", (iter_states.get(code) or {}).get("name") or name,
+            f"MEX-{code}000", state_name, aliases=STATE_ALIASES.get(state_name),
             level="admin1", parent="MEX", country="MEX", codes={"inegi": f"{code}000"},
             median_age=measure(median, unit="years", year=YEAR, source=SOURCE),
             sources=[{"field": "median age", "name": SOURCE, "url": url, "license": LICENSE}],

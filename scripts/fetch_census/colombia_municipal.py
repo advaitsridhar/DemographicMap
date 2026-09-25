@@ -44,6 +44,8 @@ YEAR = 2018
 SOURCE = ("DANE, population by municipality, sex and age, 2018 "
           "(series based on the Censo Nacional de Poblacion y Vivienda 2018)")
 AGE = re.compile(r"^(Hombres|Mujeres|Total)\s+(\d+)")
+# The boundary file names the capital district in English.
+DEPARTMENT_ALIASES = {"11": ["Bogota Capital District", "Bogotá"]}
 
 
 def median_age(counts: list[float]) -> float | None:
@@ -118,7 +120,8 @@ def main() -> int:
     for code, dept in sorted(departments.items()):
         median = median_age(dept["ages"])
         records.append(record(
-            f"COL-{code}", dept["name"], level="admin1", parent="COL", country="COL",
+            f"COL-{code}", dept["name"], aliases=DEPARTMENT_ALIASES.get(code),
+            level="admin1", parent="COL", country="COL",
             codes={"divipola": code},
             median_age=(measure(median, unit="years", year=YEAR, source=SOURCE)
                         if median is not None else None),
