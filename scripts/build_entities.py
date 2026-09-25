@@ -290,7 +290,7 @@ ADAPTER_FILES = [
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
-    "mexico_state.json", "mexico_municipality.json",
+    "mexico_state.json", "mexico_municipality.json", "mexico_municipality_age.json",
     "colombia_municipality.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
