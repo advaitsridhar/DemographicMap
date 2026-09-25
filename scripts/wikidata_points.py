@@ -228,6 +228,7 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
     shapes = shapes_of(iso3)
     tree = STRtree([s["geom"] for s in shapes])
     by_shape: dict[str, list[dict]] = defaultdict(list)
+    coded: list[dict] = []
     for item in items:
         # Exactly the level's length, before anything is cut: a Chinese
         # town's 9- or 12-digit code begins with its county's six, and cut to
@@ -240,6 +241,7 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
                 continue
             code = full[:keep]
         item["code"] = code
+        coded.append(item)
         for i in tree.query(Point(item["lon"], item["lat"]), predicate="within"):
             s = shapes[i]
             names = [item.get("label") or "", *(item.get("alt") or [])]
@@ -257,6 +259,21 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
                                      "name": h["shape"]["name"], "label": h["label"],
                                      "population": h.get("population"),
                                      "pop_year": h.get("pop_year")})
+    # A polygon the boundary file leaves unnamed (24 of Japan's) has no name
+    # for an item to agree with, so the second test is replaced by a stricter
+    # first: exactly one coded item of any level stands inside it, and that
+    # item is bound nowhere else. It is then named by the item.
+    taken = {e["qid"] for e in bound.values()}
+    for s in shapes:
+        if s["name"]:
+            continue
+        inside = [it for it in coded if s["geom"].contains(Point(it["lon"], it["lat"]))]
+        if len(inside) != 1 or inside[0]["qid"] in taken or inside[0]["code"] in bound:
+            continue
+        h = inside[0]
+        bound[h["code"]] = {"shape_id": s["id"], "level": s["level"], "qid": h["qid"],
+                            "name": h["label"], "label": h["label"],
+                            "population": h.get("population"), "pop_year": h.get("pop_year")}
     levels = defaultdict(int)
     for entry in bound.values():
         levels[entry["level"]] += 1

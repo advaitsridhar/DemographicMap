@@ -5220,7 +5220,9 @@ def main() -> int:
                 wanted_name = row.get("name")
                 if wanted_name and label and label != wanted_name:
                     entity["name"] = wanted_name
-                    row["aliases"] = [*(row.get("aliases") or []), label]
+                    # An unnamed polygon's label is its id, not a spelling.
+                    if label != entity["id"]:
+                        row["aliases"] = [*(row.get("aliases") or []), label]
                 matched.append((row, entity, "shape_id"))
                 continue
             if row.get("level") == "admin1":
