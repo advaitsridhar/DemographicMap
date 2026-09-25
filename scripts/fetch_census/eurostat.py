@@ -105,20 +105,18 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     map's Pest without Budapest) -- by name it would land anyway.
     """
     crosswalk = read_json(CROSSWALK, {}) or {}
-    # Where GISCO draws a country, its outline is the test: a region that is
-    # not one of the map's units by outline is not one by name either. The
-    # UK left NUTS 2024, so its regions still go by name.
-    outlined = {nuts_id[:2] for nuts_id in crosswalk}
+    # A region the outlines say nothing about -- an island coast or a small
+    # city region drawn too coarsely to reach 0.8 (Zeeland, the Azores,
+    # Brussels) -- goes on to its name and the name matcher's own guards.
+    # Only a region the outlines refuse (Pest with Budapest inside it) stops.
     placed, rest = [], []
     dropped = 0
     for rec in records:
         entry = crosswalk.get(rec["codes"]["nuts"])
         if not entry:
-            if rec["codes"]["nuts"][:2] in outlined:
-                dropped += 1
-            else:
-                rest.append(rec)
+            rest.append(rec)
         elif entry.get("superseded_by") or entry.get("refused"):
+            dropped += 1
             continue
         else:
             rec["level"] = entry["level"]
@@ -132,8 +130,8 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
                 rec["name"] = entry["name"]
             placed.append(rec)
     if crosswalk:
-        log(f"  {len(placed)} regions placed by outline; {dropped} are no one unit by "
-            f"outline; {len(rest)} left to their names")
+        log(f"  {len(placed)} regions placed by outline; {dropped} refused or superseded "
+            f"by it; {len(rest)} left to their names")
     return placed, rest
 
 

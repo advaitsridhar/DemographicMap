@@ -243,7 +243,10 @@ def main() -> int:
                                for code, e in sorted(bound.items())}
         if args.populations:
             for code, e in bound.items():
-                if not e.get("population"):
+                # Second level only: the first is covered by better sources,
+                # and an item carrying Shandong's code with a town's million
+                # people displaced the province's own 101 million.
+                if not e.get("population") or e["level"] != "admin2":
                     continue
                 year = int(e["pop_year"][:4]) if e.get("pop_year") else None
                 records[e["level"]].append({
