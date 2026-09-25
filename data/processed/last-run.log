@@ -1,5 +1,9 @@
-statcan: 2021 Census Profile, provinces and economic regions
-  98-401-X2021008_English_CSV_data.csv: 37,091,682 bytes
-  {'admin1': 13, 'admin2': 76}
-  wrote data/processed/canada_province.json (400 kB)
-  wrote data/processed/canada_economic_region.json (2331 kB)
+us_acs: ACS 2022 5-year, level=county
+  Connecticut: 9 planning regions set aside, 8 counties from ACS 2021
+  Valdez-Cordova Census Area, Alaska: joined from 02063, 02066
+  3169 of 3220 counties pinned to their polygon by FIPS code
+  wrote data/processed/us_county.json (16258 kB)
+  3220 county records
+  county: 161,009,516 vs whole-country row 161,009,516 (0.0000% apart, 3141 areas)
+  175 bodies defaulted to Protestant; largest: Non-denominational Christian Churches 21,095,641, Southern Baptist Convention 17,649,040, United Methodist Church 8,018,629, Evangelical Lutheran Church in America 3,139,413, Assemblies of God 3,094,547
+  religion attached to 3138 of 3220 records
