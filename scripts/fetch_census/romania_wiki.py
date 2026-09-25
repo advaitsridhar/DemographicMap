@@ -57,7 +57,7 @@ ETHNICITY = {
     "Croați": "Croats", "Greci": "Greeks", "Evrei": "Jewish", "Cehi": "Czechs",
     "Polonezi": "Polish", "Italieni": "Italians", "Armeni": "Armenians",
     "Chinezi": "Chinese", "Macedoneni": "Macedonians", "Albanezi": "Albanians",
-    "Ceangăi": "Csángós", "Alte etnii": "Other ethnic group", "Altă etnie": "Other ethnic group",
+    "Ceangăi": "Csángós", "Ruteni": "Rusyns", "Alte etnii": "Other ethnic group", "Altă etnie": "Other ethnic group",
     "Necunoscută": "Not stated", "Necunoscut": "Not stated",
 }
 RELIGION = {
@@ -66,6 +66,7 @@ RELIGION = {
     "Greco-catolici": "Greek Catholic", "Baptiști": "Baptist",
     "Adventiști de ziua a șaptea": "Seventh-day Adventist", "Adventiști": "Seventh-day Adventist",
     "Musulmani": "Islam", "Unitarieni": "Unitarian", "Martorii lui Iehova": "Jehovah's Witnesses",
+    "Martori ai lui Iehova": "Jehovah's Witnesses", "Evanghelici augustani": "Lutheranism",
     "Creștini după Evanghelie": "Evangelicalism", "Evanghelici": "Evangelicalism",
     "Creștini de rit vechi": "Old Believers", "Evanghelici luterani": "Lutheranism",
     "Luterani": "Lutheranism", "Evanghelici de confesiune augustană": "Lutheranism",
@@ -133,8 +134,8 @@ def number(text: str) -> float | None:
         return None
 
 
-def chart(wikitext: str, field: str) -> tuple[list[tuple[str, float]], str | None]:
-    """(label, share) slices of the one chart of this field, or why not."""
+def charts(wikitext: str, field: str) -> tuple[list[list[tuple[str, float]]], str | None]:
+    """Every chart of this field, as (label, share) slices."""
     wanted, _ = CHARTS[field]
     found = []
     for params in template_params(wikitext, "Pie chart"):
@@ -147,24 +148,46 @@ def chart(wikitext: str, field: str) -> tuple[list[tuple[str, float]], str | Non
                 return [], f"slice {k} has no number"
             rows.append((plain(params[f"label{k}"]).strip(), value))
             k += 1
-        found.append(rows)
-    if len(found) != 1:
-        return [], f"{len(found)} charts"
-    return found[0], None
+        if rows:
+            found.append(rows)
+    return found, None if found else "0 charts"
 
 
 def is_2021(wikitext: str, rows: list[tuple[str, float]]) -> bool:
+    """The chart's largest share is printed in the 2021 census sentence.
+
+    As the article prints it -- two decimals mostly, one or none in some
+    ("93,6%"), with a comma.
+    """
     top = max(rows, key=lambda r: r[1])[1]
-    printed = f"{top:.2f}".replace(".", ",")
-    return any(printed in m.group(0) for m in CENSUS_SENTENCE.finditer(wikitext))
+    spellings = {f"{top:.2f}".replace(".", ","), f"{top:.1f}".replace(".", ",") + "%",
+                 f"{top:.1f}".replace(".", ",") + " %", f"({top:.0f}%)"}
+    return any(any(p in m.group(0) for p in spellings)
+               for m in CENSUS_SENTENCE.finditer(wikitext))
+
+
+def chart(wikitext: str, field: str) -> tuple[list[tuple[str, float]], str | None]:
+    """The one chart of this field that is the 2021 count, or why none is.
+
+    An article may chart 2011 beside 2021; the 2021 one is the chart whose
+    largest share the 2021 sentence prints.
+    """
+    found, reason = charts(wikitext, field)
+    if not found:
+        return [], reason
+    current = [rows for rows in found if is_2021(wikitext, rows)]
+    if len(current) != 1:
+        return [], "not the 2021 count" if not current else f"{len(current)} charts of 2021"
+    return current[0], None
 
 
 def composition(field: str, rows: list[tuple[str, float]], unknown: dict[str, int]
                 ) -> list[dict[str, Any]] | None:
     _, names = CHARTS[field]
+    lowered = {k.lower(): v for k, v in names.items()}
     shares: dict[str, float] = {}
     for label, value in rows:
-        english = names.get(" ".join(label.split()))
+        english = lowered.get(" ".join(label.split()).lower())
         if english is None:
             unknown[f"{field}: {label}"] = unknown.get(f"{field}: {label}", 0) + 1
             return None
@@ -193,9 +216,6 @@ def main() -> int:
             rows, reason = chart(text, field)
             if not rows:
                 why[f"{field}: {reason}"] = why.get(f"{field}: {reason}", 0) + 1
-                continue
-            if not is_2021(text, rows):
-                why[f"{field}: not the 2021 count"] = why.get(f"{field}: not the 2021 count", 0) + 1
                 continue
             shares = composition(field, rows, unknown)
             if shares:
