@@ -179,7 +179,8 @@ def fetch_populations(iso3: str, prop: str) -> None:
     from fetch_wikidata import sparql, value
     path = DEST / f"{iso3}_{prop}.json"
     items = json.loads(path.read_text(encoding="utf-8"))
-    bound = {e["qid"] for e in ((read_json(OUT, {}) or {}).get(iso3) or {}).values()}
+    key = iso3 if prop != "class" else f"{iso3}:class"
+    bound = {e["qid"] for e in ((read_json(OUT, {}) or {}).get(key) or {}).values()}
     by_qid = {i["qid"]: i for i in items if i["qid"] in bound}
     qids = sorted(by_qid)
     for n in range(0, len(qids), 200):
