@@ -291,6 +291,7 @@ ADAPTER_FILES = [
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
     "mexico_state.json", "mexico_municipality.json",
+    "colombia_municipality.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
