@@ -29,15 +29,18 @@ async function concurrentLoadsAreIndexedOnce() {
 async function aFailedShardIsAskedForAgain() {
   // One dropped request for Guatemala's municipios used to leave all of them
   // unreachable until a reload: the failure was remembered as "no units".
+  // A 404 was still remembered so -- but every country has both files, and a
+  // 404 is a request that met a deploy half-way.
   const records = data("admin2/GTM.json");
   let calls = 0;
+  let clock = 1000;
   const context = vm.createContext({
-    window: {}, console,
+    window: {}, console, Date: { now: () => clock },
     fetch: async (url) => {
       if (url.includes("build.json")) return { ok: true, json: async () => ({ version: "test" }) };
       calls += 1;
       if (url.includes("GTM") && calls === 1) throw new Error("connection reset");
-      if (url.includes("ATA")) return { ok: false, status: 404 };
+      if (url.includes("GTM") && calls === 2) return { ok: false, status: 404 };
       return { ok: true, json: async () => records };
     },
   });
@@ -45,10 +48,46 @@ async function aFailedShardIsAskedForAgain() {
   const store = context.window.DataStore;
   assert.strictEqual((await store.loadLevel("GTM", 2)).length, 0);
   assert.strictEqual(store.isLoaded("GTM", 2), false, "a dropped request is not remembered");
+  assert.strictEqual((await store.loadLevel("GTM", 2)).length, 0);
+  assert.strictEqual(calls, 1, "not asked again within the pause");
+  clock += 5000;
+  assert.strictEqual((await store.loadLevel("GTM", 2)).length, 0);
+  assert.strictEqual(store.isLoaded("GTM", 2), false, "a 404 is not remembered either");
+  clock += 5000;
   assert.strictEqual((await store.loadLevel("GTM", 2)).length, records.length);
   assert.ok(store.get(records[0].id, 2), "the retry reaches the records");
-  await store.loadLevel("ATA", 2);
-  assert.strictEqual(store.isLoaded("ATA", 2), true, "a 404 still means no units");
+}
+
+async function aRedeployIsNotAChangedArchive() {
+  // Pages stamps each file's ETag with its deploy time; only the size part
+  // says whether the archive changed.
+  class EtagMismatch extends Error {}
+  let served = '"6ab63abc-1e2d41"';
+  class FetchSource {
+    constructor(url) { this.url = url; this.mustReload = false; }
+    getKey() { return this.url; }
+    async getBytes() { return { data: new ArrayBuffer(4), etag: served }; }
+  }
+  const context = vm.createContext({
+    window: {
+      maplibregl: { Map: class {}, addProtocol() {} },
+      pmtiles: { FetchSource, EtagMismatch },
+    },
+    document: { documentElement: {}, getElementById: () => ({}) },
+    console,
+    getComputedStyle: () => ({ getPropertyValue: () => "" }),
+  });
+  vm.runInContext(source("map.js"), context);
+  const src = context.window.WorldMap.stableSource("tiles/admin2.pmtiles");
+  assert.strictEqual(src.getKey(), "tiles/admin2.pmtiles");
+  const first = await src.getBytes(0, 4);
+  assert.strictEqual(first.etag, "size-1e2d41");
+  served = '"6ab65f21-1e2d41"';   // redeployed, same bytes
+  const again = await src.getBytes(4, 4, undefined, first.etag);
+  assert.strictEqual(again.etag, first.etag, "a redeploy is the same archive");
+  served = '"6ab65f21-1e2d99"';   // rebuilt
+  await assert.rejects(src.getBytes(8, 4, undefined, first.etag), EtagMismatch,
+                       "a rebuilt archive still reads as changed");
 }
 
 async function deepSearchWaitsForTheSecondShard() {
@@ -746,6 +785,7 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await aFailedShardIsAskedForAgain();
+  await aRedeployIsNotAChangedArchive();
   await anIdDrawnAtTwoLevelsKeepsBothRecords();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
