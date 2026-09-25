@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Replay a GitHub Pages redeploy against a Firefox that has seen the map.
+"""Replay what GitHub Pages can do to a Firefox that has seen the map.
 
 The deployed map loads in a fresh Firefox, and Guatemala's divisions do not
 load in the owner's: the difference is what that Firefox has kept. This serves
 the site the way Pages does -- an ETag made of the deploy time and the size, a
 ten-minute max-age, and If-Range and If-None-Match answered as HTTP says --
-opens it in a Firefox with a profile that persists, looks at Guatemala, then
-"redeploys" (a new deploy stamp, the same bytes) and looks again. Each variant
-of the map script -- the deployed one and this branch's -- is run from a
-clean profile, so a fix can be measured against the code as it is.
+and opens it in a Firefox whose profile persists between visits, looking at
+Guatemala each time. Two histories are replayed, each from a clean profile:
+a redeploy between visits (a new deploy stamp, the same bytes), and a first
+visit on which the CDN answers some range requests with the whole archive, as
+one can on a cache miss -- a whole file Firefox may keep and answer later
+ranges from.
 
 Read-only; the output is the log. Needs xvfb for Firefox's WebGL.
 
@@ -31,8 +33,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RANGE = re.compile(r"bytes=(\d*)-(\d*)")
-LIVE_MAP_JS = "https://advaitsridhar.github.io/DemographicMap/js/map.js"
 STAMP = {"deploy": int(time.time())}
+# How many more archive range requests to answer with the whole file, as a
+# CDN can on a cache miss.
+WHOLE = {"left": 0}
 SEEN: list[str] = []
 
 
@@ -75,6 +79,10 @@ class PagesLike(SimpleHTTPRequestHandler):
             return None
         # If-Range with a validator that no longer matches: the whole file.
         if rng and if_range and if_range != etag:
+            rng = None
+        if rng and ".pmtiles" in self.path and WHOLE["left"] > 0:
+            WHOLE["left"] -= 1
+            SEEN.append("answered with the whole file")
             rng = None
         common = [("ETag", etag), ("Cache-Control", "max-age=600"),
                   ("Last-Modified", formatdate(STAMP["deploy"], usegmt=True)),
@@ -126,15 +134,15 @@ const pw = require(process.env.PW_MODULE);
   const log = [];
   page.on("pageerror", (e) => log.push("pageerror: " + e.message));
   page.on("console", (m) => { if (m.type() === "error") log.push("error: " + m.text().slice(0, 300)); });
-  page.on("response", (r) => { if (/pmtiles/.test(r.url()) && r.status() !== 206) log.push(`tile ${r.status()} ${r.url().slice(-30)}`); });
+  page.on("response", (r) => { if (/pmtiles/.test(r.url()) && r.status() !== 206) log.push(`tile ${r.status()} ${r.url().slice(-22)} ${r.request().headers().range || ""}`); });
   const out = { label };
   try {
     await page.goto(`http://127.0.0.1:${port}/index.html`, { waitUntil: "load" });
     await page.waitForFunction(() => window.WorldMap && window.WorldMap.getMap() && window.WorldMap.getMap().loaded(), null, { timeout: 90000 });
-    for (const zoom of [5.5, 8.5]) {
+    for (const zoom of [5.5, 8.5, 5.5]) {
       await page.evaluate((z) => window.WorldMap.getMap().jumpTo({ center: [-90.3, 15.2], zoom: z }), zoom);
       await page.waitForTimeout(10000);
-      out["z" + zoom] = await page.evaluate(() => {
+      out["z" + zoom + (out["z" + zoom] ? " again" : "")] = await page.evaluate(() => {
         const m = window.WorldMap.getMap();
         const f = m.queryRenderedFeatures({ layers: ["admin1-fill", "admin2-fill"] }).filter((x) => x.properties.shapeGroup === "GTM");
         return `${new Set(f.filter((x) => x.state && x.state.color).map((x) => x.properties.shapeID)).size}/${new Set(f.map((x) => x.properties.shapeID)).size} drawn`;
@@ -166,25 +174,27 @@ def main() -> int:
     port = server.server_address[1]
     threading.Thread(target=server.serve_forever, daemon=True).start()
 
-    import urllib.request
-    live = urllib.request.urlopen(LIVE_MAP_JS, timeout=60).read().decode("utf-8")
-    variants = {"map.js as deployed": live,
-                "map.js on this branch": (ROOT / "site" / "js" / "map.js").read_text(encoding="utf-8")}
-    for name, source in variants.items():
-        (site / "js" / "map.js").write_text(source, encoding="utf-8")
-        profile = work / f"profile-{abs(hash(name))}"
+    scenarios = {
+        "a redeploy between visits": ("first visit", "after a redeploy", "a reload later"),
+        "the CDN ignores Range on a first visit": ("first visit, whole files", "a reload later", "another reload"),
+    }
+    for n, (name, labels) in enumerate(scenarios.items()):
+        profile = work / f"profile-{n}"
         print(f"=== {name} ===", flush=True)
-        for label in ("first visit", "after a redeploy", "a reload later"):
+        for label in labels:
             if label == "after a redeploy":
                 subprocess.run(["curl", "-s", f"http://127.0.0.1:{port}/__redeploy"], check=False)
+            WHOLE["left"] = 6 if label.endswith("whole files") else 0
             SEEN.clear()
             res = subprocess.run(["xvfb-run", "-a", "-s", "-screen 0 1400x900x24",
                                   "node", "visit.js", str(port), str(profile), label],
                                  cwd=work, env=env, capture_output=True, text=True, timeout=400)
             print(res.stdout.strip() or res.stderr.strip()[-1500:], flush=True)
             conditional = [s for s in SEEN if "if-range=-" not in s or "if-none=-" not in s]
-            print(f"  tile requests {len(SEEN)}, conditional {len(conditional)}: "
-                  f"{conditional[:4]}", flush=True)
+            whole = SEEN.count("answered with the whole file")
+            print(f"  archive requests reaching the server {len(SEEN) - whole}, "
+                  f"answered whole {whole}, conditional {len(conditional) - whole}: "
+                  f"{[c for c in conditional if 'whole' not in c][:4]}", flush=True)
     server.shutdown()
     return 0
 
