@@ -39,6 +39,17 @@ window.WorldMap = (function () {
   function stableSource(url) {
     const pm = window.pmtiles;
     const inner = new pm.FetchSource(url);
+    // And past the browser's HTTP cache. Firefox keeps the byte ranges it
+    // has fetched and, asked for them again, completes them with an
+    // If-Range carrying the ETag it stored; after a deploy that ETag no
+    // longer matches, Pages answers with the whole 52 MB archive instead of
+    // the range, the reader refuses a body larger than it asked for, and
+    // the stored range is never replaced -- so every country the viewer had
+    // looked at before a deploy stayed blank in Firefox, and only there.
+    // The reader's own switch for the same trouble in Chrome on Windows is
+    // this one; MapLibre keeps the tiles it has drawn, and the CDN still
+    // caches, so nothing is fetched twice that was not already.
+    inner.chromeWindowsNoCache = true;
     return {
       getKey: () => inner.getKey(),
       async getBytes(offset, length, signal, etag) {
