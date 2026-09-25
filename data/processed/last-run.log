@@ -1,7 +1,38 @@
-  GET https://censo2018.ine.gob.gt/archivos/bdd/db_csv_.zip: 322,771,575 bytes, sha256 82C57488046453ED7CF8125C436C67FEE938272FA116DA421B4D358D5DB934D5
-  the portal prints C0F23CED957F7BC126A5A689B728BE143D8B57B74F96CDF31869B28B01B820F9 beside the link: not this file
-  dictionary: 340 municipios, 6 pueblos, 29 languages
-  PCP15 blank for 1,334,389 people, 1,334,389 of them under four; 0 under four answered it
-  14,901,286 people in 340 municipios and 22 departments
-  wrote data/processed/guatemala_census.json (1513 kB)
-  wrote guatemala_census.json: 362 records
+  01 Aguascalientes: 11 municipios, median 27 (24-28)
+  02 Baja California: 6 municipios, median 30 (24-31)
+  03 Baja California Sur: 5 municipios, median 29 (27-32)
+  04 Campeche: 12 municipios, median 29 (22-31)
+  05 Coahuila de Zaragoza: 38 municipios, median 29 (24-40)
+  06 Colima: 10 municipios, median 30 (28-33)
+  07 Chiapas: 124 municipios, median 24 (15-33)
+  08 Chihuahua: 67 municipios, median 29 (21-46)
+  09 Ciudad de México: 16 municipios, median 35 (30-39)
+  10 Durango: 39 municipios, median 27 (17-40)
+  11 Guanajuato: 46 municipios, median 28 (24-35)
+  12 Guerrero: 81 municipios, median 27 (16-35)
+  13 Hidalgo: 84 municipios, median 30 (23-39)
+  14 Jalisco: 125 municipios, median 29 (18-37)
+  15 México: 125 municipios, median 30 (22-35)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_mich_01_poblacion.xlsx: not a workbook
+  16 Michoacán de Ocampo: 113 municipios, median 28 (22-39)
+  17 Morelos: 36 municipios, median 30 (25-34)
+  18 Nayarit: 20 municipios, median 29 (17-35)
+  19 Nuevo León: 51 municipios, median 30 (25-43)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_oax_01_poblacion.xlsx: not a workbook
+  20: no workbook; 570 municipios keep a gap
+  21 Puebla: 217 municipios, median 28 (21-45)
+  22 Querétaro: 18 municipios, median 29 (24-32)
+  23 Quintana Roo: 11 municipios, median 28 (25-30)
+  24 San Luis Potosí: 58 municipios, median 29 (23-38)
+  25 Sinaloa: 18 municipios, median 30 (25-35)
+  26 Sonora: 72 municipios, median 30 (23-44)
+  27 Tabasco: 17 municipios, median 29 (26-31)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_tamps_01_poblacion.xlsx: not a workbook
+  28 Tamaulipas: 43 municipios, median 30 (28-40)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_tlax_01_poblacion.xlsx: not a workbook
+  29 Tlaxcala: 60 municipios, median 28 (25-32)
+  30 Veracruz de Ignacio de la Llave: 212 municipios, median 31 (19-40)
+  31 Yucatán: 106 municipios, median 30 (20-35)
+  32 Zacatecas: 58 municipios, median 28 (24-39)
+  2501 municipios (0 not in ITER); 59,498,547 men, 62,383,329 women
+  wrote data/processed/mexico_municipality_age.json (2963 kB)
