@@ -124,6 +124,12 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
             rec["level"] = entry["level"]
             rec["match_by"] = "shape_id"
             rec["shape_id"] = entry["shape_id"]
+            # The polygon's own label, so another source bound to the same
+            # ground under the map's spelling (Fryslan) is the same claim,
+            # not a rival one; Eurostat's is kept as an alias.
+            if entry.get("name") and entry["name"] != rec["name"]:
+                rec["aliases"] = [*(rec.get("aliases") or []), rec["name"]]
+                rec["name"] = entry["name"]
             placed.append(rec)
     if crosswalk:
         log(f"  {len(placed)} regions placed by outline; {dropped} are no one unit by "

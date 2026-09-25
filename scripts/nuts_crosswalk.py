@@ -68,7 +68,7 @@ def load_shapes(countries: set[str]) -> list[dict]:
                 props = feat["properties"]
                 if props["shapeGroup"] in countries and feat["geometry"]:
                     out.append({"level": level, "id": props["shapeID"],
-                                "group": props["shapeGroup"],
+                                "group": props["shapeGroup"], "name": props.get("shapeName"),
                                 "geom": shape(feat["geometry"]).buffer(0)})
     return out
 
@@ -119,7 +119,8 @@ def main() -> int:
                 refused[region["id"]] = {"refused": why}
                 continue
             best[region["id"]] = {"nuts_level": lvl, "level": unit["level"],
-                                  "shape_id": unit["id"], "iou": round(top[0], 3)}
+                                  "shape_id": unit["id"], "name": unit["name"],
+                                  "iou": round(top[0], 3)}
 
     # One region per polygon: the finer where NUTS-2 and NUTS-3 are the same
     # outline; and never two regions of one level on one polygon.
