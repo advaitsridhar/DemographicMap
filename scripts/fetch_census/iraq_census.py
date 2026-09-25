@@ -343,6 +343,31 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
     def own(code: str) -> str:
         return names[code].most_common(1)[0][0] if names.get(code) else code
 
+    # OCHA's populated places, by the keys of each of their names.
+    towns: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    for row in places or []:
+        gov, district = row.get("ADM1_EN", ""), row.get("ADM2_EN", "")
+        if gov not in by_gov or district not in by_gov[gov]:
+            continue
+        for name in (row.get("PLACE_EN"), row.get("PLACE_ALT")):
+            for v in variants(name or ""):
+                if re.search(r"[A-Za-z]", v) and len(en_key(v)) >= 3:
+                    towns[gov]["en:" + en_key(v)].add(district)
+        for name in (row.get("PLACE_AR"), row.get("PLACE_ALT")):
+            for v in variants(name or ""):
+                if len(ar_key(v)) >= 3:
+                    towns[gov]["ar:" + ar_key(v)].add(district)
+
+    def town_named(en: str, ar: str, govs: list[str]) -> set[tuple[str, str]]:
+        """The districts OCHA's places of this name lie in, exactly spelt."""
+        keys = {"en:" + en_key(v) for v in variants(en) if len(en_key(v)) >= 3}
+        keys |= {"ar:" + ar_key(v) for v in variants(ar) if len(ar_key(v)) >= 3}
+        for gov in govs:
+            hit = {(gov, d) for k in keys for d in towns[gov].get(k, ())}
+            if hit:
+                return hit
+        return set()
+
     def reach(g2: str) -> tuple[list[str], list[str]]:
         return [GOVERNORATE[g2]], NEIGHBOURS.get(g2, [])
 
@@ -399,11 +424,13 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
             union = set().union(*across) if across else set()
             if len(across) >= 2 and len(union) == 1:
                 return union
-        return set()
+        # Or where the town it is named for lies, among OCHA's places.
+        return set().union(*(town_named(n, ar_names.get(code, ""), home) for n in variants))
 
     seat = {code: seat_of(code) for code in districts}
     place: dict[str, tuple[str, str]] = {}
     by_name: set[str] = set()
+    by_town: set[str] = set()
     for n, (en, ar, _v) in nahiyas.items():
         # A sub-district is looked for in another governorate only with its
         # whole district: the census's Faeda, under Ninewa's Telkef, has
@@ -414,6 +441,13 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         if len(found) == 1:
             place[n] = next(iter(found))
             by_name.add(n)
+            continue
+        if n in centres:
+            continue
+        found = town_named(en, ar, crossed or home)
+        if len(found) == 1:
+            place[n] = next(iter(found))
+            by_town.add(n)
     members: dict[str, list[str]] = defaultdict(list)
     for n in sorted(nahiyas):
         members[n[:4]].append(n)
