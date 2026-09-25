@@ -115,7 +115,9 @@ NEIGHBOURS = {
 }
 # Census districts that are a map district under another name. Sadr City was
 # al-Thawra until 2003 and the census counts it as two districts.
-RENAMED = {"2303": "Al-Thawra", "2304": "Al-Thawra"}
+# Amedi and Koya are the Kurdish names of Amadiya and Koysinjaq.
+RENAMED = {"2303": "Al-Thawra", "2304": "Al-Thawra",
+           "1104": "Al-Amadiya", "1506": "Koysinjaq"}
 
 NUM = re.compile(r"\s*(\d{1,3}(?:,\d{3})+|\d+)\s")
 CODE2 = re.compile(r"(?<![\d,])(\d{2})\s*-")
@@ -318,15 +320,19 @@ def variants(name: str) -> list[str]:
 def alike(a: str, b: str) -> bool:
     """Two keys that are one name: much alike, or -- for short ones, where a
     ratio says little -- the same consonants in the same order, as Graf and
-    Garaf (Al-Gharraf) are and Suran and Suan (Soran, Shwan) are not."""
+    Garaf (Al-Gharraf) are and Suran and Suan (Soran, Shwan) are not, or
+    one letter apart in five from the same first letter (Admia, Adamia; not
+    Abara, Jabara)."""
     if not (a and b):
         return False
     if a == b:
         return True
+    ratio = SequenceMatcher(None, a, b).ratio()
     if min(len(a), len(b)) >= SHORT:
-        return SequenceMatcher(None, a, b).ratio() >= ALIKE
+        return ratio >= ALIKE
     bones = [re.sub(r"[aiu]", "", k) for k in (a, b)]
-    return bones[0] == bones[1] and len(bones[0]) >= 3
+    return (bones[0] == bones[1] and len(bones[0]) >= 3) or (
+        min(len(a), len(b)) >= 4 and ratio >= 0.9 and a[0] == b[0])
 
 
 def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
