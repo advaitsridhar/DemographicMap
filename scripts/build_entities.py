@@ -3650,7 +3650,8 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
         for rows in table.values():
             for entity in rows:
                 town = towns.get(entity["id"])
-                if not town or not is_gap(entity.get("largest_settlement")):
+                # A lake is water whatever town stands on its islands or shore.
+                if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
                     continue
                 entity["largest_settlement"] = town["name"]
                 if town.get("population"):
