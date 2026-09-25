@@ -9,6 +9,7 @@ from scripts.fetch_census import iraq_census as ic  # noqa: E402
 
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
+PLACES = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
 
 
 @unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
@@ -45,7 +46,10 @@ class TheCrosswalk(unittest.TestCase):
     def setUpClass(cls):
         table = ic.parse(DUMP.read_text(encoding="utf-8"))
         cls.table = table
-        cls.result = ic.crosswalk(table, ic.read_gazetteer(GAZ.read_text(encoding="utf-8")))
+        places = ic.read_places(PLACES.read_text(encoding="utf-8")) if PLACES.exists() else []
+        cls.result = ic.crosswalk(table, ic.read_gazetteer(GAZ.read_text(encoding="utf-8")),
+                                  places)
+        cls.placed = {n: key for n, _name, _d, _v, key, _how in cls.result["placed"]}
         cls.mapped = cls.result["districts"]
         cls.govs = cls.result["governorates"]
 
@@ -76,6 +80,23 @@ class TheCrosswalk(unittest.TestCase):
         for gov in ("Duhok", "Ninewa", "Erbil"):
             self.assertNotEqual(self.govs[gov]["value"], census[gov], gov)
         self.assertEqual(sum(e["value"] for e in self.govs.values()), ic.NATIONAL)
+
+    def test_a_centre_is_not_carried_by_its_one_sibling(self):
+        # Saed Sadiq's Serjook is OCHA's Saruchik in Sharbazher; Sayid Sadiq
+        # town is in Halabja. The district is split between the two.
+        self.assertNotIn("13041", self.placed)
+        self.assertIsNone(self.mapped["Al-Sulaymaniyah/Sharbazher"]["value"])
+
+    @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
+    def test_a_village_does_not_place_a_district_named_like_it(self):
+        # OCHA's only Haji Awa is a village by Sulaymaniyah city.
+        self.assertNotIn("13181", self.placed)
+
+    @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
+    def test_a_built_up_town_places_the_district_named_for_it(self):
+        self.assertEqual(self.placed["25051"], ("Kerbala", "Kerbela"))
+        kerbala = [e["value"] for e in self.mapped.values() if e["governorate"] == "Kerbala"]
+        self.assertEqual(sum(kerbala), self.table["governorates"]["25"])
 
     def test_a_district_that_cannot_be_placed_leaves_a_reason(self):
         for entry in self.mapped.values():

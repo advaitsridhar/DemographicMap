@@ -820,6 +820,9 @@ def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[st
     mapped = result["districts"]
     for line in result["notes"]:
         log(f"  {line}")
+    grid = read_grid(GRID_DUMP.read_text(encoding="utf-8")) if GRID_DUMP.exists() else {}
+    for line in grid_check(result, grid):
+        log(f"  grid {line}")
     cite = [{"field": "population", "name": SOURCE, "url": URL}]
     rows = []
     codes = {gov: code for code, gov in GOVERNORATE.items()}
