@@ -10,6 +10,7 @@ from scripts.fetch_census import iraq_census as ic  # noqa: E402
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
 PLACES = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
+GRID = ROOT / "data" / "raw" / "iraq" / "kontur_adm2.txt"
 
 
 @unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
@@ -50,6 +51,8 @@ class TheCrosswalk(unittest.TestCase):
         cls.result = ic.crosswalk(table, ic.read_gazetteer(GAZ.read_text(encoding="utf-8")),
                                   places)
         cls.placed = {n: key for n, _name, _d, _v, key, _how in cls.result["placed"]}
+        grid = ic.read_grid(GRID.read_text(encoding="utf-8")) if GRID.exists() else {}
+        cls.grid_log = ic.grid_check(cls.result, grid)
         cls.mapped = cls.result["districts"]
         cls.govs = cls.result["governorates"]
 
@@ -97,6 +100,21 @@ class TheCrosswalk(unittest.TestCase):
         self.assertEqual(self.placed["25051"], ("Kerbala", "Kerbela"))
         kerbala = [e["value"] for e in self.mapped.values() if e["governorate"] == "Kerbala"]
         self.assertEqual(sum(kerbala), self.table["governorates"]["25"])
+
+    @unittest.skipUnless(GRID.exists(), "Kontur's grid not present")
+    def test_a_shape_that_is_not_the_census_s_ground_is_refused(self):
+        # The boundary file draws Amarah city inside the shape it names
+        # Al-Kahla; the census's Al-Umarra is 7.9 times the grid in the
+        # shape named Al-Amara.
+        amara = self.mapped["Maysan/Al-Amara"]
+        self.assertIsNone(amara["value"])
+        self.assertIn("grid", amara["why"])
+        self.assertIsNotNone(self.mapped["Maysan/Ali Al-Gharbi"]["value"])
+
+    @unittest.skipUnless(GRID.exists(), "Kontur's grid not present")
+    def test_the_grid_is_not_used_where_it_is_wrong_for_the_governorate(self):
+        self.assertTrue(any(line.startswith("Duhok:") for line in self.grid_log))
+        self.assertIsNotNone(self.mapped["Duhok/Duhok"]["value"])
 
     def test_a_district_that_cannot_be_placed_leaves_a_reason(self):
         for entry in self.mapped.values():

@@ -8,37 +8,50 @@ COSIT code, and a total for every district and governorate. OCHA's population
 tables for Iraq stop at the governorate and Wikidata has no figure for most
 districts, so 86 of the map's 101 were blank.
 
-**The census's districts are not the map's.** The census has 180 districts;
-the boundary file, like OCHA's boundaries, has the 101 of before the
-subdivisions of recent years -- Baghdad's Kadhimiya has since lost Sama
-al-Kadhimiya and Fada' al-Kazimia, Sulaymaniyah's districts have become
-seventeen. A census district joined to a map district by name alone would put
-part of a district's people on the whole of it, which looks exactly like a
-right answer. So each census district is placed inside one of OCHA's 101 (the
-same units the map draws), by its own name where that is one of them and
-otherwise by its centre's sub-district in OCHA's gazetteer (cod-ab-irq, CC
-BY-IGO), and a map district is the sum of the census districts placed in it.
+**The census's districts are not the map's.** The census has 181 districts
+and 440 sub-districts; the boundary file, like OCHA's boundaries, has the 101
+districts of before the subdivisions of recent years. A census district
+joined to a map district by name alone would put part of a district's people
+on the whole of it, which looks exactly like a right answer. So the census is
+placed sub-district by sub-district, each on one of OCHA's 101 (the same
+units the map draws), and a map district is the sum of what lands on it:
 
-That is only as good as the placing, so a governorate is written only when
-every check holds:
+  * a sub-district by its own name, or the second name it carries in
+    brackets, among OCHA's sub-districts (cod-ab-irq, CC BY-IGO) in its
+    governorate -- Kurdish spellings folded to the Arabic ones OCHA writes;
+  * a district's centre only where its district's own name puts it: a map
+    district of that name, OCHA's sub-district of that name, or a town of
+    that name in built-up ground among OCHA's populated places;
+  * any other sub-district with the rest of its district, or where the town
+    it is named for lies, among the districts its district points to.
 
-  * every one of its census districts is placed;
-  * every one of its map districts receives at least one;
-  * no sub-district the gazetteer knows sits in a different map district from
-    the one its census district was placed in;
-  * and no map district shares its name with a census district of another
-    governorate -- Kifri and Khanaqin are each counted partly under
-    Sulaymaniyah and partly under Diyala, and Makhmour under Ninewa where the
-    map files it under Erbil, so none of those takes a figure at all.
+A census district that lands whole on one map district gives it its printed
+total; one split between map districts gives each its sub-districts'
+figures, and only if those add up to its total. Where anything in a
+governorate cannot be placed, the map districts it could be in are left
+blank with the reason. A sub-district crosses a governorate line only with
+its whole district: the Kurdistan Region's governorates count Aqra, Shekhan,
+Bardarash and parts of Kifri and Khanaqin, which the map draws in Ninewa and
+Diyala, and Ninewa counts Makhmour, which the map draws in Erbil -- but
+Ninewa's Faeda (186,456 people) is not OCHA's 34 km2 Fayde in Duhok.
 
-The governorates' own totals are written for every governorate: they are the
-census's, exact, and the districts of each written governorate add up to them.
+Every district so placed is then measured against Kontur's population grid
+summed inside its shape: one whose count is more than three times, or less
+than a third of, the grid's share of its governorate is not the same ground,
+and is left blank with that reason. That is how Maysan's Al-Amara is caught:
+the boundary file draws Amarah city in the shape it names Al-Kahla.
 
-``--dump`` writes the table's pages and OCHA's gazetteer to data/raw/iraq;
-``--offline`` reads them from there.
+The governorates are the census's count of the ground the map draws, which
+for Duhok, Ninewa, Erbil, Sulaymaniyah and Diyala is not the census's own
+total; each says what moved.
+
+``--dump`` writes the table's pages, OCHA's gazetteer and OCHA's populated
+places to data/raw/iraq; ``--grid`` writes Kontur's population inside each of
+OCHA's districts there; ``--offline`` reads them all from there.
 
 Usage:
     python -m scripts.fetch_census.iraq_census --dump
+    python -m scripts.fetch_census.iraq_census --grid
     python -m scripts.fetch_census.iraq_census
 """
 from __future__ import annotations
@@ -77,6 +90,11 @@ PLACE_COLUMNS = ("PLACE_EN", "PLACE_AR", "PLACE_ALT", "ADM1_EN", "ADM2_EN", "ADM
 # modelled share of the country has been put on the wrong ground.
 KONTUR = ("https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/"
           "kontur_datasets/kontur_population_IQ_20231101.gpkg.gz")
+# A district refused by the grid: its census figure beyond this many times the
+# grid's, or below its inverse; the grid used in a governorate only while its
+# total there is within these bounds of the census's.
+GRID_FAR = 3.0
+GRID_FAIR = (2 / 3, 1.5)
 BOUNDS = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1/"
           "resource/a9ed4d00-1182-4fdc-a0e4-82bbd20786db/download/"
           "irq_admin_boundaries.geojson.zip")
@@ -557,7 +575,9 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                 cands |= {(census_gov, d) for d in by_gov[census_gov]}
             what = ", ".join(nahiyas[n][0] or n for n in lost)
             for key in cands:
-                tainted[key].append(f"{what} ({own(code)} district)")
+                tainted[key].append(
+                    f"{own(code)} district" if all(n in centres for n in lost) or len(lost) == len(ns)
+                    else f"{what} in {own(code)} district")
             notes.append(f"{census_gov} {own(code)}: not placed: {what}; "
                          f"could be in {', '.join(sorted(d for _, d in cands))}")
             govs = {g for g, _ in cands}
@@ -582,8 +602,8 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
             continue
         if code not in table["whole"]:
             for key in homes:
-                tainted[key].append(f"{own(code)} district, whose sub-districts are split "
-                                    f"between map districts and do not add up to its total")
+                tainted[key].append(f"SPLIT{own(code)} district, whose sub-districts are split "
+                                    f"between these shapes and do not add up to its total")
             for gov in {g for g, _ in homes}:
                 gov_unknown[gov].append(own(code))
             continue
@@ -617,8 +637,8 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                 unnamed[(gov, r["adm2_name"])].append(r["adm3_name"])
     for key, missing in unnamed.items():
         if key in value and key not in soft:
-            tainted[key].append(f"the boundary file's {', '.join(missing)}, which the "
-                                f"census names nowhere")
+            tainted[key].append(f"NOWHEREthe census names nowhere the boundary file's "
+                                f"{', '.join(missing)}, drawn in this district")
 
     # A map district no census sub-district lands on: its people were put
     # somewhere else, so nothing in its governorate can be trusted.
@@ -627,7 +647,7 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         if empty:
             notes.append(f"{gov}: no census sub-district lands on {', '.join(empty)}")
             for d in candidates:
-                tainted[(gov, d)].append(f"nothing placed on {', '.join(empty)}")
+                tainted[(gov, d)].append(f"EMPTY{', '.join(empty)}")
 
     out: dict[str, dict[str, Any]] = {}
     for gov, candidates in by_gov.items():
@@ -637,15 +657,23 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                      "arabic": row.get("adm2_name1"), "value": None}
             if key in tainted:
                 reasons = sorted(set(tainted[key]))
+                lost = [r for r in reasons if not r.startswith(("SPLIT", "NOWHERE", "EMPTY"))]
+                bits = []
+                if lost:
+                    bits.append("nothing places " + ", ".join(lost[:4])
+                                + (" and others" if len(lost) > 4 else "")
+                                + " on these shapes, and "
+                                + ("it" if len(lost) == 1 else "any of them")
+                                + " could be on this one")
+                bits += [r[5:] for r in reasons if r.startswith("SPLIT")]
+                bits += [r[7:] for r in reasons if r.startswith("NOWHERE")]
+                bits += [f"no census unit lands on {r[5:]}, so the people there were put "
+                         f"somewhere else" for r in reasons if r.startswith("EMPTY")]
                 entry["why"] = (
-                    "The 2024 census counts this ground on districts and sub-districts "
-                    "redrawn since the boundary file's, and "
-                    + ("; ".join(reasons[:3]) + ("..." if len(reasons) > 3 else ""))
-                    + (" could not be put on these shapes" if not reasons[0].startswith("nothing")
-                       and "names nowhere" not in reasons[0] and "split" not in reasons[0]
-                       else "")
-                    + ", so its figure is not known on them. The governorate's own count "
-                      "is on the governorate.")
+                    "The 2024 census counts this governorate on districts redrawn since "
+                    "the boundary file's, and " + "; ".join(bits) + ", so this district's "
+                    "figure is not known on its shape. The governorate's own count is on "
+                    "the governorate.")
             else:
                 entry["value"] = value[key]
                 entry["parts"] = parts[key]
@@ -786,18 +814,48 @@ def read_grid(text: str) -> dict[tuple[str, str], float]:
 
 
 def grid_check(result: dict[str, Any], grid: dict[tuple[str, str], float]) -> list[str]:
-    """The written districts whose share of the country is far from the grid's."""
+    """Refuse the written districts whose census figure is far from what the
+    grid puts inside their shape, measured against their governorate's own
+    ratio so that the grid's regional errors cancel; returns the log.
+
+    Maysan's Al-Amara is where this bites: its census count, 759,526, is
+    Amarah city's, and the boundary file draws Amarah city inside the shape
+    it names Al-Kahla -- 7.9 times the grid there, and Al-Kahla 0.15. Where
+    the grid is itself far from the census for a whole governorate (Duhok:
+    Zakho alone 930,000 on the grid, 398,876 counted) it says nothing about
+    the districts inside, and is not used."""
     if not grid:
         return []
-    written = {(e["governorate"], e["district"]): e["value"]
-               for e in result["districts"].values() if e["value"] is not None}
+    by_gov: dict[str, float] = defaultdict(float)
+    for (gov, _d), people in grid.items():
+        by_gov[gov] += people
     national = sum(e["value"] for e in result["governorates"].values() if e["value"])
     scale = national / sum(grid.values())
     lines = []
-    for key, value in sorted(written.items()):
-        modelled = grid.get(key, 0) * scale
-        ratio = value / modelled if modelled else float("inf")
-        lines.append(f"{ratio:5.2f}  {key[0]}/{key[1]}: census {value:,}, grid {modelled:,.0f}")
+    for gov, entry in sorted(result["governorates"].items()):
+        if not entry["value"] or not by_gov.get(gov):
+            continue
+        ratio = entry["value"] / by_gov[gov]
+        if not GRID_FAIR[0] <= ratio / scale <= GRID_FAIR[1]:
+            lines.append(f"{gov}: the grid holds {by_gov[gov]:,.0f} against the census's "
+                         f"{entry['value']:,}; not used inside it")
+            continue
+        for e in result["districts"].values():
+            if e["governorate"] != gov or e["value"] is None:
+                continue
+            modelled = grid.get((gov, e["district"]), 0) * ratio
+            share = e["value"] / modelled if modelled else float("inf")
+            lines.append(f"{share:5.2f}  {gov}/{e['district']}: census {e['value']:,}, "
+                         f"grid {modelled:,.0f}")
+            if not 1 / GRID_FAR <= share <= GRID_FAR:
+                e["why"] = (
+                    f"The 2024 census's count for the ground placed here, {e['value']:,}, "
+                    f"is {share:.1f} times what Kontur's population grid puts inside this "
+                    f"shape, scaled to {gov}'s census total, so the census's units and "
+                    f"the boundary file's {e['district']} are not the same ground. The "
+                    f"governorate's own count is on the governorate.")
+                e["value"] = None
+                e.pop("parts", None)
     return lines
 
 
