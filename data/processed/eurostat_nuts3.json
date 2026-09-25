@@ -662,6 +662,60 @@
     ]
   },
   {
+    "id": "EU-AT130-admin1",
+    "level": "admin1",
+    "name": "Wien",
+    "parent": "AUT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2028289,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 39.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 961,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Austria records citizenship and country of birth, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "AUT",
+    "codes": {
+      "nuts": "AT130",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "97560089B24691553772644"
+  },
+  {
     "id": "EU-AT130",
     "level": "admin2",
     "name": "Wien(Stadt)",
@@ -2048,6 +2102,64 @@
     "shape_id": "22928101B69206981842261"
   },
   {
+    "id": "EU-BG411-admin2",
+    "level": "admin2",
+    "name": "Stolichna",
+    "parent": "BGR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1295931,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 43.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 919,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "BG collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "BG collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "BGR",
+    "codes": {
+      "nuts": "BG411",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "11073933B40975042441370",
+    "aliases": [
+      "Sofia (stolitsa)"
+    ]
+  },
+  {
     "id": "EU-BG411",
     "level": "admin1",
     "name": "Sofia City",
@@ -2710,6 +2822,59 @@
     ]
   },
   {
+    "id": "EU-CH013-admin2",
+    "level": "admin2",
+    "name": "Genève",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 531102,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 41.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 937,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CHE",
+    "codes": {
+      "nuts": "CH013",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "98125504B37328358973812"
+  },
+  {
     "id": "EU-CH013",
     "level": "admin1",
     "name": "Genève",
@@ -3140,6 +3305,59 @@
     "shape_id": "70761945B4468941998498"
   },
   {
+    "id": "EU-CH051-admin2",
+    "level": "admin2",
+    "name": "Glarus",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42371,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CHE",
+    "codes": {
+      "nuts": "CH051",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "98125504B85690799805162"
+  },
+  {
     "id": "EU-CH051",
     "level": "admin1",
     "name": "Glarus",
@@ -3408,6 +3626,59 @@
     "shape_id": "70761945B29073934101403"
   },
   {
+    "id": "EU-CH062-admin2",
+    "level": "admin2",
+    "name": "Uri",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38275,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 45.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1042,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CHE",
+    "codes": {
+      "nuts": "CH062",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "98125504B39551940242919"
+  },
+  {
     "id": "EU-CH062",
     "level": "admin1",
     "name": "Uri",
@@ -3514,6 +3785,59 @@
     "shape_id": "70761945B29858350399599"
   },
   {
+    "id": "EU-CH064-admin1",
+    "level": "admin1",
+    "name": "Obwalden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 39662,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 45.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CHE",
+    "codes": {
+      "nuts": "CH064",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "70761945B39944874342149"
+  },
+  {
     "id": "EU-CH064",
     "level": "admin2",
     "name": "Obwalden",
@@ -3565,6 +3889,59 @@
     },
     "match_by": "shape_id",
     "shape_id": "98125504B17504345361325"
+  },
+  {
+    "id": "EU-CH066-admin1",
+    "level": "admin1",
+    "name": "Zug",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 133739,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CHE",
+    "codes": {
+      "nuts": "CH066",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "70761945B70106229378933"
   },
   {
     "id": "EU-CH066",
@@ -3671,6 +4048,61 @@
     },
     "match_by": "shape_id",
     "shape_id": "70761945B95773795125249"
+  },
+  {
+    "id": "EU-CZ010-admin1",
+    "level": "admin1",
+    "name": "Hlavní město Praha",
+    "parent": "CZE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1397880,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 41.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 945,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "CZ collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "CZ collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "CZE",
+    "codes": {
+      "nuts": "CZ010",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "73172107B16313596965023"
   },
   {
     "id": "EU-CZ010",
@@ -4446,6 +4878,60 @@
     "shape_id": "73172107B23519183895960"
   },
   {
+    "id": "EU-DE300-admin2",
+    "level": "admin2",
+    "name": "Berlin",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3685265,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 41.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 965,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Germany's census records citizenship and migration background, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "DEU",
+    "codes": {
+      "nuts": "DE300",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "9070358B20892132820961"
+  },
+  {
     "id": "EU-DE300",
     "level": "admin1",
     "name": "Berlin",
@@ -4498,6 +4984,60 @@
     },
     "match_by": "shape_id",
     "shape_id": "10402087B20892132820961"
+  },
+  {
+    "id": "EU-DE600-admin2",
+    "level": "admin2",
+    "name": "Hamburg",
+    "parent": "DEU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1862565,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 41.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 959,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Germany's census records citizenship and migration background, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "DEU",
+    "codes": {
+      "nuts": "DE600",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "9070358B45896528657515"
   },
   {
     "id": "EU-DE600",
@@ -4889,6 +5429,61 @@
     "shape_id": "93216281B43695015348250"
   },
   {
+    "id": "EU-ES120-admin2",
+    "level": "admin2",
+    "name": "Asturias",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1015128,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 51.6,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 913,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES120",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "93216281B3621351927787"
+  },
+  {
     "id": "EU-ES120",
     "level": "admin1",
     "name": "Principado de Asturias",
@@ -4945,6 +5540,61 @@
     "aliases": [
       "Asturias"
     ]
+  },
+  {
+    "id": "EU-ES130-admin1",
+    "level": "admin1",
+    "name": "Cantabria",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 593623,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 48.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 939,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES130",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "25490228B37069901476290"
   },
   {
     "id": "EU-ES130",
@@ -5170,6 +5820,61 @@
     "shape_id": "93216281B43945081388394"
   },
   {
+    "id": "EU-ES220-admin2",
+    "level": "admin2",
+    "name": "Navarra",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 683854,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 45.6,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES220",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "93216281B65631550750635"
+  },
+  {
     "id": "EU-ES220",
     "level": "admin1",
     "name": "Comunidad Foral de Navarra",
@@ -5225,6 +5930,64 @@
     "shape_id": "25490228B33348776534112",
     "aliases": [
       "Navarra"
+    ]
+  },
+  {
+    "id": "EU-ES230-admin2",
+    "level": "admin2",
+    "name": "Rioja, La",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 326803,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES230",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "93216281B63633419505726",
+    "aliases": [
+      "La Rioja"
     ]
   },
   {
@@ -5446,6 +6209,61 @@
     },
     "match_by": "shape_id",
     "shape_id": "93216281B58713858274405"
+  },
+  {
+    "id": "EU-ES300-admin2",
+    "level": "admin2",
+    "name": "Madrid",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7113886,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 919,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES300",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "93216281B77569616952792"
   },
   {
     "id": "EU-ES300",
@@ -7244,6 +8062,64 @@
     "shape_id": "93216281B72129419312860"
   },
   {
+    "id": "EU-ES620-admin1",
+    "level": "admin1",
+    "name": "Región de Murcia",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1586989,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 42.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES620",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "25490228B27950689864224",
+    "aliases": [
+      "Murcia"
+    ]
+  },
+  {
     "id": "EU-ES620",
     "level": "admin2",
     "name": "Murcia",
@@ -7803,6 +8679,63 @@
     "shape_id": "49019192B76795664887161",
     "aliases": [
       "Etelä-Karjala"
+    ]
+  },
+  {
+    "id": "EU-FI1C6-admin2",
+    "level": "admin2",
+    "name": "Lahden seutukunta",
+    "parent": "FIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 204635,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Finland records native language and citizenship, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FIN",
+    "codes": {
+      "nuts": "FI1C6",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "99834313B35398573425491",
+    "aliases": [
+      "Päijät-Häme"
     ]
   },
   {
@@ -14243,6 +15176,61 @@
     ]
   },
   {
+    "id": "EU-HR050-admin2",
+    "level": "admin2",
+    "name": "Grad Zagreb",
+    "parent": "HRV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 777359,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 43.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 911,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "HR collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "HR collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "HRV",
+    "codes": {
+      "nuts": "HR050",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "41942358B62049760899595"
+  },
+  {
     "id": "EU-HR050",
     "level": "admin1",
     "name": "City of Zagreb",
@@ -17011,6 +17999,62 @@
     "shape_id": "71437522B77650769364207",
     "aliases": [
       "Nordland/Nordlánnda"
+    ]
+  },
+  {
+    "id": "EU-NO081-admin2",
+    "level": "admin2",
+    "name": "Oslo nor",
+    "parent": "NOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 724290,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 36.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 993,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "NOR",
+    "codes": {
+      "nuts": "NO081",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "86288312B18463313731869",
+    "aliases": [
+      "Oslo"
     ]
   },
   {
@@ -20445,6 +21489,64 @@
     ]
   },
   {
+    "id": "EU-RS110-admin1",
+    "level": "admin1",
+    "name": "Belgrade",
+    "parent": "SRB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1682015,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 43.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 896,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "RS collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "RS collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "SRB",
+    "codes": {
+      "nuts": "RS110",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "41074048B91434818545320",
+    "aliases": [
+      "Beogradska oblast"
+    ]
+  },
+  {
     "id": "EU-RS110",
     "level": "admin2",
     "name": "Belgrade",
@@ -22379,6 +23481,60 @@
     },
     "match_by": "shape_id",
     "shape_id": "68755315B90115132982568"
+  },
+  {
+    "id": "EU-SE214-admin1",
+    "level": "admin1",
+    "name": "Gotlands län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60971,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 47.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Sweden records country of birth and citizenship, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "SWE",
+    "codes": {
+      "nuts": "SE214",
+      "nuts_level": 3
+    },
+    "match_by": "shape_id",
+    "shape_id": "68755315B38650871956455"
   },
   {
     "id": "EU-SE214",
@@ -27792,6 +28948,106 @@
     "shape_id": "25984515B34503670046284"
   },
   {
+    "id": "EU-AL014",
+    "level": "admin1",
+    "name": "Lezhë",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 96384,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 45.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 998,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "AL collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "AL collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ALB",
+    "codes": {
+      "nuts": "AL014",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ALXXX",
+    "level": "admin1",
+    "name": "Not regionalised/Unknown level 3",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "year": 2020,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "AL collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "AL collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ALB",
+    "codes": {
+      "nuts": "ALXXX",
+      "nuts_level": 3
+    }
+  },
+  {
     "id": "EU-CH023",
     "level": "admin1",
     "name": "Solothurn",
@@ -28094,6 +29350,1213 @@
     "country": "CHE",
     "codes": {
       "nuts": "CH065",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES531",
+    "level": "admin2",
+    "name": "Eivissa y Formentera",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 175955,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 41.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1039,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES531",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES532",
+    "level": "admin2",
+    "name": "Mallorca",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 971068,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 43.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES532",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES533",
+    "level": "admin2",
+    "name": "Menorca",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 102821,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 993,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES533",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES630",
+    "level": "admin2",
+    "name": "Ceuta",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83567,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 39.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1018,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES630",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES640",
+    "level": "admin2",
+    "name": "Melilla",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87067,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 36.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1011,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES640",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES703",
+    "level": "admin2",
+    "name": "El Hierro",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11993,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 47.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1021,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES703",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES704",
+    "level": "admin2",
+    "name": "Fuerteventura",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 129080,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 42.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1047,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES704",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES705",
+    "level": "admin2",
+    "name": "Gran Canaria",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 875589,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 46.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES705",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES706",
+    "level": "admin2",
+    "name": "La Gomera",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22560,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 50.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1033,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES706",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES707",
+    "level": "admin2",
+    "name": "La Palma",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 86297,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 48.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES707",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES708",
+    "level": "admin2",
+    "name": "Lanzarote",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 166878,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 42.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1012,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES708",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-ES709",
+    "level": "admin2",
+    "name": "Tenerife",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 966469,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Spain's census does not ask religion."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Spain's census records nationality and birthplace, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "codes": {
+      "nuts": "ES709",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FR101",
+    "level": "admin2",
+    "name": "Paris",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2065560,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 39.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 886,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FR101",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FR105",
+    "level": "admin2",
+    "name": "Hauts-de-Seine",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1668275,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 39.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 918,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FR105",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FR106",
+    "level": "admin2",
+    "name": "Seine-Saint-Denis",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1731789,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 36.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 994,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FR106",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRXXX",
+    "level": "admin2",
+    "name": "Not regionalised/Unknown NUTS 3",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "year": 2020,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRXXX",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRY10",
+    "level": "admin2",
+    "name": "Guadeloupe",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 413791,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 47.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 846,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRY10",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRY20",
+    "level": "admin2",
+    "name": "Martinique",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 359419,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 50.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 842,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRY20",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRY30",
+    "level": "admin2",
+    "name": "Guyane",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 297455,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 27.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 935,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRY30",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRY40",
+    "level": "admin2",
+    "name": "La Réunion",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 904180,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 39.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 908,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRY40",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-FRY50",
+    "level": "admin2",
+    "name": "Mayotte",
+    "parent": "FRA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 329208,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 18.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 911,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "France does not collect religion in its census."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law)."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "FRA",
+    "codes": {
+      "nuts": "FRY50",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-HU110",
+    "level": "admin1",
+    "name": "Budapest",
+    "parent": "HUN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1685209,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 889,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "HU collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "HU collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "HUN",
+    "codes": {
+      "nuts": "HU110",
+      "nuts_level": 3
+    }
+  },
+  {
+    "id": "EU-HUXXX",
+    "level": "admin1",
+    "name": "Not regionalised/Unknown NUTS 3",
+    "parent": "HUN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "year": 2020,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "HU collects religion in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "HU collects ethnicity in its national census; Eurostat does not redistribute it sub-nationally -- fetch from the national statistical office."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "HUN",
+    "codes": {
+      "nuts": "HUXXX",
       "nuts_level": 3
     }
   },
