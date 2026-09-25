@@ -1331,7 +1331,9 @@
       ["Wikidata", "https://www.wikidata.org/",
        "CC0 - subnational population, capital and coordinates wherever that adapter has been run."],
       ["National statistical offices", "https://github.com/advaitsridhar/DemographicMap#data-sources",
-       "US Census ACS, ONS/Nomis, Statistics Canada, IBGE SIDRA, Eurostat, ABS, Census of India - each under its own licence."],
+       "US Census ACS, ONS/Nomis, Statistics Canada, IBGE SIDRA, INEGI, DANE, e-Stat, Eurostat, ABS, Census of India - each under its own licence."],
+      ["Wikipedia", "https://www.wikipedia.org/",
+       "CC BY-SA 4.0 - census figures as its articles transcribe and cite them, only where the office's own table cannot be read; each figure names the census it came from."],
     ];
     els.aboutSources.innerHTML = sources.map(([name, url, note]) =>
       `<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a> - ${esc(note)}</li>`).join("");
