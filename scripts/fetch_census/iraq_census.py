@@ -69,7 +69,8 @@ GAZETTEER = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c6
 PLACES = ("https://data.humdata.org/dataset/93170987-276d-4526-9e3d-c982759d8eba/"
           "resource/cf461e2e-4ae2-439d-a6c6-ec0c5e2f5bad/download/"
           "iraq-populated-places-2021-p-coded.xlsx")
-PLACE_COLUMNS = ("PLACE_EN", "PLACE_AR", "PLACE_ALT", "ADM1_EN", "ADM2_EN", "ADM3_EN")
+PLACE_COLUMNS = ("PLACE_EN", "PLACE_AR", "PLACE_ALT", "ADM1_EN", "ADM2_EN", "ADM3_EN",
+                 "WORLD_POP_")
 ROOT = Path(__file__).resolve().parent.parent.parent
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
@@ -315,8 +316,17 @@ def variants(name: str) -> list[str]:
 
 
 def alike(a: str, b: str) -> bool:
-    return bool(a and b) and (a == b or (min(len(a), len(b)) >= SHORT
-                                         and SequenceMatcher(None, a, b).ratio() >= ALIKE))
+    """Two keys that are one name: much alike, or -- for short ones, where a
+    ratio says little -- the same consonants in the same order, as Graf and
+    Garaf (Al-Gharraf) are and Suran and Suan (Soran, Shwan) are not."""
+    if not (a and b):
+        return False
+    if a == b:
+        return True
+    if min(len(a), len(b)) >= SHORT:
+        return SequenceMatcher(None, a, b).ratio() >= ALIKE
+    bones = [re.sub(r"[aiu]", "", k) for k in (a, b)]
+    return bones[0] == bones[1] and len(bones[0]) >= 3
 
 
 def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
@@ -371,19 +381,24 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
     def reach(g2: str) -> tuple[list[str], list[str]]:
         return [GOVERNORATE[g2]], NEIGHBOURS.get(g2, [])
 
-    def sub_named(en: str, ar: str, govs: list[str], fuzzy: bool) -> set[tuple[str, str]]:
+    def sub_rows(en: str, ar: str, gov: str, fuzzy: bool) -> list[dict[str, str]]:
+        """OCHA's sub-districts in a governorate that are this name."""
         eks = {en_key(v) for v in variants(en)} - {""}
         aks = {ar_key(v) for v in variants(ar)} - {""}
+        rows = [r for r in subs[gov]
+                if en_key(r["adm3_name"]) in eks or ar_key(r.get("adm3_name1")) in aks
+                or DECLARED.get((gov, en_key(en))) == r["adm3_name"]]
+        if not rows and fuzzy:
+            loose = {ar_loose(v) for v in variants(ar)} - {""}
+            rows = [r for r in subs[gov]
+                    if any(alike(k, en_key(r["adm3_name"])) for k in eks)
+                    or (len(ar_loose(r.get("adm3_name1"))) >= 3
+                        and ar_loose(r.get("adm3_name1")) in loose)]
+        return rows
+
+    def sub_named(en: str, ar: str, govs: list[str], fuzzy: bool) -> set[tuple[str, str]]:
         for gov in govs:
-            hit = {(gov, r["adm2_name"]) for r in subs[gov]
-                   if en_key(r["adm3_name"]) in eks or ar_key(r.get("adm3_name1")) in aks
-                   or DECLARED.get((gov, en_key(en))) == r["adm3_name"]}
-            if not hit and fuzzy:
-                loose = {ar_loose(v) for v in variants(ar)} - {""}
-                hit = {(gov, r["adm2_name"]) for r in subs[gov]
-                       if any(alike(k, en_key(r["adm3_name"])) for k in eks)
-                       or (len(ar_loose(r.get("adm3_name1"))) >= 3
-                           and ar_loose(r.get("adm3_name1")) in loose)}
+            hit = {(gov, r["adm2_name"]) for r in sub_rows(en, ar, gov, fuzzy)}
             if hit:
                 return hit
         return set()
@@ -431,6 +446,7 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
     place: dict[str, tuple[str, str]] = {}
     by_name: set[str] = set()
     by_town: set[str] = set()
+    how: dict[str, str] = {}
     for n, (en, ar, _v) in nahiyas.items():
         # A sub-district is looked for in another governorate only with its
         # whole district: the census's Faeda, under Ninewa's Telkef, has
@@ -441,28 +457,47 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         if len(found) == 1:
             place[n] = next(iter(found))
             by_name.add(n)
-            continue
-        if n in centres:
-            continue
-        found = town_named(en, ar, crossed or home)
-        if len(found) == 1:
-            place[n] = next(iter(found))
-            by_town.add(n)
+            how[n] = "its own name among OCHA's sub-districts"
     members: dict[str, list[str]] = defaultdict(list)
     for n in sorted(nahiyas):
         members[n[:4]].append(n)
     for code in districts:
         named = {place[n] for n in members[code] if n in place}
         own_seat = seat[code]
+        # A sub-district no gazetteer name places goes where the town it is
+        # named for lies -- but a village of the same name elsewhere is
+        # common, so only among the districts its own district already
+        # points to, when it points to any.
+        within = named | own_seat
+        for n in members[code]:
+            if n in place or n in centres:
+                continue
+            home, _far = reach(n[:2])
+            govs = sorted({g for g, _d in within}) or home
+            found = town_named(nahiyas[n][0], nahiyas[n][1], govs)
+            if within:
+                found &= within
+            if len(found) == 1:
+                place[n] = next(iter(found))
+                by_town.add(n)
+                how[n] = "the town it is named for, among OCHA's places"
+        named = {place[n] for n in members[code] if n in place}
         for n in members[code]:
             if n in place:
                 continue
-            if n in centres and len(own_seat) == 1:
-                place[n] = next(iter(own_seat))
+            if n in centres:
+                # A centre goes only where its district's own name puts it:
+                # Saed Sadiq's one other sub-district is OCHA's Saruchik in
+                # Sharbazher, and Sayid Sadiq town is in Halabja.
+                if len(own_seat) == 1:
+                    place[n] = next(iter(own_seat))
+                    how[n] = "the centre of its district, which is placed by its own name"
             elif len(named) == 1:
                 place[n] = next(iter(named))
+                how[n] = "with its district's other sub-districts"
             elif not named and len(own_seat) == 1:
                 place[n] = next(iter(own_seat))
+                how[n] = "with its district, which is placed by its own name"
 
     value: Counter = Counter()
     parts: dict[tuple[str, str], list[tuple[str, int]]] = defaultdict(list)
@@ -479,8 +514,10 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         lost = [n for n in ns if n not in place]
         if lost:
             cands = homes | seat[code]
-            if not cands:
-                cands = {(census_gov, d) for d in by_gov[census_gov]}
+            # A centre not placed could be anywhere its district is; with no
+            # seat, that is anywhere in the governorate.
+            if not cands or (any(n in centres for n in lost) and not seat[code]):
+                cands |= {(census_gov, d) for d in by_gov[census_gov]}
             what = ", ".join(nahiyas[n][0] or n for n in lost)
             for key in cands:
                 tainted[key].append(f"{what} ({own(code)} district)")
@@ -529,11 +566,13 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
     # that sub-district's people to another district.
     found = set()
     for n, (en, ar, _v) in nahiyas.items():
-        ek, ak = en_key(en), ar_key(ar)
         for gov in reach(n[:2])[0] + reach(n[:2])[1]:
-            for r in subs[gov]:
-                if (ek and alike(ek, en_key(r["adm3_name"]))) or (ak and ak == ar_key(r.get("adm3_name1"))):
-                    found.add(r["adm3_pcode"])
+            found.update(r["adm3_pcode"] for r in sub_rows(en, ar, gov, True))
+    for code in districts:
+        for gov in reach(code[:2])[0] + reach(code[:2])[1]:
+            for name in names.get(code, {}):
+                found.update(r["adm3_pcode"]
+                             for r in sub_rows(name, ar_names.get(code, ""), gov, True))
     unnamed: dict[tuple[str, str], list[str]] = defaultdict(list)
     for gov, rows in subs.items():
         for r in rows:
@@ -603,7 +642,9 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                              + "; it ".join(bits)
                              + ". The figure is the census's count of the ground drawn here.")
         govs[gov] = entry
-    return {"districts": out, "governorates": govs, "notes": notes}
+    placed = [(n, nahiyas[n][0] or n, own(n[:4]), nahiyas[n][2], place[n], how.get(n, ""))
+              for n in sorted(place)]
+    return {"districts": out, "governorates": govs, "notes": notes, "placed": placed}
 
 
 def gazetteer_rows(blob: bytes) -> list[list[str]]:
