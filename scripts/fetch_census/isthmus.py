@@ -123,7 +123,9 @@ class Patient(Server):
         for (question, kind, _), page in zip(tables_, pages):
             if kind == "CROSSTABS":
                 crossed = crosstabs(page)
-                if not crossed or tables(page, header):
+                # The frequency parser opens an entry at every AREA row; a
+                # frequency table among the crosstabs would have a title.
+                if not crossed or any(t["title"] for t in tables(page, header)):
                     rows = [" | ".join(c for c in cells if c) for cells in cells_of(page)]
                     raise SystemExit(f"{self.who}: the crosstab's frame holds something else "
                                      f"({len(crossed)} crosstabs read); its first rows: "
