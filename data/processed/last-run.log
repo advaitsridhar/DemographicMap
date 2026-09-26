@@ -1,14 +1,3 @@
-source: https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf
-  3,648,260 bytes
-  66 pages
-  page 4: language :: 2.1 race/ethnic composition
-  page 31: speak :: 2.2.4 median age of the population
-source: https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf
-  6,950,210 bytes
-  96 pages
-  page 33: speak :: 4.6.2 local and foreign-born populations by sex
-  page 76: speak :: iii.10.7 civil servants
-source: https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/2012_Preliminary_Report.pdf
-  17,805,137 bytes
-  70 pages
-  page 8: sub-region :: 1 introduction
+  2012: ten regions making 746,955 in Tables 2.3 and 2.19 and the Final Count; 2022: making 878,674
+  wrote data/processed/guyana_census.json (106 kB)
+  wrote guyana_census.json: 10 regions, 26 sub-regions with the reason they have nothing
