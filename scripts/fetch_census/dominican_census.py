@@ -293,10 +293,19 @@ def band(label: str) -> tuple[int, int | None] | None:
 DISCREPANCIES: list[str] = []
 
 
-def agree(made: list[float], printed: list[float], parts: int, what: str) -> None:
-    """Sums of ``parts`` rounded figures against the printed ones, within rounding."""
+def agree(made: list[float], printed: list[float], parts: int, what: str,
+          fatal: bool = True) -> None:
+    """Sums of ``parts`` rounded figures against the printed ones, within rounding.
+
+    ``fatal`` False is for figures nothing here uses -- a distrito
+    municipal's age rows -- whose disagreement is logged and not a reason to
+    refuse the tables around them.
+    """
     slack = max(1, (parts + 1) // 2)
     worst = max(abs(a - b) for a, b in zip(made, printed))
+    if worst > slack and not fatal:
+        DISCREPANCIES.append(f"{what} (by {worst}, beyond rounding; not used)")
+        return
     if worst > slack:
         raise SystemExit(f"dominican_census: {what}: the parts make {made}, the printed "
                          f"figures {printed}; {worst} apart, more than {parts} rounded "
@@ -305,11 +314,11 @@ def agree(made: list[float], printed: list[float], parts: int, what: str) -> Non
         DISCREPANCIES.append(f"{what} (by {worst})")
 
 
-def check_area(area: dict[str, Any], columns: int, what: str) -> None:
+def check_area(area: dict[str, Any], columns: int, what: str, fatal: bool = True) -> None:
     """An area's age rows make it, column by column, within rounding."""
     made = [sum(v[i] for _, v in area["ages"]) for i in range(columns)]
     agree(made, area["values"][:columns], len(area["ages"]),
-          f"{what}: {area['label']}'s age rows")
+          f"{what}: {area['label']}'s age rows", fatal)
 
 
 def tree(found: list[dict[str, Any]], columns: int, what: str, total: int
@@ -326,7 +335,7 @@ def tree(found: list[dict[str, Any]], columns: int, what: str, total: int
     country = None
     for area in classify(found):
         k = area["kind"]
-        check_area(area, columns, what)
+        check_area(area, columns, what, fatal=k != "part")
         stack[k] = area
         for deeper in order[order.index(k) + 1:]:
             stack.pop(deeper, None)
