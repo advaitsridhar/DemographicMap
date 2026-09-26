@@ -150,6 +150,26 @@ class AbsorbTest(unittest.TestCase):
         self.assertEqual(provinces["Pedernales"]["municipios"][0]["values"][0], 20)
 
 
+class JoinTest(unittest.TestCase):
+    def test_a_municipio_with_no_polygon_joins_the_one_that_is_its_province(self):
+        pedernales = dc.areas(block("Municipio Pedernales", 23, 12, 11, AGES_A), 10)[0]
+        oviedo = dc.areas(block("Municipio Oviedo", 20, 10, 10, AGES_B), 10)[0]
+        provinces = {"Pedernales": {"area": None, "municipios": [pedernales, oviedo]}}
+        done = dc.join(provinces, ["Oviedo"], (("OVIEDO", "PEDERNALES"),))
+        self.assertEqual(done, ["Oviedo into Pedernales (Pedernales)"])
+        [host] = provinces["Pedernales"]["municipios"]
+        self.assertEqual(host["values"][:3], [43, 22, 21])
+        self.assertEqual(host["joined"], ["Oviedo"])
+        self.assertEqual(dc.age_figures(host)["population"]["value"], 43)
+
+    def test_a_bound_municipio_is_never_joined(self):
+        pedernales = dc.areas(block("Municipio Pedernales", 23, 12, 11, AGES_A), 10)[0]
+        oviedo = dc.areas(block("Municipio Oviedo", 20, 10, 10, AGES_B), 10)[0]
+        provinces = {"Pedernales": {"area": None, "municipios": [pedernales, oviedo]}}
+        self.assertEqual(dc.join(provinces, [], (("OVIEDO", "PEDERNALES"),)), [])
+        self.assertEqual(len(provinces["Pedernales"]["municipios"]), 2)
+
+
 class CarveTest(unittest.TestCase):
     def test_a_district_is_taken_out_of_its_municipio(self):
         higuey = dc.areas(block("Municipio Higüey", 43, 22, 21,

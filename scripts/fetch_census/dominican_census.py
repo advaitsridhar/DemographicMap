@@ -31,7 +31,14 @@ A municipio is bound to a polygon only if its 2022 count is within a factor of
 the 2010 census's count for the same polygon (the US Census Bureau's
 tabulation, which ``uscb_age_sex`` binds): a municipio created since the
 boundary file was drawn leaves its parent smaller than the polygon, and that
-is a mis-match this refuses.
+is a mis-match this refuses. Where the boundary file draws fewer polygons than
+there are municipios, the figures are made to its extent: a municipio made
+since 2010 from a distrito municipal is added back into the municipio it was
+part of; the province of Pedernales, one polygon, is Pedernales and Oviedo
+together (``uscb_age_sex``'s ``joined``, which checks the polygon is its
+province's only one); and La Laguna de Nisibón, a distrito municipal the
+boundary file draws on its own, gets its district's figures, taken out of
+Higüey's.
 
 ONE's REDATAM server, redatam.one.gob.do, sends its leaf certificate without
 the intermediate above it. ``--probe`` and ``--run`` complete the chain from
@@ -506,18 +513,44 @@ def absorb(provinces: dict[str, dict[str, Any]], unbound: list[str],
             if name not in unbound or host is None:
                 keep.append(area)
                 continue
-            host["values"] = [a + b for a, b in zip(host["values"][:9], area["values"][:9])]
-            host["values"].append(None)
-            # A small municipio prints no row for an age group it has nobody
-            # in, so the two are added group by group, in age order.
-            mine, theirs = dict(host["ages"]), dict(area["ages"])
-            labels = sorted(set(mine) | set(theirs),
-                            key=lambda lb: (band(lb) is None, (band(lb) or (0, 0))[0]))
-            zero = [0] * 9
-            host["ages"] = [(lb, [a + b for a, b in zip(mine.get(lb, zero)[:9],
-                                                        theirs.get(lb, zero)[:9])] + [None])
-                            for lb in labels]
+            add_into(host, area)
             host.setdefault("absorbed", []).append(name)
+            done.append(f"{name} into {bare(host['label'])} ({province})")
+        entry["municipios"] = keep
+    return done
+
+
+def add_into(host: dict[str, Any], area: dict[str, Any]) -> None:
+    """An area's counts and age rows added to another's; the printed sex ratio no longer applies."""
+    host["values"] = [a + b for a, b in zip(host["values"][:9], area["values"][:9])]
+    host["values"].append(None)
+    # A small municipio prints no row for an age group it has nobody in, so
+    # the two are added group by group, in age order.
+    mine, theirs = dict(host["ages"]), dict(area["ages"])
+    labels = sorted(set(mine) | set(theirs),
+                    key=lambda lb: (band(lb) is None, (band(lb) or (0, 0))[0]))
+    zero = [0] * 9
+    host["ages"] = [(lb, [a + b for a, b in zip(mine.get(lb, zero)[:9],
+                                                theirs.get(lb, zero)[:9])] + [None])
+                    for lb in labels]
+
+
+def join(provinces: dict[str, dict[str, Any]], unbound: list[str],
+         joined: tuple[tuple[str, str], ...]) -> list[str]:
+    """Each municipio with no polygon that ``uscb_age_sex`` joins to another, added into it."""
+    pairs = {fold(guest): fold(host) for guest, host in joined}
+    done = []
+    for province, entry in provinces.items():
+        keep = []
+        for area in entry["municipios"]:
+            name = bare(area["label"])
+            host = next((a for a in entry["municipios"]
+                         if fold(bare(a["label"])) == pairs.get(fold(name))), None)
+            if name not in unbound or host is None:
+                keep.append(area)
+                continue
+            add_into(host, area)
+            host.setdefault("joined", []).append(name)
             done.append(f"{name} into {bare(host['label'])} ({province})")
         entry["municipios"] = keep
     return done
@@ -631,6 +664,9 @@ def adapter() -> int:
     merged = absorb(provinces, unbound, districts_2010())
     log(f"  municipios made since 2010 from a distrito municipal, added back into the 2010 "
         f"municipio whose polygon takes them in: {merged}")
+    shared = join(provinces, unbound, country.joined)
+    log(f"  municipios with no polygon, added into the one whose polygon is their whole "
+        f"province: {shared}")
     offices, areas_by = offices_of()
     bound, missing = bind(offices, admin2, parents, aliases)
     log(f"  {len(bound)} municipios bound to their polygons; {len(missing)} not: "
@@ -658,6 +694,10 @@ def adapter() -> int:
             f"({part['values'][0]:,}), taken out of {offices[code][0]}")
     in_2010 = binding_2010(admin1, admin2)
     labels = {s["id"]: s["name"] for s in admin2}
+    for code, sid in bound.items():
+        if areas_by[code].get("joined"):
+            uscb_age_sex.sole_polygons([{"code": code, "name": offices[code][0],
+                                         "joined": areas_by[code]["joined"]}], bound, admin2)
     refused = []
     for code, sid in sorted(bound.items()):
         area = areas_by[code]
@@ -676,6 +716,10 @@ def adapter() -> int:
                 f"{offices[code][0]} without the distrito municipal of {area['carved']}, which "
                 "the boundary file draws as a polygon of its own and which carries its own "
                 "figures there.")
+        if area.get("joined"):
+            fields["population_note"] = (
+                f"{offices[code][0]} and {', '.join(area['joined'])} together, the province's "
+                "municipios: the boundary file draws the province as this one polygon.")
         if area.get("absorbed"):
             fields["population_note"] = (
                 f"{offices[code][0]} with {', '.join(area['absorbed'])}, a distrito municipal of "

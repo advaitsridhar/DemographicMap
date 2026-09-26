@@ -9,9 +9,14 @@ it from.
 
 * **Dominican Republic**: the 2010 census (ONE's IX Censo Nacional de
   Población y Vivienda), for the 155 municipalities, which had neither figure.
-  ONE's own site refused this map's reader (HTTP 403), so the 2022 census's
-  tables are not read. The provinces keep what they have, and no population
-  is written: the map's are newer.
+  The provinces keep what they have, and no population is written: the map's
+  are newer. ``dominican_census`` reads the 2022 census over this where it
+  binds, and uses this binding to check its own.
+
+The boundary file draws the province of Pedernales as one polygon, where the
+country has two municipalities (Pedernales and Oviedo): the two are added
+together, age group by age group, for that polygon (``joined``), and the run
+stops unless that polygon is its province's only one.
 
 Median age is interpolated within the five-year group holding the middle
 person. Every row's groups must make its total, its sexes must make it too,
@@ -57,6 +62,10 @@ class Country:
     # unit and the one unbound polygon of the same province, so the parent
     # check in binding still stands behind every one.
     units: tuple[tuple[str, str], ...] = ()
+    # A unit with no polygon of its own -> the unit of the same parent whose
+    # polygon is the whole parent's, and so takes both in: their age groups
+    # and sexes are added together for it.
+    joined: tuple[tuple[str, str], ...] = ()
 
 
 COUNTRIES = (
@@ -71,10 +80,9 @@ COUNTRIES = (
             # "Hermanas" (its capital, Salcedo).
             parents=(("BAORUCO", "Bahoruco"), ("EL SEIBO", "El Seybo"),
                      ("ELÍAS PIÑA", "La Estrelleta"), ("HERMANAS MIRABAL", "Hermanas")),
-            # Oviedo (Pedernales) has no polygon of its own, and "La Laguna de
-            # Nisibón" is a municipal district, not a municipality; both stay
-            # unbound. Santo Domingo de Guzmán is the Distrito Nacional's one
-            # municipality.
+            # "La Laguna de Nisibón" is a municipal district, not a
+            # municipality, and stays unbound here. Santo Domingo de Guzmán is
+            # the Distrito Nacional's one municipality.
             units=(("PUERTO PLATA", "San Felipe de Puerto Plata"),
                    ("VILLA ISABELA", "La Isabela"), ("VILLA MONTELLANO", "Montellano"),
                    ("SANTIAGO", "Santiago de los Caballeros"), ("BISONÓ", "Villa Bisonó"),
@@ -91,7 +99,10 @@ COUNTRIES = (
                    ("HIGÜEY", "Salvaleón de Higüey"), ("QUISQUEYA", "Quisquella"),
                    ("PERALVILLO", "Esperalvillo"), ("HATO MAYOR", "Hato Mayor del Rey"),
                    ("SANTO DOMINGO DE GUZMÁN", "Distrito Nacional"),
-                   ("SAN ANTONIO DE GUERRA", "Guerra"))),
+                   ("SAN ANTONIO DE GUERRA", "Guerra")),
+            # The province of Pedernales is one polygon, the same extent as
+            # the province's own: Oviedo is in it with Pedernales.
+            joined=(("OVIEDO", "PEDERNALES"),)),
 )
 
 
@@ -104,8 +115,8 @@ def number(value: Any) -> int | None:
         return None
 
 
-def figures(row: list[Any], at: dict[str, int], where: str) -> tuple[float | None, int, int, int]:
-    """(median age, men, women, total) for one row, after its sums are checked."""
+def groups_of(row: list[Any], at: dict[str, int]) -> list[tuple[int, int | None, float]]:
+    """(from, to, count) for each age group of a row, youngest first; ``to`` None when open."""
     groups: list[tuple[int, int | None, float]] = []
     for name, i in at.items():
         closed, open_ = GROUP.match(name), OPEN.match(name)
@@ -113,7 +124,12 @@ def figures(row: list[Any], at: dict[str, int], where: str) -> tuple[float | Non
             groups.append((int(closed.group(1)), int(closed.group(2)), number(row[i]) or 0))
         elif open_:
             groups.append((int(open_.group(1)), None, number(row[i]) or 0))
-    groups.sort(key=lambda g: g[0])
+    return sorted(groups, key=lambda g: g[0])
+
+
+def figures(row: list[Any], at: dict[str, int], where: str) -> tuple[float | None, int, int, int]:
+    """(median age, men, women, total) for one row, after its sums are checked."""
+    groups = groups_of(row, at)
     total, men, women = (number(row[at[k]]) for k in ("BTOTL", "MTOTL", "FTOTL"))
     if not total or men is None or women is None:
         raise SystemExit(f"uscb_age_sex: {where}: no total, male or female count")
@@ -149,7 +165,7 @@ def read(country: Country) -> list[dict[str, Any]]:
             nso = re.sub(r"^Municipio\s+", "", str(row[at["NSO_NAME"]] or "").strip())
             units.append({"code": str(row[at["GEO_MATCH"]]), "name": name, "nso": nso,
                           "parent": parent, "median": median, "men": men, "women": women,
-                          "total": total})
+                          "total": total, "groups": groups_of(row, at)})
     for parent, total in parents_total.items():
         made = sum(u["total"] for u in units if u["parent"] == parent)
         if made != total:
@@ -157,7 +173,44 @@ def read(country: Country) -> list[dict[str, Any]]:
                              f"against its {total:,}")
     log(f"  {country.iso3}: {len(units)} units making {len(parents_total)} parents, every "
         "row's groups and sexes making its total")
+    return join(units, country.joined)
+
+
+def join(units: list[dict[str, Any]], joined: tuple[tuple[str, str], ...]
+         ) -> list[dict[str, Any]]:
+    """Each ``joined`` unit added into its host, age group by age group; the host's median anew."""
+    for guest_name, host_name in joined:
+        guest = [u for u in units if fold(u["name"]) == fold(guest_name)]
+        host = [u for u in units if fold(u["name"]) == fold(host_name)
+                and guest and u["parent"] == guest[0]["parent"]]
+        if len(guest) != 1 or len(host) != 1:
+            raise SystemExit(f"uscb_age_sex: {len(guest)} units named {guest_name} and "
+                             f"{len(host)} named {host_name} beside it")
+        g, h = guest[0], host[0]
+        if [(a, b) for a, b, _ in g["groups"]] != [(a, b) for a, b, _ in h["groups"]]:
+            raise SystemExit(f"uscb_age_sex: {guest_name} and {host_name} have other age groups")
+        h["groups"] = [(a, b, n + m) for (a, b, n), (_, _, m) in zip(h["groups"], g["groups"])]
+        for k in ("men", "women", "total"):
+            h[k] += g[k]
+        h["median"] = grouped_median(h["groups"])
+        h.setdefault("joined", []).append(g["name"])
+        units.remove(g)
+        log(f"  {guest_name} added into {host_name}, whose polygon takes in both")
     return units
+
+
+def sole_polygons(units: list[dict[str, Any]], bound: dict[str, str],
+                  admin2: list[dict[str, Any]]) -> None:
+    """A joined unit's polygon must be the only one of its parent, or the run stops."""
+    parent_of = {s["id"]: s["parent"] for s in admin2}
+    for u in units:
+        if not u.get("joined"):
+            continue
+        sid = bound.get(u["code"])
+        siblings = [s["name"] for s in admin2 if sid and s["parent"] == parent_of[sid]]
+        if len(siblings) != 1:
+            raise SystemExit(f"uscb_age_sex: {u['name']} takes in {u['joined']}, but its "
+                             f"polygon is {'not bound' if not sid else 'one of ' + str(siblings)}")
 
 
 def main() -> int:
@@ -186,6 +239,7 @@ def main() -> int:
         labels = {s["id"]: s["name"] for s in admin2}
         unbound = sorted(s["name"] for s in admin2 if s["id"] not in set(bound.values()))
         log(f"  {country.iso3}: polygons with no unit: {unbound}")
+        sole_polygons(units, bound, admin2)
         source = (f"{country.census}, by sex and five-year age group, as the US Census Bureau "
                   "tabulates it for HDX")
         records = []
@@ -201,7 +255,11 @@ def main() -> int:
                 median_age=measure(u["median"], unit="years", year=country.year, source=source),
                 median_age_note=(
                     "Interpolated within the five-year age group that holds the middle person, "
-                    f"from the {country.year} census's count of everyone by five-year age group."),
+                    f"from the {country.year} census's count of everyone by five-year age group"
+                    + (f", of {u['name'].title()} and "
+                       f"{' and '.join(n.title() for n in u['joined'])} together: the boundary "
+                       "file draws their province as one polygon."
+                       if u.get("joined") else ".")),
                 sex_ratio=(measure(round(1000 * u["men"] / u["women"]),
                                    unit="males_per_1000_females", year=country.year,
                                    source=source) if u["women"] else None),
