@@ -1,81 +1,51 @@
-page: https://prod.redatam.org/binpry/RpWebEngine.exe/Portal?BASE=CPV2022&lang=esp
-  text: INE-PARAGUAY::Consultas Dinámicas de Microtados | Redatam Webserver - CELADE, UNECLAC Cerrar × ☰ Powered by REDATAM | © 1985 - 2026 | CELADE, División de Población de la CEPAL - Naciones Unidas. Todos los derechos reservados.
-  frame: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752211.htm
-  frame: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752201.htm
-  frame: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752221.htm
-  frame: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'REDATAM' -> https://www.cepal.org/es/subtemas/redatam
-pane: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752211.htm
-  text: ﻿ Redatam Webserver Index Page Resultados generales Estructura de la Población Población por Edad y Sexo Distribución por Edades Relación de Dependencia Indicadores Demográficos Edad Mediana Caracteríticas de la Población Discapacidad Educación Edades Educativas Idiomas o Lenguas Migración Migración Interna Actividad Laboral Vivienda Promedios Servicios básicos Hogares Tipo y jefatura TICs Bienes de confort Población y viviendas Características básicas De Vivienda De Hogares De Población Cruce de variables De Vivienda De Hogares De Población Combinación Lista de áreas De Vivienda De Hogares De Población Combinación Conteos Información Referencias Cuestionario Glorario Ayuda Resultados Diccionario Todas las variables Variables geográficas Variables de Vivienda Hogares Población Defunciones Categorías de Vivienda Hogares Población Defunciones Redatam Procesador Estadístico REDCompiler Descargar Diccionario Guía de Comandos Indicadores Ayuda Portal REDATAM REDATAM Website Go !-->
-  link: '' -> javascript:window.parent.location.reload(true);
-  link: 'Población por Edad y Sexo' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=EDADES&lang=esp
-  link: 'Distribución por Edades' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2022&ITEM=TOTEDAD&lang=esp
-  link: 'Relación de Dependencia' -> https://prod.redatam.org/binpry/RpWebStats.exe/Fraction?BASE=CPV2022&ITEM=RELDEPAM&lang=esp
-  link: 'Indicadores Demográficos' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDPOB&lang=esp
-  link: 'Edad Mediana' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=MEDPOB&lang=esp
-  link: 'Discapacidad' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=DISCA&lang=esp
-  link: 'Educación' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=EDUCA&lang=esp
-  link: 'Edades Educativas' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2022&ITEM=EDADEDU&lang=esp
-  link: 'Idiomas o Lenguas' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=IDIOMA&lang=esp
-  link: 'Migración' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=MIGRA&lang=esp
-  link: 'Migración Interna' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=MIGINT&lang=esp
-  link: 'Actividad Laboral' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=EMPLEO&lang=esp
-  link: 'Promedios' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDVIV&lang=esp
-  link: 'Servicios básicos' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDSERV&lang=esp
-  link: 'Tipo y jefatura' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDHOG&lang=esp
-  link: 'TICs' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDTICS&lang=esp
-  link: 'Bienes de confort' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=INDBIEN&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2022&ITEM=FREQVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2022&ITEM=FREQHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2022&ITEM=FREQPOB&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=CRUCVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=CRUCHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=CRUCPOB&lang=esp
-  link: 'Combinación' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2022&ITEM=CRUZCOMBI&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=AREAVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=AREAHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=AREAPOB&lang=esp
-  link: 'Combinación' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=AREACOMBI&lang=esp
-  link: 'Conteos' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2022&ITEM=COUNTS&lang=esp
-  link: 'Cuestionario' -> https://prod.redatam.org/redpry/censos/cpv2022/boleta_censo_2022.pdf
-  link: 'Glorario' -> https://prod.redatam.org/redpry/censos/cpv2022/glosario-indic-dem_2022.pdf
-  link: 'Ayuda' -> https://prod.redatam.org/redpry/censos/ayuda/
-  link: 'Resultados' -> https://www.ine.gov.py/censo2022/
-  link: 'Todas las variables' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICALL&lang=esp
-  link: 'Variables geográficas' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICGEO&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICVIV&lang=esp
-  link: 'Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICHOG&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICPOB&lang=esp
-  link: 'Defunciones' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICMOR&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICATVIV&lang=esp
-  link: 'Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICATHOG&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICATPOB&lang=esp
-  link: 'Defunciones' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2022&ITEM=DICATMOR&lang=esp
-  link: 'REDCompiler' -> https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2022&ITEM=PROGRED&lang=esp
-  link: 'Descargar Diccionario' -> https://prod.redatam.org/binpry/RpWebUtilities.exe/Down_Dictionary.dic?LFN=rpbases\censos\cen22\base\cen2022.dicX
-  link: 'Guía de Comandos' -> https://prod.redatam.org/redatam/rphelp/esp/Red7-02-Process-ESP.pdf
-  link: 'Indicadores' -> https://redatam.org/cdr/manuales/red7/esp/Red7-02-Process-indics-ESP.pdf
-  link: 'Portal REDATAM' -> https://redatam.org/
-  link: 'REDATAM Website' -> https://www.cepal.org/es/temas/redatam
-  link: 'Go' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752211.htm
-pane: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752201.htm
-  text: ﻿ Redatam Webserver Header Page
-  link: '' -> https://www.ine.gov.py/
-pane: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752221.htm
-  text: ﻿ UNECLAC-CELADE::Redatam Webserver | Output Page
-  frame: https://www.googletagmanager.com/ns.html?id=GTM-TW6NL5G
-  link: '' -> https://prod.redatam.org/redpry/
-pane: https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  text: ﻿ Redatam Webserver Footer Page --> RedAtam Webserver Home Â· Blog Â· Pricing Â· About Â· Faq Â· Contact --> © 1985 - 2026 | 2025.12.03 CELADE/CEPAL, Naciones Unidas --> Avenida Boggiani Esq./Cirilo Rivarola, Nº 6688 Asunción - Paraguay Tel: (595 21) 500-194 info@ine.gov.py Acerca de... Procesamiento En-Línea con Redatam Webserver. División de Población de la Comisión Económica para América Latina y El Caribe (CEPAL), Naciones Unidas
-  link: '' -> https://www.ine.gov.py/
-  link: 'Home' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'Blog' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'Pricing' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'About' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'Faq' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: 'Contact' -> https://prod.redatam.org/redpry/tempo/127522/~tmp_12752231.htm
-  link: '' -> https://twitter.com/INE_Paraguay?s=09
-  link: '' -> https://www.facebook.com/INEParaguay/
-  link: '' -> https://www.youtube.com/@INEParaguay
-  link: '' -> https://www.instagram.com/ine_paraguay/
-  link: 'info@ine.gov.py' -> mailto:info@ine.gov.py
+page: https://poblacion.bcr.gob.sv/pages/teg-descarga-de-base-de-datos-censal-csv
+  289,156 bytes
+  0 matching link(s)
+page: https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados
+  308,534 bytes
+  0 matching link(s)
+page: https://censo2024.bcr.gob.sv/
+  236,036 bytes
+  21 matching link(s)
+  - Ir al contenido
+    https://censo2024.bcr.gob.sv/#content
+  - 
+    https://censo2024.bcr.gob.sv/
+  - Quiénes somos
+    https://censo2024.bcr.gob.sv/quienessomos/
+  - Novedades
+    https://censo2024.bcr.gob.sv/noticias/
+  - Verificador
+    https://verificador.bcr.gob.sv/
+  - Resultados Censo 2024
+    https://geoportal.bcr.gob.sv/
+  - Contáctenos
+    https://censo2024.bcr.gob.sv/rutas/
+  - 
+    https://verificador.bcr.gob.sv
+  - Preguntas Frecuentes
+    https://censo2024.bcr.gob.sv/preguntas/
+  - ›
+    https://censo2024.bcr.gob.sv/?page_number_0=2
+  - @bcr.sv
+    https://www.tiktok.com/@bcr.sv?refer=embed
+  - ♬ sonido original - Banco Central de Reserva 🇸🇻
+    https://www.tiktok.com/music/sonido-original-7377590968365927173?refer=embed
+  - ♬ sonido original - Banco Central de Reserva 🇸🇻
+    https://www.tiktok.com/music/sonido-original-7376828808875838213?refer=embed
+  - @gobiernosv
+    https://www.tiktok.com/@gobiernosv?refer=embed
+  - #Censo2024
+    https://www.tiktok.com/tag/censo2024?refer=embed
+  - ♬ sonido original - Gobierno de El Salvador
+    https://www.tiktok.com/music/sonido-original-7373826011349961478?refer=embed
+  - 7125-6737
+    https://wa.me/50371256737
+  - 
+    https://censo2024.bcr.gob.sv/#masthead
+  - 
+    https://www.facebook.com/bcr.sv
+  - 
+    https://twitter.com/bcr_sv
+  - 
+    https://www.tiktok.com/@bcr.sv
