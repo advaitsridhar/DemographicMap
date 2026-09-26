@@ -1,53 +1,16 @@
+probe_xlsx: https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c1_2.xlsx
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
-page: https://censo.gob.ar/index.php/datos_definitivos_bsas/
-  202,734 bytes
-  7 matching link(s)
-  - Provincia de Buenos Aires. Total de población, variación absoluta y va
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c1_2.xlsx
-  - Provincia de Buenos Aires. Total de población, por sexo registrado al 
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c4_2.xlsx
-  - Provincia de Buenos Aires. Total de población, por edad mediana de la 
-    https://censo.gob.ar/wp-content/uploads/2023/12/c2022_bsas_est_c6_2.xlsx
-  - Provincia de Buenos Aires. Población total en viviendas particulares y
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_afrodescendiente_c7_2.xlsx
-  - Provincia de Buenos Aires. Población que se reconoce indígena o descen
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c1_2.xlsx
-  - Provincia de Buenos Aires. Población que se reconoce indígena o descen
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c7_2.xlsx
-  - Provincia de Buenos Aires. Población que se reconoce indígena o descen
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c9_2.xlsx
-page: https://censo.gob.ar/index.php/datos_definitivos_tdf/
-  207,224 bytes
-  7 matching link(s)
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. To
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_tdf_est_c1_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. To
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_tdf_est_c4_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. To
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_tdf_est_c6_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. Po
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tdf_poblacion_afrodescendiente_c7_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. Po
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tdf_poblacion_indigena_c1_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. Po
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tdf_poblacion_indigena_c7_23.xlsx
-  - Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. Po
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tdf_poblacion_indigena_c9_23.xlsx
-page: https://censo.gob.ar/index.php/datos_definitivos_entre_rios/
-  208,429 bytes
-  7 matching link(s)
-  - Provincia de Entre Ríos. Total de población, variación absoluta y vari
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c1_8.xlsx
-  - Provincia de Entre Ríos. Total de población, por sexo registrado al na
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c4_8.xlsx
-  - Provincia de Entre Ríos. Total de población, por edad mediana de la po
-    https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c6_8.xlsx
-  - Provincia de Entre Ríos. Población total en viviendas particulares y p
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_afrodescendiente_c7_8.xlsx
-  - Provincia de Entre Ríos. Población que se reconoce indígena o descendi
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_indigena_c1_8.xlsx
-  - Provincia de Entre Ríos. Población que se reconoce indígena o descendi
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_indigena_c7_8.xlsx
-  - Provincia de Entre Ríos. Población que se reconoce indígena o descendi
-    https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_indigena_c9_8.xlsx
+  39,707 bytes
+  4 sheet(s): Carátula, Índice, Cuadro1.2, Cuadro1.2 bis
+
+probe_xlsx: https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c4_2.xlsx
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  794,010 bytes
+  138 sheet(s): Carátula, Índice, Cuadro4.2.0, Cuadro4.2.1, Cuadro4.2.2, Cuadro4.2.3, Cuadro4.2.4, Cuadro4.2.5, Cuadro4.2.6, Cuadro4.2.7, Cuadro4.2.8, Cuadro4.2.9, Cuadro4.2.10, Cuadro4.2.11, Cuadro4.2.12, Cuadro4.2.13, Cuadro4.2.14, Cuadro4.2.15, Cuadro4.2.16, Cuadro4.2.17, Cuadro4.2.18, Cuadro4.2.19, Cuadro4.2.20, Cuadro4.2.21, Cuadro4.2.22, Cuadro4.2.23, Cuadro4.2.24, Cuadro4.2.25, Cuadro4.2.26, Cuadro4.2.27, Cuadro4.2.28, Cuadro4.2.29, Cuadro4.2.30, Cuadro4.2.31, Cuadro4.2.32, Cuadro4.2.33, Cuadro4.2.34, Cuadro4.2.35, Cuadro4.2.36, Cuadro4.2.37, Cuadro4.2.38, Cuadro4.2.39, Cuadro4.2.40, Cuadro4.2.41, Cuadro4.2.42, Cuadro4.2.43, Cuadro4.2.44, Cuadro4.2.45, Cuadro4.2.46, Cuadro4.2.47, Cuadro4.2.48, Cuadro4.2.49, Cuadro4.2.50, Cuadro4.2.51, Cuadro4.2.52, Cuadro4.2.53, Cuadro4.2.54, Cuadro4.2.55, Cuadro4.2.56, Cuadro4.2.57, Cuadro4.2.58, Cuadro4.2.59, Cuadro4.2.60, Cuadro4.2.61, Cuadro4.2.62, Cuadro4.2.63, Cuadro4.2.64, Cuadro4.2.65, Cuadro4.2.66, Cuadro4.2.67, Cuadro4.2.68, Cuadro4.2.69, Cuadro4.2.70, Cuadro4.2.71, Cuadro4.2.72, Cuadro4.2.73, Cuadro4.2.74, Cuadro4.2.75, Cuadro4.2.76, Cuadro4.2.77, Cuadro4.2.78, Cuadro4.2.79, Cuadro4.2.80, Cuadro4.2.81, Cuadro4.2.82, Cuadro4.2.83, Cuadro4.2.84, Cuadro4.2.85, Cuadro4.2.86, Cuadro4.2.87, Cuadro4.2.88, Cuadro4.2.89, Cuadro4.2.90, Cuadro4.2.91, Cuadro4.2.92, Cuadro4.2.93, Cuadro4.2.94, Cuadro4.2.95, Cuadro4.2.96, Cuadro4.2.97, Cuadro4.2.98, Cuadro4.2.99, Cuadro4.2.100, Cuadro4.2.101, Cuadro4.2.102, Cuadro4.2.103, Cuadro4.2.104, Cuadro4.2.105, Cuadro4.2.106, Cuadro4.2.107, Cuadro4.2.108, Cuadro4.2.109, Cuadro4.2.110, Cuadro4.2.111, Cuadro4.2.112, Cuadro4.2.113, Cuadro4.2.114, Cuadro4.2.115, Cuadro4.2.116, Cuadro4.2.117, Cuadro4.2.118, Cuadro4.2.119, Cuadro4.2.120, Cuadro4.2.121, Cuadro4.2.122, Cuadro4.2.123, Cuadro4.2.124, Cuadro4.2.125, Cuadro4.2.126, Cuadro4.2.127, Cuadro4.2.128, Cuadro4.2.129, Cuadro4.2.130, Cuadro4.2.131, Cuadro4.2.132, Cuadro4.2.133, Cuadro4.2.134, Cuadro4.2.135
+
+probe_xlsx: https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c1_2.xlsx
+  504,636 bytes
+  138 sheet(s): Carátula, Índice, Cuadro 1.2, Cuadro 1.2.1, Cuadro 1.2.2, Cuadro 1.2.3, Cuadro 1.2.4, Cuadro 1.2.5, Cuadro 1.2.6, Cuadro 1.2.7, Cuadro 1.2.8, Cuadro 1.2.9, Cuadro 1.2.10, Cuadro 1.2.11, Cuadro 1.2.12, Cuadro 1.2.13, Cuadro 1.2.14, Cuadro 1.2.15, Cuadro 1.2.16, Cuadro 1.2.17, Cuadro 1.2.18, Cuadro 1.2.19, Cuadro 1.2.20, Cuadro 1.2.21, Cuadro 1.2.22, Cuadro 1.2.23, Cuadro 1.2.24, Cuadro 1.2.25, Cuadro 1.2.26, Cuadro 1.2.27, Cuadro 1.2.28, Cuadro 1.2.29, Cuadro 1.2.30, Cuadro 1.2.31, Cuadro 1.2.32, Cuadro 1.2.33, Cuadro 1.2.34, Cuadro 1.2.35, Cuadro 1.2.36, Cuadro 1.2.37, Cuadro 1.2.38, Cuadro 1.2.39, Cuadro 1.2.40, Cuadro 1.2.41, Cuadro 1.2.42, Cuadro 1.2.43, Cuadro 1.2.44, Cuadro 1.2.45, Cuadro 1.2.46, Cuadro 1.2.47, Cuadro 1.2.48, Cuadro 1.2.49, Cuadro 1.2.50, Cuadro 1.2.51, Cuadro 1.2.52, Cuadro 1.2.53, Cuadro 1.2.54, Cuadro 1.2.55, Cuadro 1.2.56, Cuadro 1.2.57, Cuadro 1.2.58, Cuadro 1.2.59, Cuadro 1.2.60, Cuadro 1.2.61, Cuadro 1.2.62, Cuadro 1.2.63, Cuadro 1.2.64, Cuadro 1.2.65, Cuadro 1.2.66, Cuadro 1.2.67, Cuadro 1.2.68, Cuadro 1.2.69, Cuadro 1.2.70, Cuadro 1.2.71, Cuadro 1.2.72, Cuadro 1.2.73, Cuadro 1.2.74, Cuadro 1.2.75, Cuadro 1.2.76, Cuadro 1.2.77, Cuadro 1.2.78, Cuadro 1.2.79, Cuadro 1.2.80, Cuadro 1.2.81, Cuadro 1.2.82, Cuadro 1.2.83, Cuadro 1.2.84, Cuadro 1.2.85, Cuadro 1.2.86, Cuadro 1.2.87, Cuadro 1.2.88, Cuadro 1.2.89, Cuadro 1.2.90, Cuadro 1.2.91, Cuadro 1.2.92, Cuadro 1.2.93, Cuadro 1.2.94, Cuadro 1.2.95, Cuadro 1.2.96, Cuadro 1.2.97, Cuadro 1.2.98, Cuadro 1.2.99, Cuadro 1.2.100, Cuadro 1.2.101, Cuadro 1.2.102, Cuadro 1.2.103, Cuadro 1.2.104, Cuadro 1.2.105, Cuadro 1.2.106, Cuadro 1.2.107, Cuadro 1.2.108, Cuadro 1.2.109, Cuadro 1.2.110, Cuadro 1.2.111, Cuadro 1.2.112, Cuadro 1.2.113, Cuadro 1.2.114, Cuadro 1.2.115, Cuadro 1.2.116, Cuadro 1.2.117, Cuadro 1.2.118, Cuadro 1.2.119, Cuadro 1.2.120, Cuadro 1.2.121, Cuadro 1.2.122, Cuadro 1.2.123, Cuadro 1.2.124, Cuadro 1.2.125, Cuadro 1.2.126, Cuadro 1.2.127, Cuadro 1.2.128, Cuadro 1.2.129, Cuadro 1.2.130, Cuadro 1.2.131, Cuadro 1.2.132, Cuadro 1.2.133, Cuadro 1.2.134, Cuadro 1.2.135
+
