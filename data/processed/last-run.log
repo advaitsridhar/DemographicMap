@@ -1,2 +1,180 @@
-page: https://otu.opp.gub.uy/?q=listados%2Flistados_datos_formato&id=2825&deptos=3
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+probe_pdf: https://ihsi.gouv.ht/public/documents/recensement/Manuel%20RGPH%202003.pdf
+  801,133 bytes
+  65 pages
+probe_pdf: 65 pages, printing [25, 26, 31, 32, 33]
+
+--- page 25 ----------------------------------------------------
+IV E RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L’HABITAT  IHSI/RGPH
+MANUEL D’ORGANISATION DU RGPH  25
+Une fois sur le terrain, l’agent cartographe doit s’assurer qu’il se trouve effectivement
+dans la zone de travail dans laquelle il a été affecté et prendra les dispositions suivantes :
+­  Déterminer un point de repère ou point de départ sur la carte.  Ce point peut être
+l’intersection de deux routes ou une rivière.
+­  Identifier ce point sur le terrain avec l’aide du guide
+­  Positionner ce point à l’aide du GPS
+­  Déterminer un sens d’orientation, si possible dans le sens des aiguilles d’une
+montre.
+­  Eviter d’empiéter sur les zones de travail limitrophes.
+.  Encodage des maisons sur le Terrain
+A  l’intérieur  de  sa  zone  de travail,  l’agent  cartographe  procédera  à  l’encodage  des
+maisons de la façon suivante:
+­  Numéroter toutes les maisons sur le terrain au marqueur
+­  Encoder toutes les maisons en saisissant sur le PSION le numéro inscrit sur la façade
+de la maison.
+­  A l’aide du GPS, saisir les coordonnées géographiques de toutes les maisons
+­  Noter l’adresse de chaque maison
+­  Entrer les informations suivantes concernant l’utilisation du bâtiment:
+Résidence seulement
+Résidence et autre
+Autre seulement
+Pour chaque cinq (5) bâtiments numérotés,, poser les questions suivantes pour le 5ème
+s’il rentre dans les deux premières catégories précitées :
+­  Nombre de logements (ménages) par bâtiment
+­  Nom d’un chef de ménage choisi parmi les logements identifiés dans le bâtiment.
+­  Nombre de personnes vivant dans ce ménage.
+b)   MILIEU URBAIN
+En milieu Urbain, l’agent cartographe sera muni des outils et instruments suivants :
+­  Un GPS
+­  Un PSION
+­  Le filaire de sa zone de travail
+­  Une carte d’ensemble représentant sa zone de travail ainsi que les zones de travail
+avoisinantes, indiquant clairement les voies d’accès.
+
+--- page 26 ----------------------------------------------------
+IV E RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L’HABITAT  IHSI/RGPH
+MANUEL D’ORGANISATION DU RGPH  26
+.  Identification et Délimitation de la Zone de Travail
+L’agent cartographe doit identifier sur le terrain les rues délimitant sa zone de travail.  Il
+doit aussi s’assurer à ne pas empiéter sur les zones de travail avoisinantes.
+.  Encodage des Maisons sur le Terrain
+A  l’intérieur  de  sa  zone  de travail,  l’agent  cartographe  procèdera  à  l’encodage  des
+maisons de la façon suivante.
+­  Numéroter toutes les maisons sur le terrain au marqueur
+­  Encoder toutes les maisons en saisissant sur le PSION le numéro inscrit sur la
+façade de la maison.
+­  A l’aide du GPS, saisir les coordonnées géographiques de toutes les maisons.
+­  Noter l’adresse de chaque maison
+­  Entrer les informations suivantes concernant l’utilisation du bâtiment:
+Résidence seulement
+Résidence et autre
+Autre seulement
+Pour chaque dix (10) bâtiments numérotés,, poser les questions suivantes pour le 10ème
+s’il rentre dans les deux premières catégories précitées :
+­  Nombre de logements (ménages) par bâtiment
+­  Nom d’un chef de ménage choisi parmi les logements identifiés dans le bâtiment.
+­  Nombre de personnes vivant dans ce ménage.
+3.4.2 Approches Techniques et méthodologiques
+a) Type de Recensement
+Le IVème Recensement Général de la Population et de l’Habitat sera un recensement de
+droit.  La population sera recensée par rapport à sa résidence habituelle et non par rapport à son
+lieu de présence.  Les résidents habituels d’une localité seront considérés comme les individus
+ayant déjà passé six (6) mois dans cette localité ou moins que six (6) mois, mais avec l’intention
+d’y rester.
+b)Type de Collecte
+La méthode qui sera employée pour la collecte des données est l’interview directe.  Des
+agents recenseurs préalablement formés seront délégués le jour du recensement à l’adresse des
+différents ménages de leur zone de travail, en vue de poser à leurs membres les différentes
+questions prévues.  Les réponses obtenues à ces interrogations seront notées sur les formulaires
+préparés à cette fin.
+c)Plan d’analyse
+Le plan d’analyse est l’ensemble des dispositions ou procédures techniques adoptées en vue de
+transformer  les  informations  recueillies  lors  du  dénombrement  en  résultats  concrets
+
+--- page 31 ----------------------------------------------------
+IV E RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L’HABITAT  IHSI/RGPH
+MANUEL D’ORGANISATION DU RGPH  31
+Il faudra en effet assurer la gestion d’environ deux million cinq cent mille questionnaires
+à travers un processus complexe allant de leur réception de la maison d’impression à leur
+distribution aux différents point de collecte établis sur tout le territoire de la République puis, à
+leur récupération, leur stockage et leur répartition aux différents agents chargés de la critique, de
+la codification et de la saisie des informations qu’ils contiennent.
+Ainsi, le rez­de­chaussée (environ 600m 2  de surface) servira de lieu de stockage des
+questionnaires et abritera le bureau du responsable chargé d’en assurer la gestion.
+L’étage qui sera réparti en quatre (4) grandes salles abritera les structures de codification,
+de critique et de saisie de telle manière que l’ensemble des opérations relatives au traitement des
+données du Recensement se déroulent dans un environnement offrant les conditions optimales de
+fiabilité et de sécurité.
+l) Mode de traitement
+Le logiciel IMPS («Integrated Microcomputer Processing System» du «US Bureau of
+the Census ») sera employé dans  le traitement des données du recensement.   Ce logiciel
+permettra de réaliser les tâches suivantes :   saisie, correction, tabulation, divulgation, analyse
+statistique et système de contrôle qui peuvent être employés comme un système de traitement
+complet ou comme modules indépendants.
+Ce logiciel est recommandé pour les pays où il y a très peu d’experts locaux et où les
+ressources sont limitées.  Les données du recensement peuvent être traitées par micro­ordinateurs
+indépendants ou intégrés dans un réseau.  Il est facile de développer le dictionnaire des données,
+l’écran de saisie et produire des tableaux rapides dans la version « Windows » de ce logiciel.
+Même  le  personnel  non  spécialisé  peut  réaliser  ces  tâches.    L’IMPS  permet  également  la
+vérification  de  la  consistance  entre  les  registres  appartenant  aux  différentes  sections  du
+questionnaire.
+Une fois que les données du recensement se trouvent en milieu magnétique, il sera
+crée,  à  partir  de  REDATAM  PLUS  une  base  de  données  pour  faciliter  l’obtention  de
+l’information statistique au niveau des petites aires géographiques. Des tableaux  statistiques
+simples  peuvent  être  produits  par  l’utilisateur  pour  les  plus  petites  aires  qui  se  trouvent
+hiérarchiquement définies
+
+--- page 32 ----------------------------------------------------
+IV E RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L’HABITAT  IHSI/RGPH
+MANUEL D’ORGANISATION DU RGPH  32
+m) Analyse des Résultats
+Le  succès  d’une  opération  de  recensement  ne  peut  être  complet  que  lorsque  les  données
+collectées sont analysées et publiées dans un délai raisonnable après la collecte.  Pour atteindre
+ce succès , une stratégie en vue d’analyser les données a été retenue et mise en place.  L’objectif
+de  cette  stratégie  vise  à  publier  rapidement  les  résultats  analysés  tout  en  privilégiant  les
+compétences nationales.  Quatre phases essentielles caractérisent cette stratégie :  l’élaboration
+du plan d’analyse ; la formation à la production des tableaux d’analyse ; la rédaction du rapport
+provisoire et la finalisation de ces rapports dans le cadre de séminaire – ateliers.
+Pour chacun des thèmes, un schéma technique devant aboutir à l’évaluation et à l’analyse
+des données recueillies est élaboré.  L’ensemble des schémas constitue le plan d’analyse des
+données du recensement ; ce plan intègre un plan de tabulation annexé au plan d’analyse, sous
+forme de maquettes de tableaux statistiques comportant non seulement les croisements souhaités
+des différentes variables pressenties mais aussi les filtres indispensables aux informaticiens lors
+de la tabulation des données.  L’analyse et la tabulation ainsi envisagées permettent de se fixer
+non seulement sur la liste provisoire des variables mais surtout sur les modalités de chacune de
+ces variables à observer lors du dénombrement.
+Avant la rédaction des rapports provisoires d’analyse, des formations au profit des cadres
+de l’IHSI en charge des travaux d’analyse sont organisées.  Ces séances de formation sont
+animées par des spécialistes en traitement de données et en analyse démographique.  Elle
+consiste à donner la capacité technique aux cadres en vue de produire eux­mêmes les tableaux
+d’analyse complémentaires définis par les besoins d’analyse.  Ceci a pour avantage de réduire la
+pression sur l’équipe de traitement de données au moment de la tabulation.
+La rédaction des rapports provisoires d’analyse commence dès que les tableaux d’analyse
+sont disponibles ; cette phase dure trois à six mois.  Durant la période de rédaction des rapports,
+un appui technique est apporté aux cadres chargés de l’analyse.  Il peut s’agir d’un appui
+international (nord­sud, sud­sud, des institutions régionales de formation ou des organisations
+internationales.
+Le séminaire aura lieu dès que les rapports provisoires seront disponibles.  L’objectif de
+ce séminaire sera de finaliser les versions provisoires du rapport avec l’appui technique des
+experts nationaux et internationaux.
+Les produits escomptés sont les suivants :
+Volume 1 :  Les tableaux statistiques (9 mois après le dénombrement)
+.  Tome 1 :  Résultats préliminaires (provisoire)
+.  Tome 2 :  Les tableaux prioritaires
+.  Tome 3 :  Résultats définitifs, ensemble Haiti
+.  Tome 4 :  Résultat définitifs par département
+
+--- page 33 ----------------------------------------------------
+IV E RECENSEMENT GÉNÉRAL DE LA POPULATION ET DE L’HABITAT  IHSI/RGPH
+MANUEL D’ORGANISATION DU RGPH  33
+.  Tome 5 :  Fichier des communes
+Volume spécial:  Evaluation de la qualité des données (10 mois après le dénombrement)
+Volume 2:  Rapports d’analyses :  Etat de la population (18 mois après le dénombrement)
+.  Tome 2 :  Structure par sexe et âge et répartitiongéographique
+.  Tome 3 :  Ménage et conditions d’habitation
+.  Tome 4 :  Situation matrimoniale et nuptialité
+.  Tome 5 :  Alphabétisation, scolarisation et instruction
+.  Tome 6 :  Caractéristiques économiques de la population
+.  Tome 7 :  La religion
+Volume 3 :  Dynamique de la population (18 mois après le dénombrement)
+.  Tome 1 :  Fécondité
+.  Tome 2 :  Mortalité
+.  Tome 3 :  Migration et urbanisation
+Volume 4 :  Les sous populations (18 mois après le dénombrement)
+.  Tome 1 :  La situation des enfants en 2001 à Haiti
+.  Tome 2 :  La situation des femmes en 2001 à Haiti
+.  Tome 3 :  Les handicapés
+.  Tome 4 :  Les personnes âgées
+Volume 5 :  Documents d’appui professionnel (18 mois après le dénombrement)
+.  Tome 1 :  Synthèse des principaux résultats
+.  Tome 2 :  Atlas démographique
+.  Tome 3 :  Les perspectives démographiques
