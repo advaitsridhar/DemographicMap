@@ -98,6 +98,10 @@ PROVINCES = {"Puerta Plata": "Puerto Plata"}
 # ONE's 2022 spellings of municipios -> the boundary file's, beyond those
 # uscb_age_sex writes for the Bureau's 2010 names.
 MUNICIPIOS = {"Villa La Mata": "La Mata", "Cambita Garavitos": "Cambita Garabito"}
+# Polygons the boundary file draws for a distrito municipal rather than a
+# municipio -> ONE's name for the district. The district's figures go to its
+# polygon, and are taken out of its municipio's, whose polygon leaves it out.
+DISTRICT_POLYGONS = {"La Laguna de Nisibón": "Las Lagunas de Nisibón"}
 # How far a polygon's 2022 count may move from its 2010 count before the
 # municipio is taken to be a different unit from the polygon's.
 GROWTH = (0.75, 1.75)
@@ -371,6 +375,8 @@ def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
             provinces[bare(area["label"])] = {"area": area, "municipios": []}
         if k == "municipio":
             provinces[bare(stack["province"]["label"])]["municipios"].append(area)
+        if k == "part" and "municipio" in stack:
+            stack["municipio"].setdefault("parts", []).append(area)
     if country is None or country["values"][0] != total:
         raise SystemExit(f"dominican_census: {what}: the country is "
                          f"{country and country['values'][0]}, not ONE's {total:,}")
@@ -492,8 +498,11 @@ def absorb(provinces: dict[str, dict[str, Any]], unbound: list[str],
         for area in entry["municipios"]:
             name = bare(area["label"])
             parent = districts.get((fold(province), fold(name)))
+            # A municipio's own head district shares its name, so a 2010
+            # district of the same name (Oviedo's) is no parent to fold into.
             host = next((a for a in entry["municipios"]
-                         if parent and fold(bare(a["label"])) == fold(parent)), None)
+                         if parent and a is not area and fold(parent) != fold(name)
+                         and fold(bare(a["label"])) == fold(parent)), None)
             if name not in unbound or host is None:
                 keep.append(area)
                 continue
@@ -512,6 +521,24 @@ def absorb(provinces: dict[str, dict[str, Any]], unbound: list[str],
             done.append(f"{name} into {bare(host['label'])} ({province})")
         entry["municipios"] = keep
     return done
+
+
+def carve(municipio: dict[str, Any], district: dict[str, Any]) -> dict[str, Any]:
+    """A municipio's area less one of its districts: counts and age rows, group by group."""
+    mine, theirs = dict(municipio["ages"]), dict(district["ages"])
+    missing = sorted(set(theirs) - set(mine))
+    if missing:
+        raise SystemExit(f"dominican_census: {district['label']} has ages {missing} that "
+                         f"{municipio['label']} has not")
+    zero = [0] * 9
+    ages = [(lb, [a - b for a, b in zip(v[:9], theirs.get(lb, zero)[:9])] + [None])
+            for lb, v in municipio["ages"]]
+    if any(n < 0 for _, v in ages for n in v[:9]):
+        raise SystemExit(f"dominican_census: {district['label']} has more people in an age "
+                         f"group than {municipio['label']}")
+    return {**municipio, "values": [a - b for a, b in zip(municipio["values"][:9],
+                                                          district["values"][:9])] + [None],
+            "ages": ages, "carved": bare(district["label"].replace("(D.M.)", ""))}
 
 
 def binding_2010(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> dict[str, int]:
@@ -608,6 +635,27 @@ def adapter() -> int:
     bound, missing = bind(offices, admin2, parents, aliases)
     log(f"  {len(bound)} municipios bound to their polygons; {len(missing)} not: "
         + "; ".join(missing))
+    # A polygon the boundary file draws for a distrito municipal: its figures
+    # are the district's, and its municipio's polygon is the municipio less it.
+    taken = set(bound.values())
+    for shape in admin2:
+        district_name = DISTRICT_POLYGONS.get(shape["name"])
+        if shape["id"] in taken or district_name is None:
+            continue
+        found = [(code, part) for code, area in areas_by.items() for part in area.get("parts", [])
+                 if fold(part["label"].replace("(D.M.)", "")) == fold(district_name)
+                 and offices[code][1] == parents.get(shape["parent"])]
+        if len(found) != 1:
+            raise SystemExit(f"dominican_census: {len(found)} districts named {district_name!r} "
+                             f"in {parents.get(shape['parent'])}")
+        code, part = found[0]
+        areas_by[code] = carve(areas_by[code], part)
+        new_code = f"{code.split('-')[0]}-{fold(district_name)}"
+        offices[new_code] = (district_name, offices[code][1])
+        areas_by[new_code] = part
+        bound[new_code] = shape["id"]
+        log(f"  {shape['name']}: the distrito municipal {part['label']} "
+            f"({part['values'][0]:,}), taken out of {offices[code][0]}")
     in_2010 = binding_2010(admin1, admin2)
     labels = {s["id"]: s["name"] for s in admin2}
     refused = []
@@ -615,11 +663,19 @@ def adapter() -> int:
         area = areas_by[code]
         before = in_2010.get(sid)
         growth = area["values"][0] / before if before else None
-        if growth is None or not GROWTH[0] <= growth <= GROWTH[1]:
+        # A district's polygon had no municipio of its own in 2010 to compare
+        # with; it is bound by its name within its municipio, above.
+        district = offices[code][0] in DISTRICT_POLYGONS.values()
+        if not district and (growth is None or not GROWTH[0] <= growth <= GROWTH[1]):
             refused.append(f"{offices[code][0]} ({labels[sid]}): {area['values'][0]:,} in 2022 "
                            f"against {before} in 2010")
             continue
         fields = age_figures(area)
+        if area.get("carved"):
+            fields["population_note"] = (
+                f"{offices[code][0]} without the distrito municipal of {area['carved']}, which "
+                "the boundary file draws as a polygon of its own and which carries its own "
+                "figures there.")
         if area.get("absorbed"):
             fields["population_note"] = (
                 f"{offices[code][0]} with {', '.join(area['absorbed'])}, a distrito municipal of "

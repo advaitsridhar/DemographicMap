@@ -144,6 +144,29 @@ class AbsorbTest(unittest.TestCase):
         provinces = {"Pedernales": {"area": None, "municipios": [oviedo]}}
         self.assertEqual(dc.absorb(provinces, ["Oviedo"], {}), [])
         self.assertEqual(provinces["Pedernales"]["municipios"], [oviedo])
+        # Nor is it folded into itself for its head district of the same name.
+        self.assertEqual(dc.absorb(provinces, ["Oviedo"], {("pedernales", "oviedo"): "OVIEDO"}),
+                         [])
+        self.assertEqual(provinces["Pedernales"]["municipios"][0]["values"][0], 20)
+
+
+class CarveTest(unittest.TestCase):
+    def test_a_district_is_taken_out_of_its_municipio(self):
+        higuey = dc.areas(block("Municipio Higüey", 43, 22, 21,
+                                {k: (a[0] + b[0], a[1] + b[1]) for (k, a), b in
+                                 zip(AGES_A.items(), AGES_B.values())}), 10)[0]
+        district = dc.areas(block("Las Lagunas de Nisibón (D.M.)", 20, 10, 10, AGES_B), 10)[0]
+        rest = dc.carve(higuey, district)
+        self.assertEqual(rest["values"][:3], [23, 12, 11])
+        self.assertEqual(dict(rest["ages"])["1-4"][:3], [8, 4, 4])
+        self.assertEqual(rest["carved"], "Las Lagunas de Nisibón")
+
+    def test_a_district_bigger_than_its_municipio_stops_the_run(self):
+        small = dc.areas(block("Municipio X", 23, 12, 11, AGES_A), 10)[0]
+        big = dc.areas(block("Y (D.M.)", 40, 20, 20,
+                             {k: (2 * m + 1, 2 * w + 1) for k, (m, w) in AGES_A.items()}), 10)[0]
+        with self.assertRaises(SystemExit):
+            dc.carve(small, big)
 
 
 if __name__ == "__main__":
