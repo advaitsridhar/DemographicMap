@@ -1,221 +1,28 @@
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
-page: https://www.ine.gub.uy/censo-2023
-  69,836 bytes
-  12 matching link(s)
-  - Pasar al contenido principal
-    https://www.ine.gub.uy/censo-2023#contenido
-  - Institucional
-    https://www.ine.gub.uy/censo-2023
-  - Índice de Precios del Consumo (Var.12 meses) 08/26: 4,55%
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/IPC/Base%20Octubre%202022=100/IPC%20gral%20y%20variaciones_base%202022.xlsx
-  - Índice Medio de Salarios (Var.12 meses) 07/26: 5,71%
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMS%20C1%20Gral%20emp%20M%20B08.xls
-  - Indice Medio de Salarios Nominales (Var. 12 meses) 07/26: 5,86%
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMSN%20M%20B08.xls
-  - Índice de Costo de la Construcción de Viviendas (Var. 12 meses) 07/26:
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/ICCV/Base%20Junio%202023=100/ICC%20C1%20B23%20M.xlsx
-  - Unidad Indexada (UI) valores
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/UI/Unidad%20Indexada.xls
-  - Unidad Previsional (UP) valores
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/UP/Unidad%20Previsional%20-%20UP.xls
-  - Base de Prestaciones y Contribuciones (BPC)
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/BPC/BPC.xlsx
-  - Subsitio INEduca Censo 2023
-    https://ineduca.ine.gub.uy/
-  - Censo de Población, Hogares y Viviendas 2023
-    https://www.ine.gub.uy/instituto-nacional-estadistica/censos2023pvh
-  - Censo Nacional Agropecuario
-    https://www.gub.uy/instituto-nacional-estadistica/censoagropecuario
-page: https://www.gub.uy/instituto-nacional-estadistica/
-  69,836 bytes
-  10 matching link(s)
-  - Índice de Precios del Consumo (Var.12 meses) 08/26: 4,55%
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/IPC/Base%20Octubre%202022=100/IPC%20gral%20y%20variaciones_base%202022.xlsx
-  - Índice Medio de Salarios (Var.12 meses) 07/26: 5,71%
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMS%20C1%20Gral%20emp%20M%20B08.xls
-  - Indice Medio de Salarios Nominales (Var. 12 meses) 07/26: 5,86%
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMSN%20M%20B08.xls
-  - Índice de Costo de la Construcción de Viviendas (Var. 12 meses) 07/26:
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/ICCV/Base%20Junio%202023=100/ICC%20C1%20B23%20M.xlsx
-  - Unidad Indexada (UI) valores
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/UI/Unidad%20Indexada.xls
-  - Unidad Previsional (UP) valores
-    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/UP/Unidad%20Previsional%20-%20UP.xls
-  - Base de Prestaciones y Contribuciones (BPC)
-    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/BPC/BPC.xlsx
-  - Subsitio INEduca Censo 2023
-    https://ineduca.ine.gub.uy/
-  - Censo de Población, Hogares y Viviendas 2023
-    https://www.gub.uy/instituto-nacional-estadistica/censos2023pvh
-  - Censo Nacional Agropecuario
-    https://www.gub.uy/instituto-nacional-estadistica/censoagropecuario
-page: https://www.onei.gob.cu/
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)>
-page: https://www.ine.gob.bo/
-  299,706 bytes
-  2 matching link(s)
-  - INE UNE ESFUERZOS CON 44 TERRITORIOS DE COCHABAMBA PARA IMPULSAR EL CE
-    https://www.ine.gob.bo/index.php/ine-une-esfuerzos-con-44-territorios-de-cochabamba-para-impulsar-el-censo-agropecuario/
-  - CENSO AGROPECUARIO: INE INTENSIFICA LA FORMACIÓN DE BRIGADAS PARA INIC
-    https://www.ine.gob.bo/index.php/censo-agropecuario-ine-intensifica-la-formacion-de-brigadas-para-iniciar-el-trabajo-de-campo-en-octubre/
-page: https://inec.cr/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://www.ine.gob.ve/
-  609,030 bytes
-  218 matching link(s)
-  - Coeficiente GINI
-    https://ine.gob.ve/wp-content/uploads/2026/09/COEFICIENTE-GINI.xlsx
-  - Censo
-    https://www.ine.gob.ve/
-  - Viviendas, Hogares y Personas
-    https://ine.gob.ve/wp-content/uploads/2026/06/VIVIENDAS-HOGARES-Y-PERSONAS-CENSO-2011.xlsx
-  - Voz/Habla
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Voz-Habla-Censo-2011.xlsx
-  - Visual
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Visual-Censo-2011.xlsx
-  - Respiratoria
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Respitaroria-Censo-2011.xlsx
-  - Neurológica
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Neurologica-Censo-2011.xlsx
-  - Musculo/Esquelética
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Musculo-Esquelatica-Censo-2011.xlsx
-  - Mental/Psicosocial
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Mental-Psicosocial-Censo-2011.xlsx
-  - Mental/Intelectual
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Mental-Intelectual-Censo-2011.xlsx
-  - Mental/Cardiovascular
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Cardiovascular-Censo-2011.xlsx
-  - Auditiva
-    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Auditiva-Censo-2011.xlsx
-  - Nacidos en Venezuela 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Nacida-en-Venezuela-Censo-2011.xlsx
-  - Grupos de Edad 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Grupos-Edad-Censo-2011.xlsx
-  - Por Sexo 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Sexo-Censo-2011.xlsx
-  - Lugar de Nacimiento 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Lugar-Nacimiento-Censo-2011.xlsx
-  - Urbana/Rural 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Urbana-y-Rural-Censo-2011.xls
-  - Situación Conyugal 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Situacion-Conyugal-Censo-2011.xls
-  - Pueblos Indígenas 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Pueblos-Indigenas-Censo-2011.xls
-  - Por Sexo 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Por-Sexo-Censo-2011.xls
-  - Grupos de Edad 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Grupos-de-Edad-Censo-2011.xls
-  - Edad Escolar 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Edad-Escolar-Censo-2011.xls
-  - Alfabetismo
-    https://ine.gob.ve/wp-content/uploads/2026/04/Alfabetismo-Censo-2011.xls
-  - Censo 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Servicios-Censo_2011.xlsx
-  - Condición Vivienda 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Condicion-Vivienda-Censo-2011.xlsx
-  - Viviendas Ocupadas 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Viviendas-Ocupadas-Censo-2011.xlsx
-  - Hacinamiento 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Hacinamiento-Censo-2011.xlsx
-  - Deficiencia Económica
-    https://ine.gob.ve/wp-content/uploads/2026/04/Deficiencia-Economica-Censo-2011.xlsx
-  - Población por Sexo 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Sexo-Censo-2011-1.xlsx
-  - Nacido en Venezuela 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Nacida-Venezuela-Censo-2011.xlsx
-  - Lugar de Nacimiento 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Lugar-Nacimiento-Censo-2011-1.xlsx
-  - Grupos de Edad 2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Grupos-Edad-Censo-2011-1.xlsx
-  - Por Capítulo 1998-2018
-    https://ine.gob.ve/wp-content/uploads/2026/04/Exportaciones-po-Capitulo-1998-2018.xls
-  - Por Capítulo 1998-2018
-    https://ine.gob.ve/wp-content/uploads/2026/04/Importaciones-por-Capitulo-1998-2018.xls
-  - Tabulados Básicos
-    https://ine.gob.ve/wp-content/uploads/2026/09/TRABAJO.xlsx
-  - Nacional 2001-2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Nacional-Censo-2001-y-2011.xls
-  - Distr. Capital 2001-2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Distrito-Capital-Censo-2001-y-2011.xls
-  - Amazonas 2001-2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Estado-Amazonas-Censo-2001-y-2011.xls
-  - Anzoátegui 2001-2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Estado-Anzoategui-Censo-2001-y-2011.xls
-  - Apure 2001-2011
-    https://ine.gob.ve/wp-content/uploads/2026/04/Estado-Apure-Censo-2001-y-2011.xls
-page: https://ine.gob.hn/v4/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://www.inide.gob.ni/
-  136,105 bytes
-  10 matching link(s)
-  - Censo Nacional Agropecuario (CENAGRO)
-    https://www.inide.gob.ni/Estadisticas/censoCENAGRO
-  - Censo Económico
-    https://www.inide.gob.ni/Home/censoEcoUrbano
-  - Censo de Población y Vivienda (CEPOV) Historico
-    https://www.inide.gob.ni/Estadisticas/censoCEPOV
-  - Nota de Prensa IX Censo Nacional de Población, V Censo Nacional de Viv
-    https://www.inide.gob.ni/docs/cepov2023/decretos/NP - CAPACITACION  PARA EL XI CENSO NACIONAL.pdf
-  - Ver nota
-    https://www.inide.gob.ni/docs/Nota_25/NP_INICIA_V_CENSO_NACIONAL_AGROPECUARIO_2025.pdf
-  - Nota de prensa ENIF- Abril 2024
-    https://www.inide.gob.ni/docs/enif/Nota_de_Prensa_Resultados_de_la_Encuesta_de_Inclusion_Financiera_2023_INIDE.pdf
-  - Nota de prensa Turismo primer trimestre 2026
-    https://www.inide.gob.ni/docs/turismo/Turis2026/ITrim2026/Nota_de_prensa_resultados_de_la_Encuesta_de_Turismo_del_primer_trimestre_2026.pdf
-  - Nota Empleo Mensual-Mayo 2026
-    https://www.inide.gob.ni/docs/emensual/eme_2026/eme_may26/Nota_de_Prensa_Resultados_de_Encuesta_de_Empleo_Mensual_de_mayo2026.pdf
-  - Construcción Privada Primer Trimestre 2026
-    https://www.inide.gob.ni/docs/icp/Cons_Priv2026/1trim2026/Nota_de_Prensa_Resultados_de_Encuesta_de_la_Construccion_Privada_en_primer_trimestre2026.pdf
-  - Calendario Estadístico
-    https://www.inide.gob.ni/docs/estadisticas/Calendario/Calendario_de_publicaciones2022.xlsx
-page: https://www.ine.gov.py/
-  208,789 bytes
-  21 matching link(s)
-  - Censos
-    https://www.ine.gov.py/
-  - Censo Económico Nacional
-    https://www.ine.gov.py/publicacion/20/censo-economico-nacional
-  - Censo Nacional de Población y Viviendas 2012
-    https://www.ine.gov.py/publicacion/33/censo-nacional-de-poblacion-y-viviendas-2012
-  - Resultados Finales del Censo 2002
-    https://www.ine.gov.py/microdatos/acceso-informacion-censo.php
-  - IV Censo Nacional Indígena 2022- Resultados de Población y Viviendas
-    https://www.ine.gov.py/publicacion/31/poblacion-indigena
-  - Resultados finales Estructura de la población por edad y sexo 2022
-    https://www.ine.gov.py/publicacion/2/poblacion
-  - Necesidades Básicas Insatisfechas (NBI), Resultados Censo 2022
-    https://www.ine.gov.py/publicacion/4/pobreza
-  - Principales datos sobre Educación de la Población- Resultados del Cens
-    https://www.ine.gov.py/publicacion/6/educacion
-  - Unidades Economicas por Departamento Censo Economico 2011
-    https://www.ine.gov.py/vt/Poblacion-Ocupada-por-Departamento-Censo-Economico-2011.php
-  - Población Ocupada por Departamento Censo Económico 2011
-    https://www.ine.gov.py/vt/Unidades-Economicas-por-Departamento-Censo-Economico-2011.php
-  - 
-    https://www.ine.gov.py/censo2022/
-  - 
-    https://www.ine.gov.py/publicaciones/investigaciones-tematicas-censo2022/
-  - 
-    https://www.ine.gov.py/noticias/3053/representante-del-ine-participa-como-observadora-internacional-en-el-censo-nacional-de-poblacion-y-vivienda-de-honduras
-  - 
-    https://www.ine.gov.py/noticias/3047/funcionarios-del-ine-presentan-al-director-nacional-los-resultados-de-su-capacitacion-en-corea-del-sur
-  - 
-    https://www.ine.gov.py/censotransparente/
-  - Cuadros - Anexos
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/338/Cuadros_Población Juvenil_EPHC_2025_INE.xls
-  - ANEXOS I
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/333/Anexos I tabulados_IPM_py_2022-2025_INE.xlsx
-  - ANEXOS II
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/333/Anexos II tabulados_IPM py_2016_2021_INE.xlsx
-  - Cuadros - Anexos
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/332/NIÑEZ Y ADOLESCENCIA_2025_ANUAL.xlsx
-  - CUADROS-ANEXOS
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/328/Anexo_EPHC_2017-2026.xlsx
-  - ANEXO
-    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/330/ANEXO IPM CNPV_2022_INE.xlsx
-page: https://onec.bcr.gob.sv/
-  133,591 bytes
-  0 matching link(s)
-page: https://www.one.gob.do/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+  caba: landing page lists 103 workbooks
+  Ciudad Autónoma de Buenos Aires: 15 departments, 3,121,707 people, 74,724 indigenous, 40,670 Afro-descendant
+  bsas: landing page lists 104 workbooks
+  Buenos Aires: 135 departments, 17,523,996 people, 371,830 indigenous, 128,804 Afro-descendant
+  catamarca: landing page lists 103 workbooks
+  Catamarca: 16 departments, 429,562 people, 19,668 indigenous, 1,965 Afro-descendant
+  chaco: landing page lists 103 workbooks
+  Chaco: 25 departments, 1,129,606 people, 53,798 indigenous, 5,357 Afro-descendant
+  chubut: landing page lists 103 workbooks
+  Chubut: 15 departments, 592,621 people, 46,670 indigenous, 5,302 Afro-descendant
+  cordoba: landing page lists 103 workbooks
+  Córdoba: 26 departments, 3,840,905 people, 69,218 indigenous, 18,366 Afro-descendant
+  corrientes: landing page lists 103 workbooks
+  Corrientes: 25 departments, 1,212,696 people, 15,808 indigenous, 6,310 Afro-descendant
+  entre_rios: landing page lists 103 workbooks
+  Entre Ríos: 17 departments, 1,425,578 people, 18,693 indigenous, 8,910 Afro-descendant
+  formosa: landing page lists 103 workbooks
+  Formosa: 9 departments, 607,419 people, 47,459 indigenous, 2,956 Afro-descendant
+  jujuy: landing page lists 103 workbooks
+  Jujuy: 16 departments, 811,611 people, 81,538 indigenous, 5,583 Afro-descendant
+  lapampa: landing page lists 103 workbooks
+  La Pampa indigena_c1: no sheet for Chapaleufú
+  La Pampa: Chapaleufú's indigenous population from table 7
+  La Pampa: 22 departments, 361,859 people, 15,659 indigenous, 1,726 Afro-descendant
+  larioja: landing page lists 103 workbooks
+argentina_census: La Rioja est_c4: sheet 12.7 ('Cuadro\xa04.12.7.\xa0Provincia\xa0de\xa0La\xa0Rioja,\xa0departamento\xa0General\xa0Ángel\xa0V.\xa0Peñaloza.\xa0Total\xa0de\xa0población,\xa0por\xa0sexo\xa0registrado\xa0al\xa0nacer\xa0según\xa0edad.\xa0Año\xa02022') names no department; unplaced: Ángel Vicente Peñaloza
