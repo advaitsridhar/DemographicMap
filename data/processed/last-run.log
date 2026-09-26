@@ -1,6 +1,3438 @@
-page: https://cso.gov.tt/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://cso.gov.tt/census/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://cso.gov.tt/subjects/population-and-vital-statistics/population/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+dictionary: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases%5CCensos%5CSIM2011%5CBase%5CCR2011.dic
+  200 aplication/octet-stream 79,232 bytes
+  3,435 strings
+        11 NACIMIEN
+        36 LE 121 ALIAS P0
+        59 |=ø
+        63 |=ø
+        71 D:\Trabajos\Censo 2011\Censo Nacional\Redatam\CR2011 SIMð
+       156 NOT
+       235 àxg
+       239 4ØÅ
+       252 MIS
+       260 122
+       347 àtÄ
+       355 ÿÿÿÿÿÿÿÿ
+       683 L)ø
+       699 ü?ø
+       703 ü?ø
+       711 DATASET PCK '..\CR2011 SIM\CR20110070.rbf' SIZE 3
+       775 1 TOT
+       795 INTE
+       815 P05C Código de País
+       847 P05A Lugar de nacimiento(
+       887 P05B_Código_Provincia_Cantón
+       919 Ø@ø
+       923 Ø@ø
+       931 MISSING 4 NOTAPPLICABLE 0 ALIAS P054
+       983 D:\Trabajos\Censo 2011\Censo Nacional\Reda
+      1035 CR2011.dic20130308201703079
+      1063 D:\servers\cri\redbin\rpbases\Censos\SIM2011\Estbas\Base\
+      1124 CR2011
+      1136 .\CR20110000.ptr
+      1179 ¬ä\
+      1197 PROVINCI
+      1207 PROVINCI
+      1217 CR2011
+      1227 .\CR20110001.ptr
+      1247 IDPROVIN
+      1257 NOMBPROV
+      1278 tê\
+      1304 PROVINCI%
+      1314 DATASET PCK '.\CR20110001.rbf' SIZE 4
+      1355 1 TO 7
+      1363 INTEGER
+      1372 E 0
+      1378 Provincia
+      1389 MISSING 8 NOTAPPLICABLE 0
+      1439 IDPROVIN%
+      1449 DATASET CHR '.\CR20110002.rbf' SIZE 1
+      1492 STRING
+      1500 e\CR20110002.rbf' SIZE 1
+      1527 Provincia (string)
+      1561 P³]
+      1571 EXTTER+
+      1579 DATASET PCK '.\PROVINCI_EXTTER.rbf' SIZE 21
+      1626 2600 TO 11999
+      1641 REAL
+      1649 Extensión territorial a nivel de provincia en km2)
+      1700 MISSING 12000 NOTAPPLICABLE 0 DECIMALS 2
+      1765 DEFUNC+
+      1773 DATASET PCK '.\PROVINCI_DEFUNC.rbf' SIZE 13
+      1820 1400 TO 7999
+      1834 INTEGER
+      1845 Defunciones provinciales 2011
+      1876 MISSING 8000 NOTAPPLICABLE 0
+      1911 ¤?Â
+      1919 <Í.
+      1929 DEFUNMEC,
+      1939 DATASET PCK '.\PROVINCI_DEFUNMEC.rbf' SIZE 8
+      1987 40 TO 220
+      1998 INTEGER
+      2009 Defunciones provinciales menores de 1 año 2011
+      2057 MISSING 221 NOTAPPLICABLE 0
+      2091 <Í.
+      2099 $=Ì
+      2109 EMIGRA+
+      2117 DATASET PCK '.\PROVINCI_EMIGRA.rbf' SIZE 18
+      2164 24000 TO 167999
+      2181 INTEGER
+      2192 Emigración interna según cantón de residencia hace 5 años
+      2251 MISSING 168000 NOTAPPLICABLE 0
+      2296 |#Å
+      2306 ENMIGRANAC/
+      2318 DATASET PCK '.\PROVINCI_ENMIGRANAC.rbf' SIZE 19
+      2369 80000 TO 504999
+      2386 INTEGER
+      2397 Emigración interna según cantón de nacimiento
+      2444 MISSING 505000 NOTAPPLICABLE 0
+      2481 (l¤
+      2489 |#Å
+      2499 INMIGRA,
+      2508 DATASET PCK '.\PROVINCI_INMIGRA.rbf' SIZE 18
+      2556 25999 TO 135999
+      2573 INTEGER
+      2584 Inmigracion interna segun canton de residencia hace 5 años
+      2644 MISSING 136000 NOTAPPLICABLE 0
+      2681 ôÍO
+      2699 INMIGRANAC/
+      2711 DATASET PCK '.\PROVINCI_INMIGRANAC.rbf' SIZE 23
+      2762 72999 TO 4515999
+      2780 INTEGER
+      2791 Inmigracion interna segun canton de nacimiento
+      2839 MISSING 4516000 NOTAPPLICABLE 0
+      2895 NACIMC+
+      2903 DATASET PCK '.\PROVINCI_NACIMC.rbf' SIZE 15
+      2950 5500 TO 23000
+      2965 INTEGER&
+      2974 DATASET PCK '.\CR20110001.rbf' SIZE 4
+      3014 Nacimientos cantonales 2011
+      3043 MISSING 23001 NOTAPPLICABLE 0
+      3079 |#Å
+      3087 óÄ
+      3097 NPROVIN%
+      3106 DATASET CHR '.\\CR200144.rbf' SIZE 13
+      3147 0 TO 0
+      3155 STRING
+      3165 Nombre provincia
+      3197 ¼³¤
+      3207 NOMBPROV%
+      3217 DATASET CHR '.\\CR200064.rbf' SIZE 15
+      3258 0 TO 0
+      3266 STRING
+      3274 Nombre provincia
+      3301 ¤ A
+      3309 l×C
+      3319 CANTON
+      3327 CANTON
+      3335 PROVINCI
+      3347 .\CR20110002.ptr
+      3367 IDCANTON
+      3377 NOMBCANT
+      3398 ÀµÅ
+      3406 üSÄ
+      3424 CANTON%
+      3432 DATASET PCK '.\CR20110003.rbf' SIZE 5
+      3473 1 TO 20
+      3482 INTEGER
+      3493 Cantón
+      3501 MISSING 21 NOTAPPLICABLE 0
+      3552 IDCANTON%
+      3562 DATASET CHR '.\CR20110004.rbf' SIZE 2
+      3603 0 TO 0
+      3611 STRING
+      3621 Cantón (string)
+      3662 NOMBCANTON$
+      3674 DATASET CHR '.\CR200072.rbf' SIZE 24
+      3716 STRING
+      3724 Cantón (string)
+      3742 Nombre del cantón
+      3767 ¬´]
+      3775 ød
+      3785 DEFUNC$
+      3793 DATASET PCK '.\CR200088.rbf' SIZE 16
+      3833 20 TO 1805
+      3845 INTEGER
+      3854 del cantón
+      3867 Defunciones cantonales 2011
+      3896 MISSING 1806 NOTAPPLICABLE 0
+      3931 À÷d
+      3939 @Ùb
+      3949 EMIGRA$
+      3957 DATASET PCK '.\CR200080.rbf' SIZE 32
+      3997 397 TO 49654
+      4011 INTEGER£
+      4020 326 Nietos Del Padre Solano
+      4048 327 Nueva Esperanza De Pavas
+      4077 328 Nuevos Horizontes Las Gradas
+      4110 329 Obando Chan - Pista 2
+      4136 33 Asentamiento Censo 33
+      4161 330 Paja De Agua
+      4178 331 Palacios Universitarios
+      4206 332 Parcelas Ricardo Jiménez
+      4235 333 Parcelas Santa Fe
+      4257 334 Pasos Verdes Del Este
+      4283 335 Pata de Gallo
+      4301 336 Patiño
+      4312 337 Pindeco  La Mona - Paseo Las Flores -La mona Caída-
+      4368 338 Pinos Del Este
+      4387 339 Pista 1- Precario Detrás Cementerio- Karen Olsen-
+      4441 34 Asentamiento Censo 34
+      4466 340 Plan Piloto
+      4482 341 Playón De Barranca
+      4505 342 Poblado La Trinidad
+      4529 343 Pocosol Santa Fe
+      4550 344 Ponderosa 1 Ciudadela El Higuerón
+      4588 345 Ponderosa 2
+      4604 346 Ponderosa 3
+      4620 347 Precario Cervil - Las 85
+      4649 348 Precario Nogal
+      4668 349 Precario Tres O Nuevo Amanecer
+      4703 35 Asentamiento Censo 35
+      4728 350 Premio Nobel De La Paz
+      4755 351 Primero De Mayo
+      4775 352 Primero De Mayo - El Roble
+      4806 353 Proyecto Los Angeles-El Quebrador
+      4844 354 Puente Quemado -  Barrio Corazón De Jesús
+      4890 355 Puerto Soley
+      4907 356 Punta Mala -Barrio La Latas-
+      4940 357 Quebrada El Fierro
+      4963 358 Quebrada Grande
+      4983 359 Quebrada Seca - El Gueco
+      5012 36 Asentamiento Censo 36
+      5037 360 Queroga
+      5049 361 Rancho Chilamate
+      5070 362 Rancho Tranquilo
+      5091 363 Ranchos INA
+      5107 364 Rebeca Gryspan - Precario Norte A-B Zancudo 1 Y 2
+      5161 365 Río Blanco
+      5176 366 Río Grande
+      5191 367 Río Sarchí - Urbanización
+      5221 368 Rudin
+      5231 369 San Bosco - San Miguel
+      5258 37 Asentamiento Censo 37
+      5283 370 San Diego
+      5297 371 San Diego - Entrada Al Monte
+      5330 372 San Francisco
+      5348 373 San Francisco Este
+      5371 374 San Gerónimo
+      5388 375 San Jerónimo
+      5405 376 San Luis
+      5418 377 San Martin - Limón
+      5441 378 San Martín
+      5456 379 San Martín II
+      5474 38 Asentamiento Censo 38
+      5499 380 San Miguel - El Alto De Los Nicas
+      5537 381 San Pablo
+      5551 382 San Pedro-Pollo Triste
+      5578 383 San Rafael De Cerros
+      5603 384 San Sebastian Carpio Dos
+      5632 385 San Vicente
+      5648 386 Santa Cecilia
+      5666 387 Santa Cecilia - El Tendal
+      5696 388 Santa Eduviges Chacarita
+      5725 389 Santa Fe O Corazón De Jesús La Esperanza 2
+      5772 39 Asentamiento Censo 39
+      5797 390 Santa Gertrudis Diques Sur
+      5828 391 Santa Isabel Abajo y Arriba
+      5860 392 Santa Lucía - Limón
+      5884 393 Santa Rita - Infiernillo
+      5913 394 Santa Rosa
+      5928 395 Santa Teresita 1 Y 2
+      5953 396 Santa Teresita Diques Norte
+      5985 397 Sector 7
+      5998 398 Sector Colegio - Sixaola
+      6027 399 Sector Río - Sixaola
+      6052 4 22 De Octubre
+      6068 40 Asentamiento Censo 40
+      6093 400 Sin Nombre-La Ladrillera
+      6122 401 Tejares Primer Etapa
+      6147 402 Tierra Prometida
+      6168 403 Tobías Vaglio
+      6186 404 Tobías Vaglio - Sector 1, 2 y 3
+      6222 405 Triángulo De Solidaridad
+      6251 406 Umara 2
+      6263 407 Unión Campesina
+      6283 408 Urbanización El Futuro
+      6310 409 Urbanización Europa
+      6334 41 Asentamiento Censo 41
+      6359 410 Urbanización Los Cipreses
+      6389 411 Valle Del Sol
+      6407 412 Vendedores Ambulantes
+      6433 413 Villa Bruselas
+      6452 414 Villa Del Mar
+      6470 415 Villa Flor -  El Cenizaro
+      6500 416 Villa Mora
+      6515 417 Villa Plata
+      6531 418 El Mirador Alajuela.
+      6556 42 Asentamiento Censo 42
+      6581 43 Asentamiento Censo 43
+      6606 44 Asentamiento Censo 44
+      6631 45 Asentamiento Censo 45
+      6656 46 Asentamiento Censo 46
+      6681 47 Asentamiento Censo 47
+      6706 48 Asentamiento Censo 48
+      6731 49 Asentamiento Censo 49
+      6756 5 25 De Diciembre - Los Higuerones - Managüita y la Cabaña
+      6815 50 Asentamiento Censo 5
+      6839 51 Asentamiento Censo 50
+      6864 52 Asentamiento Censo 51
+      6889 53 Asentamiento Censo 52
+      6914 54 Asentamiento Censo 53
+      6939 55 Asentamiento Censo 54
+      6964 56 Asentamiento Censo 55
+      6989 57 Asentamiento Censo 56
+      7014 58 Asentamiento Censo 57
+      7039 59 Asentamiento Censo 58
+      7064 6 Afuera Rosa Iris-Los Arrimados-Ciudadela Rosa Iris
+      7117 60 Asentamiento Censo 59
+      7142 61 Asentamiento Censo 6
+      7166 62 Asentamiento Censo 60
+      7191 63 Asentamiento Censo 7
+      7215 64 Asentamiento Censo 8
+      7239 65 Asentamiento Censo 9
+      7263 66 Asentamiento El Guayabal - El Muro
+      7301 67 Asentamiento El Javillo
+      7328 68 Asentamiento La Manudita
+      7356 69 Asentamiento Las Brisas
+      7383 7 Alemania Unida
+      7400 70 Asentamiento Las Flores - Barrio Las Flores
+      7447 71 Asentamiento San Lorenzo
+      7475 72 Asentamiento Santa Lucía - Porte Golpe
+      7517 73 Aserradero Vargas - San Gabriel
+      7552 74 Asprovicruz
+      7567 75 Bagaces 2000
+      7583 76 Bahía Azul-Pies Mojados
+      7610 77 Bajo De Chilamate
+      7631 78 Bajo Del Sapo
+      7648 79 Bajo Las Gavetas
+      7668 8 Asentamiento Censo 1
+      7691 80 Bajo Los Ledezma - Barrio El Jardín - La Amistad
+      7743 81 Bajo Manolo Rodríguez
+      7768 82 Bajo Manolos - Bajo Las Iguanas
+      7803 83 Bajos Hatillo 5 - Las Gavetas Mandilandia
+      7848 84 Bambú 2
+      7859 85 Barracones De Luna Park
+      7886 86 Barrio Angeles - Cementerio
+      7917 87 Barrio Camareno
+      7936 88 Barrio Copey -El Precario-
+      7966 89 Barrio Del Muro Blanco
+      7992 9 Asentamiento Censo 10
+      8016 90 Barrio El Bosque
+      8036 91 Barrio El Carmen
+      8056 92 Barrio El Carmen De Abrojo
+      8086 93 Barrio El Hueco
+      8105 94 Barrio El INVU
+      8123 95 Barrio Fátima Los Diques
+      8151 96 Barrio Jesús Jiménez
+      8175 97 Barrio La Colina
+      8195 98 Barrio La Cruz - Diques Sur
+      8226 99 Barrio La Esperanza 1
+      8251 999 No está en asentameinto
+      8281 Emigración interna según cantón de residencia hace 5 años
+      8340 MISSING 49655 NOTAPPLICABLE 0
+      8384 Tëb
+      8394 NACIMC$
+      8402 DATASET PCK '.\CR200096.rbf' SIZE 16
+      8442 60 TO 5357
+      8454 INTEGERà
+      8463 las Ricardo Jiménez
+      8483 333 Parcelas Santa Fe
+      8505 334 Pasos Verdes Del Este
+      8531 335 Pata de Gallo
+      8549 336 Patiño
+      8560 337 Pindeco  La Mona - Paseo Las Flores -La mona Caída-
+      8616 338 Pinos Del Este
+      8635 339 Pista 1- Precario Detrás Cementerio- Karen Olsen-
+      8689 34 Asentamiento Censo 34
+      8714 340 Plan Piloto
+      8730 341 Playón De Barranca
+      8753 342 Poblado La Trinidad
+      8777 343 Pocosol Santa Fe
+      8798 344 Ponderosa 1 Ciudadela El Higuerón
+      8836 345 Ponderosa 2
+      8852 346 Ponderosa 3
+      8868 347 Precario Cervil - Las 85
+      8897 348 Precario Nogal
+      8916 349 Precario Tres O Nuevo Amanecer
+      8951 35 Asentamiento Censo 35
+      8976 350 Premio Nobel De La Paz
+      9003 351 Primero De Mayo
+      9023 352 Primero De Mayo - El Roble
+      9054 353 Proyecto Los Angeles-El Quebrador
+      9092 354 Puente Quemado -  Barrio Corazón De Jesús
+      9138 355 Puerto Soley
+      9155 356 Punta Mala -Barrio La Latas-
+      9188 357 Quebrada El Fierro
+      9211 358 Quebrada Grande
+      9231 359 Quebrada Seca - El Gueco
+      9260 36 Asentamiento Censo 36
+      9285 360 Queroga
+      9297 361 Rancho Chilamate
+      9318 362 Rancho Tranquilo
+      9339 363 Ranchos INA
+      9355 364 Rebeca Gryspan - Precario Norte A-B Zancudo 1 Y 2
+      9409 365 Río Blanco
+      9424 366 Río Grande
+      9439 367 Río Sarchí - Urbanización
+      9469 368 Rudin
+      9479 369 San Bosco - San Miguel
+      9506 37 Asentamiento Censo 37
+      9531 370 San Diego
+      9545 371 San Diego - Entrada Al Monte
+      9578 372 San Francisco
+      9596 373 San Francisco Este
+      9619 374 San Gerónimo
+      9636 375 San Jerónimo
+      9653 376 San Luis
+      9666 377 San Martin - Limón
+      9689 378 San Martín
+      9704 379 San Martín II
+      9722 38 Asentamiento Censo 38
+      9747 380 San Miguel - El Alto De Los Nicas
+      9785 381 San Pablo
+      9799 382 San Pedro-Pollo Triste
+      9826 383 San Rafael De Cerros
+      9851 384 San Sebastian Carpio Dos
+      9880 385 San Vicente
+      9896 386 Santa Cecilia
+      9914 387 Santa Cecilia - El Tendal
+      9944 388 Santa Eduviges Chacarita
+      9973 389 Santa Fe O Corazón De Jesús La Esperanza 2
+     10020 39 Asentamiento Censo 39
+     10045 390 Santa Gertrudis Diques Sur
+     10076 391 Santa Isabel Abajo y Arriba
+     10108 392 Santa Lucía - Limón
+     10132 393 Santa Rita - Infiernillo
+     10161 394 Santa Rosa
+     10176 395 Santa Teresita 1 Y 2
+     10201 396 Santa Teresita Diques Norte
+     10233 397 Sector 7
+     10246 398 Sector Colegio - Sixaola
+     10275 399 Sector Río - Sixaola
+     10300 4 22 De Octubre
+     10316 40 Asentamiento Censo 40
+     10341 400 Sin Nombre-La Ladrillera
+     10370 401 Tejares Primer Etapa
+     10395 402 Tierra Prometida
+     10416 403 Tobías Vaglio
+     10434 404 Tobías Vaglio - Sector 1, 2 y 3
+     10470 405 Triángulo De Solidaridad
+     10499 406 Umara 2
+     10511 407 Unión Campesina
+     10531 408 Urbanización El Futuro
+     10558 409 Urbanización Europa
+     10582 41 Asentamiento Censo 41
+     10607 410 Urbanización Los Cipreses
+     10637 411 Valle Del Sol
+     10655 412 Vendedores Ambulantes
+     10681 413 Villa Bruselas
+     10700 414 Villa Del Mar
+     10718 415 Villa Flor -  El Cenizaro
+     10748 416 Villa Mora
+     10763 417 Villa Plata
+     10779 418 El Mirador Alajuela.
+     10804 42 Asentamiento Censo 42
+     10829 43 Asentamiento Censo 43
+     10854 44 Asentamiento Censo 44
+     10879 45 Asentamiento Censo 45
+     10904 46 Asentamiento Censo 46
+     10929 47 Asentamiento Censo 47
+     10954 48 Asentamiento Censo 48
+     10979 49 Asentamiento Censo 49
+     11004 5 25 De Diciembre - Los Higuerones - Managüita y la Cabaña
+     11063 50 Asentamiento Censo 5
+     11087 51 Asentamiento Censo 50
+     11112 52 Asentamiento Censo 51
+     11137 53 Asentamiento Censo 52
+     11162 54 Asentamiento Censo 53
+     11187 55 Asentamiento Censo 54
+     11212 56 Asentamiento Censo 55
+     11237 57 Asentamiento Censo 56
+     11262 58 Asentamiento Censo 57
+     11287 59 Asentamiento Censo 58
+     11312 6 Afuera Rosa Iris-Los Arrimados-Ciudadela Rosa Iris
+     11365 60 Asentamiento Censo 59
+     11390 61 Asentamiento Censo 6
+     11414 62 Asentamiento Censo 60
+     11439 63 Asentamiento Censo 7
+     11463 64 Asentamiento Censo 8
+     11487 65 Asentamiento Censo 9
+     11511 66 Asentamiento El Guayabal - El Muro
+     11549 67 Asentamiento El Javillo
+     11576 68 Asentamiento La Manudita
+     11604 69 Asentamiento Las Brisas
+     11631 7 Alemania Unida
+     11648 70 Asentamiento Las Flores - Barrio Las Flores
+     11695 71 Asentamiento San Lorenzo
+     11723 72 Asentamiento Santa Lucía - Porte Golpe
+     11765 73 Aserradero Vargas - San Gabriel
+     11800 74 Asprovicruz
+     11815 75 Bagaces 2000
+     11831 76 Bahía Azul-Pies Mojados
+     11858 77 Bajo De Chilamate
+     11879 78 Bajo Del Sapo
+     11896 79 Bajo Las Gavetas
+     11916 8 Asentamiento Censo 1
+     11939 80 Bajo Los Ledezma - Barrio El Jardín - La Amistad
+     11991 81 Bajo Manolo Rodríguez
+     12016 82 Bajo Manolos - Bajo Las Iguanas
+     12051 83 Bajos Hatillo 5 - Las Gavetas Mandilandia
+     12096 84 Bambú 2
+     12107 85 Barracones De Luna Park
+     12134 86 Barrio Angeles - Cementerio
+     12165 87 Barrio Camareno
+     12184 88 Barrio Copey -El Precario-
+     12214 89 Barrio Del Muro Blanco
+     12240 9 Asentamiento Censo 10
+     12264 90 Barrio El Bosque
+     12284 91 Barrio El Carmen
+     12304 92 Barrio El Carmen De Abrojo
+     12334 93 Barrio El Hueco
+     12353 94 Barrio El INVU
+     12371 95 Barrio Fátima Los Diques
+     12399 96 Barrio Jesús Jiménez
+     12423 97 Barrio La Colina
+     12443 98 Barrio La Cruz - Diques Sur
+     12474 99 Barrio La Esperanza 1
+     12499 999 No está en asentameinto
+     12529 Nacimientos catonales 2011
+     12557 MISSING 5358 NOTAPPLICABLE 0
+     12592 Øíb
+     12610 DEFUNMEC#
+     12620 DATASET PCK '.\CR200032.rbf' SIZE 8
+     12659 1 TO 50
+     12668 INTEGER=
+     12677 Del Este
+     12686 339 Pista 1- Precario Detrás Cementerio- Karen Olsen-
+     12740 34 Asentamiento Censo 34
+     12765 340 Plan Piloto
+     12781 341 Playón De Barranca
+     12804 342 Poblado La Trinidad
+     12828 343 Pocosol Santa Fe
+     12849 344 Ponderosa 1 Ciudadela El Higuerón
+     12887 345 Ponderosa 2
+     12903 346 Ponderosa 3
+     12919 347 Precario Cervil - Las 85
+     12948 348 Precario Nogal
+     12967 349 Precario Tres O Nuevo Amanecer
+     13002 35 Asentamiento Censo 35
+     13027 350 Premio Nobel De La Paz
+     13054 351 Primero De Mayo
+     13074 352 Primero De Mayo - El Roble
+     13105 353 Proyecto Los Angeles-El Quebrador
+     13143 354 Puente Quemado -  Barrio Corazón De Jesús
+     13189 355 Puerto Soley
+     13206 356 Punta Mala -Barrio La Latas-
+     13239 357 Quebrada El Fierro
+     13262 358 Quebrada Grande
+     13282 359 Quebrada Seca - El Gueco
+     13311 36 Asentamiento Censo 36
+     13336 360 Queroga
+     13348 361 Rancho Chilamate
+     13369 362 Rancho Tranquilo
+     13390 363 Ranchos INA
+     13406 364 Rebeca Gryspan - Precario Norte A-B Zancudo 1 Y 2
+     13460 365 Río Blanco
+     13475 366 Río Grande
+     13490 367 Río Sarchí - Urbanización
+     13520 368 Rudin
+     13530 369 San Bosco - San Miguel
+     13557 37 Asentamiento Censo 37
+     13582 370 San Diego
+     13596 371 San Diego - Entrada Al Monte
+     13629 372 San Francisco
+     13647 373 San Francisco Este
+     13670 374 San Gerónimo
+     13687 375 San Jerónimo
+     13704 376 San Luis
+     13717 377 San Martin - Limón
+     13740 378 San Martín
+     13755 379 San Martín II
+     13773 38 Asentamiento Censo 38
+     13798 380 San Miguel - El Alto De Los Nicas
+     13836 381 San Pablo
+     13850 382 San Pedro-Pollo Triste
+     13877 383 San Rafael De Cerros
+     13902 384 San Sebastian Carpio Dos
+     13931 385 San Vicente
+     13947 386 Santa Cecilia
+     13965 387 Santa Cecilia - El Tendal
+     13995 388 Santa Eduviges Chacarita
+     14024 389 Santa Fe O Corazón De Jesús La Esperanza 2
+     14071 39 Asentamiento Censo 39
+     14096 390 Santa Gertrudis Diques Sur
+     14127 391 Santa Isabel Abajo y Arriba
+     14159 392 Santa Lucía - Limón
+     14183 393 Santa Rita - Infiernillo
+     14212 394 Santa Rosa
+     14227 395 Santa Teresita 1 Y 2
+     14252 396 Santa Teresita Diques Norte
+     14284 397 Sector 7
+     14297 398 Sector Colegio - Sixaola
+     14326 399 Sector Río - Sixaola
+     14351 4 22 De Octubre
+     14367 40 Asentamiento Censo 40
+     14392 400 Sin Nombre-La Ladrillera
+     14421 401 Tejares Primer Etapa
+     14446 402 Tierra Prometida
+     14467 403 Tobías Vaglio
+     14485 404 Tobías Vaglio - Sector 1, 2 y 3
+     14521 405 Triángulo De Solidaridad
+     14550 406 Umara 2
+     14562 407 Unión Campesina
+     14582 408 Urbanización El Futuro
+     14609 409 Urbanización Europa
+     14633 41 Asentamiento Censo 41
+     14658 410 Urbanización Los Cipreses
+     14688 411 Valle Del Sol
+     14706 412 Vendedores Ambulantes
+     14732 413 Villa Bruselas
+     14751 414 Villa Del Mar
+     14769 415 Villa Flor -  El Cenizaro
+     14799 416 Villa Mora
+     14814 417 Villa Plata
+     14830 418 El Mirador Alajuela.
+     14855 42 Asentamiento Censo 42
+     14880 43 Asentamiento Censo 43
+     14905 44 Asentamiento Censo 44
+     14930 45 Asentamiento Censo 45
+     14955 46 Asentamiento Censo 46
+     14980 47 Asentamiento Censo 47
+     15005 48 Asentamiento Censo 48
+     15030 49 Asentamiento Censo 49
+     15055 5 25 De Diciembre - Los Higuerones - Managüita y la Cabaña
+     15114 50 Asentamiento Censo 5
+     15138 51 Asentamiento Censo 50
+     15163 52 Asentamiento Censo 51
+     15188 53 Asentamiento Censo 52
+     15213 54 Asentamiento Censo 53
+     15238 55 Asentamiento Censo 54
+     15263 56 Asentamiento Censo 55
+     15288 57 Asentamiento Censo 56
+     15313 58 Asentamiento Censo 57
+     15338 59 Asentamiento Censo 58
+     15363 6 Afuera Rosa Iris-Los Arrimados-Ciudadela Rosa Iris
+     15416 60 Asentamiento Censo 59
+     15441 61 Asentamiento Censo 6
+     15465 62 Asentamiento Censo 60
+     15490 63 Asentamiento Censo 7
+     15514 64 Asentamiento Censo 8
+     15538 65 Asentamiento Censo 9
+     15562 66 Asentamiento El Guayabal - El Muro
+     15600 67 Asentamiento El Javillo
+     15627 68 Asentamiento La Manudita
+     15655 69 Asentamiento Las Brisas
+     15682 7 Alemania Unida
+     15699 70 Asentamiento Las Flores - Barrio Las Flores
+     15746 71 Asentamiento San Lorenzo
+     15774 72 Asentamiento Santa Lucía - Porte Golpe
+     15816 73 Aserradero Vargas - San Gabriel
+     15851 74 Asprovicruz
+     15866 75 Bagaces 2000
+     15882 76 Bahía Azul-Pies Mojados
+     15909 77 Bajo De Chilamate
+     15930 78 Bajo Del Sapo
+     15947 79 Bajo Las Gavetas
+     15967 8 Asentamiento Censo 1
+     15990 80 Bajo Los Ledezma - Barrio El Jardín - La Amistad
+     16042 81 Bajo Manolo Rodríguez
+     16067 82 Bajo Manolos - Bajo Las Iguanas
+     16102 83 Bajos Hatillo 5 - Las Gavetas Mandilandia
+     16147 84 Bambú 2
+     16158 85 Barracones De Luna Park
+     16185 86 Barrio Angeles - Cementerio
+     16216 87 Barrio Camareno
+     16235 88 Barrio Copey -El Precario-
+     16265 89 Barrio Del Muro Blanco
+     16291 9 Asentamiento Censo 10
+     16315 90 Barrio El Bosque
+     16335 91 Barrio El Carmen
+     16355 92 Barrio El Carmen De Abrojo
+     16385 93 Barrio El Hueco
+     16404 94 Barrio El INVU
+     16422 95 Barrio Fátima Los Diques
+     16450 96 Barrio Jesús Jiménez
+     16474 97 Barrio La Colina
+     16494 98 Barrio La Cruz - Diques Sur
+     16525 99 Barrio La Esperanza 1
+     16550 999 No está en asentameinto
+     16580 Defunciones cantonales menores de 1 año
+     16621 MISSING 51 NOTAPPLICABLE 0
+     16654 Ô3Å
+     16672 ENMIGRANAC$
+     16684 DATASET PCK '.\CR200040.rbf' SIZE 32
+     16724 2328 TO 202885
+     16740 INTEGER
+     16749 PCK '.\CR200040.rbf' SIZE 32
+     16780 Emigración interna según cantón de nacimiento
+     16827 MISSING 202886 NOTAPPLICABLE 0
+     16882 INMIGRANAC$
+     16894 DATASET PCK '.\CR200120.rbf' SIZE 32
+     16934 1557 TO 77342
+     16949 INTEGER
+     16958 0120.rbf' SIZE 32
+     16978 Inmigración interna según cantón de nacimiento
+     17026 MISSING 77343 NOTAPPLICABLE 0
+     17070 Ðäb
+     17080 INMIGRA$
+     17089 DATASET PCK '.\CR200128.rbf' SIZE 16
+     17129 587 TO 23399
+     17143 INTEGER
+     17152 IZE 16
+     17161 Inmigración interna según cantón de residencia hace 5 años
+     17221 MISSING 23400 NOTAPPLICABLE 0
+     17257 àë_
+     17265 ì¶]
+     17275 EXTTER$
+     17283 DATASET PCK '.\CR200136.rbf' SIZE 32
+     17323 5 TO 3348
+     17334 REAL
+     17340 0110007.rbf' SIZE 2
+     17362 Extensión territorial a nivel de cantón en KM2(
+     17410 MISSING 3349 NOTAPPLICABLE 0 DECIMALS 2
+     17464 ÀüÃ
+     17474 NOMBCANT%
+     17484 DATASET CHR '.\\CR200104.rbf' SIZE 28
+     17525 0 TO 0
+     17533 STRING/
+     17541 Extensión territorial a nivel de cantón en KM2
+     17616 DISTRITO
+     17626 DISTRITO
+     17636 CANTON
+     17646 .\CR20110003.ptr
+     17666 IDISTRI
+     17675 NOMBDIST
+     17696 äýÆ
+     17704 LýÄ
+     17722 DISTRITO%
+     17732 DATASET PCK '.\CR20110005.rbf' SIZE 5
+     17773 1 TO 16
+     17782 INTEGER
+     17793 Distrito
+     17803 MISSING 17 NOTAPPLICABLE 0
+     17836 DÆb
+     17844 \ýÃ
+     17854 IDISTRI%
+     17863 DATASET CHR '.\CR20110006.rbf' SIZE 2
+     17906 STRING
+     17914 5.rbf' SIZE 5
+     17930 Distrito (string)
+     17963 (ÿÂ
+     17973 NOMBDIST$
+     17983 DATASET CHR '.\CR200048.rbf' SIZE 37
+     18025 STRING-
+     18033 s\Censos\SIM2011\Base\CR20110006.rbf' SIZE 2
+     18080 Nombre del distrito
+     18107 ¬4Å
+     18115 ¤þÃ
+     18125 EXTTER$
+     18133 DATASET PCK '.\CR200056.rbf' SIZE 32
+     18173 0 TO 3000
+     18184 REAL2
+     18190 pbases\Censos\SIM2011\Base\\CR200048.rbf' SIZE 37
+     18242 Extensión territorial a nivel de distrito+
+     18285 MISSING 3002 NOTAPPLICABLE 3001 DECIMALS 2
+     18334 òb
+     18342 `=Å
+     18352 VIVIENDA
+     18362 VIVIENDA
+     18372 DISTRITO
+     18384 .\CR20110004.ptr
+     18419 dug
+     18427 |.Å
+     18445 ZONAUR%
+     18453 DATASET PCK '.\CR20110007.rbf' SIZE 2
+     18494 1 TO 2
+     18502 INTEGER
+     18511 1 Urbano
+     18520 2 Rural
+     18530 Zona(urbano/rural)'
+     18550 MISSING 3 NOTAPPLICABLE 0 ALIAS ZONAUR
+     18595 @ú_
+     18613 REGION%
+     18621 DATASET PCK '.\CR20110008.rbf' SIZE 4
+     18662 1 TO 7
+     18670 INTEGER¢
+     18679 1 Gran Área Metropolitana
+     18705 2 Resto Región Central
+     18728 3 Región Chorotega
+     18747 4 Región  Pacífico Central
+     18774 5 Región  Brunca
+     18791 6 Región  Huetar Atlántica
+     18818 7 Región  Huetar Norte
+     18843 Región'
+     18851 MISSING 8 NOTAPPLICABLE 0 ALIAS Región
+     18896 $þ_
+     18914 TERRINDI%
+     18924 DATASET PCK '.\CR20110009.rbf' SIZE 7
+     18965 1 TO 90
+     18974 INTEGER_
+     18983 11 Salitre
+     18994 12 Cabagra
+     19005 13 Talamanca Bribrí
+     19025 14 Këköldi
+     19036 21 Boruca
+     19046 22 Curré
+     19055 31 Chirripó
+     19067 32 Ujarrás
+     19078 33 Tayni
+     19087 34 Talamanca Cabécar
+     19108 35 Telire
+     19118 36 Bajo Chirripó
+     19135 37 Nairi Awari
+     19150 38 China Kicha
+     19165 41 Matambú
+     19176 51 Zapatón
+     19187 52 Quitirrisí
+     19201 61 Guatuso
+     19212 71 Abrojo Montezuma
+     19232 72 Osa
+     19239 73 Conteburica
+     19254 74 Coto Brus
+     19267 75 Altos de San Antonio
+     19291 81 Térraba
+     19302 90 Fuera de territorio indígena
+     19336 Territorio indígena*
+     19357 MISSING 91 NOTAPPLICABLE 0 ALIAS TERRINDI
+     19405 `àü
+     19413 X2Â
+     19423 TIPOVIV%
+     19432 DATASET PCK '.\CR20110010.rbf' SIZE 4
+     19473 1 TO 14
+     19482 INTEGER
+     19491 1 Casa independiente
+     19512 2 Casa independiente en condominio
+     19547 3 Edificio de apartamentos
+     19574 4 Edificio de apartamentos en condominio
+     19615 5 Vivienda tradicional indígena (Palenque o rancho)
+     19667 6 Cuarto en cuartería
+     19689 7 Tugurio
+     19699 8 Otro (Local, casa móvil, barco, camión)
+     19741 9 Bache o barraca para trabajadores
+     19777 10 Albergue infantil
+     19798 11 Hogar de personas adultas mayores
+     19835 12 Cárcel
+     19845 13 Otra (Pensión, convento)
+     19873 14 Persona sin vivienda
+     19899 V01 Tipo de vivienda%
+     19921 MISSING 15 NOTAPPLICABLE 0 ALIAS V01
+     19972 <NÀ
+     19982 OCUP%
+     19988 DATASET PCK '.\CR20110011.rbf' SIZE 4
+     20029 1 TO 7
+     20037 INTEGERñ
+     20046 1 Residentes habituales presentes
+     20080 2 Residentes habituales ausentes
+     20113 3 Desocupada para alquilar o vender
+     20149 4 Desocupada en construcción o reparación
+     20191 5 Desocupada temporal para vacacionar
+     20229 6 Desocupada trabajadores o estudiantes
+     20269 7 Desocupada otra
+     20289 V02 Ocupación de la vivienda$
+     20319 MISSING 8 NOTAPPLICABLE 0 ALIAS V02
+     20369 Ôre
+     20379 TENENCIA%
+     20389 DATASET PCK '.\CR20110012.rbf' SIZE 4
+     20430 1 TO 7
+     20438 INTEGER°
+     20447 1 es propia totalmente pagada
+     20477 2 es propia pagando a plazos
+     20506 3 es alquilada
+     20521 4 es prestada por motivo de trabajo
+     20557 5 es prestada por otro motivo (no paga)
+     20597 6 está en precario
+     20616 7 Otro
+     20625 V03 Tenencia de la vivienda$
+     20654 MISSING 8 NOTAPPLICABLE 0 ALIAS V03
+     20696 äG\
+     20714 PAREDES%
+     20723 DATASET PCK '.\CR20110013.rbf' SIZE 4
+     20764 1 TO 8
+     20772 INTEGERç
+     20781 1 block o ladrillo
+     20800 2 zócalo (cemento-madera, cemento-fibrocemento)
+     20848 3 madera
+     20857 4 prefabricado o baldosas
+     20883 5 fibrolit, Ricalit (lámina de fibrocemento)
+     20928 6 fibras naturales (bambú, caña, chonta)
+     20969 7 material de desecho
+     20991 8 Otro (Zinc, adobe)
+     21014 V04 Material predominante en las paredes exteriores$
+     21067 MISSING 9 NOTAPPLICABLE 0 ALIAS V04
+     21109 ØQÂ
+     21127 TECHO%
+     21134 DATASET PCK '.\CR20110014.rbf' SIZE 3
+     21175 1 TO 5
+     21183 INTEGER
+     21192 1 zinc
+     21199 2 fibrolit, Ricalit o asbesto (fibrocemento)
+     21244 3 material natural (palma, paja, suita u otros)
+     21292 4 material de desecho
+     21314 5 Otro (teja de arcilla, etc)
+     21346 V05 Material predominante en el techo$
+     21385 MISSING 6 NOTAPPLICABLE 0 ALIAS V05
+     21435 $p\
+     21445 CIELORAS%
+     21455 DATASET PCK '.\CR20110015.rbf' SIZE 2
+     21496 1 TO 2
+     21504 INTEGER
+     21513 1 Sí
+     21518 2 No
+     21525 V06 Tiene cielo raso$
+     21547 MISSING 3 NOTAPPLICABLE 0 ALIAS V06
+     21597 <ÚÂ
+     21607 PISO%
+     21613 DATASET PCK '.\CR20110016.rbf' SIZE 3
+     21654 1 TO 6
+     21662 INTEGER
+     21671 1 cerámica, mosaico, terrazo
+     21700 2 cemento (ocre, lujado o no)
+     21730 3 madera
+     21739 4 material natural (chonta o rollizo)
+     21777 5 Otro material
+     21793 6 Piso de tierra
+     21812 V07 Material predominante en el piso$
+     21850 MISSING 7 NOTAPPLICABLE 0 ALIAS V07
+     21892 0¬Ã
+     21900 Ps\
+     21910 ESTPARED%
+     21920 DATASET PCK '.\CR20110017.rbf' SIZE 3
+     21961 1 TO 3
+     21969 INTEGER
+     21978 1 Malo
+     21985 2 Regular
+     21995 3 Bueno
+     22005 V08A Estado paredes exteriores%
+     22037 MISSING 4 NOTAPPLICABLE 0 ALIAS V08A
+     22098 ESTTECHO%
+     22108 DATASET PCK '.\CR20110018.rbf' SIZE 3
+     22149 1 TO 3
+     22157 INTEGER
+     22166 1 Malo
+     22173 2 Regular
+     22183 3 Bueno
+     22193 V08B Estado techo%
+     22212 MISSING 4 NOTAPPLICABLE 0 ALIAS V08B
+     22255 L1`
+     22263 @q[
+     22273 ESTPISO%
+     22282 DATASET PCK '.\CR20110019.rbf' SIZE 3
+     22323 1 TO 3
+     22331 INTEGER
+     22340 1 Malo
+     22347 2 Regular
+     22357 3 Bueno
+     22367 V08C Estado piso%
+     22385 MISSING 4 NOTAPPLICABLE 0 ALIAS V08C
+     22428 T3`
+     22446 DORMITOR%
+     22456 DATASET PCK '.\CR20110020.rbf' SIZE 4
+     22497 0 TO 10
+     22506 INTEGER»
+     22515 0 0 Sin dormitorios
+     22535 1 1 dormitorio
+     22550 2 2 dormitorios
+     22566 3 3 dormitorios
+     22582 4 4 dormitorios
+     22598 5 5 dormitorios
+     22614 6 6 dormitorios
+     22630 7 7 dormitorios
+     22646 8 8 dormitorios
+     22662 9 9 dormitorios
+     22678 10 10 o más dormitorios
+     22704 V09 Cuartos sólo para dormir&
+     22734 MISSING 12 NOTAPPLICABLE 11 ALIAS V09
+     22796 APOSENTO%
+     22806 DATASET PCK '.\CR20110021.rbf' SIZE 4
+     22847 1 TO 10
+     22856 INTEGER
+     22865 1 1 Aposentos
+     22879 2 2 aposentos
+     22893 3 3 aposentos
+     22907 4 4 aposentos
+     22921 5 5 aposentos
+     22935 6 6 aposentos
+     22949 7 7 aposentos
+     22963 8 8 aposentos
+     22977 9 9 aposentos
+     22991 10 10 o más aposentos
+     23015 V10 Total de aposentos%
+     23039 MISSING 11 NOTAPPLICABLE 0 ALIAS V10
+     23100 FUENAGUA%
+     23110 DATASET PCK '.\CR20110022.rbf' SIZE 4
+     23151 1 TO 7
+     23159 INTEGERÙ
+     23168 1 un acueducto rural o comunal (ASADAS o CAAR)
+     23215 2 un acueducto municipal
+     23240 3 un acueducto del A y A
+     23265 4 un acueducto de empresa o cooperativa
+     23305 5 un pozo
+     23315 6 un río o quebrada
+     23335 7 Otra fuente (Lluvia, camión cisterna, hidrante)
+     23387 V11 Procedencia del agua$
+     23413 MISSING 8 NOTAPPLICABLE 0 ALIAS V11
+     23455 T>`
+     23473 ABASAGUA%
+     23483 DATASET PCK '.\CR20110023.rbf' SIZE 2
+     23524 1 TO 2
+     23532 INTEGER
+     23541 1 Si
+     23546 2 No
+     23553 V12 El agua le llega por tubería dentro de la vivienda$
+     23609 MISSING 3 NOTAPPLICABLE 0 ALIAS V12
+     23651 Ä8Æ
+     23669 SANITARI%
+     23679 DATASET PCK '.\CR20110024.rbf' SIZE 3
+     23720 1 TO 5
+     23728 INTEGER§
+     23737 1 alcantarillado sanitario
+     23764 2 tanque séptico
+     23781 3 tiene salida directa a acequia, zanja, río o estero
+     23835 4 es de hueco, de pozo negro o letrina
+     23874 5 No tiene servicio sanitario
+     23906 V13 El servicio sanitario está conectado a?$
+     23951 MISSING 6 NOTAPPLICABLE 0 ALIAS V13
+     23993 ,)^
+     24001 C¾
+     24011 ELECTRIC%
+     24021 DATASET PCK '.\CR20110025.rbf' SIZE 3
+     24062 1 TO 6
+     24070 INTEGERw
+     24079 1 Del ICE o la CNFL
+     24099 2 de la ESPH o JASEC
+     24120 3 de una cooperativa
+     24141 4 de panel solar
+     24158 5 de otra fuente
+     24175 6 No hay luz eléctrica
+     24200 V14 La luz eléctrica de la vivienda proviene$
+     24246 MISSING 7 NOTAPPLICABLE 0 ALIAS V14
+     24288 h3Ã
+     24296 4x¿
+     24306 COMBUSTI%
+     24316 DATASET PCK '.\CR20110026.rbf' SIZE 3
+     24357 1 TO 5
+     24365 INTEGERB
+     24374 1 electricidad
+     24389 2 gas
+     24395 3 leña o carbón
+     24411 4 Otro
+     24418 5 Ninguno (no cocina)
+     24442 V15 Principal combustible usado para cocinar$
+     24488 MISSING 6 NOTAPPLICABLE 0 ALIAS V15
+     24530 ¬%^
+     24548 ELIMDESE%
+     24558 DATASET PCK '.\CR20110027.rbf' SIZE 3
+     24599 1 TO 6
+     24607 INTEGER
+     24616 1 por camión recolector
+     24640 2 la botan en un hueco o entierran
+     24675 3 la queman
+     24687 4 la botan en lote baldío
+     24713 5 la botan en un río, quebrada o mar
+     24750 6 Otro
+     24759 V16 Eliminación de desechos sólidos$
+     24796 MISSING 7 NOTAPPLICABLE 0 ALIAS V16
+     24846 ¤2^
+     24856 SEPPLAST%
+     24866 DATASET PCK '.\CR20110028.rbf' SIZE 2
+     24907 1 TO 2
+     24915 INTEGER
+     24924 1 Sí
+     24929 2 No
+     24936 V17A Separación de plástico, vidrio, aluminio%
+     24983 MISSING 3 NOTAPPLICABLE 0 ALIAS V17A
+     25034 H\Æ
+     25044 SEPPAPEL%
+     25054 DATASET PCK '.\CR20110029.rbf' SIZE 2
+     25095 1 TO 2
+     25103 INTEGER
+     25112 1 Sí
+     25117 2 No
+     25124 V17B Separación de papel%
+     25150 MISSING 3 NOTAPPLICABLE 0 ALIAS V17B
+     25193 tGÆ
+     25201 ü;^
+     25211 SEPRESTC%
+     25221 DATASET PCK '.\CR20110030.rbf' SIZE 2
+     25262 1 TO 2
+     25270 INTEGER
+     25279 1 Sí
+     25284 2 No
+     25291 V17C Separación de restos de comida%
+     25328 MISSING 3 NOTAPPLICABLE 0 ALIAS V17C
+     25371 ü6Ã
+     25379 @WÆ
+     25389 RADIO%
+     25396 DATASET PCK '.\CR20110031.rbf' SIZE 2
+     25437 1 TO 2
+     25445 INTEGER
+     25454 1 Sí
+     25459 2 No
+     25466 V18A Tenencia radio o equipo de sonido%
+     25506 MISSING 3 NOTAPPLICABLE 0 ALIAS V18A
+     25549 °åe
+     25557 äÖe
+     25567 TELEFFIJO%
+     25578 DATASET PCK '.\CR20110032.rbf' SIZE 2
+     25619 1 TO 2
+     25627 INTEGER
+     25636 1 Sí
+     25641 2 No
+     25648 V18B Tenencia línea telefónica fija%
+     25685 MISSING 3 NOTAPPLICABLE 0 ALIAS V18B
+     25736 äU`
+     25746 TVPANTALLA%
+     25758 DATASET PCK '.\CR20110033.rbf' SIZE 2
+     25799 1 TO 2
+     25807 INTEGER
+     25816 1 Sí
+     25821 2 No
+     25828 V18C Tenencia pantalla TV (plasma, LCD, LED)%
+     25874 MISSING 3 NOTAPPLICABLE 0 ALIAS V18C
+     25917 Ät`
+     25925 (Ëe
+     25935 TVCONVEN%
+     25945 DATASET PCK '.\CR20110034.rbf' SIZE 2
+     25986 1 TO 2
+     25994 INTEGER
+     26003 1 Sí
+     26008 2 No
+     26015 V18D Tenencia de televisor convencional%
+     26056 MISSING 3 NOTAPPLICABLE 0 ALIAS V18D
+     26099 ðße
+     26117 TVCABLE%
+     26126 DATASET PCK '.\CR20110035.rbf' SIZE 2
+     26167 1 TO 2
+     26175 INTEGER
+     26184 1 Sí
+     26189 2 No
+     26196 V18E Tenencia TV por cable o satélite%
+     26235 MISSING 3 NOTAPPLICABLE 0 ALIAS V18E
+     26286 Ôñe
+     26296 TANQUECA%
+     26306 DATASET PCK '.\CR20110036.rbf' SIZE 2
+     26347 1 TO 2
+     26355 INTEGER
+     26364 1 Sí
+     26369 2 No
+     26376 V18F Tenencia de sistema de agua caliente para toda la casa%
+     26437 MISSING 3 NOTAPPLICABLE 0 ALIAS V18F
+     26480 ´¥`
+     26498 TANQAGUA%
+     26508 DATASET PCK '.\CR20110037.rbf' SIZE 2
+     26549 1 TO 2
+     26557 INTEGER
+     26566 1 Sí
+     26571 2 No
+     26578 V18G Tenencia de tanque de almacenamiento de agua%
+     26629 MISSING 3 NOTAPPLICABLE 0 ALIAS V18G
+     26672 <øe
+     26690 COMPUTADOR%
+     26702 DATASET PCK '.\CR20110038.rbf' SIZE 2
+     26743 1 TO 2
+     26751 INTEGER
+     26760 1 Sí
+     26765 2 No
+     26772 V18H Tenencia de computadora de escritorio%
+     26816 MISSING 3 NOTAPPLICABLE 0 ALIAS V18H
+     26859 Ð¹`
+     26867 4ûe
+     26877 COMPPORT%
+     26887 DATASET PCK '.\CR20110039.rbf' SIZE 2
+     26928 1 TO 2
+     26936 INTEGER
+     26945 1 Sí
+     26950 2 No
+     26957 V18I Tenencia de computadora portátil%
+     26996 MISSING 3 NOTAPPLICABLE 0 ALIAS V18I
+     27039 ôº`
+     27057 INTERNET%
+     27067 DATASET PCK '.\CR20110040.rbf' SIZE 2
+     27108 1 TO 2
+     27116 INTEGER
+     27125 1 Sí
+     27130 2 No
+     27137 V18J Tenencia  Internet%
+     27162 MISSING 3 NOTAPPLICABLE 0 ALIAS V18J
+     27213 @cc
+     27223 CARRO%
+     27230 DATASET PCK '.\CR20110041.rbf' SIZE 2
+     27271 1 TO 2
+     27279 INTEGER
+     27288 1 Sí
+     27293 2 No
+     27300 V18K Tenencia de carro (no de trabajo)%
+     27340 MISSING 3 NOTAPPLICABLE 0 ALIAS V18K
+     27401 MOTO%
+     27407 DATASET PCK '.\CR20110042.rbf' SIZE 2
+     27448 1 TO 2
+     27456 INTEGER
+     27465 1 Sí
+     27470 2 No
+     27477 V18L Tenencia de motocicleta (no de trabajo)%
+     27523 MISSING 3 NOTAPPLICABLE 0 ALIAS V18L
+     27566 @Û`
+     27584 NUMLINCE%
+     27594 DATASET PCK '.\CR20110043.rbf' SIZE 7
+     27635 0 TO 99
+     27644 INTEGER
+     27653 0 0 Líneas telefónicas
+     27676 1 1 línea telefónicas
+     27698 2 2 líneas telefónicas
+     27721 3 3 líneas telefónicas
+     27744 4 4 líneas telefónicas
+     27767 5 5 líneas telefónicas
+     27790 6 6 líneas telefónicas
+     27813 7 7 líneas telefónicas
+     27836 8 8 líneas telefónicas
+     27859 9 9 líneas telefónicas
+     27882 10 10 líneas telefónicas
+     27907 11 11 líneas telefónicas
+     27932 12 12 líneas telefónicas
+     27957 13 13 líneas telefónicas
+     27982 14 14 líneas telefónicas
+     28007 15 15 líneas telefónicas
+     28032 99 Ignorado
+     28046 V19 Cuántas líneas de teléfono celular hay en la vivienda(
+     28105 MISSING 101 NOTAPPLICABLE 100 ALIAS V19
+     28159 ÔÕ`
+     28169 RESIDHAB&
+     28179 DATASET PCK '.\CR20110044.rbf' SIZE 12
+     28221 0 TO 2400
+     28232 INTEGER'
+     28241 4 Ninguna de las anteriores
+     28269 9 Ignorado
+     28282 V01BLOQUE3 Residentes habituales en la vivienda1
+     28331 MISSING 2402 NOTAPPLICABLE 2401 ALIAS V01BLOQUE3
+     28394 ¤iÆ
+     28404 CANTHOG%
+     28413 DATASET PCK '.\CR20110045.rbf' SIZE 4
+     28454 1 TO 9
+     28462 INTEGERj
+     28471 1 1 Hogar
+     28481 2 2 Hogares
+     28493 3 3 Hogares
+     28505 4 4 Hogares
+     28517 5 5 Hogares
+     28529 6 6 Hogares
+     28541 7 7 Hogares
+     28553 8 8 Hogares
+     28565 9 9 Hogares
+     28579 V02BLOQUE3 Cantidad de hogares en la vivienda,
+     28626 MISSING 10 NOTAPPLICABLE 0 ALIAS V02BLOQUE3
+     28676 àaù
+     28694 ESTFIVIV%
+     28704 DATASET PCK '.\CR20110046.rbf' SIZE 3
+     28745 1 TO 3
+     28753 INTEGER
+     28762 1 Malo
+     28769 2 Regular
+     28779 3 Bueno
+     28789 Estado físico de la vivienda$
+     28819 MISSING 4 NOTAPPLICABLE 0 ALIAS V30
+     28861 (TÆ
+     28879 HACDOR%
+     28887 DATASET PCK '.\CR20110047.rbf' SIZE 2
+     28928 1 TO 2
+     28936 INTEGERO
+     28945 1 Vivienda hacinada según dormitorios
+     28983 2 Vivienda no hacinada según dormitorios
+     29026 Hacinamiento en dormitorios$
+     29055 MISSING 3 NOTAPPLICABLE 0 ALIAS V31
+     29115 HACAPO%
+     29123 DATASET PCK '.\CR20110048.rbf' SIZE 2
+     29164 1 TO 2
+     29172 INTEGERK
+     29181 1 Vivienda hacinada según aposentos
+     29217 2 Vivienda no hacinada según aposentos
+     29258 Hacinamiento según aposentos$
+     29288 MISSING 3 NOTAPPLICABLE 0 ALIAS V32
+     29338 È°\
+     29348 TENEARTV%
+     29358 DATASET PCK '.\CR20110049.rbf' SIZE 2
+     29399 1 TO 2
+     29407 INTEGERL
+     29416 1 Tenencia de al menos un artefacto
+     29452 2 No tienen artefactos ningún artefacto
+     29494 Tenencia de algun artefacto o vehiculo$
+     29534 MISSING 3 NOTAPPLICABLE 0 ALIAS V33
+     29594 NOMBRE_ASENTAMIENTO4
+     29615 DATASET PCK '.\CR2011 ASENTAMIENTOS0004.rbf' SIZE 10
+     29671 1 TO 999
+     29681 INTEGERÆ'1 11 De Abril - El Pochote
+     29717 10 Asentamiento Censo 11
+     29742 100 Barrio La Hermosa
+     29764 101 Barrio La Mora Diques Sur
+     29794 102 Barrio La Pista Norte y Sur
+     29826 103 Barrio La Trinidad, Incluye Rafaelito
+     29868 104 Barrio La Unión - Diques Sur
+     29901 105 Barrio Las Gardenias
+     29926 106 Barrio Las Latas
+     29947 107 Barrio Las Lomas
+     29968 108 Barrio Las Saldaña
+     29991 109 Barrio Limón - Callejón Los Martínez
+     30032 11 Asentamiento Censo 12
+     30057 110 Barrio Los Alamos - Progreso Humano
+     30097 111 Barrio Los Angeles
+     30120 112 Barrio Los Diamantes
+     30145 113 Barrio Los Lirios
+     30167 114 Barrio Margot
+     30185 115 Barrio Miguel Trejos Diques Trejos
+     30224 116 Barrio Nazareth
+     30244 117 Barrio Nuevo De Zapote Pueblo Nuevo
+     30284 118 Barrio Nuevo Diques Norte
+     30314 119 Barrio Oscuro
+     30332 12 Asentamiento Censo 13
+     30357 120 Barrio Palo Hueco
+     30379 121 Barrio Río Corobicí
+     30403 122 Barrio San Carlos
+     30425 123 Barrio San Francisco - Barrio La Gallina
+     30470 124 Barrio San Francisco - La Pedrada
+     30508 125 Barrio San Judas Tadeo
+     30535 126 Barrio San Rafael Cucamunga
+     30567 127 Barrio Santa Catalina
+     30593 128 Barrio Sinaí
+     30610 129 Barrio Sitradique
+     30632 13 Asentamiento Censo 14
+     30657 130 Barrio Tucurrique
+     30679 131 BarrioTenorio
+     30697 132 Bebedero Cañas
+     30716 133 Bella Vista De Pavas
+     30741 134 Bellavista
+     30756 135 Benjamín Núñez
+     30775 136 Berlín - Jovo
+     30793 137 Bethel - Lotes De Caro Quintero
+     30829 138 Bri Brí
+     30841 139 Brooklyn
+     30854 14 Asentamiento Censo 15
+     30879 140 C.N.P
+     30889 141 Calderón Fournier
+     30911 142 Calle El Mango
+     30930 143 Calle Garita
+     30947 144 Calle La Mora
+     30965 145 Calle Las Pavas - Barrio La Unión
+     31003 146 Calle Las Tres Marías
+     31029 147 Calle Managua -  Calle Cementerio
+     31067 148 Calle Molina
+     31084 149 Calle Torre Molina
+     31107 15 Asentamiento Censo 16
+     31132 150 Calle Zeledón - Gallina Barata
+     31167 151 Callejón Cátalo Rojas
+     31193 152 Campo De Aterrizaje - Pueblo Nuevo
+     31232 153 Canta Gallo
+     31248 154 Cantarana
+     31262 155 Caritas Bajo Tejares El Callejón
+     31299 156 Carlin Rodríguez
+     31320 157 Caro Quintero
+     31338 158 Caserío El Hueco
+     31359 159 Caserío Finca La Ligia
+     31386 16 Asentamiento Censo 17
+     31411 160 Caserio Los Angeles - Calle San Juan
+     31452 161 Caserío San Isidro- Proyecto San Isidro
+     31496 162 Cataratas
+     31510 163 Ciudad Nueva
+     31527 164 Ciudadela Calderón Fournier
+     31559 165 Ciudadela Imas
+     31578 166 Cocorocos
+     31592 167 Colonia Cruz 1 y 2
+     31615 168 Colorado De Sarchí
+     31638 169 Concepción I, Incluye Las Luisas Proyecto
+     31684 17 Asentamiento Censo 18
+     31709 170 Condominio Cipreses - Gloria Bejarano
+     31751 171 Corobicí
+     31764 172 Cristo Rey
+     31779 173 Cuesta Del Triunfo
+     31802 174 El Antiguo Matadero
+     31826 175 El Bambú
+     31839 176 El Bambú De Limón
+     31861 177 El Bosque
+     31875 178 El Campo De Aterrizaje-Esterillos Este
+     31918 179 El Ceibón
+     31932 18 Asentamiento Censo 19
+     31957 180 El Chiquero
+     31973 181 El Cocal
+     31986 182 El Consejo
+     32001 183 El Cruce - Comunidad San Juan
+     32035 184 El Crucero Bena
+     32055 185 El Erizo
+     32068 186 El Establo
+     32083 187 El Estadio
+     32098 188 El Huaso Sector Sur
+     32122 189 El Infiernillo
+     32141 19 Asentamiento Censo 20
+     32166 190 El Jazmín Blanco
+     32187 191 El Mirador
+     32202 192 El Muro
+     32214 193 El Nisperal - El Bodocal
+     32243 194 El Plantel
+     32258 195 El Play
+     32270 196 El Pochote
+     32285 197 El Porvenir
+     32301 198 El Puente
+     32315 199 El Rosal
+     32328 2 11 De Abril - Los Molinos
+     32356 20 Asentamiento Censo 21
+     32381 200 El Rótulo
+     32395 201 El Sapo Triste - Pueblo Nuevo
+     32429 202 El Sitio
+     32442 203 Finca Doce
+     32457 204 Finca Omega -  El Rodeo
+     32485 205 Finca San Juan
+     32504 206 Garabito Las Gradas
+     32528 207 Gloria Bejarano - Barrio San José
+     32566 208 Goicoechea
+     32581 209 Gracias A Dios
+     32600 21 Asentamiento Censo 22
+     32625 210 Guadalupe - Los Diques Sur La Mora
+     32664 211 Hacia El Siglo XXI
+     32687 212 Higuerones
+     32702 213 Hogar Propio Las Gavetas
+     32731 214 Indiana 2
+     32745 215 Jardines Universitarios II
+     32776 216 Juan José Alvarado
+     32799 217 Juan Pablo II
+     32817 218 Juan Pablo II - La Planta
+     32847 219 Kira De Castillo
+     32868 22 Asentamiento Censo 23
+     32893 220 La Angostura, incluye Las Gaviotas
+     32932 221 La Arboleda
+     32948 222 La California
+     32966 223 La Carpio
+     32980 224 La Cascabela O Pueblo Alegre
+     33013 225 La Chancha
+     33028 226 La Cima 2 - Buena Vista
+     33056 227 La Cima I
+     33070 228 La Claudia
+     33085 229 La Cuenca Este
+     33104 23 Asentamiento Censo 24
+     33129 230 La Cuenca Oeste - Cuenca Norte Villa Paola
+     33176 231 La Deportiva
+     33193 232 La Esperanza
+     33210 233 La Esperanza
+     33227 234 La Esperanza-Guaycará
+     33253 235 La Frontera
+     33269 236 La Fusilera
+     33285 237 La Gloria- Barrio La Gloria
+     33317 238 La Guaria
+     33331 239 La Laguna
+     33345 24 Asentamiento Censo 25
+     33370 240 La Lidia
+     33383 241 La Lima - Ciudadela Nancy Tatiana
+     33421 242 La Línea Viquillas II
+     33447 243 La Lucha
+     33460 244 La Manolos - Bajo Cuesta Colima
+     33496 245 La Mina
+     33508 246 La Nueva Esperanza
+     33531 247 La Nueva Juventud De Pavas
+     33562 248 La Pradera
+     33577 249 La Precaria De Estrada De Matina
+     33614 25 Asentamiento Censo 26
+     33639 250 La Purruja Km 7
+     33659 251 La Quebrada Calle Los Mangos Bajo Los Anonos
+     33708 252 La Radial - León XIII Naranjo
+     33742 253 La Sirena
+     33756 254 La Tabla
+     33769 255 La Torre
+     33782 256 La Trocha
+     33796 257 La Unión
+     33809 258 La Unión-Esparza
+     33830 259 La Unión-Tibás
+     33849 26 Asentamiento Censo 27
+     33874 260 La Vuelta de La Milpa Cuenca Sur
+     33911 261 Las Amelias
+     33927 262 Las Azucenas - Barrio Las Rosas
+     33963 263 Las Brisas
+     33978 264 Las Brisas De Reventazón
+     34007 265 Las Brisas De Rossiter Carballo La Esperanza
+     34056 266 Las Cloacas
+     34072 267 Las Garzas Las Marías km15 - Kilómetro 16
+     34118 268 Las Lomas
+     34132 269 Las Lomas Alajuela
+     34155 27 Asentamiento Censo 28
+     34180 270 Las Mandarinas
+     34199 271 Las Palmas
+     34214 272 Las Pangas
+     34229 273 Las Parcelas
+     34246 274 Las Reynosas
+     34263 275 Las Rosas
+     34277 276 Las Tecas
+     34291 277 Las Vegas
+     34305 278 Las Vegas- Las Parcelas
+     34333 279 Las Violetas
+     34350 28 Asentamiento Censo 29
+     34375 280 Limón 2000
+     34390 281 Linda Vista
+     34406 282 Linda Vista Loma Gobierno Pueblo Nuevo
+     34449 283 Línea Del Tren Proyecto Cristal
+     34485 284 Llano De La Gloria
+     34508 285 Loma Linda - El Estero
+     34535 286 Loma Linda Santa Lucía
+     34562 287 Lomas de Bella Vista - Josue
+     34595 288 Lomas De Cocorí
+     34615 289 Lomas De Costa Rica
+     34639 29 Asentamiento Censo 3
+     34663 290 Lomas Del Río
+     34681 291 Lomas Del Sol
+     34699 292 Los Angeles Diques Sur
+     34726 293 Los Arcos
+     34740 294 Los Cocotales
+     34758 295 Los Girasoles
+     34776 296 Los Guido - Sector 8
+     34801 297 Los Guido-Sector 1
+     34824 298 Los Guido-Sector 4
+     34847 299 Los Guido-Sector 6
+     34870 3 15 De Agosto
+     34885 30 Asentamiento Censo 30
+     34910 300 Los Heredianos
+     34929 301 Los Huevitos
+     34946 302 Los Laureles
+     34963 303 Los Laureles Guácimo
+     34988 304 Los Laureles De Siquirres
+     35018 305 Los Lirios De  Limón
+     35043 306 Los Lirios De Manuel Antonio
+     35076 307 Los Olivos
+     35091 308 Lotes De Meco
+     35109 309 Lotes Fijos Metrópolis
+     35136 31 Asentamiento Censo 31
+     35161 310 Lotes Peralta
+     35179 311 Managuita
+     35193 312 Manolo Rodríguez II  Los Cangrejos
+     35232 313 Margarita Penón De Arias 2
+     35263 314 Martina Bustos
+     35282 315 Matapalo
+     35295 316 Medalla Milagrosa
+     35317 317 Metrópolis I Precario Tarzán Bella Vista
+     35362 318 Metrópolis III Nueva Esperanza Unidos Pro Vivienda
+     35417 319 Miraflores - Higueron Diques Norte
+     35456 32 Asentamiento Censo 32
+     35481 320 Miravalles 1 y 2
+     35502 321 Miravalles De Paquita
+     35528 322 Monseñor Arrieta - Barrio La Amistad
+     35569 323 Monserrat
+     35583 324 Montecarlo
+     35598 325 Naranjales
+     35613 326 Nietos Del Padre Solano
+     35641 327 Nueva Esperanza De Pavas
+     35670 328 Nuevos Horizontes Las Gradas
+     35703 329 Obando Chan - Pista 2
+     35729 33 Asentamiento Censo 33
+     35754 330 Paja De Agua
+     35771 331 Palacios Universitarios
+     35799 332 Parcelas Ricardo Jiménez
+     35828 333 Parcelas Santa Fe
+     35850 334 Pasos Verdes Del Este
+     35876 335 Pata de Gallo
+     35894 336 Patiño
+     35905 337 Pindeco  La Mona - Paseo Las Flores -La mona Caída-
+     35961 338 Pinos Del Este
+     35980 339 Pista 1- Precario Detrás Cementerio- Karen Olsen-
+     36034 34 Asentamiento Censo 34
+     36059 340 Plan Piloto
+     36075 341 Playón De Barranca
+     36098 342 Poblado La Trinidad
+     36122 343 Pocosol Santa Fe
+     36143 344 Ponderosa 1 Ciudadela El Higuerón
+     36181 345 Ponderosa 2
+     36197 346 Ponderosa 3
+     36213 347 Precario Cervil - Las 85
+     36242 348 Precario Nogal
+     36261 349 Precario Tres O Nuevo Amanecer
+     36296 35 Asentamiento Censo 35
+     36321 350 Premio Nobel De La Paz
+     36348 351 Primero De Mayo
+     36368 352 Primero De Mayo - El Roble
+     36399 353 Proyecto Los Angeles-El Quebrador
+     36437 354 Puente Quemado -  Barrio Corazón De Jesús
+     36483 355 Puerto Soley
+     36500 356 Punta Mala -Barrio La Latas-
+     36533 357 Quebrada El Fierro
+     36556 358 Quebrada Grande
+     36576 359 Quebrada Seca - El Gueco
+     36605 36 Asentamiento Censo 36
+     36630 360 Queroga
+     36642 361 Rancho Chilamate
+     36663 362 Rancho Tranquilo
+     36684 363 Ranchos INA
+     36700 364 Rebeca Gryspan - Precario Norte A-B Zancudo 1 Y 2
+     36754 365 Río Blanco
+     36769 366 Río Grande
+     36784 367 Río Sarchí - Urbanización
+     36814 368 Rudin
+     36824 369 San Bosco - San Miguel
+     36851 37 Asentamiento Censo 37
+     36876 370 San Diego
+     36890 371 San Diego - Entrada Al Monte
+     36923 372 San Francisco
+     36941 373 San Francisco Este
+     36964 374 San Gerónimo
+     36981 375 San Jerónimo
+     36998 376 San Luis
+     37011 377 San Martin - Limón
+     37034 378 San Martín
+     37049 379 San Martín II
+     37067 38 Asentamiento Censo 38
+     37092 380 San Miguel - El Alto De Los Nicas
+     37130 381 San Pablo
+     37144 382 San Pedro-Pollo Triste
+     37171 383 San Rafael De Cerros
+     37196 384 San Sebastian Carpio Dos
+     37225 385 San Vicente
+     37241 386 Santa Cecilia
+     37259 387 Santa Cecilia - El Tendal
+     37289 388 Santa Eduviges Chacarita
+     37318 389 Santa Fe O Corazón De Jesús La Esperanza 2
+     37365 39 Asentamiento Censo 39
+     37390 390 Santa Gertrudis Diques Sur
+     37421 391 Santa Isabel Abajo y Arriba
+     37453 392 Santa Lucía - Limón
+     37477 393 Santa Rita - Infiernillo
+     37506 394 Santa Rosa
+     37521 395 Santa Teresita 1 Y 2
+     37546 396 Santa Teresita Diques Norte
+     37578 397 Sector 7
+     37591 398 Sector Colegio - Sixaola
+     37620 399 Sector Río - Sixaola
+     37645 4 22 De Octubre
+     37661 40 Asentamiento Censo 40
+     37686 400 Sin Nombre-La Ladrillera
+     37715 401 Tejares Primer Etapa
+     37740 402 Tierra Prometida
+     37761 403 Tobías Vaglio
+     37779 404 Tobías Vaglio - Sector 1, 2 y 3
+     37815 405 Triángulo De Solidaridad
+     37844 406 Umara 2
+     37856 407 Unión Campesina
+     37876 408 Urbanización El Futuro
+     37903 409 Urbanización Europa
+     37927 41 Asentamiento Censo 41
+     37952 410 Urbanización Los Cipreses
+     37982 411 Valle Del Sol
+     38000 412 Vendedores Ambulantes
+     38026 413 Villa Bruselas
+     38045 414 Villa Del Mar
+     38063 415 Villa Flor -  El Cenizaro
+     38093 416 Villa Mora
+     38108 417 Villa Plata
+     38124 418 El Mirador Alajuela.
+     38149 42 Asentamiento Censo 42
+     38174 43 Asentamiento Censo 43
+     38199 44 Asentamiento Censo 44
+     38224 45 Asentamiento Censo 45
+     38249 46 Asentamiento Censo 46
+     38274 47 Asentamiento Censo 47
+     38299 48 Asentamiento Censo 48
+     38324 49 Asentamiento Censo 49
+     38349 5 25 De Diciembre - Los Higuerones - Managüita y la Cabaña
+     38408 50 Asentamiento Censo 5
+     38432 51 Asentamiento Censo 50
+     38457 52 Asentamiento Censo 51
+     38482 53 Asentamiento Censo 52
+     38507 54 Asentamiento Censo 53
+     38532 55 Asentamiento Censo 54
+     38557 56 Asentamiento Censo 55
+     38582 57 Asentamiento Censo 56
+     38607 58 Asentamiento Censo 57
+     38632 59 Asentamiento Censo 58
+     38657 6 Afuera Rosa Iris-Los Arrimados-Ciudadela Rosa Iris
+     38710 60 Asentamiento Censo 59
+     38735 61 Asentamiento Censo 6
+     38759 62 Asentamiento Censo 60
+     38784 63 Asentamiento Censo 7
+     38808 64 Asentamiento Censo 8
+     38832 65 Asentamiento Censo 9
+     38856 66 Asentamiento El Guayabal - El Muro
+     38894 67 Asentamiento El Javillo
+     38921 68 Asentamiento La Manudita
+     38949 69 Asentamiento Las Brisas
+     38976 7 Alemania Unida
+     38993 70 Asentamiento Las Flores - Barrio Las Flores
+     39040 71 Asentamiento San Lorenzo
+     39068 72 Asentamiento Santa Lucía - Porte Golpe
+     39110 73 Aserradero Vargas - San Gabriel
+     39145 74 Asprovicruz
+     39160 75 Bagaces 2000
+     39176 76 Bahía Azul-Pies Mojados
+     39203 77 Bajo De Chilamate
+     39224 78 Bajo Del Sapo
+     39241 79 Bajo Las Gavetas
+     39261 8 Asentamiento Censo 1
+     39284 80 Bajo Los Ledezma - Barrio El Jardín - La Amistad
+     39336 81 Bajo Manolo Rodríguez
+     39361 82 Bajo Manolos - Bajo Las Iguanas
+     39396 83 Bajos Hatillo 5 - Las Gavetas Mandilandia
+     39441 84 Bambú 2
+     39452 85 Barracones De Luna Park
+     39479 86 Barrio Angeles - Cementerio
+     39510 87 Barrio Camareno
+     39529 88 Barrio Copey -El Precario-
+     39559 89 Barrio Del Muro Blanco
+     39585 9 Asentamiento Censo 10
+     39609 90 Barrio El Bosque
+     39629 91 Barrio El Carmen
+     39649 92 Barrio El Carmen De Abrojo
+     39679 93 Barrio El Hueco
+     39698 94 Barrio El INVU
+     39716 95 Barrio Fátima Los Diques
+     39744 96 Barrio Jesús Jiménez
+     39768 97 Barrio La Colina
+     39788 98 Barrio La Cruz - Diques Sur
+     39819 99 Barrio La Esperanza 1
+     39844 999 No está en asentameinto
+     39874 V34 Nombre asentamiento'
+     39899 MISSING 1000 NOTAPPLICABLE 0 ALIAS V34
+     39947 A¸&
+     39955 A¬&
+     39962 ASENTAMIENTO3
+     39976 DATASET PCK '.\CR2011 ASENTAMIENTOS0005.rbf' SIZE 2
+     40031 1 TO 2
+     40039 INTEGER1
+     40048 1 Está en asentamiento
+     40071 2 No está en asentamiento
+     40099 V35 Asentamiento$
+     40117 MISSING 3 NOTAPPLICABLE 0 ALIAS V35
+     40177 HOGAR
+     40184 HOGAR
+     40191 VIVIENDA
+     40203 .\CR20110005.ptr
+     40246 XhÃ
+     40264 JEFCOMP%
+     40273 DATASET PCK '.\CR20110050.rbf' SIZE 2
+     40314 1 TO 1
+     40322 INTEGER
+     40331 1 Sí
+     40338 H04 Jefatura compartida$
+     40363 MISSING 2 NOTAPPLICABLE 0 ALIAS H04
+     40405 ²\
+     40423 TOTHOMB&
+     40432 DATASET PCK '.\CR20110051.rbf' SIZE 12
+     40474 0 TO 2400
+     40485 INTEGERF
+     40494 8 8 Miembros del hogar se encuentran viviendo en otro país
+     40553 9 Ignorado
+     40566 H05A Total de hombres en el hogar+
+     40601 MISSING 2402 NOTAPPLICABLE 2401 ALIAS H05A
+     40650 $yÆ
+     40658 02f
+     40668 TOTMUJ&
+     40676 DATASET PCK '.\CR20110052.rbf' SIZE 10
+     40718 0 TO 652
+     40728 INTEGER
+     40737 0 NOTAPPLICABLE 0 ALIAS H07B
+     40768 H05B Total de mujeres en el hogar)
+     40803 MISSING 654 NOTAPPLICABLE 653 ALIAS H05B
+     40850 43f
+     40868 TOTPERS&
+     40877 DATASET PCK '.\CR20110053.rbf' SIZE 12
+     40919 0 TO 2400
+     40930 INTEGER
+     40939 7 7 Miembros del hogar se encuentran viviendo en otro país
+     40998 8 8 Miembros del hogar se encuentran viviendo en otro país
+     41057 9 Ignorado
+     41070 H05C Resumen total de personas+
+     41102 MISSING 2402 NOTAPPLICABLE 2401 ALIAS H05C
+     41151 ,-a
+     41159 <C^
+     41169 MVIVOTPA%
+     41179 DATASET PCK '.\CR20110054.rbf' SIZE 2
+     41220 1 TO 2
+     41228 INTEGER
+     41237 1 Sí
+     41242 2 No
+     41249 H07A Miembros del hogar viviendo en otro país%
+     41296 MISSING 3 NOTAPPLICABLE 0 ALIAS H07A
+     41339 LzÆ
+     41357 MIEMBEXT%
+     41367 DATASET PCK '.\CR20110055.rbf' SIZE 4
+     41408 1 TO 9
+     41416 INTEGERá
+     41425 1 1 Miembro del hogar se encuentra viviendo en otro país
+     41482 2 2 Miembros del hogar se encuentran viviendo en otro país
+     41541 3 3 Miembros del hogar se encuentran viviendo en otro país
+     41600 4 4 Miembros del hogar se encuentran viviendo en otro país
+     41659 5 5 Miembros del hogar se encuentran viviendo en otro país
+     41718 6 6 Miembros del hogar se encuentran viviendo en otro país
+     41777 7 7 Miembros del hogar se encuentran viviendo en otro país
+     41836 8 8 Miembros del hogar se encuentran viviendo en otro país
+     41895 9 Ignorado
+     41908 H07B Número de miembros del hogar viviendo en el extranjero&
+     41969 MISSING 10 NOTAPPLICABLE 0 ALIAS H07B
+     42013 ;f
+     42031 RDBEXT%
+     42039 DATASET PCK '.\CR20110056.rbf' SIZE 2
+     42080 1 TO 2
+     42088 INTEGER
+     42097 1 Sí
+     42102 2 No
+     42109 H08A_Recibe dinero o bienes del extranjero%
+     42153 MISSING 3 NOTAPPLICABLE 0 ALIAS H08A
+     42204 èm^
+     42214 ENVDBEXT%
+     42224 DATASET PCK '.\CR20110057.rbf' SIZE 2
+     42265 1 TO 2
+     42273 INTEGER
+     42282 1 Sí
+     42287 2 No
+     42294 H08B_Envía dinero o bienes al extranjero%
+     42336 MISSING 3 NOTAPPLICABLE 0 ALIAS H08B
+     42379 (H^
+     42397 TENFAGRO%
+     42407 DATASET PCK '.\CR20110058.rbf' SIZE 4
+     42448 1 TO 9
+     42456 INTEGERÙ
+     42465 1 Tiene parcela o finca agropecuaria
+     42502 2 Realizó cultivos en el último año (Terreno propio, prestado, alquilado)
+     42576 3 Tiene ganado, cerdos, gallinas, otros (para venta o autoconsumo)
+     42643 4 Ninguna de las anteriores
+     42671 9 Ignorado
+     42684 H09 Alguien del hogar tiene finca agropecuaría,cultivo, animales%
+     42750 MISSING 10 NOTAPPLICABLE 0 ALIAS H09
+     42793 ÜL^
+     42811 TIPOLOGIA%
+     42822 DATASET PCK '.\CR20110059.rbf' SIZE 4
+     42863 1 TO 14
+     42872 INTEGER
+     42881 1 Hogar nuclear conyugal sin hijos
+     42916 2 Hogar nuclear conyugal con hijos
+     42951 3 Hogar nuclear monoparental
+     42980 4 Hogar extenso conyugal sin hijos y otros familiares
+     43034 5 Hogar extenso conyugal con hijos y otros familiares
+     43088 6 Hogar extenso monoparental y otros familiares
+     43136 7 Hogar extenso jefe(a) y otros familiares
+     43179 8 Hogar compuesto nuclear y no familiares
+     43221 9 Hogar compuesto extenso y no familiares
+     43263 10 Hogar compuesto jefe(a) familiares y no familiares
+     43317 11 Otros hogares unipersonales
+     43348 12 Otros hogares no familiares
+     43379 13 Hogares colectivos
+     43401 14 Servicio doméstico
+     43425 H10 Tipología del hogar%
+     43450 MISSING 15 NOTAPPLICABLE 0 ALIAS H10
+     43493 ¼·\
+     43501 è0^
+     43511 ALBERGUE%
+     43521 DATASET PCK '.\CR20110060.rbf' SIZE 2
+     43562 0 TO 1
+     43570 INTEGER(
+     43579 0 No tiene carencia
+     43599 1 Si tiene carencia
+     43621 H12 Albergue$
+     43635 MISSING 3 NOTAPPLICABLE 2 ALIAS H12
+     43677 Às^
+     43695 SALUD%
+     43702 DATASET PCK '.\CR20110061.rbf' SIZE 2
+     43743 0 TO 1
+     43751 INTEGER(
+     43760 0 No tiene carencia
+     43780 1 Si tiene carencia
+     43802 H13 Salud$
+     43813 MISSING 3 NOTAPPLICABLE 2 ALIAS H13
+     43855 ,Da
+     43863 èGf
+     43873 CONOCIMIEN%
+     43885 DATASET PCK '.\CR20110062.rbf' SIZE 2
+     43926 0 TO 1
+     43934 INTEGER(
+     43943 0 No tiene carencia
+     43963 1 Si tiene carencia
+     43985 H14 Conocimiento$
+     44003 MISSING 3 NOTAPPLICABLE 2 ALIAS H14
+     44063 CONSUMO%
+     44072 DATASET PCK '.\CR20110063.rbf' SIZE 2
+     44113 0 TO 1
+     44121 INTEGER(
+     44130 0 No tiene carencia
+     44150 1 Si tiene carencia
+     44172 H15 Consumo$
+     44185 MISSING 3 NOTAPPLICABLE 2 ALIAS H15
+     44235 ¸[a
+     44245 TOTALCAREN%
+     44257 DATASET PCK '.\CR20110064.rbf' SIZE 3
+     44298 0 TO 4
+     44306 INTEGERE
+     44315 0 0 carencias
+     44329 1 1 carencia
+     44342 2 2 carencias
+     44356 3 3 carencias
+     44370 4 4 carencias
+     44386 H16 Total carencias$
+     44407 MISSING 6 NOTAPPLICABLE 5 ALIAS H16
+     44457 Øtf
+     44467 HNBI%
+     44473 DATASET PCK '.\CR20110065.rbf' SIZE 2
+     44514 0 TO 1
+     44522 INTEGER
+     44531 0 No tiene NBI
+     44546 1 Si tiene NBI
+     44563 H17 Necesidades básicas insatisfechas$
+     44602 MISSING 3 NOTAPPLICABLE 2 ALIAS H17
+     44662 POBLACIO
+     44672 POBLACIO
+     44682 HOGAR
+     44691 .\CR20110006.ptr
+     44752 NUMLIN%
+     44760 DATASET PCK '.\CR20110066.rbf' SIZE 7
+     44801 1 TO 99
+     44810 INTEGER>
+     44819 36 Australia
+     44832 90 Islas Salomon
+     44849 16 Samoa Americana
+     44868 10 Antártida
+     44883 P00 Número de línea de la persona&
+     44918 MISSING 100 NOTAPPLICABLE 0 ALIAS P00
+     44980 PARENTES%
+     44990 DATASET PCK '.\CR20110067.rbf' SIZE 4
+     45031 1 TO 12
+     45040 INTEGERç
+     45049 1 Jefa o jefe
+     45063 2 Esposo(a) o compañero(a)
+     45090 3 Hijo(a) o hijastro(a)
+     45114 4 Yerno o nuera
+     45130 5 Nieto(a) o bisnieto(a)
+     45155 6 Hermano(a)
+     45168 7 Cuñado(a)
+     45180 8 Padre, madre
+     45195 9 Suegro(a)
+     45207 10 Otro familiar
+     45224 11 Servicio doméstico y su familiar
+     45260 12 Otro no familiar
+     45282 P01 Parentesco con la jefa o el jefe del hogar%
+     45330 MISSING 13 NOTAPPLICABLE 0 ALIAS P01
+     45373 ¨¹Ä
+     45381 È(Ä
+     45391 SEXO%
+     45397 DATASET PCK '.\CR20110068.rbf' SIZE 2
+     45438 1 TO 2
+     45446 INTEGER
+     45455 1 Hombre
+     45464 2 Mujer
+     45474 P02 Sexo$
+     45484 MISSING 3 NOTAPPLICABLE 0 ALIAS P02
+     45534 8¾[
+     45544 EDAD%
+     45550 DATASET PCK '.\CR20110069.rbf' SIZE 7
+     45591 0 TO 120
+     45601 INTEGER
+     45610 307 Oreamuno
+     45623 308 El Guarco
+     45637 401 Heredia
+     45649 402 Barva
+     45659 403 Santo Domingo
+     45677 404 Santa Bárbara
+     45695 405 San Rafael
+     45710 406 San Isidro
+     45725 407 Belén
+     45735 408 Flores
+     45746 409 San Pablo
+     45760 410 Sarapiquí
+     45774 501 Liberia
+     45786 502 Nicoya
+     45797 503 Santa Cruz
+     45812 504 Bagaces
+     45824 505 Carrillo
+     45837 506 Cañas
+     45847 507 Abangares
+     45861 508 Tilarán
+     45873 509 Nandayure
+     45887 510 La Cruz
+     45899 511 Hojancha
+     45912 601 Puntarenas
+     45927 602 Esparza
+     45939 603 Buenos Aires
+     45956 604 Montes de Oro
+     45974 605 Osa
+     45982 606 Aguirre
+     45994 607 Golfito
+     46006 608 Coto Brus
+     46020 609 Parrita
+     46032 610 Corredores
+     46047 611 Garabito
+     46060 701 Limón
+     46070 702 Pococí
+     46081 703 Siquirres
+     46095 704 Talamanca
+     46109 705 Matina
+     46120 706 Guácimo
+     46134 P03 Edad(
+     46144 MISSING 122 NOTAPPLICABLE 121 ALIAS P03
+     46190 0Èc
+     46198 ´Óc
+     46208 NACIMIEN%
+     46218 DATASET PCK '.\CR20110070.rbf' SIZE 3
+     46259 1 TO 3
+     46267 INTEGER7
+     46276 1 En este mismo cantón
+     46299 2 En otro cantón
+     46316 3 En otro país
+     46333 P05A Lugar de nacimiento%
+     46359 MISSING 4 NOTAPPLICABLE 0 ALIAS P05A
+     46402 DÒc
+     46420 LUGNACI&
+     46429 DATASET PCK '.\CR20110071.rbf' SIZE 10
+     46471 101 TO 706
+     46483 INTEGER2
+     46492 101 San José
+     46505 102 Escazú
+     46516 103 Desamparados
+     46533 104 Puriscal
+     46546 105 Tarrazú
+     46558 106 Aserrí
+     46569 107 Mora
+     46578 108 Goicoechea
+     46593 109 Santa Ana
+     46607 110 Alajuelita
+     46622 111 Vázquez de Coronado
+     46646 112 Acosta
+     46657 113 Tibás
+     46667 114 Moravia
+     46679 115 Montes de Oca
+     46697 116 Turrubares
+     46712 117 Dota
+     46721 118 Curridabat
+     46736 119 Pérez Zeledón
+     46754 120 León Cortés Castro
+     46777 201 Alajuela
+     46790 202 San Ramón
+     46804 203 Grecia
+     46815 204 San Mateo
+     46829 205 Atenas
+     46840 206 Naranjo
+     46852 207 Palmares
+     46865 208 Poás
+     46874 209 Orotina
+     46886 210 San Carlos
+     46901 211 Zarcero
+     46913 212 Valverde Vega
+     46931 213 Upala
+     46941 214 Los Chiles
+     46956 215 Guatuso
+     46968 301 Cartago
+     46980 302 Paraíso
+     46992 303 La Unión
+     47005 304 Jiménez
+     47017 305 Turrialba
+     47031 306 Alvarado
+     47044 307 Oreamuno
+     47057 308 El Guarco
+     47071 401 Heredia
+     47083 402 Barva
+     47093 403 Santo Domingo
+     47111 404 Santa Bárbara
+     47129 405 San Rafael
+     47144 406 San Isidro
+     47159 407 Belén
+     47169 408 Flores
+     47180 409 San Pablo
+     47194 410 Sarapiquí
+     47208 501 Liberia
+     47220 502 Nicoya
+     47231 503 Santa Cruz
+     47246 504 Bagaces
+     47258 505 Carrillo
+     47271 506 Cañas
+     47281 507 Abangares
+     47295 508 Tilarán
+     47307 509 Nandayure
+     47321 510 La Cruz
+     47333 511 Hojancha
+     47346 601 Puntarenas
+     47361 602 Esparza
+     47373 603 Buenos Aires
+     47390 604 Montes de Oro
+     47408 605 Osa
+     47416 606 Aguirre
+     47428 607 Golfito
+     47440 608 Coto Brus
+     47454 609 Parrita
+     47466 610 Corredores
+     47481 611 Garabito
+     47494 701 Limón
+     47504 702 Pococí
+     47515 703 Siquirres
+     47529 704 Talamanca
+     47543 705 Matina
+     47554 706 Guácimo
+     47568 P05B_Código_Provincia_Cantón'
+     47598 MISSING 707 NOTAPPLICABLE 0 ALIAS P05B
+     47643 ,¨a
+     47651 È¨f
+     47661 LUGPA&
+     47668 DATASET PCK '.\CR20110072.rbf' SIZE 10
+     47710 1 TO 970
+     47720 INTEGER*
+     47729 124 Canadá
+     47740 840 Estados Unidos
+     47759 580 Islas Marianas del Norte
+     47788 851 Islas Ultramarinas Menores de Estados Unidos
+     47837 484 México
+     47848 84 Belice
+     47858 188 Costa Rica
+     47873 222 El Salvador
+     47889 320 Guatemala
+     47903 340 Honduras
+     47916 558 Nicaragua
+     47930 591 Panamá
+     47941 32 Argentina
+     47954 68 Bolivia
+     47965 76 Brasil
+     47975 152 Chile
+     47985 170 Colombia
+     47998 218 Ecuador
+     48010 254 Guayana Francesa
+     48031 328 Guyana
+     48042 600 Paraguay
+     48055 604 Perú
+     48064 740 Suriname
+     48077 858 Uruguay
+     48089 862 Venezuela
+     48103 660 Anguila
+     48115 28 Antigua y Barbuda
+     48136 530 Antillas Neerlandesas
+     48162 533 Aruba
+     48172 44 Bahamas
+     48183 52 Barbados
+     48195 60 Isla Bermuda
+     48211 192 Cuba
+     48220 212 Dominica
+     48233 308 Granada
+     48245 312 Guadalupe
+     48259 332 Haití
+     48269 136 Islas Caimán
+     48286 796 Islas Turcas y Caicos
+     48312 92 Islas Vírgenes Británicas
+     48341 850 Islas Vírgenes de los Estados Unidos
+     48382 388 Jamaica
+     48394 474 Martinica
+     48408 500 Monserrat
+     48422 630 Puerto Rico
+     48438 214 República Dominicana
+     48463 652 San Bartolomé
+     48481 659 Saint Kitts & Nevis
+     48505 666 San Pedro y Miquelón
+     48530 670 San Vicente y Las Granadinas
+     48563 662 Santa Lucía
+     48579 780 Trinidad y Tobago
+     48601 8 Albania
+     48611 276 Alemania
+     48624 20 Andorra
+     48635 51 Armenia
+     48646 40 Austria
+     48657 31 Azerbaiján
+     48671 56 Bélgica
+     48682 112 Belarús
+     48694 70 Bosnia y Herzegovina
+     48718 100 Bulgaria
+     48731 191 Croacia
+     48743 208 Dinamarca
+     48757 822 Escocia
+     48769 703 Eslovaquia
+     48784 705 Eslovenia
+     48798 724 España
+     48809 233 Estonia
+     48821 246 Finlandia
+     48835 250 Francia
+     48847 823 Gales
+     48857 268 Georgia
+     48869 292 Gibraltar
+     48883 300 Grecia
+     48894 304 Groenlandia
+     48910 348 Hungría
+     48922 824 Inglaterra
+     48937 825 Irlanda del Norte
+     48959 372 Irlanda
+     48971 352 Islandia
+     48984 74 Isla Bouvet
+     48999 830 Islas del Canal
+     49019 234 Islas Feroe
+     49035 239 Islas Georgia y Sandwich del Sur
+     49072 744 Islas Svalbard y Jan Mayen
+     49103 612 Islas Pitcairn
+     49122 380 Italia
+     49133 398 Kazajstán
+     49147 417 Kirguistán
+     49162 428 Letonia
+     49174 438 Liechtenstein
+     49192 440 Lituania
+     49205 442 Luxemburgo
+     49220 807 Macedonia
+     49234 470 Malta
+     49244 175 Mayotte
+     49256 498 Moldavia
+     49269 492 Mónaco
+     49280 499 Montenegro
+     49295 578 Noruega
+     49307 528 Holanda
+     49319 616 Polonia
+     49331 620 Portugal
+     49344 203 República Checa
+     49364 642 Rumanía
+     49376 643 Rusia
+     49386 674 San Marino
+     49401 688 Serbia
+     49412 752 Suecia
+     49423 756 Suiza
+     49433 762 Tayikistán
+     49448 86 Territorio Británico Océano Índico
+     49486 260 Tierras Francesas Australes
+     49518 795 Turkmenistán
+     49535 804 Ucrania
+     49547 860 Uzbekistán
+     49562 336 Vaticano
+     49575 4 Afganistán
+     49588 682 Arabia Saudita
+     49607 48 Bahrein
+     49618 50 Bangladesh
+     49632 104 Myanmar
+     49644 96 Brunei Darussalam
+     49665 64 Bután
+     49674 116 Camboya
+     49686 156 China
+     49696 196 Chipre
+     49707 408 República Popular Democrática de Corea
+     49750 410 República de Corea
+     49773 784 Emiratos Árabes Unidos
+     49800 608 Filipinas
+     49814 344 Hong Kong
+     49828 356 India
+     49838 360 Indonesia
+     49852 368 Irak
+     49861 364 Irán
+     49870 238 Islas Malvinas
+     49889 376 Israel
+     49900 392 Japón
+     49910 400 Jordania
+     49923 414 Kuwait
+     49934 418 Laos
+     49943 422 Líbano
+     49954 446 Macao
+     49964 458 Malasia
+     49976 462 Maldivas
+     49989 496 Mongolia
+     50002 524 Nepal
+     50012 512 Omán
+     50021 586 Pakistán
+     50034 634 Qatar
+     50044 702 Singapur
+     50057 760 Siria
+     50067 144 Sri Lanka
+     50081 158 Taiwán
+     50092 764 Tailandia
+     50106 626 Timor Oriental
+     50125 792 Turquía
+     50137 704 Vietnam
+     50149 887 Yemen
+     50159 24 Angola
+     50169 12 Argelia
+     50180 204 Benín
+     50190 72 Botswana
+     50202 854 Burkina Faso
+     50219 108 Burundi
+     50231 132 Cabo Verde
+     50246 120 Camerún
+     50258 148 Chad
+     50267 174 Comoras
+     50279 178 Congo
+     50289 384 Costa de Marfil
+     50309 262 Djibouti
+     50322 818 Egipto
+     50333 232 Eritrea
+     50345 231 Etiopía
+     50357 266 Gabón
+     50367 270 Gambia
+     50378 288 Ghana
+     50388 324 Guinea
+     50399 226 Guinea Ecuatorial
+     50421 624 Guinea Bissau
+     50439 404 Kenya
+     50449 426 Lesotho
+     50461 430 Liberia
+     50473 434 Libia
+     50483 450 Madagascar
+     50498 454 Malawi
+     50509 466 Mali
+     50518 504 Marruecos
+     50532 480 Mauricio
+     50545 478 Mauritania
+     50560 508 Mozambique
+     50575 516 Namibia
+     50587 562 Níger
+     50597 566 Nigeria
+     50609 140 República Centroafricana
+     50638 180 República Democrática del Congo
+     50674 638 Reunión
+     50686 646 Ruanda
+     50697 732 Sahara Occidental
+     50719 654 Santa ESizea
+     50736 678 Santo Tomé y Príncipe
+     50762 686 Senegal
+     50774 690 Seychelles
+     50789 694 Sierra Leona
+     50806 706 Somalia
+     50818 748 Swazilandia
+     50834 710 Sudáfrica
+     50848 736 Sudán
+     50858 834 Tanzania
+     50871 768 Togo
+     50880 788 Túnez
+     50890 800 Uganda
+     50901 894 Zambia
+     50912 716 Zimbabwe
+     50925 36 Australia
+     50938 242 Fiji
+     50947 316 Guam
+     50956 162 Isla de Navidad
+     50976 574 Isla Norfolk
+     50993 166 Islas Cocos
+     51009 184 Islas Cook
+     51024 584 Islas Marshall
+     51043 334 Islas Heard and Mcdonald
+     51072 90 Islas Salomon
+     51089 876 Islas Wallis y Futuna
+     51115 296 Kiribati
+     51128 583 Micronesia
+     51143 520 Nauru
+     51153 570 Niue
+     51162 540 Nueva Caledonia
+     51182 554 Nueva Zelanda
+     51200 585 Palau
+     51210 598 Papua Nueva Guinea
+     51233 258 Polinesia Francesa
+     51256 882 Samoa
+     51266 16 Samoa Americana
+     51285 772 Tokelau
+     51297 776 Tonga
+     51307 798 Tuvalu
+     51318 548 Vanuatu
+     51330 10 Antártida
+     51343 970 Altamar
+     51357 P05C Código de País'
+     51378 MISSING 971 NOTAPPLICABLE 0 ALIAS P05C
+     51431 hÇÂ
+     51441 LLEGADCR&
+     51451 DATASET PCK '.\CR20110073.rbf' SIZE 14
+     51493 1890 TO 9999
+     51507 INTEGER
+     51516 9999 Ignorado
+     51532 P06A Año de llegada a Costa Rica)
+     51566 MISSING 10000 NOTAPPLICABLE 0 ALIAS P06A
+     51631 CODLLECR%
+     51641 DATASET PCK '.\CR20110074.rbf' SIZE 4
+     51682 1 TO 9
+     51690 INTEGERX
+     51699 1 Antes de 1980
+     51715 2 Entre 1980 y 1989
+     51735 3 Entre 1990 y 1999
+     51755 4 En el 2000 o luego
+     51776 9 Ignorado
+     51789 P06B Código de llegada a Costa Rica&
+     51826 MISSING 10 NOTAPPLICABLE 0 ALIAS P06B
+     51870 $}Ä
+     51878 d¸¹
+     51888 CONSIND%
+     51897 DATASET PCK '.\CR20110075.rbf' SIZE 2
+     51938 1 TO 2
+     51946 INTEGER
+     51955 1 Sí
+     51960 2 No
+     51967 P07 Se considera indígena$
+     51994 MISSING 3 NOTAPPLICABLE 0 ALIAS P07
+     52036 ÈÂÃ
+     52054 PUEBLOIN%
+     52064 DATASET PCK '.\CR20110076.rbf' SIZE 4
+     52105 1 TO 10
+     52114 INTEGER
+     52123 1 Bribrí
+     52132 2 Brunca o Boruca
+     52150 3 Cabécar
+     52160 4 Chorotega
+     52172 5 Huetar
+     52181 6 Maleku o Guatuso
+     52200 7 Ngöbe o Guaymí
+     52217 8 Teribe o Térraba
+     52236 9 De otro país
+     52251 10 Ningún pueblo
+     52270 P08 Pueblo indígena al que pertenece%
+     52308 MISSING 11 NOTAPPLICABLE 0 ALIAS P08
+     52351 xüd
+     52369 LENGIND%
+     52378 DATASET PCK '.\CR20110077.rbf' SIZE 2
+     52419 1 TO 2
+     52427 INTEGER
+     52436 1 Sí
+     52441 2 No
+     52448 P09 Habla algún idioma o lengua indígena$
+     52490 MISSING 3 NOTAPPLICABLE 0 ALIAS P09
+     52540 Ø¸_
+     52550 ETNIA%
+     52557 DATASET PCK '.\CR20110078.rbf' SIZE 4
+     52598 1 TO 9
+     52606 INTEGERj
+     52615 1 Negro(a) o afrodescendiente
+     52645 2 Mulato(a)
+     52657 3 Chino(a)
+     52668 4 Blanco(a) o mestizo(a)
+     52693 5 Otro
+     52700 6 Ninguna
+     52710 9 Ignorado
+     52723 P10 Autoidentificación étnico-racial%
+     52761 MISSING 10 NOTAPPLICABLE 0 ALIAS P10
+     52812 t¯]
+     52822 SEGSOC%
+     52830 DATASET PCK '.\CR20110079.rbf' SIZE 4
+     52871 1 TO 8
+     52879 INTEGERø
+     52888 1 Asalariado(a)
+     52904 2 Cuenta propia, voluntario o convenio
+     52943 3 Régimen no contributivo (Recibe pensión)
+     52986 4 Pensionado(a) de la CCSS, Magisterio u otro
+     53032 5 Asegurado(a) familiar
+     53056 6 Asegurado(a) por el estado
+     53085 7 Otras formas
+     53100 8 No tiene seguro social de la CCSS
+     53138 P11 Condición de aseguramiento$
+     53170 MISSING 9 NOTAPPLICABLE 0 ALIAS P11
+     53212 h<\
+     53230 DISCPVER%
+     53240 DATASET PCK '.\CR20110080.rbf' SIZE 2
+     53281 1 TO 2
+     53289 INTEGER
+     53298 1 Sí
+     53303 2 No
+     53310 P12A Limitación para ver aunque use anteojos o Sizetes%
+     53366 MISSING 3 NOTAPPLICABLE 0 ALIAS P12A
+     53417 T$e
+     53427 DISCPOIR%
+     53437 DATASET PCK '.\CR20110081.rbf' SIZE 2
+     53478 1 TO 2
+     53486 INTEGER
+     53495 1 Sí
+     53500 2 No
+     53507 P12B Limitación para oir%
+     53533 MISSING 3 NOTAPPLICABLE 0 ALIAS P12B
+     53594 DISCPHAB%
+     53604 DATASET PCK '.\CR20110082.rbf' SIZE 3
+     53645 1 TO 6
+     53653 INTEGER
+     53662 1 Sí
+     53667 2 No
+     53674 P12C Limitación para hablar%
+     53703 MISSING 7 NOTAPPLICABLE 0 ALIAS P12C
+     53764 DISCPCAM%
+     53774 DATASET PCK '.\CR20110083.rbf' SIZE 2
+     53815 1 TO 2
+     53823 INTEGER
+     53832 1 Sí
+     53837 2 No
+     53844 P12D Limitación para caminar o subir gradas%
+     53889 MISSING 3 NOTAPPLICABLE 0 ALIAS P12D
+     53940 ØÞg
+     53950 DISCPMAN%
+     53960 DATASET PCK '.\CR20110084.rbf' SIZE 2
+     54001 1 TO 2
+     54009 INTEGER
+     54018 1 Sí
+     54023 2 No
+     54030 P12E Limitación para utilizar brazos y manos%
+     54076 MISSING 3 NOTAPPLICABLE 0 ALIAS P12E
+     54119 èõg
+     54127 HVj
+     54137 DISCPLIM%
+     54147 DATASET PCK '.\CR20110085.rbf' SIZE 2
+     54188 1 TO 2
+     54196 INTEGER
+     54205 1 Sí
+     54210 2 No
+     54217 P12F Limitación de tipo intelectual (retardo, sindrome down etc)%
+     54283 MISSING 3 NOTAPPLICABLE 0 ALIAS P12F
+     54326 ¤$h
+     54334 @9ø
+     54344 DISCPMEN%
+     54354 DATASET PCK '.\CR20110086.rbf' SIZE 2
+     54395 1 TO 2
+     54403 INTEGER
+     54412 1 Sí
+     54417 2 No
+     54424 P12G Limitación de tipo mental (Bipolar, esquizofrenia, otros)%
+     54488 MISSING 3 NOTAPPLICABLE 0 ALIAS P12G
+     54549 DISCPNIN%
+     54559 DATASET PCK '.\CR20110087.rbf' SIZE 2
+     54600 1 TO 2
+     54608 INTEGER7
+     54617 1 1 Sín descapacidad
+     54638 2 2 Con al menos una discapacidad
+     54674 P12H Ninguna de las anteriores limitaciones%
+     54719 MISSING 3 NOTAPPLICABLE 0 ALIAS P12H
+     54770 ¬ý÷
+     54780 ASISTEDU%
+     54790 DATASET PCK '.\CR20110088.rbf' SIZE 4
+     54831 1 TO 7
+     54839 INTEGERõ
+     54848 1 Guardería, maternal o prekinder
+     54882 2 Preparatoria o kinder, escuela o colegio
+     54925 3 Educación abierta (para presentar exámenes ante el MEP)
+     54983 4 Parauniversitaria o universitaria
+     55019 5 Enseñanza especial
+     55040 6 Centro diurno para adultos(as) mayores
+     55081 7 No asiste
+     55095 P13 Asistencia a centros de enseñanza y cuido$
+     55142 MISSING 8 NOTAPPLICABLE 0 ALIAS P13
+     55192 üMø
+     55202 TIPINST%
+     55211 DATASET PCK '.\CR20110089.rbf' SIZE 2
+     55252 1 TO 2
+     55260 INTEGER"
+     55269 1 Público
+     55279 2 Privado o semiprivado
+     55305 P14 Tipo de institución$
+     55330 MISSING 3 NOTAPPLICABLE 0 ALIAS P14
+     55380 h\ø
+     55390 LEESCRIB%
+     55400 DATASET PCK '.\CR20110090.rbf' SIZE 2
+     55441 1 TO 2
+     55449 INTEGER
+     55458 1 Sí
+     55463 2 No
+     55470 P15 Sabe leer y escribir$
+     55496 MISSING 3 NOTAPPLICABLE 0 ALIAS P15
+     55538 <ïö
+     55546 ¸ïö
+     55556 NIVEL%
+     55563 DATASET PCK '.\CR20110091.rbf' SIZE 7
+     55604 11 TO 80
+     55614 INTEGER5
+     55623 60 Ningúno grado
+     55640 70 Enseñanza especial
+     55662 80 Kinder o preparatoria
+     55687 11 Primaria, 1er grado
+     55710 12 Primaria, 2do grado
+     55733 13 Primaria, 3er grado
+     55756 14 Primaria, 4to grado
+     55779 15 Primaria, 5to grado
+     55802 16 Primaria, 6to grado
+     55825 21 7mo secundaria académica
+     55853 22 8avo secundaria académica
+     55882 23 9no secundaria académica
+     55910 24 10mo secundaria académica
+     55939 25 11avo secundaria académica
+     55969 31 7mo secundaria técnica
+     55995 32 8avo secundaria técnica
+     56022 33 9no secundaria técnica
+     56048 34 10mo secundaria técnica
+     56075 35 11avo secundaria técnica
+     56103 36 12avo secundaria técnica
+     56131 41 1er año parauniversitaria
+     56160 42 2do año parauniversitaria
+     56189 43 3er año parauniversitaria
+     56218 51 1er año universitaria
+     56243 52 2do año universitaria
+     56268 53 3er año universitaria
+     56293 54 4to año universitaria
+     56318 55 5to año universitaria
+     56343 56 6to año universitaria
+     56368 57 7mo año universitaria
+     56393 58 8avo año universitaria
+     56419 59 9no año universitaria
+     56446 P16 Nivel de instrucción%
+     56472 MISSING 81 NOTAPPLICABLE 0 ALIAS P16
+     56533 TITULO%
+     56541 DATASET PCK '.\CR20110092.rbf' SIZE 2
+     56582 1 TO 2
+     56590 INTEGER
+     56599 1 Sí
+     56604 2 No
+     56611 P17 Tenecia de título$
+     56634 MISSING 3 NOTAPPLICABLE 0 ALIAS P17
+     56679 A°7
+     56687 A¤7
+     56694 USADCELU%
+     56704 DATASET PCK '.\CR20110093.rbf' SIZE 2
+     56745 1 TO 2
+     56753 INTEGER
+     56762 1 Sí
+     56767 2 No
+     56774 P18A En los últimos tres meses ha utilizado celular%
+     56827 MISSING 3 NOTAPPLICABLE 0 ALIAS P18A
+     56873 Aä/
+     56881 AØ/
+     56888 USADCOMP%
+     56898 DATASET PCK '.\CR20110094.rbf' SIZE 2
+     56939 1 TO 2
+     56947 INTEGER
+     56956 1 Sí
+     56961 2 No
+     56968 P18B En los últimos tres meses ha utilizado computadora%
+     57025 MISSING 3 NOTAPPLICABLE 0 ALIAS P18B
+     57071 AÜ'
+     57079 AÐ'
+     57086 USADINTER%
+     57097 DATASET PCK '.\CR20110095.rbf' SIZE 2
+     57138 1 TO 2
+     57146 INTEGER
+     57155 1 Sí
+     57160 2 No
+     57167 P18C En los últimos tres meses ha utilizado Internet%
+     57221 MISSING 3 NOTAPPLICABLE 0 ALIAS P18C
+     57282 RESIDIA5%
+     57292 DATASET PCK '.\CR20110096.rbf' SIZE 3
+     57333 1 TO 3
+     57341 INTEGER7
+     57350 1 En este mismo cantón
+     57373 2 En otro cantón
+     57390 3 En otro país
+     57407 P19A Lugar de residencia hace 5 años%
+     57445 MISSING 4 NOTAPPLICABLE 0 ALIAS P19A
+     57506 CODRESIDE&
+     57517 DATASET PCK '.\CR20110097.rbf' SIZE 10
+     57559 101 TO 706
+     57571 INTEGER2
+     57580 101 San José
+     57593 102 Escazú
+     57604 103 Desamparados
+     57621 104 Puriscal
+     57634 105 Tarrazú
+     57646 106 Aserrí
+     57657 107 Mora
+     57666 108 Goicoechea
+     57681 109 Santa Ana
+     57695 110 Alajuelita
+     57710 111 Vázquez de Coronado
+     57734 112 Acosta
+     57745 113 Tibás
+     57755 114 Moravia
+     57767 115 Montes de Oca
+     57785 116 Turrubares
+     57800 117 Dota
+     57809 118 Curridabat
+     57824 119 Pérez Zeledón
+     57842 120 León Cortés Castro
+     57865 201 Alajuela
+     57878 202 San Ramón
+     57892 203 Grecia
+     57903 204 San Mateo
+     57917 205 Atenas
+     57928 206 Naranjo
+     57940 207 Palmares
+     57953 208 Poás
+     57962 209 Orotina
+     57974 210 San Carlos
+     57989 211 Zarcero
+     58001 212 Valverde Vega
+     58019 213 Upala
+     58029 214 Los Chiles
+     58044 215 Guatuso
+     58056 301 Cartago
+     58068 302 Paraíso
+     58080 303 La Unión
+     58093 304 Jiménez
+     58105 305 Turrialba
+     58119 306 Alvarado
+     58132 307 Oreamuno
+     58145 308 El Guarco
+     58159 401 Heredia
+     58171 402 Barva
+     58181 403 Santo Domingo
+     58199 404 Santa Bárbara
+     58217 405 San Rafael
+     58232 406 San Isidro
+     58247 407 Belén
+     58257 408 Flores
+     58268 409 San Pablo
+     58282 410 Sarapiquí
+     58296 501 Liberia
+     58308 502 Nicoya
+     58319 503 Santa Cruz
+     58334 504 Bagaces
+     58346 505 Carrillo
+     58359 506 Cañas
+     58369 507 Abangares
+     58383 508 Tilarán
+     58395 509 Nandayure
+     58409 510 La Cruz
+     58421 511 Hojancha
+     58434 601 Puntarenas
+     58449 602 Esparza
+     58461 603 Buenos Aires
+     58478 604 Montes de Oro
+     58496 605 Osa
+     58504 606 Aguirre
+     58516 607 Golfito
+     58528 608 Coto Brus
+     58542 609 Parrita
+     58554 610 Corredores
+     58569 611 Garabito
+     58582 701 Limón
+     58592 702 Pococí
+     58603 703 Siquirres
+     58617 704 Talamanca
+     58631 705 Matina
+     58642 706 Guácimo
+     58656 P19B Código de residencia hace 5 años'
+     58695 MISSING 707 NOTAPPLICABLE 0 ALIAS P19B
+     58740 L/ü
+     58758 CODRESPA&
+     58768 DATASET PCK '.\CR20110098.rbf' SIZE 10
+     58810 1 TO 970
+     58820 INTEGER*
+     58829 124 Canadá
+     58840 840 Estados Unidos
+     58859 580 Islas Marianas del Norte
+     58888 851 Islas Ultramarinas Menores de Estados Unidos
+     58937 484 México
+     58948 84 Belice
+     58958 188 Costa Rica
+     58973 222 El Salvador
+     58989 320 Guatemala
+     59003 340 Honduras
+     59016 558 Nicaragua
+     59030 591 Panamá
+     59041 32 Argentina
+     59054 68 Bolivia
+     59065 76 Brasil
+     59075 152 Chile
+     59085 170 Colombia
+     59098 218 Ecuador
+     59110 254 Guayana Francesa
+     59131 328 Guyana
+     59142 600 Paraguay
+     59155 604 Perú
+     59164 740 Suriname
+     59177 858 Uruguay
+     59189 862 Venezuela
+     59203 660 Anguila
+     59215 28 Antigua y Barbuda
+     59236 530 Antillas Neerlandesas
+     59262 533 Aruba
+     59272 44 Bahamas
+     59283 52 Barbados
+     59295 60 Isla Bermuda
+     59311 192 Cuba
+     59320 212 Dominica
+     59333 308 Granada
+     59345 312 Guadalupe
+     59359 332 Haití
+     59369 136 Islas Caimán
+     59386 796 Islas Turcas y Caicos
+     59412 92 Islas Vírgenes Británicas
+     59441 850 Islas Vírgenes de los Estados Unidos
+     59482 388 Jamaica
+     59494 474 Martinica
+     59508 500 Monserrat
+     59522 630 Puerto Rico
+     59538 214 República Dominicana
+     59563 652 San Bartolomé
+     59581 659 Saint Kitts & Nevis
+     59605 666 San Pedro y Miquelón
+     59630 670 San Vicente y Las Granadinas
+     59663 662 Santa Lucía
+     59679 780 Trinidad y Tobago
+     59701 8 Albania
+     59711 276 Alemania
+     59724 20 Andorra
+     59735 51 Armenia
+     59746 40 Austria
+     59757 31 Azerbaiján
+     59771 56 Bélgica
+     59782 112 Belarús
+     59794 70 Bosnia y Herzegovina
+     59818 100 Bulgaria
+     59831 191 Croacia
+     59843 208 Dinamarca
+     59857 822 Escocia
+     59869 703 Eslovaquia
+     59884 705 Eslovenia
+     59898 724 España
+     59909 233 Estonia
+     59921 246 Finlandia
+     59935 250 Francia
+     59947 823 Gales
+     59957 268 Georgia
+     59969 292 Gibraltar
+     59983 300 Grecia
+     59994 304 Groenlandia
+     60010 348 Hungría
+     60022 824 Inglaterra
+     60037 825 Irlanda del Norte
+     60059 372 Irlanda
+     60071 352 Islandia
+     60084 74 Isla Bouvet
+     60099 830 Islas del Canal
+     60119 234 Islas Feroe
+     60135 239 Islas Georgia y Sandwich del Sur
+     60172 744 Islas Svalbard y Jan Mayen
+     60203 612 Islas Pitcairn
+     60222 380 Italia
+     60233 398 Kazajstán
+     60247 417 Kirguistán
+     60262 428 Letonia
+     60274 438 Liechtenstein
+     60292 440 Lituania
+     60305 442 Luxemburgo
+     60320 807 Macedonia
+     60334 470 Malta
+     60344 175 Mayotte
+     60356 498 Moldavia
+     60369 492 Mónaco
+     60380 499 Montenegro
+     60395 578 Noruega
+     60407 528 Holanda
+     60419 616 Polonia
+     60431 620 Portugal
+     60444 203 República Checa
+     60464 642 Rumanía
+     60476 643 Rusia
+     60486 674 San Marino
+     60501 688 Serbia
+     60512 752 Suecia
+     60523 756 Suiza
+     60533 762 Tayikistán
+     60548 86 Territorio Británico Océano Índico
+     60586 260 Tierras Francesas Australes
+     60618 795 Turkmenistán
+     60635 804 Ucrania
+     60647 860 Uzbekistán
+     60662 336 Vaticano
+     60675 4 Afganistán
+     60688 682 Arabia Saudita
+     60707 48 Bahrein
+     60718 50 Bangladesh
+     60732 104 Myanmar
+     60744 96 Brunei Darussalam
+     60765 64 Bután
+     60774 116 Camboya
+     60786 156 China
+     60796 196 Chipre
+     60807 408 República Popular Democrática de Corea
+     60850 410 República de Corea
+     60873 784 Emiratos Árabes Unidos
+     60900 608 Filipinas
+     60914 344 Hong Kong
+     60928 356 India
+     60938 360 Indonesia
+     60952 368 Irak
+     60961 364 Irán
+     60970 238 Islas Malvinas
+     60989 376 Israel
+     61000 392 Japón
+     61010 400 Jordania
+     61023 414 Kuwait
+     61034 418 Laos
+     61043 422 Líbano
+     61054 446 Macao
+     61064 458 Malasia
+     61076 462 Maldivas
+     61089 496 Mongolia
+     61102 524 Nepal
+     61112 512 Omán
+     61121 586 Pakistán
+     61134 634 Qatar
+     61144 702 Singapur
+     61157 760 Siria
+     61167 144 Sri Lanka
+     61181 158 Taiwán
+     61192 764 Tailandia
+     61206 626 Timor Oriental
+     61225 792 Turquía
+     61237 704 Vietnam
+     61249 887 Yemen
+     61259 24 Angola
+     61269 12 Argelia
+     61280 204 Benín
+     61290 72 Botswana
+     61302 854 Burkina Faso
+     61319 108 Burundi
+     61331 132 Cabo Verde
+     61346 120 Camerún
+     61358 148 Chad
+     61367 174 Comoras
+     61379 178 Congo
+     61389 384 Costa de Marfil
+     61409 262 Djibouti
+     61422 818 Egipto
+     61433 232 Eritrea
+     61445 231 Etiopía
+     61457 266 Gabón
+     61467 270 Gambia
+     61478 288 Ghana
+     61488 324 Guinea
+     61499 226 Guinea Ecuatorial
+     61521 624 Guinea Bissau
+     61539 404 Kenya
+     61549 426 Lesotho
+     61561 430 Liberia
+     61573 434 Libia
+     61583 450 Madagascar
+     61598 454 Malawi
+     61609 466 Mali
+     61618 504 Marruecos
+     61632 480 Mauricio
+     61645 478 Mauritania
+     61660 508 Mozambique
+     61675 516 Namibia
+     61687 562 Níger
+     61697 566 Nigeria
+     61709 140 República Centroafricana
+     61738 180 República Democrática del Congo
+     61774 638 Reunión
+     61786 646 Ruanda
+     61797 732 Sahara Occidental
+     61819 654 Santa ESizea
+     61836 678 Santo Tomé y Príncipe
+     61862 686 Senegal
+     61874 690 Seychelles
+     61889 694 Sierra Leona
+     61906 706 Somalia
+     61918 748 Swazilandia
+     61934 710 Sudáfrica
+     61948 736 Sudán
+     61958 834 Tanzania
+     61971 768 Togo
+     61980 788 Túnez
+     61990 800 Uganda
+     62001 894 Zambia
+     62012 716 Zimbabwe
+     62025 36 Australia
+     62038 242 Fiji
+     62047 316 Guam
+     62056 162 Isla de Navidad
+     62076 574 Isla Norfolk
+     62093 166 Islas Cocos
+     62109 184 Islas Cook
+     62124 584 Islas Marshall
+     62143 334 Islas Heard and Mcdonald
+     62172 90 Islas Salomon
+     62189 876 Islas Wallis y Futuna
+     62215 296 Kiribati
+     62228 583 Micronesia
+     62243 520 Nauru
+     62253 570 Niue
+     62262 540 Nueva Caledonia
+     62282 554 Nueva Zelanda
+     62300 585 Palau
+     62310 598 Papua Nueva Guinea
+     62333 258 Polinesia Francesa
+     62356 882 Samoa
+     62366 16 Samoa Americana
+     62385 772 Tokelau
+     62397 776 Tonga
+     62407 798 Tuvalu
+     62418 548 Vanuatu
+     62430 10 Antártida
+     62443 970 Altamar
+     62457 P19C Código de país'
+     62478 MISSING 971 NOTAPPLICABLE 0 ALIAS P19C
+     62523 DËû
+     62531 @ãû
+     62541 ESTCONYU%
+     62551 DATASET PCK '.\CR20110099.rbf' SIZE 3
+     62592 1 TO 6
+     62600 INTEGER]
+     62609 1 Unión libre o juntado(a)
+     62636 2 Casado(a)
+     62648 3 Separado(a)
+     62662 4 Divorciado(a)
+     62678 5 Viudo(a)
+     62689 6 Soltero(a)
+     62704 P20 Estado conyugal$
+     62725 MISSING 7 NOTAPPLICABLE 0 ALIAS P20
+     62770 Aì(
+     62778 Aà(
+     62785 OCUP2DIG%
+     62795 DATASET PCK '.\CR20110100.rbf' SIZE 7
+     62836 1 TO 96
+     62845 INTEGER
+     62854 11 Directores ejecutivos, personal directivo de la administración pública y  empresa privada, miembros del poder ejecutivo y de los cuerpos legislativos
+     63007 12 Directores administradores y comerciales
+     63051 13 Directores y gerentes de producción y servicios especializados
+     63117 14 Gerentes de hoteles, restaurantes, comercios y otros servicios
+     63183 21 Profesionales de las ciencias, matemática  e ingeniería
+     63242 22 Profesionales  de la salud
+     63272 23 Profesionales de la enseñanza
+     63305 24 Profesionales de la administración y los negocios
+     63358 25 Profesionales de tecnología de la información y las comunicaciones
+     63428 26 Profesionales en derecho, en ciencias sociales y culturales
+     63491 31 Profesionales de nivel  medio de las ciencias y la ingeniería
+     63556 32 Profesionales de nivel medio de la  salud
+     63601 33 Profesionales de nivel medio en operaciones financieras, administrativas,  matemáticas  y estadística
+     63706 34 Profesionales de nivel medio de servicios jurídicos, sociales, culturales y afines
+     63792 35 Técnicos de la tecnología de la información y las comunicaciones
+     63860 36 Profesionales  de nivel medio de la enseñanza
+     63909 37 Otras ocupaciones de nivel técnico y profesional medio
+     63967 41 Oficinistas
+     63982 42 Empleados en trato directo con el público
+     64027 43 Empleados contables y encargados del registro de materiales
+     64090 44 Otro personal de apoyo administrativo
+     64131 51 Trabajadores de los servicios personales
+     64175 52 Vendedores
+     64189 53 Trabajadores de los cuidados personales
+     64232 54 Personal de los servicios de protección
+     64275 61 Agricultores y trabajadores calificados de explotaciones agropecuarias con destino al mercado
+     64372 62 Trabajadores forestales calificados, pescadores y cazadores
+     64435 71 Oficiales y operarios de la construcción excluyendo electricistas
+     64504 72 Oficiales y operarios trabajadores de la metalurgia, la construcción mecánica y afines
+     64594 73 Artesanos y operarios de las artes gráficas
+     64641 74 Trabajadores especializados en electricidad y la electrotecnología
+     64711 75 Operarios y oficiales trabajadores del procesamiento de alimentos, de la confección, ebanistas, otros artesanos y afines
+     64835 81 Operadores de instalaciones fijas y máquinas
+     64883 82 Ensambladores
+     64900 83 Conductores de vehículos y operadores de equipos pesados móviles
+     64968 91 Limpiadores y asistentes de limpieza
+     65008 92 Peones agropecuarios, pesqueros y forestales
+     65056 93 Peones de la minería, la construcción, la industria manufacturera y el transporte
+     65141 94 Ayudantes de preparación de alimentos
+     65182 95 Vendedores ambulantes de servicios y afines
+     65229 96 Recolectores de desechos y otras ocupaciones elementales
+     65291 P24A Ocupación en su trabajo 2 digitos&
+     65331 MISSING 97 NOTAPPLICABLE 0 ALIAS P24A
+     65393 OCUP4DIG&
+     65403 DATASET PCK '.\CR20110101.rbf' SIZE 14
+     65445 0 TO 9999
+     65456 INTEGER
+     65465 51 Trabajadores de los servicios personales
+     65509 52 Vendedores
+     65523 53 Trabajadores de los cuidados personales
+     65566 54 Personal de los servicios de protección
+     65609 61 Agricultores y trabajadores calificados de explotaciones agropecuarias con destino al mercado
+     65706 62 Trabajadores forestales calificados, pescadores y cazadores
+     65769 71 Oficiales y operarios de la construcción excluyendo electricistas
+     65838 72 Oficiales y operarios trabajadores de la metalurgia, la construcción mecánica y afines
+     65928 73 Artesanos y operarios de las artes gráficas
+     65975 74 Trabajadores especializados en electricidad y la electrotecnología
+     66045 75 Operarios y oficiales trabajadores del procesamiento de alimentos, de la confección, ebanistas, otros artesanos y afines
+     66169 81 Operadores de instalaciones fijas y máquinas
+     66217 82 Ensambladores
+     66234 83 Conductores de vehículos y operadores de equipos pesados móviles
+     66302 91 Limpiadores y asistentes de limpieza
+     66342 92 Peones agropecuarios, pesqueros y forestales
+     66390 93 Peones de la minería, la construcción, la industria manufacturera y el transporte
+     66475 94 Ayudantes de preparación de alimentos
+     66516 95 Vendedores ambulantes de servicios y afines
+     66563 96 Recolectores de desechos y otras ocupaciones elementales
+     66625 P24B Ocupación en su trabajo 4 digitos-
+     66665 MISSING 10001 NOTAPPLICABLE 10000 ALIAS P24B
+     66716 |oú
+     66724 ¤oú
+     66734 RAMA2DIG%
+     66744 DATASET PCK '.\CR20110102.rbf' SIZE 7
+     66785 1 TO 99
+     66794 INTEGER¯
+     66803 1 Agricultura, ganadería, caza y actividades de servicio conexas
+     66868 2 Silvicultura y extracción de madera
+     66906 3 Pesca y acuicultura
+     66928 5 Extracción de carbón de piedra
+     66961 6 Extracción de petróleo crudo y gas natural
+     67006 7 Extracción de minerales metalíferos
+     67044 8 Explotación de otras minas y canteras
+     67084 9 Actividades de servicios de apoyo a la explotación de minas y canteras
+     67157 10 Elaboración de productos alimenticios
+     67198 11 Elaboración de bebidas
+     67224 12 Elaboración de productos de tabaco
+     67262 13 Fabricación de productos textiles
+     67299 14 Fabricación de prendas de vestir
+     67335 15 Fabricación de productos de cueros y productos conexos
+     67393 16 Producción de madera y fabricación de productos de madera y corcho, excepto muebles; fabricación de artículos de paja y de materiales trenzables
+     67541 17 Fabricación de papel y de los productos de papel
+     67593 18 Impresión y reproducción de grabaciones
+     67636 19 Fabricación de coque y de productos de la refinación del petróleo
+     67705 20 Fabricación de sustancias y productos químicos
+     67755 21 Fabricación de productos farmacéuticos, sustancias químicas medicinales y de productos botánicos de uso farmacéutico
+     67875 22 Fabricación de productos de caucho y plástico
+     67924 23 Fabricación de otros productos minerales no metálicos
+     67981 24 Fabricación de metales comunes
+     68015 25 Fabricación de productos metálicos, excepto maquinaria y equipo
+     68082 26 Fabricación de los productos informáticos, electrónicos y  de ópticas
+     68155 27 Fabricación de equipo eléctrico
+     68190 28 Fabricación de la maquinaria y equipo n.c.p.
+     68238 29 Fabricación de vehículos automotores, remolques y semirremolques
+     68306 30 Fabricación de otros equipos de transporte
+     68352 31 Fabricación de muebles (excepto de piedra, cemento o cerámica)
+     68418 32 Otras industrias manufactureras
+     68453 33 Reparación e instalación de la maquinaria y equipo
+     68507 35 Suministro de electricidad, gas, vapor y aire acondicionado
+     68570 36 Captación, tratamiento y distribución  de agua
+     68620 37 Evacuación de agua residuales
+     68653 38 Recolección, tratamiento y eliminación de desechos, recuperación de materiales
+     68735 39 Actividades de descontaminación y otros servicios de gestión de desechos
+     68811 41 Construcción
+     68827 42 Ingeniería civil
+     68847 43 Actividades especializadas de la construcción
+     68896 45 Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas
+     68988 46 Comercio al por mayor, excepto de los vehículos de motor y las motocicletas
+     69067 47 Comercio al por menor, excepto el comercio de vehículos automotores y motocicletas
+     69153 49 Transporte por vía terrestre y  transporte por tuberías
+     69212 50 Transporte por vía acuática
+     69243 51 Transporte por vía aérea
+     69271 52 Almacenamiento y actividades de apoyo al transporte
+     69326 53 Actividades de servicios postales (correos) y de  mensajería
+     69390 55 Alojamiento
+     69405 56 Servicio de alimento y bebida
+     69438 58 Actividades de edición
+     69464 59 Actividades de producción de películas cinematográficas,  video  y programas de televisión, grabación y publicación de música y sonido
+     69602 60 Actividades de programación y transmisión
+     69647 61 Telecomunicaciones
+     69669 62 Programación informática, consultoría en informática y actividades conexas
+     69747 63 Actividades del servicio información
+     69787 64 Servicios financieros, excepto seguros y fondos de pensiones
+     69851 65 Seguros, reaseguros y fondos de pensiones, excepto los planes de seguridad social de afiliación obligatoria
+     69962 66 Actividades auxiliares de servicios financieros
+     70013 68 Actividades inmobiliarias
+     70042 69 Actividades jurídicas y de contabilidad
+     70085 70 Actividades de oficinas centrales (sociedades de carteras), actividades de administración de empresas y de consultoría sobre administración de empresas
+     70240 71 Actividades de arquitectura e ingeniería; ensayos y análisis técnicos
+     70313 72 Investigación y desarrollo científicos
+     70355 73 Publicidad e investigación de mercados
+     70397 74 Otras actividades profesionales, científicas y técnicas
+     70456 75 Actividades veterinarias
+     70484 77 Actividades del alquiler y arrendamiento
+     70528 78 Actividades de agencias de empleo
+     70565 79 Actividades de las agencias de viajes, operadores turísticos y otros servicios de reservación
+     70662 80 Actividades de investigación y seguridad
+     70706 81 Actividades de servicio a edificios y paisajes
+     70756 82 Actividades administrativas  y de apoyo de oficinas y otras actividades de apoyo a las empresas
+     70855 84 Administración pública y la defensa; planes de seguridad social de afiliación obligatoria
+     70948 85 Enseñanza
+     70961 86 Actividades de atención  a la salud humana
+     71007 87 Actividades de atención en Instituciones
+     71051 88 Asistencia social sin alojamiento
+     71088 90 Actividades creativas, artísticas y  de entretenimiento
+     71147 91 Bibliotecas, archivos, museos y otras actividades culturales
+     71211 92 Actividades de juego de azar y apuestas
+     71254 93 Actividades deportivas, de  esparcimiento y recreativas
+     71313 94 Actividades de asociaciones
+     71344 95 Reparación de computadoras y enseres de uso personal y doméstico
+     71412 96 Otras actividades de servicios
+     71446 97 Actividades de los hogares en calidad de empleadores de personal doméstico
+     71524 99 Actividades de organizaciones y órganos extraterritoriales
+     71588 P27A Qué produce principalmente donde'
+     71627 MISSING 100 NOTAPPLICABLE 0 ALIAS P27A
+     71675 A4;
+     71683 A(;
+     71690 RAMA4DIG&
+     71700 DATASET PCK '.\CR20110103.rbf' SIZE 14
+     71742 0 TO 9999
+     71753 INTEGER
+     71762 ALIAS P13
+     71774 P27B Qué produce principalmente donde trabaja(Rama)-
+     71827 MISSING 10001 NOTAPPLICABLE 10000 ALIAS P27B
+     71886 líû
+     71896 CATEGOCUP%
+     71907 DATASET PCK '.\CR20110104.rbf' SIZE 3
+     71948 1 TO 6
+     71956 INTEGERÑ
+     71965 1 Patrono(a) (tiene empleados(as) fijos(as))
+     72010 2 Trabajador(a) por cuenta propia
+     72044 3 Empleado(a) de empresa privada
+     72077 4 Empleado(a) del sector público
+     72110 5 Empleado(a) de casas particulares
+     72146 6 Ayudante sin recibir pago
+     72176 P28 Categoría ocupacional$
+     72203 MISSING 7 NOTAPPLICABLE 0 ALIAS P28
+     72263 LUGTRAB%
+     72272 DATASET PCK '.\CR20110105.rbf' SIZE 3
+     72313 1 TO 5
+     72321 INTEGERm
+     72330 1 Dentro o junto a esta vivienda
+     72363 2 En este mismo cantón
+     72386 3 En otro cantón
+     72403 4 En varios cantones
+     72424 5 En otro país
+     72441 P29A Lugar de trabajo%
+     72464 MISSING 6 NOTAPPLICABLE 0 ALIAS P29A
+     72515 `¨ü
+     72525 CODUBTRA&
+     72535 DATASET PCK '.\CR20110106.rbf' SIZE 10
+     72577 101 TO 802
+     72589 INTEGERT
+     72598 101 San José
+     72611 102 Escazú
+     72622 103 Desamparados
+     72639 104 Puriscal
+     72652 105 Tarrazú
+     72664 106 Aserrí
+     72675 107 Mora
+     72684 108 Goicoechea
+     72699 109 Santa Ana
+     72713 110 Alajuelita
+     72728 111 Vázquez de Coronado
+     72752 112 Acosta
+     72763 113 Tibás
+     72773 114 Moravia
+     72785 115 Montes de Oca
+     72803 116 Turrubares
+     72818 117 Dota
+     72827 118 Curridabat
+     72842 119 Pérez Zeledón
+     72860 120 León Cortés Castro
+     72883 201 Alajuela
+     72896 202 San Ramón
+     72910 203 Grecia
+     72921 204 San Mateo
+     72935 205 Atenas
+     72946 206 Naranjo
+     72958 207 Palmares
+     72971 208 Poás
+     72980 209 Orotina
+     72992 210 San Carlos
+     73007 211 Zarcero
+     73019 212 Valverde Vega
+     73037 213 Upala
+     73047 214 Los Chiles
+     73062 215 Guatuso
+     73074 301 Cartago
+     73086 302 Paraíso
+     73098 303 La Unión
+     73111 304 Jiménez
+     73123 305 Turrialba
+     73137 306 Alvarado
+     73150 307 Oreamuno
+     73163 308 El Guarco
+     73177 401 Heredia
+     73189 402 Barva
+     73199 403 Santo Domingo
+     73217 404 Santa Bárbara
+     73235 405 San Rafael
+     73250 406 San Isidro
+     73265 407 Belén
+     73275 408 Flores
+     73286 409 San Pablo
+     73300 410 Sarapiquí
+     73314 501 Liberia
+     73326 502 Nicoya
+     73337 503 Santa Cruz
+     73352 504 Bagaces
+     73364 505 Carrillo
+     73377 506 Cañas
+     73387 507 Abangares
+     73401 508 Tilarán
+     73413 509 Nandayure
+     73427 510 La Cruz
+     73439 511 Hojancha
+     73452 601 Puntarenas
+     73467 602 Esparza
+     73479 603 Buenos Aires
+     73496 604 Montes de Oro
+     73514 605 Osa
+     73522 606 Aguirre
+     73534 607 Golfito
+     73546 608 Coto Brus
+     73560 609 Parrita
+     73572 610 Corredores
+     73587 611 Garabito
+     73600 701 Limón
+     73610 702 Pococí
+     73621 703 Siquirres
+     73635 704 Talamanca
+     73649 705 Matina
+     73660 706 Guácimo
+     73672 801 Varios cantones
+     73692 802 Otro país
+     73708 P29B Código de ubicación de lugar de trabajo'
+     73754 MISSING 803 NOTAPPLICABLE 0 ALIAS P29B
+     73817 HIJONACI%
+     73827 DATASET PCK '.\CR20110107.rbf' SIZE 7
+     73868 0 TO 99
+     73877 INTEGER
+     73886 99 Ignorado
+     73900 P30 Hijas e hijos nacidos vivos(
+     73933 MISSING 101 NOTAPPLICABLE 100 ALIAS P30
+     73997 HIJOSACT%
+     74007 DATASET PCK '.\CR20110108.rbf' SIZE 7
+     74048 0 TO 99
+     74057 INTEGER
+     74066 99 Ignorado
+     74080 P31 Hijas e hijos vivos actualmente(
+     74117 MISSING 101 NOTAPPLICABLE 100 ALIAS P31
+     74181 ESCOLARI%
+     74191 DATASET PCK '.\CR20110109.rbf' SIZE 5
+     74232 0 TO 21
+     74241 INTEGER%
+     74250 0 0 Años de escolaridad
+     74274 1 1 Año de escolaridad
+     74297 2 2 años de escolaridad
+     74321 3 3 años de escolaridad
+     74345 4 4 años de escolaridad
+     74369 5 5 añosde escolaridad
+     74392 6 6 años de escolaridad
+     74416 7 7 años de escolaridad
+     74440 8 8 años de escolaridad
+     74464 9 9 años de escolaridad
+     74488 10 10 años de escolaridad
+     74514 11 11 añosde escolaridad
+     74539 12 12 años de escolaridad
+     74565 13 13 años de escolaridad
+     74591 14 14 años de escolaridad
+     74617 15 15 años de escolaridad
+     74643 16 16 años de escolaridad
+     74669 17 17 años de escolaridad
+     74695 18 18 años de escolaridad
+     74721 19 19 años de escolaridad
+     74747 20 20 años de escolaridad
+     74773 21 21 años de escolaridad
+     74801 Años de escolaridad&
+     74822 MISSING 23 NOTAPPLICABLE 22 ALIAS P40
+     74869 Ah8
+     74877 A\8
+     74884 REZAGO%
+     74892 DATASET PCK '.\CR20110110.rbf' SIZE 3
+     74933 0 TO 5
+     74941 INTEGERx
+     74950 0 Sin Rezago
+     74963 1 1 Año de rezago escolar
+     74989 2 2 Años de rezago escolar
+     75016 3 3 Años de rezago escolar
+     75043 4 4 Años de rezago escolar
+     75072 Rezago escolar$
+     75088 MISSING 7 NOTAPPLICABLE 6 ALIAS P41
+     75148 CONDACT%
+     75157 DATASET PCK '.\CR20110111.rbf' SIZE 4
+     75198 1 TO 8
+     75206 INTEGER
+     75215 1 Ocupados
+     75226 2 Desocupado buscó trabajo y había trabajado antes
+     75277 3 Desocupado buscó trabajo primera vez
+     75316 4 Inactivo pensionado(a) o jubilado(a)
+     75355 5 Inactivo vive de rentas o alquileres
+     75394 6 Inactivo sólo estudia
+     75418 7 Inactivo se dedica a oficios domésticos
+     75460 8 Inactivo otra situación
+     75488 Condicion de actividad$
+     75512 MISSING 9 NOTAPPLICABLE 0 ALIAS P42
+     75554 è`û
+     75562 È@û
+     75572 TIPOLOGIAP%
+     75584 DATASET PCK '.\CR20110112.rbf' SIZE 4
+     75625 1 TO 14
+     75634 INTEGER
+     75643 1 Hogar nuclear conyugal sin hijos
+     75678 2 Hogar nuclear conyugal con hijos
+     75713 3 Hogar nuclear monoparental
+     75742 4 Hogar extenso conyugal sin hijos y otros familiares
+     75796 5 Hogar extenso conyugal con hijos y otros familiares
+     75850 6 Hogar extenso monoparental y otros familiares
+     75898 7 Hogar extenso jefe(a) y otros familiares
+     75941 8 Hogar compuesto nuclear y no familiares
+     75983 9 Hogar compuesto extenso y no familiares
+     76025 10 Hogar compuesto jefe(a) familiares y no familiares
+     76079 11 Otros hogares unipersonales
+     76110 12 Otros hogares no familiares
+     76141 13 Hogares colectivos
+     76163 14 Servicio doméstico
+     76187 Tipología de hogar%
+     76207 MISSING 15 NOTAPPLICABLE 0 ALIAS P43
+     76250 T²ú
+     76258 Ð`û
+     76268 NUMDISC%
+     76277 DATASET PCK '.\CR20110113.rbf' SIZE 4
+     76318 0 TO 7
+     76326 INTEGER
+     76335 0 No tiene discapacidad
+     76359 1 1 Discapacidad
+     76376 2 2 Discapacidades
+     76395 3 3 Discapacidades
+     76414 4 4 Discapacidades
+     76433 5 5 Discapacidades
+     76452 6 6 Discapacidades
+     76471 7 7 Discapacidades
+     76492 Discapacidad$
+     76506 MISSING 9 NOTAPPLICABLE 8 ALIAS P45
+     76566 OCUPGRUP%
+     76576 DATASET PCK '.\CR20110114.rbf' SIZE 4
+     76617 1 TO 9
+     76625 INTEGERv
+     76634 1 Nivel direct adm público y empr privada
+     76676 2 Nivel profesio, cientif e intelect
+     76713 3 Nivel técnico y profesional medio
+     76749 4 Apoyo administrativo
+     76772 5 Venta locales y prestac serv direct
+     76810 6 Agropecuarias, agrícolas y pesqueras calificadas
+     76861 7 Producción  artesan, const, mecan, art graf y manuf calificadas
+     76927 8 Operación de instalaciones, maquinas y ensambladores
+     76982 9 Ocupaciones elementales
+     77010 Ocupación gran grupo%
+     77032 MISSING 10 NOTAPPLICABLE 0 ALIAS P46
+     77086 A|-
+     77093 RAMAGRUP%
+     77103 DATASET PCK '.\CR20110115.rbf' SIZE 5
+     77144 1 TO 21
+     77153 INTEGER8
+     77162 1 Agricultura, ganadería,  silvicultura y pesca
+     77210 2 Minas y canteras
+     77229 3 Industrias manufactureras
+     77257 4 Suministro electricidad y gas
+     77289 5 Suministro agua, evacu. resid., gestión desech
+     77338 6 Construcción
+     77353 7 Comerc por mayor y menor, repar vehíc autom y motoc
+     77407 8 Transporte y almacenamiento
+     77437 9 Alojamiento y servicios de comida
+     77473 10 Información y comunicación
+     77503 11 Actividades financieras y de seguros
+     77543 12 Actividades inmobiliarias
+     77572 13 Actividades profesionales, científicas y técnicas
+     77625 14 Actividades administrativas y servicios de apoyo
+     77677 15 Admin pública y defensa, planes de seguridad social
+     77732 16 Enseñanza
+     77745 17 Activ atención salud humana y asistencia social
+     77796 18 Activ artísticas de entretenimiento y recreativas
+     77849 19 Otras actividades de servicio
+     77882 20 Activ de los hogares en calidad de empleadores
+     77932 21 Activ de organizaciones y órganos extraterritorial
+     77988 Rama gran grupo%
+     78005 MISSING 22 NOTAPPLICABLE 0 ALIAS P47
+     78066 PALBERGUE%
+     78077 DATASET PCK '.\CR20110116.rbf' SIZE 2
+     78118 0 TO 1
+     78126 INTEGER(
+     78135 0 No tiene carencia
+     78155 1 Si tiene carencia
+     78177 P48 Albergue$
+     78191 MISSING 3 NOTAPPLICABLE 2 ALIAS P48
+     78233 0,÷
+     78241 d%÷
+     78251 PSALUD%
+     78259 DATASET PCK '.\CR20110117.rbf' SIZE 2
+     78300 0 TO 1
+     78308 INTEGER(
+     78317 0 No tiene carencia
+     78337 1 Si tiene carencia
+     78359 P49 Salud$
+     78370 MISSING 3 NOTAPPLICABLE 2 ALIAS P49
+     78412 ¸-÷
+     78430 PCONOCIMIE%
+     78442 DATASET PCK '.\CR20110118.rbf' SIZE 2
+     78483 0 TO 1
+     78491 INTEGER(
+     78500 0 No tiene carencia
+     78520 1 Si tiene carencia
+     78542 P50 Conocimiento$
+     78560 MISSING 3 NOTAPPLICABLE 2 ALIAS P50
+     78610 $/÷
+     78620 PCONSUMO%
+     78630 DATASET PCK '.\CR20110119.rbf' SIZE 2
+     78671 0 TO 1
+     78679 INTEGER(
+     78688 0 No tiene carencia
+     78708 1 Si tiene carencia
+     78730 P51 Consumo$
+     78743 MISSING 3 NOTAPPLICABLE 2 ALIAS P51
+     78785 À4÷
+     78793 X;÷
+     78803 PTOTCARE%
+     78813 DATASET PCK '.\CR20110120.rbf' SIZE 3
+     78854 0 TO 4
+     78862 INTEGERE
+     78871 0 0 carencias
+     78885 1 1 carencia
+     78898 2 2 carencias
+     78912 3 3 carencias
+     78926 4 4 carencias
+     78942 P52 Total carencias$
+     78963 MISSING 6 NOTAPPLICABLE 5 ALIAS P52
+     79023 PNBI%
+     79029 DATASET PCK '.\CR20110121.rbf' SIZE 2
+     79070 0 TO 1
+     79078 INTEGER
+     79087 0 No tiene NBI
+     79102 1 Si tiene NBI
+     79119 P53 Necesidades básicas insatisfechas$
+     79158 MISSING 3 NOTAPPLICABLE 2 ALIAS P53
+     79203 Aô-
+     79211 Aè-
