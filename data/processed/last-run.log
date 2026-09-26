@@ -1,55 +1,85 @@
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
+probe_pdf: https://www5.ine.gub.uy/documents/CENSO%202023/Cuestionario_Censo2023_variables.pdf
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  276,912 bytes
+  10 pages
+probe_pdf: 10 pages, 2 mention ['religi', 'idioma', 'lengua', 'ascendencia', 'afro', 'indígena', 'municipio']
+=== front matter ===
+Casa de peones ............................................................................................  13
+Internado religioso ........................................................................................  14
+Establecimiento de reclusión, penitenciarios ................................................  15
+Hogares y/o Centros de atención / protección ..............................................  16
+Cuartel militar o policial .................................................................................  17
+Refugios ........................................................................................................  22
+Centro de rehabilitación no carcelaria con internación permanente .............  21
+Otra colectiva ................................................................................................  18
+3 No leer. La vivienda está…
+… ocupada ......................................................................  1 Pase a preg. 4.1.
+… desocupada .................................................................  2 Pase a preg. 4.2.
+4 No leer. Estado de ocupación de la vivienda.
+4.1 No leer. La vivienda está ocupada…
+… con residentes presentes ............................................  1
+Si preg.1 = 1 pase a preg.5.
+Si preg.1 = 2 pase a preg.6.1.
+… con residentes ausentes .............................................  2 Fin del 
+cuestionario censal.
+4.2 No leer. La vivienda está desocupada…
+… de uso temporal u ocasional (fines de semana, festivos, vacaciones, etc.)  3
+… para alquilar o vender ..............................................................................  4
+… en construcción o reparación ...................................................................  5
+… ruinosa, destruida o inhabitable, tapiada .................................................  6
+… vacante .....................................................................................................  7
+… ignorado ...................................................................................................  8
+Fin del cuestionario censal.
+5 Solo para viviendas particulares en condición de ocupada (preg. 1 = 1 y 
+preg. 4.1 = 1). Todas las personas que residen habitualmente en esta 
+vivienda, ¿comparten un mismo fondo común para la alimentación? 
+Sí (hogar único) ...............................................................  1 Pase a preg. 8.
+No (más de un hogar) ......................................................  2 Pase a preg. 7.
+6.1 Solo para viviendas colectivas en condición de ocupada (preg. 1 = 2 y 
+preg. 4.1 = 1). ¿Actualmente residen aquí en forma habitual personas 
+que no integran el hogar colectivo? Ej.: el/la propietario/a o un/a 
+cuidador/a con su familia.
+Sí .....................................................................................  1
+No ....................................................................................  2 Si preg. 2.2 = 10, 
+15, 16, 17 y 22 fin del cuestionario censal.
+Si preg. 2.2 = 9, 11, 12, 13, 14, 18 y 21 pase al cuestionario de hogares preg. 19.
+6.2 Las personas que residen en la vivienda y no integran el hogar 
 
-During handling of the above exception, another exception occurred:
+=== pages mentioning ['religi', 'idioma', 'lengua', 'ascendencia', 'afro', 'indígena', 'municipio'] (first 12) ===
 
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 140, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 115, in main
-    portal = session.get(args.url)
-             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 50, in get
-    with self.opener.open(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1377, in http_open
-    return self.do_open(http.client.HTTPConnection, req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
-page: http://170.238.108.227/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=ESP
-  URLError reaching http://170.238.108.227/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=ESP: trying again in 10s
-  URLError reaching http://170.238.108.227/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=ESP: trying again in 20s
-  URLError reaching http://170.238.108.227/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=ESP: trying again in 40s
+--- page 1 ----------------------------------------------------
+Casa de peones ............................................................................................  13
+Internado religioso ........................................................................................  14
+Establecimiento de reclusión, penitenciarios ................................................  15
+Hogares y/o Centros de atención / protección ..............................................  16
+Cuartel militar o policial .................................................................................  17
+Refugios ........................................................................................................  22
+Centro de rehabilitación no carcelaria con internación permanente .............  21
+Otra colectiva ................................................................................................  18
+
+--- page 5 ----------------------------------------------------
+No vive en el hogar .......................................................................................  2
+7 ¿El padre (nombre) vive en este hogar?
+Sí, vive en el hogar .......................................................................................  1
+Anote el número de persona .................................................
+No vive en el hogar .......................................................................................  2
+PARA TODAS LAS PERSONAS
+8 (nombre), ¿cree tener ascendencia…
+ Sí No
+1 … afro o negra? .............................................................................. 1 2
+2 … asiática? ..................................................................................... 1 2
+3 … blanca? ....................................................................................... 1 2
+4 … indígena? .................................................................................... 1 2
+5 … otra ............................................................................................. 1 2
+9 Si respondió más de un sí en la preg. 8. ¿Cuál considera la principal?
+Afro o negra ..................................................................................................  1
+Asiática .........................................................................................................  2
+Blanca ...........................................................................................................  3
+Indígena ........................................................................................................  4
+Otra ...............................................................................................................  5
+Ninguna ........................................................................................................  6
+Censo - cuestionario de personas | 2023
+PERNA02
+PERID PERPH02 PERNA01PERPH01_1 PERPH01_2
+PERGE01
