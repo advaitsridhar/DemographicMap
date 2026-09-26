@@ -1,35 +1,95 @@
-https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_14_CAR_2023.xlsx
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  18,639 bytes
-  1 sheet(s)
-  -- 'Cuadro14_CAR': 186 rows x 3 cols
-     ['Soriano', 'SIN MUNICIPIO', '51423']
-     ['Soriano', 'VILLA DE SANTO DOMINGO', '1428']
-     ['Soriano', 'Sin dato de Municipio', '3']
-     ['Tacuarembó', 'ANSINA', '3706']
-     ['Tacuarembó', 'PASO DE LOS TOROS', '13932']
-     ['Tacuarembó', 'SAN GREGORIO DE POLANC', '3983']
-     ['Tacuarembó', 'SIN MUNICIPIO', '70351']
-     ['Tacuarembó', 'VILLA CARAGUATÁ', '4045']
-     ['Treinta y Tres', 'ARÉVALO', '44']
-     ['Treinta y Tres', 'CERRO CHATO', '1413']
-     ['Treinta y Tres', 'GENERAL ENRIQUE MARTÍN', '1641']
-     ['Treinta y Tres', 'RINCÓN', '1067']
-     ['Treinta y Tres', 'SANTA CLARA DE OLIMAR', '2696']
-     ['Treinta y Tres', 'SIN MUNICIPIO', '35278']
-     ['Treinta y Tres', 'VERGARA', '4075']
-     ['Treinta y Tres', 'VILLA SARA', '1483']
-     ['Treinta y Tres', 'Sin dato de Municipio', '8']
-     ['Fuente: Instituto Naci', '', '']
-     ['Notas:', '', '']
-     ['Datos ponderados. Por ', '', '']
-     ['La presencia de un mis', '', '']
-     ['el INE utiliza los lím', '', '']
-     ['(y, por ende, los muni', '', '']
-     ['Para resolver esta inc', '', '']
-     ['cuyo objetivo actual e', '', '']
-     ['del Estado.', '', '']
-     ['Las 1.737 personas sin', '', '']
-     ['Los totales por depart', '', '']
-     ['debido al redondeo de ', '', '']
+page: https://redatam.org/en/online-process/caribe/antigua-and-barbuda
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://redatam.org/procesar-en-linea/caribe/antigua-y-barbuda
+  37,334 bytes
+  4 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/antigua-y-barbuda#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/antigua-y-barbuda#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/antigua-y-barbuda#site-footer
+  - División de Estadística | Población y Vivienda | 2011 Abrir →
+    https://prod.redatam.org/binatg/RpWebEngine.exe/Portal?BASE=ATGPHC2011
+page: https://redatam.org/procesar-en-linea/caribe/belice
+  40,410 bytes
+  6 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/belice#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/belice#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/belice#site-footer
+  - SIB | Población y Vivienda | 1991 Abrir →
+    http://redatam.sib.org.bz/redbin/RpWebEngine.exe/Portal?BASE=BELIZECENSUS_1991
+  - SIB | Población y Vivienda | 2000 Abrir →
+    http://redatam.sib.org.bz/redbin/RpWebEngine.exe/Portal?BASE=BELIZECENSUS_2000
+  - SIB | Población y Vivienda | 2010 Abrir →
+    http://redatam.sib.org.bz/redbin/RpWebEngine.exe/Portal?BASE=BELIZECENSUS_2010
+page: https://redatam.org/procesar-en-linea/caribe/jamaica
+  37,031 bytes
+  3 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/jamaica#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/jamaica#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/jamaica#site-footer
+page: https://redatam.org/procesar-en-linea/caribe/san-vicente-y-las-granadinas
+  42,089 bytes
+  6 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/san-vicente-y-las-granadinas#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/san-vicente-y-las-granadinas#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/san-vicente-y-las-granadinas#site-footer
+  - Oficina de Estadística | Población y Vivienda | 2001 Abrir →
+    https://prod.redatam.org/binsvg/RpWebEngine.exe/Portal?BASE=SVG2001
+  - Oficina de Estadística | Población y Vivienda | 2012 Abrir →
+    https://prod.redatam.org/binsvg/RpWebEngine.exe/Portal?BASE=SVG2012
+  - Oficina de Estadística | Condiciones de Vida | 2007 Abrir →
+    https://prod.redatam.org/binsvg/RpWebEngine.exe/Portal?BASE=SVGLIVCOND2007
+page: https://redatam.org/procesar-en-linea/caribe/santa-lucia
+  45,848 bytes
+  8 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/santa-lucia#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/santa-lucia#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/santa-lucia#site-footer
+  - CSO | 1991 Abrir →
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC1991
+  - CSO | 2001 Abrir →
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2001
+  - CSO | 2010 | Electorado Abrir →
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C
+  - CSO | 2022 | Resultados Preliminares Abrir →
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2022
+  - CSO | Encuesta de Condiciones de Vida | 2016 Abrir →
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=SLC2016
+page: https://redatam.org/procesar-en-linea/caribe/suriname
+  37,205 bytes
+  4 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/suriname#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/suriname#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/suriname#site-footer
+  - ABS | Población y Vivienda | 2012 | Muestra Abrir →
+    https://prod.redatam.org/binsur/RpWebEngine.exe/Portal?BASE=PHC2012S
+page: https://redatam.org/procesar-en-linea/caribe/trinidad-y-tobago
+  38,988 bytes
+  5 matching link(s)
+  - Pasar al contenido principal
+    https://redatam.org/procesar-en-linea/caribe/trinidad-y-tobago#main-content
+  - Skip to navigation
+    https://redatam.org/procesar-en-linea/caribe/trinidad-y-tobago#primary-nav
+  - Skip to footer
+    https://redatam.org/procesar-en-linea/caribe/trinidad-y-tobago#site-footer
+  - CSO | Población y Vivienda | 2000 Abrir →
+    https://prod.redatam.org/bintto/RpWebEngine.exe/Portal?BASE=PHC2K
+  - CSO | Población y Vivienda | 2011 Abrir →
+    https://prod.redatam.org/bintto/RpWebEngine.exe/Portal?BASE=PHC2011
