@@ -1,0 +1,606 @@
+[
+  {
+    "id": "BHS-USCB-AGE-acklins",
+    "level": "admin1",
+    "name": "Acklins",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1306,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B62229097939124",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 9 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-berryislands",
+    "level": "admin1",
+    "name": "Berry Islands",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 34.7,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1332,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B63031142172255",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group."
+  },
+  {
+    "id": "BHS-USCB-AGE-bimini",
+    "level": "admin1",
+    "name": "Biminis",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.8,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1149,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B82083755348588",
+    "aliases": [
+      "Bimini"
+    ],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 6 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-catisland",
+    "level": "admin1",
+    "name": "Cat Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 35.9,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1132,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B31009871091546",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 2 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-crookedislandandlongcay",
+    "level": "admin1",
+    "name": "Crooked Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.0,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B45053914770402",
+    "aliases": [
+      "Crooked Island And Long Cay"
+    ],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group."
+  },
+  {
+    "id": "BHS-USCB-AGE-harbourisland",
+    "level": "admin1",
+    "name": "Harbour Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.9,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B64917905581576",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 3 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-inagua",
+    "level": "admin1",
+    "name": "Inagua",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 34.1,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B81962321006014",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 2 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-longisland",
+    "level": "admin1",
+    "name": "Long Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.2,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B2318826838910",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 3 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-mayaguana",
+    "level": "admin1",
+    "name": "Mayaguana",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.6,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1067,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B31239819863643",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 2 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-newprovidence",
+    "level": "admin1",
+    "name": "New Providence",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 918,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B75676267470758",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 685 people of unstated age are left out of it."
+  },
+  {
+    "id": "BHS-USCB-AGE-raggedisland",
+    "level": "admin1",
+    "name": "Ragged Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1571,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B98686837957667",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group."
+  },
+  {
+    "id": "BHS-USCB-AGE-spanishwells",
+    "level": "admin1",
+    "name": "Spanish Wells",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.4,
+      "unit": "years",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 946,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Department of Statistics of The Bahamas, 2010 Census of Population and Housing, Tables 4.0-4.19: Total Population by Sex and Age, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/the-bahamas-subnational-boundaries-and-tabular-data",
+        "year": 2010,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "BHS",
+    "match_by": "shape_id",
+    "shape_id": "57655419B1305095208594",
+    "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2010 census's count by sex and five-year age group; 10 people of unstated age are left out of it."
+  }
+]
