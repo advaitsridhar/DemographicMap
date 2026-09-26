@@ -1,73 +1,31 @@
-page: http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp
-  text: ﻿ INE-HONDURAS::Redatam - Diseminación de Información Estadística
-  frame: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204061.htm&TYPE=TMP
-  frame: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204062.htm&TYPE=TMP
-  frame: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204063.htm&TYPE=TMP
-pane: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204061.htm&TYPE=TMP
-  text: ﻿ R+SP Header Page - -
-  link: '' -> http://www.ine.gob.hn
-pane: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204062.htm&TYPE=TMP
-  text: ﻿ R+SP Index Page Presentacion Presentacion Documentación Documentos Metodológicos Introducción Antecedentes del Censo Caracteristicas Metodologicas Definiciones y Conceptos Definiciones de preguntas del Cuiestionario Cuestionario Censal División Politica Tabla de Códigos Cartográficos Resultados Básicos Frecuencias Viviendas Hogares Poblacion Migracion Mortalidad Cruces Vivienda Hogar Persona Migracion Mortalidad Cruces Combinados de Entidades Hogar - Vivienda Persona - Hogar Persona - Vivienda Migracion - Hogar Migracion - Vivienda Mortalidad - Hogar Mortalidad - Vivienda Estadísticas Promedios Medianas Máximos Mínimos Conteos y Lista por Area Totales Viviendas Hogares Poblacion Migracion Mortalidad Lista de Areas Análisis de datos censales Estructura de la población Por sexo y grupos de edad Distribución por edades índicies de masculinidad Indicadores sociodemográficos Fecundidad Envejecimiento Migracion Indicadores pre definidos Población Vivienda Hogares Información General Diccionario Reporte Todas las Variables Variables Geográficas Variables de Viviendas Variables de Hogares Variables de Población Variables de Migracion Variables de Mortalidad Categorías de Variables De las Viviendas De Hogares De la Población De Migracion De Mortalidad PROCESADOR ESTADÍSTICO REDATAM Editor de Comandos Descargar diccionario
-  link: 'Presentacion' -> http://181.115.7.199/redhnd/censos/cpv2013/PRESENTACION.pdf
-  link: 'Introducción' -> http://181.115.7.199/redhnd/censos/cpv2013/INTRODUCCION.pdf
-  link: 'Antecedentes del Censo' -> http://181.115.7.199/redhnd/censos/cpv2013/ANTECEDENTES.pdf
-  link: 'Caracteristicas Metodologicas' -> http://181.115.7.199/redhnd/censos/cpv2013/CARACTERISTICAS_METODOLOGICAS.pdf
-  link: 'Definiciones de preguntas del Cuiestionario' -> http://181.115.7.199/redhnd/censos/cpv2013/DEFINICIONES.pdf
-  link: 'Cuestionario Censal' -> http://181.115.7.199/redhnd/censos/cpv2013/Formulario_CNPV_2013.PDF
-  link: 'Tabla de Códigos Cartográficos' -> http://181.115.7.199/redhnd/censos/cpv2013/Division_Politica.PDF
-  link: 'Viviendas' -> http://181.115.7.199/binhnd/RpWebStats.exe/Frequency?BASE=CPVHND2013NAC&ITEM=FREQVIV&lang=esp
-  link: 'Hogares' -> http://181.115.7.199/binhnd/RpWebStats.exe/Frequency?BASE=CPVHND2013NAC&ITEM=FREQHOG&lang=esp
-  link: 'Poblacion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Frequency?BASE=CPVHND2013NAC&ITEM=FREQPOB&lang=esp
-  link: 'Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Frequency?BASE=CPVHND2013NAC&ITEM=FREQMIG&lang=esp
-  link: 'Mortalidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/Frequency?BASE=CPVHND2013NAC&ITEM=FREQMOR&lang=esp
-  link: 'Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZVIV&lang=esp
-  link: 'Hogar' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZHOG&lang=esp
-  link: 'Persona' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZPOB&lang=esp
-  link: 'Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMIG&lang=esp
-  link: 'Mortalidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMOR&lang=esp
-  link: 'Hogar - Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZHOGVIV&lang=esp
-  link: 'Persona - Hogar' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZPOBHOG&lang=esp
-  link: 'Persona - Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZPOBVIV&lang=esp
-  link: 'Migracion - Hogar' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMIGHOG&lang=esp
-  link: 'Migracion - Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMIGVIV&lang=esp
-  link: 'Mortalidad - Hogar' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMORHOG&lang=esp
-  link: 'Mortalidad - Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=CRUZMORVIV&lang=esp
-  link: 'Promedios' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=AVG1&lang=esp
-  link: 'Medianas' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=MED1&lang=esp
-  link: 'Máximos' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=MAX1&lang=esp
-  link: 'Mínimos' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=MIN1&lang=esp
-  link: 'Totales' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=CONTEOTOTALES&lang=esp
-  link: 'Viviendas' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=AREAVIV&lang=esp
-  link: 'Hogares' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=AREAHOG&lang=esp
-  link: 'Poblacion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=AREAPOB&lang=esp
-  link: 'Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=AREAMIG&lang=esp
-  link: 'Mortalidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=AREAMOR&lang=esp
-  link: 'Lista de Areas' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=AREALL&lang=esp
-  link: 'Por sexo y grupos de edad' -> http://181.115.7.199/binhnd/RpWebStats.exe/CrossTab?BASE=CPVHND2013NAC&ITEM=EDADQUIN&lang=esp
-  link: 'Distribución por edades' -> http://181.115.7.199/binhnd/RpWebStats.exe/Qts?BASE=CPVHND2013NAC&ITEM=EDADGRAN&lang=esp
-  link: 'índicies de masculinidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/Fraction?BASE=CPVHND2013NAC&ITEM=RELMASC&lang=esp
-  link: 'Fecundidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDFEC&lang=esp
-  link: 'Envejecimiento' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDENV&lang=esp
-  link: 'Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDMIG&lang=esp
-  link: 'Población' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDPOB&lang=esp
-  link: 'Vivienda' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDVIV&lang=esp
-  link: 'Hogares' -> http://181.115.7.199/binhnd/RpWebStats.exe/AreaList?BASE=CPVHND2013NAC&ITEM=INDHOG&lang=esp
-  link: 'Todas las Variables' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICALL&lang=esp
-  link: 'Variables Geográficas' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICGEO&lang=esp
-  link: 'Variables de Viviendas' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICVIV&lang=esp
-  link: 'Variables de Hogares' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICHOG&lang=esp
-  link: 'Variables de Población' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICPOB&lang=esp
-  link: 'Variables de Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICMIG&lang=esp
-  link: 'Variables de Mortalidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICMOR&lang=esp
-  link: 'De las Viviendas' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICCATVIV&lang=esp
-  link: 'De Hogares' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICCATHOG&lang=esp
-  link: 'De la Población' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICCATPOB&lang=esp
-  link: 'De Migracion' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICCATMIG&lang=esp
-  link: 'De Mortalidad' -> http://181.115.7.199/binhnd/RpWebStats.exe/Dictionary?BASE=CPVHND2013NAC&ITEM=DICCATMOR&lang=esp
-  link: 'Editor de Comandos' -> http://181.115.7.199/binhnd/RpWebStats.exe/CmdSet?BASE=CPVHND2013NAC&ITEM=PROGRED&lang=esp
-  link: 'Descargar diccionario' -> http://181.115.7.199/binhnd/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\CENSOS\CENSO2013\Base\Censo de Poblacion y Vivienda 2013.dic
-pane: http://181.115.7.199/binhnd/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_1204063.htm&TYPE=TMP
-  text: ﻿ R+SP Output Page WebMaster inehn@hotmail.com © 2016 Instituto Nacional de Estadistica Honduras (INE), Procesamiento en Linea Tel: (504) 2239-7154/ (504) 2239-7156; - apto postal 15031, Lomas del Guijarro, Edificio Plaza Guijarros 5to piso by REDATAM-INEHN®
-  link: '' -> http://www.ine.gob.hn/
-  link: 'inehn@hotmail.com' -> mailto:inehn@hotmail.com
-  link: 'REDATAM-INEHN®' -> http://www.ine.gob.hn
+2,655 bytes
+bare CSV (not a zip)
+columns: ['Familia linguistica y pueblo', 'Total ', 'Asuncion ', 'Concepcion ', 'San Pedro ', 'Guaira ', 'Caaguazu ', 'Caazapa ', 'Itapua ', 'Paraguari ', 'Alto Parana ', 'Central ', 'Amambay ', 'Canindeyu ', 'Presidente Hayes ', 'Boqueron ', 'Alto Paraguay ']
+  Familia linguistica y pueblo='Total pais ' | Total ='137.547' | Asuncion ='420' | Concepcion ='3.635' | San Pedro ='4.642' | Guaira ='1.929' | Caaguazu ='13.265' | Caazapa ='5.294' | Itapua ='3.490' | Paraguari ='116' | Alto Parana ='8.908' | Central ='3.074' | Amambay ='12.415' | Canindeyu ='16.305' | Presidente Hayes ='29.837' | Boqueron ='29.801' | Alto Paraguay ='4.416'
+  Familia linguistica y pueblo='Familia Guarani ' | Total ='76.506' | Asuncion ='210' | Concepcion ='3.054' | San Pedro ='4.272' | Guaira ='1.921' | Caaguazu ='13.219' | Caazapa ='5.263' | Itapua ='3.443' | Paraguari ='109' | Alto Parana ='8.731' | Central ='913' | Amambay ='12.385' | Canindeyu ='16.118' | Presidente Hayes ='62' | Boqueron ='6.802' | Alto Paraguay ='4'
+  Familia linguistica y pueblo='Ache ' | Total ='2.604' | Asuncion ='1' | Concepcion ='1' | San Pedro ='-   ' | Guaira ='15' | Caaguazu ='346' | Caazapa ='610' | Itapua ='1' | Paraguari ='1' | Alto Parana ='288' | Central ='52' | Amambay ='5' | Canindeyu ='1.281' | Presidente Hayes ='2' | Boqueron ='1' | Alto Paraguay ='-   '
+  Familia linguistica y pueblo='Ava Guarani ' | Total ='22.705' | Asuncion ='86' | Concepcion ='35' | San Pedro ='2.082' | Guaira ='17' | Caaguazu ='937' | Caazapa ='28' | Itapua ='9' | Paraguari ='73' | Alto Parana ='6.977' | Central ='393' | Amambay ='353' | Canindeyu ='11.699' | Presidente Hayes ='3' | Boqueron ='11' | Alto Paraguay ='2'
+  Familia linguistica y pueblo='Mbya Guarani ' | Total ='28.278' | Asuncion ='99' | Concepcion ='1.160' | San Pedro ='1.565' | Guaira ='1.874' | Caaguazu ='11.909' | Caazapa ='4.617' | Itapua ='3.426' | Paraguari ='35' | Alto Parana ='1.456' | Central ='331' | Amambay ='8' | Canindeyu ='1.788' | Presidente Hayes ='7' | Boqueron ='3' | Alto Paraguay ='-   '
+  Familia linguistica y pueblo='Pai Tavytera' | Total ='15.705' | Asuncion ='-   ' | Concepcion ='1.854' | San Pedro ='460' | Guaira ='3' | Caaguazu ='9' | Caazapa ='6' | Itapua ='1' | Paraguari ='-   ' | Alto Parana ='9' | Central ='3' | Amambay ='12.007' | Canindeyu ='1.335' | Presidente Hayes ='10' | Boqueron ='6' | Alto Paraguay ='2'
+  Familia linguistica y pueblo='Guarani Occidental/Pueblo Guarani ' | Total ='4.090' | Asuncion ='24' | Concepcion ='3' | San Pedro ='162' | Guaira ='-   ' | Caaguazu ='3' | Caazapa ='2' | Itapua ='2' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='130' | Amambay ='11' | Canindeyu ='15' | Presidente Hayes ='22' | Boqueron ='3.716' | Alto Paraguay ='-   '
+  Familia linguistica y pueblo='Guarani Nandeva ' | Total ='3.124' | Asuncion ='-   ' | Concepcion ='1' | San Pedro ='3' | Guaira ='12' | Caaguazu ='15' | Caazapa ='-   ' | Itapua ='4' | Paraguari ='-   ' | Alto Parana ='1' | Central ='4' | Amambay ='1' | Canindeyu ='-   ' | Presidente Hayes ='18' | Boqueron ='3.065' | Alto Paraguay ='-   '
+  Familia linguistica y pueblo='Familia Lengua Maskoy ' | Total ='31.752' | Asuncion ='34' | Concepcion ='535' | San Pedro ='2' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='6' | Itapua ='1' | Paraguari ='-   ' | Alto Parana ='3' | Central ='133' | Amambay ='1' | Canindeyu ='2' | Presidente Hayes ='23.710' | Boqueron ='5.721' | Alto Paraguay ='1.604'
+  Familia linguistica y pueblo='Pueblo Enlhet Norte ' | Total ='9.874' | Asuncion ='1' | Concepcion ='165' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='4' | Amambay ='1' | Canindeyu ='-   ' | Presidente Hayes ='4.578' | Boqueron ='5.124' | Alto Paraguay ='1'
+  Familia linguistica y pueblo='Pueblo Enxet Sur ' | Total ='8.189' | Asuncion ='-   ' | Concepcion ='68' | San Pedro ='1' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='2' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='2' | Central ='17' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='8.022' | Boqueron ='76' | Alto Paraguay ='1'
+  Familia linguistica y pueblo='Pueblo Sanapana ' | Total ='3.523' | Asuncion ='4' | Concepcion ='66' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='6' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='3.237' | Boqueron ='15' | Alto Paraguay ='195'
+  Familia linguistica y pueblo='Pueblo Angaite ' | Total ='7.239' | Asuncion ='2' | Concepcion ='99' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='32' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='6.001' | Boqueron ='397' | Alto Paraguay ='708'
+  Familia linguistica y pueblo='Guana ' | Total ='556' | Asuncion ='20' | Concepcion ='120' | San Pedro ='1' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='3' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='70' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='42' | Boqueron ='16' | Alto Paraguay ='284'
+  Familia linguistica y pueblo='Toba Maskoy/Toba Enenlhet ' | Total ='2.371' | Asuncion ='7' | Concepcion ='17' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='1' | Itapua ='1' | Paraguari ='-   ' | Alto Parana ='1' | Central ='4' | Amambay ='-   ' | Canindeyu ='2' | Presidente Hayes ='1.830' | Boqueron ='93' | Alto Paraguay ='415'
+  Familia linguistica y pueblo='Familia Mataco Mataguayo ' | Total ='20.877' | Asuncion ='121' | Concepcion ='7' | San Pedro ='6' | Guaira ='1' | Caaguazu ='1' | Caazapa ='1' | Itapua ='35' | Paraguari ='-   ' | Alto Parana ='86' | Central ='1.548' | Amambay ='6' | Canindeyu ='8' | Presidente Hayes ='3.907' | Boqueron ='15.145' | Alto Paraguay ='5'
+  Familia linguistica y pueblo='Nivacle ' | Total ='18.280' | Asuncion ='121' | Concepcion ='2' | San Pedro ='3' | Guaira ='-   ' | Caaguazu ='1' | Caazapa ='1' | Itapua ='2' | Paraguari ='-   ' | Alto Parana ='4' | Central ='79' | Amambay ='5' | Canindeyu ='8' | Presidente Hayes ='3.347' | Boqueron ='14.703' | Alto Paraguay ='4'
+  Familia linguistica y pueblo='Maka ' | Total ='2.166' | Asuncion ='-   ' | Concepcion ='-   ' | San Pedro ='3' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='33' | Paraguari ='-   ' | Alto Parana ='82' | Central ='1.469' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='559' | Boqueron ='19' | Alto Paraguay ='1'
+  Familia linguistica y pueblo='Manjui ' | Total ='431' | Asuncion ='-   ' | Concepcion ='5' | San Pedro ='-   ' | Guaira ='1' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='-   ' | Amambay ='1' | Canindeyu ='-   ' | Presidente Hayes ='1' | Boqueron ='423' | Alto Paraguay ='-   '
+  Familia linguistica y pueblo='Familia Zamuco ' | Total ='4.969' | Asuncion ='38' | Concepcion ='4' | San Pedro ='1' | Guaira ='-   ' | Caaguazu ='1' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='370' | Amambay ='1' | Canindeyu ='-   ' | Presidente Hayes ='2' | Boqueron ='1.774' | Alto Paraguay ='2.778'
+  Familia linguistica y pueblo='Ayoreo ' | Total ='2.520' | Asuncion ='-   ' | Concepcion ='-   ' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='-   ' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='1' | Boqueron ='1.769' | Alto Paraguay ='750'
+  Familia linguistica y pueblo='Ybytoso ' | Total ='2.236' | Asuncion ='38' | Concepcion ='4' | San Pedro ='-   ' | Guaira ='-   ' | Caaguazu ='1' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='369' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='-   ' | Boqueron ='5' | Alto Paraguay ='1.819'
+  Familia linguistica y pueblo='Tomaraho ' | Total ='213' | Asuncion ='-   ' | Concepcion ='-   ' | San Pedro ='1' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='-   ' | Central ='1' | Amambay ='1' | Canindeyu ='-   ' | Presidente Hayes ='1' | Boqueron ='-   ' | Alto Paraguay ='209'
+  Familia linguistica y pueblo='Familia Guaicuru ' | Total ='2.198' | Asuncion ='1' | Concepcion ='8' | San Pedro ='274' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='1' | Central ='1' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='1.911' | Boqueron ='1' | Alto Paraguay ='1'
+  Familia linguistica y pueblo='Qom ' | Total ='2.198' | Asuncion ='1' | Concepcion ='8' | San Pedro ='274' | Guaira ='-   ' | Caaguazu ='-   ' | Caazapa ='-   ' | Itapua ='-   ' | Paraguari ='-   ' | Alto Parana ='1' | Central ='1' | Amambay ='-   ' | Canindeyu ='-   ' | Presidente Hayes ='1.911' | Boqueron ='1' | Alto Paraguay ='1'
+  Familia linguistica y pueblo='No indigena ' | Total ='1.245' | Asuncion ='16' | Concepcion ='27' | San Pedro ='87' | Guaira ='7' | Caaguazu ='44' | Caazapa ='24' | Itapua ='11' | Paraguari ='7' | Alto Parana ='87' | Central ='109' | Amambay ='22' | Canindeyu ='177' | Presidente Hayes ='245' | Boqueron ='358' | Alto Paraguay ='24'
+  Familia linguistica y pueblo='' | Total ='1.245' | Asuncion ='16' | Concepcion ='27' | San Pedro ='87' | Guaira ='7' | Caaguazu ='44' | Caazapa ='24' | Itapua ='11' | Paraguari ='7' | Alto Parana ='87' | Central ='109' | Amambay ='22' | Canindeyu ='177' | Presidente Hayes ='245' | Boqueron ='358' | Alto Paraguay ='24'
+27 rows printed
