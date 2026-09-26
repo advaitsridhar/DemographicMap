@@ -529,6 +529,14 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "VEN": {
         "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
     },
+    # Measured on INE's own data dictionary for the 2024 census's person
+    # database, which labels every question the file holds, 24 to 59; none
+    # asks religion, and the word is on none of them. The Factbook's national
+    # religion figure comes from somewhere other than the census, and it stays
+    # on the country.
+    "BOL": {
+        "religion": "Bolivia's 2024 census does not ask religion. INE's data dictionary for the census's person database lists every question it holds, 24 to 59 -- relationship, sex, age, birth registration, health care, nación o pueblo, languages spoken and first learned, birthplace, residence, schooling, literacy, disability, work, marital status and children -- and religion is not among them.",
+    },
     # Measured against the census's own form and its own 53 tables, after the
     # three notes here had stood for a while as an assertion with nothing
     # behind them. North Korea is not a country without a census: the 2008
