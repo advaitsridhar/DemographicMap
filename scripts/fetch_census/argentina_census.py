@@ -468,8 +468,10 @@ def main() -> int:
         dept_rows = {c: v for c, v in rows.items() if len(c) == 5 and c.startswith(pcode)}
         population = {c: v[1][1] for c, v in dept_rows.items()}
         province_pop = sum(population.values())
+        # One province row, or (Buenos Aires) its Greater Buenos Aires and
+        # interior rows, which make the province between them.
         stated = [r[1] for r in repeats[pcode]]
-        if province_pop not in stated:
+        if province_pop not in stated and province_pop != sum(v or 0 for v in stated):
             raise SystemExit(f"argentina_census: {what}: departments make "
                              f"{province_pop:,}, and the province's rows say {stated}")
         names = {c: v[0] for c, v in dept_rows.items()}
