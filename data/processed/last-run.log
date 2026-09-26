@@ -1,291 +1,521 @@
-page: http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/PortalAction?&MODE=MAIN&BASE=CPV2011&MAIN=WebServerMain.inl
-  text: R+::CEPAL/CELADE - R+SP WebServer
-  frame: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40331.htm&TYPE=TMP
-  frame: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40332.htm&TYPE=TMP
-  frame: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40333.htm&TYPE=TMP
-pane: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40331.htm&TYPE=TMP
-  text: R+SP Header Page
-  link: '' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/PortalAction?&MODE=MAIN&BASE=CPV2011&MAIN=WebServerMain.inl
-pane: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40332.htm&TYPE=TMP
-  text: R+SP Index Page RESULTADOS B�SICOS Distribuciones Pir�mide de edad Caracter�sticas Estructurales Edad Mediana de la poblaci�n Caracter�sticas Educativas Entorno f�sico Listas por �reas Relaci�n de Masculinidad / Femeneidad Indicadores Demogr�ficos Indicadores Estructurales Indicadores Educativos Pobreza seg�n NBI Migraci�n Interna UNIDADES DE OBSERVACI�N Caracter�sticas de las viviendas Indicadores Prioritarios Tabulaciones b�sicas Listado por �reas Metadatos de Vivienda Caracter�sticas de los hogares Indicadores Prioritarios Tabulaciones b�sicas Metadatos de Hogar Caracter�sticas de las personas Demogr�ficas Indicadores Principales Estructura poblacional Fecundidad Indicadores Principales Promedio de hijos Migraci�n Indicadores Principales Migraci�n toda la vida Ind�gena Indicadores Principales Estructura poblacional ind�gena Educativas Indicadores Principales Estructura educativa Discapacidad Indicadores Principales Listado por �reas Tabulaciones b�sicas Metadatos Metadatos de Personas PROCESOS B�SICOS Distribuci�n de frecuencias Cruce de variables Promedio de variables Mediana de variables LISTAS Y CONTEOS Conteo de unidades de observaci�n (familiares) Conteo de unidades de observaci�n (colectivas) Lista de �reas INFORMACI�N DEL DICCIONARIO Estructura Todas las Variables Variables Geogr�ficas Variables de Vivienda Variables de Hogares Variables de Persona Categor�a de las Variables De Vivienda (Diccionario de datos) De Hogar (Diccionario de datos) De Persona (Diccionario de datos) Programaci�n en Redatam Procesador Estad�stico R+SP Descargar diccionario R+SP del Censo 2011 Descargar el software R+SP Acerca de Redatam+SP P�gina oficial de Redatam+SP Gu�a para el usuario Fichas T�cnicas de los Indicadores Manual para el Uso del Sitio
-  link: 'RESULTADOS B�SICOS' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PRIMERAFASE&MAIN=WebServerMain.inl
-  link: 'Distribuciones' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DISTRIBUCIONES&MAIN=WebServerMain.inl
-  link: 'Pir�mide de edad' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PIRAMEDADAGE&MAIN=WebServerMain.inl
-  link: 'Caracter�sticas Estructurales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PIRAMEDAD&MAIN=WebServerMain.inl
-  link: 'Edad Mediana de la poblaci�n' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANAEDAD&MAIN=WebServerMain.inl
-  link: 'Caracter�sticas Educativas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=DISTEDAD&MAIN=WebServerMain.inl
-  link: 'Entorno f�sico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=ESTRPOBLAC&MAIN=WebServerMain.inl
-  link: 'Listas por �reas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=LISTAREAS&MAIN=WebServerMain.inl
-  link: 'Relaci�n de Masculinidad / Femeneidad' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Fraction?&BASE=CPV2011&ITEM=RELMASC&MAIN=WebServerMain.inl
-  link: 'Indicadores Demogr�ficos' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=INDICADORDEMO&MAIN=WebServerMain.inl
-  link: 'Indicadores Estructurales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=INDICADORESTRU&MAIN=WebServerMain.inl
-  link: 'Indicadores Educativos' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=INDICADOREDUCA&MAIN=WebServerMain.inl
-  link: 'Pobreza seg�n NBI' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=NBIAREALIST&MAIN=WebServerMain.inl
-  link: 'Migraci�n Interna' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=MIGRACION&MAIN=WebServerMain.inl
-  link: 'UNIDADES DE OBSERVACI�N' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=SEGUNDAFASE&MAIN=WebServerMain.inl
-  link: 'Caracter�sticas de las viviendas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=VIVIENDAS_TB&MAIN=WebServerMain.inl
-  link: 'Indicadores Prioritarios' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=VIVIENDA_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Tabulaciones b�sicas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=VIVIENDA_BASIC&MAIN=WebServerMain.inl
-  link: 'Listado por �reas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=VIVIENDA_LIST&MAIN=WebServerMain.inl
-  link: 'Metadatos de Vivienda' -> http://redatam.ine.gob.ve/redatameval/Pdf/Meta_Vivienda.pdf
-  link: 'Caracter�sticas de los hogares' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=HOGARES_TB&MAIN=WebServerMain.inl
-  link: 'Indicadores Prioritarios' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=HOGAR_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Tabulaciones b�sicas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=HOGAR_BASIC&MAIN=WebServerMain.inl
-  link: 'Metadatos de Hogar' -> http://redatam.ine.gob.ve/redatameval/Pdf/Meta_Hogar.pdf
-  link: 'Caracter�sticas de las personas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONAS_TB&MAIN=WebServerMain.inl
-  link: 'Demogr�ficas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_DEMOGRAFIA&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=DEMOGRAFIA_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Estructura poblacional' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=DEMOGRAFIA_BASIC&MAIN=WebServerMain.inl
-  link: 'Fecundidad' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_FECUNDIDAD&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=FECUNDIDAD_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Promedio de hijos' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOMEF&MAIN=WebServerMain.inl
-  link: 'Migraci�n' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_MIGRACION&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=MIGRACION_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Migraci�n toda la vida' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MIGRACION_BASIC&MAIN=WebServerMain.inl
-  link: 'Ind�gena' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_INDIGENA&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=INDIGENA_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Estructura poblacional ind�gena' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=INDIGENA_BASIC&MAIN=WebServerMain.inl
-  link: 'Educativas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_EDUCATIVA&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=EDUCATIVA_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Estructura educativa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=EDUCATIVA_BASIC&MAIN=WebServerMain.inl
-  link: 'Discapacidad' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=PERSONA_DISCAPACIDAD&MAIN=WebServerMain.inl
-  link: 'Indicadores Principales' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=DISCAPACIDAD_STRUCTURE&MAIN=WebServerMain.inl
-  link: 'Listado por �reas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=DISCAPACIDAD_LIST&MAIN=WebServerMain.inl
-  link: 'Tabulaciones b�sicas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=DISCAPACIDAD_BASIC&MAIN=WebServerMain.inl
-  link: 'Metadatos' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=METADATA_PERSONA&MAIN=WebServerMain.inl
-  link: 'Metadatos de Personas' -> http://redatam.ine.gob.ve/redatameval/Pdf/Meta_Persona.pdf
-  link: 'PROCESOS B�SICOS' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=TERCERAFASE&MAIN=WebServerMain.inl
-  link: 'Distribuci�n de frecuencias' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl
-  link: 'Cruce de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl
-  link: 'Promedio de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl
-  link: 'Mediana de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl
-  link: 'LISTAS Y CONTEOS' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=CUARTAFASE&MAIN=WebServerMain.inl
-  link: 'Conteo de unidades de observaci�n (familiares)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=CONTEOS1&MAIN=WebServerMain.inl
-  link: 'Conteo de unidades de observaci�n (colectivas)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=CONTEOS2&MAIN=WebServerMain.inl
-  link: 'Lista de �reas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyList?&BASE=CPV2011&ITEM=LISTADEAREASAREALIST&MAIN=WebServerMain.inl
-  link: 'INFORMACI�N DEL DICCIONARIO' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl
-  link: 'Todas las Variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl
-  link: 'Variables Geogr�ficas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl
-  link: 'Variables de Vivienda' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl
-  link: 'Variables de Hogares' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl
-  link: 'Variables de Persona' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl
-  link: 'De Vivienda (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl
-  link: 'De Hogar (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl
-  link: 'De Persona (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl
-  link: 'Procesador Estad�stico R+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl
-  link: 'Descargar diccionario R+SP del Censo 2011' -> http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Down_Dictionary.dic?&ITEM=DOWNDIC&MAIN=WebServerMain.inl&LFN=RpBases\CENSOS\AppCp11\Base\Censo de Poblaci�n y Vivienda 2011.dic
-  link: 'Descargar el software R+SP' -> http://www.cepal.org/redatam/
-  link: 'P�gina oficial de Redatam+SP' -> http://www.cepal.org/redatam/
-  link: 'Fichas T�cnicas de los Indicadores' -> http://redatam.ine.gob.ve/redatam/Pdf/FT_Xplan_Ve11.pdf
-  link: 'Manual para el Uso del Sitio' -> http://redatam.ine.gob.ve/redatam/Pdf/MU_Xplan_Ve11.pdf
-pane: http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_40333.htm&TYPE=TMP
-  text: R+SP Output Page Procesamiento de Microdatos Censales Este espacio fue creado con la determinación de facilitar el procesamiento de los datos sociodemográficos en línea, del XIV Censo Nacional de Población y Vivienda 2011 , como una estrategia del Gobierno Bolivariano Nacional, dirigida a proporcionar los insumos necesarios para construir un nuevo modelo de estado socialista, humanista, endógeno e incluyente que garantice el bienestar social integral de todos los ciudadanos(as). Este esfuerzo por consiguiente, está enfocado a facilitar los datos demográficos necesarios, que permitan generar la información y el conocimiento de la realidad sociodemográfica de las divisiones administrativas del país, que permitan reconocer las características y tendencias de la dinámica poblacional como marco elemental para la definición y formulación de las acciones �políticas, planes, programas y proyectos�, tanto nacionales, como locales, dirigidas a satisfacer las demandas sociales de aquellos grupos de población y áreas geográficas con mayores necesidades o desventajas sociales, que deben ser incorporados adecuadamente a los procesos de creación y apropiación de los beneficios del progreso revolucionario, económico y social. REDATAM, es una solución tecnológica desarrollada por el Centro Latinoamericano y Caribeño de Demografía (CELADE), División de Población de la Comisión Económica para América Latina y el Caribe (CEPAL), de las Naciones Unidas (UN), con el propósito de aportar un conjunto de herramientas, a los países de la región, utilizadas para la caracterización y el análisis local, estadal y regional de los microdatos censales, a partir del procesamiento y despliegue de los datos en línea, en tablas, gráficos y/o mapas. En consecuencia, usted podrá rápidamente y de manera sencilla, disponer de distribuciones de frecuencias, cruces de variables y otros cuadros informativos directamente de los microdatos censales, dando respuesta a la necesidad de contar con estadísticas plausibles. Por otro lado, también está contemplado para éste módulo, la opción de que el usuario pueda crear tabulados específicos de acuerdo a sus necesidades, con base al lenguaje de programación de REDATAM. Este es la segunda versión referida al censo del 2011, la cual será mejorada y ampliada con base a las frecuencias de procesamientos específicos y las necesidades de otras series estadísticas requeridas por las usuarias y usuarios, de la cual usted está invitado(a) a participar. � 2002-2012 Instituto Nacional de Estad�stica (INE) Av. Jos� F�lix Sosa, entre Av. Sur Altamira y Av. del �vila, Torre Brit�nica, Piso 10, Altamira, Chacao, Caracas, D.C., Rep�blica Bolivariana de Venezuela. Telf : (0212) 201.02.29
-follow: 'Distribuci�n de frecuencias' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Selección de variable a procesar ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> Definición de Parámetros Título de la Tabla Seleccionar una variable: Tipo de vivienda Condición de ocupación Tipo de vivienda familiar Tipos de vivienda (Agrupadas) ---------------------------------------------------------------------- Jefatura del hogar Tipo de Hogar ---------------------------------------------------------------------- Relación o parentesco con el(la) jefe(a) del hogar Sexo Edad en años cumplidos Grupos de edad Grandes Grupos de edad Grupos de Edades Escolares Usted como se reconoce Alfabetismo Asiste actualmente a algun centro de educación Total de hijos nacidos vivos --------------------------------------------------------------------- Lugar de Nacimiento Área de Salida: (Todos) Entidad Federal Municipio Parroquia Área Geográfica de Salida : Venezuela Distrito Capital Amazonas Anzoátegui Apure Aragua Barinas Bolívar Carabobo Cojedes Delta Amacuro Falcón Guárico Lara Mérida Miranda Monagas Nueva Esparta Portuguesa Sucre Táchira Trujillo Yaracuy Zulia Vargas Dependencias Federales Selección dinámica del usuario Formato de Salida: Tabla Gráfico Programa R+ Tabla y Gráfico Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency?&BASE=CPV2011&ITEM=FRECUENCIASFREQ&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Frequency
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'FRECUENCIASFREQ'
-    input HIDDEN 'MODE' = 'RUN'
-    input text 'TITLE' = ''
-    input button None = 'Editar'
-    input hidden 'INLINESELECTION' = ''
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'VARIABLE': 0 options: 
-    select 'AREABREAK': 0 options: 
-    select 'SELECT': 0 options: 
-    select 'FORMAT': 0 options: 
-follow: 'Cruce de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Selección de variable a procesar ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> "> --> Definición de Parámetros Título de la Tabla Cruce de (fila): Tipo de vivienda Condición de ocupación Tipo de vivienda familiar Tipos de vivienda (Agrupadas) ---------------------------------------------------------------------- Jefatura del hogar Tipo de Hogar ---------------------------------------------------------------------- Relación o parentesco con el(la) jefe(a) del hogar Sexo Edad en años cumplidos Grupos de edad Grandes Grupos de edad Grupos de Edades Escolares Usted como se reconoce Alfabetismo Asiste actualmente a algun centro de educación Total de hijos nacidos vivos --------------------------------------------------------------------- Lugar de Nacimiento Según (columna): Tipo de vivienda Condición de ocupación Tipo de vivienda familiar Tipos de vivienda (Agrupadas) ---------------------------------------------------------------------- Jefatura del hogar Tipo de Hogar ---------------------------------------------------------------------- Relación o parentesco con el(la) jefe(a) del hogar Sexo Edad en años cumplidos Grupos de edad Grandes Grupos de edad Grupos de Edades Escolares Usted como se reconoce Alfabetismo Asiste actualmente a algun centro de educación Total de hijos nacidos vivos --------------------------------------------------------------------- Lugar de Nacimiento Área de Salida: (Todos) Entidad Federal Municipio Parroquia Área Geográfica de Salida : Venezuela Distrito Capital Amazonas Anzoátegui Apure Aragua Barinas Bolívar Carabobo Cojedes Delta Amacuro Falcón Guárico Lara Mérida Miranda Monagas Nueva Esparta Portuguesa Sucre Táchira Trujillo Yaracuy Zulia Vargas Dependencias Federales Selección dinámica del usuario Formato de Salida: Tabla Gráfico Programa R+ Tabla y Gráfico Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=CRUCESFREQ&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Crosstabs
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'CRUCESFREQ'
-    input HIDDEN 'UNIVERSE' = ''
-    input text 'TITLE' = ''
-    input button None = 'Editar'
-    input hidden 'INLINESELECTION' = ''
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'VAR1': 0 options: 
-    select 'VAR2': 0 options: 
-    select 'AREABREAK': 0 options: 
-    select 'SELECT': 0 options: 
-    select 'FORMAT': 0 options: 
-follow: 'Promedio de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Promedios ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> "> --> Definición de Parámetros Título de la Tabla Variable: Edad en años cumplidos Total de hijos nacidos vivos Según (fila): (Sin variable de control) Sexo Situación Conyugal Área de Salida: (Todos) Entidad Federal Municipio Parroquia Área Geográfica de Salida : Venezuela Distrito Capital Amazonas Anzoátegui Apure Aragua Barinas Bolívar Carabobo Cojedes Delta Amacuro Falcón Guárico Lara Mérida Miranda Monagas Nueva Esparta Portuguesa Sucre Táchira Trujillo Yaracuy Zulia Vargas Dependencias Federales Selección dinámica del usuario Formato de Salida: Tabla Gráfico Programa R+ Tabla y Gráfico Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=PROMEDIOFREQ&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Crosstabs
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'PROMEDIOFREQ'
-    input HIDDEN 'UNIVERSE' = ''
-    input text 'TITLE' = ''
-    input button None = 'Editar'
-    input hidden 'INLINESELECTION' = ''
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'AVERAGE': 0 options: 
-    select 'VAR1': 0 options: 
-    select 'AREABREAK': 0 options: 
-    select 'SELECT': 0 options: 
-    select 'FORMAT': 0 options: 
-follow: 'Mediana de variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Mediana de variables ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> "> --> Definición de Parámetros Título de la Tabla Mediana de: Edad en años cumplidos Total de hijos nacidos vivos Área de Salida: (Todos) Entidad Federal Municipio Parroquia Área Geográfica de Salida : Venezuela Distrito Capital Amazonas Anzoátegui Apure Aragua Barinas Bolívar Carabobo Cojedes Delta Amacuro Falcón Guárico Lara Mérida Miranda Monagas Nueva Esparta Portuguesa Sucre Táchira Trujillo Yaracuy Zulia Vargas Dependencias Federales Selección dinámica del usuario Formato de Salida: Tabla Gráfico Programa R+ Tabla y Gráfico Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/EasyCross?&BASE=CPV2011&ITEM=MEDIANA&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Crosstabs
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'MEDIANA'
-    input HIDDEN 'UNIVERSE' = ''
-    input text 'TITLE' = ''
-    input button None = 'Editar'
-    input hidden 'INLINESELECTION' = ''
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'MEDIAN': 0 options: 
-    select 'AREABREAK': 0 options: 
-    select 'SELECT': 0 options: 
-    select 'FORMAT': 0 options: 
-follow: 'INFORMACI�N DEL DICCIONARIO' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- INFORMACIÓN DEL DICCIONARIO ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> XIV CENSO DE POBLACIÓN Y VIVIENDA DE 2011 Esta Aplicación tiene como propósito aportar una solución tecnológica que genere un mayor valor agregado en lo que a exploración y procesamiento censal se refiere. Para ello, se desagrega en un Árbol de opciones, divido en cinco secciones principales a saber: 1.- RESULTADOS BÁSICOS: Donde se esquematiza y organiza los primeros resultados e indicadores principales según áreas temáticas del censo, dirigidos a usuarios básicos que necesitan contar de manera directa con la disponibilidad de la información prioritaria de manera precisa del Censo 2011, las cuales se desagregan en nodos de procesos estadísticos, que facilitan la selección y ejecución de los resultados censales. 2.- UNIDADES DE OBSERVACIÓN: Bajo este esquema de consulta se propone a los usuarios la posibilidad adicional de poder profundizar con base a la estructura de las unidades de observación (vivienda, hogar y persona), la posibilidad de construir tabulaciones e indicadores que les permita caracterizar cada unidad, inclusive según las áreas específicas de análisis disponibles en personas, las cuales pueden presentarse en cuadros, gráficos y mapas. 3.- PROCESOS BÁSICOS: En esta sección, se ordenan las variables prioritarias de las entidades de observación del Censo (Vivienda, Hogar y persona) según los procesos básicos de distribución de frecuencias, cruces de variables, listas de áreas y conteos. 4.- LISTAS Y CONTEOS: Para esta sección se priorizan la presentación de los datos prioritarios con base a la división político territorial del país, con el propósito de facilitar los insumos para los Sistemas de Información Geográficos (SIG). 5.- INFORMACIÓN DEL DICCIONARIO: Por último se presentan la información o metadata del Censo 2011, a partir de los manuales explicativos tanto del sitio web como de los indicadores presentados en la misma; así como lo referente a la herramienta utilizada para el procesamiento de los datos censales Redatam+SP. Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/InlPage?&BASE=CPV2011&ITEM=DICGROUP&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'Todas las Variables' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Diccionario de la Base ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 1 PAIS Venezuela 2 ENTIDAD Entidad Federal 2.1 ENTIDAD ENTIDAD FEDERAL C 2.2 NOMBENT Entidad Federal C 2.3 LBLENT Entidad Federal I 1-25 2.4 TVNOMIGRA No migrante (Toda la vida) I 816-3264195 2.5 TVINMIGRA Inmigrante (Toda la vida) I 1238-976894 2.6 TVEMIGRA Emigrante (Toda la vida) I 3579-1248811 2.7 TVMIBRUT Migración Bruta (Toda la vida) I 4817-1589975 2.8 TVMINETA Migración Neta (Toda la vida) I -907647-842750 2.9 TVPROINM Proporción de inmigrantes R 2.10 TVPROEMI Proporción de emigrantes R 3 MUNICIPI Municipio 3.1 MUNICIPIO MUNICIPIO C 3.2 NOMBMUN Municipio C 3.3 LBLMUN Municipios I 101-2501 4 PARROQUI Parroquia 4.1 PARROQUIA PARROQUIA C 4.2 NOMBPAR Parroquia C 4.3 LBLPAR Parroquias I 10101-250103 5 CENTROPO Centro Poblado 5.1 CENTROPO CENTRO POBLADO C 5.2 NOMBCP Centro poblado C 5.3 URBRUL Urbano - rural I 1-2 6 SEGMENTO Segmento 6.1 SEGMENTO SEGMENTO C 7 CARGA Carga 7.1 CODCARGA COD_CARGA C 8 TIPO_SEG Tipo de Segmento 8.1 TIPSEG TIPO DE SEGMENTO C 9 SECTOR Sector 9.1 SECTOR SECTOR C 10 MANZANA Manzana 10.1 MANZANA MANZANA C 11 PARCELA Parcela 11.1 PARCELA PARCELA C 12 EDIFICA Edificación 12.1 NROEDIF NUMERO DE LA EDIFICACION C 13 VIVIENDA Vivienda 13.1 NROVIV Identificador de la vivienda C 13.2 VIVFAMOCOL Viviendas familiares o colectivas I 1-2 13.3 TIPODEVIV Tipo de vivienda I 1-18 TIPOVIV 13.4 CONDFISICV Condición del estado físico I 1-2 13.5 MATPARED Material predominante en paredes I 1-13 13.6 MATTECHO Material predominante en techo I 1-9 13.7 CONDOCUPA Condición de ocupación I 1-3 CONDOCU1 13.8 USOVIV Uso de la vivienda I 1-3 13.9 MATPISO Material predominante en piso I 1-5 13.10 COMBUST Tiene servicio de gas directo I 1-2 13.11 AGUALLEGA Abastecimiento de agua I 1-10 AGUA 13.12 FRECAGUA Frecuencia con que llega el agua I 1-4 13.13 ACCELECTR Abastecimiento del servicio eléctrico I 1-6 13.14 BASURA Medio de eliminación de la basura I 1-6 13.15 FRECBASURA Frecuencia de recolección de basura I 1-4 13.16 POCETA Eliminación de excretas I 1-5 13.17 TIEMPINMUE Años de construcción del inmueble I 1-7 13.18 CONDOCUP Condición de ocupación I 1-6 13.19 TOTIPVIV Tipos de vivienda (Agrupadas) I 1-2 13.20 TIPVIVFA Tipo de vivienda familiar I 1-7 14 HOGAR Hogar 14.1 NUMERODEHO Identificador del hogar C 14.2 TENENCIAVI Tenencia de la vivienda I 1-7 14.3 DORMITORIO Número de cuartos para dormir I 0-99 NUCUADOR 14.4 NUMBANIIO Número de cuartos de baño con ducha I 0-98 14.5 HOGCOCINA Dispone de espacio exclusivo para cocinar I 1-2 14.6 HOGCOMBUST Combustible utilizado para cocinar I 1-5 14.7 AGUA Agua utilizada para beber I 1-6 14.8 BICI Tiene bicicleta I 1-2 14.9 MOTO Tiene moto I 1-2 14.10 CARRO Tiene carro I 1-2 14.11 BONGO Tiene Bongo, Lancha o Curiara: I 1-2 14.12 TIENEMOTOR Tiene motor el Bongo,Lancha,Curiara I 1-2 14.13 VOLADORA Tiene este hogar Voladora I 1-2 14.14 NOVEHIC No tiene Vehículo I 0-9 14.15 TLFFIJO Dispone el Hogar de Teléfono Fijo (por línea) I 1-2 14.16 TLFSATEL Dispone el Hogar de Teléfono Fijo (Enchufe) I 0-9 14.17 CELULAR Dispone el Hogar de Teléfono Celular I 1-2 14.18 TVCABLE Dispone el Hogar de Tv por Cable I 1-2 14.19 COMPUTADOR Dispone el Hogar de Computadora I 1-2 14.20 INTERNET Dispone el Hogar de Acceso a Internet I 1-2 14.21 NODISPONET No dispone de ninguna tecnología I 1-2 14.22 RADIO Dispone el Hogar de Radio I 1-2 14.23 TV Dispone el Hogar de televisor I 1-2 14.24 NEVERA Dispone el Hogar de nevera I 1-2 14.25 LAVADORA Dispone el Hogar de Lavadora I 1-2 14.26 SECADORA Dispone el Hogar de Secadora I 1-2 14.27 CALENTADOR Dispone el Hogar de Calentador de Agua I 1-2 14.28 AIRE Dispone el Hogar de Aire Acondicionado I 1-2 14.29 COCINA Dispone el Hogar de Cocina I 1-2 14.30 NODISPONEA No dispone de ningún equipamiento I 1-2 14.31 TIPOHOGAR Tipo de Hogar I 1-9 14.32 JEFATURA Jefatura del hogar I 1-2 14.33 NBI1 Hogares con Déficit en Educación I 1-2 14.34 NBI2 Hogares con Déficit según Hacinamiento I 1-2 14.35 NBI3 Hogares con Déficit según Calidad de la Vivienda I 1-2 14.36 NBI4 Hogares con Déficit de Servicios I 1-2 14.37 NBI5 Hogares con Déficit de Capacidad Económica y Educativa I 1-2 14.38 NRONBI Número de Necesidades Básicas Insatisfechas I 0-5 14.39 POBREZA Pobreza en el Hogar por NBI I 0-2 15 PERSONA Persona 15.1 NUMPERS PERSONA NUMERO C 15.2 PARENTESCO Relación o parentesco con el(la) jefe(a) del hogar I 0-99 PARENTES 15.3 SEXO Sexo I 1-2 15.4 EDAD Edad en años cumplidos I 0-130 EDADN 15.5 EDADMESES Edad para menores de un año (en meses) I 0-11 15.6 NACIOENVEN Nació en Venezuela I 1-2 NACIOEN 15.7 NACMISMOES En que estado nació I 1-2 15.8 ENCUALESTA Entidad Federal de Nacimiento I 1-25 15.9 ENCUALPAIS País de Nacimiento (Principales Países) I 1-19 15.10 CODOTROPAI Entidad Federal y País de Nacimiento I 0-999 15.11 ANIIOLLEGO En que año llego a Venezuela I 1900-2011 15.12 NACIONALID Nacionalidad Legal I 1-3 15.13 INDIGENA Pertenece a algún Pueblo Indígena I 1-2 15.14 CUALINDIGE Pueblo Indígena o Étnia I 0-999 15.15 USTEDSEREC Usted como se reconoce I 1-5 RECONOCE 15.16 DISCVISUAL Discapacidad Visual I 1-2 15.17 DISCAUDITI Discapacidad Auditiva I 1-2 15.18 DISCNEURO Discapacidad Neurólogica I 1-2 15.19 DISCMUSCUL Discapacidad Músculo Esquelética I 1-2 15.20 DISCVOZ Discapacidad de Voz y Habla I 1-2 15.21 DISCCARDIO Discapacidad Cardiovascular I 1-2 15.22 DISCMENTAL Discapacidad Mental - Intelectual I 1-2 15.23 DISCRESP Discapacidad Respiratoria I 1-2 15.24 DISCPSICO Discapacidad Mental - psicosocial I 1-2 15.25 NODISC Ninguna Discapacidad I 1-2 15.26 DISCAPREND Limitación para el Aprendizaje I 1-2 15.27 DISCMOVJ Limitación para Movilidad I 1-2 15.28 DISCCUIDAD Limitación para Autocuidado I 1-2 15.29 DISCRELAC Limitación para Relaciones Interpersonales I 1-2 15.30 DISCEDUC Limitación para Educación I 1-2 15.31 DISCTRABAJ Limitación para Trabajar I 1-2 1
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICALL&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'Variables Geogr�ficas' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Variables Geográficas ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 2 ENTIDAD Entidad Federal 2.1 ENTIDAD ENTIDAD FEDERAL C 2.2 NOMBENT Entidad Federal C 2.3 LBLENT Entidad Federal I 1-25 2.4 TVNOMIGRA No migrante (Toda la vida) I 816-3264195 2.5 TVINMIGRA Inmigrante (Toda la vida) I 1238-976894 2.6 TVEMIGRA Emigrante (Toda la vida) I 3579-1248811 2.7 TVMIBRUT Migración Bruta (Toda la vida) I 4817-1589975 2.8 TVMINETA Migración Neta (Toda la vida) I -907647-842750 2.9 TVPROINM Proporción de inmigrantes R 2.10 TVPROEMI Proporción de emigrantes R 3 MUNICIPI Municipio 3.1 MUNICIPIO MUNICIPIO C 3.2 NOMBMUN Municipio C 3.3 LBLMUN Municipios I 101-2501 4 PARROQUI Parroquia 4.1 PARROQUIA PARROQUIA C 4.2 NOMBPAR Parroquia C 4.3 LBLPAR Parroquias I 10101-250103 5 CENTROPO Centro Poblado 5.1 CENTROPO CENTRO POBLADO C 5.2 NOMBCP Centro poblado C 5.3 URBRUL Urbano - rural I 1-2 Fuente: Instituto Nacional de Estadística(INE), Censo 2011;Procesado con Redatam+SP;CEPAL/CELADE 2003-2013 Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICGEO&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'Variables de Vivienda' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Variables de Vivienda ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 13 VIVIENDA Vivienda 13.1 NROVIV Identificador de la vivienda C 13.2 VIVFAMOCOL Viviendas familiares o colectivas I 1-2 13.3 TIPODEVIV Tipo de vivienda I 1-18 TIPOVIV 13.4 CONDFISICV Condición del estado físico I 1-2 13.5 MATPARED Material predominante en paredes I 1-13 13.6 MATTECHO Material predominante en techo I 1-9 13.7 CONDOCUPA Condición de ocupación I 1-3 CONDOCU1 13.8 USOVIV Uso de la vivienda I 1-3 13.9 MATPISO Material predominante en piso I 1-5 13.10 COMBUST Tiene servicio de gas directo I 1-2 13.11 AGUALLEGA Abastecimiento de agua I 1-10 AGUA 13.12 FRECAGUA Frecuencia con que llega el agua I 1-4 13.13 ACCELECTR Abastecimiento del servicio eléctrico I 1-6 13.14 BASURA Medio de eliminación de la basura I 1-6 13.15 FRECBASURA Frecuencia de recolección de basura I 1-4 13.16 POCETA Eliminación de excretas I 1-5 13.17 TIEMPINMUE Años de construcción del inmueble I 1-7 13.18 CONDOCUP Condición de ocupación I 1-6 13.19 TOTIPVIV Tipos de vivienda (Agrupadas) I 1-2 13.20 TIPVIVFA Tipo de vivienda familiar I 1-7 Fuente: Instituto Nacional de Estadística(INE), Censo 2011;Procesado con Redatam+SP;CEPAL/CELADE 2003-2013 Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICVIV&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'Variables de Hogares' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Variables de Hogares ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 14 HOGAR Hogar 14.1 NUMERODEHO Identificador del hogar C 14.2 TENENCIAVI Tenencia de la vivienda I 1-7 14.3 DORMITORIO Número de cuartos para dormir I 0-99 NUCUADOR 14.4 NUMBANIIO Número de cuartos de baño con ducha I 0-98 14.5 HOGCOCINA Dispone de espacio exclusivo para cocinar I 1-2 14.6 HOGCOMBUST Combustible utilizado para cocinar I 1-5 14.7 AGUA Agua utilizada para beber I 1-6 14.8 BICI Tiene bicicleta I 1-2 14.9 MOTO Tiene moto I 1-2 14.10 CARRO Tiene carro I 1-2 14.11 BONGO Tiene Bongo, Lancha o Curiara: I 1-2 14.12 TIENEMOTOR Tiene motor el Bongo,Lancha,Curiara I 1-2 14.13 VOLADORA Tiene este hogar Voladora I 1-2 14.14 NOVEHIC No tiene Vehículo I 0-9 14.15 TLFFIJO Dispone el Hogar de Teléfono Fijo (por línea) I 1-2 14.16 TLFSATEL Dispone el Hogar de Teléfono Fijo (Enchufe) I 0-9 14.17 CELULAR Dispone el Hogar de Teléfono Celular I 1-2 14.18 TVCABLE Dispone el Hogar de Tv por Cable I 1-2 14.19 COMPUTADOR Dispone el Hogar de Computadora I 1-2 14.20 INTERNET Dispone el Hogar de Acceso a Internet I 1-2 14.21 NODISPONET No dispone de ninguna tecnología I 1-2 14.22 RADIO Dispone el Hogar de Radio I 1-2 14.23 TV Dispone el Hogar de televisor I 1-2 14.24 NEVERA Dispone el Hogar de nevera I 1-2 14.25 LAVADORA Dispone el Hogar de Lavadora I 1-2 14.26 SECADORA Dispone el Hogar de Secadora I 1-2 14.27 CALENTADOR Dispone el Hogar de Calentador de Agua I 1-2 14.28 AIRE Dispone el Hogar de Aire Acondicionado I 1-2 14.29 COCINA Dispone el Hogar de Cocina I 1-2 14.30 NODISPONEA No dispone de ningún equipamiento I 1-2 14.31 TIPOHOGAR Tipo de Hogar I 1-9 14.32 JEFATURA Jefatura del hogar I 1-2 14.33 NBI1 Hogares con Déficit en Educación I 1-2 14.34 NBI2 Hogares con Déficit según Hacinamiento I 1-2 14.35 NBI3 Hogares con Déficit según Calidad de la Vivienda I 1-2 14.36 NBI4 Hogares con Déficit de Servicios I 1-2 14.37 NBI5 Hogares con Déficit de Capacidad Económica y Educativa I 1-2 14.38 NRONBI Número de Necesidades Básicas Insatisfechas I 0-5 14.39 POBREZA Pobreza en el Hogar por NBI I 0-2 Fuente: Instituto Nacional de Estadística(INE), Censo 2011;Procesado con Redatam+SP;CEPAL/CELADE 2003-2013 Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICHOG&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'Variables de Persona' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Variables de Persona ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 15 PERSONA Persona 15.1 NUMPERS PERSONA NUMERO C 15.2 PARENTESCO Relación o parentesco con el(la) jefe(a) del hogar I 0-99 PARENTES 15.3 SEXO Sexo I 1-2 15.4 EDAD Edad en años cumplidos I 0-130 EDADN 15.5 EDADMESES Edad para menores de un año (en meses) I 0-11 15.6 NACIOENVEN Nació en Venezuela I 1-2 NACIOEN 15.7 NACMISMOES En que estado nació I 1-2 15.8 ENCUALESTA Entidad Federal de Nacimiento I 1-25 15.9 ENCUALPAIS País de Nacimiento (Principales Países) I 1-19 15.10 CODOTROPAI Entidad Federal y País de Nacimiento I 0-999 15.11 ANIIOLLEGO En que año llego a Venezuela I 1900-2011 15.12 NACIONALID Nacionalidad Legal I 1-3 15.13 INDIGENA Pertenece a algún Pueblo Indígena I 1-2 15.14 CUALINDIGE Pueblo Indígena o Étnia I 0-999 15.15 USTEDSEREC Usted como se reconoce I 1-5 RECONOCE 15.16 DISCVISUAL Discapacidad Visual I 1-2 15.17 DISCAUDITI Discapacidad Auditiva I 1-2 15.18 DISCNEURO Discapacidad Neurólogica I 1-2 15.19 DISCMUSCUL Discapacidad Músculo Esquelética I 1-2 15.20 DISCVOZ Discapacidad de Voz y Habla I 1-2 15.21 DISCCARDIO Discapacidad Cardiovascular I 1-2 15.22 DISCMENTAL Discapacidad Mental - Intelectual I 1-2 15.23 DISCRESP Discapacidad Respiratoria I 1-2 15.24 DISCPSICO Discapacidad Mental - psicosocial I 1-2 15.25 NODISC Ninguna Discapacidad I 1-2 15.26 DISCAPREND Limitación para el Aprendizaje I 1-2 15.27 DISCMOVJ Limitación para Movilidad I 1-2 15.28 DISCCUIDAD Limitación para Autocuidado I 1-2 15.29 DISCRELAC Limitación para Relaciones Interpersonales I 1-2 15.30 DISCEDUC Limitación para Educación I 1-2 15.31 DISCTRABAJ Limitación para Trabajar I 1-2 15.32 DISCTAREAS Limitación para hacer Tareas Domésticas I 1-2 15.33 NOLIMITACI Ninguna limitacion I 1-2 15.34 RESID2006 Donde residía en Octubre de 2006 I 1-4 15.35 ESTADO2006 Entidad Federal de Residencia (5 años antes) I 1-29 15.36 CODMUN2006 Municipio de Residencia (5 años antes) I 0-99 15.37 CODPAI2006 En cuál País residia en 2006 I 100-998 15.38 ALFABETO Sabe leer y escribir I 1-2 ALFABETA 15.39 ESTUDIAACT Asiste actualmente a algun centro de educación I 1-2 ASISTESC 15.40 ESTUDIAENP Tipo de Establecimiento Educativo I 1-2 TIPESTEDU 15.41 NIVELEDUC Nivel Educativo I 1-7 NIVELEDU 15.42 NIVELES Niveles (Preescolar) I 1-4 ULTNIVAP 15.43 GRADO Grado Aprobado I 1-6 ULTGRAAP 15.44 ANIOLLEGO Año Aprobado I 1-6 ULTANOAP 15.45 TRIMESTRE Trimestre Aprobado I 1-24 ULTTRIAP 15.46 SEMESTRE Semestre Aprobado I 1-15 ULTSEMAP 15.47 SITCONYUG Situación Conyugal I 1-6 15.48 TIENEHIJOS Ha tenido hijos nacidos vivos I 1-2 15.49 TOTVARON Hijos Varones Tenidos I 0-15 15.50 TOTHEMBRA Hijas Hembras Tenidas I 0-15 15.51 TOTHIJOSNA Total de Hijos(as) Nacidos(as) Vivos(as) I 0-30 15.52 TIENEVIVO Tiene hijos(as) vivos(as) actualmente I 1-3 TIENEHI128 15.53 TOTVARONV Hijos Varones Vivos Actualmente I 0-15 15.54 TOTHEMBRAS Hijas Hembras Vivas Actualmente I 0-15 15.55 TOTHIJOSVI Total de Hijos(as) Vivos(as) Actualmente I 0-30 15.56 MESNACHIJO Mes de Nacimiento de el(la) Último(a) Hijo(a) Nacido(a) Vivo(a) I 1-12 15.57 ANIIONACHI Año de Nacimiento de el(la) Último(a) Hijo(a) Nacido(a) Vivo(a) I 1900-2011 15.58 GRPEDAD Grupos de edad I 1-20 15.59 GRPEDAD0 Grandes Grupos de edad I 1-3 15.60 EDADESCOLA Grupos de Edades Escolares I 1-5 15.61 TOTNACVI Total de hijos nacidos vivos I 0-30 15.62 ENTNACIM Lugar de Nacimiento I 1-3 15.63 MEDIANA Mediana I 1-1 15.64 ACTVIVOS Hijos actualmente vivos I 0-30 15.65 ULTIMONAC Hijos Nacidos el último año I 1-2 15.66 ADOLESCE Población adolescente I 1-2 15.67 PUEBLO Pueblos Indigenas I 1-53 Fuente: Instituto Nacional de Estadística(INE), Censo 2011;Procesado con Redatam+SP;CEPAL/CELADE 2003-2013 Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICPOB&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-follow: 'De Vivienda (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- De Vivienda (Diccionario de datos) ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> -- Seleccione una o más variables (Presione la tecla Ctrl) -- Identificador de la vivienda Viviendas familiares o colectivas Tipo de vivienda Condición del estado físico Material predominante en paredes Material predominante en techo Condición de ocupación Uso de la vivienda Material predominante en piso Tiene servicio de gas directo Abastecimiento de agua Frecuencia con que llega el agua Abastecimiento del servicio eléctrico Medio de eliminación de la basura Frecuencia de recolección de basura Eliminación de excretas Años de construcción del inmueble Condición de ocupación Tipos de vivienda (Agrupadas) Tipo de vivienda familiar Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATVIV&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'DICCATVIV'
-    input HIDDEN 'MODE' = 'LISTVAR'
-    input HIDDEN 'DICTIONARY' = 'HTML'
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'VARIABLE': 0 options: 
-follow: 'De Hogar (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- De Hogar (Diccionario de datos) ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> -- Seleccione una o más variables (Presione la tecla Ctrl) -- Identificador del hogar Tenencia de la vivienda Número de cuartos para dormir Número de cuartos de baño con ducha Dispone de espacio exclusivo para cocinar Combustible utilizado para cocinar Agua utilizada para beber Tiene bicicleta Tiene moto Tiene carro Tiene Bongo, Lancha o Curiara: Tiene motor el Bongo,Lancha,Curiara Tiene este hogar Voladora No tiene Vehículo Dispone el Hogar de Teléfono Fijo (por línea) Dispone el Hogar de Teléfono Fijo (Enchufe) Dispone el Hogar de Teléfono Celular Dispone el Hogar de Tv por Cable Dispone el Hogar de Computadora Dispone el Hogar de Acceso a Internet No dispone de ninguna tecnología Dispone el Hogar de Radio Dispone el Hogar de televisor Dispone el Hogar de nevera Dispone el Hogar de Lavadora Dispone el Hogar de Secadora Dispone el Hogar de Calentador de Agua Dispone el Hogar de Aire Acondicionado Dispone el Hogar de Cocina No dispone de ningún equipamiento Tipo de Hogar Jefatura del hogar Hogares con Déficit en Educación Hogares con Déficit según Hacinamiento Hogares con Déficit según Calidad de la Vivienda Hogares con Déficit de Servicios Hogares con Déficit de Capacidad Económica y Educativa Número de Necesidades Básicas Insatisfechas Pobreza en el Hogar por NBI Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATHOG&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'DICCATHOG'
-    input HIDDEN 'MODE' = 'LISTVAR'
-    input HIDDEN 'DICTIONARY' = 'HTML'
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'VARIABLE': 0 options: 
-follow: 'De Persona (Diccionario de datos)' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- De Persona (Diccionario de datos) ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> Definición de Parámetros PERSONA NUMERO Relación o parentesco con el(la) jefe(a) del hogar Sexo Edad en años cumplidos Edad para menores de un año (en meses) Nació en Venezuela En que estado nació Entidad Federal de Nacimiento País de Nacimiento (Principales Países) Entidad Federal y País de Nacimiento En que año llego a Venezuela Nacionalidad Legal Pertenece a algún Pueblo Indígena Pueblo Indígena o Étnia Usted como se reconoce Discapacidad Visual Discapacidad Auditiva Discapacidad Neurólogica Discapacidad Músculo Esquelética Discapacidad de Voz y Habla Discapacidad Cardiovascular Discapacidad Mental - Intelectual Discapacidad Respiratoria Discapacidad Mental - psicosocial Ninguna Discapacidad Limitación para el Aprendizaje Limitación para Movilidad Limitación para Autocuidado Limitación para Relaciones Interpersonales Limitación para Educación Limitación para Trabajar Limitación para hacer Tareas Domésticas Ninguna limitacion Donde residía en Octubre de 2006 Entidad Federal de Residencia (5 años antes) Municipio de Residencia (5 años antes) En cuál País residia en 2006 Sabe leer y escribir Asiste actualmente a algun centro de educación Tipo de Establecimiento Educativo Nivel Educativo Niveles (Preescolar) Grado Aprobado Año Aprobado Trimestre Aprobado Semestre Aprobado Situación Conyugal Ha tenido hijos nacidos vivos Hijos Varones Tenidos Hijas Hembras Tenidas Total de Hijos(as) Nacidos(as) Vivos(as) Tiene hijos(as) vivos(as) actualmente Hijos Varones Vivos Actualmente Hijas Hembras Vivas Actualmente Total de Hijos(as) Vivos(as) Actualmente Mes de Nacimiento de el(la) Último(a) Hijo(a) Nacido(a) Vivo(a) Año de Nacimiento de el(la) Último(a) Hijo(a) Nacido(a) Vivo(a) Grupos de edad Grandes Grupos de edad Grupos de Edades Escolares Total de hijos nacidos vivos Lugar de Nacimiento Mediana Hijos actualmente vivos Hijos Nacidos el último año Población adolescente Pueblos Indigenas Procesando, espere por favor... WebMaster redatam@ine.gob.ve © 2011-2012 Instituto Nacional de Estadística (INE), República Bolivariana de Venezuela Powered by REDATAM®
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary?&BASE=CPV2011&ITEM=DICCATPER&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/Dictionary
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = 'CPV2011'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'DICCATPER'
-    input HIDDEN 'MODE' = 'LISTVAR'
-    input HIDDEN 'DICTIONARY' = 'HTML'
-    input submit 'SUBMIT' = 'Ejecutar'
-    select 'VARIABLE': 0 options: 
-follow: 'Procesador Estad�stico R+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl
-  text: R+SP Display/Input Page---- Escribir Programa Redatam+SP ?? Regresar Tabla Gráfico Programa Redatam+SP Mapa Diccionario Export: Excel PDF --> --------------------------------------- Entity PAIS --------------------------------------- --------------------------------------- Entity ENTIDAD --------------------------------------- ENTIDAD [C] "ENTIDAD FEDERAL" NOMBENT [C] "Entidad Federal" LBLENT [I 1-25] "Entidad Federal" TVNOMIGRA [I 816-3264195] "No migrante (Toda la vida)" TVINMIGRA [I 1238-976894] "Inmigrante (Toda la vida)" TVEMIGRA [I 3579-1248811] "Emigrante (Toda la vida)" TVMIBRUT [I 4817-1589975] "Migración Bruta (Toda la vida)" TVMINETA [I -907647-842750] "Migración Neta (Toda la vida)" TVPROINM [R 0-100] "Proporción de inmigrantes" TVPROEMI [R 0-100] "Proporción de emigrantes" --------------------------------------- Entity MUNICIPI --------------------------------------- MUNICIPIO [C] "MUNICIPIO" NOMBMUN [C] "Municipio" LBLMUN [I 101-2501] "Municipios" --------------------------------------- Entity PARROQUI --------------------------------------- PARROQUIA [C] "PARROQUIA" NOMBPAR [C] "Parroquia" LBLPAR [I 10101-250103] "Parroquias" --------------------------------------- Entity CENTROPO --------------------------------------- CENTROPO [C] "CENTRO POBLADO" NOMBCP [C] "Centro poblado" URBRUL [I 1-2] "Urbano - rural" --------------------------------------- Entity SEGMENTO --------------------------------------- SEGMENTO [C] "SEGMENTO" --------------------------------------- Entity CARGA --------------------------------------- CODCARGA [C] "COD_CARGA" --------------------------------------- Entity TIPO_SEG --------------------------------------- TIPSEG [C] "TIPO DE SEGMENTO" --------------------------------------- Entity SECTOR --------------------------------------- SECTOR [C] "SECTOR" --------------------------------------- Entity MANZANA --------------------------------------- MANZANA [C] "MANZANA" --------------------------------------- Entity PARCELA --------------------------------------- PARCELA [C] "PARCELA" --------------------------------------- Entity EDIFICA --------------------------------------- NROEDIF [C] "NUMERO DE LA EDIFICACION" --------------------------------------- Entity VIVIENDA --------------------------------------- NROVIV [C] "Identificador de la vivienda" VIVFAMOCOL [I 1-2] "Viviendas familiares o colectivas" TIPODEVIV [I 1-18] "Tipo de vivienda" CONDFISICV [I 1-2] "Condición del estado físico" MATPARED [I 1-13] "Material predominante en paredes" MATTECHO [I 1-9] "Material predominante en techo" CONDOCUPA [I 1-3] "Condición de ocupación" USOVIV [I 1-3] "Uso de la vivienda" MATPISO [I 1-5] "Material predominante en piso" COMBUST [I 1-2] "Tiene servicio de gas directo" AGUALLEGA [I 1-10] "Abastecimiento de agua" FRECAGUA [I 1-4] "Frecuencia con que llega el agua" ACCELECTR [I 1-6] "Abastecimiento del servicio eléctrico" BASURA [I 1-6] "Medio de eliminación de la basura" FRECBASURA [I 1-4] "Frecuencia de recolección de basura" POCETA [I 1-5] "Eliminación de excretas" TIEMPINMUE [I 1-7] "Años de construcción del inmueble" CONDOCUP [I 1-6] "Condición de ocupación" TOTIPVIV [I 1-2] "Tipos de vivienda (Agrupadas)" TIPVIVFA [I 1-7] "Tipo de vivienda familiar" --------------------------------------- Entity HOGAR --------------------------------------- NUMERODEHO [C] "Identificador del hogar" TENENCIAVI [I 1-7] "Tenencia de la vivienda" DORMITORIO [I 0-99] "Número de cuartos para dormir" NUMBANIIO [I 0-98] "Número de cuartos de baño con ducha" HOGCOCINA [I 1-2] "Dispone de espacio exclusivo para cocinar" HOGCOMBUST [I 1-5] "Combustible utilizado para cocinar" AGUA [I 1-6] "Agua utilizada para beber" BICI [I 1-2] "Tiene bicicleta" MOTO [I 1-2] "Tiene moto" CARRO [I 1-2] "Tiene carro" BONGO [I 1-2] "Tiene Bongo, Lancha o Curiara:" TIENEMOTOR [I 1-2] "Tiene motor el Bongo,Lancha,Curiara" VOLADORA [I 1-2] "Tiene este hogar Voladora" NOVEHIC [I 0-9] "No tiene Vehículo" TLFFIJO [I 1-2] "Dispone el Hogar de Teléfono Fijo (por línea)" TLFSATEL [I 0-9] "Dispone el Hogar de Teléfono Fijo (Enchufe)" CELULAR [I 1-2] "Dispone el Hogar de Teléfono Celular" TVCABLE [I 1-2] "Dispone el Hogar de Tv por Cable" COMPUTADOR [I 1-2] "Dispone el Hogar de Computadora" INTERNET [I 1-2] "Dispone el Hogar de Acceso a Internet" NODISPONET [I 1-2] "No dispone de ninguna tecnología" RADIO [I 1-2] "Dispone el Hogar de Radio" TV [I 1-2] "Dispone el Hogar de televisor" NEVERA [I 1-2] "Dispone el Hogar de nevera" LAVADORA [I 1-2] "Dispone el Hogar de Lavadora" SECADORA [I 1-2] "Dispone el Hogar de Secadora" CALENTADOR [I 1-2] "Dispone el Hogar de Calentador de Agua" AIRE [I 1-2] "Dispone el Hogar de Aire Acondicionado" COCINA [I 1-2] "Dispone el Hogar de Cocina" NODISPONEA [I 1-2] "No dispone de ningún equipamiento" TIPOHOGAR [I 1-9] "Tipo de Hogar" JEFATURA [I 1-2] "Jefatura del hogar" NBI1 [I 1-2] "Hogares con Déficit en Educación" NBI2 [I 1-2] "Hogares con Déficit según Hacinamiento" NBI3 [I 1-2] "Hogares con Déficit según Calidad de la Vivienda" NBI4 [I 1-2] "Hogares con Déficit de Servicios" NBI5 [I 1-2] "Hogares con Déficit de Capacidad Económica y Educativa" NRONBI [I 0-5] "Número de Necesidades Básicas Insatisfechas" POBREZA [I 0-2] "Pobreza en el Hogar por NBI" --------------------------------------- Entity PERSONA --------------------------------------- NUMPERS [C] "PERSONA NUMERO" PARENTESCO [I 0-99] "Relación o parentesco con el(la) jefe(a) del hogar" SEXO [I 1-2] "Sexo" EDAD [I 0-130] "Edad en años cumplidos" EDADMESES [I 0-11] "Edad para menores de un año (en meses)" NACIOENVEN [I 1-2] "Nació en Venezuela" NACMISMOES [I 1-2] "En que estado nació" ENCUALESTA [I 1-25] "Entidad Federal de Nacimiento" ENCUALPAIS [I 1-19] "País de Nacimiento (Principales Países)" CODOTROPAI [I 0-999] "Entidad Federal y País de Nacimiento" ANIIOLLEGO [I 1900-2011] "En que año llego a Venezuela" NACIONALID [I 1-3] "Nacionalidad Legal" INDIGENA [I 1-2] "Pertenece a algún Pueblo Indígena" CUALINDIGE [I 0-999] 
-  link: 'Tabla' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl#tabs-1
-  link: 'Gráfico' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl#tabs-2
-  link: 'Programa Redatam+SP' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl#tabs-3
-  link: 'Mapa' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl#tabs-4
-  link: 'Diccionario' -> http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet?&BASE=CPV2011&ITEM=PROGRED&MAIN=WebServerMain.inl#tabs-5
-  link: 'redatam@ine.gob.ve' -> mailto:redatam@ine.gob.ve
-  form: GET http://redatam.ine.gob.ve/vencgibin/RpWebEngine.exe/CmdSet
-    input hidden 'MAIN' = 'WebServerMain.inl'
-    input hidden 'BASE' = 'CPV2011'
-    input hidden 'CODIGO' = 'xxUsuarioxx'
-    input hidden 'ITEM' = 'PROGRED'
-    input hidden 'MODE' = 'RUN'
-    input submit 'SUBMIT' = 'Ejecutar'
-    textarea 'CMDSET'
-    textarea 'LOG'
-    textarea 'VARLIST'
-follow: 'Descargar diccionario R+SP del Censo 2011' -> http://redatam.ine.gob.ve/vencgibin/WebUtilities.exe/Down_Dictionary.dic?&ITEM=DOWNDIC&MAIN=WebServerMain.inl&LFN=RpBases\CENSOS\AppCp11\Base\Censo de Poblaci�n y Vivienda 2011.dic
-  unreadable: InvalidURL: URL can't contain control characters. '/vencgibin/WebUtilities.exe/Down_Dictionary.dic?&ITEM=DOWNDIC&MAIN=WebServerMain.inl&LFN=RpBases\\CENSOS\\AppCp11\\Base\\Censo de Poblaci�n y Vivienda 2011.dic' (found at least ' ')
+probe_pdf: http://web.archive.org/web/2016id_/http://www.one.cu/publicaciones/cepde/cpv2012/elcolordelapielcenso2012/0011%20ANEXO%20TABLAS%20ESTAD%C3%8DSTICAS.pdf
+  2,385,469 bytes
+  354 pages
+probe_pdf: 354 pages, 162 mention ['unicipio', 'rovincia']
+=== front matter ===
+
+
+=== pages mentioning ['unicipio', 'rovincia'] (first 60) ===
+
+--- page 2 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+CUBA 11 167 325 7 160 399 1 034 044 2 972 882 100,0 64,1 9,3 26,6
+PINAR DEL RÍO 587 026 457 879 63 393 65 754 100,0 78,0 10,8 11,2
+
+--- page 3 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (continuación)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+LA HABANA 2 106 146 1 230 682 320 149 555 315 100,0 58,4 15,2 26,4
+Playa 179 636 113 990 24 221 41 425 100,0 63,5 13,5 23,1
+
+--- page 4 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (continuación)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+MATANZAS 694 476 513 217 70 831 110 428 100,0 73,9 10,2 15,9
+Matanzas 151 624 109 070 16 076 26 478 100,0 71,9 10,6 17,5
+
+--- page 5 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (continuación)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+CIENFUEGOS 404 228 306 405 30 213 67 610 100,0 75,8 7,5 16,7
+Aguada de Pasajeros 32 159 26 370 1 915 3 874 100,0 82,0 6,0 12,0
+
+--- page 6 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (continuación)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+CAMAGÜEY 771 905 580 472 62 093 129 340 100,0 75,2 8,0 16,8
+Carlos Manuel de Céspedes 24 488 17 973 2 159 4 356 100,0 73,4 8,8 17,8
+
+--- page 7 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (continuación)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+HOLGUÍN 1 035 072 828 059 39 862 167 151 100,0 80,0 3,9 16,1
+Gibara 71 991 66 299 947 4 745 100,0 92,1 1,3 6,6
+
+--- page 8 ----------------------------------------------------
+1. Población por color de la piel, según provincias y municipios de residencia (conclusión)
+Provincias / Municipios Total Blanca Negra Mulata Total Blanca Negra Mulata
+SANTIAGO DE CUBA 1 049 084 268 375 149 184 631 525 100,0 25,6 14,2 60,2
+Contramaestre 105 441 47 812 3 864 53 765 100,0 45,3 3,7 51,0
+
+--- page 9 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia
+CUBA 11 167 325 8 575 189 2 592 136 76,8 7 160 399 5 527 816 1 632 583 77,2
+      ...
+Grado de
+urbaniza-
+ción (a)UrbanaProvincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 10 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+LA HABANA 2 106 146 2 106 146 0 100,0 1 230 682 1 230 682 0 100,0
+      ...
+Grado de
+urbaniza-
+ción (a) Total RuralProvincias / Municipios Total Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+TOTAL B L A N C A
+
+--- page 11 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+MATANZAS 694 476 578 155 116 321 83,3 513 217 426 901 86 316 83,2
+      ...
+Grado de
+urbaniza-
+ción (a) Total Urbana RuralProvincias / Municipios Total Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+TOTAL B L A N C A
+
+--- page 12 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+CIENFUEGOS 404 228 331 328 72 900 82,0 306 405 248 663 57 742 81,2
+      ...
+Grado de
+urbaniza-
+ción (a)Provincias / Municipios Total Urbana Rural
+TOTAL B L A N C A
+El color de la piel según el Censo de Población y Viviendas de 2012
+
+--- page 13 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+CIEGO DE ÁVILA 426 054 313 500 112 554 73,6 335 674 252 155 83 519 75,1
+      ...
+Najasa 15 816 4 353 11 463 27,5 11 827 3 188 8 639 27,0
+Santa Cruz del Sur 45 710 25 167 20 543 55,1 31 169 17 609 13 560 56,5
+Provincias / Municipios Total Urbana Rural Urbana Rural
+Grado de
+urbaniza-
+
+--- page 14 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+LAS TUNAS 532 645 347 083 185 562 65,2 397 353 257 675 139 678 64,8
+      ...
+Grado de
+urbaniza-
+ción (a) Total Urbana RuralProvincias / Municipios Total Urbana Rural
+78
+
+--- page 15 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+GRANMA 834 380 511 875 322 505 61,3 352 108 231 630 120 478 65,8
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+TOTAL B L A N C A
+Provincias / Municipios
+79
+
+--- page 16 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+GUANTÁNAMO 515 428 328 091 187 337 63,7 125 880 81 414 44 466 64,7
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+TOTAL B L A N C A
+Provincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 17 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+CUBA 1 034 044 879 512 154 532 85,1 2 972 882 2 167 861 805 021 72,9
+      ...
+Candelaria 3 754 2 805 949 74,7 3 537 2 509 1 028 70,9
+San Cristóbal 7 920 5 964 1 956 75,3 7 371 5 713 1 658 77,5
+Total UrbanaProvincias / Municipios Rural
+Grado de
+urbaniza-
+
+--- page 18 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+LA HABANA 320 149 320 149 0 100,0 555 315 555 315 0 100,0
+      ...
+Grado de
+urbaniza-
+ción (a) Total UrbanaProvincias / Municipios Total Urbana Rural
+82
+
+--- page 19 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+MATANZAS 70 831 63 533 7 298 89,7 110 428 87 721 22 707 79,4
+      ...
+ción (a) Total Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+Provincias / Municipios Total Urbana Rural
+NEGRA
+83
+
+--- page 20 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+CIENFUEGOS 30 213 26 290 3 923 87,0 67 610 56 375 11 235 83,4
+      ...
+ción (a)
+NEGRA
+Urbana RuralProvincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 21 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+CIEGO DE ÁVILA 28 582 22 392 6 190 78,3 61 798 38 953 22 845 63,0
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+NEGRA  MULATA
+Provincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 22 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+LAS TUNAS 23 325 16 209 7 116 69,5 111 967 73 199 38 768 65,4
+      ...
+Sagua de Tánamo 3 039 1 462 1 577 48,1 15 521 7 236 8 285 46,6
+Moa 3 352 2 741 611 81,8 27 809 22 016 5 793 79,2
+Provincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 23 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (continuación)
+GRANMA 29 052 18 384 10 668 63,3 453 220 261 861 191 359 57,8
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+NEGRA  MULATA
+Provincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 24 ----------------------------------------------------
+2. Población por color de la piel urbana, rural y grado de urbanización según provincias y municipios
+de residencia  (conclusión)
+GUANTÁNAMO 66 046 48 934 17 112 74,1 323 502 197 743 125 759 61,1
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+NEGRA  MULATA
+Provincias / Municipios Total Urbana Rural
+Grado de
+urbaniza-
+
+--- page 25 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo
+Sexo  / Provincia de
+nacimiento
+TOTAL 11 167 325 587 026 494 631 2 106 146 376 825 694 476 791 216 404 228 463 458
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+Total
+Provincia de residencia al momento del censo
+Pinar del
+Río Artemisa La Habana Mayabe-
+
+--- page 26 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Ciego Santiago Isla
+Sexo  / Provincia de  de   de de la
+nacimiento Ávila  Cuba Juventud
+TOTAL 426 054 771 905 532 645 1 035 072 834 380 1 049 084 515 428 84 751
+      ...
+EXTRANJERA 162 505 65 198 63 81 28 45
+El color de la piel según el Censo de Población y Viviendas de 2012
+Provincia de residencia al momento del censo
+Guantá-
+namo
+
+--- page 27 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Sexo  / Provincia de
+nacimiento
+TOTAL 8 522 820 492 254 426 955 1 525 428 331 004 573 887 697 744 339 554 417 942
+      ...
+B L A N C A
+Total
+Provincia de residencia al momento del censo
+Pinar del
+Río Artemisa La Habana Mayabe-
+
+--- page 28 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Ciego Santiago Isla
+Sexo  / Provincia de  de   de de la
+nacimiento Ávila  Cuba Juventud
+TOTAL 377 125 655 632 459 087 928 951 552 151 454 145 224 254 66 707
+      ...
+Granma Guantá-
+namo
+Provincia de residencia al momento del censo
+Cama-
+güey
+
+--- page 29 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Sexo  / Provincia de
+nacimiento
+TOTAL 1 980 949 98 836 98 224 594 597 60 214 117 683 79 992 60 905 49 725
+      ...
+NEGRA
+Total
+Provincia de residencia al momento del censo
+Pinar del
+Río Artemisa
+
+--- page 30 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Ciego Santiago Isla
+Sexo  / Provincia de  de   de de la
+nacimiento Ávila  Cuba Juventud
+TOTAL 53 617 116 216 55 912 84 692 84 699 282 844 126 144 16 649
+      ...
+EXTRANJERA 38 135 17 28 8 21 10 11
+El color de la piel según el Censo de Población y Viviendas de 2012
+Provincia de residencia al momento del censo
+NEGRA
+Cama-
+
+--- page 31 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (continuación)
+Sexo  / Provincia de
+nacimiento
+TOTAL 4 673 021 110 605 146 251 961 319 103 825 190 417 152 444 111 143 89 722
+      ...
+MULATA
+Total
+Provincia de residencia al momento del censo
+Pinar del
+Río Artemisa La Habana Mayabe-
+
+--- page 32 ----------------------------------------------------
+3. Población por provincia de residencia al momento del censo y color de la piel, según provincia
+de nacimiento y sexo (conclusión)
+Ciego Santiago Isla
+Sexo  / Provincia de  de   de de la
+nacimiento Ávila  Cuba Juventud
+TOTAL 114 993 230 024 190 512 297 522 653 427 845 673 429 627 45 846
+      ...
+El color de la piel según el Censo de Población y Viviendas de 2012
+MULATA
+Provincia de residencia al momento del censo
+Cama-
+güey
+
+--- page 33 ----------------------------------------------------
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades
+Total Masculino Femenino Total Masculino Femenino Total Masculino Femenino
+CUBA
+
+--- page 34 ----------------------------------------------------
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Total Masculino Femenino Total Masculino Femenino Total Masculino Femenino
+BLANCA 7 160 399 3 549 489 3 610 910 5 527 816 2 678 840 2 848 976 1 632 583 870 649 761 934
+
+--- page 35 ----------------------------------------------------
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Total Masculino Femenino Total Masculino Femenino Total Masculino Femenino
+NEGRA 1 034 044 542 745 491 299 879 512 451 259 428 253 154 532 91 486 63 046
+
+--- page 36 ----------------------------------------------------
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Total Masculino Femenino Total Masculino Femenino Total Masculino Femenino
+MULATA 2 972 882 1 478 591 1 494 291 2 167 861 1 047 386 1 120 475 805 021 431 205 373 816
+
+--- page 37 ----------------------------------------------------
+Urbana RuralAmbas Zonas
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+101
+
+--- page 38 ----------------------------------------------------
+Ambas ZonasGrupos de
+edades
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Urbana Rural
+102
+
+--- page 39 ----------------------------------------------------
+80 a 84 años 960 518 442 701 356 345 259 162 97
+85 años y más 845 414 431 614 283 331 231 131 100
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Ambas Zonas Urbana RuralGrupos de
+edades
+
+--- page 40 ----------------------------------------------------
+Grupos de
+edades
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Ambas Zonas
+104
+
+--- page 41 ----------------------------------------------------
+85 años y más 6 362 2 877 3 485 5 015 2 111 2 904 1 347 766 581
+Ambas Zonas
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+El color de la piel según el Censo de Población y Viviendas de 2012
+Urbana RuralGrupos de
+
+--- page 42 ----------------------------------------------------
+El color de la piel según el Censo de Población y Viviendas de 2012
+Ambas Zonas Urbana Rural
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 43 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 44 ----------------------------------------------------
+85 años y más 471 216 255 382 169 213 89 47 42
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Ambas Zonas Urbana RuralGrupos de
+edades
+
+--- page 45 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 46 ----------------------------------------------------
+edades
+Ambas Zonas Urbana
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Rural
+110
+
+--- page 47 ----------------------------------------------------
+85 años y más 4 788 1 406 3 382 4 788 1 406 3 382 0 0 0
+RuralAmbas Zonas
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+UrbanaGrupos de
+edades
+
+--- page 48 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+112
+
+--- page 49 ----------------------------------------------------
+Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 50 ----------------------------------------------------
+edades
+Ambas Zonas Urbana Rural
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+El color de la piel según el Censo de Población y Viviendas de 2012
+114
+
+--- page 51 ----------------------------------------------------
+Ambas Zonas Urbana
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Rural
+115
+
+--- page 52 ----------------------------------------------------
+80 a 84 años 390 163 227 306 124 182 84 39 45
+85 años y más 357 151 206 291 113 178 66 38 28
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Urbana
+El color de la piel según el Censo de Población y Viviendas de 2012
+
+--- page 53 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+117
+
+--- page 54 ----------------------------------------------------
+85 años y más 8 452 3 592 4 860 7 182 2 913 4 269 1 270 679 591
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 55 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+119
+
+--- page 56 ----------------------------------------------------
+Ambas Zonas Urbana Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 57 ----------------------------------------------------
+Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+--- page 58 ----------------------------------------------------
+Ambas Zonas Urbana
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+122
+
+--- page 59 ----------------------------------------------------
+Ambas Zonas Rural
+El color de la piel según el Censo de Población y Viviendas de 2012
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+123
+
+--- page 60 ----------------------------------------------------
+edades
+Ambas Zonas Urbana Rural
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+124
+
+--- page 61 ----------------------------------------------------
+85 años y más 6 471 2 883 3 588 5 448 2 321 3 127 1 023 562 461
+Ambas Zonas
+4. Población por sexo y zona de residencia según provincias, color de la piel y grupos de edades (continuación)
+Grupos de
+edades
+
+... and 102 further pages match; re-run with a narrower --terms to see them.
