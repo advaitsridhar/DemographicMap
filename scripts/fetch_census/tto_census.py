@@ -249,15 +249,20 @@ def medians(lines: list[str]) -> dict[str, float]:
     return out
 
 
+def near(made: int, printed: int, what: str) -> None:
+    """Within the CSO's own few-person slack, logged; beyond it, the run stops."""
+    if abs(made - printed) > SLACK:
+        raise SystemExit(f"tto_census: {what} make {made:,}, printed {printed:,}")
+    if made != printed:
+        log(f"  {what} make {made:,}, printed {printed:,}")
+
+
 def check_parts(table: dict[str, Any], what: str, total_of) -> None:
     """The municipalities make Trinidad, and Trinidad and Tobago the country."""
     trinidad = sum(total_of(table[key(m)]) for m in MUNICIPALITIES)
-    if trinidad != total_of(table[key("TRINIDAD")]):
-        raise SystemExit(f"tto_census: the municipalities' {what} make {trinidad:,}, Trinidad's "
-                         f"is {total_of(table[key('TRINIDAD')]):,}")
+    near(trinidad, total_of(table[key("TRINIDAD")]), f"the municipalities' {what}")
     both = total_of(table[key("TRINIDAD")]) + total_of(table[key("TOBAGO")])
-    if both != total_of(table[key("TRINIDAD AND TOBAGO")]):
-        raise SystemExit(f"tto_census: Trinidad and Tobago's {what} do not add up")
+    near(both, total_of(table[key("TRINIDAD AND TOBAGO")]), f"Trinidad and Tobago's {what}")
 
 
 def read(pages: list[list[str]]) -> dict[str, Any]:
@@ -311,10 +316,9 @@ def read(pages: list[list[str]]) -> dict[str, Any]:
     for what, table in (("ethnic groups", ethnicity), ("religions", religion)):
         for k, counts in table.items():
             made = sum(v for c, v in counts.items() if c != "_total")
-            if made != counts["_total"] or counts["_total"] != population[k][1]:
-                raise SystemExit(f"tto_census: {k}'s {what} make {made:,}; its total is "
-                                 f"{counts['_total']:,} and Table 1b's non-institutional "
-                                 f"{population[k][1]:,}")
+            near(made, counts["_total"], f"{k}'s {what}")
+            near(counts["_total"], population[k][1],
+                 f"{k}'s {what} table total against Table 1b's non-institutional population,")
         check_parts(table, what, lambda c: c["_total"])
     for m in MUNICIPALITIES + ("TOBAGO",):
         k = key(m)
