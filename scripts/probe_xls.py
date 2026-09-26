@@ -37,10 +37,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import http_get, log  # noqa: E402
 
 
-def cell(value: object, width: int = 22) -> str:
+WIDTH = 22
+
+
+def cell(value: object, width: int | None = None) -> str:
     text = "" if value is None else str(value).strip()
     text = " ".join(text.split())
-    return text[:width]
+    return text[:width or WIDTH]
 
 
 def rows_of(blob: bytes, name: str, args_start: int = 0) -> list[tuple[str, int, int, list[list[str]]]]:
@@ -64,6 +67,7 @@ def rows_of(blob: bytes, name: str, args_start: int = 0) -> list[tuple[str, int,
 
 
 def main() -> int:
+    global WIDTH
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("url", nargs="+", help="one or more workbook URLs")
@@ -78,7 +82,11 @@ def main() -> int:
     ap.add_argument("--cols", type=int, default=12,
                     help="columns to print per row; a census table is wide and "
                          "the groups past the twelfth are the ones a first look misses")
+    ap.add_argument("--width", type=int, default=WIDTH,
+                    help="characters to print per cell; a table's title is in its "
+                         "first cell and says which of a numbered series it is")
     args = ap.parse_args()
+    WIDTH = args.width
 
     for url in args.url:
         target = (f"https://web.archive.org/web/{args.wayback}id_/{url}"
