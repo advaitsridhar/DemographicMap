@@ -288,14 +288,32 @@ COMPOSITION_GAP = ("STATIN tabulates this by parish only: the 2011 census's ethn
 USCB_DATASET = "jamaica-subnational-boundaries-and-tabular-data"
 
 
+def community_key(name: Any) -> str:
+    """A community's name as one key whether written "St. Paul's" or "Saint Pauls"."""
+    text = re.sub(r"\bSt\.?\s*(?=[A-Z])", "Saint ", str(name or "").strip(), flags=re.I)
+    text = re.sub(r"\bMt\.?\s*(?=[A-Z])", "Mount ", text, flags=re.I)
+    return fold(text)
+
+
+# How far a community's 2022 count may sit from STATIN's 2012 estimate for the
+# community of the same name before the name is taken to cover different
+# ground. Measured on the 623 bound communities the 2012 list names: half lie
+# within 0.85 and 1.15 of their 2012 figure and nine in ten within 0.62 and
+# 1.60, while the parishes grew by 0.4% to 5.5%. Outside a factor of two the
+# name has been redrawn -- "Samuel Prospect" counts 749 people in 2022 where
+# the community of that name held 4,677 in 2012 -- or has taken in new estates
+# (Rose Hall, 253 to 2,194), and either way the figure is not the outline's.
+DRIFT = 2.0
+
+
 def earlier() -> dict[tuple[str, str], int]:
     """{(parish key, community key): STATIN's mid-2012 estimate} from the poverty map.
 
     The US Census Bureau's Jamaica workbook carries STATIN's community poverty
     map (Mapping Poverty Indicators, 2019) with each community's estimated
-    population in July 2012, on the older community list the map's outlines
-    come from. It is what says whether a 2022 community of the same name is
-    still the same ground.
+    population in July 2012, on the 2011 census's community list, which the
+    2022 list mostly keeps. Beside a 2022 count it says whether a community of
+    the same name is still the same ground.
     """
     import io
 
@@ -314,11 +332,42 @@ def earlier() -> dict[tuple[str, str], int]:
     for row in rows[2:]:
         if str(row[at["ADM_LEVEL"]]).strip() not in ("2", "2.0"):
             continue
-        key = (parish_key(str(row[at["ADM1_NAME"]]).title()), fold(row[at["ADM2_NAME"]]))
-        if row[column] not in (None, ""):
-            out[key] = int(round(float(row[column])))
+        key = (parish_key(str(row[at["ADM1_NAME"]]).title()),
+               community_key(str(row[at["ADM2_NAME"]]).title()))
+        value = row[column]
+        # The sheet writes -999 where it has no estimate.
+        if value not in (None, "") and float(value) > 0:
+            out[key] = int(round(float(value)))
     log(f"  {len(out)} communities in the 2012 poverty map's population estimates")
     return out
+
+
+def earlier_figure(before: dict[tuple[str, str], int], parish: str, name: str,
+                   shape: dict[str, Any]) -> int | None:
+    return (before.get((parish_key(parish), community_key(name)))
+            or before.get((parish_key(parish), community_key(shape["name"]))))
+
+
+def steady(bound: dict[tuple[str, str], dict[str, Any]], people: dict[tuple[str, str], int],
+           before: dict[tuple[str, str], int]) -> tuple[dict[tuple[str, str], dict[str, Any]],
+                                                         list[str]]:
+    """The bindings whose 2022 count is within DRIFT of the 2012 estimate, and the rest.
+
+    The 2012 figure is looked up under STATIN's name and, failing that, under
+    the outline's: "Samuel Prospect" is "Samuels Prospect" in the 2012 list,
+    and 4,677 people there against 749 in 2022 is what shows the two are no
+    longer one place. A community the 2012 list names neither way has nothing
+    to be measured against and is kept: the name is the whole of the evidence.
+    """
+    kept, dropped = {}, []
+    for (parish, name), shape in bound.items():
+        then = earlier_figure(before, parish, name, shape)
+        now = people[(parish, name)]
+        if then and not (1 / DRIFT <= now / then <= DRIFT):
+            dropped.append(f"{parish}: {name} ({now:,} in 2022 against {then:,} in 2012)")
+        else:
+            kept[(parish, name)] = shape
+    return kept, dropped
 
 
 def main() -> int:
@@ -336,23 +385,26 @@ def main() -> int:
     admin1 = json.loads((SITE / "admin1" / "JAM.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "JAM.units.json").read_text())
     bound, left = bind(table, admin1, admin2)
-    log(f"  {len(bound)} communities bound to their polygons; {len(left)} left out:")
+    log(f"  {len(bound)} communities bound to their polygons by name; {len(left)} left out:")
     for line in left:
         log(f"    {line}")
+    people = {(e["label"], n): v for e in table.values() for n, v in e["communities"]}
+    before = earlier()
     if args.probe:
-        before = earlier()
-        names = {u["id"]: u["name"] for u in admin1}
-        people = {(e["label"], n): v for e in table.values() for n, v in e["communities"]}
         for (parish, name), shape in sorted(bound.items()):
-            then = before.get((fold(names.get(shape["parent"], "")), fold(shape["name"])))
+            then = earlier_figure(before, parish, name, shape)
             ratio = f"{people[(parish, name)] / then:.2f}" if then else "-"
             log(f"    CMP {parish} | {name} | {shape['name']} | {people[(parish, name)]} | "
                 f"{then} | {ratio}")
-        seen = {(fold(names.get(s["parent"], "")), fold(s["name"])) for s in bound.values()}
-        for key, value in sorted(before.items()):
-            if key not in seen:
-                log(f"    EARLIER-ONLY {key} {value}")
         return 0
+    named = bound
+    bound, drifted = steady(bound, people, before)
+    moved = {shape["id"]: (key, earlier_figure(before, key[0], key[1], shape))
+             for key, shape in named.items() if key not in bound}
+    log(f"  {len(drifted)} more left out, their 2022 count more than {DRIFT:g} times "
+        "from or less than half the 2012 estimate for the same name:")
+    for line in drifted:
+        log(f"    {line}")
     first = {fold(u["name"]): u for u in admin1}
     records = []
     for home, entry in sorted(table.items()):
@@ -366,7 +418,6 @@ def main() -> int:
                              "parish's line on its Population Change by Parish page."),
             sources=[{"field": "population", "name": PARISH_SOURCE, "url": COMMUNITIES_URL,
                       "year": YEAR}]))
-    people = {(e["label"], n): v for e in table.values() for n, v in e["communities"]}
     reached = set()
     for key, shape in sorted(bound.items(), key=lambda kv: kv[1]["id"]):
         parish, name = key
@@ -388,15 +439,22 @@ def main() -> int:
     names = {u["id"]: u["name"] for u in admin1}
     unreached = [s for s in admin2 if s["id"] not in reached]
     for shape in unreached:
+        if shape["id"] in moved:
+            (parish, name), then = moved[shape["id"]]
+            why = (f"STATIN's 2022 census counts {people[(parish, name)]:,} people in "
+                   f"{name}, {parish}, against its 2012 estimate of {then:,} for the "
+                   f"community of that name: more than {DRIFT:g} times apart, so the name "
+                   "no longer describes the same ground and the count is left off.")
+        else:
+            why = ("STATIN's 2022 community table has no community that is this outline: the "
+                   "2022 list splits, joins or renames the community the map draws here (the "
+                   "map's outlines are an older drawing), so no count is put on it rather "
+                   "than one for other ground.")
         records.append(record(
             f"JAM-STATIN-unbound-{shape['id']}", shape["name"], level="admin2", parent="JAM",
             country="JAM", parent_name=names.get(shape["parent"]), match_by="shape_id",
             shape_id=shape["id"],
-            population=gap(NOT_AVAILABLE, (
-                "STATIN's 2022 community table has no community that is this outline: the "
-                "2022 list splits, joins or renames the community the map draws here (the "
-                "map's outlines are an older drawing), so its count is left off rather than "
-                "put on the wrong ground.")),
+            population=gap(NOT_AVAILABLE, why),
             median_age=gap(NOT_AVAILABLE, COMPOSITION_GAP),
             sex_ratio=gap(NOT_AVAILABLE, COMPOSITION_GAP),
             religion=gap(NOT_AVAILABLE, COMPOSITION_GAP),
