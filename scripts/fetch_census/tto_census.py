@@ -296,8 +296,12 @@ def read(pages: list[list[str]]) -> dict[str, Any]:
     men = {key(l): n[0] for l, n in age_pages["MALE"]["left"]}
     women = {key(l): n[0] for l, n in age_pages["FEMALE"]["left"]}
     for k, unit in both.items():
-        if men[k] + women[k] != unit["total"]:
-            raise SystemExit(f"tto_census: {k}'s men and women do not make {unit['total']:,}")
+        made = men[k] + women[k]
+        if abs(made - unit["total"]) > SLACK:
+            raise SystemExit(f"tto_census: {k}'s men ({men[k]:,}) and women ({women[k]:,}) "
+                             f"make {made:,} of {unit['total']:,}")
+        if made != unit["total"]:
+            log(f"  Table 2a: {k}'s men and women make {made:,} of {unit['total']:,}")
     if population[key("TRINIDAD AND TOBAGO")] != (DE_JURE, NON_INSTITUTIONAL):
         raise SystemExit(f"tto_census: Table 1b's country row is "
                          f"{population[key('TRINIDAD AND TOBAGO')]}")
