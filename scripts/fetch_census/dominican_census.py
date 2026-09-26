@@ -258,12 +258,32 @@ def band(label: str) -> tuple[int, int | None] | None:
     return None
 
 
+# ONE's 2022 figures are the count adjusted for the omission its coverage
+# survey measured, province by province and municipio by municipio, and each
+# printed figure is rounded on its own. So the n figures that make a total
+# may miss it by up to n/2 -- Santo Domingo Este's age rows make 1,029,116
+# people against the 1,029,117 printed for it. Within that, the difference
+# is logged; beyond it the run stops, since then it is not rounding.
+DISCREPANCIES: list[str] = []
+
+
+def agree(made: list[float], printed: list[float], parts: int, what: str) -> None:
+    """Sums of ``parts`` rounded figures against the printed ones, within rounding."""
+    slack = max(1, (parts + 1) // 2)
+    worst = max(abs(a - b) for a, b in zip(made, printed))
+    if worst > slack:
+        raise SystemExit(f"dominican_census: {what}: the parts make {made}, the printed "
+                         f"figures {printed}; {worst} apart, more than {parts} rounded "
+                         "figures can be")
+    if worst:
+        DISCREPANCIES.append(f"{what} (by {worst})")
+
+
 def check_area(area: dict[str, Any], columns: int, what: str) -> None:
-    """An area's age rows make it, column by column."""
+    """An area's age rows make it, column by column, within rounding."""
     made = [sum(v[i] for _, v in area["ages"]) for i in range(columns)]
-    if made != area["values"][:columns]:
-        raise SystemExit(f"dominican_census: {what}: {area['label']}'s age rows make "
-                         f"{made}, the area {area['values'][:columns]}")
+    agree(made, area["values"][:columns], len(area["ages"]),
+          f"{what}: {area['label']}'s age rows")
 
 
 def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
@@ -300,26 +320,23 @@ def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
         kids = children.get(id(area))
         if kids:
             made = [sum(k["values"][i] for k in kids) for i in range(columns)]
-            if made != area["values"][:columns]:
-                raise SystemExit(f"dominican_census: {what}: {area['label']}'s parts make "
-                                 f"{made}, the area {area['values'][:columns]}")
+            agree(made, area["values"][:columns], len(kids), f"{what}: {area['label']}'s parts")
     if len(provinces) != 32:
         raise SystemExit(f"dominican_census: {what}: {len(provinces)} provinces, not 32")
     return provinces
 
 
-def zones_ok(values: list[float]) -> bool:
+def zones_check(values: list[float], what: str) -> None:
+    """Sexes and zones make their totals, each sum of two within rounding."""
     t, h, m, ut, uh, um, rt, rh, rm = values[:9]
-    return (t == h + m and ut == uh + um and rt == rh + rm and t == ut + rt
-            and h == uh + rh and m == um + rm)
+    agree([h + m, uh + um, rh + rm, ut + rt, uh + rh, um + rm], [t, ut, rt, t, h, m], 2,
+          f"{what}'s sexes and zones")
 
 
 def age_figures(area: dict[str, Any]) -> dict[str, Any]:
     """Median age, sex ratio and population from an area of Cuadro 2."""
     values = area["values"]
-    if not zones_ok(values):
-        raise SystemExit(f"dominican_census: {area['label']}'s sexes and zones do not make its "
-                         f"total: {values[:9]}")
+    zones_check(values, area["label"])
     total, men, women = values[:3]
     printed = values[9] if len(values) > 9 else None
     if printed is not None and abs(100 * men / women - printed) > 0.01:
@@ -409,9 +426,11 @@ def adapter() -> int:
     provinces = tree(areas(workbook_rows(*AGES), 10), 9, "Cuadro 2", NATIONAL, "municipio")
     municipios = sum(len(p["municipios"]) for p in provinces.values())
     log(f"  Cuadro 2: 32 provinces and {municipios} municipios making ONE's {NATIONAL:,}, every "
-        "area's age rows making it")
+        "area's age rows making it within rounding")
     log(f"  Cuadro 12: 32 provinces making ONE's {NATIONAL_12:,} aged 12 and over, every area's "
         "age rows making it")
+    log(f"  {len(DISCREPANCIES)} sums within the rounding of ONE's adjusted figures but not "
+        "exact: " + "; ".join(DISCREPANCIES))
 
     admin1 = json.loads((SITE / "admin1" / "DOM.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "DOM.units.json").read_text())

@@ -71,12 +71,21 @@ class LayoutTest(unittest.TestCase):
         national = rows[2][1]
         for row in rows:
             if row[0] == "Municipio B3":
-                row[1] += 1
-                row[2] += 1
-                row[4] += 1
-                row[5] += 1
+                for i in (1, 2, 4, 5):
+                    row[i] += 5
         with self.assertRaises(SystemExit):
             dc.tree(dc.areas(rows, 10), 9, "test", national, "municipio")
+
+    def test_a_rounding_of_one_is_read_and_logged(self):
+        # Santo Domingo Este's age rows make one man fewer than its row.
+        rows = cuadro_2()
+        national = rows[2][1]
+        for row in rows:
+            if row[0] == "Municipio B3":
+                for i in (1, 2, 4, 5):
+                    row[i] += 1
+        dc.tree(dc.areas(rows, 10), 9, "test", national, "municipio")
+        self.assertTrue(any("Municipio B3's age rows (by 1)" in d for d in dc.DISCREPANCIES))
 
     def test_age_figures_leave_undeclared_ages_out_of_the_median(self):
         area = dc.areas(block("Municipio A", 23, 12, 11, AGES_A), 10)[0]
