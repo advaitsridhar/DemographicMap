@@ -430,6 +430,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "ARG": {
         "religion": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead.",
+        "language": "Argentina's 2022 census has no language question for the population; it asks only whether a person who recognises themselves as indigenous speaks or understands their people's language, which is not a composition. That share is given in each unit's ethnicity note.",
     },
     "BRA": {
         "language": "Brazil's census does not ask language of the population; the 2022 census asks which indigenous languages an indigenous person speaks, which is not a composition.",
