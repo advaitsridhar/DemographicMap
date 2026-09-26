@@ -1,16 +1,1 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/dominican_census.py", line 532, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/dominican_census.py", line 511, in main
-    return adapter()
-           ^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/dominican_census.py", line 426, in adapter
-    provinces = tree(areas(workbook_rows(*AGES), 10), 9, "Cuadro 2", NATIONAL, "municipio")
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/dominican_census.py", line 315, in tree
-    provinces[bare(stack["province"]["label"])]["municipios"].append(area)
-                   ~~~~~^^^^^^^^^^^^
-KeyError: 'province'
+el_salvador_census: a place with no code: 'No Especificado'
