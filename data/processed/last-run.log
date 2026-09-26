@@ -1,6 +1,15 @@
-probe_ckan: 2 host(s), timeout 20s
-  https://www.datosabiertos.gob.pe/ -> 418 text/html "访问被拦截！"
-    /api/3/action/status_show -> 418 text/html <!DOCTYPE html><html style="height:100%;width:100%"><head><meta http-equiv="Content-Type" content="text/html; charset=ut
-    /api/action/status_show -> 418 text/html <!DOCTYPE html><html style="height:100%;width:100%"><head><meta http-equiv="Content-Type" content="text/html; charset=ut
-  https://datosabiertos.gob.pe/ -> 0  DNS: no such host
-probe_ckan: 1 of 2 answered; 0 speak CKAN: none
+  cuadro 12: 13 provinces and comarcas; medians within 0.9 years of INEC's
+  every table agrees on every province, and each province's districts make it
+  cuadro 32: 'Santa Catalina o Calovévora' is 'Santa Catalina o Calovébora'
+  cuadro 33: 'Santa Catalina o Calovévora' is 'Santa Catalina o Calovébora'
+  Almirante (bocasdeltoro) is added to Changuinola, which the boundary file draws whole
+  Omar Torrijos Herrera (colon) is added to Donoso, which the boundary file draws whole
+  Tierras Altas (chiriqui) is added to Bugaba, which the boundary file draws whole
+  Santa Fe (darien) is added to Chepigana, which the boundary file draws whole
+  Jirondai (comarcangabebugle) is added to Kankintú, which the boundary file draws whole
+  Santa Catalina o Calovébora (comarcangabebugle) is added to Kusapín, which the boundary file draws whole
+  75 of 76 districts bound; not: ['Taboga (panama:taboga)']
+  polygons with no district: []
+  11 units where the two questions overlap past the population, shown by the indigenous question alone: Comarca Emberá: 12,038 indigenous and 374 Afro-descendant of 12,358; Comarca Kuna Yala: 31,323 indigenous and 697 Afro-descendant of 32,016; Comarca Ngäbe Buglé: 207,540 indigenous and 4,551 Afro-descendant of 212,084; Bocas del Toro: 11,589 indigenous and 6,668 Afro-descendant of 17,274; Cémaco: 9,310 indigenous and 351 Afro-descendant of 9,547; Comarca Kuna Yala: 31,323 indigenous and 697 Afro-descendant of 32,016; Besiko: 31,299 indigenous and 804 Afro-descendant of 31,422; Kankintú: 45,287 indigenous and 804 Afro-descendant of 45,555; Kusapín: 27,252 indigenous and 1,169 Afro-descendant of 27,761; Mironó: 21,745 indigenous and 208 Afro-descendant of 21,800; Müna: 46,788 indigenous and 465 Afro-descendant of 47,200
+  13 provinces and comarcas, 75 districts
+  wrote data/processed/panama_census.json (301 kB)
