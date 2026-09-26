@@ -230,16 +230,42 @@ def areas(rows: list[list[Any]], width: int) -> list[dict[str, Any]]:
     return out
 
 
-def kind(label: str) -> str:
+def kind(label: str, municipio: str | None = None) -> str:
+    """What an area of Volume III is, from its label and the municipio it follows.
+
+    Regions and municipios carry their word ("Región", "Municipio") and
+    distritos municipales a "(D.M.)"; provinces carry nothing but their name
+    (the Distrito Nacional aside), and nor does the head district of a
+    municipio, which follows it under the municipio's own name. So a bare
+    name is the head district when it is the municipio's name, and a
+    province otherwise -- which the sums then check: a province must be its
+    municipios and a municipio its districts.
+    """
     if label == "Total":
         return "country"
     if label.startswith("Región "):
         return "region"
-    if label.startswith("Provincia ") or fold(label) == "distritonacional":
-        return "province"
     if label.startswith("Municipio "):
         return "municipio"
-    return "part"
+    if label.endswith("(D.M.)"):
+        return "part"
+    if label.startswith("Provincia ") or fold(label) == "distritonacional":
+        return "province"
+    if municipio is not None and fold(label) == fold(bare(municipio)):
+        return "part"
+    return "province"
+
+
+def classify(found: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Each area with its kind, read in order."""
+    municipio = None
+    for area in found:
+        area["kind"] = kind(area["label"], municipio)
+        if area["kind"] == "municipio":
+            municipio = area["label"]
+        elif area["kind"] != "part":
+            municipio = None
+    return found
 
 
 def bare(label: str) -> str:
@@ -286,18 +312,20 @@ def check_area(area: dict[str, Any], columns: int, what: str) -> None:
           f"{what}: {area['label']}'s age rows")
 
 
-def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
-         lowest: str) -> dict[str, dict[str, Any]]:
-    """Province -> {area, municipios}, after every level is checked against the one above."""
-    order = ["country", "region", "province", "municipio"]
+def tree(found: list[dict[str, Any]], columns: int, what: str, total: int
+         ) -> dict[str, dict[str, Any]]:
+    """Province -> {area, municipios}, after every level is checked against the one above.
+
+    A province with no municipio beneath it -- the Distrito Nacional, whose
+    one municipio Volume III does not print apart -- is its own municipio.
+    """
+    order = ["country", "region", "province", "municipio", "part"]
     stack: dict[str, dict[str, Any]] = {}
     children: dict[int, list[dict[str, Any]]] = {}
     provinces: dict[str, dict[str, Any]] = {}
     country = None
-    for area in found:
-        k = kind(area["label"])
-        if k == "part" or order.index(k) > order.index(lowest):
-            continue
+    for area in classify(found):
+        k = area["kind"]
         check_area(area, columns, what)
         stack[k] = area
         for deeper in order[order.index(k) + 1:]:
@@ -322,7 +350,11 @@ def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
             made = [sum(k["values"][i] for k in kids) for i in range(columns)]
             agree(made, area["values"][:columns], len(kids), f"{what}: {area['label']}'s parts")
     if len(provinces) != 32:
-        raise SystemExit(f"dominican_census: {what}: {len(provinces)} provinces, not 32")
+        raise SystemExit(f"dominican_census: {what}: {len(provinces)} provinces, not 32: "
+                         f"{sorted(provinces)}")
+    for name, entry in provinces.items():
+        if not entry["municipios"] and any(a["kind"] == "municipio" for a in found):
+            entry["municipios"] = [{**entry["area"], "label": f"Municipio {name}"}]
     return provinces
 
 
@@ -388,12 +420,7 @@ def perception(rows: list[list[Any]]) -> tuple[list[str], dict[str, dict[str, An
     if header != [*PERCEIVED, UNANSWERED]:
         raise SystemExit(f"dominican_census: Cuadro 12's answers are {header}, not "
                          f"{[*PERCEIVED, UNANSWERED]}")
-    found = areas(rows, 10)
-    # Cuadro 12 has no municipios: every area under a region is a province.
-    for area in found:
-        if kind(area["label"]) == "part":
-            area["label"] = "Provincia " + area["label"]
-    return header, tree(found, 10, "Cuadro 12", NATIONAL_12, "province")
+    return header, tree(areas(rows, 10), 10, "Cuadro 12", NATIONAL_12)
 
 
 def binding_2010(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> dict[str, int]:
@@ -423,7 +450,7 @@ def sources(fields: str, perception_too: bool) -> list[dict[str, Any]]:
 
 def adapter() -> int:
     header, perceived = perception(workbook_rows(*PERCEPTION))
-    provinces = tree(areas(workbook_rows(*AGES), 10), 9, "Cuadro 2", NATIONAL, "municipio")
+    provinces = tree(areas(workbook_rows(*AGES), 10), 9, "Cuadro 2", NATIONAL)
     municipios = sum(len(p["municipios"]) for p in provinces.values())
     log(f"  Cuadro 2: 32 provinces and {municipios} municipios making ONE's {NATIONAL:,}, every "
         "area's age rows making it within rounding")
@@ -510,8 +537,8 @@ def main() -> int:
                     help="print Cuadro 2's areas in order, with the level each is read as")
     args = ap.parse_args()
     if args.labels:
-        for area in areas(workbook_rows(*AGES), 10):
-            print(f"  {kind(area['label']):9} {area['values'][0]:>9} {area['label']!r}")
+        for area in classify(areas(workbook_rows(*AGES), 10)):
+            print(f"  {area['kind']:9} {area['values'][0]:>9} {area['label']!r}")
         return 0
     if not (args.probe or args.run):
         return adapter()

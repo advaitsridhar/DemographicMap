@@ -42,7 +42,7 @@ def cuadro_2(provinces=32):
         a_m, a_w = sum(v[0] for v in AGES_A.values()), sum(v[1] for v in AGES_A.values())
         b_m, b_w = sum(v[0] for v in AGES_B.values()), sum(v[1] for v in AGES_B.values())
         rows += block(f"Municipio A{i}", a_m + a_w, a_m, a_w, AGES_A)
-        rows += block(f"A{i} cabecera", a_m + a_w, a_m, a_w, AGES_A)
+        rows += block(f"A{i}", a_m + a_w, a_m, a_w, AGES_A)
         rows += block(f"Municipio B{i}", b_m + b_w, b_m, b_w, AGES_B)
     return rows
 
@@ -55,12 +55,14 @@ class LayoutTest(unittest.TestCase):
         self.assertIsNone(dc.band("No declarado"))
         self.assertEqual(dc.kind("Distrito nacional"), "province")
         self.assertEqual(dc.kind("Municipio Santo Domingo Este"), "municipio")
-        self.assertEqual(dc.kind("Santo Domingo Este"), "part")
+        self.assertEqual(dc.kind("Santo Domingo Este", "Municipio Santo Domingo Este"), "part")
+        self.assertEqual(dc.kind("San Luis (D.M.)", "Municipio Santo Domingo Este"), "part")
+        self.assertEqual(dc.kind("Espaillat", "Municipio Pedro Brand"), "province")
 
     def test_tree_reads_municipios_under_their_province(self):
         rows = cuadro_2()
         national = rows[2][1]
-        provinces = dc.tree(dc.areas(rows, 10), 9, "test", national, "municipio")
+        provinces = dc.tree(dc.areas(rows, 10), 9, "test", national)
         self.assertEqual(len(provinces), 32)
         self.assertEqual([dc.bare(a["label"]) for a in provinces["P1"]["municipios"]],
                          ["A1", "B1"])
@@ -74,7 +76,7 @@ class LayoutTest(unittest.TestCase):
                 for i in (1, 2, 4, 5):
                     row[i] += 5
         with self.assertRaises(SystemExit):
-            dc.tree(dc.areas(rows, 10), 9, "test", national, "municipio")
+            dc.tree(dc.areas(rows, 10), 9, "test", national)
 
     def test_a_rounding_of_one_is_read_and_logged(self):
         # Santo Domingo Este's age rows make one man fewer than its row.
@@ -84,7 +86,7 @@ class LayoutTest(unittest.TestCase):
             if row[0] == "Municipio B3":
                 for i in (1, 2, 4, 5):
                     row[i] += 1
-        dc.tree(dc.areas(rows, 10), 9, "test", national, "municipio")
+        dc.tree(dc.areas(rows, 10), 9, "test", national)
         self.assertTrue(any("Municipio B3's age rows (by 1)" in d for d in dc.DISCREPANCIES))
 
     def test_age_figures_leave_undeclared_ages_out_of_the_median(self):
