@@ -307,6 +307,11 @@ ADAPTER_FILES = [
     # ratio, religion, indigenous languages, and indigenous and Afro-descendant
     # identity, each summed from INE's comuna tables.
     "chile_census.json",
+    # Argentina's 2022 census by province and department: population, median
+    # age and sex ratio from single years of age, and indigenous and
+    # Afro-descendant self-recognition. Bound by shape id, since the boundary
+    # file files some departments under a neighbouring province.
+    "argentina_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
