@@ -4947,12 +4947,12 @@ def claim(claimed: dict[int, set[str]], entity: dict[str, Any], row: dict[str, A
     misspelt "La Roja", which another reader's row is named by.
     """
     name = row.get("name") or ""
-    names = {norm(name)} | {norm(a) for a in row.get("aliases") or [] if a}
+    names = {name} | {a for a in row.get("aliases") or [] if a}
     held = claimed.get(id(entity))
-    if held is not None and not (held & names):
+    if held is not None and not ({norm(n) for n in held} & {norm(n) for n in names}):
         raise SystemExit(
             f"{iso3}: shape {wanted!r} is claimed by {name!r} and by "
-            f"{sorted(held)!r}. Two rows on one shape is how one district "
+            f"{' / '.join(sorted(held))!r}. Two rows on one shape is how one district "
             f"quietly wears another's figures")
     claimed[id(entity)] = (held or set()) | names
 
