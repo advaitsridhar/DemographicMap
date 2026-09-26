@@ -1,3 +1,130 @@
-  6 districts making 397,483; ethnicity, religion, ages and sexes each make every district
-  wrote data/processed/belize_census.json (119 kB)
-  wrote belize_census.json: 37 records (6 districts, 31 electoral divisions with the reason they have no figures)
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_1.xlsx
+  600,483 bytes
+  1 sheet(s)
+  -- 'TAB_ETNIA_1': 5333 rows x 28 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Población que se ident', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+     ['Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Edad Quinquenal', '1. Lenca', '', '2. Nahua Pipil', '', '3. Kakawira (Cacaopera', '', '4. Mayas Chorti', '', '5. Mayas Pocomames', '', '6. Xinca', '', '7. Mixe', '', '8. Alagüilac', '']
+     ['', '', '', '', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', 'TOTAL', '6966', '6922', '15047', '14398', '2895', '3361', '2042', '1971', '1133', '1054', '90', '84', '22', '17', '8', '11']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '0 a 4 años', '251', '228', '419', '392', '176', '167', '47', '50', '31', '19', '', '2', '1', '3', '', '']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '5 a 9 años', '350', '325', '600', '574', '246', '232', '66', '61', '29', '38', '4', '5', '', '', '', '']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '10 a 14 años', '430', '389', '713', '723', '316', '277', '103', '88', '53', '51', '7', '', '2', '', '', '']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '15 a 19 años', '415', '398', '737', '755', '223', '247', '86', '86', '46', '57', '5', '9', '1', '1', '', '']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '20 a 24 años', '427', '491', '827', '809', '197', '267', '117', '117', '63', '60', '7', '6', '', '3', '', '']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '25 a 29 años', '499', '504', '888', '1032', '211', '284', '142', '143', '83', '84', '4', '10', '', '', '2', '2']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '30 a 34 años', '482', '488', '991', '1032', '208', '241', '159', '170', '89', '90', '6', '4', '1', '', '', '']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_IDIO_1.xlsx
+  99,180 bytes
+  1 sheet(s)
+  -- 'TAB_IDIO_1': 329 rows x 6 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '']
+     ['', 'Población de 3 años o ', '', '', '', '']
+     ['Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Habla un segundo idiom', '', '']
+     ['', '', '', 'Total', 'Sí', 'No']
+     ['00 República de El Sal', 'TOTAL', 'TOTAL', '5635059', '427368', '5207691']
+     ['01 - Ahuachapán', 'TOTAL', 'TOTAL', '332080', '8527', '323553']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', 'TOTAL', '172361', '5271', '167090']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '01 - Ahuachapán', '121462', '4252', '117210']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '02 - Apaneca', '9040', '378', '8662']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '04 - Concepción de Ata', '12458', '467', '11991']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '11 - Tacuba', '29401', '174', '29227']
+     ['01 - Ahuachapán', '02 - Ahuachapán Norte', 'TOTAL', '62572', '2235', '60337']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_POB_AREA_1.xlsx
+  108,814 bytes
+  1 sheet(s)
+  -- 'TAB_POB_AREA_1': 330 rows x 8 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '']
+     ['', 'Población por departam', '', '', '', '', '', '']
+     ['Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Total', '1. Urbano', '', '2. Rural', '']
+     ['', '', '', '', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '6029976', '2027035', '2277226', '821492', '904223']
+     ['01 - Ahuachapán', 'TOTAL', 'TOTAL', '348880', '108715', '124455', '55869', '59841']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', 'TOTAL', '180913', '61861', '70925', '23191', '24936']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '01 - Ahuachapán', '127301', '46436', '53787', '12832', '14246']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '02 - Apaneca', '9436', '3233', '3633', '1288', '1282']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '04 - Concepción de Ata', '12968', '3706', '4143', '2477', '2642']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', '11 - Tacuba', '31208', '8486', '9362', '6594', '6766']
+     ['01 - Ahuachapán', '02 - Ahuachapán Norte', 'TOTAL', '65290', '24352', '28102', '6259', '6577']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx
+  1,367,910 bytes
+  1 sheet(s)
+  -- 'TAB_POB_1': 33564 rows x 8 cols
+     ['', '#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '']
+     ['', '', 'Población total por de', '', '', '', '', '']
+     ['', 'Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Edades simples', 'Total', 'Sexo', '']
+     ['', '', '', '', '', '', '1. Hombre', '2. Mujer']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', 'TOTAL', '6029976', '2848527', '3181449']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '0', '62891', '32116', '30775']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '1', '71960', '36569', '35391']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '2', '75606', '38566', '37040']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '3', '78491', '39990', '38501']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '4', '84285', '43043', '41242']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '5', '87538', '44376', '43162']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '6', '86909', '44336', '42573']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_2.xlsx
+  504,860 bytes
+  1 sheet(s)
+  -- 'TAB_POB_2': 6798 rows x 10 cols
+     ['', '#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '', '']
+     ['', '', 'Población total por de', '', '', '', '', '', '', '']
+     ['', 'Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Grupo etario', 'Total', 'Sexo', '', 'Índice de Feminidad', 'Índice de Masculinidad']
+     ['', '', '', '', '', '', '1. Hombre', '2. Mujer', '', '']
+     ['', '', '', '', '', '', '', '', '', 'L']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '0 a 4 años', '373233', '190284', '182949', '96.14523554266255', '104.00931407113458']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '5 a 9 años', '451826', '230204', '221622', '96.27200222411426', '103.87235924231348']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '10 a 14 años', '473748', '242611', '231137', '95.27061839735214', '104.96415545758575']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '15 a 19 años', '449615', '224736', '224879', '100.06363021500783', '99.93641024728855']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '20 a 24 años', '511085', '250050', '261035', '104.39312137572485', '95.79175206389948']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '25 a 29 años', '540516', '258533', '281983', '109.07040880661269', '91.68389583769235']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '30 a 34 años', '484364', '231188', '253176', '109.51087426683046', '91.31513255600848']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '35 a 39 años', '419244', '197823', '221421', '111.92884548308338', '89.3424742910564']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_3.xlsx
+  246,610 bytes
+  1 sheet(s)
+  -- 'TAB_POB_3': 4910 rows x 9 cols
+     ['', '#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '']
+     ['', '', 'Población total por de', '', '', '', '', '', '']
+     ['', 'Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Relación de parentesco', 'Total', 'Sexo', '', '']
+     ['', '', '', '', '', '', '1. Hombre', '2. Mujer', '']
+     ['', '', '', '|', '', '', '', '', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', 'TOTAL', '6029976', '2848527', '3181449', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '1. Jefe o jefa de hoga', '1920668', '1057301', '863367', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '2. Esposo(a) o compañe', '1007926', '222681', '785245', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '3. Hijo o hija', '2067553', '1048238', '1019315', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '4. Hijastro o hijastra', '72067', '36152', '35915', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '5. Yerno o nuera', '71399', '32973', '38426', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '6. Nieto(a) o bisnieto', '390924', '201979', '188945', '']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '7. Hermano o hermana', '91316', '44611', '46705', '']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_4.xlsx
+  507,186 bytes
+  1 sheet(s)
+  -- 'TAB_POB_4': 9045 rows x 11 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '', '', '', '']
+     ['', 'Población total por de', '', '', '', '', '', '', '', '', '']
+     ['Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Sexo', 'Parentesco', 'Total', 'Tipo de hogar', '', '', '', '']
+     ['', '', '', '', '', '', 'Unipersonal', 'Parejas', 'Monoparental', 'Nuclear', 'Extensos']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', 'TOTAL', 'TOTAL', '5914437', '317699', '414548', '787629', '2290326', '2104235']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Jefe o jefa de hogar', '1057301', '169489', '162284', '36788', '475728', '213012']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Esposo(a) o compañero(', '222681', '', '44990', '', '123626', '54065']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Hijastro o hijastra', '1048238', '', '', '263438', '545857', '238943']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Hijastro o hijastra', '36152', '', '', '1464', '27889', '6799']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Yerno o nuera', '32973', '', '', '', '', '32973']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Nieto(a) o bisnieto(a)', '201979', '', '', '', '', '201979']
+     ['00 - República de El S', 'TOTAL', 'TOTAL', '01- Hombre', 'Hermano o hermana', '44611', '', '', '', '', '44611']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_5.xlsx
+  752,727 bytes
+  1 sheet(s)
+  -- 'TAB_POB_5': 5785 rows x 24 cols
+     ['', '#VALUE!', 'VII CENSO DE POBLACIÓN', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', 'Población de 15 años o', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Departamento de reside', 'Municipio de residenci', 'Distrito de residencia', 'Grupo etario', 'Estado familiar', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '1. Casado(a)', '', '', '2. Acompañado(a)', '', '', '3. Divorciado(a)', '', '', '4. Separado(a)', '', '', '5. Viudo(a)', '', '']
+     ['', '', '', '', '', '1. Hombre', '2. Mujer', 'TOTAL', '1. Hombre', '2. Mujer', 'TOTAL', '1. Hombre', '2. Mujer', 'TOTAL', '1. Hombre', '2. Mujer', 'TOTAL', '1. Hombre', '2. Mujer', 'TOTAL']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', 'TOTAL', '646639', '681882', '1328521', '502840', '524429', '1027269', '22446', '45251', '67697', '113534', '272222', '385756', '51419', '214191', '265610']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '15 a 19 años', '269', '1072', '1341', '7216', '19345', '26561', '3', '4', '7', '435', '2615', '3050', '11', '31', '42']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '20 a 24 años', '8998', '19459', '28457', '45938', '68604', '114542', '70', '160', '230', '3464', '13715', '17179', '41', '228', '269']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '25 a 29 años', '32991', '52612', '85603', '74694', '92432', '167126', '392', '878', '1270', '7339', '24081', '31420', '102', '781', '883']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '30 a 34 años', '56035', '72098', '128133', '74828', '82086', '156914', '918', '1974', '2892', '9697', '26498', '36195', '222', '1605', '1827']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '35 a 39 años', '66557', '77280', '143837', '63160', '64617', '127777', '1580', '3044', '4624', '10760', '26173', '36933', '396', '2882', '3278']
+     ['', '00 - República de El S', 'TOTAL', 'TOTAL', '40 a 44 años', '71665', '80028', '151693', '55118', '55038', '110156', '2268', '4612', '6880', '12081', '28575', '40656', '733', '5275', '6008']
