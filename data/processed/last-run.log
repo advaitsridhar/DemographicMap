@@ -1,70 +1,15 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  caba: landing page lists 103 workbooks
-  Ciudad Autónoma de Buenos Aires: 15 departments, 3,121,707 people, 74,724 indigenous, 40,670 Afro-descendant
-  bsas: landing page lists 104 workbooks
-  Buenos Aires: 135 departments, 17,523,996 people, 371,830 indigenous, 128,804 Afro-descendant
-  catamarca: landing page lists 103 workbooks
-  Catamarca: 16 departments, 429,562 people, 19,668 indigenous, 1,965 Afro-descendant
-  chaco: landing page lists 103 workbooks
-  Chaco: 25 departments, 1,129,606 people, 53,798 indigenous, 5,357 Afro-descendant
-  chubut: landing page lists 103 workbooks
-  Chubut: 15 departments, 592,621 people, 46,670 indigenous, 5,302 Afro-descendant
-  cordoba: landing page lists 103 workbooks
-  Córdoba: 26 departments, 3,840,905 people, 69,218 indigenous, 18,366 Afro-descendant
-  corrientes: landing page lists 103 workbooks
-  Corrientes: 25 departments, 1,212,696 people, 15,808 indigenous, 6,310 Afro-descendant
-  entre_rios: landing page lists 103 workbooks
-  Entre Ríos: 17 departments, 1,425,578 people, 18,693 indigenous, 8,910 Afro-descendant
-  formosa: landing page lists 103 workbooks
-  Formosa: 9 departments, 607,419 people, 47,459 indigenous, 2,956 Afro-descendant
-  jujuy: landing page lists 103 workbooks
-  Jujuy: 16 departments, 811,611 people, 81,538 indigenous, 5,583 Afro-descendant
-  lapampa: landing page lists 103 workbooks
-  La Pampa indigena_c1: no sheet for Chapaleufú
-  La Pampa: Chapaleufú's indigenous population from table 7
-  La Pampa: 22 departments, 361,859 people, 15,659 indigenous, 1,726 Afro-descendant
-  larioja: landing page lists 103 workbooks
-  La Rioja est_c4: sheet 12.7's 'General Ángel V. Peñaloza' is Ángel Vicente Peñaloza
-  La Rioja indigena_c1: sheet 12.7's 'General Ángel V. Peñaloza' is Ángel Vicente Peñaloza
-  La Rioja indigena_c7: sheet 12.7's 'Coronel Felipe Varela' is General Felipe Varela
-  La Rioja: 18 departments, 383,865 people, 10,645 indigenous, 1,959 Afro-descendant
-  mendoza: landing page lists 103 workbooks
-  Mendoza: 18 departments, 2,043,540 people, 45,389 indigenous, 8,141 Afro-descendant
-  misiones: landing page lists 103 workbooks
-  Misiones: 17 departments, 1,278,873 people, 26,006 indigenous, 9,374 Afro-descendant
-  neuquen: landing page lists 103 workbooks
-  Neuquén: 16 departments, 710,814 people, 54,436 indigenous, 5,026 Afro-descendant
-  rionegro: landing page lists 102 workbooks
-  Río Negro: 13 departments, 750,768 people, 48,194 indigenous, 5,463 Afro-descendant
-  salta: landing page lists 103 workbooks
-  Salta: 23 departments, 1,441,351 people, 142,870 indigenous, 10,632 Afro-descendant
-  sanjuan: landing page lists 103 workbooks
-  San Juan: 19 departments, 822,853 people, 14,457 indigenous, 2,449 Afro-descendant
-  sanluis: landing page lists 103 workbooks
-  San Luis: 9 departments, 542,069 people, 8,340 indigenous, 1,896 Afro-descendant
-  santa_cruz: landing page lists 103 workbooks
-  Santa Cruz: 7 departments, 337,226 people, 12,525 indigenous, 2,446 Afro-descendant
-  santafe: landing page lists 103 workbooks
-  Santa Fe indigena_c1: no sheet for Iriondo
-  Santa Fe: Iriondo's indigenous population from table 7
-  Santa Fe: 19 departments, 3,544,908 people, 57,193 indigenous, 16,560 Afro-descendant
-  santiago_del_estero: landing page lists 103 workbooks
-  Santiago del Estero: 27 departments, 1,060,906 people, 28,022 indigenous, 4,211 Afro-descendant
-  tdf: landing page lists 103 workbooks
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur est_c4: sheet 23.4's 'Antártida Argentina' is part of Antártida Argentina e Islas del Atlántico Sur
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur indigena_c1: no sheet for Ushuaia, Antártida Argentina e Islas del Atlántico Sur
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur indigena_c7: no sheet for Antártida Argentina e Islas del Atlántico Sur
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur: Ushuaia's indigenous population from table 7
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur indigena_c1: no province sheet
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur: afro_c7 has no row for Antártida Argentina e Islas del Atlántico Sur; no private dwellings
-  Tierra del Fuego, Antártida e Islas del Atlántico Sur: 4 departments, 185,732 people, 5,942 indigenous, 1,658 Afro-descendant
-  tucuman: landing page lists 103 workbooks
-  Tucumán: 17 departments, 1,731,820 people, 37,646 indigenous, 7,172 Afro-descendant
-  medians agree with INDEC's whole-year ones to within 2.20 years; of 551, reproduced exactly by single years, rounded: 240, single years, truncated: 477, five-year groups, rounded: 210, five-year groups, truncated: 448
-  1 more than 2 years from INDEC's: Catamarca 10028 (Antofagasta de la Sierra, 2,022 people): 30.2 against 28
-  24 provinces, 528 departments, 45,892,285 people
-  512 departments bound to their polygons; 16 not: Coronel de Marina Leonardo Rosales (06182); 1º de Mayo (22126); Paso de Indios (26070); San Luis del Palmar (18140); Ángel Vicente Peñaloza (46056); General Felipe Varela (46028); General Juan Facundo Quiroga (46070); General Ortiz de Ocampo (46084); Pilcaniyeu (62070); Juan Martín de Pueyrredón (74056); Juan Felipe Ibarra (86098); Pellegrini (86133); Antártida Argentina e Islas del Atlántico Sur (94028); Tolhuin (94011); Famaillá (90028); Juan Bautista Alberdi (90042)
-  check: General Roca (14035) has 36,242 people; the polygon 'General Roca' it is bound to carried 2,885
-  polygons with no department: ['1ro. de Mayo', 'Coronel Felipe Varela', 'Coronel de Marina L. Rosales', 'Famallá', 'General Angel V. Peñaloza', 'General Juan F.Quiroga', 'General Ocampo', 'Juan B. Alberdi', 'Juan F. Ibarra', 'La Capital', 'Paso de los Indios', 'Pelegrini', 'Pilnaniyeu']
-  wrote data/processed/argentina_census.json (1948 kB)
+  cuadro 12: 13 provinces and comarcas; medians within 0.9 years of INEC's
+  every table agrees on every province, and each province's districts make it
+  cuadro 32: 'Santa Catalina o Calovévora' is 'Santa Catalina o Calovébora'
+  cuadro 33: 'Santa Catalina o Calovévora' is 'Santa Catalina o Calovébora'
+  Almirante (bocasdeltoro) is added to Changuinola, which the boundary file draws whole
+  Omar Torrijos Herrera (colon) is added to Donoso, which the boundary file draws whole
+  Tierras Altas (chiriqui) is added to Bugaba, which the boundary file draws whole
+  Santa Fe (darien) is added to Chepigana, which the boundary file draws whole
+  Jirondai (comarcangabebugle) is added to Kankintú, which the boundary file draws whole
+  Santa Catalina o Calovébora (comarcangabebugle) is added to Kusapín, which the boundary file draws whole
+  75 of 76 districts bound; not: ['Taboga (panama:taboga)']
+  polygons with no district: []
+  11 units where the two questions overlap past the population, shown by the indigenous question alone: Comarca Emberá: 12,038 indigenous and 374 Afro-descendant of 12,358; Comarca Kuna Yala: 31,323 indigenous and 697 Afro-descendant of 32,016; Comarca Ngäbe Buglé: 207,540 indigenous and 4,551 Afro-descendant of 212,084; Bocas del Toro: 11,589 indigenous and 6,668 Afro-descendant of 17,274; Cémaco: 9,310 indigenous and 351 Afro-descendant of 9,547; Comarca Kuna Yala: 31,323 indigenous and 697 Afro-descendant of 32,016; Besiko: 31,299 indigenous and 804 Afro-descendant of 31,422; Kankintú: 45,287 indigenous and 804 Afro-descendant of 45,555; Kusapín: 27,252 indigenous and 1,169 Afro-descendant of 27,761; Mironó: 21,745 indigenous and 208 Afro-descendant of 21,800; Müna: 46,788 indigenous and 465 Afro-descendant of 47,200
+  13 provinces and comarcas, 75 districts
+  wrote data/processed/panama_census.json (299 kB)
