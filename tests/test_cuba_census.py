@@ -95,9 +95,22 @@ class TableTest(unittest.TestCase):
 
     def test_age_groups_that_miss_table_1_stop_the_run(self):
         municipios = {"Pinar del Río": {
-            "Sandino": [31613, 16457, 15156, 19341, 9775, 9566, 12272, 6682, 5590]}}
+            "Sandino": [31614, 16458, 15156, 19342, 9776, 9566, 12272, 6682, 5590]}}
         with self.assertRaises(SystemExit):
             cc.age_table([TABLE_5], municipios)
+
+    def test_age_groups_a_person_off_table_1_are_read_and_logged(self):
+        # Corralillo's age groups make one woman fewer than Table 1 prints.
+        municipios = {"Pinar del Río": {
+            "Sandino": [31613, 16456, 15157, 19341, 9774, 9567, 12272, 6682, 5590]}}
+        cc.age_table([TABLE_5], municipios)
+        self.assertIn("Sandino's age groups against Table 1 (by 1)", cc.DISCREPANCIES)
+
+    def test_table_5_headings_spelled_as_the_map_does(self):
+        text = TABLE_5.replace("SANDINO", "ANTILLA")
+        municipios = {"Pinar del Río": {
+            "Antillas": [31612, 16456, 15156, 19340, 9774, 9566, 12272, 6682, 5590]}}
+        self.assertIn(("Pinar del Río", "Antillas"), cc.age_table([text], municipios))
 
     def test_colour_rows_and_the_isle_of_youth(self):
         municipios, provinces, national, rows = cc.by_province(

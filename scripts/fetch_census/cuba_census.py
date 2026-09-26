@@ -333,11 +333,19 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
             raise SystemExit(f"cuba_census: {unit[1]}'s age groups start at {lows}")
         men, women = sum(g[2] for g in groups), sum(g[3] for g in groups)
         table_1 = municipios[unit[0]][unit[1]]
-        if (men, women) != (table_1[1], table_1[2]) or totals.get(unit, [None])[0] != table_1[0]:
+        total = totals.get(unit)
+        # The same one-person slack as a row's own sums, and for the same
+        # reason: Corralillo's age groups make 11,188 women, Table 1 prints
+        # 11,189. Each sex may miss by one person, logged; more stops the run.
+        missed = abs(men - table_1[1]) + abs(women - table_1[2])
+        if (total is None or abs(total[0] - table_1[0]) > 1 or abs(men - table_1[1]) > 1
+                or abs(women - table_1[2]) > 1):
             raise SystemExit(f"cuba_census: {unit[1]}'s age groups make {men:,} men and "
                              f"{women:,} women; Table 1 has {table_1[1]:,} and {table_1[2]:,}")
+        if missed or total[0] != table_1[0]:
+            DISCREPANCIES.append(f"{unit[1]}'s age groups against Table 1 (by {missed})")
     log("  Table 5: all 168 municipios, every one's eighteen age groups making Table 1's men "
-        "and women")
+        "and women to within a person of each")
     return out
 
 
