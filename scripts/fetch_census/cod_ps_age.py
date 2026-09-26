@@ -4,9 +4,10 @@
 Most of Latin America's first- and second-level units had a population and
 nothing else: Peru's 26 departments and 196 provinces, Venezuela's states and
 municipios, Paraguay's, El Salvador's, Uruguay's. OCHA's Common Operational
-Dataset for each of those countries is the national statistical office's own
-table (cod_ps.py already reads its totals) and splits every unit by sex and by
-five-year age group. That is enough for two of the map's questions:
+Dataset for each of those countries is built from its official population
+figures -- the statistics office's, or, as in Mexico, the population
+council's (cod_ps.py already reads its totals) -- and splits every unit by sex
+and by five-year age group. That is enough for two of the map's questions:
 
 - **sex ratio**: males per 1,000 females, from the table's F and M totals;
 - **median age**: interpolated within the five-year group that holds the
@@ -321,14 +322,15 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                 median_age_note=(
                     f"Interpolated within the five-year age group that holds the middle "
                     f"person, from the age breakdown in OCHA's COD-PS for this country, "
-                    f"reference year {year}, which is the national statistical office's "
-                    f"table. For a year after the last census it is a projection, not a "
+                    f"reference year {year}, built from the country's official population "
+                    f"figures. For a year after the last census it is a projection, not a "
                     f"count.{basis}{unstated}"),
                 sex_ratio={"value": figures["ratio"], "unit": "males_per_1000_females",
                            "year": year, "source": source},
                 sex_ratio_note=(f"Males per 1,000 females in OCHA's COD-PS for this country, "
-                                f"reference year {year}; for a year after the last census, "
-                                f"the office's projection.{basis}"),
+                                f"reference year {year}, built from the country's official "
+                                f"population figures; for a year after the last census, a "
+                                f"projection.{basis}"),
                 sources=[{"field": "median_age/sex_ratio", "name": source,
                           "url": DATASET_PAGE.format(stub=stub), "year": year,
                           "license": licence(package)}]))
