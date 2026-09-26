@@ -1,28 +1,26 @@
-probe_pdf: http://onei.gob.cu/sites/default/files/publicaciones/2023-05/censo_2012_0.pdf
-  222 bytes
-invalid pdf header: b'<html'
-EOF marker not found
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 151, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 175, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 689, in read
-    self._find_eof_marker(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 802, in _find_eof_marker
-    line = read_previous_line(stream)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 380, in read_previous_line
-    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
-pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+27 resources named for the Bureau, 27 of them workbooks, across 25 datasets
+  Bangladesh_uscb_202107.xlsx  bangladesh-subnational-boundaries-and-tabular-data  (Bangladesh Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses and Surveys)
+  Burma_uscb_202003.xlsx  burma-subnational-boundaries-and-tabular-data  (Burma Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Central_African_Republic_uscb_202303.xlsx  car-subnational-boundaries-and-tabular-data  (Central African Republic Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Colombia_uscb_202210.xlsx  colombia-subnational-boundaries-and-tabular-data  (Colombia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Democratic Republic of the Congo_uscb_202103.xlsx  democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data  (Democratic Republic of the Congo Subnational Population and Housing Data Tables with Administrative Boundaries, Based on Surveys)
+  Dominica_uscb_202106.xlsx  dominica-subnational-boundaries-and-tabular-data  (Dominica Subnational Population Data Tables with Administrative Boundaries, Based on National Census)
+  Dominican_Republic_uscb_202212.xlsx  dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Dominican Republic Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Ethiopia_uscb_202308.xlsx  ethiopia-subnational-boundaries-and-tabular-data  (Ethiopia Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Haiti_uscb_202212.xlsx  haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Indonesia_uscb_202405.xlsx  indonesia-subnational-population-and-housing-data-tables  (Indonesia Subnational Population and Housing Data Tables)
+  Iraq_uscb_201905.xlsx  iraq-subnational-boundaries-and-tabular-data  (Iraq Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Jamaica_uscb_202302.xlsx  jamaica-subnational-boundaries-and-tabular-data  (Jamaica Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Libya_uscb_202304.xlsx  libya-subnational-boundaries-and-tabular-data  (Libya Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Mali_uscb_202211.xlsx  mali-subnational-population-and-housing-data-tables-with-administrative-boundaries  (Mali Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Nigeria_uscb_202001.xlsx  nigeria-subnational-boundaries-and-tabular-data  (Nigeria Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Pakistan_uscb_202401.xlsx  pakistan-subnational-population-and-housing-data-tables  (Pakistan Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Philippines_uscb_202402.xlsx  philippines-subnational-population-and-housing-data-tables  (Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses)
+  Saint_Vincent_and_The_Grenadines_uscb_202109.xlsx  saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data  (Saint Vincent and the Grenadines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census)
+  Somalia_uscb_201905.xlsx  somalia-subnational-boundaries-and-tabular-data  (Somalia Subnational Population Data Tables with Administrative Boundaries, Based on Surveys)
+  South_Sudan_uscb_201812.xlsx  south-sudan-subnational-boundaries-and-tabular-data  (South Sudan Subnational Population Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Sudan_uscb_202101.xlsx  sudan-subnational-boundaries-and-tabular-data  (Sudan Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Syria_uscb_201811.xlsx  syria-subnational-boundaries-and-tabular-data  (Syria Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  The_Bahamas_uscb_202105.xlsx  the-bahamas-subnational-boundaries-and-tabular-data  (The Bahamas Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Ukraine_uscb_201905.xlsx  ukraine-subnational-boundaries-and-tabular-data  (Ukraine Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
+  Yemen_uscb_201806.xlsx  yemen-subnational-boundaries-and-tabular-data  (Yemen Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys)
