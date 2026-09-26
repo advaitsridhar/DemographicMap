@@ -1,4 +1,6 @@
-page: https://redatam.org/en/online-process/censos/pobviv
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://redatam.org/es/node/104
-  unreachable: HTTPError: HTTP Error 404: Not Found
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW] [--aia]
+                      url [url ...]
+probe_links.py: error: argument --find: expected one argument
