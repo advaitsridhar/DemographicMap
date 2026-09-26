@@ -114,9 +114,10 @@ def split_row(line: str) -> tuple[str, list[str]]:
 # How far a printed row may miss its own sums: ONEI's tables are published
 # with an occasional one-person disagreement between a total and its parts
 # (Rodas in 2024: 9 285 urban men and 9 641 urban women printed against an
-# urban total of 18 925). One person in one identity is a rounding in the
-# publication and is logged; anything more stops the run.
-SLACK = 1
+# urban total of 18 925, and so 14 518 men and 14 196 women against 28 713).
+# One person out of place shows in two of a row's sums, so a row may miss
+# them by two in all; it is logged, and anything more stops the run.
+SLACK = 2
 DISCREPANCIES: list[str] = []
 
 
@@ -161,7 +162,7 @@ def regroup(tokens: list[str], n: int, error: Callable[[list[int]], int],
                          f"{' '.join(tokens)!r} come within {best} of its sums; exactly one "
                          f"must, within {SLACK}")
     if best:
-        DISCREPANCIES.append(f"{where} ({best} person)")
+        DISCREPANCIES.append(f"{where} (by {best})")
     return list(winners[0])
 
 
@@ -350,9 +351,11 @@ def colour_table(texts: list[str]) -> tuple[dict[str, dict[str, list[int]]], dic
     return municipios, provinces
 
 
-def figures(men: int, women: int, groups: list[tuple[int, int | None, int]]) -> dict[str, Any]:
+def figures(values: list[int], groups: list[tuple[int, int | None, int]]) -> dict[str, Any]:
+    """A unit's population, median age and sex ratio from its Table 1 row and age groups."""
+    total, men, women = values[:3]
     return {
-        "population": measure(men + women, unit="people", year=ESTUDIOS_YEAR,
+        "population": measure(total, unit="people", year=ESTUDIOS_YEAR,
                               source=ESTUDIOS_SOURCE),
         "median_age": measure(grouped_median(groups), unit="years", year=ESTUDIOS_YEAR,
                               source=ESTUDIOS_SOURCE),
@@ -402,7 +405,7 @@ def main() -> int:
     municipios, provinces = population_table(carrying(texts, TABLE_1))
     ages = age_table(carrying(texts, TABLE_5), municipios)
     colour_m, colour_p = colour_table(carrying(pdf_pages(COLOUR, COLOUR_STAMP), COLOUR_TABLE))
-    log(f"  {len(DISCREPANCIES)} printed rows miss their own sums by one person, as published: "
+    log(f"  {len(DISCREPANCIES)} printed rows miss their own sums by a person, as published: "
         + "; ".join(DISCREPANCIES))
 
     admin1 = json.loads((SITE / "admin1" / "CUB.units.json").read_text())
@@ -434,7 +437,7 @@ def main() -> int:
             f"CUB-ONEI-{fold(province)}", shape["name"], level="admin1", parent="CUB",
             country="CUB", match_by="shape_id", shape_id=shape["id"],
             aliases=[province] if province != shape["name"] else [],
-            **figures(values[1], values[2], province_groups(ages, province)),
+            **figures(values, province_groups(ages, province)),
             **colour_fields(colour_by_province[map_province(province)]), sources=sources()))
 
     parents = {u["id"]: u["name"] for u in admin1}
@@ -457,7 +460,7 @@ def main() -> int:
                 f"CUB-ONEI-{code}", labels[sid], level="admin2", parent="CUB", country="CUB",
                 parent_name=shape_of(province)["name"], match_by="shape_id", shape_id=sid,
                 aliases=[name] if name != labels[sid] else [],
-                **figures(values[1], values[2], groups),
+                **figures(values, groups),
                 **colour_fields(colour_by_unit[(map_province(province),
                                                 fold(MUNICIPIOS.get(name, name)))]),
                 sources=sources()))

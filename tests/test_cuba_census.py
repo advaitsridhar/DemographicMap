@@ -72,7 +72,7 @@ class RegroupTest(unittest.TestCase):
         tokens = "28 713 14 518 14 196 18 925 9 285 9 641 9 788 5 233 4 555".split()
         self.assertEqual(cc.regroup(tokens, 9, cc.zones_error, "Rodas"),
                          [28713, 14518, 14196, 18925, 9285, 9641, 9788, 5233, 4555])
-        self.assertIn("Rodas (1 person)", cc.DISCREPANCIES)
+        self.assertIn("Rodas (by 2)", cc.DISCREPANCIES)
 
     def test_a_row_no_reading_satisfies_stops_the_run(self):
         with self.assertRaises(SystemExit):
@@ -110,7 +110,7 @@ class TableTest(unittest.TestCase):
 
     def test_median_and_ratio(self):
         groups = [(0, 4, 50), (5, 9, 50), (10, None, 0)]
-        out = cc.figures(60, 40, groups)
+        out = cc.figures([100, 60, 40], groups)
         self.assertEqual(out["sex_ratio"]["value"], 1500)
         self.assertEqual(out["median_age"]["value"], 5.0)
         self.assertEqual(out["population"]["value"], 100)
