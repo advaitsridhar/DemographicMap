@@ -147,8 +147,27 @@ def layout(rows: list[list[Any]], what: str) -> tuple[int, dict[str, int], list[
     return start, places, columns, title
 
 
+# (department, municipio, district) codes -> their names, as the tables first print them.
+NAMES: dict[tuple[str, str, str], tuple[str, str, str]] = {}
+
+
+def coded(labels: tuple[str, ...]) -> tuple[str, ...]:
+    """A place by its codes, "" for a TOTAL: the tables do not agree on the
+    spacing around a code's dash ("02- Cuscatlán Sur", "02 - Cuscatlán Sur")."""
+    out = []
+    for label in labels:
+        if label.upper() == "TOTAL":
+            out.append("")
+            continue
+        m = CODE.match(label)
+        if not m:
+            raise SystemExit(f"{WHO}: a place with no code: {label!r}")
+        out.append(m.group(1).zfill(2))
+    return tuple(out)
+
+
 def read(key: str, ages: bool = False) -> tuple[dict[tuple[str, str, str], dict], str]:
-    """{(department, municipio, district): {age or "": {column: count}}}, title.
+    """{(department, municipio, district) codes: {age or "": {column: count}}}, title.
 
     Only the rows whose age is TOTAL are kept unless ``ages``.
     """
@@ -158,7 +177,10 @@ def read(key: str, ages: bool = False) -> tuple[dict[tuple[str, str, str], dict]
     for row in rows[start:]:
         if len(row) <= places["age"] or not text(row[places["departamento"]]):
             continue
-        place = tuple(text(row[places[k]]) for k in ("departamento", "municipio", "distrito"))
+        labels = tuple(text(row[places[k]]) for k in ("departamento", "municipio", "distrito"))
+        place = coded(labels)
+        NAMES.setdefault(place, tuple(CODE.match(x).group(2) if CODE.match(x) else x
+                                      for x in labels))
         age = text(row[places["age"]])
         if age.upper() != "TOTAL" and not ages:
             continue
@@ -172,20 +194,13 @@ def read(key: str, ages: bool = False) -> tuple[dict[tuple[str, str, str], dict]
     return out, title
 
 
-def split(place: str) -> tuple[str, str]:
-    m = CODE.match(place)
-    if not m:
-        raise SystemExit(f"{WHO}: a place with no code: {place!r}")
-    return m.group(1), m.group(2)
-
-
 def level_of(place: tuple[str, str, str]) -> str:
     dept, mun, dist = place
-    if dept.startswith("00"):
+    if dept == "00":
         return "country"
-    if mun.upper() == "TOTAL":
+    if not mun:
         return "department"
-    if dist.upper() == "TOTAL":
+    if not dist:
         return "municipio"
     return "district"
 
@@ -233,12 +248,15 @@ def answer_of(column: str) -> str:
 def identity(peoples: dict, indigenous: dict, afro: dict) -> dict[tuple, dict[str, Any]]:
     """Each place's indigenous by people, and both questions' yes, no and not known."""
     out = {}
-    for place in peoples.keys() | indigenous.keys() | afro.keys():
-        if not (place in peoples and place in indigenous and place in afro):
-            raise SystemExit(f"{WHO}: {place} is not in all three identity tables")
+    stray = peoples.keys() - indigenous.keys()
+    if stray or indigenous.keys() != afro.keys():
+        raise SystemExit(f"{WHO}: the identity tables' places differ: "
+                         f"{sorted(stray | (indigenous.keys() ^ afro.keys()))[:6]}")
+    for place in indigenous:
         named: Counter = Counter()
         total = None
-        for column, n in peoples[place][""].items():
+        # TAB_ETNIA_1 prints no row for a place where nobody said yes.
+        for column, n in (peoples[place][""] if place in peoples else {}).items():
             head = fold(NUMBERED.sub("", column.split("|")[0]))
             if head == "totalindigenas":
                 total = n
@@ -379,7 +397,7 @@ def main() -> int:
     nest(flat, "identity", ("yes", "no", "unknown", "afro"))
     if set(ident) != set(pop):
         raise SystemExit(f"{WHO}: the identity tables' places are not the population table's: "
-                         f"{sorted(set(ident) ^ set(pop))[:6]}")
+                         f"{[(p, NAMES.get(p)) for p in sorted(set(ident) ^ set(pop))[:8]]}")
     log(f"  every district's ages, sexes and identity answers checked; districts make their "
         f"departments and the departments the BCR's {NATIONAL:,}")
 
@@ -390,7 +408,7 @@ def main() -> int:
     for place in pop:
         if level_of(place) != "department":
             continue
-        code, name = split(place[0])
+        code, name = place[0], NAMES[place][0]
         hits = [u for u in admin1 if fold(re.sub(r"^Departamento de\s+", "", u["name"]))
                 == fold(name)]
         if len(hits) != 1:
@@ -400,12 +418,11 @@ def main() -> int:
     for place in pop:
         if level_of(place) != "district":
             continue
-        dept, _ = split(place[0])
-        code, name = split(place[2])
-        key = dept + code
+        key = place[0] + place[2]
         if key in districts:
-            raise SystemExit(f"{WHO}: district code {key} twice")
-        districts[key] = (place, name)
+            raise SystemExit(f"{WHO}: district code {key} twice: {NAMES[place]}, "
+                             f"{NAMES[districts[key][0]]}")
+        districts[key] = (place, NAMES[place][2])
     thin = slivers(admin2)
     log(f"  slivers left out of the binding: {sorted(s['name'] for s in admin2 if s['id'] in thin)}")
     shapes = [s for s in admin2 if s["id"] not in thin]

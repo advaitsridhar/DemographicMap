@@ -11,7 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from scripts.fetch_census import el_salvador_census as sv  # noqa: E402
 
-DEPT, MUN, DIST = "01 - Ahuachapán", "01 - Ahuachapán Centro", "02 - Apaneca"
+DEPT, MUN, DIST = "01 - Ahuachapán", "01- Ahuachapán Centro", "02 - Apaneca"
+PLACE = ("01", "01", "02")
 POB = [
     ["", "#VALUE!", "VII CENSO DE POBLACIÓN", "", "", "", "", ""],
     ["", "", "Población total por departamento", "", "", "", "", ""],
@@ -50,7 +51,7 @@ class Layout(unittest.TestCase):
             tables, title = sv.read("population", ages=True)
         self.assertIn("Población total", title)
         pop = sv.population(tables)
-        unit = pop[(DEPT, MUN, DIST)]
+        unit = pop[PLACE]
         self.assertEqual((unit["people"], unit["men"], unit["women"]), (10, 4, 6))
         self.assertEqual(unit["ages"], {0: 4, 30: 6})
         sv.nest(pop, "population", ("people", "men", "women"))
@@ -73,7 +74,7 @@ class Layout(unittest.TestCase):
 
 class Identity(unittest.TestCase):
     def tables(self):
-        peoples = {(DEPT, MUN, DIST): {"": {"1. Lenca|1. Hombre": 1, "1. Lenca|2. Mujer": 0,
+        peoples = {PLACE: {"": {"1. Lenca|1. Hombre": 1, "1. Lenca|2. Mujer": 0,
                                             "10. otro|1. Hombre": 1, "Total Indígenas": 2}}}
         with mock.patch.object(sv, "rows_of", return_value=ETNIA2):
             indigenous, _ = sv.read("indigenous")
@@ -83,7 +84,7 @@ class Identity(unittest.TestCase):
         return sv.identity(peoples, indigenous, afro)
 
     def test_the_two_questions_and_the_remainder(self):
-        unit = self.tables()[(DEPT, MUN, DIST)]
+        unit = self.tables()[PLACE]
         out = sv.ethnicity(unit, 10)
         groups = {g["group"]: g["count"] for g in out["ethnicity"]}
         self.assertEqual(groups, {"Lenca": 1, "Other indigenous people": 1, sv.AFRO: 1,
@@ -91,14 +92,14 @@ class Identity(unittest.TestCase):
         self.assertIn("1 did not know", out["ethnicity_note"])
 
     def test_overlap_past_the_population_falls_back_to_the_indigenous_question(self):
-        unit = self.tables()[(DEPT, MUN, DIST)]
+        unit = self.tables()[PLACE]
         unit["afro"]["yes"] = 8
         groups = {g["group"]: g["count"] for g in sv.ethnicity(unit, 10)["ethnicity"]}
         self.assertEqual(groups, {"Lenca": 1, "Other indigenous people": 1,
                                   sv.NOT_INDIGENOUS: 7})
 
     def test_peoples_must_make_the_questions_yes(self):
-        peoples = {(DEPT, MUN, DIST): {"": {"1. Lenca|1. Hombre": 3}}}
+        peoples = {PLACE: {"": {"1. Lenca|1. Hombre": 3}}}
         with mock.patch.object(sv, "rows_of", return_value=ETNIA2):
             indigenous, _ = sv.read("indigenous")
         with mock.patch.object(sv, "rows_of", return_value=ETNIA3):
