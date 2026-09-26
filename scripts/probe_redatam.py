@@ -24,6 +24,8 @@ import argparse
 import html
 import http.cookiejar
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -35,12 +37,29 @@ class Session:
         self.opener = urllib.request.build_opener(
             urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
-    def get(self, url: str, data: bytes | None = None) -> str:
+    def get(self, url: str, data: bytes | None = None, attempts: int = 4) -> str:
+        """The page, retrying a connection that times out or drops.
+
+        An HTTP error is the server's answer and is raised at once; only a
+        failure to reach it is tried again. INEI's server once timed out on
+        the first connection of a run that it answered minutes before.
+        """
         req = urllib.request.Request(url, data=data, headers=HEADERS)
-        with self.opener.open(req, timeout=90) as resp:
-            raw = resp.read()
-            charset = resp.headers.get_content_charset() or "utf-8"
-        return raw.decode(charset, "replace")
+        for attempt in range(attempts):
+            try:
+                with self.opener.open(req, timeout=90) as resp:
+                    raw = resp.read()
+                    charset = resp.headers.get_content_charset() or "utf-8"
+                return raw.decode(charset, "replace")
+            except urllib.error.HTTPError:
+                raise
+            except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+                if attempt == attempts - 1:
+                    raise
+                wait = 10 * 2 ** attempt
+                print(f"  {type(exc).__name__} reaching {url[:80]}: trying again in {wait}s")
+                time.sleep(wait)
+        raise AssertionError("unreachable")
 
 
 def text_of(page: str) -> str:
