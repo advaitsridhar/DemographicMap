@@ -1,43 +1,11 @@
-https://data.humdata.org/dataset/80a2e7d0-6895-4cfa-ae01-f23169a9aa2a/resource/0f2dcd9f-ea0f-4bf7-bf44-8b8631432f51/download/dominican_republic_uscb_202212.xlsx
-  966,252 bytes
-  10 sheet(s)
-  -- 'Metadata': 148 rows x 2 cols
-     ['Metadata: Dominican Republic', '']
-     ['Contents', '']
-     ['One metadata tab describing 5 ', '']
-  -- 'Data Dictionary': 535 rows x 4 cols
-     ['Data Dictionary: Dominican Rep', '', '', '']
-     ['Standard Geographic Fields', '', '', '']
-     ['Field Name', 'Field Alias', 'Field Description', 'Field Data Source']
-  -- 'Age-Sex': 586 rows x 80 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
-     ['DOMINICAN REPUBLIC', '', '', '', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
-  -- 'Population Estimates': 200 rows x 67 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'ASE_BTOTL']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Both sexes total (est)']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '10448499']
-  -- 'Households': 586 rows x 66 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
-  -- 'Housing Units': 586 rows x 207 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
-  -- 'Health': 45 rows x 72 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'DSE_CK14_T', 'DSE_CK15_T']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Chikungunya cases, 2014', 'Chikungunya cases, 2015']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '6473', '93']
-  -- 'Economy': 13 rows x 17 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'INC_AVG_B', 'INC_AVG_M', 'INC_AVG_F']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Average income (RD$), 2015, bo', 'Average income (RD$), 2015, ma', 'Average income (RD$), 2015, fe']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '15309', '16392', '13433']
-  -- 'Info and Com Technology': 13 rows x 42 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'MDX_NWP_W', 'MDX_RDO_W', 'MDX_TEL_W']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Read newspaper, at least once ', 'Listen to radio, at least once', 'Watch television, at least onc']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '31.1', '62.6', '77.9']
-  -- 'Agricultural Assets': 200 rows x 61 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'AGL_AGU_T']
-     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Ag production units, total']
-     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '319676']
+
+=== HDX dataset: haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries ===
+    title: Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys
+    org:   us-census-bureau
+    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
+    notes: The geodatabase contains national and subnational boundary feature classes of Haiti for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.  The tabular data contain total population for 2003 (census) and 2015 (population estimates), as well as information relating to education, health, information and communication technology, and transportation.
+    2 resource(s):
+      Geodatabase Haiti.gdb.zip
+             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/7c2903a3-63ac-4965-a6e7-74f65e28dcd9/download/haiti.gdb.zip
+      XLSX   Haiti_uscb_202212.xlsx
+             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx
