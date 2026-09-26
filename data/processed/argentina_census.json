@@ -16063,6 +16063,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 44,594 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 9% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-06616",
+    "level": "admin2",
+    "name": "Pellegrini",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7143,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 34.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.7,
+        "count": 7017
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 0.9,
+        "count": 67
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.4,
+        "count": 28
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c1_2.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c4_2.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c1_2.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Buenos Aires",
+    "codes": {
+      "indec": "06616"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B41851340526887",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 7,112 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 7% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-06623",
     "level": "admin2",
     "name": "Pergamino",
