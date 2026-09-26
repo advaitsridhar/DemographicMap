@@ -20,7 +20,9 @@ What it writes, for Peru's 196 provinces and its 26 first-level units:
   in, asked of those aged 3 and over. The first level keeps the Perfil
   Sociodemográfico's department tables (peru.py), which are the same count.
 
-Population is not written: the map's are newer than 2017.
+Population goes to a file of its own, ``peru_redatam_population.json``, which
+the build reads as fill-only: the map's province figures are newer than 2017,
+and the census count stands only where a province has none.
 
 Every label is translated by the tables here, and one this file does not know
 stops the run. Every province must have all five tables; each question's
@@ -55,6 +57,7 @@ from .redatam import Server, median_age, tables  # noqa: F401 -- tables: tests r
 PORTAL = "https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lang=esp"
 CMDSET = "https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet"
 OUT = PROCESSED / "peru_redatam.json"
+POPULATION_OUT = PROCESSED / "peru_redatam_population.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 YEAR = 2017
 NATIONAL = 29_381_884
@@ -401,6 +404,19 @@ def main() -> int:
                               shape_id=shape["id"], **fields(summed(parts), "admin1")))
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records")
+    counted = [record(f"PER-INEI-POP-{code}", unit["name"], level="admin2", parent="PER",
+                      country="PER", parent_name=unit_of(code), codes={"ubigeo": code},
+                      match_by="shape_id", shape_id=bound[code],
+                      aliases=[labels[bound[code]]] if labels[bound[code]] != unit["name"] else [],
+                      population=measure(unit["sex"]["total"], year=YEAR, source=SOURCE),
+                      population_note=(
+                          "Everyone counted in the province by the 2017 census. It stands only "
+                          "where the map has no newer figure for the province."),
+                      sources=[{"field": "population", "name": SOURCE, "url": PAGE,
+                                "year": YEAR}])
+               for code, unit in sorted(units.items()) if code in bound]
+    write_json(POPULATION_OUT, counted)
+    log(f"  wrote {POPULATION_OUT.name}: {len(counted)} records")
     return 0
 
 
