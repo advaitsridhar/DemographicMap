@@ -119,7 +119,10 @@ def split(line: str) -> tuple[str, list[int]]:
     """A line's words and its figures: "City of 48,838 3,123" -> ("City of", [48838, 3123]).
 
     The figures are the longest unbroken run of numeric tokens, because a dash
-    is both a zero ("- 1 1 3") and part of a label ("Mixed - Other").
+    is both a zero ("- 1 1 3") and part of a label ("Mixed - Other"). A lone
+    dash is never a run of figures: every table here has several columns, so
+    even a row of zeros is several dashes, while "Mixed - African/ East" is a
+    label whose figures sit on the next line.
     """
     tokens = line.split()
     best, start = (0, 0), None
@@ -127,7 +130,9 @@ def split(line: str) -> tuple[str, list[int]]:
         if NUMBER.match(token):
             start = i if start is None else start
         elif start is not None:
-            if i - start > best[1] - best[0]:
+            run = tokens[start:i]
+            figures = len(run) > 1 or run[0] != "-"
+            if figures and i - start > best[1] - best[0]:
                 best = (start, i)
             start = None
     numbers = [value(t) for t in tokens[best[0]:best[1]]]

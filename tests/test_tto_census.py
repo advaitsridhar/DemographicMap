@@ -49,6 +49,14 @@ class Parsing(unittest.TestCase):
     def test_a_dash_is_a_zero_among_figures_and_a_word_in_a_label(self):
         self.assertEqual(t.split("Mixed - Other 200 - 3"), ("Mixed - Other", [200, 0, 3]))
         self.assertEqual(t.split("- 1 1 Portuguese"), ("Portuguese", [0, 1, 1]))
+        self.assertEqual(t.split("Mixed - African/ East"), ("Mixed - African/ East", []))
+        self.assertEqual(t.split("Indigenous - - -"), ("Indigenous", [0, 0, 0]))
+
+    def test_a_label_wrapped_around_its_figures_is_read_whole(self):
+        known = UNITS | {t.key(c) for c in t.ETHNICITY}
+        lines = ["(1) (2) (3)", "Borough of Arima 50 1 1", "Mixed - African/ East",
+                 "40 - 1", "Indian", "Mixed - Other 10 1 -"]
+        self.assertEqual(t.rows(lines, known)[1], ("Mixed - African/ East Indian", [40, 0, 1]))
 
     def test_wrapped_labels_are_put_back_together(self):
         known = UNITS | {t.key(c) for c in t.RELIGION}
