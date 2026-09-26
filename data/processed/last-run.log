@@ -1,26 +1,73 @@
-  Table 2a: TRINIDAD AND TOBAGO's age groups make 1,328,017 of 1,328,019
-  Table 2a: TRINIDAD's age groups make 1,267,142 of 1,267,144
-  Table 2a: City of Port of Spain's age groups make 37,076 of 37,074
-  Table 2a: City of San Fernando's age groups make 48,837 of 48,838
-  Table 2a: Borough of Point Fortin's age groups make 20,236 of 20,235
-  Table 2a: Couva/ Tabaquite/ Talparo's age groups make 178,409 of 178,410
-  Table 2a: Diego Martin's age groups make 102,958 of 102,957
-  Table 2a: Mayaro/ Rio Claro's age groups make 35,647 of 35,650
-  Table 2a: Penal/ Debe's age groups make 89,391 of 89,392
-  Table 2a: Princes Town's age groups make 102,376 of 102,375
-  Table 2a: Siparia's age groups make 86,950 of 86,949
-  Table 2a: Tunapuna/ Piarco's age groups make 215,117 of 215,119
-  Table 2a: TOBAGO's age groups make 60,872 of 60,874
-  Table 2a: St.Andrew's age groups make 17,535 of 17,536
-  Table 2a: St.David's age groups make 8,734 of 8,733
-  Table 2a: St.George's age groups make 6,874 of 6,875
-  Table 2a: St.Patrick's age groups make 15,563 of 15,560
-  Table 2a: boroughofarima's men and women make 33,607 of 33,606
-  Table 2a: couvatabaquitetalparo's men and women make 178,409 of 178,410
-  Table 2a: penaldebe's men and women make 89,391 of 89,392
-  Table 2a: princestown's men and women make 102,374 of 102,375
-  Table 2a: sanjuanlaventille's men and women make 157,257 of 157,258
-  Table 2a: tobago's men and women make 60,875 of 60,874
-  Table 2a: standrew's men and women make 17,535 of 17,536
-  Table 2a: stmary's men and women make 3,298 of 3,297
-tto_census: the municipalities' populations make 1,267,145, Trinidad's is 1,267,144
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1523, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'redatam.sib.org.bz'. (_ssl.c:1016)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 140, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 115, in main
+    portal = session.get(args.url)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 50, in get
+    with self.opener.open(req, timeout=90) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 557, in error
+    result = self._call_chain(*args)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 749, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'redatam.sib.org.bz'. (_ssl.c:1016)>
+page: http://redatam.sib.org.bz/redbin/RpWebStats.exe/Dictionary?BASE=BELIZECENSUS_2010&ITEM=DICALL&lang=eng
+  URLError reaching http://redatam.sib.org.bz/redbin/RpWebStats.exe/Dictionary?BASE=BELIZECENSUS_201: trying again in 10s
+  URLError reaching http://redatam.sib.org.bz/redbin/RpWebStats.exe/Dictionary?BASE=BELIZECENSUS_201: trying again in 20s
+  URLError reaching http://redatam.sib.org.bz/redbin/RpWebStats.exe/Dictionary?BASE=BELIZECENSUS_201: trying again in 40s
