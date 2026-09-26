@@ -1,333 +1,123 @@
-source: https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx
-  69,401 bytes
-  sheets: Table List, PopulationChange, Admin_Area, Population_CTV, Density, Single_Age_Sex, Sex_Ratio, Age_Groups, Languages_Spoken, Ethnicity_by_District, Religion_by_District
-  -- sheet 'Table List'
-    1:  | LIST OF TABLES
-    2:  | Table 1: Population Change: 1960 to 2022
-    3:  | Table 2: Total Population and Change by Major Administrative Areas: 2010 and 2022
-    4:  | Table 3: Population Density by District: 2010 - 2022
-    5:  | Table 4: Population by Single Age and Sex: 2022
-    6:  | Table 5: Population by Major Administrative Area, Sex and Sex Ratio: 2010 and 2022
-    7:  | Table 6: Total Population by District and Five Year Age Groups: 2010 - 2022
-    8:  | Table 7: Population Four Years and Older by Languages Spoken and District: 2022
-    9:  | Table 8: Population by Ethnicity, District and Sex: 2022
-    10:  | Table 9: Population by Religion, District and Sex: 2022
-  -- sheet 'PopulationChange'
-    1:  | Table 1: Population Change: 1960 to 2022
-    2:  | Year | Census Population | Absolute Change | Intercensal Change (%)
-    3:  | 1960 | 90505
-    4:  | 1970 | 119934 | 29429 | 0.325164
-    5:  | 1980 | 145353 | 25419 | 0.211942
-    6:  | 1991 | 185969 | 40616 | 0.27943
-    7:  | 2000 | 248916 | 62947 | 0.338481
-    8:  | 2010 | 322424 | 73507.8 | 0.295312
-    9:  | 2022 | 397483 | 75059.6 | 0.232798
-    10:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Admin_Area'
-    1:  | Table 2: Total Population and Change by Major Administrative Areas: 2010 and 2022
-    2:  | Area | Census 
-2010 | Census 
-2022 | Absolute 
-Change | Percentage
- Change
-    3:  | National | 322424 | 397483 | 75059.6 | 0.232798
-    4:  | Urban | 145796 | 167767 | 21971 | 0.150697
-    5:  | Rural | 176627 | 229716 | 53088.6 | 0.300568
-    6:  | Corozal | 41060.4 | 45310.2 | 4249.8 | 0.103501
-    7:  | Corozal Town | 10287 | 9811.23 | -475.754 | -0.0462482
-    8:  | Corozal Rural | 30773.4 | 35499 | 4725.56 | 0.15356
-    9:  | Orange Walk | 45936 | 54152.2 | 8216.18 | 0.178862
-    10:  | Orange Walk Town | 13700 | 14553.4 | 853.308 | 0.0622851
-    11:  | Orange Walk Rural | 32236.9 | 39598.8 | 7361.88 | 0.228368
-    12:  | Belize | 95286.6 | 113630 | 18343.7 | 0.19251
-    13:  | Belize City | 57163.8 | 63999.2 | 6835.43 | 0.119576
-    14:  | San Pedro Town | 11767.2 | 15456.1 | 3688.86 | 0.313487
-    15:  | Belize Rural | 26355.6 | 34175 | 7819.36 | 0.296687
-    16:  | Cayo | 75034.4 | 99104.9 | 24070.5 | 0.320793
-    17:  | San Ignacio | 10489.7 | 12396 | 1906.22 | 0.181723
-    18:  | Santa Elena | 7388.53 | 8715.16 | 1326.62 | 0.179552
-    19:  | Benque Viejo | 6148.01 | 7005.06 | 857.046 | 0.139402
-    20:  | Belmopan | 13918.7 | 20753.6 | 6834.87 | 0.491056
-    21:  | Cayo Rural | 37089.4 | 50235.1 | 13145.8 | 0.354434
-    22:  | Stann Creek | 34323.6 | 48162.1 | 13838.5 | 0.403176
-    23:  | Dangriga | 9583.03 | 9640.08 | 57.0559 | 0.00595385
-    24:  | Stann Creek Rural | 24740.6 | 38522 | 13781.4 | 0.557036
-    25:  | Toledo | 30782.9 | 37123.9 | 6341.04 | 0.205992
-    26:  | Punta Gorda | 5351.36 | 5437.73 | 86.3613 | 0.0161382
-    27:  | Toledo Rural | 25431.5 | 31686.2 | 6254.67 | 0.245942
-    28:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Population_CTV'
-    0:  | SIMILAR FOR ALL DISTRICTS
-    1:  | Table P1.6: Orange Walk Population by Area, Sex, Number of Households and Average Household Size, 2022
-    2:  | City, Town or Village | Total | Males | Females | Number of Households | Average Household Size
-    3:  | Orange Walk Town
-    4:  | August Pine Ridge
-    5:  | Blue Creek
-    6:  | Carmelita
-    7:  | Chan Chich
-    8:  | Chan Pine Ridge
-    9:  | Douglas
-    10:  | Gallon Jug
-    11:  | Gold Button Ranch
-    12:  | Guinea Grass
-    13:  | Indian Church
-    14:  | Las Milpas
-    15:  | Mameyal
-    16:  | Richmond Hill
-    17:  | San Antonio
-    18:  | San Estevan
-    19:  | San Felipe
-    20:  | San Jose
-    21:  | San Jose Nuevo
-    22:  | San Jose Palmar
-    23:  | San Juan
-    24:  | San Lazaro
-    25:  | San Pablo
-    26:  | San Roman
-    27:  | Santa Cruz
-    28:  | Santa Marta
-    29:  | Shipyard
-    30:  | Sylvestre Camp
-    31:  | Tower Hill
-    32:  | Trial Farm
-    33:  | Trinidad
-    34:  | Wahmil
-    35:  | Yo Creek
-    36:  | Fire Burn
-    37:  | Indian Creek
-    38:  | Indian Hill Estate
-    39:  | San Luis
-    40:  | Yalbac
-    41:  | Cross Creek
-    42:  | San Carlos
-    43:  | New Hope
-    44:  | Petville
-    45:  | Bacadia
-    46:  | Cuatro Leguas
-    47:  | San Lorenzo
-    48:  | Tres Leguas
-    49:  | Honey Camp
-    50:  | Other - Orange Walk
-  -- sheet 'Density'
-    1:  | Table 3: Population Density by District: 2010 - 2022
-    2:  | District | Land Area (sq miles) | Census 2010 |  | Census 2022
-    3:  |  |  | Population | Density | Population | Density
-    4:  | Country Total | 8867 | 322424 | 36.3622 | 397483 | 44.8273
-    5:  | Corozal | 718 | 41060.4 | 57.1872 | 45310.2 | 63.1062
-    6:  | Orange Walk | 1790 | 45936 | 25.6626 | 54152.2 | 30.2526
-    7:  | Belize | 1663 | 95286.6 | 57.298 | 113630 | 68.3285
-    8:  | Cayo | 2006 | 75034.4 | 37.405 | 99104.9 | 49.4042
-    9:  | Stann Creek | 986 | 34323.6 | 34.811 | 48162.1 | 48.8459
-    10:  | Toledo | 1704 | 30782.9 | 18.0651 | 37123.9 | 21.7863
-    11:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Single_Age_Sex'
-    1:  | Table 4: Population by Single Age and Sex: 2022
-    2:  | Age | Total | Male | Female
-    3:  | Total | 397483 | 195695 | 201789
-    4:  | 0 | 7053.62 | 3557.12 | 3496.51
-    5:  | 1 | 6510.91 | 3245.16 | 3265.75
-    6:  | 2 | 7141.33 | 3573.83 | 3567.49
-    7:  | 3 | 7853.25 | 3996.29 | 3856.95
-    8:  | 4 | 7930.85 | 4085.32 | 3845.53
-    9:  | 5 | 7572.09 | 3906.66 | 3665.43
-    10:  | 6 | 7970.19 | 4150.12 | 3820.07
-    11:  | 7 | 7954.91 | 4072.19 | 3882.72
-    12:  | 8 | 8160.25 | 4081.51 | 4078.74
-    13:  | 9 | 7934.39 | 4033.3 | 3901.09
-    14:  | 10 | 8365.44 | 4292.22 | 4073.23
-    15:  | 11 | 8030.85 | 4003.75 | 4027.1
-    16:  | 12 | 8761.87 | 4500.9 | 4260.96
-    17:  | 13 | 8432.39 | 4256.02 | 4176.37
-    18:  | 14 | 8359.54 | 4406.77 | 3952.77
-    19:  | 15 | 8298.64 | 4180.86 | 4117.79
-    20:  | 16 | 7995.33 | 4100.25 | 3895.08
-    21:  | 17 | 7790.98 | 3851.71 | 3939.27
-    22:  | 18 | 8019.3 | 4068.06 | 3951.24
-    23:  | 19 | 7601.83 | 3855.53 | 3746.3
-    24:  | 20 | 7647.28 | 3788.87 | 3858.41
-    25:  | 21 | 7414.68 | 3631.97 | 3782.71
-    26:  | 22 | 7764.14 | 3835.12 | 3929.02
-    27:  | 23 | 6891.61 | 3330.35 | 3561.26
-    28:  | 24 | 6720.41 | 3295.26 | 3425.15
-    29:  | 25 | 6981.79 | 3280.56 | 3701.24
-    30:  | 26 | 6425.81 | 2965.78 | 3460.03
-    31:  | 27 | 6471.8 | 3007.96 | 3463.84
-    32:  | 28 | 6330.2 | 2927.92 | 3402.28
-    33:  | 29 | 6281.92 | 3011.16 | 3270.76
-    34:  | 30 | 6600.27 | 3039.92 | 3560.35
-    35:  | 31 | 5740.62 | 2620.88 | 3119.74
-    36:  | 32 | 6158.78 | 2881.4 | 3277.39
-    37:  | 33 | 5901.81 | 2745.25 | 3156.56
-    38:  | 34 | 5788.57 | 2747.25 | 3041.31
-    39:  | 35 | 6073 | 2764.02 | 3308.98
-    40:  | 36 | 5637.81 | 2687.17 | 2950.64
-    41:  | 37 | 5201.44 | 2485.82 | 2715.62
-    42:  | 38 | 5486.44 | 2614.38 | 2872.06
-    43:  | 39 | 5329.97 | 2572.86 | 2757.11
-    44:  | 40 | 5534.41 | 2665.99 | 2868.42
-    45:  | 41 | 4758.56 | 2235.87 | 2522.69
-    46:  | 42 | 4900.39 | 2379.71 | 2520.68
-    47:  | 43 | 4352.78 | 2049.69 | 2303.09
-    48:  | 44 | 4235.13 | 2035.2 | 2199.92
-    49:  | 45 | 4763.14 | 2318.34 | 2444.8
-    50:  | 46 | 4042.7 | 1898.22 | 2144.47
-    51:  | 47 | 4042.93 | 2003.3 | 2039.63
-    52:  | 48 | 3875.21 | 1899.99 | 1975.22
-    53:  | 49 | 3782.59 | 1826.45 | 1956.14
-    54:  | 50 | 4652.44 | 2145.66 | 2506.78
-    55:  | 51 | 3686.87 | 1753.42 | 1933.45
-    56:  | 52 | 3614.21 | 1671.13 | 1943.08
-    57:  | 53 | 3397.01 | 1613.32 | 1783.69
-    58:  | 54 | 3331.16 | 1587.89 | 1743.27
-    59:  | 55 | 3297.48 | 1641.18 | 1656.3
-    ...
-  -- sheet 'Sex_Ratio'
-    1:  | Table 5: Population by Major Administrative Area, Sex and Sex Ratio: 2010 and 2022
-    2:  |  | Census 2010 |  |  |  | Census 2022 |  |  | Sex Ratios
-    3:  |  | Total | Males | Females | Don't Know/
-Not Stated | Total | Males | Females | 2010 | 2022
-    4:  | National | 322424 | 161207 | 161204 | 12.3263 | 397483 | 195695 | 201789 | 100.002 | 96.9799
-    5:  | Urban | 145796 | 71067.8 | 74716.3 | 12.3263 | 167767 | 80562.3 | 87205.1 | 95.1169 | 92.3825
-    6:  | Rural | 176627 | 90139.3 | 86488.1 | 0 | 229716 | 115132 | 114584 | 104.222 | 100.479
-    7:  | Corozal | 41060.4 | 20520.6 | 20539.8 | 0 | 45310.2 | 22231.3 | 23078.9 | 99.9062 | 96.3274
-    8:  | Corozal Town | 10287 | 4931.77 | 5355.22 | 0 | 9811.23 | 4612.69 | 5198.55 | 92.0927 | 88.7304
-    9:  | Corozal Rural | 30773.4 | 15588.8 | 15184.6 | 0 | 35499 | 17618.6 | 17880.4 | 102.662 | 98.5362
-    10:  | Orange Walk | 45936 | 23208.9 | 22727.1 | 0 | 54152.2 | 26899 | 27253.1 | 102.12 | 98.7006
-    11:  | Orange Walk Town | 13700 | 6726.24 | 6973.8 | 0 | 14553.4 | 7055.01 | 7498.34 | 96.4502 | 94.0877
-    12:  | Orange Walk Rural | 32236.9 | 16483.6 | 15753.3 | 0 | 39598.8 | 19844 | 19754.8 | 104.636 | 100.451
-    13:  | Belize | 95286.6 | 46863.7 | 48410.5 | 12.3263 | 113630 | 55275.7 | 58354.5 | 96.8048 | 94.724
-    14:  | Belize City | 57163.8 | 27646.6 | 29504.8 | 12.3263 | 63999.2 | 30216 | 33783.2 | 93.702 | 89.4411
-    15:  | San Pedro Town | 11767.2 | 6051.94 | 5715.27 | 0 | 15456.1 | 8061.3 | 7394.77 | 105.891 | 109.014
-    16:  | Belize Rural | 26355.6 | 13165.2 | 13190.4 | 0 | 34175 | 16998.4 | 17176.6 | 99.8085 | 98.9626
-    17:  | Cayo | 75034.4 | 37440.4 | 37594 | 0 | 99104.9 | 48809 | 50295.9 | 99.5915 | 97.0437
-    18:  | San Ignacio | 10489.7 | 5129.36 | 5360.37 | 0 | 12396 | 5976.92 | 6419.03 | 95.6904 | 93.1125
-    19:  | Santa Elena | 7388.53 | 3621.57 | 3766.97 | 0 | 8715.16 | 4202 | 4513.16 | 96.1401 | 93.1054
-    20:  | Benque Viejo | 6148.01 | 3057.11 | 3090.9 | 0 | 7005.06 | 3443.54 | 3561.52 | 98.9067 | 96.6873
-    21:  | Belmopan | 13918.7 | 6770.22 | 7148.5 | 0 | 20753.6 | 9893.15 | 10860.4 | 94.7082 | 91.0936
-    22:  | Cayo Rural | 37089.4 | 18862.1 | 18227.2 | 0 | 50235.1 | 25293.4 | 24941.7 | 103.483 | 101.41
-    23:  | Stann Creek | 34323.6 | 17760 | 16563.7 | 0 | 48162.1 | 24198.1 | 23964 | 107.222 | 100.977
-    24:  | Dangriga | 9583.03 | 4614.97 | 4968.05 | 0 | 9640.08 | 4490.85 | 5149.23 | 92.893 | 87.2141
-    25:  | Stann Creek Rural | 24740.6 | 13145 | 11595.6 | 0 | 38522 | 19707.2 | 18814.8 | 113.362 | 104.743
-    26:  | Toledo | 30782.9 | 15413.6 | 15369.3 | 0 | 37123.9 | 18281.5 | 18842.4 | 100.288 | 97.0236
-    27:  | Punta Gorda | 5351.36 | 2518.99 | 2832.37 | 0 | 5437.73 | 2610.8 | 2826.92 | 88.9358 | 92.3549
-    28:  | Toledo Rural | 25431.5 | 12894.6 | 12536.9 | 0 | 31686.2 | 15670.7 | 16015.4 | 102.853 | 97.8477
-    29:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Age_Groups'
-    1:  | Table 6: Total Population by District and Five Year Age Groups: 2010 - 2022
-    2:  | District | Age Group | Census 
-2010 | Census 
-2022 | Absolute 
-Change | Percentage 
-Change
-    3:  | National | Total | 322424 | 397483 | 75059.6 | 0.232798
-    4:  |  | Less than 1 | 7405.99 | 7053.62 | -352.371 | -0.0475792
-    5:  |  | 1-4 | 30413.2 | 29436.3 | -976.851 | -0.0321193
-    6:  |  | 5-9 | 39231.6 | 39591.8 | 360.194 | 0.0091812
-    7:  |  | 10-14 | 37686.9 | 41950.1 | 4263.16 | 0.11312
-    8:  |  | 15-19 | 34646.4 | 39706.1 | 5059.74 | 0.14604
-    9:  |  | 20-24 | 30543.6 | 36438.1 | 5894.54 | 0.192988
-    10:  |  | 25-29 | 26506.6 | 32491.5 | 5984.92 | 0.22579
-    11:  |  | 30-34 | 22837.9 | 30190 | 7352.18 | 0.32193
-    12:  |  | 35-39 | 20676.5 | 27728.7 | 7052.2 | 0.341074
-    13:  |  | 40-44 | 17344.4 | 23781.3 | 6436.9 | 0.371123
-    14:  |  | 45-49 | 14954.8 | 20506.6 | 5551.8 | 0.371239
-    15:  |  | 50-54 | 11719 | 18681.7 | 6962.68 | 0.594135
-    16:  |  | 55-59 | 8636.18 | 15098.2 | 6462 | 0.748247
-    17:  |  | 60-64 | 6222.15 | 12305.7 | 6083.57 | 0.977728
-    18:  |  | 65-69 | 4396.04 | 8645.92 | 4249.88 | 0.96675
-    19:  |  | 70-74 | 3492.85 | 6160.58 | 2667.73 | 0.763769
-    20:  |  | 75-79 | 2563.04 | 3530.94 | 967.908 | 0.377641
-    21:  |  | 80-84 | 1729.93 | 2314.77 | 584.841 | 0.338072
-    22:  |  | 85+ | 1401.71 | 1871.49 | 469.78 | 0.335148
-    23:  | Corozal | Total | 41060.4 | 45310.2 | 4249.8 | 0.103501
-    24:  |  | Less than 1 | 999.332 | 787.236 | -212.097 | -0.212238
-    25:  |  | 1-4 | 4005.8 | 3242.74 | -763.053 | -0.190487
-    26:  |  | 5-9 | 4662.02 | 4311.94 | -350.083 | -0.0750926
-    27:  |  | 10-14 | 4290.55 | 4838.39 | 547.833 | 0.127683
-    28:  |  | 15-19 | 4517.4 | 4482.69 | -34.7092 | -0.00768344
-    29:  |  | 20-24 | 3863.8 | 3634.38 | -229.414 | -0.0593752
-    30:  |  | 25-29 | 3255.3 | 3368.34 | 113.037 | 0.0347239
-    31:  |  | 30-34 | 2819.05 | 3412.75 | 593.697 | 0.210602
-    32:  |  | 35-39 | 2720.16 | 3060.61 | 340.457 | 0.125161
-    33:  |  | 40-44 | 2220.29 | 2716.17 | 495.876 | 0.223338
-    34:  |  | 45-49 | 2015.05 | 2508.72 | 493.667 | 0.24499
-    35:  |  | 50-54 | 1602.31 | 2288.54 | 686.236 | 0.428279
-    36:  |  | 55-59 | 1198.72 | 1917.86 | 719.138 | 0.59992
-    37:  |  | 60-64 | 915.964 | 1663.52 | 747.558 | 0.816143
-    38:  |  | 65-69 | 678.273 | 1167.77 | 489.501 | 0.721688
-    39:  |  | 70-74 | 538.069 | 869.063 | 330.994 | 0.615153
-    40:  |  | 75-79 | 320.009 | 461.337 | 141.327 | 0.441634
-    41:  |  | 80-84 | 236.4 | 363.628 | 127.227 | 0.538186
-    42:  |  | 85+ | 201.912 | 214.52 | 12.608 | 0.0624431
-    43:  | Orange Walk | Total | 45936 | 54152.2 | 8216.18 | 0.178862
-    44:  |  | Less than 1 | 1109.93 | 987.341 | -122.591 | -0.110449
-    45:  |  | 1-4 | 4526.81 | 3950.94 | -575.874 | -0.127214
-    46:  |  | 5-9 | 5417.06 | 5403.53 | -13.5259 | -0.00249691
-    47:  |  | 10-14 | 4949.37 | 5682.62 | 733.253 | 0.148151
-    48:  |  | 15-19 | 4952.56 | 5419.44 | 466.886 | 0.0942717
-    49:  |  | 20-24 | 4541.22 | 4673.36 | 132.133 | 0.0290963
-    50:  |  | 25-29 | 3817.48 | 4087.75 | 270.265 | 0.0707968
-    51:  |  | 30-34 | 3235.73 | 4361.84 | 1126.1 | 0.348021
-    52:  |  | 35-39 | 2960.16 | 3894.59 | 934.431 | 0.315669
-    53:  |  | 40-44 | 2549.72 | 3198.83 | 649.109 | 0.25458
-    54:  |  | 45-49 | 2142.53 | 2851.39 | 708.867 | 0.330856
-    55:  |  | 50-54 | 1649.68 | 2604.49 | 954.811 | 0.578786
-    56:  |  | 55-59 | 1253.44 | 2135.15 | 881.716 | 0.703438
-    57:  |  | 60-64 | 935.941 | 1738.83 | 802.889 | 0.857842
-    58:  |  | 65-69 | 655.42 | 1186.68 | 531.261 | 0.810566
-    59:  |  | 70-74 | 494.944 | 898.288 | 403.344 | 0.814929
-    ...
-  -- sheet 'Languages_Spoken'
-    1:  | Table 7: Population Four Years and Older by Languages Spoken and District: 2022
-    2:  | Language | Total |  |  | Corozal |  |  | Orange Walk |  |  | Belize |  |  | Cayo |  |  | Stann Creek |  |  | Toledo
-    3:  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female
-    4:  | Speaks English | 278390 | 138462 | 139928 | 28425.6 | 14398.7 | 14026.9 | 36087 | 18403.3 | 17683.6 | 91357.1 | 44406.3 | 46950.7 | 73103 | 36426.3 | 36676.7 | 28670.7 | 14291.4 | 14379.3 | 20746.7 | 10536.4 | 10210.3
-    5:  | Speaks Spanish | 199393 | 99193.6 | 100199 | 34742.2 | 17154.9 | 17587.3 | 41996.7 | 21178.9 | 20817.8 | 34288.8 | 16831.7 | 17457 | 63882.3 | 31304.7 | 32577.6 | 16272 | 8318.13 | 7953.91 | 8211.01 | 4405.21 | 3805.8
-    6:  | Speaks Creole | 180792 | 88790.2 | 92002.3 | 8052.33 | 4004.16 | 4048.17 | 8588.51 | 4403.73 | 4184.78 | 77602.1 | 37380.1 | 40221.9 | 39009.4 | 19329.3 | 19680.1 | 31991.6 | 15908.3 | 16083.3 | 15548.7 | 7764.62 | 7784.05
-    7:  | Speaks Maya Ketchi | 23314.9 | 11331.7 | 11983.2 | 58.6389 | 38.3974 | 20.2415 | 113.671 | 63.4876 | 50.1838 | 613.111 | 345.143 | 267.968 | 2203.09 | 1003.56 | 1199.52 | 3652.9 | 1798.43 | 1854.46 | 16673.5 | 8082.68 | 8590.86
-    8:  | Speaks Maya Mopan | 14479.2 | 7179.06 | 7300.17 | 83.5098 | 44.8979 | 38.6119 | 68.241 | 37.4238 | 30.8172 | 342.167 | 158.57 | 183.597 | 1814.68 | 902.295 | 912.381 | 6714.91 | 3458.07 | 3256.84 | 5455.73 | 2577.8 | 2877.93
-    9:  | Speaks German | 11293.9 | 5743.89 | 5549.96 | 3464.11 | 1729.77 | 1734.34 | 3377.61 | 1713.58 | 1664.03 | 322.875 | 163.805 | 159.07 | 3472.75 | 1801.18 | 1671.57 | 82.3738 | 39.6967 | 42.677 | 574.13 | 295.858 | 278.272
-    10:  | Speaks Garifuna | 7480.67 | 3414.28 | 4066.39 | 136.069 | 69.7982 | 66.2704 | 157.181 | 89.9639 | 67.2169 | 1693.43 | 778.699 | 914.736 | 538.538 | 273.635 | 264.902 | 4381.92 | 1942.62 | 2439.3 | 573.53 | 259.563 | 313.966
-    11:  | Speaks Other | 2474.51 | 1278.55 | 1195.97 | 155.297 | 82.5847 | 72.712 | 1675.83 | 837.637 | 838.194 | 330.24 | 190.478 | 139.762 | 248.188 | 132.165 | 116.023 | 47.3265 | 26.6634 | 20.6631 | 17.6293 | <10 | <10
-    12:  | Speaks Maya Yucatec | 1821.71 | 1060.53 | 761.184 | 418.024 | 280.349 | 137.675 | 171.11 | 114.229 | 56.881 | 57.0007 | 40.1348 | 16.8659 | 1091.56 | 597.089 | 494.475 | 32.3853 | 10.3315 | 22.0537 | 51.6299 | 18.3967 | 33.2332
-    13:  | Speaks Chinese | 1419.51 | 745.962 | 673.552 | 215.302 | 108.158 | 107.144 | 222.739 | 126.726 | 96.0131 | 409.297 | 205.349 | 203.948 | 378.42 | 202.471 | 175.949 | 148.179 | 76.9304 | 71.2484 | 45.5768 | 26.3271 | 19.2497
-    14:  | Cannot Speak | 715.568 | 433.155 | 282.413 | 100.194 | 61.5822 | 38.6119 | 120.355 | 68.0733 | 52.2818 | 193.553 | 132.245 | 61.3071 | 153.782 | 88.0912 | 65.6904 | 76.8906 | 48.757 | 28.1337 | 70.7939 | 34.4056 | 36.3883
-    15:  | Speaks Hindi | 541.847 | 328.825 | 213.022 | 121.276 | 75.1885 | 46.0877 | 73.3432 | 43.6407 | 29.7025 | 249.905 | 149.162 | 100.743 | 61.0621 | 37.6272 | 23.4349 | 32.7434 | 20.862 | 11.8814 | <10 | <10 | <10
-    16:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Ethnicity_by_District'
-    1:  | Table 8: Population by Ethnicity, District and Sex: 2022
-    2:  | Ethnicity | Total |  |  | Corozal |  |  | Orange Walk |  |  | Belize |  |  | Cayo |  |  | Stann Creek |  |  | Toledo
-    3:  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female
-    4:  | Total | 397483 | 195695 | 201789 | 45310.2 | 22231.3 | 23078.9 | 54152.2 | 26899 | 27253.1 | 113630 | 55275.7 | 58354.5 | 99104.9 | 48809 | 50295.9 | 48162.1 | 24198.1 | 23964 | 37123.9 | 18281.5 | 18842.4
-    5:  | Mestizo/Hispanic/Latino | 205646 | 100944 | 104702 | 34984.9 | 16989.6 | 17995.4 | 43236 | 21286.2 | 21949.8 | 37503.4 | 18220.4 | 19283 | 67074.6 | 32826.7 | 34247.9 | 15732.7 | 8059.09 | 7673.61 | 7113.97 | 3561.87 | 3552.09
-    6:  | Creole | 100111 | 49147.6 | 50963.6 | 3339.91 | 1698.34 | 1641.57 | 3411.8 | 1761.51 | 1650.29 | 64815.9 | 31346.2 | 33469.8 | 16203.7 | 8014.37 | 8189.34 | 10499.8 | 5371.47 | 5128.36 | 1840.01 | 955.766 | 884.248
-    7:  | Maya Ketchi | 26230.4 | 12823.6 | 13406.7 | 126.108 | 71.8249 | 54.2828 | 187.989 | 99.0853 | 88.9035 | 959.178 | 511.051 | 448.127 | 2574.05 | 1228.97 | 1345.08 | 4031.47 | 1957.46 | 2074.01 | 18351.6 | 8955.22 | 9396.35
-    8:  | Garifuna | 15845.4 | 7544.69 | 8300.71 | 274.807 | 150.852 | 123.955 | 311.434 | 175.523 | 135.911 | 3765.69 | 1804.28 | 1961.4 | 1447.61 | 711.983 | 735.629 | 8530.45 | 3978.46 | 4551.99 | 1515.41 | 723.585 | 791.824
-    9:  | Mennonite | 15248.7 | 7702.32 | 7546.36 | 4009.45 | 1982.3 | 2027.14 | 5831.4 | 2941.67 | 2889.74 | 384.995 | 184.106 | 200.889 | 4126.3 | 2143.67 | 1982.63 | 168.006 | 83.9634 | 84.0429 | 728.529 | 366.609 | 361.919
-    10:  | Maya Mopan | 15932 | 7875.03 | 8057.01 | 103.566 | 55.7545 | 47.8118 | 104.836 | 56.8675 | 47.968 | 517.2 | 206.456 | 310.744 | 2426.87 | 1172.33 | 1254.54 | 7097.25 | 3672.84 | 3424.41 | 5682.31 | 2710.78 | 2971.53
-    11:  | East Indian | 6111.4 | 2991.79 | 3119.6 | 943.705 | 461.58 | 482.125 | 162.931 | 78.4862 | 84.4448 | 1715.3 | 786.673 | 928.628 | 899.173 | 422.108 | 477.065 | 871.82 | 448.943 | 422.877 | 1518.47 | 794.002 | 724.466
-    12:  | Chinese | 1343.99 | 733.673 | 610.319 | 236.431 | 115.486 | 120.944 | 169.823 | 101.324 | 68.4993 | 378.622 | 214.222 | 164.4 | 340.016 | 183.473 | 156.543 | 155.809 | 82.9706 | 72.838 | 63.2919 | 36.1974 | 27.0945
-    13:  | Caucasian/White | 2905.33 | 1540.48 | 1364.85 | 435.89 | 235.716 | 200.174 | 89.6421 | 43.3053 | 46.3368 | 886.6 | 468.275 | 418.325 | 912.401 | 496.925 | 415.476 | 448.824 | 216.365 | 232.459 | 131.975 | 79.8968 | 52.0778
-    14:  | Maya Yucatec | 2160.17 | 1164.46 | 995.706 | 268.938 | 156.689 | 112.249 | 108.528 | 62.6584 | 45.8701 | 90.4426 | 64.6687 | 25.7739 | 1660.11 | 868.428 | 791.678 | 25.0738 | <10 | 16.2125 | <10 | <10 | <10
-    15:  | Indian | 600.963 | 361.689 | 239.274 | 116.647 | 68.2592 | 48.3877 | 50.4285 | 31.5422 | 18.8864 | 274.417 | 175.5 | 98.9174 | 81.5374 | 46.7021 | 34.8353 | 72.838 | 35.7634 | 37.0745 | <10 | <10 | <10
-    16:  | Other | 2262.78 | 1262.17 | 1000.62 | 145.912 | 86.7557 | 59.156 | 230.683 | 128.774 | 101.908 | 804.715 | 472.94 | 331.775 | 761.372 | 396.874 | 364.498 | 251.93 | 135.701 | 116.229 | 68.1725 | 41.1208 | 27.0516
-    17:  | Don't Know/Not Stated | 3085.54 | 1603.3 | 1482.24 | 323.906 | 158.152 | 165.754 | 256.656 | 132.091 | 124.565 | 1533.71 | 820.935 | 712.772 | 597.168 | 296.519 | 300.649 | 276.091 | 146.191 | 129.899 | 98.0169 | 49.4135 | 48.6034
-    18:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
-  -- sheet 'Religion_by_District'
-    1:  | Table 9: Population by Religion, District and Sex: 2022
-    2:  | Religion | Total |  |  | Corozal |  |  | Orange Walk |  |  | Belize |  |  | Cayo |  |  | Stann Creek |  |  | Toledo
-    3:  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female
-    4:  | Total | 397483 | 195695 | 201789 | 45310.2 | 22231.3 | 23078.9 | 54152.2 | 26899 | 27253.1 | 113630 | 55275.7 | 58354.5 | 99104.9 | 48809 | 50295.9 | 48162.1 | 24198.1 | 23964 | 37123.9 | 18281.5 | 18842.4
-    5:  | Roman Catholic | 126596 | 60245.3 | 66351.1 | 17153.7 | 8234.45 | 8919.2 | 20181.9 | 9804.43 | 10377.5 | 37960.9 | 17828.3 | 20132.7 | 26950.1 | 12835.3 | 14114.8 | 12565.4 | 5889.47 | 6675.96 | 11784.4 | 5653.33 | 6131.05
-    6:  | Pentecostal | 36459.9 | 17088.5 | 19371.4 | 2410.26 | 1155.96 | 1254.31 | 4067.58 | 1827.23 | 2240.35 | 6219.28 | 2858.6 | 3360.67 | 14770.5 | 6900.64 | 7869.88 | 4036.4 | 1937.63 | 2098.77 | 4955.88 | 2408.44 | 2547.45
-    7:  | Seventh Day Adventist | 18641.6 | 8650.05 | 9991.52 | 4726.74 | 2172.3 | 2554.43 | 2171.48 | 1049.22 | 1122.26 | 5832.39 | 2741.93 | 3090.46 | 4016.59 | 1802.43 | 2214.16 | 1310.64 | 602.37 | 708.268 | 583.731 | 281.793 | 301.938
-    8:  | Anglican | 15943.1 | 7471.16 | 8471.92 | 645.473 | 323.38 | 322.093 | 1072.31 | 505.332 | 566.98 | 9797.67 | 4602.1 | 5195.57 | 2378.09 | 1095.69 | 1282.4 | 1572.94 | 737.476 | 835.467 | 476.588 | 207.182 | 269.406
-    9:  | Mennonite | 15440.5 | 7733.59 | 7706.9 | 4051.65 | 2002.36 | 2049.28 | 5350.13 | 2676.21 | 2673.92 | 571.637 | 273.008 | 298.629 | 4192.44 | 2141.47 | 2050.97 | 223.916 | 110.507 | 113.408 | 1050.71 | 530.025 | 520.689
-    10:  | Baptist | 14108.7 | 6595.6 | 7513.06 | 801.611 | 356.122 | 445.489 | 465.964 | 226.926 | 239.038 | 4057.56 | 1836.7 | 2220.87 | 1914.56 | 872.691 | 1041.87 | 2399.85 | 1175.65 | 1224.2 | 4469.11 | 2127.52 | 2341.59
-    11:  | Methodist | 6623.33 | 2993.05 | 3630.28 | 376.502 | 162.323 | 214.179 | 118.348 | 55.7799 | 62.5678 | 4695.46 | 2120.95 | 2574.51 | 447.742 | 201.93 | 245.813 | 513.405 | 216.17 | 297.235 | 471.879 | 235.897 | 235.982
-    12:  | Nazarene | 6568.06 | 3021.95 | 3546.12 | 592.057 | 278.091 | 313.966 | 76.3882 | 42.7344 | 33.6538 | 1271.69 | 570.417 | 701.272 | 1920.06 | 890.27 | 1029.79 | 931.505 | 425.976 | 505.529 | 1776.37 | 814.459 | 961.909
-    13:  | Jehovah's Witness | 4477.58 | 1986.77 | 2490.81 | 627.364 | 271.132 | 356.231 | 762.441 | 328.848 | 433.593 | 1195.24 | 535.457 | 659.786 | 1130.8 | 514.917 | 615.882 | 485.741 | 211.161 | 274.58 | 275.993 | 125.259 | 150.734
-    14:  | Other | 25116.9 | 11978 | 13139 | 3266.47 | 1538.08 | 1728.38 | 6438.32 | 3057.85 | 3380.47 | 5095.4 | 2406.71 | 2688.69 | 5925.72 | 2808.12 | 3117.61 | 1283.77 | 633.164 | 650.608 | 3107.26 | 1534.06 | 1573.2
-    15:  | None | 123373 | 65846.8 | 57525.9 | 10319.5 | 5570.59 | 4748.87 | 13110.8 | 7151.89 | 5958.94 | 35039.6 | 18536.7 | 16502.9 | 34432.5 | 18231.4 | 16201 | 22428 | 12057.7 | 10370.3 | 8042.33 | 4298.52 | 3743.81
-    16:  | Don't Know/Not Stated | 4134.76 | 2083.92 | 2050.84 | 338.992 | 166.523 | 172.469 | 336.465 | 172.546 | 163.919 | 1893.31 | 964.861 | 928.452 | 1025.8 | 514.098 | 511.699 | 410.52 | 200.829 | 209.691 | 129.673 | 65.0603 | 64.6123
-    17:  | Source: Statistical Institute of Belize. 2022 Population and Housing Census.
+  Base: 21711 rows; columns: ['Año', 'Territorios', 'Provincias', 'Municipios', 'Edades', 'Edad repro-ductiva', 'Población total', 'Hombres', 'Mujeres', 'Urbana', 'Rural', '% Población de 0 a 14 años', '% Población de 15 a 59 años', '% Población de 60 años y más', 'índice de mascu-linidad (‰)', 'Grado de urbani-zación (%)', 'TMAC (‰)', 'Tasa bruta de natalidad (‰)', 'Tasa bruta de mortalidad (‰)', 'Tasa de mortalidad infantil (‰)', 'Tasa de crecimiento natural (‰)', 'Tasa del saldo migratorio interno (‰)', 'Tasa del saldo migratorio externo (‰)', 'Tasa del saldo migratorio total (‰)', 'Índice de enveje-cimiento (‰)', 'Relación de depen-dencia (‰)', 'Relación de depen-dencia de jóvenes (‰)', 'Relación de depen-dencia de personas mayores (‰)', 'Tasa Global de Fecundidad  (Hijos por mujer)', 'Tasa Bruta de Reproducción  (Hijas por mujer)', 'Pira_hom', 'Pira_muj', 'Tasa especifica de fecundidad']
+  Año: 5 values: [('2019', 4342), ('2020', 4342), ('2021', 4342), ('2022', 4342), ('2023', 4342)]
+  Territorios: 2 values: [('MUNICIPIOS', 20875), ('Municipios', 835)]
+  Edades: 19 values: [('0 a 4 años', 835), ('10 a 14 años', 835), ('15 a 19 años', 835), ('20 a 24 años', 835), ('25 a 29 años', 835), ('30 a 34 años', 835), ('35 a 39 años', 835), ('40 a 44 años', 835), ('45 a 49 años', 835), ('5 a 9 años', 835), ('50 a 54 años', 835), ('55 a 59 años', 835), ('60 a 64 años', 835), ('65 a 69 años', 835), ('70 a 74 años', 835), ('75 a 79 años', 835), ('80 a 84 años', 835), ('85 años y más', 835), ('None', 6680)]
+  Edad repro-ductiva: 8 values: [('15 a 19 años', 835), ('20 a 24 años', 835), ('25 a 29 años', 835), ('30 a 34 años', 835), ('35 a 39 años', 835), ('40 a 44 años', 835), ('45 a 49 años', 835), ('None', 15865)]
+  Provincias: [('21_Pinar del Río', 1430), ('22_Artemisa', 1430), ('23_La Habana', 1950), ('24_ Mayabeque', 1430), ('25_Matanzas', 1690), ('26_Villa Clara', 1690), ('27_Cienfuegos', 1040), ('28_Sancti Spíritus', 1040), ('29_Ciego de Ávila', 1300), ('30_Camagüey', 1690), ('31_Las Tunas', 1040), ('32_Holguín', 1820), ('33_Granma', 1690), ('34_Santiago de Cuba', 1170), ('35_Guantánamo', 1300)]
+  Municipios: 167: ['2101 Sandino', '2102 Mantua', '2103 Minas de Matahambre', '2104 Viñales', '2105 La Palma', '2106 Los Palacios', '2107 Consolación del Sur', '2108 Pinar del Río', '2109 San Luís', '2110 San Juan y Martínez', '2111 Guane', '2201 Bahía Honda', '2202 Mariel', '2203 Guanajay', '2204 Caimito', '2205 Bauta', '2206 San Antonio de los Baños', '2207 Güira de Melena', '2208 Alquizar', '2209 Artemisa', '2210 Candelaria', '2211 San Cristóbal', '2301 Playa', '2302 Plaza de la Revolución', '2303 Centro Habana', '2304 Habana Vieja', '2305 Regla', '2306 Habana del Este', '2307 Guanabacoa', '2308 San Miguel del Padrón', '2309 Diez de Octubre', '2310 Cerro', '2311 Marianao', '2312 La Lisa', '2313 Boyeros', '2314 Arroyo Naranjo', '2315 Cotorro', '2401 Bejucal', '2402 San José de las Lajas', '2403 Jaruco', '2404 Santa Cruz del Norte', '2405 Madruga', '2406 Nueva Paz', '2407 Güines', '2408 Alquizar', '2409 Melena del Sur', '2410 Batabano', '2411 Quivicán', '2501 Matanzas', '2502 Cárdenas', '2503 Martí', '2504 Colón', '2505 Perico', '2506 Jovellanos', '2507 Pedro Betancourt', '2508 Limonar', '2509 Unión de Reyes', '2510 Ciénaga de Zapata', '2511 Jagüey Grande', '2512 Calimete', '2513 Los Arabos', '2601 Corralillo', '2602 Quemado de Güines', '2603 Sagua la Grande', '2604 Encrucijada', '2605 Camajuaní', '2606 Caibarien', '2607 Remedios', '2608 Placetas', '2609 Santa Clara', '2610 Cifuentes', '2611 Santo Domingo', '2612 Ranchuelo', '2613 Manicaragua', '2701 Aguada de Pasajeros', '2702 Rodas', '2703 Palmira', '2704 Lajas', '2705 Cruces', '2706 Cumanayagua', '2707 Cienfuegos', '2708 Abreus', '2801 Yaguajay', '2802 Jatibonico', '2803 Taguasco', '2804 Cabaiguan', '2805 Fomento', '2806 Trinidad', '2807 Sancti Spíritus', '2808 La Sierpe', '2901 Chambas', '2902 Moron', '2903 Bolivia', '2904 Primero de Enero', '2905 Ciro Redondo', '2906 Florencia', '2907 Majagua', '2908 Ciego de Ávila', '2909 Venezuela', '2910 Baragua', '3001 Carlos Manuel de Céspedes', '3002 Esmeralda', '3003 Sierra de Cubitas', '3004 Minas', '3005 Nuevitas', '3006 Guaimaro', '3007 Sibanicú', '3008 Camagüey', '3009 Florida', '3010 Vertientes', '3011 Jimaguayú', '3012 Najasa', '3013 Santa Cruz del Sur', '3101 Manatí', '3102 Puerto Padre', '3103 Jesus Menendez', '3104 Majibacoa', '3105 Las Tunas', '3106 Jobabo', '3107 Colombia', '3108 Amancio', '3201 Gibara', '3202 Rafael Freyre', '3203 Banes', '3204 Antilla', '3205 Baguanos', '3206 Holguín', '3207 Calixto García', '3208 Cacocum', '3209 Urbano Noris', '3210 Cueto', '3211 Mayarí', '3212 Frank Pais', '3213 Sagua de Tanamo', '3214 Moa', '3301 Río Cauto', '3302 Cauto Cristo', '3303 Jiguaní', '3304 Bayamo', '3305 Yara', '3306 Manzanillo', '3307 Campechuela', '3308 Media Luna', '3309 Niquero', '3310 Pilón', '3311 Bartolome Maso', '3312 Buey Arriba', '3313 Guisa', '3401 Contramaestre', '3402 Mella', '3403 San Luis', '3404 Segundo Frente', '3405 Songo - La Maya', '3406 Santiago de Cuba', '3407 Palma Soriano', '3408 Tercer Frente', '3409 Guamá', '3501 El Salvador', '3502 Manuel Tames', '3503 Yateras', '3504 Baracoa', '3505 Maisí', '3506 Imias', '3507 San Antonio del Sur', '3508 Caimanera', '3509 Guantánamo', '3510 Niceto Pérez']
+  ['2023', 'Municipios', '21_Pinar del Río', '2101 Sandino', None, None, 32479, 16859, 15620, 19935, 12544, 14.74183318451923]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '0 a 4 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '5 a 9 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '10 a 14 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '15 a 19 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '20 a 24 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '25 a 29 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '30 a 34 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '35 a 39 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '40 a 44 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '45 a 49 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '50 a 54 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '55 a 59 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '60 a 64 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '65 a 69 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '70 a 74 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '75 a 79 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '80 a 84 años', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', '85 años y más', None, None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '15 a 19 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '20 a 24 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '25 a 29 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '30 a 34 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '35 a 39 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '40 a 44 años', None, None, None, None, None, None]
+  ['2023', 'MUNICIPIOS', '21_Pinar del Río', '2101 Sandino', None, '45 a 49 años', None, None, None, None, None, None]
+  ['2019', 'Municipios', '21_Pinar del Río', '2101 Sandino', None, None, 36105, 18827, 17278, 22749]
+  ['2019', 'Municipios', '21_Pinar del Río', '2102 Mantua', None, None, 23706, 12746, 10960, 13890]
+  ['2019', 'Municipios', '21_Pinar del Río', '2103 Minas de Matahambre', None, None, 31609, 16390, 15219, 20776]
+  ['2019', 'Municipios', '21_Pinar del Río', '2104 Viñales', None, None, 29028, 14799, 14229, 17589]
+  ['2019', 'Municipios', '21_Pinar del Río', '2105 La Palma', None, None, 33915, 17350, 16565, 16833]
+  ['2019', 'Municipios', '21_Pinar del Río', '2106 Los Palacios', None, None, 38351, 19522, 18829, 28672]
+  ['2019', 'Municipios', '21_Pinar del Río', '2107 Consolación del Sur', None, None, 88415, 44778, 43637, 59045]
+  ['2019', 'Municipios', '21_Pinar del Río', '2108 Pinar del Río', None, None, 192776, 94501, 98275, 158105]
+  ['2019', 'Municipios', '21_Pinar del Río', '2109 San Luís', None, None, 31741, 16557, 15184, 9638]
+  ['2019', 'Municipios', '21_Pinar del Río', '2110 San Juan y Martínez', None, None, 43074, 21973, 21101, 16715]
+  ['2019', 'Municipios', '21_Pinar del Río', '2111 Guane', None, None, 35659, 18564, 17095, 19910]
+  ['2019', 'Municipios', '22_Artemisa', '2201 Bahía Honda', None, None, 43024, 22406, 20618, 28161]
+  ['2019', 'Municipios', '22_Artemisa', '2202 Mariel', None, None, 44956, 22541, 22415, 35116]
+  ['2019', 'Municipios', '22_Artemisa', '2203 Guanajay', None, None, 28156, 13855, 14301, 22930]
+  ['2019', 'Municipios', '22_Artemisa', '2204 Caimito', None, None, 42346, 21304, 21042, 26457]
+  ['2019', 'Municipios', '22_Artemisa', '2205 Bauta', None, None, 51135, 25367, 25768, 39626]
+  ['2019', 'Municipios', '22_Artemisa', '2206 San Antonio de los Baños', None, None, 50827, 25255, 25572, 34900]
+  ['2019', 'Municipios', '22_Artemisa', '2207 Güira de Melena', None, None, 40142, 20184, 19958, 28575]
+  ['2019', 'Municipios', '22_Artemisa', '2208 Alquizar', None, None, 33467, 17360, 16107, 15539]
+  ['2019', 'Municipios', '22_Artemisa', '2209 Artemisa', None, None, 86161, 43164, 42997, 60489]
+  ['2019', 'Municipios', '22_Artemisa', '2210 Candelaria', None, None, 21201, 10754, 10447, 13426]
+  ['2019', 'Municipios', '22_Artemisa', '2211 San Cristóbal', None, None, 71726, 36111, 35615, 49234]
+  ['2019', 'Municipios', '23_La Habana', '2301 Playa', None, None, 178557, 83011, 95546, 178557]
+  ['2019', 'Municipios', '23_La Habana', '2302 Plaza de la Revolución', None, None, 141781, 64674, 77107, 141781]
+  ['2019', 'Municipios', '23_La Habana', '2303 Centro Habana', None, None, 133898, 62650, 71248, 133898]
+  ['2019', 'Municipios', '23_La Habana', '2304 Habana Vieja', None, None, 81313, 39178, 42135, 81313]
+  ['2019', 'Municipios', '23_La Habana', '2305 Regla', None, None, 43833, 21158, 22675, 43833]
+  ['2019', 'Municipios', '23_La Habana', '2306 Habana del Este', None, None, 174807, 83386, 91421, 174807]
+  ['2019', 'Municipios', '23_La Habana', '2307 Guanabacoa', None, None, 125702, 60800, 64902, 125702]
+  ['2019', 'Municipios', '23_La Habana', '2308 San Miguel del Padrón', None, None, 159022, 77044, 81978, 159022]
+  ['2019', 'Municipios', '23_La Habana', '2309 Diez de Octubre', None, None, 201435, 93832, 107603, 201435]
+  ['2019', 'Municipios', '23_La Habana', '2310 Cerro', None, None, 124646, 58465, 66181, 124646]
+  ['2019', 'Municipios', '23_La Habana', '2311 Marianao', None, None, 134994, 64733, 70261, 134994]
+  ['2019', 'Municipios', '23_La Habana', '2312 La Lisa', None, None, 145023, 70083, 74940, 145023]
+  ['2019', 'Municipios', '23_La Habana', '2313 Boyeros', None, None, 199633, 98058, 101575, 199633]
+  ['2019', 'Municipios', '23_La Habana', '2314 Arroyo Naranjo', None, None, 205701, 100748, 104953, 205701]
+  ['2019', 'Municipios', '23_La Habana', '2315 Cotorro', None, None, 82049, 40027, 42022, 82049]
+  ['2019', 'Municipios', '24_ Mayabeque', '2401 Bejucal', None, None, 28160, 14356, 13804, 20722]
+  ['2019', 'Municipios', '24_ Mayabeque', '2402 San José de las Lajas', None, None, 80305, 41694, 38611, 53221]
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Slicer List extension is not supported and will be removed
+  warn(msg)
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, 'Indicadores', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Población total', 36105, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Hombres', 18827, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Mujeres', 17278, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Urbana', 22749, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Rural', 13356, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Índice de masculinidad (‰)', 1089.6515800439865, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, ' Grado de urbanización (%)', 63.00789364353968, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+  Municipios sheet: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
