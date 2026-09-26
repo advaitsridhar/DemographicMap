@@ -1,61 +1,313 @@
-probe_pdf: https://www5.ine.gub.uy/documents/CENSO%202023/Cuestionario_Censo2023_variables.pdf
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1523, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1104, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1382, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+page: https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx
+  130,125 bytes
+  40 matching link(s)
+  - About STATIN
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx
+  - Search International Merchandise Trade Statistics
+    https://statinja.gov.jm/InternationalMerchandiseTradeTable7.aspx
+  - Population Census 2011
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2011Index.aspx
+  - Population
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#population
+  - Housing
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#housing
+  - Education
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#education
+  - Disability
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#disability
+  - Economic Activity
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#econ
+  - Questionnaire
+    https://statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx#quest
+  - Population Change for the Four Fastest Growing Parishes
+    https://statinja.gov.jm/PopCensus/Census2022/Population%20Change%20for%20the%20Four%20Fastest%20Growing%20Parishes.aspx
+  - Components of Population Growth
+    https://statinja.gov.jm/PopCensus/Census2022/Components%20of%20Population%20Growth.aspx
+  - Summary of Intercensal Population Movements
+    https://statinja.gov.jm/PopCensus/Census2022/Summary%20of%20Intercensal%20Population%20Movements.aspx
+  - Population Change by Parish
+    https://statinja.gov.jm/PopCensus/Census2022/Population%20Change%20by%20Parish.aspx
+  - Urban-Rural Enumeration Districts by Parish
+    https://statinja.gov.jm/PopCensus/Census2022/Urban-Rural%20Enumeration%20Districts%20by%20Parish.aspx
+  - Population and Dwelling counts by Community
+    https://statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx
+  - Male Population by Broad Age Groups and Parish: 2011
+    https://statinja.gov.jm/Census/PopCensus/completed/MalePopulationbyBroadAgeGroupsandParish.aspx
+  - Female Population by Broad Age Groups and Parish: 2011
+    https://statinja.gov.jm/Census/PopCensus/completed/FemalePopulationbyBroadAgeGroupsandParish.aspx
+  - Population by Constituency and Parish: 2011
+    https://statinja.gov.jm/Census/PopCensus/PopulationbyConstituencyandParish.aspx
+  - Total Number of Persons Migrating to Reside Overseas during the year 2
+    https://statinja.gov.jm/Census/PopCensus/TotalNumberofPersonsMigratingToResideOverseasDuringTheYear2010ByAgeandSex.aspx
+  - Number of Dwelling Units by Parish: 2001 and 2011
+    https://statinja.gov.jm/Census/PopCensus/Completed/NumberofDwellingUnitsbyParish.aspx
+  - Number of Households by Parish: 2001 and 2011
+    https://statinja.gov.jm/Census/PopCensus/Completed/NumberofHouseholdsbyParish.aspx
+  - Number of Dwelling Units and Households by Urban/Rural Distribution by
+    https://statinja.gov.jm/Census/PopCensus/Completed/NumberofDwellingUnitsandHouseholdsbyUrbanRuralDistributionbyParish.aspx
+  - Number of Housing Units, Dwellings and Households by Special Areas for
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20A.pdf
+  - Number of Housing Units, Dwellings and Households by Urban/Rural Distr
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20B.pdf
+  - Number of Housing Units by Type of Housing Unit by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20C.pdf
+  - Number of Housing Units by Material of Outer Walls by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20D.pdf
+  - Number of Households by Tenure of Dwelling by Parish, Special Area and
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20E.pdf
+  - Number of Households by Source of Lighting by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20F.pdf
+  - Number of Households by Type of Fuel Used for Cooking by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20G.pdf
+  - Number of Households by Number of Rooms Occupied by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20h.pdf
+  - Number of Households by Source of Water for Domestic Use by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20i.pdf
+  - Number of Households by Availability and Type of Toilet Facilities by 
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20j.pdf
+  - Number of Households by Method of Garbage Disposal by Parish
+    https://statinja.gov.jm/Census/PopCensus/2011%20Census%20of%20Population%20and%20Housing%20k.pdf
+  - Male Population 3-17 Years Old and Over Enrolled in Institution/Progra
+    https://statinja.gov.jm/Census/PopCensus/MalePopulationEnrolledinanInstitutionByAttendance.aspx
+  - Female Population 3-17 Years Old and Over Enrolled in Institution/Prog
+    https://statinja.gov.jm/Census/PopCensus/completed/FemalePopulationEnrolledinanInstitutionByAttendance.aspx
+  - Household
+    https://statinja.gov.jm/Census/Census2011/Household%20Questionnaire__Census2011_FINAL.pdf
+  - Individual
+    https://statinja.gov.jm/Census/Census2011/Individual%20Questionnaire_Census2011_FINAL.pdf
+  - Declaration On Professional Ethics
+    https://statinja.gov.jm/Census/PopCensus/StrategicManagerial/Declaration-EN2010.pdf
+  - Fundamental Principles
+    https://statinja.gov.jm/Census/PopCensus/StrategicManagerial/E-fundamental%20principles_A4-WEB.pdf
+  - Code of Good Pratice
+    https://statinja.gov.jm/Census/PopCensus/StrategicManagerial/CGP.pdf
+page: https://statistics-suriname.org/censusstatistieken/
+  146,437 bytes
+  5 matching link(s)
+  - Censusstatistieken 2012
+    https://statistics-suriname.org/censusstatistieken-2012-2/
+  - ABS Gids
+    https://www.statistics-suriname.org/wp-content/uploads/2019/02/ABS-gids.pdf
+  - Advance Release Calendar
+    https://staging.statistics-suriname.org/wp-content/uploads/2020/08/ABS-Kalenders-van-te-produceren-en-te-verspreiden-statistieken-2019_2020.pdf
+  - CPI Release Calendar
+    https://staging.statistics-suriname.org/wp-content/uploads/2020/08/CPI-ADVANCE-RELEASE-CALENDAR.pdf
+  - Kerncijfers
+    https://staging.statistics-suriname.org/wp-content/uploads/2019/03/Kerncijfers-SJB-2017-2018.pdf
+page: https://sib.org.bz/statistics/population/
+  197,857 bytes
+  7 matching link(s)
+  - Download
+    https://sib.org.bz/wp-content/uploads/MidYear_Estimates_AgeGroup_Sex_2015-2026.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/MidYear_Estimates_AdministrativeArea_Sex_2015-2026.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/Population_District_Census_1921-2010.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/2017/05/Population_Section_Tables.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/2017/05/Marital_and_Union_Status_Section_Tables.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/2017/05/Household_Section_Tables.xlsx
+  - Download
+    https://sib.org.bz/wp-content/uploads/2017/05/Education-Section_Tables.xlsx
+page: https://sib.org.bz/census/2022-census/
+  172,275 bytes
+  18 matching link(s)
+  - Skip to content
+    https://sib.org.bz/census/2022-census/#content
+  - Population by City/Town/Village/Community and Sex
+    https://sib.org.bz/wp-content/uploads/Census2022_PopulationCTV.xlsx
+  - General Characteristics Tables
+    https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx
+  - Education Tables
+    https://sib.org.bz/wp-content/uploads/Census2022_Education.xlsx
+  - Marital and Union Status Tables
+    https://sib.org.bz/wp-content/uploads/Census2022_MaritalUnionStatus.xlsx
+  - Housing Tables
+    https://sib.org.bz/wp-content/uploads/Census2022_Housing.xlsx
+  - Housing Agriculture Tables
+    https://sib.org.bz/wp-content/uploads/Census2022_Agriculture.xlsx
+  - 2022 Census Individual Questionnaire
+    https://sib.org.bz/wp-content/uploads/2022CensusIndQuestionnaire.pdf
+  - 2022 Census Housing Questionnaire
+    https://sib.org.bz/wp-content/uploads/2022CensusHHQuestionnaire.pdf
+  - 2022 Census Key Findings Presentation
+    https://sib.org.bz/wp-content/uploads/CensusLaunch2022.pdf
+  - 
+    https://sib.org.bz/wp-content/uploads/CensusKeyFindingsReport_2022.pdf
+  - 
+    https://sib.org.bz/wp-content/uploads/MultidimensionalPovertyIndexReport_2022.pdf
+  - 
+    https://sib.org.bz/wp-content/uploads/20251020_BelizeCensusMigrationReport.pdf
+  - Share on Facebook Share on Facebook
+    https://www.facebook.com/sharer.php?u=https%3A%2F%2Fsib.org.bz%2Fcensus%2F2022-census%2F&#038;t=2022+Census
+  - Share on X Share on X
+    https://twitter.com/share?url=https%3A%2F%2Fsib.org.bz%2Fcensus%2F2022-census%2F&#038;text=2022+Census
+  - Share on LinkedIn Share on LinkedIn
+    https://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fsib.org.bz%2Fcensus%2F2022-census%2F&#038;title=2022%20Census&#038;summary=&#038;source=Statistical%20Institute%20of%20Belize
+  - Share on WhatsApp Share on WhatsApp
+    https://api.whatsapp.com/send?text=2022%20Census%20-%20https%3A%2F%2Fsib.org.bz%2Fcensus%2F2022-census%2F
+  - Go to Top
+    https://sib.org.bz/census/2022-census/
+page: https://stats.gov.bs/census/
+  79,898 bytes
+  1 matching link(s)
+  - click here
+    https://stats.gov.bs/wp-content/uploads/2021/07/Press-Release-Department-of-Statistics-Achieves-a-Major-Milestone.pdf
+page: https://www.stats.gov.lc/census/census-results/
+  148,364 bytes
+  7 matching link(s)
+  - Skip to content
+    https://www.stats.gov.lc/census/census-results/#site-content
+  - Menu Close
+    https://www.stats.gov.lc/census/census-results/
+  - SLC-HBS Results
+    https://www.stats.gov.lc/surveys/slc-hbs-results/
+  - Census 2022
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2022
+  - Census 2010
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C
+  - Census 2001
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2001
+  - Census 1991
+    https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC1991
+page: https://stats.gov.gd/census/
+  204,852 bytes
+  22 matching link(s)
+  - Click here to view summary report
+    https://stats.gov.gd/wp-content/uploads/2025/04/2021-National-Housing-Population-Census-Results-Latest-PRELIMINARY.pdf
+  - Access to Basic Utilities, by Parish, 2011
+    https://stats.gov.gd/data/access-to-basic-utilities-by-parish-2011/
+  - Historical Trends in Census Population Size, 1871 to 2011
+    https://stats.gov.gd/data/historical-trends-in-census-population-size-and-intercensal-changes-1871-to-2011/
+  - Households With At Least One Computer, by Parish, 2011
+    https://stats.gov.gd/data/households-with-at-least-one-computer-by-parish-2011/
+  - Households With or Without Cellphones, by Parish, 2011
+    https://stats.gov.gd/data/households-with-and-without-cellular-phones-by-parish-2011/
+  - Households With Internet Access, by Parish, 2001 and 2011
+    https://stats.gov.gd/data/households-with-access-to-internet-by-parish-2011-and-2001/
+  - Materials Used for Outer Wall, 2011
+    https://stats.gov.gd/data/materials-used-for-the-outer-wall-of-buildings-occupied-by-households-2011/
+  - Number of Households, by Parish, 1981 to 2011
+    https://stats.gov.gd/data/number-of-households-by-parish-percentage-and-average-household-1981-to-2011/
+  - Annual Population Estimate by Parish and Sex, 2011 to 2019
+    https://stats.gov.gd/subjects/population-2/annual-population-estimates-by-parish-and-sex-2011-to-2019/
+  - Historical Trends in Census Population-Size and Intercensal Changes, 1
+    https://stats.gov.gd/subjects/population-2/historical-trends-in-census-population-size-and-intercensal-changes-1971-to-2011/
+  - Life Expectancy, 2010 to 2019 (Abridged Method)
+    https://stats.gov.gd/subjects/population-2/life-expectancy-2010-to-2019-abridged-method/
+  - Live Births and Deaths, 2020 to 2023
+    https://stats.gov.gd/subjects/population-2/live-births-and-deaths-2000-to-2020/?classic-editor
+  - Population by Sex and Parish, 2001 and 2011
+    https://stats.gov.gd/data/population-by-sex-and-parish-2011-and-2001/
+  - Population in Private Households by Age Group and Sex, 2011
+    https://stats.gov.gd/data/non-institutional-population-in-private-households-by-age-group-and-sex-2011/?fl_builder
+  - Population in Private Dwellings 15 Years and Over by Marital Status an
+    https://stats.gov.gd/data/non-institutional-population-in-private-dwelling-15-years-and-over-by-marital-status-and-sex-census-2011/
+  - Population by Sex and Relationship to Head with Percentage Distributio
+    https://stats.gov.gd/data/non-institutional-population-in-private-dwelling-by-sex-and-relationship-to-head-and-percentage-distribution-2011/
+  - Population By Category and Sex, 2011
+    https://stats.gov.gd/data/population-by-category-and-sex-2011/
+  - Population by Five Year Age Group and Sex, 2001 and 2011
+    https://stats.gov.gd/data/population-by-five-year-age-groups-and-sex-2011-and-2001/
+  - Highest Level of Educational Attainment for Population in Private Dwel
+    https://stats.gov.gd/data/highest-level-of-educational-attainment-by-sex-and-percentage-for-non-institutional-population-in-private-dwellings-15-years-and-over-2011/
+  - Population By Ethnic Composition and Sex with Percentage Distribution 
+    https://stats.gov.gd/data/non-institutional-population-in-private-dwellings-by-ethnic-composition-sex-percentage-distribution-and-percentage-2011-and-2001/
+  - Population by Religious Composition, 2001 and 2011
+    https://stats.gov.gd/data/non-institution-population-in-private-dwellings-by-religious-composition-2011-and-2001-and-percentage-change/
+  - Population with Internet Access by Parish, 2011
+    https://stats.gov.gd/data/non-institutional-population-in-private-dwelling-with-access-to-internet-by-parish-2011/
+page: https://stats.gov.vc/census/census-data/
+  244,566 bytes
+  16 matching link(s)
+  - Data Tables
+    https://stats.gov.vc/data/data-tables/
+  - Number of Households by Main Source of Water and Census Division, 2023
+    https://stats.gov.vc/census/census-data/number-of-households-by-main-source-of-water-and-census-division-2023/
+  - Number of Households by Type of Construction Material and Census Divis
+    https://stats.gov.vc/census/census-data/number-of-households-by-type-of-construction-material-and-census-division-2023/
+  - Number of Households by Type of Dwelling, 2023
+    https://stats.gov.vc/census/census-data/number-of-households-by-type-of-dwelling-2023/
+  - Number of Households by Type of Fuel Most Used for Cooking and Census 
+    https://stats.gov.vc/census/census-data/number-of-households-by-type-of-fuel-most-used-for-cooking-and-census-division-2023/
+  - Number of Households by Type of Lighting and Census Division, 2023
+    https://stats.gov.vc/census/census-data/number-of-households-by-type-of-lighting-and-census-division-2023/
+  - Number of Households by Type of Toilet Facilities and Census Division,
+    https://stats.gov.vc/census/census-data/number-of-households-by-type-of-toilet-facilities-and-census-division-2023/
+  - Number of Households by Year Dwelling was Built, 2023
+    https://stats.gov.vc/census/census-data/number-of-households-by-year-dwelling-was-built-2023/
+  - Percentage of Households by Number of Room, 2023
+    https://stats.gov.vc/census/census-data/percentage-of-households-by-number-of-rooms-2023/
+  - Total and Percentage Household by Type of Dwelling, 2023
+    https://stats.gov.vc/census/census-data/total-and-percentage-household-by-type-of-dwelling-2023/
+  - Total and Percentage Household by Type of Tenure, 2023
+    https://stats.gov.vc/census/census-data/total-and-percentage-household-by-type-of-tenure-2023/
+  - Labour Force Participation Rate by Age Group and Sex, 2023
+    https://stats.gov.vc/census/census-data/labour-force-participation-rate-by-age-group-and-sex-2023/
+  - Working Age Population by Economic Activity and Census Division, 2023
+    https://stats.gov.vc/census/census-data/working-age-population-by-economic-activity-and-census-division-2023/
+  - Household Population by Age Group and Sex, 2023
+    https://stats.gov.vc/census/census-data/household-population-by-age-group-and-sex-2023/
+  - Household Population by Census Division, 2023
+    https://stats.gov.vc/census/census-data/household-population-by-census-division-2023/
+  - Population 15 Years and Older by Marital Status and Sex, 2023
+    https://stats.gov.vc/census/census-data/population-15-years-and-older-by-marital-status-and-sex-2023/
+page: https://statistics.gov.ag/census/
+  147,977 bytes
+  13 matching link(s)
+  - Population and Housing Census (2011)
+    https://redatam.org/binatg/RpWebEngine.exe/Portal?BASE=ATGPHC2011&amp;lang=ENG
+  - The Census Office Launches a Renewed Recruitment Drive as the 2025 Pop
+    https://statistics.gov.ag/wp-content/uploads/2026/02/Census-Renewed-Recruitment-Drive.pdf
+  - Census Office Encourages Full Public Cooperation as 2025 Population an
+    https://statistics.gov.ag/wp-content/uploads/2026/02/Census-Office-encourages-the-publics-participation.pdf
+  - The Census Office partners with The Rotary Club of Antigua as preparat
+    https://statistics.gov.ag/wp-content/uploads/2025/09/Release-on-donation-from-Rotary.pdf
+  - Census 2011 Book of Statistical Tables I
+    https://statistics.gov.ag/wp-content/uploads/2017/10/Census-2011-Book-of-Statistical-Tables-I.pdf
+  - Census 2011 Preliminary Release
+    https://statistics.gov.ag/wp-content/uploads/2017/10/Census-2011-Preliminary-Release.pdf
+  - Population and Housing Census 2011 – A Demographic Profile
+    https://statistics.gov.ag/wp-content/uploads/2017/11/2011-Antigua-and-Barbuda-Population-and-Housing-Census-A-Demographic-Profile.pdf
+  - 2001 Census of Population and Housing
+    https://statistics.gov.ag/wp-content/uploads/2017/11/2001-Census-of-Population-and-Housing.pdf
+  - 1991 Population and Housing Census
+    https://statistics.gov.ag/wp-content/uploads/2017/12/1991-Population-and-Housing-Census.pdf
+  - Antigua and Barbuda 2011 Census Person Questionnaire (Sample)
+    https://statistics.gov.ag/wp-content/uploads/2017/12/Antigua-and-Barbuda-2011-Census-Person-Questionnaire-Sample.pdf
+  - Antigua and Barbuda 2011 Census Household Questionnaire (Sample)
+    https://statistics.gov.ag/wp-content/uploads/2017/12/Antigua-and-Barbuda-2011-Census-Household-Questionnaire-Sample.pdf
+  - Antigua and Barbuda 2001 Population and Housing Census Questionnaire
+    https://statistics.gov.ag/wp-content/uploads/2017/12/2001-Census-Questionnaire.pdf
+  - Antigua and Barbuda 1991 Population and Housing Census Questionnai
+    https://statistics.gov.ag/wp-content/uploads/2017/12/1991-Census-Questionnairre.pdf
+page: https://stats.gov.dm/census/
+  164,372 bytes
+  4 matching link(s)
+  - Reports
+    https://stats.gov.dm/publications/reports/
+  - 
+    https://stats.gov.dm/wp-content/uploads/2021/07/poster.jpg
+  - 
+    https://stats.gov.dm/wp-content/uploads/2021/07/Census-Steps.jpg
+  - 
+    https://stats.gov.dm/wp-content/uploads/2021/07/CENSUS-1920x1152.jpg
+page: https://www.stats.gov.kn/census-2021-page/
+  171,308 bytes
+  7 matching link(s)
+  - Skip to content
+    https://www.stats.gov.kn/census-2021-page/#site-content
+  - Menu Close
+    https://www.stats.gov.kn/census-2021-page/
+  - Data tables
+    https://www.stats.gov.kn/data/data-tables/
+  - Reports
+    https://www.stats.gov.kn/publications/reports/
+  - http://www.stats.gov.kn/wp-content/uploads/2021/02/2021-Census-Jingle.
+    http://www.stats.gov.kn/wp-content/uploads/2021/02/2021-Census-Jingle.mp3
+  - https://www.stats.gov.kn/wp-content/uploads/2021/02/2021-Census-Jingle
+    https://www.stats.gov.kn/wp-content/uploads/2021/02/2021-Census-Jingle.mp3
+  - {{ data.index ? ( data.index + '. ' ) : '' }} {{ data.caption }} &#822
+    https://www.stats.gov.kn/census-2021-page/{{ data.src }}
