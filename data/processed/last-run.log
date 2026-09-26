@@ -1,73 +1,88 @@
-page: https://prod.redatam.org/binpry/RpWebEngine.exe/Portal?BASE=CPV2002&lang=esp
-  text: INE-PARAGUAY::Consultas Dinámicas de Microtados | Redatam Webserver - CELADE, UNECLAC Cerrar × ☰ Powered by REDATAM | © 1985 - 2026 | CELADE, División de Población de la CEPAL - Naciones Unidas. Todos los derechos reservados.
-  frame: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026111.htm
-  frame: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026101.htm
-  frame: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026121.htm
-  frame: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'REDATAM' -> https://www.cepal.org/es/subtemas/redatam
-pane: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026111.htm
-  text: ﻿ Redatam Webserver Index Page Análisis Censal Estructura de la Población Población por Sexo y Grupos de Edad Relación de Dependencia Distribución por Edades Promedios Medianas Indicadores Población Vivienda Bienes de Confort TICs Adulto Mayor Personas de 65 años y más Viviendas | Hogares Educación Población en Edad Escolar Cuadros de Educación Población y Viviendas Características Básicas De Vivienda De Hogares De Población Cruce de Variables De Vivienda De Hogares De Población Combinación Lista de Áreas De Vivienda De Hogares De Población Combinación Conteos Información Referencias Cuestionario Ayuda Diccionario Todas las Variables Variables Geográficas Variables de Vivienda Hogares Población Categorías de Vivienda Hogares Población Redatam Procesador Estadístico Procesador Estadístico En-línea Descargar el diccionario REDATAM Lenguaje de Comandos REDATAM Ejemplo Indicadores Ayuda Descargar el software Redatam REDATAM Website Go !-->
-  link: '' -> javascript:window.parent.location.reload(true);
-  link: 'Población por Sexo y Grupos de Edad' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=EDADES&lang=esp
-  link: 'Relación de Dependencia' -> https://prod.redatam.org/binpry/RpWebStats.exe/Fraction?BASE=CPV2002&ITEM=RELDEPAM&lang=esp
-  link: 'Distribución por Edades' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2002&ITEM=TOTEDAD&lang=esp
-  link: 'Promedios' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=AVERAGE1&lang=esp
-  link: 'Medianas' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=MEDIAN1&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=INDPOB&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=INDVIV&lang=esp
-  link: 'Bienes de Confort' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=INDBIEN&lang=esp
-  link: 'TICs' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=INDTICs&lang=esp
-  link: 'Personas de 65 años y más' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2002&ITEM=PERSAM&lang=esp
-  link: 'Viviendas | Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2002&ITEM=VIVAM&lang=esp
-  link: 'Población en Edad Escolar' -> https://prod.redatam.org/binpry/RpWebStats.exe/Qts?BASE=CPV2002&ITEM=CANTIDAD&lang=esp
-  link: 'Cuadros de Educación' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=CRUZEDU&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2002&ITEM=FREQVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2002&ITEM=FREQHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Frequency?BASE=CPV2002&ITEM=FREQPOB&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=CRUCVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=CRUCHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=CRUCPOB&lang=esp
-  link: 'Combinación' -> https://prod.redatam.org/binpry/RpWebStats.exe/CrossTab?BASE=CPV2002&ITEM=CRUZCOMBI&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=AREAVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=AREAHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=AREAPOB&lang=esp
-  link: 'Combinación' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=AREACOMBI&lang=esp
-  link: 'Conteos' -> https://prod.redatam.org/binpry/RpWebStats.exe/AreaList?BASE=CPV2002&ITEM=COUNTS&lang=esp
-  link: 'Cuestionario' -> https://prod.redatam.org/redpry/censos/cpv2002/boleta_censo_2002.pdf
-  link: 'Ayuda' -> https://prod.redatam.org/redpry/censos/ayuda/
-  link: 'Todas las Variables' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICALL&lang=esp
-  link: 'Variables Geográficas' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICGEO&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICVIV&lang=esp
-  link: 'Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICHOG&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICPOB&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICATVIV&lang=esp
-  link: 'Hogares' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICATHOG&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binpry/RpWebStats.exe/Dictionary?BASE=CPV2002&ITEM=DICATPOB&lang=esp
-  link: 'Procesador Estadístico En-línea' -> https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2002&ITEM=PROGRED&lang=esp
-  link: 'Descargar el diccionario' -> https://prod.redatam.org/binpry/RpWebUtilities.exe/Down_Dictionary.dic?LFN=rpbases\censos\cen02\base\cen2002.dicX
-  link: 'REDATAM Lenguaje de Comandos' -> https://prod.redatam.org/redatam/rphelp/esp/Red7-02-Process-ESP.pdf
-  link: 'REDATAM Ejemplo Indicadores' -> https://redatam.org/cdr/manuales/red7/esp/Red7-02-Process-indics-ESP.pdf
-  link: 'Descargar el software Redatam' -> https://redatam.org/
-  link: 'REDATAM Website' -> https://www.cepal.org/es/temas/redatam
-  link: 'Go' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026111.htm
-pane: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026101.htm
-  text: ﻿ Redatam Webserver Header Page
-  link: '' -> https://www.ine.gov.py/
-pane: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026121.htm
-  text: ﻿ UNECLAC-CELADE::Redatam Webserver | Output Page
-  frame: https://www.googletagmanager.com/ns.html?id=GTM-TW6NL5G
-  link: '' -> https://prod.redatam.org/redpry/
-pane: https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  text: ﻿ Redatam Webserver Footer Page --> RedAtam Webserver Home Â· Blog Â· Pricing Â· About Â· Faq Â· Contact --> © 1985 - 2026 | 2025.12.03 CELADE/CEPAL, Naciones Unidas --> Avenida Boggiani Esq./Cirilo Rivarola, Nº 6688 Asunción - Paraguay Tel: (595 21) 500-194 info@ine.gov.py Acerca de... Procesamiento En-Línea con Redatam Webserver. División de Población de la Comisión Económica para América Latina y El Caribe (CEPAL), Naciones Unidas
-  link: '' -> https://www.ine.gov.py/
-  link: 'Home' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'Blog' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'Pricing' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'About' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'Faq' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: 'Contact' -> https://prod.redatam.org/redpry/tempo/80261/~tmp_8026131.htm
-  link: '' -> https://twitter.com/INE_Paraguay?s=09
-  link: '' -> https://www.facebook.com/INEParaguay/
-  link: '' -> https://www.youtube.com/@INEParaguay
-  link: '' -> https://www.instagram.com/ine_paraguay/
-  link: 'info@ine.gov.py' -> mailto:info@ine.gov.py
+page: https://www.gub.uy/instituto-nacional-estadistica/politicas-y-gestion/tabulados-hogares-poblacion-censo-2023
+  41,842 bytes
+  22 matching link(s)
+  - Cerrar menú
+    https://www.gub.uy/instituto-nacional-estadistica/
+  - Hogares particulares , por categoría de vivienda, según área y tenenci
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_1_H_2023.xlsx
+  - Hogares particulares, por categoría de la vivienda, según área y evacu
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_2_H_2023.xlsx
+  - Hogares particulares por disponibilidad de servicio higiénico y modali
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_7_H_2023.xlsx
+  - Hogares particulares por disponibilidad de lugar apropiado para cocina
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_8_H_2023.xlsx
+  - Hogares particulares por región y área, según principal fuente de ener
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_9_H_2023.xlsx
+  - Hogares particulares por región, según tenencia de elementos de confor
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Hogares/Cuadro_11_H_2023.xlsx
+  - Población por departamento de residencia habitual, según área y sexo. 
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_1_CAR_2023.xlsx
+  - Población por área y sexo, según grupo quinquenal de edades y edades s
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_2_CAR_2023.xlsx
+  - Población por área y sexo, según grupo quinquenal de edades. Total Paí
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_3_CAR_2023.xlsx
+  - Población en hogares particulares por tipología de hogares particulare
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_5_CAR_2023.xlsx
+  - Población en hogares particulares por tipología del hogar, según regió
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_6_CAR_2023.xlsx
+  - Población en hogares particulares y colectivos, por tipo de hogar y se
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_7_CAR_2023.xlsx
+  - Población residente en hogares colectivos por sexo, cantidad de hogare
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_8_CAR_2023.xlsx
+  - Población de 14 años o más de edad por situación conyugal, según área,
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_9_CAR_2023.xlsx
+  - Población de 14 años o más de edad por situación conyugal, según depar
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_10_%20CAR_2023.xlsx
+  - Población, área (km2) y densidad por departamento y localidad. Total P
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_11_CAR_2023.xlsx
+  - Población, área (km2) y densidad por departamento. Total País.
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_12_CAR_2023.xlsx
+  - Población por departamento y localidades. Total País.
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_13_CAR_2023.xlsx
+  - Población por departamento y municipios. Total País.
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_14_CAR_2023.xlsx
+  - Población Montevideo por barrios. Montevideo
+    https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_15_CAR_2023.xlsx
+  - Reportar errores o sugerir mejoras
+    https://www.gub.uy/instituto-nacional-estadistica/ayudanos-a-mejorar?previous_url=/politicas-y-gestion/tabulados-hogares-poblacion-censo-2023
+page: https://www.gub.uy/instituto-nacional-estadistica/politicas-y-gestion/microdatos-censo-2023-ponderados
+  37,733 bytes
+  3 matching link(s)
+  - Cerrar menú
+    https://www.gub.uy/instituto-nacional-estadistica/
+  - Documento de uso de microdatos
+    https://www5.ine.gub.uy/documents/CENSO%202023/Documento_para_uso_de_Microdatos_Censo_2023_090726.pdf
+  - Reportar errores o sugerir mejoras
+    https://www.gub.uy/instituto-nacional-estadistica/ayudanos-a-mejorar?previous_url=/politicas-y-gestion/microdatos-censo-2023-ponderados
+page: https://www.gub.uy/instituto-nacional-estadistica/politicas-y-gestion/codificadores-censo-2023
+  37,584 bytes
+  5 matching link(s)
+  - Cerrar menú
+    https://www.gub.uy/instituto-nacional-estadistica/
+  - Países
+    https://www5.ine.gub.uy/documents/CENSO%202023/Codificadores/Paises_Censo2023.xlsx
+  - Departamentos&nbsp;
+    https://www5.ine.gub.uy/documents/CENSO%202023/Codificadores/Departamentos_Censo2023.xlsx
+  - Localidades&nbsp;
+    https://www5.ine.gub.uy/documents/CENSO%202023/Codificadores/Localidades_Censo2023.xlsx
+  - Reportar errores o sugerir mejoras
+    https://www.gub.uy/instituto-nacional-estadistica/ayudanos-a-mejorar?previous_url=/politicas-y-gestion/codificadores-censo-2023
+page: https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios
+  38,732 bytes
+  8 matching link(s)
+  - Pasar al contenido principal
+    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios#contenido
+  - Institucional
+    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios
+  - Cerrar menú
+    https://www.gub.uy/instituto-nacional-estadistica/
+  - Facebook
+    https://www.facebook.com/sharer/sharer.php?u=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios&t=Informaci%C3%B3n%20por%20Municipios
+  - X
+    https://x.com/intent/post?text=Informaci%C3%B3n%20por%20Municipios&url=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios
+  - WhatsApp
+    https://wa.me/?text=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios
+  - LinkedIn
+    https://www.linkedin.com/sharing/share-offsite/?url=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/informacion-municipios
+  - Reportar errores o sugerir mejoras
+    https://www.gub.uy/instituto-nacional-estadistica/ayudanos-a-mejorar?previous_url=/comunicacion/noticias/informacion-municipios
