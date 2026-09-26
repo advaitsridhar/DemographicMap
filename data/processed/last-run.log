@@ -1,14 +1,20 @@
-probe_pdf: https://prod.redatam.org/redpry/censos/cpv2022/boleta_censo_2022.pdf
-  8,069,812 bytes
-  6 pages
-probe_pdf: 6 pages, 0 mention ['religi', 'idioma', 'indígena', 'indigena', 'afro', 'pueblo', 'etnia']
-=== front matter ===
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+redatam.one.gob.do:443
+  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
+  notAfter: Jan 28 23:59:59 2027 GMT
+  CN=*.one.gob.do
+  DNS:*.one.gob.do
+  DNS:one.gob.do
+  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
+redatam.one.gob.do:443 -- completing the chain from AIA
+  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
+    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
+  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
+    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
+    this is a self-signed root; chain complete
+  VERIFIED handshake ok, TLSv1.3
 
-
-19.  ¿Cuáles son los nombres y apellidos de las personas que pasaron la noche anterior al día del censo en este hogar?
-1.   Para cada persona copie el número de orden, nombre y apellido del listado 
-      de personas que pasaron la noche anterior al día del censo en el hogar. 
-      (Cap. D. Preg. 19)
-
-
-=== pages mentioning ['religi', 'idioma', 'indígena', 'indigena', 'afro', 'pueblo', 'etnia'] (first 12) ===
+page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=CPV2010&lang=esp
+  200 text/html; charset=utf-8 5324 bytes
+  no links matched
