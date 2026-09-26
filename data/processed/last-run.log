@@ -1,13 +1,438 @@
-  POBLACIO.SEXO by canton: 81 areas
-  POBLACIO.EDAD by canton: 81 areas
-  POBLACIO.CONSIND by canton: 81 areas
-  POBLACIO.PUEBLOIN by canton: 81 areas
-  POBLACIO.ETNIA by canton: 81 areas
-  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'indigenous': 0, 'people': 0, 'ethnic': 0}; every question's answers and not-applicables make 4,301,712
-  POBLACIO.SEXO by distrito: 472 areas
-  POBLACIO.EDAD by distrito: 472 areas
-  POBLACIO.CONSIND by distrito: 472 areas
-  POBLACIO.PUEBLOIN by distrito: 472 areas
-  POBLACIO.ETNIA by distrito: 472 areas
-costa_rica_census: people: the areas' answers and not-applicables make 4,292,934, not 4,301,712; 8 areas short of sex: ['11204 Cangrejal: None+None of 1875', '11604 San Luis: None+None of 517', '20212 Zapotal: None+None of 391', '20903 Hacienda Vieja: None+None of 1022', '21102 Laguna: None+None of 1674', '21203 Toro Amarillo: None+None of 273', '30705 Santa Rosa: None+None of 2614', '30804 Patio de Agua: None+None of 412']
-  URLError reaching http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo: trying again in 10s
+probe_pdf: http://web.archive.org/web/2016id_/http://www.one.cu/publicaciones/cepde/cpv2012/20140428informenacional/7_tematicas.pdf
+  2,042,961 bytes
+  4 pages
+probe_pdf: 4 pages, 0 mention ['language', 'mother tongue', 'speak']
+=== front matter ===
+OFICINA NACIONAL DE ESTADÍSTICA E INFORMACIÓN
+33
+ASPECTOS METODOLOGICOS
+ción tanto del Censo como de las muestras de cobertura y 
+calidad en las 15 provincias y el municipio especial Isla de 
+la Juventud en nueve ocasiones. En estas supervisiones se 
+verificaba el uso de codificadores y clasificadores.
+-Control del proceso de entrada de datos en los centros de 
+cálculo provinciales en las 15 provincias y el municipio es -
+pecial Isla de la Juventud y del proceso de implantación y 
+explotación de programas de procesamiento.
+-Revisión y rectificación de los expedientes cartográficos 
+para ser utilizados en el Marco Muestral Maestro, así como 
+las guías de enumeración en las 15 provincias y el municipio 
+especial Isla de la Juventud.
+ 
+IV.TEMÁTICAS Y CUESTIONARIO CENSAL 
+Características	geográficas	y	migratorias	
+-Población total (Residentes permanentes) 
+-Lugar de residencia habitual 
+•Consejo Popular 
+•Asentamiento Humano 
+       Urbano 
+       Rural 
+•Plan Turquino 
+•Municipio 
+•Provincia 
+-Asentamiento, municipio, provincia o país de nacimiento 
+•Asentamiento 
+•Municipio 
+•Provincia 
+•País 
+-Lugar de residencia anterior 
+•Asentamiento 
+•Municipio 
+•Provincia o país 
+-Duración de la residencia actual 
+•Septiembre de 2012 
+•Años 
+Características personales y de los hogares 
+-Sexo 
+•Masculino 
+•Femenino 
+-Fecha de nacimiento y edad 
+•Día 
+•Mes 
+•Año 
+•Edad 
+-Color de la piel 
+•Blanco 
+•Negro 
+•Mulato o mestizo 
+-Jefe de hogar 
+•Jefe de hogar de la vivienda particular 
+•Jefe de hogar residiendo en local de trabajo 
+•Jefe de hogar de la vivienda colectiva 
+ -Parentesco o relación de convivencia con el jefe de hogar 
+•Cónyuge 
+•Hijo (a) 
+•Hijastro (a) 
+•Nuera o yerno 
+•Nieto (a) 
+•Padres o suegros 
+•Otros parientes (hermanos, abuelos, tíos, primos, bisnietos 
+y otros.) 
+•Otras personas no emparentadas con el jefe 
+-Identificación padres-hijos y cónyuges en el hogar 
+•Madre de…
+•Padre de…
+•Cónyuge de…
+-Presenta alguno de los siguientes padecimientos (Si, No, No 
+tiene el padecimiento). 
+•Deficientes permanentes del habla o mudo 
+•Débil auditivo (hipoacúsicos) o sordo 
+•Ciego o débil visual 
+•Limitación físico-motora 
+•Enfermedad mental crónica 
+•Retraso mental 
+•Insuficiencia renal crónica 
+•Ninguno de los anteriores
+-Estado civil o conyugal 
+•Casado (a) 
+•Unido (a) 
+•Divorciado (a) 
+•Separado (a) 
+•Viudo (a) 
+•Soltero (a) 
+-Hogar censal 
+•Unipersonal 
+•Básico 
+•Extendido 
+•Compuesto 
+-Familias básicas y extendidas. Características y composición 
+(temática derivada). 
+Características educacionales 
+-Grado de escolaridad más alto aprobado 
+-Nivel educacional terminado 
+•Ninguno 
+•Primaria 
+•Secundaria básica 
+•Obrero calificado 
+•Preuniversitario 
+•Técnico medio 
+     OFICINA NACIONAL DE ESTADÍSTICA E INFORMACIÓN 
+34
+ASPECTOS METODOLOGICOS
+•Pedagogía Nivel medio 
+•Superior o universitario 
+-Título o diploma académico 
+-Grado académico o científico 
+•Máster 
+•Doctor 
+•Especialista de post-grado
+-Alfabetismo 
+Características económicas 
+-Condición de actividad 
+•Trabajó 
+•Tenía trabajo pero no trabajó 
+•Buscaba trabajo por primera vez o por haberlo perdido
+•Jubilado o pensionado por edad 
+•Otros pensionados 
+•Rentista o recibe ayuda económica 
+•Quehaceres del hogar 
+•Estudiantes 
+•Incapacitado para el trabajo 
+•No realiza ninguna actividad 
+•Persona en hospital, asilo, o recluso que no trabaja 
+•Otra situación 
+-Ocupación principal 
+-Sector de actividad económica de la ocupación principal 
+-Forma de tenencia del empleo 
+-Ocupación secundaria 
+-Sector de actividad económica de la ocupación secundaria
+Movimiento pendular de los trabajadores 
+-Municipio en que trabaja y donde reside
+ 
+Características de la vivienda 
+-Ubicación de las unidades de alojamiento
+•Distrito censal 
+•Segmento 
+•Manzana 
+-Tipo de Unidad de alojamiento 
+•Vivienda particular 
+•Local de trabajo 
+•Vivienda colectiva 
+-Tipo de vivienda particular 
+•Casa 
+•Apartamento 
+•Habitación en cuartería o casa de vecindad 
+•Bohío 
+•Improvisada 
+•Otra 
+-Ocupación de la vivienda particular 
+•Ocupada por residentes permanentes 
+•Ocupada por residentes temporales 
+•Ocupada por temporada 
+•Cerrada por ausencia de sus ocupantes 
+•Desocupada 
+-Período de construcción 
+•Antes de 1920 
+•De 1920 a 1933 
+•De 1934 a 1945 
+•De 1946 a 1958 
+•De 1959 a 1970 
+•De 1971 a 1981 
+•De 1982 a 1989 
+•De 1990 a 2001 
+•De 2002 a fecha del Censo
+•No sabe 
+-Materiales de construcción predominantes 
+•Techo 
+. Placa o losa de hormigón 
+. Vigas de acero y losas de hormigón 
+. Madera y teja de barro 
+. Madera y papel embreado 
+. Plancha de fibrocemento 
+. Plancha metálica 
+. Madera y guano 
+. Otro 
+•Piso 
+. Losa cerámica, granito o mosaico 
+. Cemento pulido 
+. Madera 
+. Tierra 
+. Otro
+•Paredes exteriores 
+. Hormigón, bloques o ladrillos 
+. Madera 
+. Adobe, empaste o mampuesto 
+. Tabla de palma 
+. Yagua u otras 
+. Otro
+-Afectaciones en la estructura de la vivienda 
+•En el techo o entrepiso 
+. Derrumbe parcial 
+. Filtraciones 
+. Humedad 
+. Abofados o desconchados 
+. Grietas 
+. Aceros expuestos 
+. Madera podrida en soportería
+. Ninguna 
+•En columnas, vigas y arquitrabes 
+. Grietas o rajaduras 
+. Aceros expuestos 
+. Ninguna 
+•En paredes y piso 
+. Grietas y desplomes 
+. Filtraciones 
+OFICINA NACIONAL DE ESTADÍSTICA E INFORMACIÓN
+35
+ASPECTOS METODOLOGICOS
+. Hundimiento del piso 
+. Ninguna 
+•Apuntalamiento o no (interior o exterior) 
+-Estado técnico de la vivienda (temática derivada)
+-Piezas de la vivienda 
+•Cantidad de piezas que tiene la vivienda (sala, 
+dormitorios,otras) 
+•Cantidad de piezas que se utilizan habitualmente para dor -
+mir. 
+•Cantidad de piezas que son exclusivamente dormitorios o 
+cuartos 
+-Local para cocinar 
+• Tiene 
+. Uso exclusivo de la vivienda 
+. Uso común de varias viviendas 
+•No tiene 
+-Combustible utilizado fundamentalmente para cocinar 
+•Electricidad 
+•Gas manufacturado (de la calle por tubería) 
+•Gas licuado (de balón) 
+•Luz brillante (kerosén) 
+•Petróleo 
+•Alcohol 
+•Leña, carbón de leña u otros 
+•Ninguno
+-Forma de abastecimiento de agua 
+•Dentro de la vivienda 
+•Fuera de la vivienda 
+•Por acarreo y/o pipa 
+-Fuente de agua 
+•Acueducto 
+•Pozo 
+•Río o manantial 
+•Otra 
+-Frecuencia con que recibe el agua 
+•Diariamente 24 horas 
+•Diariamente menos de 24 horas 
+•En días alternos 
+•Hasta una vez por semana 
+•Otra frecuencia 
+-Almacenaje de agua 
+•Cisterna 
+•Tanque elevado 
+-Subida del agua al tanque elevado 
+•Gravedad o fuerza del acueducto 
+•Bomba eléctrica 
+•Bomba combustión interna 
+•Molino de viento 
+•Bomba de mano 
+-Sistema de desagüe 
+•Alcantarillado 
+•Fosa o Tanque séptico 
+•Otro 
+ 
+-Baño o ducha, con instalación de agua corriente y desagüe 
+•Tiene: 
+.Uso exclusivo de la vivienda 
+.Uso común de varias viviendas 
+.Ubicación dentro de la vivienda 
+.Ubicación fuera de la vivienda 
+•No tiene 
+-Servicio Sanitario 
+•Uso exclusivo de la vivienda 
+•Uso común de varias viviendas 
+•No tiene 
+•Tipo que posee: 
+ . Inodoro de agua 
+ . Letrina sanitaria 
+ . Excusado o pozo negro 
+•Ubicación dentro de la vivienda 
+•Ubicación fuera de la vivienda 
+-Fuente de energía que utiliza para el alumbrado 
+•Unión Eléctrica
+•Planta industrial 
+•Luz brillante (kerosene) 
+•Minihidroeléctrica
+•Panel Solar 
+•Biogás
+•Planta propia
+•Otro 
+-Tenencia de equipos domésticos 
+•Radio 
+•Equipo reproductor de video (DVD-VCD)
+•Equipo reproductor de audio
+•Televisor blanco y negro
+•Televisor en colores
+•Cocina u hornilla eléctrica
+•Refrigerador 
+•Lavadora 
+•Batidora/Licuadora
+•Olla arrocera y/o multipropósito
+•Horno microonda
+•Plancha eléctrica
+•Ventilador 
+•Aire acondicionado
+•Máquina de coser
+•Computadora 
+•Teléfono fijo (incluye 400 minutos)
+•Teléfono móvil
+•Auto y/o jeep
+•Camión y/o tractor
+•Motocicleta y/o ciclomotor 
+•Bicicleta
+•Calentador fijo de agua o ducha eléctrica
+-Situación de la vivienda 
+•Propiedad personal 
+     OFICINA NACIONAL DE ESTADÍSTICA E INFORMACIÓN 
+36
+ASPECTOS METODOLOGICOS
+•Estatal arrendada 
+•Vinculada o medio básico 
+•Otra 
+•No sabe 
+-Eliminación de basura 
+•Recogida a domicilio 
+•Vertido en contenedor o tanque público 
+•En vertedero o área común
+•La quema
+•La entierra 
+•La elimina de otra forma 
+-Número de hogares en la vivienda 
+La temática censal fue presentada a la Comisión Consultiva 
+del Censo de Población y Viviendas, integrada por especia -
+listas y representantes de un amplio conjunto de organismos, 
+organizaciones, centros académicos y de investigación. Final-
+mente 19 instituciones emitieron un total de 221 criterios, que 
+incluyeron comentarios, propuestas de temáticas nuevas o de 
+preguntas de definiciones o conceptos. 
+(*) Nombre completo de los Organismos e Instituciones
+1.Asamblea Nacional del Poder Popular
+2.Ministerio de las Fuerzas Armadas Revolucionarias
+3.Ministerio de Ciencia, Tecnología y Medio Ambiente
+4.Ministerio de Informática y las Comunicaciones
+5.Ministerio de Transporte
+6.Ministerio de Salud Pública
+7.Ministerio de Educación Superior
+8.Ministerio del Trabajo y Seguridad Social
+9.Ministerio de Cultura
+10.Ministerio de Educación
+11.Instituto Nacional de Recursos Hidráulicos
+12.Instituto de Planificación Física
+13.Instituto Nacional de la Vivienda
+14.Oficina del Historiador de la ciudad de La Habana
+15.Facultad de Economía de la Universidad de La Habana
+16.Centro de Estudios Demográficos, de la Universidad de 
+La Habana
+17.Centro de Investigaciones Psicológicas y Sociológicas
+18.Federación de Mujeres Cubanas
+19.Asociación Nacional de Sordos de Cuba
+A partir de las observaciones recibidas se determinó que po -
+dían generarse 167 preguntas, que requerían a su vez de 
+espacio para 703 respuestas. Bajo esta perspectiva resultó 
+significativamente mayor la demanda de preguntas que las 
+posibilidades concretas de llevarlas a un cuestionario de di -
+mensiones limitadas. La necesidad de comparar con el Censo 
+anterior e internacionalmente mantuvo la mayoría de pregun -
+tas del Censo del 2002. 
+El tema ambiental fue presentado por 
+varias instituciones desde muy diver -
+sos ángulos, y fue posible considerar la 
+pregunta sobre recogida de desechos 
+sólidos. El tema del agua, que siempre 
+ha sido abordado en los Censos, por su 
+relevancia resultó ampliado. 
+Ver  Cuestionario Censal en Anexo, 
+páginas 424 - 427.
+V. CARTOGRAFÍA CENSAL  
+Prácticamente los trabajos censales se 
+inician con los trabajos cartográficos. 
+Es la  cartografía quien aporta la mayor 
+cantidad de datos para la conforma -
+ción de la estructura censal, por lo que 
+requiere de una base actualizada que 
+coadyuve a garantizar la planificación 
+y organización de las tareas censales. 
+Tradicionalmente, la función de la cartografía en los Censos 
+ha sido servir de respaldo al levantamiento y la presentación 
+de los resultados agregados en forma cartográfica. En esta 
+esfera, el papel que cumple la automatización es cada vez su-
+perior. Además de permitir una mayor eficiencia en la produc -
+ción de mapas para el levantamiento y elaboración de mapas 
+temáticos con los resultados de los Censos, en la actualidad 
+con el desarrollo de la cartografía digital y el empleo de los Sis-
+temas de Información Geográficos (SIG), cumplen una función 
+crucial en la divulgación de los datos censales y en el análisis 
+1 ANPP 1 0 0 Definiciones
+2 MINFAR 1 0 0 De  acuerdo con temática propuesta
+3 CITMA 50 29 97 Propuestas  y sugerencias
+4 MIC 3 3 6 Propuestas  concretas
+5 MITRANS 1 5 26 Propuesta  concreta
+6 MINSAP 3 2 4 Propuesta  concreta
+7 MES 1 0 3 Propuesta  concreta
+8 MTSS 8 0 0 Definiciones
+9 MINCULT 1 3 9 Propuesta  concreta
+10 MINED 1 1 2 Propuesta  concreta
+11 INRH 8 13 43
+Ampliaciones temáticas del agua y sistema,
+desagüe, definiciones
+12 IPF 2 2 9 Propuestas  acompañadas de definiciones
+13 INV 30 25 150 Comentarios,  propuestas y definiciones
+14 O Historiador 26 52 222 Para  Zona de Interés de la OH
+15 Fac. Economía 13 11 44 Comentarios,  propuestas y definiciones
+16 CEDEM 35 4 28 Propuestas,  comentarios, sugerencias, etc
+17 CIPS 16 11 39 Propuestas
+18 FMC 17 5 17 Propuestas  concretas
+19 ANSOC 4 1 4 Propuestas  concretas
+Total 220 167 703
+Resumen de observaciones a la temática censal
+No.
+Organismo/      
+institución  (*)
+Criterios 
+emitidos
+Cantidad 
+Preguntas 
+generadas
+Cantidad  
+Respuestas 
+generadas Tipos de criterios
+
+=== pages mentioning ['language', 'mother tongue', 'speak'] (first 6) ===
