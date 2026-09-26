@@ -1,19 +1,50 @@
-page: https://opp.gub.uy/es/noticias/resultados-censo-2023-municipios
-  51,835 bytes
-  8 matching link(s)
-  - Pasar al contenido principal
-    https://opp.gub.uy/es/noticias/resultados-censo-2023-municipios#main-content
-  - Organigrama
-    https://opp.gub.uy/sites/default/files/documentos/2025-08/Organigrama_OPP_08-2025.pdf
-  - Biblioteca OTU
-    http://otu.opp.gub.uy/biblioteca/listar
-  - Fondo de Incentivo para la Gestión de los Municipios
-    https://opp.gub.uy/es/fondo-incentivo-gestion-municipal
-  - Observatorio Territorio Uruguay - OTU
-    https://opp.gub.uy/es/observatorio-territorio-uruguay
-  - Publicación 50 Años de la Historia de OPP
-    https://www.opp.gub.uy/sites/default/files/documentos/2019-11/OPP_50_A%C3%B1os.pdf
-  - Hoja de Ruta hacia el Diálogo Social
-    https://www.opp.gub.uy/sites/default/files/inline-files/Hoja%20de%20Ruta%20DS_CSPSS_junio25.pdf
-  - Nómina de Comisión Ejecutiva del Diálogo Social
-    https://www.opp.gub.uy/sites/default/files/documentos/2026-04/Integraci%C3%B3n_Comisi%C3%B3n_Ejecutiva_abril_2026.pdf
+probe_page: https://international.ipums.org/international-action/variables/LANGUAGE
+  63 lines of text, 0 mentioning Haiti, HT2003, ht2003, 2003
+probe_page: https://international.ipums.org/international-action/variables/RELIGION
+  553 lines of text, 7 mentioning Haiti, HT2003, ht2003, 2003
+      103  Guinea
+      104  Haiti
+      105  Iran
+      168  The universe is all persons in 1983 and 2014, while it includes only household residents in 1996.
+      169  Comparability — Haiti [ top ]
+      170  The 1971 categories are less detailed than the later years. Weslyans are combined with Methodists in 1982, but can be separately identified in the source variable.
+      290  Guinea 2014: All persons
+      291  Haiti 1971: All persons
+      292  Haiti 1982: All persons
+      293  Haiti 2003: All persons
+      294  Indonesia 1971: All persons
+      451  1983, 1996, 2014
+      452  Haiti:
+      453  1971, 1982, 2003
+      454  Iceland:
+probe_page: https://international.ipums.org/international-action/variables/ETHNICHT
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 191, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 179, in main
+    body = http_get(url)
+           ^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 853, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
