@@ -1,2 +1,5 @@
-source: https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx
-  unreachable: HTTPError: HTTP Error 406: Not Acceptable
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW] [--aia]
+                      url [url ...]
+probe_links.py: error: unrecognized arguments: ,]{0,40}tablas-geoportal[^ ,]{0,160})
