@@ -1,244 +1,55 @@
-page: https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lang=esp
-  7,706 bytes
-﻿<!DOCTYPE html>
-<style>
-
-/*
- * Specific styles of signin component
- */
-/*
- * General styles
- */
-body, html {
-    /*height: 100%;*/
-   /*background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-}
-
-
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-}
-
-/*
- * Card component
- */
-
-
-.profile-img-card {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-/*
- * Form styles
- */
-.profile-name-card {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0;
-    min-height: 0em;
-}
-
-.reauth-email {
-    display: block;
-    color: #404040;
-    line-height: 2;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.form-signin #inputEmail,
-.form-signin #inputPassword {
-    direction: ltr;
-    height: 44px;
-    font-size: 16px;
-}
-
-.form-signin input[type=email],
-.form-signin input[type=password],
-.form-signin input[type=text],
-.form-signin button {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.form-signin .form-control:focus {
-    border-color: rgb(104, 145, 162);
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-}
-
-.btn.btn-signin {
-    /*background-color: #4d90fe; */
-    background-color: #0d82e8;
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-    padding: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-    color: white;
-}
-
-.btn.btn-signin:hover,
-.btn.btn-signin:active,
-.btn.btn-signin:focus {
-    background-color: #1688CE;
-}
-
-.forgot-password {
-    color: rgb(104, 145, 162);
-}
-
-.forgot-password:hover,
-.forgot-password:active,
-.forgot-password:focus{
-    color: rgb(12, 97, 33);
-}
-
-</style>
-<html>
-<head>
-  <title>PERÚ - Instituto Nacional de Estadística e Informática | REDATAM</title>
-
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-  <meta name="author" content="Redatam Development Centre">
-  <meta name="copyright" content="CELADE, Population Division of ECLAC - United Nations">
-  <meta name="description" content="Redatam for On-Line Data Processing">
-  <meta name="keywords" content="Redatam, R+SP, Redatam+SP, Redatam7, Red7, Celade, Cepal, Eclac, Statistics, Estadísticas, Census, Censos, Population, Población, Data Processing, Procesamiento de Datos, tabulados, table, gráficos, graphs, mapas, maps, censos, census, encuestas, surveys, frecuencias, frequencies, cruces, crosstabs, conteos, counts, estadísticas, statistics, celade, cepal, eclac, unfpa, naciones unidas, united nations, indicadores, indicators, población, population, economía, ine, one, inec, cso, nis, nsb">
-
-  <link type="image/x-icon" rel="shortcut icon" href="/pubinei/imagenes/favicon.ico" />
-
-  <link rel="stylesheet" type="text/css" href="/common/css/w3/4/w3.css">
-	<link rel="stylesheet" type="text/css" href="/common/css/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
-
-  <link rel="stylesheet" type="text/css" href="/redatam/css/red.portal.main.css" />
-  <script>
-        /*function cerrarR(){
-            window.location.href = "http://intredatam.inei.gob.pe/pubinei/cerrar.asp"
-        }*/
-
-        //console.log(window.location.search);
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104380336-4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-104380336-4');
-    </script>
-</head>
-
-<body >
-
-<!-- Top -->
-<header class="w3-container"> <!--w3-top  -->
-<div class="w3-row">
-                    <div class="w3-col l2 m2 s2">
-                        <center><img src="/common/images/banner-p1.jpg" width="159" height="80" class="w3-image"></center>
-                    </div>
-                    <div class="w3-col l8 m8 s8">
-                        <center><img src="/common/images/banner-p2.jpg" width="962" height="80" class="w3-image" ></center>
-                    </div>
-                    <div class="w3-col l2 m2 s2">
-                        <center><img src="/common/images/banner-p3.jpg" width="159" height="80" class="w3-image"></center>
-                    </div>
-                </div>
-
-
-	
-
-</header>
-
-
-<!-- Sidebar -->
-<div class="w3-sidebar w3-bar-block w3-collapse w3-animate-left" style="z-index:3; width: 310px;" id="mySidebar">
-	<button class="w3-bar-item w3-button w3-hide-large" onclick="w3_close()">Close &times;</button>
-	<iframe name="Index" src="https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\83421\~tmp_834211.htm&amp;TYPE=TMP" scrolling="auto" ></iframe>
-</div>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- Main content: shift it to the right by 270 pixels when the sidebar is visible -->
-<div class="w3-main w3-container" style="margin-left:310px; /*margin-top:90px;*/ height: 100%;" id="myMain" >
-
-	<div class="w3-blue">
-  	<button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
-	</div>
-
-	<div class="w3-container w3-card-2 w3-padding-large " >
-		<iframe name="Output" src="https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\83421\~tmp_834212.htm&amp;TYPE=TMP" scrolling="auto" style="min-height: 600px; "></iframe>
-	</div>
-
-	<footer class="w3-container w3-card-4 w3-padding-small w3-center" >
-		<iframe name="Footer" src="https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\83421\~tmp_834213.htm&amp;TYPE=TMP" scrolling="auto" style="height: 170px;" ></iframe>
-		<p style="font-size: 0.7em">
-			Powered by <a href="http://www.cepal.org/en/topics/redatam" target="_blank">REDATAM</a> |
-			&copy; 2018 | CELADE, Population Division of ECLAC - United Nations. All rights reserved.
-		</p>
-	</footer>
-
-<!-- END MAIN -->
-</div>
-
-<script>
-function w3_open()
-{
-	document.getElementById("mySidebar").style.display = "block";
-	document.getElementById("myOverlay").style.display = "block";
-}
-function w3_close()
-{
-	document.getElementById("mySidebar").style.display = "none";
-	document.getElementById("myOverlay").style.display = "none";
-}
-
-</script>
-
-</body>
-
-</html>
-
+page: https://www.inei.gob.pe/
+  360,784 bytes
+  7 matching link(s)
+  - Censos Nacionales 2025
+    https://censos2025.inei.gob.pe/
+  - Censos Nacionales 2025: XIII de Población, VIII de Vivienda y IV de Co
+    https://www.inei.gob.pe/institucion/inei/campa%C3%B1as/92656-censos-nacionales-2025-xiii-de-poblacion-viii-de-vivienda-y-iv-de-comunidades
+  - Resultados de la Encuesta Nacional Agropecuaria - ENA 2025
+    https://www.inei.gob.pe/institucion/inei/campa%C3%B1as/142946-resultados-de-la-encuesta-nacional-agropecuaria-ena-2025
+  - Resultados de la Encuesta Demográfica y de Salud Familiar 2025
+    https://www.inei.gob.pe/institucion/inei/campa%C3%B1as/142995-resultados-de-la-encuesta-demografica-y-de-salud-familiar-2025
+  - Resultados de la Convocatoria Nacional de Investigaciones 2026
+    https://www.inei.gob.pe/institucion/inei/campa%C3%B1as/139779-resultados-de-la-convocatoria-nacional-de-investigaciones-2026
+  - Censos Nacionales 2025: San Martín alcanza los 968 mil habitantes con 
+    https://www.inei.gob.pe/institucion/inei/noticias/1447563-censos-nacionales-2025-san-martin-alcanza-los-968-mil-habitantes-con-mejor-cobertura-de-servicios-en-las-viviendas
+  - Población de Amazonas destaca por su juventud según los Censos Naciona
+    https://www.inei.gob.pe/institucion/inei/noticias/1447156-poblacion-de-amazonas-destaca-por-su-juventud-segun-los-censos-nacionales-2025
+page: https://www.inei.gob.pe/estadisticas/censos/
+  70,462 bytes
+  6 matching link(s)
+  - 
+    https://censos2017.inei.gob.pe/pubinei/index.asp
+  - 
+    https://unetealcenso2025.inei.gob.pe/unete-convocatorias/public/
+  - 
+    https://unete.censos2025.com.pe/
+  - 
+    http://www.censos2017.pe/directorio-de-las-oficinas-de-los-censos-nacionales-2017/ 
+  - 
+    http://economicas.inei.gob.pe/ene/2017/formulario/registro/
+  - 
+    https://www.inei.gob.pe/media/Informe-tecnico-N-048-2017-INEI-OTA-OEAS-UCP.pdf
+page: https://www.inei.gob.pe/sistemas-consulta/
+  55,302 bytes
+  10 matching link(s)
+  - 
+    https://censos2017.inei.gob.pe/pubinei/index.asp
+  - 
+    https://unetealcenso2025.inei.gob.pe/unete-convocatorias/public/
+  - 
+    https://unete.censos2025.com.pe/
+  - 
+    http://www.censos2017.pe/directorio-de-las-oficinas-de-los-censos-nacionales-2017/ 
+  - 
+    http://economicas.inei.gob.pe/ene/2017/formulario/registro/
+  - 
+    https://www.inei.gob.pe/media/Informe-tecnico-N-048-2017-INEI-OTA-OEAS-UCP.pdf
+  - Sistema de Datos Micro Regionales VRAEM El Sistema de Datos Micro Regi
+    https://sdmr.inei.gob.pe/
+  - Sistema de Consulta de Base de Datos – REDATAM El Sistema de Consulta 
+    https://censos2017.inei.gob.pe/redatam/
+  - Sistema de Información Regional para la Toma de Decisiones Este sistem
+    https://sirtod.inei.gob.pe/
+  - Sistema de Consulta de los Resultados del Censo Especial de Población 
+    http://sige.inei.gob.pe/censo/especial/2014/zona_sur_callao/
