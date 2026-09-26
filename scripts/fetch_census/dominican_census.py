@@ -506,7 +506,13 @@ def main() -> int:
                     help="a base name, then a Redatam+SP program as words")
     ap.add_argument("--header", default="Casos")
     ap.add_argument("--limit", type=int, default=3000)
+    ap.add_argument("--labels", action="store_true",
+                    help="print Cuadro 2's areas in order, with the level each is read as")
     args = ap.parse_args()
+    if args.labels:
+        for area in areas(workbook_rows(*AGES), 10):
+            print(f"  {kind(area['label']):9} {area['values'][0]:>9} {area['label']!r}")
+        return 0
     if not (args.probe or args.run):
         return adapter()
     session = ChainSession()
