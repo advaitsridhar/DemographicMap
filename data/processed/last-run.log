@@ -1,5 +1,198 @@
-page: https://celade.cepal.org/censosinfo/
-  3,924 bytes
-  0 matching link(s)
-page: https://celade.cepal.org/censosinfo/Boletas/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: http://redatam.ine.gob.ve/applications.html
+  3,833 bytes
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bitnami: Open Source. Simplified</title>
+  <link href="bitnami.css" media="all" rel="Stylesheet" type="text/css" /> 
+  <link href="/dashboard/stylesheets/all.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/dashboard/index.html">Apache Friends</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#">
+            <span>Menu</span>
+          </a>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="/applications.html">Applications</a></li>
+          <li class=""><a href="/dashboard/faq.html">FAQs</a></li>
+          <li class=""><a href="/dashboard/howto.html">HOW-TO Guides</a></li>
+          <li class=""><a target="_blank" href="/dashboard/phpinfo.php">PHPInfo</a></li>
+          <li class=""><a href="/phpmyadmin/">phpMyAdmin</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="wrapper">
+    <div class="hero">
+       <div class="row">
+         <div class="large-12 columns">
+            <p>Apache Friends and Bitnami are cooperating to make dozens of open source applications available on XAMPP, for free. Bitnami-packaged applications include Wordpress, Drupal, Joomla! and dozens of others and can be deployed with one-click installers. Visit the <a href="https://bitnami.com/xampp?utm_source=bitnami&utm_medium=installer&utm_campaign=XAMPP%2BModule" target="_blank">Bitnami XAMPP page</a> for details on the currently available apps.</p><br/>
+            <p>Check out our <a href="https://www.apachefriends.org/bitnami_for_xampp.html" target="_blank" >Bitnami for XAMPP Start Guide</a> for more information about the applications installed.</p><br/>
+            <p style="background: #FFFACD; border: 1px solid #FF6347; padding: 5px">We are working on making Bitnami add-ons available for PHP 7, it is possible the current add-ons do not work well with this version.</p>
+         </div>
+       </div>
+    </div>
+    <div id="lowerContainer" class="row">
+      <div id="content" class="large-12 columns">
+          <!-- @@BITNAMI_MODULE_PLACEHOLDER@@ -->
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row">
+          <div class="large-8 columns">
+            <ul class="social">
+              <li class="twitter"><a href="https://twitter.com/apachefriends">Follow us on Twitter</a></li>
+              <li class="facebook"><a href="https://www.facebook.com/we.are.xampp">Like us on Facebook</a></li>
+              <li class="google"><a href="https://plus.google.com/+xampp/posts">Add us to your G+ Circles</a></li>
+            </ul>
+
+            <ul class="inline-list">
+              <li><a href="https://www.apachefriends.org/blog.html">Blog</a></li>
+              <li><a href="https://www.apachefriends.org/privacy_policy.html">Privacy Policy</a></li>
+              <li>
+                <a target="_blank" href="http://www.fastly.com/">                    CDN provided by
+                  <img width="48" data-2x="/dashboard/images/fastly-logo@2x.png" src="/dashboard/images/fastly-logo.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="large-4 columns">
+            <p class="text-right">Copyright (c) 2015, Apache Friends</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+page: http://redatam.ine.gob.ve/Censo2011/index.html
+  668 bytes
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Censo 2011 Redatam </title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+</head>
+
+<body>
+<center>
+<iframe  src="/vencgibin/RpWebEngine.exe/PortalAction?&amp;MODE=MAIN&amp;BASE=CPV2011&amp;MAIN=WebServerMain.inl"  width="869" height="800"   scrolling="auto" frameborder="0">
+</iframe>
+</center>
+</body>
+</html>
+
+page: http://redatam.ine.gob.ve/cgibin/RpWebEngine.exe/Portal
+  247 bytes
+<HTML>
+<TITLE>Redatam+SP Default Page</TITLE>
+<BODY>
+<H3>Redatam+SP WebServer Access</H3>
+<P></P>
+<P>
+For an example of using a TPageProducer with a Custom Tag click
+<A HREF="RpWebEngine.exe/PortalAction?">here</A></P>. 
+</BODY>
+</HTML>
+
+page: http://redatam.ine.gob.ve/binven/RpWebEngine.exe/Portal
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: http://web.archive.org/cdx/search/cdx?url=redatam.ine.gob.ve*&output=txt&limit=300&collapse=urlkey
+  68,030 bytes
+ve,gob,ine,redatam)/ 20130609165322 http://www.redatam.ine.gob.ve:80/ text/html 200 SBOYSAHQQGRUWRYLKHOX3ZDZS6N2ACQH 510
+ve,gob,ine,redatam)/apachehaus.ico 20190403103135 http://www.redatam.ine.gob.ve/apachehaus.ico image/x-icon 200 5GX7NFK2WML2XWVDAF4Q3M5Q4HMBXWRB 1331
+ve,gob,ine,redatam)/applications.html 20251005132355 http://redatam.ine.gob.ve/applications.html text/html 200 N22XZ75WZU3IJD2DAEYLMPUSRITZ7EDE 2030
+ve,gob,ine,redatam)/cen- 20220214235258 http://www.redatam.ine.gob.ve/Cen- text/html 404 YDOSEL5G44FS3LTAAEITNA5PYD7JPSBQ 402
+ve,gob,ine,redatam)/cen-so2011/index.html 20220214235357 http://www.redatam.ine.gob.ve/Cen-so2011/index.html text/html 404 C3ZV5UYNTE4IMTUNBAXSOVLPHDPOEX3Y 412
+ve,gob,ine,redatam)/cen-so2011/index.htmlorganizaci%c3%b3n 20220214235333 http://www.redatam.ine.gob.ve/Cen-so2011/index.htmlOrganizaci%C3%B3n text/html 404 UYCL3WTUZNZBRHXETFIQVYZQ5HUNQNOW 428
+ve,gob,ine,redatam)/censo2 20240606134920 http://www.redatam.ine.gob.ve/Censo2 text/html 404 3B4BNOYW2RIP5UTM7FBGALSYQOESXVY5 272
+ve,gob,ine,redatam)/censo2001 20210425194859 http://www.redatam.ine.gob.ve/Censo2001/ text/html 200 KPBX7KXM52WSRKX5AWX24W5L2UDQOKL5 2228
+ve,gob,ine,redatam)/censo2001/css/bg.gif 20220624152432 http://www.redatam.ine.gob.ve/Censo2001/css/bg.gif text/html 404 EJQPRIES6M5NTH3NXQCSYZHZ3VKD6PT2 529
+ve,gob,ine,redatam)/censo2001/css/default.css 20220121221828 http://www.redatam.ine.gob.ve/Censo2001/css/default.css text/html 404 5WUBKCC7V46FS2M2BJS5VPKGNTKUDE4S 415
+ve,gob,ine,redatam)/censo2001/css/images/file.gif 20220624152430 http://www.redatam.ine.gob.ve/Censo2001/css/images/file.gif text/html 404 VODCXFUNVPBBMSLH7JLSYGVHXK2SHBRX 536
+ve,gob,ine,redatam)/censo2001/css/images/folder-closed.gif 20220624152428 http://www.redatam.ine.gob.ve/Censo2001/css/images/folder-closed.gif text/html 404 QOAEWU6HKSZLXIH4RUTWH54QUZUJI53Q 540
+ve,gob,ine,redatam)/censo2001/css/images/folder.gif 20220624152427 http://www.redatam.ine.gob.ve/Censo2001/css/images/folder.gif text/html 404 WAFAD3FFT7H3SRUM3R6IU7DZ6XOLUTTB 534
+ve,gob,ine,redatam)/censo2001/css/images/treeview-black-line.gif 20220624152417 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-black-line.gif text/html 404 PW2LHKUCYNTMBU6GOR3BBTK35HNHNQ2H 546
+ve,gob,ine,redatam)/censo2001/css/images/treeview-black.gif 20220624152419 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-black.gif text/html 404 QPLUTBN7SP732DMPDCZZ63BDGZKR6M7J 543
+ve,gob,ine,redatam)/censo2001/css/images/treeview-default-line.gif 20220624152411 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-default-line.gif text/html 404 T4CHTHZ5NB53MGCKWRGYFMSQ3CQ3AEKZ 545
+ve,gob,ine,redatam)/censo2001/css/images/treeview-default.gif 20220624152409 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-default.gif text/html 404 5DZKEMKW6OU2CENGEWOYNDI4IVUIWDPC 543
+ve,gob,ine,redatam)/censo2001/css/images/treeview-famfamfam-line.gif 20220624152423 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-famfamfam-line.gif text/html 404 RTI7TBUQP3R4JCLR7EJ5LHZPCOQLU7GU 545
+ve,gob,ine,redatam)/censo2001/css/images/treeview-famfamfam.gif 20220624152425 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-famfamfam.gif text/html 404 WJOMJLL5T5N3RJJFMJBFW6AKA4LN7ETN 540
+ve,gob,ine,redatam)/censo2001/css/images/treeview-gray-line.gif 20220624152420 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-gray-line.gif text/html 404 IHKQ5EFIOP4LZ23RVQ7QD2FDHLICDPNE 543
+ve,gob,ine,redatam)/censo2001/css/images/treeview-gray.gif 20220624152422 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-gray.gif text/html 404 G6XES4QC7BCS46G2GTCF3XFLPG6FJJN6 540
+ve,gob,ine,redatam)/censo2001/css/images/treeview-red-line.gif 20220624152413 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-red-line.gif text/html 404 AG32VXBVDZOZZAPZMLH3AEA2LPIVLUEK 542
+ve,gob,ine,redatam)/censo2001/css/images/treeview-red.gif 20220624152415 http://www.redatam.ine.gob.ve/Censo2001/css/images/treeview-red.gif text/html 404 AE6W2TBRD34XD4U4SRGXEN7F66K6I6CF 539
+ve,gob,ine,redatam)/censo2001/css/jquery.treeview.css 20160818170445 http://www.redatam.ine.gob.ve/Censo2001/css/jquery.treeview.css text/css 200 XFP4XKDQOWRTGMVJ6JNTMH2QIQCKGYMU 1120
+ve,gob,ine,redatam)/censo2001/css/screen.css 20160818170445 http://www.redatam.ine.gob.ve/Censo2001/css/screen.css text/css 200 F4HDQ5Q7P62CKV3FN4W22QY4PLPV426K 810
+ve,gob,ine,redatam)/censo2001/cuadros.htm 20190403065314 http://www.redatam.ine.gob.ve/Censo2001/cuadros.htm text/html 200 LNPHI6ZBUCSBJVQS7L2PMSDCZPEKU6XQ 6757
+ve,gob,ine,redatam)/censo2001/cuadros_censo2001.htm 20131011233317 http://www.redatam.ine.gob.ve:80/Censo2001/cuadros_censo2001.htm text/html 200 UPAFWKMWCDYS6IB3Y5VQY7VEUNIT4ENU 7380
+ve,gob,ine,redatam)/censo2001/documentos/presentacion.htm 20131011233359 http://www.redatam.ine.gob.ve:80/Censo2001/documentos/presentacion.htm text/html 200 FPOCI7HLLLBGOKK7MTLMQ4RZ65F57XAQ 965
+ve,gob,ine,redatam)/censo2001/imagenes/cuadro.gif 20190403081510 http://www.redatam.ine.gob.ve/Censo2001/imagenes/cuadro.gif image/gif 200 EFX237UTKJCGXMT5Z4QAVS5NCOUMVTMU 1173
+ve,gob,ine,redatam)/censo2001/imagenes/felcha_012.gif 20160818170444 http://www.redatam.ine.gob.ve/Censo2001/imagenes/felcha_012.gif image/gif 200 TCFLETE55PZ6YFQZ6MGEJTCMNIQHNEYA 951
+ve,gob,ine,redatam)/censo2001/imagenes/felcha_02.gif 20160818170444 http://www.redatam.ine.gob.ve/Censo2001/imagenes/felcha_02.gif image/gif 200 PKCUJ6EVJJBZ522XLJQNMK66EVKHQLVJ 940
+ve,gob,ine,redatam)/censo2001/imagenes/fixxedbanner.gif 20190403065314 http://www.redatam.ine.gob.ve/Censo2001/imagenes/fixxedbanner.gif image/gif 200 MNMQ65VVA5MK3ST4LJZH57SZOK7VDDLZ 30997
+ve,gob,ine,redatam)/censo2001/imagenes/fixxedbanner.png 20160818170444 http://www.redatam.ine.gob.ve/Censo2001/imagenes/fixxedbanner.png image/png 200 6YB4Z7WW76CFTBO2AGO4K3MPZF5QZBYS 226748
+ve,gob,ine,redatam)/censo2001/imagenes/mas.gif 20160818170449 http://www.redatam.ine.gob.ve/Censo2001/imagenes/mas.gif image/gif 200 HTZJEB7PVIZAWYJNBPXS5JJVQLB6XH72 785
+ve,gob,ine,redatam)/censo2001/imagenes/menos.gif 20160818170449 http://www.redatam.ine.gob.ve/Censo2001/imagenes/menos.gif image/gif 200 WO2JXCAYRSNHVRKEURFV2PLCJZMIF346 730
+ve,gob,ine,redatam)/censo2001/imagenes/textofondo2.gif 20190403065315 http://www.redatam.ine.gob.ve/Censo2001/imagenes/textofondo2.gif image/gif 200 44ND5TJPK3AG4ML6NXD344UHVYJIFGYL 35465
+ve,gob,ine,redatam)/censo2001/imagenes/textofondo2.png 20160818170446 http://www.redatam.ine.gob.ve/Censo2001/imagenes/textofondo2.png image/png 200 PJKW7V7KCNJ6DKAAHH3FMLJHZW2TWADQ 30111
+ve,gob,ine,redatam)/censo2001/images/accordion_toggle.jpg 20220121221948 http://www.redatam.ine.gob.ve/Censo2001/images/accordion_toggle.jpg text/html 404 BK7IDKLWU3GBFMOKEAW3DXIKX3JHEZGB 417
+ve,gob,ine,redatam)/censo2001/images/accordion_toggle_active.jpg 20220121221856 http://www.redatam.ine.gob.ve/Censo2001/images/accordion_toggle_active.jpg text/html 404 XUGUEDFK3KMJFKMDPA2XLZZJPGQLLFJ2 414
+ve,gob,ine,redatam)/censo2001/images/h_accordion_toggle.jpg 20220121222002 http://www.redatam.ine.gob.ve/Censo2001/images/h_accordion_toggle.jpg text/html 404 IMKID7BP74T4OSJQHFECVDHYWOZLQJZV 418
+ve,gob,ine,redatam)/censo2001/images/h_accordion_toggle_active.jpg 20220121221902 http://www.redatam.ine.gob.ve/Censo2001/images/h_accordion_toggle_active.jpg text/html 404 VPXGYVR6AHW6OX6RWHNZP6FGOZGYL4HS 424
+ve,gob,ine,redatam)/censo2001/index 20230204024055 http://www.redatam.ine.gob.ve/Censo2001/index text/html 200 RLBOM73WVX74C57LOJLLS7KZG6ZDDCBM 1888
+ve,gob,ine,redatam)/censo2001/index.html 20130918185503 http://www.redatam.ine.gob.ve/Censo2001/index.html warc/revisit - RLBOM73WVX74C57LOJLLS7KZG6ZDDCBM 674
+ve,gob,ine,redatam)/censo2001/index.html.%c2%a0acesso 20240610195637 http://www.redatam.ine.gob.ve/Censo2001/index.html.%C2%A0Acesso text/html 404 IWJTM3DOL2JPJWSJ4ZWEKOVYB33UWQY6 294
+ve,gob,ine,redatam)/censo2001/index.htmlinstituto 20220120182700 http://www.redatam.ine.gob.ve/Censo2001/index.htmlInstituto text/html 404 ZQMN4HDGBBGWFD5OQ77GBIRRF2ESYHAX 421
+ve,gob,ine,redatam)/censo2001/javascript/accordion.js 20160818170446 http://www.redatam.ine.gob.ve/Censo2001/javascript/accordion.js application/javascript 200 7LJOSV7CTFNLNHG3WNP2TGQO2HX6G3H6 2052
+ve,gob,ine,redatam)/censo2001/javascript/effects.js 20160818170445 http://www.redatam.ine.gob.ve/Censo2001/javascript/effects.js application/javascript 200 4YKP7MJI4MZRKRMWNDYQCIAFE5G6I4RV 9220
+ve,gob,ine,redatam)/censo2001/javascript/prototype.js 20160818170445 http://www.redatam.ine.gob.ve/Censo2001/javascript/prototype.js application/javascript 200 ER66NZRXVG6IIA2B6DHNL52ZH7JZGHSF 22685
+ve,gob,ine,redatam)/censo2001/modulo/splash.swf 20160818170445 http://www.redatam.ine.gob.ve/Censo2001/modulo/splash.swf application/x-shockwave-flash 200 CGBZP2O7BWDILXMBIXUMM457OYBGM33L 199830
+ve,gob,ine,redatam)/censo2011 20140808012635 http://www.redatam.ine.gob.ve:80/Censo2011 text/html 301 4HCP5BQHJHBVC2ON4SLSAIHQB2RS23QN 390
+ve,gob,ine,redatam)/censo2011.lander 20240906111413 http://www.redatam.ine.gob.ve/Censo2011.LANDER text/html 404 PE4UJ2S2B2DLK7FYV7FHIDGXZ5N2ZRRD 293
+ve,gob,ine,redatam)/censo2011/ind 20220121105259 http://www.redatam.ine.gob.ve/Censo2011/ind text/html 404 RKFV2TEMF7TTQYEG7QMSYQJ53URNF563 409
+ve,gob,ine,redatam)/censo2011/index 20230404012513 http://www.redatam.ine.gob.ve/Censo2011/index text/html 404 OXTFISHH3G7KMTVG4Q42NXV5GJFPVEWC 389
+ve,gob,ine,redatam)/censo2011/index.htm 20240216130310 http://www.redatam.ine.gob.ve/Censo2011/index.htm text/html 404 R3EF77PCOEZ4RPMR6PDHP2Y2EVCFW4R4 403
+ve,gob,ine,redatam)/censo2011/index.html 20130815112113 http://www.redatam.ine.gob.ve:80/Censo2011/index.html text/html 200 W4BFICAE5L7BUPGAAZSZO5PF4IVDB3VR 670
+ve,gob,ine,redatam)/censo2011/index.html%20 20240419112434 http://www.redatam.ine.gob.ve/Censo2011/index.html%20 text/html 200 YBOQET5RJZZUKZXGNCA3KR57SIBRRH3S 979
+ve,gob,ine,redatam)/censo2011/index.html%e2%80%9cocupaciones 20240718045804 http://www.redatam.ine.gob.ve/Censo2011/index.html%E2%80%9COcupaciones text/html 404 TXR37CYODVLHZHGUR6XY3K7FOGWRBFSB 335
+ve,gob,ine,redatam)/censo2011/index.html%e2%80%a2 20240718051535 http://www.redatam.ine.gob.ve/Censo2011/index.html%E2%80%A2 text/html 404 3HYIYGPAOVAX6XQDQ4MX7D4WVH7BYYUT 326
+ve,gob,ine,redatam)/censo2011/index.html. 20160608161831 http://www.redatam.ine.gob.ve:80/Censo2011/index.html. text/html 200 YBOQET5RJZZUKZXGNCA3KR57SIBRRH3S 672
+ve,gob,ine,redatam)/censo2011/index.html.[392 20240714165317 http://www.redatam.ine.gob.ve/Censo2011/index.html.[392 text/html 404 UCDUXKUW46TSHC5QJKRDKJEV6ZQTUYRQ 286
+ve,gob,ine,redatam)/censo2011/index.html.instituto 20220127162623 http://www.redatam.ine.gob.ve/Censo2011/index.html.Instituto text/html 404 44KIMBB3ZWQ3ASVKBH4C6UOENNMA7ROK 417
+ve,gob,ine,redatam)/censo2011/index.html101 20240526214257 http://www.redatam.ine.gob.ve/Censo2011/index.html101 text/html 404 GNVTNA6WPBF3VFLPW3LWQ45FMRTKPK4V 275
+ve,gob,ine,redatam)/censo2011/index.html104 20240517212520 http://www.redatam.ine.gob.ve/Censo2011/index.html104 text/html 404 ZKRDWO5VUE5VFFFTCK5EL6CVQITMJA45 278
+ve,gob,ine,redatam)/censo2011/index.html107 20240517221812 http://www.redatam.ine.gob.ve/Censo2011/index.html107 text/html 404 Y5VJ2IHLS3PY4CN34FM5LCTV7SOARKU3 276
+ve,gob,ine,redatam)/censo2011/index.html110 20240517215445 http://www.redatam.ine.gob.ve/Censo2011/index.html110 text/html 404 PGGDYC2ER36KYZLXVGQR5WMHYT47FGIJ 277
+ve,gob,ine,redatam)/censo2011/index.html113 20240518041050 http://www.redatam.ine.gob.ve/Censo2011/index.html113 text/html 404 L2S2W67TP7OJ6MINSA4FF3LK4QJINIMS 271
+ve,gob,ine,redatam)/censo2011/index.html1398 20231115080938 http://www.redatam.ine.gob.ve/Censo2011/index.html1398 text/html 404 4RJEQ4S3JNS43BN7RQGKCJJWYGQ2PTDS 397
+ve,gob,ine,redatam)/censo2011/index.html1398119 20231115080859 http://www.redatam.ine.gob.ve/Censo2011/index.html1398119 text/html 404 HNRCYLKC3KV7JAC66MPRY463WRX5I2HM 398
+ve,gob,ine,redatam)/censo2011/index.html
+page: http://web.archive.org/cdx/search/cdx?url=www.redatam.ine.gob.ve*&output=txt&limit=300&collapse=urlkey
+  unreachable: TimeoutError: timed out
