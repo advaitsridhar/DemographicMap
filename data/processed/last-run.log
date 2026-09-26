@@ -1,7 +1,18 @@
-  2015 estimates: 10 departments, 42 arrondissements and 140 communes making IHSI's 10,911,819; every row's sexes, and every level's parts, making it
-  UNFPA 2024: 140 communes in IHSI's 42 arrondissements, each arrondissement one P-code prefix
-  40 arrondissements bound to their polygons; 2 not: La Gonâve (HTI_GEO1_01_05); Les Cayes (HTI_GEO1_07_01)
-  polygons with no arrondissement: ['Arrondissement de La Gonâve', 'Arrondissement des Cayes']
-  wrote data/processed/haiti_census.json (121 kB)
-  wrote data/processed/haiti_cod_ps_age.json (81 kB)
-  wrote haiti_census.json: 50 records; haiti_cod_ps_age.json: 50 records
+  2012: barrouallie's enumeration districts lie in ['Saint Patrick']
+  2012: bridgetown's enumeration districts lie in ['Charlotte']
+  2012: calliaqua's enumeration districts lie in ['Saint George']
+  2012: chateaubelair's enumeration districts lie in ['Saint David']
+  2012: colonarie's enumeration districts lie in ['Charlotte']
+  2012: georgetown's enumeration districts lie in ['Charlotte']
+  2012: kingstown's enumeration districts lie in ['Saint George']
+  2012: layou's enumeration districts lie in ['Saint Andrew', 'Saint Patrick']
+  2012: marriaqua's enumeration districts lie in ['Charlotte', 'Saint George']
+  2012: northerngrenadines's enumeration districts lie in ['Grenadines']
+  2012: sandybay's enumeration districts lie in ['Charlotte']
+  2012: southerngrenadines's enumeration districts lie in ['Grenadines']
+  2012: suburbsofkingstown's enumeration districts lie in ['Saint Andrew', 'Saint George']
+  2023: Suburbs of Kingstown spans ['Saint Andrew', 'Saint George']; its figures go to no parish
+  2023: Marriaqua spans ['Charlotte', 'Saint George']; its figures go to no parish
+  2023: Layou spans ['Saint Andrew', 'Saint Patrick']; its figures go to no parish
+  wrote data/processed/vincent_census.json (30 kB)
+  wrote vincent_census.json: 6 parishes, 2 with 2023 figures
