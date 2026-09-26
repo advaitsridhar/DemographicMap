@@ -140,7 +140,9 @@ ALIASES: dict[str, str] = {}
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
 BAND = re.compile(r"^(\d+)-(\d+)$")
-CUADRO = re.compile(r"^Cuadro\s+(\d+)\.(\d+)(?:\.(\d+))?$")
+# "Cuadro 4.6.1", and Buenos Aires's "Cuadro4.2.1"; its province sheet is
+# "Cuadro4.2.0". A "bis" sheet is a second layout of the same figures.
+CUADRO = re.compile(r"^Cuadro\s*(\d+)\.(\d+)(?:\.(\d+))?$")
 # A misread sheet or column misses INDEC's median by decades; its own figure
 # is a whole year computed its own way, so agreement to within two years is
 # the test, and how often each rounding reproduces it exactly is logged.
@@ -221,7 +223,9 @@ def cuadros(book: Any) -> dict[tuple[int, int | None], list[list[Any]]]:
         m = CUADRO.match(clean)
         if not m:
             continue
-        key = (int(m.group(2)), int(m.group(3)) if m.group(3) else None)
+        key = (int(m.group(2)), int(m.group(3)) if m.group(3) and int(m.group(3)) else None)
+        if key in out:
+            raise SystemExit(f"argentina_census: two sheets for {key} ({name!r})")
         out[key] = [list(r) for r in book[name].iter_rows(values_only=True)]
     return out
 
