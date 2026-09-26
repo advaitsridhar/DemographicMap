@@ -1,52 +1,7 @@
-page: http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp
-  text: ﻿ INIDE - Nicaragua, Redatam::CELADE, ECLAC - United Nations
-  frame: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725461.htm&TYPE=TMP
-  frame: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725462.htm&TYPE=TMP
-  frame: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725463.htm&TYPE=TMP
-pane: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725461.htm&TYPE=TMP
-  text: ﻿ R+SP Header Page -->
-  link: '' -> http://www.inide.gob.ni
-pane: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725462.htm&TYPE=TMP
-  text: ﻿ R+SP Index Page POBLACION Y VIVIENDAS Características Básicas Variables de Vivienda Variables de Hogar Variables de Personas Promedios Medianas Cruce de Variables De Viviendas De Personas De Hogar Combinación Lista de Variables De Viviendas De Hogares De Personas Combinación ESTRUCTURA DE LA POBLACION Población por Sexo y Grupos de Edad Relación de Dependencia (Definida por el usuario) Distribución por Edades Relación de Dependencia e Indice de Masculinidad ADULTO MAYOR Características de las Personas según Edad (65+) Características de las Viviendas (con personas de 65+) FECUNDIDAD - MORTALIDAD INFANTIL Razón de Niños Promedio de Hijos EDUCACIÓN Población en Edad Escolar Tablas de Variables de Educación POBREZA NBI Pobreza NBI Metadatos Información del Diccionario Todas las Variables Variables Geográficas Variables de Vivienda Variables de Hogar Variables de Persona Variables de Defunciones en el Hogar Variables de Emigrantes del Hogar Categorías para variables de Vivienda Categorías para variables de Persona Programación en Redatam Procesador Estadístico R+SP Descargar diccionario R+SP Descargar el software R+SP Documentación Ayuda Página de Inicio Redatam
-  link: 'Variables de Vivienda' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Frequency?BASE=VIVPOB05&ITEM=FREQVIV&lang=esp
-  link: 'Variables de Hogar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Frequency?BASE=VIVPOB05&ITEM=FREQHOG&lang=esp
-  link: 'Variables de Personas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Frequency?BASE=VIVPOB05&ITEM=FREQPOB&lang=esp
-  link: 'Promedios' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=AVERAGE1&lang=esp
-  link: 'Medianas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=MEDIAN1&lang=esp
-  link: 'De Viviendas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=CRUCVIV&lang=esp
-  link: 'De Personas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=CRUCPOB&lang=esp
-  link: 'De Hogar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=CRUCHOG&lang=esp
-  link: 'Combinación' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=CRUZCOMBI&lang=esp
-  link: 'De Viviendas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=AREAVIV&lang=esp
-  link: 'De Hogares' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=AREAHOG&lang=esp
-  link: 'De Personas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=AREAPOB&lang=esp
-  link: 'Combinación' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=AREACOMBI&lang=esp
-  link: 'Población por Sexo y Grupos de Edad' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=EDAD&lang=esp
-  link: 'Relación de Dependencia (Definida por el usuario)' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Fraction?BASE=VIVPOB05&ITEM=RELDEPAM&lang=esp
-  link: 'Distribución por Edades' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Qts?BASE=VIVPOB05&ITEM=TOTEDAD&lang=esp
-  link: 'Relación de Dependencia e Indice de Masculinidad' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=RELDEP&lang=esp
-  link: 'Características de las Personas según Edad (65+)' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Qts?BASE=VIVPOB05&ITEM=PERSAM&lang=esp
-  link: 'Características de las Viviendas (con personas de 65+)' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Qts?BASE=VIVPOB05&ITEM=VIVAM&lang=esp
-  link: 'Razón de Niños<5/Mujeres' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/AreaList?BASE=VIVPOB05&ITEM=RELNIN&lang=esp
-  link: 'Promedio de Hijos' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=FECUND&lang=esp
-  link: 'Población en Edad Escolar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Qts?BASE=VIVPOB05&ITEM=CANTIDAD&lang=esp
-  link: 'Tablas de Variables de Educación' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CrossTab?BASE=VIVPOB05&ITEM=INDICADO&lang=esp
-  link: 'Pobreza NBI' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Qts?BASE=VIVPOB05&ITEM=POBREZANBI&lang=esp
-  link: 'Metadatos' -> http://redatam.inide.gob.ni/redatam/MapaPobreza.htm
-  link: 'Todas las Variables' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICALL&lang=esp
-  link: 'Variables Geográficas' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICGEO&lang=esp
-  link: 'Variables de Vivienda' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICVIV&lang=esp
-  link: 'Variables de Hogar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICHOG&lang=esp
-  link: 'Variables de Persona' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICPOB&lang=esp
-  link: 'Variables de Defunciones en el Hogar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICDEF&lang=esp
-  link: 'Variables de Emigrantes del Hogar' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICMIG&lang=esp
-  link: 'Categorías para variables de Vivienda' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICCATVIV&lang=esp
-  link: 'Categorías para variables de Persona' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/Dictionary?BASE=VIVPOB05&ITEM=DICCATPOB&lang=esp
-  link: 'Procesador Estadístico R+SP' -> http://redatam.inide.gob.ni/redbin/RpWebStats.exe/CmdSet?BASE=VIVPOB05&ITEM=PROGRED&lang=esp
-  link: 'Descargar diccionario R+SP' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\BaseN\CENSONIC.dic
-  link: 'Descargar el software R+SP' -> http://www.cepal.org/redatam/
-  link: 'Ayuda' -> http://redatam.inide.gob.ni/redatam/RpHelp/
-  link: 'Página de Inicio Redatam' -> http://www.cepal.org/redatam/
-pane: http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_725463.htm&TYPE=TMP
-  text: ﻿ Redatam+SP Output Page " text=" "> CELADE - División de Población; redatam@cepal.org Tel: (56-2) 210 2021; Fax: (56-2) 208 0196 - Casilla 179 D, Santiago, Chile
-  link: 'redatam@cepal.org' -> mailto:redatam@cepal.org
+page: https://poblacion.bcr.gob.sv/pages/teg-descarga-de-base-de-datos-censal-csv
+  289,172 bytes
+  1 distinct match(es) for '(?:https?:)?//[A-Za-z0-9./_%-]+(?:.csv|.zip|.pdf|.xlsx?|/items/[0-9a-f]{32}|FeatureServer)[A-Za-z0-9./_%-]*'
+    https://poblacion.bcr.gob.sv/pages/teg-descarga-de-base-de-datos-censal-csv
+page: https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados
+  308,550 bytes
+  0 distinct match(es) for '(?:https?:)?//[A-Za-z0-9./_%-]+(?:.csv|.zip|.pdf|.xlsx?|/items/[0-9a-f]{32}|FeatureServer)[A-Za-z0-9./_%-]*'
