@@ -1,5 +1,44 @@
-  SEXO: 337 tables
-  EDAD: 337 tables
-  CUALINDIGE: 337 tables
-  USTEDSEREC: 337 tables
-venezuela_redatam: 1119 San Francisco's questions do not make its 11,030 people: 0 indigenous and 0 not; 10976 identities and 54 not asked; peoples []; identity [('Negra / Negro', 640), ('Afrodescendiente', 39), ('Morena / Moreno', 6904), ('Blanca / Blanco', 3364), ('Otra', 29), ('NSA :', 54)]
+RUNDEF Job
+    SELECTION ALL
+
+TABLE T1
+    AS FREQUENCY
+    OF PERSON.Q45_SEX
+    AREABREAK PARISH
+
+TABLE T2
+    AS FREQUENCY
+    OF PERSON.Q48_ETHNIC
+
+TABLE T3
+    AS FREQUENCY
+    OF PERSON.Q49_RELIGION
+
+TABLE T4
+    AS FREQUENCY
+    OF PERSON.AGE_5_YEAR_CATEGORIES
+
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Q45 Sex AREA # 1 Saint John's (City) Q45 Sex Counts % Cumul % Male 9 709 47.28% 47.28% Female 10 825 52.72% 100.00% Total 20 534 100.00% 100.00% AREA # 3 Saint John (Rural) Q45 Sex Counts % Cumul % Male 12 745 47.73% 47.73% Female 13 959 52.27% 100.00% Total 26 704 100.00% 100.00% AREA # 4 Saint George Q45 Sex Counts % Cumul % Male 3 561 47.25% 47.25% Female 3 975 52.75% 100.00% Total 7 536 100.00% 100.00% AREA # 5 Saint Peter Q45 Sex Counts % Cumul % Male 2 472 47.65% 47.65% Female 2 716 52.35% 100.00% Total 5 188 100.00% 100.00% AREA # 6 Saint Philip Q45 Sex Counts % Cumul % Male 1 324 46.87% 46.87% Female 1 501 53.13% 100.00% Total 2 825 100.00% 100.00% AREA # 7 Saint Paul Q45 Sex Counts % Cumul % Male 3 627 47.41% 47.41% Female 4 023 52.59% 100.00% Total 7 650 100.00% 100.00% AREA # 8 Saint Mary Q45 Sex Counts % Cumul % Male 3 342 48.14% 48.14% Female 3 600 51.86% 100.00% Total 6 942 100.00% 100.00% AREA # 9 Barbuda Q45 Sex Counts % Cumul % Male 837 52.48% 52.48% Female 758 47.52% 100.00% Total 1 595 100.00% 100.00% SUMMARY Q45 Sex Counts % Cumul % Male 37 617 47.63% 47.63% Female 41 357 52.37% 100.00% Total 78 974 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766801.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766801.pdf
+  table: area=1 name="Saint John's (City)" title='Q45 Sex' total=20534 na=None rows=[('Male', 9709), ('Female', 10825)]
+  table: area=3 name='Saint John (Rural)' title='Q45 Sex' total=26704 na=None rows=[('Male', 12745), ('Female', 13959)]
+  table: area=4 name='Saint George' title='Q45 Sex' total=7536 na=None rows=[('Male', 3561), ('Female', 3975)]
+  table: area=5 name='Saint Peter' title='Q45 Sex' total=5188 na=None rows=[('Male', 2472), ('Female', 2716)]
+  table: area=6 name='Saint Philip' title='Q45 Sex' total=2825 na=None rows=[('Male', 1324), ('Female', 1501)]
+  table: area=7 name='Saint Paul' title='Q45 Sex' total=7650 na=None rows=[('Male', 3627), ('Female', 4023)]
+  table: area=8 name='Saint Mary' title='Q45 Sex' total=6942 na=None rows=[('Male', 3342), ('Female', 3600)]
+  table: area=9 name='Barbuda' title='Q45 Sex' total=1595 na=None rows=[('Male', 837), ('Female', 758)]
+  table: area=None name='' title='Q45 Sex' total=78974 na=None rows=[('Male', 37617), ('Female', 41357)]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Q48 Ethnic Q48 Ethnic Counts % Cumul % African descendent 68 954 87.31% 87.31% Caucasian/White 1 291 1.63% 88.95% East Indian/India 873 1.11% 90.05% Mixed (Black/White) 732 0.93% 90.98% Mixed (Other) 2 998 3.80% 94.78% Hispanic 2 177 2.76% 97.53% Syrian/Lebanese 524 0.66% 98.20% Other 736 0.93% 99.13% Don't know/Not stated 689 0.87% 100.00% Total 78 974 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766821.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766821.pdf
+  table: area=None name='' title='Q48 Ethnic' total=78974 na=None rows=[('African descendent', 68954), ('Caucasian/White', 1291), ('East Indian/India', 873), ('Mixed (Black/White)', 732), ('Mixed (Other)', 2998), ('Hispanic', 2177), ('Syrian/Lebanese', 524), ('Other', 736), ("Don't know/Not stated", 689)]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Q49 Religion Q49 Religion Counts % Cumul % Adventist 9 773 12.47% 12.47% Anglican 13 903 17.74% 30.22% Baptist 2 820 3.60% 33.81% Church of God 3 264 4.17% 37.98% Evangelical 1 799 2.30% 40.28% Jehovah Witness 1 195 1.53% 41.80% Methodist 4 411 5.63% 47.43% Moravian 6 538 8.34% 55.77% Nazarene 1 467 1.87% 57.65% None/no religion 4 700 6.00% 63.64% Pentecostal 9 660 12.33% 75.97% Rastafarian 887 1.13% 77.10% Roman Catholic 6 417 8.19% 85.29% Weslyan Holiness 3 534 4.51% 89.80% Other 4 249 5.42% 95.23% Don't know/Not stated 3 740 4.77% 100.00% Total 78 357 100.00% 100.00% NotApp : 617 Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766841.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766841.pdf
+  table: area=None name='' title='Q49 Religion' total=78357 na=None rows=[('Adventist', 9773), ('Anglican', 13903), ('Baptist', 2820), ('Church of God', 3264), ('Evangelical', 1799), ('Jehovah Witness', 1195), ('Methodist', 4411), ('Moravian', 6538), ('Nazarene', 1467), ('None/no religion', 4700), ('Pentecostal', 9660), ('Rastafarian', 887), ('Roman Catholic', 6417), ('Weslyan Holiness', 3534), ('Other', 4249), ("Don't know/Not stated", 3740), ('NotApp :', 617)]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Age 5 year categories Age 5 year categories Counts % Cumul % 0 - 4 6 167 7.81% 7.81% 5 - 9 6 012 7.61% 15.42% 10 - 14 6 818 8.63% 24.05% 15 - 19 6 571 8.32% 32.38% 20 - 24 6 044 7.65% 40.03% 25 - 29 6 060 7.67% 47.70% 30 - 34 6 118 7.75% 55.45% 35 - 39 6 222 7.88% 63.33% 40 - 44 6 199 7.85% 71.18% 45 - 49 5 780 7.32% 78.50% 50 - 54 4 740 6.00% 84.50% 55 - 59 3 437 4.35% 88.85% 60 - 64 2 759 3.49% 92.34% 65 - 69 2 073 2.62% 94.97% 70 - 74 1 388 1.76% 96.73% 75 - 79 1 090 1.38% 98.11% 80 and over 1 496 1.89% 100.00% Total 78 974 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766861.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/87668/~tmp_8766861.pdf
+  table: area=None name='' title='Age 5 year categories' total=78974 na=None rows=[('0 - 4', 6167), ('5 - 9', 6012), ('10 - 14', 6818), ('15 - 19', 6571), ('20 - 24', 6044), ('25 - 29', 6060), ('30 - 34', 6118), ('35 - 39', 6222), ('40 - 44', 6199), ('45 - 49', 5780), ('50 - 54', 4740), ('55 - 59', 3437), ('60 - 64', 2759), ('65 - 69', 2073), ('70 - 74', 1388), ('75 - 79', 1090), ('80 and over', 1496)]
