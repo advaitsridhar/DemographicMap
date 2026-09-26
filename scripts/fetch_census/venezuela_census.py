@@ -55,6 +55,11 @@ PEOPLES = {
 }
 RESIDUAL = re.compile(r"otro|no (?:especific|declar|sabe)|ignorad|sin (?:especific|inform)",
                       re.I)
+# Every row of the table is within a state's indigenous total, so an answer
+# row is an indigenous person: one who named no people, or one INE does not
+# list by name.
+UNSTATED = re.compile(r"^(?:no (?:declarad|especificad)|sin (?:especificar|información))", re.I)
+OTHER = re.compile(r"^otros?\b", re.I)
 # INE's names for a state -> the map's.
 STATES = {"Vargas": "La Guaira", "Bolivariano de Miranda": "Miranda"}
 
@@ -79,6 +84,10 @@ def people_name(label: str) -> str:
     label = re.sub(r"\s+", " ", label).strip()
     if label in PEOPLES:
         return PEOPLES[label]
+    if UNSTATED.match(label):
+        return "Indigenous (people not stated)"
+    if OTHER.match(label):
+        return "Other indigenous people"
     if RESIDUAL.search(label):
         raise SystemExit(f"venezuela_census: {label!r} reads as an answer, not a people; "
                          "say what it is in PEOPLES")

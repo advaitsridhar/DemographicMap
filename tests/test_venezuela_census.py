@@ -42,9 +42,11 @@ class Tables(unittest.TestCase):
         with self.assertRaises(SystemExit):
             vc.peoples_table(rows)
 
-    def test_an_answer_is_not_taken_for_a_people(self):
+    def test_an_answer_within_the_indigenous_total_is_an_unnamed_or_other_people(self):
+        self.assertEqual(vc.people_name("No declarado"), "Indigenous (people not stated)")
+        self.assertEqual(vc.people_name("Otros pueblos"), "Other indigenous people")
         with self.assertRaises(SystemExit):
-            vc.people_name("Otros pueblos")
+            vc.people_name("Ignorado")
 
     def test_parroquias_are_summed_to_their_state_and_must_make_the_total(self):
         states, national = vc.population_table(POPULATION)
