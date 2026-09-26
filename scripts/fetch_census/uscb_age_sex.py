@@ -49,6 +49,9 @@ class Country:
     level: int            # the Bureau's ADM_LEVEL written as this map's admin2
     parent_level: int     # the level above it, which it must add up to
     out: str
+    # The Bureau's name for a first-level unit -> the boundary file's, where
+    # they differ by more than case and accents.
+    parents: tuple[tuple[str, str], ...] = ()
 
 
 COUNTRIES = (
@@ -56,7 +59,13 @@ COUNTRIES = (
             dataset="dominican-republic-subnational-population-and-housing-data-tables-with-"
                     "administrative-boundaries",
             year=2010, census="ONE, IX Censo Nacional de Población y Vivienda 2010",
-            level=3, parent_level=2, out="dominican_republic_age_sex.json"),
+            level=3, parent_level=2, out="dominican_republic_age_sex.json",
+            # Bahoruco and El Seybo as the boundary file spells them; Elías
+            # Piña under its earlier name La Estrelleta (the polygon's capital
+            # is Comendador, on the Haitian border); Hermanas Mirabal as
+            # "Hermanas" (its capital, Salcedo).
+            parents=(("BAORUCO", "Bahoruco"), ("EL SEIBO", "El Seybo"),
+                     ("ELÍAS PIÑA", "La Estrelleta"), ("HERMANAS MIRABAL", "Hermanas"))),
 )
 
 
@@ -133,6 +142,8 @@ def main() -> int:
         admin2 = json.loads((SITE / "admin2" / f"{country.iso3}.units.json").read_text())
         parents = {u["id"]: u["name"] for u in admin1}
         by_fold = {fold(u["name"]): u["name"] for u in admin1}
+        for theirs, ours in country.parents:
+            by_fold[fold(theirs)] = ours
         missing_parents = sorted({u["parent"] for u in units if fold(u["parent"]) not in by_fold})
         if missing_parents:
             raise SystemExit(f"uscb_age_sex: {country.iso3}: no first-level unit for "
