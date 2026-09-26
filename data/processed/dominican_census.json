@@ -5823,19 +5823,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 164022,
+      "value": 184335,
       "unit": "people",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "median_age": {
-      "value": 33.0,
+      "value": 32.9,
       "unit": "years",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "sex_ratio": {
-      "value": 1026,
+      "value": 1025,
       "unit": "males_per_1000_females",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
@@ -5863,7 +5863,8 @@
     "match_by": "shape_id",
     "shape_id": "3306468B60047889099268",
     "aliases": [],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group.",
+    "population_note": "Moca with San Víctor, a distrito municipal of Moca at the 2010 census and a municipio of its own since, which this polygon takes in; the median age and sex ratio are of the two together."
   },
   {
     "id": "DOM-ONE-hatomayor-elvalle",
@@ -8061,19 +8062,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 158019,
+      "value": 177181,
       "unit": "people",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "median_age": {
-      "value": 28.9,
+      "value": 28.8,
       "unit": "years",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "sex_ratio": {
-      "value": 940,
+      "value": 945,
       "unit": "males_per_1000_females",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
@@ -8101,7 +8102,8 @@
     "match_by": "shape_id",
     "shape_id": "3306468B54911085338541",
     "aliases": [],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group.",
+    "population_note": "Baní with Matanzas, a distrito municipal of Baní at the 2010 census and a municipio of its own since, which this polygon takes in; the median age and sex ratio are of the two together."
   },
   {
     "id": "DOM-ONE-peravia-nizao",
@@ -8980,6 +8982,62 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
   },
   {
+    "id": "DOM-ONE-sanchezramirez-villalamata",
+    "level": "admin2",
+    "name": "La Mata",
+    "parent": "DOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38358,
+      "unit": "people",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "median_age": {
+      "value": 30.6,
+      "unit": "years",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "sex_ratio": {
+      "value": 1030,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "ONE publishes the 2022 census's question 64 (the informant's perception of each person's features, skin colour and culture) by region and province only -- Volume III, Cuadros 11 and 12 -- and its REDATAM server offers the 2010, 2002 and 1981 censuses, not 2022's, so no municipio figure has been published to read."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal",
+        "url": "http://web.archive.org/web/20241113000805id_/https://www.one.gob.do/media/2njp32ut/cuadro-2-volumen-iii.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "DOM",
+    "parent_name": "Sánchez Ramírez",
+    "match_by": "shape_id",
+    "shape_id": "3306468B26306333639139",
+    "aliases": [
+      "Villa La Mata"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
+  },
+  {
     "id": "DOM-ONE-sancristobal-bajosdehaina",
     "level": "admin2",
     "name": "Bajos de Haina",
@@ -9031,6 +9089,62 @@
     "match_by": "shape_id",
     "shape_id": "3306468B44390196227357",
     "aliases": [],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
+  },
+  {
+    "id": "DOM-ONE-sancristobal-cambitagaravitos",
+    "level": "admin2",
+    "name": "Cambita Garabito",
+    "parent": "DOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31684,
+      "unit": "people",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "median_age": {
+      "value": 27.9,
+      "unit": "years",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "sex_ratio": {
+      "value": 1073,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "ONE publishes the 2022 census's question 64 (the informant's perception of each person's features, skin colour and culture) by region and province only -- Volume III, Cuadros 11 and 12 -- and its REDATAM server offers the 2010, 2002 and 1981 censuses, not 2022's, so no municipio figure has been published to read."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal",
+        "url": "http://web.archive.org/web/20241113000805id_/https://www.one.gob.do/media/2njp32ut/cuadro-2-volumen-iii.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "DOM",
+    "parent_name": "San Cristóbal",
+    "match_by": "shape_id",
+    "shape_id": "3306468B64395738690475",
+    "aliases": [
+      "Cambita Garavitos"
+    ],
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
   },
   {
@@ -10521,19 +10635,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 771748,
+      "value": 783438,
       "unit": "people",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "median_age": {
-      "value": 31.4,
+      "value": 31.5,
       "unit": "years",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "sex_ratio": {
-      "value": 955,
+      "value": 957,
       "unit": "males_per_1000_females",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
@@ -10563,7 +10677,8 @@
     "aliases": [
       "Santiago"
     ],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group; the 41 people whose age was not declared are left out."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group; the 41 people whose age was not declared are left out.",
+    "population_note": "Santiago with Baitoa, a distrito municipal of Santiago at the 2010 census and a municipio of its own since, which this polygon takes in; the median age and sex ratio are of the two together."
   },
   {
     "id": "DOM-ONE-santiago-tamboril",
