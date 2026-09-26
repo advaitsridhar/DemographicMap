@@ -184,6 +184,11 @@ def read(key: str, ages: bool = False) -> tuple[dict[tuple[str, str, str], dict]
         if len(row) <= places["age"] or not text(row[places["departamento"]]):
             continue
         labels = tuple(text(row[places[k]]) for k in ("departamento", "municipio", "distrito"))
+        if not CODE.match(labels[0]) and not fold(labels[0]).startswith("noespecificado"):
+            # A footnote under the table ("Fuente: Banco Central de Reserva").
+            if any(text(row[j]) for _, j in columns if j < len(row)):
+                raise SystemExit(f"{WHO}: {key}: a row with figures and no place: {labels}")
+            continue
         place = coded(labels)
         NAMES.setdefault(place, tuple(CODE.match(x).group(2) if CODE.match(x) else x
                                       for x in labels))
