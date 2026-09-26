@@ -168,7 +168,10 @@ def coded(labels: tuple[str, ...]) -> tuple[str, ...]:
         m = CODE.match(label)
         if not m:
             raise SystemExit(f"{WHO}: a place with no code: {label!r}")
-        out.append(m.group(1).zfill(2))
+        # TAB_POB_1 numbers its unspecified place like a department:
+        # "15 - No Especificado".
+        out.append(UNSPECIFIED if fold(m.group(2)).startswith("noespecificado")
+                   else m.group(1).zfill(2))
     return tuple(out)
 
 
@@ -406,9 +409,14 @@ def main() -> int:
                 "unknown": u["indigenous"]["unknown"], "afro": u["afro"]["yes"]}
             for p, u in ident.items()}
     nest(flat, "identity", ("yes", "no", "unknown", "afro"))
-    if set(ident) != set(pop):
+    placed = {p for p in pop if UNSPECIFIED not in p}
+    if set(ident) != placed:
         raise SystemExit(f"{WHO}: the identity tables' places are not the population table's: "
-                         f"{[(p, NAMES.get(p)) for p in sorted(set(ident) ^ set(pop))[:8]]}")
+                         f"{[(p, NAMES.get(p)) for p in sorted(set(ident) ^ placed)[:8]]}")
+    nowhere = sum(u["people"] for p, u in pop.items()
+                  if level_of(p) == "department" and p[0] == UNSPECIFIED)
+    log(f"  {nowhere:,} people are counted in no department (TAB_POB_1's No Especificado); the "
+        "identity tables have no such row")
     log(f"  every district's ages, sexes and identity answers checked; districts make their "
         f"departments and the departments the BCR's {NATIONAL:,}")
 
