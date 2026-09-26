@@ -1,9 +1,208 @@
-https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_1.xlsx
-  600,483 bytes
-  1 sheet(s)
-  -- 'TAB_ETNIA_1': 5333 rows x 28 cols
-     ['#VALUE!', 'VII CENSO DE POBLACIÓN Y VI DE VIVIENDA ', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-     ['', 'Población que se identifica de algún pue', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-     ['Departamento de residencia', 'Municipio de residencia', 'Distrito de residencia', 'Edad Quinquenal', '1. Lenca', '', '2. Nahua Pipil', '', '3. Kakawira (Cacaopera)', '', '4. Mayas Chorti', '', '5. Mayas Pocomames', '', '6. Xinca', '', '7. Mixe', '', '8. Alagüilac', '', '9. Mangue', '', '10. otro', '', '11. No sabe/No responde', '', 'Total Indígenas', '']
-     ['', '', '', '', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '', '']
-     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', 'TOTAL', '6966', '6922', '15047', '14398', '2895', '3361', '2042', '1971', '1133', '1054', '90', '84', '22', '17', '8', '11', '94', '23', '1817', '1588', '4030', '4575', '68148', '']
+page: https://stats.gov.bs/wp-json/wp/v2/media?search=census&per_page=100
+  140,956 bytes
+  65 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/1990-CENSUS-BUILDING-AND-HOUSING-STOCK.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-2.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-3.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-4.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ABACO-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ACKLINS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ACKLINS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ANDROS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BERRY-ISLANDS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BERRY-ISLANDS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BIMINIS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BIMINIS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CAT-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CAT-ISLAND-POPULATION-BY-SETTLEMENT_-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CROOKED-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-INDUSTRY-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-INDUSTRY-2010-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-OCCUPATION-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-OCCUPATION-2010-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ELEUTHERA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/EXUMA-AND-CAYS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/EXUMA-CAYS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/GRAND-BAHAMA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/HARBOUR-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/HARBOUR-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/INAGUA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/INAGUA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LAND-AND-AREA-DENSITY-OF-POPULATION-BY-ISLAND-2000-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LONG-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LONG-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/MAYAGUANA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/MAYAGUANA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/Microsoft-Word-2010-CENSUS-FIRST-RELEASE-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NEW-PROVIDENCE-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RAGGED-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RAGGED-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RUM-CAY-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SAN-SALVADOR-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SAN-SALVADOR-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SPANISH-WELLS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SPANISH-WELLS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/TOTAL-POPULATION-BY-SEX-AND-BY-ISLAND-AND-NUMBER-OF-HOUSEHOLDS-1990-CENSUS-1.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/TOTAL-POPULATION-BY-SEX-AND-BY-ISLAND-AND-NUMBER-OF-HOUSEHOLDS-1990-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/1990-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/2000-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/2010-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Bahamas-Census-of-Populaton-and-Housing-2010-Internal-Migration.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Bahamas-Census-of-Populaton-and-Housing-2010-International-Migration.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-5-Years-and-Over-by-Sex-Island-Of-Previous-Residence-and-Educational-Attainment-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-by-Age-Sex-and-Period-of-Migration-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-by-Sex-Island-of-Birth-and-Period-of-Change-in-Last-Ten-Years-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Population-Changing-Island-of-Residence-in-the-Past-Ten-Years-by-Age-Sex-and-Island-of-Previous-Residence-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Department-of-Statistics-announces-digitization-of-Census-2020-and-the-start-of-pre-testing.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/PRESS-RELEASE-First-training-for-Census-2020-workers11.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/PRESS-RELEASE-Preparation-for-Census-2020-begins-with-pre-test-training.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Preparations-for-Census-2020-begins-with-pre-test-training.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Press-Statement-\u2013-Census-2020-Pre-Test-Press-Conference21.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Press-Statement-\u2013-Dept.-of-Statistics-Announces-Digitization-of-Census-2020-and-Start-of-Pre-testing.pdf
+page: https://stats.gov.bb/wp-json/wp/v2/media?search=census&per_page=100
+  78,603 bytes
+  8 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2020\/03\/The-2020-Census-and-You-1.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2020\/05\/Census-2000-Questionnaire.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2020\/05\/Census-2010-Questionnaire.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2020\/05\/Principles-and-Recommendations-for-Population-and-Housing-Censuses-Revision-2.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2021\/03\/Census-Tables-2010.xlsx
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2023\/10\/Census-2020-Questionnaire.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2024\/02\/2021-Population-and-Housing-Census.pdf
+    source_url":"https:\/\/stats.gov.bb\/wp-content\/uploads\/2024\/05\/Census-2020-Tables.xlsx
+page: https://www.stats.gov.lc/wp-json/wp/v2/media?search=census&per_page=100
+  116,542 bytes
+  10 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2016\/12\/StLuciaPreliminaryCensusReport2010.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2018\/05\/Census_Household_questionnaire_ver7_2010.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2018\/05\/Census_Person_questionnaire_ver7_2010.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2018\/07\/2001-Population-and-Housing-Census-Report.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2021\/03\/Census-Postponement-Press-Release.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2022\/02\/Saint-Lucia-Census-2022-Application-Form.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2024\/08\/StLucia-Provisional-Census-Report-2022-Release-1Rev1.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2024\/08\/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2024\/08\/StLucia-Provisional-Census-Report2022-Release-2Rev-2.pdf
+    source_url":"https:\/\/www.stats.gov.lc\/wp-content\/uploads\/2024\/11\/St-Lucia-Census-2022.pdf
+page: https://stats.gov.gd/wp-json/wp/v2/media?search=census&per_page=100
+  63,831 bytes
+  22 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/06\/HistoricalTrendsinCensusPopulationSizeandIntercensalchanges1871-to-2011.xlsx
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/06\/Non-InstitutionalPopulationInPrivateDwelling15YearsAndOverByMaritalStatusAndSexCensus2011.xlsx
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/06\/PopulationAndHousingCensusResultByCategoryOfTheRespondents2011.xlsx
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/07\/GrenadaCensus2011TotalPopulation.xlsx
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Land-UseAtAgriculturalCensusYears.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Cumulative-Table-Showing-Educational-Attainment-of-15-Years-and-Over-2011-Census.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Highest-Level-of-Educational-Attainment-by-Sex-and-Percentage-15-Years-and-Over-2011-Census.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Persons-Age-15-Years-Over-by-Highest-Examination-Passed-and-Parish-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Persons-Aged-15-Years-and-Over-by-Highest-Level-of-Educational-Attainment-and-Parish-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Persons-Who-Received-Training-by-Age-Group-and-Sex-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Population-under-5-by-Parish-and-School-Attendance-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-School-Attendance-by-Parish-2011-Census.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-School-Attendance-by-Parish-for-Compulsory-School-Age-5-16-Population-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-School-Attendance-by-Sex-and-Parish-2011-Census.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-School-Attendance-by-Type-of-Institution-and-Percentage-Distribution-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Training-Attainment-by-Sex-and-Percentage-Distribution-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Type-of-Certification-by-Sex-and-Percentage-Distribution-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-Institutional-Population-Under-Five-Attending-School-by-Age-Sex-and-Type-of-School-Attending-Census-2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2018\/09\/Non-InstitutionalPopulationCompulsorySchoolAgePopulationbySchoolAttendanceSexan-SchoolCensus2011.xls
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2021\/03\/Census-Report-2011-Revised-Final.pdf
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2025\/04\/2021-National-Housing-Population-Census-Results-Latest-PRELIMINARY.pdf
+    source_url":"https:\/\/stats.gov.gd\/wp-content\/uploads\/2026\/02\/agriculture_census_report_final.pdf
+page: https://www.stats.gov.kn/wp-json/wp/v2/media?search=census&per_page=100
+  92,698 bytes
+  3 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2019\/10\/Censushh.pdf
+    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2020\/08\/Final-Census-FAQ-Document-from-OSCAG-Team-20-Dec-2019-revised-for-website.pdf
+    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2023\/03\/SKNIS-Press-Release1-Census-Update1-logo.pdf
+page: https://stats.gov.dm/wp-json/wp/v2/media?search=census&per_page=100
+  116,831 bytes
+  16 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/CENSUS-AND-STATISTICS-ACT.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Dominica_Agricultural_Census_Final_Result_1995.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_Census_of_the_Commonwealth_Caribbean_1980_to_1981.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_Census_of_the_Commonwealth_Caribbean_1980_to_1981_Volume_i.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_Census_of_the_Commonwealth_Caribbean_1980_to_1981_Volume_ii.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_Census_of_the_Commonwealth_Caribbean_1980_to_1981_Volume_iii.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_Census_of_the_Commonwealth_Caribbean_1990_to_1991.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_and_Housing_Census_1991.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_and_Housing_Census_2001.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_and_Housing_Census_2011.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/06\/Population_and_Housing_Census_Questionnaire_2011.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/10\/2011_census_report.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/10\/CENSUS.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2019\/10\/Census-did-you-know.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2020\/04\/2011-Population-and-Housing-Census.pdf
+    source_url":"https:\/\/stats.gov.dm\/wp-content\/uploads\/2021\/06\/Census-Process.pdf
+page: https://statistics.gov.ag/wp-json/wp/v2/media?search=census&per_page=100
+  98,212 bytes
+  11 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2016\/06\/complete_census_summary_report.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2017\/10\/Census-2011-Book-of-Statistical-Tables-I.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2017\/10\/Census-2011-Preliminary-Release.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2017\/11\/2001-Census-of-Population-and-Housing.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2017\/11\/2011-Antigua-and-Barbuda-Population-and-Housing-Census-A-Demographic-Profile-1.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2017\/11\/2011-Antigua-and-Barbuda-Population-and-Housing-Census-A-Demographic-Profile.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2018\/01\/1991-Population-and-Housing-Census.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2025\/09\/Release-on-Census-Workers-are-now-in-the-field.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2026\/02\/Census-Office-encourages-the-publics-participation.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2026\/02\/Census-Renewed-Recruitment-Drive.pdf
+    source_url":"https:\/\/statistics.gov.ag\/wp-content\/uploads\/2026\/04\/Census-Office-suspends-field-operations.pdf
+page: https://stats.gov.vc/wp-json/wp/v2/media?search=census&per_page=100
+  192,829 bytes
+  16 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2017\/01\/2001_Population_-_Housing_Census_Report.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2017\/01\/2012-Housing-and-Population-Census-Report-final-draft-4.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2017\/01\/2012-Preliminary-CENSUS-REPORT-FINAL.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/05\/Census-Statistics-Act.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/10\/Average-Household-Size-by-Census-Division-1970-to-2012.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/10\/Household-Population-by-Age-Group-and-Sex-for-Census-Years-1980-to-2012.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/10\/Total-Number-of-Households-by-Census-Division-1980-to-2012.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/11\/Population-and-Housing-Census-Preliminary-Report-2012.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2018\/11\/Population-and-Housing-Census-Report-2012.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2020\/05\/Estimated-Number-of-Households-by-Census-Divisions-2016-to-2020.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2020\/05\/Mid-Year-Household-Population-by-Census-Division-for-Census-Years-1980-to-2012.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2026\/03\/St.-Vincent-and-the-Grenadines-Population-and-Housing-Census-Report-2023.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2026\/05\/SVG-2023-Census-Report-V4.3.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2026\/05\/SVG-2023-Census-Report.pdf
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2026\/06\/Household-Population-by-Census-Division-2023.xlsx
+    source_url":"https:\/\/stats.gov.vc\/wp-content\/uploads\/2026\/06\/Working-Age-Population-by-Economic-Activity-and-Census-Division-2023.xlsx
+page: https://statisticsguyana.gov.gy/wp-json/wp/v2/media?search=census&per_page=100
+  81,607 bytes
+  30 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/04\/Final_2012_Census_Count-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/04\/Signed_Census2012_Order_14th_August_2012.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/2002_Census_Life_Table.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/2012-Census-Household-Questionnaires-Form-A.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/2012-Census-Individual-Questionnaire-Form-B.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/2012_Census_Life_Table.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/2022_Census_Application_form-Fillable_5_f.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Compendium-5-Housing_Stocks_Final_Draft_28-June_2024.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium1-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium2.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium3.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium4.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium5-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Compendium5.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Count-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Final_2012_Census_Count.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Guyana_National_Census-Report_2002.zip
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-2-Census-recruitment.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-3-Census-recruitment.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-4-Census-recruitment-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-4-Census-recruitment-4.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-4-Census-recruitment.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-6-Census-recruitment-1.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/10\/Region-6-Census-recruitment.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/11\/2012_Census_QuestionnaireForm-AHH.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/11\/2012_Census_QuestionnaireForm-BIND.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/11\/Census_2002_QuestionnaireForm_AHH.pdf
+    source_url":"https:\/\/statisticsguyana.gov.gy\/wp-content\/uploads\/2019\/11\/Census_2002_QuestionnaireForm_BIND.pdf
