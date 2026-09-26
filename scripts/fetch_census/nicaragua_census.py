@@ -100,7 +100,8 @@ ALIASES = {"Ciudad Darío": "Ciudad Darco", "Dipilto": "Dipilito", "El Jícaro":
            "Mozonte": "Monzonte", "El Tortuguero": "El Tortugero",
            "Desembocadura de Río Grande": "Desembocadura de Cruz Río Grande",
            "La Desembocadura de la Cruz de Río Grande": "Desembocadura de Cruz Río Grande",
-           "Waspam": "Waspán"}
+           "Waspam": "Waspán", "Waspám": "Waspán", "Cinco Pinos": "San Juan de Cinco Pinos",
+           "Moyogalpa": "Moyagalpa"}
 
 
 def fetch(server: Patient, level: str) -> dict[str, dict[str, dict[str, Any]]]:
@@ -219,7 +220,7 @@ def main() -> int:
             raise SystemExit(f"{WHO}: department {name!r} has {len(hits)} polygons")
         shapes1[code] = hits[0]
     shapes = [{**s, "name": unwrapped(s["name"])} for s in admin2]
-    bound, missing = bind({code: (t["name"], shapes1[code[:2]]["name"])
+    bound, missing = bind({code: (unwrapped(t["name"]), shapes1[code[:2]]["name"])
                            for code, t in municipios["sex"].items()}, shapes, parents, ALIASES)
     log(f"  {len(bound)} of {len(municipios['sex'])} municipios bound to their polygons; "
         f"not: {missing}")
@@ -233,8 +234,8 @@ def main() -> int:
         if sid is None:
             continue
         records.append(record(
-            f"NIC-INIDE-{code}", table["name"], level="admin2", parent="NIC", country="NIC",
-            parent_name=shapes1[code[:2]]["name"], codes={"inide": code},
+            f"NIC-INIDE-{code}", unwrapped(table["name"]), level="admin2", parent="NIC",
+            country="NIC", parent_name=shapes1[code[:2]]["name"], codes={"inide": code},
             match_by="shape_id", shape_id=sid, aliases=[labels[sid]],
             **fields({q: municipios[q][code] for q in QUESTIONS})))
     for code, name in sorted(names.items()):
