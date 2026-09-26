@@ -140,6 +140,11 @@ SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
 BAND = re.compile(r"^(\d+)-(\d+)$")
 CUADRO = re.compile(r"^Cuadro\s+(\d+)\.(\d+)(?:\.(\d+))?$")
+# A misread sheet or column misses INDEC's median by decades; its own figure
+# is a whole year computed its own way, so agreement to within two years is
+# the test, and how often each rounding reproduces it exactly is logged.
+MEDIAN_TOLERANCE = 2.0
+FIVE_YEAR: dict[str, float | None] = {}
 
 
 def fold(name: str) -> str:
@@ -322,6 +327,7 @@ def ages(rows: list[list[Any]], what: str) -> tuple[int, int, float | None]:
         if sum(by_age.get(a, 0) for a in range(low, high + 1)) != people:
             raise SystemExit(f"argentina_census: {what}: ages {low}-{high} do not make their group")
     median = grouped_median([*singles, (opened[0], None, opened[1])])
+    FIVE_YEAR[what] = grouped_median([*bands, (opened[0], None, opened[1])])
     return women, men, median
 
 
@@ -430,6 +436,7 @@ def main() -> int:
     departments: dict[str, dict[str, Any]] = {}
     urls: dict[tuple[str, int], list[str]] = defaultdict(list)
     worst_median = 0.0
+    agreement: dict[str, int] = defaultdict(int)
     for index, pcode, slug, page, name, map_name in PROVINCES:
         what = name
         books = {}
@@ -464,7 +471,16 @@ def main() -> int:
                 continue
             gap = abs(median - published[code])
             worst_median = max(worst_median, gap)
-            if gap > 1.0:
+            five = FIVE_YEAR.get(what if code == pcode else f"{what}, {names[code]}")
+            for rule, value in (("single years, rounded", round(median)),
+                                ("single years, truncated", int(median)),
+                                ("five-year groups, rounded",
+                                 round(five) if five is not None else None),
+                                ("five-year groups, truncated",
+                                 int(five) if five is not None else None)):
+                agreement[rule] += value == published[code]
+            agreement["units"] += 1
+            if gap > MEDIAN_TOLERANCE:
                 raise SystemExit(f"argentina_census: {what} {code}: median {median} against "
                                  f"INDEC's {published[code]}")
 
@@ -591,7 +607,9 @@ def main() -> int:
         log(f"  {name}: {len(names)} departments, {province_pop:,} people, "
             f"{ind_province:,} indigenous, {afro_total[1]:,} Afro-descendant")
 
-    log(f"  medians agree with INDEC's rounded ones to within {worst_median:.2f} years")
+    log(f"  medians agree with INDEC's whole-year ones to within {worst_median:.2f} years; "
+        f"of {agreement.pop('units')}, reproduced exactly by "
+        + ", ".join(f"{rule}: {n}" for rule, n in agreement.items()))
     national = sum(p["fields"]["population"]["value"] for p in provinces.values())
     log(f"  {len(provinces)} provinces, {len(departments)} departments, {national:,} people")
 
