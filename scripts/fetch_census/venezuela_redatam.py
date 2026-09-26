@@ -82,6 +82,7 @@ IDENTITY = {"Negra / Negro": "Black", "Afrodescendiente": "Afro-descendant",
             "Morena / Moreno": "Moreno", "Blanca / Blanco": "White",
             "Otra": "Other"}
 NOT_STATED = "Not stated"
+EMPTY: list[str] = []
 # CUALINDIGE's categories -> the names INE's table by state gives them
 # (venezuela_census.py writes that table): several spellings of one people
 # are one name there, and are one here.
@@ -224,6 +225,11 @@ def municipio_counts(by_question: dict[str, list[dict]]) -> dict[str, dict[str, 
             raise SystemExit(f"venezuela_redatam: {unit['name']}'s ages do not make it")
         unit["ages"] = ages
         peoples, not_indigenous = split_rows(unit["peoples"], "peoples")
+        if not unit["peoples"]["rows"]:
+            # A municipio with no indigenous people at all is printed with no
+            # rows, not even the "NSA" line: everyone is not indigenous.
+            not_indigenous = people
+            EMPTY.append(unit["name"])
         identity, unasked = split_rows(unit["identity"], "identity")
         unit["peoples_"] = translate(peoples, PEOPLES, "peoples")
         unit["identity_"] = translate(identity, IDENTITY, "identity")
@@ -242,6 +248,9 @@ def municipio_counts(by_question: dict[str, list[dict]]) -> dict[str, dict[str, 
     if national != NATIONAL:
         raise SystemExit(f"venezuela_redatam: the municipios make {national:,}, not INE's "
                          f"{NATIONAL:,}")
+    if EMPTY:
+        log(f"  {len(EMPTY)} municipios with no one who named an indigenous people: "
+            + ", ".join(EMPTY))
     log(f"  {len(units)} municipios making INE's {NATIONAL:,}; every question making each")
     return units
 
