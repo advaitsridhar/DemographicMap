@@ -149,6 +149,9 @@ def layout(rows: list[list[Any]], what: str) -> tuple[int, dict[str, int], list[
 
 # (department, municipio, district) codes -> their names, as the tables first print them.
 NAMES: dict[tuple[str, str, str], tuple[str, str, str]] = {}
+# The code given a "No Especificado" row: people the tables place in a
+# department, or the country, and no further.
+UNSPECIFIED = "ne"
 
 
 def coded(labels: tuple[str, ...]) -> tuple[str, ...]:
@@ -158,6 +161,9 @@ def coded(labels: tuple[str, ...]) -> tuple[str, ...]:
     for label in labels:
         if label.upper() == "TOTAL":
             out.append("")
+            continue
+        if fold(label).startswith("noespecificado"):
+            out.append(UNSPECIFIED)
             continue
         m = CODE.match(label)
         if not m:
@@ -408,6 +414,9 @@ def main() -> int:
     for place in pop:
         if level_of(place) != "department":
             continue
+        if place[0] == UNSPECIFIED:
+            log(f"  {pop[place]['people']:,} people counted in no department")
+            continue
         code, name = place[0], NAMES[place][0]
         hits = [u for u in admin1 if fold(re.sub(r"^Departamento de\s+", "", u["name"]))
                 == fold(name)]
@@ -417,6 +426,10 @@ def main() -> int:
     districts = {}
     for place in pop:
         if level_of(place) != "district":
+            continue
+        if UNSPECIFIED in place:
+            log(f"  {pop[place]['people']:,} people counted in {NAMES[place]} have no district "
+                "to bind to")
             continue
         key = place[0] + place[2]
         if key in districts:
