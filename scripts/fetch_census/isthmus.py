@@ -21,13 +21,21 @@ from typing import Any
 
 from .redatam import median_age  # noqa: F401 -- readers take it from here with the rest
 
-LEADING_CODE = re.compile(r"^\s*\d+\s+(?=\S)")
 AGE = re.compile(r"^\s*(\d+)")
 
 
-def area_name(name: str) -> str:
-    """The area's name without the code a server prints before it."""
-    return LEADING_CODE.sub("", name or "").strip()
+def area_name(name: str, code: str | None) -> str:
+    """The area's name without its own code, where a server prints it before it.
+
+    Costa Rica's server writes "101 San José" for area 101 and Nicaragua's
+    "05-Nueva Segovia" for area 05. Only the area's own code is taken off:
+    a name may begin with a number of its own (Panama's corregimiento of
+    24 de Diciembre).
+    """
+    name = (name or "").strip()
+    if code and re.match(rf"^{re.escape(code)}(?:\s*-\s*|\s+)(?=\S)", name):
+        return re.sub(rf"^{re.escape(code)}(?:\s*-\s*|\s+)", "", name).strip()
+    return name
 
 
 def by_area(found: list[dict], question: str, who: str,
@@ -51,7 +59,7 @@ def by_area(found: list[dict], question: str, who: str,
             continue
         if table["area"] in out:
             raise SystemExit(f"{who}: {question}: area {table['area']} printed twice")
-        out[table["area"]] = {**table, "name": area_name(table["name"])}
+        out[table["area"]] = {**table, "name": area_name(table["name"], table["area"])}
     if not out:
         raise SystemExit(f"{who}: {question}: no area tables came back")
     answered = sum(t["total"] or 0 for t in out.values())
@@ -63,6 +71,36 @@ def by_area(found: list[dict], question: str, who: str,
         raise SystemExit(f"{who}: {question}: the areas' answers and not-applicables make "
                          f"{everyone:,}, not {base_total:,}")
     return out
+
+
+def fill_missing(tables: dict[str, dict[str, dict[str, Any]]], who: str, everyone: int,
+                 reference: str = "sex") -> dict[str, int]:
+    """Give every area a table for every question, and check each makes ``everyone``.
+
+    A processor prints no table for an area where nobody was put the
+    question -- Costa Rica's P08, which people, in a district where nobody
+    said they are indigenous. That area's table is empty, and everyone there
+    is "not applicable". ``reference`` is a question put to everyone (sex),
+    whose areas are all the areas there are. Returns how many areas each
+    question was missing.
+    """
+    areas = tables[reference]
+    filled = {}
+    for question, found in tables.items():
+        stray = set(found) - set(areas)
+        if stray:
+            raise SystemExit(f"{who}: {question}: areas {reference} does not have: "
+                             f"{sorted(stray)[:10]}")
+        absent = [code for code in areas if code not in found]
+        for code in absent:
+            found[code] = {"area": code, "name": areas[code]["name"], "title": None,
+                           "rows": [], "total": 0, "na": areas[code]["total"]}
+        filled[question] = len(absent)
+        made = sum((t["total"] or 0) + (t["na"] or 0) for t in found.values())
+        if made != everyone:
+            raise SystemExit(f"{who}: {question}: the areas' answers and not-applicables make "
+                             f"{made:,}, not {everyone:,}")
+    return filled
 
 
 def translate(rows: list[tuple[str, int]], names: dict[str, str], question: str, who: str,

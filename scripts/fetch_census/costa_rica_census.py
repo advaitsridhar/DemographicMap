@@ -61,7 +61,8 @@ from scripts.probe_redatam import Session
 
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import bind, fold
-from .isthmus import by_area, less, median_age, sex_ratio, single_years, summed, translate
+from .isthmus import (by_area, fill_missing, less, median_age, sex_ratio, single_years, summed,
+                      translate)
 from .redatam import Server
 
 PORTAL = "http://sistemas.inec.cr:8080/bininecmm/RpWebEngine.exe/Portal?BASE=2011&lang=esp"
@@ -105,8 +106,11 @@ def fetch(server: Server, level: str) -> dict[str, dict[str, dict[str, Any]]]:
     out = {}
     for question, variable in QUESTIONS.items():
         found = server.frequency(variable, areabreak=level)
-        out[question] = by_area(found, f"{question} by {level.lower()}", WHO, NATIONAL)
+        out[question] = by_area(found, f"{question} by {level.lower()}", WHO)
         log(f"  {variable} by {level.lower()}: {len(out[question])} areas")
+    filled = fill_missing(out, WHO, NATIONAL)
+    log(f"  areas with no table, nobody there having been asked: {filled}; every question's "
+        f"answers and not-applicables make {NATIONAL:,}")
     return out
 
 

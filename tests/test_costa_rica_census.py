@@ -34,9 +34,23 @@ def unit(people_yes=3, people_no=7, unknown=1):
 
 class Areas(unittest.TestCase):
     def test_the_code_a_server_prints_before_a_name_is_taken_off(self):
-        self.assertEqual(isthmus.area_name("101 San José"), "San José")
-        self.assertEqual(isthmus.area_name("BOCAS DEL TORO"), "BOCAS DEL TORO")
-        self.assertEqual(isthmus.area_name("20 de Noviembre"), "de Noviembre")
+        self.assertEqual(isthmus.area_name("101 San José", "101"), "San José")
+        self.assertEqual(isthmus.area_name("05-Nueva Segovia", "05"), "Nueva Segovia")
+        self.assertEqual(isthmus.area_name("BOCAS DEL TORO", "01"), "BOCAS DEL TORO")
+        # Only the area's own code: a name may begin with a number of its own.
+        self.assertEqual(isthmus.area_name("24 DE DICIEMBRE", "080821"), "24 DE DICIEMBRE")
+
+    def test_an_area_with_no_table_was_asked_nothing(self):
+        tables = {"sex": {"1": table("1", "a", [("Hombre", 4), ("Mujer", 6)]),
+                          "2": table("2", "b", [("Hombre", 1), ("Mujer", 1)])},
+                  "people": {"1": table("1", "a", [("Bribrí", 3)], 7)}}
+        self.assertEqual(isthmus.fill_missing(tables, "t", 12), {"sex": 0, "people": 1})
+        self.assertEqual((tables["people"]["2"]["total"], tables["people"]["2"]["na"]), (0, 2))
+        with self.assertRaises(SystemExit):
+            isthmus.fill_missing(tables, "t", 13)
+        tables["people"]["3"] = table("3", "c", [("Bribrí", 1)])
+        with self.assertRaises(SystemExit):
+            isthmus.fill_missing(tables, "t", 12)
 
     def test_areas_must_make_the_base_and_its_published_count(self):
         found = [table("1", "1 San José", [("Sí", 2), ("No", 3)]),
