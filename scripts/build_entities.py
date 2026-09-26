@@ -300,6 +300,10 @@ ADAPTER_FILES = [
     # questionnaire's sample; ITER's files above carry no ethnicity.
     "mexico_ethnicity.json",
     "colombia_municipality.json",
+    # Chile's 2024 census by region and province: population, median age, sex
+    # ratio, religion, indigenous languages, and indigenous and Afro-descendant
+    # identity, each summed from INE's comuna tables.
+    "chile_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",

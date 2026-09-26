@@ -147,6 +147,9 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
     "No religion": ("No religion",),
     "Not stated": ("Not stated", "Unaffiliated or not reported",
                    "Scheduled Castes",
+                   # Chile's 2024 census prints "*" for a count too small to
+                   # publish; what a province's stars hid is no named answer.
+                   "Religion not published",
                    # Labels that weld a real answer to a non-answer, filed
                    # here beside "Other, none, or not stated": no religion
                    # is named by any of them, and a map that coloured a
@@ -667,6 +670,8 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # other's parent. The loop was invisible until the top of the tree
         # started refusing a parent outright.
         "Other language", "Other", "Not stated",
+        # Chile's 2024 census: small counts it does not publish.
+        "Not published (small counts)",
         # Guatemala's 2018 census: "No habla", a person who learned no language.
         "Does not speak",
         # Bands that span families rather than naming one. "Other African
@@ -839,6 +844,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     "Indo-Aryan peoples": (
         "Bengali", "Punjabi", "Panjabi", "Gujarati", "Marathi", "Sindhi",
         "Nepali", "Sinhalese", "Kashmiri", "Assamese", "Odia", "Bihari",
+        # Sri Lanka's indigenous people, who now speak Sinhala: the nearest
+        # family this tree has. They had been filed with South America's.
+        "Vedda",
         "Rajasthani", "Brahman - Hill", "Brahman - Tarai", "Kshetri",
         "Thakuri", "Tharu", "Magar", "Chhetri", "Yadav", "Musalman",
         "Kumal", "Majhi", "Bishwokarma", "Pariyar", "Sanyasi/Dasnami",
@@ -928,6 +936,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     ),
     # -- the Pacific
     "Polynesian peoples": (
+        # Easter Island's, as Chile's 2024 census names them.
+        "Rapa Nui",
         "Māori", "Maori", "Samoan", "Tongan", "Cook Islands Maori", "Niuean",
         "Tokelauan", "Tuvaluan", "Hawaiian", "Tahitian", "Wallisian",
         "Rotuman", "Pacific Peoples",
@@ -955,13 +965,20 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Xinka",
     ),
     "Indigenous peoples of South America": (
-        "Vedda", "Quechua", "Aymara", "Guarani", "Mapuche", "Wayuu", "Nasa", "Embera",
+        "Quechua", "Aymara", "Guarani", "Mapuche", "Wayuu", "Nasa", "Embera",
         "Kichwa", "Shuar", "Aimara", "Ashaninka", "Shipibo", "Awajun",
         "Ticuna", "Yanomami", "Guajiro", "Pemon", "Warao",
+        # Chile's 2024 census, by the names it prints. Atacameno is named here
+        # because, left to the patterns, it read as the Philippines' Ata.
+        "Atacameño o Lickanantay", "Atacameño", "Lickanantay", "Colla",
+        "Diaguita", "Kawésqar", "Yagán", "Chango", "Selk'nam",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
         "Afro-Colombian", "Quilombola", "Saramaccan", "Ndyuka",
+        # Chile's 2024 census: the Afro-descendant communities of the Azapa
+        # and Lluta valleys and of La Chimba, by the names it prints.
+        "Afro-Chilean", "Moreno of Azapa", "Black of La Chimba",
     ),
 }
 
@@ -1412,6 +1429,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Akateko", "Awakateko", "Ch'orti'", "Chalchiteko", "Itza'", "Mopan",
         "Poqomam", "Sakapulteko", "Sipakapense", "Tektiteko", "Tz'utujil",
         "Uspanteko", "Xinka",
+        # Chile's 2024 census: the languages of the Atacameno, Kawesqar and
+        # Yagan peoples, and the others it groups.
+        "Kunza", "Kawésqar", "Yaghan", "Other indigenous languages of Chile",
         # Mexico's census counts whether a person speaks an indigenous
         # language, not which, and Panama's figure is the same kind; in both
         # countries every one of them is a language of this continent.
@@ -2020,6 +2040,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Hispanic or Latino population, instead of as a non-answer.
         "Mestizo or white (no ethnic group declared)",
         "Mestizo or white (neither indigenous nor Afro-Mexican)",
+        # And Chile's 2024 census, which asks about indigenous peoples and
+        # Afro-descendants and nothing else.
+        "Mestizo or white (neither indigenous nor Afro-descendant)",
         # The same majority where a census or the Factbook names it as one
         # category: Costa Rica's white or mestizo, Argentina's European and
         # mestizo, Chile's white and non-indigenous remainder, and the
