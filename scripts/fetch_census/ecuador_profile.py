@@ -142,12 +142,20 @@ def composition_table(grid: list[list[str]], rules: tuple[tuple[str, str], ...],
     for row in grid[head + 2:]:
         if len(row) <= total_col or not row[total_col].replace(".", "").isdigit():
             continue
-        province, canton, area = row[1], row[2], row[3]
+        province, canton = row[1], row[2]
         if fold(province) == "total nacional":
             continue
-        if fold(area) not in ("total", fold(f"Total {canton}"), fold(f"Total {province}")):
+        # Every column between the canton and the count -- area, and in these
+        # tables sex too -- must be its total; a row that is one sex's is not
+        # the unit's, and taking it was how Azuay's cantons first came to
+        # 425,190, its women.
+        totals = ("", "total", fold(f"Total {canton}"), fold(f"Total {province}"))
+        if any(fold(c) not in totals for c in row[3:total_col]):
             continue
         key = (province, "") if fold(canton) == fold(f"Total {province}") else (province, canton)
+        if key in out:
+            raise SystemExit(f"ecuador_profile: {what}: {province} / {canton or '-'} "
+                             "appears twice as a total")
         counts: dict[str, int] = defaultdict(int)
         for j, label in columns.items():
             counts[label] += int(float(row[j] or 0))

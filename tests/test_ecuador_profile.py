@@ -54,6 +54,7 @@ def culture(cuenca=(70, 30)):
             ["", "Azuay", "Total Azuay", "Total Azuay", "", "200", "90", "110"],
             ["", "Azuay", "Total Azuay", "Urbana", "", "150", "50", "100"],
             ["", "Azuay", "Cuenca", "Total", "", "100", str(cuenca[0]), str(cuenca[1])],
+            ["", "Azuay", "Cuenca", "Total", "Mujer", "60", "40", "20"],
             ["", "Azuay", "Gualaceo", "Total", "", "100", "20", "80"]]
     return rows
 
