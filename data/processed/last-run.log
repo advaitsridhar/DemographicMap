@@ -1,10 +1,10 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-page: https://www4.ine.gub.uy/Anda5/index.php/catalog/781/get-microdata
-  17,904 bytes
-  4 distinct match(es) for '(?:[Aa]cceso[^<>]{0,300}|[Ll]icen[^<>]{0,300}|[Rr]egistr[^<>]{0,300}|[Dd]escarg[^<>]{0,300}|download/[^<>]{0,120}|[Pp]ublic[^<>]{0,200}|[Pp]úblic[^<>]{0,200})'
-    Descargar 
-				
-    publicaciones basados en los datos solicitados serán enviados al INE.
-    publicaciones que empleen datos obtenidos del INE deben citar la fuente de datos de conformidad con la exigencia de citas que acompañan a cada conjunto de datos. 
-    pública Oriental del Uruguay
+  SEXO: 337 tables
+  EDAD: 337 tables
+  CUALINDIGE: 337 tables
+  USTEDSEREC: 337 tables
+  10 municipios with no one who named an indigenous people: San Francisco, Unión, Justo Briceño, Francisco de Miranda, José María Vargas, Simón Rodríguez, Sucre, San Judas Tadeo, José Felipe Márquez Cañizales, Juan Vicente Campo Elías
+  336 municipios making INE's 27,227,930; every question making each
+  every state's peoples equal INE's published table by state, people by people
+  334 of 335 municipios bound; not: ['Dependencias federales (2501)']
+  wrote data/processed/venezuela_redatam.json (1320 kB)
+  wrote venezuela_redatam.json: 25 states, 335 municipios
