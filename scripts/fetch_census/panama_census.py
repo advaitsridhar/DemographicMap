@@ -107,6 +107,7 @@ AFRO_COLUMNS = [  # (words INEC's header starts with, the map's label)
     ("nodeclarado", "Afro-descendant (group not stated)"),
 ]
 INDIGENOUS_DISTRICT = "Indigenous (people not published)"
+NOT_INDIGENOUS = "Not indigenous (Afro-descendant or other)"
 REST = "Mestizo or white (neither indigenous nor Afro-descendant)"
 BAND = re.compile(r"^(\d+)\s*-\s*(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
@@ -421,9 +422,22 @@ def main() -> int:
             counts[label] = count
         rest = total - sum(indigenous.values()) - afro[1]
         if rest < 0:
+            # The two questions overlap past the population here (a comarca,
+            # or a district where both are common): no breakdown of both adds
+            # up, so the bars are the indigenous question's own, and the
+            # Afro-descendant count is given in the note.
             OVERLAPS.append(f"{where}: {sum(indigenous.values()):,} indigenous and {afro[1]:,} "
                             f"Afro-descendant of {total:,}")
-            return {}
+            counts = {**indigenous, NOT_INDIGENOUS: total - sum(indigenous.values())}
+            return {"ethnicity": shares(counts), "ethnicity_year": YEAR,
+                    "ethnicity_note": (
+                        f"Whether each of the {total:,} people is indigenous, and which people"
+                        + (" (published for the province only)" if level == "admin2" else "")
+                        + f". The census also asked whether a person is Afro-descendant, and "
+                        f"{afro[1]:,} said so; with the {sum(indigenous.values()):,} indigenous "
+                        "that is more than everyone, so some answered yes to both, and INEC "
+                        "publishes no cross of the two. The remainder is everyone not "
+                        "indigenous.")}
         counts[REST] = rest
         which = ("Which people is published for the province only, so the district's "
                  "indigenous population is one line. " if level == "admin2" else "")
@@ -487,9 +501,8 @@ def main() -> int:
             **ethnicity({INDIGENOUS_DISTRICT: unit["indigenous"]}, unit["afro"], total, "admin2",
                         dist),
             sources=sources("admin2")))
-    if OVERLAPS:
-        raise SystemExit(f"panama_census: {len(OVERLAPS)} units where the two questions overlap "
-                         "past the population: " + "; ".join(OVERLAPS))
+    log(f"  {len(OVERLAPS)} units where the two questions overlap past the population, shown "
+        "by the indigenous question alone: " + "; ".join(OVERLAPS))
     log(f"  {len(by_province)} provinces and comarcas, "
         f"{sum(1 for r in records if r['level'] == 'admin2')} districts")
     write_json(PROCESSED / OUT, records)

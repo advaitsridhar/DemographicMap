@@ -137,7 +137,25 @@ AFRO = "Afro-descendant"
 REST = "Mestizo or white (neither indigenous nor Afro-descendant)"
 # INDEC's spelling -> the boundary file's, where they differ by more than
 # accents and punctuation.
-ALIASES: dict[str, str] = {}
+ALIASES: dict[str, str] = {
+    "Coronel de Marina Leonardo Rosales": "Coronel de Marina L. Rosales",
+    "1º de Mayo": "1ro. de Mayo",
+    "Paso de Indios": "Paso de los Indios",
+    "Ángel Vicente Peñaloza": "General Angel V. Peñaloza",
+    "General Felipe Varela": "Coronel Felipe Varela",
+    "General Juan Facundo Quiroga": "General Juan F.Quiroga",
+    "General Ortiz de Ocampo": "General Ocampo",
+    "Pilcaniyeu": "Pilnaniyeu",
+    # San Luis's capital department, renamed; the boundary file keeps La Capital.
+    "Juan Martín de Pueyrredón": "La Capital",
+    "Juan Felipe Ibarra": "Juan F. Ibarra",
+    "Pellegrini": "Pelegrini",
+    "Famaillá": "Famallá",
+    "Juan Bautista Alberdi": "Juan B. Alberdi",
+}
+# (province, department created since the boundary file) -> the department it
+# was carved from: Tolhuin, from Río Grande in 2012.
+MERGES = {("Tierra del Fuego, Antártida e Islas del Atlántico Sur", "Tolhuin"): "Río Grande"}
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
 BAND = re.compile(r"^(\d+)-(\d+)$")
@@ -628,6 +646,27 @@ def main() -> int:
             raise SystemExit(f"argentina_census: {what}: departments' Afro-descendants or "
                              "private-dwelling population do not make the province")
 
+        # A department created since the boundary file was drawn is added back
+        # into the one it came from, which the file draws whole.
+        merged_from: dict[str, str] = {}
+        for (province_name, source_name), target_name in MERGES.items():
+            if province_name != name:
+                continue
+            src = next(c for c in names if names[c] == source_name)
+            dst = next(c for c in names if names[c] == target_name)
+            age_figures[dst] = ages([*by_dept[dst], *by_dept.pop(src)],
+                                    f"{what}, {target_name} with {source_name}")
+            age_figures.pop(src)
+            population[dst] += population.pop(src)
+            indigenous[dst] += indigenous.pop(src)
+            speak[dst] = [a + b for a, b in zip(speak[dst], speak.pop(src))]
+            private[dst] += private.pop(src)
+            afro[dst] += afro.pop(src)
+            merged_from[dst] = source_name
+            del names[src]
+            log(f"  {what}: {source_name} is added to {target_name}, which the boundary file "
+                "draws whole")
+
         def ethnicity(ind: dict[str, int], afr: int, dwelling: int, spoken: list[int],
                       level: str) -> dict[str, Any]:
             if not dwelling:
@@ -700,10 +739,14 @@ def main() -> int:
             departments[code] = {
                 "name": names[code], "province": name, "map_province": map_name or "",
                 "fields": fields("admin2", population[code], women, men, median,
-                                 published.get(code),
+                                 None if code in merged_from else published.get(code),
                                  ethnicity({INDIGENOUS_DEPT: indigenous[code]}, afro[code],
                                            private[code], speak[code], "admin2")),
             }
+            if code in merged_from:
+                departments[code]["fields"]["population"]["note"] = (
+                    f"Includes {merged_from[code]}, created from it since the boundary file "
+                    "was drawn.")
         log(f"  {name}: {len(names)} departments, {province_pop:,} people, "
             f"{ind_province:,} indigenous, {afro_total[1]:,} Afro-descendant")
 
