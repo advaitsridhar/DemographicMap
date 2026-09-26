@@ -165,6 +165,21 @@ def fetch(key: str) -> Any:
         return openpyxl.load_workbook(io.BytesIO(fh.read()), read_only=True, data_only=True)
 
 
+def resolve(header: dict[str, Any], wants: tuple[str, ...], what: str) -> dict[str, str]:
+    """Each wanted column's name in this sheet.
+
+    A header may run past the words used for it here ("Del Pueblo Tribal
+    Afrodescendiente ..."): it is found by its start, if only one has it.
+    """
+    out = {}
+    for want in wants:
+        found = [c for c in header if c == want] or [c for c in header if c.startswith(want)]
+        if len(found) != 1:
+            raise SystemExit(f"chile_census: {what}: {len(found)} columns for {want!r}")
+        out[want] = found[0]
+    return out
+
+
 def comunas(rows: list[dict[str, Any]], *, where: tuple[str, str] | None = None
             ) -> list[dict[str, Any]]:
     """The comuna rows: a real comuna code, and the named line where a sheet has several."""
@@ -188,6 +203,8 @@ def regions(rows: list[dict[str, Any]], *, where: tuple[str, str] | None = None
         if where and str(row.get(where[0]) or "").strip() != where[1]:
             continue
         out[code] = row
+    if sorted(out) != sorted(REGIONS):
+        raise SystemExit(f"chile_census: a region sheet gave regions {sorted(out)}")
     return out
 
 
@@ -304,10 +321,12 @@ def main() -> int:
     def read(key: str, labels: dict[str, str], total_col: str, *, extra: list[str] = (),
              where: tuple[str, str] | None = None, region_where: tuple[str, str] | None = None):
         rows = table(books[key], "2")
+        wants = (total_col, *labels, *extra)
+        actual = resolve(rows[0], wants, key)
+        rows = [{want: row.get(col) for want, col in actual.items()} | {
+            k: v for k, v in row.items() if k.startswith(("Código", "Pertenencia"))}
+            for row in rows]
         columns = [total_col, *labels, *extra]
-        missing = [c for c in columns if c not in rows[0]]
-        if missing:
-            raise SystemExit(f"chile_census: {key} has no column {missing}")
         chosen = comunas(rows, where=where)
         by_region = summed(chosen, columns, "Código región")
         by_province = summed(chosen, columns, "Código provincia")
@@ -316,7 +335,10 @@ def main() -> int:
             starred = sum(h.get(column, 0) for h in by_province[1].values())
             if starred:
                 raise SystemExit(f"chile_census: {key}: {column} is starred in {starred} comunas")
-        region_rows = regions(table(books[key], "1"), where=region_where)
+        region_table = table(books[key], "1")
+        in_region = resolve(region_table[0], wants, f"{key} by region")
+        region_rows = {code: {want: row[col] for want, col in in_region.items()}
+                       for code, row in regions(region_table, where=region_where).items()}
         check_regions(*by_region, region_rows, columns, key)
         return by_province, {code: {c: cell(row.get(c)) for c in columns}
                              for code, row in region_rows.items()}
