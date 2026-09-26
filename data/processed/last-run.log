@@ -1,43 +1,282 @@
-https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_14_CAR_2023.xlsx
+probe_pdf: https://www5.ine.gub.uy/documents/CENSO%202023/Documento_para_uso_de_Microdatos_Censo_2023_090726.pdf
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
-  18,639 bytes
-  1 sheet(s)
-  -- 'Cuadro14_CAR': 186 rows x 3 cols
-     ['CUADRO 14', '', '']
-     ['Población por departam', '', '']
-     ['Departamento', 'Nombre municipio', 'Población Total']
-     ['Total', '', '3499451']
-     ['Montevideo', 'MUNICIPIO A', '206236']
-     ['Montevideo', 'MUNICIPIO B', '149350']
-     ['Montevideo', 'MUNICIPIO C', '141785']
-     ['Montevideo', 'MUNICIPIO CH', '157410']
-     ['Montevideo', 'MUNICIPIO D', '173170']
-     ['Montevideo', 'MUNICIPIO E', '145492']
-     ['Montevideo', 'MUNICIPIO F', '173991']
-     ['Montevideo', 'MUNICIPIO G', '153928']
-     ['Montevideo', 'Sin dato de Municipio', '1359']
-     ['Artigas', 'BALTASAR BRUM', '3053']
-     ['Artigas', 'BELLA UNIÓN', '20283']
-     ['Artigas', 'SIN MUNICIPIO', '51085']
-     ['Artigas', 'TOMÁS GOMENSORO', '3029']
-     ['Artigas', 'Sin dato de Municipio', '38']
-     ['Canelones', '18 DE MAYO', '24280']
-     ['Canelones', 'AGUAS CORRIENTES', '1883']
-     ['Canelones', 'ATLÁNTIDA', '13953']
-     ['Canelones', 'BARROS BLANCOS', '34379']
-     ['Canelones', 'CANELONES', '28277']
-     ['Canelones', 'CIUDAD DE LA COSTA', '113387']
-     ['Canelones', 'COLONIA NICOLICH', '19554']
-     ['Canelones', 'DEL ANDALUZ', '9807']
-     ['Canelones', 'EMPALME OLMOS', '7672']
-     ['Canelones', 'JOAQUÍN SUÁREZ', '11201']
-     ['Canelones', 'JUANICÓ', '3590']
-     ['Canelones', 'LA FLORESTA', '18017']
-     ['Canelones', 'LA PAZ - CANELONES', '23212']
-     ['Canelones', 'LAS PIEDRAS', '62108']
-     ['Canelones', 'LOS CERRILLOS', '8230']
-     ['Canelones', 'MIGUES', '3295']
-     ['Canelones', 'MONTES', '2380']
-     ['Canelones', 'PANDO', '40243']
-     ['Canelones', 'PARQUE DEL PLATA', '18627']
+  686,774 bytes
+  34 pages
+probe_pdf: 34 pages, 12 mention ['municipio', 'MUNICIPIO', 'descarga', 'ascendencia', 'segmento', 'localidad', 'csv', 'sav', 'parquet']
+=== front matter ===
+  
+
+2 
+ 
+Índice general 
+Contenido 
+Índice general ......................................................................................................................... 2 
+Índice de cuadros ................................................................................................................... 3 
+1) Introducción .................................................................................................................... 4 
+2) Características generales del Censo 2023 ..................................................................... 4 
+3) Tablas de microdatos disponibles................................................................................... 6 
+3.1. Tabla de personas ampliada .................................................................................. 6 
+3.2. Tabla de viviendas .................................................................................................. 7 
+4) Ponderación de los microdatos censales........................................................................ 8 
+4.1. Omisión censal y uso de los ponderadores ............................................................ 8 
+4.2. Conceptos básicos para la estimación con datos ponderados .............................. 9 
+4.2.1. Interpretación de los ponderadores ................................................................ 9 
+4.2.2. Consecuencias en el procesamiento y redondeo .......................................... 10 
+4.3. Procedimiento de redondeo y preservación de totales ....................................... 10 
+4.4. Cómputo de los errores estándar  en R ................................................................ 12 
+4.5. Comparabilidad entre censos .............................................................................. 14 
+5) Guía de variables y uso de identificadores en los microdatos censales ....................... 15 
+5.1. Identificadores y estructura de los microdatos ................................................... 15 
+5.2. Variables analíticas y de clasificación ................................................................. 15 
+6) Agregación y niveles de análisis ................................................................................... 16 
+6.1. Nivel hogar ........................................................................................................... 16 
+6.2. Nivel Vivienda ...................................................................................................... 17 
+6.3. Otras agregaciones .............................................................................................. 18 
+7) Tratamiento de inconsistencias y variables imputadas................................................ 18 
+7.1. Origen del agua para beber y cocinar .................................................................. 18 
+7.2. Tipo de tenencia de la propiedad de la vivienda .................................................. 19 
+7.3. Evacuación del baño ............................................................................................ 20 
+7.4. Ocupación ............................................................................................................ 21 
+7.5. Tratamiento de hogares con ausencia de adultos ............................................... 22 
+7.6. Ajuste en la georreferenciación de viviendas colectivas .................................... 23 
+7.7. Módulo educación................................................................................................ 24 
+3 
+ 
+8) Variables agregadas ..................................................................................................... 24 
+8.1. Discapacidad ........................................................................................................ 24 
+8.2. Departamento de residencia cinco años antes .................................................... 25 
+8.3. Departamento de nacimiento .............................................................................. 26 
+8.4. Total de personas en el hogar .............................................................................. 26 
+8.5. Condición de actividad económica ...................................................................... 26 
+8.6. Municipios ........................................................................................................... 27 
+8.7. Educación ............................................................................................................ 27 
+8.8. Identificación de viviendas en asentamientos irregulares (VIV_AST) ................ 28 
+9) Anonimización .............................................................................................................. 30 
+10) Versiones publicadas. ................................................................................................... 31 
+11) Anexos ........................................................................................................................... 33 
+ 
+ 
+Índice de cuadros 
+ 
+Cuadro 1 - Recuento ponderado y sin ponderar de personas según tipo de vivienda  ........................... 7 
+Cuadro 2 - Recuento ponderado y sin ponderar de hogares según tipo de vivienda  ............................. 7 
+Cuadro 3 - Recuento sin ponderar de viviendas por tipo, según condición de ocupación  .................... 8 
+Cuadro 4 - Ajuste en la georreferenciación de viviendas colectivas ...................................................23 
+Cuadro 5 - Construcción de la variable POBPCOAC ............................................................................33 
+Cuadro 6 - Construcción de la variable NIVELEDU .............................................................................34 
+
+=== pages mentioning ['municipio', 'MUNICIPIO', 'descarga', 'ascendencia', 'segmento', 'localidad', 'csv', 'sav', 'parquet'] (first 12) ===
+
+--- page 3 ----------------------------------------------------
+8.2. Departamento de residencia cinco años antes .................................................... 25
+8.3. Departamento de nacimiento .............................................................................. 26
+8.4. Total de personas en el hogar .............................................................................. 26
+8.5. Condición de actividad económica ...................................................................... 26
+8.6. Municipios ........................................................................................................... 27
+8.7. Educación ............................................................................................................ 27
+8.8. Identificación de viviendas en asentamientos irregulares (VIV_AST) ................ 28
+9) Anonimización .............................................................................................................. 30
+10) Versiones publicadas. ................................................................................................... 31
+
+--- page 7 ----------------------------------------------------
+moradores presentes. A los efectos de no exponer a los usuarios a posibles estimaciones o
+inferencias incorrectas, esta tabla no cuenta con una variable clave que permita su vincu-
+lación con la tabla de personas ampliada.
+La tabla de datos de viviendas contiene las siguientes variables:
+- Geográficas (departamento, localidad, sección, segmento5, área, región, municipio,
+barrio y centro comunal zonal de Montevideo)
+- Tipo de vivienda (particular o colectiva)
+5 Ver capítulo Anonimización
+
+--- page 8 ----------------------------------------------------
+Recuento total de viviendas 1.646.618 12.426 1.659.044
+4) Ponderación de los microdatos censales
+4.1. Omisión censal y uso de los ponderadores
+El Censo 2023 presentó un nivel de omisión del 10,3%. Dado que la omisión censal se
+concentra en segmentos específicos de población, el uso directo de los hogares y personas
+efectivamente censados, sin aplicar correcciones o ajustes adicionales, conduce a
+estimaciones sesgadas. Por esta razón, luego de análisis e intercambios con actores
+académicos y organismos internacionales, el INE decidió incorporar ponderadores a los
+microdatos censales.
+
+--- page 9 ----------------------------------------------------
+ocurre porque ciertos grupos (por ejemplo, determinados tramos de edad y sexo) quedaron
+sobrerrepresentados en el operativo de campo. Para corregir este sesgo y reproducir
+fielmente la estructura poblacional, el proceso de calibración debe asignar a estos grupos
+ponderadores menores a la unidad. Un fenómeno derivado de lo anterior es la existencia de
+segmentos censales donde la población ponderada (expandida) resulta inferior a la
+cantidad de personas efectivamente contadas. Aunque esto puede parecer un error de
+
+--- page 10 ----------------------------------------------------
+procesamiento, es un resultado estadísticamente consistente con el método de calibración
+adoptado.
+Es importante destacar que el uso de estos ponderadores es teóricamente preferible y
+metodológicamente necesario. Las estimaciones expandidas, aun cuando resulten
+inferiores al conteo directo en ciertos segmentos, poseen un menor sesgo que los datos
+crudos, ya que han sido ajustadas para reflejar la verdadera estructura de la población.
+Ignorar estos pesos y optar por el conteo directo no solo mantiene los sesgos de
+sobrerrepresentación, sino que generaría un problema de benchmarking insalvable: la
+suma de los datos de estos dominios no coincidiría con los totales poblacionales de
+
+--- page 13 ----------------------------------------------------
+  filter(is.na(ID_UPM)==FALSE)
+4) Se define el diseño muestral equivalente en donde lo SEs  son computados
+utilizando el método del último conglomerado 6, donde ID_UPM es el Identificador
+de la unidad primaria de muestreo  (i.e. unidad de conglomeración), ESTRATO (i.e.
+el segmento censal ), TR es la tasa de muestreo para realizar la corrección por
+población finita a nivel de estrato al momento de computar los SEs y W es el
+ponderador.
+censo_diseno <- personas_ext |>
+  as_survey_design(
+
+--- page 18 ----------------------------------------------------
+18
+6.3. Otras agregaciones
+• La variable LOCALIDAD indica el código de la localidad a 3 dígitos, por lo que un
+mismo código de localidad puede estar presente en varios departamentos. En caso
+de trabajar  a nivel de localidad se debe realizar la unión de DEPARTAMENTO +
+LOCALIDAD (5 dígitos). De esa forma se obtiene la identificación de cada localidad
+dentro del departamento correspondiente.
+7) Tratamiento de inconsistencias y variables
+imputadas
+Con el fin de optimizar la calidad de los datos y asegurar la coherencia interna de la
+      ...
+La variable VIVDV05 consulta sobre “origen del agua utilizada para beber y cocinar”
+(Pregunta 12 del cuestionario de vivienda).
+La pregunta presenta las siguientes categorías de respuesta:
+9 Durante el proceso de actualización de los microdatos censales se detectó una cantidad de niñas y niños
+menores de 5 años mucho mayor a la esperada en la localidad de Arachania, departamento de Rocha,
+representando al 18% del total de residentes de dicha localidad. Esta proporción es mucho mayor a la del
+promedio departamental (5%) y de las localidades contiguas de La Aguada/Costa Azul (4%), La Paloma (6%) y
+La Pedrera (6%). Una revisión pormenorizada de los datos censales de Arachania permitió constatar que una
+buena parte de estos niños y niñas no formaban parte de los hogares particulares censados y fueron incluidos
+injustificadamente en el operativo de campo. Se recomienda a usuarios tener los recaudos correspondientes al
+momento de analizar los datos censales de esta localidad. Vale mencionar que su incidencia a nivel municipal y
+departamental no es significativa.
+
+--- page 23 ----------------------------------------------------
+7.6. Ajuste en la georreferenciación de viviendas colectivas
+Durante el proceso de revisión de los microdatos censales, se identificaron 16 viviendas
+colectivas (principalmente centros de reclusión) cuya ubicación geográfica original
+presentaba inconsistencias. Este error afectaba a unas 10.500 personas censadas,
+impactando en el recuento poblacional a nivel de localidad y, en casos específicos, a nivel
+departamental. Para subsanar estas discrepancias, se procedió a realizar una reasignación
+geográfica de estas personas: en el 85% de los casos, las personas fueron reasignadas de
+una localidad urbana a un paraje rural dentro del mismo departamento; un 11% pasó del
+área rural a una localidad urbana. En situaciones en las que la vivienda colectiva se
+encontraba asignada a un departamento incorrecto (correspondiente al 4% de los casos o
+464 personas), se realizó la reclasificación al departamento correcto. Dada la baja
+incidencia relativa, este ajuste no altera significativamente las estimaciones de población
+departamental. A continuación, se presenta la tabla con el detalle de las correcciones
+      ...
+Personas
+Código de
+Departamento
+Código de
+Localidad
+Código de
+Departamento
+Código de
+Localidad
+Centro de Reclusión 5 01 01020 01 01900
+Centro de Reclusión 670 01 01020 01 01900
+Centro de Reclusión 4.675 01 01020 01 01900
+Centro de Reclusión 51 01 01900 01 01020
+
+--- page 27 ----------------------------------------------------
+27
+ejemplo, estudiantes de tiempo completo, personas dedicadas exclusivamente a
+las tareas del hogar o rentistas).
+8.6. Municipios
+En esta nueva versión de los microdatos censales , la variable MUNICIPIO ha sido
+actualizada, en concordancia con las series electorales de marzo de 2025, aprobadas por la
+Corte Electoral en la Circular N° 12.208. Esta actualización implicó la creación de nuevos
+municipios (pasando de 125 a 136)18 y la revisión de los límites de otros ya existentes en el
+país.
+El proceso de asignación geográfica a nivel de vivienda se realizó mediante un
+geoprocesamiento riguroso, debido a que los límites municipales (de definición político -
+electoral) no siempre coinciden exactamente con las unidades geoestadísticas  utilizadas
+por el INE para fines censales, especialmente en áreas rurales 19. Los criterios aplicados
+fueron:
+1. Compatibilización cartográfica: se utilizó la capa de municipios generada en el
+marco del Grupo de Trabajo de Límites Administrativos (GTLA), liderado por el IDE
+e integrado por la Corte Electoral, OPP, IGM, DINOT, e INE.  Ello permitió asegurar
+una base cartográfica oficial y unificada.
+2. Asignación por ubicación espacial: se contrastó digitalmente la ubicación de cada
+vivienda censada (utilizando puntos de edificación para áreas rurales y zonas
+censales para áreas urbanas) con la capa de polígonos de los municipios,
+asignando el municipio que contenía el punto geográfico de la vivienda.
+8.7. Educación
+En la presente versión de los microdatos se presentan las siguientes variables:
+• ASISTENCIA: La variable fue construida a partir de la pregunta del cuestionario censal
+PERED01: ¿Asiste actualmente a un establecimiento de enseñanza preescolar,
+primaria, secundaria, superior o técnica?, correspondiente al módulo de educación,
+vinculada a la concurrencia actual a centros educativos.
+18 Si bien se amplía el número de municipios, no todo el territorio nacional se encuentra municipalizado
+(existiendo departamentos parcialmente municipalizados y otros sin municipios).
+19 La presencia de un mismo municipio en departamentos limítrofe responde a una desalineación cartográfica:
+el INE utiliza los límites departamentales históricos, mientras que los límites de las series electorales (y, por
+ende, los municipales) se trazaron con base en la cartografía del Instituto Geográfico Militar (IGM). Para
+resolver esta inconsistencia, el INE participa activamente en el Grupo de Trabajo de Límites Administrativos,
+cuyo objetivo actual es consolidar una capa única y oficial de límites departamentales para todos los
+
+--- page 30 ----------------------------------------------------
+En consideración de lo anterior, se han aplicado las siguientes restricciones a los
+microdatos de difusión pública:
+• Unidades geoestadísticas:
+- Se elimina la variable ZONA.
+- En el caso de la variable  SEGMENTO, solamente para los segmentos con po-
+blación menor a 20 habitantes, se estableció un procedimiento por el cual tales
+segmentos fueron absorbidos por segmentos receptores  (segmentos contiguos
+o próximos con suficiente población y características geográficas, sociales e in-
+fraestructurales comparables). Una vez agrupados, todos los registros de tales
+segmentos y de los receptores comparten un nuevo identificador común, redu-
+ciendo así el riesgo de que la localización geográfica opere como variable de
+identificación indirecta en  la base de microdatos publicada 21. Lo mismo opera
+para la variable SECCION que para esta nueva versión de los microdatos  se le-
+vanta la restricción de su publicación, pero se presenta agrupada cuando la po-
+blación es menor a 20.
+- LOCALIDAD: Las localidades con población menor a 20 habitantes se presen-
+tan agrupadas junto al área rural del departamento correspondiente22.
+- Se publican tres variables dummies, SEGMENTO_AGRUP, SECCION_AGRUP y
+LOCALIDAD_AGRUP que indican si los datos fueron agrupados o no.
+21 Dicho proceso fue conducido de manera conjunta por el Departamento de Metodología, el Departamento de
+Estadísticas Sociodemográficas y el Departamento de Infraestructura Geoestadística del INE de Uruguay.
+22 Existen dos localidades que, si bien tienen menos de 20 habitantes se decidió no agrupar con un área
+cercana, dado que implicaba asociarlas a un departamento distinto.
+
+--- page 31 ----------------------------------------------------
+• Lugar de nacimiento, de residencia anterior y de residencia 5 años antes (2018) :
+Las variables lugar de nacimiento ( PERMI01),  lugar de residencia anterior
+(PERMI06) y lugar de residencia 5 años antes (2018)   PERMI07 se presentan
+agrupada en tres categorías (en este departamento, en otro depar tamento, en otro
+país), no presentándose la información a nivel de localidad.26
+• Lugar de trabajo: Se eliminan las variables PERAL09_1 y PERAL09_3 relacionadas
+a la localidad del lugar de trabajo.
+• Fecha de nacimiento del último  hijo: Día y mes de nacimiento del último hijo se
+eliminan (PERFM04_3, PERFM04_2 ), sin embargo se levanta la restricción
+para el año de nacimiento que se presenta en años simples PERFM04_1.
+• Fecha de nacimiento del primer hijo:  Mes de nacimiento del primer hijo
+      ...
+• Edad se presenta en edades simples para toda la población censada  PERNA01
+• Año de Nacimiento PERNA02_ANO
+10) Versiones publicadas.
+Se disponibiliza la segunda versión de los microdatos anonimizados denominados:
+• personas_ext_07_2026.csv (versión ampliada c on datos de viviendas, hogares,
+personas y ponderadores).
+23 Se suprimen todas las variables del módulo Tipo de Documento de Identidad.
+24 Se suprimen las variables PERGE01 y PERGE01_1.
+25 Se suprime la variable PERNA02, presentándose únicamente el año de nacimiento PERNA02_ANO
+26 En el caso de las variables PERMI01 y PERMI07, la opción 2 “en otra ciudad o localidad del departamento”
+pasa a estar agrupada con  la opción 1 “en ésta localidad” conformando la categoría “en este departamento” y
+además no se presentan las variables codificadoras de las localidades: PERMI01_1, PERMI01_3, PERMI06_1,
+PERMI06_3, PERMI07_1, PERMI07_3.
+
+--- page 32 ----------------------------------------------------
+32
+• viviendas_ext_07_2026.csv (versión sin ponderar, proveniente del recuento
+realizado en operativo de campo).
+Asimismo, se publican las tablas análogas etiquetadas en formato R.Data.
+• personas_ext_07_2026_etiquetada
+• viviendas_ext_07_2026_etiquetada
