@@ -52,6 +52,11 @@ class Country:
     # The Bureau's name for a first-level unit -> the boundary file's, where
     # they differ by more than case and accents.
     parents: tuple[tuple[str, str], ...] = ()
+    # The same for units, where the boundary file writes a municipality's full
+    # official name and the Bureau its short one. Each pair is the one unbound
+    # unit and the one unbound polygon of the same province, so the parent
+    # check in binding still stands behind every one.
+    units: tuple[tuple[str, str], ...] = ()
 
 
 COUNTRIES = (
@@ -65,7 +70,28 @@ COUNTRIES = (
             # is Comendador, on the Haitian border); Hermanas Mirabal as
             # "Hermanas" (its capital, Salcedo).
             parents=(("BAORUCO", "Bahoruco"), ("EL SEIBO", "El Seybo"),
-                     ("ELÍAS PIÑA", "La Estrelleta"), ("HERMANAS MIRABAL", "Hermanas"))),
+                     ("ELÍAS PIÑA", "La Estrelleta"), ("HERMANAS MIRABAL", "Hermanas")),
+            # Oviedo (Pedernales) has no polygon of its own, and "La Laguna de
+            # Nisibón" is a municipal district, not a municipality; both stay
+            # unbound. Santo Domingo de Guzmán is the Distrito Nacional's one
+            # municipality.
+            units=(("PUERTO PLATA", "San Felipe de Puerto Plata"),
+                   ("VILLA ISABELA", "La Isabela"), ("VILLA MONTELLANO", "Montellano"),
+                   ("SANTIAGO", "Santiago de los Caballeros"), ("BISONÓ", "Villa Bisonó"),
+                   ("LA VEGA", "Concepción de la Vega"), ("VILLA RIVA", "Villa Rivas"),
+                   ("EUGENIO MARÍA DE HOSTOS", "Hostos"), ("SAMANÁ", "Santa Bárbara de Samaná"),
+                   ("MONTE CRISTI", "San Fernando de Monte Cristi"),
+                   ("CASTAÑUELAS", "Castañuela"), ("VILLA VÁSQUEZ", "Villa Vázquez"),
+                   ("VILLA LOS ALMÁCIGOS", "Los Almácigos"), ("AZUA", "Azua de Compostela"),
+                   ("TÁBARA ARRIBA", "Villa Tabara Arriba"),
+                   ("CAMBITA GARABITOS", "Cambita Garabito"),
+                   ("YAGUATE", "San Gregorio de Yaguate"), ("SAN GREGORIO DE NIGUA", "Nigua"),
+                   ("NEIBA", "Neyba"), ("BARAHONA", "Santa Cruz de Barahona"),
+                   ("SAN JUAN", "San Juan de la Maguana"), ("EL SEIBO", "Santa Cruz del Seybo"),
+                   ("HIGÜEY", "Salvaleón de Higüey"), ("QUISQUEYA", "Quisquella"),
+                   ("PERALVILLO", "Esperalvillo"), ("HATO MAYOR", "Hato Mayor del Rey"),
+                   ("SANTO DOMINGO DE GUZMÁN", "Distrito Nacional"),
+                   ("SAN ANTONIO DE GUERRA", "Guerra"))),
 )
 
 
@@ -153,6 +179,7 @@ def main() -> int:
         # the Bureau writes names in capitals and sometimes without the
         # office's article or accent.
         aliases = {u["name"]: u["nso"] for u in units if u["nso"]}
+        aliases.update(dict(country.units))
         bound, missing = bind(offices, admin2, parents, aliases)
         log(f"  {country.iso3}: {len(bound)} units bound to their polygons; {len(missing)} "
             "not: " + "; ".join(missing))
