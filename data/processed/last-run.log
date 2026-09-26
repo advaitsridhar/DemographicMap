@@ -1,152 +1,134 @@
-page: http://sistemas.inec.cr:8080/bininecmm/RpWebEngine.exe/Portal?BASE=2011&lang=esp
-  text: ﻿ Redatam::CELADE, ECLAC - United Nations
-  frame: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840621.htm&TYPE=TMP
-  frame: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840622.htm&TYPE=TMP
-  frame: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840623.htm&TYPE=TMP
-pane: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840621.htm&TYPE=TMP
-  text: ﻿ R+SP Header Page
-  link: '' -> http://redatam.inec.go.cr/
-pane: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840622.htm&TYPE=TMP
-  text: ﻿ R+SP Index Page ESTADÍSTICAS BÁSICAS FRECUENCIAS Características de vivienda Características de hogar Características de población CRUCES Características de vivienda Características de hogar Características de población Características vivienda, hogar y población OTROS PROCEDIMIENTOS Conteo de Elementos Cruce por Area Geográfica CREAR CUADRO PROGRAMADO Procesador Estadístico R+SP Descargar diccionario R+SP SISTEMA DE INDICADORES SIM 2011 Demográficos Indicadores sobre la estructura de la población Indicador densidad de población Indicadores sobre migración Indicadores sobre fecundidad Indicador tasa de fecundidad general Indicadores sobre mortalidad Hogar Indicadores de hogar Seguridad social y salud Indicadores sobre discapacidad Indicadores sobre aseguramiento Étnico-racial Indicadores étnico-raciales Asistencia a centros de atención Indicadores sobre asistencia a centros de atención Educación Indicadores sobre analfabetismo Indicadores sobre asistencia a la educación regular Indicadores sobre asistencia a la educación general básica Indicadores sobre asistencia a la educación abierta Indicadores sobre educación secundaria Indicadores sobre educación superior Indicadores sobre nivel de instrucción Tecnologías de informaci+ón y comunicación (TICS) Indicadores de uso de Tecnologías de la Información y la Comunicación TICS Económico Indicadores sobre la fuerza de trabajo Indicadores sobre sector económico Indicadores sobre sector institucional Indicadores sobre posición en e
-  link: 'Características de vivienda' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Frequency?BASE=2011&ITEM=FRECUENV&lang=esp
-  link: 'Características de hogar' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Frequency?BASE=2011&ITEM=FRECUENH&lang=esp
-  link: 'Características de población' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Frequency?BASE=2011&ITEM=FRECUENP&lang=esp
-  link: 'Características de vivienda' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CrossTab?BASE=2011&ITEM=CRUCEVIV&lang=esp
-  link: 'Características de hogar' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CrossTab?BASE=2011&ITEM=CRUCEHOG&lang=esp
-  link: 'Características de población' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CrossTab?BASE=2011&ITEM=CRUCEPOB&lang=esp
-  link: 'Características vivienda, hogar y población' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CrossTab?BASE=2011&ITEM=CRUCEVHP&lang=esp
-  link: 'Conteo de Elementos' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CONTEO&lang=esp
-  link: 'Cruce por Area Geográfica' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp
-  link: 'Procesador Estadístico R+SP' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp
-  link: 'Descargar diccionario R+SP' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\Censos\SIM2011\Base\CR2011.dic
-  link: 'Indicadores sobre la estructura de la población' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=DEMOGRA&lang=esp
-  link: 'Indicador densidad de población' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=DENSIDAD&lang=esp
-  link: 'Indicadores sobre migración' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=MIGRACION&lang=esp
-  link: 'Indicadores sobre fecundidad' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=FECUNDIDAD&lang=esp
-  link: 'Indicador tasa de fecundidad general' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=FECUNDIDADGENERAL&lang=esp
-  link: 'Indicadores sobre mortalidad' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=MORTALIDAD&lang=esp
-  link: 'Indicadores de hogar' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=HOGARES&lang=esp
-  link: 'Indicadores sobre discapacidad' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=DISCAPACIDAD&lang=esp
-  link: 'Indicadores sobre aseguramiento' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=ASEGURAMIENTO&lang=esp
-  link: 'Indicadores étnico-raciales' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=ETNICORACIAL&lang=esp
-  link: 'Indicadores sobre asistencia a centros de atención' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=ASISTECENTROATENCION&lang=esp
-  link: 'Indicadores sobre analfabetismo' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=ANALFABETISMO&lang=esp
-  link: 'Indicadores sobre asistencia a la educación regular' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=EDUCACIONREGULAR&lang=esp
-  link: 'Indicadores sobre asistencia a la educación general básica' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=EDUCACIONBASICA&lang=esp
-  link: 'Indicadores sobre asistencia a la educación abierta' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=EDUCACIONABIERTA&lang=esp
-  link: 'Indicadores sobre educación secundaria' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=EDUCACIONSEC&lang=esp
-  link: 'Indicadores sobre educación superior' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=EDUCACIONSUP&lang=esp
-  link: 'Indicadores sobre nivel de instrucción' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=NIVELINSTRUC&lang=esp
-  link: 'Indicadores de uso de Tecnologías de la Información y la Com' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=TICS&lang=esp
-  link: 'Indicadores sobre la fuerza de trabajo' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=PEA&lang=esp
-  link: 'Indicadores sobre sector económico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=SECTORECONO&lang=esp
-  link: 'Indicadores sobre sector institucional' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=SECTORINST&lang=esp
-  link: 'Indicadores sobre posición en el empleo principal' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=POSEMPLEOPRINC&lang=esp
-  link: 'Indicadores sobre población fuera de la fuerza de trabajo' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=POBFT&lang=esp
-  link: 'Indicadores sobre ubicación del lugar de trabajo' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=UBICACION&lang=esp
-  link: 'Indicadores sobre necesidades básicas insatisfechas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=NBI&lang=esp
-  link: 'Indicadores sobre el tipo de vivienda y ocupantes' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=TIPOVIV&lang=esp
-  link: 'Indicadores sobre el tipo de tenencia de las viviendas indiv' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=TENENCIA&lang=esp
-  link: 'Indicadores sobre las viviendas desocupadas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=DESOCUPADAS&lang=esp
-  link: 'Indicadores sobre el estado y hacinamiento de las viviendas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=HACINAMIENTO&lang=esp
-  link: 'Indicadores sobre disponibilidad de servicios básicos de las' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=DISPONIBILIDADSERBA&lang=esp
-  link: 'Indicadores sobre eliminación y separación de residuos sólid' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=ELIMININACIONRESIDUOS&lang=esp
-  link: 'Indicadores artefactos en las viviendas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=TENENCIAARTEFACTOS&lang=esp
-  link: 'Todas las Variables' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp
-  link: 'Variables de Vivienda' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp
-  link: 'Variables de Hogar' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp
-  link: 'Variables de Personas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp
-  link: 'Boleta Censal 2011' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Boleta Censal/CR_BOLETACENSO 2011.pdf
-  link: 'Manual del censista' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Manual del censista/Manual para Censista.pdf
-  link: 'Clasificación de actividades económicas' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Manual del censista/Clasificacion_Actividad Economica_Costa Rica 2011 - Vol I.pdf
-  link: 'Clasificaciones de ocupaciones' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Manual del censista/Clasificacion_Ocupaciones_Costa Rica 2010 - Vol I.pdf
-  link: 'Manual para la persona usuaria del Redatam' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Manual del censista/Manual_persona_usuaria_Redatam.pdf
-  link: 'Metadatos' -> http://sistemas.inec.cr:8080/redinecmm/Censos/Censo_2011/Metadatos/Definiciones.pdf
-pane: http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\~tmp_840623.htm&TYPE=TMP
-  text: ﻿ R+SP Output Page WebMaster ronny.umana@inec.go.cr © 2014 - INEC Todos los derechos reservados, Dirección: Instituto Nacional de Estadística y Censos, de la Rotonda de La Bandera, 450 metros oeste, Calle Los Negritos, Edificio Ana Lorena, Mercedes de Montes de Oca, San José, Costa Rica. América Central. Teléfono: 2280-9280, Extensiones 326 y 327 Internacional (506) 2253-7579 / Fax: (506) 2224-2221. / Apartado Postal: 10 163 - 1000 / Correo Electrónico: informacion@inec.go.cr Dirección web Sitio INEC
-  link: '' -> http://www.inec.go.cr/sistema-de-consultas
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-follow: 'Cruce por Area Geográfica' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp
-  text: ﻿ R+SP Display/Input Page Cruce por Area Geográfica ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> Definir Parámetros Título de la Tabla Seleccione variable V01 Tipo de vivienda V02 Ocupación de la vivienda V03 Tenencia de la vivienda V04 Material predominante en las paredes exteriores V05 Material predominante en el techo V06 Tiene cielo raso V07 Material predominante en el piso V08A Estado paredes exteriores V08B Estado techo V08C Estado piso V09 Cuartos sólo para dormir V10 Total de aposentos V11 Procedencia del agua V12 El agua le llega por tubería dentro de la vivienda V13 El servicio sanitario está conectado a? V14 La luz eléctrica de la vivienda proviene V15 Principal combustible usado para cocinar V16 Eliminación de desechos sólidos V17A Separación de plástico, vidrio, aluminio V17B Separación de papel V17C Separación de restos de comida V18A Tenencia radio o equipo de sonido V18B Tenencia línea telefónica fija V18C Tenencia pantalla TV (plasma, LCD, LED) V18D Tenencia de televisor convencional V18E Tenencia TV por cable o satélite V18F Tenencia de sistema de agua caliente para toda la casa V18G Tenencia de tanque de almacenamiento de agua V18H Tenencia de computadora de escritorio V18I Tenencia de computadora portátil V18J Tenencia Internet V18K Tenencia de carro (no de trabajo) V18L Tenencia de motocicleta (no de trabajo) V19 Cuántas líneas de teléfono celular hay en la vivienda V01BLOQUE3 Residentes habituales en la vivienda V02BLOQUE3 Ca
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList?BASE=2011&ITEM=CENSO_AREA&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-  form: POST http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/AreaList
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = '2011'
-    input HIDDEN 'LANG' = 'esp'
-    input HIDDEN 'CODIGO' = 'xxUsuarioxx'
-    input HIDDEN 'ITEM' = 'CENSO_AREA'
-    input HIDDEN 'MODE' = 'RUN'
-    input text 'TITLE' = ''
-    input checkbox 'TOTROW' = ''
-    input checkbox 'TOTCOL' = ''
-    input button 'BUTTONSELECTION' = 'Editar Selección'
-    input hidden 'INLINESELECTION' = ''
-    input submit 'Submit' = 'Ejecutar'
-    select 'VARIABLE': 0 options: 
-    select 'OUTPUT': 0 options: 
-    select 'SELECTION': 0 options: 
-    select 'FORMAT': 0 options: 
-follow: 'Procesador Estadístico R+SP' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp
-  text: ﻿ R+SP Display/Input Page Procesador Estadístico R+SP ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> --------------------------------------- Entity CR2011 --------------------------------------- --------------------------------------- Entity PROVINCI --------------------------------------- PROVINCI [I 1-7] "Provincia" IDPROVIN [C] "Provincia (string)" EXTTER [R 2600-11999] "Extensión territorial a nivel de provincia en km2" DEFUNC [I 1400-7999] "Defunciones provinciales 2011" DEFUNMEC [I 40-220] "Defunciones provinciales menores de 1 año 2011" EMIGRA [I 24000-167999] "Emigración interna según cantón de residencia hace 5 años" ENMIGRANAC [I 80000-504999] "Emigración interna según cantón de nacimiento" INMIGRA [I 25999-135999] "Inmigracion interna segun canton de residencia hace 5 años" INMIGRANAC [I 72999-4515999] "Inmigracion interna segun canton de nacimiento" NACIMC [I 5500-23000] "Nacimientos cantonales 2011" NPROVIN [C] "Nombre provincia" NOMBPROV [C] --------------------------------------- Entity CANTON --------------------------------------- CANTON [I 1-20] "Cantón" IDCANTON [C] "Cantón (string)" NOMBCANTON [C] "Nombre del cantón" DEFUNC [I 20-1805] "Defunciones cantonales 2011" EMIGRA [I 397-49654] "Emigración interna según cantón de residencia hace 5 años" NACIMC [I 60-5357] "Nacimientos catonales 2011" DEFUNMEC [I 1-50] "Defunciones cantonales menores de 1 año" ENMIGRANAC [I 2328-202885] "Emigración interna según cantón de nacimiento" INMIG
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet?BASE=2011&ITEM=PROGRED&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-  form: POST http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/CmdSet
-    input HIDDEN 'MAIN' = 'WebServerMain.inl'
-    input HIDDEN 'BASE' = '2011'
-    input HIDDEN 'LANG' = 'esp'
-    input HIDDEN 'CODIGO' = 'XXUSUARIOXX'
-    input HIDDEN 'ITEM' = 'PROGRED'
-    input HIDDEN 'MODE' = 'RUN'
-    input submit 'Submit' = 'Ejecutar'
-    textarea 'CMDSET'
-    textarea 'VARLIST'
-follow: 'Descargar diccionario R+SP' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\Censos\SIM2011\Base\CR2011.dic
-  text:         NACIMIEN E  x ��l    LE 121 ALIAS P0        |=�|=�H   D:\Trabajos\Censo 2011\Censo Nacional\Redatam\CR2011 SIM�   ;                    NOT                                                                        P   �xg4��    �U   MIS     122  �?                                                                               �t���  ��������    ��                                          @                                                                                                                                                                                                                             �                                           L)�        8  �?��?�h   DATASET PCK '..\CR2011 SIM\CR20110070.rbf' SIZE 3   E�E�   1 TOT             INTE�  #          P05C C�digo de Pa�s �@��@��   P05A Lugar de nacimiento(   /           P05B_C�digo_Provincia_Cant�n    �@��@��    MISSING 4 NOTAPPLICABLE 0 ALIAS P054   W       G   D:\Trabajos\Censo 2011\Censo Nacional\Reda          CR2011.dic20130308201703079 D:\servers\cri\redbin\rpbases\Censos\SIM2011\Estbas\Base\   CR2011     .\CR20110000.ptr                  ��^    ��\             PROVINCI PROVINCI CR2011   .\CR20110001.ptr   IDPROVIN NOMBPROV           t�\    ��[             PROVINCI% DATASET PCK '.\CR20110001.rbf' SIZE 4   1 TO 7 INTEGER E 0  Provincia  MISSING 8 NOTAPPLICABLE 0      �(e    4e     IDPROVIN% DATASET CHR '.\CR20110002.rbf' SIZE 1     STRING e
-follow: 'Todas las Variables' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp
-  text: ﻿ R+SP Display/Input Page Diccionario de la Base ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 1 CR2011 2 PROVINCI 2.1 PROVINCI Provincia I 1-7 2.2 IDPROVIN Provincia (string) C 2.3 EXTTER Extensión territorial a nivel de provincia en km2 R 2600-11999 2.4 DEFUNC Defunciones provinciales 2011 I 1400-7999 2.5 DEFUNMEC Defunciones provinciales menores de 1 año 2011 I 40-220 2.6 EMIGRA Emigración interna según cantón de residencia hace 5 años I 24000-167999 2.7 ENMIGRANAC Emigración interna según cantón de nacimiento I 80000-504999 2.8 INMIGRA Inmigracion interna segun canton de residencia hace 5 años I 25999-135999 2.9 INMIGRANAC Inmigracion interna segun canton de nacimiento I 72999-4515999 2.10 NACIMC Nacimientos cantonales 2011 I 5500-23000 2.11 NPROVIN Nombre provincia C 2.12 NOMBPROV C 3 CANTON 3.1 CANTON Cantón I 1-20 3.2 IDCANTON Cantón (string) C 3.3 NOMBCANTON Nombre del cantón C 3.4 DEFUNC Defunciones cantonales 2011 I 20-1805 3.5 EMIGRA Emigración interna según cantón de residencia hace 5 años I 397-49654 3.6 NACIMC Nacimientos catonales 2011 I 60-5357 3.7 DEFUNMEC Defunciones cantonales menores de 1 año I 1-50 3.8 ENMIGRANAC Emigración interna según cantón de nacimiento I 2328-202885 3.9 INMIGRANAC Inmigración interna según cantón de nacimiento I 1557-77342 3.10 INMIGRA Inmigración interna según cantón de residencia hace 5 años I 587-23399 3.11 EXTTER Extensión terr
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICALL&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-follow: 'Variables de Vivienda' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp
-  text: ﻿ R+SP Display/Input Page Variables de Vivienda ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 5 VIVIENDA 5.1 ZONAUR Zona(urbano/rural) I 1-2 ZONAUR 5.2 REGION Región I 1-7 Región 5.3 TERRINDI Territorio indígena I 1-90 TERRINDI 5.4 TIPOVIV V01 Tipo de vivienda I 1-14 V01 5.5 OCUP V02 Ocupación de la vivienda I 1-7 V02 5.6 TENENCIA V03 Tenencia de la vivienda I 1-7 V03 5.7 PAREDES V04 Material predominante en las paredes exteriores I 1-8 V04 5.8 TECHO V05 Material predominante en el techo I 1-5 V05 5.9 CIELORAS V06 Tiene cielo raso I 1-2 V06 5.10 PISO V07 Material predominante en el piso I 1-6 V07 5.11 ESTPARED V08A Estado paredes exteriores I 1-3 V08A 5.12 ESTTECHO V08B Estado techo I 1-3 V08B 5.13 ESTPISO V08C Estado piso I 1-3 V08C 5.14 DORMITOR V09 Cuartos sólo para dormir I 0-10 V09 5.15 APOSENTO V10 Total de aposentos I 1-10 V10 5.16 FUENAGUA V11 Procedencia del agua I 1-7 V11 5.17 ABASAGUA V12 El agua le llega por tubería dentro de la vivienda I 1-2 V12 5.18 SANITARI V13 El servicio sanitario está conectado a? I 1-5 V13 5.19 ELECTRIC V14 La luz eléctrica de la vivienda proviene I 1-6 V14 5.20 COMBUSTI V15 Principal combustible usado para cocinar I 1-5 V15 5.21 ELIMDESE V16 Eliminación de desechos sólidos I 1-6 V16 5.22 SEPPLAST V17A Separación de plástico, vidrio, aluminio I 1-2 V17A 5.23 SEPPAPEL V17B Separación de papel I 1-2 V17B 5.24 SEPRESTC V17C Separación de res
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICVIV&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-follow: 'Variables de Hogar' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp
-  text: ﻿ R+SP Display/Input Page Variables de Hogar ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 6 HOGAR 6.1 JEFCOMP H04 Jefatura compartida I 1-1 H04 6.2 TOTHOMB H05A Total de hombres en el hogar I 0-2400 H05A 6.3 TOTMUJ H05B Total de mujeres en el hogar I 0-652 H05B 6.4 TOTPERS H05C Resumen total de personas I 0-2400 H05C 6.5 MVIVOTPA H07A Miembros del hogar viviendo en otro país I 1-2 H07A 6.6 MIEMBEXT H07B Número de miembros del hogar viviendo en el extranjero I 1-9 H07B 6.7 RDBEXT H08A_Recibe dinero o bienes del extranjero I 1-2 H08A 6.8 ENVDBEXT H08B_Envía dinero o bienes al extranjero I 1-2 H08B 6.9 TENFAGRO H09 Alguien del hogar tiene finca agropecuaría,cultivo, animales I 1-9 H09 6.10 TIPOLOGIA H10 Tipología del hogar I 1-14 H10 6.11 ALBERGUE H12 Albergue I 0-1 H12 6.12 SALUD H13 Salud I 0-1 H13 6.13 CONOCIMIEN H14 Conocimiento I 0-1 H14 6.14 CONSUMO H15 Consumo I 0-1 H15 6.15 TOTALCAREN H16 Total carencias I 0-4 H16 6.16 HNBI H17 Necesidades básicas insatisfechas I 0-1 H17 Procesando por Usted, intente hacer algo mientras espera... WebMaster ronny.umana@inec.go.cr © 2014 - INEC Todos los derechos reservados, Dirección: Instituto Nacional de Estadística y Censos, de la Rotonda de La Bandera, 450 metros oeste, Calle Los Negritos, Edificio Ana Lorena, Mercedes de Montes de Oca, San José, Costa Rica. América Central. Teléfono: 2280-9280, Extensiones 326 y 327 Internacional (
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICHOG&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
-follow: 'Variables de Personas' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp
-  text: ﻿ R+SP Display/Input Page Variables de Personas ?? Regresar Tabla Gráfico Programa Mapa Diccionario Export: Excel PDF --> # Nombre de la entidad Nombre de la variable Rótulo Tipo Rango Alias Grupo 7 POBLACIO 7.1 NUMLIN P00 Número de línea de la persona I 1-99 P00 7.2 PARENTES P01 Parentesco con la jefa o el jefe del hogar I 1-12 P01 7.3 SEXO P02 Sexo I 1-2 P02 7.4 EDAD P03 Edad I 0-120 P03 7.5 NACIMIEN P05A Lugar de nacimiento I 1-3 P05A 7.6 LUGNACI P05B_Código_Provincia_Cantón I 101-706 P05B 7.7 LUGPA P05C Código de País I 1-970 P05C 7.8 LLEGADCR P06A Año de llegada a Costa Rica I 1890-9999 P06A 7.9 CODLLECR P06B Código de llegada a Costa Rica I 1-9 P06B 7.10 CONSIND P07 Se considera indígena I 1-2 P07 7.11 PUEBLOIN P08 Pueblo indígena al que pertenece I 1-10 P08 7.12 LENGIND P09 Habla algún idioma o lengua indígena I 1-2 P09 7.13 ETNIA P10 Autoidentificación étnico-racial I 1-9 P10 7.14 SEGSOC P11 Condición de aseguramiento I 1-8 P11 7.15 DISCPVER P12A Limitación para ver aunque use anteojos o Sizetes I 1-2 P12A 7.16 DISCPOIR P12B Limitación para oir I 1-2 P12B 7.17 DISCPHAB P12C Limitación para hablar I 1-6 P12C 7.18 DISCPCAM P12D Limitación para caminar o subir gradas I 1-2 P12D 7.19 DISCPMAN P12E Limitación para utilizar brazos y manos I 1-2 P12E 7.20 DISCPLIM P12F Limitación de tipo intelectual (retardo, sindrome down etc) I 1-2 P12F 7.21 DISCPMEN P12G Limitación de tipo mental (Bipolar, esquizofrenia, otros) I 1-2 P12G 7.22 DISCPNIN P12H Ninguna de las anteriores limit
-  link: 'Tabla' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp#tabs-1
-  link: 'Gráfico' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp#tabs-2
-  link: 'Programa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp#tabs-3
-  link: 'Mapa' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp#tabs-4
-  link: 'Diccionario' -> http://sistemas.inec.cr:8080/bininecmm/RpWebStats.exe/Dictionary?BASE=2011&ITEM=DICPOB&lang=esp#tabs-5
-  link: 'ronny.umana@inec.go.cr' -> mailto:ronny.umana@inec.go.cr
-  link: 'Sitio INEC' -> http://www.inec.go.cr/
+page: http://redatam.inide.gob.ni/
+  1,425 bytes
+  8 matching link(s)
+  - Name
+    http://redatam.inide.gob.ni/?C=N;O=D
+  - Last modified
+    http://redatam.inide.gob.ni/?C=M;O=A
+  - Size
+    http://redatam.inide.gob.ni/?C=S;O=A
+  - Description
+    http://redatam.inide.gob.ni/?C=D;O=A
+  - alias/
+    http://redatam.inide.gob.ni/alias/
+  - alias64/
+    http://redatam.inide.gob.ni/alias64/
+  - docs/
+    http://redatam.inide.gob.ni/docs/
+  - redatam/
+    http://redatam.inide.gob.ni/redatam/
+page: http://redatam.inide.gob.ni/redatam/
+  2,654 bytes
+  6 matching link(s)
+  - 
+    http://redatam.inide.gob.ni/redatam/
+  - Nicaragua CEPOV 1995
+    http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB1995&lang=esp
+  - Nicaragua CEPOV 2005
+    http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp
+  - Nicaragua CENAGRO 2001
+    http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=CENAGRO1&lang=esp
+  - Acceso Tablas y Consultas
+    http://redatam.inide.gob.ni/redatam/cenagro/ElPais.htm
+  - Regresar al Portal INIDE
+    http://www.inide.gob.ni/
+page: http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?lang=esp
+  1,488 bytes
+  0 matching link(s)
+page: https://www.inide.gob.ni/docu/censos2005/censo2005.htm
+  12,981 bytes
+  47 matching link(s)
+  - 
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/RESUMENCENSAL.zip
+  - I. Caracter&iacute;sticas Generales
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Vol.I Poblacion-Caracteristicas Generales.pdf
+  - II. Caracter&iacute;sticas Educativas
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Vol.II Poblacion-Caracteristicas Educ.pdf
+  - III. Caracter&iacute;sticas Econ&oacute;micas
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Vol.III Poblacion-Caracteristicas Economicas.pdf
+  - IV. Municipios
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Vol.IV Poblacion-Municipios.pdf
+  - Formato RAR
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Volumen Poblacion.rar
+  - Formato ZIP
+    https://www.inide.gob.ni/docu/censos2005/VolPoblacion/Volumen Poblacion 1-4/Volumen Poblacion.zip
+  - I. Departamentos / Regiones Aut&oacute;nomas
+    https://www.inide.gob.ni/docu/censos2005/VolVivienda/Vol I/Vol.I Vivienda Departamentos Regiones Autonomas.pdf
+  - II. Municipios
+    https://www.inide.gob.ni/docu/censos2005/VolVivienda/Vol II/Vol.II Vivienda-Municipios.pdf
+  - Formato RAR
+    https://www.inide.gob.ni/docu/censos2005/VolVivienda/VolVivienda Complet/VolVivienda.rar
+  - Formato ZIP
+    https://www.inide.gob.ni/docu/censos2005/VolVivienda/VolVivienda Complet/VolVivienda.zip
+  - I. Caracter&iacute;sticas Generales
+    https://www.inide.gob.ni/docu/censos2005/VolHogar/Vol.Hogar Caracteristicas Generales.pdf
+  - Formato RAR
+    https://www.inide.gob.ni/docu/censos2005/VolHogar/volumen de hogar.rar
+  - Formato ZIP
+    https://www.inide.gob.ni/docu/censos2005/VolHogar/volumen de hogar.zip
+  - RESUMEN CENSAL (23 de Noviembre del 2006)
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/RESUMENCENSAL.pdf
+  - INTRODUCCION
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/ResumenC1.pdf
+  - RESE&Ntilde;A HISTORICA DE LOS CENSOS...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Reshistorica.pdf
+  - CAP&Iacute;TULO 1. CENSO DE POBLACI&Oacute;N...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Resumen2.pdf
+  - CAP&Iacute;TULO 2 CENSO DE VIVIENDA...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Resumen3.pdf
+  - CAP&Iacute;TULO 3 CENSO DE HOGAR ...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Resumen4.pdf
+  - CONCEPTOS Y DEFINICIONES B&Aacute;SICAS...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Resumen5.pdf
+  - ANEXOS...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos.pdf
+  - Anexos - parte 1
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos1.pdf
+  - Anexos - parte 2
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos2.pdf
+  - Anexos - parte 3
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos3.pdf
+  - Anexos - parte 4
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos4.pdf
+  - Anexos - parte 5
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos5.pdf
+  - Anexos - parte 6
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos6.pdf
+  - Anexos - parte 7
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/Res_Anexos7.pdf
+  - BOLETA CENSAL...
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/BolCenso05.pdf
+  - &nbsp;&nbsp;
+    https://www.inide.gob.ni/docu/censos2005/ResumenCensal/RESUMENCENSAL.rar
+  - Introducci&oacute;n... Formato PDF
+    https://www.inide.gob.ni/docu/censos2005/CifrasO_Introduccion.pdf
+  - Cuadros de las Cifras Oficiales...
+    https://www.inide.gob.ni/docu/censos2005/CifrasO_Tablas.pdf
+  - Gr&aacute;ficos de las Cifras Oficiales... Formato PDF
+    https://www.inide.gob.ni/docu/censos2005/CifrasO_Graficos.pdf
+  - Presentaci&oacute;n de las Cifras Parte 1...
+    https://www.inide.gob.ni/docu/censos2005/Presentacion_Parte_1.pdf
+  - 
+    https://www.inide.gob.ni/docu/censos2005/CifrasOficiales_Parte_1.pdf
+  - Presentaci&oacute;n de las Cifras Parte 2
+    https://www.inide.gob.ni/docu/censos2005/Presentacion_Parte_2.pdf
+  - Baje aqu&iacute; en formato ZIP el Informe entregado al Gobierno el d&
+    https://www.inide.gob.ni/docu/censos2005/CifrasOficiales.zip
+  - Qu&eacute; es un Censo de Poblaci&oacute;n ...
+    https://www.inide.gob.ni/docu/censos2005/sensibilizacion.pdf
+  - Boleta utilizada en el censo
+    https://www.inide.gob.ni/docu/censos2005/bolfeb22/BolCenso05.pdf
+  - Clasificador Uniforme de las Ocupaciones de Nicaragua (CUONIC) Julio 2
+    https://www.inide.gob.ni/docu/censos2005/Clasificadores/CUONJUL06.pdf
+  - Basada en la Clasificaci&oacute;n Internacional Uniforme de las Ocupac
+    https://www.inide.gob.ni/docu/censos2005/CUAEN/CUAEN.pdf
+  - Clasificador Uniforme de Pa&iacute;ses (CUP). Junio 2006
+    https://www.inide.gob.ni/docu/censos2005/Clasificadores/CUPJUN06.pdf
+  - Clasificador Uniforme de T&eacute;cnicos y Profesionales (CUTP). Junio
+    https://www.inide.gob.ni/docu/censos2005/Clasificadores/CUTPJUN06.pdf
+  - Ver Documento en formato PDF.
+    https://www.inide.gob.ni/docu/censos2005/GF_Nic.pdf
+  - Bajarlo en formato .ZIP
+    https://www.inide.gob.ni/docu/censos2005/GF_Nic.zip
+  - Ver en formato PDF
+    https://www.inide.gob.ni/docu/censos2005/informision.pdf
