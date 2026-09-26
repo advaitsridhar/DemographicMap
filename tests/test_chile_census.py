@@ -21,6 +21,8 @@ def comuna(region, province, code, **cells):
 class Names(unittest.TestCase):
     def test_the_boundary_files_prefix_is_not_part_of_the_name(self):
         self.assertEqual(cc.province_key("Provincia del Tamarugal"), cc.province_key("Tamarugal"))
+        self.assertEqual(cc.province_key("Provincia del Tamarugal"),
+                         cc.province_key("Del Tamarugal"))
         self.assertEqual(cc.province_key("Provincia de la Antártica Chilena"),
                          cc.province_key("Antártica Chilena"))
         self.assertEqual(cc.province_key("Provincia de Bío-Bío"), cc.province_key("Biobío"))

@@ -121,7 +121,9 @@ def fold(name: str) -> str:
 
 
 def province_key(name: str) -> str:
-    return fold(re.sub(r"^provincia\s+(?:de|del)\s+(?:la\s+)?", "", name.strip(), flags=re.I))
+    # The boundary file writes "Provincia del Tamarugal", INE "Del Tamarugal".
+    return fold(re.sub(r"^(?:provincia\s+)?(?:de|del)\s+(?:la\s+)?", "", name.strip(),
+                       flags=re.I))
 
 
 def cell(value: Any) -> int | None:
