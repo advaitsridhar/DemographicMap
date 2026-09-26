@@ -227,6 +227,9 @@ ADAPTER_FILES = [
     # the Internet Archive captured it (ecuador_census): INEC's host refuses
     # the runner.
     "ecuador_census.json",
+    # Median age and sex ratio for the same provinces and cantons, from sheet 2.1
+    # of the same INEC workbook.
+    "ecuador_profile.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles
     # transcribe it, and religion by province and regency from the registry
