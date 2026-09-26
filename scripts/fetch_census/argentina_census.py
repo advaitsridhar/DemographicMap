@@ -144,9 +144,12 @@ BAND = re.compile(r"^(\d+)-(\d+)$")
 # "Cuadro4.2.0". A "bis" sheet is a second layout of the same figures.
 CUADRO = re.compile(r"^Cuadro\s*(\d+)\.(\d+)(?:\.(\d+))?$")
 # A misread sheet or column misses INDEC's median by decades; its own figure
-# is a whole year computed its own way, so agreement to within two years is
-# the test, and how often each rounding reproduces it exactly is logged.
-MEDIAN_TOLERANCE = 2.0
+# is a whole year computed its own way, and in a department of a thousand
+# people the two can differ by a couple of years. So a unit more than five
+# years out stops the run, units more than two out are listed, and how often
+# each rounding reproduces INDEC's figure exactly is logged.
+MEDIAN_LIMIT = 5.0
+MEDIAN_NOTE = 2.0
 FIVE_YEAR: dict[str, float | None] = {}
 
 
@@ -452,6 +455,7 @@ def main() -> int:
     urls: dict[tuple[str, int], list[str]] = defaultdict(list)
     worst_median = 0.0
     agreement: dict[str, int] = defaultdict(int)
+    far: list[str] = []
     for index, pcode, slug, page, name, map_name in PROVINCES:
         what = name
         books = {}
@@ -499,9 +503,13 @@ def main() -> int:
                                  int(five) if five is not None else None)):
                 agreement[rule] += value == published[code]
             agreement["units"] += 1
-            if gap > MEDIAN_TOLERANCE:
+            if gap > MEDIAN_LIMIT:
                 raise SystemExit(f"argentina_census: {what} {code}: median {median} against "
                                  f"INDEC's {published[code]}")
+            if gap > MEDIAN_NOTE:
+                far.append(f"{what} {code} ({names.get(code, what)}, "
+                           f"{population.get(code, province_pop):,} people): {median} against "
+                           f"{published[code]}")
 
         # -- indigenous and Afro-descendant self-recognition
         ind1 = sheets[("poblacion_indigena", 1)]
@@ -629,6 +637,10 @@ def main() -> int:
     log(f"  medians agree with INDEC's whole-year ones to within {worst_median:.2f} years; "
         f"of {agreement.pop('units')}, reproduced exactly by "
         + ", ".join(f"{rule}: {n}" for rule, n in agreement.items()))
+    log(f"  {len(far)} more than {MEDIAN_NOTE:.0f} years from INDEC's: " + "; ".join(far))
+    if len(far) > 0.02 * len(departments):
+        raise SystemExit("argentina_census: too many medians disagree with INDEC's to be "
+                         "rounding")
     national = sum(p["fields"]["population"]["value"] for p in provinces.values())
     log(f"  {len(provinces)} provinces, {len(departments)} departments, {national:,} people")
 
