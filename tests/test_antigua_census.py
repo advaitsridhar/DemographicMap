@@ -51,6 +51,14 @@ class Base(unittest.TestCase):
         self.assertEqual(ag.mapped(Counter({"Adventist": 2, "Anglican": 1}), ag.RELIGION, "r"),
                          {"Seventh-day Adventist": 2, "Anglican": 1})
 
+    def test_not_applicable_is_no_category(self):
+        found = [{"area": str(i), "name": n, "rows": [("Anglican", 5), ("NotApp :", 2)],
+                  "total": 5, "na": None}
+                 for i, n in enumerate(n for _, base in ag.PARISHES.values() for n in base)]
+        out = ag.by_parish(found, "religion")
+        self.assertEqual(out["Barbuda"]["rows"], Counter({"Anglican": 5}))
+        self.assertEqual(out["Barbuda"]["na"], 2)
+
     def test_saint_john_is_the_city_and_the_rest(self):
         self.assertEqual(ag.PARISHES["Saint John"][0], ("St. John City", "St. John Rural"))
 

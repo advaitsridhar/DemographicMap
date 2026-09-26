@@ -153,12 +153,17 @@ def by_parish(found: list[dict], what: str) -> dict[str, dict[str, Any]]:
     for table in found:
         if not table["area"]:
             continue
-        rows = Counter()
+        rows, na = Counter(), table["na"] or 0
         for label, n in table["rows"]:
-            rows[label] += n
+            # The English server writes "NotApp : 101" where the Spanish writes
+            # "No Aplica": those the question was not put to, not a category.
+            if re.match(r"^(?:NotApp|Missing)\b", label):
+                na += n
+            else:
+                rows[label] += n
         near(sum(rows.values()), table["total"], f"the base's {what} in {table['name']}",
              slack=len(rows))
-        out[table["name"]] = {"rows": rows, "total": table["total"], "na": table["na"] or 0}
+        out[table["name"]] = {"rows": rows, "total": table["total"], "na": na}
     known = {name for _, base in PARISHES.values() for name in base}
     if set(out) != known:
         raise SystemExit(f"antigua_census: the base's {what} has {sorted(out)}")
