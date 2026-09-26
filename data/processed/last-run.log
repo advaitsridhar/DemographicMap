@@ -1,39 +1,59 @@
-  PERSONA.P02 by depto: 18 areas
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/honduras_census.py", line 258, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/honduras_census.py", line 185, in main
-    departments = fetch(server, "DEPTO")
-                  ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/honduras_census.py", line 101, in fetch
-    found = server.frequency(variable, areabreak=level)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/redatam.py", line 173, in frequency
-    pages = self.output(frequency_program(variable, areabreak, selection))
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/redatam.py", line 161, in output
-    page = self.run(program)
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/redatam.py", line 149, in run
-    self.session.get(f"{self.cmdset}?BASE={self.base}&ITEM=PROGRED&lang={self.lang}")
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 50, in get
-    with self.opener.open(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+page: http://web.archive.org/cdx/search/cdx?url=one.gob.do/media/&matchType=prefix&output=text&limit=20000&fl=timestamp,original,statuscode,length&collapse=urlkey&filter=original:.*(cuadro-1[0-9]|cuadro-11|vol-lll|volumen-iii|volumen-3|vol-3|vol-iii).*
+  5,648 bytes
+20240830235412 http://www.one.gob.do/media/0aydxsiq/cuadro-11-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 159161
+20240921093558 https://www.one.gob.do/media/0aydxsiq/cuadro-11-volumen-ii.xlsx 200 159128
+20250121071322 https://www.one.gob.do/media/0cynxc23/cuadro-13-del-volumen-iv.xlsx 200 124017
+20241113001450 https://www.one.gob.do/media/0s4ifra5/cuadro-8-volumen-iii.xlsx 200 80671
+20240513100042 https://www.one.gob.do/media/20natgak/volumen-iii-caracter%C3%ADsticas-generales-de-la-poblaci%C3%B3n-censo-2002.xls 200 2108878
+20240831092429 https://www.one.gob.do/media/2lon0shu/cuadro-17-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 129428
+20241113000805 https://www.one.gob.do/media/2njp32ut/cuadro-2-volumen-iii.xlsx 200 1074210
+20241113000613 https://www.one.gob.do/media/31cfciaw/cuadro-5-vol-lll.xlsx 200 33504
+20250727060128 https://www.one.gob.do/media/31cfciaw/cuadro-5-volumen-iii.xlsx 404 970
+20250120172805 https://www.one.gob.do/media/4p3ohkkg/cuadro-17-volumen-ii.xlsx 200 133313
+20250120152253 https://www.one.gob.do/media/5psfqewa/cuadro-16-volumen-ii.xlsx 200 135939
+20251204015047 https://www.one.gob.do/media/aa2f0lqf/cuadro-12-vol-v-xcnpv-caracter%C3%ADsticas-econ%C3%B3micas.xlsx 200 158753
+20240830201845 https://www.one.gob.do/media/avjcsxx5/cuadro-12-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 136031
+20240921093559 https://www.one.gob.do/media/avjcsxx5/cuadro-12-volumen-ii.xlsx 200 135979
+20240831045155 https://www.one.gob.do/media/bnfhk2xp/cuadro-15-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 177121
+20240921093551 https://www.one.gob.do/media/bnfhk2xp/cuadro-15-volumen-ii.xlsx 200 176991
+20251204082225 https://www.one.gob.do/media/cdrdxtlc/cuadro-10-vol-v-xcnpv-caracter%C3%ADsticas-econ%C3%B3micas.xlsx 200 30686
+20240830210426 https://www.one.gob.do/media/cy1pj2w3/cuadro-14-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 172126
+20240921093540 https://www.one.gob.do/media/cy1pj2w3/cuadro-14-volumen-ii.xlsx 200 172125
+20240627163522 https://www.one.gob.do/media/ebuhqp4s/cuadro-13-volumen-i-xcnpv.xlsm 200 331213
+20250121030126 https://www.one.gob.do/media/g5agst1j/cuadro-11-del-volumen-iv.xlsx 200 244253
+20240830203907 https://www.one.gob.do/media/gjdfpk0e/cuadro-13-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 161916
+20240921093611 https://www.one.gob.do/media/gjdfpk0e/cuadro-13-volumen-ii.xlsx 200 161876
+20250120070923 https://www.one.gob.do/media/hjrnd4gp/cuadro-13-volumen-ii.xlsx 200 168374
+20250902202039 http://www.one.gob.do/media/hn4jrqkj/cuadro-10-volumen-ii.xlsx 200 88608
+20241113055426 https://www.one.gob.do/media/htzlzsws/cuadro-1-volumen-iii.xlsx 200 327163
+20250121141409 https://www.one.gob.do/media/iekoyq1r/cuadro-11-volumen-ii.xlsx 200 164841
+20250902202125 http://www.one.gob.do/media/iwtkob4d/cuadro-12-volumen-ii.xlsx 200 136132
+20241113000808 https://www.one.gob.do/media/j1zetu3a/cuadro-9-vol-lll.xlsx 200 366721
+20250727071509 http://one.gob.do/media/j1zetu3a/cuadro-9-volumen-iii.xlsx 404 971
+20241113001505 https://www.one.gob.do/media/krjh2onw/cuadro-4-volumen-iii.xlsx 200 69137
+20240627163530 https://www.one.gob.do/media/kw3h5nx3/cuadro-12-volumen-i-xcnpv.xlsm 200 306846
+20241113000809 https://www.one.gob.do/media/lzpmdurh/cuadro-10-volumen-iii.xlsx 200 190599
+20250121083507 https://www.one.gob.do/media/mfundo2h/cuadro-10-del-volumen-iv.xlsx 200 81799
+20241113000807 https://www.one.gob.do/media/nk1f4y22/cuadro-3-vol-lll.xlsx 200 69279
+20250120213849 https://www.one.gob.do/media/o2znoymg/cuadro-14-volumen-ii.xlsx 200 178623
+20240627163522 https://www.one.gob.do/media/o4vlpwdb/cuadro-11-volumen-i-xcnpv.xlsm 200 64245
+20240627163522 https://www.one.gob.do/media/oxandtpv/cuadro-14-volumen-i-xcnpv.xlsm 200 335583
+20241113000526 https://www.one.gob.do/media/p20pwps3/cuadro-7-volumen-iii.xlsx 200 132325
+20241103231121 https://www.one.gob.do/media/rmfhr5tj/cuadro-12-volumen-iii.xlsx 200 90728
+20251116114503 https://www.one.gob.do/media/rmfhr5tj/cuadro-12-volumen-iii.xlsx%7Ctitle= 404 2088
+20240922035705 https://www.one.gob.do/media/rtfp4oxp/cuadro-10-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 404 747
+20240923042310 http://www.one.gob.do/media/rtfp4oxp/cuadro-10-volumen-ii.xlsx 200 88448
+20250902211610 http://www.one.gob.do/media/tbnlneif/cuadro-12-del-volumen-iv.xlsx 200 242019
+20240831063719 https://www.one.gob.do/media/tk0dfkkx/cuadro-18-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 134586
+20240921093546 https://www.one.gob.do/media/uoiecubp/cuadro-18-volumen-ii.xlsx 200 134543
+20241113055423 https://www.one.gob.do/media/v0jh5gu0/cuadro-6-volumen-iii.xlsx 200 123026
+20250902203053 http://www.one.gob.do/media/v0ynpj5u/cuadro-18-volumen-ii.xlsx 200 134693
+20251203181814 https://www.one.gob.do/media/wdxdebxh/cuadro-13-vol-v-xcnpv-caracter%C3%ADsticas-econ%C3%B3micas.xlsx 200 158199
+20241113000810 https://www.one.gob.do/media/wfbjav1s/cuadro-11-volumen-iii.xlsx 200 61882
+20240830225146 http://www.one.gob.do/media/wp3bb5ek/cuadro-16-volumen-ii-caracter%C3%ADsticas-de-la-vivienda-y-del-hogar.xlsx 200 130017
+20240921093554 https://www.one.gob.do/media/wp3bb5ek/cuadro-16-volumen-ii.xlsx 200 132570
+20240627163522 https://www.one.gob.do/media/wqleo1up/cuadro-10-volumen-i-xcnpv.xlsm 200 28360
+20250120063503 https://www.one.gob.do/media/yslfycwc/cuadro-15-volumen-ii.xlsx 200 182806
+20240910123156 https://www.one.gob.do/media/yubfef15/cuadro-16-volumen-ii.xlsx 200 132613
+20240921093555 https://www.one.gob.do/media/zaundjrp/cuadro-17-volumen-ii.xlsx 200 129377
+
