@@ -1,33 +1,68 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/grenada_census.py", line 324, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/grenada_census.py", line 247, in main
-    report = pages()
-             ^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/grenada_census.py", line 222, in pages
-    with pdfplumber.open(io.BytesIO(http_get(REPORT, binary=True, cache=False))) as pdf:
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 853, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+page: https://www.statistics-suriname.org/wp-json/wp/v2/media?search=census8&per_page=100
+  44,729 bytes
+  11 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/census8etn.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/Errata-Vol1-CENSUS8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8_listing_van_supervisors_en_controleurs.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8etn.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/sollicitatieformcensus8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8dis3-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8etn-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8etn.pdf
+page: https://www.statistics-suriname.org/wp-json/wp/v2/media?search=ressort&per_page=100
+  31,387 bytes
+  6 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/table-5s.-ressort-by-vraag-08.-etnische-groep-parwan.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census-profile-on-ressort-level.xls
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/table-5s.-ressort-by-vraag-08.-etnische-groep-parwan.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/table-5s.-ressort-by-vraag-08.-etnische-groep-parwan-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/table-5s.-ressort-by-vraag-08.-etnische-groep-parwan-2.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/table-5s.-ressort-by-vraag-08.-etnische-groep-parwan.pdf
+page: https://www.statistics-suriname.org/wp-json/wp/v2/media?search=census&per_page=100
+  315,015 bytes
+  28 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/census8etn.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/census_8_specimen_questionair.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/02\/technische-evaluatie-census-8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/Errata-Vol1-CENSUS8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census-profile-on-ressort-level.xls
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8_listing_van_supervisors_en_controleurs.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/census8etn.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/district-profiel-census.xls
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/sollicitatieformcensus8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/03\/technische-evaluatie-census-8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/05\/Publicatie-Census-8-Volume-1-Demografische-en-Sociale-Karakteristieken-en-Migratie.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/05\/Publicatie-Census-8-Volume-2-Onderwijs-Werkgelegenheid-en-Vervoer-Vruchtbaarheid-en-Sterfte-Gezondheid-en-Sport.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/05\/Publicatie-Census-8-Volume-3-Huishoudens-Gezinnen-en-Woonverblijven-Milieu-Criminaliteit.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/05\/Vragenlijst-Census-7.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8dis3-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8dis3.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8etn-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/census8etn.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/technische-evaluatie-census-8-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/09\/technische-evaluatie-census-8.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/10\/SURINAME-CENSUS-2004-VOLUME-1-DEMOGRAPHIC-AND-SOCIAL-CHARACTERISTICS.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2019\/10\/SURINAME-CENSUS-2004-VOLUME-4-HOUSEHOLDS-FAMILIES-AND-HOUSING.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2021\/07\/Publicatie-Census-8-Volume-1-Demografische-en-Sociale-Karakteristieken-en-Migratie.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2024\/02\/Persbericht-Instelling-Census-Management-Team-CMT-VT9-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2024\/02\/Persbericht-Instelling-Census-Management-Team-CMT-VT9-2.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2024\/02\/Persbericht-Instelling-Census-Management-Team-CMT-VT9.pdf
+page: https://www.statistics-suriname.org/wp-json/wp/v2/media?search=godsdienst&per_page=100
+  2 bytes
+  0 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+page: https://www.statistics-suriname.org/wp-json/wp/v2/media?search=taal&per_page=100
+  21,617 bytes
+  8 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2025\/02\/BOUWPRIJSINDEX-RELEASE-DERDE-KWARTAAL-2023-TOT-DERDE-KWARTAAL-2024.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2025\/02\/BOUWPRIJSINDEX-RELEASE-VIERDE-KWARTAAL-2023-TOT-VIERDE-KWARTAAL-2024.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2025\/05\/BOUWPRIJSINDEX-RELEASE-EERSTE-KWARTAAL-2025-TOT-EERSTE-KWARTAAL-2024.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2025\/11\/BOUWPRIJSINDEX-RELEASE-DERDE-KWARTAAL-2024-TOT-DERDE-KWARTAAL-2025.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2025\/11\/BOUWPRIJSINDEX-RELEASE-TWEEDE-KWARTAAL-2024-TOT-TWEEDE-KWARTAAL-2025.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2026\/01\/BOUWPRIJSINDEX-RELEASE-VIERDE-KWARTAAL-2024-TOT-VIERDE-KWARTAAL-2025.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2026\/05\/BOUWPRIJSINDEX-RELEASE-EERSTE-KWARTAAL-2025-TOT-EERSTE-KWARTAAL-2026-1.pdf
+    source_url":"https:\/\/statistics-suriname.org\/wp-content\/uploads\/2026\/08\/BOUWPRIJSINDEX-RELEASE-TWEEDE-KWARTAAL-2025-TOT-TWEEDE-KWARTAAL-2026.pdf
