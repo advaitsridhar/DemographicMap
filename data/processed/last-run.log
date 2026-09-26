@@ -36,74 +36,13 @@ cod_ps_age: 33 dataset(s) for 33 countries
     refused grd_admpop_2011.xlsx grd_admpop_adm1_2011_: its names match 6 of this map's districts and 6 of its first-level units, out of 7; too few of either to say which level this file describes
   cod-ps-gtm (GTM)
     admin1: 22 unit(s) from gtm_admpop_adm1_2024.csv (22 of 22 names match this map's admin1 (against 14 at admin2)); 0 left out
-    left out La Democracia: 2 rows carry the name
-    left out San José: 2 rows carry the name
-    left out San Pedro Sacatepéquez: 2 rows carry the name
-    left out La Democracia: 2 rows carry the name
-    left out La Libertad: 2 rows carry the name
-    left out Santa Bárbara: 2 rows carry the name
-    left out La Libertad: 2 rows carry the name
-    left out San José: 2 rows carry the name
-    left out San Lorenzo: 2 rows carry the name
-    left out San Pedro Sacatepéquez: 2 rows carry the name
-    left out San Lorenzo: 2 rows carry the name
-    left out Santa Bárbara: 2 rows carry the name
-    admin2: 328 unit(s) from gtm_admpop_adm2_2024.csv (334 of 334 names match this map's admin2 (against 14 at admin1)); 0 left out
+    admin2: 340 unit(s) from gtm_admpop_adm2_2024.csv (334 of 334 names match this map's admin2 (against 14 at admin1)); 0 left out
   cod-ps-guy (GUY)
     admin1: 10 unit(s) from guy_admpop_2021.xlsx guy_admpop_adm1_2021_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
     refused guy_admpop_2021.xlsx guy_admpop_adm2_2021_: its names match 0 of this map's districts and 0 of its first-level units, out of 125; too few of either to say which level this file describes
   cod-ps-hnd (HND)
     admin1: 18 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm1_2024_ (17 of 18 names match this map's admin1 (against 8 at admin2)); 0 left out
-    left out El Porvenir: 2 rows carry the name
-    left out San Francisco: 2 rows carry the name
-    left out San Antonio de Flores: 2 rows carry the name
-    left out San Isidro: 2 rows carry the name
-    left out San Jose: 3 rows carry the name
-    left out Santa Fe: 2 rows carry the name
-    left out El Rosario: 2 rows carry the name
-    left out La Libertad: 2 rows carry the name
-    left out San Luis: 2 rows carry the name
-    left out San Sebastian: 2 rows carry the name
-    left out Dolores: 2 rows carry the name
-    left out El Paraiso: 2 rows carry the name
-    left out La Union: 3 rows carry the name
-    left out San Antonio: 2 rows carry the name
-    left out San Jose: 3 rows carry the name
-    left out San Nicolas: 2 rows carry the name
-    left out Santa Rita: 3 rows carry the name
-    left out Potrerillos: 2 rows carry the name
-    left out El Paraiso: 2 rows carry the name
-    left out Potrerillos: 2 rows carry the name
-    left out San Antonio de Flores: 2 rows carry the name
-    left out El Porvenir: 2 rows carry the name
-    left out La Libertad: 2 rows carry the name
-    left out San Miguelito: 2 rows carry the name
-    left out Santa Ana: 2 rows carry the name
-    left out Santa Lucia: 2 rows carry the name
-    left out Concepcion: 2 rows carry the name
-    left out Dolores: 2 rows carry the name
-    left out San Antonio: 2 rows carry the name
-    left out San Isidro: 2 rows carry the name
-    left out San Juan: 2 rows carry the name
-    left out San Miguelito: 2 rows carry the name
-    left out Santa Lucia: 2 rows carry the name
-    left out San Jose: 3 rows carry the name
-    left out San Juan: 2 rows carry the name
-    left out Santa Ana: 2 rows carry the name
-    left out La Union: 3 rows carry the name
-    left out San Francisco: 2 rows carry the name
-    left out San Sebastian: 2 rows carry the name
-    left out Concepcion: 2 rows carry the name
-    left out San Marcos: 2 rows carry the name
-    left out Santa Fe: 2 rows carry the name
-    left out El Rosario: 2 rows carry the name
-    left out La Union: 3 rows carry the name
-    left out San Luis: 2 rows carry the name
-    left out San Marcos: 2 rows carry the name
-    left out San Nicolas: 2 rows carry the name
-    left out Santa Rita: 3 rows carry the name
-    left out Santa Rita: 3 rows carry the name
-    admin2: 249 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm2_2024_ (268 of 269 names match this map's admin2 (against 8 at admin1)); 0 left out
+    admin2: 298 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm2_2024_ (268 of 269 names match this map's admin2 (against 8 at admin1)); 0 left out
   cod-ps-hti (HTI)
     refused hti_admpop_adm1_2024.csv: its names match 0 of this map's districts and 2 of its first-level units, out of 10; too few of either to say which level this file describes
     refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
@@ -117,241 +56,11 @@ cod_ps_age: 33 dataset(s) for 33 countries
     no table with a full breakdown by sex and five-year age group
   cod-ps-mex (MEX)
     admin1: 32 unit(s) from mex_admpop_adm1_2024.csv (30 of 32 names match this map's admin1 (against 17 at admin2)); 0 left out
-    left out Jesús María: 2 rows carry the name
-    left out San Felipe: 3 rows carry the name
-    left out La Paz: 2 rows carry the name
-    left out Loreto: 2 rows carry the name
-    left out Aldama: 3 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Juárez: 5 rows carry the name
-    left out Mazatán: 2 rows carry the name
-    left out Ocotepec: 2 rows carry the name
-    left out Pantepec: 2 rows carry the name
-    left out Rayón: 4 rows carry the name
-    left out San Fernando: 2 rows carry the name
-    left out San Lucas: 2 rows carry the name
-    left out Tonalá: 2 rows carry the name
-    left out Venustiano Carranza: 4 rows carry the name
-    left out Aldama: 3 rows carry the name
-    left out Allende: 3 rows carry the name
-    left out Camargo: 2 rows carry the name
-    left out Cuauhtémoc: 4 rows carry the name
-    left out Galeana: 2 rows carry the name
-    left out Guadalupe: 4 rows carry the name
-    left out Guerrero: 3 rows carry the name
-    left out Gómez Farías: 3 rows carry the name
-    left out Jiménez: 4 rows carry the name
-    left out Juárez: 5 rows carry the name
-    left out Matamoros: 3 rows carry the name
-    left out Morelos: 5 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out Rosario: 3 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Cuauhtémoc: 4 rows carry the name
-    left out Venustiano Carranza: 4 rows carry the name
-    left out Álvaro Obregón: 2 rows carry the name
-    left out Abasolo: 4 rows carry the name
-    left out Allende: 3 rows carry the name
-    left out Arteaga: 2 rows carry the name
-    left out Francisco I. Madero: 2 rows carry the name
-    left out Guerrero: 3 rows carry the name
-    left out Hidalgo: 5 rows carry the name
-    left out Jiménez: 4 rows carry the name
-    left out Juárez: 5 rows carry the name
-    left out Matamoros: 3 rows carry the name
-    left out Morelos: 5 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out Progreso: 2 rows carry the name
-    left out Zaragoza: 4 rows carry the name
-    left out Cuauhtémoc: 4 rows carry the name
-    left out Minatitlán: 2 rows carry the name
-    left out El Oro: 2 rows carry the name
-    left out Guadalupe Victoria: 2 rows carry the name
-    left out Hidalgo: 5 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out Pueblo Nuevo: 2 rows carry the name
-    left out San Juan del Río: 3 rows carry the name
-    left out Vicente Guerrero: 2 rows carry the name
-    left out Abasolo: 4 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out Pueblo Nuevo: 2 rows carry the name
-    left out San Felipe: 3 rows carry the name
-    left out Santa Catarina: 3 rows carry the name
-    left out Tierra Blanca: 2 rows carry the name
-    left out Victoria: 2 rows carry the name
-    left out Villagrán: 2 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Cocula: 2 rows carry the name
-    left out San Marcos: 2 rows carry the name
-    left out San Nicolás: 3 rows carry the name
-    left out Acatlán: 3 rows carry the name
-    left out Actopan: 2 rows carry the name
-    left out El Arenal: 2 rows carry the name
-    left out Eloxochitlán: 2 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Francisco I. Madero: 2 rows carry the name
-    left out Huehuetla: 2 rows carry the name
-    left out Metepec: 2 rows carry the name
-    left out Atoyac: 2 rows carry the name
-    left out Cocula: 2 rows carry the name
-    left out Cuautla: 2 rows carry the name
-    left out El Arenal: 2 rows carry the name
-    left out Gómez Farías: 3 rows carry the name
-    left out Jesús María: 2 rows carry the name
-    left out Magdalena: 3 rows carry the name
-    left out San Marcos: 2 rows carry the name
-    left out Santa María del Oro: 2 rows carry the name
-    left out Tequila: 2 rows carry the name
-    left out Tolimán: 2 rows carry the name
-    left out Tomatlán: 2 rows carry the name
-    left out Tonalá: 2 rows carry the name
-    left out Tuxpan: 4 rows carry the name
-    left out Villa Guerrero: 2 rows carry the name
-    left out Villa Hidalgo: 4 rows carry the name
-    left out Aquila: 2 rows carry the name
-    left out Arteaga: 2 rows carry the name
-    left out Hidalgo: 5 rows carry the name
-    left out Jiménez: 4 rows carry the name
-    left out Juárez: 5 rows carry the name
-    left out Lagunillas: 2 rows carry the name
-    left out Los Reyes: 2 rows carry the name
-    left out Lázaro Cárdenas: 3 rows carry the name
-    left out Morelos: 5 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out San Lucas: 2 rows carry the name
-    left out Tuxpan: 4 rows carry the name
-    left out Venustiano Carranza: 4 rows carry the name
-    left out Álvaro Obregón: 2 rows carry the name
-    left out Cuautla: 2 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Hueyapan: 2 rows carry the name
-    left out Xoxocotla: 2 rows carry the name
-    left out Chiautla: 2 rows carry the name
-    left out Coyotepec: 2 rows carry the name
-    left out El Oro: 2 rows carry the name
-    left out Jilotepec: 2 rows carry the name
-    left out La Paz: 2 rows carry the name
-    left out Melchor Ocampo: 3 rows carry the name
-    left out Metepec: 2 rows carry the name
-    left out Morelos: 5 rows carry the name
-    left out Rayón: 4 rows carry the name
-    left out Tenancingo: 2 rows carry the name
-    left out Villa Guerrero: 2 rows carry the name
-    left out Zacualpan: 2 rows carry the name
-    left out Ahuacatlán: 2 rows carry the name
-    left out Santa María del Oro: 2 rows carry the name
-    left out Tuxpan: 4 rows carry the name
-    left out Abasolo: 4 rows carry the name
-    left out Allende: 3 rows carry the name
-    left out Bustamante: 2 rows carry the name
-    left out Galeana: 2 rows carry the name
-    left out Guadalupe: 4 rows carry the name
-    left out Hidalgo: 5 rows carry the name
-    left out Juárez: 5 rows carry the name
-    left out Melchor Ocampo: 3 rows carry the name
-    left out Santa Catarina: 3 rows carry the name
     left out San Juan Mixtepec: 2 rows carry the name
     left out San Juan Mixtepec: 2 rows carry the name
-    left out San Juan del Río: 3 rows carry the name
-    left out San Nicolás: 3 rows carry the name
     left out San Pedro Mixtepec: 2 rows carry the name
     left out San Pedro Mixtepec: 2 rows carry the name
-    left out Santa Ana: 2 rows carry the name
-    left out Acajete: 2 rows carry the name
-    left out Acatlán: 3 rows carry the name
-    left out Ahuacatlán: 2 rows carry the name
-    left out Chiautla: 2 rows carry the name
-    left out Coatepec: 2 rows carry the name
-    left out Coxcatlán: 2 rows carry the name
-    left out Coyotepec: 2 rows carry the name
-    left out Eloxochitlán: 2 rows carry the name
-    left out Guadalupe: 4 rows carry the name
-    left out Guadalupe Victoria: 2 rows carry the name
-    left out Huehuetla: 2 rows carry the name
-    left out Hueyapan: 2 rows carry the name
-    left out Ocotepec: 2 rows carry the name
-    left out Pantepec: 2 rows carry the name
-    left out Tepetzintla: 2 rows carry the name
-    left out Tlaxco: 2 rows carry the name
-    left out Venustiano Carranza: 4 rows carry the name
-    left out Vicente Guerrero: 2 rows carry the name
-    left out Zaragoza: 4 rows carry the name
-    left out San Juan del Río: 3 rows carry the name
-    left out Tolimán: 2 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Lázaro Cárdenas: 3 rows carry the name
-    left out Coxcatlán: 2 rows carry the name
-    left out Cárdenas: 2 rows carry the name
-    left out Lagunillas: 2 rows carry the name
-    left out Moctezuma: 2 rows carry the name
-    left out Rayón: 4 rows carry the name
-    left out Santa Catarina: 3 rows carry the name
-    left out Villa Hidalgo: 4 rows carry the name
-    left out Zaragoza: 4 rows carry the name
-    left out Rosario: 3 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Magdalena: 3 rows carry the name
-    left out Mazatán: 2 rows carry the name
-    left out Moctezuma: 2 rows carry the name
-    left out Nogales: 2 rows carry the name
-    left out Rayón: 4 rows carry the name
-    left out Rosario: 3 rows carry the name
-    left out Santa Ana: 2 rows carry the name
-    left out Villa Hidalgo: 4 rows carry the name
-    left out Cárdenas: 2 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Abasolo: 4 rows carry the name
-    left out Aldama: 3 rows carry the name
-    left out Bustamante: 2 rows carry the name
-    left out Camargo: 2 rows carry the name
-    left out Guerrero: 3 rows carry the name
-    left out Gómez Farías: 3 rows carry the name
-    left out Hidalgo: 5 rows carry the name
-    left out Jiménez: 4 rows carry the name
-    left out Matamoros: 3 rows carry the name
-    left out Ocampo: 6 rows carry the name
-    left out San Fernando: 2 rows carry the name
-    left out San Nicolás: 3 rows carry the name
-    left out Victoria: 2 rows carry the name
-    left out Villagrán: 2 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Lázaro Cárdenas: 3 rows carry the name
-    left out Tenancingo: 2 rows carry the name
-    left out Tlaxco: 2 rows carry the name
-    left out Acajete: 2 rows carry the name
-    left out Acatlán: 3 rows carry the name
-    left out Actopan: 2 rows carry the name
-    left out Aquila: 2 rows carry the name
-    left out Atoyac: 2 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Coatepec: 2 rows carry the name
-    left out Emiliano Zapata: 6 rows carry the name
-    left out Jilotepec: 2 rows carry the name
-    left out Los Reyes: 2 rows carry the name
-    left out Magdalena: 3 rows carry the name
-    left out Minatitlán: 2 rows carry the name
-    left out Nogales: 2 rows carry the name
-    left out Pánuco: 2 rows carry the name
-    left out Tepetzintla: 2 rows carry the name
-    left out Tequila: 2 rows carry the name
-    left out Tierra Blanca: 2 rows carry the name
-    left out Tomatlán: 2 rows carry the name
-    left out Tuxpan: 4 rows carry the name
-    left out Xoxocotla: 2 rows carry the name
-    left out Zacualpan: 2 rows carry the name
-    left out Zaragoza: 4 rows carry the name
-    left out Progreso: 2 rows carry the name
-    left out San Felipe: 3 rows carry the name
-    left out Benito Juárez: 7 rows carry the name
-    left out Cuauhtémoc: 4 rows carry the name
-    left out Guadalupe: 4 rows carry the name
-    left out Loreto: 2 rows carry the name
-    left out Melchor Ocampo: 3 rows carry the name
-    left out Morelos: 5 rows carry the name
-    left out Pánuco: 2 rows carry the name
-    left out Villa Hidalgo: 4 rows carry the name
-    admin2: 2241 unit(s) from mex_admpop_adm2_2024.csv (2301 of 2328 names match this map's admin2 (against 16 at admin1)); 0 left out
+    admin2: 2471 unit(s) from mex_admpop_adm2_2024.csv (2301 of 2328 names match this map's admin2 (against 16 at admin1)); 0 left out
   cod-ps-nic (NIC)
     left out Las Minas: 2 rows carry the name
     left out Las Minas: 2 rows carry the name
@@ -364,39 +73,18 @@ cod_ps_age: 33 dataset(s) for 33 countries
     admin1: 24 unit(s) from per_admpop_2024.xlsx per_admpop_adm1_2024_ (24 of 25 names match this map's admin1 (against 18 at admin2)); 0 left out
   cod-ps-pry (PRY)
     admin1: 18 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm1_2023_ (17 of 18 names match this map's admin1 (against 5 at admin2)); 0 left out
-    left out Bella Vista: 2 rows carry the name
     left out San Carlos del Apa: women 287 and men 454 do not add up to 750
     left out Dr. Bottrell: women 864 and men 925 do not add up to 1,798
-    left out Bella Vista: 2 rows carry the name
     left out Desmochados: women 932 and men 865 do not add up to 1,808
     left out Villa Franca: women 727 and men 775 do not add up to 1,510
-    admin2: 244 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm2_2023_ (217 of 249 names match this map's admin2 (against 6 at admin1)); 4 left out
+    admin2: 246 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm2_2023_ (217 of 249 names match this map's admin2 (against 6 at admin1)); 4 left out
   cod-ps-slv (SLV)
     admin1: 14 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm1_2024_ (14 of 14 names match this map's admin1 (against 8 at admin2)); 0 left out
-    left out San Lorenzo: 2 rows carry the name
-    left out San Isidro: 2 rows carry the name
-    left out San Fernando: 2 rows carry the name
-    left out San Rafael: 2 rows carry the name
-    left out El Carmen: 2 rows carry the name
-    left out El Rosario: 3 rows carry the name
-    left out El Rosario: 3 rows carry the name
-    left out El Carmen: 2 rows carry the name
-    left out El Rosario: 3 rows carry the name
-    left out San Fernando: 2 rows carry the name
-    left out San Isidro: 2 rows carry the name
-    left out San Rafael: 2 rows carry the name
-    left out San Lorenzo: 2 rows carry the name
-    left out Santo Domingo: 2 rows carry the name
-    left out Santo Domingo: 2 rows carry the name
-    admin2: 247 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm2_2024_ (242 of 254 names match this map's admin2 (against 10 at admin1)); 0 left out
+    admin2: 262 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm2_2024_ (242 of 254 names match this map's admin2 (against 10 at admin1)); 0 left out
     refused slv_admpop_adm3_2024.csv: admin2 already read
   cod-ps-sur (SUR)
     admin1: 10 unit(s) from sur_admpop_adm1_v2.csv (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
-    left out Centrum: 2 rows carry the name
-    left out Centrum: 2 rows carry the name
-    left out Welgelegen: 2 rows carry the name
-    left out Welgelegen: 2 rows carry the name
-    admin2: 58 unit(s) from sur_admpop_adm2_v2.csv (44 of 60 names match this map's admin2 (against 0 at admin1)); 0 left out
+    admin2: 62 unit(s) from sur_admpop_adm2_v2.csv (44 of 60 names match this map's admin2 (against 0 at admin1)); 0 left out
   cod-ps-tto (TTO)
     refused tto_admpop_2011.xlsx tto_admpop_adm1_2011_: its names match 13 of this map's districts and 13 of its first-level units, out of 15; too few of either to say which level this file describes
   cod-ps-ury (URY)
@@ -405,89 +93,6 @@ cod_ps_age: 33 dataset(s) for 33 countries
     no table with a full breakdown by sex and five-year age group
   cod-ps-ven (VEN)
     admin1: 24 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm1_2011_ (22 of 24 names match this map's admin1 (against 9 at admin2)); 0 left out
-    left out Libertador: 7 rows carry the name
-    left out Francisco de Miranda: 2 rows carry the name
-    left out Independencia: 4 rows carry the name
-    left out Libertad: 2 rows carry the name
-    left out Piritu: 2 rows carry the name
-    left out Simón Bolívar: 3 rows carry the name
-    left out Simón Rodríguez: 2 rows carry the name
-    left out Páez: 3 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Girardot: 2 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Tovar: 2 rows carry the name
-    left out Urdaneta: 4 rows carry the name
-    left out Zamora: 3 rows carry the name
-    left out Arismendi: 3 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Ezequiel Zamora: 3 rows carry the name
-    left out Andrés Eloy Blanco: 3 rows carry the name
-    left out Cedeño: 2 rows carry the name
-    left out Piar: 2 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Miranda: 5 rows carry the name
-    left out Girardot: 2 rows carry the name
-    left out Ezequiel Zamora: 3 rows carry the name
-    left out Acosta: 2 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Miranda: 5 rows carry the name
-    left out Piritu: 2 rows carry the name
-    left out San Francisco: 2 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Zamora: 3 rows carry the name
-    left out Andrés Eloy Blanco: 3 rows carry the name
-    left out Urdaneta: 4 rows carry the name
-    left out Andrés Bello: 4 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Miranda: 5 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Tovar: 2 rows carry the name
-    left out Andrés Bello: 4 rows carry the name
-    left out Independencia: 4 rows carry the name
-    left out Páez: 3 rows carry the name
-    left out Simón Bolívar: 3 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Urdaneta: 4 rows carry the name
-    left out Zamora: 3 rows carry the name
-    left out Acosta: 2 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Cedeño: 2 rows carry the name
-    left out Ezequiel Zamora: 3 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Piar: 2 rows carry the name
-    left out Arismendi: 3 rows carry the name
-    left out Mariño: 2 rows carry the name
-    left out Páez: 3 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Andrés Eloy Blanco: 3 rows carry the name
-    left out Arismendi: 3 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Mariño: 2 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Andrés Bello: 4 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Francisco de Miranda: 2 rows carry the name
-    left out Independencia: 4 rows carry the name
-    left out Libertad: 2 rows carry the name
-    left out Libertador: 7 rows carry the name
-    left out Simón Rodríguez: 2 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Andrés Bello: 4 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Miranda: 5 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Urdaneta: 4 rows carry the name
-    left out Bolívar: 8 rows carry the name
-    left out Independencia: 4 rows carry the name
-    left out Sucre: 11 rows carry the name
-    left out Miranda: 5 rows carry the name
-    left out San Francisco: 2 rows carry the name
-    left out Simón Bolívar: 3 rows carry the name
-    left out Sucre: 11 rows carry the name
-    admin2: 252 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm2_2011_ (263 of 273 names match this map's admin2 (against 8 at admin1)); 0 left out
-  written: BLZ 6, BOL 9, CHL 72, CRI 88, DOM 32, ECU 25, GTM 350, GUY 10, HND 267, JAM 14, MEX 2273, NIC 168, PER 24, PRY 262, SLV 261, SUR 68, URY 19, VEN 276
-  wrote data/processed/cod_ps_age.json (8449 kB)
+    admin2: 335 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm2_2011_ (263 of 273 names match this map's admin2 (against 8 at admin1)); 0 left out
+  written: BLZ 6, BOL 9, CHL 72, CRI 88, DOM 32, ECU 25, GTM 362, GUY 10, HND 316, JAM 14, MEX 2503, NIC 168, PER 24, PRY 264, SLV 276, SUR 72, URY 19, VEN 359
+  wrote data/processed/cod_ps_age.json (9222 kB)
