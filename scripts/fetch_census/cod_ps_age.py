@@ -65,6 +65,19 @@ UNSTATED = re.compile(r"^T_?(?:unidentified|unknown|unstated|ns|nd)$", re.I)
 PCODE = re.compile(r"^adm(?:in)?_?([123])_?pcode$", re.I)
 # Rounding in a projection's cells, not a disagreement.
 TOLERANCE = 0.005
+# Units the boundary file names differently: renamed since the table's year,
+# or abbreviated in it.
+ALIASES = {
+    ("VEN", "Distrito Federal"): ["Distrito Capital"],   # renamed 1999
+    ("VEN", "Vargas"): ["La Guaira"],                      # renamed 2019
+    ("HND", "Islas de La Bahia"): ["Bay Islands"],
+    ("PRY", "Pdte. Hayes"): ["Presidente Hayes"],
+}
+# Rows whose unit is not the shape of the same name. Peru's table has the
+# department of Lima whole, Metropolitan Lima's ten million inside it; the map
+# draws Metropolitan Lima and Lima Region apart, and on Lima Region the
+# department's figures would be a different place's.
+EXCLUDE = {("PER", "admin1", "Lima"): "the whole department, Metropolitan Lima inside it"}
 
 
 def number(cell: Any) -> float | None:
@@ -267,12 +280,25 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                  f"{'...' if len(method) > 220 else ''}\"" if method else "")
         written = refused = 0
         seen: set[str] = set()
+        named: dict[str, int] = {}
+        for row in table["rows"]:
+            name = str(row.get(unit_col) or "").strip()
+            named[name] = named.get(name, 0) + 1
         for row in table["rows"]:
             name = str(row.get(unit_col) or "").strip()
             pcode = str(row.get(pcode_col) or name).strip() if pcode_col else name
             if not name or pcode in seen:
                 continue
             seen.add(pcode)
+            # Two rows under one name at one level cannot both be the shape of
+            # that name, and nothing says which is: Nicaragua's table calls
+            # two first-level units "Las Minas".
+            if named[name] > 1:
+                log(f"    left out {name}: {named[name]} rows carry the name")
+                continue
+            if (code, level, name) in EXCLUDE:
+                log(f"    left out {name}: {EXCLUDE[(code, level, name)]}")
+                continue
             figures, why_not = unit_figures(row, cols)
             if figures is None:
                 refused += 1
@@ -284,7 +310,7 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                 f"{code}-CODPSAGE-{pcode}", name, level=level, parent=code, country=code,
                 parent_name=(str(row.get(parent_col) or "").strip() or None)
                 if level == "admin2" and parent_col else None,
-                codes={"pcode": pcode},
+                codes={"pcode": pcode}, aliases=ALIASES.get((code, name)),
                 median_age={"value": figures["median"], "unit": "years", "year": year,
                             "source": source},
                 median_age_note=(
