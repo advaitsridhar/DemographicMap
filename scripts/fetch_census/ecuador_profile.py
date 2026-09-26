@@ -157,13 +157,18 @@ def composition_table(grid: list[list[str]], rules: tuple[tuple[str, str], ...],
                              f"categories {sum(counts.values()):,} against {total:,}")
         out[key] = {"total": total, "counts": dict(counts)}
     provinces = {p for p, c in out if not c}
-    for province in provinces:
-        cantons = [v for (p, c), v in out.items() if p == province and c]
-        for label in set(out[(province, "")]["counts"]):
-            if sum(v["counts"].get(label, 0) for v in cantons) != \
+    for province in sorted(provinces):
+        cantons = {c: v for (p, c), v in out.items() if p == province and c}
+        for label in sorted(out[(province, "")]["counts"]):
+            if sum(v["counts"].get(label, 0) for v in cantons.values()) != \
                     out[(province, "")]["counts"][label]:
-                raise SystemExit(f"ecuador_profile: {what}: {province}'s cantons do not "
-                                 f"make its {label}")
+                raise SystemExit(
+                    f"ecuador_profile: {what}: {province}'s cantons do not make its {label}: "
+                    f"{sum(v['counts'].get(label, 0) for v in cantons.values()):,} against "
+                    f"{out[(province, '')]['counts'][label]:,}; totals "
+                    f"{sum(v['total'] for v in cantons.values()):,} against "
+                    f"{out[(province, '')]['total']:,}; cantons read: "
+                    + ", ".join(f"{c} {v['total']:,}" for c, v in sorted(cantons.items())))
     log(f"  {what}: {len(provinces)} provinces and {len(out) - len(provinces)} cantons; "
         "every one's categories make its total, and every province's cantons make it")
     return out
