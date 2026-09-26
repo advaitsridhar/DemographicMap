@@ -277,8 +277,15 @@ def total_row(rows: list[list[Any]], what: str) -> list[int | None]:
     raise SystemExit(f"argentina_census: {what}: no Total row")
 
 
-def coded(rows: list[list[Any]]) -> dict[str, tuple[str, list[int | None]]]:
-    """Rows keyed by INDEC code: {code: (name, numbers after the name)}."""
+def coded(rows: list[list[Any]], repeats: dict[str, list[list[int | None]]] | None = None
+          ) -> dict[str, tuple[str, list[int | None]]]:
+    """Rows keyed by INDEC code: {code: (name, numbers after the name)}.
+
+    The first row with a code is kept. Buenos Aires's table repeats the
+    province's code on its subtotals (the 24 partidos of Greater Buenos Aires,
+    the interior); ``repeats`` collects every row's figures by code, so the
+    caller can find which of them its departments make.
+    """
     out = {}
     for row in rows:
         code = str(row[0] if row and row[0] is not None else "").strip()
@@ -289,8 +296,11 @@ def coded(rows: list[list[Any]]) -> dict[str, tuple[str, list[int | None]]]:
         name = str(row[1] if len(row) > 1 and row[1] is not None else "").strip()
         # Positions, not a filtered list: a department with no 2010 figure
         # must not shift its 2022 one into the 2010 column.
-        out[code.zfill(2) if len(code) <= 2 else code.zfill(5)] = (
-            name, [number(c) for c in row[2:]])
+        key = code.zfill(2) if len(code) <= 2 else code.zfill(5)
+        figures = [number(c) for c in row[2:]]
+        if repeats is not None:
+            repeats.setdefault(key, []).append(figures)
+        out.setdefault(key, (name, figures))
     return out
 
 
@@ -451,15 +461,17 @@ def main() -> int:
         sheets = {k: cuadros(b) for k, b in books.items()}
 
         # -- the departments and their 2022 populations
-        rows = coded(sheet(sheets[("est", 1)], index, f"{what} est_c1"))
+        repeats: dict[str, list[list[int | None]]] = {}
+        rows = coded(sheet(sheets[("est", 1)], index, f"{what} est_c1"), repeats)
         if pcode not in rows:
             raise SystemExit(f"argentina_census: {what}: est_c1 has no province row {pcode}")
         dept_rows = {c: v for c, v in rows.items() if len(c) == 5 and c.startswith(pcode)}
         population = {c: v[1][1] for c, v in dept_rows.items()}
-        province_pop = rows[pcode][1][1]
-        if sum(population.values()) != province_pop:
+        province_pop = sum(population.values())
+        stated = [r[1] for r in repeats[pcode]]
+        if province_pop not in stated:
             raise SystemExit(f"argentina_census: {what}: departments make "
-                             f"{sum(population.values()):,}, not {province_pop:,}")
+                             f"{province_pop:,}, and the province's rows say {stated}")
         names = {c: v[0] for c, v in dept_rows.items()}
 
         # -- sex and single years of age
