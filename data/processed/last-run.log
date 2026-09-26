@@ -1,33 +1,47 @@
-page: https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-  48,890 bytes
-  14 matching link(s)
-  - Pasar al contenido principal
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2#contenido
-  - Institucional
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-  - Información de Gestión
-    https://www.gub.uy/instituto-nacional-estadistica/institucional/informacion-gestion
-  - Información por temas
-    https://www.gub.uy/temas-interes
-  - Facebook
-    https://www.facebook.com/sharer/sharer.php?u=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2&t=2.1.5%20-%20Ascendencia%20%C3%A9tnico-racial%2C%20por%20categor%C3%ADa%2C%20seg%C3%BAn%20departamento%20-%20Censo%202023
-  - X
-    https://x.com/intent/post?text=2.1.5%20-%20Ascendencia%20%C3%A9tnico-racial%2C%20por%20categor%C3%ADa%2C%20seg%C3%BAn%20departamento%20-%20Censo%202023&url=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-  - WhatsApp
-    https://wa.me/?text=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-  - LinkedIn
-    https://www.linkedin.com/sharing/share-offsite/?url=https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-  - 2.1.5 - Ascendencia étnico-racial, por categoría, según departamento -
-    https://www5.ine.gub.uy/documents/ANUARIOS/Anuario%202024/2%20-%20POBLACIÓN/2.1%20Información%20Censal/2.1.5.xlsx
-  - 2.1.4 - Ascendencia étnico-racial
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-3
-  - 2.1.6 - Identidad de género sin agrupar - Censo 2023
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-4
-  - Capitulo 1 - Información General
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/anuario-estadistico-11
-  - 2.1 Información Censal
-    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/capitulo-2-poblacion-1
-  - Reportar errores o sugerir mejoras
-    https://www.gub.uy/instituto-nacional-estadistica/ayudanos-a-mejorar?previous_url=/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/21-informacion-censal-2
-page: https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101
-  unreachable: HTTPError: HTTP Error 404: Not Found
+https://www5.ine.gub.uy/documents/ANUARIOS/Anuario%202024/2%20-%20POBLACI%C3%93N/2.1%20Informaci%C3%B3n%20Censal/2.1.4.xlsx
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  13,273 bytes
+  1 sheet(s)
+  -- 'Población': 15 rows x 9 cols
+     ['2.1.4 - Ascendencia ét', '', '', '', '', '', '', '', '']
+     ['Categorías', 'Censos', '', '', '', '', '', '', '']
+     ['', '2011', '2023', '', '', '', '', '', '']
+     ['Afro', '0.08116538775458253', '0.104', '', '', '', '', '', '']
+     ['Asiática', '0.004904149211889985', '0.007080490334975598', '', '', '', '', '', '']
+     ['Blanca', '0.9390790241977697', '0.86', '', '', '', '', '', '']
+     ['Indígena', '0.050695831059505606', '0.063', '', '', '', '', '', '']
+     ['Otra', '0.0021395989683849113', '0.063', '', '', '', '', '', '']
+     ['Fuente: Instituto Naci', '', '', '', '', '', '', '', '']
+     ['Nota 1: Universo: pobl', '', '', '', '', '', '', '', '']
+     ['Nota 2: Porcentaje de ', '', '', '', '', '', '', '', '']
+https://www5.ine.gub.uy/documents/ANUARIOS/Anuario%202024/2%20-%20POBLACI%C3%93N/2.1%20Informaci%C3%B3n%20Censal/2.1.5.xlsx
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  25,501 bytes
+  1 sheet(s)
+  -- 'Población': 29 rows x 6 cols
+     ['2.1.5 - Ascendencia ét', '', '', '', '', '']
+     ['Departamentos', 'Afro', 'Asiática', 'Blanca', 'Indígena', 'Otra']
+     ['Total', '0.104', '0.007', '0.86', '0.063', '0.063']
+     ['Montevideo', '0.107', '0.008', '0.871', '0.066', '0.056']
+     ['Artigas', '0.218', '0.012', '0.711', '0.074', '0.091']
+     ['Canelones', '0.093', '0.006', '0.877', '0.062', '0.062']
+     ['Cerro Largo', '0.13', '0.006', '0.861', '0.055', '0.044']
+     ['Colonia', '0.048', '0.005', '0.909', '0.039', '0.053']
+     ['Durazno', '0.098', '0.01', '0.86', '0.054', '0.063']
+     ['Flores', '0.053', '0.005', '0.881', '0.033', '0.071']
+     ['Florida', '0.07', '0.005', '0.897', '0.046', '0.046']
+     ['Lavalleja', '0.064', '0.005', '0.914', '0.042', '0.038']
+     ['Maldonado', '0.075', '0.007', '0.888', '0.067', '0.064']
+     ['Paysandu', '0.089', '0.006', '0.815', '0.047', '0.104']
+     ['Río Negro', '0.085', '0.006', '0.83', '0.051', '0.095']
+     ['Rivera', '0.21', '0.008', '0.771', '0.071', '0.056']
+     ['Rocha', '0.109', '0.007', '0.874', '0.083', '0.058']
+     ['Salto', '0.145', '0.008', '0.764', '0.076', '0.1']
+     ['San José', '0.074', '0.004', '0.86', '0.044', '0.066']
+     ['Soriano', '0.058', '0.005', '0.856', '0.047', '0.092']
+     ['Tacuarembo', '0.151', '0.007', '0.792', '0.096', '0.074']
+     ['Treinta y Tres', '0.122', '0.006', '0.872', '0.069', '0.044']
+     ['Fuente: Instituto Naci', '', '', '', '', '']
+     ['Nota: Universo: poblac', '', '', '', '', '']
