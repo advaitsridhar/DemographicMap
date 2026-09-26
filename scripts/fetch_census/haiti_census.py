@@ -26,10 +26,12 @@ fill what can be filled, into two files because they are two kinds of figure:
   of the P-codes (HTdda...): every arrondissement's communes one P-code
   prefix, and every prefix one arrondissement.
 
-What the 2003 census asked and did not: it asked religion and IHSI
-tabulates it for the whole country only (the religion volume it planned by
-department is not published); it asked no ethnicity and no language -- see
-NOT_COLLECTED_POLICY. Those three carry the reason on every unit here.
+What the 2003 census asked and did not: it asked religion (F1), and IHSI
+tabulates it for the whole country only (the department volumes it planned
+are not published), which every unit here carries as the reason for its gap.
+It asked no ethnicity and no language: IHSI's coders' manual for the census
+describes every question put to each person, F1.1 to F4.34, and neither is
+among them -- see NOT_COLLECTED_POLICY.
 
 Usage:
     python -m scripts.fetch_census.haiti_census
@@ -77,10 +79,11 @@ RELIGION_GAP = (
     "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the "
     "whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, "
     "adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, "
-    "vaudouisant, musulman, mormon, autre). The volume by department its census plan "
-    "announced (Volume 2, Tome 7, La religion) is not online, and neither the US Census "
-    "Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below "
-    "the country has been published to read.")
+    "vaudouisant, musulman, mormon, autre). The department volumes its census plan announced "
+    "(Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La "
+    "religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national "
+    "tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS "
+    "carries the question, so no figure below the country has been published to read.")
 
 
 def number(value: Any) -> int | None:
