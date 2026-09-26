@@ -30,6 +30,8 @@ from __future__ import annotations
 import argparse
 import io
 import sys
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -85,6 +87,9 @@ def main() -> int:
     ap.add_argument("--width", type=int, default=WIDTH,
                     help="characters to print per cell; a table's title is in its "
                          "first cell and says which of a numbered series it is")
+    ap.add_argument("--aia", action="store_true",
+                    help="complete a server's missing intermediate certificate "
+                         "from its AIA extension (still fully verified; see probe_tls)")
     args = ap.parse_args()
     WIDTH = args.width
 
@@ -93,7 +98,16 @@ def main() -> int:
                   if args.wayback else url)
         log(f"{url}")
         try:
-            blob = http_get(target, binary=True, cache=False, timeout=120)
+            if args.aia:
+                # INE Paraguay's server sends no intermediate certificate.
+                from probe_tls import verified_opener      # noqa: PLC0415
+                req = urllib.request.Request(target, headers={
+                    "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"})
+                host = urllib.parse.urlsplit(target).hostname or ""
+                with verified_opener(host).open(req, timeout=120) as resp:
+                    blob = resp.read()
+            else:
+                blob = http_get(target, binary=True, cache=False, timeout=120)
         except Exception as exc:                      # noqa: BLE001 -- the log is the product
             log(f"  unreachable: {type(exc).__name__}: {exc}")
             continue
