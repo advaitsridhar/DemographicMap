@@ -1,9 +1,1928 @@
-page: https://ihsi.gouv.ht/recensement/resultat_rgph_2003
-  12,114 bytes
-  0 matching link(s)
-page: https://ihsi.gouv.ht/recensement/autres_resultat_rgph_2003
-  12,034 bytes
-  0 matching link(s)
-page: https://ihsi.gouv.ht/recensement
-  12,006 bytes
-  0 matching link(s)
+
+======================================================================
+dominica-subnational-boundaries-and-tabular-data: 42,098 bytes, 4 sheets
+
+--- Metadata: 60 rows ---
+  Metadata: Dominica
+  Contents
+  One metadata tab describing 3 geospatial boundary files and 2 tables, 
+  Geospatial Boundary Metadata
+  National Boundary (DM_GEOG_ADM0_2011_uscb_202106)
+  Title | Dominica: National Boundary
+  Tags | Geospatial Boundaries, Dominica, National Boundary, Country
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of Dominica for joining (linking) to a
+  Credits | Source: Geospatial data for the national boundary of Dominica were dow
+  Use Limitations | The national boundaries used for this feature class were downloaded or
+  Place Keywords | Dominica, Country
+  Temporal Keywords | 2021
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing Dominica
+  First-Order Administrative Divisions (DM_GEOG_ADM1_2011_uscb_202106)
+  Title | Dominica: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Dominica, First-Order Administrative Divisions,
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | First-order administrative divisions feature class of Dominica for joi
+
+--- Data Dictionary: 74 rows ---
+  Data Dictionary: Dominica
+  Standard Geographic Fields
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2021; Commonwealth of Dominica Central
+  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., parishes. | U.S. Board on Geographic Names, 2021; Commonwealth of Dominica Central
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., settlements, u | U.S. Board on Geographic Names, 2021; Commonwealth of Dominica Central
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2021
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2021
+  NSO_CODE | National statistical office code | Code used by the Commonwealth of Dominica Central Statistical Office f | Commonwealth of Dominica Central Statistical Office, 2011
+  NSO_NAME | National statistical office name | Name used by the Commonwealth of Dominica Central Statistical Office f | Commonwealth of Dominica Central Statistical Office, 2011
+  Settlements
+  POP_TOT | Total population | Total population. Original field name: "Total." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 7:
+  POP_MAL | Male population | Male population. Original field name: "Male." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 7:
+  POP_FEM | Female population | Female population. Original field name: "Female." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 7:
+  POP_HH | Households | Number of households. Original field name: "Number of households." (Ma | 2011 Population and Housing Census Preliminary Results, 2011, Table 8:
+
+--- Settlements: 113 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  DOMINICA
+  ADM_LEVEL 1: 10 areas  SAINT GEORGE, SAINT JOHN, SAINT PETER, SAINT JOSEPH, SAINT PAUL, SAINT LUKE, SAINT MARK, SAINT PATRICK, SAINT DAVID, SAINT ANDREW
+  ADM_LEVEL 2: 102 areas  POTTERSVILLE, ROSEAU CITY CENTRE, NEWTOWN, FOND COLE, STOCK FARM AREA, GOODWILL/SAINT AROMENT, BATH ESTATE/ELMSHALL, SAVANNE PARK/LOUISVILLE, ...
+  denominator: 'Total population'
+  8 group columns:
+    POP_MAL  ->  'Male population'
+    POP_FEM  ->  'Female population'
+    POP_HH  ->  'Households'
+    POP_PPH  ->  'Persons per household'
+    BLD_DWELL  ->  'Dwellings'
+    BLD_ODWELL  ->  'Occupied dwellings'
+    BLD_VDWELL  ->  'Vacant dwellings'
+    BLD_CDWELL  ->  'Closed dwellings'
+    POP_MAL says: Male population | Male population. Original field name: "Male." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 7: Non-institutional Population by Geographic Area 1991-2011
+    POP_FEM says: Female population | Female population. Original field name: "Female." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 7: Non-institutional Population by Geographic Area 1991-2011
+    POP_HH says: Households | Number of households. Original field name: "Number of households." (May 14, 2011) | 2011 Population and Housing Census Preliminary Results, 2011, Table 8: Non-institutional Population, Households, and Dwelling Units by Geographic Area
+
+  whole country: DOMINICA (level 0) published=69,325 summed=157,139 ratio=2.267
+    POP_MAL        Male population                           35,424   51.10%
+    POP_FEM        Female population                         33,901   48.90%
+    POP_HH         Households                                25,113   36.23%
+    POP_PPH        Persons per household                          3    0.00%
+    BLD_DWELL      Dwellings                                 31,349   45.22%
+    BLD_ODWELL     Occupied dwellings                        25,001   36.06%
+    BLD_VDWELL     Vacant dwellings                           5,264    7.59%
+    BLD_CDWELL     Closed dwellings                           1,084    1.56%
+
+  furthest from its own total: PICARD (level 2) published=953 summed=4,166 ratio=4.372
+    POP_MAL        Male population                              550   57.71%
+    POP_FEM        Female population                            403   42.29%
+    POP_HH         Households                                   620   65.06%
+    POP_PPH        Persons per household                          2    0.16%
+    BLD_DWELL      Dwellings                                  1,296  135.99%
+    BLD_ODWELL     Occupied dwellings                           630   66.11%
+    BLD_VDWELL     Vacant dwellings                             652   68.42%
+    BLD_CDWELL     Closed dwellings                              14    1.47%
+
+  furthest from its own total: MOORE PARK ESTATE/DOS DANE (level 2) published=87 summed=246 ratio=2.829
+    POP_MAL        Male population                               50   57.47%
+    POP_FEM        Female population                             37   42.53%
+    POP_HH         Households                                    41   47.13%
+    POP_PPH        Persons per household                          2    2.41%
+    BLD_DWELL      Dwellings                                     58   66.67%
+    BLD_ODWELL     Occupied dwellings                            41   47.13%
+    BLD_VDWELL     Vacant dwellings                              15   17.24%
+    BLD_CDWELL     Closed dwellings                               2    2.30%
+
+--- Age-Sex: 11 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  DOMINICA
+  ADM_LEVEL 1: 10 areas  SAINT GEORGE, SAINT JOHN, SAINT PETER, SAINT JOSEPH, SAINT PAUL, SAINT LUKE, SAINT MARK, SAINT PATRICK, SAINT DAVID, SAINT ANDREW
+  denominator: none found
+  48 group columns:
+    BTOTL  ->  'Both sexes total'
+    B0004  ->  'Both sexes 0 to 4'
+    B0509  ->  'Both sexes 5 to 9'
+    B1014  ->  'Both sexes 10 to 14'
+    B1519  ->  'Both sexes 15 to 19'
+    B2024  ->  'Both sexes 20 to 24'
+    B2529  ->  'Both sexes 25 to 29'
+    B3034  ->  'Both sexes 30 to 34'
+    B3539  ->  'Both sexes 35 to 39'
+    B4044  ->  'Both sexes 40 to 44'
+    B4549  ->  'Both sexes 45 to 49'
+    B5054  ->  'Both sexes 50 to 54'
+    B5559  ->  'Both sexes 55 to 59'
+    B6064  ->  'Both sexes 60 to 64'
+    B65PL  ->  'Both sexes 65 and older'
+    B_UNSTATED  ->  'Both sexes unstated'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    M1014  ->  'Males 10 to 14'
+    M1519  ->  'Males 15 to 19'
+    M2024  ->  'Males 20 to 24'
+    M2529  ->  'Males 25 to 29'
+    M3034  ->  'Males 30 to 34'
+    ...and 24 more
+    BTOTL says: Both sexes total | Total population (both sexes). (May 14, 2011) | 2011 Population and Housing Census, 2012, Table 1.3: Population by Age Group, Sex, and Parish
+    B0004 says: Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (May 14, 2011) | 2011 Population and Housing Census, 2012, Table 1.3: Population by Age Group, Sex, and Parish
+    B0509 says: Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (May 14, 2011) | 2011 Population and Housing Census, 2012, Table 1.3: Population by Age Group, Sex, and Parish
+
+  whole country: DOMINICA (level 0) no published total
+    BTOTL          Both sexes total                          69,325    0.00%
+    B0004          Both sexes 0 to 4                          4,923    0.00%
+    B0509          Both sexes 5 to 9                          5,197    0.00%
+    B1014          Both sexes 10 to 14                        5,902    0.00%
+    B1519          Both sexes 15 to 19                        6,377    0.00%
+    B2024          Both sexes 20 to 24                        5,383    0.00%
+    B2529          Both sexes 25 to 29                        5,066    0.00%
+    B3034          Both sexes 30 to 34                        4,172    0.00%
+    B3539          Both sexes 35 to 39                        4,657    0.00%
+    B4044          Both sexes 40 to 44                        5,137    0.00%
+    B4549          Both sexes 45 to 49                        4,650    0.00%
+    B5054          Both sexes 50 to 54                        4,079    0.00%
+    B5559          Both sexes 55 to 59                        3,167    0.00%
+    B6064          Both sexes 60 to 64                        2,598    0.00%
+    B65PL          Both sexes 65 and older                    7,972    0.00%
+    B_UNSTATED     Both sexes unstated                           45    0.00%
+    MTOTL          Males total                               35,424    0.00%
+    M0004          Males 0 to 4                               2,475    0.00%
+    M0509          Males 5 to 9                               2,643    0.00%
+    M1014          Males 10 to 14                             2,999    0.00%
+    M1519          Males 15 to 19                             3,289    0.00%
+    M2024          Males 20 to 24                             2,751    0.00%
+    M2529          Males 25 to 29                             2,560    0.00%
+    M3034          Males 30 to 34                             2,215    0.00%
+    M3539          Males 35 to 39                             2,411    0.00%
+    M4044          Males 40 to 44                             2,675    0.00%
+    M4549          Males 45 to 49                             2,459    0.00%
+    M5054          Males 50 to 54                             2,240    0.00%
+    M5559          Males 55 to 59                             1,691    0.00%
+    M6064          Males 60 to 64                             1,357    0.00%
+    M65PL          Males 65 and older                         3,626    0.00%
+    M_UNSTATED     Males unstated                                33    0.00%
+    FTOTL          Females total                             33,901    0.00%
+    F0004          Females 0 to 4                             2,448    0.00%
+    F0509          Females 5 to 9                             2,554    0.00%
+    F1014          Females 10 to 14                           2,903    0.00%
+    F1519          Females 15 to 19                           3,088    0.00%
+    F2024          Females 20 to 24                           2,632    0.00%
+    F2529          Females 25 to 29                           2,506    0.00%
+    F3034          Females 30 to 34                           1,957    0.00%
+    F3539          Females 35 to 39                           2,246    0.00%
+    F4044          Females 40 to 44                           2,462    0.00%
+    F4549          Females 45 to 49                           2,191    0.00%
+    F5054          Females 50 to 54                           1,839    0.00%
+    F5559          Females 55 to 59                           1,476    0.00%
+    F6064          Females 60 to 64                           1,241    0.00%
+    F65PL          Females 65 and older                       4,346    0.00%
+    F_UNSTATED     Females unstated                              12    0.00%
+
+======================================================================
+  2 USCB workbooks; using 'Jamaica_uscb_202302.xlsx'
+jamaica-subnational-boundaries-and-tabular-data: 438,450 bytes, 9 sheets
+
+--- Metadata: 128 rows ---
+  Metadata: Jamaica
+  Contents
+  One metadata tab describing 4 geospatial boundary files and 7 tables, 
+  Geospatial Boundary Metadata 1 (Special Areas) ("Age-Sex," "Population
+  National Boundary (JM_GEOG1_ADM0_2011_uscb_202302)
+  Title | Jamaica: National Boundary
+  Tags | Geospatial Boundaries, Jamaica, National Boundary, Country
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of Jamaica for joining (linking) to at
+  Credits | Source:
+Geospatial data for the national boundary of Jamaica were down
+  Use Limitations | The international boundaries used for this feature class were download
+  Place Keywords | Jamaica, Country
+  Temporal Keywords | 2011
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing Jamaica'
+  First-Order Administrative Divisions (JM_GEOG1_ADM1_2011_uscb_202302)
+  Title | Jamaica: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Jamaica, First-Order Administrative Divisions, 
+  Summary | The U.S. Census Bureau is providing subnational feature class boundari
+  Description | First-order administrative divisions feature class of Jamaica for join
+
+--- Data Dictionary: 241 rows ---
+  Data Dictionary: Jamaica
+  Standard Geographic Fields 1 (Special Areas)
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2023; Statistical Institute of Jamaica
+  GEO_CONCAT | Administrative division name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., parishes. | U.S. Board on Geographic Names, 2023; Statistical Institute of Jamaica
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., special areas. | U.S. Board on Geographic Names, 2023; Statistical Institute of Jamaica
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2023
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2023
+  NSO_CODE | National statistical office code | Code used by the Statistical Institute of Jamaica (STATIN) for a subna | Statistical Institute of Jamaica (STATIN), 2011
+  NSO_NAME | National statistical office name | Name used by the Statistical Institute of Jamaica (STATIN) for a subna | Statistical Institute of Jamaica (STATIN), 2011
+  Standard Geographic Fields 2 (Communities)
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2023; Statistical Institute of Jamaica
+  GEO_CONCAT | Administrative division name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+
+--- Age-Sex: 276 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  ADM_LEVEL 2: 261 areas  PORT ROYAL, HARBOUR VIEW, D'AGUILAR TOWN/RENNOCK LODGE, SPRINGFIELD, JOHNSON TOWN, NORMAN GARDENS, BOURNEMOUTH GARDENS, ROLLINGTON TOWN, ...
+  denominator: none found
+  63 group columns:
+    BTOTL  ->  'Both sexes total'
+    B0004  ->  'Both sexes 0 to 4'
+    B0509  ->  'Both sexes 5 to 9'
+    B1014  ->  'Both sexes 10 to 14'
+    B1519  ->  'Both sexes 15 to 19'
+    B2024  ->  'Both sexes 20 to 24'
+    B2529  ->  'Both sexes 25 to 29'
+    B3034  ->  'Both sexes 30 to 34'
+    B3539  ->  'Both sexes 35 to 39'
+    B4044  ->  'Both sexes 40 to 44'
+    B4549  ->  'Both sexes 45 to 49'
+    B5054  ->  'Both sexes 50 to 54'
+    B5559  ->  'Both sexes 55 to 59'
+    B6064  ->  'Both sexes 60 to 64'
+    B6569  ->  'Both sexes 65 to 69'
+    B7074  ->  'Both sexes 70 to 74'
+    B7579  ->  'Both sexes 75 to 79'
+    B8084  ->  'Both sexes 80 to 84'
+    B8589  ->  'Both sexes 85 to 89'
+    B9094  ->  'Both sexes 90 to 94'
+    B95PL  ->  'Both sexes 95 and older'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    ...and 39 more
+    BTOTL says: Both sexes total | Total population (both sexes). (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Population by Five Year Age Groups, by Parish, Special Area and Enumeration District
+    B0004 says: Both sexes 0 to 4 | Total population age 0 to 4 (both sexes). (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Population by Five Year Age Groups, by Parish, Special Area and Enumeration District
+    B0509 says: Both sexes 5 to 9 | Total population age 5 to 9 (both sexes). (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Population by Five Year Age Groups, by Parish, Special Area and Enumeration District
+
+  whole country: JAMAICA (level 0) no published total
+    BTOTL          Both sexes total                       2,697,051    0.00%
+    B0004          Both sexes 0 to 4                        209,876    0.00%
+    B0509          Both sexes 5 to 9                        226,381    0.00%
+    B1014          Both sexes 10 to 14                      266,590    0.00%
+    B1519          Both sexes 15 to 19                      274,645    0.00%
+    B2024          Both sexes 20 to 24                      250,684    0.00%
+    B2529          Both sexes 25 to 29                      226,081    0.00%
+    B3034          Both sexes 30 to 34                      185,448    0.00%
+    B3539          Both sexes 35 to 39                      183,686    0.00%
+    B4044          Both sexes 40 to 44                      173,819    0.00%
+    B4549          Both sexes 45 to 49                      155,260    0.00%
+    B5054          Both sexes 50 to 54                      137,748    0.00%
+    B5559          Both sexes 55 to 59                      100,668    0.00%
+    B6064          Both sexes 60 to 64                       87,964    0.00%
+    B6569          Both sexes 65 to 69                       65,100    0.00%
+    B7074          Both sexes 70 to 74                       51,243    0.00%
+    B7579          Both sexes 75 to 79                       42,745    0.00%
+    B8084          Both sexes 80 to 84                       30,722    0.00%
+    B8589          Both sexes 85 to 89                       18,448    0.00%
+    B9094          Both sexes 90 to 94                        6,918    0.00%
+    B95PL          Both sexes 95 and older                    3,026    0.00%
+    MTOTL          Males total                            1,333,739    0.00%
+    M0004          Males 0 to 4                             106,107    0.00%
+    M0509          Males 5 to 9                             114,794    0.00%
+    M1014          Males 10 to 14                           136,183    0.00%
+    M1519          Males 15 to 19                           139,763    0.00%
+    M2024          Males 20 to 24                           125,225    0.00%
+    M2529          Males 25 to 29                           109,882    0.00%
+    M3034          Males 30 to 34                            87,766    0.00%
+    M3539          Males 35 to 39                            86,588    0.00%
+    M4044          Males 40 to 44                            85,556    0.00%
+    M4549          Males 45 to 49                            79,076    0.00%
+    M5054          Males 50 to 54                            67,162    0.00%
+    M5559          Males 55 to 59                            50,601    0.00%
+    M6064          Males 60 to 64                            44,334    0.00%
+    M6569          Males 65 to 69                            32,506    0.00%
+    M7074          Males 70 to 74                            24,609    0.00%
+    M7579          Males 75 to 79                            19,840    0.00%
+    M8084          Males 80 to 84                            13,252    0.00%
+    M8589          Males 85 to 89                             7,263    0.00%
+    M9094          Males 90 to 94                             2,301    0.00%
+    M95PL          Males 95 and older                           931    0.00%
+    FTOTL          Females total                          1,363,312    0.00%
+    F0004          Females 0 to 4                           103,769    0.00%
+    F0509          Females 5 to 9                           111,587    0.00%
+    F1014          Females 10 to 14                         130,407    0.00%
+    F1519          Females 15 to 19                         134,882    0.00%
+    F2024          Females 20 to 24                         125,459    0.00%
+    F2529          Females 25 to 29                         116,199    0.00%
+    F3034          Females 30 to 34                          97,682    0.00%
+    F3539          Females 35 to 39                          97,098    0.00%
+    F4044          Females 40 to 44                          88,263    0.00%
+    F4549          Females 45 to 49                          76,184    0.00%
+    F5054          Females 50 to 54                          70,586    0.00%
+    F5559          Females 55 to 59                          50,067    0.00%
+    F6064          Females 60 to 64                          43,630    0.00%
+    F6569          Females 65 to 69                          32,594    0.00%
+    F7074          Females 70 to 74                          26,634    0.00%
+    F7579          Females 75 to 79                          22,905    0.00%
+    F8084          Females 80 to 84                          17,470    0.00%
+    F8589          Females 85 to 89                          11,185    0.00%
+    F9094          Females 90 to 94                           4,617    0.00%
+    F95PL          Females 95 and older                       2,095    0.00%
+
+--- Population: 15 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  denominator: 'Urban population'
+  29 group columns:
+    POP_BTOTL  ->  'Both sexes total'
+    POP_MTOTL  ->  'Males total'
+    POP_FTOTL  ->  'Females total'
+    POP_MURB  ->  'Urban male population'
+    POP_FURB  ->  'Urban female population'
+    POP_BRUR  ->  'Rural population'
+    POP_MRUR  ->  'Rural male population'
+    POP_FRUR  ->  'Rural female population'
+    PHS_BTOTL  ->  'Total population'
+    PHS_HM1  ->  'Household size, one'
+    PHS_HM2  ->  'Household size, two'
+    PHS_HM3  ->  'Household size, three'
+    PHS_HM4  ->  'Household size, four'
+    PHS_HM5  ->  'Household size, five'
+    PHS_HM6  ->  'Household size, six'
+    PHS_HM7  ->  'Household size, seven'
+    PHS_HM8  ->  'Household size, eight'
+    PHS_HM9  ->  'Household size, nine'
+    PHS_HM10  ->  'Household size, ten or more'
+    PHS_HMND  ->  'Household size, no data'
+    EST_2011  ->  'Population estimate, 2011'
+    EST_2012  ->  'Population estimate, 2012'
+    EST_2013  ->  'Population estimate, 2013'
+    EST_2014  ->  'Population estimate, 2014'
+    ...and 5 more
+    POP_BTOTL says: Both sexes total | Total population (both sexes) (unit of enumeration: population). Original field name: "Total Population." (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Table (i) Urban/Rural Distribution of the Population by Sex
+    POP_MTOTL says: Males total | Total male population (unit of enumeration: population). Original field name: "Total Male." (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Table (i) Urban/Rural Distribution of the Population by Sex
+    POP_FTOTL says: Females total | Total female population (unit of enumeration: population). Original field name: "Total Female." (April 04, 2011) | Jamaica Population and Housing Census 2011: Age and Sex Volume 2, 2013, Table (i) Urban/Rural Distribution of the Population by Sex
+
+  whole country: JAMAICA (level 0) published=1,454,153 summed=39,149,803 ratio=26.923
+    POP_BTOTL      Both sexes total                       2,697,983  185.54%
+    POP_MTOTL      Males total                            1,334,533   91.77%
+    POP_FTOTL      Females total                          1,363,450   93.76%
+    POP_MURB       Urban male population                    700,957   48.20%
+    POP_FURB       Urban female population                  753,196   51.80%
+    POP_BRUR       Rural population                       1,243,830   85.54%
+    POP_MRUR       Rural male population                    633,576   43.57%
+    POP_FRUR       Rural female population                  610,254   41.97%
+    PHS_BTOTL      Total population                       2,678,629  184.21%
+    PHS_HM1        Household size, one                      237,900   16.36%
+    PHS_HM2        Household size, two                      322,251   22.16%
+    PHS_HM3        Household size, three                    453,824   31.21%
+    PHS_HM4        Household size, four                     500,394   34.41%
+    PHS_HM5        Household size, five                     395,807   27.22%
+    PHS_HM6        Household size, six                      269,646   18.54%
+    PHS_HM7        Household size, seven                    170,754   11.74%
+    PHS_HM8        Household size, eight                    106,917    7.35%
+    PHS_HM9        Household size, nine                      64,758    4.45%
+    PHS_HM10       Household size, ten or more              116,066    7.98%
+    PHS_HMND       Household size, no data                   40,312    2.77%
+    EST_2011       Population estimate, 2011              2,699,223  185.62%
+    EST_2012       Population estimate, 2012              2,706,454  186.12%
+    EST_2013       Population estimate, 2013              2,711,693  186.48%
+    EST_2014       Population estimate, 2014              2,714,519  186.67%
+    EST_2015       Population estimate, 2015              2,717,564  186.88%
+    EST_2016       Population estimate, 2016              2,720,568  187.09%
+    EST_2017       Population estimate, 2017              2,723,774  187.31%
+    EST_2018       Population estimate, 2018              2,728,433  187.63%
+    EST_2019       Population estimate, 2019              2,732,538  187.91%
+
+  furthest from its own total: HANOVER (level 1) published=7,992 summed=1,048,186 ratio=131.154
+    POP_BTOTL      Both sexes total                          69,533  870.03%
+    POP_MTOTL      Males total                               35,063  438.73%
+    POP_FTOTL      Females total                             34,470  431.31%
+    POP_MURB       Urban male population                      3,949   49.41%
+    POP_FURB       Urban female population                    4,043   50.59%
+    POP_BRUR       Rural population                          61,541  770.03%
+    POP_MRUR       Rural male population                     31,114  389.31%
+    POP_FRUR       Rural female population                   30,427  380.72%
+    PHS_BTOTL      Total population                          69,289  866.98%
+    PHS_HM1        Household size, one                        7,102   88.86%
+    PHS_HM2        Household size, two                        8,305  103.92%
+    PHS_HM3        Household size, three                     11,421  142.91%
+    PHS_HM4        Household size, four                      12,993  162.58%
+    PHS_HM5        Household size, five                      10,016  125.33%
+    PHS_HM6        Household size, six                        6,799   85.07%
+    PHS_HM7        Household size, seven                      4,817   60.27%
+    PHS_HM8        Household size, eight                      2,643   33.07%
+    PHS_HM9        Household size, nine                       1,664   20.82%
+    PHS_HM10       Household size, ten or more                2,552   31.93%
+    PHS_HMND       Household size, no data                      977   12.22%
+    EST_2011       Population estimate, 2011                 69,696  872.07%
+    EST_2012       Population estimate, 2012                 70,133  877.54%
+    EST_2013       Population estimate, 2013                 70,497  882.09%
+    EST_2014       Population estimate, 2014                 70,790  885.76%
+    EST_2015       Population estimate, 2015                 71,038  888.86%
+    EST_2016       Population estimate, 2016                 71,298  892.12%
+    EST_2017       Population estimate, 2017                 71,629  896.26%
+    EST_2018       Population estimate, 2018                 72,018  901.13%
+    EST_2019       Population estimate, 2019                 72,369  905.52%
+
+  furthest from its own total: SAINT ELIZABETH (level 1) published=22,585 summed=2,238,013 ratio=99.093
+    POP_BTOTL      Both sexes total                         150,205  665.07%
+    POP_MTOTL      Males total                               76,530  338.85%
+    POP_FTOTL      Females total                             73,675  326.21%
+    POP_MURB       Urban male population                     11,022   48.80%
+    POP_FURB       Urban female population                   11,563   51.20%
+    POP_BRUR       Rural population                         127,620  565.07%
+    POP_MRUR       Rural male population                     65,508  290.05%
+    POP_FRUR       Rural female population                   62,112  275.01%
+    PHS_BTOTL      Total population                         149,153  660.41%
+    PHS_HM1        Household size, one                       14,259   63.13%
+    PHS_HM2        Household size, two                       17,585   77.86%
+    PHS_HM3        Household size, three                     23,923  105.92%
+    PHS_HM4        Household size, four                      26,594  117.75%
+    PHS_HM5        Household size, five                      21,807   96.56%
+    PHS_HM6        Household size, six                       14,977   66.31%
+    PHS_HM7        Household size, seven                     10,391   46.01%
+    PHS_HM8        Household size, eight                      6,792   30.07%
+    PHS_HM9        Household size, nine                       3,942   17.45%
+    PHS_HM10       Household size, ten or more                6,673   29.55%
+    PHS_HMND       Household size, no data                    2,210    9.79%
+    EST_2011       Population estimate, 2011                150,351  665.71%
+    EST_2012       Population estimate, 2012                150,855  667.94%
+    EST_2013       Population estimate, 2013                151,140  669.21%
+    EST_2014       Population estimate, 2014                151,222  669.57%
+    EST_2015       Population estimate, 2015                151,290  669.87%
+    EST_2016       Population estimate, 2016                151,340  670.09%
+    EST_2017       Population estimate, 2017                151,534  670.95%
+    EST_2018       Population estimate, 2018                151,815  672.19%
+    EST_2019       Population estimate, 2019                151,925  672.68%
+
+--- Ethnicity and Religion: 15 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  denominator: 'Total population (ethnicity)'
+  27 group columns:
+    ETH_BLK  ->  'Black'
+    ETH_ZHO  ->  'Chinese'
+    ETH_MIX  ->  'Mixed'
+    ETH_EIND  ->  'East Indian'
+    ETH_WHT  ->  'White'
+    ETH_OTHR  ->  'Other ethnicity'
+    ETH_ND  ->  'No ethnicity data'
+    RLG_RTOTL  ->  'Total population (religion)'
+    RLG_ANG  ->  'Anglican'
+    RLG_BAP  ->  'Baptist'
+    RLG_BRE  ->  'Brethren'
+    RLG_CGJA  ->  'Church of God in Jamaica'
+    RLG_CGPR  ->  'Church of God of Prophecy'
+    RLG_CGNT  ->  'New Testament Church of God'
+    RLG_CGOT  ->  'Other Church of God'
+    RLG_JEH  ->  "Jehovah's Witness"
+    RLG_MET  ->  'Methodist'
+    RLG_MOR  ->  'Moravian'
+    RLG_PEN  ->  'Pentecostal'
+    RLG_RAS  ->  'Rastafarian'
+    RLG_REV  ->  'Revivalist'
+    RLG_ROM  ->  'Roman Catholic'
+    RLG_SDA  ->  'Seventh Day Adventist'
+    RLG_UC  ->  'United Church'
+    ...and 3 more
+    ETH_BLK says: Black | Population with Black ethnicity. Original field name: "Black." (April 04, 2011) | Jamaica Population and Housing Census 2011: General Report Volume 1, 2012, Table 3.1: Population by Sex and Ethnic Origin by Parish
+    ETH_ZHO says: Chinese | Population with Chinese ethnicity. Original field name: "Chinese." (April 04, 2011) | Jamaica Population and Housing Census 2011: General Report Volume 1, 2012, Table 3.1: Population by Sex and Ethnic Origin by Parish
+    ETH_MIX says: Mixed | Population with mixed ethnicity. Original field name: "Mixed." (April 04, 2011) | Jamaica Population and Housing Census 2011: General Report Volume 1, 2012, Table 3.1: Population by Sex and Ethnic Origin by Parish
+
+  whole country: JAMAICA (level 0) published=2,683,707 summed=8,045,793 ratio=2.998
+    ETH_BLK        Black                                  2,471,946   92.11%
+    ETH_ZHO        Chinese                                    5,228    0.19%
+    ETH_MIX        Mixed                                    162,718    6.06%
+    ETH_EIND       East Indian                               20,066    0.75%
+    ETH_WHT        White                                      4,365    0.16%
+    ETH_OTHR       Other ethnicity                            1,898    0.07%
+    ETH_ND         No ethnicity data                         17,486    0.65%
+    RLG_RTOTL      Total population (religion)            2,683,105   99.98%
+    RLG_ANG        Anglican                                  74,891    2.79%
+    RLG_BAP        Baptist                                  180,640    6.73%
+    RLG_BRE        Brethren                                  23,647    0.88%
+    RLG_CGJA       Church of God in Jamaica                 129,544    4.83%
+    RLG_CGPR       Church of God of Prophecy                121,400    4.52%
+    RLG_CGNT       New Testament Church of God              192,086    7.16%
+    RLG_CGOT       Other Church of God                      246,838    9.20%
+    RLG_JEH        Jehovah's Witness                         50,849    1.89%
+    RLG_MET        Methodist                                 43,336    1.61%
+    RLG_MOR        Moravian                                  18,351    0.68%
+    RLG_PEN        Pentecostal                              295,195   11.00%
+    RLG_RAS        Rastafarian                               29,026    1.08%
+    RLG_REV        Revivalist                                36,296    1.35%
+    RLG_ROM        Roman Catholic                            57,946    2.16%
+    RLG_SDA        Seventh Day Adventist                    322,228   12.01%
+    RLG_UC         United Church                             55,360    2.06%
+    RLG_OTHR       Other religion                           169,014    6.30%
+    RLG_NR         Non-religious                            572,008   21.31%
+    RLG_ND         No Data                                   60,326    2.25%
+
+  furthest from its own total: TRELAWNY (level 1) published=74,995 summed=224,957 ratio=3.000
+    ETH_BLK        Black                                     71,575   95.44%
+    ETH_ZHO        Chinese                                       46    0.06%
+    ETH_MIX        Mixed                                      2,439    3.25%
+    ETH_EIND       East Indian                                   83    0.11%
+    ETH_WHT        White                                         74    0.10%
+    ETH_OTHR       Other ethnicity                                9    0.01%
+    ETH_ND         No ethnicity data                            769    1.03%
+    RLG_RTOTL      Total population (religion)               74,981   99.98%
+    RLG_ANG        Anglican                                   3,118    4.16%
+    RLG_BAP        Baptist                                    9,144   12.19%
+    RLG_BRE        Brethren                                     441    0.59%
+    RLG_CGJA       Church of God in Jamaica                     830    1.11%
+    RLG_CGPR       Church of God of Prophecy                  1,654    2.21%
+    RLG_CGNT       New Testament Church of God                9,489   12.65%
+    RLG_CGOT       Other Church of God                        3,639    4.85%
+    RLG_JEH        Jehovah's Witness                          1,780    2.37%
+    RLG_MET        Methodist                                  1,630    2.17%
+    RLG_MOR        Moravian                                      31    0.04%
+    RLG_PEN        Pentecostal                               11,082   14.78%
+    RLG_RAS        Rastafarian                                  802    1.07%
+    RLG_REV        Revivalist                                 1,164    1.55%
+    RLG_ROM        Roman Catholic                               469    0.63%
+    RLG_SDA        Seventh Day Adventist                      9,173   12.23%
+    RLG_UC         United Church                              1,963    2.62%
+    RLG_OTHR       Other religion                             3,984    5.31%
+    RLG_NR         Non-religious                             12,957   17.28%
+    RLG_ND         No Data                                    1,631    2.17%
+
+  furthest from its own total: MANCHESTER (level 1) published=188,821 summed=566,225 ratio=2.999
+    ETH_BLK        Black                                    179,592   95.11%
+    ETH_ZHO        Chinese                                      212    0.11%
+    ETH_MIX        Mixed                                      7,592    4.02%
+    ETH_EIND       East Indian                                  453    0.24%
+    ETH_WHT        White                                        165    0.09%
+    ETH_OTHR       Other ethnicity                               26    0.01%
+    ETH_ND         No ethnicity data                            781    0.41%
+    RLG_RTOTL      Total population (religion)              188,702   99.94%
+    RLG_ANG        Anglican                                   6,046    3.20%
+    RLG_BAP        Baptist                                    8,253    4.37%
+    RLG_BRE        Brethren                                   1,788    0.95%
+    RLG_CGJA       Church of God in Jamaica                   9,077    4.81%
+    RLG_CGPR       Church of God of Prophecy                 14,051    7.44%
+    RLG_CGNT       New Testament Church of God               15,295    8.10%
+    RLG_CGOT       Other Church of God                       16,815    8.91%
+    RLG_JEH        Jehovah's Witness                          3,806    2.02%
+    RLG_MET        Methodist                                  1,515    0.80%
+    RLG_MOR        Moravian                                   6,566    3.48%
+    RLG_PEN        Pentecostal                               22,212   11.76%
+    RLG_RAS        Rastafarian                                1,513    0.80%
+    RLG_REV        Revivalist                                 1,878    0.99%
+    RLG_ROM        Roman Catholic                             2,011    1.07%
+    RLG_SDA        Seventh Day Adventist                     27,760   14.70%
+    RLG_UC         United Church                              8,746    4.63%
+    RLG_OTHR       Other religion                            16,052    8.50%
+    RLG_NR         Non-religious                             22,344   11.83%
+    RLG_ND         No Data                                    2,974    1.58%
+
+--- Housing Units: 276 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  ADM_LEVEL 2: 261 areas  PORT ROYAL, HARBOUR VIEW, D'AGUILAR TOWN/RENNOCK LODGE, SPRINGFIELD, JOHNSON TOWN, NORMAN GARDENS, BOURNEMOUTH GARDENS, ROLLINGTON TOWN, ...
+  denominator: none found
+  15 group columns:
+    HU_HU  ->  'Total housing units'
+    HU_UTSF  ->  'Housing unit type, detached house'
+    HU_UTTH  ->  'Housing unit type, attached house'
+    HU_UTCB  ->  'Housing unit type, part of commercial building'
+    HU_UTINF  ->  'Housing unit type, informal'
+    HU_UTOT  ->  'Housing unit type, other'
+    HU_UTND  ->  'Housing unit type, no data'
+    HUB_WCB  ->  'Exterior walls, concrete block'
+    HUB_WSTN  ->  'Exterior walls, stone and brick'
+    HUB_WNOG  ->  'Exterior walls, nog'
+    HUB_WWOD  ->  'Exterior walls, wood'
+    HUB_WWCN  ->  'Exterior walls, wood and concrete'
+    HUB_WWBK  ->  'Exterior walls, wood and brick'
+    HUB_WOTH  ->  'Exterior walls, other materials'
+    HUB_WND  ->  'Exterior walls, no data'
+    HU_HU says: Total housing units | Total number of housing units (unit of enumeration: housing units). Original field name: "Total Housing Units." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part A, 2013, Table 2.1: Number of Housing Units by Type of Housing Unit by Parish, Special Area, and Enumeration District
+    HU_UTSF says: Housing unit type, detached house | Detached houses or single-family homes. The housing unit does not share walls with another housing unit (unit of enumeration: housing units). Original field name: "Separate House Detached." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part A, 2013, Table 2.1: Number of Housing Units by Type of Housing Unit by Parish, Special Area, and Enumeration District
+    HU_UTTH says: Housing unit type, attached house | Attached houses or townhouses. The housing unit shares at least one wall with another housing unit (unit of enumeration: housing units). Original field name: "Attached Unit." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part A, 2013, Table 2.1: Number of Housing Units by Type of Housing Unit by Parish, Special Area, and Enumeration District
+
+  whole country: JAMAICA (level 0) no published total
+    HU_HU          Total housing units                      711,331    0.00%
+    HU_UTSF        Housing unit type, detached house        642,650    0.00%
+    HU_UTTH        Housing unit type, attached house         53,753    0.00%
+    HU_UTCB        Housing unit type, part of commerc         4,518    0.00%
+    HU_UTINF       Housing unit type, informal                4,595    0.00%
+    HU_UTOT        Housing unit type, other                     851    0.00%
+    HU_UTND        Housing unit type, no data                 4,964    0.00%
+    HUB_WCB        Exterior walls, concrete block           499,659    0.00%
+    HUB_WSTN       Exterior walls, stone and brick            3,605    0.00%
+    HUB_WNOG       Exterior walls, nog                        7,381    0.00%
+    HUB_WWOD       Exterior walls, wood                     128,711    0.00%
+    HUB_WWCN       Exterior walls, wood and concrete         59,595    0.00%
+    HUB_WWBK       Exterior walls, wood and brick             2,839    0.00%
+    HUB_WOTH       Exterior walls, other materials            3,277    0.00%
+    HUB_WND        Exterior walls, no data                    6,264    0.00%
+
+--- Households: 276 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  ADM_LEVEL 2: 261 areas  PORT ROYAL, HARBOUR VIEW, D'AGUILAR TOWN/RENNOCK LODGE, SPRINGFIELD, JOHNSON TOWN, NORMAN GARDENS, BOURNEMOUTH GARDENS, ROLLINGTON TOWN, ...
+  denominator: none found
+  19 group columns:
+    HH_HTOTL  ->  'Total households'
+    HH_RO1  ->  'Rooms occupied, one'
+    HH_RO2  ->  'Rooms occupied, two'
+    HH_RO3  ->  'Rooms occupied, three'
+    HH_RO4  ->  'Rooms occupied, four'
+    HH_RO5  ->  'Rooms occupied, five'
+    HH_RO6  ->  'Rooms occupied, six'
+    HH_RO7  ->  'Rooms occupied, seven'
+    HH_RO8  ->  'Rooms occupied, eight'
+    HH_RO9  ->  'Rooms occupied, nine'
+    HH_RO10PL  ->  'Rooms occupied, ten or more'
+    HH_ROND  ->  'Rooms occupied, no data'
+    HT_OWN  ->  'Housing tenure, own'
+    HT_LEASE  ->  'Housing tenure, lease'
+    HT_RENT  ->  'Housing tenure, rent'
+    HT_FREE  ->  'Housing tenure, rent free'
+    HT_SQUAT  ->  'Housing tenure, squat'
+    HT_OTHER  ->  'Housing tenure, other'
+    HT_ND  ->  'Housing tenure, no data'
+    HH_HTOTL says: Total households | Total number of households (unit of enumeration: households). Original field name: "Total Households." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.3: Number of Households by Number of Rooms Occupied by Parish, Special Area, and Enumeration District
+    HH_RO1 says: Rooms occupied, one | Number of households with 1 room occupied (unit of enumeration: households). Original field name: "1 Room." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.3: Number of Households by Number of Rooms Occupied by Parish, Special Area, and Enumeration District
+    HH_RO2 says: Rooms occupied, two | Number of households with 2 rooms occupied (unit of enumeration: households). Original field name: "2 Rooms." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.3: Number of Households by Number of Rooms Occupied by Parish, Special Area, and Enumeration District
+
+  whole country: JAMAICA (level 0) no published total
+    HH_HTOTL       Total households                         881,089    0.00%
+    HH_RO1         Rooms occupied, one                      198,123    0.00%
+    HH_RO2         Rooms occupied, two                      191,987    0.00%
+    HH_RO3         Rooms occupied, three                    204,773    0.00%
+    HH_RO4         Rooms occupied, four                     128,832    0.00%
+    HH_RO5         Rooms occupied, five                      74,439    0.00%
+    HH_RO6         Rooms occupied, six                       36,609    0.00%
+    HH_RO7         Rooms occupied, seven                     16,091    0.00%
+    HH_RO8         Rooms occupied, eight                      8,089    0.00%
+    HH_RO9         Rooms occupied, nine                       3,407    0.00%
+    HH_RO10PL      Rooms occupied, ten or more                4,191    0.00%
+    HH_ROND        Rooms occupied, no data                   14,548    0.00%
+    HT_OWN         Housing tenure, own                      534,353    0.00%
+    HT_LEASE       Housing tenure, lease                     15,069    0.00%
+    HT_RENT        Housing tenure, rent                     176,871    0.00%
+    HT_FREE        Housing tenure, rent free                136,835    0.00%
+    HT_SQUAT       Housing tenure, squat                      8,823    0.00%
+    HT_OTHER       Housing tenure, other                      1,149    0.00%
+    HT_ND          Housing tenure, no data                    7,989    0.00%
+
+--- Amenities: 276 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  ADM_LEVEL 2: 261 areas  PORT ROYAL, HARBOUR VIEW, D'AGUILAR TOWN/RENNOCK LODGE, SPRINGFIELD, JOHNSON TOWN, NORMAN GARDENS, BOURNEMOUTH GARDENS, ROLLINGTON TOWN, ...
+  denominator: none found
+  44 group columns:
+    LQA_HTOTL  ->  'Total households'
+    LQA_LGEL  ->  'Lighting source, electricity'
+    LQA_LGKS  ->  'Lighting source, kerosene'
+    LQA_LGOT  ->  'Lighting source, other'
+    LQA_LGND  ->  'Lighting source, no data'
+    LQA_CFLPG  ->  'Cooking fuel, liquefied petroleum gas'
+    LQA_CFEC  ->  'Cooking fuel, electricity'
+    LQA_CFWO  ->  'Cooking fuel, wood'
+    LQA_CFCH  ->  'Cooking fuel, charcoal'
+    LQA_CFKS  ->  'Cooking fuel, kerosene'
+    LQA_CFOT  ->  'Cooking fuel, other'
+    LQA_CFNO  ->  'Cooking fuel, none'
+    LQA_CFND  ->  'Cooking fuel, no data'
+    LQA_WSPDPU  ->  'Water supply type, piped into dwelling, public'
+    LQA_WSPYPU  ->  'Water supply type, piped into yard, public'
+    LQA_WSSPPU  ->  'Water supply type, standpipe, public'
+    LQA_WSCMPU  ->  'Water supply type, catchment, public'
+    LQA_WSPDPR  ->  'Water supply type, piped into dwelling, private'
+    LQA_WSCMPR  ->  'Water supply type, catchment, private'
+    LQA_WSSR  ->  'Water supply type, spring or river'
+    LQA_WSWT  ->  'Water supply type, tanker truck water'
+    LQA_WSOT  ->  'Water supply type, other'
+    LQA_WSND  ->  'Water supply type, no data'
+    LQA_LTFTSH  ->  'Latrine type, flush toilet, shared'
+    ...and 20 more
+    LQA_HTOTL says: Total households | Total number of households (unit of enumeration: households). Original field name: "Total Households." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.1: Number of Households by Source of Lighting by Parish, Special Area, and Enumeration District
+    LQA_LGEL says: Lighting source, electricity | Primary lighting source is electricity (unit of enumeration: households). Original field name: "Electricity." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.1: Number of Households by Source of Lighting by Parish, Special Area, and Enumeration District
+    LQA_LGKS says: Lighting source, kerosene | Primary lighting source is kerosene (unit of enumeration: households). Original field name: "Kerosene." (April 04, 2011) | Jamaica Population and Housing Census 2011: Housing Volume 10 Part B, 2013, Table 2.1: Number of Households by Source of Lighting by Parish, Special Area, and Enumeration District
+
+  whole country: JAMAICA (level 0) no published total
+    LQA_HTOTL      Total households                         881,089    0.00%
+    LQA_LGEL       Lighting source, electricity             809,746    0.00%
+    LQA_LGKS       Lighting source, kerosene                 48,712    0.00%
+    LQA_LGOT       Lighting source, other                     7,210    0.00%
+    LQA_LGND       Lighting source, no data                  15,421    0.00%
+    LQA_CFLPG      Cooking fuel, liquefied petroleum        709,096    0.00%
+    LQA_CFEC       Cooking fuel, electricity                 15,508    0.00%
+    LQA_CFWO       Cooking fuel, wood                        78,987    0.00%
+    LQA_CFCH       Cooking fuel, charcoal                    53,895    0.00%
+    LQA_CFKS       Cooking fuel, kerosene                       680    0.00%
+    LQA_CFOT       Cooking fuel, other                          362    0.00%
+    LQA_CFNO       Cooking fuel, none                        12,762    0.00%
+    LQA_CFND       Cooking fuel, no data                      9,799    0.00%
+    LQA_WSPDPU     Water supply type, piped into dwel       452,869    0.00%
+    LQA_WSPYPU     Water supply type, piped into yard       141,283    0.00%
+    LQA_WSSPPU     Water supply type, standpipe, publ        52,576    0.00%
+    LQA_WSCMPU     Water supply type, catchment, publ        10,639    0.00%
+    LQA_WSPDPR     Water supply type, piped into dwel        54,452    0.00%
+    LQA_WSCMPR     Water supply type, catchment, priv        87,740    0.00%
+    LQA_WSSR       Water supply type, spring or river        31,363    0.00%
+    LQA_WSWT       Water supply type, tanker truck wa        19,121    0.00%
+    LQA_WSOT       Water supply type, other                  19,643    0.00%
+    LQA_WSND       Water supply type, no data                11,403    0.00%
+    LQA_LTFTSH     Latrine type, flush toilet, shared        97,552    0.00%
+    LQA_LTPLSH     Latrine type, pit latrine, shared         50,763    0.00%
+    LQA_LTOTSH     Latrine type, other, shared                  317    0.00%
+    LQA_LTNDSH     Latrine type, no data, shared                496    0.00%
+    LQA_LTFTPR     Latrine type, flush toilet, privat       530,045    0.00%
+    LQA_LTPLPR     Latrine type, pit latrine, private       150,692    0.00%
+    LQA_LTOTPR     Latrine type, other, private                 457    0.00%
+    LQA_LTNDPR     Latrine type, no data, private             2,404    0.00%
+    LQA_LTNONE     Latrine type, none                        18,104    0.00%
+    LQA_LTNR       Latrine type, not reported                30,259    0.00%
+    LQA_SWPSRG     Solid waste disposal, public servi       462,624    0.00%
+    LQA_SWPSIR     Solid waste disposal, public servi        97,027    0.00%
+    LQA_SWPRVS     Solid waste disposal, private serv         4,124    0.00%
+    LQA_SWBR       Solid waste disposal, burned             266,514    0.00%
+    LQA_SWBD       Solid waste disposal, buried               4,651    0.00%
+    LQA_SWDPWB     Solid waste disposal, dumped, wate         6,298    0.00%
+    LQA_SWDPYD     Solid waste disposal, dumped, yard         8,322    0.00%
+    LQA_SWDPMS     Solid waste disposal, dumped, muni        11,397    0.00%
+    LQA_SWDPOT     Solid waste disposal, dumped, othe         4,607    0.00%
+    LQA_SWOT       Solid waste disposal, other                1,809    0.00%
+    LQA_SWND       Solid waste disposal, no data             13,716    0.00%
+
+--- Poverty: 784 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  JAMAICA
+  ADM_LEVEL 1: 14 areas  KINGSTON, SAINT ANDREW, SAINT THOMAS, PORTLAND, SAINT MARY, SAINT ANN, TRELAWNY, SAINT JAMES, HANOVER, WESTMORELAND, SAINT ELIZABETH, MANCHESTER, CLARENDON, SAINT CATHERINE
+  ADM_LEVEL 2: 769 areas  TIVOLI GARDENS, DENHAM TOWN PART 1, JONES TOWN PART 1, HANNAH TOWN, FLETCHER'S LAND, CENTRAL DOWN TOWN, PARADE GARDENS, RAE TOWN, ...
+  denominator: 'Population estimate'
+  6 group columns:
+    POV_CON  ->  'Consumption'
+    POV_FOOD  ->  'Food poverty'
+    POV_TOTL  ->  'Total poverty'
+    POV_CONSE  ->  'Consumption, S.E.'
+    POV_FOODSE  ->  'Food poverty, S.E.'
+    POV_TOTLSE  ->  'Total poverty, S.E.'
+    POV_CON says: Consumption | Mean annual consumption per adult equivalent in 2012 Jamaican dollars. Original field name: "Consumption, Mean." (July 01, 2012) | Mapping Poverty Indicators: Consumption Based Poverty in Jamaica, 2019, Table A: Average Annual Consumption per Adult Equivalent, and Incidence of Poverty Across Communities, 2012
+    POV_FOOD says: Food poverty | Incidence of food poverty. Original field name: "Food Poverty, Incidence." (July 01, 2012) | Mapping Poverty Indicators: Consumption Based Poverty in Jamaica, 2019, Table A: Average Annual Consumption per Adult Equivalent, and Incidence of Poverty Across Communities, 2012
+    POV_TOTL says: Total poverty | Incidence of total poverty. Original field name: "Total Poverty, Incidence." (July 01, 2012) | Mapping Poverty Indicators: Consumption Based Poverty in Jamaica, 2019, Table A: Average Annual Consumption per Adult Equivalent, and Incidence of Poverty Across Communities, 2012
+
+  whole country: JAMAICA (level 0) published=2,682,497 summed=337,874 ratio=0.126
+    POV_CON        Consumption                              334,324   12.46%
+    POV_FOOD       Food poverty                                   0    0.00%
+    POV_TOTL       Total poverty                                  0    0.00%
+    POV_CONSE      Consumption, S.E.                          3,550    0.13%
+    POV_FOODSE     Food poverty, S.E.                             0    0.00%
+    POV_TOTLSE     Total poverty, S.E.                            0    0.00%
+
+  furthest from its own total: SPRING GARDENS (level 2) published=360 summed=621,159 ratio=1725.440
+    POV_CON        Consumption                              541,192  150331.00%
+    POV_FOOD       Food poverty                                   0    0.00%
+    POV_TOTL       Total poverty                                  0    0.00%
+    POV_CONSE      Consumption, S.E.                         79,967  22213.03%
+    POV_FOODSE     Food poverty, S.E.                             0    0.00%
+    POV_TOTLSE     Total poverty, S.E.                            0    0.01%
+
+  furthest from its own total: ROSE HALL (level 2) published=253 summed=421,627 ratio=1666.511
+    POV_CON        Consumption                              370,848  146580.16%
+    POV_FOOD       Food poverty                                   0    0.01%
+    POV_TOTL       Total poverty                                  0    0.05%
+    POV_CONSE      Consumption, S.E.                         50,779  20070.79%
+    POV_FOODSE     Food poverty, S.E.                             0    0.01%
+    POV_TOTLSE     Total poverty, S.E.                            0    0.02%
+
+======================================================================
+saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data: 384,613 bytes, 9 sheets
+
+--- Metadata: 115 rows ---
+  Metadata: Saint Vincent and The Grenadines
+  Contents
+  One metadata tab describing 3 geospatial boundary files and 7 tables, 
+  Geospatial Boundary Metadata
+  National Boundary (VC_GEOG_ADM0_2012_uscb_202109)
+  Title | Saint Vincent and The Grenadines: National Boundary
+  Tags | Geospatial Boundaries, Saint Vincent and The Grenadines, National Boun
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of Saint Vincent and The Grenadines fo
+  Credits | Source: Geospatial data for the national boundary of Saint Vincent and
+  Use Limitations | The national boundaries used for this feature class were downloaded or
+  Place Keywords | Saint Vincent and The Grenadines, Country
+  Temporal Keywords | 2021
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing Saint Vi
+  First-Order Administrative Divisions (VC_GEOG_ADM1_2012_uscb_202109)
+  Title | Saint Vincent and The Grenadines: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Saint Vincent and The Grenadines, First-Order A
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | First-order administrative divisions feature class of Saint Vincent an
+
+--- Data Dictionary: 252 rows ---
+  Data Dictionary: Saint Vincent and The Grenadines
+  Standard Geographic Fields
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2021; Saint Vincent and The Grenadines
+  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., census division | U.S. Board on Geographic Names, 2021; Saint Vincent and The Grenadines
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., enumeration di | U.S. Board on Geographic Names, 2021; Saint Vincent and The Grenadines
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2021
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2021
+  NSO_CODE | National statistical office code | Code used by the Saint Vincent and The Grenadines Statistical Office f | Saint Vincent and The Grenadines Statistical Office, 2012
+  PARISH | Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+  Age-Sex
+  BTOTL | Both sexes total | Total population (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Ag
+  B0004 | Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Ag
+  B0509 | Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Ag
+  B1014 | Both sexes 10 to 14 | Total population age 10 - 14 (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Ag
+
+--- Age-Sex: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: none found
+  58 group columns:
+    PARISH  ->  'Parish name'
+    BTOTL  ->  'Both sexes total'
+    B0004  ->  'Both sexes 0 to 4'
+    B0509  ->  'Both sexes 5 to 9'
+    B1014  ->  'Both sexes 10 to 14'
+    B1519  ->  'Both sexes 15 to 19'
+    B2024  ->  'Both sexes 20 to 24'
+    B2529  ->  'Both sexes 25 to 29'
+    B3034  ->  'Both sexes 30 to 34'
+    B3539  ->  'Both sexes 35 to 39'
+    B4044  ->  'Both sexes 40 to 44'
+    B4549  ->  'Both sexes 45 to 49'
+    B5054  ->  'Both sexes 50 to 54'
+    B5559  ->  'Both sexes 55 to 59'
+    B6064  ->  'Both sexes 60 to 64'
+    B6569  ->  'Both sexes 65 to 69'
+    B7074  ->  'Both sexes 70 to 74'
+    B7579  ->  'Both sexes 75 to 79'
+    B8084  ->  'Both sexes 80 to 84'
+    B85PL  ->  'Both sexes 85 and older'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    M1014  ->  'Males 10 to 14'
+    ...and 34 more
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    BTOTL says: Both sexes total | Total population (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Age 85+
+    B0004 says: Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (June 12, 2012) | 2012 Population and Housing Census, 2013, Five Year Age Group up to Age 85+
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) no published total
+    BTOTL          Both sexes total                         109,188    0.00%
+    B0004          Both sexes 0 to 4                          8,645    0.00%
+    B0509          Both sexes 5 to 9                          8,520    0.00%
+    B1014          Both sexes 10 to 14                        9,760    0.00%
+    B1519          Both sexes 15 to 19                        9,912    0.00%
+    B2024          Both sexes 20 to 24                        8,607    0.00%
+    B2529          Both sexes 25 to 29                        8,317    0.00%
+    B3034          Both sexes 30 to 34                        7,863    0.00%
+    B3539          Both sexes 35 to 39                        7,553    0.00%
+    B4044          Both sexes 40 to 44                        7,155    0.00%
+    B4549          Both sexes 45 to 49                        7,466    0.00%
+    B5054          Both sexes 50 to 54                        6,548    0.00%
+    B5559          Both sexes 55 to 59                        5,031    0.00%
+    B6064          Both sexes 60 to 64                        3,821    0.00%
+    B6569          Both sexes 65 to 69                        2,841    0.00%
+    B7074          Both sexes 70 to 74                        2,536    0.00%
+    B7579          Both sexes 75 to 79                        1,978    0.00%
+    B8084          Both sexes 80 to 84                        1,443    0.00%
+    B85PL          Both sexes 85 and older                    1,192    0.00%
+    MTOTL          Males total                               55,552    0.00%
+    M0004          Males 0 to 4                               4,314    0.00%
+    M0509          Males 5 to 9                               4,308    0.00%
+    M1014          Males 10 to 14                             5,043    0.00%
+    M1519          Males 15 to 19                             5,053    0.00%
+    M2024          Males 20 to 24                             4,354    0.00%
+    M2529          Males 25 to 29                             4,228    0.00%
+    M3034          Males 30 to 34                             3,887    0.00%
+    M3539          Males 35 to 39                             3,839    0.00%
+    M4044          Males 40 to 44                             3,772    0.00%
+    M4549          Males 45 to 49                             3,861    0.00%
+    M5054          Males 50 to 54                             3,436    0.00%
+    M5559          Males 55 to 59                             2,642    0.00%
+    M6064          Males 60 to 64                             1,970    0.00%
+    M6569          Males 65 to 69                             1,457    0.00%
+    M7074          Males 70 to 74                             1,282    0.00%
+    M7579          Males 75 to 79                               964    0.00%
+    M8084          Males 80 to 84                               663    0.00%
+    M85PL          Males 85 and older                           479    0.00%
+    FTOTL          Females total                             53,636    0.00%
+    F0004          Females 0 to 4                             4,331    0.00%
+    F0509          Females 5 to 9                             4,212    0.00%
+    F1014          Females 10 to 14                           4,717    0.00%
+    F1519          Females 15 to 19                           4,859    0.00%
+    F2024          Females 20 to 24                           4,253    0.00%
+    F2529          Females 25 to 29                           4,089    0.00%
+    F3034          Females 30 to 34                           3,976    0.00%
+    F3539          Females 35 to 39                           3,714    0.00%
+    F4044          Females 40 to 44                           3,383    0.00%
+    F4549          Females 45 to 49                           3,605    0.00%
+    F5054          Females 50 to 54                           3,112    0.00%
+    F5559          Females 55 to 59                           2,389    0.00%
+    F6064          Females 60 to 64                           1,851    0.00%
+    F6569          Females 65 to 69                           1,384    0.00%
+    F7074          Females 70 to 74                           1,254    0.00%
+    F7579          Females 75 to 79                           1,014    0.00%
+    F8084          Females 80 to 84                             780    0.00%
+    F85PL          Females 85 and older                         713    0.00%
+
+--- Ethnicity and Religion: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: 'Total population'
+  26 group columns:
+    PARISH  ->  'Parish name'
+    ETH_BLK  ->  'Black'
+    ETH_INDG  ->  'Indigenous'
+    ETH_WHT  ->  'White'
+    ETH_EIND  ->  'East Indian'
+    ETH_MIX  ->  'Mixed'
+    ETH_POR  ->  'Portuguese'
+    ETH_OTHR  ->  'Other'
+    RLG_ANG  ->  'Anglican'
+    RLG_EVC  ->  'Evangelical Christian'
+    RLG_MTH  ->  'Methodist'
+    RLG_PTC  ->  'Pentecostal'
+    RLG_PBT  ->  'Presbyterian'
+    RLG_RMC  ->  'Roman Catholic'
+    RLG_SALV  ->  'Salvation Army'
+    RLG_SDA  ->  'Seventh Day Adventist'
+    RLG_JVW  ->  "Jehovah's Witness"
+    RLG_BPT  ->  'Baptist'
+    RLG_HIN  ->  'Hindu'
+    RLG_MOR  ->  'Mormon'
+    RLG_MSL  ->  'Muslim'
+    RLG_RASTA  ->  'Rastafarian'
+    RLG_TRAD  ->  'Traditional'
+    RLG_WORL  ->  'Without religion'
+    ...and 2 more
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    ETH_BLK says: Black | Population with black ethnicity. Original field name: "African/Black/Negro." (June 12, 2012) | 2012 Population and Housing Census, 2013, Ethnicity
+    ETH_INDG says: Indigenous | Population with indigenous ethnicity. Original field name: "Indigenous People (Amerindian/Carib)." (June 12, 2012) | 2012 Population and Housing Census, 2013, Ethnicity
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) published=109,188 summed=218,376 ratio=2.000
+    ETH_BLK        Black                                     77,763   71.22%
+    ETH_INDG       Indigenous                                 3,280    3.00%
+    ETH_WHT        White                                        889    0.81%
+    ETH_EIND       East Indian                                1,199    1.10%
+    ETH_MIX        Mixed                                     25,111   23.00%
+    ETH_POR        Portuguese                                   753    0.69%
+    ETH_OTHR       Other                                        193    0.18%
+    RLG_ANG        Anglican                                  15,175   13.90%
+    RLG_EVC        Evangelical Christian                      4,119    3.77%
+    RLG_MTH        Methodist                                  9,458    8.66%
+    RLG_PTC        Pentecostal                               30,108   27.57%
+    RLG_PBT        Presbyterian                                 294    0.27%
+    RLG_RMC        Roman Catholic                             6,877    6.30%
+    RLG_SALV       Salvation Army                               287    0.26%
+    RLG_SDA        Seventh Day Adventist                     12,710   11.64%
+    RLG_JVW        Jehovah's Witness                            909    0.83%
+    RLG_BPT        Baptist                                    9,675    8.86%
+    RLG_HIN        Hindu                                         89    0.08%
+    RLG_MOR        Mormon                                       207    0.19%
+    RLG_MSL        Muslim                                       111    0.10%
+    RLG_RASTA      Rastafarian                                1,181    1.08%
+    RLG_TRAD       Traditional                                   74    0.07%
+    RLG_WORL       Without religion                           8,147    7.46%
+    RLG_OTHR       Other religion                             4,672    4.28%
+    RLG_NSTA       Not stated                                 5,095    4.67%
+
+  furthest from its own total: KINGSTOWN (level 1) published=12,712 summed=25,424 ratio=2.000
+    ETH_BLK        Black                                      8,276   65.10%
+    ETH_INDG       Indigenous                                   191    1.50%
+    ETH_WHT        White                                        114    0.90%
+    ETH_EIND       East Indian                                  129    1.01%
+    ETH_MIX        Mixed                                      3,707   29.16%
+    ETH_POR        Portuguese                                   163    1.28%
+    ETH_OTHR       Other                                        132    1.04%
+    RLG_ANG        Anglican                                   1,960   15.42%
+    RLG_EVC        Evangelical Christian                        439    3.45%
+    RLG_MTH        Methodist                                  1,871   14.72%
+    RLG_PTC        Pentecostal                                3,785   29.78%
+    RLG_PBT        Presbyterian                                  18    0.14%
+    RLG_RMC        Roman Catholic                             1,164    9.16%
+    RLG_SALV       Salvation Army                                37    0.29%
+    RLG_SDA        Seventh Day Adventist                        571    4.49%
+    RLG_JVW        Jehovah's Witness                            113    0.89%
+    RLG_BPT        Baptist                                      698    5.49%
+    RLG_HIN        Hindu                                         47    0.37%
+    RLG_MOR        Mormon                                        71    0.56%
+    RLG_MSL        Muslim                                        34    0.27%
+    RLG_RASTA      Rastafarian                                  172    1.35%
+    RLG_TRAD       Traditional                                   17    0.13%
+    RLG_WORL       Without religion                             673    5.29%
+    RLG_OTHR       Other religion                               344    2.71%
+    RLG_NSTA       Not stated                                   698    5.49%
+
+  furthest from its own total: ROSE PLACE (1, 2) (level 2) published=220 summed=440 ratio=2.000
+    ETH_BLK        Black                                        106   48.18%
+    ETH_INDG       Indigenous                                     6    2.73%
+    ETH_WHT        White                                          0    0.00%
+    ETH_EIND       East Indian                                    1    0.45%
+    ETH_MIX        Mixed                                        107   48.64%
+    ETH_POR        Portuguese                                     0    0.00%
+    ETH_OTHR       Other                                          0    0.00%
+    RLG_ANG        Anglican                                      65   29.55%
+    RLG_EVC        Evangelical Christian                         11    5.00%
+    RLG_MTH        Methodist                                     54   24.55%
+    RLG_PTC        Pentecostal                                   17    7.73%
+    RLG_PBT        Presbyterian                                   0    0.00%
+    RLG_RMC        Roman Catholic                                19    8.64%
+    RLG_SALV       Salvation Army                                 0    0.00%
+    RLG_SDA        Seventh Day Adventist                          7    3.18%
+    RLG_JVW        Jehovah's Witness                              0    0.00%
+    RLG_BPT        Baptist                                       14    6.36%
+    RLG_HIN        Hindu                                          0    0.00%
+    RLG_MOR        Mormon                                         1    0.45%
+    RLG_MSL        Muslim                                         0    0.00%
+    RLG_RASTA      Rastafarian                                    5    2.27%
+    RLG_TRAD       Traditional                                    0    0.00%
+    RLG_WORL       Without religion                              20    9.09%
+    RLG_OTHR       Other religion                                 7    3.18%
+    RLG_NSTA       Not stated                                     0    0.00%
+
+--- Education and Occupation: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: 'Total population'
+  24 group columns:
+    PARISH  ->  'Parish name'
+    EDU_DAY  ->  'Day Care'
+    EDU_PRE  ->  'Preschool'
+    EDU_INF  ->  'Infant'
+    EDU_PR3  ->  'Primary (1-3 years)'
+    EDU_PR7  ->  'Primary (4-7 years)'
+    EDU_SCND  ->  'Secondary'
+    EDU_SSG  ->  'Post-secondary education'
+    EDU_UNIV  ->  'University'
+    EDU_OTHR  ->  'Other'
+    EDU_UNK  ->  'Unknown'
+    EDU_NSTA  ->  'Not stated'
+    EDU_NA  ->  'Not applicable'
+    OCP_MANG  ->  'Managers'
+    OCP_PROF  ->  'Professionals'
+    OCP_TECH  ->  'Technicians'
+    OCP_CLER  ->  'Clerical'
+    OCP_SERV  ->  'Service and sales'
+    OCP_AGRC  ->  'Agriculture'
+    OCP_CRFT  ->  'Crafts and trades'
+    OCP_MACH  ->  'Machine operators'
+    OCP_ELEM  ->  'Elementary'
+    OCP_NSTA  ->  'Not stated'
+    OCP_NA  ->  'Not applicable'
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    EDU_DAY says: Day Care | Population that have attended day care, age 15 and older. Original field name: "Day care/Nursery." (June 12, 2012) | 2012 Population and Housing Census, 2013, Highest Education of Persons 15 Years and Over
+    EDU_PRE says: Preschool | Population that have attended preschool, age 15 and older. Original field name: "Pre-School." (June 12, 2012) | 2012 Population and Housing Census, 2013, Highest Education of Persons 15 Years and Over
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) published=109,188 summed=218,376 ratio=2.000
+    EDU_DAY        Day Care                                       6    0.01%
+    EDU_PRE        Preschool                                     14    0.01%
+    EDU_INF        Infant                                        67    0.06%
+    EDU_PR3        Primary (1-3 years)                        4,345    3.98%
+    EDU_PR7        Primary (4-7 years)                       31,535   28.88%
+    EDU_SCND       Secondary                                 24,512   22.45%
+    EDU_SSG        Post-secondary education                   7,995    7.32%
+    EDU_UNIV       University                                 3,929    3.60%
+    EDU_OTHR       Other                                        532    0.49%
+    EDU_UNK        Unknown                                      732    0.67%
+    EDU_NSTA       Not stated                                 8,595    7.87%
+    EDU_NA         Not applicable                            26,926   24.66%
+    OCP_MANG       Managers                                   1,630    1.49%
+    OCP_PROF       Professionals                              4,544    4.16%
+    OCP_TECH       Technicians                                2,910    2.67%
+    OCP_CLER       Clerical                                   2,511    2.30%
+    OCP_SERV       Service and sales                         10,627    9.73%
+    OCP_AGRC       Agriculture                                5,111    4.68%
+    OCP_CRFT       Crafts and trades                          5,465    5.01%
+    OCP_MACH       Machine operators                          2,039    1.87%
+    OCP_ELEM       Elementary                                 5,463    5.00%
+    OCP_NSTA       Not stated                                   520    0.48%
+    OCP_NA         Not applicable                            68,368   62.61%
+
+  furthest from its own total: KINGSTOWN (level 1) published=12,712 summed=25,424 ratio=2.000
+    EDU_DAY        Day Care                                       0    0.00%
+    EDU_PRE        Preschool                                      4    0.03%
+    EDU_INF        Infant                                         2    0.02%
+    EDU_PR3        Primary (1-3 years)                          310    2.44%
+    EDU_PR7        Primary (4-7 years)                        3,031   23.84%
+    EDU_SCND       Secondary                                  3,196   25.14%
+    EDU_SSG        Post-secondary education                   1,309   10.30%
+    EDU_UNIV       University                                   725    5.70%
+    EDU_OTHR       Other                                         67    0.53%
+    EDU_UNK        Unknown                                      128    1.01%
+    EDU_NSTA       Not stated                                   950    7.47%
+    EDU_NA         Not applicable                             2,990   23.52%
+    OCP_MANG       Managers                                     330    2.60%
+    OCP_PROF       Professionals                                692    5.44%
+    OCP_TECH       Technicians                                  475    3.74%
+    OCP_CLER       Clerical                                     425    3.34%
+    OCP_SERV       Service and sales                          1,582   12.44%
+    OCP_AGRC       Agriculture                                  150    1.18%
+    OCP_CRFT       Crafts and trades                            723    5.69%
+    OCP_MACH       Machine operators                            219    1.72%
+    OCP_ELEM       Elementary                                   520    4.09%
+    OCP_NSTA       Not stated                                   102    0.80%
+    OCP_NA         Not applicable                             7,494   58.95%
+
+  furthest from its own total: ROSE PLACE (1, 2) (level 2) published=220 summed=440 ratio=2.000
+    EDU_DAY        Day Care                                       0    0.00%
+    EDU_PRE        Preschool                                      0    0.00%
+    EDU_INF        Infant                                         1    0.45%
+    EDU_PR3        Primary (1-3 years)                            3    1.36%
+    EDU_PR7        Primary (4-7 years)                           93   42.27%
+    EDU_SCND       Secondary                                     48   21.82%
+    EDU_SSG        Post-secondary education                      13    5.91%
+    EDU_UNIV       University                                     2    0.91%
+    EDU_OTHR       Other                                          0    0.00%
+    EDU_UNK        Unknown                                        0    0.00%
+    EDU_NSTA       Not stated                                    12    5.45%
+    EDU_NA         Not applicable                                48   21.82%
+    OCP_MANG       Managers                                       0    0.00%
+    OCP_PROF       Professionals                                  4    1.82%
+    OCP_TECH       Technicians                                    6    2.73%
+    OCP_CLER       Clerical                                       8    3.64%
+    OCP_SERV       Service and sales                             39   17.73%
+    OCP_AGRC       Agriculture                                   15    6.82%
+    OCP_CRFT       Crafts and trades                             11    5.00%
+    OCP_MACH       Machine operators                              5    2.27%
+    OCP_ELEM       Elementary                                    12    5.45%
+    OCP_NSTA       Not stated                                     1    0.45%
+    OCP_NA         Not applicable                               119   54.09%
+
+--- Households: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: none found
+  30 group columns:
+    PARISH  ->  'Parish name'
+    HHD_THOU  ->  'Total households'
+    HHD_HS1  ->  '1 person households'
+    HHD_HS2  ->  '2 person households'
+    HHD_HS3  ->  '3 person households'
+    HHD_HS4  ->  '4 person households'
+    HHD_HS5  ->  '5 person households'
+    HHD_HS6  ->  '6 person households'
+    HHD_HS7  ->  '7 person households'
+    HHD_HS8PL  ->  '8 or more person households'
+    HUT_DET  ->  'Detached'
+    HUT_ATT  ->  'Attached'
+    HUT_APT  ->  'Apartment'
+    HUT_TWN  ->  'Townhouse'
+    HUT_DUP  ->  'Duplex'
+    HUT_COMB  ->  'Combined business and dwelling'
+    HUT_BARK  ->  'Barrack'
+    HUT_GDWL  ->  'Group dwelling'
+    HUT_IMP  ->  'Improvised'
+    HUT_OTHR  ->  'Other'
+    HUT_NSTA  ->  'Not stated'
+    HO_OWNED  ->  'Owned'
+    HO_PRVRNT  ->  'Rented privately'
+    HO_GOVRNT  ->  'Rented from government'
+    ...and 6 more
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    HHD_THOU says: Total households | Total number of households. Original field name: "Total." (June 12, 2012) | 2012 Population and Housing Census, 2013, Number of Persons
+    HHD_HS1 says: 1 person households | The number of households with one person. Original field name: "1." (June 12, 2012) | 2012 Population and Housing Census, 2013, Number of Persons
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) no published total
+    HHD_THOU       Total households                          36,829    0.00%
+    HHD_HS1        1 person households                        9,677    0.00%
+    HHD_HS2        2 person households                        7,120    0.00%
+    HHD_HS3        3 person households                        6,485    0.00%
+    HHD_HS4        4 person households                        5,479    0.00%
+    HHD_HS5        5 person households                        3,699    0.00%
+    HHD_HS6        6 person households                        1,999    0.00%
+    HHD_HS7        7 person households                        1,076    0.00%
+    HHD_HS8PL      8 or more person households                1,294    0.00%
+    HUT_DET        Detached                                  31,286    0.00%
+    HUT_ATT        Attached                                   2,339    0.00%
+    HUT_APT        Apartment                                  1,938    0.00%
+    HUT_TWN        Townhouse                                    136    0.00%
+    HUT_DUP        Duplex                                       494    0.00%
+    HUT_COMB       Combined business and dwelling               494    0.00%
+    HUT_BARK       Barrack                                       10    0.00%
+    HUT_GDWL       Group dwelling                                31    0.00%
+    HUT_IMP        Improvised                                     8    0.00%
+    HUT_OTHR       Other                                         60    0.00%
+    HUT_NSTA       Not stated                                    33    0.00%
+    HO_OWNED       Owned                                     28,987    0.00%
+    HO_PRVRNT      Rented privately                           4,181    0.00%
+    HO_GOVRNT      Rented from government                        63    0.00%
+    HO_RNTFRE      Rent free                                  3,083    0.00%
+    HO_LEASE       Leased                                        40    0.00%
+    HO_SQUAT       Squatted                                     203    0.00%
+    HO_OTHR        Other                                        187    0.00%
+    HO_UNK         Unknown                                       69    0.00%
+    HO_NSTA        Not stated                                    16    0.00%
+
+--- Buildings: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: none found
+  39 group columns:
+    PARISH  ->  'Parish name'
+    BMS_THOU  ->  'Total housing units'
+    BMS_STONE  ->  'Exterior wall, stone'
+    BMS_STNBRK  ->  'Exterior wall, stone and brick'
+    BMS_WCON  ->  'Exterior wall, concrete'
+    BMS_CONBLK  ->  'Exterior wall, concrete and block'
+    BMS_WODBRK  ->  'Exterior wall, wood and brick'
+    BMS_WODCON  ->  'Exterior wall, wood and concrete'
+    BMS_WODGAL  ->  'Exterior wall, wood and galvanized'
+    BMS_WOOD  ->  'Exterior wall, wood'
+    BMS_ADOBE  ->  'Exterior wall, wattle adobe'
+    BMS_WOTHR  ->  'Exterior wall, other'
+    BMS_WNSTA  ->  'Exterior wall, not stated'
+    BMS_METAL  ->  'Roof, sheet metal'
+    BMS_RCON  ->  'Roof, concrete'
+    BMS_ROTHR  ->  'Roof, other'
+    BED_BED0  ->  '0 bedrooms'
+    BED_BED1  ->  '1 bedroom'
+    BED_BED2  ->  '2 bedrooms'
+    BED_BED3  ->  '3 bedrooms'
+    BED_BED4  ->  '4 bedrooms'
+    BED_BED5  ->  '5 bedrooms'
+    BED_BED6  ->  '6 bedrooms'
+    BED_BED7  ->  '7 bedrooms'
+    ...and 15 more
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    BMS_THOU says: Total housing units | Total number of housing units. Original field name: "Total." (June 12, 2012) | 2012 Population and Housing Census, 2013, Main Material of the Outer Walls
+    BMS_STONE says: Exterior wall, stone | The number of housing units with stone exterior walls. Original field name: "Stone." (June 12, 2012) | 2012 Population and Housing Census, 2013, Main Material of the Outer Walls
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) no published total
+    BMS_THOU       Total housing units                       36,829    0.00%
+    BMS_STONE      Exterior wall, stone                         337    0.00%
+    BMS_STNBRK     Exterior wall, stone and brick               533    0.00%
+    BMS_WCON       Exterior wall, concrete                    3,049    0.00%
+    BMS_CONBLK     Exterior wall, concrete and block         25,723    0.00%
+    BMS_WODBRK     Exterior wall, wood and brick                384    0.00%
+    BMS_WODCON     Exterior wall, wood and concrete           2,474    0.00%
+    BMS_WODGAL     Exterior wall, wood and galvanized           524    0.00%
+    BMS_WOOD       Exterior wall, wood                        3,619    0.00%
+    BMS_ADOBE      Exterior wall, wattle adobe                   36    0.00%
+    BMS_WOTHR      Exterior wall, other                         119    0.00%
+    BMS_WNSTA      Exterior wall, not stated                     31    0.00%
+    BMS_METAL      Roof, sheet metal                         33,452    0.00%
+    BMS_RCON       Roof, concrete                             2,688    0.00%
+    BMS_ROTHR      Roof, other                                  689    0.00%
+    BED_BED0       0 bedrooms                                 3,134    0.00%
+    BED_BED1       1 bedroom                                  6,368    0.00%
+    BED_BED2       2 bedrooms                                10,364    0.00%
+    BED_BED3       3 bedrooms                                12,603    0.00%
+    BED_BED4       4 bedrooms                                 3,032    0.00%
+    BED_BED5       5 bedrooms                                   918    0.00%
+    BED_BED6       6 bedrooms                                   246    0.00%
+    BED_BED7       7 bedrooms                                    80    0.00%
+    BED_BED8       8 bedrooms                                    73    0.00%
+    BED_BED9PL     9 or more bedrooms                            11    0.00%
+    YBT_BP80       Built pre 1980                             8,384    0.00%
+    YBT_B8089      Built 1980 - 1989                          4,773    0.00%
+    YBT_B9099      Built 1990 - 1999                          6,147    0.00%
+    YBT_B0005      Built 2000 - 2005                          4,270    0.00%
+    YBT_B06        Built 2006                                   590    0.00%
+    YBT_B07        Built 2007                                   591    0.00%
+    YBT_B08        Built 2008                                   551    0.00%
+    YBT_B09        Built 2009                                   656    0.00%
+    YBT_B10        Built 2010                                   665    0.00%
+    YBT_B11        Built 2011                                   593    0.00%
+    YBT_B12        Built 2012                                   252    0.00%
+    YBT_UNK        Unknown                                    8,705    0.00%
+    YBT_NSTA       Not stated                                   652    0.00%
+
+--- Access to Services: 235 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  ADM_LEVEL 2: 221 areas  ROSE PLACE (1, 2), HOSPITAL ROAD, KINGSTOWN & NORTH RIVER, KINGSTOWN & PAUL'S AVENUE (1, 2), KINGSTOWN (1), KINGSTOWN & MC. KIES HILL (1), KINGSTOWN (2, 3, 4) & LONG WALL, KINGSTOWN & TOWN HILL, ...
+  denominator: none found
+  44 group columns:
+    PARISH  ->  'Parish name'
+    SRV_THOU  ->  'Total housing units'
+    SRV_PUBDWL  ->  'Water source, public piped into dwelling'
+    SRV_STAND  ->  'Water source, public standpipe'
+    SRV_YARD  ->  'Water source, public piped into yard'
+    SRV_PRVDWL  ->  'Water source, private piped into dwelling'
+    SRV_WELL  ->  'Water source, public well or tank'
+    SRV_CATCH  ->  'Water source, private catchment'
+    SRV_SPRING  ->  'Water source, spring or river'
+    SRV_WOTHR  ->  'Water source, other'
+    SRV_WNSTA  ->  'Water source, not stated'
+    SRV_PUBELC  ->  'Lighting source, public electricity'
+    SRV_LGEN  ->  'Lighting source, generator'
+    SRV_GASLAN  ->  'Lighting source, gas lantern'
+    SRV_KERO  ->  'Lighting source, kerosene'
+    SRV_SOLAR  ->  'Lighting source, solar'
+    SRV_LNONE  ->  'Lighting source, none'
+    SRV_LOTHR  ->  'Lighting source, other'
+    SRV_LNSTA  ->  'Lighting source, not stated'
+    SRV_WOOD  ->  'Cooking fuel, wood'
+    SRV_CHAR  ->  'Cooking fuel, charcoal'
+    SRV_CKERO  ->  'Cooking fuel, kerosene'
+    SRV_CELEC  ->  'Cooking fuel, electricity'
+    SRV_CGAS  ->  'Cooking fuel, gas'
+    ...and 20 more
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    SRV_THOU says: Total housing units | Total number of housing units. Original field name: "Total." (June 12, 2012) | 2012 Population and Housing Census, 2013, Water Supply Source
+    SRV_PUBDWL says: Water source, public piped into dwelling | The number of housing units that use public water piped into dwelling. Original field name: "Public Piped into Dwelling." (June 12, 2012) | 2012 Population and Housing Census, 2013, Water Supply Source
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) no published total
+    SRV_THOU       Total housing units                       36,829    0.00%
+    SRV_PUBDWL     Water source, public piped into dw        25,365    0.00%
+    SRV_STAND      Water source, public standpipe               944    0.00%
+    SRV_YARD       Water source, public piped into ya         4,270    0.00%
+    SRV_PRVDWL     Water source, private piped into d         2,881    0.00%
+    SRV_WELL       Water source, public well or tank             48    0.00%
+    SRV_CATCH      Water source, private catchment            1,932    0.00%
+    SRV_SPRING     Water source, spring or river                289    0.00%
+    SRV_WOTHR      Water source, other                          815    0.00%
+    SRV_WNSTA      Water source, not stated                     285    0.00%
+    SRV_PUBELC     Lighting source, public electricit        32,721    0.00%
+    SRV_LGEN       Lighting source, generator                   103    0.00%
+    SRV_GASLAN     Lighting source, gas lantern                 241    0.00%
+    SRV_KERO       Lighting source, kerosene                    939    0.00%
+    SRV_SOLAR      Lighting source, solar                        33    0.00%
+    SRV_LNONE      Lighting source, none                        373    0.00%
+    SRV_LOTHR      Lighting source, other                     2,003    0.00%
+    SRV_LNSTA      Lighting source, not stated                  416    0.00%
+    SRV_WOOD       Cooking fuel, wood                           742    0.00%
+    SRV_CHAR       Cooking fuel, charcoal                       593    0.00%
+    SRV_CKERO      Cooking fuel, kerosene                        42    0.00%
+    SRV_CELEC      Cooking fuel, electricity                    261    0.00%
+    SRV_CGAS       Cooking fuel, gas                         34,531    0.00%
+    SRV_CNONE      Cooking fuel, none                           364    0.00%
+    SRV_COTHR      Cooking fuel, other                           40    0.00%
+    SRV_CNSTA      Cooking fuel, not stated                     256    0.00%
+    SRV_FLUSEW     Toilet type, flush to sewer                1,006    0.00%
+    SRV_FLUSEP     Toilet type, flush to septic              24,208    0.00%
+    SRV_VELPIT     Toilet type, ventilated and elevat         1,817    0.00%
+    SRV_VUEPIT     Toilet type, ventilated and unelev         2,463    0.00%
+    SRV_UNVPIT     Toilet type, unventilated pit latr         5,249    0.00%
+    SRV_TOTHR      Toilet type, other                           102    0.00%
+    SRV_TNONE      Toilet type, none                          1,707    0.00%
+    SRV_TNSTA      Toilet type, not stated                      277    0.00%
+    SRV_LDUMP      Garbage, dump on land                        159    0.00%
+    SRV_WDUMP      Garbage, dump in water                        66    0.00%
+    SRV_COMPO      Garbage, compost                              49    0.00%
+    SRV_BURN       Garbage, burn                                960    0.00%
+    SRV_BURY       Garbage, bury                                 81    0.00%
+    SRV_PUBTRK     Garbage, public truck                     35,040    0.00%
+    SRV_PRVTRK     Garbage, private truck                       400    0.00%
+    SRV_GOTHR      Garbage, other                                62    0.00%
+    SRV_GNSTA      Garbage, not stated                           12    0.00%
+
+--- Info and Com Technology: 14 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  SAINT VINCENT AND THE GRENADINES
+  ADM_LEVEL 1: 13 areas  KINGSTOWN, SUBURBS OF KINGSTOWN, CALLIAQUA, MARRIAQUA, BRIDGETOWN, COLONARIE, GEORGETOWN, SANDY BAY, LAYOU, BARROUALLIE, CHATEAUBELAIR, NORTHERN GRENADINES, SOUTHERN GRENADINES
+  denominator: none found
+  14 group columns:
+    PARISH  ->  'Parish name'
+    ICT_THOU  ->  'Total households'
+    ICT_MPYES  ->  'Mobile phone'
+    ICT_MPNO  ->  'No mobile phone'
+    ICT_MPNS  ->  'Mobile phone not stated'
+    ICT_FTYES  ->  'Fixed line telephone'
+    ICT_FTNO  ->  'No fixed line telephone'
+    ICT_FTNS  ->  'Fixed line telephone not stated'
+    ICT_CPYES  ->  'Computer'
+    ICT_CPNO  ->  'No computer'
+    ICT_CPNS  ->  'Computer not stated'
+    ICT_IAYES  ->  'Internet access'
+    ICT_IANO  ->  'No Internet access'
+    ICT_IANS  ->  'Internet access not stated'
+    PARISH says: Parish name | Name of the parish that an enumeration district falls within. | Saint Vincent and The Grenadines Statistical Office, 2012
+    ICT_THOU says: Total households | Total number of households. Original field name: "Total." (June 12, 2012) | 2012 Population and Housing Census, 2013, Mobile or Cellular
+    ICT_MPYES says: Mobile phone | The number of households with a mobile or cellular phone. Original field name: "Mobile/Cellular Yes." (June 12, 2012) | 2012 Population and Housing Census, 2013, Mobile or Cellular
+
+  whole country: SAINT VINCENT AND THE GRENADINES (level 0) no published total
+    ICT_THOU       Total households                          36,829    0.00%
+    ICT_MPYES      Mobile phone                              28,691    0.00%
+    ICT_MPNO       No mobile phone                            7,428    0.00%
+    ICT_MPNS       Mobile phone not stated                      710    0.00%
+    ICT_FTYES      Fixed line telephone                      12,650    0.00%
+    ICT_FTNO       No fixed line telephone                   23,307    0.00%
+    ICT_FTNS       Fixed line telephone not stated              872    0.00%
+    ICT_CPYES      Computer                                  14,131    0.00%
+    ICT_CPNO       No computer                               21,979    0.00%
+    ICT_CPNS       Computer not stated                          719    0.00%
+    ICT_IAYES      Internet access                           12,069    0.00%
+    ICT_IANO       No Internet access                        23,953    0.00%
+    ICT_IANS       Internet access not stated                   807    0.00%
+
+======================================================================
+the-bahamas-subnational-boundaries-and-tabular-data: 111,394 bytes, 8 sheets
+
+--- Metadata: 127 rows ---
+  Metadata: The Bahamas
+  Contents
+  One metadata tab describing 4 geospatial boundary files and 6 tables, 
+  Geospatial Boundary Metadata
+  National Boundary (BS_GEOG_ADM0_2010_uscb_202105)
+  Title | The Bahamas: National Boundary
+  Tags | Geospatial Boundaries, The Bahamas, National Boundary, Country
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of The Bahamas for joining (linking) t
+  Credits | Source: Geospatial data for the national boundary of The Bahamas were 
+  Use Limitations | The national boundaries used for this feature class were downloaded or
+  Place Keywords | The Bahamas, Country
+  Temporal Keywords | 2021
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing The Baha
+  First-Order Administrative Divisions (BS_GEOG_ADM1_2010_uscb_202105)
+  Title | The Bahamas: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, The Bahamas, First-Order Administrative Divisio
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | First-order administrative divisions feature class of The Bahamas for 
+
+--- Data Dictionary: 325 rows ---
+  Data Dictionary: The Bahamas
+  Standard Geographic Fields
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2021; Department of Statistics of The 
+  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., islands. | U.S. Board on Geographic Names, 2021; Department of Statistics of The 
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., supervisory di | U.S. Board on Geographic Names, 2021; Department of Statistics of The 
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2021
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2021
+  NSO_CODE | National statistical office code | Code used by the Department of Statistics of The Bahamas for a subnati | Department of Statistics of The Bahamas, 2010
+  NSO_NAME | National statistical office name | Name used by the Department of Statistics of The Bahamas for a subnati | Department of Statistics of The Bahamas, 2010
+  Settlements
+  POP_TOT | Total population | Total population. Original field name: "Total." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing,
+  POP_MAL | Male population | Male population. Original field name: "Male." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing,
+  POP_FEM | Female population | Female population. Original field name: "Female." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing,
+  BLD_ODWELL | Occupied dwellings | Number of occupied dwellings. Original field name: "Occupied Dwellings | The Commonwealth of The Bahamas 2010 Census of Population and Housing,
+
+--- Settlements: 364 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  ADM_LEVEL 2: 345 areas  YAMACRAW, ELIZABETH, ST. ANNE'S, FOX HILL, MONTAGU, SEA BREEZE, MARATHON, ST. THOMAS MOORE, ...
+  denominator: 'Total population'
+  7 group columns:
+    POP_MAL  ->  'Male population'
+    POP_FEM  ->  'Female population'
+    BLD_ODWELL  ->  'Occupied dwellings'
+    BLD_AHS  ->  'Average household size'
+    BLD_BUILD  ->  'Buildings'
+    BLD_DWELL  ->  'Dwellings'
+    BLD_VDWELL  ->  'Vacant dwellings'
+    POP_MAL says: Male population | Male population. Original field name: "Male." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Island Population by Settlement
+    POP_FEM says: Female population | Female population. Original field name: "Female." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Island Population by Settlement
+    BLD_ODWELL says: Occupied dwellings | Number of occupied dwellings. Original field name: "Occupied Dwellings." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Island Population by Settlement
+
+  whole country: THE BAHAMAS (level 0) published=351,461 summed=701,313 ratio=1.995
+    POP_MAL        Male population                          170,257   48.44%
+    POP_FEM        Female population                        181,204   51.56%
+    BLD_ODWELL     Occupied dwellings                       102,862   29.27%
+    BLD_AHS        Average household size                         3    0.00%
+    BLD_BUILD      Buildings                                 96,863   27.56%
+    BLD_DWELL      Dwellings                                126,493   35.99%
+    BLD_VDWELL     Vacant dwellings                          23,631    6.72%
+
+  furthest from its own total: BERRY ISLANDS (level 1) published=807 summed=2,970 ratio=3.681
+    POP_MAL        Male population                              461   57.13%
+    POP_FEM        Female population                            346   42.87%
+    BLD_ODWELL     Occupied dwellings                           342   42.38%
+    BLD_AHS        Average household size                         2    0.29%
+    BLD_BUILD      Buildings                                    645   79.93%
+    BLD_DWELL      Dwellings                                    758   93.93%
+    BLD_VDWELL     Vacant dwellings                             416   51.55%
+
+  furthest from its own total: RAGGED ISLAND (level 1) published=72 summed=241 ratio=3.343
+    POP_MAL        Male population                               44   61.11%
+    POP_FEM        Female population                             28   38.89%
+    BLD_ODWELL     Occupied dwellings                            26   36.11%
+    BLD_AHS        Average household size                         3    3.74%
+    BLD_BUILD      Buildings                                     64   88.89%
+    BLD_DWELL      Dwellings                                     51   70.83%
+    BLD_VDWELL     Vacant dwellings                              25   34.72%
+
+--- Age-Sex: 19 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  denominator: none found
+  63 group columns:
+    BTOTL  ->  'Both sexes total'
+    B0004  ->  'Both sexes 0 to 4'
+    B0509  ->  'Both sexes 5 to 9'
+    B1014  ->  'Both sexes 10 to 14'
+    B1519  ->  'Both sexes 15 to 19'
+    B2024  ->  'Both sexes 20 to 24'
+    B2529  ->  'Both sexes 25 to 29'
+    B3034  ->  'Both sexes 30 to 34'
+    B3539  ->  'Both sexes 35 to 39'
+    B4044  ->  'Both sexes 40 to 44'
+    B4549  ->  'Both sexes 45 to 49'
+    B5054  ->  'Both sexes 50 to 54'
+    B5559  ->  'Both sexes 55 to 59'
+    B6064  ->  'Both sexes 60 to 64'
+    B6569  ->  'Both sexes 65 to 69'
+    B7074  ->  'Both sexes 70 to 74'
+    B7579  ->  'Both sexes 75 to 79'
+    B8084  ->  'Both sexes 80 to 84'
+    B8589  ->  'Both sexes 85 to 89'
+    B90PL  ->  'Both sexes 90 and older'
+    B_UNSTATED  ->  'Both sexes unstated'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    ...and 39 more
+    BTOTL says: Both sexes total | Total population (both sexes). (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Tables 4.0-4.19: Total Population by Sex and Age in Years Last Birthday
+    B0004 says: Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Tables 4.0-4.19: Total Population by Sex and Age in Years Last Birthday
+    B0509 says: Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Tables 4.0-4.19: Total Population by Sex and Age in Years Last Birthday
+
+  whole country: THE BAHAMAS (level 0) no published total
+    BTOTL          Both sexes total                         351,461    0.00%
+    B0004          Both sexes 0 to 4                         30,730    0.00%
+    B0509          Both sexes 5 to 9                         31,531    0.00%
+    B1014          Both sexes 10 to 14                       31,858    0.00%
+    B1519          Both sexes 15 to 19                       31,182    0.00%
+    B2024          Both sexes 20 to 24                       26,499    0.00%
+    B2529          Both sexes 25 to 29                       26,466    0.00%
+    B3034          Both sexes 30 to 34                       27,183    0.00%
+    B3539          Both sexes 35 to 39                       29,055    0.00%
+    B4044          Both sexes 40 to 44                       26,238    0.00%
+    B4549          Both sexes 45 to 49                       24,988    0.00%
+    B5054          Both sexes 50 to 54                       19,266    0.00%
+    B5559          Both sexes 55 to 59                       13,728    0.00%
+    B6064          Both sexes 60 to 64                       10,139    0.00%
+    B6569          Both sexes 65 to 69                        8,174    0.00%
+    B7074          Both sexes 70 to 74                        5,889    0.00%
+    B7579          Both sexes 75 to 79                        3,655    0.00%
+    B8084          Both sexes 80 to 84                        2,209    0.00%
+    B8589          Both sexes 85 to 89                        1,028    0.00%
+    B90PL          Both sexes 90 and older                      674    0.00%
+    B_UNSTATED     Both sexes unstated                          969    0.00%
+    MTOTL          Males total                              170,257    0.00%
+    M0004          Males 0 to 4                              15,376    0.00%
+    M0509          Males 5 to 9                              15,704    0.00%
+    M1014          Males 10 to 14                            15,942    0.00%
+    M1519          Males 15 to 19                            15,686    0.00%
+    M2024          Males 20 to 24                            13,140    0.00%
+    M2529          Males 25 to 29                            12,627    0.00%
+    M3034          Males 30 to 34                            13,102    0.00%
+    M3539          Males 35 to 39                            13,935    0.00%
+    M4044          Males 40 to 44                            12,629    0.00%
+    M4549          Males 45 to 49                            12,038    0.00%
+    M5054          Males 50 to 54                             9,025    0.00%
+    M5559          Males 55 to 59                             6,502    0.00%
+    M6064          Males 60 to 64                             4,747    0.00%
+    M6569          Males 65 to 69                             3,702    0.00%
+    M7074          Males 70 to 74                             2,610    0.00%
+    M7579          Males 75 to 79                             1,545    0.00%
+    M8084          Males 80 to 84                               885    0.00%
+    M8589          Males 85 to 89                               367    0.00%
+    M90PL          Males 90 and older                           183    0.00%
+    M_UNSTATED     Males unstated                               512    0.00%
+    FTOTL          Females total                            181,204    0.00%
+    F0004          Females 0 to 4                            15,354    0.00%
+    F0509          Females 5 to 9                            15,827    0.00%
+    F1014          Females 10 to 14                          15,916    0.00%
+    F1519          Females 15 to 19                          15,496    0.00%
+    F2024          Females 20 to 24                          13,359    0.00%
+    F2529          Females 25 to 29                          13,839    0.00%
+    F3034          Females 30 to 34                          14,081    0.00%
+    F3539          Females 35 to 39                          15,120    0.00%
+    F4044          Females 40 to 44                          13,609    0.00%
+    F4549          Females 45 to 49                          12,950    0.00%
+    F5054          Females 50 to 54                          10,241    0.00%
+    F5559          Females 55 to 59                           7,226    0.00%
+    F6064          Females 60 to 64                           5,392    0.00%
+    F6569          Females 65 to 69                           4,472    0.00%
+    F7074          Females 70 to 74                           3,279    0.00%
+    F7579          Females 75 to 79                           2,110    0.00%
+    F8084          Females 80 to 84                           1,324    0.00%
+    F8589          Females 85 to 89                             661    0.00%
+    F90PL          Females 90 and older                         491    0.00%
+    F_UNSTATED     Females unstated                             457    0.00%
+
+--- Households: 19 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  denominator: none found
+  32 group columns:
+    HHD_THOU  ->  'Total households'
+    HHD_HS1  ->  '1 person households'
+    HHD_HS2  ->  '2 person households'
+    HHD_HS3  ->  '3 person households'
+    HHD_HS4  ->  '4 person households'
+    HHD_HS5  ->  '5 person households'
+    HHD_HS6  ->  '6 person households'
+    HHD_HS7  ->  '7 person households'
+    HHD_HS8  ->  '8 person households'
+    HHD_HS9  ->  '9 person households'
+    HHD_HS10  ->  '10 person households'
+    HHD_HS11  ->  '11 person households'
+    HHD_HS12PL  ->  '12 or more person households'
+    HHD_OWN  ->  'Fully owned'
+    HHD_MORT  ->  'Mortgaged'
+    HHD_RENT  ->  'Rented'
+    HHD_RENTF  ->  'Rented for free'
+    HHD_LEASE  ->  'Leased'
+    HHD_OTHER  ->  'Other tenure'
+    SRV_PUBPD  ->  'Public water piped into dwelling'
+    SRV_PUBPY  ->  'Public water piped into yard'
+    SRV_PRVPD  ->  'Private water piped into dwelling'
+    SRV_PRVNP  ->  'Private water not piped'
+    SRV_PUBSP  ->  'Public water from stand pipe'
+    ...and 8 more
+    HHD_THOU says: Total households | Total number of households. Original field name: "Total." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 18.0. Private Dwellings By Household Size and Number of Bedrooms
+    HHD_HS1 says: 1 person households | The number of households with one person. Original field name: "1." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 18.0. Private Dwellings By Household Size and Number of Bedrooms
+    HHD_HS2 says: 2 person households | The number of households with two people. Original field name: "2." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 18.0. Private Dwellings By Household Size and Number of Bedrooms
+
+  whole country: THE BAHAMAS (level 0) no published total
+    HHD_THOU       Total households                         102,758    0.00%
+    HHD_HS1        1 person households                       18,220    0.00%
+    HHD_HS2        2 person households                       19,772    0.00%
+    HHD_HS3        3 person households                       21,668    0.00%
+    HHD_HS4        4 person households                       19,504    0.00%
+    HHD_HS5        5 person households                       10,452    0.00%
+    HHD_HS6        6 person households                        5,701    0.00%
+    HHD_HS7        7 person households                        3,305    0.00%
+    HHD_HS8        8 person households                        1,800    0.00%
+    HHD_HS9        9 person households                        1,002    0.00%
+    HHD_HS10       10 person households                         603    0.00%
+    HHD_HS11       11 person households                         307    0.00%
+    HHD_HS12PL     12 or more person households                 424    0.00%
+    HHD_OWN        Fully owned                               37,109    0.00%
+    HHD_MORT       Mortgaged                                 23,434    0.00%
+    HHD_RENT       Rented                                    35,844    0.00%
+    HHD_RENTF      Rented for free                            5,665    0.00%
+    HHD_LEASE      Leased                                       444    0.00%
+    HHD_OTHER      Other tenure                                 262    0.00%
+    SRV_PUBPD      Public water piped into dwelling          61,422    0.00%
+    SRV_PUBPY      Public water piped into yard               1,657    0.00%
+    SRV_PRVPD      Private water piped into dwelling         31,526    0.00%
+    SRV_PRVNP      Private water not piped                    2,040    0.00%
+    SRV_PUBSP      Public water from stand pipe               2,351    0.00%
+    SRV_PUBWT      Public water from well or tank             2,041    0.00%
+    SRV_RAIN       Water from rain water system               1,094    0.00%
+    SRV_WOTHR      Water from other source                      627    0.00%
+    SRV_SEWER      Sewerage                                  13,378    0.00%
+    SRV_SEPTIC     Septic tank                               85,728    0.00%
+    SRV_PITLAT     Pit latrine                                2,125    0.00%
+    SRV_SOTHR      Other sewage type                          1,318    0.00%
+    SRV_NOSEW      No sewage type                               209    0.00%
+
+--- Individuals: 19 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  denominator: 'Total population'
+  42 group columns:
+    RCE_BLK  ->  'Black'
+    RCE_BLKWHT  ->  'Black and White'
+    RCE_BLKOTH  ->  'Black and other'
+    RCE_WHT  ->  'White'
+    RCE_WHTOTH  ->  'White and other'
+    RCE_ASIAN  ->  'Asian'
+    RCE_ESTIND  ->  'East Indian'
+    RCE_OTHER  ->  'Other race'
+    RCE_NS  ->  'Race not stated'
+    CIT_BHS  ->  'The Bahamas citizenship'
+    CIT_HTI  ->  'Haiti citizenship'
+    CIT_GUY  ->  'Guyana citizenship'
+    CIT_JAM  ->  'Jamaica citizenship'
+    CIT_CAN  ->  'Canada citizenship'
+    CIT_USA  ->  'United States citizenship'
+    CIT_GBR  ->  'United Kingdom citizenship'
+    CIT_OTHER  ->  'Other citizenship'
+    CIT_NS  ->  'Citizenship not stated'
+    RLG_ANG  ->  'Anglican'
+    RLG_AOG  ->  'Assembly of God'
+    RLG_BPT  ->  'Baptist'
+    RLG_BRETH  ->  'Brethren'
+    RLG_COG  ->  'Church of God'
+    RLG_GODX  ->  'Greek Orthodox'
+    ...and 18 more
+    RCE_BLK says: Black | Black population. Original field name: "Black." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 8.0. Total Population by Sex, Age Group and Racial Group
+    RCE_BLKWHT says: Black and White | Black and White population. Original field name: "Black And White." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 8.0. Total Population by Sex, Age Group and Racial Group
+    RCE_BLKOTH says: Black and other | Black and other race population. Original field name: "Black And Other." (May 04, 2010) | The Commonwealth of The Bahamas 2010 Census of Population and Housing, 2012, Table 8.0. Total Population by Sex, Age Group and Racial Group
+
+  whole country: THE BAHAMAS (level 0) published=351,461 summed=1,054,383 ratio=3.000
+    RCE_BLK        Black                                    318,493   90.62%
+    RCE_BLKWHT     Black and White                            7,394    2.10%
+    RCE_BLKOTH     Black and other                            2,036    0.58%
+    RCE_WHT        White                                     16,598    4.72%
+    RCE_WHTOTH     White and other                            1,263    0.36%
+    RCE_ASIAN      Asian                                      1,429    0.41%
+    RCE_ESTIND     East Indian                                  875    0.25%
+    RCE_OTHER      Other race                                   956    0.27%
+    RCE_NS         Race not stated                            2,417    0.69%
+    CIT_BHS        The Bahamas citizenship                  290,725   82.72%
+    CIT_HTI        Haiti citizenship                         39,144   11.14%
+    CIT_GUY        Guyana citizenship                         1,109    0.32%
+    CIT_JAM        Jamaica citizenship                        5,572    1.59%
+    CIT_CAN        Canada citizenship                         1,243    0.35%
+    CIT_USA        United States citizenship                  4,380    1.25%
+    CIT_GBR        United Kingdom citizenship                 1,442    0.41%
+    CIT_OTHER      Other citizenship                          5,570    1.58%
+    CIT_NS         Citizenship not stated                     2,276    0.65%
+    RLG_ANG        Anglican                                  48,006   13.66%
+    RLG_AOG        Assembly of God                            2,397    0.68%
+    RLG_BPT        Baptist                                  122,500   34.85%
+    RLG_BRETH      Brethren                                   5,781    1.64%
+    RLG_COG        Church of God                              6,732    1.92%
+    RLG_GODX       Greek Orthodox                               447    0.13%
+    RLG_JVW        Jehovah's Witness                          3,762    1.07%
+    RLG_LUT        Lutheran                                     376    0.11%
+    RLG_MTH        Methodist                                 12,512    3.56%
+    RLG_PTC        Pentecostal                               31,358    8.92%
+    RLG_PBT        Presbyterian                                 728    0.21%
+    RLG_RMC        Roman Catholic                            42,287   12.03%
+    RLG_SDA        Seventh Day Adventist                     15,441    4.39%
+    RLG_MOR        Mormon                                       301    0.09%
+    RLG_OTHC       Other Christian                           41,214   11.73%
+    RLG_BAHAI      Bahai                                         65    0.02%
+    RLG_HIN        Hindu                                        428    0.12%
+    RLG_MSL        Muslim                                       306    0.09%
+    RLG_JEW        Jewish                                       191    0.05%
+    RLG_RASTA      Rastafarian                                  790    0.22%
+    RLG_ONCHR      Other non-Christian                          228    0.06%
+    RLG_OTHER      Other religion                                 0    0.00%
+    RLG_WORL       Without religion                           6,561    1.87%
+    RLG_NS         Religion not stated                        9,050    2.57%
+
+  furthest from its own total: NEW PROVIDENCE (level 1) published=246,329 summed=738,987 ratio=3.000
+    RCE_BLK        Black                                    226,173   91.82%
+    RCE_BLKWHT     Black and White                            4,572    1.86%
+    RCE_BLKOTH     Black and other                            1,396    0.57%
+    RCE_WHT        White                                      9,436    3.83%
+    RCE_WHTOTH     White and other                              717    0.29%
+    RCE_ASIAN      Asian                                        992    0.40%
+    RCE_ESTIND     East Indian                                  611    0.25%
+    RCE_OTHER      Other race                                   706    0.29%
+    RCE_NS         Race not stated                            1,726    0.70%
+    CIT_BHS        The Bahamas citizenship                  201,808   81.93%
+    CIT_HTI        Haiti citizenship                         29,743   12.07%
+    CIT_GUY        Guyana citizenship                           589    0.24%
+    CIT_JAM        Jamaica citizenship                        4,563    1.85%
+    CIT_CAN        Canada citizenship                           854    0.35%
+    CIT_USA        United States citizenship                  2,353    0.96%
+    CIT_GBR        United Kingdom citizenship                 1,018    0.41%
+    CIT_OTHER      Other citizenship                          3,730    1.51%
+    CIT_NS         Citizenship not stated                     1,671    0.68%
+    RLG_ANG        Anglican                                  32,667   13.26%
+    RLG_AOG        Assembly of God                            1,311    0.53%
+    RLG_BPT        Baptist                                   87,757   35.63%
+    RLG_BRETH      Brethren                                   3,600    1.46%
+    RLG_COG        Church of God                              4,066    1.65%
+    RLG_GODX       Greek Orthodox                               341    0.14%
+    RLG_JVW        Jehovah's Witness                          2,556    1.04%
+    RLG_LUT        Lutheran                                     231    0.09%
+    RLG_MTH        Methodist                                  7,760    3.15%
+    RLG_PTC        Pentecostal                               21,568    8.76%
+    RLG_PBT        Presbyterian                                 497    0.20%
+    RLG_RMC        Roman Catholic                            31,123   12.63%
+    RLG_SDA        Seventh Day Adventist                     11,710    4.75%
+    RLG_MOR        Mormon                                       218    0.09%
+    RLG_OTHC       Other Christian                           28,769   11.68%
+    RLG_BAHAI      Bahai                                         47    0.02%
+    RLG_HIN        Hindu                                        305    0.12%
+    RLG_MSL        Muslim                                       237    0.10%
+    RLG_JEW        Jewish                                       119    0.05%
+    RLG_RASTA      Rastafarian                                  589    0.24%
+    RLG_ONCHR      Other non-Christian                          194    0.08%
+    RLG_OTHER      Other religion                                 0    0.00%
+    RLG_WORL       Without religion                           4,760    1.93%
+    RLG_NS         Religion not stated                        5,904    2.40%
+
+  furthest from its own total: GRAND BAHAMA (level 1) published=51,368 summed=154,104 ratio=3.000
+    RCE_BLK        Black                                     46,904   91.31%
+    RCE_BLKWHT     Black and White                            1,068    2.08%
+    RCE_BLKOTH     Black and other                              379    0.74%
+    RCE_WHT        White                                      1,841    3.58%
+    RCE_WHTOTH     White and other                              244    0.48%
+    RCE_ASIAN      Asian                                        347    0.68%
+    RCE_ESTIND     East Indian                                  163    0.32%
+    RCE_OTHER      Other race                                   133    0.26%
+    RCE_NS         Race not stated                              289    0.56%
+    CIT_BHS        The Bahamas citizenship                   44,886   87.38%
+    CIT_HTI        Haiti citizenship                          2,696    5.25%
+    CIT_GUY        Guyana citizenship                           214    0.42%
+    CIT_JAM        Jamaica citizenship                          575    1.12%
+    CIT_CAN        Canada citizenship                           246    0.48%
+    CIT_USA        United States citizenship                    925    1.80%
+    CIT_GBR        United Kingdom citizenship                   300    0.58%
+    CIT_OTHER      Other citizenship                          1,247    2.43%
+    CIT_NS         Citizenship not stated                       279    0.54%
+    RLG_ANG        Anglican                                   7,566   14.73%
+    RLG_AOG        Assembly of God                              497    0.97%
+    RLG_BPT        Baptist                                   17,283   33.65%
+    RLG_BRETH      Brethren                                     324    0.63%
+    RLG_COG        Church of God                                784    1.53%
+    RLG_GODX       Greek Orthodox                                82    0.16%
+    RLG_JVW        Jehovah's Witness                            744    1.45%
+    RLG_LUT        Lutheran                                     114    0.22%
+    RLG_MTH        Methodist                                  1,338    2.60%
+    RLG_PTC        Pentecostal                                4,651    9.05%
+    RLG_PBT        Presbyterian                                 145    0.28%
+    RLG_RMC        Roman Catholic                             5,905   11.50%
+    RLG_SDA        Seventh Day Adventist                      1,791    3.49%
+    RLG_MOR        Mormon                                        57    0.11%
+    RLG_OTHC       Other Christian                            7,459   14.52%
+    RLG_BAHAI      Bahai                                         12    0.02%
+    RLG_HIN        Hindu                                         91    0.18%
+    RLG_MSL        Muslim                                        46    0.09%
+    RLG_JEW        Jewish                                        38    0.07%
+    RLG_RASTA      Rastafarian                                   99    0.19%
+    RLG_ONCHR      Other non-Christian                           18    0.04%
+    RLG_OTHER      Other religion                                 0    0.00%
+    RLG_WORL       Without religion                           1,036    2.02%
+    RLG_NS         Religion not stated                        1,288    2.51%
+
+--- 2019 Population Estimates: 19 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  denominator: 'Both sexes population estimate'
+  3 group columns:
+    EST_B0014  ->  'Both sexes 0 to 14 population estimate'
+    EST_B1564  ->  'Both sexes 15 to 64 population estimate'
+    EST_B65PL  ->  'Both sexes 65 and older population estimate'
+    EST_B0014 says: Both sexes 0 to 14 population estimate | Total population estimate age 0 - 14 (both sexes). Original field name: "T_00_14." (September 09, 2019) | Bahamas - Subnational Population Statistics, 2019, bhs_admpop_2019
+    EST_B1564 says: Both sexes 15 to 64 population estimate | Total population estimate age 15 - 64 (both sexes). Original field name: "T_15_64." (September 09, 2019) | Bahamas - Subnational Population Statistics, 2019, bhs_admpop_2019
+    EST_B65PL says: Both sexes 65 and older population estimate | Total population estimate age 65 and older (both sexes). Original field name: "T_65plus." (September 09, 2019) | Bahamas - Subnational Population Statistics, 2019, bhs_admpop_2019
+
+  whole country: THE BAHAMAS (level 0) published=391,476 summed=391,476 ratio=1.000
+    EST_B0014      Both sexes 0 to 14 population esti        78,293   20.00%
+    EST_B1564      Both sexes 15 to 64 population est       277,949   71.00%
+    EST_B65PL      Both sexes 65 and older population        35,234    9.00%
+
+--- Hurricanes: 19 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  THE BAHAMAS
+  ADM_LEVEL 1: 18 areas  NEW PROVIDENCE, GRAND BAHAMA, ABACO, ACKLINS, ANDROS, BERRY ISLANDS, BIMINI, CAT ISLAND, CROOKED ISLAND AND LONG CAY, ELEUTHERA, EXUMA AND CAYS, HARBOUR ISLAND, INAGUA, LONG ISLAND, MAYAGUANA, RAGGED ISLAND, SAN SALVADOR AND RUM CAY, SPANISH WELLS
+  denominator: 'Population in shelters, Matthew'
+  17 group columns:
+    HR_THD_MAT  ->  'Total housing damage, Matthew'
+    HR_L1D_MAT  ->  'Level 1 housing damage, Matthew'
+    HR_L2D_MAT  ->  'Level 2 housing damage, Matthew'
+    HR_L3D_MAT  ->  'Level 3 housing damage, Matthew'
+    HR_L4D_MAT  ->  'Level 4 housing damage, Matthew'
+    HR_SHL_IRM  ->  'Population in shelters, Irma'
+    HR_THD_IRM  ->  'Total housing damage, Irma'
+    HR_L1D_IRM  ->  'Level 1 housing damage, Irma'
+    HR_L2D_IRM  ->  'Level 2 housing damage, Irma'
+    HR_L3D_IRM  ->  'Level 3 housing damage, Irma'
+    HR_L4D_IRM  ->  'Level 4 housing damage, Irma'
+    HR_SHL_DOR  ->  'Population in shelters, Dorian'
+    HR_THD_DOR  ->  'Total housing damage, Dorian'
+    HR_L1D_DOR  ->  'Level 1 housing damage, Dorian'
+    HR_L2D_DOR  ->  'Level 2 housing damage, Dorian'
+    HR_L3D_DOR  ->  'Level 3 housing damage, Dorian'
+    HR_L4D_DOR  ->  'Level 4 housing damage, Dorian'
+    HR_THD_MAT says: Total housing damage, Matthew | Total number of housing units damaged, Matthew. Original field name: "Total Housing Damage, Matthew." (October 07, 2016) | Assessment of the Effects and Impacts of Hurricane Matthew: The Bahamas, 2020, Table 7 - Summary of levels of damage to housing by district, as of 29 October 2016
+    HR_L1D_MAT says: Level 1 housing damage, Matthew | Total number of housing units with level 1 damage, Matthew. Original field name: "Level 1 Housing Damage, Matthew." (October 07, 2016) | Assessment of the Effects and Impacts of Hurricane Matthew: The Bahamas, 2020, Table 7 - Summary of levels of damage to housing by district, as of 29 October 2016
+    HR_L2D_MAT says: Level 2 housing damage, Matthew | Total number of housing units with level 2 damage, Matthew. Original field name: "Level 2 Housing Damage, Matthew." (October 07, 2016) | Assessment of the Effects and Impacts of Hurricane Matthew: The Bahamas, 2020, Table 7 - Summary of levels of damage to housing by district, as of 29 October 2016
+
+  whole country: THE BAHAMAS (level 0) published=5,240 summed=34,262 ratio=6.539
+    HR_THD_MAT     Total housing damage, Matthew              2,630   50.19%
+    HR_L1D_MAT     Level 1 housing damage, Matthew            1,108   21.15%
+    HR_L2D_MAT     Level 2 housing damage, Matthew              605   11.55%
+    HR_L3D_MAT     Level 3 housing damage, Matthew              809   15.44%
+    HR_L4D_MAT     Level 4 housing damage, Matthew              108    2.06%
+    HR_SHL_IRM     Population in shelters, Irma               3,515   67.08%
+    HR_THD_IRM     Total housing damage, Irma                   419    8.00%
+    HR_L1D_IRM     Level 1 housing damage, Irma                 175    3.34%
+    HR_L2D_IRM     Level 2 housing damage, Irma                 102    1.95%
+    HR_L3D_IRM     Level 3 housing damage, Irma                  80    1.53%
+    HR_L4D_IRM     Level 4 housing damage, Irma                  62    1.18%
+    HR_SHL_DOR     Population in shelters, Dorian             6,227  118.84%
+    HR_THD_DOR     Total housing damage, Dorian               9,211  175.78%
+    HR_L1D_DOR     Level 1 housing damage, Dorian             1,585   30.25%
+    HR_L2D_DOR     Level 2 housing damage, Dorian             2,377   45.36%
+    HR_L3D_DOR     Level 3 housing damage, Dorian             3,064   58.47%
+    HR_L4D_DOR     Level 4 housing damage, Dorian             2,185   41.70%
+
+  furthest from its own total: ABACO (level 1) published=618 summed=15,786 ratio=25.544
+    HR_SHL_IRM     Population in shelters, Irma                 105   16.99%
+    HR_SHL_DOR     Population in shelters, Dorian             3,019  488.51%
+    HR_THD_DOR     Total housing damage, Dorian               6,331  1024.43%
+    HR_L1D_DOR     Level 1 housing damage, Dorian               623  100.81%
+    HR_L2D_DOR     Level 2 housing damage, Dorian               934  151.13%
+    HR_L3D_DOR     Level 3 housing damage, Dorian             2,819  456.15%
+    HR_L4D_DOR     Level 4 housing damage, Dorian             1,955  316.34%
+
+  furthest from its own total: GRAND BAHAMA (level 1) published=813 summed=11,318 ratio=13.921
+    HR_THD_MAT     Total housing damage, Matthew              2,040  250.92%
+    HR_L1D_MAT     Level 1 housing damage, Matthew              800   98.40%
+    HR_L2D_MAT     Level 2 housing damage, Matthew              495   60.89%
+    HR_L3D_MAT     Level 3 housing damage, Matthew              667   82.04%
+    HR_L4D_MAT     Level 4 housing damage, Matthew               78    9.59%
+    HR_SHL_IRM     Population in shelters, Irma                 398   48.95%
+    HR_THD_IRM     Total housing damage, Irma                    82   10.09%
+    HR_L1D_IRM     Level 1 housing damage, Irma                  37    4.55%
+    HR_L2D_IRM     Level 2 housing damage, Irma                  23    2.83%
+    HR_L3D_IRM     Level 3 housing damage, Irma                  12    1.48%
+    HR_L4D_IRM     Level 4 housing damage, Irma                  10    1.23%
+    HR_SHL_DOR     Population in shelters, Dorian               916  112.67%
+    HR_THD_DOR     Total housing damage, Dorian               2,880  354.24%
+    HR_L1D_DOR     Level 1 housing damage, Dorian               962  118.33%
+    HR_L2D_DOR     Level 2 housing damage, Dorian             1,443  177.49%
+    HR_L3D_DOR     Level 3 housing damage, Dorian               245   30.14%
+    HR_L4D_DOR     Level 4 housing damage, Dorian               230   28.29%
