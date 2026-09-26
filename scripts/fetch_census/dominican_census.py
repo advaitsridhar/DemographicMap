@@ -570,7 +570,32 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=3000)
     ap.add_argument("--labels", action="store_true",
                     help="print Cuadro 2's areas in order, with the level each is read as")
+    ap.add_argument("--in-2010", dest="in_2010",
+                    help="comma-separated names to find among the 2010 census's areas of every "
+                         "level in the US Census Bureau's workbook, with their parents")
     args = ap.parse_args()
+    if args.in_2010:
+        import openpyxl
+        from . import uscb
+        wanted = {fold(n) for n in args.in_2010.split(",")}
+        url = uscb.workbook_url(uscb_age_sex.COUNTRIES[0].dataset)
+        book = openpyxl.load_workbook(io.BytesIO(http_get(url, binary=True, cache=False)),
+                                      read_only=True, data_only=True)
+        for sheet in ("Population", "Age-Sex"):
+            try:
+                rows = uscb.sheet_rows(book, sheet)
+            except SystemExit:
+                continue
+            names, _ = uscb.columns(rows)
+            at = {n: i for i, n in enumerate(names) if n}
+            for row in rows[2:]:
+                cells = {k: row[i] for k, i in at.items()
+                         if k.startswith("ADM") or k in ("GEO_MATCH", "NSO_NAME", "BTOTL",
+                                                          "POP_BTOTL")}
+                if any(fold(str(v or "")) in wanted for k, v in cells.items()
+                       if k.endswith("_NAME") or k == "NSO_NAME"):
+                    print(f"  {sheet}: {cells}")
+        return 0
     if args.labels:
         rows, named = workbook_rows(*AGES)
         print(f"  the index names {len(named)} provinces: {sorted(named)}")
