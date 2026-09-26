@@ -1,21 +1,227 @@
-  POBLACIO.SEXO by canton: 81 areas
-  POBLACIO.EDAD by canton: 81 areas
-  POBLACIO.CONSIND by canton: 81 areas
-  POBLACIO.PUEBLOIN by canton: 81 areas
-  POBLACIO.ETNIA by canton: 81 areas
-  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'indigenous': 0, 'people': 0, 'ethnic': 0}; every question's answers and not-applicables make 4,301,712
-  POBLACIO.SEXO by distrito: 472 areas
-  POBLACIO.EDAD by distrito: 472 areas
-  POBLACIO.CONSIND by distrito: 472 areas
-  POBLACIO.PUEBLOIN by distrito: 472 areas
-  POBLACIO.ETNIA by distrito: 472 areas
-  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'indigenous': 0, 'people': 8, 'ethnic': 0}; every question's answers and not-applicables make 4,301,712
-  every canton is the sum of its districts, for every question
-  Río Cuarto is district 20306 of Grecia, which is written without it
-  Puerto Jiménez is district 60702 of Golfito, which is written without it
-  83 units making INEC's 4,301,712; every question counts each unit's people, and P08 and P10 split P07 exactly
-  83 of 83 cantons bound to their polygons; not: []
-  polygons with no canton: []
-  every province's cantons make the province
-  wrote data/processed/costa_rica_census.json (323 kB)
-  wrote costa_rica_census.json: 90 records (83 cantons)
+probe_pdf: http://redatam.ine.gob.ve/redatameval/Pdf/Meta_Persona.pdf
+  214,715 bytes
+  24 pages
+probe_pdf: 24 pages, 7 mention ['idioma', 'Idioma', 'IDIOMA', 'habla', 'Habla', 'lengua', 'religi', 'Religi', 'indígena', 'reconoce']
+=== front matter ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   República Bolivariana 
+de Venezuela 
+Metadatos de  
+ 
+
+=== pages mentioning ['idioma', 'Idioma', 'IDIOMA', 'habla', 'Habla', 'lengua', 'religi', 'Religi', 'indígena', 'reconoce'] (first 12) ===
+
+--- page 3 ----------------------------------------------------
+a ser utilizados en el tratamiento de esta variable son los siguientes:
+Fecha de nacimiento: Se refiere  a la fecha p recisa (día, mes y año) en que nació la persona
+empadronada.
+Edad cumplida en años:  Es el período transcurrido entre la fecha de nacimiento de la
+persona y el   día en que fue empadronada, expresado en años completos. En el caso de los
+menores de un (1) año, se anotará el número de meses transcurridos desde el nacimiento.
+CONCEPTOS DE RELACIÓN DE PARENTESCO:
+ Jefe o Jefa del Hogar:  Miembro del Hogar, hombre o mujer  mayor de quince (15)
+años, que las otras personas del hogar reconocen como tal por razones de autoridad,
+parentesco, edad, respeto, por dependencia económica, o por cualquier otra razón
+que consideren los integrantes del hogar.
+ Esposa(o) o compañera(o): Persona unida con el Jefe o Jefa del Hogar por lazos de
+matrimonio o unión libre.
+ Hijo(a): Descendiente directo del Jefe o Jefa del Hogar. Se incluye al hijo(a)
+adoptivo(a) y de crianza.
+ Hijastro(a): Descendiente directo del cónyuge del jefe o jefa del hogar, en primer
+grado.
+
+--- page 6 ----------------------------------------------------
+4.  ¿PERTENECE A ALGÚN PUEBLO INDÍGENA O ETNIA?
+Se considera Comunidad Indígena a todo asentamiento cuya población mayoritaria se ha
+declarado perteneciente a un pue blo indígena (o a varios en el caso de las comunidades
+multiétnicas). Se caracteriza por tener instituciones propias y formas de emplazamiento que
+les distinguen de otras comunidades no indígenas.
+Los pueblos indígenas son los habitantes originarios del país, los cuales conservan sus
+identidades culturales específicas, idiomas, territorios y sus propias instituciones y
+organizaciones sociales, económicas y políticas, que les distinguen de otros sectores de la
+colectividad nacional.
+Se trata de obtener la  declaración espontánea de las personas nacidas en el territorio
+nacional acerca de su identidad o no con algún pueblo indígena.
+Si la respuesta es afirmativa, se investiga asimismo el nombre del pueblo indígena al cual
+pertenece la persona empadronada.
+PARA PERSONAS DE 3 AÑOS O MÁS HAGA LAS PREGUNTAS 5 Y 6. PERSONAS
+MENORES DE  3 AÑOS PASE A  PREGUNTA 8.
+5. QUÉ IDIOMA(S) HABLA:
+Se refiere al reconocimiento espontáneo de hablar o no el idioma del pueblo indígena al
+cual la persona se reconoce como perteneciente, así como si habla otros idiomas diferentes
+al idioma indígena.
+ Cada uno de los pueblos indígenas que habitan el país habla su propio idioma  que le
+diferencia del castellano.
+6. ¿SABE LEER Y ESCRIBIR EL IDIOMA DEL PUEBLO INDÍGENA O ETNIA  AL CUAL
+PERTENECE?
+ Se trata de determinar el grado de alfabetismo en idioma indígena en la población que se
+reconoce como perteneciente a algún pueblo indígena  o etnia, con miras al desarrollo del
+Instituto de Idiomas Indígenas.
+7. SEGÚN SUS RASGOS FÍSICOS, ASCENDENCIA FAMILIAR, CULTURA Y TRADICIONES
+SE  CONSIDERA :
+Se refiere a la declaración espontánea de las personas residentes en el territorio nacional
+acerca de su identidad.
+ Negra/Negro: Es toda persona de piel fuertemente pigment ada, pelo muy
+rizado, nariz achatada y labios gruesos. Puede tener prácticas culturales de
+origen africano, aún cuando no las identifique como tales.
+
+--- page 7 ----------------------------------------------------
+ Afrodescendiente: Descendientes de africanos y/o africanas que sobrevivieron
+a la trata negrera, a la esc lavitud y forman parte de la diáspora africana en las
+Américas y el Caribe y/o es aquella persona que reconoce en si misma
+la descendencia africana sobre la base de su percepción, valoración y
+ponderación de los componentes históricos, generacionales,  territoriales,
+culturales y/o fenotípicos.
+ Morena/Moreno: Es toda persona cuyas características fenotípicas son menos
+marcadas o pronunciadas que de la persona definida como negra o negro. Es
+un término que en algunos contextos puede ser utilizado para suaviza r las
+implicaciones discriminatorias que conlleva  ser una persona negra.
+ Blanca/blanco: Personas cuya tonalidad de piel es clara y que por ello suele ser
+asociada a poblaciones de origen europeo. Aunque literalmente implica
+cuestiones externas como la pi el clara, forma y color del cabello y los ojos,
+entre otras, "blanco" ha sido usado de distintas maneras en diferentes periodos
+históricos y lugares. Como otras palabras comunes para las etnias humanas, su
+definición precisa es algo confusa.
+ Otra: Es toda persona que no se identifica con ninguna de las opciones
+anteriores. En este caso se debe indagar cómo se reconoce la persona que está
+siendo empadronada.
+         ¿Cuál?-------------------------
+8. TIENE ALGUNA DE LAS SIGUIENTES DEFICIENCIAS, CONDICIONES O
+DISCAPACIDADES:
+DISCAPACIDAD:
+ Es una condición que puede manifestarse como:
+a) Limitación en la función biológica.
+b) Limitación en la actividad o rutina.
+
+--- page 8 ----------------------------------------------------
+ VISUAL: Pérdida o disminución de la  función visual, total o parcial, por uno o
+ambos ojos aunque  utilice lentes.  (Ej. Ciego total, casi ciego).
+ AUDITIVA: Pérdida o disminución de la función de la audición aunque utilice
+auxiliares auditivos. (ej. Sordo total o casi sordo).
+ NEUROLÓGICA: Perdida o disminución de la función motora y sensitiva.  (Ej:
+parálisis de brazos o piernas).
+ MÚSCULO ESQUELÉTICA: Pérdida o deformidad total o parcial de partes del
+cuerpo. (Ej: Ausencia de brazos o piernas, baja talla, etc)
+ VOZ Y HABLA: Pérdida o dificultad para la emisión de la voz y/o habla. (Ej:
+Mudo o con problemas importantes al hablar)
+ CARDIOVASCULAR: Limitación o dificultad para realizar actividades físicas
+que requieren moderado esfuerzo. (Ej: persona infartada del corazón).
+ MENTAL-INTELECTUAL: Limitación del desarrollo de las funciones
+intelectuales. (Ej: Síndrome de down, retardo mental, autismo, etc.)
+ RESPIRATORIA: Dificultad para caminar al realizar actividades físicas de
+moderado esfuerzo.  (Ej: Personas que requieren de oxígeno terapéutico o
+artificial para respirar).
+ MENTAL-PSICOSOCIAL: Limitación para integrar situaciones que permitan
+
+--- page 13 ----------------------------------------------------
+alcanzado por la población en lo sistemas de enseñanza existentes en el país, y por la otra, a
+la recolección de datos sobre las personas que cursan estudios al momento del
+empadronamiento.
+ALFABETISMO
+Es la capacidad de las personas para leer y escribir un párrafo sencillo en un idioma
+cualquiera. La UNESCO recomienda su estudio en la población de 10 años y más.
+15. ¿SABE LEER Y ESCRIBIR?
+Se refiere a la capacidad de las personas mayores de tres años para leer y escribir un
+párrafo cualquiera en un idioma cualquiera.
+ASISTENCIA ESCOLAR
+Se refiere a la asistencia o no, en calidad de estudiante en el momento del
+empadronamiento, a cualquier establecimiento de enseñanza, público o  privado, para
+cursar sistemáticamente estudios de cualquier grado, año o semestre, de cualquier nivel
+educativo.
+16. ¿ASISTE  ACTUALMENTE, EN CALIDAD DE ESTUDIANTE, A  ALGÚN
+ESTABLECIMIENTO  DE EDUCAC IÓN INICIAL, PRIMARIA, SECUNDARIA O
+UNIVERSITARIA?
+
+--- page 15 ----------------------------------------------------
+ Misión Ribas: Es el programa educativo alternativo a la educación formal que tiene como
+finalidad incluir a todas aquellas personas que no finalizaron los estudios de educación
+secundaria o media (de 1º a 5º año) así como incorporar a los graduados de la Misión
+Robinson II, hasta la culminación del bachillerato.
+ Educación Intercul tural: La educación intercultural, en su sentido más amplio, tiene
+como misión, la transmisión y participación de los conocimientos, costumbres y
+tradiciones ancestrales. Promueve la afirmación y práctica del educando en su propia
+cosmovisión, en lo cultural, social y científico, así como la apropiación selectiva y crítica
+de elementos culturales de las otras sociedades por parte de los indígenas; también se
+facilita la apropiación de los elementos culturales indígenas por parte de otros sectores
+de la sociedad nacional en forma consciente y crítica.
+ Universidad tradicional -Universidad Militar : Instituciones de enseñanza superior
+formada por diversas facultades y que otorga distintos grados académicos. Estas
+instituciones pueden incluir, además de las facultades, distintos departamentos, colegios,
+centros de investigación y otras entidades. Las universidades pueden ser públicas y
+privadas y el calificativo de tradicional se aplica a aquellas universidades que conforman
+el sector educativo formal y a los Téc nicos Superiores Universitarios. Se incluyen en esta
+categoría a las Universidades Militares.
+
+--- page 19 ----------------------------------------------------
+anteriores, como por ejemplo, persona que no busca trabajo o no quiere o no le
+interesa trabajar, persona que trabaja cuando quiere y la que no puede trabajar por
+incapacidad o enfermedad temporal, persona que recibe ingreso s provenientes de
+beneficios por inversión de capital, alquiler de inmuebles, etc., (rentistas).
+24. DURANTE LA SEMANA PASADA ¿REALIZÓ ALGUNA ACTIVIDAD PRODUCTIVA
+DESTINADA A SU ALIMENTACIÓN Y/O A LA DE LAS PERSONAS QUE INTEGRAN SU
+HOGAR?
+Se trata de determi nar si la actividad productiva que efectúan las personas residentes
+habituales en Comunidades Indígenas o en áreas rurales, está destinada o no al
+autoconsumo de ellos o de los otros miembros de su hogar.
+Si la respuesta es afirmativa, se indaga acerca de cuáles son esas actividades.
+25. QUÉ TIPO DE ACTIVIDAD PRODUCTIVA REALIZÓ:
+(ADMITE MAS DE UNA RESPUESTA)
+ Cultivo: Se refiere a la actividad de trabajo de la tierra con el fin de producir y recolectar
+frutos  vegetales para la alimentación.
+ Extracción Vegetal: Se refiere a la actividad  de sacar,  por medios naturales,  productos
+del entorno que no  se cultivan, como el mangle, palmito, miel  y otros similares.
