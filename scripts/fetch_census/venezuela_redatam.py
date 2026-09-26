@@ -229,8 +229,11 @@ def municipio_counts(by_question: dict[str, list[dict]]) -> dict[str, dict[str, 
         unit["identity_"] = translate(identity, IDENTITY, "identity")
         indigenous = sum(unit["peoples_"].values())
         if indigenous + not_indigenous != people or unit["identity"]["total"] + unasked != people:
-            raise SystemExit(f"venezuela_redatam: {unit['name']}'s questions do not make its "
-                             f"{people:,} people")
+            raise SystemExit(f"venezuela_redatam: {code} {unit['name']}'s questions do not make "
+                             f"its {people:,} people: {indigenous} indigenous and "
+                             f"{not_indigenous} not; {unit['identity']['total']} identities and "
+                             f"{unasked} not asked; peoples {unit['peoples']['rows']}; "
+                             f"identity {unit['identity']['rows']}")
         if unasked < indigenous:
             raise SystemExit(f"venezuela_redatam: {unit['name']}: more indigenous people than "
                              "people the identity question was not put to")
