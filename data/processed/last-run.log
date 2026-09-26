@@ -1,11 +1,39 @@
-
-=== HDX dataset: haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries ===
-    title: Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys
-    org:   us-census-bureau
-    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
-    notes: The geodatabase contains national and subnational boundary feature classes of Haiti for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.  The tabular data contain total population for 2003 (census) and 2015 (population estimates), as well as information relating to education, health, information and communication technology, and transportation.
-    2 resource(s):
-      Geodatabase Haiti.gdb.zip
-             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/7c2903a3-63ac-4965-a6e7-74f65e28dcd9/download/haiti.gdb.zip
-      XLSX   Haiti_uscb_202212.xlsx
-             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx
+https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx
+  270,331 bytes
+  9 sheet(s)
+  -- 'Metadata': 183 rows x 2 cols
+     ['Metadata: Haiti', '']
+     ['Contents', '']
+     ['One metadata tab describing 9 ', '']
+  -- 'Data Dictionary': 305 rows x 4 cols
+     ['Data Dictionary: Haiti', '', '', '']
+     ['Standard Geographic Fields 1 (', '', '', '']
+     ['Field Name', 'Field Alias', 'Field Description', 'Field Data Source']
+  -- 'Population Estimates': 765 rows x 25 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
+     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '', '', '', '0', '', 'HT', 'HA', '', '']
+  -- 'Education': 13 rows x 25 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'EDU_ENO_F', 'EDU_ENPI_F', 'EDU_EPR_F']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Educational attainment, none, ', 'Educational attainment, primar', 'Educational attainment, primar']
+     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '23.7', '33.4', '6.4']
+  -- 'Health': 13 rows x 116 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'LQA_HAWF', 'LQA_HAWM', 'LQA_HASW']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Handwashing source, fixed loca', 'Handwashing source, mobile loc', 'Handwashing source, soap and w']
+     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '18.7', '63.4', '25']
+  -- 'Info and Com Technology': 13 rows x 29 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'ICT_MXTN_F', 'ICT_MXT_F', 'ICT_RAD1_F']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Mass media exposure, newspaper', 'Mass media exposure, televisio', 'Listens to the radio at least ']
+     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '17.6', '32.8', '63.6']
+  -- 'Population': 706 rows x 20 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'POP_BT_C']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Both sexes total']
+     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '', '', '0', '', 'HT', 'HA', '', '', '8373750']
+  -- 'Housing Units': 12 rows x 119 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'HU_UTKA', 'HU_UTTA', 'HU_UTAJ']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Housing unit type, informal', 'Housing unit type, slum', 'Housing unit type, squatting']
+     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '27452', '55575', '354366']
+  -- 'Transportation': 12 rows x 23 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'TSP_MO0', 'TSP_MO1', 'TSP_MO2']
+     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Conveyance type, motorcycle: 0', 'Conveyance type, motorcycle: 1', 'Conveyance type, motorcycle: 2']
+     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '1773368', '18264', '1141']
