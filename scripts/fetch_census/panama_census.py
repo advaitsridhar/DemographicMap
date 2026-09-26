@@ -98,6 +98,7 @@ PEOPLES = {
     "Naso Tjërdi": "Naso", "Naso Tjër Di": "Naso", "Naso": "Naso", "Bokota": "Bokota",
     "Emberá": "Embera", "Wounaan": "Wounaan", "Bri Bri": "Bribri", "Bribri": "Bribri",
     "Otro": "Other indigenous people", "Otro grupo": "Other indigenous people",
+    "Otro grupo indígena": "Other indigenous people",
     "No declarado": "Indigenous (people not stated)",
 }
 AFRO_COLUMNS = [  # (words INEC's header starts with, the map's label)

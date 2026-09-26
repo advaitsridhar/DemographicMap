@@ -965,6 +965,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Mam", "Kʼicheʼ", "Qʼeqchiʼ", "Kaqchikel",
         # Guatemala's census spelling of the people the Factbook writes Xinca.
         "Xinka",
+        # Panama's 2023 census, by the names it prints (Guna for Kuna; the
+        # Naso, whom it also writes Teribe).
+        "Guna", "Buglé", "Naso", "Teribe", "Bokota", "Bribri", "Wounaan",
     ),
     "Indigenous peoples of South America": (
         "Quechua", "Aymara", "Guarani", "Mapuche", "Wayuu", "Nasa", "Embera",
@@ -974,6 +977,18 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # because, left to the patterns, it read as the Philippines' Ata.
         "Atacameño o Lickanantay", "Atacameño", "Lickanantay", "Colla",
         "Diaguita", "Kawésqar", "Yagán", "Chango", "Selk'nam",
+        # Argentina's 2022 census, by the names it prints. Atacama and Kolla
+        # Atacameño are named for the same reason Atacameño is: the patterns
+        # read them as the Philippines' Ata. Günün A Küna, a Patagonian
+        # people, is named because the patterns read it as Panama's Kuna.
+        "Atacama", "Kolla", "Kolla Atacameño", "Günün A Küna", "Qom (Toba)", "Wichí",
+        "Mocoví", "Pilagá", "Nivaclé", "Chorote", "Tapiete", "Chané", "Weenhayek",
+        "Guaycurú", "Avipón", "Comechingón", "Sanavirón", "Huarpe", "Ranquel",
+        "Tehuelche", "Aoniken", "Omaguaca", "Ocloya", "Tilián", "Tastil", "Chicha",
+        "Churumata", "Jujuí", "Lule", "Vilela", "Lule Vilela", "Tonokoté",
+        "Charrúa", "Chana", "Minuán", "Querandí", "Guarayo", "Isoceño", "Iogys",
+        "Fiscara", "Corundí", "Michilingüe", "Toara", "Ansilta", "Mak'A",
+        "Alakaluf", "Wayteca/Chono", "Haush/Maneken",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
@@ -981,6 +996,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # Chile's 2024 census: the Afro-descendant communities of the Azapa
         # and Lluta valleys and of La Chimba, by the names it prints.
         "Afro-Chilean", "Moreno of Azapa", "Black of La Chimba",
+        # Panama's 2023 census: the Afro-descendant groups it asks about.
+        "Afro-Panamanian", "Moreno", "Afro-colonial", "Afro-Antillean",
     ),
 }
 
@@ -1171,6 +1188,9 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
 }
 
 ETHNIC_RESIDUALS: tuple[str, ...] = (
+    # Panama, where its two identity questions overlap past the population
+    # and the bars are the indigenous question's alone: everyone else.
+    "Not indigenous (Afro-descendant or other)",
     "Other ethnicity", "Ethnicity not stated", "No ethnic group",
     "No ethnicity data", "Other Central Africa",
     "Unknown ethnicity", "Not declared", "Not classified", "No ethnicity",
