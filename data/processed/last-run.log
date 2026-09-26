@@ -1,5 +1,21 @@
-  PERSONA.P02 is 'Sexo'
-  PERSONA.P03 is 'Edad'
-  PERSONA.P05 is 'Auto_identificación'
-  PERSONA.P06 is 'Pueblo indígena'
-honduras_census: the crosstab's frame holds something else (19 crosstabs read); its first rows: ['CEPAL/CELADE Redatam+SP 09/26/2026', 'Base de datos', 'C:\\servers\\paises\\hnd\\binhnd\\RpBases\\censos\\censo2013\\Base\\Censo de Poblacion y Vivienda 2013.dic', 'Área Geográfica', 'Toda la Base de Datos', 'Crosstab', 'de Auto_identificación', 'por Pueblo indígena', 'AREA # 01 | ATLANTIDA', 'Auto_identificación | Pueblo indígena', 'Maya -Chortí | Lenca | Miskito | Nahua | Pech | Tolupán | Tawahka | Garífuna | Negro de habla inglesa | Otro | Total', 'Indígena | 220 | 1,419 | 877 | 217 | 106 | 23 | 50 | - | - | 49 | 2,961', 'AfroHondureño | - | - | 2 | 1 | - | - | - | 6,333 | 230 | 1,294 | 7,860', 'Negro (a) | - | - | 3 | 1 | - | - | - | 4,614 | 850 | 1,751 | 7,219', 'Total | 220 | 1,419 | 882 | 219 | 106 | 23 | 50 | 10,947 | 1,080 | 3,094 | 18,040', 'No Aplica : | 380,989', 'AREA # 02 | COLON', 'Auto_identificación | Pueblo indígena', 'Maya -Chortí | Lenca | Miskito | Nahua | Pech | Tolupán | Tawahka | Garífuna | Negro de habla inglesa | Otro | Total', 'Indígena | 382 | 1,494 | 608 | 160 | 258 | 68 | 29 | 2 | - | 311 | 3,312', 'AfroHondureño | 2 | 2 | 3 | - | - | 1 | - | 6,203 | 82 | 793 | 7,086', 'Negro (a) | - | 1 | - | - | - | - | - | 4,367 | 69 | 1,105 | 5,542', 'Total | 384 | 1,497 | 611 | 160 | 258 | 69 | 29 | 10,572 | 151 | 2,209 | 15,940', 'No Aplica : | 255,783', 'AREA # 03 | COMAYAGUA']
+  POBLACIO.SEXO by canton: 81 areas
+  POBLACIO.EDAD by canton: 81 areas
+  POBLACIO.CONSIND by canton: 81 areas
+  POBLACIO.PUEBLOIN by canton: 81 areas
+  POBLACIO.ETNIA by canton: 81 areas
+  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'indigenous': 0, 'people': 0, 'ethnic': 0}; every question's answers and not-applicables make 4,301,712
+  POBLACIO.SEXO by distrito: 472 areas
+  POBLACIO.EDAD by distrito: 472 areas
+  POBLACIO.CONSIND by distrito: 472 areas
+  POBLACIO.PUEBLOIN by distrito: 472 areas
+  POBLACIO.ETNIA by distrito: 472 areas
+  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'indigenous': 0, 'people': 8, 'ethnic': 0}; every question's answers and not-applicables make 4,301,712
+  every canton is the sum of its districts, for every question
+  Río Cuarto is district 20306 of Grecia, which is written without it
+  Puerto Jiménez is district 60702 of Golfito, which is written without it
+  83 units making INEC's 4,301,712; every question counts each unit's people, and P08 and P10 split P07 exactly
+  83 of 83 cantons bound to their polygons; not: []
+  polygons with no canton: []
+  every province's cantons make the province
+  wrote data/processed/costa_rica_census.json (323 kB)
+  wrote costa_rica_census.json: 90 records (83 cantons)
