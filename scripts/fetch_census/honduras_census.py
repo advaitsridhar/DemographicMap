@@ -8,7 +8,7 @@ names first (170.238.108.227) no longer answers; the same base is served at
 181.115.7.199, which is where redatam.org's Honduras page sends a reader
 today. Its processor runs a Redatam+SP program sent to it; this asks it for
 four person questions, each a frequency table broken by department and then
-by municipio.
+by municipio, and for the crosstab of the two identity questions.
 
 What it writes, for the 18 departments and the 297 municipio polygons:
 
@@ -20,8 +20,10 @@ What it writes, for the 18 departments and the 297 municipio polygons:
   identifies (indígena, afrohondureño, negro, mestizo, blanco, otro), and
   P06, which people, asked of everyone who answered indígena, afrohondureño
   or negro. The composition is P06's peoples and P05's mestizo, white and
-  other. P06's "Otro" -- an indigenous, Afro-Honduran or Black person of a
-  people the form does not list -- is its own line.
+  other. P06's "Otro" -- a people the form does not list -- is split by the
+  crosstab of P05 by P06: under indígena it is another indigenous people,
+  under afrohondureño or negro (97% of it nationally) an Afro-Honduran or
+  Black person of no listed people.
 
 Population is not written. The base holds the 7,657,684 people the census
 enumerated; INE's published count, 8,303,771, is that enumeration adjusted
@@ -61,8 +63,8 @@ from scripts.probe_redatam import Session
 
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import bind, fold
-from .isthmus import (by_area, fill_missing, median_age, sex_ratio, single_years, summed,
-                      translate)
+from .isthmus import (by_area, crosstab_program, crosstabs, fill_missing, median_age,
+                      sex_ratio, single_years, summed, translate)
 from .redatam import Server
 
 PORTAL = "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp"
@@ -85,8 +87,12 @@ PEOPLES = {
     "Miskito": "Miskito", "Nahua": "Nahua", "Pech": "Pech", "Tolupán": "Tolupan",
     "Tawahka": "Tawahka", "Garífuna": "Garifuna",
     "Negro de habla inglesa": "English-speaking Black (Honduras)",
-    "Otro": "Other indigenous or Afro-Honduran people",
 }
+# P06's "Otro", by the P05 answer that sent a person to P06.
+OTHER_PEOPLE = "Otro"
+OTHER = {"Indígena": "Other indigenous people",
+         "AfroHondureño": "Afro-Honduran or Black (no people listed)",
+         "Negro (a)": "Afro-Honduran or Black (no people listed)"}
 AGE_ZERO = "edad"
 # INE's name -> the boundary file's, where they differ by more than accents.
 DEPARTMENTS = {"islasdelabahia": "Bay Islands"}
@@ -104,6 +110,55 @@ def fetch(server: Server, level: str) -> dict[str, dict[str, dict[str, Any]]]:
     filled = fill_missing(out, WHO, ENUMERATED)
     log(f"  areas with no table, nobody there having been asked: {filled}; every question's "
         f"answers and not-applicables make the base's {ENUMERATED:,}")
+    pages = server.output(crosstab_program(QUESTIONS["identity"], QUESTIONS["people"], level))
+    attach(out, [t for page in pages for t in crosstabs(page)])
+    log(f"  the crosstab of P05 by P06 agrees with both questions, in every {level.lower()}")
+    return out
+
+
+def attach(out: dict[str, dict[str, dict[str, Any]]], found: list[dict[str, Any]]) -> None:
+    """Put each area's crosstab of P05 by P06 on its P06 table, as "cells".
+
+    Its columns must make P06's counts, and its rows P05's for the answers
+    that lead to P06.
+    """
+    cross: dict[str, dict[str, Any]] = {}
+    for table in found:
+        if not table["area"]:
+            continue
+        if table["area"] in cross:
+            raise SystemExit(f"{WHO}: crosstab: area {table['area']} printed twice")
+        cross[table["area"]] = table
+    for code, table in out["people"].items():
+        crossed = cross.get(code)
+        if crossed is None:
+            if table["total"]:
+                raise SystemExit(f"{WHO}: {table['name']}: {table['total']:,} answered P06 and "
+                                 "the crosstab has no table")
+            crossed = {"cells": {}}
+        by_column: Counter = Counter()
+        for row in crossed["cells"].values():
+            by_column.update({c: n for c, n in row.items() if c != "Total"})
+        if Counter(dict(table["rows"])) != by_column:
+            raise SystemExit(f"{WHO}: {table['name']}: the crosstab's columns are not P06's "
+                             f"counts: {dict(by_column)} against {dict(table['rows'])}")
+        said = dict(out["identity"][code]["rows"])
+        for label, row in crossed["cells"].items():
+            if row["Total"] != said.get(label):
+                raise SystemExit(f"{WHO}: {table['name']}: the crosstab's {label} row makes "
+                                 f"{row['Total']:,}, P05 {said.get(label)}")
+        table["cells"] = {label: {c: n for c, n in row.items() if c != "Total"}
+                          for label, row in crossed["cells"].items()}
+
+
+def added(tables: list[dict[str, Any]]) -> dict[str, Any]:
+    """P06 tables added, their crosstab cells with them."""
+    out = summed(tables)
+    cells: dict[str, Counter] = {}
+    for table in tables:
+        for label, row in table.get("cells", {}).items():
+            cells.setdefault(label, Counter()).update(row)
+    out["cells"] = {label: dict(row) for label, row in cells.items()}
     return out
 
 
@@ -151,8 +206,15 @@ def ages_of(rows: list[tuple[str, int]]) -> Counter:
 def fields(unit: dict[str, dict[str, Any]]) -> dict[str, Any]:
     sexes, _ = translate(unit["sex"]["rows"], SEXES, "sex", WHO)
     identity, _ = translate(unit["identity"]["rows"], IDENTITY, "identity", WHO, ASKED_PEOPLE)
-    peoples, _ = translate(unit["people"]["rows"], PEOPLES, "people", WHO)
-    counts = {**peoples, **identity}
+    counts: Counter = Counter(identity)
+    for said, row in unit["people"]["cells"].items():
+        if said not in OTHER:
+            raise SystemExit(f"{WHO}: a crosstab row this file does not know: {said!r}")
+        peoples, _ = translate([(c, n) for c, n in row.items() if c != OTHER_PEOPLE], PEOPLES,
+                               "people", WHO)
+        counts.update(peoples)
+        counts[OTHER[said]] += row.get(OTHER_PEOPLE, 0)
+    counts = Counter({label: n for label, n in counts.items() if n})
     return {
         "median_age": measure(median_age(ages_of(unit["age"]["rows"])), unit="years", year=YEAR,
                               source=SOURCE),
@@ -167,8 +229,9 @@ def fields(unit: dict[str, dict[str, Any]]) -> dict[str, Any]:
             "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, "
             "Black, mestizo, white or other) and asked everyone who answered indigenous, "
             "Afro-Honduran or Black which people they belong to (P06). The peoples here are "
-            "P06's answers, and mestizo, white and other P05's; \"Other indigenous or "
-            "Afro-Honduran people\" is P06's own \"Otro\". Shares are of the "
+            "P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other "
+            "indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no "
+            "people listed)\" for those who said Afro-Honduran or Black. Shares are of the "
             f"{unit['sex']['total']:,} people the census enumerated here; INE's published "
             "counts add an adjustment for omission that the tabulation base does not."),
         "sources": [{"field": "median_age/sex_ratio/ethnicity", "name": SOURCE, "url": PORTAL,
@@ -200,7 +263,8 @@ def main() -> int:
             raise SystemExit(f"{WHO}: no single {gone} and {into} in {dept}: {found} {target}")
         part = units.pop(found[0])
         whole = units[target[0]]
-        whole["tables"] = {q: summed([whole["tables"][q], part["tables"][q]]) for q in QUESTIONS}
+        whole["tables"] = {q: (added if q == "people" else summed)(
+            [whole["tables"][q], part["tables"][q]]) for q in QUESTIONS}
         whole["parts"].append(part["name"])
         log(f"  {part['name']} ({found[0]}) is counted with {whole['name']}, whose polygon holds it")
     for code, unit in units.items():

@@ -19,7 +19,8 @@ import re
 from collections import Counter
 from typing import Any
 
-from .redatam import median_age  # noqa: F401 -- readers take it from here with the rest
+# median_age is not used here: the readers take it from this module with the rest.
+from .redatam import AREA, cells_of, count, median_age  # noqa: F401
 
 AGE = re.compile(r"^\s*(\d+)")
 
@@ -70,6 +71,84 @@ def by_area(found: list[dict], question: str, who: str,
     if base_total is not None and everyone != base_total:
         raise SystemExit(f"{who}: {question}: the areas' answers and not-applicables make "
                          f"{everyone:,}, not {base_total:,}")
+    return out
+
+
+def crosstab_program(row: str, column: str, areabreak: str | None = None) -> str:
+    """A Redatam+SP program with one crosstab, optionally broken by area."""
+    lines = ["RUNDEF Job", "    SELECTION ALL", "", "TABLE TABLE1", "    AS CROSSTABS",
+             f"    OF {row} BY {column}"]
+    if areabreak:
+        lines.append(f"    AREABREAK {areabreak}")
+    return "\n".join(lines) + "\n"
+
+
+def crosstabs(page: str) -> list[dict[str, Any]]:
+    """The crosstabs in an output page: [{area, name, columns, cells, totals, na}].
+
+    Each opens with an "AREA # code" row (absent without an area break), then
+    a header row of the column variable's categories ending in "Total", then
+    one row a category of the row variable -- its label, a count per column
+    ("-" for none) and its total -- then the Total row and "No Aplica". Every
+    row's counts must make its total and the columns' counts the Total row,
+    or the page is refused.
+    """
+    out: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+
+    def number(cell: str) -> int | None:
+        return 0 if cell.strip() in ("-", "--") else count(cell)
+
+    for cells in cells_of(page):
+        text = [c for c in cells if c]
+        if not text:
+            continue
+        area = next((AREA.match(c) for c in text if AREA.match(c)), None)
+        if area:
+            current = {"area": area.group(1), "name": text[-1] if len(text) > 1 else "",
+                       "columns": None, "cells": {}, "totals": None, "na": None}
+            out.append(current)
+            continue
+        if text[0].startswith("No Aplica") and current is not None:
+            after = count(text[0].split(":", 1)[1]) if ":" in text[0] else None
+            current["na"] = after if after is not None else (
+                count(text[1]) if len(text) > 1 else None)
+            continue
+        if len(text) >= 3 and text[-1] == "Total" and all(number(c) is None for c in text):
+            if current is None or current["columns"] is not None:
+                current = {"area": None, "name": "", "columns": None, "cells": {},
+                           "totals": None, "na": None}
+                out.append(current)
+            current["columns"] = text[:-1]
+            continue
+        if current is None or current["columns"] is None or len(text) < 3:
+            continue
+        figures = [number(c) for c in text[1:]]
+        if any(f is None for f in figures) or number(text[0]) is not None:
+            continue
+        columns = current["columns"]
+        if len(columns) > len(figures) - 1:
+            # A title cell before the categories (the row variable's name).
+            columns = current["columns"] = columns[len(columns) - (len(figures) - 1):]
+        if len(figures) - 1 != len(columns):
+            raise SystemExit(f"crosstab row {text[0]!r} has {len(figures)} figures for "
+                             f"{len(columns)} columns")
+        if sum(figures[:-1]) != figures[-1]:
+            raise SystemExit(f"crosstab row {text[0]!r}: {figures[:-1]} make "
+                             f"{sum(figures[:-1])}, not {figures[-1]}")
+        row = dict(zip(columns + ["Total"], figures))
+        if text[0] == "Total":
+            current["totals"] = row
+        else:
+            current["cells"][text[0]] = row
+    for table in out:
+        if table["totals"] is None:
+            continue
+        for column in table["columns"] + ["Total"]:
+            made = sum(row[column] for row in table["cells"].values())
+            if made != table["totals"][column]:
+                raise SystemExit(f"crosstab {table['area'] or 'base'}: column {column!r} makes "
+                                 f"{made}, its Total row {table['totals'][column]}")
     return out
 
 
