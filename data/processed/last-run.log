@@ -1,17 +1,85 @@
-  cuadro 12: 13 provinces and comarcas; medians within 0.9 years of INEC's
-  every table agrees on every province, and each province's districts make it
-  Almirante (bocasdeltoro) is added to Changuinola, which the boundary file draws whole
-  Omar Torrijos Herrera (colon) is added to Donoso, which the boundary file draws whole
-  Tierras Altas (chiriqui) is added to Bugaba, which the boundary file draws whole
-  Santa Fe (darien) is added to Chepigana, which the boundary file draws whole
-  Jirondai (comarcangabebugle) is added to Kankintú, which the boundary file draws whole
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/panama_census.py", line 457, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/panama_census.py", line 376, in main
-    unit["afro"] = [a + b for a, b in zip(unit["afro"], afro_dist[(prov, dist)])]
-                                                        ~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: ('comarcangabebugle', 'Santa Catalina o Calovébora (Bledeshia)')
+page: https://www.ine.gob.ve/
+  609,030 bytes
+  41 matching link(s)
+  - Viviendas, Hogares y Personas
+    https://ine.gob.ve/wp-content/uploads/2026/06/VIVIENDAS-HOGARES-Y-PERSONAS-CENSO-2011.xlsx
+  - Voz/Habla
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Voz-Habla-Censo-2011.xlsx
+  - Visual
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Visual-Censo-2011.xlsx
+  - Respiratoria
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Respitaroria-Censo-2011.xlsx
+  - Neurológica
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Neurologica-Censo-2011.xlsx
+  - Musculo/Esquelética
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Musculo-Esquelatica-Censo-2011.xlsx
+  - Mental/Psicosocial
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Mental-Psicosocial-Censo-2011.xlsx
+  - Mental/Intelectual
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Mental-Intelectual-Censo-2011.xlsx
+  - Mental/Cardiovascular
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Cardiovascular-Censo-2011.xlsx
+  - Auditiva
+    https://ine.gob.ve/wp-content/uploads/2026/04/Discapacidad-Auditiva-Censo-2011.xlsx
+  - Nacidos en Venezuela 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Nacida-en-Venezuela-Censo-2011.xlsx
+  - Grupos de Edad 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Grupos-Edad-Censo-2011.xlsx
+  - Por Sexo 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Sexo-Censo-2011.xlsx
+  - Lugar de Nacimiento 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Lugar-Nacimiento-Censo-2011.xlsx
+  - Urbana/Rural 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Urbana-y-Rural-Censo-2011.xls
+  - Situación Conyugal 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Situacion-Conyugal-Censo-2011.xls
+  - Pueblos Indígenas 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Pueblos-Indigenas-Censo-2011.xls
+  - Por Sexo 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Por-Sexo-Censo-2011.xls
+  - Grupos de Edad 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Grupos-de-Edad-Censo-2011.xls
+  - Edad Escolar 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Edad-Escolar-Censo-2011.xls
+  - Alfabetismo
+    https://ine.gob.ve/wp-content/uploads/2026/04/Alfabetismo-Censo-2011.xls
+  - Censo 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Servicios-Censo_2011.xlsx
+  - Condición Vivienda 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Condicion-Vivienda-Censo-2011.xlsx
+  - Viviendas Ocupadas 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Viviendas-Ocupadas-Censo-2011.xlsx
+  - Hacinamiento 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Hacinamiento-Censo-2011.xlsx
+  - Deficiencia Económica
+    https://ine.gob.ve/wp-content/uploads/2026/04/Deficiencia-Economica-Censo-2011.xlsx
+  - Población por Sexo 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Sexo-Censo-2011-1.xlsx
+  - Nacido en Venezuela 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Nacida-Venezuela-Censo-2011.xlsx
+  - Lugar de Nacimiento 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Lugar-Nacimiento-Censo-2011-1.xlsx
+  - Grupos de Edad 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Poblacion-Grupos-Edad-Censo-2011-1.xlsx
+  - Gas Directo 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Servicio-Gas-Directo-Censo-2011.xls
+  - Eliminación de Excretas 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Eliminacion-de-Excretas-Censo-2011.xls
+  - Agua 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Servicio-Agua-Censo-2011.xls
+  - Frecuencia Agua 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Frecuencia-Servicio-Agua-Censo-2011.xls
+  - Basura 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Servicio-Basura-Censo-2011.xls
+  - Frecuencia Basura
+    https://ine.gob.ve/wp-content/uploads/2026/04/Frecuencia-Servicio-Basura-Censo-2011.xls
+  - Eléctrico 2011
+    https://ine.gob.ve/wp-content/uploads/2026/04/Servicio-Electrico-Censo-2011.xls
+  - Resumen Censo 2011
+    https://ine.gob.ve/wp-content/uploads/2025/09/CCENSO-2011-RESULTADOS-BASICOS.pdf
+  - Municipios Censo 2011
+    https://ine.gob.ve/wp-content/uploads/2025/09/POBLACION-POR-MUNICIPIOS-CENSO-2011.pdf
+  - Población Indigena Censo 2011
+    https://ine.gob.ve/wp-content/uploads/2025/09/POBLACION-INDIGENA-CENSO-2011.pdf
+  - Parroquias Censo 2011
+    https://ine.gob.ve/wp-content/uploads/2025/10/P.-Censo-2011.pdf
