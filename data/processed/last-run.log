@@ -1,38 +1,28 @@
-source: https://statisticsguyana.gov.gy/wp-content/uploads/2019/11/2012_Census_QuestionnaireForm-BIND.pdf
-  12,158 bytes
-  unreadable: PdfminerException: No /Root object! - Is this really a PDF?
-source: https://stats.gov.dm/wp-content/uploads/2019/06/Population_and_Housing_Census_Questionnaire_2011.pdf
-  989,506 bytes
-  15 pages
-  page 8: speak, religio, ethnic :: important!!!
-  page 9: language :: section 5 (cont'd) ‐ disability 55. what main medicael facility has……utilised in the past month?
-source: https://stats.gov.dm/wp-content/uploads/2019/10/2011_census_report.pdf
-  1,303,421 bytes
-  28 pages
-  page 4: religio :: census 2011 – preliminary results
-  page 5: religio :: census 2011 – preliminary results
-source: https://stats.gov.dm/wp-content/uploads/2019/06/Population_and_Housing_Census_2011.pdf
-  1,013,845 bytes
-  29 pages
-  page 3: religio :: census 2011 - preliminary results
-  page 4: religio :: census 2011 - preliminary results
-source: https://stats.gov.gd/wp-content/uploads/2021/03/Census-Report-2011-Revised-Final.pdf
-  49,179,094 bytes
-  230 pages
-  page 3: religio, ethnic :: table of contents
-  page 8: religio :: the caricom secretariat and the oecs commission resources to provide technical assistance.
-  page 11: religio, ethnic :: chapter 2
-  page 43: religio, ethnic :: chapter 2
-  page 44: ethnic :: 2.2 ethnic composition
-  page 45: ethnic :: in 2011, african descendants were the largest ethnic group as shown in the below figure 2.1.1.
-  page 46: ethnic :: figure 2.1.1 pie chart showing ethnic composition 2011.
-  page 47: religio :: 2.3 religious composition
-  page 48: religio :: in 2011, the five religious denominations that record the most membership were the roman
-  page 49: religio :: figure 2.3.1 pie chart showing religious composition 2011
-  page 50: religio :: 2.4 marital status
-  page 54: speak :: table 2.5.1b cumulative table showing educational attainment of population 15 years
-  page 62: race :: chapter 3
-  page 93: race :: table 4.7.2 percentage distribution of persons age 15 years and over by highest level of
-source: https://www.stats.gov.kn/wp-content/uploads/2019/10/Censushh.pdf
-  409,921 bytes
-  8 pages
+  Cuadro A2 read from https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
+  P03: 263 districts
+  P04: 263 districts
+  PERINDI: 263 districts
+  P1601: 263 districts
+  P1602: 263 districts
+  P1604: 263 districts
+  P1605: 263 districts
+  P1606: 263 districts
+  P1607: 263 districts
+  P1608: 263 districts
+  P1609: 263 districts
+  P1698: 263 districts
+  263 districts making INE's 6,109,903; every question's categories and 'No Aplica' making each district
+  236 of 236 districts bound; not: []
+  wrote data/processed/paraguay_census.json (939 kB)
+  wrote paraguay_census.json: 18 departments, 247 district polygons (236 with figures)
+  URLError reaching https://prod.redatam.org/redpry//tempo/101113/~tmp_101113121.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/101113/~tmp_101113121.htm: trying again in 20s
+  URLError reaching https://prod.redatam.org/redpry//tempo/101113/~tmp_101113121.htm: trying again in 40s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2022&ITEM=PROGRED&: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 20s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 40s
+  URLError reaching https://prod.redatam.org/redpry//tempo/101113/~tmp_101113261.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2002&ITEM=PROGRED&: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2002&ITEM=PROGRED&: trying again in 20s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2002&ITEM=PROGRED&: trying again in 40s
