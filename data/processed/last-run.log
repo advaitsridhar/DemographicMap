@@ -1,14 +1,553 @@
-  religion columns: {'Catholic': 'PCATOLICA', 'Protestant and evangelical': 'PRO_CRIEVA', 'Other religions': 'POTRAS_REL', 'No religion': 'PSIN_RELIG'}
-  reading iter_00_cpv2020/conjunto_de_datos/conjunto_de_datos_iter_00CSV20.csv
-  POBTOT: 126,014,024 vs published 126,014,024 (0.0000%)
-  P3YM_HLI: 7,364,645 vs published 7,364,645 (0.0000%)
-  POB_AFRO: 2,576,213 vs published 2,576,213 (0.0000%)
-  POBMAS: 61,473,390 vs published 61,473,390 (0.0000%)
-  POBFEM: 64,540,634 vs published 64,540,634 (0.0000%)
-  rows by level: {'nation': 1, 'national subtotal': 2, 'state': 32, 'state subtotal': 64, 'municipality': 2469, 'locality': 193094}
-  municipality: 2433 of 2469 with the bilingual share (P3HLI_HE, P3HLINHE)
-  state: 32 of 32 with the bilingual share (P3HLI_HE, P3HLINHE)
-  wrote data/processed/mexico_state.json (75 kB)
-  32 state records
-  wrote data/processed/mexico_municipality.json (5820 kB)
-  2469 municipality records
+probe_pdf: http://web.archive.org/web/2023id_/https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores-demograficos-por-provincias-y-municipios.pdf
+  3,285,764 bytes
+  44 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/Widths': [289, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 601, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 558, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 565, 565, 421, 565, 501, 0, 0, 0, 253, 0, 0, 239, 0, 0, 0, 565, 0, 0, 0, 0, 535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 535], '/FontDescriptor': IndirectObject(9712, 0, 140094656179024), '/FirstChar': 32, '/LastChar': 250, '/BaseFont': '/GIJLUM+FuturaStd-Heavy', '/Encoding': '/WinAnsiEncoding', '/Type': '/Font', '/Subtype': '/Type1'}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/Widths': [343, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 343, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 781, 0, 660, 752, 550, 542, 842, 0, 324, 0, 0, 0, 983, 881, 887, 661, 0, 680, 616, 0, 778, 761, 0, 0, 714, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 781], '/FontDescriptor': IndirectObject(9709, 0, 140094656179024), '/FirstChar': 32, '/LastChar': 193, '/BaseFont': '/BIAMCW+FuturaStd-Bold', '/Encoding': '/WinAnsiEncoding', '/Type': '/Font', '/Subtype': '/Type1'}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/Widths': [289, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 601, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 558, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 565, 565, 421, 565, 501, 0, 0, 0, 253, 0, 0, 239, 0, 0, 0, 565, 0, 0, 0, 0, 535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 535], '/FontDescriptor': IndirectObject(9712, 0, 140094656179024), '/FirstChar': 32, '/LastChar': 250, '/BaseFont': '/GIJLUM+FuturaStd-Heavy', '/Encoding': '/WinAnsiEncoding', '/Type': '/Font', '/Subtype': '/Type1'}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/Widths': [202, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 595, 696, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 548, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 451, 0, 528, 341, 0, 0, 274, 0, 0, 275, 0, 586, 577, 0, 0, 380, 0, 367, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 528, 0, 0, 0, 0, 0, 0, 0, 0, 0, 577], '/FontDescriptor': IndirectObject(9798, 0, 140094656179024), '/FirstChar': 32, '/LastChar': 243, '/BaseFont': '/BGUCCW+MyriadPro-Bold', '/Encoding': '/WinAnsiEncoding', '/Type': '/Font', '/Subtype': '/Type1'}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/Widths': [212, 0, 0, 0, 0, 0, 0, 0, 284, 284, 0, 596, 207, 0, 207, 343, 513, 513, 0, 513, 0, 513, 513, 513, 513, 0, 0, 0, 0, 0, 0, 0, 737, 0, 0, 580, 0, 0, 0, 0, 652, 0, 0, 0, 472, 0, 658, 0, 532, 0, 538, 0, 0, 0, 558, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 482, 569, 448, 564, 501, 292, 559, 0, 234, 0, 0, 236, 0, 555, 549, 0, 0, 327, 396, 331, 551, 481, 0, 0, 471, 428, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 549], '/FontDescriptor': IndirectObject(9801, 0, 140094656179024), '/FirstChar': 32, '/LastChar': 243, '/BaseFont': '/MHHQAA+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/Type': '/Font', '/Subtype': '/Type1'}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 44 pages, 41 mention ['mediana', 'Mediana', 'unicipio']
+=== front matter ===
+República de Cuba
+2020
+INDICADORES DEMOGRÁFICOS POR PROVINCIAS Y MUNICIPIOS.
+ 
+Edición junio 2021
+ 
+CENTRO DE ESTUDIOS DE POBLACIÓN Y DESARROLLO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+INDICADORES DEMOGRÁFICOS POR PROVINCIAS Y MUNICIPIOS
+ 
+ 
+ 
+ 
+ 
+ 
+Junio 2021 
+“Año 63 de la Revolución” 
+ 
+ 
+ 
+ 
+ 
+2020  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                                                                  Indicadores Demográficos por provincias y municipios 
+ 
+ 
+            ÍNDICE 
+ 
+ 
+ 
+ 
+            Introducción                                                                                                                                                                                                        1 
+ 
+ 
+            1. Resumen del Balance Demográfico de 2020                                                                                                                                          3 
+ 
+ 
+            2. Componentes del Crecimiento Poblacional, por provincias y municipios. Año 2020                                                                                      4 
+ 
+ 
+              3. Tasas de los Componentes del Crecimiento Poblacional, por provincias y municipios. Año 2020                                                             12 
+ 
+ 
+             4. Indicadores del Nivel de Urbanización, por provincias y municipios. Año 2020                                                                     19 
+ 
+ 
+             5. Población por Sexo, Zonas e Índice de Masculinidad, por provincias y municipios. Año 2020                                                                   26 
+ 
+ 
+             6. Edad Media y Mediana de Cuba, según Sexo. Año 2020                                                                                                                            34 
+ 
+ 
+               Gráficos                                                                                                                                                                                       35 
+ 
+ 
+ 
+                 Abreviaturas y signos convencionales                                                                                                                                                           37 
+ 
+ 
+                  Definiciones Metodológicas                                                                                                                                                    38 
+ 
+ 
+    
+ 
+INTRODUCCIÓN 
+ 
+ 
+La f uente fundamental de info rmación pr ocede d el Sistema Estadístico Naci onal, a través del cual la Ofici na Nacional de Est adística e 
+Información y sus Ofici nas Provinciales, captan información de los centr os info rmantes directamente y o tras informaciones que se r eciben 
+de forma directa de los Organismos de la Administración Cen tral del Estado. 
+ 
+El Sistema de Info rmación Estadí stico N acional (SIEN) de Demografía, a c argo del Centro de Estudios de Población y Desarrollo (CEPDE) 
+de la ONEI, se i ncluye la captación, procesamiento y edición de las estadí sticas demográficas oficial es del país. 
+ 
+Las form as m ás usuales de dif undir la info rmación han si do el A nuario Est adístico de C uba, la publicación Estudios y Datos sobre la 
+Población C ubana y el Anuario Demográfico de C uba, c ada uno de l os cu ales ti ene sus propi as pecu liaridades. Así por ejemplo, en el 
+primer caso se i ncluye un capítulo de P oblación dentro de un anuario estadístico g eneral, en Est udios y Datos, apar ecen l as cifr as de 
+población con desgloses por sexo y edad es, provi ncias y m unicipios, y z ona urbana y rural. Es por supuesto el A nuario Demográfico el 
+que m ás info rmación conti ene sobre cada una de l as vari ables demográficas (nacimi entos, def unciones, migracion es, ma trimonios y 
+divorcios), sin embargo el hecho de estar es tructurado en capítulos independientes que responden a cada vari able, lo hace un t anto rígido 
+cuando de vi nculación de vari ables se trata, además no resulta pr opio para prof undizar en determinados detalles, ya q ue se cr earí a un 
+desbalance muy evidente entre capítulos. 
+ 
+En los últim os años se ha evidenciado un notable avance en el Centro de Estudios de Población y D esarrollo (CEPDE), en la ut ilización 
+de alg unos software empl eados en el aná lisis demográfico, y en la cr eación de uno pr opio q ue g enera un im portante volumen de 
+informaciones va liosas sobre dete rminados aspectos no abordados en las publicaciones antes mencionadas, y q ue satisfacen una amplia 
+gama de demandas info rmativas de i nvestigadores del pr opio Cen tro, de la ONEI y de o tras i nstituciones, así como de autori dades 
+encargadas de la toma de decisiones, tanto a nivel nacional como en l os territorios. 
+ 
+Surge así el pr esente compendio, con info rmación novedosa y sin preced ente en otras publicaciones. En esencia cuenta con 6 t ablas 
+que abarcan el balance demográfico de l año 2020, el grado de urbanización y el índice de mascu linidad, todo e llo a nivel de muni cipio. 
+Adicionalmente se pr esentan o tros indicador es y cifras, tales como la relaci ón de dependencia, el índice de masculinidad por edad es, y 
+la edad media y mediana
+1
+ 
+Indicadores Demográficos por provincias y municipios
+La pr esente publicación “ Indicadores Demográficos por provincias y municipios" de 2020”, de la Ofici na Nacional de 
+Estadística e Información (ONEI) de Cuba, tiene com o objetivo poner en conocimiento de l os diferentes usuarios y la poblaci ón en 
+general, cifras y datos demográficos al cie rre 31 de diciembre de 2020, desglosado por provi ncias y m unicipios. 
+Indicadores Demográficos por provincias y municipios
+ 
+ 
+ 
+ 
+ 
+ 
+El 
+ objetivo  de  este  compendio  es  en tonces, poner  en  manos  de  diferen tes  us uarios interesados en la prob lemática de la 
+población, un conj unto de import antes inform aciones complementarias a las publicaciones tradicionales en este campo, de manera 
+que puedan ampliar su conocimiento sobre la dinámica demográfica del país. 
+ 
+Para la edición de  esta publicación se recibió  una contr ibución parcial del Fondo de Población de las  Naciones  Unidas 
+(UNFPA) , a partir de su inclusi ón en un proyecto de colaboración que el CEPDE, de la ONEI realiza con esa ag encia del sistema de las 
+Naciones Unidas 
+ 
+ 
+La realización del  diseño,  elaboración,  compilació n, edición  y tratamiento  informativo de   este trabajo   estuvo a cargo de :   
+Enrique   Frómeta   Sánchez,   Ebel Quezada Gutiérrez,Norkis Plasencia Padrón y Anays Montequín Jiménez, especialistas  del 
+CEPDE y su revisión final fue realizada por Diego  Enrique González Galbán, Director del CEPDE. 
+ 
+ 
+ 
+ 
+                              
+  
+ 
+ 
+Fondo de Población de las                                                                                                                                                     Centro de Est udios 
+Naciones Unidas                                                                                                                                                            de Población y D esa rrollo 
+2
+
+=== pages mentioning ['mediana', 'Mediana', 'unicipio'] (first 30) ===
+
+--- page 1 ----------------------------------------------------
+República de Cuba
+2020
+INDICADORES DEMOGRÁFICOS POR PROVINCIAS Y MUNICIPIOS.
+Edición junio 2021
+
+--- page 2 ----------------------------------------------------
+CENTRO DE ESTUDIOS DE POBLACIÓN Y DESARROLLO
+INDICADORES DEMOGRÁFICOS POR PROVINCIAS Y MUNICIPIOS
+Junio 2021
+“Año 63 de la Revolución”
+2020
+
+--- page 3 ----------------------------------------------------
+                                                                                                                                                                                  Indicadores Demográficos por provincias y municipios
+            ÍNDICE
+            Introducción                                                                                                                                                                                                        1
+            1. Resumen del Balance Demográfico de 2020                                                                                                                                          3
+            2. Componentes del Crecimiento Poblacional, por provincias y municipios. Año 2020                                                                                      4
+              3. Tasas de los Componentes del Crecimiento Poblacional, por provincias y municipios. Año 2020                                                             12
+             4. Indicadores del Nivel de Urbanización, por provincias y municipios. Año 2020                                                                     19
+             5. Población por Sexo, Zonas e Índice de Masculinidad, por provincias y municipios. Año 2020                                                                   26
+             6. Edad Media y Mediana de Cuba, según Sexo. Año 2020                                                                                                                            34
+               Gráficos                                                                                                                                                                                       35
+                 Abreviaturas y signos convencionales                                                                                                                                                           37
+                  Definiciones Metodológicas                                                                                                                                                    38
+
+--- page 4 ----------------------------------------------------
+Las form as m ás usuales de dif undir la info rmación han si do el A nuario Est adístico de C uba, la publicación Estudios y Datos sobre la
+Población C ubana y el Anuario Demográfico de C uba, c ada uno de l os cu ales ti ene sus propi as pecu liaridades. Así por ejemplo, en el
+primer caso se i ncluye un capítulo de P oblación dentro de un anuario estadístico g eneral, en Est udios y Datos, apar ecen l as cifr as de
+población con desgloses por sexo y edad es, provi ncias y m unicipios, y z ona urbana y rural. Es por supuesto el A nuario Demográfico el
+que m ás info rmación conti ene sobre cada una de l as vari ables demográficas (nacimi entos, def unciones, migracion es, ma trimonios y
+divorcios), sin embargo el hecho de estar es tructurado en capítulos independientes que responden a cada vari able, lo hace un t anto rígido
+cuando de vi nculación de vari ables se trata, además no resulta pr opio para prof undizar en determinados detalles, ya q ue se cr earí a un
+      ...
+Surge así el pr esente compendio, con info rmación novedosa y sin preced ente en otras publicaciones. En esencia cuenta con 6 t ablas
+que abarcan el balance demográfico de l año 2020, el grado de urbanización y el índice de mascu linidad, todo e llo a nivel de muni cipio.
+Adicionalmente se pr esentan o tros indicador es y cifras, tales como la relaci ón de dependencia, el índice de masculinidad por edad es, y
+la edad media y mediana
+1
+Indicadores Demográficos por provincias y municipios
+La pr esente publicación “ Indicadores Demográficos por provincias y municipios" de 2020”, de la Ofici na Nacional de
+Estadística e Información (ONEI) de Cuba, tiene com o objetivo poner en conocimiento de l os diferentes usuarios y la poblaci ón en
+general, cifras y datos demográficos al cie rre 31 de diciembre de 2020, desglosado por provi ncias y m unicipios.
+
+--- page 5 ----------------------------------------------------
+Indicadores Demográficos por provincias y municipios
+El
+ objetivo  de  este  compendio  es  en tonces, poner  en  manos  de  diferen tes  us uarios interesados en la prob lemática de la
+población, un conj unto de import antes inform aciones complementarias a las publicaciones tradicionales en este campo, de manera
+
+--- page 6 ----------------------------------------------------
+TMI -Tasa de Mortalidad Infantil
+PROVINCIAS Defunciones
+3
+Indicadores Demográficos por provincias y municipios
+
+--- page 7 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Artemisa 86 161 873 843 666 467 9 58 86 341
+Candelaria 21 201 250 192 222 135 4 3 21 347
+San Cristóbal 71 726 701 610 315 353 7 26 71 760
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+Interno(1) Externo
+PROVINCIA/MUNICIPIO
+4
+Indicadores Demográficos por provincias y municipios
+
+--- page 8 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Melena del Sur 20 445 212 222 199 194 2 6 20 436
+Batabanó 27 431 290 254 297 299 1 12 27 454
+Quivicán 30 059 336 323 504 395 4 15 30 170
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+5
+Indicadores Demográficos por provincias y municipios
+
+--- page 9 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Santo Domingo 48 423 391 488 255 402 12 34 48 157
+Ranchuelo 52 417 406 570 261 471 19 20 52 042
+Manicaragua 63 190 551 687 319 664 8 26 62 691
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+6
+Indicadores Demográficos por provincias y municipios
+
+--- page 10 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Trinidad 77 185 740 706 361 397 15 26 77 172
+Sancti Spíritus 143 252 1 274 1 409 976 716 28 113 143 292
+La Sierpe 16 644 168 132 189 190 - 1 16 678
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+Externo
+PROVINCIA/MUNICIPIO Interno(1)
+7
+Indicadores Demográficos por provincias y municipios
+
+--- page 11 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Jimaguayú 20 046 218 161 363 533 1 5 19 929
+Najasa 15 002 145 112 184 290 - - 14 929
+Santa Cruz del Sur 41 857 364 429 261 850 10 3 41 210
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+8
+Indicadores Demográficos por provincias y municipios
+
+--- page 12 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Frank País 22 896 222 182 224 407 1 3 22 751
+Sagua de Tánamo 46 144 507 382 435 794 1 4 45 907
+Moa 73 093 884 475 812 1 282 4 24 73 012
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+9
+Indicadores Demográficos por provincias y municipios
+
+--- page 13 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Continuación)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Palma Soriano 121 943 1 320 1 175 478 1 148 11 11 121 418
+Tercer Frente 30 403 337 223 196 292 - 1 30 420
+Guamá 34 206 398 256 334 381 2 1 34 302
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+10
+Indicadores Demográficos por provincias y municipios
+
+--- page 14 ----------------------------------------------------
+2-. Componentes del crecimiento poblacional, por provincias y municipios. Año 2020  (Conclusión)
+Unidad
+Población Naci- Defun- Población
+al 31/12/2019 mientos ciones Inmigrantes Emigrantes Inmigrantes Emigrantes al 31/12/2020
+      ...
+Guantánamo 225 699 2 438 1 976 1 510 1 880 21 79 225 733
+Niceto Pérez 16 320 219 102 151 248 - 1 16 339
+Isla de la Juventud 83 544 874 726 537 597 28 35 83 625
+(1) Movimientos entre todos los municipios del pais, incluyendo los de la misma provincia.
+PROVINCIA/MUNICIPIO Interno(1) Externo
+11
+Indicadores Demográficos por provincias y municipios
+
+--- page 15 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Artemisa 86 251 2,1 10,1 9,8 0,3 -0,6 1,7
+Candelaria 21 274 6,9 11,8 9,0 2,7 - 4,1
+San Cristóbal 71 743 0,5 9,8 8,5 1,3 -0,3 -0,8
+PROVINCIAS / MUNICIPIOS
+12
+Indicadores Demográficos por provincias y municipios
+
+--- page 16 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Continuación)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Melena del Sur 20 441 -0,4 10,4 10,9 -0,5 -0,2 -
+Batabanó 27 443 0,8 10,6 9,3 1,3 -0,4 -0,5
+Quivicán 30 115 3,7 11,2 10,7 0,4 -0,4 3,3
+PROVINCIAS / MUNICIPIOS
+13
+Indicadores Demográficos por provincias y municipios
+
+--- page 17 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Continuación)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Santo Domingo 48 290 -5,5 8,1 10,1 -2,0 -0,5 -3,5
+Ranchuelo 52 230 -7,2 7,8 10,9 -3,1 - -4,0
+Manicaragua 62 941 -7,9 8,8 10,9 -2,2 -0,3 -5,8
+PROVINCIAS / MUNICIPIOS
+14
+Indicadores Demográficos por provincias y municipios
+
+--- page 18 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Continuación)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Ciego de Avila 156 770 2,5 8,3 9,6 -1,3 -1,4 3,8
+Venezuela 26 079 -7,2 8,4 10,0 -1,6 -0,6 -5,6
+Baraguá 32 152 -2,1 9,6 8,0 1,6 -0,1 -3,7
+PROVINCIAS / MUNICIPIOS
+15
+Indicadores Demográficos por provincias y municipios
+
+--- page 19 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Continuación)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Jobabo 41 782 -10,8 10,4 9,8 0,6 -0,1 -11,5
+Colombia 31 905 -5,9 8,4 9,9 -1,5 -0,1 -4,4
+Amancio 37 114 -10,5 8,6 10,7 -2,1 -0,2 -8,4
+PROVINCIAS / MUNICIPIOS
+16
+Indicadores Demográficos por provincias y municipios
+
+--- page 20 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Continuación)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Bartolome Masó 47 668 -6,7 10,9 8,7 2,2 - -8,9
+Buey Arriba 31 109 -4,6 10,0 7,8 2,2 0,2 -6,8
+Guisa 45 701 -7,9 10,1 9,5 0,6 -0,7 -8,5
+PROVINCIAS / MUNICIPIOS
+17
+Indicadores Demográficos por provincias y municipios
+
+--- page 21 ----------------------------------------------------
+3-. Tasas de los componentes del crecimiento poblacional, por provincias y municipios. Año 2020 (Conclusión)
+Población Tasa Media Tasa Tasa Tasa de Tasa de Tasa de
+Media Anual de Bruta de Bruta de Crecimiento Saldo Migra- Saldo Migra-
+30/06/2020 Crecimiento Natalidad Mortalidad Natural torio Externo torio Total
+      ...
+Guantánamo 225 716 0,2 10,8 8,8 2,0 -0,3 -1,9
+Niceto Pérez 16 330 1,2 13,4 6,2 7,2 -0,1 -6,0
+Isla de la Juventud 83 585 1,0 10,5 8,7 1,8 -0,1 -0,8
+PROVINCIAS / MUNICIPIOS
+18
+Indicadores Demográficos por provincias y municipios
+
+--- page 22 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Cuba 11 181 595 8 622 504 2 559 091 -1,1 -0,9 -1,5 77,1 77,1
+      ...
+Artemisa 86 341 60 619 25 722 2,1 2,1 1,9 70,2 70,2
+Candelaria 21 347 13 525 7 822 6,9 7,3 6,0 63,3 63,4
+San Cristóbal 71 760 49 291 22 469 0,5 1,2 -1,0 68,6 68,7
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+19
+Indicadores Demográficos por provincias y municipios
+
+--- page 23 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Continuación)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+La Habana 2 132 183 2 132 183 - -0,1 -0,1 - 100,0 100,0
+      ...
+Melena del Sur 20 436 13 667 6 769 -0,4 -1,3 1,3 66,9 66,9
+Batabanó 27 454 21 732 5 722 0,8 -1,7 10,7 79,4 79,2
+Quivicán 30 170 20 630 9 540 3,7 -3,7 19,9 68,9 68,4
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+20
+Indicadores Demográficos por provincias y municipios
+
+--- page 24 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Continuación)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Matanzas 716 320 597 918 118 402 -0,6 -0,6 -0,7 83,5 83,5
+      ...
+Santo Domingo 48 157 34 780 13 377 -5,5 -7,1 -1,3 72,3 72,2
+Ranchuelo 52 042 37 188 14 854 -7,2 -8,6 -3,5 71,6 71,5
+Manicaragua 62 691 39 346 23 345 -7,9 -10,4 -3,8 62,9 62,8
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+21
+Indicadores Demográficos por provincias y municipios
+
+--- page 25 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Continuación)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Cienfuegos 406 244 334 970 71 274 -0,2 0,1 -1,2 82,4 82,5
+      ...
+Ciego de Avila 156 969 132 233 24 736 2,5 0,5 13,3 84,4 84,2
+Venezuela 25 984 16 689 9 295 -7,2 -9,4 -3,4 64,4 64,2
+Baraguá 32 119 18 210 13 909 -2,1 -2,3 -1,7 56,7 56,7
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+22
+Indicadores Demográficos por provincias y municipios
+
+--- page 26 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Continuación)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Camagüey 763 389 600 789 162 600 -1,8 -2,0 -1,1 78,7 78,7
+      ...
+Jobabo 41 555 20 853 20 702 -10,8 3,9 -25,5 49,4 50,2
+Colombia 31 811 22 949 8 862 -5,9 -2,4 -14,8 71,9 72,1
+Amancio 36 920 27 333 9 587 -10,5 -7,5 -18,7 73,8 74,0
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+23
+Indicadores Demográficos por provincias y municipios
+
+--- page 27 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Continuación)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Holguín 1 021 591 686 592 334 999 -2,1 2,1 -10,5 66,9 67,2
+      ...
+Bartolome Masó 47 507 20 594 26 913 -6,7 -6,1 -7,2 43,3 43,3
+Buey Arriba 31 037 11 545 19 492 -4,6 -7,1 -3,2 37,3 37,2
+Guisa 45 519 20 703 24 816 -7,9 -9,6 -6,6 45,6 45,5
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+24
+Indicadores Demográficos por provincias y municipios
+
+--- page 28 ----------------------------------------------------
+4-. Indicadores del nivel de urbanización, por provincias y municipios. Año 2020 (Conclusión)
+Total Urbano Rural Total Urbano Rural 2019 2020
+(U) (U) (U) (por 1000) (por 1000) (por 1000) (por 100) (por 100)
+Santiago de Cuba 1 045 631 741 113 304 518 -1,0 -1,2 -0,4 70,9 70,9
+      ...
+Guantánamo 225 733 216 956 8 777 0,2 -0,4 14,8 96,2 96,1
+Niceto Pérez 16 339 2 750 13 589 1,2 -4,0 2,2 16,9 16,8
+Isla de la Juventud 83 625 68 449 15 176 1,0 -0,3 6,7 82,0 81,9
+PROVINCIAS / MUNICIPIOS
+Población al 31 de Diciembre              Tasa de Crecimiento Grado de Urbanización
+25
+Indicadores Demográficos por provincias y municipios
+
+--- page 29 ----------------------------------------------------
+5-. Población por sexos, zonas e índice de masculinidad, por provincias y municipios.  Año 2020
+Unidad
+Ambas Zonas         Urbano             Rural
+Total Hombres Mujeres IM(a)
+      ...
+Candelaria 21 347 10 815 10 532 1 027 13 525 6 653 6 872 968 7 822 4 162 3 660 1 137
+San Cristóbal 71 760 36 081 35 679 1 011 49 291 24 108 25 183 957 22 469 11 973 10 496 1 141
+(a) IM Hombres por cada 1000 mujeres
+PROVINCIAS / MUNICIPIOS
+Población  al 31/12/2020 Población  al 31/12/2020 Población  al 31/12/2020
+26
+Indicadores Demográficos por provincias y municipios
+
+--- page 30 ----------------------------------------------------
+5-. Población por sexos, zonas e índice de masculinidad, por provincias y municipios.  Año 2020 (Continuación)
+Unidad
+Ambas Zonas          Urbano              Rural
+Total Hombres Mujeres IM(a)
+      ...
+Melena del Sur 20 436 10 449 9 987 1 046 13 667 6 809 6 858 993 6 769 3 640 3 129 1 163
+Batabanó 27 454 13 863 13 591 1 020 21 732 10 791 10 941 986 5 722 3 072 2 650 1 159
+Quivicán 30 170 15 386 14 784 1 041 20 630 10 159 10 471 970 9 540 5 227 4 313 1 212
+PROVINCIAS / MUNICIPIOS
+Población  al 31/12/2020 Población  al 31/12/2020 Población  al 31/12/2020
+27
+Indicadores Demográficos por provincias y municipios
+
+... and 11 further pages match; re-run with a narrower --terms to see them.
