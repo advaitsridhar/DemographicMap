@@ -16,7 +16,9 @@ What this reads, all from the Central Statistics Office (CSO):
   settlement: sex, single year of age, ethnic group and religion. The map's
   547 settlement outlines are the 2010 census's settlements, drawn and named
   as that census named them ("Monkey Town/Ciceron", "Hill 20/Babonneau"), so
-  a 2010 row binds to its outline by name within its district. The base holds
+  a 2010 row binds to its outline by name within its district -- or, where
+  the census files a settlement under the district next door, to the island's
+  only outline of that name (``bind_2010``). The base holds
   147,581 people, fewer than the 2010 census's 165,595 in households, so its
   settlement figures are compositions of the people it holds and are never
   written as a population.
@@ -327,11 +329,15 @@ def parts(name: str) -> frozenset[str]:
 
 
 def bind_2010(labels: list[str], shapes: list[dict], district_of_shape: dict[str, str]
-              ) -> tuple[dict[str, str], list[str]]:
-    """{2010 label: shape id} by name within the district, and the labels left out.
+              ) -> tuple[dict[str, str], list[str], list[str]]:
+    """({2010 label: shape id}, labels left out, labels bound across a district line).
 
-    A label without a district suffix binds only where one outline in the
-    whole island has its name. Two outlines of one name in a district, or two
+    By name within the district first. A name the district does not draw
+    binds to the one outline of that name in the island, if there is exactly
+    one and no other label anywhere has the name: the census files Anse Galet
+    under Canaries and the map draws it in Anse La Raye, the same place on
+    either side of a line the two draw differently. A label without a district
+    suffix binds only that way. Two outlines of one name in a district, or two
     labels folding to one name there, are left out.
     """
     by_name: dict[tuple[str | None, str], list[str]] = defaultdict(list)
@@ -341,17 +347,26 @@ def bind_2010(labels: list[str], shapes: list[dict], district_of_shape: dict[str
         by_name[(district, fold(shape["name"]))].append(shape["id"])
         anywhere[fold(shape["name"])].append(shape["id"])
     keyed: dict[tuple[str | None, str], list[str]] = defaultdict(list)
+    named: Counter = Counter()
     for label in labels:
         name, district = split_settlement(label)
         keyed[(district, fold(name))].append(label)
-    bound, left = {}, []
+        named[fold(name)] += 1
+    bound, left, across = {}, [], []
     for (district, name), same in keyed.items():
-        found = by_name.get((district, name), []) if district else anywhere.get(name, [])
+        found = by_name.get((district, name), []) if district else []
         if len(same) == 1 and len(found) == 1:
             bound[same[0]] = found[0]
+        elif not found and named[name] == 1 and len(anywhere.get(name, [])) == 1:
+            bound[same[0]] = anywhere[name][0]
+            across.append(same[0])
         else:
             left += same
-    return bound, sorted(left)
+    taken = Counter(bound.values())
+    for label in [l for l, sid in bound.items() if taken[sid] > 1]:
+        left.append(label)
+        del bound[label]
+    return bound, sorted(left), sorted(l for l in across if l in bound)
 
 
 def bind_2022(rows: dict[str, list[dict]], shapes: list[dict],
@@ -520,9 +535,12 @@ def main() -> int:
                       "url": REPORT, "year": 2022}]))
 
     labels = list(then["sex"]["cells"])
-    bound, left = bind_2010(labels, admin2, district_of_shape)
-    log(f"  2010 base: {len(labels)} settlements, {len(bound)} bound to an outline by name "
-        f"within their district; {len(left)} left out: {left}")
+    bound, left, across = bind_2010(labels, admin2, district_of_shape)
+    log(f"  2010 base: {len(labels)} settlements, {len(bound)} bound to an outline by name, "
+        f"{len(across)} of them the island's only outline of that name drawn in another "
+        f"district: {across}; {len(left)} left out: {left}")
+    columns = list(then["age"]["columns"])
+    years = ages_of(columns)
     recent = bind_2022(settled, admin2, district_of_shape)
     records_by_shape: dict[str, dict] = {}
     drifted = []
@@ -531,8 +549,6 @@ def main() -> int:
         sex = then["sex"]["cells"][label]
         held = sex["Total"]
         age_row = then["age"]["cells"][label]
-        columns = [c for c in then["age"]["columns"]]
-        years = ages_of(columns)
         ages = Counter({a: age_row[c] for a, c in zip(years, columns) if a is not None})
         eth = composition(then["ethnicity"]["cells"].get(label, {}), ETHNICITY_2010, "ethnicity")
         rel = composition(then["religion"]["cells"].get(label, {}), RELIGION_2010, "religion")
