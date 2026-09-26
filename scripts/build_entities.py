@@ -209,6 +209,11 @@ ADAPTER_FILES = [
     # file exists.
     "afghanistan_district.json",
     "cod_ps_admin2.json",
+    # Median age and sex ratio from the same datasets' sex and five-year age
+    # breakdown, for the regions no census file gives them. Fill-only (see
+    # FILL_ONLY): most are the offices' projections, and a census's own figure
+    # stands whatever year either is for.
+    "cod_ps_age.json",
     # Uzbekistan's permanent population on 1 January, every region and
     # district, from the Statistics Agency's open-data portal (uzbekistan_siat).
     # Where the agency counts a district the boundary file does not draw, the
@@ -1682,10 +1687,16 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # A statistical office's count is not replaced by an encyclopaedia's, whatever
 # order the files are read in. These only ever fill a population nobody
 # else has written.
+#
+# Nor is a census's median age or sex ratio replaced by a projection's. The
+# medians cod_ps_age.json interpolates for 2024 run a year above INEGI's 2020
+# census in Mexico and two above INE's 2018 census in Guatemala -- ageing, not
+# error -- and dated comparison would let every one of them win.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
-                       "wiki_population_admin1.json", "wiki_table_population.json"})
-FILL_ONLY_FIELDS = frozenset({"population"})
+                       "wiki_population_admin1.json", "wiki_table_population.json",
+                       "cod_ps_age.json"})
+FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
