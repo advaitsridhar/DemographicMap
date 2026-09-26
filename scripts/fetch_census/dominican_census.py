@@ -96,7 +96,8 @@ class ChainSession(Session):
 
 
 def probe(session: ChainSession, bases: list[str], follow: str, limit: int) -> None:
-    for page_url in [ROOT + "/", *[PORTAL.format(base=b) for b in bases]]:
+    for page_url in [ROOT + "/bindom/rpwebengine.exe/portal",
+                     *[PORTAL.format(base=b) for b in bases]]:
         print(f"page: {page_url}")
         try:
             page = session.get(page_url)
@@ -107,8 +108,14 @@ def probe(session: ChainSession, bases: list[str], follow: str, limit: int) -> N
         frames = [urllib.parse.urljoin(page_url, attrs(t)["src"])
                   for t in re.findall(r"(?is)<i?frame\b[^>]*>", page) if attrs(t).get("src")]
         words = [w for w in follow.split(",") if w]
-        for label, url in [("frame", f) for f in frames] + [
-                (label, url) for label, url in links if any(w in label for w in words)]:
+        followed = [("frame", f) for f in frames]
+        for label, url in followed:
+            try:
+                links += report(url, session.get(url), 0)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  {type(exc).__name__}: {exc}")
+        for label, url in [(label, url) for label, url in links
+                           if any(w in label for w in words)]:
             print(f"follow: {label!r} -> {url}")
             try:
                 body = session.get(url)
