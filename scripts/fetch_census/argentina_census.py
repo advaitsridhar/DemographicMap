@@ -468,11 +468,17 @@ def main() -> int:
         speak = {c: [n for n in total_row(r, f"{what} language {names[c]}") if n is not None]
                  for c, r in dept_sheet(ind7, index, names, f"{what} indigena_c7",
                                         complete=False).items()}
-        # A department the indigenous tables leave out has no one in them;
-        # the others making the province's total below is what says so.
+        # A department one indigenous table leaves out is read from the other
+        # (La Pampa's table 1 has no sheet for Chapaleufú; table 7 does). One
+        # both leave out has no one in them, which the rest making the
+        # province's total below confirms.
         for code in names:
+            if code not in indigenous and code in speak:
+                indigenous[code] = speak[code][0]
+                log(f"  {what}: {names[code]}'s indigenous population from table 7")
             indigenous.setdefault(code, 0)
-            speak.setdefault(code, [0, 0, 0, 0])
+            speak.setdefault(code, [indigenous[code], 0, 0, indigenous[code]] if indigenous[code]
+                             else [0, 0, 0, 0])
         ind_province = total_row(sheet(ind1, index, f"{what} indigena_c1"),
                                  f"{what} indigenous")[0]
         speak_province = [n for n in total_row(sheet(ind7, index, f"{what} indigena_c7"),

@@ -319,8 +319,11 @@ def main() -> int:
             prov = {"cuadro 11": sex_prov, "cuadro 32": afro_prov, "cuadro 33": ind_prov}[table][name]
             for column in range(width):
                 if sum(r[column] for r in rows) != prov[column]:
-                    raise SystemExit(f"panama_census: {name}: {table} districts do not make the "
-                                     f"province in column {column}")
+                    listed = ", ".join(f"{d} {v[column]:,}" for (p, d), v in dists.items()
+                                       if p == name)
+                    raise SystemExit(f"panama_census: {name}: {table} districts make "
+                                     f"{sum(r[column] for r in rows):,}, not {prov[column]:,}, "
+                                     f"in column {column}: {listed}")
         people_rows = {k: v for k, v in peoples[name].items() if k}
         if sum(people_rows.values()) != peoples[name][""]:
             raise SystemExit(f"panama_census: {name}: peoples make {sum(people_rows.values()):,}, "
