@@ -82,12 +82,14 @@ PROVINCES = {"La Habana": "Havana", "Isla de Juventud": "Isle of Youth",
 # ONEI's municipio names -> the boundary file's, where they differ by more
 # than accents and case. The special municipality of the Isle of Youth is
 # its province's one unit.
-# Table 1 of 2024 writes two municipios as neither Table 5 nor the boundary
-# file does: "1ro de Enero" and "Antillas".
+# Table 1 of 2024 writes three municipios as neither Table 5 nor the
+# boundary file does: "1ro de Enero", "Antillas", "Carlos M. de Céspedes".
 MUNICIPIOS = {"Carlos Manuel de Céspedes": "Céspedes", "Habana Vieja": "La Habana Vieja",
               "La Habana del Este": "Habana del Este", "Lajas": "Santa Isabel de las Lajas",
               "Isla de la Juventud": "Isle of Youth", "1ro de Enero": "Primero de Enero",
-              "Antillas": "Antilla"}
+              "Antillas": "Antilla", "Carlos M. de Céspedes": "Céspedes",
+              # The 2012 table's spelling.
+              "Báguano": "Báguanos"}
 # Banes and Antilla (Holguín) are not the units the boundary file draws.
 # ONEI's municipal dashboard counts Banes at 76,867 in 2020 and 66,835 in
 # 2021, Antilla at 12,675 and 21,186: territory passed from one to the other
