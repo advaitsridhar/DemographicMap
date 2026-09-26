@@ -1,67 +1,898 @@
-page: https://prod.redatam.org/binury/RpWebEngine.exe/Portal?BASE=CPV2011&lang=esp
-  text: URUGUAY::Consultas Dinámicas de Microtados | Redatam Webserver - CELADE, UNECLAC Cerrar × ☰ Powered by REDATAM | © 1985 - 2026 | CELADE, División de Población de la CEPAL - Naciones Unidas. Todos los derechos reservados.
-  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
-  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672701.htm
-  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672721.htm
-  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'REDATAM' -> https://www.cepal.org/es/subtemas/redatam
-pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
-  text: ﻿ Redatam Webserver Index Page ESTADÍSTICAS BÁSICAS FRECUENCIAS De Vivienda De Hogar De Población PROMEDIOS De Vivienda De Hogar De Población CRUCE DE VARIABLES Vivienda Hogar Población Combinados ANÁLISIS DE DATOS CENSALES ESTRUCTURA DE LA POBLACION Población por Sexo y Edad Relación de Masculinidad / Femeneidad FECUNDIDAD Promedio de Hijos Indicadores de Fecundidad EDUCACIÓN Distribución Geográfica de Población en Edad Escolar Tablas Estandar de Educación INDICADORES ADULTO MAYOR (65+) Vivienda y hogar donde residen Características personales Indicadores demográficos MAPAS TEMÁTICOS DISTRIBUCIÓN DE TOTALES De Viviendas De Hogares De Población Conteos DISTRIBUCIÓN DE PORCENTAJES De Viviendas De Hogares De Personas INFORMACIÓN GENERAL DOCUMENTACIÓN Boleta Censal Guía básica para el procesamiento Resultado proceso censal INFORMACIÓN Sitio Oficial INE Descargar software Redatam+SP DESCRIPCIÓN DE VARIABLES Todas las Variables Variables Geográficas Variables de Vivienda Variables de Hogar Variables de Población PROCESO ESTADÍSTICO REDATAM Procesar comandos Redatam Descargar diccionario Redatam Go !-->
-  link: '' -> javascript:window.parent.location.reload(true);
-  link: 'De Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQVIV&lang=esp
-  link: 'De Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQPOB&lang=esp
-  link: 'De Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERVIV&lang=esp
-  link: 'De Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERPOB&lang=esp
-  link: 'Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZVIV&lang=esp
-  link: 'Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZHOG&lang=esp
-  link: 'Población' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZPOB&lang=esp
-  link: 'Combinados' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZMULTI&lang=esp
-  link: 'Población por Sexo y Edad' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=EDADQUIN&lang=esp
-  link: 'Relación de Masculinidad / Femeneidad' -> https://prod.redatam.org/binury/RpWebStats.exe/Fraction?BASE=CPV2011&ITEM=RELMASC&lang=esp
-  link: 'Promedio de Hijos' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=FECUND&lang=esp
-  link: 'Indicadores de Fecundidad' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=INDFEC&lang=esp
-  link: 'Distribución Geográfica de Población en Edad Escolar' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=CANTEDU&lang=esp
-  link: 'Tablas Estandar de Educación' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=INDICEDU&lang=esp
-  link: 'Vivienda y hogar donde residen' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AD_VIV_HOG&lang=esp
-  link: 'Características personales' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=PERSAM&lang=esp
-  link: 'Indicadores demográficos' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=INDAM&lang=esp
-  link: 'De Viviendas' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAVIV&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAHOG&lang=esp
-  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAPOB&lang=esp
-  link: 'Conteos' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=CONTEOS&lang=esp
-  link: 'De Viviendas' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAVIV_PC&lang=esp
-  link: 'De Hogares' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAHOG_PC&lang=esp
-  link: 'De Personas' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAPOB_PC&lang=esp
-  link: 'Boleta Censal' -> https://prod.redatam.org/redury/censos/cpv2011/Cuestionario_VIV_HOG_PERS.pdf
-  link: 'Guía básica para el procesamiento' -> https://prod.redatam.org/redury/censos/cpv2011/ayuda/index.html
-  link: 'Resultado proceso censal' -> https://prod.redatam.org/redury/censos/cpv2011/INE_CENSO_2011.pdf
-  link: 'Sitio Oficial INE' -> https://www.ine.gub.uy/
-  link: 'Descargar software Redatam+SP' -> https://redatam.org/software
-  link: 'Todas las Variables' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICALL&lang=esp
-  link: 'Variables Geográficas' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICGEO&lang=esp
-  link: 'Variables de Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICVIV&lang=esp
-  link: 'Variables de Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICHOG&lang=esp
-  link: 'Variables de Población' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICPER&lang=esp
-  link: 'Procesar comandos Redatam' -> https://prod.redatam.org/binury/RpWebStats.exe/CmdSet?BASE=CPV2011&ITEM=PROGRED&lang=esp
-  link: 'Descargar diccionario Redatam' -> https://prod.redatam.org/binury/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\CENSOS\CPV2011\BasePublica\CPV2011_uruguay_publica.dic
-  link: 'Go' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
-pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672701.htm
-  text: ﻿ Redatam Webserver Header Page
-  link: '' -> https://www.ine.gub.uy/
-pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672721.htm
-  text: ﻿
-pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  text: ﻿ Redatam Webserver Footer Page --> RedAtam Webserver Home Â· Blog Â· Pricing Â· About Â· Faq Â· Contact --> © 2018 - 2026 | 2025.12.03 Portal del Estado Uruguayo --> Montevideo - Uruguay Teléfono: 0800 INFO (4636) redatam@gub.uy Acera de... Centro Latinoamericano y Caribeño de Demografía (CELADE), División de Población de la Comisión Económica para América Latina y El Caribe (CEPAL), Naciones Unidas
-  link: '' -> https://www.gub.uy/
-  link: 'Home' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'Blog' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'Pricing' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'About' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'Faq' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: 'Contact' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
-  link: '' -> https://twitter.com/REDATAM
-  link: '' -> https://www.facebook.com/AtencionUy/
-  link: '' -> https://www.youtube.com/user/redatam85
-  link: 'redatam@gub.uy' -> mailto:redatam@gub.uy
+probe_pdf: http://web.archive.org/web/2015id_/http://www.ihsi.ht/tableau/POPULATION.pdf
+  6,044,725 bytes
+  295 pages
+probe_pdf: 295 pages, 26 mention ['eligion', 'atholique', 'rotestant', 'angue', 'ethni']
+=== front matter ===
+.Tableau 200: Répartition de la population par année d'âge selon le sexe et le milieu de résidence
+Tableau 201: Répartition de la population par groupe d'âges selon le sexe et le milieu de résidence
+Tableau 202: Répartition de la population par groupe d'âges et sexe selon le département de résidence habituelle et le milieu de résidence
+Tableau 203: Répartition de la population par groupe d'âges et sexe selon le lien de parenté avec le chef de ménage et le milieu de résidence
+Tableau 204: Répartition de la population par groupe d'âges et sexe selon l'état de possession d'un acte de naissance et le milieu de résidence
+Tableau 205: Répartition de la population par groupe d'âges et sexe selon l'état de survie de la mère et le milieu de résidence
+Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 207: Répartition de la population de cinq (5) ans et plus par sexe et religion selon le niveau d'études atteint et le milieu de résidence
+Tableau 208: Répartition de la population de dix (10) ans et plus par sexe et religion selon le statut matrimonial et le milieu de résidence
+Tableau 209: Répartition de la population des personnes handicapées par groupe d'âges et nature de l'handicap selon le sexe et le milieu de résidence
+Tableau 210: Répartition de la population par groupe d'âges et sexe selon le lieu de naissance et le milieu de résidence
+Tableau 211: Répartition de la population par groupe d'âges et sexe selon la durée de résidence dans la zone recensée (ville, quartier ou section communale) et le milieu de 
+résidence
+Tableau 212: Répartition de la population de cinq (5) ans et plus par sexe selon le lieu de résidence en janvier 1998 et le milieu de résidence
+Tableau 213: Répartition de la population de cinq (5) ans et plus par groupe d'âges et sexe selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau  214:  Répartition  de  la  population  de  cinq  (5)  ans  et  plus  par  groupe  d'âges  et  sexe  selon  le  niveau  d'études  atteint  et  le  milieu  de  résidence
+Tableau 215: Répartition de la population de cinq (5) ans et plus par groupe d'âges et sexe selon la fréquentation scolaire ou universitaire durant l'année académique 2001-2002 
+et le milieu de résidence
+Tableau 216: Répartition de la population scolarisable (6-24 ans) par âge simple et sexe selon la fréquentation d'un établissement scolaire ou universitaire durant l'année 
+académique 2001-2002 et le milieu de résidence
+Tableau 217: Répartition de la population de dix (10) ans et plus par groupe d'âges et sexe selon la fréquentation d'un centre de formation technique ou professionnelle durant 
+l'année académi que 2001-2002 et le milieu de résidence
+Tableau 218: Répartition de la population de cinq (5) ans et plus par groupe d'âges et sexe selon la fréquentation d'un centre d'alphabétisation durant l'année académique 2001-
+2002 et le milieu de résidence
+Tableau 219: Répartition de la population scolaire ou universi taire de cinq (5) ans et plus par groupe d'âges et sexe selon le type d'établissement fréquenté durant l'année 
+académique 2001-2002 et le milieu de résidence
+Tableau 220: Répartition de la population de cinq (5) ans et plus ayant fréquenté un centre d'alphabétisation par groupe d'âges et sexe selon le type de centre fréquenté durant 
+l'année académique 2001-2002 et le milieu de résidence
+Tableau 221: Répartition de la population de cinq (5) ans et plus ayant fréquenté un centre d'alphabétisation durant l'année académique 2001-2002 par groupe d'âges et sexe 
+selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 222: Répartition de la population de dix (10) ans et plus ayant fréquenté un centre de formation technique ou professionnelle par groupe d'âges et sexe selon le type de 
+centre fréquenté durant l'année académique 2001-2002 et le milieu de résidence
+Tableau 223: Répartition de la population de dix (10) ans et plus par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau  224:  Répartition  des  chefs  de  ménage  de  dix  (10)  ans  et  plus  par  groupe  d'âges  et  sexe  selon  l'aptitude  à  lire  et  à  écrire  et  le  milieu  de  résidence
+Tableau 225: Répartition des chefs de ménage de dix (10) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de résidence
+Tableau 226: Répartition des chefs de ménage de dix (10) ans et plus par sexe et religion selon le niveau d'études atteint et le milieu de résidence
+Tableau 227: Répartition des chefs de ménage de dix (10) ans et plus par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau 228: Répartition des chefs de ménage de dix (10) ans et plus par sexe et statut matrimonial selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 229: Répartition des chefs de ménage de dix (10) ans et plus par sexe et statut matrimonial selon le niveau d'études  atteint et le milieu de résidence
+Tableau 230: Répartition des chefs de ménage de dix (10) ans et plus par groupe d'âges et sexe selon la situation d'activité et le milieu de résidence
+Tableau 231: Répartition des chefs de ménage de dix (10) ans et plus par sexe et taille du ménage selon la situation d'activité et le milieu de résidence
+Tableau 232: Répartition des chefs de ménage de dix (10) ans et plus par sexe et niveau d'études atteint selon le type d'activité économique et le milieu de résidence
+Tableau 233: Répartition des chefs de ménage de dix (10) ans et plus par sexe et statut matrimonial selon le type d'activité économique et le milieu de résidence
+Tableau 234: Répartition des chefs de ménage, actifs occupés, de dix (10) ans et plus par groupe d'âges et sexe selon la branche d'activité économique et le milieu de résidence
+Tableau 235: Répartition des chefs de ménage, actifs occupés, de dix (10) ans et plus par groupe d'âges et sexe selon l'occupation principale et le milieu de résidence
+Tableau 236: Répartition des chefs de ménage, actifs occupés, de 10 ans et plus par sexe et taille du ménage selon l'occupation principale et le milieu de résidence
+Tableau 237: Répartition des chefs de ménage, actifs occupés, de dix (10) ans et plus par groupe d'âges et sexe selon le statut dans l'emploi et le milieu de résidence
+Tableau 238: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le milieu de résidence
+Tableau 239: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le lien de parenté avec le chef de ménage et le milieu 
+de résidence
+Tableau 240: Répartition de la population des personnes âgées de soixante (60) ans et plus, chefs de ménage, par groupe d'âges et sexe selon la taille du ménage et le milieu de 
+résidence
+Tableau 241: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 242: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon l'état physique ou mental et le milieu de résidence
+Tableau 243: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 244: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de résidence
+Tableau 245: Répartition de la population des personnes âgées de soixante (60) ans et plus ayant atteint le niveau universitaire par groupe d'âges et sexe, selon le domaine 
+d'études et le milieu de résidence
+Tableau 246: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau 247: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la situation d'activité économique et le milieu de 
+résidence
+Tableau 248: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le type d'activité économique et le milieu de résidence
+Tableau 249: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, par groupe d'âges et sexe selon la branche d'activité économique et 
+le milieu de résidence
+Tableau 250: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, chefs de ménage, par sexe et taille du ménage selon la branche 
+d'activité économique et le milieu de résidence
+Tableau 251: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, par groupe d'âges et sexe selon l'occupation principale et le milieu 
+de résidence
+Tableau 252: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, chefs de ménage, par sexe et taille du ménage selon l'occupation 
+principale et le milieu de résidence
+Tableau 253: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, par groupe d'âges et sexe selon le secteur institutionnel et le milieu 
+de résidence
+Tableau 254: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, par groupe d'âges et sexe selon le statut dans l'emploi et le milieu 
+de résidence
+Tableau 255: Répartition de la population des personnes âgées de soixante (60) ans et plus, actives occupées, par grouped'âges et sexe selon le lieu principal de travail et le 
+milieu de résidence
+Tableau 256: Répartition de la population des personnes handicapées par année d'âge selon le sexe et le milieu de résidence
+Tableau 257: Répartition de la population des personnes handicapées par groupe d'âges selon le sexe et le milieu de résidence
+Tableau 258: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon le lien de parenté avec le chef de ménage et le milieu de résidence
+Tableau 259: Répartition de la population des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon l'état de possession d'un acte de naissance, 
+l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 260: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon l'état de survie de la mère et le milieu de résidence
+Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 262: Répartition de la population des personnes handicapées âgées de cinq (5) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de 
+résidence
+Tableau 263: Répartition de la population des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon la fréquentation d'un établissement scolaire 
+ou universitaire durant l'annéeacadémique 2001-2002 et le milieu de résidence
+Tableau 264: Répartition de la population des personnes handica pées, scolarisable (6-24 ans) par âge et sexe se- lon la fréquentation d'un établissement scolaire ou universitaire 
+durant l'année académique 2001-2002 et le milieu de résidence
+Tableau 265: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, par groupe d'âges et sexe selon la fréquentation d'un centre technique ou 
+professionnel durant l'année académique 2001-2002 et le milieu de résidence
+Tableau 266: Répartition de la population des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon la fréquentation d'un centre d'alphabétisation 
+durant l'année académique 2001-2002 et le milieu de résidence
+Tableau 267: Répartition de la population scolaire ou universitaire des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon le type 
+d'établissement fréquenté durant l'année aca- démique 2001-2002 et le milieu de résidence
+Tableau 268: Répartition de la population des personnes handi-apées, âgées de dix (10) ans et plus ayant fré- quenté un centre technique ou professionnel par groupe d'âges et 
+sexe selon le type de centrefréquenté durant l'année académique 2001-2002et le milieu de résidence
+Tableau 269: Répartition de la population des personnes handica-pées, âgées de cinq (5) ans et plus, ayant fréquenté un centre d'alphabétisation par groupe d'âges et sexe selon 
+le type de centre fréquenté durant l'année académique 2001-2002 et le milieu de résidence
+Tableau 270: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau 271: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, par groupe d'âges et sexe selon lasituation d'activité et le milieu de résidence
+Tableau 272: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus par groupe d'âges et sexe selon le type.d'activité économique et le milieu de 
+résidence
+Tableau 273: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, actives occupées, 
+par groupe d'âges et sexe selon la branche d'activité économique et le milieu de résidence
+Tableau 274: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, actives occupées, par groupe d'âges et sexe selon l'occupation principale et le 
+milieu de résidence
+Tableau 275: Répartition de la population des personnes handicapées, âgées de dix (10) ans et plus, actives occupées, par groupe d'âges et sexe selon le statut dans l'emploi et le 
+milieu de résidence
+Début
+                             Tableau 200: Répartition de la population par année d'âge selon
+                                          le sexe et le milieu de résidence
+                                                          ENSEMBLE DU PAYS
+                             ════════════════════════╤═══════════════════════════════════════
+                                                     │              Population
+                              Année d'âge            ├────────────┬──────────────────────────
+                                                     │   Total    │          Sexe
+                                                     │            ├────────────┬─────────────
+                                                     │            │  Masculin  │   Féminin
+                             ════════════════════════╧════════════╧════════════╧═════════════
+
+=== pages mentioning ['eligion', 'atholique', 'rotestant', 'angue', 'ethni'] (first 30) ===
+
+--- page 1 ----------------------------------------------------
+Tableau 203: Répartition de la population par groupe d'âges et sexe selon le lien de parenté avec le chef de ménage et le milieu de résidence
+Tableau 204: Répartition de la population par groupe d'âges et sexe selon l'état de possession d'un acte de naissance et le milieu de résidence
+Tableau 205: Répartition de la population par groupe d'âges et sexe selon l'état de survie de la mère et le milieu de résidence
+Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 207: Répartition de la population de cinq (5) ans et plus par sexe et religion selon le niveau d'études atteint et le milieu de résidence
+Tableau 208: Répartition de la population de dix (10) ans et plus par sexe et religion selon le statut matrimonial et le milieu de résidence
+Tableau 209: Répartition de la population des personnes handicapées par groupe d'âges et nature de l'handicap selon le sexe et le milieu de résidence
+Tableau 210: Répartition de la population par groupe d'âges et sexe selon le lieu de naissance et le milieu de résidence
+Tableau 211: Répartition de la population par groupe d'âges et sexe selon la durée de résidence dans la zone recensée (ville, quartier ou section communale) et le milieu de
+      ...
+Tableau 223: Répartition de la population de dix (10) ans et plus par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau  224:  Répartition  des  chefs  de  ménage  de  dix  (10)  ans  et  plus  par  groupe  d'âges  et  sexe  selon  l'aptitude  à  lire  et  à  écrire  et  le  milieu  de  résidence
+Tableau 225: Répartition des chefs de ménage de dix (10) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de résidence
+Tableau 226: Répartition des chefs de ménage de dix (10) ans et plus par sexe et religion selon le niveau d'études atteint et le milieu de résidence
+Tableau 227: Répartition des chefs de ménage de dix (10) ans et plus par groupe d'âges et sexe selon le statut matrimonial et le milieu de résidence
+Tableau 228: Répartition des chefs de ménage de dix (10) ans et plus par sexe et statut matrimonial selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 229: Répartition des chefs de ménage de dix (10) ans et plus par sexe et statut matrimonial selon le niveau d'études  atteint et le milieu de résidence
+
+--- page 2 ----------------------------------------------------
+de résidence
+Tableau 240: Répartition de la population des personnes âgées de soixante (60) ans et plus, chefs de ménage, par groupe d'âges et sexe selon la taille du ménage et le milieu de
+résidence
+Tableau 241: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 242: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon l'état physique ou mental et le milieu de résidence
+Tableau 243: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 244: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de résidence
+      ...
+Tableau 259: Répartition de la population des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon l'état de possession d'un acte de naissance,
+l'aptitude à lire et à écrire et le milieu de résidence
+Tableau 260: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon l'état de survie de la mère et le milieu de résidence
+Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+Tableau 262: Répartition de la population des personnes handicapées âgées de cinq (5) ans et plus par groupe d'âges et sexe selon le niveau d'études atteint et le milieu de
+résidence
+Tableau 263: Répartition de la population des personnes handicapées, âgées de cinq (5) ans et plus, par groupe d'âges et sexe selon la fréquentation d'un établissement scolaire
+
+--- page 35 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+     ENSEMBLE
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 36 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+     ENSEMBLE
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 37 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+      Milieu Urbain
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 38 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+      Milieu Urbain
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 39 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+      Milieu Rural
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 40 ----------------------------------------------------
+     Tableau 206: Répartition de la population par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                              ENSEMBLE DU PAYS
+     ═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                        │                                                            Population
+      Groupe d'âges /   ├─────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      Sexe              │  Total  │                                                        Religion
+                        │         ├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                        │         │  Aucune │Catholi- │Adventis-│Témoin de│Baptiste │Méthodis-│Episcopa-│Pentecô- │Vaudouï- │Musulman │  Mormon │  Autre
+                        │         │ religion│  que    │   te    │ Jéhovah │         │   te    │   le    │  tiste  │  sant   │         │         │ religion
+     ═══════════════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+      Milieu Rural
+     ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 41 ----------------------------------------------------
+Tableau 207: Répartition de la population de cinq (5) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                   Population de cinq (5) ans et plus
+ Sexe / Religion   ├──────────┬────────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                    Niveau d'études atteint
+                   │          ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │Universi-
+      ...
+                   │          │           │           │           │           │           │          │          │
+ Total             │7,390,673 │ 2,766,230 │   355,319 │ 2,600,457 │   801,947 │   787,923 │   70,937 │    4,041 │    3,819
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  707,971 │   355,766 │    34,751 │   208,919 │    56,054 │    48,260 │    3,790 │      244 │      187
+ Catholique        │4,066,704 │ 1,627,319 │   187,809 │ 1,414,531 │   409,964 │   386,438 │   36,095 │    2,355 │    2,193
+ Adventiste        │  222,467 │    50,089 │     9,744 │    78,986 │    34,113 │    44,053 │    5,016 │      236 │      230
+ Témoin de Jéhovah │   35,210 │     4,062 │     1,210 │     9,904 │     6,474 │    11,772 │    1,629 │       74 │       85
+ Baptiste          │1,143,228 │   321,741 │    58,952 │   444,360 │   151,228 │   153,091 │   12,717 │      572 │      567
+      ...
+ Vaudouïsant       │  163,207 │    91,707 │     6,025 │    45,752 │    10,732 │     8,440 │      502 │       24 │       25
+ Musulman          │    1,831 │       544 │        83 │       463 │       209 │       449 │       77 │        3 │        3
+ Mormon            │    5,139 │       714 │       158 │     1,500 │       957 │     1,622 │      177 │       10 │        1
+ Autre religion    │  296,402 │   101,302 │    17,106 │   113,141 │    32,830 │    29,311 │    2,381 │      147 │      184
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Masculin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │3,546,220 │ 1,224,677 │   179,628 │ 1,281,552 │   390,112 │   419,303 │   45,576 │    2,690 │    2,682
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  387,034 │   181,034 │    18,528 │   117,139 │    33,863 │    33,080 │    3,046 │      200 │      144
+ Catholique        │1,976,249 │   733,021 │    95,512 │   710,282 │   203,107 │   208,882 │   22,397 │    1,524 │    1,524
+ Adventiste        │  103,515 │    20,111 │     4,878 │    36,785 │    15,740 │    22,439 │    3,223 │      167 │      172
+ Témoin de Jéhovah │   16,333 │     1,610 │       599 │     4,317 │     2,868 │     5,841 │      994 │       51 │       53
+ Baptiste          │  507,481 │   122,851 │    28,939 │   203,659 │    67,746 │    75,472 │    8,056 │      373 │      385
+      ...
+ Vaudouïsant       │   87,313 │    45,103 │     3,147 │    26,600 │     6,443 │     5,595 │      382 │       19 │       24
+ Musulman          │    1,077 │       264 │        38 │       246 │       124 │       339 │       61 │        3 │        2
+ Mormon            │    2,614 │       309 │        84 │       705 │       507 │       879 │      122 │        8 │        -
+ Autre religion    │  138,183 │    41,507 │     8,614 │    54,330 │    15,853 │    15,986 │    1,646 │      102 │      145
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Féminin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │3,844,453 │ 1,541,553 │   175,691 │ 1,318,905 │   411,835 │   368,620 │   25,361 │    1,351 │    1,137
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  320,937 │   174,732 │    16,223 │    91,780 │    22,191 │    15,180 │      744 │       44 │       43
+ Catholique        │2,090,455 │   894,298 │    92,297 │   704,249 │   206,857 │   177,556 │   13,698 │      831 │      669
+ Adventiste        │  118,952 │    29,978 │     4,866 │    42,201 │    18,373 │    21,614 │    1,793 │       69 │       58
+ Témoin de Jéhovah │   18,877 │     2,452 │       611 │     5,587 │     3,606 │     5,931 │      635 │       23 │       32
+ Baptiste          │  635,747 │   198,890 │    30,013 │   240,701 │    83,482 │    77,619 │    4,661 │      199 │      182
+      ...
+ Vaudouïsant       │   75,894 │    46,604 │     2,878 │    19,152 │     4,289 │     2,845 │      120 │        5 │        1
+ Musulman          │      754 │       280 │        45 │       217 │        85 │       110 │       16 │        - │        1
+ Mormon            │    2,525 │       405 │        74 │       795 │       450 │       743 │       55 │        2 │        1
+ Autre religion    │  158,219 │    59,795 │     8,492 │    58,811 │    16,977 │    13,325 │      735 │       45 │       39
+
+--- page 42 ----------------------------------------------------
+Tableau 207: Répartition de la population de cinq (5) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                   Population de cinq (5) ans et plus
+ Sexe / Religion   ├──────────┬────────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                    Niveau d'études atteint
+                   │          ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │Universi-
+      ...
+                   │          │           │           │           │           │           │          │          │
+ Total             │3,067,678 │   563,246 │   139,217 │ 1,142,133 │   523,898 │   628,183 │   64,616 │    3,289 │    3,096
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  268,737 │    79,063 │    13,618 │    96,324 │    37,555 │    38,443 │    3,403 │      194 │      137
+ Catholique        │1,591,590 │   306,122 │    70,773 │   597,681 │   268,065 │   311,844 │   33,344 │    1,915 │    1,846
+ Adventiste        │  126,913 │    14,280 │     4,998 │    41,880 │    24,007 │    36,663 │    4,668 │      214 │      203
+ Témoin de Jéhovah │   26,835 │     1,743 │       873 │     7,261 │     5,135 │    10,152 │    1,529 │       69 │       73
+ Baptiste          │  531,703 │    76,842 │    25,272 │   201,369 │    96,817 │   119,122 │   11,410 │      438 │      433
+      ...
+ Vaudouïsant       │   37,913 │    12,780 │     1,265 │    12,677 │     5,231 │     5,518 │      405 │       17 │       20
+ Musulman          │    1,075 │       144 │        45 │       255 │       147 │       409 │       69 │        3 │        3
+ Mormon            │    4,176 │       351 │       124 │     1,205 │       838 │     1,482 │      165 │       10 │        1
+ Autre religion    │  110,793 │    18,518 │     5,395 │    43,102 │    19,529 │    21,900 │    2,111 │      121 │      117
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Masculin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │1,405,397 │   203,554 │    67,854 │   515,667 │   244,533 │   328,143 │   41,243 │    2,248 │    2,155
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  146,292 │    36,863 │     7,004 │    50,996 │    22,240 │    26,180 │    2,743 │      161 │      105
+ Catholique        │  736,022 │   111,896 │    34,503 │   274,017 │   127,138 │   165,306 │   20,611 │    1,272 │    1,279
+ Adventiste        │   57,636 │     4,665 │     2,434 │    18,266 │    10,682 │    18,306 │    2,979 │      154 │      150
+ Témoin de Jéhovah │   12,329 │       574 │       446 │     3,077 │     2,235 │     4,982 │      921 │       49 │       45
+ Baptiste          │  226,011 │    22,793 │    12,117 │    84,980 │    41,463 │    56,901 │    7,174 │      295 │      288
+      ...
+ Vaudouïsant       │   19,849 │     5,581 │       643 │     6,739 │     2,975 │     3,569 │      308 │       15 │       19
+ Musulman          │      673 │        58 │        22 │       133 │        85 │       314 │       56 │        3 │        2
+ Mormon            │    2,112 │       145 │        68 │       536 │       440 │       802 │      113 │        8 │        -
+ Autre religion    │   50,203 │     6,035 │     2,629 │    19,078 │     9,079 │    11,759 │    1,451 │       87 │       85
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Féminin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │1,662,281 │   359,692 │    71,363 │   626,466 │   279,365 │   300,040 │   23,373 │    1,041 │      941
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  122,445 │    42,200 │     6,614 │    45,328 │    15,315 │    12,263 │      660 │       33 │       32
+ Catholique        │  855,568 │   194,226 │    36,270 │   323,664 │   140,927 │   146,538 │   12,733 │      643 │      567
+ Adventiste        │   69,277 │     9,615 │     2,564 │    23,614 │    13,325 │    18,357 │    1,689 │       60 │       53
+ Témoin de Jéhovah │   14,506 │     1,169 │       427 │     4,184 │     2,900 │     5,170 │      608 │       20 │       28
+ Baptiste          │  305,692 │    54,049 │    13,155 │   116,389 │    55,354 │    62,221 │    4,236 │      143 │      145
+      ...
+ Vaudouïsant       │   18,064 │     7,199 │       622 │     5,938 │     2,256 │     1,949 │       97 │        2 │        1
+ Musulman          │      402 │        86 │        23 │       122 │        62 │        95 │       13 │        - │        1
+ Mormon            │    2,064 │       206 │        56 │       669 │       398 │       680 │       52 │        2 │        1
+ Autre religion    │   60,590 │    12,483 │     2,766 │    24,024 │    10,450 │    10,141 │      660 │       34 │       32
+
+--- page 43 ----------------------------------------------------
+Tableau 207: Répartition de la population de cinq (5) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                   Population de cinq (5) ans et plus
+ Sexe / Religion   ├──────────┬────────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                    Niveau d'études atteint
+                   │          ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │Universi-
+      ...
+                   │          │           │           │           │           │           │          │          │
+ Total             │4,322,995 │ 2,202,984 │   216,102 │ 1,458,324 │   278,049 │   159,740 │    6,321 │      752 │      723
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  439,234 │   276,703 │    21,133 │   112,595 │    18,499 │     9,817 │      387 │       50 │       50
+ Catholique        │2,475,114 │ 1,321,197 │   117,036 │   816,850 │   141,899 │    74,594 │    2,751 │      440 │      347
+ Adventiste        │   95,554 │    35,809 │     4,746 │    37,106 │    10,106 │     7,390 │      348 │       22 │       27
+ Témoin de Jéhovah │    8,375 │     2,319 │       337 │     2,643 │     1,339 │     1,620 │      100 │        5 │       12
+ Baptiste          │  611,525 │   244,899 │    33,680 │   242,991 │    54,411 │    33,969 │    1,307 │      134 │      134
+      ...
+ Vaudouïsant       │  125,294 │    78,927 │     4,760 │    33,075 │     5,501 │     2,922 │       97 │        7 │        5
+ Musulman          │      756 │       400 │        38 │       208 │        62 │        40 │        8 │        - │        -
+ Mormon            │      963 │       363 │        34 │       295 │       119 │       140 │       12 │        - │        -
+ Autre religion    │  185,609 │    82,784 │    11,711 │    70,039 │    13,301 │     7,411 │      270 │       26 │       67
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Masculin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │2,140,823 │ 1,021,123 │   111,774 │   765,885 │   145,579 │    91,160 │    4,333 │      442 │      527
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  240,742 │   144,171 │    11,524 │    66,143 │    11,623 │     6,900 │      303 │       39 │       39
+ Catholique        │1,240,227 │   621,125 │    61,009 │   436,265 │    75,969 │    43,576 │    1,786 │      252 │      245
+ Adventiste        │   45,879 │    15,446 │     2,444 │    18,519 │     5,058 │     4,133 │      244 │       13 │       22
+ Témoin de Jéhovah │    4,004 │     1,036 │       153 │     1,240 │       633 │       859 │       73 │        2 │        8
+ Baptiste          │  281,470 │   100,058 │    16,822 │   118,679 │    26,283 │    18,571 │      882 │       78 │       97
+      ...
+ Vaudouïsant       │   67,464 │    39,522 │     2,504 │    19,861 │     3,468 │     2,026 │       74 │        4 │        5
+ Musulman          │      404 │       206 │        16 │       113 │        39 │        25 │        5 │        - │        -
+ Mormon            │      502 │       164 │        16 │       169 │        67 │        77 │        9 │        - │        -
+ Autre religion    │   87,980 │    35,472 │     5,985 │    35,252 │     6,774 │     4,227 │      195 │       15 │       60
+───────────────────┴──────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴──────────
+                                                         Féminin
+───────────────────┬──────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬──────────
+                   │          │           │           │           │           │           │          │          │
+ Total             │2,182,172 │ 1,181,861 │   104,328 │   692,439 │   132,470 │    68,580 │    1,988 │      310 │      196
+                   │          │           │           │           │           │           │          │          │
+ Aucune religion   │  198,492 │   132,532 │     9,609 │    46,452 │     6,876 │     2,917 │       84 │       11 │       11
+ Catholique        │1,234,887 │   700,072 │    56,027 │   380,585 │    65,930 │    31,018 │      965 │      188 │      102
+ Adventiste        │   49,675 │    20,363 │     2,302 │    18,587 │     5,048 │     3,257 │      104 │        9 │        5
+ Témoin de Jéhovah │    4,371 │     1,283 │       184 │     1,403 │       706 │       761 │       27 │        3 │        4
+ Baptiste          │  330,055 │   144,841 │    16,858 │   124,312 │    28,128 │    15,398 │      425 │       56 │       37
+      ...
+ Vaudouïsant       │   57,830 │    39,405 │     2,256 │    13,214 │     2,033 │       896 │       23 │        3 │        -
+ Musulman          │      352 │       194 │        22 │        95 │        23 │        15 │        3 │        - │        -
+ Mormon            │      461 │       199 │        18 │       126 │        52 │        63 │        3 │        - │        -
+ Autre religion    │   97,629 │    47,312 │     5,726 │    34,787 │     6,527 │     3,184 │       75 │       11 │        7
+═══════════════════╧══════════╧═══════════╧═══════════╧═══════════╧═══════════╧═══════════╧══════════╧══════════╧══════════
+Source : IHSI/Recensement Général de la Population et de l'Habitat (RGPH-2003)
+Début
+
+--- page 44 ----------------------------------------------------
+Tableau 208: Répartition de la population de dix (10) ans et plus par sexe et religion selon le statut matrimonial et le
+             milieu de résidence
+                                                        ENSEMBLE DU PAYS
+═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                Population de dix (10) ans et plus
+ Sexe / Religion   ├──────────┬─────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                   Statut matrimonial
+                   │          ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │Célibatai-│ Marié(e) │ Placé(e) │ Viv avèk │Divorcé(e)│ Veuf(ve) │Séparé(e) │ Séparé(e)
+      ...
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 6,389,432│ 3,243,298│ 1,232,359│ 1,392,331│  133,565 │    8,042 │  196,190 │   25,993 │  157,654
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   600,894│   291,804│    57,957│   187,245│   19,743 │      641 │   19,187 │    2,448 │   21,869
+ Catholique        │ 3,515,625│ 1,755,497│   563,313│   897,855│   76,946 │    4,708 │  113,197 │   13,066 │   91,043
+ Adventiste        │   196,354│   110,570│    55,993│    18,141│    2,773 │      382 │    4,792 │      981 │    2,722
+ Témoin de Jéhovah │    32,301│    19,488│     8,471│     2,504│      504 │      112 │      630 │      154 │      438
+ Baptiste          │   988,189│   533,017│   283,507│   110,328│   14,397 │      958 │   25,895 │    4,269 │   15,818
+      ...
+ Vaudouïsant       │   147,756│    51,550│    17,493│    60,550│    5,265 │      211 │    5,715 │      769 │    6,203
+ Musulman          │     1,634│       822│       381│       303│       43 │       14 │       35 │        7 │       29
+ Mormon            │     4,697│     2,982│       899│       478│       99 │       12 │      111 │       20 │       96
+ Autre religion    │   255,020│   132,778│    63,853│    37,285│    4,694 │      391 │    7,948 │    1,389 │    6,682
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Masculin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 3,044,479│ 1,697,072│   574,956│   623,029│   43,415 │    3,272 │   45,183 │    9,738 │   47,814
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   331,712│   177,882│    33,499│    94,926│    8,091 │      384 │    6,519 │    1,211 │    9,200
+ Catholique        │ 1,699,386│   934,041│   270,317│   408,068│   24,535 │    1,903 │   26,685 │    5,227 │   28,610
+ Adventiste        │    90,466│    55,122│    25,125│     7,310│      848 │      144 │    1,004 │      321 │      592
+ Témoin de Jéhovah │    14,908│     9,443│     3,891│     1,082│      159 │       40 │      145 │       48 │      100
+ Baptiste          │   431,508│   255,952│   123,983│    39,094│    3,678 │      285 │    4,516 │    1,213 │    2,787
+      ...
+ Vaudouïsant       │    79,394│    30,962│     9,903│    31,298│    2,357 │      122 │    1,786 │      396 │    2,570
+ Musulman          │       983│       547│       221│       147│       25 │        7 │       12 │        5 │       19
+ Mormon            │     2,368│     1,601│       434│       229│       39 │        7 │       24 │        9 │       25
+ Autre religion    │   117,575│    68,360│    28,878│    14,327│    1,552 │      202 │    1,763 │      529 │    1,964
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Féminin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 3,344,953│ 1,546,226│   657,403│   769,302│   90,150 │    4,770 │  151,007 │   16,255 │  109,840
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   269,182│   113,922│    24,458│    92,319│   11,652 │      257 │   12,668 │    1,237 │   12,669
+ Catholique        │ 1,816,239│   821,456│   292,996│   489,787│   52,411 │    2,805 │   86,512 │    7,839 │   62,433
+ Adventiste        │   105,888│    55,448│    30,868│    10,831│    1,925 │      238 │    3,788 │      660 │    2,130
+ Témoin de Jéhovah │    17,393│    10,045│     4,580│     1,422│      345 │       72 │      485 │      106 │      338
+ Baptiste          │   556,681│   277,065│   159,524│    71,234│   10,719 │      673 │   21,379 │    3,056 │   13,031
+      ...
+ Vaudouïsant       │    68,362│    20,588│     7,590│    29,252│    2,908 │       89 │    3,929 │      373 │    3,633
+ Musulman          │       651│       275│       160│       156│       18 │        7 │       23 │        2 │       10
+ Mormon            │     2,329│     1,381│       465│       249│       60 │        5 │       87 │       11 │       71
+ Autre religion    │   137,445│    64,418│    34,975│    22,958│    3,142 │      189 │    6,185 │      860 │    4,718
+
+--- page 45 ----------------------------------------------------
+Tableau 208: Répartition de la population de dix (10) ans et plus par sexe et religion selon le statut matrimonial et le
+             milieu de résidence
+                                                        ENSEMBLE DU PAYS
+═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                Population de dix (10) ans et plus
+ Sexe / Religion   ├──────────┬─────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                   Statut matrimonial
+                   │          ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │Célibatai-│ Marié(e) │ Placé(e) │ Viv avèk │Divorcé(e)│ Veuf(ve) │Séparé(e) │ Séparé(e)
+      ...
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 2,724,414│ 1,548,190│   486,917│   466,136│   62,563 │    5,799 │   71,703 │   12,010 │   71,096
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   235,370│   129,666│    20,924│    61,444│    8,886 │      366 │    4,897 │      924 │    8,263
+ Catholique        │ 1,413,833│   793,804│   202,039│   293,812│   35,790 │    3,540 │   39,289 │    5,806 │   39,753
+ Adventiste        │   114,342│    69,167│    29,725│     8,477│    1,673 │      302 │    2,677 │      589 │    1,732
+ Témoin de Jéhovah │    24,704│    15,413│     6,318│     1,648│      345 │       94 │      456 │      107 │      323
+ Baptiste          │   471,440│   276,557│   118,391│    45,981│    7,348 │      690 │   11,556 │    2,169 │    8,748
+      ...
+ Vaudouïsant       │    35,268│    14,465│     4,318│    11,857│    1,462 │      117 │    1,160 │      242 │    1,647
+ Musulman          │       971│       564│       209│       133│       23 │        9 │       14 │        3 │       16
+ Mormon            │     3,841│     2,548│       725│       296│       80 │       11 │       80 │       16 │       85
+ Autre religion    │    98,356│    56,829│    21,705│    11,473│    2,056 │      206 │    2,651 │      558 │    2,878
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Masculin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 1,237,155│   758,265│   220,912│   205,920│   18,823 │    2,205 │   11,964 │    3,654 │   15,412
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   129,385│    76,571│    12,637│    31,856│    3,534 │      231 │    1,398 │      397 │    2,761
+ Catholique        │   648,895│   393,270│    94,034│   132,377│   10,452 │    1,365 │    6,589 │    1,930 │    8,878
+ Adventiste        │    51,432│    33,369│    13,076│     3,447│      507 │      113 │      467 │      151 │      302
+ Témoin de Jéhovah │    11,277│     7,381│     2,881│       705│       94 │       31 │       93 │       28 │       64
+ Baptiste          │   196,849│   125,455│    50,091│    15,991│    1,795 │      182 │    1,569 │      495 │    1,271
+      ...
+ Vaudouïsant       │    18,559│     8,267│     2,348│     6,277│      608 │       62 │      286 │      127 │      584
+ Musulman          │       626│       395│       130│        68│       14 │        4 │        4 │        3 │        8
+ Mormon            │     1,926│     1,355│       352│       137│       33 │        7 │       17 │        6 │       19
+ Autre religion    │    44,154│    27,753│     9,799│     4,530│      655 │       86 │      506 │      179 │      646
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Féminin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 1,487,259│   789,925│   266,005│   260,216│   43,740 │    3,594 │   59,739 │    8,356 │   55,684
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   105,985│    53,095│     8,287│    29,588│    5,352 │      135 │    3,499 │      527 │    5,502
+ Catholique        │   764,938│   400,534│   108,005│   161,435│   25,338 │    2,175 │   32,700 │    3,876 │   30,875
+ Adventiste        │    62,910│    35,798│    16,649│     5,030│    1,166 │      189 │    2,210 │      438 │    1,430
+ Témoin de Jéhovah │    13,427│     8,032│     3,437│       943│      251 │       63 │      363 │       79 │      259
+ Baptiste          │   274,591│   151,102│    68,300│    29,990│    5,553 │      508 │    9,987 │    1,674 │    7,477
+      ...
+ Vaudouïsant       │    16,709│     6,198│     1,970│     5,580│      854 │       55 │      874 │      115 │    1,063
+ Musulman          │       345│       169│        79│        65│        9 │        5 │       10 │        - │        8
+ Mormon            │     1,915│     1,193│       373│       159│       47 │        4 │       63 │       10 │       66
+ Autre religion    │    54,202│    29,076│    11,906│     6,943│    1,401 │      120 │    2,145 │      379 │    2,232
+
+--- page 46 ----------------------------------------------------
+Tableau 208: Répartition de la population de dix (10) ans et plus par sexe et religion selon le statut matrimonial et le
+             milieu de résidence
+                                                        ENSEMBLE DU PAYS
+═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                Population de dix (10) ans et plus
+ Sexe / Religion   ├──────────┬─────────────────────────────────────────────────────────────────────────────────────────
+                   │  Total   │                                   Statut matrimonial
+                   │          ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │Célibatai-│ Marié(e) │ Placé(e) │ Viv avèk │Divorcé(e)│ Veuf(ve) │Séparé(e) │ Séparé(e)
+      ...
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 3,665,018│ 1,695,108│   745,442│   926,195│   71,002 │    2,243 │  124,487 │   13,983 │   86,558
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   365,524│   162,138│    37,033│   125,801│   10,857 │      275 │   14,290 │    1,524 │   13,606
+ Catholique        │ 2,101,792│   961,693│   361,274│   604,043│   41,156 │    1,168 │   73,908 │    7,260 │   51,290
+ Adventiste        │    82,012│    41,403│    26,268│     9,664│    1,100 │       80 │    2,115 │      392 │      990
+ Témoin de Jéhovah │     7,597│     4,075│     2,153│       856│      159 │       18 │      174 │       47 │      115
+ Baptiste          │   516,749│   256,460│   165,116│    64,347│    7,049 │      268 │   14,339 │    2,100 │    7,070
+      ...
+ Vaudouïsant       │   112,488│    37,085│    13,175│    48,693│    3,803 │       94 │    4,555 │      527 │    4,556
+ Musulman          │       663│       258│       172│       170│       20 │        5 │       21 │        4 │       13
+ Mormon            │       856│       434│       174│       182│       19 │        1 │       31 │        4 │       11
+ Autre religion    │   156,664│    75,949│    42,148│    25,812│    2,638 │      185 │    5,297 │      831 │    3,804
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Masculin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 1,807,324│   938,807│   354,044│   417,109│   24,592 │    1,067 │   33,219 │    6,084 │   32,402
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   202,327│   101,311│    20,862│    63,070│    4,557 │      153 │    5,121 │      814 │    6,439
+ Catholique        │ 1,050,491│   540,771│   176,283│   275,691│   14,083 │      538 │   20,096 │    3,297 │   19,732
+ Adventiste        │    39,034│    21,753│    12,049│     3,863│      341 │       31 │      537 │      170 │      290
+ Témoin de Jéhovah │     3,631│     2,062│     1,010│       377│       65 │        9 │       52 │       20 │       36
+ Baptiste          │   234,659│   130,497│    73,892│    23,103│    1,883 │      103 │    2,947 │      718 │    1,516
+      ...
+ Vaudouïsant       │    60,835│    22,695│     7,555│    25,021│    1,749 │       60 │    1,500 │      269 │    1,986
+ Musulman          │       357│       152│        91│        79│       11 │        3 │        8 │        2 │       11
+ Mormon            │       442│       246│        82│        92│        6 │        - │        7 │        3 │        6
+ Autre religion    │    73,421│    40,607│    19,079│     9,797│      897 │      116 │    1,257 │      350 │    1,318
+───────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴────────────
+                                                       Féminin
+───────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬────────────
+                   │          │          │          │          │          │          │          │          │
+ Total             │ 1,857,694│   756,301│   391,398│   509,086│   46,410 │    1,176 │   91,268 │    7,899 │   54,156
+                   │          │          │          │          │          │          │          │          │
+ Aucune religion   │   163,197│    60,827│    16,171│    62,731│    6,300 │      122 │    9,169 │      710 │    7,167
+ Catholique        │ 1,051,301│   420,922│   184,991│   328,352│   27,073 │      630 │   53,812 │    3,963 │   31,558
+ Adventiste        │    42,978│    19,650│    14,219│     5,801│      759 │       49 │    1,578 │      222 │      700
+ Témoin de Jéhovah │     3,966│     2,013│     1,143│       479│       94 │        9 │      122 │       27 │       79
+ Baptiste          │   282,090│   125,963│    91,224│    41,244│    5,166 │      165 │   11,392 │    1,382 │    5,554
+      ...
+ Vaudouïsant       │    51,653│    14,390│     5,620│    23,672│    2,054 │       34 │    3,055 │      258 │    2,570
+ Musulman          │       306│       106│        81│        91│        9 │        2 │       13 │        2 │        2
+ Mormon            │       414│       188│        92│        90│       13 │        1 │       24 │        1 │        5
+ Autre religion    │    83,243│    35,342│    23,069│    16,015│    1,741 │       69 │    4,040 │      481 │    2,486
+═══════════════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧════════════
+Source : IHSI/Recensement Général de la Population et de l'Habitat (RGPH-2003)
+Début
+
+--- page 114 ----------------------------------------------------
+Tableau 226: Répartition des chefs de ménage de dix (10) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═════════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                 Chefs de ménage de dix (10) ans et plus
+ Sexe / Religion   ├───────────┬─────────────────────────────────────────────────────────────────────────────────────────────
+                   │   Total   │                                    Niveau d'études atteint
+                   │           ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │ Universi-
+      ...
+                   │           │           │           │           │           │           │          │          │
+ Total             │ 1,793,198 │   987,789 │    16,364 │   402,384 │   158,026 │   200,291 │   24,360 │    1,915 │    2,069
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │   187,877 │   124,420 │     1,574 │    33,125 │    12,881 │    14,091 │    1,548 │      129 │      109
+ Catholique        │   993,349 │   581,959 │     8,790 │   212,622 │    79,253 │    96,305 │   12,154 │    1,094 │    1,172
+ Adventiste        │    50,114 │    17,458 │       470 │    12,231 │     6,445 │    11,484 │    1,778 │      122 │      126
+ Témoin de Jéhovah │     8,282 │     1,445 │        78 │     1,596 │     1,376 │     3,128 │      577 │       40 │       42
+ Baptiste          │   253,033 │   111,659 │     2,390 │    67,501 │    27,859 │    38,672 │    4,391 │      264 │      297
+      ...
+ Vaudouïsant       │    58,308 │    39,947 │       577 │    11,393 │     3,177 │     2,973 │      215 │        9 │       17
+ Musulman          │       537 │       201 │         9 │        88 │        46 │       153 │       35 │        3 │        2
+ Mormon            │     1,153 │       272 │        12 │       186 │       191 │       434 │       52 │        6 │        -
+ Autre religion    │    71,975 │    34,722 │       848 │    19,390 │     7,432 │     8,444 │      938 │       78 │      123
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Masculin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │ 1,102,206 │   569,141 │    10,501 │   267,289 │    99,399 │   133,816 │   18,776 │    1,544 │    1,740
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │   124,275 │    77,653 │     1,088 │    24,013 │     9,081 │    10,894 │    1,343 │      114 │       89
+ Catholique        │   615,510 │   343,479 │     5,717 │   143,012 │    49,482 │    62,932 │    9,051 │      856 │      981
+ Adventiste        │    30,242 │     9,156 │       304 │     7,783 │     3,895 │     7,501 │    1,388 │      105 │      110
+ Témoin de Jéhovah │     5,018 │       720 │        43 │       902 │       799 │     2,052 │      440 │       33 │       29
+ Baptiste          │   148,137 │    57,434 │     1,452 │    42,885 │    17,006 │    25,489 │    3,413 │      220 │      238
+      ...
+ Vaudouïsant       │    38,736 │    24,907 │       391 │     8,661 │     2,295 │     2,283 │      174 │        8 │       17
+ Musulman          │       398 │       117 │         4 │        70 │        41 │       129 │       32 │        3 │        2
+ Mormon            │       697 │       132 │         7 │       100 │       116 │       295 │       42 │        5 │        -
+ Autre religion    │    42,904 │    18,270 │       551 │    12,748 │     4,634 │     5,766 │      756 │       63 │      116
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Féminin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │   690,992 │   418,648 │     5,863 │   135,095 │    58,627 │    66,475 │    5,584 │      371 │      329
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    63,602 │    46,767 │       486 │     9,112 │     3,800 │     3,197 │      205 │       15 │       20
+ Catholique        │   377,839 │   238,480 │     3,073 │    69,610 │    29,771 │    33,373 │    3,103 │      238 │      191
+ Adventiste        │    19,872 │     8,302 │       166 │     4,448 │     2,550 │     3,983 │      390 │       17 │       16
+ Témoin de Jéhovah │     3,264 │       725 │        35 │       694 │       577 │     1,076 │      137 │        7 │       13
+ Baptiste          │   104,896 │    54,225 │       938 │    24,616 │    10,853 │    13,183 │      978 │       44 │       59
+      ...
+ Vaudouïsant       │    19,572 │    15,040 │       186 │     2,732 │       882 │       690 │       41 │        1 │        -
+ Musulman          │       139 │        84 │         5 │        18 │         5 │        24 │        3 │        - │        -
+ Mormon            │       456 │       140 │         5 │        86 │        75 │       139 │       10 │        1 │        -
+ Autre religion    │    29,071 │    16,452 │       297 │     6,642 │     2,798 │     2,678 │      182 │       15 │        7
+
+--- page 115 ----------------------------------------------------
+Tableau 226: Répartition des chefs de ménage de dix (10) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═════════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                 Chefs de ménage de dix (10) ans et plus
+ Sexe / Religion   ├───────────┬─────────────────────────────────────────────────────────────────────────────────────────────
+                   │   Total   │                                    Niveau d'études atteint
+                   │           ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │ Universi-
+      ...
+                   │           │           │           │           │           │           │          │          │
+ Total             │   715,130 │   220,571 │     6,282 │   189,660 │   110,001 │   162,948 │   22,389 │    1,613 │    1,666
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    67,147 │    28,588 │       560 │    16,185 │     8,941 │    11,274 │    1,413 │      107 │       79
+ Catholique        │   372,501 │   120,621 │     3,298 │    98,618 │    56,685 │    80,085 │   11,289 │      916 │      989
+ Adventiste        │    28,286 │     5,472 │       226 │     6,484 │     4,673 │     9,545 │    1,658 │      116 │      112
+ Témoin de Jéhovah │     6,174 │       632 │        52 │     1,121 │     1,091 │     2,668 │      534 │       39 │       37
+ Baptiste          │   116,773 │    30,313 │     1,024 │    32,078 │    18,603 │    30,349 │    3,974 │      207 │      225
+      ...
+ Vaudouïsant       │    13,039 │     5,767 │       109 │     3,325 │     1,617 │     2,015 │      184 │        7 │       15
+ Musulman          │       297 │        41 │         5 │        49 │        29 │       136 │       32 │        3 │        2
+ Mormon            │       923 │       145 │         9 │       146 │       167 │       401 │       49 │        6 │        -
+ Autre religion    │    27,213 │     7,089 │       289 │     7,797 │     4,622 │     6,453 │      831 │       66 │       66
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Masculin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │   388,088 │    89,848 │     3,350 │   105,156 │    64,665 │   105,189 │   17,167 │    1,323 │    1,390
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    43,070 │    15,459 │       365 │    11,062 │     6,179 │     8,620 │    1,228 │       93 │       64
+ Catholique        │   199,687 │    49,359 │     1,724 │    54,843 │    33,119 │    50,705 │    8,378 │      729 │      830
+ Adventiste        │    15,750 │     2,068 │       127 │     3,442 │     2,620 │     6,014 │    1,281 │      101 │       97
+ Témoin de Jéhovah │     3,641 │       244 │        26 │       575 │       613 │     1,720 │      405 │       33 │       25
+ Baptiste          │    60,197 │    10,104 │       531 │    16,631 │    10,481 │    19,037 │    3,059 │      180 │      174
+      ...
+ Vaudouïsant       │     8,054 │     3,002 │        61 │     2,225 │     1,110 │     1,485 │      150 │        6 │       15
+ Musulman          │       238 │        20 │         3 │        37 │        26 │       117 │       30 │        3 │        2
+ Mormon            │       542 │        59 │         5 │        68 │        97 │       269 │       39 │        5 │        -
+ Autre religion    │    14,750 │     2,628 │       156 │     4,287 │     2,657 │     4,243 │      665 │       53 │       61
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Féminin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │   327,042 │   130,723 │     2,932 │    84,504 │    45,336 │    57,759 │    5,222 │      290 │      276
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    24,077 │    13,129 │       195 │     5,123 │     2,762 │     2,654 │      185 │       14 │       15
+ Catholique        │   172,814 │    71,262 │     1,574 │    43,775 │    23,566 │    29,380 │    2,911 │      187 │      159
+ Adventiste        │    12,536 │     3,404 │        99 │     3,042 │     2,053 │     3,531 │      377 │       15 │       15
+ Témoin de Jéhovah │     2,533 │       388 │        26 │       546 │       478 │       948 │      129 │        6 │       12
+ Baptiste          │    56,576 │    20,209 │       493 │    15,447 │     8,122 │    11,312 │      915 │       27 │       51
+      ...
+ Vaudouïsant       │     4,985 │     2,765 │        48 │     1,100 │       507 │       530 │       34 │        1 │        -
+ Musulman          │        59 │        21 │         2 │        12 │         3 │        19 │        2 │        - │        -
+ Mormon            │       381 │        86 │         4 │        78 │        70 │       132 │       10 │        1 │        -
+ Autre religion    │    12,463 │     4,461 │       133 │     3,510 │     1,965 │     2,210 │      166 │       13 │        5
+
+--- page 116 ----------------------------------------------------
+Tableau 226: Répartition des chefs de ménage de dix (10) ans et plus par sexe et religion selon le niveau d'études
+             atteint et le milieu de résidence
+                                                           ENSEMBLE DU PAYS
+═══════════════════╤═════════════════════════════════════════════════════════════════════════════════════════════════════════
+                   │                                 Chefs de ménage de dix (10) ans et plus
+ Sexe / Religion   ├───────────┬─────────────────────────────────────────────────────────────────────────────────────────────
+                   │   Total   │                                    Niveau d'études atteint
+                   │           ├───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │   Aucun   │Préscolaire│Primaire ou│ 6ème-4ème │3ème secon-│Universi- │Universi- │ Universi-
+      ...
+                   │           │           │           │           │           │           │          │          │
+ Total             │ 1,078,068 │   767,218 │    10,082 │   212,724 │    48,025 │    37,343 │    1,971 │      302 │      403
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │   120,730 │    95,832 │     1,014 │    16,940 │     3,940 │     2,817 │      135 │       22 │       30
+ Catholique        │   620,848 │   461,338 │     5,492 │   114,004 │    22,568 │    16,220 │      865 │      178 │      183
+ Adventiste        │    21,828 │    11,986 │       244 │     5,747 │     1,772 │     1,939 │      120 │        6 │       14
+ Témoin de Jéhovah │     2,108 │       813 │        26 │       475 │       285 │       460 │       43 │        1 │        5
+ Baptiste          │   136,260 │    81,346 │     1,366 │    35,423 │     9,256 │     8,323 │      417 │       57 │       72
+      ...
+ Vaudouïsant       │    45,269 │    34,180 │       468 │     8,068 │     1,560 │       958 │       31 │        2 │        2
+ Musulman          │       240 │       160 │         4 │        39 │        17 │        17 │        3 │        - │        -
+ Mormon            │       230 │       127 │         3 │        40 │        24 │        33 │        3 │        - │        -
+ Autre religion    │    44,762 │    27,633 │       559 │    11,593 │     2,810 │     1,991 │      107 │       12 │       57
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Masculin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │   714,118 │   479,293 │     7,151 │   162,133 │    34,734 │    28,627 │    1,609 │      221 │      350
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    81,205 │    62,194 │       723 │    12,951 │     2,902 │     2,274 │      115 │       21 │       25
+ Catholique        │   415,823 │   294,120 │     3,993 │    88,169 │    16,363 │    12,227 │      673 │      127 │      151
+ Adventiste        │    14,492 │     7,088 │       177 │     4,341 │     1,275 │     1,487 │      107 │        4 │       13
+ Témoin de Jéhovah │     1,377 │       476 │        17 │       327 │       186 │       332 │       35 │        - │        4
+ Baptiste          │    87,940 │    47,330 │       921 │    26,254 │     6,525 │     6,452 │      354 │       40 │       64
+      ...
+ Vaudouïsant       │    30,682 │    21,905 │       330 │     6,436 │     1,185 │       798 │       24 │        2 │        2
+ Musulman          │       160 │        97 │         1 │        33 │        15 │        12 │        2 │        - │        -
+ Mormon            │       155 │        73 │         2 │        32 │        19 │        26 │        3 │        - │        -
+ Autre religion    │    28,154 │    15,642 │       395 │     8,461 │     1,977 │     1,523 │       91 │       10 │       55
+───────────────────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┴──────────┴──────────┴───────────
+                                                          Féminin
+───────────────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬──────────┬──────────┬───────────
+                   │           │           │           │           │           │           │          │          │
+ Total             │   363,950 │   287,925 │     2,931 │    50,591 │    13,291 │     8,716 │      362 │       81 │       53
+                   │           │           │           │           │           │           │          │          │
+ Aucune religion   │    39,525 │    33,638 │       291 │     3,989 │     1,038 │       543 │       20 │        1 │        5
+ Catholique        │   205,025 │   167,218 │     1,499 │    25,835 │     6,205 │     3,993 │      192 │       51 │       32
+ Adventiste        │     7,336 │     4,898 │        67 │     1,406 │       497 │       452 │       13 │        2 │        1
+ Témoin de Jéhovah │       731 │       337 │         9 │       148 │        99 │       128 │        8 │        1 │        1
+ Baptiste          │    48,320 │    34,016 │       445 │     9,169 │     2,731 │     1,871 │       63 │       17 │        8
+      ...
+ Vaudouïsant       │    14,587 │    12,275 │       138 │     1,632 │       375 │       160 │        7 │        - │        -
+ Musulman          │        80 │        63 │         3 │         6 │         2 │         5 │        1 │        - │        -
+ Mormon            │        75 │        54 │         1 │         8 │         5 │         7 │        - │        - │        -
+ Autre religion    │    16,608 │    11,991 │       164 │     3,132 │       833 │       468 │       16 │        2 │        2
+═══════════════════╧═══════════╧═══════════╧═══════════╧═══════════╧═══════════╧═══════════╧══════════╧══════════╧═══════════
+Source : IHSI/Recensement Général de la Population et de l'Habitat (RGPH-2003)
+Début
+
+--- page 160 ----------------------------------------------------
+    Tableau 241: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la religion et le milieu de
+                 résidence
+                                                                                ENSEMBLE DU PAYS
+    ═════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                 │                                         Population des personnes âgées de soixante (60) ans et plus
+     Groupe      ├───────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     d'âges /    │   Total   │                                                             Religion
+     Sexe        │           ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────
+                 │           │  Aucune  │Catholique│  Adven-  │Témoin de │ Baptiste │  Métho-  │ Episco-  │  Pente-  │ Vaudouï- │ Musulman │  Mormon  │   Autre
+                 │           │ religion │          │  tiste   │ Jéhovah  │          │  diste   │   pale   │  côtiste │   sant   │          │          │ religion
+    ═════════════╧═══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════
+    ENSEMBLE
+    ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 161 ----------------------------------------------------
+    Tableau 241: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la religion et le milieu de
+                 résidence
+                                                                                ENSEMBLE DU PAYS
+    ═════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                 │                                         Population des personnes âgées de soixante (60) ans et plus
+     Groupe      ├───────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     d'âges /    │   Total   │                                                             Religion
+     Sexe        │           ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────
+                 │           │  Aucune  │Catholique│  Adven-  │Témoin de │ Baptiste │  Métho-  │ Episco-  │  Pente-  │ Vaudouï- │ Musulman │  Mormon  │   Autre
+                 │           │ religion │          │  tiste   │ Jéhovah  │          │  diste   │   pale   │  côtiste │   sant   │          │          │ religion
+    ═════════════╧═══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════
+     Milieu Urbain
+    ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 162 ----------------------------------------------------
+    Tableau 241: Répartition de la population des personnes âgées de soixante (60) ans et plus par groupe d'âges et sexe selon la religion et le milieu de
+                 résidence
+                                                                                ENSEMBLE DU PAYS
+    ═════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                 │                                         Population des personnes âgées de soixante (60) ans et plus
+     Groupe      ├───────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     d'âges /    │   Total   │                                                             Religion
+     Sexe        │           ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────
+                 │           │  Aucune  │Catholique│  Adven-  │Témoin de │ Baptiste │  Métho-  │ Episco-  │  Pente-  │ Vaudouï- │ Musulman │  Mormon  │   Autre
+                 │           │ religion │          │  tiste   │ Jéhovah  │          │  diste   │   pale   │  côtiste │   sant   │          │          │ religion
+    ═════════════╧═══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════╧══════════
+     Milieu Rural
+    ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 227 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+       ENSEMBLE
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 228 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+       ENSEMBLE
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 229 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+        Milieu Urbain
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 230 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+        Milieu Urbain
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 231 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+        Milieu Rural
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+--- page 232 ----------------------------------------------------
+       Tableau 261: Répartition de la population des personnes handicapées par groupe d'âges et sexe selon la religion et le milieu de résidence
+                                                                               ENSEMBLE DU PAYS
+       ══════════════╤══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                     │                                                       Population des personnes handicapées
+        Groupe       ├──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        d'âges /     │  Total   │                                                            Religion
+        Sexe         │          ├─────────┬──────────┬─────────┬─────────┬──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────
+                     │          │  Aucune │Catholique│Adventis-│Témoin de│ Baptiste │Méthodis-│ Episco- │Pentecô- │ Vaudouï-│Musulman │  Mormon │   Autre
+                     │          │ religion│          │   te    │ Jéhovah │          │   te    │  pale   │  tiste  │   sant  │         │         │ religion
+       ══════════════╧══════════╧═════════╧══════════╧═════════╧═════════╧══════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═══════════
+        Milieu Rural
+       ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
