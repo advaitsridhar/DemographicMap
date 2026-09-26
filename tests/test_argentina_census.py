@@ -100,6 +100,24 @@ class DepartmentSheets(unittest.TestCase):
         self.assertIs(out["14042"], sheets[(6, 1)])
         self.assertIs(out["14099"], sheets[(6, 2)])
 
+    def test_a_title_spelled_its_own_way_is_placed_by_its_number_when_the_rest_are_in_order(self):
+        sheets = {(12, 1): [["Cuadro 4.12.1. Provincia de La Rioja, departamento Arauco."]],
+                  (12, 2): [["Cuadro 4.12.2. Provincia de La Rioja, departamento General "
+                             "Ángel V. Peñaloza."]],
+                  (12, 3): [["Cuadro 4.12.3. Provincia de La Rioja, departamento Vinchina."]]}
+        names = {"46007": "Arauco", "46014": "Ángel Vicente Peñaloza", "46021": "Vinchina"}
+        out = ac.dept_sheet(sheets, 12, names, "test")
+        self.assertIs(out["46014"], sheets[(12, 2)])
+
+    def test_no_placing_by_number_when_the_named_sheets_are_out_of_order(self):
+        sheets = {(12, 1): [["Cuadro 4.12.1. Provincia de La Rioja, departamento Vinchina."]],
+                  (12, 2): [["Cuadro 4.12.2. Provincia de La Rioja, departamento General "
+                             "Ángel V. Peñaloza."]],
+                  (12, 3): [["Cuadro 4.12.3. Provincia de La Rioja, departamento Arauco."]]}
+        names = {"46007": "Arauco", "46014": "Ángel Vicente Peñaloza", "46021": "Vinchina"}
+        with self.assertRaises(SystemExit):
+            ac.dept_sheet(sheets, 12, names, "test")
+
     def test_a_capital_comuna_is_found_by_its_own_name(self):
         sheets = {(1, 3): [["Cuadro 1.1.3. Ciudad Autónoma de Buenos Aires, comuna 3."]]}
         out = ac.dept_sheet(sheets, 1, {"02003": "Comuna 3"}, "test")

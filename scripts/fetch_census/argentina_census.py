@@ -355,7 +355,10 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
     by the others making the province's total.
     """
     out: dict[str, list[list[Any]]] = {}
-    for (p, d), rows in sheets.items():
+    ordered = sorted(departments)
+    unnamed: list[tuple[int, list[list[Any]]]] = []
+    in_order = 0
+    for (p, d), rows in sorted(sheets.items(), key=lambda kv: (kv[0][0], kv[0][1] or 0)):
         if p != index or d is None:
             continue
         text = fold(title(rows))
@@ -366,9 +369,8 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
                     key.startswith("comuna") and key in text):
                 hits.append((len(key), code))
         if not hits:
-            raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
-                             f"names no department; unplaced so far: "
-                             + ", ".join(departments[c] for c in departments if c not in out))
+            unnamed.append((d, rows))
+            continue
         hits.sort(reverse=True)
         if len(hits) > 1 and hits[0][0] == hits[1][0]:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} names two departments")
@@ -376,6 +378,19 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
         if code in out:
             raise SystemExit(f"argentina_census: {what}: two sheets for {departments[code]}")
         out[code] = rows
+        in_order += d <= len(ordered) and ordered[d - 1] == code
+    # A title that spells a department its own way (La Rioja's "General Ángel
+    # V. Peñaloza", the list's "Ángel Vicente Peñaloza") is placed by the
+    # sheet's number, but only where every sheet placed by name sits at its
+    # department's position in the list.
+    for d, rows in unnamed:
+        if in_order != len(out) or d > len(ordered) or ordered[d - 1] in out:
+            raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
+                             f"names no department; unplaced: "
+                             + ", ".join(departments[c] for c in departments if c not in out))
+        out[ordered[d - 1]] = rows
+        log(f"  {what}: sheet {index}.{d} ({' '.join(title(rows).split()[:9])}...) is "
+            f"{departments[ordered[d - 1]]}, by its place in the list")
     missing = sorted(set(departments) - set(out))
     if missing and complete:
         raise SystemExit(f"argentina_census: {what}: no sheet for "

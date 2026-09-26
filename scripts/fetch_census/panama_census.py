@@ -113,6 +113,9 @@ OPEN = re.compile(r"^(\d+) y más$")
 UNDER_ONE = "Menores de 1"
 UNSTATED = "No declarada"
 FOOTNOTE = re.compile(r"\s*\(\d+\)\s*$")
+# A district's own breakdown, printed in the district column beneath it:
+# Colón's "Ciudad de Colón" and "Resto del distrito".
+BREAKDOWN = re.compile(r"^(Ciudad de |Resto del distrito)", re.I)
 
 
 def text(value: Any) -> str:
@@ -229,7 +232,8 @@ def district_table(rows: list[list[Any]], columns: list[int]
         if first and first.upper() != "TOTAL":
             current = first
             provinces[current] = figures
-        elif second and not third and current is not None and second.upper() != "TOTAL":
+        elif second and not third and current is not None and second.upper() != "TOTAL" \
+                and not BREAKDOWN.match(second):
             key = (current, second)
             if key in districts:
                 raise SystemExit(f"panama_census: two rows for district {second} of {current}")
