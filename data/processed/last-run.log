@@ -1,28 +1,3 @@
-  PERSONA.P02 is 'Sexo'
-  PERSONA.P03 is 'Edad'
-  PERSONA.P05 is 'Auto_identificación'
-  PERSONA.P06 is 'Pueblo indígena'
-  PERSONA.P02 by depto: 18 areas
-  PERSONA.P03 by depto: 18 areas
-  PERSONA.P05 by depto: 18 areas
-  PERSONA.P06 by depto: 18 areas
-  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'identity': 0, 'people': 0}; every question's answers and not-applicables make the base's 7,657,684
-  the crosstab of P05 by P06 agrees with both questions, in every depto
-  PERSONA.P02 is 'Sexo'
-  PERSONA.P03 is 'Edad'
-  PERSONA.P05 is 'Auto_identificación'
-  PERSONA.P06 is 'Pueblo indígena'
-  PERSONA.P02 by munic: 298 areas
-  PERSONA.P03 by munic: 298 areas
-  PERSONA.P05 by munic: 298 areas
-  PERSONA.P06 by munic: 298 areas
-  areas with no table, nobody there having been asked: {'sex': 0, 'age': 0, 'identity': 0, 'people': 0}; every question's answers and not-applicables make the base's 7,657,684
-  the crosstab of P05 by P06 agrees with both questions, in every munic
-  every department is the sum of its municipios, for every question
-  NUEVA FRONTERA (1628) is counted with MACUELIZO, whose polygon holds it
-  18 departments and 297 municipios; P06 counts exactly those P05 sends to it, everywhere
-  297 of 297 municipios bound to their polygons; not: []
-  polygons with no municipio: ['Lago de Yojoa']
-  wrote data/processed/honduras_census.json (986 kB)
-  wrote honduras_census.json: 315 records (297 municipios)
-  HTTP 500 from the processor: trying again in 20s
+  11 parishes making the 136,415 tabulated in 2021 in each of three tables, and the 277,821 estimated resident in 2010
+  wrote data/processed/barbados_census.json (64 kB)
+  wrote barbados_census.json: 11 parishes
