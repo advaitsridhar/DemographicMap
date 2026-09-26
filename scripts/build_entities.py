@@ -209,6 +209,11 @@ ADAPTER_FILES = [
     # file exists.
     "afghanistan_district.json",
     "cod_ps_admin2.json",
+    # Median age and sex ratio from the same datasets' sex and five-year age
+    # breakdown, for the regions no census file gives them. Fill-only (see
+    # FILL_ONLY): most are the offices' projections, and a census's own figure
+    # stands whatever year either is for.
+    "cod_ps_age.json",
     # Uzbekistan's permanent population on 1 January, every region and
     # district, from the Statistics Agency's open-data portal (uzbekistan_siat).
     # Where the agency counts a district the boundary file does not draw, the
@@ -222,6 +227,9 @@ ADAPTER_FILES = [
     # the Internet Archive captured it (ecuador_census): INEC's host refuses
     # the runner.
     "ecuador_census.json",
+    # Median age and sex ratio for the same provinces and cantons, from sheet 2.1
+    # of the same INEC workbook.
+    "ecuador_profile.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles
     # transcribe it, and religion by province and regency from the registry
@@ -295,6 +303,10 @@ ADAPTER_FILES = [
     # questionnaire's sample; ITER's files above carry no ethnicity.
     "mexico_ethnicity.json",
     "colombia_municipality.json",
+    # Chile's 2024 census by region and province: population, median age, sex
+    # ratio, religion, indigenous languages, and indigenous and Afro-descendant
+    # identity, each summed from INE's comuna tables.
+    "chile_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
@@ -1682,10 +1694,16 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # A statistical office's count is not replaced by an encyclopaedia's, whatever
 # order the files are read in. These only ever fill a population nobody
 # else has written.
+#
+# Nor is a census's median age or sex ratio replaced by a projection's. The
+# medians cod_ps_age.json interpolates for 2024 run a year above INEGI's 2020
+# census in Mexico and two above INE's 2018 census in Guatemala -- ageing, not
+# error -- and dated comparison would let every one of them win.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
-                       "wiki_population_admin1.json", "wiki_table_population.json"})
-FILL_ONLY_FIELDS = frozenset({"population"})
+                       "wiki_population_admin1.json", "wiki_table_population.json",
+                       "cod_ps_age.json"})
+FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
@@ -1801,6 +1819,15 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         if (is_gap(value) and is_estimate(entity.get(key))
                 and not (isinstance(value, dict)
                          and value.get("status") == NOT_COLLECTED)):
+            continue
+        # Nor does a bare marker displace a gap that says why it is one. Every
+        # file marks the questions it doesn't answer; Mexico's ethnicity file,
+        # read after the median-age file, erased the note saying why Oaxaca's
+        # 570 municipios have no median age.
+        if (is_gap(value) and is_gap(entity.get(key))
+                and isinstance(entity.get(key), dict) and entity[key].get("note")
+                and not (isinstance(value, dict)
+                         and (value.get("note") or value.get("status") == NOT_COLLECTED))):
             continue
         entity[key] = value
         if key in VALUE_FIELDS and not is_gap(value):
@@ -4960,6 +4987,13 @@ def main() -> int:
     # record whose id *is* the code -- otherwise a dependency overwrites its
     # parent and the country panel shows the wrong place.
     country_profiles = read_json(PROCESSED / "admin0.json", [])
+    # The Factbook's words for a census's own categories (Brazil's "mixed" is
+    # its pardo), applied as the adapter applies them, so a file fetched
+    # before the rule was written reads the same as one fetched after.
+    from fetch_factbook import census_names
+    for profile in country_profiles:
+        profile["ethnicity"] = census_names((profile.get("codes") or {}).get("iso3"),
+                                            profile.get("ethnicity"))
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()

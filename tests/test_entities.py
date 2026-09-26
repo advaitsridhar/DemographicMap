@@ -85,6 +85,18 @@ class AdapterMerge(unittest.TestCase):
         be.merge_adapter(entity, {"population": common.measure(100)})
         self.assertEqual(entity["population"]["value"], 100)
 
+    def test_a_bare_gap_keeps_the_reason_already_given(self):
+        entity = {"median_age": common.gap(common.NOT_AVAILABLE, "the workbook is missing")}
+        be.merge_adapter(entity, {"median_age": common.gap(common.NOT_AVAILABLE)})
+        self.assertEqual(entity["median_age"]["note"], "the workbook is missing")
+
+    def test_a_gap_with_its_own_reason_or_a_policy_replaces_it(self):
+        for later in (common.gap(common.NOT_AVAILABLE, "newer reason"),
+                      common.gap(common.NOT_COLLECTED)):
+            entity = {"median_age": common.gap(common.NOT_AVAILABLE, "old reason")}
+            be.merge_adapter(entity, {"median_age": later})
+            self.assertEqual(entity["median_age"], later)
+
     def test_identity_fields_are_not_overwritten(self):
         entity = {"id": "shape-1", "name": "Kerala", "level": "admin1", "parent": "IND"}
         be.merge_adapter(entity, {"id": "other", "name": "KERALA", "parent": "XXX"})
@@ -278,6 +290,28 @@ class NewestFigureStands(unittest.TestCase):
         be.merge_adapter(entity, {"_source": "wikidata_admin1.json",
                                   "population": {"value": 3679300, "year": 2024}})
         self.assertEqual(entity["population"]["value"], 1908352)
+
+    def test_a_projected_median_fills_a_gap_and_never_displaces_a_census_one(self):
+        projected = {"_source": "cod_ps_age.json",
+                     "median_age": {"value": 29.1, "year": 2024},
+                     "sex_ratio": {"value": 1010, "year": 2024}}
+        gap = {"median_age": {"status": "not_available"},
+               "sex_ratio": {"status": "not_available"}, "sources": []}
+        be.merge_adapter(gap, dict(projected))
+        self.assertEqual(gap["median_age"]["value"], 29.1)
+        census = {"median_age": {"value": 28.0, "year": 2020},
+                  "sex_ratio": {"value": 960, "year": 2020}, "sources": []}
+        be.merge_adapter(census, dict(projected))
+        self.assertEqual(census["median_age"]["value"], 28.0)
+        self.assertEqual(census["sex_ratio"]["value"], 960)
+
+    def test_and_an_older_census_median_replaces_a_projected_one(self):
+        entity = {"median_age": {"status": "not_available"}, "sources": []}
+        be.merge_adapter(entity, {"_source": "cod_ps_age.json",
+                                  "median_age": {"value": 29.1, "year": 2024}})
+        be.merge_adapter(entity, {"_source": "census.json",
+                                  "median_age": {"value": 28.0, "year": 2020}})
+        self.assertEqual(entity["median_age"]["value"], 28.0)
 
     def test_an_older_count_does_not_replace_a_newer_count(self):
         entity = {"population": {"status": "not_available"}, "sources": []}

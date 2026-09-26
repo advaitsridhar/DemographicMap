@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mexico: median age for every municipio, as INEGI publishes it (2020 census).
+"""Mexico: median age for every state and municipio, as INEGI publishes it (2020 census).
 
 ITER, which ``mexico.py`` reads, carries each municipio's men and women but
 only broad age bands (0-2, 3-5, ... 18-24, 60+), and the median of a Mexican
@@ -19,6 +19,12 @@ anything is written:
   32 states add up to INEGI's national men and women (``mexico.NATIONAL``);
 * every state's median lies within the range of its municipios', as a median
   of the whole must.
+
+The states' medians come from the national workbook,
+``cpv2020_b_eum_01_poblacion.xlsx``, sheet 04, which lists all 32 -- Oaxaca's
+among them. Each row is identified by its population, which must be ITER's for
+exactly one state, and where a state's own workbook was read its median must
+be the same.
 
 Records carry the same ids, names and parents as ``mexico.py``'s, so they join
 the same polygons.
@@ -126,10 +132,34 @@ def read_state(code: str, abbrs: tuple[str, ...]) -> tuple[dict[str, Any], list[
     return state, municipios
 
 
+def state_medians(iter_totals: dict[str, float | None]) -> dict[str, tuple[str, float, str]]:
+    """{state code: (name, median, url)} from the national workbook's sheet 04."""
+    import openpyxl
+    url, blob = workbook(("eum",))
+    wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    by_total = {total: code for code, total in iter_totals.items() if total}
+    out: dict[str, tuple[str, float, str]] = {}
+    for row in wb[SHEET].iter_rows(values_only=True):
+        if not row or not row[0] or len(row) < 5:
+            continue
+        name, total, median = str(row[0]).strip(), number(row[1]), number(row[4])
+        if total is None or median is None or name.startswith("Estados Unidos"):
+            continue
+        code = by_total.get(total)
+        if code is None or code in out:
+            raise SystemExit(f"mexico_age: national workbook row {name!r} ({total}) is not "
+                             "exactly one state's ITER population")
+        out[code] = (name, median, url)
+    if len(out) != 32:
+        raise SystemExit(f"mexico_age: national workbook gives {len(out)} states' medians")
+    return out
+
+
 def main() -> int:
     records: list[dict[str, Any]] = []
     men = women = 0.0
     missing, seen = [], set()
+    stated: dict[str, float] = {}
     # ITER's state totals, which each workbook's own state row must repeat.
     iter_totals = {r["id"][4:6]: (r.get("population") or {}).get("value")
                    for r in read_json(PROCESSED / "mexico_state.json", [])}
@@ -165,6 +195,7 @@ def main() -> int:
             raise SystemExit(f"mexico_age: {state['state']}: state median {state['median']} "
                              f"outside its municipios' {min(medians)}-{max(medians)}")
         seen.add(code)
+        stated[code] = state["median"]
         men += state["men"] or 0
         women += state["women"] or 0
         log(f"  {code} {state['state']}: {len(municipios)} municipios, median {state['median']:g} "
@@ -190,7 +221,19 @@ def main() -> int:
     if read_all and (round(men) != NATIONAL["POBMAS"] or round(women) != NATIONAL["POBFEM"]):
         raise SystemExit(f"mexico_age: the states hold {men:,.0f} men and {women:,.0f} women, "
                          f"not the census's {NATIONAL['POBMAS']:,} and {NATIONAL['POBFEM']:,}")
-    unknown = sum(1 for r in records if r["id"] not in iter_by_id)
+    iter_states = {r["id"][4:6]: r for r in read_json(PROCESSED / "mexico_state.json", [])}
+    for code, (name, median, url) in sorted(state_medians(iter_totals).items()):
+        if code in stated and stated[code] != median:
+            raise SystemExit(f"mexico_age: {name}'s median is {median} in the national "
+                             f"workbook and {stated[code]} in its own")
+        state_name = (iter_states.get(code) or {}).get("name") or name
+        records.append(record(
+            f"MEX-{code}000", state_name, aliases=STATE_ALIASES.get(state_name),
+            level="admin1", parent="MEX", country="MEX", codes={"inegi": f"{code}000"},
+            median_age=measure(median, unit="years", year=YEAR, source=SOURCE),
+            sources=[{"field": "median age", "name": SOURCE, "url": url, "license": LICENSE}],
+        ))
+    unknown = sum(1 for r in records if r["id"] not in iter_by_id and r["level"] == "admin2")
     log(f"  {len(records)} municipios ({unknown} not in ITER); {men:,.0f} men, {women:,.0f} women")
     write_json(PROCESSED / "mexico_municipality_age.json", records)
     return 0

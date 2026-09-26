@@ -56142,5 +56142,1626 @@
       "divipola": "99773"
     },
     "median_age_note": "Computed from DANE's single-year counts by age."
+  },
+  {
+    "id": "COL-05",
+    "level": "admin1",
+    "name": "Antioquia",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.1,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 939,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "05"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-08",
+    "level": "admin1",
+    "name": "Atlántico",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.3,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 949,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "08"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-11",
+    "level": "admin1",
+    "name": "Bogotá, D.C.",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.5,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 926,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "aliases": [
+      "Bogota Capital District",
+      "Bogotá"
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "11"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-13",
+    "level": "admin1",
+    "name": "Bolívar",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 986,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "13"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-15",
+    "level": "admin1",
+    "name": "Boyacá",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.2,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 976,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "15"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-17",
+    "level": "admin1",
+    "name": "Caldas",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 34.8,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 945,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "17"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-18",
+    "level": "admin1",
+    "name": "Caquetá",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1017,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "18"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-19",
+    "level": "admin1",
+    "name": "Cauca",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 979,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "19"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-20",
+    "level": "admin1",
+    "name": "Cesar",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.3,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "20"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-23",
+    "level": "admin1",
+    "name": "Córdoba",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.7,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "23"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-25",
+    "level": "admin1",
+    "name": "Cundinamarca",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "25"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-27",
+    "level": "admin1",
+    "name": "Chocó",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 21.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "27"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-41",
+    "level": "admin1",
+    "name": "Huila",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.2,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "41"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-44",
+    "level": "admin1",
+    "name": "La Guajira",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 20.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "44"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-47",
+    "level": "admin1",
+    "name": "Magdalena",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.1,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1000,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "47"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-50",
+    "level": "admin1",
+    "name": "Meta",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.8,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "50"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-52",
+    "level": "admin1",
+    "name": "Nariño",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 962,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "52"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-54",
+    "level": "admin1",
+    "name": "Norte de Santander",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "54"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-63",
+    "level": "admin1",
+    "name": "Quindío",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 35.3,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 933,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "63"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-66",
+    "level": "admin1",
+    "name": "Risaralda",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 33.5,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 919,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "66"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-68",
+    "level": "admin1",
+    "name": "Santander",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.2,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 964,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "68"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-70",
+    "level": "admin1",
+    "name": "Sucre",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1012,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "70"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-73",
+    "level": "admin1",
+    "name": "Tolima",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.5,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "73"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-76",
+    "level": "admin1",
+    "name": "Valle del Cauca",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 906,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "76"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-81",
+    "level": "admin1",
+    "name": "Arauca",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1025,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "81"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-85",
+    "level": "admin1",
+    "name": "Casanare",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.2,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1019,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "85"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-86",
+    "level": "admin1",
+    "name": "Putumayo",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "86"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-88",
+    "level": "admin1",
+    "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 951,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "88"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-91",
+    "level": "admin1",
+    "name": "Amazonas",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 19.7,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1086,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "91"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-94",
+    "level": "admin1",
+    "name": "Guainía",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1109,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "94"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-95",
+    "level": "admin1",
+    "name": "Guaviare",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 22.6,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1148,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "95"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-97",
+    "level": "admin1",
+    "name": "Vaupés",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 15.9,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1105,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "97"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
+  },
+  {
+    "id": "COL-99",
+    "level": "admin1",
+    "name": "Vichada",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "sex_ratio": {
+      "value": 1157,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "DANE, population by municipality, sex and age, 2018 (series based on the Censo Nacional de Poblacion y Vivienda 2018)",
+        "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+        "license": "DANE open data (attribution)"
+      }
+    ],
+    "country": "COL",
+    "codes": {
+      "divipola": "99"
+    },
+    "median_age_note": "Computed from DANE's single-year counts by age, summed over the department's municipalities."
   }
 ]

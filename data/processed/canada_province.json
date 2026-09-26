@@ -16,10 +16,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 48.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 960,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -1574,7 +1580,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -1585,6 +1591,7 @@
       "dguid": "2021A000210"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -1609,10 +1616,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.0,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 955,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -3167,7 +3180,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -3178,6 +3191,7 @@
       "dguid": "2021A000211"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -3202,10 +3216,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 45.6,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 948,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -4760,7 +4780,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -4771,6 +4791,7 @@
       "dguid": "2021A000212"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -4795,10 +4816,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 968,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -6353,7 +6380,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -6364,6 +6391,7 @@
       "dguid": "2021A000213"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -6388,10 +6416,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 43.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 977,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -7946,7 +7980,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -7957,6 +7991,7 @@
       "dguid": "2021A000224"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -7981,10 +8016,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 41.6,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 961,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -9539,7 +9580,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -9550,6 +9591,7 @@
       "dguid": "2021A000235"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -9574,10 +9616,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 38.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 986,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -11132,7 +11180,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -11143,6 +11191,7 @@
       "dguid": "2021A000246"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -11167,10 +11216,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 38.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -12725,7 +12780,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -12736,6 +12791,7 @@
       "dguid": "2021A000247"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -12760,10 +12816,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 38.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -14318,7 +14380,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -14329,6 +14391,7 @@
       "dguid": "2021A000248"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -14353,10 +14416,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 42.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 966,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -15911,7 +15980,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -15922,6 +15991,7 @@
       "dguid": "2021A000259"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -15946,10 +16016,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 39.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 999,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -17504,7 +17580,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -17515,6 +17591,7 @@
       "dguid": "2021A000260"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -17539,10 +17616,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 35.6,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 1030,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -19097,7 +19180,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -19108,6 +19191,7 @@
       "dguid": "2021A000261"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
@@ -19132,10 +19216,16 @@
       "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 25.6,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)"
     },
     "religion": [
       {
@@ -20690,7 +20780,7 @@
     ],
     "sources": [
       {
-        "field": "population/religion/ethnicity/language",
+        "field": "population/median age/sex ratio/religion/ethnicity/language",
         "name": "Statistics Canada, 2021 Census of Population, Census Profile (98-401-X2021008)",
         "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021008",
         "license": "Statistics Canada Open Licence"
@@ -20701,6 +20791,7 @@
       "dguid": "2021A000262"
     },
     "aliases": [],
+    "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender, and Statistics Canada distributes the small non-binary population between the two.",
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,

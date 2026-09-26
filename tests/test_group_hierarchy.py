@@ -306,14 +306,20 @@ class ReadingANameTheTablesDoNotSpell(unittest.TestCase):
     def test_two_answers_welded_together_are_refused(self):
         """The refusal that keeps the rule honest.
 
-        "European and Mestizo" is one census category covering two
-        ancestries that share no node above them. Reading it as either would
-        put a real number under a heading nobody published, so it stays
-        unplaced and stays visible as unplaced.
+        A conjunction of two ancestries that share no node above them is one
+        category covering both. Reading it as either would put a real number
+        under a heading nobody published, so the rule leaves it unplaced and
+        visible as unplaced. (Argentina's "European and Mestizo" and Costa
+        Rica's "White or Mestizo" are the Latino majority of their countries
+        and are filed there by name, as Colombia's and Mexico's are; the rule
+        is what applies where nobody has said so.)
         """
         import group_tree
-        for name in ("European and Mestizo", "White or Mestizo"):
+        for name in ("African and Mestizo", "European and Asian"):
             self.assertIsNone(group_tree.parent_of("ethnicity", name), name)
+        for name in ("European and Mestizo", "White or Mestizo"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Hispanic or Latino (census category)", name)
 
     def test_a_bands_remainder_sits_under_the_band(self):
         """"Romance languages, n.i.e." is Romance, not its sibling.
@@ -485,10 +491,11 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
                 # A nationality that is argued over, not a spelling.
                 ("ethnicity", "Muslim"),
                 ("ethnicity", "Ashkali"),
-                # An identity defined by mixture whose census treats it as
-                # its own thing.
-                ("ethnicity", "Montubio"),
-                ("ethnicity", "Cholo/Chola"),
+                # (Ecuador's Montubio and Bolivia's Cholo/Chola were here, as
+                # identities of mixture each census treats as its own. So are
+                # Brazil's pardo and Guatemala's ladino, and all four are now
+                # filed with the Latino majorities they belong to -- the
+                # owner's rule of 25 September 2026.)
                 # Ethiopia's 2007 tail, written with the Amharic language
                 # suffix on a root no reference spells the same way.
                 ("language", "Shetagna"),

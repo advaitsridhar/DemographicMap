@@ -317,8 +317,9 @@ def main() -> int:
         base, split = composition(whole, reading)
         national.update(split)
         known = iter_states.get(f"MEX-{code}000") or {}
+        state_name = known.get("name") or state["table"]["Total"]["name"]
         records.append(record(
-            f"MEX-{code}000", known.get("name") or state["table"]["Total"]["name"],
+            f"MEX-{code}000", state_name, aliases=STATE_ALIASES.get(state_name),
             level="admin1", parent="MEX", country="MEX", codes={"inegi": f"{code}000"},
             ethnicity=shares(split, total=base), ethnicity_year=YEAR,
             ethnicity_note=note_for(state["table"]["Total"]), sources=cite))

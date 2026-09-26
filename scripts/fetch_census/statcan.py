@@ -58,6 +58,8 @@ LICENCE = "Statistics Canada Open Licence"
 YEAR = 2021
 
 # Block headers, matched as prefixes of the unindented row that opens each.
+AGES = "Total - Age groups of the population"
+MEDIAN = "Median age of the population"
 BLOCKS = {
     "population": "Population, 2021",
     "religion": "Total - Religion for the population in private households",
@@ -172,6 +174,13 @@ def read_profile() -> dict[str, dict[str, Any]]:
                     "code": row["ALT_GEO_CODE"].strip()})
             name = row["CHARACTERISTIC_NAME"]
             value = count(row["C1_COUNT_TOTAL"])
+            if depth(name) == 0 and name.strip().startswith(AGES):
+                # The 2021 census counts gender, and publishes men+ and
+                # women+ -- non-binary people are distributed between them.
+                current["men"] = count(row["C2_COUNT_MEN+"])
+                current["women"] = count(row["C3_COUNT_WOMEN+"])
+            if depth(name) == 0 and name.strip() == MEDIAN:
+                current["median_age"] = count(row["C1_COUNT_TOTAL"])
             if depth(name) == 0:
                 close()
                 for key, header in BLOCKS.items():
@@ -242,6 +251,15 @@ def build() -> list[dict[str, Any]]:
     missing = [g["name"] for g in geos.values() if not g.get("indigenous")]
     if missing:
         raise SystemExit(f"statcan: no Indigenous identity block for {missing[:5]}")
+    for geo in geos.values():
+        men, women, people = geo.get("men"), geo.get("women"), geo.get("population")
+        # Random rounding to 5 on three cells; the 100% age block is the 2021
+        # population, so men and women must add up to it.
+        if not (men and women and people) or abs(men + women - people) > 15:
+            raise SystemExit(f"statcan: {geo['name']}: men+ {men} and women+ {women} "
+                             f"against a population of {people}")
+        if not 15 <= (geo.get("median_age") or 0) <= 70:
+            raise SystemExit(f"statcan: {geo['name']}: median age {geo.get('median_age')}")
     for dguid, geo in geos.items():
         split_not_visible(geo)
         fields: dict[str, Any] = {}
@@ -273,8 +291,16 @@ def build() -> list[dict[str, Any]]:
             aliases=ALIASES.get(geo["name"], []),
             population=(measure(int(geo["population"]), year=YEAR, source=SOURCE)
                         if geo.get("population") else gap(NOT_AVAILABLE)),
-            sources=[{"field": "population/religion/ethnicity/language", "name": SOURCE,
-                      "url": PAGE, "license": LICENCE}],
+            median_age=(measure(geo["median_age"], unit="years", year=YEAR, source=SOURCE)
+                        if geo.get("median_age") else gap(NOT_AVAILABLE)),
+            sex_ratio=(measure(round(1000 * geo["men"] / geo["women"]),
+                               unit="males_per_1000_females", year=YEAR, source=SOURCE)
+                       if geo.get("men") and geo.get("women") else gap(NOT_AVAILABLE)),
+            sex_ratio_note=("Men+ per 1,000 women+: the 2021 census counts gender, and "
+                            "Statistics Canada distributes the small non-binary population "
+                            "between the two."),
+            sources=[{"field": "population/median age/sex ratio/religion/ethnicity/language",
+                      "name": SOURCE, "url": PAGE, "license": LICENCE}],
             **fields,
         ))
     by_level = {"admin1": 0, "admin2": 0}

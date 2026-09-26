@@ -55,6 +55,44 @@ REGIONS = [
     "north-america", "oceans", "south-america", "south-asia",
 ]
 
+# Where the Factbook writes one word for what the census it quotes calls
+# another, and the word decides which group a share is filed under. Brazil's
+# "mixed 45.3%" is IBGE's 2022 pardo to the decimal, and pardo files with the
+# Latino majorities while a bare "mixed" files with the UK's and Canada's
+# tick-box category. The Dominican Republic's "mixed 70.4%" is split in the
+# Factbook's own parenthesis -- mestizo or indio 58%, mulatto 12.4% -- and the
+# parts are taken, provided they still add up to the whole. Mozambique's
+# "Mestizo" is the Portuguese-African mestico, spelt as Angola's is, and not a
+# Latin American mestizo.
+ETHNIC_NAMES: dict[str, dict[str, str | dict[str, float]]] = {
+    "BRA": {"mixed": "Pardo"},
+    # Guatemala's 2018 census asks ladina(o), which the Factbook writes as
+    # Mestizo -- its 56.0% is INE's ladino share.
+    "GTM": {"Mestizo": "Ladino"},
+    "DOM": {"mixed": {"Mestizo or Indio": 58.0, "Mulatto": 12.4}},
+    "MOZ": {"Mestizo": "Mestico"},
+}
+
+
+def census_names(iso3: str | None, comp: Any) -> Any:
+    """An ethnicity composition with the Factbook's words for a census's own."""
+    names = ETHNIC_NAMES.get(iso3 or "")
+    if not names or not isinstance(comp, list):
+        return comp
+    out = []
+    for row in comp:
+        new = names.get(row["group"])
+        if isinstance(new, str):
+            out.append({**row, "group": new})
+        elif isinstance(new, dict) and abs(sum(new.values()) - row["pct"]) < 0.05:
+            out.extend({**row, "group": group, "pct": pct} for group, pct in new.items())
+        else:
+            if new is not None:
+                log(f"  {iso3}: {row['group']} {row['pct']} no longer splits as {new}; kept whole")
+            out.append(row)
+    return out
+
+
 # Countries that legally or administratively do not collect a field at all.
 # This is the "not collected" vs "not available" distinction the plan calls an
 # editorial-integrity requirement -- an empty Factbook field is NOT proof of it.
@@ -465,7 +503,7 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
 
     language_text = languages_text(profile)
     religion = composition("religion", religion_text)
-    ethnicity = composition("ethnicity", ethnic_text)
+    ethnicity = census_names(iso3, composition("ethnicity", ethnic_text))
     # Language goes through the same gate as the other two, and used not to.
     # The inconsistency was visible on the map rather than internal: Japan,
     # Turkey, Sweden, Belgium, Austria, Algeria, Saudi Arabia, Iraq, Greece,

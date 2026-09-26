@@ -1,6 +1,98 @@
-  Guam: 153,836 people in 1 districts; median age 33.7; largest groups Chamorro, Filipino, Two or more races, White
-  United States Virgin Islands: 87,146 people in 3 districts; median age 45.9; largest groups Other Black or African American, African American, White, Two or more races
-  American Samoa: 49,710 people in 5 districts; median age 27.7; largest groups Samoan, Two or more races, Filipino, Other Native Hawaiian and Other Pacific Islander
-  Commonwealth of the Northern Mariana Islands: 47,329 people in 4 districts; median age 34.4; largest groups Filipino, Chamorro, Two or more races, Other Native Hawaiian and Other Pacific Islander
-  17 records, 7 districts pinned to their polygon by FIPS code
-  wrote data/processed/us_island_areas.json (58 kB)
+cod_ps_age: 33 dataset(s) for 33 countries
+  cod-ps-arg (ARG)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-atg (ATG)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-bhs (BHS)
+    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+  cod-ps-blz (BLZ)
+    admin1: 6 unit(s) from blz_admpop_v2.xlsx blz_adm1_pop_v2_ (6 of 6 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-bol (BOL)
+    admin1: 9 unit(s) from bol_admpop_2022.xlsx bol_admpop_adm1_2022_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-bra (BRA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-brb (BRB)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-chl (CHL)
+    admin1: 16 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm1_2022_ (16 of 16 names match this map's admin1 (against 3 at admin2)); 0 left out
+    admin2: 56 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm2_2022_ (54 of 56 names match this map's admin2 (against 3 at admin1)); 0 left out
+    refused chl_admpop_2022.xlsx chl_admpop_adm3_2022_: its names match 27 of this map's districts and 5 of its first-level units, out of 344; too few of either to say which level this file describes
+  cod-ps-col (COL)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-cri (CRI)
+    admin1: 7 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm1_2021_ (7 of 7 names match this map's admin1 (against 6 at admin2)); 0 left out
+    admin2: 81 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm2_2021_ (76 of 81 names match this map's admin2 (against 6 at admin1)); 0 left out
+    refused cri_admpop_adm3_unfpa2021.csv: its names match 51 of this map's districts and 5 of its first-level units, out of 380; too few of either to say which level this file describes
+  cod-ps-cub (CUB)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-dma (DMA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-dom (DOM)
+    refused dom_admpop_2023.xlsx dom_admpop_adm1_2023_: its names match 2 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
+    admin1: 32 unit(s) from dom_admpop_2023.xlsx dom_admpop_adm2_2023_ (28 of 32 names match this map's admin1 (against 8 at admin2)); 0 left out
+  cod-ps-ecu (ECU)
+    admin1: 25 unit(s) from ecu_admpop_2020.xlsx ecu_admpop_adm1_2020_ (21 of 25 names match this map's admin1 (against 12 at admin2)); 0 left out
+  cod-ps-grd (GRD)
+    refused grd_admpop_2011.xlsx grd_admpop_adm1_2011_: its names match 6 of this map's districts and 6 of its first-level units, out of 7; too few of either to say which level this file describes
+  cod-ps-gtm (GTM)
+    admin1: 22 unit(s) from gtm_admpop_adm1_2024.csv (22 of 22 names match this map's admin1 (against 14 at admin2)); 0 left out
+    admin2: 340 unit(s) from gtm_admpop_adm2_2024.csv (334 of 334 names match this map's admin2 (against 14 at admin1)); 0 left out
+  cod-ps-guy (GUY)
+    admin1: 10 unit(s) from guy_admpop_2021.xlsx guy_admpop_adm1_2021_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    refused guy_admpop_2021.xlsx guy_admpop_adm2_2021_: its names match 0 of this map's districts and 0 of its first-level units, out of 125; too few of either to say which level this file describes
+  cod-ps-hnd (HND)
+    admin1: 18 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm1_2024_ (17 of 18 names match this map's admin1 (against 8 at admin2)); 0 left out
+    admin2: 298 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm2_2024_ (268 of 269 names match this map's admin2 (against 8 at admin1)); 0 left out
+  cod-ps-hti (HTI)
+    refused hti_admpop_adm1_2024.csv: its names match 0 of this map's districts and 2 of its first-level units, out of 10; too few of either to say which level this file describes
+    refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
+  cod-ps-jam (JAM)
+    admin1: 14 unit(s) from jam_adm_pop.xlsx jam_adm1_pop_ (14 of 14 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-kna (KNA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-lca (LCA)
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-mex (MEX)
+    admin1: 32 unit(s) from mex_admpop_adm1_2024.csv (30 of 32 names match this map's admin1 (against 17 at admin2)); 0 left out
+    left out San Juan Mixtepec: 2 rows carry the name
+    left out San Juan Mixtepec: 2 rows carry the name
+    left out San Pedro Mixtepec: 2 rows carry the name
+    left out San Pedro Mixtepec: 2 rows carry the name
+    admin2: 2471 unit(s) from mex_admpop_adm2_2024.csv (2301 of 2328 names match this map's admin2 (against 16 at admin1)); 0 left out
+  cod-ps-nic (NIC)
+    left out Las Minas: 2 rows carry the name
+    left out Las Minas: 2 rows carry the name
+    admin1: 15 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm1_2020_ (15 of 16 names match this map's admin1 (against 10 at admin2)); 0 left out
+    admin2: 153 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm2_2020_ (142 of 153 names match this map's admin2 (against 10 at admin1)); 0 left out
+  cod-ps-pan (PAN)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-per (PER)
+    left out Lima: the whole department, Metropolitan Lima inside it
+    admin1: 24 unit(s) from per_admpop_2024.xlsx per_admpop_adm1_2024_ (24 of 25 names match this map's admin1 (against 18 at admin2)); 0 left out
+  cod-ps-pry (PRY)
+    admin1: 18 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm1_2023_ (17 of 18 names match this map's admin1 (against 5 at admin2)); 0 left out
+    left out San Carlos del Apa: women 287 and men 454 do not add up to 750
+    left out Dr. Bottrell: women 864 and men 925 do not add up to 1,798
+    left out Desmochados: women 932 and men 865 do not add up to 1,808
+    left out Villa Franca: women 727 and men 775 do not add up to 1,510
+    admin2: 246 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm2_2023_ (217 of 249 names match this map's admin2 (against 6 at admin1)); 4 left out
+  cod-ps-slv (SLV)
+    admin1: 14 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm1_2024_ (14 of 14 names match this map's admin1 (against 8 at admin2)); 0 left out
+    admin2: 262 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm2_2024_ (242 of 254 names match this map's admin2 (against 10 at admin1)); 0 left out
+    refused slv_admpop_adm3_2024.csv: admin2 already read
+  cod-ps-sur (SUR)
+    admin1: 10 unit(s) from sur_admpop_adm1_v2.csv (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 62 unit(s) from sur_admpop_adm2_v2.csv (44 of 60 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-tto (TTO)
+    refused tto_admpop_2011.xlsx tto_admpop_adm1_2011_: its names match 13 of this map's districts and 13 of its first-level units, out of 15; too few of either to say which level this file describes
+  cod-ps-ury (URY)
+    admin1: 19 unit(s) from ury_admpop_2023.xlsx ury_admpop_adm1_2023_ (19 of 19 names match this map's admin1 (against 2 at admin2)); 0 left out
+  cod-ps-vct (VCT)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-ven (VEN)
+    admin1: 24 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm1_2011_ (22 of 24 names match this map's admin1 (against 9 at admin2)); 0 left out
+    admin2: 335 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm2_2011_ (263 of 273 names match this map's admin2 (against 8 at admin1)); 0 left out
+  written: BLZ 6, BOL 9, CHL 72, CRI 88, DOM 32, ECU 25, GTM 362, GUY 10, HND 316, JAM 14, MEX 2503, NIC 168, PER 24, PRY 264, SLV 276, SUR 72, URY 19, VEN 359
+  wrote data/processed/cod_ps_age.json (9439 kB)
