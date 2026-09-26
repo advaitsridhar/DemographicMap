@@ -1,73 +1,219 @@
-probe_pdf: https://prod.redatam.org/redury/censos/cpv2011/Cuestionario_VIV_HOG_PERS.pdf
-  98,172 bytes
-  17 pages
-probe_pdf: 17 pages, 2 mention ['religi', 'Religi', 'RELIGI', 'idioma', 'IDIOMA', 'lengua', 'LENGUA', 'ascendencia', 'ASCENDENCIA']
+probe_pdf: https://celade.cepal.org/censosinfo/Boletas/PY_BDef_2012.pdf
+  572,684 bytes
+  6 pages
+probe_pdf: 6 pages, 6 mention ['religi', 'Religi', 'RELIGI', 'idioma', 'IDIOMA', 'indígena', 'INDÍGENA']
 === front matter ===
- 
- 
- 1
-VIVIENDAS 
- 
-Identificación del domicilio (CodCom) 
- 
-Fecha del relevamiento....................................__ __ | __ __ | __ __ 
-Departamento...................................................__ __ 
-Sección.............................................................__ __ 
-Segmento.........................................................__ __ __ 
-Zona .................................................................__ __ __ 
-Borde................................................................__ __ 
-Censista ...........................................................__ __ __ __ __ __ __ 
- 
-Medio Urbano 
-Calle......................................................_____________________________________ 
-Nº..........................................................__ __ __ __ 
-Torre .....................................................__ __ 
-Bloque...................................................__ __ 
-Apto ......................................................__ __ __ __ 
-Manzana...............................................__ __ __ 
-Solar .....................................................__ __ 
- 
-Medio Rural 
-Ruta o Camino......................................_____________________________________ 
- 
-Nº de orden de la vivienda ...............................__ __ __ __ 
- 
-Tipo de vivienda y ocupación 
+ESSAP (ex CORPOSANA)
+Junta de Saneamiento (SENASA)
+Red comunitaria
+Red privada
+Pozo artesiano
+Pozo con brocal y tapa
+Pozo sin brocal y/o sin tapa
+Manantial/Ycuá
+Aljibe
+Aguatero móvil
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+Agua superficial (río, represa, 
+arroyo, tajamar, canal, etc)
+lago, estanque, 
+Otro 12
+cañería hasta la cocina 
+y/o el baño?
+canilla pública?
+vecino?
+aguatero móvil?
 
-=== pages mentioning ['religi', 'Religi', 'RELIGI', 'idioma', 'IDIOMA', 'lengua', 'LENGUA', 'ascendencia', 'ASCENDENCIA'] (first 12) ===
+=== pages mentioning ['religi', 'Religi', 'RELIGI', 'idioma', 'IDIOMA', 'indígena', 'INDÍGENA'] (first 12) ===
 
 --- page 1 ----------------------------------------------------
-VIVIENDA COLECTIVA
-Hotel, pensión u otra casa de hospedaje ................................9
-Hospital, sanatorio (con internación) .....................................10
-Residencial de ancianos........................................................11
-Residencial de estudiantes....................................................12
-Casa de peones.....................................................................13
-Internado religioso .................................................................14
-Establecimiento de reclusión.................................................15
-Hogar de guarda o similar .....................................................16
-Cuartel militar o policial..........................................................17
-Otra colectiva.........................................................................18
+REPUBLICA DEL PARAGUAY
+DIRECCION GENERAL DE ESTADISTICA
+ENCUESTAS Y CENSOS
+Repartición militar o policial
+Hotel, pensión
+Comunidad religiosa
+Hospital, Sanatorio, Clínica con internación
+Internado educacional, Residencia de Estudiantes
+Asilo de ancianos
+Orfanato
+Cárcel o reformatorio
 
---- page 10 ----------------------------------------------------
- 10
-5. ¿El padre integra este hogar? (PerPa03)
-Sí ............. 1 ¿Quién es?  |__|__| (nº de persona) (PerPa03_1)
-No............ 2
-Ascendencia étnico-racial
-Para todas las personas:
-6. ¿Cree tener ascendencia…
- Sí No
-6.1 Afro o Negra? .................................................................................. 1 2 (PerER01_1)
-6.2 Asiática o Amarilla?......................................................................... 1 2 (PerER01_2)
-6.3 Blanca? ........................................................................................... 1 2 (PerER01_3)
-6.4 Indígena? ........................................................................................ 1 2 (PERER01_4)
-6.5 Otra?________________________________________________ 1    2 (PerER01_5)
-(especificar)   (PerER01_5_1)
-(Si responde SÍ en una sola ascendencia pasa a p.8).
-7. ¿Cuál considera la principal? (PerER02)
-Afro o Negra .......................................................................................... 1
-Asiática o Amarilla................................................................................. 2
-Blanca ................................................................................................... 3
-Indígena ................................................................................................ 4
-Otra ....................................................................................................... 5
+--- page 2 ----------------------------------------------------
+castellano?
+castellano y guaraní?
+portugués?
+alemán?
+no hablan?
+lengua indígena? (especificar)
+otro idioma? (especificar)
+01
+02
+03
+04
+05
+
+--- page 3 ----------------------------------------------------
+CONFIRME HABER INCLUIDO a los niños recién nacidos, a los menores, al igual que a los ancianos y enfermos.
+Hijos o parientes del personal
+doméstico
+PARA USO EXCLUSIVO DE OFICINA:
+D A T O S  D E L  H O G A R
+Indígena Afrodescendiente Emigración
+las personas que viven
+habitualmente aquí?
+Si utilizó más de un cuestionario en este hogar complete el resumen sólo en el primer cuestionario, incluyendo a
+todas las personas que viven habitualmente en el hogar
+Si hay más de 10 personas en el hogar continúe en otro cuestionario copiando el número de orden de la vivienda,
+
+--- page 4 ----------------------------------------------------
+del país
+2
+CENSISTA. Tenga en cuenta las siguientes instrucciones para las preguntas 8, 14, 28
+a) Marque “En este distrito” si corresponde al distrito/municipio donde está siendo
+censada la persona y especifique si es Ciudad/Pueblo o Compañía/Colonia/
+Comunidad indígena
+b) Marque  “En otro distrito” si corresponde a otro distrito/municipio y especifique
+el nombre del Distrito/Municipio, si es Ciudad/Pueblo o Compañía/Colonia/
+Comunidad indígena y el nombre del Departamento.
+c) Si marcó “En otro país” anote el nombre del país.
+3En otro
+país
+CAPÍTULO E.
+PARA TODAS LAS PERSONAS
+      ...
+(Anote el lugar donde vivía la madre del censado cuyos datos está registrando)
+1
+6
+País:
+Ciudad/Pueblo
+Compañía/Colonia/Comunidad Indígena
+Departamento:
+No puede escuchar
+Sí, mucha dificultad
+Sí, poca dificultad
+1
+      ...
+escuela, colegio o instituto
+Distrito/Municipio:
+1
+6
+Ciudad/Pueblo
+Compañía/Colonia/Comunidad Indígena
+Pase
+a
+Cap.F
+Pase
+a
+      ...
+país
+1
+6
+País:
+Ciudad/Pueblo
+Compañía/Colonia/Comunidad Indígena
+Departamento:
+Distrito/Municipio:
+1
+6
+Ciudad/Pueblo
+Compañía/Colonia/Comunidad Indígena
+Pase
+a
+preg.15
+Pase
+a
+
+--- page 5 ----------------------------------------------------
+40. ¿En qué fecha nació el último hijo, hija nacido vivo de ...[Nombre]...?
+38. ¿Cuántos hijos, hijas nacidos vivos ha  tenido ...[Nombre]... en total?
+37. ¿...[Nombre]...tuvo hijo, hija nacido vivo?
+35. ¿...[Nombre]...trabaja (o trabajaba) en el sector...
+34. ¿En este trabajo...[Nombre]...es (o era)?
+PARA USO EXCLUSIVO DE OFICINA: Es Indígena                    Etnia Es Afrodescendiente
+Censista no olvide formular las preguntas que siguen antes de salir de la vivienda
+Guaraní
+Castellano
+Portugués
+Alemán
+      ...
+04
+05
+06
+07
+98
+22. ¿Qué idiomas o lenguas habla ? ...[Nombre]...
+Lengua indígena
+(especifique)
+Otro Idioma
+(especifique)
+Guaraní
+Castellano
+Portugués
+Alemán
+Inglés
+Francés
+Ningún otro idioma
+01
+02
+04
+05
+06
+      ...
+Castellano
+Portugués
+Alemán
+Inglés
+Francés
+Ningún otro idioma
+01
+02
+04
+05
+06
+07
+97
+a. Primer idioma b. Segundo idioma c. Tercer idioma
+Pase
+a
+preg.
+23Lengua indígena
+(especifique)
+Otro Idioma
+(especifique)
+Lengua indígena
+(especifique)
+Otro Idioma
+(especifique)
+(Debe registrar una sola respuesta en cada columna)
+
+--- page 6 ----------------------------------------------------
+6
+7
+8
+9
+10
+CAPÍTULO J. DATOS DE POBLACIÓN INDÍGENA
+42.  ¿De las personas que viven habitualmente en este hogar, alguna se considera indígena o perteneciente a una etnia (pueblo) indígena?
+Si
+No Pase a Cap. K
+1
+6
+Anote en una línea el nombre, apellido y la etnia (pueblo) a la
+que pertenece cada persona que se haya declarado indígena
+Lista de etnias (pueblos) indígenas
+Ache, Angaié, Ava-guaraní, Ayoreo, Enlhet norte, Enxet Sur,
+Guaraní occidental, Maká, Manjui, Maskoy, Mbya, Nivaclé,
+Ñandeva, Pai Tavytera, Sanapaná, Toba, Qom, Tomáraho, Ybytoso.
+Nombre y Apellido                                                                  Anote la etnia (pueblo) a la cual pertenece
+N° de Orden de
