@@ -279,6 +279,10 @@ def main() -> int:
     blob = fetch_blob(CAPTURE)
     log(f"  {CAPTURE}: {len(blob):,} bytes")
     culture = fetch_blob(CULTURE_CAPTURE)
+    # The Archive serves this capture gzipped, as it was stored.
+    if culture[:2] == b"\x1f\x8b":
+        import gzip
+        culture = gzip.decompress(culture)
     log(f"  {CULTURE_CAPTURE}: {len(culture):,} bytes")
     ethnicity = composition_table(xls_grid(culture, "1.1"), ETHNIC, "ethnicity (1.1)")
     language = composition_table(xls_grid(culture, "5.1"), LANGUAGE, "language (5.1)")
