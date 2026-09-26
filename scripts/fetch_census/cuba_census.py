@@ -420,9 +420,42 @@ def province_groups(ages: dict[tuple[str, str], list[tuple[int, int | None, int,
     return [(low, high, n) for (low, high), n in sorted(groups.items(), key=lambda g: g[0][0])]
 
 
+TABLERO = ("https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/"
+           "3-tablero-municipal.xlsx", "20250606173952")
+EARLIER = ("https://www.onei.gob.cu/sites/default/files/publicaciones/2025-03/"
+           "estudios-y-datos-2023.pdf", "20260624200323")
+
+
+def compare(names: list[str]) -> None:
+    """What ONEI's other publications print for some municipios: a probe, nothing written."""
+    import openpyxl
+    wanted = {fold(n) for n in names}
+    body = http_get(WAYBACK.format(stamp=TABLERO[1], url=TABLERO[0]), binary=True, cache=False)
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    for row in book["Base"].iter_rows(values_only=True):
+        cells = [str(c or "").strip() for c in row]
+        if len(cells) > 8 and cells[1] == "Municipios" and fold(
+                re.sub(r"^\d+\s*", "", cells[3])) in wanted:
+            log(f"  tablero {cells[0]} {cells[3]}: {cells[6]} ({cells[7]} men, {cells[8]} women)")
+    for stamp_url in (EARLIER, (ESTUDIOS, ESTUDIOS_STAMP)):
+        texts = pdf_pages(*stamp_url)
+        for number, text in enumerate(texts, 1):
+            lines = text.splitlines()
+            for i, line in enumerate(lines):
+                if fold(split_row(line)[0]) in wanted:
+                    after = lines[i + 1] if i + 1 < len(lines) else ""
+                    log(f"  {stamp_url[0].rsplit('/', 1)[-1]} p{number}: {line} | {after}")
+
+
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--compare", help="comma-separated municipios to look up in ONEI's other "
+                                      "publications, writing nothing")
+    args = ap.parse_args()
+    if args.compare:
+        compare(args.compare.split(","))
+        return 0
     texts = pdf_pages(ESTUDIOS, ESTUDIOS_STAMP)
     municipios, provinces = population_table(carrying(texts, TABLE_1))
     ages = age_table(carrying(texts, TABLE_5), municipios)
