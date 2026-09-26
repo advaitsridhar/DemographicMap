@@ -4310,6 +4310,112 @@
     "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 55,136 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
   },
   {
+    "id": "HND-INE-0402",
+    "level": "admin2",
+    "name": "Cabañas",
+    "parent": "HND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.4,
+      "unit": "years",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "sex_ratio": {
+      "value": 1016,
+      "unit": "males_per_1000_females",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo",
+        "pct": 88.5,
+        "count": 11904
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 8.8,
+        "count": 1178
+      },
+      {
+        "group": "White",
+        "pct": 1.8,
+        "count": 245
+      },
+      {
+        "group": "Afro-Honduran or Black (no people listed)",
+        "pct": 0.5,
+        "count": 62
+      },
+      {
+        "group": "Nahua",
+        "pct": 0.2,
+        "count": 23
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Miskito",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Pech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tawahka",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC",
+        "url": "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp",
+        "year": 2013
+      }
+    ],
+    "country": "HND",
+    "parent_name": "Copán",
+    "codes": {
+      "ine": "0402"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27666195B19494062054761",
+    "aliases": [
+      "Cabana"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2013 census's count of everyone it enumerated by single year of age.",
+    "ethnicity_year": 2013,
+    "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 13,448 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
+  },
+  {
     "id": "HND-INE-0403",
     "level": "admin2",
     "name": "Concepcion",
@@ -14759,6 +14865,102 @@
     "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 5,670 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
   },
   {
+    "id": "HND-INE-0906",
+    "level": "admin2",
+    "name": "Villeda Morales",
+    "parent": "HND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.5,
+      "unit": "years",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "sex_ratio": {
+      "value": 921,
+      "unit": "males_per_1000_females",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Miskito",
+        "pct": 88.6,
+        "count": 8826
+      },
+      {
+        "group": "Mestizo",
+        "pct": 10.9,
+        "count": 1085
+      },
+      {
+        "group": "Afro-Honduran or Black (no people listed)",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "English-speaking Black (Honduras)",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Nahua",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC",
+        "url": "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp",
+        "year": 2013
+      }
+    ],
+    "country": "HND",
+    "parent_name": "Gracias a Dios",
+    "codes": {
+      "ine": "0906"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27666195B49147516395854",
+    "aliases": [
+      "Ramón Villeda Morales"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2013 census's count of everyone it enumerated by single year of age.",
+    "ethnicity_year": 2013,
+    "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 9,965 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
+  },
+  {
     "id": "HND-INE-1001",
     "level": "admin2",
     "name": "La Esperanza",
@@ -16050,6 +16252,117 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2013 census's count of everyone it enumerated by single year of age.",
     "ethnicity_year": 2013,
     "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 13,064 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
+  },
+  {
+    "id": "HND-INE-1013",
+    "level": "admin2",
+    "name": "San Marcos De La Sierra",
+    "parent": "HND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17.2,
+      "unit": "years",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "sex_ratio": {
+      "value": 1083,
+      "unit": "males_per_1000_females",
+      "year": 2013,
+      "source": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lenca",
+        "pct": 92.9,
+        "count": 7774
+      },
+      {
+        "group": "Mestizo",
+        "pct": 6.8,
+        "count": 572
+      },
+      {
+        "group": "Afro-Honduran or Black (no people listed)",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Miskito",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "English-speaking Black (Honduras)",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Nahua",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pech",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Tolupan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "INE Honduras, XVII Censo de Población y VI de Vivienda 2013, tabulated on INE's REDATAM base CPVHND2013NAC",
+        "url": "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp",
+        "year": 2013
+      }
+    ],
+    "country": "HND",
+    "parent_name": "Intibucá",
+    "codes": {
+      "ine": "1013"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27666195B33277731304286",
+    "aliases": [
+      "San Marcos de Sierra"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2013 census's count of everyone it enumerated by single year of age.",
+    "ethnicity_year": 2013,
+    "ethnicity_note": "The 2013 census asked everyone how they identify (P05: indigenous, Afro-Honduran, Black, mestizo, white or other) and asked everyone who answered indigenous, Afro-Honduran or Black which people they belong to (P06). The peoples here are P06's answers, and mestizo, white and other P05's. P06's own \"Otro\" is \"Other indigenous people\" for those who said indigenous and \"Afro-Honduran or Black (no people listed)\" for those who said Afro-Honduran or Black. Shares are of the 8,372 people the census enumerated here; INE's published counts add an adjustment for omission that the tabulation base does not."
   },
   {
     "id": "HND-INE-1014",
