@@ -183,6 +183,14 @@ def municipio_counts(by_question: dict[str, list[dict]]) -> dict[str, dict[str, 
     """Municipio code -> its state, name and counts, every table checked."""
     units: dict[str, dict[str, Any]] = {}
     for question, found in by_question.items():
+        for table in found:
+            # A municipio where no one gave an answer -- no indigenous people
+            # -- is printed with its "NSA" row and no Total.
+            if table["total"] is None:
+                if any(not NOT_ASKED.match(k) for k, _ in table["rows"]):
+                    raise SystemExit(f"venezuela_redatam: {question}: {table['name']} has "
+                                     "answers and no Total")
+                table["total"] = 0
         whole = [t for t in found if not t["area"]]
         areas = [t for t in found if t["area"]]
         if len(whole) != 1 or whole[0]["total"] != sum(t["total"] for t in areas):
