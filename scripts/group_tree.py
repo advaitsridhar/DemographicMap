@@ -670,8 +670,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # other's parent. The loop was invisible until the top of the tree
         # started refusing a parent outright.
         "Other language", "Other", "Not stated",
-        # Chile's 2024 census: small counts it does not publish.
-        "Not published (small counts)",
+        # Chile's 2024 census: small counts it does not publish. Ecuador's:
+        # people who speak three or more languages, which it does not name
+        # (and which the patterns read as Mooré).
+        "Not published (small counts)", "Three or more languages",
         # Guatemala's 2018 census: "No habla", a person who learned no language.
         "Does not speak",
         # Bands that span families rather than naming one. "Other African

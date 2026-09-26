@@ -45,5 +45,35 @@ class Profile(unittest.TestCase):
             ep.build(sheet([("De 0-4", 31, 30), ("De 5-9", 20, 20), ("10 o más", 10, 20)]))
 
 
+
+def culture(cuenca=(70, 30)):
+    head = ["Índice", "Provincia, cantón, área", "", "", "", "Número total de personas",
+            "Autoidentificación"]
+    cats = ["", "", "", "", "", "", "Indigena", "Mestiza/o"]
+    rows = [head, cats,
+            ["", "Azuay", "Total Azuay", "Total Azuay", "", "200", "90", "110"],
+            ["", "Azuay", "Total Azuay", "Urbana", "", "150", "50", "100"],
+            ["", "Azuay", "Cuenca", "Total", "", "100", str(cuenca[0]), str(cuenca[1])],
+            ["", "Azuay", "Gualaceo", "Total", "", "100", "20", "80"]]
+    return rows
+
+
+class Compositions(unittest.TestCase):
+    def test_categories_under_the_maps_labels(self):
+        out = ep.composition_table(culture(), ep.ETHNIC, "test")
+        self.assertEqual(out[("Azuay", "Cuenca")]["counts"], {"Indigenous": 70, "Mestizo": 30})
+        self.assertEqual(out[("Azuay", "")]["total"], 200)
+
+    def test_cantons_that_miss_their_province_are_refused(self):
+        with self.assertRaises(SystemExit):
+            ep.composition_table(culture((60, 40)), ep.ETHNIC, "test")
+
+    def test_an_unread_category_is_refused(self):
+        grid = culture()
+        grid[1][7] = "Something new"
+        with self.assertRaises(SystemExit):
+            ep.composition_table(grid, ep.ETHNIC, "test")
+
+
 if __name__ == "__main__":
     unittest.main()
