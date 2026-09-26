@@ -307,6 +307,22 @@ ADAPTER_FILES = [
     # ratio, religion, indigenous languages, and indigenous and Afro-descendant
     # identity, each summed from INE's comuna tables.
     "chile_census.json",
+    # Argentina's 2022 census by province and department: population, median
+    # age and sex ratio from single years of age, and indigenous and
+    # Afro-descendant self-recognition. Bound by shape id, since the boundary
+    # file files some departments under a neighbouring province.
+    "argentina_census.json",
+    # Panama's 2023 census by province, comarca and district: population, sex
+    # ratio, median age (provinces), and indigenous and Afro-descendant
+    # identity; districts split since 2010 summed back into their parents.
+    "panama_census.json",
+    # Bolivia's 2024 census by department and province, counted from INE's
+    # person database: population, median age, sex ratio, nación o pueblo
+    # (indigenous and Afro-Bolivian identity) and mother tongue.
+    "bolivia_census.json",
+    # Venezuela's 2011 census by state: the indigenous population by people,
+    # and everyone else as one line.
+    "venezuela_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
@@ -4923,7 +4939,7 @@ def group_index(admin0: list[dict[str, Any]],
 TRACE: set[str] = set()
 
 
-def claim(claimed: dict[int, str], entity: dict[str, Any], row: dict[str, Any],
+def claim(claimed: dict[int, set[str]], entity: dict[str, Any], row: dict[str, Any],
           iso3: str, wanted: str) -> None:
     """Record a row's binding to a polygon, refusing a second place on it.
 
@@ -4933,16 +4949,19 @@ def claim(claimed: dict[int, str], entity: dict[str, Any], row: dict[str, Any],
     its ethnic composition from the Moldova reader, each bound to the same
     polygon by id, and refusing the pair stopped the build over two sources
     agreeing on where Transnistria is. So the second claim is refused only
-    where it names a different place from the first.
+    where it names a different place from the first -- by its name or any
+    alias it declares: INDEC's "La Rioja" declares the boundary file's
+    misspelt "La Roja", which another reader's row is named by.
     """
     name = row.get("name") or ""
+    names = {name} | {a for a in row.get("aliases") or [] if a}
     held = claimed.get(id(entity))
-    if held is not None and norm(held) != norm(name):
+    if held is not None and not ({norm(n) for n in held} & {norm(n) for n in names}):
         raise SystemExit(
             f"{iso3}: shape {wanted!r} is claimed by {name!r} and by "
-            f"{held!r}. Two rows on one shape is how one district quietly "
-            f"wears another's figures")
-    claimed[id(entity)] = name
+            f"{' / '.join(sorted(held))!r}. Two rows on one shape is how one district "
+            f"quietly wears another's figures")
+    claimed[id(entity)] = (held or set()) | names
 
 
 def main() -> int:
@@ -5176,7 +5195,7 @@ def main() -> int:
             for entity in (*admin1_by_country.get(iso3, []),
                            *admin2_by_country.get(iso3, []))
             if entity.get("id")}
-        claimed: dict[int, str] = {}
+        claimed: dict[int, set[str]] = {}
         hit = miss = ambiguous = outside = collided = declared = turned = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []

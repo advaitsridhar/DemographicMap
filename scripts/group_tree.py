@@ -965,6 +965,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Mam", "Kʼicheʼ", "Qʼeqchiʼ", "Kaqchikel",
         # Guatemala's census spelling of the people the Factbook writes Xinca.
         "Xinka",
+        # Panama's 2023 census, by the names it prints (Guna for Kuna; the
+        # Naso, whom it also writes Teribe).
+        "Guna", "Buglé", "Naso", "Teribe", "Bokota", "Bribri", "Wounaan",
     ),
     "Indigenous peoples of South America": (
         "Quechua", "Aymara", "Guarani", "Mapuche", "Wayuu", "Nasa", "Embera",
@@ -974,6 +977,41 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # because, left to the patterns, it read as the Philippines' Ata.
         "Atacameño o Lickanantay", "Atacameño", "Lickanantay", "Colla",
         "Diaguita", "Kawésqar", "Yagán", "Chango", "Selk'nam",
+        # Argentina's 2022 census, by the names it prints. Atacama and Kolla
+        # Atacameño are named for the same reason Atacameño is: the patterns
+        # read them as the Philippines' Ata. Günün A Küna, a Patagonian
+        # people, is named because the patterns read it as Panama's Kuna.
+        "Atacama", "Kolla", "Kolla Atacameño", "Günün A Küna", "Qom (Toba)", "Wichí",
+        "Mocoví", "Pilagá", "Nivaclé", "Chorote", "Tapiete", "Chané", "Weenhayek",
+        "Guaycurú", "Avipón", "Comechingón", "Sanavirón", "Huarpe", "Ranquel",
+        "Tehuelche", "Aoniken", "Omaguaca", "Ocloya", "Tilián", "Tastil", "Chicha",
+        "Churumata", "Jujuí", "Lule", "Vilela", "Lule Vilela", "Tonokoté",
+        "Charrúa", "Chana", "Minuán", "Querandí", "Guarayo", "Isoceño", "Iogys",
+        "Fiscara", "Corundí", "Michilingüe", "Toara", "Ansilta", "Mak'A",
+        "Alakaluf", "Wayteca/Chono", "Haush/Maneken",
+        # Bolivia's 2024 census, by the names INE groups its answers under:
+        # the lowland peoples, and the Andean nations of the altiplano and
+        # valleys. The Sora are written "Sora (Bolivia)" because the patterns
+        # read Sora as the Munda people of India.
+        "Araona", "Ayoreo", "Baure", "Canichana", "Cavineño", "Cayubaba", "Chácobo",
+        "Chiquitano", "Ese Ejja", "Guarasu'we", "Gwarayu", "Itonama", "Joaquiniano",
+        "Kallawaya", "Leco", "Machineri", "Maropa", "Mojeño", "Mojeño Ignaciano",
+        "Mojeño Trinitario", "Moré", "Mosetén", "Movima", "Pacahuara", "Paunaca",
+        "Puquina", "Sirionó", "Tacana", "Toromona", "Tsimane'", "Uru-Chipaya",
+        "Yaminawa", "Yuqui", "Yurakaré", "Charka Qhara Qhara", "Chuwi",
+        "Jach'a Carangas", "Jalq'a", "Killacas", "Lupaca", "Lípez", "Pakajaqi",
+        "Qhapaq Uma Suyu", "Qullas", "Raqaypampa", "Sora (Bolivia)", "Yampara",
+        # Venezuela's 2011 census, by the names INE prints, the others it
+        # gives in brackets. The Barí are written "Barí (Venezuela)" because
+        # the patterns read Barí as South Sudan's Bari.
+        "Akawayo", "Arawak", "Arutani (Uruak)", "Ayaman", "Añú (Paraujano)", "Baniva",
+        "Baré", "Barí (Venezuela)", "Chaima", "E'ñepá (Panare)", "Gayón", "Guanano",
+        "Inga", "Japreria", "Jirajara", "Jivi (Guajibo)", "Jodi", "Kaketío", "Kariña",
+        "Kechwa", "Kubeo", "Kuiva", "Kumanagoto", "Kurripako", "Mako", "Makushi",
+        "Mapoyo (Wanai)", "Matako", "Piapoco", "Piaroa", "Puinave", "Pumé (Yaruro)",
+        "Píritu", "Sanemá", "Sapé", "Sáliva", "Timote (Timotocuica)", "Tukano", "Tunebo",
+        "Waikerí", "Wapishana", "Warekena", "Yavarana", "Ye'kwana", "Yeral (Ñengatú)",
+        "Yukpa",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
@@ -981,6 +1019,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # Chile's 2024 census: the Afro-descendant communities of the Azapa
         # and Lluta valleys and of La Chimba, by the names it prints.
         "Afro-Chilean", "Moreno of Azapa", "Black of La Chimba",
+        # Panama's 2023 census: the Afro-descendant groups it asks about.
+        "Afro-Panamanian", "Moreno", "Afro-colonial", "Afro-Antillean",
     ),
 }
 
@@ -1171,6 +1211,12 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
 }
 
 ETHNIC_RESIDUALS: tuple[str, ...] = (
+    # Panama, where its two identity questions overlap past the population
+    # and the bars are the indigenous question's alone: everyone else.
+    "Not indigenous (Afro-descendant or other)",
+    # Venezuela, whose census publishes its other identity question
+    # nationally only: everyone the indigenous question does not count.
+    "Not indigenous",
     "Other ethnicity", "Ethnicity not stated", "No ethnic group",
     "No ethnicity data", "Other Central Africa",
     "Unknown ethnicity", "Not declared", "Not classified", "No ethnicity",
@@ -1434,6 +1480,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Chile's 2024 census: the languages of the Atacameno, Kawesqar and
         # Yagan peoples, and the others it groups.
         "Kunza", "Kawésqar", "Yaghan", "Other indigenous languages of Chile",
+        # Bolivia's 2024 census, by the names it prints for the first language
+        # learned in childhood. Moré is written "Moré (Bolivia)" because the
+        # patterns read More as Burkina Faso's Mooré.
+        "Araona", "Baure", "Bésiro", "Canichana", "Cayubaba", "Chácobo", "Ese Ejja",
+        "Guarasu'we", "Gwarayu", "Itonama", "Joaquiniano", "Kabineña", "Leco",
+        "Machaj-Juyai Kallawaya", "Machineri", "Maropa", "Mojeño Trinitario",
+        "Moré (Bolivia)", "Mosetén", "Movima", "Pacahuara", "Puquina", "Sirionó",
+        "Tacana", "Tapiete", "Toromona", "Tsimane'", "Uru-Chipaya", "Weenhayek",
+        "Yaminawa", "Yuqui", "Yurakaré", "Zamuco", "Qom (Toba)",
         # Mexico's census counts whether a person speaks an indigenous
         # language, not which, and Panama's figure is the same kind; in both
         # countries every one of them is a language of this continent.
@@ -1457,7 +1512,8 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                          "Ghashghāi"),
     "Uralic languages": ("Votic", "Nganasan", "Enets", "Selkup",
                          "Livonian"),
-    "Sinitic languages": ("Dungan",),
+    # Bolivia's census writes Taiwanese, which is Taiwan's Hokkien.
+    "Sinitic languages": ("Dungan", "Taiwanese"),
     # North-east India and the Himalaya.
     "Tibeto-Burman languages": (
         "Bhotia", "Adi", "Mishmi", "Thado", "Kinnauri", "Sharchopkha",
@@ -1525,7 +1581,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
     # The band the US Virgin Islands writes, filed where the ACS's "Spanish
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
-    "Romance languages": ("Aragonese", "French or French Creole"),
+    "Romance languages": ("Aragonese", "French or French Creole",
+                          # Bolivia's census: the Catalan of Valencia, by its own name.
+                          "Valencian"),
     "Germanic languages": ("Limburgish",
                            "Limburgish, Limburgan, Limburger"),
     # -- The Atlas of the Languages of Iran, twelve provinces.
