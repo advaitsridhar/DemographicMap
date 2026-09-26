@@ -1,6 +1,67 @@
-xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
-                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
-                      [--find FIND] [--raw RAW] [--aia]
-                      url [url ...]
-probe_links.py: error: argument --find: expected one argument
+page: https://prod.redatam.org/binury/RpWebEngine.exe/Portal?BASE=CPV2011&lang=esp
+  text: URUGUAY::Consultas Dinámicas de Microtados | Redatam Webserver - CELADE, UNECLAC Cerrar × ☰ Powered by REDATAM | © 1985 - 2026 | CELADE, División de Población de la CEPAL - Naciones Unidas. Todos los derechos reservados.
+  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
+  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672701.htm
+  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672721.htm
+  frame: https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'REDATAM' -> https://www.cepal.org/es/subtemas/redatam
+pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
+  text: ﻿ Redatam Webserver Index Page ESTADÍSTICAS BÁSICAS FRECUENCIAS De Vivienda De Hogar De Población PROMEDIOS De Vivienda De Hogar De Población CRUCE DE VARIABLES Vivienda Hogar Población Combinados ANÁLISIS DE DATOS CENSALES ESTRUCTURA DE LA POBLACION Población por Sexo y Edad Relación de Masculinidad / Femeneidad FECUNDIDAD Promedio de Hijos Indicadores de Fecundidad EDUCACIÓN Distribución Geográfica de Población en Edad Escolar Tablas Estandar de Educación INDICADORES ADULTO MAYOR (65+) Vivienda y hogar donde residen Características personales Indicadores demográficos MAPAS TEMÁTICOS DISTRIBUCIÓN DE TOTALES De Viviendas De Hogares De Población Conteos DISTRIBUCIÓN DE PORCENTAJES De Viviendas De Hogares De Personas INFORMACIÓN GENERAL DOCUMENTACIÓN Boleta Censal Guía básica para el procesamiento Resultado proceso censal INFORMACIÓN Sitio Oficial INE Descargar software Redatam+SP DESCRIPCIÓN DE VARIABLES Todas las Variables Variables Geográficas Variables de Vivienda Variables de Hogar Variables de Población PROCESO ESTADÍSTICO REDATAM Procesar comandos Redatam Descargar diccionario Redatam Go !-->
+  link: '' -> javascript:window.parent.location.reload(true);
+  link: 'De Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQVIV&lang=esp
+  link: 'De Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQHOG&lang=esp
+  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/Frequency?BASE=CPV2011&ITEM=FREQPOB&lang=esp
+  link: 'De Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERVIV&lang=esp
+  link: 'De Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERHOG&lang=esp
+  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=AVERPOB&lang=esp
+  link: 'Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZVIV&lang=esp
+  link: 'Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZHOG&lang=esp
+  link: 'Población' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZPOB&lang=esp
+  link: 'Combinados' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=CRUZMULTI&lang=esp
+  link: 'Población por Sexo y Edad' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=EDADQUIN&lang=esp
+  link: 'Relación de Masculinidad / Femeneidad' -> https://prod.redatam.org/binury/RpWebStats.exe/Fraction?BASE=CPV2011&ITEM=RELMASC&lang=esp
+  link: 'Promedio de Hijos' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=FECUND&lang=esp
+  link: 'Indicadores de Fecundidad' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=INDFEC&lang=esp
+  link: 'Distribución Geográfica de Población en Edad Escolar' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=CANTEDU&lang=esp
+  link: 'Tablas Estandar de Educación' -> https://prod.redatam.org/binury/RpWebStats.exe/CrossTab?BASE=CPV2011&ITEM=INDICEDU&lang=esp
+  link: 'Vivienda y hogar donde residen' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AD_VIV_HOG&lang=esp
+  link: 'Características personales' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=PERSAM&lang=esp
+  link: 'Indicadores demográficos' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=INDAM&lang=esp
+  link: 'De Viviendas' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAVIV&lang=esp
+  link: 'De Hogares' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAHOG&lang=esp
+  link: 'De Población' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=AREAPOB&lang=esp
+  link: 'Conteos' -> https://prod.redatam.org/binury/RpWebStats.exe/AreaList?BASE=CPV2011&ITEM=CONTEOS&lang=esp
+  link: 'De Viviendas' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAVIV_PC&lang=esp
+  link: 'De Hogares' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAHOG_PC&lang=esp
+  link: 'De Personas' -> https://prod.redatam.org/binury/RpWebStats.exe/Qts?BASE=CPV2011&ITEM=AREAPOB_PC&lang=esp
+  link: 'Boleta Censal' -> https://prod.redatam.org/redury/censos/cpv2011/Cuestionario_VIV_HOG_PERS.pdf
+  link: 'Guía básica para el procesamiento' -> https://prod.redatam.org/redury/censos/cpv2011/ayuda/index.html
+  link: 'Resultado proceso censal' -> https://prod.redatam.org/redury/censos/cpv2011/INE_CENSO_2011.pdf
+  link: 'Sitio Oficial INE' -> https://www.ine.gub.uy/
+  link: 'Descargar software Redatam+SP' -> https://redatam.org/software
+  link: 'Todas las Variables' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICALL&lang=esp
+  link: 'Variables Geográficas' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICGEO&lang=esp
+  link: 'Variables de Vivienda' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICVIV&lang=esp
+  link: 'Variables de Hogar' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICHOG&lang=esp
+  link: 'Variables de Población' -> https://prod.redatam.org/binury/RpWebStats.exe/Dictionary?BASE=CPV2011&ITEM=DICPER&lang=esp
+  link: 'Procesar comandos Redatam' -> https://prod.redatam.org/binury/RpWebStats.exe/CmdSet?BASE=CPV2011&ITEM=PROGRED&lang=esp
+  link: 'Descargar diccionario Redatam' -> https://prod.redatam.org/binury/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\CENSOS\CPV2011\BasePublica\CPV2011_uruguay_publica.dic
+  link: 'Go' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672711.htm
+pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672701.htm
+  text: ﻿ Redatam Webserver Header Page
+  link: '' -> https://www.ine.gub.uy/
+pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672721.htm
+  text: ﻿
+pane: https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  text: ﻿ Redatam Webserver Footer Page --> RedAtam Webserver Home Â· Blog Â· Pricing Â· About Â· Faq Â· Contact --> © 2018 - 2026 | 2025.12.03 Portal del Estado Uruguayo --> Montevideo - Uruguay Teléfono: 0800 INFO (4636) redatam@gub.uy Acera de... Centro Latinoamericano y Caribeño de Demografía (CELADE), División de Población de la Comisión Económica para América Latina y El Caribe (CEPAL), Naciones Unidas
+  link: '' -> https://www.gub.uy/
+  link: 'Home' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'Blog' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'Pricing' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'About' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'Faq' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: 'Contact' -> https://prod.redatam.org/redury/tempo/136727/~tmp_13672731.htm
+  link: '' -> https://twitter.com/REDATAM
+  link: '' -> https://www.facebook.com/AtencionUy/
+  link: '' -> https://www.youtube.com/user/redatam85
+  link: 'redatam@gub.uy' -> mailto:redatam@gub.uy
