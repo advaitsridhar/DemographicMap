@@ -1,5 +1,30 @@
-  13 provinces and comarcas, 82 districts making INEC's 4,064,780
-  TABOGA (0811) is not drawn and is left out, as panama_census leaves it
-  75 districts, each the count panama_census wrote from cuadro 11
-  wrote data/processed/panama_redatam.json (104 kB)
-  wrote panama_redatam.json: 75 records
+RUNDEF Job
+    SELECTION ALL
+
+TABLE T1
+    AS FREQUENCY
+    OF PERSON.P1_2
+    AREABREAK DISTRICT WEIGHT PERSON.PERSON_WEIGHT
+
+TABLE T2
+    AS FREQUENCY
+    OF PERSON.P1_3B
+
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\lca\redbin\RpBases\census\lca2022\Base\lca2022.dic Geographic Area All Database Frequency of Sex AREA # 01 Castries City Sex Counts % Cumul % Male 6 258 48.82% 48.82% Female 6 560 51.18% 100.00% Total 12 818 100.00% 100.00% AREA # 02 Castries Suburban Sex Counts % Cumul % Male 11 468 48.57% 48.57% Female 12 145 51.43% 100.00% Total 23 613 100.00% 100.00% AREA # 03 Castries Rural Sex Counts % Cumul % Male 12 118 50.11% 50.11% Female 12 065 49.89% 100.00% Total 24 183 100.00% 100.00% AREA # 04 Anse La Raye Sex Counts % Cumul % Male 3 011 51.55% 51.55% Female 2 829 48.45% 100.00% Total 5 841 100.00% 100.00% AREA # 05 Canaries Sex Counts % Cumul % Male 1 132 52.12% 52.12% Female 1 039 47.88% 100.00% Total 2 171 100.00% 100.00% AREA # 06 Soufriere Sex Counts % Cumul % Male 4 240 50.95% 50.95% Female 4 082 49.05% 100.00% Total 8 322 100.00% 100.00% AREA # 07 Choiseul Sex Counts % Cumul % Male 3 527 49.52% 49.52% Female 3 595 50.48% 100.00% Total 7 122 100.00% 100.00% AREA # 08 Laborie Sex Counts % Cumul % Male 4 248 49.94% 49.94% Female 4 259 50.06% 100.00% Total 8 507 100.00% 100.00% AREA # 09 Vieux Fort Sex Counts % Cumul % Male 9 767 49.66% 49.66% Female 9 902 50.34% 100.00% Total 19 669 100.00% 100.00% AREA # 10 Micoud Sex Counts % Cumul % Male 8 207 49.17% 49.17% Female 8 485 50.83% 100.00% Total 16 693 100.00% 100.00% AREA # 11 Dennery Sex Counts % Cumul % Male 6 476 50.03% 50.03% Female 6 467 49.97% 100.00% Total 12 943 100.00% 100.00% AREA # 12 Gros Islet Sex Counts % Cumul % Male 14 264 47.62% 47.62% Female 15 689 52.38% 100.00% Total 29 953 100.00% 100.00% SUMMARY Sex Counts % Cumul % Male 84 716 49.30% 49.30% Female 87 119 50.70% 100.00% Total 171 834 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redlca//tempo/123310/~tmp_12331001.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redlca//tempo/123310/~tmp_12331001.pdf
+  table: area=01 name='Castries City' title=None total=None na=None rows=[]
+  table: area=02 name='Castries Suburban' title=None total=None na=None rows=[]
+  table: area=03 name='Castries Rural' title=None total=None na=None rows=[]
+  table: area=04 name='Anse La Raye' title=None total=None na=None rows=[]
+  table: area=05 name='Canaries' title=None total=None na=None rows=[]
+  table: area=06 name='Soufriere' title=None total=None na=None rows=[]
+  table: area=07 name='Choiseul' title=None total=None na=None rows=[]
+  table: area=08 name='Laborie' title=None total=None na=None rows=[]
+  table: area=09 name='Vieux Fort' title=None total=None na=None rows=[]
+  table: area=10 name='Micoud' title=None total=None na=None rows=[]
+  table: area=11 name='Dennery' title=None total=None na=None rows=[]
+  table: area=12 name='Gros Islet' title=None total=None na=None rows=[]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\lca\redbin\RpBases\census\lca2022\Base\lca2022.dic Geographic Area All Database Frequency of Age Age Counts % Cumul % 0 - 4 7 578 5.75% 5.75% 5 - 9 8 512 6.46% 12.21% 10 -14 8 731 6.62% 18.83% 15 - 19 8 808 6.68% 25.51% 20 - 24 9 058 6.87% 32.38% 25 - 29 9 838 7.46% 39.84% 30 - 34 9 853 7.47% 47.32% 35 - 39 10 238 7.77% 55.09% 40 - 44 9 432 7.15% 62.24% 45 - 49 9 214 6.99% 69.23% 50 - 54 9 169 6.96% 76.19% 55 - 59 8 568 6.50% 82.68% 60 - 64 7 102 5.39% 88.07% 65 - 69 5 396 4.09% 92.17% 70 - 74 3 818 2.90% 95.06% 75 - 79 2 871 2.18% 97.24% 80 + 3 639 2.76% 100.00% Total 131 825 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redlca//tempo/123310/~tmp_12331021.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redlca//tempo/123310/~tmp_12331021.pdf
