@@ -1,44 +1,9 @@
-page: https://onec.bcr.gob.sv/
-  133,591 bytes
-  81 distinct match(es) for 'href=[^>]{0,160}|[Cc]enso[^<]{0,120}'
-    Censos
-    Censos (DIGESTYC),&nbsp; a toda empresa legalmente constituida.&nbsp; Es un documento legal (Ley de [&hellip;]
-    href="#carrusel-principal" role="button" data-slide="next"
-    href="#carrusel-principal" role="button" data-slide="prev"
-    href="//fonts.googleapis.com/css?family=Open+Sans&display=swap" /
-    href="//fonts.googleapis.com/css?family=Open+Sans&display=swap" media="all" /
-    href="favicon.png"
-    href="https://fonts.googleapis.com/css?family=Rubik"
-              rel="stylesheet"
-    href="https://fonts.gstatic.com" crossorigin /
-    href="https://onec.bcr.gob.sv" class="a-btn a-block ltc-white text-center link-font text-lg-right text-md-right text-sm-right" id="link1"
-    href="https://onec.bcr.gob.sv/" 
-    href="https://onec.bcr.gob.sv/" class="gm-anchor gm-dropdown-toggle"
-    href="https://onec.bcr.gob.sv/" class="gm-anchor"
-    href="https://onec.bcr.gob.sv/boletin-ipc-agosto-2026/"
-    href="https://onec.bcr.gob.sv/boletin-ipc-agosto-2026/" rel="nofollow"
-    href="https://onec.bcr.gob.sv/boletin-ipp-agosto-2026/"
-    href="https://onec.bcr.gob.sv/boletin-ipp-agosto-2026/" rel="nofollow"
-    href="https://onec.bcr.gob.sv/boletin-ipp-julio-2026/"
-    href="https://onec.bcr.gob.sv/boletin-ipp-julio-2026/" rel="nofollow"
-    href="https://onec.bcr.gob.sv/canasta-basica/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/category/avisos/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/category/avisos/" class="row justify-content-center pulse-hvr lazyloaded animated"
-    href="https://onec.bcr.gob.sv/contactenos/" class="gm-anchor gm-dropdown-toggle"
-    href="https://onec.bcr.gob.sv/contactenos/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/contactenos/sitios-de-interes/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/culturales-y-judiciales/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/directorio-de-unidades-economicas-2011-2012/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/encuesta-de-hogares-de-propositos-multiples-ehpm/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/encuesta-de-hogares-de-propositos-multiples-ehpm/" class="lswssp-logo-img-link" target="_blank"
-    href="https://onec.bcr.gob.sv/encuestas-economicas/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/estadisticas-economicas/" class="gm-anchor gm-dropdown-toggle"
-    href="https://onec.bcr.gob.sv/estadisticas-sociales/" class="gm-anchor gm-dropdown-toggle"
-    href="https://onec.bcr.gob.sv/guia-de-servicios/" class="gm-anchor"
-    href="https://onec.bcr.gob.sv/indice-de-precios-al-consumidor-ipc/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/indice-de-precios-al-consumidor-ipc/" class="lswssp-logo-img-link" target="_blank"
-    href="https://onec.bcr.gob.sv/indice-de-precios-al-productor-ipp/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/indice-de-precios-al-productor-ipp/" class="lswssp-logo-img-link" target="_blank"
-    href="https://onec.bcr.gob.sv/ipc_consulta/" class="lswssp-logo-img-link" target="_blank"
-    href="https://onec.bcr.gob.sv/poblacion-y-estadisticas-demograficas/" class="gm-anchor gm-menu-item__link"
-    href="https://onec.bcr.gob.sv/preguntas-frecuentes-2/" class="a-btn a-block ltc-white text-center link-font text-lg-right text-md-right text-sm-right" id="link3"
+  https://nimbus.ine.gob.bo/index.php/s/qEmK9gnkGCZ3K7D/download: 430,272,612 bytes, sha256 9C41C13E655B99BBE4944801953B70678317E3AE9599F35D791E1262AB372160
+  CRC check: every member intact
+  dictionary: 59 groups of P32, 82 languages, 123 province entries
+  11,365,333 people in 113 provinces and 9 departments, each department INE's published count
+  polygon 'Cercado' (filed under Beni) reaches [-67.7315, -21.8678, -63.5622, -14.0167], well beyond its department: several places drawn as one, and no province is bound to it
+  108 provinces bound to their polygons; 5 not: Cercado (401); Cercado (801); Cercado (601); Cercado (301); Territorio Indígena Multiétnico (809)
+  polygons with no province: ['Gualberto Villarroe']
+  wrote data/processed/bolivia_census.json (735 kB)
+  wrote bolivia_census.json: 117 records
