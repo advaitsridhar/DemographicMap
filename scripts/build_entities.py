@@ -329,6 +329,10 @@ ADAPTER_FILES = [
     # level. It writes no religion or language there: peru_department.json,
     # the Perfil's department tables of the same count, carries those.
     "peru_redatam.json",
+    # The Dominican Republic's 155 municipalities: median age and sex ratio
+    # from the 2010 census's age-sex table, as the US Census Bureau tabulates
+    # it (uscb_age_sex). They had neither; nothing else is written.
+    "dominican_republic_age_sex.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
