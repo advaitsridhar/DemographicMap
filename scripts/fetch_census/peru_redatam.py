@@ -18,6 +18,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import re
 import urllib.error
 import urllib.parse
@@ -39,6 +40,30 @@ TABLE TABLE1
     AS FREQUENCY
     OF POBLACIO.C5P26
     AREABREAK DEPARTAM
+""",
+    # Every question's categories, nationally: the labels to translate.
+    "labels": """RUNDEF Job
+    SELECTION ALL
+
+TABLE T1
+    AS FREQUENCY
+    OF POBLACIO.C5P2
+
+TABLE T2
+    AS FREQUENCY
+    OF POBLACIO.C5P25
+
+TABLE T3
+    AS FREQUENCY
+    OF POBLACIO.C5P25MC
+
+TABLE T4
+    AS FREQUENCY
+    OF POBLACIO.C5P11
+
+TABLE T5
+    AS FREQUENCY
+    OF POBLACIO.C5P26
 """,
     # Single years of age for one small department's provinces: the shape of
     # a table whose category labels are numbers.
@@ -64,6 +89,66 @@ TABLE TABLE1
     OF POBLACIO.PROV BY POBLACIO.C5P2
 """,
 }
+
+
+AREA = re.compile(r"^AREA\s*#\s*(\d+)$")
+
+
+def cells_of(page: str) -> list[list[str]]:
+    """Every table row's cells as text, blanks included, in page order."""
+    rows = []
+    for tr in re.findall(r"(?is)<tr\b.*?</tr>", page):
+        cells = [re.sub(r"\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", td))).strip()
+                 for td in re.findall(r"(?is)<td\b.*?</td>", tr)]
+        rows.append(cells)
+    return rows
+
+
+def count(text: str) -> int | None:
+    """A Redatam count, written with spaces between thousands."""
+    digits = text.replace("\xa0", "").replace(" ", "")
+    return int(digits) if digits.isdigit() else None
+
+
+def tables(page: str) -> list[dict]:
+    """The frequency tables in an output page: [{area, name, title, rows, total, na}].
+
+    A table opens with an "AREA # code" row naming its area (absent when the
+    program has no area break), then a header row naming the variable, then
+    one row a category -- label, count, per cent, cumulative per cent -- then
+    Total, and a "No Aplica" row counting those the question was not put to.
+    """
+    out: list[dict] = []
+    current: dict | None = None
+    for cells in cells_of(page):
+        text = [c for c in cells if c]
+        if not text:
+            continue
+        area = next((AREA.match(c) for c in text if AREA.match(c)), None)
+        if area:
+            current = {"area": area.group(1), "name": text[-1] if len(text) > 1 else "",
+                       "title": None, "rows": [], "total": None, "na": None}
+            out.append(current)
+            continue
+        if len(text) >= 3 and text[1] == "Casos":
+            if current is None or current["title"] is not None:
+                current = {"area": None, "name": "", "title": None, "rows": [],
+                           "total": None, "na": None}
+                out.append(current)
+            current["title"] = text[0]
+            continue
+        if current is None or current["title"] is None:
+            continue
+        if text[0].startswith("No Aplica"):
+            current["na"] = count(text[0].split(":")[-1]) if ":" in text[0] else (
+                count(text[1]) if len(text) > 1 else None)
+            continue
+        if len(text) >= 2 and count(text[1]) is not None:
+            if text[0] == "Total":
+                current["total"] = count(text[1])
+            else:
+                current["rows"].append((text[0], count(text[1])))
+    return out
 
 
 def run(session: Session, program: str) -> str:
@@ -101,12 +186,18 @@ def main() -> int:
         links += [("frame", urllib.parse.urljoin(CMDSET, attrs(t)["src"]))
                   for t in re.findall(r"(?is)<i?frame\b[^>]*>", page) if attrs(t).get("src")]
         for label, url in links:
-            if any(k in url for k in ("Tempo", ".xls", ".htm", "Text?")):
+            if any(k in url for k in ("Tempo", ".xls", ".htm", "Text?")) \
+                    and not url.lower().endswith((".xlsx", ".pdf")) and "reporte." not in url:
                 print(f"follow: {label!r} -> {url}")
                 body = session.get(url)
                 report(url, body, args.limit)
                 if args.raw:
                     print(body[:args.raw])
+                for table in tables(body)[:40]:
+                    print(f"  table {table['area']} {table['name']!r} of {table['title']!r}: "
+                          f"total {table['total']}, not applicable {table['na']}")
+                    for label_, n in table["rows"][:60]:
+                        print(f"    {label_!r}: {n}")
         return 0
     raise SystemExit("peru_redatam: only --probe is written so far")
 
