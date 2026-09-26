@@ -264,21 +264,20 @@ def names_a_department(text: str) -> bool:
     return bool(re.search(r"\b(departamento|partido|comuna)\b", text, re.I))
 
 
-def sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int, what: str
-          ) -> list[list[Any]]:
-    """The province's own sheet of a workbook.
+def sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int, what: str,
+          *, required: bool = True) -> list[list[Any]] | None:
+    """The province's own sheet of a workbook, or None where it may be absent.
 
-    Tierra del Fuego's indigenous workbook numbers it like a department's
-    ("Cuadro 1.23.3"); a numbered sheet whose title names no department is
-    the province's, if there is exactly one.
+    Tierra del Fuego's indigenous table 1 has none: its third numbered sheet is
+    titled as the province's but holds one department's figures (Ushuaia's, by
+    the other tables), so a sheet is never taken for the province's by its
+    title alone.
     """
     if (index, None) in sheets:
         return sheets[(index, None)]
-    whole = [(d, rows) for (p, d), rows in sheets.items()
-             if p == index and d is not None and not names_a_department(title(rows))]
-    if len(whole) == 1:
-        log(f"  {what}: sheet {index}.{whole[0][0]} names no department; it is the province's")
-        return whole[0][1]
+    if not required:
+        log(f"  {what}: no province sheet")
+        return None
     raise SystemExit(f"argentina_census: {what}: no province sheet {index} among "
                      f"{sorted(k for k in sheets if k[1] is None)}")
 
@@ -582,10 +581,15 @@ def main() -> int:
             indigenous.setdefault(code, 0)
             speak.setdefault(code, [indigenous[code], 0, 0, indigenous[code]] if indigenous[code]
                              else [0, 0, 0, 0])
-        ind_province = total_row(sheet(ind1, index, f"{what} indigena_c1"),
-                                 f"{what} indigenous")[0]
         speak_province = [n for n in total_row(sheet(ind7, index, f"{what} indigena_c7"),
                                                f"{what} language") if n is not None]
+        # The province's indigenous total is table 7's; table 1's province
+        # sheet, where it has one, must agree, and so must table 9's peoples.
+        ind_province = speak_province[0]
+        own = sheet(ind1, index, f"{what} indigena_c1", required=False)
+        if own is not None and total_row(own, f"{what} indigenous")[0] != ind_province:
+            raise SystemExit(f"argentina_census: {what}: tables 1 and 7 disagree on the "
+                             "province's indigenous population")
         if sum(indigenous.values()) != ind_province:
             raise SystemExit(f"argentina_census: {what}: departments' indigenous people make "
                              f"{sum(indigenous.values()):,}, not {ind_province:,}")

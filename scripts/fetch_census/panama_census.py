@@ -381,9 +381,11 @@ def main() -> int:
         for prov in {p for p, _ in sex_dist}:
             mine = [k for k in sex_dist if k[0] == prov and k not in out]
             theirs = [k for k in other if k[0] == prov and k not in out]
+            def words(key: tuple[str, str]) -> set[str]:
+                return {w for w in (fold(x) for x in DISTRICT_NAMES[key].split()) if len(w) > 3}
+
             for key in mine:
-                words = set(re.findall(r"[a-z]{4,}", key[1]))
-                hits = [t for t in theirs if words & set(re.findall(r"[a-z]{4,}", t[1]))]
+                hits = [t for t in theirs if words(key) & words(t)]
                 if len(hits) != 1:
                     raise SystemExit(f"panama_census: {table} has no single district for "
                                      f"{DISTRICT_NAMES[key]} ({prov}); leftovers {theirs}")
