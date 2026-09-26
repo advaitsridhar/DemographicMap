@@ -58,17 +58,25 @@ Estructura en %Población
 class RegroupTest(unittest.TestCase):
     def test_spaced_thousands_read_by_their_sums(self):
         tokens = "1 317 688 629 919 473 446 398 215 183".split()
-        self.assertEqual(cc.regroup(tokens, 9, cc.zones_add_up, "t"),
+        self.assertEqual(cc.regroup(tokens, 9, cc.zones_error, "t"),
                          [1317, 688, 629, 919, 473, 446, 398, 215, 183])
 
     def test_unspaced_numbers_and_dashes(self):
         tokens = "4516 2342 2174 4516 2342 2174 - - -".split()
-        self.assertEqual(cc.regroup(tokens, 9, cc.zones_add_up, "t"),
+        self.assertEqual(cc.regroup(tokens, 9, cc.zones_error, "t"),
                          [4516, 2342, 2174, 4516, 2342, 2174, 0, 0, 0])
+
+    def test_a_one_person_rounding_is_read_and_logged(self):
+        # Rodas, as Estudios y Datos 2024 prints it: its urban men and women
+        # make 18 926 against an urban total of 18 925.
+        tokens = "28 713 14 518 14 196 18 925 9 285 9 641 9 788 5 233 4 555".split()
+        self.assertEqual(cc.regroup(tokens, 9, cc.zones_error, "Rodas"),
+                         [28713, 14518, 14196, 18925, 9285, 9641, 9788, 5233, 4555])
+        self.assertIn("Rodas (1 person)", cc.DISCREPANCIES)
 
     def test_a_row_no_reading_satisfies_stops_the_run(self):
         with self.assertRaises(SystemExit):
-            cc.regroup("1 2 3 4".split(), 4, cc.colours_add_up, "t")
+            cc.regroup("1 2 3 4".split(), 4, cc.colours_error, "t")
 
     def test_split_row_keeps_a_hyphenated_name(self):
         self.assertEqual(cc.split_row("Songo - La Maya 86 354 43 395"),
@@ -93,7 +101,7 @@ class TableTest(unittest.TestCase):
 
     def test_colour_rows_and_the_isle_of_youth(self):
         municipios, provinces, national, rows = cc.by_province(
-            [COLOUR], 4, cc.colours_add_up, trailing_shares=4)
+            [COLOUR], 4, cc.colours_error, trailing_shares=4)
         self.assertEqual(municipios["Pinar del Río"]["Sandino"], [37293, 32343, 1988, 2962])
         # A province with no municipio beneath it is its own one unit.
         self.assertEqual(municipios["Isla de la Juventud"],

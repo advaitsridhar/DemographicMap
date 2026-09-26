@@ -111,22 +111,32 @@ def split_row(line: str) -> tuple[str, list[str]]:
     return " ".join(tokens[:i]), tokens[i:]
 
 
-def regroup(tokens: list[str], n: int, check: Callable[[list[int]], bool],
+# How far a printed row may miss its own sums: ONEI's tables are published
+# with an occasional one-person disagreement between a total and its parts
+# (Rodas in 2024: 9 285 urban men and 9 641 urban women printed against an
+# urban total of 18 925). One person in one identity is a rounding in the
+# publication and is logged; anything more stops the run.
+SLACK = 1
+DISCREPANCIES: list[str] = []
+
+
+def regroup(tokens: list[str], n: int, error: Callable[[list[int]], int],
             where: str) -> list[int]:
-    """The one way of reading ``tokens`` as ``n`` numbers that ``check`` accepts.
+    """The one way of reading ``tokens`` as ``n`` numbers that meets the row's sums.
 
     ONEI prints thousands with a space ("1 317"), and sometimes not at all
     ("4516"), so a row of digit groups can be read several ways. A number is
     a group of any length, or one of up to three digits followed by groups of
-    exactly three; "-" is zero. Every reading is tried, and exactly one must
-    satisfy the row's own sums.
+    exactly three; "-" is zero. Every reading is tried; ``error`` says by how
+    many people it misses the row's own sums. The reading that misses by
+    least must be the only one to, and must miss by no more than ``SLACK``.
     """
-    found: set[tuple[int, ...]] = set()
+    found: dict[tuple[int, ...], int] = {}
 
     def walk(i: int, acc: list[int]) -> None:
         if len(acc) == n:
-            if i == len(tokens) and check(acc):
-                found.add(tuple(acc))
+            if i == len(tokens):
+                found[tuple(acc)] = error(acc)
             return
         if i >= len(tokens) or len(tokens) - i < n - len(acc):
             return
@@ -144,21 +154,26 @@ def regroup(tokens: list[str], n: int, check: Callable[[list[int]], bool],
             walk(j, acc + [value])
 
     walk(0, [])
-    if len(found) != 1:
-        raise SystemExit(f"cuba_census: {where}: {len(found)} readings of {' '.join(tokens)!r} "
-                         "satisfy its sums; exactly one must")
-    return list(found.pop())
+    best = min(found.values(), default=None)
+    winners = [v for v, e in found.items() if e == best]
+    if best is None or best > SLACK or len(winners) != 1:
+        raise SystemExit(f"cuba_census: {where}: {len(winners)} readings of "
+                         f"{' '.join(tokens)!r} come within {best} of its sums; exactly one "
+                         f"must, within {SLACK}")
+    if best:
+        DISCREPANCIES.append(f"{where} ({best} person)")
+    return list(winners[0])
 
 
-def zones_add_up(v: list[int]) -> bool:
-    """Total, men, women; urban total, men, women; rural total, men, women."""
+def zones_error(v: list[int]) -> int:
+    """How far total, men, women; urban total, men, women; rural total, men, women miss their sums."""
     t, h, m, ut, uh, um, rt, rh, rm = v
-    return (t == h + m and ut == uh + um and rt == rh + rm and t == ut + rt
-            and h == uh + rh and m == um + rm)
+    return (abs(t - h - m) + abs(ut - uh - um) + abs(rt - rh - rm) + abs(t - ut - rt)
+            + abs(h - uh - rh) + abs(m - um - rm))
 
 
-def colours_add_up(v: list[int]) -> bool:
-    return v[0] == v[1] + v[2] + v[3]
+def colours_error(v: list[int]) -> int:
+    return abs(v[0] - v[1] - v[2] - v[3])
 
 
 def pdf_pages(url: str, stamp: str) -> list[str]:
@@ -192,7 +207,7 @@ def check_sums(municipios: dict[str, dict[str, list[int]]], provinces: dict[str,
                          f"municipios make {made}; ONEI published 16, 168 and {national}")
 
 
-def by_province(texts: list[str], n: int, check: Callable[[list[int]], bool],
+def by_province(texts: list[str], n: int, check: Callable[[list[int]], int],
                 trailing_shares: int = 0
                 ) -> tuple[dict[str, dict[str, list[int]]], dict[str, list[int]], list[int] | None,
                            list[tuple[str, list[int], list[float]]]]:
@@ -241,7 +256,7 @@ def by_province(texts: list[str], n: int, check: Callable[[list[int]], bool],
 
 def population_table(texts: list[str]) -> tuple[dict[str, dict[str, list[int]]], dict[str, list[int]]]:
     """Table 1 of 2024, checked: every row's zones, the provinces and Cuba."""
-    municipios, provinces, national, _ = by_province(texts, 9, zones_add_up)
+    municipios, provinces, national, _ = by_province(texts, 9, zones_error)
     check_sums(municipios, provinces, national, NATIONAL_2024, "2024")
     log(f"  Table 1: 16 provinces and 168 municipios making ONEI's {NATIONAL_2024:,}; every "
         "row's sexes and zones make its total")
@@ -294,7 +309,7 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
                 continue
             if municipio is None or label == "CUBA":
                 continue
-            values = regroup(tokens, 9, zones_add_up, f"{municipio[1]}, {label}")
+            values = regroup(tokens, 9, zones_error, f"{municipio[1]}, {label}")
             if label == "Total":
                 totals[municipio] = values
                 continue
@@ -323,7 +338,7 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
 
 def colour_table(texts: list[str]) -> tuple[dict[str, dict[str, list[int]]], dict[str, list[int]]]:
     """The 2012 table: {province: {municipio: [total, white, black, mulatto]}}, and the provinces."""
-    municipios, provinces, national, rows = by_province(texts, 4, colours_add_up, trailing_shares=4)
+    municipios, provinces, national, rows = by_province(texts, 4, colours_error, trailing_shares=4)
     for label, values, printed in rows:
         for count, share in zip(values, printed):
             if values[0] and abs(100 * count / values[0] - share) > 0.051:
@@ -387,6 +402,8 @@ def main() -> int:
     municipios, provinces = population_table(carrying(texts, TABLE_1))
     ages = age_table(carrying(texts, TABLE_5), municipios)
     colour_m, colour_p = colour_table(carrying(pdf_pages(COLOUR, COLOUR_STAMP), COLOUR_TABLE))
+    log(f"  {len(DISCREPANCIES)} printed rows miss their own sums by one person, as published: "
+        + "; ".join(DISCREPANCIES))
 
     admin1 = json.loads((SITE / "admin1" / "CUB.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CUB.units.json").read_text())
