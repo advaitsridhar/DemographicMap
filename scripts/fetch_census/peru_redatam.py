@@ -108,10 +108,17 @@ LANGUAGE = {
 # INEI's department names -> the map's first-level unit; Lima's province and
 # the rest of the department are two units there.
 DEPARTMENT = {"Callao": "El Callao", "Provincia Constitucional del Callao": "El Callao",
-              "Áncash": "Ancash"}
+              "Áncash": "Ancash",
+              # INEI's area label for La Libertad's provinces drops an i.
+              "La Lbertad": "La Libertad"}
+# INEI's province names -> the boundary file's, where they differ by more than
+# accents. Callao's area is labelled with the province's full title alone.
+PROVINCE = {"Provincia Constitucional del Callao": "Callao", "Nazca": "Nasca"}
 LIMA_METRO, LIMA_METRO_UNIT = "1501", "Municipalidad Metropolitana de Lima"
 AGE = re.compile(r"(\d+)")
-PLACE = re.compile(r"^(.*?),\s*provincia:\s*(.*)$")
+# "Amazonas, provincia: Chachapoyas", and for Madre de Dios "Madre de Dios
+# prov. de Tambopata".
+PLACE = re.compile(r"^(.*?)(?:,\s*provincia:|\s+prov\.\s+de)\s*(.*)$")
 
 PROBES = {
     # Religion (question 26, asked of those aged 12 and over), by department:
@@ -462,7 +469,8 @@ def main() -> int:
         dept = units[code]["department"]
         return DEPARTMENT.get(dept, dept)
 
-    bound, missing = bind({c: (u["name"], unit_of(c)) for c, u in units.items()}, admin2, parents)
+    bound, missing = bind({c: (u["name"], unit_of(c)) for c, u in units.items()}, admin2, parents,
+                          PROVINCE)
     log(f"  {len(bound)} provinces bound to their polygons; {len(missing)} not: "
         + "; ".join(missing))
     labels = {s["id"]: s["name"] for s in admin2}

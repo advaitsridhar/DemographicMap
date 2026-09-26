@@ -103,6 +103,15 @@ class Checks(unittest.TestCase):
         self.assertIn("not the provinces' sum", str(caught.exception))
 
 
+class Places(unittest.TestCase):
+    def test_both_ways_inei_labels_a_province_are_read(self):
+        self.assertEqual(pr.PLACE.match("Amazonas, provincia: Chachapoyas").groups(),
+                         ("Amazonas", "Chachapoyas"))
+        self.assertEqual(pr.PLACE.match("Madre de Dios prov. de Tambopata").groups(),
+                         ("Madre de Dios", "Tambopata"))
+        self.assertIsNone(pr.PLACE.match("Provincia Constitucional del Callao"))
+
+
 class Median(unittest.TestCase):
     def test_the_median_is_interpolated_within_the_middle_year(self):
         from collections import Counter
