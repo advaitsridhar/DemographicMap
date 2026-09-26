@@ -1,9 +1,56 @@
-
-=== NADA study record: 4517 ===
-    HTTPError: HTTP Error 400: Bad Request
-
-=== NADA variables: study 4517 ===
-    HTTPError: HTTP Error 400: Bad Request  <- https://catalog.ihsn.org/index.php/api/catalog/4517/variables
-    HTTPError: HTTP Error 400: Bad Request  <- https://catalog.ihsn.org/index.php/api/catalog/variables/4517
-    HTTPError: HTTP Error 400: Bad Request  <- https://catalog.ihsn.org/index.php/api/datasets/4517/variables
-    no variable endpoint answered; the study record above is what this catalogue offers a program
+  Table 2a: TRINIDAD AND TOBAGO's age groups make 1,328,017 of 1,328,019
+  Table 2a: TRINIDAD's age groups make 1,267,142 of 1,267,144
+  Table 2a: City of Port of Spain's age groups make 37,076 of 37,074
+  Table 2a: City of San Fernando's age groups make 48,837 of 48,838
+  Table 2a: Borough of Point Fortin's age groups make 20,236 of 20,235
+  Table 2a: Couva/ Tabaquite/ Talparo's age groups make 178,409 of 178,410
+  Table 2a: Diego Martin's age groups make 102,958 of 102,957
+  Table 2a: Mayaro/ Rio Claro's age groups make 35,647 of 35,650
+  Table 2a: Penal/ Debe's age groups make 89,391 of 89,392
+  Table 2a: Princes Town's age groups make 102,376 of 102,375
+  Table 2a: Siparia's age groups make 86,950 of 86,949
+  Table 2a: Tunapuna/ Piarco's age groups make 215,117 of 215,119
+  Table 2a: TOBAGO's age groups make 60,872 of 60,874
+  Table 2a: St.Andrew's age groups make 17,535 of 17,536
+  Table 2a: St.David's age groups make 8,734 of 8,733
+  Table 2a: St.George's age groups make 6,874 of 6,875
+  Table 2a: St.Patrick's age groups make 15,563 of 15,560
+  Table 2a: boroughofarima's men and women make 33,607 of 33,606
+  Table 2a: couvatabaquitetalparo's men and women make 178,409 of 178,410
+  Table 2a: penaldebe's men and women make 89,391 of 89,392
+  Table 2a: princestown's men and women make 102,374 of 102,375
+  Table 2a: sanjuanlaventille's men and women make 157,257 of 157,258
+  Table 2a: tobago's men and women make 60,875 of 60,874
+  Table 2a: standrew's men and women make 17,535 of 17,536
+  Table 2a: stmary's men and women make 3,298 of 3,297
+  the municipalities' populations make 1,267,145, printed 1,267,144
+  Trinidad and Tobago's populations make 1,328,018, printed 1,328,019
+  the municipalities' non-institutional populations make 1,261,812, printed 1,261,811
+  the municipalities' age tables make 1,267,145, printed 1,267,144
+  Trinidad and Tobago's age tables make 1,328,018, printed 1,328,019
+  trinidadandtobago's ethnic groups make 1,322,547, printed 1,322,546
+  trinidad's ethnic groups make 1,261,809, printed 1,261,811
+  cityofportofspain's ethnic groups make 35,913, printed 35,914
+  cityofsanfernando's ethnic groups make 48,637, printed 48,635
+  boroughofarima's ethnic groups make 33,405, printed 33,404
+  boroughofchaguanas's ethnic groups make 83,490, printed 83,489
+  mayarorioclaro's ethnic groups make 35,648, printed 35,649
+  sangregrande's ethnic groups make 75,606, printed 75,605
+  tunapunapiarco's ethnic groups make 212,826, printed 212,825
+  tobago's ethnic groups make 60,733, printed 60,735
+  the municipalities' ethnic groups make 1,261,812, printed 1,261,811
+  trinidadandtobago's religions make 1,322,547, printed 1,322,546
+  cityofportofspain's religions make 35,913, printed 35,914
+  cityofsanfernando's religions make 48,636, printed 48,635
+  boroughofchaguanas's religions make 83,488, printed 83,489
+  boroughofpointfortin's religions make 20,160, printed 20,161
+  diegomartin's religions make 102,339, printed 102,340
+  mayarorioclaro's religions make 35,650, printed 35,649
+  penaldebe's religions make 89,341, printed 89,342
+  sanjuanlaventille's religions make 157,020, printed 157,021
+  sangregrande's religions make 75,606, printed 75,605
+  tobago's religions make 60,736, printed 60,735
+  the municipalities' religions make 1,261,812, printed 1,261,811
+  14 municipalities and Tobago making 1,328,019 (de jure) and 1,322,546 (non-institutional); ethnic groups, religions, ages and sexes each make every unit
+  wrote data/processed/tto_census.json (71 kB)
+  wrote tto_census.json: 14 units
