@@ -5223,6 +5223,125 @@
     "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 6,758 people counted here, 89 did not answer P06 and are left out of the shares."
   },
   {
+    "id": "NIC-INIDE-3015",
+    "level": "admin2",
+    "name": "Cinco Pinos",
+    "parent": "NIC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6781,
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "median_age": {
+      "value": 19.9,
+      "unit": "years",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "sex_ratio": {
+      "value": 1012,
+      "unit": "males_per_1000_females",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.1,
+        "count": 4574
+      },
+      {
+        "group": "Evangelical",
+        "pct": 13.4,
+        "count": 807
+      },
+      {
+        "group": "No religion",
+        "pct": 10.3,
+        "count": 617
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Moravian Church",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Not indigenous",
+        "pct": 99.6,
+        "count": 6531
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.2,
+        "count": 14
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Miskito",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other indigenous people or ethnic community",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Rama",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio/religion/ethnicity",
+        "name": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05",
+        "url": "http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp",
+        "year": 2005
+      }
+    ],
+    "country": "NIC",
+    "parent_name": "Chinandega",
+    "codes": {
+      "inide": "3015"
+    },
+    "match_by": "shape_id",
+    "shape_id": "1004716B9870414897994",
+    "aliases": [
+      "San Juan de Cinco Pinos (Municipio)"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INIDE's count of everyone by single year of age in the 2005 census.",
+    "religion_year": 2005,
+    "religion_note": "The religion each person belongs to (P13 of the 2005 census), asked of everyone aged 5 and over: the 6,008 people of that age counted here.",
+    "ethnicity_year": 2005,
+    "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 6,781 people counted here, 226 did not answer P06 and are left out of the shares."
+  },
+  {
     "id": "NIC-INIDE-3020",
     "level": "admin2",
     "name": "Santo Tomás del Norte",
@@ -11674,6 +11793,175 @@
     "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 75,083 people counted here, 3,109 did not answer P06 and are left out of the shares."
   },
   {
+    "id": "NIC-INIDE-5525",
+    "level": "admin2",
+    "name": "Managua",
+    "parent": "NIC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 937489,
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "median_age": {
+      "value": 23.5,
+      "unit": "years",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "sex_ratio": {
+      "value": 902,
+      "unit": "males_per_1000_females",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 55.5,
+        "count": 467029
+      },
+      {
+        "group": "Evangelical",
+        "pct": 25.4,
+        "count": 213657
+      },
+      {
+        "group": "No religion",
+        "pct": 15.7,
+        "count": 131843
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 14262
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 12090
+      },
+      {
+        "group": "Moravian Church",
+        "pct": 0.2,
+        "count": 2094
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 175
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 62
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Not indigenous",
+        "pct": 98.8,
+        "count": 885531
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.4,
+        "count": 3606
+      },
+      {
+        "group": "Miskito",
+        "pct": 0.2,
+        "count": 1603
+      },
+      {
+        "group": "Creole",
+        "pct": 0.1,
+        "count": 765
+      },
+      {
+        "group": "Mestizo of the Caribbean Coast",
+        "pct": 0.1,
+        "count": 1238
+      },
+      {
+        "group": "Nahoa-Nicarao",
+        "pct": 0.1,
+        "count": 517
+      },
+      {
+        "group": "Other indigenous people or ethnic community",
+        "pct": 0.1,
+        "count": 1083
+      },
+      {
+        "group": "Rama",
+        "pct": 0.1,
+        "count": 805
+      },
+      {
+        "group": "Cacaopera-Matagalpa",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Chorotega-Nahua-Mange",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.0,
+        "count": 426
+      },
+      {
+        "group": "Mayangna",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Ulwa",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Xiu-Sutiaba",
+        "pct": 0.0,
+        "count": 201
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio/religion/ethnicity",
+        "name": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05",
+        "url": "http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp",
+        "year": 2005
+      }
+    ],
+    "country": "NIC",
+    "parent_name": "Managua",
+    "codes": {
+      "inide": "5525"
+    },
+    "match_by": "shape_id",
+    "shape_id": "1004716B26688105291153",
+    "aliases": [
+      "Managua (Municipio)"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INIDE's count of everyone by single year of age in the 2005 census.",
+    "religion_year": 2005,
+    "religion_note": "The religion each person belongs to (P13 of the 2005 census), asked of everyone aged 5 and over: the 841,212 people of that age counted here.",
+    "ethnicity_year": 2005,
+    "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 937,489 people counted here, 41,080 did not answer P06 and are left out of the shares."
+  },
+  {
     "id": "NIC-INIDE-5530",
     "level": "admin2",
     "name": "Ticuantepe",
@@ -17056,6 +17344,145 @@
     "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 5,420 people counted here, 134 did not answer P06 and are left out of the shares."
   },
   {
+    "id": "NIC-INIDE-8025",
+    "level": "admin2",
+    "name": "Moyogalpa",
+    "parent": "NIC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9729,
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "median_age": {
+      "value": 22.0,
+      "unit": "years",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "sex_ratio": {
+      "value": 1055,
+      "unit": "males_per_1000_females",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 63.4,
+        "count": 5577
+      },
+      {
+        "group": "Evangelical",
+        "pct": 25.0,
+        "count": 2197
+      },
+      {
+        "group": "No religion",
+        "pct": 9.6,
+        "count": 847
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 105
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 64
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Not indigenous",
+        "pct": 96.9,
+        "count": 9330
+      },
+      {
+        "group": "Nahoa-Nicarao",
+        "pct": 2.7,
+        "count": 258
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Miskito",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Rama",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Chorotega-Nahua-Mange",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Mayangna",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mestizo of the Caribbean Coast",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ulwa",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio/religion/ethnicity",
+        "name": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05",
+        "url": "http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp",
+        "year": 2005
+      }
+    ],
+    "country": "NIC",
+    "parent_name": "Rivas",
+    "codes": {
+      "inide": "8025"
+    },
+    "match_by": "shape_id",
+    "shape_id": "1004716B69176908795082",
+    "aliases": [
+      "Moyagalpa (Muncipio)"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INIDE's count of everyone by single year of age in the 2005 census.",
+    "religion_year": 2005,
+    "religion_note": "The religion each person belongs to (P13 of the 2005 census), asked of everyone aged 5 and over: the 8,791 people of that age counted here.",
+    "ethnicity_year": 2005,
+    "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 9,729 people counted here, 104 did not answer P06 and are left out of the shares."
+  },
+  {
     "id": "NIC-INIDE-8030",
     "level": "admin2",
     "name": "Altagracia",
@@ -18598,6 +19025,170 @@
     "religion_note": "The religion each person belongs to (P13 of the 2005 census), asked of everyone aged 5 and over: the 1,115 people of that age counted here.",
     "ethnicity_year": 2005,
     "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 1,307 people counted here, 15 did not answer P06 and are left out of the shares."
+  },
+  {
+    "id": "NIC-INIDE-9105",
+    "level": "admin2",
+    "name": "Waspám",
+    "parent": "NIC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47231,
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "median_age": {
+      "value": 15.1,
+      "unit": "years",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2005,
+      "source": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05"
+    },
+    "religion": [
+      {
+        "group": "Moravian Church",
+        "pct": 43.6,
+        "count": 16962
+      },
+      {
+        "group": "Catholic",
+        "pct": 40.7,
+        "count": 15830
+      },
+      {
+        "group": "Evangelical",
+        "pct": 11.4,
+        "count": 4443
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.7,
+        "count": 1450
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 160
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 73
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Miskito",
+        "pct": 95.9,
+        "count": 44067
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 1.4,
+        "count": 660
+      },
+      {
+        "group": "Mestizo of the Caribbean Coast",
+        "pct": 1.1,
+        "count": 523
+      },
+      {
+        "group": "Mayangna",
+        "pct": 0.7,
+        "count": 342
+      },
+      {
+        "group": "Not indigenous",
+        "pct": 0.4,
+        "count": 188
+      },
+      {
+        "group": "Chorotega-Nahua-Mange",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Creole",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Other indigenous people or ethnic community",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Rama",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Cacaopera-Matagalpa",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ulwa",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Xiu-Sutiaba",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio/religion/ethnicity",
+        "name": "INIDE, VIII Censo de Población y IV de Vivienda 2005, tabulated on INIDE's REDATAM base VIVPOB05",
+        "url": "http://redatam.inide.gob.ni/redbin/RpWebEngine.exe/Portal?BASE=VIVPOB05&lang=esp",
+        "year": 2005
+      }
+    ],
+    "country": "NIC",
+    "parent_name": "North Caribbean Coast Autonomous Region",
+    "codes": {
+      "inide": "9105"
+    },
+    "match_by": "shape_id",
+    "shape_id": "1004716B11599288881671",
+    "aliases": [
+      "Municipio Waspán"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INIDE's count of everyone by single year of age in the 2005 census.",
+    "religion_year": 2005,
+    "religion_note": "The religion each person belongs to (P13 of the 2005 census), asked of everyone aged 5 and over: the 38,926 people of that age counted here.",
+    "ethnicity_year": 2005,
+    "ethnicity_note": "Two questions of the 2005 census, put to everyone: whether a person considers themselves to belong to an indigenous people (P06) and, if so, which of the listed indigenous peoples or ethnic communities (P07) -- the Caribbean coast's Creole and mestizo communities among them. \"Not indigenous\" is everyone who said no to P06; \"Indigenous (people not stated)\" those who said yes and did not know or did not say which. Of the 47,231 people counted here, 1,273 did not answer P06 and are left out of the shares."
   },
   {
     "id": "NIC-INIDE-9110",
