@@ -10487,6 +10487,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 27,406 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 11% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-06182",
+    "level": "admin2",
+    "name": "Coronel de Marina Leonardo Rosales",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 67503,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 33.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 97.6,
+        "count": 64271
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.8,
+        "count": 1212
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 340
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c1_2.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c4_2.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c1_2.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Buenos Aires",
+    "codes": {
+      "indec": "06182"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B45528536534389",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 65,823 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-06189",
     "level": "admin2",
     "name": "Coronel Dorrego",
@@ -15979,88 +16061,6 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 35.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 44,594 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 9% of the indigenous population speak or understand their people's language."
-  },
-  {
-    "id": "ARG-INDEC-06616",
-    "level": "admin2",
-    "name": "Pellegrini",
-    "parent": "ARG",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 7143,
-      "year": 2022,
-      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
-    },
-    "median_age": {
-      "value": 34.8,
-      "unit": "years",
-      "year": 2022,
-      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
-    },
-    "sex_ratio": {
-      "value": 958,
-      "unit": "males_per_1000_females",
-      "year": 2022,
-      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": [
-      {
-        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
-        "pct": 98.7,
-        "count": 7017
-      },
-      {
-        "group": "Indigenous (people not published)",
-        "pct": 0.9,
-        "count": 67
-      },
-      {
-        "group": "Afro-descendant",
-        "pct": 0.4,
-        "count": 28
-      }
-    ],
-    "sources": [
-      {
-        "field": "population",
-        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
-        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c1_2.xlsx",
-        "year": 2022
-      },
-      {
-        "field": "median_age/sex_ratio",
-        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
-        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_bsas_est_c4_2.xlsx",
-        "year": 2022
-      },
-      {
-        "field": "ethnicity",
-        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
-        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c1_2.xlsx",
-        "year": 2022
-      }
-    ],
-    "country": "ARG",
-    "parent_name": "Buenos Aires",
-    "codes": {
-      "indec": "06616"
-    },
-    "match_by": "shape_id",
-    "shape_id": "61730980B41851340526887",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
-    "ethnicity_year": 2022,
-    "ethnicity_note": "Two questions the 2022 census asked the 7,112 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 7% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-06623",
@@ -26313,6 +26313,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 13,938 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 39% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-22126",
+    "level": "admin2",
+    "name": "1º de Mayo",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14279,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 30.2,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 97.4,
+        "count": 13897
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 2.2,
+        "count": 317
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.4,
+        "count": 51
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_chaco_est_c1_4.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_chaco_est_c4_4.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_chaco_poblacion_indigena_c1_4.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Chaco",
+    "codes": {
+      "indec": "22126"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B22683842441482",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 14,265 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 26% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-22133",
     "level": "admin2",
     "name": "Quitilipi",
@@ -27541,6 +27623,88 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 37.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 744 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 17% of the indigenous population speak or understand their people's language."
+  },
+  {
+    "id": "ARG-INDEC-26070",
+    "level": "admin2",
+    "name": "Paso de Indios",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1886,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 33.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1173,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 73.0,
+        "count": 1373
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 25.2,
+        "count": 475
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 1.8,
+        "count": 34
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_chubut_est_c1_5.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_chubut_est_c4_5.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_chubut_poblacion_indigena_c1_5.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Chubut",
+    "codes": {
+      "indec": "26070"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B85851407891039",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 1,882 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 14% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-26077",
@@ -33447,6 +33611,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 5,810 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-46028",
+    "level": "admin2",
+    "name": "General Felipe Varela",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11372,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 32.6,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1021,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 95.1,
+        "count": 10812
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 4.6,
+        "count": 521
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 38
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c1_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c4_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_larioja_poblacion_indigena_c1_12.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "La Rioja",
+    "codes": {
+      "indec": "46028"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B22460334108875",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 32.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 11,371 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-46035",
     "level": "admin2",
     "name": "Chamical",
@@ -33693,6 +33939,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 6,984 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-46056",
+    "level": "admin2",
+    "name": "Ángel Vicente Peñaloza",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3185,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1002,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 97.8,
+        "count": 3115
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.9,
+        "count": 59
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c1_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c4_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_larioja_poblacion_indigena_c1_12.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "La Rioja",
+    "codes": {
+      "indec": "46056"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B31870245826613",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 3,184 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 5% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-46063",
     "level": "admin2",
     "name": "General Belgrano",
@@ -33775,6 +34103,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 7,615 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-46070",
+    "level": "admin2",
+    "name": "General Juan Facundo Quiroga",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4017,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 31.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1090,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.8,
+        "count": 3966
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 0.9,
+        "count": 38
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.2,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c1_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c4_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_larioja_poblacion_indigena_c1_12.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "La Rioja",
+    "codes": {
+      "indec": "46070"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B64076546006472",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 4,013 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 21% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-46077",
     "level": "admin2",
     "name": "General Lamadrid",
@@ -33855,6 +34265,88 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 32.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 1,885 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 21% of the indigenous population speak or understand their people's language."
+  },
+  {
+    "id": "ARG-INDEC-46084",
+    "level": "admin2",
+    "name": "General Ortiz de Ocampo",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7349,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 33.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1021,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.4,
+        "count": 7226
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.4,
+        "count": 103
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.2,
+        "count": 18
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c1_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_larioja_est_c4_12.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_larioja_poblacion_indigena_c1_12.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "La Rioja",
+    "codes": {
+      "indec": "46084"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B1877190753616",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 7,347 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 24% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-46091",
@@ -39269,6 +39761,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 16,493 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-62070",
+    "level": "admin2",
+    "name": "Pilcaniyeu",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9373,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 37.6,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1009,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 84.3,
+        "count": 7851
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 14.9,
+        "count": 1389
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.7,
+        "count": 69
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_rionegro_est_c1_16.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_rionegro_est_c4_16.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_rionegro_poblacion_indigena_c1_16.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Río Negro",
+    "codes": {
+      "indec": "62070"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B63808307170695",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 37.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 9,309 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 22% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-62077",
     "level": "admin2",
     "name": "San Antonio",
@@ -43533,6 +44107,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 40,289 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-74056",
+    "level": "admin2",
+    "name": "Juan Martín de Pueyrredón",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261697,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 31.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 942,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.1,
+        "count": 255853
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.5,
+        "count": 4005
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 911
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_sanluis_est_c1_19.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_sanluis_est_c4_19.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_sanluis_poblacion_indigena_c1_19.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "San Luis",
+    "codes": {
+      "indec": "74056"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B37295099370503",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 260,769 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 12% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-74063",
     "level": "admin2",
     "name": "Libertador General San Martín",
@@ -46813,6 +47469,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 18,622 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 11% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-86098",
+    "level": "admin2",
+    "name": "Juan Felipe Ibarra",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20589,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 25.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1011,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 97.5,
+        "count": 20044
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 2.4,
+        "count": 487
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.2,
+        "count": 36
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_santiago_est_c1_22.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_santiago_est_c4_22.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_santiago_poblacion_indigena_c1_22.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Santiago del Estero",
+    "codes": {
+      "indec": "86098"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B19837134975286",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 25.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 20,567 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 15% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-86105",
     "level": "admin2",
     "name": "Loreto",
@@ -47139,6 +47877,88 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 15,008 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 12% of the indigenous population speak or understand their people's language."
+  },
+  {
+    "id": "ARG-INDEC-86133",
+    "level": "admin2",
+    "name": "Pellegrini",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26193,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 27.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.7,
+        "count": 25852
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.2,
+        "count": 316
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.1,
+        "count": 25
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_santiago_est_c1_22.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_santiago_est_c4_22.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_santiago_poblacion_indigena_c1_22.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Santiago del Estero",
+    "codes": {
+      "indec": "86133"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B89830542201766",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 27.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 26,193 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-86140",
@@ -48043,6 +48863,88 @@
     "ethnicity_note": "Two questions the 2022 census asked the 92,308 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 11% of the indigenous population speak or understand their people's language."
   },
   {
+    "id": "ARG-INDEC-90028",
+    "level": "admin2",
+    "name": "Famaillá",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42702,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 28.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 975,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.1,
+        "count": 41872
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 1.5,
+        "count": 658
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 139
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_tucuman_est_c1_24.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/12/c2022_tucuman_est_c4_24.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tucuman_poblacion_indigena_c1_24.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Tucumán",
+    "codes": {
+      "indec": "90028"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B2044576725385",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 28.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 42,669 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
+  },
+  {
     "id": "ARG-INDEC-90035",
     "level": "admin2",
     "name": "Graneros",
@@ -48123,6 +49025,88 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 15,539 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 16% of the indigenous population speak or understand their people's language."
+  },
+  {
+    "id": "ARG-INDEC-90042",
+    "level": "admin2",
+    "name": "Juan Bautista Alberdi",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34766,
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "sex_ratio": {
+      "value": 972,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.9,
+        "count": 34355
+      },
+      {
+        "group": "Indigenous (people not published)",
+        "pct": 0.8,
+        "count": 286
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 104
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_tucuman_est_c1_24.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/12/c2022_tucuman_est_c4_24.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 1; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_tucuman_poblacion_indigena_c1_24.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "ARG",
+    "parent_name": "Tucumán",
+    "codes": {
+      "indec": "90042"
+    },
+    "match_by": "shape_id",
+    "shape_id": "61730980B38664240857483",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Two questions the 2022 census asked the 34,745 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-90049",
@@ -49038,18 +50022,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 99241,
+      "value": 105280,
       "year": 2022,
-      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
+      "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+      "note": "Includes Tolhuin, created from it since the boundary file was drawn."
     },
     "median_age": {
-      "value": 31.4,
+      "value": 31.3,
       "unit": "years",
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
     },
     "sex_ratio": {
-      "value": 996,
+      "value": 997,
       "unit": "males_per_1000_females",
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
@@ -49063,18 +50048,18 @@
     "ethnicity": [
       {
         "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
-        "pct": 96.0,
-        "count": 95006
+        "pct": 96.1,
+        "count": 100828
       },
       {
         "group": "Indigenous (people not published)",
         "pct": 3.0,
-        "count": 3004
+        "count": 3168
       },
       {
         "group": "Afro-descendant",
         "pct": 0.9,
-        "count": 912
+        "count": 953
       }
     ],
     "sources": [
@@ -49104,9 +50089,9 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B7053808465014",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Two questions the 2022 census asked the 98,922 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 14% of the indigenous population speak or understand their people's language."
+    "ethnicity_note": "Two questions the 2022 census asked the 104,949 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 15% of the indigenous population speak or understand their people's language."
   },
   {
     "id": "ARG-INDEC-94015",
