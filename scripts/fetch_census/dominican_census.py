@@ -703,9 +703,9 @@ def adapter() -> int:
         area = areas_by[code]
         before = in_2010.get(sid)
         growth = area["values"][0] / before if before else None
-        # A district's polygon had no municipio of its own in 2010 to compare
-        # with; it is bound by its name within its municipio, above.
-        district = offices[code][0] in DISTRICT_POLYGONS.values()
+        # A district's polygon is bound by its name within its municipio,
+        # above, and is compared with 2010 only if uscb_age_sex carved it too.
+        district = offices[code][0] in DISTRICT_POLYGONS.values() and before is None
         if not district and (growth is None or not GROWTH[0] <= growth <= GROWTH[1]):
             refused.append(f"{offices[code][0]} ({labels[sid]}): {area['values'][0]:,} in 2022 "
                            f"against {before} in 2010")

@@ -16,7 +16,10 @@ it from.
 The boundary file draws the province of Pedernales as one polygon, where the
 country has two municipalities (Pedernales and Oviedo): the two are added
 together, age group by age group, for that polygon (``joined``), and the run
-stops unless that polygon is its province's only one.
+stops unless that polygon is its province's only one. It draws one distrito
+municipal, La Laguna de Nisibón, as a polygon of its own beside Higüey's: the
+district's row (the Bureau's fourth level) goes to it and is taken out of
+Higüey's (``districts``).
 
 Median age is interpolated within the five-year group holding the middle
 person. Every row's groups must make its total, its sexes must make it too,
@@ -66,6 +69,11 @@ class Country:
     # polygon is the whole parent's, and so takes both in: their age groups
     # and sexes are added together for it.
     joined: tuple[tuple[str, str], ...] = ()
+    # (unit, the Bureau's name for one of its districts one level down, the
+    # polygon the boundary file draws for that district): the district's
+    # figures go to that polygon and are taken out of its unit's, whose
+    # polygon leaves it out.
+    districts: tuple[tuple[str, str, str], ...] = ()
 
 
 COUNTRIES = (
@@ -80,9 +88,8 @@ COUNTRIES = (
             # "Hermanas" (its capital, Salcedo).
             parents=(("BAORUCO", "Bahoruco"), ("EL SEIBO", "El Seybo"),
                      ("ELÍAS PIÑA", "La Estrelleta"), ("HERMANAS MIRABAL", "Hermanas")),
-            # "La Laguna de Nisibón" is a municipal district, not a
-            # municipality, and stays unbound here. Santo Domingo de Guzmán is
-            # the Distrito Nacional's one municipality.
+            # Santo Domingo de Guzmán is the Distrito Nacional's one
+            # municipality.
             units=(("PUERTO PLATA", "San Felipe de Puerto Plata"),
                    ("VILLA ISABELA", "La Isabela"), ("VILLA MONTELLANO", "Montellano"),
                    ("SANTIAGO", "Santiago de los Caballeros"), ("BISONÓ", "Villa Bisonó"),
@@ -102,7 +109,10 @@ COUNTRIES = (
                    ("SAN ANTONIO DE GUERRA", "Guerra")),
             # The province of Pedernales is one polygon, the same extent as
             # the province's own: Oviedo is in it with Pedernales.
-            joined=(("OVIEDO", "PEDERNALES"),)),
+            joined=(("OVIEDO", "PEDERNALES"),),
+            # "La Laguna de Nisibón" is a distrito municipal of Higüey, not a
+            # municipality, and the boundary file draws it apart from Higüey.
+            districts=(("HIGÜEY", "LAS LAGUNAS DE NISIBÓN", "La Laguna de Nisibón"),)),
 )
 
 
@@ -152,10 +162,19 @@ def read(country: Country) -> list[dict[str, Any]]:
     names, _ = uscb.columns(rows)
     at = {n: i for i, n in enumerate(names) if n}
     level_of = at["ADM_LEVEL"]
-    units, parents_total = [], {}
+    units, parents_total, below = [], {}, []
     for row in rows[2:]:
         level = number(row[level_of])
-        if level == country.parent_level:
+        if level == country.level + 1 and country.districts:
+            unit = str(row[at[f"ADM{country.level}_NAME"]]).strip()
+            name = str(row[at[f"ADM{country.level + 1}_NAME"]]).strip()
+            median, men, women, total = figures(row, at, f"{unit}, {name}")
+            below.append({"code": str(row[at["GEO_MATCH"]]), "name": name, "nso": "",
+                          "unit": unit,
+                          "parent": str(row[at[f"ADM{country.parent_level}_NAME"]]).strip(),
+                          "median": median, "men": men, "women": women, "total": total,
+                          "groups": groups_of(row, at)})
+        elif level == country.parent_level:
             key = str(row[at[f"ADM{country.parent_level}_NAME"]]).strip()
             parents_total[key] = figures(row, at, key)[3]
         elif level == country.level:
@@ -173,7 +192,38 @@ def read(country: Country) -> list[dict[str, Any]]:
                              f"against its {total:,}")
     log(f"  {country.iso3}: {len(units)} units making {len(parents_total)} parents, every "
         "row's groups and sexes making its total")
-    return join(units, country.joined)
+    return carve(join(units, country.joined), below, country.districts)
+
+
+def carve(units: list[dict[str, Any]], below: list[dict[str, Any]],
+          districts: tuple[tuple[str, str, str], ...]) -> list[dict[str, Any]]:
+    """Each district in ``districts`` taken out of its unit and made a unit of its own."""
+    for unit_name, district_name, polygon in districts:
+        host = [u for u in units if fold(u["name"]) == fold(unit_name)]
+        found = [d for d in below if fold(d["unit"]) == fold(unit_name)
+                 and fold(d["name"]) == fold(district_name)
+                 and host and d["parent"] == host[0]["parent"]]
+        if len(host) != 1 or len(found) != 1:
+            names = sorted(d["name"] for d in below if fold(d["unit"]) == fold(unit_name))
+            raise SystemExit(f"uscb_age_sex: {len(host)} units named {unit_name} and "
+                             f"{len(found)} districts named {district_name} in it: {names}")
+        h, d = host[0], found[0]
+        if [(a, b) for a, b, _ in d["groups"]] != [(a, b) for a, b, _ in h["groups"]]:
+            raise SystemExit(f"uscb_age_sex: {district_name} and {unit_name} have other age "
+                             "groups")
+        groups = [(a, b, n - m) for (a, b, n), (_, _, m) in zip(h["groups"], d["groups"])]
+        if any(n < 0 for _, _, n in groups):
+            raise SystemExit(f"uscb_age_sex: {district_name} has more people in an age group "
+                             f"than {unit_name}")
+        h["groups"] = groups
+        for k in ("men", "women", "total"):
+            h[k] -= d[k]
+        h["median"] = grouped_median(groups)
+        h.setdefault("carved", []).append(polygon)
+        units.append({**d, "name": polygon.upper(), "nso": polygon, "district_of": h["name"]})
+        log(f"  {district_name} ({d['total']:,}) taken out of {unit_name}, for the polygon "
+            f"{polygon}")
+    return units
 
 
 def join(units: list[dict[str, Any]], joined: tuple[tuple[str, str], ...]
@@ -259,7 +309,12 @@ def main() -> int:
                     + (f", of {u['name'].title()} and "
                        f"{' and '.join(n.title() for n in u['joined'])} together: the boundary "
                        "file draws their province as one polygon."
-                       if u.get("joined") else ".")),
+                       if u.get("joined") else
+                       f", of {u['name'].title()} without the distrito municipal of "
+                       f"{' and '.join(u['carved'])}, which the boundary file draws apart."
+                       if u.get("carved") else
+                       f", of this distrito municipal of {u['district_of'].title()}."
+                       if u.get("district_of") else ".")),
                 sex_ratio=(measure(round(1000 * u["men"] / u["women"]),
                                    unit="males_per_1000_females", year=country.year,
                                    source=source) if u["women"] else None),
