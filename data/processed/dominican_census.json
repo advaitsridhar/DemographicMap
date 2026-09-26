@@ -8065,19 +8065,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 24423,
+      "value": 34375,
       "unit": "people",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "median_age": {
-      "value": 24.0,
+      "value": 24.3,
       "unit": "years",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
     },
     "sex_ratio": {
-      "value": 1040,
+      "value": 1075,
       "unit": "males_per_1000_females",
       "year": 2022,
       "source": "ONE, X Censo Nacional de Población y Vivienda 2022, Volumen III, Cuadro 2: population by zone, sex and age group, by region, province, municipio and distrito municipal"
@@ -8105,7 +8105,8 @@
     "match_by": "shape_id",
     "shape_id": "3306468B80072272336201",
     "aliases": [],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count by age group.",
+    "population_note": "Pedernales and Oviedo together, the province's municipios: the boundary file draws the province as this one polygon."
   },
   {
     "id": "DOM-ONE-peravia-bani",
