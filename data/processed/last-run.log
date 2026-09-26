@@ -1,27 +1,19 @@
   1,498,977 bytes
   https://web.archive.org/web/20240713113331id_/https://www.censoecuador.gob.ec/wp-content/uploads/2024/04/01_2022_CPV_Estructura_poblacional.xlsx: 1,498,977 bytes
   5,922,336 bytes
-  https://web.archive.org/web/20250114111544id_/https://www.censoecuador.gob.ec/wp-content/uploads/2024/02/2022_CPV_Autoidentificacion_Cultura.xlsx: 5,922,336 bytes
+  https://web.archive.org/web/20250114111544id_/https://www.censoecuador.gob.ec/wp-content/uploads/2024/02/2022_CPV_Autoidentificacion_Cultura.xlsx: 6,079,434 bytes
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ecuador_profile.py", line 290, in <module>
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ecuador_profile.py", line 294, in <module>
     raise SystemExit(main())
                      ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ecuador_profile.py", line 283, in main
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ecuador_profile.py", line 287, in main
     ethnicity = composition_table(xls_grid(culture, "1.1"), ETHNIC, "ethnicity (1.1)")
                                   ^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ecuador_profile.py", line 174, in xls_grid
     book = xlrd.open_workbook(file_contents=blob)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/xlrd/__init__.py", line 172, in open_workbook
-    bk = open_workbook_xls(
-         ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/xlrd/book.py", line 79, in open_workbook_xls
-    biff_version = bk.getbof(XL_WORKBOOK_GLOBALS)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/xlrd/book.py", line 1284, in getbof
-    bof_error('Expected BOF record; found %r' % self.mem[savpos:savpos+8])
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/xlrd/book.py", line 1278, in bof_error
-    raise XLRDError('Unsupported format, or corrupt file: ' + msg)
-xlrd.biffh.XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'\x1f\x8b\x08\x00\x00\x00\x00\x00'
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/xlrd/__init__.py", line 170, in open_workbook
+    raise XLRDError(FILE_FORMAT_DESCRIPTIONS[file_format]+'; not supported')
+xlrd.biffh.XLRDError: Excel xlsx file; not supported
