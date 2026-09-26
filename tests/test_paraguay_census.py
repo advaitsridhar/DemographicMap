@@ -60,6 +60,9 @@ class Peoples(unittest.TestCase):
         self.assertEqual(found["BOQUERON"], {"Aché": 100, "Mbyá Guaraní": 190, "Nivaclé": 895})
         self.assertEqual(found["ASUNCION"], {"Mbyá Guaraní": 10, "Nivaclé": 5})
 
+    def test_the_file_as_datos_gov_py_writes_it_with_semicolons_reads_the_same(self):
+        self.assertEqual(pc.peoples_table(A2.replace(",", ";")), pc.peoples_table(A2))
+
     def test_a_family_its_peoples_do_not_make_stops_the_run(self):
         with self.assertRaises(SystemExit):
             pc.peoples_table(A2.replace("Ache ,100,-   ,100", "Ache ,99,-   ,99"))

@@ -330,7 +330,12 @@ def peoples_table(text: str) -> dict[str, Counter]:
     communities who are not indigenous). The columns are the total and one per
     department that has any.
     """
-    rows = [r for r in csv.reader(io.StringIO(text.lstrip("﻿"))) if any(c.strip() for c in r)]
+    text = text.lstrip("﻿")
+    first = text.split("\n", 1)[0]
+    # datos.gov.py writes this file with semicolons between the columns.
+    delimiter = ";" if first.count(";") > first.count(",") else ","
+    rows = [r for r in csv.reader(io.StringIO(text), delimiter=delimiter)
+            if any(c.strip() for c in r)]
     head = [c.strip() for c in rows[0]]
     if not head[0].startswith("Familia") or head[1] != "Total":
         raise SystemExit(f"paraguay_census: Cuadro A2's header is {head[:3]}")
