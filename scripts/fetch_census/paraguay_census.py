@@ -377,6 +377,25 @@ def peoples_table(text: str) -> dict[str, Counter]:
     return by_dept
 
 
+def peoples_text() -> str:
+    """Cuadro A2 from datos.gov.py, or the Internet Archive's copy of the same file.
+
+    datos.gov.py timed out four times running on one run that had answered a
+    probe an hour before; the Archive's raw capture (``id_``) is the same
+    official file, and the log says which was read.
+    """
+    for url in (PEOPLES_URL, f"https://web.archive.org/web/2025id_/{PEOPLES_URL}"):
+        try:
+            text = http_get(url, cache=False)
+        except Exception as exc:                       # noqa: BLE001 -- the next source
+            log(f"  {url}: {type(exc).__name__}: {exc}")
+            continue
+        log(f"  Cuadro A2 read from {url}")
+        return text
+    raise SystemExit("paraguay_census: Cuadro A2 is reachable neither at datos.gov.py nor in "
+                     "the Internet Archive")
+
+
 def age_of(label: str) -> int:
     """A single year of age from its category label."""
     if re.match(r"(?i)menos|menor", label):
@@ -672,11 +691,13 @@ def main() -> int:
                       f"total={t['total']} na={t['na']} rows={t['rows'][:30]}")
         return 0
 
+    # The small table first, so an unreachable host fails the run before the
+    # long tabulation rather than after it.
+    peoples = peoples_table(peoples_text())
     session.get(PORTAL.format(base=BASE))
     by_question, religion, sexes_2002 = fetch(session)
     units = district_counts(by_question)
     religion = religion_by_department(religion, sexes_2002)
-    peoples = peoples_table(http_get(PEOPLES_URL, cache=False))
 
     admin1 = json.loads((SITE / "admin1" / "PRY.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "PRY.units.json").read_text())
