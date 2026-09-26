@@ -1,14 +1,546 @@
-  Cuadro A2 read from https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/paraguay_census.py", line 792, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/paraguay_census.py", line 696, in main
-    peoples = peoples_table(peoples_text())
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/paraguay_census.py", line 335, in peoples_table
-    if not head[0].startswith("Familia") or head[1] != "Total":
-                                            ~~~~^^^
-IndexError: list index out of range
+source: https://statistics.gov.ag/wp-content/uploads/2017/10/Census-2011-Book-of-Statistical-Tables-I.pdf
+  7,828,669 bytes
+  181 pages
+  == page 22 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Introduction
+Recruitment and concluded in Barbuda on April 15. Successful
+candidates to be trained as enumerators were
+Training of Census
+informed by a centre page advertisement in
+the Daily Observer newspaper. The liaison
+Workers
+officers and supervisors were informed by
+telephone. A similar listing was placed in the
+Application Process
+Daily Observer notifying individuals who had
+A notice for individuals wishing to work as successfully completed the training process
+census field officers was published in the Daily and would become census workers.
+Observer newspaper and on the government
+Training
+website in August 2010. Application forms
+were available from the Statistics Division and Training sessions covered the guidelines for
+on-line. conducting the Census as outlined in the
+Nine hundred and seventy one applications training manuals prepared by the Census
+were received for liaison officers, supervisors, Office in collaboration with the CARICOM
+enumerators and data processors. Each Secretariat consultant. The training for the
+application was given an identification number supervisors and enumerators was conducted
+and the information of each applicant was over a period of ten days (See Table B).
+stored in an electronic database. Individuals were selected for census work
+based on their attendance at training sessions
+Interview and Selection for Training and their performance in the test as follows:
+Members of the NAC and TAC in teams of at  two absences were allowed over the
+least two persons interviewed the applicants. 10 day period; and
+between Wednesday 2 March, 2011 and  a score of 50% or more in the test.
+Table B: Training schedules for Census Workers
+Number of
+individuals who
+Duration completed
+Category of Census Worker (days) Hours per session Dates training
+Trainers (Liaison Officers) 4 3:00pm – 6:00 pm April 26 - 29 18
+Supervisors 4 4:30pm – 7:00 pm May 3 – 6 79
+Supervisors and Enumerators 10 4:30pm – 7:00 pm May 9 - 20 379
+was done for easy management of the
+Enumeration Districts
+enumeration process such that all
+During the decade from 2001 to 2011 there
+enumerators would be allocated a similar
+was significant development mainly in the
+number of households, and by extension,
+rural areas causing the number of EDs to
+liaison officers and supervisors would have
+increase to 353. At the start of the Census 2011
+comparable workloads. These changes are
+there 63 EDs more than in 2001 due to the
+presented in Table C.
+splitting of EDs brought about by the mapping
+and listing exercise. The splitting of the EDs
+Page | 9
+  == page 23 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Introduction
+Table C: Summary of the changes to the Enumeration Districts at the Commencement of the 2011
+Population and Housing Census:
+Number of 2011 ED
+Parish 2001 ED Count ED Range
+EDs split Count
+St. John City 95 0 95 10100-19500
+St. John Rural 73 36 109 30101-36100
+St. George 22 10 32 40100-42000
+St. Peter 17 8 25 50101-51400
+St. Philip 19 0 19 60101-61800
+St. Paul 28 6 34 70100-72700
+St. Mary 30 3 33 80100-82700
+Barbuda 5 1 6 90100-90600
+Total 289 64 353
+Note: During the enumeration phase it became necessary to split ED 80100, which became
+80101, 80102 and 80103, creating two additional EDs that brought the total to 353.
+Using ED Maps
+move in a clockwise direction, recording on the
+To ensure an optimal enumeration of all living
+visitation record all buildings and dwellings
+quarters on Antigua and Barbuda,
+and enumerating each household. Each
+enumerators were provided with updated
+building was identified and numbered on the
+maps of their EDs, created using a
+ED map. This number should correspond with
+Geographical Information System (GIS). A map
+the listing on the Visitation Record as well as
+of each ED was printed and used by each
+on the Household and Person questionnaires.
+enumerator to locate each household in the
+district. One ED was allocated to a single The unit of the Census was the individual
+enumerator. Where the ED consisted of less within a household. The household is found in
+than 70 households, an enumerator was a dwelling unit located in a block. Several
+assigned additional districts. blocks made up the ED. Each individual in the
+household was given a unique identifier which
+In general, an enumerator was limited to 130
+consisted of 13 digits: the 5 digits of the ED
+households. There were however 5 cases
+number, the 3 digits of the block number, the 3
+where the enumerator was assigned more than
+digits of the household number and the 2 digits
+150 households.
+of the person number. These unique
+The enumerator was required to mark an X on
+identifiers are critical for data processing, data
+the map where the enumeration began and
+analysis and for the verification of variables.
+Page | 10
+  == page 24 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Introduction
+Managing the Fieldwork the sequence of the questionnaires with
+respect to the identification of the household –
+the ED, the block number, the building number,
+Census 2011 was different from previous
+the dwelling number and the household
+censuses in two ways. Firstly, Census 2011
+number, and the head of household were the
+captured both de facto count and de jure count,
+same as that recorded on the visitation record.
+whereas previous censuses captured the de
+Additionally, the Mapping Technician checked
+facto count only. The de facto population
+visitation records against the maps to account
+includes only persons present in the country
+for each building. If there was any
+on Census Night (See definitions on page xi).
+discrepancy, the enumerator and/or the
+Secondly, Census 2011 utilised the post-Census
+supervisor were called in to rectify the
+Day enumeration as opposed to pre-Census
+situation. In some cases, it was necessary for
+Day enumeration as was done in the previous
+the ED to be revisited to obtain last resort
+censuses. The enumeration process began on
+information or to clarify an issue that the
+28 May, 2011, the day after Census Day and
+Mapping Technician identified.
+ended officially on 31 January, 2012.
+After these checks were completed, the
+During the post-enumeration period the
+questionnaires were batched and duplicate
+Mapping Unit of the Census Office continued to
+batch sheets were placed in each batch. A
+verify the mapping information until the
+batch was made up of no more than ten
+scanning was completed in January 2013.
+household questionnaires and the associated
+During this period, and where possible last
+personal questionnaires.
+resort information was collected on dwelling
+Once these aspects of the checks were
+units.
+completed, the number on the boxes and the
+Return of documents to Census enumerator’s name were recorded in a second
+Office register and the boxes of questionnaires were
+then manually edited. The editors’ supervisor
+Liaison officers were required to return to the
+received the boxes and maintained an
+Census Office all completed household and
+electronic status of each box. This system
+personal questionnaires, visitation records,
+made it easy to know where any box was at a
+maps, identification cards and any unused
+given time.
+material. To organise this return, bankers’
+boxes were provided along with a copy of
+Treatment of refusals
+transmittal forms: (a) Enumerator to
+Just below 2% of households refused to
+Supervisor, (b) Supervisor to Liaison Officer;
+participate in the Census. Although
+and (c) Liaison Officer to Census Office.
+arrangements were made with the Chief
+Once the box was received by the Census Office
+Magistrate and the Commissioner of Police to
+each box and its contents were recorded in a
+have these household members comply as
+register with the enumerator’s name,
+provided for in the General Statistics Act, no
+supervisor’s name and liaison officer’s name.
+legal action was taken. Last resort information
+The ED number was written boldly in red on
+was however acquired for most of these
+each box so that it could be clearly identified.
+households and where information on the size
+These were held in an initial holding area.
+of these households could not be ascertained,
+One by one, the boxes were then taken to a the correction factor was applied (See page 15
+checking area where a more in-depth check for an explanation).
+was made. This check involved ensuring that
+Page | 11
+  == page 25 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Introduction
+Data Processing and Recognition, OCR) was used. The handwritten
+alpha responses (e.g. occupation, industrial
+Data Quality
+category) were also scanned from the
+questionnaire and computer-aided coding was
+Management
+used to convert these alpha responses into
+codes.
+Data processing involves a series of stages with
+Verification
+sequenced activities – from training staff to
+applying statistical techniques to produce good Once the questionnaires were successfully
+quality data. scanned, data verification was done.
+Verification is a prerequisite to the electronic
+Training of Editors, Scanners and editing as it prepares the information from the
+Verifiers questionnaires for electronic editing.
+Manual editors and verifiers were selected Verifiers were required to go through each
+from the database of individuals who had household and person questionnaire to verify
+registered with the Census Office at the any queries that the computer highlighted. It
+commencement of the planning phase of the was at this stage that all text, including
+Census. The scanners however were professions, industry, country of birth and
+subsequently recruited. All these individuals origin were to be coded using international
+underwent training conducted by the Deputy coding criteria.
+Census Officer and the CARICOM Consultant.
+Electronic editing
+Manual editing
+A data editing programme was created to
+The manual editors were required to: specifically edit the computer database/data
+ examine each household file developed for Census 2011. Assistance and
+questionnaire to ensure the 17-digit expertise was received from two UNFPA-
+identification code was recorded on sponsored consultants – Mr. Carlos Ellis and
+the cover page;
+Mrs. Yasmara Pourrier; one CARICOM-
+ examine each person questionnaire to sponsored consultant –Mr. Edwin St.
+ensure and the unique identifier with
+Catherine, and Mr. Frank Eelens who was hired
+the 11-digits was recorded on the
+by the Census Office.
+cover page;
+ ensure that skip patterns were
+Handling Data Errors
+observed by the enumerators; and
+Population censuses are prone to many types
+ ensure that markings for responses
+of errors. In general, the errors affecting the
+were eligible.
+quality of the census data are of two types:
+They were also required to pay special
+coverage errors and content errors.
+attention to question 45 (Sex) and question 47
+(Age) in the person section of the During each stage of the census operation,
+questionnaire. errors may occur and may distort the final
+outcome of the census. For example, during the
+Data capture
+preparatory stage small errors may originate
+The census database was created by scanning
+from the questionnaire: inaccurate wording of
+each household and person questionnaire. A
+a question may lead to misinterpretations in
+scanning software, TeleForm, which utilises
+the field by the enumerator. Poor quality
+Optical Mark Reading (OMR) and Intelligent
+census maps may confuse enumerators and
+Character Recognition (or Optical Character
+lead to non-coverage.
+Page | 12
+  == page 26 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Introduction
+During the field work, many types of mistakes Editing Procedure
+may be made: enumerators may forget to visit
+During the editing process, the principles and
+(or double count) entire households or they
+recommendations laid out in the Handbook on
+may enumerate households that were not
+Population and Housing Census Editing5 were
+assigned to them. During interviews, skips in
+followed as much as possible. Editing
+the questionnaires may be overlooked,
+procedures were divided in three subsequent
+questions may be asked in the wrong way
+stages: structural editing, consistency editing
+leading to incorrect answers, or enumerators
+and final editing.
+may simply forget to record the answer
+Structural Editing
+provided.
+Structure edits ensure that all person and
+Census procedures may be poorly explained
+household records fall within their proper
+and create coverage errors in the field.
+enumeration area; that all records are in their
+Coverage Errors
+proper order; that the proper number of
+Coverage errors are caused by omissions or person records are present within each
+duplications of persons (or households) during household; and that no duplicate records are
+fieldwork or data handling. There are many present.
+causes of coverage errors, including:
+In addition to these core structural checks,
+inaccurate census maps, failure to visit all the
+tests were run to detect errors in the
+households or enumerate all the members of
+identification fields (ED number, block
+households, refusals by single persons or
+number, household number, parish and person
+whole households to cooperate with the
+number). Records that were assigned the
+census, double scanning or omission of forms
+wrong identification fields during fieldwork
+during the data entry, and so on.
+and data capture were manually corrected.
+Content Errors In addition to these checks, many more tests
+Content errors occur when the information were run to assess the integrity of the data.
+about a person (or household) is different from Values were imputed for age and sex, using Hot
+the actual characteristics of the person (or Deck Imputation techniques. For these
+household). techniques, information for an unknown
+variable is taken from ‘donor’ records with
+As noted before, data for Census 2011 were
+identical characteristics as the record for
+captured using imaging techniques. Working
+which information is unavailable. The hot deck
+directly from the electronic images, coding was
+technique is popular in census editing all over
+performed on the screen using international
+the world and produces clean, consistent
+coding lists (ISCO3, ISIC4, international country
+results.
+codes). Also during data capture and coding
+numerous errors and inconsistencies could be For each variable for which information was
+introduced. missing, it was decided whether or not
+dynamic hot deck imputation would be used.
+To limit content and coverage errors, extensive
+In this way, the unknown value is imputed by a
+computer editing was used after data capture,
+likely response.
+to correct the data as much as possible and to
+impute missing information.
+5 Department of Economic and Social Affairs UN-
+3 International Standard Classification of Statistics Division (2001), Handbook on Population
+Occupation. and Housing Census Editing, Studies in Methods,
+4 International Standard Industrial Classification. series F no. 82, United Nations, New York.
+Page | 13
+  == page 65 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 1 – Housing (Non Institutional Households)
+Table 1.30: Number of Households by Household Size by Parish
+Household Parishes
+Size
+(Number St. John St. John St. St. St. St. St.
+of Persons) Total City Rural George Peter Philip Paul Mary Barbuda
+Total 30,213 7,879 10,568 2,932 1,829 1,139 2,809 2,512 545
+1 9,076 2,521 3,091 864 517 335 846 715 187
+2 6,585 1,781 2,319 700 366 222 548 549 100
+3 5,181 1,309 1,925 480 331 184 453 409 90
+4 4,547 1,030 1,636 489 292 206 456 389 49
+5 2,492 594 868 224 171 96 278 211 50
+6 1,212 328 373 101 85 48 120 126 31
+7 550 155 185 38 31 20 53 57 11
+8 253 72 75 22 14 16 23 20 11
+9 150 40 48 7 11 6 16 16 6
+10 78 22 23 2 8 1 8 8 6
+11 36 10 12 1 2 1 2 7 1
+12 21 8 7 1 1 0 1 2 1
+13 16 4 4 1 0 3 2 2 0
+14 10 3 1 1 0 0 3 1 1
+15+ 6 2 1 1 0 1 0 0 1
+Table 1.31: Number of Households by Main Roofing Material Used in the Dwelling Unit by Main
+Material of Outer Walls
+Main Material of Outer Walls
+Wood Don't
+Concrete Stone (plus know/
+Main Roofing Material and and other not
+Used in Dwelling Unit Total Concrete Blocks Stone Brick Wood material) Other stated
+Total 30,213 11,898 6,336 63 70 12,548 5,295 272 52
+Concrete 794 786 368 3 2 0 0 3 0
+Improvised/Makeshift 24 9 4 0 0 10 2 1 0
+Sheet metal 26,939 9,903 5,348 54 55 11,768 4,906 194 50
+Shingle (asphalt) 1,040 594 343 3 5 290 138 10 0
+Shingle (Other) 844 281 110 1 2 374 172 10 1
+Shingle (wood) 276 139 58 2 6 72 57 0 0
+Tarpaulin 7 0 0 0 0 4 2 0 0
+Tile 108 82 58 0 0 7 4 14 1
+Other 181 104 47 0 0 23 14 40 0
+Don't know/Not stated 0 0 0 0 0 0 0 0 0
+Page | 52
+  == page 66 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 1 – Housing (Non Institutional Households)
+Table 1.32a: Number of Households by Land Tenure by Parish
+Parishes
+St. St.
+John John St. St. St. St. St.
+Land Tenure Total City Rural George Peter Philip Paul Mary Barbuda
+Total 30,213 7,879 10,568 2,932 1,829 1,139 2,809 2,512 545
+Leasehold 989 213 453 59 73 32 94 61 4
+Owned/Freehold 15,437 2,868 5,310 1,767 1,115 736 1,581 1,523 537
+Permission to work land 94 17 34 1 13 1 19 9 0
+Rented 6,069 2,397 2,095 507 250 74 377 367 2
+Rented free 2,259 803 658 208 107 22 216 244 1
+Sharecropping 32 18 4 0 2 0 7 1 0
+Squatted 207 55 50 10 14 24 38 16 0
+Other 320 65 79 19 34 5 108 10 0
+Don't know/Not stated 4,806 1,443 1,885 361 221 245 369 281 1
+Table 1.32b: Population by Land Tenure by Parish
+Parishes
+St. John St. John St. St. St. St. St.
+Land Tenure Total City Rural George Peter Philip's Paul Mary Barbuda
+Total 84,816 21,643 29,486 7,976 5,317 3,322 8,116 7,331 1,625
+Leasehold 3,037 630 1,420 198 186 95 312 183 13
+Owned/Freehold 46,283 8,369 16,026 5,190 3,469 2,306 4,711 4,605 1,607
+Permission to work land 295 44 105 1 43 2 64 36 0
+Rented 16,609 6,829 5,463 1,277 693 194 1,073 1,077 3
+Rented free 5,642 2,024 1,654 477 229 43 591 623 1
+Sharecropping 92 47 12 0 5 0 27 1 0
+Squatted 466 117 113 12 35 67 93 29 0
+Other 944 187 260 51 96 13 303 34 0
+Don't know/not stated 11,448 3,396 4,433 770 561 602 942 743 1
+Page | 53
+  == page 67 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 1 – Housing (Non Institutional Households)
+Table 1.33: Number of Households by Main Source of Lighting by Main Source of Water in Dwelling Unit
+Main Source of Water in Dwelling Unit
+Private
+not Private Public Public Don't
+piped piped Public Public piped piped know/
+Main Source of Lighting in into into stand well/ into into Spring Cistern Not
+Dwelling Unit Total dwelling dwelling pipe tank dwelling dwelling River / tank Other stated
+Total 30,213 191 1,604 2,579 53 20,264 1,575 10 3,557 228 152
+Electricity - Private Generator 436 4 40 36 1 272 17 0 60 4 2
+Electricity - Public 28,104 160 1,533 1,855 42 19,621 1,472 7 3,208 132 74
+Gas lantern 99 1 1 49 1 17 3 0 22 5 0
+Kerosene 263 8 2 148 1 17 16 3 52 16 0
+Solar 27 0 0 8 0 2 0 0 16 1 0
+None 358 7 3 180 0 45 20 0 70 32 1
+Other 448 11 8 249 7 31 28 0 82 32 0
+Don't Know/Not stated 478 0 17 54 1 259 19 0 47 6 75
+Page | 54
+  == page 68 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 1 – Housing (Non Institutional Households)
+Table 1.34a: Number of Households by Type of Ownership of Dwelling Unit
+Parishes
+Type of Ownership of St. John St. John St. St. St. St. St.
+Dwelling Unit Total City Rural George Peter Philip Paul Mary Barbuda
+Total 30,213 7,879 10,568 2,932 1,829 1,139 2,809 2,512 545
+Owned with mortgage 4,054 517 1,781 678 267 161 315 331 4
+Owned outright 13,603 3,239 4,437 1,157 900 585 1,552 1,365 368
+Leased 73 22 22 6 3 3 13 4 0
+Rent free 861 250 233 89 67 14 102 72 34
+Rented Government 88 27 20 7 7 1 14 12 0
+Rented Private 8,930 3,281 3,161 660 400 153 589 550 136
+Squatted 18 7 3 1 1 0 4 1 1
+Other types of ownership 95 34 13 10 13 3 9 12 1
+Do not know/Not stated 2,491 502 898 324 171 219 211 165 1
+Table 1.34b: Population by Type of Ownership of Dwelling Unit
+Parishes
+Type of Ownership of St. John St. John St. St. St. St. St.
+Dwelling Unit Total City Rural George Peter Philip Paul Mary Barbuda
+Total 84,816 21,643 29,486 7,976 5,317 3,322 8,116 7,331 1,625
+Owned with mortgage 13,323 1,593 5,917 2,178 939 543 1,034 1,098 21
+Owned outright 40,178 9,589 13,189 3,191 2,637 1,793 4,555 4,051 1,173
+Leased 169 53 54 13 9 4 26 10 0
+Rent free 1,949 582 474 214 149 34 245 164 87
+Rented Government 215 45 62 17 19 3 44 25 0
+Rented Private 22,860 8,620 7,659 1,589 1,122 402 1,628 1,499 341
+Squatted 27 12 4 1 1 0 7 1 1
+Other types of ownership 252 86 32 27 32 8 19 47 1
+Do not know/Not stated 5,843 1,063 2,095 746 409 535 558 436 1
+Page | 55
+  == page 69 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 5 – General Characteristics (Total Resident Population)
+Page | 56
+  == page 70 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 5 – General Characteristics (Total Resident Population)
+SECTION 5
+GENERAL
+CHARACTERISTICS
+Totals in the tables may not equate to the sum of the variables due to the
+application of the correction factor and decimal rounding (Read explanation
+on page 15).
+Note that data in this section are both the “total resident population” (Tables
+5.1 to 5.8) and the “non institutional” population (Tables 5.9 to 5.12)
+Page | 57
+  == page 71 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 5 – General Characteristics (Total Resident Population)
+Table 5.1: Population by Parish by Census Year by Sex
+Parishes Census 2001 Census 2011
+Total Male Female Total Male Female
+Total 76,886 36,109 40,777 85,567 40,986 44,581
+St. John City 24,451 11,400 13,051 22,219 10,697 11,522
+St. John Rural 20,895 9,754 11,141 29,518 14,095 15,423
+St. George 6,673 3,166 3,507 8,055 3,826 4,229
+St. Peter 5,439 2,595 2,844 5,325 2,538 2,787
+St. Philip 3,462 1,643 1,819 3,347 1,579 1,768
+St. Paul 7,848 3,652 4,196 8,128 3,857 4,271
+St. Mary 6,793 3,212 3,581 7,341 3,533 3,808
+Barbuda 1,325 687 638 1,634 861 773
+Institutional population is included in these figures (See page 1)
+Table 5.2: Inter-Censual Changes in Total Population by Parish
+Absolute Percentage
+Census Census change change Population
+Parishes 2001 2011 (2011 - 2001) (2011/2001) change
+Total 76,886 85,567 8,681 11.29 ↑
+St. John City 24,451 22,219 (2,232) (9.1) ↓
+St. John Rural 20,895 29,518 8,623 41.3 ↑
+St. George 6,673 8,055 1,382 20.7 ↑
+St. Peter 5,439 5,325 (114) (2.1) ↓
+St. Philip 3,462 3,347 (115) (3.3) ↓
+St. Paul 7,848 8,128 280 3.6 ↑
+St. Mary 6,793 7,341 548 8.1 ↑
+Barbuda 1,325 1,634 309 23.3 ↑
+Institutional population is included in these figures (See page 1)
+Page | 58
+  == page 72 ==
+2011 Population and Housing Census – Book of Statistical Tables I
+Section 5 – General Characteristics (Total Resident Population)
+Table 5.3: Inter-Censual Changes in Male Population by Parish
+Male Population Absolute Percentage
+Census Census change change Population
+Parishes 2001 2011 (2011 - 2001) (2011/2001) change
+Total 36,109 40,986 4,877 13.5 ↑
+St. John City 11,400 10,697 (703) (6.2) ↓
+St. John Rural 9,754 14,095 4,341 44.5 ↑
+St. George 3,166 3,826 660 20.8 ↑
+St. Peter 2,595 2,538 (57) (2.2) ↓
+St. Philip 1,643 1,579 (64) (3.9) ↓
+St. Paul 3,652 3,857 205 5.6 ↑
+St. Mary 3,212 3,533 321 10.0 ↑
+Barbuda 687 861 174 25.3 ↑
+Institutional population is included in these figures (See Scope of the Census on page 1)
+Table 5.4: Inter-Censual Changes in Female Population by Parish
+Female Population Absolute Percentage
+Census Census change change Population
+Parishes 2001 2011 (2011 - 2001) (2011/2001) change
+Total 40,777 44,581 3,804 9.3 ↑
+St. John City 13,051 11,522 (1,529) (11.7) ↓
+St. John Rural 11,141 15,423 4,282 38.4 ↑
+St. George 3,507 4,229 722 20.6 ↑
+St. Peter 2,844 2,787 (57) (2.0) ↓
+St. Philip 1,819 1,768 (51) (2.8) ↓
+St. Paul 4,196 4,271 75 1.8 ↑
+St. Mary 3,581 3,808 227 6.3 ↑
+Barbuda 638 773 135 21.2 ↑
+Institutional population is included in these figures (See Scope of the Census on page 1)
+Page | 59
