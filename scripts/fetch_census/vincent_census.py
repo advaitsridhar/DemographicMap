@@ -233,8 +233,10 @@ def report_table() -> list[str]:
     with pdfplumber.open(io.BytesIO(http_get(REPORT, binary=True, cache=False))) as pdf:
         for page in pdf.pages:
             lines = (page.extract_text() or "").splitlines()
+            # The list of tables names it too, with a dotted leader to its page.
             start = next((i for i, l in enumerate(lines)
-                          if l.startswith("Table 2-6 Total Household Population by Census")), None)
+                          if l.startswith("Table 2-6 Total Household Population by Census")
+                          and not re.search(r"\.{4,}", l)), None)
             if start is not None:
                 return lines[start + 1:]
     raise SystemExit("vincent_census: the 2023 report has no Table 2-6")
