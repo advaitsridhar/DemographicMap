@@ -312,6 +312,10 @@ ADAPTER_FILES = [
     # Afro-descendant self-recognition. Bound by shape id, since the boundary
     # file files some departments under a neighbouring province.
     "argentina_census.json",
+    # Panama's 2023 census by province, comarca and district: population, sex
+    # ratio, median age (provinces), and indigenous and Afro-descendant
+    # identity; districts split since 2010 summed back into their parents.
+    "panama_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
