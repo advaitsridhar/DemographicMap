@@ -81,9 +81,12 @@ PROVINCES = {"La Habana": "Havana", "Isla de Juventud": "Isle of Youth",
 # ONEI's municipio names -> the boundary file's, where they differ by more
 # than accents and case. The special municipality of the Isle of Youth is
 # its province's one unit.
+# Table 1 of 2024 writes two municipios as neither Table 5 nor the boundary
+# file does: "1ro de Enero" and "Antillas".
 MUNICIPIOS = {"Carlos Manuel de Céspedes": "Céspedes", "Habana Vieja": "La Habana Vieja",
               "La Habana del Este": "Habana del Este", "Lajas": "Santa Isabel de las Lajas",
-              "Isla de la Juventud": "Isle of Youth"}
+              "Isla de la Juventud": "Isle of Youth", "1ro de Enero": "Primero de Enero",
+              "Antillas": "Antilla"}
 AGE = re.compile(r"^(\d{1,2})-(\d{1,2})$")
 OPEN = re.compile(r"^(\d{1,2})y\+?$")
 NUMERIC = re.compile(r"^(?:\d+|-)$")
@@ -282,7 +285,8 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
     belong to, so the two San Luis are told apart.
     """
     names = {fold(PROVINCES.get(p, p)): p for p in municipios}
-    own = {p: {fold(m): m for m in ms} for p, ms in municipios.items()}
+    own = {p: {**{fold(m): m for m in ms}, **{fold(MUNICIPIOS.get(m, m)): m for m in ms}}
+           for p, ms in municipios.items()}
     out: dict[tuple[str, str], list[tuple[int, int | None, int, int]]] = {}
     totals: dict[tuple[str, str], list[int]] = {}
     province: str | None = None
