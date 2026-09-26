@@ -1,39 +1,322 @@
-  01: 11 municipios in the sample, 1,421,198 people weighted
-  02: 6 municipios in the sample, 3,739,797 people weighted
-  03: 5 municipios in the sample, 793,424 people weighted
-  04: 12 municipios in the sample, 926,858 people weighted
-  05: 38 municipios in the sample, 3,137,032 people weighted
-  06: 10 municipios in the sample, 728,300 people weighted
-  07: 124 municipios in the sample, 5,524,506 people weighted
-  08: 67 municipios in the sample, 3,725,058 people weighted
-  09: 16 municipios in the sample, 9,159,393 people weighted
-  10: 39 municipios in the sample, 1,821,279 people weighted
-  11: 46 municipios in the sample, 6,144,449 people weighted
-  12: 81 municipios in the sample, 3,525,695 people weighted
-  13: 84 municipios in the sample, 3,075,237 people weighted
-  14: 125 municipios in the sample, 8,303,835 people weighted
-  15: 125 municipios in the sample, 16,943,627 people weighted
-  16: 113 municipios in the sample, 4,728,162 people weighted
-  17: 36 municipios in the sample, 1,961,694 people weighted
-  18: 20 municipios in the sample, 1,226,179 people weighted
-  19: 51 municipios in the sample, 5,768,781 people weighted
-  20: 570 municipios in the sample, 4,113,433 people weighted
-  21: 217 municipios in the sample, 6,567,595 people weighted
-  22: 18 municipios in the sample, 2,362,209 people weighted
-  23: 11 municipios in the sample, 1,852,929 people weighted
-  24: 58 municipios in the sample, 2,815,438 people weighted
-  25: 18 municipios in the sample, 2,986,880 people weighted
-  26: 72 municipios in the sample, 2,924,652 people weighted
-  27: 17 municipios in the sample, 2,397,125 people weighted
-  28: 43 municipios in the sample, 3,518,497 people weighted
-  29: 60 municipios in the sample, 1,340,912 people weighted
-  30: 212 municipios in the sample, 8,046,861 people weighted
-  31: 106 municipios in the sample, 2,317,135 people weighted
-  32: 58 municipios in the sample, 1,617,384 people weighted
-  indigenous answers, weighted: blank 0, 1 23,229,560, 3 96,017,755, 9 451,116
-  Afro-Mexican answers, weighted: 1 2,482,098, 3 122,826,044, 9 207,412
-  age answers, weighted: 0-2 5,817,123, 3+ 119,692,898, unstated 5,533
-  reading: indigenous yes=['1'], Afro-Mexican yes=['1'] (sample 2,482,098, full count 2,576,213), no=3, unstated age out of the base
-  national, aged 3+: Mestizo or white (neither indigenous nor Afro-Mexican) 79.1%, Indigenous (self-identified) 18.5%, Afro-Mexican or Afro-descendant 1.1%, Indigenous and Afro-Mexican 0.9%, Not stated 0.4%
-  2469 municipios (0 of ITER's without an estimate), 32 states
-  wrote data/processed/mexico_ethnicity.json (7006 kB)
+probe_pdf: http://web.archive.org/web/2025id_/https://www.one.gob.do/media/atbcumc0/informe-general-xcnpv-completo.pdf
+  14,347,841 bytes
+  641 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BDJREW+MinionPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(2151, 0, 140002796978256), '/LastChar': 32, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [227]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 641 pages, 1 mention ['racial', 'tnico', 'religi', 'idioma']
+=== front matter ===
+
+Santo Domingo 
+27 de junio 2024
+X Censo Nacional de Población y Vivienda 2022
+Informe General
+2
+Informe General
+www.one.gob.do
+CRÉDITOS
+Dirección General 
+Miosotis Mercelia Rivas Peña: Directora General Oficina Nacional de Estadística 
+Augusto V. De los Santos Almánzar: Subdirector General Oficina Nacional de Estadística 
+Dirección de Censos y Encuestas
+Francisco Cáceres Ureña, PhD: Director Censos y Encuestas 
+Coordinación Técnica
+Francisco Cáceres Ureña, PhD: Director Censos y Encuestas
+Kary Desiree Santos Mercedes: Encargada Departamento de Censos 
+Equipo Técnico  
+Willy Ney Otáñez: Encargado Departamento de Encuestas
+Antonio Morillo Pérez, PhD: Asesor Análisis, Sistema Único de Beneficiarios, SIUBEN
+Shelila Ruiz Silverio: Encargada División Metodológico y Conceptual, Departamento de Censos 
+Erica Polanco Díaz: Analista de Censos 
+Kendry Esmerling Santos Cordero: Analista de Censos 
+Félix Rafael Núñez de Jesús: Analista de Censos 
+Jhensy Sandoval: Coordinador de Digitación 
+Vivian Sánchez: Auxiliar de Estadística 
+Xiomara Díaz Jiménez: Auxiliar de Estadística 
+Procesamiento de Datos
+Francisco Cáceres Ureña, PhD: Director Censos y Encuestas
+Ravel Elías Domínguez Medina: Director Tecnologías de la Información y Comunicación 
+Antonio Morillo Pérez, PhD: Asesor de Análisis, Sistema Único de Beneficiarios, SIUBEN
+Kary Desiree Santos Mercedes: Encargada departamento de Censos
+Leonel Sanlate Carrasco: Encargado Departamento de Procesamiento de Datos 
+Willy Ney Otáñez: Encargado Departamento de Encuestas
+Dimas Yael Matías Aponte: Encargado División de Procesamiento de Censos y Encuestas 
+Jhensy Jafrineo Sandoval Moran: Coordinador de Digitación 
+Erica Polanco Díaz: Analista de Censos 
+Kendry Esmerling Santos Cordero: Analista de Censos 
+Félix Rafael Núñez de Jesús: Analista de Censos 
+3
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+Mapas y cartogramas
+Santa Grissell Arias Tejeda: Encargada Departamento de Geoestadísticas
+Edgar Lorenzo Jaquez Guillén: Encargado Interino División de Geomática
+Edward Odalis Chala Bautista: Técnico en Geomática
+Yeffry Starling Mejía La Páez: Técnico en Geomática
+ 
+Apoyo Interinstitucional 
+Sistema Único de Beneficiarios, SIUBEN 
+Apoyo Editorial
+Raysa Hernández García: Encargada Departamento de Comunicaciones
+Carmen C. Cabanes: Encargada Interina División de Diseño y Publicaciones
+Rafael Ramirez: Diagramación
+Iván Ottenwalder: Corrección de Estilo
+Máximo Novas: Fotografía
+
+5
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+CONTENIDO
+Índice de cuadros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Presentación  ................................................................. 9
+Introducción  ................................................................ 11
+1. Generalidades  ............................................................ 15
+1.1 Aspectos geográficos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+1.1.1 Localización de la República Dominicana. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+1.1.2 División político-administrativa .................................................... 16
+1.2 Antecedentes censales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+1.2.1  Censos levantados en la República Dominicana. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+1.2.2 Marco jurídico del X Censo Nacional de Población y Vivienda 2022 .................... 18
+2. Dinámica de la población dominicana . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.1 Volumen poblacional  .................................................................. 21
+2.2 Composición por sexo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.3 Estructura de la población por edad  ..................................................... 23
+3. Aspectos conceptuales y metodológicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.1 Universo ............................................................................. 31
+3.2 Tipo de censo  ........................................................................ 31
+3.3 Instrumento de recolección de la información . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.4 Instructivos para la capacitación. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.5 Estructura operativa censal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+4. Capacitación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+5. Empadronamiento. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+5.1 Unidades de empadronamiento. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+5.2 Período de empadronamiento .......................................................... 39
+5.3 Método de recolección de información .................................................. 40
+6
+Informe General
+www.one.gob.do
+6. Captura y procesamiento de datos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+6.1 Herramienta de captura utilizada. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+6.2 Monitoreo y control censal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+6.3 Comprobación de la cobertura e integración de los datos censales ......................... 43
+6.3.1 Verificación de la integridad de la base de datos ...................................... 43
+6.3.2 Verificación de duplicidad ......................................................... 44
+6.4 Pautas de consistencia y validación. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+7. Encuesta de Control de Cobertura y Calidad .................................... 47
+7.1 Objetivos .............................................................................. 48
+7.2 Marco de muestreo .................................................................... 48
+7.3 Diseño y selección de la muestra. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+7.4 Levantamiento de la información. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+7.5 Resultados de la encuesta  ............................................................. 49
+8. Resultados censales ........................................................ 53
+8.1 Resumen geoestadístico. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+8.2 Resultados generales .................................................................. 64
+Anexo I: Tasa de cobertura censal de viviendas  ................................... 595
+Anexo II: Boleta censal  ....................................................... 601
+Anexo III: Personal participante en el X Censo Nacional de Población y Vivienda 2022 . . . . 622
+7
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+ÍNDICE DE CUADROS
+Cuadro 1 REPÚBLICA DOMINICANA: Población censada y tasa de crecimiento media anual,  
+según año del censo, 1920-2022   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+Cuadro 2 REPÚBLICA DOMINICANA: Población censada por sexo,según año del censo, 
+1920-2022  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+Cuadro 3 REPÚBLICA DOMINICANA: Distribución porcentual de la población por año del  
+censo, según grupos de edades,  1935-2022   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Cuadro 4 REPÚBLICA DOMINICANA: Población y tasa anual de crecimiento medio anual, 
+según provincia, censos de población y vivienda 2010 y 2022 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .65
+Cuadro 5 REPÚBLICA DOMINICANA: Población, superficie en km² y densidad poblacional, 
+según región, provincia,  municipio y distrito municipal   . . . . . . . . . . . . . . . . . . . . . . . . 66
+Cuadro 6 REPÚBLICA DOMINICANA: Población por zona de residencia y sexo, según 
+región, provincia, municipio y distrito municipal .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .77
+Cuadro 7 REPÚBLICA DOMINICANA: Población por zona de residencia y sexo, según 
+región, provincia y grupos de edades .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .95
+Cuadro 8 REPÚBLICA DOMINICANA: Número de hogares, por tipo de vivienda, según 
+región, provincia, zona y tipo de servicio sanitario  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 124
+Cuadro 9 REPÚBLICA DOMINICANA: Número de hogares por fuente de abastecimiento de 
+agua para uso doméstico, según región, provincia y zona  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .143
+Cuadro 10 REPÚBLICA DOMINICANA: Número de viviendas particulares por tipo, según  
+región, provincia y condición de ocupación de la vivienda   . . . . . . . . . . . . . . . . . . . . 148
+Cuadro 11 REPÚBLICA DOMINICANA: Número de viviendas particulares ocupadas por  
+tipo, según región, provincia, municipio y distrito municipal  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .153
+Cuadro 12 REPÚBLICA DOMINICANA: Número de viviendas particulares ocupadas por  
+tipo, según región, provincia, municipio, zona y material de construcción 
+predominante en las paredes   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 170
+Cuadro 13 REPÚBLICA DOMINICANA: Número de viviendas particulares ocupadas por  
+tipo, según región, provincia, municipio, zona y material de construcción 
+predominante en el techo   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 321
+Cuadro 14 REPÚBLICA DOMINICANA: Número de viviendas particulares ocupadas por  
+tipo, según región, provincia, municipio, zona y material de construcción 
+predominante en el piso .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 442
+
+9
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+PRESENTACIÓN
+La Oficina Nacional de Estadística (ONE) pone a disposición de los usuarios y público en general 
+los resultados definitivos del X Censo Nacional de Población y Vivienda 2022. Este operativo 
+censal se desarrolló durante catorce días consecutivos, desde 10 al 23 de noviembre del 2022, 
+en todo el territorio de la República Dominicana, incluyendo sus aguas jurisdiccionales, con la 
+participación de toda la sociedad dominicana.
+Con este operativo se dio cumplimiento a lo establecido en la Ley No. 5096 sobre Estadística y 
+Censos Nacionales y lo dispuesto en el Decreto del Poder Ejecutivo No. 607-21, de fecha 27 de 
+noviembre del año 2021, que declaró al X Censo Nacional de Población y Vivienda 2022 como 
+proyecto de prioridad e interés nacional.
+El censo de población y vivienda es la principal operación estadística que desarrolla un país por lo 
+que se constituye en la principal fuente de información a nivel nacional y local. La información que 
+el operativo proporciona es un insumo fundamental para el diseño, orientación, implementación 
+y evaluación de políticas públicas, así como para intervenciones de evaluación y desarrollo en 
+el ámbito civil. Adicionalmente, los datos censales son de gran importancia en la industria y el 
+comercio, sin obviar su gran utilidad como fuente de producción de conocimiento. 
+El presente volumen, denominado Volumen I: Informe General, que es contentivo de datos acerca 
+de las principales características de la población, los hogares y las viviendas, desagregados a 
+nivel regional, provincial, municipal y de distrito municipal, forma parte de los compromisos 
+asumidos por la Oficina Nacional de Estadística (ONE) de ofrecer a los usuarios de información 
+resultados censales en el menor tiempo posible y con los niveles de especificidad geográfica y 
+temática requeridos. 
+Con la presentación de este documento se inicia la serie de divulgaciones de los resultados del 
+X Censo Nacional de Población y Vivienda 2022, la cual consta de un total de seis volúmenes, 
+relativos a las diferentes temáticas estudiadas en el X Censo Nacional de Población y Vivienda. El 
+Volumen II versará acerca de las Características de la vivienda y el hogar; el Volumen III abordará 
+las Características demográficas y sociales de la población; el Volumen IV incluirá información 
+relativa a Migración, Fecundidad y Mortalidad; el Volumen V estará referido a las Características 
+educativas; el Volumen VI contendrá informaciones económicas.
+Para garantizar el acceso a la información por parte de la mayor cantidad de usuarios, los 
+volúmenes del XCNPV serán divulgados tanto en formato impreso como digital. 
+La Oficina Nacional de Estadística, al presentar estos resultados, hace propicia la ocasión para 
+expresar su agradecimiento a la población dominicana en general, por su apoyo e involucramiento 
+invaluable para que la gran jornada que significó el X Censo Nacional de Población y Vivienda 
+2022 alcanzara sus objetivos, así como a los estamentos de la sociedad que, con su participación, 
+nos permitieron cumplir nuestra misión. 
+
+11
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+INTRODUCCIÓN 
+En la República Dominicana existen experiencias sobre la cuantificación de la población que 
+datan del siglo XVII, cuando el gobernador Osorio ordenó el conteo de la población residente 
+en los poblados de la costa norte. Sin embargo, el empadronamiento de la población bajo el 
+concepto que actualmente se tiene de los censos se inició en el año 1920. A partir de ese año, se 
+han levantado diez censos de población y vivienda, razón por la cual, al último de esta serie se le 
+denominó X Censo Nacional de Población y Vivienda 2022. 
+El operativo de empadronamiento se desarrolló entre los días 10 y 24 de noviembre del 2022. 
+En esta fase de la operación censal se utilizaron dispositivos móviles de captura, tablets en este 
+caso, siendo la primera vez que en la Republica Dominicana se recurre a este tipo de medio para 
+levantar un censo de población y vivienda.
+El presente informe, contentivo de los resultados generales, consta de ocho capítulos que 
+engloban los diferentes tópicos relativos al X Censo Nacional de Población y Vivienda 2022. En 
+el primer capítulo se presentan algunos aspectos relacionados con la situación geográfica de 
+la República Dominicana y también aborda, de forma sucinta, los antecedentes censales, desde 
+los orígenes de este tipo de operativo estadístico, en la antigüedad, hasta los tiempos presentes. 
+En el segundo capítulo se aborda, de forma resumida, la dinámica de la población dominicana 
+desde 1920 hasta el 2022.
+El tercer capítulo describe los aspectos conceptuales y metodológicos seguidos en el 
+levantamiento censal, una breve descripción del instrumento de recolección de información y los 
+instructivos de capacitación.
+En los capítulos que van desde el cuatro al siete se hace una presentación sucinta de las 
+principales actividades censales: capacitación, empadronamiento, captura y procesamiento de 
+datos, encuesta de control de cobertura y calidad y, por último, se presentan la difusión y los 
+anexos.
+Por último, el octavo capítulo aborda los resultados censales que se presentan en dos partes, 
+la primera mediante un resumen geoestadístico a nivel de regiones y provincias, mientras en la 
+segunda parte se presentan los resultados generales por región, provincia, municipio y distrito 
+municipal. Las cifras correspondientes a viviendas, hogares y personas aquí publicadas se 
+obtuvieron a partir del ajuste por omisión hecho a los datos resultantes del empadronamiento. 
+Esta omisión fue medida a través de la Encuesta de Control de Cobertura y Calidad levantada a 
+principios del año 2023, cuyos resultados fueron desagregados a nivel de provincia y municipio, 
+para 26 provincias y adicionalmente, a nivel de distrito municipal, en el caso de las provincias 
+Santo Domingo, La Altagracia, Santiago, Puerto Plata y San Cristóbal.
+Además, se muestran los anexos que están destinados a presentar los instrumentos utilizados 
+en la recolección de los datos censales. En el anexo I se muestra un cuadro contentivo de la 
+tasa de cobertura de las viviendas, calculada a partir de la Encuesta de Control de Cobertura 
+y Calidad. En el anexo II se presenta la boleta censal y, en el anexo III, se detalla la lista de las 
+personas que participaron en el X Censo Nacional de Población y Vivienda 2022.
+
+GENERALIDADES
+
+15
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+1. Generalidades 
+1.1 Aspectos geográficos 
+La información del X Censo Nacional de Población y Vivienda 2022, como la de cualquier otro 
+estudio de esta naturaleza, está referida a los espacios geográficos donde habitan las personas 
+residentes en el país. En consecuencia, es importante que los usuarios de los datos conozcan 
+algunos elementos básicos del contexto territorial al cual pertenecen. En este caso se hará 
+referencia a la localización geográfica de la República Dominicana, por la utilidad que podría 
+tener para aquellos usuarios sin muchos conocimientos acerca del país, y a la división político-
+administrativa, dado que gran parte de los datos censales se presentan en forma desagregada 
+en función de las unidades territoriales.
+1.1.1 Localización de la República Dominicana
+La isla de Santo Domingo forma parte del archipiélago de las Antillas Mayores y es la segunda 
+en extensión territorial después de Cuba. Se localiza en el hemisferio norte y al sur del trópico 
+de Cáncer. Sus coordenadas geográficas son: 17º 36´y 19º 58´ latitud norte y 68º 19´y 72º 01´de 
+longitud oeste.
+Llamada por los aborígenes Quisqueya, fue nombrada La Española o La Hispaniola por los 
+españoles a su llegada. Se encuentra dividida en dos estados independientes: República 
+Dominicana en la parte oriental y la República de Haití en la parte occidental. La extensión territorial 
+de la isla es de unos 77,914 kilómetros cuadrados, de los cuales, 48,195.90 km² corresponden, al 
+área principal del territorio de la República Dominicana, incluidos los 265 km² del área del Lago 
+Enriquillo.
+16
+Informe General
+www.one.gob.do
+La República Dominicana limita, al norte con el océano Atlántico, que la separa de las islas Turcas 
+y Caicos; al este con el canal de La Mona que la separa de Puerto Rico; al sur con el mar Caribe 
+o de las Antillas; y al oeste limita con la República de Haití.
+1.1.2 División político-administrativa
+La República Dominicana se encuentra dividida en un Distrito Nacional y 31 provincias como 
+unidades político-administrativas mayores. A su vez, estas demarcaciones territoriales están 
+constituidas por 158 municipios y 235 distritos municipales. 
+Al momento del X Censo Nacional de Población y Vivienda las 32 unidades territoriales mayores 
+estaban nucleadas en 10 regiones administrativas creadas a partir de decreto presidencial No. 
+710-04 del 31 de junio del 2004, las cuales, a su vez, están agrupadas en tres macrorregiones: 
+Cibao, constituida por las regiones: Cibao Norte, Cibao Sur, Cibao Nordeste y Cibao Noroeste; la 
+Suroeste, formada por las regiones: Valdesia, Enriquillo y El Valle; la Sureste, compuesta por las 
+regiones: Yuma, Higuamo y Ozama o Metropolitana.
+La República Dominicana tiene forma de un triángulo, cuya base es la línea fronteriza con la 
+República de Haití. La irregularidad de sus lados le da un perímetro de 1,963 km. La línea costera 
+se extiende unos 1,576 km. y la línea fronteriza, con la República de Haití tiene una longitud de 
+388 km.
+Las dimensiones de la República Dominicana son: 390 km. de longitud, desde Cabo Engaño, en 
+la provincia La Altagracia, hasta el paraje Las Lajas en la provincia Independencia y 265 km de 
+ancho, desde Cabo Isabela, en la provincia de Puerto Plata hasta el Cabo Beata, en la provincia 
+de Pedernales.
+17
+X Censo Nacional de Población y Vivienda
+www.one.gob.do
+1.2 Antecedentes censales 
+La necesidad de disponer de información numérica acerca de los recursos económicos y sociales 
+con que contaban los pueblos, en la antigüedad, los condujo a la realización de los censos de 
+población, como las primeras operaciones estadísticas de carácter universal. 
+De esta forma, la contabilidad social subyacente en el conteo de la población y descripción de 
+sus características y el levantamiento de información sobre los recursos de que disponen los 
+grupos sociales constituye un ejercicio cuya práctica, por parte de los gobiernos se originó hace 
+más de 50 siglos.
+Hacia el año 3800 A.C., en Babilonia, cada seis o siete años se hacía el recuento de los asnos, 
+ganado vacuno y existencias de leche, mantequilla, miel y lana, en lo que podría considerarse el 
+primer antecedente de un censo de actividades productivas. En Egipto, en el año 2750 A.C., en 
+la China en 2238 A.C., en Roma, en el año I y en la India, en el siglo IV de nuestra era, realizaron 
+censos básicamente por razones fiscales y militares.
+En Europa, los censos modernos surgieron a partir del siglo XVII y lo mismo ocurrió en América, 
+pues, en 1665, ya se había iniciado la época de los primeros censos modernos, en la colonia de 
+Nueva Francia, actual provincia de Quebec y en 1790, los Estados Unidos levantaron su primer 
+censo de población.
+Con el tiempo, ese tipo de operación estadística fue adquiriendo preponderancia, de forma que, 
+la realización de los censos está contemplada como obligación de los Estados, amparada en 
+preceptos de corte legal, como leyes y decretos ejecutivos.
+
+=== pages mentioning ['racial', 'tnico', 'religi', 'idioma'] (first 30) ===
+
+--- page 603 ----------------------------------------------------
+Ocupada con personas presentes 1
+VIVIENDAS PARTICULARES
+VIVIENDAS COLECTIVAS
+Institución religiosa 14
+Cuartel militar 11
+Hospital o centro de salud 13
+Cárcel, correccional de menores 12
