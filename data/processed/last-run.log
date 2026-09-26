@@ -1,75 +1,812 @@
-RUNDEF Job
-    SELECTION ALL
-
-TABLE T1
-    AS FREQUENCY
-    OF POBLACIO.CONSIND
-    AREABREAK PROVINCI
-
-TABLE T2
-    AS FREQUENCY
-    OF POBLACIO.PUEBLOIN
-    AREABREAK PROVINCI
-
-TABLE T3
-    AS FREQUENCY
-    OF POBLACIO.LENGIND
-    AREABREAK PROVINCI
-
-TABLE T4
-    AS FREQUENCY
-    OF POBLACIO.ETNIA
-    AREABREAK PROVINCI
-
-TABLE T5
-    AS FREQUENCY
-    OF POBLACIO.SEXO
-
-  text: ﻿ R+SP Output Table Frecuencia de P07 Se considera indígena AREA # 1 1 San José P07 Se considera indígena Casos % Acumulado % Sí 20.188 1,4 1,4 No 1.384.054 98,6 100,0 Total 1.404.242 100,0 100,0 AREA # 2 2 Alajuela P07 Se considera indígena Casos % Acumulado % Sí 8.089 1,0 1,0 No 840.057 99,0 100,0 Total 848.146 100,0 100,0 AREA # 3 3 Cartago P07 Se considera indígena Casos % Acumulado % Sí 8.447 1,7 1,7 No 482.456 98,3 100,0 Total 490.903 100,0 100,0 AREA # 4 4 Heredia P07 Se considera indígena Casos % Acumulado % Sí 4.506 1,0 1,0 No 429.171 99,0 100,0 Total 433.677 100,0 100,0 AREA # 5 5 Guanacaste P07 Se considera indígena Casos % Acumulado % Sí 10.135 3,1 3,1 No 316.818 96,9 100,0 Total 326.953 100,0 100,0 AREA # 6 6 Puntarenas P07 Se considera indígena Casos % Acumulado % Sí 25.316 6,2 6,2 No 385.613 93,8 100,0 Total 410.929 100,0 100,0 AREA # 7 7 Limón P07 Se considera indígena Casos % Acumulado % Sí 27.462 7,1 7,1 No 359.400 92,9 100,0 Total 386.862 100,0 100,0 RESUMEN P07 Se considera indígena Casos % Acumulado % Sí 104.143 2,4 2,4 No 4.197.569 97,6 100,0 Total 4.301.712 100,0 100,0 Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.xls?LFN=RpBases\Tempo\~tmp_9030901.xls
-  link: 'Descargar en formato PDF' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_9030901.pdf
-  table: area=1 name='1 San José' title='P07 Se considera indígena' total=1404242 na=None rows=[('Sí', 20188), ('No', 1384054)]
-  table: area=2 name='2 Alajuela' title='P07 Se considera indígena' total=848146 na=None rows=[('Sí', 8089), ('No', 840057)]
-  table: area=3 name='3 Cartago' title='P07 Se considera indígena' total=490903 na=None rows=[('Sí', 8447), ('No', 482456)]
-  table: area=4 name='4 Heredia' title='P07 Se considera indígena' total=433677 na=None rows=[('Sí', 4506), ('No', 429171)]
-  table: area=5 name='5 Guanacaste' title='P07 Se considera indígena' total=326953 na=None rows=[('Sí', 10135), ('No', 316818)]
-  table: area=6 name='6 Puntarenas' title='P07 Se considera indígena' total=410929 na=None rows=[('Sí', 25316), ('No', 385613)]
-  table: area=7 name='7 Limón' title='P07 Se considera indígena' total=386862 na=None rows=[('Sí', 27462), ('No', 359400)]
-  table: area=None name='' title='P07 Se considera indígena' total=4301712 na=None rows=[('Sí', 104143), ('No', 4197569)]
-  text: ﻿ R+SP Output Table Frecuencia de P08 Pueblo indígena al que pertenece AREA # 1 1 San José P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 1.317 6,5 6,5 Brunca o Boruca 915 4,5 11,1 Cabécar 669 3,3 14,4 Chorotega 1.132 5,6 20,0 Huetar 2.347 11,6 31,6 Maleku o Guatuso 253 1,3 32,9 Ngöbe o Guaymí 998 4,9 37,8 Teribe o Térraba 293 1,5 39,3 De otro país 2.725 13,5 52,7 Ningún pueblo 9.539 47,3 100,0 Total 20.188 100,0 100,0 No Aplica : 1.384.054 AREA # 2 2 Alajuela P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 343 4,2 4,2 Brunca o Boruca 224 2,8 7,0 Cabécar 120 1,5 8,5 Chorotega 498 6,2 14,6 Huetar 296 3,7 18,3 Maleku o Guatuso 906 11,2 29,5 Ngöbe o Guaymí 137 1,7 31,2 Teribe o Térraba 100 1,2 32,4 De otro país 1.452 18,0 50,4 Ningún pueblo 4.013 49,6 100,0 Total 8.089 100,0 100,0 No Aplica : 840.057 AREA # 3 3 Cartago P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 257 3,0 3,0 Brunca o Boruca 129 1,5 4,6 Cabécar 4.208 49,8 54,4 Chorotega 156 1,8 56,2 Huetar 108 1,3 57,5 Maleku o Guatuso 72 0,9 58,4 Ngöbe o Guaymí 45 0,5 58,9 Teribe o Térraba 51 0,6 59,5 De otro país 359 4,3 63,8 Ningún pueblo 3.062 36,2 100,0 Total 8.447 100,0 100,0 No Aplica : 482.456 AREA # 4 4 Heredia P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 242 5,4 5,4 Brunca o Boruca 198 4,4 9,8 Cabécar 101 2,2 12,0 Chorotega 357 7,9 19,9 Huetar 208 4,6 24,5 Maleku o Guatuso 108 2,4 26,9 Ngöbe o Guaymí 35 0,8 27,7 Teribe o Térraba 65 1,4 29,2 De otro país 689 15,3 44,5 Ningún pueblo 2.503 55,5 100,0 Total 4.506 100,0 100,0 No Aplica : 429.171 AREA # 5 5 Guanacaste P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 54 0,5 0,5 Brunca o Boruca 83 0,8 1,4 Cabécar 40 0,4 1,7 Chorotega 7.991 78,8 80,6 Huetar 97 1,0 81,5 Maleku o Guatuso 186 1,8 83,4 Ngöbe o Guaymí 12 0,1 83,5 Teribe o Térraba 33 0,3 83,8 De otro país 531 5,2 89,1 Ningún pueblo 1.108 10,9 100,0 Total 10.135 100,0 100,0 No Aplica : 316.818 AREA # 6 6 Puntarenas P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 5.466 21,6 21,6 Brunca o Boruca 3.741 14,8 36,4 Cabécar 2.665 10,5 46,9 Chorotega 723 2,9 49,8 Huetar 177 0,7 50,5 Maleku o Guatuso 99 0,4 50,8 Ngöbe o Guaymí 5.981 23,6 74,5 Teribe o Térraba 1.912 7,6 82,0 De otro país 1.458 5,8 87,8 Ningún pueblo 3.094 12,2 100,0 Total 25.316 100,0 100,0 No Aplica : 385.613 AREA # 7 7 Limón P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 10.519 38,3 38,3 Brunca o Boruca 265 1,0 39,3 Cabécar 9.182 33,4 72,7 Chorotega 585 2,1 74,8 Huetar 228 0,8 75,7 Maleku o Guatuso 156 0,6 76,2 Ngöbe o Guaymí 2.335 8,5 84,7 Teribe o Térraba 211 0,8 85,5 De otro país 1.230 4,5 90,0 Ningún pueblo 2.751 10,0 100,0 Total 27.462 100,0 100,0 No Aplica : 359.400 RESUMEN P08 Pueblo indígena al que pertenece Casos % Acumulado % Bribrí 18.198 17,5 17,5 Brunca o Boruca 5.555 5,3 22,8 Cabécar 16.985 16,3 39,1 Chorotega 11.442 11,0 50,1 Huetar 3.461 3,3 53,4 Maleku o Guatuso 1.780 1,7 55,1 Ngöbe o Guaymí 9.543 9,2 64,3 Teribe o Térraba 2.665 2,6 66,9 De otro país 8.444 8,1 75,0 Ningún pueblo 26.070 25,0 100,0 Total 104.143 100,0 100,0 No Aplica : 4.197.569 Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.xls?LFN=RpBases\Tempo\~tmp_9030921.xls
-  link: 'Descargar en formato PDF' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_9030921.pdf
-  table: area=1 name='1 San José' title='P08 Pueblo indígena al que pertenece' total=20188 na=1384054 rows=[('Bribrí', 1317), ('Brunca o Boruca', 915), ('Cabécar', 669), ('Chorotega', 1132), ('Huetar', 2347), ('Maleku o Guatuso', 253), ('Ngöbe o Guaymí', 998), ('Teribe o Térraba', 293), ('De otro país', 2725), ('Ningún pueblo', 9539)]
-  table: area=2 name='2 Alajuela' title='P08 Pueblo indígena al que pertenece' total=8089 na=840057 rows=[('Bribrí', 343), ('Brunca o Boruca', 224), ('Cabécar', 120), ('Chorotega', 498), ('Huetar', 296), ('Maleku o Guatuso', 906), ('Ngöbe o Guaymí', 137), ('Teribe o Térraba', 100), ('De otro país', 1452), ('Ningún pueblo', 4013)]
-  table: area=3 name='3 Cartago' title='P08 Pueblo indígena al que pertenece' total=8447 na=482456 rows=[('Bribrí', 257), ('Brunca o Boruca', 129), ('Cabécar', 4208), ('Chorotega', 156), ('Huetar', 108), ('Maleku o Guatuso', 72), ('Ngöbe o Guaymí', 45), ('Teribe o Térraba', 51), ('De otro país', 359), ('Ningún pueblo', 3062)]
-  table: area=4 name='4 Heredia' title='P08 Pueblo indígena al que pertenece' total=4506 na=429171 rows=[('Bribrí', 242), ('Brunca o Boruca', 198), ('Cabécar', 101), ('Chorotega', 357), ('Huetar', 208), ('Maleku o Guatuso', 108), ('Ngöbe o Guaymí', 35), ('Teribe o Térraba', 65), ('De otro país', 689), ('Ningún pueblo', 2503)]
-  table: area=5 name='5 Guanacaste' title='P08 Pueblo indígena al que pertenece' total=10135 na=316818 rows=[('Bribrí', 54), ('Brunca o Boruca', 83), ('Cabécar', 40), ('Chorotega', 7991), ('Huetar', 97), ('Maleku o Guatuso', 186), ('Ngöbe o Guaymí', 12), ('Teribe o Térraba', 33), ('De otro país', 531), ('Ningún pueblo', 1108)]
-  table: area=6 name='6 Puntarenas' title='P08 Pueblo indígena al que pertenece' total=25316 na=385613 rows=[('Bribrí', 5466), ('Brunca o Boruca', 3741), ('Cabécar', 2665), ('Chorotega', 723), ('Huetar', 177), ('Maleku o Guatuso', 99), ('Ngöbe o Guaymí', 5981), ('Teribe o Térraba', 1912), ('De otro país', 1458), ('Ningún pueblo', 3094)]
-  table: area=7 name='7 Limón' title='P08 Pueblo indígena al que pertenece' total=27462 na=359400 rows=[('Bribrí', 10519), ('Brunca o Boruca', 265), ('Cabécar', 9182), ('Chorotega', 585), ('Huetar', 228), ('Maleku o Guatuso', 156), ('Ngöbe o Guaymí', 2335), ('Teribe o Térraba', 211), ('De otro país', 1230), ('Ningún pueblo', 2751)]
-  table: area=None name='' title='P08 Pueblo indígena al que pertenece' total=104143 na=4197569 rows=[('Bribrí', 18198), ('Brunca o Boruca', 5555), ('Cabécar', 16985), ('Chorotega', 11442), ('Huetar', 3461), ('Maleku o Guatuso', 1780), ('Ngöbe o Guaymí', 9543), ('Teribe o Térraba', 2665), ('De otro país', 8444), ('Ningún pueblo', 26070)]
-  text: ﻿ R+SP Output Table Frecuencia de P09 Habla algún idioma o lengua indígena AREA # 1 1 San José P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 2.436 12,1 12,1 No 17.752 87,9 100,0 Total 20.188 100,0 100,0 No Aplica : 1.384.054 AREA # 2 2 Alajuela P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 767 9,5 9,5 No 7.322 90,5 100,0 Total 8.089 100,0 100,0 No Aplica : 840.057 AREA # 3 3 Cartago P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 4.046 47,9 47,9 No 4.401 52,1 100,0 Total 8.447 100,0 100,0 No Aplica : 482.456 AREA # 4 4 Heredia P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 248 5,5 5,5 No 4.258 94,5 100,0 Total 4.506 100,0 100,0 No Aplica : 429.171 AREA # 5 5 Guanacaste P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 205 2,0 2,0 No 9.930 98,0 100,0 Total 10.135 100,0 100,0 No Aplica : 316.818 AREA # 6 6 Puntarenas P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 8.752 34,6 34,6 No 16.564 65,4 100,0 Total 25.316 100,0 100,0 No Aplica : 385.613 AREA # 7 7 Limón P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 15.232 55,5 55,5 No 12.230 44,5 100,0 Total 27.462 100,0 100,0 No Aplica : 359.400 RESUMEN P09 Habla algún idioma o lengua indígena Casos % Acumulado % Sí 31.686 30,4 30,4 No 72.457 69,6 100,0 Total 104.143 100,0 100,0 No Aplica : 4.197.569 Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.xls?LFN=RpBases\Tempo\~tmp_9030941.xls
-  link: 'Descargar en formato PDF' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_9030941.pdf
-  table: area=1 name='1 San José' title='P09 Habla algún idioma o lengua indígena' total=20188 na=1384054 rows=[('Sí', 2436), ('No', 17752)]
-  table: area=2 name='2 Alajuela' title='P09 Habla algún idioma o lengua indígena' total=8089 na=840057 rows=[('Sí', 767), ('No', 7322)]
-  table: area=3 name='3 Cartago' title='P09 Habla algún idioma o lengua indígena' total=8447 na=482456 rows=[('Sí', 4046), ('No', 4401)]
-  table: area=4 name='4 Heredia' title='P09 Habla algún idioma o lengua indígena' total=4506 na=429171 rows=[('Sí', 248), ('No', 4258)]
-  table: area=5 name='5 Guanacaste' title='P09 Habla algún idioma o lengua indígena' total=10135 na=316818 rows=[('Sí', 205), ('No', 9930)]
-  table: area=6 name='6 Puntarenas' title='P09 Habla algún idioma o lengua indígena' total=25316 na=385613 rows=[('Sí', 8752), ('No', 16564)]
-  table: area=7 name='7 Limón' title='P09 Habla algún idioma o lengua indígena' total=27462 na=359400 rows=[('Sí', 15232), ('No', 12230)]
-  table: area=None name='' title='P09 Habla algún idioma o lengua indígena' total=104143 na=4197569 rows=[('Sí', 31686), ('No', 72457)]
-  text: ﻿ R+SP Output Table Frecuencia de P10 Autoidentificación étnico-racial AREA # 1 1 San José P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 11.254 0,8 0,8 Mulato(a) 94.727 6,8 7,7 Chino(a) 4.560 0,3 8,0 Blanco(a) o mestizo(a) 1.193.428 86,2 94,2 Otro 10.112 0,7 94,9 Ninguna 35.481 2,6 97,5 Ignorado 34.492 2,5 100,0 Total 1.384.054 100,0 100,0 No Aplica : 20.188 AREA # 2 2 Alajuela P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 4.731 0,6 0,6 Mulato(a) 47.886 5,7 6,3 Chino(a) 759 0,1 6,4 Blanco(a) o mestizo(a) 738.219 87,9 94,2 Otro 5.843 0,7 94,9 Ninguna 25.699 3,1 98,0 Ignorado 16.920 2,0 100,0 Total 840.057 100,0 100,0 No Aplica : 8.089 AREA # 3 3 Cartago P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 1.872 0,4 0,4 Mulato(a) 26.036 5,4 5,8 Chino(a) 728 0,2 5,9 Blanco(a) o mestizo(a) 429.678 89,1 95,0 Otro 2.575 0,5 95,5 Ninguna 13.753 2,9 98,4 Ignorado 7.814 1,6 100,0 Total 482.456 100,0 100,0 No Aplica : 8.447 AREA # 4 4 Heredia P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 2.886 0,7 0,7 Mulato(a) 29.451 6,9 7,5 Chino(a) 915 0,2 7,7 Blanco(a) o mestizo(a) 372.085 86,7 94,4 Otro 2.949 0,7 95,1 Ninguna 12.895 3,0 98,1 Ignorado 7.990 1,9 100,0 Total 429.171 100,0 100,0 No Aplica : 4.506 AREA # 5 5 Guanacaste P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 3.016 1,0 1,0 Mulato(a) 22.934 7,2 8,2 Chino(a) 655 0,2 8,4 Blanco(a) o mestizo(a) 255.800 80,7 89,1 Otro 5.666 1,8 90,9 Ninguna 17.569 5,5 96,5 Ignorado 11.178 3,5 100,0 Total 316.818 100,0 100,0 No Aplica : 10.135 AREA # 6 6 Puntarenas P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 3.327 0,9 0,9 Mulato(a) 34.973 9,1 9,9 Chino(a) 677 0,2 10,1 Blanco(a) o mestizo(a) 320.654 83,2 93,3 Otro 4.914 1,3 94,5 Ninguna 12.414 3,2 97,8 Ignorado 8.654 2,2 100,0 Total 385.613 100,0 100,0 No Aplica : 25.316 AREA # 7 7 Limón P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 18.142 5,0 5,0 Mulato(a) 33.202 9,2 14,3 Chino(a) 876 0,2 14,5 Blanco(a) o mestizo(a) 287.983 80,1 94,7 Otro 4.275 1,2 95,8 Ninguna 6.830 1,9 97,7 Ignorado 8.092 2,3 100,0 Total 359.400 100,0 100,0 No Aplica : 27.462 RESUMEN P10 Autoidentificación étnico-racial Casos % Acumulado % Negro(a) o afrodescendiente 45.228 1,1 1,1 Mulato(a) 289.209 6,9 8,0 Chino(a) 9.170 0,2 8,2 Blanco(a) o mestizo(a) 3.597.847 85,7 93,9 Otro 36.334 0,9 94,8 Ninguna 124.641 3,0 97,7 Ignorado 95.140 2,3 100,0 Total 4.197.569 100,0 100,0 No Aplica : 104.143 Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.xls?LFN=RpBases\Tempo\~tmp_9030961.xls
-  link: 'Descargar en formato PDF' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_9030961.pdf
-  table: area=1 name='1 San José' title='P10 Autoidentificación étnico-racial' total=1384054 na=20188 rows=[('Negro(a) o afrodescendiente', 11254), ('Mulato(a)', 94727), ('Chino(a)', 4560), ('Blanco(a) o mestizo(a)', 1193428), ('Otro', 10112), ('Ninguna', 35481), ('Ignorado', 34492)]
-  table: area=2 name='2 Alajuela' title='P10 Autoidentificación étnico-racial' total=840057 na=8089 rows=[('Negro(a) o afrodescendiente', 4731), ('Mulato(a)', 47886), ('Chino(a)', 759), ('Blanco(a) o mestizo(a)', 738219), ('Otro', 5843), ('Ninguna', 25699), ('Ignorado', 16920)]
-  table: area=3 name='3 Cartago' title='P10 Autoidentificación étnico-racial' total=482456 na=8447 rows=[('Negro(a) o afrodescendiente', 1872), ('Mulato(a)', 26036), ('Chino(a)', 728), ('Blanco(a) o mestizo(a)', 429678), ('Otro', 2575), ('Ninguna', 13753), ('Ignorado', 7814)]
-  table: area=4 name='4 Heredia' title='P10 Autoidentificación étnico-racial' total=429171 na=4506 rows=[('Negro(a) o afrodescendiente', 2886), ('Mulato(a)', 29451), ('Chino(a)', 915), ('Blanco(a) o mestizo(a)', 372085), ('Otro', 2949), ('Ninguna', 12895), ('Ignorado', 7990)]
-  table: area=5 name='5 Guanacaste' title='P10 Autoidentificación étnico-racial' total=316818 na=10135 rows=[('Negro(a) o afrodescendiente', 3016), ('Mulato(a)', 22934), ('Chino(a)', 655), ('Blanco(a) o mestizo(a)', 255800), ('Otro', 5666), ('Ninguna', 17569), ('Ignorado', 11178)]
-  table: area=6 name='6 Puntarenas' title='P10 Autoidentificación étnico-racial' total=385613 na=25316 rows=[('Negro(a) o afrodescendiente', 3327), ('Mulato(a)', 34973), ('Chino(a)', 677), ('Blanco(a) o mestizo(a)', 320654), ('Otro', 4914), ('Ninguna', 12414), ('Ignorado', 8654)]
-  table: area=7 name='7 Limón' title='P10 Autoidentificación étnico-racial' total=359400 na=27462 rows=[('Negro(a) o afrodescendiente', 18142), ('Mulato(a)', 33202), ('Chino(a)', 876), ('Blanco(a) o mestizo(a)', 287983), ('Otro', 4275), ('Ninguna', 6830), ('Ignorado', 8092)]
-  table: area=None name='' title='P10 Autoidentificación étnico-racial' total=4197569 na=104143 rows=[('Negro(a) o afrodescendiente', 45228), ('Mulato(a)', 289209), ('Chino(a)', 9170), ('Blanco(a) o mestizo(a)', 3597847), ('Otro', 36334), ('Ninguna', 124641), ('Ignorado', 95140)]
-  text: ﻿ R+SP Output Table Frecuencia de P02 Sexo P02 Sexo Casos % Acumulado % Hombre 2.106.063 49,0 49,0 Mujer 2.195.649 51,0 100,0 Total 4.301.712 100,0 100,0 Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.xls?LFN=RpBases\Tempo\~tmp_9030981.xls
-  link: 'Descargar en formato PDF' -> http://sistemas.inec.cr:8080/bininecmm/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_9030981.pdf
-  table: area=None name='' title='P02 Sexo' total=4301712 na=None rows=[('Hombre', 2106063), ('Mujer', 2195649)]
+source: https://statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx
+  224,616 bytes
+  224,531 characters, 1 table(s)
+  title: 
+  -- table 0: 787 rows
+    Parish | Community | Total Population | Number of Dwellings
+    Kingston | - Kingston Communities | 89,186 | 29,005
+    Kingston | Allman Town Part 1 | 6,142 | 2,333
+    Kingston | Central Down Town | 4,464 | 1,407
+    Kingston | Denham Town Part 1 | 4,925 | 1,690
+    Kingston | Fletchers Land | 2,644 | 1,116
+    Kingston | Franklyn Town Part 1 | 10,427 | 3,654
+    Kingston | Hannah Town | 2,059 | 674
+    Kingston | Harbour View Part 1 | 4,158 | 1,230
+    Kingston | Jones Town Part 1 | 763 | 196
+    Kingston | Parade Gardens | 4,634 | 1,897
+    Kingston | Port Royal | 3,144 | 402
+    Kingston | Rae Town | 4,374 | 1,282
+    Kingston | Rockfort | 11,198 | 3,669
+    Kingston | Rollington Town | 5,741 | 2,073
+    Kingston | Rose Gardens | 3,058 | 1,310
+    Kingston | Springfield Gardens | 7,534 | 2,423
+    Kingston | Tivoli Gardens | 13,922 | 3,651
+    St. Andrew | - St. Andrew Communities | 583,718 | 193,044
+    St. Andrew | Allman Town Part 2 | 2,866 | 799
+    St. Andrew | August Town | 9,369 | 3,164
+    St. Andrew | Barbican | 20,648 | 7,612
+    St. Andrew | Bloxborough/Bito | 926 | 356
+    St. Andrew | Boucher Park | 5,020 | 1,585
+    St. Andrew | Brandon Hill | 2,205 | 835
+    St. Andrew | Bull Bay | 14,491 | 4,681
+    St. Andrew | Cavaliers | 1,853 | 675
+    St. Andrew | Constant Spring | 37,370 | 13,053
+    St. Andrew | Constitution Hill | 3,153 | 1,262
+    St. Andrew | Content Gap | 1,170 | 319
+    St. Andrew | Cooreville | 3,713 | 1,299
+    St. Andrew | Cross Roads | 9,887 | 2,763
+    St. Andrew | Dallas | 2,416 | 728
+    St. Andrew | Delacree Pen | 12,435 | 3,739
+    St. Andrew | Denham Town Part 2 | 2,504 | 704
+    St. Andrew | Drewsland | 6,377 | 2,264
+    St. Andrew | Duhaney Park | 10,951 | 3,707
+    St. Andrew | Ferry | 789 | 239
+    St. Andrew | Franklyn Town Part 2 | 1,022 | 369
+    St. Andrew | Golden Spring | 5,084 | 1,866
+    St. Andrew | Gordon Town | 2,635 | 975
+    St. Andrew | Greenwich Town | 7,599 | 1,891
+    St. Andrew | Half Way Tree | 15,370 | 4,936
+    St. Andrew | Harbour View Part 2 | 10,721 | 3,397
+    St. Andrew | Hughenden/Arlene Gardens | 9,713 | 3,088
+    St. Andrew | Irish Town | 3,416 | 934
+    St. Andrew | Jacks Hill | 7,872 | 3,003
+    St. Andrew | Jones Town Part 2 | 10,972 | 3,656
+    St. Andrew | Kencot | 5,911 | 1,796
+    St. Andrew | Lawrence Tavern | 15,403 | 5,551
+    St. Andrew | Liguanea | 22,781 | 8,262
+    St. Andrew | Majesty Gardens | 2,453 | 782
+    St. Andrew | Mannings Hill | 6,870 | 1,697
+    St. Andrew | Maryland | 2,929 | 1,205
+    St. Andrew | Maverley | 4,217 | 1,569
+    St. Andrew | Mavis Bank | 5,533 | 1,796
+    St. Andrew | Maxfield Park | 4,283 | 1,280
+    St. Andrew | Meadowbrook/Havendale | 16,155 | 5,535
+    St. Andrew | Molynes Gardens | 13,164 | 4,678
+    St. Andrew | Mona | 11,659 | 4,372
+    St. Andrew | Mount James | 2,885 | 969
+    St. Andrew | Mountain View | 10,281 | 3,372
+    St. Andrew | New Haven | 4,328 | 1,438
+    St. Andrew | New Kingston | 6,550 | 2,614
+    St. Andrew | Olympic Gardens | 8,318 | 3,060
+    St. Andrew | Papine | 11,989 | 4,351
+    St. Andrew | Parks Road | 2,366 | 843
+    St. Andrew | Patrick City | 6,132 | 2,162
+    St. Andrew | Pembroke Hall | 6,552 | 2,168
+    St. Andrew | Red Hills | 28,462 | 7,979
+    St. Andrew | Red Hills Gardens | 2,575 | 999
+    St. Andrew | Richmond Park | 2,797 | 899
+    St. Andrew | Riverton Meadows | 7,218 | 1,681
+    St. Andrew | Rock Hall Part 2 | 4,280 | 1,143
+    St. Andrew | Seaview Gardens | 12,087 | 3,848
+    St. Andrew | Seivwright Gardens | 11,269 | 3,549
+    St. Andrew | Seymour Lands | 6,612 | 1,721
+    St. Andrew | St. Peter's | 1,153 | 436
+    St. Andrew | State and Ziadie Gardens | 1,755 | 691
+    St. Andrew | Stony Hill | 9,447 | 2,409
+    St. Andrew | Swallowfield | 11,173 | 2,713
+    St. Andrew | Temple Hall | 2,988 | 1,044
+    St. Andrew | Tower Hill | 4,945 | 1,773
+    St. Andrew | Trench Town | 20,154 | 6,514
+    St. Andrew | Vineyard Town | 7,825 | 2,798
+    St. Andrew | Waltham Gardens/Mandela | 8,573 | 2,925
+    St. Andrew | Washington Gardens | 6,224 | 2,175
+    St. Andrew | Waterhouse | 8,775 | 3,145
+    St. Andrew | Whitehall Gardens | 12,299 | 4,441
+    St. Andrew | Whitfield Town | 14,401 | 5,308
+    St. Andrew | Woodford | 5,398 | 1,454
+    St.Thomas | - St.Thomas Communities | 94,485 | 32,587
+    St. Thomas | Airy Castle | 1,294 | 477
+    St. Thomas | Albion | 5,082 | 1,609
+    St. Thomas | Amity Hall | 440 | 161
+    St. Thomas | Arcadia | 767 | 315
+    St. Thomas | Baptist | 3,405 | 1,139
+    St. Thomas | Barking Lodge | 1,005 | 371
+    St. Thomas | Bath | 1,584 | 727
+    St. Thomas | Cedar Valley | 1,670 | 682
+    St. Thomas | Church Corner | 3,041 | 923
+    St. Thomas | Dalvey | 2,375 | 896
+    St. Thomas | Danvers Pen | 1,647 | 543
+    St. Thomas | Duckenfield | 1,593 | 641
+    St. Thomas | Duhaney Pen | 2,320 | 829
+    St. Thomas | Easington | 2,404 | 739
+    St. Thomas | Eleven Miles | 3,531 | 1,051
+    St. Thomas | Font Hill | 1,016 | 288
+    St. Thomas | Golden Grove | 1,222 | 488
+    St. Thomas | Hagley Gap | 1,122 | 438
+    St. Thomas | Hayfield | 195 | 73
+    St. Thomas | Hillside | 167 | 80
+    St. Thomas | Johns Town | 443 | 165
+    St. Thomas | Johnson Mountain | 265 | 123
+    St. Thomas | Jones Pen | 189 | 57
+    St. Thomas | Leith Hall | 2,148 | 870
+    St. Thomas | Llandewey/Ramble | 1,370 | 330
+    St. Thomas | Lloyds | 1,737 | 582
+    St. Thomas | Lyssons | 4,217 | 1,451
+    St. Thomas | Middleton | 441 | 138
+    St. Thomas | Morant Bay | 1,063 | 410
+    St. Thomas | Mount Lebanus | 2,048 | 753
+    St. Thomas | Pamphret | 916 | 334
+    St. Thomas | Pear Tree River | 659 | 258
+    St. Thomas | Poorman's Corner | 5,074 | 1,791
+    St. Thomas | Port Morant | 2,246 | 803
+    St. Thomas | Prospect | 4,587 | 1,489
+    St. Thomas | Retreat | 2,583 | 927
+    St. Thomas | Richmond Vale | 560 | 172
+    St. Thomas | Riverhead | 627 | 237
+    St. Thomas | Rowlandsfield | 855 | 337
+    St. Thomas | Seaforth | 5,314 | 1,526
+    St. Thomas | Somerset | 684 | 276
+    St. Thomas | Spring Gardens | 2,947 | 896
+    St. Thomas | Sunning Hill | 895 | 420
+    St. Thomas | Trinityville | 2,298 | 732
+    St. Thomas | Wheelersfield | 952 | 306
+    St. Thomas | White Hall | 2,683 | 894
+    St. Thomas | White Horses | 2,872 | 972
+    St. Thomas | Wilmington | 458 | 194
+    St. Thomas | Winchester | 565 | 214
+    St. Thomas | Yallahs | 5,085 | 1,845
+    St. Thomas | York | 1,820 | 615
+    Portland | - Portland Communities | 84,972 | 27,447
+    Portland | Balcarres | 752 | 230
+    Portland | Bangor Ridge | 1,172 | 404
+    Portland | Bellevue | 599 | 204
+    Portland | Black Hill | 1,573 | 539
+    Portland | Boundbrook | 3,608 | 1,093
+    Portland | Breastworks | 3,997 | 1,141
+    Portland | Buff Bay/ Belvedere | 489 | 134
+    Portland | Buff Bay/Belvedere | 6,946 | 2,104
+    Portland | Bybrook | 483 | 140
+    Portland | Cascade | 692 | 156
+    Portland | Castle Comfort | 2,218 | 633
+    Portland | Charles Town | 696 | 236
+    Portland | Claverty Cottage | 297 | 101
+    Portland | Comfort Castle | 1,770 | 588
+    Portland | Drapers | 1,209 | 439
+    Portland | Durham | 392 | 135
+    Portland | Fairy Hill | 3,800 | 1,175
+    Portland | Fellowship | 2,458 | 742
+    Portland | Fruitfulvale | 1,455 | 459
+    Portland | Hectors River | 1,665 | 652
+    Portland | Hope Bay | 2,282 | 814
+    Portland | Kensignton | 946 | 292
+    Portland | Long Bay | 2,199 | 639
+    Portland | Long Road | 1,771 | 622
+    Portland | Manchioneal | 2,327 | 802
+    Portland | Moore Town | 1,155 | 358
+    Portland | Mount Pleasant | 1,279 | 387
+    Portland | Nonsuch | 1,277 | 442
+    Portland | Norwich | 4,005 | 1,320
+    Portland | Orange Bay | 988 | 363
+    Portland | Port Antonio Central | 6,514 | 2,196
+    Portland | Prospect | 4,422 | 1,644
+    Portland | Reach | 464 | 159
+    Portland | Rock Hall | 970 | 314
+    Portland | Sherwood Forest | 1,435 | 563
+    Portland | Shirley Castle | 322 | 106
+    Portland | Skibo/Chepstowe | 944 | 382
+    Portland | Snow Hill | 2,824 | 759
+    Portland | Spring Hill | 1,097 | 246
+    Portland | St. Margaret's Bay | 1,990 | 600
+    Portland | Swift River | 1,737 | 609
+    Portland | Tranquility | 430 | 188
+    Portland | Windsor | 994 | 319
+    Portland | Windsor Castle | 3,600 | 1,318
+    Portland | Windsor Forest | 2,732 | 700
+    St. Mary | - St. Mary Communities | 116,497 | 38,660
+    St. Mary | Amiel Town | 731 | 235
+    St. Mary | Annotto Bay | 6,539 | 1,951
+    St. Mary | Baileys Vale | 1,707 | 655
+    St. Mary | Belfield | 2,760 | 934
+    St. Mary | Bonny Gate | 1,483 | 466
+    St. Mary | Boscobel | 7,157 | 2,587
+    St. Mary | Brainerd | 2,448 | 614
+    St. Mary | Broadgate | 498 | 267
+    St. Mary | Camberwell | 1,429 | 466
+    St. Mary | Carron Hall | 1,717 | 719
+    St. Mary | Castleton | 1,500 | 515
+    St. Mary | Charles Town | 1,955 | 591
+    St. Mary | Clonmel | 2,054 | 724
+    St. Mary | Devon Pen | 446 | 81
+    St. Mary | Dover | 459 | 136
+    St. Mary | Enfield | 2,685 | 868
+    St. Mary | Epsom | 1,153 | 371
+    St. Mary | Flint River | 1,061 | 426
+    St. Mary | Free Hill | 3,217 | 1,195
+    St. Mary | Friendship Gap | 311 | 74
+    St. Mary | Galina | 2,193 | 886
+    St. Mary | Gayle | 1,452 | 590
+    St. Mary | Guys Hill Part 2 | 691 | 238
+    St. Mary | Hampstead | 1,497 | 464
+    St. Mary | Highgate | 9,114 | 2,809
+    St. Mary | Islington | 6,483 | 2,028
+    St. Mary | Jacks River | 2,203 | 719
+    St. Mary | Jeffery Town | 1,581 | 530
+    St. Mary | Labryinth | 759 | 197
+    St. Mary | Labyrinth | 1,200 | 325
+    St. Mary | Long Road | 583 | 164
+    St. Mary | Lucky Hill | 1,859 | 688
+    St. Mary | Mango Valley | 2,568 | 772
+    St. Mary | Martin | 2,758 | 853
+    St. Mary | Mason Hall | 1,256 | 343
+    St. Mary | Mile Gully | 293 | 112
+    St. Mary | Oracabessa | 6,885 | 2,393
+    St. Mary | Pleasant Hill/Baxter Mountain | 341 | 127
+    St. Mary | Port Maria | 8,240 | 2,870
+    St. Mary | Prospect | 4,791 | 1,360
+    St. Mary | Providence | 421 | 114
+    St. Mary | Retreat | 4,895 | 1,598
+    St. Mary | Richmond | 5,947 | 1,949
+    St. Mary | Robins Bay | 1,572 | 520
+    St. Mary | Sandside | 1,864 | 707
+    St. Mary | Scotts Hall | 1,133 | 394
+    St. Mary | Woodpark | 1,698 | 663
+    St. Mary | Woodside | 913 | 372
+    St. Ann | - St. Ann Communities | 175,310 | 62,512
+    St. Ann | Aboukir | 2,145 | 777
+    St. Ann | Alderton | 433 | 211
+    St. Ann | Alexandria | 2,344 | 1,076
+    St. Ann | Alva | 818 | 253
+    St. Ann | Bamboo | 8,096 | 2,607
+    St. Ann | Beecher Town | 1,766 | 627
+    St. Ann | Bensonton | 1,007 | 480
+    St. Ann | Blackstonedge | 1,423 | 608
+    St. Ann | Bohemia/Cascade | 3,221 | 1,011
+    St. Ann | Borobridge/Cuffie Ridge | 1,101 | 461
+    St. Ann | Brown's Town | 14,984 | 5,536
+    St. Ann | Calderwood | 5,102 | 1,798
+    St. Ann | Cave Valley | 2,296 | 667
+    St. Ann | Chalky Hill | 1,550 | 506
+    St. Ann | Chester | 320 | 148
+    St. Ann | Claremont | 4,362 | 1,575
+    St. Ann | Colegate | 3,974 | 1,293
+    St. Ann | Content Gardens | 1,487 | 348
+    St. Ann | Discovery Bay | 11,666 | 3,920
+    St. Ann | Epworth | 1,242 | 432
+    St. Ann | Exchange | 9,522 | 3,375
+    St. Ann | Faiths Pen | 646 | 249
+    St. Ann | Gibraltar Brown's Town | 942 | 327
+    St. Ann | Gibraltar Moneague | 1,663 | 606
+    St. Ann | Golden Grove | 3,651 | 1,238
+    St. Ann | Great Pond | 2,913 | 1,226
+    St. Ann | Higgins Land | 629 | 229
+    St. Ann | Hinds Town | 674 | 257
+    St. Ann | Inverness | 701 | 354
+    St. Ann | Lime Hall | 5,775 | 2,007
+    St. Ann | Lime Tree Garden | 1,157 | 427
+    St. Ann | Linton Park | 195 | 100
+    St. Ann | Madras | 933 | 343
+    St. Ann | Mansfield | 3,227 | 1,341
+    St. Ann | McNie | 3,296 | 1,164
+    St. Ann | Moneague | 3,965 | 1,729
+    St. Ann | Mount Moriah | 1,782 | 700
+    St. Ann | Mt. Zion/Mines | 969 | 485
+    St. Ann | Ocho Rios | 8,587 | 2,525
+    St. Ann | Parry Town | 880 | 340
+    St. Ann | Philadelphia | 801 | 405
+    St. Ann | Pimento Walk | 853 | 251
+    St. Ann | Priory | 10,115 | 3,461
+    St. Ann | Rio Hoe/River Head | 1,631 | 607
+    St. Ann | Runaway Bay | 13,160 | 5,298
+    St. Ann | St. Ann's Bay | 6,946 | 2,146
+    St. Ann | St. D'acre | 3,256 | 1,144
+    St. Ann | Steer Town | 12,216 | 4,277
+    St. Ann | Sturge Town | 689 | 207
+    St. Ann | Walkers Wood | 1,834 | 512
+    St. Ann | Watt Town | 1,804 | 587
+    St. Ann | York Castle | 558 | 260
+    Trelawny | - Trelawny Communities | 77,427 | 30,194
+    Trelawny | Albert Town | 753 | 332
+    Trelawny | Bounty Hall | 3,196 | 1,066
+    Trelawny | Brampton | 420 | 145
+    Trelawny | Bunker's Hill | 1,436 | 565
+    Trelawny | Clark's Town | 3,455 | 1,344
+    Trelawny | Daniel Town | 3,357 | 1,651
+    Trelawny | Deeside | 3,309 | 1,115
+    Trelawny | Duanvale | 1,347 | 587
+    Trelawny | Duncans | 3,410 | 1,429
+    Trelawny | Falmouth | 14,023 | 5,871
+    Trelawny | Freeman's Hall | 355 | 118
+    Trelawny | Granville/Martha Brae | 4,328 | 1,642
+    Trelawny | Hampden | 781 | 180
+    Trelawny | Jackson Town | 2,456 | 985
+    Trelawny | Joe Hut | 327 | 161
+    Trelawny | Kinloss | 1,060 | 476
+    Trelawny | Lorrimers | 3,131 | 1,100
+    Trelawny | Perth Town | 903 | 321
+    Trelawny | Refuge | 801 | 308
+    Trelawny | Rio Bueno | 1,665 | 569
+    Trelawny | Salt Marsh | 3,946 | 1,289
+    Trelawny | Samuel Prospect | 749 | 400
+    Trelawny | Sherwood Content | 1,755 | 635
+    Trelawny | Spicy Hill | 1,637 | 736
+    Trelawny | Spring Garden | 822 | 437
+    Trelawny | St. Vincent | 350 | 146
+    Trelawny | Stettin | 1,740 | 708
+    Trelawny | Stewart Town | 578 | 243
+    Trelawny | The Alps/Sawyers | 1,363 | 456
+    Trelawny | Troy | 1,192 | 502
+    Trelawny | Ulster Spring | 1,272 | 483
+    Trelawny | Wait-A-Bit | 1,678 | 650
+    Trelawny | Wakefield | 4,434 | 1,462
+    Trelawny | Warsop | 2,599 | 1,112
+    Trelawny | Wilson's Run | 881 | 329
+    Trelawny | Wirefence | 1,918 | 640
+    St. James | - St. James Communities | 188,656 | 70,686
+    St. James | Adelphi | 2,598 | 1,013
+    St. James | Albion | 2,838 | 830
+    St. James | Anchovy | 3,957 | 1,246
+    St. James | Arcadia | 278 | 180
+    St. James | Barrett Hall | 2,529 | 963
+    St. James | Barrett Town | 2,151 | 836
+    St. James | Belmont/Tower Hill | 569 | 225
+    St. James | Bickersteth | 1,612 | 633
+    St. James | Bogue | 9,129 | 3,060
+    St. James | Brandon Hill | 581 | 223
+    St. James | Cambridge | 3,119 | 1,356
+    St. James | Canterbury | 339 | 149
+    St. James | Catadupa | 1,423 | 650
+    St. James | Catherine Hall | 1,417 | 522
+    St. James | Catherine Mount | 609 | 379
+    St. James | Comfort Hall | 820 | 285
+    St. James | Coral Gardens | 5,936 | 1,358
+    St. James | Cornwall | 2,332 | 1,208
+    St. James | Dumfries | 2,334 | 952
+    St. James | Fairfield | 4,003 | 1,668
+    St. James | Farm Heights | 1,275 | 597
+    St. James | Flagstaff | 537 | 248
+    St. James | Flamstead Gardens | 1,477 | 627
+    St. James | Flanker | 6,395 | 2,382
+    St. James | Flower Hill | 979 | 379
+    St. James | Garlands | 477 | 173
+    St. James | Glendevon | 6,010 | 1,907
+    St. James | Goodwill | 1,071 | 410
+    St. James | Granville | 2,600 | 1,113
+    St. James | Green Pond | 8,388 | 4,421
+    St. James | Greenwood | 1,205 | 452
+    St. James | Hopeton | 2,063 | 749
+    St. James | Ironshore | 3,736 | 765
+    St. James | Johns Hall | 4,234 | 1,711
+    St. James | Lilliput | 6,494 | 2,451
+    St. James | Lottery | 1,767 | 734
+    St. James | Mafoota | 1,797 | 608
+    St. James | Maldon | 458 | 192
+    St. James | Maroon Town | 818 | 307
+    St. James | Mocho | 553 | 181
+    St. James | Montego Bay Business District | 10,182 | 2,814
+    St. James | Montpelier | 1,961 | 726
+    St. James | Moy Hall | 271 | 109
+    St. James | Mt. Carey | 1,254 | 630
+    St. James | Mt. Horeb | 875 | 328
+    St. James | Mt. Salem | 3,445 | 1,535
+    St. James | Niagara | 683 | 278
+    St. James | Norwood | 11,408 | 3,870
+    St. James | Orange | 5,619 | 2,135
+    St. James | Orange Irwin | 2,713 | 572
+    St. James | Paradise | 2,111 | 789
+    St. James | Pitfour | 2,497 | 999
+    St. James | Porto Bello | 2,650 | 904
+    St. James | Reading | 1,253 | 442
+    St. James | Retirement | 4,391 | 1,777
+    St. James | Retrieve | 560 | 244
+    St. James | Roehampton | 1,311 | 541
+    St. James | Rose Hall | 2,194 | 654
+    St. James | Rose Heights | 3,546 | 1,895
+    St. James | Rosemount | 845 | 497
+    St. James | Rosemount Gardens | 897 | 573
+    St. James | Salt Spring | 3,970 | 1,096
+    St. James | Seven Rivers | 1,339 | 460
+    St. James | Somerton | 3,018 | 1,131
+    St. James | Spot Valley | 2,101 | 965
+    St. James | Spring Gardens | 562 | 195
+    St. James | Stonehenge | 756 | 285
+    St. James | Summer Hill | 1,222 | 422
+    St. James | Sunderland | 430 | 158
+    St. James | Tangle River | 941 | 368
+    St. James | Tucker | 3,586 | 1,656
+    St. James | Unity Hall | 2,077 | 723
+    St. James | Vaughansfield | 792 | 316
+    St. James | Welcome Hall | 2,473 | 918
+    St. James | Westgate Hills | 2,165 | 771
+    St. James | Westgreen | 1,644 | 767
+    Hanover | - Hanover Communities | 69,780 | 25,942
+    Hanover | Askenish | 1,160 | 445
+    Hanover | Cacoon | 941 | 436
+    Hanover | Cacoon Castle | 1,878 | 629
+    Hanover | Cascade | 1,044 | 369
+    Hanover | Cash Hill | 401 | 141
+    Hanover | Cauldwell | 1,511 | 626
+    Hanover | Chambers Pen | 551 | 221
+    Hanover | Chester Castle | 2,641 | 890
+    Hanover | Content | 476 | 151
+    Hanover | Copse | 1,012 | 307
+    Hanover | Cousins Cove | 950 | 636
+    Hanover | Dias | 2,259 | 994
+    Hanover | Great Valley | 1,959 | 639
+    Hanover | Green Island | 4,896 | 1,661
+    Hanover | Haddington | 361 | 129
+    Hanover | Hopewell | 6,865 | 2,439
+    Hanover | Jericho | 1,075 | 346
+    Hanover | Kendal | 1,013 | 341
+    Hanover | Kingsvale | 2,388 | 937
+    Hanover | Lances Bay | 700 | 368
+    Hanover | Logwood | 1,837 | 847
+    Hanover | Lucea | 10,042 | 3,751
+    Hanover | March Town | 2,123 | 793
+    Hanover | Maryland | 556 | 266
+    Hanover | Mount Peace | 496 | 212
+    Hanover | Mount Peto | 1,084 | 408
+    Hanover | Orange Bay | 2,447 | 1,060
+    Hanover | Pell River | 850 | 322
+    Hanover | Pondside | 526 | 159
+    Hanover | Ramble | 3,632 | 1,194
+    Hanover | Rock Spring | 1,727 | 583
+    Hanover | Sandy Bay | 5,797 | 1,862
+    Hanover | Santoy | 2,666 | 1,111
+    Hanover | Success | 857 | 292
+    Hanover | Woodlands | 720 | 254
+    Hanover | Woodsville | 337 | 124
+    Westmoreland | - Westmoreland Communities | 146,205 | 54,624
+    Westmoreland | Amity Darliston | 1,073 | 245
+    Westmoreland | Amity Savanna-la-mar | 1,243 | 560
+    Westmoreland | Ashton | 949 | 393
+    Westmoreland | Barneyside/Struie | 1,641 | 606
+    Westmoreland | Bath | 601 | 398
+    Westmoreland | Bath Mountain | 932 | 263
+    Westmoreland | Beaufort | 290 | 122
+    Westmoreland | Beeston Spring | 1,973 | 597
+    Westmoreland | Belvedere | 848 | 375
+    Westmoreland | Berkshire/Dundee | 1,237 | 446
+    Westmoreland | Bethel Town | 4,638 | 1,483
+    Westmoreland | Big Bridge | 2,865 | 1,096
+    Westmoreland | Bluefields | 3,822 | 1,339
+    Westmoreland | Broughton | 1,516 | 553
+    Westmoreland | Burnt Savannah | 3,453 | 1,256
+    Westmoreland | Cairn Curran | 376 | 155
+    Westmoreland | Caledonia | 553 | 245
+    Westmoreland | Carmel | 395 | 185
+    Westmoreland | Cave | 756 | 417
+    Westmoreland | Chantilly | 1,085 | 381
+    Westmoreland | Content | 474 | 157
+    Westmoreland | Cornwall Mountain | 671 | 289
+    Westmoreland | Darliston | 2,301 | 875
+    Westmoreland | Delveland | 1,303 | 533
+    Westmoreland | Dillion Bigwoods | 920 | 360
+    Westmoreland | Enfield | 572 | 213
+    Westmoreland | Farm Pen | 1,640 | 791
+    Westmoreland | Ferris | 757 | 374
+    Westmoreland | Fort William | 1,119 | 423
+    Westmoreland | Frome | 1,329 | 566
+    Westmoreland | Fullersfield/Alma | 1,625 | 557
+    Westmoreland | Georges Plain | 2,704 | 1,149
+    Westmoreland | Grange | 694 | 258
+    Westmoreland | Grange Hill | 8,278 | 3,075
+    Westmoreland | Haddo/McField | 815 | 343
+    Westmoreland | Hertford | 2,887 | 1,167
+    Westmoreland | Jerusalem Heights/Jerusalem Mountain | 1,314 | 441
+    Westmoreland | Kentucky | 451 | 194
+    Westmoreland | Kilmarnock | 1,210 | 351
+    Westmoreland | Lambs River | 457 | 159
+    Westmoreland | Leamington | 653 | 212
+    Westmoreland | Lennox Bigwoods | 1,359 | 639
+    Westmoreland | Little London | 9,310 | 3,177
+    Westmoreland | Llandilo | 3,397 | 1,499
+    Westmoreland | Mearnsville/Auldayr | 816 | 294
+    Westmoreland | Mount Airy | 2,824 | 847
+    Westmoreland | Mount Stewart | 753 | 300
+    Westmoreland | Negril | 10,435 | 3,539
+    Westmoreland | New Roads | 1,007 | 355
+    Westmoreland | New Works | 1,293 | 473
+    Westmoreland | Orange Hill | 2,271 | 736
+    Westmoreland | Paul Island | 1,233 | 436
+    Westmoreland | Petersfield | 3,787 | 1,927
+    Westmoreland | Petersville | 1,719 | 689
+    Westmoreland | Porters Mountain | 313 | 156
+    Westmoreland | Red Hills | 1,100 | 394
+    Westmoreland | Revival | 2,682 | 841
+    Westmoreland | Roaring River | 698 | 330
+    Westmoreland | Savanna-la-mar Business District | 10,884 | 3,885
+    Westmoreland | Seaford Town | 764 | 286
+    Westmoreland | Sheffield | 4,538 | 1,606
+    Westmoreland | Smithfield | 3,186 | 1,012
+    Westmoreland | St. Leonards | 628 | 278
+    Westmoreland | Strathbogie | 2,159 | 873
+    Westmoreland | Strawberry | 825 | 329
+    Westmoreland | Three Miles River | 747 | 405
+    Westmoreland | Town Head | 1,058 | 374
+    Westmoreland | Truro | 968 | 352
+    Westmoreland | Water Works | 3,715 | 1,386
+    Westmoreland | Whitehouse | 5,934 | 1,998
+    Westmoreland | Whithorn | 2,621 | 1,221
+    Westmoreland | Williamsfield | 762 | 383
+    St. Elizabeth | - St.Elizabeth Communities | 153,201 | 54,392
+    St.Elizabeth | Aberdeen | 1,082 | 475
+    St. Elizabeth | Accompong | 1,262 | 375
+    St. Elizabeth | Balaclava | 3,501 | 1,256
+    St. Elizabeth | Ballard's Valley | 2,934 | 985
+    St. Elizabeth | Barbury Hall | 1,829 | 680
+    St. Elizabeth | Bigwoods | 1,017 | 358
+    St. Elizabeth | Black River | 4,067 | 1,474
+    St. Elizabeth | Bogue | 722 | 281
+    St. Elizabeth | Braes River | 2,210 | 787
+    St. Elizabeth | Brighton | 1,674 | 700
+    St. Elizabeth | Brompton | 3,138 | 1,126
+    St. Elizabeth | Bull Savannah | 2,963 | 1,061
+    St. Elizabeth | Burnt Savannah | 2,535 | 1,043
+    St. Elizabeth | Carisbrook | 1,209 | 389
+    St. Elizabeth | Cotterwood | 851 | 327
+    St. Elizabeth | Crawford | 1,900 | 690
+    St. Elizabeth | Elderslie | 647 | 255
+    St. Elizabeth | Fullerswood | 2,574 | 815
+    St. Elizabeth | Giddy Hall | 2,073 | 755
+    St. Elizabeth | Ginger Hill | 1,185 | 402
+    St. Elizabeth | Goshen | 2,697 | 1,108
+    St. Elizabeth | Holland | 2,772 | 855
+    St. Elizabeth | Hopeton | 318 | 104
+    St. Elizabeth | Junction | 9,846 | 3,651
+    St. Elizabeth | Lacovia | 4,957 | 1,587
+    St. Elizabeth | Leeds | 3,301 | 1,150
+    St. Elizabeth | Lititz | 1,548 | 559
+    St. Elizabeth | Maggotty | 3,121 | 1,035
+    St. Elizabeth | Malvern | 4,031 | 1,485
+    St. Elizabeth | Merrywood | 664 | 236
+    St. Elizabeth | Middle Quarters | 2,770 | 1,075
+    St. Elizabeth | Mountainside | 3,175 | 1,052
+    St. Elizabeth | Mulgrave | 399 | 224
+    St. Elizabeth | Nain | 3,598 | 954
+    St. Elizabeth | New Market | 2,868 | 1,206
+    St. Elizabeth | Newell | 1,081 | 327
+    St. Elizabeth | Newton | 1,049 | 385
+    St. Elizabeth | Parottee | 1,613 | 588
+    St. Elizabeth | Pedro Plains | 3,482 | 1,208
+    St. Elizabeth | Pepper Part 1 | 3,248 | 1,144
+    St. Elizabeth | Pisgah | 1,125 | 382
+    St. Elizabeth | Pondside | 647 | 204
+    St. Elizabeth | Potsdam | 1,910 | 481
+    St. Elizabeth | Quick Step | 318 | 93
+    St. Elizabeth | Red Bank | 3,214 | 940
+    St. Elizabeth | Retirement | 1,181 | 376
+    St. Elizabeth | Rose Hall | 2,434 | 799
+    St. Elizabeth | Roses Valley | 921 | 293
+    St. Elizabeth | Russells/Myersville | 1,515 | 516
+    St. Elizabeth | Santa Cruz | 16,703 | 6,507
+    St.Elizabeth | Siloah | 2,741 | 1,071
+    St.Elizabeth | Slipe | 1,802 | 793
+    St.Elizabeth | Southfield | 6,249 | 2,214
+    St.Elizabeth | Springfield | 1,550 | 493
+    St.Elizabeth | Thornton | 2,750 | 1,039
+    St. Elizabeth | Top Hill | 2,409 | 878
+    St.Elizabeth | Treasure Beach | 4,400 | 1,418
+    St. Elizabeth | Warminster | 1,843 | 570
+    St. Elizabeth | Watchwell | 2,417 | 795
+    St. Elizabeth | White Hill | 1,161 | 361
+    Manchester | - Manchester Communities | 193,694 | 61,996
+    Manchester | Alligator Pond | 2,909 | 836
+    Manchester | Asia | 4,494 | 1,545
+    Manchester | Auchtembeddie | 1,419 | 453
+    Manchester | Banana Ground Part 1 | 479 | 146
+    Manchester | Bellefield | 1,485 | 441
+    Manchester | Bethany | 1,370 | 392
+    Manchester | Blue Mountain | 971 | 342
+    Manchester | Bombay | 1,728 | 553
+    Manchester | Butt-Up | 1,061 | 277
+    Manchester | Cedar Grove | 4,559 | 1,713
+    Manchester | Chantilly | 2,220 | 661
+    Manchester | Christiana | 6,669 | 2,140
+    Manchester | Chudleigh | 3,134 | 1,024
+    Manchester | Cobbla | 3,832 | 1,264
+    Manchester | Coleyville | 3,678 | 1,142
+    Manchester | Comfort | 1,024 | 325
+    Manchester | Comfort Hall | 1,092 | 341
+    Manchester | Craighead/Good Intent | 3,029 | 1,214
+    Manchester | Cross Keys | 2,895 | 833
+    Manchester | Devon | 1,584 | 494
+    Manchester | Downs | 3,657 | 1,037
+    Manchester | Ellen Street | 911 | 212
+    Manchester | Evergreen | 465 | 162
+    Manchester | Fairfield | 2,913 | 904
+    Manchester | French Park | 1,852 | 500
+    Manchester | George's Valley | 2,418 | 886
+    Manchester | Greenvale | 8,499 | 2,836
+    Manchester | Grey Ground | 3,596 | 1,221
+    Manchester | Grove Place | 710 | 218
+    Manchester | Grove Town | 2,515 | 963
+    Manchester | Harmons | 1,936 | 685
+    Manchester | Harry Watch | 1,546 | 500
+    Manchester | Hatfield | 3,289 | 1,224
+    Manchester | Hibernia | 1,487 | 464
+    Manchester | Huntley | 1,947 | 694
+    Manchester | Kendal | 1,410 | 503
+    Manchester | Knockpatrick | 2,951 | 903
+    Manchester | Lancaster | 1,081 | 328
+    Manchester | Litchfield | 807 | 238
+    Manchester | Lyndhurst | 551 | 149
+    Manchester | Maidstone | 2,111 | 647
+    Manchester | Mandeville | 21,686 | 7,384
+    Manchester | Marlie Hill | 1,506 | 394
+    Manchester | May Day | 1,036 | 332
+    Manchester | Medina | 597 | 171
+    Manchester | Mike Town | 777 | 228
+    Manchester | Mile Gully | 1,902 | 637
+    Manchester | New Forest | 3,142 | 981
+    Manchester | New Green | 2,184 | 699
+    Manchester | Newport | 5,220 | 1,555
+    Manchester | Old England | 5,293 | 1,486
+    Manchester | Oxford | 630 | 262
+    Manchester | Pepper Part 2 | 158 | 54
+    Manchester | Pike | 1,450 | 461
+    Manchester | Plowden | 1,667 | 509
+    Manchester | Porus | 10,156 | 3,226
+    Manchester | Prospect | 2,440 | 695
+    Manchester | Richmond | 2,285 | 784
+    Manchester | Robins Hall | 1,396 | 412
+    Manchester | Rose Hill | 615 | 292
+    Manchester | Royal Flat | 2,196 | 635
+    Manchester | Scotts Pass | 2,316 | 692
+    Manchester | Silent Hill | 1,280 | 465
+    Manchester | Snowdon | 2,274 | 567
+    Manchester | Somerset | 1,396 | 397
+    Manchester | Spalding Part 1 | 1,374 | 484
+    Manchester | Spring Ground | 2,378 | 718
+    Manchester | Spur Tree | 4,453 | 1,182
+    Manchester | St. Paul's | 1,460 | 505
+    Manchester | Swabys Hope | 2,092 | 564
+    Manchester | Top Hill | 521 | 158
+    Manchester | Victoria Town | 957 | 323
+    Manchester | Walderston | 3,052 | 985
+    Manchester | Waltham | 3,228 | 1,035
+    Manchester | Williamsfield | 4,287 | 1,314
+    Clarendon | - Clarendon Communities | 258,643 | 78,312
+    Clarendon | Aenon Town | 2,253 | 610
+    Clarendon | Alley | 1,411 | 448
+    Clarendon | Alston | 2,457 | 700
+    Clarendon | Ashley | 2,882 | 932
+    Clarendon | Banana Ground Part 2 | 531 | 162
+    Clarendon | Beckford Kraal | 2,662 | 874
+    Clarendon | Brandon Hill | 1,421 | 508
+    Clarendon | Brixton Hill | 1,521 | 506
+    Clarendon | Bucknor | 2,619 | 900
+    Clarendon | Bushy Park | 5,447 | 1,869
+    Clarendon | Chapelton | 3,616 | 1,134
+    Clarendon | Chateau | 1,697 | 532
+    Clarendon | Cockpit | 803 | 266
+    Clarendon | Coffee Piece | 1,974 | 626
+    Clarendon | Colonel's Ridge | 782 | 242
+    Clarendon | Coxswain | 1,509 | 337
+    Clarendon | Crofts Hill | 5,099 | 1,443
+    Clarendon | Crooked River | 3,432 | 1,108
+    Clarendon | Cumberland | 2,536 | 749
+    Clarendon | Curatoe Hill | 3,602 | 1,087
+    Clarendon | Dawkins | 1,092 | 385
+    Clarendon | Effortville | 6,038 | 1,462
+    Clarendon | Four Paths | 6,282 | 1,676
+    Clarendon | Frankfield | 4,684 | 1,382
+    Clarendon | Freetown | 1,407 | 395
+    Clarendon | Gimme-Me-Bit | 2,480 | 752
+    Clarendon | Glenmuir | 2,141 | 621
+    Clarendon | Grantham | 1,449 | 377
+    Clarendon | Gravel Hill | 2,078 | 721
+    Clarendon | Halse Hall | 4,659 | 1,513
+    Clarendon | Hayes | 11,049 | 3,660
+    Clarendon | Hazard | 5,566 | 1,432
+    Clarendon | James Hill | 7,986 | 2,167
+    Clarendon | Johns Hall | 987 | 287
+    Clarendon | Kellits | 11,116 | 3,070
+    Clarendon | Lionel Town | 3,752 | 1,179
+    Clarendon | Longville Park | 9,104 | 2,897
+    Clarendon | Longwood | 889 | 268
+    Clarendon | May Pen | 8,016 | 2,315
+    Clarendon | Milk River | 3,431 | 924
+    Clarendon | Mineral Heights | 4,134 | 1,383
+    Clarendon | Mitchell Town | 1,683 | 587
+    Clarendon | Moores | 3,846 | 1,100
+    Clarendon | Morgan's Forest | 1,024 | 303
+    Clarendon | Morgan's Pass | 1,553 | 465
+    Clarendon | Mount Airy | 2,110 | 509
+    Clarendon | New Denbigh | 7,872 | 2,327
+    Clarendon | New Longsville | 687 | 291
+    Clarendon | Old Denbigh | 2,804 | 805
+    Clarendon | Orange Hill | 408 | 96
+    Clarendon | Osbourne Store | 4,296 | 1,432
+    Clarendon | Paisley | 2,218 | 734
+    Clarendon | Palmers Cross | 6,616 | 2,214
+    Clarendon | Peckham | 1,768 | 506
+    Clarendon | Pennants | 2,406 | 716
+    Clarendon | Pleasant Valley | 241 | 107
+    Clarendon | Portland Cottage | 5,045 | 1,580
+    Clarendon | Race Course | 4,050 | 1,434
+    Clarendon | Richmond Park | 1,276 | 361
+    Clarendon | Ritchies | 1,081 | 300
+    Clarendon | Rock | 1,276 | 442
+    Clarendon | Rock River | 5,166 | 1,610
+    Clarendon | Rocky Point | 2,356 | 820
+    Clarendon | Rosewell | 1,444 | 514
+    Clarendon | Salt River | 1,046 | 335
+    Clarendon | Sandy Bay | 7,542 | 2,359
+    Clarendon | Sanguinetti | 3,142 | 975
+    Clarendon | Silent Hill/Moravia | 2,862 | 664
+    Clarendon | Smithville | 2,119 | 622
+    Clarendon | Spalding Part 2 | 4,159 | 1,036
+    Clarendon | Summerfield | 2,791 | 848
+    Clarendon | Thompson Town | 6,807 | 1,854
+    Clarendon | Toll Gate | 5,438 | 1,716
+    Clarendon | Treadlight | 1,998 | 598
+    Clarendon | Trout Hall | 2,631 | 754
+    Clarendon | Turners | 1,570 | 448
+    Clarendon | Water Lane | 1,660 | 546
+    Clarendon | Woodhall | 3,276 | 1,092
+    Clarendon | York Town | 3,782 | 1,313
+    St. Catherine | - St. Catherine Communities | 542,763 | 167,414
+    St. Catherine | Above Rocks | 3,141 | 909
+    St. Catherine | Angels/Crescent | 10,802 | 3,549
+    St. Catherine | Bartons | 2,073 | 600
+    St. Catherine | Bellas Gate | 1,271 | 400
+    St. Catherine | Bernard Lodge | 8,893 | 2,548
+    St. Catherine | Bog Walk | 13,039 | 4,170
+    St. Catherine | Braeton | 14,177 | 4,521
+    St. Catherine | Bridgeport | 10,261 | 3,275
+    St. Catherine | Browns Hall | 5,370 | 1,463
+    St. Catherine | Bushy Park | 19,704 | 5,266
+    St. Catherine | Caymanas | 1,934 | 574
+    St. Catherine | Central Village | 21,677 | 6,909
+    St. Catherine | Cromarty | 16,947 | 5,089
+    St. Catherine | Cumberland | 6,522 | 2,093
+    St. Catherine | Edgewater | 10,498 | 2,449
+    St. Catherine | Ensom | 19,901 | 6,671
+    St. Catherine | Ewarton | 10,624 | 3,508
+    St. Catherine | Ginger Ridge | 1,520 | 463
+    St. Catherine | Glengoffe | 5,375 | 1,628
+    St. Catherine | Golden Acres | 5,942 | 1,984
+    St. Catherine | Greater Portmore | 57,927 | 18,715
+    St. Catherine | Greendale | 9,367 | 2,582
+    St. Catherine | Gregory Park | 12,790 | 3,897
+    St. Catherine | Guys Hill Part 1 | 6,017 | 2,201
+    St. Catherine | Hampton Green | 3,664 | 1,273
+    St. Catherine | Harewood | 1,166 | 387
+    St. Catherine | Harkers Hall | 4,899 | 1,605
+    St. Catherine | Hellshire | 3,987 | 1,224
+    St. Catherine | Independence City | 5,957 | 1,940
+    St. Catherine | Keystone | 4,066 | 1,231
+    St. Catherine | Kitson Town | 11,154 | 3,193
+    St. Catherine | Linstead | 20,693 | 6,415
+    St. Catherine | Lluidas Vale | 7,750 | 2,660
+    St. Catherine | Naggo Head | 11,041 | 3,345
+    St. Catherine | Old Harbour | 35,753 | 9,895
+    St. Catherine | Old Harbour Bay | 20,133 | 6,523
+    St. Catherine | Old Harbour Road | 8,514 | 2,667
+    St. Catherine | Passage Fort | 8,438 | 2,568
+    St. Catherine | Pear Tree Grove | 773 | 317
+    St.Catherine | Point Hill | 4,549 | 1,331
+    St. Catherine | Redwood | 3,432 | 1,048
+    St. Catherine | Riversdale | 2,455 | 919
+    St. Catherine | Rock Hall Part 1 | 1,261 | 397
+    St. Catherine | Sligoville | 6,525 | 1,906
+    St. Catherine | Spanish Town Central | 17,993 | 5,479
+    St. Catherine | St. Johns East | 8,598 | 2,697
+    St. Catherine | St. Johns West | 25,991 | 7,777
+    St. Catherine | Sydenham | 10,797 | 3,676
+    St. Catherine | Treadways | 12,650 | 3,850
+    St. Catherine | Troja | 1,061 | 406
+    St. Catherine | Waterford | 13,479 | 3,895
+    St. Catherine | Watermount | 2,081 | 621
+    St. Catherine | West Cumberland | 2,483 | 844
+    St. Catherine | Willowdene | 5,647 | 1,861
+source: https://statinja.gov.jm/PopCensus/Census2022/Population%20Change%20by%20Parish.aspx
+  120,802 bytes
+  120,717 characters, 1 table(s)
+  title: 
+  -- table 0: 15 rows
+    Parish | Total Population 2022 | Total Population 2011 | Numerical Change (2011-2022) | Percentage Change (2011-2022) | Intercensal Growth Rate (2011-2022)
+    Kingston & St. Andrew | 672,904 | 662,426 | 10,478 | 1.58 | 0.06
+    St. Thomas | 94,485 | 93,902 | 583 | 0.62 | 0.02
+    Portland | 84,972 | 81,744 | 3,228 | 3.95 | -0.15
+    St. Mary | 116,497 | 113,615 | 2,882 | 2.54 | 0.10
+    St. Ann | 175,310 | 172,362 | 2,948 | 1.71 | 0.7
+    Trelawny | 77,427 | 75,164 | 2,263 | 3.01 | 0.12
+    St. James | 188,656 | 183,811 | 4,845 | 2.64 | 0.10
+    Hanover | 69,780 | 69,533 | 247 | 0.36 | 0.01
+    Westmoreland | 146,205 | 144,103 | 2,102 | 1.46 | 0.06
+    St. Elizabeth | 153,201 | 150,205 | 2,996 | 1.99 | 0.08
+    Manchester | 193,694 | 189,797 | 3,897 | 2.05 | 0.08
+    Clarendon | 258,643 | 245,103 | 13,540 | 5.52 | 0.21
+    St. Catherine | 542,763 | 516,218 | 26,545 | 5.14 | 0.20
+    Total | 2,774,538 | 2,697,983 | 76,555 | 2.84 | 0.24
