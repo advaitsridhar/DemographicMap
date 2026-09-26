@@ -148,6 +148,11 @@ def main() -> int:
     for url in args.url:
         print(f"source: {url}" + (f" (Internet Archive {args.wayback})" if args.wayback else ""))
         try:
+            if url.startswith("hdx:"):
+                # An HDX dataset's current USCB workbook, found the way uscb.py finds it.
+                from scripts.fetch_census.uscb import workbook_url  # noqa: PLC0415
+                url = workbook_url(url[4:])
+                print(f"  workbook: {url}")
             body = fetch(url, args.wayback)
         except Exception as err:                      # noqa: BLE001
             print(f"  unreachable: {type(err).__name__}: {str(err)[:300]}")
