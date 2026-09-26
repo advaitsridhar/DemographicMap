@@ -40,6 +40,16 @@ TABLE TABLE1
     OF POBLACIO.C5P26
     AREABREAK DEPARTAM
 """,
+    # Single years of age for one small department's provinces: the shape of
+    # a table whose category labels are numbers.
+    "age-prov": """RUNDEF Job
+    SELECTION ALL
+
+TABLE TABLE1
+    AS FREQUENCY
+    OF POBLACIO.C5P41
+    AREABREAK PROVINCI
+""",
     # The same as a crosstab against the province code, the other way the
     # program could be written.
     "sex-prov-cross": """RUNDEF Job
@@ -79,6 +89,8 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", choices=sorted(PROBES))
     ap.add_argument("--limit", type=int, default=6000)
+    ap.add_argument("--raw", type=int, default=0,
+                    help="also print this many characters of each followed page's HTML")
     args = ap.parse_args()
     session = Session()
     session.get(PORTAL)
@@ -91,7 +103,10 @@ def main() -> int:
         for label, url in links:
             if any(k in url for k in ("Tempo", ".xls", ".htm", "Text?")):
                 print(f"follow: {label!r} -> {url}")
-                report(url, session.get(url), args.limit)
+                body = session.get(url)
+                report(url, body, args.limit)
+                if args.raw:
+                    print(body[:args.raw])
         return 0
     raise SystemExit("peru_redatam: only --probe is written so far")
 
