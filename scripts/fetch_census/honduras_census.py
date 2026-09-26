@@ -63,9 +63,9 @@ from scripts.probe_redatam import Session
 
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import bind, fold
-from .isthmus import (by_area, crosstab_program, crosstabs, fill_missing, median_age,
-                      sex_ratio, single_years, summed, translate)
-from .redatam import Server
+from .isthmus import (Patient, by_area, fill_missing, median_age, sex_ratio, single_years,
+                      summed, translate)
+
 
 PORTAL = "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal?BASE=CPVHND2013NAC&lang=esp"
 CMDSET = "http://181.115.7.199/binhnd/RpWebStats.exe/CmdSet"
@@ -101,17 +101,18 @@ ALIASES: dict[str, str] = {}
 FOLDED = {("santabarbara", "nuevafrontera"): "macuelizo"}
 
 
-def fetch(server: Server, level: str) -> dict[str, dict[str, dict[str, Any]]]:
+def fetch(server: Patient, level: str) -> dict[str, dict[str, dict[str, Any]]]:
+    """Every question and the crosstab for one level, in one program, checked."""
+    found, crossed = server.program(QUESTIONS, areabreak=level,
+                                    crosstab=(QUESTIONS["identity"], QUESTIONS["people"]))
     out = {}
     for question, variable in QUESTIONS.items():
-        found = server.frequency(variable, areabreak=level)
-        out[question] = by_area(found, f"{question} by {level.lower()}", WHO)
+        out[question] = by_area(found[question], f"{question} by {level.lower()}", WHO)
         log(f"  {variable} by {level.lower()}: {len(out[question])} areas")
     filled = fill_missing(out, WHO, ENUMERATED)
     log(f"  areas with no table, nobody there having been asked: {filled}; every question's "
         f"answers and not-applicables make the base's {ENUMERATED:,}")
-    pages = server.output(crosstab_program(QUESTIONS["identity"], QUESTIONS["people"], level))
-    attach(out, [t for page in pages for t in crosstabs(page)])
+    attach(out, crossed)
     log(f"  the crosstab of P05 by P06 agrees with both questions, in every {level.lower()}")
     return out
 
@@ -244,7 +245,7 @@ def main() -> int:
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
     session = Session()
     session.get(PORTAL)
-    server = Server(CMDSET, BASE, session=session, who=WHO)
+    server = Patient(CMDSET, BASE, session=session, who=WHO)
     departments = fetch(server, "DEPTO")
     municipios = fetch(server, "MUNIC")
     nest(departments, municipios)

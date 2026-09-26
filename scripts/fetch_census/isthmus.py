@@ -16,11 +16,14 @@ name alone. ``area_name`` takes the code off where it is there.
 from __future__ import annotations
 
 import re
+import time
+import urllib.error
 from collections import Counter
 from typing import Any
 
+from ._shared import log
 # median_age is not used here: the readers take it from this module with the rest.
-from .redatam import AREA, cells_of, count, median_age  # noqa: F401
+from .redatam import AREA, Server, cells_of, count, median_age, tables  # noqa: F401
 
 AGE = re.compile(r"^\s*(\d+)")
 
@@ -72,6 +75,63 @@ def by_area(found: list[dict], question: str, who: str,
         raise SystemExit(f"{who}: {question}: the areas' answers and not-applicables make "
                          f"{everyone:,}, not {base_total:,}")
     return out
+
+
+class Patient(Server):
+    """A processor asked again when it answers 500, and asked several tables at once.
+
+    INE Honduras's server answered the first program of a run and a 500 to
+    the second, opened seconds later. ``program`` sends every table a level
+    needs in one program, and ``run`` waits and tries again on a 5xx.
+    """
+
+    def run(self, program: str) -> str:
+        for attempt in range(4):
+            try:
+                return super().run(program)
+            except urllib.error.HTTPError as exc:
+                if exc.code < 500 or attempt == 3:
+                    raise
+                wait = 20 * 2 ** attempt
+                print(f"  HTTP {exc.code} from the processor: trying again in {wait}s")
+                time.sleep(wait)
+        raise AssertionError("unreachable")
+
+    def program(self, frequencies: dict[str, str], areabreak: str | None = None,
+                crosstab: tuple[str, str] | None = None, header: str = "Casos"
+                ) -> tuple[dict[str, list[dict]], list[dict]]:
+        """({question: frequency tables}, crosstabs) from one program.
+
+        The processor writes one output frame a table, in the program's
+        order; a frame holding anything but its own table stops the run.
+        """
+        tables_ = [(q, "FREQUENCY", v) for q, v in frequencies.items()]
+        if crosstab:
+            tables_.append(("crosstab", "CROSSTABS", f"{crosstab[0]} BY {crosstab[1]}"))
+        lines = ["RUNDEF Job", "    SELECTION ALL", ""]
+        for index, (_, kind, what) in enumerate(tables_, 1):
+            lines += [f"TABLE TABLE{index}", f"    AS {kind}", f"    OF {what}"]
+            if areabreak:
+                lines.append(f"    AREABREAK {areabreak}")
+            lines.append("")
+        pages = self.output("\n".join(lines))
+        if len(pages) != len(tables_):
+            raise SystemExit(f"{self.who}: {len(tables_)} tables asked for, {len(pages)} frames "
+                             "came back")
+        found: dict[str, list[dict]] = {}
+        crossed: list[dict] = []
+        for (question, kind, _), page in zip(tables_, pages):
+            if kind == "CROSSTABS":
+                crossed = crosstabs(page)
+                if not crossed or tables(page, header):
+                    raise SystemExit(f"{self.who}: the crosstab's frame holds something else")
+                continue
+            found[question] = tables(page, header)
+            titles = {t["title"] for t in found[question]}
+            if len(titles) != 1:
+                raise SystemExit(f"{self.who}: {question}'s frame holds tables of {titles}")
+            log(f"  {frequencies[question]} is {titles.pop()!r}")
+        return found, crossed
 
 
 def crosstab_program(row: str, column: str, areabreak: str | None = None) -> str:
