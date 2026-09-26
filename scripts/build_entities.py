@@ -4932,7 +4932,7 @@ def group_index(admin0: list[dict[str, Any]],
 TRACE: set[str] = set()
 
 
-def claim(claimed: dict[int, str], entity: dict[str, Any], row: dict[str, Any],
+def claim(claimed: dict[int, set[str]], entity: dict[str, Any], row: dict[str, Any],
           iso3: str, wanted: str) -> None:
     """Record a row's binding to a polygon, refusing a second place on it.
 
@@ -4942,16 +4942,19 @@ def claim(claimed: dict[int, str], entity: dict[str, Any], row: dict[str, Any],
     its ethnic composition from the Moldova reader, each bound to the same
     polygon by id, and refusing the pair stopped the build over two sources
     agreeing on where Transnistria is. So the second claim is refused only
-    where it names a different place from the first.
+    where it names a different place from the first -- by its name or any
+    alias it declares: INDEC's "La Rioja" declares the boundary file's
+    misspelt "La Roja", which another reader's row is named by.
     """
     name = row.get("name") or ""
+    names = {norm(name)} | {norm(a) for a in row.get("aliases") or [] if a}
     held = claimed.get(id(entity))
-    if held is not None and norm(held) != norm(name):
+    if held is not None and not (held & names):
         raise SystemExit(
             f"{iso3}: shape {wanted!r} is claimed by {name!r} and by "
-            f"{held!r}. Two rows on one shape is how one district quietly "
-            f"wears another's figures")
-    claimed[id(entity)] = name
+            f"{sorted(held)!r}. Two rows on one shape is how one district "
+            f"quietly wears another's figures")
+    claimed[id(entity)] = (held or set()) | names
 
 
 def main() -> int:
@@ -5185,7 +5188,7 @@ def main() -> int:
             for entity in (*admin1_by_country.get(iso3, []),
                            *admin2_by_country.get(iso3, []))
             if entity.get("id")}
-        claimed: dict[int, str] = {}
+        claimed: dict[int, set[str]] = {}
         hit = miss = ambiguous = outside = collided = declared = turned = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []

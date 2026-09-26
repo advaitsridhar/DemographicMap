@@ -776,16 +776,21 @@ def main() -> int:
 
     records = []
     for pcode, p in sorted(provinces.items()):
-        extra = ({"match_by": "shape_id", "shape_id": admin1_ids[p["map_name"]]}
+        # The polygon's own label rides along as an alias: another reader's row
+        # for La Rioja is named by the boundary file's "La Roja".
+        extra = ({"match_by": "shape_id", "shape_id": admin1_ids[p["map_name"]],
+                  "aliases": [p["map_name"]] if p["map_name"] != p["name"] else []}
                  if p["map_name"] in admin1_ids else {})
         records.append(record(f"ARG-INDEC-{pcode}", p["name"], level="admin1", parent="ARG",
                               country="ARG", codes={"indec": pcode}, **extra, **p["fields"]))
     for code, d in sorted(departments.items()):
         if code not in bound:
             continue
+        label = drawn[bound[code]]["name"]
         records.append(record(f"ARG-INDEC-{code}", d["name"], level="admin2", parent="ARG",
                               country="ARG", parent_name=d["province"], codes={"indec": code},
-                              match_by="shape_id", shape_id=bound[code], **d["fields"]))
+                              match_by="shape_id", shape_id=bound[code],
+                              aliases=[label] if label != d["name"] else [], **d["fields"]))
     write_json(PROCESSED / OUT, records)
     return 0
 

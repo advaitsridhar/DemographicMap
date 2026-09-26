@@ -462,7 +462,7 @@ def main() -> int:
         people = {PEOPLES.get(k, k): v for k, v in peoples[key].items() if k}
         records.append(record(
             f"PAN-INEC-{key}", unit["name"], level="admin1", parent="PAN", country="PAN",
-            match_by="shape_id", shape_id=admin1_ids[map_name],
+            match_by="shape_id", shape_id=admin1_ids[map_name], aliases=[map_name],
             population=measure(unit["total"], year=YEAR, source=source),
             median_age=measure(unit["computed"], unit="years", year=YEAR, source=source),
             median_age_note=("Interpolated within the five-year age group that holds the middle "
@@ -493,6 +493,7 @@ def main() -> int:
             f"PAN-INEC-{code.replace(':', '-')}", dist, level="admin2", parent="PAN", country="PAN",
             parent_name=PROVINCES[prov], match_by="shape_id",
             shape_id=bound[code],
+            aliases=([drawn[bound[code]]["name"]] if drawn[bound[code]]["name"] != dist else []),
             population=measure(total, year=YEAR, source=source,
                                note=(f"Includes {', '.join(p for p in parts if p != dist)}, "
                                      "created from it since the boundary file was drawn."
