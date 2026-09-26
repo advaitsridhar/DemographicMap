@@ -1,115 +1,52 @@
-program labels: 1,796 characters back
-  text: ﻿ Redatam WebServer Output Page Redatam Table Redatam Table Redatam Table Redatam Table Redatam Table
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416801.htm&TYPE=TMP
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416821.htm&TYPE=TMP
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416841.htm&TYPE=TMP
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416861.htm&TYPE=TMP
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416881.htm&TYPE=TMP
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416801.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P: Sexo P: Sexo Casos % Acumulado % Hombre 14 450 757 49,18% 49,18% Mujer 14 931 127 50,82% 100,00% Total 29 381 884 100,00% 100,00% Descargar en formato Excel | Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416801.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416801.pdf
-  table None '' of 'P: Sexo': total 29381884, not applicable None
-    'Hombre': 14450757
-    'Mujer': 14931127
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416821.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Por sus costumbres y sus antepasados Ud. se considera: P12a+: Por sus costumbres y sus antepasados Ud. se considera: Casos % Acumulado % Quechua 5 176 809 22,32% 22,32% Aimara 548 292 2,36% 24,68% Nativo o in
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416821.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416821.pdf
-  table None '' of 'P12a+: Por sus costumbres y sus antepasados Ud. se considera:': total 23196391, not applicable None
-    'Quechua': 5176809
-    'Aimara': 548292
-    'Nativo o indígena de la amazonía': 210612
-    'Parte de otro pueblo indígena u originario': 49838
-    'Negro, moreno, zambo, mulato / pueblo afroperuano o afrodescendiente': 828841
-    'Blanco': 1366931
-    'Mestizo': 13965254
-    'Otro': 241947
-    'No sabe / No responde': 771026
-    'Nikkei': 22534
-    'Tusán': 14307
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416841.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Por sus costumbres y sus antepasados Ud. se considera: P12a+: Por sus costumbres y sus antepasados Ud. se considera: Casos % Acumulado % Quechua 5 179 774 22,33% 22,33% Aimara 548 311 2,36% 24,69% Nativo o in
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416841.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416841.pdf
-  table None '' of 'P12a+: Por sus costumbres y sus antepasados Ud. se considera:': total 23196391, not applicable None
-    'Quechua': 5179774
-    'Aimara': 548311
-    'Nativo o indígena de la amazonía': 212823
-    'Parte de otro pueblo indígena u originario': 43800
-    'Negro, moreno, zambo, mulato / pueblo afroperuano o afrodescendiente': 828894
-    'Blanco': 1366931
-    'Mestizo': 13965255
-    'Otro': 132490
-    'No sabe / No responde': 771026
-    'Cholo': 23599
-    'Culturas preincas': 6856
-    'Andinos': 2331
-    'Pueblos indígenas de otros países': 190
-    'Trigueño': 77269
-    'Nikkei': 22535
-    'Tusán': 14307
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416861.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P3a+: Idioma o lengua con el que aprendió hablar P3a+: Idioma o lengua con el que aprendió hablar Casos % Acumulado % Quechua 3 799 780 13,60% 13,60% Aimara 450 010 1,61% 15,21% Ashaninka 73 567 0,26% 15,47% Awajún 
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416861.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416861.pdf
-  table None '' of 'P3a+: Idioma o lengua con el que aprendió hablar': total 27946060, not applicable None
-    'Quechua': 3799780
-    'Aimara': 450010
-    'Ashaninka': 73567
-    'Awajún / Aguaruna': 56584
-    'Shipibo - Konibo': 34152
-    'Shawi/Chayahuita': 17241
-    'Matsigenka/Machiguenga': 6629
-    'Achuar': 3809
-    'Otra lengua nativa u originaria': 1060
-    'Castellano': 23178478
-    'Portugués': 7956
-    'Otra lengua extranjera': 41920
-    'Lengua de señas peruanas': 10447
-    'No escucha, ni habla': 25763
-    'Wampis': 3569
-    'Kichwa': 5751
-    'Nomatsigenga': 3895
-    'Tikuna': 4290
-    'Urarina': 1301
-    'Yine': 2680
-    'Yanesha': 1142
-    'Kandozi-Chapra': 877
-    'Kakataibo': 1553
-    'Matses': 1366
-    'Kukama kukamiria': 1185
-    'Yagua': 712
-    'Secoya': 638
-    'Harakbut': 664
-    'Yaminahua': 574
-    'Jaqaru': 448
-    'Murui-Muinani': 416
-    'Kakinte': 273
-    'Amahuaca': 328
-    'Arabela': 118
-    'Nahua': 232
-    'Ese Eja': 212
-    'Capanahua': 117
-    'Maijuna': 121
-    'Ocaina': 44
-    'Sharanahua': 573
-    'Cauqui': 132
-    'Shiwilu': 53
-    'Cashinahua': 1074
-    'Isconahua': 22
-    'Omagua': 3
-    'No sabe / No responde': 204301
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416881.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Religión que profesa P12a+: Religión que profesa Casos % Acumulado % Católica 17 635 339 76,03% 76,03% Evangélica 3 264 819 14,07% 90,10% Otra 94 150 0,41% 90,51% Ninguna 1 180 361 5,09% 95,60% Cristiano 381 
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416881.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416881.pdf
-  table None '' of 'P12a+: Religión que profesa': total 23196391, not applicable None
-    'Católica': 17635339
-    'Evangélica': 3264819
-    'Otra': 94150
-    'Ninguna': 1180361
-    'Cristiano': 381031
-    'Adventista': 353430
-    'Testigo de Jehová': 173602
-    'Mormones': 113659
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/peru_redatam.py", line 489, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/peru_redatam.py", line 422, in main
+    session.get(PORTAL)
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 40, in get
+    with self.opener.open(req, timeout=90) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
