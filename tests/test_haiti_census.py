@@ -47,6 +47,10 @@ class NamesTest(unittest.TestCase):
         self.assertEqual(hc.plain("Arrondissement Belle-Anse"), "Belle-Anse")
         self.assertEqual(hc.plain("Port-au-Prince"), "Port-au-Prince")
 
+    def test_an_article_in_capitals_is_part_of_the_name(self):
+        self.assertEqual(hc.plain("Arrondissement de La Gonâve"), "La Gonâve")
+        self.assertEqual(hc.plain("Arrondissement des Cayes"), "Cayes")
+
 
 class EstimatesTest(unittest.TestCase):
     @mock.patch.object(hc, "NATIONAL", 10_000)

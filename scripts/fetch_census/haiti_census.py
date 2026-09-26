@@ -67,8 +67,8 @@ AGES_SOURCE = ("UNFPA, Haiti Common Operational Dataset on Population Statistics
 # "département" taken off both.
 DEPARTMENTS = {"GRAND'ANSE": "Grande-Anse"}
 # IHSI's names for an arrondissement (as written here, in title case) -> the
-# boundary file's, without "Arrondissement de".
-ARRONDISSEMENTS: dict[str, str] = {}
+# boundary file's, without "Arrondissement des".
+ARRONDISSEMENTS = {"Les Cayes": "Cayes"}
 # UNFPA's names for a commune -> IHSI's, where they differ by more than case
 # and accents; each is the one commune of its department left on either side.
 COMMUNES = {"Chamsolme": "Chansolme", "Cornillon / Grand Bois": "Cornillon",
@@ -95,8 +95,10 @@ def number(value: Any) -> int | None:
 def plain(name: str) -> str:
     """A department's or arrondissement's name without the word for what it is."""
     text = re.sub(r"[’`]", "'", str(name or "")).strip()
-    text = re.sub(r"^(?:Département|Departement|Arrondissement)\s+"
-                  r"(?:de la |de l'|des |du |de |d')?", "", text, flags=re.I)
+    # The article after "de" is taken off only in lower case: in "de La
+    # Gonâve" it is part of the name.
+    text = re.sub(r"^(?i:Département|Departement|Arrondissement)\s+"
+                  r"(?:de la |de l'|des |du |de |d')?", "", text)
     text = re.sub(r"\s+Department$", "", text, flags=re.I)
     return text.strip()
 
