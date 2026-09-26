@@ -894,8 +894,12 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Akha", "Lisu",
     ),
     "Han and Sinitic peoples": ("Chinese", "Han", "Taiwanese", "Hui",
-                                "Hakka", "Hokkien", "Teochew", "Cantonese"),
-    "Japanese peoples": ("Japanese", "Ainu", "Ryukyuan"),
+                                "Hakka", "Hokkien", "Teochew", "Cantonese",
+                                # Peru's 2017 census: Peruvians of Chinese descent.
+                                "Tusán (Chinese Peruvian)"),
+    "Japanese peoples": ("Japanese", "Ainu", "Ryukyuan",
+                         # Peru's 2017 census: Peruvians of Japanese descent.
+                         "Nikkei (Japanese Peruvian)"),
     "Korean peoples": ("Korean", "South Korean", "North Korean"),
     "Mongolic and Siberian peoples": (
         "Mongolian", "Mongol", "Buryat", "Kalmyk", "Evenk", "Evenki", "Even",
@@ -1001,6 +1005,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Yaminawa", "Yuqui", "Yurakaré", "Charka Qhara Qhara", "Chuwi",
         "Jach'a Carangas", "Jalq'a", "Killacas", "Lupaca", "Lípez", "Pakajaqi",
         "Qhapaq Uma Suyu", "Qullas", "Raqaypampa", "Sora (Bolivia)", "Yampara",
+        # Peru's 2017 census, which takes the Amazon's peoples as one answer.
+        "Amazonian indigenous",
         # Venezuela's 2011 census, by the names INE prints, the others it
         # gives in brackets. The Barí are written "Barí (Venezuela)" because
         # the patterns read Barí as South Sudan's Bari.
@@ -1021,6 +1027,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Afro-Chilean", "Moreno of Azapa", "Black of La Chimba",
         # Panama's 2023 census: the Afro-descendant groups it asks about.
         "Afro-Panamanian", "Moreno", "Afro-colonial", "Afro-Antillean",
+        # Peru's 2017 census: "negro, moreno, zambo, mulato / pueblo
+        # afroperuano o afrodescendiente", one answer.
+        "Afro-Peruvian",
     ),
 }
 
@@ -1489,6 +1498,14 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Moré (Bolivia)", "Mosetén", "Movima", "Pacahuara", "Puquina", "Sirionó",
         "Tacana", "Tapiete", "Toromona", "Tsimane'", "Uru-Chipaya", "Weenhayek",
         "Yaminawa", "Yuqui", "Yurakaré", "Zamuco", "Qom (Toba)",
+        # Peru's 2017 census: the Amazon's languages and Jaqaru, by the names
+        # it prints for the language a person learned to speak in.
+        "Achuar", "Amahuaca", "Arabela", "Capanahua", "Cashinahua", "Cauqui", "Ese Eja",
+        "Harakbut", "Isconahua", "Jaqaru", "Kakataibo", "Kakinte", "Kandozi-Chapra",
+        "Kukama-Kukamiria", "Maijuna", "Matses", "Matsigenka", "Murui-Muinani",
+        "Nahua (Peru)", "Nomatsigenga", "Ocaina", "Omagua", "Secoya", "Sharanahua",
+        "Shiwilu", "Tikuna", "Urarina", "Wampis", "Yagua", "Yaminahua", "Yanesha", "Yine",
+        "Other indigenous language of Peru",
         # Mexico's census counts whether a person speaks an indigenous
         # language, not which, and Panama's figure is the same kind; in both
         # countries every one of them is a language of this continent.

@@ -323,6 +323,12 @@ ADAPTER_FILES = [
     # Venezuela's 2011 census by state: the indigenous population by people,
     # and everyone else as one line.
     "venezuela_census.json",
+    # Peru's 2017 census by province, tabulated on INEI's REDATAM base:
+    # median age, sex ratio, ethnicity, religion and mother tongue for the
+    # 196 provinces, and median age, sex ratio and ethnicity for the first
+    # level. It writes no religion or language there: peru_department.json,
+    # the Perfil's department tables of the same count, carries those.
+    "peru_redatam.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
