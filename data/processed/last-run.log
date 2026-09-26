@@ -1,17 +1,1 @@
-  SEXO: 337 tables
-  EDAD: 337 tables
-  CUALINDIGE: 337 tables
-  USTEDSEREC: 337 tables
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/venezuela_redatam.py", line 397, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/venezuela_redatam.py", line 313, in main
-    units = municipio_counts(found)
-            ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/venezuela_redatam.py", line 183, in municipio_counts
-    if len(whole) != 1 or whole[0]["total"] != sum(t["total"] for t in areas):
-                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+dominican_census: Cuadro 2: Villa Central (D.M.)'s age rows: the parts make [18895, 8954, 9941, 18895, 8954, 9941, 0, 0, 0], the printed figures [18910, 8954, 9956, 18910, 8954, 9956, 0, 0, 0]; 15 apart, more than 21 rounded figures can be
