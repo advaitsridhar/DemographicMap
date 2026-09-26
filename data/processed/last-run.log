@@ -1,43 +1,43 @@
-seed dataset : Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses
-organization : 'us-census-bureau'
-datasets     : 34 listed of 34
-already live : 112 countries with subnational figures
-
-ISO3  live  xlsx  dataset name
-BGD   -     1     bangladesh-subnational-boundaries-and-tabular-data
-BHS   -     1     the-bahamas-subnational-boundaries-and-tabular-data
-CAF   -     1     car-subnational-boundaries-and-tabular-data
-COD   -     1     democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data
-COL   -     2     colombia-subnational-boundaries-and-tabular-data
-DMA   -     1     dominica-subnational-boundaries-and-tabular-data
-DOM   -     1     dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries
-ETH   -     1     ethiopia-subnational-boundaries-and-tabular-data
-HTI   -     1     haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries
-IDN   -     1     indonesia-subnational-population-and-housing-data-tables
-IRQ   -     1     iraq-subnational-boundaries-and-tabular-data
-JAM   -     2     jamaica-subnational-boundaries-and-tabular-data
-LBY   -     1     libya-subnational-boundaries-and-tabular-data
-MLI   -     1     mali-subnational-population-and-housing-data-tables-with-administrative-boundaries
-MMR   -     1     burma-subnational-boundaries-and-tabular-data
-NGA   -     1     nigeria-subnational-boundaries-and-tabular-data
-PAK   -     1     pakistan-subnational-population-and-housing-data-tables
-PHL   -     1     philippines-subnational-population-and-housing-data-tables
-SDN   -     1     sudan-subnational-boundaries-and-tabular-data
-SOM   -     1     somalia-subnational-boundaries-and-tabular-data
-SSD   -     1     south-sudan-subnational-boundaries-and-tabular-data
-SYR   -     1     syria-subnational-boundaries-and-tabular-data
-UKR   -     1     ukraine-subnational-boundaries-and-tabular-data
-VCT   -     1     saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data
-YEM   -     1     yemen-subnational-boundaries-and-tabular-data
-AGO   -     -     angola-and-namibia-gridded-population-dataset
-BHS   -     -     the-bahamas-gridded-population-dataset
-COD   -     -     democratic-republic-of-the-congo-and-zambia-gridded-population-dataset
-DMA   -     -     dominica-gridded-population-dataset
-HTI   -     -     haiti-gridded-population-data
-PAK   -     -     pakistan-gridded-population-dataset
-RWA   -     -     rwanda-gridded-population-dataset
-SSD   -     -     south-sudan-gridded-population-data
-VCT   -     -     saint-vincent-and-the-grenadines-gridded-population-dataset
-
-candidates (a workbook, and not yet on the map): 25
-  BGD, BHS, CAF, COD, COL, DMA, DOM, ETH, HTI, IDN, IRQ, JAM, LBY, MLI, MMR, NGA, PAK, PHL, SDN, SOM, SSD, SYR, UKR, VCT, YEM
+https://data.humdata.org/dataset/80a2e7d0-6895-4cfa-ae01-f23169a9aa2a/resource/0f2dcd9f-ea0f-4bf7-bf44-8b8631432f51/download/dominican_republic_uscb_202212.xlsx
+  966,252 bytes
+  10 sheet(s)
+  -- 'Metadata': 148 rows x 2 cols
+     ['Metadata: Dominican Republic', '']
+     ['Contents', '']
+     ['One metadata tab describing 5 ', '']
+  -- 'Data Dictionary': 535 rows x 4 cols
+     ['Data Dictionary: Dominican Rep', '', '', '']
+     ['Standard Geographic Fields', '', '', '']
+     ['Field Name', 'Field Alias', 'Field Description', 'Field Data Source']
+  -- 'Age-Sex': 586 rows x 80 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
+     ['DOMINICAN REPUBLIC', '', '', '', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
+  -- 'Population Estimates': 200 rows x 67 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'ASE_BTOTL']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Both sexes total (est)']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '10448499']
+  -- 'Households': 586 rows x 66 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
+  -- 'Housing Units': 586 rows x 207 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana']
+  -- 'Health': 45 rows x 72 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'DSE_CK14_T', 'DSE_CK15_T']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Chikungunya cases, 2014', 'Chikungunya cases, 2015']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '6473', '93']
+  -- 'Economy': 13 rows x 17 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'INC_AVG_B', 'INC_AVG_M', 'INC_AVG_F']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Average income (RD$), 2015, bo', 'Average income (RD$), 2015, ma', 'Average income (RD$), 2015, fe']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '15309', '16392', '13433']
+  -- 'Info and Com Technology': 13 rows x 42 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'MDX_NWP_W', 'MDX_RDO_W', 'MDX_TEL_W']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Read newspaper, at least once ', 'Listen to radio, at least once', 'Watch television, at least onc']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '31.1', '62.6', '77.9']
+  -- 'Agricultural Assets': 200 rows x 61 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'AGL_AGU_T']
+     ['Country or subnational area na', 'Administrative name concatenat', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Ag production units, total']
+     ['DOMINICAN REPUBLIC', 'DOMINICAN REPUBLIC', 'DOM_00', 'DOMINICAN REPUBLIC', '', '', '', '0', '', 'DO', 'DR', '', 'República Dominicana', '319676']
