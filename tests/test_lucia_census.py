@@ -66,6 +66,14 @@ class Report(unittest.TestCase):
             lc.settlements_2022(lines)
 
 
+    def test_the_contents_page_is_not_the_table(self):
+        pages = [["Table D.2 Population: Religion by District ........ 82",
+                  "Table D.3 Population: Single Year of Age by Gender ...... 83"],
+                 ["Table D.2 Population: Religion by District"] + D2[:-1]
+                 + ["Table D.3 Population: Single Year of Age by Gender"]]
+        self.assertEqual(lc.between(pages, "Table D.2", "Table D.3"), D2[:-1])
+
+
 class Binding(unittest.TestCase):
     def test_2010_names_bind_within_the_district_and_duplicates_are_left_out(self):
         bound, left = lc.bind_2010(["MONKEY TOWN/CICERON - CASTRIES", "CICERON - CASTRIES",

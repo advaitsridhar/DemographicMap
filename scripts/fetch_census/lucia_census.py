@@ -165,9 +165,14 @@ def figure_rows(lines: list[str], width: int) -> list[list]:
 
 
 def between(pages: list[list[str]], first: str, stop: str) -> list[str]:
-    """The lines from the one starting ``first`` to the one starting ``stop``."""
+    """The lines from the one starting ``first`` to the one starting ``stop``.
+
+    The contents pages list every table with a dotted leader to its page
+    number; the table's own title has none.
+    """
     lines = [line for page in pages for line in page]
-    start = next((i for i, l in enumerate(lines) if l.startswith(first)), None)
+    start = next((i for i, l in enumerate(lines)
+                  if l.startswith(first) and not re.search(r"\.{4,}", l)), None)
     if start is None:
         raise SystemExit(f"lucia_census: the report has no {first!r}")
     end = next((i for i, l in enumerate(lines[start + 1:], start + 1) if l.startswith(stop)),
