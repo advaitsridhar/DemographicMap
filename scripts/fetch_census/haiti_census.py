@@ -69,6 +69,10 @@ DEPARTMENTS = {"GRAND'ANSE": "Grande-Anse"}
 # IHSI's names for an arrondissement (as written here, in title case) -> the
 # boundary file's, without "Arrondissement de".
 ARRONDISSEMENTS: dict[str, str] = {}
+# UNFPA's names for a commune -> IHSI's, where they differ by more than case
+# and accents; each is the one commune of its department left on either side.
+COMMUNES = {"Chamsolme": "Chansolme", "Cornillon / Grand Bois": "Cornillon",
+            "La Vallée": "La Vallée de Jacmel"}
 RELIGION_GAP = (
     "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the "
     "whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, "
@@ -164,19 +168,26 @@ def arrondissement_ages(units: dict[int, list[dict[str, Any]]]
     arr_of = {u["code"]: u for u in units[2]}
     groups: dict[str, list[dict[str, str]]] = defaultdict(list)
     prefix_of: dict[str, set[str]] = defaultdict(set)
-    unmatched = []
+    unmatched: list[str] = []
+    taken: set[int] = set()
     for row in rows:
         department = DEPARTMENT_OF_PCODE.get(row["ADM1_PCODE"])
-        key = (fold(department or ""), fold(row["ADM2_FR"]))
+        key = (fold(department or ""), fold(COMMUNES.get(row["ADM2_FR"], row["ADM2_FR"])))
         commune = communes.get(key) or communes.get((key[0], fold(row["ADM2_EN"])))
         if commune is None:
             unmatched.append(f"{row['ADM2_FR']} ({row['ADM1_FR']})")
             continue
+        if id(commune) in taken:
+            raise SystemExit(f"haiti_census: two of UNFPA's communes are IHSI's {commune['name']}")
+        taken.add(id(commune))
         arrondissement = commune["code"].rsplit("_", 1)[0]
         groups[arrondissement].append(row)
         prefix_of[arrondissement].add(row["ADM2_PCODE"][:5])
     if unmatched:
-        raise SystemExit(f"haiti_census: UNFPA's communes with no IHSI commune: {unmatched}")
+        left = sorted(f"{u['name']} ({u['department']})" for u in units[3]
+                      if id(u) not in taken)
+        raise SystemExit(f"haiti_census: UNFPA's communes with no IHSI commune: {unmatched}; "
+                         f"IHSI's left: {left}")
     split = {arr_of[a]["name"]: sorted(p) for a, p in prefix_of.items() if len(p) != 1}
     owners: dict[str, list[str]] = defaultdict(list)
     for a, p in prefix_of.items():

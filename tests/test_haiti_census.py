@@ -75,6 +75,57 @@ class EstimatesTest(unittest.TestCase):
             hc.estimates(rows)
 
 
+COLUMNS = ["ADM1_PCODE", "ADM1_FR", "ADM2_PCODE", "ADM2_FR", "ADM2_EN", "T_TL"]
+PCODES = {f"HT{d:02d}": f"D{d}" for d in range(1, 11)}
+
+
+def unfpa(units):
+    """One UNFPA row a commune, its P-code HT + department + arrondissement + commune."""
+    rows = []
+    for u in units[3]:
+        d, a, c = (int(x) for x in u["code"].split("_")[2:])
+        rows.append({"ADM1_PCODE": f"HT{d:02d}", "ADM1_FR": u["department"],
+                     "ADM2_PCODE": f"HT{d:02d}{a}{c:02d}", "ADM2_FR": u["name"],
+                     "ADM2_EN": u["name"], "T_TL": str(u["total"])})
+    return rows
+
+
+@mock.patch.object(hc, "NATIONAL", 10_000)
+@mock.patch.object(hc, "DEPARTMENT_OF_PCODE", PCODES)
+class ArrondissementAgesTest(unittest.TestCase):
+    def test_communes_are_summed_into_their_arrondissements(self):
+        units = hc.estimates(sheet(10_000))
+        with mock.patch.object(hc, "cod_ps_rows", return_value=(COLUMNS, unfpa(units))):
+            rows, _, prefixes = hc.arrondissement_ages(units)
+        self.assertEqual(len(rows), 42)
+        self.assertEqual(rows["HTI_GEO1_01_01"]["T_TL"], units[2][0]["total"])
+        self.assertEqual(prefixes["HTI_GEO1_01_01"], "HT011")
+
+    def test_a_named_alias_binds_a_commune(self):
+        units = hc.estimates(sheet(10_000))
+        rows = unfpa(units)
+        rows[0]["ADM2_FR"] = rows[0]["ADM2_EN"] = "Chamsolme"
+        with mock.patch.object(hc, "cod_ps_rows", return_value=(COLUMNS, rows)), \
+                mock.patch.object(hc, "COMMUNES", {"Chamsolme": units[3][0]["name"]}):
+            self.assertEqual(len(hc.arrondissement_ages(units)[0]), 42)
+
+    def test_a_commune_with_no_match_stops_the_run_and_says_what_is_left(self):
+        units = hc.estimates(sheet(10_000))
+        rows = unfpa(units)
+        rows[0]["ADM2_FR"] = rows[0]["ADM2_EN"] = "Nowhere"
+        with mock.patch.object(hc, "cod_ps_rows", return_value=(COLUMNS, rows)):
+            with self.assertRaisesRegex(SystemExit, "IHSI's left: \\['C11 \\(D1\\)'\\]"):
+                hc.arrondissement_ages(units)
+
+    def test_two_arrondissements_under_one_pcode_prefix_stop_the_run(self):
+        units = hc.estimates(sheet(10_000))
+        rows = unfpa(units)
+        rows[1]["ADM2_PCODE"] = rows[0]["ADM2_PCODE"][:5] + "99"
+        with mock.patch.object(hc, "cod_ps_rows", return_value=(COLUMNS, rows)):
+            with self.assertRaises(SystemExit):
+                hc.arrondissement_ages(units)
+
+
 class AgesTest(unittest.TestCase):
     def test_median_from_unfpa_groups(self):
         groups = [f"{lo:02d}_{lo + 4:02d}" for lo in range(0, 80, 5)]
