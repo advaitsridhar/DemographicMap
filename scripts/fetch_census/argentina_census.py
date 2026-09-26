@@ -528,9 +528,11 @@ def main() -> int:
                 raise SystemExit(f"argentina_census: {what}: indigenous and Afro-descendant "
                                  f"people exceed the private-dwelling population")
             counts = {**ind, AFRO: afr, REST: rest}
-            yes = spoken[1]
+            yes, no = spoken[1], spoken[2]
+            # Only where table 7 has the department: a share of nothing read is no share.
             said = (f" {100 * yes / indigenous_total:.0f}% of the indigenous population speak or "
-                    "understand their people's language." if indigenous_total else "")
+                    "understand their people's language." if indigenous_total and yes + no
+                    else "")
             which = ("which people is published for the province only, so the "
                      "department's indigenous population is one line. "
                      if level == "admin2" else "")
