@@ -1,123 +1,451 @@
-RUNDEF Job
-    SELECTION ALL
+page: http://web.archive.org/cdx/search/cdx?url=onei.gob.cu/sites/default/files/publicaciones/&matchType=prefix&output=text&limit=5000&fl=timestamp,original,statuscode,mimetype,length&filter=original:.*(estudios|demografico|03-poblacion|aec-2023|aec2024|aec-2022|municip).*
+  59,626 bytes
+20250929090742 http://onei.gob.cu/sites/default/files/publicaciones/2023-01/03-poblacion.pdf 200 application/pdf -3948905144
+20260624212502 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/0-anuario-demografico-completa-2019_compressed.pdf 200 application/pdf 4091712
+20260621201013 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/00_estudios-y-datos-2019_publicacion-completa_compressed.pdf 200 application/pdf 4809564
+20260624211702 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico-2020compressed.pdf 200 application/pdf 1544053
+20260624212506 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2017_compressed.pdf 200 application/pdf 4342359
+20260824203312 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2017_compressed.pdf 200 application/pdf 4342362
+20260624212302 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2018_compressed.pdf 200 application/pdf 4175150
+20251027023944 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2021_compressed.pdf 200 application/pdf 1467380
+20251027040356 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2021_compressed.pdf 200 application/pdf 1467326
+20260624202813 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2021_compressed.pdf 200 application/pdf 1489826
+20260824203215 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/anuario_demografico_2021_compressed.pdf 200 application/pdf 1489796
+20260624221803 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios-y-datos-2018_completa1_compressed.pdf 200 application/pdf 4969351
+20260624222526 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_2017_compressed.pdf 200 application/pdf 3036524
+20260331202402 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_2020_compressed.pdf 200 application/pdf 3199647
+20260417193808 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_2020_compressed.pdf 200 application/pdf 3199654
+20260624220503 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_2020_compressed.pdf 200 application/pdf 3324025
+20260724170554 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_2020_compressed.pdf 403 text/html 614
+20260624215929 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_sobre_la_poblacion_cubana_2021_compressed.pdf 200 application/pdf 3889212
+20260823070012 http://onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_sobre_la_poblacion_cubana_2021_compressed.pdf 200 application/pdf 3889193
+20260824202934 http://onei.gob.cu/sites/default/files/publicaciones/2023-02/estudios_y_datos_sobre_la_poblacion_cubana_2021_compressed.pdf 200 application/pdf 3889187
+20251003084920 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores-demograficos-enero-diciembre-2021_compressed.pdf 200 application/pdf 618720
+20260624214317 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores-demograficos-enero-diciembre-2021_compressed.pdf 200 application/pdf 630750
+20260624220005 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores-demograficos-por-provincias-y-municipios.pdf 200 application/pdf 1990744
+20260621192802 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores_demograficos_2019ok_compressed.pdf 200 application/pdf 830132
+20260624220701 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores_demograficos_2019ok_compressed.pdf - warc/revisit 867
+20260824202934 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-02/indicadores_demograficos_2019ok_compressed.pdf 200 application/pdf 830131
+20251013110244 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-04/000-indicadores-demograficos-2022_opt_1.pdf 200 application/pdf 2117520
+20260621195607 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-04/000-indicadores-demograficos-2022_opt_1.pdf 200 application/pdf 2294476
+20260624213317 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-04/000-indicadores-demograficos-2022_opt_1.pdf - warc/revisit 865
+20260823073218 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-04/000-indicadores-demograficos-2022_opt_1.pdf 200 application/pdf 2294474
+20260824211515 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-04/000-indicadores-demograficos-2022_opt_1.pdf 200 application/pdf 2294468
+20251206100619 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-05/00-estudios-y-datos-2022-cepde.pdf 200 application/pdf 3396404
+20260624212614 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-05/00-estudios-y-datos-2022-cepde.pdf 200 application/pdf 3479024
+20240529063207 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf 200 application/pdf 422805
+20250329211851 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf 200 application/pdf 422819
+20251026213556 http://onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf 200 application/pdf 422891
+20260823075610 https://onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf 200 application/pdf 428713
+20260824203618 https://onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf 200 application/pdf 428711
+20260621195711 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/01_territorio_aec-2022_0.pdf?fknglngdjekngdjm?eknohdbimgdjekng 200 application/pdf 428715
+20260108134801 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec- 404 text/html 8686
+20260109065545 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec- 404 text/html 8701
+20240712102731 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdf 403 text/html 428
+20240725053827 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdf - warc/revisit 454
+20250711190224 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdf 403 text/html 430
+20250718031536 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdf - warc/revisit 457
+20250928014433 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdf 200 application/pdf -1870772276
+20251227235238 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdfSander 404 text/html 8690
+20251227235425 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-08/03-poblacion-aec-2022.pdfSander 404 text/html 8683
+20240318211844 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 200 application/pdf 9399641
+20240725234352 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 403 text/html 435
+20250710141928 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 403 text/html 558
+20250711190732 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 403 text/html 435
+20250718220840 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf - warc/revisit 464
+20251027030258 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 200 text/html 346
+20260530164502 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 403 text/html 602
+20260624192512 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf 200 application/pdf 23853645
+20260406142519 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf?fcjeknglfcjmophl 200 text/html 379
+20260407063859 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf?fcjeknglfcjmophl 200 application/pdf 9399862
+20260621195019 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf?fcjeknglfcjmophl 200 application/pdf 23853595
+20260823072521 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf?fcjeknglfcjmophl 200 text/html 592
+20260824205821 http://www.onei.gob.cu/sites/default/files/publicaciones/2023-10/00-anuario-demografico2022.pdf?fcjeknglfcjmophl 200 text/html 592
+20250712123402 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-11/aec-2022_1.pdf 403 text/html 424
+20250719132814 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-11/aec-2022_1.pdf 403 text/html 424
+20260825131109 https://www.onei.gob.cu/sites/default/files/publicaciones/2023-11/aec-2022_1.pdf 403 text/html 596
+20240725054844 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pd 403 text/html 431
+20250712122854 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pd 403 text/html 430
+20250717185837 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pd 403 text/html 430
+20240529153131 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pdf 200 application/pdf 777810
+20250329211731 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pdf 200 application/pdf 777875
+20251027133154 http://onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pdf 200 application/pdf 777898
+20260823071501 http://onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pdf 200 application/pdf 788036
+20260824204601 http://onei.gob.cu/sites/default/files/publicaciones/2024-04/03-poblacion-aec-2022_0.pdf 200 text/html 573
+20240602231939 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf - warc/revisit 475
+20240803181534 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf - warc/revisit 475
+20260319110502 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf 403 text/html 548
+20260428211507 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf 200 application/pdf 6338392
+20260810070925 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf 200 application/pdf 7126344
+20260914112207 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022.pdf 403 text/html 592
+20240514211810 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 424
+20250710141928 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 549
+20250710232321 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 424
+20250713204305 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 424
+20250717165417 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 426
+20251026212526 http://onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 200 application/pdf 6240078
+20251202214117 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 548
+20260624192511 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 200 application/pdf 6988963
+20260626071520 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 589
+20260811184223 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 200 application/pdf 6989100
+20260917214850 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdf 403 text/html 552
+20251223222235 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdfONEI 404 text/html 8672
+20251224000306 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-04/aec-2022_0.pdfONEI 404 text/html 8691
+20260721084102 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-07/indicadores_demograficos_2023.pdf 404 text/html 9997
+20251115215233 http://onei.gob.cu/sites/default/files/publicaciones/2024-08/tablero-municipal.xlsx 200 text/html 338
+20260306001506 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-08/tablero-municipal.xlsx 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 3094775
+20250712123358 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023.rar 403 text/html 436
+20250719132309 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023.rar 403 text/html 437
+20250616044534 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023_0.pdf 403 text/html 608
+20250713051800 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023_0.pdf 403 text/html 439
+20250720110919 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023_0.pdf 403 text/html 439
+20260624201820 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023_0.pdf 200 application/pdf 8189402
+20260625083654 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-09/indicadores_demograficos_2023_0.pdf 403 text/html 603
+20250618152258 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/00-anuario-demografico-de-cuba-2023.pdf 403 text/html 562
+20250712123356 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/00-anuario-demografico-de-cuba-2023.pdf 403 text/html 441
+20250719132308 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/00-anuario-demografico-de-cuba-2023.pdf 403 text/html 439
+20260823074101 https://onei.gob.cu/sites/default/files/publicaciones/2024-11/00-anuario-demografico-de-cuba-2023.pdf 200 application/pdf 23819924
+20260824212451 https://onei.gob.cu/sites/default/files/publicaciones/2024-11/00-anuario-demografico-de-cuba-2023.pdf 200 application/pdf 23819922
+20241204091418 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/03-poblacion-.pdf - warc/revisit 477
+20250204173643 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/03-poblacion-.pdf - warc/revisit 479
+20260621194522 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/03-poblacion-.pdf 200 application/pdf 4223060
+20260825113519 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-11/03-poblacion-.pdf 403 text/html 593
+20260810224708 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/00-aec-2023-edic-2024_0.pdf 200 application/pdf 4987594
+20250830070726 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 200 application/pdf 4250326
+20260204115955 http://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 200 application/pdf 4250422
+20260308023520 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 403 text/html 548
+20260430172501 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 403 text/html 550
+20260621200401 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 200 application/pdf 4427664
+20260625083758 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 403 text/html 588
+20260722151555 https://www.onei.gob.cu/sites/default/files/publicaciones/2024-12/03-poblacion-.pdf 403 text/html 551
+20251211161436 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic- 404 text/html 8682
+20251211164253 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic- 404 text/html 8662
+20250531183043 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf 403 text/html 551
+20250717164905 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf 403 text/html 427
+20251206130135 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf 200 application/pdf 5665431
+20260411213519 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf 403 text/html 553
+20260811041405 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf 200 application/pdf 6114568
+20260115040006 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023-edic-2024-3.pdf?utm_source=chatgpt.com 200 application/pdf 5665492
+20260106062001 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-01/aec-2023.rar 200 application/vnd.rar 13921868
+20260624200323 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-03/estudios-y-datos-2023.pdf 200 application/pdf 9181391
+20250606173952 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/3-tablero-municipal.xlsx 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2917864
+20250712122347 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/estudios-y-datos-2024_0.pdf 403 text/html 431
+20250719132306 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/estudios-y-datos-2024_0.pdf 403 text/html 432
+20260129215552 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/estudios-y-datos-2024_0.pdf 403 text/html 552
+20260624193511 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/estudios-y-datos-2024_0.pdf 200 application/pdf 5417936
+20250627044818 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf 200 application/pdf 809443
+20250710232832 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf 403 text/html 433
+20250717170432 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf 403 text/html 434
+20260413175759 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf 200 application/pdf 809540
+20260621195929 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf 200 application/pdf 816190
+20260624193503 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-05/indicadores-demograficos-2024.pdf - warc/revisit 853
+20250711183446 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 200 application/pdf 3960119
+20250715153900 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 200 application/pdf 3960160
+20250802064321 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 559
+20250802064322 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 558
+20250802064324 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 560
+20250802064330 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 559
+20250812211831 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 559
+20250814050259 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 559
+20250815100940 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 559
+20250902174913 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 200 text/html 348
+20260208133020 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 599
+20260216162912 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 200 text/html 617
+20260420042335 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 562
+20260625053052 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 600
+20260729094614 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 563
+20260811223902 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 403 text/html 560
+20260812092804 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf 200 application/pdf 7112798
+20260109034637 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/00-anuario-demografico-2024.pdf?utm_source=chatgpt.com 200 application/pdf 3960522
+20250715164906 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/01-territorio_aec2024_0.pdf 200 application/pdf 377879
+20260505040033 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/01-territorio_aec2024_0.pdf 200 text/html 359
+20260729104345 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/01-territorio_aec2024_0.pdf 403 text/html 559
+20260221081223 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_ 404 text/html 8691
+20260221091421 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_ 404 text/html 8676
+20250711163247 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_aec2024.pdf 200 application/pdf 1054049
+20250715164900 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_aec2024_0.pdf 200 application/pdf 1048508
+20260221072224 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_aec2024_0.pdf 200 application/pdf 1048528
+20260505003635 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/03-poblacion_aec2024_0.pdf 200 application/pdf 1048544
+20250730095523 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/10-mineria-y-energia_aec2024.pdf 200 application/pdf 379293
+20260312121519 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/10-mineria-y-energia_aec2024.pdf 200 application/pdf 379218
+20260504232309 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/10-mineria-y-energia_aec2024.pdf 200 application/pdf 379222
+20260702003958 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/10-mineria-y-energia_aec2024.pdf 403 text/html 561
+20260812092409 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/10-mineria-y-energia_aec2024.pdf 200 application/pdf 383671
+20250718202532 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/11-industria-manufacturera_aec2024_0.pdf 200 application/pdf 317500
+20260505010452 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/11-industria-manufacturera_aec2024_0.pdf 200 application/pdf 317518
+20260810045848 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/11-industria-manufacturera_aec2024_0.pdf 200 application/pdf 320318
+20250730123007 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/12-construccion-e-inversiones-_aec2024.pdf 200 application/pdf 319754
+20260402132629 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/12-construccion-e-inversiones-_aec2024.pdf 200 text/html 363
+20260505024831 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/12-construccion-e-inversiones-_aec2024.pdf 200 application/pdf 319754
+20260621195714 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/12-construccion-e-inversiones-_aec2024.pdf 200 application/pdf 322930
+20250730114731 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/13-transporte-y-seguridad-vial_aec2024.pdf 200 application/pdf 304187
+20260819205526 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/13-transporte-y-seguridad-vial_aec2024.pdf 403 text/html 571
+20250823061441 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/15-turismo_aec2024.pdf?fbclid=IwY2xjawL7xplleHRuA2FlbQIxMABicmlkETF6RHlLdHV1NmU4MnE5bkpIAR7Q3rIQR1jNnc4mlCnweYepgskUvFZ4LwP2NBM-bBca45wqgj0Fjb-1BQrG1Q_aem_ceuhmMwD0Uofd9oZiQl2ig 403 text/html 684
+20260825100651 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/15-turismo_aec2024.pdf?fbclid=IwY2xjawL7xplleHRuA2FlbQIxMABicmlkETF6RHlLdHV1NmU4MnE5bkpIAR7Q3rIQR1jNnc4mlCnweYepgskUvFZ4LwP2NBM-bBca45wqgj0Fjb-1BQrG1Q_aem_ceuhmMwD0Uofd9oZiQl2ig 403 text/html 729
+20250717144838 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/16-ciencia-y-tecnologia_aec2024_0.pdf 200 application/pdf 384236
+20260311095431 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/16-ciencia-y-tecnologia_aec2024_0.pdf 200 application/pdf 384294
+20260504233225 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/16-ciencia-y-tecnologia_aec2024_0.pdf 200 text/html 364
+20260621195817 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/16-ciencia-y-tecnologia_aec2024_0.pdf 200 application/pdf 385744
+20250717141929 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/17-tic_aec2024_0.pdf 200 application/pdf 241505
+20260101083646 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/17-tic_aec2024_0.pdf 200 application/pdf 241573
+20260504225724 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/17-tic_aec2024_0.pdf 200 application/pdf 241579
+20250730114231 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/18-educacion_aec2024.pdf 200 application/pdf 372600
+20260504221330 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/18-educacion_aec2024.pdf 200 application/pdf 372636
+20250717151651 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/20-cultura_aec2024.pdf 200 application/pdf 346117
+20260504225349 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/20-cultura_aec2024.pdf 200 application/pdf 346237
+20260621193411 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/20-cultura_aec2024.pdf 200 text/html 577
+20260824203413 https://onei.gob.cu/sites/default/files/publicaciones/2025-07/20-cultura_aec2024.pdf 200 application/pdf 348781
+20250717143140 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/21-deporte_aec2024.pdf 200 application/pdf 382651
+20260504235419 http://onei.gob.cu/sites/default/files/publicaciones/2025-07/21-deporte_aec2024.pdf 200 text/html 353
+20260621193111 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/21-deporte_aec2024.pdf 200 text/html 575
+20260824210558 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-07/21-deporte_aec2024.pdf 200 application/pdf 383872
+20250815170010 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/13-transporte-y-seguridad-vial_aec2024.pdf 200 application/pdf 309468
+20260505024320 http://onei.gob.cu/sites/default/files/publicaciones/2025-08/13-transporte-y-seguridad-vial_aec2024.pdf 200 application/pdf 309482
+20260810044952 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/13-transporte-y-seguridad-vial_aec2024.pdf 200 application/pdf 312379
+20260829211855 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/13-transporte-y-seguridad-vial_aec2024.pdf 403 text/html 570
+20260318221219 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/14-comercio-interno_aec2024.pdf 200 application/pdf 387266
+20260319012934 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/14-comercio-interno_aec2024.pdf 403 text/html 563
+20260412073048 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/14-comercio-interno_aec2024.pdf 403 text/html 560
+20260505041914 http://onei.gob.cu/sites/default/files/publicaciones/2025-08/14-comercio-interno_aec2024.pdf 200 application/pdf 387254
+20250929200958 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/15-turismo_aec2024.pdf 200 application/pdf -972064489
+20260428214408 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/15-turismo_aec2024.pdf 200 text/html 355
+20260504222325 http://onei.gob.cu/sites/default/files/publicaciones/2025-08/15-turismo_aec2024.pdf 200 application/pdf 331187
+20260621193320 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/15-turismo_aec2024.pdf 200 application/pdf 333898
+20260624184540 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/15-turismo_aec2024.pdf 403 text/html 595
+20260505001041 http://onei.gob.cu/sites/default/files/publicaciones/2025-08/22-proceso-electoral-en-cuba_aec2024.pdf 200 text/html 364
+20260824212910 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-08/22-proceso-electoral-en-cuba_aec2024.pdf 200 application/pdf 357767
+20251027153423 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/05-cuentas-nacionales_aec2024.pdf 200 application/pdf 533625
+20260505001728 http://onei.gob.cu/sites/default/files/publicaciones/2025-09/05-cuentas-nacionales_aec2024.pdf 200 application/pdf 533558
+20260402000642 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/05-cuentas-nacionales_aec2024.pdf?ref=tippinsights.com 200 application/pdf 533597
+20251009171738 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/06-finanzas_aec2024.pdf 200 application/pdf 371740
+20260505013017 http://onei.gob.cu/sites/default/files/publicaciones/2025-09/06-finanzas_aec2024.pdf 200 text/html 358
+20251008144907 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 200 application/pdf 607316
+20251017235220 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 568
+20251031182303 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 200 application/pdf 631250
+20251202150623 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 565
+20260311124523 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 568
+20260408033839 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 200 application/pdf 607288
+20260410041544 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 573
+20260426030209 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 569
+20260427075212 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 566
+20260504232252 http://onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 200 application/pdf 607120
+20260625090836 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 608
+20260722013633 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 568
+20260811223858 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-09/19-salud-publica-y-proteccion-social_aec2024.pdf 403 text/html 571
+20260109081013 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/02-medio-ambiente_aec2024.pdf 200 application/pdf 575183
+20260505023827 http://onei.gob.cu/sites/default/files/publicaciones/2025-10/02-medio-ambiente_aec2024.pdf 200 application/pdf 575178
+20260117095422 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/04-organizacion-institucional_aec2024.pdf 200 application/pdf 350531
+20260504233324 http://onei.gob.cu/sites/default/files/publicaciones/2025-10/04-organizacion-institucional_aec2024.pdf 200 text/html 354
+20260829211855 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/04-organizacion-institucional_aec2024.pdf 403 text/html 565
+20260201170039 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/08-sector-externo_aec2024_0.pdf 200 application/pdf 360367
+20260428214431 http://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/08-sector-externo_aec2024_0.pdf 200 text/html 359
+20260503001025 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/08-sector-externo_aec2024_0.pdf 200 application/pdf 363916
+20260504223930 http://onei.gob.cu/sites/default/files/publicaciones/2025-10/08-sector-externo_aec2024_0.pdf 200 application/pdf 360358
+20260605143954 https://www.onei.gob.cu/sites/default/files/publicaciones/2025-10/08-sector-externo_aec2024_0.pdf 403 text/html 568
+20260504222546 http://onei.gob.cu/sites/default/files/publicaciones/2026-02/09-agropecuario_aec2024.pdf 200 application/pdf 571374
+20260621193514 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-02/09-agropecuario_aec2024.pdf 200 application/pdf 576830
+20260812094337 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-02/09-agropecuario_aec2024.pdf 200 application/pdf 576932
+20260902062842 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-02/09-agropecuario_aec2024.pdf 403 text/html 558
+20260723021359 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 403 text/html 559
+20260725043522 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 403 text/html 559
+20260727091110 http://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 200 text/html 606
+20260727202140 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 403 text/html 555
+20260727213558 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 403 text/html 559
+20260809073812 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 200 application/pdf 1651605
+20260812210723 https://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf 403 text/html 559
+20260727091111 http://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf?ekfcbiecbaimopph= 200 text/html 607
+20260815024653 http://www.onei.gob.cu/sites/default/files/publicaciones/2026-07/indicadores-demograficos-2025.pdf?ekfcbiecbaimopph= 403 text/html 577
+20220601200045 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59732
+20220602160856 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59650
+20220602204903 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 807
+20220603155923 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220603222724 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59743
+20220604153609 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220605145410 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 761
+20220606150943 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 761
+20220607145914 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 763
+20220608155526 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 763
+20220609160943 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 760
+20220610205512 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220611155819 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 760
+20220612152653 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220613103718 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 808
+20220613151123 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220614145909 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220614163541 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 808
+20220615051652 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 60003
+20220615150939 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220616153220 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220617150219 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220618153222 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220619151638 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220620154210 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 759
+20220621155749 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220622152148 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220623190115 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220624164357 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220625024235 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59684
+20220625163315 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 760
+20220626150942 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220626224011 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59683
+20220627153428 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220628154745 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220629173810 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 762
+20220630124954 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59685
+20220630161650 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220701161052 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 764
+20220702204557 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220704073720 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220704170449 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220705161906 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220706161948 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220707103730 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 810
+20220707170416 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220708174050 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220709160325 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220710103749 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 812
+20220710154905 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220711163559 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220712162159 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220713165128 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220714182640 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220715152849 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220716155238 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220717153853 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220718210339 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20220719152923 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220720191308 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220721165308 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220722183009 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 812
+20220723182636 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220724225912 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220725153430 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220726163546 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220726203504 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220727151847 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220728165630 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220729182853 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220730170145 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220731165941 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220801123528 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 810
+20220801152732 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220802171838 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 text/html 934
+20220803165933 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220804160400 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59747
+20220804161839 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220807042241 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220807155312 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220808172634 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220809170100 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220810154301 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220811164424 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220812162718 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220813170536 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220814152347 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220815170409 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220816154710 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220817112442 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 809
+20220817151547 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220818153003 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220819162229 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220820142200 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 807
+20220820152814 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220821150650 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220822170958 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220823163743 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220824153111 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220825190830 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20220826191217 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220827175631 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20220828154648 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20220829161353 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20220831181020 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20220901194952 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20220902175817 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20220904021916 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 text/html 937
+20221012185634 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20221013162631 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221014202240 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221015161433 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221016171719 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221017191428 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221024045115 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20221024202911 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221025170643 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221026213926 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221028013929 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221029011641 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221029154001 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221030174725 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221031180302 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20221101185858 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221102203742 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221104001040 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221104173051 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221105172211 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 765
+20221106180621 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221107173759 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221108192114 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20221109162004 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221110172158 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221111162305 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221111175338 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59744
+20221112175307 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221112175353 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 806
+20221113173536 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221113175413 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 808
+20221113192426 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59632
+20221113232146 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 763
+20221114115420 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 812
+20221114162930 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221114175439 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 808
+20221114235504 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 812
+20221115115435 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 808
+20221115175507 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221116175443 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 803
+20221116185743 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221117212007 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221117235504 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 812
+20221118175521 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 806
+20221118192610 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221119180821 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221120055531 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59750
+20221120172215 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221121223811 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221122162448 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221124023944 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 773
+20221124181747 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221125164200 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221126170411 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221127193221 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221128183911 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20221129204302 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 770
+20221130212659 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221201224002 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 769
+20221202220400 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221203234010 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221204175032 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221205175634 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 768
+20221206175604 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 767
+20221207163402 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 766
+20221213024825 http://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 771
+20230522231633 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png 200 image/png 59802
+20230531163745 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 865
+20230603101657 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 864
+20230607100755 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 860
+20230610105238 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 864
+20230611105421 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 862
+20230612111027 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 862
+20230612231810 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 864
+20230617220242 https://www.onei.gob.cu/sites/default/files/publicaciones/img/anuario_demografico_2021_001.png - warc/revisit 864
+20230512000147 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png 200 image/png 191156
+20230513102913 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png - warc/revisit 854
+20230514141535 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png - warc/revisit 854
+20230516101601 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png - warc/revisit 852
+20230609105144 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png 200 image/png 191160
+20230612231809 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png - warc/revisit 862
+20230705142004 https://www.onei.gob.cu/sites/default/files/publicaciones/img/estudios_y_datos_2022.png 200 image/png 191320
+20201012224118 http://www.onei.gob.cu/sites/default/files/publicaciones/img/idicadores_demograficos_001.png 200 image/png 246248
+20201114015340 http://www.onei.gob.cu/sites/default/files/publicaciones/img/idicadores_demograficos_001.png 200 image/png 246131
+20201211142744 http://www.onei.gob.cu/sites/default/files/publicaciones/img/idicadores_demograficos_001.png 200 image/png 246127
 
-TABLE T1
-    AS FREQUENCY
-    OF PERS05.P06
-    AREABREAK DEP05
-
-TABLE T2
-    AS FREQUENCY
-    OF PERS05.P07
-    AREABREAK DEP05
-
-TABLE T3
-    AS FREQUENCY
-    OF PERS05.P08
-    AREABREAK DEP05
-
-TABLE T4
-    AS FREQUENCY
-    OF PERS05.P13
-    AREABREAK DEP05
-
-TABLE T5
-    AS FREQUENCY
-    OF PERS05.P02
-
-TABLE T6
-    AS FREQUENCY
-    OF PERS05.P03
-
-  text: ﻿ R+SP Output Table AREA # 05 05-Nueva Segovia Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 7 781 3.73% 3.73% No 194 227 93.14% 96.88% No declarado 6 515 3.12% 100.00% Total 208 523 100.00% 100.00% AREA # 10 10-Jinotega Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 36 958 11.15% 11.15% No 287 630 86.81% 97.96% No declarado 6 747 2.04% 100.00% Total 331 335 100.00% 100.00% AREA # 20 20-Madriz Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 32 873 24.82% 24.82% No 96 721 73.02% 97.84% No declarado 2 865 2.16% 100.00% Total 132 459 100.00% 100.00% AREA # 25 25-Estelí Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 2 482 1.23% 1.23% No 193 347 95.93% 97.16% No declarado 5 719 2.84% 100.00% Total 201 548 100.00% 100.00% AREA # 30 30-Chinandega Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 2 859 0.75% 0.75% No 364 287 96.13% 96.88% No declarado 11 824 3.12% 100.00% Total 378 970 100.00% 100.00% AREA # 35 35-León Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 22 976 6.46% 6.46% No 323 945 91.05% 97.51% No declarado 8 858 2.49% 100.00% Total 355 779 100.00% 100.00% AREA # 40 40-Matagalpa Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 33 604 7.16% 7.16% No 422 931 90.14% 97.31% No declarado 12 637 2.69% 100.00% Total 469 172 100.00% 100.00% AREA # 50 50-Boaco Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 907 0.60% 0.60% No 143 649 95.36% 95.96% No declarado 6 080 4.04% 100.00% Total 150 636 100.00% 100.00% AREA # 55 55-Managua Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 13 142 1.04% 1.04% No 1 196 682 94.75% 95.79% No declarado 53 154 4.21% 100.00% Total 1 262 978 100.00% 100.00% AREA # 60 60-Masaya Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 22 163 7.64% 7.64% No 260 167 89.72% 97.36% No declarado 7 658 2.64% 100.00% Total 289 988 100.00% 100.00% AREA # 65 65-Chontales Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 1 013 0.66% 0.66% No 148 367 96.38% 97.04% No declarado 4 552 2.96% 100.00% Total 153 932 100.00% 100.00% AREA # 70 70-Granada Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 1 056 0.63% 0.63% No 161 089 95.78% 96.41% No declarado 6 041 3.59% 100.00% Total 168 186 100.00% 100.00% AREA # 75 75-Carazo Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 838 0.50% 0.50% No 160 661 96.74% 97.25% No declarado 4 574 2.75% 100.00% Total 166 073 100.00% 100.00% AREA # 80 80-Rivas Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 10 859 6.95% 6.95% No 142 016 90.87% 97.82% No declarado 3 408 2.18% 100.00% Total 156 283 100.00% 100.00% AREA # 85 85-Río San Juan Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 747 0.78% 0.78% No 92 094 96.34% 97.12% No declarado 2 755 2.88% 100.00% Total 95 596 100.00% 100.00% AREA # 91 91-Región Autónoma Atlántico Norte Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 179 376 57.10% 57.10% No 124 914 39.77% 96.87% No declarado 9 840 3.13% 100.00% Total 314 130 100.00% 100.00% AREA # 93 93-Región Autónoma Atlántico Sur Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 74 213 24.21% 24.21% No 223 276 72.84% 97.06% No declarado 9 021 2.94% 100.00% Total 306 510 100.00% 100.00% RESUMEN Se considera perteneciente a un pueblo indigena Casos % Acumulado % Si 443 847 8.63% 8.63% No 4 536 003 88.21% 96.84% No declarado 162 248 3.16% 100.00% Total 5 142 098 100.00% 100.00% Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_10600601.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_10600601.pdf
-  table: area=05 name='05-Nueva Segovia' title='Se considera perteneciente a un pueblo indigena' total=208523 na=None rows=[('Si', 7781), ('No', 194227), ('No declarado', 6515)]
-  table: area=10 name='10-Jinotega' title='Se considera perteneciente a un pueblo indigena' total=331335 na=None rows=[('Si', 36958), ('No', 287630), ('No declarado', 6747)]
-  table: area=20 name='20-Madriz' title='Se considera perteneciente a un pueblo indigena' total=132459 na=None rows=[('Si', 32873), ('No', 96721), ('No declarado', 2865)]
-  table: area=25 name='25-Estelí' title='Se considera perteneciente a un pueblo indigena' total=201548 na=None rows=[('Si', 2482), ('No', 193347), ('No declarado', 5719)]
-  table: area=30 name='30-Chinandega' title='Se considera perteneciente a un pueblo indigena' total=378970 na=None rows=[('Si', 2859), ('No', 364287), ('No declarado', 11824)]
-  table: area=35 name='35-León' title='Se considera perteneciente a un pueblo indigena' total=355779 na=None rows=[('Si', 22976), ('No', 323945), ('No declarado', 8858)]
-  table: area=40 name='40-Matagalpa' title='Se considera perteneciente a un pueblo indigena' total=469172 na=None rows=[('Si', 33604), ('No', 422931), ('No declarado', 12637)]
-  table: area=50 name='50-Boaco' title='Se considera perteneciente a un pueblo indigena' total=150636 na=None rows=[('Si', 907), ('No', 143649), ('No declarado', 6080)]
-  table: area=55 name='55-Managua' title='Se considera perteneciente a un pueblo indigena' total=1262978 na=None rows=[('Si', 13142), ('No', 1196682), ('No declarado', 53154)]
-  table: area=60 name='60-Masaya' title='Se considera perteneciente a un pueblo indigena' total=289988 na=None rows=[('Si', 22163), ('No', 260167), ('No declarado', 7658)]
-  table: area=65 name='65-Chontales' title='Se considera perteneciente a un pueblo indigena' total=153932 na=None rows=[('Si', 1013), ('No', 148367), ('No declarado', 4552)]
-  table: area=70 name='70-Granada' title='Se considera perteneciente a un pueblo indigena' total=168186 na=None rows=[('Si', 1056), ('No', 161089), ('No declarado', 6041)]
-  table: area=75 name='75-Carazo' title='Se considera perteneciente a un pueblo indigena' total=166073 na=None rows=[('Si', 838), ('No', 160661), ('No declarado', 4574)]
-  table: area=80 name='80-Rivas' title='Se considera perteneciente a un pueblo indigena' total=156283 na=None rows=[('Si', 10859), ('No', 142016), ('No declarado', 3408)]
-  table: area=85 name='85-Río San Juan' title='Se considera perteneciente a un pueblo indigena' total=95596 na=None rows=[('Si', 747), ('No', 92094), ('No declarado', 2755)]
-  table: area=91 name='91-Región Autónoma Atlántico Norte' title='Se considera perteneciente a un pueblo indigena' total=314130 na=None rows=[('Si', 179376), ('No', 124914), ('No declarado', 9840)]
-  table: area=93 name='93-Región Autónoma Atlántico Sur' title='Se considera perteneciente a un pueblo indigena' total=306510 na=None rows=[('Si', 74213), ('No', 223276), ('No declarado', 9021)]
-  table: area=None name='' title='Se considera perteneciente a un pueblo indigena' total=5142098 na=None rows=[('Si', 443847), ('No', 4536003), ('No declarado', 162248)]
-  text: ﻿ R+SP Output Table AREA # 05 05-Nueva Segovia A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 143 1.84% 1.84% Garífuna 104 1.34% 3.17% Mayagna-Sumu 33 0.42% 3.60% Miskitu 72 0.93% 4.52% Ulwa 25 0.32% 4.85% Creole(Kriol) 30 0.39% 5.23% Mestizo de la costa del caribe 76 0.98% 6.21% Xiu-Sutiaba 10 0.13% 6.34% Nahoas-Nicarao 24 0.31% 6.64% Chorotega-Nahua-Mange 4 204 54.03% 60.67% Cacaopera-Matagalpa 8 0.10% 60.78% Otro 160 2.06% 62.83% No sabe 2 235 28.72% 91.56% Ignorado 657 8.44% 100.00% Total 7 781 100.00% 100.00% No Aplica : 200 742 AREA # 10 10-Jinotega A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 158 0.43% 0.43% Garífuna 160 0.43% 0.86% Mayagna-Sumu 2 201 5.96% 6.82% Miskitu 8 139 22.02% 28.84% Ulwa 46 0.12% 28.96% Creole(Kriol) 77 0.21% 29.17% Mestizo de la costa del caribe 416 1.13% 30.30% Xiu-Sutiaba 29 0.08% 30.38% Nahoas-Nicarao 248 0.67% 31.05% Chorotega-Nahua-Mange 6 595 17.84% 48.89% Cacaopera-Matagalpa 269 0.73% 49.62% Otro 3 207 8.68% 58.30% No sabe 13 224 35.78% 94.08% Ignorado 2 189 5.92% 100.00% Total 36 958 100.00% 100.00% No Aplica : 294 377 AREA # 20 20-Madriz A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 83 0.25% 0.25% Garífuna 42 0.13% 0.38% Mayagna-Sumu 17 0.05% 0.43% Miskitu 7 0.02% 0.45% Ulwa 13 0.04% 0.49% Creole(Kriol) 6 0.02% 0.51% Mestizo de la costa del caribe 282 0.86% 1.37% Xiu-Sutiaba 9 0.03% 1.40% Nahoas-Nicarao 22 0.07% 1.46% Chorotega-Nahua-Mange 25 415 77.31% 78.78% Cacaopera-Matagalpa 43 0.13% 78.91% Otro 586 1.78% 80.69% No sabe 4 653 14.15% 94.84% Ignorado 1 695 5.16% 100.00% Total 32 873 100.00% 100.00% No Aplica : 99 586 AREA # 25 25-Estelí A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 107 4.31% 4.31% Garífuna 126 5.08% 9.39% Mayagna-Sumu 26 1.05% 10.44% Miskitu 64 2.58% 13.01% Ulwa 24 0.97% 13.98% Creole(Kriol) 12 0.48% 14.46% Mestizo de la costa del caribe 143 5.76% 20.23% Xiu-Sutiaba 19 0.77% 20.99% Nahoas-Nicarao 30 1.21% 22.20% Chorotega-Nahua-Mange 167 6.73% 28.93% Cacaopera-Matagalpa 20 0.81% 29.73% Otro 658 26.51% 56.24% No sabe 782 31.51% 87.75% Ignorado 304 12.25% 100.00% Total 2 482 100.00% 100.00% No Aplica : 199 066 AREA # 30 30-Chinandega A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 179 6.26% 6.26% Garífuna 170 5.95% 12.21% Mayagna-Sumu 54 1.89% 14.10% Miskitu 86 3.01% 17.10% Ulwa 50 1.75% 18.85% Creole(Kriol) 29 1.01% 19.87% Mestizo de la costa del caribe 129 4.51% 24.38% Xiu-Sutiaba 132 4.62% 29.00% Nahoas-Nicarao 167 5.84% 34.84% Chorotega-Nahua-Mange 495 17.31% 52.15% Cacaopera-Matagalpa 15 0.52% 52.68% Otro 177 6.19% 58.87% No sabe 679 23.75% 82.62% Ignorado 497 17.38% 100.00% Total 2 859 100.00% 100.00% No Aplica : 376 111 AREA # 35 35-León A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 130 0.57% 0.57% Garífuna 141 0.61% 1.18% Mayagna-Sumu 53 0.23% 1.41% Miskitu 79 0.34% 1.75% Ulwa 48 0.21% 1.96% Creole(Kriol) 107 0.47% 2.43% Mestizo de la costa del caribe 165 0.72% 3.15% Xiu-Sutiaba 19 347 84.21% 87.35% Nahoas-Nicarao 103 0.45% 87.80% Chorotega-Nahua-Mange 54 0.24% 88.04% Cacaopera-Matagalpa 11 0.05% 88.08% Otro 653 2.84% 90.93% No sabe 375 1.63% 92.56% Ignorado 1 710 7.44% 100.00% Total 22 976 100.00% 100.00% No Aplica : 332 803 AREA # 40 40-Matagalpa A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece Casos % Acumulado % Rama 238 0.71% 0.71% Garífuna 218 0.65% 1.36% Mayagna-Sumu 91 0.27% 1.63% Miskitu 152 0.45% 2.08% Ulwa 51 0.15% 2.23% Creole(Kriol) 139 0.41% 2.65% Mestizo de la costa del caribe 576 1.71% 4.36% Xiu-Sutiaba 40 0.12% 4.48% Nahoas-Nicarao 186 0.55% 5.03% Chorotega-Nahua-Mange 1 060 3.15% 8.19% Cacaopera-Matagalpa 14 341 42.68% 50.86% Otro 2 120 6.31% 57.17% No sabe 11 254 33.49% 90.66% Ignorado 3 138 9.34% 10
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_10600621.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_10600621.pdf
-  table: area=05 name='05-Nueva Segovia' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=7781 na=200742 rows=[('Rama', 143), ('Garífuna', 104), ('Mayagna-Sumu', 33), ('Miskitu', 72), ('Ulwa', 25), ('Creole(Kriol)', 30), ('Mestizo de la costa del caribe', 76), ('Xiu-Sutiaba', 10), ('Nahoas-Nicarao', 24), ('Chorotega-Nahua-Mange', 4204), ('Cacaopera-Matagalpa', 8), ('Otro', 160), ('No sabe', 2235), ('Ignorado', 657)]
-  table: area=10 name='10-Jinotega' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=36958 na=294377 rows=[('Rama', 158), ('Garífuna', 160), ('Mayagna-Sumu', 2201), ('Miskitu', 8139), ('Ulwa', 46), ('Creole(Kriol)', 77), ('Mestizo de la costa del caribe', 416), ('Xiu-Sutiaba', 29), ('Nahoas-Nicarao', 248), ('Chorotega-Nahua-Mange', 6595), ('Cacaopera-Matagalpa', 269), ('Otro', 3207), ('No sabe', 13224), ('Ignorado', 2189)]
-  table: area=20 name='20-Madriz' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=32873 na=99586 rows=[('Rama', 83), ('Garífuna', 42), ('Mayagna-Sumu', 17), ('Miskitu', 7), ('Ulwa', 13), ('Creole(Kriol)', 6), ('Mestizo de la costa del caribe', 282), ('Xiu-Sutiaba', 9), ('Nahoas-Nicarao', 22), ('Chorotega-Nahua-Mange', 25415), ('Cacaopera-Matagalpa', 43), ('Otro', 586), ('No sabe', 4653), ('Ignorado', 1695)]
-  table: area=25 name='25-Estelí' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=2482 na=199066 rows=[('Rama', 107), ('Garífuna', 126), ('Mayagna-Sumu', 26), ('Miskitu', 64), ('Ulwa', 24), ('Creole(Kriol)', 12), ('Mestizo de la costa del caribe', 143), ('Xiu-Sutiaba', 19), ('Nahoas-Nicarao', 30), ('Chorotega-Nahua-Mange', 167), ('Cacaopera-Matagalpa', 20), ('Otro', 658), ('No sabe', 782), ('Ignorado', 304)]
-  table: area=30 name='30-Chinandega' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=2859 na=376111 rows=[('Rama', 179), ('Garífuna', 170), ('Mayagna-Sumu', 54), ('Miskitu', 86), ('Ulwa', 50), ('Creole(Kriol)', 29), ('Mestizo de la costa del caribe', 129), ('Xiu-Sutiaba', 132), ('Nahoas-Nicarao', 167), ('Chorotega-Nahua-Mange', 495), ('Cacaopera-Matagalpa', 15), ('Otro', 177), ('No sabe', 679), ('Ignorado', 497)]
-  table: area=35 name='35-León' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=22976 na=332803 rows=[('Rama', 130), ('Garífuna', 141), ('Mayagna-Sumu', 53), ('Miskitu', 79), ('Ulwa', 48), ('Creole(Kriol)', 107), ('Mestizo de la costa del caribe', 165), ('Xiu-Sutiaba', 19347), ('Nahoas-Nicarao', 103), ('Chorotega-Nahua-Mange', 54), ('Cacaopera-Matagalpa', 11), ('Otro', 653), ('No sabe', 375), ('Ignorado', 1710)]
-  table: area=40 name='40-Matagalpa' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=33604 na=435568 rows=[('Rama', 238), ('Garífuna', 218), ('Mayagna-Sumu', 91), ('Miskitu', 152), ('Ulwa', 51), ('Creole(Kriol)', 139), ('Mestizo de la costa del caribe', 576), ('Xiu-Sutiaba', 40), ('Nahoas-Nicarao', 186), ('Chorotega-Nahua-Mange', 1060), ('Cacaopera-Matagalpa', 14341), ('Otro', 2120), ('No sabe', 11254), ('Ignorado', 3138)]
-  table: area=50 name='50-Boaco' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=907 na=149729 rows=[('Rama', 71), ('Garífuna', 76), ('Mayagna-Sumu', 31), ('Miskitu', 4), ('Ulwa', 28), ('Creole(Kriol)', 6), ('Mestizo de la costa del caribe', 47), ('Nahoas-Nicarao', 24), ('Chorotega-Nahua-Mange', 15), ('Cacaopera-Matagalpa', 2), ('Otro', 61), ('No sabe', 367), ('Ignorado', 175)]
-  table: area=55 name='55-Managua' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=13142 na=1249836 rows=[('Rama', 989), ('Garífuna', 625), ('Mayagna-Sumu', 189), ('Miskitu', 1754), ('Ulwa', 146), ('Creole(Kriol)', 836), ('Mestizo de la costa del caribe', 1352), ('Xiu-Sutiaba', 228), ('Nahoas-Nicarao', 588), ('Chorotega-Nahua-Mange', 272), ('Cacaopera-Matagalpa', 199), ('Otro', 1393), ('No sabe', 1496), ('Ignorado', 3075)]
-  table: area=60 name='60-Masaya' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=22163 na=267825 rows=[('Rama', 148), ('Garífuna', 109), ('Mayagna-Sumu', 68), ('Miskitu', 62), ('Ulwa', 39), ('Creole(Kriol)', 153), ('Mestizo de la costa del caribe', 142), ('Xiu-Sutiaba', 63), ('Nahoas-Nicarao', 824), ('Chorotega-Nahua-Mange', 7233), ('Cacaopera-Matagalpa', 25), ('Otro', 2892), ('No sabe', 8501), ('Ignorado', 1904)]
-  table: area=65 name='65-Chontales' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=1013 na=152919 rows=[('Rama', 79), ('Garífuna', 67), ('Mayagna-Sumu', 33), ('Miskitu', 55), ('Ulwa', 21), ('Creole(Kriol)', 57), ('Mestizo de la costa del caribe', 61), ('Xiu-Sutiaba', 6), ('Nahoas-Nicarao', 28), ('Chorotega-Nahua-Mange', 14), ('Cacaopera-Matagalpa', 3), ('Otro', 204), ('No sabe', 126), ('Ignorado', 259)]
-  table: area=70 name='70-Granada' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=1056 na=167130 rows=[('Rama', 65), ('Garífuna', 85), ('Mayagna-Sumu', 28), ('Miskitu', 19), ('Ulwa', 42), ('Creole(Kriol)', 36), ('Mestizo de la costa del caribe', 34), ('Xiu-Sutiaba', 4), ('Nahoas-Nicarao', 30), ('Chorotega-Nahua-Mange', 54), ('Cacaopera-Matagalpa', 7), ('Otro', 108), ('No sabe', 333), ('Ignorado', 211)]
-  table: area=75 name='75-Carazo' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=838 na=165235 rows=[('Rama', 73), ('Garífuna', 78), ('Mayagna-Sumu', 29), ('Miskitu', 36), ('Ulwa', 22), ('Creole(Kriol)', 20), ('Mestizo de la costa del caribe', 57), ('Xiu-Sutiaba', 5), ('Nahoas-Nicarao', 20), ('Chorotega-Nahua-Mange', 31), ('Cacaopera-Matagalpa', 8), ('Otro', 97), ('No sabe', 156), ('Ignorado', 206)]
-  table: area=80 name='80-Rivas' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=10859 na=145424 rows=[('Rama', 52), ('Garífuna', 48), ('Mayagna-Sumu', 18), ('Miskitu', 33), ('Ulwa', 16), ('Creole(Kriol)', 41), ('Mestizo de la costa del caribe', 60), ('Xiu-Sutiaba', 17), ('Nahoas-Nicarao', 8755), ('Chorotega-Nahua-Mange', 90), ('Cacaopera-Matagalpa', 33), ('Otro', 333), ('No sabe', 975), ('Ignorado', 388)]
-  table: area=85 name='85-Río San Juan' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=747 na=94849 rows=[('Rama', 223), ('Garífuna', 38), ('Mayagna-Sumu', 10), ('Miskitu', 51), ('Ulwa', 10), ('Creole(Kriol)', 23), ('Mestizo de la costa del caribe', 124), ('Xiu-Sutiaba', 3), ('Chorotega-Nahua-Mange', 2), ('Cacaopera-Matagalpa', 1), ('Otro', 18), ('No sabe', 29), ('Ignorado', 215)]
-  table: area=91 name='91-Región Autónoma Atlántico Norte' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=179376 na=134754 rows=[('Rama', 208), ('Garífuna', 89), ('Mayagna-Sumu', 6786), ('Miskitu', 102806), ('Ulwa', 49), ('Creole(Kriol)', 1711), ('Mestizo de la costa del caribe', 63999), ('Xiu-Sutiaba', 16), ('Nahoas-Nicarao', 31), ('Chorotega-Nahua-Mange', 85), ('Cacaopera-Matagalpa', 238), ('Otro', 539), ('No sabe', 1006), ('Ignorado', 1813)]
-  table: area=93 name='93-Región Autónoma Atlántico Sur' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=74213 na=232297 rows=[('Rama', 1239), ('Garífuna', 1095), ('Mayagna-Sumu', 89), ('Miskitu', 7398), ('Ulwa', 68), ('Creole(Kriol)', 16607), ('Mestizo de la costa del caribe', 44590), ('Xiu-Sutiaba', 21), ('Nahoas-Nicarao', 33), ('Chorotega-Nahua-Mange', 216), ('Cacaopera-Matagalpa', 17), ('Otro', 534), ('No sabe', 1282), ('Ignorado', 1024)]
-  table: area=None name='' title='A cuál de los siguientes pueblos indigenas o comunidades étnicas pertenece' total=443847 na=4698251 rows=[('Rama', 4185), ('Garífuna', 3271), ('Mayagna-Sumu', 9756), ('Miskitu', 120817), ('Ulwa', 698), ('Creole(Kriol)', 19890), ('Mestizo de la costa del caribe', 112253), ('Xiu-Sutiaba', 19949), ('Nahoas-Nicarao', 11113), ('Chorotega-Nahua-Mange', 46002), ('Cacaopera-Matagalpa', 15240), ('Otro', 13740), ('No sabe', 47473), ('Ignorado', 19460)]
-  text: ﻿ R+SP Output Table AREA # 05 05-Nueva Segovia Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 109 22.57% 22.57% No habla lengua indígena 94 19.46% 42.03% NR 280 57.97% 100.00% Total 483 100.00% 100.00% No Aplica : 208 040 AREA # 10 10-Jinotega Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 9 527 85.09% 85.09% No habla lengua indígena 1 088 9.72% 94.80% NR 582 5.20% 100.00% Total 11 197 100.00% 100.00% No Aplica : 320 138 AREA # 20 20-Madriz Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 100 22.22% 22.22% No habla lengua indígena 111 24.67% 46.89% NR 239 53.11% 100.00% Total 450 100.00% 100.00% No Aplica : 132 009 AREA # 25 25-Estelí Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 79 15.74% 15.74% No habla lengua indígena 155 30.88% 46.61% NR 268 53.39% 100.00% Total 502 100.00% 100.00% No Aplica : 201 046 AREA # 30 30-Chinandega Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 77 11.05% 11.05% No habla lengua indígena 181 25.97% 37.02% NR 439 62.98% 100.00% Total 697 100.00% 100.00% No Aplica : 378 273 AREA # 35 35-León Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 178 24.62% 24.62% No habla lengua indígena 154 21.30% 45.92% NR 391 54.08% 100.00% Total 723 100.00% 100.00% No Aplica : 355 056 AREA # 40 40-Matagalpa Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 138 9.42% 9.42% No habla lengua indígena 710 48.46% 57.88% NR 617 42.12% 100.00% Total 1 465 100.00% 100.00% No Aplica : 467 707 AREA # 50 50-Boaco Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 21 7.98% 7.98% No habla lengua indígena 39 14.83% 22.81% NR 203 77.19% 100.00% Total 263 100.00% 100.00% No Aplica : 150 373 AREA # 55 55-Managua Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 2 843 48.26% 48.26% No habla lengua indígena 1 298 22.03% 70.29% NR 1 750 29.71% 100.00% Total 5 891 100.00% 100.00% No Aplica : 1 257 087 AREA # 60 60-Masaya Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 127 17.61% 17.61% No habla lengua indígena 189 26.21% 43.83% NR 405 56.17% 100.00% Total 721 100.00% 100.00% No Aplica : 289 267 AREA # 65 65-Chontales Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 107 28.69% 28.69% No habla lengua indígena 57 15.28% 43.97% NR 209 56.03% 100.00% Total 373 100.00% 100.00% No Aplica : 153 559 AREA # 70 70-Granada Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 36 11.65% 11.65% No habla lengua indígena 48 15.53% 27.18% NR 225 72.82% 100.00% Total 309 100.00% 100.00% No Aplica : 167 877 AREA # 75 75-Carazo Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 61 19.37% 19.37% No habla lengua indígena 63 20.00% 39.37% NR 191 60.63% 100.00% Total 315 100.00% 100.00% No Aplica : 165 758 AREA # 80 80-Rivas Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece Casos % Acumulado % Si, habla idioma de comunidad étnica 58 21.64% 21.64% No habla lengua indígena 7
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_10600641.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_10600641.pdf
-  table: area=05 name='05-Nueva Segovia' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=483 na=208040 rows=[('Si, habla idioma de comunidad étnica', 109), ('No habla lengua indígena', 94), ('NR', 280)]
-  table: area=10 name='10-Jinotega' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=11197 na=320138 rows=[('Si, habla idioma de comunidad étnica', 9527), ('No habla lengua indígena', 1088), ('NR', 582)]
-  table: area=20 name='20-Madriz' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=450 na=132009 rows=[('Si, habla idioma de comunidad étnica', 100), ('No habla lengua indígena', 111), ('NR', 239)]
-  table: area=25 name='25-Estelí' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=502 na=201046 rows=[('Si, habla idioma de comunidad étnica', 79), ('No habla lengua indígena', 155), ('NR', 268)]
-  table: area=30 name='30-Chinandega' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=697 na=378273 rows=[('Si, habla idioma de comunidad étnica', 77), ('No habla lengua indígena', 181), ('NR', 439)]
-  table: area=35 name='35-León' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=723 na=355056 rows=[('Si, habla idioma de comunidad étnica', 178), ('No habla lengua indígena', 154), ('NR', 391)]
-  table: area=40 name='40-Matagalpa' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=1465 na=467707 rows=[('Si, habla idioma de comunidad étnica', 138), ('No habla lengua indígena', 710), ('NR', 617)]
-  table: area=50 name='50-Boaco' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=263 na=150373 rows=[('Si, habla idioma de comunidad étnica', 21), ('No habla lengua indígena', 39), ('NR', 203)]
-  table: area=55 name='55-Managua' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=5891 na=1257087 rows=[('Si, habla idioma de comunidad étnica', 2843), ('No habla lengua indígena', 1298), ('NR', 1750)]
-  table: area=60 name='60-Masaya' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=721 na=289267 rows=[('Si, habla idioma de comunidad étnica', 127), ('No habla lengua indígena', 189), ('NR', 405)]
-  table: area=65 name='65-Chontales' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=373 na=153559 rows=[('Si, habla idioma de comunidad étnica', 107), ('No habla lengua indígena', 57), ('NR', 209)]
-  table: area=70 name='70-Granada' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=309 na=167877 rows=[('Si, habla idioma de comunidad étnica', 36), ('No habla lengua indígena', 48), ('NR', 225)]
-  table: area=75 name='75-Carazo' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=315 na=165758 rows=[('Si, habla idioma de comunidad étnica', 61), ('No habla lengua indígena', 63), ('NR', 191)]
-  table: area=80 name='80-Rivas' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=268 na=156015 rows=[('Si, habla idioma de comunidad étnica', 58), ('No habla lengua indígena', 76), ('NR', 134)]
-  table: area=85 name='85-Río San Juan' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=479 na=95117 rows=[('Si, habla idioma de comunidad étnica', 106), ('No habla lengua indígena', 281), ('NR', 92)]
-  table: area=91 name='91-Región Autónoma Atlántico Norte' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=175648 na=138482 rows=[('Si, habla idioma de comunidad étnica', 165669), ('No habla lengua indígena', 6524), ('NR', 3455)]
-  table: area=93 name='93-Región Autónoma Atlántico Sur' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=71086 na=235424 rows=[('Si, habla idioma de comunidad étnica', 65069), ('No habla lengua indígena', 4200), ('NR', 1817)]
-  table: area=None name='' title='Habla la lengua o idioma del pueblo indigena o comunidad étnica a la que pertenece' total=270870 na=4871228 rows=[('Si, habla idioma de comunidad étnica', 244305), ('No habla lengua indígena', 15268), ('NR', 11297)]
-  text: ﻿ R+SP Output Table AREA # 05 05-Nueva Segovia A que religión pertenece Casos % Acumulado % Ninguna 42 812 23.52% 23.52% Católica 90 983 49.99% 73.51% Evangélica 46 321 25.45% 98.96% Morava 27 0.01% 98.97% Testigo de Jehová 904 0.50% 99.47% Judaísmo 3 0.00% 99.47% Musulmán 4 0.00% 99.48% Otra 955 0.52% 100.00% Total 182 009 100.00% 100.00% No Aplica : 26 514 AREA # 10 10-Jinotega A que religión pertenece Casos % Acumulado % Ninguna 62 117 22.07% 22.07% Católica 146 239 51.95% 74.02% Evangélica 68 404 24.30% 98.32% Morava 2 376 0.84% 99.16% Testigo de Jehová 891 0.32% 99.48% Judaísmo 4 0.00% 99.48% Musulmán 9 0.00% 99.48% Otra 1 454 0.52% 100.00% Total 281 494 100.00% 100.00% No Aplica : 49 841 AREA # 20 20-Madriz A que religión pertenece Casos % Acumulado % Ninguna 16 859 14.47% 14.47% Católica 74 306 63.80% 78.27% Evangélica 24 350 20.91% 99.18% Morava 9 0.01% 99.19% Testigo de Jehová 512 0.44% 99.62% Judaísmo 5 0.00% 99.63% Otra 432 0.37% 100.00% Total 116 473 100.00% 100.00% No Aplica : 15 986 AREA # 25 25-Estelí A que religión pertenece Casos % Acumulado % Ninguna 30 168 16.64% 16.64% Católica 110 598 61.02% 77.66% Evangélica 36 874 20.34% 98.00% Morava 31 0.02% 98.02% Testigo de Jehová 936 0.52% 98.54% Judaísmo 5 0.00% 98.54% Musulmán 12 0.01% 98.55% Otra 2 633 1.45% 100.00% Total 181 257 100.00% 100.00% No Aplica : 20 291 AREA # 30 30-Chinandega A que religión pertenece Casos % Acumulado % Ninguna 65 660 19.52% 19.52% Católica 204 305 60.74% 80.26% Evangélica 54 901 16.32% 96.59% Morava 134 0.04% 96.63% Testigo de Jehová 6 571 1.95% 98.58% Judaísmo 26 0.01% 98.59% Musulmán 26 0.01% 98.60% Otra 4 723 1.40% 100.00% Total 336 346 100.00% 100.00% No Aplica : 42 624 AREA # 35 35-León A que religión pertenece Casos % Acumulado % Ninguna 40 316 12.60% 12.60% Católica 216 896 67.77% 80.36% Evangélica 55 216 17.25% 97.62% Morava 91 0.03% 97.64% Testigo de Jehová 3 521 1.10% 98.74% Judaísmo 20 0.01% 98.75% Musulmán 15 0.00% 98.76% Otra 3 984 1.24% 100.00% Total 320 059 100.00% 100.00% No Aplica : 35 720 AREA # 40 40-Matagalpa A que religión pertenece Casos % Acumulado % Ninguna 72 917 17.78% 17.78% Católica 245 210 59.80% 77.58% Evangélica 85 973 20.96% 98.54% Morava 80 0.02% 98.56% Testigo de Jehová 959 0.23% 98.79% Judaísmo 10 0.00% 98.80% Musulmán 6 0.00% 98.80% Otra 4 928 1.20% 100.00% Total 410 083 100.00% 100.00% No Aplica : 59 089 AREA # 50 50-Boaco A que religión pertenece Casos % Acumulado % Ninguna 12 562 9.36% 9.36% Católica 101 217 75.38% 84.74% Evangélica 19 449 14.49% 99.23% Morava 13 0.01% 99.24% Testigo de Jehová 435 0.32% 99.56% Judaísmo 3 0.00% 99.56% Musulmán 2 0.00% 99.56% Otra 587 0.44% 100.00% Total 134 268 100.00% 100.00% No Aplica : 16 368 AREA # 55 55-Managua A que religión pertenece Casos % Acumulado % Ninguna 194 988 17.27% 17.27% Católica 602 224 53.33% 70.60% Evangélica 297 298 26.33% 96.92% Morava 2 266 0.20% 97.12% Testigo de Jehová 15 334 1.36% 98.48% Judaísmo 71 0.01% 98.49% Musulmán 185 0.02% 98.50% Otra 16 890 1.50% 100.00% Total 1 129 256 100.00% 100.00% No Aplica : 133 722 AREA # 60 60-Masaya A que religión pertenece Casos % Acumulado % Ninguna 24 515 9.50% 9.50% Católica 170 682 66.15% 75.65% Evangélica 54 454 21.10% 96.76% Morava 62 0.02% 96.78% Testigo de Jehová 4 813 1.87% 98.65% Judaísmo 10 0.00% 98.65% Musulmán 16 0.01% 98.66% Otra 3 467 1.34% 100.00% Total 258 019 100.00% 100.00% No Aplica : 31 969 AREA # 65 65-Chontales A que religión pertenece Casos % Acumulado % Ninguna 13 292 9.62% 9.62% Católica 103 573 74.96% 84.59% Evangélica 18 478 13.37% 97.96% Morava 48 0.03% 97.99% Testigo de Jehová 1 206 0.87% 98.87% Judaísmo 1 0.00% 98.87% Musulmán 6 0.00% 98.87% Otra 1 558 1.13% 100.00% Total 138 162 100.00% 100.00% No Aplica : 15 770 AREA # 70 70-Granada A que religión pertenece Casos % Acumulado % Ninguna 11 049 7.37% 7.37% Católica 115 184 76.87% 84.24% Evangélica 20 312 13.56% 97.80% Morava 15 0.01% 97.81% Testigo de Jehová 1 482 0.99% 98.79% Judaísmo 3 0.00% 98.80% Musulmán 4 0.00% 98.
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_10600661.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_10600661.pdf
-  table: area=05 name='05-Nueva Segovia' title='A que religión pertenece' total=182009 na=26514 rows=[('Ninguna', 42812), ('Católica', 90983), ('Evangélica', 46321), ('Morava', 27), ('Testigo de Jehová', 904), ('Judaísmo', 3), ('Musulmán', 4), ('Otra', 955)]
-  table: area=10 name='10-Jinotega' title='A que religión pertenece' total=281494 na=49841 rows=[('Ninguna', 62117), ('Católica', 146239), ('Evangélica', 68404), ('Morava', 2376), ('Testigo de Jehová', 891), ('Judaísmo', 4), ('Musulmán', 9), ('Otra', 1454)]
-  table: area=20 name='20-Madriz' title='A que religión pertenece' total=116473 na=15986 rows=[('Ninguna', 16859), ('Católica', 74306), ('Evangélica', 24350), ('Morava', 9), ('Testigo de Jehová', 512), ('Judaísmo', 5), ('Otra', 432)]
-  table: area=25 name='25-Estelí' title='A que religión pertenece' total=181257 na=20291 rows=[('Ninguna', 30168), ('Católica', 110598), ('Evangélica', 36874), ('Morava', 31), ('Testigo de Jehová', 936), ('Judaísmo', 5), ('Musulmán', 12), ('Otra', 2633)]
-  table: area=30 name='30-Chinandega' title='A que religión pertenece' total=336346 na=42624 rows=[('Ninguna', 65660), ('Católica', 204305), ('Evangélica', 54901), ('Morava', 134), ('Testigo de Jehová', 6571), ('Judaísmo', 26), ('Musulmán', 26), ('Otra', 4723)]
-  table: area=35 name='35-León' title='A que religión pertenece' total=320059 na=35720 rows=[('Ninguna', 40316), ('Católica', 216896), ('Evangélica', 55216), ('Morava', 91), ('Testigo de Jehová', 3521), ('Judaísmo', 20), ('Musulmán', 15), ('Otra', 3984)]
-  table: area=40 name='40-Matagalpa' title='A que religión pertenece' total=410083 na=59089 rows=[('Ninguna', 72917), ('Católica', 245210), ('Evangélica', 85973), ('Morava', 80), ('Testigo de Jehová', 959), ('Judaísmo', 10), ('Musulmán', 6), ('Otra', 4928)]
-  table: area=50 name='50-Boaco' title='A que religión pertenece' total=134268 na=16368 rows=[('Ninguna', 12562), ('Católica', 101217), ('Evangélica', 19449), ('Morava', 13), ('Testigo de Jehová', 435), ('Judaísmo', 3), ('Musulmán', 2), ('Otra', 587)]
-  table: area=55 name='55-Managua' title='A que religión pertenece' total=1129256 na=133722 rows=[('Ninguna', 194988), ('Católica', 602224), ('Evangélica', 297298), ('Morava', 2266), ('Testigo de Jehová', 15334), ('Judaísmo', 71), ('Musulmán', 185), ('Otra', 16890)]
-  table: area=60 name='60-Masaya' title='A que religión pertenece' total=258019 na=31969 rows=[('Ninguna', 24515), ('Católica', 170682), ('Evangélica', 54454), ('Morava', 62), ('Testigo de Jehová', 4813), ('Judaísmo', 10), ('Musulmán', 16), ('Otra', 3467)]
-  table: area=65 name='65-Chontales' title='A que religión pertenece' total=138162 na=15770 rows=[('Ninguna', 13292), ('Católica', 103573), ('Evangélica', 18478), ('Morava', 48), ('Testigo de Jehová', 1206), ('Judaísmo', 1), ('Musulmán', 6), ('Otra', 1558)]
-  table: area=70 name='70-Granada' title='A que religión pertenece' total=149848 na=18338 rows=[('Ninguna', 11049), ('Católica', 115184), ('Evangélica', 20312), ('Morava', 15), ('Testigo de Jehová', 1482), ('Judaísmo', 3), ('Musulmán', 4), ('Otra', 1799)]
-  table: area=75 name='75-Carazo' title='A que religión pertenece' total=149902 na=16171 rows=[('Ninguna', 22884), ('Católica', 85183), ('Evangélica', 37750), ('Morava', 29), ('Testigo de Jehová', 1515), ('Judaísmo', 6), ('Musulmán', 5), ('Otra', 2530)]
-  table: area=80 name='80-Rivas' title='A que religión pertenece' total=140529 na=15754 rows=[('Ninguna', 15015), ('Católica', 96884), ('Evangélica', 26032), ('Morava', 20), ('Testigo de Jehová', 1286), ('Judaísmo', 8), ('Musulmán', 2), ('Otra', 1282)]
-  table: area=85 name='85-Río San Juan' title='A que religión pertenece' total=83211 na=12385 rows=[('Ninguna', 15166), ('Católica', 50700), ('Evangélica', 15135), ('Morava', 111), ('Testigo de Jehová', 232), ('Judaísmo', 3), ('Musulmán', 1), ('Otra', 1863)]
-  table: area=91 name='91-Región Autónoma Atlántico Norte' title='A que religión pertenece' total=262605 na=51525 rows=[('Ninguna', 32214), ('Católica', 99744), ('Evangélica', 60195), ('Morava', 59595), ('Testigo de Jehová', 638), ('Judaísmo', 16), ('Musulmán', 20), ('Otra', 10183)]
-  table: area=93 name='93-Región Autónoma Atlántico Sur' title='A que religión pertenece' total=263679 na=42831 rows=[('Ninguna', 38776), ('Católica', 139057), ('Evangélica', 60653), ('Morava', 8995), ('Testigo de Jehová', 1352), ('Judaísmo', 5), ('Musulmán', 8), ('Otra', 14833)]
-  table: area=None name='' title='A que religión pertenece' total=4537200 na=604898 rows=[('Ninguna', 711310), ('Católica', 2652985), ('Evangélica', 981795), ('Morava', 73902), ('Testigo de Jehová', 42587), ('Judaísmo', 199), ('Musulmán', 321), ('Otra', 74101)]
-  text: ﻿ R+SP Output Table Sexo del empadronado Casos % Acumulado % Hombres 2 534 491 49.29% 49.29% Mujeres 2 607 607 50.71% 100.00% Total 5 142 098 100.00% 100.00% Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_10600681.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_10600681.pdf
-  table: area=None name='' title='Sexo del empadronado' total=5142098 na=None rows=[('Hombres', 2534491), ('Mujeres', 2607607)]
-  text: ﻿ R+SP Output Table Cuántos años cumplidos tiene?. Casos % Acumulado % 0 121 746 2.37% 2.37% 1 110 781 2.15% 4.52% 2 119 857 2.33% 6.85% 3 119 093 2.32% 9.17% 4 133 421 2.59% 11.76% 5 132 825 2.58% 14.35% 6 126 411 2.46% 16.81% 7 130 021 2.53% 19.33% 8 126 132 2.45% 21.79% 9 126 364 2.46% 24.24% 10 141 222 2.75% 26.99% 11 132 615 2.58% 29.57% 12 144 977 2.82% 32.39% 13 131 924 2.57% 34.95% 14 130 810 2.54% 37.50% 15 125 986 2.45% 39.95% 16 121 047 2.35% 42.30% 17 113 324 2.20% 44.51% 18 115 902 2.25% 46.76% 19 109 903 2.14% 48.90% 20 114 501 2.23% 51.12% 21 98 992 1.93% 53.05% 22 113 661 2.21% 55.26% 23 107 148 2.08% 57.34% 24 105 314 2.05% 59.39% 25 98 335 1.91% 61.30% 26 80 634 1.57% 62.87% 27 81 458 1.58% 64.46% 28 78 501 1.53% 65.98% 29 73 157 1.42% 67.41% 30 79 839 1.55% 68.96% 31 58 701 1.14% 70.10% 32 72 858 1.42% 71.52% 33 64 832 1.26% 72.78% 34 62 195 1.21% 73.99% 35 64 753 1.26% 75.25% 36 58 868 1.14% 76.39% 37 56 192 1.09% 77.48% 38 58 278 1.13% 78.62% 39 55 737 1.08% 79.70% 40 61 142 1.19% 80.89% 41 42 682 0.83% 81.72% 42 54 380 1.06% 82.78% 43 43 426 0.84% 83.62% 44 47 098 0.92% 84.54% 45 50 522 0.98% 85.52% 46 37 990 0.74% 86.26% 47 37 141 0.72% 86.98% 48 40 483 0.79% 87.77% 49 36 758 0.71% 88.48% 50 42 273 0.82% 89.31% 51 26 581 0.52% 89.82% 52 32 102 0.62% 90.45% 53 27 763 0.54% 90.99% 54 30 417 0.59% 91.58% 55 31 857 0.62% 92.20% 56 24 548 0.48% 92.68% 57 21 250 0.41% 93.09% 58 21 033 0.41% 93.50% 59 21 160 0.41% 93.91% 60 28 315 0.55% 94.46% 61 14 556 0.28% 94.74% 62 17 183 0.33% 95.08% 63 15 759 0.31% 95.38% 64 17 135 0.33% 95.72% 65 20 029 0.39% 96.11% 66 13 761 0.27% 96.37% 67 13 583 0.26% 96.64% 68 12 931 0.25% 96.89% 69 12 596 0.24% 97.13% 70 16 600 0.32% 97.46% 71 8 713 0.17% 97.63% 72 10 411 0.20% 97.83% 73 8 851 0.17% 98.00% 74 10 951 0.21% 98.21% 75 12 206 0.24% 98.45% 76 7 478 0.15% 98.60% 77 7 318 0.14% 98.74% 78 7 530 0.15% 98.89% 79 6 136 0.12% 99.01% 80 8 643 0.17% 99.17% 81 3 611 0.07% 99.24% 82 4 087 0.08% 99.32% 83 3 880 0.08% 99.40% 84 5 282 0.10% 99.50% 85 5 752 0.11% 99.61% 86 2 765 0.05% 99.67% 87 2 521 0.05% 99.72% 88 2 192 0.04% 99.76% 89 1 822 0.04% 99.79% 90 2 455 0.05% 99.84% 91 1 066 0.02% 99.86% 92 1 149 0.02% 99.89% 93 1 042 0.02% 99.91% 94 940 0.02% 99.92% 95 1 071 0.02% 99.94% 96 571 0.01% 99.96% 97 419 0.01% 99.96% 98 394 0.01% 99.97% 99 299 0.01% 99.98% 100 435 0.01% 99.99% 101 114 0.00% 99.99% 102 142 0.00% 99.99% 103 87 0.00% 99.99% 104 90 0.00% 99.99% 105 88 0.00% 100.00% 106 22 0.00% 100.00% 107 29 0.00% 100.00% 108 22 0.00% 100.00% 109 18 0.00% 100.00% 110 43 0.00% 100.00% 111 11 0.00% 100.00% 112 6 0.00% 100.00% 113 6 0.00% 100.00% 114 9 0.00% 100.00% 115 18 0.00% 100.00% 116 5 0.00% 100.00% 117 3 0.00% 100.00% 118 5 0.00% 100.00% 119 5 0.00% 100.00% 120 16 0.00% 100.00% Total 5 142 098 100.00% 100.00% Descargar en formato Excel - Descargar en formato PDF
-  link: 'Descargar en formato Excel' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\~tmp_106006101.xlsX
-  link: 'Descargar en formato PDF' -> http://redatam.inide.gob.ni/redbin/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\~tmp_106006101.pdf
-  table: area=None name='' title='Cuántos años cumplidos tiene?.' total=5142098 na=None rows=[('0', 121746), ('1', 110781), ('2', 119857), ('3', 119093), ('4', 133421), ('5', 132825), ('6', 126411), ('7', 130021), ('8', 126132), ('9', 126364), ('10', 141222), ('11', 132615), ('12', 144977), ('13', 131924), ('14', 130810), ('15', 125986), ('16', 121047), ('17', 113324), ('18', 115902), ('19', 109903), ('20', 114501), ('21', 98992), ('22', 113661), ('23', 107148), ('24', 105314), ('25', 98335), ('26', 80634), ('27', 81458), ('28', 78501), ('29', 73157), ('30', 79839), ('31', 58701), ('32', 72858), ('33', 64832), ('34', 62195), ('35', 64753), ('36', 58868), ('37', 56192), ('38', 58278), ('39', 55737)]
