@@ -870,6 +870,10 @@ REMAINDERS: dict[str, tuple[str, str]] = {
             "on the map."),
 }
 REMAINDERS_FILE = PROCESSED / "admin2_remainders.geojson"
+# Second-order polygons the boundary file draws as the wrong number of units --
+# one feature for four Bolivian provinces, two features for one -- redrawn by
+# scripts/make_redrawn.py, and drawn and joined in place of what they replace.
+REDRAWN_FILE = PROCESSED / "admin2_redrawn.geojson"
 
 
 # How far a declared coverage figure may drift from the measured one before the
@@ -1255,6 +1259,34 @@ def read_remainders() -> list[dict[str, Any]]:
             "area": geom.area, "remainder": True,
         })
     return out
+
+
+def read_redrawn() -> tuple[set[str], list[dict[str, Any]]]:
+    """The redrawn second-order units, and the boundary file's ids they replace.
+
+    Each carries its first-order parent already, measured when it was drawn,
+    and says what was redrawn and why, which the unit shows as its note.
+    """
+    from shapely.geometry import shape
+
+    collection = read_json(REDRAWN_FILE, None)
+    if not collection:
+        return set(), []
+    replaced: set[str] = set()
+    out = []
+    for feat in collection.get("features", []):
+        props = feat["properties"]
+        geom = shape(feat["geometry"])
+        point = geom.representative_point()
+        replaced.update(props.get("replaces") or [])
+        out.append({
+            "shape_id": props["shapeID"], "name": props["shapeName"],
+            "group": props["shapeGroup"], "parent_shape": props["parentID"],
+            "point": [round(point.x, 5), round(point.y, 5)],
+            "bbox": [round(b, 4) for b in geom.bounds], "_geom": None,
+            "area": geom.area, "redrawn": props.get("redrawn"),
+        })
+    return replaced, out
 
 
 def whole(geom):
@@ -5010,6 +5042,11 @@ def main() -> int:
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
         shapes["ADM2"].extend(read_remainders())
+        replaced, redrawn = read_redrawn()
+        if redrawn:
+            shapes["ADM2"] = [shape for shape in shapes["ADM2"]
+                              if shape["shape_id"] not in replaced] + redrawn
+            log(f"  ADM2: {len(replaced)} polygons redrawn as {len(redrawn)}")
     # Before anything is joined: this is a claim about the boundary files alone,
     # and it is the claim that explains a level looking empty for a reason no
     # amount of data would fix.
@@ -5142,6 +5179,8 @@ def main() -> int:
         if shape.get("remainder"):
             entity["remainder"] = True
             entity["note"] = REMAINDERS[iso3][1]
+        if shape.get("redrawn"):
+            entity["note"] = shape["redrawn"]
         mark_disputed_or_hint(entity, iso3)
         mark_water(entity, iso3)
         if shape.get("outline"):

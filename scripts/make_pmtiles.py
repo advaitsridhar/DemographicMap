@@ -334,6 +334,17 @@ def main() -> int:
 
     log(f"make_pmtiles: {args.source.name} -> {args.out.name} (z{args.minzoom}-{args.maxzoom})")
     features = read_features(args.source, args.source_layer, args.properties)
+    # An extra feature may be drawn in place of source features (a merged
+    # feature split into its units, or one unit's pieces merged): it names
+    # them in "replaces", and they leave the layer so nothing is drawn twice.
+    replaced: set[str] = set()
+    for extra in args.extra:
+        for feat in json.loads(extra.read_text()).get("features", []):
+            replaced.update(feat.get("properties", {}).get("replaces") or [])
+    if replaced:
+        before = len(features)
+        features = [f for f in features if f["properties"].get("shapeID") not in replaced]
+        log(f"  - {before - len(features)} features redrawn by an extra layer")
     for extra in args.extra:
         added = read_features(extra, None, args.properties)
         log(f"  + {len(added)} features from {extra.name}")
