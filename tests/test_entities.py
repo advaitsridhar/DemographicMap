@@ -9167,3 +9167,21 @@ class SourceIdentityIgnoresHowItWasReached(unittest.TestCase):
         self.assertEqual(refused, [])
         self.assertEqual(filled, ["BGR T3 religion"])
         self.assertEqual(blank["religion"]["status"], common.DERIVED)
+
+
+class ShapeClaims(unittest.TestCase):
+    """Two rows on one polygon are refused unless they name the same place."""
+
+    def test_rows_naming_the_same_place_by_an_alias_may_share_a_polygon(self):
+        claimed: dict = {}
+        shape = {"id": "s"}
+        be.claim(claimed, shape, {"name": "La Roja"}, "ARG", "s")
+        be.claim(claimed, shape, {"name": "La Rioja", "aliases": ["La Roja"]}, "ARG", "s")
+        be.claim(claimed, shape, {"name": "La Rioja"}, "ARG", "s")
+
+    def test_rows_naming_different_places_are_refused(self):
+        claimed: dict = {}
+        shape = {"id": "s"}
+        be.claim(claimed, shape, {"name": "Colón", "aliases": ["Colon"]}, "ARG", "s")
+        with self.assertRaises(SystemExit):
+            be.claim(claimed, shape, {"name": "Paraná"}, "ARG", "s")
