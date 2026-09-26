@@ -1,12 +1,33 @@
-  BHS: 18 areas making 351,461, every row's ages and sexes making its total
-  BHS: ABACO not written: the map draws this census island as several districts, and an island's median age and sex ratio are not any one district's
-  BHS: ANDROS not written: the map draws this census island as several districts, and an island's median age and sex ratio are not any one district's
-  BHS: ELEUTHERA not written: the map draws this census island as several districts, and an island's median age and sex ratio are not any one district's
-  BHS: EXUMA AND CAYS not written: the census counts Exuma and Black Point together, and the map draws them as two districts
-  BHS: GRAND BAHAMA not written: the map draws this census island as several districts, and an island's median age and sex ratio are not any one district's
-  BHS: SAN SALVADOR AND RUM CAY not written: the census counts San Salvador and Rum Cay together, and the map draws them as two districts
-  wrote data/processed/bahamas_age_sex.json (22 kB)
-  wrote bahamas_age_sex.json: 12 records
-  DMA: 10 areas making 69,325, every row's ages and sexes making its total
-  wrote data/processed/dominica_census.json (21 kB)
-  wrote dominica_census.json: 10 records
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_2.xlsx
+  285,304 bytes
+  1 sheet(s)
+  -- 'TAB_ETNIA_2': 6747 rows x 7 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN Y VI DE VIVIENDA ', '', '', '', '', '']
+     ['', 'Población por departamento, municipio, d', '', '', '', '', '']
+     ['Departamento de residencia', 'Municipio de residencia', 'Distrito de residencia', 'Edad Quinquenal', 'Identificación de pueblo indígena', '', '']
+     ['', '', '', '', '1. Si', '2. No', '9. No sabe/No responde']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', 'TOTAL', '68148', '5730766', '44479']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', '0 a 4 años', '2027', '365837', '1439']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', '5 a 9 años', '2836', '442296', '1530']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_3.xlsx
+  372,997 bytes
+  1 sheet(s)
+  -- 'TAB_ETNIA_3': 6747 rows x 10 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN Y VI DE VIVIENDA ', '', '', '', '', '', '', '', '']
+     ['', 'Población por departamento, municipio y ', '', '', '', '', '', '', '', '']
+     ['Departamento de residencia', 'Municipio de residencia', 'Distrito de residencia', 'Edad Quinquenal', '1. Si', '', '2. No', '', '9. No sabe/No responde', '']
+     ['', '', '', '', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer', '1. Hombre', '2. Mujer']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', 'TOTAL', '12507', '13184', '2686633', '3096048', '17849', '17172']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', '0 a 4 años', '689', '676', '186903', '179741', '711', '583']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', '5 a 9 años', '977', '941', '225980', '217414', '660', '690']
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_IDIO_2.xlsx
+  105,554 bytes
+  1 sheet(s)
+  -- 'TAB_IDIO_2': 329 rows x 12 cols
+     ['#VALUE!', 'VII CENSO DE POBLACIÓN Y VI DE VIVIENDA ', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Población de 3 años o más por departamen', '', '', '', '', '', '', '', '', '', '']
+     ['Departamento de residencia', 'Municipio de residencia', 'Distrito de residencia', 'Idiomas', '', '', '', '', '', '', '', '']
+     ['', '', '', 'Inglés', 'Español', 'Náhuat', 'Pisbi (Cacaopera)', 'Potón (Lenca)', 'Lengua de señas (LESSA)', 'Francés', 'Italiano', 'Otro idioma']
+     ['00 - República de El Salvador', 'TOTAL', 'TOTAL', '414887', '3170', '1135', '24', '32', '2025', '16741', '6911', '13326']
+     ['01 - Ahuachapán', 'TOTAL', 'TOTAL', '8275', '54', '44', '', '', '47', '235', '101', '199']
+     ['01 - Ahuachapán', '01 - Ahuachapán Centro', 'TOTAL', '5091', '42', '34', '', '', '32', '160', '62', '138']
