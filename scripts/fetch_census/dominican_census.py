@@ -95,6 +95,9 @@ UNANSWERED = "No sabe o no responde"
 AGE_ROW = re.compile(r"^(?:Menos de 1|(\d+)-(\d+)\.?|(\d+) [oy] más|No declarado)$")
 # ONE's province names -> the boundary file's, beyond uscb_age_sex's.
 PROVINCES = {"Puerta Plata": "Puerto Plata"}
+# ONE's 2022 spellings of municipios -> the boundary file's, beyond those
+# uscb_age_sex writes for the Bureau's 2010 names.
+MUNICIPIOS = {"Villa La Mata": "La Mata", "Cambita Garavitos": "Cambita Garabito"}
 # How far a polygon's 2022 count may move from its 2010 count before the
 # municipio is taken to be a different unit from the polygon's.
 GROWTH = (0.75, 1.75)
@@ -451,6 +454,62 @@ def perception(rows: list[list[Any]], named: set[str] | None = None
     return header, tree(areas(rows, 10), 10, "Cuadro 12", NATIONAL_12, named)
 
 
+def districts_2010() -> dict[tuple[str, str], str]:
+    """(province, distrito municipal) -> the municipio it lay in at the 2010 census.
+
+    Read from the US Census Bureau's workbook of the 2010 census, whose
+    fourth level is the distritos municipales. A municipio created since
+    from one of them has no polygon of its own: the boundary file draws the
+    2010 municipio, which still takes it in.
+    """
+    import openpyxl
+    from . import uscb
+    url = uscb.workbook_url(uscb_age_sex.COUNTRIES[0].dataset)
+    book = openpyxl.load_workbook(io.BytesIO(http_get(url, binary=True, cache=False)),
+                                  read_only=True, data_only=True)
+    rows = uscb.sheet_rows(book, "Age-Sex")
+    names, _ = uscb.columns(rows)
+    at = {n: i for i, n in enumerate(names) if n}
+    out = {}
+    for row in rows[2:]:
+        if str(row[at["ADM_LEVEL"]]).strip() == "4":
+            out[(fold(row[at["ADM2_NAME"]]), fold(row[at["ADM4_NAME"]]))] = str(
+                row[at["ADM3_NAME"]]).strip()
+    return out
+
+
+def absorb(provinces: dict[str, dict[str, Any]], unbound: list[str],
+           districts: dict[tuple[str, str], str]) -> list[str]:
+    """Fold each municipio made since 2010 from a distrito municipal into its 2010 municipio.
+
+    Its counts and age rows are added to the municipio it was carved from,
+    so that the figures describe the extent the boundary file draws; the
+    printed sex ratio no longer applies and is dropped. Returns what was done.
+    """
+    done = []
+    for province, entry in provinces.items():
+        keep = []
+        for area in entry["municipios"]:
+            name = bare(area["label"])
+            parent = districts.get((fold(province), fold(name)))
+            host = next((a for a in entry["municipios"]
+                         if parent and fold(bare(a["label"])) == fold(parent)), None)
+            if name not in unbound or host is None:
+                keep.append(area)
+                continue
+            host["values"] = [a + b for a, b in zip(host["values"][:9], area["values"][:9])]
+            host["values"].append(None)
+            rows = dict(area["ages"])
+            if [label for label, _ in host["ages"]] != list(rows):
+                raise SystemExit(f"dominican_census: {name}'s age rows are not {parent}'s")
+            host["ages"] = [(label, [a + b for a, b in zip(v[:9], rows[label][:9])] + [None])
+                            for label, v in host["ages"]]
+            host.setdefault("absorbed", []).append(name)
+            done.append(f"{name} into {bare(host['label'])} ({province})")
+        entry["municipios"] = keep
+    return done
+
+
 def binding_2010(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> dict[str, int]:
     """Polygon -> the 2010 census's count, bound exactly as uscb_age_sex binds it."""
     country = uscb_age_sex.COUNTRIES[0]
@@ -523,14 +582,25 @@ def adapter() -> int:
             sources=sources("median age/sex ratio", True)))
 
     parents = {u["id"]: u["name"] for u in admin1}
-    unit_alias = {fold(k): v for k, v in country.units}
-    offices, areas_by = {}, {}
-    for name, entry in provinces.items():
-        for area in entry["municipios"]:
-            code = f"{fold(name)}-{fold(bare(area['label']))}"
-            offices[code] = (bare(area["label"]), shape_of(name)["name"])
-            areas_by[code] = area
+    unit_alias = {fold(k): v for k, v in (*country.units, *MUNICIPIOS.items())}
+
+    def offices_of() -> tuple[dict[str, tuple[str, str]], dict[str, dict[str, Any]]]:
+        offices, areas_by = {}, {}
+        for name, entry in provinces.items():
+            for area in entry["municipios"]:
+                code = f"{fold(name)}-{fold(bare(area['label']))}"
+                offices[code] = (bare(area["label"]), shape_of(name)["name"])
+                areas_by[code] = area
+        return offices, areas_by
+
+    offices, areas_by = offices_of()
     aliases = {n: unit_alias[fold(n)] for n, _ in offices.values() if fold(n) in unit_alias}
+    bound, missing = bind(offices, admin2, parents, aliases)
+    unbound = [offices[c][0] for c in offices if c not in bound]
+    merged = absorb(provinces, unbound, districts_2010())
+    log(f"  municipios made since 2010 from a distrito municipal, added back into the 2010 "
+        f"municipio whose polygon takes them in: {merged}")
+    offices, areas_by = offices_of()
     bound, missing = bind(offices, admin2, parents, aliases)
     log(f"  {len(bound)} municipios bound to their polygons; {len(missing)} not: "
         + "; ".join(missing))
@@ -545,11 +615,17 @@ def adapter() -> int:
             refused.append(f"{offices[code][0]} ({labels[sid]}): {area['values'][0]:,} in 2022 "
                            f"against {before} in 2010")
             continue
+        fields = age_figures(area)
+        if area.get("absorbed"):
+            fields["population_note"] = (
+                f"{offices[code][0]} with {', '.join(area['absorbed'])}, a distrito municipal of "
+                f"{offices[code][0]} at the 2010 census and a municipio of its own since, which "
+                "this polygon takes in; the median age and sex ratio are of the two together.")
         records.append(record(
             f"DOM-ONE-{code}", labels[sid], level="admin2", parent="DOM", country="DOM",
             parent_name=offices[code][1], match_by="shape_id", shape_id=sid,
             aliases=[offices[code][0]] if offices[code][0] != labels[sid] else [],
-            **age_figures(area), ethnicity=gap(NOT_AVAILABLE, MUNICIPAL_GAP),
+            **fields, ethnicity=gap(NOT_AVAILABLE, MUNICIPAL_GAP),
             sources=sources("population/median age/sex ratio", False)))
     log(f"  refused, the polygon being another extent than the 2022 municipio: {refused}")
     unbound = sorted(s["name"] for s in admin2 if s["id"] not in set(bound.values()))

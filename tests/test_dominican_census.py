@@ -126,5 +126,25 @@ class LayoutTest(unittest.TestCase):
             dc.perception_fields(area, header)
 
 
+class AbsorbTest(unittest.TestCase):
+    def test_a_municipio_made_from_a_2010_district_goes_back_into_its_municipio(self):
+        moca = dc.areas(block("Municipio Moca", 23, 12, 11, AGES_A), 10)[0]
+        victor = dc.areas(block("Municipio San Víctor", 20, 10, 10, AGES_B), 10)[0]
+        provinces = {"Espaillat": {"area": None, "municipios": [moca, victor]}}
+        done = dc.absorb(provinces, ["San Víctor"], {("espaillat", "sanvictor"): "MOCA"})
+        self.assertEqual(done, ["San Víctor into Moca (Espaillat)"])
+        [host] = provinces["Espaillat"]["municipios"]
+        self.assertEqual(host["values"][:3], [43, 22, 21])
+        self.assertIsNone(host["values"][9])
+        self.assertEqual(dict(host["ages"])["1-4"][:3], [14, 7, 7])
+        self.assertEqual(dc.age_figures(host)["population"]["value"], 43)
+
+    def test_a_new_municipio_with_no_2010_district_is_left_alone(self):
+        oviedo = dc.areas(block("Municipio Oviedo", 20, 10, 10, AGES_B), 10)[0]
+        provinces = {"Pedernales": {"area": None, "municipios": [oviedo]}}
+        self.assertEqual(dc.absorb(provinces, ["Oviedo"], {}), [])
+        self.assertEqual(provinces["Pedernales"]["municipios"], [oviedo])
+
+
 if __name__ == "__main__":
     unittest.main()
