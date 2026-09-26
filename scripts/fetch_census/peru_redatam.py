@@ -306,11 +306,20 @@ def collect(by_question: dict[str, list[dict]]) -> dict[str, dict[str, Any]]:
     """Province code -> its names and every question's counts, after the checks."""
     units: dict[str, dict[str, Any]] = {}
     for question, found in by_question.items():
+        # After the provinces the processor prints the whole base's table with
+        # no area row: the country, which is a check here, not a unit.
+        whole = [t for t in found if not t["area"]]
+        if len(whole) > 1 or (whole and whole[0]["total"] != sum(
+                t["total"] for t in found if t["area"])):
+            raise SystemExit(f"peru_redatam: {question}: the tables with no area are "
+                             f"{[t['total'] for t in whole]}, not the provinces' sum")
         for table in found:
             code = table["area"]
-            if not code or len(code) != 4:
-                raise SystemExit(f"peru_redatam: {question}: a table with no province: "
-                                 f"{table['name']!r}")
+            if not code:
+                continue
+            if len(code) != 4:
+                raise SystemExit(f"peru_redatam: {question}: {code!r} is not a province code "
+                                 f"({table['name']!r})")
             match = PLACE.match(table["name"])
             dept, prov = (match.group(1), match.group(2)) if match else (table["name"],
                                                                           table["name"])

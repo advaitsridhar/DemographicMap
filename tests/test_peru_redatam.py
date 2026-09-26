@@ -90,6 +90,19 @@ class Checks(unittest.TestCase):
             pr.collect(tables)
 
 
+    def test_the_countrys_table_after_the_provinces_is_a_check_not_a_unit(self):
+        tables = self.unit("0101", 100, 30, 10)
+        for q, found in tables.items():
+            country = dict(found[0], area=None, name="")
+            found.append(country)
+        with self.assertRaises(SystemExit):          # one province is not INEI's 196
+            pr.collect(tables)
+        tables["sex"][-1]["total"] += 1
+        with self.assertRaises(SystemExit) as caught:
+            pr.collect(tables)
+        self.assertIn("not the provinces' sum", str(caught.exception))
+
+
 class Median(unittest.TestCase):
     def test_the_median_is_interpolated_within_the_middle_year(self):
         from collections import Counter
