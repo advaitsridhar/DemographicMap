@@ -1,6 +1,34 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
-                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
-                      [--find FIND] [--raw RAW] [--aia]
-                      url [url ...]
-probe_links.py: error: argument --find: expected one argument
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_2.xlsx
+    200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet size=285304
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_3.xlsx
+    200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet size=372997
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_4.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_5.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_6.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_IDIO_2.xlsx
+    200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet size=105554
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_IDIO_3.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_IDIO_4.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_IDIO_2.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_ETNIA_1.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/1104/TAB_ETNIA_2.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_RELIGION_1.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_RELIG_1.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_AFRO_1.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_AFROD_1.xlsx
+    200 text/html; charset=UTF-8 size=None
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_1.pdf
+    200 application/pdf size=7832404
+https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_ETNIA_2.pdf
+    200 application/pdf size=4565756
