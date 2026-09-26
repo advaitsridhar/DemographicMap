@@ -280,10 +280,15 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                  f"{'...' if len(method) > 220 else ''}\"" if method else "")
         written = refused = 0
         seen: set[str] = set()
-        named: dict[str, int] = {}
+        # A name is ambiguous only within one parent: Mexico has a Benito
+        # Juarez in several states, and the build tells those apart by state.
+        def place(row: dict[str, Any]) -> tuple[str, str]:
+            parent = str(row.get(parent_col) or "").strip() \
+                if level == "admin2" and parent_col else ""
+            return parent, str(row.get(unit_col) or "").strip()
+        named: dict[tuple[str, str], int] = {}
         for row in table["rows"]:
-            name = str(row.get(unit_col) or "").strip()
-            named[name] = named.get(name, 0) + 1
+            named[place(row)] = named.get(place(row), 0) + 1
         for row in table["rows"]:
             name = str(row.get(unit_col) or "").strip()
             pcode = str(row.get(pcode_col) or name).strip() if pcode_col else name
@@ -293,8 +298,8 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
             # Two rows under one name at one level cannot both be the shape of
             # that name, and nothing says which is: Nicaragua's table calls
             # two first-level units "Las Minas".
-            if named[name] > 1:
-                log(f"    left out {name}: {named[name]} rows carry the name")
+            if named[place(row)] > 1:
+                log(f"    left out {name}: {named[place(row)]} rows carry the name")
                 continue
             if (code, level, name) in EXCLUDE:
                 log(f"    left out {name}: {EXCLUDE[(code, level, name)]}")
