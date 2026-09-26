@@ -1,89 +1,36 @@
-  P03: 263 districts
-  P04: 263 districts
-  PERINDI: 263 districts
-  P1601: 263 districts
-  P1602: 263 districts
-  P1604: 263 districts
-  P1605: 263 districts
-  P1606: 263 districts
-  P1607: 263 districts
-  P1608: 263 districts
-  P1609: 263 districts
-  P1698: 263 districts
-  263 districts making INE's 6,109,903; every question's categories and 'No Aplica' making each district
-  retry 1/4 after 2s :: https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
+RUNDEF Job
+    SELECTION ALL
 
-During handling of the above exception, another exception occurred:
+TABLE T1
+    AS FREQUENCY
+    OF PERSON.Q45_SEX
+    AREABREAK PARISH WEIGHT PERSON.WGHT
 
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 828, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
+TABLE T2
+    AS FREQUENCY
+    OF HHOLD.WGHT
 
-The above exception was the direct cause of the following exception:
+TABLE T3
+    AS FREQUENCY
+    OF PARISH.PARNAME
 
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/paraguay_census.py", line 771, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/paraguay_census.py", line 679, in main
-    peoples = peoples_table(http_get(PEOPLES_URL, cache=False))
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 849, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054141.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054141.htm: trying again in 20s
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054141.htm: trying again in 40s
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054161.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054161.htm: trying again in 20s
-  URLError reaching https://prod.redatam.org/redpry//tempo/74054/~tmp_74054161.htm: trying again in 40s
-  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 10s
-  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 20s
-  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 40s
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Q45 Sex AREA # 1 Saint John's (City) Q45 Sex Counts % Cumul % Male 10 233 47.28% 47.28% Female 11 410 52.72% 100.00% Total 21 643 100.00% 100.00% AREA # 3 Saint John (Rural) Q45 Sex Counts % Cumul % Male 14 073 47.73% 47.73% Female 15 413 52.27% 100.00% Total 29 486 100.00% 100.00% AREA # 4 Saint George Q45 Sex Counts % Cumul % Male 3 769 47.25% 47.25% Female 4 207 52.75% 100.00% Total 7 976 100.00% 100.00% AREA # 5 Saint Peter Q45 Sex Counts % Cumul % Male 2 533 47.65% 47.65% Female 2 784 52.35% 100.00% Total 5 317 100.00% 100.00% AREA # 6 Saint Philip Q45 Sex Counts % Cumul % Male 1 557 46.87% 46.87% Female 1 765 53.13% 100.00% Total 3 322 100.00% 100.00% AREA # 7 Saint Paul Q45 Sex Counts % Cumul % Male 3 848 47.41% 47.41% Female 4 268 52.59% 100.00% Total 8 116 100.00% 100.00% AREA # 8 Saint Mary Q45 Sex Counts % Cumul % Male 3 529 48.14% 48.14% Female 3 802 51.86% 100.00% Total 7 331 100.00% 100.00% AREA # 9 Barbuda Q45 Sex Counts % Cumul % Male 853 52.48% 52.48% Female 772 47.52% 100.00% Total 1 625 100.00% 100.00% SUMMARY Q45 Sex Counts % Cumul % Male 40 395 47.63% 47.63% Female 44 421 52.37% 100.00% Total 84 816 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547501.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547501.pdf
+  table: area=1 name="Saint John's (City)" title='Q45 Sex' total=21643 na=None rows=[('Male', 10233), ('Female', 11410)]
+  table: area=3 name='Saint John (Rural)' title='Q45 Sex' total=29486 na=None rows=[('Male', 14073), ('Female', 15413)]
+  table: area=4 name='Saint George' title='Q45 Sex' total=7976 na=None rows=[('Male', 3769), ('Female', 4207)]
+  table: area=5 name='Saint Peter' title='Q45 Sex' total=5317 na=None rows=[('Male', 2533), ('Female', 2784)]
+  table: area=6 name='Saint Philip' title='Q45 Sex' total=3322 na=None rows=[('Male', 1557), ('Female', 1765)]
+  table: area=7 name='Saint Paul' title='Q45 Sex' total=8116 na=None rows=[('Male', 3848), ('Female', 4268)]
+  table: area=8 name='Saint Mary' title='Q45 Sex' total=7331 na=None rows=[('Male', 3529), ('Female', 3802)]
+  table: area=9 name='Barbuda' title='Q45 Sex' total=1625 na=None rows=[('Male', 853), ('Female', 772)]
+  table: area=None name='' title='Q45 Sex' total=84816 na=None rows=[('Male', 40395), ('Female', 44421)]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Household weight Household weight Counts % Cumul % 1.00 30 213 100.00% 100.00% Total 30 213 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547521.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547521.pdf
+  table: area=None name='' title='Household weight' total=30213 na=None rows=[('1.00', 30213)]
+  text: ﻿ Redatam Webserver Output Table ECLAC/CELADE Redatam+SP 09/26/2026 Database E:\redxoc\prod\carib\atg\redbin\RpBases\census\cen2011app\Base\ATG2011Census.dic Geographic Area All Database Frequency of Parish Parish Counts % Cumul % Barbuda 1 12.50% 12.50% Saint George 1 12.50% 25.00% Saint John (Rural) 1 12.50% 37.50% Saint John's (City) 1 12.50% 50.00% Saint Mary 1 12.50% 62.50% Saint Paul 1 12.50% 75.00% Saint Peter 1 12.50% 87.50% Saint Philip 1 12.50% 100.00% Total 8 100.00% 100.00% Download Excel format | Download PDF format
+  link: 'Download Excel format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547541.xlsX
+  link: 'Download PDF format' -> https://prod.redatam.org/redatg//tempo/145475/~tmp_14547541.pdf
+  table: area=None name='' title='Parish' total=8 na=None rows=[('Barbuda', 1), ('Saint George', 1), ('Saint John (Rural)', 1), ("Saint John's (City)", 1), ('Saint Mary', 1), ('Saint Paul', 1), ('Saint Peter', 1), ('Saint Philip', 1)]
