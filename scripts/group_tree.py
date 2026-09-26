@@ -989,6 +989,18 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Charrúa", "Chana", "Minuán", "Querandí", "Guarayo", "Isoceño", "Iogys",
         "Fiscara", "Corundí", "Michilingüe", "Toara", "Ansilta", "Mak'A",
         "Alakaluf", "Wayteca/Chono", "Haush/Maneken",
+        # Bolivia's 2024 census, by the names INE groups its answers under:
+        # the lowland peoples, and the Andean nations of the altiplano and
+        # valleys. The Sora are written "Sora (Bolivia)" because the patterns
+        # read Sora as the Munda people of India.
+        "Araona", "Ayoreo", "Baure", "Canichana", "Cavineño", "Cayubaba", "Chácobo",
+        "Chiquitano", "Ese Ejja", "Guarasu'we", "Gwarayu", "Itonama", "Joaquiniano",
+        "Kallawaya", "Leco", "Machineri", "Maropa", "Mojeño", "Mojeño Ignaciano",
+        "Mojeño Trinitario", "Moré", "Mosetén", "Movima", "Pacahuara", "Paunaca",
+        "Puquina", "Sirionó", "Tacana", "Toromona", "Tsimane'", "Uru-Chipaya",
+        "Yaminawa", "Yuqui", "Yurakaré", "Charka Qhara Qhara", "Chuwi",
+        "Jach'a Carangas", "Jalq'a", "Killacas", "Lupaca", "Lípez", "Pakajaqi",
+        "Qhapaq Uma Suyu", "Qullas", "Raqaypampa", "Sora (Bolivia)", "Yampara",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
@@ -1454,6 +1466,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Chile's 2024 census: the languages of the Atacameno, Kawesqar and
         # Yagan peoples, and the others it groups.
         "Kunza", "Kawésqar", "Yaghan", "Other indigenous languages of Chile",
+        # Bolivia's 2024 census, by the names it prints for the first language
+        # learned in childhood. Moré is written "Moré (Bolivia)" because the
+        # patterns read More as Burkina Faso's Mooré.
+        "Araona", "Baure", "Bésiro", "Canichana", "Cayubaba", "Chácobo", "Ese Ejja",
+        "Guarasu'we", "Gwarayu", "Itonama", "Joaquiniano", "Kabineña", "Leco",
+        "Machaj-Juyai Kallawaya", "Machineri", "Maropa", "Mojeño Trinitario",
+        "Moré (Bolivia)", "Mosetén", "Movima", "Pacahuara", "Puquina", "Sirionó",
+        "Tacana", "Tapiete", "Toromona", "Tsimane'", "Uru-Chipaya", "Weenhayek",
+        "Yaminawa", "Yuqui", "Yurakaré", "Zamuco", "Qom (Toba)",
         # Mexico's census counts whether a person speaks an indigenous
         # language, not which, and Panama's figure is the same kind; in both
         # countries every one of them is a language of this continent.
@@ -1477,7 +1498,8 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                          "Ghashghāi"),
     "Uralic languages": ("Votic", "Nganasan", "Enets", "Selkup",
                          "Livonian"),
-    "Sinitic languages": ("Dungan",),
+    # Bolivia's census writes Taiwanese, which is Taiwan's Hokkien.
+    "Sinitic languages": ("Dungan", "Taiwanese"),
     # North-east India and the Himalaya.
     "Tibeto-Burman languages": (
         "Bhotia", "Adi", "Mishmi", "Thado", "Kinnauri", "Sharchopkha",
@@ -1545,7 +1567,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
     # The band the US Virgin Islands writes, filed where the ACS's "Spanish
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
-    "Romance languages": ("Aragonese", "French or French Creole"),
+    "Romance languages": ("Aragonese", "French or French Creole",
+                          # Bolivia's census: the Catalan of Valencia, by its own name.
+                          "Valencian"),
     "Germanic languages": ("Limburgish",
                            "Limburgish, Limburgan, Limburger"),
     # -- The Atlas of the Languages of Iran, twelve provinces.

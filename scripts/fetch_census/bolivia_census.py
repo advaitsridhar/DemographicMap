@@ -84,7 +84,8 @@ REST = "Mestizo or white (neither indigenous nor Afro-descendant)"
 NO_PEOPLE = "Indigenous originario campesino (no people named)"
 # INE's groups of P32 (P32_PUEBLOS), as its dictionary spells them, to the
 # names this map uses: the peoples by their own names, as Argentina's and
-# Chile's censuses print them.
+# Chile's censuses print them. The Sora of the Bolivian altiplano are written
+# "Sora (Bolivia)", because Sora is also a Munda people of India.
 PUEBLOS = {
     "Afroboliviano": "Afro-Bolivian", "Araona": "Araona", "Aymara": "Aymara",
     "Ayoreo": "Ayoreo", "Baure": "Baure", "Canichana": "Canichana", "Cavineño": "Cavineño",
@@ -99,12 +100,12 @@ PUEBLOS = {
     "Movima": "Movima", "Pacahuara": "Pacahuara", "Pakajaqi": "Pakajaqi",
     "Paunaca": "Paunaca", "Puquina": "Puquina", "Qhapaq Uma Suyu": "Qhapaq Uma Suyu",
     "Quechua": "Quechua", "Qullas": "Qullas", "Raqaypampa": "Raqaypampa",
-    "Sirionó": "Sirionó", "Sora": "Sora", "Tacana": "Tacana", "Tapiete": "Tapiete",
+    "Sirionó": "Sirionó", "Sora": "Sora (Bolivia)", "Tacana": "Tacana", "Tapiete": "Tapiete",
     "Toromona": "Toromona", "Tsimane´": "Tsimane'", "Uru-Chipaya": "Uru-Chipaya",
     "Weenhayek": "Weenhayek", "Yaminawa": "Yaminawa", "Yampara": "Yampara",
     "Yuqui": "Yuqui", "Yurakaré": "Yurakaré",
     "Quechua - Aymara": "Quechua and Aymara",
-    "Más de una descripción": "More than one nation or people",
+    "Más de una descripción": "Indigenous (more than one nation or people)",
     # Everyone who answered yes and named a term rather than a people --
     # Campesino, Originario, Indígena, Nación, an ayllu or marka -- or named
     # none: INE's dictionary lists them under P32_PUEBLO_COD's 900s and 999.
@@ -117,7 +118,8 @@ UNANSWERED = "Sin respuesta"
 OTHER_FOREIGN = "Other foreign language"
 # INE's mother-tongue labels (IDIOMA_MAT) to the names this map uses: English
 # names for the languages of other countries, Bolivia's own by the names its
-# census prints.
+# census prints -- Moré as "Moré (Bolivia)", because More is also Burkina
+# Faso's Mooré.
 LANGUAGES = {
     "Castellano": "Spanish", "Quechua": "Quechua", "Aymara": "Aymara", "Guaraní": "Guarani",
     "Araona": "Araona", "Baure": "Baure", "Bésiro": "Bésiro", "Canichana": "Canichana",
@@ -126,7 +128,7 @@ LANGUAGES = {
     "Gwarayu": "Gwarayu", "Itonama": "Itonama", "Leco": "Leco",
     "Macha´juyay Kallawaya": "Machaj-Juyai Kallawaya", "Machineri": "Machineri",
     "Maropa": "Maropa", "Mojeño Ignaciano": "Mojeño Ignaciano",
-    "Mojeño Trinitario": "Mojeño Trinitario", "Moré": "Moré", "Mosetén": "Mosetén",
+    "Mojeño Trinitario": "Mojeño Trinitario", "Moré": "Moré (Bolivia)", "Mosetén": "Mosetén",
     "Movima": "Movima", "Pacahuara": "Pacahuara", "Puquina": "Puquina",
     "Sirionó": "Sirionó", "Tacana": "Tacana", "Tapiete": "Tapiete", "Toromona": "Toromona",
     "Uru-Chipaya": "Uru-Chipaya", "Weenhayek": "Weenhayek", "Yaminawa": "Yaminawa",
