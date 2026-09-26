@@ -72,10 +72,41 @@ PINS: dict[str, dict[str, str]] = {
         "97777": "7082276B69012408325747",  # Papunahua (ANM)
         "97889": "7082276B57930571389360",  # Yavaraté (ANM)
     },
+    # INEGI municipio codes. Oaxaca has two San Juan Mixtepec and two San
+    # Pedro Mixtepec, which the boundary file tells apart by judicial district
+    # ("-Dto. 08 -") and INEGI by code; the district is the one each code's
+    # municipio sits in (San Pedro's Distrito 22, Juquila, holds Puerto
+    # Escondido and 49,780 of its 50,752 people). Hueyapan (Puebla) and
+    # Xoxocotla (Veracruz) lost their polygons to Morelos's Hueyapan and
+    # Xoxocotla, municipios created in 2019 that the boundary file does not
+    # draw -- their people are still inside Tetela del Volcán and Puente de
+    # Ixtla, whose figures no longer include them.
+    "MEX": {
+        "20208": "50627088B120983506636",    # San Juan Mixtepec (Distrito 08, Juxtlahuaca)
+        "20209": "50627088B88987154065702",  # San Juan Mixtepec (Distrito 26, Miahuatlán)
+        "20318": "50627088B24493610345769",  # San Pedro Mixtepec (Distrito 22, Juquila)
+        "20319": "50627088B31998279857894",  # San Pedro Mixtepec (Distrito 26, Miahuatlán)
+        "21075": "50627088B56291356806731",  # Hueyapan (Puebla)
+        "30195": "50627088B45118812748540",  # Xoxocotla (Veracruz)
+    },
+}
+
+
+# Codes whose unit the boundary file does not draw at all, so a row for it
+# must reach no polygon: matched by name alone it finds a namesake elsewhere,
+# as Morelos's Hueyapan found Puebla's. The build counts these as declared
+# gaps ("no_shape"), which cannot become a wrong answer.
+UNDRAWN: dict[str, frozenset[str]] = {
+    # Morelos's indigenous municipios of 2019, carved from Miacatlán
+    # (Coatetelco), Puente de Ixtla (Xoxocotla) and Tetela del Volcán
+    # (Hueyapan); the boundary file predates them.
+    "MEX": frozenset({"17034", "17035", "17036"}),
 }
 
 
 def pin(iso3: str, code: str) -> dict[str, Any]:
     """The record fields binding an office's code to its polygon, or nothing."""
+    if code in UNDRAWN.get(iso3, ()):
+        return {"no_shape": True}
     shape = PINS.get(iso3, {}).get(code)
     return {"match_by": "shape_id", "shape_id": shape} if shape else {}

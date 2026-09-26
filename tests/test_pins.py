@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from scripts.fetch_census.pins import PINS, pin  # noqa: E402
+from scripts.fetch_census.pins import PINS, UNDRAWN, pin  # noqa: E402
 
 
 class Pins(unittest.TestCase):
@@ -24,6 +24,12 @@ class Pins(unittest.TestCase):
     def test_no_polygon_pinned_twice(self):
         for iso3, table in PINS.items():
             self.assertEqual(len(set(table.values())), len(table), iso3)
+
+    def test_undrawn_is_never_pinned(self):
+        for iso3, codes in UNDRAWN.items():
+            self.assertFalse(codes & set(PINS.get(iso3, {})), iso3)
+            for code in codes:
+                self.assertEqual(pin(iso3, code), {"no_shape": True})
 
     def test_pin_fields(self):
         self.assertEqual(pin("COL", "08001"),
