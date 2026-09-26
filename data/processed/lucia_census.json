@@ -7486,6 +7486,221 @@
     "sex_ratio_note": "Men per thousand women among the 80 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
   },
   {
+    "id": "LCA-CSO-8701671B45291890821133",
+    "level": "admin2",
+    "name": "Forest Reserve",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 35.5,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 2000,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 100.0,
+        "count": 3
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "East Indian",
+        "pct": 100.0,
+        "count": 3
+      },
+      {
+        "group": "African descent",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Mixed",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Gros Islet",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B45291890821133",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 3 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 3 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 3 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 3 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
     "id": "LCA-CSO-8701671B18648215649765",
     "level": "admin2",
     "name": "Almondale",
@@ -18310,6 +18525,651 @@
     "religion_year": 2010,
     "religion_note": "Religion, as asked of the 323 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
     "sex_ratio_note": "Men per thousand women among the 323 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
+    "id": "LCA-CSO-8701671B17247677679787",
+    "level": "admin2",
+    "name": "Chassin/Babonneau",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 28.1,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1029,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 66.1,
+        "count": 279
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 9.7,
+        "count": 41
+      },
+      {
+        "group": "Baptist",
+        "pct": 8.3,
+        "count": 35
+      },
+      {
+        "group": "Church of God",
+        "pct": 7.3,
+        "count": 31
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 2.8,
+        "count": 12
+      },
+      {
+        "group": "No religion",
+        "pct": 2.4,
+        "count": 10
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.4,
+        "count": 6
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.7,
+        "count": 3
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 2
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.5,
+        "count": 2
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 93.6,
+        "count": 395
+      },
+      {
+        "group": "Mixed",
+        "pct": 5.2,
+        "count": 22
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.7,
+        "count": 3
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "White",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Gros Islet",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B17247677679787",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 422 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 422 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 422 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 422 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
+    "id": "LCA-CSO-8701671B78261941759356",
+    "level": "admin2",
+    "name": "Fond Assau/Babonneau",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 26.9,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 49.3,
+        "count": 289
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 20.5,
+        "count": 120
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 9.2,
+        "count": 54
+      },
+      {
+        "group": "No religion",
+        "pct": 8.5,
+        "count": 50
+      },
+      {
+        "group": "Church of God",
+        "pct": 5.3,
+        "count": 31
+      },
+      {
+        "group": "Baptist",
+        "pct": 3.4,
+        "count": 20
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 8
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.2,
+        "count": 7
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.7,
+        "count": 4
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.3,
+        "count": 2
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 94.7,
+        "count": 556
+      },
+      {
+        "group": "Mixed",
+        "pct": 4.1,
+        "count": 24
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.0,
+        "count": 6
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Gros Islet",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B78261941759356",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 587 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 587 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 587 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 587 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
+    "id": "LCA-CSO-8701671B48601442509190",
+    "level": "admin2",
+    "name": "Morne Assau/Babonneau",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 27.2,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1065,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.9,
+        "count": 30
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 31.2,
+        "count": 20
+      },
+      {
+        "group": "Church of God",
+        "pct": 17.2,
+        "count": 11
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.6,
+        "count": 1
+      },
+      {
+        "group": "No religion",
+        "pct": 1.6,
+        "count": 1
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.6,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 90.6,
+        "count": 58
+      },
+      {
+        "group": "Mixed",
+        "pct": 9.4,
+        "count": 6
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Gros Islet",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B48601442509190",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 64 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 64 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 64 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 64 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
   },
   {
     "id": "LCA-CSO-8701671B96630840865992",
@@ -31717,6 +32577,221 @@
     "sex_ratio_note": "Men per thousand women among the 6 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
   },
   {
+    "id": "LCA-CSO-8701671B94073395823663",
+    "level": "admin2",
+    "name": "Anse Galet",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1750,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 54.5,
+        "count": 6
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 36.4,
+        "count": 4
+      },
+      {
+        "group": "No religion",
+        "pct": 9.1,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 81.8,
+        "count": 9
+      },
+      {
+        "group": "Indigenous",
+        "pct": 9.1,
+        "count": 1
+      },
+      {
+        "group": "Mixed",
+        "pct": 9.1,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Anse la Raye",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B94073395823663",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
     "id": "LCA-CSO-8701671B11621920628841",
     "level": "admin2",
     "name": "Anse La Verdue",
@@ -32361,6 +33436,221 @@
     "religion_note": "Religion, as asked of the 821 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
     "population_note": "Table A.9 of the 2022 report, \"Village - Canaries\": household population, weighted for the estimated undercount.",
     "sex_ratio_note": "Men per thousand women, Table A.9 of the 2022 report."
+  },
+  {
+    "id": "LCA-CSO-8701671B35979662153697",
+    "level": "admin2",
+    "name": "Riverside Road",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 37.9,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1223,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 67.5,
+        "count": 141
+      },
+      {
+        "group": "No religion",
+        "pct": 12.0,
+        "count": 25
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 9.6,
+        "count": 20
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 5.7,
+        "count": 12
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.9,
+        "count": 4
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.4,
+        "count": 3
+      },
+      {
+        "group": "Brethren",
+        "pct": 1.0,
+        "count": 2
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 69.4,
+        "count": 145
+      },
+      {
+        "group": "Mixed",
+        "pct": 29.7,
+        "count": 62
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.5,
+        "count": 1
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Soufrière",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B35979662153697",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 209 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 209 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 209 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 209 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
   },
   {
     "id": "LCA-CSO-8701671B43516735791505",
@@ -74711,6 +76001,221 @@
     "sex_ratio_note": "Men per thousand women, Table A.9 of the 2022 report."
   },
   {
+    "id": "LCA-CSO-8701671B51325698675387",
+    "level": "admin2",
+    "name": "Barre De L'Isle",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 833,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 72.7,
+        "count": 8
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 18.2,
+        "count": 2
+      },
+      {
+        "group": "Evangelical",
+        "pct": 9.1,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 72.7,
+        "count": 8
+      },
+      {
+        "group": "Mixed",
+        "pct": 18.2,
+        "count": 2
+      },
+      {
+        "group": "Indigenous",
+        "pct": 9.1,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Castries",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B51325698675387",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 11 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
     "id": "LCA-CSO-8701671B1177875671821",
     "level": "admin2",
     "name": "Belmont",
@@ -88965,6 +90470,221 @@
     "sex_ratio_note": "Men per thousand women, Table A.9 of the 2022 report."
   },
   {
+    "id": "LCA-CSO-8701671B80997210152417",
+    "level": "admin2",
+    "name": "La Croix Chaubough",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No population is written: Table A.9 of the 2022 report lists no settlement of this name in the district, and the 2010 base is not the whole 2010 population."
+    },
+    "median_age": {
+      "value": 31.3,
+      "unit": "years",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "sex_ratio": {
+      "value": 1000,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 58.1,
+        "count": 194
+      },
+      {
+        "group": "Evangelical",
+        "pct": 14.1,
+        "count": 47
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 11.4,
+        "count": 38
+      },
+      {
+        "group": "No religion",
+        "pct": 6.9,
+        "count": 23
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.0,
+        "count": 10
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 2.4,
+        "count": 8
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 2.1,
+        "count": 7
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 3
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.6,
+        "count": 2
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.3,
+        "count": 1
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 1
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Brethren",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
+    },
+    "ethnicity": [
+      {
+        "group": "African descent",
+        "pct": 98.5,
+        "count": 329
+      },
+      {
+        "group": "Mixed",
+        "pct": 0.9,
+        "count": 3
+      },
+      {
+        "group": "Indigenous",
+        "pct": 0.3,
+        "count": 1
+      },
+      {
+        "group": "White",
+        "pct": 0.3,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Hispanic",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Syrian/Lebanese",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Central Statistics Office of Saint Lucia, 2010 Population and Housing Census, REDATAM base PHC2010C",
+        "url": "https://prod.redatam.org/binlca/RpWebEngine.exe/Portal?BASE=PHC2010C&lang=eng",
+        "year": 2010
+      },
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistics Office of Saint Lucia, 2022 Population and Housing Census: Provisional Census Report, Release 2, Table A.9",
+        "url": "https://www.stats.gov.lc/wp-content/uploads/2024/08/StLucia-Provisional-Census-Report2022-Release-2Rev-2.5.pdf",
+        "year": 2022
+      }
+    ],
+    "parent_name": "Castries",
+    "country": "LCA",
+    "match_by": "shape_id",
+    "shape_id": "8701671B80997210152417",
+    "median_age_note": "Interpolated within the single year holding the middle person of the 334 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "ethnicity_year": 2010,
+    "ethnicity_note": "Ethnic group, as asked of the 334 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "religion_year": 2010,
+    "religion_note": "Religion, as asked of the 334 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households).",
+    "sex_ratio_note": "Men per thousand women among the 334 people the 2010 base holds in the settlement (the base holds 147,581 of the 2010 census's 165,595 in households)."
+  },
+  {
     "id": "LCA-CSO-8701671B53039174443584",
     "level": "admin2",
     "name": "La Guerre",
@@ -98552,88 +100272,6 @@
     "shape_id": "8701671B90786780806365"
   },
   {
-    "id": "LCA-CSO-8701671B94073395823663",
-    "level": "admin2",
-    "name": "Anse Galet",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Anse la Raye",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B94073395823663"
-  },
-  {
-    "id": "LCA-CSO-8701671B51325698675387",
-    "level": "admin2",
-    "name": "Barre De L'Isle",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Castries",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B51325698675387"
-  },
-  {
     "id": "LCA-CSO-8701671B50411660224690",
     "level": "admin2",
     "name": "Bazile",
@@ -99329,47 +100967,6 @@
     "country": "LCA",
     "match_by": "shape_id",
     "shape_id": "8701671B73025224751915"
-  },
-  {
-    "id": "LCA-CSO-8701671B17247677679787",
-    "level": "admin2",
-    "name": "Chassin/Babonneau",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Gros Islet",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B17247677679787"
   },
   {
     "id": "LCA-CSO-8701671B98746614638816",
@@ -100069,47 +101666,6 @@
     "shape_id": "8701671B70172506125810"
   },
   {
-    "id": "LCA-CSO-8701671B78261941759356",
-    "level": "admin2",
-    "name": "Fond Assau/Babonneau",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Gros Islet",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B78261941759356"
-  },
-  {
     "id": "LCA-CSO-8701671B83706236309505",
     "level": "admin2",
     "name": "Fond D'Or",
@@ -100272,47 +101828,6 @@
     "country": "LCA",
     "match_by": "shape_id",
     "shape_id": "8701671B74250012316808"
-  },
-  {
-    "id": "LCA-CSO-8701671B45291890821133",
-    "level": "admin2",
-    "name": "Forest Reserve",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Gros Islet",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B45291890821133"
   },
   {
     "id": "LCA-CSO-8701671B38782099046323",
@@ -100682,47 +102197,6 @@
     "country": "LCA",
     "match_by": "shape_id",
     "shape_id": "8701671B96985788698945"
-  },
-  {
-    "id": "LCA-CSO-8701671B80997210152417",
-    "level": "admin2",
-    "name": "La Croix Chaubough",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Castries",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B80997210152417"
   },
   {
     "id": "LCA-CSO-8701671B47910558118739",
@@ -101338,47 +102812,6 @@
     "country": "LCA",
     "match_by": "shape_id",
     "shape_id": "8701671B54690332526022"
-  },
-  {
-    "id": "LCA-CSO-8701671B48601442509190",
-    "level": "admin2",
-    "name": "Morne Assau/Babonneau",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Gros Islet",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B48601442509190"
   },
   {
     "id": "LCA-CSO-8701671B74106328276296",
@@ -102035,47 +103468,6 @@
     "country": "LCA",
     "match_by": "shape_id",
     "shape_id": "8701671B91973054912616"
-  },
-  {
-    "id": "LCA-CSO-8701671B35979662153697",
-    "level": "admin2",
-    "name": "Riverside Road",
-    "parent": "LCA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Saint Lucia's census does not ask a language question: neither the 2022 base's data dictionary (PHC2022, DICALL) nor the 2010 base's (PHC2010C) holds a language variable, only difficulty speaking."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline."
-    },
-    "sources": [],
-    "parent_name": "Soufrière",
-    "country": "LCA",
-    "match_by": "shape_id",
-    "shape_id": "8701671B35979662153697"
   },
   {
     "id": "LCA-CSO-8701671B49997775844737",
