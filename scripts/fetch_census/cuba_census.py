@@ -420,7 +420,9 @@ def colour_fields(values: list[int]) -> dict[str, Any]:
         "ethnicity_note": (
             "Skin colour (color de la piel) as the 2012 Population and Housing Census recorded "
             f"it for everyone counted -- {total:,} people here -- in its three categories: "
-            "white (blanca), black (negra), and mulatto or mestizo (mulata o mestiza). Cuba's "
+            "white (blanca), black (negra), and mulatto or mestizo (mulata o mestiza). In 2012 "
+            "the question was put to the person answering, a self-classification; earlier "
+            "censuses, 2002's included, had the enumerator record it by observation. Cuba's "
             "census asks no other identity question."),
     }
 
