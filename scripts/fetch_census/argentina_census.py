@@ -53,14 +53,15 @@ import io
 import json
 import re
 import sys
-import unicodedata
 import urllib.error
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from . import binding
 from ._shared import PROCESSED, log, measure, record, shares, write_json
+from .binding import fold
 from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -151,14 +152,6 @@ CUADRO = re.compile(r"^Cuadro\s*(\d+)\.(\d+)(?:\.(\d+))?$")
 MEDIAN_LIMIT = 5.0
 MEDIAN_NOTE = 2.0
 FIVE_YEAR: dict[str, float | None] = {}
-
-
-def fold(name: str) -> str:
-    # Chaco's "1° de Mayo" is "1º de Mayo" in another table: a degree sign in
-    # one, an ordinal indicator (which NFKD would read as "o") in the other.
-    text = re.sub(r"[º°ª]", "", str(name or ""))
-    stripped = unicodedata.normalize("NFKD", text)
-    return "".join(c for c in stripped.lower() if c.isalnum() and not unicodedata.combining(c))
 
 
 def number(value: Any) -> int | None:
@@ -394,64 +387,7 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
 
 def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
          parents: dict[str, str]) -> tuple[dict[str, str], list[str]]:
-    """INDEC department code -> the map's shape id, by name, then name, then place.
-
-    ``departments`` is {code: (name, province map name or "")}; ``parents``
-    the map's admin1 id -> name.
-    """
-    def key(name: str) -> str:
-        return fold(ALIASES.get(name, name))
-
-    by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for shape in shapes:
-        by_key[fold(shape["name"])].append(shape)
-    bound: dict[str, str] = {}
-    used: set[str] = set()
-
-    def home(province: str) -> tuple[float, float, float, float] | None:
-        points = [s["point"] for c, sid in bound.items() for s in shapes
-                  if s["id"] == sid and departments[c][1] == province]
-        if len(points) < 2:
-            return None
-        xs, ys = [p[0] for p in points], [p[1] for p in points]
-        pad = 0.3
-        return min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad
-
-    # 1. By name within the province the boundary file files it under.
-    for code, (name, province) in departments.items():
-        hits = [s for s in by_key.get(key(name), [])
-                if province and parents.get(s["parent"]) == province]
-        if len(hits) == 1 and hits[0]["id"] not in used:
-            bound[code] = hits[0]["id"]
-            used.add(hits[0]["id"])
-    progress = True
-    while progress:
-        progress = False
-        pending = [c for c in departments if c not in bound]
-        # 2. A name no other unbound polygon or department shares.
-        names = defaultdict(list)
-        for code in pending:
-            names[key(departments[code][0])].append(code)
-        for k, codes in names.items():
-            free = [s for s in by_key.get(k, []) if s["id"] not in used]
-            if len(codes) == 1 and len(free) == 1:
-                bound[codes[0]] = free[0]["id"]
-                used.add(free[0]["id"])
-                progress = True
-        # 3. For a shared name, the one free polygon among the province's others.
-        for code in [c for c in departments if c not in bound]:
-            box = home(departments[code][1] or departments[code][0])
-            if box is None:
-                continue
-            free = [s for s in by_key.get(key(departments[code][0]), [])
-                    if s["id"] not in used
-                    and box[0] <= s["point"][0] <= box[2] and box[1] <= s["point"][1] <= box[3]]
-            if len(free) == 1:
-                bound[code] = free[0]["id"]
-                used.add(free[0]["id"])
-                progress = True
-    missing = [f"{departments[c][0]} ({c})" for c in departments if c not in bound]
-    return bound, missing
+    return binding.bind(departments, shapes, parents, ALIASES)
 
 
 def main() -> int:
