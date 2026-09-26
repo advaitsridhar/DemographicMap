@@ -1,20 +1,5 @@
-  Base: 21713 rows; columns: ['None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None']
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cuba_census.py", line 58, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cuba_census.py", line 53, in main
-    probe()
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cuba_census.py", line 31, in probe
-    values = Counter(str(r[at[column]]) for r in rows[1:])
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/collections/__init__.py", line 599, in __init__
-    self.update(iterable, **kwds)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/collections/__init__.py", line 690, in update
-    _count_elements(self, iterable)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cuba_census.py", line 31, in <genexpr>
-    values = Counter(str(r[at[column]]) for r in rows[1:])
-                           ~~^^^^^^^^
-KeyError: 'Año'
+  13 provinces and comarcas, 82 districts making INEC's 4,064,780
+  TABOGA (0811) is not drawn and is left out, as panama_census leaves it
+  75 districts, each the count panama_census wrote from cuadro 11
+  wrote data/processed/panama_redatam.json (104 kB)
+  wrote panama_redatam.json: 75 records
