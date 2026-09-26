@@ -499,11 +499,15 @@ def absorb(provinces: dict[str, dict[str, Any]], unbound: list[str],
                 continue
             host["values"] = [a + b for a, b in zip(host["values"][:9], area["values"][:9])]
             host["values"].append(None)
-            rows = dict(area["ages"])
-            if [label for label, _ in host["ages"]] != list(rows):
-                raise SystemExit(f"dominican_census: {name}'s age rows are not {parent}'s")
-            host["ages"] = [(label, [a + b for a, b in zip(v[:9], rows[label][:9])] + [None])
-                            for label, v in host["ages"]]
+            # A small municipio prints no row for an age group it has nobody
+            # in, so the two are added group by group, in age order.
+            mine, theirs = dict(host["ages"]), dict(area["ages"])
+            labels = sorted(set(mine) | set(theirs),
+                            key=lambda lb: (band(lb) is None, (band(lb) or (0, 0))[0]))
+            zero = [0] * 9
+            host["ages"] = [(lb, [a + b for a, b in zip(mine.get(lb, zero)[:9],
+                                                        theirs.get(lb, zero)[:9])] + [None])
+                            for lb in labels]
             host.setdefault("absorbed", []).append(name)
             done.append(f"{name} into {bare(host['label'])} ({province})")
         entry["municipios"] = keep
