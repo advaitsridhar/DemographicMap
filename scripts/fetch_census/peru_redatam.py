@@ -37,7 +37,7 @@ PROBES = {
 
 TABLE TABLE1
     AS FREQUENCY
-    FOR POBLACIO.C5P26
+    OF POBLACIO.C5P26
     AREABREAK DEPARTAM
 """,
     # The same as a crosstab against the province code, the other way the
