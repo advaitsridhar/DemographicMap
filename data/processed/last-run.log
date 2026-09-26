@@ -1,55 +1,42 @@
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/peru_redatam.py", line 498, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/peru_redatam.py", line 431, in main
-    session.get(PORTAL)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_redatam.py", line 50, in get
-    with self.opener.open(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
-  URLError reaching https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lan: trying again in 10s
-  URLError reaching https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lan: trying again in 20s
-  URLError reaching https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lan: trying again in 40s
+https://data.humdata.org/dataset/80a2e7d0-6895-4cfa-ae01-f23169a9aa2a/resource/0f2dcd9f-ea0f-4bf7-bf44-8b8631432f51/download/dominican_republic_uscb_202212.xlsx
+  966,252 bytes
+  10 sheet(s)
+  -- 'Metadata': 148 rows x 2 cols
+     ['Metadata: Domini', '']
+     ['Contents', '']
+     ['One metadata tab', '']
+     ['Geospatial Bound', '']
+     ['National Boundar', '']
+     ['Title', 'Dominican Republ']
+     ['Tags', 'Geospatial Bound']
+     ['Summary', 'The U.S. Census ']
+     ['Description', 'National boundar']
+     ['Credits', 'Geospatial Bound']
+     ['Use Limitations', 'The use permissi']
+     ['Place Keywords', 'Dominican Republ']
+  -- 'Data Dictionary': 535 rows x 4 cols
+     ['Data Dictionary:', '', '', '']
+     ['Standard Geograp', '', '', '']
+     ['Field Name', 'Field Alias', 'Field Descriptio', 'Field Data Sourc']
+     ['AREA_NAME', 'Country or subna', 'Name of the coun', 'U.S. Board on Ge']
+     ['GEO_CONCAT', 'Administrative d', 'Concatenation of', 'Population Divis']
+     ['GEO_MATCH', 'Geographic match', 'Identical subnat', 'Population Divis']
+     ['CNTRY_NAME', 'Country name', 'Country name.', 'U.S. Board on Ge']
+     ['ADM1_NAME', 'First-order admi', 'First-order admi', 'U.S. Board on Ge']
+     ['ADM2_NAME', 'Second-order adm', 'Second-order adm', 'U.S. Board on Ge']
+     ['ADM3_NAME', 'Third-order admi', 'Third-order admi', 'U.S. Board on Ge']
+     ['ADM4_NAME', 'Fourth-order adm', 'Fourth-order adm', 'U.S. Board on Ge']
+     ['ADM_LEVEL', 'Administrative l', 'Administrative l', 'Population Divis']
+  -- 'Age-Sex': 586 rows x 80 cols
+     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'BTOTL', 'B0004', 'B0509', 'B1014', 'B1519', 'B2024', 'B2529', 'B3034', 'B3539', 'B4044', 'B4549', 'B5054', 'B5559', 'B6064', 'B6569', 'B7074', 'B7579', 'B8084', 'B8589', 'B9094', 'B9599', 'B100PL', 'MTOTL', 'M0004', 'M0509', 'M1014', 'M1519', 'M2024', 'M2529', 'M3034']
+     ['Country or subna', 'Administrative n', 'Geographic match', 'Country name', 'First-order admi', 'Second-order adm', 'Third-order admi', 'Fourth-order adm', 'Administrative l', 'Notes', 'GENC code', 'FIPS code', 'National statist', 'National statist', 'Both sexes total', 'Both sexes 0 to ', 'Both sexes 5 to ', 'Both sexes 10 to', 'Both sexes 15 to', 'Both sexes 20 to', 'Both sexes 25 to', 'Both sexes 30 to', 'Both sexes 35 to', 'Both sexes 40 to', 'Both sexes 45 to', 'Both sexes 50 to', 'Both sexes 55 to', 'Both sexes 60 to', 'Both sexes 65 to', 'Both sexes 70 to', 'Both sexes 75 to', 'Both sexes 80 to', 'Both sexes 85 to', 'Both sexes 90 to', 'Both sexes 95 to', 'Both sexes 100 a', 'Males total', 'Males 0 to 4', 'Males 5 to 9', 'Males 10 to 14', 'Males 15 to 19', 'Males 20 to 24', 'Males 25 to 29', 'Males 30 to 34']
+     ['DOMINICAN REPUBL', '', '', '', '', '', '', '', '0', '', 'DO', 'DR', '', 'República Domini', '9445281', '896706', '938460', '973761', '983223', '876934', '766233', '713072', '636723', '580398', '499459', '403689', '320960', '268529', '186305', '157330', '103228', '76710', '34585', '17991', '7029', '3956', '4739038', '456410', '476395', '492891', '490883', '440626', '384692', '358475']
+     ['CIBAO NORTE', 'DOMINICAN REPUBL', 'DOM_01', 'DOMINICAN REPUBL', 'CIBAO NORTE', '', '', '', '1', '', 'DO-35', 'DR40', '01000000', 'Región Cibao Nor', '1516957', '132198', '139200', '146474', '151999', '142175', '125262', '120422', '108939', '101334', '84036', '64798', '52502', '44801', '30683', '26487', '18308', '14665', '6852', '3728', '1403', '691', '762839', '67566', '70785', '74348', '75901', '71644', '63015', '60794']
+     ['ESPAILLAT', 'DOMINICAN REPUBL', 'DOM_01_01', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', '', '', '2', '', 'DO-09', 'DR08', '01090000', 'Provincia Espail', '231938', '19170', '21341', '22662', '23889', '21227', '18273', '17040', '16005', '15300', '13087', '10329', '8576', '7308', '5129', '4617', '3159', '2612', '1232', '648', '233', '101', '118554', '9945', '10777', '11685', '12199', '11185', '9398', '8795']
+     ['MOCA', 'DOMINICAN REPUBL', 'DOM_01_01_01', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', '', '3', '', '', '', '01090100', 'Municipio Moca', '179829', '14640', '16467', '17248', '18296', '16604', '14368', '13326', '12457', '12104', '10333', '8016', '6684', '5612', '3920', '3550', '2393', '2051', '998', '515', '182', '65', '91327', '7606', '8299', '8886', '9279', '8726', '7396', '6896']
+     ['MOCA', 'DOMINICAN REPUBL', 'DOM_01_01_01_01', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'MOCA', '4', '', '', '', '01090101', 'Moca', '94981', '7812', '8634', '8894', '9427', '8864', '7728', '7255', '6701', '6435', '5557', '4258', '3550', '2924', '2045', '1786', '1177', '1032', '521', '261', '91', '29', '47412', '4050', '4382', '4595', '4707', '4578', '3883', '3714']
+     ['JOSÉ CONTRERAS', 'DOMINICAN REPUBL', 'DOM_01_01_01_02', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'JOSÉ CONTRERAS', '4', '', '', '', '01090102', 'José Contreras (', '4498', '325', '467', '425', '453', '393', '308', '304', '261', '278', '262', '249', '189', '175', '116', '103', '66', '70', '30', '14', '6', '4', '2482', '176', '237', '230', '262', '233', '169', '178']
+     ['SAN VÍCTOR', 'DOMINICAN REPUBL', 'DOM_01_01_01_03', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'SAN VÍCTOR', '4', '', '', '', '01090103', 'San Víctor (D.M.', '21009', '1694', '1944', '2186', '2137', '1839', '1592', '1473', '1482', '1396', '1133', '874', '768', '723', '472', '468', '358', '262', '117', '61', '23', '7', '10849', '904', '965', '1129', '1116', '998', '864', '755']
+     ['JUAN LÓPEZ', 'DOMINICAN REPUBL', 'DOM_01_01_01_04', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'JUAN LÓPEZ', '4', '', '', '', '01090104', 'Juan López (D.M.', '14777', '1201', '1359', '1444', '1654', '1427', '1153', '1024', '966', '1016', '845', '661', '563', '408', '306', '281', '175', '153', '78', '48', '13', '2', '7526', '624', '689', '720', '812', '746', '588', '518']
+     ['LAS LAGUNAS', 'DOMINICAN REPUBL', 'DOM_01_01_01_05', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'LAS LAGUNAS', '4', '', '', '', '01090105', 'Las Lagunas (D.M', '15241', '1206', '1464', '1476', '1595', '1378', '1214', '1133', '1049', '953', '811', '709', '539', '471', '364', '341', '202', '181', '93', '36', '18', '8', '7894', '625', '750', '750', '827', '746', '650', '602']
+     ['CANCA LA REYNA', 'DOMINICAN REPUBL', 'DOM_01_01_01_06', 'DOMINICAN REPUBL', 'CIBAO NORTE', 'ESPAILLAT', 'MOCA', 'CANCA LA REYNA', '4', '', '', '', '01090106', 'Canca la Reyna (', '10998', '902', '930', '1082', '1173', '1029', '872', '778', '760', '758', '642', '482', '424', '336', '208', '195', '184', '135', '62', '30', '13', '3', '5642', '475', '458', '550', '618', '526', '463', '409']
