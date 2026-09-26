@@ -618,17 +618,20 @@ def main() -> int:
         afro_sheet = sheet(sheets[("poblacion_afrodescendiente", 7)], index, f"{what} afro_c7")
         afro_rows = coded(afro_sheet)
         afro_total = total_row(afro_sheet, f"{what} afro")
-        if set(names) - set(afro_rows):
-            raise SystemExit(f"argentina_census: {what}: afro_c7 lacks "
-                             + ", ".join(names[c] for c in set(names) - set(afro_rows)))
-        private = {c: afro_rows[c][1][0] for c in names}
-        afro = {c: afro_rows[c][1][1] for c in names}
+        # Tierra del Fuego's Antártida has no row: no one there lives in a
+        # private dwelling, which the rest making the province's total confirms.
+        for code in sorted(set(names) - set(afro_rows)):
+            log(f"  {what}: afro_c7 has no row for {names[code]}; no private dwellings")
+        private = {c: afro_rows[c][1][0] if c in afro_rows else 0 for c in names}
+        afro = {c: afro_rows[c][1][1] if c in afro_rows else 0 for c in names}
         if sum(private.values()) != afro_total[0] or sum(afro.values()) != afro_total[1]:
             raise SystemExit(f"argentina_census: {what}: departments' Afro-descendants or "
                              "private-dwelling population do not make the province")
 
         def ethnicity(ind: dict[str, int], afr: int, dwelling: int, spoken: list[int],
                       level: str) -> dict[str, Any]:
+            if not dwelling:
+                return {}
             indigenous_total = sum(ind.values())
             rest = dwelling - indigenous_total - afr
             if rest < 0:

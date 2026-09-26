@@ -252,6 +252,7 @@ def district_key(name: str) -> str:
 
 
 DISTRICT_NAMES: dict[tuple[str, str], str] = {}
+OVERLAPS: list[str] = []
 
 
 def district_table(rows: list[list[Any]], columns: list[int]
@@ -413,15 +414,16 @@ def main() -> int:
         unit["afro"] = [a + b for a, b in zip(unit["afro"], afro_dist[(prov, dist)])]
         unit["indigenous"] += ind_dist[(prov, dist)][0]
 
-    def ethnicity(indigenous: dict[str, int], afro: list[int], total: int, level: str
-                  ) -> dict[str, Any]:
+    def ethnicity(indigenous: dict[str, int], afro: list[int], total: int, level: str,
+                  where: str = "") -> dict[str, Any]:
         counts = dict(indigenous)
         for (_, label), count in zip(AFRO_COLUMNS, afro[2:]):
             counts[label] = count
         rest = total - sum(indigenous.values()) - afro[1]
         if rest < 0:
-            raise SystemExit("panama_census: indigenous and Afro-descendant people exceed the "
-                             "population")
+            OVERLAPS.append(f"{where}: {sum(indigenous.values()):,} indigenous and {afro[1]:,} "
+                            f"Afro-descendant of {total:,}")
+            return {}
         counts[REST] = rest
         which = ("Which people is published for the province only, so the district's "
                  "indigenous population is one line. " if level == "admin2" else "")
@@ -452,7 +454,7 @@ def main() -> int:
                              f"person; INEC's own median is {unit['median']}."),
             sex_ratio=measure(round(1000 * unit["men"] / unit["women"]),
                               unit="males_per_1000_females", year=YEAR, source=source),
-            **ethnicity(people, afro_prov[key], unit["total"], "admin1"),
+            **ethnicity(people, afro_prov[key], unit["total"], "admin1", unit["name"]),
             sources=sources("admin1")))
 
     districts = {f"{p}:{d}": (DISTRICT_NAMES[(p, d)], PROVINCES[p]) for (p, d) in merged}
@@ -482,8 +484,12 @@ def main() -> int:
                                      if len(parts) > 1 else None)),
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=source),
-            **ethnicity({INDIGENOUS_DISTRICT: unit["indigenous"]}, unit["afro"], total, "admin2"),
+            **ethnicity({INDIGENOUS_DISTRICT: unit["indigenous"]}, unit["afro"], total, "admin2",
+                        dist),
             sources=sources("admin2")))
+    if OVERLAPS:
+        raise SystemExit(f"panama_census: {len(OVERLAPS)} units where the two questions overlap "
+                         "past the population: " + "; ".join(OVERLAPS))
     log(f"  {len(by_province)} provinces and comarcas, "
         f"{sum(1 for r in records if r['level'] == 'admin2')} districts")
     write_json(PROCESSED / OUT, records)
