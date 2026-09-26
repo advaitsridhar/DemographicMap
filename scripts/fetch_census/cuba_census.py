@@ -46,7 +46,8 @@ import re
 from collections.abc import Callable
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from .binding import bind, fold
 from .cod_ps_age import grouped_median
 
@@ -87,6 +88,22 @@ MUNICIPIOS = {"Carlos Manuel de Céspedes": "Céspedes", "Habana Vieja": "La Hab
               "La Habana del Este": "Habana del Este", "Lajas": "Santa Isabel de las Lajas",
               "Isla de la Juventud": "Isle of Youth", "1ro de Enero": "Primero de Enero",
               "Antillas": "Antilla"}
+# Banes and Antilla (Holguín) are not the units the boundary file draws.
+# ONEI's municipal dashboard counts Banes at 76,867 in 2020 and 66,835 in
+# 2021, Antilla at 12,675 and 21,186: territory passed from one to the other
+# in 2021, and whichever extent a polygon has, one of the two censuses' figures
+# is of another place. Estudios y Datos 2024 does not agree with itself about
+# them either -- Table 1 prints 69,412 and 12,008, Tables 3, 5 and 6 to 8
+# 60,650 and 20,770 -- so neither year is bound to either polygon, and both
+# say why. Holguín's own figures hold: the two make 81,420 in every table.
+REDRAWN = ("Banes", "Antillas")
+REDRAWN_NOTE = (
+    "Not filled: territory passed from Banes to Antilla in 2021 (ONEI's municipal dashboard: "
+    "Banes 76,867 in 2020 and 66,835 in 2021, Antilla 12,675 and 21,186), so ONEI's figures "
+    "since then and the 2012 census's describe different extents, and which one this polygon "
+    "draws is not known. ONEI's Estudios y Datos 2024 also disagrees with itself about the two "
+    "(Table 1: 69,412 and 12,008 people; Tables 3 and 5: 60,650 and 20,770). Holguín "
+    "province's figures include both either way.")
 AGE = re.compile(r"^(\d{1,2})-(\d{1,2})$")
 OPEN = re.compile(r"^(\d{1,2})y\+?$")
 NUMERIC = re.compile(r"^(?:\d+|-)$")
@@ -341,6 +358,10 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
         # reason: Corralillo's age groups make 11,188 women, Table 1 prints
         # 11,189. Each sex may miss by one person, logged; more stops the run.
         missed = abs(men - table_1[1]) + abs(women - table_1[2])
+        if unit[1] in REDRAWN:
+            log(f"  {unit[1]}: Table 5 {total and total[0]:,}, Table 1 {table_1[0]:,}; "
+                "left unfilled (REDRAWN)")
+            continue
         if (total is None or abs(total[0] - table_1[0]) > 1 or abs(men - table_1[1]) > 1
                 or abs(women - table_1[2]) > 1):
             wrong.append(f"{unit[1]} ({unit[0]}): Table 5 {total and total[0]:,} "
@@ -509,6 +530,14 @@ def main() -> int:
             code = f"{fold(province)}-{fold(name)}"
             sid = bound.get(code)
             if sid is None:
+                continue
+            if name in REDRAWN:
+                records.append(record(
+                    f"CUB-ONEI-{code}", labels[sid], level="admin2", parent="CUB",
+                    country="CUB", parent_name=shape_of(province)["name"],
+                    match_by="shape_id", shape_id=sid,
+                    **{f: gap(NOT_AVAILABLE, REDRAWN_NOTE)
+                       for f in ("population", "median_age", "sex_ratio", "ethnicity")}))
                 continue
             groups = [(lo, hi, men + women) for lo, hi, men, women in ages[(province, name)]]
             records.append(record(
