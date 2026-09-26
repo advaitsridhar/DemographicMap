@@ -96,7 +96,8 @@ OTHER = {"Indígena": "Other indigenous people",
 AGE_ZERO = "edad"
 # INE's name -> the boundary file's, where they differ by more than accents.
 DEPARTMENTS = {"islasdelabahia": "Bay Islands"}
-ALIASES: dict[str, str] = {}
+ALIASES = {"CABAÑAS": "Cabana", "VILLEDA MORALES": "Ramón Villeda Morales",
+           "SAN MARCOS DE LA SIERRA": "San Marcos de Sierra"}
 # (department, municipio the boundary file does not draw) -> the one whose polygon holds it.
 FOLDED = {("santabarbara", "nuevafrontera"): "macuelizo"}
 
