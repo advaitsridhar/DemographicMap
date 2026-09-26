@@ -38,8 +38,15 @@ def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
     """
     aliases = aliases or {}
 
-    def key(name: str) -> str:
-        return fold(aliases.get(name, name))
+    def keys(name: str) -> set[str]:
+        # The office's own spelling and the alias both: an alias written for
+        # one province's unit ("Pellegrini" -> Santiago del Estero's
+        # "Pelegrini") must not stop another province's namesake that the
+        # boundary file spells as the office does.
+        return {fold(name), fold(aliases.get(name, name))}
+
+    def shapes_named(name: str) -> list[dict[str, Any]]:
+        return [s for k in keys(name) for s in by_key.get(k, [])]
 
     by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for shape in shapes:
@@ -58,7 +65,7 @@ def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
 
     # 1. By name within the province the boundary file files it under.
     for code, (name, province) in departments.items():
-        hits = [s for s in by_key.get(key(name), [])
+        hits = [s for s in shapes_named(name)
                 if province and parents.get(s["parent"]) == province]
         if len(hits) == 1 and hits[0]["id"] not in used:
             bound[code] = hits[0]["id"]
@@ -70,9 +77,9 @@ def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
         # 2. A name no other unbound polygon or department shares.
         names = defaultdict(list)
         for code in pending:
-            names[key(departments[code][0])].append(code)
+            names[fold(aliases.get(departments[code][0], departments[code][0]))].append(code)
         for k, codes in names.items():
-            free = [s for s in by_key.get(k, []) if s["id"] not in used]
+            free = [s for s in shapes_named(departments[codes[0]][0]) if s["id"] not in used]
             if len(codes) == 1 and len(free) == 1:
                 bound[codes[0]] = free[0]["id"]
                 used.add(free[0]["id"])
@@ -82,7 +89,7 @@ def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
             box = home(departments[code][1] or departments[code][0])
             if box is None:
                 continue
-            free = [s for s in by_key.get(key(departments[code][0]), [])
+            free = [s for s in shapes_named(departments[code][0])
                     if s["id"] not in used
                     and box[0] <= s["point"][0] <= box[2] and box[1] <= s["point"][1] <= box[3]]
             if len(free) == 1:

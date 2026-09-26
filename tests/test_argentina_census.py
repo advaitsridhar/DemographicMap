@@ -186,6 +186,15 @@ class Binding(unittest.TestCase):
         self.assertEqual(bound["06210"], "c1")
         self.assertEqual(bound["30015"], "c2")
 
+    def test_an_alias_for_one_province_does_not_stop_a_namesake_spelled_as_the_office_does(self):
+        shapes = [self.shape("a", "Pellegrini", "P-BA", -63.0, -36.0),
+                  self.shape("b", "Pelegrini", "P-SDE", -63.0, -26.0)]
+        departments = {"06616": ("Pellegrini", "Buenos Aires"),
+                       "86133": ("Pellegrini", "Santiago del Estero")}
+        bound, missing = ac.binding.bind(departments, shapes, self.parents,
+                                         {"Pellegrini": "Pelegrini"})
+        self.assertEqual((bound, missing), ({"06616": "a", "86133": "b"}, []))
+
     def test_a_department_with_no_polygon_is_left_out_not_given_a_namesakes(self):
         shapes = [self.shape("s1", "San Martín", "P-CBA", -63.0, -32.0)]
         departments = {"14140": ("San Martín", "Córdoba"),
