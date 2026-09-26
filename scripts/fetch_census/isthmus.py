@@ -98,8 +98,12 @@ def fill_missing(tables: dict[str, dict[str, dict[str, Any]]], who: str, everyon
         filled[question] = len(absent)
         made = sum((t["total"] or 0) + (t["na"] or 0) for t in found.values())
         if made != everyone:
+            short = [f"{code} {areas[code]['name']}: {t['total']}+{t['na']} of "
+                     f"{areas[code]['total']}" for code, t in sorted(found.items())
+                     if (t["total"] or 0) + (t["na"] or 0) != areas[code]["total"]]
             raise SystemExit(f"{who}: {question}: the areas' answers and not-applicables make "
-                             f"{made:,}, not {everyone:,}")
+                             f"{made:,}, not {everyone:,}; {len(short)} areas short of "
+                             f"{reference}: {short[:12]}")
     return filled
 
 
