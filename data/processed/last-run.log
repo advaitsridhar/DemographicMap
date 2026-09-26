@@ -1,233 +1,115 @@
-program age-prov: 726 characters back
-  text: ﻿ Redatam WebServer Output Page Redatam Table
-  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\104923\~tmp_10492301.htm&TYPE=TMP
-follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\104923\~tmp_10492301.htm&TYPE=TMP
-  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P: Edad en años AREA # 0101 Amazonas, provincia: Chachapoyas P: Edad en años Casos % Acumulado % Edad 0 890 1,60% 1,60% Edad 1 año 878 1,58% 3,19% Edad 2 años 877 1,58% 4,77% Edad 3 años 912 1,64% 6,41% Edad 4 años 962 1,73% 8,14% Edad 5 años 894 1,61% 9,75% Edad 6 años 958 1,73% 11,48% Edad 7 años 1 001 1,80% 13,28% Edad 8 años 962 1,73% 15,01% Edad 9 años 991 1,79% 16,80% Edad 10 años 950 1,71% 18,51% Edad 11 años 989 1,78% 20,29% Edad 12 años 1 094 1,97% 22,26% Edad 13 años 1 013 1,83% 24,09% Edad 14 años 1 043 1,88% 25,97% Edad 15 años 1 000 1,80% 27,77% Edad 16 años 995 1,79% 29,56% Edad 17 años 1 029 1,85% 31,42% Edad 18 años 941 1,70% 33,11% Edad 19 años 882 1,59% 34,70% Edad 20 años 838 1,51% 36,21% Edad 21 años 943 1,70% 37,91% Edad 22 años 940 1,69% 39,60% Edad 23 años 926 1,67% 41,27% Edad 24 años 1 057 1,90% 43,18% Edad 25 años 995 1,79% 44,97% Edad 26 años 946 1,70% 46,67% Edad 27 años 858 1,55% 48,22% Edad 28 años 841 1,52% 49,73% Edad 29 años 898 1,62% 51,35% Edad 30 años 879 1,58% 52,93% Edad 31 años 864 1,56% 54,49% Edad 32 años 830 1,50% 55,99% Edad 33 años 905 1,63% 57,62% Edad 34 años 834 1,50% 59,12% Edad 35 años 861 1,55% 60,67% Edad 36 años 814 1,47% 62,14% Edad 37 años 754 1,36% 63,50% Edad 38 años 771 1,39% 64,88% Edad 39 años 716 1,29% 66,17% Edad 40 años 725 1,31% 67,48% Edad 41 años 723 1,30% 68,78% Edad 42 años 740 1,33% 70,12% Edad 43 años 667 1,20% 71,32% Edad 44 años 685 1,23% 72,55% Edad 45 años 671 1,21% 73,76% Edad 46 años 666 1,20% 74,96% Edad 47 años 626 1,13% 76,09% Edad 48 años 638 1,15% 77,24% Edad 49 años 641 1,15% 78,39% Edad 50 años 613 1,10% 79,50% Edad 51 años 615 1,11% 80,61% Edad 52 años 607 1,09% 81,70% Edad 53 años 559 1,01% 82,71% Edad 54 años 497 0,90% 83,60% Edad 55 años 460 0,83% 84,43% Edad 56 años 488 0,88% 85,31% Edad 57 años 448 0,81% 86,12% Edad 58 años 440 0,79% 86,91% Edad 59 años 408 0,74% 87,64% Edad 60 años 394 0,71% 88,35% Edad 61 años 377 0,68% 89,03% Edad 62 años 362 0,65% 89,69% Edad 63 años 336 0,61% 90,29% Edad 64 años 327 0,59% 90,88% Edad 65 años 337 0,61% 91,49% Edad 66 años 335 0,60% 92,09% Edad 67 años 293 0,53% 92,62% Edad 68 años 243 0,44% 93,06% Edad 69 años 275 0,50% 93,55% Edad 70 años 267 0,48% 94,03% Edad 71 años 257 0,46% 94,50% Edad 72 años 308 0,55% 95,05% Edad 73 años 266 0,48% 95,53% Edad 74 años 211 0,38% 95,91% Edad 75 años 209 0,38% 96,29% Edad 76 años 191 0,34% 96,63% Edad 77 años 222 0,40% 97,03% Edad 78 años 200 0,36% 97,39% Edad 79 años 191 0,34% 97,74% Edad 80 años 170 0,31% 98,04% Edad 81 años 149 0,27% 98,31% Edad 82 años 149 0,27% 98,58% Edad 83 años 127 0,23% 98,81% Edad 84 años 123 0,22% 99,03% Edad 85 años 110 0,20% 99,23% Edad 86 años 83 0,15% 99,38% Edad 87 años 73 0,13% 99,51% Edad 88 años 53 0,10% 99,60% Edad 89 años 49 0,09% 99,69% Edad 90 años 45 0,08% 99,77% Edad 91 años 23 0,04% 99,81% Edad 92 años 27 0,05% 99,86% Edad 93 años 18 0,03% 99,90% Edad 94 años 1
-  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\104923\~tmp_10492301.xlsX
-  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\104923\~tmp_10492301.pdf
-﻿<!DOCTYPE html>
-<html>
-<head>
-  <title>Redatam Webserver Output Table</title>
-
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link type="text/css" rel="stylesheet" href="/redatam/css/red.table.css" />
-
-</head>
-
-<body>
-	<div class="CSSTableGenerator">
-		<style>
-.c0 {background-color: #FFFFFF;color: #000000;font-size:8pt;font-weight: bold;font-family: Tahoma;vertical-align: top}
-.c1 {background-color: #FFFFFF;color: #000000;font-size:8pt;font-family: Tahoma;vertical-align: top}
-.c2 {background-color: #A0A0A4;color: #000000;font-size:8pt;font-weight: bold;font-family: Tahoma;text-align: center;vertical-align: top}
-.c3 {background-color: #A0A0A4;color: #000000;font-size:8pt;font-weight: bold;font-family: Tahoma;text-align: right;vertical-align: top}
-.c4 {background-color: #FFFFFF;color: #000000;font-size:8pt;font-family: Tahoma;text-align: right;vertical-align: top}
-.c5 {background-color: #C0C0C0;color: #000000;font-size:8pt;font-weight: bold;font-family: Tahoma;vertical-align: top}
-.c6 {background-color: #C0C0C0;color: #000000;font-size:8pt;font-family: Tahoma;text-align: right;vertical-align: top}
-</style>
-<table border="0" cellspacing="1" cellpadding="2"  width="100%">
-<tr>
-<td class="c0" colspan="6">&Aacute;rea Geogr&aacute;fica</td>
-</tr>
-<tr>
-<td class="c1" colspan="6">Toda la Base de Datos</td>
-</tr>
-<tr>
-<td class="c0" colspan="6">Frecuencia</td>
-</tr>
-<tr>
-<td class="c1" colspan="6">  de P: Edad en años</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c0">AREA # 0101</td>
-<td class="c0">Amazonas, provincia: Chachapoyas</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c2">P: Edad en años</td>
-<td class="c3">Casos</td>
-<td class="c3">%</td>
-<td class="c3">Acumulado %</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 0</td>
-<td class="c4">    890</td>
-<td class="c4">1,60%</td>
-<td class="c4">1,60%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 1 año</td>
-<td class="c4">    878</td>
-<td class="c4">1,58%</td>
-<td class="c4">3,19%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 2 años</td>
-<td class="c4">    877</td>
-<td class="c4">1,58%</td>
-<td class="c4">4,77%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 3 años</td>
-<td class="c4">    912</td>
-<td class="c4">1,64%</td>
-<td class="c4">6,41%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 4 años</td>
-<td class="c4">    962</td>
-<td class="c4">1,73%</td>
-<td class="c4">8,14%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 5 años</td>
-<td class="c4">    894</td>
-<td class="c4">1,61%</td>
-<td class="c4">9,75%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 6 años</td>
-<td class="c4">    958</td>
-<td class="c4">1,73%</td>
-<td class="c4">11,48%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 7 años</td>
-<td class="c4">   1 001</td>
-<td class="c4">1,80%</td>
-<td class="c4">13,28%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 8 años</td>
-<td class="c4">    962</td>
-<td class="c4">1,73%</td>
-<td class="c4">15,01%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 9 años</td>
-<td class="c4">    991</td>
-<td class="c4">1,79%</td>
-<td class="c4">16,80%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 10 años</td>
-<td class="c4">    950</td>
-<td class="c4">1,71%</td>
-<td class="c4">18,51%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 11 años</td>
-<td class="c4">    989</td>
-<td class="c4">1,78%</td>
-<td class="c4">20,29%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 12 años</td>
-<td class="c4">   1 094</td>
-<td class="c4">1,97%</td>
-<td class="c4">22,26%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 13 años</td>
-<td class="c4">   1 013</td>
-<td class="c4">1,83%</td>
-<td class="c4">24,09%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 14 años</td>
-<td class="c4">   1 043</td>
-<td class="c4">1,88%</td>
-<td class="c4">25,97%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 15 años</td>
-<td class="c4">   1 000</td>
-<td class="c4">1,80%</td>
-<td class="c4">27,77%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 16 años</td>
-<td class="c4">    995</td>
-<td class="c4">1,79%</td>
-<td class="c4">29,56%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 17 años</td>
-<td class="c4">   1 029</td>
-<td class="c4">1,85%</td>
-<td class="c4">31,42%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 18 años</td>
-<td class="c4">    941</td>
-<td class="c4">1,70%</td>
-<td class="c4">33,11%</td>
-<td class="c1">&nbsp;</td>
-</tr>
-<tr>
-<td class="c1">&nbsp;</td>
-<td class="c1">Edad 19 años</td>
-<td class="c4">    882</td>
-<td class="c4">1,59%</t
+program labels: 1,796 characters back
+  text: ﻿ Redatam WebServer Output Page Redatam Table Redatam Table Redatam Table Redatam Table Redatam Table
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416801.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416821.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416841.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416861.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416881.htm&TYPE=TMP
+follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416801.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P: Sexo P: Sexo Casos % Acumulado % Hombre 14 450 757 49,18% 49,18% Mujer 14 931 127 50,82% 100,00% Total 29 381 884 100,00% 100,00% Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416801.xlsX
+  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416801.pdf
+  table None '' of 'P: Sexo': total 29381884, not applicable None
+    'Hombre': 14450757
+    'Mujer': 14931127
+follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416821.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Por sus costumbres y sus antepasados Ud. se considera: P12a+: Por sus costumbres y sus antepasados Ud. se considera: Casos % Acumulado % Quechua 5 176 809 22,32% 22,32% Aimara 548 292 2,36% 24,68% Nativo o in
+  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416821.xlsX
+  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416821.pdf
+  table None '' of 'P12a+: Por sus costumbres y sus antepasados Ud. se considera:': total 23196391, not applicable None
+    'Quechua': 5176809
+    'Aimara': 548292
+    'Nativo o indígena de la amazonía': 210612
+    'Parte de otro pueblo indígena u originario': 49838
+    'Negro, moreno, zambo, mulato / pueblo afroperuano o afrodescendiente': 828841
+    'Blanco': 1366931
+    'Mestizo': 13965254
+    'Otro': 241947
+    'No sabe / No responde': 771026
+    'Nikkei': 22534
+    'Tusán': 14307
+follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416841.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Por sus costumbres y sus antepasados Ud. se considera: P12a+: Por sus costumbres y sus antepasados Ud. se considera: Casos % Acumulado % Quechua 5 179 774 22,33% 22,33% Aimara 548 311 2,36% 24,69% Nativo o in
+  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416841.xlsX
+  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416841.pdf
+  table None '' of 'P12a+: Por sus costumbres y sus antepasados Ud. se considera:': total 23196391, not applicable None
+    'Quechua': 5179774
+    'Aimara': 548311
+    'Nativo o indígena de la amazonía': 212823
+    'Parte de otro pueblo indígena u originario': 43800
+    'Negro, moreno, zambo, mulato / pueblo afroperuano o afrodescendiente': 828894
+    'Blanco': 1366931
+    'Mestizo': 13965255
+    'Otro': 132490
+    'No sabe / No responde': 771026
+    'Cholo': 23599
+    'Culturas preincas': 6856
+    'Andinos': 2331
+    'Pueblos indígenas de otros países': 190
+    'Trigueño': 77269
+    'Nikkei': 22535
+    'Tusán': 14307
+follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416861.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P3a+: Idioma o lengua con el que aprendió hablar P3a+: Idioma o lengua con el que aprendió hablar Casos % Acumulado % Quechua 3 799 780 13,60% 13,60% Aimara 450 010 1,61% 15,21% Ashaninka 73 567 0,26% 15,47% Awajún 
+  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416861.xlsX
+  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416861.pdf
+  table None '' of 'P3a+: Idioma o lengua con el que aprendió hablar': total 27946060, not applicable None
+    'Quechua': 3799780
+    'Aimara': 450010
+    'Ashaninka': 73567
+    'Awajún / Aguaruna': 56584
+    'Shipibo - Konibo': 34152
+    'Shawi/Chayahuita': 17241
+    'Matsigenka/Machiguenga': 6629
+    'Achuar': 3809
+    'Otra lengua nativa u originaria': 1060
+    'Castellano': 23178478
+    'Portugués': 7956
+    'Otra lengua extranjera': 41920
+    'Lengua de señas peruanas': 10447
+    'No escucha, ni habla': 25763
+    'Wampis': 3569
+    'Kichwa': 5751
+    'Nomatsigenga': 3895
+    'Tikuna': 4290
+    'Urarina': 1301
+    'Yine': 2680
+    'Yanesha': 1142
+    'Kandozi-Chapra': 877
+    'Kakataibo': 1553
+    'Matses': 1366
+    'Kukama kukamiria': 1185
+    'Yagua': 712
+    'Secoya': 638
+    'Harakbut': 664
+    'Yaminahua': 574
+    'Jaqaru': 448
+    'Murui-Muinani': 416
+    'Kakinte': 273
+    'Amahuaca': 328
+    'Arabela': 118
+    'Nahua': 232
+    'Ese Eja': 212
+    'Capanahua': 117
+    'Maijuna': 121
+    'Ocaina': 44
+    'Sharanahua': 573
+    'Cauqui': 132
+    'Shiwilu': 53
+    'Cashinahua': 1074
+    'Isconahua': 22
+    'Omagua': 3
+    'No sabe / No responde': 204301
+follow: 'frame' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\84168\~tmp_8416881.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Table Área Geográfica Toda la Base de Datos Frecuencia de P12a+: Religión que profesa P12a+: Religión que profesa Casos % Acumulado % Católica 17 635 339 76,03% 76,03% Evangélica 3 264 819 14,07% 90,10% Otra 94 150 0,41% 90,51% Ninguna 1 180 361 5,09% 95,60% Cristiano 381 
+  link: 'Descargar en formato Excel' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.xlsX?LFN=RpBases\Tempo\84168\~tmp_8416881.xlsX
+  link: 'Descargar en formato PDF' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/reporte.pdf?LFN=RpBases\Tempo\84168\~tmp_8416881.pdf
+  table None '' of 'P12a+: Religión que profesa': total 23196391, not applicable None
+    'Católica': 17635339
+    'Evangélica': 3264819
+    'Otra': 94150
+    'Ninguna': 1180361
+    'Cristiano': 381031
+    'Adventista': 353430
+    'Testigo de Jehová': 173602
+    'Mormones': 113659
