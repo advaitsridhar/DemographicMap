@@ -1001,6 +1001,17 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Yaminawa", "Yuqui", "Yurakaré", "Charka Qhara Qhara", "Chuwi",
         "Jach'a Carangas", "Jalq'a", "Killacas", "Lupaca", "Lípez", "Pakajaqi",
         "Qhapaq Uma Suyu", "Qullas", "Raqaypampa", "Sora (Bolivia)", "Yampara",
+        # Venezuela's 2011 census, by the names INE prints, the others it
+        # gives in brackets. The Barí are written "Barí (Venezuela)" because
+        # the patterns read Barí as South Sudan's Bari.
+        "Akawayo", "Arawak", "Arutani (Uruak)", "Ayaman", "Añú (Paraujano)", "Baniva",
+        "Baré", "Barí (Venezuela)", "Chaima", "E'ñepá (Panare)", "Gayón", "Guanano",
+        "Inga", "Japreria", "Jirajara", "Jivi (Guajibo)", "Jodi", "Kaketío", "Kariña",
+        "Kechwa", "Kubeo", "Kuiva", "Kumanagoto", "Kurripako", "Mako", "Makushi",
+        "Mapoyo (Wanai)", "Matako", "Piapoco", "Piaroa", "Puinave", "Pumé (Yaruro)",
+        "Píritu", "Sanemá", "Sapé", "Sáliva", "Timote (Timotocuica)", "Tukano", "Tunebo",
+        "Waikerí", "Wapishana", "Warekena", "Yavarana", "Ye'kwana", "Yeral (Ñengatú)",
+        "Yukpa",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
@@ -1203,6 +1214,9 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # Panama, where its two identity questions overlap past the population
     # and the bars are the indigenous question's alone: everyone else.
     "Not indigenous (Afro-descendant or other)",
+    # Venezuela, whose census publishes its other identity question
+    # nationally only: everyone the indigenous question does not count.
+    "Not indigenous",
     "Other ethnicity", "Ethnicity not stated", "No ethnic group",
     "No ethnicity data", "Other Central Africa",
     "Unknown ethnicity", "Not declared", "Not classified", "No ethnicity",

@@ -52,6 +52,9 @@ PEOPLES = {
     "Piapoko/Chase": "Piapoco", "Yaruro/Pumé": "Pumé (Yaruro)",
     "Arutani/Uruak": "Arutani (Uruak)", "Wayuu/Guajiro": "Wayuu",
     "Yanomami/Shiriana": "Yanomami", "Yekwana": "Ye'kwana",
+    # The Barí of the Sierra de Perijá, written with the country because the
+    # patterns read Barí as South Sudan's Bari.
+    "Barí": "Barí (Venezuela)",
 }
 RESIDUAL = re.compile(r"otro|no (?:especific|declar|sabe)|ignorad|sin (?:especific|inform)",
                       re.I)
