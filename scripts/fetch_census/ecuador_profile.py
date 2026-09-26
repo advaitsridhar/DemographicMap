@@ -170,14 +170,21 @@ def composition_table(grid: list[list[str]], rules: tuple[tuple[str, str], ...],
 
 
 def xls_grid(blob: bytes, sheet: str) -> list[list[str]]:
-    import xlrd
-    book = xlrd.open_workbook(file_contents=blob)
-    ws = book.sheet_by_name(sheet)
-
+    """A sheet as text cells, whichever format the bytes turn out to be."""
     def text(value: Any) -> str:
+        if value is None:
+            return ""
         if isinstance(value, float) and value.is_integer():
             return str(int(value))
         return str(value).strip()
+    if blob[:2] == b"PK":
+        import io
+
+        import openpyxl
+        ws = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)[sheet]
+        return [[text(v) for v in row] for row in ws.iter_rows(values_only=True)]
+    import xlrd
+    ws = xlrd.open_workbook(file_contents=blob).sheet_by_name(sheet)
     return [[text(ws.cell_value(r, c)) for c in range(ws.ncols)] for r in range(ws.nrows)]
 
 
