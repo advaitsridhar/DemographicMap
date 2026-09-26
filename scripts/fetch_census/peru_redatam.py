@@ -39,10 +39,8 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import html
 import json
 import re
-import urllib.error
 import urllib.parse
 
 from collections import Counter
@@ -52,12 +50,10 @@ from scripts.probe_redatam import Session, attrs, report
 
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import bind, fold
+from .redatam import Server, median_age, tables  # noqa: F401 -- tables: tests read it here
 
 PORTAL = "https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lang=esp"
 CMDSET = "https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet"
-FORM = {"MAIN": "WebServerMain.inl", "BASE": "CPV2017DI", "LANG": "esp",
-        "CODIGO": "XXUSUARIOXX", "ITEM": "PROGRED", "MODE": "RUN", "Submit": "Ejecutar"}
-
 OUT = PROCESSED / "peru_redatam.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 YEAR = 2017
@@ -181,84 +177,9 @@ TABLE TABLE1
 }
 
 
-AREA = re.compile(r"^AREA\s*#\s*(\d+)$")
-
-
-def cells_of(page: str) -> list[list[str]]:
-    """Every table row's cells as text, blanks included, in page order."""
-    rows = []
-    for tr in re.findall(r"(?is)<tr\b.*?</tr>", page):
-        cells = [re.sub(r"\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", td))).strip()
-                 for td in re.findall(r"(?is)<td\b.*?</td>", tr)]
-        rows.append(cells)
-    return rows
-
-
-def count(text: str) -> int | None:
-    """A Redatam count, written with spaces between thousands."""
-    digits = text.replace("\xa0", "").replace(" ", "")
-    return int(digits) if digits.isdigit() else None
-
-
-def tables(page: str) -> list[dict]:
-    """The frequency tables in an output page: [{area, name, title, rows, total, na}].
-
-    A table opens with an "AREA # code" row naming its area (absent when the
-    program has no area break), then a header row naming the variable, then
-    one row a category -- label, count, per cent, cumulative per cent -- then
-    Total, and a "No Aplica" row counting those the question was not put to.
-    """
-    out: list[dict] = []
-    current: dict | None = None
-    for cells in cells_of(page):
-        text = [c for c in cells if c]
-        if not text:
-            continue
-        area = next((AREA.match(c) for c in text if AREA.match(c)), None)
-        if area:
-            current = {"area": area.group(1), "name": text[-1] if len(text) > 1 else "",
-                       "title": None, "rows": [], "total": None, "na": None}
-            out.append(current)
-            continue
-        if len(text) >= 3 and text[1] == "Casos":
-            if current is None or current["title"] is not None:
-                current = {"area": None, "name": "", "title": None, "rows": [],
-                           "total": None, "na": None}
-                out.append(current)
-            current["title"] = text[0]
-            continue
-        if current is None or current["title"] is None:
-            continue
-        if text[0].startswith("No Aplica"):
-            # "No Aplica : 97 779" in one cell, or the label and count in two.
-            after = count(text[0].split(":", 1)[1]) if ":" in text[0] else None
-            current["na"] = after if after is not None else (
-                count(text[1]) if len(text) > 1 else None)
-            continue
-        if len(text) >= 2 and count(text[1]) is not None:
-            if text[0] == "Total":
-                current["total"] = count(text[1])
-            else:
-                current["rows"].append((text[0], count(text[1])))
-    return out
-
-
 def run(session: Session, program: str) -> str:
-    """The page the processor answers a program with, error pages included.
-
-    The processor's own page is opened first, as a browser does before
-    submitting its form, and the program's lines end in CRLF, as a browser
-    sends a textarea's.
-    """
-    session.get(f"{CMDSET}?BASE=CPV2017DI&ITEM=PROGRED&lang=esp")
-    program = program.replace("\r\n", "\n").replace("\n", "\r\n")
-    data = urllib.parse.urlencode({**FORM, "CMDSET": program}).encode()
-    try:
-        return session.get(CMDSET, data=data)
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", "replace")
-        print(f"HTTP {exc.code} for the program; the server's page follows")
-        return body
+    """The page the processor answers a program with, error pages included."""
+    return Server(CMDSET, "CPV2017DI", session=session, who="peru_redatam").run(program)
 
 
 def program(variable: str) -> str:
@@ -268,13 +189,8 @@ def program(variable: str) -> str:
 
 def fetch(session: Session, variable: str) -> list[dict]:
     """One question's frequency table for every province, from the output frame."""
-    page = run(session, program(variable))
-    frames = [urllib.parse.urljoin(CMDSET, attrs(t)["src"])
-              for t in re.findall(r"(?is)<i?frame\b[^>]*>", page) if attrs(t).get("src")]
-    if not frames:
-        raise SystemExit(f"peru_redatam: {variable}: the processor answered with no "
-                         f"output: {page[:400]!r}")
-    out = [t for frame in frames for t in tables(session.get(frame))]
+    out = Server(CMDSET, "CPV2017DI", session=session, who="peru_redatam").frequency(
+        f"POBLACIO.{variable}", areabreak="PROVINCI")
     log(f"  {variable}: {len(out)} tables")
     return out
 
@@ -293,20 +209,6 @@ def translate(rows: list[tuple[str, int]], names: dict[str, str], question: str,
         else:
             left[label] += n
     return counts, left
-
-
-def median_age(ages: Counter) -> float | None:
-    """The age half the people are younger than, interpolated within its year."""
-    total = sum(ages.values())
-    if total <= 0:
-        return None
-    half, cum = total / 2, 0.0
-    for years in sorted(ages):
-        n = ages[years]
-        if cum + n >= half and n > 0:
-            return round(years + (half - cum) / n, 1)
-        cum += n
-    return None
 
 
 def collect(by_question: dict[str, list[dict]]) -> dict[str, dict[str, Any]]:
