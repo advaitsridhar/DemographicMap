@@ -1,1031 +1,933 @@
-page: http://web.archive.org/web/2025id_/https://one.gob.do/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital/
-  45,399 bytes
-
-<!DOCTYPE html>
-<head>
-    
-<title>Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital - Oficina Nacional de Estad&#237;stica (ONE)</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="La ONE es la instituci&#243;n encargada de coordinar y promover el Sistema Estad&#237;stico Nacional bajo una normativa com&#250;n, a fin de producir y difundir las informaciones estad&#237;sticas oficiales con calidad">
-<meta name="keywords" content="ONE, Oficina Nacional de Estad&#237;stica (ONE), estad&#237;stica Gubernamental, estad&#237;sticas, censo, encuestas, cartograf&#237;a dominicana, estad&#237;sticas oficiales, poblaci&#243;n nacional, SEN, Sistema Estad&#237;stico Nacional">
-<meta name="author" content="Oficina Nacional de Estad&#237;stica (ONE)">
-<meta property="fb:admins" content="781832347" /> 
-
-<meta property="og:title" content="Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital - Oficina Nacional de Estad&#237;stica (ONE)">
-<meta property="og:site_name" content="Oficina Nacional de Estad&#237;stica (ONE)">
-<meta property="og:url" content="https://www.one.gob.do/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital/">
-<meta property="og:description" content="La ONE es la instituci&#243;n encargada de coordinar y promover el Sistema Estad&#237;stico Nacional bajo una normativa com&#250;n, a fin de producir y difundir las informaciones estad&#237;sticas oficiales con calidad">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://www.one.gob.do/media/sxop0j0s/oficina-nacional-de-estadistica-one-open-graph.jpg">
-
-<meta property="tw:title" content="Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital - Oficina Nacional de Estad&#237;stica (ONE)">
-<meta property="tw:site_name" content="Oficina Nacional de Estad&#237;stica (ONE)">
-<meta property="tw:url" content="https://www.one.gob.do/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital/">
-<meta property="tw:description" content="La ONE es la instituci&#243;n encargada de coordinar y promover el Sistema Estad&#237;stico Nacional bajo una normativa com&#250;n, a fin de producir y difundir las informaciones estad&#237;sticas oficiales con calidad">
-<meta property="tw:type" content="website">
-<meta property="tw:locale" content="es_ES">
-<meta property="tw:image" content="https://www.one.gob.do/media/sxop0j0s/oficina-nacional-de-estadistica-one-open-graph.jpg">
-
-    
-    <!-- style sheets -->
-    <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/css/main.css?v=9/2/2026 5:19:10 p.&#160;m.">
-    <link rel="stylesheet" type="text/css" href="/assets/css/swiper.min.css">
-    <link rel="stylesheet" href="/css/responsive.css?v=9/2/2026 5:19:10 p.&#160;m.">
-    <link rel="stylesheet" href="/css/icons.css?v=9/2/2026 5:19:10 p.&#160;m.">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/sp-1.0.1/datatables.min.css"/>
-    <!-- end style sheets -->
-</head>
-<body>
-
-    <!-- INCLUDE HEADER -->
-       
-
-<header class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-8 col-11">
-                    
-                    <div class="wrap-logo-rd d-none text-center">
-                      <img class="escudo-logo" src="/media/1zqp5mam/escudo.png" alt="Oficina Nacional de Estad&#237;stica (ONE)">
-                  </div>
-                  <div class="main-logo">
-                    <a href="/"><img src="/media/h1qbfpqi/logo-one-oficina-nacional-de-estadistica.svg" alt="Oficina Nacional de Estad&#237;stica (ONE)"></a>
-                </div>
-            </div>
-            <div class="col-1 d-block d-sm-none d-md-none">
-                <div class="wrap-rwd-menu trans-3 d-flex align-items-center justify-content-end pt-3">
-                            <i class="ml-3 fas fa-bars"></i>
-                        </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12 d-flex justify-content-end">
-                <div class="general-search">
-                    <img class="escudo-logo d-md-block d-sm-block d-none" src="/media/1zqp5mam/escudo.png" alt="">
-              <!-- Wrap Search Menu Mobile -->
-              <div class="container wrap-search-menu-mobile">
-                <div class="row d-flex align-items-center">
-                    <div class="overflow-hidden d-block d-sm-none d-md-none" style="width:60px;">
-                        <img class="escudo-logo w-auto pl-3" src="/media/1zqp5mam/escudo.png" alt="">
-                    </div>
-                    <div class="col ">
-                        <form action="/busqueda" method="get">
-                            <div class="wrap-search-top">
-                             <input type="text" class="form-control"  id="global-search" name="s" placeholder="Buscar...">
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                </div>
-                <!-- end row -->
-              </div>
-                <!-- end Wrap Search Menu Mobile -->
-                <div class="links d-none d-sm-block d-md-block">
-                    
-                    <a href="/contacto/">Contacto</a>
-                    <div class="social-icon">
-                    <a href="https://www.facebook.com/pages/Oficina-Nacional-de-Estad%C3%ADstica-RD-ONE/462027067222699" target="_blank" class="social-links facebook smooth-transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="http://twitter.com/#!/ONERD_" target="_blank" class="social-links twitter smooth-transition"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/onerd_/?hl=es" target="_blank" class="social-links insta smooth-transition"><i class="fab fa-instagram"></i></a>
-                    <a href="http://www.youtube.com/user/EstadisticasONE" target="_blank" class="social-links youtube smooth-transition"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="responsive-icon-nav">Menú <i class="fas fa-bars"></i></div>
-        </div>
-    </div>
-</div>
-</header>
-    <!-- END INCLUDE HEADER -->
-          <!-- INCLUDE MENU -->
-    
-
-
-
- <nav class="main-nav">
-     <div class="container clear-float">
-            <ul>
-              
-                            <li class=""><a href="/">Inicio</a></li>
-                            <li class="has-dropdown ">
-                                <span class="item">Sobre Nosotros</span>
-                                <div class="dropdown-items">
-                                        <a href="/sobre-nosotros/qui&#233;nes-somos/">&#191;Qui&#233;nes Somos?</a>
-                                        <a href="/sobre-nosotros/marco-legal-institucional/">Marco legal Institucional</a>
-                                        <a href="/sobre-nosotros/historia/">Historia</a>
-                                        <a href="/sobre-nosotros/organigrama/">Organigrama</a>
-                                        <a href="/sobre-nosotros/directorio/">Directorio</a>
-                                        <a href="/sobre-nosotros/despacho-de-la-directora/">Despacho de la Directora</a>
-                                        <a href="/sobre-nosotros/plan-estrategico/">Plan Estrat&#233;gico</a>
-                                        <a href="/sobre-nosotros/calidad-en-la-gestion/carta-compromiso-a-la-ciudadania/">Calidad en la Gesti&#243;n</a>
-                                </div>
-                            </li>
-                            <li class="d-block d-sm-none"><a href="/sobre-nosotros/despacho-de-la-directora/">Despacho de la Directora</a></li>
-                            <li class="d-block d-sm-none"><a href="/sobre-nosotros/marco-legal-institucional/">Marco legal</a></li>
-                            <li class="has-dropdown ">
-                                <span class="item">Servicios</span>
-                                <div class="dropdown-items">
-                                        <a href="/servicios/informacion-estadistica/">Informaci&#243;n Estad&#237;stica</a>
-                                        <a href="/servicios/actividades-formativas/">Actividades formativas</a>
-                                        <a href="/servicios/elaboracion-y-actualizacion-de-normativas-y-metodologias/">Elaboraci&#243;n y actualizaci&#243;n de Normativas y Metodolog&#237;as</a>
-                                        <a href="/servicios/charlas-orientacion/">Charlas/orientaci&#243;n</a>
-                                        <a href="/servicios/biblioteca-visita-presencial/">Biblioteca (visita presencial)</a>
-                                </div>
-                            </li>
-                            <li class=""><a href="/datos-y-estadisticas/">Datos y Estad&#237;sticas</a></li>
-                            <li class="d-none d-sm-block current"><a href="/publicaciones/">Publicaciones</a></li>
-                            <li class="has-dropdown d-none d-sm-block">
-                                <span class="item">Novedades</span>
-                                <div class="dropdown-items">
-                                        <a href="/noticias/">Noticias</a>
-                                        <a href="/multimedia/">Multimedia</a>
-                                </div>
-                            </li>
-                            <li class=""><a href="/transparencia/" target="_blank">Transparencia</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-      <!-- END INCLUDE MENU -->
-
-
-    <div class="wrapper-cont">
-        
-
- <div class="banner publication-alt has-bg">
-            <div class="container">
-                <h1>Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital</h1>
-            </div>
-        </div>
-        <div class="bread-crumbs">
-            <div class="container">
-                <strong>Estás en:</strong>
-                <span class="path"><a href="/">Inicio</a></span>
-                <span class="path"><a href="/publicaciones/">Publicaciones</a></span>
-                <span class="path"><a href="/publicaciones/2024/">2024</a></span>
-            <span class="path">Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital</span>
-            </div>
-    </div>
-        
-        <div class="optionBar clear-float reset-lh">
-               <div class="container">
-                <ul class="list">
-                    <li><a href="/cdn-cgi/l/email-protection#b7ded9d0c5d2c4d6c5f7d4d8c5c5d2d899d4d8da88c4c2d5ddd2d4c38afed9d1d8c5dad297f4d6c5d6d4c3d2c591948584808cc4c3ded4d6c497f3d2dad8d0c591948585828cd1ded4d6c497f591948585828cc4ded4d6c497d3d2db97ef97f4d2d9c4d897f9d6d4ded8d9d6db97d3d297e7d8d5dbd6d4de91948583848cd997ce97e1dec1ded2d9d3d697858785859ae1d2c5c4de91948583848cd997d3ded0dec3d6db91d5d8d3ce8adfc3c3c7c49284d69285d19285d1c0c0c099d8d9d299d0d8d599d3d89285d1c7c2d5dbded4d6d4ded8d9d2c49285d1858785839285d1ded9d1d8c5dad29ad4d6c5d6d4c3d2c5dec4c3ded4d6c49ad3d2dad8d0c5d6d1ded4d6c49ad5d6c4ded4d6c49ad3d2db9acf9ad4d2d9c4d89ad9d6d4ded8d9d6db9ad3d29ac7d8d5dbd6d4ded8d99ace9ac1dec1ded2d9d3d69a858785859ac1d2c5c4ded8d99ad3ded0dec3d6db9285d1"><i class="far fa-envelope icon-mr"></i> <span>Correo</span></a></li>
-                    <li><a href="javascript:window.print();"><i class="fas fa-print icon-mr"></i> <span>Imprimir</span></a></li>
-                    <li class="increase-font">
-                        <span>Tamaño de letra</span> 
-                        <span class="icon small font-increaser selected" data-font="normal-text"><i class="fas fa-font"></i></span>
-                        <span class="icon medium font-increaser" data-font="medium-text"><i class="fas fa-font"></i></span>
-                        <span class="icon big font-increaser" data-font="large-text"><i class="fas fa-font"></i></span>
-                    </li>
-                </ul>
-</div>
-        </div>
-        <section class="body-content publications">
-            <div class="container">
-                <div class="row pub-detail">
-                     <div class="col-md-4 col-sm-6 book-cover">
-                        <div class="share-pub">
-                            <div class="cc-print">
-                                <a href="" class="icon" data-toggle="modal" data-target="#creativeCommons"><i class="fas fa-closed-captioning"></i></a>
-                                <a href="javascript:print();" class="icon"><i class="fas fa-print"></i></a>
-                            </div>
-                            <div class="social-icon">   
-                            	<a href="javascript:void(0)" data-href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.one.gob.do%2fpublicaciones%2f2024%2finforme-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital%2f" class="social-links facebook smooth-transition sharer"><i class="fab fa-facebook-f"></i></a>
-                                <a href="javascript:void(0)" data-href="https://twitter.com/intent/tweet?text=Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital&url=https%3a%2f%2fwww.one.gob.do%2fpublicaciones%2f2024%2finforme-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital%2f" class="social-links twitter smooth-transition sharer"><i class="fab fa-twitter"></i></a>
-                                <a href="javascript:void(0)" data-href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.one.gob.do%2fpublicaciones%2f2024%2finforme-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital%2f&title=Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital&summary=&source=https%3a%2f%2fwww.one.gob.do%2fpublicaciones%2f2024%2finforme-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital%2f" class="social-links linkedin smooth-transition sharer"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://api.whatsapp.com/send?text=https%3a%2f%2fwww.one.gob.do%2fpublicaciones%2f2024%2finforme-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital%2f" data-action="share/whatsapp/share" class="social-links whatsapp smooth-transition"><i class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <img src="/media/vambucp2/portadilla-caracter&#237;sticas-demograficas-xcnpv.jpg?anchor=center&amp;mode=crop&amp;width=255&amp;height=335" alt="Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital" class="full-img">
-                    </div>
-                    <div class="col-md-5 col-sm pub-info">
-                        <header class="reset-lh">
-                            <strong class="color-accent"><em>Censos</em></strong>
-                            <h4 class="title">Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n digital</h4>
-                            <div class="info">
-                                <em class="date">Publicado el: 30 de septiembre, 2024</em>
-                                <span class="color-primary"><i class="fas fa-download mr-2"></i> 296</span>
-                                <span class="color-primary"><i class="fas fa-eye mr-2"></i> 6483</span>
-                            </div>
-                        </header>
-                        <div class="pub-relates">
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Declaración de edición:</strong></div>
-                                <div class="col-md-8">2024</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Detalles Físicos:</strong></div>
-                                <div class="col-md-8">78</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Publicado Por:</strong></div>
-                                <div class="col-md-8">Oficina Nacional de Estad&#237;stica</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Código:</strong></div>
-                                <div class="col-md-8">ISBN: 978-9945-508-17-8</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Año</strong></div>
-                                <div class="col-md-8">2024</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><strong class="color-primary">Idiomas:</strong></div>
-                                <div class="col-md-8">Espa&#241;ol</div>
-                            </div>
-                            <div class="bottom-btn">
-                                <a  href="/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital/?altTemplate=publicacionOnline" class="btn btn-primary smooth-transition d-none d-sm-inline-block">Ver Online</a>
-                                <a href="/media/hmebcpry/informe-caracter&#237;sticas-demograficas-xcnpv-versi&#243;n-digital.pdf" data-file-id='34422' class="btn btn-danger smooth-transition" download>Descargar</a>
-                            </div>
-                    
-                    </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="download-reader reset-lh">
-                            <span class="acrobat-icon"></span>
-                            Sino puedes ver estos documentos,  es possible que necesites instalar <span class="color-accent">Adobe Reader</span>
-                            <div class="bottom-btn">
-                                <a href="https://get.adobe.com/reader/" target="_blank" class="btn btn-primary rounded smooth-transition">Descarga Gratis</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <ul class="nav nav-pills customTabs medium no-center" id="" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active smooth-transition" id="" data-toggle="pill" href="#summary" role="tab">Resumen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smooth-transition" id="" data-toggle="pill" href="#dataSheet" role="tab">Ficha Técnica</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smooth-transition" id="" data-toggle="pill" href="#credit" role="tab">Créditos</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="">
-                    <div class="tab-pane fade show active" id="summary" role="tabpanel">
-                        <header class="h-news-section">
-                            <h4 class="color-primary">¿De qué trata?</h4>
-                        </header>
-                        <p>El presente informe correspondiente al Volumen III sobre las Características demográficas básicas de la población. Esta versión es provisional, hasta tanto se publique la versión definitiva que incluye los cuadros diagramados referidos en el índice del informe y que se encuentral enlazados al portal web.</p>
-                    </div>
-                    <div class="tab-pane fade" id="dataSheet" role="tabpanel">
-                         
-                    </div>
-                    <div class="tab-pane fade" id="credit" role="tabpanel">
-                        <p>Dirección General<br />Miosotis Mercelia Rivas Peña: Directora General Oficina Nacional de Estadística<br />Augusto V. De los Santos Almánzar: Subdirector General Oficina Nacional de Estadística<br />Dirección de Censos y Encuestas<br />Francisco Cáceres Ureña, PhD: Director Censos y Encuestas<br />Coordinación Técnica<br />Francisco Cáceres Ureña, PhD: Director Censos y Encuestas<br />Carlos Sosa: Encargado Departamento de Censos<br />Equipo Técnico<br />Willy Ney Otáñez: Encargado Departamento de Encuestas<br />Antonio Morillo Pérez, PhD: Asesor Análisis, Sistema Único de Beneficiarios, SIUBEN<br />Shelila Ruiz Silverio: Encargada División Metodológico y Conceptual, Departamento de Censos<br />Erica Polanco Díaz: Analista de Censos<br />Kendry Esmerling Santos Cordero: Analista de Censos<br />Félix Rafael Núñez de Jesús: Analista de Censos<br />Jhensy Sandoval: Coordinador de Digitación<br />Vivian Sánchez: Auxiliar de Estadística<br />Xiomara Díaz Jiménez: Auxiliar de Estadística<br />María Rita Parra: Coordinadora de Logística Operaciones Censales<br />Procesamiento de Datos<br />Francisco Cáceres Ureña, PhD: Director Censos y Encuestas<br />Ravel Elías Domínguez Medina: Director Tecnologías de la Información y Comunicación<br />Antonio Morillo Pérez, PhD: Asesor de Análisis, Sistema Único de Beneficiarios, SIUBEN<br />Kary Desiree Santos Mercedes: Encargada departamento de Censos<br />Leonel Sanlate Carrasco: Encargado Departamento de Procesamiento de Datos<br />Willy Ney Otáñez: Encargado Departamento de Encuestas<br />Dimas Yael Matías Aponte: Encargado División de Procesamiento de Censos y Encuestas<br />Jhensy Jafrineo Sandoval Moran: Coordinador de Digitación<br />Erica Polanco Díaz: Analista de Censos<br />Kendry Esmerling Santos Cordero: Analista de Censos<br />Félix Rafael Núñez de Jesús: Analista de Censos<br />Mapas y cartogramas<br />Santa Grissell Arias Tejeda: Encargada Departamento de Geoestadísticas<br />Edgar Lorenzo Jaquez Guillén: Encargado Interino División de Geomática</p>
-                    </div>
-                </div>
-
-                <header class="h-news-section">
-                    <h4 class="color-primary">Publicaciones Relacionadas</h4>
-                </header>
-                <div class="highlight-pub">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4 mb-sm-4 col-12 mb-4">
-                            <div class="block">
-                                <div class="content">
-                                    <img src="/media/wrwgswgb/portadita.jpg?anchor=center&amp;mode=crop&amp;width=176&amp;height=244" alt="Informe Caracter&#237;sticas Educativas y Uso de Tecnolog&#237;a de la Informaci&#243;n y Comunicaci&#243;n (TIC) XCNPV 2022" class="full-img">
-                                    <strong class="title has-line">Informe Caracter&#237;sticas Educativas y Uso de Tecnolog&#237;a de la Informaci&#243;n y Comunicaci&#243;n (TIC) XCNPV 2022</strong>
-                                    <ul class="list">
-                                        <li><i class="fas fa-calendar icon-mr"></i> 19 de diciembre, 2024</li>
-                                        <li><i class="far fa-file-pdf icon-mr"></i> 12.6 MB</li>
-                                        <li><i class="fas fa-download icon-mr"></i> 123</li>
-                                    </ul>
-                                    <div class="bottom-btn btn-block">
-                                        <a href="/publicaciones/2024/informe-caracteristicas-educativas-y-uso-de-tecnologia-de-la-informacion-y-comunicacion-tic-xcnpv-2022/" class="btn btn-light">Leer Más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 mb-sm-4 col-12 mb-4">
-                            <div class="block">
-                                <div class="content">
-                                    <img src="/media/tt2pjthq/portadita-informe-caracter&#237;sticas-educativas-xcnpv-digital.jpg?center=0.49969799180649838,0.5&amp;mode=crop&amp;width=176&amp;height=244" alt="Informe Caracter&#237;sticas Educativas y Uso de Tecnolog&#237;a de la Informaci&#243;n y Comunicaci&#243;n (TIC) XCNPV 2022 - Versi&#243;n Digital" class="full-img">
-                                    <strong class="title has-line">Informe Caracter&#237;sticas Educativas y Uso de Tecnolog&#237;a de la Informaci&#243;n y Comunicaci&#243;n (TIC) XCNPV 2022 - Versi&#243;n Digital</strong>
-                                    <ul class="list">
-                                        <li><i class="fas fa-calendar icon-mr"></i> 19 de diciembre, 2024</li>
-                                        <li><i class="far fa-file-pdf icon-mr"></i> 7.6 MB</li>
-                                        <li><i class="fas fa-download icon-mr"></i> 160</li>
-                                    </ul>
-                                    <div class="bottom-btn btn-block">
-                                        <a href="/publicaciones/2024/informe-caracteristicas-educativas-y-uso-de-tecnologia-de-la-informacion-y-comunicacion-tic-xcnpv-2022-version-digital/" class="btn btn-light">Leer Más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 mb-sm-4 col-12 mb-4">
-                            <div class="block">
-                                <div class="content">
-                                    <img src="/media/pqcboiqd/portadita-informe-caract-edu-b&#225;sicas-y-tic-xcnpv-digital.jpg?anchor=center&amp;mode=crop&amp;width=176&amp;height=244" alt="Informe Caracter&#237;sticas Educativas B&#225;sicas y uso de TIC del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n Digital Provisional" class="full-img">
-                                    <strong class="title has-line">Informe Caracter&#237;sticas Educativas B&#225;sicas y uso de TIC del X Censo Nacional de Poblaci&#243;n y Vivienda 2022-Versi&#243;n Digital Provisional</strong>
-                                    <ul class="list">
-                                        <li><i class="fas fa-calendar icon-mr"></i> 29 de noviembre, 2024</li>
-                                        <li><i class="far fa-file-pdf icon-mr"></i> 6.6 MB</li>
-                                        <li><i class="fas fa-download icon-mr"></i> 95</li>
-                                    </ul>
-                                    <div class="bottom-btn btn-block">
-                                        <a href="/publicaciones/2024/informe-caracteristicas-educativas-basicas-y-uso-de-tic-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital-provisional/" class="btn btn-light">Leer Más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 mb-sm-4 col-12 mb-4">
-                            <div class="block">
-                                <div class="content">
-                                    <img src="/media/zuuj2jyn/informe-caracter&#237;sticas-demograficas-xcnpv-portadita.jpg?anchor=center&amp;mode=crop&amp;width=176&amp;height=244" alt="Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022" class="full-img">
-                                    <strong class="title has-line">Informe Caracter&#237;sticas Demogr&#225;ficas B&#225;sicas del X Censo Nacional de Poblaci&#243;n y Vivienda 2022</strong>
-                                    <ul class="list">
-                                        <li><i class="fas fa-calendar icon-mr"></i> 30 de septiembre, 2024</li>
-                                        <li><i class="far fa-file-pdf icon-mr"></i> 17.9 MB</li>
-                                        <li><i class="fas fa-download icon-mr"></i> 225</li>
-                                    </ul>
-                                    <div class="bottom-btn btn-block">
-                                        <a href="/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022/" class="btn btn-light">Leer Más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-
-    </div>
-
-    
- <div class="modal fade" id="creativeCommons">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">
-                        <img src="/assets/img/cc.logo.large.png" alt="">
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body reset-lh">
-                    <p>One.gob.do es una revista de acceso abierto gratuita. Esta revista y sus artículos se publican bajo la licencia Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0), por lo cual el usuario es libre de: compartir, copiar y redistribuir el material en cualquier medio o formato; y de remezclar, transformar y construir a partir del material. Esto bajo los siguientes términos:</p>
-<ul>
-<li>Se debe dar crédito de manera adecuada (revista, autor, url / doi).</li>
-<li>Se brinda un enlace a la licencia.</li>
-<li>Se indica si se realizaron los cambios.</li>
-<li>No se usen para fines comerciales.</li>
-</ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- INCLUDE FOOTER -->
-    
-    <footer>
-        <div class="feedback">
-            <div class="content">
-                <h3 class="title">¡Ayúdanos a mejorar!</h3>
-                <span>Completa algunas preguntas sobre nuestro sitio web</span>
-                <a href="/encuesta-satisfaccion-sitio-web/?altTemplate=formularioMejora" class="btn btn-danger rounded smooth-transition has-arrow">Opinar <i class="fas fa-chevron-right"></i></a>
-            </div>
-        </div>
-
-        <div class="governmentLinks">
-            <div class="container">
-             <div class="row">
-              <div class="col">
-                <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                 <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="https://www.hacienda.gob.do/" target="_blank"><img src="/media/3ognx0uf/hacienda.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="http://dominicana.gob.do" target="_blank"><img src="/media/ej0bmtzl/dominicanagob.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="https://911.gob.do" target="_blank"><img src="/media/5budhaaf/911.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="http://311.gob.do" target="_blank"><img src="/media/mc4l4jcb/logo-311-01.svg" alt=""></a></div>
-                        <div class="swiper-slide"><a href="https://observatorioserviciospublicos.gob.do/" target="_blank"><img src="/media/0nmbz4f0/oncsp.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="https://www.one.gob.do/sobre-nosotros/calidad-en-la-gestion/carta-compromiso-a-la-ciudadania/" target="_blank"><img src="/media/xjfgxmq1/logo-ccc-alta-resolucion-removebg-preview.png" alt=""></a></div>
-                 </div>
-                </div>
-              </div>
-             </div>
-            </div>
-        </div>
-
-        <div class="f-body">
-            <div class="container">
-                <div class="row menu-footer">
-                    <div class="col-md-3">
-                        <strong>Sobre Nosotros</strong>
-                        <ul>
-                                <li><a href="/sobre-nosotros/qui&#233;nes-somos/">&#191;Qui&#233;nes Somos?</a></li>
-                                <li><a href="/sobre-nosotros/marco-legal-institucional/">Marco legal Institucional</a></li>
-                                <li><a href="/sobre-nosotros/historia/">Historia</a></li>
-                                <li><a href="/sobre-nosotros/organigrama/">Organigrama</a></li>
-                                <li><a href="/sobre-nosotros/directorio/">Directorio</a></li>
-                                <li><a href="/sobre-nosotros/despacho-de-la-directora/">Despacho de la Directora</a></li>
-                                <li><a href="/sobre-nosotros/plan-estrategico/">Plan Estrat&#233;gico</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <strong>Servicios</strong>
-                        <ul>
-                                <li><a href="/servicios/informacion-estadistica/">Informaci&#243;n Estad&#237;stica</a></li>
-                                <li><a href="/servicios/actividades-formativas/">Actividades formativas</a></li>
-                                <li><a href="/servicios/elaboracion-y-actualizacion-de-normativas-y-metodologias/">Elaboraci&#243;n y actualizaci&#243;n de Normativas y Metodolog&#237;as</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <strong>Datos y Estad&#237;sticas</strong>
-                        <ul>
-                                <li><a href="/datos-y-estadisticas/">Temas</a></li>
-                                <li><a href="/datos-y-estadisticas/">Datos y Estad&#237;sticas</a></li>
-                                <li><a href="/datos-y-estadisticas/recursos-digitales/">Sistemas de Indicadores</a></li>
-                                <li><a href="/datos-y-estadisticas/bases-de-datos/">Cat&#225;logo de Datos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <strong>Subportales</strong>
-                        <ul>
-                                <li><a href="https://enevirtual.one.gob.do" target="_blank">Escuela Nacional de Estad&#237;stica (ENE)</a></li>
-                                <li><a href="http://ods.gob.do/" target="_blank">Objetivos de Desarrollo Sostenible (ODS)</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                
-
-                <div class="f-bottom">
-                    <div class="d-block d-sm-block d-md-block">
-                        <div class="ribbon d-none d-sm-block d-md-block"><img src="/media/tjzdyzzf/_footer-logo.png" alt=""></div>
-                        <p>Oficina Nacional de Estadística (ONE)</p>
-<p>Av. México esq. Leopoldo Navarro, Edif. de Oficinas Gubernamentales Juan Pablo Duarte, Piso 9, Santo Domingo, República Dominicana. Tel: <a href="tel:8096827777">(809) 682-7777</a> / <a href="/cdn-cgi/l/email-protection#ef86818980af80818ac188808dc18b80"><span class="__cf_email__" data-cfemail="d4bdbab2bb94bbbab1fab3bbb6fab0bb">[email&#160;protected]</span></a></p>
-                        
-                        <div class="f-link">
-                            <a href="/paginas/legal/terminos-de-uso/">Términos de uso</a>
-                            <a href="/paginas/legal/politica-de-privacidad/">Políticas de privacidad</a>
-                            <a href="/paginas/preguntas-frecuentes/">Preguntas frecuentes</a>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="d-block d-sm-none d-md-none pt-2 pb-3">Portal web certificado bajo la NORTIC A2</div>
-                    
-                    <div class="f-copy">
-                        2023. Excepto donde se indique lo contrario, el contenido de este sitio est&#225; bajo una licencia Creative Commons Atribuci&#243;n 4.0 Internacional (CC BY 4.0).
-                        <img src="/media/2ypbont2/copy.jpg" alt="">
-                    </div>
-                    <div class="d-none d-sm-none d-md-none pt-2">República Dominicana</div>
-                    
-                </div>
-                
-                
-                
-                
-            </div>
-        
-      
-    <!-- Sellos -->
-    <div class="d-none d-sm-block d-md-block">
-
-    <div class="stamp-container">
-        <div class="stamp-box">
-            <a href="https://nortic.ogtic.gob.do/instituciones/ONE" target="_blank" class="stamp stack-top"
-                title="Norma para el Desarrollo y Gestión de los Portales Web y la Transparencia de los Organismos del Estado Dominicano" /></a>
-            <div class="stamp">
-                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/196" height="100" width="100"
-                    frameborder="0" scrolling="no" style="width: 99%;"></iframe>
-            </div>
-        </div>
-        <div class="stamp-box">
-            <a href="https://nortic.ogtic.gob.do/instituciones/ONE" target="_blank" class="stamp stack-top"
-                title="Norma sobre Publicación de Datos Abiertos del Gobierno Dominicano" /></a>
-            <div class="stamp">
-                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/197" height="100" width="100"
-                    frameborder="0" scrolling="no" style="width: 99%;"></iframe>
-            </div>
-        </div>
-        <div class="stamp-box">
-            <a href="https://nortic.ogtic.gob.do/instituciones/ONE" target="_blank" class="stamp stack-top"
-                title="Norma para la Interoperabilidad entre los Organismos del Gobierno Dominicano" /></a>
-            <div class="stamp">
-                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/198" height="100" width="100"
-                    frameborder="0" scrolling="no" style="width: 99%;"></iframe>
-            </div>
-        </div>
-        <div class="stamp-box">
-            <a href="https://nortic.ogtic.gob.do/instituciones/ONE" target="_blank" class="stamp stack-top"
-                title="Norma para la Gestión de las Redes Sociales en los Organismos Gubernamentales" /></a>
-            <div class="stamp">
-                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/534" height="100" width="100"
-                    frameborder="0" scrolling="no" style="width: 99%;"></iframe>
-            </div>
-        </div>
-        <div class="stamp-box">
-            <div class="stamp">
-                <img src="https://www.one.gob.do/media/w24igci5/selloaenoriso9001_neg.png" height="85">
-            </div>
-        </div>
-    </div>     
-    </div>
-    <!-- end Sellos -->  
-        </div>
-    </footer>
-<div class="scroll-top" title="Ir arriba">
-    <i class="fas fa-arrow-up"></i>
-</div>
-<div class="shareBar">
-    
-<a href="http://foro.one.gob.do/" target="_blank" class="social-links facebook smooth-transition forum"><span class="forum-icon"></span></a>
-<a href="https://www.facebook.com/pages/Oficina-Nacional-de-Estad%C3%ADstica-RD-ONE/462027067222699" target="_blank" class="social-links facebook smooth-transition"><i class="fab fa-facebook-f"></i></a>
-<a href="http://twitter.com/#!/ONERD_" target="_blank" class="social-links twitter smooth-transition"><i class="fab fa-twitter"></i></a>
-<a href="https://www.instagram.com/onerd_/?hl=es" target="_blank" class="social-links insta smooth-transition"><i class="fab fa-instagram"></i></a>
-<a href="http://www.youtube.com/user/EstadisticasONE" target="_blank" class="social-links youtube smooth-transition"><i class="fab fa-youtube"></i></a>
-</div>
-  
-       <!-- accesibility -->
-    <div class="accessibility">
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
-  var _userway_config = {
-    /* uncomment the following line to override default position*/
-    /* position: '6', */
-    /* uncomment the following line to override default size (values: small, large)*/
-    /* size: 'small', */
-    /* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
-     language: 'es',
-    /* uncomment the following line to override color set via widget (e.g., #053f67)*/
-    /* color: '#2d68ff', */
-    /* uncomment the following line to override type set via widget (1=person, 2=chair, 3=eye, 4=text)*/
-    /* type: '1', */
-    /* uncomment the following lines to override the accessibility statement*/
-    /* statement_text: "Our Accessibility Statement", */
-    /* statement_url: "http://www.example.com/accessibility", */
-    /* uncomment the following line to override support on mobile devices*/
-    /* mobile: true, */
-    account: 'kSjFZkOUWb'
-  };
-</script>
-<script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
-</div> 
-  
-
-<!-- END INCLUDE FOOTER -->
-        
-<!-- scripts files-->
-    <script src="/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/vendors/fontawesome/js/all.min.js"></script>
-    <script  src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/sp-1.0.1/datatables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue-pollv2@0.1.9/dist/vue-poll.min.js"></script>
-    <script src="/scripts/suscribirse.js"></script>
-    <script type="text/javascript" src="/assets/js/swiper.min.js"></script>
-    <script src="/scripts/scripts.js"></script>
-    <script src="/scripts/pageoptions.js"></script>
-    <script src="/scripts/downloadCounter.js"></script>
-    <script src="/scripts/encuesta.js"></script>
-    
-    <script>
-        var disqus_config = function () {
-        this.page.url = 'https://www.one.gob.do/publicaciones/2024/informe-caracteristicas-demograficas-basicas-del-x-censo-nacional-de-poblacion-y-vivienda-2022-version-digital/';  
-        this.page.identifier = '34095';
-        };
-        //
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://https-oneumbraco-azurewebsites-net.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    
-
-    
-<!-- end scripts files-->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"a028b8bdc26e4725ace683448fa59172","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
-</html>
-page: http://web.archive.org/cdx/search/cdx?url=one.gob.do/media/&matchType=prefix&output=text&limit=5000&fl=timestamp,original,statuscode,length&filter=original:.*(xcnpv|censo|demografic|caracteristicas).*
-  457,618 bytes
-20221123111750 https://www.one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 556688
-20221201190846 https://one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 559536
-20230530153601 https://one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 556699
-20231118080656 https://www.one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 559396
-20240719152844 https://www.one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 559670
-20250326134138 https://one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 560106
-20251210142146 http://one.gob.do/media/02jlzf3b/boleti-n-censal-10-xcnpv.pdf 200 559913
-20251009202146 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos- 404 5252
-20251009202202 http://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos- 404 5263
-20211117014532 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf 200 106197
-20221107152510 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf 200 105141
-20221113160157 https://one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf 200 105144
-20221118100257 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf - 615
-20231118025312 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf - 629
-20251009202201 http://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf 200 105444
-20260115215343 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf?utm_source=elbrifin&utm_medium=referral&utm_campaign=el-brifin-10-de-noviembre 200 106907
-20260210022547 https://www.one.gob.do/media/0bijp1kv/ley-5096-sobre-estad%C3%ADsticas-y-censos-nacionales.pdf?utm_source=elbrifin&utm_medium=referral&utm_campaign=tu-sabes-contar 200 106882
-20211001203949 https://www.one.gob.do/media/0bweyojy/06232020-foto-la-one-y-codopesca-presentan-los-resultados-del-primer-censo-nacional-pesquero-del-pa%C3%ADs.jpg?anchor=center&mode=crop&width=350&height=194 200 22532
-20211002062023 https://www.one.gob.do/media/0bweyojy/06232020-foto-la-one-y-codopesca-presentan-los-resultados-del-primer-censo-nacional-pesquero-del-pa%C3%ADs.jpg?anchor=center&mode=crop&width=350&height=194 - 932
-20211002062054 https://www.one.gob.do/media/0bweyojy/06232020-foto-la-one-y-codopesca-presentan-los-resultados-del-primer-censo-nacional-pesquero-del-pa%C3%ADs.jpg?anchor=center&mode=crop&width=730&height=345 200 57461
-20231116194840 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?anchor=center&mode=crop&width=176&height=244 200 15843
-20231208003724 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?anchor=center&mode=crop&width=176&height=244 200 15866
-20250617190411 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?anchor=center&mode=crop&width=176&height=244 200 17132
-20250831094052 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?width=176&height=244&anchor=center&mode=crop - 1164
-20260612185419 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?anchor=center&mode=crop&width=176&height=244 - 1147
-20221226191026 https://www.one.gob.do/media/0fahqu03/bolet%C3%ADn-xcnpv-18-02.png?anchor=center&mode=crop&width=195&height=256 200 17212
-20221219144846 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 200 7691
-20231116194852 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 200 7489
-20231208032021 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 - 728
-20250617190411 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 200 8325
-20250831094052 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 - 1167
-20260612185419 https://www.one.gob.do/media/0tifixwh/bolet%C3%ADn-xcnpv-1-02.jpg?anchor=center&mode=crop&width=176&height=244 - 1146
-20241004235909 https://one.gob.do/media/0xsly2g1/infografia-volumen-2-censo.pdf 200 995978
-20241012193110 http://one.gob.do/media/0xsly2g1/infografia-volumen-2-censo.pdf 200 995939
-20241108214821 https://www.one.gob.do/media/0xsly2g1/infografia-volumen-2-censo.pdf 200 8478181
-20241121161306 https://one.gob.do/media/0xsly2g1/infografia-volumen-2-censo.pdf 200 8478169
-20260102162929 http://www.one.gob.do/media/0xsly2g1/infografia-volumen-2-censo.pdf 200 8480456
-20221117173615 https://www.one.gob.do/media/0yih4njb/bolet%C3%ADn-censal-4-xcnpv.pdf 200 1797403
-20230531193302 https://one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 492994
-20231118075942 https://www.one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 497777
-20240719152144 https://www.one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 498132
-20241206083602 https://www.one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 492813
-20250326152640 https://one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 498615
-20251208043816 http://one.gob.do/media/0yih4njb/boletin-1-xcnpv.pdf 200 498400
-20250613135454 http://one.gob.do/media/12edjf2g/informe-de-avance-xcnpv-3t-2023.pdf 200 339184
-20231116195119 https://www.one.gob.do/media/1aidmrfd/bolet%C3%ADn-censal-7-xcnpv-02.jpg?anchor=center&mode=crop&width=176&height=244 200 7419
-20231208003726 https://www.one.gob.do/media/1aidmrfd/bolet%C3%ADn-censal-7-xcnpv-02.jpg?anchor=center&mode=crop&width=176&height=244 200 7446
-20250831094053 https://www.one.gob.do/media/1aidmrfd/bolet%C3%ADn-censal-7-xcnpv-02.jpg?height=244&anchor=center&mode=crop&width=176 - 1166
-20260612185420 https://www.one.gob.do/media/1aidmrfd/bolet%C3%ADn-censal-7-xcnpv-02.jpg?anchor=center&mode=crop&width=176&height=244 200 7934
-20251204102615 https://www.one.gob.do/media/1clatirj/cuadro-6-vol-v-xcnpv-caracter%C3%ADsticas-econ%C3%B3micas.xlsx 200 35780
-20211002014410 https://www.one.gob.do/media/1dxlu0ri/portadaestudioevoluci%C3%B3ndelamaternidadadolescenteenrepdomresultadosestandarizaci%C3%B3ncensos2002-2010mar2016.jpg?anchor=center&mode=crop&width=176&height=244 200 11403
-20250920232238 https://www.one.gob.do/media/1dxlu0ri/portadaestudioevoluci%C3%B3ndelamaternidadadolescenteenrepdomresultadosestandarizaci%C3%B3ncensos2002-2010mar2016.jpg?anchor=center&mode=crop&width=176&height=244 - 1233
-20240906150244 https://one.gob.do/media/1hxfd2ip/informe-viviendas-y-hogar-xcnpv-digitalt.pdf 200 8428658
-20231225210316 https://www.one.gob.do/media/1kijehxj/poblaci%C3%B3n-por-sexo-seg%C3%BAn-provincia-municipio-y-distrito-municipal-xcnpv.xlsx 200 30976
-20241113054017 https://www.one.gob.do/media/1kijehxj/poblaci%C3%B3n-por-sexo-seg%C3%BAn-provincia-municipio-y-distrito-municipal-xcnpv.xlsx - 745
-20250120110308 https://www.one.gob.do/media/1kijehxj/poblaci%C3%B3n-por-sexo-seg%C3%BAn-provincia-municipio-y-distrito-municipal-xcnpv.xlsx 200 32063
-20220802133032 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png 200 92120
-20240327234655 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png 200 92285
-20251107155655 https://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png 200 92674
-20251107163208 http://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png 200 92608
-20251122000208 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png 200 92580
-20220802133030 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90449
-20220808142634 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90465
-20221219145012 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90661
-20230227071329 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90670
-20230518013356 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90671
-20230624120423 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90665
-20230722002003 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90675
-20230905120457 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90666
-20230909182936 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90689
-20231106031147 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90666
-20240106221854 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90747
-20240320114016 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90742
-20240327112541 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90503
-20240526141726 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90752
-20240711095504 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90743
-20240728174738 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90758
-20250203031927 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91221
-20250207184150 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91222
-20250209152953 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91235
-20250219052409 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91254
-20250317075948 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91260
-20250317224114 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91231
-20250628223148 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91221
-20250803132327 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91028
-20251107155950 https://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90704
-20251107170546 https://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90689
-20251122000657 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 90705
-20251122235342 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91044
-20251124174513 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91068
-20251126032313 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91030
-20251222225834 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91045
-20260116011329 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91029
-20260118113015 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91054
-20260215125941 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91049
-20260218103522 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91071
-20260428105528 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 853
-20260501060907 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 857
-20260501060909 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91087
-20260504044334 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 848
-20260504091124 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 847
-20260504091126 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91055
-20260615075911 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 850
-20260615135548 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 522 849
-20260615135551 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&amp;mode=crop&amp;width=730&amp;height=296 200 91065
-20220802143014 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=350&height=194 200 67711
-20220804211745 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=350&height=194 - 765
-20220808090740 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=350&height=194 200 67703
-20221118032109 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=350&height=194 200 66994
-20220802133035 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90451
-20220804211752 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 762
-20220805153856 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90454
-20221113162608 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90453
-20221114054920 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 777
-20221123031532 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90477
-20221125002728 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 765
-20221130182956 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 766
-20221219144923 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90652
-20230106194249 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 765
-20230106194258 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 765
-20230202023806 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 765
-20230227071247 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90658
-20230319180243 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90576
-20230401055352 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90460
-20230401092843 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 774
-20230518012748 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90668
-20230624120201 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90660
-20230722001953 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90669
-20230905120434 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90672
-20230909182858 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90687
-20231001092503 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 775
-20231106031131 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90651
-20231113233223 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 772
-20231114110538 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 779
-20240106221835 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90737
-20240320113901 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90746
-20240327085844 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90498
-20240401053440 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 831
-20240403231648 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 826
-20240526141511 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90761
-20240601042016 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90542
-20240620005655 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90533
-20240711095456 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90748
-20240726075552 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 806
-20240728174703 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90750
-20241001162441 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 830
-20241001195540 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 831
-20241003035417 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 826
-20241015203119 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90531
-20241112223641 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 806
-20241113202928 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 834
-20241114003501 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 834
-20241121140402 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90524
-20241210092853 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90534
-20241212141858 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 - 946
-20241215223802 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 801
-20241231115835 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop 200 92609
-20250111151100 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 - 1317
-20250117202112 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 1194
-20250118224508 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 1176
-20250123093932 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 200 92610
-20250131013706 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1315
-20250203031659 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91246
-20250205075417 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1350
-20250207184119 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91235
-20250209152905 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91227
-20250214142915 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 - 1348
-20250219052158 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91249
-20250317075821 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91218
-20250317224039 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91215
-20250510000504 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 200 92569
-20250510004249 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 - 1338
-20250529104712 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 200 92557
-20250531232000 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90997
-20250617195051 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1319
-20250626144533 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1341
-20250628223111 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91206
-20250708064249 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1308
-20250716105333 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 200 92421
-20250717215242 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 200 92431
-20250803132214 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91045
-20250816230454 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90834
-20250831094056 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1215
-20250904053157 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop 200 92421
-20250925133504 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 - 1221
-20250925143359 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 - 1219
-20251018134438 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 1148
-20251101131501 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 200 92404
-20251122000433 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90688
-20251122235237 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91034
-20251123151235 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 1177
-20251124174506 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91054
-20251126032218 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91035
-20251127130121 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 - 1212
-20251128174705 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 - 1220
-20251130234038 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 - 1211
-20251201204949 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 - 1217
-20251203234715 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?mode=crop&width=730&height=296&center=0.45186869570287447%2C0.50203346582718078 200 92415
-20251213164209 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 - 1162
-20251218073411 https://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90731
-20251221025306 https://paola.feliz@one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 90725
-20251222225644 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91058
-20260106134012 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 - 1211
-20260116011237 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91035
-20260118112904 http://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91046
-20260215125804 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91057
-20260218103435 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91068
-20260222051014 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730 - 1220
-20260223182408 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1224
-20260428103350 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 851
-20260501054236 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 851
-20260501054237 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91074
-20260504040335 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 845
-20260504082812 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 844
-20260504082814 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91057
-20260518192403 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?width=730&height=296&center=0.45186869570287447%2C0.50203346582718078&mode=crop - 1248
-20260615071441 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 849
-20260615130530 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 522 842
-20260615130538 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=296 200 91074
-20260723014754 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=296 200 92342
-20220803063444 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 102648
-20221114055136 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 100950
-20230401175619 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 100959
-20230423162707 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 100987
-20230607052342 https://one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 102641
-20231002172523 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 - 776
-20231114110616 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 - 776
-20240401194849 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 - 820
-20241002131912 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 - 821
-20241115133226 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 - 824
-20251122005857 http://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447,0.50203346582718078&mode=crop&width=730&height=345 200 101299
-20251205183149 https://www.one.gob.do/media/1mbphaot/xcnpv-reclutamientomesa-de-trabajo-1-copia-3.png?center=0.45186869570287447%2C0.50203346582718078&mode=crop&width=730&height=345 200 102949
-20211002044324 https://www.one.gob.do/media/1mqfkrf1/042019firmaconveniooneycodopescapararealizarprimercensonacionalpesqueroconapoyodelbid.jpg?anchor=center&mode=crop&width=350&height=194 200 26467
-20240521224340 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg 200 187523
-20240522144726 http://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg 200 187541
-20211001230738 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=176&height=244 200 13945
-20240717190040 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=176&height=244 200 13698
-20240717212338 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=176&height=244 200 13731
-20250626144533 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=176&height=244 200 15158
-20250904053302 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=176&height=244 - 1180
-20240521224423 https://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=255&height=335 200 21589
-20240523022939 http://www.one.gob.do/media/1rkjpcy2/portada-informe-general-i-censo-pesquero-2019-web.jpg?anchor=center&mode=crop&width=255&height=335 200 21593
-20211002015331 https://www.one.gob.do/media/1ttpsly3/portadaatlassituaci%C3%B3npoblacionaldelarepdomenloscensos1920-2010.jpg?anchor=center&mode=crop&width=176&height=244 200 11421
-20251210211522 http://one.gob.do/media/1yucbqan/informe-de-presupuesto-xcnpv-segundo-trimestre-2024.pdf 200 260806
-20251212061753 https://www.one.gob.do/media/1yucbqan/informe-de-presupuesto-xcnpv-segundo-trimestre-2024.pdf 200 260842
-20211002024847 https://www.one.gob.do/media/1zcbkwdi/portadabolet%C3%ADnpanoramaestad%C3%ADstico14evaluaci%C3%B3ndelosmaterialesdeconstrucci%C3%B3nenrepdomcensos1981-2002abr2009.jpg?anchor=center&mode=crop&width=176&height=244 200 17351
-20240513100042 https://www.one.gob.do/media/20natgak/volumen-iii-caracter%C3%ADsticas-generales-de-la-poblaci%C3%B3n-censo-2002.xls 200 2108878
-20240627163536 https://www.one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 63885
-20240722164152 https://one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 63900
-20240722215631 https://one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 63903
-20240804015045 https://one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 64471
-20240907231115 https://one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm - 687
-20241113001451 https://www.one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 64274
-20250120025929 https://www.one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 67053
-20250125034609 https://one.gob.do/media/22tjfss2/cuadro-6-volumen-i-xcnpv.xlsm 200 64196
-20241001223946 https://one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 11241174
-20241003133357 https://www.one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 1948
-20241008091920 http://one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 1013774
-20241012181451 https://one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 1013808
-20250727055421 https://one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 11181385
-20250810025143 https://one.gob.do/media/25bbnvz5/informe-caracter%C3%ADsticas-demograficas-xcnpv.pdf 200 11181253
-20230108024941 https://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci 404 4755
-20251121234724 http://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci 404 5283
-20211002044219 https://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci%C3%B3nyvivienda2020.jpg?anchor=center&mode=crop&width=350&height=194 200 25594
-20240113214715 http://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci%C3%B3nyvivienda2020.jpg?anchor=center&mode=crop&width=350&height=194 200 25515
-20240401120151 https://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci%C3%B3nyvivienda2020.jpg?anchor=center&mode=crop&width=350&height=194 - 834
-20241002020623 https://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci%C3%B3nyvivienda2020.jpg?anchor=center&mode=crop&width=350&height=194 - 827
-20241114111657 http://www.one.gob.do/media/2d1lonja/072019oneyelinposdomsuscribenacuerdorespaldarcensonacionaldepoblaci%C3%B3nyvivienda2020.jpg?anchor=center&mode=crop&width=350&height=194 200 25492
-20221125002809 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?anchor=center&mode=crop&width=176&height=244 200 15761
-20231116195028 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?anchor=center&mode=crop&width=176&height=244 200 15721
-20250617190413 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?height=244&anchor=center&mode=crop&width=176 - 1277
-20250831094053 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?mode=crop&width=176&height=244&anchor=center 200 16855
-20250920232315 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?width=176&height=244&anchor=center&mode=crop - 1151
-20260612185420 https://www.one.gob.do/media/2nvlsjgn/bolet%C3%ADn-xcnpv-02.png?anchor=center&mode=crop&width=176&height=244 - 1143
-20240513100047 https://www.one.gob.do/media/2sojgmdg/volumen_ii-caracter%C3%ADsticas-viviendad-y-hogares-censo-2002.xls 200 1307643
-20240627163524 https://www.one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 16567
-20240722182951 https://one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 16577
-20240723005815 http://one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 16554
-20240804014051 https://one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 17077
-20241113001451 https://www.one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 16904
-20250120201815 https://www.one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 17763
-20250902210809 http://www.one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm 200 16692
-20251218105826 https://www.one.gob.do/media/2ualc1nf/cuadro-4-volumen-i-xcnpv.xlsm - 1059
-20221117205741 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?anchor=center&mode=crop&width=176&height=244 200 11574
-20231116195600 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?anchor=center&mode=crop&width=176&height=244 - 767
-20231208023502 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?anchor=center&mode=crop&width=176&height=244 200 11602
-20241113030024 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?anchor=center&mode=crop&width=176&height=244 - 812
-20250617190421 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?width=176&height=244&anchor=center&mode=crop - 1300
-20250831094055 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?mode=crop&width=176&height=244&anchor=center 200 12193
-20260612185423 https://www.one.gob.do/media/3byeff4y/portada-anuario-de-estad%C3%ADsticas-sociodemograficas-2021.jpg?anchor=center&mode=crop&width=176&height=244 200 12087
-20230114181535 http://www.one.gob.do/media/3f5lmw5p/portadacensosixcensonacionaldepoblaci 404 4787
-20230114181956 https://www.one.gob.do/media/3f5lmw5p/portadacensosixcensonacionaldepoblaci 404 4777
-20230124114833 https://one.gob.do/media/3f5lmw5p/portadacensosixcensonacionaldepoblaci 404 4778
-20211002022210 https://www.one.gob.do/media/3f5lmw5p/portadacensosixcensonacionaldepoblaci%C3%B3nyviviendainformeb%C3%A1sico2010.jpg?anchor=center&mode=crop&width=176&height=244 200 11872
-20211002021944 https://www.one.gob.do/media/3fpbxxif/portadabolet%C3%ADnpanoramaestad%C3%ADstico52condici%C3%B3ndelectoescrituraenlapoblaci%C3%B3ndominicanahallazgosapartirdelcenso2010ene2013.jpg?anchor=center&mode=crop&width=176&height=244 200 16710
-20230106194351 https://one.gob.do/media/3iwjxzcj/censonacionalpoblaci%C3%B3n-censo-1920.xlsx 200 22145
-20251129095104 https://www.one.gob.do/media/3iwjxzcj/censonacionalpoblaci%C3%B3n-censo-1920.xlsx - 1108
-20210517031416 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81070
-20210625225754 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81173
-20210626152540 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81160
-20210626154626 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81161
-20210628195321 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 677
-20210726061734 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 677
-20210826141350 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 600
-20210828055646 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 596
-20210926044346 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81167
-20211001054844 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81104
-20211001063812 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 745
-20211001063813 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 743
-20211001105546 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 745
-20211001123035 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 746
-20211001145815 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 743
-20211019125432 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 597
-20211020130335 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 594
-20211113154506 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 80943
-20211124091442 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 671
-20211224044234 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 674
-20211228223212 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81398
-20220118230817 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 600
-20220128010622 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81160
-20220221182409 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 676
-20220221213632 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 598
-20220226100510 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 595
-20220305201642 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81398
-20220307215720 https://one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81390
-20220311061216 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 597
-20220319194111 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 594
-20220321075240 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81163
-20220401050449 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 749
-20220401053248 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 747
-20220401060051 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 749
-20220401062544 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 746
-20220401065422 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 750
-20220401072103 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 747
-20220410145305 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 596
-20220419110857 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 596
-20220423181243 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81398
-20220423191802 http://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81396
-20220507182637 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 674
-20220516225447 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81157
-20220520054421 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81155
-20220604165231 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 80972
-20220615021148 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81488
-20220619010808 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81488
-20220619112834 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81488
-20220623002413 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 675
-20220725170907 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 80974
-20220803113240 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220803154936 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220804101840 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220804150408 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220805173618 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220806102236 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220807202457 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20220807203455 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81490
-20221113162006 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 600
-20221115225010 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 602
-20221122114508 https://one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 593
-20221125002754 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 593
-20221130182931 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 592
-20221219144849 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81156
-20230106194307 https://one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 595
-20230202012450 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 597
-20230227071310 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81154
-20230319180249 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81068
-20230319180311 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81353
-20230401081811 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 610
-20230402072638 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 611
-20230518012816 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81164
-20230624120127 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81150
-20230722001928 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81165
-20230905120452 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81173
-20230909182831 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81181
-20230924140114 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81349
-20231001181251 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 608
-20231106031120 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81154
-20231114032330 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 605
-20231115015519 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 601
-20240106221845 https://one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81249
-20240320113937 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81262
-20240327160314 http://one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg 200 81563
-20240401053652 https://www.one.gob.do/media/3m2bbntu/censo-pesquero-2.jpg - 684
-20230531041711 https://one.gob.do/media/3mdb100n/boleta-censal-xcnpv.pdf 200 232537
-20231118080755 https://www.one.gob.do/media/3mdb100n/boleta-censal-xcnpv.pdf 200 263655
-20250326140519 https://one.gob.do/media/3mdb100n/boleta-censal-xcnpv.pdf 200 264248
-20250430135903 https://www.one.gob.do/media/3mdb100n/boleta-censal-xcnpv.pdf 200 264251
-20251210151222 http://one.gob.do/media/3mdb100n/boleta-censal-xcnpv.pdf 200 264079
-20250214091210 https://one.gob.do/media/42epawcj/banners-censos-04.jpg 200 413481
-20250216013657 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg 200 413495
-20250205075417 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?width=1336&height=400&anchor=center&mode=crop 200 86120
-20250207184055 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82590
-20250208023105 https://one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 86091
-20250209152921 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82624
-20250214111511 https://one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82120
-20250214142915 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?height=400&anchor=center&mode=crop&width=1336 - 1295
-20250216041543 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82124
-20250219052255 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82610
-20250317075826 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82611
-20250317223946 http://one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82585
-20250329183022 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 - 1319
-20250510000504 http://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 86069
-20250510004249 http://one.gob.do/media/42epawcj/banners-censos-04.jpg?height=400&anchor=center&mode=crop&width=1336 - 1280
-20250531231602 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82374
-20250606023440 http://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 - 1275
-20250626144542 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?height=400&anchor=center&mode=crop&width=1336 - 1297
-20250628223009 http://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82580
-20250716105340 https://one.gob.do/media/42epawcj/banners-censos-04.jpg?height=400&anchor=center&mode=crop&width=1336 - 1169
-20250717222709 http://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?height=400&anchor=center&mode=crop&width=1336 - 1161
-20250803132218 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82396
-20250816230002 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 200 82198
-20250831094105 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 - 1159
-20250904053205 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?width=1336&height=400&anchor=center&mode=crop 200 85927
-20250925133508 http://one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 - 1162
-20251018134423 https://www.one.gob.do/media/42epawcj/banners-censos-04.jpg?anchor=center&mode=crop&width=1336&height=400 - 1109
-20250205075417 https://www.one.gob.do/media/42epawcj/banners-
+  Kingston: communities make 89,187 against a subtotal of 89,186
+  St. Andrew: communities make 583,716 against a subtotal of 583,718
+  St.Thomas: communities make 94,481 against a subtotal of 94,485
+  Portland: communities make 84,975 against a subtotal of 84,972
+  St. Mary: communities make 116,500 against a subtotal of 116,497
+  St. Ann: communities make 175,307 against a subtotal of 175,310
+  St. James: communities make 188,650 against a subtotal of 188,656
+  Hanover: communities make 69,778 against a subtotal of 69,780
+  Westmoreland: communities make 146,206 against a subtotal of 146,205
+  Manchester: communities make 193,688 against a subtotal of 193,694
+  St. Catherine: communities make 542,762 against a subtotal of 542,763
+  772 communities in 14 parishes, making 2,774,538
+  668 communities bound to their polygons; 104 left out:
+    Kingston: Allman Town Part 1 (0 polygons of that name in the parish)
+    Kingston: Denham Town Part 1 (0 polygons of that name in the parish)
+    Kingston: Franklyn Town Part 1 (0 polygons of that name in the parish)
+    Kingston: Hannah Town (0 polygons of that name in the parish)
+    Kingston: Harbour View Part 1 (0 polygons of that name in the parish)
+    Kingston: Jones Town Part 1 (0 polygons of that name in the parish)
+    Kingston: Parade Gardens (0 polygons of that name in the parish)
+    Kingston: Port Royal (0 polygons of that name in the parish)
+    Kingston: Rockfort (0 polygons of that name in the parish)
+    Kingston: Rose Gardens (0 polygons of that name in the parish)
+    Kingston: Springfield Gardens (0 polygons of that name in the parish)
+    St. Andrew: Allman Town Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Bloxborough/Bito (0 polygons of that name in the parish)
+    St. Andrew: Bull Bay (0 polygons of that name in the parish)
+    St. Andrew: Cooreville (0 polygons of that name in the parish)
+    St. Andrew: Denham Town Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Franklyn Town Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Greenwich Town (0 polygons of that name in the parish)
+    St. Andrew: Harbour View Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Hughenden/Arlene Gardens (0 polygons of that name in the parish)
+    St. Andrew: Jones Town Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Meadowbrook/Havendale (0 polygons of that name in the parish)
+    St. Andrew: Mona (0 polygons of that name in the parish)
+    St. Andrew: Mountain View (0 polygons of that name in the parish)
+    St. Andrew: Olympic Gardens (0 polygons of that name in the parish)
+    St. Andrew: Red Hills (0 polygons of that name in the parish)
+    St. Andrew: Riverton Meadows (0 polygons of that name in the parish)
+    St. Andrew: Rock Hall Part 2 (0 polygons of that name in the parish)
+    St. Andrew: Seivwright Gardens (0 polygons of that name in the parish)
+    St. Andrew: State and Ziadie Gardens (0 polygons of that name in the parish)
+    St. Andrew: Waltham Gardens/Mandela (0 polygons of that name in the parish)
+    St. Andrew: Whitehall Gardens (0 polygons of that name in the parish)
+    St.Thomas: Llandewey/Ramble (0 polygons of that name in the parish)
+    St.Thomas: Pear Tree River (0 polygons of that name in the parish)
+    Portland: Bellevue (0 polygons of that name in the parish)
+    Portland: Buff Bay/ Belvedere (0 polygons of that name in the parish)
+    Portland: Buff Bay/Belvedere (0 polygons of that name in the parish)
+    Portland: Port Antonio Central (0 polygons of that name in the parish)
+    Portland: Reach (0 polygons of that name in the parish)
+    Portland: Skibo/Chepstowe (0 polygons of that name in the parish)
+    St. Mary: Boscobel (0 polygons of that name in the parish)
+    St. Mary: Guys Hill Part 2 (0 polygons of that name in the parish)
+    St. Mary: Labryinth (0 polygons of that name in the parish)
+    St. Mary: Labyrinth (a second community of nearly the same name)
+    St. Mary: Pleasant Hill/Baxter Mountain (0 polygons of that name in the parish)
+    St. Mary: Providence (0 polygons of that name in the parish)
+    St. Ann: Bohemia/Cascade (0 polygons of that name in the parish)
+    St. Ann: Borobridge/Cuffie Ridge (0 polygons of that name in the parish)
+    St. Ann: Gibraltar Brown's Town (0 polygons of that name in the parish)
+    St. Ann: Gibraltar Moneague (0 polygons of that name in the parish)
+    St. Ann: Mt. Zion/Mines (0 polygons of that name in the parish)
+    St. Ann: Rio Hoe/River Head (0 polygons of that name in the parish)
+    Trelawny: Granville/Martha Brae (0 polygons of that name in the parish)
+    Trelawny: The Alps/Sawyers (0 polygons of that name in the parish)
+    St. James: Barrett Hall (0 polygons of that name in the parish)
+    St. James: Belmont/Tower Hill (0 polygons of that name in the parish)
+    St. James: Flamstead Gardens (0 polygons of that name in the parish)
+    St. James: Mafoota (0 polygons of that name in the parish)
+    St. James: Montego Bay Business District (0 polygons of that name in the parish)
+    St. James: Moy Hall (0 polygons of that name in the parish)
+    St. James: Orange Irwin (0 polygons of that name in the parish)
+    St. James: Spring Gardens (0 polygons of that name in the parish)
+    St. James: Westgate Hills (0 polygons of that name in the parish)
+    Hanover: Content (0 polygons of that name in the parish)
+    Hanover: Lucea (0 polygons of that name in the parish)
+    Hanover: Mount Peace (0 polygons of that name in the parish)
+    Westmoreland: Amity Darliston (0 polygons of that name in the parish)
+    Westmoreland: Amity Savanna-la-mar (0 polygons of that name in the parish)
+    Westmoreland: Barneyside/Struie (0 polygons of that name in the parish)
+    Westmoreland: Berkshire/Dundee (0 polygons of that name in the parish)
+    Westmoreland: Farm Pen (0 polygons of that name in the parish)
+    Westmoreland: Fullersfield/Alma (0 polygons of that name in the parish)
+    Westmoreland: Haddo/McField (0 polygons of that name in the parish)
+    Westmoreland: Jerusalem Heights/Jerusalem Mountain (0 polygons of that name in the parish)
+    Westmoreland: Mearnsville/Auldayr (0 polygons of that name in the parish)
+    St. Elizabeth: Pepper Part 1 (0 polygons of that name in the parish)
+    St. Elizabeth: Roses Valley (0 polygons of that name in the parish)
+    St. Elizabeth: Russells/Myersville (0 polygons of that name in the parish)
+    Manchester: Asia (0 polygons of that name in the parish)
+    Manchester: Banana Ground Part 1 (0 polygons of that name in the parish)
+    Manchester: Craighead/Good Intent (0 polygons of that name in the parish)
+    Manchester: Grey Ground (0 polygons of that name in the parish)
+    Manchester: Lyndhurst (0 polygons of that name in the parish)
+    Manchester: Mandeville (0 polygons of that name in the parish)
+    Manchester: Oxford (0 polygons of that name in the parish)
+    Manchester: Pepper Part 2 (0 polygons of that name in the parish)
+    Manchester: Silent Hill (0 polygons of that name in the parish)
+    Manchester: Spalding Part 1 (0 polygons of that name in the parish)
+    Clarendon: Banana Ground Part 2 (0 polygons of that name in the parish)
+    Clarendon: Halse Hall (0 polygons of that name in the parish)
+    Clarendon: Kellits (0 polygons of that name in the parish)
+    Clarendon: May Pen (0 polygons of that name in the parish)
+    Clarendon: Richmond Park (2 polygons of that name in the parish)
+    Clarendon: Rosewell (0 polygons of that name in the parish)
+    Clarendon: Silent Hill/Moravia (0 polygons of that name in the parish)
+    Clarendon: Spalding Part 2 (0 polygons of that name in the parish)
+    St. Catherine: Angels/Crescent (0 polygons of that name in the parish)
+    St. Catherine: Bernard Lodge (0 polygons of that name in the parish)
+    St. Catherine: Browns Hall (0 polygons of that name in the parish)
+    St. Catherine: Bushy Park (0 polygons of that name in the parish)
+    St. Catherine: Guys Hill Part 1 (0 polygons of that name in the parish)
+    St. Catherine: Rock Hall Part 1 (0 polygons of that name in the parish)
+    St. Catherine: Sydenham (0 polygons of that name in the parish)
+    St. Catherine: Treadways (0 polygons of that name in the parish)
+  2 USCB workbooks; using 'Jamaica_uscb_202302.xlsx'
+  769 communities in the 2012 poverty map's population estimates
+    CMP Clarendon | Aenon Town | Aenon Town | 2253 | None | -
+    CMP Clarendon | Alley | Alley | 1411 | 1582 | 0.89
+    CMP Clarendon | Alston | Alston | 2457 | 2200 | 1.12
+    CMP Clarendon | Ashley | Ashley | 2882 | 2864 | 1.01
+    CMP Clarendon | Beckford Kraal | Beckford Kraal | 2662 | 3254 | 0.82
+    CMP Clarendon | Brandon Hill | Brandon Hill | 1421 | 1932 | 0.74
+    CMP Clarendon | Brixton Hill | Brixton Hill | 1521 | 1619 | 0.94
+    CMP Clarendon | Bucknor | Bucknor | 2619 | 3156 | 0.83
+    CMP Clarendon | Bushy Park | Bushy Park | 5447 | 5053 | 1.08
+    CMP Clarendon | Chapelton | Chapelton | 3616 | 4168 | 0.87
+    CMP Clarendon | Chateau | Chateau | 1697 | 1374 | 1.24
+    CMP Clarendon | Cockpit | Cockpit | 803 | 425 | 1.89
+    CMP Clarendon | Coffee Piece | Coffee Piece | 1974 | 1847 | 1.07
+    CMP Clarendon | Colonel's Ridge | Colonels Ridge | 782 | 818 | 0.96
+    CMP Clarendon | Coxswain | Coxswain | 1509 | 1124 | 1.34
+    CMP Clarendon | Crofts Hill | Crofts Hill | 5099 | None | -
+    CMP Clarendon | Crooked River | Crooked River | 3432 | 3345 | 1.03
+    CMP Clarendon | Cumberland | Cumberland | 2536 | 2615 | 0.97
+    CMP Clarendon | Curatoe Hill | Curatoe Hill | 3602 | 3372 | 1.07
+    CMP Clarendon | Dawkins | Dawkins | 1092 | 1221 | 0.89
+    CMP Clarendon | Effortville | Effortville | 6038 | 5190 | 1.16
+    CMP Clarendon | Four Paths | Four Paths | 6282 | 5006 | 1.25
+    CMP Clarendon | Frankfield | Frankfield | 4684 | 4463 | 1.05
+    CMP Clarendon | Freetown | Freetown | 1407 | None | -
+    CMP Clarendon | Gimme-Me-Bit | Gimme-me-bit | 2480 | 1675 | 1.48
+    CMP Clarendon | Glenmuir | Glenmuir | 2141 | 1825 | 1.17
+    CMP Clarendon | Grantham | Grantham | 1449 | 1692 | 0.86
+    CMP Clarendon | Gravel Hill | Gravel Hill | 2078 | 1896 | 1.10
+    CMP Clarendon | Hayes | Hayes | 11049 | 11241 | 0.98
+    CMP Clarendon | Hazard | Hazard | 5566 | 3497 | 1.59
+    CMP Clarendon | James Hill | James Hill | 7986 | 6668 | 1.20
+    CMP Clarendon | Johns Hall | Johns Hall | 987 | 873 | 1.13
+    CMP Clarendon | Lionel Town | Lionel Town | 3752 | 4419 | 0.85
+    CMP Clarendon | Longville Park | Longville Park | 9104 | 6354 | 1.43
+    CMP Clarendon | Longwood | Longwood | 889 | 999 | 0.89
+    CMP Clarendon | Milk River | Milk River | 3431 | 2701 | 1.27
+    CMP Clarendon | Mineral Heights | Mineral Heights | 4134 | 4073 | 1.01
+    CMP Clarendon | Mitchell Town | Mitchell Town | 1683 | 1743 | 0.97
+    CMP Clarendon | Moores | Moores | 3846 | 2465 | 1.56
+    CMP Clarendon | Morgan's Forest | Morgans Forest | 1024 | 1219 | 0.84
+    CMP Clarendon | Morgan's Pass | Morgans Pass | 1553 | 1651 | 0.94
+    CMP Clarendon | Mount Airy | Mount Airy | 2110 | 1983 | 1.06
+    CMP Clarendon | New Denbigh | New Denbigh | 7872 | 7168 | 1.10
+    CMP Clarendon | New Longsville | New Longsville | 687 | None | -
+    CMP Clarendon | Old Denbigh | Old Denbigh | 2804 | 2822 | 0.99
+    CMP Clarendon | Orange Hill | Orange Hill | 408 | 317 | 1.29
+    CMP Clarendon | Osbourne Store | Osbourne Store | 4296 | None | -
+    CMP Clarendon | Paisley | Paisley | 2218 | 2158 | 1.03
+    CMP Clarendon | Palmers Cross | Palmers Cross | 6616 | 7069 | 0.94
+    CMP Clarendon | Peckham | Peckham | 1768 | 1539 | 1.15
+    CMP Clarendon | Pennants | Pennants | 2406 | 2467 | 0.98
+    CMP Clarendon | Pleasant Valley | Pleasant Valley | 241 | 426 | 0.57
+    CMP Clarendon | Portland Cottage | Portland Cottage | 5045 | 4502 | 1.12
+    CMP Clarendon | Race Course | Race Course | 4050 | 5195 | 0.78
+    CMP Clarendon | Ritchies | Ritchies | 1081 | 1092 | 0.99
+    CMP Clarendon | Rock | Rock | 1276 | 1510 | 0.85
+    CMP Clarendon | Rock River | Rock River | 5166 | 4458 | 1.16
+    CMP Clarendon | Rocky Point | Rocky Point | 2356 | 2936 | 0.80
+    CMP Clarendon | Salt River | Salt River | 1046 | 1007 | 1.04
+    CMP Clarendon | Sandy Bay | Sandy Bay | 7542 | None | -
+    CMP Clarendon | Sanguinetti | Sanguinetti | 3142 | 3430 | 0.92
+    CMP Clarendon | Smithville | Smithville | 2119 | 2655 | 0.80
+    CMP Clarendon | Summerfield | Summerfield | 2791 | 2712 | 1.03
+    CMP Clarendon | Thompson Town | Thompson Town | 6807 | 6001 | 1.13
+    CMP Clarendon | Toll Gate | Tollgate | 5438 | 2881 | 1.89
+    CMP Clarendon | Treadlight | Treadlight | 1998 | 2072 | 0.96
+    CMP Clarendon | Trout Hall | Trout Hall | 2631 | 2552 | 1.03
+    CMP Clarendon | Turners | Turners | 1570 | 1397 | 1.12
+    CMP Clarendon | Water Lane | Water Lane | 1660 | 2013 | 0.82
+    CMP Clarendon | Woodhall | Woodhall | 3276 | 3988 | 0.82
+    CMP Clarendon | York Town | York Town | 3782 | 3593 | 1.05
+    CMP Hanover | Askenish | Askenish | 1160 | 1586 | 0.73
+    CMP Hanover | Cacoon | Cacoon | 941 | 1074 | 0.88
+    CMP Hanover | Cacoon Castle | Cacoon Castle | 1878 | 2178 | 0.86
+    CMP Hanover | Cascade | Cascade | 1044 | 1097 | 0.95
+    CMP Hanover | Cash Hill | Cash Hill | 401 | 333 | 1.20
+    CMP Hanover | Cauldwell | Cauldwell | 1511 | 1612 | 0.94
+    CMP Hanover | Chambers Pen | Chambers Pen | 551 | 684 | 0.81
+    CMP Hanover | Chester Castle | Chester Castle | 2641 | 2238 | 1.18
+    CMP Hanover | Copse | Copse | 1012 | 1025 | 0.99
+    CMP Hanover | Cousins Cove | Cousins Cove | 950 | 1639 | 0.58
+    CMP Hanover | Dias | Dias | 2259 | 3422 | 0.66
+    CMP Hanover | Great Valley | Great Valley | 1959 | 1300 | 1.51
+    CMP Hanover | Green Island | Green Island | 4896 | 3746 | 1.31
+    CMP Hanover | Haddington | Haddington | 361 | 347 | 1.04
+    CMP Hanover | Hopewell | Hopewell | 6865 | 6894 | 1.00
+    CMP Hanover | Jericho | Jericho | 1075 | 1184 | 0.91
+    CMP Hanover | Kendal | Kendal | 1013 | 994 | 1.02
+    CMP Hanover | Kingsvale | Kingsvale | 2388 | 2773 | 0.86
+    CMP Hanover | Lances Bay | Lances Bay | 700 | 368 | 1.90
+    CMP Hanover | Logwood | Logwood | 1837 | 1876 | 0.98
+    CMP Hanover | March Town | March Town | 2123 | 2060 | 1.03
+    CMP Hanover | Maryland | Maryland | 556 | 779 | 0.71
+    CMP Hanover | Mount Peto | Mount Peto | 1084 | 1106 | 0.98
+    CMP Hanover | Orange Bay | Orange Bay | 2447 | 2109 | 1.16
+    CMP Hanover | Pell River | Pell River | 850 | 810 | 1.05
+    CMP Hanover | Pondside | Pondside | 526 | 396 | 1.33
+    CMP Hanover | Ramble | Ramble | 3632 | 2710 | 1.34
+    CMP Hanover | Rock Spring | Rock Spring | 1727 | 1562 | 1.11
+    CMP Hanover | Sandy Bay | Sandy Bay | 5797 | 5789 | 1.00
+    CMP Hanover | Santoy | Santoy | 2666 | 1671 | 1.60
+    CMP Hanover | Success | Success | 857 | 856 | 1.00
+    CMP Hanover | Woodlands | Woodlands | 720 | 630 | 1.14
+    CMP Hanover | Woodsville | Woodsville | 337 | 236 | 1.43
+    CMP Kingston | Central Down Town | Central Down Town | 4464 | 3193 | 1.40
+    CMP Kingston | Fletchers Land | Fletchers Land | 2644 | 3819 | 0.69
+    CMP Kingston | Rae Town | Rae Town | 4374 | 2962 | 1.48
+    CMP Kingston | Rollington Town | Rollington Town | 5741 | 6416 | 0.89
+    CMP Kingston | Tivoli Gardens | Tivoli Gardens | 13922 | 9492 | 1.47
+    CMP Manchester | Alligator Pond | Alligator Pond | 2909 | 2517 | 1.16
+    CMP Manchester | Auchtembeddie | Auchtembeddie | 1419 | 1489 | 0.95
+    CMP Manchester | Bellefield | Bellefield | 1485 | 1598 | 0.93
+    CMP Manchester | Bethany | Bethany | 1370 | 1539 | 0.89
+    CMP Manchester | Blue Mountain | Blue Mountain | 971 | 1216 | 0.80
+    CMP Manchester | Bombay | Bombay | 1728 | 1556 | 1.11
+    CMP Manchester | Butt-Up | Butt-Up | 1061 | 842 | 1.26
+    CMP Manchester | Cedar Grove | Cedar Grove | 4559 | 4913 | 0.93
+    CMP Manchester | Chantilly | Chantilly | 2220 | 2387 | 0.93
+    CMP Manchester | Christiana | Christiana | 6669 | 7576 | 0.88
+    CMP Manchester | Chudleigh | Chudleigh | 3134 | 3396 | 0.92
+    CMP Manchester | Cobbla | Cobbla | 3832 | 4194 | 0.91
+    CMP Manchester | Coleyville | Coleyville | 3678 | 4263 | 0.86
+    CMP Manchester | Comfort | Comfort | 1024 | 552 | 1.86
+    CMP Manchester | Comfort Hall | Comfort Hall | 1092 | 1104 | 0.99
+    CMP Manchester | Cross Keys | Cross Keys | 2895 | 2524 | 1.15
+    CMP Manchester | Devon | Devon | 1584 | 1814 | 0.87
+    CMP Manchester | Downs | Downs | 3657 | 2736 | 1.34
+    CMP Manchester | Ellen Street | Ellen Street | 911 | 737 | 1.24
+    CMP Manchester | Evergreen | Evergreen | 465 | 436 | 1.07
+    CMP Manchester | Fairfield | Fairfield | 2913 | 2752 | 1.06
+    CMP Manchester | French Park | French Park | 1852 | 1449 | 1.28
+    CMP Manchester | George's Valley | George's Valley | 2418 | 2689 | 0.90
+    CMP Manchester | Greenvale | Greenvale | 8499 | 8953 | 0.95
+    CMP Manchester | Grove Place | Grove Place | 710 | 800 | 0.89
+    CMP Manchester | Grove Town | Grove Town | 2515 | 3046 | 0.83
+    CMP Manchester | Harmons | Harmons | 1936 | 1686 | 1.15
+    CMP Manchester | Harry Watch | Harry Watch | 1546 | 1604 | 0.96
+    CMP Manchester | Hatfield | Hatfield | 3289 | 3626 | 0.91
+    CMP Manchester | Hibernia | Hibernia | 1487 | 1436 | 1.04
+    CMP Manchester | Huntley | Huntley | 1947 | 1888 | 1.03
+    CMP Manchester | Kendal | Kendal | 1410 | 1466 | 0.96
+    CMP Manchester | Knockpatrick | Knockpatrick | 2951 | 2624 | 1.12
+    CMP Manchester | Lancaster | Lancaster | 1081 | 1058 | 1.02
+    CMP Manchester | Litchfield | Litchfield | 807 | 892 | 0.90
+    CMP Manchester | Maidstone | Maidstone | 2111 | 2244 | 0.94
+    CMP Manchester | Marlie Hill | Marlie Hill | 1506 | 1270 | 1.19
+    CMP Manchester | May Day | May Day | 1036 | 1085 | 0.95
+    CMP Manchester | Medina | Medina | 597 | 549 | 1.09
+    CMP Manchester | Mike Town | Mike Town | 777 | 890 | 0.87
+    CMP Manchester | Mile Gully | Mile Gully | 1902 | 2214 | 0.86
+    CMP Manchester | New Forest | New Forest | 3142 | 2592 | 1.21
+    CMP Manchester | New Green | New Green | 2184 | 2365 | 0.92
+    CMP Manchester | Newport | Newport | 5220 | 4415 | 1.18
+    CMP Manchester | Old England | Old England | 5293 | 5040 | 1.05
+    CMP Manchester | Pike | Pike | 1450 | 1804 | 0.80
+    CMP Manchester | Plowden | Plowden | 1667 | 1748 | 0.95
+    CMP Manchester | Porus | Porus | 10156 | 9947 | 1.02
+    CMP Manchester | Prospect | Prospect | 2440 | 1986 | 1.23
+    CMP Manchester | Richmond | Richmond | 2285 | 2558 | 0.89
+    CMP Manchester | Robins Hall | Robins Hall | 1396 | 1580 | 0.88
+    CMP Manchester | Rose Hill | Rose Hill | 615 | 827 | 0.74
+    CMP Manchester | Royal Flat | Royal Flat | 2196 | 2337 | 0.94
+    CMP Manchester | Scotts Pass | Scotts Pass | 2316 | 2303 | 1.01
+    CMP Manchester | Snowdon | Snowdon | 2274 | 2000 | 1.14
+    CMP Manchester | Somerset | Somerset | 1396 | 1167 | 1.20
+    CMP Manchester | Spring Ground | Spring Ground | 2378 | 2188 | 1.09
+    CMP Manchester | Spur Tree | Spur Tree | 4453 | 2518 | 1.77
+    CMP Manchester | St. Paul's | St. Paul's | 1460 | None | -
+    CMP Manchester | Swabys Hope | Swaby's Hope | 2092 | 2039 | 1.03
+    CMP Manchester | Top Hill | Top Hill | 521 | 430 | 1.21
+    CMP Manchester | Victoria Town | Victoria Town | 957 | 1066 | 0.90
+    CMP Manchester | Walderston | Walderston | 3052 | 3123 | 0.98
+    CMP Manchester | Waltham | Watham | 3228 | None | -
+    CMP Manchester | Williamsfield | Williamsfield | 4287 | 4534 | 0.95
+    CMP Portland | Balcarres | Balcarres | 752 | 762 | 0.99
+    CMP Portland | Bangor Ridge | Bangor Ridge | 1172 | 1242 | 0.94
+    CMP Portland | Black Hill | Black Hill | 1573 | 1438 | 1.09
+    CMP Portland | Boundbrook | Boundbrook | 3608 | 3362 | 1.07
+    CMP Portland | Breastworks | Breastworks | 3997 | 3536 | 1.13
+    CMP Portland | Bybrook | Bybrook | 483 | 433 | 1.12
+    CMP Portland | Cascade | Cascade | 692 | 519 | 1.33
+    CMP Portland | Castle Comfort | Castle Comfort | 2218 | 1441 | 1.54
+    CMP Portland | Charles Town | Charles Town | 696 | 821 | 0.85
+    CMP Portland | Claverty Cottage | Claverty Cottage | 297 | 307 | 0.97
+    CMP Portland | Comfort Castle | Comfort Castle | 1770 | 1980 | 0.89
+    CMP Portland | Drapers | Drapers | 1209 | 1258 | 0.96
+    CMP Portland | Durham | Durham | 392 | 467 | 0.84
+    CMP Portland | Fairy Hill | Fairy Hill | 3800 | 2751 | 1.38
+    CMP Portland | Fellowship | Fellowship | 2458 | 2606 | 0.94
+    CMP Portland | Fruitfulvale | Fruitfulvale | 1455 | 1592 | 0.91
+    CMP Portland | Hectors River | Hectors River | 1665 | 2024 | 0.82
+    CMP Portland | Hope Bay | Hope Bay | 2282 | 2570 | 0.89
+    CMP Portland | Kensignton | Kensington | 946 | None | -
+    CMP Portland | Long Bay | Long Bay | 2199 | 1677 | 1.31
+    CMP Portland | Long Road | Long Road | 1771 | 2005 | 0.88
+    CMP Portland | Manchioneal | Manchioneal | 2327 | 2568 | 0.91
+    CMP Portland | Moore Town | Moore Town | 1155 | 1181 | 0.98
+    CMP Portland | Mount Pleasant | Mount Pleasant | 1279 | 1114 | 1.15
+    CMP Portland | Nonsuch | Nonsuch | 1277 | 1200 | 1.06
+    CMP Portland | Norwich | Norwich | 4005 | 3122 | 1.28
+    CMP Portland | Orange Bay | Orange Bay | 988 | 1210 | 0.82
+    CMP Portland | Prospect | Prospect | 4422 | 4924 | 0.90
+    CMP Portland | Rock Hall | Rock Hall | 970 | 978 | 0.99
+    CMP Portland | Sherwood Forest | Sherwood Forest | 1435 | 1331 | 1.08
+    CMP Portland | Shirley Castle | Shirley Castle | 322 | 333 | 0.97
+    CMP Portland | Snow Hill | Snow Hill | 2824 | 2256 | 1.25
+    CMP Portland | Spring Hill | Spring Hill | 1097 | 928 | 1.18
+    CMP Portland | St. Margaret's Bay | St. Margaret's Bay | 1990 | None | -
+    CMP Portland | Swift River | Swift River | 1737 | 1804 | 0.96
+    CMP Portland | Tranquility | Tranquility | 430 | 593 | 0.73
+    CMP Portland | Windsor | Windsor | 994 | 1156 | 0.86
+    CMP Portland | Windsor Castle | Windsor Castle | 3600 | 3451 | 1.04
+    CMP Portland | Windsor Forest | Windsor Forest | 2732 | 1726 | 1.58
+    CMP St. Andrew | August Town | August Town | 9369 | 11721 | 0.80
+    CMP St. Andrew | Barbican | Barbican | 20648 | 17897 | 1.15
+    CMP St. Andrew | Boucher Park | Boucher Park | 5020 | 6211 | 0.81
+    CMP St. Andrew | Brandon Hill | Brandon Hill | 2205 | 2622 | 0.84
+    CMP St. Andrew | Cavaliers | Cavaliers | 1853 | 1937 | 0.96
+    CMP St. Andrew | Constant Spring | Constant Spring | 37370 | 29114 | 1.28
+    CMP St. Andrew | Constitution Hill | Constitution Hill | 3153 | 4394 | 0.72
+    CMP St. Andrew | Content Gap | Content Gap | 1170 | 1488 | 0.79
+    CMP St. Andrew | Cross Roads | Cross Roads | 9887 | 3486 | 2.84
+    CMP St. Andrew | Dallas | Dallas | 2416 | 2424 | 1.00
+    CMP St. Andrew | Delacree Pen | Delacree Pen | 12435 | 11607 | 1.07
+    CMP St. Andrew | Drewsland | Drewsland | 6377 | 7991 | 0.80
+    CMP St. Andrew | Duhaney Park | Duhaney Park | 10951 | 13575 | 0.81
+    CMP St. Andrew | Ferry | Ferry | 789 | 823 | 0.96
+    CMP St. Andrew | Golden Spring | Golden Spring | 5084 | 4401 | 1.16
+    CMP St. Andrew | Gordon Town | Gordon Town | 2635 | 3421 | 0.77
+    CMP St. Andrew | Half Way Tree | Half-Way-Tree | 15370 | 12700 | 1.21
+    CMP St. Andrew | Irish Town | Irish Town | 3416 | 2572 | 1.33
+    CMP St. Andrew | Jacks Hill | Jacks Hill | 7872 | 4841 | 1.63
+    CMP St. Andrew | Kencot | Kencot | 5911 | 5960 | 0.99
+    CMP St. Andrew | Lawrence Tavern | Lawrence Tavern | 15403 | 18342 | 0.84
+    CMP St. Andrew | Liguanea | Liguanea | 22781 | 15308 | 1.49
+    CMP St. Andrew | Majesty Gardens | Majestic Gardens | 2453 | None | -
+    CMP St. Andrew | Mannings Hill | Mannings Hill | 6870 | 5444 | 1.26
+    CMP St. Andrew | Maryland | Maryland | 2929 | 3316 | 0.88
+    CMP St. Andrew | Maverley | Marverley | 4217 | None | -
+    CMP St. Andrew | Mavis Bank | Mavis Bank | 5533 | 5714 | 0.97
+    CMP St. Andrew | Maxfield Park | Maxfield Park | 4283 | 4790 | 0.89
+    CMP St. Andrew | Molynes Gardens | Molynes Gardens | 13164 | 13853 | 0.95
+    CMP St. Andrew | Mount James | Mount James | 2885 | 3532 | 0.82
+    CMP St. Andrew | New Haven | New Haven | 4328 | 5212 | 0.83
+    CMP St. Andrew | New Kingston | New Kingston | 6550 | 3358 | 1.95
+    CMP St. Andrew | Papine | Papine | 11989 | 12766 | 0.94
+    CMP St. Andrew | Parks Road | Parks Road | 2366 | 2311 | 1.02
+    CMP St. Andrew | Patrick City | Patrick City | 6132 | 5975 | 1.03
+    CMP St. Andrew | Pembroke Hall | Pembroke Hall | 6552 | 6764 | 0.97
+    CMP St. Andrew | Red Hills Gardens | Red Hills Gardens | 2575 | 2555 | 1.01
+    CMP St. Andrew | Richmond Park | Richmond Park | 2797 | 3045 | 0.92
+    CMP St. Andrew | Seaview Gardens | Seaview Gardens | 12087 | 15136 | 0.80
+    CMP St. Andrew | Seymour Lands | Seymour Lands | 6612 | 3064 | 2.16
+    CMP St. Andrew | St. Peter's | St. Peter's | 1153 | None | -
+    CMP St. Andrew | Stony Hill | Stony Hill | 9447 | 6684 | 1.41
+    CMP St. Andrew | Swallowfield | Swallowfield | 11173 | 4966 | 2.25
+    CMP St. Andrew | Temple Hall | Temple Hall | 2988 | 3103 | 0.96
+    CMP St. Andrew | Tower Hill | Tower Hill | 4945 | 7524 | 0.66
+    CMP St. Andrew | Trench Town | Trench Town | 20154 | 25052 | 0.80
+    CMP St. Andrew | Vineyard Town | Vineyard Town | 7825 | 10784 | 0.73
+    CMP St. Andrew | Washington Gardens | Washington Gardens | 6224 | 5884 | 1.06
+    CMP St. Andrew | Waterhouse | Waterhouse | 8775 | 13137 | 0.67
+    CMP St. Andrew | Whitfield Town | Whitfield Town | 14401 | 18844 | 0.76
+    CMP St. Andrew | Woodford | Woodford | 5398 | 3475 | 1.55
+    CMP St. Ann | Aboukir | Aboukir | 2145 | 2740 | 0.78
+    CMP St. Ann | Alderton | Alderton | 433 | 751 | 0.58
+    CMP St. Ann | Alexandria | Alexandria | 2344 | 3117 | 0.75
+    CMP St. Ann | Alva | Alva | 818 | 572 | 1.43
+    CMP St. Ann | Bamboo | Bamboo | 8096 | 7467 | 1.08
+    CMP St. Ann | Beecher Town | Beecher Town | 1766 | 1447 | 1.22
+    CMP St. Ann | Bensonton | Bensonton | 1007 | 1885 | 0.53
+    CMP St. Ann | Blackstonedge | Blackstonedge | 1423 | 1784 | 0.80
+    CMP St. Ann | Brown's Town | Browns Town | 14984 | 17604 | 0.85
+    CMP St. Ann | Calderwood | Calderwood | 5102 | 5757 | 0.89
+    CMP St. Ann | Cave Valley | Cave Valley | 2296 | 2441 | 0.94
+    CMP St. Ann | Chalky Hill | Chalky Hill | 1550 | 1329 | 1.17
+    CMP St. Ann | Chester | Chester | 320 | 409 | 0.78
+    CMP St. Ann | Claremont | Claremont | 4362 | 5183 | 0.84
+    CMP St. Ann | Colegate | Cole Gate | 3974 | 3684 | 1.08
+    CMP St. Ann | Content Gardens | Content Garden | 1487 | None | -
+    CMP St. Ann | Discovery Bay | Discovery Bay | 11666 | 8137 | 1.43
+    CMP St. Ann | Epworth | Epworth | 1242 | 711 | 1.75
+    CMP St. Ann | Exchange | Exchange | 9522 | 9210 | 1.03
+    CMP St. Ann | Faiths Pen | Faith's Pen | 646 | 718 | 0.90
+    CMP St. Ann | Golden Grove | Golden Grove | 3651 | 3418 | 1.07
+    CMP St. Ann | Great Pond | Great Pond | 2913 | 2493 | 1.17
+    CMP St. Ann | Higgins Land | Higgin Land | 629 | None | -
+    CMP St. Ann | Hinds Town | Hinds Town | 674 | 654 | 1.03
+    CMP St. Ann | Inverness | Inverness | 701 | 929 | 0.75
+    CMP St. Ann | Lime Hall | Lime Hall | 5775 | 5630 | 1.03
+    CMP St. Ann | Lime Tree Garden | Lime Tree Gardens | 1157 | None | -
+    CMP St. Ann | Linton Park | Linton Park | 195 | 717 | 0.27
+    CMP St. Ann | Madras | Madras | 933 | 1214 | 0.77
+    CMP St. Ann | Mansfield | Mansfield | 3227 | 2992 | 1.08
+    CMP St. Ann | McNie | Macknie | 3296 | None | -
+    CMP St. Ann | Moneague | Moneague | 3965 | 4473 | 0.89
+    CMP St. Ann | Mount Moriah | Mount Moriah | 1782 | 2414 | 0.74
+    CMP St. Ann | Ocho Rios | Ocho Rios | 8587 | 8026 | 1.07
+    CMP St. Ann | Parry Town | Parry Town | 880 | 783 | 1.12
+    CMP St. Ann | Philadelphia | Philadelphia | 801 | 1853 | 0.43
+    CMP St. Ann | Pimento Walk | Pimento Walk | 853 | 805 | 1.06
+    CMP St. Ann | Priory | Priory | 10115 | 5741 | 1.76
+    CMP St. Ann | Runaway Bay | Runaway Bay | 13160 | 11446 | 1.15
+    CMP St. Ann | St. Ann's Bay | St. Ann's Bay | 6946 | None | -
+    CMP St. Ann | St. D'acre | St. D'Acre | 3256 | None | -
+    CMP St. Ann | Steer Town | Steer Town | 12216 | 9015 | 1.36
+    CMP St. Ann | Sturge Town | Sturge Town | 689 | 646 | 1.07
+    CMP St. Ann | Walkers Wood | Walkers Wood | 1834 | 1476 | 1.24
+    CMP St. Ann | Watt Town | Watt Town | 1804 | 1765 | 1.02
+    CMP St. Ann | York Castle | York Castle | 558 | 900 | 0.62
+    CMP St. Catherine | Above Rocks | Above Rocks | 3141 | 3721 | 0.84
+    CMP St. Catherine | Bartons | Bartons | 2073 | 2019 | 1.03
+    CMP St. Catherine | Bellas Gate | Bellas Gate | 1271 | 979 | 1.30
+    CMP St. Catherine | Bog Walk | Bogwalk | 13039 | 15318 | 0.85
+    CMP St. Catherine | Braeton | Braeton | 14177 | 11513 | 1.23
+    CMP St. Catherine | Bridgeport | Bridgeport | 10261 | 10271 | 1.00
+    CMP St. Catherine | Caymanas | Caymanas | 1934 | 1374 | 1.41
+    CMP St. Catherine | Central Village | Central Village | 21677 | 20661 | 1.05
+    CMP St. Catherine | Cromarty | Cromarty | 16947 | 8983 | 1.89
+    CMP St. Catherine | Cumberland | Cumberland | 6522 | 7491 | 0.87
+    CMP St. Catherine | Edgewater | Edgewater | 10498 | 4733 | 2.22
+    CMP St. Catherine | Ensom | Ensom | 19901 | 23918 | 0.83
+    CMP St. Catherine | Ewarton | Ewarton | 10624 | 14917 | 0.71
+    CMP St. Catherine | Ginger Ridge | Ginger Ridge | 1520 | 1416 | 1.07
+    CMP St. Catherine | Glengoffe | Glengoffe | 5375 | 4960 | 1.08
+    CMP St. Catherine | Golden Acres | Golden Acres | 5942 | 7019 | 0.85
+    CMP St. Catherine | Greater Portmore | Greater Portmore | 57927 | 49024 | 1.18
+    CMP St. Catherine | Greendale | Greendale | 9367 | 11456 | 0.82
+    CMP St. Catherine | Gregory Park | Gregory Park | 12790 | 19248 | 0.66
+    CMP St. Catherine | Hampton Green | Hampton Green | 3664 | 5596 | 0.65
+    CMP St. Catherine | Harewood | Harewood | 1166 | 1224 | 0.95
+    CMP St. Catherine | Harkers Hall | Harkers Hall | 4899 | 4324 | 1.13
+    CMP St. Catherine | Hellshire | Hellshire | 3987 | 4913 | 0.81
+    CMP St. Catherine | Independence City | Independence City | 5957 | 8031 | 0.74
+    CMP St. Catherine | Keystone | Keystone | 4066 | 4074 | 1.00
+    CMP St. Catherine | Kitson Town | Kitson Town | 11154 | 13529 | 0.82
+    CMP St. Catherine | Linstead | Linstead | 20693 | 24000 | 0.86
+    CMP St. Catherine | Lluidas Vale | Lluidas Vale | 7750 | 4824 | 1.61
+    CMP St. Catherine | Naggo Head | Naggo Head | 11041 | 10452 | 1.06
+    CMP St. Catherine | Old Harbour | Old Harbour | 35753 | 29288 | 1.22
+    CMP St. Catherine | Old Harbour Bay | Old Harbour Bay | 20133 | 10974 | 1.83
+    CMP St. Catherine | Old Harbour Road | Old Harbour Road | 8514 | 7153 | 1.19
+    CMP St. Catherine | Passage Fort | Passage Fort | 8438 | 9501 | 0.89
+    CMP St. Catherine | Pear Tree Grove | Pear Tree Grove | 773 | 669 | 1.16
+    CMP St. Catherine | Point Hill | Point Hill | 4549 | 4714 | 0.96
+    CMP St. Catherine | Redwood | Redwood | 3432 | 3327 | 1.03
+    CMP St. Catherine | Riversdale | Riversdale | 2455 | 4159 | 0.59
+    CMP St. Catherine | Sligoville | Sligoville | 6525 | 5317 | 1.23
+    CMP St. Catherine | Spanish Town Central | Spanish Town Central | 17993 | 14886 | 1.21
+    CMP St. Catherine | St. Johns East | St. John's East | 8598 | None | -
+    CMP St. Catherine | St. Johns West | St. John's West | 25991 | None | -
+    CMP St. Catherine | Troja | Troja | 1061 | 1624 | 0.65
+    CMP St. Catherine | Waterford | Waterford | 13479 | 14176 | 0.95
+    CMP St. Catherine | Watermount | Watermount | 2081 | 2369 | 0.88
+    CMP St. Catherine | West Cumberland | West Cumberland | 2483 | 3541 | 0.70
+    CMP St. Catherine | Willowdene | Willowdene | 5647 | 8665 | 0.65
+    CMP St. Elizabeth | Aberdeen | Aberdeen | 1082 | 1420 | 0.76
+    CMP St. Elizabeth | Accompong | Accompong | 1262 | 1431 | 0.88
+    CMP St. Elizabeth | Balaclava | Balaclava | 3501 | 3707 | 0.94
+    CMP St. Elizabeth | Ballard's Valley | Ballards  Valley | 2934 | 2520 | 1.16
+    CMP St. Elizabeth | Barbury Hall | Barbary Hall | 1829 | None | -
+    CMP St. Elizabeth | Bigwoods | Bigwoods | 1017 | 861 | 1.18
+    CMP St. Elizabeth | Black River | Black River | 4067 | 5348 | 0.76
+    CMP St. Elizabeth | Bogue | Bogue | 722 | 796 | 0.91
+    CMP St. Elizabeth | Braes River | Braes River | 2210 | 2582 | 0.86
+    CMP St. Elizabeth | Brighton | Brighton | 1674 | 2042 | 0.82
+    CMP St. Elizabeth | Brompton | Brompton | 3138 | 3116 | 1.01
+    CMP St. Elizabeth | Bull Savannah | Bull Savannah | 2963 | None | -
+    CMP St. Elizabeth | Burnt Savannah | Burnt Savannah | 2535 | None | -
+    CMP St. Elizabeth | Carisbrook | Carisbrook | 1209 | 1189 | 1.02
+    CMP St. Elizabeth | Cotterwood | Cotterwood | 851 | 1663 | 0.51
+    CMP St. Elizabeth | Crawford | Crawford | 1900 | 1815 | 1.05
+    CMP St. Elizabeth | Elderslie | Elderslie | 647 | 866 | 0.75
+    CMP St. Elizabeth | Fullerswood | Fullerswood | 2574 | 2470 | 1.04
+    CMP St. Elizabeth | Giddy Hall | Giddy Hall | 2073 | 1771 | 1.17
+    CMP St. Elizabeth | Ginger Hill | Ginger Hill | 1185 | 1552 | 0.76
+    CMP St. Elizabeth | Goshen | Goshen | 2697 | 2583 | 1.04
+    CMP St. Elizabeth | Holland | Holland | 2772 | 2428 | 1.14
+    CMP St. Elizabeth | Hopeton | Hopeton | 318 | 322 | 0.99
+    CMP St. Elizabeth | Junction | Junction | 9846 | 8076 | 1.22
+    CMP St. Elizabeth | Lacovia | Lacovia | 4957 | 5145 | 0.96
+    CMP St. Elizabeth | Leeds | Leeds | 3301 | 2944 | 1.12
+    CMP St. Elizabeth | Lititz | Lititz | 1548 | 1419 | 1.09
+    CMP St. Elizabeth | Maggotty | Maggotty | 3121 | 3362 | 0.93
+    CMP St. Elizabeth | Malvern | Malvern | 4031 | 4354 | 0.93
+    CMP St. Elizabeth | Merrywood | Merrywood | 664 | 895 | 0.74
+    CMP St. Elizabeth | Middle Quarters | Middle Quarters | 2770 | 3268 | 0.85
+    CMP St. Elizabeth | Mountainside | Mountainside | 3175 | 3210 | 0.99
+    CMP St. Elizabeth | Mulgrave | Mulgrave | 399 | 571 | 0.70
+    CMP St. Elizabeth | Nain | Nain | 3598 | 2984 | 1.21
+    CMP St. Elizabeth | New Market | New Market | 2868 | 3295 | 0.87
+    CMP St. Elizabeth | Newell | Newell | 1081 | 849 | 1.27
+    CMP St. Elizabeth | Newton | Newton | 1049 | 1159 | 0.91
+    CMP St. Elizabeth | Parottee | Parottee | 1613 | 1664 | 0.97
+    CMP St. Elizabeth | Pedro Plains | Pedro Plains | 3482 | 3268 | 1.07
+    CMP St. Elizabeth | Pisgah | Pisgah | 1125 | 1461 | 0.77
+    CMP St. Elizabeth | Pondside | Pondside | 647 | 557 | 1.16
+    CMP St. Elizabeth | Potsdam | Potsdam | 1910 | 1763 | 1.08
+    CMP St. Elizabeth | Quick Step | Quick Step | 318 | 242 | 1.31
+    CMP St. Elizabeth | Red Bank | Red Bank | 3214 | 2604 | 1.23
+    CMP St. Elizabeth | Retirement | Retirement | 1181 | 1280 | 0.92
+    CMP St. Elizabeth | Rose Hall | Rose Hall | 2434 | 1898 | 1.28
+    CMP St. Elizabeth | Santa Cruz | Santa Cruz | 16703 | 14884 | 1.12
+    CMP St. Elizabeth | Siloah | Siloah | 2741 | 3235 | 0.85
+    CMP St. Elizabeth | Slipe | Slipe | 1802 | 2306 | 0.78
+    CMP St. Elizabeth | Southfield | Southfield | 6249 | 5006 | 1.25
+    CMP St. Elizabeth | Springfield | Springfield | 1550 | 1475 | 1.05
+    CMP St. Elizabeth | Thornton | Thornton | 2750 | 3187 | 0.86
+    CMP St. Elizabeth | Top Hill | Top Hill | 2409 | 2006 | 1.20
+    CMP St. Elizabeth | Treasure Beach | Treasure Beach | 4400 | 3362 | 1.31
+    CMP St. Elizabeth | Warminster | Warminister | 1843 | None | -
+    CMP St. Elizabeth | Watchwell | Watchwell | 2417 | 2093 | 1.15
+    CMP St. Elizabeth | White Hill | White Hill | 1161 | 1166 | 1.00
+    CMP St. James | Adelphi | Adelphi | 2598 | 2659 | 0.98
+    CMP St. James | Albion | Albion | 2838 | 2435 | 1.17
+    CMP St. James | Anchovy | Anchovy | 3957 | 4506 | 0.88
+    CMP St. James | Arcadia | Arcadia | 278 | 472 | 0.59
+    CMP St. James | Barrett Town | Barrett Town | 2151 | 2827 | 0.76
+    CMP St. James | Bickersteth | Bickersteth | 1612 | 1580 | 1.02
+    CMP St. James | Bogue | Bogue | 9129 | 7375 | 1.24
+    CMP St. James | Brandon Hill | Brandon Hill | 581 | 597 | 0.97
+    CMP St. James | Cambridge | Cambridge | 3119 | 4162 | 0.75
+    CMP St. James | Canterbury | Canterbury | 339 | 804 | 0.42
+    CMP St. James | Catadupa | Catadupa | 1423 | 2287 | 0.62
+    CMP St. James | Catherine Hall | Catherine Hall | 1417 | 2777 | 0.51
+    CMP St. James | Catherine Mount | Catherine Mount | 609 | 1051 | 0.58
+    CMP St. James | Comfort Hall | Comfort Hall | 820 | 969 | 0.85
+    CMP St. James | Coral Gardens | Coral Gardens | 5936 | 1868 | 3.18
+    CMP St. James | Cornwall | Cornwall | 2332 | 2574 | 0.91
+    CMP St. James | Dumfries | Dumfries | 2334 | 3075 | 0.76
+    CMP St. James | Fairfield | Fairfield | 4003 | 1590 | 2.52
+    CMP St. James | Farm Heights | Farm Heights | 1275 | 2257 | 0.56
+    CMP St. James | Flagstaff | Flagstaff | 537 | 729 | 0.74
+    CMP St. James | Flanker | Flankers | 6395 | None | -
+    CMP St. James | Flower Hill | Flower Hill | 979 | 785 | 1.25
+    CMP St. James | Garlands | Garlands | 477 | 771 | 0.62
+    CMP St. James | Glendevon | Glendevon | 6010 | 6872 | 0.87
+    CMP St. James | Goodwill | Goodwill | 1071 | 1097 | 0.98
+    CMP St. James | Granville | Granville | 2600 | 5117 | 0.51
+    CMP St. James | Green Pond | Green Pond | 8388 | 11326 | 0.74
+    CMP St. James | Greenwood | Greenwood | 1205 | 724 | 1.66
+    CMP St. James | Hopeton | Hopeton | 2063 | 2014 | 1.02
+    CMP St. James | Ironshore | Ironshore | 3736 | 869 | 4.30
+    CMP St. James | Johns Hall | John's Hall | 4234 | 4203 | 1.01
+    CMP St. James | Lilliput | Lilliput | 6494 | 5916 | 1.10
+    CMP St. James | Lottery | Lottery | 1767 | 2121 | 0.83
+    CMP St. James | Maldon | Maldon | 458 | 509 | 0.90
+    CMP St. James | Maroon Town | Maroon Town | 818 | 860 | 0.95
+    CMP St. James | Mocho | Mocho | 553 | 386 | 1.43
+    CMP St. James | Montpelier | Montpelier | 1961 | 1713 | 1.14
+    CMP St. James | Mt. Carey | Mount Carey | 1254 | 1770 | 0.71
+    CMP St. James | Mt. Horeb | Mount Horeb | 875 | 776 | 1.13
+    CMP St. James | Mt. Salem | Mount Salem | 3445 | 5915 | 0.58
+    CMP St. James | Niagara | Niagara | 683 | 863 | 0.79
+    CMP St. James | Norwood | Norwood | 11408 | 10452 | 1.09
+    CMP St. James | Orange | Orange | 5619 | 4618 | 1.22
+    CMP St. James | Paradise | Paradise | 2111 | 1451 | 1.45
+    CMP St. James | Pitfour | Pitfour | 2497 | 2135 | 1.17
+    CMP St. James | Porto Bello | Porto Bello | 2650 | 1515 | 1.75
+    CMP St. James | Reading | Reading | 1253 | 889 | 1.41
+    CMP St. James | Retirement | Retirement | 4391 | 4157 | 1.06
+    CMP St. James | Retrieve | Retrieve | 560 | 890 | 0.63
+    CMP St. James | Roehampton | Roehampton | 1311 | 1034 | 1.27
+    CMP St. James | Rose Hall | Rose Hall | 2194 | 253 | 8.67
+    CMP St. James | Rose Heights | Rose Heights | 3546 | 7520 | 0.47
+    CMP St. James | Rosemount | Rosemount | 845 | 1573 | 0.54
+    CMP St. James | Rosemount Gardens | Rose Mount Garden | 897 | None | -
+    CMP St. James | Salt Spring | Salt Spring | 3970 | 3883 | 1.02
+    CMP St. James | Seven Rivers | Seven Rivers | 1339 | 1239 | 1.08
+    CMP St. James | Somerton | Somerton | 3018 | 2682 | 1.13
+    CMP St. James | Spot Valley | Spot Valley | 2101 | 1645 | 1.28
+    CMP St. James | Stonehenge | Stonehenge | 756 | 890 | 0.85
+    CMP St. James | Summer Hill | Summer Hill | 1222 | 1255 | 0.97
+    CMP St. James | Sunderland | Sunderland | 430 | 531 | 0.81
+    CMP St. James | Tangle River | Tangle River | 941 | 970 | 0.97
+    CMP St. James | Tucker | Tucker | 3586 | 1960 | 1.83
+    CMP St. James | Unity Hall | Unity Hall | 2077 | 823 | 2.52
+    CMP St. James | Vaughansfield | Vaughnsfield | 792 | None | -
+    CMP St. James | Welcome Hall | Welcome Hall | 2473 | 2790 | 0.89
+    CMP St. James | Westgreen | West Green | 1644 | 1496 | 1.10
+    CMP St. Mary | Amiel Town | Amiel Town | 731 | 1019 | 0.72
+    CMP St. Mary | Annotto Bay | Annotto Bay | 6539 | 6130 | 1.07
+    CMP St. Mary | Baileys Vale | Baileys Vale | 1707 | 1825 | 0.94
+    CMP St. Mary | Belfield | Belfield | 2760 | 2942 | 0.94
+    CMP St. Mary | Bonny Gate | Bonnygate | 1483 | 1365 | 1.09
+    CMP St. Mary | Brainerd | Brainerd | 2448 | 2045 | 1.20
+    CMP St. Mary | Broadgate | Broadgate | 498 | 1155 | 0.43
+    CMP St. Mary | Camberwell | Camberwell | 1429 | 1283 | 1.11
+    CMP St. Mary | Carron Hall | Carron Hall | 1717 | 2012 | 0.85
+    CMP St. Mary | Castleton | Castleton | 1500 | 1664 | 0.90
+    CMP St. Mary | Charles Town | Charles Town | 1955 | 1709 | 1.14
+    CMP St. Mary | Clonmel | Clonmel | 2054 | 2165 | 0.95
+    CMP St. Mary | Devon Pen | Devon Pen | 446 | -999 | -0.45
+    CMP St. Mary | Dover | Dover | 459 | 542 | 0.85
+    CMP St. Mary | Enfield | Enfield | 2685 | 2618 | 1.03
+    CMP St. Mary | Epsom | Epson | 1153 | None | -
+    CMP St. Mary | Flint River | Flint River | 1061 | 1440 | 0.74
+    CMP St. Mary | Free Hill | Free Hill | 3217 | 3909 | 0.82
+    CMP St. Mary | Friendship Gap | Friendship Gap | 311 | 502 | 0.62
+    CMP St. Mary | Galina | Galina | 2193 | 1955 | 1.12
+    CMP St. Mary | Gayle | Gayle | 1452 | 2288 | 0.63
+    CMP St. Mary | Hampstead | Hampstead | 1497 | 1374 | 1.09
+    CMP St. Mary | Highgate | Highgate | 9114 | 8797 | 1.04
+    CMP St. Mary | Islington | Islington | 6483 | 5713 | 1.13
+    CMP St. Mary | Jacks River | Jacks River | 2203 | 2321 | 0.95
+    CMP St. Mary | Jeffery Town | Jeffery Town | 1581 | 1999 | 0.79
+    CMP St. Mary | Long Road | Long Road | 583 | 544 | 1.07
+    CMP St. Mary | Lucky Hill | Lucky Hill | 1859 | 2085 | 0.89
+    CMP St. Mary | Mango Valley | Mango Valley | 2568 | 2237 | 1.15
+    CMP St. Mary | Martin | Martin | 2758 | 2640 | 1.04
+    CMP St. Mary | Mason Hall | Mason Hall | 1256 | 1054 | 1.19
+    CMP St. Mary | Mile Gully | Mile Gully | 293 | 253 | 1.16
+    CMP St. Mary | Oracabessa | Oracabessa | 6885 | 6646 | 1.04
+    CMP St. Mary | Port Maria | Port Maria | 8240 | 8354 | 0.99
+    CMP St. Mary | Prospect | Prospect | 4791 | 2794 | 1.71
+    CMP St. Mary | Retreat | Retreat | 4895 | 3304 | 1.48
+    CMP St. Mary | Richmond | Richmond | 5947 | 6275 | 0.95
+    CMP St. Mary | Robins Bay | Robins Bay | 1572 | 1595 | 0.99
+    CMP St. Mary | Sandside | Sandside | 1864 | 2116 | 0.88
+    CMP St. Mary | Scotts Hall | Scotts Hall | 1133 | 1288 | 0.88
+    CMP St. Mary | Woodpark | Woodpark | 1698 | 2305 | 0.74
+    CMP St. Mary | Woodside | Woodside | 913 | 1392 | 0.66
+    CMP St.Thomas | Airy Castle | Airy Castle | 1294 | 1528 | 0.85
+    CMP St.Thomas | Albion | Albion | 5082 | 3129 | 1.62
+    CMP St.Thomas | Amity Hall | Amity Hall | 440 | 500 | 0.88
+    CMP St.Thomas | Arcadia | Arcadia | 767 | 1045 | 0.73
+    CMP St.Thomas | Baptist | Baptist | 3405 | 2994 | 1.14
+    CMP St.Thomas | Barking Lodge | Barking Lodge | 1005 | 1249 | 0.80
+    CMP St.Thomas | Bath | Bath | 1584 | 2490 | 0.64
+    CMP St.Thomas | Cedar Valley | Cedar Valley | 1670 | 1663 | 1.00
+    CMP St.Thomas | Church Corner | Church Corner | 3041 | 3172 | 0.96
+    CMP St.Thomas | Dalvey | Dalvey | 2375 | 2990 | 0.79
+    CMP St.Thomas | Danvers Pen | Danvers Pen | 1647 | 1463 | 1.13
+    CMP St.Thomas | Duckenfield | Duckenfield | 1593 | 2160 | 0.74
+    CMP St.Thomas | Duhaney Pen | Duhaney Pen | 2320 | 2340 | 0.99
+    CMP St.Thomas | Easington | Easington | 2404 | 2222 | 1.08
+    CMP St.Thomas | Eleven Miles | Eleven Miles | 3531 | 3218 | 1.10
+    CMP St.Thomas | Font Hill | Font Hill | 1016 | 1052 | 0.97
+    CMP St.Thomas | Golden Grove | Golden Grove | 1222 | 1245 | 0.98
+    CMP St.Thomas | Hagley Gap | Hagley Gap | 1122 | 1480 | 0.76
+    CMP St.Thomas | Hayfield | Hayfield | 195 | 263 | 0.74
+    CMP St.Thomas | Hillside | Hillside | 167 | 222 | 0.75
+    CMP St.Thomas | Johns Town | Johns Town | 443 | 355 | 1.25
+    CMP St.Thomas | Johnson Mountain | Johnson Mountain | 265 | 455 | 0.58
+    CMP St.Thomas | Jones Pen | Jones Pen | 189 | 139 | 1.36
+    CMP St.Thomas | Leith Hall | Leith Hall | 2148 | 2136 | 1.01
+    CMP St.Thomas | Lloyds | Lloyds | 1737 | 1963 | 0.88
+    CMP St.Thomas | Lyssons | Lyssons | 4217 | 4664 | 0.90
+    CMP St.Thomas | Middleton | Middleton | 441 | 435 | 1.01
+    CMP St.Thomas | Morant Bay | Morant Bay | 1063 | 1080 | 0.98
+    CMP St.Thomas | Mount Lebanus | Mount Lebanus | 2048 | 2513 | 0.81
+    CMP St.Thomas | Pamphret | Pamphret | 916 | 413 | 2.22
+    CMP St.Thomas | Poorman's Corner | Poormans Corner | 5074 | 4446 | 1.14
+    CMP St.Thomas | Port Morant | Port Morant | 2246 | 2610 | 0.86
+    CMP St.Thomas | Prospect | Prospect | 4587 | 3101 | 1.48
+    CMP St.Thomas | Retreat | Retreat | 2583 | 2469 | 1.05
+    CMP St.Thomas | Richmond Vale | Richmond Vale | 560 | 395 | 1.42
+    CMP St.Thomas | Riverhead | River Head | 627 | 746 | 0.84
+    CMP St.Thomas | Rowlandsfield | Rowlandsfield | 855 | 1065 | 0.80
+    CMP St.Thomas | Seaforth | Seaforth | 5314 | 5420 | 0.98
+    CMP St.Thomas | Somerset | Somerset | 684 | 831 | 0.82
+    CMP St.Thomas | Spring Gardens | Spring Garden | 2947 | None | -
+    CMP St.Thomas | Sunning Hill | Sunning Hill | 895 | 1256 | 0.71
+    CMP St.Thomas | Trinityville | Trinityville | 2298 | 1887 | 1.22
+    CMP St.Thomas | Wheelersfield | Wheelerfield | 952 | None | -
+    CMP St.Thomas | White Hall | White Hall | 2683 | 2687 | 1.00
+    CMP St.Thomas | White Horses | White Horses | 2872 | 2901 | 0.99
+    CMP St.Thomas | Wilmington | Wilmington | 458 | 604 | 0.76
+    CMP St.Thomas | Winchester | Winchester | 565 | 761 | 0.74
+    CMP St.Thomas | Yallahs | Yallahs | 5085 | 5247 | 0.97
+    CMP St.Thomas | York | York | 1820 | 1813 | 1.00
+    CMP Trelawny | Albert Town | Albert Town | 753 | 1117 | 0.67
+    CMP Trelawny | Bounty Hall | Bounty Hall | 3196 | 2713 | 1.18
+    CMP Trelawny | Brampton | Brampton | 420 | None | -
+    CMP Trelawny | Bunker's Hill | Bunkers Hill | 1436 | 1653 | 0.87
+    CMP Trelawny | Clark's Town | Clarks Town | 3455 | None | -
+    CMP Trelawny | Daniel Town | Daniel Town | 3357 | 1224 | 2.74
+    CMP Trelawny | Deeside | Deeside | 3309 | 2559 | 1.29
+    CMP Trelawny | Duanvale | Duanvale | 1347 | 1586 | 0.85
+    CMP Trelawny | Duncans | Duncans | 3410 | 1028 | 3.32
+    CMP Trelawny | Falmouth | Falmouth | 14023 | 8958 | 1.57
+    CMP Trelawny | Freeman's Hall | Freemans Hall | 355 | 572 | 0.62
+    CMP Trelawny | Hampden | Hampden | 781 | 555 | 1.41
+    CMP Trelawny | Jackson Town | Jackson Town | 2456 | 2832 | 0.87
+    CMP Trelawny | Joe Hut | Joe Hut | 327 | 570 | 0.57
+    CMP Trelawny | Kinloss | Kinloss | 1060 | 1810 | 0.59
+    CMP Trelawny | Lorrimers | Lorrimers | 3131 | 3901 | 0.80
+    CMP Trelawny | Perth Town | Perth Town | 903 | 736 | 1.23
+    CMP Trelawny | Refuge | Refuge | 801 | 880 | 0.91
+    CMP Trelawny | Rio Bueno | Rio Bueno | 1665 | 3855 | 0.43
+    CMP Trelawny | Salt Marsh | Salt Marsh | 3946 | 2659 | 1.48
+    CMP Trelawny | Samuel Prospect | Samuels Prospect | 749 | 4677 | 0.16
+    CMP Trelawny | Sherwood Content | Sherwood Content | 1755 | 1498 | 1.17
+    CMP Trelawny | Spicy Hill | Spicy Hill | 1637 | 1446 | 1.13
+    CMP Trelawny | Spring Garden | Spring Garden | 822 | None | -
+    CMP Trelawny | St. Vincent | St. Vincent | 350 | None | -
+    CMP Trelawny | Stettin | Stettin | 1740 | 2378 | 0.73
+    CMP Trelawny | Stewart Town | Stewart Town | 578 | 941 | 0.61
+    CMP Trelawny | Troy | Troy | 1192 | 1869 | 0.64
+    CMP Trelawny | Ulster Spring | Ulster Spring | 1272 | 1526 | 0.83
+    CMP Trelawny | Wait-A-Bit | Wait-A-Bit | 1678 | 2369 | 0.71
+    CMP Trelawny | Wakefield | Wakefield | 4434 | 4005 | 1.11
+    CMP Trelawny | Warsop | Warsop | 2599 | 3581 | 0.73
+    CMP Trelawny | Wilson's Run | Wilson's Run | 881 | 1250 | 0.70
+    CMP Trelawny | Wirefence | Wirefence | 1918 | 2291 | 0.84
+    CMP Westmoreland | Ashton | Ashton | 949 | 964 | 0.98
+    CMP Westmoreland | Bath | Bath | 601 | 1071 | 0.56
+    CMP Westmoreland | Bath Mountain | Bath Mountain | 932 | 734 | 1.27
+    CMP Westmoreland | Beaufort | Beaufort | 290 | 254 | 1.14
+    CMP Westmoreland | Beeston Spring | Beeston Spring | 1973 | 2177 | 0.91
+    CMP Westmoreland | Belvedere | Belvedere | 848 | 1184 | 0.72
+    CMP Westmoreland | Bethel Town | Bethel Town | 4638 | 4818 | 0.96
+    CMP Westmoreland | Big Bridge | Big Bridge | 2865 | 2377 | 1.21
+    CMP Westmoreland | Bluefields | Bluefields | 3822 | 3408 | 1.12
+    CMP Westmoreland | Broughton | Broughton | 1516 | 1294 | 1.17
+    CMP Westmoreland | Burnt Savannah | Burnt Savannah | 3453 | None | -
+    CMP Westmoreland | Cairn Curran | Cairn Curran | 376 | 361 | 1.04
+    CMP Westmoreland | Caledonia | Caledonia | 553 | 968 | 0.57
+    CMP Westmoreland | Carmel | Carmel | 395 | 436 | 0.91
+    CMP Westmoreland | Cave | Cave | 756 | 827 | 0.91
+    CMP Westmoreland | Chantilly | Chantilly | 1085 | 1516 | 0.72
+    CMP Westmoreland | Content | Content | 474 | 410 | 1.16
+    CMP Westmoreland | Cornwall Mountain | Cornwall Mountian | 671 | None | -
+    CMP Westmoreland | Darliston | Darliston | 2301 | 2340 | 0.98
+    CMP Westmoreland | Delveland | Delveland | 1303 | 1745 | 0.75
+    CMP Westmoreland | Dillion Bigwoods | Dillion Bigwoods | 920 | 575 | 1.60
+    CMP Westmoreland | Enfield | Enfield | 572 | 467 | 1.22
+    CMP Westmoreland | Ferris | Ferris | 757 | 863 | 0.88
+    CMP Westmoreland | Fort William | Fort Williams | 1119 | None | -
+    CMP Westmoreland | Frome | Frome | 1329 | 1705 | 0.78
+    CMP Westmoreland | Georges Plain | Georges Plain | 2704 | 3056 | 0.88
+    CMP Westmoreland | Grange | Grange | 694 | 701 | 0.99
+    CMP Westmoreland | Grange Hill | Grange Hill | 8278 | 9187 | 0.90
+    CMP Westmoreland | Hertford | Hertford | 2887 | 3421 | 0.84
+    CMP Westmoreland | Kentucky | Kentucky | 451 | 572 | 0.79
+    CMP Westmoreland | Kilmarnock | Kilmarnoch | 1210 | None | -
+    CMP Westmoreland | Lambs River | Lambs River | 457 | 460 | 0.99
+    CMP Westmoreland | Leamington | Leamington | 653 | 510 | 1.28
+    CMP Westmoreland | Lennox Bigwoods | Lenox Bigwoods | 1359 | None | -
+    CMP Westmoreland | Little London | Little London | 9310 | 7691 | 1.21
+    CMP Westmoreland | Llandilo | Llandilo | 3397 | 3740 | 0.91
+    CMP Westmoreland | Mount Airy | Mount Airy | 2824 | 1287 | 2.19
+    CMP Westmoreland | Mount Stewart | Mount Stewart | 753 | 924 | 0.81
+    CMP Westmoreland | Negril | Negril | 10435 | 7466 | 1.40
+    CMP Westmoreland | New Roads | New Roads | 1007 | None | -
+    CMP Westmoreland | New Works | New Works | 1293 | 966 | 1.34
+    CMP Westmoreland | Orange Hill | Orange Hill | 2271 | 1203 | 1.89
+    CMP Westmoreland | Paul Island | Paul Island | 1233 | 1123 | 1.10
+    CMP Westmoreland | Petersfield | Petersfield | 3787 | 4955 | 0.76
+    CMP Westmoreland | Petersville | Petersville | 1719 | 1986 | 0.87
+    CMP Westmoreland | Porters Mountain | Porters Mountain | 313 | 490 | 0.64
+    CMP Westmoreland | Red Hills | Red Hills | 1100 | 1311 | 0.84
+    CMP Westmoreland | Revival | Revival | 2682 | 1730 | 1.55
+    CMP Westmoreland | Roaring River | Roaring River | 698 | 717 | 0.97
+    CMP Westmoreland | Savanna-la-mar Business District | Savannah-la-mar Business Dist. | 10884 | None | -
+    CMP Westmoreland | Seaford Town | Seaford Town | 764 | 739 | 1.03
+    CMP Westmoreland | Sheffield | Shefield | 4538 | None | -
+    CMP Westmoreland | Smithfield | Smithfield | 3186 | 2520 | 1.26
+    CMP Westmoreland | St. Leonards | St. Leonards | 628 | None | -
+    CMP Westmoreland | Strathbogie | Strathbogie | 2159 | 2357 | 0.92
+    CMP Westmoreland | Strawberry | Strawberry | 825 | 949 | 0.87
+    CMP Westmoreland | Three Miles River | Three Mile River | 747 | None | -
+    CMP Westmoreland | Town Head | Town Head | 1058 | 1057 | 1.00
+    CMP Westmoreland | Truro | Truro | 968 | 1272 | 0.76
+    CMP Westmoreland | Water Works | Water Works | 3715 | 3600 | 1.03
+    CMP Westmoreland | Whitehouse | Whitehouse | 5934 | 5414 | 1.10
+    CMP Westmoreland | Whithorn | Whithorn | 2621 | 3150 | 0.83
+    CMP Westmoreland | Williamsfield | Williamsfield | 762 | 928 | 0.82
+    EARLIER-ONLY ('clarendon', 'aenontown') 1852
+    EARLIER-ONLY ('clarendon', 'bananagroundpart2') 505
+    EARLIER-ONLY ('clarendon', 'croftshill') 4563
+    EARLIER-ONLY ('clarendon', 'freetown') 1083
+    EARLIER-ONLY ('clarendon', 'halsehall') 5089
+    EARLIER-ONLY ('clarendon', 'kellits') 9402
+    EARLIER-ONLY ('clarendon', 'maypen') 8842
+    EARLIER-ONLY ('clarendon', 'newlongville') 1013
+    EARLIER-ONLY ('clarendon', 'osbornestore') 5131
+    EARLIER-ONLY ('clarendon', 'richmondpark') 1217
+    EARLIER-ONLY ('clarendon', 'rosewell') 1209
+    EARLIER-ONLY ('clarendon', 'sandybay') 7142
+    EARLIER-ONLY ('clarendon', 'silenthillmoravia') 2238
+    EARLIER-ONLY ('clarendon', 'spaldingpart2') 3641
+    EARLIER-ONLY ('hanover', 'content') 384
+    EARLIER-ONLY ('hanover', 'lucea') 11227
+    EARLIER-ONLY ('hanover', 'mountpeace') 643
+    EARLIER-ONLY ('kingston', 'allmantownpart1') 6383
+    EARLIER-ONLY ('kingston', 'denhamtownpart1') 5958
+    EARLIER-ONLY ('kingston', 'franklyntownpart1') 12055
+    EARLIER-ONLY ('kingston', 'hannahtown') 2322
+    EARLIER-ONLY ('kingston', 'harbourviewpart1') 2829
+    EARLIER-ONLY ('kingston', 'jonestownpart1') 549
+    EARLIER-ONLY ('kingston', 'paradegardens') 5728
+    EARLIER-ONLY ('kingston', 'portroyal') 1117
+    EARLIER-ONLY ('kingston', 'rockfort') 9572
+    EARLIER-ONLY ('kingston', 'rosegardens') 3941
+    EARLIER-ONLY ('kingston', 'springfieldgardens') 8035
+    EARLIER-ONLY ('manchester', 'asia') 5196
+    EARLIER-ONLY ('manchester', 'bananagroundpart1') 518
+    EARLIER-ONLY ('manchester', 'craigheadgoodintent') 3513
+    EARLIER-ONLY ('manchester', 'greyground') 4083
+    EARLIER-ONLY ('manchester', 'lyndhurst') 503
+    EARLIER-ONLY ('manchester', 'mandeville') 18330
+    EARLIER-ONLY ('manchester', 'oxford') 828
+    EARLIER-ONLY ('manchester', 'pepperpart2') 252
+    EARLIER-ONLY ('manchester', 'saintpauls') 1259
+    EARLIER-ONLY ('manchester', 'silenthill') 1430
+    EARLIER-ONLY ('manchester', 'spaldingpart1') 1298
+    EARLIER-ONLY ('manchester', 'waltham') 1556
+    EARLIER-ONLY ('portland', 'bellevue') 655
+    EARLIER-ONLY ('portland', 'buffbaybelvedere') 7249
+    EARLIER-ONLY ('portland', 'kensignton') 915
+    EARLIER-ONLY ('portland', 'portantoniocentral') 6857
+    EARLIER-ONLY ('portland', 'reach') 484
+    EARLIER-ONLY ('portland', 'saintmargaretsbay') 1574
+    EARLIER-ONLY ('portland', 'skibochepstowe') 1224
+    EARLIER-ONLY ('saintandrew', 'allmantownpart2') 2791
+    EARLIER-ONLY ('saintandrew', 'bloxboroughbito') 642
+    EARLIER-ONLY ('saintandrew', 'bullbay') 15523
+    EARLIER-ONLY ('saintandrew', 'cooreville') 4793
+    EARLIER-ONLY ('saintandrew', 'denhamtownpart2') 2755
+    EARLIER-ONLY ('saintandrew', 'franklyntownpart2') 1084
+    EARLIER-ONLY ('saintandrew', 'greenwichtown') 7762
+    EARLIER-ONLY ('saintandrew', 'harbourviewpart2') 11170
+    EARLIER-ONLY ('saintandrew', 'hughendenarlenegardens') 9331
+    EARLIER-ONLY ('saintandrew', 'jonestownpart2') 10014
+    EARLIER-ONLY ('saintandrew', 'majestygardens') 2591
+    EARLIER-ONLY ('saintandrew', 'maverley') 6231
+    EARLIER-ONLY ('saintandrew', 'meadowbrookhavendale') 16111
+    EARLIER-ONLY ('saintandrew', 'mona') 7483
+    EARLIER-ONLY ('saintandrew', 'mountainview') 14094
+    EARLIER-ONLY ('saintandrew', 'olympicgardens') 11196
+    EARLIER-ONLY ('saintandrew', 'redhills') 15884
+    EARLIER-ONLY ('saintandrew', 'rivertonmeadows') 4184
+    EARLIER-ONLY ('saintandrew', 'rockhallpart2') 3996
+    EARLIER-ONLY ('saintandrew', 'saintpeters') 1476
+    EARLIER-ONLY ('saintandrew', 'seivwrightgardens') 14430
+    EARLIER-ONLY ('saintandrew', 'stateandziadiegardens') 2371
+    EARLIER-ONLY ('saintandrew', 'walthamgardensmandela') 11122
+    EARLIER-ONLY ('saintandrew', 'whitehallgardens') 14080
+    EARLIER-ONLY ('saintann', 'bohemiacascade') 3833
+    EARLIER-ONLY ('saintann', 'borobridgecuffieridge') 1709
+    EARLIER-ONLY ('saintann', 'contentgardens') 1505
+    EARLIER-ONLY ('saintann', 'gibraltarbrownstown') 1282
+    EARLIER-ONLY ('saintann', 'gibraltarmoneague') 1885
+    EARLIER-ONLY ('saintann', 'higginsland') 774
+    EARLIER-ONLY ('saintann', 'limetreegarden') 1310
+    EARLIER-ONLY ('saintann', 'mcnie') 3627
+    EARLIER-ONLY ('saintann', 'mountzionmines') 1648
+    EARLIER-ONLY ('saintann', 'riohoeriverhead') 1746
+    EARLIER-ONLY ('saintann', 'saintannsbay') 6836
+    EARLIER-ONLY ('saintann', 'saintdacre') 2987
+    EARLIER-ONLY ('saintcatherine', 'angelscrescent') 9505
+    EARLIER-ONLY ('saintcatherine', 'bernardlodge') 9669
+    EARLIER-ONLY ('saintcatherine', 'brownshall') 5794
+    EARLIER-ONLY ('saintcatherine', 'bushypark') 9625
+    EARLIER-ONLY ('saintcatherine', 'guyshillpart1') 6569
+    EARLIER-ONLY ('saintcatherine', 'rockhallpart1') 973
+    EARLIER-ONLY ('saintcatherine', 'saintjohnseast') 11501
+    EARLIER-ONLY ('saintcatherine', 'saintjohnswest') 15211
+    EARLIER-ONLY ('saintcatherine', 'sydenham') 10352
+    EARLIER-ONLY ('saintcatherine', 'treadways') 14339
+    EARLIER-ONLY ('saintelizabeth', 'barburyhall') 1832
+    EARLIER-ONLY ('saintelizabeth', 'bullsavanna') 2653
+    EARLIER-ONLY ('saintelizabeth', 'burntsavanna') 2891
+    EARLIER-ONLY ('saintelizabeth', 'pepperpart1') 2919
+    EARLIER-ONLY ('saintelizabeth', 'rosevalley') 1003
+    EARLIER-ONLY ('saintelizabeth', 'russellsmyersville') 1253
+    EARLIER-ONLY ('saintelizabeth', 'warminster') 1425
+    EARLIER-ONLY ('saintjames', 'barretthall') 2544
+    EARLIER-ONLY ('saintjames', 'belmonttowerhill') 604
+    EARLIER-ONLY ('saintjames', 'flamsteadgardens') 2008
+    EARLIER-ONLY ('saintjames', 'flanker') 7111
+    EARLIER-ONLY ('saintjames', 'mafoota') 1472
+    EARLIER-ONLY ('saintjames', 'montegobaybusinessdistrict') 5097
+    EARLIER-ONLY ('saintjames', 'moyhall') 474
+    EARLIER-ONLY ('saintjames', 'orangeirwin') 2041
+    EARLIER-ONLY ('saintjames', 'rosemountgardens') 1138
+    EARLIER-ONLY ('saintjames', 'springgardens') 360
+    EARLIER-ONLY ('saintjames', 'vaughansfield') 1048
+    EARLIER-ONLY ('saintjames', 'westgatehills') 1117
+    EARLIER-ONLY ('saintmary', 'boscobel') 5316
+    EARLIER-ONLY ('saintmary', 'epsom') 1004
+    EARLIER-ONLY ('saintmary', 'guyshillpart2') 776
+    EARLIER-ONLY ('saintmary', 'labyrinth') 1804
+    EARLIER-ONLY ('saintmary', 'pleasanthillbaxtermountain') 379
+    EARLIER-ONLY ('saintmary', 'providence') 428
+    EARLIER-ONLY ('saintthomas', 'llandeweyramble') 1160
+    EARLIER-ONLY ('saintthomas', 'peartreeriver') 622
+    EARLIER-ONLY ('saintthomas', 'springgardens') 2230
+    EARLIER-ONLY ('saintthomas', 'wheelersfield') 975
+    EARLIER-ONLY ('trelawny', 'bramptonandclarkstown') 1267
+    EARLIER-ONLY ('trelawny', 'granvillemarthabrae') 3053
+    EARLIER-ONLY ('trelawny', 'saintvincent') 463
+    EARLIER-ONLY ('trelawny', 'sawyersthealps') 1300
+    EARLIER-ONLY ('trelawny', 'springgardens') 1556
+    EARLIER-ONLY ('westmoreland', 'amitydarliston') 1163
+    EARLIER-ONLY ('westmoreland', 'amitysavannalamar') 1361
+    EARLIER-ONLY ('westmoreland', 'barneysidestruie') 1667
+    EARLIER-ONLY ('westmoreland', 'berkshiredundee') 1112
+    EARLIER-ONLY ('westmoreland', 'burntsavanna') 3550
+    EARLIER-ONLY ('westmoreland', 'cornwallmountain') 997
+    EARLIER-ONLY ('westmoreland', 'farmpen') 1694
+    EARLIER-ONLY ('westmoreland', 'fortwilliam') 762
+    EARLIER-ONLY ('westmoreland', 'fullersfieldalma') 1526
+    EARLIER-ONLY ('westmoreland', 'haddomcfield') 1067
+    EARLIER-ONLY ('westmoreland', 'jerusalemheightsjerusalemmountain') 1067
+    EARLIER-ONLY ('westmoreland', 'kilmarnock') 881
+    EARLIER-ONLY ('westmoreland', 'lennoxbigwoods') 1449
+    EARLIER-ONLY ('westmoreland', 'mearnsvilleauldayr') 868
+    EARLIER-ONLY ('westmoreland', 'newroad') 1043
+    EARLIER-ONLY ('westmoreland', 'saintleonards') 743
+    EARLIER-ONLY ('westmoreland', 'savannalamarbusinessdistrict') 12461
+    EARLIER-ONLY ('westmoreland', 'sheffield') 3700
+    EARLIER-ONLY ('westmoreland', 'threemilesriver') 894
