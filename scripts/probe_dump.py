@@ -42,7 +42,9 @@ TIMEOUT = 120
 def fetch(url: str, wayback: str = "") -> bytes:
     if wayback:
         url = f"https://web.archive.org/web/{wayback}id_/{url}"
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    # An Accept header, because SIB Belize's server answers a request without
+    # one with 406 Not Acceptable.
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         return resp.read()
 
