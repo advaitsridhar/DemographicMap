@@ -1,39 +1,23 @@
-page: https://ihsi.gouv.ht/recensement/resultat_rgph_2003
-  88,757 bytes
-  8 distinct match(es) for '(?:documents|storage|download|fichier|.pdf|.xls)[^s<>]{0,160}'
-    download
-    fichier CSS de Boot
-    fichier CSS de Tobii (librairie de lightbox ou modal) --
-    fichier CSS de la 
-    fichier CSS défini
-    fichier CSS pour le
-    fichier CSS principal de l'application --
-    fichier JavaScript de ba
-page: https://ihsi.gouv.ht/recensement/autres_resultat_rgph_2003
-  296,376 bytes
-  10 distinct match(es) for '(?:documents|storage|download|fichier|.pdf|.xls)[^s<>]{0,160}'
-    download
-    download" aria-hidden="true"
-    download="Tableau 2003"
-    fichier CSS de Boot
-    fichier CSS de Tobii (librairie de lightbox ou modal) --
-    fichier CSS de la 
-    fichier CSS défini
-    fichier CSS pour le
-    fichier CSS principal de l'application --
-    fichier JavaScript de ba
-page: https://ihsi.gouv.ht/statistiques/statistiques_demographiques_et_sociales/data_set
-  89,671 bytes
-  11 distinct match(es) for '(?:documents|storage|download|fichier|.pdf|.xls)[^s<>]{0,160}'
-    download
-    download = id + '-c
-    download = id + '-excel.xl
-    download = id +'-image.png';
-                link.href = canva
-    fichier CSS de Boot
-    fichier CSS de Tobii (librairie de lightbox ou modal) --
-    fichier CSS de la 
-    fichier CSS défini
-    fichier CSS pour le
-    fichier CSS principal de l'application --
-    fichier JavaScript de ba
+
+=== HDX dataset: cod-ps-hti ===
+    title: Haiti - Subnational Population Statistics
+    org:   unfpa
+    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
+    notes: Haiti administrative level 0-2 sex and age disaggregated 2024 population statistics  REFERENCE YEAR:  2024  These tables are suitable for database or GIS linkage to the [Haiti - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-hti) layers using the ADM1 and ADM2_PCODE fields.
+    8 resource(s):
+      PDF    2024-HTI-COD-PS-End_User_Release_Note.pdf
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/f22a30e2-1bac-4474-a97b-bf6e1b897670/download/2024-hti-cod-ps-end_user_release_note.pdf
+      PDF    HTI_2024_Technical_Accompanying_Note.pdf
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/c5347290-1d6c-4539-a664-adc895e8c199/download/hti_2024_technical_accompanying_note.pdf
+      XLSX   hti_admpop_2024.xlsx
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/33a3fe39-b88c-40bd-a213-fe5d8d5389ad/download/hti_admpop_2024.xlsx
+      XLSX   hti_admpop_2024_with_uncertainty_range.xlsx
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/70ee384b-bd92-46bb-9ca8-1a529a920a36/download/hti_admpop_2024_with_uncertainty_range.xlsx
+      XLSX   hti_admgz.xlsx
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/84c005e8-0889-433a-8997-81f2257cb8e7/download/hti_admgz.xlsx
+      CSV    hti_admpop_adm0_2024.csv
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/15cb3e23-0d75-4bda-bcef-eff4916ad15d/download/hti_admpop_adm0_2024.csv
+      CSV    hti_admpop_adm1_2024.csv
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/c2bbfc4a-d000-47fd-82d9-a74e44d7aa22/download/hti_admpop_adm1_2024.csv
+      CSV    hti_admpop_adm2_2024.csv
+             https://data.humdata.org/dataset/95ba5281-fd76-4d3a-ae29-247e1ff26447/resource/fc2ae030-c37e-4070-9f81-0f5f1c3d446c/download/hti_admpop_adm2_2024.csv
