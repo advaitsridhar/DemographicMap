@@ -155,6 +155,33 @@ def englished(field: str, counts: dict[str, float]) -> dict[str, float]:
     return out
 
 
+# Sixteen municipalities the boundary file draws where they are but files under
+# a neighbouring state -- Amparo (PB) under Pernambuco, Tibau (RN) under Ceará,
+# Águas de Lindóia (SP) under Minas Gerais -- so matching a name within its
+# state refuses them, rightly, as outside their parent. Each is bound to its own
+# polygon instead: fifteen because GeoNames' seat for that IBGE code lies inside
+# the polygon, and Quixaba (PE) as the one Quixaba polygon and the one Quixaba
+# row left once Quixaba (PB), whose seat is 110 km away in the other, is placed.
+MISFILED = {
+    "2500734": "56859067B25087670535038",  # Amparo (PB)
+    "2501005": "56859067B30270285588633",  # Araruna (PB)
+    "2502003": "56859067B47597011454876",  # Belém do Brejo do Cruz (PB)
+    "2502201": "56859067B58755230690339",  # Bom Jesus (PB)
+    "2502300": "56859067B88877822125825",  # Bom Sucesso (PB)
+    "2602506": "56859067B9303192166892",   # Brejinho (PE)
+    "2512606": "56859067B6462044474109",   # Quixaba (PB)
+    "2611533": "56859067B2724242969158",   # Quixaba (PE)
+    "2612471": "56859067B75266900672705",  # Santa Cruz da Baixa Verde (PE)
+    "2612802": "56859067B87497954327615",  # Santa Terezinha (PE)
+    "2412500": "56859067B85156148538476",  # São Miguel (RN)
+    "2613800": "56859067B99318407457286",  # São Vicente Férrer (PE)
+    "2411056": "56859067B59166838740608",  # Tibau (RN)
+    "2414704": "56859067B38668332786629",  # Várzea (RN)
+    "2517100": "56859067B31592745893521",  # Várzea (PB)
+    "3500501": "56859067B8082951902088",   # Águas de Lindóia (SP)
+}
+
+
 def uf_of(place: dict[str, Any]) -> dict[str, Any]:
     """The federative unit a municipality sits in, by whichever path IBGE gives.
 
@@ -244,10 +271,12 @@ def main() -> int:
         gvals = englished("religion", {k: v for k, v in religion.get(code, {}).items()
                                        if k != "__total__"})
         race_rows, faith_rows = shares(rvals), shares(gvals)
+        pinned = MISFILED.get(code) if args.level == "municipality" else None
         records.append(record(
             f"BRA-{code}", name, level=level, parent=parent,
             parent_name=parent_name,
             codes={"ibge": code},
+            match_by="shape_id" if pinned else None, shape_id=pinned,
             population=measure(int(total), year=YEAR, source=src) if total else gap(NOT_AVAILABLE),
             median_age=(measure(age_sex["median_age"][code], unit="years", year=YEAR, source=src)
                         if code in age_sex["median_age"] else gap(NOT_AVAILABLE)),
