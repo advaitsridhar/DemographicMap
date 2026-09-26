@@ -353,12 +353,19 @@ def title_name(text: str) -> str:
     return m.group(1) if m else ""
 
 
+# A rank before a person's name, which one table writes and another does not
+# or writes differently: La Rioja's "Coronel Felipe Varela" is also "General
+# Felipe Varela".
+RANKS = {"general", "coronel", "doctor", "dr", "presidente", "capitan", "teniente", "mayor",
+         "sargento", "comandante", "almirante", "gobernador", "ingeniero", "fray"}
+
+
 def words_fit(name: str, written: str) -> bool:
-    """Every word of ``name`` is a word of ``written`` or begins with one of its initials."""
+    """Every word of ``name`` but a rank is a word of ``written``, or begins with its initial."""
     theirs = [fold(w) for w in re.split(r"[\s.]+", written) if fold(w)]
-    return bool(theirs) and all(
-        any(w == t or (len(t) == 1 and w.startswith(t)) for t in theirs)
-        for w in (fold(x) for x in re.split(r"[\s.]+", name)) if w)
+    ours = [w for w in (fold(x) for x in re.split(r"[\s.]+", name)) if w and w not in RANKS]
+    return bool(theirs) and bool(ours) and all(
+        any(w == t or (len(t) == 1 and w.startswith(t)) for t in theirs) for w in ours)
 
 
 def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int,

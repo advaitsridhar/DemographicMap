@@ -109,6 +109,12 @@ class DepartmentSheets(unittest.TestCase):
         out = ac.dept_sheet(sheets, 12, names, "test")
         self.assertIs(out["46014"], sheets[(12, 2)])
 
+    def test_a_rank_one_table_writes_differently_is_not_part_of_the_name(self):
+        sheets = {(12, 1): [["Cuadro 7.12.1. Provincia de La Rioja, departamento Coronel "
+                             "Felipe Varela. Población que se reconoce indígena."]]}
+        out = ac.dept_sheet(sheets, 12, {"46056": "General Felipe Varela"}, "test")
+        self.assertIn("46056", out)
+
     def test_an_initial_does_not_place_a_sheet_that_two_names_fit(self):
         sheets = {(12, 1): [["Cuadro 4.12.1. Provincia de La Rioja, departamento General "
                              "J. Quiroga. Total de población."]]}

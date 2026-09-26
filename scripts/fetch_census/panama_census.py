@@ -212,7 +212,7 @@ def peoples_table(rows: list[list[Any]]) -> dict[str, dict[str, int]]:
     for row in rows[3:]:
         first, second = text(row[0]), text(row[1])
         people = number(row[2])
-        if first == "Mediana" or people is None:
+        if "Mediana" in (first, second) or people is None:
             continue
         if first or second == "TOTAL":
             current = first if first else ""
