@@ -24,7 +24,9 @@ def probe() -> None:
     body = http_get(WAYBACK.format(stamp=TABLERO_STAMP, url=TABLERO), binary=True, cache=False)
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
     rows = [list(r) for r in book["Base"].iter_rows(values_only=True)]
-    head = [str(c) for c in rows[0]]
+    first = next(i for i, r in enumerate(rows) if any(str(c).strip() == "Año" for c in r))
+    rows = rows[first:]
+    head = [str(c).strip() for c in rows[0]]
     log(f"  Base: {len(rows)} rows; columns: {head}")
     at = {h: i for i, h in enumerate(head)}
     for column in ("Año", "Territorios", "Edades", "Edad repro-ductiva"):
