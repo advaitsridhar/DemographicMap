@@ -1,20 +1,11 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-redatam.one.gob.do:443
-  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
-  notAfter: Jan 28 23:59:59 2027 GMT
-  CN=*.one.gob.do
-  DNS:*.one.gob.do
-  DNS:one.gob.do
-  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-redatam.one.gob.do:443 -- completing the chain from AIA
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
-    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
-    this is a self-signed root; chain complete
-  VERIFIED handshake ok, TLSv1.3
 
-page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=CPV2010&lang=esp
-  200 text/html; charset=utf-8 5324 bytes
-  no links matched
+=== HDX dataset: haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries ===
+    title: Haiti Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys
+    org:   us-census-bureau
+    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
+    notes: The geodatabase contains national and subnational boundary feature classes of Haiti for joining (linking) to attribute data provided in tables prepared by the U.S. Census Bureau.  The tabular data contain total population for 2003 (census) and 2015 (population estimates), as well as information relating to education, health, information and communication technology, and transportation.
+    2 resource(s):
+      Geodatabase Haiti.gdb.zip
+             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/7c2903a3-63ac-4965-a6e7-74f65e28dcd9/download/haiti.gdb.zip
+      XLSX   Haiti_uscb_202212.xlsx
+             https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx
