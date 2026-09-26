@@ -82,7 +82,24 @@ CODE = re.compile(r"^\s*(\d+)\s*-\s*(.*?)\s*$")
 NUMBERED = re.compile(r"^\s*\d+\.\s*")
 # The BCR's district name -> the boundary file's, where they differ by more
 # than accents: the boundary file's own misspellings among them.
-ALIASES: dict[str, str] = {}
+ALIASES = {
+    "Ahuachapán": "Ahuachpan", "Chalatenango": "Chalatenago", "Guacotecti": "Guacoteci",
+    "San Antonio Los Ranchos": "San Antonia Los Ranchos", "San Emigdio": "San Emigdo",
+    "San Francisco Chinameca": "San Francsico Chinameca", "San Ignacio": "San Ingnacio",
+    "Tejutepeque": "Teujutepeque", "Santo Domingo de Guzmán": "Santo Domingo",
+    "Cancasque": "San Jose Cancasque", "Las Flores": "San Jose Las Flores",
+    "San Juan Opico": "Opico", "Ciudad Delgado": "Delgado", "Villa Dolores": "Dolores",
+    "Ilobasco": "Ciudad Ilobasco", "San Rafael Oriente": "San Rafael",
+    "San Francisco Gotera": "San Francisco",
+}
+# Districts left unbound although a polygon carries the name, because the
+# boundary file's drawing contradicts it. Sonsonate's polygon is 17 km2 and
+# lies north of the city, where Sonzacate is -- the one district of
+# Sonsonate's sixteen the file draws no polygon for -- while an unnamed
+# polygon of 249 km2 runs from the city's south edge to the coast, where the
+# municipio of Sonsonate (232.5 km2) does. Which polygon is which cannot be
+# settled from names, so neither district is bound.
+UNSURE = {"0315": "Sonsonate", "0316": "Sonzacate"}
 # Polygons smaller than this in both directions (degrees), which share their
 # name with a real polygon of the same department, are slivers of it.
 SLIVER = 0.002
@@ -452,9 +469,14 @@ def main() -> int:
     thin = slivers(admin2)
     log(f"  slivers left out of the binding: {sorted(s['name'] for s in admin2 if s['id'] in thin)}")
     shapes = [s for s in admin2 if s["id"] not in thin]
+    for key, name in UNSURE.items():
+        if districts.get(key, (None, None))[1] != name:
+            raise SystemExit(f"{WHO}: district {key} is {districts.get(key)}, not {name}")
     bound, missing = bind({key: (name, departments[key[:2]][2]["name"])
-                           for key, (_, name) in districts.items()}, shapes, parents, ALIASES)
-    log(f"  {len(bound)} of {len(districts)} districts bound to their polygons; not: {missing}")
+                           for key, (_, name) in districts.items() if key not in UNSURE},
+                          shapes, parents, ALIASES)
+    log(f"  {len(bound)} of {len(districts)} districts bound to their polygons; not: {missing}; "
+        f"left unbound, their polygons in doubt: {sorted(UNSURE.values())}")
     unbound = sorted(s["name"] for s in admin2 if s["id"] not in set(bound.values()))
     log(f"  polygons with no district: {unbound}")
     labels = {s["id"]: s["name"] for s in admin2}
