@@ -1,119 +1,22 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/dominican_census.py:54: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  return [c.public_bytes(Encoding.DER) for c in pkcs7.load_der_pkcs7_certificates(blob)]
-  http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt: 1 certificate(s), 1 intermediate(s) added; a root is never taken from the network
-  http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c: 3 certificate(s), 2 intermediate(s) added; a root is never taken from the network
-page: https://redatam.one.gob.do/
-  text: República Dominicana:.ONE | CEPAL/CELADE::Redatam Webserver | Diseminación de Información Estadística Portal de las estadísticas dominicanas Redatam Webserver En-Línea » Procesamiento, análisis y diseminación de estadísticas y censos REDATAM es el ecosistema regional de gestión y difusión de datos estadísticos, especializado en el procesamiento de microdatos provenientes de censos, encuestas, estadísticas vitales y otros registros administrativos. Procesar En-Línea » Microdatos Mayor explotación de la información a gran velocidad. Datos agregados Integración de varias fuentes y/o series de datos. Visualizadores Tabulados, gráficos, mapas temáticos. Ecológico Mejoras y nuevos desarrollos disponibles para todos. Datos y estadísticas Temas Datos y Estadísticas Sistemas de Indicadores Catálogo de Datos Encuéntranos en Dirección Av. México esq. Leopoldo Navarro, Edif. de Oficinas Gubernamentales, Piso 9, Santo Domingo, RD Teléfono (809) 682-7777 Correo info@one.gob.do Términos de uso Políticas de privacidad Preguntas frecuentes Bajo licencia Creative Commons (CC BY 4.0) HTML5 UP | Adaptación REDATAM Facebook X Instagram Youtube © 2004 - 2026 | Oficina Nacional de Estadística (ONE)
-  link: '' -> https://www.one.gob.do/
-  link: 'En-Línea »' -> https://redatam.one.gob.do/bindom/rpwebengine.exe/portal
-  link: 'REDATAM' -> https://redatam.org
-  link: 'Procesar En-Línea »' -> https://redatam.one.gob.do/bindom/rpwebengine.exe/portal
-  link: 'Temas' -> https://www.one.gob.do/datos-y-estadisticas/
-  link: 'Datos y Estadísticas' -> https://www.one.gob.do/datos-y-estadisticas/
-  link: 'Sistemas de Indicadores' -> https://www.one.gob.do/datos-y-estadisticas/recursos-digitales/
-  link: 'Catálogo de Datos' -> https://www.one.gob.do/datos-y-estadisticas/bases-de-datos/
-  link: 'Términos de uso' -> https://www.one.gob.do/paginas/legal/terminos-de-uso/
-  link: 'Políticas de privacidad' -> https://www.one.gob.do/paginas/legal/politica-de-privacidad/
-  link: 'Preguntas frecuentes' -> https://www.one.gob.do/paginas/preguntas-frecuentes/
-  link: 'HTML5 UP' -> https://html5up.net
-  link: 'REDATAM Facebook' -> https://redatam.org
-  link: 'X' -> http://twitter.com/#!/ONERD_
-  link: 'Instagram' -> https://www.instagram.com/onerd_/?hl=es
-  link: 'Youtube' -> http://www.youtube.com/user/EstadisticasONE
-  link: '' -> https://redatam.org/
-page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=CPV2010&lang=esp
-  text: UNECLAC-CELADE::Redatam Webserver | Statistical Process and Dissemination Tool Menu Close × Powered by REDATAM | © 1985 - 2026 | CELADE, Population Division of ECLAC - United Nations. All rights reserved.
-  frame: https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759201.htm
-  frame: https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759211.htm
-  frame: https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759221.htm
-  frame: https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: '' -> https://www.one.gob.do/
-  link: 'REDATAM' -> https://www.cepal.org/en/topics/redatam
-follow: 'frame' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759201.htm
-  text: ﻿ Redatam Webserver Header Page --> --> REPÚBLICA DOMINICANA IX CENSO NACIONAL DE POBLACIÓN Y VIVIENDA 2010
-  link: '' -> https://www.one.gob.do/
-follow: 'frame' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759211.htm
-  text: ﻿ Redatam Webserver Index Page INFORMACIÓN BÁSICA TABLAS SIMPLES Sobre viviendas Sobre hogares Sobre población TABLAS CRUZADAS Sobre viviendas Sobre hogares Sobre población Vivienda-Hogar-Población TABLAS ESPACIALES Sobre viviendas Sobre hogares Sobre población Conteos PROMEDIOS Sobre viviendas Sobre hogares Sobre población RESULTADOS CENSALES ESTRUCTURA POBLACIÓN Población por sexo y edad Distribución por edades Relación de dependencia Relación de masculinidad ADULTO MAYOR (65+) Caracterásticas de viviendas Caracterásticas de hogares Caracterásticas de personas Indicadores FECUNDIDAD Promedio de hijos Indicadores EDUCACIÓN Población en edad escolar Variables de educación INDICADORES Sobre viviendas Sobre hogares Sobre población DOCUMENTACIÓN BASE DE DATOS Información Diccionario Todas las variables Variables geográficas Variables de viviendas Variables de hogares Variables de personas Categorías variables Sobre viviendas Sobre hogares Sobre población REFERENCIAS Boleta censal Boleta comunidad Manual empadronador Manual Supervisor Metodología Metadatos ANDA Guía del usuario VOLÚMENES CENSALES Informe Básico Informe general Vivienda y Hogar Caract.Demográficas Caract.Educativas Caract.Económicas Migrac.Fecun.Mortalidad Entorno Vivienda-Hogar Productores Agropecuarios REDATAM Procesador estadístico Descargar diccionario ENLACES Sitio Oficial ONE Sitio oficial Censo 2010 Descargar software R+SP Go !-->
-  link: '' -> javascript:window.parent.location.reload(true);
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Frequency?BASE=CPV2010&ITEM=FREQVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Frequency?BASE=CPV2010&ITEM=FREQHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Frequency?BASE=CPV2010&ITEM=FREQPOB&lang=esp
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=CROSSVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=CROSSHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=CROSSPOB&lang=esp
-  link: 'Vivienda-Hogar-Población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=CROSSVHP&lang=esp
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=AREAVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=AREAHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=AREAPOB&lang=esp
-  link: 'Conteos' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=CONTEOS&lang=esp
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=PROMVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=PROMHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=PROMPOB&lang=esp
-  link: 'Población por sexo y edad' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=EDADQUIN&lang=esp
-  link: 'Distribución por edades' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Qts?BASE=CPV2010&ITEM=EDADGRAN&lang=esp
-  link: 'Relación de dependencia' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Fraction?BASE=CPV2010&ITEM=RELDEPEDAD&lang=esp
-  link: 'Relación de masculinidad' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Fraction?BASE=CPV2010&ITEM=RELMASC&lang=esp
-  link: 'Caracterásticas de viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Qts?BASE=CPV2010&ITEM=VIVAM&lang=esp
-  link: 'Caracterásticas de hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Qts?BASE=CPV2010&ITEM=HOGAM&lang=esp
-  link: 'Caracterásticas de personas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Qts?BASE=CPV2010&ITEM=PERSAM&lang=esp
-  link: 'Indicadores' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=INDAM&lang=esp
-  link: 'Promedio de hijos' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=FECUND&lang=esp
-  link: 'Indicadores' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=INDFEC&lang=esp
-  link: 'Población en edad escolar' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Qts?BASE=CPV2010&ITEM=CANTEDU&lang=esp
-  link: 'Variables de educación' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CrossTab?BASE=CPV2010&ITEM=INDICEDU&lang=esp
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=INDICVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=INDICHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/AreaList?BASE=CPV2010&ITEM=INDICPOB&lang=esp
-  link: 'Todas las variables' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICALL&lang=esp
-  link: 'Variables geográficas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICGEO&lang=esp
-  link: 'Variables de viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICVIV&lang=esp
-  link: 'Variables de hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICHOG&lang=esp
-  link: 'Variables de personas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICPER&lang=esp
-  link: 'Sobre viviendas' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICCATVIV&lang=esp
-  link: 'Sobre hogares' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICCATHOG&lang=esp
-  link: 'Sobre población' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/Dictionary?BASE=CPV2010&ITEM=DICCATPER&lang=esp
-  link: 'Boleta censal' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Boleta_Censal.pdf
-  link: 'Boleta comunidad' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Boleta_Comunidad.pdf
-  link: 'Manual empadronador' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Manual_Empadronador.pdf
-  link: 'Manual Supervisor' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Manual_Supervisor.pdf
-  link: 'Metodología' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Metodología.pdf
-  link: 'Metadatos ANDA' -> https://anda.one.gob.do/index.php/catalog/95
-  link: 'Guía del usuario' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/Instructivo_para_utilizar_la_Base_REDATAM_Censo_2010.pdf
-  link: 'Informe Básico' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Informe_basico.pdf
-  link: 'Informe general' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Informe_general.pdf
-  link: 'Vivienda y Hogar' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Caracteristicas_Vivienda_Hogar.pdf
-  link: 'Caract.Demográficas' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Caracteristicas_Demograficas_Basicas.pdf
-  link: 'Caract.Educativas' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Caracteristicas_Educativas.pdf
-  link: 'Caract.Económicas' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Carateristicas_Economicas.pdf
-  link: 'Migrac.Fecun.Mortalidad' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Migracion-Fecundidad-Mortalidad.pdf
-  link: 'Entorno Vivienda-Hogar' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Caracteristicas_Entorno_Vivienda_Hogar.pdf
-  link: 'Productores Agropecuarios' -> https://redatam.one.gob.do/reddom/censos/CPV2010/Docs/CNPV2010-Entorno_productores_agropecuarios.pdf
-  link: 'Procesador estadístico' -> https://redatam.one.gob.do/bindom/RpWebStats.exe/CmdSet?BASE=CPV2010&ITEM=PROGRED&lang=esp
-  link: 'Descargar diccionario' -> https://redatam.one.gob.do/bindom/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\censos\CPV2010\baserpub\cpv2010_repdom_pub.dic
-  link: 'Sitio Oficial ONE' -> https://www.one.gob.do/
-  link: 'Sitio oficial Censo 2010' -> https://censo2010.one.gob.do/
-  link: 'Descargar software R+SP' -> https://redatam.org/
-  link: 'Go' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759211.htm
-follow: 'frame' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759221.htm
-  text: ﻿ UNECLAC-CELADE::Redatam Webserver | Output Page BASE DE DATOS DEL IX CENSO NACIONAL DE POBLACIÓN Y VIVIENDA 2010 PARA PROCESAMIENTO ANALÁTICO EN LíNEA
-  link: '' -> https://redatam.org/
-follow: 'frame' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  text: ﻿ Redatam Webserver Footer Page --> RedAtam Webserver Home Â· Blog Â· Pricing Â· About Â· Faq Â· Contact --> © 2003 - 2026 | 2025.12.03 ONE | República Dominicana --> Edif. de Oficinas Gubernamentales, Piso 9 Santo Domingo, República Dominicana (809) 682-7777 info@one.gob.do Acerca de... Coordinador del Sistema Estadístico Nacional, modelo en la producción y divulgación de las estadísticas oficiales oportunas, confiables, accesibles y de calidad para el desarrollo sostenible.
-  link: '' -> https://www.one.gob.do
-  link: 'Home' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: 'Blog' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: 'Pricing' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: 'About' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: 'Faq' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: 'Contact' -> https://redatam.one.gob.do/reddom/tempo/117592/~tmp_11759231.htm
-  link: '' -> http://twitter.com/#!/ONERD_
-  link: '' -> https://www.facebook.com/pages/Oficina-Nacional-de-Estad%C3%ADstica-RD-ONE/462027067222699
-  link: '' -> http://www.youtube.com/user/EstadisticasONE
-  link: '' -> https://www.instagram.com/onerd_/?hl=es
-  link: 'info@one.gob.do' -> mailto:info@one.gob.do
-page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=CPV2022&lang=esp
-  HTTPError: HTTP Error 500: Internal Server Error
-page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=XCNPV2022&lang=esp
-  HTTPError: HTTP Error 500: Internal Server Error
-page: https://redatam.one.gob.do/bindom/RpWebEngine.exe/Portal?BASE=CENSO2022&lang=esp
-  HTTPError: HTTP Error 500: Internal Server Error
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Cruce de Grupos de edad | 80 y más por HABLA Grupos de edad | 80 y más HABLA 0 9 Total 0 a 4 años 441 784 23 887 465 671 5 a 9 años 497 858 44 444 542 302 10 a 14 años 483 545 37 512 521 057 15 a 19 años 478 995 36 155 515 150 20 a 24 años 478 810 34 788 513 598 25 a 29 años 496 263 33 476 529 739 30 a 34 años 474 326 29 805 504 131 35 a 39 años 426 595 25 861 452 456 40 a 44 años 385 041 22 300 407 341 45 a 49 años 300 884 17 650 318 534 50 a 54 años 288 032 16 893 304 925 55 a 59 años 254 883 14 812 269 695 60 a 64 años 228 358 13 286 241 644 65 a 69 años 184 291 10 269 194 560 70 a 74 años 126 217 7 502 133 719 75 a 79 años 86 943 5 141 92 084 80 años y más 97 260 6 037 103 297 Total 5 730 085 379 818 6 109 903 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545601.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545601.pdf
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Cruce de Pertenencia indígena por HABLA Pertenencia indígena HABLA 0 9 Total Indígena 139 972 77 140 049 Resto 5 590 113 379 741 5 969 854 Total 5 730 085 379 818 6 109 903 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545621.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545621.pdf
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Frecuencia de Habla Alemán Habla Alemán Casos % Acumulado % Alemán 62 027 14,04% 14,04% No especificado 379 818 85,96% 100,00% Total 441 845 100,00% 100,00% No Aplica : 5 668 058 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545641.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545641.pdf
+  table: area=None name='' title='Habla Alemán' total=441845 na=5668058 rows=[('Alemán', 62027), ('No especificado', 379818)]
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Frecuencia de Habla Inglés Habla Inglés Casos % Acumulado % Inglés 241 604 38,88% 38,88% No especificado 379 818 61,12% 100,00% Total 621 422 100,00% 100,00% No Aplica : 5 488 481 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545661.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545661.pdf
+  table: area=None name='' title='Habla Inglés' total=621422 na=5488481 rows=[('Inglés', 241604), ('No especificado', 379818)]
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Frecuencia de Habla Francés Habla Francés Casos % Acumulado % Francés 11 411 2,92% 2,92% No especificado 379 818 97,08% 100,00% Total 391 229 100,00% 100,00% No Aplica : 5 718 674 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545681.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_7545681.pdf
+  table: area=None name='' title='Habla Francés' total=391229 na=5718674 rows=[('Francés', 11411), ('No especificado', 379818)]
+  text: ﻿ Redatam Webserver Output Table CEPAL/CELADE Redatam+SP 09/26/2026 Base de datos E:\redxoc\prod\latam\pry\redbin\rpbases\censos\cen22\Base\cen2022.dic Área Geográfica Toda la Base de Datos Frecuencia de Otro idioma no Indigena Otro idioma no Indigena Casos % Acumulado % Otro idioma No indigena especificar 11 567 2,96% 2,96% No especificado 379 818 97,04% 100,00% Total 391 385 100,00% 100,00% No Aplica : 5 718 518 Descargar en formato Excel | Descargar en formato PDF
+  link: 'Descargar en formato Excel' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_75456101.xlsX
+  link: 'Descargar en formato PDF' -> https://prod.redatam.org/redpry//tempo/75456/~tmp_75456101.pdf
+  table: area=None name='' title='Otro idioma no Indigena' total=391385 na=5718518 rows=[('Otro idioma No indigena especificar', 11567), ('No especificado', 379818)]
