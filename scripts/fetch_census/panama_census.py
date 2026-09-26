@@ -245,9 +245,20 @@ def peoples_table(rows: list[list[Any]]) -> dict[str, dict[str, int]]:
     return out
 
 
+def district_key(name: str) -> str:
+    """A district's name without the note one table adds and another does not:
+    "Santa Catalina o Calovébora (Bledeshia)"."""
+    return fold(re.sub(r"\s*\([^)]*\)\s*$", "", name))
+
+
+DISTRICT_NAMES: dict[tuple[str, str], str] = {}
+
+
 def district_table(rows: list[list[Any]], columns: list[int]
                    ) -> tuple[dict[str, list[int]], dict[tuple[str, str], list[int]]]:
-    """Province and district rows of a province/district/corregimiento table."""
+    """Province and district rows of a province/district/corregimiento table,
+    keyed by province key and district key; the first spelling seen is kept
+    in DISTRICT_NAMES for display."""
     provinces: dict[str, list[int]] = {}
     districts: dict[tuple[str, str], list[int]] = {}
     current = None
@@ -261,10 +272,11 @@ def district_table(rows: list[list[Any]], columns: list[int]
             provinces[current] = figures
         elif second and not third and current is not None and second.upper() != "TOTAL" \
                 and not BREAKDOWN.match(second):
-            key = (current, second)
+            key = (current, district_key(second))
             if key in districts:
                 raise SystemExit(f"panama_census: two rows for district {second} of {current}")
             districts[key] = figures
+            DISTRICT_NAMES.setdefault(key, re.sub(r"\s*\([^)]*\)\s*$", "", second))
     return provinces, districts
 
 
@@ -364,14 +376,15 @@ def main() -> int:
     # -- the districts the boundary file draws, with later splits added back
     merged: dict[tuple[str, str], dict[str, Any]] = {}
     for (prov, dist), sex in sex_dist.items():
-        target = SPLITS.get((prov, fold(dist)))
+        target = SPLITS.get((prov, dist))
         name = dist
         if target:
-            name = next(d for (p, d) in sex_dist if p == prov and fold(d) == target)
-            log(f"  {dist} ({prov}) is added to {name}, which the boundary file draws whole")
+            name = next(d for (p, d) in sex_dist if p == prov and d == target)
+            log(f"  {DISTRICT_NAMES[(prov, dist)]} ({prov}) is added to "
+                f"{DISTRICT_NAMES[(prov, name)]}, which the boundary file draws whole")
         unit = merged.setdefault((prov, name), {"parts": [], "sex": [0, 0, 0],
                                                 "afro": [0] * 10, "indigenous": 0})
-        unit["parts"].append(dist)
+        unit["parts"].append(DISTRICT_NAMES[(prov, dist)])
         unit["sex"] = [a + b for a, b in zip(unit["sex"], sex)]
         unit["afro"] = [a + b for a, b in zip(unit["afro"], afro_dist[(prov, dist)])]
         unit["indigenous"] += ind_dist[(prov, dist)][0]
@@ -418,15 +431,15 @@ def main() -> int:
             **ethnicity(people, afro_prov[key], unit["total"], "admin1"),
             sources=sources("admin1")))
 
-    districts = {f"{p}:{fold(d)}": (d, PROVINCES[p])
-                 for (p, d) in merged}
+    districts = {f"{p}:{d}": (DISTRICT_NAMES[(p, d)], PROVINCES[p]) for (p, d) in merged}
     bound, missing = binding.bind(districts, admin2, parents, ALIASES)
     log(f"  {len(bound)} of {len(districts)} districts bound; not: {missing}")
     drawn = {s["id"]: s for s in admin2}
     unbound = sorted(s["name"] for s in admin2 if s["id"] not in set(bound.values()))
     log(f"  polygons with no district: {unbound}")
-    for (prov, dist), unit in sorted(merged.items()):
-        code = f"{prov}:{fold(dist)}"
+    for (prov, key), unit in sorted(merged.items()):
+        dist = DISTRICT_NAMES[(prov, key)]
+        code = f"{prov}:{key}"
         if code not in bound:
             continue
         total, men, women = unit["sex"]

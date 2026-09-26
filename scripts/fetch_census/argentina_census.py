@@ -444,6 +444,13 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
             log(f"  {what}: sheet {index}.{d}'s {written!r} is {departments[fits[0]]}")
             continue
         within = [c for c in departments if c not in out and words_fit(written, departments[c])]
+        if len(within) != 1 and not complete:
+            # Tierra del Fuego's indigenous table has a sheet whose title names
+            # only the province. It is left unread, and the departments that
+            # were read must still make the province's total, which says
+            # whether it held anyone.
+            log(f"  {what}: sheet {index}.{d} names no department and is left unread")
+            continue
         if len(within) != 1:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
                              f"names no department; unplaced: "
