@@ -1,0 +1,2781 @@
+[
+  {
+    "id": "BLZ-SIB-corozal",
+    "level": "admin1",
+    "name": "Corozal",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 45310,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 37.9,
+        "count": 17154
+      },
+      {
+        "group": "No religion",
+        "pct": 22.8,
+        "count": 10319
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 10.4,
+        "count": 4727
+      },
+      {
+        "group": "Mennonite",
+        "pct": 8.9,
+        "count": 4052
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.2,
+        "count": 3266
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 5.3,
+        "count": 2410
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.8,
+        "count": 802
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.4,
+        "count": 645
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 627
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 1.3,
+        "count": 592
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.8,
+        "count": 377
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 339
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 76.7,
+        "count": 34742
+      },
+      {
+        "group": "English",
+        "pct": 62.7,
+        "count": 28426
+      },
+      {
+        "group": "Belizean Creole",
+        "pct": 17.8,
+        "count": 8052
+      },
+      {
+        "group": "German",
+        "pct": 7.6,
+        "count": 3464
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 0.9,
+        "count": 418
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.5,
+        "count": 215
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.3,
+        "count": 136
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 121
+      },
+      {
+        "group": "Other language",
+        "pct": 0.3,
+        "count": 155
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 0.2,
+        "count": 84
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 0.1,
+        "count": 59
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo",
+        "pct": 77.2,
+        "count": 34985
+      },
+      {
+        "group": "Mennonite",
+        "pct": 8.8,
+        "count": 4009
+      },
+      {
+        "group": "Creole",
+        "pct": 7.4,
+        "count": 3340
+      },
+      {
+        "group": "East Indian",
+        "pct": 2.1,
+        "count": 944
+      },
+      {
+        "group": "White",
+        "pct": 1.0,
+        "count": 436
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 324
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.6,
+        "count": 275
+      },
+      {
+        "group": "Maya Yucatec",
+        "pct": 0.6,
+        "count": 269
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.5,
+        "count": 236
+      },
+      {
+        "group": "Indian",
+        "pct": 0.3,
+        "count": 117
+      },
+      {
+        "group": "Maya Ketchi",
+        "pct": 0.3,
+        "count": 126
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 146
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 0.2,
+        "count": 104
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B23604924227645",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-orangewalk",
+    "level": "admin1",
+    "name": "Orange Walk",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 54152,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 26.2,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 987,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 37.3,
+        "count": 20182
+      },
+      {
+        "group": "No religion",
+        "pct": 24.2,
+        "count": 13111
+      },
+      {
+        "group": "Other religion",
+        "pct": 11.9,
+        "count": 6438
+      },
+      {
+        "group": "Mennonite",
+        "pct": 9.9,
+        "count": 5350
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 7.5,
+        "count": 4068
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.0,
+        "count": 2171
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.0,
+        "count": 1072
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 762
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.9,
+        "count": 466
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 336
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.2,
+        "count": 118
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 0.1,
+        "count": 76
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 77.6,
+        "count": 41997
+      },
+      {
+        "group": "English",
+        "pct": 66.6,
+        "count": 36087
+      },
+      {
+        "group": "Belizean Creole",
+        "pct": 15.9,
+        "count": 8589
+      },
+      {
+        "group": "German",
+        "pct": 6.2,
+        "count": 3378
+      },
+      {
+        "group": "Other language",
+        "pct": 3.1,
+        "count": 1676
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.4,
+        "count": 223
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.3,
+        "count": 157
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 0.3,
+        "count": 171
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 0.2,
+        "count": 114
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 73
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 0.1,
+        "count": 68
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo",
+        "pct": 79.8,
+        "count": 43236
+      },
+      {
+        "group": "Mennonite",
+        "pct": 10.8,
+        "count": 5831
+      },
+      {
+        "group": "Creole",
+        "pct": 6.3,
+        "count": 3412
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.6,
+        "count": 311
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 257
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 231
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 170
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.3,
+        "count": 163
+      },
+      {
+        "group": "Maya Ketchi",
+        "pct": 0.3,
+        "count": 188
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 0.2,
+        "count": 105
+      },
+      {
+        "group": "Maya Yucatec",
+        "pct": 0.2,
+        "count": 109
+      },
+      {
+        "group": "White",
+        "pct": 0.2,
+        "count": 90
+      },
+      {
+        "group": "Indian",
+        "pct": 0.1,
+        "count": 50
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B60973332075708",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-belize",
+    "level": "admin1",
+    "name": "Belize",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 113630,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 27.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 947,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 33.4,
+        "count": 37961
+      },
+      {
+        "group": "No religion",
+        "pct": 30.8,
+        "count": 35040
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.6,
+        "count": 9798
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 5.5,
+        "count": 6219
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.1,
+        "count": 5832
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.5,
+        "count": 5095
+      },
+      {
+        "group": "Methodist",
+        "pct": 4.1,
+        "count": 4695
+      },
+      {
+        "group": "Baptist",
+        "pct": 3.6,
+        "count": 4058
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.7,
+        "count": 1893
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 1.1,
+        "count": 1272
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 1195
+      },
+      {
+        "group": "Mennonite",
+        "pct": 0.5,
+        "count": 572
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 80.4,
+        "count": 91357
+      },
+      {
+        "group": "Belizean Creole",
+        "pct": 68.3,
+        "count": 77602
+      },
+      {
+        "group": "Spanish",
+        "pct": 30.2,
+        "count": 34289
+      },
+      {
+        "group": "Garifuna",
+        "pct": 1.5,
+        "count": 1693
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 0.5,
+        "count": 613
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.4,
+        "count": 409
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 323
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 0.3,
+        "count": 342
+      },
+      {
+        "group": "Other language",
+        "pct": 0.3,
+        "count": 330
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 250
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 0.1,
+        "count": 57
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Creole",
+        "pct": 57.0,
+        "count": 64816
+      },
+      {
+        "group": "Mestizo",
+        "pct": 33.0,
+        "count": 37503
+      },
+      {
+        "group": "Garifuna",
+        "pct": 3.3,
+        "count": 3766
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.5,
+        "count": 1715
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 1534
+      },
+      {
+        "group": "Maya Ketchi",
+        "pct": 0.8,
+        "count": 959
+      },
+      {
+        "group": "White",
+        "pct": 0.8,
+        "count": 887
+      },
+      {
+        "group": "Other",
+        "pct": 0.7,
+        "count": 805
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 0.5,
+        "count": 517
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 379
+      },
+      {
+        "group": "Mennonite",
+        "pct": 0.3,
+        "count": 385
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 274
+      },
+      {
+        "group": "Maya Yucatec",
+        "pct": 0.1,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B58775340764376",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-cayo",
+    "level": "admin1",
+    "name": "Cayo",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 99105,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 25.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 34.7,
+        "count": 34432
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.2,
+        "count": 26950
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 14.9,
+        "count": 14771
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.0,
+        "count": 5926
+      },
+      {
+        "group": "Mennonite",
+        "pct": 4.2,
+        "count": 4192
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.1,
+        "count": 4017
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.4,
+        "count": 2378
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.9,
+        "count": 1915
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 1.9,
+        "count": 1920
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 1131
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 1026
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.5,
+        "count": 448
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 73.8,
+        "count": 73103
+      },
+      {
+        "group": "Spanish",
+        "pct": 64.5,
+        "count": 63882
+      },
+      {
+        "group": "Belizean Creole",
+        "pct": 39.4,
+        "count": 39009
+      },
+      {
+        "group": "German",
+        "pct": 3.5,
+        "count": 3473
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 2.2,
+        "count": 2203
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 1.8,
+        "count": 1815
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 1.1,
+        "count": 1092
+      },
+      {
+        "group": "Garifuna",
+        "pct": 0.5,
+        "count": 539
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.4,
+        "count": 378
+      },
+      {
+        "group": "Other language",
+        "pct": 0.3,
+        "count": 248
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 61
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo",
+        "pct": 67.7,
+        "count": 67075
+      },
+      {
+        "group": "Creole",
+        "pct": 16.4,
+        "count": 16204
+      },
+      {
+        "group": "Mennonite",
+        "pct": 4.2,
+        "count": 4126
+      },
+      {
+        "group": "Maya Ketchi",
+        "pct": 2.6,
+        "count": 2574
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 2.4,
+        "count": 2427
+      },
+      {
+        "group": "Maya Yucatec",
+        "pct": 1.7,
+        "count": 1660
+      },
+      {
+        "group": "Garifuna",
+        "pct": 1.5,
+        "count": 1448
+      },
+      {
+        "group": "East Indian",
+        "pct": 0.9,
+        "count": 899
+      },
+      {
+        "group": "White",
+        "pct": 0.9,
+        "count": 912
+      },
+      {
+        "group": "Other",
+        "pct": 0.8,
+        "count": 761
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 597
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 340
+      },
+      {
+        "group": "Indian",
+        "pct": 0.1,
+        "count": 82
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B25506523624111",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-stanncreek",
+    "level": "admin1",
+    "name": "Stann Creek",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 48162,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 23.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 1010,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 46.6,
+        "count": 22428
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.1,
+        "count": 12565
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 8.4,
+        "count": 4036
+      },
+      {
+        "group": "Baptist",
+        "pct": 5.0,
+        "count": 2400
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.3,
+        "count": 1573
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.7,
+        "count": 1284
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.7,
+        "count": 1311
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 1.9,
+        "count": 932
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.1,
+        "count": 513
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 486
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 411
+      },
+      {
+        "group": "Mennonite",
+        "pct": 0.5,
+        "count": 224
+      }
+    ],
+    "language": [
+      {
+        "group": "Belizean Creole",
+        "pct": 66.4,
+        "count": 31992
+      },
+      {
+        "group": "English",
+        "pct": 59.5,
+        "count": 28671
+      },
+      {
+        "group": "Spanish",
+        "pct": 33.8,
+        "count": 16272
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 13.9,
+        "count": 6715
+      },
+      {
+        "group": "Garifuna",
+        "pct": 9.1,
+        "count": 4382
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 7.6,
+        "count": 3653
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 148
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 82
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 0.1,
+        "count": 32
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo",
+        "pct": 32.7,
+        "count": 15733
+      },
+      {
+        "group": "Creole",
+        "pct": 21.8,
+        "count": 10500
+      },
+      {
+        "group": "Garifuna",
+        "pct": 17.7,
+        "count": 8530
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 14.7,
+        "count": 7097
+      },
+      {
+        "group": "Maya Ketchi",
+        "pct": 8.4,
+        "count": 4031
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.8,
+        "count": 872
+      },
+      {
+        "group": "White",
+        "pct": 0.9,
+        "count": 449
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 276
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 252
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 156
+      },
+      {
+        "group": "Mennonite",
+        "pct": 0.3,
+        "count": 168
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 73
+      },
+      {
+        "group": "Maya Yucatec",
+        "pct": 0.1,
+        "count": 25
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B48775360277934",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-toledo",
+    "level": "admin1",
+    "name": "Toledo",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37124,
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "median_age": {
+      "value": 22.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 31.7,
+        "count": 11784
+      },
+      {
+        "group": "No religion",
+        "pct": 21.7,
+        "count": 8042
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 13.3,
+        "count": 4956
+      },
+      {
+        "group": "Baptist",
+        "pct": 12.0,
+        "count": 4469
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.4,
+        "count": 3107
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 4.8,
+        "count": 1776
+      },
+      {
+        "group": "Mennonite",
+        "pct": 2.8,
+        "count": 1051
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.6,
+        "count": 584
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.3,
+        "count": 477
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.3,
+        "count": 472
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 276
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 130
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 55.9,
+        "count": 20747
+      },
+      {
+        "group": "Q'eqchi'",
+        "pct": 44.9,
+        "count": 16674
+      },
+      {
+        "group": "Belizean Creole",
+        "pct": 41.9,
+        "count": 15549
+      },
+      {
+        "group": "Spanish",
+        "pct": 22.1,
+        "count": 8211
+      },
+      {
+        "group": "Mopan Maya",
+        "pct": 14.7,
+        "count": 5456
+      },
+      {
+        "group": "Garifuna",
+        "pct": 1.5,
+        "count": 574
+      },
+      {
+        "group": "German",
+        "pct": 1.5,
+        "count": 574
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Yucatec Maya",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Maya Ketchi",
+        "pct": 49.5,
+        "count": 18352
+      },
+      {
+        "group": "Mestizo",
+        "pct": 19.2,
+        "count": 7114
+      },
+      {
+        "group": "Maya Mopan",
+        "pct": 15.3,
+        "count": 5682
+      },
+      {
+        "group": "Creole",
+        "pct": 5.0,
+        "count": 1840
+      },
+      {
+        "group": "East Indian",
+        "pct": 4.1,
+        "count": 1518
+      },
+      {
+        "group": "Garifuna",
+        "pct": 4.1,
+        "count": 1515
+      },
+      {
+        "group": "Mennonite",
+        "pct": 2.0,
+        "count": 729
+      },
+      {
+        "group": "White",
+        "pct": 0.4,
+        "count": 132
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 98
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 63
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 68
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistical Institute of Belize, 2022 Population and Housing Census: General Characteristics tables",
+        "url": "https://sib.org.bz/wp-content/uploads/Census2022_GeneralCharacteristics.xlsx",
+        "year": 2022
+      }
+    ],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "66346737B22858594960980",
+    "population_note": "SIB's weighted 2022 census count for the district (Table 5).",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from Table 6's 2022 counts by district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's ethnicity question, everyone counted (Table 8). SIB's figures are weighted and rounded here to whole people; 2 cell(s) SIB printed as under ten are left out.",
+    "religion_year": 2022,
+    "religion_note": "The 2022 census's religion question, everyone counted (Table 9), SIB's own categories; \"None\" is written as No religion.",
+    "language_year": 2022,
+    "language_basis": "languages spoken, more than one per person; share of the whole population",
+    "language_note": "Languages spoken, asked of everyone aged four and over, who could name several (Table 7). Each share is the part of the district's whole population that speaks the language, so the shares sum to more than 100; children under four are in the base and were not asked, and people who cannot speak are not shown."
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B69828690893614",
+    "level": "admin2",
+    "name": "Albert",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B69828690893614"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B3381431616278",
+    "level": "admin2",
+    "name": "Belize Rural North",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B3381431616278"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B76393603142959",
+    "level": "admin2",
+    "name": "Belize Rural North",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B76393603142959"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B54194515366168",
+    "level": "admin2",
+    "name": "Belmopan",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B54194515366168"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B59944424745172",
+    "level": "admin2",
+    "name": "Caribbean Shores",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B59944424745172"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B94896318880673",
+    "level": "admin2",
+    "name": "Cayo Central",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B94896318880673"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B44452540624114",
+    "level": "admin2",
+    "name": "Cayo North",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B44452540624114"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B56382702891578",
+    "level": "admin2",
+    "name": "Cayo North East",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B56382702891578"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B35586034015504",
+    "level": "admin2",
+    "name": "Cayo South",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B35586034015504"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B60992682417348",
+    "level": "admin2",
+    "name": "Cayo West",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B60992682417348"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B30822357340136",
+    "level": "admin2",
+    "name": "Collet",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B30822357340136"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B17189259529244",
+    "level": "admin2",
+    "name": "Corozal Bay",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B17189259529244"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B5266372606878",
+    "level": "admin2",
+    "name": "Corozal North",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B5266372606878"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B92384260503294",
+    "level": "admin2",
+    "name": "Corozal South East",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B92384260503294"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B54087410472023",
+    "level": "admin2",
+    "name": "Corozal South West",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B54087410472023"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B99535609172770",
+    "level": "admin2",
+    "name": "Dangriga",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B99535609172770"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B38299420542047",
+    "level": "admin2",
+    "name": "Fort George",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B38299420542047"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B85935550107059",
+    "level": "admin2",
+    "name": "Freetown",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B85935550107059"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B45455972514267",
+    "level": "admin2",
+    "name": "Freetown",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B45455972514267"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B59769308078565",
+    "level": "admin2",
+    "name": "Lake Independence",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B59769308078565"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B30022647812570",
+    "level": "admin2",
+    "name": "Mesopotamia",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B30022647812570"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B2347802332561",
+    "level": "admin2",
+    "name": "Orange Walk Central",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B2347802332561"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B63332510884225",
+    "level": "admin2",
+    "name": "Orange Walk East",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B63332510884225"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B42858998503900",
+    "level": "admin2",
+    "name": "Orange Walk North",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B42858998503900"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B68597198845590",
+    "level": "admin2",
+    "name": "Orange Walk South",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B68597198845590"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B85489993561805",
+    "level": "admin2",
+    "name": "Pickstock",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B85489993561805"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B62290110422722",
+    "level": "admin2",
+    "name": "Port Loyola",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B62290110422722"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B41515061278311",
+    "level": "admin2",
+    "name": "Queen Square",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B41515061278311"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B83071961973491",
+    "level": "admin2",
+    "name": "Stann Creek West",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B83071961973491"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B94766097213569",
+    "level": "admin2",
+    "name": "Toledo East",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B94766097213569"
+  },
+  {
+    "id": "BLZ-SIB-division-1456440B19707016539712",
+    "level": "admin2",
+    "name": "Toledo West",
+    "parent": "BLZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "SIB tabulates the 2022 census by district, by urban and rural area and by city, town and village, and publishes nothing by electoral division; a village cannot be placed in a division from anything the census publishes, so the divisions carry the districts' figures and none of their own."
+    },
+    "sources": [],
+    "country": "BLZ",
+    "match_by": "shape_id",
+    "shape_id": "1456440B19707016539712"
+  }
+]
