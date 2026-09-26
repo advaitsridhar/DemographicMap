@@ -289,6 +289,7 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
            for p, ms in municipios.items()}
     out: dict[tuple[str, str], list[tuple[int, int | None, int, int]]] = {}
     totals: dict[tuple[str, str], list[int]] = {}
+    province_rows: dict[str, list[int]] = {}
     province: str | None = None
     municipio: tuple[str, str] | None = None
     for text in texts:
@@ -311,6 +312,7 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
                     raise SystemExit(f"cuba_census: Table 5 names a province Table 1 does not: "
                                      f"{label!r}")
                 province, municipio = names[named], None
+                province_rows[province] = regroup(tokens, 9, zones_error, label)
                 continue
             if municipio is None or label == "CUBA":
                 continue
@@ -327,6 +329,7 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
     if set(out) != expected:
         raise SystemExit(f"cuba_census: Table 5 lacks {sorted(expected - set(out))} and has "
                          f"{sorted(set(out) - expected)} that Table 1 does not")
+    wrong: list[str] = []
     for unit, groups in out.items():
         lows = [g[0] for g in groups]
         if lows != list(range(0, 90, 5)) or groups[-1][1] is not None:
@@ -340,10 +343,17 @@ def age_table(texts: list[str], municipios: dict[str, dict[str, list[int]]]
         missed = abs(men - table_1[1]) + abs(women - table_1[2])
         if (total is None or abs(total[0] - table_1[0]) > 1 or abs(men - table_1[1]) > 1
                 or abs(women - table_1[2]) > 1):
-            raise SystemExit(f"cuba_census: {unit[1]}'s age groups make {men:,} men and "
-                             f"{women:,} women; Table 1 has {table_1[1]:,} and {table_1[2]:,}")
-        if missed or total[0] != table_1[0]:
+            wrong.append(f"{unit[1]} ({unit[0]}): Table 5 {total and total[0]:,} "
+                         f"({men:,} men, {women:,} women), Table 1 {table_1[0]:,} "
+                         f"({table_1[1]:,}, {table_1[2]:,})")
+        elif missed or total[0] != table_1[0]:
             DISCREPANCIES.append(f"{unit[1]}'s age groups against Table 1 (by {missed})")
+    if wrong:
+        sums = {p: sum(totals[(q, m)][0] for (q, m) in totals if q == p) for p in province_rows}
+        raise SystemExit(f"cuba_census: {len(wrong)} municipios' age groups disagree with "
+                         "Table 1: " + "; ".join(wrong) + ". Provinces as Table 5 prints them "
+                         "and as its municipios make them: " + "; ".join(
+                             f"{p} {v[0]:,}/{sums[p]:,}" for p, v in province_rows.items()))
     log("  Table 5: all 168 municipios, every one's eighteen age groups making Table 1's men "
         "and women to within a person of each")
     return out
