@@ -133,6 +133,11 @@ AGE_OPEN = re.compile(r"^(\d+)\s*\+$")
 AGE_YEARS = re.compile(r"^(\d+)\s+years?$")
 
 
+
+def present(counts: dict[str, float]) -> list[dict]:
+    """Shares of the categories anyone is counted in; a zero is no one, not a group."""
+    return shares({k: v for k, v in counts.items() if v})
+
 def figure(token: str) -> int:
     return 0 if token == "-" else int(token.replace(",", ""))
 
@@ -328,6 +333,11 @@ def parts(name: str) -> frozenset[str]:
     return frozenset(fold(p) for p in re.split(r"[/]", name) if fold(p))
 
 
+# Names that say what kind of place a settlement is, not which one: the 2010
+# census's Forest Reserve in Castries is not shown to be the map's in Gros Islet.
+GENERIC = {fold(n) for n in ("Forest Reserve", "Village", "Town", "Estate")}
+
+
 def bind_2010(labels: list[str], shapes: list[dict], district_of_shape: dict[str, str]
               ) -> tuple[dict[str, str], list[str], list[str]]:
     """({2010 label: shape id}, labels left out, labels bound across a district line).
@@ -357,7 +367,8 @@ def bind_2010(labels: list[str], shapes: list[dict], district_of_shape: dict[str
         found = by_name.get((district, name), []) if district else []
         if len(same) == 1 and len(found) == 1:
             bound[same[0]] = found[0]
-        elif not found and named[name] == 1 and len(anywhere.get(name, [])) == 1:
+        elif (not found and named[name] == 1 and len(anywhere.get(name, [])) == 1
+              and name not in GENERIC):
             bound[same[0]] = anywhere[name][0]
             across.append(same[0])
         else:
@@ -521,10 +532,10 @@ def main() -> int:
                                source=SOURCE_2022),
             median_age_note=("Interpolated within the five-year age group holding the middle "
                              "person of the weighted 2022 household population."),
-            ethnicity=shares(eth), ethnicity_year=2022,
+            ethnicity=present(eth), ethnicity_year=2022,
             ethnicity_note=("As the 2022 base tabulates ethnicity: African descent/Black, "
                             "Other and Not reported, nothing finer."),
-            religion=shares(rel), religion_year=2022,
+            religion=present(rel), religion_year=2022,
             religion_note=("Table D.2 of the 2022 report, weighted. \"None - No religion but "
                            "believe in God\" is written as No religion and \"Atheist - Do not "
                            "believe in God\" as Atheist."),
@@ -584,9 +595,9 @@ def main() -> int:
             median_age=measure(median_age(ages), unit="years", year=2010, source=SOURCE_2010),
             median_age_note=f"Interpolated within the single year holding the middle person of "
                             f"{universe}.",
-            ethnicity=shares(eth), ethnicity_year=2010,
+            ethnicity=present(eth), ethnicity_year=2010,
             ethnicity_note=f"Ethnic group, as asked of {universe}.",
-            religion=shares(rel), religion_year=2010,
+            religion=present(rel), religion_year=2010,
             religion_note=f"Religion, as asked of {universe}.",
             language=gap(NOT_AVAILABLE, LANGUAGE_GAP),
             sources=[{"field": "median_age/ethnicity/religion", "name": SOURCE_2010,

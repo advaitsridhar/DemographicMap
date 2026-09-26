@@ -37,7 +37,7 @@ def shape(sid: str, name: str, parent: str) -> dict:
 SHAPES = [shape("a", "Monkey Town/Ciceron", "C"), shape("b", "Ciceron", "C"),
           shape("c", "Belle Vue", "C"), shape("d", "Belle Vue", "C"),
           shape("e", "Derniere Riviere/Morne Caca Cochon/Mardis Gras", "S"),
-          shape("f", "Hill 20/Babonneau", "C")]
+          shape("f", "Hill 20/Babonneau", "C"), shape("g", "Forest Reserve", "C")]
 DISTRICT_OF = {"C": "Castries", "S": "Soufriere"}
 
 
@@ -78,13 +78,15 @@ class Binding(unittest.TestCase):
     def test_2010_names_bind_within_the_district_and_duplicates_are_left_out(self):
         bound, left, across = lc.bind_2010(
             ["MONKEY TOWN/CICERON - CASTRIES", "CICERON - CASTRIES", "BELLE VUE - CASTRIES",
-             "HILL 20/BABONNEAU - SOUFRIERE", "CICERON - SOUFRIERE", "CASTRIES"],
+             "HILL 20/BABONNEAU - SOUFRIERE", "CICERON - SOUFRIERE", "CASTRIES",
+             "FOREST RESERVE - SOUFRIERE"],
             SHAPES, DISTRICT_OF)
         self.assertEqual(bound, {"MONKEY TOWN/CICERON - CASTRIES": "a",
                                  "CICERON - CASTRIES": "b",
                                  "HILL 20/BABONNEAU - SOUFRIERE": "f"})
         self.assertEqual(across, ["HILL 20/BABONNEAU - SOUFRIERE"])
-        self.assertEqual(left, ["BELLE VUE - CASTRIES", "CASTRIES", "CICERON - SOUFRIERE"])
+        self.assertEqual(left, ["BELLE VUE - CASTRIES", "CASTRIES", "CICERON - SOUFRIERE",
+                                "FOREST RESERVE - SOUFRIERE"])
 
     def test_2022_names_bind_by_their_parts_in_any_order(self):
         rows = {"Castries": [{"name": "Ciceron/Monkey Town", "population": 5},

@@ -79,6 +79,11 @@ LANGUAGE_GAP = ("The 2012 census asks no language question -- its REDATAM base's
 NUMBER = re.compile(r"^(?:\d{1,3}(?:,\d{3})*|\d+)$")
 
 
+
+def present(counts: dict[str, float]) -> list[dict]:
+    """Shares of the categories anyone is counted in; a zero is no one, not a group."""
+    return shares({k: v for k, v in counts.items() if v})
+
 def text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
@@ -296,7 +301,7 @@ def main() -> int:
                 population=measure(new["_total"], year=2023, source=SOURCE_2023),
                 population_note=("The 2023 census's household population of the census "
                                  "divisions that make the parish."),
-                ethnicity=shares({g: new[g] for g in ETHNIC_2023}), ethnicity_year=2023,
+                ethnicity=present({g: new[g] for g in ETHNIC_2023}), ethnicity_year=2023,
                 ethnicity_note=("Major ethnic group, 2023 household population, summed from "
                                 "the census divisions that make the parish (Table 2-6)."))
         else:
@@ -305,7 +310,7 @@ def main() -> int:
                 population_note=("The 2012 census's population of the enumeration districts "
                                  "in the parish; a 2023 census division is split between it "
                                  "and a neighbour, so no 2023 figure is summed for it."),
-                ethnicity=shares(dict(c["ethnicity"])), ethnicity_year=2012,
+                ethnicity=present(dict(c["ethnicity"])), ethnicity_year=2012,
                 ethnicity_note="Ethnic group, 2012, summed from the enumeration districts.")
         records.append(record(
             f"VCT-SO-{fold(parish)}", shape["name"], level="admin1", parent="VCT",
@@ -317,7 +322,7 @@ def main() -> int:
             sex_ratio=measure(round(1000 * a["men"] / a["women"]),
                               unit="males_per_1000_females", year=2012, source=SOURCE_2012),
             sex_ratio_note="Men per thousand women, 2012.",
-            religion=shares(dict(c["religion"])), religion_year=2012,
+            religion=present(dict(c["religion"])), religion_year=2012,
             religion_note=("Religion, 2012, summed from the enumeration districts; \"Without "
                            "religion\" is written as No religion."),
             language=gap(NOT_AVAILABLE, LANGUAGE_GAP),

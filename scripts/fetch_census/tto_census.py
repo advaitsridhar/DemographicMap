@@ -107,6 +107,11 @@ FOOTER = re.compile(r"POPULATION AND HOUSING CENSUS|DEMOGRAPHIC REPORT")
 INDEX = re.compile(r"^\(\d+\)")
 
 
+
+def present(counts: dict[str, float]) -> list[dict]:
+    """Shares of the categories anyone is counted in; a zero is no one, not a group."""
+    return shares({k: v for k, v in counts.items() if v})
+
 def key(name: str) -> str:
     return fold(str(name).replace("’", "'"))
 
@@ -396,10 +401,10 @@ def main() -> int:
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE),
             sex_ratio_note=f"Men per thousand women in Table 2a's population.{joint}",
-            ethnicity=shares(combine([data["ethnicity"][k] for k in ks])), ethnicity_year=YEAR,
+            ethnicity=present(combine([data["ethnicity"][k] for k in ks])), ethnicity_year=YEAR,
             ethnicity_note=("Ethnic group, as asked of the non-institutional population "
                             f"(Table 7); \"Not stated\" is the census's own line.{joint}"),
-            religion=shares(combine([data["religion"][k] for k in ks])), religion_year=YEAR,
+            religion=present(combine([data["religion"][k] for k in ks])), religion_year=YEAR,
             religion_note=("Religion, as asked of the non-institutional population (Table 8), "
                            "in the census's own denominations; \"Baptist-Spiritual Shouter\" is "
                            f"written as Spiritual Baptist.{joint}"),

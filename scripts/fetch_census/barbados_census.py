@@ -77,6 +77,11 @@ AGE = re.compile(r"^(\d+)\s*-\s*(\d+)$")
 OPEN = re.compile(r"^(\d+)\s+and\s+over$", re.I)
 
 
+
+def present(counts: dict[str, float]) -> list[dict]:
+    """Shares of the categories anyone is counted in; a zero is no one, not a group."""
+    return shares({k: v for k, v in counts.items() if v})
+
 def text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "").replace("’", "'")).strip()
 
@@ -244,9 +249,9 @@ def main() -> int:
             sex_ratio=measure(round(1000 * a["men"] / a["women"]),
                               unit="males_per_1000_females", year=2021, source=SOURCE_2021),
             sex_ratio_note=f"Men per thousand women in {universe}.",
-            ethnicity=shares(ethnicity[key]["counts"]), ethnicity_year=2021,
+            ethnicity=present(ethnicity[key]["counts"]), ethnicity_year=2021,
             ethnicity_note=f"Ethnic origin, as asked of everyone in {universe} (Table 02.04).",
-            religion=shares(religion[key]["counts"]), religion_year=2021,
+            religion=present(religion[key]["counts"]), religion_year=2021,
             religion_note=(f"Religion, as asked of everyone in {universe} (Table 02.06); "
                            "\"No Religious Affiliation\" is written as No religion."),
             sources=[{"field": "median_age/sex_ratio/ethnicity/religion", "name": SOURCE_2021,
