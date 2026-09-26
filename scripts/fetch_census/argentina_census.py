@@ -260,13 +260,27 @@ def labelled(rows: list[list[Any]], column: int = 0) -> list[tuple[str, list[int
     return out
 
 
+def names_a_department(text: str) -> bool:
+    return bool(re.search(r"\b(departamento|partido|comuna)\b", text, re.I))
+
+
 def sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int, what: str
           ) -> list[list[Any]]:
-    """The province's own sheet of a workbook."""
-    if (index, None) not in sheets:
-        raise SystemExit(f"argentina_census: {what}: no province sheet {index} among "
-                         f"{sorted(k for k in sheets if k[1] is None)}")
-    return sheets[(index, None)]
+    """The province's own sheet of a workbook.
+
+    Tierra del Fuego's indigenous workbook numbers it like a department's
+    ("Cuadro 1.23.3"); a numbered sheet whose title names no department is
+    the province's, if there is exactly one.
+    """
+    if (index, None) in sheets:
+        return sheets[(index, None)]
+    whole = [(d, rows) for (p, d), rows in sheets.items()
+             if p == index and d is not None and not names_a_department(title(rows))]
+    if len(whole) == 1:
+        log(f"  {what}: sheet {index}.{whole[0][0]} names no department; it is the province's")
+        return whole[0][1]
+    raise SystemExit(f"argentina_census: {what}: no province sheet {index} among "
+                     f"{sorted(k for k in sheets if k[1] is None)}")
 
 
 def total_row(rows: list[list[Any]], what: str) -> list[int | None]:
@@ -414,6 +428,8 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
     for (p, d), rows in sorted(sheets.items(), key=lambda kv: (kv[0][0], kv[0][1] or 0)):
         if p != index or d is None:
             continue
+        if not names_a_department(title(rows)):
+            continue                  # the province's own sheet, numbered like a department's
         text = fold(title(rows))
         hits = []
         for code, name in departments.items():

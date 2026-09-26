@@ -373,6 +373,28 @@ def main() -> int:
                              f"not {peoples[key]['']:,}")
     log("  every table agrees on every province, and each province's districts make it")
 
+    # -- the same district across tables: by key, then by the one leftover in
+    # its province whose name's words overlap (cuadro 32 spells Santa Catalina
+    # o Calovébora its own way).
+    def aligned(other: dict[tuple[str, str], list[int]], table: str) -> dict[tuple[str, str], list[int]]:
+        out = {k: other[k] for k in sex_dist if k in other}
+        for prov in {p for p, _ in sex_dist}:
+            mine = [k for k in sex_dist if k[0] == prov and k not in out]
+            theirs = [k for k in other if k[0] == prov and k not in out]
+            for key in mine:
+                words = set(re.findall(r"[a-z]{4,}", key[1]))
+                hits = [t for t in theirs if words & set(re.findall(r"[a-z]{4,}", t[1]))]
+                if len(hits) != 1:
+                    raise SystemExit(f"panama_census: {table} has no single district for "
+                                     f"{DISTRICT_NAMES[key]} ({prov}); leftovers {theirs}")
+                out[key] = other[hits[0]]
+                theirs.remove(hits[0])
+                log(f"  {table}: {DISTRICT_NAMES[hits[0]]!r} is {DISTRICT_NAMES[key]!r}")
+        return out
+
+    afro_dist = aligned(afro_dist, "cuadro 32")
+    ind_dist = aligned(ind_dist, "cuadro 33")
+
     # -- the districts the boundary file draws, with later splits added back
     merged: dict[tuple[str, str], dict[str, Any]] = {}
     for (prov, dist), sex in sex_dist.items():
