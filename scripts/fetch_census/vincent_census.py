@@ -237,7 +237,8 @@ def report_table() -> list[str]:
             start = next((i for i, l in enumerate(lines)
                           if l.startswith("Table 2-6 Total Household Population by Census")
                           and not re.search(r"\.{4,}", l)), None)
-            if start is not None:
+            if start is not None and any(re.match(r"^Kingstown [\d,]+ ", l)
+                                         for l in lines[start + 1:]):
                 return lines[start + 1:]
     raise SystemExit("vincent_census: the 2023 report has no Table 2-6")
 
