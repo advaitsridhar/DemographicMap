@@ -204,11 +204,25 @@ def number(value: Any) -> int | float | None:
     return int(v) if v.is_integer() else v
 
 
-def workbook_rows(url: str, stamp: str) -> list[list[Any]]:
+def workbook_rows(url: str, stamp: str) -> tuple[list[list[Any]], set[str]]:
+    """A Volume III workbook's table, and the provinces its index sheet names.
+
+    Every table carries a second sheet ("Hoja2") listing its areas; the one
+    list that writes "Provincia" before a province's name is the only place
+    the tables say which bare names are provinces.
+    """
     import openpyxl
     body = http_get(WAYBACK.format(stamp=stamp, url=url), binary=True, cache=False)
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-    return [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
+    rows = [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
+    named: set[str] = set()
+    for sheet in book.worksheets[1:]:
+        for row in sheet.iter_rows(values_only=True):
+            for cell in row:
+                text = re.sub(r"\s+", " ", str(cell or "")).strip()
+                if text.startswith("Provincia ") or fold(text) == "distritonacional":
+                    named.add(fold(bare(text)))
+    return rows, named
 
 
 def areas(rows: list[list[Any]], width: int) -> list[dict[str, Any]]:
@@ -230,16 +244,17 @@ def areas(rows: list[list[Any]], width: int) -> list[dict[str, Any]]:
     return out
 
 
-def kind(label: str, municipio: str | None = None) -> str:
+def kind(label: str, municipio: str | None = None, provinces: set[str] | None = None) -> str:
     """What an area of Volume III is, from its label and the municipio it follows.
 
     Regions and municipios carry their word ("Región", "Municipio") and
     distritos municipales a "(D.M.)"; provinces carry nothing but their name
     (the Distrito Nacional aside), and nor does the head district of a
-    municipio, which follows it under the municipio's own name. So a bare
-    name is the head district when it is the municipio's name, and a
-    province otherwise -- which the sums then check: a province must be its
-    municipios and a municipio its districts.
+    municipio, which follows it. So a bare name is a province only if the
+    workbook's index names it as one (``provinces``) and it is not the head
+    district of the municipio just read -- Monte Cristi is both -- and a
+    part otherwise. The sums then check it: a province must be its
+    municipios, a region its provinces, and a municipio its districts.
     """
     if label == "Total":
         return "country"
@@ -253,14 +268,17 @@ def kind(label: str, municipio: str | None = None) -> str:
         return "province"
     if municipio is not None and fold(label) == fold(bare(municipio)):
         return "part"
+    if provinces is not None and fold(label) not in provinces:
+        return "part"
     return "province"
 
 
-def classify(found: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def classify(found: list[dict[str, Any]], provinces: set[str] | None = None
+             ) -> list[dict[str, Any]]:
     """Each area with its kind, read in order."""
     municipio = None
     for area in found:
-        area["kind"] = kind(area["label"], municipio)
+        area["kind"] = kind(area["label"], municipio, provinces)
         if area["kind"] == "municipio":
             municipio = area["label"]
         elif area["kind"] != "part":
@@ -321,8 +339,8 @@ def check_area(area: dict[str, Any], columns: int, what: str, fatal: bool = True
           f"{what}: {area['label']}'s age rows", fatal)
 
 
-def tree(found: list[dict[str, Any]], columns: int, what: str, total: int
-         ) -> dict[str, dict[str, Any]]:
+def tree(found: list[dict[str, Any]], columns: int, what: str, total: int,
+         named: set[str] | None = None) -> dict[str, dict[str, Any]]:
     """Province -> {area, municipios}, after every level is checked against the one above.
 
     A province with no municipio beneath it -- the Distrito Nacional, whose
@@ -333,7 +351,7 @@ def tree(found: list[dict[str, Any]], columns: int, what: str, total: int
     children: dict[int, list[dict[str, Any]]] = {}
     provinces: dict[str, dict[str, Any]] = {}
     country = None
-    for area in classify(found):
+    for area in classify(found, named):
         k = area["kind"]
         check_area(area, columns, what, fatal=k != "part")
         stack[k] = area
@@ -420,7 +438,8 @@ def perception_fields(area: dict[str, Any], header: list[str]) -> dict[str, Any]
     }
 
 
-def perception(rows: list[list[Any]]) -> tuple[list[str], dict[str, dict[str, Any]]]:
+def perception(rows: list[list[Any]], named: set[str] | None = None
+               ) -> tuple[list[str], dict[str, dict[str, Any]]]:
     head_row = next((r for r in rows if any(str(c or "").strip() == "Negra o negro" for c in r)),
                     None)
     if head_row is None:
@@ -429,7 +448,7 @@ def perception(rows: list[list[Any]]) -> tuple[list[str], dict[str, dict[str, An
     if header != [*PERCEIVED, UNANSWERED]:
         raise SystemExit(f"dominican_census: Cuadro 12's answers are {header}, not "
                          f"{[*PERCEIVED, UNANSWERED]}")
-    return header, tree(areas(rows, 10), 10, "Cuadro 12", NATIONAL_12)
+    return header, tree(areas(rows, 10), 10, "Cuadro 12", NATIONAL_12, named)
 
 
 def binding_2010(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> dict[str, int]:
@@ -458,8 +477,15 @@ def sources(fields: str, perception_too: bool) -> list[dict[str, Any]]:
 
 
 def adapter() -> int:
-    header, perceived = perception(workbook_rows(*PERCEPTION))
-    provinces = tree(areas(workbook_rows(*AGES), 10), 9, "Cuadro 2", NATIONAL)
+    header, perceived = perception(*workbook_rows(*PERCEPTION))
+    rows, named = workbook_rows(*AGES)
+    # The index sheets spell some provinces two ways ("Puerta Plata",
+    # "Monseñol Nouel" beside the right spellings), so it names more than 32;
+    # the tree still finds exactly 32 or stops.
+    if len(named) < 32:
+        raise SystemExit(f"dominican_census: Cuadro 2's index names {len(named)} provinces: "
+                         f"{sorted(named)}")
+    provinces = tree(areas(rows, 10), 9, "Cuadro 2", NATIONAL, named)
     municipios = sum(len(p["municipios"]) for p in provinces.values())
     log(f"  Cuadro 2: 32 provinces and {municipios} municipios making ONE's {NATIONAL:,}, every "
         "area's age rows making it within rounding")
@@ -546,7 +572,9 @@ def main() -> int:
                     help="print Cuadro 2's areas in order, with the level each is read as")
     args = ap.parse_args()
     if args.labels:
-        for area in classify(areas(workbook_rows(*AGES), 10)):
+        rows, named = workbook_rows(*AGES)
+        print(f"  the index names {len(named)} provinces: {sorted(named)}")
+        for area in classify(areas(rows, 10), named):
             print(f"  {area['kind']:9} {area['values'][0]:>9} {area['label']!r}")
         return 0
     if not (args.probe or args.run):

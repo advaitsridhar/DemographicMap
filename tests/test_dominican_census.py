@@ -58,6 +58,12 @@ class LayoutTest(unittest.TestCase):
         self.assertEqual(dc.kind("Santo Domingo Este", "Municipio Santo Domingo Este"), "part")
         self.assertEqual(dc.kind("San Luis (D.M.)", "Municipio Santo Domingo Este"), "part")
         self.assertEqual(dc.kind("Espaillat", "Municipio Pedro Brand"), "province")
+        # A bare name the index does not call a province is a part: the head
+        # district of San Ignacio de Sabaneta is "Sabaneta".
+        self.assertEqual(dc.kind("Sabaneta", "Municipio San Ignacio de Sabaneta",
+                                 {"espaillat"}), "part")
+        self.assertEqual(dc.kind("Espaillat", "Municipio Pedro Brand", {"espaillat"}),
+                         "province")
 
     def test_tree_reads_municipios_under_their_province(self):
         rows = cuadro_2()
