@@ -136,8 +136,15 @@ def number(value: Any) -> int | None:
         return None
 
 
+# INEC's tables do not agree with each other on a comarca's name: cuadro 12
+# writes Guna Yala where cuadro 33 writes Kuna Yala.
+CANONICAL = {"comarcakunayala": "comarcagunayala", "comarcaemberawounaan": "comarcaembera",
+             "comarcangobebugle": "comarcangabebugle"}
+
+
 def province_key(name: str) -> str:
-    return fold(re.sub(r"^provincia de\s+", "", name, flags=re.I))
+    key = fold(re.sub(r"^provincia de\s+", "", name, flags=re.I))
+    return CANONICAL.get(key, key)
 
 
 def rows_of(key: str) -> list[list[Any]]:
@@ -215,7 +222,7 @@ def peoples_table(rows: list[list[Any]]) -> dict[str, dict[str, int]]:
         if "Mediana" in (first, second) or people is None:
             continue
         if first or second == "TOTAL":
-            current = first if first else ""
+            current = province_key(first) if first else ""
             out.setdefault(current, {})[""] = people
             blocks.append((current, "", people, 0))
         elif is_age(second):
@@ -250,7 +257,7 @@ def district_table(rows: list[list[Any]], columns: list[int]
         if any(f is None for f in figures):
             continue
         if first and first.upper() != "TOTAL":
-            current = first
+            current = province_key(first)
             provinces[current] = figures
         elif second and not third and current is not None and second.upper() != "TOTAL" \
                 and not BREAKDOWN.match(second):
@@ -329,36 +336,35 @@ def main() -> int:
     for key, unit in by_province.items():
         name = unit["name"]
         checks = {
-            "cuadro 11 total": (sex_prov.get(name, [None])[0], unit["total"]),
-            "cuadro 32 total": (afro_prov.get(name, [None])[0], unit["total"]),
-            "cuadro 33 indigenous": ((ind_prov.get(name) or [None])[0],
-                                     (peoples.get(name) or {}).get("")),
+            "cuadro 11 total": (sex_prov.get(key, [None])[0], unit["total"]),
+            "cuadro 32 total": (afro_prov.get(key, [None])[0], unit["total"]),
+            "cuadro 33 indigenous": ((ind_prov.get(key) or [None])[0],
+                                     (peoples.get(key) or {}).get("")),
         }
         for what, (a, b) in checks.items():
             if a is None or b is None or a != b:
                 raise SystemExit(f"panama_census: {name}: {what} {a} against {b}")
         for table, dists, width in (("cuadro 11", sex_dist, 3), ("cuadro 32", afro_dist, 10),
                                     ("cuadro 33", ind_dist, 1)):
-            rows = [v for (p, _), v in dists.items() if p == name]
-            prov = {"cuadro 11": sex_prov, "cuadro 32": afro_prov, "cuadro 33": ind_prov}[table][name]
+            rows = [v for (p, _), v in dists.items() if p == key]
+            prov = {"cuadro 11": sex_prov, "cuadro 32": afro_prov, "cuadro 33": ind_prov}[table][key]
             for column in range(width):
                 if sum(r[column] for r in rows) != prov[column]:
                     listed = ", ".join(f"{d} {v[column]:,}" for (p, d), v in dists.items()
-                                       if p == name)
+                                       if p == key)
                     raise SystemExit(f"panama_census: {name}: {table} districts make "
                                      f"{sum(r[column] for r in rows):,}, not {prov[column]:,}, "
                                      f"in column {column}: {listed}")
-        people_rows = {k: v for k, v in peoples[name].items() if k}
-        if sum(people_rows.values()) != peoples[name][""]:
+        people_rows = {k: v for k, v in peoples[key].items() if k}
+        if sum(people_rows.values()) != peoples[key][""]:
             raise SystemExit(f"panama_census: {name}: peoples make {sum(people_rows.values()):,}, "
-                             f"not {peoples[name]['']:,}")
+                             f"not {peoples[key]['']:,}")
     log("  every table agrees on every province, and each province's districts make it")
 
     # -- the districts the boundary file draws, with later splits added back
     merged: dict[tuple[str, str], dict[str, Any]] = {}
     for (prov, dist), sex in sex_dist.items():
-        pkey = province_key(prov)
-        target = SPLITS.get((pkey, fold(dist)))
+        target = SPLITS.get((prov, fold(dist)))
         name = dist
         if target:
             name = next(d for (p, d) in sex_dist if p == prov and fold(d) == target)
@@ -399,7 +405,7 @@ def main() -> int:
     for key, unit in sorted(by_province.items()):
         map_name = PROVINCES[key]
         source = SOURCE.format(table=TABLES["age"])
-        people = {PEOPLES.get(k, k): v for k, v in peoples[unit["name"]].items() if k}
+        people = {PEOPLES.get(k, k): v for k, v in peoples[key].items() if k}
         records.append(record(
             f"PAN-INEC-{key}", unit["name"], level="admin1", parent="PAN", country="PAN",
             match_by="shape_id", shape_id=admin1_ids[map_name],
@@ -409,10 +415,10 @@ def main() -> int:
                              f"person; INEC's own median is {unit['median']}."),
             sex_ratio=measure(round(1000 * unit["men"] / unit["women"]),
                               unit="males_per_1000_females", year=YEAR, source=source),
-            **ethnicity(people, afro_prov[unit["name"]], unit["total"], "admin1"),
+            **ethnicity(people, afro_prov[key], unit["total"], "admin1"),
             sources=sources("admin1")))
 
-    districts = {f"{province_key(p)}:{fold(d)}": (d, PROVINCES[province_key(p)])
+    districts = {f"{p}:{fold(d)}": (d, PROVINCES[p])
                  for (p, d) in merged}
     bound, missing = binding.bind(districts, admin2, parents, ALIASES)
     log(f"  {len(bound)} of {len(districts)} districts bound; not: {missing}")
@@ -420,7 +426,7 @@ def main() -> int:
     unbound = sorted(s["name"] for s in admin2 if s["id"] not in set(bound.values()))
     log(f"  polygons with no district: {unbound}")
     for (prov, dist), unit in sorted(merged.items()):
-        code = f"{province_key(prov)}:{fold(dist)}"
+        code = f"{prov}:{fold(dist)}"
         if code not in bound:
             continue
         total, men, women = unit["sex"]
@@ -431,7 +437,7 @@ def main() -> int:
         parts = unit["parts"]
         records.append(record(
             f"PAN-INEC-{code.replace(':', '-')}", dist, level="admin2", parent="PAN", country="PAN",
-            parent_name=PROVINCES[province_key(prov)], match_by="shape_id",
+            parent_name=PROVINCES[prov], match_by="shape_id",
             shape_id=bound[code],
             population=measure(total, year=YEAR, source=source,
                                note=(f"Includes {', '.join(p for p in parts if p != dist)}, "

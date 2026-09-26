@@ -303,12 +303,14 @@ def coded(rows: list[list[Any]], repeats: dict[str, list[list[int | None]]] | No
     return out
 
 
-def ages(rows: list[list[Any]], what: str) -> tuple[int, int, float | None]:
-    """Women, men and the interpolated median from a sex-by-single-year sheet."""
+def age_counts(rows: list[list[Any]], what: str
+               ) -> tuple[int, int, dict[int, int], tuple[int, int], dict[tuple[int, int], int]]:
+    """Women, men, people by single year, the open group and the five-year
+    groups of a sex-by-single-year sheet, each checked against the others."""
     header_seen = False
-    singles: list[tuple[int, int, int]] = []
+    singles: dict[int, int] = {}
     opened: tuple[int, int] | None = None
-    bands: list[tuple[int, int, int]] = []
+    bands: dict[tuple[int, int], int] = {}
     women = men = None
     for text, numbers in labelled(rows):
         if text == "Total":
@@ -322,26 +324,51 @@ def ages(rows: list[list[Any]], what: str) -> tuple[int, int, float | None]:
             continue
         people = numbers[0]
         if (m := SINGLE.match(text)):
-            singles.append((int(m.group(1)), int(m.group(1)), people))
+            singles[int(m.group(1))] = people
         elif (m := OPEN.match(text)):
             opened = (int(m.group(1)), people)
         elif (m := BAND.match(text)):
-            bands.append((int(m.group(1)), int(m.group(2)), people))
+            bands[(int(m.group(1)), int(m.group(2)))] = people
     if women is None or opened is None or not singles:
         raise SystemExit(f"argentina_census: {what}: no Total row, single years or open group")
-    expected = list(range(0, opened[0]))
-    if [a for a, _, _ in singles] != expected:
+    if sorted(singles) != list(range(0, opened[0])):
         raise SystemExit(f"argentina_census: {what}: single years do not run 0-{opened[0] - 1}")
-    counted = sum(n for _, _, n in singles) + opened[1]
+    counted = sum(singles.values()) + opened[1]
     if counted != women + men:
         raise SystemExit(f"argentina_census: {what}: ages add up to {counted:,}, "
                          f"not {women + men:,}")
-    by_age = {a: n for a, _, n in singles}
-    for low, high, people in bands:
-        if sum(by_age.get(a, 0) for a in range(low, high + 1)) != people:
+    for (low, high), people in bands.items():
+        if sum(singles.get(a, 0) for a in range(low, high + 1)) != people:
             raise SystemExit(f"argentina_census: {what}: ages {low}-{high} do not make their group")
-    median = grouped_median([*singles, (opened[0], None, opened[1])])
-    FIVE_YEAR[what] = grouped_median([*bands, (opened[0], None, opened[1])])
+    return women, men, singles, opened, bands
+
+
+def ages(parts: list[list[list[Any]]] | list[list[Any]], what: str
+         ) -> tuple[int, int, float | None]:
+    """Women, men and the interpolated median from one sex-by-single-year
+    sheet, or from the sheets of a department INDEC prints in parts."""
+    if parts and parts[0] and isinstance(parts[0][0], list):
+        sheets = parts
+    else:
+        sheets = [parts]
+    women = men = 0
+    singles: dict[int, int] = defaultdict(int)
+    bands: dict[tuple[int, int], int] = defaultdict(int)
+    opened: tuple[int, int] | None = None
+    for rows in sheets:
+        w, m, one, top, groups = age_counts(rows, what)
+        if opened is not None and top[0] != opened[0]:
+            raise SystemExit(f"argentina_census: {what}: parts close their ages differently")
+        women, men = women + w, men + m
+        opened = (top[0], (opened[1] if opened else 0) + top[1])
+        for age, n in one.items():
+            singles[age] += n
+        for band, n in groups.items():
+            bands[band] += n
+    median = grouped_median([*((a, a, singles[a]) for a in sorted(singles)),
+                             (opened[0], None, opened[1])])
+    FIVE_YEAR[what] = grouped_median([*((lo, hi, n) for (lo, hi), n in sorted(bands.items())),
+                                      (opened[0], None, opened[1])])
     return women, men, median
 
 
@@ -370,14 +397,19 @@ def words_fit(name: str, written: str) -> bool:
 
 def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int,
                departments: dict[str, str], what: str, *, complete: bool = True
-               ) -> dict[str, list[list[Any]]]:
-    """Department sheets keyed by INDEC code, each found by the name in its title.
+               ) -> dict[str, list[list[list[Any]]]]:
+    """Each department's sheets, keyed by INDEC code, found by the name in each title.
+
+    Nearly every department is one sheet. Tierra del Fuego's list has
+    "Antártida Argentina e Islas del Atlántico Sur" where its tables print
+    "Antártida Argentina" and "Islas del Atlántico Sur" apart; a sheet whose
+    name is part of exactly one unplaced department's is one of its parts.
 
     ``complete=False`` lets a department have no sheet: the indigenous tables
     leave out a department with no one in them, which the caller confirms
     by the others making the province's total.
     """
-    out: dict[str, list[list[Any]]] = {}
+    out: dict[str, list[list[list[Any]]]] = {}
     unnamed: list[tuple[int, list[list[Any]]]] = []
     for (p, d), rows in sorted(sheets.items(), key=lambda kv: (kv[0][0], kv[0][1] or 0)):
         if p != index or d is None:
@@ -398,20 +430,28 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
         code = hits[0][1]
         if code in out:
             raise SystemExit(f"argentina_census: {what}: two sheets for {departments[code]}")
-        out[code] = rows
+        out[code] = [rows]
     # A title that spells a department its own way -- La Rioja's "General
     # Ángel V. Peñaloza", the list's "Ángel Vicente Peñaloza" -- is placed
     # where every word of one unplaced department's name is a word of the
     # title's name, or an initial of it, and no other unplaced department's is.
+    parts: dict[str, list[list[list[Any]]]] = defaultdict(list)
     for d, rows in unnamed:
         written = title_name(title(rows))
         fits = [c for c in departments if c not in out and words_fit(departments[c], written)]
-        if len(fits) != 1:
+        if len(fits) == 1:
+            out[fits[0]] = [rows]
+            log(f"  {what}: sheet {index}.{d}'s {written!r} is {departments[fits[0]]}")
+            continue
+        within = [c for c in departments if c not in out and words_fit(written, departments[c])]
+        if len(within) != 1:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
                              f"names no department; unplaced: "
                              + ", ".join(departments[c] for c in departments if c not in out))
-        out[fits[0]] = rows
-        log(f"  {what}: sheet {index}.{d}'s {written!r} is {departments[fits[0]]}")
+        parts[within[0]].append(rows)
+        log(f"  {what}: sheet {index}.{d}'s {written!r} is part of {departments[within[0]]}")
+    for code, sheets_of in parts.items():
+        out[code] = sheets_of
     missing = sorted(set(departments) - set(out))
     if missing and complete:
         raise SystemExit(f"argentina_census: {what}: no sheet for "
@@ -498,10 +538,14 @@ def main() -> int:
         # -- indigenous and Afro-descendant self-recognition
         ind1 = sheets[("poblacion_indigena", 1)]
         ind7 = sheets[("poblacion_indigena", 7)]
-        indigenous = {c: total_row(r, f"{what} indigenous {names[c]}")[0]
+        def summed(parts: list[list[list[Any]]], label: str) -> list[int]:
+            rows = [[n for n in total_row(r, label) if n is not None] for r in parts]
+            return [sum(col) for col in zip(*rows)]
+
+        indigenous = {c: summed(r, f"{what} indigenous {names[c]}")[0]
                       for c, r in dept_sheet(ind1, index, names, f"{what} indigena_c1",
                                              complete=False).items()}
-        speak = {c: [n for n in total_row(r, f"{what} language {names[c]}") if n is not None]
+        speak = {c: summed(r, f"{what} language {names[c]}")
                  for c, r in dept_sheet(ind7, index, names, f"{what} indigena_c7",
                                         complete=False).items()}
         # A department one indigenous table leaves out is read from the other

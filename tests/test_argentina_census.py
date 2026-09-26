@@ -97,8 +97,8 @@ class DepartmentSheets(unittest.TestCase):
                   (6, 2): [["Cuadro 1.6.2. Provincia de Córdoba, departamento San Martín."]]}
         names = {"14042": "General San Martín", "14099": "San Martín"}
         out = ac.dept_sheet(sheets, 6, names, "test")
-        self.assertIs(out["14042"], sheets[(6, 1)])
-        self.assertIs(out["14099"], sheets[(6, 2)])
+        self.assertEqual(out["14042"], [sheets[(6, 1)]])
+        self.assertEqual(out["14099"], [sheets[(6, 2)]])
 
     def test_a_title_spelled_its_own_way_is_placed_by_its_words_and_initials(self):
         sheets = {(12, 1): [["Cuadro 4.12.1. Provincia de La Rioja, departamento Arauco."]],
@@ -107,7 +107,7 @@ class DepartmentSheets(unittest.TestCase):
                   (12, 3): [["Cuadro 4.12.3. Provincia de La Rioja, departamento Vinchina."]]}
         names = {"46007": "Arauco", "46014": "Ángel Vicente Peñaloza", "46021": "Vinchina"}
         out = ac.dept_sheet(sheets, 12, names, "test")
-        self.assertIs(out["46014"], sheets[(12, 2)])
+        self.assertEqual(out["46014"], [sheets[(12, 2)]])
 
     def test_a_rank_one_table_writes_differently_is_not_part_of_the_name(self):
         sheets = {(12, 1): [["Cuadro 7.12.1. Provincia de La Rioja, departamento Coronel "
@@ -121,6 +121,20 @@ class DepartmentSheets(unittest.TestCase):
         names = {"46049": "Juan Quiroga", "46050": "José Quiroga"}
         with self.assertRaises(SystemExit):
             ac.dept_sheet(sheets, 12, names, "test")
+
+    def test_a_department_printed_in_parts_gets_both_sheets_and_its_ages_summed(self):
+        first = age_sheet({a: (1, 1) for a in range(10)}, 10, (0, 0))
+        second = age_sheet({a: (1, 0) for a in range(10)}, 10, (0, 0))
+        first[1] = ["Cuadro 4.23.4. Provincia de Tierra del Fuego, departamento Antártida "
+                    "Argentina. Total de población."]
+        second[1] = ["Cuadro 4.23.5. Provincia de Tierra del Fuego, departamento Islas del "
+                     "Atlántico Sur. Total de población."]
+        sheets = {(23, 4): first, (23, 5): second}
+        out = ac.dept_sheet(sheets, 23, {"94028": "Antártida Argentina e Islas del Atlántico Sur"},
+                            "test")
+        self.assertEqual(len(out["94028"]), 2)
+        women, men, _ = ac.ages(out["94028"], "test")
+        self.assertEqual((women, men), (20, 10))
 
     def test_a_capital_comuna_is_found_by_its_own_name(self):
         sheets = {(1, 3): [["Cuadro 1.1.3. Ciudad Autónoma de Buenos Aires, comuna 3."]]}
