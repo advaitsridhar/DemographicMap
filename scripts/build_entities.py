@@ -316,6 +316,13 @@ ADAPTER_FILES = [
     # ratio, median age (provinces), and indigenous and Afro-descendant
     # identity; districts split since 2010 summed back into their parents.
     "panama_census.json",
+    # Bolivia's 2024 census by department and province, counted from INE's
+    # person database: population, median age, sex ratio, nación o pueblo
+    # (indigenous and Afro-Bolivian identity) and mother tongue.
+    "bolivia_census.json",
+    # Venezuela's 2011 census by state: the indigenous population by people,
+    # and everyone else as one line.
+    "venezuela_census.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
