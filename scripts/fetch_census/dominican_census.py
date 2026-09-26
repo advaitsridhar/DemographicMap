@@ -96,8 +96,7 @@ class ChainSession(Session):
 
 
 def probe(session: ChainSession, bases: list[str], follow: str, limit: int) -> None:
-    for page_url in [ROOT + "/bindom/rpwebengine.exe/portal",
-                     *[PORTAL.format(base=b) for b in bases]]:
+    for page_url in [b if b.startswith("http") else PORTAL.format(base=b) for b in bases]:
         print(f"page: {page_url}")
         try:
             page = session.get(page_url)
@@ -128,7 +127,7 @@ def probe(session: ChainSession, bases: list[str], follow: str, limit: int) -> N
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--probe", help="comma-separated base names whose portals to open")
+    ap.add_argument("--probe", help="comma-separated base names whose portals to open, or URLs")
     ap.add_argument("--follow", default="", help="comma-separated words of links to open")
     ap.add_argument("--run", nargs="+", metavar="WORD",
                     help="a base name, then a Redatam+SP program as words")
