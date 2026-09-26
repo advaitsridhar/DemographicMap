@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import urllib.error
 import urllib.parse
 
 from scripts.probe_redatam import Session, attrs, report
@@ -56,8 +57,21 @@ TABLE TABLE1
 
 
 def run(session: Session, program: str) -> str:
+    """The page the processor answers a program with, error pages included.
+
+    The processor's own page is opened first, as a browser does before
+    submitting its form, and the program's lines end in CRLF, as a browser
+    sends a textarea's.
+    """
+    session.get(f"{CMDSET}?BASE=CPV2017DI&ITEM=PROGRED&lang=esp")
+    program = program.replace("\r\n", "\n").replace("\n", "\r\n")
     data = urllib.parse.urlencode({**FORM, "CMDSET": program}).encode()
-    return session.get(CMDSET, data=data)
+    try:
+        return session.get(CMDSET, data=data)
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", "replace")
+        print(f"HTTP {exc.code} for the program; the server's page follows")
+        return body
 
 
 def main() -> int:
