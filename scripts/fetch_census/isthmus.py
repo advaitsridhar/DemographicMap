@@ -124,7 +124,10 @@ class Patient(Server):
             if kind == "CROSSTABS":
                 crossed = crosstabs(page)
                 if not crossed or tables(page, header):
-                    raise SystemExit(f"{self.who}: the crosstab's frame holds something else")
+                    rows = [" | ".join(c for c in cells if c) for cells in cells_of(page)]
+                    raise SystemExit(f"{self.who}: the crosstab's frame holds something else "
+                                     f"({len(crossed)} crosstabs read); its first rows: "
+                                     f"{[r for r in rows if r][:25]}")
                 continue
             found[question] = tables(page, header)
             titles = {t["title"] for t in found[question]}
@@ -230,7 +233,10 @@ def fill_missing(tables: dict[str, dict[str, dict[str, Any]]], who: str, everyon
         if stray:
             raise SystemExit(f"{who}: {question}: areas {reference} does not have: "
                              f"{sorted(stray)[:10]}")
-        absent = [code for code in areas if code not in found]
+        # Costa Rica's processor prints the area row and nothing under it.
+        absent = [code for code in areas if code not in found
+                  or (found[code]["total"] is None and not found[code]["rows"]
+                      and not found[code]["na"])]
         for code in absent:
             found[code] = {"area": code, "name": areas[code]["name"], "title": None,
                            "rows": [], "total": 0, "na": areas[code]["total"]}
