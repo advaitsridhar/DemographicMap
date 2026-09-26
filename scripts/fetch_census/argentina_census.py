@@ -78,10 +78,11 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 
 # INDEC's order of the provinces, which numbers its files and sheets; its
 # two-digit code; the slug in its file names; its landing page; its name; and
-# the boundary file's name for it (None: not drawn at this level).
+# the boundary file's name for it (None: not drawn at this level). The landing
+# pages' names are the portal's own, from its index of provinces.
 PROVINCES = [
     (1, "02", "caba", "caba", "Ciudad Autónoma de Buenos Aires", "Ciudad Autónoma de Buenos Aires"),
-    (2, "06", "buenosaires", "buenos_aires", "Buenos Aires", "Buenos Aires"),
+    (2, "06", "buenosaires", "bsas", "Buenos Aires", "Buenos Aires"),
     (3, "10", "catamarca", "catamarca", "Catamarca", "Catamarca"),
     (4, "22", "chaco", "chaco", "Chaco", "Chaco"),
     (5, "26", "chubut", "chubut", "Chubut", "Chubut"),
@@ -90,19 +91,19 @@ PROVINCES = [
     (8, "30", "entrerios", "entre_rios", "Entre Ríos", None),
     (9, "34", "formosa", "formosa", "Formosa", "Formosa"),
     (10, "38", "jujuy", "jujuy", "Jujuy", "Jujuy"),
-    (11, "42", "lapampa", "la_pampa", "La Pampa", "La Pampa"),
-    (12, "46", "larioja", "la_rioja", "La Rioja", "La Roja"),
+    (11, "42", "lapampa", "lapampa", "La Pampa", "La Pampa"),
+    (12, "46", "larioja", "larioja", "La Rioja", "La Roja"),
     (13, "50", "mendoza", "mendoza", "Mendoza", "Mendoza"),
     (14, "54", "misiones", "misiones", "Misiones", "Misiones"),
     (15, "58", "neuquen", "neuquen", "Neuquén", "Neuquén"),
-    (16, "62", "rionegro", "rio_negro", "Río Negro", "Río Negro"),
+    (16, "62", "rionegro", "rionegro", "Río Negro", "Río Negro"),
     (17, "66", "salta", "salta", "Salta", "Salta"),
-    (18, "70", "sanjuan", "san_juan", "San Juan", "San Juan"),
-    (19, "74", "sanluis", "san_luis", "San Luis", "San Luis"),
+    (18, "70", "sanjuan", "sanjuan", "San Juan", "San Juan"),
+    (19, "74", "sanluis", "sanluis", "San Luis", "San Luis"),
     (20, "78", "santacruz", "santa_cruz", "Santa Cruz", "Santa Cruz"),
-    (21, "82", "santafe", "santa_fe", "Santa Fe", "Santa Fe"),
+    (21, "82", "santafe", "santafe", "Santa Fe", "Santa Fe"),
     (22, "86", "santiago", "santiago_del_estero", "Santiago del Estero", "Santiago del Estero"),
-    (23, "94", "tierradelfuego", "tierra_del_fuego",
+    (23, "94", "tierradelfuego", "tdf",
      "Tierra del Fuego, Antártida e Islas del Atlántico Sur", "Tierra del Fuego"),
     (24, "90", "tucuman", "tucuman", "Tucumán", "Tucumán"),
 ]
