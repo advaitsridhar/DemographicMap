@@ -1,5 +1,124 @@
 [
   {
+    "id": "SLV-BCR-0101",
+    "level": "admin2",
+    "name": "Ahuachapán",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 127301,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 30.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 871,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.3,
+        "count": 125477
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.4,
+        "count": 488
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.2,
+        "count": 205
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.1,
+        "count": 83
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Mangue",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Xinca",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Ahuachapán",
+    "codes": {
+      "bcr": "0101"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B66160395082185",
+    "aliases": [
+      "Ahuachpan"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 126,689 of the 127,301 people counted here; 264 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0102",
     "level": "admin2",
     "name": "Apaneca",
@@ -3829,9 +3948,9 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 12,053 of the 12,067 people counted here; 24 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
-    "id": "SLV-BCR-0315",
+    "id": "SLV-BCR-0314",
     "level": "admin2",
-    "name": "Sonsonate",
+    "name": "Santo Domingo de Guzmán",
     "parent": "SLV",
     "capital": {
       "status": "not_available"
@@ -3840,18 +3959,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 72233,
+      "value": 7291,
       "year": 2024,
       "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
     },
     "median_age": {
-      "value": 31.9,
+      "value": 28.0,
       "unit": "years",
       "year": 2024,
       "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
     },
     "sex_ratio": {
-      "value": 872,
+      "value": 870,
       "unit": "males_per_1000_females",
       "year": 2024,
       "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
@@ -3865,58 +3984,28 @@
     "ethnicity": [
       {
         "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
-        "pct": 98.6,
-        "count": 70449
+        "pct": 76.3,
+        "count": 5460
       },
       {
         "group": "Nahua-Pipil",
-        "pct": 0.7,
-        "count": 525
+        "pct": 23.2,
+        "count": 1664
       },
       {
         "group": "Afro-descendant",
-        "pct": 0.3,
-        "count": 215
+        "pct": 0.4,
+        "count": 26
       },
       {
         "group": "Indigenous (people not stated)",
-        "pct": 0.2,
-        "count": 110
+        "pct": 0.1,
+        "count": 9
       },
       {
         "group": "Lenca",
-        "pct": 0.1,
-        "count": 36
-      },
-      {
-        "group": "Maya Chortí",
-        "pct": 0.1,
-        "count": 39
-      },
-      {
-        "group": "Kakawira (Cacaopera)",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Mixe",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Other indigenous people",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Poqomam Maya",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Xinca",
-        "pct": 0.0,
-        "count": 3
       }
     ],
     "sources": [
@@ -3936,14 +4025,16 @@
     "country": "SLV",
     "parent_name": "Departamento de Sonsonate",
     "codes": {
-      "bcr": "0315"
+      "bcr": "0314"
     },
     "match_by": "shape_id",
-    "shape_id": "79315794B61024232293340",
-    "aliases": [],
+    "shape_id": "79315794B81756807181676",
+    "aliases": [
+      "Santo Domingo"
+    ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 71,698 of the 72,233 people counted here; 257 did not know or did not say whether they are indigenous and are left out of the shares."
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 7,246 of the 7,291 people counted here; 86 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-0401",
@@ -4496,6 +4587,115 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 5,956 of the 6,011 people counted here; 115 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0407",
+    "level": "admin2",
+    "name": "Chalatenango",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30679,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 34.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 880,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.1,
+        "count": 29638
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 151
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Xinca",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Chalatenango",
+    "codes": {
+      "bcr": "0407"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B44742877117508",
+    "aliases": [
+      "Chalatenago"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 30,209 of the 30,679 people counted here; 295 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-0408",
@@ -5754,6 +5954,105 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 1,739 of the 1,747 people counted here; 9 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0421",
+    "level": "admin2",
+    "name": "San Antonio Los Ranchos",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1009,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 35.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 882,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.3,
+        "count": 974
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 1.0,
+        "count": 10
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.3,
+        "count": 3
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Chalatenango",
+    "codes": {
+      "bcr": "0421"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B88320880206273",
+    "aliases": [
+      "San Antonia Los Ranchos"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 1,001 of the 1,009 people counted here; 10 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0422",
     "level": "admin2",
     "name": "San Fernando",
@@ -6035,6 +6334,110 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 3,034 of the 3,036 people counted here; 32 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0425",
+    "level": "admin2",
+    "name": "San Ignacio",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9159,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 909,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.9,
+        "count": 8892
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 44
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Chalatenango",
+    "codes": {
+      "bcr": "0425"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B63439362798626",
+    "aliases": [
+      "San Ingnacio"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 9,040 of the 9,159 people counted here; 48 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0426",
     "level": "admin2",
     "name": "San Isidro Labrador",
@@ -6115,6 +6518,179 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 582 of the 586 people counted here; 10 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0427",
+    "level": "admin2",
+    "name": "Cancasque",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1907,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 32.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.7,
+        "count": 1899
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Chalatenango",
+    "codes": {
+      "bcr": "0427"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B60715586035531",
+    "aliases": [
+      "San Jose Cancasque"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 1,907 of the 1,907 people counted here; 3 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0428",
+    "level": "admin2",
+    "name": "Las Flores",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1301,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 37.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 894,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 97.2,
+        "count": 1186
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 1.6,
+        "count": 20
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.4,
+        "count": 5
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Chalatenango",
+    "codes": {
+      "bcr": "0428"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B77383078083147",
+    "aliases": [
+      "San Jose Las Flores"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 1,294 of the 1,301 people counted here; 74 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-0429",
@@ -8068,6 +8644,125 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 18,615 of the 19,150 people counted here; 120 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0515",
+    "level": "admin2",
+    "name": "San Juan Opico",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 97210,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 31.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 896,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.4,
+        "count": 90510
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 468
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.5,
+        "count": 455
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.2,
+        "count": 179
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.2,
+        "count": 145
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 106
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.1,
+        "count": 82
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mangue",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Xinca",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "La Libertad",
+    "codes": {
+      "bcr": "0515"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B68531510505764",
+    "aliases": [
+      "Opico"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 92,747 of the 97,210 people counted here; 736 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-0516",
@@ -10825,6 +11520,125 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 89,244 of the 89,751 people counted here; 915 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0619",
+    "level": "admin2",
+    "name": "Ciudad Delgado",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106367,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 34.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 875,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.4,
+        "count": 101543
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 530
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.5,
+        "count": 547
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.3,
+        "count": 325
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 109
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.1,
+        "count": 85
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Mangue",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Xinca",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de San Salvador",
+    "codes": {
+      "bcr": "0619"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B16218870700964",
+    "aliases": [
+      "Delgado"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 104,556 of the 106,367 people counted here; 1,324 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0701",
     "level": "admin2",
     "name": "Candelaria",
@@ -13041,6 +13855,199 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 3,946 of the 3,949 people counted here; 18 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0808",
+    "level": "admin2",
+    "name": "San Emigdio",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2779,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 30.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 925,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 98.3,
+        "count": 2713
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 1.1,
+        "count": 29
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de La Paz",
+    "codes": {
+      "bcr": "0808"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B95898658703869",
+    "aliases": [
+      "San Emigdo"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 2,774 of the 2,779 people counted here; 14 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0809",
+    "level": "admin2",
+    "name": "San Francisco Chinameca",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7481,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 30.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 910,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.5,
+        "count": 7378
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.2,
+        "count": 12
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de La Paz",
+    "codes": {
+      "bcr": "0809"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B59411245897989",
+    "aliases": [
+      "San Francsico Chinameca"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 7,433 of the 7,481 people counted here; 19 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0810",
     "level": "admin2",
     "name": "San Juan Nonualco",
@@ -14464,6 +15471,214 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 2,090 of the 2,096 people counted here; 10 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0902",
+    "level": "admin2",
+    "name": "Guacotecti",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7585,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 29.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 834,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.2,
+        "count": 7344
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 22
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.2,
+        "count": 16
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Cabañas",
+    "codes": {
+      "bcr": "0902"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B37793229962315",
+    "aliases": [
+      "Guacoteci"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 7,478 of the 7,585 people counted here; 72 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0903",
+    "level": "admin2",
+    "name": "Ilobasco",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58581,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 29.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 843,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.5,
+        "count": 57541
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.3,
+        "count": 162
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Cabañas",
+    "codes": {
+      "bcr": "0903"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B91791198774998",
+    "aliases": [
+      "Ciudad Ilobasco"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 57,968 of the 58,581 people counted here; 152 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0904",
     "level": "admin2",
     "name": "Jutiapa",
@@ -14780,6 +15995,105 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 35,336 of the 35,916 people counted here; 296 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-0907",
+    "level": "admin2",
+    "name": "Tejutepeque",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7189,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 30.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 875,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.4,
+        "count": 7092
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.2,
+        "count": 13
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Cabañas",
+    "codes": {
+      "bcr": "0907"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B23390079838525",
+    "aliases": [
+      "Teujutepeque"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 7,170 of the 7,189 people counted here; 38 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-0908",
     "level": "admin2",
     "name": "Victoria",
@@ -14870,6 +16184,95 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 10,857 of the 10,953 people counted here; 48 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-0909",
+    "level": "admin2",
+    "name": "Villa Dolores",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6267,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 28.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 907,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.7,
+        "count": 6190
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Cabañas",
+    "codes": {
+      "bcr": "0909"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B94447773522509",
+    "aliases": [
+      "Dolores"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 6,222 of the 6,267 people counted here; 16 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-1001",
@@ -20128,6 +21531,110 @@
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 227,861 of the 232,887 people counted here; 2,280 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
+    "id": "SLV-BCR-1218",
+    "level": "admin2",
+    "name": "San Rafael Oriente",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11958,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 31.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 830,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 99.1,
+        "count": 11702
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.5,
+        "count": 62
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.2,
+        "count": 25
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de San Miguel",
+    "codes": {
+      "bcr": "1218"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B33674130591539",
+    "aliases": [
+      "San Rafael"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 11,899 of the 11,958 people counted here; 88 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
     "id": "SLV-BCR-1219",
     "level": "admin2",
     "name": "Sesori",
@@ -22061,6 +23568,125 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 1,893 of the 1,900 people counted here; 8 did not know or did not say whether they are indigenous and are left out of the shares."
+  },
+  {
+    "id": "SLV-BCR-1319",
+    "level": "admin2",
+    "name": "San Francisco Gotera",
+    "parent": "SLV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20330,
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "median_age": {
+      "value": 31.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "sex_ratio": {
+      "value": 839,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 96.9,
+        "count": 19492
+      },
+      {
+        "group": "Kakawira (Cacaopera)",
+        "pct": 1.1,
+        "count": 230
+      },
+      {
+        "group": "Lenca",
+        "pct": 0.9,
+        "count": 184
+      },
+      {
+        "group": "Afro-descendant",
+        "pct": 0.7,
+        "count": 146
+      },
+      {
+        "group": "Nahua-Pipil",
+        "pct": 0.2,
+        "count": 42
+      },
+      {
+        "group": "Other indigenous people",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Indigenous (people not stated)",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mangue",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Maya Chortí",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Poqomam Maya",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Xinca",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_POB_1)",
+        "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/TAB_POB_1.xlsx",
+        "year": 2024
+      },
+      {
+        "field": "ethnicity",
+        "name": "BCR, Oficina Nacional de Estadística y Censos, VII Censo de Población y VI de Vivienda 2024 (TAB_ETNIA_1, TAB_ETNIA_2 and TAB_ETNIA_3)",
+        "url": "https://poblacion.bcr.gob.sv/pages/teg-base-de-datos-y-tabulados",
+        "year": 2024
+      }
+    ],
+    "country": "SLV",
+    "parent_name": "Departamento de Morazán",
+    "codes": {
+      "bcr": "1319"
+    },
+    "match_by": "shape_id",
+    "shape_id": "79315794B84780474662802",
+    "aliases": [
+      "San Francisco"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2024 census's count of everyone by single year of age.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Two questions the 2024 census put to everyone in a household: whether a person identifies with an indigenous people, and which; and whether they identify as Afro-descendant. Someone may answer yes to both, and the BCR publishes no cross of the two, so the remainder is those who answered less both counts. The census asks nothing about mestizo or white ancestry. The two questions were put to 20,263 of the 20,330 people counted here; 138 did not know or did not say whether they are indigenous and are left out of the shares."
   },
   {
     "id": "SLV-BCR-1320",
