@@ -195,26 +195,46 @@ def median_of(groups: dict[str, list[int | None]], what: str) -> float | None:
     return grouped_median(bands)
 
 
+def is_age(label: str) -> bool:
+    return bool(label == UNDER_ONE or BAND.match(label) or OPEN.match(label) or label == UNSTATED)
+
+
 def peoples_table(rows: list[list[Any]]) -> dict[str, dict[str, int]]:
-    """Cuadro 20: {province: {people: count, "": total}}; "" is the country."""
+    """Cuadro 20: {province: {people: count, "": total}}; "" is the country.
+
+    The table is blocks: a province (or the country), then each people, each
+    followed by its age groups. A block's age groups must make its total, so
+    a row read as a people that is not one shows itself.
+    """
     out: dict[str, dict[str, int]] = {}
+    blocks: list[tuple[str, str, int, int]] = []     # province, people ("" = all), total, ages
     current = None
     for row in rows[3:]:
         first, second = text(row[0]), text(row[1])
         people = number(row[2])
         if first == "Mediana" or people is None:
             continue
-        if first:
-            current = first
+        if first or second == "TOTAL":
+            current = first if first else ""
             out.setdefault(current, {})[""] = people
-        elif second == "TOTAL":
-            current = ""
-            out.setdefault(current, {})[""] = people
-        elif second and not (second == UNDER_ONE or BAND.match(second) or OPEN.match(second)
-                             or second == UNSTATED):
+            blocks.append((current, "", people, 0))
+        elif is_age(second):
+            if not blocks:
+                raise SystemExit("panama_census: cuadro 20: ages before any total")
+            p, who, total, ages = blocks[-1]
+            blocks[-1] = (p, who, total, ages + people)
+        elif second:
             if current is None:
                 raise SystemExit(f"panama_census: cuadro 20: people {second!r} before any province")
+            if second in out[current]:
+                raise SystemExit(f"panama_census: cuadro 20: {second} twice in {current}")
             out[current][second] = people
+            blocks.append((current, second, people, 0))
+    bad = [f"{p or 'the country'}, {who or 'all'}: {total:,} against ages {ages:,}"
+           for p, who, total, ages in blocks if total != ages]
+    if bad:
+        raise SystemExit("panama_census: cuadro 20 blocks whose ages do not make them: "
+                         + "; ".join(bad[:10]))
     return out
 
 

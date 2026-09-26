@@ -345,6 +345,22 @@ def ages(rows: list[list[Any]], what: str) -> tuple[int, int, float | None]:
     return women, men, median
 
 
+def title_name(text: str) -> str:
+    """The department's name as a sheet's title writes it."""
+    clean = " ".join(text.replace("\xa0", " ").split())
+    m = re.search(r"(?:departamento|partido|comuna)\s+(.*?)\.\s+(?:Total|Población|Poblacion)",
+                  clean, re.I)
+    return m.group(1) if m else ""
+
+
+def words_fit(name: str, written: str) -> bool:
+    """Every word of ``name`` is a word of ``written`` or begins with one of its initials."""
+    theirs = [fold(w) for w in re.split(r"[\s.]+", written) if fold(w)]
+    return bool(theirs) and all(
+        any(w == t or (len(t) == 1 and w.startswith(t)) for t in theirs)
+        for w in (fold(x) for x in re.split(r"[\s.]+", name)) if w)
+
+
 def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int,
                departments: dict[str, str], what: str, *, complete: bool = True
                ) -> dict[str, list[list[Any]]]:
@@ -355,9 +371,7 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
     by the others making the province's total.
     """
     out: dict[str, list[list[Any]]] = {}
-    ordered = sorted(departments)
     unnamed: list[tuple[int, list[list[Any]]]] = []
-    in_order = 0
     for (p, d), rows in sorted(sheets.items(), key=lambda kv: (kv[0][0], kv[0][1] or 0)):
         if p != index or d is None:
             continue
@@ -378,19 +392,19 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
         if code in out:
             raise SystemExit(f"argentina_census: {what}: two sheets for {departments[code]}")
         out[code] = rows
-        in_order += d <= len(ordered) and ordered[d - 1] == code
-    # A title that spells a department its own way (La Rioja's "General Ángel
-    # V. Peñaloza", the list's "Ángel Vicente Peñaloza") is placed by the
-    # sheet's number, but only where every sheet placed by name sits at its
-    # department's position in the list.
+    # A title that spells a department its own way -- La Rioja's "General
+    # Ángel V. Peñaloza", the list's "Ángel Vicente Peñaloza" -- is placed
+    # where every word of one unplaced department's name is a word of the
+    # title's name, or an initial of it, and no other unplaced department's is.
     for d, rows in unnamed:
-        if in_order != len(out) or d > len(ordered) or ordered[d - 1] in out:
+        written = title_name(title(rows))
+        fits = [c for c in departments if c not in out and words_fit(departments[c], written)]
+        if len(fits) != 1:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
                              f"names no department; unplaced: "
                              + ", ".join(departments[c] for c in departments if c not in out))
-        out[ordered[d - 1]] = rows
-        log(f"  {what}: sheet {index}.{d} ({' '.join(title(rows).split()[:9])}...) is "
-            f"{departments[ordered[d - 1]]}, by its place in the list")
+        out[fits[0]] = rows
+        log(f"  {what}: sheet {index}.{d}'s {written!r} is {departments[fits[0]]}")
     missing = sorted(set(departments) - set(out))
     if missing and complete:
         raise SystemExit(f"argentina_census: {what}: no sheet for "
