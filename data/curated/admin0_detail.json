@@ -372,6 +372,703 @@
    "country": "GHA",
    "field": "language",
    "note": "The ten names above are Ghana's largest ethnolinguistic groups in the 2010 census, and several are divisions of one larger group: Asante, Fante, Akyem and Boron are all Akan, and Dagomba and Dagarte are both Mole-Dagbani. The 31.2% is the rest of the same two clusters -- Akuapem, Kwahu, Nzema, Sefwi, Wassa and Aowin among the Akan, Mamprusi, Nanumba, Wali and Frafra among the Mole-Dagbani -- together with the Gurma, Guan, Grusi and Mande languages and Hausa. The census divides the same people into those eight clusters and leaves only 1.6% over: Akan 45.7%, Mole-Dagbani 18.5%, Ewe 12.8%, Ga-Dangme 7.1%, Gurma 6.4%, Guan 3.2%, Grusi 2.7%, Mande 2.0% (2021 census). What it does not publish is a division of the language question itself, so the column is left as it stands rather than being given the ethnicity table's shape."
+  },
+  {
+   "country": "BOL",
+   "field": "ethnicity",
+   "year": 2024,
+   "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database (summed from the nine departments)",
+   "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+   "license": "INE Bolivia; official statistics",
+   "note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Counted from INE's person database, the 11,124,437 of 11,365,333 people enumerated who answered, summed from the nine departments. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. It replaces the Factbook's line (Mestizo 68%, Indigenous 20%, White 5%), which is not a census count; the country's divisions are not summed automatically because the Factbook's 2025 population estimate (12.4 million) is 9% above the census count (11,365,333).",
+   "groups": [
+    {
+     "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+     "pct": 61.3,
+     "count": 6821953
+    },
+    {
+     "group": "Quechua",
+     "pct": 14.8,
+     "count": 1646811
+    },
+    {
+     "group": "Aymara",
+     "pct": 14.3,
+     "count": 1595045
+    },
+    {
+     "group": "Indigenous originario campesino (no people named)",
+     "pct": 4.9,
+     "count": 544984
+    },
+    {
+     "group": "Chiquitano",
+     "pct": 0.9,
+     "count": 98983
+    },
+    {
+     "group": "Guaraní",
+     "pct": 0.9,
+     "count": 103712
+    },
+    {
+     "group": "Chichas",
+     "pct": 0.3,
+     "count": 29561
+    },
+    {
+     "group": "Afro-Bolivian",
+     "pct": 0.2,
+     "count": 25168
+    },
+    {
+     "group": "Charka Qhara Qhara",
+     "pct": 0.2,
+     "count": 20323
+    },
+    {
+     "group": "Gwarayu",
+     "pct": 0.2,
+     "count": 20154
+    },
+    {
+     "group": "Leco",
+     "pct": 0.2,
+     "count": 19110
+    },
+    {
+     "group": "Mojeño Trinitario",
+     "pct": 0.2,
+     "count": 19354
+    },
+    {
+     "group": "Tacana",
+     "pct": 0.2,
+     "count": 19847
+    },
+    {
+     "group": "Tsimane'",
+     "pct": 0.2,
+     "count": 22343
+    },
+    {
+     "group": "Itonama",
+     "pct": 0.1,
+     "count": 5612
+    },
+    {
+     "group": "Jach'a Carangas",
+     "pct": 0.1,
+     "count": 8299
+    },
+    {
+     "group": "Jalq'a",
+     "pct": 0.1,
+     "count": 6241
+    },
+    {
+     "group": "Kallawaya",
+     "pct": 0.1,
+     "count": 15384
+    },
+    {
+     "group": "Mojeño",
+     "pct": 0.1,
+     "count": 6109
+    },
+    {
+     "group": "Mojeño Ignaciano",
+     "pct": 0.1,
+     "count": 9076
+    },
+    {
+     "group": "Movima",
+     "pct": 0.1,
+     "count": 10654
+    },
+    {
+     "group": "Weenhayek",
+     "pct": 0.1,
+     "count": 5588
+    },
+    {
+     "group": "Yurakaré",
+     "pct": 0.1,
+     "count": 6480
+    },
+    {
+     "group": "Araona",
+     "pct": 0.0,
+     "count": 147
+    },
+    {
+     "group": "Ayoreo",
+     "pct": 0.0,
+     "count": 1890
+    },
+    {
+     "group": "Baure",
+     "pct": 0.0,
+     "count": 1618
+    },
+    {
+     "group": "Canichana",
+     "pct": 0.0,
+     "count": 865
+    },
+    {
+     "group": "Cavineño",
+     "pct": 0.0,
+     "count": 5344
+    },
+    {
+     "group": "Cayubaba",
+     "pct": 0.0,
+     "count": 1064
+    },
+    {
+     "group": "Chuwi",
+     "pct": 0.0,
+     "count": 495
+    },
+    {
+     "group": "Chácobo",
+     "pct": 0.0,
+     "count": 1530
+    },
+    {
+     "group": "Ese Ejja",
+     "pct": 0.0,
+     "count": 1927
+    },
+    {
+     "group": "Guarasu'we",
+     "pct": 0.0,
+     "count": 149
+    },
+    {
+     "group": "Indigenous (more than one nation or people)",
+     "pct": 0.0,
+     "count": 5492
+    },
+    {
+     "group": "Indigenous peoples from abroad",
+     "pct": 0.0,
+     "count": 943
+    },
+    {
+     "group": "Joaquiniano",
+     "pct": 0.0,
+     "count": 1992
+    },
+    {
+     "group": "Killacas",
+     "pct": 0.0,
+     "count": 3812
+    },
+    {
+     "group": "Lupaca",
+     "pct": 0.0,
+     "count": 1031
+    },
+    {
+     "group": "Lípez",
+     "pct": 0.0,
+     "count": 2922
+    },
+    {
+     "group": "Machineri",
+     "pct": 0.0,
+     "count": 72
+    },
+    {
+     "group": "Maropa",
+     "pct": 0.0,
+     "count": 2797
+    },
+    {
+     "group": "Moré",
+     "pct": 0.0,
+     "count": 212
+    },
+    {
+     "group": "Mosetén",
+     "pct": 0.0,
+     "count": 4099
+    },
+    {
+     "group": "Pacahuara",
+     "pct": 0.0,
+     "count": 70
+    },
+    {
+     "group": "Pakajaqi",
+     "pct": 0.0,
+     "count": 2715
+    },
+    {
+     "group": "Paunaca",
+     "pct": 0.0,
+     "count": 7
+    },
+    {
+     "group": "Puquina",
+     "pct": 0.0,
+     "count": 1944
+    },
+    {
+     "group": "Quechua and Aymara",
+     "pct": 0.0,
+     "count": 5526
+    },
+    {
+     "group": "Qullas",
+     "pct": 0.0,
+     "count": 2449
+    },
+    {
+     "group": "Raqaypampa",
+     "pct": 0.0,
+     "count": 2330
+    },
+    {
+     "group": "Sirionó",
+     "pct": 0.0,
+     "count": 722
+    },
+    {
+     "group": "Sora (Bolivia)",
+     "pct": 0.0,
+     "count": 453
+    },
+    {
+     "group": "Tapiete",
+     "pct": 0.0,
+     "count": 104
+    },
+    {
+     "group": "Toromona",
+     "pct": 0.0,
+     "count": 14
+    },
+    {
+     "group": "Uru-Chipaya",
+     "pct": 0.0,
+     "count": 3822
+    },
+    {
+     "group": "Yaminawa",
+     "pct": 0.0,
+     "count": 228
+    },
+    {
+     "group": "Yampara",
+     "pct": 0.0,
+     "count": 4383
+    },
+    {
+     "group": "Yuqui",
+     "pct": 0.0,
+     "count": 478
+    }
+   ]
+  },
+  {
+   "country": "BOL",
+   "field": "language",
+   "year": 2024,
+   "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database (summed from the nine departments)",
+   "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+   "license": "INE Bolivia; official statistics",
+   "note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 10,923,991 of 11,365,333 people enumerated with one stated; children who do not yet speak and answers not specified are left out. Counted from INE's 2024 person database, summed from the nine departments. It replaces the Factbook's line (Spanish 68.1%, Quechua 17.2%, Aymara 10.5%).",
+   "groups": [
+    {
+     "group": "Spanish",
+     "pct": 77.9,
+     "count": 8508242
+    },
+    {
+     "group": "Quechua",
+     "pct": 13.0,
+     "count": 1419008
+    },
+    {
+     "group": "Aymara",
+     "pct": 7.2,
+     "count": 781854
+    },
+    {
+     "group": "German",
+     "pct": 0.8,
+     "count": 84274
+    },
+    {
+     "group": "Guarani",
+     "pct": 0.4,
+     "count": 46048
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.2,
+     "count": 21693
+    },
+    {
+     "group": "Tsimane'",
+     "pct": 0.2,
+     "count": 18848
+    },
+    {
+     "group": "Gwarayu",
+     "pct": 0.1,
+     "count": 7929
+    },
+    {
+     "group": "Afro-Bolivian Spanish",
+     "pct": 0.0,
+     "count": 451
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.0,
+     "count": 4
+    },
+    {
+     "group": "Arabic",
+     "pct": 0.0,
+     "count": 228
+    },
+    {
+     "group": "Araona",
+     "pct": 0.0,
+     "count": 122
+    },
+    {
+     "group": "Basque",
+     "pct": 0.0,
+     "count": 34
+    },
+    {
+     "group": "Baure",
+     "pct": 0.0,
+     "count": 13
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.0,
+     "count": 11
+    },
+    {
+     "group": "Bésiro",
+     "pct": 0.0,
+     "count": 1755
+    },
+    {
+     "group": "Canichana",
+     "pct": 0.0,
+     "count": 10
+    },
+    {
+     "group": "Catalan",
+     "pct": 0.0,
+     "count": 249
+    },
+    {
+     "group": "Cayubaba",
+     "pct": 0.0,
+     "count": 7
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.0,
+     "count": 1656
+    },
+    {
+     "group": "Chácobo",
+     "pct": 0.0,
+     "count": 1295
+    },
+    {
+     "group": "Croatian",
+     "pct": 0.0,
+     "count": 31
+    },
+    {
+     "group": "Czech",
+     "pct": 0.0,
+     "count": 42
+    },
+    {
+     "group": "Danish",
+     "pct": 0.0,
+     "count": 43
+    },
+    {
+     "group": "Dutch",
+     "pct": 0.0,
+     "count": 257
+    },
+    {
+     "group": "English",
+     "pct": 0.0,
+     "count": 4990
+    },
+    {
+     "group": "Ese Ejja",
+     "pct": 0.0,
+     "count": 1463
+    },
+    {
+     "group": "Finnish",
+     "pct": 0.0,
+     "count": 13
+    },
+    {
+     "group": "French",
+     "pct": 0.0,
+     "count": 1263
+    },
+    {
+     "group": "Galician",
+     "pct": 0.0,
+     "count": 4
+    },
+    {
+     "group": "Greek",
+     "pct": 0.0,
+     "count": 17
+    },
+    {
+     "group": "Guarasu'we",
+     "pct": 0.0,
+     "count": 1
+    },
+    {
+     "group": "Hebrew",
+     "pct": 0.0,
+     "count": 29
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.0,
+     "count": 29
+    },
+    {
+     "group": "Italian",
+     "pct": 0.0,
+     "count": 913
+    },
+    {
+     "group": "Itonama",
+     "pct": 0.0,
+     "count": 19
+    },
+    {
+     "group": "Japanese",
+     "pct": 0.0,
+     "count": 1303
+    },
+    {
+     "group": "Joaquiniano",
+     "pct": 0.0,
+     "count": 8
+    },
+    {
+     "group": "Kabineña",
+     "pct": 0.0,
+     "count": 893
+    },
+    {
+     "group": "Korean",
+     "pct": 0.0,
+     "count": 447
+    },
+    {
+     "group": "Latin",
+     "pct": 0.0,
+     "count": 37
+    },
+    {
+     "group": "Leco",
+     "pct": 0.0,
+     "count": 64
+    },
+    {
+     "group": "Machaj-Juyai Kallawaya",
+     "pct": 0.0,
+     "count": 7
+    },
+    {
+     "group": "Machineri",
+     "pct": 0.0,
+     "count": 12
+    },
+    {
+     "group": "Maropa",
+     "pct": 0.0,
+     "count": 32
+    },
+    {
+     "group": "Mojeño Ignaciano",
+     "pct": 0.0,
+     "count": 357
+    },
+    {
+     "group": "Mojeño Trinitario",
+     "pct": 0.0,
+     "count": 1860
+    },
+    {
+     "group": "Moré (Bolivia)",
+     "pct": 0.0,
+     "count": 10
+    },
+    {
+     "group": "Mosetén",
+     "pct": 0.0,
+     "count": 1134
+    },
+    {
+     "group": "Movima",
+     "pct": 0.0,
+     "count": 286
+    },
+    {
+     "group": "Norwegian",
+     "pct": 0.0,
+     "count": 36
+    },
+    {
+     "group": "Other foreign language",
+     "pct": 0.0,
+     "count": 415
+    },
+    {
+     "group": "Other language",
+     "pct": 0.0,
+     "count": 260
+    },
+    {
+     "group": "Pacahuara",
+     "pct": 0.0,
+     "count": 25
+    },
+    {
+     "group": "Persian",
+     "pct": 0.0,
+     "count": 60
+    },
+    {
+     "group": "Polish",
+     "pct": 0.0,
+     "count": 141
+    },
+    {
+     "group": "Puquina",
+     "pct": 0.0,
+     "count": 95
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.0,
+     "count": 48
+    },
+    {
+     "group": "Russian",
+     "pct": 0.0,
+     "count": 955
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.0,
+     "count": 25
+    },
+    {
+     "group": "Sign language",
+     "pct": 0.0,
+     "count": 1857
+    },
+    {
+     "group": "Sirionó",
+     "pct": 0.0,
+     "count": 44
+    },
+    {
+     "group": "Swedish",
+     "pct": 0.0,
+     "count": 113
+    },
+    {
+     "group": "Tacana",
+     "pct": 0.0,
+     "count": 357
+    },
+    {
+     "group": "Taiwanese",
+     "pct": 0.0,
+     "count": 14
+    },
+    {
+     "group": "Tapiete",
+     "pct": 0.0,
+     "count": 59
+    },
+    {
+     "group": "Thai",
+     "pct": 0.0,
+     "count": 3
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.0,
+     "count": 52
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.0,
+     "count": 46
+    },
+    {
+     "group": "Uru-Chipaya",
+     "pct": 0.0,
+     "count": 1978
+    },
+    {
+     "group": "Valencian",
+     "pct": 0.0,
+     "count": 19
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.0,
+     "count": 12
+    },
+    {
+     "group": "Weenhayek",
+     "pct": 0.0,
+     "count": 5001
+    },
+    {
+     "group": "Yaminawa",
+     "pct": 0.0,
+     "count": 122
+    },
+    {
+     "group": "Yuqui",
+     "pct": 0.0,
+     "count": 262
+    },
+    {
+     "group": "Yurakaré",
+     "pct": 0.0,
+     "count": 926
+    },
+    {
+     "group": "Zamuco",
+     "pct": 0.0,
+     "count": 1771
+    }
+   ]
   }
  ]
 }

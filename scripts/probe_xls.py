@@ -30,6 +30,8 @@ from __future__ import annotations
 import argparse
 import io
 import sys
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -37,10 +39,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import http_get, log  # noqa: E402
 
 
-def cell(value: object, width: int = 22) -> str:
+WIDTH = 22
+
+
+def cell(value: object, width: int | None = None) -> str:
     text = "" if value is None else str(value).strip()
     text = " ".join(text.split())
-    return text[:width]
+    return text[:width or WIDTH]
 
 
 def rows_of(blob: bytes, name: str, args_start: int = 0) -> list[tuple[str, int, int, list[list[str]]]]:
@@ -64,6 +69,7 @@ def rows_of(blob: bytes, name: str, args_start: int = 0) -> list[tuple[str, int,
 
 
 def main() -> int:
+    global WIDTH
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("url", nargs="+", help="one or more workbook URLs")
@@ -78,14 +84,30 @@ def main() -> int:
     ap.add_argument("--cols", type=int, default=12,
                     help="columns to print per row; a census table is wide and "
                          "the groups past the twelfth are the ones a first look misses")
+    ap.add_argument("--width", type=int, default=WIDTH,
+                    help="characters to print per cell; a table's title is in its "
+                         "first cell and says which of a numbered series it is")
+    ap.add_argument("--aia", action="store_true",
+                    help="complete a server's missing intermediate certificate "
+                         "from its AIA extension (still fully verified; see probe_tls)")
     args = ap.parse_args()
+    WIDTH = args.width
 
     for url in args.url:
         target = (f"https://web.archive.org/web/{args.wayback}id_/{url}"
                   if args.wayback else url)
         log(f"{url}")
         try:
-            blob = http_get(target, binary=True, cache=False, timeout=120)
+            if args.aia:
+                # INE Paraguay's server sends no intermediate certificate.
+                from probe_tls import verified_opener      # noqa: PLC0415
+                req = urllib.request.Request(target, headers={
+                    "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"})
+                host = urllib.parse.urlsplit(target).hostname or ""
+                with verified_opener(host).open(req, timeout=120) as resp:
+                    blob = resp.read()
+            else:
+                blob = http_get(target, binary=True, cache=False, timeout=120)
         except Exception as exc:                      # noqa: BLE001 -- the log is the product
             log(f"  unreachable: {type(exc).__name__}: {exc}")
             continue

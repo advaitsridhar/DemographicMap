@@ -196,7 +196,7 @@ class TwoRowsOnOnePolygon(unittest.TestCase):
         claimed = {}
         self.be.claim(claimed, self.shape, {"name": "Transnistria"}, "MDA", "x")
         self.be.claim(claimed, self.shape, {"name": "Transnistria"}, "MDA", "x")
-        self.assertEqual(list(claimed.values()), ["Transnistria"])
+        self.assertEqual(list(claimed.values()), [{"Transnistria"}])
 
     def test_two_places_on_one_shape_stop_the_build(self):
         claimed = {}
