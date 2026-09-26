@@ -2131,11 +2131,36 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Montubio", "Cholo/Chola",
     ),
     # Canada's Indigenous identity answers that are not one people: more
-    # than one Indigenous identity, or one StatCan does not itemise.
-    "Indigenous (census category)": ("Indigenous, multiple or other responses",),
+    # than one Indigenous identity, or one StatCan does not itemise. And
+    # Nicaragua's P07 "Otro": indigenous by P06, of a people or ethnic
+    # community its list does not name.
+    "Indigenous (census category)": ("Indigenous, multiple or other responses",
+                                     "Other indigenous people or ethnic community"),
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
-    "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
+    "Indigenous peoples of Mesoamerica and the Caribbean": (
+        "Xinca",
+        # Central America's own peoples, by the names its censuses print.
+        # Honduras's 2013 census (P06): the Lenca of the west, the Tolupan of
+        # Yoro, the Pech of Olancho and the Tawahka of the Patuca.
+        "Lenca", "Tolupan", "Pech", "Tawahka",
+        # Nicaragua's 2005 census (P07). The Chorotega-Nahua-Mange are named
+        # outright because the rules read the name as a kind of Nahua, and
+        # the Chorotega are Oto-Manguean (Mangue) people, not Nahua; the
+        # Nahoa-Nicarao are Nahua, and filed here beside them rather than
+        # under a node their neighbours are not in.
+        "Rama", "Mayangna", "Ulwa", "Xiu-Sutiaba", "Nahoa-Nicarao",
+        "Chorotega-Nahua-Mange", "Cacaopera-Matagalpa",
+        # Costa Rica's 2011 census (P08).
+        "Brunca (Boruca)", "Cabécar", "Chorotega", "Huetar", "Maleku",
+        # El Salvador's 2024 census (TAB_ETNIA_1). The Mixe are Mexico's
+        # Oaxacan people, counted there too.
+        "Kakawira (Cacaopera)", "Mixe", "Alagüilac", "Mangue",
+    ),
     "Afro-descendant peoples of the Americas": (
+        # Honduras's P06 "Negro de habla inglesa": the English-speaking Black
+        # people of the Bay Islands and the north coast, a people of their own
+        # in the census beside the Garifuna.
+        "English-speaking Black (Honduras)",
         "Afroecuadorian", "Afro-Ecuadorian", "Afro-Mexican or Afro-descendant",
         # The U.S. Virgin Islands' census names these under Black or African
         # American: Caribbean. By name alone "West Indian" read as Indian and
@@ -2168,6 +2193,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "African descent or African-American",
         "African, African Scottish or African British",
         "Black, Black Scottish or Black British",
+        # Honduras's P06 "Otro" for someone who told P05 they are
+        # Afro-Honduran or Black: of no people the form lists, neither
+        # Garifuna nor the English-speaking Black people of the Bay Islands.
+        "Afro-Honduran or Black (no people listed)",
     ),
     "Asian (census category)": (
         "Asian Indian",

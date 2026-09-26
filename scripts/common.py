@@ -197,6 +197,31 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "GTM": {
         "religion": "Guatemala's census does not ask religion. INE's data dictionary for the 2018 census's person database lists every question it holds -- age, sex, birthplace, residence in 2013, pueblo, the language a person learned to speak in, other languages, disability, schooling, literacy, phone and internet use, work, marital status and children -- and religion is not among them.",
     },
+    # The rest of the isthmus, each read off the census's own person file on
+    # its office's REDATAM server -- the dictionary lists every variable the
+    # base holds -- or, for El Salvador, off the BCR's own account of its
+    # form and the tables it published from it. What each census does ask
+    # about identity is on the map (honduras_census, nicaragua_census,
+    # el_salvador_census, costa_rica_census, panama_census).
+    "HND": {
+        "religion": "Honduras's census does not ask religion. INE's REDATAM base of the 2013 census (CPVHND2013NAC) holds, for every person, relationship, sex, age, civil registration, how the person identifies (P05) and which people (P06), the disability questions, birthplace, literacy, schooling, residence five years before, work, marital status, e-mail and mobile phone, children born and the identity card. Religion is not among them.",
+        "language": "Honduras's census does not ask language or mother tongue. The 2013 census's person variables, as INE's REDATAM base lists them, are relationship, sex, age, registration, ethnic self-identification and people, disability, birthplace, literacy, schooling, migration, work, marital status, e-mail, phone, children born and the identity card; no language is among them. The census counts the Lenca, Miskito, Garifuna and other peoples by self-identification, which is on the ethnicity field.",
+    },
+    "NIC": {
+        "language": "Nicaragua's census does not ask the population's language. The 2005 census's only language question (P08, \"¿Habla la lengua o idioma del pueblo indígena o comunidad étnica a la que pertenece?\") was put only to the members of the seven Caribbean-coast peoples and communities -- Rama, Garífuna, Mayangna, Miskitu, Ulwa, Creole and the coast's mestizos, whose 270,870 people are exactly its answers -- and asks whether they speak their people's language, not what anybody speaks. It is not a composition, and the rest of the country was not asked.",
+    },
+    "SLV": {
+        "religion": "El Salvador's census does not ask religion. The BCR describes the 2024 census's 74 questions as six sections -- location, dwelling, household, mortality, international emigration and population, the last covering age, sex, marital status, birthplace, schooling and indigenous and Afro-descendant self-identification -- and its 135-page census report, whose chapters run from population structure through fertility, mortality, migration, ethnicity, disability, education, language, work and ICT to housing, has none on religion.",
+        "language": "El Salvador's census asks no first or main language. The 2024 census asks everyone aged 3 and over whether they speak a second language and which (the BCR's tables TAB_IDIO_1 and TAB_IDIO_2: 427,368 of 5,635,059 said yes, naming English, Náhuat, Pisbi, Potón, LESSA and others). That counts the speakers of second languages, several per person, not what the population speaks, so it is not a composition.",
+    },
+    "CRI": {
+        "religion": "Costa Rica's census does not ask religion. INEC's REDATAM base of the 2011 census holds, for every person, relationship, sex, age, birthplace and arrival, P07 whether indigenous, P08 which people, P09 whether they speak an indigenous language, P10 ethnic-racial self-identification, social security, disability, schooling, ICT use, residence five years before, marital status, occupation, industry, place of work and children born. Religion is not among them.",
+        "language": "Costa Rica's census has no language question for the population. The 2011 census asks only whether a person who said they are indigenous speaks an indigenous language (P09: its 'No Aplica' is everyone P07 did not count as indigenous, 4,197,569 people), which is not a composition of what anybody speaks.",
+    },
+    "PAN": {
+        "religion": "Panama's census does not ask religion. INEC's REDATAM base of the 2023 census (LP2023) holds, for every person, relationship, sex, age, civil registration, citizenship, marital status, birthplace, residence before and in 2018, indigenous group (P08), Afro-descendant group (P09), social security, the disability questions, ICT use, literacy, schooling, work, income and children born. Religion is not among its 82 person variables, nor among the 72 of the 2010 census's base (LP2010).",
+        "language": "Panama's census does not ask language. The 2023 census's person variables, as INEC's REDATAM base LP2023 lists them, are relationship, sex, age, registration, citizenship, marital status, birthplace, migration, indigenous group, Afro-descendant group, social security, disability, ICT use, literacy, schooling, work, income and fertility; no language or mother tongue is among them, nor among the 2010 census's (LP2010). Which indigenous people a person belongs to is on the ethnicity field.",
+    },
     # Pakistan is here because the country row was contradicting its own
     # districts. All 145 Pakistani units say the census asks no ethnicity
     # question -- read out of the Bureau's own National Census Report 2023 and

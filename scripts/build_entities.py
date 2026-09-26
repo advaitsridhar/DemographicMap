@@ -316,6 +316,30 @@ ADAPTER_FILES = [
     # ratio, median age (provinces), and indigenous and Afro-descendant
     # identity; districts split since 2010 summed back into their parents.
     "panama_census.json",
+    # The same census's single years of age by district, from INEC's REDATAM
+    # base LP2023: the median age of the 75 districts, which INEC's workbooks
+    # do not tabulate. Each district is panama_census's, on the same polygon.
+    "panama_redatam.json",
+    # Honduras's 2013 census on INE's REDATAM base (181.115.7.199): median
+    # age, sex ratio and P05/P06 ethnicity for the 18 departments and 297
+    # municipios. No population: the base is the enumeration before INE's
+    # adjustment for omission, and the map's 2024 figures are newer.
+    "honduras_census.json",
+    # Nicaragua's 2005 census on INIDE's REDATAM base: median age, sex ratio,
+    # religion (P13, aged 5+) and P06/P07 ethnicity for the 17 departments
+    # and 153 municipios, and the 2005 count, which only fills a municipio
+    # the newer OCHA figures miss.
+    "nicaragua_census.json",
+    # El Salvador's 2024 census from the BCR's workbooks: population, median
+    # age, sex ratio and the indigenous and Afro-descendant questions for the
+    # 14 departments and the 262 districts (the old municipios). Same year as
+    # OCHA's projections, and a count, so it replaces them.
+    "el_salvador_census.json",
+    # Costa Rica's 2011 census on INEC's REDATAM base: median age, sex ratio
+    # and P07/P08/P10 ethnicity for the 7 provinces and 83 cantons (Rio Cuarto
+    # and Puerto Jimenez as the districts they were made from), and the 2011
+    # count on the cantons, which only fills Palmares.
+    "costa_rica_census.json",
     # Bolivia's 2024 census by department and province, counted from INE's
     # person database: population, median age, sex ratio, nación o pueblo
     # (indigenous and Afro-Bolivian identity) and mother tongue.
