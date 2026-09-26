@@ -1,11 +1,43 @@
+seed dataset : Philippines Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Censuses
+organization : 'us-census-bureau'
+datasets     : 34 listed of 34
+already live : 112 countries with subnational figures
 
-=== HDX dataset: dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries ===
-    title: Dominican Republic Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys
-    org:   us-census-bureau
-    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
-    notes: The geodatabase contains boundaries for the national and first-, second-, third-, and fourth-order administrative divisions, aligned to the Large Scale International Boundaries dataset from the U.S. Department of State. The feature classes are suitable for linking to the attribute data provided.  The tabular data contain total population for 2020 (population estimates), as well as five-year age 
-    2 resource(s):
-      Geodatabase Dominican_Republic.gdb.zip
-             https://data.humdata.org/dataset/80a2e7d0-6895-4cfa-ae01-f23169a9aa2a/resource/05262663-e038-4560-8b10-c4827914349d/download/dominican_republic.gdb.zip
-      XLSX   Dominican_Republic_uscb_202212.xlsx
-             https://data.humdata.org/dataset/80a2e7d0-6895-4cfa-ae01-f23169a9aa2a/resource/0f2dcd9f-ea0f-4bf7-bf44-8b8631432f51/download/dominican_republic_uscb_202212.xlsx
+ISO3  live  xlsx  dataset name
+BGD   -     1     bangladesh-subnational-boundaries-and-tabular-data
+BHS   -     1     the-bahamas-subnational-boundaries-and-tabular-data
+CAF   -     1     car-subnational-boundaries-and-tabular-data
+COD   -     1     democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data
+COL   -     2     colombia-subnational-boundaries-and-tabular-data
+DMA   -     1     dominica-subnational-boundaries-and-tabular-data
+DOM   -     1     dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries
+ETH   -     1     ethiopia-subnational-boundaries-and-tabular-data
+HTI   -     1     haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries
+IDN   -     1     indonesia-subnational-population-and-housing-data-tables
+IRQ   -     1     iraq-subnational-boundaries-and-tabular-data
+JAM   -     2     jamaica-subnational-boundaries-and-tabular-data
+LBY   -     1     libya-subnational-boundaries-and-tabular-data
+MLI   -     1     mali-subnational-population-and-housing-data-tables-with-administrative-boundaries
+MMR   -     1     burma-subnational-boundaries-and-tabular-data
+NGA   -     1     nigeria-subnational-boundaries-and-tabular-data
+PAK   -     1     pakistan-subnational-population-and-housing-data-tables
+PHL   -     1     philippines-subnational-population-and-housing-data-tables
+SDN   -     1     sudan-subnational-boundaries-and-tabular-data
+SOM   -     1     somalia-subnational-boundaries-and-tabular-data
+SSD   -     1     south-sudan-subnational-boundaries-and-tabular-data
+SYR   -     1     syria-subnational-boundaries-and-tabular-data
+UKR   -     1     ukraine-subnational-boundaries-and-tabular-data
+VCT   -     1     saint-vincent-and-the-grenadines-subnational-boundaries-and-tabular-data
+YEM   -     1     yemen-subnational-boundaries-and-tabular-data
+AGO   -     -     angola-and-namibia-gridded-population-dataset
+BHS   -     -     the-bahamas-gridded-population-dataset
+COD   -     -     democratic-republic-of-the-congo-and-zambia-gridded-population-dataset
+DMA   -     -     dominica-gridded-population-dataset
+HTI   -     -     haiti-gridded-population-data
+PAK   -     -     pakistan-gridded-population-dataset
+RWA   -     -     rwanda-gridded-population-dataset
+SSD   -     -     south-sudan-gridded-population-data
+VCT   -     -     saint-vincent-and-the-grenadines-gridded-population-dataset
+
+candidates (a workbook, and not yet on the map): 25
+  BGD, BHS, CAF, COD, COL, DMA, DOM, ETH, HTI, IDN, IRQ, JAM, LBY, MLI, MMR, NGA, PAK, PHL, SDN, SOM, SSD, SYR, UKR, VCT, YEM
