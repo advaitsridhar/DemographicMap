@@ -1,39 +1,133 @@
-https://data.humdata.org/dataset/83579cb5-3d43-4d21-8088-6ce124f16234/resource/03eaf28b-f74d-4cea-bb2a-726918450a5c/download/haiti_uscb_202212.xlsx
-  270,331 bytes
-  9 sheet(s)
-  -- 'Metadata': 183 rows x 2 cols
-     ['Metadata: Haiti', '']
-     ['Contents', '']
-     ['One metadata tab describing 9 ', '']
-  -- 'Data Dictionary': 305 rows x 4 cols
-     ['Data Dictionary: Haiti', '', '', '']
-     ['Standard Geographic Fields 1 (', '', '', '']
-     ['Field Name', 'Field Alias', 'Field Description', 'Field Data Source']
-  -- 'Population Estimates': 765 rows x 25 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM4_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Fourth-order administrative di', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na']
-     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '', '', '', '0', '', 'HT', 'HA', '', '']
-  -- 'Education': 13 rows x 25 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'EDU_ENO_F', 'EDU_ENPI_F', 'EDU_EPR_F']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Educational attainment, none, ', 'Educational attainment, primar', 'Educational attainment, primar']
-     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '23.7', '33.4', '6.4']
-  -- 'Health': 13 rows x 116 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'LQA_HAWF', 'LQA_HAWM', 'LQA_HASW']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Handwashing source, fixed loca', 'Handwashing source, mobile loc', 'Handwashing source, soap and w']
-     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '18.7', '63.4', '25']
-  -- 'Info and Com Technology': 13 rows x 29 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'ICT_MXTN_F', 'ICT_MXT_F', 'ICT_RAD1_F']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Mass media exposure, newspaper', 'Mass media exposure, televisio', 'Listens to the radio at least ']
-     ['HAITI', 'HAITI', 'HTI_GEO1_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '17.6', '32.8', '63.6']
-  -- 'Population': 706 rows x 20 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM2_NAME', 'ADM3_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'POP_BT_C']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Second-order administrative di', 'Third-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Both sexes total']
-     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '', '', '0', '', 'HT', 'HA', '', '', '8373750']
-  -- 'Housing Units': 12 rows x 119 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'HU_UTKA', 'HU_UTTA', 'HU_UTAJ']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Housing unit type, informal', 'Housing unit type, slum', 'Housing unit type, squatting']
-     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '27452', '55575', '354366']
-  -- 'Transportation': 12 rows x 23 cols
-     ['AREA_NAME', 'GEO_CONCAT', 'GEO_MATCH', 'CNTRY_NAME', 'ADM1_NAME', 'ADM_LEVEL', 'USCBCMNT', 'GENC_CODE', 'FIPS_CODE', 'NSO_CODE', 'NSO_NAME', 'TSP_MO0', 'TSP_MO1', 'TSP_MO2']
-     ['Country or subnational area na', 'Administrative division name c', 'Geographic match', 'Country name', 'First-order administrative div', 'Administrative level', 'Notes', 'GENC code', 'FIPS code', 'National statistical office co', 'National statistical office na', 'Conveyance type, motorcycle: 0', 'Conveyance type, motorcycle: 1', 'Conveyance type, motorcycle: 2']
-     ['HAITI', 'HAITI', 'HTI_GEO2_00', 'HAITI', '', '0', '', 'HT', 'HA', '', '', '1773368', '18264', '1141']
+page: https://censos2017.inei.gob.pe/bininei/RpWebEngine.exe/Portal?BASE=CPV2017DI&lang=esp
+  text: ﻿ PERÚ - Instituto Nacional de Estadística e Informática | REDATAM Close × ☰ Powered by REDATAM | © 2018 | CELADE, Population Division of ECLAC - United Nations. All rights reserved.
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619311.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619312.htm&TYPE=TMP
+  frame: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'REDATAM' -> http://www.cepal.org/en/topics/redatam
+pane: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619311.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Index Page Estadísticas Generales Frecuencias Preguntas de Vivienda Preguntas de Hogar Preguntas de Población Cruce de Preguntas Preguntas de Vivienda Preguntas de Hogar Preguntas de Población Preguntas de Vivienda, Hogar y Población Estadísticas Promedios Medianas Máximos Mínimos Estadísticas Básicas Lista de Áreas-Mapas Temáticos Lista de Preguntas Preguntas de Vivienda Preguntas de Hogar Preguntas de Población Preguntas de: Vivienda, Hogar y Población Conteo de Vivienda, Hogar y Población Principales Características Población estructura y composición Población por Sexo y Grupos de Edad Relación de Dependencia Distribución por Edades Relación de Dependencia e Índice de Masculinidad Viviendas particulares y hogares Infraestructura y servicios básicos Combustible para cocinar Acceso a las tecnologías de información y comunicación Características de las viviendas particulares y los hogares Redatam Procesador Estadístico Procesador Estadístico En-línea Descargar el diccionario Ayuda Descargar el software Redatam REDATAM Website Documentación Diccionario Todas las Variables Variables Geográficas Variables de Vivienda Variables de Hogar Variables de Población Categorías de las variables de Vivienda Categorías de las variables de Hogar Categorías de las variables de Población Cédula Censal Cédula Ficha Técnica del Censo Ficha técnica Guia de usuario Guia de usuario
+  link: 'CERRAR SESIÓN' -> http://intredatam.inei.gob.pe/pubinei/cerrar.asp
+  link: '' -> javascript:window.parent.location.reload(true);
+  link: 'Preguntas de Vivienda' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Frequency?BASE=CPV2017DI&ITEM=FREQVIV&lang=esp
+  link: 'Preguntas de Hogar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Frequency?BASE=CPV2017DI&ITEM=FREQHOG&lang=esp
+  link: 'Preguntas de Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Frequency?BASE=CPV2017DI&ITEM=FREQPOB&lang=esp
+  link: 'Preguntas de Vivienda' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=CRUCVIV&lang=esp
+  link: 'Preguntas de Hogar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=CRUCHOG&lang=esp
+  link: 'Preguntas de Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=CRUCPOB&lang=esp
+  link: 'Preguntas de Vivienda, Hogar y Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=CRUZCOMBI&lang=esp
+  link: 'Promedios' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp
+  link: 'Medianas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=MEDIAN1&lang=esp
+  link: 'Máximos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=MAX1&lang=esp
+  link: 'Mínimos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=MIN1&lang=esp
+  link: 'Estadísticas Básicas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp
+  link: 'Preguntas de Vivienda' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=AREAVIV&lang=esp
+  link: 'Preguntas de Hogar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=AREAHOG&lang=esp
+  link: 'Preguntas de Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=AREAPOB&lang=esp
+  link: 'Preguntas de: Vivienda, Hogar y Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=AREACOMBI&lang=esp
+  link: 'Conteo de Vivienda, Hogar y Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=COUNTS&lang=esp
+  link: 'Población por Sexo y Grupos de Edad' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=PIRAMI&lang=esp
+  link: 'Relación de Dependencia' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Fraction?BASE=CPV2017DI&ITEM=RELDEPAM&lang=esp
+  link: 'Distribución por Edades' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Qts?BASE=CPV2017DI&ITEM=TOTEDAD&lang=esp
+  link: 'Relación de Dependencia e Índice de Masculinidad' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=RELDEP&lang=esp
+  link: 'Infraestructura y servicios básicos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=CALIVIV&lang=esp
+  link: 'Combustible para cocinar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=CALIHOG&lang=esp
+  link: 'Acceso a las tecnologías de información y comunicación' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/AreaList?BASE=CPV2017DI&ITEM=CALITIC&lang=esp
+  link: 'Características de las viviendas particulares y los hogares' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=CALCOMB&lang=esp
+  link: 'Procesador Estadístico En-línea' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp
+  link: 'Descargar el diccionario' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Down_Dictionary.dic?LFN=RpBases\censos\CPV2017DI\BaseR\PERU.dic
+  link: 'Descargar el software Redatam' -> https://www.cepal.org/es/download-redatam
+  link: 'REDATAM Website' -> https://www.cepal.org/es/temas/redatam
+  link: 'Todas las Variables' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICALL&lang=esp
+  link: 'Variables Geográficas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICGEO&lang=esp
+  link: 'Variables de Vivienda' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICVIV&lang=esp
+  link: 'Variables de Hogar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICHOG&lang=esp
+  link: 'Variables de Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICPOB&lang=esp
+  link: 'Categorías de las variables de Vivienda' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICCATVIV&lang=esp
+  link: 'Categorías de las variables de Hogar' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICCATHOG&lang=esp
+  link: 'Categorías de las variables de Población' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Dictionary?BASE=CPV2017DI&ITEM=DICCATPOB&lang=esp
+  link: 'Cédula' -> https://censos2017.inei.gob.pe/pubinei/censos/Cpv2017/CedulaCensal.pdf
+  link: 'Ficha técnica' -> https://censos2017.inei.gob.pe/pubinei/censos/Cpv2017/Fichacensal2017.pdf
+  link: 'Guia de usuario' -> https://censos2017.inei.gob.pe/pubinei/censos/Cpv2017/cpv2017_REDATAM_WEB_GUIA_DE_USO.pdf
+pane: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619312.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Output Page
+pane: https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  text: ﻿ Redatam Webserver Footer Page RedAtam Webserver Home · Blog · Pricing · About · Faq · Contact --> © 2018 INEI, PERÚ Av. General Garzón 658 Jesús María Lima, Perú Tel: (51-1) 743-4949 infoinei@inei.gob.pe Acerca de... MISIÓN Producir y difundir información estadística oficial que el país necesitan con calidad, oportunidad y cobertura requerida. VISIÓN Somos un organismo líder a nivel nacional e internacional, que utiliza los más altos estándares metodológicos y tecnológicos para la producción y difusión de estadísticas oficiales.
+  link: 'Home' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'Blog' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'Pricing' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'About' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'Faq' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: 'Contact' -> https://censos2017.inei.gob.pe/bininei/RpWebUtilities.exe/Text?LFN=RpBases\Tempo\61931\~tmp_619313.htm&TYPE=TMP
+  link: '' -> http://www.twitter.com/INEI_oficial
+  link: '' -> http://www.facebook.com/pages/INSTITUTO-NACIONAL-DE-ESTAD%C3%8DSTICA-E-INFORM%C3%81TICA-SITIO-OFICIAL/130036523746567?ref=ts&fref=ts
+  link: '' -> https://www.youtube.com/user/videosINEI?app=desktop
+  link: '' -> https://plus.google.com/101383220586407294004
+  link: 'infoinei@inei.gob.pe' -> mailto:infoinei@inei.gob.pe
+follow: 'Promedios' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp
+  text: ﻿ Redatam Webserver Work Page Promedios ?? Regresar Tablas Gráficos Mapas Programa Redatam Diccionario Definición de Parámetros Título de la Tabla Promedio de: P: Edad en años P3a+: Último nivel de estudio que aprobó Pm12a+: Nro. total de hijos/as que actualmente - Están vivos Pm12a+: Nro. total de hijos/as que ha tenido - Nacidos vivos Fila P: Relación de parentesco con el jefe del hogar P: Sexo P: Edad en años P: Edad en grupos quinquenales P: Edad en Grupos Decenales P: Población según ciclo de vida P12a+: Estado civil o conyugal Control Ninguna P: Relación de parentesco con el jefe del hogar P: Sexo P: Edad en años P: Edad en grupos quinquenales P: Edad en Grupos Decenales P: Población según ciclo de vida P12a+: Estado civil o conyugal Columna Ninguna P: Relación de parentesco con el jefe del hogar P: Sexo P: Edad en años P: Edad en grupos quinquenales P: Edad en Grupos Decenales P: Población según ciclo de vida P12a+: Estado civil o conyugal Nivel de salida: Nacional Departamento Provincia Distrito Seleccionar departamento: Nacional Amazonas Ancash Apurimac Arequipa Ayacucho Cajamarca Callao Cusco Huancavelica Huanuco Ica Junin La Libertad Lambayeque Lima Provincia de Lima Region Lima Loreto Madre de Dios Moquegua Pasco Piura Puno San Martin Tacna Tumbes Ucayali 1a Selección de Usuario 2a Selección de Usuario Editar Formato de salida: Tabla Gráfico Programa Redatam Universo Ninguno Viviendas Particulares 8">Viviendas Colectivas Filtro (condiciones): Ninguno Urbano Rural 
+  link: 'Tablas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp#tabs-1
+  link: 'Gráficos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp#tabs-2
+  link: 'Mapas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp#tabs-3
+  link: 'Programa Redatam' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp#tabs-4
+  link: 'Diccionario' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab?BASE=CPV2017DI&ITEM=AVERAGE1&lang=esp#tabs-5
+  form: POST https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CrossTab
+    input hidden 'MAIN' = 'WebServerMain.inl'
+    input hidden 'BASE' = 'CPV2017DI'
+    input hidden 'LANG' = 'esp'
+    input hidden 'CODIGO' = 'XXUSUARIOXX'
+    input hidden 'ITEM' = 'AVERAGE1'
+    input hidden 'MODE' = 'RUN'
+    input text 'inputTitle' = ''
+    input hidden 'INLINESELECTION' = ''
+    input submit 'Submit' = 'Ejecutar'
+    input submit 'Submit' = 'Ayuda'
+    select 'AVERAGE': 0 options: 
+    select 'ROW': 0 options: 
+    select 'CONTROL': 0 options: 
+    select 'COLUMN': 0 options: 
+    select 'AREABREAK': 0 options: 
+    select 'SELECTION': 0 options: 
+    select 'FORMAT': 0 options: 
+    select 'UNIVERSE': 0 options: 
+    select 'FILTER': 0 options: 
+    textarea 'TEXT_FILTER'
+follow: 'Estadísticas Básicas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp
+  text: ﻿ Redatam Webserver Work Page Estadísticas Básicas ?? Regresar Tablas Gráficos Mapas Programa Redatam Diccionario Definición de Parámetros Título de la Tabla Seleccione una o más preguntas: Número Hogar V: Nro. de habitaciones que tiene en total la vivienda V: Total personas censadas V: Total personas hombres censados V: Total personas mujeres censadas H: Total personas en el hogar H: Nro. de personas en este hogar que viven en otro país P: Edad en años P: Edad en meses Seleccionar departamento: Nacional Amazonas Ancash Apurimac Arequipa Ayacucho Cajamarca Callao Cusco Huancavelica Huanuco Ica Junin La Libertad Lambayeque Lima Provincia de Lima Region Lima Loreto Madre de Dios Moquegua Pasco Piura Puno San Martin Tacna Tumbes Ucayali 1a Selección de Usuario 2a Selección de Usuario Editar Formato de salida: Tabla Programa Redatam Universo Ninguno Viviendas Particulares 8">Viviendas Colectivas Filtro (condiciones): Ninguno Urbano Rural Construir Filtro Procesando por Usted, intente hacer algo mientras espera...
+  link: 'Tablas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp#tabs-1
+  link: 'Gráficos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp#tabs-2
+  link: 'Mapas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp#tabs-3
+  link: 'Programa Redatam' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp#tabs-4
+  link: 'Diccionario' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats?BASE=CPV2017DI&ITEM=STATS1&lang=esp#tabs-5
+  form: POST https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/Stats
+    input hidden 'MAIN' = 'WebServerMain.inl'
+    input hidden 'BASE' = 'CPV2017DI'
+    input hidden 'LANG' = 'esp'
+    input hidden 'CODIGO' = 'XXUSUARIOXX'
+    input hidden 'ITEM' = 'STATS1'
+    input hidden 'MODE' = 'RUN'
+    input text 'inputTitle' = ''
+    input hidden 'INLINESELECTION' = ''
+    input submit 'Submit' = 'Ejecutar'
+    input submit 'Submit' = 'Ayuda'
+    select 'ROW': 0 options: 
+    select 'SELECTION': 0 options: 
+    select 'FORMAT': 0 options: 
+    select 'UNIVERSE': 0 options: 
+    select 'FILTER': 0 options: 
+    textarea 'TEXT_FILTER'
+follow: 'Procesador Estadístico En-línea' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp
+  text: ﻿ Redatam Webserver Work Page Escribir Programa Redatam+SP ?? Regresar Tablas Gráficos Mapas Programa Redatam Diccionario Definición de Parámetros # Entity/Variable Name Rótulo Alias Grupo Tipo Min Range Max Range 1 PERU CPV2017 - Distrital 2 Departam Departamento 2.1 CCDD Departamento STRING 2.2 NCCDD Departamento STRING 3 Provinci Provincia 3.1 CCPP Provincia STRING 3.2 NCCPP Provincia STRING 4 Distrito Distrito 4.1 CCDI Distrito STRING 4.2 NCCDI Distrito STRING 5 Vivienda Vivienda 5.1 VAREA V: Área concepto censal AREA INTEGER 1 2 5.2 ENCAREA V: Área concepto encuesta AREA AREA INTEGER 1 2 5.3 C2P2 V: Condición de ocupación de la vivienda CONDOCUP ESTRUCTURA INTEGER 1 7 5.4 C2P3 V: Material de construcción predominante en las paredes PARED ESTRUCTURA INTEGER 1 9 5.5 C2P4 V: Material de construcción predominante en los techos TECHO ESTRUCTURA INTEGER 1 8 5.6 C2P5 V: Material de construcción predominante en los pisos PISO ESTRUCTURA INTEGER 1 7 5.7 C2P6 V: Abastecimiento de agua en la vivienda AGUAOROC AGUA INTEGER 1 10 5.8 C2P7 V: Servicio de agua - Todos los días de la semana DIARIO AGUA INTEGER 1 2 5.9 C2P7A V: Servicio de agua - En la semana ¿Cuántas horas por día? AGUA INTEGER 1 24 5.10 C2P7B V: Servicio de agua - Solo algunos días a la semana AGUA INTEGER 0 6 5.11 C2P7C V: Servicio de agua - Por los días de la semana ¿Cuántas horas al día? AGUA INTEGER 1 24 5.12 C2P8 V: ¿Pagan por el servicio de agua? AGUA INTEGER 1 2 5.13 C2P9 V: A qué empresa o entidad se paga por el
+  link: 'Tablas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp#tabs-1
+  link: 'Gráficos' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp#tabs-2
+  link: 'Mapas' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp#tabs-3
+  link: 'Programa Redatam' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp#tabs-4
+  link: 'Diccionario' -> https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet?BASE=CPV2017DI&ITEM=PROGRED&lang=esp#tabs-5
+  form: POST https://censos2017.inei.gob.pe/bininei/RpWebStats.exe/CmdSet
+    input hidden 'MAIN' = 'WebServerMain.inl'
+    input hidden 'BASE' = 'CPV2017DI'
+    input hidden 'LANG' = 'esp'
+    input hidden 'CODIGO' = 'XXUSUARIOXX'
+    input hidden 'ITEM' = 'PROGRED'
+    input hidden 'MODE' = 'RUN'
+    input submit 'Submit' = 'Ejecutar'
+    textarea 'CMDSET'
