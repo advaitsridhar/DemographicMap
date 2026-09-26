@@ -21,10 +21,15 @@ municipio, and reads them back:
   Guajiro, the Pemón's three peoples), and the states' sums must equal that
   published table people by people.
 
-"Morena/moreno" in Venezuela is the brown, mixed majority -- 51.6% of the
-country -- which the Factbook reports as "unspecified Mestizo". It is written
-"Moreno (Venezuela)" so it is not read as Panama's Afro-descendant moreno;
-its place in the group tree is proposed beside Pardo and Mestizo.
+"Morena/moreno" is 51.6% of the country, and the Factbook reports it as
+"unspecified Mestizo". The census means something narrower: INE's own
+definition for the enumerators (Meta_Persona, question 7) is "toda persona
+cuyas características fenotípicas son menos marcadas o pronunciadas que de la
+persona definida como negra o negro", a term "que en algunos contextos puede
+ser utilizado para suavizar las implicaciones discriminatorias que conlleva
+ser una persona negra". The label is the census's, "Moreno", which the group
+tree files with the Afro-descendant peoples of the Americas as it does
+Panama's moreno, and the note quotes the definition.
 
 Municipios whose names changed since the boundary file was drawn are bound
 by ALIASES (Tinaquillo was Falcón, Angostura was Raúl Leoni, Guajira was
@@ -74,7 +79,7 @@ QUESTIONS = {"sex": "SEXO", "age": "EDAD", "peoples": "CUALINDIGE", "identity": 
 NOT_ASKED = re.compile(r"^(?:NSA|Ignorado)\b")
 SEXES = {"hombre": "men", "mujer": "women"}
 IDENTITY = {"Negra / Negro": "Black", "Afrodescendiente": "Afro-descendant",
-            "Morena / Moreno": "Moreno (Venezuela)", "Blanca / Blanco": "White",
+            "Morena / Moreno": "Moreno", "Blanca / Blanco": "White",
             "Otra": "Other"}
 NOT_STATED = "Not stated"
 # CUALINDIGE's categories -> the names INE's table by state gives them
@@ -279,8 +284,10 @@ def fields(unit: dict[str, Any], level: str) -> dict[str, Any]:
             f"indigenous people, and which: {indigenous:,} of the {unit['people']:,} people here "
             "do, and each people is its own line, under the name INE's table by state gives "
             "it. Everyone else was asked whether they see themselves as negra/negro, "
-            "afrodescendiente, morena/moreno, blanca/blanco or otra; in Venezuela moreno is "
-            "the brown, mixed majority, which the Factbook reports as mestizo. "
+            "afrodescendiente, morena/moreno, blanca/blanco or otra, by their features, "
+            "family ancestry, culture and traditions. INE defines moreno for its enumerators "
+            "as a person whose features are less marked than those of a person it defines as "
+            "Black, a term sometimes used to soften the discrimination of being Black. "
             + (f"{unit['not_stated']:,} answered neither and are 'Not stated'."
                if unit["not_stated"] else "")),
     }

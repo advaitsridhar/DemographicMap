@@ -76,7 +76,7 @@ class Municipios(unittest.TestCase):
         self.assertEqual(unit["peoples_"], {"Wayuu": 80})
         self.assertEqual(unit["not_stated"], 2)
         got = {r["group"]: r["count"] for r in vr.fields(unit, "admin2")["ethnicity"]}
-        self.assertEqual(got, {"Wayuu": 80, "Moreno (Venezuela)": 15, "Other": 3,
+        self.assertEqual(got, {"Wayuu": 80, "Moreno": 15, "Other": 3,
                                vr.NOT_STATED: 2})
         self.assertEqual(units["2401"]["state"], "La Guaira")
 
@@ -107,7 +107,7 @@ class Labels(unittest.TestCase):
     def test_every_spelling_folds_into_the_name_ine_s_state_table_uses(self):
         self.assertEqual(vr.PEOPLES["Guajiro"], vr.PEOPLES["Wayuu"])
         self.assertEqual(vr.PEOPLES["Taurepán"], "Pemón")
-        self.assertEqual(vr.IDENTITY["Morena / Moreno"], "Moreno (Venezuela)")
+        self.assertEqual(vr.IDENTITY["Morena / Moreno"], "Moreno")
 
 
 if __name__ == "__main__":

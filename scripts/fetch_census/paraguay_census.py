@@ -462,7 +462,10 @@ def district_counts(by_question: dict[str, dict[str, dict]]) -> dict[str, dict[s
                 raise SystemExit(f"paraguay_census: {item}: {unit['name']}'s unrecorded "
                                  "answers differ from the other items'")
             spoken[label] = rows.get(fold(category), 0)
-        if spoken["none"] != habla[2] or any(spoken[l] > habla[1] for _, _, l in LANGUAGES):
+        # "Speaks no language" is HABLA 2, those who said so and named none: a
+        # few said so and named one too (59 in the country), and they are
+        # counted with the languages they named.
+        if spoken["none"] < habla[2] or any(spoken[l] > habla[1] for _, _, l in LANGUAGES):
             raise SystemExit(f"paraguay_census: {unit['name']}'s languages do not fit its "
                              "respondents")
         unit["spoken"] = spoken
