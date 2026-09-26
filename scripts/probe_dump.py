@@ -28,23 +28,19 @@ import argparse
 import html as htmllib
 import io
 import re
-import sys
 import urllib.request
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
-from common import USER_AGENT  # noqa: E402
 
 TIMEOUT = 120
+UA = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 
 
 def fetch(url: str, wayback: str = "") -> bytes:
     if wayback:
         url = f"https://web.archive.org/web/{wayback}id_/{url}"
-    # An Accept header, because SIB Belize's server answers a request without
-    # one with 406 Not Acceptable.
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
+    # The project's name without the library's: SIB Belize's server answers
+    # 406 Not Acceptable to a User-Agent ending "python-urllib", and serves the
+    # same file to the name probe_redatam.py and probe_links.py send.
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         return resp.read()
 
