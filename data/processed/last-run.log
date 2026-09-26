@@ -1,47 +1,7 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-page: https://www5.ine.gub.uy/documents/visualizador_censo2023.html
-  887 bytes
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visualizador Censo 2023</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-    }
-
-    .viz-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .viz-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <div class="viz-container">
-    <iframe
-      src="https://public.tableau.com/views/censo_2023_2026_6_9/Portada?:showVizHome=no&:embed=true"
-      title="Visualizador Censo 2023"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
-</body>
-</html>
-
+  2015 estimates: 10 departments, 42 arrondissements and 140 communes making IHSI's 10,911,819; every row's sexes, and every level's parts, making it
+  UNFPA 2024: 140 communes in IHSI's 42 arrondissements, each arrondissement one P-code prefix
+  42 arrondissements bound to their polygons; 0 not: 
+  polygons with no arrondissement: []
+  wrote data/processed/haiti_census.json (126 kB)
+  wrote data/processed/haiti_cod_ps_age.json (84 kB)
+  wrote haiti_census.json: 52 records; haiti_cod_ps_age.json: 52 records

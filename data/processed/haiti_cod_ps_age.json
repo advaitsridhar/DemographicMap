@@ -660,6 +660,56 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from UNFPA's 2024 projection of the population by sex and age group (COD-PS), which carries the 2003 census forward with fertility, mortality and migration; Haiti has held no census since 2003."
   },
   {
+    "id": "HTI-UNFPA-HTI_GEO1_01_05",
+    "level": "admin2",
+    "name": "Arrondissement de La Gonâve",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "UNFPA, Haiti Common Operational Dataset on Population Statistics (COD-PS), 2024: projection from the 2003 census by sex and five-year age group"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "UNFPA, Haiti Common Operational Dataset on Population Statistics (COD-PS), 2024: projection from the 2003 census by sex and five-year age group",
+        "url": "https://data.humdata.org/dataset/cod-ps-hti",
+        "year": 2024,
+        "license": "CC BY-IGO, via HDX"
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B98520683120180",
+    "codes": {
+      "pcode_prefix": "HT015"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from UNFPA's 2024 projection of the population by sex and age group (COD-PS), which carries the 2003 census forward with fertility, mortality and migration; Haiti has held no census since 2003."
+  },
+  {
     "id": "HTI-UNFPA-HTI_GEO1_02_01",
     "level": "admin2",
     "name": "Arrondissement de Jacmel",
@@ -1806,6 +1856,56 @@
     "shape_id": "57096268B6056210372718",
     "codes": {
       "pcode_prefix": "HT064"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from UNFPA's 2024 projection of the population by sex and age group (COD-PS), which carries the 2003 census forward with fertility, mortality and migration; Haiti has held no census since 2003."
+  },
+  {
+    "id": "HTI-UNFPA-HTI_GEO1_07_01",
+    "level": "admin2",
+    "name": "Arrondissement des Cayes",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "UNFPA, Haiti Common Operational Dataset on Population Statistics (COD-PS), 2024: projection from the 2003 census by sex and five-year age group"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "UNFPA, Haiti Common Operational Dataset on Population Statistics (COD-PS), 2024: projection from the 2003 census by sex and five-year age group",
+        "url": "https://data.humdata.org/dataset/cod-ps-hti",
+        "year": 2024,
+        "license": "CC BY-IGO, via HDX"
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B19780609344191",
+    "codes": {
+      "pcode_prefix": "HT071"
     },
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from UNFPA's 2024 projection of the population by sex and age group (COD-PS), which carries the 2003 census forward with fertility, mortality and migration; Haiti has held no census since 2003."
   },
