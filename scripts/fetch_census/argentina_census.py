@@ -353,8 +353,14 @@ def ages(rows: list[list[Any]], what: str) -> tuple[int, int, float | None]:
 
 
 def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int,
-               departments: dict[str, str], what: str) -> dict[str, list[list[Any]]]:
-    """Department sheets keyed by INDEC code, each found by the name in its title."""
+               departments: dict[str, str], what: str, *, complete: bool = True
+               ) -> dict[str, list[list[Any]]]:
+    """Department sheets keyed by INDEC code, each found by the name in its title.
+
+    ``complete=False`` lets a department have no sheet: the indigenous tables
+    leave out a department with no one in them, which the caller confirms
+    by the others making the province's total.
+    """
     out: dict[str, list[list[Any]]] = {}
     for (p, d), rows in sheets.items():
         if p != index or d is None:
@@ -368,7 +374,8 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
                 hits.append((len(key), code))
         if not hits:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} ({title(rows)!r}) "
-                             f"names no department")
+                             f"names no department; unplaced so far: "
+                             + ", ".join(departments[c] for c in departments if c not in out))
         hits.sort(reverse=True)
         if len(hits) > 1 and hits[0][0] == hits[1][0]:
             raise SystemExit(f"argentina_census: {what}: sheet {index}.{d} names two departments")
@@ -377,9 +384,11 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
             raise SystemExit(f"argentina_census: {what}: two sheets for {departments[code]}")
         out[code] = rows
     missing = sorted(set(departments) - set(out))
-    if missing:
+    if missing and complete:
         raise SystemExit(f"argentina_census: {what}: no sheet for "
                          + ", ".join(departments[c] for c in missing[:8]))
+    if missing:
+        log(f"  {what}: no sheet for " + ", ".join(departments[c] for c in missing))
     return out
 
 
@@ -518,9 +527,16 @@ def main() -> int:
         ind1 = sheets[("poblacion_indigena", 1)]
         ind7 = sheets[("poblacion_indigena", 7)]
         indigenous = {c: total_row(r, f"{what} indigenous {names[c]}")[0]
-                      for c, r in dept_sheet(ind1, index, names, f"{what} indigena_c1").items()}
+                      for c, r in dept_sheet(ind1, index, names, f"{what} indigena_c1",
+                                             complete=False).items()}
         speak = {c: [n for n in total_row(r, f"{what} language {names[c]}") if n is not None]
-                 for c, r in dept_sheet(ind7, index, names, f"{what} indigena_c7").items()}
+                 for c, r in dept_sheet(ind7, index, names, f"{what} indigena_c7",
+                                        complete=False).items()}
+        # A department the indigenous tables leave out has no one in them;
+        # the others making the province's total below is what says so.
+        for code in names:
+            indigenous.setdefault(code, 0)
+            speak.setdefault(code, [0, 0, 0, 0])
         ind_province = total_row(sheet(ind1, index, f"{what} indigena_c1"),
                                  f"{what} indigenous")[0]
         speak_province = [n for n in total_row(sheet(ind7, index, f"{what} indigena_c7"),
