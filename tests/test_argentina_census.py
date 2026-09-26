@@ -39,6 +39,9 @@ class Cells(unittest.TestCase):
     def test_an_age_stored_as_a_float_reads_as_its_year(self):
         self.assertEqual(ac.label(5.0), "5")
 
+    def test_a_degree_sign_and_an_ordinal_indicator_fold_alike(self):
+        self.assertEqual(ac.fold("1° de Mayo"), ac.fold("1º de Mayo"))
+
 
 class Sheets(unittest.TestCase):
     def test_buenos_aires_names_its_sheets_without_a_space_and_its_province_zero(self):

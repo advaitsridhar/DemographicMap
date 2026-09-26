@@ -154,7 +154,10 @@ FIVE_YEAR: dict[str, float | None] = {}
 
 
 def fold(name: str) -> str:
-    stripped = unicodedata.normalize("NFKD", str(name or ""))
+    # Chaco's "1° de Mayo" is "1º de Mayo" in another table: a degree sign in
+    # one, an ordinal indicator (which NFKD would read as "o") in the other.
+    text = re.sub(r"[º°ª]", "", str(name or ""))
+    stripped = unicodedata.normalize("NFKD", text)
     return "".join(c for c in stripped.lower() if c.isalnum() and not unicodedata.combining(c))
 
 
