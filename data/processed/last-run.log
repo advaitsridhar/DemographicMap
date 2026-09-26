@@ -1,18 +1,379 @@
-  cuadro 12: 13 provinces and comarcas; medians within 0.9 years of INEC's
-  every table agrees on every province, and each province's districts make it
-  Almirante (bocasdeltoro) is added to Changuinola, which the boundary file draws whole
-  Omar Torrijos Herrera (colon) is added to Donoso, which the boundary file draws whole
-  Tierras Altas (chiriqui) is added to Bugaba, which the boundary file draws whole
-  Santa Fe (darien) is added to Chepigana, which the boundary file draws whole
-  Jirondai (comarcangabebugle) is added to Kankintú, which the boundary file draws whole
-  Santa Catalina o Calovébora (comarcangabebugle) is added to Kusapín, which the boundary file draws whole
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/panama_census.py", line 470, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/panama_census.py", line 389, in main
-    unit["afro"] = [a + b for a, b in zip(unit["afro"], afro_dist[(prov, dist)])]
-                                                        ~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: ('comarcangabebugle', 'santacatalinaocalovebora')
+page: https://www.ine.gov.py/publicacion/2/poblacion
+  161,437 bytes
+  121 matching link(s)
+  - Resultados Finales del Censo 2002
+    https://www.ine.gov.py/microdatos/acceso-informacion-censo.php
+  - IV Censo Nacional Indígena 2022- Resultados de Población y Viviendas
+    https://www.ine.gov.py/publicacion/31/poblacion-indigena
+  - Resultados finales Estructura de la población por edad y sexo 2022
+    https://www.ine.gov.py/publicacion/2/poblacion
+  - Necesidades Básicas Insatisfechas (NBI), Resultados Censo 2022
+    https://www.ine.gov.py/publicacion/4/pobreza
+  - Principales datos sobre Educación de la Población- Resultados del Cens
+    https://www.ine.gov.py/publicacion/6/educacion
+  - Cuadro 1. Paraguay. Población total por área urbana-rural y sexo, segú
+    https://www.ine.gov.py/assets/documento/92/Cuadro 1. Paraguay. Población total por área urbana-rural y sexo, según departamento y distrito, 2022..xlsx
+  - Cuadro 2. Paraguay. Población total por área urbana-rural y sexo, segú
+    https://www.ine.gov.py/assets/documento/257/Cuadro 2. Paraguay. Población total por área urbana-rural y sexo, según grupos de edad, 2022..xlsx
+  - Cuadro 3. Asunción. Población total por área urbana-rural y sexo, segú
+    https://www.ine.gov.py/assets/documento/251/Cuadro 3. Asunción. Población total por área urbana-rural y sexo, según grupos de edad, 2022..xlsx
+  - Cuadro 4. Departamento Concepción. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro 4. Departamento Concepción. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 5. Departamento San Pedro. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/257/Cuadro 5. Departamento San Pedro. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 6. Departamento Cordillera. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/251/Cuadro 6. Departamento Cordillera. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 7. Departamento Guairá. Población total por área urbana-rural y
+    https://www.ine.gov.py/assets/documento/257/Cuadro 7. Departamento Guairá. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 8. Departamento Caaguazú. Población total por área urbana-rural
+    https://www.ine.gov.py/assets/documento/251/Cuadro 8. Departamento Caaguazú. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 9. Departamento Caazapá. Población total por área urbana-rural 
+    https://www.ine.gov.py/assets/documento/251/Cuadro 9. Departamento Caazapá. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 10. Departamento Itapúa. Población total por área urbana-rural 
+    https://www.ine.gov.py/assets/documento/251/Cuadro 10. Departamento Itapúa. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 11. Departamento Misiones. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/251/Cuadro 11. Departamento Misiones. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 12. Departamento Paraguarí. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro 12. Departamento Paraguarí. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 13. Departamento Alto Paraná. Población total por área urbana-r
+    https://www.ine.gov.py/assets/documento/251/Cuadro 13. Departamento Alto Paraná. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 14. Departamento Central. Población total por área urbana-rural
+    https://www.ine.gov.py/assets/documento/257/Cuadro 14. Departamento Central. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 15. Departamento Ñeembucú. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/251/Cuadro 15. Departamento Ñeembucú. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 16. Departamento Amambay. Población total por área urbana-rural
+    https://www.ine.gov.py/assets/documento/251/Cuadro 16. Departamento Amambay. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 17. Departamento Canindeyú. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/268/Cuadro 17. Departamento Canindeyú. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 18. Departamento Presidente Hayes. Población total por área urb
+    https://www.ine.gov.py/assets/documento/257/Cuadro 18. Departamento Presidente Hayes. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 19. Departamento Boquerón. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/257/Cuadro 19. Departamento Boquerón. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 20. Departamento Alto Paraguay. Población total por área urbana
+    https://www.ine.gov.py/assets/documento/257/Cuadro 20. Departamento Alto Paraguay. Población total por área urbana-rural y sexo, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro 1.1 Asunción. Población por sexo y edad mediana, según barrio, 
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.1 Asunción. Población por sexo y edad mediana, según barrio, 2022.xlsx
+  - Cuadro 1.2 Departamento Concepción. Población por sexo y edad mediana,
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.2 Departamento Concepción. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.3 Departamento San Pedro. Población por sexo y edad mediana, 
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.3 Departamento San Pedro. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.4 Departamento Cordillera. Población por sexo y edad mediana,
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.4 Departamento Cordillera. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.5 Departamento Guairá. Población por sexo y edad mediana, seg
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.5 Departamento Guairá. Población por sexo y edad mediana, según distrito, 2022..xlsx
+  - Cuadro 1.6 Departamento Caaguazú. Población por sexo y edad mediana, s
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.6 Departamento Caaguazú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.7 Departamento Caazapá. Población por sexo y edad mediana, se
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.7 Departamento Caazapá. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.8 Departamento Itapúa. Población por sexo y edad mediana, seg
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.8 Departamento Itapúa. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.9 Departamento Misiones. Población por sexo y edad mediana, s
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.9 Departamento Misiones. Población por sexo  y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.10 Departamento Paraguarí. Población por sexo y edad mediana,
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.10 Departamento Paraguarí. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.11 Departamento Alto Paraná. Población por sexo y edad median
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.11 Departamento Alto Paraná. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.12 Departamento Central. Población por sexo y edad mediana, s
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.12 Departamento Central. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.13 Departamento Neembucú. Población por sexo y edad mediana, 
+    https://www.ine.gov.py/assets/documento/76/Cuadro 1.13 Departamento Neembucú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.14 Departamento Amambay. Población por sexo y edad mediana, s
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.14 Departamento Amambay. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.15 Departamento Canindeyú. Población por sexo y edad mediana,
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.15 Departamento Canindeyú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.16 Departamento Presidente Hayes. Población por sexo y edad m
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.16 Departamento Presidente Hayes. Población por sexo  y edad mediana, según distrito, 2022..xlsx
+  - Cuadro 1.17 Departamento Boquerón. Población por sexo y edad mediana, 
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.17 Departamento Boquerón. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.18 Departamento Alto Paraguay. Población por sexo y edad medi
+    https://www.ine.gov.py/assets/documento/257/Cuadro 1.18 Departamento Alto Paraguay. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro A1. Paraguay. Población total por área urbana-rural, según depa
+    https://www.ine.gov.py/assets/documento/257/Cuadro A1. Paraguay. Población total por área urbana-rural, según departamento y distrito, 2022.xlsx
+  - Cuadro A2. Paraguay. Población total por área urbana-rural, según depa
+    https://www.ine.gov.py/assets/documento/257/Cuadro A2. Paraguay. Población total por área urbana-rural, según departamento y grupos de edad, 2022.xlsx
+  - Cuadro A3. Asunción. Población total por área urbana-rural, según grup
+    https://www.ine.gov.py/assets/documento/257/Cuadro A3. Asunción. Población total por área urbana-rural, según grupos de edad, 2022.xlsx
+  - Cuadro A4. Departamento Concepción. Población total por área urbana-ru
+    https://www.ine.gov.py/assets/documento/257/Cuadro A4. Departamento Concepción. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A5. Departamento San Pedro. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro A5. Departamento San Pedro. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A6. Departamento Cordillera. Población total por área urbana-ru
+    https://www.ine.gov.py/assets/documento/257/Cuadro A6. Departamento Cordillera. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A7. Departamento Guairá. Población total por área urbana-rural,
+    https://www.ine.gov.py/assets/documento/257/Cuadro A7. Departamento Guairá.  Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A8. Departamento Caaguazú. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/257/Cuadro A8. Departamento Caaguazú. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A9. Departamento Caazapá. Población total por área urbana-rural
+    https://www.ine.gov.py/assets/documento/257/Cuadro A9. Departamento Caazapá. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A10. Departamento Itapúa. Población total por área urbana-rural
+    https://www.ine.gov.py/assets/documento/257/Cuadro A10. Departamento Itapúa. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A11. Departamento Misiones. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro A11. Departamento Misiones. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A12. Departamento Paraguarí. Población total por área urbana-ru
+    https://www.ine.gov.py/assets/documento/257/Cuadro A12. Departamento Paraguarí. Población total por área urbana-rural, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro A13. Departamento Alto Paraná. Población total por área urbana-
+    https://www.ine.gov.py/assets/documento/257/Cuadro A13. Departamento Alto Paraná.  Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A14. Departamento Central. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/257/Cuadro A14. Departamento Central. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A15. Departamento Ñeembucú. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro A15. Departamento Ñeembucú. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A16. Departamento Amambay. Población total por área urbana-rura
+    https://www.ine.gov.py/assets/documento/257/Cuadro A16. Departamento Amambay. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A17. Departamento Canindeyú. Población total por área urbana-ru
+    https://www.ine.gov.py/assets/documento/257/Cuadro A17. Departamento Canindeyú. Población total por área urbana-rural, según distrito y grupos de edad, 2022..xlsx
+  - Cuadro A18. Departamento Presidente Hayes. Población total por área ur
+    https://www.ine.gov.py/assets/documento/257/Cuadro A18. Departamento Presidente Hayes. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A19. Departamento Boquerón. Población total por área urbana-rur
+    https://www.ine.gov.py/assets/documento/257/Cuadro A19. Departamento Boquerón.  Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro A20. Departamento Alto Paraguay. Población total por área urban
+    https://www.ine.gov.py/assets/documento/257/Cuadro A20. Departamento Alto Paraguay. Población total por área urbana-rural, según distrito y grupos de edad, 2022.xlsx
+  - Cuadro 1.1 Asunci?n. Poblaci?n por sexo y edad mediana, seg?n barrio, 
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.1 Asunción. Población por sexo y edad mediana, según barrio, 2022.xlsx
+  - Cuadro 1.2 Departamento Concepci?n. Poblaci?n por sexo y edad mediana,
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.2 Departamento Concepción. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.3 Departamento San Pedro. Poblaci?n por sexo y edad mediana, 
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.3 Departamento San Pedro. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.4 Departamento Cordillera. Poblaci?n por sexo y edad mediana,
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.4 Departamento Cordillera. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.5 Departamento Guair?. Poblaci?n por sexo y edad mediana, seg
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.5 Departamento Guairá. Población por sexo y edad mediana, según distrito, 2022..xlsx
+  - Cuadro 1.6 Departamento Caaguaz?. Poblaci?n por sexo y edad mediana, s
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.6 Departamento Caaguazú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.7 Departamento Caazap?. Poblaci?n por sexo y edad mediana, se
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.7 Departamento Caazapá. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.8 Departamento Itap?a. Poblaci?n por sexo y edad mediana, seg
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.8 Departamento Itapúa. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.9 Departamento Misiones. Poblaci?n por sexo y edad mediana, s
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.9 Departamento Misiones. Población por sexo  y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.10 Departamento Paraguar?. Poblaci?n por sexo y edad mediana,
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.10 Departamento Paraguarí. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.11 Departamento Alto Paran?. Poblaci?n por sexo y edad median
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.11 Departamento Alto Paraná. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.12 Departamento Central. Poblaci?n por sexo y edad mediana, s
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.12 Departamento Central. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.13 Departamento Neembuc?. Poblaci?n por sexo y edad mediana, 
+    https://www.ine.gov.py/publicacion/2/assets/documento/76/Cuadro 1.13 Departamento Neembucú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.14 Departamento Amambay. Poblaci?n por sexo y edad mediana, s
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.14 Departamento Amambay. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.15 Departamento Canindey?. Poblaci?n por sexo y edad mediana,
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.15 Departamento Canindeyú. Población por sexo y edad mediana, según distrito, 2022.xlsx
+  - Cuadro 1.16 Departamento Presidente Hayes. Poblaci?n por sexo y edad m
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.16 Departamento Presidente Hayes. Población por sexo  y edad mediana, según distrito, 2022..xlsx
+  - Cuadro 1.17 Departamento Boquer?n. Poblaci?n por sexo y edad mediana, 
+    https://www.ine.gov.py/publicacion/2/assets/documento/257/Cuadro 1.17 Departamento Boquerón. Población por sexo y edad mediana, según distrito, 2022.xlsx
+page: https://www.ine.gov.py/publicacion/31/poblacion-indigena
+  155,477 bytes
+  241 matching link(s)
+  - Resultados Finales del Censo 2002
+    https://www.ine.gov.py/microdatos/acceso-informacion-censo.php
+  - IV Censo Nacional Indígena 2022- Resultados de Población y Viviendas
+    https://www.ine.gov.py/publicacion/31/poblacion-indigena
+  - Resultados finales Estructura de la población por edad y sexo 2022
+    https://www.ine.gov.py/publicacion/2/poblacion
+  - Necesidades Básicas Insatisfechas (NBI), Resultados Censo 2022
+    https://www.ine.gov.py/publicacion/4/pobreza
+  - Principales datos sobre Educación de la Población- Resultados del Cens
+    https://www.ine.gov.py/publicacion/6/educacion
+  - Cuadro C1.Comunidades indígenas por condición de tenencia de personerí
+    https://www.ine.gov.py/assets/documento/259/Cuadro C1.Comunidades indígenas por condición de tenencia de personería jurídica.xlsx
+  - Cuadro C2.Comunidades indígenas por condición de tenencia de tierra y 
+    https://www.ine.gov.py/assets/documento/259/Cuadro C2.Comunidades indígenas por condición de tenencia de tierra y título de propiedad a nombre de la comunidad.xlsx
+  - Cuadro C3.Comunid. indíg. con tierra propia y titulada por institución
+    https://www.ine.gov.py/assets/documento/259/Cuadro C3.Comunid. indíg. con tierra propia y titulada por institución que otorgó o adquirió la tierra, total de hectáreas.xlsx
+  - Cuadro C4. Comunid. indíg con tierra propia sin título o sin tierra pr
+    https://www.ine.gov.py/assets/documento/259/Cuadro C4. Comunid. indíg con tierra propia sin título o sin tierra propia por propietario de la tierra que ocupa.xlsx
+  - Cuadro C5. Comunidades indígenas con tierra propia sin título o sin ti
+    https://www.ine.gov.py/assets/documento/259/Cuadro C5. Comunidades indígenas con tierra propia sin título o sin tierra propia, por trámite para legalización.xlsx
+  - Cuadro C6. Comunidades indígenas con algún problema en relación con la
+    https://www.ine.gov.py/assets/documento/259/Cuadro C6. Comunidades indígenas con algún problema en relación con la tenencia de la tierra.xlsx
+  - Cuadro C7. Comunidades indígenas por condición de alquiler o préstamo 
+    https://www.ine.gov.py/assets/documento/259/Cuadro C7. Comunidades indígenas por condición de alquiler o préstamo de la tierra a terceros.xlsx
+  - Cuadro C8.Comunidades indígenas que alquilan o prestan la tierra a ter
+    https://www.ine.gov.py/assets/documento/259/Cuadro C8.Comunidades indígenas que alquilan o prestan la tierra a terceros por formas de uso.xlsx
+  - Cuadro C9. Comunidades indígenas por alguna dificultad que afecta a lo
+    https://www.ine.gov.py/assets/documento/259/Cuadro C9. Comunidades indígenas por alguna dificultad que afecta a los recursos naturales.xlsx
+  - Cuadro C10. Comunidades indígenas por problemas de violencia interna (
+    https://www.ine.gov.py/assets/documento/259/Cuadro C10. Comunidades indígenas por problemas de violencia interna () ocurridos en los últimos seis meses.xlsx
+  - Cuadro C11.Comunidades indígenas con problemas de violencia externa ()
+    https://www.ine.gov.py/assets/documento/259/Cuadro C11.Comunidades indígenas con problemas de violencia externa () ocurridos en los últimos seis meses.xlsx
+  - Cuadro C12. Comunidades indígenas con problemas de violencia externa p
+    https://www.ine.gov.py/assets/documento/259/Cuadro C12. Comunidades indígenas con problemas de violencia externa por sus principales agresores.xlsx
+  - Cuadro C13.Comunid indíg por problemas de violencia externa por person
+    https://www.ine.gov.py/assets/documento/259/Cuadro C13.Comunid indíg por problemas de violencia externa por persona o institución a la que recurrieron.xlsx
+  - Cuadro C14. Comunidades indígenas por condición de asociación y tipo d
+    https://www.ine.gov.py/assets/documento/259/Cuadro C14. Comunidades indígenas por condición de asociación y tipo de organización indígena.xlsx
+  - Cuadro M1. Maestros que enseñan en las comunidades, aldeas o barrios i
+    https://www.ine.gov.py/assets/documento/259/Cuadro M1. Maestros que enseñan en las comunidades, aldeas o barrios indígenas por pertenencia étnica.xlsx
+  - Cuadro M2.Maestros que enseñan en las comunidades, aldeas o barrios in
+    https://www.ine.gov.py/assets/documento/259/Cuadro M2.Maestros que enseñan en las comunidades, aldeas o barrios indígenas por si vive en la aldea o barrio.xlsx
+  - Cuadro M3. Maestros que enseñan en las comunidades, aldeas o barrios i
+    https://www.ine.gov.py/assets/documento/259/Cuadro M3. Maestros que enseñan en las comunidades, aldeas o barrios indígenas por lengua o idioma que hablan.xlsx
+  - Cuadro M4. Maestros que enseñan en las comunid, aldeas o barrios indíg
+    https://www.ine.gov.py/assets/documento/259/Cuadro M4. Maestros que enseñan en las comunid, aldeas o barrios indíg por si asiste todos los días a la clase.xlsx
+  - Cuadro M5. Maestros que enseñan en las comunidades, aldeas o barrios i
+    https://www.ine.gov.py/assets/documento/259/Cuadro M5. Maestros que enseñan en las comunidades, aldeas o barrios indígenas por si tiene sueldo y quién les paga.xlsx
+  - Cuadro A1. Comunid, aldeas o barrios indíg por tenencia de un local de
+    https://www.ine.gov.py/assets/documento/259/Cuadro A1. Comunid,  aldeas o barrios indíg por tenencia de un local de atención.xlsx
+  - Cuadro A2. Comunid. aldeas o barrios indíg. por acceso a servicios de 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A2. Comunid. aldeas o barrios indíg. por acceso a servicios de una USF.xlsx
+  - Cuadro A3. Comunid. aldeas o barrios indíg. que reciben el servicio de
+    https://www.ine.gov.py/assets/documento/259/Cuadro A3. Comunid. aldeas o barrios indíg. que reciben el servicio de una USF por frecuencia.xlsx
+  - Cuadro A4.Comunid. aldeas o barrios indíg que reciben el servicio de u
+    https://www.ine.gov.py/assets/documento/259/Cuadro A4.Comunid. aldeas o barrios indíg que reciben el servicio de una USF por provición de medic..xlsx
+  - Cuadro A5.Comunid. aldeas o barrios indíg. por dónde recurren en caso 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A5.Comunid. aldeas o barrios indíg. por dónde recurren en caso de necesidad para la atención.xlsx
+  - Cuadro A6.Comunid. aldeas o barrios indíg. por medio más utilizado par
+    https://www.ine.gov.py/assets/documento/259/Cuadro A6.Comunid. aldeas o barrios indíg. por medio más utilizado para el traslado de los enfermos.xlsx
+  - Cuadro A7.Comunid. aldeas o barrios indíg por presencia de un promotor
+    https://www.ine.gov.py/assets/documento/259/Cuadro A7.Comunid. aldeas o barrios indíg por presencia de un promotor indígena de salud.xlsx
+  - Cuadro A8.Comunid. aldeas o barrios indíg que cuentan con promotor ind
+    https://www.ine.gov.py/assets/documento/259/Cuadro A8.Comunid. aldeas o barrios indíg que cuentan con promotor indígena de salud por quien paga.xlsx
+  - Cuadro A9. Comunid. aldeas o barrios indíg. por presencia de un agente
+    https://www.ine.gov.py/assets/documento/259/Cuadro A9. Comunid. aldeas o barrios indíg.  por presencia de un  agente comunitario.xlsx
+  - Cuadro A10.Comunid. aldeas o barrios indíg. por quién realiza principa
+    https://www.ine.gov.py/assets/documento/259/Cuadro A10.Comunid. aldeas o barrios indíg. por quién realiza principalmente los control. prenatales.xlsx
+  - Cuadro A11.Comunid. aldeas o barrios indíg. por quién realiza principa
+    https://www.ine.gov.py/assets/documento/259/Cuadro A11.Comunid. aldeas o barrios indíg.  por quién realiza principalmente la atención.xlsx
+  - Cuadro A12.Comunid. aldeas o barrios indíg. por lugar dónde se atiende
+    https://www.ine.gov.py/assets/documento/259/Cuadro A12.Comunid. aldeas o barrios indíg. por lugar dónde se atiende la mayoria de los partos.xlsx
+  - Cuadro A13.Comunid. aldeas o barrios indíg. por sí práctican la curaci
+    https://www.ine.gov.py/assets/documento/259/Cuadro A13.Comunid. aldeas o barrios indíg. por sí práctican la curación indígena.xlsx
+  - Cuadro A14.Comunid. aldeas o barrios indíg. que practican la curación 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A14.Comunid. aldeas o barrios indíg. que practican la curación indígena por quiénes realizan.xlsx
+  - Cuadro A15.Comunid. aldeas o barrios indíg por si cuenta con un local 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A15.Comunid. aldeas o barrios indíg por si cuenta con un local escolar y reconocimiento.xlsx
+  - Cuadro A16. Comun aldeas o barrios. indíg que cuentan con un local esc
+    https://www.ine.gov.py/assets/documento/259/Cuadro A16. Comun aldeas o barrios.  indíg que cuentan con un local escolar por quién hizo construir.xlsx
+  - Cuadro A17.Comunid. aldeas o barrios indíg. que cuentan con un local e
+    https://www.ine.gov.py/assets/documento/259/Cuadro A17.Comunid. aldeas o barrios indíg. que cuentan con un local escolar por si tienen problemas.xlsx
+  - Cuadro A18.Comunidades, aldeas o barrios indígenas con algún problema 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A18.Comunid. aldeas o barrios indíg con algún problema de infraestructura del local escola.xlsx
+  - Cuadro A19.Comunid. aldeas o barrios indígenas por presencia o enseñan
+    https://www.ine.gov.py/assets/documento/259/Cuadro A19.Comunid. aldeas o barrios indígenas por presencia o enseñanza de algún maestro.xlsx
+  - Cuadro A20. Comunid. aldeas o barrios indíg. que cuentan con la enseña
+    https://www.ine.gov.py/assets/documento/259/Cuadro A20. Comunid. aldeas o barrios indíg. que cuentan con la enseñanza de algún maestro por nivel.xlsx
+  - Cuadro A21. Comunid. aldeas o barrios indígenas por servicio de algún 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A21. Comunid. aldeas o barrios indígenas por servicio de algún misionero y si es indígena.xlsx
+  - Cuadro A22.Comunid. aldeas o barrios indígenas que cuentan con misione
+    https://www.ine.gov.py/assets/documento/259/Cuadro A22.Comunid. aldeas o barrios indígenas que cuentan con misionero por tipo de religión.xlsx
+  - Cuadro A23. Comunid. aldeas o barrios indíg por práctica de caza de an
+    https://www.ine.gov.py/assets/documento/259/Cuadro A23. Comunid. aldeas o barrios indíg por práctica de caza de animales o pesca.xlsx
+  - Cuadro A24.Comunid. aldeas o barrios indígenas que practican la caza y
+    https://www.ine.gov.py/assets/documento/259/Cuadro A24.Comunid. aldeas o barrios indígenas que practican la caza yo pesca por animales.xlsx
+  - Cuadro A25. Comunid. aldeas o barrios indíg por recolección de aliment
+    https://www.ine.gov.py/assets/documento/259/Cuadro A25. Comunid. aldeas o barrios indíg por recolección de alimentos del bosque, campo u otros.xlsx
+  - Cuadro A26.Comunid. aldeas o barrios indíg por tipo de alimentos recol
+    https://www.ine.gov.py/assets/documento/259/Cuadro A26.Comunid. aldeas o barrios indíg por tipo de alimentos recolectados del bosque.xlsx
+  - Cuadro A27. Comunid. aldeas o barrios indíg por elaboración de artesan
+    https://www.ine.gov.py/assets/documento/259/Cuadro A27. Comunid. aldeas o barrios indíg por elaboración de artesanía.xlsx
+  - Cuadro A28. Comunid.aldeas o barrios indíg que elaboran artesanía por 
+    https://www.ine.gov.py/assets/documento/259/Cuadro A28. Comunid.aldeas o barrios indíg que elaboran artesanía por materiales utilizados.xlsx
+  - Cuadro A29. Comunid. aldeas o barrios indíg por tenencia y tipo de ani
+    https://www.ine.gov.py/assets/documento/259/Cuadro A29. Comunid. aldeas o barrios indíg por tenencia y tipo de animales.xlsx
+  - Cuadro A30. Comunid. aldeas o barrios indíg por enseñanza de conocimie
+    https://www.ine.gov.py/assets/documento/259/Cuadro A30. Comunid. aldeas o barrios indíg por enseñanza de conocimientos y prácticas ancestrales.xlsx
+  - Cuadro P1, Paraguay, Población indígena por área urbana-rural y sexo, 
+    https://www.ine.gov.py/assets/documento/260/Cuadro P1, Paraguay, Población indígena por área urbana-rural y sexo, según pueblo y grupos de edad, 2022..xlsx
+  - Cuadro P2,Paraguay, Población indígena por tipo de hogar, según pueblo
+    https://www.ine.gov.py/assets/documento/260/Cuadro P2,Paraguay, Población indígena por tipo de hogar, según pueblo, sexo del jefe y relación de parentesco con el jefe de hogar, 2022..xlsx
+  - Cuadro P3, Paraguay, Población indígena de 10 años y más de edad por e
+    https://www.ine.gov.py/assets/documento/260/Cuadro P3, Paraguay, Población indígena de 10 años y más de edad por estado civil, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P4, Paraguay, Población indígena por anotación de su nacimiento
+    https://www.ine.gov.py/assets/documento/260/Cuadro P4, Paraguay, Población indígena por anotación de su nacimiento en el Registro Civil, según pueblo, sexo y grupos de edad, 2022.xlsx
+  - Cuadro P5, Paraguay, Población indígena por tenencia de seguro médico,
+    https://www.ine.gov.py/assets/documento/260/Cuadro P5, Paraguay, Población indígena por tenencia de seguro médico, según pueblo y sexo, 2022..xlsx
+  - Cuadro P6.1, Paraguay, Población indígena por dificultad o limitación 
+    https://www.ine.gov.py/assets/documento/260/Cuadro P6.1, Paraguay, Población indígena por dificultad o limitación para ver y para oír, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P6.2, Paraguay, Población indígena por dificultad o limitación 
+    https://www.ine.gov.py/assets/documento/260/Cuadro P6.2, Paraguay, Población indígena por dificultad o limitación para caminar, subir escaleras, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P7, Paraguay, Población indígena de 5 años y más edad por sexo 
+    https://www.ine.gov.py/assets/documento/260/Cuadro P7, Paraguay, Población indígena de 5 años y más edad por sexo y sabe leer y escribir, según pueblo y grupos de edad, 2022..xlsx
+  - Cuadro P8, Paraguay, Población indígena de 5 años y más edad por asist
+    https://www.ine.gov.py/assets/documento/260/Cuadro P8, Paraguay, Población indígena de 5 años y más edad por asistencia escolar a una institución de enseñanza formal, según pueblo, sexo y grupos de edad, 2022..xlsx/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+
+  - Cuadro P9, Paraguay, Población indígena de 5 años y más de edad por ni
+    https://www.ine.gov.py/assets/documento/260/Cuadro P9, Paraguay, Población indígena de 5 años y más de edad por nivel del último grado, curso aprobado, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P10, Paraguay, Población indígena de 5 años y más de edad que a
+    https://www.ine.gov.py/assets/documento/260/Cuadro P10, Paraguay, Población indígena de 5 años y más de edad que asiste actualmente a una institución de enseñanza formal, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P11, Paraguay, Población indígena de 6 a 17 años de edad por gr
+    https://www.ine.gov.py/assets/documento/260/Cuadro P11, Paraguay, Población indígena de 6 a 17 años de edad por grupos de edad y sexo, según pueblo y asistencia a una institución de enseñanza formal, 2022..xlsx
+  - Cuadro P12, Paraguay, Población indígena de 5 años y más de edad por s
+    https://www.ine.gov.py/assets/documento/260/Cuadro P12, Paraguay, Población indígena de 5 años y más de edad por sexo y orden del idioma más hablado, según pueblo e idioma o lengua que hablan las personas, 2022..xlsx
+  - Cuadro P13, Paraguay, Población indígena de 10 años y más de edad por 
+    https://www.ine.gov.py/assets/documento/260/Cuadro P13, Paraguay, Población indígena de 10 años y más de edad por condición de actividad, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P14, Paraguay, Población indígena de 10 años y más de edad ocup
+    https://www.ine.gov.py/assets/documento/260/Cuadro P14, Paraguay, Población indígena de 10 años y más de edad ocupada por sexo, según pueblo y ocupación principal, 2022..xlsx
+  - Cuadro P15, Paraguay, Población indígena de 10 años y más de edad ocup
+    https://www.ine.gov.py/assets/documento/260/Cuadro P15, Paraguay, Población indígena de 10 años y más de edad ocupada por sexo, según pueblo y rama de actividad económica, 2022..xlsx
+  - Cuadro P16, Paraguay, Población indígena de 10 años y más de edad ocup
+    https://www.ine.gov.py/assets/documento/260/Cuadro P16, Paraguay, Población indígena de 10 años y más de edad ocupada por sexo, según pueblo y categoría ocupacional, 2022..xlsx
+  - Cuadro P17, Paraguay, Población indígena de 10 años y más de edad fuer
+    https://www.ine.gov.py/assets/documento/260/Cuadro P17, Paraguay, Población indígena de 10 años y más de edad fuera de la fuerza de trabajo por su clasificación, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro P18, Paraguay, Mujeres indígenas de 12 a 49 años de edad por hi
+    https://www.ine.gov.py/assets/documento/260/Cuadro P18, Paraguay, Mujeres indígenas de 12 a 49 años de edad por hijos nacidos vivos, según pueblo y grupos de edad de la mujer, 2022..xlsx
+  - Cuadro P19, Paraguay, Población indígena por lugar de nacimiento, segú
+    https://www.ine.gov.py/assets/documento/260/Cuadro P19, Paraguay, Población indígena por lugar de nacimiento, según pueblo, sexo y grupos de edad, 2022..xlsx
+  - Cuadro V1, Paraguay, Viviendas indígenas por área de residencia y cond
+    https://www.ine.gov.py/assets/documento/260/Cuadro V1, Paraguay, Viviendas indígenas por área de residencia y condición de ocupación, según pueblo y tipo de vivienda, 2022..xlsx
+  - Cuadro V2, Paraguay, Viviendas indígenas particulares ocupadas con per
+    https://www.ine.gov.py/assets/documento/260/Cuadro V2, Paraguay, Viviendas indígenas particulares ocupadas con personas presentes por tipo de vivienda, según pueblo y material predominante, 2022..xlsx
+  - Cuadro V3,Paraguay, Viviendas indígenas particulares ocupadas con pers
+    https://www.ine.gov.py/assets/documento/80/CUADRO~1.XLS
+  - Cuadro V4, Paraguay, Viviendas indígenas particulares ocupadas con per
+    https://www.ine.gov.py/assets/documento/260/Cuadro V4, Paraguay, Viviendas indígenas particulares ocupadas con personas presentes por tipo de vivienda, según pueblo, número de dormitorios y número de ocupantes, 2022..xlsx
+  - Cuadro V5, Paraguay, Viviendas indígenas particulares ocupadas con per
+    https://www.ine.gov.py/assets/documento/260/Cuadro V5, Paraguay, Viviendas indígenas particulares ocupadas con personas presentes por tipo de vivienda, pueblo, sexo del jefe y tipo de hogar, 2022..xlsx
+  - Cuadro V6, Paraguay, Hogares indígenas por tipo de hogar, según pueblo
+    https://www.ine.gov.py/assets/documento/260/Cuadro V6, Paraguay, Hogares indígenas por tipo de hogar, según pueblo e idioma o lengua mayoritaria declarada en la casa, 2022..xlsx
+page: https://www.ine.gov.py/censo2022/
+  32,170 bytes
+  12 matching link(s)
+  - Presentación
+    https://www.ine.gov.py/censo2022/documentos/Presentacion_resultados_finales_censo.pdf
+  - Cuadros de Población
+    https://www.ine.gov.py/censo2022/documentos/Resultados finales_Estructura de la poblacion por edad y sexo_2022.xlsx
+  - Documento
+    https://www.ine.gov.py/censo2022/documentos/2 resultados finales viviendas.pdf
+  - Cuadros de Viviendas
+    https://www.ine.gov.py/censo2022/documentos/Resultados finales_Caracterizacion de viviendas y hogar_2022.xlsx
+  - Tríptico
+    https://www.ine.gov.py/censo2022/documentos/Tríptico Resultados Finales_web.pdf
+  - DOCUMENTO
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/259/Censo%20de%20Comunidades%20de%20los%20Pueblos%20Indigenas%20-%20Resultados%20Finales%202022.pdf
+  - CUADROS
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/268/Cuadros%20%20Educaci%C3%B3n_CNPV%202022.xlsx
+  - ANEXOS
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/268/ANEXOS%20DE%20EDUCACION%202022.xlsx
+  - CUADROS
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/263/CUADROS%20DE%20DISCAPACIDAD_2022.xlsx
+  - CUADRO NECESIDADES BÁSICAS
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/262/Paraguay.Hogares_por_Necesidades_Basicas_Insatisfechas(NBI).xlsx
+  - CUADROS
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/279/Cuadros_de_Migracion.xlsx
+  - Cuadros
+    https://www.ine.gov.py/Publicaciones/Biblioteca/documento/281/Datos%20de%20%20Actividad%20Laboral.xlsx
+page: https://www.gub.uy/instituto-nacional-estadistica/censos2023pvh
+  53,643 bytes
+  2 matching link(s)
+  - Tabulados
+    https://www.gub.uy/instituto-nacional-estadistica/politicas-y-gestion/tabulados-hogares-poblacion-censo-2023
+  - Resultados (dic. 2024)
+    https://www.gub.uy/instituto-nacional-estadistica/comunicacion/noticias/resultados-finales
+page: https://www.ine.gub.uy/instituto-nacional-estadistica/censos2023pvh
+  69,836 bytes
+  7 matching link(s)
+  - Índice de Precios del Consumo (Var.12 meses) 08/26: 4,55%
+    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/IPC/Base%20Octubre%202022=100/IPC%20gral%20y%20variaciones_base%202022.xlsx
+  - Índice Medio de Salarios (Var.12 meses) 07/26: 5,71%
+    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMS%20C1%20Gral%20emp%20M%20B08.xls
+  - Indice Medio de Salarios Nominales (Var. 12 meses) 07/26: 5,86%
+    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/IMS/Base%20Julio%202008=100/IMSN%20M%20B08.xls
+  - Índice de Costo de la Construcción de Viviendas (Var. 12 meses) 07/26:
+    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/ICCV/Base%20Junio%202023=100/ICC%20C1%20B23%20M.xlsx
+  - Unidad Indexada (UI) valores
+    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/UI/Unidad%20Indexada.xls
+  - Unidad Previsional (UP) valores
+    https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/SERIES%20Y%20OTROS/UP/Unidad%20Previsional%20-%20UP.xls
+  - Base de Prestaciones y Contribuciones (BPC)
+    https://www5.ine.gub.uy/documents/Estadísticaseconómicas/SERIES%20Y%20OTROS/BPC/BPC.xlsx
