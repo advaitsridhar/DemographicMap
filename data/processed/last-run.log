@@ -1,10 +1,7 @@
-== https://www.ige.gal/igebdt/esq.jsp?idioma=gl&c=0206004&paxina=001
-  23,427 bytes; starts b'\r\n\r\n\r\n\r\n'
-  550 lines, 2 with ['cod=', 'selector', '.pdf', '.xls', 'taboa', 'táboa']
-    161: 				let allRadio = document.querySelectorAll('.state');
-    397: 									<li><a href="/estatico/pdfs/s6/codigo_conduta.pdf">Código de conduta das estatísticas europeas</a></li>
-== https://www.ige.gal/web/mostrar_actividade_estatistica.jsp?idioma=gl&codigo=0206004
-  36,613 bytes; starts b'\r\n\r\n\r\n\r\n'
-  805 lines, 2 with ['cod=', 'selector', '.pdf', '.xls', 'taboa', 'táboa']
-    145: 				let allRadio = document.querySelectorAll('.state');
-    381: 									<li><a href="/estatico/pdfs/s6/codigo_conduta.pdf">Código de conduta das estatísticas europeas</a></li>
+  chapter 1: 68 localities make 519,562
+  chapter 5: 68 localities, 451,746 aged 15 and over
+  table 4.3: 68 localities' racial origin make 519,562
+  table 3.6: 68 localities, 386,091 Maltese citizens aged 5 and over
+  Malta: median 40.5, mean 42.16 (Table 1.2 publishes 41.68)
+  wrote data/processed/malta_census.json (775 kB)
+  136 records (68 localities at both levels)
