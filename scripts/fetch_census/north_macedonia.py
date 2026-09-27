@@ -304,8 +304,15 @@ def old_municipality_of() -> dict[str, str]:
         name = dims[muni][1]
         hit = next((k for k in OLD_KICHEVO if key(k) == key(name)), None)
         if hit:
-            check_sum(counts[hit], value, f"north_macedonia: 2002 settlements of {hit}")
-            log(f"    {hit}: its 2002 settlements add to its 2002 count, {value:,.0f}")
+            # MakStat's two 2002 tables disagree by five people on Oslomej
+            # (10,425 by settlement, 10,420 by municipality) and agree exactly
+            # on the other four. The settlement lists are what is being tested
+            # here, and a misfiled settlement would move people between two of
+            # the five -- which would break an exact match somewhere else -- so
+            # a difference this small is logged rather than refused.
+            check_sum(counts[hit], value, f"north_macedonia: 2002 settlements of {hit}", 0.001)
+            log(f"    {hit}: its 2002 settlements add to {counts[hit]:,.0f}, its 2002 count "
+                f"is {value:,.0f}")
     return out
 
 
