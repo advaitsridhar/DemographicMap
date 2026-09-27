@@ -869,7 +869,8 @@ def main() -> int:
                 "country": iso3, "field": field, "year": got["year"],
                 "basis": "survey estimate: self-identification, residents aged 15 and over "
                          "in private households",
-                "groups": [{"group": g["group"], "pct": g["pct"]} for g in got["groups"]],
+                # count: weighted respondents, as on the regional records.
+                "groups": got["groups"],
                 "source": f"European Social Survey (ESS ERIC), {got['rounds']}, national "
                           f"samples pooled: {field}",
                 "url": PORTAL, "license": LICENCE,
