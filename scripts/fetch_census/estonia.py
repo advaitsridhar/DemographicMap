@@ -299,13 +299,20 @@ WHAT = {
 
 def census_block(field: str, table: str, counts: dict[str, float], total: float,
                  parts: list[str], year: int) -> dict[str, Any]:
+    # The categories may miss the total by a few people (``composition``
+    # allows fifteen, or 1%): shares of the total would then not make 100,
+    # Alajõe's religions 103%, so they are shares of what the categories hold.
+    held = sum(counts.values())
     return {
-        field: shares(counts, total=total),
+        field: shares(counts, total=held),
         f"{field}_year": year,
         f"{field}_note": (
             f"{WHAT[field]}, 31 December {year} (Statistics Estonia, {table})."
             + (f" Summed from the {year} units {', '.join(parts)}, which the drawn unit was "
                "formed from." if len(parts) > 1 else "")
+            + (f" The table's categories hold {held:,.0f} of the {total:,.0f} people it counts "
+               "here -- Statistics Estonia protects small cells -- and the shares are of the "
+               f"{held:,.0f}." if abs(held - total) > 0.5 else "")
             + (" The 2021 census is tabulated by the municipalities formed in 2017, which the "
                "map does not draw." if year == CENSUS_YEAR else "")),
         "sources": [{"field": field, "name": f"{SOURCE}, {table}",

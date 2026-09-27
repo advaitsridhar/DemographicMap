@@ -208,6 +208,13 @@ class Estonia(unittest.TestCase):
         self.assertIn("Pagan and neo-pagan",
                       tree.ancestry("religion", estonia.labels_religion("Taara Beliver")))
 
+    def test_shares_are_of_what_the_categories_hold(self):
+        # Alajõe's religions hold 312 of the 302 people RL0452 counts there.
+        block = estonia.census_block("religion", "RL0452", {"Orthodox": 180, "No religion": 132},
+                                     302, ["Alajõe"], 2011)
+        self.assertAlmostEqual(sum(g["pct"] for g in block["religion"]), 100.0, delta=0.2)
+        self.assertIn("312 of the 302", block["religion_note"])
+
     def test_pxweb_withholds_the_eleven_redrawn_counties(self):
         table = pxweb.INSTANCES["EST"]["tables"][0]
         self.assertEqual(len(table.withhold), 11)
