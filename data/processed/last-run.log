@@ -1,16 +1,14 @@
-finland: Statistics Finland 11rf and 11rm by sub-region
-  key 2026: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2025: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2024: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2023: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2022: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2021: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
-  key 2020: 70 sub-regions; 70 of 70 drawn names found
-    11rf 2020: municipalities -> Finland: 310 parts sum to 5,533,793 against 5,533,793
-  the map's sub-regions are those of 2020; population on 31 December 2020
-    11rf 2025: municipalities -> Finland: 308 parts sum to 5,652,881 against 5,652,881
-  57 of 70 sub-regions have the same municipalities in the 2026 key and take 31 December 2025; the rest keep 2020: ['Joensuu', 'Jämsä', 'Kouvola', 'Kyrönmaa', 'Lahti', 'Mikkeli', 'Pieksämäki', 'Pohjois-Satakunta', 'Savonlinna', 'Seinäjoki', 'Tampere', 'Vaasa', 'Varkaus']
-  11rm 2025: languages make each sub-region's total; withheld small counts added to 'Other language' in 70 sub-regions, 21,720 people in all
-  FIN admin2: 70 of 70 office units bound to 70 polygons (0 set aside as pieces)
-  wrote data/processed/finland_subregion.json (367 kB)
-  wrote finland_subregion.json: 70 records
+lithuania: S3R167_M3010203, S3R167_M3010202 and S3R629_M3010217, beginning of 2026
+  single years complete for 71 of 73 units; the rest take the five-year median: ['12', '69']
+    S3R167_M3010203 2026: counties -> Lithuania: 10 parts sum to 2,887,592 against 2,887,592
+    S3R167_M3010203 2026: municipalities -> Lithuania: 60 parts sum to 2,887,592 against 2,887,592
+  national median 44.6 (the office: 44.0 in completed years); units whose interpolated median is not in the office's year: ['06 46 vs 47.0', '78 47 vs 48.0', '91 46 vs 47.0']
+    ethnicity 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    religion 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    language 2021: municipalities -> Lithuania: 60 parts sum to 2,810,758 against 2,810,761
+  LTU admin2: 60 of 60 office units bound to 60 polygons (0 set aside as pieces)
+  ethnicity labels the group tree cannot place: []
+  religion labels the group tree cannot place: []
+  language labels the group tree cannot place: []
+  wrote data/processed/lithuania_municipality.json (460 kB)
+  wrote lithuania_municipality.json: 70 records
