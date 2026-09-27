@@ -1468,7 +1468,24 @@ def che12() -> None:
     book_dump(dam.format(36347568), rows=30)
 
 
+def round13() -> None:
+    """Luxembourg's 2021 language tables, Zensus 2022 religion off the blocked database host,
+    and Statistik Austria's 2021 religion survey."""
+    links = r"href=\"[^\"]*(?:xlsx?|csv|ods|pdf|lingu|langu|religi|Religi|rp08|zensus|Zensus)[^\"]*\""
+    for url in ("https://statistiques.public.lu/fr/recherche.html?q=langue%20principale%20commune",
+                "https://statistiques.public.lu/fr/recensement.html",
+                "https://statistiques.public.lu/fr/publications/series/recensement-population.html",
+                "https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/_inhalt.html",
+                "https://www.zensus2022.de/DE/Aktuelles/Religion.html",
+                "https://www.statistik.rlp.de/gesellschaft-staat/bevoelkerung-und-gebiet/zensus-2022",
+                "https://www.statistik.at/suche?tx_solr%5Bq%5D=Religionszugeh%C3%B6rigkeit",
+                "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+                "bevoelkerungsstand/historische-volkszaehlungen"):
+        show(url, links, limit=30)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "round13": round13,
     "che12": che12,
     "che11": che11, "aut8": aut8,
     "svn6": svn6, "che10": che10, "aut7": aut7, "deu8": deu8,
