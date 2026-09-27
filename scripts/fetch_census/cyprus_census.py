@@ -406,10 +406,21 @@ def build() -> list[dict[str, Any]]:
     for code, shape in bound.items():
         unit = comms[code]
         fields = {"population": measure(int(unit["total"]), year=YEAR, source=src["community"])}
-        if unit["total"] > 0:
+        grouped = [(lo, w, n) for (lo, w), n in unit["groups"].items()]
+        old = sum(n for lo, w, n in grouped if w is None)
+        if unit["total"] > 0 and old >= unit["total"] / 2:
+            # Half its people or more are in the open top group (80 and over):
+            # the median is somewhere above 80 and cannot be placed.
             fields.update(age_fields(None, unit["men"], unit["women"], year=YEAR,
-                                     source=src["community"], note=five,
-                                     grouped=[(lo, w, n) for (lo, w), n in unit["groups"].items()]))
+                                     source=src["community"], note=five, grouped=[]))
+            fields["median_age"] = gap(NOT_AVAILABLE, (
+                f"{old:,.0f} of the community's {unit['total']:,.0f} residents are 80 or over, "
+                "the census table's open top age group, so the median lies somewhere above 80 "
+                "and cannot be interpolated."))
+            fields.pop("median_age_note", None)
+        elif unit["total"] > 0:
+            fields.update(age_fields(None, unit["men"], unit["women"], year=YEAR,
+                                     source=src["community"], note=five, grouped=grouped))
         records.append(record(
             f"CYP-2021-{code}", shape["name"], level="admin2", parent="CYP", country="CYP",
             match_by="shape_id", shape_id=shape["id"], codes={"cystat": code},
