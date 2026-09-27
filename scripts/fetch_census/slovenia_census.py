@@ -93,6 +93,15 @@ NOTES = {
 }
 
 
+def blanked_bound(blank: list[str], total: float) -> float:
+    """How many people blanked cells may hide: a few per cell, and never 3% of a municipality.
+
+    SiStat does not say its threshold; the run logs every municipality's
+    shortfall, and a shortfall beyond this is not confidentiality.
+    """
+    return min(20.0 * len(blank), 0.03 * total)
+
+
 def table(name: str) -> tuple[dict[str, dict[str, float]], dict[str, str]]:
     """{municipality label: {value label: count}} for a two-way table, and {code: label}.
 
@@ -183,7 +192,7 @@ def build() -> list[dict[str, Any]]:
         short = total - sum(e.get(k, 0.0) for k in parts)
         # A blank cell (confidentiality) may leave the rows a few people short;
         # nothing else is accepted.
-        if short < -0.5 or short > (max(10, 0.002 * total) if blank else 0.5):
+        if short < -0.5 or short > (blanked_bound(blank, total) if blank else 0.5):
             raise SystemExit(f"slovenia_census: {name}: ethnic rows do not partition {e}")
         if blank and short > 0.5:
             suppressed["ethnicity"] += short
@@ -221,7 +230,7 @@ def build() -> list[dict[str, Any]]:
                 # SiStat blanks a cell of very few people for confidentiality;
                 # such a cell is absent here, so the rows fall a little short.
                 # Only that, and only by a little, is accepted.
-                if not blank or short > max(10, 0.002 * total):
+                if not blank or short > blanked_bound(blank, total):
                     raise SystemExit(f"slovenia_census: {name}: {field} rows fall {short:,.0f} "
                                      f"short of {total:,.0f}; blank cells {blank}")
                 suppressed[field] += short

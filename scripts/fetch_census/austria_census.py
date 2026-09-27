@@ -117,6 +117,13 @@ def sheet(code: str) -> dict[str, Any]:
     if not blob.startswith(b"%PDF"):
         return {"code": code, "missing": True}
     page = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(blob)).pages)
+    try:
+        return read_sheet(code, page)
+    except SystemExit as exc:
+        return {"code": code, "error": str(exc), "excerpt": " | ".join(page.split("\n"))[:900]}
+
+
+def read_sheet(code: str, page: str) -> dict[str, Any]:
     head = re.search(r"\((\d{5})\)", page)
     if not head or head.group(1) != code:
         raise SystemExit(f"austria_census: the sheet asked for {code} is headed "
@@ -140,6 +147,12 @@ def build(year: int, workers: int) -> list[dict[str, Any]]:
     log(f"  {len(codes)} municipalities")
     with ThreadPoolExecutor(max_workers=workers) as pool:
         sheets = list(pool.map(sheet, codes))
+    failed = [s for s in sheets if s.get("error")]
+    for s in failed[:10]:
+        log(f"  ! {s['error']}\n      {s['excerpt']}")
+    if failed:
+        raise SystemExit(f"austria_census: {len(failed)} sheets could not be read: "
+                         f"{[s['code'] for s in failed][:60]}")
     missing = [s["code"] for s in sheets if s.get("missing")]
     if missing:
         raise SystemExit(f"austria_census: no 2001 sheet for {len(missing)} municipalities: "

@@ -145,6 +145,75 @@ def read_population(year: int, communes: list[str], batch: int) -> dict[str, dic
     return out, meta, code
 
 
+def drawn_units(snapshot: list[dict[str, str]]
+                ) -> tuple[list[tuple[str, str, set[str], dict[str, Any]]], list[str], list[str]]:
+    """Every unit the map draws, as (name, canton, its 2009 communes, polygon).
+
+    Also returns the units that found no polygon and the polygons that found
+    no unit, for the caller to report and refuse.
+    """
+    cantons = {r["HistoricalCode"]: r for r in snapshot if r["Level"] == "1"}
+    districts = {r["HistoricalCode"]: r for r in snapshot if r["Level"] == "2"}
+    old_communes = {r["BfsCode"]: r for r in snapshot if r["Level"] == "3"}
+    # The units to fill: a name, its canton, and its 2009 communes.
+    targets: list[tuple[str, str, set[str]]] = []
+    for hist, d in districts.items():
+        canton = cantons[d["Parent"]]
+        members = {c for c, r in old_communes.items() if r["Parent"] == hist}
+        if canton["ShortName"] in ("BS", "AR") or d["Name"] == "Bezirk Raron":
+            continue
+        if d["Name"] == "Bezirk Schaffhausen":
+            exclave = {c for c in members if old_communes[c]["Name"] in SCHAFFHAUSEN_EXCLAVE}
+            if len(exclave) != len(SCHAFFHAUSEN_EXCLAVE):
+                raise SystemExit("switzerland_ages: Buchberg and Rüdlingen are not both in "
+                                 "the 2009 district of Schaffhausen")
+            targets.append(("Schaffhausen (exclave)", canton["Name"], exclave))
+            members -= exclave
+        targets.append((d["Name"], canton["Name"], members))
+    bs = [c for c, r in old_communes.items()
+          if cantons[districts[r["Parent"]]["Parent"]]["ShortName"] == "BS"]
+    if {old_communes[c]["Name"] for c in bs} != BASEL_STADT:
+        raise SystemExit(f"switzerland_ages: Basel-Stadt's 2009 communes are "
+                         f"{sorted(old_communes[c]['Name'] for c in bs)}")
+    for c in bs:
+        targets.append((old_communes[c]["Name"], "Basel-Stadt", {c}))
+    ar = [h for h, d in districts.items() if cantons[d["Parent"]]["ShortName"] == "AR"]
+    targets.append(("Appenzell Ausserrhoden", "Appenzell Ausserrhoden",
+                    {c for c, r in old_communes.items() if r["Parent"] in ar}))
+    raron = next(h for h, d in districts.items() if d["Name"] == "Bezirk Raron")
+    raron_members = {c for c, r in old_communes.items() if r["Parent"] == raron}
+    halves = {half: {c for c in raron_members if old_communes[c]["Name"] in names_}
+              for half, names_ in RARON.items()}
+    if set().union(*halves.values()) != raron_members or halves["Raron"] & halves["West Raron"]:
+        raise SystemExit("switzerland_ages: the declared halves of Raron are not its communes: "
+                         + str(sorted(old_communes[c]["Name"] for c in raron_members)))
+    for half, members in halves.items():
+        targets.append((half, "Valais / Wallis", members))
+
+    shapes = units("CHE", "admin2")
+    canton_of = {u["id"]: u["name"] for u in units("CHE", "admin1")}
+    exclave_shape = min((s for s in shapes if s["name"] == "Schaffhausen"),
+                        key=lambda s: (s["bbox"][2] - s["bbox"][0]) * (s["bbox"][3] - s["bbox"][1]))
+    bound: list[tuple[str, str, set[str], dict[str, Any]]] = []
+    used: set[str] = set()
+    unbound: list[str] = []
+    for name, canton_name, members in sorted(targets):
+        if name == "Schaffhausen (exclave)":
+            hits = [exclave_shape]
+        else:
+            keys = variants(name)
+            hits = [s for s in shapes if fold(s["name"]) in keys and s["id"] != exclave_shape["id"]
+                    and any(fold(p) == fold(canton_of.get(s["parent"], ""))
+                            for p in canton_name.split("/"))]
+        if len(hits) != 1 or hits[0]["id"] in used:
+            unbound.append(f"{name} ({canton_name}): {[h['name'] for h in hits]}")
+            continue
+        used.add(hits[0]["id"])
+        bound.append((name, canton_name, members, hits[0]))
+    left = sorted(s["name"] for s in shapes if s["id"] not in used)
+    return bound, unbound, left
+
+
 def build(year: int, batch: int) -> list[dict[str, Any]]:
     log(f"switzerland_ages: BFS px-x-0102010000_101, 31 December {year}, "
         f"read against the districts of {VINTAGE}")
@@ -206,60 +275,10 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
         ages.update(u["f"])
     check_national_median(ages, "CH", year + 1)
 
-    # The units to fill: a name, its canton, and its 2009 communes.
-    targets: list[tuple[str, str, set[str]]] = []
-    for hist, d in districts.items():
-        canton = cantons[d["Parent"]]
-        members = {c for c, r in old_communes.items() if r["Parent"] == hist}
-        if canton["ShortName"] in ("BS", "AR") or d["Name"] == "Bezirk Raron":
-            continue
-        if d["Name"] == "Bezirk Schaffhausen":
-            exclave = {c for c in members if old_communes[c]["Name"] in SCHAFFHAUSEN_EXCLAVE}
-            if len(exclave) != len(SCHAFFHAUSEN_EXCLAVE):
-                raise SystemExit("switzerland_ages: Buchberg and Rüdlingen are not both in "
-                                 "the 2009 district of Schaffhausen")
-            targets.append(("Schaffhausen (exclave)", canton["Name"], exclave))
-            members -= exclave
-        targets.append((d["Name"], canton["Name"], members))
-    bs = [c for c, r in old_communes.items()
-          if cantons[districts[r["Parent"]]["Parent"]]["ShortName"] == "BS"]
-    if {old_communes[c]["Name"] for c in bs} != BASEL_STADT:
-        raise SystemExit(f"switzerland_ages: Basel-Stadt's 2009 communes are "
-                         f"{sorted(old_communes[c]['Name'] for c in bs)}")
-    for c in bs:
-        targets.append((old_communes[c]["Name"], "Basel-Stadt", {c}))
-    ar = [h for h, d in districts.items() if cantons[d["Parent"]]["ShortName"] == "AR"]
-    targets.append(("Appenzell Ausserrhoden", "Appenzell Ausserrhoden",
-                    {c for c, r in old_communes.items() if r["Parent"] in ar}))
-    raron = next(h for h, d in districts.items() if d["Name"] == "Bezirk Raron")
-    raron_members = {c for c, r in old_communes.items() if r["Parent"] == raron}
-    halves = {half: {c for c in raron_members if old_communes[c]["Name"] in names_}
-              for half, names_ in RARON.items()}
-    if set().union(*halves.values()) != raron_members or halves["Raron"] & halves["West Raron"]:
-        raise SystemExit("switzerland_ages: the declared halves of Raron are not its communes: "
-                         + str(sorted(old_communes[c]["Name"] for c in raron_members)))
-    for half, members in halves.items():
-        targets.append((half, "Valais / Wallis", members))
-
-    shapes = units("CHE", "admin2")
-    canton_of = {u["id"]: u["name"] for u in units("CHE", "admin1")}
-    exclave_shape = min((s for s in shapes if s["name"] == "Schaffhausen"),
-                        key=lambda s: (s["bbox"][2] - s["bbox"][0]) * (s["bbox"][3] - s["bbox"][1]))
+    bound, unbound, left = drawn_units(snapshot)
     source = SOURCE
-    records, used, skipped, unbound = [], set(), [], []
-    for name, canton_name, members in sorted(targets):
-        if name == "Schaffhausen (exclave)":
-            hits = [exclave_shape]
-        else:
-            keys = variants(name)
-            hits = [s for s in shapes if fold(s["name"]) in keys and s["id"] != exclave_shape["id"]
-                    and any(fold(p) == fold(canton_of.get(s["parent"], ""))
-                            for p in canton_name.split("/"))]
-        if len(hits) != 1 or hits[0]["id"] in used:
-            unbound.append(f"{name} ({canton_name}): {[h['name'] for h in hits]}")
-            continue
-        shape = hits[0]
-        used.add(shape["id"])
+    records, skipped = [], []
+    for name, canton_name, members, shape in bound:
         todays = sorted(t for t, ini in initial_of.items() if ini & members)
         straddling = [t for t in todays if not initial_of[t] <= members]
         if straddling:
@@ -298,7 +317,6 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
             sources=[{"field": "population/median_age/sex_ratio", "name": source, "url": PORTAL,
                       "license": LICENCE, "year": year}],
             **fields))
-    left = sorted(s["name"] for s in shapes if s["id"] not in used)
     log(f"  {len(records) - len(skipped)} units written; {len(skipped)} left out because a "
         f"commune of today straddles them:")
     for line in skipped:
