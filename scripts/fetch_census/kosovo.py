@@ -11,15 +11,14 @@ municipality, under "Census population / Demographic characteristics":
 * census2024_05 -- ethnicity; census2024_63 -- the same *with estimation*;
 * census2024_10 -- religion; census2024_22 -- mother tongue.
 
-**The north.** In four municipalities -- North Mitrovica, Leposaviq, Zubin
-Potok and Zveçan -- most residents were not enumerated, and ASK publishes an
-estimate beside the count. Wherever a municipality's enumerated population
-falls short of ASK's estimated one, this reads the estimated tables: the head
-count, the age and sex (in five-year groups, the finest ASK publishes with the
-estimate), and ethnicity; religion and mother tongue exist only for the
-enumerated residents there, and a composition of a minority of a
-municipality's people is not the municipality's, so those two fields carry a
-stated gap instead. Elsewhere the single-year table is read.
+**The north.** In the Serb-majority municipalities of the north most residents
+were not enumerated. ASK's head count and its tables of age and sex include
+its estimate for them; its ethnicity table exists in two forms, the answers
+of the enumerated and the same "with estimation". Wherever the answers fall
+short of the head count, ethnicity is read with ASK's estimate, and religion
+and mother tongue -- published for the enumerated only -- carry a stated gap:
+a composition of a minority of a municipality's people is not the
+municipality's. The age and sex there include ASK's estimate, and say so.
 
 The seven districts the map draws are summed from their municipalities.
 
@@ -271,37 +270,33 @@ def build() -> list[dict[str, Any]]:
     for p in places:
         shape = bound[p]
         count, est = single[p], estimated[p]
-        coverage = count["total"] / est["total"] if est["total"] else 1.0
+        check_sum(count["total"], est["total"], f"kosovo: {p}'s two age tables")
+        # Who answered: the ethnicity table without ASK's estimate counts the
+        # enumerated residents only. The age tables carry the estimate in both
+        # their forms, so the shortfall shows here and nowhere else.
+        answered = comps["ethnicity"][p][None]
+        coverage = answered / count["total"] if count["total"] else 1.0
         full = coverage >= COVERAGE
         fields: dict[str, Any] = {}
         cite: list[dict[str, Any]] = []
-        if full:
-            fields["population"] = measure(int(count["total"]), year=YEAR, source=src["age"])
-            fields.update(age_fields(count["ages"], count["men"], count["women"], year=YEAR,
-                                     source=src["age"], note=(
-                                         "Interpolated within the single year of age that holds "
-                                         "the middle person, from the census's count by single "
-                                         "year of age and sex (census2024_00).")))
-            cite.append({"field": "population/median_age/sex_ratio", "name": src["age"],
-                         "url": TABLES["age"], "page": PAGE, "year": YEAR, "license": LICENCE})
-            eth = comps["ethnicity"][p]
-            eth_src = "ethnicity"
-        else:
-            fields["population"] = measure(int(est["total"]), year=YEAR, source=src["age_est"])
+        fields["population"] = measure(int(count["total"]), year=YEAR, source=src["age"])
+        fields.update(age_fields(count["ages"], count["men"], count["women"], year=YEAR,
+                                 source=src["age"], note=(
+                                     "Interpolated within the single year of age that holds "
+                                     "the middle person, from the census's count by single "
+                                     "year of age and sex (census2024_00)." + ("" if full else (
+                                         f" The census enumerated {answered:,.0f} of the "
+                                         f"{count['total']:,.0f} residents ASK puts here "
+                                         f"({100 * coverage:.0f}%); the rest, their age and sex "
+                                         "included, are ASK's estimate.")))))
+        if not full:
             fields["population_note"] = (
-                f"ASK's figure with its estimate: the census enumerated {count['total']:,.0f} "
-                f"of the {est['total']:,.0f} residents it puts here ({100 * coverage:.0f}%).")
-            fields.update(age_fields(None, est["men"], est["women"], year=YEAR,
-                                     source=src["age_est"], grouped=[(lo, w, n) for (lo, w), n in est["groups"].items()],
-                                     note=("Interpolated within the five-year age group that "
-                                           "holds the middle person, from ASK's population by age "
-                                           "group and sex with its estimate for residents not "
-                                           "enumerated (tab04census); the single-year table "
-                                           "counts the enumerated only.")))
-            cite.append({"field": "population/median_age/sex_ratio", "name": src["age_est"],
-                         "url": TABLES["age_est"], "page": PAGE, "year": YEAR, "license": LICENCE})
-            eth = eth_est[p]
-            eth_src = "ethnicity_est"
+                f"ASK's figure with its estimate: the census enumerated {answered:,.0f} of the "
+                f"{count['total']:,.0f} residents it puts here ({100 * coverage:.0f}%).")
+        cite.append({"field": "population/median_age/sex_ratio", "name": src["age"],
+                     "url": TABLES["age"], "page": PAGE, "year": YEAR, "license": LICENCE})
+        eth = comps["ethnicity"][p] if full else eth_est[p]
+        eth_src = "ethnicity" if full else "ethnicity_est"
         whole = eth[None]
         check_sum(whole, fields["population"]["value"], f"kosovo: ethnicity total of {p}", 0.001)
         fields["ethnicity"] = shares({k: v for k, v in eth.items() if k is not None and v}, total=whole)
@@ -314,6 +309,7 @@ def build() -> list[dict[str, Any]]:
         for field in ("religion", "language"):
             groups = comps[field][p]
             if full:
+                check_sum(groups[None], count["total"], f"kosovo: {field} total of {p}", 0.001)
                 fields[field] = shares({k: v for k, v in groups.items() if k is not None and v},
                                        total=groups[None])
                 fields[f"{field}_year"] = YEAR
@@ -322,8 +318,8 @@ def build() -> list[dict[str, Any]]:
                              "page": PAGE, "year": YEAR, "license": LICENCE})
             else:
                 fields[field] = gap(NOT_AVAILABLE, (
-                    f"The 2024 census enumerated {count['total']:,.0f} of the {est['total']:,.0f} "
-                    f"residents ASK estimates for {p} ({100 * coverage:.0f}%), and publishes "
+                    f"The 2024 census enumerated {answered:,.0f} of the {count['total']:,.0f} "
+                    f"residents ASK puts in {p} ({100 * coverage:.0f}%), and publishes "
                     f"{'religion' if field == 'religion' else 'mother tongue'} for the enumerated "
                     "only. Those answers describe the people who took part, not the "
                     "municipality, so they are not shown as its composition."))
@@ -340,8 +336,8 @@ def build() -> list[dict[str, Any]]:
         d["language"].update(comps["language"][p])
         if not full:
             d["short"].append(p)
-        log(f"  {p}: {count['total']:,.0f} enumerated / {est['total']:,.0f} estimated"
-            + ("" if full else " -- read with ASK's estimate"))
+        log(f"  {p}: {count['total']:,.0f} residents, {answered:,.0f} answered"
+            + ("" if full else " -- ethnicity with ASK's estimate, religion and language stated"))
     for did, d in sorted(districts.items(), key=lambda kv: admin1[kv[0]]["name"]):
         shape = admin1[did]
         grouped = [(lo, w, n) for (lo, w), n in d["groups"].items()]
@@ -373,8 +369,9 @@ def build() -> list[dict[str, Any]]:
             ethnicity=shares({k: v for k, v in d["ethnicity"].items() if k is not None and v},
                              total=d["ethnicity"][None]),
             ethnicity_year=YEAR,
-            ethnicity_note=NOTES["ethnicity"] + " Summed over the district's municipalities, "
-            "with ASK's estimate for residents not enumerated in the north (census2024_63).",
+            ethnicity_note=NOTES["ethnicity"] + " Summed over the district's municipalities"
+            + (f", with ASK's estimate for the residents not enumerated in {', '.join(d['short'])} "
+               "(census2024_63)." if d["short"] else "."),
             sources=[{"field": "population/median_age/sex_ratio", "name": src["age_est"],
                       "url": TABLES["age_est"], "page": PAGE, "year": YEAR, "license": LICENCE},
                      {"field": "ethnicity", "name": src["ethnicity_est"],
