@@ -1,52 +1,18 @@
-== r5_ltu_203
-  1,803,798 bytes, 4440 observations
-    dim Demogr_amziaus_grM1412: 20 values: ['g000g999', 'g005g009', 'g035g039', 'g065g069', 'g075g079', 'g080g084', 'g040g044', 'g010g014', 'g085', 'g045g049', 'g015g019', 'gxxx', 'g050g054', 'g020g024', 'g055g059', 'g025g029', 'g000g004', 'g070g074', 'g060g064', 'g030g034']
-    dim Lytis: 3 values: ['1', '2', '0']
-    dim savivaldybesRegdb: 74 values: ['94', 'LT01', 'LT02', '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '15', '18', '19', '21', '23', '25', '27', '29', '30', '32', '33', '34', '36', '38', '39', '41', '42', '43', '45', '46', '47', '48', '49'] ...
-    dim MATVNT: 1 values: ['asmenys']
-    dim LAIKOTARPIS: 1 values: ['2026']
-    dim OBS_DECIMALS: 1 values: ['0']
-    dim OBS_STATUS: 2 values: ['nebuvo', 'neskaiciuojamas']
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '1', 'savivaldybesRegdb': '94', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 12493
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '1', 'savivaldybesRegdb': 'LT01', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 423714
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '1', 'savivaldybesRegdb': 'LT02', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 951794
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '2', 'savivaldybesRegdb': '00', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 1512084
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '2', 'savivaldybesRegdb': '01', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 69530
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '2', 'savivaldybesRegdb': '02', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 309894
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '2', 'savivaldybesRegdb': '03', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 178807
-    {'Demogr_amziaus_grM1412': 'g000g999', 'Lytis': '2', 'savivaldybesRegdb': '04', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0'} = 68373
-== r5_ltu_629
-  76,093 bytes, 222 observations
-    dim savivaldybesRegdb: 74 values: ['56', '57', '58', '59', '61', '62', '63', '65', '66', '67', '68', '69', '71', '72', '73', '74', '75', '77', '78', '79', '81', '82', '84', '85', '86', '87', '88', '89', '91', '94', 'LT01', 'LT02', '00', '01', '02', '03', '04', '05', '06', '07'] ...
-    dim Lytis: 3 values: ['2', '0', '1']
-    dim MATVNT: 1 values: ['metai']
-    dim LAIKOTARPIS: 1 values: ['2026']
-    dim OBS_DECIMALS: 1 values: ['1']
-    dim OBS_STATUS: 1 values: ['nebuvo']
-    {'savivaldybesRegdb': '56', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 48
-    {'savivaldybesRegdb': '57', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 52
-    {'savivaldybesRegdb': '57', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 47
-    {'savivaldybesRegdb': '57', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 55
-    {'savivaldybesRegdb': '58', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 47
-    {'savivaldybesRegdb': '58', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 43
-    {'savivaldybesRegdb': '58', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 51
-    {'savivaldybesRegdb': '59', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '1'} = 50
-== r5_ltu_216
-  7,103,031 bytes, 14400 observations
-    dim indeksas_M3010216: 6 values: ['HDI_L', 'HDI_M', '0', 'HDI_H', 'HDI_VH', 'N']
-    dim salisM3010216: 40 values: ['SY', 'TJ', 'GE', 'IL', 'IN', 'DE', 'DK', 'EE', 'PX2', 'RU', 'FR', 'GB', 'TR', 'UA', 'JP', 'ES', 'SE', 'US', 'KG', 'FI', 'UZ', 'KITOS', 'KZ', 'VE', 'VN', 'AF', 'LT', 'AM', 'AZ', 'LV', 'MD', 'BY', 'NG', 'CA', 'P00', 'CN', 'P2P', 'PH', 'PL', 'PP']
-    dim Demogr_amziaus_grM1412: 20 values: ['g040g044', 'g045g049', 'g050g054', 'g055g059', 'g060g064', 'g065g069', 'g070g074', 'g075g079', 'g080g084', 'g085', 'gxxx', 'g000g004', 'g000g999', 'g005g009', 'g010g014', 'g015g019', 'g020g024', 'g025g029', 'g030g034', 'g035g039']
-    dim Lytis: 3 values: ['2', '0', '1']
-    dim MATVNT: 1 values: ['asmenys']
-    dim LAIKOTARPIS: 1 values: ['2026']
-    dim OBS_DECIMALS: 1 values: ['0']
-    dim OBS_STATUS: 3 values: ['nebuvo', 'konfidencialus', 'neskaiciuojamas']
-    {'indeksas_M3010216': 'HDI_L', 'salisM3010216': 'SY', 'Demogr_amziaus_grM1412': 'g040g044', 'Lytis': '2', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0', 'OBS_STATUS': 'nebuvo'} = NaN
-    {'indeksas_M3010216': 'HDI_L', 'salisM3010216': 'SY', 'Demogr_amziaus_grM1412': 'g045g049', 'Lytis': '0', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0', 'OBS_STATUS': 'nebuvo'} = NaN
-    {'indeksas_M3010216': 'HDI_L', 'salisM3010216': 'SY', 'Demogr_amziaus_grM1412': 'g045g049', 'Lytis': '1', 'MATVNT': 'asmenys', 'LAIKOTARPIS': '2026', 'OBS_DECIMALS': '0', 'OBS_STATUS': 'nebuvo'} = NaN
-== r5_ltu_page1
-  FAILED: RuntimeError: HTTP 403: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
-== r5_ltu_page2
-  FAILED: RuntimeError: HTTP 403: <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
-== r5_ltu_datagov
-  FAILED: UnicodeEncodeError: 'ascii' codec can't encode character '\u0161' in position 20: ordinal not in range(128)
+== ESS1 :: ESS1e06_7 id=bcc624a3-edbb-4df3-ab18-9a96702c92ae v=67 weight=None
+   region: ess_region: the portal refused a query: [{"message": "Request failed with status code 400", "locations": [{"line": 2, "column": 3}], "path": ["analysis", "frequ
+   lnghom1: ess_region: the portal refused a query: [{"message": "Request failed with status code 400", "locations": [{"line": 2, "column": 3}], "path": ["analysis", "frequ
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 128, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 122, in main
+    discover(args.discover.split(","))
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 103, in discover
+    shown = " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 103, in <genexpr>
+    shown = " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
+                            ~~~~~~~~~~~~~~~~~~^^^^^
+TypeError: 'NoneType' object is not subscriptable
