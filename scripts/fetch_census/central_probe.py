@@ -1565,7 +1565,23 @@ def deu11() -> None:
                 log("     > " + " | ".join(str(c)[:14] for c in r[:60] if c is not None))
 
 
+def aut10() -> None:
+    """Municipality 62280: what it is, and which Ein-Blick sheets exist for it."""
+    head_lines("https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.csv", 1, grep=r"^6228|^622[0-9]{2};",
+               limit=60)
+    for section in ("vz1", "vz2", "vz3", "vz7", "blick1", "blick2", "blick3", "ae1", "ae2"):
+        status, head, body = fetch(f"https://www.statistik.at/blickgem/{section}/g62280.pdf")
+        first = ""
+        if body.startswith(b"%PDF"):
+            import io as _io
+            from pypdf import PdfReader
+            first = " | ".join((PdfReader(_io.BytesIO(body)).pages[0].extract_text() or "").split("\n")[:14])
+        log(f"   {section}/g62280: HTTP {status}, {len(body):,} bytes, "
+            f"{head.get('Content-Type') or head.get('content-type')}; {first[:700]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "aut10": aut10,
     "deu11": deu11,
     "deu10": deu10,
     "deu9": deu9,
