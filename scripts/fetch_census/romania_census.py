@@ -282,12 +282,24 @@ def uat_rows(rows: list[list[Any]], counties: set[str], field: str | None
     return [c[1] for c in columns], out
 
 
+SHORTFALL: dict[str, float] = {}
+
+
 def check_row(row: dict[str, Any], what: str) -> None:
+    """The printed groups fall short of the printed total by what the stars hide.
+
+    INS suppresses small cells and, to protect them, some cells beside them:
+    Baia de Arieș's ethnicity hides ten people under two stars. So a star is
+    allowed up to ten people, the shortfall must never be negative, and it
+    must stay under 2% of the row -- a misread column or row breaks all three.
+    """
     shown = sum(row["groups"].values())
     short = row["total"] - shown
-    if short < -0.5 or short > 2 * row["stars"] + 0.5:
+    if short < -0.5 or short > 10 * row["stars"] + 0.5 or short > 0.02 * row["total"] + 0.5:
         raise SystemExit(f"romania_census: {what} {row['name']}: the groups add to {shown:,.0f} "
                          f"against {row['total']:,.0f} with {row['stars']} suppressed cells")
+    if row["total"]:
+        SHORTFALL[what] = max(SHORTFALL.get(what, 0.0), short / row["total"])
 
 
 def sexes(rows: list[list[Any]], counties: set[str], order: dict[str, list[dict[str, Any]]]
@@ -386,7 +398,9 @@ def build() -> list[dict[str, Any]]:
                 for u in data[c]["uats"]:
                     check_row(u, field)
         log(f"  {field}: {country['total']:,.0f} residents, 42 counties, "
-            f"{sum(len(data[c]['uats']) for c in found):,} UATs; {len(labels)} columns")
+            f"{sum(len(data[c]['uats']) for c in found):,} UATs; {len(labels)} columns"
+            + (f"; the most any row's stars hide is {100 * SHORTFALL[field]:.2f}% of it"
+               if field in SHORTFALL else ""))
     # The four tables list the same UATs with the same totals, in the same order.
     base = tables["age"]
     for field in ("ethnicity", "language", "religion"):
