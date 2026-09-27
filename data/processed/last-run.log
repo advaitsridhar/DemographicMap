@@ -1,12 +1,8 @@
-== http://archive.org/wayback/available?url=scotlandscensus.gov.uk/census-results/download-data/census-table-data/
-  320 bytes; starts b'{"url": '
-  1 lines, 1 with ['http', 'census', 'zip', 'csv']
-      0: {"url": "scotlandscensus.gov.uk/census-results/download-data/census-table-data/", "archived_snapshots": {"closest": {"status": "200", "available": true, "url": "http://web.archive.org/web/20260522205107/https://www.scotlandscensus.gov.uk/census-resul
-== http://web.archive.org/cdx/search/cdx?url=scotlandscensus.gov.uk/media/*&filter=original:.*(zip|csv).*&collapse=urlkey&fl=original,timestamp,statuscode&limit=300
-  retry 1/2 after 2s :: http://web.archive.org/cdx/search/cdx?url=scotlandscensus.gov.uk/media/*&filter=original:.*(zip|csv).*&collapse=urlkey&fl=original,timestamp,statuscode&limit=300 :: HTTP Error 503: Service Unavailable
-  retry 2/2 after 4s :: http://web.archive.org/cdx/search/cdx?url=scotlandscensus.gov.uk/media/*&filter=original:.*(zip|csv).*&collapse=urlkey&fl=original,timestamp,statuscode&limit=300 :: HTTP Error 504: Gateway Time-out
-  RuntimeError: GET failed after 2 retries: http://web.archive.org/cdx/search/cdx?url=scotlandscensus.gov.uk/media/*&filter=original:.*(zip|csv).*&collapse=urlkey&fl=original,timestamp,statuscode&limit=300
-== https://statistics.gov.scot/sparql.json?query=SELECT%20?s%20WHERE%20%7B?s%20a%20%3Chttp://purl.org/linked-data/cube%23DataSet%3E%20FILTER(CONTAINS(STR(?s),%22census%22))%7D%20LIMIT%2080
-  retry 1/2 after 2s :: https://statistics.gov.scot/sparql.json?query=SELECT%20?s%20WHERE%20%7B?s%20a%20%3Chttp://purl.org/linked-data/cube%23DataSet%3E%20FILTER(CONTAINS(STR(?s),%22census%22))%7D%20LIMIT%2080 :: Remote end closed connection without response
-  retry 2/2 after 4s :: https://statistics.gov.scot/sparql.json?query=SELECT%20?s%20WHERE%20%7B?s%20a%20%3Chttp://purl.org/linked-data/cube%23DataSet%3E%20FILTER(CONTAINS(STR(?s),%22census%22))%7D%20LIMIT%2080 :: Remote end closed connection without response
-  RuntimeError: GET failed after 2 retries: https://statistics.gov.scot/sparql.json?query=SELECT%20?s%20WHERE%20%7B?s%20a%20%3Chttp://purl.org/linked-data/cube%23DataSet%3E%20FILTER(CONTAINS(STR(?s),%22census%22))%7D%20LIMIT%2080
+uk_nomis: district (TYPE154)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+uk_nomis: TS024 Main language (detailed) (NM_2043_1)
+  NM_2043_1: categories are c2021_mlang_94
+  wrote data/processed/uk_lad.json (3393 kB)
+  330 records
+  330 local authority records
