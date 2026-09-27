@@ -1,31 +1,9 @@
-   328 values of region
-   AT11 Burgenland n=84: 1=79 2=5
-   AT12 Niederösterreich n=456: 1=355 2=98 7=3
-   AT13 Wien n=493: 1=275 2=211 7=7
-   AT21 Kärnten n=57: 1=36 2=21
-   AT22 Steiermark n=196: 1=121 2=69 7=1 8=5
-   AT31 Oberösterreich n=225: 1=137 2=88
-   AT32 Salzburg n=305: 1=227 2=74 7=4
-   AT33 Tirol n=330: 1=212 2=118
-   AT34 Vorarlberg n=207: 1=154 2=53
-   BE10 Région de Bruxelles-Capitale/  n=166: 1=95 2=69 9=2
-   BE21 Prov. Antwerpen n=259: 1=99 2=159 9=1
-   BE22 Prov. Limburg (BE) n=124: 1=60 2=64
-   BE23 Prov. Oost-Vlaanderen n=214: 1=76 2=138
-   BE24 Prov. Vlaams-Brabant n=162: 1=57 2=105
-   BE25 Prov. West-Vlaanderen n=169: 1=57 2=110 7=1 8=1
-   BE31 Prov. Brabant Wallon n=57: 1=21 2=36
-   BE32 Prov. Hainaut n=185: 1=72 2=112 7=1
-   BE33 Prov. Liège n=152: 1=77 2=75
-   BE34 Prov. Luxembourg (BE) n=40: 1=19 2=21
-   BE35 Prov. Namur n=68: 1=24 2=44
-   BG311 Видин n=29: 1=26 2=3
-   BG312 Монтана n=41: 1=29 2=12
-   BG313 Враца n=46: 1=45 2=1
-   BG314 Плевен n=76: 1=63 2=13
-   BG315 Ловеч n=37: 1=36 2=1
-   BG321 Велико Търново n=84: 1=45 2=39
-   BG322 Габрово n=27: 1=25 2=2
-   BG323 Русе n=66: 1=30 2=35 7=1
-   BG324 Разград n=35: 1=35
-   BG325 Силистра n=37: 1=30 2=7
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
+  74 municipalities on 1 December 2017
+  ISL admin2: 70 of 74 office units bound to 73 polygons (0 set aside as pieces)
+    office units with no polygon (4): Þingeyjarsveit (fyrir 2022) (6612); Langanesbyggð (fyrir 2022) (6709); Sveitarfélagið Hornafjörður (fyrir 2021) (7708); Vestmannaeyjabær (8000)
+    polygons with no office unit (3): Langanesbyggð [244011B59191424948734]; Sveitarfélagið Hornafjörðu [244011B97448762640394]; Þingeyjarsveit [244011B2873245088627]
+    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
+  wrote data/processed/iceland_municipality.json (149 kB)
+  wrote iceland_municipality.json: 78 records
