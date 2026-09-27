@@ -1,2 +1,142 @@
-== xls https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx 5 24
-  !! URLError: <urlopen error [Errno 110] Connection timed out>
+== fin_vaerak
+  32 items
+    11rc.px [t] 11rc -- Population according to age (5-year) and sex, 1865-2025
+    11rd.px [t] 11rd -- Population according to age (1-year 0-112) and sex, 1972-2025
+    11re.px [t] 11re -- Population according to age (1-year) and sex by area, 1972-2025
+    11rf.px [t] 11rf -- Population according to age (1-year) and sex by area and the regional division of each statistical reference year, 2003-2025
+    11rg.px [t] 11rg -- Citizenship according to age and sex by region, 1990-2025
+    11rk.px [t] 11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
+    11rl.px [t] 11rl -- Language according to age and sex by region, 1990-2025
+    11rm.px [t] 11rm -- Language according to sex by municipality, 1990-2025
+    11rp.px [t] 11rp -- Country of birth according to age and sex by region, 1990-2025
+    11rs.px [t] 11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
+    11rt.px [t] 11rt -- Origin and background country according to age group and sex by region, 1990-2025
+    11ru.px [t] 11ru -- Origin according to background continent by area, 1990-2025
+    11rx.px [t] 11rx -- Belonging to a religious community by age and sex, 1990-2025
+    11ry.px [t] 11ry -- Marital status by age (1-year 0-112) and sex, 1990-2025
+    11rz.px [t] 11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
+    11s1.px [t] 11s1 -- Mean population according to age and sex by area, 1981-2025
+    11s2.px [t] 11s2 -- Finnish-speaking and Swedish-speaking population by age and sex and by area, 1990-2025
+    11s3.px [t] 11s3 -- Population according to urban-rural classification by age and sex, 2000-2025
+    11s5.px [t] 11s5 -- Population by month and area, 1990M01-2025M12
+    14x3.px [t] 14x3 -- Degree of urbanisation by area, 2023
+    14x4.px [t] 14x4 -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2023
+    159s.px [t] 159s -- Population according to citizenship, country of birth, language and origin (overlap of the groups), 1990-2025
+    159t.px [t] 159t -- Numbers and shares of persons with immigrant background by area, 1990-2025
+    15al.px [t] 15al -- Degree of urbanisation by area, 2024
+    15am.px [t] 15am -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2024
+== fin_11re
+  title: Population 31.12.
+  var 'alue_23_20260101' (Area) [elimination]: 309 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... KU976=Ylitornio; KU977=Ylivieska; KU980=Ylöjärvi; KU981=Ypäjä; KU989=Ähtäri; KU992=Äänekoski
+      code lengths {3: 1, 5: 308}; prefixes {'KU': 308, 'SSS': 1}
+  var 'ikaryhma_10_20180101' (Age) [elimination]: 102 values
+      SSS=Total; 000=0; 001=1; 002=2; 003=3; 004=4 ... 095=95; 096=96; 097=97; 098=98; 099=99; 100-=100 -
+      code lengths {3: 101, 4: 1}; prefixes {'': 101, 'SSS': 1}
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+  var 'timeperiod_y' (Year) [time]: 54 values
+      1972=1972; 1973=1973; 1974=1974; 1975=1975; 1976=1976; 1977=1977 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 54}; prefixes {'': 54}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== fin_11rl
+  title: Population 31.12.
+  var 'alue_23_20260101' (Region) [elimination]: 22 values
+      SSS=WHOLE COUNTRY; MA1=MA1 MAINLAND FINLAND; MK01=MK01 Uusimaa; MK02=MK02 Southwest Finland; MK04=MK04 Satakunta; MK05=MK05 Kanta-Häme ... MK16=MK16 Central Ostrobothnia; MK17=MK17 North Ostrobothnia; MK18=MK18 Kainuu; MK19=MK19 Lapland; MA2=MA2 ÅLAND; MK21=MK21 Åland
+      code lengths {3: 3, 4: 19}; prefixes {'MK': 19, 'MA': 2, 'SSS': 1}
+  var 'kieli_15_20180102' (Language) [elimination]: 169 values
+      SSS=Total; 01=NATIONAL LANGUAGES, TOTAL; fi=Finnish; sv=Swedish; se=Sami; 02=FOREIGN LANGUAGES, TOTAL ... wo=Wolof; xh=Xhosa; za=Zhuang; Chuang; zu=Zulu; 98=Other language; X=Unknown
+      code lengths {1: 1, 2: 167, 3: 1}; prefixes {'': 3, 'SSS': 1, 'fi': 1, 'sv': 1, 'se': 1, 'ab': 1, 'aa': 1, 'ae': 1}
+      /^SK/: 1 -- sk=Slovak
+  var 'ikaryhma_10_20180101' (Age) [elimination]: 17 values
+      SSS=Total; 0-4=0 - 4; 5-9=5 - 9; 10-14=10 - 14; 15-19=15 - 19; 20-24=20 - 24 ... 50-54=50 - 54; 55-59=55 - 59; 60-64=60 - 64; 65-69=65 - 69; 70-74=70 - 74; 75-=75 -
+      code lengths {3: 4, 5: 13}; prefixes {'': 16, 'SSS': 1}
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== fin_search_relig
+  41 hits
+    11rx.px | /vaerak | 11rx -- Belonging to a religious community by age and sex, 1990-2025
+    13wb.px | /yrti | 13wb -- Non-profit institutions serving households by legal form, 2018-2024
+    159d.px | /ava | 159d -- Studying of religion and worldview studies in grades 1 to 9 of comprehensive education and lower secondary education for adults, 2024
+    159n.px | /ava | 159n -- Studying of religion and worldview studies in grades 1 to 9 of comprehensive education and lower secondary education for adults by region, 2024
+    14up.px | /ati | 14up -- Index of wage and salary earnings, index of regular earnings and index of negotiated wages and salaries by industry, quarterly data, 2010Q1-2026Q2*
+    14uq.px | /ati | 14uq -- Index of wage and salary earnings, index of regular earnings and index of negotiated wages and salaries by industry, annual data, 2010-2025*
+    12a6.px | /jmete | 12a6 -- General government expenditure by function, annually, 1990-2024*
+    115s.px | /tyokay | 115s -- Employed persons by occupational group (Classification of Occupations 2010, levels 1 to 3), area, sex and year, 2010-2023
+    12tt.px | /tyonv | 12tt -- Jobseekers and vacancies by occupation during the month (1370), 2009M01-2026M08
+    15au.px | /pra | 15au -- Earnings of full-time wage and salary earners per month by sector, occupational group (Classification of Occupations 2010) and sex, 2024
+    15ay.px | /pra | 15ay -- Earnings of wage and salary earners per hour paid by sector, occupational group (Classification of Occupations 2010) and working hours, 2024
+    15az.px | /pra | 15az -- Earnings of wage and salary earners per hour paid by sector, occupational group (Classification of Occupations 2010) and sex, 2024
+    11ra.px | /vaerak | 11ra -- Key figures on population by region, 1990-2025
+    13kr.px | /rpk | 13kr -- Persons suspected of solved offences by the International Classification of Crime for Statistical Purposes (ICCS), year of solving, age, sex and nationality, 2006-2025
+    13kv.px | /rpk | 13kv -- Victims of offences and plaintiffs by the International Classification of Crime for Statistical Purposes (ICCS), year of report, age and sex, 2009-2025
+    154m.px | /rpk | 154m -- Offences recorded and their solving by the International Classification of Crime for Statistical Purposes (ICCS), year of reporting and the municipality of offence, 2006-2025
+    15b5.px | /khi | 15b5 -- Consumer Price Index (2025=100), monthly data, 1995M01-2026M08
+    15b7.px | /khi | 15b7 -- Harmonised Index of Consumer Prices (HICP) and Harmonised Index of Consumer Prices at Constant Taxes (HICP-CT) (2025=100), monthly data, 1996M01-2026M08
+    12ti.px | /tyonv | 12ti -- Unemployed jobseekers and vacancies by occupation at the end of the month (1270), 2009M01-2026M08
+    12tj.px | /tyonv | 12tj -- Unemployed, fully laid off and on reduced working week by occupation at the end of the month (1271), 2009M01-2026M08
+    12tu.px | /tyonv | 12tu -- Jobseekers and vacancies by occupation in each province during the month (1371), 2009M01-2026M08
+    13kq.px | /rpk | 13kq -- Offences recorded by the International Classification of Crime for Statistical Purposes (ICCS), year of reporting and the municipality of offence, 2006-2025
+    14pg.px | /ktutk | 14pg -- Household consumption expenditure by income quintile, 2012-2022
+    14ph.px | /ktutk | 14ph -- Household consumption expenditure by type of household, 2012-2022
+    14q4.px | /ktutk | 14q4 -- Household consumption expenditure by age of reference person, 2012-2022
+    14q7.px | /ktutk | 14q7 -- Household consumption expenditure by statistical grouping of municipalities, 2012-2022
+    14q8.px | /ktutk | 14q8 -- Households' consumption expenditure by sub-division, 2012-2022
+    14qu.px | /ktutk | 14qu -- Household consumption expenditure by socio-economic status and division, 2012-2022
+    15ag.px | /ntp | 15ag -- ANA Household Final Consumption Expenditure (COICOP2018), annually, 1990-2025*
+    115q.px | /tyokay | 115q -- Employed persons by occupation group (Classification of Occupations 2010, levels 1 to 5), occupational status, sex and year, 2010-2023
+    115r.px | /tyokay | 115r -- Employed persons by occupation group (Classification of Occupations 2010, levels 1 to 5), sex, age and year, 2010-2023
+    15df.px | /syyttr | 15df -- Number of sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2015-2024
+    15dg.px | /syyttr | 15dg -- Key figures from sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2015-2024
+    15dh.px | /syyttr | 15dh -- Number of sentences by district court and offence (district courts and courts of appeal as first court instance), 2015-2024
+    15di.px | /syyttr | 15di -- Key figures from sentences by district court and offence (district courts and courts of appeal as first court instance), 2015-2024
+    13ww.px | /alyr | 13ww -- Establishments of enterprises by industry and region, 2018-2024
+    13wv.px | /alyr | 13wv -- Establishments of enterprises by industryEstablishments of enterprises by industry, 2018-2024
+    13gw.px | /rpk | 13gw -- Offences recorded and their solving by offence heading according to the investigating authority, 2006-2025
+    13j2.px | /rpk | 13j2 -- Offences recorded by offence heading according to the month of reporting, preliminary data, 2006M01-2026M06*
+    13w3.px | /yrti | 13w3 -- Enterprises by industry (legal unit), 2018-2024
+== isl_search_muni
+  20 hits
+    MAN02120.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities 1901-1990
+    KOS03401.px | /kosningar/sveitastjorn/svf_2006 | Voters on the preliminary electoral roll 2006 by regions and municipalities
+    MAN02009.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities 1 December 1990-2004 - Final figures
+    MAN02001.px | /mannfjoldi/2_byggdir/sveitarfelog | Population by municipalities, sex and age 1 January 1998-2017 - Current municipalities
+    MAN05221.px | /Faeddirdanir/danir/danir | Deaths by municipalities, sex and age 1981-2016
+    MAN01301.px | /buferlaflutningar/buferlaflinnanlands/buferlaflinnanlandseldra | Migration by municipalities and year of migration 1987-2008
+    CEN01560.px | /manntal/1manntalfjolsk | Population by municipalities, sex and age 31 Dec. 2011
+    CEN04590.px | /manntal/4manntalhusn | Living quarters by municipalities and type 31 Dec. 2011
+    MAN07108.px | /fjolsk/Fjolskyldan | Nuclear families by municipalities and type of family 1998-2017
+    MAN08211.px | /mannfjoldi/2_byggdir/sveitarfelog | Mid-year population by sex, age and municipalities 1997-2010
+    MAN02114.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1996
+    MAN02115.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1995
+    MAN02116.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1994
+    MAN02117.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1993
+    MAN02118.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1992
+    MAN02119.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1991
+    CEN01570.px | /manntal/1manntalfjolsk | Private households by municipalities, type and size of private households 31 Dec. 2011
+    CEN01580.px | /manntal/1manntalfjolsk | Families by municipalities, type and size of families 31 Dec. 2011
+    CEN04600.px | /manntal/4manntalhusn | Dwelling units by municipalities,  occupancy status and type of building 31 Dec. 2011
+    MAN02008.px | /mannfjoldi/2_byggdir/sveitarfelog | Average annual population by municipality, age and sex 1998-2016 - Current municipalities
+== isl_search_relig
+  6 hits
+    MEN03111.px | /midlun/1_Fjolmidlar/hljodvarp | Programming of the general interest private radio channel Bylgjan FM 1987, 1997-2010
+    MEN03103.px | /midlun/1_Fjolmidlar/hljodvarp | Private radio channels by programme profile 1996-2011
+    MEN03106.px | /midlun/1_Fjolmidlar/hljodvarp | Programming of the Icelandic National Broadcasting Service-Channel 1 1987-2010
+    MEN04004.px | /midlun/1_Fjolmidlar/sjonvarp | Private television channels by programme profile 1986-2011
+    SKO04105b.px | /skolamal/4_haskolastig/0_hsNemendur | Students by level, type of education, degree, line of study and sex 1997-2016
+    VIN02005.px | /launogtekjur/2_laun/1_laun | Earnings for full-time employees by occupation and sex 2014-2016
+== isl_list
+  7 items
+    buferlaflutningar [l] Migration
+    Faeddirdanir [l] Births and deaths
+    fjolsk [l] Family
+    kosningar [l] Elections
+    mannfjoldaspa [l] Population projections
+    mannfjoldi [l] Population
+    manntal [l] Census
