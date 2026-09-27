@@ -658,7 +658,72 @@ def che4() -> None:
          r"href=\"[^\"]*asset[^\"]*\"[^>]*>[^<]*<|href=\"[^\"]*dam-api[^\"]*\"", limit=40)
 
 
+def cze5() -> None:
+    lines = head_lines("https://csu.gov.cz/docs/107508/bc8f2d41-4d3a-a8f4-02fa-800d9cd27266/"
+                       "130181-24data2023.csv", 4)
+    rows = list(csv_rows("\n".join(lines)))
+    if rows:
+        for col in rows[0]:
+            vals = Counter_(r[col] for r in rows)
+            log(f"   {col}: {len(vals)} values, e.g. {list(vals)[:8]}")
+    query = """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT ?title ?url WHERE {
+  ?d a dcat:Dataset ; dct:title ?title ; dcat:distribution ?dist .
+  ?dist dcat:downloadURL ?url .
+  FILTER(CONTAINS(STR(?url), "130181") || CONTAINS(LCASE(STR(?title)), "jednotek věku"))
+} LIMIT 80"""
+    page = show("https://data.gov.cz/sparql?query=" + urllib.parse.quote(query),
+                headers={"Accept": "application/sparql-results+json"})
+    try:
+        for b in json.loads(page)["results"]["bindings"]:
+            log(f"   - {b['title']['value'][:110]} | {b['url']['value']}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   {exc}")
+
+
+def hun5() -> None:
+    show("https://nepszamlalas2022.ksh.hu/eredmenyek/statikus-tablak", r"href=\"[^\"]+\"[^>]*>[^<]{3,}<",
+         limit=120)
+    show("https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1", r"(?:https?:)?//[^\"' ]+|/api/[^\"' ]+|\.php[^\"' ]*",
+         limit=40)
+
+
+def che5() -> None:
+    for table in ("px-x-0103030000_211", "px-x-0103030000_220", "px-x-0103030000_223"):
+        pxweb_meta(f"https://www.pxweb.bfs.admin.ch/api/v1/de/{table}/{table}.px")
+    head_lines("https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?"
+               "startPeriod=01-01-2009&endPeriod=01-01-2011", 1)
+
+
+def svk5() -> None:
+    show("https://www.scitanie.sk/obyvatelia/rozsirene-vysledky", r"href=\"[^\"]+\"[^>]*>[^<]{3,}<", limit=80)
+    show("https://www.scitanie.sk/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR",
+         r"href=\"[^\"]*(?:zakladne-vysledky|xlsx|csv|stiahn)[^\"]*\"", limit=60)
+
+
+def nld5() -> None:
+    show("https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=DescribeFeatureType&service=WFS"
+         "&version=2.0.0&typeNames=wijkenbuurten:gemeenten", r"name=\"[a-z_0-9]+\"", limit=120)
+    show("https://www.cbs.nl/nl-nl/zoeken?q=religie%20provincie", r"href=\"[^\"]*(?:relig|kerk)[^\"]*\"",
+         limit=30)
+
+
+def lux5() -> None:
+    show("https://statistiques.public.lu/fr/publications/recensement/diversite-linguistique.html",
+         r"href=\"[^\"]+\.(?:xlsx?|csv|pdf)\"|href=\"[^\"]*lustat[^\"]*\"", limit=40)
+    status, _, body = fetch("https://lustat.statec.lu/rest/dataflow/all/all/latest?detail=allstubs",
+                            headers={"Accept": "application/vnd.sdmx.structure+json;version=1.0"})
+    flows = jpath(json.loads(text(body)), "data.dataflows") or []
+    for flow in flows:
+        name = flow.get("name") or ""
+        if re.search(r"(?i)2011|census|recens|RP20|langu|main language|religi", name) and \
+                not re.search(r"(?i)working status|occupation|economic|education", name):
+            log(f"   - {flow.get('id')}({flow.get('version')}) {name[:150]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "cze5": cze5, "hun5": hun5, "che5": che5, "svk5": svk5, "nld5": nld5, "lux5": lux5,
     "cze4": cze4, "pol4": pol4, "svk4": svk4, "hun4": hun4, "nld4": nld4, "lux4": lux4,
     "aut4": aut4, "deu4": deu4, "che4": che4,
     "che3": che3, "lie3": lie3, "pol3": pol3, "svk3": svk3, "hun3": hun3, "svn3": svn3,

@@ -133,13 +133,33 @@ def bind_districts(office: dict[str, str]) -> dict[str, dict[str, Any]]:
     return bound
 
 
+def latest(year: int) -> int:
+    """The latest year up to ``year`` the age cube answers for.
+
+    DATAcube answers 400 for a year it does not hold yet, which is how the
+    first run met 2025 in April 2026.
+    """
+    import urllib.error
+    for candidate in range(year, year - 3, -1):
+        try:
+            cube("om7009rr", f"SK0/{candidate}/{POPULATION}/SPOLU/Spolu")
+            return candidate
+        except urllib.error.HTTPError as err:
+            log(f"  {candidate}: HTTP {err.code}; trying the year before")
+    raise SystemExit(f"slovakia: om7009rr answers for none of {year - 2}..{year}")
+
+
 def build(year: int) -> list[dict[str, Any]]:
+    year = latest(year)
     log(f"slovakia: DATAcube om7009rr / om7005rr, 31 December {year}")
     males: dict[str, Counter] = {}
     females: dict[str, Counter] = {}
     totals: dict[str, float] = {}
     names: dict[str, str] = {}
-    for key, value in cube("om7009rr", f"all/{year}/{POPULATION}/all/all"):
+    rows = []
+    for sex in ("SPOLU", "1", "2"):
+        rows += cube("om7009rr", f"all/{year}/{POPULATION}/{sex}/all")
+    for key, value in rows:
         area, area_label = key["om7009rr_vuc"]
         sex = key["om7009rr_poh"][0]
         age_code = key["om7009rr_vek"][0]
