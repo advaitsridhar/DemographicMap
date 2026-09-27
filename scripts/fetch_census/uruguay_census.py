@@ -7,7 +7,8 @@ never leave the runner: the probes print column names and counts of values.
 Usage:
     python -m scripts.fetch_census.uruguay_census --probe microdata --catalog 781
     python -m scripts.fetch_census.uruguay_census --probe columns --catalog 781 --file 1503 \
-        --count MUNICIPIO,DEPARTAMENTO
+        --count MUNICIPIO_136,DEPARTAMENTO --weight W
+    python -m scripts.fetch_census.uruguay_census --probe ddi --catalog 781 --vars PERER02
 """
 
 from __future__ import annotations
@@ -90,28 +91,90 @@ def unpack(archive: Path, into: Path) -> list[Path]:
 
 
 def sniff(path: Path) -> tuple[str, str]:
-    """(encoding, delimiter) of a CSV, from its first line."""
-    raw = path.open("rb").read(20000)
-    encoding, head = "latin-1", raw.decode("latin-1").split("\n", 1)[0]
+    """(encoding, delimiter) of a CSV, from its first 8 MB.
+
+    INE's personas file has an ASCII header and Latin-1 further down, so the
+    first line alone reads as UTF-8 and the file then fails a hundred MB in.
+    """
+    with path.open("rb") as fh:
+        raw = fh.read(8 << 20)
+    raw = raw[:raw.rfind(b"\n") + 1] or raw
+    encoding = "latin-1"
     try:
-        head = raw.decode("utf-8-sig").split("\n", 1)[0]
+        raw.decode("utf-8-sig")
         encoding = "utf-8-sig"
     except UnicodeDecodeError:
         pass
+    head = raw.decode(encoding, "replace").split("\n", 1)[0]
     delimiter = max((",", ";", "\t", "|"), key=head.count)
     return encoding, delimiter
+
+
+DDI = ("https://www4.ine.gub.uy/Anda5/index.php/metadata/export/{catalog}/ddi",
+       "https://www4.ine.gub.uy/Anda5/index.php/catalog/{catalog}/export/ddi",
+       "https://www4.ine.gub.uy/Anda5/index.php/ddibrowser/{catalog}/export/?format=ddi")
+
+
+def ddi_text(fragment: str) -> str:
+    fragment = re.sub(r"<!\[CDATA\[(.*?)\]\]>", r"\1", fragment, flags=re.S)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+
+
+def ddi_variables(xml: str) -> dict[str, dict]:
+    """Each variable of a DDI codebook: its label, file and categories."""
+    out: dict[str, dict] = {}
+    for m in re.finditer(r"(?s)<(?:\w+:)?var\b([^>]*)>(.*?)</(?:\w+:)?var>", xml):
+        attrs, body = m.group(1), m.group(2)
+        name = re.search(r'\bname="([^"]+)"', attrs)
+        if not name:
+            continue
+        label = re.search(r"(?s)<(?:\w+:)?labl\b[^>]*>(.*?)</(?:\w+:)?labl>", body)
+        cats = [(ddi_text(v), ddi_text(lab)) for v, lab in re.findall(
+            r"(?s)<(?:\w+:)?catgry\b[^>]*>.*?<(?:\w+:)?catValu>(.*?)</(?:\w+:)?catValu>"
+            r".*?<(?:\w+:)?labl\b[^>]*>(.*?)</(?:\w+:)?labl>.*?</(?:\w+:)?catgry>", body)]
+        files = re.search(r'\bfiles="([^"]+)"', attrs)
+        out[name.group(1)] = {"label": ddi_text(label.group(1)) if label else "",
+                              "file": files.group(1) if files else "", "categories": cats}
+    return out
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--probe", choices=["microdata", "columns"])
+    ap.add_argument("--probe", choices=["microdata", "columns", "ddi"])
     ap.add_argument("--catalog", default="781", help="the ANDA catalogue entry")
     ap.add_argument("--file", help="with --probe columns: the entry's file id")
     ap.add_argument("--count", default="", help="columns whose values are counted")
     ap.add_argument("--limit", type=int, default=300, help="values printed per column")
+    ap.add_argument("--weight", default="", help="with --probe columns: sum this column too")
+    ap.add_argument("--vars", default="", help="with --probe ddi: variables printed in full")
     args = ap.parse_args()
     open_ = opener()
+    if args.probe == "ddi":
+        for template in DDI:
+            url = template.format(catalog=args.catalog)
+            try:
+                body, headers = fetch(open_, url)
+            except Exception as err:                  # noqa: BLE001
+                print(f"{url}: {type(err).__name__}: {str(err)[:200]}")
+                continue
+            xml = body.decode("utf-8", "replace")
+            print(f"{url}: {len(body):,} bytes, {headers.get('Content-Type')}")
+            for fid, fname in re.findall(
+                    r'(?s)<(?:\w+:)?fileDscr\b[^>]*ID="([^"]+)".*?'
+                    r"<(?:\w+:)?fileName>(.*?)</(?:\w+:)?fileName>", xml):
+                print(f"  file {fid}: {fname.strip()}")
+            found = ddi_variables(xml)
+            if not found:
+                print(f"  no variables; starts {xml[:300]!r}")
+                continue
+            wanted = [v for v in args.vars.split(",") if v]
+            for name, var in found.items():
+                cats = var["categories"]
+                shown = f": {cats[:args.limit]}" if name in wanted else ""
+                print(f"  {var['file']} {name}: {var['label']!r}; {len(cats)} categories{shown}")
+            return 0
+        return 1
     if args.probe == "microdata":
         text = accept(open_, args.catalog)
         for href, label in re.findall(r'(?is)<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', text):
@@ -128,7 +191,7 @@ def main() -> int:
                 if path.suffix.lower() != ".csv":
                     continue
                 encoding, delimiter = sniff(path)
-                with path.open(encoding=encoding, newline="") as fh:
+                with path.open(encoding=encoding, errors="replace", newline="") as fh:
                     reader = csv.reader(fh, delimiter=delimiter)
                     header = next(reader)
                     print(f"  {encoding}, {delimiter!r}, {len(header)} columns: {header}")
@@ -138,15 +201,24 @@ def main() -> int:
                     if missing:
                         print(f"  no such columns: {missing}")
                     counts = {c: Counter() for c in idx}
-                    rows = 0
+                    weights = {c: Counter() for c in idx}
+                    w = header.index(args.weight) if args.weight in header else None
+                    rows, total = 0, 0.0
                     for row in reader:
                         rows += 1
+                        weight = float(row[w].replace(",", ".") or 0) if w is not None else 0.0
+                        total += weight
                         for c, i in idx.items():
-                            counts[c][row[i] if i < len(row) else ""] += 1
-                    print(f"  {rows:,} rows")
+                            value = row[i] if i < len(row) else ""
+                            counts[c][value] += 1
+                            weights[c][value] += weight
+                    print(f"  {rows:,} rows; {args.weight or 'no weight'} sums to {total:,.3f}")
                     for c, counter in counts.items():
                         print(f"  {c}: {len(counter)} values: "
                               f"{sorted(counter.items())[:args.limit]}")
+                        if w is not None:
+                            summed = [(k, round(v, 2)) for k, v in sorted(weights[c].items())]
+                            print(f"  {c} weighted: {summed[:args.limit]}")
         return 0
     log("uruguay_census: nothing but probes yet")
     return 0
