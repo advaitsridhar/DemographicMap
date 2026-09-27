@@ -5561,15 +5561,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 2375,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Boevange-sur-Attert merged into Helperknapp in 2018, so the 2021 census counts Helperknapp as one commune; STATEC publishes no figure for the drawn part."
+      "value": 40.1,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Boevange-sur-Attert merged into Helperknapp in 2018, so the 2021 census counts Helperknapp as one commune; STATEC publishes no figure for the drawn part."
+      "value": 106.2,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5580,10 +5586,34 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Boevange-Attert"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B71463456243881"
+    "shape_id": "21775719B71463456243881",
+    "aliases": [
+      "Boevange-Attert"
+    ],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Boevange-sur-Attert merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Boevange-sur-Attert merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Boevange-sur-Attert merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-2017-hobscheid",
@@ -5597,15 +5627,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 3518,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Hobscheid merged into Habscht in 2018, so the 2021 census counts Habscht as one commune; STATEC publishes no figure for the drawn part."
+      "value": 39.3,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Hobscheid merged into Habscht in 2018, so the 2021 census counts Habscht as one commune; STATEC publishes no figure for the drawn part."
+      "value": 104.6,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5616,10 +5652,32 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Hobscheid"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B8036560650946"
+    "shape_id": "21775719B8036560650946",
+    "aliases": [],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Hobscheid merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Hobscheid merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Hobscheid merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-2017-mompach",
@@ -5633,15 +5691,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1303,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Mompach merged into Rosport-Mompach in 2018, so the 2021 census counts Rosport-Mompach as one commune; STATEC publishes no figure for the drawn part."
+      "value": 38.5,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Mompach merged into Rosport-Mompach in 2018, so the 2021 census counts Rosport-Mompach as one commune; STATEC publishes no figure for the drawn part."
+      "value": 108.4,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5652,10 +5716,32 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Mompach"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B87806168896597"
+    "shape_id": "21775719B87806168896597",
+    "aliases": [],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Mompach merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Mompach merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Mompach merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-2017-rosport",
@@ -5669,15 +5755,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 2293,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Rosport merged into Rosport-Mompach in 2018, so the 2021 census counts Rosport-Mompach as one commune; STATEC publishes no figure for the drawn part."
+      "value": 39.5,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Rosport merged into Rosport-Mompach in 2018, so the 2021 census counts Rosport-Mompach as one commune; STATEC publishes no figure for the drawn part."
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5688,10 +5780,32 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Rosport"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B2997409339760"
+    "shape_id": "21775719B2997409339760",
+    "aliases": [],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Rosport merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Rosport merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Rosport merged into Rosport-Mompach in 2018, and the 2021 census counts Rosport-Mompach as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-2017-septfontaines",
@@ -5705,15 +5819,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 812,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Septfontaines merged into Habscht in 2018, so the 2021 census counts Habscht as one commune; STATEC publishes no figure for the drawn part."
+      "value": 41.6,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Septfontaines merged into Habscht in 2018, so the 2021 census counts Habscht as one commune; STATEC publishes no figure for the drawn part."
+      "value": 106.7,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5724,10 +5844,32 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Septfontaines"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B62416421133476"
+    "shape_id": "21775719B62416421133476",
+    "aliases": [],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Septfontaines merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Septfontaines merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Septfontaines merged into Habscht in 2018, and the 2021 census counts Habscht as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-2017-tuntange",
@@ -5741,15 +5883,21 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1720,
+      "year": 2017,
+      "source": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: Tuntange merged into Helperknapp in 2018, so the 2021 census counts Helperknapp as one commune; STATEC publishes no figure for the drawn part."
+      "value": 36.5,
+      "unit": "years",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: Tuntange merged into Helperknapp in 2018, so the 2021 census counts Helperknapp as one commune; STATEC publishes no figure for the drawn part."
+      "value": 102.4,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
     },
     "religion": {
       "status": "not_available"
@@ -5760,10 +5908,32 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)",
+        "url": "https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2017
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "STATEC, Recensement de la population 2011 (1 February 2011), population by commune",
+        "url": "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+        "license": "CC BY 4.0 (STATEC)",
+        "year": 2011
+      }
+    ],
     "country": "LUX",
+    "codes": {
+      "statec_name": "Tuntange"
+    },
     "match_by": "shape_id",
-    "shape_id": "21775719B93406058949797"
+    "shape_id": "21775719B93406058949797",
+    "aliases": [],
+    "population_note": "STATEC's population of the commune on 1 January 2017. Tuntange merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2011 census's population of usual residence by commune and five-year age group (1 February 2011). Tuntange merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself.",
+    "sex_ratio_note": "Males per 100 females counted by the 2011 census. Tuntange merged into Helperknapp in 2018, and the 2021 census counts Helperknapp as one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's last figures for the commune itself."
   },
   {
     "id": "LUX-RP2021-LU00001",

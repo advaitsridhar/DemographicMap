@@ -1,12 +1,22 @@
-slovenia: SiStat 05C4003S.px and 05C4010S.px, 2026H1
-  212 municipalities; Slovenia 2,135,107
-  municipalities against Slovenia: parts sum to 2,135,107 = 2,135,107
-  national median 45.8 (1 January 2026) against Eurostat's 45.5 a year earlier (SI); 2026 is not published yet
-  Maribor: 2 polygons of that name; the others are slivers under 1% of its extent
-  slovenia: 0 office units unbound
-  slovenia: 1 polygons without an office unit: Maribor (bbox [15.699, 46.5167, 15.6998, 46.517])
-  Cirkulane: +245 men over women, +82 of them in Cirkulane
-  Rečica ob Savinji: +216 men over women, +50 of them in Nizka
-  Šentrupert: +405 men over women, +358 of them in Slovenska vas
-  wrote data/processed/slovenia_obcina.json (390 kB)
-  wrote slovenia_obcina.json: 212 records
+luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
+  102 communes, 12 cantons, Luxembourg 643,941
+  communes against Luxembourg: parts sum to 643,941 = 643,941
+  cantons against Luxembourg: parts sum to 643,941 = 643,941
+  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
+  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
+  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
+  Rosport-Mompach: merged in 2018 from Rosport and Mompach, which the map draws apart; not written
+  luxembourg admin2: 0 office units unbound
+  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
+  105 communes on 1-1-2017 against Luxembourg: parts sum to 590,667 = 590,667
+  national median 39.1 against Eurostat's 39.0 (LU, 1 January 2011)
+  Boevange-sur-Attert: 2,375 (2017); 2011 census 2,037
+  Hobscheid: 3,518 (2017); 2011 census 3,096
+  Mompach: 1,303 (2017); 2011 census 1,065
+  Rosport: 2,293 (2017); 2011 census 2,076
+  Septfontaines: 812 (2017); 2011 census 744
+  Tuntange: 1,720 (2017); 2011 census 1,275
+  luxembourg admin1: 0 office units unbound
+  luxembourg admin1: 0 polygons without an office unit
+  wrote data/processed/luxembourg_commune.json (207 kB)
+  wrote luxembourg_commune.json: 117 records
