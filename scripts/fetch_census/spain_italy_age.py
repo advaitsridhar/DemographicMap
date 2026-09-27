@@ -45,6 +45,7 @@ OUT = "spain_italy_age.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 INE_TABLE = "69792"
 INE_DATA = f"https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/{INE_TABLE}?nult=2&tip=AM"
+INE_VALUES = f"https://servicios.ine.es/wstempus/js/ES/VALORES_GRUPOSTABLA/{INE_TABLE}/145746"
 INE_PAGE = f"https://www.ine.es/jaxiT3/Tabla.htm?t={INE_TABLE}"
 INE_SOURCE = "INE, Estadística Continua de Población (table 69792)"
 CANARY = {"35": "Palmas, Las", "38": "Santa Cruz de Tenerife"}   # INE code -> drawn name
@@ -63,9 +64,29 @@ def meta(series: dict[str, Any], variable: str) -> dict[str, Any]:
     return {}
 
 
+def ine_series() -> list[dict[str, Any]]:
+    """Every series of table 69792, asked for one province at a time.
+
+    The whole table in one request is refused (INE answers an error object
+    rather than the series), so each of the 52 provinces and the national
+    total is asked for on its own, by the value ids the table itself lists.
+    """
+    values = http_json(INE_VALUES, cache=False, timeout=300)
+    series: list[dict[str, Any]] = []
+    for value in values:
+        payload = http_json(f"{INE_DATA}&tv={value['FK_Variable']}:{value['Id']}",
+                            cache=False, timeout=300)
+        if not isinstance(payload, list):
+            raise SystemExit(f"spain_italy_age: INE answered {str(payload)[:200]} for "
+                             f"{value.get('Nombre')}")
+        series.extend(payload)
+    log(f"  INE table {INE_TABLE}: {len(values)} places, {len(series)} series")
+    return series
+
+
 def spain() -> tuple[dict[str, dict[str, Any]], int]:
     """INE code -> {men, women, ages}, for the Canary provinces, at the latest 1 January."""
-    payload = http_json(INE_DATA, cache=False, timeout=600)
+    payload = ine_series()
     # sex, age (None for all ages), province code, date -> value
     cells: dict[tuple[str, int | None, str, str], float] = {}
     dates: set[str] = set()
