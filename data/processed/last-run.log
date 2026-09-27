@@ -1,11 +1,13 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  17 of 74 municipalities are the same territory today; renumbered: []; merged: ['Akrahreppur', 'Akraneskaupstaður', 'Akureyrarbær', 'Bláskógabyggð', 'Blönduósbær', 'Bolungarvíkurkaupstaður', 'Borgarbyggð', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Dalabyggð', 'Dalvíkurbyggð', 'Djúpavogshreppur', 'Eyjafjarðarsveit', 'Fjallabyggð', 'Fjarðabyggð', 'Fljótsdalshérað', 'Garðabær', 'Grindavíkurbær', 'Grundarfjarðarbær', 'Hafnarfjarðarkaupstaður', 'Helgafellssveit', 'Hvalfjarðarsveit', 'Hveragerðisbær', 'Húnavatnshreppur', 'Húnaþing vestra', 'Kópavogsbær', 'Langanesbyggð', 'Mosfellsbær', 'Norðurþing', 'Rangárþing eystra', 'Rangárþing ytra', 'Reykjanesbær', 'Sandgerðisbær', 'Seltjarnarnesbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skeiða- og Gnúpverjahreppur', 'Skútustaðahreppur', 'Snæfellsbær', 'Strandabyggð', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Svalbarðsstrandarhreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Hornafjörður', 'Sveitarfélagið Skagafjörður', 'Sveitarfélagið Skagaströnd', 'Sveitarfélagið Vogar', 'Sveitarfélagið Árborg', 'Sveitarfélagið Ölfus', 'Súðavíkurhreppur', 'Tálknafjarðarhreppur', 'Vestmannaeyjabær', 'Vesturbyggð', 'Vopnafjarðarhreppur', 'Ísafjarðarbær', 'Þingeyjarsveit']
-  1 January 2018 in today's division against 1 December 2017: largest gaps Grímsnes- og Grafningshreppur 2.3%, Reykjavíkurborg 2.4%, Mýrdalshreppur 2.4%, Árneshreppur 2.4%, Skorradalshreppur 3.6%
-  summed into the region the map draws them in, not their number's: []
-    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
-  wrote data/processed/iceland_municipality.json (155 kB)
-  wrote iceland_municipality.json: 81 records
+luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
+  102 communes, 12 cantons, Luxembourg 643,941
+  communes against Luxembourg: parts sum to 643,941 = 643,941
+  cantons against Luxembourg: parts sum to 643,941 = 643,941
+  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
+  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
+  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
+  Rosport-Mompach: merged in 2018 from Rosport and Mompach, which the map draws apart; not written
+  luxembourg admin2: 0 office units unbound
+  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
+  luxembourg admin1: 1 office units unbound: Canton Esch (LU00002)
+  luxembourg admin1: 1 polygons without an office unit: Canton Esch-sur-Alzette
+luxembourg: admin1 does not pair up: ['Canton Esch (LU00002)'] / ['Canton Esch-sur-Alzette']
