@@ -11,7 +11,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 2337595,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "median_age": {
       "value": 47.2,
@@ -20,8 +22,8 @@
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "sex_ratio": {
-      "value": 954,
-      "unit": "males_per_1000_females",
+      "value": 95.4,
+      "unit": "males_per_100_females",
       "year": 2025,
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
@@ -36,7 +38,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
         "year": 2025
@@ -59,7 +61,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 567636,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "median_age": {
       "value": 49.8,
@@ -68,8 +72,8 @@
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "sex_ratio": {
-      "value": 990,
-      "unit": "males_per_1000_females",
+      "value": 99.0,
+      "unit": "males_per_100_females",
       "year": 2025,
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
@@ -84,7 +88,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
         "year": 2025
@@ -107,7 +111,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1183208,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "median_age": {
       "value": 48.9,
@@ -116,8 +122,8 @@
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "sex_ratio": {
-      "value": 995,
-      "unit": "males_per_1000_females",
+      "value": 99.5,
+      "unit": "males_per_100_females",
       "year": 2025,
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
@@ -132,7 +138,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
         "year": 2025
@@ -155,7 +161,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1363540,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "median_age": {
       "value": 48.6,
@@ -164,8 +172,8 @@
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "sex_ratio": {
-      "value": 1008,
-      "unit": "males_per_1000_females",
+      "value": 100.8,
+      "unit": "males_per_100_females",
       "year": 2025,
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
@@ -180,7 +188,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
         "year": 2025
@@ -203,7 +211,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 534963,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "median_age": {
       "value": 44.5,
@@ -212,8 +222,8 @@
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
     "sex_ratio": {
-      "value": 1077,
-      "unit": "males_per_1000_females",
+      "value": 107.7,
+      "unit": "males_per_100_females",
       "year": 2025,
       "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
     },
@@ -228,7 +238,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
         "year": 2025
@@ -251,7 +261,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1746,
+      "year": 2021,
+      "source": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)"
     },
     "median_age": {
       "status": "not_available",
@@ -259,7 +271,7 @@
     },
     "sex_ratio": {
       "status": "not_applicable",
-      "note": "Women may not enter Mount Athos; its residents are men, so a ratio of men to women is not defined."
+      "note": "ELSTAT's 2021 census counts 1,746 residents on Mount Athos, 1,746 men and 0 women -- women may not enter it -- so a ratio of men to women is not defined."
     },
     "religion": {
       "status": "not_available"
@@ -270,7 +282,15 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)",
+        "url": "https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f",
+        "page": "https://www.statistics.gr/el/2021-census-res-pop-results",
+        "year": 2021
+      }
+    ],
     "country": "GRC",
     "match_by": "shape_id",
     "shape_id": "93993887B40019078264500"
@@ -287,7 +307,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1746,
+      "year": 2021,
+      "source": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)"
     },
     "median_age": {
       "status": "not_available",
@@ -295,7 +317,7 @@
     },
     "sex_ratio": {
       "status": "not_applicable",
-      "note": "Women may not enter Mount Athos; its residents are men, so a ratio of men to women is not defined."
+      "note": "ELSTAT's 2021 census counts 1,746 residents on Mount Athos, 1,746 men and 0 women -- women may not enter it -- so a ratio of men to women is not defined."
     },
     "religion": {
       "status": "not_available"
@@ -306,7 +328,15 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)",
+        "url": "https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f",
+        "page": "https://www.statistics.gr/el/2021-census-res-pop-results",
+        "year": 2021
+      }
+    ],
     "country": "GRC",
     "match_by": "shape_id",
     "shape_id": "26713481B40019078264500"
