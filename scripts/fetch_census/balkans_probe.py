@@ -21,6 +21,8 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
                                  territory tree the page carries
     pxv:URL~~VARREGEX[~~N]       a PxWeb table's variables, every value (up to N) of those
                                  whose code matches VARREGEX
+    postraw:URL~~B64JSON[~~N]    POST without following redirects: status, Location,
+                                 headers and the first N characters of the body
 
 The commands are split on whitespace by the workflow, so no part may hold a
 space: a regex uses ``\\s`` instead. Read-only; the output is the log.
@@ -54,7 +56,7 @@ TIMEOUT = 60
 import http.cookiejar  # noqa: E402
 OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf",
-         "rsdata", "pxv")
+         "rsdata", "pxv", "postraw")
 
 
 def uri(url: str) -> str:
@@ -199,6 +201,23 @@ def probe(arg: str) -> None:
                         say(f"  {'  ' * level}l {nid}  {text[:80]}")
                         walk(child + "/", level + 1)
             walk(url, 0)
+            return
+        if mode == "postraw":
+            class NoRedirect(urllib.request.HTTPRedirectHandler):
+                def redirect_request(self, *args, **kwargs):
+                    return None
+            opener = urllib.request.build_opener(NoRedirect)
+            body_json = base64.b64decode(extra[0])
+            req = urllib.request.Request(uri(url), data=body_json, method="POST", headers={
+                "User-Agent": USER_AGENT, "Accept": "*/*", "Content-Type": "application/json"})
+            try:
+                with opener.open(req, timeout=TIMEOUT) as resp:
+                    status, hdrs, body = resp.status, dict(resp.headers), resp.read()
+            except urllib.error.HTTPError as exc:
+                status, hdrs, body = exc.code, dict(exc.headers or {}), exc.read() or b""
+            say(f"  HTTP {status} Location={hdrs.get('Location')} type={hdrs.get('Content-Type')} "
+                f"{len(body):,} bytes")
+            say("  " + decode(body, hdrs)[:int(extra[1]) if len(extra) > 1 else 800])
             return
         if mode == "pxq":
             body_json = base64.b64decode(extra[0]).decode()
