@@ -1,48 +1,98 @@
-  Tom1_tab-5_VPN-2020.xlsx: 1,658,676 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-  Tom1_tab-5_VPN-2020.xlsx: every subject's formations make its total, and every formation's men and women make its own
-  fetched ADM2_simplified.geojson (26.3 MB)
-  RUS ADM2: 2327 polygons from ADM2_simplified.geojson
-  Брянская область: 'Новозыбковский городской округ' agrees by name with 'Novozybkovsky District' but 38,680 of its 49,379 people live in towns the map draws in Novozybkov (38,680); it spans polygons and is not bound
-  Брянская область: 'Стародубский муниципальный округ' agrees by name with 'Starodubsky District' but 17,687 of its 35,404 people live in towns the map draws in Starodub (17,687); it spans polygons and is not bound
-  Брянская область: formations left ['Новозыбковский городской округ', 'Стародубский муниципальный округ']; polygons left ['Novozybkov', 'Novozybkovsky District', 'Starodub', 'Starodubsky District']
-  Чеченская Республика: 'Серноводский муниципальный район' is not bound; its towns lie in Sunzhensky District, Achkhoy-Martanovsky District
-  Чеченская Республика: formations left ['Серноводский муниципальный район']; polygons left ['Sunzhensky District']
-  Карачаево-Черкесская Республика: 'Карачаевский городской округ': agrees as well with more than one polygon, or its polygon with more than one formation
-  Карачаево-Черкесская Республика: 'Карачаевский муниципальный район': agrees as well with more than one polygon, or its polygon with more than one formation
-  Карачаево-Черкесская Республика: 'Карачаевский городской округ': near 0.96 with 50074027B32007532119787 too close to a rival at 1.01
-  Карачаево-Черкесская Республика: 'Карачаевский муниципальный район': near 0.96 with 50074027B32007532119787 too close to a rival at 1.01
-  Кемеровская область - Кузбасс: 'Topkinsky District' would get 41,206 from 'Топкинский муниципальный округ', 2.93 times the 14,048 it carries (Wikidata (CC0)); not the same place, not bound
-  Кемеровская область - Кузбасс: formations left ['Топкинский муниципальный округ']; polygons left ['Topkinsky District']
-  Костромская область: 'Городской округ город Мантурово' agrees by name with 'Manturovo', but it has a rural population (2,846) and the map still draws 'Manturovsky District' beside it: the okrug joined the two, and is not bound
-  Костромская область: formations left ['Городской округ город Мантурово']; polygons left ['Manturovo', 'Manturovsky District']
-  Moscow: 1 polygons, and no census formations for 'г. Москва'
-  Московская область: 'Городской округ Пушкинский' agrees by name with 'Ivanteyevka' but 137,360 of its 299,385 people live in towns the map draws in городской округ Красноарме (26,492), Pushkinsky District (110,868); it spans polygons and is not bound
-  Московская область: 'Орехово-Зуевский городской округ' agrees by name with 'Orekhovo-Zuyevsky District' but 105,745 of its 241,126 people live in towns the map draws in городской округ Орехово-Зу (105,745); it spans polygons and is not bound
-  Московская область: 'Городской округ Серпухов' agrees by name with 'городской округ Серпухов', but it has a rural population (38,790) and the map still draws 'Serpukhovsky District' beside it: the okrug joined the two, and is not bound
-  Московская область: 'Городской округ Шатура' is not bound; its towns lie in Roshal urban okrug, Shatursky District
-  Московская область: 'Losino-Petrovsky' would get 67,664 from 'Городской округ Лосино-Петровский', 2.66 times the 25,424 it carries (Wikidata (CC0)); not the same place, not bound
-  Московская область: formations left ['Городской округ Лосино-Петровский', 'Городской округ Лотошино', 'Городской округ Пушкинский', 'Городской округ Серпухов', 'Городской округ Шатура', 'Наро-Фоминский городской округ', 'Орехово-Зуевский городской округ']; polygons left ['Ivanteyevka', 'Kolomensky District', 'Losino-Petrovsky', 'Lotoshinsky District', 'Orekhovo-Zuyevsky District', 'Pushkinsky District', 'Roshal urban okrug', 'Serpukhovsky District', 'Shatursky District', 'Zvenigorod', 'городской округ Красноарме', 'городской округ Озёры', 'городской округ Орехово-Зу', 'городской округ Серпухов']
-  Оренбургская область: 'Gaysky District' would get 40,575 from 'Гайский городской округ', 4.31 times the 9,419 it carries (Wikidata (CC0)); not the same place, not bound
-  Оренбургская область: 'Kuvandyksky District' would get 41,621 from 'Кувандыкский городской округ', 2.67 times the 15,576 it carries (Wikidata (CC0)); not the same place, not bound
-  Оренбургская область: 'Yasnensky District' would get 18,237 from 'Ясненский городской округ', 5.61 times the 3,251 it carries (Wikidata (CC0)); not the same place, not bound
-  Оренбургская область: formations left ['Гайский городской округ', 'Кувандыкский городской округ', 'Ясненский городской округ']; polygons left ['Gaysky District', 'Kuvandyksky District', 'Yasnensky District']
-  Пермский край: 'Кунгурский муниципальный округ' agrees by name with 'Kungursky District' but 62,673 of its 104,638 people live in towns the map draws in Кунгурский городской округ (62,673); it spans polygons and is not bound
-  Пермский край: 'Соликамский городской округ' agrees by name with 'Solikamsky District' but 89,473 of its 101,558 people live in towns the map draws in Solikamsk (89,473); it spans polygons and is not bound
-  Пермский край: formations left ['Соликамский городской округ', 'Кунгурский муниципальный округ']; polygons left ['Kungursky District', 'Solikamsk', 'Solikamsky District', 'Usolsky District', 'Кунгурский городской округ']
-  Приморский край: 'Партизанский городской округ': agrees as well with more than one polygon, or its polygon with more than one formation
-  Приморский край: 'Партизанский муниципальный район': agrees as well with more than one polygon, or its polygon with more than one formation
-  Приморский край: 'Партизанский городской округ': near 0.94 with 50074027B87569969608847 too close to a rival at 1.01
-  Приморский край: 'Партизанский муниципальный район': near 0.94 with 50074027B87569969608847 too close to a rival at 1.01
-  Сахалинская область: formations left ['"Южно-Курильский городской округ"']; polygons left []
-  Ставропольский край: 'Георгиевский городской округ' agrees by name with 'Georgiyevsky District' but 63,221 of its 160,238 people live in towns the map draws in Georgiyevsk (63,221); it spans polygons and is not bound
-  Ставропольский край: formations left ['Георгиевский городской округ']; polygons left ['Georgiyevsk', 'Georgiyevsky District']
-  Свердловская область: 'Городской округ муниципальное образование Алапаевское': russian, cut short 0.97 with 50074027B9981749344230 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование город Алапаевск': russian, cut short 0.97 with 50074027B9981749344230 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование город Алапаевск': near 0.94 with 50074027B71545540908305 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование Алапаевское': near 0.89 with 50074027B71545540908305 too close to a rival at 0.97
-  Тверская область: 'Вышневолоцкий городской округ' agrees by name with 'Vyshnevolotsky District' but 45,830 of its 67,163 people live in towns the map draws in Vyshny Volochyok (45,830); it spans polygons and is not bound
-  Тверская область: formations left ['Вышневолоцкий городской округ']; polygons left ['Vyshnevolotsky District', 'Vyshny Volochyok']
-  Ярославская область: 'Городской округ город Переславль-Залесский' agrees by name with 'городской округ Переславль', but it has a rural population (18,844) and the map still draws 'Pereslavsky District' beside it: the okrug joined the two, and is not bound
-  Ярославская область: formations left ['Городской округ город Переславль-Залесский']; polygons left ['Pereslavsky District', 'городской округ Переславль']
-  2289 of 2326 polygons bound ({'name': 2191, 'towns': 97, 'name, with a town the map draws inside it': 1}), holding 2290 of 2311 formations
-  wrote data/processed/russia_municipal.json (5648 kB)
+== get https://www.stat.gov.az/source/census/
+  80,038 bytes, begins b'\r\n<!DOCTYPE html'
+  link: 'Dövlət Statistika Komitəsinin Reqlamenti' -> https://www.stat.gov.az/menu/2/regulations/stat_req.pdf
+  link: 'Rəsmi statistikanın əsas prinsipləri' -> https://www.stat.gov.az/menu/2/bmt_principles/BMTprinciples.pdf
+  link: 'Avropa statistikasının normalar məcəlləsi' -> https://www.stat.gov.az/menu/2/eurostat/EuroStatCode.pdf
+  link: 'Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası' -> https://www.stat.gov.az/menu/2/strategy/Statistic_strategy.pdf
+  link: 'İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya' -> https://www.stat.gov.az/menu/2/strategy/administrative_strategy_plan.pdf
+  link: 'Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları' -> https://www.stat.gov.az/menu/2/freedom_info/freedom_info.pdf
+  link: 'İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı' -> https://www.stat.gov.az/menu/2/i_x/
+  link: 'Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı' -> https://www.stat.gov.az/menu/2/reports/SPFSIAR.pdf
+  link: 'Azərbaycan Respublikası Dövlət Statistika Komitəsinin rayon (şəhər) statistika idarəsi haq' -> https://www.stat.gov.az/menu/3/Legislation/statute_d_az.pdf
+  link: 'Rəsmi statistika sahəsində normativ hüquqi aktlar, müxtəlif qanunlar və fərmanlardan çıxar' -> https://www.stat.gov.az/menu/3/Legislation/Normativ_Az.pdf
+  link: 'Azərbaycan Respublikasının Dövlət rəmzləri' -> https://www.stat.gov.az/menu/3/Legislation/az_symbols.pdf
+  link: 'Elektron xidmətlər üzrə inzibati reqlamentlər' -> https://www.stat.gov.az/menu/4/i_req/i_req.pdf
+  link: 'Statistik nəşrlərin kataloqu' -> https://www.stat.gov.az/menu/6/catalogue_st_p/KATALOQ-2026.pdf
+  link: 'Rəsmi statistik məlumatların yayılması sahəsində siyasət' -> https://www.stat.gov.az/menu/6/dissemination_policy/DissPolicy_az_2014.pdf
+  link: 'İstifadəçilər tərəfindən statistik məlumatların düzgün şərh edilməməsi halları baş verdikd' -> https://www.stat.gov.az/menu/6/SSC_rules/SSC_rules.pdf
+  link: 'Dövlət Statistika Komitəsinin istifadəçilərlə iş üzrə konsepsiyası' -> https://www.stat.gov.az/menu/6/SSC_conception/SSC_conception_az.pdf
+  link: 'Məlumatlara yenidən baxılması reqlamenti' -> https://www.stat.gov.az/menu/6/information_regulations/reg_05_2016.pdf
+  link: 'Məlumatların dəqiqləşdirmə təqvimi' -> https://www.stat.gov.az/menu/6/calendar/calendar.xls
+  link: 'Tədqiqat məqsədilə istifadə olunması üçün istifadəçilərə mikro məlumatların verilməsi qayd' -> https://www.stat.gov.az/menu/6/personal_info/micro_inf.pdf
+  link: 'Fərdi məlumatlarla necə işləmək, onların məxfiliyini necə qorumaq lazımdır?' -> https://www.stat.gov.az/menu/6/personal_info/personal_information.pdf
+  link: 'Korrupsiyaya qarşı mübarizəyə dair yaddaş kitabçası' -> https://www.stat.gov.az/menu/6/buklet/Korrupsiya.pdf
+  link: 'Sahibkar nəyi bilməlidir' -> https://www.stat.gov.az/source/others/SAHIBKAR-2024.pdf
+  link: '“Bakı KOB evi”ndə nümayəndə' -> https://www.stat.gov.az/source/others/Baki_KobEvinde_numayende.pdf
+  link: 'Sahibkar nəyi bilməlidir' -> https://www.stat.gov.az/source/others/SAHIBKAR_2024.pdf
+  link: 'Baxış üçün videonu endirin.' -> https://www.stat.gov.az/source/census/video_telimat/Siyahıyaalınma_kend_1.mp4
+  link: 'Baxış üçün videonu endirin.' -> https://www.stat.gov.az/source/census/video_telimat/Siyahıyaalınma_kend_2.mp4
+  link: 'İSO 9001:2015 standartı üzrə sertifikat' -> https://www.stat.gov.az/menu/2/quality/az/sertifikat_ISO_9001_2015.pdf
+  link: 'Azərbaycan Respublikası Dövlət Statistika Komitəsinin aparatına 2025-ci ildə daxil olan və' -> https://www.stat.gov.az/source/others/melumat_2025_illik.pdf
+  link: '2025-ci il üzrə istifadəçilərin statistik məlumatlarla təmin olunması barədə onlayn sorğun' -> https://www.stat.gov.az/source/others/sorqu-yekun-2025-ARAYIŞ.pdf
+  link: 'Azərbaycan Milli Statistika Sisteminin Qlobal Qiymətləndirilməsi' -> https://www.stat.gov.az/source/others/Q_Q.pdf
+  link: '' -> https://www.stat.gov.az//menu/2/melumat/melumat.pdf
+  (247 links in all)
+  text: Azərbaycan Respublikasının Dövlət Statistika Komitəsi --> --> --> --> Outdated Browser For a better experience, keep your browser up to date. Click here for latest versions. İnternet bələdçinizin versiyası köhnədir. İnternet bələdçinizi yeniləmək üçün buraya klikləyin. --> --> --> --> --> AZ &nbsp;&nbsp; EN --> Baş səhifə Haqqımızda Dövlət Statistika Komitəsinin strukturu və rəhbər heyəti Dövlət Statistika Komitəsinin kollegiyası Dövlət Statistika Komitəsinin Reqlamenti Statistik işlər proqramı Statistika şurası Apellyasiya Şurası Kadr siyasəti Rəsmi statistikanın əsas prinsipləri Fəaliyyətlə bağlı illik hesabatlar Avropa statistikasının normalar məcəlləsi Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar Korrupsiyaya qarşı mübarizənin gücləndirilməsinə dai
+== get https://www.stat.gov.az/source/demoqraphy/ap/
+  67,258 bytes, begins b'\r\n<!DOCTYPE html'
+  link: 'Dövlət Statistika Komitəsinin Reqlamenti' -> https://www.stat.gov.az/menu/2/regulations/stat_req.pdf
+  link: 'Rəsmi statistikanın əsas prinsipləri' -> https://www.stat.gov.az/menu/2/bmt_principles/BMTprinciples.pdf
+  link: 'Avropa statistikasının normalar məcəlləsi' -> https://www.stat.gov.az/menu/2/eurostat/EuroStatCode.pdf
+  link: 'Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası' -> https://www.stat.gov.az/menu/2/strategy/Statistic_strategy.pdf
+  link: 'İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya' -> https://www.stat.gov.az/menu/2/strategy/administrative_strategy_plan.pdf
+  link: 'Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları' -> https://www.stat.gov.az/menu/2/freedom_info/freedom_info.pdf
+  link: 'İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı' -> https://www.stat.gov.az/menu/2/i_x/
+  link: 'Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı' -> https://www.stat.gov.az/menu/2/reports/SPFSIAR.pdf
+  link: 'Azərbaycan Respublikası Dövlət Statistika Komitəsinin rayon (şəhər) statistika idarəsi haq' -> https://www.stat.gov.az/menu/3/Legislation/statute_d_az.pdf
+  link: 'Rəsmi statistika sahəsində normativ hüquqi aktlar, müxtəlif qanunlar və fərmanlardan çıxar' -> https://www.stat.gov.az/menu/3/Legislation/Normativ_Az.pdf
+  link: 'Azərbaycan Respublikasının Dövlət rəmzləri' -> https://www.stat.gov.az/menu/3/Legislation/az_symbols.pdf
+  link: 'Elektron xidmətlər üzrə inzibati reqlamentlər' -> https://www.stat.gov.az/menu/4/i_req/i_req.pdf
+  link: 'Statistik nəşrlərin kataloqu' -> https://www.stat.gov.az/menu/6/catalogue_st_p/KATALOQ-2026.pdf
+  link: 'Rəsmi statistik məlumatların yayılması sahəsində siyasət' -> https://www.stat.gov.az/menu/6/dissemination_policy/DissPolicy_az_2014.pdf
+  link: 'İstifadəçilər tərəfindən statistik məlumatların düzgün şərh edilməməsi halları baş verdikd' -> https://www.stat.gov.az/menu/6/SSC_rules/SSC_rules.pdf
+  link: 'Dövlət Statistika Komitəsinin istifadəçilərlə iş üzrə konsepsiyası' -> https://www.stat.gov.az/menu/6/SSC_conception/SSC_conception_az.pdf
+  link: 'Məlumatlara yenidən baxılması reqlamenti' -> https://www.stat.gov.az/menu/6/information_regulations/reg_05_2016.pdf
+  link: 'Məlumatların dəqiqləşdirmə təqvimi' -> https://www.stat.gov.az/menu/6/calendar/calendar.xls
+  link: 'Tədqiqat məqsədilə istifadə olunması üçün istifadəçilərə mikro məlumatların verilməsi qayd' -> https://www.stat.gov.az/menu/6/personal_info/micro_inf.pdf
+  link: 'Fərdi məlumatlarla necə işləmək, onların məxfiliyini necə qorumaq lazımdır?' -> https://www.stat.gov.az/menu/6/personal_info/personal_information.pdf
+  link: 'Korrupsiyaya qarşı mübarizəyə dair yaddaş kitabçası' -> https://www.stat.gov.az/menu/6/buklet/Korrupsiya.pdf
+  link: 'Əhalinin sayının dəyişilməsi' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_1.xls
+  link: 'Əhalinin orta illik sayının dəyişilməsi' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_2.xls
+  link: 'Əhalinin cins üzrə sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_3.xls
+  link: 'Əhalinin yaş qrupları üzrə sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_4.xls
+  link: 'Əhalinin milli (etnik) tərkibi və əhalinin ana dili və sərbəst danışdığı dilə görə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_5-6.xls
+  link: 'Əhalinin təhsil səviyyəsi' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_7.xls
+  link: '15 və yuxarı yaşda olan əhalinin savadlılıq səviyyəsi' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_8.xls
+  link: 'Doğulanlar, ölənlər və təbii artım' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_9.xls
+  link: 'Doğumun, ölümün və təbii artımın ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_10.xls
+  link: 'Cins bölgüsündə əhalinin təbii artımı, doğulanlar və ölənlər' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_11.xls
+  link: 'Rəsmi qeydə alınmamış nikahda olan qadınlar tərəfindən doğulan uşaqların sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_12.xls
+  link: 'Şəhər və kənd yerləri üzrə ümumi nəsilvermə əmsalı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_13.xls
+  link: 'Əhalinin təkrar istehsalının ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_14.xls
+  link: 'Səbəblər üzrə ölənlərin sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_15.xls
+  link: '1 yaşadək ölən uşaqların sayı və əmsalı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_16.xls
+  link: '1 yaşadək ölən uşaqlar arasında ölümün əsas səbəbləri' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_17.xls
+  link: 'Cins bölgüsündə yaş qrupları üzrə ölənlərin sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_18.xls
+  link: 'Cins bölgüsündə yaş qrupları üzrə ölümün ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_19.xls
+  link: 'Ana ölümü və doğulanda gözlənilən ömür uzunluğu' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_20-21.xls
+  link: 'Rəsmi qeydə alınmış nikah və boşanmaların sayı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_22.xls
+  link: 'Rəsmi qeydə alınmış nikah və boşanmaların ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_23.xls
+  link: 'Rəsmi qeydə alınmış nikaha daxil olanların orta yaşı' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_24.xls
+  link: 'Ev təsərrüfatlarının uşaqların sayına görə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_25.xls
+  link: 'Əhalinin beynəlxalq miqrasiyası' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_26.xls
+  link: 'Daimi yaşamaq üçün Azərbaycana gələn və Azərbaycandan gedənlərin ölkələr üzrə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/ap/az/1_27.xls
+  link: 'Əhalinin sayına görə rayonların, şəhərlərin, qəsəbələrin və kənd yaşayış məntəqələrinin qr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_1-2-3.xls
+  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidlərinin ərazisi, əhal' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_4.xls
+  link: '2025-ci il üzrə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidlərin' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_5.xls
+  link: '2026-cı ilin əvvəlinə Azərbaycan Respublikasının iqtisadi rayonları, inzibati ərazi vahidl' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_6.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_7.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_8.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_9.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_10.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_11.xls
+  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə ana ölümü' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_12.xls
+  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/ap/az/2_13.xls
+  link: 'Dünya ölkələri üzrə bəzi demoqrafik göstəricilər' -> https://www.stat.gov.az/source/demoqraphy/ap/az/3_1.xls
+  link: 'Azərbaycanın əhalisi, 2026 (1,76 MB)' -> https://www.stat.gov.az/source/demoqraphy/ap/az/Azerbaycanin_ehalisi-2026.zip
+  (210 links in all)
+  text: Azərbaycanın əhalisi | Azərbaycan Respublikasının Dövlət Statistika Komitəsi --> --> --> --> Outdated Browser For a better experience, keep your browser up to date. Click here for latest versions. İnternet bələdçinizin versiyası köhnədir. İnternet bələdçinizi yeniləmək üçün buraya klikləyin. --> --> --> --> --> AZ &nbsp;&nbsp; EN --> Baş səhifə Haqqımızda Dövlət Statistika Komitəsinin strukturu və rəhbər heyəti Dövlət Statistika Komitəsinin kollegiyası Dövlət Statistika Komitəsinin Reqlamenti Statistik işlər proqramı Statistika şurası Apellyasiya Şurası Kadr siyasəti Rəsmi statistikanın əsas prinsipləri Fəaliyyətlə bağlı illik hesabatlar Avropa statistikasının normalar məcəlləsi Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar Korrupsiyaya qarşı mübarizəni
