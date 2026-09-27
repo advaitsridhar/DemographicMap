@@ -1,41 +1,50 @@
-moldova_age: 2024 census, age and sex by district
-  Anexa_Caracteristici_demografice_RPL2024.xlsx: 332,053 bytes
-  Anexa_Localitati_RPL2024.xlsx: 541,766 bytes
-  country: median 41.2 from five-year groups
-  Raionul Anenii Noi: 57,687, median 43.0, 932 men per 1,000 women
-  Bălți: 94,546, median 39.0, 825 men per 1,000 women
-  Raionul Basarabeasca: 14,914, median 47.1, 910 men per 1,000 women
-  Raionul Briceni: 46,894, median 46.7, 869 men per 1,000 women
-  Raionul Cahul: 72,775, median 42.7, 903 men per 1,000 women
-  Raionul Călărași: 43,864, median 44.7, 958 men per 1,000 women
-  Raionul Cantemir: 33,181, median 43.0, 981 men per 1,000 women
-  Raionul Căușeni: 57,261, median 43.9, 932 men per 1,000 women
-  Chișinău: 720,128, median 37.4, 865 men per 1,000 women
-  Raionul Cimișlia: 30,986, median 47.0, 956 men per 1,000 women
-  Raionul Criuleni: 52,926, median 41.0, 939 men per 1,000 women
-  Raionul Dondușeni: 28,108, median 46.8, 860 men per 1,000 women
-  Raionul Drochia: 53,738, median 46.7, 853 men per 1,000 women
-  Raionul Dubăsari: 21,781, median 43.2, 944 men per 1,000 women
-  Raionul Edineț: 50,429, median 46.3, 852 men per 1,000 women
-  Raionul Fălești: 56,039, median 44.9, 872 men per 1,000 women
-  Raionul Florești: 53,264, median 45.4, 877 men per 1,000 women
-  Gagauzia: 103,668, median 42.3, 872 men per 1,000 women
-  Raionul Glodeni: 35,829, median 45.5, 884 men per 1,000 women
-  Raionul Hîncești: 69,462, median 43.1, 944 men per 1,000 women
-  Raionul Ialoveni: 74,458, median 40.1, 945 men per 1,000 women
-  Raionul Leova: 28,835, median 43.7, 984 men per 1,000 women
-  Raionul Nisporeni: 36,413, median 43.6, 954 men per 1,000 women
-  Raionul Ocnița: 31,610, median 47.8, 853 men per 1,000 women
-  Raionul Orhei: 79,242, median 42.1, 928 men per 1,000 women
-  Raionul Rezina: 30,243, median 44.3, 963 men per 1,000 women
-  Raionul Rîșcani: 43,652, median 45.8, 862 men per 1,000 women
-  Raionul Sîngerei: 55,933, median 42.6, 893 men per 1,000 women
-  Raionul Șoldănești: 25,394, median 44.9, 953 men per 1,000 women
-  Raionul Soroca: 58,609, median 46.1, 878 men per 1,000 women
-  Raionul Ștefan Vodă: 42,285, median 44.6, 938 men per 1,000 women
-  Raionul Strășeni: 61,362, median 41.8, 942 men per 1,000 women
-  Raionul Taraclia: 26,435, median 45.0, 921 men per 1,000 women
-  Raionul Telenești: 41,452, median 44.4, 957 men per 1,000 women
-  Raionul Ungheni: 75,804, median 40.5, 923 men per 1,000 women
-  wrote data/processed/moldova_age.json (181 kB)
-  wrote moldova_age.json: 74 records
+== head https://www.cystat.gov.cy/en/ 
+  HTTP 302 text/html; charset=utf-8 153 bytes
+== cdx cystat.gov.cy/en/SubthemeStatistics 20
+  HTTP 200: 31 captures
+  20221009061225 text/html 17112 https://www.cystat.gov.cy/en/SubthemeStatistics?id=28
+  20221012211822 text/html 15255 https://www.cystat.gov.cy/en/SubthemeStatistics?id=29
+  20221009174817 text/html 19109 https://www.cystat.gov.cy/en/SubthemeStatistics?id=31
+  20221013080317 text/html 18320 https://www.cystat.gov.cy/en/SubthemeStatistics?id=32
+  20221008225354 text/html 16054 https://www.cystat.gov.cy/en/SubthemeStatistics?id=33
+  20221009192242 text/html 95060 https://www.cystat.gov.cy/en/SubthemeStatistics?id=34
+  20221008081142 text/html 118948 https://www.cystat.gov.cy/en/SubthemeStatistics?id=35
+  20221009015622 text/html 92117 https://www.cystat.gov.cy/en/SubthemeStatistics?id=36
+  20221013082413 text/html 111575 https://www.cystat.gov.cy/en/SubthemeStatistics?id=38
+  20221009183934 text/html 18977 https://www.cystat.gov.cy/en/SubthemeStatistics?id=39
+  20221009033358 text/html 16613 https://www.cystat.gov.cy/en/SubthemeStatistics?id=40
+  20221009044414 text/html 92298 https://www.cystat.gov.cy/en/SubthemeStatistics?id=41
+  20221010041059 text/html 18821 https://www.cystat.gov.cy/en/SubthemeStatistics?id=42
+  20221009023456 text/html 18399 https://www.cystat.gov.cy/en/SubthemeStatistics?id=43
+  20221008204805 text/html 17998 https://www.cystat.gov.cy/en/SubthemeStatistics?id=44
+  20221010200230 text/html 18431 https://www.cystat.gov.cy/en/SubthemeStatistics?id=45
+  20221009063528 text/html 104194 https://www.cystat.gov.cy/en/SubthemeStatistics?id=46
+  20221010082309 text/html 19142 https://www.cystat.gov.cy/en/SubthemeStatistics?id=47
+  20221009083352 text/html 19230 https://www.cystat.gov.cy/en/SubthemeStatistics?id=48
+  20221009061226 text/html 99047 https://www.cystat.gov.cy/en/SubthemeStatistics?id=49
+== cdx www.cystat.gov.cy/el/KeyFiguresList 20
+  HTTP 200: 80 captures
+  20211117120150 text/html 28855 https://www.cystat.gov.cy/el/KeyFiguresList
+  20211227102047 text/html 26993 https://www.cystat.gov.cy/el/KeyFiguresList?&p=
+  20211227102148 text/html 27075 https://www.cystat.gov.cy/el/KeyFiguresList?&p=1
+  20220809171802 text/html 28841 https://www.cystat.gov.cy/el/KeyFiguresList?&p=10
+  20211227102434 text/html 26051 https://www.cystat.gov.cy/el/KeyFiguresList?&p=11
+  20220809171724 text/html 29515 https://www.cystat.gov.cy/el/KeyFiguresList?&p=12
+  20220809171738 text/html 28140 https://www.cystat.gov.cy/el/KeyFiguresList?&p=13
+  20220809171752 text/html 28962 https://www.cystat.gov.cy/el/KeyFiguresList?&p=14
+  20220809171808 text/html 28182 https://www.cystat.gov.cy/el/KeyFiguresList?&p=15
+  20220809171816 text/html 27617 https://www.cystat.gov.cy/el/KeyFiguresList?&p=16
+  20211227102126 text/html 26620 https://www.cystat.gov.cy/el/KeyFiguresList?&p=2
+  20220809171822 text/html 29332 https://www.cystat.gov.cy/el/KeyFiguresList?&p=21
+  20220809171827 text/html 28266 https://www.cystat.gov.cy/el/KeyFiguresList?&p=292
+  20220809171838 text/html 27968 https://www.cystat.gov.cy/el/KeyFiguresList?&p=297
+  20220809171845 text/html 28282 https://www.cystat.gov.cy/el/KeyFiguresList?&p=298
+  20220809171851 text/html 28043 https://www.cystat.gov.cy/el/KeyFiguresList?&p=299
+  20211227102521 text/html 26187 https://www.cystat.gov.cy/el/KeyFiguresList?&p=3
+  20220809171857 text/html 28113 https://www.cystat.gov.cy/el/KeyFiguresList?&p=300
+  20220809171833 text/html 27956 https://www.cystat.gov.cy/el/KeyFiguresList?&p=301
+  20211227102512 text/html 25464 https://www.cystat.gov.cy/el/KeyFiguresList?&p=302
+== cdx library.cystat.gov.cy/Statistical_Reports/Census 40
+  HTTP 200: 0 captures
+== cdx cystat.gov.cy/en/StaticFile 40
+  HTTP 200: 0 captures
