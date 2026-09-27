@@ -1,3 +1,5 @@
-  volume 2: 491 pages
-  table 1.4: 134 rows in 6 oblasts and Minsk; every oblast is its cities and raions; the country makes 7,395,165
-belarus: the oblasts and Minsk make 7,395,165, the census 9,413,446
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fsreda.org%2Fmaps%2Farena_russia_main%2Farena_statistic.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fsreda.org%2Fmaps%2Farena_russia_main%2Farena_statistic.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+== get http://sreda.org/maps/arena_russia_main/arena_statistic.xls
+  cdx lookup failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fsreda.org%2Fmaps%2Farena_russia_main%2Farena_statistic.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1')
+  stopped: no capture of http://sreda.org/maps/arena_russia_main/arena_statistic.xls
