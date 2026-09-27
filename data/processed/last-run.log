@@ -1,10 +1,18 @@
-  Tom1_tab-5_VPN-2020.xlsx: 1,658,676 bytes, kept at /home/runner/work/DemographicMap/DemographicMap/data/raw/russia/Tom1_tab-5_VPN-2020.xlsx
-  labels: 300 of 1933 items after 300
-  labels: 600 of 1933 items after 600
-  labels: 900 of 1933 items after 900
-  labels: 1200 of 1933 items after 1200
-  labels: 1500 of 1933 items after 1500
-  labels: 1800 of 1933 items after 1800
-  labels: 1933 of 1933 items after 1933
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/raw/wikidata_points/RUS_admin2_labels.json (1933 items)
-  Tom1_tab-5_VPN-2020.xlsx: 2292 first-tier formations in 92 blocks
+norway: SSB 07459 and 12026 for the 2017 kommuner
+  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
+    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
+  Norway 1 January 2017: 5,258,317 people, median age 39.3
+  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
+    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
+    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
+  12026 Oslo 2025: no members outside the Church among 728,714 people -- not published rather than none; left out
+  12026 Rogaland 2025: no members outside the Church among 508,922 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2025: no members outside the Church among 273,169 people -- not published rather than none; left out
+  12026 Nordland 2025: no members outside the Church among 243,272 people -- not published rather than none; left out
+  12026 Innlandet 2025: no members outside the Church among 379,488 people -- not published rather than none; left out
+  12026 Agder 2025: no members outside the Church among 323,930 people -- not published rather than none; left out
+  12026 Vestland 2025: no members outside the Church among 658,342 people -- not published rather than none; left out
+  12026 Trøndelag 2025: no members outside the Church among 489,166 people -- not published rather than none; left out
+  labels the group tree cannot place: ['Member of another faith or life-stance community', 'Not a member of a registered faith or life-stance community']
+  wrote data/processed/norway_kommune.json (1187 kB)
+  wrote norway_kommune.json: 430 records

@@ -34404,37 +34404,16 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 59.3,
-        "count": 431891
-      },
-      {
-        "group": "Church of Norway",
-        "pct": 40.7,
-        "count": 296823
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "03"
@@ -34443,10 +34422,7 @@
     "shape_id": "71437522B68338217323905",
     "aliases": [
       "Oslove"
-    ],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 296,823 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 728,714; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    ]
   },
   {
     "id": "NOR-SSB-F11",
@@ -34468,47 +34444,23 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 61.9,
-        "count": 315102
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 38.1,
-        "count": 193820
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "11"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B34429177417176",
-    "aliases": [],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 315,102 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 508,922; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "aliases": []
   },
   {
     "id": "NOR-SSB-F15",
@@ -34530,47 +34482,23 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 72.3,
-        "count": 197442
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 27.7,
-        "count": 75727
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "15"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B77332488034218",
-    "aliases": [],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 197,442 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 273,169; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "aliases": []
   },
   {
     "id": "NOR-SSB-F18",
@@ -34592,37 +34520,16 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 72.6,
-        "count": 176593
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 27.4,
-        "count": 66679
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "18"
@@ -34631,10 +34538,7 @@
     "shape_id": "71437522B77650769364207",
     "aliases": [
       "Nordlánnda"
-    ],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 176,593 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 243,272; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    ]
   },
   {
     "id": "NOR-SSB-F30",
@@ -34664,23 +34568,9 @@
       "year": 2023,
       "source": "Statistics Norway (SSB), table 07459"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 58.0,
-        "count": 760032
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 42.0,
-        "count": 550742
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
@@ -34693,12 +34583,6 @@
         "name": "Statistics Norway (SSB), table 07459",
         "url": "https://www.ssb.no/en/statbank/table/07459",
         "year": 2023
-      },
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2023
       }
     ],
     "country": "NOR",
@@ -34710,10 +34594,7 @@
     "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Norway (SSB), table 07459's count of residents by single year of age on 1 January 2023; the office tabulates the ages, not this median. Viken existed from 2020 to 2023; this is its last count.",
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2023 (649,990 males, 642,251 females).",
-    "population_note": "Registered residents on 1 January 2023. Viken existed from 2020 to 2023; this is its last count.",
-    "religion_year": 2023,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2023 (SSB table 12026, KOSTRA): 760,032 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 1,310,774; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "population_note": "Registered residents on 1 January 2023. Viken existed from 2020 to 2023; this is its last count."
   },
   {
     "id": "NOR-SSB-F34",
@@ -34735,47 +34616,23 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 72.1,
-        "count": 273553
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 27.9,
-        "count": 105935
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "34"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B26647745844979",
-    "aliases": [],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 273,553 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 379,488; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "aliases": []
   },
   {
     "id": "NOR-SSB-F38",
@@ -34805,23 +34662,9 @@
       "year": 2023,
       "source": "Statistics Norway (SSB), table 07459"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 63.2,
-        "count": 274148
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 36.8,
-        "count": 159377
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
@@ -34834,12 +34677,6 @@
         "name": "Statistics Norway (SSB), table 07459",
         "url": "https://www.ssb.no/en/statbank/table/07459",
         "year": 2023
-      },
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2023
       }
     ],
     "country": "NOR",
@@ -34851,10 +34688,7 @@
     "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Norway (SSB), table 07459's count of residents by single year of age on 1 January 2023; the office tabulates the ages, not this median. Vestfold og Telemark existed from 2020 to 2023; this is its last count.",
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2023 (214,739 males, 214,362 females).",
-    "population_note": "Registered residents on 1 January 2023. Vestfold og Telemark existed from 2020 to 2023; this is its last count.",
-    "religion_year": 2023,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2023 (SSB table 12026, KOSTRA): 274,148 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 433,525; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "population_note": "Registered residents on 1 January 2023. Vestfold og Telemark existed from 2020 to 2023; this is its last count."
   },
   {
     "id": "NOR-SSB-F42",
@@ -34876,47 +34710,23 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 60.7,
-        "count": 196595
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 39.3,
-        "count": 127335
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "42"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B35395315697437",
-    "aliases": [],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 196,595 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 323,930; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "aliases": []
   },
   {
     "id": "NOR-SSB-F46",
@@ -34938,47 +34748,23 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 67.4,
-        "count": 444038
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 32.6,
-        "count": 214304
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "46"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B18029124622078",
-    "aliases": [],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 444,038 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 658,342; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "aliases": []
   },
   {
     "id": "NOR-SSB-F50",
@@ -35000,37 +34786,16 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 68.9,
-        "count": 336840
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 31.1,
-        "count": 152326
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
-        "year": 2025
-      }
-    ],
+    "sources": [],
     "country": "NOR",
     "codes": {
       "ssb": "50"
@@ -35039,10 +34804,7 @@
     "shape_id": "71437522B86105181076448",
     "aliases": [
       "Trööndelage"
-    ],
-    "religion_year": 2025,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2025 (SSB table 12026, KOSTRA): 336,840 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 489,166; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    ]
   },
   {
     "id": "NOR-SSB-F54",
@@ -35072,23 +34834,9 @@
       "year": 2023,
       "source": "Statistics Norway (SSB), table 07459"
     },
-    "religion": [
-      {
-        "group": "Church of Norway",
-        "pct": 71.8,
-        "count": 175569
-      },
-      {
-        "group": "Not a member of a registered faith or life-stance community",
-        "pct": 28.2,
-        "count": 69094
-      },
-      {
-        "group": "Member of another faith or life-stance community",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "religion": {
+      "status": "not_available"
+    },
     "language": {
       "status": "not_available"
     },
@@ -35100,12 +34848,6 @@
         "field": "population/median age/sex ratio",
         "name": "Statistics Norway (SSB), table 07459",
         "url": "https://www.ssb.no/en/statbank/table/07459",
-        "year": 2023
-      },
-      {
-        "field": "religion",
-        "name": "Statistics Norway (SSB), table 12026",
-        "url": "https://www.ssb.no/en/statbank/table/12026",
         "year": 2023
       }
     ],
@@ -35120,9 +34862,6 @@
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Norway (SSB), table 07459's count of residents by single year of age on 1 January 2023; the office tabulates the ages, not this median. Troms og Finnmark existed from 2020 to 2023; this is its last count.",
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2023 (123,350 males, 119,102 females).",
-    "population_note": "Registered residents on 1 January 2023. Troms og Finnmark existed from 2020 to 2023; this is its last count.",
-    "religion_year": 2023,
-    "religion_basis": "registered membership",
-    "religion_note": "Registered membership at the end of 2023 (SSB table 12026, KOSTRA): 175,569 members of the Church of Norway and 0 members of faith and life-stance communities outside it, of a population of 244,663; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
+    "population_note": "Registered residents on 1 January 2023. Troms og Finnmark existed from 2020 to 2023; this is its last count."
   }
 ]
