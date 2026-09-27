@@ -1,168 +1,32 @@
-== get https://www.stat.gov.az/source/demoqraphy/
-  75,196 bytes, begins b'\r\n<!DOCTYPE html'
-  link: 'Dövlət Statistika Komitəsinin Reqlamenti' -> https://www.stat.gov.az/menu/2/regulations/stat_req.pdf
-  link: 'Rəsmi statistikanın əsas prinsipləri' -> https://www.stat.gov.az/menu/2/bmt_principles/BMTprinciples.pdf
-  link: 'Avropa statistikasının normalar məcəlləsi' -> https://www.stat.gov.az/menu/2/eurostat/EuroStatCode.pdf
-  link: 'Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar' -> https://www.stat.gov.az/menu/2/itm/
-  link: 'Korrupsiyaya qarşı mübarizənin gücləndirilməsinə dair Milli Fəaliyyət Planına dair məlumat' -> https://www.stat.gov.az/menu/2/corruption/
-  link: 'Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası' -> https://www.stat.gov.az/menu/2/strategy/Statistic_strategy.pdf
-  link: 'İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya' -> https://www.stat.gov.az/menu/2/strategy/administrative_strategy_plan.pdf
-  link: 'Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları' -> https://www.stat.gov.az/menu/2/freedom_info/freedom_info.pdf
-  link: 'İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı' -> https://www.stat.gov.az/menu/2/i_x/
-  link: 'Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı' -> https://www.stat.gov.az/menu/2/reports/SPFSIAR.pdf
-  link: 'Azərbaycan Respublikası Dövlət Statistika Komitəsinin rayon (şəhər) statistika idarəsi haq' -> https://www.stat.gov.az/menu/3/Legislation/statute_d_az.pdf
-  link: 'Rəsmi statistika sahəsində normativ hüquqi aktlar, müxtəlif qanunlar və fərmanlardan çıxar' -> https://www.stat.gov.az/menu/3/Legislation/Normativ_Az.pdf
-  link: 'Azərbaycan Respublikasının Dövlət rəmzləri' -> https://www.stat.gov.az/menu/3/Legislation/az_symbols.pdf
-  link: 'Elektron xidmətlər üzrə inzibati reqlamentlər' -> https://www.stat.gov.az/menu/4/i_req/i_req.pdf
-  link: 'Statistik nəşrlərin kataloqu' -> https://www.stat.gov.az/menu/6/catalogue_st_p/KATALOQ-2026.pdf
-  link: 'Rəsmi statistik məlumatların yayılması sahəsində siyasət' -> https://www.stat.gov.az/menu/6/dissemination_policy/DissPolicy_az_2014.pdf
-  link: 'İstifadəçilər tərəfindən statistik məlumatların düzgün şərh edilməməsi halları baş verdikd' -> https://www.stat.gov.az/menu/6/SSC_rules/SSC_rules.pdf
-  link: 'Dövlət Statistika Komitəsinin istifadəçilərlə iş üzrə konsepsiyası' -> https://www.stat.gov.az/menu/6/SSC_conception/SSC_conception_az.pdf
-  link: 'Məlumatlara yenidən baxılması reqlamenti' -> https://www.stat.gov.az/menu/6/information_regulations/reg_05_2016.pdf
-  link: 'Məlumatların dəqiqləşdirmə təqvimi' -> https://www.stat.gov.az/menu/6/calendar/calendar.xls
-  link: 'Tədqiqat məqsədilə istifadə olunması üçün istifadəçilərə mikro məlumatların verilməsi qayd' -> https://www.stat.gov.az/menu/6/personal_info/micro_inf.pdf
-  link: 'Fərdi məlumatlarla necə işləmək, onların məxfiliyini necə qorumaq lazımdır?' -> https://www.stat.gov.az/menu/6/personal_info/personal_information.pdf
-  link: 'Korrupsiyaya qarşı mübarizəyə dair yaddaş kitabçası' -> https://www.stat.gov.az/menu/6/buklet/Korrupsiya.pdf
-  link: 'Əhalinin 2026-cı ilin əvvəlinə olan sayına görə rayonların, şəhər yerlərinin və kənd yaşay' -> https://www.stat.gov.az/source/demoqraphy/az/001_1-3.xls
-  link: 'Əhalinin sayının dəyişməsi' -> https://www.stat.gov.az/source/demoqraphy/az/001_4-6.xls
-  link: 'Əhalinin cins və yaş qrupları üzrə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/az/001_7-10.xls
-  link: 'Əhalinin milli (etnik) tərkibi, ana dili və sərbəst danışdığı dillərə görə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/az/001_11-12.xls
-  link: '15 və yuxarı yaşda əhalinin savadlılıq və təhsil səviyyəsi' -> https://www.stat.gov.az/source/demoqraphy/az/001_13-14.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidlərinin ərazisi, əhal' -> https://www.stat.gov.az/source/demoqraphy/az/001_15.xls
-  link: '2025-ci il üzrə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidlərin' -> https://www.stat.gov.az/source/demoqraphy/az/001_16.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə daimi əhali' -> https://www.stat.gov.az/source/demoqraphy/az/001_17.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə əhalinin sa' -> https://www.stat.gov.az/source/demoqraphy/az/001_18.xls
-  link: '2026-cı ilin əvvəlinə Azərbaycan Respublikasının iqtisadi rayonları, inzibati ərazi vahidl' -> https://www.stat.gov.az/source/demoqraphy/az/001_19.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/001_20.xls
-  link: '2026-cı ilin əvvəlinə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahi' -> https://www.stat.gov.az/source/demoqraphy/az/001_21.xls
-  link: '2000-2025-ci illərin əvvəlinə Azərbaycan Respublikasının iqtisadi rayonları, inzibati əraz' -> https://www.stat.gov.az/source/demoqraphy/az/001_22.xls
-  link: '2020-2026-cı illərin yanvar ayının 1-i vəziyyətinə Azərbaycan Respublikasının iqtisadi ray' -> https://www.stat.gov.az/source/demoqraphy/az/001_23.xls
-  link: 'Əhalinin təbii artımı, doğulanlar və ölənlər' -> https://www.stat.gov.az/source/demoqraphy/az/002_1.xls
-  link: 'Cins bölgüsündə əhalinin təbii artımı, doğulanlar və ölənlər' -> https://www.stat.gov.az/source/demoqraphy/az/002_2.xls
-  link: 'Şəhər və kənd yerləri üzrə ümumi nəsilvermə əmsalı' -> https://www.stat.gov.az/source/demoqraphy/az/002_3.xls
-  link: 'Doğulanda gözlənilən ömür uzunluğu' -> https://www.stat.gov.az/source/demoqraphy/az/002_4.xls
-  link: 'Əhalinin təkrar istehsalının əmsalları' -> https://www.stat.gov.az/source/demoqraphy/az/002_5.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə təbii artım' -> https://www.stat.gov.az/source/demoqraphy/az/002_6.xls
-  link: 'Ananın yaşına görə doğulanların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/003_1.xls
-  link: 'Ananın yaşına görə doğulanların sayı və faiz bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/az/003_2.xls
-  link: 'Doğumun yaş əmsalları' -> https://www.stat.gov.az/source/demoqraphy/az/003_3.xls
-  link: 'Doğum ardıcıllığı üzrə doğulanların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/003_4.xls
-  link: 'Ananın yaşına və doğum ardıcıllığına görə 2025-ci ildə doğulan uşaqların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/003_5.xls
-  link: 'Rəsmi qeydə alınmış nikahda olan anaların yaşına və doğum ardıcıllığına görə 2025-ci ildə ' -> https://www.stat.gov.az/source/demoqraphy/az/003_6.xls
-  link: 'Doğum zamanı ananın orta yaşı' -> https://www.stat.gov.az/source/demoqraphy/az/003_7-8.xls
-  link: 'Ananın nikah vəziyyətinə görə doğulan uşaqların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/003_9.xls
-  link: 'Rəsmi qeydə alınmamış nikahda olan qadınlar tərəfindən doğulan uşaqların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/003_10-11.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə rəsmi qeydə' -> https://www.stat.gov.az/source/demoqraphy/az/003_12.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/003_13.xls
-  link: 'Cins və yaş qrupları üzrə ölənlərin sayı' -> https://www.stat.gov.az/source/demoqraphy/az/004_1.xls
-  link: 'Cins və yaş qrupları üzrə ölümün ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/az/004_2.xls
-  link: 'Əmək qabiliyyətli yaşda ölənlərin sayı' -> https://www.stat.gov.az/source/demoqraphy/az/004_3.xls
-  link: 'Körpə ölümü' -> https://www.stat.gov.az/source/demoqraphy/az/004_4.xls
-  link: 'Uşaq ölümü (5 yaşadək ölən uşaqlar)' -> https://www.stat.gov.az/source/demoqraphy/az/004_5.xls
-  link: 'Ana ölümü' -> https://www.stat.gov.az/source/demoqraphy/az/004_6.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/004_7-8.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə körpə ölümü' -> https://www.stat.gov.az/source/demoqraphy/az/004_9.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə ana ölümü' -> https://www.stat.gov.az/source/demoqraphy/az/004_10.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/004_11.xls
-  link: 'Səbəblər üzrə ölənlərin sayı və əmsalı' -> https://www.stat.gov.az/source/demoqraphy/az/005_1-2.xls
-  link: 'Əsas səbəblər üzrə ölənlərin sayı' -> https://www.stat.gov.az/source/demoqraphy/az/005_3.xls
-  link: '1 yaşadək ölən uşaqlar arasında ölümün əsas səbəbləri' -> https://www.stat.gov.az/source/demoqraphy/az/005_4.xls
-  link: 'Əsas səbəblər üzrə 1 yaşadək ölən uşaqların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/005_5.xls
-  link: 'Azərbaycan Respublikasının regionları üzrə əsas səbəblərə görə ölənlərin sayı və əmsalı' -> https://www.stat.gov.az/source/demoqraphy/az/005_6-5_7.xls
-  link: 'Rəsmi qeydə alınmış nikah və boşanmaların sayı və ümumi əmsalları' -> https://www.stat.gov.az/source/demoqraphy/az/006_1.xls
-  link: 'Rəsmi qeydə alınmış nikaha daxil olanların orta yaşı' -> https://www.stat.gov.az/source/demoqraphy/az/006_2.xls
-  link: 'Bəy və gəlinin yaş qruplarına görə rəsmi qeydə alınmış nikahların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/006_3.xls
-  link: '2025-ci ildə bəy və gəlinin yaş qruplarına görə rəsmi qeydə alınmış nikahların sayı' -> https://www.stat.gov.az/source/demoqraphy/az/006_4.xls
-  link: '2025-ci ildə bəy və gəlinin yaş qruplarına görə nikah vəziyyəti' -> https://www.stat.gov.az/source/demoqraphy/az/006_5.xls
-  link: '2025-ci ildə nikahın davametmə müddətinə və boşananların yaş qruplarına görə rəsmi qeydə a' -> https://www.stat.gov.az/source/demoqraphy/az/006_6.xls
-  link: 'Ev təsərrüfatlarının üzvlərinin və uşaqların sayına görə bölgüsü' -> https://www.stat.gov.az/source/demoqraphy/az/006_7-8.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə rəsmi qeydə' -> https://www.stat.gov.az/source/demoqraphy/az/006_9.xls
-  link: 'Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzrə 18 yaşadək ' -> https://www.stat.gov.az/source/demoqraphy/az/006_10.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/006_11.xls
-  link: '2025-ci ildə Azərbaycan Respublikasının iqtisadi rayonları və inzibati ərazi vahidləri üzr' -> https://www.stat.gov.az/source/demoqraphy/az/006_12.xls
-  (272 links in all)
-  text: Əhali | Azərbaycan Respublikasının Dövlət Statistika Komitəsi --> --> --> --> Outdated Browser For a better experience, keep your browser up to date. Click here for latest versions. İnternet bələdçinizin versiyası köhnədir. İnternet bələdçinizi yeniləmək üçün buraya klikləyin. --> --> --> --> --> AZ &nbsp;&nbsp; EN --> Baş səhifə Haqqımızda Dövlət Statistika Komitəsinin strukturu və rəhbər heyəti Dövlət Statistika Komitəsinin kollegiyası Dövlət Statistika Komitəsinin Reqlamenti Statistik işlər proqramı Statistika şurası Apellyasiya Şurası Kadr siyasəti Rəsmi statistikanın əsas prinsipləri Fəaliyyətlə bağlı illik hesabatlar Avropa statistikasının normalar məcəlləsi Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar Korrupsiyaya qarşı mübarizənin gücləndirilməsinə dair Milli Fəaliyyət Planına dair məlumatlar Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası --> İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya Elmi-metodoloji şura Metodoloji və məlumat istifadəçiləri ilə iş planı Beynəlxalq əməkdaşlıq Ümumdünya Statistika Günü Keyfiyyətin idarə olunması Rəsmi statistikanın tarixi --> Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı Maliyyə hesabatları Dövlət satınalmaları Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı --> Qanunvericilik Azərbaycan Respublika
-== get https://www.stat.gov.az/source/regions/
-  65,892 bytes, begins b'\r\n<!DOCTYPE html'
-  link: 'Dövlət Statistika Komitəsinin Reqlamenti' -> https://www.stat.gov.az/menu/2/regulations/stat_req.pdf
-  link: 'Rəsmi statistikanın əsas prinsipləri' -> https://www.stat.gov.az/menu/2/bmt_principles/BMTprinciples.pdf
-  link: 'Avropa statistikasının normalar məcəlləsi' -> https://www.stat.gov.az/menu/2/eurostat/EuroStatCode.pdf
-  link: 'Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar' -> https://www.stat.gov.az/menu/2/itm/
-  link: 'Korrupsiyaya qarşı mübarizənin gücləndirilməsinə dair Milli Fəaliyyət Planına dair məlumat' -> https://www.stat.gov.az/menu/2/corruption/
-  link: 'Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası' -> https://www.stat.gov.az/menu/2/strategy/Statistic_strategy.pdf
-  link: 'İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya' -> https://www.stat.gov.az/menu/2/strategy/administrative_strategy_plan.pdf
-  link: 'Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları' -> https://www.stat.gov.az/menu/2/freedom_info/freedom_info.pdf
-  link: 'İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı' -> https://www.stat.gov.az/menu/2/i_x/
-  link: 'Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı' -> https://www.stat.gov.az/menu/2/reports/SPFSIAR.pdf
-  link: 'Azərbaycan Respublikası Dövlət Statistika Komitəsinin rayon (şəhər) statistika idarəsi haq' -> https://www.stat.gov.az/menu/3/Legislation/statute_d_az.pdf
-  link: 'Rəsmi statistika sahəsində normativ hüquqi aktlar, müxtəlif qanunlar və fərmanlardan çıxar' -> https://www.stat.gov.az/menu/3/Legislation/Normativ_Az.pdf
-  link: 'Azərbaycan Respublikasının Dövlət rəmzləri' -> https://www.stat.gov.az/menu/3/Legislation/az_symbols.pdf
-  link: 'Elektron xidmətlər üzrə inzibati reqlamentlər' -> https://www.stat.gov.az/menu/4/i_req/i_req.pdf
-  link: 'Statistik nəşrlərin kataloqu' -> https://www.stat.gov.az/menu/6/catalogue_st_p/KATALOQ-2026.pdf
-  link: 'Rəsmi statistik məlumatların yayılması sahəsində siyasət' -> https://www.stat.gov.az/menu/6/dissemination_policy/DissPolicy_az_2014.pdf
-  link: 'İstifadəçilər tərəfindən statistik məlumatların düzgün şərh edilməməsi halları baş verdikd' -> https://www.stat.gov.az/menu/6/SSC_rules/SSC_rules.pdf
-  link: 'Dövlət Statistika Komitəsinin istifadəçilərlə iş üzrə konsepsiyası' -> https://www.stat.gov.az/menu/6/SSC_conception/SSC_conception_az.pdf
-  link: 'Məlumatlara yenidən baxılması reqlamenti' -> https://www.stat.gov.az/menu/6/information_regulations/reg_05_2016.pdf
-  link: 'Məlumatların dəqiqləşdirmə təqvimi' -> https://www.stat.gov.az/menu/6/calendar/calendar.xls
-  link: 'Tədqiqat məqsədilə istifadə olunması üçün istifadəçilərə mikro məlumatların verilməsi qayd' -> https://www.stat.gov.az/menu/6/personal_info/micro_inf.pdf
-  link: 'Fərdi məlumatlarla necə işləmək, onların məxfiliyini necə qorumaq lazımdır?' -> https://www.stat.gov.az/menu/6/personal_info/personal_information.pdf
-  link: 'Korrupsiyaya qarşı mübarizəyə dair yaddaş kitabçası' -> https://www.stat.gov.az/menu/6/buklet/Korrupsiya.pdf
-  link: 'Əsas sosial - iqtisadi göstəricilər' -> https://www.stat.gov.az/source/regions/az/1_1.xlsx
-  link: 'Əsas sosial-iqtisadi göstəricilərin indeksləri' -> https://www.stat.gov.az/source/regions/az/2_1.xlsx
-  link: '2022-ci ildə Azərbaycan Respublikası üzrə hüquqi şəxslərdə və digər tədbirlər üzrə yeni aç' -> https://www.stat.gov.az/source/regions/az/3_1.xlsx
-  link: 'Bakı şəhəri' -> https://www.stat.gov.az/source/regions/az/001.xlsx
-  link: 'Naxçıvan Muxtar Respublikası' -> https://www.stat.gov.az/source/regions/az/002.xlsx
-  link: 'Abşeron-Xızı iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/003.xlsx
-  link: 'Sumqayıt şəhəri' -> https://www.stat.gov.az/source/regions/az/003_1.xlsx
-  link: 'Abşeron rayonu' -> https://www.stat.gov.az/source/regions/az/003_2.xlsx
-  link: 'Xızı rayon' -> https://www.stat.gov.az/source/regions/az/003_3.xlsx
-  link: 'Dağlıq-Şirvan iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/004.xlsx
-  link: 'Ağsu rayonu' -> https://www.stat.gov.az/source/regions/az/004_1.xlsx
-  link: 'İsmayıllı rayonu' -> https://www.stat.gov.az/source/regions/az/004_2.xlsx
-  link: 'Qobustan rayonu' -> https://www.stat.gov.az/source/regions/az/004_3.xlsx
-  link: 'Şamaxı rayonu' -> https://www.stat.gov.az/source/regions/az/004_4.xlsx
-  link: 'Gəncə - Daşkəsən iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/005.xlsx
-  link: 'Gəncə şəhəri' -> https://www.stat.gov.az/source/regions/az/005_1.xlsx
-  link: 'Naftalan şəhəri' -> https://www.stat.gov.az/source/regions/az/005_2.xlsx
-  link: 'Daşkəsən rayonu' -> https://www.stat.gov.az/source/regions/az/005_3.xlsx
-  link: 'Goranboy rayonu' -> https://www.stat.gov.az/source/regions/az/005_4.xlsx
-  link: 'Göygöl rayonu' -> https://www.stat.gov.az/source/regions/az/005_5.xlsx
-  link: 'Samux rayonu' -> https://www.stat.gov.az/source/regions/az/005_6.xlsx
-  link: 'Qarabağ iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/006.xlsx
-  link: 'Xankəndi şəhəri' -> https://www.stat.gov.az/source/regions/az/006_1.xlsx
-  link: 'Ağcabədi rayonu' -> https://www.stat.gov.az/source/regions/az/006_2.xlsx
-  link: 'Ağdam rayonu' -> https://www.stat.gov.az/source/regions/az/006_3.xlsx
-  link: 'Ağdərə rayonu' -> https://www.stat.gov.az/source/regions/az/006_4.xlsx
-  link: 'Bərdə rayonu' -> https://www.stat.gov.az/source/regions/az/006_5.xlsx
-  link: 'Füzuli rayonu' -> https://www.stat.gov.az/source/regions/az/006_6.xlsx
-  link: 'Xocalı rayonu' -> https://www.stat.gov.az/source/regions/az/006_7.xlsx
-  link: 'Xocavənd rayonu' -> https://www.stat.gov.az/source/regions/az/006_8.xlsx
-  link: 'Şuşa rayonu' -> https://www.stat.gov.az/source/regions/az/006_9.xlsx
-  link: 'Tərtər rayonu' -> https://www.stat.gov.az/source/regions/az/006_10.xlsx
-  link: 'Qazax - Tovuz iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/007.xlsx
-  link: 'Ağstafa rayonu' -> https://www.stat.gov.az/source/regions/az/007_1.xlsx
-  link: 'Gədəbəy rayonu' -> https://www.stat.gov.az/source/regions/az/007_2.xlsx
-  link: 'Qazax rayonu' -> https://www.stat.gov.az/source/regions/az/007_3.xlsx
-  link: 'Şəmkir rayonu' -> https://www.stat.gov.az/source/regions/az/007_4.xlsx
-  link: 'Tovuz rayonu' -> https://www.stat.gov.az/source/regions/az/007_5.xlsx
-  link: 'Quba - Xaçmaz iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/008.xlsx
-  link: 'Xaçmaz rayonu' -> https://www.stat.gov.az/source/regions/az/008_1.xlsx
-  link: 'Quba rayonu' -> https://www.stat.gov.az/source/regions/az/008_2.xlsx
-  link: 'Qusar rayonu' -> https://www.stat.gov.az/source/regions/az/008_3.xlsx
-  link: 'Siyəzən rayonu' -> https://www.stat.gov.az/source/regions/az/008_4.xlsx
-  link: 'Şabran rayonu' -> https://www.stat.gov.az/source/regions/az/008_5.xlsx
-  link: 'Lənkəran - Astara iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/009.xlsx
-  link: 'Astara rayonu' -> https://www.stat.gov.az/source/regions/az/009_1.xlsx
-  link: 'Cəlilabad rayonu' -> https://www.stat.gov.az/source/regions/az/009_2.xlsx
-  link: 'Lerik rayonu' -> https://www.stat.gov.az/source/regions/az/009_3.xlsx
-  link: 'Lənkəran rayonu' -> https://www.stat.gov.az/source/regions/az/009_4.xlsx
-  link: 'Masallı rayonu' -> https://www.stat.gov.az/source/regions/az/009_5.xlsx
-  link: 'Yardımlı rayonu' -> https://www.stat.gov.az/source/regions/az/009_6.xlsx
-  link: 'Mərkəzi Aran iqtisadi rayonu' -> https://www.stat.gov.az/source/regions/az/010.xlsx
-  link: 'Mingəçevir şəhəri' -> https://www.stat.gov.az/source/regions/az/010_1.xlsx
-  link: 'Ağdaş rayonu' -> https://www.stat.gov.az/source/regions/az/010_2.xlsx
-  link: 'Göyçay rayonu' -> https://www.stat.gov.az/source/regions/az/010_3.xlsx
-  link: 'Kürdəmir rayonu' -> https://www.stat.gov.az/source/regions/az/010_4.xlsx
-  link: 'Ucar rayonu' -> https://www.stat.gov.az/source/regions/az/010_5.xlsx
-  (273 links in all)
-  text: Azərbaycanın regionları | Azərbaycan Respublikasının Dövlət Statistika Komitəsi --> --> --> --> Outdated Browser For a better experience, keep your browser up to date. Click here for latest versions. İnternet bələdçinizin versiyası köhnədir. İnternet bələdçinizi yeniləmək üçün buraya klikləyin. --> --> --> --> --> AZ &nbsp;&nbsp; EN --> Baş səhifə Haqqımızda Dövlət Statistika Komitəsinin strukturu və rəhbər heyəti Dövlət Statistika Komitəsinin kollegiyası Dövlət Statistika Komitəsinin Reqlamenti Statistik işlər proqramı Statistika şurası Apellyasiya Şurası Kadr siyasəti Rəsmi statistikanın əsas prinsipləri Fəaliyyətlə bağlı illik hesabatlar Avropa statistikasının normalar məcəlləsi Açıq Hökumətin təşviqinə dair Milli Fəaliyyət Planının icrası ilə bağlı məlumatlar Korrupsiyaya qarşı mübarizənin gücləndirilməsinə dair Milli Fəaliyyət Planına dair məlumatlar Dövlət Statistika Komitəsinin 2024-2026-cı illər üzrə kommunikasiya strategiyası --> İnzibati məlumatlardan uzunmüddətli istifadə üzrə strategiya Elmi-metodoloji şura Metodoloji və məlumat istifadəçiləri ilə iş planı Beynəlxalq əməkdaşlıq Ümumdünya Statistika Günü Keyfiyyətin idarə olunması Rəsmi statistikanın tarixi --> Dövlət Statistika Komitəsində İnformasiya azadlığı ilə bağlı daxili icraat Qaydaları İnzibati xətalar haqqında işlərə baxmağa səlahiyyəti olan vəzifəli şəxslərin siyahısı Maliyyə hesabatları Dövlət satınalmaları Meta - İnformasiya Sisteminin qurulması layihəsinin TF14110 Audit Hesabatı --> Qanunvericilik Azə
+== get http://database.ukrcensus.gov.ua/MULT/Database/Census/databasetree_uk.asp
+  HTTP 404 Not Found: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <HTML><HEAD><TITLE>�� ������� ����� ��������� ��������</TITLE> <META HTTP-EQUIV="Content-Type" Content="text/html; charset=windows-1251"> <STYLE type="text/css"> BODY { font: 8pt/12pt verdana } H1 { f
+== get http://2001.ukrcensus.gov.ua/results/
+  11,947 bytes, begins b'<!DOCTYPE HTML P'
+  link: '' -> http://2001.ukrcensus.gov.ua/results/
+  link: '������� ������� ��������' -> http://2001.ukrcensus.gov.ua/results/general/
+  link: '������� ��������� ������ �� ������ �������� ��������� (��������� �������)' -> http://2001.ukrcensus.gov.ua/results/graphic/
+  link: '��������������-������������� ����' -> http://2001.ukrcensus.gov.ua/results/regions/
+  link: 'ʳ������ �� ������������ ��������� ���������' -> http://2001.ukrcensus.gov.ua/results/total_population1/
+  link: '������������ �������������� ���������. ��������������' -> http://2001.ukrcensus.gov.ua/results/demografic_population/
+  link: 'г���� ����� ���������' -> http://2001.ukrcensus.gov.ua/results/education_population/
+  link: '���������-��������� �������������� ���������' -> http://2001.ukrcensus.gov.ua/results/social_economic/
+  link: '������������ ����� ���������, ����� ������, ������������' -> http://2001.ukrcensus.gov.ua/results/nationality_population/
+  link: '̳������' -> http://2001.ukrcensus.gov.ua/results/migration/
+  link: 'ʳ������ �� ����� ���������������' -> http://2001.ukrcensus.gov.ua/results/households/
+  link: '������ �����' -> http://2001.ukrcensus.gov.ua/results/housing_conditions/
+  link: '������ ������ >>' -> http://database.ukrcensus.gov.ua/MULT/Database/Census/databasetree_uk.asp
+  link: '������� �������' -> http://2001.ukrcensus.gov.ua/results/general/
+  link: '������� ��������� ������ �� ������ �������� ��������� (��������� �������)' -> http://2001.ukrcensus.gov.ua/results/graphic/
+  link: '�������������� - ������������� ����' -> http://2001.ukrcensus.gov.ua/results/regions/
+  link: 'ʳ������ �� ������������ ��������� ���������' -> http://2001.ukrcensus.gov.ua/results/total_population1/
+  link: '������������ �������������� ���������. ��������������' -> http://2001.ukrcensus.gov.ua/results/demografic_population/
+  link: 'г���� ����� ���������' -> http://2001.ukrcensus.gov.ua/results/education_population/
+  link: '���������-��������� �������������� ���������' -> http://2001.ukrcensus.gov.ua/results/social_economic/
+  link: '������������ ����� ���������, ����� ������, ������������' -> http://2001.ukrcensus.gov.ua/results/nationality_population/
+  link: '̳������' -> http://2001.ukrcensus.gov.ua/results/migration/
+  link: 'ʳ������ �� ����� ���������������' -> http://2001.ukrcensus.gov.ua/results/households/
+  link: '������ �����' -> http://2001.ukrcensus.gov.ua/results/housing_conditions/
+  link: '����������' -> http://2001.ukrcensus.gov.ua/results/
+  link: '���������� ���������' -> http://www.ukrcensus.gov.ua/stats/
+  (50 links in all)
+  text: ������������� ������� ��������� 2001&nbsp;|&nbsp;����������: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ��������� ������ ���������� ������ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;/&nbsp;���������� &nbsp;&nbsp;&nbsp; � ����� ������ ���������� �������������� �������� ��������� 2001 ���� ��� �����������, ��������� � ����� ��������� ������ �� ������, ����, ������� ������, ����� �����, ��������������, ����� ����� � ����� ��������, �������, ��� ( �������� �� ��������������-�������������� ����� �� ���� ���������� ��������). &nbsp;&nbsp;&nbsp;ǳ��������� ���������� �������� ��������� 2001 ���� �� ������ ������������ �������� 1989 ���� ��������� �������� � ������������� ���������-��������� ���� � ���������. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ���������� � ����� : ������� ������� �������� ������� ��������� ������ �� ������ �������� ��������� (��������� �������) ��������������-������������� ���� ʳ������ �� ������������ ��������� ��������� ������������ �������������� ���������. �������������� г���� ����� ��������� ���������-��������� �������������� ��������� ������������ ����� ���������, ����� ������, ������������ ̳������ ʳ������ �� ����� ��������������� ������ ����� ������ ���������� � ������ ������ >> ��� ��� eng &nbsp;&nbsp;&nbsp;� �����: &nbsp; ������� ������� &nbsp; ������� ��������� ������ �� ������ �������� ��������� (��������� �������) &nbsp; �������������� - ������������� ���� &nbsp; ʳ������ �� ������������ ��������� �
