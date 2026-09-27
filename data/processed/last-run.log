@@ -1,10 +1,11 @@
-norway: SSB 07459 and 12026 for the 2017 kommuner
-  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
-    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
-  Norway 1 January 2017: 5,258,317 people, median age 39.3
-  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
-    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
-    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
-  309 of 426 kommuner unchanged since 2017: 1 January 2026 for their population, age and sex, and 2020 for membership
-  fylker whose kommuner changed since 2023, left to Eurostat: ['15']
-08531 03 2010: religions make 108,734 of 0
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+slovenia_census: Ajdovščina: religion rows make 18,076, total 18095.0, population 18,095
