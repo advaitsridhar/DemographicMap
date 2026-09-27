@@ -1,25 +1,4 @@
-poland_ages: BDL variables median 746289, total 72305, men 72300, women 72295
-  2025: units with all four variables {0: 1, 2: 16, 5: 380}
-  powiats against Poland: parts sum to 37,332,510 = 37,332,510
-  powiats against MAŁOPOLSKIE: parts sum to 3,429,342 = 3,429,342
-  powiats against ŚLĄSKIE: parts sum to 4,261,792 = 4,261,792
-  powiats against LUBUSKIE: parts sum to 963,601 = 963,601
-  powiats against WIELKOPOLSKIE: parts sum to 3,471,302 = 3,471,302
-  powiats against ZACHODNIOPOMORSKIE: parts sum to 1,612,680 = 1,612,680
-  powiats against DOLNOŚLĄSKIE: parts sum to 2,857,273 = 2,857,273
-  powiats against OPOLSKIE: parts sum to 923,536 = 923,536
-  powiats against KUJAWSKO-POMORSKIE: parts sum to 1,971,891 = 1,971,891
-  powiats against POMORSKIE: parts sum to 2,358,409 = 2,358,409
-  powiats against WARMIŃSKO-MAZURSKIE: parts sum to 1,339,498 = 1,339,498
-  powiats against ŁÓDZKIE: parts sum to 2,328,825 = 2,328,825
-  powiats against ŚWIĘTOKRZYSKIE: parts sum to 1,147,293 = 1,147,293
-  powiats against LUBELSKIE: parts sum to 1,980,772 = 1,980,772
-  powiats against PODKARPACKIE: parts sum to 2,053,760 = 2,053,760
-  powiats against PODLASKIE: parts sum to 1,126,679 = 1,126,679
-  powiats against MAZOWIECKIE: parts sum to 5,505,857 = 5,505,857
-  GUS national median 43.8 (31 December 2025); Eurostat 43.4 (1 January 2025)
-  GUS's Poland 37,332,510 (31 December 2025) against Eurostat's 36,497,495 (1 January 2025): +2.3%
-  poland_ages: 0 office units unbound
-  poland_ages: 0 polygons without an office unit
-  wrote data/processed/poland_powiat_age.json (916 kB)
-  wrote poland_powiat_age.json: 396 records
+  26 cantons summing to 8,836,430, matching the national row; languages total 118.9% of it (multiple answers allowed)
+  sample drawn [2024]: smallest ('Appenzell Innerrhoden', 383.00000064799997), Switzerland 276,226
+  26 cantons with main-language shares
+  wrote data/processed/switzerland_language_survey.json (57 kB)
