@@ -235,6 +235,46 @@ def isl(fn, *a, **k):
     return fn(*a, **k)
 
 
+def sdmx_obs(flow: str, query: str = "", limit: int = 8) -> None:
+    """An OSP flow in the all-dimensions form: each Obs carries its own key."""
+    raw = fetch(f"{OSP}/data/{flow}{query}", accept="application/xml")
+    root = ET.fromstring(raw)
+    obs = [el for el in root.iter() if el.tag.endswith("}Obs")]
+    print(f"  {len(raw):,} bytes, {len(obs)} observations")
+    dims: dict[str, Counter] = {}
+    rows = []
+    for o in obs:
+        key = {}
+        value = None
+        for el in o.iter():
+            if el.tag.endswith("}Value") and el.get("id"):
+                key[el.get("id")] = el.get("value")
+            if el.tag.endswith("}ObsValue"):
+                value = el.get("value")
+        for k, v in key.items():
+            dims.setdefault(k, Counter())[v] += 1
+        rows.append((key, value))
+    for name, values in dims.items():
+        vals = list(values)
+        print(f"    dim {name}: {len(vals)} values: {vals[:40]}{' ...' if len(vals) > 40 else ''}")
+    for key, value in rows[:limit]:
+        print(f"    {key} = {value}")
+
+
+def links(url: str, grep: str, limit: int = 80) -> None:
+    raw = fetch(url, accept="text/html,*/*").decode("utf-8", "replace")
+    hrefs = re.findall(r"""href=["']([^"'#]+)["'][^>]*>([^<]{0,120})""", raw, re.I)
+    print(f"  {len(raw):,} characters, {len(hrefs)} links")
+    shown = 0
+    for href, label in hrefs:
+        line = f"{' '.join(label.split())} -> {urllib.parse.urljoin(url, href)}"
+        if re.search(grep, line, re.I):
+            print(f"    {line}")
+            shown += 1
+            if shown >= limit:
+                break
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -291,6 +331,28 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 5
+    "r5_ltu_203": lambda: sdmx_obs("S3R167_M3010203", "?startPeriod=2026&endPeriod=2026"),
+    "r5_ltu_629": lambda: sdmx_obs("S3R629_M3010217", "?startPeriod=2026&endPeriod=2026"),
+    "r5_ltu_216": lambda: sdmx_obs("S3R167_M3010216", "?startPeriod=2026&endPeriod=2026", limit=3),
+    "r5_ltu_page1": lambda: links("https://osp.stat.gov.lt/gyventoju-ir-bustu-surasymai1",
+                                  r"surasym|2021|xls|csv|duomen"),
+    "r5_ltu_page2": lambda: links("https://osp.stat.gov.lt/2021-gyventoju-ir-bustu-surasymo-rezultatai",
+                                  r"tautyb|kalb|tikyb|xls|csv|duomen"),
+    "r5_ltu_datagov": lambda: text("https://data.gov.lt/datasets?q=surašymas", grep=r"[^\"<>]{0,80}surašym[^\"<>]{0,80}"),
+    "r5_lva_dbs": lambda: px_list("https://data.stat.gov.lv/api/v1/en"),
+    "r5_lva_ird081": lambda: px_meta(f"{CSB}/POP/IR/IRD/IRD081", allvals="AREA"),
+    "r5_fin_evang": lambda: px_search(f"{STATFIN}?query=Evangelical"),
+    "r5_fin_dbs": lambda: px_list("https://pxdata.stat.fi/PxWeb/api/v1/en"),
+    "r5_fin_11ra_sk": lambda: px_meta(f"{STATFIN}/vaerak/11ra.px", grep=r"^SK"),
+    "r5_isl_09000": lambda: isl(px_meta, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px",
+                               allvals=".*"),
+    "r5_isl_menning": lambda: isl(px_list, f"{HAGSTOFA}/Samfelag/menning"),
+    "r5_isl_02005": lambda: isl(px_meta, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px"),
+    "r5_est_rel2021": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad"),
+    "r5_est_2021lang": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel"),
     # Round 4
     "r4_ltu_210": lambda: sdmx_series("S3R167_M3010210", "?startPeriod=2026&endPeriod=2026"),
     "r4_ltu_203": lambda: sdmx_series("S3R167_M3010203", "?startPeriod=2026&endPeriod=2026", limit=3),
