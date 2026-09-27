@@ -1,38 +1,132 @@
-== get https://census.belstat.gov.by/
-  4,693 bytes, begins b'<!doctype html><'
-  ~ <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=
-  ~ iption" content="Web site created using create-react-app"/><link rel="manifest" href="/manifest.json"/><title>Итоговые данные переписей населения Республики Беларусь
-  ~ "Web site created using create-react-app"/><link rel="manifest" href="/manifest.json"/><title>Итоговые данные переписей населения Республики Беларусь</title><link h
-  ~ n"/><title>Итоговые данные переписей населения Республики Беларусь</title><link href="/static/css/main.46e233b1.chunk.css" rel="stylesheet"></head><body><noscript>Yo
-  ~ to enable JavaScript to run this app.</noscript><script type="text/javascript" src="/config.js"></script><div id="root"></div><div id="modal-root"></div><script>!f
-  ~ _CHUNK_LOAD_FAILED",c.request=n,delete o[e],s.parentNode.removeChild(s),r(c)},s.href=a,document.getElementsByTagName("head")[0].appendChild(s)})).then((function(){o[
-  ~ ("script");u.charset="utf-8",u.timeout=120,f.nc&&u.setAttribute("nonce",f.nc),u.src=function(e){return f.p+"static/js/"+({}[e]||e)+"."+{0:"423b97d3",1:"a092ebe6",2:
-  ~ all(e,t)},f.p="/",f.oe=function(e){throw console.error(e),e};var u=this["webpackJsonpsdpn-front"]=this["webpackJsonpsdpn-front"]||[],d=u.push.bind(u);u.push=t,u=u.s
-  ~ (e){throw console.error(e),e};var u=this["webpackJsonpsdpn-front"]=this["webpackJsonpsdpn-front"]||[],d=u.push.bind(u);u.push=t,u=u.slice();for(var i=0;i<u.length;i
-  ~ u=u.slice();for(var i=0;i<u.length;i++)t(u[i]);var l=d;r()}([])</script><script src="/static/js/7.d89d3264.chunk.js"></script><script src="/static/js/main.019d9091.
-  ~ ;r()}([])</script><script src="/static/js/7.d89d3264.chunk.js"></script><script src="/static/js/main.019d9091.chunk.js"></script></body></html>
-== get https://biruni.tuik.gov.tr/medas/?kn=95&locale=tr
-  85,170 bytes, begins b'<!DOCTYPE html>\n'
-  ~ <!DOCTYPE html> <html> <head> <title></title> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zk.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" charset
-  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zul.lang.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" c
-  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zkbind.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" cha
-  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/bootstrap.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt"
-  ~ script> <!-- ZK 8.5.0 EE 2017103111 --> <link rel="stylesheet" type="text/css" href="/medas/zkau/web/4e98a926/_zkiju-iceblue/zul/css/zk.wcs;jsessionid=DOu1dAL9-qOje
-  ~ s;jsessionid=DOu1dAL9-qOjeRP84s4-prkt"/> <link rel="stylesheet" type="text/css" href="/medas/zkau/web/4e98a926/js/bootstrap/ext/css/bootstrap.min.css;jsessionid=DOu1
-  ~ ctStart)>0)cm.rs=t;if((t=c1.redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connect
-  ~ redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connectEnd;if((t=c1.secureConnectio
-  ~ =t;cm.rqs=c1.requestStart;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c
-  ~ Start;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEv
-  ~ art;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplet
-  ~ Loading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;i
-  ~ .dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;if((t=c1.loadEventEnd)>0)cm.le=t;cm
-  ~ ;cm.pid=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="ob
-  ~ id=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"
-  ~ _pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===nu
-  ~ M_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===null){if(t=="stri
-  ~ bject"||ob===null){if(t=="string")ob='"'+ob+'"';return String(ob);}else{var n,v,json=[],arr=(ob&&ob.constructor==Array);for(n in ob){v=ob[n];t=typeof(v);if(t=="stri
-  ~ {v=ob[n];t=typeof(v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+Stri
-  ~ v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":
-  ~ ringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm
-  ~ :"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm));}}}}if(window.addEventListener)window.addEventListener("load",se
-  ~ ><p>Sorry, JavaScript must be enabled.<br/>Change your browser options, then <a href="">try again</a>.</p></div> </noscript> </body> </html>
+
+== collection
+  200 45,570,908 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+      {   "class": "collection",   "link": {     "item": [       {         "dimension": {           "STATISTIC": {     
+
+  collection came from https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+  13077 datasets in the collection
+
+== 1055 datasets matching ['single', 'year'], broken down by 'County'
+  A0212     2020-08-04  1996 Population in the Aggregate Town and Aggregate Rural Areas
+      by: Age Group; Sex; Marital Status; Province County or City
+  A0301     2020-05-04  1996 Persons in Households
+      by: Type of Household; Province County or City
+  A0302     2020-05-04  1996 Persons in Private Households
+      by: Aggregate Town or Rural Area; Province County or City
+  A0304     2020-05-04  1996 Private Households
+      by: Composition of Private Household; Persons per Household; Province County or City
+  A0314     2020-05-04  1996 Population Aged 65 Years and Over and Percentage of those Living Alone in Private Households
+      by: Sex; Province County or City
+  A0315     2021-02-19  1996 Population Aged 70 Years and Over and Percentage of those Living Alone in Private Households
+      by: Sex; Province County or City
+  A0316     2020-05-04  1996 Private Households with Persons Aged 18 Years and Under
+      by: Age Group; Persons per Household; Province County or City
+  A0319     2020-05-04  1996 Average Number of Persons per Private Household in Permanent Housing Units since 1946
+      by: Aggregate Town or Rural Area; Province County or City
+  A0320     2020-05-04  1996 Average Number of Persons per Private Household in Permanent Housing Units
+      by: Aggregate Town or Rural Area; Province County or City
+  A0322     2020-05-04  1996 Private Households in Permanent Housing Units
+      by: Composition of Private Household; Persons per Household; Province County or City
+  A0328     2020-05-04  1996 Persons  in Private Households in Temporary Housing Units
+      by: Composition of Private Household; Persons per Household; Province County or City
+  A0402     2020-05-01  1996 Population Change and Average Annual Rates
+      by: Sex; Province County or City
+  A0403     2020-05-01  1996 Population
+      by: County; Sex; Enumerated and Usually Resident or Absent
+  A0405     2020-05-04  1996 Population Usually Resident in the State but not Enumerated at their Usual Residence
+      by: County of Enumeration; County of Usual Residence; Private or Non-Private Households
+  A0407     2020-05-01  1996 Population Usually Resident in the State but not Enumerated at their Usual Residence
+      by: Age Group; Sex; County of Usual Residence
+  A0408     2020-05-01  1996 Population Usually Resident in the State but not Enumerated at their Usual Residence
+      by: Sex; County of Usual Residence; Marital Status
+  A0409     2020-05-01  1996 Population Usually Resident in the State but not Enumerated at their Usual Residence
+      by: Sex; County of Usual Residence; Usual Residence One Year Ago
+  A0410     2020-05-01  1996 Population Aged One Year and Over Usually Resident
+      by: County of Usual Residence; Usual Residence One Year Ago
+  A0413     2020-05-06  1996 Population Aged One Year and Over Usually Resident in the State whose Usual Residence One Year Previ
+      by: Sex; County of Usual Residence; County of Usual Residence One Year Previously
+  A0415     2020-05-01  1996 Population Aged One Year and Over Usually Resident in the State whose Usual Residence One Year Previ
+      by: Age Group; Sex; County of Usual Residence One Year Previously
+  A0416     2020-05-01  1996 Population Aged One Year and Over Usually Resident in the State whose Usual Residence One Year Previ
+      by: Sex; County of Usual Residence One Year Previously; Marital Status
+  A0420     2020-05-01  1996 Population Aged One Year and Over Usually Resident in the State
+      by: Age Group; Sex; County and City; Usual Residence One Year Ago
+  A0421     2020-05-04  1996 Population Aged One Year and Over Usually Resident by Country of Previous Residence and Percentage w
+      by: Sex; County of Usual Residence
+  A0422     2020-05-04  Population Aged One Year and Over Usually Resident in the State who Lived Outside the State for One Year 
+      by: Sex; County of Usual Residence; Year of taking up Residence
+  A0427     2020-05-04  1996 Population Usually Resident in the State
+      by: Sex; Birthplace; County of Usual Residence
+  A0506     2020-05-01  1996 Population Aged 15 Years and Over
+      by: Principal Economic Status; Sex; Province County or City
+  A0508     2020-05-01  1996 Labour Force Participation Rates and Employment Status in those Aged 15 Years and Over
+      by: Sex; Province County or City
+  A0513     2020-05-01  1996 Population Aged 15 Years and Over at Work
+      by: Sex; Broad Industrial Group; Province County or City
+  A0521     2020-05-01  1996 Population Aged 15 Years and Over at Work and Unemployed (Excluding First Time Job Seekers)
+      by: Employment Status; Sex; Province County or City
+  A0526     2020-05-01  1996 Population Aged 15 Years and Over at Work, Full Time and Part Time
+      by: Sex; Province County or City
+  A0532     2020-05-01  1996 Unemployed Population (Excluding First Time Job Seekers) Aged 15 Years and Over
+      by: Age Group; Sex; Province County or City
+  A0535     2020-05-01  1996 Unemployed Population (Excluding First Time Job Seekers) Aged 15 Years and Over
+      by: Sex; Province County or City
+  A0603     2020-05-19  1996 Population Usually Resident
+      by: Sex; Means of Travel; County of Usual Residence; At Work School or College
+  A0608     2020-05-19  1996 Population Usually Resident
+      by: Sex; Distance Travelled; County of Usual Residence; At Work School or College
+  A0702     2020-05-19  1996 Population Aged 15 Years and Over in the Labour Force
+      by: Broad Occupational Group; Sex; Province County or City
+  A0715     2020-05-19  1996 Population
+      by: Principal Economic Status; Province County or City; Socio Economic Group
+  A0719     2020-05-19  1996 Population Aged 15 Years and Over
+      by: Social Class; Principal Economic Status; Province County or City
+  A0803     2020-05-19  1996 Population Aged 15 Years and Over
+      by: Sex; Highest Level of Education Completed; Province County or City
+  A0811     2020-05-19  Population Aged 15 Years and Over
+      by: Sex; Age at which Full Time Education Ceased; Province County or City
+  A0823     2020-05-19  1996 Population Aged 15 Years and Over with a Scientific or Technological Qualification
+      by: Sex; Subject; Province County or City
+  ... and 1015 more
+
+== dimensions offered by the matching tables (counts of tables, not of categories)
+   435 tables  Sex
+   336 tables  Province County or City
+   264 tables  County
+   208 tables  County and City
+   138 tables  Age Group
+    97 tables  County of Usual Residence
+    68 tables  Aggregate Town or Rural Area
+    33 tables  Principal Economic Status
+    31 tables  Nature of Occupancy
+    31 tables  Period in which Built
+    29 tables  Religion
+    26 tables  Type of Household
+    25 tables  County of Usual Residence One Year Previously
+    24 tables  Persons per Household
+    24 tables  Administrative County
+    23 tables  Marital Status
+    23 tables  Province or County
+    19 tables  Type of Service
+    18 tables  Highest Level of Education Completed
+    18 tables  Detailed Marital Status
+    17 tables  Composition of Private Household
+    17 tables  Nationality
+    17 tables  Type of Private Accommodation
+    16 tables  At Work School or College
+    16 tables  Socio Economic Group
+    16 tables  Social Class
+    15 tables  Number of Rooms Occupied
+    14 tables  Region and County
+    13 tables  Age at which Full Time Education Ceased
+    13 tables  Motor Car Availability
+    12 tables  Usual Residence One Year Ago
+    12 tables  Means of Travel
+    12 tables  Persons in Household aged 3 Years and Over
+    12 tables  Frequency of Speaking Irish
+    11 tables  Birthplace
+    10 tables  Type of Water Supply
+    10 tables  Type of Sewerage Facility
+    10 tables  County of Birth
+     9 tables  General Health
+     9 tables  Year Built
