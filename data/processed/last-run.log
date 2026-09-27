@@ -1,7 +1,10 @@
-  chapter 1: 68 localities make 519,562
-  chapter 5: 68 localities, 451,746 aged 15 and over
-  table 4.3: 68 localities' racial origin make 519,562
-  table 3.6: 68 localities, 386,091 Maltese citizens aged 5 and over
-  Malta: median 40.5, mean 41.66 (Table 1.2 publishes 41.68)
-  wrote data/processed/malta_census.json (775 kB)
-  136 records (68 localities at both levels)
+greece_age: Eurostat single years of age for Greece's decentralized administrations
+  demo_r_d2jan, 2025: 11 regions
+  Mount Athos: 1,746 residents in 2021, 1,746 men, 0 women
+  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 95.4 men per 100 women
+  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 99.0 men per 100 women
+  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 99.5 men per 100 women
+  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 100.8 men per 100 women
+  Egean (EL41+EL42): 534,963, median 44.5, 107.7 men per 100 women
+  wrote data/processed/greece_age.json (13 kB)
+  wrote greece_age.json: 7 records
