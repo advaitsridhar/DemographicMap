@@ -141,6 +141,13 @@ def cmd_json(args: argparse.Namespace) -> int:
             continue
         for part in [p for p in (args.path or "").split(".") if p]:
             payload = payload[int(part)] if isinstance(payload, list) else payload[part]
+        if args.pluck and isinstance(payload, list):
+            keys = [k for k in args.pluck.split(",") if k]
+            for item in payload[:args.limit]:
+                if isinstance(item, dict):
+                    log("  " + " | ".join(str(item.get(k))[:120] for k in keys))
+            log(f"  {len(payload)} items")
+            continue
         shape(payload, args.depth)
     return 0
 
@@ -302,6 +309,8 @@ def main() -> int:
     p.add_argument("url", nargs="+")
     p.add_argument("--path", default="")
     p.add_argument("--depth", type=int, default=3)
+    p.add_argument("--pluck", default="", help="fields to print for each item of a list")
+    p.add_argument("--limit", type=int, default=100)
     p.add_argument("--timeout", type=int, default=120)
     p.set_defaults(run=cmd_json)
 
