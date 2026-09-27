@@ -1,11 +1,64 @@
-  Tom5_tab1_VPN-2020.xlsx: 1,610,049 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-ethnicity: Tom5_tab1_VPN-2020.xlsx, 1,610,049 bytes
-  ethnicity: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие национальную принадлежность' (130,587,364); largest Русские 105,579,179, Татары 4,713,669, Чеченцы 1,674,854; 51 nested rows left to their parents
-  Tom5_tab6_VPN-2020.xlsx: 978,908 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-language: Tom5_tab6_VPN-2020.xlsx, 978,908 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
-  warn(msg)
-  language: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие родной язык' (130,543,591); largest Русский 111,546,569, Татарский 4,073,253, Чеченский 1,644,313; 1 nested rows left to their parents
-  Tom2_tab2_VPN-2020.xlsx: 632,954 bytes, kept at /home/runner/work/DemographicMap/DemographicMap/data/raw/russia/Tom2_tab2_VPN-2020.xlsx
-ages: Tom2_tab2_VPN-2020.xlsx, 632,954 bytes
-RUS ages: г. Москва: no total, sexes or median read
+== get https://armstat.am/en/?nid=944
+  168,846 bytes, begins b' <!DOCTYPE html '
+  link: '' -> https://armstat.am/am/?nid=944
+  link: '' -> https://armstat.am/en/?nid=944
+  link: '' -> https://armstat.am/ru/?nid=944
+  link: 'Population Census Armenian Sample Datafiles' -> https://armstat.am/en/?nid=210
+  link: 'Wages/salaries, number of payroll employees and number of entities' -> https://armstat.am/en/?nid=964
+  link: 'Labour force survey (LFS)' -> https://armstat.am/en/?nid=965
+  link: 'Officially registered jobseekers' -> https://armstat.am/en/?nid=966
+  link: 'Indicators on high-tech goods foreign trade according to the collective grouping of high-t' -> https://armstat.am/en/?nid=967
+  link: 'Age and sex distribution of RA permanent population, 2023-2024' -> https://armstat.am/en/?nid=969
+  link: 'Jobs: Vacant, Newly Created and Eliminated' -> https://armstat.am/en/?nid=1036
+  link: 'Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Y' -> https://armstat.am/en/?nid=1037
+  link: 'Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-20' -> https://armstat.am/en/?nid=1038
+  link: 'International tourism' -> https://armstat.am/en/?nid=1039
+  link: 'GSBPM' -> https://armstat.am/en/?nid=992
+  link: 'Population Census' -> https://armstat.am/en/?nid=20
+  link: 'Population Census 2022' -> https://armstat.am/en/?nid=743
+  link: 'State commission of RA 2022 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=744
+  link: 'Resolutions of RA Government - Population Census 2022' -> https://armstat.am/en/?nid=746
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2022' -> https://armstat.am/en/?nid=747
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2019' -> https://armstat.am/en/?nid=765
+  link: 'Resolutions of RA State Council on Statistics 2022' -> https://armstat.am/en/?nid=879
+  link: 'The Results of 2022 Population Census of RA' -> https://armstat.am/en/?nid=944
+  link: 'the result' -> https://armstat.am/en/?nid=1006
+  link: 'Population Census 2011' -> https://armstat.am/en/?nid=21
+  link: 'RA Law On Population Census' -> https://armstat.am/en/?nid=179
+  link: 'State commission of RA 2011 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=182
+  link: 'Pilot Population Census' -> https://armstat.am/en/?nid=184
+  link: 'The Preliminary Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=186
+  link: 'The Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=187
+  link: 'Population Census 2001' -> https://armstat.am/en/?nid=22
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=664
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=748
+  link: 'Figures of Yerevan city' -> https://armstat.am/en/?nid=945
+  link: 'Figures of marz of Aragatsotn' -> https://armstat.am/en/?nid=946
+  link: 'Figures of marz of Ararat' -> https://armstat.am/en/?nid=947
+  link: 'Figures of marz of Armavir' -> https://armstat.am/en/?nid=948
+  link: 'Figures of marz of Gegharkunik' -> https://armstat.am/en/?nid=949
+  link: 'Figures of marz of Lori' -> https://armstat.am/en/?nid=950
+  link: 'Figures of marz of Kotayk' -> https://armstat.am/en/?nid=951
+  link: 'Figures of marz of Shirak' -> https://armstat.am/en/?nid=952
+  link: 'Figures of marz of Syunik' -> https://armstat.am/en/?nid=953
+  link: 'Figures of marz of Vayots Dzor' -> https://armstat.am/en/?nid=956
+  link: 'Figures of marz of Tavush' -> https://armstat.am/en/?nid=957
+  link: 'Infographics' -> https://armstat.am/en/?nid=1004
+  link: 'Population Census 1989' -> https://armstat.am/en/?nid=1033
+  link: 'Agricultural Census' -> https://armstat.am/en/?nid=933
+  link: 'Agricultural Census 2024' -> https://armstat.am/en/?nid=935
+  link: 'Meetings in RA marzes and city Yerevan' -> https://armstat.am/en/?nid=971
+  link: 'Questionnaires' -> https://armstat.am/en/?nid=996
+  link: 'Agricultural Census 2014' -> https://armstat.am/en/?nid=23
+  link: 'Law of the Republic of Armenia on Agricultural Census' -> https://armstat.am/en/?nid=115
+  link: 'Republican Commission on preparation and conduction of RA Agricultural Census 2014' -> https://armstat.am/en/?nid=119
+  link: 'Pilot Agricultural Census' -> https://armstat.am/en/?nid=121
+  link: 'On Agricultural Post-Enumeration for the Quality Assessment of the Results of RA Agricultu' -> https://armstat.am/en/?nid=122
+  link: 'Strategy of Publication and Dissemination of the data of 2014 Agricultural Census in the R' -> https://armstat.am/en/?nid=123
+  link: 'Searching system of Agricultural Census 2014 data (in Armenian)' -> https://armstat.am/en/?nid=680
+  link: 'Dashboard' -> https://armstat.am/en/?nid=958
+  link: 'Yerevan RA capital in figures, 2022' -> https://armstat.am/en/?nid=882
+  link: 'RA Aragatsotn Marz in figures, 2022' -> https://armstat.am/en/?nid=883
+  link: 'RA Armavir Marz in figures, 2022' -> https://armstat.am/en/?nid=884
+  (859 links in all)
+  text: Statistical Committee of the Republic of Armenia --> .titleline { border-left: 3px solid red; height: 20px; margin-left:480px ; margin-top:20px; } --> &nbspARMSTAT Statistical Committee Republic of Armenia Sunday, 27 September 2026 Home Statistics Publicatiоns For Respondent About us Statistics Statistical Indicators 1 Databases ArmStatBank.am ArmDevInfo.am External trade database According to the Commodity Nomenclature at 4-digit level External trade database by country External trade database Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 2-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 4-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 10-digit level) Microdata Statistical databases National Accounts Foreign accounts Government finance statistics Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (purchased and consume Household’s Integrated Living Conditions Survey Tools Demographic Database Population Census Armenian Sample Datafiles Instruction Labour Force Survey anonymised micro data database and questionnaire (by household's members) National Child Labour Survey, 2015 Labour Force Survey - World Bank Integrated Living Conditions Survey - World Bank Government operations Wages/salaries, number of payroll employees and number of entities Labour force survey (LFS) Officially registered jobseekers Indicators on high-tech goods foreign trade according to the collective grouping of high-tech products Age and sex distribution of RA permanent population, 2023-2024 Jobs: Vacant, Newly Created and Eliminated Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Yerevan, 2012-2022 (recalculated on the base of 2022 population census) Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-2011 International tourism Other databases External trade database by country 2017-2023 Statistics Dissemination Dissemination policy and strategy Special Data Dissemination Standard (SDDS) Revision Policy Dissemination Standards Bulletin Board 1Dissemination Standards Bulletin Board Dissemination Standards Bulletin Board 2Dissemination Standards Bulletin Board 3Dissemination Standards Bulletin Board 4Dissemination Standards Bulletin Board 5Dissemination Standards Bulletin Board 6Dissemination Standards Bulletin Board 7Dissemination Standards Bulletin Board 9Dissemination Standards Bulletin Board 10Dissemination Standards Bulletin Board 12Dissemination Standards Bulletin Board Metadata Metadata Developing Plan Reference metadata Metadata (
