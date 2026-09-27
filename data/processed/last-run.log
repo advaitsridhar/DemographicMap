@@ -1,218 +1,272 @@
-== swe_tables
-  12 items
-    BefolkManadCKM [t] Population per month by region, age and sex.  Year 2025M01 - 2026M07
-    BefolkManad [t] Population per month by region, age and sex. Year 2000M01 - 2024M12
-    BefolkningR1860NCKM [t] Population by age and sex. Year 2025
-    BefolkningR1860N [t] Population by age and sex. Year 1860 - 2024
-    BefolkningCKM [t] Population by region, marital status, age and sex. Year 2025
-    BefolkningNy [t] Population by region, marital status, age and sex.  Year 1968 - 2024
-    FolkmangdDecCKM [t] Population by region, age (extended age groups) and sex. Year 2025
-    FolkmangdDistriktCKM [t] Population by district, Landscape or Part of the country by sex. Year 2025
-    FolkmangdDistrikt [t] Population by district, Landscape or Part of the country by sex. Year 2015 - 2024
-    FkvotHVD [t] Dependency ratio by region. Year 2000 - 2025
-    FolkmangdNovCKM [t] Population 1 November by region, age and sex. Year 2025
-    FolkmangdNov [t] Population 1 November by region, age and sex. Year 2002 - 2024
-== swe_befolkning
-  title: Population by region, marital status, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-  var 'Civilstand' (marital status) [elimination]: 4 values
-      OG=single; G=married; ÄNKL=widowers/widows; SK=divorced
-  var 'Alder' (age) [elimination]: 102 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years; tot=total
-      code lengths {1: 10, 2: 90, 3: 1, 4: 1}; prefixes {'': 101, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 2 values
-      BE0101N1=Population; BE0101N2=Population growth
-  var 'Tid' (year) [time]: 57 values
-      1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 57}; prefixes {'': 57}
-== nor_07459
-  title: 07459: Population, by region, sex, age, contents and year
-  var 'Region' (region) [elimination]: 994 values
-      0=The whole country; 31=Østfold; 3101=Halden; 3103=Moss; 3105=Sarpsborg; 3107=Fredrikstad ... 2399=The continental shelf, unspecified; 25=Abroad; 26=Ocean areas; 88=Not resident in Norway; 99=County not stated; 9999=Unknown municipality
-      code lengths {1: 1, 2: 41, 4: 951, 5: 1}; prefixes {'': 994}
-      /^(30|38|54|0710|0301|1804|5001) /: 7 -- 30=Viken (2020-2023); 0301=Oslo - Oslove; 38=Vestfold og Telemark (2020-2023); 0710=Sandefjord (2017-2019); 5001=Trondheim - Tråante; 1804=Bodø; 54=Troms og Finnmark - Romsa ja Finnmárku (2020-2023)
-  var 'Kjonn' (sex) [elimination]: 2 values
-      2=Females; 1=Males
-  var 'Alder' (age) [elimination]: 106 values
-      000=0 years; 001=1 year; 002=2 years; 003=3 years; 004=4 years; 005=5 years ... 100=100 years; 101=101 years; 102=102 years; 103=103 years; 104=104 years; 105+=105 years or older
-      code lengths {3: 105, 4: 1}; prefixes {'': 106}
-  var 'ContentsCode' (contents): 1 values
-      Personer1=Persons
-  var 'Tid' (year) [time]: 41 values
-      1986=1986; 1987=1987; 1988=1988; 1989=1989; 1990=1990; 1991=1991 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 41}; prefixes {'': 41}
-== nor_search_church
-  225 hits
-    DNKMedlemmer | /kf/kf04/kirke_kostra/SBMENU12107 | 06929: Church of Norway. Members, church ceremonies and services, by diocese 2005 - 2025
-    MedlemKristTrus | /in/in07/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
-    MedlemKristTrus | /kf/kf04/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
-    KostraPubliserin0005 | /kf/kf04/kirke_kostra/SBMENU6460 | 12207: Employees in the Norwegian Church (M) 2015 - 2025
-    KostraPubliserin0005 | /os/os01/kostrahoved/SBMENU10444 | 12207: Employees in the Norwegian Church (M) 2015 - 2025
-    MedlMenigRegUDNK | /in/in07/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenigRegUDNK | /kf/kf04/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
-    KostraPubliserin0001 | /kf/kf04/kirke_kostra/SBMENU6460 | 11963: Church services (M) 2015 - 2025
-    KostraPubliserin0002 | /kf/kf04/kirke_kostra/SBMENU6460 | 12026: Church users (M) 2015 - 2025
-    KostraPubliserin0001 | /os/os01/kostrahoved/SBMENU10444 | 11963: Church services (M) 2015 - 2025
-    KostraPubliserin0002 | /os/os01/kostrahoved/SBMENU10444 | 12026: Church users (M) 2015 - 2025
-    Kostra3KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04693: L. Church - basic data (M) (closed series) 1999 - 2016
-    MedlMenighUKirk | /in/in07/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
-    MedlMenighUKirk | /kf/kf04/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
-    Kostra2KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04910: L. Church - key figures (M) (closed series) 1999 - 2016
-    Kostra4KLKirkekv | /kf/kf04/kirke_kostra/SBMENU6428 | 06413: L. Church - quality (M) (closed series) 1999 - 2016
-    MedlMenighDNK | /in/in07/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenighDNK | /kf/kf04/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlemTroLivsyn | /in/in07/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
-    MedlemTroLivsynF | /in/in07/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
-    MedlemKristTru2 | /in/in07/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
-    MedlemTroLivsyn | /kf/kf04/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
-    MedlemTroLivsynF | /kf/kf04/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
-    MedlemKristTru2 | /kf/kf04/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
-    KirkeNaer | /al/al06/regsys/FRA_GAMMEL_00167 | 06119: Employed persons and scheduled man-years within The Church of Norway, by organisational level, activity and sex (M) (closed series) 2004 - 2014
-    AArKirke | /al/al06/regsys/FRA_GAMMEL_00167 | 06932: Employed persons and scheduled man-years within The Church of Norway, by occupation, sex, age and diocese (closed series) 2006 - 2014
-    KirkeNaer | /sv/sv01/regsys/FRA_GAMMEL_00167 | 06119: Employed persons and scheduled man-years within The Church of Norway, by organisational level, activity and sex (M) (closed series) 2004 - 2014
-    AArKirke | /sv/sv01/regsys/FRA_GAMMEL_00167 | 06932: Employed persons and scheduled man-years within The Church of Norway, by occupation, sex, age and diocese (closed series) 2006 - 2014
-    EkteskapVigsel | /be/be01/ekteskap/SBMENU4202 | 05713: Marriages contracted, by type of marriages 1961 - 2025
-    FoUSTB001 | /vf/vf05/naringvirk/SBMENU10080 | 13662: Government budget allocations for research and development (R&D), by ministry (NOK million) 2000 - 2026
-    FoUSTB001 | /ti/ti01/naringvirk/SBMENU10080 | 13662: Government budget allocations for research and development (R&D), by ministry (NOK million) 2000 - 2026
-    Barnregnp04 | /sv/sv01/barnregnp | 14499: Private kindergartens. Net profit, by legal form 2023 - 2024
-    Barnregnp02 | /sv/sv01/barnregnp | 14459: Allocation of net profit of the year in private kindergartens, by type of organisational structure (NOK 1 000) 2023 - 2024
-    Barnregnp04 | /ud/ud01/barnregnp | 14499: Private kindergartens. Net profit, by legal form 2023 - 2024
-    Barnregnp02 | /ud/ud01/barnregnp | 14459: Allocation of net profit of the year in private kindergartens, by type of organisational structure (NOK 1 000) 2023 - 2024
-    StaFoArsvKjAld | /os/os04/stafo_statres | 09200: StatRes. Man-years in central government, by type of service, sex and age (closed series) 2009 - 2013
-    StaFoArsvKjUtd | /os/os04/stafo_statres | 09202: StatRes. Man-years in central government, by type of service, sex and level of education (closed series) 2009 - 2013
-    StaFoArsvArbTid | /os/os04/stafo_statres | 09205: StatRes. Man-years in central government, by type of service, sex and working hours per week (closed series) 2009 - 2013
-    StaFoArsvKjAld | /os/os07/stafo_statres | 09200: StatRes. Man-years in central government, by type of service, sex and age (closed series) 2009 - 2013
-    StaFoArsvKjUtd | /os/os07/stafo_statres | 09202: StatRes. Man-years in central government, by type of service, sex and level of education (closed series) 2009 - 2013
-== nor_search_relig
-  402 hits
-    MedlMenighDNK | /in/in07/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenighDNK | /kf/kf04/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenigRegUDNK | /in/in07/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenigRegUDNK | /kf/kf04/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlemKristTrus | /in/in07/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
-    MedlemKristTrus | /kf/kf04/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
-    MedlMenighUKirk | /in/in07/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
-    MedlMenighUKirk | /kf/kf04/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
-    MedlemTroLivsyn | /in/in07/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
-    MedlemTroLivsyn | /kf/kf04/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
-    ReligTilhKjonAld | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
-    ReligTilhLands | /kf/kf03/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
-    ReligTilhKjonAld | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
-    ReligTilhLands | /kf/kf04/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
-    ReligTilhKjonAld | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
-    ReligTilhLands | /sk/sk03/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
-    ReligTilhLands2 | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
-    ReligTilhFamilie | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
-    ReligTilhBosted | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
-    ReligTilhOkonStat | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
-    ReligTilhLands2 | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
-    ReligTilhFamilie | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
-    ReligTilhBosted | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
-    ReligTilhOkonStat | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
-    ReligTilhLands2 | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
-    ReligTilhFamilie | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
-    ReligTilhBosted | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
-    ReligTilhOkonStat | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
-    ReligTilhUtdKjon | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
-    ReligTilhUtdKjon | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
-    ReligTilhUtdKjon | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
-    ReligTilhUtdAld | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
-    ReligTilhUtdAld | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
-    ReligTilhUtdAld | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
-    MedlemKristTru2 | /in/in07/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
-    MedlemKristTru2 | /kf/kf04/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
-    MedlemTroLivsynF | /in/in07/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
-    MedlemTroLivsynF | /kf/kf04/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
-    TrosLivsyn58 | /kf/kf01/kulturbar/SBMENU10000 | 05583: Visits at religious and ethical meeting, by sex, age and education, last 12 months (per cent) (closed series) 1994 - 2016
-    TrosLivsyn58 | /kf/kf02/kulturbar/SBMENU10000 | 05583: Visits at religious and ethical meeting, by sex, age and education, last 12 months (per cent) (closed series) 1994 - 2016
-== nor_klass_2017
-  427 codes
-  0101=Halden; 0104=Moss; 0105=Sarpsborg; 0106=Fredrikstad; 0111=Hvaler; 0118=Aremark; 0119=Marker; 0121=Rømskog; 0122=Trøgstad; 0123=Spydeberg; 0124=Askim; 0125=Eidsberg; 0127=Skiptvet; 0128=Rakkestad; 0135=Råde; 0136=Rygge; 0137=Våler (Østfold); 0138=Hobøl; 0211=Vestby; 0213=Ski; 0214=Ås; 0215=Frogn; 0216=Nesodden; 0217=Oppegård; 0219=Bærum; 0220=Asker; 0221=Aurskog-Høland; 0226=Sørum; 0227=Fet; 0228=Rælingen; 0229=Enebakk; 0230=Lørenskog; 0231=Skedsmo; 0233=Nittedal; 0234=Gjerdrum; 0235=Ullensaker; 0236=Nes (Akershus); 0237=Eidsvoll; 0238=Nannestad; 0239=Hurdal; 0301=Oslo; 0402=Kongsvinger; 0403=Hamar; 0412=Ringsaker; 0415=Løten; 0417=Stange; 0418=Nord-Odal; 0419=Sør-Odal; 0420=Eidskog; 0423=Grue; 0425=Åsnes; 0426=Våler (Hedmark); 0427=Elverum; 0428=Trysil; 0429=Åmot; 0430=Stor-Elvdal; 0432=Rendalen; 0434=Engerdal; 0436=Tolga; 0437=Tynset; 0438=Alvdal; 0439=Folldal; 0441=Os (Hedmark); 0501=Lillehammer; 0502=Gjøvik; 0511=Dovre; 0512=Lesja; 0513=Skjåk; 0514=Lom; 0515=Vågå; 0516=Nord-Fron; 0517=Sel; 0519=Sør-Fron; 0520=Ringebu; 0521=Øyer; 0522=Gausdal; 0528=Østre Toten; 0529=Vestre Toten; 0532=Jevnaker; 0533=Lunner; 0534=Gran; 0536=Søndre Land; 0538=Nordre Land; 0540=Sør-Aurdal; 0541=Etnedal; 0542=Nord-Aurdal; 0543=Vestre Slidre; 0544=Øystre Slidre; 0545=Vang; 0602=Drammen; 0604=Kongsberg; 0605=Ringerike; 0612=Hole; 0615=Flå; 0616=Nes (Buskerud); 0617=Gol; 0618=Hemsedal; 0619=Ål; 0620=Hol; 0621=Sigdal; 0622=Krødsherad; 0623=Modum; 0624=Øvre Eiker; 0625=Nedre Eiker; 0626=Lier; 0627=Røyken; 0628=Hurum; 0631=Flesberg; 0632=Rollag; 0633=Nore og Uvdal; 0701=Horten; 0702=Holmestrand; 0704=Tønsberg; 0709=Larvik; 0710=Sandefjord; 0711=Svelvik; 0713=Sande (Vestfold); 0714=Hof; 0716=Re; 0722=Nøtterøy; 0723=Tjøme; 0728=Lardal; 0805=Porsgrunn; 0806=Skien; 0807=Notodden; 0811=Siljan; 0814=Bamble; 0815=Kragerø; 0817=Drangedal; 0819=Nome; 0821=Bø (Telemark); 0822=Sauherad; 0826=Tinn; 0827=Hjartdal; 0828=Seljord; 0829=Kviteseid; 0830=Nissedal; 0831=Fyresdal; 0833=Tokke; 0834=Vinje; 0901=Risør; 0904=Grimstad; 0906=Arendal; 0911=Gjerstad; 0912=Vegårshei; 0914=Tvedestrand; 0919=Froland; 0926=Lillesand; 0928=Birkenes; 0929=Åmli; 0935=Iveland; 0937=Evje og Hornnes; 0938=Bygland; 0940=Valle; 0941=Bykle; 1001=Kristiansand; 1002=Mandal; 1003=Farsund; 1004=Flekkefjord; 1014=Vennesla; 1017=Songdalen; 1018=Søgne; 1021=Marnardal; 1026=Åseral; 1027=Audnedal; 1029=Lindesnes; 1032=Lyngdal; 1034=Hægebostad; 1037=Kvinesdal; 1046=Sirdal; 1101=Eigersund; 1102=Sandnes; 1103=Stavanger; 1106=Haugesund; 1111=Sokndal; 1112=Lund; 1114=Bjerkreim; 1119=Hå; 1120=Klepp; 1121=Time; 1122=Gjesdal; 1124=Sola; 1127=Randaberg; 1129=Forsand; 1130=Strand; 1133=Hjelmeland; 1134=Suldal; 1135=Sauda; 1141=Finnøy; 1142=Rennesøy; 1144=Kvitsøy; 1145=Bokn; 1146=Tysvær; 1149=Karmøy; 1151=Utsira; 1160=Vindafjord; 1201=Bergen; 1211=Etne; 1216=Sveio; 1219=Bømlo; 1221=Stord; 1222=Fitjar; 1223=Tysnes; 1224=Kvinnherad; 1227=Jondal; 1228=Odda; 1231=Ullensvang; 1232=Eidfjord; 1233=Ulvik; 1234=Granvin; 1235=Voss; 1238=Kvam; 1241=Fusa; 1242=Samnanger; 1243=Os (Hordaland); 1244=Austevoll; 1245=Sund; 1246=Fjell; 1247=Askøy; 1251=Vaksdal; 1252=Modalen; 1253=Osterøy; 1256=Meland; 1259=Øygarden; 1260=Radøy; 1263=Lindås; 1264=Austrheim; 1265=Fedje; 1266=Masfjorden; 1401=Flora; 1411=Gulen; 1412=Solund; 1413=Hyllestad; 1416=Høyanger; 1417=Vik; 1418=Balestrand; 1419=Leikanger; 1420=Sogndal; 1421=Aurland; 1422=Lærdal; 1424=Årdal; 1426=Luster; 1428=Askvoll; 1429=Fjaler; 1430=Gaular; 1431=Jølster; 1432=Førde; 1433=Naustdal; 1438=Bremanger; 1439=Vågsøy; 1441=Selje; 1443=Eid; 1444=Hornindal; 1445=Gloppen; 1449=Stryn; 1502=Molde; 1504=Ålesund; 1505=Kristiansund; 1511=Vanylven; 1514=Sande (Møre og Romsdal); 1515=Herøy (Møre og Romsdal); 1516=Ulstein; 1517=Hareid; 1519=Volda; 1520=Ørsta; 1523=Ørskog; 1524=Norddal; 1525=Stranda; 1526=Stordal; 1528=Sykkylven; 1529=Skodje; 1531=Sula; 1532=Giske; 1534=Haram; 1535=Vestnes; 1539=Rauma; 1543=Nesset; 1545=Midsund; 1546=Sandøy; 1547=Aukra; 1548=Fræna; 1551=Eide; 1554=Averøy; 1557=Gjemnes; 1560=Tingvoll; 1563=Sunndal; 1566=Surnadal; 1567=Rindal; 1571=Halsa; 1573=Smøla; 1576=Aure; 1601=Trondheim; 1612=Hemne; 1613=Snillfjord; 1617=Hitra; 1620=Frøya; 1621=Ørland; 1622=Agdenes; 1624=Rissa; 1627=Bjugn; 1630=Åfjord; 1632=Roan; 1633=Osen; 1634=Oppdal; 1635=Rennebu; 1636=Meldal; 1638=Orkdal; 1640=Røros; 1644=Holtålen; 1648=Midtre Gauldal; 1653=Melhus; 1657=Skaun; 1662=Klæbu; 1663=Malvik; 1664=Selbu; 1665=Tydal; 1702=Steinkjer; 1703=Namsos; 1711=Meråker; 1714=Stjørdal; 1717=Frosta; 1718=Leksvik; 1719=Levanger; 1721=Verdal; 1724=Verran; 1725=Namdalseid; 1736=Snåase - Snåsa; 1738=Lierne; 1739=Raarvihke - Røyrvik; 1740=Namsskogan; 1742=Grong; 1743=Høylandet; 1744=Overhalla; 1748=Fosnes; 1749=Flatanger; 1750=Vikna; 1751=Nærøy; 1755=Leka; 1756=Inderøy; 1804=Bodø; 1805=Narvik; 1811=Bindal; 1812=Sømna; 1813=Brønnøy; 1815=Vega; 1816=Vevelstad; 1818=Herøy (Nordland); 1820=Alstahaug; 1822=Leirfjord; 1824=Vefsn; 1825=Grane; 1826=Hattfjelldal; 1827=Dønna; 1828=Nesna; 1832=Hemnes; 1833=Rana; 1834=Lurøy; 1835=Træna; 1836=Rødøy; 1837=Meløy; 1838=Gildeskål; 1839=Beiarn; 1840=Saltdal; 1841=Fauske - Fuossko; 1845=Sørfold; 1848=Steigen; 1849=Hábmer - Hamarøy; 1850=Tysfjord - Divtasvuodna; 1851=Lødingen; 1852=Tjeldsund; 1853=Evenes; 1854=Ballangen; 1856=Røst; 1857=Værøy; 1859=Flakstad; 1860=Vestvågøy; 1865=Vågan; 1866=Hadsel; 1867=Bø (Nordland); 1868=Øksnes; 1870=Sortland; 1871=Andøy; 1874=Moskenes; 1902=Tromsø; 1903=Harstad; 1911=Kvæfjord; 1913=Skånland; 1917=Ibestad; 1919=Gratangen; 1920=Loabák - Lavangen; 1922=Bardu; 1923=Salangen; 1924=Målselv; 1925=Sørreisa; 1926=Dyrøy; 1927=Tranøy; 1928=Torsken; 1929=Berg; 1931=Lenvik; 1933=Balsfjord; 1936=Karlsøy; 1938=Lyngen; 1939=Storfjord - Omasvuotna - Omasvuono; 1940=Gáivuotna - Kåfjord; 1941=Skjervøy; 1942=Nordreisa; 1943=Kvænangen; 2002=Vardø; 2003=Vadsø; 2004=Hammerfest; 2011=Guovdageaidnu - Kautokeino; 2012=Alta; 2014=Loppa; 2015=Hasvik; 2017=Kvalsund; 2018=Måsøy; 2019=Nordkapp; 2020=Porsanger - Porsángu - Porsanki; 2021=Kárášjohka - Karasjok; 2022=Lebesby; 2023=Gamvik; 2024=Berlevåg; 2025=Deatnu - Tana; 2027=Unjárga - Nesseby; 2028=Båtsfjord; 2030=Sør-Varanger; 9999=Uoppgitt
-== dnk_folk1a
-  FOLK1A: Population at the first day of the quarter | unit Number | updated 2026-08-10T08:00:00
-  var 'OMRÅDE' (region) elim=True time=False: 105 values
-      000=All Denmark; 084=Region Hovedstaden; 101=Copenhagen; 147=Frederiksberg; 155=Dragør; 185=Tårnby ... 846=Mariagerfjord; 773=Morsø; 840=Rebild; 787=Thisted; 820=Vesthimmerlands; 851=Aalborg
-  var 'KØN' (sex) elim=True time=False: 3 values
-      TOT=Total; 1=Men; 2=Women
-  var 'ALDER' (age) elim=True time=False: 127 values
-      IALT=Age, total; 0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 120=120 years; 121=121 years; 122=122 years; 123=123 years; 124=124 years; 125=125 years
-  var 'CIVILSTAND' (marital status) elim=True time=False: 5 values
-      TOT=Total; U=Never married; G=Married/separated; E=Widowed; F=Divorced
-  var 'Tid' (time) elim=False time=True: 75 values
-      2008K1=2008Q1; 2008K2=2008Q2; 2008K3=2008Q3; 2008K4=2008Q4; 2009K1=2009Q1; 2009K2=2009Q2 ... 2025K2=2025Q2; 2025K3=2025Q3; 2025K4=2025Q4; 2026K1=2026Q1; 2026K2=2026Q2; 2026K3=2026Q3
-== dnk_km1
-  KM1: Population at the first day of the quarter | unit Number | updated 2026-08-10T08:00:00
-  var 'SOGN' (parish) elim=True time=False: 2299 values
-      7001=7001 Vor Frue (København Municipality); 7002=7002 Helligånds (København Municipality); 7003=7003 Trinitatis (København Municipality); 7004=7004 Sankt Andreas (København Municipality); 7007=7007 Sankt Johannes (København Municipality); 7008=7008 Simeons (København Municipality) ... 9360=9360 Skellerup-Ellinge (Nyborg Municipality); 9361=9361 Fuglse-Krønge-Torslunde (Lolland Municipality); 9362=9362 Hjerk-Harre (Skive Municipality); 9363=9363 Holsted-Sankt Peders (Vejen Municipality); 0000=0000 Without placeable address; 9999=9999 Without permanent residence
-  var 'FKMED' (member of the National Church) elim=True time=False: 2 values
-      F=Member of National Church; U=Not member of National Church
-  var 'Tid' (time) elim=False time=True: 79 values
-      2007K1=2007Q1; 2007K2=2007Q2; 2007K3=2007Q3; 2007K4=2007Q4; 2008K1=2008Q1; 2008K2=2008Q2 ... 2025K2=2025Q2; 2025K3=2025Q3; 2025K4=2025Q4; 2026K1=2026Q1; 2026K2=2026Q2; 2026K3=2026Q3
-== dnk_tables
-  5732 tables
-    KM1 | Population at the first day of the quarter | 2007Q1-2026Q3 | parish,member of the National Church,time | active=True
-    KMSTA001 | Population 1. January | 2008-2026 | parish,ancestry,member of the National Church,time | active=True
-    FAMFLYT5 | Inflow of residents by receiving municipality | 2017-2021 | in-migration municipality,type of move,type of family that has moved in,age of the youngest family member who has moved,age of the oldest family member who has moved,time | active=False
-    FAMFLYT6 | Outward migration by municipality | 2017-2021 | out-migration municipality,type of move,type of family that has left,age of the youngest family member who has moved,age of the oldest family member who has moved,time | active=False
-    KM11 | Population at the first day of the quarter | 2007Q1-2026Q3 | deanary,member of the National Church,time | active=True
-    KM5 | Population 1. January | 2007-2026 | parish,sex,age,member of the National Church,time | active=True
-    KM55 | Population 1. January | 2007-2026 | deanary,sex,age,member of the National Church,time | active=True
-    KM6 | Population 1. January | 2011-2026 | municipality,sex,age,member of the National Church,time | active=True
-    KMSTA002 | Population 1. January | 2008-2026 | deanary,ancestry,member of the National Church,time | active=True
-    KMSTA005 | Population 1. January (15 years+) | 2016-2025 | parish,socioeconomic status,member of the National Church,time | active=True
-    KMSTA006 | Population 1. January (15 years+) | 2016-2025 | deanary,socioeconomic status,member of the National Church,time | active=True
-    KMSTA009 | Population 1. January (15 years+) | 2016-2025 | parish,member of the National Church,commuting,time | active=True
-    KMSTA010 | Population 1. January (15 years+) | 2016-2025 | deanary,member of the National Church,commuting,time | active=True
-    KMST007A | Population 1. October (15 years+) | 2015-2025 | parish,member of the National Church,highest education completed,time | active=True
-    KMST008A | Population 1. October (15 years+) | 2015-2025 | deanary,member of the National Church,highest education completed,time | active=True
-    KM2 | Registration and resignation from the National Church | 2007Q1-2026Q2 | parish,age,member of the National Church,time | active=True
-    KM22 | Registration and resignation from the national church | 2007Q1-2026Q2 | deanary,age,member of the National Church,time | active=True
-    KMSTA007 | Population 1. January (15 years+) | 2016-2019 | parish,member of the National Church,highest education completed,time | active=False
-    KMSTA008 | Population 1. January (15 years+) | 2016-2019 | deanary,member of the National Church,highest education completed,time | active=False
-    KM4 | Religious ceremonies | 2006-2025 | parish,movement,time | active=True
-    KM44 | Religious ceremonies | 2006-2025 | deanary,movement,time | active=True
-    LONMED1 | Members per 31.12 | 2007-2018 | member of organisation,sex,time | active=False
-    LONMED3 | Members per 31.12 | 2007-2025 | member of organisation,sex,time | active=True
-    LONMED2 | Members per 31.12 | 2007-2025 | member of organisation,sex,time | active=True
-    LONMED | Members | 2008-2014 | member of organisation,sex,time | active=False
-    IFV1 | Household members | 2005-2014 | sex,age,the ability of the household to make ends meet,time | active=False
-    IFV3 | Household members | 2005-2014 | sex,age,socioeconomic status,the ability of the household to make ends meet,time | active=False
-    IFV4 | Household members | 2005-2014 | sex,age,type of household,the ability of the household to make ends meet,time | active=False
-    IFV5 | Household members | 2005-2014 | sex,age,financial burden of the total housing cost,time | active=False
-    IFV6 | Household members | 2005-2014 | sex,age,socioeconomic status,financial burden of the total housing cost,time | active=False
-    IFV7 | Household members | 2005-2014 | sex,age,type of household,financial burden of the total housing cost,time | active=False
-    BEST11 | Board members and managers | 2019-2024 | type,sex,education,age,residence province,time | active=True
-    BEST1 | Board members and managers | 2014-2021 | type,sex,education,age,residence province,time | active=False
-    BEST2 | Board members and managers | 2014-2021 | type,size of company,sex,time | active=False
-    BEST12 | Board members and managers | 2019-2024 | type,size of company,sex,time | active=True
-    BEST3 | Board members and managers | 2014-2021 | type,size of company,education,time | active=False
-    BEST13 | Board members and managers | 2019-2024 | type,size of company,education,time | active=True
-    BEST4 | Board members and managers | 2014-2021 | type,industry (DB07 19 grouping),sex,time | active=False
-    BEST14 | Board members and managers | 2019-2024 | type,industry (DB07 19 grouping),sex,time | active=True
-    BEST5 | Board members and managers | 2014-2021 | type,industry (DB07 19 grouping),education,time | active=False
-    BEST15 | Board members and managers | 2019-2024 | type,industry (DB07 19 grouping),education,time | active=True
-    BEST16 | Board members | 2023-2024 | board membership,sex,education,age,time | active=True
-    BEST17 | Board members | 2023-2024 | election type,sex,size of company,industry (DB07 19 grouping),time | active=True
-    BEST18 | Board members | 2023-2024 | board member,enterprise status,sex,size of company,industry (DB07 19 grouping),time | active=True
-    BEST19 | Board members | 2023-2024 | board member,enterprise status,sex,size of company,industry (DB07 19 grouping),time | active=True
-    LIGEDI6 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,education,age,time | active=False
-    LIGEDI11 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,education,age,time | active=True
-    LIGEDI12 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,size of company,time | active=True
-    LIGEDI7 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,size of company,time | active=False
-    LIGEDI8 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,industry (DB07 19 grouping),time | active=False
-    LIGEDI13 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,industry (DB07 19 grouping),time | active=True
-    BOG03 | Book production | 2007-2024 | subject,original language,published on,media,time | active=True
-    BOG06 | Book releases, commercial | 2009-2024 | subject,extent,edition,media,original language,time | active=True
-    BOGS02 | Sold books | 2022Q3-2025Q4 | main genre,published language,time | active=True
-    BOGS03 | Sold books | 2022Q3-2025Q4 | genre,original language,published language,time | active=True
-    KV2LIT5 | Membership of book clubs or reading centered communities | 2025-2025 | organizer,sex,age,time | active=True
-    IDRAKT01 | Members of sports organizations | 2014-2025 | region,activity,sex,age,time | active=True
-    IDRAKT02 | Memberships of sports organizations (share of population) | 2014-2025 | region,sex,age,time | active=True
-    LABY17 | Membership of sports clubs (in percentage) | 2014-2025 | municipality groups,time | active=True
-    IDRFOR01 | Sports associations and members | 2014-2025 | region,organisation,key figures,time | active=True
-    MEDLEM2 | Membership for youth and outdoor activities organisations | 2007-2025 | organisation,time | active=True
-    KV2FR3 | Association membership | 2024-2025 | type of association,sex,age,time | active=True
+== est_search_div
+  22 hits
+    ER072U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER072U: NEWLY BORN ENTERPRISES BY ADMINISTRATIVE UNIT, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER073U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER073U: DEAD ENTERPRISES BY ADMINISTRATIVE UNIT, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER074U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER074U: ENTERPRISE BIRTH RATES BY ADMINISTRATIVE UNIT, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER075U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER075U: ENTERPRISE DEATH RATES BY ADMINISTRATIVE UNIT, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    TO023U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Toostus. Arhiiv | TO023U: INDUSTRIAL PRODUCTION AT CURRENT PRICES BY COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    TO024U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Toostus. Arhiiv | TO024U: INDUSTRIAL SALES AT CURRENT PRICES BY COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER052U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER052U: NEWLY BORN ENTERPRISES BY ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER053U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER053U: DEAD ENTERPRISES BY ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER054U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER054U: NUMBER OF PERSONS EMPLOYED IN ACTIVE ENTERPRISES BY ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER055U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER055U: NUMBER OF PERSONS EMPLOYED IN NEWLY BORN ENTERPRISES BY ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER056U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER056U: NUMBER OF PERSONS EMPLOYED IN DEAD ENTERPRISES BY ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER062U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER062U: NEWLY BORN ENTERPRISES BY NUMBER OF EMPLOYEES, ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    ER063U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Majandusyksused. Arhiiv | ER063U: DEAD ENTERPRISES BY NUMBER OF EMPLOYEES, ECONOMIC ACTIVITY (EMTAK 2008) AND COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV146U.PX | /rahvastik/rahvastikusundmused/sunnid | RV146U: LIVE BIRTHS BY AGE OF MOTHER, MOTHER'S SOCIO-ECONOMIC STATUS AND TYPE OF SETTLEMENT. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV148U.PX | /rahvastik/rahvastikusundmused/sunnid | RV148U: LIVE BIRTHS BY AGE OF MOTHER, MOTHER'S SOCIO-ECONOMIC STATUS AND COUNTY. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    EM027U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Ettevetete majandusnaitajad. Arhiiv/ettevetete-suhtarvud | EM027U: ENTERPRISES' (WITH 20 OR MORE PERSONS EMPLOYED) VALUE ADDED AND PRODUCTIVITY MEASURES BY COUNTY. ADMINISTRATIVE DIVISION AS AT 01.01.2018 (2017)
+    EM017U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Ettevetete majandusnaitajad. Arhiiv | EM017U: ENTERPRISES' (WITH 20 OR MORE PERSONS EMPLOYED) INVESTMENTS IN FIXED ASSETS BY COUNTY AT CURRENT PRICES, ADMINISTRATIVE DIVISION AS AT 01.01.2018 (2017)
+    TO0241U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Toostus. Arhiiv | TO0241U: SALES OF INDUSTRIAL PRODUCTION TO NON-RESIDENTS BY COUNTY, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    KM0021U.PX | /Lepetatud_tabelid/Majandus. Arhiiv/Sisekaubandus. Arhiiv | KM0021U: SALES OF GOODS AND MAINTENANCE AND REPAIR OF MOTOR VEHICLES SERVICES AT CURRENT PRICES BY REGION, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV287U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV287U: NEWLY MARRIED PERSONS BY SOCIO-ECONOMIC STATUS, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV37U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV37U: DIVORCED PERSONS BY SOCIO-ECONOMIC STATUS, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV285U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV285U: NEWLY MARRIED PERSONS BY NUMBER OF COMMON CHILDREN, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. BEFORE MARRIAGE IN CONSENSUAL UNION. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+== est_search_unit
+  FAILED: RemoteDisconnected: Remote end closed connection without response
+== est_search_rl
+  267 hits
+    RV108.PX | /rahvastik/rahvastikusundmused/sunnid | RV108: LIVE BIRTHS BY ETHNIC NATIONALITY OF PARENTS
+    RV42.PX | /rahvastik/rahvastikusundmused/surmad | RV42: DEATHS BY SEX AND ETHNIC NATIONALITY
+    RV43.PX | /rahvastik/rahvastikusundmused/surmad | RV43: PROPORTION OF DEATHS PER 10,000 DEATHS BY SEX AND ETHNIC NATIONALITY
+    RL207.PX | /rahvaloendus/rel2000/perekonnaseis | RL207: LEGALLY MARRIED AND COHABITING COUPLES BY ETHNIC NATIONALITY OF PARTNERS*
+    RL0745.PX | /rahvaloendus/rel2011/perekonnad | RL0745: MARRIED AND COHABITING COUPLES BY TYPE OF FAMILY, ETHNIC NATIONALITY OF PARTNERS AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+    RV067.px | /rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis | RV067: POPULATION BY ETHNIC NATIONALITY AND SEX, 1 JANUARY
+    RLE04.PX | /rahvaloendus/rel2011/esialgsed-andmed | RLE04: ENUMERATED PERMANENT RESIDENTS BY ETHNIC NATIONALITY AND SEX, 31 DECEMBER 2011
+    RL302.PX | /rahvaloendus/rel2000/haridus | RL302: POPULATION BY EDUCATIONAL ATTAINMENT AND ETHNIC NATIONALITY*
+    RL222.PX | /rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus | RL222: POPULATION BY THE PLACE OF RESIDENCE AND ETHNIC NATIONALITY
+    RV0222U.PX | /rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis | RV0222U: POPULATION BY SEX, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY
+    RV0222.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikunäitajad ja koosseis. Arhiiv | RV0222: POPULATION BY SEX, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY (2012–2017)
+    RL231.PX | /rahvaloendus/rel2000/usk | RL231: POPULATION BY RELIGIOUS AFFILIATION AND ETHNIC NATIONALITY*
+    RL8041.PX | /rahvaloendus/rel2000/rahvastiku-ja-leibkondade-elamistingimused | RL8041: POPULATION BY AGE, ETHNIC NATIONALITY AND TYPE OF DWELLING*
+    RL403.PX | /rahvaloendus/rel2000/elatusallikad-tooalane-ja-sotsiaal-majanduslik-staatus | RL403: POPULATION BY MAIN SOURCE OF SUBSISTENCE AND ETHNIC NATIONALITY
+    RV1731.px | /rahvastik/rahvastikusundmused/abordid | RV1731: INDUCED ABORTION RATES BY WOMAN'S ETHNIC NATIONALITY
+    LES33.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Sotsiaalne terjutus ja vaesus.  Arhiiv | LES33: UNEMPLOYMENT INDICATORS BY ETHNIC NATIONALITY (2003–2019)
+    RL217.PX | /rahvaloendus/rel2000/kodakondsus | RL217: POPULATION BY CITIZENSHIP, AGE AND ETHNIC NATIONALITY
+    RL123.PX | /rahvaloendus/rel2000/sunnikoht-vanemate-sunnikoht | RL123: POPULATION BY COUNTRY OF BIRTH AND ETHNIC NATIONALITY
+    RL214282.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel | RL214282: DUAL-ETHNIC PERSONS, 31 DECEMBER
+    RLV428.px | /rahvaloendus/rel_vordlus/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad | RLV428: POPULATION BY ETHNIC NATIONALITY AND SEX (1959, 1970, 1979, 1989, 2000, 2011, 2021)
+    RL0428.PX | /rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel-ja-keelteoskus-murded | RL0428: POPULATION BY ETHNIC NATIONALITY, SEX AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+    RV022U.PX | /rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis | RV022U: POPULATION BY SEX, AGE GROUP, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY
+    RL309.PX | /rahvaloendus/rel2000/haridus | RL309: NON-STUDYING PERSONS BY AGE, ETHNIC NATIONALITY AND EDUCATIONAL ATTAINMENT*
+    RL2281.PX | /rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus | RL2281: POPULATION BY AGE, MOTHER TONGUE, EDUCATIONAL ATTAINMENT AND ETHNIC NATIONALITY*
+    ST23.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Sissetulek. Arhiiv | ST23: EQUALISED YEARLY DISPOSABLE INCOME BY REGION AND ETHNIC NATIONALITY (2003–2021)
+    LES29.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Sotsiaalne terjutus ja vaesus.  Arhiiv | LES29: AT-RISK-OF-POVERTY RATE ANCHORED IN TIME BY ETHNIC NATIONALITY (2004–2021)
+    RL509.PX | /rahvaloendus/rel2000/leibkonnad-rahvastik-leibkondades/leibkonnad | RL509: PRIVATE HOUSEHOLDS BY SIZE AND ETHNIC NATIONALITY OF HOUSEHOLD MEMBERS
+    RL410.PX | /rahvaloendus/rel2000/majanduslikult-aktiivne-rahvastik | RL410: EMPLOYED POPULATION BY THE PLACE OF RESIDENCE, AGE AND ETHNIC NATIONALITY*
+    RL411.PX | /rahvaloendus/rel2000/majanduslikult-aktiivne-rahvastik | RL411: UNEMPLOYED POPULATION BY THE PLACE OF RESIDENCE, AGE AND ETHNIC NATIONALITY*
+    RL0728.PX | /rahvaloendus/rel2011/leibkonnad | RL0728: RESIDENT MEMBERS OF INSTITUTIONAL HOUSEHOLDS BY TYPE OF INSTITUTION, SEX, AGE GROUP AND ETHNIC NATIONALITY, 31 DECEMBER 2011
+    RL0560.PX | /rahvaloendus/rel2011/pelisus-ja-ranne/elukoht-eelmisel-rahvaloendusel | RL0560: POPULATION LIVING ABROAD AT THE TIME OF 2000 POPULATION CENSUS BY COUNTRY, SEX, ETHNIC NATIONALITY AND CITIZENSHIP, 31 DECEMBER 2011
+    RL0173.PX | /rahvaloendus/rel2011/rahvastiku-majanduslik-aktiivsus/tootud | RL0173: UNEMPLOYED PERSONS BY PREVIOUS EMPLOYMENT, SEX, ETHNIC NATIONALITY AND COUNTY, 31 DECEMBER 2011
+    RL201.PX | /rahvaloendus/rel2000/vanus | RL201: POPULATION BY THE PLACE OF RESIDENCE, AGE AND ETHNIC NATIONALITY
+    RL303.PX | /rahvaloendus/rel2000/haridus | RL303: POPULATION BY AGE, EDUCATIONAL ATTAINMENT AND ETHNIC NATIONALITY*
+    RL426.PX | /rahvaloendus/rel2000/majanduslikult-aktiivne-rahvastik | RL426: EMPLOYED POPULATION BY THE PLACE OF WORK, AGE AND ETHNIC NATIONALITY*
+    RL307.PX | /rahvaloendus/rel2000/haridus | RL307: STUDYING PERSONS BY AGE, LEVEL OF STUDY AND ETHNIC NATIONALITY*
+    RL308.PX | /rahvaloendus/rel2000/haridus | RL308: ECONOMICALLY ACTIVE STUDYING PERSONS BY AGE, LEVEL OF STUDY AND ETHNIC NATIONALITY*
+    RL226.PX | /rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus | RL226: POPULATION BY ETHNIC NATIONALITY, COMMAND OF FOREIGN LANGUAGES AND CITIZENSHIP
+    RL402.PX | /rahvaloendus/rel2000/elatusallikad-tooalane-ja-sotsiaal-majanduslik-staatus | RL402: POPULATION BY SOURCES OF SUBSISTENCE, AGE AND ETHNIC NATIONALITY
+    RL225.PX | /rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus | RL225: POPULATION BY ETHNIC NATIONALITY, MOTHER TONGUE AND CITIZENSHIP
+== lva_search_parish
+  43 hits
+    NPV010 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence (experimental statistics) 2017 - 2023
+    NPV012 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and sector (market/non-market) (experimental statistics) 2017 - 2023
+    RIG020 | /POP/IR/IRD | Mean age of population in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated area (experimental statistics) 2000 - 2026
+    MIV010 | /POP/MI/MIV | Annual average personal income in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by place of residence (experimental statistics) 2017 - 2022
+    RIG040 | /POP/IR/IRE | Population in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by ethnicity (experimental statistics) 2000 - 2026
+    RIG030 | /POP/IR/IRV | Population in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by citizenship (experimental statistics) 2000 - 2026
+    RIG070 | /IZG/IZ/IZI | Share of permanent residents aged 18 and over who have highest education or doctorate degree in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas (experimental statistics) 2000 - 2025
+    NPV020 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas (experimental statistics) 2017 - 2023
+    NPV022 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by sector (market/non-market) (experimental statistics) 2017 - 2023
+    RIG110 | /EMP/DS/DSV | Monthly wages and salaries in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by place of residence (experimental statistics) 2011 - 2025
+    RIG090 | /EMP/NBBA/NBBB | Share of unemployed persons among economically active population aged 15–74 in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas (experimental statistics) 2011 - 2025
+    RIG080 | /IZG/IZ/IZI | Index of mean years of schooling of permanent residents aged 25 and over in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas at the beginning of year (experimental statistics) 2017 - 2025
+    RIG050 | /POP/IR/IRS | Causes of population change in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas on two dates (experimental statistics) 2025 - 2026
+    RIG050 | /POP/IB/IBE | Causes of population change in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas on two dates (experimental statistics) 2025 - 2026
+    IRJ020 | /POP/IR/IRD | Population projection in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year by age group and sex (experimental statistics) 2024 - 2044
+    RIG100 | /VES/VS/VSV | Population fully primary vaccinated against Covid-19 in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2023), neighbourhoods and densely populated areas (experimental statistics) 2021M03 - 2023M01
+    IRD081 | /POP/IR/IRD | Population by sex and age group in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 1970 - 2026
+    IRE071 | /POP/IR/IRE | Population by ethnicity in regions, cities, municipalities, towns, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
+    IRV031 | /POP/IR/IRV | Population number and share by citizenship and sex in regions, cities, municipalities, towns, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
+    IRV071 | /POP/IR/IRV | Population by sex and country of birth in regions, cities, municipalities, towns, neighbourhoods and densely populated areas at beginning of year 2012 - 2026
+    IRG021 | /POP/IR/IRG | Population by sex and marital status in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
+    IBE101 | /POP/IB/IBE | Changes in usual residence of the population in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
+    EKA021 | /EMP/NBB/NBA | Population aged 15 and over by activity status in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 2021 - 2025
+    IZT041 | /IZG/IZ/IZI | Population aged 15 and over by educational attainment group in regions, State cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas, at the beginning of year  2019 - 2025
+    RIG010 | /POP/IR/IRD | Population in regions, cities, municipalities, towns, rural territories, villages (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by sex and age group (experimental statistics) 2000 - 2026
+    NPV032 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by sector (market/non-market) (experimental statistics) 2017 - 2023
+    NPV031 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by economic activity (NACE) (experimental statistics) 2017 - 2023
+    NPV030 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas (experimental statistics) 2017 - 2023
+    NPV021 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by economic activity (NACE) (experimental statistics) 2017 - 2023
+    NPV011 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and economic activity (NACE) (experimental statistics) 2017 - 2023
+    NPV033 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
+    NPV013 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and occupation (experimental statistics)  2017 - 2023
+    NPV023 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
+    RIG061 | /POP/IR/IRS | Urban and rural population in regions, cities, municipalities, towns and rural territories at the beginning of year (experimental statistics) 2022 - 2026
+    IRD080 | /POP/IR/A_IR | Population by sex and age group in regions, cities, municipalities, towns and rural territories at the beginning of year 2020 - 2022
+    IRE070 | /POP/IR/A_IR | Population by ethnicity in regions, cities, municipalities and towns at the beginning of year 2020 - 2022
+    IRV030 | /POP/IR/A_IR | Population number and share by citizenship and sex in regions, cities, municipalities and towns at the beginning of year 2012 - 2022
+    IRV070 | /POP/IR/A_IR | Population by sex and country of birth in regions, cities, municipalities and towns at the beginning of year 2012 - 2022
+    IRG020 | /POP/IR/A_IR | Population by sex and marital status in regions, cities, municipalities, towns and rural territories at the beginning of year 2020 - 2022
+    IBE100 | /POP/IB/A_IB | Changes in usual residence of the population in regions, cities, municipalities, towns and rural territories 2020 - 2022
+== lva_search_terr
+  401 hits
+    NPV033 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
+    NPV030 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas (experimental statistics) 2017 - 2023
+    NPV031 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by economic activity (NACE) (experimental statistics) 2017 - 2023
+    NPV032 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by sector (market/non-market) (experimental statistics) 2017 - 2023
+    NOR023 | /POP/NO/NOR | Recorded crimes and crime rates by State city and municipality (after administrative-territorial reform in 2021) 2021 - 2025
+    IHM011 | /IZG/IH/IHM | Performance indicators of vocational education institutions (children's music and art schools) in regions, State cities and municipalities (after administrative-territorial reform in 2021) 2015 - 2023
+    IHM010 | /IZG/IH/A_IH | Performance indicators of vocational education institutions (children's music and art schools) in regions, cities and municipalities (before administrative-territorial reform in 2021) 2015 - 2021
+    MBP011 | /POP/MB/MBP | Consumption of food products in urban and rural areas, annual mean per household member (ECOICOP ver.2 sub-classes, kg, unless another unit is specified) 2025
+    VSS321 | /VES/VS/VSS | New cases of malignant neoplasms in State cities and municipalities 2010 - 2024
+    NPV013 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and occupation (experimental statistics)  2017 - 2023
+    NPV023 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
+    VSA030 | /VES/VS/VSA | Patients with mental and behavioural disorders due to psychoactive substance use by diagnosis-related group and region 2013 - 2025
+    VDE080 | /VES/VD/VDE | Adults with disabilities in State cities and municipalities by disability group and age 2021 - 2025
+    VDE070 | /VES/VD/VDE | Persons with disabilities in State cities and municipalities by disability group and type of functional limitations 2021 - 2025
+    VSS370 | /VES/VS/VSS | Prevalence of malignant neoplasms at the end of year 2000 - 2024
+    VSS320 | /VES/VS/A_VS | New cases of malignant neoplasms in cities and municipalities 2010 - 2021
+    IRS051 | /POP/IR/IRS | Population in urban (densely populated) and rural (sparsely populated) areas in regions, cities, municipalities, towns and rural territories 2022 - 2026
+    IRD062 | /POP/IR/IRD | Usually resident population density in regions, cities and towns, municipalities, and rural territories, at the beginning of year 2022 - 2026
+    IDK021 | /POP/ID/IDK | Number of births per 1000 inhabitants and total fertility rate in regions, State cities and municipalities 2012 - 2025
+    IMK021 | /POP/IM/IMK | Number of deaths per 1000 inhabitants in regions, State cities and municipalities 2012 - 2025
+    ILK021 | /POP/IL/ILK | Number of marriages and divorces per 1000 inhabitants in regions, State cities and municipalities 2012 - 2025
+    ILN021 | /POP/IL/ILN | Marriages and divorces in regions, State cities and municipalities 1994 - 2025
+    MVS011 | /POP/MV/MVS | Total number and average size of private households in regions, State cities, municipalities, urban and rural areas at the beginning of year 2012 - 2026
+    MVG041 | /POP/MV/MVG | Average size of family nucleus in regions, State cities and municipalities at the beginning of year 2020 - 2026
+    MIV020 | /POP/MI/MIV | Median registered household income per household member in regions, municipalities and cities (EUR) (experimental statistics) 2022 - 2024
+    NNM020 | /POP/NN/NNM | Share of persons under minimum income level by regions (per cent) 2004 - 2024
+    NNN071 | /POP/NN/A_NN | The rate of households, which indicated unsatisfactory housing conditions by territory (per cent) 2005 - 2020
+    NNN081 | /POP/NN/A_NN | The rate of persons, which indicated unsatisfactory housing conditions by territory (per cent) 2005 - 2020
+    NNN131 | /POP/NN/A_NN | Material deprivation rate among persons by territorys (per cent) 2005 - 2020
+    NNN141 | /POP/NN/A_NN | Severe material deprivation rate among persons by territory (per cent) 2005 - 2020
+    VAA030 | /VES/VA/VAA | Number of out-patient visits to the dentist 2019 - 2025
+    VSM020 | /VES/VS/VSM | Antenatal care for pregnant women by region 2010 - 2025
+    IGP030 | /IZG/IG/IGP | Tertiary education institutions in regions and State cities 2016 - 2025
+    IKR070 | /VEK/IK/IKR | Gross domestic product by statistical regions (before 01.01.2024.) (at current prices) 2000 - 2023
+    IKL060 | /VEK/IK/IKL | National accounts: nominal labour productivity per capita by region based on value added 2000 - 2023
+    IKL080 | /VEK/IK/IKL | National accounts: total employment (persons employed) per capita by region 2000 - 2023
+    MEM021 | /NOZ/ME/MEP | Forest stands and forest cover by statistical region at the beginning of year 2025 - 2026
+    MEP063 | /NOZ/ME/MEP | Share of inventoried forests in total land area and standing timber density in regions, State cities and municipalities 2019 - 2025
+    MEM020 | /NOZ/ME/A_ME | Forest stands and forest cover by statistical region (before 01.01.2024) at the beginning of year 2022 - 2024
+    ENA060 | /NOZ/EN/ENA | Heat produced from renewable energy in regions, municipalities and State cities (GWh) 2019 - 2025
+== lva_search_census
+  34 hits
+    ILN050 | /POP/IL/ILN | Marriages by ethnicity of spouses 1970 - 2025
+    IDS070 | /POP/ID/IDS | Live births by ethnicity 1980 - 2025
+    IMS010 | /POP/IM/IMSV | Number of deaths by ethnicity of a deceased person 1980 - 2025
+    IRE060 | /POP/IR/IRE | Population by citizenship and ethnicity at the beginning of year 2011 - 2026
+    IRE060 | /POP/IR/IRV | Population by citizenship and ethnicity at the beginning of year 2011 - 2026
+    IRE020 | /POP/IR/IRE | Population, population change and natural increase by ethnicity 1980 - 2026
+    IRE010 | /POP/IR/IRE | Population by ethnicity at the beginning of year 1935 - 2026
+    IBE040 | /POP/IB/IBE | Long-term international migration by ethnicity 2011 - 2025
+    IRE040 | /POP/IR/IRE | Population by ethnicity and age group at the beginning of year 2011 - 2026
+    IMS021 | /POP/IM/IMSV | Number of deaths by ethnicity of a deceased person in regions and State cities 1996 - 2025
+    IMS020 | /POP/IM/A_IM | Number of deaths by ethnicity of a deceased person in regions and cities 2000 - 2020
+    IRE031 | /POP/IR/IRE | Population by ethnicity in regions, State cities and municipalities at the beginning of year 2012 - 2026
+    IZT030 | /IZG/IZ/IZI | Population aged 15 and over by educational attainment, ethnicity and sex, at the beginning of year  2019 - 2025
+    IRE070 | /POP/IR/A_IR | Population by ethnicity in regions, cities, municipalities and towns at the beginning of year 2020 - 2022
+    NBA020 | /EMP/NBB/NBA | Activity rate by ethnicity and sex (per cent) 1996 - 2025
+    NBL030 | /EMP/NB/NBLB | Employment rate by age group, ethnicity and sex (per cent) 1996 - 2025
+    IRE091 | /POP/IR/IRE | Population by sex, ethnicity, citizenship and main age group in regions and State cities at the beginning of year 2012 - 2026
+    IRE090 | /POP/IR/A_IR | Population by sex, ethnicity, citizenship and main age group in regions and cities at the beginning of year 2020 - 2022
+    IRE030 | /POP/IR/A_IR | Population by ethnicity in regions, cities, municipalities and 21 development centres at the beginning of year 2011 - 2022
+    IRE081 | /POP/IR/IRE | Population by sex, ethnicity and age group in regions and State cities at the beginning of year 2012 - 2026
+    IRE080 | /POP/IR/A_IR | Population by sex, ethnicity and age group in regions and cities at the beginning of year 2020 - 2022
+    IZT021 | /IZG/IZ/IZI | Population aged 15 and over by educational attainment, ethnicity and sex in regions and State cities, at the beginning of year 2019 - 2025
+    IZT020 | /IZG/IZ/A_IZ | Population aged 15 and over by educational attainment, ethnicity and sex in regions and State cities, at the beginning of year 2019 - 2022
+    IRE071 | /POP/IR/IRE | Population by ethnicity in regions, cities, municipalities, towns, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
+    NBB010 | /EMP/NBBA/NBBB | Unemployment rate by age group, ethnicity and sex 1996 - 2025
+    RIG040 | /POP/IR/IRE | Population in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by ethnicity (experimental statistics) 2000 - 2026
+    IRG031 | /POP/IR/IRG | Population by sex, ethnicity, marital status and main age group in regions, State cities and municipalities at the beginning of year 2012 - 2026
+    EKA011 | /EMP/NBB/NBA | Population aged 15 and over by activity status, gender, ethnicity and age group in regions, State cities and municipalities 2011 - 2025
+    IRG030 | /POP/IR/A_IR | Population by sex, ethnicity, marital status and main age group in regions, cities and municipalities at the beginning of year 2020 - 2022
+    EKA031 | /EMP/NB/NBLA | Population aged 15 and over by status in employment, gender, ethnicity and age group in regions, State cities and municipalities at the beginning of year 2011 - 2025
+    EKA010 | /EMP/NBB/A_NBB | Population aged 15 and over by activity status, gender, ethnicity and age group in regions, cities and municipalities at the beginning of year 2021
+    EKA030 | /EMP/NB/A_NB | Population aged 15 and over by status in employment, gender, ethnicity and age group in regions, cities and municipalities at the beginning of year 2021
+    RIG101 | /VES/VS/VSV | Share of population fully primary vaccinated against Covid-19 in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2023) and Riga neighbourhoods by age group and ethnicity (experimental statistics) 2021M03 - 2023M01
+    IRE100 | /POP/IR/IRE | Share of Roma in total population and characteristic indicators thereof 2011 - 2026
+== ltu_flows
+  9503 dataflows
+    S1R081_M8020411_1 | S1R081 - Average heated dwelling area | S1R081 - Vidutinis apšildomas plotas būste
+    S1R081_M8020412_1 | S1R081 - Average heated dwelling area | S1R081 - Vidutinis apšildomas plotas būste
+    S1R082_M8020411_2 | S1R082 - Average number of occupants per dwelling | S1R082 - Vidutinis būste gyvenančių asmenų skaičius
+    S1R082_M8020412_2 | S1R082 - Average number of occupants per dwelling | S1R082 - Vidutinis būste gyvenančių asmenų skaičius
+    S1R083_M8020423 | S1R083 - Average energy consumption per dwelling | S1R083 - Vidutinis būste suvartotas energijos kiekis
+    S1R083_M8020432 | S1R083 - Average energy consumption per dwelling | S1R083 - Vidutinis būste suvartotas energijos kiekis
+    S1R083_M8020401 | S1R083 - Average energy consumption per dwelling | S1R083 - Vidutinis būste suvartotas energijos kiekis
+    S1R083_M8020433 | S1R083 - Average energy consumption per dwelling | S1R083 - Vidutinis būste suvartotas energijos kiekis
+    S1R084_M8020417 | S1R084 - Average age of electrical appliances | S1R084 - Vidutinis elektros prietaisų amžius
+    S2R003_M1010201_1 | S2R003 - Average temperature | S2R003 - Vidutinė temperatūra
+    S2R004_M1010201_3 | S2R004 - Average snow depth (the biggest in winter) | S2R004 - Vidutinis sniego dangos storis didžiausias žiemą
+    S3R004_M3210107 | S3R004 - Proportion of pupils aged 15–16 consuming alcohol | S3R004 - Alkoholinius gėrimus vartojančių 15–16 metų amžiaus mokinių dalis
+    S3R005_M3210101_1 | S3R005 - Exports of alcoholic beverages | S3R005 - Alkoholinių gėrimų eksportas
+    S3R006_M3210101 | S3R006 - Production of alcoholic beverages | S3R006 - Alkoholinių gėrimų gamyba
+    S3R007_M3210101_1 | S3R007 - Imports of alcoholic beverages | S3R007 - Alkoholinių gėrimų importas
+    S3R008_M3210103 | S3R008 - Retail prices of alcoholic beverages | S3R008 - Alkoholinių gėrimų mažmeninės kainos
+    S3R009_M3210104 | S3R009 - Price changes of alcoholic beverages, compared to previous period | S3R009 - Alkoholinių gėrimų mažmeninių kainų pokyčiai, palyginti su ankstesniu laikotarpiu
+    S3R010_M3210102_1 | S3R010 - Sale of alcoholic beverages in trade and catering enterprises | S3R010 - Alkoholinių gėrimų pardavimas prekybos ir maitinimo įmonėse
+    S3R043_M3110502 | S3R043 - Professional college students studying foreign languages | S3R043 - Aukštesniųjų mokyklų studentai, kurie mokosi užsienio kalbų
+    S3R060_M3110305_2 | S3R060 - Proportion of general school pupils studying foreign languages | S3R060 - Bendrojo ugdymo mokyklų mokinių, besimokančių užsienio kalbą, dalis
+    S3R079_M3140705 | S3R079 - Number of persons of working age with a reduced level of participation established for the first time | S3R079 - Darbingo amžiaus asmenų, kuriems pirmą kartą nustatytas sumažėjęs dalyvumo lygis, skaičius
+    S3R079_M3140706 | S3R079 - Number of persons of working age with a reduced level of participation established for the first time | S3R079 - Darbingo amžiaus asmenų, kuriems pirmą kartą nustatytas sumažėjęs dalyvumo lygis, skaičius
+    S3R079_M3140704 | S3R079 - Number of persons of working age with a reduced level of participation established for the first time | S3R079 - Darbingo amžiaus asmenų, kuriems pirmą kartą nustatytas sumažėjęs dalyvumo lygis, skaičius
+    S3R079_M3140703 | S3R079 - Number of persons of working age with a reduced level of participation established for the first time | S3R079 - Darbingo amžiaus asmenų, kuriems pirmą kartą nustatytas sumažėjęs dalyvumo lygis, skaičius
+    S3R079_M3140709_2 | S3R079 - Number of persons of working age with a reduced level of participation established for the first time | S3R079 - Darbingo amžiaus asmenų, kuriems pirmą kartą nustatytas sumažėjęs dalyvumo lygis, skaičius
+    S3R094_M3010221 | S3R094 - Indexes of ageing at the beginning of the year | S3R094 - Demografinės senatvės koeficientas metų pradžioje
+    S3R099_M3210105_1 | S3R099 - Purchasing power of monthly disposable income in cash spent on alcoholic beverages | S3R099 - Disponuojamųjų piniginių mėnesinių pajamų alkoholiniams gėrimams perkamoji galia
+    S3R162_M3010215_2 | S3R162 - Proportion of the population by ethnicity, compared to the total resident population | S3R162 - Gyventojų pagal tautybę dalis, palyginti su bendru nuolatinių gyventojų skaičiumi
+    S3R174_M3150503 | S3R174 - Proportion of the population consuming alcoholic beverages | S3R174 - Gyventojų, vartojusių alkoholinius gėrimus, dalis
+    S3R175_M3150504 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R175_M3150503_1 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R175_M3150503_2 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R175_M3150503_3 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R175_M3150503_4 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R175_M3150503_5 | S3R175 - Proportion of the population who consumed alcoholic beverages during the last 12 months | S3R175 - Gyventojų, vartojusių alkoholinius gėrimus per praėjusius 12 mėn., dalis
+    S3R178_M3010509 | S3R178 - Age-specific fertility rate | S3R178 - Gimstamumo rodiklis pagal motinos amžių
+    S3R178_M3010509_1 | S3R178 - Age-specific fertility rate | S3R178 - Gimstamumo rodiklis pagal motinos amžių
+    S3R179_M3010514 | S3R179 - Live births outside marriage | S3R179 - Gimusieji santuokos neįregistravusiems tėvams
+    S3R179_M3010524 | S3R179 - Live births outside marriage | S3R179 - Gimusieji santuokos neįregistravusiems tėvams
+    S3R305_M3110115 | S3R305 - School-age children not attending school | S3R305 - Mokyklinio amžiaus vaikai, nesimokantys mokykloje
+    S3R305_M3110114 | S3R305 - School-age children not attending school | S3R305 - Mokyklinio amžiaus vaikai, nesimokantys mokykloje
+    S3R357_M3130118 | S3R357 - Immovable cultural heritage | S3R357 - Nekilnojamosios kultūros vertybės
+    S3R357_M3130118_1 | S3R357 - Immovable cultural heritage | S3R357 - Nekilnojamosios kultūros vertybės
+    S3R357_M3130123 | S3R357 - Immovable cultural heritage | S3R357 - Nekilnojamosios kultūros vertybės
+    S3R357_M3130124 | S3R357 - Immovable cultural heritage | S3R357 - Nekilnojamosios kultūros vertybės
+    S3R357_M3130125 | S3R357 - Immovable cultural heritage | S3R357 - Nekilnojamosios kultūros vertybės
+    S3R377_M3130118 | S3R377 - Monuments of cultural heritage | S3R377 - Kultūros paveldo paminklai
+    S3R377_M3130118_1 | S3R377 - Monuments of cultural heritage | S3R377 - Kultūros paveldo paminklai
+    S3R377_M3130123 | S3R377 - Monuments of cultural heritage | S3R377 - Kultūros paveldo paminklai
+    S3R377_M3130126 | S3R377 - Monuments of cultural heritage | S3R377 - Kultūros paveldo paminklai
+    S3R385_M3030906 | S3R385 - Average exit age from the labour force | S3R385 - Pasitraukimo iš darbo rinkos vidutinis amžius
+    S3R412_M3110407 | S3R412 - Students of vocational training institutions studying foreign languages | S3R412 - Profesinio mokymo įstaigų mokiniai, kurie mokosi užsienio kalbų
+    S3R412_M3110406 | S3R412 - Students of vocational training institutions studying foreign languages | S3R412 - Profesinio mokymo įstaigų mokiniai, kurie mokosi užsienio kalbų
+    S3R542_M3120132 | S3R542 - Command of foreign languages | S3R542 - Užsienio kalbų mokėjimas
+    S3R542_M3120131 | S3R542 - Command of foreign languages | S3R542 - Užsienio kalbų mokėjimas
+    S3R542_M3120133 | S3R542 - Command of foreign languages | S3R542 - Užsienio kalbų mokėjimas
+    S3R545_M3110202 | S3R545 - Proportion of children in preschool and pre-primary education, compared to the number of children of the respective age | S3R545 - Vaikų, ugdomų pagal ikimokyklinio ir priešmokyklinio ugdymo programas, dalis nuo bendro atitinkamo amžiaus vaikų skaičiaus
+    S3R545_M3110202_1 | S3R545 - Proportion of children in preschool and pre-primary education, compared to the number of children of the respective age | S3R545 - Vaikų, ugdomų pagal ikimokyklinio ir priešmokyklinio ugdymo programas, dalis nuo bendro atitinkamo amžiaus vaikų skaičiaus
+    S3R546_M3110212_2 | S3R546 - Proportion of children in preschool education institutions and general schools, compared to the total number of children of corresponding age | S3R546 - Vaikų ikimokyklinio ugdymo įstaigose ir bendrojo ugdymo mokyklose dalis, palyginti su visais atitinkamo amžiaus vaikais
+    S3R556_M3010408_3 | S3R556 - Number of children aged 0–17 who after divorce stayed with one of the parents | S3R556 - 0–17 metų amžiaus vaikų, likusių po ištuokos su vienu iš tėvų, skaičius
+    S3R567_M3130118 | S3R567 - State-protected cultural heritage | S3R567 - Valstybės saugomos kultūros vertybės
+    S3R572_M3160404_2 | S3R572 - State social insurance old-age, disability and work incapacity pension rates at the end of the year | S3R572 - Valstybinio socialinio draudimo senatvės, invalidumo ir netekto darbingumo pensijų dydžiai metų pabaigoje
+    S3R573_M3160404_1 | S3R573 - Recipients of State social insurance old-age, disability and work incapacity pensions at the end of the year | S3R573 - Valstybinio socialinio draudimo senatvės, invalidumo ir netekto darbingumo pensijų gavėjai metų pabaigoje
+    S3R574_M3160402_3 | S3R574 - Average State social insurance pension | S3R574 - Vidutinė valstybinio socialinio draudimo pensija
+    S3R582_M3110120 | S3R582 - Upper secondary or tertiary educational attainment (aged 20–24) | S3R582 - 20–24 metų jaunimo, įgijusio vidutinį ar aukštesnį už vidutinį išsilavinimą, dalis
+    S3R585_M3080101 | S3R585 - Average disposable income per month | S3R585 - Vidutinės disponuojamosios pajamos per mėnesį
+    S3R585_M3080102 | S3R585 - Average disposable income per month | S3R585 - Vidutinės disponuojamosios pajamos per mėnesį
+    S3R585_M3080103 | S3R585 - Average disposable income per month | S3R585 - Vidutinės disponuojamosios pajamos per mėnesį
+    S3R585_M3080104 | S3R585 - Average disposable income per month | S3R585 - Vidutinės disponuojamosios pajamos per mėnesį
+    S3R585_M3080102_1 | S3R585 - Average disposable income per month | S3R585 - Vidutinės disponuojamosios pajamos per mėnesį
+    S3R586_M3090109 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090101 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090103 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090106 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090104 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090102 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090105 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090108 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R586_M3090107 | S3R586 - Average disposable income per household member per month | S3R586 - Vidutinės disponuojamosios pajamos, tenkančios vienam namų ūkio nariui per mėn.
+    S3R587_M3090203 | S3R587 - Average consumption expenditure per household member per month (COICOP1999) | S3R587 - Vidutinės vartojimo išlaidos, tenkančios vienam namų ūkio nariui per mėn. (COICOP1999)
+    S3R587_M3090210 | S3R587 - Average consumption expenditure per household member per month (COICOP1999) | S3R587 - Vidutinės vartojimo išlaidos, tenkančios vienam namų ūkio nariui per mėn. (COICOP1999)
+    ...
