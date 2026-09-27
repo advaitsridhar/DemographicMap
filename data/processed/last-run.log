@@ -1,16 +1,81 @@
-  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/ :: HTTP Error 500: 
-  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/ :: HTTP Error 500: 
-  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/tables :: HTTP Error 500: 
-  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/tables :: HTTP Error 500: 
-  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/census :: HTTP Error 500: 
-  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/census :: <urlopen error [Errno 110] Connection timed out>
-== get https://census.belstat.gov.by/sdpn/rest/api/
-  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/')
-== get https://census.belstat.gov.by/sdpn/rest/api/tables
-  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/tables')
-== get https://census.belstat.gov.by/sdpn/rest/api/census
-  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/census')
-== get https://census.belstat.gov.by/saiku/rest/saiku/api/repository?type=saiku
-  failed: TimeoutError('timed out')
-== get https://census.belstat.gov.by/manual.pdf
-  failed: TimeoutError('timed out')
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn (?s)var[^;]{0,40}url[^;]{0,400} 6
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  6 matches
+  var url = '/Home/Result/*datasetId*?languageCode=sr-Latn'
+  var url = 'https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn' + '&displayMode=' + displayMode + guid
+  var url = "/Home/DisplayResult"
+  var url = window.location.href
+  var index = url.indexOf("languageCode=")
+  var length = url.indexOf("&", index)
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn (?s)FormSubmit.{0,600} 2
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  1 matches
+  FormSubmit?languageCode=sr-Latn&amp;subAreaId=3104020201" enctype="multipart/form-data" method="post">        <div class="result-display-type-wrapper">
+            <span style="font-weight:bold;">Način prikaza rezultata:</span><br />
+            <input id="radio-title" type="radio" name="ResultDis
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn (?s).Indikator.:.Stanovni.{0,500} 2
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  0 matches
+== pxtree https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/  4 120
+  l Population  Population
+
+    l Population - Place of Residence  Population - Place of Residence
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891105E.px  Population Enumerated by District, Urban/Rural Area, Sex and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px  Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891114E.px  Population Enumerated by District, Municipality/Community, Quarter, Sex and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891117E.px  Population Enumerated by District, Municipality/Community, Quarter, Sex and Mean Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891122E.px  Population Enumerated by District, Postal Code and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891125E.px  Population Enumerated by District, Postal Code, Sex and Mean Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px  Population Enumerated by District, Sex and Single Year of Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891141E.px  Household Population Enumerated by District, Urban/Rural Area, Sex and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891150E.px  Institutional Population and Number of Institutions Enumerated by District, Urban/Rural Area and Type of Institution 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891160E.px  Housing Units, Households, Institutions and Population Enumerated by Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891161E.px  Housing Units, Households, Institutions and Population Enumerated by District and Municipality/Community 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891164E.px  Housing Units, Households, Institutions and Population Enumerated by District, Municipality/Community and Quarter 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891168E.px  Housing Units, Households and Population Enumerated By District, Municipality/Community and Postal Code 1.10.2021
+    l Population - Country of Citizenship, Country of Birth  Population - Country of Citizenship, Country of Birth
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891210E.px  Population Enumerated by Country of Birth, Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891213E.px  Population Enumerated by Citizenship Group, Sex, District and Municipality/Community 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891215E.px  Population Enumerated by Citizenship Group, Sex, District, Municipality/Community and Postal Code 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891217E.px  Population Enumerated by Citizenship Group, Sex, Age, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891221E.px  Population Enumerated by Country of Citizenship, Sex and District 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891226E.px  Population Enumerated by Country of Birth Group, Sex and Citizenship Group 1.10.2021
+    l Population - Education Attainment  Population - Education Attainment
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Education%20Attainment/1891510E.px  Population (Aged 15 and Over) Enumerated by Sex, Educational Attainment, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Education%20Attainment/1891515E.px  Population (Aged 15 and Over) Enumerated by Sex, Educational Attainment, District and Municipality/Community 1.10.2021
+    l Population - Language, Religion, Ethnic Religious Group  Population - Language, Religion, Ethnic / Religious Group
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891610E.px  Population Enumerated by Language, Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891613E.px  Population Enumerated by Language, Sex, Citizenship Group and District 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px  Population Enumerated by Language, Sex and District 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px  Population Enumerated by Religion, Sex and Citizenship Group 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891635E.px  Population Enumerated by Religion, Sex and Country of Birth Group 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px  Population Enumerated by Ethnic/Religious Group, Citizenship Group and Sex 1.10.2021
+    l Population - Marital Status  Population - Marital Status
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Marital%20Status/1891672E.px  Population Enumerated by Marital Status, Age and Sex 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Marital%20Status/1891674E.px  Population Enumerated by Marital Status, Sex, District and Urban/Rural Area 1.10.2021
+    l Population - Labour Force  Population - Labour Force
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891710E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891712E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by District and Municipality/Community 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891714E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex and Age 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891718E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex, Urban/Rural Area and Citizenship Group 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891722E.px  Economically Active Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891726E.px  Economically Active Population (Aged 15 and Over) Enumerated by Economic Activity (NACE Rev. 2), Sex, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891731E.px  Employed Persons (Aged 15 and Over) Enumerated by Place of Residence (District and Municipality/Community) and Economic Activity (NACE Rev. 2) 1.10.20
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891732E.px  Employed Persons (Aged 15 and Over) Enumerated by Place of Residence (District and Municipality/Community) and Occupation 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891735E.px  Employed Persons (Aged 15 and Over) Enumerated by Sex, Educational Attainment, Place of Residence (Urban/Rural Area) and Economic Activity (NACE Rev. 
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891738E.px  Employed Persons (Aged 15 and Over) Enumerated by Sex, Educational Attainment, Place of Residence (Urban/Rural Area) and Occupation 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891780E.px  Economically Inactive Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
+  l Living Quarters  Housing Units
+
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893007E.px  Conventional Dwellings Enumerated by Year of Construction (Completion) of the Dwelling, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893010E.px  Occupied Conventional Dwellings Enumerated by Year of Construction (Completion) of the Dwelling, Tenure Status, District and Urban/Rural Area 1.10.202
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893015E.px  Conventional Dwellings Enumerated by Type of Building in Which the Dwelling is Located, District and Urban/Rural Area 1.10.2021
+  l Households  Households
+
+    l Households - Household Size  Households - Household Size
+
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Size/1895110E.px  Households Enumerated by Household Size, Average Household Size, District and Urban/Rural Area 1.10.2021
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Size/1895114E.px  Households Enumerated by Household Size, Average Household Size, District and Municipality/Community 1.10.2021
+    l Households - Household Type  Households - Household Type
+
+  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Type/1895410E.px  Households Enumerated by Type, District and Urban/Rural Area 1.10.2021
