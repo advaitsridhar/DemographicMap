@@ -320,6 +320,28 @@ class MaltaLanguage(unittest.TestCase):
         self.assertIsNone(language_row("District and locality Maltese English Italian"))
 
 
+class IrelandLanguage(unittest.TestCase):
+    def test_the_complement_makes_the_population_aged_3(self):
+        from scripts.fetch_census.ireland import home_language, ENGLISH_OR_IRISH
+        rows = home_language({"Polish": 10, "Spanish": 5, "French": 3,
+                              "Other (incl. not stated)": 12, "Total": 30}, 1000, "x")
+        self.assertEqual(rows[ENGLISH_OR_IRISH], 970)
+        self.assertEqual(sum(rows.values()), 1000)
+        with self.assertRaises(SystemExit):
+            home_language({"Polish": 10, "Total": 30}, 1000, "x")
+        with self.assertRaises(SystemExit):
+            home_language({"Polish": 30, "Total": 30}, 20, "x")
+
+    def test_labels_are_placed(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import group_tree
+        from scripts.fetch_census.ireland import LANGUAGE_LABELS, ENGLISH_OR_IRISH
+        for label in list(LANGUAGE_LABELS.values()) + [ENGLISH_OR_IRISH]:
+            self.assertIsNotNone(group_tree.parent_of("language", label), label)
+
+
 class IrelandAges(unittest.TestCase):
     def test_bands(self):
         from scripts.fetch_census.ireland_age import band

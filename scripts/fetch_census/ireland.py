@@ -24,16 +24,20 @@ this map draws: ``CSO Local Electoral Areas 2022``, 167 categories, which is
 * ``SAP2022T2T2LEA22`` ethnicity -- eight categories, White Irish through
   Not stated.
 
-**Language is not read, and the reason is the one Northern Ireland's MS-B05
-made an hour earlier.** The CSO publishes ``SAP2022T2T5LEA22`` "Speakers of
-foreign languages" and ``SAP2022T3T1LEA22`` "Population aged 3 years and over
-by Ability to Speak Irish". Neither partitions the population by language. The
-first counts only people who speak a foreign language and splits *them* by
-which -- English is absent from it entirely, so read as a language field it
-would report Ireland as a country where nobody speaks English. The second is
-an ability, like Scotland's "can speak Gaelic". So Ireland's language is
-declared in NOT_COLLECTED_POLICY with what the census does ask, rather than
-filled with the nearest number.
+**Language is read as the census asks it.** Census 2022 asked everyone aged 3
+and over "Do you speak a language other than English or Irish at home?" and,
+if so, which. ``SAP2022T2T5LEA22`` "Speakers of foreign languages" gives, for
+each area, those who do -- Polish, Spanish and French by name, every other
+language (and a language left unnamed) as Other -- and ``SAP2022T3T1LEA22``
+gives the area's population aged 3 and over. Everyone aged 3 and over who does
+not speak another language at home is "English or Irish only", so the five
+rows partition the population aged 3 and over, the way Wales's "English or
+Welsh" does in the ONS table. An earlier version of this reader declared the
+field not collected, because the foreign-language table alone leaves English
+out; with the complement it does not, and the owner's direction is to fill a
+field from what the census does measure. The census asks Irish as an ability
+("Can you speak Irish?"), not as a home language, so English and Irish are not
+told apart.
 
 Two things this reader is careful about.
 
@@ -82,6 +86,22 @@ TABLES: dict[str, tuple[str, str]] = {
 }
 
 GEOGRAPHY = "CSO Local Electoral Areas 2022"
+
+# Home language: speakers of a language other than English or Irish, and the
+# population aged 3 and over they are a part of.
+LANGUAGE_TABLE = ("SAP2022T2T5LEA22", "Language")
+AGED_3_TABLE = ("SAP2022T3T1LEA22", "Ability to Speak Irish")
+LANGUAGE_LABELS = {"Polish": "Polish", "Spanish": "Spanish", "French": "French",
+                   "Other (incl. not stated)": "Other language"}
+ENGLISH_OR_IRISH = "English or Irish only"
+LANGUAGE_NOTE = (
+    f"{SOURCE}, SAP2022T2T5LEA22 and SAP2022T3T1LEA22. Of usual residents aged 3 and over: "
+    "the census asks \u2018Do you speak a language other than English or Irish at home?\u2019 "
+    "and which. At local electoral area the CSO names Polish, Spanish and French and pools "
+    "every other language, with speakers who did not name theirs, as Other language. Everyone "
+    "else aged 3 and over -- who speaks no language but English or Irish at home -- is "
+    "\u2018English or Irish only\u2019: the census asks Irish as an ability, not as a home "
+    "language, so the two are not told apart.")
 
 # The 26 counties and the four provinces, used only where a name is ambiguous.
 # Local government split several counties into city and county councils, and
@@ -180,6 +200,53 @@ NOTES = {
 }
 
 
+def read_table(matrix: str, subject_label: str) -> tuple[dict[str, str], dict[str, dict[str, float]]]:
+    """One table read whole: area code -> {category label: value}, totals included."""
+    dataset = read_dataset(matrix)
+    elimination = (dataset.get("extension") or {}).get("elimination") or {}
+    place = find_dimension(dataset, GEOGRAPHY)
+    subject = find_dimension(dataset, subject_label)
+    at = reader(dataset)
+    pinned = {dim: (elimination.get(dim) if elimination.get(dim) in categories(dataset, dim)
+                    else next(iter(categories(dataset, dim))))
+              for dim in dataset["id"] if dim not in (place, subject)}
+    for dim, code in pinned.items():
+        if len(categories(dataset, dim)) > 1 and elimination.get(dim) != code:
+            raise SystemExit(f"ireland: {matrix} dimension {dim} has no stated total")
+    total = elimination.get(subject)
+    names: dict[str, str] = {}
+    out: dict[str, dict[str, float]] = {}
+    for code, label in categories(dataset, place).items():
+        if code == elimination.get(place):
+            continue
+        names[code] = label
+        row = {}
+        for scode, slabel in categories(dataset, subject).items():
+            value = at({place: code, subject: scode, **pinned})
+            if value is not None:
+                row["Total" if scode == total else slabel] = value
+        out[code] = row
+    return names, out
+
+
+def home_language(speakers: dict[str, float], aged_3: float, label: str) -> dict[str, float]:
+    """The five rows that partition an area's population aged 3 and over."""
+    total = speakers.get("Total")
+    named = {k: v for k, v in speakers.items() if k != "Total"}
+    unknown = sorted(set(named) - set(LANGUAGE_LABELS))
+    if unknown:
+        raise SystemExit(f"ireland: {label}: languages not declared: {unknown}")
+    if total is None or abs(sum(named.values()) - total) > 0.5:
+        raise SystemExit(f"ireland: {label}: the languages make {sum(named.values()):,.0f} "
+                         f"against {total} speakers")
+    if total > aged_3:
+        raise SystemExit(f"ireland: {label}: {total:,.0f} speakers of another language "
+                         f"against {aged_3:,.0f} people aged 3 and over")
+    out = {LANGUAGE_LABELS[k]: v for k, v in named.items()}
+    out[ENGLISH_OR_IRISH] = aged_3 - total
+    return out
+
+
 def note(field: str) -> str:
     matrix = TABLES[field][0]
     return f"{SOURCE}, {matrix}. Of all usual residents. {NOTES[field]}"
@@ -265,6 +332,17 @@ def main() -> int:
         totals[field] = area_totals
         log(f"  {len(counts)} areas, {len(subject_codes) - 1} categories")
 
+    log(f"ireland: language from {LANGUAGE_TABLE[0]} and {AGED_3_TABLE[0]}")
+    _, speakers = read_table(*LANGUAGE_TABLE)
+    _, aged_3 = read_table(*AGED_3_TABLE)
+    if set(speakers) != set(areas) or set(aged_3) != set(areas):
+        raise SystemExit("ireland: the language tables do not cover the same areas")
+    language: dict[str, dict[str, float]] = {}
+    for code in areas:
+        language[code] = home_language(speakers[code], aged_3[code]["Total"], areas[code])
+    for key in list(LANGUAGE_LABELS.values()) + [ENGLISH_OR_IRISH]:
+        log(f"  {key}: {sum(language[c][key] for c in areas):,.0f}")
+
     records: list[dict[str, Any]] = []
     seen: dict[str, int] = {}
     for code, label in areas.items():
@@ -291,6 +369,11 @@ def main() -> int:
             entry[f"{field}_year"] = dated(entry[field], YEAR)
             entry[f"{field}_note"] = note(field)
 
+        spoken = shares(language[code], total=sum(language[code].values()))
+        entry["language"] = spoken or gap(NOT_AVAILABLE)
+        entry["language_year"] = dated(spoken, YEAR)
+        entry["language_note"] = LANGUAGE_NOTE
+
         # A name shared by two areas cannot identify either. Only Athlone is,
         # and its province is what separates them -- see the module docstring
         # for how that was measured rather than assumed.
@@ -303,7 +386,7 @@ def main() -> int:
             population=(measure(population, year=YEAR, source=SOURCE)
                         if population else gap(NOT_AVAILABLE)),
             **entry,
-            sources=[{"field": "religion/ethnicity", "name": SOURCE,
+            sources=[{"field": "religion/ethnicity/language", "name": SOURCE,
                       "url": URL, "license": LICENCE}],
         ))
 
