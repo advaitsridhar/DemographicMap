@@ -1,55 +1,17 @@
-latvia: CSB IRD041, IRD031, IRE031, IRD081 and RIG040
-    IRD041 2026: municipalities -> Latvia: 42 parts sum to 1,845,096 against 1,845,096
-    IRD041 2025: municipalities -> Latvia: 43 parts sum to 1,860,565 against 1,860,565
-  IRD041 2026: national median 44.7 against Eurostat's 44.4 for 1 January 2025 (+0.30 years, bound 0.7)
-  admin1: 43 municipalities written; interpolated medians outside CSB's completed year (off by one at most, else the run stops): none
-    IRD081 2026: units -> Rīga: 1 parts sum to 588,911 against 588,911
-    IRD081 2026: units -> Daugavpils: 1 parts sum to 77,486 against 77,486
-    IRD081 2026: units -> Jelgava: 1 parts sum to 54,408 against 54,408
-    IRD081 2026: units -> Jūrmala: 1 parts sum to 52,926 against 52,926
-    IRD081 2026: units -> Liepāja: 1 parts sum to 66,746 against 66,746
-    IRD081 2026: units -> Rēzekne: 1 parts sum to 25,978 against 25,978
-    IRD081 2026: units -> Ventspils: 1 parts sum to 32,479 against 32,479
-    IRD081 2026: units -> Aizkraukles novads: 22 parts sum to 27,825 against 27,825
-    IRD081 2026: units -> Alūksnes novads: 16 parts sum to 12,894 against 12,894
-    IRD081 2026: units -> Augšdaugavas novads: 27 parts sum to 23,443 against 23,443
-    IRD081 2026: units -> Ādažu novads: 3 parts sum to 24,141 against 24,141
-    IRD081 2026: units -> Balvu novads: 21 parts sum to 17,163 against 17,163
-    IRD081 2026: units -> Bauskas novads: 20 parts sum to 40,006 against 40,006
-    IRD081 2026: units -> Cēsu novads: 23 parts sum to 40,963 against 40,963
-    IRD081 2026: units -> Dienvidkurzemes novads: 31 parts sum to 32,450 against 32,450
-    IRD081 2026: units -> Dobeles novads: 21 parts sum to 27,100 against 27,100
-    IRD081 2026: units -> Gulbenes novads: 14 parts sum to 18,215 against 18,215
-    IRD081 2026: units -> Jelgavas novads: 16 parts sum to 31,718 against 31,718
-    IRD081 2026: units -> Jēkabpils novads: 25 parts sum to 38,134 against 38,134
-    IRD081 2026: units -> Krāslavas novads: 26 parts sum to 19,040 against 19,040
-    IRD081 2026: units -> Kuldīgas novads: 20 parts sum to 26,386 against 26,386
-    IRD081 2026: units -> Ķekavas novads: 6 parts sum to 31,668 against 31,668
-    IRD081 2026: units -> Limbažu novads: 19 parts sum to 27,276 against 27,276
-    IRD081 2026: units -> Līvānu novads: 6 parts sum to 9,897 against 9,897
-    IRD081 2026: units -> Ludzas novads: 25 parts sum to 19,659 against 19,659
-    IRD081 2026: units -> Mārupes novads: 4 parts sum to 38,132 against 38,132
-    IRD081 2026: units -> Ogres novads: 20 parts sum to 57,165 against 57,165
-    IRD081 2026: units -> Olaines novads: 2 parts sum to 21,062 against 21,062
-    IRD081 2026: units -> Preiļu novads: 15 parts sum to 15,238 against 15,238
-    IRD081 2026: units -> Rēzeknes novads: 29 parts sum to 27,268 against 27,268
-    IRD081 2026: units -> Ropažu novads: 4 parts sum to 35,540 against 35,540
-    IRD081 2026: units -> Salaspils novads: 2 parts sum to 23,915 against 23,915
-    IRD081 2026: units -> Saldus novads: 21 parts sum to 26,192 against 26,192
-    IRD081 2026: units -> Saulkrastu novads: 3 parts sum to 10,113 against 10,113
-    IRD081 2026: units -> Siguldas novads: 8 parts sum to 31,546 against 31,546
-    IRD081 2026: units -> Smiltenes novads: 16 parts sum to 17,306 against 17,306
-    IRD081 2026: units -> Talsu novads: 22 parts sum to 34,264 against 34,264
-    IRD081 2026: units -> Tukuma novads: 23 parts sum to 42,991 against 42,991
-    IRD081 2026: units -> Valkas novads: 6 parts sum to 7,501 against 7,501
-    IRD081 2026: units -> Valmieras novads: 31 parts sum to 50,324 against 50,324
-    IRD081 2026: units -> Ventspils novads: 13 parts sum to 10,161 against 10,161
-  LVA admin2: 589 of 589 office units bound to 589 polygons (0 set aside as pieces)
-    TSG11-07 2011: counties and cities -> Latvia: 119 parts sum to 1,876,812 against 1,876,812
-  TSG11-07: 1,876,812 of the 2,070,371 residents counted in 2011 answered the home-language question (90.7%)
-  TSG11-07: 118 units of 2011 placed in 43 municipalities, 1 divided by the reform (Aglonas novads); language written for 41 municipalities; left out as holding a divided county: ['Krāslavas novads', 'Preiļu novads']
-  TSG11-07 Iecavas novads: 8,215 people in 2011 against 2,865 in the drawn Iecavas pagasts today; not the same territory, left out
-  TSG11-07: language written for 22 towns and parishes that were a unit of 2009-2021 on their own
-  ethnicity labels the group tree cannot place: []
-  wrote data/processed/latvia_territorial.json (2042 kB)
-  wrote latvia_territorial.json: 632 records
+finland: Statistics Finland 11rf and 11rm by sub-region
+  key 2026: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2025: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2024: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2023: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2022: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2021: 69 sub-regions; 69 of 70 drawn names found; missing ['Kyrönmaan seutukunta -> Kyrönmaa (0 hits)']; unclaimed []
+  key 2020: 70 sub-regions; 70 of 70 drawn names found
+    11rf 2020: municipalities -> Finland: 310 parts sum to 5,533,793 against 5,533,793
+  the map's sub-regions are those of 2020; population on 31 December 2020
+  11rf 2020: national median 43.3 against Eurostat's 43.3 for 1 January 2021 (+0.00 years, bound 0.3)
+    11rf 2025: municipalities -> Finland: 308 parts sum to 5,652,881 against 5,652,881
+  57 of 70 sub-regions have the same municipalities in the 2026 key and take 31 December 2025; the rest keep 2020: ['Joensuu', 'Jämsä', 'Kouvola', 'Kyrönmaa', 'Lahti', 'Mikkeli', 'Pieksämäki', 'Pohjois-Satakunta', 'Savonlinna', 'Seinäjoki', 'Tampere', 'Vaasa', 'Varkaus']
+  11rm 2025: languages make each sub-region's total; withheld small counts added to 'Other language' in 70 sub-regions, 21,720 people in all
+  FIN admin2: 70 of 70 office units bound to 70 polygons (0 set aside as pieces)
+  wrote data/processed/finland_subregion.json (307 kB)
+  wrote finland_subregion.json: 70 records

@@ -2,7 +2,7 @@
   {
     "id": "FIN-SK2020-011",
     "level": "admin2",
-    "name": "Helsinki",
+    "name": "Helsinki sub-region",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -57,6 +57,11 @@
         "count": 26549
       },
       {
+        "group": "Other language",
+        "pct": 1.4,
+        "count": 24202
+      },
+      {
         "group": "Somali",
         "pct": 1.4,
         "count": 23055
@@ -100,11 +105,6 @@
         "group": "Nepali",
         "pct": 0.5,
         "count": 7746
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 8333
       },
       {
         "group": "Vietnamese",
@@ -277,304 +277,9 @@
         "count": 925
       },
       {
-        "group": "Afar",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Afrikaans",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 445
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 183
-      },
-      {
-        "group": "Assamese",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Avaric;  Avar;  Avarish",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 399
-      },
-      {
-        "group": "Bambara",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 202
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 667
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 557
-      },
-      {
-        "group": "Catalan; Valencian",
-        "pct": 0.0,
-        "count": 108
-      },
-      {
-        "group": "Central Khmer",
-        "pct": 0.0,
-        "count": 265
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 799
-      },
-      {
-        "group": "Chichewa, Chewa, Nyanja",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 207
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 483
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 336
-      },
-      {
-        "group": "Ewe",
-        "pct": 0.0,
-        "count": 69
-      },
-      {
-        "group": "Fula, Fulah, Pulaar, Pular",
-        "pct": 0.0,
-        "count": 179
-      },
-      {
-        "group": "Ganda",
-        "pct": 0.0,
-        "count": 152
-      },
-      {
-        "group": "Georgian",
-        "pct": 0.0,
-        "count": 275
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 694
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 225
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 324
-      },
-      {
-        "group": "Icelandic",
-        "pct": 0.0,
-        "count": 88
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 583
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 358
-      },
-      {
-        "group": "Kashmiri",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 164
-      },
-      {
-        "group": "Kikuyu; Gikuyu",
-        "pct": 0.0,
-        "count": 235
-      },
-      {
-        "group": "Kirghiz; Kyrgyz",
-        "pct": 0.0,
-        "count": 553
-      },
-      {
-        "group": "Kongo",
-        "pct": 0.0,
-        "count": 104
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 773
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 788
-      },
-      {
-        "group": "Luba-Katanga",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 275
-      },
-      {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 110
-      },
-      {
-        "group": "Maltese",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 670
-      },
-      {
-        "group": "Moldavian",
-        "pct": 0.0,
-        "count": 123
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 68
-      },
-      {
-        "group": "Ndonga",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 320
-      },
-      {
-        "group": "Oriya",
-        "pct": 0.0,
-        "count": 104
-      },
-      {
-        "group": "Oromo",
-        "pct": 0.0,
-        "count": 192
-      },
-      {
-        "group": "Rundi",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 118
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 417
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 452
-      },
-      {
-        "group": "Shona",
-        "pct": 0.0,
-        "count": 66
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 127
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 313
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 116
-      },
-      {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 154
-      },
-      {
-        "group": "Tatar",
-        "pct": 0.0,
-        "count": 162
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 441
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 586
-      },
-      {
-        "group": "Uighur; Uyghur",
-        "pct": 0.0,
-        "count": 403
-      },
-      {
-        "group": "Wolof",
-        "pct": 0.0,
-        "count": 265
       }
     ],
     "ethnicity": {
@@ -602,18 +307,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B2729332484501",
     "aliases": [
-      "Helsinki sub-region"
+      "Helsinki"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (825,556 males, 857,628 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 2,066 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 2,066 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 59 languages each spoken by under 0.05% of the sub-region (15,869 people in all)."
   },
   {
     "id": "FIN-SK2020-014",
     "level": "admin2",
-    "name": "Raasepori",
+    "name": "Raseborgs ekonomiska region",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -654,8 +359,8 @@
       },
       {
         "group": "Other language",
-        "pct": 0.9,
-        "count": 364
+        "pct": 1.3,
+        "count": 531
       },
       {
         "group": "Russian",
@@ -736,61 +441,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 27
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Persian, Farsi",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Sinhala; Sinhalese",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -818,18 +468,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B70758838948048",
     "aliases": [
-      "Raseborgs ekonomiska region"
+      "Raasepori"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (19,769 males, 20,098 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 260 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 260 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 11 languages each spoken by under 0.05% of the sub-region (167 people in all)."
   },
   {
     "id": "FIN-SK2020-015",
     "level": "admin2",
-    "name": "Porvoo",
+    "name": "Porvoon seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -879,6 +529,11 @@
         "count": 730
       },
       {
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 670
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 470
@@ -892,11 +547,6 @@
         "group": "Arabic",
         "pct": 0.7,
         "count": 406
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 352
       },
       {
         "group": "Vietnamese",
@@ -982,91 +632,6 @@
         "group": "Tagalog",
         "pct": 0.1,
         "count": 84
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 20
       }
     ],
     "ethnicity": {
@@ -1094,18 +659,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B59227145640681",
     "aliases": [
-      "Porvoon seutukunta"
+      "Porvoo"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (29,578 males, 30,374 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 274 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 274 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 17 languages each spoken by under 0.05% of the sub-region (318 people in all)."
   },
   {
     "id": "FIN-SK2020-016",
     "level": "admin2",
-    "name": "Loviisa",
+    "name": "Loviisan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -1240,7 +805,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B70623139609167",
     "aliases": [
-      "Loviisan seutukunta"
+      "Loviisa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (8,405 males, 8,221 females).",
@@ -1251,7 +816,7 @@
   {
     "id": "FIN-SK2020-021",
     "level": "admin2",
-    "name": "Åboland-Turunmaa",
+    "name": "Turunmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -1293,7 +858,7 @@
       {
         "group": "Other language",
         "pct": 1.1,
-        "count": 229
+        "count": 239
       },
       {
         "group": "Estonian",
@@ -1359,11 +924,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 30
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -1391,18 +951,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B42243647465574",
     "aliases": [
-      "Turunmaan seutukunta"
+      "Åboland-Turunmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (10,555 males, 10,497 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 219 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 219 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 1 languages each spoken by under 0.05% of the sub-region (10 people in all)."
   },
   {
     "id": "FIN-SK2020-022",
     "level": "admin2",
-    "name": "Salo",
+    "name": "Salon seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -1457,14 +1017,14 @@
         "count": 626
       },
       {
+        "group": "Other language",
+        "pct": 0.8,
+        "count": 492
+      },
+      {
         "group": "Kurdish",
         "pct": 0.6,
         "count": 350
-      },
-      {
-        "group": "Other language",
-        "pct": 0.4,
-        "count": 228
       },
       {
         "group": "Albanian",
@@ -1550,81 +1110,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 30
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Georgian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 16
       }
     ],
     "ethnicity": {
@@ -1652,18 +1137,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B98132290777584",
     "aliases": [
-      "Salon seutukunta"
+      "Salo"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (29,022 males, 29,656 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 190 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 190 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 15 languages each spoken by under 0.05% of the sub-region (264 people in all)."
   },
   {
     "id": "FIN-SK2020-023",
     "level": "admin2",
-    "name": "Turku",
+    "name": "Turun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -1713,6 +1198,11 @@
         "count": 4305
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 4208
+      },
+      {
         "group": "Ukrainian",
         "pct": 1.2,
         "count": 4288
@@ -1741,11 +1231,6 @@
         "group": "Somali",
         "pct": 0.6,
         "count": 2049
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 1746
       },
       {
         "group": "Persian, Farsi",
@@ -1888,244 +1373,9 @@
         "count": 337
       },
       {
-        "group": "Afar",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 92
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 87
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Central Khmer",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 53
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 100
-      },
-      {
-        "group": "Ewe",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Georgian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 163
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 132
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 95
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Kikuyu; Gikuyu",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Kirghiz; Kyrgyz",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
-        "group": "Lingala",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 49
-      },
-      {
-        "group": "Moldavian",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Oromo",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 125
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 119
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 105
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 115
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Uighur; Uyghur",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Wolof",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 175
       }
     ],
     "ethnicity": {
@@ -2153,18 +1403,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B82994994813077",
     "aliases": [
-      "Turun seutukunta"
+      "Turku"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (173,777 males, 182,014 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 976 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 976 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 47 languages each spoken by under 0.05% of the sub-region (2,462 people in all)."
   },
   {
     "id": "FIN-SK2020-024",
     "level": "admin2",
-    "name": "Vakka-Suomi",
+    "name": "Vakka-Suomen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -2205,8 +1455,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.3,
-        "count": 404
+        "pct": 1.6,
+        "count": 492
       },
       {
         "group": "Estonian",
@@ -2302,41 +1552,6 @@
         "group": "Somali",
         "pct": 0.1,
         "count": 18
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Sinhala; Sinhalese",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Vietnamese",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -2364,18 +1579,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B37123833543858",
     "aliases": [
-      "Vakka-Suomen seutukunta"
+      "Vakka-Suomi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (15,250 males, 14,767 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 365 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 365 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 7 languages each spoken by under 0.05% of the sub-region (88 people in all)."
   },
   {
     "id": "FIN-SK2020-025",
     "level": "admin2",
-    "name": "Loimaa",
+    "name": "Loimaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -2415,12 +1630,12 @@
         "count": 558
       },
       {
-        "group": "Estonian",
-        "pct": 1.0,
-        "count": 320
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 355
       },
       {
-        "group": "Other language",
+        "group": "Estonian",
         "pct": 1.0,
         "count": 320
       },
@@ -2483,21 +1698,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 22
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Tagalog",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -2525,18 +1725,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B19323382833176",
     "aliases": [
-      "Loimaan seutukunta"
+      "Loimaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (16,282 males, 15,980 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 320 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 320 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 3 languages each spoken by under 0.05% of the sub-region (35 people in all)."
   },
   {
     "id": "FIN-SK2020-041",
     "level": "admin2",
-    "name": "Rauma",
+    "name": "Rauman seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -2576,6 +1776,11 @@
         "count": 684
       },
       {
+        "group": "Other language",
+        "pct": 0.9,
+        "count": 604
+      },
+      {
         "group": "Estonian",
         "pct": 0.7,
         "count": 444
@@ -2584,11 +1789,6 @@
         "group": "Russian",
         "pct": 0.7,
         "count": 485
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 358
       },
       {
         "group": "Polish",
@@ -2719,66 +1919,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 55
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Kurdish",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 29
       }
     ],
     "ethnicity": {
@@ -2806,18 +1946,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B10245104491983",
     "aliases": [
-      "Rauman seutukunta"
+      "Rauma"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (32,720 males, 32,199 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 316 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 316 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 12 languages each spoken by under 0.05% of the sub-region (246 people in all)."
   },
   {
     "id": "FIN-SK2020-043",
     "level": "admin2",
-    "name": "Pori",
+    "name": "Porin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -2852,6 +1992,11 @@
         "count": 119979
       },
       {
+        "group": "Other language",
+        "pct": 1.0,
+        "count": 1339
+      },
+      {
         "group": "Russian",
         "pct": 0.9,
         "count": 1099
@@ -2860,11 +2005,6 @@
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 946
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 714
       },
       {
         "group": "Estonian",
@@ -2960,126 +2100,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 143
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 14
       }
     ],
     "ethnicity": {
@@ -3107,18 +2127,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B74129982264724",
     "aliases": [
-      "Porin seutukunta"
+      "Pori"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (62,870 males, 64,790 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 620 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 620 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 24 languages each spoken by under 0.05% of the sub-region (625 people in all)."
   },
   {
     "id": "FIN-SK2020-044",
     "level": "admin2",
-    "name": "Pohjois-Satakunta",
+    "name": "Pohjois-Satakunnan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -3278,7 +2298,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B38333832424157",
     "aliases": [
-      "Pohjois-Satakunnan seutukunta"
+      "Pohjois-Satakunta"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (9,117 males, 9,055 females).",
@@ -3289,7 +2309,7 @@
   {
     "id": "FIN-SK2020-051",
     "level": "admin2",
-    "name": "Hämeenlinna",
+    "name": "Hämeenlinnan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -3324,6 +2344,11 @@
         "count": 86867
       },
       {
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 1052
+      },
+      {
         "group": "Estonian",
         "pct": 0.7,
         "count": 642
@@ -3342,11 +2367,6 @@
         "group": "Arabic",
         "pct": 0.6,
         "count": 527
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 463
       },
       {
         "group": "English",
@@ -3442,131 +2462,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 70
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Lingala",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 20
       }
     ],
     "ethnicity": {
@@ -3594,18 +2489,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B86982860182614",
     "aliases": [
-      "Hämeenlinnan seutukunta"
+      "Hämeenlinna"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (45,967 males, 47,860 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 310 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 310 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 25 languages each spoken by under 0.05% of the sub-region (589 people in all)."
   },
   {
     "id": "FIN-SK2020-052",
     "level": "admin2",
-    "name": "Riihimäki",
+    "name": "Riihimäen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -3640,6 +2535,11 @@
         "count": 40809
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 509
+      },
+      {
         "group": "Ukrainian",
         "pct": 1.2,
         "count": 528
@@ -3653,11 +2553,6 @@
         "group": "Russian",
         "pct": 1.0,
         "count": 449
-      },
-      {
-        "group": "Other language",
-        "pct": 0.7,
-        "count": 321
       },
       {
         "group": "Swedish",
@@ -3753,76 +2648,6 @@
         "group": "Yoruba",
         "pct": 0.1,
         "count": 29
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Chichewa, Chewa, Nyanja",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 12
       }
     ],
     "ethnicity": {
@@ -3850,18 +2675,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B69205639048275",
     "aliases": [
-      "Riihimäen seutukunta"
+      "Riihimäki"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (22,191 males, 21,800 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 284 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 284 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 14 languages each spoken by under 0.05% of the sub-region (188 people in all)."
   },
   {
     "id": "FIN-SK2020-053",
     "level": "admin2",
-    "name": "Forssa",
+    "name": "Forssan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -3897,8 +2722,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.3,
-        "count": 405
+        "pct": 1.4,
+        "count": 451
       },
       {
         "group": "Ukrainian",
@@ -3999,26 +2824,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 25
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -4046,18 +2851,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B39064453221260",
     "aliases": [
-      "Forssan seutukunta"
+      "Forssa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (15,407 males, 15,732 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 389 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 389 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 4 languages each spoken by under 0.05% of the sub-region (46 people in all)."
   },
   {
     "id": "FIN-SK2020-061",
     "level": "admin2",
-    "name": "Luoteis-Pirkanmaa",
+    "name": "Luoteis-Pirkanmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -4157,7 +2962,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B25893245899525",
     "aliases": [
-      "Luoteis-Pirkanmaan seutukunta"
+      "Luoteis-Pirkanmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (7,346 males, 7,039 females).",
@@ -4168,7 +2973,7 @@
   {
     "id": "FIN-SK2020-063",
     "level": "admin2",
-    "name": "Etelä-Pirkanmaa",
+    "name": "Etelä-Pirkanmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -4213,14 +3018,14 @@
         "count": 334
       },
       {
+        "group": "Other language",
+        "pct": 0.7,
+        "count": 309
+      },
+      {
         "group": "Russian",
         "pct": 0.7,
         "count": 288
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 244
       },
       {
         "group": "English",
@@ -4291,31 +3096,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 44
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 13
       }
     ],
     "ethnicity": {
@@ -4343,18 +3123,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B97563947227078",
     "aliases": [
-      "Etelä-Pirkanmaan seutukunta"
+      "Etelä-Pirkanmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (20,845 males, 20,786 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 244 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 244 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 5 languages each spoken by under 0.05% of the sub-region (65 people in all)."
   },
   {
     "id": "FIN-SK2020-064",
     "level": "admin2",
-    "name": "Tampere",
+    "name": "Tampereen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -4389,6 +3169,11 @@
         "count": 403936
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 5354
+      },
+      {
         "group": "Russian",
         "pct": 1.1,
         "count": 4867
@@ -4407,11 +3192,6 @@
         "group": "Persian, Farsi",
         "pct": 0.7,
         "count": 2947
-      },
-      {
-        "group": "Other language",
-        "pct": 0.4,
-        "count": 1804
       },
       {
         "group": "Swedish",
@@ -4549,299 +3329,9 @@
         "count": 243
       },
       {
-        "group": "Afrikaans",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 98
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 125
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 53
-      },
-      {
-        "group": "Central Khmer",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 82
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 78
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 113
-      },
-      {
-        "group": "Ewe",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Fula, Fulah, Pulaar, Pular",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Ganda",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Georgian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 108
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 127
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 75
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 98
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "Kashmiri",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 92
-      },
-      {
-        "group": "Kirghiz; Kyrgyz",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 176
-      },
-      {
-        "group": "Lingala",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 86
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 198
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 67
-      },
-      {
-        "group": "Moldavian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Oromo",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Ossetian, Ossetic",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 155
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 220
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 14
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Tajik",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 140
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 43
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 109
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 108
-      },
-      {
-        "group": "Wolof",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 190
       }
     ],
     "ethnicity": {
@@ -4869,18 +3359,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B65020692408515",
     "aliases": [
-      "Tampereen seutukunta"
+      "Tampere"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (203,418 males, 211,398 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 990 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 990 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 58 languages each spoken by under 0.05% of the sub-region (3,550 people in all)."
   },
   {
     "id": "FIN-SK2020-068",
     "level": "admin2",
-    "name": "Lounais-Pirkanmaa",
+    "name": "Lounais-Pirkanmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -4915,14 +3405,14 @@
         "count": 24808
       },
       {
+        "group": "Other language",
+        "pct": 0.9,
+        "count": 236
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.9,
         "count": 225
-      },
-      {
-        "group": "Other language",
-        "pct": 0.8,
-        "count": 214
       },
       {
         "group": "Estonian",
@@ -4993,16 +3483,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 27
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Persian, Farsi",
-        "pct": 0.0,
-        "count": 12
       }
     ],
     "ethnicity": {
@@ -5030,18 +3510,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B91801844521638",
     "aliases": [
-      "Lounais-Pirkanmaan seutukunta"
+      "Lounais-Pirkanmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (13,004 males, 12,874 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 183 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 183 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 2 languages each spoken by under 0.05% of the sub-region (22 people in all)."
   },
   {
     "id": "FIN-SK2020-069",
     "level": "admin2",
-    "name": "Ylä-Pirkanmaa",
+    "name": "Ylä-Pirkanmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -5077,8 +3557,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.3,
-        "count": 272
+        "pct": 1.4,
+        "count": 292
       },
       {
         "group": "Ukrainian",
@@ -5144,16 +3624,6 @@
         "group": "Thai",
         "pct": 0.1,
         "count": 13
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -5181,18 +3651,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B94525016023700",
     "aliases": [
-      "Ylä-Pirkanmaan seutukunta"
+      "Ylä-Pirkanmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (10,496 males, 10,397 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 240 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 240 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 2 languages each spoken by under 0.05% of the sub-region (20 people in all)."
   },
   {
     "id": "FIN-SK2020-071",
     "level": "admin2",
-    "name": "Lahti",
+    "name": "Lahden seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -5232,6 +3702,11 @@
         "count": 4159
       },
       {
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 2211
+      },
+      {
         "group": "Estonian",
         "pct": 0.8,
         "count": 1578
@@ -5255,11 +3730,6 @@
         "group": "Kurdish",
         "pct": 0.4,
         "count": 845
-      },
-      {
-        "group": "Other language",
-        "pct": 0.4,
-        "count": 877
       },
       {
         "group": "Swedish",
@@ -5347,184 +3817,9 @@
         "count": 170
       },
       {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 78
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 71
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 91
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Oromo",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 89
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 74
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 20
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 31
       }
     ],
     "ethnicity": {
@@ -5552,18 +3847,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B35398573425491",
     "aliases": [
-      "Lahden seutukunta"
+      "Lahti"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (97,174 males, 101,972 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 711 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 711 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 35 languages each spoken by under 0.05% of the sub-region (1,334 people in all)."
   },
   {
     "id": "FIN-SK2020-081",
     "level": "admin2",
-    "name": "Kouvola",
+    "name": "Kouvolan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -5603,6 +3898,11 @@
         "count": 1574
       },
       {
+        "group": "Other language",
+        "pct": 0.8,
+        "count": 703
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 469
@@ -5616,11 +3916,6 @@
         "group": "Arabic",
         "pct": 0.3,
         "count": 243
-      },
-      {
-        "group": "Other language",
-        "pct": 0.3,
-        "count": 276
       },
       {
         "group": "Swedish",
@@ -5706,101 +4001,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 46
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Rundi",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 37
       }
     ],
     "ethnicity": {
@@ -5828,18 +4028,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B91116893143553",
     "aliases": [
-      "Kouvolan seutukunta"
+      "Kouvola"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (43,320 males, 44,492 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 220 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 220 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 19 languages each spoken by under 0.05% of the sub-region (427 people in all)."
   },
   {
     "id": "FIN-SK2020-082",
     "level": "admin2",
-    "name": "Kotka-Hamina",
+    "name": "Kotkan–Haminan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -5879,6 +4079,11 @@
         "count": 3843
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 919
+      },
+      {
         "group": "Swedish",
         "pct": 1.1,
         "count": 856
@@ -5892,11 +4097,6 @@
         "group": "Estonian",
         "pct": 0.6,
         "count": 492
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 475
       },
       {
         "group": "English",
@@ -6002,116 +4202,6 @@
         "group": "Unknown",
         "pct": 0.1,
         "count": 40
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Lingala",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Vietnamese",
-        "pct": 0.0,
-        "count": 18
       }
     ],
     "ethnicity": {
@@ -6139,18 +4229,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B15111682114562",
     "aliases": [
-      "Kotkan–Haminan seutukunta"
+      "Kotka-Hamina"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (39,039 males, 39,534 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 332 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 332 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 22 languages each spoken by under 0.05% of the sub-region (444 people in all)."
   },
   {
     "id": "FIN-SK2020-091",
     "level": "admin2",
-    "name": "Lappeenranta",
+    "name": "Lappeenrannan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -6190,6 +4280,11 @@
         "count": 3611
       },
       {
+        "group": "Other language",
+        "pct": 1.3,
+        "count": 1179
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 513
@@ -6203,11 +4298,6 @@
         "group": "English",
         "pct": 0.5,
         "count": 449
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 424
       },
       {
         "group": "Bengali, (Bangla)",
@@ -6308,166 +4398,6 @@
         "group": "Romanian",
         "pct": 0.1,
         "count": 47
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Tagalog",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 26
       }
     ],
     "ethnicity": {
@@ -6495,18 +4425,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B13276826205168",
     "aliases": [
-      "Lappeenrannan seutukunta"
+      "Lappeenranta"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (44,422 males, 43,669 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 309 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 309 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 32 languages each spoken by under 0.05% of the sub-region (755 people in all)."
   },
   {
     "id": "FIN-SK2020-093",
     "level": "admin2",
-    "name": "Imatra",
+    "name": "Imatran seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -6546,14 +4476,14 @@
         "count": 1810
       },
       {
+        "group": "Other language",
+        "pct": 1.0,
+        "count": 364
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 276
-      },
-      {
-        "group": "Other language",
-        "pct": 0.7,
-        "count": 268
       },
       {
         "group": "Estonian",
@@ -6614,41 +4544,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 41
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Persian, Farsi",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Sinhala; Sinhalese",
-        "pct": 0.0,
-        "count": 11
       }
     ],
     "ethnicity": {
@@ -6676,18 +4571,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B10114646203371",
     "aliases": [
-      "Imatran seutukunta"
+      "Imatra"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (18,003 males, 18,144 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 255 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 255 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 7 languages each spoken by under 0.05% of the sub-region (96 people in all)."
   },
   {
     "id": "FIN-SK2020-101",
     "level": "admin2",
-    "name": "Mikkeli",
+    "name": "Mikkelin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -6727,14 +4622,14 @@
         "count": 891
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 819
+      },
+      {
         "group": "Ukrainian",
         "pct": 1.2,
         "count": 835
-      },
-      {
-        "group": "Other language",
-        "pct": 0.9,
-        "count": 575
       },
       {
         "group": "Arabic",
@@ -6835,76 +4730,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 73
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 20
       }
     ],
     "ethnicity": {
@@ -6932,18 +4757,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B97183733699800",
     "aliases": [
-      "Mikkelin seutukunta"
+      "Mikkeli"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (34,305 males, 35,213 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 434 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 434 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 14 languages each spoken by under 0.05% of the sub-region (244 people in all)."
   },
   {
     "id": "FIN-SK2020-103",
     "level": "admin2",
-    "name": "Savonlinna",
+    "name": "Savonlinnan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -6984,8 +4809,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.0,
-        "count": 402
+        "pct": 1.2,
+        "count": 502
       },
       {
         "group": "Ukrainian",
@@ -7071,41 +4896,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 53
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Kurdish",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Sinhala; Sinhalese",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 13
       }
     ],
     "ethnicity": {
@@ -7133,18 +4923,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B85894782163941",
     "aliases": [
-      "Savonlinnan seutukunta"
+      "Savonlinna"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (21,324 males, 21,749 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 292 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 292 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 7 languages each spoken by under 0.05% of the sub-region (100 people in all)."
   },
   {
     "id": "FIN-SK2020-105",
     "level": "admin2",
-    "name": "Pieksämäki",
+    "name": "Pieksämäen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -7190,8 +4980,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.0,
-        "count": 263
+        "pct": 1.1,
+        "count": 310
       },
       {
         "group": "Estonian",
@@ -7262,26 +5052,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 24
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 13
       }
     ],
     "ethnicity": {
@@ -7309,18 +5079,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B67691821257329",
     "aliases": [
-      "Pieksämäen seutukunta"
+      "Pieksämäki"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (13,948 males, 14,048 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 213 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 213 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 4 languages each spoken by under 0.05% of the sub-region (47 people in all)."
   },
   {
     "id": "FIN-SK2020-111",
     "level": "admin2",
-    "name": "Ylä-Savo",
+    "name": "Ylä-Savon seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -7356,8 +5126,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.0,
-        "count": 470
+        "pct": 1.3,
+        "count": 648
       },
       {
         "group": "Russian",
@@ -7400,69 +5170,9 @@
         "count": 67
       },
       {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Kurdish",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
         "group": "Swedish",
         "pct": 0.0,
         "count": 23
-      },
-      {
-        "group": "Tagalog",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 20
       }
     ],
     "ethnicity": {
@@ -7490,18 +5200,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B33272156270107",
     "aliases": [
-      "Ylä-Savon seutukunta"
+      "Ylä-Savo"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (24,772 males, 24,102 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 429 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 429 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 12 languages each spoken by under 0.05% of the sub-region (178 people in all)."
   },
   {
     "id": "FIN-SK2020-112",
     "level": "admin2",
-    "name": "Kuopio",
+    "name": "Kuopio sub-region",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -7541,6 +5251,11 @@
         "count": 1957
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 1737
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 1139
@@ -7554,11 +5269,6 @@
         "group": "English",
         "pct": 0.4,
         "count": 657
-      },
-      {
-        "group": "Other language",
-        "pct": 0.4,
-        "count": 570
       },
       {
         "group": "Bengali, (Bangla)",
@@ -7649,186 +5359,6 @@
         "group": "Yoruba",
         "pct": 0.1,
         "count": 120
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 56
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Chichewa, Chewa, Nyanja",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 49
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 59
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 43
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 64
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 71
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 47
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 23
       }
     ],
     "ethnicity": {
@@ -7856,18 +5386,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B12969213634500",
     "aliases": [
-      "Kuopio sub-region"
+      "Kuopio"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (72,068 males, 75,852 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 233 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 233 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 36 languages each spoken by under 0.05% of the sub-region (1,167 people in all)."
   },
   {
     "id": "FIN-SK2020-113",
     "level": "admin2",
-    "name": "Koillis-Savo",
+    "name": "North Eastern Savonia",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -7942,7 +5472,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B52678497750034",
     "aliases": [
-      "North Eastern Savonia"
+      "Koillis-Savo"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (3,201 males, 3,014 females).",
@@ -7953,7 +5483,7 @@
   {
     "id": "FIN-SK2020-114",
     "level": "admin2",
-    "name": "Varkaus",
+    "name": "Varkauden seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -7999,8 +5529,8 @@
       },
       {
         "group": "Other language",
-        "pct": 0.8,
-        "count": 214
+        "pct": 0.9,
+        "count": 252
       },
       {
         "group": "Thai",
@@ -8081,21 +5611,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 16
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 12
       }
     ],
     "ethnicity": {
@@ -8123,18 +5638,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B4711920994227",
     "aliases": [
-      "Varkauden seutukunta"
+      "Varkaus"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (14,794 males, 14,886 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 171 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 171 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 3 languages each spoken by under 0.05% of the sub-region (38 people in all)."
   },
   {
     "id": "FIN-SK2020-115",
     "level": "admin2",
-    "name": "Sisä-Savo",
+    "name": "Sisä-Savon seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -8234,7 +5749,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B23920198469988",
     "aliases": [
-      "Sisä-Savon seutukunta"
+      "Sisä-Savo"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (6,363 males, 6,289 females).",
@@ -8245,7 +5760,7 @@
   {
     "id": "FIN-SK2020-122",
     "level": "admin2",
-    "name": "Joensuu",
+    "name": "Joensuun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -8285,14 +5800,14 @@
         "count": 3361
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 1454
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 836
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 736
       },
       {
         "group": "Arabic",
@@ -8398,146 +5913,6 @@
         "group": "Yoruba",
         "pct": 0.1,
         "count": 66
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 58
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Ndonga",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 55
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 57
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 14
       }
     ],
     "ethnicity": {
@@ -8565,18 +5940,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B42008255547317",
     "aliases": [
-      "Joensuun seutukunta"
+      "Joensuu"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (61,173 males, 62,642 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 614 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 614 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 28 languages each spoken by under 0.05% of the sub-region (718 people in all)."
   },
   {
     "id": "FIN-SK2020-124",
     "level": "admin2",
-    "name": "Keski-Karjala",
+    "name": "Keski-Karjalan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -8686,7 +6061,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B71088523733667",
     "aliases": [
-      "Keski-Karjalan seutukunta"
+      "Keski-Karjala"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (7,690 males, 7,406 females).",
@@ -8697,7 +6072,7 @@
   {
     "id": "FIN-SK2020-125",
     "level": "admin2",
-    "name": "Pielisen Karjala",
+    "name": "Pielisen Karjalan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -8827,7 +6202,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B59577437721968",
     "aliases": [
-      "Pielisen Karjalan seutukunta"
+      "Pielisen Karjala"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (9,489 males, 9,117 females).",
@@ -8873,6 +6248,11 @@
         "count": 179887
       },
       {
+        "group": "Other language",
+        "pct": 1.2,
+        "count": 2415
+      },
+      {
         "group": "Russian",
         "pct": 1.1,
         "count": 2068
@@ -8886,11 +6266,6 @@
         "group": "English",
         "pct": 0.5,
         "count": 887
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 924
       },
       {
         "group": "Persian, Farsi",
@@ -9003,199 +6378,9 @@
         "count": 155
       },
       {
-        "group": "Afrikaans",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 72
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 74
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 89
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 62
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 74
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 88
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 70
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 84
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 17
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 32
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 93
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "Turkmen",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 48
       }
     ],
     "ethnicity": {
@@ -9222,14 +6407,12 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B68196328156609",
-    "aliases": [
-      "Jyväskylä"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (95,697 males, 97,557 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 559 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 559 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 38 languages each spoken by under 0.05% of the sub-region (1,491 people in all)."
   },
   {
     "id": "FIN-SK2020-132",
@@ -9328,9 +6511,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B4190910658448",
-    "aliases": [
-      "Joutsa"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (2,489 males, 2,285 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
@@ -9340,7 +6521,7 @@
   {
     "id": "FIN-SK2020-133",
     "level": "admin2",
-    "name": "Keuruu",
+    "name": "Keuruun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -9445,7 +6626,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B76395207187272",
     "aliases": [
-      "Keuruun seutukunta"
+      "Keuruu"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (5,185 males, 5,215 females).",
@@ -9575,9 +6756,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B52013237465934",
-    "aliases": [
-      "Jämsä"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (11,056 males, 10,992 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
@@ -9716,9 +6895,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B31857926953076",
-    "aliases": [
-      "Äänekoski"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (10,053 males, 9,843 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
@@ -9765,7 +6942,7 @@
       {
         "group": "Other language",
         "pct": 1.1,
-        "count": 291
+        "count": 301
       },
       {
         "group": "Ukrainian",
@@ -9791,11 +6968,6 @@
         "group": "Tagalog",
         "pct": 0.1,
         "count": 22
-      },
-      {
-        "group": "English",
-        "pct": 0.0,
-        "count": 10
       },
       {
         "group": "Swedish",
@@ -9827,19 +6999,17 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B20103157502159",
-    "aliases": [
-      "Saarijärvi-Viitasaari"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (13,255 males, 13,132 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 291 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 291 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 1 languages each spoken by under 0.05% of the sub-region (10 people in all)."
   },
   {
     "id": "FIN-SK2020-141",
     "level": "admin2",
-    "name": "Suupohja",
+    "name": "Suupohjan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -9964,7 +7134,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B91857021057630",
     "aliases": [
-      "Suupohjan seutukunta"
+      "Suupohja"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (10,112 males, 9,796 females).",
@@ -9975,7 +7145,7 @@
   {
     "id": "FIN-SK2020-142",
     "level": "admin2",
-    "name": "Seinäjoki",
+    "name": "Seinäjoen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -10016,8 +7186,8 @@
       },
       {
         "group": "Other language",
-        "pct": 0.6,
-        "count": 732
+        "pct": 0.9,
+        "count": 1200
       },
       {
         "group": "Russian",
@@ -10118,111 +7288,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 187
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 56
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Mongolian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 24
       }
     ],
     "ethnicity": {
@@ -10250,18 +7315,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B16764168806796",
     "aliases": [
-      "Seinäjoen seutukunta"
+      "Seinäjoki"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (62,631 males, 63,984 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 531 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 531 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 21 languages each spoken by under 0.05% of the sub-region (468 people in all)."
   },
   {
     "id": "FIN-SK2020-144",
     "level": "admin2",
-    "name": "Kuusiokunnat",
+    "name": "Kuusiokuntien seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -10371,7 +7436,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B69409045455460",
     "aliases": [
-      "Kuusiokuntien seutukunta"
+      "Kuusiokunnat"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (9,754 males, 9,307 females).",
@@ -10382,7 +7447,7 @@
   {
     "id": "FIN-SK2020-146",
     "level": "admin2",
-    "name": "Järviseutu",
+    "name": "Järviseudun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -10492,7 +7557,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B69470054580860",
     "aliases": [
-      "Järviseudun seutukunta"
+      "Järviseutu"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (9,296 males, 8,983 females).",
@@ -10503,7 +7568,7 @@
   {
     "id": "FIN-SK2020-151",
     "level": "admin2",
-    "name": "Kyrönmaa",
+    "name": "Kyrönmaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -10618,7 +7683,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B18989390996325",
     "aliases": [
-      "Kyrönmaan seutukunta"
+      "Kyrönmaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (6,325 males, 6,142 females).",
@@ -10629,7 +7694,7 @@
   {
     "id": "FIN-SK2020-152",
     "level": "admin2",
-    "name": "Vaasa",
+    "name": "Vaasa sub-region",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -10669,14 +7734,14 @@
         "count": 40923
       },
       {
+        "group": "Other language",
+        "pct": 1.6,
+        "count": 1652
+      },
+      {
         "group": "Ukrainian",
         "pct": 1.3,
         "count": 1313
-      },
-      {
-        "group": "Other language",
-        "pct": 0.9,
-        "count": 934
       },
       {
         "group": "Arabic",
@@ -10857,156 +7922,6 @@
         "group": "Yoruba",
         "pct": 0.1,
         "count": 101
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 45
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Ewe",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Ganda",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Hebrew",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Kikuyu; Gikuyu",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 49
-      },
-      {
-        "group": "Kirghiz; Kyrgyz",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 13
       }
     ],
     "ethnicity": {
@@ -11034,13 +7949,13 @@
     "match_by": "shape_id",
     "shape_id": "99834313B55406767623014",
     "aliases": [
-      "Vaasa sub-region"
+      "Vaasa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2020; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2020 (50,897 males, 50,014 females).",
     "population_note": "Registered residents on 31 December 2020. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 447 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 447 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 30 languages each spoken by under 0.05% of the sub-region (718 people in all)."
   },
   {
     "id": "FIN-SK2020-153",
@@ -11214,9 +8129,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B34451169677148",
-    "aliases": [
-      "Sydösterbotten"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (8,588 males, 8,311 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
@@ -11226,7 +8139,7 @@
   {
     "id": "FIN-SK2020-154",
     "level": "admin2",
-    "name": "Jakobstadsregionen",
+    "name": "Pietarsaaren seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -11272,8 +8185,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.1,
-        "count": 546
+        "pct": 1.7,
+        "count": 856
       },
       {
         "group": "Arabic",
@@ -11374,101 +8287,6 @@
         "group": "Swahili",
         "pct": 0.1,
         "count": 51
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Tigrinya",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 16
       }
     ],
     "ethnicity": {
@@ -11496,18 +8314,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B51229606636123",
     "aliases": [
-      "Pietarsaaren seutukunta"
+      "Jakobstadsregionen"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (25,721 males, 24,839 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 485 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 485 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 19 languages each spoken by under 0.05% of the sub-region (310 people in all)."
   },
   {
     "id": "FIN-SK2020-161",
     "level": "admin2",
-    "name": "Kaustinen",
+    "name": "Kaustisen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -11602,7 +8420,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B11286182074882",
     "aliases": [
-      "Kaustisen seutukunta"
+      "Kaustinen"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (7,114 males, 6,800 females).",
@@ -11613,7 +8431,7 @@
   {
     "id": "FIN-SK2020-162",
     "level": "admin2",
-    "name": "Kokkola",
+    "name": "Kokkolan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -11653,6 +8471,11 @@
         "count": 5662
       },
       {
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 597
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.9,
         "count": 467
@@ -11661,11 +8484,6 @@
         "group": "Russian",
         "pct": 0.7,
         "count": 398
-      },
-      {
-        "group": "Other language",
-        "pct": 0.6,
-        "count": 341
       },
       {
         "group": "English",
@@ -11766,81 +8584,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 47
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 25
       }
     ],
     "ethnicity": {
@@ -11868,18 +8611,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B46170589366893",
     "aliases": [
-      "Kokkolan seutukunta"
+      "Kokkola"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (26,644 males, 26,940 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 132 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 132 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 15 languages each spoken by under 0.05% of the sub-region (256 people in all)."
   },
   {
     "id": "FIN-SK2020-171",
     "level": "admin2",
-    "name": "Oulu",
+    "name": "Oulun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -11914,6 +8657,11 @@
         "count": 249094
       },
       {
+        "group": "Other language",
+        "pct": 1.1,
+        "count": 2972
+      },
+      {
         "group": "Russian",
         "pct": 0.6,
         "count": 1511
@@ -11927,11 +8675,6 @@
         "group": "English",
         "pct": 0.4,
         "count": 1147
-      },
-      {
-        "group": "Other language",
-        "pct": 0.4,
-        "count": 987
       },
       {
         "group": "Chinese",
@@ -12062,236 +8805,6 @@
         "group": "Tigrinya",
         "pct": 0.1,
         "count": 172
-      },
-      {
-        "group": "Afar",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Afrikaans",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Akan",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
-        "group": "Azerbaijani",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Chechen",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Danish",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Dutch",
-        "pct": 0.0,
-        "count": 71
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 65
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 132
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 100
-      },
-      {
-        "group": "Kannada",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 38
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 109
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.0,
-        "count": 34
-      },
-      {
-        "group": "Norwegian",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Oriya",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Oromo",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Panjabi; Punjabi",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 69
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 77
-      },
-      {
-        "group": "Rundi",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Shona",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Sindhi",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 122
-      },
-      {
-        "group": "Tatar",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Telugu",
-        "pct": 0.0,
-        "count": 73
-      },
-      {
-        "group": "Twi",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 78
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 43
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 106
       }
     ],
     "ethnicity": {
@@ -12319,18 +8832,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B2719384875221",
     "aliases": [
-      "Oulun seutukunta"
+      "Oulu"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (133,080 males, 132,374 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 445 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 445 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 46 languages each spoken by under 0.05% of the sub-region (1,985 people in all)."
   },
   {
     "id": "FIN-SK2020-173",
     "level": "admin2",
-    "name": "Oulunkaari",
+    "name": "Oulunkaaren seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -12367,7 +8880,7 @@
       {
         "group": "Other language",
         "pct": 1.0,
-        "count": 216
+        "count": 226
       },
       {
         "group": "Russian",
@@ -12398,11 +8911,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 17
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -12430,18 +8938,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B80590527373832",
     "aliases": [
-      "Oulunkaaren seutukunta"
+      "Oulunkaari"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (11,434 males, 10,432 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 216 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 216 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 1 languages each spoken by under 0.05% of the sub-region (10 people in all)."
   },
   {
     "id": "FIN-SK2020-174",
     "level": "admin2",
-    "name": "Raahe",
+    "name": "Raahen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -12482,8 +8990,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.0,
-        "count": 323
+        "pct": 1.1,
+        "count": 355
       },
       {
         "group": "Ukrainian",
@@ -12559,21 +9067,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 28
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Somali",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 11
       }
     ],
     "ethnicity": {
@@ -12601,18 +9094,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B27099967151118",
     "aliases": [
-      "Raahen seutukunta"
+      "Raahe"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (15,940 males, 15,134 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 231 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 231 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 3 languages each spoken by under 0.05% of the sub-region (32 people in all)."
   },
   {
     "id": "FIN-SK2020-175",
     "level": "admin2",
-    "name": "Haapavesi-Siikalatva",
+    "name": "Haapaveden-Siikalatvan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -12707,7 +9200,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B95988432486988",
     "aliases": [
-      "Haapaveden-Siikalatvan seutukunta"
+      "Haapavesi-Siikalatva"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (6,689 males, 6,148 females).",
@@ -12718,7 +9211,7 @@
   {
     "id": "FIN-SK2020-176",
     "level": "admin2",
-    "name": "Nivala-Haapajärvi",
+    "name": "Nivala–Haapajärven seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -12754,8 +9247,8 @@
       },
       {
         "group": "Other language",
-        "pct": 0.9,
-        "count": 245
+        "pct": 1.0,
+        "count": 257
       },
       {
         "group": "Russian",
@@ -12776,11 +9269,6 @@
         "group": "Thai",
         "pct": 0.1,
         "count": 24
-      },
-      {
-        "group": "Estonian",
-        "pct": 0.0,
-        "count": 12
       }
     ],
     "ethnicity": {
@@ -12808,18 +9296,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B80613352646594",
     "aliases": [
-      "Nivala–Haapajärven seutukunta"
+      "Nivala-Haapajärvi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (13,351 males, 12,741 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 228 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 228 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 1 languages each spoken by under 0.05% of the sub-region (12 people in all)."
   },
   {
     "id": "FIN-SK2020-177",
     "level": "admin2",
-    "name": "Ylivieska",
+    "name": "Ylivieskan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -12856,7 +9344,7 @@
       {
         "group": "Other language",
         "pct": 0.8,
-        "count": 329
+        "count": 349
       },
       {
         "group": "Russian",
@@ -12912,16 +9400,6 @@
         "group": "Turkish",
         "pct": 0.1,
         "count": 26
-      },
-      {
-        "group": "Persian, Farsi",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Spanish; Castilian",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "ethnicity": {
@@ -12949,18 +9427,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B400896450396",
     "aliases": [
-      "Ylivieskan seutukunta"
+      "Ylivieska"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (21,421 males, 20,840 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 317 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 317 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 2 languages each spoken by under 0.05% of the sub-region (20 people in all)."
   },
   {
     "id": "FIN-SK2020-178",
     "level": "admin2",
-    "name": "Koillismaa",
+    "name": "Koillismaan seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -13100,7 +9578,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B5241681163375",
     "aliases": [
-      "Koillismaan seutukunta"
+      "Koillismaa"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (9,363 males, 8,992 females).",
@@ -13111,7 +9589,7 @@
   {
     "id": "FIN-SK2020-181",
     "level": "admin2",
-    "name": "Kehys-Kainuu",
+    "name": "Kehys-Kainuun seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -13211,7 +9689,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B1118672371099",
     "aliases": [
-      "Kehys-Kainuun seutukunta"
+      "Kehys-Kainuu"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (9,612 males, 8,951 females).",
@@ -13222,7 +9700,7 @@
   {
     "id": "FIN-SK2020-182",
     "level": "admin2",
-    "name": "Kajaani",
+    "name": "Kajaanin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -13262,14 +9740,14 @@
         "count": 1071
       },
       {
+        "group": "Other language",
+        "pct": 1.3,
+        "count": 660
+      },
+      {
         "group": "Ukrainian",
         "pct": 1.2,
         "count": 585
-      },
-      {
-        "group": "Other language",
-        "pct": 0.9,
-        "count": 456
       },
       {
         "group": "Arabic",
@@ -13375,61 +9853,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 46
-      },
-      {
-        "group": "French",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Igbo",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Indonesian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Kazakh",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Pushto; Pashto",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 14
       }
     ],
     "ethnicity": {
@@ -13457,18 +9880,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B34228835316735",
     "aliases": [
-      "Kajaanin seutukunta"
+      "Kajaani"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (25,533 males, 25,097 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 295 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 295 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 11 languages each spoken by under 0.05% of the sub-region (204 people in all)."
   },
   {
     "id": "FIN-SK2020-191",
     "level": "admin2",
-    "name": "Rovaniemi",
+    "name": "Rovaniemen seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -13503,6 +9926,11 @@
         "count": 65156
       },
       {
+        "group": "Other language",
+        "pct": 0.9,
+        "count": 642
+      },
+      {
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 571
@@ -13511,11 +9939,6 @@
         "group": "Russian",
         "pct": 0.7,
         "count": 512
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 345
       },
       {
         "group": "Chinese",
@@ -13656,86 +10079,6 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 58
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Amharic",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Greek (modern)",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Japanese",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Swahili",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Tamil",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.0,
-        "count": 30
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 15
       }
     ],
     "ethnicity": {
@@ -13763,18 +10106,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B73202397650649",
     "aliases": [
-      "Rovaniemen seutukunta"
+      "Rovaniemi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (34,117 males, 35,604 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 171 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 171 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 16 languages each spoken by under 0.05% of the sub-region (297 people in all)."
   },
   {
     "id": "FIN-SK2020-192",
     "level": "admin2",
-    "name": "Kemi-Tornio",
+    "name": "Kemi-Tornion seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -13810,8 +10153,8 @@
       },
       {
         "group": "Other language",
-        "pct": 1.2,
-        "count": 656
+        "pct": 1.5,
+        "count": 795
       },
       {
         "group": "Arabic",
@@ -13904,59 +10247,9 @@
         "count": 39
       },
       {
-        "group": "Albanian",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Bengali, (Bangla)",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Kinyarwanda",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 13
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "Sami",
         "pct": 0.0,
         "count": 14
-      },
-      {
-        "group": "Sinhala; Sinhalese",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Uzbek",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Yoruba",
-        "pct": 0.0,
-        "count": 12
       }
     ],
     "ethnicity": {
@@ -13984,18 +10277,18 @@
     "match_by": "shape_id",
     "shape_id": "99834313B21205932148697",
     "aliases": [
-      "Kemi-Tornion seutukunta"
+      "Kemi-Tornio"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (26,936 males, 26,340 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "language_year": 2025,
-    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 395 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'."
+    "language_note": "Mother tongue as recorded in the population register on 31 December 2025 (Statistics Finland, table 11rm), summed from the sub-region's current municipalities. One language per resident, so these are shares of everyone. 395 people whose language Statistics Finland withholds at municipal level as too small a count are in 'Other language'. So are the 10 languages each spoken by under 0.05% of the sub-region (139 people in all)."
   },
   {
     "id": "FIN-SK2020-193",
     "level": "admin2",
-    "name": "Torniolaakso",
+    "name": "Torniolaakson seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -14090,7 +10383,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B93769578085294",
     "aliases": [
-      "Torniolaakson seutukunta"
+      "Torniolaakso"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (3,502 males, 3,317 females).",
@@ -14101,7 +10394,7 @@
   {
     "id": "FIN-SK2020-194",
     "level": "admin2",
-    "name": "Itä-Lappi",
+    "name": "Itä-Lapin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -14201,7 +10494,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B80407887759912",
     "aliases": [
-      "Itä-Lapin seutukunta"
+      "Itä-Lappi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (7,669 males, 7,213 females).",
@@ -14212,7 +10505,7 @@
   {
     "id": "FIN-SK2020-196",
     "level": "admin2",
-    "name": "Tunturi-Lappi",
+    "name": "Tunturi-Lapin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -14362,7 +10655,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B18646495937292",
     "aliases": [
-      "Tunturi-Lapin seutukunta"
+      "Tunturi-Lappi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (7,615 males, 7,451 females).",
@@ -14373,7 +10666,7 @@
   {
     "id": "FIN-SK2020-197",
     "level": "admin2",
-    "name": "Pohjois-Lappi",
+    "name": "Pohjois-Lapin seutukunta",
     "parent": "FIN",
     "capital": {
       "status": "not_available"
@@ -14518,7 +10811,7 @@
     "match_by": "shape_id",
     "shape_id": "99834313B46427630736233",
     "aliases": [
-      "Pohjois-Lapin seutukunta"
+      "Pohjois-Lappi"
     ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (8,513 males, 7,938 females).",
@@ -14723,9 +11016,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B61307263332273",
-    "aliases": [
-      "Mariehamns stad"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (5,699 males, 6,258 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
@@ -14869,9 +11160,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B56833404014918",
-    "aliases": [
-      "Ålands landsbygd"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (8,503 males, 8,386 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
@@ -14970,9 +11259,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "99834313B64974646699034",
-    "aliases": [
-      "Ålands skärgård"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Finland, table 11rf's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
     "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (1,062 males, 928 females).",
     "population_note": "Registered residents on 31 December 2025. Summed from the municipalities of the sub-region as Statistics Finland's 2020 classification draws it, which is the map's. Its municipalities are the same today, so this is the latest count.",
