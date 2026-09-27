@@ -66,6 +66,8 @@ LOCALITY = {"Nendeln": "Eschen", "Schaanwald": "Mauren", "Gamprin-Bendern": "Gam
 
 RELIGION = {
     "Römisch-katholisch": "Roman Catholic",
+    # The answer "Protestant" with no church named, a row of its own in 2020.
+    "Evangelisch (reformiert, protestantisch)": "Protestant",
     "Evangelisch-reformiert": "Reformed",
     "Evangelisch-lutherisch": "Lutheran",
     "Andere protestantische Kirchen": "Other Protestant",
@@ -230,11 +232,16 @@ def census(key: str, labels: dict[str, str]) -> dict[str, dict[str, float]]:
         total = next(v for label, v in rows.items() if "Total" in label)
         parts = {label: v for label, v in rows.items() if "Total" not in label}
         if key == "religion" and RELIGION_PARENT in parts:
-            children = sum(parts.get(c, 0) for c in RELIGION_CHILDREN)
-            if abs(parts[RELIGION_PARENT] - children) > 0.5:
-                raise SystemExit(f"liechtenstein: {gemeinde}: {RELIGION_PARENT!r} is "
-                                 f"{parts[RELIGION_PARENT]:,.0f}, its churches {children:,.0f}")
-            del parts[RELIGION_PARENT]
+            # Either a subtotal of the three Protestant rows after it, or the
+            # answer "Protestant" given without a church. The sums say which:
+            # the rows partition the Gemeinde one way or the other.
+            summed = sum(parts.values())
+            if abs(summed - parts[RELIGION_PARENT] - total) <= 0.5:
+                del parts[RELIGION_PARENT]
+            elif abs(summed - total) > 0.5:
+                raise SystemExit(f"liechtenstein: {gemeinde}: religion rows make {summed:,.0f} "
+                                 f"with {RELIGION_PARENT!r} and {summed - parts[RELIGION_PARENT]:,.0f} "
+                                 f"without it; the total is {total:,.0f}")
         counts: dict[str, float] = {}
         for label, v in parts.items():
             english = labels.get(label)
