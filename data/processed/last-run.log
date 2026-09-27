@@ -1,43 +1,197 @@
 
-=== hun14
-   Fejér's districts: [('077', 'Bicskei járás'), ('078', 'Dunaújvárosi járás'), ('079', 'Enyingi járás'), ('080', 'Gárdonyi járás'), ('081', 'Martonvásári járás'), ('082', 'Móri járás'), ('084', 'Sárbogárdi járás'), ('085', 'Székesfehérvári járás')]
-   079 Enyingi járás: 9 settlements: [('32753', 'Dég'), ('02802', 'Enying'), ('28990', 'Kisláng'), ('07506', 'Lajoskomárom'), ('07269', 'Lepsény'), ('16948', 'Mátyásdomb'), ('05689', 'Mezőkomárom'), ('06576', 'Mezőszentgyörgy'), ('18740', 'Szabadhídvég')]
-   085 Székesfehérvári járás: 25 settlements: [('17376', 'Aba'), ('23153', 'Bakonykúti'), ('09779', 'Csór'), ('06734', 'Csősz'), ('06114', 'Füle'), ('32018', 'Iszkaszentgyörgy'), ('15972', 'Jenő'), ('16683', 'Káloz'), ('30650', 'Kőszárhegy'), ('19114', 'Lovasberény'), ('25715', 'Moha'), ('13903', 'Nádasdladány'), ('28848', 'Pátka'), ('17525', 'Polgárdi'), ('31802', 'Sárkeresztes'), ('02699', 'Sárkeszi'), ('25140', 'Sárosd'), ('11776', 'Sárszentmihály'), ('20206', 'Seregélyes'), ('33321', 'Soponya'), ('28705', 'Szabadbattyán'), ('14827', 'Székesfehérvár'), ('29267', 'Tác'), ('17622', 'Úrhida'), ('30243', 'Zámoly')]
-   https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls: HTTP 200, 3,338,752 bytes, application/vnd.ms-excel
+=== lux7
 
-## https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls: HTTP 200, 3,338,752 bytes, 
-   sheets: ['Helységek 2014.01.01.', 'Az önkorm. hivatali kódja', 'Településrészek 2014.01.01.', 'Külterület települési jellege', 'Megj. postai ir. számhoz'] (5)
-   sheet 'Helységek 2014.01.01.': 3180 rows
-     Helység | Megye megnevezése  | Kistérség  | Járás  | Közös önkormányzati hivata | Terület  (hektár) | Lakó-népesség | Lakások száma | Becsült terület-adatokkal
-     megnevezése | KSH kódja | jogállása | kódja | neve | székhelye | kódja | neve | székhelye | kódja | székhelye
-     Aba | 17376 | város | Fejér | 3708.0 | Abai | Aba | 085 0 | Székesfehérvári | Székesfehérvár | 1.0 | 8805.0 | 4471.0 | 1546.0
-     Abádszalók | 12441 | város | Jász-Nagykun-Szolnok | 4605.0 | Tiszafüredi | Tiszafüred | 164 0 | Kunhegyesi | Kunhegyes | 2.0 | Abádszalók | 13223.0 | 4328.0 | 2042.0
-     Abaliget | 12548 | község | Baranya | 3207.0 | Pécsi | Pécs | 028 0 | Pécsi | Pécs | 6.0 | Orfű | 1609.0 | 623.0 | 241.0
-     Abasár | 24554 | község | Heves | 4004.0 | Gyöngyösi | Gyöngyös | 106 0 | Gyöngyösi | Gyöngyös | 1.0 | 2082.0 | 2537.0 | 1189.0
-   1 rows match '(?i)polg[aá]rd'
-     > Polgárdi | 17525 | város | Fejér | 3707.0 | Székesfehérvári | Székesfehérvár | 083 1 | Polgárdi | Polgárdi | 2.0 | Polgárdi | 7216.0 | 6783.0 | 2342.0
-   sheet 'Az önkorm. hivatali kódja': 7 rows
-     A települési önkormányzat  | A kód jelentése
-     1.0 | önálló polgármesteri hivat
-     2.0 | közös önkormányzati hivata
-     3.0 | önálló polgármesteri hivat
-     4.0 | közös önkormányzati hivata
-     5.0 | közös önkormányzati hivata
-   0 rows match '(?i)polg[aá]rd'
-   sheet 'Településrészek 2014.01.01.': 13493 rows
-     Helység KSH kód | Helység hivatalos megnevez | Megye kódja | Településrész megnevezése | Településrész jelleg kód | Postai irányító-szám | A külterület települési je | A településrész távolsága  | A népszámlálási lakónépess | A lakások száma | Lakott egyéb lakóegységek 
-     17376 | Aba | 7.0 | Belsőbáránd | 1.0 | 8128.0 | – | 3.5 | 225.0 | 89.0 | –
-     17376 | Aba | 7.0 | Bodakajtor | 1.0 | 8127.0 | – | 5.0 | 296.0 | 83.0 | –
-     17376 | Aba | 7.0 | Központi belterület | 0.0 | 8127.0 | – | – | 3915.0 | 1332.0 | 2.0
-     17376 | Aba | 7.0 | Külterület | 2.0 | 8127.0 | Lh. | 1.0 | 115.0 | 38.0 | 1.0
-     12441 | Abádszalók | 16.0 | Abádimajor | 2.0 | 5241.0 | Mgl. | 2.0 | – | – | –
-   9 rows match '(?i)polg[aá]rd'
-     > 10472 | Császártöltés | 3.0 | Csalai és Polgárdi tan | 2.0 | 6239.0 | Mgl. | 1.0 | – | – | –
-     > 08095 | Imrehegy | 3.0 | Polgárdi | 2.0 | 6238.0 | Mgl. | 6.0 | – | – | –
-     > 17525 | Polgárdi | 7.0 | Kiscséripuszta | 1.0 | 8155.0 | – | 5.2 | 148.0 | 52.0 | –
-     > 17525 | Polgárdi | 7.0 | Központi belterület | 0.0 | 8154.0 | – | – | 5867.0 | 2168.0 | 5.0
-     > 17525 | Polgárdi | 7.0 | Nagycséripuszta | 2.0 | 8154.0 | Mgl. | 6.0 | 73.0 | 34.0 | –
-     > 17525 | Polgárdi | 7.0 | Polgárdi ipartelepek | 2.0 | 8153.0 | Ipt. | 4.0 | 370.0 | 45.0 | –
-     > 17525 | Polgárdi | 7.0 | Polgárdiszőlőhegy | 2.0 | 8154.0 | Mgl. | 5.0 | 137.0 | 25.0 | 37.0
-     > 17525 | Polgárdi | 7.0 | Polgárditekeres | 2.0 | 8154.0 | Szo. | 7.0 | 196.0 | – | –
-     > 17525 | Polgárdi | 7.0 | Vasúti őrházak | 2.0 | 8154.0 | Forg. | 5.0 | 11.0 | 6.0 | –
+## https://lustat.statec.lu/rest/dataflow/LU1/all/latest
+   HTTP 200, 2,046,591 bytes, application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1
+   912 dataflows; those naming communes, localities or the 2011 census:
+   - DF_B1104: Most populated municipalities on 1st January (x 1 000)
+   - DF_C1600: Monthly salaries by municipality
+   - DF_D2181: Agricultural and wine-growing holdings by canton and municipality 2012
+   - DF_D4113: Building permits - Number of dwellings by type of building and canton
+   - DF_D4123: Building permits - Number of buildings by type of building and canton
+   - DF_D4133: Building permits - Useful floor area by type of building and canton
+   - DF_D5103: Chambre of Commerce - Distribution of nationals by electoral group and by canton (situation on 29th September, 2025)
+   - DF_D6402: Luxembourg Merchant Fleet 1993 - 2011
+   - DF_D8511: Key figures of electronic communications
+   - DF_E2707: National expenditure on environmental protection by function and type of expenditure 2008-2011
+   - DF_E2708: National production of environmental protection services by function and economic characteristics 2008-2011
+   - DF_E2709: Environmental protection expenditure accounts of public sector (in millions EUR)  2008-2011
+   - DF_E2710: Environmental protection expenditure accounts of private sector (in millions EUR)  2008-2011
+   - DF_X011: Municipalities by size class of the area (Situation on 1st January 2018)
+   - DF_X012: Altitudes of the different localities per canton (in m)
+   - DF_X013: Sewage treatment plant by canton and municipality
+   - DF_X020: Population density by canton and municipality on 1st January (Inhabitants per km²)
+   - DF_X021: Population by canton and municipality
+   - DF_X024: Natural movement of the population by canton and municipality
+   - DF_X025: Migration movement of the population by canton and municipality
+   - DF_X026: Employment and unemployment by canton and municipality
+   - DF_X031: Number of livestock by canton and municipality 1901 - 2006
+   - DF_X038: Forest areas by canton and municipality
+   - DF_X043: Local elections: Suffrages per party 1999 - 2011
+   - DF_X044: Seats per party 1999 - 2011
+   - DF_X045: Distribution of the votes in % of the total votes per party by canton and municipality 1994 - 2009
+   - DF_X046: Schools and classes of the fundamental education by municipality
+   - DF_X052: Electoral participation by constituency and municipality (Inofficial results) 2013
+   - DF_X053: Distribution of the votes in % of the total votes per party by municipality in 2014
+   - DF_X054: Electoral participation by constituency and municipality (Inofficial results) 2018
+   - DF_X055: Distribution of the votes in % of the total votes per party by municipality in 2019
+   - DF_X057: European elections - votes in % of the total votes per party and municipality in 2024
+   - DSD_ACCIDENT@DF_X040: Road accidents by canton and severity
+   - DSD_ACCIDENT@DF_X041: Road accident victims by canton and severity of injuries
+   - DSD_CENSUS_GROUP1_3@DF_B1606: Housing arrangements by size of the locality, sex and age
+   - DSD_CENSUS_GROUP1_3@DF_B1607: Population by canton and municipality, sex and age
+   - DSD_CENSUS_GROUP1_3@DF_B1608: Population by canton and municipality, household status and sex
+   - DSD_CENSUS_GROUP1_3@DF_B1609: Population by canton and municipality, legal marital status and sex
+   - DSD_CENSUS_GROUP7_10@DF_B1625: Population by canton and municipality, citizenship and sex
+   - DSD_CENSUS_GROUP7_10@DF_B1626: Population by canton and municipality, country of birth and sex
+   - DSD_CENSUS_MENAGE_PV@DF_B1702: Private households by type, canton and municipality of residence
+   - DSD_CENSUS_MENAGE_PV@DF_B1703: Private households by canton and municipality of residence
+   - DSD_CENSUS_NB_FAMILLE@DF_B1704: Family nucleus by type, canton and municipality of residence
+   - DSD_CENSUS_NB_FAMILLE@DF_B1705: Family nucleus by size, canton and municipality of residence
+   - DSD_CENSUS_NB_LOG_CLA@DF_B1707: Dwellings by type of building, occupancy status, canton and municipality
+   - DSD_CENSUS_NB_L_HAB@DF_B1711: Living quarters by type, canton and municipality of residence
+   - DSD_TOUR_NB@DF_D5251: Capacity of touristic accommodation establishments by type, canton and municipality
+
+## data.public.lu population+commune: 16 datasets
+   - registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality | Centre des technologies de l'information de l'Etat | Registre national des personnes physiques RNPP : Population pa
+       xml 01-07-2026-rnrpp-population-commune.xml https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260706-115220/01-07-2026-rn
+       csv 01-07-2026-rnrpp-population-commune.csv https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260706-115130/01-07-2026-rn
+       xml 31-03-2026-rnrpp-population-commune.xml https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260407-111059/31-03-2026-rn
+       csv 31-03-2026-rnrpp-population-commune.csv https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260407-111059/31-03-2026-rn
+       xlsx 31-03-2026-rnrpp-population-commune.xlsx https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260407-111059/31-03-2026-
+       csv 31-12-2025-rnrpp-population-commune.csv https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260105-141509/31-12-2025-rn
+   - statistiques-par-niveau-geographique-communes-population | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Statistiques par niveau géographique - Communes - Popula
+       html Densité de la population par canton et commune au 1er janvier (Habitants par km²) https://lustat.statec.lu/vis?df[ds]=ds-release&vw=tb&df[ag]=LU1&df[id]=DF_X020
+       html Population par canton et commune https://lustat.statec.lu/vis?df[ds]=ds-release&vw=tb&df[ag]=LU1&df[id]=DF_X021
+       html Mouvements naturels de la population par canton et commune https://lustat.statec.lu/vis?df[ds]=ds-release&vw=tb&df[ag]=LU1&df[id]=DF_X024
+       html Mouvement migratoire de la population par canton et commune https://lustat.statec.lu/vis?df[ds]=ds-release&vw=tb&df[ag]=LU1&df[id]=DF_X025
+   - population-par-commune-au-1er-fevrier-2011-2 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population par commune au 1er février 2011
+       xlsx Population par commune au 1er fevrier 2011 https://download.data.public.lu/resources/population-par-commune-au-1er-fevrier-2011-2/20160711-125931/Population_par_commune_au_1er_fevrier_2011.xlsx
+   - population-par-commune-et-code-lau2-depuis-2000 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population par commune et code LAU2 depuis 2000
+       xlsx popcom2000-2017_LAU2.xlsx https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx
+   - population-par-commune-et-sexe-au-1er-fevrier-2011 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population  par commune et sexe au 1er février 2011. 
+   - population-par-commune-et-localite-au-1er-fevrier-2011-1 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population par commune et localité au 1er février 2011
+       xlsx Population_par_commune_et_localite_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-par-commune-et-localite-au-1er-fevrier-2011-1/20160711-131012/Population_par_commune_et_localite_au_
+   - population-par-commune-au-1er-fevrier-2011-selon-certaines-caracteristiques | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population par commune au 1er février
+       xlsx Caracteristiques de la population par commune au 1er fevrier 2011 https://download.data.public.lu/resources/population-par-commune-au-1er-fevrier-2011-selon-certaines-caracteristiques/20160711-125659/Caracter
+   - population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population de résidence habituelle par 
+       xlsx Population_par_commune_et_age_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_
+   - population-de-residence-habituelle-par-commune-et-nationalite-au-1er-fevrier-2011 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population de résidence habitue
+       xlsx Population_par_commune_et_nationalite_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-nationalite-au-1er-fevrier-2011/20160711-131429/Population
+   - population-de-residence-habituelle-par-commune-et-sexe-au-1er-fevrier-2011 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population de résidence habituelle par
+       xlsx Population_par_commune_et_sexe_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-sexe-au-1er-fevrier-2011/20160711-131552/Population_par_commune_e
+   - densite-de-la-population-par-canton-et-commune-habitants-par-km2-1821-2017 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Densité de la population par canton et
+       zip Carte SIG au format Shapefiile https://download.data.public.lu/resources/densite-de-la-population-par-canton-et-commune-habitants-par-km2-1821-2017/20171109-104109/Densite_de_population_communes_lux.zip
+       xls Densité de la population par canton et commune (Habitants par km²) 1821 - 2021 https://lustat.statec.lu/vis?pg=0&tm=densit%C3%A9%20population&df[ds]=ds-release&df[id]=DF_X020&df[ag]=LU1&df[vs]=1.0&pd=2015%2C20
+   - population-de-residence-habituelle-par-commune-et-situation-de-famille-au-1er-fevrier-2011 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population de résidenc
+       xlsx Population_par_commune_et_sifa_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-situation-de-famille-au-1er-fevrier-2011/20160711-131954/Populati
+
+## data.public.lu population+localite: 2 datasets
+   - registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality | Centre des technologies de l'information de l'Etat | Registre national des personnes physiques RNPP : Population par l
+       csv Extrait du RNPP - Résidents par localité - 2026.06.30 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20260701-100307/rn
+       csv Extrait du RNPP - Résidents par localité - 2026.03.31 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20260409-162058/rn
+       csv Extrait du RNPP - Résidents par localité - 2025.12.31 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20260104-105558/rn
+       csv Extrait du RNPP - Résidents par localité - 2025.09.30 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20251001-093357/rn
+       csv Extrait du RNPP - Résidents par localité - 2025.06.30 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20250701-165207/rn
+       csv Extrait du RNPP - Résidents par localité - 2025.03.31 https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-localite-population-per-locality/20250401-184244/rn
+   - population-par-commune-et-localite-au-1er-fevrier-2011-1 | STATEC Institut national de la statistique et des études économiques du Grand-Duché de Luxembourg | Population par commune et localité au 1er février 2011
+       xlsx Population_par_commune_et_localite_au_1er_fevrier_2011 https://download.data.public.lu/resources/population-par-commune-et-localite-au-1er-fevrier-2011-1/20160711-131012/Population_par_commune_et_localite_au_
+
+## data.public.lu recensement+2011: 0 datasets
+
+## https://web.archive.org/cdx/search/cdx?url=statistiques.public.lu/stat/TableViewer/tableView*&matchType=prefix&filter=original:.*ReportId=12859.*&output=txt&limit=12
+   HTTP 200, 0 bytes, text/plain
+   0 distinct matches of '\\S+ \\d{14} \\S+'
+
+=== pol5
+
+## BDL variables search 'rezyduj': 0 (0 shown)
+
+## BDL subjects search 'rezyduj': 40 (40 shown)
+   - P4445 | G652 | levels [5] | Aktywni zawodowo w wieku 15 lat i więcej według płci, wieku oraz miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4305 | G652 | levels [6] | Aktywność ekonomiczna ludności w wieku 15 lat i więcej według płci i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4415 | G652 | levels [5] | Bezrobotni w wieku 15 lat lub więcej według okresu poszukiwania pracy i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4414 | G652 | levels [5] | Bezrobotni w wieku 15 lat lub więcej według okresu poszukiwania pracy i płci - ludność rezydująca |  | 
+   - P4453 | G652 | levels [4] | Bierni zawodowo w wieku 15 lat i więcej według płci, przyczyn bierności oraz miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4367 | G652 | levels [5] | Bierni zawodowo w wieku 15 lat i więcej według przyczyn bierności i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4366 | G652 | levels [5] | Bierni zawodowo w wieku 15 lat i więcej według przyczyn bierności i płci - ludność rezydująca |  | 
+   - P3418 | G518 | levels [3] | Ludność rezydująca |  | 
+   - P4322 | G640 | levels [6] | Ludność rezydująca - osoby niepełnosprawne według płci i kategorii niepełnosprawności |  | 
+   - P4323 | G640 | levels [5] | Ludność rezydująca - osoby niepełnosprawne według płci, kategorii niepełnosprawności i ekonomicznych grup wieku |  | 
+   - P4321 | G640 | levels [5] | Ludność rezydująca - osoby niepełnosprawne według stopnia niepełnosprawności i płci |  | 
+   - P4361 | G640 | levels [7] | Ludność rezydująca w miejscowościach statystycznych |  | 
+   - P4362 | G640 | levels [7] | Ludność rezydująca w miejscowościach statystycznych wg ekonomicznych grup wieku |  | 
+   - P4320 | G640 | levels [5] | Ludność rezydująca w wieku 13 lat i więcej wg poziomu wykształcenia i grup wieku |  | 
+   - P4319 | G640 | levels [5] | Ludność rezydująca w wieku 13 lat i więcej wg poziomu wykształcenia i miejsca zamieszkania |  | 
+   - P4318 | G640 | levels [6] | Ludność rezydująca w wieku 13 lat i więcej wg poziomu wykształcenia i płci |  | 
+   - P4288 | G640 | levels [6] | Ludność rezydująca w wieku 15 lat i więcej wg stanu cywilnego i płci |  | 
+   - P4317 | G640 | levels [3] | Ludność rezydująca wg  płci, kraju obywatelstwa, grup wieku |  | 
+   - P4316 | G640 | levels [3] | Ludność rezydująca wg  płci, kraju urodzenia, grup wieku |  | 
+   - P4254 | G640 | levels [6] | Ludność rezydująca wg  pojedynczych roczników i płci |  | 
+   - P4253 | G640 | levels [6] | Ludność rezydująca wg grup wieku i płci |  | 
+   - P4306 | G640 | levels [6] | Ludność rezydująca wg krajów obywatelstwa i płci |  | 
+   - P4307 | G640 | levels [6] | Ludność rezydująca wg krajów urodzenia i płci |  | 
+   - P4252 | G640 | levels [6] | Ludność rezydująca wg płci i miejsca zamieszkania |  | 
+   - P4312 | G652 | levels [5] | Pracujący w wieku 15 lat i więcej według płci, statusu zatrudnienia i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4449 | G652 | levels [5] | Pracujący w wieku 15 lat i więcej według płci, wieku produkcyjnego oraz miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4341 | G652 | levels [5] | Pracujący w wieku 15 lat i więcej według poziomu wykształcenia i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4340 | G652 | levels [5] | Pracujący w wieku 15 lat i więcej według poziomu wykształcenia i płci - ludność rezydująca |  | 
+   - P4403 | G652 | levels [6] | Pracujący w wieku 15 lat i więcej według statusu zatrudnienia - ludność rezydująca |  | 
+   - P4502 | G652 | levels [5] | Pracujący według sekcji PKD 2007 - ludność rezydująca |  | 
+   - P4442 | G652 | levels [3] | Pracujący według sekcji PKD 2007 i płci - ludność rezydująca |  | 
+   - P4410 | G652 | levels [6] | Pracujący według wieku i miejsca zamieszkania (miasta – wieś) - ludność rezydująca |  | 
+   - P4409 | G652 | levels [6] | Pracujący według wieku i płci - ludność rezydująca |  | 
+   - P4504 | G652 | levels [5] | Pracujący według wielkich grup zawodów - ludność rezydująca |  | 
+   - P4441 | G652 | levels [3] | Pracujący według wielkich grup zawodów i płci - ludność rezydująca |  | 
+   - P4326 | G652 | levels [5] | Stopa bezrobocia według płci, wieku produkcyjnego i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4328 | G652 | levels [5] | Wskaźnik zatrudnienia według płci, wieku i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4332 | G652 | levels [5] | Wskaźnik zatrudnienia według płci, wieku produkcyjnego i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4311 | G652 | levels [5] | Współczynnik aktywności zawodowej według płci, wieku i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+   - P4330 | G652 | levels [5] | Współczynnik aktywności zawodowej według płci, wieku produkcyjnego i miejsca zamieszkania (miasta - wieś) - ludność rezydująca |  | 
+
+## BDL variables search 'rezydenci': 117 (50 shown)
+   - 40928 | P2017 | levels None | ogółem | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 475889 | P2017 | levels None | 55.1 Obiekty hotelowe ogółem | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 40906 | P2017 | levels None | hotele | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 40922 | P2017 | levels None | motele | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 40903 | P2017 | levels None | pensjonaty | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 52341 | P2017 | levels None | inne obiekty hotelowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 498516 | P2017 | levels None | 55.2 Obiekty noclegowe krótkotrwałego zakwaterowania i 55.3 Kempingi i pola biwakowe ogółem | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 498515 | P2017 | levels None | 55.2 Obiekty noclegowe krótkotrwałego zakwaterowania | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36260 | P2017 | levels None | domy wycieczkowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36135 | P2017 | levels None | schroniska | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36132 | P2017 | levels None | schroniska młodzieżowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 52360 | P2017 | levels None | szkolne schroniska młodzieżowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 498514 | P2017 | levels None | schroniska (łącznie z młodzieżowymi i szkolnymi) | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36177 | P2017 | levels None | ośrodki wczasowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36162 | P2017 | levels None | ośrodki kolonijne | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36143 | P2017 | levels None | ośrodki szkoleniowo-wypoczynkowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36227 | P2017 | levels None | ośrodki do wypoczynku sobotnio-niedzielnego i świątecznego | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 148065 | P2017 | levels None | hostele | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36189 | P2017 | levels None | domy pracy twórczej | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36129 | P2017 | levels None | zespoły domków turystycznych | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36136 | P2017 | levels None | kempingi | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36258 | P2017 | levels None | pola biwakowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 498512 | P2017 | levels None | 55.3 Kempingi i pola biwakowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36256 | P2017 | levels None | zakłady uzdrowiskowe | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 195202 | P2017 | levels None | pokoje gościnne | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 195203 | P2017 | levels None | kwatery agroturystyczne | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 498513 | P2017 | levels None | pokoje gościnne i kwatery agroturystyczne | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 36219 | P2017 | levels None | pozostałe obiekty niesklasyfikowane | turyści zagraniczni (korzystający) - nierezydenci styczeń-grudzień | 
+   - 148074 | P2759 | levels None | turyści zagraniczni (nierezydenci) | ogółem | 
+   - 148095 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Austria | 
+   - 148119 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Belgia | 
+   - 148114 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Białoruś | 
+   - 148106 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Cypr | 
+   - 148080 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Czechy | 
+   - 148082 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Dania | 
+   - 148104 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Estonia | 
+   - 148072 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Finlandia | 
+   - 148121 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Francja | 
+   - 148099 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Grecja | 
+   - 148079 | P2759 | levels None | turyści zagraniczni (nierezydenci) | Hiszpania | 
+
+## BDL subjects search 'rezydenci': 3 (3 shown)
+   - P3991 | G7 | levels [3] | Rezydenci w wieku przedprodukcyjnym (17 lat i mniej), produkcyjnym i poprodukcyjnym |  | 
+   - P3032 | G2 | levels [5] | Wójtowie, burmistrzowie i prezydenci miast wg płci i poziomu wykształcenia |  | 
+   - P3031 | G2 | levels [5] | Wójtowie, burmistrzowie i prezydenci miast wg płci i wieku |  | 
