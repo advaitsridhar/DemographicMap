@@ -1,134 +1,19 @@
-probe_pdf: https://web.archive.org/web/20190821123823id_/http://census.ge/files/2002/geo/IV%20tomi.pdf
-  1,058,370 bytes
-  265 pages
-probe_pdf: 265 pages, 4 mention ['erovneb', 'aRmsarebl', 'mSobliur']
-=== front matter ===
-
-
-=== pages mentioning ['erovneb', 'aRmsarebl', 'mSobliur'] (first 400) ===
-
---- page 120 ----------------------------------------------------
- 120
-cxrili #19
-ori da meti kacisagan Semdgari kerZo Sinameurneobebis ganawileba, maTi sididisa da
-Sinameurneobebis wevrTa erovnebis mixedviT
-(kaci)
-kerZo
-Sinameur-
-neobebis
-wevrTa
-ricxov-
-noba
-sul ker-
-Zo Sina-
-meurneo-
-bebi, rom-
-lebic Se-
-dgeba ori
-da meti
-kacisagan
-maT Soris Sedgeba:
-Siname-
-urneo-
-bebis
-saSua-
-lo
-sidide
-2
-kacisa-
-gan
-3
-kacisa-
-gan
-4
-kacisa-
-gan
-5
-kacisa-
-gan
-6
-kacisa-
-gan
-7
-k
-
---- page 122 ----------------------------------------------------
- 122
-cxrili #20
-ori da meti kacisagan Semdgari kerZo Sinameurneobebis ganawileba, maTi saSualo sididis,
-da Sinameurneobebis wevrTa erovnebis mixedviT regionul WrilSi
-(kaci)
-  q. Tbi-
-lisi
-afxaze-
-Tis ar
-(kodo-
-ris
-xeoba)
-aWaris
-ar guria imereTi kaxeTi
-mcxeTa-
-mTia-
-neTi
-raWa-
-leCxumi
-da
-qvemo
-svaneTi
-samegre-
-lo-
-zemo
-svaneTi
-samcxe-
-java-
-xeTi
-qvemo
-qarTli
-Sida
-qarTli
-sul kerZo
-Sinameurneobebi 26
-
---- page 123 ----------------------------------------------------
- 123
-  q. Tbi-
-lisi
-afxaze-
-Tis ar
-(kodo-
-ris
-xeoba)
-aWaris
-ar guria imereTi kaxeTi
-mcxeTa-
-mTia-
-neTi
-raWa-
-leCxumi
-da
-qvemo
-svaneTi
-samegre-
-lo-
-zemo
-svaneTi
-samcxe-
-java-
-xeTi
-qvemo
-qarTli
-Sida
-qarTli
-maTSi wevrebi 1451 - 1351 13 42 84 47 2 11 272 5003 29
-sxva 4847 - 215 21 171 2268 138 6 69 19 265 73
-maTSi wevrebi 20383 - 735 64 607 9896 502 18 254 50 974 251
-Sinameurneobebi, romlebSic
-wevrebi
-
---- page 263 ----------------------------------------------------
- 263
-sarCevi
-nawili I-Sinameurneobebis da ojaxebis Semadgenloba da ricxvi ..................................................... 5
-cxrili #1 kerZo Sinameurneobebis ricxvi da dajgufeba maTi sididis mixedviT
-regionul WrilSi ............................................................................................................................. 7
-cxrili #2 kerZo Sinameurneobebis da ojaxebis ricxvi
+  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
+  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
+  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
+  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
+  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
+  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
+  estimate for 1 January 2026: 11 regions make the country's 3,941
+  fetched ADM2_simplified.geojson (1.3 MB)
+  GEO ADM2: 68 polygons from ADM2_simplified.geojson
+  Batumi's centre lies in 'Khelvachauri'; the nearest other polygon is 8.2 km away
+  Kutaisi: not placed; polygons near its centre: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km)
+  Poti: not placed; polygons near its centre: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km)
+  Rustavi's centre lies in 'Gardabani'; the nearest other polygon is 1.9 km away
+  polygons with no estimate row: ['Tbilisi']
+  second level: 54 polygons with a count; rows on no polygon: []
+  wrote data/processed/georgia.json (214 kB)
