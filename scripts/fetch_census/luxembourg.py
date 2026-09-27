@@ -76,6 +76,8 @@ def read() -> tuple[dict[str, str], dict[str, dict[str, Counter]], dict[str, flo
         m = re.fullmatch(r"Y(\d+)T(\d+)", age)
         if m and int(m.group(2)) - int(m.group(1)) == 4:
             key = (int(m.group(1)), int(m.group(2)))
+        elif age == "Y_LT5":
+            key = (0, 4)
         elif age == "Y_GE100":
             key = (100, None)
         else:
