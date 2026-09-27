@@ -204,9 +204,11 @@ def main() -> int:
                     reader = csv.reader(fh, delimiter=delimiter)
                     header = next(reader)
                     print(f"  {encoding}, {delimiter!r}, {len(header)} columns: {header}")
+                    # "A+B" counts the pairs of two columns' values.
                     wanted = [c for c in args.count.split(",") if c]
-                    idx = {c: header.index(c) for c in wanted if c in header}
-                    missing = [c for c in wanted if c not in header]
+                    idx = {c: [header.index(p) for p in c.split("+")] for c in wanted
+                           if all(p in header for p in c.split("+"))}
+                    missing = [c for c in wanted if c not in idx]
                     if missing:
                         print(f"  no such columns: {missing}")
                     counts = {c: Counter() for c in idx}
@@ -217,8 +219,8 @@ def main() -> int:
                         rows += 1
                         weight = float(row[w].replace(",", ".") or 0) if w is not None else 0.0
                         total += weight
-                        for c, i in idx.items():
-                            value = row[i] if i < len(row) else ""
+                        for c, cols in idx.items():
+                            value = "+".join(row[i] if i < len(row) else "" for i in cols)
                             counts[c][value] += 1
                             weights[c][value] += weight
                     print(f"  {rows:,} rows; {args.weight or 'no weight'} sums to {total:,.3f}")
