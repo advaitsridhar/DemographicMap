@@ -17,10 +17,13 @@ recensamantromania.ro times out). The Archive holds the office's own workbooks
 byte for byte, captured in May-July 2023; each is fetched raw (``id_``) at a
 named capture, so the run is repeatable.
 
-**Suppressed cells.** INS prints ``*`` for a count of one or two people and
-``-`` for zero. A ``*`` is left out of the composition, never read as zero or
-as a guess; every row's printed groups must then fall short of its printed
-total by no more than two people per ``*``, or the run stops.
+**Suppressed cells.** INS prints ``*`` (``**`` in one table) for a cell it
+withholds for disclosure control -- a small count, and cells beside it so the
+small one cannot be worked out -- and ``-`` for zero. The people a row's
+stars hide are exactly its total less its printed cells; they are kept as one
+bar, "Suppressed (disclosure control)", never read as zero or spread over the
+answers. A row with no star must add up exactly, and no row may add up to
+more than its total.
 
 **Median age** is interpolated within the five-year group that holds the
 middle person: INS publishes nothing finer by UAT. The country's median from
@@ -116,14 +119,14 @@ NOTES = {
                   "optional. 'Not stated' is the census's 'information not available' -- people "
                   "who declined or were counted from administrative sources, over a tenth of "
                   "Romania. Cells INS suppressed for disclosure control (printed *) are one bar, "
-                  "'Suppressed by INS': their people are counted, their groups not published."),
+                  "'Suppressed (disclosure control)': their people are counted, their groups not published."),
     "language": ("Mother tongue (limba maternă), 2021 census, resident population, optional. "
                  "'Not stated' is the census's 'information not available'. Cells INS "
-                 "suppressed (printed *) are one bar, 'Suppressed by INS'."),
+                 "suppressed (printed *) are one bar, 'Suppressed (disclosure control)'."),
     "religion": ("Religion (religia), 2021 census, resident population, optional: each "
                  "denomination as the census names it. 'Not stated' is the census's "
                  "'information not available'. Cells INS suppressed (printed *) are one bar, "
-                 "'Suppressed by INS'."),
+                 "'Suppressed (disclosure control)'."),
 }
 MEDIAN_NOTE = ("Interpolated within the five-year age group that holds the middle person, from "
                "the census's resident population by age group ({table}): INS publishes nothing "
@@ -183,7 +186,7 @@ def number(cell: Any) -> float | None:
     if isinstance(cell, (int, float)):
         return float(cell)
     text = str(cell).strip()
-    if text == "*":
+    if text and set(text) == {"*"}:          # "*" and, in Tabel 2.03.2, "**"
         return None
     if text in ("", "-", "–", "—"):
         return 0.0
@@ -284,7 +287,7 @@ def uat_rows(rows: list[list[Any]], counties: set[str], field: str | None
 
 
 SHORTFALL: dict[str, float] = {}
-SUPPRESSED = "Suppressed by INS"
+SUPPRESSED = "Suppressed (disclosure control)"
 
 
 def check_row(row: dict[str, Any], what: str) -> None:
