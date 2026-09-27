@@ -1,5 +1,17 @@
-  volume 2: 491 pages
-  table 1.4: 135 rows in 7 oblasts and Minsk; every oblast is its cities and raions; the country makes 9,413,446
-  fetched ADM2_simplified.geojson (1.1 MB)
-  BLR ADM2: 118 polygons from ADM2_simplified.geojson
-belarus: Жодино's centre lies in ['67162791B39606099444015'], not 'Smalyavichy'
+  http://sreda.org/maps/arena_russia_main/arena_statistic.xls: 213,504 bytes
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 286, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 279, in main
+    records = build(blob)
+              ^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 230, in build
+    table, sizes, national = read(blob)
+                             ^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 193, in read
+    whole = next(j for j, c in enumerate(rows[header - 1]) if str(c).strip() == "Население в целом")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
