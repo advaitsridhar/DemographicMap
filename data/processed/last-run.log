@@ -1,446 +1,88 @@
-
-=== aut9
-
-## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis
-   HTTP 200, 128,067 bytes, text/html; charset=utf-8
-   6 distinct matches of 'href=\\"[^\\"]+\\.(?:ods|xlsx?|pdf|csv)\\"|<p>[^<]{40,400}</p>'
-   - <p>Q: STATISTIK AUSTRIA. Erstellt am 24.09.2026. – Insgesamt-Wert: bis 2009 inklusive sonstige Religionszugehörigkeit.</p>
-   - href="/fileadmin/pages/439/neu__Religion_2021_Bundesland.ods"
-   - href="/fileadmin/pages/439/neu_Religionszugehoerigkeit_2021__Privathaushalte.ods"
-   - href="/fileadmin/pages/439/wechsel_religion_nach_bundesland_2025.ods"
-   - href="/fileadmin/pages/439/neu__Religion__1_.ods"
-   - href="/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
-
-## https://www.statistik.at/fileadmin/pages/439/neu__Religion_2021_Bundesland.ods: HTTP 200, 7,986 bytes
-   sheet 'Tabelle1'
-     Bevölkerung 2021 nach au
-     Religion | Österreich | Burgen-land | Kärnten | Nieder-österreich | Ober-österreich | Salzburg | Steier-mark | Tirol | Vorarl-berg | Wien
-     absolut in 1 000
-     Gesamtbevölkerung | 8 935,8 | 296,3 | 562,5 | 1 693,1 | 1 496,0 | 560,3 | 1 247,6 | 759,6 | 399,5 | 1 921,0
-     Christentum | 6 093,7 | 237,9 | 434,5 | 1 242,0 | 1 098,6 | 415,5 | 894,3 | 556,3 | 272,7 | 942,0
-     Römisch-katholisch | 4 933,3 | 194,1 | 356,9 | 983,1 | 931,3 | 322,0 | 789,3 | 502,6 | 242,4 | 611,7
-     Evangelisch A.B. und H.B | 340,3 | 33,7 | 41,8 | 56,7 | 48,5 | 17,1 | 39,6 | 22,7 | 10,0 | 70,3
-     Orthodox | 436,7 | 8,0 | 20,7 | 49,0 | 43,0 | 28,1 | 34,1 | 23,4 | 15,1 | 215,2
-     Islam | 745,6 | 6,4 | 31,1 | 83,2 | 125,5 | 36,4 | 63,4 | 65,9 | 48,8 | 284,9
-     Andere Religion, Konfess | 98,8 | 2,1 | 3,9 | 21,5 | 12,8 | 6,6 | 8,4 | 2,5 | 2,5 | 38,7
-     Keiner Religion, Konfess | 1 997,7 | 49,9 | 93,1 | 346,5 | 259,2 | 101,9 | 281,5 | 134,8 | 75,4 | 655,4
-     in Prozent
-     Christentum | 68,2 | 80,3 | 77,2 | 73,4 | 73,4 | 74,2 | 71,7 | 73,2 | 68,3 | 49,0
-     Römisch-katholisch | 55,2 | 65,5 | 63,4 | 58,1 | 62,3 | 57,5 | 63,3 | 66,2 | 60,7 | 31,8
-     Evangelisch A.B. und H.B | 3,8 | 11,4 | 7,4 | 3,3 | 3,2 | 3,0 | 3,2 | 3,0 | 2,5 | 3,7
-     Orthodox | 4,9 | 2,7 | 3,7 | 2,9 | 2,9 | 5,0 | 2,7 | 3,1 | 3,8 | 11,2
-     Islam | 8,3 | 2,2 | 5,5 | 4,9 | 8,4 | 6,5 | 5,1 | 8,7 | 12,2 | 14,8
-     Andere Religion, Konfess | 1,1 | 0,7 | 0,7 | 1,3 | 0,9 | 1,2 | 0,7 | 0,3 | 0,6 | 2,0
-     Keiner Religion, Konfess | 22,4 | 16,8 | 16,5 | 20,5 | 17,3 | 18,2 | 22,6 | 17,8 | 18,9 | 34,1
-     Q: STATISTIK AUSTRIA, 20
-
-## https://www.statistik.at/fileadmin/pages/439/neu_Religionszugehoerigkeit_2021__Privathaushalte.ods: HTTP 200, 40,023 bytes
-   sheet 'Tabellenverzeichnis'
-     Tabellenverzeichnis
-     Tabelle 1 | Bevölkerung in Privathau
-     Tabelle 2 | Bevölkerung in Privathau
-     Tabelle 3 | Bevölkerung in Privathau
-     Tabelle 3a | Bevölkerung in Privathau
-     Tabelle 4 | Bevölkerung in Privathau
-     Tabelle 4a | Bevölkerung in Privathau
-   sheet 'Tabelle_1'
-     Bevölkerung in Privathau
-     Religion | Bevölkerung in Privathau | Anteil an der Bevölkerun
-     in Tausend | Untergrenze des 95 %-Kon | Obergrenze des 95 %-Konf | in Prozent | Untergrenze des 95 %-Kon | Obergrenze des 95 %-Konf
-     Buddhismus | 26,2 | 17,7 | 34,9 | 0,3 | 0,2 | 0,4
-     Christentum | 6 004,8 | 5 901,5 | 6 072,9 | 68,2 | 67,0 | 69,0
-     Hinduismus | 10,0 | 3,5 | 16,2 | 0,1 | 0,0 | 0,2
-     Islam | 731,3 | 684,5 | 771,9 | 8,3 | 7,8 | 8,8
-     Judentum | 5,3 | 1,8 | 8,8 | 0,1 | 0,0 | 0,1
-     Andere Religion, Konfess | 56,2 | 35,1 | 77,9 | 0,6 | 0,4 | 0,9
-     Keiner Religion, Konfess | 1 972,8 | 1 914,7 | 2 042,8 | 22,4 | 21,7 | 23,2
-     Quelle: STATISTIK AUSTRI
-   sheet 'Tabelle_2'
-     Bevölkerung in Privathau
-     Kirche/Religionsgesellsc | Bevölkerung in Privathau | Anteil an der Bevölkerun
-     in Tausend | Untergrenze des 95 %-Kon | Obergrenze des 95 %-Konf | in Prozent | Untergrenze des 95 %-Kon | Obergrenze des 95 %-Konf
-     Katholische Kirche | 4 863,8 | 4 781,8 | 4 934,5 | 55,2 | 54,3 | 56,0
-     Evangelische Kirche A. B | 334,5 | 307,4 | 362,8 | 3,8 | 3,5 | 4,1
-     Orthodoxe Kirche in Öste | 427,8 | 391,3 | 460,5 | 4,9 | 4,4 | 5,2
-     Israelitische Religionsg | 4,8 | 1,7 | 8,0 | 0,1 | 0,0 | 0,1
-     Islamische Glaubensgemei | 575,4 | 527,3 | 618,2 | 6,5 | 6,0 | 7,0
-     Armenisch-Apostolische K | 10,6 | 3,4 | 18,4 | 0,1 | 0,0 | 0,2
-     Syrisch-orthodoxe Kirche | 3,8 | 0,9 | 6,7 | 0,0 | 0,0 | 0,1
-     Koptisch-orthodoxe Kirch | 5,1 | 0,0 | 10,2 | 0,1 | 0,0 | 0,1
-     Altkatholische Kirche | 4,7 | 2,1 | 7,8 | 0,1 | 0,0 | 0,1
-     Evangelisch-methodistisc | 2,0 | 0,0 | 3,8 | 0,0 | 0,0 | 0,0
-     Kirche Jesu Christi der  | 0,8 | 0,0 | 1,8 | 0,0 | 0,0 | 0,0
-     Neuapostolische Kirche i | 4,1 | 0,6 | 7,8 | 0,0 | 0,0 | 0,1
-     Österreichische Buddhist | 10,9 | 5,7 | 15,7 | 0,1 | 0,1 | 0,2
-     Jehovas Zeugen in Österr | 18,4 | 11,6 | 24,8 | 0,2 | 0,1 | 0,3
-     Alevitische Glaubensgeme | 19,5 | 9,5 | 29,5 | 0,2 | 0,1 | 0,3
-     Freikirchen in Österreic | 35,3 | 22,1 | 47,7 | 0,4 | 0,3 | 0,5
-     Staatlich registrierte B | 32,1 | 15,8 | 46,4 | 0,4 | 0,2 | 0,5
-     Sonstige Religion, Konfe | 59,7 | 41,7 | 79,7 | 0,7 | 0,5 | 0,9
-     Weiß nicht welche Religi | 107,5 | 86,9 | 127,9 | 1,2 | 1,0 | 1,5
-     Keine Angabe bei Religio | 312,9 | 275,0 | 345,7 | 3,6 | 3,1 | 3,9
-     Keiner Religion, Konfess | 1 972,8 | 1 914,7 | 2 042,8 | 22,4 | 21,7 | 23,2
-     Quelle: STATISTIK AUSTRI
-   sheet 'Tabelle_3'
-     Bevölkerung in Privathau
-     Merkmal | Bevölkerung in Privathau | Buddhismus | Christentum | Islam | Andere Religion, Konfess | Keiner Religion, Konfess
-     Männer und Frauen | 8 806,5 | 26,2 | 6 004,8 | 731,3 | 71,5 | 1 972,8
-     Männer | 4 342,0 | 12,6 | 2 843,5 | 386,7 | 35,6 | 1 063,6
-     Frauen | 4 464,5 | 13,5 | 3 161,3 | 344,6 | 35,9 | 909,2
-     Alter in vollendeten Jah
-     Unter 16 Jahren | 1 368,7 | (3,6) | 892,9 | 186,6 | 16,4 | 269,3
-     16 bis unter 64 Jahre | 5 780,8 | 20,6 | 3 839,6 | 505,8 | 46,3 | 1 368,4
-     64 Jahre und mehr | 1 657,0 | (x) | 1 272,2 | 38,9 | 8,9 | 335,1
-     Bundesland
-     Burgenland | 292,6 | (x) | 234,8 | 6,3 | (x) | 49,4
-     Kärnten | 554,2 | (x) | 427,4 | 30,7 | (x) | 92,2
-     Niederösterreich | 1 675,1 | (x) | 1 229,2 | 81,2 | 20,0 | 343,4
-     Oberösterreich | 1 476,0 | 7,0 | 1 082,8 | 123,9 | (5,6) | 256,8
-     Salzburg | 551,4 | (x) | 408,8 | 35,6 | 6,0 | 100,4
-     Steiermark | 1 228,7 | (3,6) | 880,1 | 62,2 | (4,7) | 278,1
-     Tirol | 748,2 | (x) | 548,3 | 64,4 | (x) | 133,0
-     Vorarlberg | 395,1 | (x) | 269,6 | 48,3 | (x) | 74,8
-     Wien | 1 885,2 | 8,9 | 923,7 | 278,8 | 29,2 | 644,6
-     Geburtsland
-     Österreich | 6 844,8 | 7,2 | 5 050,3 | 249,7 | 30,5 | 1 507,1
-     EU vor 2004 (ohne Österr | 378,0 | (x) | 217,1 | (4,5) | (3,4) | 151,9
-     EU ab 2004 | 514,0 | (x) | 352,9 | 11,2 | 8,4 | 141,3
-     Bosnien-Herzegowina, Ser | 455,3 | (x) | 251,6 | 150,5 | (x) | 50,9
-     Türkei | 178,0 | (x) | (x) | 156,0 | (x) | 18,6
-     Drittstaaten (ohne Türke | 436,4 | 17,7 | 131,7 | 159,4 | 24,7 | 103,0
-     Migrationshintergrund
-     Ohne Migrationshintergru | 6 463,5 | 8,4 | 4 930,0 | 59,3 | 10,5 | 1 455,3
-     Mit Migrationshintergrun | 2 343,1 | 17,7 | 1 074,8 | 672,0 | 61,0 | 517,5
-     Eurostat-Urbanisierungsg
-     Hohe Bevölkerungsdichte | 2 681,0 | 10,9 | 1 393,0 | 378,8 | 31,3 | 867,1
-     Mittlere Bevölkerungsdic | 2 688,6 | 12,9 | 1 751,4 | 276,6 | 23,2 | 624,6
-     Niedrige Bevölkerungsdic | 3 436,8 | (x) | 2 860,4 | 76,0 | 17,0 | 481,1
-     Höchste abgeschlossene A
-     Kinder unter 15 Jahren | 1 275,7 | (3,0) | 828,5 | 172,1 | 15,3 | 256,8
-     Pflichtschule/keine Pfli | 1 614,2 | 9,1 | 1 073,8 | 274,1 | 19,2 | 238,0
-     Lehre/BMS | 3 488,8 | (5,9) | 2 534,1 | 161,6 | 14,1 | 773,2
-     Höhere Schulen | 1 245,0 | (x) | 837,7 | 76,4 | 9,8 | 318,2
-     Akademien, Universität,  | 1 182,7 | (5,3) | 730,7 | 47,0 | 13,0 | 386,7
-     Quelle: STATISTIK AUSTRI
-   sheet 'Tabelle_3a'
-     Bevölkerung in Privathau
-     Merkmal | Bevölkerung in Privathau | Buddhismus | Christentum | Islam | Andere Religion, Konfess | Keiner Religion, Konfess
-     Männer und Frauen | 8 806,5 | 0,3 | 68,2 | 8,3 | 0,8 | 22,4
-     Männer | 4 342,0 | 0,3 | 65,5 | 8,9 | 0,8 | 24,5
-     Frauen | 4 464,5 | 0,3 | 70,8 | 7,7 | 0,8 | 20,4
-     Alter in vollendeten Jah
-     Unter 16 Jahren | 1 368,7 | (0,3) | 65,2 | 13,6 | 1,2 | 19,7
-     16 bis unter 64 Jahre | 5 780,8 | 0,4 | 66,4 | 8,8 | 0,8 | 23,7
-     64 Jahre und mehr | 1 657,0 | (x) | 76,8 | 2,3 | 0,5 | 20,2
-     Bundesland
-     Burgenland | 292,6 | (x) | 80,3 | 2,1 | (x) | 16,9
-     Kärnten | 554,2 | (x) | 77,1 | 5,5 | (x) | 16,6
-     Niederösterreich | 1 675,1 | (x) | 73,4 | 4,8 | 1,2 | 20,5
-     Oberösterreich | 1 476,0 | 0,5 | 73,4 | 8,4 | (0,4) | 17,4
-     Salzburg | 551,4 | (x) | 74,1 | 6,5 | 1,1 | 18,2
-     Steiermark | 1 228,7 | (0,3) | 71,6 | 5,1 | (0,4) | 22,6
-     Tirol | 748,2 | (x) | 73,3 | 8,6 | (x) | 17,8
-     Vorarlberg | 395,1 | (x) | 68,2 | 12,2 | (x) | 18,9
-     Wien | 1 885,2 | 0,5 | 49,0 | 14,8 | 1,5 | 34,2
-     Geburtsland
-     Österreich | 6 844,8 | 0,1 | 73,8 | 3,6 | 0,4 | 22,0
-     EU vor 2004 (ohne Österr | 378,0 | (x) | 57,4 | (1,2) | (0,9) | 40,2
-     EU ab 2004 | 514,0 | (x) | 68,7 | 2,2 | 1,6 | 27,5
-     Bosnien-Herzegowina, Ser | 455,3 | (x) | 55,3 | 33,1 | (x) | 11,2
-     Türkei | 178,0 | (x) | (x) | 87,6 | (x) | 10,4
-     Drittstaaten (ohne Türke | 436,4 | 4,1 | 30,2 | 36,5 | 5,7 | 23,6
-     Migrationshintergrund
-     Ohne Migrationshintergru | 6 463,5 | 0,1 | 76,3 | 0,9 | 0,2 | 22,5
-     Mit Migrationshintergrun | 2 343,1 | 0,8 | 45,9 | 28,7 | 2,6 | 22,1
-     Eurostat-Urbanisierungsg
-     Hohe Bevölkerungsdichte | 2 681,0 | 0,4 | 52,0 | 14,1 | 1,2 | 32,3
-     Mittlere Bevölkerungsdic | 2 688,6 | 0,5 | 65,1 | 10,3 | 0,9 | 23,2
-     Niedrige Bevölkerungsdic | 3 436,8 | (x) | 83,2 | 2,2 | 0,5 | 14,0
-     Höchste abgeschlossene A
-     Kinder unter 15 Jahren | 1 275,7 | (0,2) | 64,9 | 13,5 | 1,2 | 20,1
-     Pflichtschule/keine Pfli | 1 614,2 | 0,6 | 66,5 | 17,0 | 1,2 | 14,7
-     Lehre/BMS | 3 488,8 | (0,2) | 72,6 | 4,6 | 0,4 | 22,2
-     Höhere Schulen | 1 245,0 | (x) | 67,3 | 6,1 | 0,8 | 25,6
-     Akademien, Universität,  | 1 182,7 | (0,4) | 61,8 | 4,0 | 1,1 | 32,7
-     Quelle: STATISTIK AUSTRI
-   sheet 'Tabelle_4'
-     Bevölkerung in Privathau
-     Merkmal | Bevölkerung in Privathau | Katholische Kirche | Evangelische Kirche A. B | Orthodoxe Kirche in Öste | Islamische Glaubens-geme | Freikirchen in Österreic | Weitere Kirchen und Reli | Staatlich registrierte B | Sonstige Religion, Konfe | Weiß nicht welche Religi | Keine Angabe bei Religio
-     Männer und Frauen | 8 806,5 | 4 863,8 | 334,5 | 427,8 | 575,4 | 35,3 | 84,8 | 32,1 | 59,7 | 107,5 | 312,9
-     Männer | 4 342,0 | 2 295,6 | 156,3 | 205,1 | 303,4 | 18,3 | 42,1 | 15,4 | 29,3 | 53,2 | 159,7
-     Frauen | 4 464,5 | 2 568,1 | 178,2 | 222,7 | 272,0 | 16,9 | 42,7 | 16,7 | 30,4 | 54,3 | 153,3
-     Alter in vollendeten Jah
-     Unter 16 Jahren | 1 368,7 | 700,6 | 44,8 | 85,8 | 149,0 | 9,3 | 14,2 | 8,8 | 12,0 | 18,5 | 56,5
-     16 bis unter 60 Jahre | 5 780,8 | 3 090,9 | 195,7 | 306,3 | 397,2 | 24,9 | 59,7 | 19,4 | 41,8 | 67,9 | 208,5
-     60 Jahre und mehr | 1 657,0 | 1 072,3 | 94,0 | 35,6 | 29,2 | (x) | 10,9 | (3,9) | (5,9) | 21,1 | 48,0
-     Bundesland
-     Burgenland | 292,6 | 191,8 | 33,2 | 7,7 | (4,2) | (x) | (x) | (x) | (1,2) | (x) | 2,0
-     Kärnten | 554,2 | 351,4 | 41,0 | 20,1 | 28,1 | (1,9) | (3,4) | (x) | (1,3) | (3,9) | 10,1
-     Niederösterreich | 1 675,1 | 973,3 | 55,9 | 48,2 | 60,3 | (5,6) | 8,5 | 9,7 | 9,4 | 61,2 | 99,6
-     Oberösterreich | 1 476,0 | 918,5 | 47,7 | 41,7 | 101,7 | (6,3) | 16,1 | (x) | (5,6) | 26,7 | 52,3
-     Salzburg | 551,4 | 316,7 | 16,6 | 27,8 | 31,6 | (2,4) | (4,5) | (1,3) | (2,3) | (5,1) | 42,6
-     Steiermark | 1 228,7 | 777,4 | 38,8 | 32,9 | 30,8 | (4,7) | 7,0 | (4,9) | 9,8 | (x) | 42,0
-     Tirol | 748,2 | 495,3 | 22,4 | 23,0 | 51,9 | (x) | 9,8 | (2,7) | (3,7) | (x) | (4,4)
-     Vorarlberg | 395,1 | 239,7 | 9,8 | 14,9 | 42,8 | (1,1) | (4,7) | (x) | (1,5) | (x) | (4,6)
-     Wien | 1 885,2 | 599,6 | 69,0 | 211,3 | 224,2 | 11,5 | 28,5 | 9,2 | 24,9 | (7,1) | 55,3
-     Geburtsland
-     Österreich | 6 844,8 | 4 371,7 | 241,4 | 118,1 | 198,1 | 20,4 | 46,7 | 11,5 | 18,5 | 86,6 | 224,8
-     EU vor 2004 (ohne Österr | 378,0 | 143,6 | 54,9 | 12,6 | (3,5) | (x) | (x) | (x) | (x) | (x) | (3,7)
-     EU ab 2004 | 514,0 | 201,7 | 20,1 | 113,4 | 9,0 | 7,8 | (x) | (3,6) | (5,0) | (x) | 9,2
-     Bosnien-Herzegowina, Ser | 455,3 | 78,8 | (3,4) | 159,5 | 117,7 | (x) | (3,5) | (x) | 6,5 | 7,5 | 25,9
-     Türkei | 178,0 | (x) | (x) | (x) | 123,4 | (x) | 9,7 | (3,1) | (x) | (x) | 18,0
-     Drittstaaten (ohne Türke | 436,4 | 68,0 | 14,6 | 24,2 | 123,7 | (5,5) | 22,2 | 10,9 | 24,7 | 8,3 | 31,3
-     Migrationshintergrund
-     Ohne Migrationshintergru | 6 463,5 | 4 346,8 | 241,6 | 44,1 | 46,3 | 13,5 | 36,1 | (x) | (5,5) | 79,3 | 193,0
-     Mit Migrationshintergrun | 2 343,1 | 517,0 | 92,9 | 383,7 | 529,2 | 21,8 | 48,6 | 30,1 | 54,3 | 28,2 | 119,9
-     Eurostat-Urbanisierungsg
-     Hohe Bevölkerungsdichte | 2 681,0 | 958,6 | 97,3 | 266,6 | 281,3 | 19,6 | 40,6 | 14,1 | 30,7 | 11,9 | 93,1
-     Mittlere Bevölkerungsdic | 2 688,6 | 1 469,4 | 114,0 | 97,3 | 233,8 | (5,4) | 31,7 | 13,8 | 16,4 | 26,9 | 55,4
-     Niedrige Bevölkerungsdic | 3 436,8 | 2 435,8 | 123,2 | 63,8 | 60,3 | 10,3 | 12,4 | (4,1) | 12,6 | 68,7 | 164,5
-     Höchste abgeschlossene A
-     Kinder unter 15 Jahren | 1 275,7 | 647,1 | 41,0 | 82,4 | 136,9 | 8,8 | 12,7 | 8,8 | 11,3 | 17,7 | 52,3
-     Pflichtschule/keine Pfli | 1 614,2 | 843,3 | 47,7 | 113,2 | 222,6 | (4,4) | 20,4 | 9,7 | 13,6 | 23,9 | 77,4
-     Lehre/BMS | 3 488,8 | 2 120,8 | 128,9 | 125,0 | 126,7 | 9,0 | 24,7 | (4,3) | 13,0 | 43,6 | 119,7
-     Höhere Schulen | 1 245,0 | 677,3 | 51,3 | 61,9 | 55,7 | 6,5 | 10,3 | (4,4) | 8,6 | 11,9 | 39,0
-     Akademien, Universität,  | 1 182,7 | 575,3 | 65,6 | 45,2 | 33,6 | 6,6 | 16,7 | (4,9) | 13,3 | 10,5 | 24,5
-     Quelle: STATISTIK AUSTRI
-   sheet 'Tabelle_4a'
-     Bevölkerung in Privathau
-     Merkmal | Bevölkerung in Privathau | Katholische Kirche | Evangelische Kirche A. B | Orthodoxe Kirche in Öste | Islamische Glaubens-geme | Freikirchen in Österreic | Weitere Kirchen und Reli | Staatlich registrierte B | Sonstige Religion, Konfe | Weiß nicht welche Religi | Keine Angabe bei Religio
-     Männer und Frauen | 8 806,5 | 55,2 | 3,8 | 4,9 | 6,5 | 0,4 | 1,0 | 0,4 | 0,7 | 1,2 | 3,6
-     Männer | 4 342,0 | 52,9 | 3,6 | 4,7 | 7,0 | 0,4 | 1,0 | 0,4 | 0,7 | 1,2 | 3,7
-     Frauen | 4 464,5 | 57,5 | 4,0 | 5,0 | 6,1 | 0,4 | 1,0 | 0,4 | 0,7 | 1,2 | 3,4
-     Alter in vollendeten Jah
-     Unter 16 Jahren | 1 368,7 | 51,2 | 3,3 | 6,3 | 10,9 | 0,7 | 1,0 | 0,6 | 0,9 | 1,3 | 4,1
-     16 bis unter 60 Jahre | 5 780,8 | 53,5 | 3,4 | 5,3 | 6,9 | 0,4 | 1,0 | 0,3 | 0,7 | 1,2 | 3,6
-     60 Jahre und mehr | 1 657,0 | 64,7 | 5,7 | 2,2 | 1,8 | (x) | 0,7 | (0,2) | (0,4) | 1,3 | 2,9
-     Bundesland
-     Burgenland | 292,6 | 65,5 | 11,4 | 2,6 | (1,4) | (x) | (x) | (x) | (0,4) | (x) | 0,7
-     Kärnten | 554,2 | 63,4 | 7,4 | 3,6 | 5,1 | (0,3) | (0,6) | (x) | (0,2) | (0,7) | 1,8
-     Niederösterreich | 1 675,1 | 58,1 | 3,3 | 2,9 | 3,6 | (0,3) | 0,5 | 0,6 | 0,6 | 3,7 | 5,9
-     Oberösterreich | 1 476,0 | 62,2 | 3,2 | 2,8 | 6,9 | (0,4) | 1,1 | (x) | (0,4) | 1,8 | 3,5
-     Salzburg | 551,4 | 57,4 | 3,0 | 5,0 | 5,7 | (0,4) | (0,8) | (0,2) | (0,4) | (0,9) | 7,7
-     Steiermark | 1 228,7 | 63,3 | 3,2 | 2,7 | 2,5 | (0,4) | 0,6 | (0,4) | 0,8 | (x) | 3,4
-     Tirol | 748,2 | 66,2 | 3,0 | 3,1 | 6,9 | (x) | 1,3 | (0,4) | (0,5) | (x) | (0,6)
-     Vorarlberg | 395,1 | 60,7 | 2,5 | 3,8 | 10,8 | (0,3) | (1,2) | (x) | (0,4) | (x) | (1,2)
-     Wien | 1 885,2 | 31,8 | 3,7 | 11,2 | 11,9 | 0,6 | 1,5 | 0,5 | 1,3 | (0,4) | 2,9
-     Geburtsland
-     Österreich | 6 844,8 | 63,9 | 3,5 | 1,7 | 2,9 | 0,3 | 0,7 | 0,2 | 0,3 | 1,3 | 3,3
-     EU vor 2004 (ohne Österr | 378,0 | 38,0 | 14,5 | 3,3 | (0,9) | (x) | (x) | (x) | (x) | (x) | (1,0)
-     EU ab 2004 | 514,0 | 39,2 | 3,9 | 22,1 | 1,8 | 1,5 | (x) | (0,7) | (1,0) | (x) | 1,8
-     Bosnien-Herzegowina, Ser | 455,3 | 17,3 | (0,8) | 35,0 | 25,8 | (x) | (0,8) | (x) | 1,4 | 1,7 | 5,7
-     Türkei | 178,0 | (x) | (x) | (x) | 69,3 | (x) | 5,4 | (1,7) | (x) | (x) | 10,1
-     Drittstaaten (ohne Türke | 436,4 | 15,6 | 3,3 | 5,5 | 28,3 | (1,3) | 5,1 | 2,5 | 5,7 | 1,9 | 7,2
-     Migrationshintergrund
-     Ohne Migrationshintergru | 6 463,5 | 67,3 | 3,7 | 0,7 | 0,7 | 0,2 | 0,6 | (x) | (0,1) | 1,2 | 3,0
-     Mit Migrationshintergrun | 2 343,1 | 22,1 | 4,0 | 16,4 | 22,6 | 0,9 | 2,1 | 1,3 | 2,3 | 1,2 | 5,1
-     Eurostat-Urbanisierungsg
-     Hohe Bevölkerungsdichte | 2 681,0 | 35,8 | 3,6 | 9,9 | 10,5 | 0,7 | 1,5 | 0,5 | 1,1 | 0,4 | 3,5
-     Mittlere Bevölkerungsdic | 2 688,6 | 54,7 | 4,2 | 3,6 | 8,7 | (0,2) | 1,2 | 0,5 | 0,6 | 1,0 | 2,1
-     Niedrige Bevölkerungsdic | 3 436,8 | 70,9 | 3,6 | 1,9 | 1,8 | 0,3 | 0,4 | (0,1) | 0,4 | 2,0 | 4,8
-     Höchste abgeschlossene A
-     Kinder unter 15 Jahren | 1 275,7 | 50,7 | 3,2 | 6,5 | 10,7 | 0,7 | 1,0 | 0,7 | 0,9 | 1,4 | 4,1
-     Pflichtschule/keine Pfli | 1 614,2 | 52,2 | 3,0 | 7,0 | 13,8 | (0,3) | 1,3 | 0,6 | 0,8 | 1,5 | 4,8
-     Lehre/BMS | 3 488,8 | 60,8 | 3,7 | 3,6 | 3,6 | 0,3 | 0,7 | (0,1) | 0,4 | 1,2 | 3,4
-     Höhere Schulen | 1 245,0 | 54,4 | 4,1 | 5,0 | 4,5 | 0,5 | 0,8 | (0,4) | 0,7 | 1,0 | 3,1
-     Akademien, Universität,  | 1 182,7 | 48,6 | 5,5 | 3,8 | 2,8 | 0,6 | 1,4 | (0,4) | 1,1 | 0,9 | 2,1
-     Quelle: STATISTIK AUSTRI
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Vorgaben"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_IST"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_NEU"
-   sheet "'file:///P:/133DG/2020-11%20Religion%20im%20MZ/Datensatz/Auswertungen/Zeitreihe/religion_vz_NEU.xlsx'#Gesamtbev_Religion_Öste"
-   sheet "'file:///P:/133DG/2020-11%20Religion%20im%20MZ/Datensatz/Auswertungen/Zeitreihe/religion_vz_NEU.xlsx'#VZ_gesamt"
-   sheet "'file:///P:/133DG/2020-11%20Religion%20im%20MZ/Datensatz/Auswertungen/Zeitreihe/religion_vz_NEU.xlsx'#Input_gesamtbev"
-
-## https://www.statistik.at/fileadmin/pages/439/wechsel_religion_nach_bundesland_2025.ods: HTTP 200, 15,141 bytes
-   sheet 'Tabelle1'
-     Wechsel der Religionszug
-     Anerkanntes Religionsbek | Burgen- land | Kärnten | Nieder- österreich | Ober- österreich | Salzburg | Steier- mark | Tirol | Vorarl- berg | Wien | Öster- reich
-     2011
-     Austritte
-     Römisch-katholisch | 1 483 | 3 700 | 10 842 | 9 249 | 3 575 | 10 629 | 5 101 | 3 228 | 11 216 | 59 023
-     Evangelisch AB und HB | 182 | 738 | 540 | 462 | 289 | 604 | 195 | 145 | 921 | 4 076
-     Altkatholisch | 2 | 7 | 7 | 5 | 4 | 7 | 1 | 3 | 32 | 68
-     Aufnahmen, Wiederaufnahm
-     Römisch-katholisch | 75 | 348 | 800 | 812 | 266 | 958 | 314 | 145 | 782 | 4 521 | 1
-     Evangelisch AB und HB | 50 | 152 | 92 | 130 | 33 | 120 | 29 | 30 | 152 | 788
-     Altkatholisch | 4 | 20 | 17 | 19 | 12 | 8 | 4 | 6 | 41 | 131
-     2012
-     Austritte
-     Römisch-katholisch | 1 133 | 2 938 | 10 672 | 7 886 | 2 726 | 9 225 | 4 345 | 2 747 | 10 639 | 52 336 | 2
-     Evangelisch AB und HB | 155 | 760 | 594 | 479 | 292 | 690 | 232 | 141 | 1 104 | 4 447
-     Altkatholisch | - | 6 | 23 | 3 | 5 | 7 | - | - | 20 | 64
-     Aufnahmen, Wiederaufnahm
-     Römisch-katholisch | 114 | 370 | 734 | 735 | 323 | 969 | 329 | 172 | 731 | 4 477
-     Evangelisch AB und HB | 81 | 203 | 185 | 216 | 60 | 143 | 40 | 6 | 277 | 1 211
-     Altkatholisch | - | 8 | 22 | 18 | 30 | 14 | 1 | 2 | 22 | 117
-     2013
-     Austritte
-     Römisch-katholisch | 1 184 | 3 094 | 10 317 | 9 187 | 3 394 | 10 136 | 4 534 | 2 613 | 10 410 | 54 869
-     Evangelisch AB und HB | 141 | 600 | 561 | 497 | 345 | 679 | 205 | 148 | 957 | 4 133
-     Altkatholisch | - | 10 | 3 | 7 | 8 | 13 | 2 | - | 32 | 75
-     Aufnahmen, Wiederaufnahm
-     Römisch-katholisch | 93 | 346 | 755 | 840 | 298 | 976 | 436 | 204 | 823 | 4 771
-     Evangelisch AB und HB | 43 | 176 | 140 | 167 | 64 | 119 | 20 | 7 | 202 | 938
-     Altkatholisch | - | 5 | 3 | 10 | 22 | 30 | 4 | 3 | 21 | 98
-     2014
-     Austritte
-     Römisch-katholisch | 1 233 | 3 105 | 10 316 | 8 946 | 3 527 | 10 580 | 4 282 | 2 553 | 10 461 | 55 003
-     Evangelisch AB und HB | 184 | 690 | 517 | 570 | 339 | 742 | 271 | 171 | 1 166 | 4 650
-     Altkatholisch | - | 9 | 9 | 1 | 6 | 1 | - | 3 | 28 | 57
-     Aufnahmen, Wiederaufnahm
-     Römisch-katholisch | 83 | 343 | 829 | 864 | 309 | 1 266 | 478 | 193 | 630 | 4 995
-     Evangelisch AB und HB | 48 | 148 | 77 | 145 | 41 | 106 | 30 | 4 | 192 | 791
-     Altkatholisch | 1 | - | 14 | 9 | 23 | 27 | 5 | 3 | 19 | 101
-     2015
-     Austritte
-
-## https://www.statistik.at/fileadmin/pages/439/neu__Religion__1_.ods: HTTP 200, 18,802 bytes
-   sheet 'Tabellenverzeichnis'
-     Tabellenverzeichnis
-     A1 | Bevölkerung nach dem Rel
-     A2 | Bevölkerung 2001 nach Re
-   sheet 'A1'
-     Bevölkerung nach dem Rel
-     Religionsbekenntnis | Österreich | Burgen- land | Kärnten | Nieder- österreich | Ober- österreich | Salz- burg | Steier- mark | Tirol | Vorarl- berg | Wien
-     1951
-     Insgesamt | 6 933 905 | 276 136 | 474 764 | 1 400 471 | 1 108 720 | 327 232 | 1 109 335 | 427 465 | 193 657 | 1 616 125
-     Römisch-katholisch | 6 170 084 | 236 182 | 411 174 | 1 324 327 | 1 006 951 | 290 554 | 991 958 | 404 762 | 184 819 | 1 319 357
-     Evangelisch1 | 429 493 | 38 995 | 46 399 | 45 005 | 72 493 | 18 937 | 62 864 | 12 835 | 5 880 | 126 085
-     Altkatholisch | 32 919 | 89 | 643 | 2 664 | 1 911 | 1 262 | 2 595 | 332 | 89 | 23 334
-     Israelitisch | 11 224 | 39 | 16 | 206 | 500 | 1 079 | 165 | 50 | 169 | 9 000
-     Sonstiges2 | 23 093 | 133 | 2 890 | 1 443 | 3 832 | 2 965 | 2 513 | 1 277 | 632 | 7 408
-     Ohne Bekenntnis | 264 014 | 445 | 13 361 | 26 429 | 22 685 | 11 911 | 49 031 | 8 025 | 1 948 | 130 179
-     Ohne Angabe | 3 078 | 253 | 281 | 397 | 348 | 524 | 209 | 184 | 120 | 762
-     1961
-     Insgesamt | 7 073 807 | 271 001 | 495 226 | 1 374 012 | 1 131 623 | 347 292 | 1 137 865 | 462 899 | 226 323 | 1 627 566
-     Römisch-katholisch | 6 295 075 | 231 265 | 424 742 | 1 291 736 | 1 036 920 | 312 594 | 1 018 788 | 440 029 | 216 064 | 1 322 937
-     Evangelisch1 | 438 663 | 38 935 | 52 827 | 47 575 | 62 981 | 18 618 | 65 549 | 13 179 | 6 897 | 132 102
-     Altkatholisch | 29 652 | 43 | 992 | 2 656 | 1 567 | 1 390 | 2 217 | 309 | 92 | 20 386
-     Israelitisch | 9 049 | 30 | 15 | 201 | 147 | 117 | 136 | 45 | 4 | 8 354
-     Sonstiges2 | 31 386 | 189 | 2 253 | 2 332 | 4 128 | 2 389 | 5 283 | 1 986 | 1 356 | 11 470
-     Ohne Bekenntnis | 266 009 | 487 | 14 143 | 29 072 | 25 442 | 12 033 | 45 394 | 7 107 | 1 809 | 130 522
-     Unbekannt | 3 973 | 52 | 254 | 440 | 438 | 151 | 498 | 244 | 101 | 1 795
-     1971
-     Insgesamt | 7 491 526 | 272 319 | 526 759 | 1 420 816 | 1 229 972 | 405 115 | 1 195 023 | 544 483 | 277 154 | 1 619 885
-     Römisch-katholisch | 6 548 316 | 230 827 | 446 053 | 1 312 906 | 1 108 527 | 357 263 | 1 064 865 | 508 075 | 251 521 | 1 268 279
-     Evangelisch1 | 447 070 | 38 750 | 56 993 | 50 333 | 65 443 | 22 016 | 64 882 | 14 875 | 7 767 | 126 011
-     Altkatholisch | 26 992 | 77 | 1 127 | 2 955 | 1 613 | 1 289 | 1 935 | 708 | 330 | 16 958
-     Israelitisch | 8 461 | 35 | 34 | 254 | 108 | 119 | 135 | 13 | 16 | 7 747
-     Islamisch | 22 267 | 57 | 241 | 3 920 | 2 195 | 1 376 | 944 | 2 150 | 5 495 | 5 889
-     Sonstiges | 74 440 | 500 | 3 660 | 8 201 | 11 304 | 6 147 | 7 005 | 6 170 | 6 513 | 24 940
-     Ohne Bekenntnis | 321 218 | 727 | 16 664 | 35 182 | 35 829 | 14 851 | 50 624 | 8 621 | 2 748 | 155 972
-     Unbekannt | 42 762 | 1 346 | 1 987 | 7 065 | 4 953 | 2 054 | 4 633 | 3 871 | 2 764 | 14 089
-     1981
-     Insgesamt | 7 555 338 | 269 771 | 536 179 | 1 427 849 | 1 269 540 | 442 301 | 1 186 525 | 586 663 | 305 164 | 1 531 346
-     Römisch-katholisch | 6 372 645 | 227 654 | 445 091 | 1 284 237 | 1 112 222 | 375 885 | 1 029 594 | 537 105 | 266 082 | 1 094 775
-     Evangelisch1 | 423 162 | 38 256 | 58 450 | 50 110 | 64 121 | 23 632 | 59 695 | 15 485 | 8 000 | 105 413
-     Altkatholisch | 25 547 | 112 | 1 197 | 2 819 | 1 832 | 1 470 | 1 972 | 843 | 605 | 14 697
-     Israelitisch | 7 123 | 30 | 12 | 234 | 58 | 102 | 96 | 53 | 11 | 6 527
-     Islamisch | 76 939 | 380 | 622 | 11 747 | 8 308 | 4 231 | 1 440 | 7 727 | 14 385 | 28 099
-     Sonstiges | 118 866 | 795 | 4 506 | 14 391 | 14 528 | 9 896 | 7 056 | 8 349 | 9 504 | 49 841
-     Ohne Bekenntnis | 452 039 | 1 848 | 23 100 | 55 586 | 55 177 | 23 427 | 67 781 | 13 076 | 4 752 | 207 292
-     Unbekannt | 79 017 | 696 | 3 201 | 8 725 | 13 294 | 3 658 | 18 891 | 4 025 | 1 825 | 24 702
-   sheet 'A2'
-     Bevölkerung 2001 nach Re
-     Religionsbekenntnis | Bevölkerung | Staatsangehörigkeit
-     Österreich | Nicht- Österreich | Nicht- Österreich in %
-     Insgesamt | 8 032 926 | 7 322 000 | 710 926 | 8,9
-     Katholisch | 5 917 274 | 5 754 672 | 162 602 | 2,7
-     römisch-katholisch | 5 915 421 | 5 753 617 | 161 804 | 2,7
-     griechisch-katholisch | 1 089 | 660 | 429 | 39,4
-     armenisch-katholisch | 266 | 137 | 129 | 48,5
-     bulgarisch-katholisch | 5 | 5 | - | -
-     rumänisch-katholisch | 20 | 10 | 10 | 50,0
-     russisch-katholisch | 8 | 1 | 7 | 87,5
-     syrisch-katholisch | 283 | 170 | 113 | 39,9
-     ukrainisch-katholisch | 23 | 18 | 5 | 21,7
-     uniert (ohne nähere Anga | 159 | 54 | 105 | 66,0
-     Ostkirchen | 179 472 | 43 450 | 136 022 | 75,8
-     Griechisch orientalisch  | 174 385 | 39 836 | 134 549 | 77,2
-     orthodox (ohne nähere An | 74 253 | 13 233 | 61 020 | 82,2
-     griechisch-orthodox | 18 533 | 7 066 | 11 467 | 61,9
-     bulgarisch-orthodox | 1 135 | 457 | 678 | 59,7
-     rumänisch-orthodox | 2 819 | 1 064 | 1 755 | 62,3
-     russisch-orthodox | 3 340 | 1 029 | 2 311 | 69,2
-     serbisch-orthodox | 74 198 | 16 976 | 57 222 | 77,1
-     ukrainisch-orthodox | 107 | 11 | 96 | 89,7
-     Altorientalisch | 5 087 | 3 614 | 1 473 | 29,0
-     syrisch-orthodox | 1 589 | 1 400 | 189 | 11,9
-     koptisch-orthodox | 1 633 | 1 181 | 452 | 27,7
-     armenisch-apostolisch | 1 824 | 1 020 | 804 | 44,1
-     äthiopisch-orthodox | 41 | 13 | 28 | 68,3
-     Evangelisch | 376 150 | 343 656 | 32 494 | 8,6
-     evangelisch (ohne nähere | 2 128 | 547 | 1 581 | 74,3
-     evangelisch A.B. | 354 559 | 328 043 | 26 516 | 7,5
-     evangelisch H.B. | 19 463 | 15 066 | 4 397 | 22,6
-     Andere christliche und c | 69 227 | 57 939 | 11 288 | 16,3
-     Im ökumenischen Rat vert | 18 201 | 15 176 | 3 025 | 16,6
-     altkatholisch | 14 621 | 13 451 | 1 170 | 8,0
-     anglikanisch | 2 317 | 808 | 1 509 | 65,1
-     methodistisch | 1 263 | 917 | 346 | 27,4
-     Sonstige christliche (ch | 51 026 | 42 763 | 8 263 | 16,2
-     baptistisch | 2 108 | 1 243 | 865 | 41,0
-     evangelikal | 4 892 | 3 839 | 1 053 | 21,5
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Vorgaben"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_IST"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_NEU"
-
-## https://www.statistik.at/fileadmin/pages/402/Religion.ods: HTTP 200, 18,619 bytes
-   sheet 'Tabellenverzeichnis'
-     Tabellenverzeichnis
-     A1 | Bevölkerung nach dem Rel
-     A2 | Bevölkerung 2001 nach Re
-   sheet 'A1'
-     Bevölkerung nach dem Rel
-     Religionsbekenntnis | Österreich | Burgen- land | Kärnten | Nieder- österreich | Ober- österreich | Salz- burg | Steier- mark | Tirol | Vorarl- berg | Wien
-     1951
-     Insgesamt | 6 933 905 | 276 136 | 474 764 | 1 400 471 | 1 108 720 | 327 232 | 1 109 335 | 427 465 | 193 657 | 1 616 125
-     Römisch-katholisch | 6 170 084 | 236 182 | 411 174 | 1 324 327 | 1 006 951 | 290 554 | 991 958 | 404 762 | 184 819 | 1 319 357
-     Evangelisch1) | 429 493 | 38 995 | 46 399 | 45 005 | 72 493 | 18 937 | 62 864 | 12 835 | 5 880 | 126 085
-     Altkatholisch | 32 919 | 89 | 643 | 2 664 | 1 911 | 1 262 | 2 595 | 332 | 89 | 23 334
-     Israelitisch | 11 224 | 39 | 16 | 206 | 500 | 1 079 | 165 | 50 | 169 | 9 000
-     Sonstiges2) | 23 093 | 133 | 2 890 | 1 443 | 3 832 | 2 965 | 2 513 | 1 277 | 632 | 7 408
-     Ohne Bekenntnis | 264 014 | 445 | 13 361 | 26 429 | 22 685 | 11 911 | 49 031 | 8 025 | 1 948 | 130 179
-     Ohne Angabe | 3 078 | 253 | 281 | 397 | 348 | 524 | 209 | 184 | 120 | 762
-     1961
-     Insgesamt | 7 073 807 | 271 001 | 495 226 | 1 374 012 | 1 131 623 | 347 292 | 1 137 865 | 462 899 | 226 323 | 1 627 566
-     Römisch-katholisch | 6 295 075 | 231 265 | 424 742 | 1 291 736 | 1 036 920 | 312 594 | 1 018 788 | 440 029 | 216 064 | 1 322 937
-     Evangelisch1) | 438 663 | 38 935 | 52 827 | 47 575 | 62 981 | 18 618 | 65 549 | 13 179 | 6 897 | 132 102
-     Altkatholisch | 29 652 | 43 | 992 | 2 656 | 1 567 | 1 390 | 2 217 | 309 | 92 | 20 386
-     Israelitisch | 9 049 | 30 | 15 | 201 | 147 | 117 | 136 | 45 | 4 | 8 354
-     Sonstiges2) | 31 386 | 189 | 2 253 | 2 332 | 4 128 | 2 389 | 5 283 | 1 986 | 1 356 | 11 470
-     Ohne Bekenntnis | 266 009 | 487 | 14 143 | 29 072 | 25 442 | 12 033 | 45 394 | 7 107 | 1 809 | 130 522
-     Unbekannt | 3 973 | 52 | 254 | 440 | 438 | 151 | 498 | 244 | 101 | 1 795
-     1971
-     Insgesamt | 7 491 526 | 272 319 | 526 759 | 1 420 816 | 1 229 972 | 405 115 | 1 195 023 | 544 483 | 277 154 | 1 619 885
-     Römisch-katholisch | 6 548 316 | 230 827 | 446 053 | 1 312 906 | 1 108 527 | 357 263 | 1 064 865 | 508 075 | 251 521 | 1 268 279
-     Evangelisch1) | 447 070 | 38 750 | 56 993 | 50 333 | 65 443 | 22 016 | 64 882 | 14 875 | 7 767 | 126 011
-   sheet 'A2'
-     Bevölkerung 2001 nach Re
-     Religionsbekenntnis | Bevölkerung | Staatsangehörigkeit
-     Österreich | Nicht- Österreich | Nicht- Österreich in %
-     Insgesamt | 8 032 926 | 7 322 000 | 710 926 | 8,9
-     Katholisch | 5 917 274 | 5 754 672 | 162 602 | 2,7
-     römisch-katholisch | 5 915 421 | 5 753 617 | 161 804 | 2,7
-     griechisch-katholisch | 1 089 | 660 | 429 | 39,4
-     armenisch-katholisch | 266 | 137 | 129 | 48,5
-     bulgarisch-katholisch | 5 | 5 | - | -
-     rumänisch-katholisch | 20 | 10 | 10 | 50,0
-     russisch-katholisch | 8 | 1 | 7 | 87,5
-     syrisch-katholisch | 283 | 170 | 113 | 39,9
-     ukrainisch-katholisch | 23 | 18 | 5 | 21,7
-     uniert (ohne nähere Anga | 159 | 54 | 105 | 66,0
-     Ostkirchen | 179 472 | 43 450 | 136 022 | 75,8
-     Griechisch orientalisch  | 174 385 | 39 836 | 134 549 | 77,2
-     orthodox (ohne nähere An | 74 253 | 13 233 | 61 020 | 82,2
-     griechisch-orthodox | 18 533 | 7 066 | 11 467 | 61,9
-     bulgarisch-orthodox | 1 135 | 457 | 678 | 59,7
-     rumänisch-orthodox | 2 819 | 1 064 | 1 755 | 62,3
-     russisch-orthodox | 3 340 | 1 029 | 2 311 | 69,2
-     serbisch-orthodox | 74 198 | 16 976 | 57 222 | 77,1
-     ukrainisch-orthodox | 107 | 11 | 96 | 89,7
-     Altorientalisch | 5 087 | 3 614 | 1 473 | 29,0
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Vorgaben"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_IST"
-   sheet "'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_NEU"
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: religion: 19 people in blanked cells, left out
+  Beltinci: religion: 10 people in blanked cells, left out
+  Beltinci: language: 13 people in blanked cells, left out
+  Benedikt: religion: 3 people in blanked cells, left out
+  Benedikt: language: 6 people in blanked cells, left out
+  Bistrica ob Sotli: religion: 6 people in blanked cells, left out
+  Bistrica ob Sotli: language: 4 people in blanked cells, left out
+  Bled: language: 10 people in blanked cells, left out
+  Bloke: religion: 7 people in blanked cells, left out
+  Bloke: language: 5 people in blanked cells, left out
+  Bohinj: religion: 71 people in blanked cells, left out
+  Bohinj: language: 5 people in blanked cells, left out
+  Borovnica: religion: 70 people in blanked cells, left out
+  Borovnica: language: 11 people in blanked cells, left out
+  Bovec: religion: 21 people in blanked cells, left out
+  Bovec: language: 8 people in blanked cells, left out
+  Braslovče: religion: 17 people in blanked cells, left out
+  Braslovče: language: 9 people in blanked cells, left out
+  Brda: religion: 8 people in blanked cells, left out
+  Brda: language: 21 people in blanked cells, left out
+  Cankova: religion: 86 people in blanked cells, left out
+  Cankova: language: 4 people in blanked cells, left out
+  Cerklje na Gorenjskem: religion: 44 people in blanked cells, left out
+  Cerklje na Gorenjskem: language: 46 people in blanked cells, left out
+  Cerknica: language: 5 people in blanked cells, left out
+  Cerkno: religion: 8 people in blanked cells, left out
+  Cerkno: language: 6 people in blanked cells, left out
+  Cerkvenjak: ethnicity: 28 people in blanked cells, left out
+  Cerkvenjak: religion: 6 people in blanked cells, left out
+  Cerkvenjak: language: 9 people in blanked cells, left out
+  Destrnik: religion: 3 people in blanked cells, left out
+  Destrnik: language: 22 people in blanked cells, left out
+  Divača: religion: 6 people in blanked cells, left out
+  Divača: language: 22 people in blanked cells, left out
+  Dobje: ethnicity: 11 people in blanked cells, left out
+  Dobje: religion: 2 people in blanked cells, left out
+  Dobje: language: 4 people in blanked cells, left out
+  Dobrepolje: religion: 5 people in blanked cells, left out
+  Dobrepolje: language: 16 people in blanked cells, left out
+  Dobrna: ethnicity: 30 people in blanked cells, left out
+  Dobrna: religion: 7 people in blanked cells, left out
+  Dobrna: language: 11 people in blanked cells, left out
+  Dobrovnik/Dobronak: religion: 13 people in blanked cells, left out
+  Dobrovnik/Dobronak: language: 13 people in blanked cells, left out
+  Dol pri Ljubljani: language: 4 people in blanked cells, left out
+  Dolenjske Toplice: religion: 9 people in blanked cells, left out
+  Dolenjske Toplice: language: 4 people in blanked cells, left out
+  Dornava: religion: 8 people in blanked cells, left out
+  Dornava: language: 5 people in blanked cells, left out
+  Dravograd: language: 5 people in blanked cells, left out
+  Duplek: religion: 5 people in blanked cells, left out
+  Duplek: language: 6 people in blanked cells, left out
+  Gorenja vas - Poljane: language: 7 people in blanked cells, left out
+  Gorišnica: religion: 7 people in blanked cells, left out
+  Gorišnica: language: 8 people in blanked cells, left out
+  Gornji Grad: religion: 10 people in blanked cells, left out
+  Gornji Petrovci: religion: 2 people in blanked cells, left out
+  Gornji Petrovci: language: 30 people in blanked cells, left out
+  Grad: religion: 2 people in blanked cells, left out
+  Grad: language: 5 people in blanked cells, left out
+  Hajdina: religion: 19 people in blanked cells, left out
+  Hajdina: language: 5 people in blanked cells, left out
+  Hodoš/Hodos: religion: 13 people in blanked cells, left out
+  Hodoš/Hodos: language: 5 people in blanked cells, left out
+  Horjul: religion: 19 people in blanked cells, left out
+  Horjul: language: 5 people in blanked cells, left out
+  Hrastnik: language: 12 people in blanked cells, left out
+  Hrpelje - Kozina: religion: 82 people in blanked cells, left out
+  Hrpelje - Kozina: language: 6 people in blanked cells, left out
+  Idrija: religion: 54 people in blanked cells, left out
+  Idrija: language: 10 people in blanked cells, left out
+  Ig: language: 4 people in blanked cells, left out
+  Jezersko: religion: 9 people in blanked cells, left out
+  Jezersko: language: 5 people in blanked cells, left out
+  Juršinci: ethnicity: 155 people in blanked cells, left out
+  Juršinci: religion: 2 people in blanked cells, left out
+  Juršinci: language: 4 people in blanked cells, left out
+slovenia_census: Juršinci: ethnicity rows make 2,051 and blanked cells 155 of 2,206
