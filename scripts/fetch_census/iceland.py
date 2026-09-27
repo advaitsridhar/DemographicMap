@@ -12,9 +12,11 @@ today's 62 municipalities, which is the wrong vintage for every merged one.
 **admin2** -- table MAN09000 ("Population by municipality, age and sex 1
 December 1997-2022"), which keeps every year in the municipalities of that
 year: 1 December 2017, the last count before the 2018 mergers, for every
-municipality merged since. One that has not been -- its number is still in
-today's list, and it took in no other (``ABSORBED`` names the two that did
-while keeping their number) -- takes MAN02005's latest year instead. Single years
+municipality merged since. One that has not been takes MAN02005's latest year
+instead: it is in today's list under its own name, and under its own number
+or, where it was renumbered (Hornafjörður, 7708 in 2017), a number whose
+count for 1 January 2018 in today's division is its own of a month before,
+and it took in no other (``ABSORBED``). Single years
 of age, with an "unknown" row that is left out of the median and kept in the
 population.
 
@@ -23,7 +25,9 @@ MAN02005 (current municipalities, 1 January of each year) for the latest year,
 summed by the region every municipality's number begins with -- the
 statistical numbering Hagstofa gives municipalities: 0 and 1 the capital
 region, 2 Suðurnes, 3 the West, 4 the Westfjords, 5 the Northwest, 6 the
-Northeast, 7 the East, 8 the South. The regions must make the country.
+Northeast, 7 the East, 8 the South. A municipality renumbered into another
+region since 2017 is summed into the region the map draws it in, which is
+the one its 2017 number gives. The regions must make the country.
 
 **Religion** is registered for everyone (Registers Iceland's record of
 religious and life-stance organisations) and Hagstofa publishes it; whether
@@ -60,12 +64,12 @@ VINTAGE = 2017
 REGION = {"0": "Capital Region", "1": "Capital Region", "2": "Southern Peninsula",
           "3": "Western Region", "4": "Westfjords", "5": "Northwestern Region",
           "6": "Northeastern Region", "7": "Eastern Region", "8": "Southern Region"}
-# Municipalities that kept their number while taking in another after 2017;
-# a merger otherwise gets a new number (Suðurnesjabær 2510, Múlaþing 7400,
-# Skagafjörður 5716, Húnabyggð 5613, the new Stykkishólmur 3716), and the
-# municipalities it replaced drop out of today's list.
-ABSORBED = {"7300": "Fjarðabyggð took in Breiðdalshreppur in 2018",
-            "4607": "Vesturbyggð took in Tálknafjarðarhreppur in 2024"}
+# Municipalities that kept their number and name while taking in another
+# after 2017. A merger otherwise gets a new number (Suðurnesjabær 2510,
+# Múlaþing 7400, Skagafjörður 5716, Húnabyggð 5613) or a new name on an old
+# number (the Vesturbyggð of 2024 on Tálknafjarðarhreppur's 4604), which the
+# name test catches; and the count test stops the run on one missing here.
+ABSORBED = {"7300": "Fjarðabyggð took in Breiðdalshreppur in 2018"}
 # Hagstofa's name -> the boundary file's, where they differ by more than
 # accents: two municipalities it calls a town (bær) and the office a
 # kaupstaður or the reverse, and two names the boundary file cuts off.
@@ -128,11 +132,14 @@ def main() -> int:
     bound, _m, _l, _p = bind_rows("ISL", "admin2",
                                   {c: (names[c], REGION[c[0]]) for c in units}, aliases=ALIASES)
     # Today's municipalities, which the regions below are summed from, and
-    # which also say which 2017 municipalities are unchanged: one whose number
-    # is still in today's list and that took in no other (ABSORBED) is the
-    # same territory today. Comparing counts cannot say so: MAN02005's
-    # figures for 2018 are recomputed by the method of 2024, and differ from
-    # the 2017 table's by more than a merger would in places like Reykjavík.
+    # which also say which 2017 municipalities are unchanged: one still in
+    # today's list under its own name that took in no other (ABSORBED) is the
+    # same territory today, under its own number or a new one. MAN02005 lays
+    # every year out in today's division, so its count for 1 January 2018 is,
+    # for an unchanged municipality, its own count of a month before; that
+    # finds a renumbered one and stops the run on a merger nobody listed. The
+    # counts differ a little everywhere, since MAN02005's are recomputed by
+    # the method Hagstofa adopted in 2024.
     meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE)["variables"]}
     year = meta["Ár"]["values"][-1]
     now_people, now_totals, now_names = read(NOW, year)
@@ -142,22 +149,30 @@ def main() -> int:
         {"code": "Ár", "selection": {"filter": "item", "values": [str(VINTAGE + 1)]}},
         {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
     ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
-    unchanged = {c for c in units if now_totals.get(c) and c not in ABSORBED}
-    log(f"  {len(unchanged)} of {len(units)} municipalities keep their number and took in "
-        f"no other since {VINTAGE}; merged: "
-        f"{sorted(names[c] for c in units if c not in unchanged)}")
-    drift = sorted((abs(then.get(c, 0) - totals[c]) / totals[c], names[c]) for c in unchanged)
-    log(f"  their count in today's division against their own, 1 January {VINTAGE + 1} "
-        f"against 1 December {VINTAGE}: largest gaps "
-        + ", ".join(f"{n} {100 * d:.1f}%" for d, n in drift[-5:])
-        + " (Hagstofa revised its method in 2024, most where many residents are foreign)")
-    # The revision took people off the register; a merger adds them. A kept
-    # number whose count in today's division is well above its own took in
-    # a municipality ABSORBED does not name, and the run stops.
-    grown = sorted(names[c] for c in unchanged
-                   if then.get(c, 0) - totals[c] > 0.08 * totals[c] + 30)
+
+    def same(c: str, n: str) -> bool:
+        return abs(then.get(n, 0) - totals[c]) <= 0.08 * totals[c] + 30
+
+    by_name = {fold(n): c for c, n in now_names.items() if now_totals.get(c)}
+    today: dict[str, str] = {}
+    for c in units:
+        n = by_name.get(fold(names[c]))
+        if c in ABSORBED or n is None:
+            continue
+        if n != c and not same(c, n):
+            continue                          # the name went to a merger
+        today[c] = n
+    log(f"  {len(today)} of {len(units)} municipalities are the same territory today; "
+        f"renumbered: {sorted(f'{names[c]} {c}->{n}' for c, n in today.items() if n != c)}; "
+        f"merged: {sorted(names[c] for c in units if c not in today)}")
+    grown = sorted(f"{names[c]} {then.get(n, 0):,.0f} against {totals[c]:,.0f}"
+                   for c, n in today.items() if not same(c, n))
     if grown:
-        raise SystemExit(f"iceland: kept numbers that grew by a merger, not in ABSORBED: {grown}")
+        raise SystemExit(f"iceland: a municipality's 1 January {VINTAGE + 1} count in today's "
+                         f"division is far from its own; a merger not in ABSORBED? {grown}")
+    drift = sorted((abs(then[n] - totals[c]) / totals[c], names[c]) for c, n in today.items())
+    log(f"  1 January {VINTAGE + 1} in today's division against 1 December {VINTAGE}: "
+        "largest gaps " + ", ".join(f"{m} {100 * d:.1f}%" for d, m in drift[-5:]))
 
     records = []
     date = f"1 December {VINTAGE}"
@@ -165,13 +180,13 @@ def main() -> int:
         sid = bound.get(code)
         if sid is None:
             continue
-        if code in unchanged:
-            fields = now_people[code].fields(
+        if code in today:
+            fields = now_people[today[code]].fields(
                 year=int(year), source=f"{SOURCE}, MAN02005", url=NOW_URL,
                 date=f"1 January {year}", extra_note=(
                     f" The municipality has not been merged since {VINTAGE}, the division the "
                     "map draws, so this is its latest count."))
-            fields["population"]["value"] = int(round(now_totals[code]))
+            fields["population"]["value"] = int(round(now_totals[today[code]]))
         else:
             fields = people[code].fields(
                 year=VINTAGE, source=f"{SOURCE}, MAN09000", url=OLD_URL, date=date,
@@ -189,9 +204,14 @@ def main() -> int:
     now_units = sorted(c for c, n in now_totals.items() if c != "9999" and n > 0)
     regions: dict[str, AgeSex] = defaultdict(AgeSex)
     region_total: dict[str, float] = defaultdict(float)
+    drawn_in = {n: REGION[c[0]] for c, n in today.items()}
+    moved = sorted(f"{now_names[n]} ({drawn_in[n]}, numbered in {REGION[n[0]]})"
+                   for n in drawn_in if REGION[n[0]] != drawn_in[n])
+    log(f"  summed into the region the map draws them in, not their number's: {moved}")
     for code in now_units:
-        regions[REGION[code[0]]] += now_people[code]
-        region_total[REGION[code[0]]] += now_totals[code]
+        region = drawn_in.get(code, REGION[code[0]])
+        regions[region] += now_people[code]
+        region_total[region] += now_totals[code]
     check_parts(dict(region_total), now_totals["9999"], f"MAN02005 {year}: regions -> Iceland", 0)
     admin1 = {fold(u["name"]): u for u in load_units("ISL", "admin1")}
     for region, ages in sorted(regions.items()):
