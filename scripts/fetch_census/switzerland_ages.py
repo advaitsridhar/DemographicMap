@@ -292,6 +292,7 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
             records.append(record(
                 f"CHE-2009-{fold(name)}", shape["name"], level="admin2", parent=shape["parent"],
                 country="CHE", match_by="shape_id", shape_id=shape["id"],
+                population=gap(NOT_AVAILABLE, note),
                 median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note)))
             continue
         m, f, total = Counter(), Counter(), 0.0

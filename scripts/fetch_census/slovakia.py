@@ -107,8 +107,19 @@ def cube(name: str, path: str) -> list[tuple[dict[str, tuple[str, str]], float]]
     return unstack(payload)
 
 
+# DATAcube's labels where they are not the district's name as written: "Śaľa"
+# with an S acute (U+015A) for the S caron of Šaľa.
+OFFICE_SPELLINGS = {"Śaľa": "Šaľa"}
+
+
 def district_name(label: str) -> str:
-    return label.replace("District of ", "").strip()
+    """The district's name from an office or boundary-file label.
+
+    DATAcube writes some names with a no-break space ("Dunajská\\xa0Streda"),
+    which folds the same but is not the name; spaces are made plain.
+    """
+    name = " ".join(label.replace("\xa0", " ").replace("District of ", "").split())
+    return OFFICE_SPELLINGS.get(name, name)
 
 
 def bind_districts(office: dict[str, str]) -> dict[str, dict[str, Any]]:
