@@ -1,80 +1,485 @@
-== xls https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843 14 3
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 18,372 bytes disposition=attachment; filename="A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx"
-  1 sheets: ['Table Α01']
-  -- sheet 'Table Α01': 148 rows x 7 cols
-    Πίνακας Α01. Απογραφή Πληθυσ
-    Σύνολο Χώρας, Περιφέρειες
-    Table Α01. 2021 Population C
-    Greece total, Regions
-    Γεωγραφικό επίπεδο Geographi | Γεωγραφικός Κωδικός Geograph | Ομάδες ηλικιών | Σύνολο Total | Φύλο Sex |  | Age groups
-     |  |  |  | Άρρενες Males | Θήλεις Females
-    0 | 000 | ΣΥΝΟΛΟ ΧΩΡΑΣ | 10482487 | 5125977 | 5356510 | GREECE TOTAL
-    0 | 000 | 0-9 | 878491 | 451492 | 426999 | 0-9
-    0 | 000 | 10-19 | 1068216 | 551148 | 517068 | 10-19
-    0 | 000 | 20-29 | 1053304 | 546929 | 506375 | 20-29
-    0 | 000 | 30-39 | 1256393 | 633913 | 622480 | 30-39
-    0 | 000 | 40-49 | 1596028 | 797720 | 798308 | 40-49
-    0 | 000 | 50-59 | 1543340 | 753596 | 789744 | 50-59
-    0 | 000 | 60-69 | 1324635 | 630150 | 694485 | 60-69
-== xlsrow https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843 0 . 60
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 18,372 bytes disposition=attachment; filename="A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx"
-    r0: Πίνακας Α01. Απογραφή 
-    r1: Σύνολο Χώρας, Περιφέρε
-    r2: Table Α01. 2021 Popula
-    r3: Greece total, Regions
-    r4: 
-    r5: Γεωγραφικό επίπεδο Geo | Γεωγραφικός Κωδικός Ge | Ομάδες ηλικιών | Σύνολο Total | Φύλο Sex |  | Age groups
-    r6:  |  |  |  | Άρρενες Males | Θήλεις Females
-    r7: 
-    r8: 0 | 000 | ΣΥΝΟΛΟ ΧΩΡΑΣ | 10482487 | 5125977 | 5356510 | GREECE TOTAL
-    r9: 0 | 000 | 0-9 | 878491 | 451492 | 426999 | 0-9
-    r10: 0 | 000 | 10-19 | 1068216 | 551148 | 517068 | 10-19
-    r11: 0 | 000 | 20-29 | 1053304 | 546929 | 506375 | 20-29
-    r12: 0 | 000 | 30-39 | 1256393 | 633913 | 622480 | 30-39
-    r13: 0 | 000 | 40-49 | 1596028 | 797720 | 798308 | 40-49
-    r14: 0 | 000 | 50-59 | 1543340 | 753596 | 789744 | 50-59
-    r15: 0 | 000 | 60-69 | 1324635 | 630150 | 694485 | 60-69
-    r16: 0 | 000 | 70-79 | 996037 | 455938 | 540099 | 70-79
-    r17: 0 | 000 | 80+ | 766043 | 305091 | 460952 | 80+
-    r18: 3 | 111 | ΠΕΡΙΦΕΡΕΙΑ ΑΝΑΤΟΛΙΚΗΣ  | 562201 | 275804 | 286397 | REGION OF ANATOLIKI MA
-    r19: 3 | 111 | 0-9 | 46726 | 24052 | 22674 | 0-9
-    r20: 3 | 111 | 10-19 | 61221 | 32052 | 29169 | 10-19
-    r21: 3 | 111 | 20-29 | 57914 | 31099 | 26815 | 20-29
-    r22: 3 | 111 | 30-39 | 63512 | 31804 | 31708 | 30-39
-    r23: 3 | 111 | 40-49 | 80204 | 40284 | 39920 | 40-49
-    r24: 3 | 111 | 50-59 | 79747 | 39024 | 40723 | 50-59
-    r25: 3 | 111 | 60-69 | 72661 | 34940 | 37721 | 60-69
-    r26: 3 | 111 | 70-79 | 54808 | 24824 | 29984 | 70-79
-    r27: 3 | 111 | 80+ | 45408 | 17725 | 27683 | 80+
-    r28: 3 | 112 | ΠΕΡΙΦΕΡΕΙΑ ΚΕΝΤΡΙΚΗΣ Μ | 1795669 | 867180 | 928489 | REGION OF KENTRIKI MAK
-    r29: 3 | 112 | 0-9 | 147159 | 75361 | 71798 | 0-9
-    r30: 3 | 112 | 10-19 | 190795 | 97605 | 93190 | 10-19
-    r31: 3 | 112 | 20-29 | 189447 | 95703 | 93744 | 20-29
-    r32: 3 | 112 | 30-39 | 203058 | 100682 | 102376 | 30-39
-    r33: 3 | 112 | 40-49 | 269117 | 133371 | 135746 | 40-49
-    r34: 3 | 112 | 50-59 | 269455 | 131259 | 138196 | 50-59
-    r35: 3 | 112 | 60-69 | 225938 | 105972 | 119966 | 60-69
-    r36: 3 | 112 | 70-79 | 169174 | 75276 | 93898 | 70-79
-    r37: 3 | 112 | 80+ | 131526 | 51951 | 79575 | 80+
-    r38: 3 | 121 | ΠΕΡΙΦΕΡΕΙΑ ΔΥΤΙΚΗΣ ΜΑΚ | 254595 | 126869 | 127726 | REGION OF DYTIKI MAKED
-    r39: 3 | 121 | 0-9 | 19394 | 10011 | 9383 | 0-9
-    r40: 3 | 121 | 10-19 | 25670 | 13184 | 12486 | 10-19
-    r41: 3 | 121 | 20-29 | 23826 | 12771 | 11055 | 20-29
-    r42: 3 | 121 | 30-39 | 26704 | 13606 | 13098 | 30-39
-    r43: 3 | 121 | 40-49 | 35631 | 17870 | 17761 | 40-49
-    r44: 3 | 121 | 50-59 | 39942 | 20099 | 19843 | 50-59
-    r45: 3 | 121 | 60-69 | 36282 | 18304 | 17978 | 60-69
-    r46: 3 | 121 | 70-79 | 24460 | 11688 | 12772 | 70-79
-    r47: 3 | 121 | 80+ | 22686 | 9336 | 13350 | 80+
-    r48: 3 | 122 | ΠΕΡΙΦΕΡΕΙΑ ΗΠΕΙΡΟΥ | 319991 | 157708 | 162283 | REGION OF IPEIROS
-    r49: 3 | 122 | 0-9 | 24704 | 12543 | 12161 | 0-9
-    r50: 3 | 122 | 10-19 | 31736 | 16294 | 15442 | 10-19
-    r51: 3 | 122 | 20-29 | 29876 | 15172 | 14704 | 20-29
-    r52: 3 | 122 | 30-39 | 33727 | 17036 | 16691 | 30-39
-    r53: 3 | 122 | 40-49 | 44289 | 22428 | 21861 | 40-49
-    r54: 3 | 122 | 50-59 | 44094 | 22065 | 22029 | 50-59
-    r55: 3 | 122 | 60-69 | 44915 | 22700 | 22215 | 60-69
-    r56: 3 | 122 | 70-79 | 36633 | 17467 | 19166 | 70-79
-    r57: 3 | 122 | 80+ | 30017 | 12003 | 18014 | 80+
-    r58: 3 | 231 | ΠΕΡΙΦΕΡΕΙΑ ΘΕΣΣΑΛΙΑΣ | 688255 | 338586 | 349669 | REGION OF THESSALIA
-    r59: 3 | 231 | 0-9 | 56518 | 29219 | 27299 | 0-9
+ess_region: European Social Survey by region, rounds 7-11
+== ESS5e03_6 (id 0189b86b-8aa4-4be3-88ad-39c58b02f19f v89)
+   religion weighted: 326 regions hold 52,932 of 52,926
+   religion n: 326 regions hold 52,458 of 52,458
+   language weighted: 326 regions hold 52,931 of 52,918
+   language n: 326 regions hold 52,458 of 52,458
+== ESS6e02_7 (id 450fa78e-68ab-493f-b169-dbc7ab8ffec2 v85)
+   religion weighted: 351 regions hold 54,670 of 54,674
+   religion n: 351 regions hold 54,673 of 54,673
+   language weighted: 351 regions hold 54,663 of 54,661
+   language n: 351 regions hold 54,673 of 54,673
+== ESS7e02_3 (id 9c96a1b2-b027-43c1-8c74-e883f892d0bb v91)
+   religion weighted: 251 regions hold 40,194 of 40,188
+   religion n: 251 regions hold 40,185 of 40,185
+   language weighted: 251 regions hold 40,190 of 40,181
+   language n: 251 regions hold 40,185 of 40,185
+== ESS8e02_3 (id ffc43f48-e15a-4a1c-8813-47eda377c355 v98)
+   religion weighted: 275 regions hold 44,403 of 44,389
+   religion n: 275 regions hold 44,387 of 44,387
+   language weighted: 275 regions hold 44,381 of 44,383
+   language n: 275 regions hold 44,387 of 44,387
+== ESS9e03_3 (id b2b0bf39-176b-4eca-8d26-3c05ea83d2cb v280)
+   religion weighted: 313 regions hold 49,507 of 49,520
+   religion n: 313 regions hold 49,519 of 49,519
+   language weighted: 313 regions hold 49,524 of 49,531
+   language n: 313 regions hold 49,519 of 49,519
+== ESS10e03_3 (id f37d014a-6958-42d4-b03b-17c29e481d3d v286)
+   religion weighted: 248 regions hold 37,630 of 37,618
+   religion n: 248 regions hold 37,611 of 37,611
+   language weighted: 248 regions hold 37,626 of 37,612
+   language n: 248 regions hold 37,611 of 37,611
+== ESS10SCe03_2 (id 178d1c16-db15-466e-b1a5-cea36109e089 v147)
+   religion weighted: 81 regions hold 22,086 of 22,077
+   religion n: 81 regions hold 22,074 of 22,074
+   language weighted: 81 regions hold 22,087 of 22,076
+   language n: 81 regions hold 22,074 of 22,074
+== ESS11e04_2 (id 242aaa39-3bbb-40f5-98bf-bfb1ce53d8ef v179)
+   religion weighted: 328 regions hold 50,142 of 50,118
+   religion n: 328 regions hold 50,116 of 50,116
+   language weighted: 328 regions hold 50,147 of 50,125
+   language n: 328 regions hold 50,116 of 50,116
+  wrote data/raw/ess/ess_national.json (271 kB)
+  wrote ess_region_tabs.json.gz (116 kB) and ess_national.json
+  ESS5: BE10=112 BE21=307 BE22=166 BE23=221 BE24=178 BE25=207 BE31=56 BE32=178 BE33=153 BE34=49 BE35=77 CH01=246 CH02=356 CH03=208 CH04=238 CH05=249 CH06=161 CH07=48 DK01=397 DK02=209 DK03=355 DK04=411 DK05=204 ES11=101 ES12=42 ES13=25 ES21=81 ES22=29 ES23=9 ES24=58 ES30=305 ES41=116 ES42=84 ES43=53 ES51=248 ES52=186 ES53=28 ES61=408 ES62=45 ES64=5 ES70=62 FR10=262 FR21=48 FR22=36 FR23=50 FR24=58 FR25=46 FR26=38 FR30=123 FR41=90 FR42=46 FR43=47 FR51=107 FR52=95 FR53=88 FR61=98 FR62=78 FR63=29 FR71=184 FR72=38 FR81=59 FR82=108 GR11=149 GR12=429 GR13=89 GR14=200 GR21=105 GR22=64 GR23=178 GR24=161 GR25=150 GR30=904 GR41=52 GR42=75 GR43=159 NL11=56 NL12=81 NL13=51 NL21=149 NL22=219 NL23=25 NL31=140 NL32=305 NL33=355 NL34=41 NL41=281 NL42=126 NO01=315 NO02=111 NO03=299 NO04=256 NO05=273 NO06=152 NO07=142 PT11=849 PT15=82 PT16=388 PT17=752 PT18=79 SE110=251 SE121=64 SE122=37 SE123=78 SE124=62 SE125=41 SE211=42 SE212=32 SE213=55 SE214=11 SE221=20 SE224=198 SE231=55 SE232=268 SE311=48 SE312=44 SE313=49 SE321=38 SE322=22 SE331=42 SE332=40 SI011=88 SI012=259 SI013=50 SI014=194 SI015=32 SI016=53 SI017=116 SI018=35 SI021=280 SI022=138 SI023=93 SI024=65
+  ESS6: BE10=166 BE21=305 BE22=166 BE23=224 BE24=186 BE25=224 BE31=64 BE32=188 BE33=221 BE34=51 BE35=74 CH01=229 CH02=397 CH03=204 CH04=234 CH05=236 CH06=162 CH07=31 DK01=455 DK02=219 DK03=355 DK04=431 DK05=190 ES11=111 ES12=40 ES13=26 ES21=78 ES22=22 ES23=10 ES24=59 ES30=300 ES41=102 ES42=91 ES43=44 ES51=267 ES52=175 ES53=34 ES61=405 ES62=54 ES63=6 ES70=65 FR10=301 FR21=44 FR22=64 FR23=63 FR24=97 FR25=47 FR26=60 FR30=116 FR41=109 FR42=70 FR43=33 FR51=100 FR52=100 FR53=66 FR61=97 FR62=109 FR63=25 FR71=237 FR72=41 FR81=58 FR82=131 IS001=469 IS002=283 ITC1=66 ITC3=26 ITC4=85 ITF1=38 ITF3=81 ITF4=24 ITF5=44 ITF6=74 ITG1=132 ITG2=35 ITH1=17 ITH2=14 ITH3=68 ITH4=5 ITH5=64 ITI1=72 ITI2=14 ITI3=19 ITI4=82 NL11=65 NL12=73 NL13=64 NL21=128 NL22=230 NL23=21 NL31=158 NL32=317 NL33=326 NL34=52 NL41=292 NL42=119 NO01=345 NO02=117 NO03=329 NO04=259 NO05=282 NO06=146 NO07=146 PT11=713 PT15=70 PT16=412 PT17=870 PT18=86 SE110=432 SE121=47 SE122=46 SE123=76 SE124=57 SE125=48 SE211=68 SE212=33 SE213=59 SE214=11 SE221=36 SE224=257 SE231=46 SE232=297 SE311=44 SE312=49 SE313=51 SE321=62 SE322=35 SE331=56 SE332=37 SI011=82 SI012=230 SI013=45 SI014=159 SI015=30 SI016=54 SI017=87 SI018=26 SI021=299 SI022=131 SI023=66 SI024=48
+  ESS7: AT11=58 AT12=324 AT13=361 AT21=113 AT22=253 AT31=331 AT32=124 AT33=146 AT34=85 BE10=149 BE21=256 BE22=151 BE23=212 BE24=159 BE25=224 BE31=61 BE32=237 BE33=184 BE34=57 BE35=79 CH01=252 CH02=368 CH03=200 CH04=237 CH05=259 CH06=148 CH07=68 DK01=400 DK02=218 DK03=365 DK04=370 DK05=149 ES11=142 ES12=52 ES13=31 ES21=92 ES22=26 ES23=18 ES24=67 ES30=243 ES41=114 ES42=91 ES43=56 ES51=265 ES52=196 ES53=40 ES61=351 ES62=55 ES63=4 ES64=5 ES70=77 FR10=281 FR21=17 FR22=84 FR23=53 FR24=83 FR25=51 FR26=54 FR30=91 FR41=47 FR42=65 FR43=22 FR51=112 FR52=138 FR53=42 FR61=121 FR62=139 FR63=49 FR71=147 FR72=45 FR81=91 FR82=185 NL11=50 NL12=85 NL13=70 NL21=130 NL22=241 NL23=64 NL31=133 NL32=278 NL33=397 NL34=48 NL41=273 NL42=150 NO01=355 NO02=100 NO03=283 NO04=180 NO05=248 NO06=140 NO07=130 PT11=470 PT15=69 PT16=309 PT17=303 PT18=114 SE110=424 SE121=68 SE122=43 SE123=60 SE124=45 SE125=40 SE211=80 SE212=39 SE213=41 SE214=14 SE221=35 SE224=206 SE231=71 SE232=271 SE311=56 SE312=51 SE313=44 SE321=54 SE322=40 SE331=60 SE332=49 SI011=91 SI012=182 SI013=55 SI014=167 SI015=31 SI016=54 SI017=102 SI018=41 SI021=286 SI022=104 SI023=75 SI024=36
+  ESS8: AT11=71 AT12=386 AT13=398 AT21=132 AT22=281 AT31=348 AT32=140 AT33=159 AT34=95 BE10=191 BE21=287 BE22=152 BE23=260 BE24=164 BE25=209 BE31=62 BE32=169 BE33=134 BE34=48 BE35=90 CH01=265 CH02=361 CH03=211 CH04=236 CH05=238 CH06=158 CH07=56 ES11=134 ES12=55 ES13=24 ES21=94 ES22=28 ES23=10 ES24=64 ES30=244 ES41=117 ES42=87 ES43=51 ES51=272 ES52=203 ES53=48 ES61=384 ES62=53 ES63=7 ES70=83 FR10=251 FRB0=82 FRC1=62 FRC2=36 FRD1=65 FRD2=56 FRE1=131 FRE2=61 FRF1=68 FRF2=54 FRF3=90 FRG0=126 FRH0=118 FRI1=113 FRI2=26 FRI3=55 FRJ1=99 FRJ2=115 FRK1=60 FRK2=249 FRL0=153 IS001=522 IS002=358 ITC1=231 ITC2=33 ITC3=52 ITC4=367 ITF1=28 ITF3=221 ITF4=241 ITF5=53 ITF6=63 ITG1=192 ITG2=66 ITH1=19 ITH2=14 ITH3=231 ITH4=82 ITH5=276 ITI1=123 ITI2=45 ITI3=98 ITI4=191 NL11=49 NL12=88 NL13=53 NL21=115 NL22=230 NL23=32 NL31=114 NL32=246 NL33=315 NL34=46 NL41=266 NL42=127 NO01=352 NO02=115 NO03=279 NO04=220 NO05=267 NO06=158 NO07=153 PT11=468 PT15=44 PT16=286 PT17=351 PT18=121 SE110=280 SE121=45 SE122=54 SE123=79 SE124=57 SE125=40 SE211=32 SE212=10 SE213=22 SE214=214 SE221=45 SE224=243 SE231=40 SE232=54 SE311=36 SE312=57 SE313=47 SE321=55 SE322=35 SE331=62 SE332=44 SI011=92 SI012=200 SI013=52 SI014=185 SI015=46 SI016=62 SI017=111 SI018=36 SI021=288 SI022=116 SI023=68 SI024=51
+  ESS9: AT11=85 AT12=458 AT13=515 AT21=164 AT22=388 AT31=410 AT32=163 AT33=201 AT34=115 BE10=141 BE21=297 BE22=163 BE23=219 BE24=162 BE25=221 BE31=84 BE32=211 BE33=151 BE34=46 BE35=72 CH01=296 CH02=355 CH03=202 CH04=251 CH05=239 CH06=140 CH07=58 DK01=181 DK02=369 DK03=378 DK04=436 DK05=208 ES11=134 ES12=39 ES13=24 ES21=82 ES22=21 ES23=11 ES24=60 ES30=220 ES41=95 ES42=95 ES43=48 ES51=216 ES52=164 ES53=30 ES61=314 ES62=41 ES63=4 ES64=3 ES70=67 FR10=287 FRB0=81 FRC1=59 FRC2=42 FRD1=52 FRD2=53 FRE1=127 FRE2=73 FRF1=63 FRF2=36 FRF3=66 FRG0=122 FRH0=127 FRI1=120 FRI2=25 FRI3=59 FRJ1=82 FRJ2=97 FRK1=48 FRK2=221 FRL0=170 IS001=684 IS002=177 ITC=727 ITF=628 ITG=274 ITH=593 ITI=523 NL11=62 NL12=51 NL13=70 NL21=132 NL22=221 NL23=34 NL31=132 NL32=225 NL33=350 NL34=37 NL41=244 NL42=115 NO01=349 NO02=88 NO03=252 NO04=200 NO05=259 NO06=116 NO07=142 PT11=352 PT15=54 PT16=251 PT17=287 PT18=111 SE11=336 SE12=225 SE21=133 SE22=218 SE23=304 SE31=142 SE32=66 SE33=115 SI011=78 SI012=217 SI013=52 SI014=165 SI015=43 SI016=48 SI017=103 SI018=34 SI021=318 SI022=126 SI023=78 SI024=56
+  ESS10: BE10=100 BE21=257 BE22=126 BE23=188 BE24=159 BE25=173 BE31=61 BE32=99 BE33=97 BE34=29 BE35=52 CH01=284 CH02=319 CH03=224 CH04=247 CH05=246 CH06=142 CH07=61 EL30=992 EL41=42 EL42=96 EL43=193 EL51=146 EL52=526 EL53=67 EL54=81 EL61=191 EL62=54 EL63=165 EL64=118 EL65=128 FR10=325 FRB0=87 FRC1=35 FRC2=32 FRD1=48 FRD2=74 FRE1=123 FRE2=63 FRF1=50 FRF2=39 FRF3=65 FRG0=126 FRH0=120 FRI1=117 FRI2=22 FRI3=65 FRJ1=76 FRJ2=122 FRK1=40 FRK2=226 FRL0=122 IS001=551 IS002=350 ITC=668 ITF=637 ITG=299 ITH=596 ITI=440 NL11=55 NL12=65 NL13=44 NL21=123 NL22=193 NL23=32 NL31=162 NL32=207 NL33=270 NL34=34 NL41=207 NL42=78 NO02=120 NO06=144 NO07=92 NO08=536 NO09=186 NO0A=333 PT11=594 PT15=100 PT16=503 PT17=505 PT18=136 SI031=74 SI032=202 SI033=50 SI034=159 SI035=38 SI036=48 SI037=98 SI038=30 SI041=305 SI042=119 SI043=67 SI044=62
+  ESS10SC: AT11=63 AT12=414 AT13=387 AT21=135 AT22=286 AT31=365 AT32=111 AT33=154 AT34=88 ES11=146 ES12=47 ES13=32 ES21=141 ES22=35 ES23=22 ES24=65 ES30=338 ES41=153 ES42=91 ES43=50 ES51=377 ES52=215 ES53=48 ES61=371 ES62=74 ES63=4 ES64=5 ES70=69 SE11=523 SE12=406 SE21=182 SE22=323 SE23=452 SE31=182 SE32=97 SE33=122
+  ESS11: AT11=98 AT12=482 AT13=403 AT21=130 AT22=352 AT31=433 AT32=152 AT33=195 AT34=109 BE10=106 BE21=321 BE22=171 BE23=217 BE24=180 BE25=187 BE31=43 BE32=151 BE33=136 BE34=30 BE35=52 CH01=276 CH02=349 CH03=176 CH04=206 CH05=189 CH06=147 CH07=41 EL30=923 EL41=46 EL42=61 EL43=180 EL51=159 EL52=489 EL53=72 EL54=75 EL61=191 EL62=52 EL63=201 EL64=167 EL65=141 ES11=145 ES12=18 ES13=30 ES21=103 ES22=47 ES23=8 ES24=50 ES30=277 ES41=115 ES42=88 ES43=59 ES51=236 ES52=187 ES53=24 ES61=326 ES62=52 ES64=1 ES70=78 FR10=263 FRB0=91 FRC1=47 FRC2=39 FRD1=22 FRD2=61 FRE1=112 FRE2=57 FRF1=58 FRF2=30 FRF3=69 FRG0=131 FRH0=116 FRI1=95 FRI2=23 FRI3=61 FRJ1=61 FRJ2=87 FRK1=45 FRK2=205 FRL0=98 IS001=560 IS002=282 ITC=883 ITF=618 ITG=332 ITH=495 ITI=537 NL11=51 NL12=78 NL13=59 NL21=138 NL22=226 NL23=37 NL31=129 NL32=290 NL33=300 NL34=46 NL41=229 NL42=112 NO02=92 NO06=130 NO07=108 NO08=454 NO09=215 NO0A=338 PT11=486 PT15=46 PT16=371 PT17=387 PT18=83 SE11=237 SE12=194 SE21=104 SE22=184 SE23=250 SE31=105 SE32=53 SE33=103 SI031=67 SI032=182 SI033=49 SI034=166 SI035=22 SI036=51 SI037=99 SI038=19 SI041=307 SI042=123 SI043=89 SI044=74
+  religion: 7,340 respondents carry no NUTS region (IL=6,025, 99999=1,315)
+  religion AT1 n=4429 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion AT11 n=372 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Burgenland']
+  religion AT12 n=2039 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Niederösterreich']
+  religion AT13 n=2018 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Wien(Stadt)', 'Wien']
+  religion AT2 n=2200 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion AT21 n=664 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Kärnten']
+  religion AT22 n=1536 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Steiermark']
+  religion AT3 n=3895 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion AT31 n=1873 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Oberösterreich']
+  religion AT32 n=683 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Salzburg']
+  religion AT33 n=851 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Tirol']
+  religion AT34 n=488 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Vorarlberg']
+  religion BE1 n=678 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Brussels']
+  religion BE10 n=678 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Brussels']
+  religion BE2 n=5099 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Vlaams Gewest']
+  religion BE21 n=1411 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Antwerpen']
+  religion BE22 n=762 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Limburg']
+  religion BE23 n=1096 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Oost-Vlaanderen']
+  religion BE24 n=822 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Vlaams-Brabant']
+  religion BE25 n=1008 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['West-Vlaanderen']
+  religion BE3 n=2428 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Wallonne Gewest']
+  religion BE31 n=309 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Waals-Brabant']
+  religion BE32 n=864 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Henegouwen']
+  religion BE33 n=701 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Luik']
+  religion BE34 n=209 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Luxemburg']
+  religion BE35 n=345 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Namen']
+  religion CH0 n=7468 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH01 n=1364 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH02 n=1745 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH03 n=1007 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH04 n=1170 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Zürich']
+  religion CH05 n=1169 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH06 n=734 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion CH07 n=279 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Ticino']
+  religion DK0 n=3059 rounds=['ESS7', 'ESS9'] -> []
+  religion DK01 n=580 rounds=['ESS7', 'ESS9'] -> ['Hovedstaden']
+  religion DK02 n=584 rounds=['ESS7', 'ESS9'] -> ['Sjælland']
+  religion DK03 n=737 rounds=['ESS7', 'ESS9'] -> ['Syddanmark']
+  religion DK04 n=804 rounds=['ESS7', 'ESS9'] -> ['Midtjylland']
+  religion DK05 n=354 rounds=['ESS7', 'ESS9'] -> []
+  religion EL3 n=1893 rounds=['ESS10', 'ESS11'] -> ['Attica', 'Attikis']
+  religion EL30 n=1893 rounds=['ESS10', 'ESS11'] -> ['Attica', 'Attikis']
+  religion EL4 n=611 rounds=['ESS10', 'ESS11'] -> []
+  religion EL41 n=87 rounds=['ESS10', 'ESS11'] -> ['Voreioy Aigaioy']
+  religion EL42 n=154 rounds=['ESS10', 'ESS11'] -> ['Notioy Aigaioy']
+  religion EL43 n=370 rounds=['ESS10', 'ESS11'] -> ['Kritis', 'Crete']
+  religion EL5 n=1607 rounds=['ESS10', 'ESS11'] -> []
+  religion EL51 n=303 rounds=['ESS10', 'ESS11'] -> ['Anatolikis Makedonias kai Thr*']
+  religion EL52 n=1012 rounds=['ESS10', 'ESS11'] -> ['Kentrikis Makedonias']
+  religion EL53 n=139 rounds=['ESS10', 'ESS11'] -> ['Dytikis Makedonias']
+  religion EL54 n=153 rounds=['ESS10', 'ESS11'] -> ['Ipeiroy']
+  religion EL6 n=1402 rounds=['ESS10', 'ESS11'] -> []
+  religion EL61 n=382 rounds=['ESS10', 'ESS11'] -> ['Thessalias']
+  religion EL62 n=105 rounds=['ESS10', 'ESS11'] -> ['Ionion Nison']
+  religion EL63 n=364 rounds=['ESS10', 'ESS11'] -> ['Dytikis Elladas']
+  religion EL64 n=283 rounds=['ESS10', 'ESS11'] -> ['Stereas Elladas']
+  religion EL65 n=268 rounds=['ESS10', 'ESS11'] -> ['Peloponnisoy']
+  religion ES1 n=1043 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion ES11 n=696 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Galicia']
+  religion ES12 n=209 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Principado de Asturias', 'Asturias']
+  religion ES13 n=138 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Cantabria', 'Cantabria']
+  religion ES2 n=1030 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion ES21 n=507 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['País Vasco/Euskadi']
+  religion ES22 n=154 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Comunidad Foral de Navarra', 'Navarra']
+  religion ES23 n=68 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['La Rioja', 'Rioja, La']
+  religion ES24 n=301 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Aragón']
+  religion ES3 n=1308 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Comunidad de Madrid', 'Madrid']
+  religion ES30 n=1308 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Comunidad de Madrid', 'Madrid']
+  religion ES4 n=1302 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion ES41 n=591 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Castilla y León']
+  religion ES42 n=448 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Castilla-La Mancha']
+  religion ES43 n=263 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Extremadura']
+  religion ES5 n=2496 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion ES51 n=1353 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Cataluña/Catalunya']
+  religion ES52 n=954 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Comunitat Valenciana']
+  religion ES53 n=189 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Balears, Illes', 'Illes Balears']
+  religion ES6 n=2030 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion ES61 n=1725 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Andalucía']
+  religion ES62 n=272 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Murcia', 'Región de Murcia']
+  religion ES63 n=19 rounds=['ESS10SC', 'ESS7', 'ESS8', 'ESS9'] -> ['Ceuta', 'Ciudad Autónoma de Ceuta']
+  religion ES64 n=14 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS9'] -> ['Melilla', 'Ciudad Autónoma de Melilla']
+  religion ES7 n=372 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Canarias']
+  religion ES70 n=372 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Canarias']
+  religion FR1 n=1379 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Île-de-France']
+  religion FR10 n=1379 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Île-de-France']
+  religion FRB n=422 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Centre-Val de Loire']
+  religion FRB0 n=339 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Centre-Val de Loire']
+  religion FRC n=426 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Bourgogne-Franche-Comté']
+  religion FRC1 n=202 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRC2 n=148 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRD n=535 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Normandie']
+  religion FRD1 n=187 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRD2 n=244 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRE n=914 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Hauts-de-France']
+  religion FRE1 n=487 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRE2 n=254 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRF n=813 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Grand Est']
+  religion FRF1 n=239 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRF2 n=157 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRF3 n=288 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRG n=614 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Pays de la Loire']
+  religion FRG0 n=503 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Pays de la Loire']
+  religion FRH n=616 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Bretagne']
+  religion FRH0 n=478 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Bretagne']
+  religion FRI n=982 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Nouvelle-Aquitaine']
+  religion FRI1 n=439 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRI2 n=95 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRI3 n=238 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRJ n=955 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Occitanie']
+  religion FRJ1 n=314 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRJ2 n=412 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRK n=1275 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Auvergne-Rhône-Alpes']
+  religion FRK1 n=190 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRK2 n=893 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion FRL n=724 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ["Provence-Alpes-Côte d'Azur"]
+  religion FRL0 n=541 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ["Provence-Alpes-Côte d'Azur"]
+  religion IS0 n=3464 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion IS00 n=3464 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion IS001 n=2302 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Capital Region']
+  religion IS002 n=1162 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> []
+  religion ITC n=2906 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Nord-Ovest']
+  religion ITC1 n=225 rounds=['ESS8'] -> ['Piemonte']
+  religion ITC2 n=33 rounds=['ESS8'] -> ["Valle d'Aosta"]
+  religion ITC3 n=51 rounds=['ESS8'] -> ['Liguria']
+  religion ITC4 n=361 rounds=['ESS8'] -> ['Lombardia']
+  religion ITF n=2456 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Sud']
+  religion ITF1 n=27 rounds=['ESS8'] -> ['Abruzzo']
+  religion ITF3 n=217 rounds=['ESS8'] -> ['Campania']
+  religion ITF4 n=239 rounds=['ESS8'] -> ['Puglia']
+  religion ITF5 n=53 rounds=['ESS8'] -> ['Basilicata']
+  religion ITF6 n=60 rounds=['ESS8'] -> ['Calabria']
+  religion ITG n=1139 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Isole']
+  religion ITG1 n=191 rounds=['ESS8'] -> ['Sicilia']
+  religion ITG2 n=66 rounds=['ESS8'] -> ['Sardegna']
+  religion ITH n=2253 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Nord-Est']
+  religion ITH1 n=18 rounds=['ESS8'] -> []
+  religion ITH2 n=14 rounds=['ESS8'] -> []
+  religion ITH3 n=225 rounds=['ESS8'] -> ['Veneto']
+  religion ITH4 n=79 rounds=['ESS8'] -> ['Friuli Venezia Giulia']
+  religion ITH5 n=270 rounds=['ESS8'] -> ['Emilia-Romagna']
+  religion ITI n=1923 rounds=['ESS10', 'ESS11', 'ESS8', 'ESS9'] -> ['Centro']
+  religion ITI1 n=117 rounds=['ESS8'] -> ['Toscana']
+  religion ITI2 n=43 rounds=['ESS8'] -> ['Umbria']
+  religion ITI3 n=95 rounds=['ESS8'] -> ['Marche']
+  religion ITI4 n=188 rounds=['ESS8'] -> ['Lazio']
+  religion NL1 n=927 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NL11 n=267 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Groningen']
+  religion NL12 n=364 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Fryslân']
+  religion NL13 n=296 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Drenthe']
+  religion NL2 n=1934 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NL21 n=632 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Overijssel']
+  religion NL22 n=1104 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Gelderland']
+  religion NL23 n=198 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Flevoland']
+  religion NL3 n=3745 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NL32 n=1237 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Noord-Holland']
+  religion NL34 n=210 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Zeeland']
+  religion NL35 n=670 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Utrecht']
+  religion NL36 n=1628 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Zuid-Holland']
+  religion NL4 n=1798 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NL41 n=1217 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Noord-Brabant']
+  religion NL42 n=581 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Limburg']
+  religion NO0 n=7100 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO01 n=1051 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO02 n=515 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Innlandet']
+  religion NO03 n=813 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO04 n=599 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO05 n=772 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO06 n=682 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Trøndelag']
+  religion NO07 n=620 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion NO08 n=982 rounds=['ESS10', 'ESS11'] -> []
+  religion NO09 n=399 rounds=['ESS10', 'ESS11'] -> []
+  religion NO0A n=667 rounds=['ESS10', 'ESS11'] -> []
+  religion PT1 n=6763 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion PT11 n=2364 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion PT15 n=312 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['FARO']
+  religion PT16 n=1715 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion PT17 n=1809 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion PT18 n=563 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE1 n=3141 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE11 n=1792 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> ['Stockholms län']
+  religion SE110 n=702 rounds=['ESS7', 'ESS8'] -> ['Stockholms län']
+  religion SE12 n=1349 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE121 n=113 rounds=['ESS7', 'ESS8'] -> ['Uppsala län']
+  religion SE122 n=97 rounds=['ESS7', 'ESS8'] -> ['Södermanlands län']
+  religion SE123 n=139 rounds=['ESS7', 'ESS8'] -> ['Östergötlands län']
+  religion SE124 n=102 rounds=['ESS7', 'ESS8'] -> ['Örebro län']
+  religion SE125 n=80 rounds=['ESS7', 'ESS8'] -> ['Västmanlands län']
+  religion SE2 n=3541 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE21 n=867 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE211 n=112 rounds=['ESS7', 'ESS8'] -> ['Jönköpings län']
+  religion SE212 n=49 rounds=['ESS7', 'ESS8'] -> ['Kronobergs län']
+  religion SE213 n=62 rounds=['ESS7', 'ESS8'] -> ['Kalmar län']
+  religion SE214 n=228 rounds=['ESS7', 'ESS8'] -> ['Gotland', 'Gotlands län']
+  religion SE22 n=1243 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE221 n=80 rounds=['ESS7', 'ESS8'] -> ['Blekinge län']
+  religion SE224 n=443 rounds=['ESS7', 'ESS8'] -> ['Skåne län']
+  religion SE23 n=1431 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE231 n=111 rounds=['ESS7', 'ESS8'] -> ['Hallands län']
+  religion SE232 n=322 rounds=['ESS7', 'ESS8'] -> ['Västra Götalands län']
+  religion SE3 n=1666 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE31 n=714 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE311 n=91 rounds=['ESS7', 'ESS8'] -> ['Värmlands län']
+  religion SE312 n=108 rounds=['ESS7', 'ESS8'] -> ['Dalarnas län']
+  religion SE313 n=91 rounds=['ESS7', 'ESS8'] -> ['Gävleborgs län']
+  religion SE32 n=399 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE321 n=108 rounds=['ESS7', 'ESS8'] -> ['Västernorrlands län']
+  religion SE322 n=75 rounds=['ESS7', 'ESS8'] -> ['Jämtlands län']
+  religion SE33 n=553 rounds=['ESS10SC', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SE331 n=122 rounds=['ESS7', 'ESS8'] -> ['Västerbottens län']
+  religion SE332 n=92 rounds=['ESS7', 'ESS8'] -> ['Norrbottens län']
+  religion SI0 n=6292 rounds=['ESS10', 'ESS11', 'ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI01 n=2237 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI011 n=260 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI012 n=594 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI013 n=159 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI014 n=516 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI015 n=120 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI016 n=163 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI017 n=314 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI018 n=111 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI02 n=1589 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI021 n=885 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI022 n=343 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI023 n=220 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI024 n=141 rounds=['ESS7', 'ESS8', 'ESS9'] -> []
+  religion SI03 n=1342 rounds=['ESS10', 'ESS11'] -> []
+  religion SI031 n=141 rounds=['ESS10', 'ESS11'] -> []
+  religion SI032 n=383 rounds=['ESS10', 'ESS11'] -> []
+  religion SI033 n=92 rounds=['ESS10', 'ESS11'] -> []
+  religion SI034 n=322 rounds=['ESS10', 'ESS11'] -> []
+  religion SI035 n=60 rounds=['ESS10', 'ESS11'] -> []
+  religion SI036 n=99 rounds=['ESS10', 'ESS11'] -> []
+  religion SI037 n=196 rounds=['ESS10', 'ESS11'] -> []
+  religion SI038 n=49 rounds=['ESS10', 'ESS11'] -> []
+  religion SI04 n=1124 rounds=['ESS10', 'ESS11'] -> []
+  religion SI041 n=598 rounds=['ESS10', 'ESS11'] -> []
+  religion SI042 n=236 rounds=['ESS10', 'ESS11'] -> []
+  religion SI043 n=156 rounds=['ESS10', 'ESS11'] -> []
+  religion SI044 n=134 rounds=['ESS10', 'ESS11'] -> []
+  religion: 7,340 respondents carry no NUTS region (IL=6,025, 99999=1,315)
+  language: 7,340 respondents carry no NUTS region (IL=6,025, 99999=1,315)
+  language codes read as Other languages: IT:QAA=166, ME:SLA=89, BE:INE=49, ES:APA=21, LV:BAT=19, CH:ROA=17, DE:GEM=9, FR:ABK=7, IE:NIC=6, UK:IRA=6, RU:OSS=6, RU:ADY=5, PL:SLA=5, RU:UDM=4, AT:EGY=4, IE:PHI=4, IE:QPL=4, RS:SLA=4, AT:SLA=3, FR:MLG=3, IE:TEL=3, IE:IRA=3, BE:TIB=3, NL:AFR=3, RU:TGK=3, RU:KBD=3, IT:EGY=3, FR:HAT=3, IE:SNA=3, CH:TIB=2, DE:IRA=2, ES:MAN=2, FR:LAO=2, NL:SRN=2, RU:UZB=2, RU:AVA=2, RU:KUM=2, SE:AAR=2, AT:SYC=2, DE:SYC=2
+  religion AT1 n=4429: crosswalk {"refused": "covers 97560089B30234814950985 at 0.80 but also holds ['97560089B12055607938436', '97560089B24691553772644'
+  religion BG343 -> Yambol: n=97 < 100, left out
+  religion EL41 -> Voreioy Aigaioy: n=87 < 100, left out
+  religion ES23 -> La Rioja: n=68 < 100, left out
+  religion ES6 n=2030: crosswalk {"refused": "covers 25490228B88831207743232 at 0.87 but also holds ['25490228B18225280299410', '25490228B27950689864224'
+  religion ES63 -> Ceuta: n=19 < 100, left out
+  religion ES64 -> Melilla: n=14 < 100, left out
+  religion FI1D8 -> Kainuu: n=33 < 100, left out
+  religion FI2 -> Åland Islands: n=51 < 100, left out
+  religion FI20 -> Åland Islands: n=51 < 100, left out
+  religion FI200 -> Åland Islands: n=51 < 100, left out
+  religion HR021 -> Bjelovar-Bilogora: n=63 < 100, left out
+  religion HR023 -> Požega-Slavonia: n=25 < 100, left out
+  religion HR024 -> Brod-Posavina: n=99 < 100, left out
+  religion HR027 -> Karlovac: n=82 < 100, left out
+  religion HR032 -> Lika-Senj: n=95 < 100, left out
+  religion HR061 -> Međimurje: n=90 < 100, left out
+  religion HR063 -> Koprivnica-Križevci: n=86 < 100, left out
+  religion HU1 n=2475: crosswalk {"refused": "Budapest and Pest county together, on a Pest polygon that counts Pest county's people alone"}
+  religion HU12 n=737: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU11']"}
+  religion HU120 n=737: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU110']"}
+  religion ITC2 -> Valle d'Aosta: n=33 < 100, left out
+  religion ITC3 -> Liguria: n=51 < 100, left out
+  religion ITF1 -> Abruzzo: n=27 < 100, left out
+  religion ITF5 -> Basilicata: n=53 < 100, left out
+  religion ITF6 -> Calabria: n=60 < 100, left out
+  religion ITG2 -> Sardegna: n=66 < 100, left out
+  religion ITH4 -> Friuli Venezia Giulia: n=79 < 100, left out
+  religion ITI2 -> Umbria: n=43 < 100, left out
+  religion ITI3 -> Marche: n=95 < 100, left out
+  religion LT027 -> Taurage County: n=60 < 100, left out
+  religion NO08 n=982: crosswalk {"refused": "covers 71437522B91482774809601 at 0.94 but also holds ['71437522B68338217323905']"}
+  religion PL92 n=212: crosswalk {"refused": "covers 17162690B84565288021286 at 0.81 but also holds ['PL91']"}
+  religion SE122 -> Södermanlands län: n=97 < 100, left out
+  religion SE125 -> Västmanlands län: n=80 < 100, left out
+  religion SE212 -> Kronobergs län: n=49 < 100, left out
+  religion SE213 -> Kalmar län: n=62 < 100, left out
+  religion SE221 -> Blekinge län: n=80 < 100, left out
+  religion SE23 n=1431: crosswalk {"refused": "covers 68755315B39536810599908 at 0.81 but also holds ['68755315B55596512557513']"}
+  religion SE311 -> Värmlands län: n=91 < 100, left out
+  religion SE313 -> Gävleborgs län: n=91 < 100, left out
+  religion SE322 -> Jämtlands län: n=75 < 100, left out
+  religion SE332 -> Norrbottens län: n=92 < 100, left out
+  language AT1 n=4479: crosswalk {"refused": "covers 97560089B30234814950985 at 0.80 but also holds ['97560089B12055607938436', '97560089B24691553772644'
+  language DE5 -> Bremen: n=97 < 100, left out
+  language EL41 -> Voreioy Aigaioy: n=87 < 100, left out
+  language ES23 -> La Rioja: n=67 < 100, left out
+  language ES6 n=2045: crosswalk {"refused": "covers 25490228B88831207743232 at 0.87 but also holds ['25490228B18225280299410', '25490228B27950689864224'
+  language ES63 -> Ceuta: n=19 < 100, left out
+  language ES64 -> Melilla: n=14 < 100, left out
+  language FI1D8 -> Kainuu: n=33 < 100, left out
+  language FI2 -> Åland Islands: n=51 < 100, left out
+  language FI20 -> Åland Islands: n=51 < 100, left out
+  language FI200 -> Åland Islands: n=51 < 100, left out
+  language HR021 -> Bjelovar-Bilogora: n=63 < 100, left out
+  language HR023 -> Požega-Slavonia: n=25 < 100, left out
+  language HR027 -> Karlovac: n=82 < 100, left out
+  language HR032 -> Lika-Senj: n=95 < 100, left out
+  language HR061 -> Međimurje: n=91 < 100, left out
+  language HR063 -> Koprivnica-Križevci: n=86 < 100, left out
+  language HU1 n=2521: crosswalk {"refused": "Budapest and Pest county together, on a Pest polygon that counts Pest county's people alone"}
+  language HU12 n=744: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU11']"}
+  language HU120 n=744: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU110']"}
+  language ITC2 -> Valle d'Aosta: n=33 < 100, left out
+  language ITC3 -> Liguria: n=51 < 100, left out
+  language ITF1 -> Abruzzo: n=27 < 100, left out
+  language ITF5 -> Basilicata: n=53 < 100, left out
+  language ITF6 -> Calabria: n=62 < 100, left out
+  language ITG2 -> Sardegna: n=66 < 100, left out
+  language ITH4 -> Friuli Venezia Giulia: n=76 < 100, left out
+  language ITI2 -> Umbria: n=45 < 100, left out
+  language ITI3 -> Marche: n=96 < 100, left out
+  language LT027 -> Taurage County: n=61 < 100, left out
+  language NO08 n=990: crosswalk {"refused": "covers 71437522B91482774809601 at 0.94 but also holds ['71437522B68338217323905']"}
+  language PL92 n=215: crosswalk {"refused": "covers 17162690B84565288021286 at 0.81 but also holds ['PL91']"}
+  language SE122 -> Södermanlands län: n=97 < 100, left out
+  language SE125 -> Västmanlands län: n=80 < 100, left out
+  language SE212 -> Kronobergs län: n=49 < 100, left out
+  language SE213 -> Kalmar län: n=63 < 100, left out
+  language SE221 -> Blekinge län: n=80 < 100, left out
+  language SE23 n=1419: crosswalk {"refused": "covers 68755315B39536810599908 at 0.81 but also holds ['68755315B55596512557513']"}
+  language SE311 -> Värmlands län: n=92 < 100, left out
+  language SE313 -> Gävleborgs län: n=91 < 100, left out
+  language SE322 -> Jämtlands län: n=75 < 100, left out
+  language SE332 -> Norrbottens län: n=92 < 100, left out
+  AUT admin1: 9 units -- Burgenland [AT11] rel n=372 lan n=374; Vorarlberg [AT34] rel n=488 lan n=489; Wien [AT13] rel n=2018 lan n=2051; Niederösterreich [AT12] rel n=2039 lan n=2054; Tirol [AT33] rel n=851 lan n=850; Kärnten [AT21] rel n=664 lan n=671; Salzburg [AT32] rel n=683 lan n=688; Oberösterreich [AT31] rel n=1873 lan n=1874; Steiermark [AT22] rel n=1536 lan n=1555
+  AUT admin2: 1 units -- Wien(Stadt) [AT13] rel n=2018 lan n=2051
+  BEL admin1: 2 units -- Wallonne Gewest [BE3] rel n=2428 lan n=2433; Vlaams Gewest [BE2] rel n=5099 lan n=5103
+  BEL admin2: 11 units -- Luxemburg [BE34] rel n=209 lan n=210; Brussels [BE1] rel n=678 lan n=683; Antwerpen [BE21] rel n=1411 lan n=1417; Luik [BE33] rel n=701 lan n=701; Namen [BE35] rel n=345 lan n=345; West-Vlaanderen [BE25] rel n=1008 lan n=1012; Limburg [BE22] rel n=762 lan n=756; Waals-Brabant [BE31] rel n=309 lan n=310; Henegouwen [BE32] rel n=864 lan n=867; Oost-Vlaanderen [BE23] rel n=1096 lan n=1096; Vlaams-Brabant [BE24] rel n=822 lan n=822
+  BGR admin1: 28 units -- Targovishte [BG334] rel n=113 lan n=112; Blagoevgrad [BG413] rel n=330 lan n=333; Sofia [BG412] rel n=209 lan n=216; Vidin [BG311] rel n=111 lan n=113; Pleven [BG314] rel n=264 lan n=266; Veliko Tarnovo [BG321] rel n=253 lan n=255; Razgrad [BG324] rel n=142 lan n=143; Sofia City [BG411] rel n=1124 lan n=1133; Sliven [BG342] rel n=190 lan n=191; Burgas [BG341] rel n=404 lan n=411; Kyustendil [BG415] rel n=159 lan n=160; Lovech [BG315] rel n=134 lan n=136; Shumen [BG333] rel n=153 lan n=153; Pazardzhik [BG423] rel n=301 lan n=301; Varna [BG331] rel n=433 lan n=435; Montana [BG312] rel n=225 lan n=226; Plovdiv [BG421] rel n=678 lan n=684; Smolyan [BG424] rel n=114 lan n=118; Kardzhali [BG425] rel n=170 lan n=178; Stara Zagora [BG344] rel n=321 lan n=323; Silistra [BG325] rel n=122 lan n=123; Ruse [BG323] rel n=238 lan n=248; Haskovo [BG422] rel n=252 lan n=254; Yambol [BG343] lan n=103; Vratsa [BG313] rel n=102 lan n=102; Dobrich [BG332] rel n=187 lan n=187; Pernik [BG414] rel n=117 lan n=119; Gabrovo [BG322] rel n=111 lan n=115
+  BGR admin2: 1 units -- Stolichna [BG411] rel n=1124 lan n=1133
+  CHE admin1: 2 units -- Zürich [CH04] rel n=1170 lan n=1166; Ticino [CH07] rel n=279 lan n=283
+  CZE admin1: 14 units -- Olomoucký kraj [CZ071] rel n=524 lan n=528; Hlavní město Praha [CZ01] rel n=1139 lan n=1138; Moravskoslezský kraj [CZ08] rel n=1091 lan n=1101; Kraj Vysočina [CZ063] rel n=419 lan n=426; Ústecký kraj [CZ042] rel n=773 lan n=776; Jihočeský kraj [CZ031] rel n=543 lan n=547; Královéhradecký kraj [CZ052] rel n=495 lan n=500; Středočeský kraj [CZ02] rel n=1106 lan n=1110; Karlovarský kraj [CZ041] rel n=271 lan n=272; Jihomoravský kraj [CZ064] rel n=980 lan n=994; Zlínský kraj [CZ072] rel n=465 lan n=478; Plzeňský kraj [CZ032] rel n=517 lan n=518; Pardubický kraj [CZ053] rel n=457 lan n=461; Liberecký kraj [CZ051] rel n=410 lan n=417
+  CZE admin2: 1 units -- Prague [CZ01] rel n=1139 lan n=1138
+  DEU admin1: 16 units -- Berlin [DE3] rel n=829 lan n=818; Sachsen-Anhalt [DEE] rel n=633 lan n=622; Niedersachsen [DE9] rel n=1818 lan n=1789; Brandenburg [DE4] rel n=730 lan n=721; Rheinland-Pfalz [DEB] rel n=889 lan n=874; Bremen [DE5] rel n=103; Hamburg [DE6] rel n=351 lan n=348; Schleswig-Holstein [DEF] rel n=676 lan n=672; Baden-Württemberg [DE1] rel n=2383 lan n=2374; Bayern [DE2] rel n=2973 lan n=2930; Mecklenburg-Vorpommern [DE8] rel n=481 lan n=472; Thüringen [DEG] rel n=626 lan n=617; Saarland [DEC] rel n=234 lan n=230; Hessen [DE7] rel n=1307 lan n=1284; Nordrhein-Westfalen [DEA] rel n=3805 lan n=3739; Sachsen [DED] rel n=1232 lan n=1194
+  DEU admin2: 9 units -- Berlin [DE3] rel n=829 lan n=818; Sachsen-Anhalt [DEE] rel n=633 lan n=622; Brandenburg [DE4] rel n=730 lan n=721; Bremen [DE5] rel n=103; Hamburg [DE6] rel n=351 lan n=348; Schleswig-Holstein [DEF] rel n=676 lan n=672; Mecklenburg-Vorpommern [DE8] rel n=481 lan n=472; Thüringen [DEG] rel n=626 lan n=617; Saarland [DEC] rel n=234 lan n=230
+  DNK admin1: 4 units -- Midtjylland [DK04] rel n=804 lan n=788; Hovedstaden [DK01] rel n=580 lan n=576; Syddanmark [DK03] rel n=737 lan n=725; Sjælland [DK02] rel n=584 lan n=585
+  ESP admin1: 16 units -- Comunitat Valenciana [ES52] rel n=954 lan n=962; Principado de Asturias [ES12] rel n=209 lan n=209; Illes Balears [ES53] rel n=189 lan n=190; Región de Murcia [ES62] rel n=272 lan n=275; Comunidad Foral de Navarra [ES22] rel n=154 lan n=156; Cantabria [ES13] rel n=138 lan n=140; Comunidad de Madrid [ES3] rel n=1308 lan n=1313; País Vasco/Euskadi [ES21] rel n=507 lan n=509; Aragón [ES24] rel n=301 lan n=304; Cataluña/Catalunya [ES51] rel n=1353 lan n=1361; Canarias [ES7] rel n=372 lan n=371; Castilla y León [ES41] rel n=591 lan n=593; Extremadura [ES43] rel n=263 lan n=264; Andalucía [ES61] rel n=1725 lan n=1737; Galicia [ES11] rel n=696 lan n=701; Castilla-La Mancha [ES42] rel n=448 lan n=451
+  ESP admin2: 6 units -- Balears, Illes [ES53] rel n=189 lan n=190; Asturias [ES12] rel n=209 lan n=209; Navarra [ES22] rel n=154 lan n=156; Cantabria [ES13] rel n=138 lan n=140; Madrid [ES3] rel n=1308 lan n=1313; Murcia [ES62] rel n=272 lan n=275
+  EST admin1: 1 units -- Harju maakond [EE001] rel n=3742 lan n=3768
+  FIN admin1: 8 units -- Finland Proper [FI1C1] rel n=763 lan n=761; Uusimaa [FI1B] rel n=2469 lan n=2451; Keski-Pohjanmaa [FI1D5] rel n=110 lan n=110; Tavastia Proper [FI1C2] rel n=245 lan n=246; South Karelia [FI1C5] rel n=205 lan n=208; Northern Ostrobothnia [FI1D9] rel n=115 lan n=114; Satakunta [FI196] rel n=435 lan n=437; Lapland [FI1D7] rel n=317 lan n=316
+  FRA admin1: 12 units -- Nouvelle-Aquitaine [FRI] rel n=982 lan n=990; Île-de-France [FR1] rel n=1379 lan n=1405; Bourgogne-Franche-Comté [FRC] rel n=426 lan n=423; Hauts-de-France [FRE] rel n=914 lan n=921; Centre-Val de Loire [FRB] rel n=422 lan n=421; Occitanie [FRJ] rel n=955 lan n=968; Bretagne [FRH] rel n=616 lan n=618; Auvergne-Rhône-Alpes [FRK] rel n=1275 lan n=1280; Grand Est [FRF] rel n=813 lan n=813; Normandie [FRD] rel n=535 lan n=534; Provence-Alpes-Côte d'Azur [FRL] rel n=724 lan n=728; Pays de la Loire [FRG] rel n=614 lan n=616
+  GRC admin1: 2 units -- Crete [EL43] rel n=370 lan n=371; Attica [EL3] rel n=1893 lan n=1913
+  GRC admin2: 12 units -- Kentrikis Makedonias [EL52] rel n=1012 lan n=1012; Stereas Elladas [EL64] rel n=283 lan n=285; Thessalias [EL61] rel n=382 lan n=382; Peloponnisoy [EL65] rel n=268 lan n=269; Dytikis Elladas [EL63] rel n=364 lan n=365; Notioy Aigaioy [EL42] rel n=154 lan n=157; Attikis [EL3] rel n=1893 lan n=1913; Ipeiroy [EL54] rel n=153 lan n=156; Kritis [EL43] rel n=370 lan n=371; Dytikis Makedonias [EL53] rel n=139 lan n=139; Ionion Nison [EL62] rel n=105 lan n=105; Anatolikis Makedonias kai Thr* [EL51] rel n=303 lan n=304
+  HRV admin1: 15 units -- Primorje-Gorski Kotar [HR031] rel n=396 lan n=399; Dubrovnik-Neretva [HR037] rel n=103 lan n=104; Sisak-Moslavina [HR028] rel n=109 lan n=112; Zadar County [HR033] rel n=210 lan n=215; Šibenik-Knin [HR034] rel n=134 lan n=137; Brod-Posavina [HR024] lan n=100; Zagreb County [HR065] rel n=224 lan n=225; Virovitica-Podravina [HR022] rel n=132 lan n=132; Krapina-Zagorje [HR064] rel n=142 lan n=143; Split-Dalmatia [HR035] rel n=498 lan n=503; City of Zagreb [HR05] rel n=519 lan n=524; Varaždin [HR062] rel n=182 lan n=183; Istria [HR036] rel n=227 lan n=227; Vukovar-Syrmia [HR026] rel n=109 lan n=111; Osijek-Baranja [HR025] rel n=249 lan n=251
+  HRV admin2: 1 units -- Grad Zagreb [HR05] rel n=519 lan n=524
+  HUN admin1: 18 units -- Fejér [HU211] rel n=388 lan n=391; Békés [HU332] rel n=285 lan n=291; Somogy [HU232] rel n=256 lan n=264; Győr-Moson-Sopron [HU221] rel n=291 lan n=299; Bács-Kiskun [HU331] rel n=478 lan n=454; Borsod-Abaúj-Zemplén [HU311] rel n=714 lan n=724; Csongrád-Csanád [HU333] rel n=298 lan n=313; Vas [HU222] rel n=273 lan n=274; Szabolcs-Szatmár-Bereg [HU323] rel n=639 lan n=650; Nógrád [HU313] rel n=114 lan n=115; Tolna [HU233] rel n=122 lan n=122; Hajdú-Bihar [HU321] rel n=466 lan n=481; Komárom-Esztergom [HU212] rel n=228 lan n=228; Zala [HU223] rel n=333 lan n=332; Heves [HU312] rel n=208 lan n=208; Veszprém [HU213] rel n=424 lan n=433; Baranya [HU231] rel n=339 lan n=340; Jász-Nagykun-Szolnok [HU322] rel n=421 lan n=418
+  ISL admin1: 1 units -- Capital Region [IS001] rel n=2302 lan n=2307
+  ITA admin1: 5 units -- Nord-Est [ITH] rel n=2253 lan n=2264; Isole [ITG] rel n=1139 lan n=1155; Centro [ITI] rel n=1923 lan n=1935; Sud [ITF] rel n=2456 lan n=2469; Nord-Ovest [ITC] rel n=2906 lan n=2917
+  ITA admin2: 9 units -- Campania [ITF3] rel n=217 lan n=217; Puglia [ITF4] rel n=239 lan n=241; Lombardia [ITC4] rel n=361 lan n=363; Piemonte [ITC1] rel n=225 lan n=231; Lazio [ITI4] rel n=188 lan n=191; Sicilia [ITG1] rel n=191 lan n=192; Emilia-Romagna [ITH5] rel n=270 lan n=273; Toscana [ITI1] rel n=117 lan n=120; Veneto [ITH3] rel n=225 lan n=225
+  LTU admin1: 9 units -- Klaipeda County [LT023] rel n=277 lan n=280; Telsiai County [LT028] rel n=115 lan n=115; Marijampole County [LT024] rel n=227 lan n=229; Utena County [LT029] rel n=156 lan n=161; Siauliai County [LT026] rel n=359 lan n=366; Kaunas County [LT022] rel n=601 lan n=602; Vilnius County [LT01] rel n=767 lan n=773; Panevezys County [LT025] rel n=241 lan n=244; Alytus County [LT021] rel n=167 lan n=168
+  MKD admin1: 8 units -- Polog [MK006] rel n=275 lan n=276; Southeast [MK004] rel n=150 lan n=150; Northeast [MK007] rel n=130 lan n=129; Southwest [MK003] rel n=148 lan n=149; East [MK002] rel n=154 lan n=154; Skopje [MK008] rel n=293 lan n=292; Vardar [MK001] rel n=116 lan n=116; Pelagonia [MK005] rel n=158 lan n=159
+  NLD admin1: 12 units -- Fryslân [NL12] rel n=364 lan n=366; Zuid-Holland [NL36] rel n=1628 lan n=1625; Groningen [NL11] rel n=267 lan n=266; Drenthe [NL13] rel n=296 lan n=296; Zeeland [NL34] rel n=210 lan n=210; Flevoland [NL23] rel n=198 lan n=198; Noord-Brabant [NL41] rel n=1217 lan n=1218; Gelderland [NL22] rel n=1104 lan n=1109; Overijssel [NL21] rel n=632 lan n=636; Noord-Holland [NL32] rel n=1237 lan n=1241; Utrecht [NL35] rel n=670 lan n=667; Limburg [NL42] rel n=581 lan n=579
+  NOR admin1: 2 units -- Innlandet [NO02] rel n=515 lan n=511; Trøndelag [NO06] rel n=682 lan n=682
+  POL admin1: 16 units -- Silesian Voivodeship [PL22] rel n=945 lan n=951; Warmian-Masurian Voivodeship [PL62] rel n=269 lan n=273; Świętokrzyskie Voivodeship [PL72] rel n=154 lan n=151; Podlaskie Voivodeship [PL84] rel n=111 lan n=109; West Pomeranian Voivodeship [PL42] rel n=306 lan n=315; Kuyavian-Pomeranian Voivodeship [PL61] rel n=399 lan n=401; Subcarpathian Voivodeship [PL82] rel n=211 lan n=215; Lesser Poland Voivodeship [PL21] rel n=769 lan n=766; Opole Voivodeship [PL52] rel n=188 lan n=190; Lublin Voivodeship [PL81] rel n=187 lan n=186; Greater Poland Voivodeship [PL41] rel n=683 lan n=691; Pomeranian Voivodeship [PL63] rel n=474 lan n=478; Masovian Voivodeship [PL9] rel n=520 lan n=525; Łódź Voivodeship [PL71] rel n=276 lan n=274; Lubusz Voivodeship [PL43] rel n=236 lan n=240; Lower Silesian Voivodeship [PL51] rel n=543 lan n=547
+  PRT admin1: 1 units -- FARO [PT15] rel n=312 lan n=313
+  SRB admin1: 1 units -- Belgrade [RS11] rel n=1095 lan n=1098
+  SRB admin2: 1 units -- Belgrade [RS11] rel n=1095 lan n=1098
+  SVK admin1: 8 units -- Region of Žilina [SK031] rel n=528 lan n=525; Region of Košice [SK042] rel n=407 lan n=410; Region of Banská Bystrica [SK032] rel n=466 lan n=477; Region of Trnava [SK021] rel n=454 lan n=464; Region of Bratislava [SK01] rel n=261 lan n=271; Region of Nitra [SK023] rel n=610 lan n=609; Region of Trenčín [SK022] rel n=499 lan n=502; Region of Prešov [SK041] rel n=650 lan n=658
+  SWE admin1: 12 units -- Dalarnas län [SE312] rel n=108 lan n=108; Västerbottens län [SE331] rel n=122 lan n=122; Stockholms län [SE11] rel n=1792 lan n=1783; Örebro län [SE124] rel n=102 lan n=102; Gotlands län [SE214] rel n=228 lan n=228; Västra Götalands län [SE232] rel n=322 lan n=325; Västernorrlands län [SE321] rel n=108 lan n=109; Uppsala län [SE121] rel n=113 lan n=113; Skåne län [SE224] rel n=443 lan n=447; Hallands län [SE231] rel n=111 lan n=111; Jönköpings län [SE211] rel n=112 lan n=112; Östergötlands län [SE123] rel n=139 lan n=139
+  SWE admin2: 1 units -- Gotland [SE214] rel n=228 lan n=228
+  national AT religion n=10524 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 57.6, No religion 30.5, Islam 4.7, Protestant 3.8, Orthodox 1.7, Other Christian 0.9, Eastern religions 0.4, Judaism 0.2
+  national AT language n=10606 ESS rounds 7, 8, 9, 10, 11 (2014-2024): German 91.9, Turkish 2.3, Other languages 0.9, Serbian 0.7, Bosnian 0.6, Albanian 0.4, English 0.4, Romanian 0.4
+  national BE religion n=8205 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 56.6, Roman Catholic 32.5, Islam 6.8, Orthodox 1.1, Protestant 1.1, Other Christian 0.8, Eastern religions 0.4, Other religions 0.4
+  national BE language n=8219 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Dutch 52.1, French 38.5, Arabic 2.1, Other languages 1.6, English 1.5, Turkish 0.8, Romanian 0.5, Polish 0.4
+  national BG religion n=7054 ESS rounds 9, 10, 11 (2018-2024): Orthodox 64.5, No religion 21.0, Islam 12.6, Other Christian 0.8, Protestant 0.6, Roman Catholic 0.5, Judaism 0.1, Eastern religions 0.0
+  national BG language n=7138 ESS rounds 9, 10, 11 (2018-2024): Bulgarian 89.6, Turkish 7.2, Romani 3.0, Other languages 0.2
+  national CH religion n=7469 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 42.7, Roman Catholic 28.1, Protestant 19.9, Islam 4.5, Orthodox 1.9, Other Christian 1.2, Eastern religions 1.1, Other religions 0.4
+  national CH language n=7445 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Swiss German 55.3, French 22.1, German 6.1, Italian 5.3, Portuguese 2.2, Albanian 1.6, English 1.4, Other languages 1.1
+  national CY religion n=2322 ESS rounds 9, 10, 11 (2018-2024): Orthodox 85.3, No religion 12.2, Other Christian 0.9, Roman Catholic 0.7, Other religions 0.4, Islam 0.3, Protestant 0.2, Judaism 0.1
+  national CY language n=2275 ESS rounds 9, 10, 11 (2018-2024): Greek 95.5, English 1.5, Other languages 1.0, Bulgarian 0.7, Russian 0.7, Romanian 0.6
+  national CZ religion n=9190 ESS rounds 7, 8, 9, 10 (2014-2022): No religion 81.0, Roman Catholic 16.0, Other Christian 1.1, Protestant 1.0, Other religions 0.3, Judaism 0.2, Orthodox 0.2, Eastern religions 0.1
+  national CZ language n=9266 ESS rounds 7, 8, 9, 10 (2014-2022): Czech 99.3, English 0.2, Slovak 0.2, Other languages 0.1, Romani 0.1, Russian 0.1, Ukrainian 0.0
+  national DE religion n=19070 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 45.7, Protestant 22.6, Roman Catholic 22.3, Islam 3.8, Other Christian 3.5, Orthodox 0.9, Eastern religions 0.7, Other religions 0.4
+  national DE language n=18781 ESS rounds 7, 8, 9, 10, 11 (2014-2024): German 92.8, Turkish 1.2, Russian 1.0, Arabic 0.6, English 0.6, Polish 0.5, Other languages 0.4, Albanian 0.3
+  national DK religion n=3059 ESS rounds 7, 9 (2014-2019): Protestant 51.6, No religion 42.1, Islam 2.5, Roman Catholic 1.7, Other Christian 1.3, Other religions 0.4, Eastern religions 0.3, Judaism 0.1
+  national DK language n=3020 ESS rounds 7, 9 (2014-2019): Danish 96.6, Other languages 1.4, English 0.8, Arabic 0.3, German 0.3, Kurdish 0.2, Turkish 0.2, Faroese 0.1
+  national EE religion n=8752 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 72.8, Orthodox 16.8, Protestant 7.1, Other Christian 1.3, Roman Catholic 0.9, Other religions 0.7, Eastern religions 0.2, Islam 0.1
+  national EE language n=8803 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Estonian 72.4, Russian 27.2, Other languages 0.2, English 0.1, Ukrainian 0.1
+  national ES religion n=9581 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 54.5, No religion 40.0, Islam 1.8, Other Christian 1.5, Orthodox 1.1, Protestant 0.6, Other religions 0.3, Eastern religions 0.2
+  national ES language n=9636 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Spanish 83.8, Catalan 9.2, Galician 2.7, Basque 1.0, Other languages 0.8, Romanian 0.6, Arabic 0.5, English 0.3
+  national FI religion n=8880 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 49.3, Protestant 47.0, Other Christian 1.1, Orthodox 1.0, Islam 0.9, Other religions 0.3, Eastern religions 0.2, Roman Catholic 0.2
+  national FI language n=8864 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Finnish 91.8, Swedish 5.1, English 0.7, Russian 0.7, Estonian 0.6, Other languages 0.4, Arabic 0.2, Somali 0.2
+  national FR religion n=9655 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 49.2, Roman Catholic 38.9, Islam 7.5, Protestant 2.0, Other Christian 0.8, Judaism 0.5, Other religions 0.5, Orthodox 0.4
+  national FR language n=9717 ESS rounds 7, 8, 9, 10, 11 (2014-2024): French 94.1, Arabic 1.2, Other languages 0.9, English 0.7, Portuguese 0.7, Spanish 0.3, Turkish 0.3, Berber 0.2
+  national GB religion n=9210 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 55.6, Protestant 24.4, Roman Catholic 10.1, Islam 4.1, Eastern religions 2.4, Other Christian 2.0, Orthodox 0.7, Other religions 0.7
+  national GB language n=8869 ESS rounds 7, 8, 9, 10, 11 (2014-2024): English 94.4, Polish 1.4, Urdu 0.7, Chinese 0.4, French 0.4, Punjabi 0.4, Romanian 0.4, Arabic 0.3
+  national GR religion n=5513 ESS rounds 10, 11 (2020-2024): Orthodox 90.0, No religion 7.6, Other Christian 1.1, Other religions 0.6, Islam 0.4, Roman Catholic 0.3, Eastern religions 0.1
+  national GR language n=5545 ESS rounds 10, 11 (2020-2024): Greek 97.5, Albanian 1.4, Other languages 0.6, Bulgarian 0.2, Urdu 0.2, Turkish 0.1
+  national HR religion n=4918 ESS rounds 9, 10, 11 (2018-2024): Roman Catholic 67.6, No religion 27.7, Orthodox 2.5, Islam 1.0, Other Christian 0.5, Other religions 0.3, Protestant 0.2, Eastern religions 0.1
+  national HR language n=4963 ESS rounds 9, 10, 11 (2018-2024): Croatian 97.5, Romani 0.7, Bosnian 0.5, Serbian 0.5, Other languages 0.4, Italian 0.2, Albanian 0.1, Hungarian 0.1
+  national HU religion n=8752 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 46.0, Roman Catholic 40.2, Protestant 12.8, Other Christian 0.6, Eastern religions 0.1, Judaism 0.1, Orthodox 0.1, Other religions 0.1
+  national HU language n=8858 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Hungarian 99.2, English 0.3, German 0.3, Romani 0.2, Other languages 0.1
+  national IE religion n=11043 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 61.1, No religion 31.7, Protestant 2.5, Other Christian 2.0, Islam 1.1, Other religions 0.7, Eastern religions 0.5, Orthodox 0.5
+  national IE language n=11080 ESS rounds 7, 8, 9, 10, 11 (2014-2024): English 92.6, Polish 2.1, Other languages 1.1, Irish 0.6, Romanian 0.5, Lithuanian 0.4, Portuguese 0.4, Hindi 0.3
+  national IL religion n=7135 ESS rounds 7, 8, 10, 11 (2014-2024): Judaism 72.8, Islam 19.3, No religion 6.9, Orthodox 0.3, Roman Catholic 0.3, Other Christian 0.2, Other religions 0.2, Protestant 0.1
+  national IL language n=7239 ESS rounds 7, 8, 10, 11 (2014-2024): Hebrew 68.3, Arabic 21.4, Russian 5.2, English 1.3, Other languages 1.1, Amharic 0.9, French 0.7, Spanish 0.4
+  national IS religion n=3466 ESS rounds 8, 9, 10, 11 (2016-2024): No religion 58.9, Protestant 36.0, Roman Catholic 2.8, Other religions 1.4, Eastern religions 0.3, Other Christian 0.3, Islam 0.2, Orthodox 0.2
+  national IS language n=3471 ESS rounds 8, 9, 10, 11 (2016-2024): Icelandic 92.4, English 2.7, Polish 2.6, Other languages 1.9, Portuguese 0.2, Spanish 0.2
+  national IT religion n=10677 ESS rounds 8, 9, 10, 11 (2016-2024): Roman Catholic 71.1, No religion 23.1, Islam 2.4, Orthodox 1.5, Other Christian 0.8, Eastern religions 0.5, Other religions 0.4, Protestant 0.2
+  national IT language n=10740 ESS rounds 8, 9, 10, 11 (2016-2024): Italian 91.5, Other languages 1.7, Romanian 1.1, Arabic 1.0, Sicilian 0.9, German 0.7, Albanian 0.6, French 0.4
+  national LT religion n=9067 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 77.3, No religion 17.5, Orthodox 3.7, Other Christian 0.5, Protestant 0.5, Other religions 0.2, Eastern religions 0.1, Islam 0.1
+  national LT language n=9189 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Lithuanian 90.0, Russian 6.1, Polish 3.4, Ukrainian 0.3, English 0.1, Other languages 0.0
+  national LV religion n=3157 ESS rounds 9, 10, 11 (2018-2024): No religion 61.1, Roman Catholic 13.3, Protestant 11.8, Orthodox 10.1, Other Christian 3.0, Other religions 0.3, Eastern religions 0.2, Islam 0.1
+  national LV language n=3169 ESS rounds 9, 10, 11 (2018-2024): Latvian 76.6, Russian 22.5, Other languages 0.9
+  national ME religion n=3990 ESS rounds 9, 10, 11 (2018-2024): Orthodox 60.0, Islam 22.3, No religion 13.2, Roman Catholic 3.2, Other Christian 1.0, Eastern religions 0.3, Other religions 0.0
+  national ME language n=3956 ESS rounds 9, 10, 11 (2018-2024): Montenegrin 47.3, Serbian 40.5, Bosnian 5.4, Albanian 4.4, Other languages 2.3, English 0.2
+  national MK religion n=1424 ESS round 10 (2020-2022): Orthodox 72.5, Islam 22.8, No religion 3.9, Protestant 0.6, Roman Catholic 0.1
+  national MK language n=1425 ESS round 10 (2020-2022): Macedonian 82.4, Albanian 14.2, Bosnian 1.2, Turkish 1.1, Romani 0.6, Other languages 0.3, Aromanian 0.2
+  national NL religion n=8404 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 69.3, Protestant 13.0, Roman Catholic 11.5, Islam 3.3, Other Christian 1.6, Eastern religions 0.6, Other religions 0.4, Orthodox 0.2
+  national NL language n=8411 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Dutch 92.5, Frisian 2.1, English 1.0, Arabic 0.7, Turkish 0.7, Other languages 0.6, Limburgish 0.4, Polish 0.3
+  national NO religion n=7101 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 54.2, Protestant 39.2, Islam 2.5, Roman Catholic 1.5, Eastern religions 0.7, Orthodox 0.6, Other Christian 0.6, Other religions 0.6
+  national NO language n=6982 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Norwegian 94.4, English 1.2, Other languages 0.8, Swedish 0.6, Polish 0.5, Arabic 0.3, German 0.3, Kurdish 0.2
+  national PL religion n=8178 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 83.1, No religion 15.7, Other Christian 0.5, Orthodox 0.3, Protestant 0.3, Eastern religions 0.1, Other religions 0.1, Islam 0.0
+  national PL language n=8241 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Polish 99.5, Other languages 0.3, English 0.1, German 0.1
+  national PT religion n=6763 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 67.4, No religion 28.1, Other Christian 1.7, Protestant 1.7, Other religions 0.4, Orthodox 0.3, Islam 0.2, Eastern religions 0.1
+  national PT language n=6793 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Portuguese 98.7, Creole 0.3, Spanish 0.3, Other languages 0.2, Romanian 0.2, English 0.1, French 0.1, Ukrainian 0.1
+  national RS religion n=4996 ESS rounds 9, 10, 11 (2018-2024): Orthodox 77.5, No religion 16.0, Roman Catholic 3.5, Islam 1.9, Protestant 0.7, Other Christian 0.3, Eastern religions 0.1, Other religions 0.1
+  national RS language n=5000 ESS rounds 9, 10, 11 (2018-2024): Serbian 95.2, Hungarian 2.2, Bosnian 0.6, Romani 0.4, Slovak 0.4, English 0.3, Other languages 0.3, Albanian 0.2
+  national RU religion n=2348 ESS round 8 (2016-2017): Orthodox 50.1, No religion 42.2, Islam 6.1, Protestant 0.5, Eastern religions 0.4, Roman Catholic 0.3, Other Christian 0.2, Other religions 0.2
+  national RU language n=2430 ESS round 8 (2016-2017): Russian 95.5, Other languages 1.7, Tatar 1.3, Chuvash 1.2, Armenian 0.4
+  national SE religion n=8348 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 65.8, Protestant 26.0, Islam 3.4, Roman Catholic 1.5, Orthodox 1.1, Other Christian 1.1, Other religions 0.6, Eastern religions 0.4
+  national SE language n=8312 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Swedish 91.4, Arabic 1.5, English 1.3, Other languages 0.9, Persian 0.6, Kurdish 0.5, Bosnian 0.4, Spanish 0.4
+  national SI religion n=6292 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 52.4, No religion 41.2, Islam 2.8, Orthodox 2.4, Protestant 0.7, Other Christian 0.3, Other religions 0.2, Eastern religions 0.0
+  national SI language n=6325 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Slovene 95.4, Bosnian 2.0, Serbian 0.9, Albanian 0.5, Croatian 0.3, Macedonian 0.3, Hungarian 0.2, Italian 0.1
+  national SK religion n=3875 ESS rounds 9, 10, 11 (2018-2024): Roman Catholic 58.3, No religion 27.2, Protestant 7.0, Other Christian 6.2, Orthodox 0.8, Other religions 0.3, Eastern religions 0.2, Islam 0.1
+  national SK language n=3916 ESS rounds 9, 10, 11 (2018-2024): Slovak 90.1, Hungarian 7.8, Other languages 1.2, Romani 1.0
+  national UA religion n=2600 ESS round 11 (2023-2024): Orthodox 54.9, No religion 32.7, Roman Catholic 10.3, Protestant 1.0, Other Christian 0.9, Islam 0.1, Other religions 0.1, Judaism 0.0
+  national UA language n=2659 ESS round 11 (2023-2024): Ukrainian 74.7, Russian 24.9, Other languages 0.2, Romanian 0.2
+  wrote data/processed/ess_region_survey.json (1149 kB)
+  275 records
