@@ -29,7 +29,9 @@ So every figure here is for those units' own vintage:
   outside the Church by religion only by fylke, so at kommune level they are
   one group. The year is 2017 for the kommuner (KOSTRA reports each year on
   that year's kommuner) and, for the fylker, 2023 for the three dissolved in
-  2024 and the latest year for the eight that were not.
+  2024 and the latest year for the eight that were not. A fylke is the sum of
+  its kommuner that year: KOSTRA's own fylke rows leave the communities
+  outside the Church at 0.
 
 **Language** is recorded by no Norwegian register or census, and ethnicity is
 the existing policy (immigrant background only).
@@ -146,6 +148,10 @@ def religion(counts: dict[str, float], year: int, where: str) -> dict[str, Any] 
     people = counts.get("KOSpersoneralle0000")
     if not church or other is None or not people:
         return None
+    if other == 0 and people > 5000:
+        log(f"  12026 {where} {year}: no members outside the Church among {people:,.0f} "
+            "people -- not published rather than none; left out")
+        return None
     if church + other > people:
         raise SystemExit(f"12026 {where} {year}: {church + other:,.0f} members against a "
                          f"population of {people:,.0f}")
@@ -221,6 +227,7 @@ def main() -> int:
     fylke_people, _ = ages_by_region(list(SPLIT_FYLKER), FYLKE_YEAR)
     kostra_meta = {v["code"]: v for v in request_json(f"{SSB}/12026")["variables"]}
     latest = int(kostra_meta["Tid"]["values"][-1])
+    structure: dict[int, list[str]] = {}
     for f in FYLKER:
         forms = office_names(region_names.get(f, f))
         shape = next((admin1[fold(n)] for n in forms if fold(n) in admin1), None)
@@ -233,7 +240,18 @@ def main() -> int:
                 date=f"1 January {FYLKE_YEAR}", extra_note=(
                     f" {forms[0]} existed from 2020 to 2023; this is its last count."))
         year = FYLKE_YEAR if f in SPLIT_FYLKER else latest
-        faith = religion(membership([f"EKA{f}"], year).get(f"EKA{f}", {}), year, forms[0])
+        # KOSTRA's own fylke rows carry no figure for the communities outside
+        # the Church (they read 0 -- Oslo's fylke row against 140,631 in Oslo
+        # kommune), so a fylke is the sum of its kommuner in that year.
+        if year not in structure:
+            structure[year] = [c["code"] for c in request_json(
+                KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]
+        parts = [c for c in structure[year] if c[:2] == f]
+        summed: dict[str, float] = defaultdict(float)
+        for counts in membership(parts, year).values():
+            for key, value in counts.items():
+                summed[key] += value
+        faith = religion(summed, year, forms[0])
         if faith:
             fields.update(faith)
             fields["sources"].append({"field": "religion", "name": f"{SOURCE}, table 12026",
