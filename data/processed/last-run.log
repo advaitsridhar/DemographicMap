@@ -1,12 +1,140 @@
-  C5P2: 197 tables
-  C5P41: 197 tables
-  C5P25: 197 tables
-  C5P26: 197 tables
-  C5P11: 197 tables
-  196 provinces making INEI's 29,381,884, every question's total and 'No Aplica' making each province
-  196 provinces bound to their polygons; 0 not: 
-  polygons with no province: []
-  wrote data/processed/peru_redatam.json (1050 kB)
-  wrote peru_redatam.json: 222 records
-  wrote data/processed/peru_redatam_population.json (261 kB)
-  wrote peru_redatam_population.json: 196 records
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
+  unpacked personas_ext_26_02.rar with 7z
+  February file: 3,499,451 people in 159 (department, municipio) pairs
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
+  unpacked personas_ext_07_2026.rar with 7z
+  19 departments' weighted people, men and women make Cuadro 1
+  in the person file and not in Cuadro 14, each under one weighted person: {('16', '9898'): 0.0}
+  the weighted person file makes Cuadro 14's 166 rows, department by department and municipio by municipio
+  the February file holds 3,499,451; its departments against Cuadro 1: Montevideo +229, Artigas +0, Canelones +0, Cerro Largo -239, Colonia +40, Durazno +0, Flores -30, Florida +0, Lavalleja +0, Maldonado +0, Paysandú +0, Río Negro +0, Rivera +0, Rocha +0, Salto +0, San José +0, Soriano +0, Tacuarembó +0, Treinta y Tres +0
+  2020-series municipios differing from the 2025 series row of their name by more than 1%: 106
+    Municipio A (Montevideo): 203,088 against 206,236
+    Municipio B (Montevideo): 154,588 against 149,350
+    Municipio C (Montevideo): 145,891 against 141,785
+    Municipio CH (Montevideo): 161,751 against 157,410
+    Municipio D (Montevideo): 166,695 against 173,170
+    Municipio E (Montevideo): 149,054 against 145,492
+    Municipio F (Montevideo): 168,683 against 173,991
+    Municipio G (Montevideo): 150,393 against 153,928
+    Baltasar Brum (Artigas): 2,804 against 3,053
+    Bella Unión (Artigas): 19,824 against 20,283
+    Tomás Gomensoro (Artigas): 2,947 against 3,029
+    Aguas Corrientes (Canelones): 1,700 against 1,883
+    Atlántida (Canelones): 14,246 against 13,953
+    Barros Blancos (Canelones): 33,818 against 34,379
+    Canelones (Canelones): 31,813 against 28,277
+    Ciudad de la Costa (Canelones): 114,633 against 113,387
+    Empalme Olmos (Canelones): 7,817 against 7,672
+    Joaquín Suarez (Canelones): 20,990 against 11,201
+    La Floresta (Canelones): 17,577 against 18,017
+    La Paz - Canelones (Canelones): 22,441 against 23,212
+    Los Cerrillos (Canelones): 7,662 against 8,230
+    Migues (Canelones): 3,355 against 3,295
+    Nicolich Ciudad Liber Seregni (Canelones): 19,562 against None
+    Pando (Canelones): 39,720 against 40,243
+    Paso Carrasco (Canelones): 16,484 against 16,113
+    Progreso (Canelones): 15,999 against 15,724
+    San Antonio (Canelones): 3,536 against 3,589
+    San Bautista (Canelones): 3,916 against 3,827
+    San Jacinto (Canelones): 8,318 against 7,928
+    San Ramón (Canelones): 8,007 against 7,833
+    Santa Lucía (Canelones): 18,730 against 18,259
+    Santa Rosa (Canelones): 7,057 against 6,852
+    Sauce (Canelones): 14,027 against 14,613
+    Soca (Canelones): 3,222 against 3,365
+    Tala (Canelones): 9,179 against 8,924
+    Aceguá (Cerro Largo): 1,549 against 1,422
+    Arbolito (Cerro Largo): 263 against 325
+    Arévalo (Cerro Largo): 709 against 809
+    Bañado de Medina (Cerro Largo): 1,510 against 1,987
+    Centurión (Cerro Largo): 217 against 273
+    Cerro de las Cuentas (Cerro Largo): 469 against 463
+    Fraile Muerto (Cerro Largo): 3,572 against 3,507
+    Isidoro Noblía (Cerro Largo): 3,005 against 3,298
+    Las Cañas (Cerro Largo): 409 against 440
+    Plácido Rosas (Cerro Largo): 749 against 727
+    Ramón Trigo (Cerro Largo): 317 against 300
+    Río Branco (Cerro Largo): 18,820 against 18,269
+    Tres Islas (Cerro Largo): 230 against 224
+    Carmelo (Colonia): 21,406 against 21,624
+    Colonia Miguelete (Colonia): 1,558 against 1,633
+    Colonia Valdense (Colonia): 5,077 against 5,372
+    Florencio Sánchez (Colonia): 4,137 against 4,247
+    La Paz - Colonia (Colonia): 1,580 against 1,681
+    Ombúes de Lavalle (Colonia): 4,471 against 4,531
+    Rosario (Colonia): 11,080 against 10,793
+    Tarariras (Colonia): 8,196 against 8,355
+    Sarandí del Yí (Durazno): 7,959 against 7,534
+    Ismael Cortinas (Flores): 1,075 against 1,047
+    Casupá (Florida): 2,943 against 3,031
+    Fray Marcos (Florida): 3,017 against 3,168
+    Sarandí Grande (Florida): 6,994 against 6,909
+    José Batlle y Ordoñez (Lavalleja): 2,412 against 2,269
+    Mariscala (Lavalleja): 1,890 against 1,938
+    Solís de Mataojo (Lavalleja): 3,330 against 3,179
+    Aiguá (Maldonado): 3,378 against 3,313
+    Garzón (Maldonado): 1,281 against 1,509
+    Pan de Azúcar (Maldonado): 9,195 against 9,583
+    Piriápolis (Maldonado): 24,011 against 24,560
+    Punta del Este (Maldonado): 20,337 against 20,600
+    San Carlos (Maldonado): 44,476 against 43,759
+    Solís Grande (Maldonado): 3,802 against 4,048
+    Guichón (Paysandú): 7,355 against 7,750
+    Lorenzo Geyres (Paysandú): 1,380 against 1,816
+    Piedras Coloradas (Paysandú): 1,932 against 2,043
+    Porvenir (Paysandú): 6,175 against 6,325
+    Quebracho - Paysandu (Paysandú): 3,259 against 3,820
+    Tambores (Paysandú): 1,082 against 1,263
+    Nuevo Berlín (Río Negro): 2,784 against 2,882
+    Piedras Coloradas (Río Negro): 139 against 153
+    San Javier (Río Negro): 2,618 against 2,866
+    Young (Río Negro): 13,680 against 18,827
+    Minas de Corrales (Rivera): 3,809 against 3,990
+    Tranqueras (Rivera): 8,511 against 8,978
+    Vichadero (Rivera): 4,074 against 3,997
+    La Paloma (Rocha): 9,060 against 9,453
+    Colonia Lavalleja (Salto): 2,268 against 2,814
+    Mataojo (Salto): 730 against 970
+    Pueblo Belén (Salto): 2,296 against 2,379
+    Pueblo Rincón de Valentín (Salto): 1,501 against 1,626
+    Pueblo San Antonio (Salto): 3,943 against 4,372
+    Villa Constitución (Salto): 3,988 against 4,074
+    Ciudad del Plata (San José): 39,108 against 40,125
+    Ecilda Paullier (San José): 5,190 against 5,521
+    Libertad (San José): 16,097 against 16,265
+    Rodríguez (San José): 4,809 against 5,078
+    Cardona (Soriano): 5,316 against 5,057
+    Dolores (Soriano): 20,287 against 20,816
+    José Enrique Rodó (Soriano): 2,414 against 2,532
+    Palmitas (Soriano): 2,351 against 2,424
+    Ansina (Tacuarembó): 3,330 against 3,706
+    Paso de los Toros (Tacuarembó): 14,485 against 13,932
+    Cerro Chato (Treinta y Tres): 1,304 against 1,413
+    General Enrique Martínez (Treinta y Tres): 1,515 against 1,641
+    Rincón (Treinta y Tres): 963 against 1,067
+    Santa Clara de Olimar (Treinta y Tres): 2,403 against 2,696
+    Villa Sara (Treinta y Tres): 1,399 against 1,483
+  on no polygon: Montevideo 9898: 2,807 people
+  on no polygon: Artigas 9898: 51 people
+  on no polygon: Canelones 9898: 342 people
+  on no polygon: Cerro Largo 9898: 28 people
+  on no polygon: Cerro Largo Sin Municipio: 57,747 people
+  on no polygon: Colonia 9898: 15 people
+  on no polygon: Durazno 9898: 8 people
+  on no polygon: Florida 9898: 22 people
+  on no polygon: Lavalleja 9898: 12 people
+  on no polygon: Maldonado 9898: 113 people
+  on no polygon: Paysandú 9898: 61 people
+  on no polygon: Río Negro 9898: 16 people
+  on no polygon: Rocha 9898: 9 people
+  on no polygon: Salto 9898: 41 people
+  on no polygon: San José 9898: 28 people
+  on no polygon: Soriano 9898: 15 people
+  on no polygon: Tacuarembó 9898: 5 people
+  on no polygon: Treinta y Tres 9898: 21 people
+  wrote data/processed/uruguay_census.json (643 kB)
+  wrote uruguay_census.json: 19 departments, 139 municipio and remainder polygons
