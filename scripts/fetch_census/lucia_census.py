@@ -483,9 +483,11 @@ def composition(row: dict[str, int], labels: dict[str, str], what: str) -> dict[
     return out
 
 
-def sex_ratio(men: float, women: float, year: int, source: str) -> dict[str, Any] | None:
+def sex_ratio(men: float, women: float, year: int, source: str) -> dict[str, Any]:
     if not women or not men:
-        return None
+        return gap(NOT_AVAILABLE, f"The {year} count here has {men:,.0f} men and "
+                                  f"{women:,.0f} women; a ratio of either to none is no "
+                                  "figure.")
     return measure(round(1000 * men / women), unit="males_per_1000_females", year=year,
                    source=source)
 
