@@ -1,8 +1,26 @@
-austria: population on 1 January 2026 by municipality, sex and single year of age
-  393,942 rows, 94 districts, 9,215,956 people
-  Laender against Austria: parts sum to 9,215,956 = 9,215,956
-  national median 44.1 (1 January 2026) against Eurostat's 43.8 a year earlier (AT); 2026 is not published yet
-  austria: 0 office units unbound
-  austria: 0 polygons without an office unit
-  wrote data/processed/austria_bezirk.json (195 kB)
-  wrote austria_bezirk.json: 94 records
+
+== collection
+  200 45,570,908 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+      {   "class": "collection",   "link": {     "item": [       {         "dimension": {           "STATISTIC": {     
+
+  collection came from https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+  13077 datasets in the collection
+
+== 4 datasets matching ['single'], broken down by 'County'
+  CD207     2020-05-12  Population
+      by: Single Year of Age; Sex; Province County or City
+  E8014     2020-06-30  Irish Travellers Usually Resident and Present in the State 2011 to 2016
+      by: Single Year of Age; Sex; County of Usual Residence
+  F2010     2023-07-27  Private Households in Permanent Housing Units
+      by: County and City; Single year of age; Nature of Occupancy
+  FY006B    2023-05-30  Population
+      by: Sex; Single Year of Age; County and City
+
+== dimensions offered by the matching tables (counts of tables, not of categories)
+     3 tables  Single Year of Age
+     3 tables  Sex
+     2 tables  County and City
+     1 tables  Province County or City
+     1 tables  County of Usual Residence
+     1 tables  Single year of age
+     1 tables  Nature of Occupancy
