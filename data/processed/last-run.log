@@ -1,32 +1,3 @@
-== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT
-  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
-  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
-  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT
-== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT
-  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
-  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
-  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT
-== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/56945
-  123 bytes; starts b'[{"Id" :'
-  [{"Id" : 113388, "Nombre" : "Edad simple"},
-  {"Id" : 113389, "Nombre" : "Provincias"},
-  {"Id" : 113390, "Nombre" : "Sexo"}]
-  
-== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/59589
-  123 bytes; starts b'[{"Id" :'
-  [{"Id" : 114069, "Nombre" : "Edad simple"},
-  {"Id" : 114070, "Nombre" : "Provincias"},
-  {"Id" : 114071, "Nombre" : "Sexo"}]
-  
-== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/69792
-  123 bytes; starts b'[{"Id" :'
-  [{"Id" : 145745, "Nombre" : "Edad simple"},
-  {"Id" : 145746, "Nombre" : "Provincias"},
-  {"Id" : 145747, "Nombre" : "Sexo"}]
-  
-== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/59238
-  146 bytes; starts b'[{"Id" :'
-  [{"Id" : 113934, "Nombre" : "Edad simple"},
-  {"Id" : 113935, "Nombre" : "Comunidades y ciudades autónomas"},
-  {"Id" : 113936, "Nombre" : "Sexo"}]
-  
+kosovo: ASKdata, 2024 census
+  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
+kosovo: ASK's 'Zveqan' matches no polygon
