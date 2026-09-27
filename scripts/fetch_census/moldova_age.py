@@ -104,7 +104,7 @@ def ages(rows: list[tuple[Any, ...]]) -> tuple[dict[str, dict[str, Any]], list[t
             check_sum(total, NATIONAL, "moldova_age: the country's total")
             continue
         if UNIT_NAME.match(name):
-            units[key(name)] = {"name": name, "total": total, "groups": groups}
+            units[unit_key(name)] = {"name": name, "total": total, "groups": groups}
     if country is None or len(units) != UNITS:
         raise SystemExit(f"moldova_age: table 2.3 gave {len(units)} units and "
                          f"{'a' if country else 'no'} country row")
@@ -112,28 +112,38 @@ def ages(rows: list[tuple[Any, ...]]) -> tuple[dict[str, dict[str, Any]], list[t
     return units, country
 
 
+def unit_key(name: str) -> str:
+    """Gagauzia is "UTA Găgăuzia" in one table and spelled out in the other."""
+    if fold(name).startswith("unitatea teritoriala autonoma"):
+        name = "UTA " + name.split()[-1]
+    return key(name)
+
+
 def sexes(rows: list[tuple[Any, ...]]) -> dict[str, tuple[float, float, float]]:
-    """{unit key: (total, men, women)} from table 8.3's all-areas rows."""
+    """{unit key: (total, men, women)} from table 8.3.
+
+    Every row says what it is in its "Tip dezagregare" cell -- "Raioane" for
+    a district, a municipality or Gagauzia, "Comune" and "Localitati" for
+    what lies inside -- and names itself in the cell after.
+    """
     head = next(i for i, r in enumerate(rows) if any("Masculin" == text(c) for c in r))
     men_col = next(j for j, c in enumerate(rows[head]) if text(c) == "Masculin")
     women_col = next(j for j, c in enumerate(rows[head]) if text(c) == "Feminin")
     out: dict[str, tuple[float, float, float]] = {}
     for r in rows[head + 1:]:
         cells = [text(c) for c in r]
-        # A unit's all-areas row names it and says "Total"; its urban and
-        # rural rows follow with the same name.
-        if "Total" not in cells[:5]:
+        if "Raioane" not in cells:
             continue
-        name = next((c for c in cells[:5] if c and c != "Total"
-                     and not re.fullmatch(r"[\dA-Z]+", c)), "")
-        if not UNIT_NAME.match(name):
-            continue
+        name = cells[cells.index("Raioane") + 1]
         men, women = persons(r[men_col]), persons(r[women_col])
         total = persons(r[men_col - 1])
         check_sum(men + women, total, f"moldova_age: sexes of {name}")
-        out.setdefault(key(name), (total, men, women))
+        if unit_key(name) in out:
+            raise SystemExit(f"moldova_age: table 8.3 names {name} twice")
+        out[unit_key(name)] = (total, men, women)
     if len(out) != UNITS:
         raise SystemExit(f"moldova_age: table 8.3 gave {len(out)} units, not {UNITS}")
+    check_sum(sum(v[0] for v in out.values()), NATIONAL, "moldova_age: table 8.3's units")
     return out
 
 
