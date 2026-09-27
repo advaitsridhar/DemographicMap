@@ -73,6 +73,11 @@ def build(year: int) -> list[dict[str, Any]]:
     okresy = {name: u for (cis, name), u in table.items() if cis == "101"}
     kraje = {name: u for (cis, name), u in table.items() if cis == "100"}
     country = next(u for (cis, _), u in table.items() if cis == "97")
+    if not PRAGUE & set(okresy):
+        # The file lists Prague once, as a kraj: the capital is a kraj and an
+        # okres with one boundary, and ČSÚ does not repeat it at level 101.
+        okresy["Praha"] = kraje["Hlavní město Praha"]
+        log("  Prague is listed only as a kraj; the kraj is the okres")
     log(f"  {len(okresy)} okresy, {len(kraje)} kraje, Czechia {country['total']:,}")
     for name, unit in [*okresy.items(), ("Česko", country)]:
         made = sum(unit["m"].values()) + sum(unit["f"].values())
