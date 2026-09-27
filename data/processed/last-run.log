@@ -1,12 +1,44 @@
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics/07.px
-  883 bytes, begins b'{"title":"Popula'
-  json: {"title": "Population by regions, age and sex", "variables": [{"code": "Age", "text": "Age", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"], "valueTexts": ["Total", "0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85 and over"]}, {"code": "Regions", "text": "Regions", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "valueTexts": ["Georgia", "C. Tbilisi", "Autonomous Republic of Adjara", "Guria", "Imereti", "Kakheti", "Mtskheta-Mtianeti", "Racha-Lechkhumi and Kvemo Svaneti", "Samegrelo-Zemo Svaneti", "Samtskhe-Javakheti", "Kvemo Kartli", "Shida Kartli"]}, {"code": "Urban/Rural", "text": "Urban/Rural", "values": ["0", "1", "2"], "valueTexts": ["Total", "Urban", "Rural"]}, {"code": "Sex", "text": "Sex", "values": ["0", "1", "2"], "valueTexts": ["Both sexes", "Males", "Females"]}]}
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics/17_Total%20population%20by%20regions%20and%20ethnicity.px
-  853 bytes, begins b'{"title":"Total '
-  json: {"title": "Total population by regions and ethnicity by Regions, Urban/Rural and ethnicity", "variables": [{"code": "Regions", "text": "Regions", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "valueTexts": ["GEORGIA", "C. Tbilisi", "Autonomous Republic of Adjara", "Guria", "Imereti", "Kakheti", "Mtskheta-Mtianeti", "Racha-Lechkhumi and Kvemo Svaneti", "Samegrelo-Zemo Svaneti", "Samtskhe-Javakheti", "Kvemo Kartli", "Shida Kartli", "… is less or equal to 10"]}, {"code": "Urban/Rural", "text": "Urban/Rural", "values": ["0", "1", "2"], "valueTexts": ["Total", "Urban", "Rural"]}, {"code": "ethnicity", "text": "ethnicity", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"], "valueTexts": ["Total", "Georgians", "Azerbaijanians", "Armenians", "Russians", "Ossetians", "Yezidis", "Ukrainians", "Kists", "Greeks", "Assyrians", "Other", "Refusal", "Not stated"]}]}
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics/22_Population%20by%20regions%20and%20religion.px
-  839 bytes, begins b'{"title":"Popula'
-  json: {"title": "Population by regions and religion by Regions, Urban/Rural and Religion", "variables": [{"code": "Regions", "text": "Regions", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "valueTexts": ["GEORGIA", "C. Tbilisi", "Autonomous Republic of Adjara", "Guria", "Imereti", "Kakheti", "Mtskheta-Mtianeti", "Racha-Lechkhumi and Kvemo Svaneti", "Samegrelo-Zemo Svaneti", "Samtskhe-Javakheti", "Kvemo Kartli", "Shida Kartli", "… is less or equal to 10"]}, {"code": "Urban/Rural", "text": "Urban/Rural", "values": ["0", "1", "2"], "valueTexts": ["Total", "Urban", "Rural"]}, {"code": "Religion", "text": "Religion", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "valueTexts": ["Total", "Orthodox", "Muslim", "Armenian apostolic", "Catholic", " Jehovah’s Witnesses", "Yazidis", "Protestant", "Judaism", "Other", "None", "Refusal", "Not stated"]}]}
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics/20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px
-  973 bytes, begins b'{"title":"Popula'
-  json: {"title": "Population by region, by native languages and fluently speak Georgian language by Regions, fluently speak Georgian language and native languages", "variables": [{"code": "Regions", "text": "Regions", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "valueTexts": ["GEORGIA", "C. Tbilisi", "Autonomous Republic of Adjara", "Guria", "Imereti", "Kakheti", "Mtskheta-Mtianeti", "Racha-Lechkhumi and Kvemo Svaneti", "Samegrelo-Zemo Svaneti", "Samtskhe-Javakheti", "Kvemo Kartli", "Shida Kartli", "… Is less or equal to 10"]}, {"code": "fluently speak Georgian language", "text": "fluently speak Georgian language", "values": ["0", "1", "2", "3"], "valueTexts": ["Total", "Fluently speak Georgian language", "Fluently do not speak Georgian language", "Not stated"]}, {"code": "native languages", "text": "native languages", "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8"], "valueTexts": ["Total", "Georgian", "Abkhazian", "Ossetian", "Azerbaijanian", "Russian", "Armenian", "Other", "Not stated"]}]}
+== head https://ess.sikt.no/en/datafile/242aaa39-3bbb-40f5-98bf-bfb1ce53d8ef 
+  HTTP 200 text/html; charset=UTF-8 1,667 bytes
+  title: ESS Data Portal
+== js https://ess.sikt.no/en/ (?:https?://[a-z0-9.-]*sikt[a-z0-9./_-]*|/api/[a-zA-Z0-9/_-]+|download[A-Za-z]*|variableviewer|frequenc[a-z]*) 40
+  HTTP 200 text/html; charset=UTF-8 1,667 bytes
+  2 scripts; inline hits:
+  ~ l</title> <meta name="description" content="Search, explore and download data from the European Social Survey and related survey programmes." /> <me
+  ~ et paths in meta content attributes. --> <meta property="og:image" content="https://ess.sikt.no/images/sharelogo.png" /> <meta property="og:image:width" content="750" /> <meta property="og
+  -- https://ess.sikt.no/env.js HTTP 200 104 bytes
+  (no match)
+  -- https://ess.sikt.no/assets/index-Db1MnlBi.js HTTP 200 2,967,512 bytes
+  ~ oords,crossorigin,csp,data,datetime,decoding,default,defer,dir,dirname,disabled,download,draggable,dropzone,enctype,enterkeyhint,for,form,formaction,formenctype,formmet
+  ~ alphabetic,amplitude,arabic-form,ascent,attributeName,attributeType,azimuth,baseFrequency,baseline-shift,baseProfile,bbox,begin,bias,by,calcMode,cap-height,class,clip,cl
+  ~ 0,0-8,0V134.34L90.83,101.17a4,4,0,0,0-5.66,5.66Z"},null,-1),uG=[lG],cG={name:"PhDownloadSimple"},lN=Pr({...cG,props:{weight:{type:String},size:{type:[String,Number]},color:{t
+  ~ H_SERVER:"https://sso.nsd.no",API_URL:"https://api.nsd.no/graphql",ESS_API_URL:"https://api.ess.sikt.no",INSTANCE:"PUBLISHED"}:{...WA,STACK:"stage",AUTH_SERVER:"https://sso-stage.nsd.
+  ~ tps://sso-stage.nsd.no",API_URL:"https://api-stage.nsd.no/graphql",ESS_API_URL:"https://api.ess.stage.sikt.no",INSTANCE:"PROCESSING"},ure={class:"w-full"},cre={class:"mx-auto"},hre={class:"
+  ~ US/firefox/addon/apollo-developer-tools/")),a&&globalThis.__DEV__!==!1&&ai.log("Download the Apollo DevTools for a better development experience: %s",a)}},1e4))}},Objec
+  ~ $locale } ) { shareUrl } } } `,m4=ss` query FrequencyTabulation($input: FrequencyTabulationInput!) { analysis { frequencyTabulation(i
+  ~  shareUrl } } } `,m4=ss` query FrequencyTabulation($input: FrequencyTabulationInput!) { analysis { frequencyTabulation(input: $input) { variableV
+  ~ y FrequencyTabulation($input: FrequencyTabulationInput!) { analysis { frequencyTabulation(input: $input) { variableValues { name values 
+  ~  freqCol freqColValid } } } } `,mD=ss` query FrequencyTabulationByVariable($input: FrequencyTabulationInput!) { analysis { frequencyTabulationBy
+  ~ yTabulationByVariable($input: FrequencyTabulationInput!) { analysis { frequencyTabulationByVariables(input: $input) { responses { by { variable 
+  ~ $datafileTitle: String! $studyUrn: String! $orderedBy: ID! $format: DownloadFormat! ) { ESS { registerSingleDownload( input: { dataf
+  ~ eOfActivity academicDiscipline } } } `,oae=ss` query startDownloadJob($input: DataFileDownloadInput!) { ESS { startDownloadJob(input: $inpu
+  ~ Discipline } } } `,oae=ss` query startDownloadJob($input: DataFileDownloadInput!) { ESS { startDownloadJob(input: $input) } } `,lae=ss` query
+  ~ {"background-color":"var(--color-red-light)"}},yme=["href"],xme=Pr({__name:"DataDownloader",props:{queryVariables:{type:Object,required:!0}},emits:["finished"],setup(e,{e
+  ~ Value","click-to-close"]))}}),wme={key:0,class:"flex flex-row"},Sme=Pr({__name:"DownloadBtn",props:{downloadFunc:{type:Function,required:!0},registerFunc:{type:Function,re
+  ~ se"]))}}),wme={key:0,class:"flex flex-row"},Sme=Pr({__name:"DownloadBtn",props:{downloadFunc:{type:Function,required:!0},registerFunc:{type:Function,required:!0},disabled:{
+  ~ ,h,d){if(d=d||open("","_blank"),d&&(d.document.title=d.document.body.innerText="downloading..."),typeof l=="string")return n(l,c,h);var f=l.type==="application/octet-strea
+  ~ me:"TableStyleDark3"},columns:o,rows:s});const u=[{key:"Analyse: ",value:{text:"https://ess.sikt.no"+t.url,hyperlink:"https://ess.sikt.no"+t.url,Tooltip:"Go to the analysis page"}
+  ~ t k7(s,r)}}const G0e=function(e){if(e.getOptions().exporting){e.Chart.prototype.downloadXLSX=function(){var t=document.createElement("div"),n,i=[],a;return t.style.display=
+  ~ )}};var r=e.getOptions().exporting.buttons.contextButton.menuItems;r[r.indexOf("downloadXLS")]="downloadXLSX"}};function K0(e){return new Date(e).toISOString()}function YL
+  ~ ,lang:{printChart:n("exporting.print"),viewFullscreen:n("exporting.fullScreen"),downloadPNG:n("exporting.download.png"),downloadPDF:n("exporting.download.pdf"),downloadSVG
+  ~ iewFullscreen:n("exporting.fullScreen"),downloadPNG:n("exporting.download.png"),downloadPDF:n("exporting.download.pdf"),downloadSVG:n("exporting.download.svg"),downloadXLS
+  ~ downloadPNG:n("exporting.download.png"),downloadPDF:n("exporting.download.pdf"),downloadSVG:n("exporting.download.svg"),downloadXLSX:n("exporting.download.xls"),validity:n
+  ~ y:0,class:"mt-8 w-full md:w-4/5 lg:w-4/5 xl:w-4/5 self-center"},Hge=Pr({__name:"VariableViewer",props:{variable:{type:Object,required:!0},datafile:{type:Object,required:!0},g
+  ~ kt-light-gray-1 py-4 px-6"},c1e={colspan:"5",class:"py-7 px-6"},h1e=Pr({__name:"FrequencyTabulationTable",props:{variable:{type:Object,required:!0},datafile:{type:Object,required:!0}},
+  ~  px-6"},null,-1))]),ce("tr",null,[ce("td",c1e," *) "+St(le(i)("field.unweighted_frequencies")),1)])])])])):Wt("",!0)]))}}),d1e={key:0,class:"py-4"},f1e={class:"relative ov
+  ~ ion Complete!",-1)),o[1]||(o[1]=ce("div",{class:"max-w-md"},"You can now access downloaded files.",-1))]),ce("div",t_e,[le(t)?(ye(),Er(u,{key:0,to:le(t)},{default:cr(()=>
+  ~ lass:"sds-footer__logo-link sds-typography-link","aria-label":"ESS"},b8e={href:"https://sikt.no/en/home",class:"sds-footer__logo-link sds-typography-link","aria-label":"Sikt"},y8e=Pr(
+  ~ uttonTitle",menuItems:["viewFullscreen","printChart","separator","downloadPNG","downloadJPEG","downloadSVG"],y:-5}},menuItemDefinitions:{viewFullscreen:{textKey:"viewFullsc
+  ~ return f.createObjectURL(new h.Blob([Fe],{type:Ne[1]}))}}let y={dataURLtoBlob:v,downloadURL:function(we,Ne){let ue=h.navigator,ve=d.createElement("a");if(typeof we!="strin
+  ~ :!1,useMultiLevelHeaders:!0,useRowspanHeaders:!0,showExportInProgress:!0},lang:{downloadCSV:"Download CSV",downloadXLS:"Download XLS",exportData:{annotationHeader:"Annotat
+  ~ st CT=R_e(HB),WB=eme();WB.use(({store:e})=>{e.$router=t1(CT)});const J8e={host:"https://matomo.sikt.no",siteId:51,enableLinkTracking:!0,trackerFileName:"matomo",router:CT,enableHeart
