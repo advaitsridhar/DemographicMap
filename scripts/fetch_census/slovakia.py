@@ -99,6 +99,7 @@ MAP_NAMES = {
     "District of Zlatc Moravce": "Zlaté Moravce",
 }
 EXPECTED = 79
+BATCH = 15                         # territories per request (15 x 3 sexes x 112 ages)
 
 
 def cube(name: str, path: str) -> list[tuple[dict[str, tuple[str, str]], float]]:
@@ -141,11 +142,17 @@ def latest(year: int) -> int:
     """
     import urllib.error
     for candidate in range(year, year - 3, -1):
+        # Both cubes must hold the year: the median cube (om7005rr) can lag
+        # the age cube.
         try:
             cube("om7009rr", f"SK0/{candidate}/{POPULATION}/SPOLU/Spolu")
+            if not cube("om7005rr", f"SK0/{candidate}/{MEDIAN}/SPOLU"):
+                raise urllib.error.HTTPError("", 404, "no median", None, None)
             return candidate
         except urllib.error.HTTPError as err:
             log(f"  {candidate}: HTTP {err.code}; trying the year before")
+        except (ValueError, KeyError) as err:
+            log(f"  {candidate}: {type(err).__name__} {err}; trying the year before")
     raise SystemExit(f"slovakia: om7009rr answers for none of {year - 2}..{year}")
 
 
@@ -159,11 +166,29 @@ def build(year: int) -> list[dict[str, Any]]:
     # The cube refuses (400) a request for every territory and every age at
     # once, so it is asked one territory at a time, the territories being the
     # ones its sister cube lists.
+    import time
+    import urllib.error
+    started = time.monotonic()
     medians = {key["om7005rr_vuc"][0]: value
                for key, value in cube("om7005rr", f"all/{year}/{MEDIAN}/SPOLU")}
+    log(f"  om7005rr: {len(medians)} territories in {time.monotonic() - started:.0f} s")
+    # A run that asked for the 88 territories one by one outlasted the
+    # runner's 45 minutes, so they are asked for in batches, a batch being a
+    # comma-separated list of territories, and one by one only if the cube
+    # refuses a batch.
     rows = []
-    for area in sorted(medians):
-        rows += cube("om7009rr", f"{area}/{year}/{POPULATION}/all/all")
+    areas = sorted(medians)
+    for i in range(0, len(areas), BATCH):
+        batch = areas[i:i + BATCH]
+        t0 = time.monotonic()
+        try:
+            rows += cube("om7009rr", f"{','.join(batch)}/{year}/{POPULATION}/all/all")
+        except urllib.error.HTTPError as err:
+            log(f"  batch of {len(batch)}: HTTP {err.code}; one territory at a time")
+            for area in batch:
+                rows += cube("om7009rr", f"{area}/{year}/{POPULATION}/all/all")
+        log(f"  om7009rr: {min(i + BATCH, len(areas))} of {len(areas)} territories "
+            f"({time.monotonic() - t0:.0f} s)")
     for key, value in rows:
         area, area_label = key["om7009rr_vuc"]
         sex = key["om7009rr_poh"][0]
