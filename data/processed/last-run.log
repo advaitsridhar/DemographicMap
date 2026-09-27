@@ -1,30 +1,29 @@
-norway: SSB 07459 and 12026 for the 2017 kommuner
-  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
-    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
-  Norway 1 January 2017: 5,258,317 people, median age 39.3
-  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
-    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
-    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
-  12026 Oslo 2025: no members outside the Church among 728,714 people -- not published rather than none; left out
-  12026 Oslo 2024: no members outside the Church among 724,290 people -- not published rather than none; left out
-  12026 Rogaland 2025: no members outside the Church among 508,922 people -- not published rather than none; left out
-  12026 Rogaland 2024: no members outside the Church among 504,496 people -- not published rather than none; left out
-  12026 Møre og Romsdal 2025: no members outside the Church among 273,169 people -- not published rather than none; left out
-  12026 Møre og Romsdal 2024: no members outside the Church among 272,413 people -- not published rather than none; left out
-  12026 Nordland 2025: no members outside the Church among 243,272 people -- not published rather than none; left out
-  12026 Nordland 2024: no members outside the Church among 243,582 people -- not published rather than none; left out
-  12026 Innlandet 2025: no members outside the Church among 379,488 people -- not published rather than none; left out
-  12026 Innlandet 2024: no members outside the Church among 377,556 people -- not published rather than none; left out
-  12026 Agder 2025: no members outside the Church among 323,930 people -- not published rather than none; left out
-  12026 Agder 2024: no members outside the Church among 322,188 people -- not published rather than none; left out
-  12026 Vestland 2025: no members outside the Church among 658,342 people -- not published rather than none; left out
-  12026 Vestland 2024: no members outside the Church among 655,210 people -- not published rather than none; left out
-    HTTP 429; waiting 5s :: https://data.ssb.no/api/v0/en/table/12026
-    HTTP 429; waiting 10s :: https://data.ssb.no/api/v0/en/table/12026
-    HTTP 429; waiting 20s :: https://data.ssb.no/api/v0/en/table/12026
-    HTTP 429; waiting 40s :: https://data.ssb.no/api/v0/en/table/12026
-  12026 Trøndelag 2025: no members outside the Church among 489,166 people -- not published rather than none; left out
-  12026 Trøndelag 2024: no members outside the Church among 486,815 people -- not published rather than none; left out
-  labels the group tree cannot place: ['Member of another faith or life-stance community', 'Not a member of a registered faith or life-stance community']
-  wrote data/processed/norway_kommune.json (1195 kB)
-  wrote norway_kommune.json: 430 records
+== https://www.estadistica.ad/
+  19,788 bytes; starts b'<!DOCTYP'
+  235 lines, 26 with ['href', 'src=', 'http', 'url']
+     25: 	  if ((window.parent.location.href.indexOf("estadistica-")>-1) && (window.parent.location.href.indexOf("estadistica.ad")>-1)) {
+     39: <meta name="layout-editor-engine/config/environment" content="%7B%22modulePrefix%22%3A%22layout-editor-engine%22%2C%22environment%22%3A%22production%22%2C%22cedar%22%3A%7B%22amCharts%22%3A%7B%22dependencies%22%3A%5B%22amcharts.js%22%2C%22serial.js%22%2C%22xy.js%22%2C%22pie.js%22%2C%22radar.js%22%2C%
+     43:     <link rel="stylesheet" href="./assets/vendor-de08d070a52e48c47eae5bf8d94b2cd3.css">
+     47:     <!-- <link rel="stylesheet" href="assets/opendata-base.css"> -->
+     49:     <!-- <link rel="stylesheet" href="./assets/opendata-rtl-5e26b21b80824714d94334c60cd78c84.css">
+     50:     <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css"> -->
+     54:     <script type="module" src=".//calcite-components/calcite.esm.js"></script>
+     76:     <script crossorigin="anonymous" src="./assets/vendor-14a5f5f2be970daab736aecdccc64445.js"></script>
+     77:     <script crossorigin="anonymous" src="./assets/opendata-ui-66a67e36bd17ae5d97e61383cba65bfe.js"></script>
+     93: 			if((window.parent.location.href.indexOf("estadistica-")>-1)) {
+    111: 				$(window.parent.document).contents().find("head").append($('<link rel="stylesheet" type="text/css" href="./estadistica.ad/Fonts/fontawesome/css/all.min.css">'));
+    112: 				document.cookie = "EW_urlParent=" + window.parent.location.href + "; path=/";
+    113: 				document.cookie = "EW_Idioma=" + window.parent.location.href.split('estadistica-')[1].substring(0, 2) + "; path=/";
+    145: 				<!-- scriptGoog.src = 'https://www.googletagmanager.com/gtag/js?id=UA-2534605-146'; -->
+    161: 					var u="https://governandorra.matomo.cloud/";
+    162: 					_paq.push(['setTrackerUrl', u+'matomo.php']);
+    165: 					g.async=true; g.src='https://cdn.matomo.cloud/governandorra.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    176: 						var u="https://governandorra.matomo.cloud/";
+    177: 						_paq.push(['setTrackerUrl', u+'matomo.php']);
+    180: 						g.async=true; g.src='https://cdn.matomo.cloud/governandorra.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    185: 					document.cookie = "EW_Idioma=" + window.parent.location.href.split('estadistica-')[1].substring(0, 2) + "; path=/";
+    192: 					var urlIframeActual = $("#iframeContent").attr("src");
+    194: 					if(getCookie("EW_urlParent") != window.location.href){
+    196: 						document.cookie = "EW_urlParent=" + window.parent.location.href + "; path=/";
+    204: 							var urlIframeNueva = $("#iframeContent").attr("src");
+    215: 										var urlIframe = IniciSites.init();
