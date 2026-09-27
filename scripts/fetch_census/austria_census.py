@@ -92,6 +92,12 @@ def municipalities(year: int) -> list[str]:
     rows = csv.DictReader(io.StringIO(blob.decode("utf-8-sig")), delimiter=";")
     listed = {row["code"].split("-")[-1]: row["name"] for row in rows}
     codes = sorted(c for c in listed if re.fullmatch(r"\d{5}", c))
+    # Vienna is listed as its 23 Gemeindebezirke (90101 ... 92301); a code for
+    # the city as a whole beside them would count it twice.
+    whole = [c for c in codes if c.startswith("900")]
+    if whole and any(c.startswith("9") and not c.startswith("900") for c in codes):
+        log(f"  Vienna as a whole, left out beside its districts: {[(c, listed[c]) for c in whole]}")
+        codes = [c for c in codes if c not in whole]
     others = {c: n for c, n in listed.items() if c not in codes}
     if others:
         # The list carries a code for the country as a whole beside the
