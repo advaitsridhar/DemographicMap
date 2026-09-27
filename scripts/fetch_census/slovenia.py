@@ -36,7 +36,7 @@ from collections import Counter
 from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
-from .central_ages import age_sex_fields, check_national_median, check_sum, report_unbound, units
+from .central_ages import age_sex_fields, fold, check_national_median, check_sum, report_unbound, units
 from .pxweb import http_json, unstack
 from .redatam import median_age
 
@@ -69,8 +69,17 @@ def query(table: str, picks: dict[str, list[str] | None]) -> list[tuple[dict, fl
     return unstack(http_json(BASE + table, {"query": q, "response": {"format": "json-stat2"}}))
 
 
+# SURS abbreviates two municipalities' names where the boundary file does not.
+EXPANSIONS = {"Slov. goricah": "Slovenskih goricah"}
+
+
 def letters(name: str) -> list[tuple[str, bool]]:
-    """The name's letters, each with whether it is a caron letter SURS writes."""
+    """The name's characters but spaces, each with whether it is a caron letter.
+
+    Punctuation is kept: the boundary file sometimes wrote a hyphen where a
+    caron letter was ("Star-e" for Starše), and a hyphen or slash that both
+    names have lines up either way.
+    """
     out = []
     for ch in name.lower():
         if ch in CARONS:
@@ -78,30 +87,78 @@ def letters(name: str) -> list[tuple[str, bool]]:
             continue
         base = unicodedata.normalize("NFKD", ch)
         base = "".join(c for c in base if not unicodedata.combining(c))
-        if base.isalnum():
+        if base and not base.isspace():
             out.append((base, False))
     return out
 
 
+def spellings(surs: str) -> set[str]:
+    out = {surs, surs.split("/")[0].strip()}
+    for short, long in EXPANSIONS.items():
+        out |= {v.replace(short, long) for v in set(out)}
+    return out
+
+
+def exact(surs: str, drawn: str) -> bool:
+    return any(fold(v) == fold(drawn) for v in spellings(surs))
+
+
 def same_place(surs: str, drawn: str) -> bool:
-    for variant in {surs, surs.split("/")[0]}:
+    """Equal length, equal everywhere SURS does not write a caron letter."""
+    for variant in spellings(surs):
         a, b = letters(variant), letters(drawn)
         if len(a) == len(b) and all(wild or x == y[0] for (x, wild), y in zip(a, b)):
             return True
     return False
 
 
+def cut_at_caron(surs: str, drawn: str) -> bool:
+    """The boundary file's name is SURS's cut off where a caron letter was.
+
+    "Ormo" is Ormož and "Velike La" Velike Lašče: the mangling that turned
+    carons into other letters elsewhere ended these names at one.
+    """
+    for variant in spellings(surs):
+        a, b = letters(variant), letters(drawn)
+        if 0 < len(b) < len(a) and a[len(b)][1] and \
+                all(wild or x == y[0] for (x, wild), y in zip(a, b)):
+            return True
+    return False
+
+
+def area(shape: dict[str, Any]) -> float:
+    x0, y0, x1, y1 = shape["bbox"]
+    return (x1 - x0) * (y1 - y0)
+
+
 def bind(names: dict[str, str]) -> dict[str, dict[str, Any]]:
+    """SURS code -> polygon: exact names first, then caron wildcards, then cut names.
+
+    Each pass binds only what is unique among the polygons not yet taken, so
+    Trzin binds to "Trzin" before Tržič is looked for and finds "Trsic".
+    One boundary name, Maribor, is drawn twice: the municipality and a
+    sliver some sixty metres across; the sliver is left unbound.
+    """
     shapes = units("SVN", "admin2")
-    bound, unbound, used = {}, [], set()
-    for code, name in sorted(names.items()):
-        hits = [s for s in shapes if same_place(name, s["name"])]
-        if len(hits) != 1 or hits[0]["id"] in used:
-            unbound.append(f"{name} ({code}): {[h['name'] for h in hits]}")
-            continue
-        bound[code] = hits[0]
-        used.add(hits[0]["id"])
-    report_unbound("slovenia", unbound, [s["name"] for s in shapes if s["id"] not in used])
+    bound: dict[str, dict[str, Any]] = {}
+    used: set[str] = set()
+    for rule in (exact, same_place, cut_at_caron):
+        for code, name in sorted(names.items()):
+            if code in bound:
+                continue
+            hits = [s for s in shapes if s["id"] not in used and rule(name, s["name"])]
+            if len(hits) > 1:
+                biggest = max(hits, key=area)
+                if all(area(h) < 0.01 * area(biggest) for h in hits if h is not biggest):
+                    log(f"  {name}: {len(hits)} polygons of that name; the others are slivers "
+                        f"under 1% of its extent")
+                    hits = [biggest]
+            if len(hits) == 1:
+                bound[code] = hits[0]
+                used.add(hits[0]["id"])
+    unbound = [f"{names[c]} ({c})" for c in sorted(names) if c not in bound]
+    report_unbound("slovenia", unbound, [f"{s['name']} (bbox {s['bbox']})" for s in shapes
+                                         if s["id"] not in used])
     return bound
 
 
