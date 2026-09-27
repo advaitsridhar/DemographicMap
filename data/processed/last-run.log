@@ -1,96 +1,78 @@
-== r2_swe_ckm
-  title: Population by region, marital status, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-  var 'Civilstand' (marital status): 5 values
-      OG=single; G=married; ÄNKL=widowers/widows; SK=divorced; SC=total, all mariatal statuses
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 2 values
-      000007ME=Population; 000007MG=Population growth
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-== r2_nor_kostra
-  2 items
-    DNKMedlemmer [t] 06929: Church of Norway. Members, church ceremonies and services, by diocese 2005 - 2025
-    KostraPubliserin0009 [t] 12208: graveyards (M) 2015 - 2025
-== r2_nor_kostra2
-  5 items
-    KostraPubliserin0003 [t] 12025: Municipal Facts (M) 2015 - 2025
-    KostraPubliserin0008 [t] 12273: Financial responsibilities of the municipalities (M) 2015 - 2025
-    KostraPubliserin0005 [t] 12207: Employees in the Norwegian Church (M) 2015 - 2025
-    KostraPubliserin0001 [t] 11963: Church services (M) 2015 - 2025
-    KostraPubliserin0002 [t] 12026: Church users (M) 2015 - 2025
-== r2_nor_trosamf
-  8 items
-    MedlemTroLivsyn [t] 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
-    MedlemKristTrus [t] 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
-    FRA_GAMMEL_00242 [h] Closed time series
-    MedlemTroLivsynF [t] 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
-    MedlMenighUKirk [t] 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
-    MedlMenigRegUDNK [t] 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlMenighDNK [t] 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
-    MedlemKristTru2 [t] 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
-== r2_nor_12026
-  title: 12026: Church users, by region, contents and year
-  var 'KOKkommuneregion0000' (region): 891 values
-      3101=Halden; 3103=Moss; 3105=Sarpsborg; 3107=Fredrikstad; 3110=Hvaler; 3112=Råde ... EKG12=KOSTRA-group 12; EKG13=KOSTRA-group 13; EKG14=KOSTRA-group 14; EKG15=KOSTRA-group 15; EKG16=KOSTRA-group 16; EKG17=KOSTRA-group 17
-      code lengths {3: 1, 4: 839, 5: 51}; prefixes {'': 839, 'EKA': 33, 'EKG': 17, 'EAK': 1, 'EAKUO': 1}
-      /^(0710|1804|0301|K-0301) /: 3 -- 0301=Oslo - Oslove; 0710=Sandefjord (2017-2019); 1804=Bodø
-  var 'ContentsCode' (contents): 28 values
-      KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSinnmeldtednk0000=Enrolled in the Church of Norway (number); KOSutmeldtednk0000=Resigned from the Church of Norway (number); KOSdoepte0000=Infants baptized (number); KOSdoeptesokn0000=Acts of baptisms in the parish (number); KOSkonfirmanter0000=Confirmed (number) ... KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number); KOSfodde0000=Born during the year (number); KOSdode0000=Died during the year (number); KOSpersoner150000=Number of 15 year-olds (number); KOSpersoner040000=Inhabitants aged 4 (number)
-      code lengths {11: 1, 12: 1, 13: 1, 17: 4, 18: 3, 19: 6, 20: 12}; prefixes {'KOSpersoner': 2, 'KOSmedlemmerdnk': 1, 'KOSinnmeldtednk': 1, 'KOSutmeldtednk': 1, 'KOSdoepte': 1, 'KOSdoeptesokn': 1, 'KOSkonfirmanter': 1, 'KOSgudsttotdelt': 1}
-  var 'Tid' (year) [time]: 11 values
-      2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-== r2_nor_06326
-  title: 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy, contents and year
-  var 'ReligionLivs' (religion/philosophy) [elimination]: 10 values
-      999=All; 800=Baha'ism; 200=Buddism; 300=Hinduism; 400=Islam; 500=Judaism; 600=Christianity; 700=Sikhism; 900=Philosophy; 901=Other religious and philosophical communities
-  var 'ContentsCode' (contents): 2 values
-      Medlemmer=Members in religious and philosophical communities; AntSamfunn=Number of religious and life stance communities
-  var 'Tid' (year) [time]: 21 values
-      2006=2006; 2007=2007; 2008=2008; 2009=2009; 2010=2010; 2011=2011 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 21}; prefixes {'': 21}
-== r2_nor_08531
-  title: 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by region, religion/philosophy, contents and year
-  var 'Region' (region) [elimination]: 42 values
-      0=The whole country; 31=Østfold; 32=Akershus; 30=Viken (2020-2023); 01=Østfold (-2019); 02=Akershus (-2019) ... 22=Jan Mayen; 23=The Continental Shelf; 25=Abroad; 26=Ocean areas; 88=Not resident in Norway; 99=County not stated
-      code lengths {1: 1, 2: 41}; prefixes {'': 42}
-  var 'ReligionLivs' (religion/philosophy) [elimination]: 6 values
-      999=All; 200=Buddism; 400=Islam; 600=Christianity; 902=Other religion; 900=Philosophy
-  var 'ContentsCode' (contents): 1 values
-      Medlemmer=Members
-  var 'Tid' (year) [time]: 11 values
-      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020
-== r2_nor_search_members
-  5 hits
-    KostraPubliserin0002 | /kf/kf04/kirke_kostra/SBMENU6460 | 12026: Church users (M) 2015 - 2025
-    KostraPubliserin0002 | /os/os01/kostrahoved/SBMENU10444 | 12026: Church users (M) 2015 - 2025
-    Kostra3KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04693: L. Church - basic data (M) (closed series) 1999 - 2016
-    KostraPubliserin0003 | /kf/kf04/kirke_kostra/SBMENU6460 | 12025: Municipal Facts (M) 2015 - 2025
-    KostraPubliserin0003 | /os/os01/kostrahoved/SBMENU10444 | 12025: Municipal Facts (M) 2015 - 2025
-== r2_dnk_km6
-  KM6: Population 1. January | unit Number | updated 2026-02-12T08:00:00
-  var 'KOMK' (municipality) elim=True time=False: 99 values
-      101=Copenhagen; 147=Frederiksberg; 155=Dragør; 185=Tårnby; 165=Albertslund; 151=Ballerup ... 846=Mariagerfjord; 773=Morsø; 840=Rebild; 787=Thisted; 820=Vesthimmerlands; 851=Aalborg
-  var 'KØN' (sex) elim=True time=False: 2 values
-      1=Men; 2=Women
-  var 'ALDER' (age) elim=True time=False: 21 values
-      0-4=0-4 years; 5-9=5-9 years; 10-14=10-14 years; 15-19=15-19 years; 20-24=20-24 years; 25-29=25-29 years ... 75-79=75-79 years; 80-84=80-84 years; 85-89=85-89 years; 90-94=90-94 years; 95-99=95-99 years; 100OV=100 years and over
-  var 'FKMED' (member of the National Church) elim=True time=False: 2 values
-      F=Member of National Church; U=Not member of National Church
-  var 'Tid' (time) elim=False time=True: 16 values
-      2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-== r2_isl_muni
-  FAILED: RuntimeError: HTTP 429: {"error":"429 - Too many requests in too short timeframe. Please try again later."}
-== r2_isl_mann
-  FAILED: RuntimeError: HTTP 429: {"error":"429 - Too many requests in too short timeframe. Please try again later."}
-== r2_isl_relig
-  1 hits
-    CEN09001.px | /manntal/1manntalfjolsk | Population and average age in institutions 31 December 2011
-== r2_isl_02001
-  FAILED: RuntimeError: HTTP 400: Bad Request
+== xls https://web.archive.org/web/20230601175316id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.01.xls 6 2
+  HTTP 200 application/vnd.ms-excel 49,664 bytes
+  1 sheets: ['TAB.1.1_RPL2021']
+  -- sheet 'TAB.1.1_RPL2021': 169 rows x 9 cols
+    1.1. POPULATIA LA RECENSAMIN
+    PE MEDII DE REZIDENTA SI JUD
+    MEDIU DE REZIDENTA  JUDETUL | P O P U L A T I A    L A    
+     | 25 ianuarie | 21 februarie | 15 martie | 5 ianuarie | 7 ianuarie | 18 martie | 20 octombrie | 1 decembrie
+     | 1948.0 | 1956.0 | 1966.0 | 1977.0 | 1992.0 | 2002.0 | 2011.0 | 2021.0
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0
+== xls https://web.archive.org/web/20230601175320id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.02.xlsx 6 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 107,352 bytes
+  1 sheets: ['TAB. 1.2_RPL2021']
+  -- sheet 'TAB. 1.2_RPL2021': 371 rows x 21 cols
+    1.2. STRUCTURA POPULATIEI RE
+    SEXE MACROREGIUNE REGIUNE DE | POPULATIA REZIDENTA   TOTAL | G R U P A   D E   V A R S T 
+     |  | 0 - 4 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64 | 65 - 69
+     |  | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMANIA | 1 | 0.050211204422841306 | 0.053717956220315985 | 0.057398216577625005 | 0.05453411823301528 | 0.05003150287750773 | 0.05034876217702334 | 0.06529511281598988 | 0.06529201632324025 | 0.0761837983626901 | 0.07699235035083525 | 0.0873947290870621 | 0.05303541574220176 | 0.06399348371966454 | 0.0663069836670504
+== xls https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls 8 3
+  HTTP 200 application/vnd.ms-excel 769,536 bytes
+  2 sheets: ['TAB. 1.03.1_RPL2021', 'TAB. 1.03.2_RPL2021']
+  -- sheet 'TAB. 1.03.1_RPL2021': 368 rows x 21 cols
+    1.3.1  POPULATIA REZIDENTA D
+    SEXE  MACROREGIUNE REGIUNE D | POPULATIA REZIDENTA   TOTAL | G R U P A   D E   V A R S T 
+     |  | 0 - 4 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64 | 65 - 69
+     |  | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    ROMANIA | 19053815.0 | 956715.0 | 1023532.0 | 1093655.0 | 1039083.0 | 953291.0 | 959336.0 | 1244121.0 | 1244062.0 | 1451592.0 | 1466998.0 | 1665203.0 | 1010527.0 | 1219320.0 | 1263401.0
+    MACROREGIUNEA 1 | 4792860.0 | 254836.0 | 264180.0 | 275913.0 | 263196.0 | 249086.0 | 251633.0 | 323463.0 | 321769.0 | 364967.0 | 363397.0 | 385834.0 | 263607.0 | 304108.0 | 314533.0
+    NORD-VEST | 2521793.0 | 132905.0 | 137478.0 | 143458.0 | 137982.0 | 134168.0 | 138444.0 | 175869.0 | 173574.0 | 192280.0 | 192983.0 | 202090.0 | 141527.0 | 157795.0 | 157273.0
+  -- sheet 'TAB. 1.03.2_RPL2021': 3275 rows x 21 cols
+    1.3.2 POPULATIA REZIDENTA DU
+    JUDET  MUNICIPIU, ORAS, COMU | POPULATIA REZIDENTA   TOTAL | G R U P A   D E   V A R S T 
+     |  | 0 - 4 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64 | 65 - 69
+     |  | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    ALBA | 325941.0 | 14802.0 | 16164.0 | 17521.0 | 16978.0 | 16192.0 | 15836.0 | 20341.0 | 20136.0 | 23956.0 | 25586.0 | 27652.0 | 19922.0 | 22865.0 | 23561.0
+    MUNICIPIUL ALBA IULIA | 64227.0 | 3220.0 | 3635.0 | 3684.0 | 2953.0 | 2521.0 | 2724.0 | 4531.0 | 4802.0 | 5482.0 | 5009.0 | 5064.0 | 3779.0 | 4819.0 | 4976.0
+    MUNICIPIUL AIUD | 21307.0 | 810.0 | 929.0 | 1031.0 | 1009.0 | 999.0 | 956.0 | 1257.0 | 1299.0 | 1531.0 | 1722.0 | 1837.0 | 1405.0 | 1700.0 | 1889.0
+== xls https://web.archive.org/web/20230601175316id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.05_1.05.1-si-1.05.2.xlsx 8 3
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 498,188 bytes
+  2 sheets: ['TAB. 1.5.1_RPL2021', 'TAB 1.5.2_RPL2021']
+  -- sheet 'TAB. 1.5.1_RPL2021': 653 rows x 227 cols
+    1.5.1. POPULATIA REZIDENTA D
+    MEDIU DE REZIDENTA  JUDETUL  | POPULATIA REZIDENTA   TOTAL | C U    D O M I C I L I U L  
+     |  | LOCALITATEA DE RECENZARE | ALTA LOCALITATE DIN JUDETUL  |  |  | ALT JUDET DECAT CEL DE RECEN |  |  | ALTA  TARA
+     |  |  | TOTAL | din care in: |  | TOTAL | din care in:
+     |  |  |  | Municipii si orase | Comune |  | Municipii si orase | Comune
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    ROMANIA
+    Ambele sexe | 19053815 | 18453655 | 276895 | 188583 | 88312 | 297831 | 238076 | 59755 | 25434
+  -- sheet 'TAB 1.5.2_RPL2021': 9929 rows x 33 cols
+    1.5.2. POPULATIA REZIDENTA D
+    JUDETUL DE RESEDINTA OBISNUI | POPULATIA REZIDENTA   TOTAL | C U    D O M I C I L I U L  
+     |  | LOCALITATEA DE RECENZARE | ALTA LOCALITATE DIN JUDETUL  |  |  | ALT JUDET DECAT CEL DE RECEN |  |  | ALTA  TARA
+     |  |  | TOTAL | din care in: |  | TOTAL | din care in:
+     |  |  |  | Urban | Rural |  | Urban | Rural
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    ROMANIA | 19053815 | 18453655 | 276895 | 188583 | 88312 | 297831 | 238076 | 59755 | 25434
+    ALBA | 325941 | 318788 | 4343 | 2614 | 1729 | 2435 | 1816 | 619 | 375
+== xls https://web.archive.org/web/20230601175318id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.22.xlsx 8 3
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 810,548 bytes
+  1 sheets: ['TAB 1.22_RPL2021']
+  -- sheet 'TAB 1.22_RPL2021': 16828 rows x 8 cols
+    1.22. POPULATIA REZIDENTA PE
+    Denumire judet | Cod SIRUTA | JUDET  MUNICIPIU, ORAS, COMU | POPULATIA REZIDENTA    TOTAL | SEXE
+     |  |  |  | Masculin | Feminin
+    A | B | C | 1 | 2 | 3
+    ROMÂNIA |  |  | 19053815 | 9245540 | 9808275
+     |  | ALBA | 325941 | 160287 | 165654
+    ALBA | 1017 | MUNICIPIUL ALBA IULIA | 64227 | 30393 | 33834
+    ALBA | 1026 | ALBA IULIA | 55009 | 25823 | 29186
+== xls https://web.archive.org/web/20230606002135id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.12_1.12.1-si-1.12.2.xlsx 8 3
+  !! URLError: <urlopen error [Errno 111] Connection refused>
+== xls https://web.archive.org/web/20230601175317id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/1.06_1.06.1-si-1.06.2.xls 8 3
+  !! URLError: <urlopen error [Errno 111] Connection refused>
