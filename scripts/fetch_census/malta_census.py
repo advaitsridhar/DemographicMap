@@ -1,0 +1,298 @@
+#!/usr/bin/env python3
+"""Malta: the 2021 census by locality -- population, median age, sex ratio
+and religion.
+
+Malta's 68 localities are both of this map's levels (the boundary file draws
+the same polygons at the first and the second), and they had a head count
+from Wikipedia infoboxes and nothing else. The National Statistics Office's
+Census of Population and Housing 2021, Volume 1, publishes its tables as
+workbooks, one per chapter:
+
+* Chapter 1, "Population": for every locality a sheet of its residents by sex
+  and **single year of age** (less than 1 to 89, and over 89), Tables 1.5;
+  and Table 1.2, each locality's total by sex, to check them against.
+* Chapter 5, "Religious affiliation": Table 5.3, residents aged 15 and over
+  by locality and religion -- Roman Catholicism, Islam, Orthodoxy, Hinduism,
+  Church of England, Protestantism, Buddhism, Judaism, other religious groups
+  and no religious affiliation.
+
+**Read from the Internet Archive.** nso.gov.mt answers the runner 403
+Forbidden, page and file alike. The archive holds the office's own
+workbooks at their own addresses (captured 9 December 2023 and 2 July 2023),
+and those captures are read byte for byte (``id_``), not a copy.
+
+The census asked two more questions this map shows -- "What is your racial
+origin?" (Q11) and "What is the main language that you grew up speaking from
+early childhood?" -- but the chapters that tabulate them are not among the
+captured workbooks; see the report for where that stands.
+
+**Names.** The census writes each locality's Maltese name with its article
+("Il-Birgu", "Ħal Qormi", "Raħal Ġdid"); the boundary file writes a short
+or English one ("Birgu", "Qormi", "Paola"). The 68 pairs are declared below
+and checked one to one against both sides.
+
+Checks, each of which stops the run:
+
+* every locality's single years make its total for each sex, and its sexes
+  make its total, and those totals are Table 1.2's;
+* the localities make Malta's 519,562;
+* the NSO publishes an average age, not a median (Table 1.2): Malta's mean
+  recomputed from the localities' single years must be within 0.6 years of
+  it (the half-year is how a completed age is read);
+* every locality's religion categories make its published total aged 15 and
+  over, and the localities make Malta's.
+
+Usage:
+    python -m scripts.fetch_census.malta_census
+"""
+
+from __future__ import annotations
+
+import argparse
+import io
+import json
+import re
+from collections import Counter
+from typing import Any
+
+from ._shared import PROCESSED, dated, http_get, log, measure, record, shares, write_json
+
+OUT = "malta_census.json"
+YEAR = 2021
+SOURCE = "NSO Malta, Census of Population and Housing 2021, Volume 1"
+LICENCE = "NSO Malta (attribution)"
+SITE = PROCESSED.parent.parent / "site" / "data"
+ARCHIVE = "https://web.archive.org/web/{stamp}id_/https://nso.gov.mt/wp-content/uploads/{name}"
+CHAPTER_1 = ARCHIVE.format(stamp="20231209013436", name="Census-Vol-1_Chapter-1.xlsx")
+CHAPTER_5 = ARCHIVE.format(stamp="20230702041150", name="Census-Vol-1_Chapter-5.xlsx")
+PAGE = "https://nso.gov.mt/census-of-population-and-housing-2021-final-report/"
+NATIONAL = 519562
+
+# The census's name -> the boundary file's.
+LOCALITIES = {
+    "Birkirkara": "Birkirkara", "Birżebbuġa": "Birżebbuġa", "Bormla": "Bormla",
+    "Floriana": "Floriana", "Għajnsielem and Comino": "Ghajnsielem",
+    "Ħad-Dingli": "Dingli", "Ħal Balzan": "Balzan", "Ħal Għargħur": "Għargħur",
+    "Ħal Għaxaq": "Għaxaq", "Ħal Kirkop": "Kirkop", "Ħal Lija": "Lija", "Ħal Luqa": "Luqa",
+    "Ħal Qormi": "Qormi", "Ħal Safi": "Safi", "Ħal Tarxien": "Tarxien", "Ħ'Attard": "Attard",
+    "Ħaż-Żabbar": "Żabbar", "Ħaż-Żebbuġ": "Żebbuġ Malta", "Il-Birgu": "Birgu",
+    "Il-Fgura": "Fgura", "Il-Fontana": "Fontana", "Il-Gudja": "Gudja", "Il-Gżira": "Gżira",
+    "Il-Ħamrun": "Ħamrun", "Il-Kalkara": "Kalkara", "Il-Marsa": "Marsa",
+    "Il-Mellieħa": "Mellieħa", "Il-Mosta": "Mosta", "Il-Munxar": "Munxar", "Il-Qala": "Qala",
+    "Il-Qrendi": "Qrendi", "In-Nadur": "Nadur", "In-Naxxar": "Naxxar",
+    "Ir-Rabat": "Rabat Malta", "Ir-Rabat, Għawdex": "Rabat Gozo",
+    "Is-Siġġiewi": "Siġġiewi", "Is-Swieqi": "Swieqi", "Ix-Xagħra": "Xagħra",
+    "Ix-Xewkija": "Xewkija", "Ix-Xgħajra": "Xgħajra", "Iż-Żebbuġ, Għawdex": "Żebbuġ Gozo",
+    "Iż-Żejtun": "Żejtun", "Iż-Żurrieq": "Żurrieq", "L-Għarb": "Gharb", "L-Għasri": "Ghasri",
+    "L-Iklin": "Iklin", "L-Imdina": "Mdina", "L-Imġarr": "Mġarr", "L-Imqabba": "Mqabba",
+    "L-Imsida": "Msida", "L-Imtarfa": "Mtarfa", "L-Isla": "Isla", "Marsaskala": "Marsaskala",
+    "Marsaxlokk": "Marsaxlokk", "Pembroke": "Pembroke", "Raħal Ġdid": "Paola",
+    "San Ġiljan": "Saint Julian's", "San Ġwann": "Saint John", "San Lawrenz": "Saint Lawerence",
+    "San Pawl Il-Baħar": "Saint Paul's Bay", "Santa Luċija": "Saint Lucia's",
+    "Santa Venera": "Santa Venera", "Ta' Kerċem": "Kerċem", "Ta' Sannat": "Sannat",
+    "Ta' Xbiex": "Ta' Xbiex", "Tal-Pieta'": "Pietà", "Tas-Sliema": "Sliema",
+    "Valletta": "Valletta",
+}
+
+RELIGIONS = {
+    "Roman Catholicism": "Roman Catholic",
+    "Islam": "Muslim",
+    "Orthodoxy": "Orthodox",
+    "Hinduism": "Hindu",
+    "Church of England": "Church of England",
+    "Protestantism": "Protestant",
+    "Buddhism": "Buddhist",
+    "Judaism": "Jewish",
+    "Other religious groups": "Other religion",
+    "No religious affiliation": "No religion",
+}
+
+
+def workbook(url: str):
+    import openpyxl
+    blob = http_get(url, binary=True, cache=True, timeout=300)
+    return openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+
+
+def cell(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value)).strip() if value is not None else ""
+
+
+def number(value: Any) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def single_years(rows: list[list[Any]], where: str) -> dict[str, Any]:
+    """A Table 1.5 sheet: two blocks of Age | Males | Females | Total."""
+    men, women = Counter(), Counter()
+    total = None
+    for row in rows:
+        for start in (0, 5):
+            if len(row) < start + 4:
+                continue
+            label = cell(row[start])
+            m, f, t = (number(v) for v in row[start + 1:start + 4])
+            if label == "Total" and start == 0 and t is not None:
+                total = (m, f, t)
+                continue
+            if m is None or f is None or t is None or "-" in label:
+                continue          # a decade's subtotal, or a blank
+            if label == "Less than 1":
+                age = 0
+            elif label.startswith("Over "):
+                age = int(label.split()[1]) + 1
+            elif label.isdigit():
+                age = int(label)
+            else:
+                continue
+            if m + f != t:
+                raise SystemExit(f"malta_census: {where} age {label}: {m:.0f} + {f:.0f} "
+                                 f"is not {t:.0f}")
+            men[age] += m
+            women[age] += f
+    if total is None:
+        raise SystemExit(f"malta_census: {where}: no Total row")
+    if sum(men.values()) != total[0] or sum(women.values()) != total[1]:
+        raise SystemExit(f"malta_census: {where}: single years make {sum(men.values()):,.0f} "
+                         f"men and {sum(women.values()):,.0f} women against {total}")
+    if sorted(set(men) | set(women)) != list(range(0, 91)):
+        raise SystemExit(f"malta_census: {where}: ages are not 0 to 89 and over 89")
+    return {"men": total[0], "women": total[1], "ages": men + women}
+
+
+def read_chapter_1() -> dict[str, dict[str, Any]]:
+    book = workbook(CHAPTER_1)
+    table_12: dict[str, tuple[Any, ...]] = {}
+    for row in book["T1.2_pop_sex_age_locality"].iter_rows(values_only=True):
+        name = cell(row[0]) if row else ""
+        m, f, t, _, _, _, mean = (number(v) for v in (list(row) + [None] * 8)[1:8])
+        if name and t is not None:
+            table_12[name] = (m, f, t, mean)
+    out: dict[str, dict[str, Any]] = {}
+    for sheet in book.sheetnames:
+        if not re.match(r"^\d+-", sheet):
+            continue
+        rows = [list(r) for r in book[sheet].iter_rows(values_only=True)]
+        name = next((cell(r[0]) for r in rows[1:4] if r and cell(r[0])), "")
+        if name not in LOCALITIES:
+            raise SystemExit(f"malta_census: sheet {sheet!r} is for {name!r}, which is not "
+                             "a declared locality")
+        entry = single_years(rows, name)
+        published = table_12.get(name)
+        if not published or published[:2] != (entry["men"], entry["women"]):
+            raise SystemExit(f"malta_census: {name}: Table 1.5 says {entry['men']:,.0f} men "
+                             f"and {entry['women']:,.0f} women, Table 1.2 {published}")
+        out[name] = entry
+    if sorted(out) != sorted(LOCALITIES):
+        raise SystemExit(f"malta_census: localities with no sheet: "
+                         f"{sorted(set(LOCALITIES) - set(out))}")
+    whole = sum(e["men"] + e["women"] for e in out.values())
+    if whole != NATIONAL or table_12.get("MALTA", (0, 0, 0))[2] != NATIONAL:
+        raise SystemExit(f"malta_census: the localities make {whole:,.0f}, Malta is "
+                         f"{NATIONAL:,}")
+    log(f"  chapter 1: {len(out)} localities make {whole:,.0f}")
+    out["_mean"] = table_12["MALTA"][3]
+    return out
+
+
+def read_religion() -> dict[str, dict[str, Any]]:
+    book = workbook(CHAPTER_5)
+    rows = [list(r) for r in book["5.3"].iter_rows(values_only=True)]
+    header_at = next(i for i, r in enumerate(rows)
+                     if r and cell(r[0]).startswith("District and locality"))
+    header = [cell(v) for v in rows[header_at]]
+    cols = {i: RELIGIONS[h] for i, h in enumerate(header) if h in RELIGIONS}
+    if len(cols) != len(RELIGIONS) or "Total" not in header:
+        raise SystemExit(f"malta_census: Table 5.3's columns are {header}")
+    total_at = header.index("Total")
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows[header_at + 1:]:
+        name = cell(row[0]) if row else ""
+        if name not in LOCALITIES and name != "MALTA":
+            continue
+        counts = {label: number(row[i]) or 0.0 for i, label in cols.items()}
+        total = number(row[total_at])
+        if total is None or sum(counts.values()) != total:
+            raise SystemExit(f"malta_census: {name}: religions make {sum(counts.values()):,.0f} "
+                             f"against {total}")
+        out[name] = {"counts": counts, "total": total}
+    missing = sorted(set(LOCALITIES) - set(out))
+    if missing:
+        raise SystemExit(f"malta_census: Table 5.3 has no row for {missing}")
+    made = sum(out[n]["total"] for n in LOCALITIES)
+    if made != out["MALTA"]["total"]:
+        raise SystemExit(f"malta_census: localities make {made:,.0f} aged 15+, Malta "
+                         f"{out['MALTA']['total']:,.0f}")
+    log(f"  chapter 5: {len(LOCALITIES)} localities, {made:,.0f} aged 15 and over")
+    return out
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+
+    ages = read_chapter_1()
+    published_mean = ages.pop("_mean")
+    religion = read_religion()
+    national = sum((e["ages"] for e in ages.values()), Counter())
+    people = sum(national.values())
+    mean = sum((a + 0.5) * n for a, n in national.items()) / people
+    log(f"  Malta: median {median(national)}, mean {mean:.2f} (Table 1.2 publishes "
+        f"{published_mean:.2f})")
+    if published_mean is None or abs(mean - published_mean) > 0.6:
+        raise SystemExit("malta_census: the single years do not give the published mean age")
+
+    admin1 = {u["name"]: u for u in json.loads((SITE / "admin1" / "MLT.units.json").read_text())}
+    admin2 = {u["name"]: u for u in json.loads((SITE / "admin2" / "MLT.units.json").read_text())}
+    if sorted(admin1) != sorted(LOCALITIES.values()) or sorted(admin2) != sorted(admin1):
+        raise SystemExit("malta_census: the map's localities are not the 68 declared: "
+                         f"{sorted(set(admin1) ^ set(LOCALITIES.values()))}")
+
+    records: list[dict[str, Any]] = []
+    for name, drawn in sorted(LOCALITIES.items(), key=lambda kv: kv[1]):
+        a, r = ages[name], religion[name]
+        rows = shares(r["counts"], total=r["total"])
+        for level, shapes in (("admin1", admin1), ("admin2", admin2)):
+            records.append(record(
+                f"MLT-NSO-{level}-{drawn}", drawn, level=level, parent="MLT", country="MLT",
+                match_by="shape_id", shape_id=shapes[drawn]["id"],
+                aliases=[name] if name != drawn else [],
+                population=measure(int(a["men"] + a["women"]), year=YEAR, source=SOURCE),
+                population_note=(f"Residents of {name} counted by the census of 21 November "
+                                 f"{YEAR} (Table 1.2)."),
+                median_age=measure(median(a["ages"]), unit="years", year=YEAR, source=SOURCE),
+                median_age_note=("Interpolated within the single year of age holding the "
+                                 "middle person, from Table 1.5's residents by sex and single "
+                                 "year of age (over 89 as one open group)."),
+                sex_ratio=measure(round(1000 * a["men"] / a["women"]),
+                                  unit="males_per_1000_females", year=YEAR, source=SOURCE),
+                religion=rows,
+                religion_year=dated(rows, YEAR),
+                religion_note=(f"Census {YEAR} question \"What religion, religious "
+                               "denomination or body do you belong to?\", residents aged 15 "
+                               "and over (Table 5.3). Every respondent is in one of the ten "
+                               "categories; 'Other religion' is the NSO's 'other religious "
+                               "groups'."),
+                sources=[{"field": "population/median age/sex ratio", "name": SOURCE,
+                          "url": CHAPTER_1, "year": YEAR, "license": LICENCE},
+                         {"field": "religion", "name": SOURCE, "url": CHAPTER_5,
+                          "year": YEAR, "license": LICENCE}]))
+    write_json(args.out or PROCESSED / OUT, records)
+    log(f"  {len(records)} records ({len(LOCALITIES)} localities at both levels)")
+    return 0
+
+
+def median(ages: Counter) -> float | None:
+    from .redatam import median_age
+    return median_age(ages)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
