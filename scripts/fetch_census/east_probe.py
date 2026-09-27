@@ -171,10 +171,14 @@ def describe(blob: bytes, url: str, args: argparse.Namespace) -> None:
 
 
 def cmd_cdx(args: argparse.Namespace) -> None:
-    params = {"url": args.target, "matchType": args.match_type,
-              "output": "json", "filter": "statuscode:200",
-              "fl": "original,timestamp,mimetype,length",
-              "collapse": "urlkey", "limit": str(args.cdx_limit)}
+    params = [("url", args.target), ("matchType", args.match_type),
+              ("output", "json"), ("filter", "statuscode:200"),
+              ("fl", "original,timestamp,mimetype,length"),
+              ("collapse", "urlkey"), ("limit", str(args.cdx_limit))]
+    # A second filter is the archive's own regex on a field, which keeps a
+    # domain-wide listing to the files that matter before it is sent.
+    if args.cdx_filter:
+        params.append(("filter", args.cdx_filter))
     url = f"{CDX}?{urllib.parse.urlencode(params)}"
     rows = json.loads(http_get(url, cache=False, retries=2, timeout=180) or "[]")
     match = re.compile(args.match, re.I) if args.match else None
@@ -198,6 +202,8 @@ def main() -> int:
     ap.add_argument("--match")
     ap.add_argument("--match-type", default="prefix")
     ap.add_argument("--cdx-limit", type=int, default=20000)
+    ap.add_argument("--cdx-filter",
+                    help="an extra CDX filter, e.g. original:.*[Tt]om.*xlsx")
     ap.add_argument("--wayback")
     ap.add_argument("--rows", type=int, default=40)
     ap.add_argument("--sheets", type=int, default=2)
