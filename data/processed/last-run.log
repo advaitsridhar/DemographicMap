@@ -1,11 +1,10 @@
-probe_pdf: https://web.archive.org/web/20250628190541id_/https://nso.gov.mt/wp-content/uploads/Census-of-Population-2021-volume1.pdf
-  6,933,626 bytes
-
---- page 150: 0 table(s) ----------------------------------------
-
---- page 151: 0 table(s) ----------------------------------------
-
---- page 152: 1 table(s) ----------------------------------------
-  table 1: 2 rows x 1 cols
-    Racial Origin Males Females Total
-    Maltese
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 556}
+  wrote data/processed/croatia_county.json (178 kB)
+  wrote data/processed/croatia_unit.json (3367 kB)
