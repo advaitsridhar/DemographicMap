@@ -341,6 +341,62 @@ def age_fields(unit: dict[str, Any] | None) -> dict[str, Any]:
     return out
 
 
+# The island of Krk is seven municipalities. The boundary file draws two of
+# them (Malinska-Dubašnica and Omišalj) and one polygon, "Otok Krk", for the
+# other five: 323.5 km2, which with the two drawn ones (40.6 and 38.0 km2)
+# makes the island's 402 km2 (405.8 with its islets). So that polygon is those
+# five together, and takes their sum.
+KRK_COUNTY = "Primorsko-goranska"
+KRK_PARTS = (("Grad", "Krk"), ("Općina", "Punat"), ("Općina", "Baška"), ("Općina", "Vrbnik"),
+             ("Općina", "Dobrinj"))
+
+
+def krk(by_key: dict[str, dict[tuple, dict[str, Any]]],
+        ages: dict[tuple, dict[str, Any]]) -> dict[str, Any]:
+    from .balkans_common import shapes as map_shapes
+    polys = map_shapes("HRV", "admin2")
+    shape = [s for s in polys if s["name"] == "Otok Krk"]
+    drawn = [s["name"] for s in polys for kind, name in KRK_PARTS if s["name"] == f"{kind} {name}"]
+    if len(shape) != 1 or drawn:
+        raise SystemExit(f"croatia: Krk is no longer drawn as 'Otok Krk' beside its parts: "
+                         f"{len(shape)} polygons of that name, parts drawn {drawn}")
+    keys = [(KRK_COUNTY, kind, name) for kind, name in KRK_PARTS]
+    missing = [k for k in keys if k not in by_key["ethnicity"] or k not in ages]
+    if missing:
+        raise SystemExit(f"croatia: the Krk municipalities {missing} are not in the workbook")
+    fields: dict[str, Any] = {}
+    total = sum(by_key["ethnicity"][k]["total"] for k in keys)
+    for field in SHEETS:
+        counts: dict[str, int] = {}
+        for k in keys:
+            for label, n in by_key[field][k]["counts"].items():
+                counts[label] = counts.get(label, 0) + n
+        fields[field] = bars(field, {"county": KRK_COUNTY, "name": "Otok Krk", "total": total,
+                                     "counts": counts})
+        fields[f"{field}_year"] = dated(fields[field], YEAR)
+        fields[f"{field}_note"] = NOTES[field] + (" Summed over Krk, Punat, Baška, Vrbnik and "
+                                                  "Dobrinj, the five municipalities this polygon is.")
+    groups: dict[tuple, int] = {}
+    for k in keys:
+        for lo, w, n in ages[k]["groups"]:
+            groups[(lo, w)] = groups.get((lo, w), 0) + n
+    fields.update(age_fields({"groups": [(lo, w, n) for (lo, w), n in groups.items()],
+                              "men": sum(ages[k]["men"] for k in keys),
+                              "women": sum(ages[k]["women"] for k in keys)}))
+    log(f"  Otok Krk: {total:,}, the sum of {', '.join(n for _, n in KRK_PARTS)}")
+    return record("HRV-primorsko-goranska-otok-krk", "Otok Krk", level="admin2",
+                  parent=f"HRV-{slugify(KRK_COUNTY)}", parent_name=COUNTIES[KRK_COUNTY],
+                  country="HRV", match_by="shape_id", shape_id=shape[0]["id"],
+                  population=measure(total, year=YEAR, source=SOURCE),
+                  population_note=("The five municipalities of the island of Krk that the map "
+                                   "draws as one polygon: Krk, Punat, Baška, Vrbnik and Dobrinj."),
+                  sources=[{"field": "population/ethnicity/religion/language", "name": SOURCE,
+                            "url": PAGE, "license": LICENCE},
+                           {"field": "median_age/sex_ratio", "name": SOURCE + ", sheet 20",
+                            "url": URL, "license": LICENCE}],
+                  **fields)
+
+
 def build() -> list[dict[str, Any]]:
     import openpyxl
     log("croatia: Popis 2021, counties and towns/municipalities")
@@ -412,6 +468,7 @@ def build() -> list[dict[str, Any]]:
                           "url": URL, "license": LICENCE}],
                 **fields,
             ))
+    records.append(krk(by_key, ages))
     for kind, n in skipped.items():
         log(f"  skipped {n} rows of type {kind!r}: not a town or municipality")
     by_level = {"admin1": 0, "admin2": 0}
