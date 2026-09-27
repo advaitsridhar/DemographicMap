@@ -119,7 +119,10 @@ CITY = {
     "Слуцк": "Слуцкий", "Могилев": "Могилевский", "Могилёв": "Могилёвский",
     "Бобруйск": "Бобруйский",
 }
-NOT_SEAT = {"Новополоцк": "Navapolatsk", "Жодино": "Zhodzina"}
+# The two cities that are no raion's seat: (the name written, the name GeoNames
+# files the city under).
+NOT_SEAT = {"Новополоцк": ("Navapolatsk", "Novopolotsk"),
+            "Жодино": ("Zhodzina", "Horad Zhodzina")}
 # Drybin raion, drawn as part of Horki's polygon: the run checks that Drybin's
 # centre lies in it.
 MERGED = {"Дрибинский": ("Drybin", "Horki")}
@@ -421,13 +424,13 @@ def main() -> int:
                 if target is None:
                     raise SystemExit(f"belarus: {city}'s raion {raion} has no polygon")
                 if city in NOT_SEAT:
-                    p = places.get(east_geo.fold(NOT_SEAT[city]))
+                    p = places.get(east_geo.fold(NOT_SEAT[city][1]))
                     inside = (east_geo.containing(polys, p["lon"], p["lat"]) if p else [])
                     if inside != [target["id"]]:
                         raise SystemExit(f"belarus: {city}'s centre lies in {inside}, not "
                                          f"{target['name']!r}")
                     notes[target["id"]].append(
-                        f"the city of {NOT_SEAT[city]}, counted apart and drawn inside this "
+                        f"the city of {NOT_SEAT[city][0]}, counted apart and drawn inside this "
                         "polygon (its centre lies in it)")
                 else:
                     notes[target["id"]].append(
@@ -482,6 +485,18 @@ def main() -> int:
     # First level.
     t62 = table_62(pages)
     t73 = table_73(pages)
+    for got, table in ((t62, "6.2"), (t73, "7.3")):
+        if len(got) != len(t14):
+            raise SystemExit(f"belarus: table {table} read for {sorted(got)}, not the "
+                             f"{len(t14)} areas of table 1.4")
+    for oblast, units in t14.items():
+        whole = units["г.Минск" if oblast == "г.Минск" else f"{oblast} область"]["all"]
+        key = "Могилевская" if oblast in ("Могилевская", "Могилёвская") else oblast
+        for got, table, column in ((t62, "6.2", "_total"), (t73, "7.3", "total")):
+            row = got.get(key) or got.get(oblast) or {}
+            if abs((row.get(column) or 0) - whole) > 0.5:
+                raise SystemExit(f"belarus: table {table} counts {row.get(column)} in "
+                                 f"{oblast}, table 1.4 {whole:,.0f}")
     for oblast, units in t14.items():
         name = MINSK_CITY if oblast == "г.Минск" else OBLAST[oblast]
         head = units["г.Минск" if oblast == "г.Минск" else f"{oblast} область"]
