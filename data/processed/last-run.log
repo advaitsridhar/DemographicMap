@@ -1,38 +1,17 @@
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.json?geography=TYPE154&measures=20100&RecordLimit=2
-  {2 keys}
-  header:
-    {8 keys}
-    extracted: '2026-09-27T23:41:47Z'
-    id: 'NOMIS-DATA'
-    prepared: '2026-09-27T23:41:47Z'
-    sender:
-      {2 keys}
-        keys: ['contact', 'id']
-    source: 'ONS Crown Copyright Reserved'
-    test: 'false'
-    truncated: 'true'
-    uri: 'https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.json?geography=TYPE154&measures=20100&RecordLimit=2'
-  obs:
-    [24910 items]
-      {13 keys}
-        keys: ['dataset', 'geography', 'c2021_mlang_94', 'measures', 'freq', 'time_format', 'unit', 'time', 'obs_value', 'obs_status', 'obs_conf', 'obs_round', 'urn']
-      last: {"dataset": {"value": "NM_2043_1", "description": "TS024 - Main language (detailed)"}, "geography": {"value": 645923142, "description": "Merthyr Tydfil", "geogcode": "W06000024"}, "c2021_mlang_94": {"
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.json?geography=TYPE154&measures=20100&RecordOffset=30000&RecordLimit=2
-  {2 keys}
-  header:
-    {8 keys}
-    extracted: '2026-09-27T23:41:50Z'
-    id: 'NOMIS-DATA'
-    prepared: '2026-09-27T23:41:50Z'
-    sender:
-      {2 keys}
-        keys: ['contact', 'id']
-    source: 'ONS Crown Copyright Reserved'
-    test: 'false'
-    truncated: 'true'
-    uri: 'https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.json?geography=TYPE154&measures=20100&RecordOffset=30000&RecordLimit=2'
-  obs:
-    [24910 items]
-      {13 keys}
-        keys: ['dataset', 'geography', 'c2021_mlang_94', 'measures', 'freq', 'time_format', 'unit', 'time', 'obs_value', 'obs_status', 'obs_conf', 'obs_round', 'urn']
-      last: {"dataset": {"value": "NM_2043_1", "description": "TS024 - Main language (detailed)"}, "geography": {"value": 645923142, "description": "Merthyr Tydfil", "geogcode": "W06000024"}, "c2021_mlang_94": {"
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  national median 45.4 from the counties' five-year groups (Eurostat, 1 January 2022: 45.4)
+  Otok Krk: 13,712, the sum of Krk, Punat, Baška, Vrbnik and Dobrinj
+  Grad Varaždinske Toplice: 7,226, the sum of Varaždinske Toplice and Ljubešćica
+  Općina Berek: 3,362, the sum of Berek and Ivanska
+  Općina Kapela: 7,258, the sum of Kapela, Rovišće and Zrinski Topolovac
+  Grad Benkovac: 12,104, the sum of Benkovac, Stankovci and Lišane Ostrovičke
+  Opicina Pirovac and Opicina Muter-Kornati, Otok Kornat are still drawn apart: Pirovac, Tisno, Tribunj and Murter-Kornati are left unbound until make_redrawn draws them as one
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 545}
+  wrote data/processed/croatia_county.json (178 kB)
+  wrote data/processed/croatia_unit.json (3298 kB)
