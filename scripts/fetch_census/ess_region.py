@@ -115,7 +115,7 @@ def discover(countries: list[str]) -> None:
 VARIABLES = """query($id: ID!, $version: Int) { search {
   dataFileMetadata(id: $id, version: $version, agencyId: INT_ESSERIC, instance: PUBLISHED) {
     label { en } disseminationLimitation defaultWeight { name { en } }
-    variables { name { en } label { en } hasCodes } } } }"""
+    variableList { name { en } label { en } } } } }"""
 
 
 def main_files() -> dict[str, dict[str, Any]]:
@@ -133,15 +133,17 @@ def pick(files: dict[str, dict[str, Any]], prefix: str) -> dict[str, Any]:
 
 def show_variables(prefix: str, pattern: str) -> None:
     import re
-    df = pick(main_files(), prefix)
-    meta = gql(VARIABLES, {"id": df["id"], "version": df["version"]})["search"]["dataFileMetadata"]
-    log(f"== {meta['label']['en']} limitation={meta.get('disseminationLimitation')} "
-        f"weight={meta.get('defaultWeight')} variables={len(meta['variables'])}")
-    rx = re.compile(pattern, re.I)
-    for var in meta["variables"]:
-        name, label = var["name"]["en"], (var.get("label") or {}).get("en") or ""
-        if rx.search(name) or rx.search(label):
-            log(f"   {name}: {label[:100]} codes={var.get('hasCodes')}")
+    files = main_files()
+    for rnd in prefix.split(","):
+        df = pick(files, rnd)
+        meta = gql(VARIABLES, {"id": df["id"], "version": df["version"]})["search"]["dataFileMetadata"]
+        log(f"== {meta['label']['en']} limitation={meta.get('disseminationLimitation')} "
+            f"weight={meta.get('defaultWeight')} variables={len(meta['variableList'])}")
+        rx = re.compile(pattern, re.I)
+        for var in meta["variableList"]:
+            name, label = var["name"]["en"], (var.get("label") or {}).get("en") or ""
+            if rx.search(name) or rx.search(label):
+                log(f"   {name}: {label[:90]}")
 
 
 def show_tab(prefix: str, variables: str, weight: str | None, limit: int) -> None:
