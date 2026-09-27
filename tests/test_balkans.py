@@ -4,7 +4,8 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import bosnia_age, croatia, montenegro, moldova_age, north_macedonia, romania_census
+from scripts.fetch_census import (bosnia_age, croatia, montenegro, moldova_age, north_macedonia,
+                                  romania_census, serbia_census)
 
 
 class CommonTest(unittest.TestCase):
@@ -163,6 +164,41 @@ class BosniaAgeTest(unittest.TestCase):
         unit = out["UNSKO-SANSKI KANTON"]
         self.assertEqual((unit["total"], unit["men"], unit["women"]), (30, 14, 16))
         self.assertEqual(unit["groups"], [(0.0, 5.0, 10), (5.0, 5.0, 15), (85.0, None, 5)])
+
+
+class SerbiaTest(unittest.TestCase):
+    def test_labels_and_totals(self):
+        self.assertEqual(serbia_census.label_of("ethnicity", "Mađari"), "Hungarian")
+        self.assertEqual(serbia_census.label_of("ethnicity",
+                                                "Izjasnili se u smislu regionalne  pripadnosti"),
+                         "Regional affiliation")
+        self.assertIsNone(serbia_census.label_of("religion", "Svega hrišćanskа"))
+        self.assertIsNone(serbia_census.label_of("religion", "Ukupno"))
+        self.assertEqual(serbia_census.label_of("religion", "Nisu vernici (ateisti)"), "Atheism")
+        self.assertEqual(serbia_census.label_of("language", "Klingonski"), "")
+
+    def test_names_fold_dj_and_suffixes(self):
+        self.assertEqual(serbia_census.key("Arandjelovac Municipality"), serbia_census.key("Aranđelovac"))
+        self.assertEqual(serbia_census.key("Smederevska Palanka Municipal*"),
+                         serbia_census.key("Smederevska Palanka"))
+        self.assertEqual(serbia_census.key("Petrovac-na-Mlavi Municipality"),
+                         serbia_census.key("Petrovac na Mlavi"))
+
+    def test_age_groups_and_adults(self):
+        def row(band, sex, n):
+            return {"god": "2022", "nTipNaselja": "Ukupno", "nTer": "Ada", "nStarGrupa": band,
+                    "nPol": sex, "vrednost": n}
+        rows = [row("Ukupno", "Ukupno", 10), row("Ukupno", "Muško", 4), row("Ukupno", "Žensko", 6),
+                row("0–4", "Ukupno", 4), row("85 i više godina", "Ukupno", 6),
+                row("Punoletni (18+)", "Ukupno", 7), row("0–4", "Muško", 2)]
+        saved = serbia_census.load
+        serbia_census.load = lambda dataset: rows
+        try:
+            out = serbia_census.ages()
+        finally:
+            serbia_census.load = saved
+        self.assertEqual(out["Ada"]["groups"], [(0.0, 5.0, 4), (85.0, None, 6)])
+        self.assertEqual((out["Ada"]["men"], out["Ada"]["women"]), (4, 6))
 
 
 if __name__ == "__main__":
