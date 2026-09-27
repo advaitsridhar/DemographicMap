@@ -47,7 +47,7 @@ import unicodedata
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json
 from .balkans_common import age_fields, check_sum, grouped_median, shapes
 from .redatam import median_age
 
@@ -291,8 +291,9 @@ def check_row(row: dict[str, Any], what: str) -> None:
 
 
 def sexes(rows: list[list[Any]], counties: set[str], order: dict[str, list[dict[str, Any]]]
-          ) -> dict[tuple[str, int], tuple[float, float]]:
-    """{(county, UAT index): (men, women)} from Tabel 1.22, aligned on 1.03.2's UATs.
+          ) -> tuple[dict[tuple[str, int], tuple[float, float]], dict[str, list[list[Any]]]]:
+    """({(county, UAT index): (men, women)}, Tabel 1.22's rows by county),
+    aligned on 1.03.2's UATs.
 
     Tabel 1.22 lists each UAT followed by its localities, a locality often
     named as its UAT. The UATs are found in 1.03.2's order: the next row whose
@@ -332,7 +333,7 @@ def sexes(rows: list[list[Any]], counties: set[str], order: dict[str, list[dict[
                     break
             else:
                 raise SystemExit(f"romania_census: {uat['name']} ({county}) not found in Tabel 1.22")
-    return out
+    return out, blocks
 
 
 def single_year_median(rows: list[list[Any]]) -> float | None:
@@ -361,6 +362,11 @@ def build() -> list[dict[str, Any]]:
     tables = {}
     for field in ("age", "ethnicity", "language", "religion"):
         labels, data = uat_rows(sheet(field), set(counties), None if field == "age" else field)
+        # Bucharest is published as one city in these tables: its sectors are
+        # not broken out (Tabel 2.02.2 repeats the city's row as its own UAT,
+        # 1.03.2 prints it once). The sectors come from Tabel 1.22 below.
+        if "bucuresti" in data:
+            data["bucuresti"]["uats"] = []
         tables[field] = data
         found = sorted(k for k in data if k)
         if len(found) != 42:
@@ -372,8 +378,9 @@ def build() -> list[dict[str, Any]]:
         check_sum(country["total"], NATIONAL,
                   f"romania_census: {field}, the country against the published {NATIONAL:,}")
         for c in found:
-            check_sum(sum(u["total"] for u in data[c]["uats"]), data[c]["total"],
-                      f"romania_census: {field}, UATs of {c}")
+            if c != "bucuresti":
+                check_sum(sum(u["total"] for u in data[c]["uats"]), data[c]["total"],
+                          f"romania_census: {field}, UATs of {c}")
             if field != "age":
                 check_row(data[c], field)
                 for u in data[c]["uats"]:
@@ -389,7 +396,7 @@ def build() -> list[dict[str, Any]]:
             if a != b:
                 diff = [x for x, y in zip(a, b) if x != y][:3]
                 raise SystemExit(f"romania_census: {field} lists {c}'s UATs differently: {diff}")
-    sex = sexes(sheet("sex"), set(counties), {c: base[c]["uats"] for c in base})
+    sex, sex_rows = sexes(sheet("sex"), set(counties), {c: base[c]["uats"] for c in base})
     groups = [(lo, w, n) for (lo, w), n in base[""]["groups"].items()]
     national = grouped_median(groups)
     single = single_year_median(sheet("single"))
@@ -488,6 +495,38 @@ def build() -> list[dict[str, Any]]:
         records.append(record(f"ROU-2021-{county}", shape1["name"], level="admin1", parent="ROU",
                               country="ROU", match_by="shape_id", shape_id=shape1["id"],
                               sources=cite, **fields))
+    # Bucharest's six sectors: Tabel 1.22 counts each by sex; the tables of
+    # age, ethnicity, mother tongue and religion stop at the city.
+    sectors = {}
+    for r in sex_rows.get("bucuresti", []):
+        m = re.search(r"SECTORUL\s+(\d)", text(r[2]).upper())
+        if m:
+            sectors[m.group(1)] = (number(r[3]), number(r[4]), number(r[5]))
+    check_sum(sum(v[0] for v in sectors.values()), base["bucuresti"]["total"],
+              "romania_census: Bucharest's sectors against the city")
+    whole_city = ("INS publishes Bucharest's {what} for the city as a whole in the 2021 census "
+                  "tables, not by sector; the city's figure is on the county, and a sector has "
+                  "none of its own.")
+    for n, (total, men, women) in sorted(sectors.items()):
+        shape = next((x for x in by_county["bucuresti"] if fold(bare(x["name"])) == n), None)
+        if shape is None or shape["id"] in used:
+            left_units.append(f"SECTORUL {n} (bucuresti)")
+            continue
+        used.add(shape["id"])
+        check_sum(men + women, total, f"romania_census: sexes of sector {n}")
+        records.append(record(
+            f"ROU-2021-bucuresti-sector-{n}", shape["name"], level="admin2", parent="ROU",
+            country="ROU", parent_name="BUCURESTI", match_by="shape_id", shape_id=shape["id"],
+            population=measure(int(total), year=YEAR, source=SOURCE.format(table=TABLE_NAMES["sex"])),
+            sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females", year=YEAR,
+                              source=SOURCE.format(table=TABLE_NAMES["sex"])),
+            median_age=gap(NOT_AVAILABLE, whole_city.format(what="population by age")),
+            ethnicity=gap(NOT_AVAILABLE, whole_city.format(what="ethnicity")),
+            religion=gap(NOT_AVAILABLE, whole_city.format(what="religion")),
+            language=gap(NOT_AVAILABLE, whole_city.format(what="mother tongue")),
+            sources=[{"field": "population/sex_ratio", "name": SOURCE.format(table=TABLE_NAMES["sex"]),
+                      "url": FILES["sex"][0], "archive": FILES["sex"][1], "page": PAGE,
+                      "year": YEAR, "license": LICENCE}]))
     spare = [f"{s['name']} ({next(k for k, v in counties.items() if v['id'] == s['parent'])})"
              for s in admin2 if s["id"] not in used]
     log(f"  {sum(1 for r in records if r['level'] == 'admin2'):,} UATs bound; "
