@@ -36,9 +36,9 @@ ANDA = "https://www4.ine.gub.uy/Anda5/index.php/catalog/{catalog}"
 HEADERS = {"User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"}
 
 
-def opener() -> urllib.request.OpenerDirector:
+def opener(url: str = ANDA) -> urllib.request.OpenerDirector:
     """Cookies kept, and INE's certificate chain completed from its AIA (still verified)."""
-    ctx, _ = completed_context(urllib.parse.urlsplit(ANDA.format(catalog=0)).hostname or "")
+    ctx, _ = completed_context(urllib.parse.urlsplit(url).hostname or "")
     return urllib.request.build_opener(urllib.request.HTTPSHandler(context=ctx),
                                        urllib.request.HTTPCookieProcessor(
                                            http.cookiejar.CookieJar()))
@@ -63,11 +63,16 @@ def accept(open_: urllib.request.OpenerDirector, catalog: str) -> str:
 def download(open_: urllib.request.OpenerDirector, catalog: str, file_id: str,
              into: Path) -> Path:
     """One of the entry's files, saved on the runner (never committed)."""
-    url = f"{ANDA.format(catalog=catalog)}/download/{file_id}"
+    return download_url(open_, f"{ANDA.format(catalog=catalog)}/download/{file_id}", into)
+
+
+def download_url(open_: urllib.request.OpenerDirector, url: str, into: Path) -> Path:
+    """A file saved on the runner (never committed), named as the server names it."""
     req = urllib.request.Request(url, headers=HEADERS)
     with open_.open(req, timeout=1800) as resp:
         name = re.search(r'filename="([^"]+)"', resp.headers.get("Content-Disposition", ""))
-        path = into / (name.group(1) if name else f"{file_id}.bin")
+        last = urllib.parse.unquote(urllib.parse.urlsplit(url).path.rsplit("/", 1)[-1])
+        path = into / (name.group(1) if name else (last if "." in last else f"{last}.bin"))
         with open(path, "wb") as out:
             shutil.copyfileobj(resp, out, 1 << 20)
     log(f"  {url} -> {path.name} ({path.stat().st_size:,} bytes)")
@@ -144,6 +149,7 @@ def main() -> int:
     ap.add_argument("--probe", choices=["microdata", "columns", "ddi"])
     ap.add_argument("--catalog", default="781", help="the ANDA catalogue entry")
     ap.add_argument("--file", help="with --probe columns: the entry's file id")
+    ap.add_argument("--url", help="with --probe columns: an archive's URL, in place of --file")
     ap.add_argument("--count", default="", help="columns whose values are counted")
     ap.add_argument("--limit", type=int, default=300, help="values printed per column")
     ap.add_argument("--weight", default="", help="with --probe columns: sum this column too")
@@ -183,9 +189,12 @@ def main() -> int:
                 print(f"  {label[:100]!r} -> {href}")
         return 0
     if args.probe == "columns":
-        accept(open_, args.catalog)
         with tempfile.TemporaryDirectory() as tmp:
-            archive = download(open_, args.catalog, args.file, Path(tmp))
+            if args.url:
+                archive = download_url(opener(args.url), args.url, Path(tmp))
+            else:
+                accept(open_, args.catalog)
+                archive = download(open_, args.catalog, args.file, Path(tmp))
             for path in unpack(archive, Path(tmp) / "x"):
                 print(f"file {path.name}: {path.stat().st_size:,} bytes")
                 if path.suffix.lower() != ".csv":
