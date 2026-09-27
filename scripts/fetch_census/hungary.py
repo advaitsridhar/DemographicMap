@@ -47,7 +47,7 @@ import re
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, dated, http_json, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, dated, gap, http_json, log, record, shares, write_json
 from .central_ages import age_sex_fields, check_national_median, check_sum, fold, report_unbound, units
 
 API = "https://nepszamlalas2022.ksh.hu/api"
@@ -60,7 +60,17 @@ ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII
          "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII"]
 # KSH's adjective -> the boundary file's name, where dropping the -i does not reach it.
 IRREGULAR = {"Egri": "Eger", "Szeghalmi": "Szeghalom", "Mórahalmi": "Mórahalom",
-             "Kunszentmártoni": "Kunszentmártonj", "Hegyháti": "Hegyhát"}
+             "Kunszentmártoni": "Kunszentmártonj", "Hegyháti": "Hegyhát",
+             "Kiskunfélegyházi": "Kiskunfélegyháza", "Nyíregyházi": "Nyíregyháza",
+             "Orosházi": "Orosháza"}
+# The map draws one district KSH's 2022 count does not have: "Polgard" (Wikidata
+# Q15275788, its population dated 2012), a district of the 2013 division
+# whose settlements KSH now counts in the Enying and Szekesfehervar districts,
+# the two polygons beside it. So neither of those districts' figures fits its
+# drawn polygon, and none fits Polgard's; the three are written as gaps.
+REDRAWN = {"Enyingi": "Enying", "Székesfehérvári": "Székesfehérvár"}
+OLD_DISTRICT = "Polgard"
+GAP_FIELDS = ("median_age", "sex_ratio", "religion", "ethnicity", "language")
 RELIGION = {"RE_RC": "Roman Catholic", "RE_GC": "Greek Catholic", "RE_CA": "Reformed (Calvinist)",
             "RE_LU": "Lutheran", "RE_OC": "Orthodox", "RE_CD": "Other Christian",
             "RE_J": "Judaism", "RE_OCD": "Other religion", "RE_NOT": "No religion",
@@ -200,8 +210,21 @@ def build() -> list[dict[str, Any]]:
     by_key: dict[str, list[dict[str, Any]]] = {}
     for shape in shapes:
         by_key.setdefault(fold(shape["name"]), []).append(shape)
+    redrawn_note = ("Not written: the map draws Fejér's districts as they were in 2013, with a "
+                    "Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts "
+                    "that district's settlements in its Enying and Székesfehérvár districts, so no "
+                    "published figure covers exactly this polygon.")
     for code in districts:
         label = name_of[code]
+        if label.replace(" district", "").strip() in REDRAWN:
+            shape = next(s for s in shapes
+                         if s["name"] == REDRAWN[label.replace(" district", "").strip()])
+            used.add(shape["id"])
+            records.append(record(
+                f"HUN-KSH-{code}", shape["name"], level="admin2", parent=shape["parent"],
+                country="HUN", codes={"ksh_terul": code}, match_by="shape_id", shape_id=shape["id"],
+                **{f: gap(NOT_AVAILABLE, redrawn_note) for f in GAP_FIELDS}))
+            continue
         if parent_of[code] == "HU110":
             number = int(label.split()[-1])
             keys = [fold(f"{ROMAN[number - 1]}. kerület")]
@@ -223,6 +246,12 @@ def build() -> list[dict[str, Any]]:
             f"HUN-KSH-{code}", shape["name"], level="admin2", parent=shape["parent"],
             parent_name=name_of[parent_of[code]], country="HUN", codes={"ksh_terul": code},
             aliases=[label], match_by="shape_id", shape_id=shape["id"], sources=sources, **fields))
+    old = next(s for s in shapes if s["name"] == OLD_DISTRICT)
+    used.add(old["id"])
+    records.append(record(
+        "HUN-2013-Polgard", old["name"], level="admin2", parent=old["parent"], country="HUN",
+        match_by="shape_id", shape_id=old["id"],
+        **{f: gap(NOT_AVAILABLE, redrawn_note) for f in GAP_FIELDS}))
     report_unbound("hungary", unbound, [s["name"] for s in shapes if s["id"] not in used])
     if unbound:
         raise SystemExit(f"hungary: {len(unbound)} districts unbound")
