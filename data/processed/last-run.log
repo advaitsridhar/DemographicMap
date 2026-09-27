@@ -1,31 +1,21 @@
-portugal_census: 308 municipalities
-  50 read
-  100 read
-  150 read
-  200 read
-  250 read
-  300 read
-  Portugal: 10,343,066 people, median 46.5, mean 45.44 against INE's published 45.44
-  308 municipalities bound; polygons left without one: ['Ilhavo (2272694B64447610403706)', 'Montijo (2272694B43421578736002)', 'Oliveira de Frades (2272694B61775283939308)']
-  AVEIRO: 19 municipalities, 700,787 people, median 47.2
-  BEJA: 14 municipalities, 144,401 people, median 48.5
-  BRAGA: 14 municipalities, 846,293 people, median 45.3
-  BRAGANÇA: 12 municipalities, 122,804 people, median 55.0
-  CASTELO BRANCO: 11 municipalities, 177,962 people, median 53.3
-  COIMBRA: 17 municipalities, 408,551 people, median 49.7
-  FARO: 16 municipalities, 467,343 people, median 46.6
-  GUARDA: 14 municipalities, 142,974 people, median 55.3
-  LEIRIA: 16 municipalities, 458,605 people, median 48.0
-  LISBOA: 16 municipalities, 2,275,385 people, median 44.2
-  PORTALEGRE: 15 municipalities, 104,923 people, median 51.4
-  PORTO: 18 municipalities, 1,785,405 people, median 45.8
-  Região Autónoma da Madeira: 11 municipalities, 250,744 people, median 46.1
-  Região Autónoma dos Açores: 19 municipalities, 236,413 people, median 42.2
-  SANTARÉM: 21 municipalities, 424,973 people, median 49.3
-  SETÚBAL: 13 municipalities, 874,806 people, median 45.2
-  VIANA DO CASTELO: 10 municipalities, 231,266 people, median 49.9
-  VILA REAL: 14 municipalities, 185,695 people, median 53.0
-  VISEU: 24 municipalities, 351,292 people, median 50.1
-  ÉVORA: 14 municipalities, 152,444 people, median 49.2
-  wrote data/processed/portugal_census.json (1140 kB)
-  328 records
+bosnia_age: Popis 2013, age and sex
+  FR_T1_B.xlsx: 21,226 bytes
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 223, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 216, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 153, in build
+    single = single_years(rows_of(SINGLE))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 96, in single_years
+    total, men, women = number(r[j]), number(r[j + 1]), number(r[j + 2])
+                        ^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 64, in number
+    return float(t.replace(".", "").replace(",", ""))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ukupnо/total'
