@@ -96,6 +96,15 @@ WHOLE_LAND_REGIONS: dict[str, str] = {
     "16": "Thüringen",
 }
 
+# Rhineland-Palatinate abolished its Regierungsbezirke in 2000, but NUTS 2
+# still divides it into the three statistical regions geoBoundaries draws,
+# and every Kreis's key still carries the old Bezirk in its third digit: 071xx
+# are Koblenz's, 072xx Trier's, 073xx Rheinhessen-Pfalz's (Kreis codes 07111
+# Koblenz city through 07340 Suedwestpfalz). So the three are sums of the
+# Kreis cut of the same table (GEOLK4), and the sum of the three must be the
+# Land's own figure from the Land cut.
+RLP_REGIONS: dict[str, str] = {"071": "Koblenz", "072": "Trier", "073": "Rheinhessen-Pfalz"}
+
 LEVELS: dict[str, tuple[str, str, str, int]] = {
     "land": ("GEOBL1", "admin1", "germany_land.json", 16),
     "regierungsbezirk": ("GEORB1", "admin2", "germany_regierungsbezirk.json", 0),
@@ -301,6 +310,27 @@ def main(argv: list[str] | None = None) -> int:
             areas[code] = entry
             added += 1
         log(f"  + {added} Laender that are a single region")
+        kreise = parse(tablefile(TABLE, auth, "GEOLK4"), "GEOLK4")
+        rlp = {code: e for code, e in kreise.items() if code.startswith("07") and len(code) >= 5}
+        if {code[:3] for code in rlp} != set(RLP_REGIONS):
+            raise SystemExit(f"germany: Rhineland-Palatinate's Kreise open with "
+                             f"{sorted({code[:3] for code in rlp})}, not {sorted(RLP_REGIONS)}")
+        for prefix, name in RLP_REGIONS.items():
+            members = [e for code, e in rlp.items() if code.startswith(prefix)]
+            counts: dict[str, int] = {}
+            for e in members:
+                for group, n in e["counts"].items():
+                    counts[group] = counts.get(group, 0) + n
+            if any(e["total"] is None for e in members):
+                raise SystemExit(f"germany: a Kreis of {name} has no total")
+            areas[prefix] = {"name": name, "counts": counts,
+                             "total": sum(e["total"] for e in members)}
+            log(f"  + {name}: {len(members)} Kreise, {areas[prefix]['total']:,}")
+        summed = sum(areas[p]["total"] for p in RLP_REGIONS)
+        land = whole["07"]["total"]
+        if summed != land:
+            raise SystemExit(f"germany: the three regions of Rhineland-Palatinate make "
+                             f"{summed:,}, the Land cut says {land:,}")
     if expected and len(areas) != expected:
         raise SystemExit(
             f"germany: expected {expected} areas from {region_code} and the "
@@ -330,12 +360,15 @@ def main(argv: list[str] | None = None) -> int:
         # 05, Nordrhein-Westfalen. So the parent is read off the code rather
         # than looked up, and the sixteen Laender parent Germany itself.
         parent = "DEU" if level == "admin1" else f"DEU-{code[:2]}"
+        if level == "admin2" and code in RLP_REGIONS:
+            entity_id = f"DEU-{code}-SR"
         # A whole-Land region's key is its Land's, so its record id would
         # collide with the Land's own. The suffix keeps them apart; the ags
         # code stays the real one.
-        entity_id = (f"DEU-{code}-RB"
-                     if level == "admin2" and code in WHOLE_LAND_REGIONS
-                     else f"DEU-{code}")
+        if not (level == "admin2" and code in RLP_REGIONS):
+            entity_id = (f"DEU-{code}-RB"
+                         if level == "admin2" and code in WHOLE_LAND_REGIONS
+                         else f"DEU-{code}")
         records.append(record(
             entity_id, entry["name"], level=level, parent=parent,
             codes={"ags": code},

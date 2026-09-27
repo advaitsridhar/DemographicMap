@@ -977,7 +977,28 @@ def hun12() -> None:
         show(f"{base}/{path}", raw=900)
 
 
+def deu5() -> None:
+    base = "https://genesis.destatis.de/genesisWS/rest/2020"
+    for term in ("vorwiegend gesprochene Sprache", "Haushaltssprache", "Einwanderungsgeschichte",
+                 "Migrationshintergrund"):
+        body = urllib.parse.urlencode({"term": term, "category": "tables", "pagelength": "40",
+                                       "language": "de"}).encode()
+        status, _, reply = fetch(f"{base}/find/find", data=body,
+                                 headers={"username": "GAST", "password": "GAST",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+        try:
+            data = json.loads(text(reply))
+            log(f"\n## GENESIS {term!r}: {len(data.get('Tables') or [])} tables")
+            for row in (data.get("Tables") or [])[:40]:
+                log(f"   - {row.get('Code')} | {' '.join(row.get('Content', '').split())[:170]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {text(reply)[:200]}")
+    show("https://www.destatis.de/SiteGlobals/Forms/Suche/Expertensuche_Formular.html?"
+         "templateQueryString=vorwiegend+gesprochene+Sprache", r"href=\"[^\"]+\"[^>]*>[^<]{10,}<", limit=40)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu5": deu5,
     "hun12": hun12,
     "hun11": hun11,
     "hun10": hun10,
