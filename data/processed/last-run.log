@@ -1,67 +1,202 @@
-== get https://nip.tuik.gov.tr/
-  16,465 bytes, begins b'<!DOCTYPE html>\n'
-  ~ href="/images/nipLogo1.png" />
-  ~ href="/lib/bootstrap/dist/css/bootstrap.min.css" />
-  ~ href="/a11y/assets/css/style.css?v=1naV0Y6Kipg866ApJroWvpHKpHrRGnqo2GS2zKysPZ8" />
-  ~ href="/lib/font-awesome/css/all.css" rel="stylesheet" />
-  ~ href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
-  ~ href="/css/main.css" rel="stylesheet" />
-  ~ href="/lib/jqueryui/themes/base/jquery-ui.css" rel="stylesheet" />
-  ~ href="/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
-  ~ href="/css/buttons.dataTables.min.css" rel="stylesheet" />
-  ~ href="/lib/noUiSlider/nouislider.min.css" rel="stylesheet" />
-  ~ href="/css/fontFamily.css" rel="stylesheet" />
-  ~ href="/?value=CinsiyeteGoreNufus">
-  ~ href="/Home/VeriKaynaklari"> Veri Kaynakları
-  ~ href="/Home/NufusKonutSayimlari">Nüfus ve Konut Sayımları
-  ~ href="/Home/GelenekselNufusSayimlari">Geleneksel Nüfus Sayımları
-  ~ href="/Home/Uavt">Ulusal Adres Veritabanı (UAVT)
-  ~ href="/Home/Adnks">Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS)
-  ~ href="/Home/NufusKonutSayimi2011">2011 Nüfus ve Konut Araştırması
-  ~ href="/Home/NufusKonutSayimi2021">2021 Nüfus ve Konut Sayımı
-  ~ href="#" onclick="event.preventDefault();">Bina ve Konut
-  ~ href="/?value=BinaIstatistikleri">Bina İstatistikleri
-  ~ href="/?value=KonutIstatistikleri">Konut İstatistikleri
-  ~ href="#" onclick="event.preventDefault();">Doğum Yeri
-  ~ href="/?value=DogumYerineNufus">Doğum Yerine Göre Nüfus
-  ~ href="/?value=YurtdisiDogumluNufus">Yurtdışı Doğumlu Nüfus
-  ~ href="#" onclick="event.preventDefault();">Eğitim
-  ~ href="/?value=EgitimDurumu">Eğitim Durumu
-  ~ href="/?value=OkumaYazmaDurumu">Okuma Yazma Durumu
-  ~ href="#" onclick="event.preventDefault();">Göç
-  ~ href="/?value=UlkeIciGoc">Ülke İçi Göç
-  ~ href="/?value=IllerArasiGoc">İller Arası Göç
-  ~ href="/?value=GocEtmeNedenleri">Göç Etme Nedenleri
-  ~ href="/?value=UluslararasiGoc">Uluslararası Göç
-  ~ href="#" onclick="event.preventDefault();">Hanehalkı Nitelikleri
-  ~ href="/?value=HanehalkiSayisi">Hanehalkı Sayısı
-  ~ href="/?value=HanehalkiBuyukluguneGoreHs">Hanehalkı Büyüklüğüne Göre Hanehalkı Sayısı
-  ~ href="/?value=HanehalkiTipi">Hanehalkı Tipi
-  ~ href="/?value=OrtalamaHanehalkiBuyuklugu">Ortalama Hanehalkı Büyüklüğü
-  ~ href="#" onclick="event.preventDefault();">Hayati İstatistikler
-  ~ href="/?value=Bosanma">Boşanma
-  ~ href="/?value=Dogum">Doğum
-  ~ href="/?value=Evlenme">Evlenme
-  ~ href="/?value=Olum">Ölüm
-  ~ href="#" onclick="event.preventDefault();">İsim Ve Soyisim İstatistikler
-  ~ href="/?value=YeniDoganIsimleri">En Çok Verilen Bebek İsimleri
-  ~ href="/?value=EnCokKullanilanIsimler">En Çok Kullanılan İsimler
-  ~ href="/?value=EnCokKullanilanSoyIsimler">En Çok Kullanılan Soyisimler
-  ~ href="https://tuikcocuk.tuik.gov.tr/"> Yıllara Göre İsim Grafiği
-  ~ href="/?value=MedeniDurum">Medeni Durum
-  ~ href="#" onclick="event.preventDefault();">Nüfus Büyüklüğü
-  ~ href="/?value=CinsiyeteGoreNufus">Cinsiyete Göre Nüfus
-  ~ href="/?value=NufusArtisHizi">Nüfus Artış Hızı
-  ~ href="/?value=NufusYogunlugu">Nüfus Yoğunluğu
-  ~ href="#" onclick="event.preventDefault();">Yabancı Nüfus
-  ~ href="/?value=YabanciNufusBuyuklugu">Yabancı Nüfus Büyüklüğü
-  ~ href="/?value=TabiiyetYabanciNufus">Tabiiyete Göre Yabancı Nüfus
-  ~ href="#" onclick="event.preventDefault();">Yaş ve Cinsiyet Yapısı
-  ~ href="/?value=OrtancaYas">Ortanca Yaş
-  ~ href="/?value=YasGrubunaGoreNufus">Yaş Grubuna Göre Nüfus
-  ~ href="/?value=YasBagimlilikOrani">Geniş Yaş Grupları ve Yaş Bağımlılık Oranı
-  ~ href="/?value=IlGostergeKartlari">İl Gösterge Kartları
-  ~ SayfaYukle('CinsiyeteGoreNufus'); }); function SayfaYukle(adres) { $.post(`Home/${adres}`,
-  ~ href="https://www.tuik.gov.tr/" target="_self" id="logo2Anchor">
-  ~ href="https://www.tuik.gov.tr/" target="_blank" rel="noopener noreferrer">TÜİK Ana Sayfası
-  ~ href="https://ty.tuik.gov.tr/" target="_blank" rel="nofollow noreferrer">
+== cdx sreda.org
+  20231105004101 text/html                        10737 https://sreda.org/2012/1-religioznost-chto-takoe-vera-v-boga-byilo-li-religioznoe-vozrozhdenie-v-rossii
+  20190817114848 text/html                        17624 http://sreda.org/2012/1-religioznost-chto-takoe-vera-v-boga-byilo-li-religioznoe-vozrozhdenie-v-rossii/7643
+  20231105044945 text/html                        10106 https://sreda.org/2012/1-religioznost-kto-samyiy-religioznyiy-v-rossii-i-v-mire
+  20190825193040 text/html                        16514 http://sreda.org/2012/1-religioznost-kto-samyiy-religioznyiy-v-rossii-i-v-mire/8789
+  20231105004326 text/html                        10589 https://sreda.org/2012/1-religioznost-sotsialnyie-fobii-dannyie-patriarha-kirilla-skolko-votserkovlennyih-v-rossii
+  20190822165109 text/html                        17381 http://sreda.org/2012/1-religioznost-sotsialnyie-fobii-dannyie-patriarha-kirilla-skolko-votserkovlennyih-v-rossii/10274
+  20231105061910 text/html                        16468 https://sreda.org/2012/18-dekabrya-2012-v-ria-novosti-sostoyalas-prezentatsiya-proekta-arena-video
+  20190922212437 text/html                        24621 http://sreda.org/2012/18-dekabrya-2012-v-ria-novosti-sostoyalas-prezentatsiya-proekta-arena-video/25030
+  20231105000817 text/html                        10213 https://sreda.org/2012/19-iyulya-2012-seminar-religion-and-pro-social-behavior-lessons-from-an-event-study-of-the-catholic-clergy-sexual-abuse-scandals-in-the-united-states-dokladchik-nicolas-luis-bottan
+  20190716232256 text/html                        16965 http://sreda.org/2012/19-iyulya-2012-seminar-religion-and-pro-social-behavior-lessons-from-an-event-study-of-the-catholic-clergy-sexual-abuse-scandals-in-the-united-states-dokladchik-nicolas-luis-bottan/7445
+  20231105044725 text/html                        12844 https://sreda.org/2012/2-rol-religii-v-obshhestve
+  20231105044917 text/html                        12736 https://sreda.org/2012/2-rol-religii-v-obshhestve-otnoshenie-k-patriarhu-i-k-tserkvi-reyting-doveriya-rpts-v-konfliktnyih-situatsiyah-delo-pussy-riot-den-semi-i-vernosti
+  20120715043853 text/html                        10318 http://sreda.org:80/2012/2-rol-religii-v-obshhestve-otnoshenie-k-patriarhu-i-k-tserkvi-reyting-doveriya-rpts-v-konfliktnyih-situatsiyah-delo-pussy-riot-den-semi-i-vernosti/7645
+  20231105004056 text/html                        11173 https://sreda.org/2012/2-rol-religii-v-obshhestve-vospriyatie-otnosheniy-tserkvi-i-vlasti-zashhityi-chuvstv-veruyushhih-uchastie-rpts-v-politike
+  20190822165143 text/html                        17847 http://sreda.org/2012/2-rol-religii-v-obshhestve-vospriyatie-otnosheniy-tserkvi-i-vlasti-zashhityi-chuvstv-veruyushhih-uchastie-rpts-v-politike/10276
+  20190825192644 text/html                        19996 http://sreda.org/2012/2-rol-religii-v-obshhestve/8795
+  20231105000537 text/html                         9792 https://sreda.org/2012/24-aprelya-2012-goda-filosofiya-religii-i-religiovedenie-na-lomonosovskih-chteniyah-2012
+  20190922212110 text/html                        16411 http://sreda.org/2012/24-aprelya-2012-goda-filosofiya-religii-i-religiovedenie-na-lomonosovskih-chteniyah-2012/3085
+  20231105000710 text/html                        10484 https://sreda.org/2012/24-aprelya-2012-goda-kruglyiy-stol-sovremennyie-podhodyi-v-filosofii-religii-kak-strategii-osmyisleniya-predmeta-kiev
+  20190716010828 text/html                        17288 http://sreda.org/2012/24-aprelya-2012-goda-kruglyiy-stol-sovremennyie-podhodyi-v-filosofii-religii-kak-strategii-osmyisleniya-predmeta-kiev/3158
+  20231105000643 text/html                        10034 https://sreda.org/2012/25-26-aprelya-2012-g-mezhdunarodnyiy-mezhkonfessionalnyiy-forum-navstrechu-peremenam-rol-religii-v-segodnyashnem-mire-vera-v-usloviyah-demokratii-i-svetskogo-obshhestva-kiev
+  20190922212347 text/html                        16827 http://sreda.org/2012/25-26-aprelya-2012-g-mezhdunarodnyiy-mezhkonfessionalnyiy-forum-navstrechu-peremenam-rol-religii-v-segodnyashnem-mire-vera-v-usloviyah-demokratii-i-svetskogo-obshhestva-kiev/3160
+  20231105000715 text/html                        11366 https://sreda.org/2012/27-29-iyunya-v-moskve-proydet-konferentsiya-filosofiya-religii-sovremennost-i-retrospektiva
+  20190922211412 text/html                        18078 http://sreda.org/2012/27-29-iyunya-v-moskve-proydet-konferentsiya-filosofiya-religii-sovremennost-i-retrospektiva/6846
+  20231105000946 text/html                         9452 https://sreda.org/2012/27-iyunya-2012-g-kruglyiy-stol-religiovedenie-v-kontekste-mezhdistsiplinarnyih-issledovaniy-nizhniy-novgorod
+  20190716232406 text/html                        16082 http://sreda.org/2012/27-iyunya-2012-g-kruglyiy-stol-religiovedenie-v-kontekste-mezhdistsiplinarnyih-issledovaniy-nizhniy-novgorod/3162
+  20231105000604 text/html                         9457 https://sreda.org/2012/5-iyulya-vyiezdnoe-zasedanie-dumskogo-komiteta-po-delam-obshhestvennyih-obedineniy-i-religioznyih-organizatsiy-sergiev-posad
+  20190716232840 text/html                        15926 http://sreda.org/2012/5-iyulya-vyiezdnoe-zasedanie-dumskogo-komiteta-po-delam-obshhestvennyih-obedineniy-i-religioznyih-organizatsiy-sergiev-posad/7405
+  20231105004256 text/html                        12232 https://sreda.org/2012/5-regionalnyie-issledovaniya-zhiznennyie-tsennosti-prakticheskaya-religioznost-obraz-sibiryaka
+  20190817114443 text/html                        18889 http://sreda.org/2012/5-regionalnyie-issledovaniya-zhiznennyie-tsennosti-prakticheskaya-religioznost-obraz-sibiryaka/7651
+  20231105000856 text/html                         9374 https://sreda.org/2012/6-8-sentyabrya-mezhdunarodnaya-nauchnaya-konferentsiya-staroobryadtsyi-v-zarubezhe-istoriya-religiya-yazyik-kultura-toruni-polsha
+  20160409181135 text/html                        14972 http://sreda.org/2012/6-8-sentyabrya-mezhdunarodnaya-nauchnaya-konferentsiya-staroobryadtsyi-v-zarubezhe-istoriya-religiya-yazyik-kultura-toruni-polsha/6968
+  20231105044748 text/html                        10348 https://sreda.org/2012/7-mirovyie-oprosyi-islamskie-printsipyi-v-ekonomike-chislennost-religioznyih-bezhentsev
+  20190817114213 text/html                        16966 http://sreda.org/2012/7-mirovyie-oprosyi-islamskie-printsipyi-v-ekonomike-chislennost-religioznyih-bezhentsev/7655
+  20231105000510 text/html                         9973 https://sreda.org/2012/8-10-noyabrya-2012-goda-pervyiy-kongress-rossiyskih-issledovateley-religii-religiya-v-vek-nauki
+  20190716010652 text/html                        16473 http://sreda.org/2012/8-10-noyabrya-2012-goda-pervyiy-kongress-rossiyskih-issledovateley-religii-religiya-v-vek-nauki/7407
+  20231105075827 text/html                        11671 https://sreda.org/2012/baylor-institute-for-studies-of-religion-isr-surveys-of-religion
+  20190722064703 text/html                        18345 http://sreda.org/2012/baylor-institute-for-studies-of-religion-isr-surveys-of-religion/6882
+  20231105030024 text/html                        14180 https://sreda.org/2012/ii-vserossiyskaya-konferentsiya-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-sostoyalas-v-moskve
+  20191117134807 text/html                        22075 http://sreda.org/2012/ii-vserossiyskaya-konferentsiya-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-sostoyalas-v-moskve/6981
+  20231105063205 text/html                        10007 https://sreda.org/2012/kaariaynen-k-furman-d-religioznost-v-rossii-rubezhe-xx-xxi-stoletiy-chast-1
+  20190922211448 text/html                        16412 http://sreda.org/2012/kaariaynen-k-furman-d-religioznost-v-rossii-rubezhe-xx-xxi-stoletiy-chast-1/6865
+  20231105063135 text/html                        10111 https://sreda.org/2012/kaariaynen-k-furman-d-religioznost-v-rossii-rubezhe-xx-xxi-stoletiy-okonchanie
+  20190922211641 text/html                        16516 http://sreda.org/2012/kaariaynen-k-furman-d-religioznost-v-rossii-rubezhe-xx-xxi-stoletiy-okonchanie/6867
+  20231105000806 text/html                        10422 https://sreda.org/2012/konferentsiya-sotsiologiya-religii-v-obshhestve-pozdnego-moderna
+  20190820193459 text/html                        16992 http://sreda.org/2012/konferentsiya-sotsiologiya-religii-v-obshhestve-pozdnego-moderna/1620
+  20231105000823 text/html                         9976 https://sreda.org/2012/nauchnyiy-kollokvium-modeli-religiozno-mifologcheskogo-mirovospriyatiya-i-grazhdanskaya-identichnost
+  20190820194132 text/html                        16611 http://sreda.org/2012/nauchnyiy-kollokvium-modeli-religiozno-mifologcheskogo-mirovospriyatiya-i-grazhdanskaya-identichnost/11153
+  20231105030008 text/html                        12812 https://sreda.org/2012/ng-religii-tserkvi-napomnili-lihie-90-e-sotsiologi-utverzhdayut-chto-nyineshnie-skandalyi-vokrug-rpts-tolko-povtorenie-antiklerikalnoy-kampanii-proshlyih-let
+  20190817114706 text/html                        19772 http://sreda.org/2012/ng-religii-tserkvi-napomnili-lihie-90-e-sotsiologi-utverzhdayut-chto-nyineshnie-skandalyi-vokrug-rpts-tolko-povtorenie-antiklerikalnoy-kampanii-proshlyih-let/7732
+  20120315040434 text/html                        14584 http://sreda.org:80/2012/opasnoe-neponimanie-ili-kak-v-obshhestvennom-soznanii-sootnosyatsya-ponyatiya-veruyushhiy-religioznyiy-i-pravoslavnyiy/1528
+  20231105075903 text/html                         9594 https://sreda.org/2012/parminskiy-n-v-problemyi-duhovnosti-i-religii-v-osveshhenii-tsentralnoy-frantsuzskoy-pressyi-2004-2007-gg
+  20190922212122 text/html                        16183 http://sreda.org/2012/parminskiy-n-v-problemyi-duhovnosti-i-religii-v-osveshhenii-tsentralnoy-frantsuzskoy-pressyi-2004-2007-gg/6880
+  20231105075857 text/html                        12917 https://sreda.org/2012/pew-research-center-trends-in-american-values-1987-2012-religion-and-social-values
+  20190722064904 text/html                        19888 http://sreda.org/2012/pew-research-center-trends-in-american-values-1987-2012-religion-and-social-values/6874
+  20231105000548 text/html                        10460 https://sreda.org/2012/pravovoe-regulirovanie-religioznoy-zhizni-istoriya-sovremennost-perspektivyi
+  20190716233042 text/html                        17185 http://sreda.org/2012/pravovoe-regulirovanie-religioznoy-zhizni-istoriya-sovremennost-perspektivyi/12248
+  20231105025621 text/html                        11841 https://sreda.org/2012/predstaviteli-russkoy-pravoslavnoy-tserkvi-prinyali-uchastie-vo-ii-vserossiyskoy-konferentsii-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-vospriyatie-veryi-i-religii-v-o
+  20191117134753 text/html                        18733 http://sreda.org/2012/predstaviteli-russkoy-pravoslavnoy-tserkvi-prinyali-uchastie-vo-ii-vserossiyskoy-konferentsii-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-vospriyatie-veryi-i-religii-v-o/6987
+  20231105000636 text/html                        13846 https://sreda.org/2012/programma-ii-vserossiyskoy-konferentsii-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-vospriyatie-veryi-i-religii-v-obshhestve
+  20190922211425 text/html                        20951 http://sreda.org/2012/programma-ii-vserossiyskoy-konferentsii-religioznyiy-faktor-v-sotsialno-politicheskoy-zhizni-sovremennoy-rossii-vospriyatie-veryi-i-religii-v-obshhestve/4837
+  20231105024718 text/html                        19518 https://sreda.org/2012/religia-i-rossiiskoe-mnogoobrasie
+  20190817113953 text/html                        26849 http://sreda.org/2012/religia-i-rossiiskoe-mnogoobrasie/1398
+  20231105004432 text/html                        10807 https://sreda.org/2012/religioznost
+  20231105003843 text/html                        13544 https://sreda.org/2012/religioznost-2
+  20190722064212 text/html                        20801 http://sreda.org/2012/religioznost-2/13717
+  20231105004119 text/html                        13551 https://sreda.org/2012/religioznost-levada-tsentr-rossiyane-o-religii-i-tserkvi-vtsiom-hellouin-2012-kto-verit-v-zombi
+  20190722065214 text/html                        20897 http://sreda.org/2012/religioznost-levada-tsentr-rossiyane-o-religii-i-tserkvi-vtsiom-hellouin-2012-kto-verit-v-zombi/13695
+  20231105004352 text/html                        10869 https://sreda.org/2012/religioznost-rossiyane-o-patriarhe-kirille
+  20190722151810 text/html                        17749 http://sreda.org/2012/religioznost-rossiyane-o-patriarhe-kirille/14663
+  20190825150216 text/html                        17476 http://sreda.org/2012/religioznost/12442
+  20231105000542 text/html                         9396 https://sreda.org/2012/religiya-i-magiya-iskusstva-ot-hudozhestvennoy-agiografii-k-protestnoy-aktsii
+  20190716011153 text/html                        15927 http://sreda.org/2012/religiya-i-magiya-iskusstva-ot-hudozhestvennoy-agiografii-k-protestnoy-aktsii/12242
+  20231105025649 text/html                        20056 https://sreda.org/2012/religiya-v-rossiyskom-obshhestve-kak-vosprinimayut-veru
+  20191022025901 text/html                        27481 http://sreda.org/2012/religiya-v-rossiyskom-obshhestve-kak-vosprinimayut-veru/6984
+  20231105063139 text/html                        35945 https://sreda.org/2012/religiya-v-tyive
+  20190922212325 text/html                        43916 http://sreda.org/2012/religiya-v-tyive/7276
+  20231105024746 text/html                        16934 https://sreda.org/2012/reportazh-vremya-vyizovov-i-provokatsiy-kruglyiy-stol-ekspertov-religiya-v-sovremennom-informatsionnom-obshhestve-na-filosofskom-fakultete-mgu
+  20190822212341 text/html                        24160 http://sreda.org/2012/reportazh-vremya-vyizovov-i-provokatsiy-kruglyiy-stol-ekspertov-religiya-v-sovremennom-informatsionnom-obshhestve-na-filosofskom-fakultete-mgu/3039
+  20231105014550 text/html                        12316 https://sreda.org/2012/rol-religii-v-obshhestve-pravoslavie-ru-mer-moskvyi-o-mechetyah-ria-novosti-opasnost-novogo-zakona-dlya-religioznyih-organizatsiy
+  20190722064244 text/html                        18939 http://sreda.org/2012/rol-religii-v-obshhestve-pravoslavie-ru-mer-moskvyi-o-mechetyah-ria-novosti-opasnost-novogo-zakona-dlya-religioznyih-organizatsiy/13801
+  20231105004438 text/html                        11829 https://sreda.org/2012/rol-religii-v-obshhestve-tserkov-o-gosudarstve-militseyskiy-patriarhat-nilov-ob-informkampanii-protiv-tserkvi
+  20190722151014 text/html                        18569 http://sreda.org/2012/rol-religii-v-obshhestve-tserkov-o-gosudarstve-militseyskiy-patriarhat-nilov-ob-informkampanii-protiv-tserkvi/14661
+  20231105025003 text/html                        18046 https://sreda.org/2012/sektsiya-sotsiologiya-religii
+  20190817114826 text/html                        25340 http://sreda.org/2012/sektsiya-sotsiologiya-religii/1424
+  20231105001033 text/html                         9416 https://sreda.org/2012/seminar-po-sotsiologii-religii
+  20190820193504 text/html                        15953 http://sreda.org/2012/seminar-po-sotsiologii-religii/10514
+  20231105075815 text/html                        33888 https://sreda.org/2012/shevchenko-m-s-mifotvorchestvo-religioznoy-organizatsii-svideteli-iegovyi-v-konfessionalnom-prostranstve-zabaykalskogo-kraya-avtoreferat-dissertatsii
+  20190722064233 text/html                        41891 http://sreda.org/2012/shevchenko-m-s-mifotvorchestvo-religioznoy-organizatsii-svideteli-iegovyi-v-konfessionalnom-prostranstve-zabaykalskogo-kraya-avtoreferat-dissertatsii/6877
+  20231105063155 text/html                         9688 https://sreda.org/2012/sinelina-yu-yu-pravoslavnyie-i-musulmane-sravnitelnyiy-analiz-religioznogo-povedeniya-i-tsennostnyih-orientatsii
+  20190822165115 text/html                        16165 http://sreda.org/2012/sinelina-yu-yu-pravoslavnyie-i-musulmane-sravnitelnyiy-analiz-religioznogo-povedeniya-i-tsennostnyih-orientatsii/6853
+  20231105000652 text/html                         9217 https://sreda.org/2012/sotsialnaya-deyatelnost-religioznyih-organizatsiy-v-severo-amerikanskom-protestantizme-religioznyiy-ryinok
+  20190722064255 text/html                        15897 http://sreda.org/2012/sotsialnaya-deyatelnost-religioznyih-organizatsiy-v-severo-amerikanskom-protestantizme-religioznyiy-ryinok/12353
+  20231105025723 text/html                        10749 https://sreda.org/2012/statistika-bednoy-religii
+  20190817114457 text/html                        17530 http://sreda.org/2012/statistika-bednoy-religii/8454
+  20231105003859 text/html                        10081 https://sreda.org/2012/terpimost-i-doverie-fom-rossiyane-o-chuzhdoy-dlya-sebya-religii
+  20190722064732 text/html                        16442 http://sreda.org/2012/terpimost-i-doverie-fom-rossiyane-o-chuzhdoy-dlya-sebya-religii/13703
+  20231105025626 text/html                        10844 https://sreda.org/2012/v-moskve-obsudili-rezultatyi-issledovaniy-posvyashhennyih-otnosheniyu-k-religii-v-sovremennom-obshhestve
+  20190716232604 text/html                        17511 http://sreda.org/2012/v-moskve-obsudili-rezultatyi-issledovaniy-posvyashhennyih-otnosheniyu-k-religii-v-sovremennom-obshhestve/6978
+  20231105000228 text/html                        12548 https://sreda.org/2012/vyistuplenie-a-bagrinoy-na-seminare-po-sotsiologii-religii-v-mgu-19-sentyabrya-2013
+  20190822165437 text/html                        19343 http://sreda.org/2012/vyistuplenie-a-bagrinoy-na-seminare-po-sotsiologii-religii-v-mgu-19-sentyabrya-2013/26246
+  20231105024715 text/html                        30551 https://sreda.org/2013/13-14-dekabrya-2013-v-moskve-proshla-nauchnaya-konferentsiya-s-mezhdunarodnyim-uchastiem-sovremennyie-podhodyi-k-izucheniyu-religii
+  20190722151032 text/html                        39487 http://sreda.org/2013/13-14-dekabrya-2013-v-moskve-proshla-nauchnaya-konferentsiya-s-mezhdunarodnyim-uchastiem-sovremennyie-podhodyi-k-izucheniyu-religii/34074
+  20231105024902 text/html                        20946 https://sreda.org/2013/13-dekabrya-2013-v-moskve-sostoyalsya-pervyiy-mezhdunarodnyiy-forum-religiya-i-mir
+  20190723231724 text/html                        29744 http://sreda.org/2013/13-dekabrya-2013-v-moskve-sostoyalsya-pervyiy-mezhdunarodnyiy-forum-religiya-i-mir/34016
+  20231105025904 text/html                        12468 https://sreda.org/2013/17-dekabrya-2013-stali-izvestnyi-rezultatyi-konkursa-issledovatelskih-rabot-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii
+  20190825145758 text/html                        19283 http://sreda.org/2013/17-dekabrya-2013-stali-izvestnyi-rezultatyi-konkursa-issledovatelskih-rabot-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii/33693
+  20231105024615 text/html                        15404 https://sreda.org/2013/21-fevralya-v-mgu-proshel-ocherednoy-otkryityiy-seminar-po-sotsiologii-religii-tema-seminara-analiz-sotsialnyih-setey-novoe-napravlenie-v-sotsiologii-religii
+  20160517124024 text/html                        22003 http://sreda.org/2013/21-fevralya-v-mgu-proshel-ocherednoy-otkryityiy-seminar-po-sotsiologii-religii-tema-seminara-analiz-sotsialnyih-setey-novoe-napravlenie-v-sotsiologii-religii/19951
+  20231105024628 text/html                        19245 https://sreda.org/2013/22-noyabrya-2013-na-seminare-po-sotsiologii-religii-v-mgu-sostoyalsya-doklad-e-a-kublitskoy-spetsifika-mezhetnicheskogo-i-etnokonfessionalnogo-vzaimodeystviya-v-regionah-rf
+  20190822170001 text/html                        27884 http://sreda.org/2013/22-noyabrya-2013-na-seminare-po-sotsiologii-religii-v-mgu-sostoyalsya-doklad-e-a-kublitskoy-spetsifika-mezhetnicheskogo-i-etnokonfessionalnogo-vzaimodeystviya-v-regionah-rf/32320
+  20231105030607 text/html                        32658 https://sreda.org/2013/26-fevralya-v-niu-vshe-proshla-prezentatsiya-alinyi-bagrinoy-na-temu-religioznyiy-renessans-i-grazhdanskaya-aktivnost
+  20130308160924 text/html                        30134 http://sreda.org:80/2013/26-fevralya-v-niu-vshe-proshla-prezentatsiya-alinyi-bagrinoy-na-temu-religioznyiy-renessans-i-grazhdanskaya-aktivnost/19833
+  20231105024534 text/html                        25727 https://sreda.org/2013/27-iyunya-2013-g-costoyalsya-ocherednoy-seminar-issledovatelskogo-komiteta-sotsiologiya-religii-rossiyskogo-obshhestva-sotsiologov
+  20131209015713 text/html                        23967 http://sreda.org/2013/27-iyunya-2013-g-costoyalsya-ocherednoy-seminar-issledovatelskogo-komiteta-sotsiologiya-religii-rossiyskogo-obshhestva-sotsiologov/25559
+  20231105025107 text/html                        12218 https://sreda.org/2013/9-10-iyunya-2013-g-rossiyskie-issledovateli-religii-uchastvovali-v-mirovom-sotsiologicheskom-kongresse-v-shvetsii
+  20130816144810 text/html                         9706 http://sreda.org:80/2013/9-10-iyunya-2013-g-rossiyskie-issledovateli-religii-uchastvovali-v-mirovom-sotsiologicheskom-kongresse-v-shvetsii/27302
+  20231105020846 text/html                        17675 https://sreda.org/2013/aleksandrova-nadezhda-nikolaevna-protsessyi-vozniknoveniya-novyih-form-religioznyih-praktik-na-primere-obshhin-pyatidesyatnikov-harizmatov
+  20140309034216 text/html                        14449 http://sreda.org:80/2013/aleksandrova-nadezhda-nikolaevna-protsessyi-vozniknoveniya-novyih-form-religioznyih-praktik-na-primere-obshhin-pyatidesyatnikov-harizmatov/33982
+  20231105014423 text/html                        19432 https://sreda.org/2013/arena-atlas-religiy-i-natsionalnostey
+  20140407065054 text/html                        18138 http://sreda.org/2013/arena-atlas-religiy-i-natsionalnostey/16733
+  20160511112808 text/html                        24131 http://sreda.org/2013/arena-atlas-religiy-i-natsionalnostey/16733?shared=email&msg=fail
+  20231105010724 text/html                         9164 https://sreda.org/2013/chto-vliyaet-na-chastotu-poseshheniya-religioznyih-sluzhb
+  20190823185534 text/html                        15535 http://sreda.org/2013/chto-vliyaet-na-chastotu-poseshheniya-religioznyih-sluzhb/28241
+  20190722065225 text/html                        15552 http://sreda.org/2013/chto-vliyaet-na-chastotu-poseshheniya-religioznyih-sluzhb/28241?ptid=12234
+  20231105024750 text/html                        10034 https://sreda.org/2013/fotoreportazh-25-aprelya-v-mgu-proshyol-ocherednoy-seminar-po-sotsiologii-religii-2
+  20190817114025 text/html                        18337 http://sreda.org/2013/fotoreportazh-25-aprelya-v-mgu-proshyol-ocherednoy-seminar-po-sotsiologii-religii-2/22357
+  20231105014824 text/html                        10955 https://sreda.org/2013/fotoreportazh-s-seminara-religioznyiy-renessans-i-grazhdanskaya-aktivnost
+  20190822165308 text/html                        17745 http://sreda.org/2013/fotoreportazh-s-seminara-religioznyiy-renessans-i-grazhdanskaya-aktivnost/19513
+  20231104230013 text/html                         9062 https://sreda.org/2013/infografika-sotsiologi-religii-4
+  20131104084300 text/html                         7201 http://sreda.org:80/2013/infografika-sotsiologi-religii-4/26529
+  20190722064328 text/html                        15414 http://sreda.org/2013/infografika-sotsiologi-religii-4/26529?ptid=12234
+  20231105030458 text/html                        28782 https://sreda.org/2013/intervyu-s-rukovoditelem-issledovatelskoy-sluzhbyi-sreda-a-yu-bagrinoy-o-rezultatah-konkursa-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii
+  20140307072324 text/html                        26415 http://sreda.org:80/2013/intervyu-s-rukovoditelem-issledovatelskoy-sluzhbyi-sreda-a-yu-bagrinoy-o-rezultatah-konkursa-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii/34076
+  20231105004248 text/html                        14394 https://sreda.org/2013/issledovaniya-v-drugih-stranah-stranyi-blizhnego-vostoka-evropa-albaniya-velikobritaniya-egipet-novaya-zelandiya-belorussiya-sedmitsa-ru-interfaks-religiya-pravoslavie-i-mir-umma-inform-i
+  20190819024037 text/html                        21522 http://sreda.org/2013/issledovaniya-v-drugih-stranah-stranyi-blizhnego-vostoka-evropa-albaniya-velikobritaniya-egipet-novaya-zelandiya-belorussiya-sedmitsa-ru-interfaks-religiya-pravoslavie-i-mir-umma-inform-i/16426
+  20231105025029 text/html                        11535 https://sreda.org/2013/istoriya-pussy-riot-ne-vopros-politiki-ili-religii
+  20190820193438 text/html                        18665 http://sreda.org/2013/istoriya-pussy-riot-ne-vopros-politiki-ili-religii/21722
+  20231105024949 text/html                        23945 https://sreda.org/2013/izbranie-novogo-papyi-eto-drama-v-treh-chastyah-reportazh-s-seminara-po-sotsiologii-religii-v-mgu
+  20131209020153 text/html                        22949 http://sreda.org/2013/izbranie-novogo-papyi-eto-drama-v-treh-chastyah-reportazh-s-seminara-po-sotsiologii-religii-v-mgu/24681
+  20231105024637 text/html                        36714 https://sreda.org/2013/konferentsiya-nauchnoe-i-religioznoe-poznanie-mira
+  20131204215706 text/html                        34894 http://sreda.org:80/2013/konferentsiya-nauchnoe-i-religioznoe-poznanie-mira/32659
+  20231105024457 text/html                        17291 https://sreda.org/2013/kruglyiy-stol-prava-cheloveka-v-religiyah
+  20190820194204 text/html                        24584 http://sreda.org/2013/kruglyiy-stol-prava-cheloveka-v-religiyah/21699
+  20231105025217 text/html                        14704 https://sreda.org/2013/lektsiya-demokratiya-i-religiya-professora-rodzhera-trigga
+  20190820193715 text/html                        21886 http://sreda.org/2013/lektsiya-demokratiya-i-religiya-professora-rodzhera-trigga/30050
+  20231105030815 text/html                        14792 https://sreda.org/2013/o-proekte-atlas-religiy-i-natsionalnostey-rf-kommentariy-alinyi-bagrinoy
+  20160312084746 text/html                        19113 http://sreda.org/2013/o-proekte-atlas-religiy-i-natsionalnostey-rf-kommentariy-alinyi-bagrinoy/30302
+  20231105021055 text/html                        16233 https://sreda.org/2013/pobediteli-konkursa-issledovatelskih-rabot-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii
+  20150406181334 text/html                        15282 http://sreda.org/2013/pobediteli-konkursa-issledovatelskih-rabot-molodyih-uchenyih-vera-i-religiya-v-sovremennoy-rossii/33511
+  20231105055814 text/html                        17093 https://sreda.org/2013/polovozrastnyie-osobennosti-psihologicheskoy-gotovnosti-k-smene-religii-v-polietnicheskom-regione-tyurina-n-a
+  20131226074538 text/html                        14873 http://sreda.org:80/2013/polovozrastnyie-osobennosti-psihologicheskoy-gotovnosti-k-smene-religii-v-polietnicheskom-regione-tyurina-n-a/34007
+  20231105000340 text/html                        11378 https://sreda.org/2013/prezentatsiya-proekta-atlas-religiy-i-natsionalnostey-rf-v-ria-novosti
+  20160406172459 text/html                        16545 http://sreda.org/2013/prezentatsiya-proekta-atlas-religiy-i-natsionalnostey-rf-v-ria-novosti/30298
+  20231105014835 text/html                        12828 https://sreda.org/2013/priglashaem-vseh-prezentatsiya-itogov-konkursa-vera-i-religiya-v-sovremennoy-rossii
+  20140308040116 text/html                        10380 http://sreda.org:80/2013/priglashaem-vseh-prezentatsiya-itogov-konkursa-vera-i-religiya-v-sovremennoy-rossii/32912
+  20231105021801 text/html                        11629 https://sreda.org/2013/pryamaya-rech-kakoe-maksimalnoe-nakazanie-dolzhen-ponesti-chelovek-oskorbivshiy-vashi-religioznyie-chuvstva
+  20190822212510 text/html                        18292 http://sreda.org/2013/pryamaya-rech-kakoe-maksimalnoe-nakazanie-dolzhen-ponesti-chelovek-oskorbivshiy-vashi-religioznyie-chuvstva/29636
+  20231105022038 text/html                        11920 https://sreda.org/2013/pryamaya-rech-mozhet-li-chto-libo-oskorbit-vashi-religioznyie-chuvstva-i-esli-da-chto-imenno
+  20130926172750 text/html                        10569 http://sreda.org:80/2013/pryamaya-rech-mozhet-li-chto-libo-oskorbit-vashi-religioznyie-chuvstva-i-esli-da-chto-imenno/29292
+  20231105014739 text/html                         9199 https://sreda.org/2013/religiovedenie-2
+  20191115090214 text/html                        15571 http://sreda.org/2013/religiovedenie-2/30953
+  20131209211114 text/html                         7394 http://sreda.org:80/2013/religiovedenie/30390
+  20231105004304 text/html                        11300 https://sreda.org/2013/religioznost-i-votserkovlennost-religiya-v-sovremennom-mire-pravoslavie-i-islam-chislennost-pravoslavnyih-chtenie-biblii-levada-tsentr-religiya-i-smi-sedmitsa-ru-ekspert
+  20190819024218 text/html                        18151 http://sreda.org/2013/religioznost-i-votserkovlennost-religiya-v-sovremennom-mire-pravoslavie-i-islam-chislennost-pravoslavnyih-chtenie-biblii-levada-tsentr-religiya-i-smi-sedmitsa-ru-ekspert/16409
+  20231105024905 text/html                        18742 https://sreda.org/2013/religioznyiy-natsionalizm-v-teorii-i-praktike
+  20131126141923 text/html                        16849 http://sreda.org:80/2013/religioznyiy-natsionalizm-v-teorii-i-praktike/31895
+  20231105004112 text/html                        11609 https://sreda.org/2013/religiya-i-obshhestvo-reyting-patriarha-kirilla-vera-kak-atribut-natsionalnoy-prinadlezhnosti-pravoslavie-i-predprinimatelstvo-vtsiom-gazeta-ru-ekspert
+  20190819023649 text/html                        18484 http://sreda.org/2013/religiya-i-obshhestvo-reyting-patriarha-kirilla-vera-kak-atribut-natsionalnoy-prinadlezhnosti-pravoslavie-i-predprinimatelstvo-vtsiom-gazeta-ru-ekspert/16414
+  20231105005258 text/html                        13244 https://sreda.org/2013/s-kakimi-ptitsami-assotsiiruyutsya-raznyie-veroispovedaniya-opros-gostey-prezentatsii-vera-i-religiya-v-sovremennoy-rossii
+  20140307064729 text/html                        10473 http://sreda.org:80/2013/s-kakimi-ptitsami-assotsiiruyutsya-raznyie-veroispovedaniya-opros-gostey-prezentatsii-vera-i-religiya-v-sovremennoy-rossii/34492
+  20231105020904 text/html                        18257 https://sreda.org/2013/sekulyarnoe-i-povsednevnost-religioznaya-perspektiva-svetskogo-diskurs-predstavleniya-praktiki-alekseenko-t-n
+  20190822165708 text/html                        27078 http://sreda.org/2013/sekulyarnoe-i-povsednevnost-religioznaya-perspektiva-svetskogo-diskurs-predstavleniya-praktiki-alekseenko-t-n/33998
+  20231105024453 text/html                        17512 https://sreda.org/2013/sociologiya-religii-v-obschestve-pozdnego-moderna
+  20190822212540 text/html                        25944 http://sreda.org/2013/sociologiya-religii-v-obschestve-pozdnego-moderna/30638
+  20231105015217 text/html                        11052 https://sreda.org/2013/spetspriz-ot-zhurnala-gosudarstvo-religiya-tserkov
+  20190819024055 text/html                        19157 http://sreda.org/2013/spetspriz-ot-zhurnala-gosudarstvo-religiya-tserkov/28460
+  20231105015818 text/html                        17350 https://sreda.org/2013/spisok-rabot-poluchennyih-na-konkurs-vera-i-religiya-v-sovremennoy-rossii
+  20131108231444 text/html                        14145 http://sreda.org:80/2013/spisok-rabot-poluchennyih-na-konkurs-vera-i-religiya-v-sovremennoy-rossii/31107
+  20231105015121 text/html                        11056 https://sreda.org/2013/sreda-obyavlyaet-konkurs-issledovatelskih-rabot-o-vere-i-religii-v-sovremennoy-rossii
+  20130712232153 text/html                         8111 http://sreda.org:80/2013/sreda-obyavlyaet-konkurs-issledovatelskih-rabot-o-vere-i-religii-v-sovremennoy-rossii/23711
+  20231105014411 text/html                        12705 https://sreda.org/2013/tsennosti-i-stereotipyi-konets-sveta-21-dekabrya-vvedenie-edinoy-shkolnoy-formyi-religiya-i-schaste-cheloveka-vtsiom-ria-novosti-cnlnews-tv
+  20190819023938 text/html                        19598 http://sreda.org/2013/tsennosti-i-stereotipyi-konets-sveta-21-dekabrya-vvedenie-edinoy-shkolnoy-formyi-religiya-i-schaste-cheloveka-vtsiom-ria-novosti-cnlnews-tv/16418
+  20231105014424 text/html                         9322 https://sreda.org/2013/tsentr-issledovaniy-religii-i-sekulyarizatsii
+  20191115090324 text/html                        15709 http://sreda.org/2013/tsentr-issledovaniy-religii-i-sekulyarizatsii/28777
+  20231105025012 text/html                        29952 https://sreda.org/2013/v-mgimo-sostoyalsya-seminar-issledovanie-sovremennoy-religii-metodyi-i-metodologiya
+  20130322003620 text/html                        27612 http://sreda.org:80/2013/v-mgimo-sostoyalsya-seminar-issledovanie-sovremennoy-religii-metodyi-i-metodologiya/18351
+  20231105014407 text/html                        11332 https://sreda.org/2013/vera-i-religiya-v-sovremennoy-rossii-znakomimsya-s-avtorami-konkursnyih-rabot
+  20190722064610 text/html                        19346 http://sreda.org/2013/vera-i-religiya-v-sovremennoy-rossii-znakomimsya-s-avtorami-konkursnyih-rabot/31541
+  20231105055849 text/html                        17803 https://sreda.org/2013/vera-religiya-religioznost-ih-rol-v-ponimanii-schastya-i-ego-dostizhenii-vzglyad-studentov-postsovetskogo-prostranstva-kodina-i-n
+  20190723231027 text/html                        26776 http://sreda.org/2013/vera-religiya-religioznost-ih-rol-v-ponimanii-schastya-i-ego-dostizhenii-vzglyad-studentov-postsovetskogo-prostranstva-kodina-i-n/34003
+  20231105030647 text/html                        13633 https://sreda.org/2013/vyistuplenie-a-bagrinoy-na-seminare-issledovatelskogo-komiteta-sotsiologiya-religii-rossiyskogo-obshhestva-sotsiologov-27-iyunya-2013
+  20190817114426 text/html                        20751 http://sreda.org/2013/vyistuplenie-a-bagrinoy-na-seminare-issledovatelskogo-komiteta-sotsiologiya-religii-rossiyskogo-obshhestva-sotsiologov-27-iyunya-2013/26275
+  20231105000148 text/html                        12036 https://sreda.org/2013/vyistuplenie-a-bagrinoy-na-seminare-po-sotsiologii-religii-v-mgu-25-aprelya-2013
+  20190817114201 text/html                        20054 http://sreda.org/2013/vyistuplenie-a-bagrinoy-na-seminare-po-sotsiologii-religii-v-mgu-25-aprelya-2013/26256
+  20231105000238 text/html                        25550 https://sreda.org/2013/vyistuplenie-a-bagrinoy-religioznyiy-renessans-i-grazhdanskaya-aktivnost-26-fevralya-2013-niu-vshe
+  20160610064623 text/html                        31753 http://sreda.org/2013/vyistuplenie-a-bagrinoy-religioznyiy-renessans-i-grazhdanskaya-aktivnost-26-fevralya-2013-niu-vshe/26240
+  20231105014414 text/html                        12274 https://sreda.org/2013/zavershilsya-priem-rabot-na-konkurs-vera-i-religiya-v-sovremennoy-rossii
+  20131108230829 text/html                         8917 http://sreda.org:80/2013/zavershilsya-priem-rabot-na-konkurs-vera-i-religiya-v-sovremennoy-rossii/30718
+  20231104230038 text/html                         9083 https://sreda.org/2013/zhivaya-istoriya-religioznyie-datyi
+  200 shown of 2429 captured under sreda.org
