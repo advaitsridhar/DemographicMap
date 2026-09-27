@@ -172,7 +172,7 @@ def sdmx_dataflows(grep: str) -> None:
         if re.search(grep, line, re.I):
             print(f"    {line}")
             shown += 1
-            if shown > 80:
+            if shown > 250:
                 print("    ...")
                 break
 
@@ -233,6 +233,41 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 2
+    "r2_swe_ckm": lambda: px_meta(f"{SCB}/BE/BE0101/BE0101A/BefolkningCKM"),
+    "r2_nor_kostra": lambda: px_list(f"{SSB}/kf/kf04/kirke_kostra/SBMENU12107"),
+    "r2_nor_kostra2": lambda: px_list(f"{SSB}/kf/kf04/kirke_kostra/SBMENU6460"),
+    "r2_nor_trosamf": lambda: px_list(f"{SSB}/kf/kf04/trosamf"),
+    "r2_nor_12026": lambda: px_meta(f"{SSB}/12026", grep=r"^(0710|1804|0301|K-0301) "),
+    "r2_nor_06326": lambda: px_meta(f"{SSB}/06326"),
+    "r2_nor_08531": lambda: px_meta(f"{SSB}/08531"),
+    "r2_nor_search_members": lambda: px_search(f"{SSB}/?query=members%20church%20municipality"),
+    "r2_dnk_km6": lambda: statbank_info("KM6"),
+    "r2_fin_11rf": lambda: px_meta(f"{STATFIN}/vaerak/11rf.px", grep=r"^SK"),
+    "r2_fin_11rx": lambda: px_meta(f"{STATFIN}/vaerak/11rx.px"),
+    "r2_fin_11rm": lambda: px_meta(f"{STATFIN}/vaerak/11rm.px", grep=r"^SK"),
+    "r2_fin_class": lambda: text(
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20250101%23seutukunta_1_20250101/maps?content=data&meta=max&lang=fi",
+        chars=800),
+    "r2_isl_muni": lambda: px_list(f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/sveitarfelog"),
+    "r2_isl_mann": lambda: px_list(f"{HAGSTOFA}/Ibuar/mannfjoldi"),
+    "r2_isl_relig": lambda: px_search(f"{HAGSTOFA}/Ibuar?query=religious"),
+    "r2_isl_02001": lambda: px_meta(f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02001.px"),
+    "r2_est_archive": lambda: px_list(
+        f"{STAT_EE}/Lepetatud_tabelid/Rahvastik.Arhiiv/"
+        "Rahvastikun%C3%A4itajad%20ja%20koosseis.%20Arhiiv"),
+    "r2_est_rel2011": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad"),
+    "r2_est_rl0428": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0428.PX"),
+    "r2_est_search_age": lambda: px_search(f"{STAT_EE}?query=sex%20age%20administrative"),
+    "r2_lva_ird081": lambda: px_meta(f"{CSB}/POP/IR/IRD/IRD081", grep=r"pag|Ain"),
+    "r2_lva_rig010": lambda: px_meta(f"{CSB}/POP/IR/IRD/RIG010", grep=r"Ainaž"),
+    "r2_lva_rig040": lambda: px_meta(f"{CSB}/POP/IR/IRE/RIG040", grep=r"Ainaž"),
+    "r2_lva_search_age": lambda: px_search(f"{CSB}?query=single%20year"),
+    "r2_ltu_flows": lambda: sdmx_dataflows(r"^S3R\d+_M301|surašym|census|Gyventojų surašymo"),
 }
 
 
