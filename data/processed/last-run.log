@@ -1,8 +1,3 @@
-uk_nomis: county (TYPE155)
-uk_nomis: TS021 Ethnic group (NM_2041_1)
-uk_nomis: TS030 Religion (NM_2049_1)
-uk_nomis: TS024 Main language (detailed) (NM_2043_1)
-  NM_2043_1: categories are c2021_mlang_94
-  wrote data/processed/uk_county.json (2188 kB)
-  173 records
-  173 local authority records
+liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
+  211.004: 1 cells; places ['Liechtenstein']
+liechtenstein: 211.004 has no rows for ['Vaduz', 'Triesen', 'Balzers', 'Triesenberg', 'Schaan', 'Planken', 'Eschen', 'Mauren', 'Gamprin', 'Ruggell', 'Schellenberg']; it has ['Liechtenstein']
