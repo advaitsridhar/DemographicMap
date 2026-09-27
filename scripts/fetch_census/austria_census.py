@@ -12,13 +12,15 @@ Umgangssprache, the language of everyday use (Deutsch, Burgenland-Kroatisch,
 Slowenisch, Tschechisch, Ungarisch, Serbisch, Kroatisch, Bosnisch, Türkisch,
 Sonstige und unbekannt).
 
-**Vintage.** The sheets are served under today's municipality codes, with the
-2001 count laid over today's boundaries -- Schwechat is there as 30740, its
-code since Wien-Umgebung was dissolved in 2017, and the Styrian municipalities
-under the codes of the districts merged in 2012 and 2013. A code opens with
-its district's three digits, so each of today's 94 districts is the sum of its
-municipalities' sheets, and Vienna's 23 Gemeindebezirke are the one district
-the map draws. The municipalities come from the same register the age reader
+**Vintage.** The sheets are served under today's municipality codes --
+Schwechat is there as 30740, its code since Wien-Umgebung was dissolved in
+2017, and the Styrian municipalities under the codes of the districts merged
+in 2012 and 2013. A municipality formed by a merger since 2001 has a sheet
+that says it has no data and lists the municipalities it was made of; their
+own sheets are read and summed in its place. A code opens with its
+district's three digits, so each of today's 94 districts is the sum of its
+municipalities, and Vienna's 23 Gemeindebezirke are the one district the map
+draws. The municipalities come from the same register the age reader
 uses (OGD_bevstandjbab2002_BevStand_<year>, C-GRGEMAKT-0).
 
 **Checks.** Each sheet names the municipality it was asked for; its religion
@@ -71,15 +73,15 @@ NOTES = {
     "religion": ("Religious denomination, Volkszählung 2001 (15 May 2001): the whole resident "
                  "population, one answer; 'Protestant' is the Evangelical churches of the Augsburg "
                  "and Helvetic confessions; 'Not stated' is 'unbekannt'. Summed from the census "
-                 "sheets of the district's municipalities, which Statistik Austria lays over "
-                 "today's boundaries. Austria's census has been register-based since 2011 and has "
-                 "not asked religion since 2001."),
+                 "sheets of the district's municipalities of today (one merged since 2001 as the "
+                 "sheets of the municipalities it was made of). Austria's census has been "
+                 "register-based since 2011 and has not asked religion since 2001."),
     "language": ("Umgangssprache (the language of everyday use), Volkszählung 2001 (15 May 2001): "
                  "the whole resident population, one answer per person as published; Statistik "
                  "Austria names nine languages at municipal level and puts the rest together with "
-                 "those not stated. Summed from the census sheets of the district's municipalities, "
-                 "laid over today's boundaries. Not asked since 2001: the census has been "
-                 "register-based since 2011."),
+                 "those not stated. Summed from the census sheets of the district's municipalities of "
+                 "today (one merged since 2001 as the sheets of the municipalities it was made of). "
+                 "Not asked since 2001: the census has been register-based since 2011."),
 }
 
 
@@ -117,10 +119,39 @@ def sheet(code: str) -> dict[str, Any]:
     if not blob.startswith(b"%PDF"):
         return {"code": code, "missing": True}
     page = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(blob)).pages)
+    merged = merged_from(code, page)
+    if merged:
+        # A municipality formed by a merger since 2001 has no sheet of its own;
+        # it lists the municipalities it was made of, whose 2001 sheets are the
+        # figures for its ground.
+        parts = [sheet(old) for old in merged]
+        bad = [p for p in parts if p.get("error") or p.get("missing")]
+        if bad:
+            return {"code": code, "error": f"austria_census: {code}: merged from {merged}, and "
+                    f"{[p['code'] for p in bad]} could not be read",
+                    "excerpt": " | ".join(page.split("\n"))[:600]}
+        out = {"code": code, "total": sum(p["total"] for p in parts), "religion": {},
+               "language": {}, "merged": merged}
+        for p in parts:
+            for field in ("religion", "language"):
+                for k, v in p[field].items():
+                    out[field][k] = out[field].get(k, 0.0) + v
+        return out
     try:
         return read_sheet(code, page)
     except SystemExit as exc:
         return {"code": code, "error": str(exc), "excerpt": " | ".join(page.split("\n"))[:900]}
+
+
+def merged_from(code: str, page: str) -> list[str]:
+    """The municipalities a merged one was made of, as its sheet lists them; [] if none."""
+    if "Zusammenlegung der Gemeinden" not in page or "keine Daten" not in page:
+        return []
+    block = page.split("Zusammenlegung der Gemeinden", 1)[1].split("Für die Gemeinde", 1)[0]
+    olds = re.findall(r"\b(\d{5})\b", block)
+    if not olds or code in olds:
+        raise SystemExit(f"austria_census: {code}: a merger listed without its parts: {block[:200]!r}")
+    return olds
 
 
 def read_sheet(code: str, page: str) -> dict[str, Any]:
@@ -157,6 +188,9 @@ def build(year: int, workers: int) -> list[dict[str, Any]]:
     if missing:
         raise SystemExit(f"austria_census: no 2001 sheet for {len(missing)} municipalities: "
                          f"{missing[:40]}")
+    merged = [s for s in sheets if s.get("merged")]
+    log(f"  {len(merged)} municipalities formed by mergers since 2001, read as their "
+        f"{sum(len(s['merged']) for s in merged)} parts")
     check_sum((s["total"] for s in sheets), NATIONAL_2001, "municipalities against Austria (2001)")
 
     sums: dict[str, dict[str, Any]] = {}
