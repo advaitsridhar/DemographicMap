@@ -200,8 +200,9 @@ def main() -> int:
     codes = [f"KU{k}" for k in sorted(muni)]
     ages = [a for a in meta["ikaryhma_10_20180101"]["values"] if a != "SSS"]
 
-    def read(data_year: int) -> tuple[dict[str, AgeSex], str | None]:
-        """11rf for one year by the key's municipalities, or the reason it does not fit."""
+    def read(data_year: int, codes: list[str], key_year: int
+             ) -> tuple[dict[str, AgeSex], str | None]:
+        """11rf for one year by a key's municipalities, or the reason it does not fit."""
         people: dict[str, AgeSex] = defaultdict(AgeSex)
         published: dict[str, float] = {}
         for chunk in (codes[i:i + 110] for i in range(0, len(codes), 110)):
@@ -247,7 +248,7 @@ def main() -> int:
     # year's division, the key's municipalities will not all be there and the
     # year before is the one counted in the key's division.
     for data_year in (min(key_year, years[-1]), key_year - 1):
-        people, why = read(data_year)
+        people, why = read(data_year, codes, key_year)
         if why is None:
             break
         log(f"  11rf {data_year} does not fit the {key_year} key: {why}")
@@ -256,8 +257,51 @@ def main() -> int:
     log(f"  the map's sub-regions are those of {key_year}; population on 31 December "
         f"{data_year}")
     region_people: dict[str, AgeSex] = defaultdict(AgeSex)
-    for k, s in muni.items():
-        region_people[s] += people[f"KU{k}"]
+    for k, sk in muni.items():
+        region_people[sk] += people[f"KU{k}"]
+    region_year = {sk: data_year for sk in set(muni.values())}
+
+    # A sub-region whose municipalities are the same today as in the map's
+    # year has a newer count: the latest year's, summed by the latest key. One
+    # whose municipalities changed -- Kyrönmaa was dissolved in 2021 and its
+    # neighbours took its municipalities -- keeps the count of the map's year.
+    latest = None
+    for key_latest in range(years[-1] + 1, key_year, -1):
+        try:
+            muni_now, names_now = key_for(key_latest)
+        except SystemExit:
+            continue
+        codes_now = [f"KU{k}" for k in sorted(muni_now)]
+        for year_now in (min(key_latest, years[-1]), key_latest - 1):
+            if year_now <= data_year:
+                continue
+            people_now, why = read(year_now, codes_now, key_latest)
+            if why is None:
+                latest = (key_latest, muni_now, year_now, people_now)
+                break
+            log(f"  11rf {year_now} does not fit the {key_latest} key: {why}")
+        if latest:
+            break
+    if latest:
+        key_latest, muni_now, year_now, people_now = latest
+        members_then: dict[str, set[str]] = defaultdict(set)
+        members_now: dict[str, set[str]] = defaultdict(set)
+        for k, sk in muni.items():
+            members_then[sk].add(k)
+        for k, sk in muni_now.items():
+            members_now[sk].add(k)
+        same = {sk: now for sk, then in members_then.items()
+                for now, members in members_now.items() if members == then}
+        for sk, now in same.items():
+            fresh = AgeSex()
+            for k in members_now[now]:
+                fresh += people_now[f"KU{k}"]
+            region_people[sk] = fresh
+            region_year[sk] = year_now
+        kept = sorted(names[sk] for sk in members_then if sk not in same)
+        log(f"  {len(same)} of {len(members_then)} sub-regions have the same municipalities "
+            f"in the {key_latest} key and take 31 December {year_now}; the rest keep "
+            f"{data_year}: {kept}")
 
     # Language, from the current municipalities placed by the chosen key.
     lmeta = {v["code"]: v for v in request_json(f"{STATFIN}/11rm.px", pause=PAUSE)["variables"]}
@@ -312,16 +356,19 @@ def main() -> int:
 
     shapes_rows = {found[d]: (d, "") for d in DRAWN}
     bound, _m, _l, _p = bind_rows("FIN", "admin2", shapes_rows)
-    date = f"31 December {data_year}"
     records = []
     for region, (drawn, _) in sorted(shapes_rows.items()):
         sid = bound.get(region)
         if sid is None:
             continue
+        when = region_year[region]
         fields = region_people[region].fields(
-            year=data_year, source=f"{SOURCE}, table 11rf", url=AGE_URL, date=date,
+            year=when, source=f"{SOURCE}, table 11rf", url=AGE_URL, date=f"31 December {when}",
             extra_note=(f" Summed from the municipalities of the sub-region as Statistics "
-                        f"Finland's {key_year} classification draws it, which is the map's."))
+                        f"Finland's {key_year} classification draws it, which is the map's."
+                        + ("" if when == data_year else
+                           " Its municipalities are the same today, so this is the latest "
+                           "count.")))
         if language.get(region):
             fields["language"] = shares(language[region], total=language_total[region])
             fields["language_year"] = int(lyear)
