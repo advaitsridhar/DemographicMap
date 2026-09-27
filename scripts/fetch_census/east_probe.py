@@ -205,7 +205,7 @@ def cmd_cdx(args: argparse.Namespace) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["cdx", "get", "post", "head"])
+    ap.add_argument("cmd", choices=["cdx", "get", "post", "head", "hdx"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--match")
     ap.add_argument("--match-type", default="prefix")
@@ -247,6 +247,18 @@ def main() -> int:
         try:
             if args.cmd == "cdx":
                 cmd_cdx(args)
+            elif args.cmd == "hdx":
+                # A dataset's resources, then (with --sheets) the first
+                # workbook matching --match described like any other file.
+                from .uscb import package
+                result = package(target)
+                chosen = None
+                for res in result.get("resources", []):
+                    print(f"  {res.get('name')} | {res.get('format')} | {res.get('url')}")
+                    if args.match and re.search(args.match, res.get("name") or "", re.I):
+                        chosen = chosen or res.get("url")
+                if chosen and args.sheets:
+                    describe(fetch(chosen, None), chosen, args)
             elif args.cmd == "head":
                 req = urllib.request.Request(target, method="HEAD",
                                              headers={"User-Agent": UA})
