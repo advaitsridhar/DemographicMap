@@ -27,11 +27,66 @@ import re
 from collections import Counter, defaultdict
 from typing import Any, Iterable
 
+import time
+import urllib.error
+import urllib.request
+
 from ._shared import PROCESSED, log, measure
 from .binding import bind, fold
 from .redatam import median_age
 
 SITE = PROCESSED.parent.parent / "site" / "data"
+USER_AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap) python-urllib"
+
+
+def request(url: str, payload: Any = None, *, accept: str = "application/json",
+            timeout: int = 180, pause: float = 0.0) -> bytes:
+    """GET, or POST ``payload`` as JSON; backs off on 429 and 5xx, fails fast on 4xx.
+
+    Hagstofa and StatFin both answer 429 to a brisk pace, and a throttled
+    request is not an answer about the data, so it is waited out rather than
+    reported.
+    """
+    data = json.dumps(payload).encode() if payload is not None else None
+    headers = {"User-Agent": USER_AGENT, "Accept": accept}
+    if data is not None:
+        headers["Content-Type"] = "application/json"
+    delay = 5.0
+    for attempt in range(6):
+        if pause:
+            time.sleep(pause)
+        try:
+            req = urllib.request.Request(url, data=data, headers=headers)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429, 500, 502, 503, 504) and attempt < 5:
+                log(f"    HTTP {exc.code}; waiting {delay:.0f}s :: {url}")
+                time.sleep(delay)
+                delay *= 2
+                continue
+            body = exc.read()[:400].decode("utf-8", "replace")
+            raise SystemExit(f"HTTP {exc.code} from {url}: {' '.join(body.split())}")
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+            if attempt < 5:
+                log(f"    {exc.__class__.__name__}; waiting {delay:.0f}s :: {url}")
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+    raise SystemExit(f"gave up on {url}")
+
+
+def request_json(url: str, payload: Any = None, **kwargs: Any) -> Any:
+    return json.loads(request(url, payload, **kwargs).decode("utf-8-sig", "replace"))
+
+
+def unplaced(field: str, labels: Iterable[str]) -> list[str]:
+    """The labels the group tree cannot carry up to one of its top groupings."""
+    import group_tree                       # scripts/ is on the path via _shared
+    tops = group_tree.tier1_names(field)
+    return sorted({label for label in labels
+                   if group_tree.ancestry(field, label)[-1] not in tops})
 
 # The brief's convention for this round: males per hundred females, to one
 # decimal. Most of the map's older figures are per thousand; the unit travels

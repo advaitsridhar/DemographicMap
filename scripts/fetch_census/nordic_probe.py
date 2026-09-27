@@ -172,7 +172,7 @@ def sdmx_dataflows(grep: str) -> None:
         if re.search(grep, line, re.I):
             print(f"    {line}")
             shown += 1
-            if shown > 250:
+            if shown > 400:
                 print("    ...")
                 break
 
@@ -181,8 +181,24 @@ def sdmx_series(flow: str, query: str = "", limit: int = 6) -> None:
     """An OSP dataflow's series: how many, their dimensions, and a few keys."""
     raw = fetch(f"{OSP}/data/{flow}{query}", accept="application/xml")
     root = ET.fromstring(raw)
-    series = [el for el in root.iter() if el.tag.endswith("}Series")]
+    series = [el for el in root.iter() if el.tag.endswith("Series")]
     print(f"  {len(raw):,} bytes, {len(series)} series")
+    if series and not any(kv.tag.endswith("}Value") for kv in series[0].iter()):
+        # Structure-specific form: the key is the Series element's attributes
+        # and each Obs carries TIME_PERIOD and OBS_VALUE.
+        dims2: dict[str, Counter] = {}
+        for s in series:
+            for k, v in s.attrib.items():
+                dims2.setdefault(k, Counter())[v] += 1
+        for name, values in dims2.items():
+            vals = list(values)
+            print(f"    dim {name}: {len(vals)} values: {vals[:15]}{' ...' if len(vals) > 15 else ''}")
+        for s in series[:limit]:
+            obs = [(o.get("TIME_PERIOD"), o.get("OBS_VALUE")) for o in s if o.tag.endswith("Obs")]
+            print(f"    {dict(s.attrib)} -> {obs[-3:]}")
+        return
+    if not series:
+        print("  " + " ".join(raw[:1500].decode("utf-8", "replace").split()))
     dims: dict[str, Counter] = {}
     for s in series:
         for kv in s.iter():
@@ -275,6 +291,42 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 4
+    "r4_ltu_210": lambda: sdmx_series("S3R167_M3010210", "?startPeriod=2026&endPeriod=2026"),
+    "r4_ltu_203": lambda: sdmx_series("S3R167_M3010203", "?startPeriod=2026&endPeriod=2026", limit=3),
+    "r4_ltu_629": lambda: sdmx_series("S3R629_M3010217", "?startPeriod=2026&endPeriod=2026", limit=3),
+    "r4_ltu_216": lambda: sdmx_series("S3R167_M3010216", "?startPeriod=2026&endPeriod=2026", limit=3),
+    "r4_ltu_215": lambda: sdmx_series("S3R167_M3010215_1", "?startPeriod=2021&endPeriod=2026", limit=3),
+    "r4_ltu_162": lambda: sdmx_series("S3R162_M3010215_2", "?startPeriod=2021&endPeriod=2026", limit=3),
+    "r4_ltu_flows": lambda: sdmx_dataflows(r"gyventojų ir būstų|population and housing|surašymas|census"),
+    "r4_lva_ird041": lambda: px_meta(f"{CSB}/POP/IR/IRD/IRD041"),
+    "r4_lva_ird031": lambda: px_meta(f"{CSB}/POP/IR/IRD/IRD031"),
+    "r4_lva_home": lambda: px_search(f"{CSB}?query=home"),
+    "r4_lva_root": lambda: px_list(f"{CSB}"),
+    "r4_lva_pop": lambda: px_list(f"{CSB}/POP"),
+    "r4_fin_11ra": lambda: px_meta(f"{STATFIN}/vaerak/11ra.px"),
+    "r4_fin_passiivi": lambda: px_search(
+        "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin_Passiivi?query=religious%20community"),
+    "r4_isl_old": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/x_eldraefni"),
+    "r4_isl_yfirlit": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi/1_yfirlit"),
+    "r4_isl_bak": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi/3_bakgrunnur"),
+    "r4_isl_root": lambda: isl(px_list, f"{HAGSTOFA}"),
+    "r4_isl_samfelag": lambda: isl(px_list, f"{HAGSTOFA}/Samfelag"),
+    "r4_est_rl0429": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0429.PX", allvals="Elukoht"),
+    "r4_est_rl0433": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0433.PX"),
+    "r4_est_rl0452": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "usk/RL0452.PX"),
+    "r4_est_rl21429": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel/RL21429.px"),
+    "r4_est_rv0241_all": lambda: px_meta(
+        f"{STAT_EE}/Lepetatud_tabelid/Rahvastik.Arhiiv/"
+        "Rahvastikun%C3%A4itajad%20ja%20koosseis.%20Arhiiv/RV0241.PX", grep=r"\*"),
     # Round 3
     "r3_swe_ages": lambda: px_meta(f"{SCB}/BE/BE0101/BE0101A/BefolkningCKM", allvals="Alder"),
     "r3_nor_12026": lambda: px_post(f"{SSB}/12026", {"query": [
