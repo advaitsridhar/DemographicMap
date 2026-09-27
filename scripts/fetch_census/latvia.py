@@ -306,7 +306,18 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
     if not drawn1 <= set(summed) | set(touched):
         raise SystemExit("TSG11-07: a drawn municipality holds no 2011 unit")
     by_code = {r["codes"]["atvk"]: r for r in records if r["level"] == "admin2"}
-    for unit, code in single.items():
+    # A county of one parish may since have had a town cut out of it and
+    # drawn apart (Iecava, a town since 2021): its 2011 figure is then for
+    # more than the drawn parish, which the count of people shows.
+    for unit, code in list(single.items()):
+        now_people = by_code[code]["population"]["value"]
+        then_people = cells[unit]["TOTAL"]
+        if not 0.6 < now_people / then_people < 1.6:
+            log(f"  TSG11-07 {names[unit].strip()}: {then_people:,.0f} people in 2011 against "
+                f"{now_people:,} in the drawn {by_code[code]['name']} today; not the same "
+                "territory, left out")
+            del single[unit]
+            continue
         write(by_code[code], {label: cells[unit][c] for c, label in LANGUAGES.items()},
               f"In 2011 this was a unit of its own ({names[unit].strip()}), so the census's "
               "figure is for exactly this territory.")
