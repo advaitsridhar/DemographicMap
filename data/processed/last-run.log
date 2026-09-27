@@ -1,8 +1,9 @@
-lithuania: S3R167_M3010203, S3R167_M3010202 and S3R629_M3010217, beginning of 2026
-  single years complete for 71 of 73 units; the rest take the five-year median: ['12', '69']
-    S3R167_M3010203 2026: counties -> Lithuania: 10 parts sum to 2,887,592 against 2,887,592
-    S3R167_M3010203 2026: municipalities -> Lithuania: 60 parts sum to 2,887,592 against 2,887,592
-  national median 44.6 (the office: 44.0 in completed years); units whose interpolated median is not in the office's year: ['06 46 vs 47.0', '78 47 vs 48.0', '91 46 vs 47.0']
-    ethnicity 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
-    religion 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
-language 2021: municipalities -> Lithuania: 60 parts sum to 2,810,758 against a published 2,810,761 (-3)
+liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
+  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14], 4494 values of type list
+  211.004: 4,034 cells; places ['Balzers', 'Eschen', 'Gamprin-Bendern', 'Liechtenstein', 'Mauren', 'Nendeln', 'Planken', 'Ruggell', 'Schaan', 'Schaanwald', 'Schellenberg', 'Triesen', 'Triesenberg', 'Vaduz']
+  Gemeinden against Liechtenstein: parts sum to 41,228 = 41,228
+  213.001d.px: asked {'Stichtag': 1, 'Religion': 13, 'Geschlecht': 1, 'Gemeinde': 12, 'Heimat': 1}, answered [1, 13, 1, 1, 12], 156 values of type list
+  213.011d.px: asked {'Stichtag': 1, 'Hauptsprache': 35, 'Geschlecht': 1, 'Gemeinde': 12}, answered [1, 35, 1, 12], 420 values of type list
+  Gemeinden against Liechtenstein, census 2020: parts sum to 39,055 = 39,055
+  wrote data/processed/liechtenstein_gemeinde.json (118 kB)
+  wrote liechtenstein_gemeinde.json: 22 records
