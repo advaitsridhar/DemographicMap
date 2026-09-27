@@ -6630,9 +6630,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B45039807211460",
-    "aliases": [
-      "Sur Cinti"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 24,755 of 25,239 people here who answered; 484 did not.",
@@ -10021,9 +10019,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B32228914297156",
-    "aliases": [
-      "Sud Yungas"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 119,269 of 121,921 people here who answered; 2,652 did not.",
@@ -12087,6 +12083,593 @@
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 68,984 of 70,261 people here who answered; 1,277 did not.",
     "language_year": 2024,
     "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 67,222 of 70,261 people here with one stated; 1,967 children who do not yet speak and 1,072 people whose answer was not specified are left out. Counted from INE's 2024 person database."
+  },
+  {
+    "id": "BOL-INE-301",
+    "level": "admin2",
+    "name": "Cercado",
+    "parent": "BOL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 665505,
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "median_age": {
+      "value": 29.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "sex_ratio": {
+      "value": 923,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 85.5,
+        "count": 551376
+      },
+      {
+        "group": "Quechua",
+        "pct": 11.3,
+        "count": 73027
+      },
+      {
+        "group": "Aymara",
+        "pct": 2.6,
+        "count": 16468
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 2103
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 727
+      },
+      {
+        "group": "Afro-Bolivian Spanish",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Basque",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bésiro",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 137
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Guarani",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Joaquiniano",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Leco",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Machaj-Juyai Kallawaya",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Norwegian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Puquina",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 137
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Thai",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Valencian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Zamuco",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 75.8,
+        "count": 498413
+      },
+      {
+        "group": "Quechua",
+        "pct": 17.2,
+        "count": 113120
+      },
+      {
+        "group": "Aymara",
+        "pct": 4.3,
+        "count": 28516
+      },
+      {
+        "group": "Indigenous originario campesino (no people named)",
+        "pct": 2.1,
+        "count": 13702
+      },
+      {
+        "group": "Afro-Bolivian",
+        "pct": 0.2,
+        "count": 1156
+      },
+      {
+        "group": "Guaraní",
+        "pct": 0.1,
+        "count": 536
+      },
+      {
+        "group": "Quechua and Aymara",
+        "pct": 0.1,
+        "count": 516
+      },
+      {
+        "group": "Ayoreo",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Baure",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Canichana",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Cavineño",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Cayubaba",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Charka Qhara Qhara",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
+        "group": "Chichas",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Chiquitano",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Chuwi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ese Ejja",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Guarasu'we",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Indigenous (more than one nation or people)",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Indigenous peoples from abroad",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Itonama",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Jach'a Carangas",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Jalq'a",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Joaquiniano",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kallawaya",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Killacas",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Leco",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Lupaca",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Lípez",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Maropa",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Mojeño",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Moré",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Movima",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Pacahuara",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pakajaqi",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Puquina",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Qullas",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Raqaypampa",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Sirionó",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Sora (Bolivia)",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Toromona",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Yaminawa",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yampara",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Yuqui",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity/language",
+        "name": "INE Bolivia, Censo de Población y Vivienda 2024, person database",
+        "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+        "year": 2024
+      }
+    ],
+    "country": "BOL",
+    "parent_name": "Cochabamba",
+    "codes": {
+      "ine": "301"
+    },
+    "match_by": "shape_id",
+    "shape_id": "80513517B48061932483413-26024454B59884138823050",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 657,944 of 665,505 people here who answered; 7,561 did not.",
+    "language_year": 2024,
+    "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 644,907 of 665,505 people here with one stated; 14,489 children who do not yet speak and 6,109 people whose answer was not specified are left out. Counted from INE's 2024 person database."
   },
   {
     "id": "BOL-INE-302",
@@ -15444,9 +16027,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B16273160162041",
-    "aliases": [
-      "Bolivar"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 7,880 of 8,282 people here who answered; 402 did not.",
@@ -15684,6 +16265,398 @@
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 44,776 of 45,647 people here who answered; 871 did not.",
     "language_year": 2024,
     "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 43,512 of 45,647 people here with one stated; 1,192 children who do not yet speak and 943 people whose answer was not specified are left out. Counted from INE's 2024 person database."
+  },
+  {
+    "id": "BOL-INE-401",
+    "level": "admin2",
+    "name": "Cercado",
+    "parent": "BOL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 346961,
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "median_age": {
+      "value": 27.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "sex_ratio": {
+      "value": 927,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 85.2,
+        "count": 284903
+      },
+      {
+        "group": "Quechua",
+        "pct": 8.9,
+        "count": 29715
+      },
+      {
+        "group": "Aymara",
+        "pct": 5.8,
+        "count": 19298
+      },
+      {
+        "group": "Afro-Bolivian Spanish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Guarani",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 162
+      },
+      {
+        "group": "Puquina",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 64.7,
+        "count": 221372
+      },
+      {
+        "group": "Quechua",
+        "pct": 18.2,
+        "count": 62165
+      },
+      {
+        "group": "Aymara",
+        "pct": 14.3,
+        "count": 48929
+      },
+      {
+        "group": "Indigenous originario campesino (no people named)",
+        "pct": 2.0,
+        "count": 6904
+      },
+      {
+        "group": "Quechua and Aymara",
+        "pct": 0.2,
+        "count": 700
+      },
+      {
+        "group": "Afro-Bolivian",
+        "pct": 0.1,
+        "count": 366
+      },
+      {
+        "group": "Charka Qhara Qhara",
+        "pct": 0.1,
+        "count": 174
+      },
+      {
+        "group": "Jach'a Carangas",
+        "pct": 0.1,
+        "count": 492
+      },
+      {
+        "group": "Killacas",
+        "pct": 0.1,
+        "count": 216
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.1,
+        "count": 244
+      },
+      {
+        "group": "Ayoreo",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Canichana",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Chichas",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Chiquitano",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Ese Ejja",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Guaraní",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Indigenous (more than one nation or people)",
+        "pct": 0.0,
+        "count": 137
+      },
+      {
+        "group": "Indigenous peoples from abroad",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Itonama",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kallawaya",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Leco",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Lupaca",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Lípez",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mojeño",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Movima",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Pakajaqi",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Paunaca",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Puquina",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Sora (Bolivia)",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Yaminawa",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yampara",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity/language",
+        "name": "INE Bolivia, Censo de Población y Vivienda 2024, person database",
+        "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+        "year": 2024
+      }
+    ],
+    "country": "BOL",
+    "parent_name": "Oruro",
+    "codes": {
+      "ine": "401"
+    },
+    "match_by": "shape_id",
+    "shape_id": "80513517B48061932483413-26024454B78289653685394",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 342,222 of 346,961 people here who answered; 4,739 did not.",
+    "language_year": 2024,
+    "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 334,339 of 346,961 people here with one stated; 8,543 children who do not yet speak and 4,079 people whose answer was not specified are left out. Counted from INE's 2024 person database."
   },
   {
     "id": "BOL-INE-402",
@@ -19073,9 +20046,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B87350480158684",
-    "aliases": [
-      "Chárcas"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 38,275 of 39,130 people here who answered; 855 did not.",
@@ -19893,9 +20864,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B22915857143112",
-    "aliases": [
-      "Nor Lipez"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 14,172 of 14,361 people here who answered; 189 did not.",
@@ -20082,9 +21051,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B24789788010808",
-    "aliases": [
-      "Sur Lipez"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 5,973 of 6,111 people here who answered; 138 did not.",
@@ -20695,9 +21662,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B91328487644912",
-    "aliases": [
-      "General Bilbao"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 7,868 of 8,137 people here who answered; 269 did not.",
@@ -21194,6 +22159,428 @@
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 2,111 of 2,126 people here who answered; 15 did not.",
     "language_year": 2024,
     "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 2,036 of 2,126 people here with one stated; 63 children who do not yet speak and 27 people whose answer was not specified are left out. Counted from INE's 2024 person database."
+  },
+  {
+    "id": "BOL-INE-601",
+    "level": "admin2",
+    "name": "Cercado",
+    "parent": "BOL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 238749,
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "median_age": {
+      "value": 30.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "sex_ratio": {
+      "value": 947,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 95.7,
+        "count": 222418
+      },
+      {
+        "group": "Quechua",
+        "pct": 3.5,
+        "count": 8124
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.5,
+        "count": 1151
+      },
+      {
+        "group": "Guarani",
+        "pct": 0.1,
+        "count": 171
+      },
+      {
+        "group": "Afro-Bolivian Spanish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Basque",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Baure",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Latin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tapiete",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 20
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 91.8,
+        "count": 215299
+      },
+      {
+        "group": "Quechua",
+        "pct": 3.6,
+        "count": 8444
+      },
+      {
+        "group": "Indigenous originario campesino (no people named)",
+        "pct": 2.5,
+        "count": 5903
+      },
+      {
+        "group": "Aymara",
+        "pct": 1.1,
+        "count": 2500
+      },
+      {
+        "group": "Guaraní",
+        "pct": 0.6,
+        "count": 1374
+      },
+      {
+        "group": "Afro-Bolivian",
+        "pct": 0.2,
+        "count": 364
+      },
+      {
+        "group": "Chichas",
+        "pct": 0.2,
+        "count": 415
+      },
+      {
+        "group": "Cavineño",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Charka Qhara Qhara",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Chiquitano",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Indigenous (more than one nation or people)",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Indigenous peoples from abroad",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Itonama",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Jach'a Carangas",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kallawaya",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Killacas",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Leco",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Lípez",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mojeño",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Moré",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Movima",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Pakajaqi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Quechua and Aymara",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Qullas",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Raqaypampa",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Tapiete",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Uru-Chipaya",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Yampara",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity/language",
+        "name": "INE Bolivia, Censo de Población y Vivienda 2024, person database",
+        "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+        "year": 2024
+      }
+    ],
+    "country": "BOL",
+    "parent_name": "Tarija",
+    "codes": {
+      "ine": "601"
+    },
+    "match_by": "shape_id",
+    "shape_id": "80513517B48061932483413-26024454B43037921046937",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 234,567 of 238,749 people here who answered; 4,182 did not.",
+    "language_year": 2024,
+    "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 232,316 of 238,749 people here with one stated; 4,534 children who do not yet speak and 1,899 people whose answer was not specified are left out. Counted from INE's 2024 person database."
   },
   {
     "id": "BOL-INE-602",
@@ -21954,9 +23341,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B1029336772236",
-    "aliases": [
-      "Avilés"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 20,097 of 20,677 people here who answered; 580 did not.",
@@ -25266,9 +26651,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B39292971725375",
-    "aliases": [
-      "Vallegrande"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 25,201 of 26,222 people here who answered; 1,021 did not.",
@@ -25962,9 +27345,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B50465893502519",
-    "aliases": [
-      "Obispo Santistéban"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 189,194 of 196,450 people here who answered; 7,256 did not.",
@@ -26396,9 +27777,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B35609461364938",
-    "aliases": [
-      "Ñuflo De Chávez"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 125,935 of 130,078 people here who answered; 4,143 did not.",
@@ -26590,9 +27969,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "80513517B56918274933766",
-    "aliases": [
-      "Angel Sandoval"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
     "ethnicity_year": 2024,
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 14,572 of 15,378 people here who answered; 806 did not.",
@@ -27399,6 +28776,463 @@
     "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 56,158 of 57,924 people here who answered; 1,766 did not.",
     "language_year": 2024,
     "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 55,250 of 57,924 people here with one stated; 1,348 children who do not yet speak and 1,326 people whose answer was not specified are left out. Counted from INE's 2024 person database."
+  },
+  {
+    "id": "BOL-INE-801",
+    "level": "admin2",
+    "name": "Cercado",
+    "parent": "BOL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 136502,
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "median_age": {
+      "value": 25.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "sex_ratio": {
+      "value": 1026,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Bolivia, Censo de Población y Vivienda 2024, person database"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 97.0,
+        "count": 127031
+      },
+      {
+        "group": "German",
+        "pct": 1.1,
+        "count": 1443
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.7,
+        "count": 979
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.5,
+        "count": 611
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 0.3,
+        "count": 396
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 129
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Baure",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bésiro",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Canichana",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Catalan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Cayubaba",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Chácobo",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Ese Ejja",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Guarani",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Itonama",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kabineña",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Maropa",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Movima",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Sirionó",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Valencian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.0,
+        "count": 36
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
+        "pct": 81.1,
+        "count": 106969
+      },
+      {
+        "group": "Mojeño Trinitario",
+        "pct": 6.9,
+        "count": 9092
+      },
+      {
+        "group": "Indigenous originario campesino (no people named)",
+        "pct": 4.2,
+        "count": 5559
+      },
+      {
+        "group": "Mojeño",
+        "pct": 1.4,
+        "count": 1909
+      },
+      {
+        "group": "Aymara",
+        "pct": 1.3,
+        "count": 1734
+      },
+      {
+        "group": "Movima",
+        "pct": 0.9,
+        "count": 1215
+      },
+      {
+        "group": "Quechua",
+        "pct": 0.9,
+        "count": 1191
+      },
+      {
+        "group": "Mojeño Ignaciano",
+        "pct": 0.6,
+        "count": 802
+      },
+      {
+        "group": "Canichana",
+        "pct": 0.5,
+        "count": 718
+      },
+      {
+        "group": "Sirionó",
+        "pct": 0.5,
+        "count": 680
+      },
+      {
+        "group": "Itonama",
+        "pct": 0.3,
+        "count": 455
+      },
+      {
+        "group": "Tsimane'",
+        "pct": 0.2,
+        "count": 237
+      },
+      {
+        "group": "Afro-Bolivian",
+        "pct": 0.1,
+        "count": 169
+      },
+      {
+        "group": "Baure",
+        "pct": 0.1,
+        "count": 136
+      },
+      {
+        "group": "Chiquitano",
+        "pct": 0.1,
+        "count": 121
+      },
+      {
+        "group": "Guaraní",
+        "pct": 0.1,
+        "count": 81
+      },
+      {
+        "group": "Gwarayu",
+        "pct": 0.1,
+        "count": 71
+      },
+      {
+        "group": "Indigenous (more than one nation or people)",
+        "pct": 0.1,
+        "count": 190
+      },
+      {
+        "group": "Joaquiniano",
+        "pct": 0.1,
+        "count": 90
+      },
+      {
+        "group": "Tacana",
+        "pct": 0.1,
+        "count": 88
+      },
+      {
+        "group": "Yurakaré",
+        "pct": 0.1,
+        "count": 119
+      },
+      {
+        "group": "Araona",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Ayoreo",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Cavineño",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Cayubaba",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Charka Qhara Qhara",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Chichas",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Chácobo",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ese Ejja",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Jach'a Carangas",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Killacas",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Leco",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Maropa",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Moré",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Mosetén",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Pacahuara",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Quechua and Aymara",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Weenhayek",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yaminawa",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yampara",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yuqui",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity/language",
+        "name": "INE Bolivia, Censo de Población y Vivienda 2024, person database",
+        "url": "https://cpv2024.ine.gob.bo/index.php/principal/descargas/",
+        "year": 2024
+      }
+    ],
+    "country": "BOL",
+    "parent_name": "Beni",
+    "codes": {
+      "ine": "801"
+    },
+    "match_by": "shape_id",
+    "shape_id": "80513517B48061932483413-26024454B17172096462676",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the ages of everyone INE's 2024 person database counts here (100 and over recorded as 100); INE publishes the ages, not the median.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Question 32 of the 2024 census, put to everyone of every age: whether a person identifies with a nación o pueblo indígena originario campesino or as Afro-Bolivian, and if so which, grouped as INE groups the answers. Those who answered no are the remainder: the census asks nothing about mestizo or white identity. \"Indigenous originario campesino (no people named)\" is everyone who answered yes with a term (campesino, originario, indígena, an ayllu or marka) or no people named. Counted from INE's person database: the 131,823 of 136,502 people here who answered; 4,679 did not.",
+    "language_year": 2024,
+    "language_note": "The first language each person learned to speak in childhood (question 34, put to everyone), of the 130,986 of 136,502 people here with one stated; 3,065 children who do not yet speak and 2,451 people whose answer was not specified are left out. Counted from INE's 2024 person database."
   },
   {
     "id": "BOL-INE-802",

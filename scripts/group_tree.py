@@ -89,7 +89,11 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
     "African diaspora religions": ("Spiritism and Afro-Brazilian religions",
                                   # Jamaica's Revival, which its census
                                   # counts apart from the churches.
-                                  "Revivalist"),
+                                  "Revivalist",
+                                  # Trinidad and Tobago's Orisha, which its
+                                  # 2011 census counts apart from the
+                                  # Spiritual Baptists (10,993 people).
+                                  "Orisha"),
     "Folk and traditional religions": (
         "Folk and traditional religion", "Māori religions", "Kirat",
         "Prakriti", "Bon", "Modekngei", "Badimo", "Shamanism",
@@ -198,7 +202,7 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("Catholicism", ("Catholic", "Oblates")),
     ("Protestantism", (
         "Protestant", "Salvation", "Fellowship", "Believer", "Praise",
-        "Outreach", "Faith", "Anabaptist", "Espiritista", "Evangelist",
+        "Outreach", "Faith", "Anabaptist", "Mennonite", "Espiritista", "Evangelist",
         "Jesus", "Assemblies", "Assembly", "Word for the World",
         "Things to Come", "Lord of the Nations", "Way of Salvation",
         "Baptist", "Pentecostal", "Evangelical", "Methodist", "Lutheran",
@@ -1018,6 +1022,14 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Píritu", "Sanemá", "Sapé", "Sáliva", "Timote (Timotocuica)", "Tukano", "Tunebo",
         "Waikerí", "Wapishana", "Warekena", "Yavarana", "Ye'kwana", "Yeral (Ñengatú)",
         "Yukpa",
+        # Paraguay's 2022 Indigenous Census, by the names its Cuadro A2 prints
+        # (Avá, Mbyá, Occidental and Ñandeva Guaraní are filed under Guaraní
+        # already). Maká and Guaná are written with the country: the patterns
+        # read a bare Maká as Cameroon's Makaa, and Brazil's Terena count a
+        # Guaná of their own.
+        "Aché", "Paĩ Tavyterã", "Enlhet Norte", "Enxet Sur", "Sanapaná", "Angaité",
+        "Guaná (Paraguay)", "Toba Maskoy", "Maká (Paraguay)", "Manjui", "Ybytoso",
+        "Tomárãho", "Qom",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
@@ -1097,6 +1109,11 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
         # Spanish-speaking censuses. Mozambique's and Angola's mestiço is
         # another people and stays mixed, under its own spelling (Mestico).
         "Pardo", "Mestizo", "Ladino", "Mulatto", "Zambo", "Castizo",
+        # The Dominican Republic's 2022 census (question 64) offers "India o
+        # indio" beside mestiza and mulata: a skin tone of the mixed majority,
+        # not an indigenous people and not the nationality "Indian" the
+        # word's normalisation would otherwise file it under.
+        "Indio (Dominican Republic)",
     ),
     "Middle Eastern or North African (census category)": (
         "Middle Eastern or North African", "Other ethnic group: Arab",
@@ -1374,6 +1391,11 @@ def _invert(table: dict[str, tuple[str, ...]]) -> dict[str, str]:
 # They are separated from the family tables only so that what was added to
 # answer a gap stays legible as such.
 LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
+    # Suriname's 2004 census, the language most spoken in the household
+    # (suriname_census): Sarnami, the Bhojpuri-Awadhi koine of the
+    # Hindustani; the Maroon creoles Saramaccan, Ndyuka (Aukan) and Pamaka,
+    # English-lexified; Arawak (Lokono) and Kari'na (Carib), filed below
+    # under their families.
     "Bantu languages": (
         # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
         "Yombe", "Tetela", "Nande", "Songe", "Budja (C.37)", "Dengese",
@@ -1407,7 +1429,7 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                         "Khassonke", "Samogo", "Dafing", "Marka", "Bissa",
                         "Bobo"),
     "Indo-Aryan languages": (
-        "Halabi", "Avadhi",
+        "Halabi", "Avadhi", "Sarnami Hindustani",
         # ALI, Iran: an Indo-Aryan island on the Hormozgān coast,
         # which is why it is not filed with its Iranian neighbours.
         "Kholosi",
@@ -1479,6 +1501,8 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Indigenous languages of the Americas": (
         # CLEAR Global, Peru, Bolivia and Guatemala: Quechuan, and nine Mayan languages Guatemala's districts are led by.
         "Quechuan", "K'iche'", "Q'eqchi'", "Ixil", "Kaqchikel",
+        # Suriname's 2004 census: Arawak (Lokono) and Kari'na (Carib).
+        "Arawak", "Kari'na",
         "Q'anjob'al", "Chuj", "Achi", "Popti'", "Poqomchi'","Ashaninka", "Awajun",
                                              "Aguaruna",
         # Guatemala's 2018 census: the other twelve Mayan languages it counts
@@ -1595,7 +1619,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                           "Nauruan"),
     "Creole languages": (
         # CLEAR Global, Cape Verde.
-        "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
+        "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian",
+        # Suriname's Maroon creoles (suriname_census).
+        "Saramaccan", "Ndyuka", "Pamaka"),
     # The band the US Virgin Islands writes, filed where the ACS's "Spanish
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
     "Romance languages": ("Aragonese", "French or French Creole",
@@ -2131,11 +2157,36 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Montubio", "Cholo/Chola",
     ),
     # Canada's Indigenous identity answers that are not one people: more
-    # than one Indigenous identity, or one StatCan does not itemise.
-    "Indigenous (census category)": ("Indigenous, multiple or other responses",),
+    # than one Indigenous identity, or one StatCan does not itemise. And
+    # Nicaragua's P07 "Otro": indigenous by P06, of a people or ethnic
+    # community its list does not name.
+    "Indigenous (census category)": ("Indigenous, multiple or other responses",
+                                     "Other indigenous people or ethnic community"),
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
-    "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
+    "Indigenous peoples of Mesoamerica and the Caribbean": (
+        "Xinca",
+        # Central America's own peoples, by the names its censuses print.
+        # Honduras's 2013 census (P06): the Lenca of the west, the Tolupan of
+        # Yoro, the Pech of Olancho and the Tawahka of the Patuca.
+        "Lenca", "Tolupan", "Pech", "Tawahka",
+        # Nicaragua's 2005 census (P07). The Chorotega-Nahua-Mange are named
+        # outright because the rules read the name as a kind of Nahua, and
+        # the Chorotega are Oto-Manguean (Mangue) people, not Nahua; the
+        # Nahoa-Nicarao are Nahua, and filed here beside them rather than
+        # under a node their neighbours are not in.
+        "Rama", "Mayangna", "Ulwa", "Xiu-Sutiaba", "Nahoa-Nicarao",
+        "Chorotega-Nahua-Mange", "Cacaopera-Matagalpa",
+        # Costa Rica's 2011 census (P08).
+        "Brunca (Boruca)", "Cabécar", "Chorotega", "Huetar", "Maleku",
+        # El Salvador's 2024 census (TAB_ETNIA_1). The Mixe are Mexico's
+        # Oaxacan people, counted there too.
+        "Kakawira (Cacaopera)", "Mixe", "Alagüilac", "Mangue",
+    ),
     "Afro-descendant peoples of the Americas": (
+        # Honduras's P06 "Negro de habla inglesa": the English-speaking Black
+        # people of the Bay Islands and the north coast, a people of their own
+        # in the census beside the Garifuna.
+        "English-speaking Black (Honduras)",
         "Afroecuadorian", "Afro-Ecuadorian", "Afro-Mexican or Afro-descendant",
         # The U.S. Virgin Islands' census names these under Black or African
         # American: Caribbean. By name alone "West Indian" read as Indian and
@@ -2143,6 +2194,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "U.S. Virgin Islander", "West Indian", "Other Caribbean", "Anguillan",
         "Antiguan and Barbudan", "British Virgin Islander", "Kittian and Nevisian",
         "St. Lucian", "Trinidadian and Tobagonian", "Dominica Islander",
+        # Suriname's 2012 census counts Afrosurinamer apart from its Creoles
+        # and Maroons (suriname_census).
+        "Afro-Surinamese",
     ),
     # Answers that say the person is of more than one ancestry. They are
     # not a refusal to answer and they are not a people, which is what the
@@ -2155,7 +2209,13 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     ),
     "Middle Eastern or North African (census category)": (
         "Arab, Arab Scottish or Arab British",
+        # Barbados's 2021 census category (barbados_census).
+        "Middle Eastern",
     ),
+    # Belize's 2022 census counts the Mennonites -- the Low German-speaking
+    # colonies of Shipyard, Spanish Lookout and Blue Creek -- as an ethnic
+    # group of their own (belize_census).
+    "Germanic peoples": ("Mennonite",),
     # Scotland writes each of its census categories as the three ways a
     # person might say it. The answer is the category; the "Scottish" and
     # "British" in it say where the person lives, not what they descend
@@ -2168,6 +2228,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "African descent or African-American",
         "African, African Scottish or African British",
         "Black, Black Scottish or Black British",
+        # Honduras's P06 "Otro" for someone who told P05 they are
+        # Afro-Honduran or Black: of no people the form lists, neither
+        # Garifuna nor the English-speaking Black people of the Bay Islands.
+        "Afro-Honduran or Black (no people listed)",
     ),
     "Asian (census category)": (
         "Asian Indian",

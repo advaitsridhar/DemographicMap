@@ -316,6 +316,30 @@ ADAPTER_FILES = [
     # ratio, median age (provinces), and indigenous and Afro-descendant
     # identity; districts split since 2010 summed back into their parents.
     "panama_census.json",
+    # The same census's single years of age by district, from INEC's REDATAM
+    # base LP2023: the median age of the 75 districts, which INEC's workbooks
+    # do not tabulate. Each district is panama_census's, on the same polygon.
+    "panama_redatam.json",
+    # Honduras's 2013 census on INE's REDATAM base (181.115.7.199): median
+    # age, sex ratio and P05/P06 ethnicity for the 18 departments and 297
+    # municipios. No population: the base is the enumeration before INE's
+    # adjustment for omission, and the map's 2024 figures are newer.
+    "honduras_census.json",
+    # Nicaragua's 2005 census on INIDE's REDATAM base: median age, sex ratio,
+    # religion (P13, aged 5+) and P06/P07 ethnicity for the 17 departments
+    # and 153 municipios, and the 2005 count, which only fills a municipio
+    # the newer OCHA figures miss.
+    "nicaragua_census.json",
+    # El Salvador's 2024 census from the BCR's workbooks: population, median
+    # age, sex ratio and the indigenous and Afro-descendant questions for the
+    # 14 departments and the 262 districts (the old municipios). Same year as
+    # OCHA's projections, and a count, so it replaces them.
+    "el_salvador_census.json",
+    # Costa Rica's 2011 census on INEC's REDATAM base: median age, sex ratio
+    # and P07/P08/P10 ethnicity for the 7 provinces and 83 cantons (Rio Cuarto
+    # and Puerto Jimenez as the districts they were made from), and the 2011
+    # count on the cantons, which only fills Palmares.
+    "costa_rica_census.json",
     # Bolivia's 2024 census by department and province, counted from INE's
     # person database: population, median age, sex ratio, nación o pueblo
     # (indigenous and Afro-Bolivian identity) and mother tongue.
@@ -323,16 +347,49 @@ ADAPTER_FILES = [
     # Venezuela's 2011 census by state: the indigenous population by people,
     # and everyone else as one line.
     "venezuela_census.json",
+    # Venezuela's 2011 census on INE's REDATAM base: median age, sex ratio and
+    # ethnicity (the peoples and question 7's identity) for the 25 states and
+    # 334 municipios, and the 2011 count by municipio. After venezuela_census
+    # so its state ethnicity replaces the peoples-only line.
+    "venezuela_redatam.json",
+    # Paraguay's 2022 census on INE's REDATAM base by department and district:
+    # population, age, sex, language (several answers allowed), indigenous
+    # identity with the peoples by department from the 2022 Indigenous
+    # Census's Cuadro A2; and the 2002 census's religion, departments and the
+    # 201 districts drawn as they were then.
+    "paraguay_census.json",
+    # Uruguay's 2023 census microdata: departments from INE's July 2026
+    # weighted release (checked against Cuadros 1 and 14); municipios and the
+    # ground outside them from the February 2026 release, which files people
+    # by the 2020 series the map draws. Principal ethnic-racial ancestry.
+    "uruguay_census.json",
     # Peru's 2017 census by province, tabulated on INEI's REDATAM base:
     # median age, sex ratio, ethnicity, religion and mother tongue for the
     # 196 provinces, and median age, sex ratio and ethnicity for the first
     # level. It writes no religion or language there: peru_department.json,
     # the Perfil's department tables of the same count, carries those.
     "peru_redatam.json",
+    # The same run's count of each province's people. It stands against
+    # Wikidata's newer figures, as a count does against an encyclopaedia.
+    "peru_redatam_population.json",
     # The Dominican Republic's 155 municipalities: median age and sex ratio
     # from the 2010 census's age-sex table, as the US Census Bureau tabulates
     # it (uscb_age_sex). They had neither; nothing else is written.
     "dominican_republic_age_sex.json",
+    # Cuba's 16 provinces and 168 municipios (cuba_census): population, median
+    # age and sex ratio from ONEI's 2024 estimates, skin colour from the 2012
+    # census; Banes and Antilla, redrawn in 2021, left as stated gaps.
+    "cuba_census.json",
+    # The Dominican Republic's 2022 census (dominican_census): age, sex and
+    # question 64 by province; population, age and sex by municipio, made to
+    # the boundary file's extents. Supersedes the 2010 file above.
+    "dominican_census.json",
+    # Haiti's departments and arrondissements (haiti_census): IHSI's 2015
+    # estimates by sex, and why religion stops at the country.
+    "haiti_census.json",
+    # Median age from UNFPA's 2024 COD-PS for Haiti, communes summed into
+    # IHSI's arrondissements; a projection, so fill-only.
+    "haiti_cod_ps_age.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
@@ -415,6 +472,35 @@ ADAPTER_FILES = [
     "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
+    # The Caribbean from its statistics offices' own tables, after the Census
+    # Bureau's tabulations above (jamaica_parish, bahamas_island) so a tie
+    # goes to the office. Jamaica's 2022 count by parish and by community,
+    # bound by name within the parish (jamaica_census). Trinidad and
+    # Tobago's 2011 Demographic Report by municipality, Arima inside the
+    # map's Tunapuna-Piarco (tto_census).
+    "jamaica_census.json", "tto_census.json",
+    # Guyana's 2012 compositions and median age by region and its 2022
+    # preliminary count; the sub-regions as stated gaps (guyana_census).
+    # Suriname's 2012 census by ressort -- ethnic group, age and sex -- with
+    # 2004's ressort religion and household language (suriname_census).
+    "guyana_census.json", "suriname_census.json",
+    # Belize's 2022 tables by district (belize_census); The Bahamas' 2010
+    # island reports for the islands the map draws whole (bahamas_census);
+    # Barbados's 2021 tables by parish with the 2010 population
+    # (barbados_census).
+    "belize_census.json", "bahamas_census.json", "barbados_census.json",
+    # Median age and sex ratio from the Census Bureau's age-sex sheets for
+    # Dominica's parishes and the Bahamas' whole islands (caribbean_uscb).
+    "dominica_census.json", "bahamas_age_sex.json",
+    # Saint Lucia's 2022 districts and 2010 settlements (lucia_census),
+    # Grenada's 2021 parishes (grenada_census), Saint Vincent's 2012 districts
+    # summed into parishes with 2023's divisions where whole (vincent_census),
+    # Antigua and Barbuda's 2011 parishes (antigua_census).
+    "lucia_census.json", "grenada_census.json", "vincent_census.json",
+    "antigua_census.json",
+    # Last, and only gaps: what none of the above fills, with the reason. A
+    # gap never replaces a value, so its place in the list costs nothing.
+    "caribbean_gaps.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
     "canada_province.json", "canada_economic_region.json",
@@ -669,6 +755,16 @@ ADAPTER_GAPS: dict[str, str] = {
 # a gap is worth having; a gap that says why, wrongly, is worse than a silent
 # one, because it stops anyone looking again.
 SHAPE_GAPS: dict[str, dict[str, str]] = {
+    # El Salvador's second level has ten polygons geoBoundaries leaves
+    # unnamed: pieces of the Bay of Jiquilisco and the Gulf of Fonseca, ground
+    # along the Honduran border, and one in Sonsonate. With no name, no
+    # census row can be matched to them.
+    "SLV": {
+        "Null": (
+            "The boundary file draws this polygon with no name (\"Null\"), so "
+            "no census row can be matched to it; which district's ground it "
+            "is, the file does not say."),
+    },
     # Ecuador's two zonas no delimitadas the boundary file draws: ground whose
     # province was unsettled when it was drawn. INEC's 2022 table is by canton
     # and has no row for either.
@@ -867,6 +963,10 @@ REMAINDERS: dict[str, tuple[str, str]] = {
             "on the map."),
 }
 REMAINDERS_FILE = PROCESSED / "admin2_remainders.geojson"
+# Second-order polygons the boundary file draws as the wrong number of units --
+# one feature for four Bolivian provinces, two features for one -- redrawn by
+# scripts/make_redrawn.py, and drawn and joined in place of what they replace.
+REDRAWN_FILE = PROCESSED / "admin2_redrawn.geojson"
 
 
 # How far a declared coverage figure may drift from the measured one before the
@@ -1252,6 +1352,34 @@ def read_remainders() -> list[dict[str, Any]]:
             "area": geom.area, "remainder": True,
         })
     return out
+
+
+def read_redrawn() -> tuple[set[str], list[dict[str, Any]]]:
+    """The redrawn second-order units, and the boundary file's ids they replace.
+
+    Each carries its first-order parent already, measured when it was drawn,
+    and says what was redrawn and why, which the unit shows as its note.
+    """
+    from shapely.geometry import shape
+
+    collection = read_json(REDRAWN_FILE, None)
+    if not collection:
+        return set(), []
+    replaced: set[str] = set()
+    out = []
+    for feat in collection.get("features", []):
+        props = feat["properties"]
+        geom = shape(feat["geometry"])
+        point = geom.representative_point()
+        replaced.update(props.get("replaces") or [])
+        out.append({
+            "shape_id": props["shapeID"], "name": props["shapeName"],
+            "group": props["shapeGroup"], "parent_shape": props["parentID"],
+            "point": [round(point.x, 5), round(point.y, 5)],
+            "bbox": [round(b, 4) for b in geom.bounds], "_geom": None,
+            "area": geom.area, "redrawn": props.get("redrawn"),
+        })
+    return replaced, out
 
 
 def whole(geom):
@@ -1728,7 +1856,10 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json",
-                       "cod_ps_age.json"})
+                       "cod_ps_age.json",
+                       # Haiti's median ages: a 2024 projection from the 2003
+                       # census, which a count would always replace.
+                       "haiti_cod_ps_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 
@@ -1818,7 +1949,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                             for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "match_by", "_source", "_match"}:
+                   "match_by", "shape_label", "_source", "_match"}:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
@@ -2996,6 +3127,12 @@ def fill_remainders(admin1_by_country: dict[str, list[dict[str, Any]]],
             if not entity.get("water"):
                 kids[entity.get("parent")].append(entity)
         for rest in (e for e in rows if e.get("remainder")):
+            # A remainder a source counts directly keeps that count: Uruguay's
+            # census files its people under "Sin Municipio" by department, and
+            # the difference would also take in the people INE records with no
+            # municipio at all, and a municipio's strip across a department line.
+            if published(rest.get("population")) is not None:
+                continue
             parent = parents.get(rest.get("parent"))
             if parent is None:
                 continue
@@ -3057,8 +3194,17 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
             if twin is None or entity.get("water"):
                 continue
             for field in sorted(VALUE_FIELDS):
-                if not is_gap(entity.get(field)) or is_gap(twin.get(field)) \
-                        or field not in twin:
+                mine, theirs = entity.get(field), twin.get(field)
+                if (is_gap(mine) and is_gap(theirs) and isinstance(theirs, dict)
+                        and theirs.get("note")
+                        and not (isinstance(mine, dict) and mine.get("note"))):
+                    # The same polygon's reason for the gap, where the first
+                    # level has one and this level none: Saint Kitts' parishes
+                    # say why no median age is published below the country,
+                    # and the same parishes drawn again said nothing.
+                    entity[field] = copy.deepcopy(theirs)
+                    continue
+                if not is_gap(mine) or is_gap(theirs) or field not in twin:
                     continue
                 entity[field] = copy.deepcopy(twin[field])
                 for suffix in SATELLITES:
@@ -3074,6 +3220,20 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
                                and src not in sources)
                 filled += 1
     return filled
+
+
+# Country fields whose first-level divisions carry figures a sum cannot be
+# taken across, declared with the reason; the country keeps its own figure.
+COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
+    # suriname_census gives seven districts the 2004 census's religion and the
+    # three interior districts the 2012 census's denominations (the ABS's
+    # District Results Volume III), each the newest their district has. Summed,
+    # they are a figure of neither year, listing Christianity beside its own
+    # churches. The country keeps the 2012 census's national table as the
+    # Factbook prints it (Protestant 23.6%, Hindu 22.3%, Roman Catholic 21.6%).
+    ("SUR", "religion"): "its districts' religion comes from two censuses, 2004 "
+                         "and 2012, and no sum across them is either",
+}
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
@@ -3122,6 +3282,9 @@ def roll_up_countries(admin0: list[dict[str, Any]],
         if not children:
             continue
         for field in ROLLUP_FIELDS:
+            if (iso3, field) in COUNTRY_NOT_SUMMED:
+                refused.append(f"{iso3}: {field}: {COUNTRY_NOT_SUMMED[(iso3, field)]}")
+                continue
             before = country.get(field)
             # Every first-level division of the country is in `children`, and
             # the check above has already refused the field unless all of them
@@ -4965,6 +5128,19 @@ def claim(claimed: dict[int, set[str]], entity: dict[str, Any], row: dict[str, A
     """
     name = row.get("name") or ""
     names = {name} | {a for a in row.get("aliases") or [] if a}
+    # A pin (scripts/fetch_census/pins.py) says which label it expects the
+    # polygon to carry. The first claim checks the polygon still carries it --
+    # a pin to a relabelled or renumbered polygon is stale -- and the label
+    # joins the names a later claim is compared with, so two readers' rows
+    # pinned there by the same office code are one place however each spells
+    # it: DANE's "San Andrés Sotavento" and OCHA's "San Andrés de Sotavento".
+    label = row.get("shape_label")
+    if label:
+        if id(entity) not in claimed and norm(label) != norm(entity.get("name") or ""):
+            raise SystemExit(
+                f"{iso3}: {name!r} is pinned to shape {wanted!r} as {label!r}, "
+                f"but the boundary file labels it {entity.get('name')!r}; the pin is stale")
+        names.add(label)
     held = claimed.get(id(entity))
     if held is not None and not ({norm(n) for n in held} & {norm(n) for n in names}):
         raise SystemExit(
@@ -5004,6 +5180,11 @@ def main() -> int:
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
         shapes["ADM2"].extend(read_remainders())
+        replaced, redrawn = read_redrawn()
+        if redrawn:
+            shapes["ADM2"] = [shape for shape in shapes["ADM2"]
+                              if shape["shape_id"] not in replaced] + redrawn
+            log(f"  ADM2: {len(replaced)} polygons redrawn as {len(redrawn)}")
     # Before anything is joined: this is a claim about the boundary files alone,
     # and it is the claim that explains a level looking empty for a reason no
     # amount of data would fix.
@@ -5136,6 +5317,8 @@ def main() -> int:
         if shape.get("remainder"):
             entity["remainder"] = True
             entity["note"] = REMAINDERS[iso3][1]
+        if shape.get("redrawn"):
+            entity["note"] = shape["redrawn"]
         mark_disputed_or_hint(entity, iso3)
         mark_water(entity, iso3)
         if shape.get("outline"):

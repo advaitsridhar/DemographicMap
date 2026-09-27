@@ -39,6 +39,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
+from .pins import pin
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, read_json, record, write_json,
 )
@@ -210,7 +211,7 @@ def main() -> int:
                 f"MEX-{m['code']}", known.get("name") or m["name"], level="admin2",
                 parent=f"MEX-{code}", country="MEX", parent_name=known.get("parent_name") or m["state"],
                 parent_aliases=STATE_ALIASES.get(m["state"]),
-                codes={"inegi": m["code"]},
+                codes={"inegi": m["code"]}, **pin("MEX", m["code"]),
                 median_age=measure(m["median"], unit="years", year=YEAR, source=SOURCE),
                 sources=[{"field": "median age", "name": SOURCE, "url": m["url"],
                           "license": LICENSE}],

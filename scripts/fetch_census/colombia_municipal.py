@@ -36,6 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from common import PROCESSED, RAW, http_get, log, measure, write_json  # noqa: E402
 from fetch_census._shared import record  # noqa: E402
+from fetch_census.pins import pin  # noqa: E402
 
 URL = ("https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/"
        "PPED-AreaSexoEdadMun-2018-2042_VP.xlsx")
@@ -107,7 +108,7 @@ def main() -> int:
         records.append(record(
             f"COL-{code}", str(row[col["DPMP"]]).strip(), level="admin2",
             parent=f"COL-{code[:2]}", parent_name=str(row[col["DPNOM"]]).strip(),
-            country="COL", codes={"divipola": code},
+            country="COL", codes={"divipola": code}, **pin("COL", code),
             median_age=(measure(median, unit="years", year=YEAR, source=SOURCE)
                         if median is not None else None),
             median_age_note="Computed from DANE's single-year counts by age.",

@@ -810,6 +810,10 @@ COLOMBIA = Country(
         "Barranquilla": (
             "Distrito Especial, Industrial Y Portuario De Barr*",),
         "Tiquisio": ("Tiquiso",),
+        # The non-municipal area of Guainía the boundary file writes "Barranco
+        # Mina", and Nariño's Santacruz, which it writes by its seat.
+        "Barranco Minas": ("Barranco Mina",),
+        "Santa Cruz": ("Santa Cruz (Guachavés)",),
     },
     note=("2018 census, self-reported ethnicity (autoreconocimiento étnico). "
           "The seven categories sum to 44,164,417, which is the sheet's own "

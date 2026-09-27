@@ -1,0 +1,2721 @@
+[
+  {
+    "id": "GUY-BOS-1",
+    "level": "admin1",
+    "name": "Barima-Waini",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38956,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1095,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 39.9,
+        "count": 11030
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 33.8,
+        "count": 9357
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.7,
+        "count": 3792
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.4,
+        "count": 941
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 832
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.5,
+        "count": 682
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 2.0,
+        "count": 554
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 197
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 114
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.3,
+        "count": 70
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.1,
+        "count": 40
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Amerindian",
+        "pct": 64.6,
+        "count": 17846
+      },
+      {
+        "group": "Mixed",
+        "pct": 31.2,
+        "count": 8616
+      },
+      {
+        "group": "African",
+        "pct": 2.3,
+        "count": 635
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.7,
+        "count": 472
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 46
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B35208227968900",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-2",
+    "level": "admin1",
+    "name": "Pomeroon-Supenaam",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 56469,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 23.8,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 33.2,
+        "count": 15556
+      },
+      {
+        "group": "Other Christian",
+        "pct": 20.1,
+        "count": 9407
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.4,
+        "count": 7667
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 8.1,
+        "count": 3792
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.9,
+        "count": 3225
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.8,
+        "count": 3201
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.5,
+        "count": 1623
+      },
+      {
+        "group": "No religion",
+        "pct": 2.3,
+        "count": 1067
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 449
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.0,
+        "count": 490
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 273
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.1,
+        "count": 35
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Indian",
+        "pct": 44.6,
+        "count": 20861
+      },
+      {
+        "group": "Mixed",
+        "pct": 23.6,
+        "count": 11046
+      },
+      {
+        "group": "Amerindian",
+        "pct": 18.9,
+        "count": 8834
+      },
+      {
+        "group": "African",
+        "pct": 12.6,
+        "count": 5891
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 105
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B77355957241998",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-3",
+    "level": "admin1",
+    "name": "Essequibo Islands-West Demerara",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 143884,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 26.6,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 37.7,
+        "count": 40666
+      },
+      {
+        "group": "Other Christian",
+        "pct": 21.3,
+        "count": 22996
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.9,
+        "count": 18251
+      },
+      {
+        "group": "Muslim",
+        "pct": 11.8,
+        "count": 12688
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.9,
+        "count": 3124
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.7,
+        "count": 2899
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.1,
+        "count": 2268
+      },
+      {
+        "group": "No religion",
+        "pct": 1.5,
+        "count": 1657
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.3,
+        "count": 1389
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 1128
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 346
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.3,
+        "count": 317
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.1,
+        "count": 56
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Indian",
+        "pct": 59.5,
+        "count": 64183
+      },
+      {
+        "group": "African",
+        "pct": 21.1,
+        "count": 22774
+      },
+      {
+        "group": "Mixed",
+        "pct": 16.4,
+        "count": 17652
+      },
+      {
+        "group": "Amerindian",
+        "pct": 2.6,
+        "count": 2820
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 192
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 84
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 31
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B61038187736836",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-4",
+    "level": "admin1",
+    "name": "Demerara-Mahaica",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 347759,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 26.5,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 955,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 27.1,
+        "count": 84424
+      },
+      {
+        "group": "Other Christian",
+        "pct": 21.5,
+        "count": 67093
+      },
+      {
+        "group": "Hindu",
+        "pct": 20.8,
+        "count": 64752
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.1,
+        "count": 19150
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.0,
+        "count": 18702
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.2,
+        "count": 16259
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.6,
+        "count": 14262
+      },
+      {
+        "group": "No religion",
+        "pct": 3.7,
+        "count": 11548
+      },
+      {
+        "group": "Methodist",
+        "pct": 2.0,
+        "count": 6194
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 4207
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 2682
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.7,
+        "count": 2056
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.1,
+        "count": 234
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "African",
+        "pct": 40.6,
+        "count": 126378
+      },
+      {
+        "group": "East Indian",
+        "pct": 35.0,
+        "count": 109105
+      },
+      {
+        "group": "Mixed",
+        "pct": 21.5,
+        "count": 66844
+      },
+      {
+        "group": "Amerindian",
+        "pct": 2.3,
+        "count": 7066
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 1148
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 737
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 192
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 93
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B28210658685043",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-5",
+    "level": "admin1",
+    "name": "Mahaica-Berbice",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57667,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 25.1,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 994,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 34.1,
+        "count": 17006
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 21.3,
+        "count": 10611
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.5,
+        "count": 8231
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.0,
+        "count": 4494
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.1,
+        "count": 3025
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.8,
+        "count": 2896
+      },
+      {
+        "group": "No religion",
+        "pct": 2.7,
+        "count": 1324
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.6,
+        "count": 792
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.3,
+        "count": 638
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.8,
+        "count": 376
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 297
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.2,
+        "count": 123
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Indian",
+        "pct": 54.7,
+        "count": 27234
+      },
+      {
+        "group": "African",
+        "pct": 33.1,
+        "count": 16472
+      },
+      {
+        "group": "Mixed",
+        "pct": 9.5,
+        "count": 4740
+      },
+      {
+        "group": "Amerindian",
+        "pct": 2.5,
+        "count": 1270
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B27249657307617",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-6",
+    "level": "admin1",
+    "name": "East Berbice-Corentyne",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114574,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 26.4,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 42.1,
+        "count": 46196
+      },
+      {
+        "group": "Other Christian",
+        "pct": 17.5,
+        "count": 19193
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 16.5,
+        "count": 18086
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.5,
+        "count": 10448
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.2,
+        "count": 5670
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.1,
+        "count": 3452
+      },
+      {
+        "group": "No religion",
+        "pct": 1.9,
+        "count": 2030
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.7,
+        "count": 1891
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.3,
+        "count": 1408
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.6,
+        "count": 630
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 367
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.2,
+        "count": 234
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 47
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Indian",
+        "pct": 66.0,
+        "count": 72406
+      },
+      {
+        "group": "African",
+        "pct": 21.3,
+        "count": 23383
+      },
+      {
+        "group": "Mixed",
+        "pct": 10.7,
+        "count": 11727
+      },
+      {
+        "group": "Amerindian",
+        "pct": 1.6,
+        "count": 1801
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 178
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 73
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 24
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B7170020273928",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-7",
+    "level": "admin1",
+    "name": "Cuyuni-Mazaruni",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30324,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 22.5,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1123,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 23.7,
+        "count": 4347
+      },
+      {
+        "group": "Anglican",
+        "pct": 17.5,
+        "count": 3217
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 17.3,
+        "count": 3182
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.8,
+        "count": 3084
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.0,
+        "count": 1278
+      },
+      {
+        "group": "No religion",
+        "pct": 6.0,
+        "count": 1106
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.1,
+        "count": 932
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.5,
+        "count": 637
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.9,
+        "count": 350
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 118
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.4,
+        "count": 72
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.3,
+        "count": 49
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Mixed",
+        "pct": 40.9,
+        "count": 7514
+      },
+      {
+        "group": "Amerindian",
+        "pct": 37.2,
+        "count": 6833
+      },
+      {
+        "group": "African",
+        "pct": 11.6,
+        "count": 2135
+      },
+      {
+        "group": "East Indian",
+        "pct": 8.5,
+        "count": 1569
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.2,
+        "count": 223
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 67
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B42913807349964",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-8",
+    "level": "admin1",
+    "name": "Potaro-Siparuni",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13598,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 20.1,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1196,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 39.8,
+        "count": 4408
+      },
+      {
+        "group": "Other Christian",
+        "pct": 31.6,
+        "count": 3498
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 9.6,
+        "count": 1062
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.3,
+        "count": 694
+      },
+      {
+        "group": "No religion",
+        "pct": 6.1,
+        "count": 678
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.6,
+        "count": 293
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.0,
+        "count": 116
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.7,
+        "count": 79
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 62
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.6,
+        "count": 68
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 67
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 49
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Amerindian",
+        "pct": 72.3,
+        "count": 8009
+      },
+      {
+        "group": "Mixed",
+        "pct": 16.6,
+        "count": 1838
+      },
+      {
+        "group": "African",
+        "pct": 7.7,
+        "count": 858
+      },
+      {
+        "group": "East Indian",
+        "pct": 2.5,
+        "count": 282
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.7,
+        "count": 76
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "White",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B80201159559449",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-9",
+    "level": "admin1",
+    "name": "Upper Takutu-Upper Essequibo",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29944,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 17.2,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 1061,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 50.1,
+        "count": 12145
+      },
+      {
+        "group": "Other Christian",
+        "pct": 26.8,
+        "count": 6498
+      },
+      {
+        "group": "Anglican",
+        "pct": 14.9,
+        "count": 3608
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.1,
+        "count": 505
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.6,
+        "count": 397
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 315
+      },
+      {
+        "group": "No religion",
+        "pct": 1.2,
+        "count": 279
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 208
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 135
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 88
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Amerindian",
+        "pct": 85.8,
+        "count": 20808
+      },
+      {
+        "group": "Mixed",
+        "pct": 11.2,
+        "count": 2708
+      },
+      {
+        "group": "African",
+        "pct": 1.5,
+        "count": 353
+      },
+      {
+        "group": "East Indian",
+        "pct": 1.0,
+        "count": 253
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 73
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B44928754933782",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-10",
+    "level": "admin1",
+    "name": "Upper Demerara-Berbice",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 45499,
+      "year": 2022,
+      "source": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2"
+    },
+    "median_age": {
+      "value": 22.9,
+      "unit": "years",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition, Table 2.13"
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 36.0,
+        "count": 14414
+      },
+      {
+        "group": "Other Christian",
+        "pct": 28.2,
+        "count": 11258
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 14.8,
+        "count": 5934
+      },
+      {
+        "group": "No religion",
+        "pct": 7.2,
+        "count": 2898
+      },
+      {
+        "group": "Anglican",
+        "pct": 4.2,
+        "count": 1676
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 2.1,
+        "count": 830
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.9,
+        "count": 751
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 520
+      },
+      {
+        "group": "Rastafarian",
+        "pct": 1.3,
+        "count": 538
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.1,
+        "count": 434
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.0,
+        "count": 417
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.8,
+        "count": 308
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.0,
+        "count": 14
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "African",
+        "pct": 49.0,
+        "count": 19604
+      },
+      {
+        "group": "Mixed",
+        "pct": 39.6,
+        "count": 15847
+      },
+      {
+        "group": "Amerindian",
+        "pct": 8.0,
+        "count": 3205
+      },
+      {
+        "group": "East Indian",
+        "pct": 2.8,
+        "count": 1128
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.3,
+        "count": 127
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "White",
+        "pct": 0.1,
+        "count": 30
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Bureau of Statistics, Guyana, National Population and Housing Census 2022: Preliminary Report, Appendix I.2",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Preliminary-Report-Guyana-National-Population-and-Housing-Census-2022.pdf",
+        "year": 2022
+      },
+      {
+        "field": "sex_ratio",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Final Results, Table 1",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Count-1.pdf",
+        "year": 2012
+      },
+      {
+        "field": "median_age/ethnicity/religion",
+        "name": "Bureau of Statistics, Guyana, 2012 Population and Housing Census: Compendium 2, Population Composition",
+        "url": "https://statisticsguyana.gov.gy/wp-content/uploads/2019/10/Final_2012_Census_Compendium2.pdf",
+        "year": 2012
+      }
+    ],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73500413B72922726177356",
+    "population_note": "The 2022 census's preliminary count: the population reported, the institutional population and the estimated people of households never reached.",
+    "sex_ratio_note": "Men per thousand women, 2012, no-contact persons included.",
+    "median_age_note": "The Bureau's median age of the region's 2012 population.",
+    "ethnicity_year": 2012,
+    "ethnicity_note": "Table 2.3: ethnic group, with the 321 not stated and the 16,331 no-contact persons prorated over the groups by the Bureau.",
+    "religion_year": 2012,
+    "religion_note": "Table 2.19: religious affiliation, with the 363 not stated, the no-contact persons and the institutional population prorated by the Bureau."
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B60550575754674",
+    "level": "admin2",
+    "name": "I-1  Barima",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B60550575754674"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B25125705574502",
+    "level": "admin2",
+    "name": "I-2  Waini",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B25125705574502"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B89852633315",
+    "level": "admin2",
+    "name": "II-1 Moruka/Pomeroon",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B89852633315"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B32807906119363",
+    "level": "admin2",
+    "name": "II-2 Somerset And Berks",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B32807906119363"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B403858167670",
+    "level": "admin2",
+    "name": "III-1 Essequibo Islands",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B403858167670"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B69188247216871",
+    "level": "admin2",
+    "name": "III-2 Bonasika/Boerasirie",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B69188247216871"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B37275521975426",
+    "level": "admin2",
+    "name": "III-3 Lower West Demerara",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B37275521975426"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B62691017600789",
+    "level": "admin2",
+    "name": "IV-1 Moblissa/La Reconnai",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B62691017600789"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B35939089598366",
+    "level": "admin2",
+    "name": "IV-2 Buxton/Mahaica",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B35939089598366"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B14852666038275",
+    "level": "admin2",
+    "name": "IX-1 Rupununi West",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B14852666038275"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B68809145182680",
+    "level": "admin2",
+    "name": "IX-2 Rewa(Illiwa)/U.E",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B68809145182680"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B37503921444880",
+    "level": "admin2",
+    "name": "V-1  Mahaica/Mahaicony",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B37503921444880"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B73006016371738",
+    "level": "admin2",
+    "name": "V-2 Mahaicony/Berbice",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B73006016371738"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B47242148474539",
+    "level": "admin2",
+    "name": "VI-1 East Berbice/W.Canje",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B47242148474539"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B18433747523923",
+    "level": "admin2",
+    "name": "VI-2  East Canje/E.C.Berb",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B18433747523923"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B65372022493743",
+    "level": "admin2",
+    "name": "VI-3 Black Bush Polder",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B65372022493743"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B56094109517329",
+    "level": "admin2",
+    "name": "VI-4 Lower Corentyne Rive",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B56094109517329"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B6333666971836",
+    "level": "admin2",
+    "name": "VI-5 Left Bank Upper Canj",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B6333666971836"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B40141145905740",
+    "level": "admin2",
+    "name": "VI-6 Upper Canje/Corentyn",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B40141145905740"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B49855956252830",
+    "level": "admin2",
+    "name": "VI-7 Upper Corentyne",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B49855956252830"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B99697298922199",
+    "level": "admin2",
+    "name": "VII-1  Cuyuni",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B99697298922199"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B61605631045653",
+    "level": "admin2",
+    "name": "VII-2 Mazaruni/L.B.E.Rive",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B61605631045653"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B95779409673376",
+    "level": "admin2",
+    "name": "VIII-1 Ireng/Upper Potaro",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B95779409673376"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B19999842805850",
+    "level": "admin2",
+    "name": "VIII-2 Lower Potaro/Ladsm",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B19999842805850"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B95579298937311",
+    "level": "admin2",
+    "name": "X-1 Right Bank Essequibo",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B95579298937311"
+  },
+  {
+    "id": "GUY-BOS-sub-73187651B8767068866486",
+    "level": "admin2",
+    "name": "X-2 Torani/Bulletwood",
+    "parent": "GUY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The Bureau of Statistics tabulates the 2012 and 2022 censuses by the ten administrative regions (with Coastland, Hinterland and the towns): the 2012 Final Count, Preliminary Report and Compendia 1 and 2 and the 2022 Preliminary Report have no table by sub-region, so nothing is written for this one."
+    },
+    "sources": [],
+    "country": "GUY",
+    "match_by": "shape_id",
+    "shape_id": "73187651B8767068866486"
+  }
+]

@@ -41,6 +41,7 @@ import urllib.request
 from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
+from .pins import pin
 from common import shard_name  # noqa: E402
 
 API = "https://data.humdata.org/api/3/action"
@@ -610,6 +611,9 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                 # first level the parent is the country and naming a region
                 # there would send the matcher looking for a shape above it.
                 parent_name=(unit_row["parent"] or None) if level == "admin2" else None,
+                # A P-code is the country's two letters and the office's own
+                # code, so the offices' pins apply to it as they are.
+                **(pin(code, code2[2:]) if level == "admin2" else {}),
                 population={"value": unit_row["people"], "year": year,
                             "source": source["name"]},
                 sources=[source]))

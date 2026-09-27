@@ -41783,7 +41783,8 @@
     "parent_name": "Morelos",
     "codes": {
       "inegi": "17034"
-    }
+    },
+    "no_shape": true
   },
   {
     "id": "MEX-17005",
@@ -42013,7 +42014,8 @@
     "parent_name": "Morelos",
     "codes": {
       "inegi": "17036"
-    }
+    },
+    "no_shape": true
   },
   {
     "id": "MEX-17009",
@@ -43025,7 +43027,8 @@
     "parent_name": "Morelos",
     "codes": {
       "inegi": "17035"
-    }
+    },
+    "no_shape": true
   },
   {
     "id": "MEX-17029",
@@ -71153,7 +71156,10 @@
     "parent_name": "Puebla",
     "codes": {
       "inegi": "21075"
-    }
+    },
+    "match_by": "shape_id",
+    "shape_id": "50627088B56291356806731",
+    "shape_label": "Hueyapan"
   },
   {
     "id": "MEX-21076",
@@ -100593,7 +100599,10 @@
     "parent_name": "Veracruz de Ignacio de la Llave",
     "codes": {
       "inegi": "30195"
-    }
+    },
+    "match_by": "shape_id",
+    "shape_id": "50627088B45118812748540",
+    "shape_label": "Xoxocotla"
   },
   {
     "id": "MEX-30196",

@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 from typing import Any
 
+from .pins import pin
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, dated, gap, http_json, log, measure, record, shares,
     write_json,
@@ -248,6 +249,8 @@ def main() -> int:
             f"BRA-{code}", name, level=level, parent=parent,
             parent_name=parent_name,
             codes={"ibge": code},
+            # A municipality the boundary file files under the next state.
+            **(pin("BRA", code) if args.level == "municipality" else {}),
             population=measure(int(total), year=YEAR, source=src) if total else gap(NOT_AVAILABLE),
             median_age=(measure(age_sex["median_age"][code], unit="years", year=YEAR, source=src)
                         if code in age_sex["median_age"] else gap(NOT_AVAILABLE)),

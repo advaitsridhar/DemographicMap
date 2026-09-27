@@ -1,0 +1,2904 @@
+[
+  {
+    "id": "HTI-IHSI-ouest",
+    "level": "admin1",
+    "name": "Département de l'Ouest",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4029705,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 936,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B91988968603803"
+  },
+  {
+    "id": "HTI-IHSI-sudest",
+    "level": "admin1",
+    "name": "Département du Sud-Est",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 632601,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 995,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B87386787470583"
+  },
+  {
+    "id": "HTI-IHSI-nord",
+    "level": "admin1",
+    "name": "Département du Nord",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1067177,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 966,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B70742132222307"
+  },
+  {
+    "id": "HTI-IHSI-nordest",
+    "level": "admin1",
+    "name": "Nord-Est Department",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 393967,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B96088034562700"
+  },
+  {
+    "id": "HTI-IHSI-artibonite",
+    "level": "admin1",
+    "name": "Artibonite Department",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1727524,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B56880358607712"
+  },
+  {
+    "id": "HTI-IHSI-centre",
+    "level": "admin1",
+    "name": "Centre Department",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 746236,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1044,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B32984500563227"
+  },
+  {
+    "id": "HTI-IHSI-sud",
+    "level": "admin1",
+    "name": "Sud Department",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 774976,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1070,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B58932724679351"
+  },
+  {
+    "id": "HTI-IHSI-grandanse",
+    "level": "admin1",
+    "name": "Département de la Grande-Anse",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 468301,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1092,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B57760347032633"
+  },
+  {
+    "id": "HTI-IHSI-nordouest",
+    "level": "admin1",
+    "name": "Nord-Ouest Department",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 728807,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B91757075506973"
+  },
+  {
+    "id": "HTI-IHSI-nippes",
+    "level": "admin1",
+    "name": "Département des Nippes",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 342525,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1103,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "match_by": "shape_id",
+    "shape_id": "49955354B18164660475406"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_01_01",
+    "level": "admin2",
+    "name": "Port-au-Prince",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2759991,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 913,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B82804707709843"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_01_02",
+    "level": "admin2",
+    "name": "Arrondissement de Léogâne",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 509280,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B68264839364801"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_01_03",
+    "level": "admin2",
+    "name": "Arrondissement de Croix-des-Bouquets",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 474806,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B67842804061774"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_01_04",
+    "level": "admin2",
+    "name": "Arrondissement de l’Arcahaie",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 198551,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B99356291190440"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_01_05",
+    "level": "admin2",
+    "name": "Arrondissement de La Gonâve",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87077,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de l'Ouest",
+    "match_by": "shape_id",
+    "shape_id": "57096268B98520683120180"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_02_01",
+    "level": "admin2",
+    "name": "Arrondissement de Jacmel",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 338728,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Sud-Est",
+    "match_by": "shape_id",
+    "shape_id": "57096268B37864859171197"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_02_02",
+    "level": "admin2",
+    "name": "Arrondissement de Bainet",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 135792,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1068,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Sud-Est",
+    "match_by": "shape_id",
+    "shape_id": "57096268B49795400417952"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_02_03",
+    "level": "admin2",
+    "name": "Arrondissement Belle-Anse",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 158081,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Sud-Est",
+    "match_by": "shape_id",
+    "shape_id": "57096268B78477673147329"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_01",
+    "level": "admin2",
+    "name": "Arrondissement de Cap-Haïtien",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 356908,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 904,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B62174897776861"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_02",
+    "level": "admin2",
+    "name": "Arrondissement d'Acul-du-Nord",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 129155,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 998,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B90141402454331"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_03",
+    "level": "admin2",
+    "name": "Arrondissement Grande-Rivière-Du-Nord",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 64613,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B13273891480647"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_04",
+    "level": "admin2",
+    "name": "Arrondissement Saint-Raphaël",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 169867,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1024,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B94684972969241"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_05",
+    "level": "admin2",
+    "name": "Arrondissement Borgne",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 116800,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1000,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B14042132739921"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_06",
+    "level": "admin2",
+    "name": "Arrondissement Limbé",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106201,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B47073695413304"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_03_07",
+    "level": "admin2",
+    "name": "Arrondissement Plaisance",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 123633,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département du Nord",
+    "match_by": "shape_id",
+    "shape_id": "57096268B76360272208873"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_04_01",
+    "level": "admin2",
+    "name": "Arrondissement de Fort-Liberté",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60632,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Est Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B10864130869566"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_04_02",
+    "level": "admin2",
+    "name": "Arrondissement Ouanaminthe",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146484,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Est Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B46256442272467"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_04_03",
+    "level": "admin2",
+    "name": "Arrondissement Trou-Du-Nord",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 115000,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1016,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Est Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B40761153029526"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_04_04",
+    "level": "admin2",
+    "name": "Arrondissement Vallières",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 71851,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1029,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Est Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B55617934237810"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_05_01",
+    "level": "admin2",
+    "name": "Arrondissement des Gonaïves",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 452704,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 941,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Artibonite Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B37402539332126"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_05_02",
+    "level": "admin2",
+    "name": "Arrondissement Gros Morne",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 230339,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Artibonite Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B35473133047669"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_05_03",
+    "level": "admin2",
+    "name": "Arrondissement de Saint-Marc",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 443007,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Artibonite Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B54986286323173"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_05_04",
+    "level": "admin2",
+    "name": "Arrondissement de Dessalines",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 412906,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1019,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Artibonite Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B62997609407208"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_05_05",
+    "level": "admin2",
+    "name": "Arrondissement de Marmelade",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 188568,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Artibonite Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B12667844160065"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_06_01",
+    "level": "admin2",
+    "name": "Arrondissement de Hinche",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 264943,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1048,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Centre Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B86585772768605"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_06_02",
+    "level": "admin2",
+    "name": "Arrondissement de Mirebalais",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 192852,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Centre Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B18861401200296"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_06_03",
+    "level": "admin2",
+    "name": "Arrondissement Lascahobas",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 168685,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1040,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Centre Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B36101678820445"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_06_04",
+    "level": "admin2",
+    "name": "Arrondissement Cerca La Source",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 119756,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1028,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Centre Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B6056210372718"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_07_01",
+    "level": "admin2",
+    "name": "Arrondissement des Cayes",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 346276,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1047,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B19780609344191"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_07_02",
+    "level": "admin2",
+    "name": "Arrondissement Port-Salut",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 73845,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1161,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B177802279293"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_07_03",
+    "level": "admin2",
+    "name": "Arrondissement d’Aquin",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 217827,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1054,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B29705038467161"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_07_04",
+    "level": "admin2",
+    "name": "Arrondissement des Côteaux",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58618,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1081,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B71612732443021"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_07_05",
+    "level": "admin2",
+    "name": "Arrondissement des Chardonnières",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 78410,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1132,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Sud Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B32991656624453"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_08_01",
+    "level": "admin2",
+    "name": "Arrondissement de Jérémie",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 238218,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1070,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de la Grande-Anse",
+    "match_by": "shape_id",
+    "shape_id": "57096268B64462824705423"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_08_02",
+    "level": "admin2",
+    "name": "Arrondissement d'Anse d'Hainault",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 98522,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1111,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de la Grande-Anse",
+    "match_by": "shape_id",
+    "shape_id": "57096268B71778681331422"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_08_03",
+    "level": "admin2",
+    "name": "Arrondissement de Corail",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 131561,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1120,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département de la Grande-Anse",
+    "match_by": "shape_id",
+    "shape_id": "57096268B32811427290887"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_09_01",
+    "level": "admin2",
+    "name": "Arrondissement Port-de-Paix",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 336650,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Ouest Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B61339172511637"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_09_02",
+    "level": "admin2",
+    "name": "Arrondissement Saint-Louis du Nord",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146567,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 953,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Ouest Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B27125670128287"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_09_03",
+    "level": "admin2",
+    "name": "Arrondissement Môle-Saint-Nicolas",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 245590,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Nord-Ouest Department",
+    "match_by": "shape_id",
+    "shape_id": "57096268B94613960435878"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_10_01",
+    "level": "admin2",
+    "name": "Arrondissement de Miragoâne",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 141826,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département des Nippes",
+    "match_by": "shape_id",
+    "shape_id": "57096268B12331201715811"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_10_02",
+    "level": "admin2",
+    "name": "Arrondissement de l’Anse-à-Veau",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 153639,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1142,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département des Nippes",
+    "match_by": "shape_id",
+    "shape_id": "57096268B30356160161964"
+  },
+  {
+    "id": "HTI-IHSI-HTI_GEO1_10_03",
+    "level": "admin2",
+    "name": "Arrondissement de Baradères",
+    "parent": "HTI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47060,
+      "unit": "people",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1183,
+      "unit": "males_per_1000_females",
+      "year": 2015,
+      "source": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Haiti's 2003 census asked each person's religion, and IHSI publishes the answer for the whole country only (Tableau 206 of its RGPH 2003 results: aucune religion, catholique, adventiste, témoin de Jéhovah, baptiste, méthodiste, épiscopale, pentecôtiste, vaudouisant, musulman, mormon, autre). The department volumes its census plan announced (Volume 1, Tome 4, Résultats définitifs par département, and Volume 2, Tome 7, La religion) are not online -- the Internet Archive's captures of ihsi.ht hold the national tables only -- and neither the US Census Bureau's workbook for Haiti nor OCHA's COD-PS carries the question, so no figure below the country has been published to read."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, Population totale, population de 18 ans et plus, ménages et densités estimés en 2015 (March 2015), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/haiti-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2015,
+        "license": "CC BY, via HDX"
+      },
+      {
+        "field": "population/sex ratio",
+        "name": "IHSI, the same estimates as published",
+        "url": "http://web.archive.org/web/2016id_/http://www.ihsi.ht/pdf/projection/Estimat_PopTotal_18ans_Menag2015.pdf",
+        "year": 2015
+      }
+    ],
+    "country": "HTI",
+    "parent_name": "Département des Nippes",
+    "match_by": "shape_id",
+    "shape_id": "57096268B92442229342099"
+  }
+]

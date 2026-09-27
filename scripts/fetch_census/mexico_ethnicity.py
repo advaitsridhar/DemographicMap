@@ -49,6 +49,7 @@ from collections import Counter, defaultdict
 from itertools import product
 from typing import Any
 
+from .pins import pin
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, read_json, record, shares, write_json
 from .mexico import LICENSE, NATIONAL, STATE_ALIASES
 from .mexico_age import STATES, number
@@ -331,7 +332,7 @@ def main() -> int:
                 level="admin2", parent=f"MEX-{code}", country="MEX",
                 parent_name=known.get("parent_name") or state["table"]["Total"]["name"],
                 parent_aliases=STATE_ALIASES.get(state["table"]["Total"]["name"]),
-                codes={"inegi": f"{code}{mun}"},
+                codes={"inegi": f"{code}{mun}"}, **pin("MEX", f"{code}{mun}"),
                 ethnicity=shares(split, total=base), ethnicity_year=YEAR,
                 ethnicity_note=note_for(state["table"][mun]), sources=cite))
     # A municipio ITER counts and the sample does not reach says so.

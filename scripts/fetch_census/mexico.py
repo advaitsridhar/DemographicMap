@@ -48,6 +48,7 @@ import zipfile
 from pathlib import Path
 from typing import Any
 
+from .pins import pin
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, record, shares,
     write_json,
@@ -355,7 +356,7 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
             aliases=None if municipal else STATE_ALIASES.get(state),
             parent_name=state if municipal else None,
             parent_aliases=STATE_ALIASES.get(state) if municipal else None,
-            codes={"inegi": code},
+            codes={"inegi": code}, **(pin("MEX", code) if municipal else {}),
             population=(measure(int(total), year=YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
             sex_ratio=(measure(round(1000 * men / women), unit="males_per_1000_females",

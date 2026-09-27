@@ -258,7 +258,12 @@ class TheBoundaryAliases(unittest.TestCase):
         path = self.admin1 / f"{iso}.units.json"
         if not path.exists():
             self.skipTest(f"no built admin1 file for {iso}")
-        return {s["name"] for s in json.loads(path.read_text())}
+        # A shape's aliases count: a reader that binds a unit by shape id
+        # renames it and keeps the boundary file's label as an alias, which
+        # is the name the matcher still reaches it by (El Salvador's
+        # departments, "Departamento de La Paz", since el_salvador_census).
+        return {n for s in json.loads(path.read_text())
+                for n in [s["name"], *(s.get("aliases") or [])]}
 
     def test_every_alias_names_a_shape_that_exists(self):
         # The point of declaring a name rather than letting the matcher guess

@@ -5820,7 +5820,7 @@
       "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "value": 1124,
+      "value": 1150,
       "unit": "males_per_1000_females",
       "year": 2010,
       "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
@@ -5848,7 +5848,7 @@
     "match_by": "shape_id",
     "shape_id": "3306468B80072272336201",
     "aliases": [],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group, of Pedernales and Oviedo together: the boundary file draws their province as one polygon."
   },
   {
     "id": "DOM-USCB-DOM_07_01_01",
@@ -6597,7 +6597,7 @@
       "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "value": 1088,
+      "value": 1085,
       "unit": "males_per_1000_females",
       "year": 2010,
       "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
@@ -6627,7 +6627,7 @@
     "aliases": [
       "Higüey"
     ],
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group, of Higüey without the distrito municipal of La Laguna de Nisibón, which the boundary file draws apart."
   },
   {
     "id": "DOM-USCB-DOM_08_02_02",
@@ -7972,5 +7972,58 @@
     "shape_id": "3306468B67900396339745",
     "aliases": [],
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "DOM-USCB-DOM_08_02_01_02",
+    "level": "admin2",
+    "name": "La Laguna de Nisibón",
+    "parent": "DOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.2,
+      "unit": "years",
+      "year": 2010,
+      "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1165,
+      "unit": "males_per_1000_females",
+      "year": 2010,
+      "source": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age/sex ratio",
+        "name": "ONE, IX Censo Nacional de Población y Vivienda 2010, by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/dominican-republic-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2010,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "DOM",
+    "parent_name": "La Altagracia",
+    "match_by": "shape_id",
+    "shape_id": "3306468B28180088914928",
+    "aliases": [
+      "La Laguna De Nisibón"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2010 census's count of everyone by five-year age group, of this distrito municipal of Higüey."
   }
 ]

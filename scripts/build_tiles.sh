@@ -47,8 +47,11 @@ build_with_tippecanoe() {
   fi
   # --drop-densest-as-needed is what keeps dense admin-2 areas under the tile
   # size limit instead of failing the build.
+  local filter
+  filter="$(replaced_filter "$level")"
   tippecanoe \
     --layer="$level" \
+    ${filter:+--feature-filter="$filter"} \
     --minimum-zoom="$minz" --maximum-zoom="$maxz" \
     --drop-densest-as-needed --coalesce-densest-as-needed \
     --simplification=4 --detect-shared-borders \
@@ -60,10 +63,30 @@ build_with_tippecanoe() {
 }
 
 # Ground a second level leaves out, drawn as units of its own
-# (scripts/make_remainders.py); it joins the admin2 layer on either path.
+# (scripts/make_remainders.py), and polygons the boundary file draws as the
+# wrong number of units, redrawn (scripts/make_redrawn.py); both join the
+# admin2 layer on either path, the redrawn ones in place of what they replace.
 REMAINDERS="$ROOT/data/processed/admin2_remainders.geojson"
+REDRAWN="$ROOT/data/processed/admin2_redrawn.geojson"
 extra_inputs() {
-  if [ "$1" = admin2 ] && [ -f "$REMAINDERS" ]; then echo "$REMAINDERS"; fi
+  if [ "$1" = admin2 ]; then
+    for f in "$REMAINDERS" "$REDRAWN"; do [ -f "$f" ] && echo "$f"; done
+  fi
+  return 0
+}
+
+# The shapeIDs the redrawn features replace, as a tippecanoe feature filter.
+# A merge keeps one of the ids it replaces, so the redrawn features themselves
+# (which carry "redrawn") always pass.
+replaced_filter() {
+  [ "$1" = admin2 ] && [ -f "$REDRAWN" ] || return 0
+  python3 - "$REDRAWN" <<'PY'
+import json, sys
+ids = sorted({i for f in json.load(open(sys.argv[1]))["features"]
+              for i in f["properties"].get("replaces") or []})
+if ids:
+    print(json.dumps({"*": ["any", ["has", "redrawn"], ["!in", "shapeID", *ids]]}))
+PY
 }
 
 build_with_python() {
