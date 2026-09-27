@@ -239,21 +239,31 @@ def settlements() -> dict[str, dict[str, Any]]:
     place = var(meta, "settlement")
     group = next(c for c in meta if c != place)
     out: dict[str, dict[str, Any]] = defaultdict(lambda: {"ethnicity": {}, "groups": defaultdict(Counter)})
+    codes: dict[str, str] = {}
     for dims, value in px_table(TABLES["settlement_ethnicity"], {place: "*", group: "*"}):
         m = re.match(r"^(.*) \((Kichevo)\)$", dims[place][1])
         if not m:
             continue
+        codes[dims[place][0]] = m.group(1)
         label = dims[group][1]
         name = None if "total" in label.lower() else label_of("ethnicity", label)
         out[m.group(1)]["ethnicity"][name] = out[m.group(1)]["ethnicity"].get(name, 0) + value
+    # The age table is asked for the Kichevo settlements only: every settlement
+    # by age and sex is more cells than MakStat serves in one answer (403).
     meta = px_meta(TABLES["settlement_age"])
     place, age, sex = var(meta, "settlement"), var(meta, "age"), var(meta, "sex")
-    for dims, value in px_table(TABLES["settlement_age"], {place: "*", age: "*", sex: "*"}):
+    seen = set()
+    for dims, value in px_table(TABLES["settlement_age"], {place: sorted(codes), age: "*", sex: "*"}):
         m = re.match(r"^(.*) \((Kichevo)\)$", dims[place][1])
-        if not m:
-            continue
+        if not m or codes.get(dims[place][0]) != m.group(1):
+            raise SystemExit(f"north_macedonia: settlement code {dims[place]} differs between "
+                             "the age and ethnicity tables")
+        seen.add(dims[place][0])
         label, who = dims[age][1], dims[sex][1].lower()
         out[m.group(1)]["groups"][label][who] += value
+    if seen != set(codes):
+        raise SystemExit(f"north_macedonia: {len(set(codes) - seen)} Kichevo settlements have no ages")
+    log(f"  the merged Kichevo: {len(codes)} settlements")
     return out
 
 
