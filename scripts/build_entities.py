@@ -3203,6 +3203,20 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
     return filled
 
 
+# Country fields whose first-level divisions carry figures a sum cannot be
+# taken across, declared with the reason; the country keeps its own figure.
+COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
+    # suriname_census gives seven districts the 2004 census's religion and the
+    # three interior districts the 2012 census's denominations (the ABS's
+    # District Results Volume III), each the newest their district has. Summed,
+    # they are a figure of neither year, listing Christianity beside its own
+    # churches. The country keeps the 2012 census's national table as the
+    # Factbook prints it (Protestant 23.6%, Hindu 22.3%, Roman Catholic 21.6%).
+    ("SUR", "religion"): "its districts' religion comes from two censuses, 2004 "
+                         "and 2012, and no sum across them is either",
+}
+
+
 def roll_up_countries(admin0: list[dict[str, Any]],
                       admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
     """Sum a country from its first-level divisions, where they are all there.
@@ -3249,6 +3263,9 @@ def roll_up_countries(admin0: list[dict[str, Any]],
         if not children:
             continue
         for field in ROLLUP_FIELDS:
+            if (iso3, field) in COUNTRY_NOT_SUMMED:
+                refused.append(f"{iso3}: {field}: {COUNTRY_NOT_SUMMED[(iso3, field)]}")
+                continue
             before = country.get(field)
             # Every first-level division of the country is in `children`, and
             # the check above has already refused the field unless all of them
