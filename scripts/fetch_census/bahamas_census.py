@@ -109,13 +109,28 @@ def split(line: str) -> tuple[str, list[int]]:
     return " ".join(tokens[:len(tokens) - n]), [int(t.replace(",", "")) for t in tokens[len(tokens) - n:]]
 
 
-def after(lines: list[str], title: str) -> list[str]:
-    """The lines after every page title ``title`` (a table runs over pages), joined."""
+def titled_island(flat_title: str) -> str:
+    """"acklins" from "table44contdacklins": what a page title names after the table."""
+    return re.sub(r"^table[0-9]*(?:contd)?", "", flat_title)
+
+
+def after(lines: list[str], title: str, island: str | None = None) -> list[str]:
+    """The lines after every page title ``title`` (a table runs over pages), joined.
+
+    With ``island``, only the pages whose title names that island: a report
+    can carry a neighbour's table beside its own (San Salvador's has Rum
+    Cay's).
+    """
     out, inside = [], False
     for line in lines:
         flat = fold(line)
         if flat.startswith("table") and flat.startswith(fold(title)):
-            inside = True
+            named = titled_island(flat)
+            if island is None:
+                inside = True
+            elif named:
+                inside = fold(island).startswith(named) or named.startswith(fold(island))
+            # A continuation title naming no island continues the table before it.
             continue
         if flat.startswith("table") and inside and not flat.startswith(fold(title)):
             inside = False
@@ -137,12 +152,12 @@ def table_2_0(lines: list[str]) -> dict[str, tuple[int, int, int]]:
     return out
 
 
-def table_4_5(lines: list[str]) -> dict[str, Any]:
+def table_4_5(lines: list[str], island: str | None = None) -> dict[str, Any]:
     """{"ages": Counter(age: people), "total", "men", "women", "unstated"} from Table 4.x."""
     ages: Counter = Counter()
     groups, whole, unstated = [], None, 0
     # Its number is the island's own: 4.1 for New Providence, 4.4 Acklins, 4.5 Andros.
-    for line in after(lines, "TABLE4"):
+    for line in after(lines, "TABLE4", island):
         label, figures = split(line)
         if not label and len(figures) == 4:
             # A single year: "1 127 70 57" is all figures, the age among them.
@@ -182,11 +197,11 @@ def table_4_5(lines: list[str]) -> dict[str, Any]:
             "unstated": unstated}
 
 
-def composition(lines: list[str], title: str, labels: dict[str, str], width: int
-                ) -> tuple[int, dict[str, int]]:
+def composition(lines: list[str], title: str, labels: dict[str, str], width: int,
+                island: str | None = None) -> tuple[int, dict[str, int]]:
     """(the table's total, {group: people}) from Table 7.0 or 8.0's both-sexes rows."""
     total, counts, pending = None, {}, []
-    for line in after(lines, title):
+    for line in after(lines, title, island):
         label, figures = split(line)
         if len(figures) != width:
             if label and not figures and fold(label) not in ("male", "female"):
@@ -253,9 +268,9 @@ def main() -> int:
         lines = report_lines(report)
         counts_2_0 = table_2_0(lines) or counts_2_0
         island = counts_2_0.get(fold(row))
-        age = table_4_5(lines)
-        religion_total, religion = composition(lines, "TABLE7.0", RELIGION, 9)
-        race_total, race = composition(lines, "TABLE8.0", RACE, 11)
+        age = table_4_5(lines, row)
+        religion_total, religion = composition(lines, "TABLE7.0", RELIGION, 9, row)
+        race_total, race = composition(lines, "TABLE8.0", RACE, 11, row)
         if island is None or {island[0], age["total"], religion_total, race_total} != {island[0]}:
             raise SystemExit(f"bahamas_census: {district}: Table 2.0 {island}, ages "
                              f"{age['total']}, religions {religion_total}, races {race_total}")
