@@ -1,7 +1,28 @@
-== https://www.estadistica.ad/portal/sharing/rest/search?q=*&f=json&num=100&sortField=modified&sortOrder=desc
-  0 items
-== https://www.estadistica.ad/portal/sharing/rest/search?q=parroquia&f=json&num=100
-  Límits parroquials | Feature Service | cartografia1 | bbbd79bc87024141ab7e047b72f84a65 | https://sig.govern.ad/server/rest/services/Hosted/limits_parroquials/FeatureServer
-  1 items
-== https://www.estadistica.ad/portal/sharing/rest/search?q=edat&f=json&num=100
-  0 items
+== grep https://www.cystat.gov.cy/en/SubthemeStatistics?id=46 (?s).{0,200} 1
+  HTTP 302 text/html; charset=utf-8 170 bytes
+  2 matches
+  <html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="https://www.cystat.gov.cy/en/SubthemeStatistics?id=46">here</a>.</h2>
+</body></html>
+
+== links https://www.statistics.gr/el/2021-census-res-pop-results xls|xlsx 40
+  HTTP 200 text/html;charset=UTF-8 147,360 bytes
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843  [Πίνακας Α01. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά φύλο και ομάδες ηλικιών]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx/fe0784cf-e357-639d-0e51-1f02e51c361e  [Πίνακας Α02. Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός κατά φύλο και ιθαγένεια]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A03_F_BI.xlsx/9dcf64e2-fabb-0dcc-b86a-aac1a9049ccc  [Πίνακας Α03. Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός κατά ομάδες χωρών ιθαγένειας και ο]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A04_F_BI.xlsx/62bacd1a-04a1-eaa3-3e9f-6e077d621c45  [Πίνακας Α04. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά ομάδες ηλικιών και τόπο γέννη]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A05_F_BI.xlsx/96ddb9db-1ee0-b0fe-ba3f-0dec65395653  [Πίνακας Α05. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά φύλο και οικογενειακή κατάστα]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A06_F_BI.xlsx/9ef0182e-47c5-8aff-939d-9ffb11391ffa  [Πίνακας Α06. Απογραφή Πληθυσμού 2021. Ιδιωτικά νοικοκυριά και αριθμός μελών αυτών κατά μέγ]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A07_F_BI.xlsx/35f42a30-451e-c04c-a3ea-7e0a23263f7b  [Πίνακας Α07. Απογραφή Πληθυσμού 2021. Ιδιωτικά μονομελή νοικοκυριά κατά φύλο και ομάδες ηλ]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A08_F_BI.xlsx/554735e7-3fc2-c974-c0db-283707ce31c9  [Πίνακας Α08. Απογραφή Πληθυσμού 2021. Ιδιωτικά νοικοκυριά κατά ιθαγένεια των μελών τους]
+  https://www.statistics.gr/documents/20181/17286366/MON_PLH_ELEKTR_APOGR_2021.xlsx/ad3e7f84-c277-c8b2-6be2-190666bf24fe  [Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός που απογράφηκε με ηλεκτρονική αυτοαπογραφή]
+  https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f?t=1679066566128  [εδώ]
+  https://www.statistics.gr/documents/20181/17286366/MON_PLI_DHM_KOIN_2021.xlsx/17bff52d-4fb3-6563-7d67-251116184f56  [εδώ]
+  https://www.statistics.gr/documents/20181/17286366/MON_PLI_DHM_OIKISN_2021.xlsx/2b5a5f24-4083-ede5-7201-3c4fb109fb44  [ΜΟΝΙΜΟΣ ΠΛΗΘΥΣΜΟΣ 2021 ΚΑΤΑ ΟΙΚΙΣΜΟ 29.03.2024]
+  (12 links shown)
+== links https://www.statistics.gr/en/2021-census-questionnaire pdf|questionnaire 10
+  HTTP 200 text/html;charset=UTF-8 131,413 bytes
+  https://www.statistics.gr/el/2021-census-questionnaire  [Ελληνικά]
+  https://www.statistics.gr/en/2021-census-questionnaire  [Ερωτηματολόγιο Απογραφής]
+  https://www.statistics.gr/en/2021-census-questionnaire  [Ερωτηματολόγιο Απογραφής]
+  (3 links shown)
