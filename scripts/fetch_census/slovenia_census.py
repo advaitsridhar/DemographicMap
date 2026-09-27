@@ -76,7 +76,9 @@ NOTES = {
     "ethnicity": ("Ethnic affiliation (narodna pripadnost), Census 2002 (31 March 2002), the whole "
                   "population, one answer. SURS publishes Slovenes and the three constitutional "
                   "minorities -- Italians, Hungarians, Roma -- by municipality; every other declared "
-                  "affiliation (Croats, Serbs, Bosniaks, Muslims and the rest) is 'Other'. 'Not "
+                  "affiliation (Croats, Serbs, Bosniaks, Muslims and the rest) is 'Other', and so "
+                  "are the few Italians, Hungarians or Roma of a municipality whose count SiStat "
+                  "blanks. 'Not "
                   "declared' did not declare an ethnic affiliation; 'Not stated' did not want to "
                   "reply; 'Unknown' is those the census could not establish. SiStat blanks cells of "
                   "few people for confidentiality: one blank cell is rebuilt from the subtotal it "
@@ -277,8 +279,18 @@ def build() -> list[dict[str, Any]]:
         f"{suppressed['ethnicity']:,.0f}, religion {suppressed['religion']:,.0f}, "
         f"mother tongue {suppressed['language']:,.0f}")
     for group in MINORITIES.values():
-        check_sum((minority[group].get(n, 0.0) for n in names), minority[group][national],
-                  f"{group}s by municipality against Slovenia")
+        # These tables blank a municipality's count of a few people too; the
+        # blanked municipalities' people stay inside "Other", which is what
+        # the note says. More than the country, or a large share missing, is
+        # a misreading.
+        published = sum(minority[group].get(n, 0.0) for n in names)
+        blank = [n for n in names if n not in minority[group]]
+        whole = minority[group][national]
+        if published > whole + 0.5 or whole - published > 0.2 * whole:
+            raise SystemExit(f"slovenia_census: {group}s by municipality make {published:,.0f} of "
+                             f"{whole:,.0f}")
+        log(f"  {group}s: {published:,.0f} of {whole:,.0f} published by municipality; "
+            f"{len(blank)} municipalities blank")
 
     bound = bind({str(i): today(n) for i, n in enumerate(names)})
     polygon = {names[int(i)]: shape for i, shape in bound.items()}

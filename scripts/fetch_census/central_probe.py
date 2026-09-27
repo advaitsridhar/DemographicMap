@@ -1546,7 +1546,27 @@ def deu10() -> None:
                   limit=8)
 
 
+def deu11() -> None:
+    """The header of the RLP Zensus population sheet, and its Kreis rows."""
+    import io as _io
+    import openpyxl
+    url = ("https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/"
+           "3_Zensus/07_RP_Regionaltabelle_Bevoelkerung_Z22.xlsx")
+    status, _, body = fetch(url)
+    log(f"\n## {url}: HTTP {status}, {len(body):,} bytes")
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    for name in ("Bevölkerung", "Bevölkerung_nachrichtlich"):
+        rows = [list(r) for r in book[name].iter_rows(values_only=True)]
+        log(f"   sheet {name!r}: {len(rows)} rows x {max(len(r) for r in rows)} cols")
+        for r in rows[:9]:
+            log("     " + " | ".join(str(c)[:30].replace("\n", " ") for c in r if c is not None))
+        for r in rows:
+            if r and str(r[0]).strip() in ("07", "071", "072", "073", "07111", "07211", "07311"):
+                log("     > " + " | ".join(str(c)[:14] for c in r[:60] if c is not None))
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu11": deu11,
     "deu10": deu10,
     "deu9": deu9,
     "aut9": aut9,
