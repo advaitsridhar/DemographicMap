@@ -254,6 +254,8 @@ def composition(rows, place: str, var: str, total_code: str, skip: set[str],
     # in places (Haabersti 41,691 of 41,694; Paldiski 4,077 of 4,085); more
     # than 0.3%, or ten people, is a misread.
     for code, counts in out.items():
+        if "_" in code:
+            continue           # "Hiiu county rural municipalities" and the like: not used
         parts = sum(v for k, v in counts.items() if k != "__total__")
         if abs(parts - counts["__total__"]) > max(10, 0.003 * counts["__total__"]):
             raise SystemExit(f"{var} at {code}: categories make {parts:,.0f} of "

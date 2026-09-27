@@ -48,6 +48,7 @@ from typing import Any
 
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import fold
+from .cod_ps_age import grouped_median
 from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_parts, load_units,
                             request, sex_ratio, unplaced)
 
@@ -282,69 +283,91 @@ def main() -> int:
             unknown[code] += value
         else:
             people[code].add(85 if age == "g085" else int(age), "m" if sex == "1" else "f", value)
-    # The five-year table is the check on the single years: the same people,
-    # tabulated a second time.
+    # The five-year table is complete; the single-year one withholds small
+    # cells as confidential (Birštonas's single years make 3,971 of 4,006).
+    # Where a unit's single years are all there, its median comes from them;
+    # where any is withheld, from its five-year groups, and the note says so.
     grouped: dict[tuple[str, str], float] = {}
+    bands: dict[str, list[tuple[int, int | None, float]]] = defaultdict(list)
     for key, value in rows:
-        if value is not None and key["Demogr_amziaus_grM1412"] == "g000g999":
-            grouped[(key["savivaldybesRegdb"], key["Lytis"])] = value
+        if value is None:
+            continue
+        code, sex, group = key["savivaldybesRegdb"], key["Lytis"], key["Demogr_amziaus_grM1412"]
+        if group == "g000g999":
+            grouped[(code, sex)] = value
+        elif sex == "0" and group != "gxxx":
+            bands[code].append((int(group[1:4]), int(group[5:8]) if len(group) > 4 else None,
+                                value))
+    for code in {c for c, _ in grouped}:
+        if abs(grouped.get((code, "1"), 0) + grouped.get((code, "2"), 0)
+               - grouped.get((code, "0"), 0)) > 0.5:
+            raise SystemExit(f"{AGES} {code}: males and females do not make the total")
+    complete: set[str] = set()
     for code, got in people.items():
-        whole = totals.get((code, "0"), grouped.get((code, "0"), -1))
-        if abs(got.total + unknown[code] - whole) > 0.5:
-            raise SystemExit(f"{SINGLE} {code}: single years make {got.total:,.0f} "
-                             f"(+{unknown[code]:,.0f} of unknown age) against {whole:,.0f}")
-        if abs(whole - grouped.get((code, "0"), whole)) > 0.5:
-            raise SystemExit(f"{code}: {SINGLE} counts {whole:,.0f}, {AGES} "
-                             f"{grouped.get((code, '0')):,.0f}")
-        for sex, count in (("1", got.men), ("2", got.women)):
-            if (code, sex) in grouped and abs(count - grouped[(code, sex)]) > unknown[code] + 0.5:
-                raise SystemExit(f"{code} sex {sex}: single years make {count:,.0f} against "
-                                 f"{grouped[(code, sex)]:,.0f}")
+        whole = grouped.get((code, "0"), -1)
+        missing = whole - got.total - unknown[code]
+        if missing < -0.5:
+            raise SystemExit(f"{SINGLE} {code}: single years make {got.total:,.0f} against "
+                             f"{whole:,.0f}")
+        if missing <= 0.5:
+            complete.add(code)
+    log(f"  single years complete for {len(complete)} of {len(people)} units; the rest "
+        f"take the five-year median: {sorted(set(people) - complete)}")
     medians = {key["savivaldybesRegdb"]: value for key, value in observations(MEDIAN, year)
                if key["Lytis"] == "0" and value is not None}
 
     def total(code: str) -> float:
-        return grouped.get((code, "0"), people[code].total + unknown[code])
+        return grouped[(code, "0")]
 
-    counties = sorted(c for c in people if len(c) == 2 and c.isdigit() and 1 <= int(c) <= 10)
-    municipalities = sorted(c for c in people if len(c) == 2 and c.isdigit() and int(c) > 10)
+    def median(code: str) -> float | None:
+        if code in complete:
+            return people[code].median()
+        return grouped_median(sorted(bands[code], key=lambda b: b[0]))
+
+    units = {c for c, _ in grouped}
+    counties = sorted(c for c in units if len(c) == 2 and c.isdigit() and 1 <= int(c) <= 10)
+    municipalities = sorted(c for c in units if len(c) == 2 and c.isdigit() and int(c) > 10)
     check_parts({c: total(c) for c in counties}, total("00"),
                 f"{AGES} {year}: counties -> Lithuania", 0)
     check_parts({c: total(c) for c in municipalities}, total("00"),
                 f"{AGES} {year}: municipalities -> Lithuania", 0)
     # Statistics Lithuania publishes the median in completed years; the one
     # interpolated here from the same single years should fall in that year.
-    off = [f"{c} {medians[c]:.0f} vs {people[c].median()}" for c in counties + municipalities
-           + ["00"] if c in medians and int(people[c].median() or 0) != int(medians[c])]
-    log(f"  national median {people['00'].median()} (the office: {medians.get('00')} in "
+    off = [f"{c} {medians[c]:.0f} vs {median(c)}" for c in counties + municipalities
+           + ["00"] if c in medians and int(median(c) or 0) != int(medians[c])]
+    log(f"  national median {median('00')} (the office: {medians.get('00')} in "
         f"completed years); units whose interpolated median is not in the office's year: "
         f"{off or 'none'}")
 
     def fields(code: str) -> dict[str, Any]:
-        ages = people[code]
+        men, women = grouped[(code, "1")], grouped[(code, "2")]
         date = f"1 January {year}"
-        out: dict[str, Any] = {
+        single = code in complete
+        office = (f" The office publishes the median in completed years ({MEDIAN}: "
+                  f"{medians[code]:.0f} here); this is the same median to a tenth of a year, "
+                  "as the rest of the map gives it." if code in medians else "")
+        return {
             "population": measure(int(round(total(code))), year=year,
                                   source=f"{SOURCE}, {AGES}"),
             "population_note": f"Resident population at the beginning of {year}.",
-            "median_age": measure(ages.median(), unit="years", year=year,
-                                  source=f"{SOURCE}, {SINGLE}"),
+            "median_age": measure(median(code), unit="years", year=year,
+                                  source=f"{SOURCE}, {SINGLE if single else AGES}"),
             "median_age_note": (
-                "Interpolated within the single year of age that holds the middle person, from "
-                f"Statistics Lithuania's residents by single year of age on {date}. The office "
-                f"publishes the median in completed years ({MEDIAN}: "
-                f"{medians[code]:.0f} here); this is the same median to a tenth of a year, as "
-                "the rest of the map gives it." if code in medians else
-                "Interpolated within the single year of age that holds the middle person."),
-            "sex_ratio": measure(sex_ratio(ages.men, ages.women), unit=SEX_RATIO_UNIT, year=year,
-                                 source=f"{SOURCE}, {SINGLE}"),
+                (f"Interpolated within the single year of age that holds the middle person, "
+                 f"from Statistics Lithuania's residents by single year of age on {date}."
+                 if single else
+                 f"Interpolated within the five-year age group that holds the middle person, "
+                 f"from Statistics Lithuania's residents by five-year group on {date}: the "
+                 "office withholds some of this municipality's single years as confidential.")
+                + office),
+            "sex_ratio": measure(sex_ratio(men, women), unit=SEX_RATIO_UNIT, year=year,
+                                 source=f"{SOURCE}, {AGES}"),
             "sex_ratio_note": (f"Males per 100 females among residents on {date} "
-                               f"({int(ages.men):,} males, {int(ages.women):,} females)."),
+                               f"({int(men):,} males, {int(women):,} females)."),
             "sources": [{"field": "population/median age/sex ratio",
-                         "name": f"{SOURCE}, {SINGLE}",
-                         "url": PAGE.format(flow=SINGLE.split("_")[0]), "year": year}],
+                         "name": f"{SOURCE}, {AGES}" + (f" and {SINGLE}" if single else ""),
+                         "url": PAGE.format(flow=AGES.split("_")[0]), "year": year}],
         }
-        return out
 
     # --- The censuses' compositions.
     comp: dict[str, dict[str, Any]] = defaultdict(dict)

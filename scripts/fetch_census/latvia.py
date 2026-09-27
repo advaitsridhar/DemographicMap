@@ -68,11 +68,11 @@ STATE_CITIES = ("LV0001000", "LV0002000", "LV0003000", "LV0004000", "LV0005000",
 PRE_MERGER = ("LV0038000", "LV0055000")
 # The parishes whose centre became a town after the map's boundaries: the town
 # (not drawn) and the parish (recoded) make the drawn parish.
-REJOINED = {"LV0023401": "LV0023200", "LV0034421": "LV0034200", "LV0039411": "LV0039200"}
+REJOINED = {"LV0023401": "LV0023200", "LV0034421": "LV0034220", "LV0039411": "LV0039200"}
 
 ETHNICITY = {"Latvians": "Latvian", "Russians": "Russian", "Belarusians": "Belarusian",
              "Ukrainians": "Ukrainian", "Poles": "Polish", "Lithuanians": "Lithuanian",
-             "Jews": "Jewish", "Roma": "Roma", "Germans": "German", "Estonians": "Estonian",
+             "Jews": "Jewish", "Roma": "Romani", "Germans": "German", "Estonians": "Estonian",
              "Tatars": "Tatar", "Armenians": "Armenian", "Azerbaijanis": "Azerbaijani",
              "Moldavians": "Moldovan", "Indians": "Indian", "Georgians": "Georgian",
              "Uzbeks": "Uzbek", "Chuvashes": "Chuvash", "Livs": "Liv",
@@ -207,7 +207,7 @@ def main() -> int:
     lv81 = meta("IRD081", "lv")
     names81 = dict(zip(lv81["AREA"]["values"], lv81["AREA"]["valueTexts"]))
     units = [c for c in m81["AREA"]["values"] if re.fullmatch(r"LV00\d{5}", c)
-             and (not c.endswith("000") or c in STATE_CITIES)]
+             and (not c.endswith("000") or c in STATE_CITIES) and c != "LV0038001"]
     bands = [a for a in m81["AgeGroup"]["values"]
              if (re.fullmatch(r"Y(\d+)-(\d+)", a) and
                  int(a[1:].split("-")[1]) - int(a[1:].split("-")[0]) == 4) or a == "Y_GE85"]
