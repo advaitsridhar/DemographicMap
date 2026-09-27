@@ -1,209 +1,23 @@
-== ESS1e06_7 limitation=None weight={'name': {'en': 'pspwght'}} variables=567
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghoma: Language most often spoken at home: first mentioned
-   lnghomb: Language most often spoken at home: second mentioned
-   regionat: Region, Austria
-   regionbe: Region, Belgium
-   regioach: Region, Switzerland
-   regioncz: Region, Czechia
-   regionde: Region, Germany
-   regiondk: Region, Denmark
-   regiones: Region, Spain
-   regionfi: Region, Finland
-   regionfr: Region, France
-   regiongb: Region, United Kingdom
-   regiongr: Region, Greece
-   regionhu: Region, Hungary
-   regionie: Region, Ireland
-   regionil: Region, Israel
-   regionit: Region, Italy
-   regionlu: Region, Luxembourg
-   regionnl: Region, Netherlands
-   regionno: Region, Norway
-   regionpl: Region, Poland
-   regionpt: Region, Portugal
-   regionse: Region, Sweden
-   regionsi: Region, Slovenia
-== ESS4e04_6 limitation=None weight={'name': {'en': 'pspwght'}} variables=674
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnat: Religion or denomination belonging to at present, Austria
-   rlgdnch: Religion or denomination belonging to at present, Switzerland
-   rlgdncy: Religion or denomination belonging to at present, Cyprus
-   rlgdnfi: Religion or denomination belonging to at present, Finland
-   rlgdngb: Religion or denomination belonging to at present, United Kingdom
-   rlgdngr: Religion or denomination belonging to at present, Greece
-   rlgdnhu: Religion or denomination belonging to at present, Hungary
-   rlgdnie: Religion or denomination belonging to at present, Ireland
-   rlgdnil: Religion or denomination belonging to at present, Israel
-   rlgdnlt: Religion or denomination belonging to at present, Lithuania
-   rlgdnlv: Religion or denomination belonging to at present, Latvia
-   rlgdnnl: Religion or denomination belonging to at present, Netherlands
-   rlgdnno: Religion or denomination belonging to at present, Norway
-   rlgdnpl: Religion or denomination belonging to at present, Poland
-   rlgdnpt: Religion or denomination belonging to at present, Portugal
-   rlgdnro: Religion or denomination belonging to at present, Romania
-   rlgdnru: Religion or denomination belonging to at present, Russian Federation
-   rlgdnse: Religion or denomination belonging to at present, Sweden
-   rlgdnsk: Religion or denomination belonging to at present, Slovakia
-   rlgdnua: Religion or denomination belonging to at present, Ukraine
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghoma: Language most often spoken at home: first mentioned
-   lnghomb: Language most often spoken at home: second mentioned
-   regionat: Region, Austria
-   regionbe: Region, Belgium
-   regionbg: Region, Bulgaria
-   regioach: Region, Switzerland
-   regioncy: Region, Cyprus
-   regioacz: Region, Czechia
-   regionde: Region, Germany
-   regioadk: Region, Denmark
-   regionee: Region, Estonia
-   regioaes: Region, Spain
-   regioafi: Region, Finland
-   regionfr: Region, France
-   regiongb: Region, United Kingdom
-   regioagr: Region, Greece
-   regionhr: Region, Croatia
-   regionhu: Region, Hungary
-   regiobie: Region, Ireland
-   regionil: Region, Israel
-   regionlt: Region, Lithuania
-   regionlv: Region, Latvia
-   regionnl: Region, Netherlands
-   regionno: Region, Norway
-   regionpl: Region, Poland
-   regioapt: Region, Portugal
-   regionro: Region, Romania
-   regionru: Region, Russian Federation
-   regionse: Region, Sweden
-   regionsi: Region, Slovenia
-   regionsk: Region, Slovakia
-   regiontr: Region, Turkey
-   regionua: Region, Ukraine
-== ESS5e03_6 limitation=None weight={'name': {'en': 'pspwght'}} variables=720
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnbe: Religion or denomination belonging to at present, Belgium
-   rlgdnach: Religion or denomination belonging to at present, Switzerland
-   rlgdncy: Religion or denomination belonging to at present, Cyprus
-   rlgdnde: Religion or denomination belonging to at present, Germany
-   rlgdndk: Religion or denomination belonging to at present, Denmark
-   rlgdnafi: Religion or denomination belonging to at present, Finland
-   rlgdngb: Religion or denomination belonging to at present, United Kingdom
-   rlgdnagr: Religion or denomination belonging to at present, Greece
-   rlgdnhu: Religion or denomination belonging to at present, Hungary
-   rlgdnie: Religion or denomination belonging to at present, Ireland
-   rlgdnil: Religion or denomination belonging to at present, Israel
-   rlgdnlt: Religion or denomination belonging to at present, Lithuania
-   rlgdnnl: Religion or denomination belonging to at present, Netherlands
-   rlgdnno: Religion or denomination belonging to at present, Norway
-   rlgdnapl: Religion or denomination belonging to at present, Poland
-   rlgdnpt: Religion or denomination belonging to at present, Portugal
-   rlgdnaru: Religion or denomination belonging to at present, Russian Federation
-   rlgdnase: Religion or denomination belonging to at present, Sweden
-   rlgdnsi: Religion or denomination belonging to at present, Slovenia
-   rlgdnsk: Religion or denomination belonging to at present, Slovakia
-   rlgdnua: Religion or denomination belonging to at present, Ukraine
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghom1: Language most often spoken at home: first mentioned
-   lnghom2: Language most often spoken at home: second mentioned
-   region: Region
-   regunit: Regional unit
-== ESS8e02_3 limitation=None weight={'name': {'en': 'pspwght'}} variables=535
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnbat: Religion or denomination belonging to at present, Austria
-   rlgdnbe: Religion or denomination belonging to at present, Belgium
-   rlgdnach: Religion or denomination belonging to at present, Switzerland
-   rlgdnade: Religion or denomination belonging to at present, Germany
-   rlgdnafi: Religion or denomination belonging to at present, Finland
-   rlgdngb: Religion or denomination belonging to at present, United Kingdom
-   rlgdnhu: Religion or denomination belonging to at present, Hungary
-   rlgdnie: Religion or denomination belonging to at present, Ireland
-   rlgdnis: Religion or denomination belonging to at present, Iceland
-   rlgdnlt: Religion or denomination belonging to at present, Lithuania
-   rlgdnnl: Religion or denomination belonging to at present, Netherlands
-   rlgdnno: Religion or denomination belonging to at present, Norway
-   rlgdnapl: Religion or denomination belonging to at present, Poland
-   rlgdnase: Religion or denomination belonging to at present, Sweden
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghom1: Language most often spoken at home: first mentioned
-   lnghom2: Language most often spoken at home: second mentioned
-   region: Region
-   regunit: Regional unit
-== ESS9e03_3 limitation=None weight={'name': {'en': 'pspwght'}} variables=591
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnbat: Religion or denomination belonging to at present, Austria
-   rlgdnbe: Religion or denomination belonging to at present, Belgium
-   rlgdnach: Religion or denomination belonging to at present, Switzerland
-   rlgdncy: Religion or denomination belonging to at present, Cyprus
-   rlgdnade: Religion or denomination belonging to at present, Germany
-   rlgdnafi: Religion or denomination belonging to at present, Finland
-   rlgdngb: Religion or denomination belonging to at present, United Kingdom
-   rlgdnhu: Religion or denomination belonging to at present, Hungary
-   rlgdnie: Religion or denomination belonging to at present, Ireland
-   rlgdnais: Religion or denomination belonging to at present, Iceland
-   rlgdnlt: Religion or denomination belonging to at present, Lithuania
-   rlgdnlv: Religion or denomination belonging to at present, Latvia
-   rlgdnnl: Religion or denomination belonging to at present, Netherlands
-   rlgdnno: Religion or denomination belonging to at present, Norway
-   rlgdnapl: Religion or denomination belonging to at present, Poland
-   rlgdnrs: Religion or denomination belonging to at present, Serbia
-   rlgdnase: Religion or denomination belonging to at present, Sweden
-   rlgdnask: Religion or denomination belonging to at present, Slovakia
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghom1: Language most often spoken at home: first mentioned
-   lnghom2: Language most often spoken at home: second mentioned
-   region: Region
-   regunit: Regional unit
-== ESS11e04_2 limitation=None weight={'name': {'en': 'pspwght'}} variables=709
-   dweight: Design weight
-   pspwght: Post-stratification weight including design weight
-   pweight: Population size weight (must be combined with dweight or pspwght)
-   anweight: Analysis weight
-   rlgdnm: Religion or denomination belonging to at present
-   rlgdnxx: Religion or denomination belonging to at present, [country]
-   rlgdnbat: Religion or denomination belonging to at present, Austria
-   rlgdncy: Religion or denomination belonging to at present, Cyprus
-   rlgdnafi: Religion or denomination belonging to at present, Finland
-   rlgdnade: Religion or denomination belonging to at present, Germany
-   rlgdnagr: Religion or denomination belonging to at present, Greece
-   rlgdnhu: Religion or denomination belonging to at present, Hungary
-   rlgdnais: Religion or denomination belonging to at present, Iceland
-   rlgdnie: Religion or denomination belonging to at present, Ireland
-   rlgdnlv: Religion or denomination belonging to at present, Latvia
-   rlgdnlt: Religion or denomination belonging to at present, Lithuania
-   rlgdnanl: Religion or denomination belonging to at present, Netherlands
-   rlgdnno: Religion or denomination belonging to at present, Norway
-   rlgdnapl: Religion or denomination belonging to at present, Poland 
-   rlgdnapt: Religion or denomination belonging to at present, Portugal
-   rlgdnrs: Religion or denomination belonging to at present, Serbia
-   rlgdnask: Religion or denomination belonging to at present, Slovakia
-   rlgdnase:  Religion or denomination belonging to at present, Sweden
-   rlgdnach: Religion or denomination belonging to at present, Switzerland
-   rlgdnaua: Religion or denomination belonging to at present, Ukraine
-   rlgdngb: Religion or denomination belonging to at present, United Kingdom
-   rlgdnme: Religion or denomination belonging to in the past
-   lnghom1: Language most often spoken at home: first mentioned
-   lnghom2: Language most often spoken at home: second mentioned
-   regunit: Regional unit
-   region: Region, [country]
+czechia_ages: ČSÚ 130181, 31 December 2024
+  Prague is listed only as a kraj; the kraj is the okres
+  77 okresy, 14 kraje, Czechia 10,909,500
+  okresy against Czechia: parts sum to 10,909,500 = 10,909,500
+  okresy against Hlavní město Praha: parts sum to 1,397,880 = 1,397,880
+  okresy against Jihomoravský kraj: parts sum to 1,229,343 = 1,229,343
+  okresy against Jihočeský kraj: parts sum to 653,227 = 653,227
+  okresy against Karlovarský kraj: parts sum to 293,195 = 293,195
+  okresy against Kraj Vysočina: parts sum to 517,647 = 517,647
+  okresy against Královéhradecký kraj: parts sum to 555,923 = 555,923
+  okresy against Liberecký kraj: parts sum to 449,494 = 449,494
+  okresy against Moravskoslezský kraj: parts sum to 1,182,613 = 1,182,613
+  okresy against Olomoucký kraj: parts sum to 631,500 = 631,500
+  okresy against Pardubický kraj: parts sum to 530,469 = 530,469
+  okresy against Plzeňský kraj: parts sum to 614,640 = 614,640
+  okresy against Středočeský kraj: parts sum to 1,466,215 = 1,466,215
+  okresy against Zlínský kraj: parts sum to 578,998 = 578,998
+  okresy against Ústecký kraj: parts sum to 808,356 = 808,356
+  national median 44.3 against Eurostat's 44.3 (CZ, 1 January 2025)
+  czechia_ages: 0 office units unbound
+  czechia_ages: 0 polygons without an office unit
+  wrote data/processed/czechia_okres_age.json (144 kB)
+  wrote czechia_okres_age.json: 77 records
