@@ -153,6 +153,10 @@ def table_4_5(lines: list[str]) -> dict[str, Any]:
         if men + women != total:
             raise SystemExit(f"bahamas_census: Table 4.x's {label} does not add up")
         flat = fold(label)
+        if flat == "allages" and whole is not None:
+            # A report may carry a second island's table after its own
+            # (San Salvador's has Rum Cay's): the first is the island's.
+            break
         if flat == "allages":
             whole = figures
         elif flat == "underoneyear":
