@@ -1,0 +1,4493 @@
+[
+  {
+    "id": "LTU-OSP-11",
+    "level": "admin2",
+    "name": "Alytaus miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 49940,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 83.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "11"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B958335003508",
+    "aliases": [
+      "Alytus City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (22,721 males, 27,219 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-12",
+    "level": "admin2",
+    "name": "Birštono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4006,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 53.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 80.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "12"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B93357348793773",
+    "aliases": [
+      "Birštonas Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,789 males, 2,217 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-13",
+    "level": "admin2",
+    "name": "Vilniaus miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 618469,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 40.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "13"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B78013388864494",
+    "aliases": [
+      "Vilnius City Municipality",
+      "Vilnius city municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (289,213 males, 329,256 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-15",
+    "level": "admin2",
+    "name": "Druskininkų savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19837,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 82.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "15"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B23591718206413",
+    "aliases": [
+      "Druskininkai Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (8,951 males, 10,886 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-18",
+    "level": "admin2",
+    "name": "Marijampolės savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 53498,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "18"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B47850525083894",
+    "aliases": [
+      "Marijampolė Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (25,706 males, 27,792 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-19",
+    "level": "admin2",
+    "name": "Kauno miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 302835,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 85.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "19"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B48348892853803",
+    "aliases": [
+      "Kaunas City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (139,356 males, 163,479 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-21",
+    "level": "admin2",
+    "name": "Klaipėdos miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 160026,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "21"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B64125083057435",
+    "aliases": [
+      "Klaipėda City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (75,860 males, 84,166 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-23",
+    "level": "admin2",
+    "name": "Neringos savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4570,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 110.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "23"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B64747782270187",
+    "aliases": [
+      "Neringa Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,399 males, 2,171 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-25",
+    "level": "admin2",
+    "name": "Palangos miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19172,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 83.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "25"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B47027754059351",
+    "aliases": [
+      "Palanga City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (8,703 males, 10,469 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-27",
+    "level": "admin2",
+    "name": "Panevėžio miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 84319,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 80.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "27"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B51621255818102",
+    "aliases": [
+      "Panevėžys City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (37,553 males, 46,766 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-29",
+    "level": "admin2",
+    "name": "Šiaulių miesto savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110965,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 100.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "29"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B84962432838039",
+    "aliases": [
+      "Šiauliai City Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (55,631 males, 55,334 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-30",
+    "level": "admin2",
+    "name": "Visagino savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19075,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 54.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 84.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "30"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B53691602254023",
+    "aliases": [
+      "Visaginas Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (8,740 males, 10,335 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-32",
+    "level": "admin2",
+    "name": "Akmenės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18696,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "32"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B19680787271480",
+    "aliases": [
+      "Akmenė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (8,739 males, 9,957 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-33",
+    "level": "admin2",
+    "name": "Alytaus rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25042,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 97.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "33"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B23813994536719",
+    "aliases": [
+      "Alytus District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,378 males, 12,664 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-34",
+    "level": "admin2",
+    "name": "Anykščių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21495,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 52.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "34"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B32203198726618",
+    "aliases": [
+      "Anykščiai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,160 males, 11,335 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-36",
+    "level": "admin2",
+    "name": "Biržų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21322,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 51.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "36"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B87535949066972",
+    "aliases": [
+      "Biržai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,925 males, 11,397 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-38",
+    "level": "admin2",
+    "name": "Varėnos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19233,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 51.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "38"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B52462533656601",
+    "aliases": [
+      "Varėna District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,065 males, 10,168 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-39",
+    "level": "admin2",
+    "name": "Vilkaviškio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32982,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "39"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B94579919059328",
+    "aliases": [
+      "Vilkaviškis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (15,582 males, 17,400 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-41",
+    "level": "admin2",
+    "name": "Vilniaus rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 111178,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 41.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "41"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B33564586220358",
+    "aliases": [
+      "Vilnius District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (55,813 males, 55,365 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-42",
+    "level": "admin2",
+    "name": "Elektrėnų savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24701,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 103.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "42"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B9951638453861",
+    "aliases": [
+      "Elektrėnai Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,587 males, 12,114 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-43",
+    "level": "admin2",
+    "name": "Zarasų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13635,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 52.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 91.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "43"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B55752354541696",
+    "aliases": [
+      "Zarasai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,528 males, 7,107 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-45",
+    "level": "admin2",
+    "name": "Ignalinos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13127,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 53.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 91.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "45"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B54033796332928",
+    "aliases": [
+      "Ignalina District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,261 males, 6,866 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-46",
+    "level": "admin2",
+    "name": "Jonavos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41382,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "46"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B51281976461447",
+    "aliases": [
+      "Jonava District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (19,518 males, 21,864 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-47",
+    "level": "admin2",
+    "name": "Joniškio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19732,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 51.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 88.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "47"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B88062668757499",
+    "aliases": [
+      "Joniškis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,283 males, 10,449 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-48",
+    "level": "admin2",
+    "name": "Kalvarijos savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9421,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 45.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 95.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "48"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B26680693475402",
+    "aliases": [
+      "Kalvarija Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (4,603 males, 4,818 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-49",
+    "level": "admin2",
+    "name": "Kaišiadorių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28074,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "49"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B66724991187815",
+    "aliases": [
+      "Kaišiadorys District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (14,018 males, 14,056 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-52",
+    "level": "admin2",
+    "name": "Kauno rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112612,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 39.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 99.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "52"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B6876723760209",
+    "aliases": [
+      "Kaunas District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (56,253 males, 56,359 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-53",
+    "level": "admin2",
+    "name": "Kėdainių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44998,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 88.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "53"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B87524117887750",
+    "aliases": [
+      "Kėdainiai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (21,116 males, 23,882 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-54",
+    "level": "admin2",
+    "name": "Kelmės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23577,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 51.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "54"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B31334161208249",
+    "aliases": [
+      "Kelmė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (11,192 males, 12,385 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-55",
+    "level": "admin2",
+    "name": "Klaipėdos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 71652,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 39.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 105.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "55"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B73828057326517",
+    "aliases": [
+      "Klaipėda District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (36,794 males, 34,858 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-56",
+    "level": "admin2",
+    "name": "Kretingos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37206,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 45.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "56"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B52033520810825",
+    "aliases": [
+      "Kretinga District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,638 males, 19,568 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-57",
+    "level": "admin2",
+    "name": "Kupiškio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15092,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 52.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 86.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "57"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B56427257756618",
+    "aliases": [
+      "Kupiškis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,988 males, 8,104 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-58",
+    "level": "admin2",
+    "name": "Kazlų Rūdos savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10723,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 95.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "58"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B1937174061262",
+    "aliases": [
+      "Kazlų Rūda Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (5,235 males, 5,488 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-59",
+    "level": "admin2",
+    "name": "Lazdijų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16578,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "59"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B77313557253126",
+    "aliases": [
+      "Lazdijai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,985 males, 8,593 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-61",
+    "level": "admin2",
+    "name": "Mažeikių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 50934,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "61"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B42840419903399",
+    "aliases": [
+      "Mažeikiai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (24,511 males, 26,423 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-62",
+    "level": "admin2",
+    "name": "Molėtų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15963,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 94.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "62"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B57491286310760",
+    "aliases": [
+      "Molėtai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,733 males, 8,230 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-63",
+    "level": "admin2",
+    "name": "Pagėgių savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6782,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "63"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B31614015316933",
+    "aliases": [
+      "Pagėgiai Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (3,251 males, 3,531 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-65",
+    "level": "admin2",
+    "name": "Pakruojo rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17230,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "65"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B26472515535575",
+    "aliases": [
+      "Pakruojis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (8,116 males, 9,114 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-66",
+    "level": "admin2",
+    "name": "Panevėžio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35375,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 96.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "66"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B19214472922004",
+    "aliases": [
+      "Panevėžys District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,327 males, 18,048 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-67",
+    "level": "admin2",
+    "name": "Pasvalio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21228,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "67"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B72633182131167",
+    "aliases": [
+      "Pasvalys District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,071 males, 11,157 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-68",
+    "level": "admin2",
+    "name": "Plungės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32319,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "68"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B22174077231415",
+    "aliases": [
+      "Plungė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (15,365 males, 16,954 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-69",
+    "level": "admin2",
+    "name": "Prienų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24192,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "69"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B44341693454379",
+    "aliases": [
+      "Prienai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (11,476 males, 12,716 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-71",
+    "level": "admin2",
+    "name": "Radviliškio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33373,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 93.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "71"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B57047321755490",
+    "aliases": [
+      "Radviliškis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (16,081 males, 17,292 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-72",
+    "level": "admin2",
+    "name": "Raseinių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28995,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "72"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B48727813415150",
+    "aliases": [
+      "Raseiniai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (13,674 males, 15,321 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-73",
+    "level": "admin2",
+    "name": "Rokiškio rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26229,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 52.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "73"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B62572083915597",
+    "aliases": [
+      "Rokiškis District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,251 males, 13,978 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-74",
+    "level": "admin2",
+    "name": "Rietavo savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6981,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 93.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "74"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B8378901628021",
+    "aliases": [
+      "Rietavas Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (3,371 males, 3,610 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-75",
+    "level": "admin2",
+    "name": "Skuodo rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14686,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 52.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "75"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B19575014620111",
+    "aliases": [
+      "Skuodas District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,872 males, 7,814 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-77",
+    "level": "admin2",
+    "name": "Tauragės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37255,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "77"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B12012014009383",
+    "aliases": [
+      "Tauragė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,696 males, 19,559 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-78",
+    "level": "admin2",
+    "name": "Telšių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37902,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "78"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B40887948430993",
+    "aliases": [
+      "Telšiai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,729 males, 20,173 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-79",
+    "level": "admin2",
+    "name": "Trakų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35084,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 103.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "79"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B91704153083133",
+    "aliases": [
+      "Trakai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,813 males, 17,271 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-81",
+    "level": "admin2",
+    "name": "Ukmergės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34342,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 94.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "81"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B84073544529580",
+    "aliases": [
+      "Ukmergė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (16,664 males, 17,678 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-82",
+    "level": "admin2",
+    "name": "Utenos rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37099,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "82"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B52548165622067",
+    "aliases": [
+      "Utena District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,823 males, 19,276 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-84",
+    "level": "admin2",
+    "name": "Šakių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24724,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "84"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B24230260131185",
+    "aliases": [
+      "Šakiai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (11,849 males, 12,875 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-85",
+    "level": "admin2",
+    "name": "Šalčininkų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29598,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 100.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "85"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B39114729303503",
+    "aliases": [
+      "Šalčininkai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (14,836 males, 14,762 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-86",
+    "level": "admin2",
+    "name": "Švenčionių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20908,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "86"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B25375034168668",
+    "aliases": [
+      "Švenčionys District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,937 males, 10,971 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-87",
+    "level": "admin2",
+    "name": "Šilalės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20053,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 93.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "87"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B67749462373001",
+    "aliases": [
+      "Šilalė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,686 males, 10,367 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-88",
+    "level": "admin2",
+    "name": "Šilutės rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37906,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 91.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "88"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B72227806621488",
+    "aliases": [
+      "Šilutė District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (18,145 males, 19,761 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-89",
+    "level": "admin2",
+    "name": "Širvintų rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14432,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "89"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B19410193059273",
+    "aliases": [
+      "Širvintos District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,851 males, 7,581 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-91",
+    "level": "admin2",
+    "name": "Šiaulių rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40119,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "91"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B75279860604324",
+    "aliases": [
+      "Šiauliai District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (19,604 males, 20,515 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-94",
+    "level": "admin2",
+    "name": "Jurbarko rajono savivaldybė",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24713,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 102.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "94"
+    },
+    "match_by": "shape_id",
+    "shape_id": "59024439B45555642099427",
+    "aliases": [
+      "Jurbarkas District Municipality"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,493 males, 12,220 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-01",
+    "level": "admin1",
+    "name": "Alytus County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 130630,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 87.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "01"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B93217040597196",
+    "aliases": [
+      "Alytaus apskritis",
+      "Alytus county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (61,100 males, 69,530 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-02",
+    "level": "admin1",
+    "name": "Kaunas County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 587094,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 89.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "02"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B54951608919811",
+    "aliases": [
+      "Kauno apskritis",
+      "Kaunas county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (277,200 males, 309,894 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-03",
+    "level": "admin1",
+    "name": "Klaipeda County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 345218,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 93.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "03"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B21585051382269",
+    "aliases": [
+      "Klaipėdos apskritis",
+      "Klaipėda county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (166,411 males, 178,807 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-04",
+    "level": "admin1",
+    "name": "Marijampole County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 131348,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 92.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "04"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B36357844716419",
+    "aliases": [
+      "Marijampolės apskritis",
+      "Marijampolė county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (62,975 males, 68,373 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-05",
+    "level": "admin1",
+    "name": "Panevezys County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 203565,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 86.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "05"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B83915359981162",
+    "aliases": [
+      "Panevėžio apskritis",
+      "Panevėžys county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (94,115 males, 109,450 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-06",
+    "level": "admin1",
+    "name": "Siauliai County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 263692,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 46.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 95.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "06"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B46747206322764",
+    "aliases": [
+      "Šiaulių apskritis",
+      "Šiauliai county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (128,646 males, 135,046 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-07",
+    "level": "admin1",
+    "name": "Taurage County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88803,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 94.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "07"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B1026114868474",
+    "aliases": [
+      "Tauragės apskritis",
+      "Tauragė county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (43,126 males, 45,677 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-08",
+    "level": "admin1",
+    "name": "Telsiai County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 128136,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "08"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B31218690811927",
+    "aliases": [
+      "Telšių apskritis",
+      "Telšiai county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (60,976 males, 67,160 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-09",
+    "level": "admin1",
+    "name": "Utena County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120394,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 51.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 90.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "09"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B43626903589456",
+    "aliases": [
+      "Utenos apskritis",
+      "Utena county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (57,245 males, 63,149 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  },
+  {
+    "id": "LTU-OSP-10",
+    "level": "admin1",
+    "name": "Vilnius County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 888712,
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "median_age": {
+      "value": 41.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R629_M3010217"
+    },
+    "sex_ratio": {
+      "value": 91.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Lithuania, S3R167_M3010203"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex ratio",
+        "name": "Statistics Lithuania, S3R167_M3010203",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R167",
+        "year": 2026
+      },
+      {
+        "field": "median age",
+        "name": "Statistics Lithuania, S3R629_M3010217",
+        "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R629",
+        "year": 2026
+      }
+    ],
+    "country": "LTU",
+    "codes": {
+      "osp": "10"
+    },
+    "match_by": "shape_id",
+    "shape_id": "39236102B79521903246642",
+    "aliases": [
+      "Vilniaus apskritis",
+      "Vilnius county"
+    ],
+    "population_note": "Resident population at the beginning of 2026.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (423,714 males, 464,998 females).",
+    "median_age_note": "The median age at the beginning of 2026 as Statistics Lithuania publishes it for the unit, in whole years."
+  }
+]
