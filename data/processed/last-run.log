@@ -1,10 +1,17 @@
-  IGE design: {'12': 9216, '15': 3240, '27': 1620, '32': 1638, '36': 2718}
-  EULP effective sample: 8,682
-  admin1 Galicia: Spanish only 29.7, Galician only 24.4, Mostly Spanish 24.1, Mostly Galician 21.9
-  admin2 Coruna: Spanish only 33.5, Galician only 27.9, Mostly Spanish 21.0, Mostly Galician 17.5
-  admin2 Lugo: Galician only 42.8, Mostly Galician 23.8, Mostly Spanish 17.5, Spanish only 15.9
-  admin2 Ourense: Mostly Galician 32.8, Galician only 24.9, Mostly Spanish 23.9, Spanish only 18.4
-  admin2 Pontevedra: Spanish only 33.3, Mostly Spanish 30.1, Mostly Galician 22.9, Galician only 13.7
-  admin1 Cataluña/Catalunya: Spanish 46.5, Catalan 32.6, Catalan and Spanish 9.4, Spanish and another language 4.1, Other language 3.4, Not stated 1.5, Arabic 1.1, Catalan and another language 0.8, Other language combinations 0.4, Catalan, Spanish and another language 0.3, Aranese Occitan 0.0
-  wrote data/processed/spain_language_survey.json (14 kB)
-  6 records
+uk_mye: local authorities (county / unitary, April 2023)
+  TYPE423 latest: 207 places with both sexes so far
+  TYPE423 latestMINUS1: 218 places with both sexes so far
+uk_mye: the four nations
+  TYPE499 latest: 5 places with both sexes so far
+  TYPE499 latestMINUS1: 7 places with both sexes so far
+  England 2025: 153 places make 58,834,812, its own count
+  Scotland 2025: 32 places make 5,545,500, its own count
+  Wales 2025: 22 places make 3,175,181, its own count
+  Northern Ireland 2024: 11 places make 1,927,855, its own count
+  City of London: The Office for National Statistics estimates City of London at 8,689 (2021), 12,020 (2022), 14,514 (2023), 15,497 (2024), 15,631 (2025): 1.80 times its mid-2021 figure, in the office's own series for the same area, not a change of boundary.
+  220 records (216 local authorities, 4 nations); years {2025: 208, 2024: 12}
+  England: 58,834,812, median 40.6, 962 men per 1,000 women
+  Northern Ireland: 1,927,855, median 40.3, 971 men per 1,000 women
+  Scotland: 5,545,500, median 43.1, 944 men per 1,000 women
+  Wales: 3,175,181, median 43.2, 959 men per 1,000 women
+  wrote data/processed/uk_mye.json (396 kB)
