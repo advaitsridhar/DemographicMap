@@ -78,7 +78,8 @@ LANGUAGE = {"MT_HU": "Hungarian", "MT_BU": "Bulgarian", "MT_GIR": "Romani", "MT_
 NOTES = {
     "religion": ("Religion, Census 2022 (1 October 2022): one answer per person, voluntary; "
                  "everyone counted, with 'Not stated' for those who did not answer. Catholics "
-                 "who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'."),
+                 "who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. "
+                 "KSH blanks cells of a few people for confidentiality; they are left out."),
     "ethnicity": ("Ethnicity (nemzetiség), Census 2022: a person could declare up to two and "
                   "every declaration is counted, so each share is the percentage of the "
                   "population naming that ethnicity and the shares sum to more than 100. 'Not "
@@ -265,7 +266,9 @@ def build() -> list[dict[str, Any]]:
 def composition(c: dict[str, float], name: str) -> dict[str, Any]:
     total = c["VALLAS_V1"]
     partition = sum(c.get(k, 0) for k in PARTITION)
-    if abs(partition - total) > 0.5:
+    # KSH blanks a cell of a few people for confidentiality; such a cell reads
+    # as nothing here, so a partition may fall a handful short and no more.
+    if not 0 <= total - partition <= max(10, 0.001 * total):
         raise SystemExit(f"hungary: {name}: religion rows make {partition:,.0f} of {total:,.0f}")
     religion = {label: c.get(k, 0) for k, label in RELIGION.items()}
     religion["Catholic (unspecified)"] = c.get("RE_C", 0) - c.get("RE_RC", 0) - c.get("RE_GC", 0)
@@ -277,7 +280,7 @@ def composition(c: dict[str, float], name: str) -> dict[str, Any]:
         if abs(c.get(total_key, 0) - total) > 0.5:
             raise SystemExit(f"hungary: {name}: {field} is asked of {c.get(total_key):,.0f}, "
                              f"not the population {total:,.0f}")
-        if sum(counts.values()) < total - 0.5:
+        if sum(counts.values()) < total - max(10, 0.001 * total):
             raise SystemExit(f"hungary: {name}: {field} declarations ({sum(counts.values()):,.0f}) "
                              f"are fewer than the people ({total:,.0f})")
     out: dict[str, Any] = {}
