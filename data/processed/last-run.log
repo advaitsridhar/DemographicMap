@@ -1,218 +1,313 @@
 
-=== lux8
+=== che14
 
-## https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/20170511-141118/popcom2000-2017_LAU2.xlsx: HTTP 200, 32,175 bytes, 
-   sheets: ['A'] (1)
-   sheet 'A': 118 rows
-     POPULATION PAR COMMUNE
-     Code LAU2 | Commune | 1-1-2000 | 1-1-2001 | 15-02-2001 | 1-1-2002 | 1-1-2003 | 1-1-2004 | 1-1-2005 | 1-1-2006 | 1-1-2007 | 1-1-2008 | 1-1-2009 | 1-1-2010 | 1-1-2011 | 1-2-2011 | 1-1-2012 | 1-1-2013 | 1-1-2014 | 1-1-2015 | 1-1-2016 | 1-1-2017
-     0304 | Luxembourg-Ville | 80670 | 81804 | 76688 | 77965 | 78329 | 79366 | 80158 | 82509 | 83820 | 85467 | 88586 | 90848 | 94034 | 95058 | 99852 | 103641 | 107247 | 111287 | 115227 | 114303
-     0101 | Dippach | 3136 | 3209 | 3189 | 3233 | 3234 | 3332 | 3417 | 3421 | 3501 | 3518 | 3469 | 3537 | 3564 | 3544 | 3627 | 3727 | 3859 | 4037 | 4071 | 4178
-     0102 | Garnich | 1504 | 1485 | 1495 | 1511 | 1491 | 1502 | 1537 | 1546 | 1561 | 1635 | 1718 | 1771 | 1802 | 1861 | 1895 | 1931 | 1943 | 1991 | 2043 | 2099
-   13 rows match '(?i)rosport|mompach|hobscheid|septfontaines|boevange|tuntange|total|luxembourg$|^commune'
-     > Code LAU2 | Commune | 1-1-2000 | 1-1-2001 | 15-02-2001 | 1-1-2002 | 1-1-2003 | 1-1-2004 | 1-1-2005 | 1-1-2006 | 1-1-2007 | 1-1-2008 | 1-1-2009 | 1-1-2010 | 1-1-2011 | 1-2-2011 | 1-1-2012 | 1-1-2013 | 1-1-2014 | 1-1-2015 | 1-1-2016 | 1-1-2017
-     > 0103 | Hobscheid | 2512 | 2502 | 2563 | 2579 | 2609 | 2665 | 2720 | 2824 | 2866 | 2889 | 2982 | 3026 | 3079 | 3096 | 3173 | 3239 | 3271 | 3397 | 3434 | 3518
-     > 0109 | Septfontaines | 741 | 749 | 777 | 790 | 798 | 804 | 790 | 762 | 754 | 786 | 783 | 775 | 792 | 744 | 774 | 822 | 833 | 808 | 813 | 812
-     > 0403 | Boevange-Attert | 1745 | 1752 | 1760 | 1767 | 1735 | 1770 | 1824 | 1869 | 1892 | 1937 | 1930 | 1945 | 2000 | 2037 | 2079 | 2179 | 2250 | 2277 | 2280 | 2375
-     > 0411 | Tuntange | 970 | 1010 | 1027 | 1034 | 1063 | 1056 | 1044 | 1106 | 1123 | 1126 | 1174 | 1195 | 1288 | 1275 | 1318 | 1364 | 1459 | 1499 | 1608 | 1720
-     > 0501 | Commune de Clervaux | 3315 | 3375 | 3557 | 3616 | 3661 | 3781 | 3819 | 3889 | 3947 | 4041 | 4130 | 4231 | 4336 | 4358 | 4564 | 4603 | 4735 | 4815 | 4847 | 5069
-     > 0503 | Commune du Parc Hosing | 2194 | 2235 | 2223 | 2272 | 2390 | 2482 | 2566 | 2625 | 2726 | 2847 | 2870 | 2929 | 2968 | 2984 | 3083 | 3111 | 3201 | 3297 | 3350 | 3434
-     > 0610 | Commune de la vallée d | 1786 | 1807 | 1779 | 1800 | 1822 | 1865 | 1890 | 1931 | 1999 | 2085 | 2127 | 2223 | 2260 | 2349 | 2375 | 2431 | 2462 | 2520 | 2570 | 2591
-     > 0802 | Commune d'Esch-sur-Sûr | 1572 | 1630 | 1714 | 1766 | 1729 | 1740 | 1767 | 1809 | 1849 | 1937 | 2027 | 2096 | 2201 | 2201 | 2298 | 2418 | 2435 | 2477 | 2572 | 2640
-     > 0807 | Commune de Wiltz | 5155 | 5168 | 5176 | 5147 | 5160 | 5205 | 5305 | 5387 | 5488 | 5542 | 5603 | 5702 | 5809 | 5758 | 5903 | 6087 | 6243 | 6387 | 6522 | 6730
-     > 1006 | Mompach | 893 | 905 | 977 | 958 | 1000 | 1037 | 1032 | 1026 | 990 | 1019 | 1022 | 1047 | 1055 | 1065 | 1103 | 1181 | 1212 | 1243 | 1283 | 1303
-     > 1007 | Rosport | 1790 | 1793 | 1864 | 1885 | 1817 | 1865 | 1892 | 1920 | 1960 | 1980 | 2022 | 2051 | 2073 | 2076 | 2096 | 2097 | 2109 | 2140 | 2222 | 2293
-     > Total | 435479 | 441092 | 439539 | 444050 | 448300 | 454960 | 461230 | 469086 | 476187 | 483799 | 493500 | 502066 | 511840 | 512353 | 524853 | 537039 | 549680 | 562958 | 576249 | 590667
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets/36432820/master: HTTP 200, 22,136 bytes, attachment; filename="cc-t-40-se_strata-2024.xlsx"
+   sheets: ['readme', 'Schichtung P', 'stratification p', 'stratificazione p'] (4)
+   sheet 'readme': 26 rows
+     Erläuterungen
+     In diesem Dokument finden 
+     Weitere Information zur Me
+     Dieser Bericht ist auf der
+     Quelle: BFS - Strukturerhe
+     © BFS 2026
+     Auskunft: Bundesamt für St
+     Explications
+     Dans ce document, vous tro
+     Vous trouverez plus d'info
+     Ce rapport est disponible 
+     Source: OFS - Relevé struc
+     © OFS 2026
+     Renseignement: Office fédé
+     Spiegazioni
+     In questo documento trover
+     Ulteriori informazioni sul
+     Questo rapporto è disponib
+     Fonte: UST - Rilevazione s
+     © UST 2026
+     Servizio d'informazione: U
+   sheet 'Schichtung P': 35 rows
+     Schichtung Personen Strukt
+     Schicht | Berücksichtigte Bevölkerun | Stichprobenanteil
+     AG00 | 612778 | 0.0550199257
+     AI00 | 13808 | 0.0277375435
+     AR00 | 46838 | 0.0273922883
+     BE00 | 780872 | 0.028259433
+     BEBE | 115035 | 0.0275655235
+     BL00 | 253309 | 0.0278671504
+     BS00 | 19552 | 0.0280789689
+     BSBA | 149239 | 0.0259114575
+     FR00 | 283763 | 0.0279388081
+     GE00 | 247971 | 0.050997898900000005
+     GEGE | 157640 | 0.048743973600000004
+     GL00 | 35220 | 0.0261499148
+     GR00 | 175977 | 0.028015024700000002
+     JU00 | 62465 | 0.028848155
+     LU00 | 363523 | 0.054516495500000005
+     NE00 | 150142 | 0.054714869900000004
+     NW00 | 38598 | 0.0292243121
+     OW00 | 33149 | 0.0269691393
+     SG00 | 448491 | 0.027554622100000002
+     SH00 | 74428 | 0.026562584
+     SO00 | 243244 | 0.0270880268
+     SZ00 | 142109 | 0.0279151919
+     TG00 | 249376 | 0.027248011000000003
+     TI00 | 308002 | 0.054113285000000004
+     UR00 | 31946 | 0.028297752500000002
+     VD00 | 579499 | 0.054541940500000004
+     VDLA | 120163 | 0.0498156671
+     VS00 | 311881 | 0.026779444700000002
+     ZG00 | 111083 | 0.056129200700000006
+     ZH00 | 884470 | 0.027641412400000002
+     ZHWI | 99655 | 0.0261903567
+     ZHZH | 363283 | 0.0266211191
+   sheet 'stratification p': 35 rows
+     Stratification des personn
+     Strate | Population prise en compte | Taux d'échantillonage
+     AG00 | 612778 | 0.0550199257
+     AI00 | 13808 | 0.0277375435
+     AR00 | 46838 | 0.0273922883
+     BE00 | 780872 | 0.028259433
+     BEBE | 115035 | 0.0275655235
+     BL00 | 253309 | 0.0278671504
+     BS00 | 19552 | 0.0280789689
+     BSBA | 149239 | 0.0259114575
+     FR00 | 283763 | 0.0279388081
+     GE00 | 247971 | 0.050997898900000005
+     GEGE | 157640 | 0.048743973600000004
+     GL00 | 35220 | 0.0261499148
+     GR00 | 175977 | 0.028015024700000002
+     JU00 | 62465 | 0.028848155
+     LU00 | 363523 | 0.054516495500000005
+     NE00 | 150142 | 0.054714869900000004
+     NW00 | 38598 | 0.0292243121
+     OW00 | 33149 | 0.0269691393
+     SG00 | 448491 | 0.027554622100000002
+     SH00 | 74428 | 0.026562584
+     SO00 | 243244 | 0.0270880268
+     SZ00 | 142109 | 0.0279151919
+     TG00 | 249376 | 0.027248011000000003
+     TI00 | 308002 | 0.054113285000000004
+     UR00 | 31946 | 0.028297752500000002
+     VD00 | 579499 | 0.054541940500000004
+     VDLA | 120163 | 0.0498156671
+     VS00 | 311881 | 0.026779444700000002
+     ZG00 | 111083 | 0.056129200700000006
+     ZH00 | 884470 | 0.027641412400000002
+     ZHWI | 99655 | 0.0261903567
+     ZHZH | 363283 | 0.0266211191
 
-## https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx: HTTP 200, 28,002 bytes, 
-   sheets: ['T1'] (1)
-   sheet 'T1': 125 rows
-     RP2011 - Population de rés
-     Source : RP2011-STATEC
-     Commune | Groupe d'âges quinquénaux
-     0 à 4 ans | 5 à 9 ans | 10 à 14 ans | 15 à 19 ans | 20 à 24 ans | 25 à 29 ans | 30 à 34 ans | 35 à 39 ans | 40 à 44 ans | 45 à 49 ans | 50 à 54 ans | 55 à 59 ans |  60 à 64 ans | 65 à 69 ans | 70 à 74 ans | 75 à 79 ans | 80 à 84 ans | 85 à 89 ans | 90 à 94 ans | 95 à 99 ans | 100 et plus | Total
-   9 rows match '(?i)rosport|mompach|hobscheid|septfontaines|boevange|tuntange|total|luxembourg$|^commune'
-     > Commune | Groupe d'âges quinquén
-     > Luxembourg | 5263 | 4376 | 4168 | 4184 | 5421 | 9104 | 10075 | 8982 | 7964 | 7224 | 6262 | 5197 | 4637 | 3220 | 2889 | 2292 | 2019 | 1202 | 441 | 122 | 16 | 95058
-     > Hobscheid | 179 | 169 | 216 | 226 | 154 | 174 | 208 | 261 | 266 | 287 | 218 | 179 | 124 | 122 | 118 | 95 | 68 | 24 | 6 | 0 | 2 | 3096
-     > Septfontaines | 36 | 37 | 43 | 48 | 50 | 47 | 49 | 41 | 66 | 57 | 73 | 69 | 42 | 21 | 25 | 18 | 15 | 5 | 1 | 1 | 0 | 744
-     > Boevange-Attert | 113 | 119 | 143 | 143 | 115 | 122 | 128 | 132 | 191 | 187 | 161 | 157 | 104 | 64 | 75 | 43 | 26 | 9 | 5 | 0 | 0 | 2037
-     > Tuntange | 89 | 82 | 79 | 96 | 92 | 75 | 98 | 91 | 89 | 124 | 112 | 81 | 52 | 47 | 26 | 23 | 16 | 2 | 1 | 0 | 0 | 1275
-     > Mompach | 47 | 78 | 86 | 65 | 52 | 69 | 78 | 83 | 88 | 106 | 60 | 80 | 62 | 29 | 32 | 24 | 16 | 8 | 1 | 0 | 1 | 1065
-     > Rosport | 121 | 101 | 137 | 149 | 144 | 135 | 129 | 137 | 162 | 199 | 157 | 133 | 113 | 80 | 50 | 53 | 48 | 21 | 7 | 0 | 0 | 2076
-     > Total | 28894 | 28821 | 30922 | 30536 | 31217 | 35290 | 38230 | 39602 | 42492 | 41711 | 36411 | 30526 | 25959 | 19832 | 17618 | 14564 | 11534 | 5798 | 1849 | 480 | 67 | 512353
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets/35167595/master: HTTP 200, 41,729 bytes, attachment; filename="cc-t-40-se_strata-2023.xlsx"
+   sheets: ['readme', 'Schichtung P', 'Schichtung HH', 'stratification p', 'stratification m', 'stratificazione p', 'stratificazione ed'] (7)
+   sheet 'readme': 26 rows
+     Erläuterungen
+     In diesem Dokument finden 
+     Weitere Information zur Me
+     Dieser Bericht ist auf der
+     Quelle: BFS - Strukturerhe
+     © BFS 2025
+     Auskunft: Bundesamt für St
+     Explications
+     Dans ce document, vous tro
+     Vous trouverez plus d'info
+     Ce rapport est disponible 
+     Source: OFS - Relevé struc
+     © OFS 2025
+     Renseignement: Office fédé
+     Spiegazioni
+     In questo documento trover
+     Ulteriori informazioni sul
+     Questo rapporto è disponib
+     Fonte: UST - Rilevazione s
+     © UST 2025
+     Servizio d'informazione: U
+   sheet 'Schichtung P': 35 rows
+     Schichtung Personen Strukt
+     Schicht | Berücksichtigte Bevölkerun | Stichprobenanteil
+     AG00 | 604897 | 0.0556888197
+     AI00 | 13537 | 0.026224422
+     AR00 | 46579 | 0.027609008400000003
+     BE00 | 774645 | 0.0286337613
+     BL00 | 250951 | 0.0280811792
+     BS00 | 19438 | 0.0295812326
+     FR00 | 279036 | 0.0284336071
+     GE00 | 244342 | 0.0527048154
+     GL00 | 34960 | 0.0266304348
+     GR00 | 174611 | 0.028566356100000002
+     JU00 | 62062 | 0.0293255132
+     LU00 | 358553 | 0.055553851200000004
+     NE00 | 148772 | 0.056079100900000005
+     NW00 | 38258 | 0.0285430498
+     OW00 | 32753 | 0.0299209233
+     SG00 | 444144 | 0.027542869
+     SH00 | 73073 | 0.027219356
+     SO00 | 240566 | 0.0284163182
+     SZ00 | 140631 | 0.0281872418
+     TG00 | 245574 | 0.0274988395
+     TI00 | 306302 | 0.0553930435
+     UR00 | 31562 | 0.028261833899999998
+     VD00 | 571295 | 0.0565504687
+     VS00 | 306634 | 0.0280203761
+     ZG00 | 110119 | 0.056647808300000005
+     ZH00 | 874026 | 0.0282794791
+     BSBA | 148195 | 0.0264786261
+     GEGE | 155916 | 0.0498665948
+     VDLA | 119368 | 0.053079552300000006
+     ZHWI | 98638 | 0.0280419311
+     ZHZH | 360772 | 0.0267260209
+     BEBE | 113913 | 0.0282496291
+   sheet 'Schichtung HH': 163 rows
+     Schichtung Haushalte Struk
+     Schicht | Berücksichtigte Haushalte  | Stichprobenanteil
+     AG00_1 | 105737 | 0.054881451100000006
+     AG00_2 | 110196 | 0.1068006098
+     AI00_2 | 2369 | 0.0498100464
+     AR00_2 | 8482 | 0.0485734497
+     AR00_5 | 1707 | 0.06736965439999999
+     BL00_5 | 6348 | 0.07073093890000001
+     BS00_3 | 1391 | 0.0481667865
+     BS00_5 | 622 | 0.0610932476
+     BSBA_1 | 43389 | 0.0256747102
+     FR00_1 | 48918 | 0.027392779800000003
+     FR00_3 | 20745 | 0.0572186069
+     FR00_5 | 9225 | 0.068401084
+     GE00_5 | 10787 | 0.0979883193
+     GEGE_5 | 4252 | 0.08419567260000001
+     GR00_4 | 10768 | 0.07364413080000001
+     JU00_1 | 13076 | 0.0261547874
+     JU00_2 | 10724 | 0.0524058187
+     JU00_5 | 1914 | 0.0710553814
+     LU00_3 | 23166 | 0.1146076146
+     LU00_5 | 11447 | 0.1357560933
+     NE00_1 | 35403 | 0.0543174307
+     NW00_1 | 6868 | 0.0254804892
+     OW00_1 | 5862 | 0.0308768338
+     SG00_3 | 27980 | 0.057112223000000004
+     SH00_2 | 13387 | 0.05393292
+     SO00_4 | 15266 | 0.07153150790000001
+     SZ00_1 | 24602 | 0.026461263300000003
+     SZ00_5 | 4296 | 0.0749534451
+     TG00_3 | 16001 | 0.057996375200000005
+     TG00_4 | 16648 | 0.066314272
+     UR00_4 | 2093 | 0.07692307690000001
+     UR00_5 | 1050 | 0.059047619
+     VD00_3 | 44546 | 0.1194944552
+     ZG00_5 | 3087 | 0.1483641075
+     ZHWI_2 | 17394 | 0.051569506700000003
+     ZHWI_3 | 6495 | 0.0589684373
+     ZHZH_3 | 25107 | 0.052535149600000004
+     BEBE_2 | 19720 | 0.0510141988
+     AG00_3 | 40473 | 0.1199565142
+     AG00_5 | 18852 | 0.134097178
+     AI00_4 | 862 | 0.06380510439999999
+     BE00_3 | 47723 | 0.0593424554
 
-## https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-sexe-au-1er-fevrier-2011/20160711-131552/Population_par_commune_et_sexe_au_1er_fevrier_2011.xlsx: HTTP 200, 16,414 bytes, 
-   sheets: ['T1'] (1)
-   sheet 'T1': 125 rows
-     RP2011 - Population de rés
-     Source : RP2011-STATEC
-     Commune | Sexe
-     Masculin | Féminin | Total
-   10 rows match '(?i)rosport|mompach|hobscheid|septfontaines|boevange|tuntange|total|luxembourg$|^commune'
-     > Commune | Sexe
-     > Masculin | Féminin | Total
-     > Luxembourg | 47792 | 47266 | 95058
-     > Hobscheid | 1583 | 1513 | 3096
-     > Septfontaines | 384 | 360 | 744
-     > Boevange-Attert | 1049 | 988 | 2037
-     > Tuntange | 645 | 630 | 1275
-     > Mompach | 554 | 511 | 1065
-     > Rosport | 1035 | 1041 | 2076
-     > Total | 254967 | 257386 | 512353
-
-=== hun15
-   row 0: [0] Helység | [3] Megye megnevezése | [4] Kistérség | [7] Járás | [10] Közös önkormányzati hivatal | [12] Terület (hektár) | [13] Lakó-népesség | [14] Lakások száma | [15] Becsült terület-adatokkal | [16] Kisebbségi önkormányzat
-   row 1: [0] megnevezése | [1] KSH kódja | [2] jogállása | [4] kódja | [5] neve | [6] székhelye | [7] kódja | [8] neve | [9] székhelye | [10] kódja | [11] székhelye | [16] bolgár | [17] görög | [18] horvát | [19] lengyel | [20] német | [21] örmény | [22] roma | [23] román | [24] ruszin | [25] szerb | [26] szlovák | [27] szlovén | [28] ukrán
-   row 2: [0] Aba | [1] 17376 | [2] város | [3] Fejér | [4] 3708.0 | [5] Abai | [6] Aba | [7] 085 0 | [8] Székesfehérvári | [9] Székesfehérvár | [10] 1.0 | [12] 8805.0 | [13] 4471.0 | [14] 1546.0
-   row 3: [0] Abádszalók | [1] 12441 | [2] város | [3] Jász-Nagykun-Szolnok | [4] 4605.0 | [5] Tiszafüredi | [6] Tiszafüred | [7] 164 0 | [8] Kunhegyesi | [9] Kunhegyes | [10] 2.0 | [11] Abádszalók | [12] 13223.0 | [13] 4328.0 | [14] 2042.0 | [22] 1.0 | [24] 1.0
-   3180 rows; non-empty first cells Counter({True: 3180})
-   WBS003 for Polgárdi and Enying: 296 rows
-     ALLAMP_V1=6628
-     BEG=6628
-     BEG_AR=0
-     BEG_BU=None
-     BEG_CR=3
-     BEG_D=107
-     BEG_GE=29
-     BEG_GI=58
-     BEG_GR=0
-     BEG_HU=5937
-     BEG_NA=678
-     BEG_O=144
-     BEG_PO=None
-     BEG_RO=6
-     BEG_RU=None
-     BEG_SE=4
-     BEG_SK=None
-     BEG_SL=0
-     BEG_UK=5
-     BISK_V2=6628
-     CH_00=810
-     CH_01=620
-     CH_02=916
-     CH_03=388
-     CH_04=83
-     CH_GE05=48
-     CSPOT_LMS1=6628
-     DIGI=6628
-     DIGI0=1391
-     DIGI1=1780
-     DIGI2=2670
-     DIGI3=376
-     DIGI4=411
-     DIV_DISREP=733
-     EG=6628
-     EG_AR=0
-     EG_BU=None
-     EG_CR=None
-     EG_D=80
-     EG_GE=14
-     EG_GI=53
-     EG_GR=0
-     EG_HU=5789
-     EG_NA=809
-     EG_O=12
-     EG_PO=0
-     EG_RO=5
-     EG_RU=0
-     EG_SE=3
-     EG_SK=None
-     EG_SL=0
-     EG_UK=None
-     EMP=3406
-     EU_FOR=8
-     F=3335
-     FMF=6628
-     FMF_AR=0
-     FMF_BU=0
-     FMF_CR=None
-     FMF_D=41
-     FMF_GE=16
-     FMF_GI=17
-     FMF_GIB=0
-     FMF_GIR=17
-     FMF_GR=0
-     FMF_HU=5785
-     FMF_NA=822
-     FMF_O=139
-     FMF_PO=None
-     FMF_RO=None
-     FMF_RU=0
-     FMF_SE=None
-     FMF_SK=0
-     FMF_SL=0
-     FMF_UK=3
-     FOR=26
-     FY15-64=2158
-     FY_15LT=470
-     FY_GE65=707
-     FY_LT15=470
-     GAKT_V1=6628
-     INACE=577
-     INACI=1548
-     KEV_AGE10=6628
-     LISK1=564
-     LISK2=1767
-     LISK3=1550
-     LISK4=1601
-     LISK5=673
-     LISKNAP=473
-     LMS_INV=955
-     LT_MWA=955
-     M=3293
-     MA=3293
-     MAR_REP=2328
-     MT=6628
-     MT_AR=0
-     MT_BU=0
-     MT_CR=0
-     MT_D=13
-     MT_GE=0
-     MT_GI=7
-     MT_GIB=None
-     MT_GIR=5
-     MT_GR=0
-     MT_HU=5872
-     MT_NA=735
-     MT_O=14
-     MT_PO=0
-     MT_RO=4
-     MT_RU=None
-     MT_SE=0
-     MT_SK=0
-     MT_SL=0
-     MT_UK=None
-     MY15-64=2342
-     MY_GE65=466
-     MY_LT15=485
-     NAT=6602
-     NEME_KEV1=6628
-     NEME_SEX=6628
-     NEU=18
-     RE_C=1576
-     RE_CA=617
-     RE_CD=40
-     RE_GC=30
-     RE_J=None
-     RE_LU=42
-     RE_NA=3125
-     RE_NOT=1210
-     RE_OC=6
-     RE_OCD=10
-     RE_RC=1473
-     SIN=2087
-     TERM_KAT=6628
-     UNE=142
-     VALLAS_V1=6628
-     WID_DTHREP=525
-     Y10-19=658
-     Y20-29=744
-     Y30-39=873
-     Y40-49=1200
-     Y50-59=938
-     Y60-69=782
-     Y70-79=542
-     Y80-89=205
-     Y_GE90=31
-     Y_LT10=655
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets/31425811/master: HTTP 200, 417,941 bytes, attachment; filename="cc-t-40-se_ref-2022.xlsx"
+   sheets: ['Erlaeuterungen', 'Eckwerte P', 'Eckwerte HH', 'Explications', 'Chiffres clés p', 'Chiffres clés m', 'Spiegazioni', 'Cifre di riferimento p', 'Cifre di riferimento ed', 'Schichtung P', 'Schichtung HH', 'stratification p', 'stratification m', 'stratificazione p', 'stratificazione ed'] (15)
+   sheet 'Erlaeuterungen': 47 rows
+     Erläuterungen
+     Das vorliegende Dokument i
+     Es enthält Eckwerte zu den
+     Die Eckwerte werden ohne V
+     0: logische Missings oder 
+     Eckwerte Personendaten:
+     Die Grundgesamtheit der St
+     Aus der Grundgesamtheit au
+     Eckwerte Haushaltsdaten:
+     Die Strukturerhebung berüc
+     Die Resultate aus der Stru
+     Quelle: BFS - Strukturerhe
+     © BFS 2024
+     Auskunft: Bundesamt für St
+   sheet 'Eckwerte P': 265 rows
+     Ständige Wohnbevölkerung a
+     2022
+     Eckwerte Personendaten Str
+     2022
+     VARIABLE | BEZEICHNUNG | CODE | Total | Männer | Frauen | Schweizer/-innen | Ausländer/-innen | ZH | BE | LU
+     Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen | Anzahl 
+Personen
+     TOTAL | 7307819.0000000475 | 3618874.00000004 | 3688945.0000000037 | 5445747.000000052 | 1862071.9999999963 | 1312404.9999999998 | 879250.0000000218 | 352202.9999999993
+     1 | Geschlecht | Männer | 1 | 3618874.0000000442 | 3618874.000000044 | 0 | 2632208.000000046 | 986665.9999999979 | 652991.9999999974 | 430411.00000001676 | 175265.00000000146
+     2 | Frauen | 2 | 3688945.0000000037 | 0 | 3688945.0000000037 | 2813539.000000004 | 875405.9999999988 | 659413.0000000023 | 448839.00000000495 | 176937.99999999785
+     3 | Alter | 15-24 | 15 | 872117.0000000087 | 449887.0000000079 | 422230.00000000006 | 676809.0000000112 | 195307.99999999756 | 146736.0000000008 | 98638.00000000164 | 42829.00000000083
+     4 | 25-44 | 25 | 2408706.0000000135 | 1219182.00000001 | 1189524.000000003 | 1532066.0000000123 | 876640.0000000015 | 484658.0000000026 | 273935.0000000058 | 119117.00000000028
+     5 | 45-64 | 45 | 2420556.000000014 | 1211938.0000000158 | 1208617.9999999972 | 1810910.0000000177 | 609645.9999999969 | 421755.0000000008 | 288653.00000000716 | 116014.0000000006
+     6 | 65 und mehr | 65 | 1606440.0000000119 | 737867.0000000107 | 868573.0000000028 | 1425962.0000000112 | 180478.00000000087 | 259256.0000000021 | 218024.00000001042 | 74243.00000000012
+     7 | Zivilstand | Ledig | 1 | 2617186.000000015 | 1416484.000000018 | 1200701.999999998 | 1955050.244967053 | 662135.7550329623 | 503968.46887479944 | 309749.88565853 | 127555.35299887399
+     8 | Verheiratet | 2 | 3553077.579214399 | 1794478.615486021 | 1758598.9637283785 | 2580157.907236476 | 972919.6719779244 | 616194.9217193152 | 428415.5613523431 | 175636.22930914405
+     9 | Verwitwet | 3 | 359970.68360056815 | 74661.48326641427 | 285309.20033415384 | 309967.3684790806 | 50003.315121487605 | 56214.65563250715 | 46124.90427775896 | 16304.298473845442
+     10 | Geschieden | 4 | 757158.1065738293 | 319751.81419337186 | 437406.29238045664 | 587906.0586464088 | 169252.04792742047 | 130340.17197115226 | 92562.44146493814 | 32000.802487036042
+     11 | Unverheiratet | 5 | 579.4434347058241 | 142.89950989942602 | 436.5439248063981 | 356.67223014689205 | 222.77120455893206 | 70.87212814831011 | 42.7415111957594 | 48.91146544866584
+     12 | In eingetragener Partnersc | 6 | 16069.29243902922 | 11136.643331606398 | 4932.649107422825 | 9742.715423721618 | 6326.577015307606 | 4388.063641080596 | 1744.7605171555015 | 586.7426432644738
+     13 | Aufgelöste Partnerschaft | 7 | 3641.27705678164 | 2218.5442127135802 | 1422.7328440680608 | 2548.663797684681 | 1092.6132590969592 | 1227.8460329967925 | 609.7052181001376 | 70.6626223872535
+     14 | Ohne Angabe | -9 | 136.61768071930896 | 0 | 136.61768071930896 | 17.369219480796286 | 119.24846123851269 | 0 | 0 | 0
+     15 | Nationalitätenkategorie | Schweizer | 1 | 5445747.000000052 | 2632208.000000046 | 2813539.000000004 | 5445747.000000052 | 0 | 946539.0000000016 | 733396.0000000414 | 283052.99999999965
+     16 | Ausländer | 2 | 1862071.9999999963 | 986665.9999999979 | 875405.9999999988 | 0 | 1862071.9999999963 | 365866.000000002 | 145853.99999999898 | 69149.99999999833
+     17 | Nationalität (aggregiert) | Schweiz | 1 | 5445747.000000041 | 2632208.000000046 | 2813539.000000004 | 5445747.000000041 | 0 | 946539.0000000016 | 733396.0000000414 | 283052.99999999965
+     18 | EU und EFTA | 2 | 1236518.9999999977 | 685502.9999999981 | 551015.9999999995 | 0 | 1236518.9999999977 | 241264.0000000014 | 87284.92662428465 | 41803.9999999989
+     19 | Andere europäische Staaten | 3 | 333707.99999999814 | 165040.99999999913 | 168666.99999999913 | 333707.99999999814 | 333707.99999999814 | 63771.99999999984 | 25270.763461106406 | 16250.99999999957
+     20 | Andere Staaten | 4 | 290378.598095032 | 135268.14937218247 | 155110.44872284945 | 290378.598095032 | 290378.598095032 | 60613.56576566916 | 32873.90790710788 | 11042.417796288564
+     21 | Staatenlos | -1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     22 | Staatsangehörigkeit unbeka | -9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     23 | Art des Erwerbs der Schwei | Schweizer/innen seit Gebur | 1 | 4420430.4619147815 | 2185629.2326124003 | 2234801.22930239 | 4420430.4619147815 | 0 | 716130.445108691 | 653227.1034233914 | 245976.4232239999
+     24 | Eingebürgert | 2 | 1025316.5380852626 | 446578.7673876451 | 578737.7706976179 | 1025316.5380852626 | 0 | 230408.5548913069 | 80168.89657664101 | 37076.576776000526
+     25 | Ausländer/innen | 3 | 1862071.999999996 | 986665.9999999979 | 875405.9999999988 | 0 | 1862071.999999996 | 365866.000000002 | 145853.99999999898 | 69149.99999999833
+     26 | Ohne Angabe (Art des Erwer | -6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     27 | Zweite Staatsangehörigkeit | Nein | 1 | 4350788.440585591 | 2127879.1448040786 | 2222909.295781517 | 4350788.440585591 | 0 | 710928.3593663219 | 650277.2813620802 | 250320.97167269114
+     28 | Ja | 2 | 1094958.5594144547 | 504328.855195967 | 590629.7042184889 | 1094958.5594144547 | 0 | 235610.64063367553 | 83118.71863795115 | 32732.02832730964
+     29 | Ausländer/innen | -8 | 1862071.999999996 | 986665.9999999979 | 875405.9999999988 | 0 | 1862071.999999996 | 365866.000000002 | 145853.99999999898 | 69149.99999999833
+     30 | Migrationsstatus | Schweizer/innen ohne Migra | 1 | 4279970.986601295 | 2114332.2560019125 | 2165638.7305993894 | 4279970.986601295 | 0 | 685316.3554451265 | 639076.7902985896 | 241850.72327929916
+     31 | Schweizer/innen mit Migrat | 2 | 1129984.6554693757 | 498060.60554437706 | 631924.0499249987 | 1129984.6554693757 | 0 | 254933.4849968546 | 89945.78624010469 | 39850.7890769712
+     32 | Ausländer/innen der ersten | 3 | 1685214.1125272324 | 884710.5845360827 | 800503.527991149 | 0 | 1685214.1125272324 | 340991.70704462915 | 133279.42562690983 | 62317.90009569184
+     33 | Ausländer/innen der zweite | 4 | 166384.97557299014 | 95358.81537268445 | 71026.16020030572 | 0 | 166384.97557299014 | 23139.0657785877 | 11699.80276911903 | 6362.492297701648
+     34 | Ausländer/innen der dritte | 5 | 7164.267587992748 | 4534.008988221752 | 2630.258599770997 | 0 | 7164.267587992748 | 1255.8706737698956 | 479.3563788250897 | 199.85464716566614
+     35 | Nicht zuteilbar | -7 | 39100.002241155504 | 21877.72955676383 | 17222.27268439167 | 35791.357929373306 | 3308.6443117821973 | 6768.516061032786 | 4768.838686480984 | 1621.2406031697935
+     36 | Hauptsprache | Deutsch | abgeleitet | 4513543.967202765 | 2242408.3025231585 | 2271135.6646796227 | 3874953.7601256496 | 638590.2070771157 | 1042118.4884568821 | 726450.0694663149 | 308086.0489988584
+     37 | Französisch | abgeleitet | 1650805.6419994873 | 809732.6761781847 | 841072.9658213116 | 1294481.813832884 | 356323.8281666034 | 41672.837354036594 | 93982.81318389843 | 5322.441856400298
+   sheet 'Eckwerte HH': 19 rows
+     Eckwerte Haushaltsdaten St
+     2022
+     VARIABLE | BEZEICHNUNG | CODE | Total | ZH | BE | LU | UR | SZ | OW | NW
+     Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte | Anzahl Haushalte
+     TOTAL | 3953767.0000719745 | 715714.0000000007 | 488252.00000000396 | 187399.99999999476 | 16255.000000000493 | 72325.00000000106 | 16872.999999977466 | 20083.00000000054
+     Haushaltstyp (aggregiert) | Einpersonenhaushalte | 100000 | 1470199.9999999946 | 268502.00000000134 | 186967.00000000038 | 65573.99999999786 | 5404.000000000063 | 24232.000000000164 | 5682.999999999983 | 6787.000000000011
+     Nichtfamilienhaushalte mit | 300000 | 90990.9626107556 | 24950.10300225682 | 11110.028985148441 | 4799.117633943863 | 228.4602672726986 | 1984.1779371818393 | 438.08684303902703 | 411.0131217746649
+     Paare ohne Kinder | 210000 | 1066031.4810138564 | 191150.2578223253 | 145425.88405509654 | 54360.060570474314 | 5276.999723013769 | 21705.669217035724 | 4905.030503508011 | 6642.057533174057
+     Paare mit Kind(ern) | 220000 | 1047581.5781557112 | 186027.91935510808 | 115915.04582994265 | 51816.43989803843 | 4640.915332927068 | 20288.216786338227 | 4961.83752440126 | 5306.931042355041
+     Einelternhaushalte | 230000 | 252043.02543305038 | 39347.67381971704 | 26677.35600705202 | 9641.892614547514 | 661.8539273550216 | 3417.5971295601366 | 721.8000937849366 | 870.9370055490494
+     Mehrfamilienhaushalte (Hau | 400000 | 26919.952858605997 | 5736.046000592583 | 2156.6851227647417 | 1208.489282992736 | 42.77074943187094 | 697.3389298849647 | 163.245035244247 | 65.06129714770961
+     Haushaltsgrösse: 1 bis 6 P | Haushalte bestehend aus ei | 1 | 1470199.9999999946 | 268502.00000000134 | 186967.00000000038 | 65573.99999999786 | 5404.000000000063 | 24232.000000000164 | 5682.999999999983 | 6787.000000000011
+     Haushalte bestehend aus zw | 2 | 1286901.0000349123 | 232078.99999999875 | 169715 | 63853.99999999805 | 5911.000000000261 | 25216.000000000317 | 5881.000000000157 | 7562.000000000249
+     Haushalte bestehend aus dr | 3 | 501459.0000000022 | 91462.00000000009 | 54113.00000000133 | 22815.99999999949 | 1828.000000000065 | 9323.000000000191 | 2006.0000000000157 | 2370.0000000000955
+     Haushalte bestehend aus vi | 4 | 483601.00000009564 | 87805.00000000086 | 53952.00000000158 | 23890.999999999734 | 2083.000000000103 | 9330.000000000353 | 2257.9999999999973 | 2383.0000000001487
+     Haushalte bestehend aus fü | 5 | 151710.74580659304 | 25474.957556165657 | 17238.24560248332 | 8274.91378010077 | 746.5427572871458 | 3168.786099902389 | 710.8047574798505 | 799.4701054847764
+     Haushalte bestehend aus se | aggregiert | 59895.254230375205 | 10391.042443833996 | 6266.754397517419 | 2990.086219898856 | 282.45724271285604 | 1055.213900097659 | 334.19524249746144 | 181.52989451525735
+   su-d-01.02.04.08: 36681852 | 1991-2025 | Bilanz der ständigen schweizerischen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025
+   su-d-01.02.04.08: 32229262 | 2023 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2023
+   su-d-01.02.04.08: 26565391 | 2022 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2022
+   su-d-01.02.04.08: 23064924 | 2021 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2021
+   su-d-01.02.04.08: 18344377 | 2020 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2020
+   su-d-01.02.04.08: 13707344 | 2019 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2019
+   su-d-01.02.04.08: 9486068 | 2018 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2018
+   su-d-01.02.04.08: 5886195 | 2017 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2017
+   su-d-01.02.04.08: 3202791 | 2016 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Kanton, definitive Jahresergebnisse, 2016
+   su-d-01.02.04.10: 36681861 | 1991-2025 | Bilanz der ständigen schweizerischen Wohnbevölkerung nach Kanton, 1991-2025
+   hs-d-01.02.02.02.09.20: 137751 | 2000-2010 | Wanderungen der ständigen Wohnbevölkerung (Total) nach Agglomerationen
+   hs-d-01.02.02.02.09.21: 194963 | 2000-2010 | Wanderungen der ständigen Wohnbevölkerung (Schweizer) nach Agglomerationen
+   hs-d-01.02.02.02.09.22: 194966 | 2000-2010 | Wanderungen der ständigen Wohnbevölkerung (Ausländer) nach Agglomerationen
+   je-d-01.02.03.01: 36681677 | 1970-2025 | Struktur der ständigen Wohnbevölkerung, 1970-2025
+   - 36681837 | su-d-01.02.04.07 | 1991-2025 | Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025
+   - 36681853 | su-d-01.02.04.09 | 1991-2025 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025
+   - 36681852 | su-d-01.02.04.08 | 1991-2025 | Bilanz der ständigen schweizerischen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025
+   - 26565390 | su-d-01.02.04.09 | 2010-2022 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2022
+   - 13707411 | su-d-01.02.04.09 | 1991-2019 | Bilanz der ständigen ausländischen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2019
+   - 193399 | su-d-vz-ZIVL_HG_2000_1 | 2000 | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Geschlecht, Nationalität und Zivilstand; Eidgenössische Volkszählung 2000
+   - 147501 | su-d-vz-SPRA_HG_2000_1 | 2000 | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie nach Geschlecht, Nationalität und Hauptsprache; Eidgenössische Volkszählung 2000
+   - 193515 | su-d-vz-REL_HG_2000_1 | 2000 | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie nach Geschlecht, Nationalität und Religion; Eidgenössische Volkszählung 2000
