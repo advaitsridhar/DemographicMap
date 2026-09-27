@@ -4,7 +4,7 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import (bosnia_age, croatia, montenegro, moldova_age, north_macedonia,
+from scripts.fetch_census import (bosnia_age, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
                                   romania_census, serbia_census)
 
 
@@ -199,6 +199,23 @@ class SerbiaTest(unittest.TestCase):
             serbia_census.load = saved
         self.assertEqual(out["Ada"]["groups"], [(0.0, 5.0, 4), (85.0, None, 6)])
         self.assertEqual((out["Ada"]["men"], out["Ada"]["women"]), (4, 6))
+
+
+class CyprusTest(unittest.TestCase):
+    def test_district_spellings(self):
+        for text in ("LEFKOSIA DISTRICT", "Lekfosia", "Lefkosia"):
+            self.assertEqual(cyprus_census.district_key(text), "lefkosia")
+
+    def test_community_keys(self):
+        self.assertIn("aglantzia", cyprus_census.keys("Aglantzia or Aglangia"))
+        self.assertIn("aglangia", cyprus_census.keys("Aglantzia or Aglangia"))
+        self.assertIn("latsia", cyprus_census.keys("Latsia Municipality"))
+        self.assertIn("agiavarvara", cyprus_census.keys("Agia Varvara Lefkosias"))
+        self.assertEqual(cyprus_census.keys("Strovolos")[0], "strovolos")
+
+    def test_languages_named_after_countries_are_other(self):
+        self.assertEqual(cyprus_census.LANGUAGES["indian"], "Other")
+        self.assertEqual(cyprus_census.LANGUAGES["ukranian"], "Ukrainian")
 
 
 if __name__ == "__main__":
