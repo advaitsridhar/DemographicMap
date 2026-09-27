@@ -1,7 +1,13 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    HTTP 429; waiting 5s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
-    HTTP 429; waiting 10s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
-    HTTP 429; waiting 20s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
-    HTTP 429; waiting 40s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
-    HTTP 429; waiting 80s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
-HTTP 429 from https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px: {"error":"429 - Too many requests in too short timeframe. Please try again later."}
+pxweb: Statistics Latvia (LVA)
+  POP/IR/IRE/IRE031
+    left out (code is not 9 characters): 5 — LV005 Latgale statistical region, LV009 Zemgale statistical region, LV00A Riga statistical region (from 01.01.2024.), LV00B Kurzeme statistical region (from 01.01.2024.), LV00C Vidzeme statistical region (from 01.01.2024.)
+    left out (inside Jēkabpils municipality): 1 — LV0031010 Jēkabpils
+    left out (inside Ogre municipality): 1 — LV0040010 Ogre
+    left out (inside Valmiera municipality): 1 — LV0054010 Valmiera
+    left out (the country itself): 1 — LV Latvia
+    42 units, categories sum to the published total in each
+    ...and to 1,845,096 against a published national 1,845,096
+    withheld LV0038001 Madona municipality (from 01.07.2025.): Madona after absorbing Varakļāni on 1 July 2025; the map draws the two apart, and latvia.py writes each
+  ethnicity labels the group tree cannot place: none
+  wrote data/processed/latvia_municipality.json (88 kB)
+  41 records
