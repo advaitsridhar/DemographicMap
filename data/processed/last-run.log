@@ -1,8 +1,21 @@
-== https://www.eustat.eus/bankupx/api/v1/es/DB
-  retry 1/2 after 2s :: https://www.eustat.eus/bankupx/api/v1/es/DB :: <urlopen error timed out>
-  retry 2/2 after 4s :: https://www.eustat.eus/bankupx/api/v1/es/DB :: <urlopen error timed out>
-  RuntimeError: GET failed after 2 retries: https://www.eustat.eus/bankupx/api/v1/es/DB
-== https://www.eustat.eus/bankupx/api/v1/es/DB/-/
-  retry 1/2 after 2s :: https://www.eustat.eus/bankupx/api/v1/es/DB/-/ :: <urlopen error timed out>
-  retry 2/2 after 4s :: https://www.eustat.eus/bankupx/api/v1/es/DB/-/ :: <urlopen error timed out>
-  RuntimeError: GET failed after 2 retries: https://www.eustat.eus/bankupx/api/v1/es/DB/-/
+== https://www.cis.es/
+  FAQs - Frequently Asked Questions                                                          https://www.cis.es/en/estudios/faqs-preguntas-frecuentes
+  Catalogue of Studies                                                                       https://www.cis.es/estudios/catalogo?catalogo=estudio&amp;sort=createDateBDE-&amp;t=0
+  Specific requests                                                                          https://www.cis.es/en/catalogo-estudios/peticiones-especificas
+  FAQs - Frequently Asked Questions                                                          https://www.cis.es/en/estudios/faqs-preguntas-frecuentes
+  Catalogue of Studies                                                                       https://www.cis.es/estudios/catalogo?catalogo=estudio&amp;sort=createDateBDE-&amp;t=0
+  Specific requests                                                                          https://www.cis.es/en/catalogo-estudios/peticiones-especificas
+  Verificar extensión CIS                                                                    /estudios/preguntas-frecuentes/comprobacion-extension-telefonica-cis
+  Advance on study results 3578 'Protección Civil (IV)'                                      https://www.cis.es/en/w/avance-de-resultados-del-estudio-3578-protecci%C3%B3n-civil-iv-
+  Study available 3577 'Barómetro de septiembre 2026'                                        https://www.cis.es/en/surveys/barometro-de-septiembre-2026
+  Advance on study results 3573 'Turismo y gastronomía (IV)'                                 https://www.cis.es/en/w/avance-de-resultados-del-estudio-3573-turismo-y-gastronom%C3%ADa-iv-
+  Study available 3571 'Barómetro de julio 2026'                                             https://www.cis.es/en/surveys/barometro-de-julio-2026
+  See Catalog of Studies                                                                     /en/studies/catalogue?catalogo=estudio&amp;sort=publishDate-
+  El PSOE obtiene el 31% de los votos en el mes de septiembre                                https://www.cis.es/en/w/el-psoe-obtiene-el-31-de-los-votos-dos-puntos-menos-que-en-el-bar%C3%B3metro-de-julio
+  Access to FAQs                                                                             /estudios/preguntas-frecuentes-proceso-encuestacion
+  More information                                                                           /estudios/preguntas-frecuentes/comprobacion-extension-telefonica-cis
+  15 of 131 links shown
+== https://www.cis.es/estudios/catalogo-estudios
+  HTTPError: HTTP Error 404: 
+== https://www.cis.es/es/estudios/microdatos
+  HTTPError: HTTP Error 404: 
