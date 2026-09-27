@@ -4,7 +4,7 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import (albania_census, bosnia_age, bucharest_sectors, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
+from scripts.fetch_census import (albania_census, bosnia_age, bucharest_sectors, croatia, cyprus_census, montenegro, moldova_age, north_macedonia, north_macedonia_2002,
                                   romania_census, serbia_census)
 
 
@@ -282,6 +282,18 @@ class BucharestTest(unittest.TestCase):
         self.assertEqual(bucharest_sectors.band("10-14 ani"), (10.0, 5.0))
         self.assertEqual(bucharest_sectors.band("85 ani si peste"), (85.0, None))
         self.assertIsNone(bucharest_sectors.band("TOTAL BUCURESTI"))
+
+
+class NorthMacedonia2002Test(unittest.TestCase):
+    def test_the_municipality_row_comes_before_its_settlement(self):
+        pages = ["Tabela 2. x\nKi~evo 10 6 4 Ki~evo\nma`i 5 3 2 male\n`eni 5 3 2 female",
+                 "Tabela 3. z\nKi~evo 10 10 - - - - - - - Ki~evo",
+                 "Tabela 4. y\nDrugovo 3249 2790 448 2 - 9 Drugovo\nma`i 1682 1449 229 1 - 3 male\n"
+                 "`eni 1567 1341 219 1 - 6 female\nDrugovo 1492 1250 237 2 - 3 Drugovo"]
+        tables = north_macedonia_2002.sections(pages)
+        total, men, women = north_macedonia_2002.municipality_rows(tables["religion"], "Drugovo")
+        self.assertEqual(total, [3249, 2790, 448, 2, 0, 9])
+        self.assertEqual(men[0] + women[0], 3249)
 
 
 if __name__ == "__main__":
