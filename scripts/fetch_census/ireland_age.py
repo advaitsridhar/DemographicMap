@@ -221,7 +221,7 @@ def main() -> int:
         label = entry["label"]
         bare, _, county = (part.strip() for part in label.rpartition(","))
         bare = bare or label.strip()
-        province = PROVINCE.get(county)
+        province = PROVINCE.get(COUNTY_ALIASES.get(county, county))
         if province is None:
             raise SystemExit(f"ireland_age: {label}: no province for county {county!r}")
         by_province[province] += entry["B"]["total"]
