@@ -25,9 +25,15 @@ both languages -- "Akmenės rajono savivaldybė" beside "Alytus District
 Municipality" -- so both are offered to the binder, with the office's
 abbreviations ("r. sav.", "d. mun.") written out.
 
-The 2021 census's ethnicity, native language and religion are published on
-osp.stat.gov.lt, whose pages answer a scripted request with a Cloudflare
-challenge (HTTP 403); see the report for what was tried.
+**Compositions.** The 2021 census's ethnicity, mother tongue and religion
+come from its statistical survey, weighted to every resident. osp.stat.gov.lt
+answers a scripted request with a Cloudflare challenge (HTTP 403), so the
+office's workbooks are read from the Internet Archive's captures of them. The
+2021 round published mother tongue by municipality; its ethnicity and
+religion workbooks are for the whole country only, so those come from the
+2011 census, which published both by municipality. Cells the office withholds
+as confidential are counted in the "Other" answer, and the note says how
+many people that is.
 
 Usage:
     python -m scripts.fetch_census.lithuania
@@ -40,10 +46,10 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, measure, record, write_json
+from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import fold
 from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_parts, load_units,
-                            request, sex_ratio)
+                            request, sex_ratio, unplaced)
 
 OSP = "https://osp-rs.stat.gov.lt/rest_xml"
 AGES = "S3R167_M3010203"
@@ -101,6 +107,149 @@ def expand_en(name: str) -> str:
                 .replace(" c. mun.", " City Municipality")
                 .replace(" t. mun.", " City Municipality")
                 .replace(" mun.", " Municipality"))
+
+
+# ---------------------------------------------------------------------------
+# The censuses' compositions, from the office's own workbooks
+# ---------------------------------------------------------------------------
+#
+# osp.stat.gov.lt answers a scripted request with a Cloudflare challenge (HTTP
+# 403, "Just a moment..."), so its census workbooks are read from the Internet
+# Archive's captures of the same files -- the office's files byte for byte, at
+# the URLs the office published them under. The 2021 round published mother
+# tongue by municipality; its ethnicity and religion workbooks are national
+# only, so those two come from the 2011 census, which published both by
+# municipality. The 60 municipalities have not changed since 2000.
+ARCHIVE = "https://web.archive.org/web/{ts}id_/{url}"
+LANG_2021 = ("20221227012930", "https://osp.stat.gov.lt/documents/10180/10367417/"
+             "Population_by_mother_tongue_in_municipality-EN.xlsx/"
+             "1c3c9ad4-5fa5-44b1-baa7-e6caef4b740b?version=1.0")
+ETH_2011 = ("20130929225433", "http://osp.stat.gov.lt/documents/10180/217110/"
+            "Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b28f-4dcc-9836-874b6ea951f7")
+REL_2011 = ("20130929225123", "http://osp.stat.gov.lt/documents/10180/217110/"
+            "Gyv_religine_bendr_savivald.xls/b845994c-bcf6-4568-9b02-e849b55d6d37")
+
+ETHNIC_2011 = {"Lietuviai": "Lithuanian", "Lenkai": "Polish", "Rusai": "Russian",
+               "Baltarusiai": "Belarusian", "Ukrainiečiai": "Ukrainian", "Žydai": "Jewish",
+               "Totoriai": "Tatar", "Vokiečiai": "German", "Romai": "Romani",
+               "Latviai": "Latvian", "Armėnai": "Armenian", "Kitos": "Other",
+               "Nenurodė": "Not stated"}
+RELIGION_2011 = {"Romos katalikų": "Roman Catholic", "Stačiatikių (ortodoksų)": "Orthodox",
+                 # Old Believers are the Russian Orthodox of the 17th-century
+                 # schism; the group tree files a bare "Old Believers" under
+                 # Protestantism, which they are not.
+                 "Sentikių": "Old Believers (Orthodox)",
+                 "Evangelikų liuteronų": "Evangelical Lutheran",
+                 "Evangelikų reformatų": "Evangelical Reformed",
+                 "Musulmonų sunitų": "Sunni Muslim", "Judėjų": "Judaism",
+                 "Graikų apeigų katalikų": "Greek Catholic", "Karaimų": "Karaite Judaism",
+                 "Kitų": "Other religion", "Nė vienai": "No religion", "Nenurodė": "Not stated"}
+LANGUAGE_2021 = {"Other": "Other language"}
+
+
+def cell(value: Any) -> float | None:
+    """A workbook cell as a count; a blank or a bullet is a withheld count."""
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    text = str(value).strip().replace(" ", "").replace(",", ".")
+    if not text or text in ("•", "●", "-", "–"):
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def workbook_rows(raw: bytes) -> list[list[Any]]:
+    if raw[:4] == b"\xd0\xcf\x11\xe0":
+        import xlrd
+        sheet = xlrd.open_workbook(file_contents=raw).sheets()[-1]
+        return [sheet.row_values(i) for i in range(sheet.nrows)]
+    import io
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
+    sheet = next(sh for sh in book.worksheets if sh.title != "XDO_METADATA")
+    return [list(row) for row in sheet.iter_rows(values_only=True)]
+
+
+def read_table(source: tuple[str, str], labels: dict[str, str]) -> tuple[
+        dict[str, dict[str, float]], dict[str, float], dict[str, float]]:
+    """{row name: {label: count}}, {row name: total}, {row name: withheld}.
+
+    The header is the row whose second cell reads "Iš viso" or "Total". A
+    blank or bulleted cell is a count the office withheld as confidential;
+    what the published cells leave of the row's total is those people, and
+    is returned apart so the caller can say how many.
+    """
+    raw = request(ARCHIVE.format(ts=source[0], url=source[1]), accept="*/*", timeout=240)
+    rows = workbook_rows(raw)
+    head = next(i for i, r in enumerate(rows)
+                if len(r) > 1 and str(r[1] or "").strip() in ("Iš viso", "Total"))
+    columns = [str(c or "").strip() for c in rows[head]]
+    out, totals, withheld = {}, {}, {}
+    for row in rows[head + 1:]:
+        name = str(row[0] or "").strip()
+        total = cell(row[1]) if len(row) > 1 else None
+        if not name or total is None:
+            continue
+        counts: dict[str, float] = defaultdict(float)
+        for col, value in zip(columns[2:], row[2:]):
+            n = cell(value)
+            if col and n is not None:
+                counts[labels.get(col, col)] += n
+        short = total - sum(counts.values())
+        if short < -0.5:
+            raise SystemExit(f"{source[1].rsplit('/', 2)[-2]}: {name}'s categories make "
+                             f"{sum(counts.values()):,.0f} of {total:,.0f}")
+        out[name], totals[name], withheld[name] = counts, total, max(short, 0.0)
+    return out, totals, withheld
+
+
+def en_key(name: str) -> tuple[str, str]:
+    """'Klaipėdos c. mun.' -> ('klaipedos', 'c'); 'Kazlų Rūda mun.' -> ('kazluruda', '')."""
+    text = " ".join(str(name).replace("c.mun", "c. mun").replace("d.mun", "d. mun").split())
+    kind = ""
+    for mark in ("c", "d", "t"):
+        if f" {mark}. mun" in text:
+            kind, text = mark, text.split(f" {mark}. mun")[0]
+            break
+    else:
+        text = text.split(" mun")[0]
+    return fold(text), kind
+
+
+def match_rows(rows: list[str], names: dict[str, str], wanted: list[str]) -> dict[str, str]:
+    """The 2021 workbook's English row names -> codes, one to one.
+
+    It writes some municipalities in Lithuanian genitive ("Klaipėdos c. mun.",
+    "Panevėžio c.mun.") where the code list writes the nominative ("Klaipėda
+    c. mun."). An exact name wins; failing it, the one code of the same kind
+    whose name shares all but its last three letters. A code no row reaches
+    stops the run.
+    """
+    keys = {code: en_key(names[code]) for code in wanted}
+    out: dict[str, str] = {}
+    for row in rows:
+        stem, kind = en_key(row)
+        exact = [c for c, k in keys.items() if k == (stem, kind)]
+        if not exact:
+            def shared(a: str, b: str) -> int:
+                n = 0
+                while n < min(len(a), len(b)) and a[n] == b[n]:
+                    n += 1
+                return n
+            exact = [c for c, (st, kd) in keys.items() if kd == kind
+                     and shared(st, stem) >= max(5, min(len(st), len(stem)) - 3)]
+        if len(exact) == 1:
+            if exact[0] in out.values():
+                raise SystemExit(f"two workbook rows name code {exact[0]}: {row!r}")
+            out[row] = exact[0]
+    missing = sorted(set(wanted) - set(out.values()))
+    if missing:
+        raise SystemExit(f"workbook rows found for no {[names[c] for c in missing]}")
+    return out
 
 
 def main() -> int:
@@ -197,6 +346,72 @@ def main() -> int:
         }
         return out
 
+    # --- The censuses' compositions.
+    comp: dict[str, dict[str, Any]] = defaultdict(dict)
+    eth, eth_tot, eth_held = read_table(ETH_2011, ETHNIC_2011)
+    rel, rel_tot, rel_held = read_table(REL_2011, RELIGION_2011)
+    lang, lang_tot, lang_held = read_table(LANG_2021, LANGUAGE_2021)
+    by_lt = {names[c]["lt"]: c for c in counties + municipalities}
+    by_lt.update({names[c]["lt"].replace("apskritis", "apskr."): c for c in counties})
+    en_rows = match_rows([r for r in lang if "mun" in r], {c: names[c]["en"] for c in municipalities},
+                         municipalities)
+    en_rows.update({r: c for r in lang for c in counties
+                    if fold(r) == fold(names[c]["en"])})
+    for field, table, totals_, held, year, keyed, what in (
+            ("ethnicity", eth, eth_tot, eth_held, 2011, by_lt,
+             "Ethnicity (tautybė) as answered in the 2011 census, of all residents"),
+            ("religion", rel, rel_tot, rel_held, 2011, by_lt,
+             "The religious community a resident said they belonged to, 2011 census, of all "
+             "residents"),
+            ("language", lang, lang_tot, lang_held, 2021, en_rows,
+             "Mother tongue (gimtoji kalba) from the 2021 census's statistical survey of "
+             "ethnicity, mother tongue and religion, weighted to all residents; 'Two mother "
+             "tongues' is the office's own answer")):
+        found = {keyed[r]: r for r in table if r in keyed}
+        parts = {c: totals_[found[c]] for c in municipalities if c in found}
+        national = next((totals_[r] for r in table if r in ("Iš viso", "Republic of Lithuanian",
+                                                          "Republic of Lithuania")), None)
+        if len(parts) != len(municipalities):
+            raise SystemExit(f"{field}: rows for {len(parts)} of {len(municipalities)} "
+                             "municipalities")
+        if national is not None:
+            check_parts(parts, national, f"{field} {year}: municipalities -> Lithuania", 0)
+        for code, row in found.items():
+            counts = dict(table[row])
+            other = {"ethnicity": "Other", "religion": "Other religion",
+                     "language": "Other language"}[field]
+            if held[row] > 0.5:
+                counts[other] = counts.get(other, 0.0) + held[row]
+            comp[code].update({
+                field: shares(counts, total=totals_[row]),
+                f"{field}_year": year,
+                f"{field}_note": (
+                    f"{what} (Statistics Lithuania, {year} census)."
+                    + (f" {int(held[row]):,} people are in cells the office withholds as "
+                       f"confidential, and are counted in '{other}'." if held[row] > 0.5 else "")
+                    + (" The 2021 round published ethnicity and religion only for the whole "
+                       "country." if year == 2011 else "")),
+                f"_{field}_source": {
+                    "field": field, "name": f"{SOURCE}, {year} census",
+                    "url": (LANG_2021 if field == "language" else
+                            ETH_2011 if field == "ethnicity" else REL_2011)[1],
+                    "archived": ARCHIVE.format(ts=(LANG_2021 if field == "language" else
+                                                   ETH_2011 if field == "ethnicity"
+                                                   else REL_2011)[0],
+                                               url=(LANG_2021 if field == "language" else
+                                                    ETH_2011 if field == "ethnicity"
+                                                    else REL_2011)[1]).replace("id_/", "/"),
+                    "year": year},
+            })
+
+    def with_census(code: str) -> dict[str, Any]:
+        out = fields(code)
+        extra = dict(comp.get(code, {}))
+        for key in [k for k in extra if k.startswith("_") and k.endswith("_source")]:
+            out["sources"].append(extra.pop(key))
+        out.update(extra)
+        return out
+
     rows_ = {c: (expand_lt(names[c]["lt"]), "") for c in municipalities}
     aliases = {expand_lt(names[c]["lt"]): expand_en(names[c]["en"]) for c in municipalities}
     bound, _m, _l, _p = bind_rows("LTU", "admin2", rows_, aliases=aliases)
@@ -210,7 +425,8 @@ def main() -> int:
         records.append(record(
             f"LTU-OSP-{code}", name, level="admin2", parent="LTU", country="LTU",
             codes={"osp": code}, match_by="shape_id", shape_id=sid,
-            aliases=sorted({labels[sid], expand_en(names[code]["en"])} - {name}), **fields(code)))
+            aliases=sorted({labels[sid], expand_en(names[code]["en"])} - {name}),
+            **with_census(code)))
     admin1 = {fold(u["name"].replace(" County", "")): u for u in load_units("LTU", "admin1")}
     for code in counties:
         english = names[code]["en"].replace(" county", "")
@@ -220,7 +436,11 @@ def main() -> int:
         records.append(record(
             f"LTU-OSP-{code}", shape["name"], level="admin1", parent="LTU", country="LTU",
             codes={"osp": code}, match_by="shape_id", shape_id=shape["id"],
-            aliases=[names[code]["lt"], names[code]["en"]], **fields(code)))
+            aliases=[names[code]["lt"], names[code]["en"]], **with_census(code)))
+    for field in ("ethnicity", "religion", "language"):
+        labels_ = {g["group"] for r in records if isinstance(r.get(field), list)
+                   for g in r[field]}
+        log(f"  {field} labels the group tree cannot place: {unplaced(field, labels_)}")
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records")
     return 0
