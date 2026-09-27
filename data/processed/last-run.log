@@ -1,53 +1,30 @@
-
-== metadata for SAP2022T1T1ALEA22
-  200    20,319 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/SAP2022T1T1ALEA22/JSON-stat/2.0/en
-      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["SAP2022T1T1C01"],"label":{"SAP2022T1T1C01":"Populatio
-  label: Population
-  updated: 2023-09-15T11:00:00.000Z
-  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/statistics/population/censusofpopulation2022/]statistical release page[/url] on our website."]
-  extension: {"matrix": "SAP2022T1T1ALEA22", "reasons": ["Planned release"], "language": {"code": "en", "name": "English"}, "elimination": {"C04166V04937": "IE0", "C03737V04485": "AGET", "C03738V04487": "B"}, "contact": {"name": "", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 88, "value": "SAPMAP 2022"}, "product": {"code": "SM2022T1", "value": "Theme 1: Sex, Age and Marital St
-
-  dimension 'STATISTIC': Statistic -- 1 categories
-      SAP2022T1T1C01 Population
-
-  dimension 'TLIST(A1)': Census Year -- 1 categories
-      2022         2022
-
-  dimension 'C04166V04937': CSO Local Electoral Areas 2022 -- 167 categories
-      2ae19629-3eff-13a3-e055-000000000001 Borris-In-Ossory-Mountmellick, Laois
-      2ae19629-3f00-13a3-e055-000000000001 Portlaoise, Laois
-      2ae19629-3f01-13a3-e055-000000000001 Graiguecullen -Portarlington, Laois
-      2ae19629-3f02-13a3-e055-000000000001 Carlow, Carlow
-      2ae19629-3f03-13a3-e055-000000000001 Tullow, Carlow
-      2ae19629-3ef4-13a3-e055-553330000001 Muinebeag, Carlow
-      2ae19629-3f04-13a3-e055-000000000001 Manorhamilton, Leitrim
-      2ae19629-3f05-13a3-e055-000000000001 Ballinamore, Leitrim
-      2ae19629-3f06-13a3-e055-000000000001 Carrick-On-Shannon, Leitrim
-      2ae19629-3f07-13a3-e055-000000000001 Newcastle West, Limerick
-      2ae19629-3f08-13a3-e055-000000000001 Adare-Rathkeale, Limerick
-      2ae19629-3f09-13a3-e055-000000000001 Cappamore-Kilmallock, Limerick
-      2ae19629-3f0a-13a3-e055-000000000001 Limerick City West, Limerick
-      2ae19629-3f0b-13a3-e055-000000000001 Limerick City North, Limerick
-      ... and 153 more
-
-  dimension 'C03737V04485': Age -- 19 categories
-      AGE0-4       Age 0-4
-      AGE5-9       Age 5-9
-      AGE10-14     Age 10-14
-      AGE15-19     Age 15-19
-      AGE20-24     Age 20-24
-      AGE25-29     Age 25-29
-      AGE30-34     Age 30-34
-      AGE35-39     Age 35-39
-      AGE40-44     Age 40-44
-      AGE45-49     Age 45-49
-      AGE50-54     Age 50-54
-      AGE55-59     Age 55-59
-      AGE60-64     Age 60-64
-      AGE65-69     Age 65-69
-      ... and 5 more
-
-  dimension 'C03738V04487': Sex -- 3 categories
-      M            Males
-      F            Females
-      B            Both Sexes
+  0011626: População residente (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo e Idade; Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
+      dim 1: Período de referência dos dados
+      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
+      dim 3: Sexo
+      dim 4: Idade
+      Dim_Num1 (1): S7A2021=2021
+      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
+      Dim_Num3 (3): T=HM, 1=H, 2=M
+      Dim_Num4 (102): T=Total, 1=Menos de 1 ano, 2=1 ano, 3=2 anos, 4=3 anos, 5=4 anos, 6=5 anos, 7=6 anos, 8=7 anos, 9=8 anos, 10=9 anos, 11=10 anos
+  0011644: População residente com 15 e mais anos de idade (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013) e Religião; Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
+      dim 1: Período de referência dos dados
+      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
+      dim 3: Religião
+      Dim_Num1 (1): S7A2021=2021
+      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
+      Dim_Num3 (12): T=Total, 1=Católica, 2=Ortodoxa, 3=Protestante/Evangélica, 4=Testemunhas do Jeová, 5=Outra cristã, 6=Budista, 7=Hindu, 8=Judaica, 9=Muçulmana, 10=Outra não cristã, 11=Sem religião
+  0011612: Relação de masculinidade (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013); Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
+      dim 1: Período de referência dos dados
+      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
+      Dim_Num1 (1): S7A2021=2021
+      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
+  0008273: População residente (N.º) por Local de residência (NUTS - 2013), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente | last  | Anual
+      dim 1: Período de referência dos dados
+      dim 2: Local de residência (NUTS - 2013)
+      dim 3: Sexo
+      dim 4: Grupo etário
+      Dim_Num1 (13): S7A2011=2011, S7A2012=2012, S7A2013=2013, S7A2014=2014, S7A2015=2015, S7A2016=2016, S7A2017=2017, S7A2018=2018, S7A2019=2019, S7A2020=2020, S7A2021=2021, S7A2022=2022
+      Dim_Num2 (344): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1111601=Arcos de Valdevez, 1111602=Caminha, 1111603=Melgaço, 1111604=Monção, 1111605=Paredes de Coura, 1111606=Ponte da Barca, 1111607=Ponte de Lima, 1111608=Valença
+      Dim_Num3 (3): T=HM, 1=H, 2=M
+      Dim_Num4 (19): T=Total, 11=0 - 4 anos, 12=5 - 9 anos, 21=10 - 14 anos, 22=15 - 19 anos, 31=20 - 24 anos, 32=25 - 29 anos, 41=30 - 34 anos, 42=35 - 39 anos, 51=40 - 44 anos, 52=45 - 49 anos, 61=50 - 54 anos
