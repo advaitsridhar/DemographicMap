@@ -1,17 +1,10 @@
-== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .{0,80}(?i:sector).{0,80} 12
-  HTTP 200 application/json;charset=UTF-8 258,941 bytes
-  0 matches
-== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .{0,40}(?i:bucuresti).{0,120} 6
-  HTTP 200 application/json;charset=UTF-8 258,941 bytes
-  2 matches
-  2,"parentId":null},{"label":"Municipiul Bucuresti","nomItemId":3104,"offset":44,"parentId":null}],"dimCode":3,"label":"Judete"},{"options":[{"label":"TOTAL","nomItemId":
-  ntId":3102},{"label":"179132 MUNICIPIUL BUCURESTI","nomItemId":3048,"offset":16972,"parentId":3104}],"dimCode":4,"label":"Localitati "},{"options":[{"label":"Anul 1992",
-== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .dimensionsMap.{0,400} 2
-  HTTP 200 application/json;charset=UTF-8 258,941 bytes
-  1 matches
-  "dimensionsMap":[{"options":[{"label":"Total","nomItemId":1,"offset":1,"parentId":null},{"label":"   0- 4 ani","nomItemId":2,"offset":2,"parentId":null},{"label":"      0 ani","nomItemId":3,"offset":3,"parentId":null},{"label":"      1 ani","nomItemId":4,"offset":4,"parentId":null},{"label":"      2
-== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D (?i:ultimaActualizare|periodicitati|matrixName).{0,200} 6
-  HTTP 200 application/json;charset=UTF-8 258,941 bytes
-  2 matches
-  matrixName":"POPULATIA DUPA DOMICILIU la 1 ianuarie pe grupe de varsta si varste, sexe, judete si localitati","periodicitati":["Anuala"],"surseDeDate":[{"nume":"Populatia dupa domiciliu a Romaniei (la 1 ianuari
-  ultimaActualizare":"02-04-2026","observatii":"Datele utilizate pentru determinarea populatiei dupa domiciliu provin din doua tipuri de surse de date:\r\n1. surse administrative\r\nDirectia pentru Evidenta Persoanelor 
+austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
+  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
+  2115 municipalities
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70341.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70504.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70505.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70506.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70508.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70509.pdf :: <urlopen error [Errno 101] Network is unreachable>
+austria_census: no 2001 sheet for 1 municipalities: ['62280']
