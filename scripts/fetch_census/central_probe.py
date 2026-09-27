@@ -1871,7 +1871,68 @@ def hun15() -> None:
             log(f"     {r['TEL_SZ_ADAT']}={r.get('OBS_VALUE')}")
 
 
+def che15() -> None:
+    """BFS's commune balance 1991-2025: one sheet a year, and whose communes each sheet lists."""
+    import io as _io
+    import openpyxl
+    status, head, body = fetch("https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master", timeout=300)
+    log(f"   HTTP {status}, {len(body):,} bytes, {head.get('Content-Disposition') or ''}")
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    log(f"   sheets: {book.sheetnames}")
+    grep = re.compile(r"(?i)peseux|corcelles|^\W*neuchâtel|giubiasco|bellinzona|haldenstein|thun|"
+                      r"busswil|lyss|ederswiler|clavaleyres|bezirk thun|amtsbezirk")
+    for name in [n for n in book.sheetnames if re.search(r"2009|2010|2016|2020|2025", n)][:5]:
+        rows = list(book[name].iter_rows(values_only=True))
+        log(f"\n   sheet {name!r}: {len(rows)} rows")
+        for r in rows[:7]:
+            log("     " + " | ".join(f"[{j}] {' '.join(str(c).split())[:40]}" for j, c in enumerate(r)
+                                   if c not in (None, "")))
+        codes = [r for r in rows if r and re.match(r"^\s*\.*\s*\d{1,4}\b", str(r[0] or ""))]
+        log(f"   rows starting with a number: {len(codes)}")
+        for r in [r for r in rows if r and any(grep.search(str(c or "")) for c in r[:2])][:14]:
+            log("     > " + " | ".join(f"[{j}] {' '.join(str(c).split())[:30]}" for j, c in enumerate(r[:8])
+                                     if c not in (None, "")))
+
+
+def nld13() -> None:
+    """The survey question's categories in full, from the workbook's 'Begrippen'."""
+    import io as _io
+    import openpyxl
+    status, _, body = fetch("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx")
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    for r in book["Begrippen"].iter_rows(values_only=True):
+        if r and str(r[0] or "").startswith("Gelovigen"):
+            log("   " + " ".join(str(r[1]).split()))
+    for r in book["Tabel 2"].iter_rows(values_only=True):
+        cells = [str(c) for c in r if c not in (None, "")]
+        if cells and not re.match(r"^\d", cells[-1] if cells else ""):
+            log("   T2: " + " | ".join(" ".join(c.split())[:160] for c in cells))
+
+
+def svn9() -> None:
+    """Šentrupert's settlements by sex in 2026: where its men outnumber its women."""
+    url = "https://pxweb.stat.si/SiStatData/api/v1/sl/Data/05C5003S.px"
+    meta = json.loads(text(fetch(url)[2]))
+    var = {v["code"]: v for v in meta["variables"]}
+    place = next(c for c, v in var.items() if re.search(r"(?i)obč|nasel", v["text"]))
+    year = next(c for c, v in var.items() if re.search(r"(?i)leto", v["text"]))
+    measure = next(c for c, v in var.items() if re.search(r"(?i)meritve", v["text"]))
+    wanted = [v for v in var[place]["values"] if v == "211" or (v.startswith("211") and len(v) == 6)]
+    query = [{"code": place, "selection": {"filter": "item", "values": wanted}},
+             {"code": year, "selection": {"filter": "item", "values": ["2026"]}},
+             {"code": measure, "selection": {"filter": "item", "values": ["0", "1", "2"]}}]
+    body = json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode()
+    reply = json.loads(text(fetch(url, data=body, headers={"Content-Type": "application/json"})[2]))
+    from .pxweb import unstack
+    table: dict[str, dict[str, float]] = {}
+    for key, value in unstack(reply):
+        table.setdefault(key[place][1], {})[key[measure][0]] = value
+    for name, v in sorted(table.items(), key=lambda kv: -(kv[1].get("1", 0) - kv[1].get("2", 0)))[:8]:
+        log(f"   {name}: total {v.get('0')}, men {v.get('1')}, women {v.get('2')}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che15": che15, "nld13": nld13, "svn9": svn9,
     "aut12": aut12, "nld12": nld12, "che14": che14, "lux8": lux8, "svn8": svn8, "hun15": hun15,
     "hun14": hun14, "che13": che13, "lux7": lux7, "pol5": pol5, "nld11": nld11, "aut11": aut11,
     "svn7": svn7,
