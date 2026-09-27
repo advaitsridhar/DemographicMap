@@ -398,7 +398,10 @@ def main() -> int:
             raise SystemExit(f"{field}: rows for {len(parts)} of {len(municipalities)} "
                              "municipalities")
         if national is not None:
-            check_parts(parts, national, f"{field} {year}: municipalities -> Lithuania", 0)
+            # The 2021 survey's weighted municipal totals come within a few
+            # people of the national one (2,810,758 of 2,810,761).
+            check_parts(parts, national, f"{field} {year}: municipalities -> Lithuania",
+                        0.00001, 10)
         for code, row in found.items():
             counts = dict(table[row])
             other = {"ethnicity": "Other", "religion": "Other religion",

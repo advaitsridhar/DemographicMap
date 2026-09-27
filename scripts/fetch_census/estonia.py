@@ -251,15 +251,22 @@ def composition(rows, place: str, var: str, total_code: str, skip: set[str],
         elif cat not in skip:
             out[code][relabel(text)] += value
     # The census tables' categories fall a few people short of their totals
-    # in places (Haabersti 41,691 of 41,694; Paldiski 4,077 of 4,085); more
-    # than 0.3%, or ten people, is a misread.
-    for code, counts in out.items():
+    # in places -- Haabersti 41,691 of 41,694, Paldiski 4,077 of 4,085, a unit
+    # of 320 by eleven -- which is the office's protection of small cells, and
+    # random, place by place. A place off by more than 1%, or fifteen people,
+    # is dropped and named; many of them would be a misread, and stop the run.
+    off = []
+    for code, counts in list(out.items()):
         if "_" in code:
             continue           # "Hiiu county rural municipalities" and the like: not used
         parts = sum(v for k, v in counts.items() if k != "__total__")
-        if abs(parts - counts["__total__"]) > max(10, 0.003 * counts["__total__"]):
-            raise SystemExit(f"{var} at {code}: categories make {parts:,.0f} of "
-                             f"{counts['__total__']:,.0f}")
+        if abs(parts - counts["__total__"]) > max(15, 0.01 * counts["__total__"]):
+            off.append(f"{code} ({parts:,.0f} of {counts['__total__']:,.0f})")
+            del out[code]
+    if len(off) > 0.05 * max(len(out), 1):
+        raise SystemExit(f"{var}: categories miss their totals in {len(off)} places: {off[:6]}")
+    if off:
+        log(f"  {var}: left out, categories off their total: {off}")
     return out
 
 
