@@ -16,10 +16,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 44.0,
+      "value": 44.1,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 79.2,
@@ -127,12 +127,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -152,13 +146,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B41268812817743",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 44 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (260,303 males, 328,608 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 585,131 residents who answered the question, 88.8% of the 658,640 the census counted here; the other 73,509 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0002000",
@@ -177,10 +171,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 48.0,
+      "value": 48.4,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 80.8,
@@ -288,12 +282,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -313,13 +301,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B82164502050739",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 48 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (34,635 males, 42,851 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 82,835 residents who answered the question, 88.8% of the 93,312 the census counted here; the other 10,477 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0003000",
@@ -338,10 +326,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 42.0,
+      "value": 42.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 84.5,
@@ -449,12 +437,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -476,13 +458,13 @@
     "aliases": [
       "Jelgavas"
     ],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 42 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (24,921 males, 29,487 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 54,390 residents who answered the question, 91.4% of the 59,511 the census counted here; the other 5,121 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0004000",
@@ -501,10 +483,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.6,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 84.3,
@@ -612,12 +594,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -639,13 +615,13 @@
     "aliases": [
       "Jūrmalas"
     ],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (24,213 males, 28,713 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 45,055 residents who answered the question, 88.6% of the 50,840 the census counted here; the other 5,785 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0005000",
@@ -664,10 +640,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 43.0,
+      "value": 43.8,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 81.9,
@@ -775,12 +751,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -802,13 +772,13 @@
     "aliases": [
       "Liepājas"
     ],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 43 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (30,055 males, 36,691 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 68,064 residents who answered the question, 88.7% of the 76,731 the census counted here; the other 8,667 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0006000",
@@ -827,10 +797,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 47.0,
+      "value": 47.3,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 78.0,
@@ -938,12 +908,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -965,13 +929,13 @@
     "aliases": [
       "Rēzeknes"
     ],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 47 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (11,380 males, 14,598 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 29,737 residents who answered the question, 92.0% of the 32,328 the census counted here; the other 2,591 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0007000",
@@ -990,10 +954,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 47.0,
+      "value": 47.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 81.9,
@@ -1101,12 +1065,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1126,13 +1084,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B54416336216712",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 47 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (14,619 males, 17,860 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 33,671 residents who answered the question, 86.9% of the 38,750 the census counted here; the other 5,079 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0020000",
@@ -1151,10 +1109,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 47.0,
+      "value": 47.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.7,
@@ -1262,12 +1220,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1287,13 +1239,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B85643540098422",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 47 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (13,389 males, 14,436 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 6 units of 2009-2021 that make the municipality: Aizkraukles novads, Jaunjelgavas novads, Kokneses novads, Neretas novads, Pļaviņu novads, Skrīveru novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 6 units of 2009-2021 that make the municipality: Aizkraukles novads, Jaunjelgavas novads, Kokneses novads, Neretas novads, Pļaviņu novads, Skrīveru novads. The shares are of the 31,297 residents who answered the question, 93.4% of the 33,492 the census counted here; the other 2,195 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0021000",
@@ -1312,10 +1264,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 48.0,
+      "value": 48.8,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 93.3,
@@ -1346,11 +1298,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 29
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Lithuanian",
@@ -1423,12 +1370,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1448,13 +1389,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B79799475449991",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 48 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (6,222 males, 6,672 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 16,231 residents who answered the question, 94.5% of the 17,177 the census counted here; the other 946 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0022000",
@@ -1473,10 +1414,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 51.0,
+      "value": 51.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 100.3,
@@ -1584,12 +1525,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1609,13 +1544,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B31603947980404",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 51 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (11,740 males, 11,703 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Daugavpils novads, Ilūkstes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Daugavpils novads, Ilūkstes novads. The shares are of the 30,005 residents who answered the question, 90.6% of the 33,121 the census counted here; the other 3,116 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0023000",
@@ -1634,10 +1569,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 40.0,
+      "value": 40.7,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 94.1,
@@ -1745,12 +1680,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1770,13 +1699,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B78485662562022",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 40 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (11,701 males, 12,440 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Carnikavas novads, Ādažu novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Carnikavas novads, Ādažu novads. The shares are of the 15,456 residents who answered the question, 92.3% of the 16,739 the census counted here; the other 1,283 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0024000",
@@ -1795,10 +1724,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 49.0,
+      "value": 49.6,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 95.4,
@@ -1906,12 +1835,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -1931,13 +1854,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B22234049819432",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 49 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (8,381 males, 8,782 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Baltinavas novads, Balvu novads, Rugāju novads, Viļakas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Baltinavas novads, Balvu novads, Rugāju novads, Viļakas novads. The shares are of the 21,287 residents who answered the question, 91.1% of the 23,359 the census counted here; the other 2,072 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0025000",
@@ -1956,10 +1879,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 44.0,
+      "value": 44.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 93.9,
@@ -2067,12 +1990,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -2092,13 +2009,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B97467876462064",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 44 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (19,373 males, 20,633 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Bauskas novads, Iecavas novads, Rundāles novads, Vecumnieku novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Bauskas novads, Iecavas novads, Rundāles novads, Vecumnieku novads. The shares are of the 43,158 residents who answered the question, 91.6% of the 47,104 the census counted here; the other 3,946 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0026000",
@@ -2117,10 +2034,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 45.0,
+      "value": 45.1,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 91.9,
@@ -2228,12 +2145,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -2253,13 +2164,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B7317746382863",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 45 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (19,613 males, 21,350 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 7 units of 2009-2021 that make the municipality: Amatas novads, Cēsu novads, Jaunpiebalgas novads, Līgatnes novads, Priekuļu novads, Pārgaujas novads, Vecpiebalgas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 7 units of 2009-2021 that make the municipality: Amatas novads, Cēsu novads, Jaunpiebalgas novads, Līgatnes novads, Priekuļu novads, Pārgaujas novads, Vecpiebalgas novads. The shares are of the 43,034 residents who answered the question, 92.6% of the 46,466 the census counted here; the other 3,432 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0027000",
@@ -2278,10 +2189,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 97.9,
@@ -2389,12 +2300,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -2414,13 +2319,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B71258051821866",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (16,053 males, 16,397 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 8 units of 2009-2021 that make the municipality: Aizputes novads, Durbes novads, Grobiņas novads, Nīcas novads, Priekules novads, Pāvilostas novads, Rucavas novads, Vaiņodes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 8 units of 2009-2021 that make the municipality: Aizputes novads, Durbes novads, Grobiņas novads, Nīcas novads, Priekules novads, Pāvilostas novads, Rucavas novads, Vaiņodes novads. The shares are of the 35,825 residents who answered the question, 93.4% of the 38,351 the census counted here; the other 2,526 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0028000",
@@ -2439,10 +2344,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.2,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.5,
@@ -2550,12 +2455,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -2575,13 +2474,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B58439830015402",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (13,020 males, 14,080 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Auces novads, Dobeles novads, Tērvetes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Auces novads, Dobeles novads, Tērvetes novads. The shares are of the 30,812 residents who answered the question, 92.7% of the 33,248 the census counted here; the other 2,436 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0029000",
@@ -2600,10 +2499,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.8,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 93.6,
@@ -2696,11 +2595,6 @@
         "group": "Estonian",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -2708,12 +2602,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -2736,13 +2624,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B5661553593199",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (8,805 males, 9,410 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 21,528 residents who answered the question, 94.4% of the 22,794 the census counted here; the other 1,266 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0030000",
@@ -2761,10 +2649,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 43.0,
+      "value": 43.4,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 95.8,
@@ -2872,12 +2760,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -2897,13 +2779,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B34309626401644",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 43 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (15,517 males, 16,201 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Jelgavas novads, Ozolnieku novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Jelgavas novads, Ozolnieku novads. The shares are of the 32,096 residents who answered the question, 93.3% of the 34,402 the census counted here; the other 2,306 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0031000",
@@ -2922,10 +2804,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.3,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.2,
@@ -3033,12 +2915,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -3058,13 +2934,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B48937535890319",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (18,289 males, 19,845 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 6 units of 2009-2021 that make the municipality: Aknīstes novads, Jēkabpils, Jēkabpils novads, Krustpils novads, Salas novads, Viesītes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 6 units of 2009-2021 that make the municipality: Aknīstes novads, Jēkabpils, Jēkabpils novads, Krustpils novads, Salas novads, Viesītes novads. The shares are of the 43,022 residents who answered the question, 92.1% of the 46,704 the census counted here; the other 3,682 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0032000",
@@ -3083,10 +2959,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 53.0,
+      "value": 53.7,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.9,
@@ -3161,12 +3037,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -3180,7 +3050,7 @@
     "match_by": "shape_id",
     "shape_id": "71098776B38282481952649",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 53 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (9,169 males, 9,871 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
@@ -3206,7 +3076,7 @@
       "value": 45.0,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.0,
@@ -3314,12 +3184,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -3339,13 +3203,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B9951399870342",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 45 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (12,640 males, 13,746 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Alsungas novads, Kuldīgas novads, Skrundas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Alsungas novads, Kuldīgas novads, Skrundas novads. The shares are of the 29,076 residents who answered the question, 91.9% of the 31,633 the census counted here; the other 2,557 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0034000",
@@ -3364,10 +3228,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 40.0,
+      "value": 40.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 91.8,
@@ -3460,11 +3324,6 @@
         "group": "Estonian",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -3472,12 +3331,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -3500,13 +3353,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B65259108099076",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 40 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (15,156 males, 16,512 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Baldones novads, Ķekavas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Baldones novads, Ķekavas novads. The shares are of the 24,988 residents who answered the question, 91.2% of the 27,391 the census counted here; the other 2,403 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0035000",
@@ -3525,10 +3378,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 48.0,
+      "value": 48.1,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 96.0,
@@ -3636,12 +3489,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -3661,13 +3508,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B19754450586287",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 48 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (13,361 males, 13,915 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Alojas novads, Limbažu novads, Salacgrīvas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Alojas novads, Limbažu novads, Salacgrīvas novads. The shares are of the 29,364 residents who answered the question, 93.5% of the 31,420 the census counted here; the other 2,056 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0036000",
@@ -3686,10 +3533,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 48.0,
+      "value": 48.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 87.8,
@@ -3782,11 +3629,6 @@
         "group": "Estonian",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -3794,12 +3636,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -3822,13 +3658,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B86236730304515",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 48 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (4,628 males, 5,269 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 11,542 residents who answered the question, 92.4% of the 12,496 the census counted here; the other 954 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0037000",
@@ -3847,10 +3683,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 50.0,
+      "value": 50.6,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 90.2,
@@ -3958,12 +3794,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -3983,13 +3813,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B32517746264485",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 50 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (9,324 males, 10,335 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Ciblas novads, Kārsavas novads, Ludzas novads, Zilupes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Ciblas novads, Kārsavas novads, Ludzas novads, Zilupes novads. The shares are of the 23,617 residents who answered the question, 88.3% of the 26,732 the census counted here; the other 3,115 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0038000",
@@ -4008,10 +3838,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 47.0,
+      "value": 47.3,
       "unit": "years",
       "year": 2025,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 93.8,
@@ -4119,12 +3949,6 @@
         "year": 2025
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2025
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -4144,13 +3968,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B63357041229203",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2025 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2025; the office tabulates the ages, not this median. Madona and Varakļāni merged on 1 July 2025 and are drawn apart, so both are read before the merger. CSB publishes the median in completed years (IRD031: 47 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2025 (13,117 males, 13,985 females).",
     "population_note": "Registered residents on the beginning of 2025. Madona and Varakļāni merged on 1 July 2025 and are drawn apart, so both are read before the merger.",
     "ethnicity_year": 2025,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2025 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Cesvaines novads, Lubānas novads, Madonas novads, Ērgļu novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Cesvaines novads, Lubānas novads, Madonas novads, Ērgļu novads. The shares are of the 31,607 residents who answered the question, 93.9% of the 33,650 the census counted here; the other 2,043 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0039000",
@@ -4169,10 +3993,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 37.0,
+      "value": 37.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 90.6,
@@ -4280,12 +4104,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -4305,13 +4123,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B68624450600982",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 37 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (18,123 males, 20,009 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Babītes novads, Mārupes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Babītes novads, Mārupes novads. The shares are of the 23,074 residents who answered the question, 91.0% of the 25,358 the census counted here; the other 2,284 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0040000",
@@ -4330,10 +4148,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 43.0,
+      "value": 43.6,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 88.7,
@@ -4441,12 +4259,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -4466,13 +4278,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B85146594431848",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 43 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (26,876 males, 30,289 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Ikšķiles novads, Lielvārdes novads, Ogres novads, Ķeguma novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Ikšķiles novads, Lielvārdes novads, Ogres novads, Ķeguma novads. The shares are of the 56,583 residents who answered the question, 92.6% of the 61,123 the census counted here; the other 4,540 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0041000",
@@ -4491,10 +4303,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 43.0,
+      "value": 43.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 90.6,
@@ -4602,12 +4414,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -4627,13 +4433,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B7518739434496",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 43 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (10,009 males, 11,053 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 18,123 residents who answered the question, 90.1% of the 20,116 the census counted here; the other 1,993 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0042000",
@@ -4652,10 +4458,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 50.0,
+      "value": 50.2,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 94.2,
@@ -4715,11 +4521,6 @@
         "group": "Estonian",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -4727,12 +4528,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -4749,7 +4544,7 @@
     "match_by": "shape_id",
     "shape_id": "71098776B20667457444759",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 50 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (7,390 males, 7,848 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
@@ -4772,10 +4567,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 47.0,
+      "value": 47.2,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 101.0,
@@ -4883,12 +4678,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -4908,13 +4697,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B8434036234200",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 47 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (13,700 males, 13,568 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Rēzeknes novads, Viļānu novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Rēzeknes novads, Viļānu novads. The shares are of the 31,339 residents who answered the question, 90.5% of the 34,617 the census counted here; the other 3,278 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0044000",
@@ -4933,10 +4722,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 40.0,
+      "value": 40.3,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 95.0,
@@ -5044,12 +4833,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -5069,13 +4852,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B49730814014776",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 40 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (17,311 males, 18,229 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Garkalnes novads, Ropažu novads, Stopiņu novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Garkalnes novads, Ropažu novads, Stopiņu novads. The shares are of the 22,151 residents who answered the question, 89.4% of the 24,768 the census counted here; the other 2,617 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0045000",
@@ -5094,10 +4877,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 42.0,
+      "value": 42.2,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 90.5,
@@ -5205,12 +4988,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -5230,13 +5007,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B26557032040822",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 42 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (11,359 males, 12,556 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 20,190 residents who answered the question, 90.2% of the 22,391 the census counted here; the other 2,201 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0046000",
@@ -5255,10 +5032,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 44.0,
+      "value": 44.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 94.2,
@@ -5366,12 +5143,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -5391,13 +5162,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B25519893452051",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 44 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (12,703 males, 13,489 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Brocēnu novads, Saldus novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Brocēnu novads, Saldus novads. The shares are of the 29,271 residents who answered the question, 91.9% of the 31,837 the census counted here; the other 2,566 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0047000",
@@ -5416,10 +5187,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.7,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 101.3,
@@ -5512,11 +5283,6 @@
         "group": "Estonian",
         "pct": 0.1,
         "count": 7
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -5524,12 +5290,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -5552,13 +5312,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B45130970792207",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (5,088 males, 5,025 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Saulkrastu novads, Sējas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 2 units of 2009-2021 that make the municipality: Saulkrastu novads, Sējas novads. The shares are of the 7,549 residents who answered the question, 92.6% of the 8,148 the census counted here; the other 599 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0048000",
@@ -5577,10 +5337,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 41.0,
+      "value": 41.3,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.2,
@@ -5688,12 +5448,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -5713,13 +5467,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B50948551270506",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 41 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (15,137 males, 16,409 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Inčukalna novads, Krimuldas novads, Mālpils novads, Siguldas novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Inčukalna novads, Krimuldas novads, Mālpils novads, Siguldas novads. The shares are of the 30,994 residents who answered the question, 92.2% of the 33,613 the census counted here; the other 2,619 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0049000",
@@ -5738,10 +5492,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 45.0,
+      "value": 45.1,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 97.2,
@@ -5849,12 +5603,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -5874,13 +5622,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B38544645515098",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 45 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (8,529 males, 8,777 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Apes novads, Raunas novads, Smiltenes novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 3 units of 2009-2021 that make the municipality: Apes novads, Raunas novads, Smiltenes novads. The shares are of the 19,574 residents who answered the question, 95.5% of the 20,504 the census counted here; the other 930 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0051000",
@@ -5899,10 +5647,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 46.0,
+      "value": 46.3,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 92.7,
@@ -6010,12 +5758,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -6035,13 +5777,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B72530071307653",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 46 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (16,480 males, 17,784 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Dundagas novads, Mērsraga novads, Rojas novads, Talsu novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Dundagas novads, Mērsraga novads, Rojas novads, Talsu novads. The shares are of the 38,055 residents who answered the question, 92.7% of the 41,057 the census counted here; the other 3,002 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0052000",
@@ -6060,10 +5802,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 44.0,
+      "value": 44.4,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 93.2,
@@ -6171,12 +5913,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -6196,13 +5932,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B88120504169111",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 44 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (20,739 males, 22,252 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Engures novads, Jaunpils novads, Kandavas novads, Tukuma novads."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 4 units of 2009-2021 that make the municipality: Engures novads, Jaunpils novads, Kandavas novads, Tukuma novads. The shares are of the 45,671 residents who answered the question, 92.2% of the 49,524 the census counted here; the other 3,853 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0053000",
@@ -6221,10 +5957,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 49.0,
+      "value": 49.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 88.0,
@@ -6317,11 +6053,6 @@
         "group": "Romani",
         "pct": 0.2,
         "count": 13
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -6329,12 +6060,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -6357,13 +6082,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B61604579096819",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 49 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (3,512 males, 3,989 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 8,645 residents who answered the question, 93.0% of the 9,299 the census counted here; the other 654 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0054000",
@@ -6382,10 +6107,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 44.0,
+      "value": 44.5,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 89.4,
@@ -6493,12 +6218,6 @@
         "year": 2026
       },
       {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
-        "year": 2026
-      },
-      {
         "field": "ethnicity",
         "name": "Central Statistical Bureau of Latvia, IRE031",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
@@ -6518,13 +6237,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B18023994711883",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 44 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (23,757 males, 26,567 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 8 units of 2009-2021 that make the municipality: Beverīnas novads, Burtnieku novads, Kocēnu novads, Mazsalacas novads, Naukšēnu novads, Rūjienas novads, Strenču novads, Valmiera."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. Summed from the 8 units of 2009-2021 that make the municipality: Beverīnas novads, Burtnieku novads, Kocēnu novads, Mazsalacas novads, Naukšēnu novads, Rūjienas novads, Strenču novads, Valmiera. The shares are of the 53,851 residents who answered the question, 93.1% of the 57,859 the census counted here; the other 4,008 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0055000",
@@ -6543,10 +6262,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 48.0,
+      "value": 48.8,
       "unit": "years",
       "year": 2025,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 90.4,
@@ -6567,31 +6286,6 @@
         "group": "Russian",
         "pct": 4.3,
         "count": 143
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Other language",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -6629,21 +6323,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 6
-      },
-      {
-        "group": "Estonian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -6651,12 +6330,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2025
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2025
       },
       {
@@ -6679,13 +6352,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B4894818931549",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2025 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2025; the office tabulates the ages, not this median. Madona and Varakļāni merged on 1 July 2025 and are drawn apart, so both are read before the merger. CSB publishes the median in completed years (IRD031: 48 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2025 (1,339 males, 1,481 females).",
     "population_note": "Registered residents on the beginning of 2025. Madona and Varakļāni merged on 1 July 2025 and are drawn apart, so both are read before the merger.",
     "ethnicity_year": 2025,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2025 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 3,328 residents who answered the question, 93.5% of the 3,560 the census counted here; the other 232 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0056000",
@@ -6704,10 +6377,10 @@
       "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "median_age": {
-      "value": 45.0,
+      "value": 45.9,
       "unit": "years",
       "year": 2026,
-      "source": "Central Statistical Bureau of Latvia, IRD031"
+      "source": "Central Statistical Bureau of Latvia, IRD041"
     },
     "sex_ratio": {
       "value": 102.0,
@@ -6800,11 +6473,6 @@
         "group": "Estonian",
         "pct": 0.1,
         "count": 6
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -6812,12 +6480,6 @@
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD041",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD041/",
-        "year": 2026
-      },
-      {
-        "field": "median age",
-        "name": "Central Statistical Bureau of Latvia, IRD031",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD031/",
         "year": 2026
       },
       {
@@ -6840,13 +6502,13 @@
     "match_by": "shape_id",
     "shape_id": "71098776B75589501739909",
     "aliases": [],
-    "median_age_note": "The median age at the beginning of 2026 as CSB publishes it for the municipality (IRD031).",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Central Statistical Bureau of Latvia, IRD041's count of residents by single year of age on the beginning of 2026; the office tabulates the ages, not this median. CSB publishes the median in completed years (IRD031: 45 here); this is the same median to a tenth of a year, as the rest of the map gives it.",
     "sex_ratio_note": "Males per 100 females among residents on the beginning of 2026 (5,132 males, 5,029 females).",
     "population_note": "Registered residents on the beginning of 2026.",
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. The shares are of the 11,031 residents who answered the question, 90.9% of the 12,139 the census counted here; the other 1,108 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0001000",
@@ -7001,7 +6663,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rīga), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rīga), so the census's figure is for exactly this territory. The shares are of the 585,131 residents who answered the question, 88.8% of the 658,640 the census counted here; the other 73,509 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0002000",
@@ -7156,7 +6818,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Daugavpils), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Daugavpils), so the census's figure is for exactly this territory. The shares are of the 82,835 residents who answered the question, 88.8% of the 93,312 the census counted here; the other 10,477 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0003000",
@@ -7311,7 +6973,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jelgava), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jelgava), so the census's figure is for exactly this territory. The shares are of the 54,390 residents who answered the question, 91.4% of the 59,511 the census counted here; the other 5,121 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0004000",
@@ -7466,7 +7128,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jūrmala), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jūrmala), so the census's figure is for exactly this territory. The shares are of the 45,055 residents who answered the question, 88.6% of the 50,840 the census counted here; the other 5,785 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0005000",
@@ -7621,7 +7283,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Liepāja), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Liepāja), so the census's figure is for exactly this territory. The shares are of the 68,064 residents who answered the question, 88.7% of the 76,731 the census counted here; the other 8,667 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0006000",
@@ -7776,7 +7438,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rēzekne), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rēzekne), so the census's figure is for exactly this territory. The shares are of the 29,737 residents who answered the question, 92.0% of the 32,328 the census counted here; the other 2,591 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0007000",
@@ -7931,7 +7593,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ventspils), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ventspils), so the census's figure is for exactly this territory. The shares are of the 33,671 residents who answered the question, 86.9% of the 38,750 the census counted here; the other 5,079 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0020200",
@@ -9672,16 +9334,6 @@
         "group": "Other language",
         "pct": 0.1,
         "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -9754,7 +9406,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Skrīveru novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Skrīveru novads), so the census's figure is for exactly this territory. The shares are of the 3,508 residents who answered the question, 94.6% of the 3,708 the census counted here; the other 200 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0020540",
@@ -9811,21 +9463,6 @@
         "group": "Lithuanian",
         "pct": 1.9,
         "count": 6
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -9920,11 +9557,6 @@
         "group": "Polish",
         "pct": 0.6,
         "count": 2
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -10410,16 +10042,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -10504,21 +10126,6 @@
         "group": "Belarusian",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -10613,11 +10220,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -10796,26 +10398,6 @@
         "group": "Other or not stated",
         "pct": 1.1,
         "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -10905,16 +10487,6 @@
         "group": "Polish",
         "pct": 0.7,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11093,26 +10665,6 @@
         "group": "Other or not stated",
         "pct": 3.1,
         "count": 10
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11301,16 +10853,6 @@
         "group": "Other or not stated",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11405,11 +10947,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11504,11 +11041,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11603,11 +11135,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11697,16 +11224,6 @@
         "group": "Ukrainian",
         "pct": 0.5,
         "count": 3
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -11999,11 +11516,6 @@
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -12791,11 +12303,6 @@
         "group": "Ukrainian",
         "pct": 1.4,
         "count": 14
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -13578,16 +13085,6 @@
         "group": "Other or not stated",
         "pct": 1.7,
         "count": 3
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -14547,7 +14044,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ādažu novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ādažu novads), so the census's figure is for exactly this territory. The shares are of the 9,228 residents who answered the question, 92.0% of the 10,027 the census counted here; the other 799 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0023410",
@@ -14687,7 +14184,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Carnikavas novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Carnikavas novads), so the census's figure is for exactly this territory. The shares are of the 6,228 residents who answered the question, 92.8% of the 6,712 the census counted here; the other 484 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0024200",
@@ -14938,21 +14435,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -14980,16 +14462,6 @@
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15025,7 +14497,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Baltinavas novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Baltinavas novads), so the census's figure is for exactly this territory. The shares are of the 1,069 residents who answered the question, 90.8% of the 1,177 the census counted here; the other 108 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0024410",
@@ -15290,11 +14762,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15379,21 +14846,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15483,16 +14935,6 @@
         "group": "Ukrainian",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15686,11 +15128,6 @@
         "group": "Other or not stated",
         "pct": 1.5,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15785,11 +15222,6 @@
         "group": "Belarusian",
         "pct": 0.3,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15874,21 +15306,6 @@
         "group": "Polish",
         "pct": 0.5,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -15978,16 +15395,6 @@
         "group": "Belarusian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16176,16 +15583,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16280,11 +15677,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16379,11 +15771,6 @@
         "group": "Belarusian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16473,16 +15860,6 @@
         "group": "Belarusian",
         "pct": 0.9,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16572,16 +15949,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -16676,11 +16043,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -19250,11 +18612,6 @@
         "group": "Belarusian",
         "pct": 0.6,
         "count": 4
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -19344,16 +18701,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -19547,11 +18894,6 @@
         "group": "Ukrainian",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -20537,11 +19879,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -20834,11 +20171,6 @@
         "group": "Other or not stated",
         "pct": 0.6,
         "count": 3
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -21428,11 +20760,6 @@
         "group": "Belarusian",
         "pct": 0.2,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -21725,11 +21052,6 @@
         "group": "Belarusian",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -22220,11 +21542,6 @@
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -22705,21 +22022,6 @@
         "group": "Other or not stated",
         "pct": 0.6,
         "count": 3
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -22814,11 +22116,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -23903,11 +23200,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -24101,11 +23393,6 @@
         "group": "Other or not stated",
         "pct": 0.9,
         "count": 6
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -25878,16 +25165,6 @@
         "group": "Belarusian",
         "pct": 3.3,
         "count": 8
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -26180,11 +25457,6 @@
         "group": "Other or not stated",
         "pct": 0.5,
         "count": 2
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -26477,11 +25749,6 @@
         "group": "Ukrainian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -26675,11 +25942,6 @@
         "group": "Belarusian",
         "pct": 1.3,
         "count": 6
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -26774,11 +26036,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 2
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -27170,11 +26427,6 @@
         "group": "Other or not stated",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -27368,11 +26620,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -29337,7 +28584,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jēkabpils), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Jēkabpils), so the census's figure is for exactly this territory. The shares are of the 22,418 residents who answered the question, 91.0% of the 24,635 the census counted here; the other 2,217 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0031200",
@@ -29597,16 +28844,6 @@
         "group": "Other or not stated",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -29800,11 +29037,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -29998,11 +29230,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -30196,11 +29423,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -30691,11 +29913,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -30790,11 +30007,6 @@
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 4
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -30988,11 +30200,6 @@
         "group": "Belarusian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -32077,11 +31284,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -32473,11 +31675,6 @@
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -32671,11 +31868,6 @@
         "group": "Ukrainian",
         "pct": 1.3,
         "count": 4
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33265,11 +32457,6 @@
         "group": "Ukrainian",
         "pct": 0.8,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33364,11 +32551,6 @@
         "group": "Ukrainian",
         "pct": 0.9,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33557,16 +32739,6 @@
         "group": "Other or not stated",
         "pct": 1.9,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33661,11 +32833,6 @@
         "group": "Ukrainian",
         "pct": 2.2,
         "count": 7
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33760,11 +32927,6 @@
         "group": "Ukrainian",
         "pct": 1.9,
         "count": 12
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -33859,11 +33021,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -34057,11 +33214,6 @@
         "group": "Ukrainian",
         "pct": 1.7,
         "count": 6
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -34543,16 +33695,6 @@
         "group": "Other language",
         "pct": 0.1,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -34625,7 +33767,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Alsungas novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Alsungas novads), so the census's figure is for exactly this territory. The shares are of the 1,366 residents who answered the question, 92.9% of the 1,470 the census counted here; the other 104 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0033410",
@@ -34890,11 +34032,6 @@
         "group": "Russian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -36172,16 +35309,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -36276,11 +35403,6 @@
         "group": "Belarusian",
         "pct": 0.6,
         "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -37563,11 +36685,6 @@
         "group": "Other or not stated",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -38053,16 +37170,6 @@
         "group": "Other or not stated",
         "pct": 0.7,
         "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -38355,11 +37462,6 @@
         "group": "Belarusian",
         "pct": 0.5,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -38850,11 +37952,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -39048,11 +38145,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -39246,11 +38338,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -39840,11 +38927,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40137,11 +39219,6 @@
         "group": "Polish",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40236,11 +39313,6 @@
         "group": "Polish",
         "pct": 1.4,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40335,11 +39407,6 @@
         "group": "Polish",
         "pct": 0.5,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40429,16 +39496,6 @@
         "group": "Ukrainian",
         "pct": 0.5,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40533,11 +39590,6 @@
         "group": "Polish",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40726,16 +39778,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -40825,16 +39867,6 @@
         "group": "Other or not stated",
         "pct": 0.7,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -41226,11 +40258,6 @@
         "group": "Polish",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -41320,16 +40347,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -41622,11 +40639,6 @@
         "group": "Ukrainian",
         "pct": 1.2,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -41721,11 +40733,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -41919,11 +40926,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 3
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -42315,11 +41317,6 @@
         "group": "Polish",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -42810,11 +41807,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -42909,11 +41901,6 @@
         "group": "Polish",
         "pct": 0.5,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -43889,21 +42876,6 @@
         "group": "Lithuanian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -43998,11 +42970,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -44097,11 +43064,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -44467,7 +43429,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mārupes novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mārupes novads), so the census's figure is for exactly this territory. The shares are of the 14,430 residents who answered the question, 90.5% of the 15,950 the census counted here; the other 1,520 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0039420",
@@ -47024,11 +45986,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -47222,11 +46179,6 @@
         "group": "Ukrainian",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -47321,11 +46273,6 @@
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 6
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -47509,21 +46456,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -47811,16 +46743,6 @@
         "group": "Other or not stated",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -47915,11 +46837,6 @@
         "group": "Other or not stated",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -48014,11 +46931,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -48410,11 +47322,6 @@
         "group": "Polish",
         "pct": 0.6,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -48509,11 +47416,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -48707,11 +47609,6 @@
         "group": "Belarusian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -49004,11 +47901,6 @@
         "group": "Ukrainian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -49202,11 +48094,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -49499,11 +48386,6 @@
         "group": "Belarusian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -49598,11 +48480,6 @@
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -49880,26 +48757,6 @@
         "group": "Lithuanian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -50093,11 +48950,6 @@
         "group": "Belarusian",
         "pct": 0.9,
         "count": 15
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -50291,11 +49143,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -50786,11 +49633,6 @@
         "group": "Ukrainian",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -50885,11 +49727,6 @@
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 4
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -51083,11 +49920,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -51272,16 +50104,6 @@
         "group": "Belarusian",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -51354,7 +50176,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Garkalnes novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Garkalnes novads), so the census's figure is for exactly this territory. The shares are of the 6,938 residents who answered the question, 89.3% of the 7,768 the census counted here; the other 830 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0044410",
@@ -51402,11 +50224,6 @@
         "group": "Other language",
         "pct": 0.3,
         "count": 21
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Lithuanian",
@@ -51494,7 +50311,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ropažu novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Ropažu novads), so the census's figure is for exactly this territory. The shares are of the 6,055 residents who answered the question, 87.7% of the 6,904 the census counted here; the other 849 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0044420",
@@ -51634,7 +50451,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Stopiņu novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Stopiņu novads), so the census's figure is for exactly this territory. The shares are of the 9,158 residents who answered the question, 90.7% of the 10,096 the census counted here; the other 938 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0045200",
@@ -52493,11 +51310,6 @@
         "group": "Other or not stated",
         "pct": 0.4,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -53285,11 +52097,6 @@
         "group": "Other or not stated",
         "pct": 0.5,
         "count": 3
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -53483,11 +52290,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -53676,16 +52478,6 @@
         "group": "Other or not stated",
         "pct": 0.7,
         "count": 3
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -53879,11 +52671,6 @@
         "group": "Polish",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -54164,19 +52951,9 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other language",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -54249,7 +53026,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Sējas novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Sējas novads), so the census's figure is for exactly this territory. The shares are of the 2,093 residents who answered the question, 91.3% of the 2,293 the census counted here; the other 200 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0048200",
@@ -54802,16 +53579,6 @@
         "group": "Ukrainian",
         "pct": 0.1,
         "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -54884,7 +53651,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mālpils novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mālpils novads), so the census's figure is for exactly this territory. The shares are of the 3,361 residents who answered the question, 92.7% of the 3,626 the census counted here; the other 265 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0048450",
@@ -54951,11 +53718,6 @@
         "group": "Polish",
         "pct": 0.5,
         "count": 3
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -55149,11 +53911,6 @@
         "group": "Polish",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -55347,11 +54104,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -55644,11 +54396,6 @@
         "group": "Ukrainian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -55837,16 +54584,6 @@
         "group": "Ukrainian",
         "pct": 0.7,
         "count": 5
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -55941,11 +54678,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -56040,11 +54772,6 @@
         "group": "Ukrainian",
         "pct": 0.6,
         "count": 6
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -56535,11 +55262,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -56634,11 +55356,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -57619,16 +56336,6 @@
         "group": "Ukrainian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -57723,11 +56430,6 @@
         "group": "Belarusian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -57822,11 +56524,6 @@
         "group": "Lithuanian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -58218,11 +56915,6 @@
         "group": "Lithuanian",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -58298,26 +56990,6 @@
         "group": "Other language",
         "pct": 0.3,
         "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "ethnicity": [
@@ -58390,7 +57062,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mērsraga novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mērsraga novads), so the census's figure is for exactly this territory. The shares are of the 1,549 residents who answered the question, 94.6% of the 1,638 the census counted here; the other 89 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0051530",
@@ -58440,19 +57112,9 @@
         "count": 1
       },
       {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other language",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       },
       {
         "group": "Ukrainian",
@@ -58530,7 +57192,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rojas novads), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Rojas novads), so the census's figure is for exactly this territory. The shares are of the 3,686 residents who answered the question, 92.8% of the 3,972 the census counted here; the other 286 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0051540",
@@ -59191,11 +57853,6 @@
         "group": "Belarusian",
         "pct": 0.5,
         "count": 2
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -60874,11 +59531,6 @@
         "group": "Lithuanian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -61666,11 +60318,6 @@
         "group": "Ukrainian",
         "pct": 0.4,
         "count": 2
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -61765,11 +60412,6 @@
         "group": "Belarusian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -61952,7 +60594,7 @@
     "ethnicity_year": 2026,
     "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
     "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Valmiera), so the census's figure is for exactly this territory."
+    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Valmiera), so the census's figure is for exactly this territory. The shares are of the 23,403 residents who answered the question, 93.1% of the 25,130 the census counted here; the other 1,727 gave no answer and are left out."
   },
   {
     "id": "LVA-CSB-LV0054200",
@@ -62900,21 +61542,6 @@
         "group": "Russian",
         "pct": 2.2,
         "count": 3
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -63999,11 +62626,6 @@
         "group": "Belarusian",
         "pct": 0.3,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -64296,11 +62918,6 @@
         "group": "Lithuanian",
         "pct": 0.5,
         "count": 3
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -64786,16 +63403,6 @@
         "group": "Belarusian",
         "pct": 1.9,
         "count": 7
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -65286,11 +63893,6 @@
         "group": "Ukrainian",
         "pct": 0.5,
         "count": 2
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -65484,11 +64086,6 @@
         "group": "Belarusian",
         "pct": 0.1,
         "count": 1
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -66073,16 +64670,6 @@
         "group": "Other or not stated",
         "pct": 1.4,
         "count": 6
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
@@ -66177,11 +64764,6 @@
         "group": "Polish",
         "pct": 0.2,
         "count": 1
-      },
-      {
-        "group": "Other or not stated",
-        "pct": 0.0,
-        "count": 0
       }
     ],
     "sources": [
