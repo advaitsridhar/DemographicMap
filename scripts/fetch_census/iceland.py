@@ -11,9 +11,12 @@ today's 62 municipalities, which is the wrong vintage for every merged one.
 
 **admin2** -- table MAN09000 ("Population by municipality, age and sex 1
 December 1997-2022"), which keeps every year in the municipalities of that
-year. The figures are for 1 December 2017, the last count before the 2018
-mergers. Single years of age 0-110, with an "unknown" row that is left out of
-the median and kept in the population.
+year: 1 December 2017, the last count before the 2018 mergers, for every
+municipality merged since. One that has not been -- its number survives and
+MAN02005, which lays every year out in today's division, gives it the same
+count on 1 January 2018 -- takes MAN02005's latest year instead. Single years
+of age, with an "unknown" row that is left out of the median and kept in the
+population.
 
 **admin1** -- the eight regions (landshlutar), which have not changed. Table
 MAN02005 (current municipalities, 1 January of each year) for the latest year,
@@ -118,17 +121,46 @@ def main() -> int:
     labels = {s["id"]: s["name"] for s in shapes}
     bound, _m, _l, _p = bind_rows("ISL", "admin2",
                                   {c: (names[c], REGION[c[0]]) for c in units}, aliases=ALIASES)
+    # Today's municipalities, which the regions below are summed from, and
+    # which also say which 2017 municipalities are unchanged: MAN02005 lays
+    # every year out in today's division, so a 2017 municipality whose number
+    # survives and whose MAN02005 count on 1 January 2018 is its own count of
+    # a month before is the same territory today. Fjarðabyggð kept its number
+    # when it took in Breiðdalshreppur in 2018, and fails the second test.
+    meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE)["variables"]}
+    year = meta["Ár"]["values"][-1]
+    now_people, now_totals, now_names = read(NOW, year)
+    then = {key["Sveitarfélag"][0]: value for key, value in unstack(request_json(NOW, {"query": [
+        {"code": "Sveitarfélag", "selection": {"filter": "all", "values": ["*"]}},
+        {"code": "Aldur", "selection": {"filter": "item", "values": ["-1"]}},
+        {"code": "Ár", "selection": {"filter": "item", "values": [str(VINTAGE + 1)]}},
+        {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
+    ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
+    unchanged = {c for c in units if c in then and now_totals.get(c)
+                 and abs(then[c] - totals[c]) <= 0.015 * totals[c] + 5}
+    log(f"  {len(unchanged)} of {len(units)} municipalities are the same territory today "
+        f"(MAN02005 on 1 January {VINTAGE + 1} within 1.5% of MAN09000 on 1 December "
+        f"{VINTAGE}); changed: {sorted(names[c] for c in units if c not in unchanged)}")
+
     records = []
     date = f"1 December {VINTAGE}"
     for code in units:
         sid = bound.get(code)
         if sid is None:
             continue
-        fields = people[code].fields(
-            year=VINTAGE, source=f"{SOURCE}, MAN09000", url=OLD_URL, date=date,
-            extra_note=(" The municipality as it stood in 2017, before the mergers of 2018, "
-                        "which is the unit the map draws."))
-        fields["population"]["value"] = int(round(totals[code]))
+        if code in unchanged:
+            fields = now_people[code].fields(
+                year=int(year), source=f"{SOURCE}, MAN02005", url=NOW_URL,
+                date=f"1 January {year}", extra_note=(
+                    f" The municipality has not been merged since {VINTAGE}, the division the "
+                    "map draws, so this is its latest count."))
+            fields["population"]["value"] = int(round(now_totals[code]))
+        else:
+            fields = people[code].fields(
+                year=VINTAGE, source=f"{SOURCE}, MAN09000", url=OLD_URL, date=date,
+                extra_note=(f" The municipality as it stood in {VINTAGE}, which is the unit "
+                            "the map draws; it has since been merged."))
+            fields["population"]["value"] = int(round(totals[code]))
         records.append(record(
             f"ISL-HAG-{VINTAGE}-{code}", names[code], level="admin2", parent="ISL",
             country="ISL", parent_name=REGION[code[0]], codes={"hagstofa": code,
@@ -137,9 +169,6 @@ def main() -> int:
             aliases=[labels[sid]] if labels[sid] != names[code] else [], **fields))
 
     # The regions, from today's municipalities.
-    meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE)["variables"]}
-    year = meta["Ár"]["values"][-1]
-    now_people, now_totals, now_names = read(NOW, year)
     now_units = sorted(c for c, n in now_totals.items() if c != "9999" and n > 0)
     regions: dict[str, AgeSex] = defaultdict(AgeSex)
     region_total: dict[str, float] = defaultdict(float)
