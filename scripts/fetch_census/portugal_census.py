@@ -11,9 +11,10 @@ own census tables fill all of it, read from its JSON indicator API
 * ``0011626`` -- resident population by municipality, sex and **single year
   of age** (0 to 99, and 100 and over), Censos 2021;
 * ``0011644`` -- resident population aged 15 and over by municipality and
-  religion, Censos 2021. The religion question was optional; INE's total for
-  each municipality includes the people who did not answer, and they are
-  carried as "Not stated", the way the ONS and NRS tables are read.
+  religion, Censos 2021. The religion question was optional and INE's table
+  counts only those who answered; the rest of the residents aged 15 and over
+  (from the single-year table) are carried as "Not stated", the way the ONS
+  and NRS tables carry theirs.
 
 **Districts are summed, not looked up.** The census tables are published on
 the NUTS 2013 geography, which has no districts; a district is its
@@ -223,8 +224,17 @@ def read_religion(geo: str) -> dict[str, Any]:
 
 def fields(ages: dict[str, Any], religion: dict[str, Any], what: str) -> dict[str, Any]:
     whole = ages["men"] + ages["women"]
-    rows = shares(religion["counts"], total=religion["total"])
-    stated = religion["total"] - religion["counts"].get("Not stated", 0.0)
+    # INE's religion table counts the people who answered; everyone aged 15
+    # and over is in the single-year table, so the difference is those who
+    # did not answer. Both are the same census's counts of the same people.
+    aged_15 = sum(n for age, n in ages["ages"].items() if age >= 15)
+    answered = religion["total"] - religion["counts"].get("Not stated", 0.0)
+    if religion["total"] > aged_15:
+        raise SystemExit(f"portugal_census{what}: {religion['total']:,.0f} in the religion "
+                         f"table, more than the {aged_15:,.0f} residents aged 15 and over")
+    counts = dict(religion["counts"])
+    counts["Not stated"] = counts.get("Not stated", 0.0) + aged_15 - religion["total"]
+    rows = shares({k: v for k, v in counts.items() if v}, total=aged_15)
     return {
         "population": measure(int(whole), year=YEAR, source=SOURCE),
         "population_note": f"The resident population counted by the 2021 census{what}.",
@@ -238,9 +248,11 @@ def fields(ages: dict[str, Any], religion: dict[str, Any], what: str) -> dict[st
         "religion_year": dated(rows, YEAR),
         "religion_note": (
             f"Censos {YEAR} religion question (INE table {RELIGION}), of residents aged 15 and "
-            f"over{what}. The question was optional: {religion['total'] - stated:,.0f} of "
-            f"{religion['total']:,.0f} gave no answer and are shown as 'Not stated'. "
-            "'Other religion' is INE's 'outra não cristã' (another, non-Christian, religion)."),
+            f"over{what}. The question was optional: INE's table counts the "
+            f"{answered:,.0f} who answered, and the other {aged_15 - answered:,.0f} of the "
+            f"{aged_15:,.0f} residents aged 15 and over (table {AGES}) are shown as 'Not "
+            "stated'. 'Other religion' is INE's 'outra não cristã' (another, non-Christian, "
+            "religion)."),
         "sources": [{"field": "population/median age/sex ratio", "name": SOURCE,
                      "url": PAGE.format(var=AGES), "year": YEAR, "license": LICENCE},
                     {"field": "religion", "name": SOURCE,
