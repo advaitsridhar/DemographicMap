@@ -409,6 +409,17 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 15
+    "r15_est_rl222": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus/RL222.PX",
+        allvals=r"(?i)(elukoht|haldus|asustus|maakond|place|residence).*"),
+    "r15_isl_skra_xlsx": lambda: xlsx(
+        "https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260910_Tru_lifskodunarfelog.xlsx",
+        rows=30),
+    "r15_fin_2017": lambda: links(
+        "https://stat.fi/til/vaerak/2017/01/vaerak_2017_01_2018-10-01_tie_001_fi.html",
+        r"tau_|xlsx|uskon|maakun|kunn"),
+    "r15_fin_2019": lambda: links("https://stat.fi/til/vaerak/tau.html", r"uskon|relig"),
     # Round 14
     "r14_nor_08531_2020": lambda: px_post(f"{SSB}/08531", {"query": [
         {"code": "Region", "selection": {"filter": "item", "values": [
