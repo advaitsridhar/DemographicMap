@@ -1,8 +1,8 @@
-uk_nomis: nation (TYPE499)
+uk_nomis: county (TYPE155)
 uk_nomis: TS021 Ethnic group (NM_2041_1)
 uk_nomis: TS030 Religion (NM_2049_1)
 uk_nomis: TS024 Main language (detailed) (NM_2043_1)
   NM_2043_1: categories are c2021_mlang_94
-  wrote data/processed/uk_nation.json (26 kB)
-  2 records
-  2 nation records
+  wrote data/processed/uk_county.json (2188 kB)
+  173 records
+  173 local authority records
