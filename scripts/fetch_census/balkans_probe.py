@@ -24,6 +24,9 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
     pdfpage:URL~~P1,P2..[~~N]    the first N characters of the text of the given pages (1-based)
     postraw:URL~~B64JSON[~~N]    POST without following redirects: status, Location,
                                  headers and the first N characters of the body
+    gn:CC[~~CODEREGEX[~~LAT1,LON1,LAT2,LON2]]  GeoNames' dump for country CC: features
+                                 whose "class.code" matches CODEREGEX (default P),
+                                 inside the box: code|name|lat|lon|admin1|admin2|admin3|pop
 
 The commands are split on whitespace by the workflow, so no part may hold a
 space: a regex uses ``\\s`` instead. Read-only; the output is the log.
@@ -57,7 +60,7 @@ TIMEOUT = 60
 import http.cookiejar  # noqa: E402
 OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf",
-         "rsdata", "pxv", "postraw", "pdfpage")
+         "rsdata", "pxv", "postraw", "pdfpage", "gn")
 
 
 def uri(url: str) -> str:
@@ -202,6 +205,30 @@ def probe(arg: str) -> None:
                         say(f"  {'  ' * level}l {nid}  {text[:80]}")
                         walk(child + "/", level + 1)
             walk(url, 0)
+            return
+        if mode == "gn":
+            # GeoNames' dump for one country (CC BY 4.0): the features whose
+            # code matches CODEREGEX, inside an optional box, one compact line
+            # each -- to test which drawn polygon a place falls in.
+            cc = url.upper()
+            rx = re.compile(extra[0]) if extra and extra[0] else re.compile(r"^P\.")
+            box = [float(v) for v in extra[1].split(",")] if len(extra) > 1 and extra[1] else None
+            status, headers, body = fetch(f"https://download.geonames.org/export/dump/{cc}.zip",
+                                          timeout=300)
+            summary(url, status, headers, body)
+            with zipfile.ZipFile(io.BytesIO(body)) as zf:
+                text = zf.read(f"{cc}.txt").decode("utf-8")
+            n = 0
+            for line in text.splitlines():
+                f = line.split("\t")
+                if len(f) < 15 or not rx.search(f"{f[6]}.{f[7]}"):
+                    continue
+                lat, lon = float(f[4]), float(f[5])
+                if box and not (box[0] <= lat <= box[2] and box[1] <= lon <= box[3]):
+                    continue
+                say(f"  {f[7]}|{f[1]}|{lat:.5f}|{lon:.5f}|{f[10]}|{f[11]}|{f[12]}|{f[14]}")
+                n += 1
+            say(f"  {n} features")
             return
         if mode == "postraw":
             class NoRedirect(urllib.request.HTTPRedirectHandler):
