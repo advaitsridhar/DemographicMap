@@ -1,28 +1,14 @@
-slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
-  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
-  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
-  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
-  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
-  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
-  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  192 municipalities of 2002; Slovenia 1,964,036
-  Ajdovščina: 'declared by religion' is 13,468, its five named rows 13,449
-  Ajdovščina: religion 19 people in blanked cells ['Evangelical and other Protestant', 'other religion']
-  Beltinci: 'declared by religion' is 7,383, its five named rows 7,373
-  Beltinci: religion 10 people in blanked cells ['Orthodox', 'other religion']
-  Beltinci: language 13 people in blanked cells ['Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian']
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia_census.py", line 307, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia_census.py", line 300, in main
-    records = build()
-              ^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia_census.py", line 179, in build
-    abs(total - e["Declared - total"] - e["Undeclared"] - e["Did not want to reply"]
-                                        ~^^^^^^^^^^^^^^
-KeyError: 'Undeclared'
+lithuania: S3R167_M3010203, S3R167_M3010202 and S3R629_M3010217, beginning of 2026
+  single years complete for 71 of 73 units; the rest take the five-year median: ['12', '69']
+    S3R167_M3010203 2026: counties -> Lithuania: 10 parts sum to 2,887,592 against 2,887,592
+    S3R167_M3010203 2026: municipalities -> Lithuania: 60 parts sum to 2,887,592 against 2,887,592
+  national median 44.6 (the office: 44.0 in completed years); units whose interpolated median is not in the office's year: ['06 46 vs 47.0', '78 47 vs 48.0', '91 46 vs 47.0']
+    ethnicity 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    religion 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    language 2021: municipalities -> Lithuania: 60 parts sum to 2,810,758 against 2,810,761
+  LTU admin2: 60 of 60 office units bound to 60 polygons (0 set aside as pieces)
+  ethnicity labels the group tree cannot place: []
+  religion labels the group tree cannot place: []
+  language labels the group tree cannot place: []
+  wrote data/processed/lithuania_municipality.json (460 kB)
+  wrote lithuania_municipality.json: 70 records
