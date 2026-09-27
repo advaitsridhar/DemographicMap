@@ -185,6 +185,9 @@ class SwissDistrictsByYear(unittest.TestCase):
         with mock.patch.object(switzerland_ages, "agvch", return_value=register):
             self.assertIsNone(switzerland_ages.register_state({"0942": 1.0, "0934": 1.0}, 2009))
             self.assertEqual(switzerland_ages.register_state({"0942": 1.0}, 2009), {"0942": {"942"}})
+            # a row the register lacks with nobody in it is a commune merged away, not a mismatch
+            self.assertEqual(switzerland_ages.register_state({"0942": 1.0, "4505": 0.0}, 2009),
+                             {"0942": {"942"}})
 
 
 class Liechtenstein(unittest.TestCase):

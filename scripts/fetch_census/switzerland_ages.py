@@ -300,7 +300,9 @@ def register_state(sheet: dict[str, float], when: int) -> dict[str, set[str]] | 
             t = str(int(r["TerminalCode"])).zfill(4)
             initial_of.setdefault(t, set()).add(r["InitialCode"])
             names_t[t] = r["TerminalName"]
-        only_sheet = sorted(set(sheet) - set(initial_of))
+        # The 2009 sheet still lists three Thurgau communes merged away before
+        # it, with nobody in them; rows with nobody are not communes of the year.
+        only_sheet = sorted(t for t in set(sheet) - set(initial_of) if sheet[t])
         only_register = sorted(t for t in set(initial_of) - set(sheet) if not LAKE.search(names_t[t]))
         if not only_sheet and not only_register:
             return initial_of
