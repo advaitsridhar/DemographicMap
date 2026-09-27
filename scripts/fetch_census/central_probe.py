@@ -1580,7 +1580,168 @@ def aut10() -> None:
             f"{head.get('Content-Type') or head.get('content-type')}; {first[:700]}")
 
 
+def hun14() -> None:
+    """Fejér's settlements as KSH's 2022 codelist files them, and where the 2013 division is published."""
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    data = json.loads(text(fetch(f"{base}/structure/WBS003/{version}")[2]))
+    codes = next(cl["codes"] for cl in data["data"]["codelists"] if cl["id"] == "CL_TERUL_GEO5")
+    name = {c["id"]: jpath(c, "names.hu") or jpath(c, "names.en") or c.get("name") for c in codes}
+    fejer = [c["id"] for c in codes if c.get("parent") == "HU211"]
+    log(f"   Fejér's districts: {[(d, name[d]) for d in fejer]}")
+    named = [c["id"] for c in codes if len(c["id"]) == 3
+             and re.search(r"(?i)enying|fehérvár|polgárd", name[c["id"]] or "")]
+    for d in named:
+        kids = [(c["id"], name[c["id"]]) for c in codes if c.get("parent") == d]
+        log(f"   {d} {name[d]}: {len(kids)} settlements: {kids}")
+    for url in ("https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+                "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2013.xls",
+                "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xlsx"):
+        status, head, body = fetch(url)
+        log(f"   {url}: HTTP {status}, {len(body):,} bytes, {head.get('Content-Type') or head.get('error', '')}")
+        if status == 200 and body[:4] in (b"\xd0\xcf\x11\xe0", b"PK\x03\x04"):
+            book_dump(url, rows=6, grep=r"(?i)polg[aá]rd", limit=20)
+            return
+    show("https://web.archive.org/cdx/search/cdx?url=ksh.hu/docs/helysegnevtar/hnt_letoltes_201*"
+         "&output=txt&limit=40", r"\S+ \d{14} \S+ \S+ \d{3}", limit=40)
+    for url in ("https://njt.hu/jogszabaly/2012-218-20-22", "https://net.jogtar.hu/jogszabaly?docid=a1200218.kor"):
+        page = show(url)
+        for m in list(re.finditer(r"Polgárdi", page))[:3]:
+            log("   ..." + " ".join(re.sub(r"<[^>]+>", " ", page[max(0, m.start() - 200):m.start() + 700]).split()))
+
+
+def che13() -> None:
+    """BFS tables of the resident population by commune on an older commune state; Höfe's sexes."""
+    for query in ("language=de&title=St%C3%A4ndige%20Wohnbev%C3%B6lkerung%20Gemeinden",
+                  "language=de&title=Bilanz%20der%20st%C3%A4ndigen%20Wohnbev%C3%B6lkerung",
+                  "language=de&title=Regionalportr%C3%A4ts",
+                  "language=de&title=Bev%C3%B6lkerung%20Gemeinden%202009",
+                  "language=de&title=Strukturerhebung%20Stichprobe"):
+        items = dam_items(query, pages=5)
+        log(f"\n## DAM {query}: {len(items)} items")
+        for item in items:
+            desc = item.get("description") or {}
+            period = jpath(desc, "bibliography.period") or ""
+            title = jpath(desc, "titles.main") or ""
+            if "Stichprobe" not in query and not re.search(r"200[89]|2010|2011", f"{period} {title}"):
+                continue
+            log(f"   - {jpath(item, 'ids.damId')} | {jpath(item, 'shop.orderNr')} | {period} | "
+                f"{jpath(item, 'bfs.articleModel.name')} | {title}"[:260])
+    table = "https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_101/px-x-0102010000_101.px"
+    meta = {v["code"]: v for v in json.loads(text(fetch(table)[2]))["variables"]}
+    code = {k: next(c for c in meta if c.startswith(k)) for k in
+            ("Jahr", "Kanton", "Bevölkerungstyp", "Staatsangehörigkeit", "Geschlecht", "Alter")}
+    places = dict(zip(meta[code["Kanton"]]["values"], meta[code["Kanton"]]["valueTexts"]))
+    hoefe = [k for k, v in places.items() if re.search(r"Höfe|Wollerau|Freienbach|Feusisberg", v)]
+    log(f"   Höfe entries: {[(k, places[k]) for k in hoefe]}")
+    query = [{"code": code["Jahr"], "selection": {"filter": "item", "values": ["2025"]}},
+             {"code": code["Kanton"], "selection": {"filter": "item", "values": hoefe}},
+             {"code": code["Bevölkerungstyp"], "selection": {"filter": "item", "values": ["1"]}},
+             {"code": code["Staatsangehörigkeit"], "selection": {"filter": "all", "values": ["*"]}},
+             {"code": code["Geschlecht"], "selection": {"filter": "all", "values": ["*"]}},
+             {"code": code["Alter"], "selection": {"filter": "item", "values": ["-99999"]}}]
+    body = json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode()
+    status, _, reply = fetch(table, data=body, headers={"Content-Type": "application/json"})
+    try:
+        from .pxweb import unstack
+        for key, value in unstack(json.loads(text(reply))):
+            log(f"   {places[key[code['Kanton']][0]]} | nat {key[code['Staatsangehörigkeit']][0]} | "
+                f"sex {key[code['Geschlecht']][0]}: {value:,.0f}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   HTTP {status}: {exc}: {text(reply)[:300]}")
+
+
+def lux7() -> None:
+    """Official population figures for the six communes merged in 2018, before the merger."""
+    page = show("https://lustat.statec.lu/rest/dataflow/LU1/all/latest")
+    flows = re.findall(r'<structure:Dataflow id="([^"]+)"[^>]*>.*?<common:Name xml:lang="en">([^<]+)',
+                       page, flags=re.S)
+    log(f"   {len(flows)} dataflows; those naming communes, localities or the 2011 census:")
+    for fid, title in flows:
+        if re.search(r"(?i)commun|municip|localit|2011|canton", title):
+            log(f"   - {fid}: {title[:160]}")
+    for q in ("population+commune", "population+localite", "recensement+2011"):
+        status, _, body = fetch(f"https://data.public.lu/api/1/datasets/?q={q}&page_size=12")
+        try:
+            data = json.loads(text(body))
+        except json.JSONDecodeError:
+            log(f"   data.public.lu {q}: HTTP {status}: {text(body)[:200]}")
+            continue
+        log(f"\n## data.public.lu {q}: {data.get('total')} datasets")
+        for ds in data.get("data", []):
+            org = jpath(ds, "organization.name") or ""
+            log(f"   - {ds.get('slug')} | {org} | {ds.get('title')}"[:220])
+            for res in (ds.get("resources") or [])[:6]:
+                log(f"       {res.get('format')} {res.get('title')} {res.get('url')}"[:220])
+    show("https://web.archive.org/cdx/search/cdx?url=statistiques.public.lu/stat/TableViewer/tableView*"
+         "&matchType=prefix&filter=original:.*ReportId=12859.*&output=txt&limit=12",
+         r"\S+ \d{14} \S+", limit=12)
+
+
+def pol5() -> None:
+    """BDL variables for the usual-resident population ('ludność rezydująca'), and at which levels."""
+    for term in ("rezyduj", "rezydenci"):
+        for kind in ("variables", "subjects"):
+            status, _, body = fetch(f"https://bdl.stat.gov.pl/api/v1/{kind}/search?name={term}&format=json"
+                                    f"&page-size=50&lang=pl")
+            try:
+                data = json.loads(text(body))
+            except json.JSONDecodeError:
+                log(f"   {kind} {term}: HTTP {status}: {text(body)[:200]}")
+                continue
+            rows = data.get("results") or []
+            log(f"\n## BDL {kind} search {term!r}: {data.get('totalRecords')} ({len(rows)} shown)")
+            for r in rows[:40]:
+                log(f"   - {r.get('id')} | {r.get('subjectId') or r.get('parentId')} | levels "
+                    f"{r.get('levels')} | {r.get('n1') or r.get('name')} | {r.get('n2', '')} | "
+                    f"{r.get('n3', '')}"[:240])
+
+
+def nld11() -> None:
+    """How many respondents stand behind each province in CBS's religion workbook."""
+    book_dump("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx", rows=40,
+              grep=r"(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron",
+              limit=30)
+    show("https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+         r"(?i)[^.<>]{0,200}(?:respondent|steekproef|enquête|waarneming|ondervraagd)[^.<>]{0,200}", limit=12)
+
+
+def aut11() -> None:
+    """What sample Statistik Austria's 2021 religion estimate rests on."""
+    url = ("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+           "weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis")
+    page = show(url, r"href=\"[^\"]*(?:\.pdf|\.ods|\.xlsx|presse|Religion)[^\"]*\"", limit=30)
+    plain = " ".join(re.sub(r"<[^>]+>", " ", page).split())
+    for m in list(re.finditer(r"(?i)stichprob|befragt|erhebung|mikrozensus|personen", plain))[:10]:
+        log("   ..." + plain[max(0, m.start() - 250):m.start() + 250])
+    status, _, body = fetch("https://www.statistik.at/fileadmin/pages/439/neu__Religion_2021_Bundesland.ods")
+    if status == 200:
+        import zipfile
+        import io as _io
+        content = zipfile.ZipFile(_io.BytesIO(body)).read("content.xml").decode("utf-8")
+        words = " ".join(re.sub(r"<[^>]+>", " ", content).split())
+        for m in list(re.finditer(r"(?i)quelle|stichprob|befragt|erhebung|hochgerechnet|anmerkung|n\s*=",
+                                  words))[:8]:
+            log("   ods ..." + words[max(0, m.start() - 120):m.start() + 380])
+
+
+def svn7() -> None:
+    """SiStat's tables by settlement, for Šentrupert's sex ratio (the prison at Dob)."""
+    status, _, body = fetch("https://pxweb.stat.si/SiStatData/api/v1/sl/Data/")
+    try:
+        rows = json.loads(text(body))
+    except json.JSONDecodeError:
+        log(f"   HTTP {status}: {text(body)[:200]}")
+        return
+    hits = [r for r in rows if re.search(r"(?i)naselj", str(r.get("text")))]
+    log(f"   {len(rows)} tables; {len(hits)} by settlement:")
+    for r in hits[:25]:
+        log(f"   - {r.get('id')} | {r.get('text')}"[:200])
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun14": hun14, "che13": che13, "lux7": lux7, "pol5": pol5, "nld11": nld11, "aut11": aut11,
+    "svn7": svn7,
     "aut10": aut10,
     "deu11": deu11,
     "deu10": deu10,
