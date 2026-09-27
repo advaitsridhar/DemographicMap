@@ -362,6 +362,13 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 8
+    "r8_ltu_cdx_9601028": lambda: cdx("url=osp.stat.gov.lt/documents/10180/9601028/*", limit=200),
+    "r8_ltu_cdx_10367417": lambda: cdx("url=osp.stat.gov.lt/documents/10180/10367417/*", limit=200),
+    "r8_ltu_cdx_10439642": lambda: cdx("url=osp.stat.gov.lt/documents/10180/10439642/*", limit=200),
+    "r8_ltu_cdx_savivald": lambda: cdx("url=osp.stat.gov.lt/documents/10180/*&filter=original:.*(?:savivald|kalb|tikyb|Tikyb|Kalb).*", limit=200),
+    "r8_lva_taut": lambda: px_list("https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/taut"),
+    "r8_lva_demogr": lambda: px_list("https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/demogr"),
     # Round 7
     "r7_ltu_cl1": lambda: sdmx_codes("codelist/LSD/savivaldybesRegdb/latest", limit=90),
     "r7_ltu_cl2": lambda: sdmx_codes("datastructure/LSD/M3010203/latest?references=children", limit=90),
