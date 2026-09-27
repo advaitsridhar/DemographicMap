@@ -1,7 +1,38 @@
-austria: population on 1 January 2026 by municipality, sex and single year of age
-  393,942 rows, 94 districts, 9,215,956 people
-  Laender against Austria: parts sum to 9,215,956 = 9,215,956
-  national median 44.1 (2026); no published figure to check against
-  austria: 6 office units unbound: Braunau (404); Kirchdorf (409); Ried (412); Stadt Linz (401); Stadt Steyr (402); Stadt Wels (403)
-  austria: 6 polygons without an office unit: Braunau am Inn; Kirchdorf an der Krems; Linz(Stadt); Ried im Innkreis; Steyr(Stadt); Wels(Stadt)
-austria: 88 districts bound, 94 expected
+== get https://census.belstat.gov.by/
+  4,693 bytes, begins b'<!doctype html><'
+  ~ <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=
+  ~ iption" content="Web site created using create-react-app"/><link rel="manifest" href="/manifest.json"/><title>Итоговые данные переписей населения Республики Беларусь
+  ~ "Web site created using create-react-app"/><link rel="manifest" href="/manifest.json"/><title>Итоговые данные переписей населения Республики Беларусь</title><link h
+  ~ n"/><title>Итоговые данные переписей населения Республики Беларусь</title><link href="/static/css/main.46e233b1.chunk.css" rel="stylesheet"></head><body><noscript>Yo
+  ~ to enable JavaScript to run this app.</noscript><script type="text/javascript" src="/config.js"></script><div id="root"></div><div id="modal-root"></div><script>!f
+  ~ _CHUNK_LOAD_FAILED",c.request=n,delete o[e],s.parentNode.removeChild(s),r(c)},s.href=a,document.getElementsByTagName("head")[0].appendChild(s)})).then((function(){o[
+  ~ ("script");u.charset="utf-8",u.timeout=120,f.nc&&u.setAttribute("nonce",f.nc),u.src=function(e){return f.p+"static/js/"+({}[e]||e)+"."+{0:"423b97d3",1:"a092ebe6",2:
+  ~ all(e,t)},f.p="/",f.oe=function(e){throw console.error(e),e};var u=this["webpackJsonpsdpn-front"]=this["webpackJsonpsdpn-front"]||[],d=u.push.bind(u);u.push=t,u=u.s
+  ~ (e){throw console.error(e),e};var u=this["webpackJsonpsdpn-front"]=this["webpackJsonpsdpn-front"]||[],d=u.push.bind(u);u.push=t,u=u.slice();for(var i=0;i<u.length;i
+  ~ u=u.slice();for(var i=0;i<u.length;i++)t(u[i]);var l=d;r()}([])</script><script src="/static/js/7.d89d3264.chunk.js"></script><script src="/static/js/main.019d9091.
+  ~ ;r()}([])</script><script src="/static/js/7.d89d3264.chunk.js"></script><script src="/static/js/main.019d9091.chunk.js"></script></body></html>
+== get https://biruni.tuik.gov.tr/medas/?kn=95&locale=tr
+  85,170 bytes, begins b'<!DOCTYPE html>\n'
+  ~ <!DOCTYPE html> <html> <head> <title></title> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zk.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" charset
+  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zul.lang.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" c
+  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/zkbind.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt" cha
+  ~ 1dAL9-qOjeRP84s4-prkt" charset="UTF-8"></script> <script type="text/javascript" src="/medas/zkau/web/4e98a926/js/bootstrap.wpd;jsessionid=DOu1dAL9-qOjeRP84s4-prkt"
+  ~ script> <!-- ZK 8.5.0 EE 2017103111 --> <link rel="stylesheet" type="text/css" href="/medas/zkau/web/4e98a926/_zkiju-iceblue/zul/css/zk.wcs;jsessionid=DOu1dAL9-qOje
+  ~ s;jsessionid=DOu1dAL9-qOjeRP84s4-prkt"/> <link rel="stylesheet" type="text/css" href="/medas/zkau/web/4e98a926/js/bootstrap/ext/css/bootstrap.min.css;jsessionid=DOu1
+  ~ ctStart)>0)cm.rs=t;if((t=c1.redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connect
+  ~ redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connectEnd;if((t=c1.secureConnectio
+  ~ =t;cm.rqs=c1.requestStart;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c
+  ~ Start;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEv
+  ~ art;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplet
+  ~ Loading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;i
+  ~ .dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;if((t=c1.loadEventEnd)>0)cm.le=t;cm
+  ~ ;cm.pid=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="ob
+  ~ id=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"
+  ~ _pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===nu
+  ~ M_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===null){if(t=="stri
+  ~ bject"||ob===null){if(t=="string")ob='"'+ob+'"';return String(ob);}else{var n,v,json=[],arr=(ob&&ob.constructor==Array);for(n in ob){v=ob[n];t=typeof(v);if(t=="stri
+  ~ {v=ob[n];t=typeof(v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+Stri
+  ~ v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":
+  ~ ringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm
+  ~ :"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm));}}}}if(window.addEventListener)window.addEventListener("load",se
+  ~ ><p>Sorry, JavaScript must be enabled.<br/>Change your browser options, then <a href="">try again</a>.</p></div> </noscript> </body> </html>
