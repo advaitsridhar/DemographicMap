@@ -82,6 +82,8 @@ RELIGION = {
     "presbyterian": "Presbyterian", "romancatholic": "Roman Catholic",
     "seventhdayadventist": "Seventh-day Adventist", "mormon": "Mormon",
     "otherchristian": "Other Christian", "otherchristiandenomination": "Other Christian",
+    "otherchristiandenominations": "Other Christian",
+    "othernonchristiandenominations": "Other religion",
     "bahaifaith": "Baha'i", "hindu": "Hindu", "islammuslim": "Muslim",
     "judaismjewish": "Jewish", "rastafarian": "Rastafarian",
     "othernonchristiandenomination": "Other religion", "other": "Other religion",
