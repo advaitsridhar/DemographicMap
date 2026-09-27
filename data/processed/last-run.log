@@ -1,330 +1,326 @@
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE423&date=latest&gender=0&c_age=200&measures=20100&select=date_name,geography_code,geography_name,obs_value
-  8,915 bytes; starts b'"DATE_NA'
-  "DATE_NAME","GEOGRAPHY_CODE","GEOGRAPHY_NAME","OBS_VALUE"
-  "2025","E06000001","Hartlepool",99656
-  "2025","E06000002","Middlesbrough",152795
-  "2025","E06000003","Redcar and Cleveland",139541
-  "2025","E06000004","Stockton-on-Tees",207158
-  "2025","E06000005","Darlington",113402
-  "2025","E06000047","County Durham",539146
-  "2025","E06000057","Northumberland",333975
-  "2025","E08000021","Newcastle upon Tyne",320838
-  "2025","E08000022","North Tyneside",215401
-  "2025","E08000023","South Tyneside",151255
-  "2025","E08000024","Sunderland",287070
-  "2025","E08000037","Gateshead",202509
-  "2025","E06000006","Halton",131912
-  "2025","E06000007","Warrington",215425
-  "2025","E06000008","Blackburn with Darwen",163801
-  "2025","E06000009","Blackpool",143492
-  "2025","E06000049","Cheshire East",425459
-  "2025","E06000050","Cheshire West and Chester",373951
-  "2025","E06000063","Cumberland",282343
-  "2025","E06000064","Westmorland and Furness",231307
-  "2025","E08000001","Bolton",309732
-  "2025","E08000002","Bury",199271
-  "2025","E08000003","Manchester",588256
-  "2025","E08000004","Oldham",251915
-  "2025","E08000005","Rochdale",237641
-  "2025","E08000006","Salford",297004
-  "2025","E08000007","Stockport",304879
-  "2025","E08000008","Tameside",240822
-  "2025","E08000009","Trafford",240981
-  "2025","E08000010","Wigan",347089
-  "2025","E08000011","Knowsley",163723
-  "2025","E08000012","Liverpool",507915
-  "2025","E08000013","St. Helens",189890
-  "2025","E08000014","Sefton",287583
-  "2025","E08000015","Wirral",329896
-  "2025","E10000017","Lancashire",1308567
-  "2025","E06000010","Kingston upon Hull, City of",273257
-  "2025","E06000011","East Riding of Yorkshire",360334
-  "2025","E06000012","North East Lincolnshire",160101
-  "2025","E06000013","North Lincolnshire",171421
-  "2025","E06000014","York",209118
-  "2025","E06000065","North Yorkshire",639133
-  "2025","E08000016","Barnsley",252784
-  "2025","E08000017","Doncaster",323016
-  "2025","E08000018","Rotherham",279161
-  "2025","E08000019","Sheffield",579517
-  "2025","E08000032","Bradford",557758
-  "2025","E08000033","Calderdale",210734
-  "2025","E08000034","Kirklees",445832
-  "2025","E08000035","Leeds",840550
-  "2025","E08000036","Wakefield",369450
-  "2025","E06000015","Derby",275344
-  "2025","E06000016","Leicester",383116
-  "2025","E06000017","Rutland",41629
-  "2025","E06000018","Nottingham",325765
-  "2025","E06000061","North Northamptonshire",379569
-  "2025","E06000062","West Northamptonshire",444218
-  "2025","E10000007","Derbyshire",827217
-  "2025","E10000018","Leicestershire",752448
-  "2025","E10000019","Lincolnshire",794009
-  "2025","E10000024","Nottinghamshire",862326
-  "2025","E06000019","Herefordshire, County of",192539
-  "2025","E06000020","Telford and Wrekin",199378
-  "2025","E06000021","Stoke-on-Trent",272282
-  "2025","E06000051","Shropshire",333162
-  "2025","E08000025","Birmingham",1176960
-  "2025","E08000026","Coventry",364766
-  "2025","E08000027","Dudley",333941
-  "2025","E08000028","Sandwell",352918
-  "2025","E08000029","Solihull",221449
-  "2025","E08000030","Walsall",295722
-  "2025","E08000031","Wolverhampton",281434
-  "2025","E10000028","Staffordshire",913073
-  "2025","E10000031","Warwickshire",644021
-  "2025","E10000034","Worcestershire",624209
-  "2025","E06000031","Peterborough",224757
-  "2025","E06000032","Luton",236380
-  "2025","E06000033","Southend-on-Sea",185214
-  "2025","E06000034","Thurrock",181664
-  "2025","E06000055","Bedford",196398
-  "2025","E06000056","Central Bedfordshire",321605
-  "2025","E10000003","Cambridgeshire",716983
-  "2025","E10000012","Essex",1576125
-  "2025","E10000015","Hertfordshire",1239398
-  "2025","E10000020","Norfolk",945427
-  "2025","E10000029","Suffolk",789850
-  "2025","E09000001","City of London",15631
-  "2025","E09000002","Barking and Dagenham",238295
-  "2025","E09000003","Barnet",408087
-  "2025","E09000004","Bexley",257103
-  "2025","E09000005","Brent",352201
-  "2025","E09000006","Bromley",336048
-  "2025","E09000007","Camden",216658
-  "2025","E09000008","Croydon",410085
-  "2025","E09000009","Ealing",387072
-  "2025","E09000010","Enfield",329400
-  "2025","E09000011","Greenwich",301225
-  "2025","E09000012","Hackney",266241
-  "2025","E09000013","Hammersmith and Fulham",190216
-  "2025","E09000014","Haringey",266218
-  "2025","E09000015","Harrow",272612
-  "2025","E09000016","Havering",280787
-  "2025","E09000017","Hillingdon",326671
-  "2025","E09000018","Hounslow",299486
-  "2025","E09000019","Islington",224551
-  "2025","E09000020","Kensington and Chelsea",145734
-  "2025","E09000021","Kingston upon Thames",172761
-  "2025","E09000022","Lambeth",314298
-  "2025","E09000023","Lewisham",301037
-  "2025","E09000024","Merton",218891
-  "2025","E09000025","Newham",376542
-  "2025","E09000026","Redbridge",321829
-  "2025","E09000027","Richmond upon Thames",196713
-  "2025","E09000028","Southwark",312366
-  "2025","E09000029","Sutton",213972
-  "2025","E09000030","Tower Hamlets",334240
-  "2025","E09000031","Waltham Forest",283713
-  "2025","E09000032","Wandsworth",339859
-  "2025","E09000033","Westminster",212367
-  "2025","E06000035","Medway",292697
-  "2025","E06000036","Bracknell Forest",132145
-  "2025","E06000037","West Berkshire",165523
-  "2025","E06000038","Reading",183762
-  "2025","E06000039","Slough",167450
-  "2025","E06000040","Windsor and Maidenhead",159776
-  "2025","E06000041","Wokingham",189024
-  "2025","E06000042","Milton Keynes",308866
-  "2025","E06000043","Brighton and Hove",284170
-  "2025","E06000044","Portsmouth",211475
-  "2025","E06000045","Southampton",259230
-  "2025","E06000046","Isle of Wight",140777
-  "2025","E06000060","Buckinghamshire",584296
-  "2025","E10000011","East Sussex",561855
-  "2025","E10000014","Hampshire",1451703
-  "2025","E10000016","Kent",1652769
-  "2025","E10000025","Oxfordshire",769831
-  "2025","E10000030","Surrey",1255255
-  "2025","E10000032","West Sussex",921240
-  "2025","E06000022","Bath and North East Somerset",200898
-  "2025","E06000023","Bristol, City of",495260
-  "2025","E06000024","North Somerset",227160
-  "2025","E06000025","South Gloucestershire",308787
-  "2025","E06000026","Plymouth",271361
-  "2025","E06000027","Torbay",139486
-  "2025","E06000030","Swindon",245286
-  "2025","E06000052","Cornwall",584782
-  "2025","E06000053","Isles of Scilly",2299
-  "2025","E06000054","Wiltshire",526392
-  "2025","E06000058","Bournemouth, Christchurch and Poole",405829
-  "2025","E06000059","Dorset",391036
-  "2025","E06000066","Somerset",590972
-  "2025","E10000008","Devon",845541
-  "2025","E10000013","Gloucestershire",671908
-  "2025","W06000001","Isle of Anglesey",68607
-  "2025","W06000002","Gwynedd",120295
-  "2025","W06000003","Conwy",114421
-  "2025","W06000004","Denbighshire",98247
-  "2025","W06000005","Flintshire",155954
-  "2025","W06000006","Wrexham",137977
-  "2025","W06000008","Ceredigion",72696
-  "2025","W06000009","Pembrokeshire",125849
-  "2025","W06000010","Carmarthenshire",190037
-  "2025","W06000011","Swansea",249429
-  "2025","W06000012","Neath Port Talbot",142028
-  "2025","W06000013","Bridgend",146986
-  "2025","W06000014","Vale of Glamorgan",135362
-  "2025","W06000015","Cardiff",381516
-  "2025","W06000016","Rhondda Cynon Taf",241015
-  "2025","W06000018","Caerphilly",176078
-  "2025","W06000019","Blaenau Gwent",67593
-  "2025","W06000020","Torfaen",93973
-  "2025","W06000021","Monmouthshire",95329
-  "2025","W06000022","Newport",168584
-  "2025","W06000023","Powys",134843
-  "2025","W06000024","Merthyr Tydfil",58362
-  "2025","S12000005","Clackmannanshire",51610
-  "2025","S12000006","Dumfries and Galloway",145490
-  "2025","S12000008","East Ayrshire",121350
-  "2025","S12000010","East Lothian",116460
-  "2025","S12000011","East Renfrewshire",99840
-  "2025","S12000013","Na h-Eileanan Siar",25770
-  "2025","S12000014","Falkirk",160230
-  "2025","S12000017","Highland",237260
-  "2025","S12000018","Inverclyde",78550
-  "2025","S12000019","Midlothian",100390
-  "2025","S12000020","Moray",94730
-  "2025","S12000021","North Ayrshire",133660
-  "2025","S12000023","Orkney Islands",21920
-  "2025","S12000026","Scottish Borders",116800
-  "2025","S12000027","Shetland Islands",22710
-  "2025","S12000028","South Ayrshire",112280
-  "2025","S12000029","South Lanarkshire",334330
-  "2025","S12000030","Stirling",94040
-  "2025","S12000033","Aberdeen City",230180
-  "2025","S12000034","Aberdeenshire",264640
-  "2025","S12000035","Argyll and Bute",87310
-  "2025","S12000036","City of Edinburgh",531370
-  "2025","S12000038","Renfrewshire",189270
-  "2025","S12000039","West Dunbartonshire",88340
-  "2025","S12000040","West Lothian",187240
-  "2025","S12000041","Angus",114610
-  "2025","S12000042","Dundee City",148390
-  "2025","S12000045","East Dunbartonshire",109550
-  "2025","S12000047","Fife",373990
-  "2025","S12000048","Perth and Kinross",154930
-  "2025","S12000049","Glasgow City",654330
-  "2025","S12000050","North Lanarkshire",343930
-  "2025","N09000001","Antrim and Newtownabbey",
-  "2025","N09000002","Armagh City, Banbridge and Craigavon",
-  "2025","N09000003","Belfast",
-  "2025","N09000004","Causeway Coast and Glens",
-  "2025","N09000005","Derry City and Strabane",
-  "2025","N09000006","Fermanagh and Omagh",
-  "2025","N09000007","Lisburn and Castlereagh",
-  "2025","N09000008","Mid and East Antrim",
-  "2025","N09000009","Mid Ulster",
-  "2025","N09000010","Newry, Mourne and Down",
-  "2025","N09000011","Ards and North Down",
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.csv?geography=K04000001&measures=20100&select=geography_name,c2021_mainlangprf_95_name,obs_value
-  2,891 bytes; starts b'"GEOGRAP'
-  "GEOGRAPHY_NAME","C2021_MAINLANGPRF_95_NAME","OBS_VALUE"
-  "England and Wales",,57704270
-  "England and Wales",,52569816
-  "England and Wales",,7349
-  "England and Wales",,4239
-  "England and Wales",,736
-  "England and Wales",,169
-  "England and Wales",,8
-  "England and Wales",,263
-  "England and Wales",,567
-  "England and Wales",,538
-  "England and Wales",,16
-  "England and Wales",,1906
-  "England and Wales",,36
-  "England and Wales",,120259
-  "England and Wales",,224719
-  "England and Wales",,215062
-  "England and Wales",,1858314
-  "England and Wales",,160010
-  "England and Wales",,46421
-  "England and Wales",,611845
-  "England and Wales",,49924
-  "England and Wales",,30028
-  "England and Wales",,471954
-  "England and Wales",,119656
-  "England and Wales",,38359
-  "England and Wales",,87356
-  "England and Wales",,111431
-  "England and Wales",,76675
-  "England and Wales",,19064
-  "England and Wales",,12503
-  "England and Wales",,6020
-  "England and Wales",,4741
-  "England and Wales",,2640
-  "England and Wales",,2360
-  "England and Wales",,1490
-  "England and Wales",,5837
-  "England and Wales",,74653
-  "England and Wales",,52328
-  "England and Wales",,14088
-  "England and Wales",,357
-  "England and Wales",,7880
-  "England and Wales",,18006
-  "England and Wales",,18006
-  "England and Wales",,5516
-  "England and Wales",,160
-  "England and Wales",,5356
-  "England and Wales",,91255
-  "England and Wales",,112978
-  "England and Wales",,203998
-  "England and Wales",,219402
-  "England and Wales",,6672
-  "England and Wales",,66443
-  "England and Wales",,87713
-  "England and Wales",,48705
-  "England and Wales",,9869
-  "England and Wales",,1374141
-  "England and Wales",,269849
-  "England and Wales",,51260
-  "England and Wales",,290745
-  "England and Wales",,22798
-  "England and Wales",,199495
-  "England and Wales",,188956
-  "England and Wales",,11022
-  "England and Wales",,31249
-  "England and Wales",,125363
-  "England and Wales",,65008
-  "England and Wales",,13013
-  "England and Wales",,74368
-  "England and Wales",,31015
-  "England and Wales",,361709
-  "England and Wales",,30820
-  "England and Wales",,55555
-  "England and Wales",,118271
-  "England and Wales",,22548
-  "England and Wales",,12117
-  "England and Wales",,18518
-  "England and Wales",,22966
-  "England and Wales",,8014
-  "England and Wales",,60899
-  "England and Wales",,12001
-  "England and Wales",,1722
-  "England and Wales",,68
-  "England and Wales",,1778
-  "England and Wales",,145
-  "England and Wales",,1633
-  "England and Wales",,205002
-  "England and Wales",,10834
-  "England and Wales",,22825
-  "England and Wales",,62240
-  "England and Wales",,921
-  "England and Wales",,19757
-  "England and Wales",,9942
-  "England and Wales",,11074
-  "England and Wales",,10154
-  "England and Wales",,2148
-  "England and Wales",,5492
-  "England and Wales",,10773
-  "England and Wales",,7489
-  "England and Wales",,4435
-  "England and Wales",,12161
-  "England and Wales",,14757
-  "England and Wales",,26738
-  "England and Wales",,21635
-  "England and Wales",,1532
-  "England and Wales",,3571
-  "England and Wales",,7546
+
+=== aut2
+
+## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_HEADER.csv
+   HTTP 200, 303 bytes, 6 lines, text/csv;charset=UTF-8
+   | code;name;en_name;;;;;;;
+   | F-ISIS-1;Fallzahl;Number;;;;;;;
+   | C-A10-0;Jahr;Time section;;;;;;;
+   | C-C11-0;Geschlecht;Sex;;;;;;;
+   | C-GRGEMAKT-0;Gemeinde (Vergröberung über Politischen Bezirk);Commune (aggregation by political district);;;;;;;
+   | C-GALTEJ112-0;Alter in Einzeljahren;Age in single years;;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026.csv
+   HTTP 200, 18,296,744 bytes, 393,943 lines, text/csv;charset=UTF-8
+   | C-A10-0;C-C11-0;C-GRGEMAKT-0;C-GALTEJ112-0;F-ISIS-1
+   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-1;63
+   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-2;66
+   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-3;65
+   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-4;64
+
+## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv
+   HTTP 200, 96,795 bytes, 2,117 lines, text/csv;charset=UTF-8
+   | code;name;;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
+   | GRGEMAKT-10101;Eisenstadt <10101>;;;;;;;;
+   | GRGEMAKT-10201;Rust <10201>;;;;;;;;
+   | GRGEMAKT-10301;Breitenbrunn am Neusiedler See <10301>;;;;;;;;
+   26 lines match 'GRGEMAKT-9|GRGEMAKT-10[12]'
+   > GRGEMAKT-10101;Eisenstadt <10101>;;;;;;;;
+   > GRGEMAKT-10201;Rust <10201>;;;;;;;;
+   > GRGEMAKT-90101;Wien 1.,Innere Stadt <90101>;;;;;;;;
+   > GRGEMAKT-90201;Wien 2.,Leopoldstadt <90201>;;;;;;;;
+   > GRGEMAKT-90301;Wien 3.,Landstraße <90301>;;;;;;;;
+   > GRGEMAKT-90401;Wien 4.,Wieden <90401>;;;;;;;;
+   > GRGEMAKT-90501;Wien 5.,Margareten <90501>;;;;;;;;
+   > GRGEMAKT-90601;Wien 6.,Mariahilf <90601>;;;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv
+   HTTP 200, 5,570 bytes, 102 lines, text/csv;charset=UTF-8
+   | code;name;FK;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
+   | GALTEJ112-1;0 Jahre;GALT5J100-1;under 1 year old;;;;;;
+   | GALTEJ112-2;1 Jahr;GALT5J100-1;1 year old;;;;;;
+   1 lines match 'GALTEJ112-1(0\\d|1\\d)\\b'
+   > GALTEJ112-100;99 Jahre;GALT5J100-20;99 years old;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv
+   HTTP 200, 125 bytes, 3 lines, text/csv;charset=UTF-8
+   | code;name;;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
+   | C11-1;männlich;;male;;;;;;
+   | C11-2;weiblich;;female;;;;;;
+
+## https://www.statistik.at/verzeichnis/reglisten/polbezirke.csv
+   HTTP 200, 4,327 bytes, 121 lines, text/x-comma-separated-values
+   | Politische Bezirke, Gebietsstand 2026;;;;
+   | Erstellt am:;24.09.2026 08:31:14;;;
+   | Bundeslandkennziffer;Bundesland;Kennziffer pol. Bezirk;Politischer Bezirk;Politischer Bez. Code
+   | 1;Burgenland;101;Eisenstadt(Stadt);101
+   | 1;Burgenland;102;Rust(Stadt);102
+   | 1;Burgenland;103;Eisenstadt-Umgebung;103
+   | 1;Burgenland;104;Güssing;104
+   | 1;Burgenland;105;Jennersdorf;105
+
+=== che2
+
+## https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2009
+   HTTP 200, 184,344 bytes, 2,829 lines, 
+   | HistoricalCode,BfsCode,ValidFrom,ValidTo,Level,Parent,Name,ShortName,Inscription,Radiation,Rec_Type_fr,Rec_Type_de
+   2009: 26 cantons, 166 districts, 2636 communes
+   D ZH 101 Bezirk Affoltern
+   D ZH 110 Bezirk Winterthur
+   D ZH 109 Bezirk Uster
+   D ZH 108 Bezirk Pfäffikon
+   D ZH 107 Bezirk Meilen
+   D ZH 106 Bezirk Horgen
+   D ZH 105 Bezirk Hinwil
+   D ZH 104 Bezirk Dielsdorf
+   D ZH 103 Bezirk Bülach
+   D ZH 102 Bezirk Andelfingen
+   D ZH 112 Bezirk Zürich
+   D ZH 111 Bezirk Dietikon
+   D BE 204 Amtsbezirk Biel
+   D BE 207 District de Courtelary
+   D BE 205 Amtsbezirk Büren
+   D BE 203 Amtsbezirk Bern
+   D BE 202 Amtsbezirk Aarwangen
+   D BE 201 Amtsbezirk Aarberg
+   D BE 206 Amtsbezirk Burgdorf
+   D BE 212 Amtsbezirk Konolfingen
+   D BE 211 Amtsbezirk Interlaken
+   D BE 210 Amtsbezirk Frutigen
+   D BE 209 Amtsbezirk Fraubrunnen
+   D BE 208 Amtsbezirk Erlach
+   D BE 214 District de Moutier
+   D BE 217 Amtsbezirk Niedersimmental
+   D BE 213 Amtsbezirk Laupen
+   D BE 215 District de la Neuveville
+   D BE 216 Amtsbezirk Nidau
+   D BE 225 Amtsbezirk Trachselwald
+   D BE 218 Amtsbezirk Oberhasli
+   D BE 226 Amtsbezirk Wangen
+   D BE 224 Amtsbezirk Thun
+   D BE 223 Amtsbezirk Signau
+   D BE 222 Amtsbezirk Seftigen
+   D BE 221 Amtsbezirk Schwarzenburg
+   D BE 220 Amtsbezirk Saanen
+   D BE 219 Amtsbezirk Obersimmental
+   D LU 305 Amt Willisau
+   D LU 304 Amt Sursee
+   D LU 303 Amt Luzern
+   D LU 302 Amt Hochdorf
+   D LU 301 Amt Entlebuch
+   D UR 400 Kanton Uri
+   D SZ 503 Bezirk Höfe
+   D SZ 502 Bezirk Gersau
+   D SZ 501 Bezirk Einsiedeln
+   D SZ 506 Bezirk Schwyz
+   D SZ 505 Bezirk March
+   D SZ 504 Bezirk Küssnacht (SZ)
+   D OW 600 Kanton Obwalden
+   D NW 700 Kanton Nidwalden
+   D GL 800 Kanton Glarus
+   D ZG 900 Kanton Zug
+   D FR 1007 District de la Veveyse
+   D FR 1006 Bezirk Sense
+   D FR 1005 Bezirk See / District du Lac
+   D FR 1004 District de la Sarine
+   D FR 1003 District de la Gruyère
+   D FR 1002 District de la Glâne
+   D FR 1001 District de la Broye
+   D SO 1105 Bezirk Gösgen
+   D SO 1110 Bezirk Thierstein
+   D SO 1109 Bezirk Solothurn
+   D SO 1107 Bezirk Lebern
+   D SO 1104 Bezirk Dorneck
+   D SO 1103 Bezirk Bucheggberg
+   D SO 1108 Bezirk Olten
+   D SO 1101 Bezirk Gäu
+   D SO 1102 Bezirk Thal
+   D SO 1106 Bezirk Wasseramt
+   D BS 1200 Kanton Basel-Stadt
+   D BL 1301 Bezirk Arlesheim
+   D BL 1302 Bezirk Laufen
+   D BL 1303 Bezirk Liestal
+   D BL 1304 Bezirk Sissach
+   D BL 1305 Bezirk Waldenburg
+   D SH 1406 Bezirk Unterklettgau
+   D SH 1405 Bezirk Stein
+   D SH 1404 Bezirk Schleitheim
+   D SH 1403 Bezirk Schaffhausen
+   D SH 1402 Bezirk Reiat
+   D SH 1401 Bezirk Oberklettgau
+   D AR 1501 Bezirk Hinterland
+   D AR 1503 Bezirk Vorderland
+   D AR 1502 Bezirk Mittelland
+   D AI 1600 Kanton Appenzell Innerrhoden
+   D SG 1727 Wahlkreis Toggenburg
+   D SG 1722 Wahlkreis Rorschach
+   D SG 1721 Wahlkreis St. Gallen
+   D SG 1724 Wahlkreis Werdenberg
+   D SG 1728 Wahlkreis Wil
+   D SG 1725 Wahlkreis Sarganserland
+   D SG 1726 Wahlkreis See-Gaster
+   D SG 1723 Wahlkreis Rheintal
+   D GR 1826 Bezirk Landquart
+   D GR 1827 Bezirk Maloja / Distretto di Maloggia
+   D GR 1822 Distretto di Bernina
+   D GR 1824 Bezirk Imboden
+   D GR 1831 Bezirk Surselva
+   D GR 1830 Bezirk Prättigau-Davos
+   D GR 1823 Bezirk Hinterrhein
+   D GR 1825 Bezirk Inn
+   D GR 1829 Bezirk Plessur
+   D GR 1828 Distretto di Moesa
+   D GR 1821 Bezirk Albula
+   D AG 1911 Bezirk Zurzach
+   D AG 1910 Bezirk Zofingen
+   D AG 1909 Bezirk Rheinfelden
+   D AG 1908 Bezirk Muri
+   D AG 1907 Bezirk Lenzburg
+   D AG 1906 Bezirk Laufenburg
+   D AG 1905 Bezirk Kulm
+   D AG 1904 Bezirk Brugg
+   D AG 1903 Bezirk Bremgarten
+   D AG 1902 Bezirk Baden
+   D AG 1901 Bezirk Aarau
+   D TG 2001 Bezirk Arbon
+   D TG 2008 Bezirk Weinfelden
+   D TG 2007 Bezirk Steckborn
+   D TG 2006 Bezirk Münchwilen
+   D TG 2005 Bezirk Kreuzlingen
+   D TG 2004 Bezirk Frauenfeld
+   D TG 2002 Bezirk Bischofszell
+   D TG 2003 Bezirk Diessenhofen
+   D TI 2106 Distretto di Mendrisio
+   D TI 2105 Distretto di Lugano
+   D TI 2104 Distretto di Locarno
+   D TI 2103 Distretto di Leventina
+   D TI 2102 Distretto di Blenio
+   D TI 2101 Distretto di Bellinzona
+   D TI 2107 Distretto di Riviera
+   D TI 2108 Distretto di Vallemaggia
+   D VD 2221 District d'Aigle
+   D VD 2222 District de la Broye-Vully
+   D VD 2223 District du Gros-de-Vaud
+   D VD 2224 District du Jura-Nord vaudois
+   D VD 2225 District de Lausanne
+   D VD 2226 District de Lavaux-Oron
+   D VD 2227 District de Morges
+   D VD 2228 District de Nyon
+   D VD 2229 District de l'Ouest lausannois
+   D VD 2230 District de la Riviera-Pays-d'Enhaut
+   D VS 2308 District de Monthey
+   D VS 2307 District de Martigny
+   D VS 2306 Bezirk Leuk
+   D VS 2305 District d'Hérens
+   D VS 2304 Bezirk Goms
+   D VS 2303 District d'Entremont
+   D VS 2302 District de Conthey
+   D VS 2301 Bezirk Brig
+   D VS 2309 Bezirk Raron
+   D VS 2310 District de Saint-Maurice
+   D VS 2311 District de Sierre
+   D VS 2312 District de Sion
+   D VS 2313 Bezirk Visp
+   D NE 2404 District de Neuchâtel
+   D NE 2401 District de Boudry
+   D NE 2403 District du Locle
+   D NE 2405 District du Val-de-Ruz
+   D NE 2406 District du Val-de-Travers
+   D NE 2402 District de la Chaux-de-Fonds
+   D GE 2500 Canton de Genève
+   D JU 2601 District de Delémont
+   D JU 2602 District des Franches-Montagnes
+   D JU 2603 District de Porrentruy
+
+## https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2025
+   HTTP 200, 135,950 bytes, 2,291 lines, 
+   | HistoricalCode,BfsCode,ValidFrom,ValidTo,Level,Parent,Name,ShortName,Inscription,Radiation,Rec_Type_fr,Rec_Type_de
+   | 1,1,12.09.1848,,1,,Zürich,ZH,,,,
+   | 10053,101,12.09.1848,,2,1,Bezirk Affoltern,Affoltern,100,,,
+   | 10575,13,12.09.1848,,3,10053,Stallikon,Stallikon,,,,
+
+## https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025
+   HTTP 200, 131,422 bytes, 1,271 lines, 
+   | InitialHistoricalCode,InitialCode,InitialName,InitialParentHistoricalCode,InitialParentName,InitialStep,TerminalHistoricalCode,TerminalCode,TerminalName,TerminalParentHistoricalCode,TerminalParentName,TerminalStep
+   | 10037,6486,Villiers,10185,District du Val-de-Ruz,29,16115,6487,Val-de-Ruz,10320,Canton de Neuchâtel,24
+   | 10055,4080,Villmergen,10024,Bezirk Bremgarten,26,15386,4080,Villmergen,10024,Bezirk Bremgarten,26
+   | 10167,2159,Villarvolard,10105,District de la Gruyère,29,15481,2129,Corbières,10105,District de la Gruyère,26
+
+## https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025&includeUnmodified=true
+   HTTP 200, 260,064 bytes, 2,637 lines, 
+   | InitialHistoricalCode,InitialCode,InitialName,InitialParentHistoricalCode,InitialParentName,InitialStep,TerminalHistoricalCode,TerminalCode,TerminalName,TerminalParentHistoricalCode,TerminalParentName,TerminalStep
+   | 10009,4122,Villnachern,10023,Bezirk Brugg,,10009,4122,Villnachern,10023,Bezirk Brugg,
+   | 10037,6486,Villiers,10185,District du Val-de-Ruz,29,16115,6487,Val-de-Ruz,10320,Canton de Neuchâtel,24
+   | 10055,4080,Villmergen,10024,Bezirk Bremgarten,26,15386,4080,Villmergen,10024,Bezirk Bremgarten,26
+
+## https://www.agvchapp.bfs.admin.ch/api/communes/levels?date=01-01-2025
+   HTTP 200, 333,469 bytes, 2,122 lines, 
+   | HistoricalCode,BfsCode,Name,CantonId,Canton,DistrictId,District,FUA2014,DEGURB2021,FUA2021,GCITIES2021,STREG2022,DEGURB2011,GCITIES2011,REGCH,AGKG2012,STADTE2012,STGD2012,RSC2012,AGKSA2012,AGGL2012,AGGLGK2012,STALAN2012,GDETYP2012_9,GDETYP2
+   | 10009,4122,Villnachern,19,Aargau,10023,Bezirk Brugg,0,2,0,0,14,2,0,3,0,0,0,5,0,0,0,3,23,236,0,0,0,5,1,0,0,0,0,3,23,236,12,12010
+   | 10078,6158,Vionnaz,23,Valais / Wallis,10013,District de Monthey,0,3,5586960,0,11,3,0,1,0,0,0,5,0,0,0,2,22,226,0,0,0,5,2,0,0,0,1,2,22,226,2,2040
+   | 10157,3023,Speicher,15,Appenzell Ausserrhoden,10098,Bezirk Mittelland,3203960,2,3203960,0,2,2,0,5,3203810,0,0,4,3203910,3203,3,2,22,227,3203810,0,0,4,1,3203910,3203,3,1,2,21,217,15,15050
+
+## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0104010000_101/px-x-0104010000_101.px
+   HTTP 400, 11 bytes
+   Bad Request
+   sample root rows: [{'dbid': 'px-x-0304010000_101', 'text': 'px-x-0304010000_101'}, {'dbid': 'px-x-0304010000_111', 'text': 'px-x-0304010000_111'}, {'dbid': 'px-x-0304010000_112', 'text': 'px-x-0304010000_112'}]
+
+=== lie2
+
+## PxWeb https://etab.llv.li/PXWeb/api/v1/de/
+   HTTP 200, 31 bytes
+   - None [None] eTab
+
+## PxWeb https://etab.llv.li/api/v1/de/
+   HTTP 404, 1,245 bytes
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style typ
+
+## PxWeb https://etab.llv.li/PXWeb/api/v1/de/eTab/
+   HTTP 200, 730 bytes
+   - Bevölkerung [l] Bevölkerung
+   - Arbeit und Erwerb [l] Arbeit und Erwerb
+   - Volkswirtschaft und Preise [l] Volkswirtschaft und Preise
+   - Wirtschaftsbereiche und Unternehmen [l] Wirtschaftsbereiche und Unternehmen
+   - Bauen und Wohnen [l] Bauen und Wohnen
+   - Soziales [l] Soziales
+   - Gesundheit [l] Gesundheit
+   - Bildung [l] Bildung
+   - Staat und Politik [l] Staat und Politik
+   - Raum, Umwelt und Energie [l] Raum, Umwelt und Energie
+   - Mobilität und Verkehr [l] Mobilität und Verkehr
+
+## https://www.statistikportal.li/de/themen/bevoelkerung/bevoelkerungsstand
+   HTTP 200, 957,474 bytes, text/html; charset=UTF-8
+   19 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|pdf)\\"|href=\\"[^\\"]*etab[^\\"]*\\"'
+   - href="/de/anwendungen-datenbanken/etab"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2023/04/1/211.2023.04.1_02_bevoelkerungsstand-2023dez-neue-definition-tab.xlsx"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2023/04/1/211.2023.04.1_01_faktenblatt-zur-anpassung-der-bevoelkerungsdefinition.pdf"
+   - href="https://www.statistikportal.li/etab/211.001"
+   - href="https://www.statistikportal.li/etab/211.002"
+   - href="https://www.statistikportal.li/etab/211.003"
+   - href="https://www.statistikportal.li/etab/211.004"
+   - href="https://www.statistikportal.li/etab/211.005"
+   - href="https://www.statistikportal.li/etab/211.006"
+   - href="https://www.statistikportal.li/etab/211.101"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_01_bevoelkerungsstand-2025dez-tabellen.xlsx"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_03_bevoelkerungsdichte-karte.pdf"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_02_bevoelkerungsstatistik-2025dez-mq.pdf"
+   - href="https://www.statistikportal.li/etab/211.801"
+   - href="https://www.statistikportal.li/etab/211.901"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/01/1/211.2025.01.1_01_bevoelkerungsstand-2025juni-tab.xlsx"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/01/1/bevoelkerungsstatistik_juni_2025.pdf"
+   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/02/1/211.2025.02.1_01_bevoelkerungsstand-vorlaeufige-dezember-2025-tabellen.xlsx"
+   - href="https://etab.llv.li"
+
+## https://www.statistikportal.li/de/erhebungen-register/volkszaehlung
+   HTTP 200, 495,296 bytes, text/html; charset=UTF-8
+   4 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|pdf)\\"|href=\\"[^\\"]*etab[^\\"]*\\"'
+   - href="/de/anwendungen-datenbanken/etab"
+   - href="/statistikportal/indicators/161.2025.11_02_volkszaehlung-papierfragebogen-muster-2025.pdf"
+   - href="/statistikportal/documents/20201015_fragebogen_vz2020_miteindruck_muster.pdf"
+   - href="https://etab.llv.li"
