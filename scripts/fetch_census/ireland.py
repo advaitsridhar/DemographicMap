@@ -189,7 +189,20 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--inspect", default=None, metavar="MATRIX",
+                    help="print a PxStat table's dimensions and categories, and stop")
     args = ap.parse_args()
+
+    if args.inspect:
+        dataset = read_dataset(args.inspect)
+        elimination = (dataset.get("extension") or {}).get("elimination") or {}
+        for dim in dataset["id"]:
+            cats = categories(dataset, dim)
+            log(f"{dim} ({dataset['dimension'][dim].get('label')}): {len(cats)} categories, "
+                f"total {elimination.get(dim)!r}")
+            for code, label in list(cats.items())[:60]:
+                log(f"    {code}: {label}")
+        return 0
 
     areas: dict[str, str] = {}
     fields: dict[str, dict[str, dict[str, float]]] = {}
