@@ -60,7 +60,8 @@ class Table:
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
                  geo_len: int | None = None, geo_stem: int | None = None,
-                 geo_prefix: str | None = None, national: str | None = None):
+                 geo_prefix: str | None = None, national: str | None = None,
+                 withhold: dict[str, str] | None = None):
         self.path = path
         self.field = field
         self.geo = geo
@@ -95,6 +96,14 @@ class Table:
         # "Latvia", so looking for the word "total" found Estonia's and missed
         # Latvia's -- in the one table the check was written for.
         self.national = national
+        # Units read and checked like any other -- they belong in the sum to
+        # the country -- but not written, each with the reason. A unit is
+        # withheld when the office's figure is for a different territory
+        # from the polygon its name would reach: the office's current county
+        # or municipality is a merger or a redrawing of the one the boundary
+        # file draws, and the figure for the drawn unit comes from an adapter
+        # that reads the drawn vintage.
+        self.withhold = withhold or {}
 
 
 # Filled in from what scripts/probe_pxweb.py actually found. An office is only
@@ -159,6 +168,17 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # counties, so counting them beside their parents would double
             # those two counties' people.
             drop=("unk", "784", "793"), national="00",
+            # The boundary file draws Estonia's counties as they were before
+            # the 2017 reform (it files Hanila and Lihula under Lääne), and
+            # this table is by the counties formed then. Statistics Estonia
+            # gave every county whose territory the reform changed a new
+            # code; only Harju, Hiiu, Saare and Viljandi kept theirs, so only
+            # those four are the drawn territory. The other eleven come from
+            # estonia.py, which reads the archived table by the old counties.
+            withhold={code: "its territory changed in 2017 (new county code); the drawn "
+                            "county is the pre-reform one, which estonia.py reads"
+                      for code in ("45", "50", "52", "56", "60", "64", "68", "71", "79",
+                                   "81", "87")},
             note="Ethnic nationality as recorded in the population register on "
                  "1 January 2026, not a census answer. Estonia asks it of "
                  "residents rather than inferring it from citizenship."),
@@ -244,6 +264,12 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # statistical regions, defined before and after 1 January 2024,
             # which overlap each other.
             geo_len=9, geo_stem=6, national="LV",
+            # Madona absorbed Varakļāni on 1 July 2025; the boundary file
+            # still draws both. The merged municipality's figure would land
+            # on the old Madona polygon by name. latvia.py writes both drawn
+            # municipalities from the beginning of 2025, before the merger.
+            withhold={"LV0038001": "Madona after absorbing Varakļāni on 1 July 2025; the map "
+                                   "draws the two apart, and latvia.py writes each"},
             note="Ethnicity as recorded in the population register at the "
                  "beginning of 2026. 'Other ethnicities' also holds people who "
                  "selected none and people who did not indicate one, so it is "
@@ -596,7 +622,12 @@ def main() -> int:
         areas, national = fetch(spec["base"], table)
         check(iso3, table, areas, national)
         local = local_names(spec["base"], table, spec["local"]) if spec.get("local") else {}
+        for code, reason in sorted(table.withhold.items()):
+            if code in areas:
+                log(f"    withheld {code} {areas[code]['name']}: {reason}")
         for code, entry in areas.items():
+            if code in table.withhold:
+                continue
             # The local name leads because it is what the boundary file
             # carries; the English one follows as an alias so a search for
             # "Aizkraukle municipality" still finds the place.
