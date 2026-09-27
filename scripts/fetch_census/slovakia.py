@@ -156,9 +156,14 @@ def build(year: int) -> list[dict[str, Any]]:
     females: dict[str, Counter] = {}
     totals: dict[str, float] = {}
     names: dict[str, str] = {}
+    # The cube refuses (400) a request for every territory and every age at
+    # once, so it is asked one territory at a time, the territories being the
+    # ones its sister cube lists.
+    medians = {key["om7005rr_vuc"][0]: value
+               for key, value in cube("om7005rr", f"all/{year}/{MEDIAN}/SPOLU")}
     rows = []
-    for sex in ("SPOLU", "1", "2"):
-        rows += cube("om7009rr", f"all/{year}/{POPULATION}/{sex}/all")
+    for area in sorted(medians):
+        rows += cube("om7009rr", f"{area}/{year}/{POPULATION}/all/all")
     for key, value in rows:
         area, area_label = key["om7009rr_vuc"]
         sex = key["om7009rr_poh"][0]
@@ -174,8 +179,6 @@ def build(year: int) -> list[dict[str, Any]]:
         (males if sex == "1" else females).setdefault(area, Counter())[age] += value
     if not totals:
         raise SystemExit(f"slovakia: om7009rr has no figures for {year}")
-    medians = {key["om7005rr_vuc"][0]: value
-               for key, value in cube("om7005rr", f"all/{year}/{MEDIAN}/SPOLU")}
     district_codes = sorted(c for c in totals if len(c) == 6 and c.startswith("SK0"))
     log(f"  {len(district_codes)} districts, national {totals.get('SK0', 0):,.0f}")
     check_sum((totals[c] for c in district_codes), totals["SK0"], "districts against Slovakia")

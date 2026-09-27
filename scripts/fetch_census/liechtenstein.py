@@ -146,6 +146,15 @@ def pick(variables: dict[str, dict[str, str]], word: str) -> str:
     return hits[0]
 
 
+def gemeinde_name(label: str) -> str:
+    """A place label without the indentation marks or code a table may put on it."""
+    text = label.strip().lstrip(".-> ").strip()
+    for name in (*GEMEINDEN, "Liechtenstein"):
+        if text == name or text.endswith(" " + name) or text.startswith(name + " "):
+            return name
+    return text
+
+
 def total_code(values: dict[str, str]) -> str:
     hits = [code for text, code in values.items() if "Total" in text or text == "Liechtenstein"]
     if len(hits) != 1:
@@ -170,7 +179,7 @@ def ages(year: int) -> tuple[dict[str, Counter], dict[str, Counter]]:
     females: dict[str, Counter] = {}
     totals: dict[str, float] = {}
     for key, value in post("age", query):
-        place = key[ort][1].strip()
+        place = gemeinde_name(key[ort][1])
         age_text = key[alter][1].strip()
         sex_text = key[sex][1].strip()
         if "Total" in age_text:
@@ -203,7 +212,7 @@ def census(key: str, labels: dict[str, str]) -> dict[str, dict[str, float]]:
                                                   "values": [total_code(var[code])]}})
     raw: dict[str, dict[str, float]] = {}
     for k, value in post(key, query):
-        raw.setdefault(k[place][1].strip(), {})[k[group][1].strip()] = value
+        raw.setdefault(gemeinde_name(k[place][1]), {})[k[group][1].strip()] = value
     out: dict[str, dict[str, float]] = {}
     unknown = set()
     for gemeinde, rows in raw.items():
@@ -235,6 +244,9 @@ def census(key: str, labels: dict[str, str]) -> dict[str, dict[str, float]]:
 def build(year: int) -> list[dict[str, Any]]:
     log(f"liechtenstein: eTab 211.004 ({year}), 213.001d and 213.011d (Volkszählung 2020)")
     males, females, totals = ages(year)
+    missing = [g for g in (*GEMEINDEN, "Liechtenstein") if g not in totals]
+    if missing:
+        raise SystemExit(f"liechtenstein: 211.004 has no rows for {missing}; it has {sorted(totals)}")
     national = totals["Liechtenstein"]
     check_sum((totals[g] for g in GEMEINDEN), national, "Gemeinden against Liechtenstein")
     religion = census("religion", RELIGION)
