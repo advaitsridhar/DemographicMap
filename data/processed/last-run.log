@@ -1,32 +1,17 @@
-estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
-  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
-    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
-    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
-    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
-    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
-    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
-    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
-    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
-    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
-    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
-    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
-    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
-    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
-    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
-    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
-    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
-    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
-  Estonia 1 January 2017: median age 41.8
-  RV0241 2017: national median 41.8 against Eurostat's 41.8 for 1 January 2017 (+0.00 years, bound 0.3)
-  Maidla vald bound to Lüganuse rural municipality: the one polygon and the one unit its county has left
-  EST admin2: 214 of 214 polygons bound
-    units standing in 2017 with no polygon (2): Järvakandi rural municipality; Lääne-Saare rural municipality
-  RL0429: 98 municipalities of 2011
-  RL0433: 226 municipalities of 2011
-  Usk: left out, categories off their total: ['257 (1,218 of 1,236)', '826 (1,065 of 1,082)', '460 (762 of 779)']
-  RL0452: 226 municipalities of 2011
-  ethnicity labels the group tree cannot place: []
-  language labels the group tree cannot place: []
-  religion labels the group tree cannot place: []
-  wrote data/processed/estonia_municipality.json (1063 kB)
-  wrote estonia_municipality.json: 229 records
+denmark: Statistics Denmark FOLK1A and KM6
+  FOLK1A 2026K3: 40,005 rows
+    FOLK1A regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
+    FOLK1A kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
+    FOLK1A kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
+    FOLK1A kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
+    FOLK1A kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
+    FOLK1A kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
+  Denmark 1 July 2026: 6,031,699 people, median age 42.1
+  FOLK1A 2026K3 (1 July 2026): national median 42.1 against Eurostat's 42.2 for 1 January 2025 (-0.10 years, bound 0.7)
+  KM6 2026: 8,316 rows, 99 areas
+    KM6 members and non-members make FOLK1A 2026K1 in all 99 kommuner
+  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
+    office units with no polygon (1): Christiansø (411)
+  labels the group tree cannot place: ['Not a member of the national church']
+  wrote data/processed/denmark_kommune.json (262 kB)
+  wrote denmark_kommune.json: 103 records
