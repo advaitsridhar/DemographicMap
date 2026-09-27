@@ -308,11 +308,14 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
     by_code = {r["codes"]["atvk"]: r for r in records if r["level"] == "admin2"}
     # A county of one parish may since have had a town cut out of it and
     # drawn apart (Iecava, a town since 2021): its 2011 figure is then for
-    # more than the drawn parish, which the count of people shows.
+    # more than the drawn parish, which the count of people shows -- 2,865
+    # people today against 8,215. Growth is allowed for: Riga's suburbs have
+    # grown by up to three-quarters since 2011 on the same ground (Carnikava
+    # 6,228 to 10,892, Mārupe 14,430 to 24,835).
     for unit, code in list(single.items()):
         now_people = by_code[code]["population"]["value"]
         then_people = cells[unit]["TOTAL"]
-        if not 0.6 < now_people / then_people < 1.6:
+        if not 0.6 < now_people / then_people < 2.0:
             log(f"  TSG11-07 {names[unit].strip()}: {then_people:,.0f} people in 2011 against "
                 f"{now_people:,} in the drawn {by_code[code]['name']} today; not the same "
                 "territory, left out")
