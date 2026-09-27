@@ -1,0 +1,269 @@
+[
+  {
+    "id": "ESP-EUSTAT-LANG-00",
+    "level": "admin1",
+    "name": "País Vasco/Euskadi",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 71.9,
+        "count": 1554836
+      },
+      {
+        "group": "Basque",
+        "pct": 13.1,
+        "count": 282338
+      },
+      {
+        "group": "Basque and Spanish",
+        "pct": 11.8,
+        "count": 254268
+      },
+      {
+        "group": "Other language",
+        "pct": 3.3,
+        "count": 71679
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Eustat, Estadística de Población y Viviendas 2021: population aged 2 and over by language spoken at home (cepv3_lhc04)",
+        "url": "https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_010152_cepv3_lhc04.px",
+        "year": 2021,
+        "license": "Eustat (CC BY 4.0)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "25490228B56567998760255",
+    "codes": {
+      "eustat": "00"
+    },
+    "language_year": 2021,
+    "language_note": "Eustat's Population and Housing Statistics (the Basque Country's own census), 2021: everyone aged 2 and over by the language spoken at home -- Basque, Spanish, both, or another. A count, not a survey. INE's census of Spain does not ask language."
+  },
+  {
+    "id": "ESP-EUSTAT-LANG-01",
+    "level": "admin2",
+    "name": "Alava",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 85.0,
+        "count": 276397
+      },
+      {
+        "group": "Basque and Spanish",
+        "pct": 7.3,
+        "count": 23725
+      },
+      {
+        "group": "Other language",
+        "pct": 4.9,
+        "count": 15967
+      },
+      {
+        "group": "Basque",
+        "pct": 2.8,
+        "count": 9108
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Eustat, Estadística de Población y Viviendas 2021: population aged 2 and over by language spoken at home (cepv3_lhc04)",
+        "url": "https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_010152_cepv3_lhc04.px",
+        "year": 2021,
+        "license": "Eustat (CC BY 4.0)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B53177073729370",
+    "codes": {
+      "eustat": "01",
+      "ine_province": "01"
+    },
+    "language_year": 2021,
+    "language_note": "Eustat's Population and Housing Statistics (the Basque Country's own census), 2021: everyone aged 2 and over by the language spoken at home -- Basque, Spanish, both, or another. A count, not a survey. INE's census of Spain does not ask language."
+  },
+  {
+    "id": "ESP-EUSTAT-LANG-48",
+    "level": "admin2",
+    "name": "Bizkaia",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 78.7,
+        "count": 888511
+      },
+      {
+        "group": "Basque and Spanish",
+        "pct": 10.1,
+        "count": 113554
+      },
+      {
+        "group": "Basque",
+        "pct": 8.4,
+        "count": 95028
+      },
+      {
+        "group": "Other language",
+        "pct": 2.8,
+        "count": 32099
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Eustat, Estadística de Población y Viviendas 2021: population aged 2 and over by language spoken at home (cepv3_lhc04)",
+        "url": "https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_010152_cepv3_lhc04.px",
+        "year": 2021,
+        "license": "Eustat (CC BY 4.0)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B43945081388394",
+    "codes": {
+      "eustat": "48",
+      "ine_province": "48"
+    },
+    "language_year": 2021,
+    "language_note": "Eustat's Population and Housing Statistics (the Basque Country's own census), 2021: everyone aged 2 and over by the language spoken at home -- Basque, Spanish, both, or another. A count, not a survey. INE's census of Spain does not ask language."
+  },
+  {
+    "id": "ESP-EUSTAT-LANG-20",
+    "level": "admin2",
+    "name": "Gipuzkoa",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 55.0,
+        "count": 389928
+      },
+      {
+        "group": "Basque",
+        "pct": 25.1,
+        "count": 178202
+      },
+      {
+        "group": "Basque and Spanish",
+        "pct": 16.5,
+        "count": 116989
+      },
+      {
+        "group": "Other language",
+        "pct": 3.3,
+        "count": 23613
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Eustat, Estadística de Población y Viviendas 2021: population aged 2 and over by language spoken at home (cepv3_lhc04)",
+        "url": "https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_010152_cepv3_lhc04.px",
+        "year": 2021,
+        "license": "Eustat (CC BY 4.0)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B76527566643208",
+    "codes": {
+      "eustat": "20",
+      "ine_province": "20"
+    },
+    "language_year": 2021,
+    "language_note": "Eustat's Population and Housing Statistics (the Basque Country's own census), 2021: everyone aged 2 and over by the language spoken at home -- Basque, Spanish, both, or another. A count, not a survey. INE's census of Spain does not ask language."
+  }
+]
