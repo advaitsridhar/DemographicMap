@@ -28,7 +28,7 @@ import argparse
 from collections import Counter
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, http_json, log, measure, record, write_json
 from common import NOT_APPLICABLE  # noqa: E402
 from .balkans_common import check_sum, median_age, shapes
 from .eurostat import API, unpack
@@ -46,6 +46,11 @@ ADMINISTRATIONS = {
     "Egean": ("EL41", "EL42"),
 }
 ATHOS = "Agion Oros"
+RESIDENT = ("https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/"
+            "7adf2ca4-0baf-7b19-2860-1e7caea81e7f")
+RESIDENT_PAGE = "https://www.statistics.gr/el/2021-census-res-pop-results"
+ATHOS_SOURCE = ("ELSTAT, 2021 Population-Housing Census, resident population by region, "
+                "regional unit and municipality (mon_plith_2021.xlsx)")
 
 
 def ages(geos: list[str]) -> tuple[int, dict[str, dict[str, Counter]], dict[str, dict[str, float]]]:
@@ -112,18 +117,47 @@ def build() -> list[dict[str, Any]]:
                       "url": API.format(dataset=DATASET), "year": year}]))
         log(f"  {name} ({'+'.join(regions)}): {men + women:,.0f}, median {median}, "
             f"{round(1000 * men / women)} men per 1,000 women")
+    total, men, women = athos()
     why_age = ("Mount Athos is counted inside the Central Macedonia region by Eurostat, and "
                "ELSTAT's 2021 census tables by age stop at the region, so no age structure is "
                "published for it alone.")
-    why_sex = ("Women may not enter Mount Athos; its residents are men, so a ratio of men to "
-               "women is not defined.")
+    why_sex = (f"ELSTAT's 2021 census counts {total:,} residents on Mount Athos, {men:,} men and "
+               f"{women:,} women -- women may not enter it -- so a ratio of men to women is not "
+               "defined.")
+    if women:
+        raise SystemExit(f"greece_age: ELSTAT counts {women} women on Mount Athos; the stated "
+                         "reason for its sex ratio no longer holds")
     for level, table in (("admin1", admin1), ("admin2", admin2)):
         if ATHOS in table:
             records.append(record(
                 f"GRC-athos-{level}", ATHOS, level=level, parent="GRC", country="GRC",
                 match_by="shape_id", shape_id=table[ATHOS]["id"],
-                median_age=gap(NOT_AVAILABLE, why_age), sex_ratio=gap(NOT_APPLICABLE, why_sex)))
+                population=measure(total, year=2021, source=ATHOS_SOURCE),
+                median_age=gap(NOT_AVAILABLE, why_age), sex_ratio=gap(NOT_APPLICABLE, why_sex),
+                sources=[{"field": "population", "name": ATHOS_SOURCE, "url": RESIDENT,
+                          "page": RESIDENT_PAGE, "year": 2021}]))
     return records
+
+
+def athos() -> tuple[int, int, int]:
+    """Mount Athos's 2021 resident population, men and women, from ELSTAT's table
+    of the resident population by region, regional unit and municipality."""
+    import io
+    import openpyxl
+    blob = http_get(RESIDENT, binary=True, timeout=300)
+    rows = [tuple(r) for r in openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+                                                     data_only=True).worksheets[0].iter_rows(values_only=True)]
+    header = [str(c or "") for c in rows[0]]
+    col = {k: header.index(k) for k in ("Μόνιμος Πληθυσμός 2021", "Άρρενες 2021", "Θήλεις 2021")}
+    hit = [r for r in rows[1:] if str(r[2] or "").startswith("ΑΓΙΟ ΟΡΟΣ") and str(r[0]) == "4"]
+    if len(hit) != 1:
+        raise SystemExit(f"greece_age: {len(hit)} rows for Mount Athos in ELSTAT's table")
+    r = hit[0]
+    total, men, women = (int(r[col[k]] or 0) for k in col)
+    if men + women != total:
+        raise SystemExit(f"greece_age: Mount Athos's sexes {men} + {women} against {total}")
+    log(f"  Mount Athos: {total:,} residents in 2021, {men:,} men, {women:,} women")
+    return total, men, women
 
 
 def main() -> int:
