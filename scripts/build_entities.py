@@ -353,8 +353,8 @@ ADAPTER_FILES = [
     # level. It writes no religion or language there: peru_department.json,
     # the Perfil's department tables of the same count, carries those.
     "peru_redatam.json",
-    # The same run's count of each province's people, fill-only (see
-    # FILL_ONLY): the map's figures are newer, and 24 provinces had none.
+    # The same run's count of each province's people. It stands against
+    # Wikidata's newer figures, as a count does against an encyclopaedia.
     "peru_redatam_population.json",
     # The Dominican Republic's 155 municipalities: median age and sex ratio
     # from the 2010 census's age-sex table, as the US Census Bureau tabulates
@@ -1831,9 +1831,6 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json",
                        "cod_ps_age.json",
-                       # Peru's 2017 census count by province: older than the
-                       # map's figures, so it only fills a province with none.
-                       "peru_redatam_population.json",
                        # Haiti's median ages: a 2024 projection from the 2003
                        # census, which a count would always replace.
                        "haiti_cod_ps_age.json"})

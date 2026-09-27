@@ -20,9 +20,10 @@ What it writes, for Peru's 196 provinces and its 26 first-level units:
   in, asked of those aged 3 and over. The first level keeps the Perfil
   Sociodemográfico's department tables (peru.py), which are the same count.
 
-Population goes to a file of its own, ``peru_redatam_population.json``, which
-the build reads as fill-only: the map's province figures are newer than 2017,
-and the census count stands only where a province has none.
+Population goes to a file of its own, ``peru_redatam_population.json``: the
+census count of each province. Wikidata's province figures are newer, and the
+count stands against them, as an official count does against an encyclopaedia
+(the owner's rule of 22 September 2026).
 
 Every label is translated by the tables here, and one this file does not know
 stops the run. Every province must have all five tables; each question's
@@ -409,9 +410,7 @@ def main() -> int:
                       match_by="shape_id", shape_id=bound[code],
                       aliases=[labels[bound[code]]] if labels[bound[code]] != unit["name"] else [],
                       population=measure(unit["sex"]["total"], year=YEAR, source=SOURCE),
-                      population_note=(
-                          "Everyone counted in the province by the 2017 census. It stands only "
-                          "where the map has no newer figure for the province."),
+                      population_note="Everyone counted in the province by the 2017 census.",
                       sources=[{"field": "population", "name": SOURCE, "url": PAGE,
                                 "year": YEAR}])
                for code, unit in sorted(units.items()) if code in bound]
