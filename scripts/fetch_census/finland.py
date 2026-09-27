@@ -60,7 +60,8 @@ OUT = PROCESSED / "finland_subregion.json"
 PAUSE = 1.5                     # StatFin answers 429 to a brisker pace
 
 # The boundary file's name -> the sub-region's name in Statistics Finland's
-# classification (Finnish, nominative).
+# classification (Finnish and nominative, or Swedish where the sub-region is
+# Swedish-speaking: "Jakobstadsregionen", "Mariehamns stad").
 DRAWN = {
     "Etelä-Pirkanmaan seutukunta": "Etelä-Pirkanmaa",
     "Forssan seutukunta": "Forssa",
@@ -93,7 +94,7 @@ DRAWN = {
     "Lounais-Pirkanmaan seutukunta": "Lounais-Pirkanmaa",
     "Loviisan seutukunta": "Loviisa",
     "Luoteis-Pirkanmaan seutukunta": "Luoteis-Pirkanmaa",
-    "Mariehamns stad": "Maarianhamina",
+    "Mariehamns stad": "Mariehamns stad",
     "Mikkelin seutukunta": "Mikkeli",
     "Nivala–Haapajärven seutukunta": "Nivala-Haapajärvi",
     "North Eastern Savonia": "Koillis-Savo",
@@ -101,7 +102,7 @@ DRAWN = {
     "Oulunkaaren seutukunta": "Oulunkaari",
     "Pieksämäen seutukunta": "Pieksämäki",
     "Pielisen Karjalan seutukunta": "Pielisen Karjala",
-    "Pietarsaaren seutukunta": "Pietarsaari",
+    "Pietarsaaren seutukunta": "Jakobstadsregionen",
     "Pohjois-Lapin seutukunta": "Pohjois-Lappi",
     "Pohjois-Satakunnan seutukunta": "Pohjois-Satakunta",
     "Porin seutukunta": "Pori",
@@ -117,7 +118,7 @@ DRAWN = {
     "Seinäjoen seutukunta": "Seinäjoki",
     "Sisä-Savon seutukunta": "Sisä-Savo",
     "Suupohjan seutukunta": "Suupohja",
-    "Sydösterbotten": "Suupohjan rannikkoseutu",
+    "Sydösterbotten": "Sydösterbotten",
     "Tampereen seutukunta": "Tampere",
     "Torniolaakson seutukunta": "Torniolaakso",
     "Tunturi-Lapin seutukunta": "Tunturi-Lappi",
@@ -130,8 +131,8 @@ DRAWN = {
     "Ylä-Pirkanmaan seutukunta": "Ylä-Pirkanmaa",
     "Ylä-Savon seutukunta": "Ylä-Savo",
     "Äänekoski": "Äänekoski",
-    "Ålands landsbygd": "Ahvenanmaan maaseutu",
-    "Ålands skärgård": "Ahvenanmaan saaristo",
+    "Ålands landsbygd": "Ålands landsbygd",
+    "Ålands skärgård": "Ålands skärgård",
 }
 
 
@@ -195,50 +196,65 @@ def main() -> int:
     if chosen is None:
         raise SystemExit("finland: no year's sub-regions are the seventy the map draws")
     key_year, muni, names, found = chosen
-    # The population on 31 December of the year before the key took effect is
-    # the one counted in that key's division; later years, if the division
-    # did not change, would have matched a later key.
-    data_year = min(key_year - 1, years[-1])
-    log(f"  the map's sub-regions are those of {key_year}; population on 31 December "
-        f"{data_year}")
-
     area = "kunta_85_20190101"
     codes = [f"KU{k}" for k in sorted(muni)]
     ages = [a for a in meta["ikaryhma_10_20180101"]["values"] if a != "SSS"]
-    people: dict[str, AgeSex] = defaultdict(AgeSex)
-    published: dict[str, float] = {}
-    for chunk in (codes[i:i + 110] for i in range(0, len(codes), 110)):
-        body = request_json(f"{STATFIN}/11rf.px", {"query": [
-            {"code": area, "selection": {"filter": "item", "values": chunk}},
+
+    def read(data_year: int) -> tuple[dict[str, AgeSex], str | None]:
+        """11rf for one year by the key's municipalities, or the reason it does not fit."""
+        people: dict[str, AgeSex] = defaultdict(AgeSex)
+        published: dict[str, float] = {}
+        for chunk in (codes[i:i + 110] for i in range(0, len(codes), 110)):
+            body = request_json(f"{STATFIN}/11rf.px", {"query": [
+                {"code": area, "selection": {"filter": "item", "values": chunk}},
+                {"code": "timeperiod_y", "selection": {"filter": "item", "values": [str(data_year)]}},
+                {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["1", "2"]}},
+                {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ages + ["SSS"]}},
+                {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
+            ], "response": {"format": "json-stat2"}}, pause=PAUSE)
+            for key, value in unstack(body):
+                code, age = key[area][0], key["ikaryhma_10_20180101"][0]
+                sex = key["sukupuoli_9_20180101"][0]
+                if age == "SSS":
+                    published[code] = published.get(code, 0.0) + value
+                    continue
+                people[code].add(int(age.rstrip("-")), "m" if sex == "1" else "f", value)
+        national = request_json(f"{STATFIN}/11rf.px", {"query": [
+            {"code": area, "selection": {"filter": "item", "values": ["SSS"]}},
             {"code": "timeperiod_y", "selection": {"filter": "item", "values": [str(data_year)]}},
-            {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["1", "2"]}},
-            {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ages + ["SSS"]}},
+            {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
+            {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
             {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
         ], "response": {"format": "json-stat2"}}, pause=PAUSE)
-        for key, value in unstack(body):
-            code, age, sex = key[area][0], key["ikaryhma_10_20180101"][0], key["sukupuoli_9_20180101"][0]
-            if age == "SSS":
-                published[code] = published.get(code, 0.0) + value
-                continue
-            people[code].add(int(age.rstrip("-")), "m" if sex == "1" else "f", value)
-    national = request_json(f"{STATFIN}/11rf.px", {"query": [
-        {"code": area, "selection": {"filter": "item", "values": ["SSS"]}},
-        {"code": "timeperiod_y", "selection": {"filter": "item", "values": [str(data_year)]}},
-        {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
-        {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
-        {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
-    ], "response": {"format": "json-stat2"}}, pause=PAUSE)
-    whole = next(value for _, value in unstack(national))
-    for code, got in people.items():
-        if abs(got.total - published.get(code, -1)) > 0.5:
-            raise SystemExit(f"11rf {code}: single years make {got.total:,.0f}, the table's "
-                             f"total is {published.get(code)}")
-    empty = [c for c in codes if people[c].total == 0]
-    if empty:
-        raise SystemExit(f"11rf {data_year}: municipalities of the {key_year} key with nobody: "
-                         f"{empty}")
-    check_parts({c: people[c].total for c in codes}, whole,
-                f"11rf {data_year}: municipalities -> Finland", 0)
+        whole = next(value for _, value in unstack(national))
+        for code, got in people.items():
+            if abs(got.total - published.get(code, -1)) > 0.5:
+                raise SystemExit(f"11rf {code}: single years make {got.total:,.0f}, the "
+                                 f"table's total is {published.get(code)}")
+        empty = [c for c in codes if people[c].total == 0]
+        if empty:
+            return people, f"municipalities of the {key_year} key with nobody: {empty}"
+        summed = sum(people[c].total for c in codes)
+        if abs(summed - whole) > 0.5:
+            return people, (f"the key's municipalities make {summed:,.0f} against "
+                            f"{whole:,.0f}")
+        check_parts({c: people[c].total for c in codes}, whole,
+                    f"11rf {data_year}: municipalities -> Finland", 0)
+        return people, None
+
+    # The key's own year first: 11rf lays each year out in "the regional
+    # division of the statistical reference year". If that is the next
+    # year's division, the key's municipalities will not all be there and the
+    # year before is the one counted in the key's division.
+    for data_year in (min(key_year, years[-1]), key_year - 1):
+        people, why = read(data_year)
+        if why is None:
+            break
+        log(f"  11rf {data_year} does not fit the {key_year} key: {why}")
+    else:
+        raise SystemExit(f"finland: 11rf has no year in the {key_year} division")
+    log(f"  the map's sub-regions are those of {key_year}; population on 31 December "
+        f"{data_year}")
     region_people: dict[str, AgeSex] = defaultdict(AgeSex)
     for k, s in muni.items():
         region_people[s] += people[f"KU{k}"]

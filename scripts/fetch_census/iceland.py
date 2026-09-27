@@ -34,6 +34,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 from collections import defaultdict
 
 from ._shared import PROCESSED, log, record, write_json
@@ -68,7 +69,11 @@ ALIASES = {"Hafnarfjarðarkaupstaður": "Hafnarfjarðarbær",
 def read(url: str, year: str) -> tuple[dict[str, AgeSex], dict[str, float], dict[str, str]]:
     meta = {v["code"]: v for v in request_json(url, pause=PAUSE)["variables"]}
     muni, age, when, sex = "Sveitarfélag", "Aldur", "Ár", "Kyn"
-    names = dict(zip(meta[muni]["values"], meta[muni]["valueTexts"]))
+    # Hagstofa tells a municipality from its successor of the same name by a
+    # note on the label -- "Þingeyjarsveit (fyrir 2022)", before 2022 -- which
+    # is about the row and not part of the place's name.
+    names = {code: re.sub(r"\s*\((?:fyrir|eftir) \d{4}\)\s*$", "", text)
+             for code, text in zip(meta[muni]["values"], meta[muni]["valueTexts"])}
     body = request_json(url, {"query": [
         {"code": muni, "selection": {"filter": "all", "values": ["*"]}},
         {"code": age, "selection": {"filter": "all", "values": ["*"]}},
