@@ -1,8 +1,279 @@
-== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT
-  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
-  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT
-== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT
-  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
-  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT
+== r7_ltu_cl1
+  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title>Error</title> </head> <body> <h1>Error 404</h1> <p>The requested resource is not available.</p> </body> </html>
+== r7_ltu_cl2
+  42,675 bytes, 8 codelists
+    codelist Lytis: 3 codes
+      0 = Males and females | Vyrai ir moterys
+      1 = Males | Vyrai
+      2 = Females | Moterys
+    codelist MATVNT: 1 codes
+      asmenys = persons | asmenys
+    codelist OBS_STATUS: 17 codes
+      prognoze = forecast | prognozė
+      naujas = None | naujas
+      saltinis = source | šaltinis
+      nebuvo = category not applicable | tokio reiškinio (rodiklio) atitinkamu laikotarpiu nebuvo
+      dydis0 = value  less than indicated measurement units | rodiklio dydis yra lygus 0 arba mažesnis negu nurodyti matavimo vienetai
+      neraduomenu = data not available, although the phenomenon existed | nėra duomenų, nors toks reiškinys (rodiklis) atitinkamu laikotarpiu buvo
+      nepakankamas = insufficient accuracy of statistical estimate | nepakankamas statistinio vertinimo tikslumas
+      konfidencialus = confidential data | konfidencialūs duomenys
+      neskaiciuojamas = indicator is not calculated in such expression | tokia išraiška rodiklis neskaičiuojamas
+      nepateikiami = data is not presented since the error of statistical estimate exceeds the accepted allowable value | duomenys nepateikiami, nes statistinio įverčio paklaida viršija priimtą leistiną dydį
+      ivertis = estimate | įvertis
+      isankstiniai = provisional data | išankstiniai duomenys
+      patikslinti = revised data | patikslinti ir perskaičiuoti duomenys
+      galutiniai = final data | galutiniai duomenys
+      eu_ivertis = Eurostat estimate | Eurostat įvertis
+      nepalyginami = break in time series | duomenys nepalyginami, nutrūkusi laiko eilutė
+      isankstinis = provisional estimate | išankstinis įvertis
+    codelist DS_REGIONAL: 2 codes
+      T = Yes | Taip
+      N = No | Ne
+    codelist DS_TIME_FORMAT: 8 codes
+      1 = Quarter | Ketvirtis
+      62 = Day | Diena
+      61 = Week | Savaitė
+      6 = Economic year | Ūkiniai metai
+      5 = Half a year | Pusmetis
+      4 = Academic year | Mokymo metai
+      3 = Year | Metai
+      2 = Month | Mėnuo
+    codelist savivaldybesRegdb: 74 codes
+      77 = Tauragė d. mun. | Tauragės r. sav.
+      75 = Skuodas d. mun. | Skuodo r. sav.
+      08 = Telšiai county | Telšių apskritis
+      18 = Marijampolė mun. | Marijampolės sav.
+      54 = Kelmė d. mun. | Kelmės r. sav.
+      61 = Mažeikiai d. mun. | Mažeikių r. sav.
+      51 = Marijampolė d. mun. | Marijampolės r. sav.
+      LT01 = Capital Region | Sostinės regionas
+      65 = Pakruojis d. mun. | Pakruojo r. sav.
+      45 = Ignalina d. mun. | Ignalinos r. sav.
+      67 = Pasvalys d. mun. | Pasvalio r. sav.
+      91 = Šiauliai d. mun. | Šiaulių r. sav.
+      69 = Prienai d. mun. | Prienų r. sav.
+      85 = Šalčininkai d. mun. | Šalčininkų r. sav.
+      56 = Kretinga d. mun. | Kretingos r. sav.
+      27 = Panevėžys c. mun. | Panevėžio m. sav.
+      49 = Kaišiadorys d. mun. | Kaišiadorių r. sav.
+      05 = Panevėžys county | Panevėžio apskritis
+      01 = Alytus county | Alytaus apskritis
+      04 = Marijampolė county | Marijampolės apskritis
+      12 = Birštonas mun. | Birštono sav.
+      72 = Raseiniai d. mun. | Raseinių r. sav.
+      09 = Utena county | Utenos apskritis
+      52 = Kaunas d. mun. | Kauno r. sav.
+      63 = Pagėgiai mun. | Pagėgių sav.
+      39 = Vilkaviškis d. mun. | Vilkaviškio r. sav.
+      34 = Anykščiai d. mun. | Anykščių r. sav.
+      06 = Šiauliai county | Šiaulių apskritis
+      11 = Alytus t. mun. | Alytaus m. sav.
+      68 = Plungė d. mun. | Plungės r. sav.
+      10 = Vilnius county | Vilniaus apskritis
+      13 = Vilnius c. mun. | Vilniaus m. sav.
+      81 = Ukmergė d. mun. | Ukmergės r. sav.
+      55 = Klaipėda d. mun. | Klaipėdos r. sav.
+      84 = Šakiai d. mun. | Šakių r. sav.
+      19 = Kaunas c. mun. | Kauno m. sav.
+      47 = Joniškis d. mun. | Joniškio r. sav.
+      87 = Šilalė d. mun. | Šilalės r. sav.
+      62 = Molėtai d. mun. | Molėtų r. sav.
+      74 = Rietavas mun. | Rietavo sav.
+      41 = Vilnius d. mun. | Vilniaus r. sav.
+      30 = Visaginas mun. | Visagino sav.
+      43 = Zarasai d. mun. | Zarasų r. sav.
+      59 = Lazdijai d. mun. | Lazdijų r. sav.
+      46 = Jonava d. mun. | Jonavos r. sav.
+      89 = Širvintos d. mun. | Širvintų r. sav.
+      79 = Trakai d. mun. | Trakų r. sav.
+      33 = Alytus d. mun. | Alytaus r. sav.
+      78 = Telšiai d. mun. | Telšių r. sav.
+      32 = Akmenė d. mun. | Akmenės r. sav.
+      58 = Kazlų Rūda mun. | Kazlų Rūdos sav.
+      53 = Kėdainiai d. mun. | Kėdainių r. sav.
+      07 = Tauragė county | Tauragės apskritis
+      71 = Radviliškis d. mun. | Radviliškio r. sav.
+      02 = Kaunas county | Kauno apskritis
+      86 = Švenčionys d. mun. | Švenčionių r. sav.
+      66 = Panevėžys d. mun. | Panevėžio r. sav.
+      48 = Kalvarija mun. | Kalvarijos sav.
+      00 = Republic of Lithuania | Lietuvos Respublika
+      42 = Elektrėnai mun. | Elektrėnų sav.
+      15 = Druskininkai mun. | Druskininkų sav.
+      29 = Šiauliai c. mun. | Šiaulių m. sav.
+      38 = Varėna d. mun. | Varėnos r. sav.
+      LT02 = Central and Western Lithuania Region | Vidurio ir vakarų Lietuvos regionas
+      36 = Biržai d. mun. | Biržų r. sav.
+      21 = Klaipėda c. mun. | Klaipėdos m. sav.
+      82 = Utena d. mun. | Utenos r. sav.
+      57 = Kupiškis d. mun. | Kupiškio r. sav.
+      03 = Klaipėda county | Klaipėdos apskritis
+      25 = Palanga t. mun. | Palangos m. sav.
+      73 = Rokiškis d. mun. | Rokiškio r. sav.
+      94 = Jurbarkas d. mun. | Jurbarko r. sav.
+      88 = Šilutė d. mun. | Šilutės r. sav.
+      23 = Neringa mun. | Neringos sav.
+    codelist OSP_MASYVO_STATUSAS: 2 codes
+      N = Not updated | Neatnaujinamas
+      A = Updated | Atnaujinamas
+    codelist Demogr_amziaus_grM1412: 20 codes
+      g045g049 = 45–49 | 45–49
+      g005g009 = 5–9 | 5–9
+      g070g074 = 70–74 | 70–74
+      g030g034 = 30–34 | 30–34
+      g055g059 = 55–59 | 55–59
+      g025g029 = 25–29 | 25–29
+      g035g039 = 35–39 | 35–39
+      g000g999 = Total by age | Iš viso pagal amžių
+      gxxx = Not indicated | Nenurodė
+      g065g069 = 65–69 | 65–69
+      g085 = 85 and more | 85 ir vyresni
+      g075g079 = 75–79 | 75–79
+      g010g014 = 10–14 | 10–14
+      g050g054 = 50–54 | 50–54
+      g015g019 = 15–19 | 15–19
+      g060g064 = 60–64 | 60–64
+      g040g044 = 40–44 | 40–44
+      g000g004 = 0–4 | 0–4
+      g080g084 = 80–84 | 80–84
+      g020g024 = 20–24 | 20–24
+== r7_ltu_cl3
+  1,927 characters
+  <?xml version="1.0" encoding="UTF-8"?> <mes:Structure xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>3987A4AEE43545A4A8C646B84F91FE15</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:56:03.754000000+03:00</mes:Prepared> <mes:Sender id="unknown" /> <mes:Receiver id="not_supplied" /> </mes:Header> <mes:Structures><str:Dataflows><str:Dataflow id="S3R167_M3010203" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=LSD:S3R167_M3010203(1.0)" isExternalReference="false" agencyID="LSD" isFinal="false" version="1.0"><com:Name xml:lang="lt">S3R167 - Nuolatinių gyventojų skaičius metų pradžioje</com:Name><com:Name xml:lang="en">S3R167 - Resident population at the beginning of the year</com:Name><com:Description xml:lang="lt">Administracinė teritorija | Amžius (5 m. amžiaus grupės) | Lytis (1996 - 2026) (Atnaujinta: 2026-05-07)</com:Description><com:Description xml:lang="en">Administrative territory | Age (5 year groups) | Sex (1996 - 2026) (Was renewed: 2026-05-07)</com:Description><str:Structure><Ref id="M3010203" package="datastructure" class="DataStr
+== r7_ltu_cdx
+  60 captures
+    20210121055644 https://osp.stat.gov.lt/documents/10180/0/ZU+surasymas_metainfo-EN application/pdf 200
+    20190509102744 https://osp.stat.gov.lt/documents/10180/0/ZU+surasymas_metainfo-EN/3fd8b9d2-26c3-4ea3-b7e9-ccf30605c279 application/pdf 200
+    20190509072541 https://osp.stat.gov.lt/documents/10180/0/ZU+surasymas_metainfo/26c72eb3-fb16-4d0b-906c-615a40b602cc warc/revisit -
+    20240903140303 http://osp.stat.gov.lt/documents/10180/10205419/LR_2020_zemes_ukio_surasymo_rezult text/html 301
+    20240129174759 https://osp.stat.gov.lt/documents/10180/10205419/LR_2020_zemes_ukio_surasymo_rezultatai_.pdf/5883e5f6-a816-4e4b-9c2c-2123076526c3 application/pdf 200
+    20250222120215 https://osp.stat.gov.lt/documents/10180/10367417/Gausiausiu_tautybiu_gyventojai_miestuose.xlsx/981af9b3-7929-4fec-829a-3e4d3c149135 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250222120010 https://osp.stat.gov.lt/documents/10180/10367417/Gausiausiu_tautybiu_gyventojai_miestuose.xlsx/981af9b3-7929-4fec-829a-3e4d3c149135?version=1.0 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221221055708 https://osp.stat.gov.lt/documents/10180/10439642/238x144px_surasymo_baneris_2.jpg/a571032a-3027-4214-ba3f-22f2774d8707 image/jpeg 200
+    20221221055728 https://osp.stat.gov.lt/documents/10180/10439642/238x144px_surasymo_baneris_2.jpg/a571032a-3027-4214-ba3f-22f2774d8707?t=1671028304917 image/jpeg 200
+    20250418055052 https://osp.stat.gov.lt/documents/10180/10439642/238x144px_surasymo_baneris_en.jpg/8e7a77cf-07a2-46ab-9c72-b1b7153ca96e image/jpeg 200
+    20221225154801 https://osp.stat.gov.lt/documents/10180/10439642/238x144px_surasymo_baneris_en.jpg/8e7a77cf-07a2-46ab-9c72-b1b7153ca96e?t=1671784989888 image/jpeg 200
+    20250414043838 https://osp.stat.gov.lt/documents/10180/10439642/gyventoju_surasymas_PDF_.jpg/a10a1e95-de8a-4e88-bb8a-52d18b3cb7f5 image/jpeg 200
+    20241220020858 https://osp.stat.gov.lt/documents/10180/10439642/gyventoju_surasymas_PDF_.jpg/a10a1e95-de8a-4e88-bb8a-52d18b3cb7f5?t=1690365159397 image/jpeg 200
+    20250414044816 https://osp.stat.gov.lt/documents/10180/10439642/LR_2021_gyventoju_ir_bustu_surasymo_rezultatai_.pdf/b77305cc-85fb-477e-95aa-8812a0800b6b application/pdf 200
+    20250414055229 https://osp.stat.gov.lt/documents/10180/10439642/tautybe_pasas.png/3ac4b5c8-71df-4269-8a30-8d1709d4178e image/png 200
+    20241219234151 https://osp.stat.gov.lt/documents/10180/10439642/tautybe_pasas.png/3ac4b5c8-71df-4269-8a30-8d1709d4178e?t=1671031148400 image/png 200
+    20201013153902 https://osp.stat.gov.lt/documents/10180/1491916/bandomasis_2020_gyv_surasymas.zip application/zip 200
+    20210819035526 https://osp.stat.gov.lt/documents/10180/1491916/bandomasis_2020_gyv_surasymas.zip/cf376b08-f579-42d6-ac05-20e84bd4bc51 application/zip 200
+    20220303133312 https://osp.stat.gov.lt/documents/10180/204985/surasymo_baneris_en.gif/76700c62-8d1a-4123-8bda-7c30dc726561 image/gif 200
+    20220129022858 https://osp.stat.gov.lt/documents/10180/204985/surasymo_baneris_en.gif/76700c62-8d1a-4123-8bda-7c30dc726561?t=1641288986480 image/gif 200
+    20190607083948 https://osp.stat.gov.lt/documents/10180/204989/2003_surasymo_lapas.pdf/9dbef352-153a-4453-bd2d-64b268c57814 application/pdf 200
+    20220818200458 https://osp.stat.gov.lt/documents/10180/204989/ZU_surasymas_2010.pdf/5060ebb8-302d-4334-a263-787c7d791899 application/pdf 200
+    20190607014845 https://osp.stat.gov.lt/documents/10180/204992/Miestu_gyventojai_pagal_tautybe_2001.xls application/vnd.ms-excel 200
+    20130929234622 http://www.osp.stat.gov.lt/documents/10180/204992/Miestu_gyventojai_pagal_tautybe_2001.xls/edc8fd63-5721-44bf-85db-4b639fec3265 application/vnd.ms-excel 200
+    20130929231149 http://osp.stat.gov.lt/documents/10180/204992/Savivaldybiu+gyventojai+pagal+gyvenamaja+vieta+vieni+metai+iki+surasymo.xlsx/85cf7329-7d07-4a7a-ba3e-c10354ccc730 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20130929231226 http://osp.stat.gov.lt/documents/10180/217110/Gyv_pagal_issilavinima_tautybe.xlsx/081d7191-23f6-4d41-af73-b3ba078d5a1b application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240905220008 https://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese text/html 404
+    20260918195530 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b34 text/html 302
+    20240906001640 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37 text/html 301
+    20260118214751 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37%C3%A2b28f%C3%A24dcc%C3%A29836%C3%A2874b6ea951f7 text/html 302
+    20260119185930 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37%C3%A2b28f%C3%A24dcc%C3%A29836%C3%A2874b6ea951f7. text/html 302
+    20240218040338 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37%E2%80%91b28f%E2%80%914dcc%E2%80%919836%E2%80%91874b6ea951f7 text/html 301
+    20220709114921 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b text/html 301
+    20220709114703 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b28f-4dcc- text/html 301
+    20220612130530 http://www.osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b28f-4dcc-9836- text/html 301
+    20130929225433 http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b28f-4dcc-9836-874b6ea951f7 application/vnd.ms-excel 200
+    20130929231219 http://osp.stat.gov.lt/documents/10180/217110/Miestu_gyv_pagal_tautybe_2011.xls/25ed5f38-9a07-42d1-96b7-497bdb52b19f application/vnd.ms-excel 200
+    20210806050755 https://osp.stat.gov.lt/documents/10180/4432752/2021_surasymo_lankstinukas.pdf application/pdf 200
+    20210818054201 https://osp.stat.gov.lt/documents/10180/4432752/2021_surasymo_lankstinukas.pdf/45eb9fec-a9a6-4c2e-8686-096d52c12820 application/pdf 200
+    20260304045547 https://osp.stat.gov.lt/documents/10180/4432752/2021_surasymo_lankstinukas.pdf%7Cwebsite=osp.stat.gov.lt%7D%7D&lt;/ref text/html 200
+    20210819035504 https://osp.stat.gov.lt/documents/10180/4432752/2021_surasymo_temos_rodikliai.docx/e3257fd4-7942-4a01-b3ed-70928e1991ff application/vnd.openxmlformats-officedocument.wordprocessingml.document 200
+    20220121153241 https://osp.stat.gov.lt/documents/10180/4432752/Gyv_surasymo_metodika_2020.pdf application/pdf 200
+    20240712145721 http://osp.stat.gov.lt/documents/10180/4432752/Gyv_surasymo_metodika_2020.pdf/2a25f56b-68c1- text/html 301
+    20210818063402 https://osp.stat.gov.lt/documents/10180/4432752/Gyv_surasymo_metodika_2020.pdf/2a25f56b-68c1-43f5-a762-eb803cb6b96d application/pdf 200
+    20240712141727 https://osp.stat.gov.lt/documents/10180/4432752/Gyv_surasymo_metodika_2020.pdf/2a25f56b-68c1-43f5-a762-eb803cb6b96dStank%C5%ABnien%C4%97 text/html 404
+    20240318031936 https://osp.stat.gov.lt/documents/10180/4432752/gyventoju_surasymo_logotipas_201230.pdf application/pdf 200
+    20210818172624 https://osp.stat.gov.lt/documents/10180/4432752/gyventoju_surasymo_logotipas_201230.pdf/6269324c-1467-4ec1-bdbf-c99cae9ebe7f application/pdf 200
+    20240615043324 https://osp.stat.gov.lt/documents/10180/4432752/gyventoju_surasymo_stiliaus_knyga.pdf application/pdf 200
+    20210819035626 https://osp.stat.gov.lt/documents/10180/4432752/gyventoju_surasymo_stiliaus_knyga.pdf/15d3f72e-387d-4434-9ce2-f4e8dffbbfb0 application/pdf 200
+    20220822094056 https://osp.stat.gov.lt/documents/10180/5118910/Karaim%C5%B3+tautyb%C4%97s+gyventojai+%5BEN%5D+6881.html text/html 200
+    20220722150235 https://osp.stat.gov.lt/documents/10180/5118910/Karaim%C5%B3+tautyb%C4%97s+gyventojai+%5BLT%5D+6881.html text/html 200
+    20250413090121 https://osp.stat.gov.lt/documents/10180/8378567/ZU-surasymas-2021.png/be10384b-3bef-4296-97e7-e1b244033359 image/png 200
+    20250414102610 https://osp.stat.gov.lt/documents/10180/8378567/ZU-surasymas-2021.png/be10384b-3bef-4296-97e7-e1b244033359?t=1638260809479 image/png 200
+    20211222004542 https://osp.stat.gov.lt/documents/10180/8606925/surasymas-2021.png image/png 200
+    20220129222035 https://osp.stat.gov.lt/documents/10180/8606925/surasymas-2021.png/700dd914-4f74-4a88-b362-0ccaf79af9e1 image/png 200
+    20220129221735 https://osp.stat.gov.lt/documents/10180/8606925/surasymas-2021.png/700dd914-4f74-4a88-b362-0ccaf79af9e1?t=1639994179861 image/png 200
+    20211228223120 https://osp.stat.gov.lt/documents/10180/8650736/surasymas-2021-apacia.png/2d7e0070-87f9-48e0-80ec-2ee64bc2e020 image/png 200
+    20211222004546 https://osp.stat.gov.lt/documents/10180/8650736/surasymas-2021-apacia.png/2d7e0070-87f9-48e0-80ec-2ee64bc2e020?t=1640093281079 image/png 200
+    20220818192840 https://osp.stat.gov.lt/documents/10180/9601028/Gausiausiu_tautybiu_gyventojai_pagal_tautybe_miestuose.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220818192852 https://osp.stat.gov.lt/documents/10180/9601028/Gausiausiu_tautybiu_gyventojai_pagal_tautybe_Vilniaus_apskrityje.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+== r7_isl_trufelog
+  6 items
+    MAN10001.px [t] Populations by religious and life stance organizations 1998-2026
+    MAN10289.px [t] Population by parishes, congregations and deaneries 1 December 2023
+    MAN10290.px [t] Population by parishes, congregations and deaneries 1 December 2022
+    MAN10291.px [t] Population by parishes, congregations and deaneries 1 December 2021
+    MAN10292.px [t] Population by parishes, congregations and deaneries 1 December 2020
+    MAN10293.px [t] Population by parishes, congregations and deaneries 1 December 2019
+== r7_lva_tsk
+  7 items
+    demogr [l] Demography
+    izgl [l] Education
+    nodarb [l] Employment
+    taut [l] Ethnicity and language
+    gimene [l] Family
+    majokli [l] Housing
+    riga [l] Riga
+== r7_lva_tsk2021
+  84 hits
+    MOB101.px | /apsekojumi/mobilitate | Mobile and non-mobile Latvian population (%)
+    MOB208.px | /apsekojumi/mobilitate | Average passenger car occupancy in short trips by trip areas (number of persons)
+    MOB201.px | /apsekojumi/mobilitate | Average number of trips, distance and time per person per day by travel purpose
+    MOB202.px | /apsekojumi/mobilitate | Number of short trips (<300 km) per year by purposes (%)
+    MOB203.px | /apsekojumi/mobilitate | Average number of trips, distance and time per person per day by travel purpose for short trips in Functional Urban Areas (<100 km) within the respective group of purpose
+    MOB207.px | /apsekojumi/mobilitate | Average number of trips made by person per day by fuel type used in passenger car for short trips (<300 km) within the respective group of transport mode
+    MOB205.px | /apsekojumi/mobilitate | Number of short trips (<300 km) per year by main mode of transport (%)
+    MOB102.px | /apsekojumi/mobilitate | Non-mobility reasons for Latvian population (%)
+    MOB204.px | /apsekojumi/mobilitate | Average number of trips, distance and time per person per day by main mode of transport for short trips (<300 km) within the respective group of transport mode
+    MOB206.px | /apsekojumi/mobilitate | Average number of trips, distance and time per person per day by main mode of transport for short trips in Functional Urban Areas (<100 km) within the respective group of transport mode
+    IZG211.px | /sociala/izgl/vispskolas | General school enrolment by statistical region and city (beginning of the school year) (after administrative-territorial reform in 2021)
+    MOD21_01.px | /apsekojumi/covid_modulis | Changes in household income due to the Covid-19 crisis (%)
+    MOD21_02.px | /apsekojumi/covid_modulis | Distance learning opportunities for children in households during the Covid-19 crisis (%)
+    MOD21_03.px | /apsekojumi/covid_modulis | Opportunities for people aged 16 and more to work remotely during the Covid-19 crisis (%)
+    MOD21_04.px | /apsekojumi/covid_modulis | Assessment of the impact of Covid-19 crisis on the mental health of population in the last 12 months (%)
+    MOB209.px | /apsekojumi/mobilitate | Number of passenger-kilometres travelled per year by mode of transport used in short trips (< 300 km)
+    MOD17_01.px | /apsekojumi/veseliba_modulis | General health of children aged 0–15 (%)
+    MOD17_02.px | /apsekojumi/veseliba_modulis | Limitation in activities because of health problems among children aged 0–15, 2017 (%)
+    MOD17_03.px | /apsekojumi/veseliba_modulis | Unmet need for medical or dental examination or treatment among children aged 0–15, last 12 months (%)
+    A_DLU080.px | /arhivs/a_IT | Use of enterprise resource planning (ERP) software in enterprises (per cent of the total number of enterprises within the corresponding group), 2012-2021
+    A_DLU090.px | /arhivs/a_IT | Activities carried out by enterprises that are using some IT solution to process information on clients (CRM) (per cent of the total number of enterprises within the corresponding group), 2013-2021
+    VDA150.px | /apsekojumi/vardarbiba/uztvere | Perception of prevalence of intimate partner violence by sex and violence experience, % (2021)
+    VDA190.px | /apsekojumi/vardarbiba/uztvere | Awareness of support for violence victims by sex, violence experience and support service, % (2021)
+    VDA160.px | /apsekojumi/vardarbiba/uztvere | Perception of prevalence of sexual harassment at work by sex and violence experience, % (2021)
+    IZG201.px | /sociala/izgl/vispskolas | General schools by region and city at the beginning of the school year
+    IZG042.px | /sociala/izgl/pirmsskolas | Pre-school establishments in regions and cities (at the beginning of the school year)
+    PIA65.px | /apsekojumi/pieaug_izgl | Participation in adult education by region
+    LSK20-I04_01.px | /skait_apsek/visp/laukskait_20 | Agricultural holdings by holder's status in regions and municipalities (after administrative-territorial reform in 2021)
+    VDA020.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced violence by age, type of violence and perpetrator, % of population in the respective age group (2021)
+    VDA030.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced violence by sex, certain personal characteristics and type of perpetrator, % of population aged 18-74 (2021)
+    VDA050.px | /apsekojumi/vardarbiba/starpp | Females who since the age of 15 have experienced non-partner rape by age, % of women in the respective age group (2021)
+    VDA060.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced violence by perpetrator, type and frequency of violence, % of population aged 18-74 (2021)
+    VDA200.px | /apsekojumi/vardarbiba/starpp | Persons who in adulthood have experienced physical violence by sex and age and sex of perpetrator, % of population in the respective age group (2021)
+    VDA220.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced violence by region, type of violence and perpetrator, % of population aged 18-74 (2021)
+    VDA180.px | /apsekojumi/vardarbiba/uztvere | Persons who reported physical or sexual violence episode by sex, perpetrator and person/institution informed, % (2021)
+    VDA210.px | /apsekojumi/vardarbiba/darbav | Persons who in their working life have experienced sexual harassment at work by sex and harassment frequency, % of population aged 18-74 (2021)
+    VDA140.px | /apsekojumi/vardarbiba/vajasana | Persons who have experienced stalking by sex, age and sex of perpetrator, % of population in the respective age group (2021)
+    VDA090.px | /apsekojumi/vardarbiba/berniba | Persons who in childhood have experienced physical and/or psychological violence by sex and perpetrator, % of population of the respective sex (2021)
+    VDA010.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced physical (including threats) or sexual violence by sex, perpetrator and time of last episode, % of population aged 18-74 (2021)
+    VDA040.px | /apsekojumi/vardarbiba/starpp | Persons who have experienced physical (including threats) or sexual violence by sex, type and sex of perpetrator, % of population aged 18-74 (2021)
+== r7_lva_ird081_units
+  title: Population by sex and age group in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year by Sex, Age group, Territorial unit and Time period
+  var 'SEX' (Sex) [elimination]: 3 values
+      T=Total; M=Males; F=Females
+  var 'AgeGroup' (Age group) [elimination]: 25 values
+      TOTAL=Total; UNDER_WAGE=Under working age; WAGE=Of working age; OVER_WAGE=Over working age; Y0-14=0–14 years; Y15-64=15–64 years ... Y60-64=60–64 years; Y65-69=65–69 years; Y70-74=70–74 years; Y75-79=75–79 years; Y80-84=80–84 years; Y_GE85=85 years and more
+      code lengths {4: 3, 5: 2, 6: 18, 9: 1, 10: 1}; prefixes {'Y': 21, 'TOTAL': 1, 'UNDER': 1, 'WAGE': 1, 'OVER': 1}
+  var 'AREA' (Territorial unit) [elimination]: 2245 values
+      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV006=Riga statistical region (Riga) (before 01.01.2024.)  ; LV007=Pierīga statistical region (before 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV008=Vidzeme statistical region (before 01.01.2024.) ... LVDPA0618=Zosna; LVDPA0620=Zūras; LVDPA1279=Zvaigzne; LVDPA1310=Zvejnieki; LVDPA0879=Zvirgzdene; LVDPA0244=Žīguri
+      code lengths {2: 1, 5: 9, 7: 140, 9: 2095}; prefixes {'LVDPA': 1466, 'LV': 639, 'LVRIG': 58, 'LVVLM': 27, 'LVJRM': 26, 'LVDGP': 25, 'UNK': 4}
+      /^LV00\d{5}/: 629 -- LV0001000=Riga; LV0002000=Daugavpils; LV0003000=Jelgava; LV0031010=Jēkabpils; LV0004000=Jūrmala; LV0005000=Liepāja; LV0040010=Ogre; LV0006000=Rēzekne; LV0054010=Valmiera; LV0007000=Ventspils; LV0020000=Aizkraukle municipality; LV0020200=..Aizkraukle; LV0020210=..Jaunjelgava; LV0020220=..Koknese; LV0020230=..Pļaviņas; LV0020400=..Aiviekste rural territory; LV0020410=..Aizkraukle rural territory; LV0020420=..Bebri rural territory; LV0020430=..Daudzese rural territory; LV0020440=..Irši rural territory; LV0020450=..Jaunjelgava rural territory; LV0020460=..Klintaine rural territory; LV0020470=..Koknese rural territory; LV0020480=..Mazzalve rural territory; LV0020490=..Nereta rural territory; LV0020500=..Pilskalne rural territory (Aizkraukle municipality); LV0020510=..Sece rural territory; LV0020520=..Sērene rural territory; LV0020530=..Skrīvero rural territory; LV0020540=..Staburags rural territory; LV0020550=..Sunākste rural territory; LV0020560=..Vietalva rural territory; LV0020570=..Zalve rural territory; LV0021000=Alūksne municipality; LV0021200=..Alūksne; LV0021400=..Alsviķi rural territory; LV0021410=..Annas rural territory; LV0021420=..Ilzene rural territory; LV0021430=..Jaunalūksne rural territory; LV0021440=..Jaunannas rural territory
+  var 'ContentsCode' (Unit): 1 values
+      IRD081=Number
+  var 'TIME' (Time period) [time]: 57 values
+      1970=1970; 1971=1971; 1972=1972; 1973=1973; 1974=1974; 1975=1975 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 57}; prefixes {'': 57}
