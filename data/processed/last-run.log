@@ -1,90 +1,285 @@
-
-=== deu10
-
-## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/07_RP_Regionaltabelle_Bevoelkerung_Z22.xlsx: HTTP 200, 336,398 bytes, 
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-   sheets: ['Titel Bevölkerung', 'Impressum', 'Erläuterungen zur Methodik', 'Bevölkerung', 'Bevölkerung_nachrichtlich'] (5)
-   sheet 'Titel Bevölkerung': 0 rows
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-   sheet 'Impressum': 25 rows
-     Impressum
-     Ergebnisse des Zensus 2022
-     Erscheinungsfolge: einmali
-     Herausgeber
-     Statistische Ämter des Bun
-     Statistisches Bundesamt
-     Gustav-Stresemann-Ring 11
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-   sheet 'Erläuterungen zur Methodik': 34 rows
-     Erläuterungen zur Methodik
-     1 | Allgemeine Informationen
-     Basis der Auswertung sind 
-     Für die Wahrung der Geheim
-     Die Bevölkerungszahl (Insg
-     Weiterführende methodische
-     www.zensus2022.de
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-
-## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/07_RP_Regionaltabelle_Demografie_Z22.xlsx: HTTP 200, 1,064,813 bytes, 
-   sheets: ['Titel Demografie', 'Impressum', 'Erläuterungen zur Methodik', 'Demografie'] (4)
-   sheet 'Titel Demografie': 0 rows
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-   sheet 'Impressum': 25 rows
-     Impressum
-     Ergebnisse des Zensus 2022
-     Erscheinungsfolge: einmali
-     Herausgeber
-     Statistische Ämter des Bun
-     Statistisches Bundesamt
-     Gustav-Stresemann-Ring 11
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-   sheet 'Erläuterungen zur Methodik': 85 rows
-     Erläuterungen zur Methodik
-     1 | Allgemeine Informationen
-     Basis der Auswertung sind 
-     Für die Wahrung der Geheim
-     Die Bevölkerungszahl (Insg
-     Das Ergebnis der Regionale
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-
-## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/Eckzahlen.xlsx: HTTP 200, 228,098 bytes, 
-   sheets: ['Glossar', 'Kfr. Städte & Landkreise', 'Vfr. Gemeinden & VG', 'VG-zugehörige Ortsgemeinden'] (4)
-   sheet 'Glossar': 13 rows
-     Methodische Hinweise | Um das Grundrecht aller Bü
-     Glossar
-     Bevölkerung | Zur Bevölkerung eines Verw
-     Gebäude mit Wohnraum | Für längere Dauer errichte
-     Wohnungen in Gebäuden mit  | Gesamtzahl der Wohnungen i
-   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-   sheet 'Kfr. Städte & Landkreise': 364 rows
-     T1 | Eckzahlen der kreisfreien 
-     Gebiets-schlüssel | Verwaltungsbezirk | Bevölkerung zum 30.06.2022 | Ergebnis des Zensus 2022 z
-     Bevölkerung1 | Gebäude mit Wohnraum  | Wohnungen in Gebäuden
- mit | Haushalte
-     Anzahl
-     (0) | (1) | (2) | (3) | (4)
-     Kreisfreie Städte
-     07311 | Frankenthal (Pfalz) | 49538 | 47992 | 9105 | 23925 | 22611
-     07312 | Kaiserslautern | 101242 | 99689 | 21022 | 58723 | 53676
-     07111 | Koblenz | 114789 | 112963 | 21835 | 63391 | 59206
-     07313 | Landau in der Pfalz | 47991 | 47072 | 11114 | 25943 | 24415
-   4 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-     > 07111 | Koblenz | 114789 | 112963 | 21835 | 63391 | 59206
-     > 07211 | Trier4 | 109913 | 102780 | 21286 | 62985 | 56887
-     > 07137 | Mayen-Koblenz | 219893 | 215317 | 68357 | 110012 | 100846
-     > 07235 | Trier-Saarburg5 | 154823 | 147838 | 50976 | 74333 | 67785
-   sheet 'Vfr. Gemeinden & VG': 399 rows
-     T2 | Eckzahlen der verbandsfrei
-     Gebiets-schlüssel | Verwaltungsbezirk | Bevölkerung zum 30.06.2022 | Ergebnis des Zensus 2022 z
-     Bevölkerung1 | Gebäude mit Wohnraum  | Wohnungen in Gebäuden
- mit | Haushalte
-     Anzahl
-     (0) | (1) | (2) | (3) | (4)
-     Verbandsfreie Gemeinden
-     073310003 | Alzey | 19883 | 19035 | 4780 | 9601 | 9026
-     071370003 | Andernach | 30904 | 29995 | 8111 | 15303 | 14233
-     073320002 | Bad Dürkheim | 19559 | 19020 | 5744 | 10527 | 9460
-     071330006 | Bad Kreuznach | 53167 | 53062 | 10918 | 28496 | 26412
-   1 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
-     > 072355007 | Trier-Land | 22531 | 21137 | 7652 | 10911 | 9790
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: religion: 19 people in blanked cells, left out
+  Beltinci: religion: 10 people in blanked cells, left out
+  Beltinci: language: 13 people in blanked cells, left out
+  Benedikt: religion: 3 people in blanked cells, left out
+  Benedikt: language: 6 people in blanked cells, left out
+  Bistrica ob Sotli: religion: 6 people in blanked cells, left out
+  Bistrica ob Sotli: language: 4 people in blanked cells, left out
+  Bled: language: 10 people in blanked cells, left out
+  Bloke: religion: 7 people in blanked cells, left out
+  Bloke: language: 5 people in blanked cells, left out
+  Bohinj: religion: 71 people in blanked cells, left out
+  Bohinj: language: 5 people in blanked cells, left out
+  Borovnica: religion: 70 people in blanked cells, left out
+  Borovnica: language: 11 people in blanked cells, left out
+  Bovec: religion: 21 people in blanked cells, left out
+  Bovec: language: 8 people in blanked cells, left out
+  Braslovče: religion: 17 people in blanked cells, left out
+  Braslovče: language: 9 people in blanked cells, left out
+  Brda: religion: 8 people in blanked cells, left out
+  Brda: language: 21 people in blanked cells, left out
+  Cankova: religion: 86 people in blanked cells, left out
+  Cankova: language: 4 people in blanked cells, left out
+  Cerklje na Gorenjskem: religion: 44 people in blanked cells, left out
+  Cerklje na Gorenjskem: language: 46 people in blanked cells, left out
+  Cerknica: language: 5 people in blanked cells, left out
+  Cerkno: religion: 8 people in blanked cells, left out
+  Cerkno: language: 6 people in blanked cells, left out
+  Cerkvenjak: ethnicity: 28 people in blanked cells, left out
+  Cerkvenjak: religion: 6 people in blanked cells, left out
+  Cerkvenjak: language: 9 people in blanked cells, left out
+  Destrnik: religion: 3 people in blanked cells, left out
+  Destrnik: language: 22 people in blanked cells, left out
+  Divača: religion: 6 people in blanked cells, left out
+  Divača: language: 22 people in blanked cells, left out
+  Dobje: ethnicity: 11 people in blanked cells, left out
+  Dobje: religion: 2 people in blanked cells, left out
+  Dobje: language: 4 people in blanked cells, left out
+  Dobrepolje: religion: 5 people in blanked cells, left out
+  Dobrepolje: language: 16 people in blanked cells, left out
+  Dobrna: ethnicity: 30 people in blanked cells, left out
+  Dobrna: religion: 7 people in blanked cells, left out
+  Dobrna: language: 11 people in blanked cells, left out
+  Dobrovnik/Dobronak: religion: 13 people in blanked cells, left out
+  Dobrovnik/Dobronak: language: 13 people in blanked cells, left out
+  Dol pri Ljubljani: language: 4 people in blanked cells, left out
+  Dolenjske Toplice: religion: 9 people in blanked cells, left out
+  Dolenjske Toplice: language: 4 people in blanked cells, left out
+  Dornava: religion: 8 people in blanked cells, left out
+  Dornava: language: 5 people in blanked cells, left out
+  Dravograd: language: 5 people in blanked cells, left out
+  Duplek: religion: 5 people in blanked cells, left out
+  Duplek: language: 6 people in blanked cells, left out
+  Gorenja vas - Poljane: language: 7 people in blanked cells, left out
+  Gorišnica: religion: 7 people in blanked cells, left out
+  Gorišnica: language: 8 people in blanked cells, left out
+  Gornji Grad: religion: 10 people in blanked cells, left out
+  Gornji Petrovci: religion: 2 people in blanked cells, left out
+  Gornji Petrovci: language: 30 people in blanked cells, left out
+  Grad: religion: 2 people in blanked cells, left out
+  Grad: language: 5 people in blanked cells, left out
+  Hajdina: religion: 19 people in blanked cells, left out
+  Hajdina: language: 5 people in blanked cells, left out
+  Hodoš/Hodos: religion: 13 people in blanked cells, left out
+  Hodoš/Hodos: language: 5 people in blanked cells, left out
+  Horjul: religion: 19 people in blanked cells, left out
+  Horjul: language: 5 people in blanked cells, left out
+  Hrastnik: language: 12 people in blanked cells, left out
+  Hrpelje - Kozina: religion: 82 people in blanked cells, left out
+  Hrpelje - Kozina: language: 6 people in blanked cells, left out
+  Idrija: religion: 54 people in blanked cells, left out
+  Idrija: language: 10 people in blanked cells, left out
+  Ig: language: 4 people in blanked cells, left out
+  Jezersko: religion: 9 people in blanked cells, left out
+  Jezersko: language: 5 people in blanked cells, left out
+  Juršinci: ethnicity: 155 people in blanked cells, left out
+  Juršinci: religion: 2 people in blanked cells, left out
+  Juršinci: language: 4 people in blanked cells, left out
+  Kanal: language: 7 people in blanked cells, left out
+  Kidričevo: religion: 6 people in blanked cells, left out
+  Kidričevo: language: 36 people in blanked cells, left out
+  Kobarid: religion: 38 people in blanked cells, left out
+  Kobarid: language: 9 people in blanked cells, left out
+  Kobilje: religion: 4 people in blanked cells, left out
+  Kobilje: language: 19 people in blanked cells, left out
+  Komen: religion: 13 people in blanked cells, left out
+  Komen: language: 4 people in blanked cells, left out
+  Komenda: language: 5 people in blanked cells, left out
+  Kostel: ethnicity: 11 people in blanked cells, left out
+  Kostel: religion: 8 people in blanked cells, left out
+  Kostel: language: 9 people in blanked cells, left out
+  Kozje: religion: 10 people in blanked cells, left out
+  Kozje: language: 11 people in blanked cells, left out
+  Križevci: ethnicity: 42 people in blanked cells, left out
+  Križevci: religion: 4 people in blanked cells, left out
+  Križevci: language: 6 people in blanked cells, left out
+  Kungota: religion: 17 people in blanked cells, left out
+  Kungota: language: 5 people in blanked cells, left out
+  Kuzma: ethnicity: 9 people in blanked cells, left out
+  Kuzma: religion: 6 people in blanked cells, left out
+  Kuzma: language: 7 people in blanked cells, left out
+  Laško: language: 9 people in blanked cells, left out
+  Lenart: religion: 21 people in blanked cells, left out
+  Litija: language: 5 people in blanked cells, left out
+  Ljubno: language: 9 people in blanked cells, left out
+  Ljutomer: language: 10 people in blanked cells, left out
+  Lovrenc na Pohorju: religion: 9 people in blanked cells, left out
+  Lovrenc na Pohorju: language: 6 people in blanked cells, left out
+  Loška dolina: religion: 6 people in blanked cells, left out
+  Loška dolina: language: 11 people in blanked cells, left out
+  Loški Potok: religion: 6 people in blanked cells, left out
+  Loški Potok: language: 75 people in blanked cells, left out
+  Lukovica: religion: 6 people in blanked cells, left out
+  Lukovica: language: 10 people in blanked cells, left out
+  Luče: ethnicity: 11 people in blanked cells, left out
+  Luče: religion: 4 people in blanked cells, left out
+  Luče: language: 6 people in blanked cells, left out
+  Majšperk: religion: 9 people in blanked cells, left out
+  Majšperk: language: 19 people in blanked cells, left out
+  Markovci: religion: 8 people in blanked cells, left out
+  Markovci: language: 6 people in blanked cells, left out
+  Medvode: language: 6 people in blanked cells, left out
+  Metlika: religion: 80 people in blanked cells, left out
+  Metlika: language: 4 people in blanked cells, left out
+  Mežica: language: 16 people in blanked cells, left out
+  Miren - Kostanjevica: religion: 75 people in blanked cells, left out
+  Miren - Kostanjevica: language: 11 people in blanked cells, left out
+  Mirna Peč: ethnicity: 36 people in blanked cells, left out
+  Mirna Peč: religion: 5 people in blanked cells, left out
+  Mirna Peč: language: 7 people in blanked cells, left out
+  Mislinja: religion: 5 people in blanked cells, left out
+  Mislinja: language: 4 people in blanked cells, left out
+  Moravske Toplice: religion: 21 people in blanked cells, left out
+  Moravske Toplice: language: 44 people in blanked cells, left out
+  Moravče: religion: 15 people in blanked cells, left out
+  Moravče: language: 42 people in blanked cells, left out
+  Mozirje: language: 7 people in blanked cells, left out
+  Muta: ethnicity: 65 people in blanked cells, left out
+  Muta: religion: 8 people in blanked cells, left out
+  Muta: language: 4 people in blanked cells, left out
+  Naklo: language: 10 people in blanked cells, left out
+  Nazarje: religion: 24 people in blanked cells, left out
+  Nazarje: language: 4 people in blanked cells, left out
+  Odranci: religion: 4 people in blanked cells, left out
+  Odranci: language: 6 people in blanked cells, left out
+  Oplotnica: religion: 9 people in blanked cells, left out
+  Oplotnica: language: 4 people in blanked cells, left out
+  Ormož: language: 5 people in blanked cells, left out
+  Osilnica: religion: 12 people in blanked cells, left out
+  Osilnica: language: 68 people in blanked cells, left out
+  Osilnica: language withheld, 68 of 332 blanked
+  Pesnica: language: 4 people in blanked cells, left out
+  Pivka: religion: 11 people in blanked cells, left out
+  Pivka: language: 4 people in blanked cells, left out
+  Podlehnik: ethnicity: 27 people in blanked cells, left out
+  Podlehnik: religion: 4 people in blanked cells, left out
+  Podlehnik: language: 4 people in blanked cells, left out
+  Podvelka: religion: 6 people in blanked cells, left out
+  Podvelka: language: 18 people in blanked cells, left out
+  Podčetrtek: religion: 6 people in blanked cells, left out
+  Podčetrtek: language: 4 people in blanked cells, left out
+  Polzela: religion: 48 people in blanked cells, left out
+  Polzela: language: 20 people in blanked cells, left out
+  Prebold: religion: 6 people in blanked cells, left out
+  Prebold: language: 5 people in blanked cells, left out
+  Preddvor: religion: 33 people in blanked cells, left out
+  Prevalje: religion: 76 people in blanked cells, left out
+  Prevalje: language: 7 people in blanked cells, left out
+  Puconci: religion: 6 people in blanked cells, left out
+  Puconci: language: 20 people in blanked cells, left out
+  Radenci: language: 4 people in blanked cells, left out
+  Radeče: religion: 67 people in blanked cells, left out
+  Radeče: language: 20 people in blanked cells, left out
+  Radlje ob Dravi: language: 5 people in blanked cells, left out
+  Radovljica: language: 16 people in blanked cells, left out
+  Ravne na Koroškem: language: 4 people in blanked cells, left out
+  Razkrižje: religion: 1 people in blanked cells, left out
+  Razkrižje: language: 9 people in blanked cells, left out
+  Rače - Fram: language: 6 people in blanked cells, left out
+  Ribnica: religion: 25 people in blanked cells, left out
+  Ribnica: language: 72 people in blanked cells, left out
+  Ribnica na  Pohorju: religion: 3 people in blanked cells, left out
+  Ribnica na  Pohorju: language: 5 people in blanked cells, left out
+  Rogatec: religion: 9 people in blanked cells, left out
+  Rogatec: language: 9 people in blanked cells, left out
+  Rogaška Slatina: religion: 77 people in blanked cells, left out
+  Rogaška Slatina: language: 4 people in blanked cells, left out
+  Rogašovci: religion: 8 people in blanked cells, left out
+  Selnica ob Dravi: religion: 20 people in blanked cells, left out
+  Selnica ob Dravi: language: 8 people in blanked cells, left out
+  Semič: language: 6 people in blanked cells, left out
+  Sevnica: language: 5 people in blanked cells, left out
+  Slovenska Bistrica: language: 10 people in blanked cells, left out
+  Slovenske Konjice: language: 11 people in blanked cells, left out
+  Sodražica: religion: 6 people in blanked cells, left out
+  Sodražica: language: 4 people in blanked cells, left out
+  Solčava: ethnicity: 19 people in blanked cells, left out
+  Solčava: religion: 2 people in blanked cells, left out
+  Solčava: language: 7 people in blanked cells, left out
+  Starše: religion: 13 people in blanked cells, left out
+  Starše: language: 6 people in blanked cells, left out
+  Sveta Ana: ethnicity: 28 people in blanked cells, left out
+  Sveta Ana: religion: 5 people in blanked cells, left out
+  Sveta Ana: language: 14 people in blanked cells, left out
+  Sveti Andraž v Slov. goricah: religion: 3 people in blanked cells, left out
+  Sveti Andraž v Slov. goricah: language: 6 people in blanked cells, left out
+  Sveti Jurij ob Ščavnici: language: 9 people in blanked cells, left out
+  Tabor: religion: 4 people in blanked cells, left out
+  Tabor: language: 8 people in blanked cells, left out
+  Tišina: religion: 9 people in blanked cells, left out
+  Tišina: language: 5 people in blanked cells, left out
+  Tolmin: language: 15 people in blanked cells, left out
+  Trbovlje: language: 10 people in blanked cells, left out
+  Trebnje: language: 10 people in blanked cells, left out
+  Trnovska vas: ethnicity: 31 people in blanked cells, left out
+  Trnovska vas: religion: 1 people in blanked cells, left out
+  Trnovska vas: language: 5 people in blanked cells, left out
+  Trzin: language: 6 people in blanked cells, left out
+  Turnišče: religion: 5 people in blanked cells, left out
+  Turnišče: language: 23 people in blanked cells, left out
+  Velika Polana: language: 12 people in blanked cells, left out
+  Velike Lašče: religion: 18 people in blanked cells, left out
+  Velike Lašče: language: 4 people in blanked cells, left out
+  Veržej: religion: 5 people in blanked cells, left out
+  Veržej: language: 21 people in blanked cells, left out
+  Videm: religion: 8 people in blanked cells, left out
+  Videm: language: 64 people in blanked cells, left out
+  Vipava: religion: 61 people in blanked cells, left out
+  Vitanje: religion: 11 people in blanked cells, left out
+  Vitanje: language: 4 people in blanked cells, left out
+  Vodice: religion: 14 people in blanked cells, left out
+  Vodice: language: 5 people in blanked cells, left out
+  Vransko: religion: 13 people in blanked cells, left out
+  Vransko: language: 11 people in blanked cells, left out
+  Vrhnika: language: 8 people in blanked cells, left out
+  Vuzenica: religion: 6 people in blanked cells, left out
+  Vuzenica: language: 4 people in blanked cells, left out
+  Zavrč: religion: 10 people in blanked cells, left out
+  Zavrč: language: 5 people in blanked cells, left out
+  Zreče: religion: 43 people in blanked cells, left out
+  Zreče: language: 9 people in blanked cells, left out
+  Črenšovci: religion: 8 people in blanked cells, left out
+  Črenšovci: language: 7 people in blanked cells, left out
+  Črna na Koroškem: religion: 33 people in blanked cells, left out
+  Črna na Koroškem: language: 40 people in blanked cells, left out
+  Črnomelj: language: 5 people in blanked cells, left out
+  Šalovci: religion: 7 people in blanked cells, left out
+  Šalovci: language: 6 people in blanked cells, left out
+  Šempeter - Vrtojba: religion: 16 people in blanked cells, left out
+  Šentjernej: language: 97 people in blanked cells, left out
+  Šentjur pri Celju: language: 5 people in blanked cells, left out
+  Šenčur: language: 5 people in blanked cells, left out
+  Škocjan: religion: 9 people in blanked cells, left out
+  Škocjan: language: 8 people in blanked cells, left out
+  Škofljica: religion: 27 people in blanked cells, left out
+  Škofljica: language: 4 people in blanked cells, left out
+  Šmarje pri Jelšah: religion: 28 people in blanked cells, left out
+  Šmarje pri Jelšah: language: 12 people in blanked cells, left out
+  Šmartno ob Paki: religion: 33 people in blanked cells, left out
+  Šmartno ob Paki: language: 5 people in blanked cells, left out
+  Šoštanj: language: 12 people in blanked cells, left out
+  Štore: language: 6 people in blanked cells, left out
+  Železniki: religion: 55 people in blanked cells, left out
+  Železniki: language: 4 people in blanked cells, left out
+  Žetale: ethnicity: 63 people in blanked cells, left out
+  Žetale: religion: 2 people in blanked cells, left out
+  Žetale: language: 9 people in blanked cells, left out
+  Žiri: religion: 14 people in blanked cells, left out
+  Žiri: language: 19 people in blanked cells, left out
+  Žirovnica: religion: 36 people in blanked cells, left out
+  Žirovnica: language: 6 people in blanked cells, left out
+  Žužemberk: religion: 5 people in blanked cells, left out
+  Žužemberk: language: 15 people in blanked cells, left out
+  municipalities against Slovenia: parts sum to 1,964,036 = 1,964,036
+  people in blanked cells, all municipalities: ethnicity 566, religion 2,002, mother tongue 1,726
+Italians by municipality against Slovenia: the parts sum to 2,047, the whole is 2,258 (-211)
