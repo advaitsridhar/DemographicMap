@@ -6108,18 +6108,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 118655,
+      "value": 81307,
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "median_age": {
-      "value": 40.2,
+      "value": 41.3,
       "unit": "years",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "sex_ratio": {
-      "value": 86.1,
+      "value": 84.6,
       "unit": "males_per_100_females",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
@@ -6130,85 +6130,75 @@
     "language": [
       {
         "group": "Ukrainian",
-        "pct": 61.7,
-        "count": 73176
+        "pct": 76.4,
+        "count": 62106
       },
       {
         "group": "Russian",
-        "pct": 37.3,
-        "count": 44251
+        "pct": 22.5,
+        "count": 18286
       },
       {
         "group": "Unstated",
-        "pct": 0.5,
-        "count": 611
+        "pct": 0.7,
+        "count": 535
       },
       {
         "group": "Other language",
         "pct": 0.2,
-        "count": 276
+        "count": 130
       }
     ],
     "ethnicity": [
       {
         "group": "Ukrainian",
-        "pct": 73.7,
-        "count": 87354
+        "pct": 82.4,
+        "count": 66953
       },
       {
         "group": "Russian",
-        "pct": 24.2,
-        "count": 28707
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.6,
-        "count": 692
+        "pct": 15.6,
+        "count": 12712
       },
       {
         "group": "No ethnicity data",
+        "pct": 0.7,
+        "count": 535
+      },
+      {
+        "group": "Belarusian",
         "pct": 0.5,
-        "count": 600
+        "count": 443
       },
       {
         "group": "Armenian",
         "pct": 0.2,
-        "count": 245
+        "count": 123
       },
       {
         "group": "Georgian",
-        "pct": 0.2,
-        "count": 215
-      },
-      {
-        "group": "Azeri",
         "pct": 0.1,
-        "count": 87
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 67
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.1,
-        "count": 73
+        "count": 85
       },
       {
         "group": "Moldovian",
         "pct": 0.1,
-        "count": 113
+        "count": 76
       },
       {
         "group": "Tatar",
         "pct": 0.1,
-        "count": 89
+        "count": 52
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.0,
+        "count": 35
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 30
+        "count": 12
       },
       {
         "group": "Chechen",
@@ -6221,9 +6211,19 @@
         "count": 27
       },
       {
-        "group": "Greek",
+        "group": "German",
         "pct": 0.0,
         "count": 27
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 35
       },
       {
         "group": "Kazakh",
@@ -6231,19 +6231,9 @@
         "count": 10
       },
       {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Latvian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
         "group": "Lithuanian",
         "pct": 0.0,
-        "count": 21
+        "count": 10
       },
       {
         "group": "Mordvinian",
@@ -6258,12 +6248,7 @@
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 47
-      },
-      {
-        "group": "Udmurt",
-        "pct": 0.0,
-        "count": 11
+        "count": 22
       },
       {
         "group": "Uzbek",
@@ -6311,13 +6296,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B19382473130603",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Zmiivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 412 people whose age was not stated are left out. The polygon is Zmiivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "54,899 men and 63,756 women. The polygon is Zmiivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Zmiivskyi Raion. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 389 people whose age was not stated are left out. The polygon is Zmiivskyi Raion. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "37,252 men and 44,055 women. The polygon is Zmiivskyi Raion. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Zmiivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Zmiivskyi Raion. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Zmiivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Zmiivskyi Raion. The polygon is Zmiivskyi Raion by its name; the boundary file draws it coarsely, with 75% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B19402975726216",
@@ -14860,18 +14845,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 51077,
+      "value": 88425,
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "median_age": {
-      "value": 41.2,
+      "value": 39.8,
       "unit": "years",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "sex_ratio": {
-      "value": 85.4,
+      "value": 87.1,
       "unit": "males_per_100_females",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
@@ -14882,75 +14867,85 @@
     "language": [
       {
         "group": "Russian",
-        "pct": 53.9,
-        "count": 27516
+        "pct": 60.5,
+        "count": 53481
       },
       {
         "group": "Ukrainian",
-        "pct": 45.2,
-        "count": 23103
+        "pct": 38.6,
+        "count": 34173
       },
       {
         "group": "Other language",
         "pct": 0.4,
-        "count": 213
+        "count": 359
       },
       {
         "group": "Unstated",
-        "pct": 0.0,
-        "count": 12
+        "pct": 0.1,
+        "count": 88
       }
     ],
     "ethnicity": [
       {
         "group": "Ukrainian",
-        "pct": 57.5,
-        "count": 29281
+        "pct": 56.3,
+        "count": 49682
       },
       {
         "group": "Russian",
-        "pct": 40.6,
-        "count": 20699
+        "pct": 41.6,
+        "count": 36694
       },
       {
         "group": "Belarusian",
-        "pct": 0.4,
-        "count": 213
+        "pct": 0.5,
+        "count": 462
       },
       {
         "group": "Armenian",
         "pct": 0.3,
-        "count": 167
-      },
-      {
-        "group": "Other ethnicity",
-        "pct": 0.3,
-        "count": 130
-      },
-      {
-        "group": "Azeri",
-        "pct": 0.2,
-        "count": 79
+        "count": 289
       },
       {
         "group": "Georgian",
-        "pct": 0.2,
-        "count": 123
+        "pct": 0.3,
+        "count": 253
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 60
       },
       {
         "group": "Moldovian",
         "pct": 0.1,
-        "count": 62
+        "count": 99
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.1,
+        "count": 77
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 130
       },
       {
         "group": "Tatar",
         "pct": 0.1,
-        "count": 50
+        "count": 87
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 20
+        "count": 38
       },
       {
         "group": "Chuvashian",
@@ -14958,9 +14953,14 @@
         "count": 11
       },
       {
-        "group": "German",
+        "group": "Greek",
         "pct": 0.0,
-        "count": 20
+        "count": 12
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 38
       },
       {
         "group": "Kazakh",
@@ -14968,19 +14968,29 @@
         "count": 10
       },
       {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
         "group": "Lezgin",
         "pct": 0.0,
         "count": 12
       },
       {
-        "group": "No ethnicity data",
+        "group": "Lithuanian",
         "pct": 0.0,
-        "count": 12
+        "count": 11
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 12
+        "count": 37
       },
       {
         "group": "Roma",
@@ -14995,7 +15005,7 @@
       {
         "group": "Udmurt",
         "pct": 0.0,
-        "count": 14
+        "count": 25
       },
       {
         "group": "Uzbek",
@@ -15043,13 +15053,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B29130308321511",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Chuhuivskyi Raion. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 13 people whose age was not stated are left out. The polygon is Chuhuivskyi Raion. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "23,528 men and 27,549 women. The polygon is Chuhuivskyi Raion. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Chuhuivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. Chuhuiv (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 36 people whose age was not stated are left out. The polygon is Chuhuivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. Chuhuiv (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "41,175 men and 47,250 women. The polygon is Chuhuivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. Chuhuiv (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Chuhuivskyi Raion. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Chuhuivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. Chuhuiv (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Chuhuivskyi Raion. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Chuhuivskyi Raion with Chuhuiv (Miskrada), which the census counts apart and the map draws inside it. Chuhuiv (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Chuhuivskyi Raion by its name; the boundary file draws it coarsely, with 45% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B29387965575909",
@@ -36575,13 +36585,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B55212312657182",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "345,272 men and 408,899 women. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. Kryvyi Rih (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. Kryvyi Rih (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "345,272 men and 408,899 women. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. Kryvyi Rih (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. Kryvyi Rih (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Kryvorizkyi Raion with Kryvyi Rih (Miskrada), which the census counts apart and the map draws inside it. Kryvyi Rih (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B5599119898653",
@@ -37498,13 +37508,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B56857399435570",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 558 people whose age was not stated are left out. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "49,642 men and 58,616 women. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. Lozova (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 558 people whose age was not stated are left out. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. Lozova (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "49,642 men and 58,616 women. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. Lozova (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. Lozova (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Lozivskyi Raion with Lozova (Miskrada), which the census counts apart and the map draws inside it. Lozova (Miskrada) is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B57022409328323",
@@ -40404,18 +40414,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 36235,
+      "value": 78483,
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "median_age": {
-      "value": 36.9,
+      "value": 37.4,
       "unit": "years",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "sex_ratio": {
-      "value": 89.6,
+      "value": 87.1,
       "unit": "males_per_100_females",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
@@ -40426,105 +40436,130 @@
     "language": [
       {
         "group": "Ukrainian",
-        "pct": 89.6,
-        "count": 32455
+        "pct": 87.9,
+        "count": 68985
       },
       {
         "group": "Russian",
-        "pct": 8.2,
-        "count": 2980
+        "pct": 10.5,
+        "count": 8260
       },
       {
         "group": "Moldavian",
-        "pct": 1.6,
+        "pct": 0.7,
         "count": 567
       },
       {
         "group": "Other language",
-        "pct": 0.3,
-        "count": 122
+        "pct": 0.4,
+        "count": 285
       }
     ],
     "ethnicity": [
       {
         "group": "Ukrainian",
-        "pct": 89.4,
-        "count": 32321
+        "pct": 88.2,
+        "count": 69099
       },
       {
         "group": "Russian",
-        "pct": 6.3,
-        "count": 2282
+        "pct": 8.2,
+        "count": 6398
       },
       {
         "group": "Moldovian",
-        "pct": 2.6,
-        "count": 935
+        "pct": 1.6,
+        "count": 1243
       },
       {
         "group": "Belarusian",
-        "pct": 0.4,
-        "count": 157
+        "pct": 0.5,
+        "count": 356
       },
       {
         "group": "Korean",
         "pct": 0.3,
-        "count": 108
+        "count": 197
       },
       {
         "group": "Roma",
         "pct": 0.3,
-        "count": 104
+        "count": 207
       },
       {
         "group": "Armenian",
-        "pct": 0.1,
-        "count": 42
+        "pct": 0.2,
+        "count": 145
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 128
       },
       {
         "group": "Azeri",
         "pct": 0.1,
-        "count": 39
+        "count": 83
       },
       {
-        "group": "Bulgarian",
+        "group": "Georgian",
         "pct": 0.1,
-        "count": 38
-      },
-      {
-        "group": "Gagauzian",
-        "pct": 0.1,
-        "count": 21
+        "count": 49
       },
       {
         "group": "German",
         "pct": 0.1,
-        "count": 26
+        "count": 96
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 102
       },
       {
         "group": "Polish",
         "pct": 0.1,
-        "count": 26
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 25
+        "count": 60
       },
       {
         "group": "Tatar",
         "pct": 0.1,
-        "count": 21
+        "count": 55
       },
       {
-        "group": "Georgian",
+        "group": "Chuvashian",
         "pct": 0.0,
-        "count": 14
+        "count": 10
+      },
+      {
+        "group": "Gagauzian",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Mari",
         "pct": 0.0,
         "count": 10
+      },
+      {
+        "group": "No ethnicity data",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Uzbek",
+        "pct": 0.0,
+        "count": 13
       }
     ],
     "sources": [
@@ -40567,13 +40602,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B59692398614753",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Voznesenskyi Raion. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Voznesenskyi Raion. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "17,127 men and 19,108 women. The polygon is Voznesenskyi Raion. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Voznesenskyi Raion with M. Voznesensk, which the census counts apart and the map draws inside it. M. Voznesensk is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Voznesenskyi Raion with M. Voznesensk, which the census counts apart and the map draws inside it. M. Voznesensk is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "36,532 men and 41,951 women. The polygon is Voznesenskyi Raion with M. Voznesensk, which the census counts apart and the map draws inside it. M. Voznesensk is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Voznesenskyi Raion. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Voznesenskyi Raion with M. Voznesensk, which the census counts apart and the map draws inside it. M. Voznesensk is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Voznesenskyi Raion. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Voznesenskyi Raion with M. Voznesensk, which the census counts apart and the map draws inside it. M. Voznesensk is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Voznesenskyi Raion by its name; the boundary file draws it coarsely, with 46% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B60330166440880",
@@ -48351,18 +48386,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 77704,
+      "value": 163869,
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "median_age": {
-      "value": 39.7,
+      "value": 37.2,
       "unit": "years",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "sex_ratio": {
-      "value": 86.7,
+      "value": 86.9,
       "unit": "males_per_100_females",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
@@ -48373,18 +48408,18 @@
     "language": [
       {
         "group": "Ukrainian",
-        "pct": 96.9,
-        "count": 75275
+        "pct": 91.4,
+        "count": 149758
       },
       {
         "group": "Russian",
-        "pct": 2.8,
-        "count": 2178
+        "pct": 8.1,
+        "count": 13282
       },
       {
         "group": "Other language",
-        "pct": 0.1,
-        "count": 63
+        "pct": 0.2,
+        "count": 374
       },
       {
         "group": "Unstated",
@@ -48395,28 +48430,48 @@
     "ethnicity": [
       {
         "group": "Ukrainian",
-        "pct": 96.5,
-        "count": 74906
+        "pct": 91.8,
+        "count": 150172
       },
       {
         "group": "Russian",
-        "pct": 2.8,
-        "count": 2197
+        "pct": 7.0,
+        "count": 11419
       },
       {
         "group": "Belarusian",
-        "pct": 0.3,
-        "count": 208
+        "pct": 0.5,
+        "count": 747
       },
       {
         "group": "Armenian",
         "pct": 0.1,
-        "count": 54
+        "count": 204
+      },
+      {
+        "group": "Azeri",
+        "pct": 0.1,
+        "count": 97
+      },
+      {
+        "group": "Moldovian",
+        "pct": 0.1,
+        "count": 87
       },
       {
         "group": "Polish",
         "pct": 0.1,
-        "count": 67
+        "count": 225
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 141
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.1,
+        "count": 89
       },
       {
         "group": "Arab",
@@ -48424,19 +48479,39 @@
         "count": 10
       },
       {
-        "group": "Azeri",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 16
+        "count": 65
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 55
       },
       {
         "group": "German",
         "pct": 0.0,
-        "count": 10
+        "count": 35
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 12
       },
       {
         "group": "Korean",
@@ -48444,9 +48519,19 @@
         "count": 16
       },
       {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
         "group": "Lak",
         "pct": 0.0,
         "count": 18
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 13
       },
       {
         "group": "Lithuanian",
@@ -48454,24 +48539,29 @@
         "count": 11
       },
       {
-        "group": "Moldovian",
+        "group": "Mountain Jewish",
         "pct": 0.0,
-        "count": 16
+        "count": 19
       },
       {
         "group": "No ethnicity data",
         "pct": 0.0,
-        "count": 12
+        "count": 15
       },
       {
-        "group": "Tatar",
+        "group": "Other ethnicity",
         "pct": 0.0,
-        "count": 21
+        "count": 15
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 12
       },
       {
         "group": "Uzbek",
         "pct": 0.0,
-        "count": 13
+        "count": 32
       }
     ],
     "sources": [
@@ -48514,13 +48604,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B7147656565480",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Brovarskyi Raion. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 4 people whose age was not stated are left out. The polygon is Brovarskyi Raion. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "36,091 men and 41,613 women. The polygon is Brovarskyi Raion. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Brovarskyi Raion with M. Brovary, which the census counts apart and the map draws inside it. M. Brovary is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person; the 5 people whose age was not stated are left out. The polygon is Brovarskyi Raion with M. Brovary, which the census counts apart and the map draws inside it. M. Brovary is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "76,212 men and 87,657 women. The polygon is Brovarskyi Raion with M. Brovary, which the census counts apart and the map draws inside it. M. Brovary is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Brovarskyi Raion. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Brovarskyi Raion with M. Brovary, which the census counts apart and the map draws inside it. M. Brovary is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Brovarskyi Raion. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Brovarskyi Raion with M. Brovary, which the census counts apart and the map draws inside it. M. Brovary is placed as the raion's seat: the map draws no polygon of its own for a city of oblast significance. The polygon is Brovarskyi Raion by its name; the boundary file draws it coarsely, with 64% of the area the census counts as that raion inside it and the rest in its neighbours. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B72123275564902",
@@ -52917,18 +53007,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 118353,
+      "value": 82135,
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "median_age": {
-      "value": 36.2,
+      "value": 36.4,
       "unit": "years",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
     },
     "sex_ratio": {
-      "value": 91.1,
+      "value": 91.9,
       "unit": "males_per_100_females",
       "year": 2001,
       "source": "State Statistics Service of Ukraine, All-Ukrainian Population Census 2001, by rayon and city council, as tabulated by the U.S. Census Bureau"
@@ -52939,70 +53029,45 @@
     "language": [
       {
         "group": "Ukrainian",
-        "pct": 97.7,
-        "count": 115579
+        "pct": 98.8,
+        "count": 81114
       },
       {
         "group": "Other language",
-        "pct": 1.3,
-        "count": 1509
+        "pct": 0.8,
+        "count": 664
       },
       {
         "group": "Russian",
-        "pct": 1.0,
-        "count": 1150
+        "pct": 0.4,
+        "count": 313
       }
     ],
     "ethnicity": [
       {
         "group": "Ukrainian",
-        "pct": 96.9,
-        "count": 114580
+        "pct": 98.3,
+        "count": 80695
       },
       {
         "group": "Polish",
-        "pct": 1.8,
-        "count": 2179
+        "pct": 1.2,
+        "count": 973
       },
       {
         "group": "Russian",
-        "pct": 1.1,
-        "count": 1287
+        "pct": 0.4,
+        "count": 363
       },
       {
         "group": "Belarusian",
-        "pct": 0.1,
-        "count": 96
-      },
-      {
-        "group": "Armenian",
         "pct": 0.0,
-        "count": 15
-      },
-      {
-        "group": "Azeri",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Moldovian",
-        "pct": 0.0,
-        "count": 11
+        "count": 35
       },
       {
         "group": "No ethnicity data",
         "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Roma",
-        "pct": 0.0,
-        "count": 15
+        "count": 3
       }
     ],
     "sources": [
@@ -53045,13 +53110,13 @@
     "country": "UKR",
     "match_by": "shape_id",
     "shape_id": "74538382B78037249212092",
-    "population_note": "Everyone counted by the 2001 census. The polygon is Starosambirskyi Raion with M. Sambir, which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Starosambirskyi Raion with M. Sambir, which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
-    "sex_ratio_note": "56,413 men and 61,940 women. The polygon is Starosambirskyi Raion with M. Sambir, which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "population_note": "Everyone counted by the 2001 census. The polygon is Starosambirskyi Raion. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person. The polygon is Starosambirskyi Raion. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "sex_ratio_note": "39,331 men and 42,804 women. The polygon is Starosambirskyi Raion. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "language_year": 2001,
-    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Starosambirskyi Raion with M. Sambir, which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
+    "language_note": "All-Ukrainian Population Census 2001 -- the only census independent Ukraine has held. The question is native language, which the census asked separately from nationality; the two differ substantially and this is the language answer. Read it as a description of 2001. The polygon is Starosambirskyi Raion. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled.",
     "ethnicity_year": 2001,
-    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Starosambirskyi Raion with M. Sambir, which the census counts apart and the map draws inside it. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
+    "ethnicity_note": "Nationality (національність) as declared in the 2001 census, the only one independent Ukraine has held; read as a description of 2001. The polygon is Starosambirskyi Raion. The 2001 census is the last Ukraine has held: the 2011 and 2020 rounds were postponed and cancelled."
   },
   {
     "id": "UKR-2001-74538382B78065593112494",
