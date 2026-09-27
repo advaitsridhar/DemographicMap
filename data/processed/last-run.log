@@ -1,229 +1,166 @@
-== r4_ltu_210
-  1,575 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>D2561B8688364D37AEBFC22032ED96DB</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:27.482000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="LSD" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.LSD(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <footer:Footer> <footer:Message code="400" severity="Error"> <com:Text xml:lang="lt">Užklausa negrąžino duomenų. Pakeiskite datų intervalą.</com:Text> <com:Text xml:lang="en">The request did not return the data. Change the date range
-== r4_ltu_203
-  1,803,798 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>1CBC70E251B24518BFA0DF2EDC8355A6</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:29.946000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="M3010203" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.M3010203(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <mes:DataSet structureRef="M3010203"> <g:Attributes> <g:Value id="DS_LAST_UPDATE" value="2026-05-07"/> <g:Value id="DS_REGIONAL" value="T"/> <g:Value id="DS_TIME_FORMAT" value="3"/> <g:Value id="OSP_MASYVO_STATUSAS" value="A"/
-== r4_ltu_629
-  76,093 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>9A3290AE1E794F74B4A0FDF9A5802C61</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:33.909000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="M3010217" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.M3010217(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <mes:DataSet structureRef="M3010217"> <g:Attributes> <g:Value id="DS_LAST_UPDATE" value="2026-07-10"/> <g:Value id="DS_REGIONAL" value="T"/> <g:Value id="DS_TIME_FORMAT" value="3"/> <g:Value id="OSP_MASYVO_STATUSAS" value="A"/
-== r4_ltu_216
-  7,103,031 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>0DAB0682145041F09F80C9326753B994</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:37.107000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="M3010216" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.M3010216(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <mes:DataSet structureRef="M3010216"> <g:Attributes> <g:Value id="DS_LAST_UPDATE" value="2026-05-07"/> <g:Value id="DS_REGIONAL" value="N"/> <g:Value id="DS_TIME_FORMAT" value="3"/> <g:Value id="OSP_MASYVO_STATUSAS" value="A"/
-== r4_ltu_215
-  25,144 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>046357CCBBEF4471B3F4FAC240EB9148</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:41.396000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="M3010215_1" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.M3010215_1(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <mes:DataSet structureRef="M3010215_1"> <g:Attributes> <g:Value id="DS_LAST_UPDATE" value="2026-05-07"/> <g:Value id="DS_REGIONAL" value="N"/> <g:Value id="DS_TIME_FORMAT" value="3"/> <g:Value id="OSP_MASYVO_STATUSAS" valu
-== r4_ltu_162
-  25,093 bytes, 0 series
-  <?xml version="1.0" encoding="UTF-8"?> <mes:GenericData xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:g="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd"> <mes:Header> <mes:ID>DF35D77FF41A48B59F21A4B7C688BB22</mes:ID> <mes:Test>true</mes:Test> <mes:Prepared>2026-09-27T15:39:44.158000000+03:00</mes:Prepared> <mes:Sender id="LSD" /> <mes:Structure structureID="M3010215_2" dimensionAtObservation="AllDimensions"> <com:Structure> <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=LSD.M3010215_2(1.0)</URN> </com:Structure> </mes:Structure> </mes:Header> <mes:DataSet structureRef="M3010215_2"> <g:Attributes> <g:Value id="DS_LAST_UPDATE" value="2026-05-07"/> <g:Value id="DS_REGIONAL" value="N"/> <g:Value id="DS_TIME_FORMAT" value="3"/> <g:Value id="OSP_MASYVO_STATUSAS" valu
-== r4_ltu_flows
-  9503 dataflows
-    S9R085_S10020107 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R085_S10020108_2 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R085_S10020110 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R111_S10020402 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020403 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020404 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020405 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020406 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R194_S10020206 | S9R194 - Number of farms which have agricultural crops by farm type (agricultural censuses) | S9R194 - Ūkių, turinčių pasėlių, skaičius pagal ūkio tipą (žemės ūkio surašymai)
-    S9R195_S10020118_1 | S9R195 - Crops area by farm type (agricultural censuses) | S9R195 - Pasėlių plotas pagal ūkio tipą (žemės ūkio surašymai)
-    S9R195_S10020118_2 | S9R195 - Crops area by farm type (agricultural censuses) | S9R195 - Pasėlių plotas pagal ūkio tipą (žemės ūkio surašymai)
-    S9R189_S10020119 | S9R189 - Crop area (agricultural censuses) | S9R189 - Pasėlių plotas (žemės ūkio surašymas)
-    S9R189_S10020120 | S9R189 - Crop area (agricultural censuses) | S9R189 - Pasėlių plotas (žemės ūkio surašymas)
-    S9R190_S10020802 | S9R190 - Number of grain combine harvesters by grain crop area (agricultural censuses) | S9R190 - Javų kombainų skaičius pagal grūdinių augalų plotą (žemės ūkio surašymai)
-    S9R191_S10020803 | S9R191 - Number of potato planters, harvesters and combine harvestersby potato area (agricultural censuses) | S9R191 - Bulviasodžių, bulviakasių ir bulvių kombainų skaičius pagal bulvių plotą (žemės ūkio surašymai)
-    S9R192_S10020802 | S9R192 - Number of farms which have grain combine harvesters (agricultural censuses) | S9R192 - Ūkių, turinčių javų kombainų, skaičius (žemės ūkio surašymai)
-    S9R193_S10020803 | S9R193 - Number of farms which have potato planters, harvesters and combine harvesters (agricultural censuses) | S9R193 - Ūkių, turinčių bulviasodžių, bulviakasių ir bulvių kombainų, skaičius (žemės ūkio surašymai)
-    S9R153_S10020304 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020302 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020303 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020301 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R154_S10020313 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020315 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020317 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020321 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020322 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020323 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R155_S10020306 | S9R155 - Number of sheep (agricultural censuses) | S9R155 - Avių skaičius (žemės ūkio surašymai)
-    S9R156_S10020309 | S9R156 - Number of other farm animals (agricultural censuses) | S9R156 - Kitų ūkinių gyvūnų skaičius (žemės ūkio surašymai)
-    S9R156_S10020308 | S9R156 - Number of other farm animals (agricultural censuses) | S9R156 - Kitų ūkinių gyvūnų skaičius (žemės ūkio surašymai)
-    S9R157_S10020310 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020311 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020312 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020313 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R158_S10020315 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020316 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020317 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020318 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R159_S10020401_1 | S9R159 - Number of persons employed in terms of annual work (agricultural censuses) | S9R159 - Sąlyginių darbuotojų skaičius (žemės ūkio surašymai)
-    S9R159_S10020401_2 | S9R159 - Number of persons employed in terms of annual work (agricultural censuses) | S9R159 - Sąlyginių darbuotojų skaičius (žemės ūkio surašymai)
-    S9R160_S10020601 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R160_S10020602 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R160_S10020603 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R161_S10020602 | S9R161 - Number of places in keeping system for laying hens (agricultural censuses) | S9R161 - Vietų skaičius vištų dedeklių laikymo sistemoje (žemės ūkio surašymai)
-    S9R162_S10020603 | S9R162 - Number of places in keeping system for pigs (agricultural censuses) | S9R162 - Vietų skaičius kiaulių laikymo sistemoje (žemės ūkio surašymai)
-    S9R163_S10020604 | S9R163 - Area there tillage methods are applied (agricultural censuses) | S9R163 - Plotas, kuriame taikomas dirbimo metodas (žemės ūkio surašymai)
-    S9R164_S10020605 | S9R164 - Area there soil covered in winter (agricultural censuses) | S9R164 - Plotas, kuriame naudojama danga žiemą (žemės ūkio surašymai)
-    S9R165_S10020601 | S9R165 - Number of places in keeping system for livestock (agricultural censuses) | S9R165 - Vietų skaičius galvijų laikymo sistemoje (žemės ūkio surašymai)
-    S9R166_S10020101 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R166_S10020102 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R166_S10020103 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R167_S10020104_2 | S9R167 - Average size of farms by agricultural land (agricultural censuses) | S9R167 - Ūkių vidutinis dydis pagal žemės ūkio naudmenas (žemės ūkio surašymai)
-    S9R168_S10020104_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020105_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020201 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020202 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020203_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R169_S10020106 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020108_1 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020109 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020117_1 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R170_S10020111 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020112 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020113 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020114 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020115 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020116 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020117_2 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020203_2 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R171_S10020701_2 | S9R171 - Area of building for keeping livestock (agricultural censuses) | S9R171 - Pastato gyvuliams laikyti plotas (žemės ūkio surašymai)
-    S9R172_S10020701_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R172_S10020702_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R172_S10020703_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R173_S10020702_2 | S9R173 - Capacity of warehouses (agricultural censuses) | S9R173 - Sandėlio talpa (žemės ūkio surašymai)
-    S9R174_S10020704 | S9R174 - Number of tractors (agricultural censuses) | S9R174 - Traktorių skaičius (žemės ūkio surašymai)
-    S9R175_S10020703_2 | S9R175 - Capacity of storage warehouses (agricultural censuses) | S9R175 - Saugyklos talpa (žemės ūkio surašymai)
-    S9R176_S10020801_1 | S9R176 - Number of he main agricultural machines and equipment (agricultural censuses) | S9R176 - Pagrindinių žemės ūkio mašinų ir įrenginių skaičius (žemės ūkio surašymai)
-    S9R176_S10020801_2 | S9R176 - Number of he main agricultural machines and equipment (agricultural censuses) | S9R176 - Pagrindinių žemės ūkio mašinų ir įrenginių skaičius (žemės ūkio surašymai)
-    S9R177_S10020203_1 | S9R177 - Number of workers (excluding temporary hired) (agricultural censuses) | S9R177 - Darbuotojų skaičius (išskyrus laikinai samdomus) (žemės ūkio surašymai)
-    S9R179_S10020503_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020506_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020509_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020510_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020515_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020516_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020517_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020518_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020519_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020205 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020208 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020209 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R180_S10020501 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R180_S10020502 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R180_S10020503_2 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R181_S10020506_2 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R181_S10020504 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R181_S10020505 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R182_S10020510_2 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020507 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020508 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020509_2 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R183_S10020511_2 | S9R183 - Area of other agricultural crops on farms larger than 1 ha (agricultural censuses) | S9R183 - Kitų žemės ūkio augalų plotas didesniuose nei 1 ha ūkiuose (žemės ūkio surašymai)
-    S9R183_S10020512_2 | S9R183 - Area of other agricultural crops on farms larger than 1 ha (agricultural censuses) | S9R183 - Kitų žemės ūkio augalų plotas didesniuose nei 1 ha ūkiuose (žemės ūkio surašymai)
-    S9R184_S10020513 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020514 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020515_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020516_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020517_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020518_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020519_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-== r4_lva_ird041
-  title: Population in regions, State cities and municipalities by age and gender at the beginning of the year by Territorial unit, Age, Sex and Time period
-  var 'AREA' (Territorial unit) [elimination]: 57 values
-      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV006=Riga statistical region (Riga) (before 01.01.2024.)  ; LV007=Pierīga statistical region (before 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV008=Vidzeme statistical region (before 01.01.2024.) ... LV0051000=Talsi municipality; LV0052000=Tukums municipality; LV0053000=Valka municipality; LV0054000=Valmiera municipality; LV0055000=Varakļāni municipality; LV0056000=Ventspils municipality
-      code lengths {2: 1, 5: 9, 9: 47}; prefixes {'LV': 57}
-  var 'AGE' (Age) [elimination]: 123 values
-      TOTAL=Total; Y0=0 years; Y1=1 year; Y2=2 years; Y3=3 years; Y4=4 years ... Y60-64=60–64 years; Y65-69=65–69 years; Y70-74=70–74 years; Y75-79=75–79 years; Y80-84=80–84 years; Y_GE85=85 years and more
-      code lengths {2: 10, 3: 90, 4: 2, 5: 1, 6: 19, 7: 1}; prefixes {'Y': 122, 'TOTAL': 1}
-  var 'SEX' (Sex) [elimination]: 3 values
-      T=Total; M=Males; F=Females
-  var 'ContentsCode' (Unit): 1 values
-      IRD041=Number
-  var 'TIME' (Time period) [time]: 15 values
-      2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 15}; prefixes {'': 15}
-== r4_lva_ird031
-  title: Mean age, median age and old age dependency rate of population by sex in regions, State cities and municiplaities at the beginning of the year by Sex, Territorial unit, Unit and Time period
-  var 'SEX' (Sex) [elimination]: 3 values
-      T=Total; M=Males; F=Females
-  var 'AREA' (Territorial unit) [elimination]: 57 values
-      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV006=Riga statistical region (Riga) (before 01.01.2024.)  ; LV007=Pierīga statistical region (before 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV008=Vidzeme statistical region (before 01.01.2024.) ... LV0051000=Talsi municipality; LV0052000=Tukums municipality; LV0053000=Valka municipality; LV0054000=Valmiera municipality; LV0055000=Varakļāni municipality; LV0056000=Ventspils municipality
-      code lengths {2: 1, 5: 9, 9: 47}; prefixes {'LV': 57}
-  var 'ContentsCode' (Unit): 3 values
-      IRD031=Mean age; IRD0311=Median age; IRD0312=Old age dependency rate
-  var 'TIME' (Time period) [time]: 15 values
-      2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 15}; prefixes {'': 15}
-== r4_lva_home
-  41 hits
-    NBN020c | /EMP/NBB/NBN | Inactive population by status 2002Q1 - 2026Q2
-    NBN020 | /EMP/NBB/NBN | Inactive population by status and sex 2002 - 2025
-    DLM030 | /IKT/EK/A_EK | Mobile device usage by individuals to access the internet away from home or work (per cent of total population within the corresponding group) 2013 - 2019
-    NNN210 | /POP/NN/NNN | Possibilities for households to replace worn-out furniture in their home (per cent) 2013 - 2025
-    DLM070 | /IKT/EK/A_EK | Reasons for not having access to the Internet at home (per cent of the total number of households within the corresponding group) 2004 - 2019
-    TUL120 | /NOZ/TU/TUL | Reasons that prevented Latvian residents from going on recreational and other private overnight trips with at least one night spent outside their usual environment (per cent) 2018 - 2025
-    IVP060 | /VES/IV/IVP | Health problems that have limited your home, work and leisure activities for at least 6 months by gender and age group (per cent) 2005 - 2025
-    IVP030 | /VES/IV/IVP | Health problems that have limited your home, work and leisure activities for at least 6 months for persons aged 16 or over by quintile group and area (per cent) 2005 - 2025
-    IVP031 | /VES/IV/IVP | Health problems that have limited your home, work and leisure activities for at least 6 months for persons aged 16 or over by sex and economic activity (per cent) 2005 - 2025
-    VSM010 | /VES/VS/VSM | Childbirth indicators by region 2010 - 2025
-    PPA010 | /VES/PP/PPA | Municipal social services 1994 - 2025
-    NBL150 | /EMP/NB/NBLA | Employed by type of atypical work and sex 2002 - 2025
-    TUL030 | /NOZ/TU/TUL | Number of nights spent on and average duration of domestic trips of Latvian residents by type of accommodation 2012 - 2025
-    PPA020 | /VES/PP/PPA | Municipal expenditure on social services in State cities and municipalities (EUR) 2021 - 2025
-    PPA030 | /VES/PP/PPA | Recipients of municipal social services in State cities and municipalities by sex and age 2021 - 2025
-    DLM100 | /IKT/EK/DLM | Devices and systems on which individuals used the Internet for personal use in the last 3 months (as a per cent of the number of Internet users in the respective group) 2020 - 2024
-    VST040 | /VES/VS/VST | Number of registered injury and poisoning cases by place of occurrence 2010 - 2025
-    NNN010 | /POP/NN/NNN | The rate of households, which could not afford to cover certain expenses due to the lack of money (per cent) 2005 - 2025
-    NNN190 | /POP/NN/NNN | Possibilities to meet basic individual needs of persons aged 16 and over (per cent) 2013 - 2025
-    VAA010 | /VES/VA/VAA | Out-patient visits to medical doctors and doctor's assistants, midwives, nurses 2012 - 2025
-    UFA230 | /ENT/UF/UFA | Impact of recent events on the organization of global supply and value chains from 2023
-    NNN020 | /POP/NN/NNN | The rate of persons, which could not afford to cover certain expenses due to the lack of money (per cent) 2005 - 2025
-    EKI010 | /IKT/EK/EKI | Goods purchased over the Internet by individuals (per cent of individuals who have made purchases over the Internet during the last 3 months, in the respective group) 2020 - 2024
-    PCI011 | /VEK/PC/PCI | Consumer price index weights by commodity groups (ECOICOP ver.2) 2000 - 2026
-    PCI021m | /VEK/PC/PCI | Consumer price indices and changes by commodity groups (ECOICOP ver.2) 2000M01 - 2026M08
-    PCI021 | /VEK/PC/PCI | Consumer price indices and changes by commodity groups (ECOICOP ver.2) 2000 - 2025
-    PCS011m | /VEK/PC/PCS | Harmonized consumer price index and changes by commodity groups (ECOICOP ver.2) 1996M01 - 2026M08
-    PCS021m | /VEK/PC/PCS | Harmonized consumer price index of constant tax rate and changes by commodity groups (ECOICOP ver.2) 2002M12 - 2026M08
-    PCS031 | /VEK/PC/PCS | Harmonized consumer price index weights by commodity groups (ECOICOP ver.2) 1996 - 2026
-    IBR080 | /POP/IB/IBR | Employed remigrants aged 15 and over by sex and occupation (experimental statistics) 2020 - 2024
-    EKA110 | /EMP/NB/NBLA | Population aged 15 and over by occupation, gender and age group at the beginning of year 2021 - 2025
-    UFR010 | /ENT/UF/UFR | Entrepreneurship indicators of enterprises 2005 - 2024
-    UZS020 | /ENT/UZ/UZS | Economically active enterprises by main kind of activity (NACE Rev. 2) 2013 - 2024
-    NPV011 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and economic activity (NACE) (experimental statistics) 2017 - 2023
-    NPV021 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by economic activity (NACE) (experimental statistics) 2017 - 2023
-    NPV031 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by economic activity (NACE) (experimental statistics) 2017 - 2023
-    RUA020 | /NOZ/RU/RUA | Sale of manufactured industrial products (PRODCOM at 10-digits), (quantity, thousand euro) 2007 - 2025
-    NPV013 | /ENT/UT/UTN | Number of employed and jobs, value added, and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by actual place of residence and occupation (experimental statistics)  2017 - 2023
-    NPV023 | /ENT/UT/UTV | Number of employed and jobs in local kind of activity units, their value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
-    NPV033 | /ENT/UT/UTM | Workplace commuters, number of jobs, value added and value of output in regions, municipalities, cities, towns, rural territories (based on the boundaries in force at the beginning of 2024), neighbourhoods and densely populated areas by occupation (experimental statistics) 2017 - 2023
-== r4_lva_root
-  11 items
-    POP [l] Population
-    EMP [l] Labour market
-    VES [l] Social security and health
-    IZG [l] Education, culture and science
-    VEK [l] Economy
-    TIR [l] Trade and services
-    ENT [l] Business
-    IKT [l] Information technologies
-    NOZ [l] Business sectors
-    ENV [l] Environment
-    FIN [l] Indicators of well-being and equality
-== r4_lva_pop
-  15 items
-    IR [l] Population and its characteristics
-    ID [l] Fertility
-    IM [l] Mortality
-    NC [l] Causes of death
-    IL [l] Marriages
-    IB [l] Migration
-    PM [l] Asylum seekers and refugees 
-    MV [l] Private households and families
-    MI [l] Household and personal income
-    MB [l] Household expenditure and consumption
-    NN [l] Poverty and inequality (EU-SILC)
-    MA [l] Housing
-    NO [l] Crimes, persons accused  and victims
-    TS [l] Justice and prisons
-    UG [l] Fires and rescue operations
+== r4_fin_11ra
+  title: Key figures on population
+  var 'alue_23_20260101' (Area) [elimination]: 568 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7Lapland; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 North Ostrobothnia; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
+      code lengths {3: 18, 4: 89, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
+  var 'contentscode' (Information): 43 values
+      vaerak-vaesto=Population 31 Dec; vaerak-kokmuutos=Increase of population; kokmuutos_p=Increase of population, %; vaesto_alle15_p=Share of persons aged under 15, %; vaesto_15_64_p=Share of persons aged 15 to 64, %; vaesto_yli64_p=Share of persons aged 65 or over, % ... vaesto_k3_p=Share of persons in peri-urban area, %; vaesto_ms_p=Share of persons in rural areas, %; vaesto_m4_p=Share of persons in local centres in rural areas, %; vaesto_m5_p=Share of persons in rural areas close to urban areas, %; vaesto_m6_p=Share of persons in rural heartland areas, %; vaesto_m7_p=Share of persons in sparsely populated rural areas, %
+      code lengths {11: 10, 13: 3, 14: 2, 15: 5, 16: 5, 17: 3, 18: 8, 19: 1, 20: 2, 21: 1, 23: 3}; prefixes {'vaesto': 36, 'vaerak-vaesto': 2, 'vaerak-kokmuutos': 1, 'kokmuutos': 1, 'vaerak-dem': 1, 'vaerak-tal': 1, 'vaerak-maa': 1}
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+== r4_fin_passiivi
+  141 hits
+    statfinpas_vpa_pxt_159.px | /vpa | 159 -- Has read religious or devotional books , those aged 10 or over (1991, 2002, 2017) %
+    statfinpas_vpa_pxt_160.px | /vpa | 160 -- Has read religious or devotional books , those aged 15 or over (1991, 2002, 2017) %
+    statfinpas_vpa_pxt_258.px | /vpa | 258 -- Frequency of religious event attendance , those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_259.px | /vpa | 259 -- Frequency of religious event attendance , those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_256.px | /vpa | 256 -- Attending church services or other religious events in the past 12 months , those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_257.px | /vpa | 257 -- Attending church services or other religious events in the past 12 months , those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_yrti_pxt_11i2_2021.px | /yrti | 11i2 -- Non-profit institutions serving households by legal form, 2013-2021
+    statfinpas_yrti_pxt_010_201700.px | /yrti | 010 -- Non-profit institutions serving households by legal form, 2013 to 2017
+    statfinpas_ati_pxt_11zv_2022q4.px | /ati | 11zv -- Index of wage and salary earnings and index of regular earnings by industry, (TOL 2008), 2005Q1-2022Q4*
+    statfinpas_ati_pxt_122l_2022.px | /ati | 122l -- Index of wage and salary earnings and index of regular earnings by industry, (TOL 2008), 2005-2022*
+    statfinpas_ati_pxt_13dz2024q4.px | /ati | 13dz -- Index of wage and salary earnings and index of regular earnings by industry, (TOL 2008), 2005Q1-2024Q4*
+    statfinpas_ati_pxt_13ea_2024.px | /ati | 13ea -- Index of wage and salary earnings and index of regular earnings by industry, (TOL 2008), 2005-2024*
+    statfinpas_vpa_pxt_212.px | /vpa | 212 -- Listening to the radio , those aged 15 or over (2017) %
+    statfinpas_syyttr_pxt_11ia_202000.px | /syyttr | 11ia -- Sentences by district court and offence (district courts and courts of appeal as first court instance), 2016-2020
+    statfinpas_syyttr_pxt_125u_202000.px | /syyttr | 125u -- Sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2016-2020
+    statfinpas_vpa_pxt_211.px | /vpa | 211 -- Listening to the radio , those aged 10 or over (2017) %
+    statfinpas_vpa_pxt_002.px | /vpa | 002 -- Has taken part in the activities of an association in the past 12 months, those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_066.px | /vpa | 066 -- Participation in events , those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_syyttr_pxt_13r7_2023.px | /syyttr | 13r7 -- Sentences by district court and offence (district courts and courts of appeal as first court instance), 2019-2023
+    statfinpas_syyttr_pxt_13r8_2023.px | /syyttr | 13r8 -- Sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2019-2023
+    statfinpas_vpa_pxt_208.px | /vpa | 208 -- Watching television programmes , those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_syyttr_pxt_12by_202000.px | /syyttr | 12by -- Prison sentences by length of total sentence, gender, age and group of offence (district courts and courts of appeal as first court instance), 2014-2020
+    statfinpas_vpa_pxt_136.px | /vpa | 136 -- Books read in the past six months by type , those aged 15 or over (1981, 1991, 2002, 2017) %
+    statfinpas_rpk_pxt_11cg_202000.px | /rpk | 11cg -- Crimes and their clearance after Crime nomenclature, 2010-2020
+    statfinpas_pthi_pxt_901_2008q4_en.px | /pthi | 901 -- Producer Price Index for Services 2005=100 (TOL 2002)
+    statfinpas_syyttr_pxt_126p_2023.px | /syyttr | 126p -- Sentences by citizenship, place of residence and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2009-2023
+    statfinpas_vpa_pxt_001.px | /vpa | 001 -- Has taken part in the activities of an association in the past 12 months, those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_065.px | /vpa | 065 -- Participation in events , those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_135.px | /vpa | 135 -- Books read in the past six months by type , those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_vpa_pxt_207.px | /vpa | 207 -- Watching television programmes , those aged 10 or over (1981, 1991, 2002, 2017) %
+    statfinpas_syyttr_pxt_009_201800_fi.px | /syyttr | 009 -- Courts of first instance: sentences of imprisonment by total length of sentence, sex, age and offence group, 2014-2018
+    statfinpas_vkp_pxt_11x7_2018.px | /vkp | 11x7 -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2018
+    statfinpas_vkp_pxt_12mt_2019.px | /vkp | 12mt -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2019
+    statfinpas_vkp_pxt_135p.px | /vkp | 135p -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2020
+    statfinpas_vkp_pxt_13md_2021.px | /vkp | 13md -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2021
+    statfinpas_vkp_pxt_13z2_2022.px | /vkp | 13z2 -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2022
+    statfinpas_vkp_pxt_14rt.px | /vkp | 14rt -- Central government monthly salaries by industries (Standard Industrial Classification 2008), 2023
+    statfinpas_tyonv_pxt_2205.px | /tyonv | 2205 -- Vacancies in each province at the end of the month, 2006m01-2020m12
+    statfinpas_opiskt_pxt_135d_2020.px | /opiskt | 135d -- Total number of students in universities of applied sciences (Statistics Finland's classification of education), 2002-2020
+    040_lkan_tau_104_en.px | /lkan | Business loans by sector and industry of borrower (TOL2002) by quarter in 2001-2008
+== r4_isl_old
+  18 items
+    MAN02009.px [t] Population by municipalities 1 December 1990-2004 - Final figures
+    MAN02114.px [t] Population by municipalities, sex and age 1 December 1996
+    MAN02115.px [t] Population by municipalities, sex and age 1 December 1995
+    MAN02116.px [t] Population by municipalities, sex and age 1 December 1994
+    MAN02117.px [t] Population by municipalities, sex and age 1 December 1993
+    MAN02118.px [t] Population by municipalities, sex and age 1 December 1992
+    MAN02119.px [t] Population by municipalities, sex and age 1 December 1991
+    MAN02120.px [t] Population by municipalities 1901-1990
+    MAN03105.px [t] Population by locality, age and sex 1 January 2011-2019
+    MAN03106.px [t] Population by urban nuclei, age and sex 1 January 2011-2019
+    MAN03107.px [t] Population in urban nuclei by sex and age 1 December 1991-1996
+    MAN03108.px [t] Population in urban nuclei by sex and age 1 December 1997-2008
+    MAN03260.px [t] Population by output areas, sex and age 1 January 2012-2023
+    MAN03301.px [t] Population in Reykjavík by districts, sex and age 1998-2019
+    MAN03500.px [t] Classification of localities by size 1991-2019
+    MAN08211.px [t] Mid-year population by sex, age and municipalities 1997-2010
+    MAN08212.px [t] Average population by urban nuclei, age and sex 2011-2018
+    MAN09000.px [t] Population by municipality, age and sex 1 December 1997-2022
+== r4_isl_yfirlit
+  2 items
+    arsfjordungstolur [l] Quarterly data
+    yfirlit_mannfjolda [l] Overview
+== r4_isl_bak
+  5 items
+    Faedingarland [l] Country of birth
+    Rikisfang [l] Citizenship
+    Rikisfbr [l] Changes of citizenship
+    Uppruni [l] Origin
+    Vernd_dvalarleyfi [l] International protection and residence permits
+== r4_isl_root
+  5 items
+    None [None] Atvinnuvegir
+    None [None] Efnahagur
+    None [None] Ibuar
+    None [None] Samfelag
+    None [None] Umhverfi
+== r4_isl_samfelag
+  9 items
+    domsmal [l] Justice
+    felagsmal [l] Social affairs
+    heilbrigdismal [l] Health
+    launogtekjur [l] Wages and income
+    lifskjor [l] Quality of life
+    menning [l] Culture
+    midlun [l] Media
+    skolamal [l] Education
+    vinnumarkadur [l] Labour market
+== r4_est_rl0429
+  title: RL0429: POPULATION BY ETHNIC NATIONALITY, SEX, AGE GROUP AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+  var 'Vanuserühm' (Age group) [elimination]: 22 values
+      Y_TOTAL=Age groups total; Y_LT18=0-17; Y18-64=18-64; Y_GE65=65 and older; Y_LT5=0-4; Y5-9=5-9 ... Y60-64=60-64; Y65-69=65-69; Y70-74=70-74; Y75-79=75-79; Y80-84=80-84; Y_GE85=85 and older
+      code lengths {4: 1, 5: 1, 6: 19, 7: 1}; prefixes {'Y': 22}
+  var 'Elukoht' (Place of residence) [elimination]: 163 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; VAL_1=Rural municipalities; 37=HARJU COUNTY ... 0084_OTH=Other local governments of Viljandi county; 86=VÕRU COUNTY; 919=Võru city; 143=Antsla rural municipality; 918=Võru rural municipality; 0086_OTH=Other local governments of Võru county
+      code lengths {2: 15, 3: 106, 4: 23, 5: 2, 6: 2, 8: 15}; prefixes {'': 158, 'AS': 2, 'EE': 1, 'LIN': 1, 'VAL': 1}
+      ALL: EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; VAL_1=Rural municipalities; 37=HARJU COUNTY; 784=Tallinn city; 176=..Haabersti city district; 298=..Kesklinna city district; 339=..Kristiine city district; 387=..Lasnamäe city district; 482=..Mustamäe city district; 524=..Nõmme city district; 596=..Pirita city district; 614=..Põhja-Tallinna city district; 296=Keila city; 424=Loksa city; 446=Maardu city; 580=Paldiski city; 728=Saue city; 140=Anija rural municipality; 2928=..Kehra city without municipal status; 198=Harku rural municipality; 8009=..Tabasalu small town; 245=Jõelähtme rural municipality; 4496=..Loo small town; 295=Keila rural municipality; 297=Kernu rural municipality; 304=Kiili rural municipality; 337=Kose rural municipality; 3460=..Kose small town; 353=Kuusalu rural municipality; 518=Nissi rural municipality; 651=Raasiku rural municipality; 653=Rae rural municipality; 2377=..Jüri small town; 6086=..Peetri village; 718=Saku rural municipality; 7361=..Saku small town; 727=Saue rural municipality; 4014=..Laagri small town; 868=Vasalemma rural municipality; 890=Viimsi rural municipality; 1675=..Haabneeme small town; 9280=..Viimsi small town; 0037_OTH=Other local governments of Harju county; 39=HIIU COUNTY; 371=Kärdla city; 0039_OTH=Other local governments of Hiiu county; 44=IDA-VIRU COUNTY; 309=Kiviõli city; 322=Kohtla-Järve city; 511=Narva city; 513=Narva-Jõesuu city; 735=Sillamäe city; 251=Jõhvi rural municipality; 2270=..Jõhvi city without municipal status; 802=Toila rural municipality; 0044_OTH=Other local governments of Ida-Viru county; 49=JÕGEVA COUNTY; 249=Jõgeva city; 617=Põltsamaa city; 248=Jõgeva rural municipality; 578=Palamuse rural municipality; 616=Põltsamaa rural municipality; 773=Tabivere rural municipality; 0049_OTH=Other local governments of Jõgeva county; 51=JÄRVA COUNTY; 566=Paide city; 314=Koeru rural municipality; 835=Türi rural municipality; 8595=..Türi city without municipal status; 0051_OTH=Other local governments of Järva county; 57=LÄÄNE COUNTY; 183=Haapsalu city; 411=Lihula rural municipality; 674=Ridala rural municipality; 776=Taebla rural municipality; 0057_OTH=Other local governments of Lääne county; 59=LÄÄNE-VIRU COUNTY; 345=Kunda city; 663=Rakvere city; 190=Haljala rural municipality; 272=Kadrina rural municipality; 2490=..Kadrina small town; 662=Rakvere rural municipality; 770=Sõmeru rural municipality; 786=Tamsalu rural municipality; 8130=..Tamsalu city without municipal status; 790=Tapa rural municipality; 8140=..Tapa city without municipal status; 900=Vinni rural municipality; 926=Väike-Maarja rural municipality; 0059_OTH=Other local governments of Lääne-Viru county; 65=PÕLVA COUNTY; 620=Põlva city; 285=Kanepi rural municipality; 619=Põlva rural municipality; 707=Räpina rural municipality; 7216=..Räpina city without municipal status; 0065_OTH=Other local governments of Põlva county; 67=PÄRNU COUNTY; 625=Pärnu city; 741=Sindi city; 159=Audru rural municipality; 188=Halinga rural municipality; 213=Häädemeeste rural municipality; 568=Paikuse rural municipality; 5865=..Paikuse small town; 710=Saarde rural municipality; 730=Sauga rural municipality; 848=Tahkuranna rural municipality; 808=Tori rural municipality; 929=Vändra rural municipality; 931=Vändra rural municipality (town); 9663=..Vändra town; 0067_OTH=Other local governments of Pärnu county; 70=RAPLA COUNTY; 292=Kehtna rural municipality; 317=Kohila rural municipality; 3268=..Kohila town; 504=Märjamaa rural municipality; 5280=..Märjamaa town; 669=Rapla rural municipality; 6826=..Rapla city without municipal status; 0070_OTH=Other local governments of Rapla county; 74=SAARE COUNTY; 349=Kuressaare city; 270=Kaarma rural municipality; 0074_OTH=Other local governments of Saare county; 78=TARTU COUNTY; 170=Elva city; 795=Tartu city; 185=Haaslava rural municipality; 282=Kambja rural municipality; 432=Luunja rural municipality; 528=Nõo rural municipality; 605=Puhja rural municipality; 694=Rõngu rural municipality; 794=Tartu rural municipality; 831=Tähtvere rural municipality; 949=Ülenurme rural municipality; 9835=..Ülenurme small town; 0078_OTH=Other local governments of Tartu county; 82=VALGA COUNTY; 823=Tõrva city; 854=Valga city; 636=Otepää rural municipality; 0082_OTH=Other local governments of Valga county; 84=VILJANDI COUNTY; 897=Viljandi city; 105=Abja rural municipality; 600=Karksi rural municipality; 629=Pärsti rural municipality; 758=Suure-Jaani rural municipality; 797=Tarvastu rural municipality; 892=Viiratsi rural municipality; 0084_OTH=Other local governments of Viljandi county; 86=VÕRU COUNTY; 919=Võru city; 143=Antsla rural municipality; 918=Võru rural municipality; 0086_OTH=Other local governments of Võru county
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+  var 'Rahvus' (Ethnic nationality) [elimination]: 15 values
+      TOTAL=Ethnic nationalities total; EST=Estonians; RUS=Russians; UKR=Ukrainians; BEL=Belarusians; FIN=Finns ... LIT=Lithuanians; POL=Poles; GER=Germans; ARM=Armenians; OTH=Other ethnic nationalities; UNK=Ethnic nationality unknown
+      code lengths {3: 14, 5: 1}; prefixes {'TOTAL': 1, 'EST': 1, 'RUS': 1, 'UKR': 1, 'BEL': 1, 'FIN': 1, 'TAT': 1, 'HEB': 1}
+== r4_est_rl0433
+  title: RL0433: POPULATION BY MOTHER TONGUE, SEX, AGE GROUP AND ADMINISTRATIVE UNIT, 31 DECEMBER 2011
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+  var 'Elukoht' (Place of residence) [elimination]: 308 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; VAL_1=Rural municipalities; 37=HARJU COUNTY ... 697=Rõuge rural municipality; 767=Sõmerpalu rural municipality; 843=Urvaste rural municipality; 865=Varstu rural municipality; 874=Vastseliina rural municipality; 918=Võru rural municipality
+      code lengths {2: 15, 3: 234, 4: 26, 5: 2, 6: 31}; prefixes {'': 303, 'AS': 2, 'EE': 1, 'LIN': 1, 'VAL': 1}
+  var 'Emakeel' (Mother tongue) [elimination]: 5 values
+      TOTAL=Mother tongue total; EST=Estonian; RUS=Russian; OTH=Other mother tongue; UNK=Mother tongue unknown
+  var 'Vanuserühm' (Age group) [elimination]: 6 values
+      Y_TOTAL=Age groups total; Y_LT15=0-14; Y15-29=15-29; Y30-49=30-49; Y50-64=50-64; Y_GE65=65 and older
+== r4_est_rl0452
+  title: RL0452: AT LEAST 15-YEAR-OLD PERSONS BY RELIGION, SEX, AGE GROUP AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+  var 'Vanuserühm' (Age group) [elimination]: 5 values
+      Y_TOTAL=Age groups total; Y15-29=15-29; Y30-49=30-49; Y50-64=50-64; Y_GE65=65 and older
+  var 'Elukoht' (Place of residence) [elimination]: 308 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; VAL_1=Rural municipalities; 37=HARJU COUNTY ... 697=Rõuge rural municipality; 767=Sõmerpalu rural municipality; 843=Urvaste rural municipality; 865=Varstu rural municipality; 874=Vastseliina rural municipality; 918=Võru rural municipality
+      code lengths {2: 15, 3: 234, 4: 26, 5: 2, 6: 31}; prefixes {'': 303, 'AS': 2, 'EE': 1, 'LIN': 1, 'VAL': 1}
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+  var 'Usk' (Religion) [elimination]: 9 values
+      899=Religion total; 898=Feels an affiliation to a religion; 101=Lutheran; 102=Orthodox; OTH=Other religion; 893=Religion unknown; 892=Does not feel an affiliation to any religion; 891=Refused to answer; 890=Religious affiliation unknown
+== r4_est_rl21429
+  title: RL21429: POPULATION BY ETHNIC NATIONALITY, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+  var 'Aasta' (Year) [elimination]: 1 values
+      2021=2021
+  var 'Vanuserühm' (Age group): 22 values
+      1=Age groups total; 2=0-17; 3=18-64; 4=65 and older; 5=0-4; 6=5-9 ... 17=60-64; 18=65-69; 19=70-74; 20=75-79; 21=80-84; 22=85 and older
+      code lengths {1: 9, 2: 13}; prefixes {'': 22}
+  var 'Elukoht' (Place of residence): 245 values
+      1=Whole country; L1=..City settlement region; M1=..Town settlement region; V1=..Rural settlement region; EE001=Northern Estonia; EE001L=..Northern Estonia: city settlement region ... 008701421301M5=....Antsla city as a settlement unit; 5=....Antsla rural municipality, excl. Antsla city as a settlement unit; 00870698000001=..Rõuge rural municipality; 00870732000001=..Setomaa rural municipality; 008709190000L4=..Võru city; 00870917000001=..Võru rural municipality
+      code lengths {1: 7, 2: 36, 5: 43, 6: 15, 14: 144}; prefixes {'': 222, 'EE': 20, 'L': 1, 'M': 1, 'V': 1}
+  var 'Sugu' (Sex): 3 values
+      1=Males and females; 2=Males; 3=Females
+  var 'Rahvus' (Ethnic nationality): 15 values
+      1=Ethnic nationalities total; 2=Estonian; 3=Russian; 4=Ukrainian; 5=Belarusian; 6=Finn ... 10=Tatar; 11=Jew; 12=Pole; 13=Armenian; 14=Other ethnic nationalities; 15=Ethnic nationality unknown
+      code lengths {1: 9, 2: 6}; prefixes {'': 15}
+== r4_est_rv0241_all
+  title: RV0241: POPULATION BY SEX, AGE AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2012–2017)
+  var 'Aasta' (Year) [time]: 6 values
+      2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017
+  var 'Haldusüksus või asustusüksuse liik' (Administrative unit or type of settlement) [elimination]: 325 values
+      1=Whole country; 2=Urban settlements; 3=Rural settlements; 4=Cities; 5=Rural municipalities; 6=HARJU COUNTY ... 320=..Sõmerpalu rural municipality; 321=..Urvaste rural municipality; 322=..Varstu rural municipality; 323=..Vastseliina rural municipality; 324=..Võru rural municipality; 325=County unknown
+      code lengths {1: 9, 2: 90, 3: 226}; prefixes {'': 325}
+      /\*/: 19 -- 35=..Kõue rural municipality*; 46=..Kärdla city*; 51=..Kõrgessaare rural municipality*; 66=..Püssi city*; 82=..Maidla rural municipality*; 133=..Oru rural municipality*; 135=..Risti rural municipality*; 136=..Taebla rural municipality*; 160=..Põlva city*; 190=..Lavassaare rural municipality*; 191=....Lavassaare town*; 204=..Vändra rural municipality*; 228=..Kaarma rural municipality*; 230=..Kärla rural municipality*; 234=..Lümanda rural municipality*; 300=..Paistu rural municipality*; 301=..Pärsti rural municipality*; 302=..Saarepeedi rural municipality*; 306=..Viiratsi rural municipality*
+  var 'Sugu' (Sex) [elimination]: 3 values
+      1=Males and females; 2=Males; 3=Females
+  var 'Vanus' (Age) [elimination]: 87 values
+      000=Total; 0=0; 1=1; 2=2; 3=3; 4=4 ... 80=80; 81=81; 82=82; 83=83; 84=84; 87=85 and older
+      code lengths {1: 10, 2: 76, 3: 1}; prefixes {'': 87}
