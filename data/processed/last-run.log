@@ -1,49 +1,23 @@
-  Tom1_tab-5_VPN-2020.xlsx: 1,658,676 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
-  Tom1_tab-5_VPN-2020.xlsx: every subject's formations make its total, and every formation's men and women make its own
-  fetched ADM2_simplified.geojson (26.3 MB)
-  RUS ADM2: 2327 polygons from ADM2_simplified.geojson
-  Брянская область: 'Новозыбковский городской округ' agrees by name with 'Novozybkovsky District' but 38,680 of its 49,379 people live in towns the map draws in Novozybkov (38,680); it spans polygons and is not bound
-  Брянская область: 'Стародубский муниципальный округ' agrees by name with 'Starodubsky District' but 17,687 of its 35,404 people live in towns the map draws in Starodub (17,687); it spans polygons and is not bound
-  Брянская область: formations left ['Новозыбковский городской округ', 'Стародубский муниципальный округ']; polygons left ['Novozybkov', 'Novozybkovsky District', 'Starodub', 'Starodubsky District']
-  Чеченская Республика: 'Серноводский муниципальный район' is not bound; its towns lie in Sunzhensky District, Achkhoy-Martanovsky District
-  Чеченская Республика: formations left ['Серноводский муниципальный район']; polygons left ['Sunzhensky District']
-  Карачаево-Черкесская Республика: 'Карачаевский городской округ': agrees as well with more than one polygon, or its polygon with more than one formation
-  Карачаево-Черкесская Республика: 'Карачаевский муниципальный район': agrees as well with more than one polygon, or its polygon with more than one formation
-  Карачаево-Черкесская Республика: 'Карачаевский городской округ': near 0.96 with 50074027B32007532119787 too close to a rival at 1.01
-  Карачаево-Черкесская Республика: 'Карачаевский муниципальный район': near 0.96 with 50074027B32007532119787 too close to a rival at 1.01
-  Кемеровская область - Кузбасс: 'Topkinsky District' gets 41,206, 2.93 times the 14,048 it carries; the towns Топки (27,158) lie inside it and the rest, 14,048, is its figure's size: bound
-  Костромская область: 'Городской округ город Мантурово' agrees by name with 'Manturovo', but it has a rural population (2,846) and the map still draws 'Manturovsky District' beside it: the okrug joined the two, and is not bound
-  Костромская область: formations left ['Городской округ город Мантурово']; polygons left ['Manturovo', 'Manturovsky District']
-  Moscow: 1 polygons, and no census formations for 'г. Москва'
-  Московская область: 'Городской округ Пушкинский' agrees by name with 'Ivanteyevka' but 137,360 of its 299,385 people live in towns the map draws in городской округ Красноарме (26,492), Pushkinsky District (110,868); it spans polygons and is not bound
-  Московская область: 'Орехово-Зуевский городской округ' agrees by name with 'Orekhovo-Zuyevsky District' but 105,745 of its 241,126 people live in towns the map draws in городской округ Орехово-Зу (105,745); it spans polygons and is not bound
-  Московская область: 'Городской округ Коломна' agrees by name with 'Kolomna urban okrug', but it has a rural population (58,494) and the map still draws 'Kolomensky District' beside it: the okrug joined the two, and is not bound
-  Московская область: 'Городской округ Серпухов' agrees by name with 'городской округ Серпухов', but it has a rural population (38,790) and the map still draws 'Serpukhovsky District' beside it: the okrug joined the two, and is not bound
-  Московская область: 'Городской округ Шатура' is not bound; its towns lie in Roshal urban okrug, Shatursky District
-  Московская область: 'Losino-Petrovsky' would get 67,664 from 'Городской округ Лосино-Петровский', 2.66 times the 25,424 it carries (Wikidata (CC0)); not the same place, not bound
-  Московская область: 'Одинцовский городской округ' counts the town of Звенигород, which the map draws apart as 'Zvenigorod', which no formation holds; 'Одинцовский район' is not bound
-  Московская область: formations left ['Городской округ Коломна', 'Городской округ Лосино-Петровский', 'Городской округ Пушкинский', 'Городской округ Серпухов', 'Городской округ Шатура', 'Наро-Фоминский городской округ', 'Одинцовский городской округ', 'Орехово-Зуевский городской округ']; polygons left ['Ivanteyevka', 'Kolomensky District', 'Kolomna urban okrug', 'Losino-Petrovsky', 'Orekhovo-Zuyevsky District', 'Pushkinsky District', 'Roshal urban okrug', 'Serpukhovsky District', 'Shatursky District', 'Zvenigorod', 'Одинцовский район', 'городской округ Красноарме', 'городской округ Озёры', 'городской округ Орехово-Зу', 'городской округ Серпухов']
-  Оренбургская область: 'Gaysky District' gets 40,575, 4.31 times the 9,419 it carries; the towns Гай (33,280) lie inside it and the rest, 7,295, is its figure's size: bound
-  Оренбургская область: 'Kuvandyksky District' gets 41,621, 2.67 times the 15,576 it carries; the towns Кувандык (26,596) lie inside it and the rest, 15,025, is its figure's size: bound
-  Оренбургская область: 'Yasnensky District' gets 18,237, 5.61 times the 3,251 it carries; the towns Ясный (15,471) lie inside it and the rest, 2,766, is its figure's size: bound
-  Пермский край: 'Кунгурский муниципальный округ' agrees by name with 'Kungursky District' but 62,673 of its 104,638 people live in towns the map draws in Кунгурский городской округ (62,673); it spans polygons and is not bound
-  Пермский край: 'Соликамский городской округ' agrees by name with 'Solikamsky District' but 89,473 of its 101,558 people live in towns the map draws in Solikamsk (89,473); it spans polygons and is not bound
-  Пермский край: 'Городской округ "Город Березники"' counts the town of Усолье, which lies in the map's polygon 'Usolsky District', which no formation holds; 'Berezniki' is not bound
-  Пермский край: formations left ['Городской округ "Город Березники"', 'Соликамский городской округ', 'Кунгурский муниципальный округ']; polygons left ['Berezniki', 'Kungursky District', 'Solikamsk', 'Solikamsky District', 'Usolsky District', 'Кунгурский городской округ']
-  Приморский край: 'Партизанский городской округ': agrees as well with more than one polygon, or its polygon with more than one formation
-  Приморский край: 'Партизанский муниципальный район': agrees as well with more than one polygon, or its polygon with more than one formation
-  Приморский край: 'Партизанский городской округ': near 0.94 with 50074027B87569969608847 too close to a rival at 1.01
-  Приморский край: 'Партизанский муниципальный район': near 0.94 with 50074027B87569969608847 too close to a rival at 1.01
-  Сахалинская область: formations left ['"Южно-Курильский городской округ"']; polygons left []
-  Ставропольский край: 'Георгиевский городской округ' agrees by name with 'Georgiyevsky District' but 63,221 of its 160,238 people live in towns the map draws in Georgiyevsk (63,221); it spans polygons and is not bound
-  Ставропольский край: formations left ['Георгиевский городской округ']; polygons left ['Georgiyevsk', 'Georgiyevsky District']
-  Свердловская область: 'Городской округ муниципальное образование Алапаевское': russian, cut short 0.97 with 50074027B9981749344230 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование город Алапаевск': russian, cut short 0.97 with 50074027B9981749344230 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование город Алапаевск': near 0.94 with 50074027B71545540908305 too close to a rival at 0.97
-  Свердловская область: 'Городской округ муниципальное образование Алапаевское': near 0.89 with 50074027B71545540908305 too close to a rival at 0.97
-  Тверская область: 'Вышневолоцкий городской округ' agrees by name with 'Vyshnevolotsky District' but 45,830 of its 67,163 people live in towns the map draws in Vyshny Volochyok (45,830); it spans polygons and is not bound
-  Тверская область: formations left ['Вышневолоцкий городской округ']; polygons left ['Vyshnevolotsky District', 'Vyshny Volochyok']
-  Ярославская область: 'Городской округ город Переславль-Залесский' agrees by name with 'городской округ Переславль', but it has a rural population (18,844) and the map still draws 'Pereslavsky District' beside it: the okrug joined the two, and is not bound
-  Ярославская область: formations left ['Городской округ город Переславль-Залесский']; polygons left ['Pereslavsky District', 'городской округ Переславль']
-  2291 of 2326 polygons bound ({'name': 2193, 'towns': 97, 'name, with a town the map draws inside it': 1}), holding 2292 of 2311 formations; 35 polygons written as gaps with the reason
-  wrote data/processed/russia_municipal.json (8057 kB)
+  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
+  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
+  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
+  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
+  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
+  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
+  estimate for 1 January 2026: 11 regions make the country's 3,941,100
+  country {"field": "ethnicity", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Georgian", "pct": 86.8, "count": 3224564}, {"group": "Azerbaijani", "pct": 6.3, "count": 233024}, {"group": "Armenian", "pct": 4.5, "count": 168102}, {"group": "Russian", "pct": 0.7, "count": 26453}, {"group": "Ossetian", "pct": 0.4, "count": 14385}, {"group": "Other", "pct": 0.4, "count": 14346}, {"group": "Yazidi", "pct": 0.3, "count": 12174}, {"group": "Kist", "pct": 0.2, "count": 5697}, {"group": "Ukrainian", "pct": 0.2, "count": 6034}, {"group": "Assyrian", "pct": 0.1, "count": 2377}, {"group": "Greek", "pct": 0.1, "count": 5544}, {"group": "Not declared", "pct": 0.0, "count": 591}, {"group": "Not stated", "pct": 0.0, "count": 513}]}
+  country {"field": "religion", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Orthodox", "pct": 83.4, "count": 3097573}, {"group": "Muslim", "pct": 10.7, "count": 398677}, {"group": "Armenian Apostolic", "pct": 2.9, "count": 109041}, {"group": "Not stated", "pct": 1.2, "count": 43886}, {"group": "Catholic", "pct": 0.5, "count": 19195}, {"group": "No religion", "pct": 0.5, "count": 19080}, {"group": "Jehovah's Witnesses", "pct": 0.3, "count": 12395}, {"group": "Yazidi", "pct": 0.2, "count": 8591}, {"group": "Protestant", "pct": 0.1, "count": 2520}, {"group": "Judaism", "pct": 0.0, "count": 1417}, {"group": "Other religion", "pct": 0.0, "count": 1429}]}
+  country {"field": "language", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Georgian", "pct": 87.6, "count": 3254852}, {"group": "Azerbaijani", "pct": 6.2, "count": 231436}, {"group": "Armenian", "pct": 3.9, "count": 144812}, {"group": "Russian", "pct": 1.2, "count": 45920}, {"group": "Other", "pct": 0.8, "count": 30742}, {"group": "Ossetian", "pct": 0.2, "count": 5698}, {"group": "Abkhaz", "pct": 0.0, "count": 272}, {"group": "Not stated", "pct": 0.0, "count": 72}]}
+  fetched ADM2_simplified.geojson (1.3 MB)
+  GEO ADM2: 68 polygons from ADM2_simplified.geojson
+  Batumi's centre lies in 'Khelvachauri'; the nearest other polygon is 8.2 km away
+  Kutaisi: not placed; polygons near its centre: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km)
+  Poti: not placed; polygons near its centre: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km)
+  Rustavi's centre lies in 'Gardabani'; the nearest other polygon is 1.9 km away
+  222 pages
+  2002 census table 22: 65 raions and cities; every region is its rows and the regions make the country's 4,371,535
+  second level: 55 polygons with a count; rows on no polygon: []
+  wrote data/processed/georgia.json (359 kB)
