@@ -107,20 +107,19 @@ RAION = {
     "Осиповичский": "Asipovichy", "Славгородский": "Slawharad", "Хотимский": "Khotsimsk",
     "Чаусский": "Chavusy", "Чериковский": "Cherykaw", "Шкловский": "Shklow",
 }
-# A city of oblast subordination -> the raion it is the seat of, or (for a
-# city that is no raion's seat) the raion whose polygon is checked to hold it.
+# A city of oblast subordination -> the raion it is the seat of.
 CITY = {
     "Брест": "Брестский", "Барановичи": "Барановичский", "Пинск": "Пинский",
-    "Витебск": "Витебский", "Новополоцк": "Полоцкий", "Орша": "Оршанский",
+    "Витебск": "Витебский", "Орша": "Оршанский",
     "Полоцк": "Полоцкий", "Гомель": "Гомельский", "Мозырь": "Мозырский",
     "Речица": "Речицкий", "Светлогорск": "Светлогорский", "Жлобин": "Жлобинский",
     "Гродно": "Гродненский", "Лида": "Лидский", "Борисов": "Борисовский",
-    "Жодино": "Смолевичский", "Молодечно": "Молодечненский", "Солигорск": "Солигорский",
+    "Молодечно": "Молодечненский", "Солигорск": "Солигорский",
     "Слуцк": "Слуцкий", "Могилев": "Могилевский", "Могилёв": "Могилёвский",
     "Бобруйск": "Бобруйский",
 }
-# The two cities that are no raion's seat: (the name written, the name GeoNames
-# files the city under).
+# The two cities that are no raion's seat go to the polygon that holds their
+# centre: (the name written, the name GeoNames files the city under).
 NOT_SEAT = {"Новополоцк": ("Navapolatsk", "Novopolotsk"),
             "Жодино": ("Zhodzina", "Horad Zhodzina")}
 # Drybin raion, drawn as part of Horki's polygon: the run checks that Drybin's
@@ -379,6 +378,7 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "BLR.units.json").read_text())
     parent = {u["id"]: u["name"] for u in admin1.values()}
     by_name = {(parent[u["parent"]], u["name"]): u for u in admin2}
+    by_id = {u["id"]: u for u in admin2}
 
     # Checks: each unit's sexes make it, each oblast is its cities and raions,
     # the oblasts and Minsk make the country.
@@ -418,25 +418,29 @@ def main() -> int:
                 continue
             if name.startswith("г."):
                 city = name[2:]
-                raion = CITY.get(city)
-                if raion is None:
-                    problems.append(f"no raion is declared for the city {city}")
-                    continue
-                target = by_name.get((region, RAION[raion]))
-                if target is None:
-                    problems.append(f"{city}'s raion {raion} has no polygon")
-                    continue
                 if city in NOT_SEAT:
+                    # No raion's seat: the polygon that holds the city's centre,
+                    # which must be one of its own oblast's.
                     p = places.get(east_geo.fold(NOT_SEAT[city][1]))
                     inside = (east_geo.containing(polys, p["lon"], p["lat"]) if p else [])
-                    if inside != [target["id"]]:
-                        problems.append(f"{city}'s centre lies in {inside}, not "
-                                        f"{target['name']!r}")
+                    home = [by_id[i] for i in inside if i in by_id]
+                    if len(home) != 1 or parent[home[0]["parent"]] != region:
+                        problems.append(f"{city}'s centre lies in {inside}, not one "
+                                        f"raion of {region}")
                         continue
+                    target = home[0]
                     notes[target["id"]].append(
                         f"the city of {NOT_SEAT[city][0]}, counted apart and drawn inside this "
                         "polygon (its centre lies in it)")
                 else:
+                    raion = CITY.get(city)
+                    if raion is None:
+                        problems.append(f"no raion is declared for the city {city}")
+                        continue
+                    target = by_name.get((region, RAION[raion]))
+                    if target is None:
+                        problems.append(f"{city}'s raion {raion} has no polygon")
+                        continue
                     notes[target["id"]].append(
                         f"the city of {target['name']}, the raion's seat, counted apart")
                 members[target["id"]].append((oblast, name))

@@ -60,9 +60,9 @@ class Names(unittest.TestCase):
         for city, raion in b.CITY.items():
             self.assertIn(raion, b.RAION, city)
 
-    def test_non_seat_cities_are_declared_cities(self):
+    def test_non_seat_cities_are_placed_by_their_centre_alone(self):
         for city in b.NOT_SEAT:
-            self.assertIn(city, b.CITY)
+            self.assertNotIn(city, b.CITY)
 
 
 if __name__ == "__main__":
