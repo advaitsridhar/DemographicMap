@@ -417,6 +417,22 @@ def weight_of(row: dict[str, str]) -> float:
         raise SystemExit(f"uruguay_census: a person with weight {row.get('W')!r}") from None
 
 
+def shape_of(address: str) -> str:
+    """What an address code looks like -- its length and which characters --
+    for the log, which never prints the code itself."""
+    kind = "digits" if address.isdigit() else ("empty" if not address else "other")
+    return f"{len(address)} {kind}"
+
+
+def address_key(address: str) -> str:
+    """An address code as both files can be matched on it: a code one file
+    writes as a number (no leading zero, or with '.0') is the same code."""
+    address = address.strip()
+    if address.endswith(".0"):
+        address = address[:-2]
+    return address.lstrip("0") if address.isdigit() else address
+
+
 def placements(rows: Iterable[dict[str, str]]
                ) -> tuple[dict[str, tuple[str, str] | None], Counter, Counter]:
     """{address: (department, 2020 municipio)} from the February file, its
@@ -435,7 +451,9 @@ def placements(rows: Iterable[dict[str, str]]
         key = (row["DEPARTAMENTO"].zfill(2), row["MUNICIPIO_PAIS"].strip())
         key = pairs.setdefault(key, key)           # one tuple per pair, not per person
         counts[key] += 1
-        address = row["DIRECCION_ID"].strip()
+        raw = row["DIRECCION_ID"].strip()
+        stats[f"address shape {shape_of(raw)}"] += 1
+        address = address_key(raw)
         if not address:
             stats["no address"] += 1
             continue
@@ -457,7 +475,9 @@ def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str] | Non
     unplaced: dict[str, Any] = {"people": 0.0, "rows": 0, "other_department": 0.0,
                                 "total": 0.0}
     lost: Counter = Counter()
+    shapes: Counter = Counter()
     unplaced["by_department"] = lost
+    unplaced["shapes"] = shapes
     for row in rows:
         weight = weight_of(row)
         dept = row["DEPARTAMENTO"].zfill(2)
@@ -465,12 +485,15 @@ def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str] | Non
         departments[dept].add(row, weight)
         name = row["MUNICIPIO_136"].strip()
         series_2025[(dept, UNKNOWN if name == UNKNOWN else fold(name))] += weight
-        place = where.get(row["DIRECCION_ID"].strip())
+        raw = row["DIRECCION_ID"].strip()
+        place = where.get(address_key(raw))
         if place is None:
             unplaced["people"] += weight
             unplaced["rows"] += 1
             lost[dept] += weight
+            shapes[f"{shape_of(raw)} {'known' if address_key(raw) in where else 'unknown'}"] += 1
             continue
+        shapes[f"{shape_of(raw)} placed"] += 1
         if place[0] != dept:
             unplaced["other_department"] += weight
         municipios[place].add(row, weight)
@@ -513,17 +536,18 @@ def check_municipios(series_2025: Counter, published: dict[tuple[str, str], int]
 def check_placements(unplaced: dict[str, float], rows_july: int) -> None:
     """Nearly every July person's address must be in the February file, and in
     the same department there."""
-    if unplaced["people"] > UNPLACED * unplaced["total"] or \
-            unplaced["other_department"] > 0.001 * unplaced["total"]:
-        raise SystemExit(f"uruguay_census: {unplaced['people']:,.0f} weighted people of the July "
-                         f"file have no address the February file places, and "
-                         f"{unplaced['other_department']:,.0f} have one in another department")
     log(f"  {rows_july - unplaced['rows']:,} of {rows_july:,} July rows placed by the February "
         f"file's addresses; {unplaced['people']:,.0f} weighted people not placed, "
         f"{unplaced['other_department']:,.0f} placed in another department")
     lost = unplaced.get("by_department") or {}
     log("  not placed, by department: " + ", ".join(
-        f"{DEPARTMENTS[d]} {v:,.0f}" for d, v in sorted(lost.items())))
+        f"{DEPARTMENTS.get(d, d)} {v:,.0f}" for d, v in sorted(lost.items())))
+    log(f"  July address codes, by shape: {dict(unplaced.get('shapes') or {})}")
+    if unplaced["people"] > UNPLACED * unplaced["total"] or \
+            unplaced["other_department"] > 0.001 * unplaced["total"]:
+        raise SystemExit(f"uruguay_census: {unplaced['people']:,.0f} weighted people of the July "
+                         f"file have no address the February file places, and "
+                         f"{unplaced['other_department']:,.0f} have one in another department")
 
 
 def compare_series(municipios: dict[tuple[str, str], Tally],
