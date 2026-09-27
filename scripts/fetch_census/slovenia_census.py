@@ -94,12 +94,14 @@ NOTES = {
 
 
 def blanked_bound(blank: list[str], total: float) -> float:
-    """How many people blanked cells may hide: a few per cell, and never 3% of a municipality.
+    """How many people blanked cells may hide where no subtotal measures them.
 
-    SiStat does not say its threshold; the run logs every municipality's
-    shortfall, and a shortfall beyond this is not confidentiality.
+    SiStat does not say its threshold. Where a published subtotal covers the
+    blanked cells (religion's "declared by religion", ethnicity's "declared"),
+    the shortfall is measured exactly against it instead; elsewhere it may be
+    at most 3% of the municipality, and the run logs every one.
     """
-    return min(20.0 * len(blank), 0.03 * total)
+    return 0.03 * total
 
 
 def table(name: str) -> tuple[dict[str, dict[str, float]], dict[str, str]]:
@@ -192,6 +194,12 @@ def build() -> list[dict[str, Any]]:
         short = total - sum(e.get(k, 0.0) for k in parts)
         # A blank cell (confidentiality) may leave the rows a few people short;
         # nothing else is accepted.
+        declared_e = e.get("Declared - total")
+        if declared_e is not None and "Declared -Slovenes" in e and "Declared -others" not in e:
+            # the blanked "others" is measured by the published "declared" subtotal
+            e = {**e, "Declared -others": declared_e - e["Declared -Slovenes"]}
+            blank = [k for k in parts if k not in e]
+            short = total - sum(e.get(k, 0.0) for k in parts)
         if short < -0.5 or short > (blanked_bound(blank, total) if blank else 0.5):
             raise SystemExit(f"slovenia_census: {name}: ethnic rows do not partition {e}")
         if blank and short > 0.5:
@@ -213,16 +221,24 @@ def build() -> list[dict[str, Any]]:
                                  f"know: {sorted(unknown)} (it knows {sorted(wanted)})")
         rel = {label: r.get(k, 0.0) for k, label in RELIGION.items()}
         lan = {label: lang.get(k, 0.0) for k, label in LANGUAGE.items()}
+        # Religion's blanked cells are mostly among the five named
+        # denominations, and "declared by religion" is published beside them:
+        # what they hide is measured exactly, whatever its size.
         declared = r.get("Declared by religion - total")
-        named = sum(r.get(k, 0.0) for k in list(RELIGION)[:5])
-        if declared is not None and abs(declared - named) > 0.5:
-            log(f"  {name}: 'declared by religion' is {declared:,.0f}, its five named rows "
-                f"{named:,.0f}")
-        for field, got, whole, cells, wanted in (
-                ("religion", rel, r.get("Total"), r, RELIGION),
-                ("language", lan, lang.get("Mother tongue - TOTAL"), lang, LANGUAGE)):
-            short = total - sum(got.values())
+        denominations = list(RELIGION)[:5]
+        hidden = (declared - sum(r.get(k, 0.0) for k in denominations)) if declared is not None else 0.0
+        if hidden < -0.5 or (hidden > 0.5 and all(k in r for k in denominations)):
+            raise SystemExit(f"slovenia_census: {name}: 'declared by religion' {declared} against "
+                             f"its denominations {[r.get(k) for k in denominations]}")
+        for field, got, whole, cells, wanted, measured in (
+                ("religion", rel, r.get("Total"), r, RELIGION, max(hidden, 0.0)),
+                ("language", lan, lang.get("Mother tongue - TOTAL"), lang, LANGUAGE, 0.0)):
+            short = total - sum(got.values()) - measured
             blank = sorted(k for k in wanted if k not in cells)
+            if measured > 0.5:
+                suppressed[field] += measured
+                log(f"  {name}: {field} {measured:,.0f} people in blanked denominations, "
+                    f"measured by the published subtotal")
             if whole is None or abs(whole - total) > 0.5 or short < -0.5:
                 raise SystemExit(f"slovenia_census: {name}: {field} rows make "
                                  f"{sum(got.values()):,.0f}, total {whole}, population {total:,.0f}")

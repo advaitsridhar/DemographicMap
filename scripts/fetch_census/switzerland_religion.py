@@ -64,7 +64,8 @@ def read(year: int) -> dict[str, dict[str, tuple[float | None, float | None]]]:
     columns: dict[int, str] = {}
     label = ""
     for j, cell in enumerate(head):
-        label = cell or label
+        # A trailing asterisk is a footnote mark, not part of the category.
+        label = cell.rstrip("*").strip() or label
         if sub[j].startswith("Anzahl") or (label == "Total" and head[j] == "Total"):
             columns[j] = label
     log(f"  {year}: columns {columns}")
