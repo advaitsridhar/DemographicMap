@@ -1,30 +1,71 @@
-switzerland_religion: BFS structural survey, religion by canton, 2024
-  2024: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
-  Vaud: 699,662 aged 15+; dropped []; suppressed []
-  Valais: 311,881 aged 15+; dropped ['Judaism ±74%']; suppressed []
-  Genève: 405,611 aged 15+; dropped []; suppressed []
-  Bern: 895,907 aged 15+; dropped ['Judaism ±44%']; suppressed []
-  Fribourg: 283,763 aged 15+; dropped ['Other religion ±26%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Solothurn: 243,244 aged 15+; dropped ['Not stated ±27%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Neuchâtel: 150,142 aged 15+; dropped ['Judaism ±68%']; suppressed []
-  Jura: 62,465 aged 15+; dropped ['Other religion ±65%', 'Not stated ±43%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Basel-Stadt: 168,791 aged 15+; dropped ['Judaism ±44%', 'Not stated ±32%']; suppressed []
-  Basel-Landschaft: 253,309 aged 15+; dropped ['Judaism ±74%', 'Not stated ±28%']; suppressed []
-  Aargau: 612,778 aged 15+; dropped ['Judaism ±36%']; suppressed []
-  Zürich: 1,347,408 aged 15+; dropped []; suppressed []
-  Glarus: 35,220 aged 15+; dropped ['Other Christian ±28%', 'Islam ±27%', 'Other religion ±41%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Schaffhausen: 74,428 aged 15+; dropped ['Other religion ±45%', 'Not stated ±48%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Appenzell Ausserrhoden: 46,838 aged 15+; dropped ['Islam ±33%', 'Other religion ±61%', 'Not stated ±73%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Appenzell Innerrhoden: 13,808 aged 15+; dropped ['Reformed ±28%', 'Other Christian ±68%', 'Islam ±73%']; suppressed ['Jüdische Glaubensgemeinschaften', 'Andere Religionsgemeinschaften', 'Religionszugehörigkeit unbekannt']
-  St. Gallen: 448,491 aged 15+; dropped []; suppressed ['Jüdische Glaubensgemeinschaften']
-  Graubünden: 175,977 aged 15+; dropped ['Other religion ±32%', 'Not stated ±34%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Thurgau: 249,376 aged 15+; dropped ['Not stated ±30%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Luzern: 363,523 aged 15+; dropped ['Judaism ±55%']; suppressed []
-  Uri: 31,946 aged 15+; dropped ['Reformed ±33%', 'Other Christian ±37%', 'Islam ±44%', 'Other religion ±86%', 'Not stated ±67%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Schwyz: 142,109 aged 15+; dropped ['Judaism ±87%', 'Other religion ±32%', 'Not stated ±44%']; suppressed []
-  Obwalden: 33,149 aged 15+; dropped ['Reformed ±25%', 'Other Christian ±34%', 'Islam ±34%', 'Other religion ±54%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Nidwalden: 38,598 aged 15+; dropped ['Other Christian ±31%', 'Islam ±41%', 'Other religion ±68%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
-  Zug: 111,083 aged 15+; dropped ['Judaism ±46%', 'Not stated ±30%']; suppressed []
-  Ticino: 308,002 aged 15+; dropped ['Judaism ±65%']; suppressed []
-  wrote data/processed/switzerland_religion_survey.json (55 kB)
-  wrote switzerland_religion_survey.json: 26 records
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: religion 19 people in blanked denominations, measured by the published subtotal
+  Beltinci: religion 10 people in blanked denominations, measured by the published subtotal
+  Beltinci: language 13 people in blanked cells ['Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian']
+  Benedikt: religion 3 people in blanked denominations, measured by the published subtotal
+  Benedikt: religion 20 people in blanked cells ['Believer but belongs to no religion', 'Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+  Benedikt: language 6 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian', 'Serbo-Croatian']
+  Bistrica ob Sotli: religion 6 people in blanked denominations, measured by the published subtotal
+  Bistrica ob Sotli: language 4 people in blanked cells ['Albanian', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Bled: language 10 people in blanked cells ['Hungarian', 'Italian']
+  Bloke: religion 7 people in blanked denominations, measured by the published subtotal
+  Bloke: language 5 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Bohinj: religion 71 people in blanked denominations, measured by the published subtotal
+  Bohinj: language 5 people in blanked cells ['German', 'Hungarian', 'Italian', 'Romany']
+  Borovnica: religion 70 people in blanked denominations, measured by the published subtotal
+  Borovnica: language 11 people in blanked cells ['Albanian', 'German', 'Hungarian', 'Italian', 'Romany']
+  Bovec: religion 21 people in blanked denominations, measured by the published subtotal
+  Bovec: language 8 people in blanked cells ['German', 'Hungarian', 'Italian', 'Romany']
+  Braslovče: religion 17 people in blanked denominations, measured by the published subtotal
+  Braslovče: language 9 people in blanked cells ['Albanian', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany']
+  Brda: religion 8 people in blanked denominations, measured by the published subtotal
+  Brda: language 21 people in blanked cells ['Bosnian', 'Hungarian', 'Italian', 'Romany']
+  Cankova: religion 86 people in blanked denominations, measured by the published subtotal
+  Cankova: language 4 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Italian', 'Macedonian', 'Serbo-Croatian']
+  Cerklje na Gorenjskem: religion 44 people in blanked denominations, measured by the published subtotal
+  Cerklje na Gorenjskem: language 46 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Romany']
+  Cerknica: language 5 people in blanked cells ['German', 'Hungarian', 'Italian', 'Romany']
+  Cerkno: religion 8 people in blanked denominations, measured by the published subtotal
+  Cerkno: language 6 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Romany']
+  Cerkvenjak: ethnicity 28 people in blanked cells ['Undeclared', 'Did not want to reply']
+  Cerkvenjak: religion 6 people in blanked denominations, measured by the published subtotal
+  Cerkvenjak: language 9 people in blanked cells ['Albanian', 'Bosnian', 'Croatian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Destrnik: religion 3 people in blanked denominations, measured by the published subtotal
+  Destrnik: religion 54 people in blanked cells ['Believer but belongs to no religion', 'Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+  Destrnik: language 22 people in blanked cells ['Albanian', 'Bosnian', 'Croatian', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbo-Croatian']
+  Divača: religion 6 people in blanked denominations, measured by the published subtotal
+  Divača: language 22 people in blanked cells ['Hungarian', 'Italian', 'Romany']
+  Dobje: ethnicity 11 people in blanked cells ['Declared -others', 'Undeclared']
+  Dobje: religion 2 people in blanked denominations, measured by the published subtotal
+  Dobje: religion 15 people in blanked cells ['Believer but belongs to no religion', 'Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+  Dobje: language 4 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Dobrepolje: religion 5 people in blanked denominations, measured by the published subtotal
+  Dobrepolje: language 16 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Romany']
+  Dobrna: ethnicity 30 people in blanked cells ['Undeclared', 'Did not want to reply']
+  Dobrna: religion 7 people in blanked denominations, measured by the published subtotal
+  Dobrna: language 11 people in blanked cells ['Albanian', 'Hungarian', 'Italian', 'Macedonian', 'Romany', 'Serbian']
+  Dobrovnik/Dobronak: religion 13 people in blanked denominations, measured by the published subtotal
+  Dobrovnik/Dobronak: language 13 people in blanked cells ['Bosnian', 'German', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Dol pri Ljubljani: language 4 people in blanked cells ['German', 'Hungarian', 'Italian', 'Romany']
+  Dolenjske Toplice: religion 9 people in blanked denominations, measured by the published subtotal
+  Dolenjske Toplice: language 4 people in blanked cells ['Albanian', 'Hungarian', 'Italian', 'Macedonian', 'Romany']
+  Dornava: religion 8 people in blanked denominations, measured by the published subtotal
+  Dornava: language 5 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Romany', 'Serbo-Croatian']
+  Dravograd: language 5 people in blanked cells ['Hungarian', 'Italian', 'Romany']
+  Duplek: religion 5 people in blanked denominations, measured by the published subtotal
+  Duplek: language 6 people in blanked cells ['Albanian', 'Bosnian', 'Hungarian', 'Italian', 'Romany']
+  Gorenja vas - Poljane: language 7 people in blanked cells ['Albanian', 'German', 'Hungarian', 'Italian', 'Romany']
+  Gorišnica: religion 7 people in blanked denominations, measured by the published subtotal
+  Gorišnica: language 8 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Gornji Grad: religion 10 people in blanked denominations, measured by the published subtotal
+  Gornji Petrovci: religion 2 people in blanked denominations, measured by the published subtotal
+slovenia_census: Gornji Petrovci: religion rows fall 83 short of 2,217; blank cells ['Did no want to reply', 'Islam', 'Orthodox', 'other religion']
