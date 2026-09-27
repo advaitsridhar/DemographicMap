@@ -199,7 +199,44 @@ def read_sheet(code: str, page: str) -> dict[str, Any]:
         if abs(sum(counts.values()) - people) > 0.5:
             raise SystemExit(f"austria_census: {code}: {field} rows make {sum(counts.values()):,.0f}, "
                              f"the sheet's population is {people:,.0f}: {counts}")
-    return {"code": code, "total": people, "religion": religion, "language": language}
+    name = re.search(r"Gemeinde:\s*(.+?)\s*\(\d{5}\)", page)
+    return {"code": code, "total": people, "religion": religion, "language": language,
+            "name": name.group(1) if name else ("Wien" if vienna else "")}
+
+
+def adopt_orphans(sheets: list[dict[str, Any]], missing: list[str], codes: list[str],
+                  workers: int) -> list[dict[str, Any]]:
+    """Give a municipality with no sheet at all the 2001 sheets nobody else claims.
+
+    Fürstenfeld (62280), merged in 2015, has no 2001 sheet and no general
+    sheet listing its parts. Its parts still have sheets under the codes
+    their district gave them before the merger, and no other municipality of
+    today lists them. So, district by district, the codes of the district's
+    number range that are neither a municipality of today nor a listed part
+    are read; where exactly one municipality of the district lacks a sheet,
+    they are its parts. The national count checks the result: a part
+    counted twice or missed would miss 8,032,926.
+    """
+    claimed = set(codes) | {p["code"] for s in sheets if s.get("merged") for p in s["parts"]}
+    by_district: dict[str, list[str]] = {}
+    for code in missing:
+        by_district.setdefault(code[:3], []).append(code)
+    adopted: dict[str, dict[str, Any]] = {}
+    for district, lacking in sorted(by_district.items()):
+        if len(lacking) != 1:
+            raise SystemExit(f"austria_census: no 2001 sheet for {lacking} in district {district}")
+        candidates = [f"{district}{i:02d}" for i in range(1, 100) if f"{district}{i:02d}" not in claimed]
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            found = [s for s in pool.map(sheet, candidates)
+                     if not s.get("missing") and not s.get("error") and not s.get("merged")]
+        if not found:
+            raise SystemExit(f"austria_census: {lacking[0]} has no 2001 sheet and district "
+                             f"{district} has no unclaimed one")
+        log(f"  {lacking[0]}: no 2001 sheet; district {district}'s unclaimed sheets "
+            f"{[(f['code'], f['name']) for f in found]} are its parts")
+        adopted[lacking[0]] = {"code": lacking[0], "merged": [f["code"] for f in found],
+                               "parts": found}
+    return [adopted.get(s["code"], s) for s in sheets]
 
 
 def build(year: int, workers: int) -> list[dict[str, Any]]:
@@ -216,8 +253,7 @@ def build(year: int, workers: int) -> list[dict[str, Any]]:
                          f"{[s['code'] for s in failed][:60]}")
     missing = [s["code"] for s in sheets if s.get("missing")]
     if missing:
-        raise SystemExit(f"austria_census: no 2001 sheet for {len(missing)} municipalities: "
-                         f"{missing[:40]}")
+        sheets = adopt_orphans(sheets, missing, codes, workers)
     # Each 2001 municipality is counted once, in the district of the
     # municipality of today it went to. One that was split between two of
     # today's (Limbach bei Neudau, by cadastral community) is listed by both;
