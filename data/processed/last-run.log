@@ -1,82 +1,43 @@
-== grep https://data.stat.gov.rs/ [aA][pP][iI][/.][A-Za-z/]{0,60} 20
-  HTTP 200 text/html; charset=utf-8 960,084 bytes
-  0 matches
-== cdx popis2022.stat.gov.rs/ 60
-  HTTP 200: 240 captures
-  20220513091830 text/html 24413 https://popis2022.stat.gov.rs/
-  20220523221913 text/html 11631 https://popis2022.stat.gov.rs/0-popisi/
-  20220523064159 text/html 11647 https://popis2022.stat.gov.rs/0-popisi//?r=0
-  20220523064208 text/html 11641 https://popis2022.stat.gov.rs/0-popisi//?r=1
-  20220523064214 text/html 11643 https://popis2022.stat.gov.rs/0-popisi//?r=2
-  20220523221919 text/html 10659 https://popis2022.stat.gov.rs/2-opopisu-2021/
-  20240713123742 text/html 8124 https://popis2022.stat.gov.rs/2-opopisu-2021/osnovnipopupitnici/
-  20241109220815 text/html 9519 https://popis2022.stat.gov.rs/2-opopisu-2021/osnovnipopupitnici/upitnici/
-  20240523114403 text/html 8076 https://popis2022.stat.gov.rs/2-opopisu-2021/uputstvoimater/
-  20240625001636 text/html 8669 https://popis2022.stat.gov.rs/2-opopisu-2021/uputstvoimater/uputstva/
-  20220523064222 text/html 10669 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=0
-  20220523064230 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=1
-  20240528005908 text/html 21384 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=10
-  20240528005912 text/html 21385 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=11
-  20220523064239 text/html 10667 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=2
-  20220523064247 text/html 10670 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=3
-  20220523064253 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=4
-  20220523064258 text/html 10672 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=5
-  20220523064304 text/html 10670 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=6
-  20220523064310 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=7
-  20240528005900 text/html 21386 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=8
-  20240528005905 text/html 21385 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=9
-  20220523221933 text/html 12995 https://popis2022.stat.gov.rs/3-najcescapitanja/
-  20220523221818 text/html 13000 https://popis2022.stat.gov.rs/3-najcescapitanja//?r=0
-  20220523221826 text/html 13006 https://popis2022.stat.gov.rs/3-najcescapitanja//?r=1
-  20220523221926 text/html 9232 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/
-  20230519021519 text/html 6834 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/osnovnipopupitnici/
-  20230523203254 text/html 8205 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/osnovnipopupitnici/upitnici/
-  20230519021510 text/html 6830 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/potpopisna-anketa/
-  20230523203230 text/html 7124 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/potpopisna-anketa/upitniciuput/
-  20230519021525 text/html 6836 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/uputstvoimater/
-  20230523203321 text/html 7413 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/uputstvoimater/uputstva/
-  20220523064318 text/html 9244 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=0
-  20221006012726 text/html 8471 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=0%22
-  20220523064328 text/html 9247 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=1
-  20221227184137 text/html 10149 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=2
-  20220515084136 text/html 10583 https://popis2022.stat.gov.rs/5-vestisaopstenja/
-  20220619194748 text/html 7927 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/
-  20230523203026 text/html 6828 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/brosure/
-  20221203134827 text/html 7092 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/brosure/brosure/
-  20220719171224 text/html 6709 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/logo-i-slogan/
-  20220705155713 text/html 6799 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/logo-i-slogan/logomaterijali/
-  20230523203020 text/html 6844 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/
-  20221203132159 text/html 7246 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/jezici-nacionalne-manjine/
-  20221203133223 text/html 7068 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/posteri/
-  20230523203012 text/html 6838 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/videomaterijali/
-  20221203130558 text/html 7177 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/videomaterijali/video-materijali/
-  20220523221844 text/html 20457 https://popis2022.stat.gov.rs/5-vestisaopstenja/kliping/
-  20220523221831 text/html 9541 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/
-  20230322133349 text/html 10193 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/
-  20230607034858 text/html 9251 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/?a=0
-  20221227184142 text/html 10056 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/?a=0&s=0
-  20221107212237 text/html 9306 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/
-  20230604220729 text/html 8719 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/?a=0
-  20221227184137 text/html 9551 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/?a=0&s=0
-  20220912211431 text/html 7890 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/
-  20230604221157 text/html 8725 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?a=0
-  20221203130026 text/html 9639 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?a=0&s=0
-  20220916141245 text/html 8016 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?fbclid=IwAR35AbCVJrboQW_6Dm3yfyjjRUU3GZ1Lde2xlVOIj4zxqOP0EdaBI_SXROw
-  20221203124606 text/html 9370 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08112022brojevi/
-== links https://www.statistics.gr/en/2021-census-res-pop-results xls|xlsx|download|documentLibrary 60
-  HTTP 200 text/html;charset=UTF-8 133,720 bytes
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843  [Table Α01. 2021 Population Census. Resident population by sex and age groups]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx/fe0784cf-e357-639d-0e51-1f02e51c361e  [Table Α02. 2021 Population Census. Resident population by sex and citizenship]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A03_F_BI.xlsx/9dcf64e2-fabb-0dcc-b86a-aac1a9049ccc  [Table Α03. 2021 Population Census. Resident population by groups of citizenship and age gr]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A04_F_BI.xlsx/62bacd1a-04a1-eaa3-3e9f-6e077d621c45  [Table Α04. 2021 Population Census. Resident population by age groups and place of birth]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A05_F_BI.xlsx/96ddb9db-1ee0-b0fe-ba3f-0dec65395653  [Table Α05. 2021 Population Census. Resident population by sex and legal marital status]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A06_F_BI.xlsx/9ef0182e-47c5-8aff-939d-9ffb11391ffa  [Table Α06. Population Census. Private households and number of their members by size of ho]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A07_F_BI.xlsx/35f42a30-451e-c04c-a3ea-7e0a23263f7b  [Table Α07. 2021 Population Census. Private one-person households by sex and age groups]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A08_F_BI.xlsx/554735e7-3fc2-c974-c0db-283707ce31c9  [Table Α08. 2021 Population Census. Private households by citizenship of their members]
-  (8 links shown)
-== head https://library.cystat.gov.cy/ 
-  HTTP 403 text/html 1,233 bytes
-  403 - Forbidden: Access is denied. Server Error 403 - Forbidden: Access is denied. You do not have permission to view this directory or page using the credentials that you supplied.
-== links https://www.instat.gov.al/al/temat/censet/censusi-i-popullsis%C3%AB-dhe-banesave/ xls|pdf|censusi|2023 40
-  HTTP 404 text/html; charset=utf-8 18,931 bytes
-  404 Shqip Registration FAQ 0800 22 44 Free Toggle navigation Home Themes Figures Publications Documentation SDGs About us Shqip Registration FAQ 0800 22 44 Free 404 Error 404! Not Found. --> Database --> Quiz --> NSS --> Publications Contact Institute of Statistics - Tirana St. Vllazën Huta, Buildin
+== xlsrow https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Localitati_RPL2024.xlsx 8.3 . 30
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 541,766 bytes
+    r0:  | Cuprins
+    r1: 
+    r2:  | Recensământul Populați
+    r3: 
+    r4:  | 8.3 Populația pe sexe,
+    r5:  | persoane, %
+    r6:  | Cod statistic CUATM | Tip dezagregare | Regiuni de dezvoltare, | Total, persoane | din total, persoane, p |  | din total, pe sexe, în
+    r7:  |  |  |  |  | Masculin | Feminin | Masculin | Feminin
+    r8:  | A | A1 | B | 1 | 2 | 3 | 4 | 5
+    r9:  | RM | Republica Moldova | Total | 2409207 | 1137343 | 1271864 | 47.2081892506538 | 52.8
+    r10:  | 100000 | Raioane | Mun. Chișinău | 720128 | 333976 | 386152 | 46.3773107003199 | 53.6
+    r11:  | 101000 | Comune | or. Chișinău,  din car | 567038 | 261122 | 305916 | 46.0501765313789 | 53.9
+    r12:  | 110000 | Localitati | Sectorul Botanica | 144824 | 66049 | 78775 | 45.6063912058775 | 54.4
+    r13:  | 120000 | Localitati | Sectorul Buiucani | 100985 | 46602 | 54383 | 46.1474476407387 | 53.9
+    r14:  | 130000 | Localitati | Sectorul Centru | 87230 | 40519 | 46711 | 46.4507623524017 | 53.5
+    r15:  | 140000 | Localitati | Sectorul Ciocana | 105680 | 48961 | 56719 | 46.3294852384557 | 53.7
+    r16:  | 150000 | Localitati | Sectorul Rîşcani | 128319 | 58991 | 69328 | 45.9721475385563 | 54
+    r17:  | 111000 | Comune | or. Sîngera | 12368 | 5886 | 6482 | 47.5905562742561 | 52.4
+    r18:  | 111000 | Localitati | Sîngera | 8303 | 3999 | 4304 | 48.1633144646513 | 51.8
+    r19:  | 111001 | Localitati | Dobrogea | 2962 | 1384 | 1578 | 46.7251856853477 | 53.3
+    r20:  | 111002 | Localitati | Revaca | 1103 | 503 | 600 | 45.6029011786038 | 54.4
+    r21:  | 112000 | Comune | com. Băcioi | 11663 | 5453 | 6210 | 46.7546943325045 | 53.2
+    r22:  | 112000 | Localitati | Băcioi | 9334 | 4306 | 5028 | 46.1324191129205 | 53.9
+    r23:  | 112001 | Localitati | Brăila | 969 | 488 | 481 | 50.3611971104231 | 49.6
+    r24:  | 112002 | Localitati | Frumuşica | 653 | 310 | 343 | 47.4732006125574 | 52.5
+    r25:  | 112003 | Localitati | Străisteni | 707 | 349 | 358 | 49.3635077793494 | 50.6
+    r26:  | 121000 | Comune | or. Durleşti | 26308 | 12494 | 13814 | 47.491257412194 | 52.5
+    r27:  | 122000 | Comune | or. Vatra | 3391 | 1653 | 1738 | 48.7466823945739 | 51.3
+    r28:  | 123000 | Comune | Condriţa | 547 | 275 | 272 | 50.2742230347349 | 49.7
+    r29:  | 125000 | Comune | Ghidighici | 5240 | 2454 | 2786 | 46.8320610687023 | 53.2
+== xlsrow https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Localitati_RPL2024.xlsx 8.3 Briceni|G.g.uzia|B.l.i 12
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 541,766 bytes
+    r62:  | 300000 | Raioane | Mun. Bălți | 94546 | 42734 | 51812 | 45.1991623125251 | 54.8
+    r63:  | 301000 | Comune | Bălţi | 90954 | 41060 | 49894 | 45.1436990126877 | 54.9
+    r66:  | 1400000 | Raioane | Raionul Briceni | 46894 | 21806 | 25088 | 46.5006184160021 | 53.5
+    r67:  | 1401000 | Comune | or. Briceni | 5785 | 2587 | 3198 | 44.7191011235955 | 55.3
+    r119:  | 3412000 | Comune | Briceni | 437 | 189 | 248 | 43.2494279176201 | 56.8
+    r263:  | 4141000 | Comune | com. Zăbriceni | 1308 | 600 | 708 | 45.8715596330275 | 54.1
+    r264:  | 4141000 | Localitati | Zăbriceni | 690 | 311 | 379 | 45.0724637681159 | 54.9
+    r1170:  | 6414000 | Comune | Bulăieşti | 1067 | 533 | 534 | 49.9531396438613 | 50
+    r1937:  | 9600000 | Raioane | Unitatea Teritorială A | 103668 | 48290 | 55378 | 46.5813944515183 | 53.4
