@@ -67,7 +67,8 @@ def cmd_url(args: argparse.Namespace) -> int:
             log("  binary (PDF or zip); use probe_pdf / probe_xlsx")
             continue
         body = raw.decode(args.charset or "utf-8", errors="replace")
-        lines = text_of(body) if "<" in body[:2000] else body.splitlines()
+        lines = (text_of(body) if "<" in body[:2000] and not args.raw
+                 else body.splitlines())
         if needles:
             hits = [i for i, line in enumerate(lines)
                     if any(n in line.lower() for n in needles)]
@@ -287,6 +288,7 @@ def main() -> int:
     p.add_argument("--limit", type=int, default=40)
     p.add_argument("--timeout", type=int, default=90)
     p.add_argument("--charset", default=None)
+    p.add_argument("--raw", action="store_true", help="keep the markup")
     p.set_defaults(run=cmd_url)
 
     p = sub.add_parser("links")
