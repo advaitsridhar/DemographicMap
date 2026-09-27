@@ -201,12 +201,18 @@ def successors(codes: list[str], start: str, end: str) -> dict[str, str]:
         for old, new in events[when]:
             forward[old].add(new)
             backward[new].add(old)
+        # A kommune that kept its number while others merged into it is not
+        # listed itself, as Stavanger (1103) when Finnøy and Rennesøy joined
+        # it in 2020: its number is a new code held before the change.
+        kept = {new for new in backward if new not in forward and new in current.values()}
         for origin, code in list(current.items()):
             if code not in forward:
+                if code in kept:
+                    del current[origin]
                 continue
             news = forward[code]
             new = next(iter(news))
-            if len(news) == 1 and len(backward[new]) == 1:
+            if len(news) == 1 and len(backward[new]) == 1 and new not in kept:
                 current[origin] = new
             else:
                 del current[origin]
@@ -247,7 +253,10 @@ def main() -> int:
     # Church.
     meta = {v["code"]: v for v in request_json(f"{SSB}/07459")["variables"]}
     now = int(meta["Tid"]["values"][-1])
-    today = successors(kommuner, f"{VINTAGE}-01-02", f"{now}-01-01")
+    # KLASS leaves out changes on the end date itself: the day after
+    # 1 January gives the division of 1 January of that year, and 31 December
+    # the division KOSTRA counts a year's membership in.
+    today = successors(kommuner, f"{VINTAGE}-01-02", f"{now}-01-02")
     now_people, _ = ages_by_region(sorted(set(today.values())), now)
     kostra_years = [int(y) for y in
                     {v["code"]: v for v in request_json(f"{SSB}/12026")["variables"]}
@@ -257,7 +266,7 @@ def main() -> int:
     for year in sorted(kostra_years, reverse=True):
         if year <= VINTAGE:
             break
-        then = successors(kommuner, f"{VINTAGE}-01-02", f"{year}-01-01")
+        then = successors(kommuner, f"{VINTAGE}-01-02", f"{year}-12-31")
         counts = membership(sorted(set(then.values())), year)
         if sum(c.get("KOSmedltroslivs0000", 0) for c in counts.values()) > 0:
             church_now = {c: counts.get(code, {}) for c, code in then.items()}
@@ -329,7 +338,9 @@ def main() -> int:
         # latest years leave that figure at 0 for the kommuner too, so a fylke
         # that still exists takes the latest year that has it.
         faith, year = None, None
-        for year in ([FYLKE_YEAR] if f in SPLIT_FYLKER else range(latest, 2019, -1)):
+        # A fylke of 2020-2023 is the same territory in each of those years.
+        for year in (range(FYLKE_YEAR, 2019, -1) if f in SPLIT_FYLKER
+                     else range(latest, 2019, -1)):
             if year not in structure:
                 structure[year] = [c["code"] for c in request_json(
                     KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]

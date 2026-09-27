@@ -111,9 +111,11 @@ class Norway(unittest.TestCase):
             {"oldCode": "3001", "newCode": "3101", "changeOccurred": "2024-01-01"},
             {"oldCode": "0722", "newCode": "3811", "changeOccurred": "2018-01-01"},
             {"oldCode": "0723", "newCode": "3811", "changeOccurred": "2018-01-01"},
+            {"oldCode": "1141", "newCode": "1103", "changeOccurred": "2020-01-01"},
         ]}
         with mock.patch.object(norway, "request_json", return_value=changes):
-            out = norway.successors(["0101", "0722", "0723", "0301"], "2017-01-02", "2026-01-01")
+            out = norway.successors(["0101", "0722", "0723", "0301", "1103", "1141"],
+                                    "2017-01-02", "2026-01-01")
         self.assertEqual(out, {"0101": "3101", "0301": "0301"})
 
     def test_no_members_outside_the_church_is_not_a_count_of_none(self):
