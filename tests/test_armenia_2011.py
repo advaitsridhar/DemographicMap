@@ -36,6 +36,12 @@ class Headings(unittest.TestCase):
                                "Jehovah's Witnesses", "Other religion", "No religion",
                                "Not stated", "Not stated"])
 
+    def test_not_having_a_religion_is_not_having_one(self):
+        headings = ["բնակչություն", "կրոնականդավանանքունեցողներ", "հայառաքելական",
+                    "կրոնականդավանանքչունեցողներ", "կրոնականդավանանքըչնշածներ"]
+        got = a.classify(headings, a.RELIGION, "religion")
+        self.assertEqual(got, [True, None, "Armenian Apostolic", "No religion", "Not stated"])
+
     def test_an_unknown_heading_stops_the_run(self):
         with self.assertRaises(SystemExit):
             a.classify(["ընդամենը", "զզզզ"], a.LANGUAGE, "language")
