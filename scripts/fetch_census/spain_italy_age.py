@@ -90,29 +90,32 @@ def spain() -> tuple[dict[str, dict[str, Any]], int]:
     # sex, age (None for all ages), province code, date -> value
     cells: dict[tuple[str, int | None, str, str], float] = {}
     dates: set[str] = set()
+    skipped: Counter = Counter()
     for series in payload:
         sex = meta(series, "Sexo").get("Nombre")
         province = (meta(series, "Provincias").get("Codigo")
                     or ("00" if meta(series, "Total Nacional") or
                         "Total Nacional" in series.get("Nombre", "") else None))
-        simple = meta(series, "Valores simples de edad")
-        if simple:
-            code = simple.get("Codigo") or ""
-            match = re.match(r"^Y(\d+)$", code) or re.match(r"^(\d+)", simple.get("Nombre", ""))
-            if not match:
-                raise SystemExit(f"spain_italy_age: an age INE calls {simple}")
-            age: int | None = int(match.group(1))
-        elif meta(series, "Totales de edad"):
-            # The open top class ("100 y más años") is filed with the totals,
-            # beside "Todas las edades"; read as a total it overwrote it.
-            label = meta(series, "Totales de edad").get("Nombre", "")
-            if label == "Todas las edades":
-                age = None
-            elif (top := re.match(r"^(\d+) y más", label)):
-                age = int(top.group(1))
-            else:
-                continue
+        age_items = [item for item in series.get("MetaData") or []
+                     if "edad" in str(item.get("T3_Variable", "")).lower()]
+        if len(age_items) != 1:
+            skipped[str([i.get("T3_Variable") for i in series.get("MetaData") or []])] += 1
+            continue
+        item = age_items[0]
+        label = str(item.get("Nombre", "")).strip()
+        code = str(item.get("Codigo") or "")
+        # The open top class is filed with the totals, beside "Todas las
+        # edades", and INE has written it more than one way ("100 y más
+        # años", "100 años y más"); read as a total it overwrote the total,
+        # and skipped it left each province short by its centenarians.
+        if label == "Todas las edades":
+            age: int | None = None
+        elif (top := re.match(r"^(\d+)\s*(?:años?\s*)?y\s*m[aá]s", label)):
+            age = int(top.group(1))
+        elif (one := re.match(r"^Y(\d+)$", code) or re.match(r"^(\d+)\s*años?$", label)):
+            age = int(one.group(1))
         else:
+            skipped[f"{item.get('T3_Variable')}: {label} ({code})"] += 1
             continue
         if sex not in ("Total", "Hombres", "Mujeres") or province is None:
             continue
@@ -122,6 +125,8 @@ def spain() -> tuple[dict[str, dict[str, Any]], int]:
                 continue
             dates.add(date)
             cells[(sex, age, province, date)] = float(point["Valor"])
+    if skipped:
+        log(f"  series not read as an age: {dict(skipped.most_common(8))}")
     januaries = sorted(d for d in dates if d[5:10] == "01-01")
     if not januaries:
         raise SystemExit(f"spain_italy_age: INE table {INE_TABLE} has no 1 January among {dates}")
@@ -144,7 +149,9 @@ def spain() -> tuple[dict[str, dict[str, Any]], int]:
             whole = cells.get((sex, None, code, date))
             if whole is None or sum(ages.values()) != whole:
                 raise SystemExit(f"spain_italy_age: {CANARY[code]} {sex}: single years make "
-                                 f"{sum(ages.values()):,.0f} against {whole}")
+                                 f"{sum(ages.values()):,.0f} against {whole} (ages "
+                                 f"{min(ages)}-{max(ages)}, {len(ages)} of them; series "
+                                 f"not read: {dict(skipped.most_common(8))})")
             entry[key] = whole
             entry[f"{key}_ages"] = ages
         total = cells.get(("Total", None, code, date))

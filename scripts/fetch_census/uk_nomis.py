@@ -292,10 +292,12 @@ def main() -> int:
         name = eth.get("name") or rel.get("name") or code
         total = eth.get("total") or rel.get("total")
         merged = MERGED_AUTHORITIES.get(code)
-        eth_rows = shares(eth.get("counts", {}), total=eth.get("total"))
-        rel_rows = shares(rel.get("counts", {}), total=rel.get("total"))
-        lang_rows = shares(language_counts(lang.get("counts", {}), code),
-                           total=lang.get("total"))
+        eth_rows = to_tenths(shares(eth.get("counts", {}), total=eth.get("total")),
+                             eth.get("total"))
+        rel_rows = to_tenths(shares(rel.get("counts", {}), total=rel.get("total")),
+                             rel.get("total"))
+        lang_rows = to_tenths(shares(language_counts(lang.get("counts", {}), code),
+                                     total=lang.get("total")), lang.get("total"))
         records.append(record(
             f"GBR-{code}", name, level=level, parent="GBR",
             # A merged row is not a published unit, so it does not claim a
@@ -323,6 +325,33 @@ def main() -> int:
     log(f"  {len(records)} records")
     log(f"  {len(records)} {'nation' if level == 'admin1' else 'local authority'} records")
     return 0
+
+
+def to_tenths(rows: list[dict[str, Any]], total: float | None) -> list[dict[str, Any]]:
+    """Re-round shares to one decimal by largest remainder.
+
+    TS024 has some ninety languages, and in most districts sixty or seventy of
+    them are each well under 0.05% -- a dozen Latvian speakers in Hartlepool.
+    Rounded one by one they all print as 0.0, and the column added to 99.2 to
+    99.5 where the counts add to the district's total exactly: 96 council
+    areas drew a "not accounted for" sliver the census does not have.
+
+    Largest remainder keeps every share within a tenth of its exact value and
+    makes the tenths add to what the counts add to -- 100.0 when they are the
+    whole universe, and a real shortfall, if a table ever had one, is kept
+    (the target is the counts' own sum, not 100). Counts are untouched.
+    """
+    if not rows or not total:
+        return rows
+    exact = [1000.0 * row["count"] / total for row in rows]
+    floors = [int(e) for e in exact]
+    target = round(1000.0 * sum(row["count"] for row in rows) / total)
+    order = sorted(range(len(rows)), key=lambda i: (-(exact[i] - floors[i]), rows[i]["group"]))
+    for i in order[:max(0, target - sum(floors))]:
+        floors[i] += 1
+    out = [dict(row, pct=floors[i] / 10) for i, row in enumerate(rows)]
+    out.sort(key=lambda r: (-r["pct"], r["group"]))
+    return out
 
 
 def check_totals(tables: dict[str, dict[str, dict[str, Any]]]) -> None:
