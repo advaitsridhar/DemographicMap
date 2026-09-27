@@ -184,6 +184,55 @@ class AnEncyclopaediaNeverReplacesACount(unittest.TestCase):
         self.assertEqual(e["population"], newer)
 
 
+class ASurveyNeverReplacesACount(unittest.TestCase):
+    """Survey estimates fill compositions no census or register has written."""
+
+    def setUp(self):
+        import build_entities
+        self.b = build_entities
+        self.census = [{"group": "Catholic", "pct": 80.0}, {"group": "No religion", "pct": 20.0}]
+        self.survey = [{"group": "Catholic", "pct": 60.0}, {"group": "No religion", "pct": 40.0}]
+
+    def counted(self):
+        e = {"sources": []}
+        self.b.merge_adapter(e, {"_source": "slovenia_census.json", "religion": self.census,
+                                 "religion_year": 2002,
+                                 "religion_note": "2002 census"})
+        return e
+
+    def test_a_newer_survey_does_not_replace_an_older_count(self):
+        e = self.counted()
+        self.b.merge_adapter(e, {"_source": "ess_survey.json", "religion": self.survey,
+                                 "religion_year": 2023,
+                                 "religion_basis": "survey estimate: adults 15+",
+                                 "religion_note": "ESS rounds 9-11"})
+        self.assertEqual(e["religion"], self.census)
+        self.assertEqual(e["religion_note"], "2002 census")
+        self.assertNotIn("religion_basis", e)
+
+    def test_a_survey_fills_a_gap(self):
+        e = {"religion": {"status": "not_collected", "note": "not asked"}, "sources": []}
+        self.b.merge_adapter(e, {"_source": "ess_survey.json", "religion": self.survey,
+                                 "religion_year": 2023})
+        self.assertEqual(e["religion"], self.survey)
+
+    def test_an_older_count_replaces_a_survey(self):
+        e = {"religion": {"status": "not_available"}, "sources": []}
+        self.b.merge_adapter(e, {"_source": "ess_survey.json", "religion": self.survey,
+                                 "religion_year": 2023})
+        self.b.merge_adapter(e, {"_source": "slovenia_census.json", "religion": self.census,
+                                 "religion_year": 2002})
+        self.assertEqual(e["religion"], self.census)
+
+    def test_between_surveys_the_newer_stands(self):
+        e = {"religion": {"status": "not_available"}, "sources": []}
+        self.b.merge_adapter(e, {"_source": "ess_survey.json", "religion": self.survey,
+                                 "religion_year": 2023})
+        self.b.merge_adapter(e, {"_source": "evs_survey.json", "religion": self.census,
+                                 "religion_year": 2017})
+        self.assertEqual(e["religion"], self.survey)
+
+
 class TwoRowsOnOnePolygon(unittest.TestCase):
     """The build refuses two places on one shape, not two sources on one place."""
 

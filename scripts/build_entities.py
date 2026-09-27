@@ -1865,6 +1865,19 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "haiti_cod_ps_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
+# A survey's share is an estimate from a sample, and a census's or a
+# register's is a count of everyone: where both describe a unit, the count
+# stands, however much older it is. Survey readers written for the fields a
+# census does not ask -- Europe's religion and home language -- name their
+# output ``*_survey.json``, and their compositions only fill what no count
+# has written. Between two surveys the newer stands, as between two counts.
+SURVEY_FIELDS = frozenset({"religion", "language", "ethnicity"})
+
+
+def is_survey(filename: str | None) -> bool:
+    """A file of survey estimates, which fills compositions and replaces none."""
+    return bool(filename) and filename.endswith("_survey.json")
+
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
     """The year a field's value is for: inside a figure, beside a composition."""
@@ -1913,16 +1926,22 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     # old province's shape, against the 2019 census's 1,908,352. A newer figure
     # can be a different unit's.
     encyclopaedic = row.get("_source") in FILL_ONLY
+    survey = is_survey(row.get("_source"))
     origin = entity.get("_from") or {}
     dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
-             and (origin.get(key) in FILL_ONLY) == encyclopaedic}
+             and (origin.get(key) in FILL_ONLY) == encyclopaedic
+             and is_survey(origin.get(key)) == survey}
     newer = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs > ours}
     older = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
             if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
+    # A survey's estimate stands behind any count already written.
+    held |= {key for key in SURVEY_FIELDS
+             if survey and not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and not is_survey(origin.get(key))}
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).
     for key in held:
