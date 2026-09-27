@@ -1,6 +1,7 @@
-  País Vasco/Euskadi: Spanish 71.9, Basque 13.1, Basque and Spanish 11.8, Other language 3.3
-  Alava: Spanish 85.0, Basque and Spanish 7.3, Other language 4.9, Basque 2.8
-  Bizkaia: Spanish 78.7, Basque and Spanish 10.1, Basque 8.4, Other language 2.8
-  Gipuzkoa: Spanish 55.0, Basque 25.1, Basque and Spanish 16.5, Other language 3.3
-  wrote data/processed/basque_language.json (7 kB)
-  4 records
+== https://www.ige.gal/igebdt/esqv.jsp?c=0206004&paxina=001&idioma=gl
+  23,427 bytes; starts b'\r\n\r\n\r\n\r\n'
+  550 lines, 0 with ['cod=', 'cod=', 'lingua', 'lingua', 'fala']
+== https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl
+  retry 1/2 after 2s :: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl :: HTTP Error 500: Error Interno del Servidor
+  retry 2/2 after 4s :: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl :: HTTP Error 500: Error Interno del Servidor
+  RuntimeError: GET failed after 2 retries: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl
