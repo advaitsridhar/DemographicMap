@@ -1,13 +1,19 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-  80 municipalities
-  country: 1,836,713 residents, median age 41.1 from single years
-  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
-  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
-  the merged Kichevo: 77 settlements
-  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
-    Vraneshtica: its 2002 settlements add to its 2002 count, 1,322
-    Drugovo: its 2002 settlements add to its 2002 count, 3,249
-    Zajas: its 2002 settlements add to its 2002 count, 11,605
-    Kichevo: its 2002 settlements add to its 2002 count, 30,138
-north_macedonia: 2002 settlements of Oslomej: the parts add to 10,425 against 10,420
+liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 294, in main
+    records = build(args.year)
+              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 239, in build
+    check_sum((totals[g] for g in GEMEINDEN), national, "Gemeinden against Liechtenstein")
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/central_ages.py", line 117, in check_sum
+    summed = sum(parts)
+             ^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 239, in <genexpr>
+    check_sum((totals[g] for g in GEMEINDEN), national, "Gemeinden against Liechtenstein")
+               ~~~~~~^^^
+KeyError: 'Vaduz'
