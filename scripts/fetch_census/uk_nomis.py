@@ -38,9 +38,13 @@ from ._shared import (
 
 YEAR = 2021        # England and Wales; Scotland ran 2022 and has its own adapter
 BASE = "https://www.nomisweb.co.uk/api/v01/dataset"
-DATASETS = {
+DATASETS: dict[str, tuple[str, str, str | None]] = {
     "ethnicity": ("NM_2041_1", "TS021 Ethnic group", "c2021_eth_20"),
     "religion": ("NM_2049_1", "TS030 Religion", "c2021_religion_10"),
+    # The category dimension's name is read off the answer (None), not
+    # written here: it is the one key of each observation that is a census
+    # classification.
+    "language": ("NM_2043_1", "TS024 Main language (detailed)", None),
 }
 # TYPE154 = 2021 local authority districts; TYPE499 = regions; TYPE480 = countries.
 DEFAULT_GEOGRAPHY = "TYPE154"
@@ -61,6 +65,11 @@ DEFAULT_GEOGRAPHY = "TYPE154"
 LEVELS: dict[str, tuple[str, str]] = {
     "district": ("TYPE154", "uk_lad.json"),
     "county": ("TYPE155", "uk_county.json"),
+    # England and Wales themselves, the map's first level. Asked for rather
+    # than rolled up: the Isles of Scilly are drawn under the United Kingdom
+    # rather than under England, so England's second-level shapes are one
+    # short of the country, and the office publishes the country's figure.
+    "nation": ("TYPE499", "uk_nation.json"),
 }
 
 
@@ -121,7 +130,7 @@ def reconcile(table: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return table
 
 
-def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, Any]]:
+def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dict[str, Any]]:
     # No `select=`: that parameter switches Nomis to a flat column format and
     # empties the nested "obs" list this parser reads.  Leaving the category
     # dimension unspecified returns every category, totals included, which is
@@ -130,6 +139,13 @@ def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, 
     payload = http_json(url, timeout=300)
     out: dict[str, dict[str, Any]] = {}
     for obs in payload.get("obs", []):
+        if cell is None:
+            cells = [k for k in obs if k.startswith("c2021")]
+            if len(cells) != 1:
+                raise SystemExit(f"uk_nomis: {dataset}: no single census classification "
+                                 f"among {sorted(obs)}")
+            cell = cells[0]
+            log(f"  {dataset}: categories are {cell}")
         code = obs["geography"]["geogcode"]
         name = obs["geography"]["description"]
         label = obs[cell]["description"]
@@ -257,19 +273,27 @@ def main() -> int:
         log(f"uk_nomis: {label} ({dataset})")
         tables[field] = reconcile(fetch_table(dataset, cell, geography))
 
-    codes = sorted(set().union(*(set(t) for t in tables.values())) if tables else set())
+    # Nomis lists Scotland and Northern Ireland among the countries and has
+    # nothing for them: the 2021 census it serves is England and Wales'.
+    codes = sorted(c for c in set().union(*(set(t) for t in tables.values()))
+                   if any(tables[f].get(c, {}).get("counts") for f in tables))
+    check_totals(tables)
     src = f"ONS Census {YEAR} (England and Wales) via Nomis"
+    level = "admin1" if args.level == "nation" else "admin2"
     records: list[dict[str, Any]] = []
     for code in codes:
         eth = tables["ethnicity"].get(code, {})
         rel = tables["religion"].get(code, {})
+        lang = tables["language"].get(code, {})
         name = eth.get("name") or rel.get("name") or code
         total = eth.get("total") or rel.get("total")
         merged = MERGED_AUTHORITIES.get(code)
         eth_rows = shares(eth.get("counts", {}), total=eth.get("total"))
         rel_rows = shares(rel.get("counts", {}), total=rel.get("total"))
+        lang_rows = shares(language_counts(lang.get("counts", {}), code),
+                           total=lang.get("total"))
         records.append(record(
-            f"GBR-{code}", name, level="admin2", parent="GBR",
+            f"GBR-{code}", name, level=level, parent="GBR",
             # A merged row is not a published unit, so it does not claim a
             # single ONS code -- it names the codes it was added up from.
             codes={"ons_codes": list(merged[1])} if merged else {"ons_code": code},
@@ -281,14 +305,95 @@ def main() -> int:
             religion_year=dated(rel_rows, YEAR),
             religion_note=(f"ONS {YEAR} religion question (TS030) is voluntary; 'Not answered' is "
                            "reported as its own category rather than excluded."),
-            sources=[{"field": "ethnicity/religion", "name": src,
+            language=lang_rows or gap(NOT_AVAILABLE),
+            language_year=dated(lang_rows, YEAR),
+            language_note=language_note(code),
+            sources=[{"field": "ethnicity/religion/language", "name": src,
                       "url": f"{BASE}/{DATASETS['ethnicity'][0]}.data.json",
                       "license": "Open Government Licence v3.0"}],
         ))
+    unplaced = unplaced_languages(records)
+    if unplaced:
+        log(f"  language labels the group tree does not place: {unplaced}")
     write_json(args.out or PROCESSED / filename, records)
     log(f"  {len(records)} records")
-    log(f"  {len(records)} local authority records")
+    log(f"  {len(records)} {'nation' if level == 'admin1' else 'local authority'} records")
     return 0
+
+
+def check_totals(tables: dict[str, dict[str, dict[str, Any]]]) -> None:
+    """Every composition's categories must make its published total.
+
+    Ethnicity and language are read at their leaves, religion at its one
+    level; a set that misses or doubles a group stops the run here rather
+    than reaching the map as 93% or 200% of an area.
+    """
+    for field, table in tables.items():
+        for code, entry in table.items():
+            total, made = entry.get("total"), sum(entry.get("counts", {}).values())
+            if total and abs(made - total) > 0.005 * total:
+                raise SystemExit(f"uk_nomis: {entry['name']} ({code}) {field}: categories make "
+                                 f"{made:,.0f} against the published {total:,.0f}")
+
+
+# TS024's leaves under the names the rest of this map uses. "Other European
+# language (EU): Polish" is Polish; a residual inside a family ("Any other
+# South Asian language") keeps its family, which is all it says. Several
+# residuals of one kind become one label and their counts are added.
+LANGUAGE_RESPELLINGS = {
+    "Gaelic (Irish)": "Irish",
+    "Gaelic (Scottish)": "Scottish Gaelic",
+    "Gaelic (Not otherwise specified)": "Gaelic (not otherwise specified)",
+    "Nepalese": "Nepali",
+    "English-based Caribbean Creole": "Caribbean Creole",
+    "All other Chinese": "Other Chinese",
+    "Any other European language (EU)": "Other European language",
+    "Any other Eastern European language (non EU)": "Other European language",
+    "Northern European language (non EU)": "Other European language",
+    "Any other Nigerian language": "Other African language",
+    "Any other West African language": "Other African language",
+}
+
+
+def language_label(label: str, code: str) -> str:
+    if label.startswith("English (English or Welsh in Wales)"):
+        # In Wales the question offered "English or Welsh" as one answer, so
+        # the two are not separable there; in England it is English.
+        return "English or Welsh" if code.startswith("W") else "English"
+    if label.startswith("Welsh or Cymraeg"):
+        return "Welsh"
+    detail = label.split(":", 1)[1].strip() if ":" in label else label.strip()
+    detail = LANGUAGE_RESPELLINGS.get(detail, detail)
+    if detail.startswith("Any other ") or detail.startswith("All other "):
+        detail = "Other " + detail.split(" ", 2)[2]
+    return detail
+
+
+def language_counts(counts: dict[str, float], code: str) -> dict[str, float]:
+    out: dict[str, float] = {}
+    for label, value in counts.items():
+        key = language_label(label, code)
+        out[key] = out.get(key, 0.0) + value
+    return out
+
+
+def language_note(code: str) -> str:
+    note = (f"ONS {YEAR} main language (TS024, detailed), of usual residents aged 3 and "
+            "over: the one language each person names as their main one.")
+    if code.startswith("W"):
+        note += (" In Wales the answer 'English or Welsh' was one box, so the census does "
+                 "not separate the two there; Welsh ability is a separate question.")
+    return note
+
+
+def unplaced_languages(records: list[dict[str, Any]]) -> list[str]:
+    try:
+        import group_tree                              # scripts/ is on the path
+    except Exception:                                  # noqa: BLE001 -- a check only
+        return []
+    labels = {g["group"] for r in records if isinstance(r.get("language"), list)
+              for g in r["language"]}
+    return sorted(label for label in labels if group_tree.parent_of("language", label) is None)
 
 
 if __name__ == "__main__":
