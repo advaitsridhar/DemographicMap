@@ -901,7 +901,29 @@ def svk9() -> None:
         log(f"   count: {count[:100]}")
 
 
+def hun10() -> None:
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    for lang in ("en", "hu"):
+        page = text(fetch(f"{base}/index/{version}/{lang}")[2])
+        try:
+            data = json.loads(page)
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {lang}: {exc}: {page[:300]}")
+            continue
+        flows = data.get("dataflows", [])
+        log(f"\n## index {version}/{lang}: keys {list(data)[:10]}, {len(flows)} dataflows")
+        for flow in flows:
+            label = json.dumps(flow, ensure_ascii=False)
+            if re.search(r"(?i)district|járás|religi|vallás|nation|nemzetis|tongue|anyanyelv|age|kor\b|sex|nem\b",
+                         label):
+                log(f"   - {label[:400]}")
+        if flows:
+            log(f"   first: {json.dumps(flows[0], ensure_ascii=False)[:600]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun10": hun10,
     "hun9": hun9, "svk9": svk9,
     "hun8": hun8, "svk8": svk8, "nld8": nld8,
     "hun7": hun7, "svk7": svk7, "nld7": nld7,
