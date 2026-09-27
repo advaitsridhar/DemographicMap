@@ -9348,6 +9348,65 @@
     "population_note": "Registered residents on 31 December 2025. SCB perturbs every published cell slightly (the cell-key method), so a count can differ by a few people from the register itself."
   },
   {
+    "id": "SWE-SCB-1480",
+    "level": "admin2",
+    "name": "Göteborg",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 613274,
+      "year": 2025,
+      "source": "Statistics Sweden (SCB), BefolkningCKM"
+    },
+    "median_age": {
+      "value": 37.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Statistics Sweden (SCB), BefolkningCKM"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Statistics Sweden (SCB), BefolkningCKM"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Sweden (SCB), BefolkningCKM",
+        "url": "https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkningCKM/",
+        "year": 2025
+      }
+    ],
+    "country": "SWE",
+    "parent_name": "Västra Götalands län",
+    "codes": {
+      "scb": "1480"
+    },
+    "match_by": "shape_id",
+    "shape_id": "70781695B76264906816615",
+    "aliases": [
+      "Gothenburg"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Sweden (SCB), BefolkningCKM's count of residents by single year of age on 31 December 2025; the office tabulates the ages, not this median. SCB perturbs every published cell slightly (the cell-key method), so a count can differ by a few people from the register itself.",
+    "sex_ratio_note": "Males per 100 females among residents on 31 December 2025 (307,936 males, 305,368 females).",
+    "population_note": "Registered residents on 31 December 2025. SCB perturbs every published cell slightly (the cell-key method), so a count can differ by a few people from the register itself."
+  },
+  {
     "id": "SWE-SCB-1481",
     "level": "admin2",
     "name": "Mölndal",
