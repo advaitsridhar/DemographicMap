@@ -31,6 +31,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import unicodedata
 from collections import Counter
 from typing import Any
@@ -262,8 +263,15 @@ def lopsided_settlement(code: str, name: str, year: int) -> str:
     """The settlement that carries a municipality's excess of one sex, in SiStat's count."""
     v = meta(SETTLEMENTS)
     place, when, what = code_like(v, "SETTLEMENT"), code_like(v, "YEAR"), code_like(v, "MEASURE")
-    texts = dict(zip(v[what]["valueTexts"], v[what]["values"]))
-    sexes = {"men": texts["Population - Men"], "women": texts["Population - Women"]}
+    sexes: dict[str, str] = {}
+    for value, label in zip(v[what]["values"], v[what]["valueTexts"]):
+        if re.search(r"(?i)\bwomen\b|\bfemales?\b", label):
+            sexes.setdefault("women", value)
+        elif re.search(r"(?i)\bmen\b|\bmales?\b", label):
+            sexes.setdefault("men", value)
+    if set(sexes) != {"men", "women"}:
+        raise SystemExit(f"slovenia: {SETTLEMENTS} names no measure for men and women: "
+                         f"{v[what]['valueTexts']}")
     wanted = [c for c in v[place]["values"] if len(c) == 6 and c.startswith(code)]
     latest = str(max(int(y) for y in v[when]["values"] if int(y) <= year + 1))
     counts: dict[str, dict[str, float]] = {}
