@@ -1,32 +1,84 @@
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1502P21.px 
-  HTTP 200 application/json; charset=utf-8 615 bytes
-  title: Total resident population of the Republic of North Macedonia by age and sex, by settlement, Census 2021
-  var Населено место (Settlement): 0 values: 
-  var Возрасна група (Age group): 19 values: 999=Age group - TOTAL, 0=0-4, 1=5-9, 2=10-14, 3=15-19, 4=20-24, 5=25-29, 6=30-34, 7=35-39, 8=40-44, 9=45-49, 10=50-54
-  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Male, 2=Female
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1503P21.px 
-  HTTP 200 application/json; charset=utf-8 541 bytes
-  title: Total resident population of the Republic of North Macedonia by ethnic affiliation, by settlement, Census 2021
-  var Населено место (Settlement): 0 values: 
-  var Етничка припадност (Ethnic affiliation): 12 values: 0=Ethnic affiliation - TOTAL, 1=Macedonians, 3=Albanians, 6=Turks, 5=Roma, 4=Vlachs, 27=Serbs, 10=Bosniaks, 37=Other, 38=Undeclared, 99=Unknown, 88=Persons for whom data are taken from administrative sources
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px 
-  HTTP 200 application/json; charset=utf-8 551 bytes
-  title: Population of Republic of Macedonia by ethnic affiliation, by settlements, according to the population censuses 1948, 1963, 1961, 1971, 1981, 1991, 1994 and 2002
-  var Settlement / Municipality in year of census/Year of Census (Settlement / Municipality in year of census/Year of Census): 0 values: 
-  var Ethnic affiliation (Ethnic affiliation): 9 values: 0=Total, 1=Macedonians, 2=Albanians, 3=Turks, 4=Rhoma, 5=Vlachs, 6=Serbs, 7=Bosniaks, 8=Others
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisOpstini/ 
-  HTTP 200 application/json; charset=utf-8 1,750 bytes
-  t 01Popis_op_02_VkNasDomSt_ang.px  Total population, households and dwellings in the Republic of Macedonia, Census 2002
-  t 02Popis_op_02_VkNasPoVozrGrPol_ang.px  Total population of the Republic of Macedonia according to five-years age groups, by sex, Census 2002
-  t 03Popis_op_02_VkNasPoNacPr_ang.px  Total population according the ethnic affiliation, Census 2002
-  t 04Popis_op_02_VkNasNaVozr10-PolPism_ang.px  Total population at 10 years of age and over according to sex and literacy, Census 2002
-  t 05Popis_op_02_VkNasNaVozr15-SkolPod_ang.px  Total population aged 15 and over, according to the educational attainment, Census 2002
-  t 06Popis_op_02_VkNasNaVozr15-SporAkt_ang.px  Total population in the country at 15 years of age and more, according to the activity, Census 2002
-  t 07Popis_op_02_IndDomPrBrCl_ang.px  Individual households and average number of the household members, Census 2002
-  t 08Popis_op_02_IndDomTipGolSos_ang.px  Individual households according to the type, size and composition, Census 2002
-  t 09Popis_op_02_VidZivBrPovrStIndDom_ang.px  Type of living quarters, number and floor surface of dwellings, number of individual households and average floor surface by member of individual households, Census 2002
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1001P21.px 
-  HTTP 200 application/json; charset=utf-8 1,894 bytes
-  title: Total resident population, households and dwellings in the Republic of North Macedonia, by municipalities, Census 2021
-  var Општина (Municipality): 82 values: 0000=Republic of the North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
-  var Мерки (Measures): 3 values: 0=Population, 1=Households, 2=Dwellings
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom5_tab3_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom5_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom5_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom5_tab2_VPN2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
+== get https://rosstat.gov.ru/storage/mediabank/Tom5_tab3_VPN-2020.xlsx
+  via https://web.archive.org/web/20260305075036id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab3_VPN-2020.xlsx
+  834,950 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00{ '
+  https://rosstat.gov.ru/storage/mediabank/Tom5_tab3_VPN-2020.xlsx: 88 sheets: Российская Федерация  | Белгородская область | Брянская область | Владимирская область | Воронежская область | Ивановская область | Калужская область | Костромская область | Курская область | Липецкая область | Московская область | Орловская область | Рязанская область | Смоленская область | Тамбовская область | Тверская область | Тульская область | Ярославская область | г. Москва | Республика Карелия  | Республика Коми | Архангельская область | Архангельская область без АО | Ненецкий автономный округ | Вологодская область | Калининградская область | Ленинградская область | Мурманская область | Новгородская область | Псковская область | г. Санкт-Петербург | Республика Адыгея | Республика Калмыкия | Республика Крым | Краснодарский край | Астраханская область | Волгоградская область | Ростовская область | г. Севастополь | Республика Дагестан | Республика Ингушетия | Кабардино-Балкарская Республика | Карачаево-Черкесская Республика | РСО-Алания | Чеченская Республика | Ставропольский край | Республика Башкортостан | Республика Марий Эл | Республика Мордовия | Республика Татарстан | Удмуртская Республика | Чувашская Республика | Пермский край | Кировская область | Нижегородская область | Оренбургская область | Пензенская область | Самарская область | Саратовская область | Ульяновская область | Курганская область | Свердловская область | Тюменская область | Тюменская область без АО | ХМАО | ЯНАО | Челябинская область | Республика Алтай | Республика Тыва | Республика Хакасия | Алтайский край | Красноярский край | Иркутская область | Кемеровская область-Кузбасс | Новосибирская область | Омская область | Томская область | Республика Бурятия | Республика Саха (Якутия) | Забайкальский край
+  -- sheet 'Российская Федерация ': 205 rows x 10 cols
+    r0: 3. НАСЕЛЕНИЕ ПО НАЦИОНАЛЬНОЙ П |  |  |  |  |  |  |  |  | 
+    r1: И ЕГО ИСПОЛЬЗОВАНИЮ |  |  |  |  |  |  |  |  | 
+    r2: Российская Федерация |  |  |  |  |  |  |  |  | 
+    r3:  |  |  |  |  |  |  |  |  | 
+    r4:  | Городское и сельское население |  |  | Городское население |  |  | Сельское население |  | 
+    r5:  | Численность лиц соответствующе | Указавшие владение русским язы | из них используют его в повсед | Численность лиц соответствующе | Указавшие владение русским язы | из них используют его в повсед | Численность лиц соответствующе | Указавшие владение русским язы | из них используют его в повсед
+    r6: Указавшие национальную принадл | 130587364 | 128375188 | 126416105 | 94706676 | 93033931 | 92491137 | 35880688 | 35341257 | 33924968
+    r7: Абазины | 41793 | 40255 | 38295 | 15321 | 14675 | 14450 | 26472 | 25580 | 23845
+    r8: Абхазы | 8177 | 7809 | 7749 | 6788 | 6435 | 6391 | 1389 | 1374 | 1358
+    r9: Аварцы | 1012074 | 873926 | 710428 | 384620 | 315982 | 305998 | 627454 | 557944 | 404430
+    r10: Андийцы | 16758 | 14710 | 9732 | 1803 | 1578 | 1532 | 14955 | 13132 | 8200
+    r11: Арчинцы | 1693 | 1573 | 1232 | 52 | 47 | 46 | 1641 | 1526 | 1186
+    r12: Ахвахцы | 5282 | 4784 | 4684 | 151 | 128 | 127 | 5131 | 4656 | 4557
+    r13: Багулалы | 14 | 13 | 8 | 4 | 3 | 2 | 10 | 10 | 6
+== get https://rosstat.gov.ru/storage/mediabank/Tom5_tab4_VPN-2020.xlsx
+  cdx lookup failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom5_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1')
+  stopped: no capture of https://rosstat.gov.ru/storage/mediabank/Tom5_tab4_VPN-2020.xlsx
+== get https://rosstat.gov.ru/storage/mediabank/Tom5_tab2_VPN2020.xlsx
+  via https://web.archive.org/web/20260216162055id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab2_VPN2020.xlsx
+  27,386 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
+  https://rosstat.gov.ru/storage/mediabank/Tom5_tab2_VPN2020.xlsx: 1 sheets: Российская Федерация
+  -- sheet 'Российская Федерация': 161 rows x 11 cols
+    r0:  | 2. СОСТАВ ГРУППЫ НАСЕЛЕНИЯ "УК |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  | 
+    r2:  | Российская Федерация |  |  |  |  |  |  |  | 
+    r3:  |  |  |  |  |  |  |  |  | 
+    r4:  |  | Городское и сельское население |  |  | Городское население |  |  | Сельское население | 
+    r5:  |  | мужчины и женщины | мужчины | женщины | мужчины и женщины | мужчины | женщины | мужчины и женщины | мужчины
+    r6: [P16_Nationality].[Hierarchy]. | А | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+    r7: [P16_Nationality].[Hierarchy]. | Всего | 1393685 | 633091 | 760594 | 1242762 | 561651 | 681111 | 150923 | 71440
+    r8: [P16_Nationality].[Hierarchy]. | Австралийцы | 44 | 34 | 10 | 41 | 31 | 10 | 3 | 3
+    r9: [P16_Nationality].[Hierarchy]. | Австрийцы | 151 | 108 | 43 | 138 | 100 | 38 | 13 | 8
+    r10: [P16_Nationality].[Hierarchy]. | Азиаты (среднеазиаты) | 308 | 199 | 109 | 268 | 173 | 95 | 40 | 26
+    r11: [P16_Nationality].[Hierarchy]. | Айны (айну, айну камчадальские | 300 | 219 | 81 | 143 | 114 | 29 | 157 | 105
+    r12: [P16_Nationality].[Hierarchy]. | Албанцы (арнауты) | 159 | 94 | 65 | 136 | 80 | 56 | 23 | 14
+    r13: [P16_Nationality].[Hierarchy]. | Ангольцы (лунда, овимбунду) | 262 | 208 | 54 | 259 | 207 | 52 | 3 | 1
+== get https://rosstat.gov.ru/storage/mediabank/Tom5_tab21_VPN-2020.xlsx
+  via https://web.archive.org/web/20250404073348id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab21_VPN-2020.xlsx
+  253,675 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
+  https://rosstat.gov.ru/storage/mediabank/Tom5_tab21_VPN-2020.xlsx: 1 sheets: Tom 5_tab21_VPN-2020
+  -- sheet 'Tom 5_tab21_VPN-2020': 3730 rows x 11 cols
+    r0: 21. НАСЕЛЕНИЕ КОРЕННЫХ МАЛОЧИС |  |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  |   retry 1/2 after 2s :: https://web.archive.org/web/20250404073913id_/https://rosstat.gov.ru/storage/mediabank/Tom1_tab-6_VPN-2020.xlsx :: <urlopen error [Errno 110] Connection timed out>
+
+    r2:  |  |  |  |  |  |  |  |  | 
+    r3:  | Городское и сельское население |  |  | Городское население |  |  | Сельское население |  | 
+    r4:  | мужчины и женщины | мужчины | женщины | мужчины и женщины | мужчины | женщины | мужчины и женщины | мужчины | женщины
+    r5: Абазины |  |  |  |  |  |  |  |  | 
+    r6: Российская Федерация | 41874 | 20030 | 21844 | 15387 | 7063 | 8324 | 26487 | 12967 | 13520
+    r7: в том числе в возрасте, лет: |  |  |  |  |  |  |  |  | 
+    r8: 0 – 4 | 2548 | 1304 | 1244 | 865 | 448 | 417 | 1683 | 856 | 827
+    r9: 5 – 9 | 3282 | 1694 | 1588 | 1084 | 568 | 516 | 2198 | 1126 | 1072
+    r10: 10 – 14 | 2867 | 1426 | 1441 | 976 | 470 | 506 | 1891 | 956 | 935
+    r11: 15 – 19 | 2392 | 1221 | 1171 | 899 | 463 | 436 | 1493 | 758 | 735
+    r12: 20 – 24 | 2387 | 1179 | 1208 | 990 | 502 | 488 | 1397 | 677 | 720
+    r13: 25 – 29 | 2812 | 1333 | 1479 | 1005 | 443 | 562 | 1807 | 890 | 917
+== get https://rosstat.gov.ru/storage/mediabank/Tom1_tab-6_VPN-2020.xlsx
+  via https://web.archive.org/web/20250404073913id_/https://rosstat.gov.ru/storage/mediabank/Tom1_tab-6_VPN-2020.xlsx
+  77,126 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
+  https://rosstat.gov.ru/storage/mediabank/Tom1_tab-6_VPN-2020.xlsx: 1 sheets: таб. 6
+  -- sheet 'таб. 6': 1074 rows x 11 cols
+    r0: 6. ГРУППИРОВКА ГОРОДСКИХ ОКРУГ |  |  |  |  | ПО ЧИСЛЕННОСТИ НАСЕЛЕНИЯ |  |  |  | 
+    r1:  |  | ПО СУБЪЕКТАМ |  |  | РОССИЙСКОЙ ФЕДЕРАЦИИ |  |  |  | 
+    r2:  |  |  |  |  |  |  |  |  | 
+    r3:  | Всего | в том числе городские округа с |  |  |  |  |  |  | 
+    r4:  |  | менее 5000 | 5000 – 9999 | 10000 – 19999 | 20000 – 49999 | 50000 – 99999 | 100000 – 249999 | 250000 – 499999 | 500000 – 999999
+    r5: Российская Федерация |  |  |  |  |  |  |  |  | 
+    r6: Число городских округов | 612 | 27 | 27 | 73 | 180 | 118 | 104 | 46 | 23
+    r7: численность всего населения | 78775841 | 83292 | 207136 | 1101661 | 5975319 | 8225214 | 16038565 | 15919986 | 14132203
+    r8: мужчины | 36182235 | 41347 | 101384 | 515610 | 2775247 | 3791237 | 7446042 | 7296731 | 6444833
+    r9: женщины | 42593606 | 41945 | 105752 | 586051 | 3200072 | 4433977 | 8592523 | 8623255 | 7687370
+    r10: численность городского населен | 73573146 | 68871 | 181068 | 900868 | 5170658 | 7212839 | 14349418 | 15042080 | 13750190
+    r11: мужчины | 33672317 | 33852 | 87867 | 417910 | 2387794 | 3302340 | 6633691 | 6869545 | 6262960
+    r12: женщины | 39900829 | 35019 | 93201 | 482958 | 2782864 | 3910499 | 7715727 | 8172535 | 7487230
+    r13: численность сельского населени | 5202695 | 14421 | 26068 | 200793 | 804661 | 1012375 | 1689147 | 877906 | 382013
