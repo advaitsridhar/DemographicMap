@@ -1,11 +1,12 @@
-== https://imsee.mc/en/thematics/population/population-census
-  Homepage                                                                                   /en
-  Transportation and storage                                                                 /en/thematics/economy/indicators-per-sector/transportation-and-storage
-  Sale of "Monaco en chiffres”                                                               /en/procedures-and-services/sale-of-monaco-en-chiffres
-  Agenda                                                                                     /en/agenda
-  Homepage                                                                                   /en
-  PDF 493.4 kB 2025 Census Report                                                            /en/content/download/310026/file/2025%20Census%20Report.pdf?inLanguage=eng-GB&amp;version=4
-  XLSX 20 kB 2025 Census Nationalities distribution                                          /en/content/download/310151/file/IMSEE-2025%20Census_Nationalities.xlsx?inLanguage=eng-GB&amp;version=3
-  7 of 98 links shown
-== https://imsee.mc/en/publications/monaco-in-figures
-  HTTPError: HTTP Error 404: Not Found
+portugal_census: 308 municipalities
+  50 read
+  100 read
+  150 read
+  200 read
+  0011626 1601: KeyError: 'Dados'; again in 20s
+  0011626 1601: KeyError: 'Dados'; again in 40s
+  0011626 1601: KeyError: 'Dados'; again in 60s
+  0011626 1601: KeyError: 'Dados'; again in 80s
+  0011626 1601: KeyError: 'Dados'; again in 100s
+  0011626 1601: KeyError: 'Dados'; again in 120s
+portugal_census: 0011626 1601: INE did not answer after six tries
