@@ -192,8 +192,19 @@ def composition(lines: list[str], title: str, labels: dict[str, str], width: int
         # "DENOMINATION 41,214 ..."), after page headings gathered since the last
         # row: the lines above are tried longest run first, down to none.
         known = set(labels) | {"total", "male", "female"}
-        flat = next((fold(" ".join(pending[k:] + [label])) for k in range(len(pending) + 1)
-                     if fold(" ".join(pending[k:] + [label])) in known), fold(label))
+        tries = [fold(" ".join(pending[k:] + [label])) for k in range(len(pending) + 1)]
+        flat = next((t for t in tries if t in known), None)
+        if flat is None:
+            # A misprint of a known category ("PENECOSTAL", "OTHER CHRISTIAN
+            # DENOMIATION"), longest run first, logged.
+            for t in tries:
+                close = difflib.get_close_matches(t, list(labels), n=1, cutoff=0.88)
+                if close:
+                    log(f"  {title}: {' '.join(pending + [label])!r} read as "
+                        f"{labels[close[0]]}")
+                    flat = close[0]
+                    break
+        flat = flat or fold(label)
         pending = []
         if flat == "total":
             if total is not None:
@@ -204,11 +215,6 @@ def composition(lines: list[str], title: str, labels: dict[str, str], width: int
             if title == "TABLE8.0" and flat == "male":
                 break
             continue
-        close = difflib.get_close_matches(flat, list(labels), n=1, cutoff=0.88)
-        if flat not in labels and close:
-            # A misprint of a known category ("PENECOSTAL"), logged.
-            log(f"  {title}: {label!r} read as {labels[close[0]]}")
-            flat = close[0]
         if flat not in labels:
             # The reports name their residual rows several ways ("OTHER",
             # "OTHER DENOMINATIONS", ...); any other unknown row stops the run.
