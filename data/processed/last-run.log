@@ -1,82 +1,156 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab1_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab1_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab2_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab2_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab5_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab5_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: 'таб 5'!$A:$K.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-== get https://rosstat.gov.ru/storage/mediabank/Tom2_tab1_VPN-2020.xlsx
-  cdx lookup failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab1_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1')
-  stopped: no capture of https://rosstat.gov.ru/storage/mediabank/Tom2_tab1_VPN-2020.xlsx
-== get https://rosstat.gov.ru/storage/mediabank/Tom2_tab2_VPN-2020.xlsx
-  cdx lookup failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab2_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1')
-  stopped: no capture of https://rosstat.gov.ru/storage/mediabank/Tom2_tab2_VPN-2020.xlsx
-== get https://rosstat.gov.ru/storage/mediabank/Tom2_tab3_VPN-2020.xlsx
-  via https://web.archive.org/web/20250404073643id_/https://rosstat.gov.ru/storage/mediabank/Tom2_tab3_VPN-2020.xlsx
-  33,494 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
-  https://rosstat.gov.ru/storage/mediabank/Tom2_tab3_VPN-2020.xlsx: 1 sheets: таб 3
-  -- sheet 'таб 3': 305 rows x 8 cols
-    r0: 3. ЧИСЛЕННОСТЬ НАСЕЛЕНИЯ ПО ОС |  |  |  |  |  |  | 
-    r1:  |  |  |  |  |  |  | 
-    r2:  | Всего | из них в возрасте1) |  |  | В процентах к общей численност |  | 
-    r3:  |  | моложе трудоспо-собного | трудоспо-собном | старше трудоспо-собного | моложе трудоспо-собного | трудоспо-собном | старше трудоспо-собного
-    r4: Городское и сельское население |  |  |  |  |  |  | 
-    r5: Российская Федерация | 147182123 | 24710125 | 85875264 | 36596734 | 16.8 | 58.3 | 24.9
-    r6: Центральный федеральный округ | 40334532 | 5780184 | 23913519 | 10640829 | 14.3 | 59.3 | 26.4
-    r7: Белгородская область | 1540486 | 249422 | 869200 | 421864 | 16.2 | 56.4 | 27.4
-    r8: Брянская область | 1169161 | 181442 | 661830 | 325889 | 15.5 | 56.6 | 27.9
-    r9: Владимирская область | 1348134 | 199074 | 755804 | 393256 | 14.8 | 56 | 29.2
-    r10: Воронежская область | 2308792 | 334772 | 1327229 | 646791 | 14.5 | 57.5 | 28
-    r11: Ивановская область | 927828 | 141976 | 513510 | 272342 | 15.3 | 55.3 | 29.4
-    r12: Калужская область | 1069904 | 175697 | 613024 | 281183 | 16.4 | 57.3 | 26.3
-    r13: Костромская область | 580976 | 102829 | 310817 | 167330 | 17.7 | 53.5 | 28.8
-    r14: Курская область | 1082458 | 173016 | 600845 | 308597 | 16 | 55.5 | 28.5
-    r15: Липецкая область | 1143224 | 191071 | 641055 | 311098 | 16.7 | 56.1 | 27.2
-== get https://rosstat.gov.ru/storage/mediabank/Tom2_tab4_VPN-2020.xlsx
-  cdx lookup failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Frosstat.gov.ru%2Fstorage%2Fmediabank%2FTom2_tab4_VPN-2020.xlsx&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1')
-  stopped: no capture of https://rosstat.gov.ru/storage/mediabank/Tom2_tab4_VPN-2020.xlsx
-== get https://rosstat.gov.ru/storage/mediabank/Tom2_tab5_VPN-2020.xlsx
-  via https://web.archive.org/web/20260305162822id_/https://rosstat.gov.ru/storage/mediabank/Tom2_tab5_VPN-2020.xlsx
-  1,595,449 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
-  https://rosstat.gov.ru/storage/mediabank/Tom2_tab5_VPN-2020.xlsx: 1 sheets: таб 5
-  -- sheet 'таб 5': 18283 rows x 11 cols
-    r0: 5. НАСЕЛЕНИЕ ПО ВОЗРАСТУ, ПОЛУ |  |  |  |  |  |  |  |  |  | 
-    r1:  |  |  |  |  |  |  |  |  |  | 
-    r2:  |  |  |  |  |  |  |  |  |  | 
-    r3:  | Всего | Указавшие состояние в браке | в том числе |  |  |  |  |  |  | Не указавшие состояние в браке
-    r4:  |  |  | состоящие в браке | из них |  | никогда не состояв- шие в брак | разведенные официально | разошедшиеся | вдовые | 
-    r5:  |  |  |  | в зарегистриро- ванном браке | в незарегистриро- ванном супру |  |  |  |  | 
-    r6: Российская Федерация |  |  |  |  |  |  |  |  |  | 
-    r7: Городское и сельское население |  |  |  |  |  |  |  |  |  | 
-    r8: Мужчины и женщины в возрасте 1 | 122471998 | 103614283 | 60061374 | 54636550 | 5424824 | 19634477 | 9192936 | 3013078 | 11712418 | 18857715
-    r9: в том числе в возрасте, лет: |  |  |  |  |  |  |  |  |  | 
-    r10: 16 – 17 | 3005487 | 2359448 | 22150 | 13985 | 8165 | 2333075 | 1700 | 2471 | 52 | 646039
-    r11: 18 – 19 | 3093127 | 2460387 | 112570 | 66063 | 46507 | 2336332 | 4077 | 6083 | 1325 | 632740
-    r12: 20 - 24 | 7750398 | 6070787 | 1426016 | 1085220 | 340796 | 4510708 | 67201 | 58640 | 8222 | 1679611
-    r13: 25 – 29 | 7983625 | 6545664 | 3461914 | 2966920 | 494994 | 2660882 | 271361 | 134401 | 17106 | 1437961
-    r14: 30 – 34 | 12156975 | 10118843 | 6783924 | 6047350 | 736574 | 2206621 | 763316 | 314167 | 50815 | 2038132
-    r15: 35 – 39 | 13043984 | 10930270 | 7796861 | 7024568 | 772293 | 1558673 | 1086732 | 393138 | 94866 | 2113714
-== get https://rosstat.gov.ru/storage/mediabank/Tom1_tab-5_VPN-2020.xlsx
-  via https://web.archive.org/web/20260901210517id_/https://rosstat.gov.ru/storage/mediabank/Tom1_tab-5_VPN-2020.xlsx
-  1,658,676 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\t\xc3'
-  https://rosstat.gov.ru/storage/mediabank/Tom1_tab-5_VPN-2020.xlsx: 1 sheets: таб. 5
-  -- sheet 'таб. 5': 28503 rows x 6 cols
-    r0: 5. ЧИСЛЕННОСТЬ НАСЕЛЕНИЯ РОССИ |  |  |  |  | 
-    r1:  |  |  |  |  | 
-    r2:  | Мужчины и женщины | Мужчины | Женщины | В общей численности населения, | 
-    r3:  |  |  |  | мужчины | женщины
-    r4: Российская Федерация | 147182123 | 68431580 | 78750543 | 46.5 | 53.5
-    r5: Городское население | 110075322 | 50506330 | 59568992 | 45.9 | 54.1
-    r6: Сельское население | 37106801 | 17925250 | 19181551 | 48.3 | 51.7
-    r7: Центральный федеральный округ | 40334532 | 18682816 | 21651716 | 46.3 | 53.7
-    r8: Городское население | 33118003 | 15221976 | 17896027 | 46 | 54
-    r9: Сельское население | 7216529 | 3460840 | 3755689 | 48 | 52
-    r10: Белгородская область | 1540486 | 713518 | 826968 | 46.3 | 53.7
-    r11: Городское население | 1005116 | 455531 | 549585 | 45.3 | 54.7
-    r12: Сельское население | 535370 | 257987 | 277383 | 48.2 | 51.8
-    r13: Городской округ город Белгород | 339978 | 148364 | 191614 | 43.6 | 56.4
-    r14: внутригородские округа |  |  |  |  | 
-    r15: Восточный округ | 130246 | 57035 | 73211 | 43.8 | 56.2
+== xls https://web.archive.org/web/20230707114007id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.12.1-si-Tabel-2.12.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 116,557 bytes
+  2 sheets: ['Tab. 2.12.1', 'Tab. 2.12.2']
+  -- sheet 'Tab. 2.12.1': 250 rows x 18 cols
+     | 2.12.1 POPULATIA REZIDENTA D
+    MEDIU DE REZIDENTA  SEXE  ET | POPULATIA REZIDENTA  TOTAL | CEL MAI INALT NIVEL DE EDUCA
+     |  | Superior |  | Postliceal si de maistri | Secundar |  |  |  | Primar | Prescolar | Fara scoala absolvita |  | Nu este cazul (varsta sub 2 
+     |  | Total | din care: Universitar de lic |  | Total | Superior |  | Inferior (gimnazial) |  |  | Total | din care: Persoane analfabet
+     |  |  |  | Postliceal și de maiștri | Total | Liceal | Profesional si de ucenici | Inferior (gimnazial) | Primar | Preșcolar | Total | Persoane analfabete | Nu este cazul (vârsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+    ROMÂNIA
+  -- sheet 'Tab. 2.12.2': 1130 rows x 18 cols
+     | 2.12.2 POPULATIA REZIDENTA D
+    JUDET  ETNIE | POPULATIA REZIDENTA  TOTAL | CEL MAI INALT NIVEL DE EDUCA |  |  |  |  |  |  |  |  |  |  |  | JUDET  ETNIE
+     |  | Superior |  | Postliceal si de maistri | Secundar |  |  |  | Primar | Prescolar | Fara scoala absolvita |  | Nu este cazul (varsta sub 2 
+     |  | Total | din care: Universitar de lic |  | Total | Superior |  | Inferior (gimnazial) |  |  | Total | din care: Persoane analfabet
+     |  |  |  | Postliceal și de maiștri | Total | Liceal | Profesional si de ucenici | Inferior (gimnazial) | Primar | Preșcolar | Total | Persoane analfabete | Nu este cazul (vârsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | A
+    ROMÂNIA | 19053815 | 3047116 | 2329716 | 739061 | 10991242 | 4617126 | 2929498 | 3444618 | 1878583 | 1156660 | 894217 | 134873 | 346936 | ROMÂNIA
+== xls https://web.archive.org/web/20230701100335id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.13.1-si-Tabel-2.13.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 129,884 bytes
+  2 sheets: ['Tab 2.13.1', 'TB 1.13.2']
+  -- sheet 'Tab 2.13.1': 250 rows x 18 cols
+     | 2.13.1 POPULATIA REZIDENTA D
+    MEDIU DE REZIDENTA  SEXE  ET | POPULATIA REZIDENTA  TOTAL | CEL MAI ÎNALT NIVEL DE EDUCA
+     |  | Superior |  | Postliceal si de maistri | Secundar |  |  |  | Primar | Prescolar | Fara scoala absolvita |  | Nu este cazul (varsta sub 2 
+     |  | Total | din care: Universitar de lic |  | Total | Superior |  | Inferior (gimnazial) |  |  | Total | din care: Persoane analfabet
+     |  |  |  | Postliceal și de maiștri | Total | Liceal | Profesional si de ucenici | Inferior (gimnazial) | Primar | Preșcolar | Total | Persoane analfabete | Nu este cazul (vârsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+    ROMÂNIA
+  -- sheet 'TB 1.13.2': 1129 rows x 18 cols
+     | 2.13.2 POPULATIA REZIDENTA D
+    JUDET  RELIGIE | POPULATIA REZIDENTA  TOTAL | CEL MAI INALT NIVEL DE EDUCA
+     |  | Superior |  | Postliceal si de maistri | Secundar |  |  |  | Primar | Prescolar | Fara scoala absolvita |  | Nu este cazul (varsta sub 2 
+     |  | Total | din care: Universitar de lic |  | Total | Superior |  | Inferior (gimnazial) |  |  | Total | din care: Persoane analfabet
+     |  |  |  | Postliceal și de maiștri | Total | Liceal | Profesional si de ucenici | Inferior (gimnazial) | Primar | Preșcolar | Total | Persoane analfabete | Nu este cazul (vârsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+    ROMANIA | 19053815 | 3047116 | 2329716 | 739061 | 10991242 | 4617126 | 2929498 | 3444618 | 1878583 | 1156660 | 894217 | 134873 | 346936
+== xls https://web.archive.org/web/20230701100328id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.16.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 96,544 bytes
+  1 sheets: ['Tab 2.16']
+  -- sheet 'Tab 2.16': 682 rows x 28 cols
+     | 2.16 POPULATIA REZIDENTA DUP
+    STATUTUL ACTIVITATII CURENTE | SEXE | POPULATIA REZIDENTA  TOTAL | R E L I G I E
+     |  |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMÂNIA
+     | Ambele sexe | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026
+     | Masculin | 9245540 | 6785897 | 357445 | 238542 | 196749 | 54408 | 46746 | 30159 | 31228 | 23610 | 17725 | 17279 | 13865 | 9566
+== xls https://web.archive.org/web/20230701100331id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.23.1-si-Tabel-2.23.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 184,001 bytes
+  2 sheets: ['Tab.2.23.1', 'Tab.2.23.2']
+  -- sheet 'Tab.2.23.1': 249 rows x 26 cols
+     | 2.23.1 POPULATIA REZIDENTA O
+    MEDIU DE REZIDENTA   SEXE  E | POPULATIA REZIDENTA  TOTAL | L I M B A  M A T E R N A
+     |  | Româna | Maghiara | Romani | Ucrainena | Germana | Turca | Rusa | Tatara | Sarba | Slovaca | Bulgara | Croata | Italiana | Greaca
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA
+    Ambele sexe | 19053815 | 15153198 | 1038806 | 199050 | 40861 | 15943 | 17101 | 14414 | 13805 | 10058 | 9241 | 4478 | 4664 | 4105 | 1069
+    Români | 14801442 | 14742416 | 24650 | 9404 | 1379 | 1429 | 464 | 646 | 156 | 439 | 325 | 184 | 36 | 443 | 95
+  -- sheet 'Tab.2.23.2': 1471 rows x 26 cols
+     | 2.23.2 POPULATIA REZIDENTA O
+    JUDET  ETNIE | POPULATIA REZIDENTA  TOTAL | L I M B A  M A T E R N A
+     |  | Româna | Maghiara | Romani | Ucrainena | Germana | Turca | Rusa | Tatara | Sarba | Slovaca | Bulgara | Croata | Italiana | Greaca
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 15153198 | 1038806 | 199050 | 40861 | 15943 | 17101 | 14414 | 13805 | 10058 | 9241 | 4478 | 4664 | 4105 | 1069
+    ETNIA
+    Români | 14801442 | 14742416 | 24650 | 9404 | 1379 | 1429 | 464 | 646 | 156 | 439 | 325 | 184 | 36 | 443 | 95
+== xls https://web.archive.org/web/20230701100331id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.25.1-si-Tabel-2.25.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 491,759 bytes
+  2 sheets: ['2.25.1', '2.25.2']
+  -- sheet '2.25.1': 244 rows x 28 cols
+     | 2.25.1 POPULATIA REZIDENTA D
+    MEDIU DE REZIDENTA GRUPA DE  | SEXE | POPULATIA REZIDENTA  TOTAL | R E L I G I A
+     |  |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMANIA
+     | Ambele sexe | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026
+     | Masculin | 9245540 | 6785897 | 357445 | 238542 | 196749 | 54408 | 46746 | 30159 | 31228 | 23610 | 17725 | 17279 | 13865 | 9566
+  -- sheet '2.25.2': 3365 rows x 28 cols
+     | 2.25.2 POPULATIA REZIDENTA D
+    JUDET  GRUPA DE VARSTA | SEXE | POPULATIA REZIDENTA  TOTAL | RELIGIA
+     |  |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMANIA
+     | Ambele sexe | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026
+     | Masculin | 9245540 | 6785897 | 357445 | 238542 | 196749 | 54408 | 46746 | 30159 | 31228 | 23610 | 17725 | 17279 | 13865 | 9566
+== xls https://web.archive.org/web/20230707114008id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.28.1-si-Tabel-2.28.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 443,588 bytes
+  2 sheets: ['Tab.2.28.1', 'Tab 2.28.2']
+  -- sheet 'Tab.2.28.1': 243 rows x 28 cols
+     | 2.28.1 POPULATIA REZIDENTA D
+    MEDIU DE REZIDENTA  GRUPA DE | SEXE | POPULATIA REZIDENTA  TOTAL | E T N I A
+     |  |  | Romani | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMÂNIA
+     | Ambele sexe | 19053815 | 14801442 | 1002151 | 569477 | 45835 | 22907 | 20945 | 19394 | 18156 | 12026 | 10232 | 5975 | 4842 | 2086
+     | Masculin | 9245540 | 7159320 | 480563 | 290760 | 23033 | 11421 | 11315 | 9091 | 8630 | 5928 | 4890 | 2919 | 2377 | 1250
+  -- sheet 'Tab 2.28.2': 3321 rows x 28 cols
+     | 2.28.2 POPULATIA REZIDENTA D
+    JUDET  GRUPA DE VARSTA | SEXE | POPULATIA REZIDENTA  TOTAL | E T N I A
+     |  |  | Romani | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMÂNIA
+     | Ambele sexe | 19053815 | 14801442 | 1002151 | 569477 | 45835 | 22907 | 20945 | 19394 | 18156 | 12026 | 10232 | 5975 | 4842 | 2086
+     | Masculin | 9245540 | 7159320 | 480563 | 290760 | 23033 | 11421 | 11315 | 9091 | 8630 | 5928 | 4890 | 2919 | 2377 | 1250
+== xls https://web.archive.org/web/20240309140548id_/https://www.recensamantromania.ro/wp-content/uploads/2023/07/Tabel-3.01.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 232,861 bytes
+  43 sheets: ['ROMANIA', 'ALBA', 'ARAD', 'ARGES', 'BACAU', 'BIHOR', 'BISTRITA-NASAUD', 'BOTOSANI', 'BRASOV', 'BRAILA', 'BUZAU', 'CARAS-SEVERIN', 'CALARASI', 'CLUJ', 'CONSTANTA', 'COVASNA', 'DAMBOVITA', 'DOLJ', 'GALATI', 'GIURGIU', 'GORJ', 'HARGHITA', 'HUNEDOARA', 'IALOMITA', 'IASI', 'ILFOV', 'MARAMURES', 'MEHEDINTI', 'MURES', 'NEAMT', 'OLT', 'PRAHOVA', 'SATU MARE', 'SALAJ', 'SIBIU', 'SUCEAVA', 'TELEORMAN', 'TIMIS', 'TULCEA', 'VASLUI', 'VALCEA', 'VRANCEA', 'MUNICIPIUL BUCURESTI']
+  -- sheet 'ROMANIA': 71 rows x 18 cols
+    3.1. POPULATIA REZIDENTA DUP
+    NIVELUL DE EDUCATIE AL INSTI | POPULATIA REZIDENTA DE 2 ANI | DIN CARE: |  |  |  | POPULATIA REZIDENTA DE 2 ANI | NU ESTE CAZUL (varsta sub 2 
+     |  | SEXE |  | MEDIU DE REZIDENTA
+     |  | Masculin | Feminin | Urban | Rural | POPULATIA REZIDENTA DE 2 ANI | NU ESTE CAZUL (varsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7
+    ROMANIA | 17812662 | 8570406 | 9242256 | 9331707 | 8480955 | 894217 | 346936
+    I. INVATAMANT UNIVERSITAR
+  -- sheet 'ALBA': 71 rows x 18 cols
+    3.1. POPULATIA REZIDENTA DUP
+    NIVELUL DE EDUCATIE AL INSTI | POPULATIA REZIDENTA DE 2 ANI | DIN CARE: |  |  |  | POPULATIA REZIDENTA DE 2 ANI | NU ESTE CAZUL (varsta sub 2 
+     |  | SEXE |  | MEDIU DE REZIDENTA
+     |  | Masculin | Feminin | Urban | Rural | POPULATIA REZIDENTA DE 2 ANI | NU ESTE CAZUL (varsta sub 2 
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7
+    ALBA | 305862 | 149341 | 156521 | 177318 | 128544 | 14627 | 5452
+    I. INVATAMANT UNIVERSITAR
+== xls https://web.archive.org/web/20240309140407id_/https://www.recensamantromania.ro/wp-content/uploads/2023/07/Tabel-3.02.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 1,604,638 bytes
+  43 sheets: ['ROMANIA', 'ALBA', 'ARAD', 'ARGES', 'BACAU', 'BIHOR', 'BISTRITA-NASAUD', 'BOTOSANI', 'BRASOV', 'BRAILA', 'BUZAU', 'CARAS-SEVERIN', 'CALARASI', 'CLUJ', 'CONSTANTA', 'COVASNA', 'DAMBOVITA', 'DOLJ', 'GALATI', 'GIURGIU', 'GORJ', 'HARGHITA', 'HUNEDOARA', 'IALOMITA', 'IASI', 'ILFOV', 'MARAMURES', 'MEHEDINTI', 'MURES', 'NEAMT', 'OLT', 'PRAHOVA', 'SATU MARE', 'SALAJ', 'SIBIU', 'SUCEAVA', 'TELEORMAN', 'TIMIS', 'TULCEA', 'VASLUI', 'VALCEA', 'VRANCEA', 'MUNICIPIUL BUCURESTI']
+  -- sheet 'ROMANIA': 320 rows x 27 cols
+     | 3.2. POPULATIA REZIDENTA DUP
+    MEDIU DE REZIDENTA  SEXE  NI | POPULATIA REZIDENTA DE 2 ANI | DIN CARE, DUPA ETNIE:
+     |  | Romani | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci | Italieni
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMANIA | 17812662 | 14072005 | 952993 | 493639 | 43279 | 22245 | 18998 | 18705 | 17441 | 11682 | 9835 | 5791 | 4692 | 2033 | 3947
+    I. INVATAMANT UNIVERSITAR
+    I.A Postdoctorat | 5753 | 5292 | 256 | 4 | 4 | 44 | 6 | 6 | * | 5 | 3 | 4 | * | 6 | 3
+  -- sheet 'ALBA': 319 rows x 27 cols
+     | 3.2. POPULATIA REZIDENTA DUP
+    MEDIU DE REZIDENTA  SEXE  NI | POPULATIA REZIDENTA DE 2 ANI | DIN CARE, DUPA ETNIE:
+     |  | Romani | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci | Italieni
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ALBA | 305862 | 255678 | 11118 | 11425 | 17 | 531 | 28 | 10 | * | 3 | 17 | 6 | * | * | 65
+    I. INVATAMANT UNIVERSITAR
+    I.A Postdoctorat | 18 | 15 | 3 | - | - | - | - | - | - | - | - | - | - | - | -
+== xls https://web.archive.org/web/20231118140656id_/https://www.recensamantromania.ro/wp-content/uploads/2023/07/sR_Tab_3.xls 7 2
+  HTTP 200 application/vnd.ms-excel 2,393,600 bytes
+  3 sheets: ['Sheet1', 'Sheet2', 'Sheet3']
+  -- sheet 'Sheet1': 16578 rows x 21 cols
+    3. POPULATIA STABILA PE SEXE |  |  |  |  |  |  |  |  |  | MUNICIPII, ORASE, COMUNE
+    JUDETUL SEXE | POPULATIA STABILA   TOTAL | G R U P A   D E |  |  |  |  |  |  |  | V A R S T A
+     |  | Sub 5 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64 | 65 - 69
+     |  | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    ROMANIA
+    Ambele sexe | 20121641.0 | 1045029.0 | 1054391.0 | 1090226.0 | 1108453.0 | 1366374.0 | 1303077.0 | 1522719.0 | 1538897.0 | 1743878.0 | 1076258.0 | 1332266.0 | 1448043.0 | 1244286.0 | 890340.0
+  -- sheet 'Sheet2': 0 rows x 0 cols
