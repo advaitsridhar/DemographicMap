@@ -70,13 +70,14 @@ RELIGION = [
     ("հուդա", "Judaism"), ("մորմոն", "Latter-day Saints"),
     ("այլ", "Other religion"),
 ]
+# Stems, without the closing "ն" a narrow column sometimes pushes into the next.
 LANGUAGE = [
     ("հրաժարվ", "Not stated"),
-    ("հայերեն", "Armenian"), ("եզդիերեն", "Ezidian"), ("ռուսերեն", "Russian"),
-    ("քրդերեն", "Kurdish"), ("ասորերեն", "Assyrian"), ("հունարեն", "Greek"),
-    ("ուկրաիներեն", "Ukrainian"), ("վրացերեն", "Georgian"), ("պարսկերեն", "Persian"),
-    ("անգլերեն", "English"), ("գերմաներեն", "German"), ("ֆրանսերեն", "French"),
-    ("արաբերեն", "Arabic"), ("ադրբեջաներեն", "Azerbaijani"), ("բելառուսերեն", "Belarusian"),
+    ("հայեր", "Armenian"), ("եզդիեր", "Ezidian"), ("ռուսեր", "Russian"),
+    ("քրդեր", "Kurdish"), ("ասորեր", "Assyrian"), ("հունար", "Greek"),
+    ("ուկրաիներ", "Ukrainian"), ("վրացեր", "Georgian"), ("պարսկեր", "Persian"),
+    ("անգլեր", "English"), ("գերմաներ", "German"), ("ֆրանսեր", "French"),
+    ("արաբեր", "Arabic"), ("ադրբեջաներ", "Azerbaijani"), ("բելառուսեր", "Belarusian"),
     ("այլ", "Other language"),
 ]
 NATIONALITY = {
