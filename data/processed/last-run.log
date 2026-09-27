@@ -1,126 +1,128 @@
-== https://www.ige.gal/igebdt/esqv.jsp?c=0206004&paxina=001&idioma=gl
-  23,427 bytes; starts b'\r\n\r\n\r\n\r\n'
-  550 lines, 75 with ['.jsp', 'ajax', 'fetch(', 'url:', '.json', 'microdat', 'md3', '.zip', '.sav', 'fichero', 'descarga', 'download']
-     45:     <link rel="canonical" href="https://www.ige.gal/igebdt/esq.jsp?idioma=gl&c=0206004&paxina=001" />
-     46:     <link rel="alternate" hreflang="gl" href="https://www.ige.gal/igebdt/esq.jsp?idioma=gl&c=0206004&paxina=001" />
-     47:     <link rel="alternate" hreflang="es" href="https://www.ige.gal/igebdt/esq.jsp?idioma=es&c=0206004&paxina=001" />
-     48:     <link rel="alternate" hreflang="x-default" href="https://www.ige.gal/igebdt/esq.jsp?idioma=gl&c=0206004&paxina=001" />
-    139: 				<li><a class="is-active" href="https://www.ige.gal/igebdt/esq.jsp?idioma=gl&c=0206004&paxina=001" onclick="setIdiomaCookie('gl')">Galego</a></li>
-    140: 				<li><a  href="https://www.ige.gal/igebdt/esq.jsp?idioma=es&c=0206004&paxina=001" onclick="setIdiomaCookie('es')">Castellano</a></li>
-    201: 						<form id="search" action="/web/buscar.jsp" method="get">
-    219: 								<div class="menu-title"><a href="/web/mostrar_seccion.jsp?codigo=0101">Territorio e medio</a></div>
-    224: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0201">Poboación</a></li>
-    225: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0202">Sanidade</a></li>
-    226: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0203">Educación</a></li>
-    227: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0204">Traballo</a></li>
-    228: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0205">Benestar e condicións de vida</a></li>
-    229: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0206">Cultura, deporte e lecer</a></li>
-    237: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0301">Agricultura, explotación forestal e pesca</a></li>
-    238: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0303">Industria e enerxía</a></li>
-    239: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0304">Construción e vivenda</a></li>
-    240: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0305">Servizos</a></li>
-    241: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0306">Administración pública</a></li>
-    242: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0307">Economía</a></li>
-    243: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0308">Prezos</a></li>
-    251: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0402">Ciencia e tecnoloxía</a></li>
-    258: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0704">Boletín de conxuntura</a></li>
-    259: 									<li><a href="/web/mostrar_paxina.jsp?paxina=002005">Estatísticas de xénero</a></li>
-    260: 									<li><a href="/web/mostrar_paxina.jsp?paxina=002006">Estatística históricas de Galicia</a></li>
-    261: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0702">Estudo sobre salarios</a></li>
-    262: 									<li><a href="/web/mostrar_paxina.jsp?paxina=002004">Indicadores</a></li>
-    263: 									<li><a href="https://www.observatoriognp.eu/web/mostrar_seccion_gnp.jsp?codigo=0502">Observatorio transfronteirizo</a></li>
-    264: 									<li><a href="https://www.ige.gal/web/mostrar_marco.jsp?app=ODS">Obxectivos de desenvolvemento sustentable</a></li>
-    272: 									<li><a href="/web/mostrar_paxina.jsp?paxina=002001">Información municipal e comarcal</a></li>
-    273: 									<li><a href="/web/mostrar_actividade_estatistica.jsp?codigo=0201001009">Información por cuadrícula de 1 km&sup2;</a></li>
-    274: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0703">Panorama dos sete grandes concellos</a></li>
-    275: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0701">Panorama rural-urbano</a></li>
-    281: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0503">Datos estatísticos básicos</a></li>
-    282: 									<li><a href="/web/mostrar_seccion.jsp?codigo=0501">Galicia en cifras</a></li>
-    284: 									<li><a href="/dba/esq.jsp?paxina=002008&ruta=indicadores.jsp">Principais indicadores económicos</a></li>
-    298: 								<div class="menu-title"><a href="/web/mostrar_paxina.jsp?paxina=003003">Clasificacións</a></div>
-    304: 								<div class="menu-title"><a href="/web/mostrar_paxina.jsp?paxina=003007">Documentos técnicos</a></div>
-    310: 								<div class="menu-title"><a href="/web/mostrar_proxectos.jsp">Proxectos técnicos</a></div>
-    313: 								<div class="menu-title"><a href="/web/mostrar_paxina.jsp?paxina=003006">Vocabulario estatístico</a></div>
-    316: 								<div class="menu-title"><a href="/web/mostrar_paxina.jsp?paxina=003005">Axuda</a></div>
-    329: 									<li><a href="/web/mostrar_paxina.jsp?paxina=004002">Solicitude de información</a></li>
-    330: 									<li><a href="/web/peticioninfo.jsp">Peticións de información</a></li>
-    332: 									<li><a href="/web/mostrar_paxina.jsp?paxina=004001">Publicacións</a></li>
-    333: 									<li><a href="/web/mostrar_paxina.jsp?paxina=004004">Biblioteca</a></li>
-    335: 									<li><a href="/web/ligazons.jsp">Ligazóns</a></li>
-    341: 								<div class="menu-title"><a href="/web/mostrar_paxina.jsp?paxina=004026">Recollida de información nas enquisas</a></div>
-    349: 									<li><a href="/igebdt/igeapi/">Descarga de información. APIs</a></li>
-    350: 									<li><a href="/web/mostrar_paxina.jsp?paxina=004017">Software</a></li>
-    351: 									<li><a href="/web/mostrar_paxina.jsp?paxina=004011">Widgets do IGE</a></li>
-    359: 									<li><a href="/web/subscricion.jsp">Lista de subscrición</a></li>
-    360: 									<li><a href="/web/serviciosrss.jsp">Servizo de noticias RSS</a></li>
-    375: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017001">Presentación</a></li>
-    376: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017007">Estatuto</a></li>
-    377: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017002">Organigrama</a></li>
-    378: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017008">Plan de actuación anual</a></li>
-    379: 									<li><a href="/web/mostrar_paxina.jsp?paxina=007">Transparencia e goberno aberto</a></li>
-    380: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017004">Formación e emprego</a></li>
-    381: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017005">Perfil do contratante</a></li>
-    383: 									<li><a href="/web/mostrar_paxina.jsp?paxina=006017009">Contacto</a></li>
-== https://www.cis.es/en/surveys/barometro-de-septiembre-2026
-  558,292 bytes; starts b'\n\n\n\n\n\n\n\n'
-  12877 lines, 136 with ['.jsp', 'ajax', 'fetch(', 'url:', '.json', 'microdat', 'md3', '.zip', '.sav', 'fichero', 'descarga', 'download']
-    153: {"@graph":[{"identifier":"3577","creator":{"@type":"Organization","name":"Centro de Investigaciones Sociológicas","logo":{"@type":"ImageObject","url":"https://www.cis.es/documents/d/guest/logo-cis"},"@id":"https://www.cis.es#organization","url":"https://www.cis.es"},"mainEntity":{"@id":"https://www.
-    475: getLayoutRelativeControlPanelURL: () => '/en/group/guest/~/control_panel/manage',
-    476: getLayoutRelativeURL: () => '/en/surveys/barometro-de-septiembre-2026',
-    477: getLayoutURL: () => 'https://www.cis.es/en/surveys/barometro-de-septiembre-2026',
-    484: getCanonicalURL: () => 'https\x3a\x2f\x2fwww\x2ecis\x2ees\x2fes\x2festudios\x2fbarometro-de-septiembre-2026',
-    485: getCDNBaseURL: () => 'https://www.cis.es',
-    502: getPortalURL: () => 'https://www.cis.es',
-    509: getSiteAdminURL: () => 'https://www.cis.es/group/guest/~/control_panel/manage?p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view',
-    517: isAddSessionIdToURL: () => false,
-    538: currentURL: '\x2fen\x2fsurveys\x2fbarometro-de-septiembre-2026',
-    555: <script data-senna-track="temporary" type="text/javascript">window.__CONFIG__= {basePath: '', combine: true, defaultURLParams: null, explainResolutions: false, exposeGlobal: false, logLevel: 'warn', moduleType: 'module', namespace:'Liferay', nonce: '', reportMismatchedAnonymousModules: 'warn', resol
-    558: <script data-senna-track="temporary" type="text/javascript">window.Liferay = Liferay || {}; window.Liferay.OAuth2 = {getAuthorizeURL: function() {return 'https://www.cis.es/o/oauth2/authorize';}, getBuiltInRedirectURL: function() {return 'https://www.cis.es/o/oauth2/redirect';}, getIntrospectURL: fu
-   1488: init({"navigationExceptionSelectors":":not([data-cke-saved-href]):not([data-cke-saved-href]):not([target=\"_blank\"]):not([data-senna-off]):not([data-resource-href])","cacheExpirationTime":-1,"clearScreensCache":false,"portletsBlacklist":["es_cis_idiomas_web_IdiomasPortlet","com_liferay_login_web_po
-   1718:     <script data-senna-track="permanent" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   3059:                                                             Integrated extraction of microdata from a set of variables for CIS studies
-   4074:                                         Integrated extraction of microdata from a set of variables for CIS studies
-   6154:                             .jdt-descargas .jdt-button {
-   6841:                                     <button type="button" class="main-href btn" onclick="openPdfWithCurrentUrl(this.closest('.virtual-href'))">Download PDF</button>
-   7322:                             <div class="jdt-descargas">
-   7323:                                 <div class="descargas-container rounded bg-monochrome-200 expanded">
-   7324:                                     <h2 class="jdt-descargas-title primary-dark font-weight-bold">Study documents</h2>
-   7332:                                                 <div class="descargas-link">
-   7389:                                                 <div class="descargas-link">
-   7433:                                                 <div class="descargas-link">
-   7477:                                                 <div class="descargas-link">
-   7521:                                                 <div class="descargas-link">
-   7538:                                                             <a href="javascript:void(0)" title="Fichero de datos del estudio 3577 en fichero comprimido zip. Enlace en nueva ventana. Última actualización 22/09/2026"
-   7541:                                                                 onclick="document.querySelector('data-file').shadowRoot.querySelector('#download-button').click();return;"rel="nofollow" role="button">
-   7542:                                                                 Fichero datos (1.90 MB)
-   7559:                                                 <div class="descargas-link">
-   7887:                 <data-file url="https://www.cis.es/documents/20117/14250083/MD3577.zip/71da2723-5a10-0e95-7127-8531f06a816d?version=1.0&t=1790163543856"></data-file>
-   8029:                         // Cargar contenido HTML de la modal por AJAX
-   8049:                             // Realizar petición AJAX usando jQuery (más compatible con Liferay)
-   8056:                                 $.ajax({
-   8057:                                     url: resourceURL,
-   8100:                                         console.error('URL:', resourceURL);
-   8107:                                 fetch(resourceURL)
-   8315:                     'es.cis.study.data_download': 'Descarga\x20datos\x20en\x20formato\x20Excel',
-   8465:                     'es.cis.study.data_file.instructions_before_link': 'Para\x20obtener\x20más\x20información\x20sobre\x20los\x20Ficheros\x20de\x20datos\x20del\x20CIS\x2c\x20consulte\x20las',
-   8466:                     'es.cis.study.data_file.instructions_link_text': 'Instrucciones\x20sobre\x20los\x20ficheros\x20de\x20datos',
-   8482:                     'es.cis.study.data_file.conditions': '\x3cp\x3eCondiciones\x20aplicables\x20a\x20la\x20reutilización\x20de\x20datos\x20que\x20pone\x20a\x20disposición\x20el\x20CIS\x2e\x20\x3ca\x20href\x3d\x22\x2fes\x2fcondiciones-reutilización-datos-del-cis\x22\x20target\x3d\x22_blank\x22\x20tit
-   8487:                     'es.cis.study.data_file.modal_title': 'Descarga\x20del\x20fichero',
-   8491:                     'es.cis.study.data_file.success_message_download': 'Tu\x20solicitud\x20ha\x20sido\x20procesada\x2e\x20Ahora\x20puedes\x20descargar\x20el\x20fichero\x20de\x20datos\x2e',
-   8492:                     'es.cis.study.data_file.download_file_button': 'Descargar\x20fichero\x20de\x20datos',
-   8542:                     'es.cis.catalog.export_csv': 'Descargar\x20CSV',
-   8543:                     'es.cis.catalog.export_confirm_title': 'Descargar\x20resultados',
-   8544:                     'es.cis.catalog.export_confirm_message': 'Vas\x20a\x20descargar\x20\x7b\x7bcount\x7d\x7d\x20resultados\x2e\x20La\x20descarga\x20puede\x20tardar\x20varios\x20segundos\x2e\x20\xbfQuieres\x20continuar\x3f',
-   8546:                     'es.cis.catalog.export_confirm_accept': 'Descargar',
-   8634:                     'es.cis.study.data_download': 'Descarregar\x20dades\x20en\x20format\x20Excel',
-   8800:                     'es.cis.study.data_file.conditions': '\x3cp\x3eCondiciones\x20aplicables\x20a\x20la\x20reutilización\x20de\x20datos\x20que\x20pone\x20a\x20disposición\x20el\x20CIS\x2e\x20\x3ca\x20href\x3d\x22\x2fes\x2fcondiciones-reutilización-datos-del-cis\x22\x20target\x3d\x22_blank\x22\x20tit
-   8809:                     'es.cis.study.data_file.success_message_download': 'La\x20teva\x20sol\xb7licitud\x20ha\x20estat\x20processada\x2e\x20Ara\x20pots\x20descarregar\x20el\x20fitxer\x20de\x20dades\x2e',
-   8810:                     'es.cis.study.data_file.download_file_button': 'Descarregar\x20fitxer\x20de\x20dades',
-   8952:                     'es.cis.study.data_download': 'Download\x20data\x20in\x20Excel\x20format',
-   9123:                     'es.cis.study.data_file.modal_title': 'File\x20download',
-   9127:                     'es.cis.study.data_file.success_message_download': 'Your\x20request\x20has\x20been\x20processed\x2e\x20You\x20can\x20now\x20download\x20the\x20data\x20file\x2e',
-   9128:                     'es.cis.study.data_file.download_file_button': 'Download\x20data\x20file',
-   9178:                     'es.cis.catalog.export_csv': 'Download\x20CSV',
-   9179:                     'es.cis.catalog.export_confirm_title': 'Download\x20results',
-   9180:                     'es.cis.catalog.export_confirm_message': 'You\x20are\x20about\x20to\x20download\x20\x7b\x7bcount\x7d\x7d\x20results\x2e\x20The\x20download\x20may\x20take\x20several\x20seconds\x2e\x20Continue\x3f',
-   9182:                     'es.cis.catalog.export_confirm_accept': 'Download',
+== get https://armstat.am/en/?nid=1006
+  163,519 bytes, begins b' <!DOCTYPE html '
+  link: '' -> https://armstat.am/am/?nid=1006
+  link: '' -> https://armstat.am/en/?nid=1006
+  link: '' -> https://armstat.am/ru/?nid=1006
+  link: 'Population Census Armenian Sample Datafiles' -> https://armstat.am/en/?nid=210
+  link: 'Wages/salaries, number of payroll employees and number of entities' -> https://armstat.am/en/?nid=964
+  link: 'Labour force survey (LFS)' -> https://armstat.am/en/?nid=965
+  link: 'Officially registered jobseekers' -> https://armstat.am/en/?nid=966
+  link: 'Indicators on high-tech goods foreign trade according to the collective grouping of high-t' -> https://armstat.am/en/?nid=967
+  link: 'Age and sex distribution of RA permanent population, 2023-2024' -> https://armstat.am/en/?nid=969
+  link: 'Jobs: Vacant, Newly Created and Eliminated' -> https://armstat.am/en/?nid=1036
+  link: 'Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Y' -> https://armstat.am/en/?nid=1037
+  link: 'Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-20' -> https://armstat.am/en/?nid=1038
+  link: 'International tourism' -> https://armstat.am/en/?nid=1039
+  link: 'GSBPM' -> https://armstat.am/en/?nid=992
+  link: 'Population Census' -> https://armstat.am/en/?nid=20
+  link: 'Population Census 2022' -> https://armstat.am/en/?nid=743
+  link: 'State commission of RA 2022 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=744
+  link: 'Resolutions of RA Government - Population Census 2022' -> https://armstat.am/en/?nid=746
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2022' -> https://armstat.am/en/?nid=747
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2019' -> https://armstat.am/en/?nid=765
+  link: 'The Results of 2022 Population Census of RA' -> https://armstat.am/en/?nid=944
+  link: 'the result' -> https://armstat.am/en/?nid=1006
+  link: 'Population Census 2011' -> https://armstat.am/en/?nid=21
+  link: 'RA Law On Population Census' -> https://armstat.am/en/?nid=179
+  link: 'State commission of RA 2011 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=182
+  link: 'Pilot Population Census' -> https://armstat.am/en/?nid=184
+  link: 'The Preliminary Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=186
+  link: 'The Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=187
+  link: 'Population Census 2001' -> https://armstat.am/en/?nid=22
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=664
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=748
+  link: 'Figures of Yerevan city' -> https://armstat.am/en/?nid=945
+  link: 'Figures of marz of Aragatsotn' -> https://armstat.am/en/?nid=946
+  link: 'Figures of marz of Ararat' -> https://armstat.am/en/?nid=947
+  link: 'Figures of marz of Armavir' -> https://armstat.am/en/?nid=948
+  link: 'Figures of marz of Gegharkunik' -> https://armstat.am/en/?nid=949
+  link: 'Figures of marz of Lori' -> https://armstat.am/en/?nid=950
+  link: 'Figures of marz of Kotayk' -> https://armstat.am/en/?nid=951
+  link: 'Figures of marz of Shirak' -> https://armstat.am/en/?nid=952
+  link: 'Figures of marz of Syunik' -> https://armstat.am/en/?nid=953
+  link: 'Figures of marz of Vayots Dzor' -> https://armstat.am/en/?nid=956
+  link: 'Figures of marz of Tavush' -> https://armstat.am/en/?nid=957
+  link: 'Infographics' -> https://armstat.am/en/?nid=1004
+  link: 'Population Census 1989' -> https://armstat.am/en/?nid=1033
+  link: 'Agricultural Census' -> https://armstat.am/en/?nid=933
+  link: 'Agricultural Census 2024' -> https://armstat.am/en/?nid=935
+  link: 'Meetings in RA marzes and city Yerevan' -> https://armstat.am/en/?nid=971
+  link: 'Questionnaires' -> https://armstat.am/en/?nid=996
+  link: 'Agricultural Census 2014' -> https://armstat.am/en/?nid=23
+  link: 'Law of the Republic of Armenia on Agricultural Census' -> https://armstat.am/en/?nid=115
+  link: 'Republican Commission on preparation and conduction of RA Agricultural Census 2014' -> https://armstat.am/en/?nid=119
+  link: 'Pilot Agricultural Census' -> https://armstat.am/en/?nid=121
+  link: 'On Agricultural Post-Enumeration for the Quality Assessment of the Results of RA Agricultu' -> https://armstat.am/en/?nid=122
+  link: 'Strategy of Publication and Dissemination of the data of 2014 Agricultural Census in the R' -> https://armstat.am/en/?nid=123
+  link: 'Searching system of Agricultural Census 2014 data (in Armenian)' -> https://armstat.am/en/?nid=680
+  link: 'Dashboard' -> https://armstat.am/en/?nid=958
+  link: 'ATLAS THE REPUBLIC OF ARMENIA BY THE REGIONS AND YEREVAN CITY, 2024' -> https://armstat.am/en/?nid=974
+  link: 'RA Aragatsotn Marz in figures, 2024' -> https://armstat.am/en/?nid=975
+  link: 'Yerevan RA capital in figures, 2024' -> https://armstat.am/en/?nid=976
+  link: 'RA Ararat Marz in figures, 2024' -> https://armstat.am/en/?nid=977
+  (859 links in all)
+  text: The Results of 2022 Population Census of RA / Statistical Committee of the Republic of Armenia --> .titleline { border-left: 3px solid red; height: 20px; margin-left:480px ; margin-top:20px; } --> &nbspARMSTAT Statistical Committee Republic of Armenia Sunday, 27 September 2026 Home Statistics Publicatiоns For Respondent About us Statistics Statistical Indicators 1 Databases ArmStatBank.am ArmDevInfo.am External trade database According to the Commodity Nomenclature at 4-digit level External trade database by country External trade database Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 2-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 4-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 10-digit level) Microdata Statistical databases National Accounts Foreign accounts Government finance statistics Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (purchased and consume Household’s Integrated Living Conditions Survey Tools Demographic Database Population Census Armenian Sample Datafiles Instruction Labour Force Survey anonymised micro data database and questionnaire (by household's members) National Child Labour Survey, 2015 Labour Force Survey - World Bank Integrated Living Conditions Survey - World Bank Government operations Wages/salaries, number of payroll employees and number of entities Labour force survey (LFS) Officially registered jobseekers Indicators on high-tech goods foreign trade according to the collective grouping of high-tech products Age and sex distribution of RA permanent population, 2023-2024 Jobs: Vacant, Newly Created and Eliminated Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Yerevan, 2012-2022 (recalculated on the base of 2022 population census) Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-2011 International tourism Other databases External trade database by country 2017-2023 Statistics Dissemination Dissemination policy and strategy Special Data Dissemination Standard (SDDS) Revision Policy Dissemination Standards Bulletin Board 1Dissemination Standards Bulletin Board Dissemination Standards Bulletin Board 2Dissemination Standards Bulletin Board 3Dissemination Standards Bulletin Board 4Dissemination Standards Bulletin Board 5Dissemination Standards Bulletin Board 6Dissemination Standards Bulletin Board 7Dissemination Standards Bulletin Board 9Dissemination Standards Bulletin Board 10Dissemination Standards Bulletin Board 12Dissemination Standards Bulletin Board Metadata Metadata Developing Plan Reference metadata Metadata (ESMS) Quality reports (ESQRS) Classifications... Searching system of economic activities Classification collection groups Тransition keys of classifications Collective groupings of the high technological sector Methodology International methodological recommendations and guidelines Commodity Nomenclature of foreign economic activity Glossaries Statistical Glossary Quality Glossary GSBPM Glossary Code of practice glossary Documentation and Quality Quality Policy Quality Assurance Framework of the European Statistical System Documentation Economy and Finance Population and social processes Industry, Construction, Trade and Services Transport and Tourism Agriculture, forestry and fishing Foreign Trade Food Security Enviroment and Energy Quality Declarations Generic Statistical Business Process Model (GSBPM) GSBPM GSBPM Generic Activity Model For Statistical Organizations (GAMSO) Documentation Economy and Finance Population and social processes Industry, Construction, Trade and Services Transport and Tourism Agriculture, forestry and fishing Foreign Trade Food Security Enviroment and Energy Population Census Population Census 2022 State commission of RA 2022 Population Census preparations and undertaking Resolutions of RA Government - Population Census 2022 Resolutions of RA State Council on Statistics - Population Census 2022 Resolutions of RA State Council on Statistics - Population Census 2019 Resolutions of RA State Council on Statistics 2022 Meetings in RA marzes and city Yerevan The Results of 2022 Population Census of RA the result Population Census 2011 RA Law On Population Census Resolutions of RA Government Resolutions of RA State Council on Statistics (and legal acts) State commission of RA 2011 Population Census preparations and undertaking Meetings in RA marzes and city Yerevan Pilot Population Census Demography of Intercensal years The Preliminary Results of 2011 Population Census of RA The Results of 2011 Popu
+== get https://armstat.am/en/?nid=946
+  162,601 bytes, begins b' <!DOCTYPE html '
+  link: '' -> https://armstat.am/am/?nid=946
+  link: '' -> https://armstat.am/en/?nid=946
+  link: '' -> https://armstat.am/ru/?nid=946
+  link: 'Population Census Armenian Sample Datafiles' -> https://armstat.am/en/?nid=210
+  link: 'Wages/salaries, number of payroll employees and number of entities' -> https://armstat.am/en/?nid=964
+  link: 'Labour force survey (LFS)' -> https://armstat.am/en/?nid=965
+  link: 'Officially registered jobseekers' -> https://armstat.am/en/?nid=966
+  link: 'Indicators on high-tech goods foreign trade according to the collective grouping of high-t' -> https://armstat.am/en/?nid=967
+  link: 'Age and sex distribution of RA permanent population, 2023-2024' -> https://armstat.am/en/?nid=969
+  link: 'Jobs: Vacant, Newly Created and Eliminated' -> https://armstat.am/en/?nid=1036
+  link: 'Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Y' -> https://armstat.am/en/?nid=1037
+  link: 'Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-20' -> https://armstat.am/en/?nid=1038
+  link: 'International tourism' -> https://armstat.am/en/?nid=1039
+  link: 'GSBPM' -> https://armstat.am/en/?nid=992
+  link: 'Population Census' -> https://armstat.am/en/?nid=20
+  link: 'Population Census 2022' -> https://armstat.am/en/?nid=743
+  link: 'State commission of RA 2022 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=744
+  link: 'Resolutions of RA Government - Population Census 2022' -> https://armstat.am/en/?nid=746
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2022' -> https://armstat.am/en/?nid=747
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2019' -> https://armstat.am/en/?nid=765
+  link: 'The Results of 2022 Population Census of RA' -> https://armstat.am/en/?nid=944
+  link: 'the result' -> https://armstat.am/en/?nid=1006
+  link: 'Population Census 2011' -> https://armstat.am/en/?nid=21
+  link: 'RA Law On Population Census' -> https://armstat.am/en/?nid=179
+  link: 'State commission of RA 2011 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=182
+  link: 'Pilot Population Census' -> https://armstat.am/en/?nid=184
+  link: 'The Preliminary Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=186
+  link: 'The Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=187
+  link: 'Population Census 2001' -> https://armstat.am/en/?nid=22
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=664
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=748
+  link: 'Figures of Yerevan city' -> https://armstat.am/en/?nid=945
+  link: 'Figures of marz of Aragatsotn' -> https://armstat.am/en/?nid=946
+  link: 'Figures of marz of Ararat' -> https://armstat.am/en/?nid=947
+  link: 'Figures of marz of Armavir' -> https://armstat.am/en/?nid=948
+  link: 'Figures of marz of Gegharkunik' -> https://armstat.am/en/?nid=949
+  link: 'Figures of marz of Lori' -> https://armstat.am/en/?nid=950
+  link: 'Figures of marz of Kotayk' -> https://armstat.am/en/?nid=951
+  link: 'Figures of marz of Shirak' -> https://armstat.am/en/?nid=952
+  link: 'Figures of marz of Syunik' -> https://armstat.am/en/?nid=953
+  link: 'Figures of marz of Vayots Dzor' -> https://armstat.am/en/?nid=956
+  link: 'Figures of marz of Tavush' -> https://armstat.am/en/?nid=957
+  link: 'Infographics' -> https://armstat.am/en/?nid=1004
+  link: 'Population Census 1989' -> https://armstat.am/en/?nid=1033
+  link: 'Agricultural Census' -> https://armstat.am/en/?nid=933
+  link: 'Agricultural Census 2024' -> https://armstat.am/en/?nid=935
+  link: 'Meetings in RA marzes and city Yerevan' -> https://armstat.am/en/?nid=971
+  link: 'Questionnaires' -> https://armstat.am/en/?nid=996
+  link: 'Agricultural Census 2014' -> https://armstat.am/en/?nid=23
+  link: 'Law of the Republic of Armenia on Agricultural Census' -> https://armstat.am/en/?nid=115
+  link: 'Republican Commission on preparation and conduction of RA Agricultural Census 2014' -> https://armstat.am/en/?nid=119
+  link: 'Pilot Agricultural Census' -> https://armstat.am/en/?nid=121
+  link: 'On Agricultural Post-Enumeration for the Quality Assessment of the Results of RA Agricultu' -> https://armstat.am/en/?nid=122
+  link: 'Strategy of Publication and Dissemination of the data of 2014 Agricultural Census in the R' -> https://armstat.am/en/?nid=123
+  link: 'Searching system of Agricultural Census 2014 data (in Armenian)' -> https://armstat.am/en/?nid=680
+  link: 'Dashboard' -> https://armstat.am/en/?nid=958
+  link: 'ATLAS THE REPUBLIC OF ARMENIA BY THE REGIONS AND YEREVAN CITY, 2024' -> https://armstat.am/en/?nid=974
+  link: 'RA Aragatsotn Marz in figures, 2024' -> https://armstat.am/en/?nid=975
+  link: 'Yerevan RA capital in figures, 2024' -> https://armstat.am/en/?nid=976
+  link: 'RA Ararat Marz in figures, 2024' -> https://armstat.am/en/?nid=977
+  (857 links in all)
+  text: Figures of marz of Aragatsotn / Statistical Committee of the Republic of Armenia --> .titleline { border-left: 3px solid red; height: 20px; margin-left:480px ; margin-top:20px; } --> &nbspARMSTAT Statistical Committee Republic of Armenia Sunday, 27 September 2026 Home Statistics Publicatiоns For Respondent About us Statistics Statistical Indicators 1 Databases ArmStatBank.am ArmDevInfo.am External trade database According to the Commodity Nomenclature at 4-digit level External trade database by country External trade database Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 2-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 4-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 10-digit level) Microdata Statistical databases National Accounts Foreign accounts Government finance statistics Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (purchased and consume Household’s Integrated Living Conditions Survey Tools Demographic Database Population Census Armenian Sample Datafiles Instruction Labour Force Survey anonymised micro data database and questionnaire (by household's members) National Child Labour Survey, 2015 Labour Force Survey - World Bank Integrated Living Conditions Survey - World Bank Government operations Wages/salaries, number of payroll employees and number of entities Labour force survey (LFS) Officially registered jobseekers Indicators on high-tech goods foreign trade according to the collective grouping of high-tech products Age and sex distribution of RA permanent population, 2023-2024 Jobs: Vacant, Newly Created and Eliminated Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Yerevan, 2012-2022 (recalculated on the base of 2022 population census) Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-2011 International tourism Other databases External trade database by country 2017-2023 Statistics Dissemination Dissemination policy and strategy Special Data Dissemination Standard (SDDS) Revision Policy Dissemination Standards Bulletin Board 1Dissemination Standards Bulletin Board Dissemination Standards Bulletin Board 2Dissemination Standards Bulletin Board 3Dissemination Standards Bulletin Board 4Dissemination Standards Bulletin Board 5Dissemination Standards Bulletin Board 6Dissemination Standards Bulletin Board 7Dissemination Standards Bulletin Board 9Dissemination Standards Bulletin Board 10Dissemination Standards Bulletin Board 12Dissemination Standards Bulletin Board Metadata Metadata Developing Plan Reference metadata Metadata (ESMS) Quality reports (ESQRS) Classifications... Searching system of economic activities Classification collection groups Тransition keys of classifications Collective groupings of the high technological sector Methodology International methodological recommendations and guidelines Commodity Nomenclature of foreign economic activity Glossaries Statistical Glossary Quality Glossary GSBPM Glossary Code of practice glossary Documentation and Quality Quality Policy Quality Assurance Framework of the European Statistical System Documentation Economy and Finance Population and social processes Industry, Construction, Trade and Services Transport and Tourism Agriculture, forestry and fishing Foreign Trade Food Security Enviroment and Energy Quality Declarations Generic Statistical Business Process Model (GSBPM) GSBPM GSBPM Generic Activity Model For Statistical Organizations (GAMSO) Documentation Economy and Finance Population and social processes Industry, Construction, Trade and Services Transport and Tourism Agriculture, forestry and fishing Foreign Trade Food Security Enviroment and Energy Population Census Population Census 2022 State commission of RA 2022 Population Census preparations and undertaking Resolutions of RA Government - Population Census 2022 Resolutions of RA State Council on Statistics - Population Census 2022 Resolutions of RA State Council on Statistics - Population Census 2019 Resolutions of RA State Council on Statistics 2022 Meetings in RA marzes and city Yerevan The Results of 2022 Population Census of RA the result Population Census 2011 RA Law On Population Census Resolutions of RA Government Resolutions of RA State Council on Statistics (and legal acts) State commission of RA 2011 Population Census preparations and undertaking Meetings in RA marzes and city Yerevan Pilot Population Census Demography of Intercensal years The Preliminary Results of 2011 Population Census of RA The Results of 2011 Population Census 
