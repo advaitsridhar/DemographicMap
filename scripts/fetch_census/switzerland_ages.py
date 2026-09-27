@@ -265,25 +265,49 @@ def older_population(targets: list[tuple[str, set[str]]], start: int
         if str(when) not in book.sheetnames:
             raise SystemExit(f"switzerland_ages: the balance has no sheet {when}: {book.sheetnames}")
         sheet, _ = balance_sheet([list(r) for r in book[str(when)].iter_rows(values_only=True)])
-        for end in (f"31-12-{when}", f"01-01-{when + 1}"):
-            rows = agvch(f"correspondances?startPeriod={VINTAGE}&endPeriod={end}&includeUnmodified=true")
-            initial_of: dict[str, set[str]] = {}
-            names_t: dict[str, str] = {}
-            for r in rows:
-                t = str(int(r["TerminalCode"])).zfill(4)
-                initial_of.setdefault(t, set()).add(r["InitialCode"])
-                names_t[t] = r["TerminalName"]
-            extra = set(initial_of) - set(sheet)
-            if not set(sheet) - set(initial_of) and all(LAKE.search(names_t[t]) for t in extra):
-                break
-        else:
-            raise SystemExit(f"switzerland_ages: the {when} sheet's communes are no register state")
+        initial_of = register_state(sheet, when)
+        if initial_of is None:
+            continue
         for name, members in list(left.items()):
             todays = [t for t, ini in initial_of.items() if ini & members and t in sheet]
             if todays and all(initial_of[t] <= members for t in todays):
                 out[name] = (when, sum(sheet[t] for t in todays), len(todays))
                 del left[name]
+                log(f"    {name}: nests in {when}'s {len(todays)} communes")
+    if left:
+        log(f"    no year from {start} to {FIRST_BALANCE_YEAR} nests: {sorted(left)}")
     return out
+
+
+def register_state(sheet: dict[str, float], when: int) -> dict[str, set[str]] | None:
+    """Today's-commune -> 2009-communes at the register date whose communes are the sheet's.
+
+    A year's sheet is in the communes of 31 December (or of the next 1
+    January, or, for the oldest, of its own 1 January); the date whose
+    communes are exactly the sheet's, less the lakes where nobody lives, is
+    the one. None, and the difference logged, when no date fits.
+    """
+    tried = []
+    for end in (f"31-12-{when}", f"01-01-{when + 1}", f"01-01-{when}"):
+        try:
+            rows = agvch(f"correspondances?startPeriod={VINTAGE}&endPeriod={end}&includeUnmodified=true")
+        except SystemExit as exc:
+            tried.append(f"{end}: {exc}")
+            continue
+        initial_of: dict[str, set[str]] = {}
+        names_t: dict[str, str] = {}
+        for r in rows:
+            t = str(int(r["TerminalCode"])).zfill(4)
+            initial_of.setdefault(t, set()).add(r["InitialCode"])
+            names_t[t] = r["TerminalName"]
+        only_sheet = sorted(set(sheet) - set(initial_of))
+        only_register = sorted(t for t in set(initial_of) - set(sheet) if not LAKE.search(names_t[t]))
+        if not only_sheet and not only_register:
+            return initial_of
+        tried.append(f"{end}: {len(only_sheet)} only in the sheet {only_sheet[:6]}, "
+                     f"{len(only_register)} only in the register {[names_t[t] for t in only_register[:6]]}")
+    log(f"    the {when} sheet fits no register date, so it is not read: {'; '.join(tried)}")
+    return None
 
 
 def build(year: int, batch: int) -> list[dict[str, Any]]:

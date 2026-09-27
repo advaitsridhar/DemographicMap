@@ -180,6 +180,13 @@ class SwissDistrictsByYear(unittest.TestCase):
         self.assertEqual(out["Thun"], (2023, 300.0, 2))
 
 
+    def test_a_sheet_no_register_date_fits_is_not_read(self):
+        register = [{"InitialCode": "942", "TerminalCode": "942", "TerminalName": "Thun"}]
+        with mock.patch.object(switzerland_ages, "agvch", return_value=register):
+            self.assertIsNone(switzerland_ages.register_state({"0942": 1.0, "0934": 1.0}, 2009))
+            self.assertEqual(switzerland_ages.register_state({"0942": 1.0}, 2009), {"0942": {"942"}})
+
+
 class Liechtenstein(unittest.TestCase):
     def test_place_labels_lose_their_marks_and_codes(self):
         self.assertEqual(liechtenstein.gemeinde_name("....Vaduz"), "Vaduz")
