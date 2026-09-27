@@ -1,26 +1,15 @@
-== links https://www.thearda.com/data-archive?fid=ISSP08&tab=3 (?:download|[.]zip|[.]sav|[.]dta|agree|terms) 20
-  HTTP 200 text/html; charset=utf-8 253,987 bytes
-  https://www.thearda.com/data-archive/metadata  [Download Machine Readable Cataloging (MARC) Files Containing Extensive Metadata on the ARD]
-  https://osf.io/download/h7mwt  [Completely labeled SPSS (.sav) file]
-  https://osf.io/download/baj7f  [Completely labeled SPSS (.por) file]
-  https://osf.io/download/npjfu  [Completely labeled Stata file]
-  https://osf.io/download/u8tpc  [Complete codebook with frequencies and percentages file]
-  https://osf.io/download/cy593  [Codebook with frequencies and percentages up to 10 responses file]
-  https://osf.io/download/h3uak  [Codebook with variable descriptions only file]
-  https://osf.io/download/ub5k2  [Excel Data file]
-  https://osf.io/download/5jzem  [Data file]
-  https://osf.io/download/bvyh2  [Column Locations file]
-  (10 links shown)
-== head https://access.gesis.org/dbk/69548 
-  HTTP 200 application/pdf 1,280,538 bytes Content-Disposition=attachment; filename=ZA7505_cdb.pdf
-== grep https://data.europa.eu/api/hub/search/datasets/s2251_91_4_493_eng?locale=en (?:accessURL|downloadURL|gesis|format) 12 120
-  HTTP 200 application/json 66,048 bytes
-  ~ \n* Band B' (BP): Trends in der EU/soziodemografischen\n* Band C: Land/Soziodemografie\n—\nForscher können sich auch an GESIS – Leibniz-Institut für Sozialwissenschaften wenden: [https://www.gesis.org/eurobarometer](https://www.gesis.org/eurobar
-  ~ Soziodemografie\n—\nForscher können sich auch an GESIS – Leibniz-Institut für Sozialwissenschaften wenden: [https://www.gesis.org/eurobarometer](https://www.gesis.org/eurobarometer)","fi":"Tutkimuksessa keskitytään henkilön käsityksiin, asenteis
-  ~ A678B7B443F95C8C303BFD9"],"rights":{"resource":"http://publications.europa.eu/resource/authority/access-right/PUBLIC"},"format":{"format_types":[{"id":"archive","label":{"en":"Archive"}},{"id":"compressed","label":{"en":"Compressed"}},{"id":"pack
-== head https://www.gesis.org/en/eurobarometer-data-service/search-data-access/data-access 
-  HTTP 403 text/html; charset=UTF-8 5,819 bytes
-  Just a moment... Enable JavaScript and cookies to continue
-== text https://www.worldvaluessurvey.org/AJOnline.jsp?WAVE=&COUNTRY= 1500
-  HTTP 200 text/html;charset=utf-8 10,979 bytes
-  WVS Database Welcome to the World Values Survey Data analysis tool . To view data from a wave, click on the wave period from those listed below. You may return to this screen at any time to select a different wave. 2017-2022 2010-2014 2005-2009 1999-2004 1995-1998 1990-1994 1981-1984 Study on values realized in the countries of Europe by EVS research network is not included into the current data-set and is avaliable for both downloading and online-analysis at: http://www.europeanvaluesstudy.eu
+north_macedonia: MakStat, 2021 census
+  T1020P21.px: 82 areas, single years to 100 (open top)
+  80 municipalities
+  country: 1,836,713 residents, median age 41.1 from single years
+  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
+  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1503P21.px (HTTP Error 429: )
+  the merged Kichevo: 77 settlements
+  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
+    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
+    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
+    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
+    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
+    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
+north_macedonia: Kichevo settlements with no 2002 municipality: ['Ehloec', 'Karbunica', 'Rechani - Zajasko']; the 2002 settlements of the five are Kichevo: ['Kichevo', 'Knezhino', 'Lazarovci', 'Lazarovtsi', 'Mamudovci', 'Mamudovtsi', 'Osoj', 'Rashtani', 'Trapchin Dol']; Drugovo: ['Belica', 'Belitsa', 'Brzhdani', 'Cer', 'Dolna Dushegubica', 'Dolna Dushegubitsa', 'Dolno Dobrenoec', 'Dolno Dobrenoets', 'Drugovo', 'Ehlovets', 'Golemo Tsrsko', 'Gorna Dushegubica', 'Gorna Dushegubitsa', 'Gorno Dobrenoec', 'Gorno Dobrenoets', 'Ivanchishta', 'Izvor', 'Javorec', 'Javorets', 'Judovo', 'Kladnik', 'Klenoec', 'Kozica', 'Lavchani', 'Malkoec', 'Malkoets', 'Malo Crsko', 'Malo Tsrsko', 'Manastirsko Dolenci', 'Manastirsko Dolentsi', 'Podvis', 'Popoec', 'Popoets', 'Popolzhani', 'Prostranje', 'Srbjani', 'Svinjishte', 'Tser', 'Vidrani']; Oslomej: ['Arangel', 'Berikovo', 'Crvivci', 'Garani', 'Jagol', 'Jagol Dolenci', 'Jagol Dolentsi', 'Kjafa', 'Novo Selo', 'Oslomej', 'Papradishte', 'Popovjani', 'Premka', 'Shutovo', 'Srbica', 'Srbitsa', 'Strelci', 'Streltsi', 'Tsrvivtsi', 'Tuin', 'Zhubrino']; Vraneshtica: ['Atishta', 'Bigor Dolenci', 'Bigor Dolentsi', 'Chelopeci', 'Chelopetsi', 'Dupjani', 'Karabunitsa', 'Kozichino', 'Krushitsa', 'Miokazi', 'Orlanci', 'Orlantsi', 'Patec', 'Patets', 'Rabetino', 'Rechani - Chelopechko', 'Staroec', 'Staroets', 'Svetorache', 'Vraneshtica', 'Vraneshtitsa']; Zajas: ['Bachishta', 'Bukojchani', 'Dlapkin Dol', 'Dolno Strogomishte', 'Gorno Strogomishte', 'Greshnica', 'Greshnitsa', 'Kolari', 'Kolibari', 'Leshnica', 'Leshnitsa', 'Midinci', 'Midintsi', 'Rechani-Zajashko', 'Tajmishte', 'Zajas']
