@@ -5158,14 +5158,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 48.4,
+        "count": 284869
+      },
+      {
+        "group": "Russian",
+        "pct": 33.8,
+        "count": 199076
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 6.6,
+        "count": 39138
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.8,
+        "count": 28117
+      },
+      {
+        "group": "Belarusian",
+        "pct": 3.3,
+        "count": 19522
+      },
+      {
+        "group": "Polish",
+        "pct": 1.7,
+        "count": 9805
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.7,
+        "count": 4250
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.5,
+        "count": 2858
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 579
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 697
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5178,7 +5233,9 @@
     "shape_id": "27541924B69950658551149",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (260,303 males, 328,608 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (260,303 males, 328,608 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0002000",
@@ -5214,14 +5271,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Russian",
+        "pct": 46.5,
+        "count": 35995
+      },
+      {
+        "group": "Latvian",
+        "pct": 21.6,
+        "count": 16731
+      },
+      {
+        "group": "Polish",
+        "pct": 12.9,
+        "count": 9968
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 8.6,
+        "count": 6650
+      },
+      {
+        "group": "Belarusian",
+        "pct": 6.7,
+        "count": 5208
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.3,
+        "count": 1766
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.8,
+        "count": 637
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5,
+        "count": 378
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.2,
+        "count": 134
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5234,7 +5346,9 @@
     "shape_id": "27541924B86608938053042",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (34,635 males, 42,851 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (34,635 males, 42,851 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0003000",
@@ -5270,14 +5384,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 63.0,
+        "count": 34287
+      },
+      {
+        "group": "Russian",
+        "pct": 23.2,
+        "count": 12632
+      },
+      {
+        "group": "Belarusian",
+        "pct": 4.5,
+        "count": 2444
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.2,
+        "count": 1767
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.2,
+        "count": 1176
+      },
+      {
+        "group": "Polish",
+        "pct": 1.6,
+        "count": 851
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 1.3,
+        "count": 719
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8,
+        "count": 442
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 47
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5290,7 +5459,9 @@
     "shape_id": "27541924B72876713406332",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (24,921 males, 29,487 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (24,921 males, 29,487 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0004000",
@@ -5326,14 +5497,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 53.0,
+        "count": 28032
+      },
+      {
+        "group": "Russian",
+        "pct": 31.8,
+        "count": 16820
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 5.4,
+        "count": 2859
+      },
+      {
+        "group": "Belarusian",
+        "pct": 3.2,
+        "count": 1693
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.9,
+        "count": 1552
+      },
+      {
+        "group": "Polish",
+        "pct": 1.5,
+        "count": 817
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.8,
+        "count": 442
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.8,
+        "count": 408
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5,
+        "count": 260
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 43
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5346,7 +5572,9 @@
     "shape_id": "27541924B97650522889636",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (24,213 males, 28,713 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (24,213 males, 28,713 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0005000",
@@ -5382,14 +5610,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 61.2,
+        "count": 40870
+      },
+      {
+        "group": "Russian",
+        "pct": 25.8,
+        "count": 17199
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.4,
+        "count": 2943
+      },
+      {
+        "group": "Belarusian",
+        "pct": 2.7,
+        "count": 1815
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 2.7,
+        "count": 1806
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.0,
+        "count": 1325
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 578
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2,
+        "count": 128
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 23
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5402,7 +5685,9 @@
     "shape_id": "27541924B54461346766762",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (30,055 males, 36,691 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (30,055 males, 36,691 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0006000",
@@ -5438,14 +5723,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 48.3,
+        "count": 12539
+      },
+      {
+        "group": "Russian",
+        "pct": 40.1,
+        "count": 10420
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 5.9,
+        "count": 1543
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.0,
+        "count": 508
+      },
+      {
+        "group": "Polish",
+        "pct": 1.9,
+        "count": 503
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.4,
+        "count": 359
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.2,
+        "count": 43
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5458,7 +5798,9 @@
     "shape_id": "27541924B24417466951729",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (11,380 males, 14,598 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (11,380 males, 14,598 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0007000",
@@ -5494,14 +5836,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 61.8,
+        "count": 20057
+      },
+      {
+        "group": "Russian",
+        "pct": 23.5,
+        "count": 7644
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.3,
+        "count": 1394
+      },
+      {
+        "group": "Belarusian",
+        "pct": 3.7,
+        "count": 1191
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 3.5,
+        "count": 1137
+      },
+      {
+        "group": "Romani",
+        "pct": 1.5,
+        "count": 477
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 283
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.8,
+        "count": 262
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -5514,7 +5911,9 @@
     "shape_id": "27541924B34686521440656",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (14,619 males, 17,860 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (14,619 males, 17,860 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0020200",
@@ -26424,14 +26823,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 64.6,
+        "count": 13371
+      },
+      {
+        "group": "Russian",
+        "pct": 23.4,
+        "count": 4845
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 3.0,
+        "count": 618
+      },
+      {
+        "group": "Belarusian",
+        "pct": 2.7,
+        "count": 566
+      },
+      {
+        "group": "Polish",
+        "pct": 2.3,
+        "count": 485
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.1,
+        "count": 439
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.8,
+        "count": 168
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8,
+        "count": 167
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -26444,7 +26898,9 @@
     "shape_id": "27541924B6022937125095",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (9,489 males, 11,196 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (9,489 males, 11,196 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0031200",
@@ -41474,14 +41930,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 75.0,
+        "count": 16868
+      },
+      {
+        "group": "Russian",
+        "pct": 16.3,
+        "count": 3677
+      },
+      {
+        "group": "Belarusian",
+        "pct": 2.5,
+        "count": 566
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.4,
+        "count": 545
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.6,
+        "count": 369
+      },
+      {
+        "group": "Polish",
+        "pct": 1.2,
+        "count": 281
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.6,
+        "count": 138
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 14
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -41494,7 +42005,9 @@
     "shape_id": "27541924B85046161363388",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (10,040 males, 12,459 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (10,040 males, 12,459 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0040200",
@@ -58190,14 +58703,69 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Latvian",
+        "pct": 86.0,
+        "count": 19572
+      },
+      {
+        "group": "Russian",
+        "pct": 9.1,
+        "count": 2075
+      },
+      {
+        "group": "Belarusian",
+        "pct": 1.4,
+        "count": 325
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.1,
+        "count": 244
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 1.0,
+        "count": 217
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 146
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.4,
+        "count": 84
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3,
+        "count": 60
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median age/sex ratio",
         "name": "Central Statistical Bureau of Latvia, IRD081",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRD/IRD081/",
+        "year": 2026
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Statistical Bureau of Latvia, IRE031",
+        "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/IRE031/",
         "year": 2026
       }
     ],
@@ -58210,7 +58778,9 @@
     "shape_id": "27541924B28912918597311",
     "population_note": "Resident population at the beginning of 2026.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
-    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (10,187 males, 12,559 females)."
+    "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (10,187 males, 12,559 females).",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, IRE031). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0054200",
