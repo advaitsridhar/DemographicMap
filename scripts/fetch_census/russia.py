@@ -238,7 +238,7 @@ TABLE = {"ethnicity": "Tom5_tab1_VPN-2020.xlsx",
 AGE_TABLE = "Tom2_tab2_VPN-2020.xlsx"
 AGE_CAPTURE = "20221003180330"
 AGE_LANDING = ("https://rosstat.gov.ru/vpn/2020/"
-               "Tom2_Vozrastno-polovoj_sostav_i_sostoyanie_v_brake")
+               "Tom2_Vozrastno_polovoj_sostav_i_sostoyanie_v_brake")
 AGE_SOURCE = ("Федеральная служба государственной статистики (Rosstat), "
               "Всероссийская перепись населения 2020 года, Том 2, таблица 2: "
               "Население по возрастным группам и полу, retrieved via the "
@@ -559,7 +559,12 @@ def ages(blob: bytes) -> dict[str, dict[str, Any]]:
             continue
         if current is None:
             continue
-        if name == "Городское и сельское население" and current["total"] is None:
+        # A block opens with everyone. The three cities of federal
+        # significance have no rural population and open with "Городское
+        # население" instead, which for them is everyone; the country and its
+        # subjects adding up is what says it was read as such.
+        if (name in {"Городское и сельское население", "Городское население"}
+                and current["total"] is None):
             current["total"], current["men"], current["women"] = values
             reading = True
             continue
