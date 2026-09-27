@@ -1,45 +1,299 @@
-== https://www.eustat.eus/bankupx/api/v1/es/DB
-  PX_010123_cepv3_lhc01.px | Población de la C.A. de Euskadi por ámbitos territoriales, lengua hablada en casa y sexo. 1991 - 2021
-  PX_010123_cepv3_lhc04.px | Población de 2 y más años de la C.A. de Euskadi por territorio histórico, lengua hablada en casa y lugar de nacimiento. 1991 - 2021
-  PX_010123_cepv3_lhc05.px | Población de 2 y más años de la C.A. de Euskadi por territorio, lengua hablada en casa, nivel global de euskera y sexo. 1991 - 2021
-  PX_010123_cepv3_lhc06.px | Población de 2 y más años de la C.A. de Euskadi por territorio, lengua hablada en casa, nivel global de euskera y edad. 1991 - 2021
-  PX_010123_cepv3_lm01.px | Población de la C.A. de Euskadi por ámbitos territoriales, primera lengua y sexo. 1986 - 2021
-  PX_010123_cepv3_lm04.px | Población de 2 y más años de la C.A. de Euskadi por territorio histórico, primera lengua y lugar de nacimiento. 1986 - 2021
-  PX_010123_cepv3_lm05.px | Población de 2 y más años de la C.A. de Euskadi por territorio, primera lengua, nivel global de euskera y sexo. 1986 - 2021
-  PX_010123_cepv3_lm06.px | Población de 2 y más años de la C.A. de Euskadi por territorio, primera lengua, nivel global de euskera y edad. 1986 - 2021
-  PX_010123_cepv3_ne01.px | Población de 2 y más años de la C.A. de Euskadi por territorio, nivel global de euskera y sexo. 1981 - 2021
-  PX_010123_cepv3_ne02.px | Población de 2 y más años la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera. 1981 - 2021
-  PX_010123_cepv3_ne03.px | Población de 2 y más años de la C.A. de Euskadi por comarca, nivel global de euskera y edad. 1981 - 2021
-  PX_010123_cepv3_ne04.px | Población de 2 y más años de la C.A. de Euskadi por municipio (>= 40.000 habitantes), nivel global de euskera y edad. 1981 - 2021
-  PX_010123_cepv3_ne06.px | Porcentaje de población de 2 y más años de la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera. 1981 - 2021
-  PX_010152_cepv3_lhc01.px | Población de la C.A. de Euskadi por ámbitos territoriales, lengua hablada en casa y sexo. 1991 - 2021
-  PX_010152_cepv3_lhc04.px | Población de 2 y más años de la C.A. de Euskadi por territorio histórico, lengua hablada en casa y lugar de nacimiento. 1991 - 2021
-  PX_010152_cepv3_lhc05.px | Población de 2 y más años de la C.A. de Euskadi por territorio, lengua hablada en casa, nivel global de euskera y sexo. 1991 - 2021
-  PX_010152_cepv3_lhc06.px | Población de 2 y más años de la C.A. de Euskadi por territorio, lengua hablada en casa, nivel global de euskera y edad. 1991 - 2021
-  PX_010152_cepv3_lm01.px | Población de la C.A. de Euskadi por ámbitos territoriales, primera lengua y sexo. 1986 - 2021
-  PX_010152_cepv3_lm04.px | Población de 2 y más años de la C.A. de Euskadi por territorio histórico, primera lengua y lugar de nacimiento. 1986 - 2021
-  PX_010152_cepv3_lm05.px | Población de 2 y más años de la C.A. de Euskadi por territorio, primera lengua, nivel global de euskera y sexo. 1986 - 2021
-  PX_010152_cepv3_lm06.px | Población de 2 y más años de la C.A. de Euskadi por territorio, primera lengua, nivel global de euskera y edad. 1986 - 2021
-  PX_010152_cepv3_ne01.px | Población de 2 y más años de la C.A. de Euskadi por territorio, nivel global de euskera y sexo. 1981 - 2021
-  PX_010152_cepv3_ne02.px | Población de 2  y más años la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera. 1981 - 2021
-  PX_010152_cepv3_ne02_1.px | Población de 2  y más años la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera
-  PX_010152_cepv3_ne02_2.px | Población de la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera
-  PX_010152_cepv3_ne02_sinuni.px | Población de la C.A. de Euskadi por ámbitos territoriales, nivel de euskera y periodo.Distribución por personas y porcentaje.
-  PX_010152_cepv3_ne03.px | Población de 2 y más años de la C.A. de Euskadi por comarca, nivel global de euskera y edad. 1981 - 2021
-  PX_010152_cepv3_ne04.px | Población de 2 y más años de la C.A. de Euskadi por municipio (>= 40.000 habitantes), nivel global de euskera y edad. 1981 - 2021
-  PX_010152_cepv3_ne05.px | Población de 2 y más años de la C.A. de Euskadi por territorio histórico, nivel global de euskera y lugar de nacimiento. 1986 - 2021
-  PX_010152_cepv3_ne06.px | Porcentaje de población de 2 y más años de la C.A. de Euskadi por ámbitos territoriales y nivel global de euskera. 1981 - 2021
-  PX_010901_cecv_ni11_1.px | Población de 6 y más años de la C.A. de Euskadi por la lengua materna y zona (miles). 1989 - 2024
-  PX_010901_cecv_ni11_2.px | Población de 6 y más años de la C.A. de Euskadi por nivel de conocimiento de euskera y zona (miles). 1989 - 2024
-  PX_070198_ceaic_eaic05.px | Espectáculos programados por las agencias programadoras de artes escénicas de la C.A. de Euskadi por tipología de la agencia según la lengua del espectáculo
-  PX_070198_ceaic_eaic11.px | Espectáculos producidos por las agencias productoras de artes escénicas de la C.A. de Euskadi por lengua
-  PX_070198_ceaic_eaic27.px | Ejemplares editados (novedades + fondo) en la C.A. de Euskadi por lengua
-  PX_070198_ceaic_eaic38.px | Número de copias de discos realizadas en la C.A. de Euskadi por las discográficas por lengua
-  PX_173402_crpf_rpf_rf13.px | Renta familiar media de la C.A. de Euskadi por nivel global de euskera de la persona perceptora principal, según territorio histórico y sexo (euros)
-  PX_173402_crpf_rpf_rp06.px | Renta personal media de la C.A. de Euskadi por nivel global de euskera, según territorio histórico y sexo (euros)
-  PX_220122_cesif_pobmen_10b.px | Población de 6 a 14 años de la C.A. de Euskadi usuaria de Internet (últimos 3 meses) de la C.A. de Euskadi (miles) por idioma de la conexión utilizado y territorio histórico. 2003 - 2025
-  PX_223002_cesie_esieu12.px | Idiomas disponibles en la web en los establecimientos con sitio web de la C.A. de Euskadi por estrato de empleo (2), rama de actividad (A31) e idioma disponible. CNAE-93
-  PX_223002_cesie_esieu12b.px | Idiomas disponibles en la web en los establecimientos con sitio web de la C.A. de Euskadi por estrato de empleo (2), rama de actividad (A38) e idioma disponible. 2010 - 2026
-  PX_223002_cesie_esieu13.px | Idiomas disponibles en la web en los establecimientos con sitio web de la C.A. de Euskadi por estrato de empleo (2), territorio histórico e idioma disponible. 2002 - 2026
-  PX_223002_cesie_esieu14.px | Idiomas disponibles en la web en los establecimientos con sitio web de la C.A. de Euskadi por estrato de empleo (6) e idioma disponible. 2002 - 2026
-  43 shown of 2326 items
+probe_pdf: https://www.istat.it/wp-content/uploads/2017/12/Report_Uso-italiano_dialetti_altrelingue_2015.pdf
+  574,866 bytes
+  22 pages
+probe_pdf: 22 pages, 11 mention ['campione', 'famiglie', 'intervist', 'altro', 'Altro', 'nota']
+=== front matter ===
+ 
+ 
+Anno 2015 
+L’USO DELLA LINGUA ITALIANA, DEI 
+DIALETTI E DELLE LINGUE STRANIERE 
+ 
+ Nel 2015 si stima che il 45,9% della popolazione di 
+sei anni e più ( circa 26 milioni e 300mila individui) si 
+esprima prevalentemente in italiano in famiglia  e il 
+32,2% sia in italiano sia in dialetto . Soltanto il 14% (8 
+milioni 69mila persone) usa, invece, prevalentemente il 
+dialetto. Ricorre a un’altra lingua il 6,9% (all’incirca 4 
+milioni di individui , nel 2006 erano circa 2 milioni 
+800mila individui). 
+ La diffusione di lingue diverse dall’italiano e dal 
+dialetto in ambito familiare registra un aumento 
+significativo, in particolar modo tra i 25 -34enni (dal 
+3,7% del 2000, all’8,4% del 2006, al 12,1% del 2015). 
+ Per tutte le fasce di età diminuisce l’uso esclusivo 
+del dialetto, anche tra i più anziani , tra i quali  rimane 
+comunque una consuetudine molto diffusa : nel 2015 il 
+32% degli over 75 parla in modo esclusivo o prevalente 
+il dialetto in famiglia (erano il 37,1% nel 2006). 
+ L’uso prevalente del dialetto in famiglia e con gli 
+amici riguarda maggiormente chi ha un basso titolo di 
+studio, anche a parità di età. Il 24,8% di coloro che 
+possiedono la licenza media (o titoli inferiori) usa quasi 
+esclusivamente il dialetto in famiglia e il 33,7% con gli 
+amici (contro rispettivamente il 3,1% e il 2,7% di chi ha 
+la laurea o un titolo superiore).  
+ Nel 2015 il  90,4% della popolazi one è di lingua 
+madre italiana.  Rispetto al 2006, aumenta la stima di 
+quanti si dichiarano di lingua madre straniera (dal 4,1% 
+al 9,6% del 2015). 
+ Le aree del Paese dove è più elevata l’incidenza di 
+cittadini stranieri residenti sono più interessate dalla 
+presenza di persone di lingua madre straniera : il Nord-
+est (15,2%) e il Nord -ovest (11,5%) e i comuni Centro 
+di aree metropolitane (11,6%). 
+ Nel 2015 la conoscenza di una o più lingue 
+straniere interessa il 60,1% della popolazione di 6 anni 
+e più (34 milioni 370 mila persone), in aumento rispetto 
+al 56,9% del 2006. 
+ Il 92,3% delle persone di lingua madre straniera 
+conosce una o più lingue straniere , rispetto al 56,6% 
+dei lingua madre italiana; tra i primi è l’italiano la lingua 
+straniera più parlata, tra i secondi l´inglese. 
+ Conoscono una o più lingue straniere soprattutto i 
+giovanissimi e i giovani adulti fino a 34 anni (con stime 
+pari all’80% circa). La conoscenza delle lingue 
+straniere è più dif fusa nel Nord -ovest (66,2%) e nel 
+Nord-est (65,7%) rispetto al Sud (50,6%) e alle Isole 
+(51,5%). 
+ Tra le persone laureate di 25-44 anni si stima che il 
+96,1% conosca una o più lingue straniere, rispetto al 
+55,7% delle persone che hanno conseguito al massimo 
+la licenza media. La quota rimane molto elevata anche 
+tra le persone laureate di 65 anni e più (87,6%). 
+ Tra chi conosce una o più lingue straniere, i l 48,1% 
+conosce l’inglese,  il 29,5% il francese e l’11,1% lo 
+spagnolo.  
+ Il livello di conoscenza delle lin gue straniere è 
+ancora abbastanza modesto anche se si registra un 
+lieve miglioramento rispetto al 2006. Tra chi conosce 
+l’inglese, i l 7,2% dichiara un livello ottimo e il 27% un 
+livello buono di conoscenza (rispetto al 23,6% del 
+2006). Tuttavia, resta una quota consistente di persone 
+che dichiarano una conoscenza scarsa (28%, rispetto 
+al 30% del 2006). 
+ 
+FIGURA 1 . PERSONE DI 6 ANNI E PIÙ PER LINGUAGGIO 
+ABITUALMENTE USATO IN FAMIGLIA. Anni 1987/88, 1995, 2000, 
+2006 e 2015 (per 100 persone di 6 anni e più) 
+41,5%
+44,4% 44,1% 45,5% 45,9%
+32,0%
+23,8% 19,1%
+16,0% 14,1%
+24,9%
+28,3%
+32,9% 32,5% 32,2%
+0,6% 1,5% 3,0%
+5,1% 6,9%
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+45%
+50%
+1987/88 1995 2000 2006 2015
+Solo o prevalentemente italiano Solo o prevalentemente dialetto
+Sia italiano che dialetto Altra lingua
+ 
+ 
+ 
+27 dicembre 2017 
+ 
+  |  2 
+LINGUA ITALIANA, DIALETTI, 
+LINGUE STRANIERE 
+Stabile l’italiano, in calo l’uso esclusivo del dialetto, in aumento le altre lingue 
+Nel 2015, le persone che parlano prevalentemente italiano in famiglia rappresentano il 45,9% della 
+popolazione di sei anni e più (circa 26 milioni e 300mila individui). La scelta dell’italiano come 
+lingua prevalente è più frequente nelle relazioni con gli amici (49,6%) e ancor più nelle interazioni 
+con gli estranei (79,5%) (Prospetto 1). 
+Nei tre contesti relazionali considerati è diffuso anche l’uso misto di italiano e dialetto: in famiglia 
+parla sia italiano sia dialetto il 32,2% delle persone di 6 anni e più, con gli amici il 32,1% e con gli 
+estranei il 13% circa. 
+Soltanto il 14 ,1% della popolazione parla prevalentemente il dialetto in famiglia (8 milioni 69mila 
+persone), ancor meno con gli amici (12,1%) e gli estranei (4,2% circa). 
+Ricorre, infine, ad un’ altra lingua per esprimersi in famiglia il 6,9% della popolazione (all’incirca 4 
+milioni di persone), il 5,1% la usa con gli amici e il 2,2% con gli estranei. 
+Nel 2015 per la prima volta è stato rilevato il linguaggio abitualmente usato nel contesto dell’attività 
+lavorativa: la maggior parte delle persone di 15 anni e più fa un uso esclusivo dell’italiano (77,5%) 
+e nel 15,8% dei casi un uso misto di italiano e dialetto. 
+
+=== pages mentioning ['campione', 'famiglie', 'intervist', 'altro', 'Altro', 'nota'] (first 40) ===
+
+--- page 2 ----------------------------------------------------
+  |  2
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Stabile l’italiano, in calo l’uso esclusivo del dialetto, in aumento le altre lingue
+Nel 2015, le persone che parlano prevalentemente italiano in famiglia rappresentano il 45,9% della
+popolazione di sei anni e più (circa 26 milioni e 300mila individui). La scelta dell’italiano come
+lingua prevalente è più frequente nelle relazioni con gli amici (49,6%) e ancor più nelle interazioni
+con gli estranei (79,5%) (Prospetto 1).
+Nei tre contesti relazionali considerati è diffuso anche l’uso misto di italiano e dialetto: in famiglia
+parla sia italiano sia dialetto il 32,2% delle persone di 6 anni e più, con gli amici il 32,1% e con gli
+estranei il 13
+
+--- page 4 ----------------------------------------------------
+  |  4
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Meno marcate le differenze per età nel contesto lavorativo, dove , a parità di età, è più diffuso l’uso
+prevalente dell’italiano. Il ricorso esclusivo al dialetto sul luogo di lavoro, anche se con percentuali
+più ridotte, resta una prerogativa dei lavoratori più anziani : si passa dal 2,3% dei lavoratori di
+25-34 anni al 7,2% di chi ha 65 anni e più (Figura 2).
+FIGURA 2. PERSONE DI 15 ANNI E PIÙ OCCUPATE SECONDO IL LINGUAGGIO ABITUALMENTE USATO SUL LUOGO
+DI LAVORO PER CLASSE D'ETÀ. Anno 2015 (per 100 persone con le stesse caratteristiche)
+0%
+20%
+40%
+60%
+80%
+100%
+15-24 25-34 35-44 45-54 55-64 65 e più Totale
+Solo o prevalentemente italiano So
+
+--- page 6 ----------------------------------------------------
+  |  6
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Le regioni dove questa tendenza è più diffusa sono la Campania (75,2%), la Basilicata (69,4%), la
+Sicilia (68,8%) e la Calabria (68,6%). Al Centro soltanto nelle Marche si registra un uso del dialetto
+in famiglia (esclusivo o alternato all’italiano) superi ore alla media nazionale (56,3%). Al Nord a
+distinguersi per il ricorso al dialetto in famiglia, anche se non esclusivo, sono la provincia di Trento
+(54,9%) e il Veneto (62%)3.
+Nel contesto lavorativo le specificità territoriali sono simili a quelle rilevate in ambito familiare , con
+un minor ricorso all’uso esclusivo o prevalente dell’italiano nel Nord -est e nel Mezzogiorno (quote
+inferi
+
+--- page 7 ----------------------------------------------------
+  |  7
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+PROSPETTO 4.  PERSONE DI 6 ANNI E PIÙ PER LINGUA MADRE CONOSCIUTA, CONOSCENZA DI LINGUA STRANIERA, TIPO DI
+LINGUA CONOSCIUTA, SESSO E CLASSE D'ETÀ. Anno 2015 (per 100 persone con le stesse caratteristiche)
+CLASSI DI
+ETÀ
+Lingua madre(a)   Lingue straniere conosciute diverse da lingua madre
+Italiano Altro   Almeno una
+lingua straniera Francese Inglese  Spagnolo Tedesco Italiano Altra lingua
+MASCHI
+6-24 90,0 9,3  79,4 30,8 73,6 14,2 6,1 9,0 5,0
+25-34 83,2 16,2  78,0 31,1 69,4 16,7 6,7 14,8 4,8
+35-44 85,5 13,9  72,0 29,7 58,5 12,8 6,1 12,8 4,7
+45-54 91,1 8,3  62,4 29,2 49,4 11,1 5,7 7,8 4,0
+55-64 94,3 5,3  55,4 33,9 38,2 9,3 5,9 5,0 2,5
+65 e più
+
+--- page 15 ----------------------------------------------------
+  |  15
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+PROSPETTO 9 . PERSONE DI 6 ANNI E PIÙ CHE CONOSCONO UNA O PIÙ LINGUE STRANIERE PER GIUDIZIO COMPLESSIVO SUL
+LIVELLO DI CONOSCENZA DELLA LINGUA STRANIERA MEGLIO CONOSCIUTA, SESSO E CLASSI DI ETÀ.  Anno 2015 (per 100 persone
+dello stesso sesso e classe di età che conoscono una o più lingue straniere)
+CLASSI
+D’ETÀ
+Comprendo ed uso le espressioni
+più comuni e so usare la lingua
+straniera in semplici situazioni
+Comprendo le linee
+generali di un discorso, so
+produrre un semplice testo
+e comunicare in modo
+abbastanza scorrevole
+Comprendo un’ampia gamma di
+testi anche impegnativi e utilizzo
+la lingua straniera con piena
+padronanza
+Non
+so
+Non
+indica
+
+--- page 16 ----------------------------------------------------
+  |  16
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Rispetto al 2006, diminuisce la quota di chi dichiara la scuola e l’università come canale
+preferenziale di apprendimento della lingua straniera  più conosciuta  (nel 2006 85,8%) e rimane
+stabile la quota di chi l’ha appresa grazie a lezioni o corsi non scolastici . A umenta invece in
+misura significativa la quota di chi l’ha impar ata nei contesti familiari e amicali (famiglia di ori gine,
+coniuge, partner, amici) e soprattutto studiando da autodidatta (7,9% nel 2006, 11,8% nel 2015).
+Dal punto di vista dell’età , il ricorso a lezioni private , soggiorni di studio  o di lavoro all’estero e
+vacanze all’estero è più elevato a partire dai 25 
+
+--- page 17 ----------------------------------------------------
+  |  17
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Nota metodologica: Indagine i Cittadini e il Tempo libero
+Obiettivi conoscitivi dell’indagine
+L’indagine “I Cittadini e il Tempo Libero” (CTL) fa parte di un sistema integrato di indagini sociali
+(Indagini Multiscopo sulle Famiglie). L’indagine ha permesso nel tempo di descrivere in modo
+sistematico un campo complesso e differenziato qual è quello del tempo libero e dei rapporti che
+sussistono tra questo e la partecipazione culturale.
+La rilevazione si conce ntra a rilevare gli atteggiamenti e i comportamenti della popolazione
+riconducibili alla sfera del tempo libero, con particolare riguardo all'insieme di comportamenti e di
+attività lega
+
+--- page 18 ----------------------------------------------------
+  |  18
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Le famiglie sono state in prima battuta invitate a partecipare alla rilevazione rispondendo alle
+domande presenti nei modelli di rilevazione tramite web (CAWI). Successivamente, alle famiglie
+che non avevano partecipato all’indagine via web, è stata data la possibilità di essere intervistate
+tramite tecnica PAPI, con l’ausilio di un rilevatore comunale che ha provveduto a somministrare
+uno dei due modelli di rilevazione per intervista diretta, me ntre l’altro modello è stato consegnato a
+ciascun componente delle famiglie che ha provveduto a compilarlo personalmente.
+Le informazioni vengono fornite direttamente da tutti gli individui di 14 a
+
+--- page 19 ----------------------------------------------------
+  |  19
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Procedimento per il calcolo delle stime
+Le stim e prodotte dall’indagine sono di frequenze assolute e relative, riferite alle famiglie e agli
+individui o stime di totali di variabili quantitative. Sono ottenute mediante uno stimatore di
+ponderazione vincolata. Il principio su cui è basato ogni metodo di  stima campionaria è che le
+unità appartenenti al campione rappresentino anche le unità della popolazione che non sono
+incluse nel campione. Questo principio viene realizzato attribuendo a ogni unità campionaria un
+peso che indica il numero di unità della popolazione rappresentata dall’unità medesima. Per
+esempio, se a un’unità campionaria v
+
+--- page 20 ----------------------------------------------------
+  |  20
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+Nel prospetto A sono illustrate le modalità di calcolo per la costruzione dell’intervallo di confidenza
+delle stime puntuali riferite al numero di famiglie che in Lombardia dichiarano “adeguate” le proprie
+risorse economiche e al numero di persone di 6 anni e più che in Puglia  parlano solo o
+prevalentemente dialetto in famiglia.
+PROSPETTO A. CALCOLO ESEMPLIFICATIVO DELL’INTERVALLO DI CONFIDENZA
+ Famiglie in Lombardia che dichiarano “adeguate”
+le proprie risorse economiche
+Persone di 6 anni e più che in Puglia
+parlano solo o prevalentemente dialetto
+in famiglia
+Stima puntuale: 2.691.000 613.000
+Errore relativo (CV)  3,4/100=0,034 4,5/100=0,
+
+--- page 21 ----------------------------------------------------
+  |  21
+LINGUA ITALIANA, DIALETTI,
+LINGUE STRANIERE
+PROSPETTO B. VALORI INTERPOLATI DEGLI ERRORI CAMPIONARI RELATIVI PERCENTUALI DELLE STIME RIFERITE ALLE
+FAMIGLIE PER TOTALE ITALIA, RIPARTIZIONE GEOGRAFICA, TIPO DI COMUNE E REGIONE. Anno 2015
+STIME Italia Nord Nord-
+ovest Nord-est Centro Mezzogiorno Sud Isole A1 A2 B1 B2 B3 B4
+20.000 37,4 36,2 36,7 30,8 34,0 30,6 27,8 30,3 37,3 32,9 23,6 30,8 31,5 30,0
+30.000 29,9 29,0 29,5 24,7 27,2 24,5 22,5 24,4 29,8 26,8 19,5 24,9 25,5 24,1
+40.000 25,4 24,8 25,3 21,1 23,2 21,0 19,3 21,0 25,4 23,2 17,1 21,3 21,9 20,6
+50.000 22,5 22,0 22,5 18,7 20,5 18,6 17,2 18,6 22,4 20,7 15,4 18,9 19,5 18,2
+60.000 20,3 19,9 20,4 16,9 18,6 16,9 15,6 16,9 20,2 18,9 14,1 
