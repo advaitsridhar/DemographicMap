@@ -1,13 +1,155 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
-  80 municipalities
-  country: 1,836,713 residents, median age 41.1 from single years
-  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
-  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
-PxWeb 403 for https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1502P21.px: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-<title>403 - Forbidden: Access is denied.</title>
-<style typ
+
+=== svk5
+
+## https://www.scitanie.sk/obyvatelia/rozsirene-vysledky
+   HTTP 200, 29,151 bytes, text/html; charset=UTF-8
+   79 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{3,}<'
+   - href="https://www.scitanie.sk/themes/web-sodb/assets/public/images/favicon.png"> <
+   - href="https://www.scitanie.sk/themes/web-sodb/assets/public/css/css_iGlmF1nb.css"> <
+   - href="https://www.scitanie.sk/themes/web-sodb/assets/public/fonts/manrope-normal-webfont.woff2" crossorigin> <
+   - href="https://www.scitanie.sk/themes/web-sodb/assets/public/fonts/manrope-bold-webfont.woff2" crossorigin> <
+   - href="https://www.scitanie.sk/vyhlasenie-o-cookies" class="b-typo-link v-cookie">vyhlásení o cookies <
+   - href="#main">Preskočiť na hlavný obsah<
+   - href="https://www.scitanie.sk" class="d-homelink"> <
+   - href="#" class="d-menulink">Obyvatelia<
+   - href="/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR" tabindex="0" class="d-menulink">Základné výsledky<
+   - href="https://www.scitanie.sk/obyvatelia/rozsirene-vysledky" tabindex="0" class="d-menulink">Rozšírené výsledky<
+   - href="https://gis.scitanie.sk/portal/apps/sites/#/obyvatelia" tabindex="0" class="d-menulink">Geopriestorové údaje<
+   - href="/obyvatelia/casove-rady/pocet-obyvatelov/" tabindex="0" class="d-menulink">Časové rady<
+   - href="#" class="d-menulink">Domy<
+   - href="/domy/zakladne-vysledky/pocet-domov/SR/SK0/SR" tabindex="0" class="d-menulink">Základné výsledky<
+   - href="https://www.scitanie.sk/domy/rozsirene-vysledky" tabindex="0" class="d-menulink">Rozšírené výsledky<
+   - href="https://gis.scitanie.sk/portal/apps/sites/#/domy" tabindex="0" class="d-menulink">Geopriestorové údaje<
+   - href="/domy/casove-rady/pocet-trvalo-obyvanych-domov" tabindex="0" class="d-menulink">Časové rady<
+   - href="#" class="d-menulink">Byty<
+   - href="/byty/zakladne-vysledky/pocet-bytov/SR/SK0/SR" tabindex="0" class="d-menulink">Základné výsledky<
+   - href="https://www.scitanie.sk/byty/rozsirene-vysledky" tabindex="0" class="d-menulink">Rozšírené výsledky<
+   - href="https://gis.scitanie.sk/portal/apps/sites/#/byty" tabindex="0" class="d-menulink">Geopriestorové údaje<
+   - href="/byty/casove-rady/pocet-trvalo-obyvanych-bytov" tabindex="0" class="d-menulink">Časové rady<
+   - href="#" class="d-menulink">Domácnosti<
+   - href="/domacnosti/zakladne-vysledky/pocet-bytovych-domacnosti/SR/SK0/SR" tabindex="0" class="d-menulink">Základné výsledky<
+   - href="https://www.scitanie.sk/domacnosti/rozsirene-vysledky" tabindex="0" class="d-menulink">Rozšírené výsledky<
+   - href="https://gis.scitanie.sk/portal/apps/sites/#/domacnosti" tabindex="0" class="d-menulink">Geopriestorové údaje<
+   - href="/domacnosti/casove-rady/pocet-bytovych-domacnosti" tabindex="0" class="d-menulink">Časové rady<
+   - href="#" class="d-menulink">Moja obec<
+   - href="#" class="d-menulink">Viac<
+   - href="#" class="d-menulink">O sčítaní<
+   - href="https://www.scitanie.sk/o-scitani/zakladne-informacie-o-scitani-2021" tabindex="0" class="d-sublink">Základné informácie o sčítaní 2021<
+   - href="https://www.scitanie.sk/o-scitani/filmy-videa-o-scitani-2021" tabindex="0" class="d-sublink">Filmy a videá o sčítaní 2021<
+   - href="https://www.scitanie.sk/o-scitani/historia-scitania-v-sr-1918-2021" tabindex="0" class="d-sublink">História sčítania v SR (1918-2021)<
+   - href="https://www.scitanie.sk/o-scitani/udaje-z-minulych-scitani-od-1991" tabindex="0" class="d-sublink">Údaje z minulých sčítaní od 1991<
+   - href="#" class="d-menulink">Mohlo by vás zaujímať<
+   - href="https://www.scitanie.sk/odborne-clanky-publikacie" tabindex="0" class="d-sublink">Odborné články a publikácie<
+   - href="https://www.scitanie.sk/aktuality" tabindex="0" class="d-sublink">Aktuality<
+   - href="https://www.scitanie.sk/mohlo-by-vas-zaujimat/casto-kladene-otazky" tabindex="0" class="d-sublink">Často kladené otázky<
+   - href="#" class="d-menulink">Pre médiá<
+   - href="https://www.scitanie.sk/medialne-aktuality" tabindex="0" class="d-sublink">Mediálne aktuality<
+   - href="https://www.scitanie.sk/tlacove-spravy" tabindex="0" class="d-sublink">Tlačové správy<
+   - href="https://www.scitanie.sk/popularne-clanky-blogy" tabindex="0" class="d-sublink">Populárne články a blogy<
+   - href="#" class="d-menulink">Odborná verejnosť<
+   - href="https://www.scitanie.sk/navody" tabindex="0" class="d-sublink">Návody<
+   - href="https://www.scitanie.sk/vysvetlivky" tabindex="0" class="d-sublink">Vysvetlivky<
+   - href="https://www.scitanie.sk/analyzy" tabindex="0" class="d-sublink">Analýzy<
+   - href="https://www.scitanie.sk/statisticky-lexikon-obci" tabindex="0" class="d-sublink">Štatistický lexikón obcí<
+   - href="/sodb-pre-najmensich" tabindex="0" class="d-sublink">SODB pre najmenších<
+   - href="https://ec.europa.eu/CensusHub/" tabindex="0" class="d-sublink">Census HUB<
+   - href="https://www.scitanie.sk/kontakty" tabindex="0" class="d-menulink">Kontakty<
+   - href="/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR"> Základné výsledky <
+   - href="https://gis.scitanie.sk/portal/apps/sites/#/obyvatelia"> Geopriestorové údaje <
+   - href="/obyvatelia/casove-rady/pocet-obyvatelov"> Časové rady <
+   - href="https://www.scitanie.sk/o-scitani/zakladne-informacie-o-scitani-2021" class="d-link">Základné informácie o sčítaní 2021<
+   - href="https://www.scitanie.sk/o-scitani/filmy-videa-o-scitani-2021" class="d-link">Filmy a videá o sčítaní 2021<
+   - href="https://www.scitanie.sk/o-scitani/historia-scitania-v-sr-1918-2021" class="d-link">História sčítania v SR (1918-2021)<
+   - href="https://www.scitanie.sk/o-scitani/udaje-z-minulych-scitani-od-1991" class="d-link">Údaje z minulých sčítaní od 1991<
+   - href="https://www.scitanie.sk/odborne-clanky-publikacie" class="d-link">Odborné články a publikácie<
+   - href="https://www.scitanie.sk/aktuality" class="d-link">Aktuality<
+   - href="https://www.scitanie.sk/mohlo-by-vas-zaujimat/casto-kladene-otazky" class="d-link">Často kladené otázky<
+   - href="https://www.scitanie.sk/medialne-aktuality" class="d-link">Mediálne aktuality<
+   - href="https://www.scitanie.sk/tlacove-spravy" class="d-link">Tlačové správy<
+   - href="https://www.scitanie.sk/popularne-clanky-blogy" class="d-link">Populárne články a blogy<
+   - href="https://www.scitanie.sk/navody" class="d-link">Návody<
+   - href="https://www.scitanie.sk/vysvetlivky" class="d-link">Vysvetlivky<
+   - href="https://www.scitanie.sk/analyzy" class="d-link">Analýzy<
+   - href="https://ec.europa.eu/CensusHub/" class="d-link">Census HUB<
+   - href="https://www.scitanie.sk/statisticky-lexikon-obci" class="d-link">Štatistický lexikón obcí<
+   - href="https://www.statistics.sk" target="_blank" class="d-logolink"> <
+   - href="https://www.scitanie.sk/kontakty" class="c-buttons v-blue v-block v-centered">Kontakty<
+   - href="mailto:sodb2021@statistics.sk" class="b-typo-link v-mail">sodb2021@statistics.sk<
+   - href="https://www.facebook.com/sodb2021/" class="d-link" target="_blank"> <
+   - href="https://www.instagram.com/sodb_2021/" class="d-link" target="_blank"> <
+   - href="https://www.youtube.com/channel/UC9WdsQsvutu6G9a9eOYeOTw/featured" class="d-link" target="_blank"> <
+   - href="https://www.scitanie.sk/tlacove-spravy/statisticky-urad-slovenskej-republiky-ziskal-ocenenie-za-mimoriadne-vysledky-v-oblasti-vyuzitia-geografickeho-informacneho-systemu-gis-pri-sodb-2021" class="d-link"> <
+   - href="https://www.scitanie.sk/medialne-aktuality/statisticky-urad-slovenskej-republiky-ziskal-druhu-cenu-itapa" class="d-link"> <
+   - href="https://www.scitanie.sk/mapa-stranok" class="d-link">Mapa stránok<
+   - href="https://www.scitanie.sk/vyhlasenie-o-pristupnosti" class="d-link">Vyhlásenie o prístupnosti<
+   - href="https://www.scitanie.sk/obsahovy-technicky-prevadzkovatel" class="d-link">Obsahový a technický prevádzkovateľ<
+
+## https://www.scitanie.sk/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR
+   HTTP 200, 45,077 bytes, text/html; charset=UTF-8
+   4 distinct matches of 'href=\\"[^\\"]*(?:zakladne-vysledky|xlsx|csv|stiahn)[^\\"]*\\"'
+   - href="/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR"
+   - href="/domy/zakladne-vysledky/pocet-domov/SR/SK0/SR"
+   - href="/byty/zakladne-vysledky/pocet-bytov/SR/SK0/SR"
+   - href="/domacnosti/zakladne-vysledky/pocet-bytovych-domacnosti/SR/SK0/SR"
+
+=== nld5
+
+## https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=DescribeFeatureType&service=WFS&version=2.0.0&typeNames=wijkenbuurten:gemeenten
+   HTTP 200, 19,148 bytes, application/gml+xml; version=3.2; charset=UTF-8
+   12 distinct matches of 'name=\\"[a-z_0-9]+\\"'
+   - name="gemeenten"
+   - name="geom"
+   - name="gemeentecode"
+   - name="gemeentenaam"
+   - name="water"
+   - name="omgevingsadressendichtheid"
+   - name="mannen"
+   - name="vrouwen"
+   - name="woningvoorraad"
+   - name="jrstatcode"
+   - name="jaar"
+   - name="fuuid"
+
+## https://www.cbs.nl/nl-nl/zoeken?q=religie%20provincie
+   HTTP 200, 77,931 bytes, text/html; charset=utf-8
+   15 distinct matches of 'href=\\"[^\\"]*(?:relig|kerk)[^\\"]*\\"'
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=religie%20provincie"
+   - href="https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025"
+   - href="https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert"
+   - href="https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/83082NED?q=religie%20provincie"
+   - href="https://www.cbs.nl/nl-nl/corporate/2024/13/kerkelijke-gezindten-langs-de-meetlat-1849-2023"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/80889ned?q=religie%20provincie"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/71426ned?q=religie%20provincie"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/7477?q=religie%20provincie"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/71024ned?q=religie%20provincie"
+   - href="/nl-nl/zoeken?q=religie%20provincie&amp;selectedperiod=all-periods&amp;pageindex=1"
+   - href="/nl-nl/zoeken?q=religie%20provincie&selectedperiod=all-periods&pageindex=2"
+   - href="/nl-nl/zoeken?q=religie%20provincie&selectedperiod=all-periods&pageindex=3"
+   - href="/nl-nl/zoeken?q=religie%20provincie&amp;selectedperiod=all-periods&amp;pageindex=159"
+   - href="/nl-nl/zoeken?q=religie%20provincie&amp;selectedperiod=all-periods&amp;pageindex=2"
+
+=== lux5
+
+## https://statistiques.public.lu/fr/publications/recensement/diversite-linguistique.html
+   HTTP 200, 105,146 bytes, text/html; charset=utf-8
+   5 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|pdf)\\"|href=\\"[^\\"]*lustat[^\\"]*\\"'
+   - href="https://lustat.statec.lu/"
+   - href="https://lustat.statec.lu/?fs%5b0%5d=Th%C3%A8mes%2C1%7CStatistiques%20par%20niveau%20g%C3%A9ographique%23F%23%7CCommunes%23F2%23&pg=0&fc=Th%C3%A8mes"
+   - href="https://lustat.statec.lu/?fs%5b0%5d=Th%C3%A8mes%2C1%7C%C3%89conomie%20totale%20et%20prix%23E%23%7CPrix%23E5%23&pg=0&fc=Th%C3%A8mes"
+   - href="//statistiques.public.lu/fr/donnees/lustat.html"
+   - href="//statistiques.public.lu/dam-assets/recensement/publication-8/docs/rp08-diversit-linguistique-fr.pdf"
+   - DF_C6501(1.1) Participants of the evening language classes
+   - DF_D6402(1.0) Luxembourg Merchant Fleet 1993 - 2011
+   - DF_E2707(1.1) National expenditure on environmental protection by function and type of expenditure 2008-2011
+   - DF_E2709(1.1) Environmental protection expenditure accounts of public sector (in millions EUR)  2008-2011
+   - DF_E2710(1.1) Environmental protection expenditure accounts of private sector (in millions EUR)  2008-2011
+   - DF_X043(1.0) Local elections: Suffrages per party 1999 - 2011
+   - DF_X044(1.0) Seats per party 1999 - 2011
+   - DSD_CENSUS_GROUP11_14@DF_B1634(1.0) Place of usual residence one year prior to the census by year of arrival in the country, sex and age
+   - DSD_CENSUS_GROUP11_14@DF_B1635(1.0) Place of usual residence one year prior to the census by country of birth, sex and age
+   - DSD_CENSUS_GROUP11_14@DF_B1636(1.0) Place of usual residence one year prior to the census by citizenship, country of birth and sex
+   - DSD_CENSUS_GROUP11_14@DF_B1637(1.0) Place of usual residence one year prior to the census by employment status, sex and age
+   - DSD_CENSUS_GROUP11_14@DF_B1639(1.0) Housing arrangements by place of usual residence one year prior to the census, sex and age
+   - DSD_CENSUS_GROUP25_28@DF_B1686(1.0) Place of usual residence one year prior to the census by familly status, age and sex
+   - DSD_CENSUS_GROUP25_28@DF_B1687(1.0) Place of usual residence one year prior to the census by household status, age and sex
