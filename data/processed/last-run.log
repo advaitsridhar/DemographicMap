@@ -1,13 +1,19 @@
-  01.01.2026: 11 marzes make the republic's 3,096,896; every block's groups make its total
-  Yerevan: 1,147,664, median 42.1, 82.0 men per 100 women
-  Aragatsotn: 136,138, median 38.8, 100.2 men per 100 women
-  Ararat: 270,607, median 37.5, 97.5 men per 100 women
-  Armavir: 270,385, median 38.4, 96.7 men per 100 women
-  Gegharkunik: 217,364, median 37.7, 100.7 men per 100 women
-  Lori: 229,462, median 39.9, 88.7 men per 100 women
-  Kotayk: 297,222, median 38.3, 91.5 men per 100 women
-  Shirak: 242,292, median 39.0, 91.3 men per 100 women
-  Syunik: 118,259, median 39.8, 95.2 men per 100 women
-  Vayots Dzor: 49,489, median 39.9, 95.1 men per 100 women
-  Tavush: 118,014, median 39.1, 95.1 men per 100 women
-  wrote data/processed/armenia.json (30 kB)
+  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
+  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
+  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
+  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
+  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
+  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
+  estimate for 1 January 2026: 11 regions make the country's 3,941,100
+  fetched ADM2_simplified.geojson (1.3 MB)
+  GEO ADM2: 68 polygons from ADM2_simplified.geojson
+  Batumi's centre lies in 'Khelvachauri'; the nearest other polygon is 8.2 km away
+  Kutaisi: not placed; polygons near its centre: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km)
+  Poti: not placed; polygons near its centre: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km)
+  Rustavi's centre lies in 'Gardabani'; the nearest other polygon is 1.9 km away
+  2014 unit 'Axaltsikhe Municipality' has no polygon
+  second level: 55 polygons with a count; rows on no polygon: []
+  wrote data/processed/georgia.json (219 kB)
