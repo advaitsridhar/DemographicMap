@@ -3,7 +3,7 @@
 
 The Statistical Service of Cyprus (CYSTAT) publishes the Census of Population
 and Housing 2021 (reference day 1 October 2021) in its PxWeb database
-(cystatdb23px.cystat.gov.cy):
+(cystatdb.cystat.gov.cy):
 
 * 1891129E -- population by district, sex and single year of age (to 80+);
 * 1891108E -- population by district, municipality/community, sex and
@@ -47,7 +47,10 @@ from .redatam import median_age
 
 OUT = "cyprus_census.json"
 YEAR = 2021
-BASE = ("https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/"
+# cystatdb23px answers a GET itself and moves a POST (301) to cystatdb, and
+# urllib follows a moved POST as a GET -- which returns the table's metadata
+# instead of its data. So the tables are asked for at cystatdb directly.
+BASE = ("https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/"
         "Census%20of%20Population%20and%20Housing%202021/Population/")
 TABLES = {
     "single": BASE + "Population%20-%20Place%20of%20Residence/1891129E.px",
