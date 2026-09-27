@@ -519,7 +519,7 @@ def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str] | Non
     for segment, unit in waiting.items():
         seen = votes.get(segment)
         top, share = None, 0.0
-        if seen:
+        if seen and sum(seen.values()) > 0:        # some people weigh nothing
             top, most = seen.most_common(1)[0]
             share = most / sum(seen.values())
         if top is None or share < SEGMENT_SHARE:
