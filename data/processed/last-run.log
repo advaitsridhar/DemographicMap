@@ -1,136 +1,68 @@
-== https://www.eustat.eus/bankupx/api/v1/es/DB
-  502,854 bytes; starts b'[{"id":"'
-  [{"id":"PX__fe_inem06.px","type":"t","text":"Paro registrado de la C.A. de Euskadi por ámbitos territoriales y sexo. 1997 - 2022","updated":"2023-01-09T15:04:41"},{"id":"PX__feinem_inem06.px","type":"t","text":"Paro registrado de la C.A. de Euskadi por ámbitos territoriales y sexo","updated":"2021-0
-== https://api.idescat.cat/taules/v2?lang=en
-  5,475 bytes; starts b'{\n  "cla'
-  {
-    "class" : "collection",
-    "href" : "https://api.idescat.cat/taules/v2?lang=en",
-    "label" : "Available statistics",
-    "link" : {
-      "item" : [ {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/afi?lang=en",
-        "label" : "Contributors and Affiliations to Social Security based on Contributors' Registered Place of Residence"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/censph?lang=en",
-        "label" : "Population and Housing Census"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/comest?lang=en",
-        "label" : "Foreign Trade"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/comtec?lang=en",
-        "label" : "Foreign Trade according to Technological Content"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/pibt?lang=en",
-        "label" : "Quarterly Accounts"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/piba?lang=en",
-        "label" : "Annual Economic Accounts for Catalonia"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/ee?lang=en",
-        "label" : "Companies and Establishments"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/eulp?lang=en",
-        "label" : "Survey on Language Uses of the Population"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/eut?lang=en",
-        "label" : "Survey on the Use of Time"
-      }, {
-        "class" : "collection",
-        "href" : "https://api.idescat.cat/taules/v2/ceph?lang=en",
-        "label" : "
-== https://www.ige.gal/igebdt/esqv.jsp?paxina=002001&c=0206004&idioma=gl
-  23,445 bytes; starts b'\r\n\r\n\r\n\r\n'
-  Principais datos
-  IGE -
-  Galego
-  Castellano
-  -->
-  Datos
-  Documentación
-  Servizos
-  O IGE
-  Territorio e medio
-  Poboación e condicións sociais
-  Poboación
-  Sanidade
-  Educación
-  Traballo
-  Benestar e condicións de vida
-  Cultura, deporte e lecer
-  Estrutura produtiva
-  Agricultura, explotación forestal e pesca
-  Industria e enerxía
-  Construción e vivenda
-  Servizos
-  Administración pública
-  Economía
-  Prezos
-  Coñecemento e tecnoloxía
-  Ciencia e tecnoloxía
-  Temas transversais
-  Banco de series de conxuntura
-  Boletín de conxuntura
-  Estatísticas de xénero
-  Estatística históricas de Galicia
-  Estudo sobre salarios
-  Indicadores
-  Observatorio transfronteirizo
-  Obxectivos de desenvolvemento sustentable
-  Por ámbito xeográfico
-  Información municipal e comarcal
-  Información por cuadrícula de 1 km²
-  Panorama dos sete grandes concellos
-  Panorama rural-urbano
-  Galicia en síntese
-  Datos estatísticos básicos
-  Galicia en cifras
-  Principais datos de Galicia
-  Principais indicadores económicos
-  Catálogo de rexistros administrativos de interese estatístico
-  Clasificacións
-  Cuestionarios
-  Documentos técnicos
-  Metodoloxías
-  Proxectos técnicos
-  Vocabulario estatístico
-  Axuda
-  Acceso á información/Outra información estatística
-  Solicitude de información
-  Peticións de información
-  Informes
-  Publicacións
-  Biblioteca
-  Datos abertos
-  Ligazóns
-  Recollida de información nas enquisas
-  Portal educativo
-  Para desenvolvedores/programadores
-  Descarga de información. APIs
-  Software
-  Widgets do IGE
-  Servizos para a prensa
-  Noticias
-  Calendario
-  Lista de subscrición
-  Servizo de noticias RSS
-  Redes sociais
-  IGE
-  Presentación
-  Estatuto
-  Organigrama
-  Plan de actuación anual
-  Transparencia e goberno aberto
-  Formación e emprego
-  Perfil do contrata
-== https://www.cis.es/es/estudios/catalogo-de-estudios
-  HTTPError: HTTP Error 404: 
+probe_arcgis: item d964be364f074ac3afe52e64a0f6817e
+  title                Població 2010-2025
+  type                 Feature Service
+  owner                cartografia
+  created              1664370522561
+  modified             1770113101674
+  accessInformation    Àrea de Cartografia - Estadística
+  tags                 ['població', 'habitants']
+  url                  https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer
+  size                 198683
+  numViews             5114
+  snippet              Habitants per poblacions del període 2010-2025
+
+  service: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer
+  retry 1/4 after 2s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
+  retry 2/4 after 4s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
+  retry 3/4 after 8s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
+  retry 4/4 after 16s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 899, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1362, in _send_request
+    self.putrequest(method, url, **skips)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1200, in putrequest
+    self._output(self._encode_request(request))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1280, in _encode_request
+    return request.encode('ascii')
+           ^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 157, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 132, in main
+    root = get_json(service)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 56, in get_json
+    text = http_get(full, cache=False, timeout=120)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 920, in http_get
+    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
+RuntimeError: GET failed after 4 retries: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json
