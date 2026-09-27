@@ -230,7 +230,8 @@ def main() -> int:
     log("uk_mye: local authorities (county / unitary, April 2023)")
     places = read(LOCAL)
     log("uk_mye: the four nations")
-    nations = read(NATIONS)
+    # TYPE499 also lists the UK, Great Britain and England and Wales.
+    nations = {c: p for c, p in read(NATIONS).items() if c[1:3] == "92"}
     if sorted(c[0] for c in nations) != sorted(NATION_OF):
         raise SystemExit(f"uk_mye: nations read: {sorted(nations)}")
     total_check(places, nations)

@@ -277,6 +277,10 @@ def main() -> int:
     # nothing for them: the 2021 census it serves is England and Wales'.
     codes = sorted(c for c in set().union(*(set(t) for t in tables.values()))
                    if any(tables[f].get(c, {}).get("counts") for f in tables))
+    if args.level == "nation":
+        # TYPE499 also holds England and Wales together (K04000001), which is
+        # no shape; left in, its name reached England's by containment.
+        codes = [c for c in codes if c[:3] in ("E92", "W92")]
     check_totals(tables)
     src = f"ONS Census {YEAR} (England and Wales) via Nomis"
     level = "admin1" if args.level == "nation" else "admin2"
@@ -352,6 +356,9 @@ LANGUAGE_RESPELLINGS = {
     "Northern European language (non EU)": "Other European language",
     "Any other Nigerian language": "Other African language",
     "Any other West African language": "Other African language",
+    # ONS's "Other language: North or South American language" is the
+    # Americas' indigenous languages (Quechua, Guarani, Nahuatl and the rest).
+    "North or South American language": "Indigenous American languages",
 }
 
 
