@@ -41,15 +41,17 @@ Rosstat today.
 boundary file is English, and norm() deliberately does not transliterate --
 inventing a romanisation here would be this code guessing at a name rather
 than reading one. Every subject therefore carries its ISO 3166-2 code, which
-either matches a shape's code or does not, with no fuzzy step in between where
-Chechnya can quietly wear Ingushetia's figures. One shape, Sakha, carries no
-code in the boundary file and is aliased by name instead.
+either names exactly one of the map's shapes (the codes Wikidata gives them) or
+stops the run, with no fuzzy step in between where Chechnya can quietly wear
+Ingushetia's figures. The row is bound to that shape by id, under the shape's
+own name, with the sheet's name as an alias.
 """
 
 from __future__ import annotations
 
 import argparse
 import io
+import json
 import re
 import time
 from collections import Counter
@@ -72,6 +74,7 @@ import canonical_groups  # noqa: E402
 # depend on an archive being in a good mood, and 2.6 MB is a small price for
 # a build that does the same thing every time.
 STORE = RAW / "russia"
+SITE = PROCESSED.parent.parent / "site" / "data"
 
 CAPTURE = "20250105165828"
 # The "id_" suffix is the Wayback Machine's raw-content form, and it is not
@@ -717,8 +720,28 @@ def main() -> int:
     table = ages(blob)
     check_ages(table)
 
+    # The shape each code names, looked up here rather than left to the
+    # build's code pass. That pass refuses a row answering a question the
+    # shape has already been answered on, which is right for two sources
+    # matched two ways -- but Wikidata's fill-only population is on every
+    # shape before the code pass runs, so once this file carried the census
+    # count the pass refused 82 of the 83 rows whole, ethnicity and language
+    # with them. A row bound to its shape is merged like any other, and the
+    # census count replaces the encyclopaedia's, which is the order the build
+    # keeps everywhere else.
+    units = json.loads((SITE / "admin1" / "RUS.units.json").read_text())
+    by_code: dict[str, list[dict[str, Any]]] = {}
+    for unit in units:
+        if isinstance(unit.get("iso_3166_2"), str):
+            by_code.setdefault(unit["iso_3166_2"], []).append(unit)
+    unbound = {code: len(by_code.get(code, [])) for code in SUBJECTS.values()
+               if len(by_code.get(code, [])) != 1}
+    if unbound:
+        raise SystemExit(f"RUS: these codes name no shape or several: {unbound}")
+
     records = []
     for sheet, code in SUBJECTS.items():
+        unit = by_code[code][0]
         values: dict[str, Any] = {}
         for field in TABLE:
             got = fields[field].get(sheet)
@@ -729,14 +752,13 @@ def main() -> int:
                 field, shares(got["counts"], total=got["published"] or None))
             values[f"{field}_year"] = YEAR
         records.append(record(
-            code, sheet, level="admin1", parent="RUS",
+            code, unit["name"], level="admin1", parent="RUS",
             country="RUS", iso_3166_2=code,
             # These sheets are Cyrillic and the shapes English, so the name
-            # pass cannot settle them and the code is asked to. Declared per
-            # row rather than inferred from carrying a code, because plenty of
-            # rows carry one and should still be matched by name.
-            match_by="iso_3166_2",
-            aliases=list(BY_NAME.get(code, ())),
+            # pass cannot settle them: the row is bound to the shape its code
+            # names, and keeps the sheet's own name as an alias.
+            match_by="shape_id", shape_id=unit["id"],
+            aliases=[sheet, *BY_NAME.get(code, ())],
             **values,
             **age_fields(table[sheet]),
             sources=[{"field": field, "name": SOURCE, "url": LANDING,
