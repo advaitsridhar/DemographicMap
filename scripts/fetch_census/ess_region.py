@@ -112,12 +112,66 @@ def discover(countries: list[str]) -> None:
                 log(f"   weighted: {str(exc)[:160]}")
 
 
+VARIABLES = """query($id: ID!, $version: Int) { search {
+  dataFileMetadata(id: $id, version: $version, agencyId: INT_ESSERIC, instance: PUBLISHED) {
+    label { en } disseminationLimitation defaultWeight { name { en } }
+    variables { name { en } label { en } hasCodes } } } }"""
+
+
+def main_files() -> dict[str, dict[str, Any]]:
+    """{label: datafile} for every round's main files, e.g. 'ESS11e04_2'."""
+    return {df["label"]["en"]: df for study in studies()
+            for df in study.get("mainDataFiles") or []}
+
+
+def pick(files: dict[str, dict[str, Any]], prefix: str) -> dict[str, Any]:
+    hits = [df for label, df in files.items() if label.startswith(prefix + "e")]
+    if len(hits) != 1:
+        raise SystemExit(f"ess_region: {prefix!r} names {len(hits)} datafiles: {sorted(files)}")
+    return hits[0]
+
+
+def show_variables(prefix: str, pattern: str) -> None:
+    import re
+    df = pick(main_files(), prefix)
+    meta = gql(VARIABLES, {"id": df["id"], "version": df["version"]})["search"]["dataFileMetadata"]
+    log(f"== {meta['label']['en']} limitation={meta.get('disseminationLimitation')} "
+        f"weight={meta.get('defaultWeight')} variables={len(meta['variables'])}")
+    rx = re.compile(pattern, re.I)
+    for var in meta["variables"]:
+        name, label = var["name"]["en"], (var.get("label") or {}).get("en") or ""
+        if rx.search(name) or rx.search(label):
+            log(f"   {name}: {label[:100]} codes={var.get('hasCodes')}")
+
+
+def show_tab(prefix: str, variables: str, weight: str | None, limit: int) -> None:
+    df = pick(main_files(), prefix)
+    codes, cells = tabulate(df, variables.split(","), weight)
+    for var in codes:
+        log(f"   {var['name']}: {len(var['values'])} values; first "
+            + " ".join(f"{c['value']}={c['label']}" for c in (var['codeList'] or [])[:12]))
+    for key, count in sorted(cells.items())[:limit]:
+        log(f"   {' '.join(key)} {count}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--discover", default=None,
                     help="comma-separated ESS country codes: list rounds and their codes")
+    ap.add_argument("--variables", nargs=2, metavar=("ROUND", "REGEX"),
+                    help="list a round's variables whose name or label matches, e.g. ESS11 region")
+    ap.add_argument("--tab", nargs="+", metavar="ARG",
+                    help="ROUND VAR1,VAR2 [WEIGHT [LIMIT]]: print a tabulation's cells")
     args = ap.parse_args()
+    if args.variables:
+        show_variables(*args.variables)
+        return 0
+    if args.tab:
+        weight = args.tab[2] if len(args.tab) > 2 and args.tab[2] != "-" else None
+        limit = int(args.tab[3]) if len(args.tab) > 3 else 60
+        show_tab(args.tab[0], args.tab[1], weight, limit)
+        return 0
     if args.discover:
         discover(args.discover.split(","))
         return 0
