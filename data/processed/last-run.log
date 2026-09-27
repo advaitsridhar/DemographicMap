@@ -1,24 +1,82 @@
-estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
-  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
-    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
-    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
-    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
-    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
-    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
-    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
-    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
-    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
-    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
-    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
-    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
-    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
-    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
-    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
-    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
-    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
-  Estonia 1 January 2017: median age 41.8
-  EST admin2: 212 of 214 polygons bound
-    polygons left unbound (2): Maidla vald (Ida-Viru maakond): labelled Maidla, but it spans 26.81-27.22E and 59.14-59.44N, from Maidla's south to the coast at Purtse and around the town of Kiviõli -- the Lüganuse parish formed in 2013 from Lüganuse, Maidla and Püssi -- so neither Maidla's figures nor Lüganuse's are put on it; Vandra alev (Pärnu maakond)
-    units standing in 2017 with no polygon (4): Järvakandi rural municipality; Lääne-Saare rural municipality; Lüganuse rural municipality; Vändra rural municipality
-  RL0429: 98 municipalities of 2011
-Emakeel at 580: categories make 4,077 of 4,085
+== grep https://data.stat.gov.rs/ [aA][pP][iI][/.][A-Za-z/]{0,60} 20
+  HTTP 200 text/html; charset=utf-8 960,084 bytes
+  0 matches
+== cdx popis2022.stat.gov.rs/ 60
+  HTTP 200: 240 captures
+  20220513091830 text/html 24413 https://popis2022.stat.gov.rs/
+  20220523221913 text/html 11631 https://popis2022.stat.gov.rs/0-popisi/
+  20220523064159 text/html 11647 https://popis2022.stat.gov.rs/0-popisi//?r=0
+  20220523064208 text/html 11641 https://popis2022.stat.gov.rs/0-popisi//?r=1
+  20220523064214 text/html 11643 https://popis2022.stat.gov.rs/0-popisi//?r=2
+  20220523221919 text/html 10659 https://popis2022.stat.gov.rs/2-opopisu-2021/
+  20240713123742 text/html 8124 https://popis2022.stat.gov.rs/2-opopisu-2021/osnovnipopupitnici/
+  20241109220815 text/html 9519 https://popis2022.stat.gov.rs/2-opopisu-2021/osnovnipopupitnici/upitnici/
+  20240523114403 text/html 8076 https://popis2022.stat.gov.rs/2-opopisu-2021/uputstvoimater/
+  20240625001636 text/html 8669 https://popis2022.stat.gov.rs/2-opopisu-2021/uputstvoimater/uputstva/
+  20220523064222 text/html 10669 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=0
+  20220523064230 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=1
+  20240528005908 text/html 21384 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=10
+  20240528005912 text/html 21385 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=11
+  20220523064239 text/html 10667 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=2
+  20220523064247 text/html 10670 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=3
+  20220523064253 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=4
+  20220523064258 text/html 10672 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=5
+  20220523064304 text/html 10670 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=6
+  20220523064310 text/html 10671 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=7
+  20240528005900 text/html 21386 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=8
+  20240528005905 text/html 21385 https://popis2022.stat.gov.rs/2-opopisu-2021//?r=9
+  20220523221933 text/html 12995 https://popis2022.stat.gov.rs/3-najcescapitanja/
+  20220523221818 text/html 13000 https://popis2022.stat.gov.rs/3-najcescapitanja//?r=0
+  20220523221826 text/html 13006 https://popis2022.stat.gov.rs/3-najcescapitanja//?r=1
+  20220523221926 text/html 9232 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/
+  20230519021519 text/html 6834 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/osnovnipopupitnici/
+  20230523203254 text/html 8205 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/osnovnipopupitnici/upitnici/
+  20230519021510 text/html 6830 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/potpopisna-anketa/
+  20230523203230 text/html 7124 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/potpopisna-anketa/upitniciuput/
+  20230519021525 text/html 6836 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/uputstvoimater/
+  20230523203321 text/html 7413 https://popis2022.stat.gov.rs/4-metodoloskimaterijali/uputstvoimater/uputstva/
+  20220523064318 text/html 9244 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=0
+  20221006012726 text/html 8471 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=0%22
+  20220523064328 text/html 9247 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=1
+  20221227184137 text/html 10149 https://popis2022.stat.gov.rs/4-metodoloskimaterijali//?r=2
+  20220515084136 text/html 10583 https://popis2022.stat.gov.rs/5-vestisaopstenja/
+  20220619194748 text/html 7927 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/
+  20230523203026 text/html 6828 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/brosure/
+  20221203134827 text/html 7092 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/brosure/brosure/
+  20220719171224 text/html 6709 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/logo-i-slogan/
+  20220705155713 text/html 6799 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/logo-i-slogan/logomaterijali/
+  20230523203020 text/html 6844 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/
+  20221203132159 text/html 7246 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/jezici-nacionalne-manjine/
+  20221203133223 text/html 7068 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/posteri/posteri/
+  20230523203012 text/html 6838 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/videomaterijali/
+  20221203130558 text/html 7177 https://popis2022.stat.gov.rs/5-vestisaopstenja/6-promomaterijal/videomaterijali/video-materijali/
+  20220523221844 text/html 20457 https://popis2022.stat.gov.rs/5-vestisaopstenja/kliping/
+  20220523221831 text/html 9541 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/
+  20230322133349 text/html 10193 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/
+  20230607034858 text/html 9251 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/?a=0
+  20221227184142 text/html 10056 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07102022-popisivaci/?a=0&s=0
+  20221107212237 text/html 9306 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/
+  20230604220729 text/html 8719 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/?a=0
+  20221227184137 text/html 9551 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/07112022zavrsavasepopis/?a=0&s=0
+  20220912211431 text/html 7890 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/
+  20230604221157 text/html 8725 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?a=0
+  20221203130026 text/html 9639 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?a=0&s=0
+  20220916141245 text/html 8016 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08092022-sastanak-sa-predstavnicima-ambasade-velike-britanije/?fbclid=IwAR35AbCVJrboQW_6Dm3yfyjjRUU3GZ1Lde2xlVOIj4zxqOP0EdaBI_SXROw
+  20221203124606 text/html 9370 https://popis2022.stat.gov.rs/5-vestisaopstenja/news-events/08112022brojevi/
+== links https://www.statistics.gr/en/2021-census-res-pop-results xls|xlsx|download|documentLibrary 60
+  HTTP 200 text/html;charset=UTF-8 133,720 bytes
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843  [Table Α01. 2021 Population Census. Resident population by sex and age groups]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx/fe0784cf-e357-639d-0e51-1f02e51c361e  [Table Α02. 2021 Population Census. Resident population by sex and citizenship]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A03_F_BI.xlsx/9dcf64e2-fabb-0dcc-b86a-aac1a9049ccc  [Table Α03. 2021 Population Census. Resident population by groups of citizenship and age gr]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A04_F_BI.xlsx/62bacd1a-04a1-eaa3-3e9f-6e077d621c45  [Table Α04. 2021 Population Census. Resident population by age groups and place of birth]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A05_F_BI.xlsx/96ddb9db-1ee0-b0fe-ba3f-0dec65395653  [Table Α05. 2021 Population Census. Resident population by sex and legal marital status]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A06_F_BI.xlsx/9ef0182e-47c5-8aff-939d-9ffb11391ffa  [Table Α06. Population Census. Private households and number of their members by size of ho]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A07_F_BI.xlsx/35f42a30-451e-c04c-a3ea-7e0a23263f7b  [Table Α07. 2021 Population Census. Private one-person households by sex and age groups]
+  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A08_F_BI.xlsx/554735e7-3fc2-c974-c0db-283707ce31c9  [Table Α08. 2021 Population Census. Private households by citizenship of their members]
+  (8 links shown)
+== head https://library.cystat.gov.cy/ 
+  HTTP 403 text/html 1,233 bytes
+  403 - Forbidden: Access is denied. Server Error 403 - Forbidden: Access is denied. You do not have permission to view this directory or page using the credentials that you supplied.
+== links https://www.instat.gov.al/al/temat/censet/censusi-i-popullsis%C3%AB-dhe-banesave/ xls|pdf|censusi|2023 40
+  HTTP 404 text/html; charset=utf-8 18,931 bytes
+  404 Shqip Registration FAQ 0800 22 44 Free Toggle navigation Home Themes Figures Publications Documentation SDGs About us Shqip Registration FAQ 0800 22 44 Free 404 Error 404! Not Found. --> Database --> Quiz --> NSS --> Publications Contact Institute of Statistics - Tirana St. Vllazën Huta, Buildin
