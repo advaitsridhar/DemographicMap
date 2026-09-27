@@ -1,8 +1,50 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
-  wrote data/processed/iceland_municipality.json (155 kB)
-  wrote iceland_municipality.json: 81 records
+kosovo: ASKdata, 2024 census
+  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
+  38 municipalities bound one-to-one
+  Deçan: 27,775 residents, 27,775 answered
+  Gjakova: 78,699 residents, 78,699 answered
+  Drenas: 48,079 residents, 48,079 answered
+  Gjilan: 82,980 residents, 82,980 answered
+  Dragash: 28,896 residents, 28,896 answered
+  Istog: 33,008 residents, 33,008 answered
+  Kaçanik: 27,716 residents, 27,716 answered
+  Klina: 30,503 residents, 30,503 answered
+  Fushë Kosovë: 63,949 residents, 63,949 answered
+  Kamenica: 22,868 residents, 22,868 answered
+  Mitrovica: 64,742 residents, 64,742 answered
+  Leposaviq: 9,485 residents, 3,185 answered -- ethnicity with ASK's estimate, religion and language stated
+  Lipjan: 55,044 residents, 55,044 answered
+  Novobërdë: 4,493 residents, 4,493 answered
+  Obiliq: 22,815 residents, 22,815 answered
+  Rahovec: 41,799 residents, 41,799 answered
+  Peja: 82,745 residents, 82,745 answered
+  Podujeva: 70,975 residents, 70,975 answered
+  Pristina: 227,466 residents, 227,466 answered
+  Prizren: 147,246 residents, 147,246 answered
+  Skenderaj: 40,664 residents, 40,664 answered
+  Shtime: 24,308 residents, 24,308 answered
+  Shtërpcë: 10,771 residents, 10,771 answered
+  Suhareka: 45,749 residents, 45,749 answered
+  Ferizaj: 109,255 residents, 109,255 answered
+  Viti: 35,566 residents, 35,566 answered
+  Vushtrri: 61,528 residents, 61,528 answered
+  Zubin Potok: 3,385 residents, 763 answered -- ethnicity with ASK's estimate, religion and language stated
+  Zveçan: 2,867 residents, 434 answered -- ethnicity with ASK's estimate, religion and language stated
+  Malisheva: 43,888 residents, 43,888 answered
+  Junik: 3,943 residents, 3,943 answered
+  Mamusha: 5,607 residents, 5,607 answered
+  Han i Elezit: 8,533 residents, 8,533 answered
+  Gracanica: 18,486 residents, 18,486 answered
+  Ranillug: 2,481 residents, 2,481 answered
+  Partesh: 3,240 residents, 3,240 answered
+  Kllokot: 3,041 residents, 3,041 answered
+  North Mitrovica: 7,920 residents, 2,326 answered -- ethnicity with ASK's estimate, religion and language stated
+  district District of Ferizaj: 180,583, median 32.2
+  district District of Gjakova: 152,216, median 35.1
+  district District of Gjilan: 150,176, median 34.9
+  district District of Mitrovica: 190,591, median 34.6
+  district District of Peja: 146,256, median 34.8
+  district District of Prishtina: 511,307, median 32.4
+  district District of Prizren: 271,386, median 33.9
+  wrote data/processed/kosovo_census.json (240 kB)
+  wrote kosovo_census.json: 45 records
