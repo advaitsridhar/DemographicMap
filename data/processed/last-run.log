@@ -1,53 +1,59 @@
-romania_census: RPL 2021, definitive results, through the Internet Archive
-  Tabel-1.03_1.3.1-si-1.03.2.xls: 769,536 bytes, Archive capture 20230601
-  age: 19,053,815 residents, 42 counties, 3,180 UATs; 18 columns
-  Tabel-2.02.1-si-Tabel-2.02.2.xlsx: 408,035 bytes, Archive capture 20230702
-  ethnicity: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 31.5% of it
-  Tabel-2.03.1-si-Tabel-2.03.2.xlsx: 407,822 bytes, Archive capture 20230701
-  language: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 13.6% of it
-  Tabel-2.04.1-si-Tabel-2.04.2.xlsx: 463,240 bytes, Archive capture 20230701
-  religion: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 8.9% of it
-  Tabel-1.22.xlsx: 810,548 bytes, Archive capture 20230601
-  Tabel-1.04.xls: 75,264 bytes, Archive capture 20230606
-  country median: 43.5 from five-year groups, 43.6 from single years
-  3,186 UATs bound; 0 UATs unbound: []
-  1 polygons with no UAT: ['POIENARII BURCHII (dambovita)']
-  36 UATs drawn as several polygons (figures on the largest):
-    ARAD ARAD: keep 2599482B53905982235691, merge 2599482B31785088370324
-    ARAD LIPOVA: keep 2599482B25282375738521, merge 2599482B8806038231558
-    ARAD PAULIS: keep 2599482B5177022501599, merge 2599482B19247594544458
-    ARAD ZARAND: keep 2599482B32759719925344, merge 2599482B71150188153613
-    BOTOSANI UNGURENI: keep 2599482B7783599693239, merge 2599482B2994749554598
-    BRASOV RUPEA: keep 2599482B21199067234878, merge 2599482B16674200014647, 2599482B2860524053107, 2599482B289507895873
-    BUZAU ULMENI: keep 2599482B81185008860025, merge 2599482B910434267190
-    CALARASI CURCANI: keep 2599482B73805615564390, merge 2599482B18753621764646
-    DOLJ ROJISTE: keep 2599482B91976879692627, merge 2599482B74221959783433
-    HARGHITA MIERCUREA CIUC: keep 2599482B30524546463793, merge 2599482B67036234724680
-    HARGHITA BAILE TUSNAD: keep 2599482B24277216401355, merge 2599482B64409374014432
-    HARGHITA VLAHITA: keep 2599482B50254025578700, merge 2599482B79706795726804, 2599482B7850722509394, 2599482B60669636608871, 2599482B68924224489535, 2599482B45078767996614
-    HARGHITA BRADESTI: keep 2599482B17231771008992, merge 2599482B45908659223453
-    IASI ION NECULCE: keep 2599482B15077063893597, merge 2599482B50193316932914
-    ILFOV CERNICA: keep 2599482B74723640056211, merge 2599482B48526584820869, 2599482B98677359077398, 2599482B37635492647761
-    MEHEDINTI GRUIA: keep 2599482B53836836172440, merge 2599482B33990588848115
-    MURES BRANCOVENESTI: keep 2599482B90638587736477, merge 2599482B13448214050806
-    MURES SANTANA DE MURES: keep 2599482B40977514976433, merge 2599482B65561652185041
-    OLT VADASTRITA: keep 2599482B53428634835124, merge 2599482B28547583336437
-    SATU MARE RACSA: keep 2599482B8839717617259, merge 2599482B77905945866588
-    SATU MARE SANISLAU: keep 2599482B43386440731502, merge 2599482B60287900413907
-    SIBIU SIBIU: keep 2599482B24946279921532, merge 2599482B4700394891348
-    SIBIU SALISTE: keep 2599482B68453018923397, merge 2599482B49493178649584
-    SIBIU TALMACIU: keep 2599482B89024892263144, merge 2599482B75206169001308
-    SIBIU CRISTIAN: keep 2599482B40816245945082, merge 2599482B42247101066007, 2599482B61474640296478
-    SIBIU POPLACA: keep 2599482B75853154347523, merge 2599482B54964729595352, 2599482B20961139122315
-    SIBIU TILISCA: keep 2599482B75916194776070, merge 2599482B81731395938028, 2599482B67392717014509
-    TELEORMAN VIDELE: keep 2599482B40288902158054, merge 2599482B29791980403734
-    TELEORMAN BRAGADIRU: keep 2599482B28400494535503, merge 2599482B35029885284970, 2599482B260875686248
-    TELEORMAN BUJORU: keep 2599482B24334179401508, merge 2599482B95855728618173
-    TELEORMAN CIUPERCENI: keep 2599482B84154453637694, merge 2599482B70697570158857
-    TELEORMAN DRAGANESTI-VLASCA: keep 2599482B67240297186090, merge 2599482B23402185147760
-    TELEORMAN ISLAZ: keep 2599482B76423000679583, merge 2599482B71059292210776
-    TELEORMAN LUNCA: keep 2599482B88621270188908, merge 2599482B1586311708085
-    TIMIS TIMISOARA: keep 2599482B15929975886396, merge 2599482B91737143557292
-    TIMIS MARGINA: keep 2599482B95910170912575, merge 2599482B95683361390026
-  wrote data/processed/romania_census.json (21039 kB)
-  wrote romania_census.json: 3228 records
+== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px ^AGE$
+  HTTP 200 application/json; charset=utf-8 8,814 bytes
+  title: Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021
+  var 'DISTRICT, MUNICIPALITY/COMMUNITY': 416 values
+  var 'SEX': 3 values
+  var 'AGE': 18 values
+    0=Total, 1=0-4, 2=5-9, 3=10-14, 4=15-19, 5=20-24, 6=25-29, 7=30-34, 8=35-39, 9=40-44, 10=45-49, 11=50-54, 12=55-59, 13=60-64, 14=65-69, 15=70-74, 16=75-79, 17=80+
+== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px LANG
+  HTTP 200 application/json; charset=utf-8 935 bytes
+  title: Population Enumerated by Language, Sex and District 1.10.2021
+  var 'LANGUAGE (1)': 35 values
+    0=Total, 1=Greek, 2=English, 3=Russian, 4=Arabic, 5=Romanian, 6=Bulgarian, 7=Indian, 8=Filipino, 9=Sri Lankan, 10=Ukranian, 11=Georgian, 12=Nepalese, 13=French, 14=Vietnamese, 15=German, 16=Chinese, 17=Polish, 18=Turkish, 19=Persian, 20=Armenian, 21=Hebrew, 22=Italian, 23=Latvian, 24=Slovakian, 25=Moldovian, 26=Bengali, 27=Spanish, 28=Swedish, 29=Hungarian, 30=Urdu, 31=Yugoslavian, 32=Dutch, 33=Other languages, 34=Not stated
+  var 'DISTRICT': 6 values
+  var 'SEX': 3 values
+== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px ETHNIC
+  HTTP 200 application/json; charset=utf-8 1,003 bytes
+  title: Population Enumerated by Ethnic/Religious Group, Citizenship Group and Sex 1.10.2021
+  var 'ETHNIC/RELIGIOUS GROUP (1)': 32 values
+    0=Total, 1=Greek-Cypriot, 2=Maronite, 3=Armenian, 4=Turkish-Cypriot, 5=Latin, 6=Greek, 7=Romanian, 8=British, 9=Russian, 10=Bulgarian, 11=Syrian, 12=Filipino, 13=Indian, 14=Srilankan, 15=Nepalese, 16=Ukranian, 17=Georgian, 18=Egyptian, 19=Vietnamese, 20=Polish, 21=Lebanese, 22=Chinese, 23=German, 24=Moldovan, 25=Bangladeshi, 26=Pakistani, 27=Jewish, 28=Iranian, 29=Cameroonian, 30=Other, 31=Not stated
+  var 'CITIZENSHIP GROUP': 5 values
+  var 'SEX': 3 values
+== px https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/ 
+  HTTP 200 application/json; charset=utf-8 525 bytes
+  l Demography  Demography
+  l Population  Population
+  l Births and Deaths  Births
+  l Deaths  Deaths
+  l Migration  Migration
+  l Marriages  Marriages
+  l Divorces  Divorces
+  l Census of Population and Housing 2021  Census of Population and Housing 2021
+  l Population Census 2011  Population Census 2011
+== px https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/ 
+  HTTP 200 application/json; charset=utf-8 1,332 bytes
+  l Agriculture, Livestock, Fishing  Agriculture, Livestock, Fishing
+  l Business Register  Business Register
+  l Construction  Construction
+  l Education  Education
+  l Energy  Energy
+  l Environment  Environment
+  l External Trade  External Trade
+  l Health  Health
+  l Industry  Industry
+  l Information Society  Information Society
+  l Innovation  Innovation
+  l Labour Cost and Earnings  Labour Cost and Earnings
+  l Labour Market  Labour Market
+  l Living Conditions, Social Protection  Living Conditions, Social Protection, Crime
+  l National Accounts  National Accounts
+  l Population  Population
+  l Price Indices  Price Indices
+  l Public Finance  Public Finance
+  l Research and Development  Research and Development
+  l Services  Services and Transport
+  l Tourism  Tourism
+  l Trade  Trade
+== px https://cystatdb23px.cystat.gov.cy/api/v1/en/ 
+  HTTP 200 application/json; charset=utf-8 45 bytes
+  None None  8.CYSTAT-DB
