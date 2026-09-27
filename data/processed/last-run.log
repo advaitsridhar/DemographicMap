@@ -1,3 +1,107 @@
-== post https://api.nsd.no/graphql eyJxdWVyeSI6ICJ7YTpfX3R5cGUobmFtZTpcIkFuYWx5c2lzRGF0YWZpbGVcIil7aW5wdXRGaWVsZHN7bmFtZSBkZXNjcmlwdGlvbn19IGQ6X190eXBlKG5hbWU6XCJEYXRhUm93c0lucHV0XCIpe2lucHV0RmllbGRze25hbWUgZGVzY3JpcHRpb24gdHlwZXtuYW1lIGtpbmQgb2ZUeXBle25hbWV9fX19IHM6X190eXBlKG5hbWU6XCJTdW1tYXJpemVJbnB1dFwiKXtpbnB1dEZpZWxkc3tuYW1lIGRlc2NyaXB0aW9uIHR5cGV7bmFtZSBraW5kIG9mVHlwZXtuYW1lfX19fSBjOl9fdHlwZShuYW1lOlwiRGF0YWZpbGVzQ29uY2F0XCIpe2lucHV0RmllbGRze25hbWUgZGVzY3JpcHRpb24gdHlwZXtuYW1lIGtpbmQgb2ZUeXBle25hbWUga2luZCBvZlR5cGV7bmFtZX19fX19fSJ9 6000
-  HTTP 200 application/json; charset=utf-8 2,440 bytes
-  {"data":{"a":{"inputFields":[{"name":"id","description":null},{"name":"version","description":null},{"name":"subsetJson","description":null},{"name":"studyId","description":"Specify studyId and studyVersion for NO_NSD data"},{"name":"studyVersion","description":null}]},"d":{"inputFields":[{"name":"datafile","description":"specify EITHER datafile OR datafileUnion","type":{"name":"AnalysisDatafile","kind":"INPUT_OBJECT","ofType":null}},{"name":"datafileUnion","description":null,"type":{"name":"DatafileUnion","kind":"INPUT_OBJECT","ofType":null}},{"name":"instance","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"Instance"}}},{"name":"agencyId","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"Agency"}}},{"name":"variables","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":null}}},{"name":"breakVariable","description":null,"type":{"name":"String","kind":"SCALAR","ofType":null}},{"name":"metadataLanguage","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"String"}}},{"name":"pagination","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"DataRowPagination"}}}]},"s":{"inputFields":[{"name":"datafile","description":"specify EITHER datafile OR datafileUnion","type":{"name":"AnalysisDatafile","kind":"INPUT_OBJECT","ofType":null}},{"name":"datafileUnion","description":null,"type":{"name":"DatafileUnion","kind":"INPUT_OBJECT","ofType":null}},{"name":"instance","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"Instance"}}},{"name":"agencyId","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"Agency"}}},{"name":"measures","description":null,"type":{"name":null,"kind":"LIST","ofType":{"name":"Measures"}}},{"name":"variableName","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"String"}}},{"name":"weightVariable","description":null,"type":{"name":"String","kind":"SCALAR","ofType":null}},{"name":"metadataLanguage","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"String"}}}]},"c":{"inputFields":[{"name":"childDatafiles","description":null,"type":{"name":null,"kind":"LIST","ofType":{"name":null,"kind":"NON_NULL","ofType":{"name":"DatafileUnion"}}}},{"name":"series","description":null,"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"AnalysisSeries","kind":"INPUT_OBJECT","ofType":null}}}]}}}
+
+=== hun6
+   5 matches of 'fetch\\([^)]{0,120}\\)'
+   - fetch(`${al}/api/index/${A}/${e}`)
+   - fetch(`${al}/api/version`,{cache:"no-cache"})
+   - fetch(`${r}/api/structure/${t}/${s}`,{cache:"force-cache"})
+   - fetch(`${this.apiBaseUrl}/api/dataflows/${t}/${r}${f}`,{cache:"force-cache"})
+   - fetch(`${t}/api/version`,{cache:"no-cache"})
+   22 matches of '[\\"\'`][^\\"\'`]{0,60}(?:api|\\.json|data/)[^\\"\'`]{0,80}[\\"\'`]'
+   - " as fallback. See https://formatjs.io/docs/react-intl/api#intlshape for more details'
+   - ");var ol=class{constructor(t){this.apiBaseUrl=t;this._fallbackLang="
+   - ")}read(t){return this.loading.then(()=>{let r=this.apiBaseUrl,n=this._fallbackLang,s=this._version;return fetch(`
+   - "../package.json"
+   - "./aesid.json"
+   - "./algorithms.json"
+   - "./asn1/api"
+   - "./browser/algorithms.json"
+   - "./curves.json"
+   - "./lib/primes.json"
+   - "./list.json"
+   - "./modes/list.json"
+   - ".data-api"
+   - "http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+   - "}),{version:A}=await C.json(),E=await(await fetch(`
+   - "}).then(r=>r.json()).then(({version:r})=>(console.log("
+   - "}}}))).then(h=>h.json())}};d(il,"
+   - `${al}/api/version`
+   - `${this.apiBaseUrl}/api/dataflows/${t}/${r}${f}`
+   - `${t}/api/version`
+   - `)).json();r(E)}catch(C){console.error("
+   - `ksh-census2022-${e.structure.id}-unpivot.json`
+
+## https://map.ksh.hu/nepszamlalas/
+   HTTP 200, 5,057 bytes, text/html
+   14 distinct matches of 'src=\\"[^\\"]+\\"|href=\\"[^\\"]+\\"'
+   - href="images/shortcut.ico"
+   - href="libs/chartist/chartist.css"
+   - href="jimu.js/css/jimu-ie.css"
+   - href="configs/loading/loading.css"
+   - href="https://www.aki.gov.hu"
+   - src="images/akilogo_link.png"
+   - src="images/usermanual.png"
+   - src="libs/html2canvas.js"
+   - src="libs/FileSaver.js"
+   - src="env.js"
+   - src="libs/chartist/chartist.js"
+   - src="libs/chartist/chartist-plugin-axistitle.js"
+   - src="simpleLoader.js"
+   - src="init.js"
+
+=== nld6
+
+## https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
+   HTTP 200, 50,135 bytes, text/html; charset=utf-8
+   2 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx|csv|zip|ods)\\"|<title>[^<]*|<p>[^<]{20,400}</p>'
+   - <title>Religie naar regio, 2021/2025 | CBS
+   - href="https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx"
+
+## https://www.cbs.nl/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk
+   HTTP 200, 78,589 bytes, text/html; charset=utf-8
+   33 distinct matches of 'href=\\"[^\\"]*(?:maatwerk|cijfers/detail)[^\\"]*\\"'
+   - href="/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/70895ned?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85619NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/7052_95?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/84547NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/86411NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/83102NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/7461bev?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85510NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/86387NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/86154NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/83049NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85721NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/83044NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/37890?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85463NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/37168?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/82518NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85644NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/84755NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/03759ned?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85848NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/82887NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85451NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/83502NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="https://www.cbs.nl/nl-nl/cijfers/detail/85384NED?q=leeftijd%20gemeente%20geslacht%20maatwerk"
+   - href="/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk&amp;selectedperiod=all-periods&amp;pageindex=1"
+   - href="/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk&selectedperiod=all-periods&pageindex=2"
+   - href="/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk&selectedperiod=all-periods&pageindex=3"
+   - href="/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk&amp;selectedperiod=all-periods&amp;pageindex=400"
+
+=== svk6
+
+## https://gis.scitanie.sk/portal/sharing/rest/search?q=n%C3%A1rodnos%C5%A5&f=json&num=40
+   HTTP 200, 80 bytes, application/json;charset=utf-8
+   [okres] Map Service | obyv_demogr_vekpyr_pyr_okres | https://gis.scitanie.sk/server/rest/services/Hosted/obyv_demogr_vekpyr_pyr_okres/MapServer
+   [okres] Raster function template | Filtr wielowymiarowy | None
+   [okres] Web Experience | Obce podľa veľkostných skupín v krajoch a okresoch | https://gis.scitanie.sk/portal/apps/experiencebuilder/experience/?id=33f09280e1b04892892bdf4d4198ab59
+   [okres] Web Experience | Obyvateľstvo podľa veľkostných skupín v krajoch a okresoch | https://gis.scitanie.sk/portal/apps/experiencebuilder/experience/?id=d8b72627f9104a17a1ed74d360d3f148
+   [jazyk] Web Experience | Obyvateľstvo podľa národnosti a materinského jazyka | https://gis.scitanie.sk/portal/apps/experiencebuilder/experience/?id=2c3fe4e67c9045c0ad5e61757c148b63
+   [jazyk] Web Experience | Obyvateľstvo podľa materinského jazyka a ekonomických vekových skupín | https://gis.scitanie.sk/portal/apps/experiencebuilder/experience/?id=64f82ae489964d41b904eb9b6a1eff69
+
+## https://www.scitanie.sk/mapa-stranok
+   HTTP 200, 34,688 bytes, text/html; charset=UTF-8
+   1 distinct matches of 'href=\\"[^\\"]*obyvatelia/zakladne-vysledky[^\\"]*\\"'
+   - href="/obyvatelia/zakladne-vysledky/pocet-obyvatelov/SR/SK0/SR"
