@@ -1,11 +1,4 @@
-luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
-  102 communes, 12 cantons, Luxembourg 643,941
-  communes against Luxembourg: parts sum to 643,941 = 643,941
-  cantons against Luxembourg: parts sum to 643,941 = 643,941
-  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
-  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
-  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
-  Rosport-Mompach: merged in 2018 from Rosport and Mompach, which the map draws apart; not written
-  luxembourg admin2: 0 office units unbound
-  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
-luxembourg: the 2000-2017 file has no Total row
+  CBS's note: *Voor een aantal corop-regio's waren er te weinig (< 300) waarnemingen. In dat geval wordt alleen het percentage per provincie gegeven.
+  Nederland: {'Totaal gelovig': 42.9, 'Rooms-kaholiek': 17.2, 'Protestants': 13.1, 'Islam': 5.8, 'Ander geloof': 6.8}
+  wrote data/processed/netherlands_religion_survey.json (29 kB)
+  wrote netherlands_religion_survey.json: 12 records
