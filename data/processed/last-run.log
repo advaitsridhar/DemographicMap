@@ -1,25 +1,22 @@
-== cdx rosstat.gov.ru/vpn/2020/Tom
-  20230725211916 text/html                        97330 https://rosstat.gov.ru/vpn/2020/Tom10_Rabochaya_sila
-  20240528173641 text/html                         3356 https://rosstat.gov.ru/vpn/2020/Tom10_Rabochaya_sila?print=1
-  20230725211844 text/html                        94186 https://rosstat.gov.ru/vpn/2020/Tom11_ZHilishchnye_usloviya_naseleniya
-  20250201070156 text/html                         3384 https://rosstat.gov.ru/vpn/2020/Tom11_ZHilishchnye_usloviya_naseleniya?print=1
-  20230725211917 text/html                        96196 https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya
-  20240111211937 text/html                         3218 https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya?print=1
-  20230725211853 text/html                        97850 https://rosstat.gov.ru/vpn/2020/Tom2_Vozrastno_polovoj_sostav_i_sostoyanie_v_brake
-  20241218153437 text/html                        96325 https://rosstat.gov.ru/vpn/2020/Tom2_Vozrastno_polovoj_sostav_i_sostoyanie_v_brake/?erid=2SDnje6xEEw
-  20250201054358 text/html                         3172 https://rosstat.gov.ru/vpn/2020/Tom2_Vozrastno_polovoj_sostav_i_sostoyanie_v_brake?print=1
-  20230725211902 text/html                       110599 https://rosstat.gov.ru/vpn/2020/Tom3_Obrazovanie
-  20250201061541 text/html                         3128 https://rosstat.gov.ru/vpn/2020/Tom3_Obrazovanie?print=1
-  20230725211848 text/html                        91067 https://rosstat.gov.ru/vpn/2020/Tom4_Grazhdanstvo
-  20240419014156 text/html                         2775 https://rosstat.gov.ru/vpn/2020/Tom4_Grazhdanstvo?print=1
-  20230725211949 text/html                        93024 https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami
-  20240925225349 text/html                         4206 https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami?print=1
-  20230725211945 text/html                       111117 https://rosstat.gov.ru/vpn/2020/Tom6_Migraciya_naseleniya
-  20250201063950 text/html                         3497 https://rosstat.gov.ru/vpn/2020/Tom6_Migraciya_naseleniya?print=1
-  20230725211859 text/html                        96071 https://rosstat.gov.ru/vpn/2020/Tom7_Istochniki_sredstv_k_sushchestvovaniyu
-  20250201062012 text/html                         2993 https://rosstat.gov.ru/vpn/2020/Tom7_Istochniki_sredstv_k_sushchestvovaniyu?print=1
-  20230725211946 text/html                        93735 https://rosstat.gov.ru/vpn/2020/Tom8_Chislo_i_sostav_domohozyajstv
-  20250201063319 text/html                         3505 https://rosstat.gov.ru/vpn/2020/Tom8_Chislo_i_sostav_domohozyajstv?print=1
-  20230725211838 text/html                        96534 https://rosstat.gov.ru/vpn/2020/Tom9_Rozhdaemost
-  20250201061131 text/html                         3192 https://rosstat.gov.ru/vpn/2020/Tom9_Rozhdaemost?print=1
-  23 shown of 23 captured under rosstat.gov.ru/vpn/2020/Tom
+== get https://census.belstat.gov.by/config.js
+  889 bytes, begins b'window.BELSTAT_C'
+  ~ window.BELSTAT_CONFIG = { 'saikuUrl': '/saiku', 'saikuGuestFolder': 'query/open//public', 'saikuUserFolder': 'query/open//user',
+  ~ : 'query/open//public', 'saikuUserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belst
+  ~ lic', 'saikuUserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 't
+  ~ UserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables':
+  ~ 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 're
+  ~ '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 'regulations': 'https://www.belstat.gov.by/ofitsialnaya
+  ~ at.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 'regulations': 'https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
+  ~ aya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza', 'bulletins': 'https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
+  ~ iya/perepis-naseleniya-2019/itogi-perepisi-naseleniya-respubliki-belarus-2019-goda/', 'manual': 'https://www.belstat.gov.by/ofitsialnaya-statistika/bazy-dannyh/baza-dannyh-perepisi-naseleniya/rukovodst
+== get https://census.belstat.gov.by/static/js/main.019d9091.chunk.js
+  3,111 bytes, begins b'(this["webpackJs'
+  ~ =t(1),s=t.n(i),r=t(9),o=t.t(r,2),u=s.a.createContext(o)},9:function(e){e.exports=JSON.parse('{"saikuUrl":"/saiku","saikuGuestFolder":"query/open//public","saikuUserFolder":"query/open//user","saikuExtens
+  ~ ikuGuestFolder":"query/open//public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by",
+  ~ query/open//public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":
+  ~ /public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://ww
+  ~ saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroek
+  ~ ,"adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
+  ~ ya-sreda/perepis-naseleniya/perepis-naseleniya-2009/vykhodnye-reglamentnye-tablitsy","regulations":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
+  ~ ushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza","bulletins":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
+  ~ naseleniya-respubliki-belarus-2019-goda","manual":"/manual.pdf"}')}},[[31,4,7]]]); //# sourceMappingURL=main.019d9091.chunk.js.map
