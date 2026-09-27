@@ -1,55 +1,409 @@
-== r15_est_rl222
-  title: RL222: POPULATION BY THE PLACE OF RESIDENCE AND ETHNIC NATIONALITY
-  var 'Sugu' (Sex) [elimination]: 3 values
-      +=Males and females; 1=Males; 2=Females
-  var 'Elukoht' (Place of residence) [elimination]: 71 values
-      000000=Whole country; 000004=Cities; 000001=Rural municipalities; 370000=HARJU COUNTY; 370004=Harju county cities; 377844=..Tallinn ... 848974=..Viljandi city; 840001=Viljandi county rural municipalities; 860000=VÕRU COUNTY; 860004=Võru county cities; 869194=..Võru city; 860001=Võru county rural municipalities
-      code lengths {6: 71}; prefixes {'': 71}
-      ALL: 000000=Whole country; 000004=Cities; 000001=Rural municipalities; 370000=HARJU COUNTY; 370004=Harju county cities; 377844=..Tallinn; 372964=..Keila city; 374464=..Maardu city; 370001=Harju county rural municipalities; 390000=HIIU COUNTY; 390004=Hiiu county cities; 393714=..Kärdla city; 390001=Hiiu county rural municipalities; 440000=IDA-VIRU COUNTY; 440004=Ida-Viru county cities; 442534=..Jõhvi city; 443094=..Kiviõli city; 443224=..Kohtla-Järve city; 445114=..Narva city; 447354=..Sillamäe city; 440001=Ida-Viru county rural municipalities; 490000=JÕGEVA COUNTY; 490004=Jõgeva county cities; 492494=..Jõgeva city; 490001=Jõgeva county rural municipalities; 510000=JÄRVA COUNTY; 510004=Järva county cities; 515664=..Paide city; 518374=..Türi city; 510001=Järva county rural municipalities; 570000=LÄÄNE COUNTY; 570004=Lääne county cities; 571834=..Haapsalu city; 570001=Lääne county rural municipalities; 590000=LÄÄNE-VIRU COUNTY; 590004=Lääne-Viru county cities; 596634=..Rakvere city; 597914=..Tapa city; 590001=Lääne-Viru county rural municipalities; 650000=PÕLVA COUNTY; 650004=Põlva county cities; 656204=..Põlva city; 650001=Põlva county rural municipalities; 670000=PÄRNU COUNTY; 670004=Pärnu county cities; 676254=..Pärnu city; 670001=Pärnu county rural municipalities; 700000=RAPLA COUNTY; 700004=Rapla county cities; 706704=..Rapla city; 700001=Rapla county rural municipalities; 740000=SAARE COUNTY; 740004=Saare county cities; 743494=..Kuressaare city; 740001=Saare county rural municipalities; 780000=TARTU COUNTY; 780004=Tartu county cities; 787954=..Tartu city; 780001=Tartu county rural municipalities; 820000=VALGA COUNTY; 820004=Valga county cities; 828544=..Valga city; 820001=Valga county rural municipalities; 840000=VILJANDI COUNTY; 840004=Viljandi county cities; 848974=..Viljandi city; 840001=Viljandi county rural municipalities; 860000=VÕRU COUNTY; 860004=Võru county cities; 869194=..Võru city; 860001=Võru county rural municipalities
-  var 'Rahvus' (Ethnic nationality) [elimination]: 14 values
-      +=Ethnic nationality total; 01=Estonian; 02=Russian; 03=Ukrainian; 04=Byelorussian; 05=Finnish ... 08=Polish; 09=Jewish; 10=Lithuanian; 11=German; 12=Other ethnic nationalities; 13=Ethnic nationality unknown
-      code lengths {1: 1, 2: 13}; prefixes {'': 14}
-== r15_isl_skra_xlsx
-  34,512 bytes, starts b'PK\x03\x04'
-  sheet 'Trú- og lífskoðunarfélög': 80 rows x 15 columns
-    1: 
-    2:  |  | Fjöldi skráðra í trú- og lífsskoðunarfélög 1. september 2026
-    3:  |  | og  samanburður við 1. desember 2021-2025
-    4:  |  | Þjóðskrá  10. september 2026
-    5: Kóði | Heiti trúfélags og lífsskoðunarfélags | Fjöldi 
-1. des. 2021 | Fjöldi 
-1. des. 2022 | Fjöldi 
-1. des. 2023 | Fjöldi 
-1. des. 2024 | Fjöldi 
-1. des. 2025 | Fjöldi 
-1. sept. 2026 | Breyting milli
-1. des. 2025 og 1. 
-    6: Ú | Alþjóðleg kirkja Guðs og embætti Jesú Krists | 84 | 111 | 128 | 153 | 183 | 194 | 11 | 0.060109289617486406
-    7: = | Ashutosh jóga á Íslandi | 55 | 60 | 59 | 64 | 67 | 71 | 4 | 0.05970149253731338
-    8: Á | Ásatrúarfélagið | 5502 | 5740 | 5986 | 6135 | 6270 | 6325 | 55 | 0.00877192982456143
-    9: B | Bahá'í samfélag | 338 | 324 | 304 | 298 | 296 | 291 | -5 | -0.016891891891891886
-    10: R | Betanía | 138 | 136 | 136 | 135 | 134 | 132 | -2 | -0.014925373134328401
-    11: N | Boðunarkirkjan | 114 | 118 | 119 | 117 | 118 | 114 | -4 | -0.03389830508474578
-    12: F | Búddistafélag Íslands | 1093 | 1103 | 1094 | 1078 | 1046 | 1030 | -16 | -0.015296367112810683
-    13: A | Bænahúsið | 27 | 26 | 25 | 25 | 24 | 25 | 1 | 0.04166666666666674
-    14: W | Catch The Fire (CTF) | 215 | 192 | 180 | 187 | 181 | 175 | -6 | -0.03314917127071826
-    15: ) | Demantsleið búddismans | 31 | 37 | 37 | 36 | 34 | 37 | 3 | 0.08823529411764697
-    16: % | DíaMat | 157 | 181 | 218 | 234 | 240 | 241 | 1 | 0.004166666666666652
-    17: Z | Endurfædd kristin kirkja | 23 | 21 | 21 | 20 | 22 | 39 | 17 | 0.7727272727272727
-    18: : | Eþíópíska Tewahedo rétttrúnaðarkirkjan | 21 | 22 | 24 | 26 | 26 | 29 | 3 | 0.11538461538461542
-    19: Ü | Farsæld-húmanískt lífsskoðunarfélag |  |  |  |  |  | 17 | 17 | #DIV/0!
-    20: J | Félag múslima á Íslandi | 580 | 571 | 574 | 583 | 582 | 662 | 80 | 0.13745704467353947
-    21: @ | Félag Tíbet búddista | 44 | 45 | 46 | 45 | 49 | 50 | 1 | 0.020408163265306145
-    22: U | Fjölskyldusamtök heimsfriðar og sameiningar | 18 | 17 | 16 | 15 | 17 | 29 | 12 | 0.7058823529411764
-    23: 8 | Fríkirkjan í Hafnarfirði | 7425 | 7507 | 7635 | 7772 | 7967 | 8105 | 138 | 0.017321450985314346
-    24: 2 | Fríkirkjan í Reykjavík | 10011 | 9953 | 9958 | 9935 | 10053 | 10136 | 83 | 0.008256241917835583
-    25: G | Fríkirkjan Kefas | 102 | 96 | 89 | 87 | 84 | 79 | -5 | -0.059523809523809534
-    26: H | Fyrsta baptistakirkjan | 45 | 51 | 56 | 55 | 61 | 74 | 13 | 0.21311475409836067
-    27: Y | Heimakirkja | 65 | 59 | 55 | 52 | 50 | 57 | 7 | 0.1399999999999999
-    28: É | Hjálpræðisherinn trúfélag | 158 | 240 | 268 | 258 | 261 | 255 | -6 | -0.02298850574712641
-    29: 6 | Hvítasunnukirkjan á Íslandi | 2108 | 2071 | 2080 | 2065 | 2067 | 2075 | 8 | 0.0038703434929849845
-    30: Ï | I am Equipping Center |  |  |  |  |  | 11 | 11 | #DIV/0!
-== r15_fin_2017
-  FAILED: RuntimeError: HTTP 403: <!DOCTYPE html> <html lang="en"> <title>Forbidden 403</title> <meta charset="UTF-8"> <head> <style> h1, h2 { font-family: "barlow", arial, helvetica; } h1 { margin: 0.2rem 1rem; } h2 { font-size: 1.2rem; font-weight: normal; } .icon { width: 80px; height:
-== r15_fin_2019
-  FAILED: RuntimeError: HTTP 403: <!DOCTYPE html> <html lang="en"> <title>Forbidden 403</title> <meta charset="UTF-8"> <head> <style> h1, h2 { font-family: "barlow", arial, helvetica; } h1 { margin: 0.2rem 1rem; } h2 { font-size: 1.2rem; font-weight: normal; } .icon { width: 80px; height:
+
+=== svn6
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/05W1002S.px: HTTP 200
+   title: Population, census 2002 by MUNICIPALITY and DECLARED AS
+   OBČINA (MUNICIPALITY): 193 values: 001=SLOVENIA; 002=Ajdovščina; 003=Beltinci; 004=Benedikt; 005=Bistrica ob Sotli; 006=Bled; 007=Bloke; 008=Bohinj; 009=Borovnica; 010=Bovec; 011=Braslovče; 012=Brda; ...=...; 188=Žalec; 189=Železniki; 190=Žetale; 191=Žiri; 192=Žirovnica; 193=Žužemberk
+   NARODNA PRIPADNOST (DECLARED AS): 7 values: 1=POPULATION; 2=Declared - total; 3=Declared -Slovenes; 4=Declared -others; 5=Undeclared; 6=Did not want to reply; 7=Unknown
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/05W1006S.px: HTTP 200
+   title: Population, census 2002 by MUNICIPALITY and RELIGION
+   OBČINA (MUNICIPALITY): 193 values: 001=SLOVENIA; 002=Ajdovščina; 003=Beltinci; 004=Benedikt; 005=Bistrica ob Sotli; 006=Bled; 007=Bloke; 008=Bohinj; 009=Borovnica; 010=Bovec; 011=Braslovče; 012=Brda; ...=...; 188=Žalec; 189=Železniki; 190=Žetale; 191=Žiri; 192=Žirovnica; 193=Žužemberk
+   VEROIZPOVED (RELIGION): 11 values: 01=Total; 02=Declared by religion - total; 03=Catholic; 04=Evangelical and other Protestant; 05=Orthodox; 06=Islam; 07=other religion; 08=Believer but belongs to no religion; 09=Unbeliever, atheist; 10=Did no want to reply; 11=Unknown
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/05W1007S.px: HTTP 200
+   title: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE
+   OBČINA (MUNICIPALITY): 193 values: 001=SLOVENIA; 002=Ajdovščina; 003=Beltinci; 004=Benedikt; 005=Bistrica ob Sotli; 006=Bled; 007=Bloke; 008=Bohinj; 009=Borovnica; 010=Bovec; 011=Braslovče; 012=Brda; ...=...; 188=Žalec; 189=Železniki; 190=Žetale; 191=Žiri; 192=Žirovnica; 193=Žužemberk
+   MATERIN JEZIK (MOTHER TONGUE): 14 values: 01=Mother tongue - TOTAL; 02=Slovene; 03=Italian; 04=Hungarian; 05=Romany; 06=Albanian; 07=Bosnian; 08=Croatian; 09=Macedonian; 10=German; 11=Serbian; 12=Serbo-Croatian; 13=Other; 14=Unknown
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/05W1001S.px: HTTP 200
+   title: Population, census 2002 by SEX, MUNICIPALITY and AGE GROUPS
+   SPOL (SEX): 3 values: 1=Sex - TOTAL; 2=MEN; 3=WOMEN
+   OBČINA (MUNICIPALITY): 193 values: 001=SLOVENIA; 002=Ajdovščina; 003=Beltinci; 004=Benedikt; 005=Bistrica ob Sotli; 006=Bled; 007=Bloke; 008=Bohinj; 009=Borovnica; 010=Bovec; 011=Braslovče; 012=Brda; ...=...; 188=Žalec; 189=Železniki; 190=Žetale; 191=Žiri; 192=Žirovnica; 193=Žužemberk
+   STAROSTNE SKUPINE (AGE GROUPS): 21 values: 01=Age groups - TOTAL; 02=0-4; 03=5-9; 04=10-14; 05=15-19; 06=20-24; 07=25-29; 08=30-34; 09=35-39; 10=40-44; 11=45-49; 12=50-54; 13=55-59; 14=60-64; 15=65-69; 16=70-74; 17=75-79; 18=80-84; 19=85 +; 20=Mean age [years]; 21=Ageing index
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/0558601S.px: HTTP 200
+   title: Population, recalculation according to municipalities, as of 1 January 2007, census 2002 by SEX, MUNICIPALITIES and AGE GROUPS
+   SPOL (SEX): 3 values: 1=Sex - TOTAL; 2=Men; 3=Women
+   OBČINA (MUNICIPALITIES): 211 values: 000=SLOVENIA; 001=Ajdovščina; 195=Apače; 002=Beltinci; 148=Benedikt; 149=Bistrica ob Sotli; 003=Bled; 150=Bloke; 004=Bohinj; 005=Borovnica; 006=Bovec; 151=Braslovče; ...=...; 190=Žalec; 146=Železniki; 191=Žetale; 147=Žiri; 192=Žirovnica; 193=Žužemberk
+   STAROSTNE SKUPINE (AGE GROUPS): 19 values: 01=Age groups - TOTAL; 02=0-4; 03=5-9; 04=10-14; 05=15-19; 06=20-24; 07=25-29; 08=30-34; 09=35-39; 10=40-44; 11=45-49; 12=50-54; 13=55-59; 14=60-64; 15=65-69; 16=70-74; 17=75-79; 18=80-84; 19=85 +
+
+## PxWeb https://pxweb.stat.si/SiStatData/api/v1/en/Data/05W2202S.px: HTTP 200
+   title: Population, census 2002 by STATISTICAL REGION and DECLARED AS
+   STATISTIČNA REGIJA (STATISTICAL REGION): 13 values: 01=SLOVENIA; 02=Pomurska; 03=Podravska; 04=Koroška; 05=Savinjska; 06=Zasavska; 07=Spodnjeposavska; 08=Jugovzhodna Slovenija; 09=Osrednjeslovenska; 10=Gorenjska; 11=Notranjsko-kraška; 12=Goriška; 13=Obalno-kraška
+   NARODNO OPREDELJENI (DECLARED AS): 7 values: 1=Population; 2=Declared -total; 3=Declared -Slovenes; 4=Declared - others; 5=Undeclared; 6=Did not want to reply; 7=Unknown
+
+=== che10
+
+## DAM language=de&title=Religionszugeh%C3%B6rigkeit: HTTP 200, 99,289 bytes
+   top-level keys: ['total', 'skip', 'data', '_embedded']
+   20 items
+   first item: {"ids": {"uuid": "37deb459-a5c8-4ca8-9d17-8f276a99a63a", "damId": 36429798, "contentId": 477840, "languageCopyId": 36429789, "gnp": "2026-0287"}, "bfs": {"embargo": "2026-03-26T07:30:00Z", "lifecycle": {"id": 900300, "level": 0, "code": "CURRENT", "name": "Diffundiert/aktuell"}, "lifecycleGroup": "CURRENT", "provisional": false, "articleModel": {"id": 900052, "level": 1, "code": "KM10", "name": "KM10 Swiss Stats Map Explorer (STATATLAS)"}, "articleModelGroup": {"id": 900049, "level": 0, "code": "AMG_MAP", "name": "Karte"}}, "description": {"titles": {"main": "Dominierende Religionszugehörigkeit"}, "categorization": {"collection": [{"id": 900001, "level": 0, "code": "STAT_GEN", "name": "Allgemeine Statistik"}], "prodima": [{"id": 900010, "level": 0, "code": "01", "name": "Bevölkerung"}, {"id": 901022, "level": 1, "code": "01.08", "name": "Sprachen und Religion"}, {"id": 901024, "level": 2, "code": "01.08.02", "name": "Religionen"}], "inquiry": [{"id": 900002, "level": 0, "name": "Stichprobenerhebung"}, {"id": 312, "level": 1, "code": "SE", "abbrev": "SE", "name": "Strukturerhebung"}], "spatialdivision": [{"id": 900092, "level": 0, "code": "p_kant", "name": "Kantone"}, {"id": 900002, "level": 1, "code": "kant", "name": "Kantone"}], "classification": [], "institution": [{"id": 900001, "level": 0, "name": "Bundesamt für Statistik"}, {"id": 900065, "level": 1, "code": "BFS", "abbrev": "BFS", "name": "Bundesamt für Statistik"}], "publisher": [{"id": 900001, "level": 0, "name": "Bundesamt für Statistik"}, {"id": 900009, "level": 1, "code": "BFS", "abbrev": "BFS", "name": "Bundesamt für Statistik"}], "tags": [], "dataSource": [{"id": 900001, "level": 0, "name": "Bundesamt für Statistik"}, {"id": 900065, "level": 1, "code": "BFS", "abbrev": "BFS", "name": "Bundesamt für Statistik"}], "copyrights": [{"id": 900001, "level": 0, "name": "Bundesamt für Statistik"}, {"id": 900065, "level": 1, "code": "BFS", "abbrev": "BFS", "name": "Bundesamt für Statistik"}], "termsOfUse": [{"id": 900004, "level": 0, "code": "OPEN-BY", "abbrev": "Freie Nutzung - Quellenangabe ist Pflicht", "name": "Open use - Must provide the source"}], "serie": [], "periodicity": [{"id": 930000, "level": 0, "code": "TRIENNIAL", "name": "Dreijährig"}]}, "bibliography": {"city": "Neuchâtel", "period": "2010-2024"}, "language": "DE", "highlight": false}, "shop": {"orderNr": "mx-d-01-01.08.02.001", "stock": false}, "links": [{"href": "https://mapexplorer.bfs.admin.ch/?lang=de#c=indicator&i=ch_01_08_02.domi
+   - id=900300 | id=900052 | id=900049 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900092 | id=900002 | id=900001
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091 | id=900001 | id=900001
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091 | id=900001 | id=900001
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091 | id=900001
+   - id=900300 | id=900046 | id=900034 | id=900001 | id=900008 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091 | id=900001
+   - id=900300 | id=900092 | id=900032 | id=900010 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091 | id=900001 | id=900001
+   - id=900300 | id=900052 | id=900049 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900092 | id=900002 | id=900001
+   - id=900300 | id=900052 | id=900049 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900092 | id=900002 | id=900001
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900008
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900005 | id=900011 | id=900010 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900005 | id=900010 | id=901022 | id=901024 | id=900002 | id=312
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900012 | id=900010 | id=901022 | id=901024 | id=900002 | id=312
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=340 | id=900091 | id=900001 | id=900001
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900003 | id=1 | id=900091
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=340 | id=900091 | id=900001 | id=900001
+
+## DAM language=de&title=Hauptsprachen: HTTP 200, 107,117 bytes
+   top-level keys: ['total', 'skip', 'data', '_embedded']
+   20 items
+   - id=900300 | id=900052 | id=900049 | id=900001 | id=900276 | id=900279 | id=900432 | id=900002 | id=312 | id=900008 | id=900026 | id=900001
+   - id=900300 | id=900052 | id=900049 | id=900001 | id=900276 | id=900279 | id=900432 | id=900002 | id=312 | id=900008 | id=900026 | id=900001
+   - id=900300 | id=900054 | id=900049 | id=900001 | id=900276 | id=900279 | id=900432 | id=900002 | id=312 | id=900008 | id=900026 | id=900001
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901023 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901023 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091 | id=900001
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901023 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901023 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900005 | id=900010 | id=901022 | id=901023 | id=900002 | id=312
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900005 | id=900011 | id=900010 | id=901022 | id=901023 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900012 | id=900010 | id=901022 | id=901023 | id=900002 | id=312
+   - id=900300 | id=900037 | id=900034 | id=900001 | id=900008 | id=900010 | id=901022 | id=901023 | id=900002 | id=312 | id=900003 | id=1
+
+## DAM language=de&title=Religion%20Kanton: HTTP 200, 93,844 bytes
+   top-level keys: ['total', 'skip', 'data', '_embedded']
+   20 items
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900014 | id=900011 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900300 | id=900057 | id=900049 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900092 | id=900002 | id=900001
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900057 | id=900049 | id=900001 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900092 | id=900002 | id=900001
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=901022 | id=901024 | id=900002 | id=312 | id=900091
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900011 | id=900010 | id=900001 | id=900010 | id=900999 | id=901022 | id=900091 | id=900001 | id=900092 | id=900002 | id=900003
+   - id=900400 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900002 | id=900010 | id=900983 | id=900988 | id=901022 | id=901023 | id=900003 | id=1 | id=900092
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+   - id=900300 | id=900030 | id=900029 | id=900001 | id=900016 | id=900026 | id=900010 | id=900983 | id=900988 | id=901022 | id=901024 | id=900002
+
+=== aut7
+
+## PDF https://www.statistik.at/blickgem/vz2/g10101.pdf: HTTP 200, 7,899 bytes
+   1 pages
+   --- page 1
+   Gemeinde: Eisenstadt (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)
+   NUTS-3-Region: Nordburgenland (AT112)
+   Bundesland: Burgenland
+   Ortschaft Wohnbevölkerung 2001
+   Eisenstadt 7.462
+   Kleinhöflein im Burgenland 1.870
+   Sankt Georgen am Leithagebirge 2.002
+   Q: STATISTIK AUSTRIA, Großzählung 2001. Erstellt am: 29.07.2009
+             Volkszählung vom 15. Mai 2001
+               Einwohner nach Ortschaften
+   1/1
+
+## PDF https://www.statistik.at/blickgem/vz3/g10101.pdf: HTTP 200, 10,861 bytes
+   1 pages
+   --- page 1
+   Gemeinde: Eisenstadt   (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)   (101)
+   NUTS 3 Region: Nordburgenland   (AT112)
+   Bundesland (NUTS 2): Burgenland
+   Merkmal Zusammen % Männer Frauen Merkmal Zusammen % Männer Frauen
+   Wohnbevölkerung 11.334 100,0 5.337 5.997 Erwerbspersonen 5.574 100,0 2.979 2.595
+   in % 100,0 .   47,1 52,9 in % 100,0 .   53,4 46,6
+   Nach  Alter in 5-Jahresgruppen
+   Erwerbspersonen 5.574 49,2 2.979 2.595 15 - 19 Jahre 171 3,1 104 67
+      in Vollzeit 4.517 39,9 2.703 1.814 20 - 24 Jahre 475 8,5 253 222
+      in Teilzeit 594 5,2 71 523 25 - 29 Jahre 581 10,4 291 290
+      geringfügig 185 1,6 50 135 30 - 34 Jahre 842 15,1 438 404
+      Präsenz- und Zivild. 33 0,3 33 0 35 - 39 Jahre 879 15,8 437 442
+      arbeitslos 245 2,2 122 123 40 - 44 Jahre 900 16,1 445 455
+   45 - 49 Jahre 722 13,0 402 320
+   Beruflose 50 - 54 Jahre 589 10,6 325 264
+   Einkommens- 55 - 59 Jahre 283 5,1 192 91
+   empfänger 2.744 24,2 1.104 1.640 60 - 64 Jahre 77 1,4 55 22
+      Eigenpension 2.329 20,5 1.063 1.266 65 u. m. Jahre 55 1,0 37 18
+      Hinterbliebenen-
+          pension 332 2,9 4 328 Nach Alter zusammengefasst
+      anderer Lebens- 15 - 59 Jahre 5.442 97,6 2.887 2.555
+          unterhalt; 15 - 64 Jahre 5.519 99,0 2.942 2.577
+          unbekannt 83 0,7 37 46
+   Erwerbsquote nach Altersgruppen (in %)
+   Erhaltene Personen 3.016 26,6 1.254 1.762 15 - 59 Jahre 78,8 85,0 72,7
+      Hausfrau, -mann 527 4,6 12 515 15 - 64 Jahre 73,1 79,7 66,8
+      Schüler unter 15
+         Jahren 1.024 9,0 529 495 Nach Staatsangehörigkeit
+      Schüler/ Student Österreich 5.111 91,7 2.713 2.398
+         15 u.m. Jahre 756 6,7 359 397 Ausland 463 8,3 266 197
+      Kind ohne Schul-    Deutschland 30 0,5 21 9
+         besuch (u. 15J.) 702 6,2 349 353    andere EU-Staaten 16 0,3 8 8
+      erhaltene Person    Schweiz 3 0,1 1 2
+         15 u.m.J. (ohne    Bosnien u. Herzegow. 65 1,2 38 2
+
+## PDF https://www.statistik.at/blickgem/vz4/g10101.pdf: HTTP 200, 9,957 bytes
+   1 pages
+   --- page 1
+   Gemeinde: Eisenstadt   (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)   (101)
+   NUTS 3 Region: Nordburgenland   (AT112)
+   Bundesland (NUTS 2): Burgenland
+   Merkmal Zusammen % Männer Frauen Merkmal Zusammen % Männer Frauen
+   Wohnbev. ab 15 Jahre 9.602 100,0 4.456 5.146 Schüler u. Studenten 1.873 100,0 933 940
+   in % 100,0 .   46,4 53,6 in % 100,0 .   49,8 50,2
+   Nach Schultyp
+   Univ., (Fach-)Hochschule 1.093 11,4 703 390 Pflichtschule 1.031 55,0 542 489
+   Berufs- u. lehrerb. Akademie 304 3,2 81 223 Berufsb. mittl. Schule 90 4,8 44 46
+   Kolleg, Abiturientenlehrgang 49 0,5 19 30 AHS-Oberstufe 173 9,2 73 100
+   Berufsbild. höhere Schule 871 9,1 454 417 Berufsb. höh. Schule 257 13,7 125 132
+   Allgemeinbild. höh. Schule 906 9,4 447 459 Kolleg 3 0,2 0 3
+   Berufsbild. mittlere Schule 1.464 15,2 408 1.056 Univ., Fachhoch-
+   Lehrlingsausbildung 2.038 21,2 1.365 673 schule, Akademie 305 16,3 142 163
+   Allgemeinbild. Pflichtschule 2.877 30,0 979 1.898 Sonstige Ausbildung 14 0,7 7 7
+   Merkmal Zusammen % Merkmal Zusammen %
+   Familien insgesamt 3.143 100,0 Familien nach Anzahl der Kinder
+   keine Kinder 1.100 35,0
+   Nach Familientyp 1 Kind 1.053 33,5
+   Ehepaar 2.366 75,3 2 Kinder 763 24,3
+   Lebensgemeinschaft 201 6,4 3 Kinder 184 5,9
+   alleinerziehender Vater 70 2,2 4 und mehr Kinder 43 1,4
+   alleinerziehende Mutter 506 16,1
+   Merkmal Zusammen % Merkmal Zusammen %
+   Haushalte insgesamt 4.894 100,0 Wohnbevölkerung 11.334 100,0
+   Nach Haushaltstyp Nach Haushaltstyp
+   Privathaushalte mit … Privathaushalte mit …
+   1 Person 1.697 34,7 1 Person 1.697 15,0
+   2 Personen 1.439 29,4 2 Personen 2.878 25,4
+   3 Personen 815 16,7 3 Personen 2.445 21,6
+   4 Personen 668 13,6 4 Personen 2.672 23,6
+   5 Personen und mehr 269 5,5 5 Personen u. m. 1.451 12,8
+   Anstaltshaushalt 6 0,1 Anstaltshaushalt 191 1,7
+   Nach der höchsten abgeschl. Ausbildung
+   Volkszählung vom 15. Mai
+
+## PDF https://www.statistik.at/blickgem/vz5/g10101.pdf: HTTP 200, 17,019 bytes
+   2 pages
+   --- page 1
+   Gemeinde: Eisenstadt   (10101)
+   Volkszählung vom 15. Mai 2001
+   Erwerbs- u. Schulpendler; Wohnbevölkerung bzw.
+   Erwerbspersonen nach berufl. u. wirtschaftl. Merkmalen
+   Gemeinde: Eisenstadt   (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)   (101)
+   NUTS 3 Region: Nordburgenland   (AT112)
+   Bundesland (NUTS 2): Burgenland
+   Merkmal Insg. Tages-
+   pendler
+   Nicht-
+   tages-
+   pendler
+   Merkmal Insg. Tages-
+   pendler
+   Nicht-
+   tages-
+   pendlerpendler pendler
+   Erwerbstätige Schüler u. Studenten 
+   am Wohnort 5.175 4.985 190 am Wohnort 1.801 1.607 194
+   Nichtpendler 314 314 . Nichtpendler . . .
+   Gemeinde - Binnenpendler 3.221 3.221 . Gemeinde - Binnenpendler 1.424 1.424 .
+   Auspendler 1.640 1.450 190 Auspendler 377 183 194Auspendler 1.640 1.450 190 Auspendler 377 183 194
+   in and. 
+    Gemeinde d. Pol. Bez. . . .
+   in and. 
+    Gemeinde d. Pol. Bez. . . .
+   in and. 
+    Pol. Bez. d. Bundesl. 602 587 15
+   in and. 
+    Pol. Bez. d. Bundesl. 58 39 19
+   in and. Bundesland 1.007 859 148 in and. Bundesland 312 144 168
+   ins Ausland 31 4 27 ins Ausland 7 . 7
+   Einpendler 10.506 10.084 422 Einpendler 3.930 3.320 610
+   aus and. 
+    Gemeinde d. Pol. Bez. . . .
+   aus and. 
+    Gemeinde d. Pol. Bez. . . .
+   aus and. 
+    Pol. Bez. d. Bundesl. 9.014 8.774 240
+   aus and. 
+    Pol. Bez. d. Bundesl. 3.016 2.859 157
+   aus and. Bundesland 1.492 1.310 182 aus and. Bundesland 914 461 453 
+   am Arbeitsort 14.041 13.619 422 am Schulort 5.354 4.744 610
+   Index d. Pendlersaldos 271,3 Index d. Pendlersaldos 297,3
+   Index d. Pendlermobilität 234,7 Index d. Pendlermobilität 239,1Index d. Pendlermobilität 234,7 Index d. Pendlermobilität 239,1
+   Merkmal Insg. % männl. weibl. Merkmal Insg. % männl. weibl.
+   Erwerbspersonen 5.574 100,0 2.979 2.595 Wohnbevölkerung 11.334 100,0 5.337 5.997
+   Nach Stellung im Beruf Nach Stellung im Beruf
+   Selbständiger 547 9,8 347 200 Selbständiger 864 7,6 490 374Selbstä
+
+## PDF https://www.statistik.at/blickgem/vz6/g10101.pdf: HTTP 200, 27,402 bytes
+   4 pages
+   --- page 1
+   Volkszählung vom 15. Mai 2001
+   Erwerbspendler nach Pendelziel
+   Gemeinde: Eisenstadt (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)
+   NUTS-3-Region: Nordburgenland (AT112)
+   Insgesamt
+   ERWERBSTÄTIGE AM WOHNORT        5.175
+   314
+   Entfernungskategorie 
+   Arbeitsgemeinde
+   NUTS-3-Region: Nordburgenland (AT112)
+   Bundesland: Burgenland
+     Nichtpendler                  314
+     Gemeinde-Binnenpendler        3.221
+   AUSPENDLER 1.640
+     in einen anderen Politischen Bezirk des Bundeslandes 602
+      Rust(Stadt) <102> 29
+      Eisenstadt-Umgebung <103> 308   Eisenstadt-Umgebung <103> 308
+       Hornstein <10304> 53
+       Müllendorf <10308> 21
+       Neufeld an der Leitha <10309> 40
+       Siegendorf <10315> 22
+       Wulkaprodersdorf <10319> 21
+      Mattersburg <106> 169
+       Mattersburg <10606> 69    Mattersburg <10606> 69
+       Neudörfl <10607> 22
+       Pöttsching <10609> 21
+      Neusiedl am See <107> 49
+       Neusiedl am See <10713> 33
+      Oberpullendorf <108> 34
+     in ein anderes Bundesland 1.007
+     NIEDERÖSTERREICH 359
+      Wiener Neustadt(Stadt) <304> 72
+      Baden <306> 86
+      Mödling <317> 86
+       Wiener Neudorf <31725> 23
+      Wiener Neustadt(Land) <323> 24
+      Wien-Umgebung <324> 61   Wien-Umgebung <324> 61
+       Schwechat <32419> 41
+     WIEN 600
+      Wien  1.,Innere Stadt <901> 98
+      Wien  2.,Leopoldstadt <902> 24
+      Wien  3.,Landstraße <903> 58
+      Wien  4.,Wieden <904> 33
+      Wien  9.,Alsergrund <909> 52   Wien  9.,Alsergrund <909> 52
+      Wien 10.,Favoriten <910> 57
+      Wien 11.,Simmering <911> 28
+      Wien 12.,Meidling <912> 23
+      Wien 23.,Liesing <923> 51
+     ins Ausland 31
+   1/4
+
+## PDF https://www.statistik.at/blickgem/vz7/g10101.pdf: HTTP 200, 10,347 bytes
+   1 pages
+   --- page 1
+   Eisenstadt (10101)
+   Nordburgenland   (AT112)
+   Burgenland
+   Merkmal Zusammen % Männer Frauen Merkmal Zusammen %
+   Wohnbevölkerung 11.334 100,0 5.337 5.997
+   in % 100,0 .   47,1 52,9
+   bis unter 15 1.732 15,3 881 851 Deutschland 58 0,5
+   15 bis 59 6.910 61,0 3.397 3.513 sonstige EU(15)-Bürger 23 0,2
+   60 und älter 2.692 23,8 1.059 1.633 Bundesrep. Jugoslawien 82 0,7
+   Bosnien-Herzegowina 117 1,0
+   Kroatien 74 0,7
+   bis 4 543 4,8 278 265 Türkei 35 0,3
+   5 bis 9 593 5,2 309 284 sonstige Ausländer 359 3,2
+   10 bis 14 596 5,3 294 302
+   15 bis 19 694 6,1 356 338 Nach ausgewählten Geburtsländern
+   20 bis 24 675 6,0 335 340 Deutschland 150 1,3
+   25 bis 29 669 5,9 335 334 sonstige EU(15)-Staaten 29 0,3
+   30 bis 34 885 7,8 448 437 Bundesrep. Jugoslawien 112 1,0
+   35 bis 39 944 8,3 446 498 Bosnien-Herzegowina 123 1,1
+   40 bis 44 981 8,7 455 526 Kroatien 71 0,6
+   45 bis 49 801 7,1 408 393 Türkei 30 0,3
+   50 bis 54 693 6,1 349 344 sonstige Staaten 664 5,9
+   55 bis 59 568 5,0 265 303
+   60 bis 64 640 5,6 296 344
+   65 bis 69 511 4,5 233 278 Deutsch 9.960 87,9
+   70 bis 74 516 4,6 206 310 Burgenland-Kroatisch 317 2,8
+   75 bis 79 517 4,6 167 350 Slowenisch 17 0,1
+   80 bis 84 264 2,3 93 171 Tschechisch 25 0,2
+   85 und älter 244 2,2 64 180 Ungarisch 373 3,3
+   Serbisch 84 0,7
+   Kroatisch 216 1,9
+   ledig 4.556 40,2 2.343 2.213 Bosnisch 16 0,1
+   verheiratet 5.082 44,8 2.559 2.523 Türkisch 40 0,4
+   verwitwet 937 8,3 144 793 Sonstige und unbekannt 286 2,5
+   geschieden 759 6,7 291 468
+   Nach Religion
+   römisch-katholisch 9.500 83,8
+   Österreicher 10.586 93,4 4.957 5.629 evangelisch 681 6,0
+   sonst. EU(15)-Bürger 81 0,7 44 37 orthodox 124 1,1
+   sonstige Ausländer 667 5,9 336 331 islamisch 180 1,6
+   israelitisch 5 0,0
+   Nach Geburtsland sonstiges 105 0,9
+   Österreich 10.155 89,6 4.805 5.350 ohne Bekenntnis 575 5,1
+   sonst. EU(15)-Staaten 179 1,6 71 108 unbekannt 164 1,4
+   sonstige St
+
+## https://www.statistik.at/blickgem/
+   HTTP 200, 16,671 bytes, text/html
+   21 distinct matches of 'src=\\"[^\\"]+\\"|[\\"\'][^\\"\']*\\.(?:json|do|jsp)[^\\"\']*[\\"\']'
+   - src="environment"
+   - src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"
+   - src="frameworks/material-components-web/material-components-web.min.js"
+   - src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+   - src="frameworks/jquery_3.5.1/jquery.min.js"
+   - src="frameworks/ol/ol.js"
+   - src="frameworks/highcharts-5.0.14/highcharts.js"
+   - src="frameworks/highcharts-5.0.14/modules/exporting.js"
+   - src="frameworks/highcharts-5.0.14/modules/export-data.js"
+   - src="frameworks/highcharts-5.0.14/modules/accessibility.js"
+   - src="frameworks/highcharts-5.0.14/highcharts-more.js"
+   - src="frameworks/FileSaver.min.js"
+   - src="css/img/svgs/blickgem_logo.svg"
+   - src="css/img/svgs/statistikAustria_logo_RGB.svg"
+   - src="js/globals_ui.js"
+   - src="js/main.js"
+   - src="js/uiHelper.js"
+   - src="js/charts.js"
+   - src="js/searchModule.js"
+   - src="js/geolocateModule.js"
+   - src="js/matomoInclude.js"
+
+## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung
+   HTTP 200, 93,808 bytes, text/html; charset=utf-8
+   0 distinct matches of 'href=\\"[^\\"]*(?:religi|Religi|sprach|Sprach|umgang|volkszaehl|registerz)[^\\"]*\\"'
+
+## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstand
+   HTTP 200, 94,163 bytes, text/html; charset=utf-8
+   1 distinct matches of 'href=\\"[^\\"]*(?:religi|Religi|sprach|Sprach|umgang|volkszaehl|registerz)[^\\"]*\\"'
+   - href="/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstand/historische-volkszaehlungen"
+
+=== deu8
+
+## Regionaldatenbank helloworld/logincheck {}: HTTP 200, 166 bytes
+   status Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 10 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.; 0 rows
+
+## Regionaldatenbank catalogue/tables {'selection': '1000A*', 'pagelength': '50'}: HTTP 401, 209 bytes
+   status None; 0 rows
+
+## Regionaldatenbank catalogue/tables {'selection': '12111*', 'pagelength': '60'}: HTTP 401, 209 bytes
+   status None; 0 rows
