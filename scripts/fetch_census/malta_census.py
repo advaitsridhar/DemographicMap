@@ -29,8 +29,12 @@ The census asked two more questions this map shows:
   written as the ethnicity field with ``ethnicity_basis`` "racial origin".
 * "What is the main language that you grew up speaking from early
   childhood?" (aged 5+): tabulated by locality only for Maltese citizens
-  (Volume 3, Table 3.6) and for everyone only by district. Neither is a
-  locality's population, so language is written as a gap that says so.
+  (Volume 3, Table 3.6, read off the report's pages as Table 4.3 is), and for
+  everyone only by district. The Maltese citizens' languages are written as
+  shares of *all* the locality's residents aged 5 and over (from the single
+  years of Chapter 1), so the composition adds to the citizens' share and the
+  other residents -- whose language the NSO tabulates by district only -- are
+  left visibly unaccounted for rather than assumed to speak like citizens.
 
 **Names.** The census writes each locality's Maltese name with its article
 ("Il-Birgu", "Ħal Qormi", "Raħal Ġdid"); the boundary file writes a short
@@ -62,7 +66,7 @@ from collections import Counter
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares, write_json,
+    PROCESSED, dated, http_get, log, measure, record, shares, write_json,
 )
 
 OUT = "malta_census.json"
@@ -81,12 +85,20 @@ NATIONAL = 519562
 # Table 4.3 writes Gozo's Żebbuġ without the ", Għawdex" the workbooks give it.
 SPELLINGS = {"Iż-Żebbuġ": "Iż-Żebbuġ, Għawdex"}
 
-LANGUAGE_NOTE = (
-    "The 2021 census asked every resident aged 5 and over \"What is the main language that "
-    "you grew up speaking from early childhood?\", but the NSO tabulates the answer by "
-    "locality only for Maltese citizens (Volume 3, Table 3.6) -- about four residents in "
-    "five -- and for all residents only by district (Table 3.3). Neither is this locality's "
-    "whole population, so no language composition is shown.")
+VOLUME_3 = ARCHIVE.format(stamp="20240129150900",
+                          name="volume3-Census-of-Population-2021.pdf")
+LANGUAGES = ("Maltese", "English", "Italian", "German", "French", "Arabic", "Other language")
+
+
+def language_note(citizens: float, residents: float) -> str:
+    return (
+        f"Census {YEAR} question \"What is the main language that you grew up speaking from early "
+        "childhood?\", asked of residents aged 5 and over. The NSO tabulates it by locality for "
+        f"Maltese citizens only (Volume 3, Table 3.6): {citizens:,.0f} of this locality's "
+        f"{residents:,.0f} residents aged 5 and over. Their languages are shown as shares of all "
+        f"{residents:,.0f}, so the {residents - citizens:,.0f} residents who are not Maltese "
+        "citizens -- tabulated by district only -- are not accounted for here.")
+
 
 # The census's name -> the boundary file's.
 LOCALITIES = {
@@ -298,6 +310,73 @@ def read_racial_origin() -> dict[str, dict[str, Any]]:
     return out
 
 
+LANGUAGE_VALUE = re.compile(r"^(?:[\d,]+|-+)$")
+
+
+def language_row(line: str) -> tuple[str, list[float]] | None:
+    """One line of Table 3.6: a locality and seven languages and a total.
+
+    The report prints an empty cell as a dash, and pdf text runs two or more
+    adjacent dashes together ("--" is two empty cells), so a run of dashes is
+    read as that many zeros; the row's own total then checks the reading.
+    """
+    tokens = line.replace("\u2010", "-").split()
+    at = len(tokens)
+    while at > 0 and LANGUAGE_VALUE.match(tokens[at - 1]):
+        at -= 1
+    name, cells = " ".join(tokens[:at]), tokens[at:]
+    values: list[float] = []
+    for token in cells:
+        if set(token) == {"-"}:
+            values.extend([0.0] * len(token))
+        else:
+            values.append(float(token.replace(",", "")))
+    if not name or len(values) != len(LANGUAGES) + 1:
+        return None
+    return name, values
+
+
+def read_language() -> dict[str, dict[str, Any]]:
+    """Volume 3, Table 3.6: Maltese citizens aged 5+ by main language and locality."""
+    import pdfplumber
+    blob = http_get(VOLUME_3, binary=True, cache=True, timeout=600)
+    out: dict[str, dict[str, Any]] = {}
+    folded = {name.lower(): name for name in LOCALITIES}
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text() or ""
+            if "TABLE 3.6. Maltese population aged 5 and over" not in text:
+                continue
+            for line in text.splitlines():
+                row = language_row(line)
+                if row is None:
+                    continue
+                name, values = row
+                name = SPELLINGS.get(name, name)
+                name = folded.get(name.lower(), name)
+                counts = dict(zip(LANGUAGES, values[:-1]))
+                if sum(counts.values()) != values[-1]:
+                    raise SystemExit(f"malta_census: Table 3.6 {name}: languages make "
+                                     f"{sum(counts.values()):,.0f} against {values[-1]:,.0f}")
+                if name in out and out[name]["total"] != values[-1]:
+                    raise SystemExit(f"malta_census: Table 3.6 prints {name} twice, differently")
+                out[name] = {"counts": counts, "total": values[-1]}
+    missing = sorted(set(LOCALITIES) - set(out))
+    if missing:
+        raise SystemExit(f"malta_census: Table 3.6 has no row for {missing}")
+    whole = out.get("Total")
+    if whole is None:
+        raise SystemExit("malta_census: Table 3.6 has no Total row")
+    for key in LANGUAGES:
+        made = sum(out[n]["counts"][key] for n in LOCALITIES)
+        if made != whole["counts"][key]:
+            raise SystemExit(f"malta_census: Table 3.6's localities make {made:,.0f} {key}, "
+                             f"its total {whole['counts'][key]:,.0f}")
+    log(f"  table 3.6: {len(LOCALITIES)} localities, {whole['total']:,.0f} Maltese citizens "
+        "aged 5 and over")
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -308,6 +387,7 @@ def main() -> int:
     published_mean = ages.pop("_mean")
     religion = read_religion()
     origin = read_racial_origin()
+    language = read_language()
     for name in LOCALITIES:
         if origin[name]["total"] != ages[name]["men"] + ages[name]["women"]:
             raise SystemExit(f"malta_census: {name}: Table 4.3 counts "
@@ -332,6 +412,13 @@ def main() -> int:
         a, r, o = ages[name], religion[name], origin[name]
         rows = shares(r["counts"], total=r["total"])
         origins = shares(o["counts"], total=o["total"])
+        residents = sum(n for age, n in a["ages"].items() if age >= 5)
+        citizens = language[name]["total"]
+        if citizens > residents:
+            raise SystemExit(f"malta_census: {name}: {citizens:,.0f} Maltese citizens aged 5+ "
+                             f"against {residents:,.0f} residents aged 5+")
+        spoken = shares({k: v for k, v in language[name]["counts"].items() if v > 0},
+                        total=residents)
         for level, shapes in (("admin1", admin1), ("admin2", admin2)):
             records.append(record(
                 f"MLT-NSO-{level}-{drawn}", drawn, level=level, parent="MLT", country="MLT",
@@ -361,13 +448,17 @@ def main() -> int:
                                 "publishes none, having coded those answers into the six "
                                 "groups shown. Citizenship is a separate question."),
                 ethnicity_basis="racial origin",
-                language=gap(NOT_AVAILABLE, LANGUAGE_NOTE),
+                language=spoken,
+                language_year=dated(spoken, YEAR),
+                language_note=language_note(citizens, residents),
                 sources=[{"field": "population/median age/sex ratio", "name": SOURCE,
                           "url": CHAPTER_1, "year": YEAR, "license": LICENCE},
                          {"field": "religion", "name": SOURCE, "url": CHAPTER_5,
                           "year": YEAR, "license": LICENCE},
                          {"field": "ethnicity", "name": SOURCE, "url": VOLUME_1,
-                          "year": YEAR, "license": LICENCE}]))
+                          "year": YEAR, "license": LICENCE},
+                         {"field": "language", "name": SOURCE.replace("Volume 1", "Volume 3"),
+                          "url": VOLUME_3, "year": YEAR, "license": LICENCE}]))
     write_json(args.out or PROCESSED / OUT, records)
     log(f"  {len(records)} records ({len(LOCALITIES)} localities at both levels)")
     return 0

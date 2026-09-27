@@ -310,6 +310,16 @@ class Microstates(unittest.TestCase):
             andorra(feats)
 
 
+class MaltaLanguage(unittest.TestCase):
+    def test_runs_of_dashes_are_that_many_empty_cells(self):
+        from scripts.fetch_census.malta_census import language_row
+        self.assertEqual(language_row("Ħal Luqa 5,794 140 11 \u2010\u2010 9 9 5,963"),
+                         ("Ħal Luqa", [5794.0, 140.0, 11.0, 0.0, 0.0, 9.0, 9.0, 5963.0]))
+        name, values = language_row("L\u2010Imdina 120 38 \u2010\u2010\u2010\u2010\u2010 158")
+        self.assertEqual((name, sum(values[:-1]), values[-1]), ("L-Imdina", 158.0, 158.0))
+        self.assertIsNone(language_row("District and locality Maltese English Italian"))
+
+
 class IrelandAges(unittest.TestCase):
     def test_bands(self):
         from scripts.fetch_census.ireland_age import band
