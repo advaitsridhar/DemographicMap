@@ -1,776 +1,192 @@
-probe_xlsx: https://web.archive.org/web/20231209013436id_/https://nso.gov.mt/wp-content/uploads/Census-Vol-1_Chapter-1.xlsx
-  457,357 bytes
-  85 sheet(s): Contents, T1.1_pop_by_locality, T1.2_pop_sex_age_locality, T1.3_pop_sex_age, Table 1.4_Southern Harbour, Table 1.4_Northern_Harbour, Table 1.4_ South _Eastern, Table 1.4_western, Table 1.4_Northern , Table 1.4_Gozo and Comino, 1-Birkirkara, 2-Birzebbugia, 3-Bormla, 4-Floriana, 5-Ghajnsielem, 6-Had-Dingli, 7-Hal Balzan, 8-Hal Gharghur, 9-Hal Ghaxaq, 10-Hal Kirkop, 11-Hal Lija, 12-Hal Luqa, 13-Hal Qormi, 14-Hal Safi, 15-Hal Tarxien, 16-H'Attard, 17-Haz Zabbar, 18-Haz Zebbug, 19-Il-Birgu, 20-Il-Fgura, 21-Il-Fonatana, 22-Il-Gudja, 23-Il-Gzira, 24-Il-Hamrun, 25-Il-Kalkara, 26-Il-Marsa, 27-Il-Mellieha, 28-Il-Mosta, 29-Il-Munxar, 30-Il-Qala, 31-Il-Qrendi, 32-In-Nadur, 33-In-Naxxar, 34-Ir-Rabat, 35-Ir-Rabat Ghawdex, 36-Is-Siggiewi, 37-Is-Swieqi, 38-Ix-Xaghra, 39-Ix-Xewkija, 40-Ix-Xghajra, 41-Iz-Zebbug, 42-Iz-Zejtun, 43-Iz-Zurrieq, 44-L-Gharb, 45-L-Ghasri, 46-L-Iklin, 47-L-Imdina, 48-L-Imgarr, 49-L-Imqabba, 50-L-Imsida, 51-L-Imtarfa, 52-L-Isla, 53-Marsaskala, 54-Marsaxlokk, 55-Pembroke, 56-Rahal Gdid, 57-San Giljan, 58-San Gwann, 59-San Lawrenz, 60-San Pawl il-Bahar, 61-Santa Lucija, 62-Santa Venera, 63-Ta' Kercem, 64-Ta' Sannat, 65-Ta' Xbiex, 66-Tal-Pieta, 67-Sliema, 68-Valletta, 1.6_Pop_ sex_age_type of_res, 1.7_EU pop_sex, 1.8_EU pop_age, 1.9_pop density EU, 1.10_Pop_density_loc, 1.11_dep_ratio_EU, 1.12_dep_ratio_MT
-
---- sheet 'Contents' (88 rows x 3 cols) --------------------
-  Chapter 1 | Population
-  
-  Table 1.1 | Overview of total population b
-  Table 1.2 | Total population by sex, avera
-  Table 1.3 | Total population by sex and ag
-  Table 1.4 | Total population by sex, age a
-
---- sheet 'T1.1_pop_by_locality' (114 rows x 13 cols) --------------------
-  TABLE 1.1. Overview of total p
-  
-  District and locality | 1921 | 1931 | 1948 | 1957 | 1967 | 1985 | 1995 | 2005 | 2011 | 2021 |  | Back to contents
-  MALTA | 212258 | 241621 | 305991 | 319620 | 314216 | 345418 | 378132 | 404962 | 417432 | 519562
-  Malta | 189697 | 217784 | 278311 | 292019 | 288238 | 319736 | 349106 | 373955 | 386057 | 480275
-  Gozo and Comino | 22561 | 23837 | 27680 | 27601 | 25978 | 25682 | 29026 | 31007 | 31375 | 39287
-
---- sheet 'T1.2_pop_sex_age_locality' (95 rows x 10 cols) --------------------
-  TABLE 1.2. Total population by
-  
-   | Total population |  |  |  | Average age |  |  |  | Back to contents
-  
-  District and locality | Males | Females | Total |  | Males | Females | Total
-  MALTA | 270021 | 249541 | 519562 |  | 40.63432844112092 | 42.8049218364919 | 41.67684511184313
-
---- sheet 'T1.3_pop_sex_age' (67 rows x 14 cols) --------------------
-  TABLE 1.3. Total population by
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total |  | Back to contents
-  Total | 270021 | 249541 | 519562
-  
-  0-9 | 23532 | 21736 | 45268 |  | 50-59 | 30658 | 28327 | 58985
-
---- sheet 'Table 1.4_Southern Harbour' (67 rows x 11 cols) --------------------
-  TABLE 1.4. Total population by
-  
-  Southern Harbour |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 44624 | 41385 | 86009
-
---- sheet 'Table 1.4_Northern_Harbour' (67 rows x 11 cols) --------------------
-  ...TABLE 1.4. Total population
-  
-  Northern Harbour |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 82444 | 74853 | 157297
-
---- sheet 'Table 1.4_ South _Eastern' (67 rows x 11 cols) --------------------
-  ...TABLE 1.4. Total population
-  
-  South Eastern |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 40928 | 37020 | 77948
-
---- sheet 'Table 1.4_western' (67 rows x 11 cols) --------------------
-  ...TABLE 1.4. Total population
-  
-  Western |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 33000 | 32266 | 65266
-
---- sheet 'Table 1.4_Northern ' (67 rows x 11 cols) --------------------
-  ...TABLE 1.4. Total population
-  
-  Northern |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 48614 | 45141 | 93755
-
---- sheet 'Table 1.4_Gozo and Comino' (67 rows x 11 cols) --------------------
-  ...TABLE 1.4. Total population
-  
-  Gozo and Comino |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 20411 | 18876 | 39287
-
---- sheet '1-Birkirkara' (67 rows x 11 cols) --------------------
-  TABLE 1.5. Total population by
-  
-  Birkirkara |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 13331 | 12476 | 25807
-
---- sheet '2-Birzebbugia' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Birżebbuġa |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6850 | 4994 | 11844
-
---- sheet '3-Bormla' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Bormla |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2389 | 2265 | 4654
-
---- sheet '4-Floriana' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Floriana |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 997 | 988 | 1985
-
---- sheet '5-Ghajnsielem' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Għajnsielem and Comino |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1823 | 1700 | 3523
-
---- sheet '6-Had-Dingli' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħad-Dingli |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1978 | 1887 | 3865
-
---- sheet '7-Hal Balzan' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Balzan |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2344 | 2430 | 4774
-
---- sheet '8-Hal Gharghur' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Għargħur |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1880 | 1861 | 3741
-
---- sheet '9-Hal Ghaxaq' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Għaxaq |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2859 | 2679 | 5538
-
---- sheet '10-Hal Kirkop' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Kirkop |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1309 | 1218 | 2527
-
---- sheet '11-Hal Lija' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Lija |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1581 | 1581 | 3162
-
---- sheet '12-Hal Luqa' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Luqa |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 3632 | 3617 | 7249
-
---- sheet '13-Hal Qormi' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Qormi |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 9471 | 8628 | 18099
-
---- sheet '14-Hal Safi' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Safi |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1461 | 1180 | 2641
-
---- sheet '15-Hal Tarxien' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħal Tarxien |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 4812 | 4652 | 9464
-
---- sheet "16-H'Attard" (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħ'Attard |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6193 | 6075 | 12268
-
---- sheet '17-Haz Zabbar' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħaż-Żabbar |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 8821 | 8327 | 17148
-
---- sheet '18-Haz Zebbug' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ħaż-Żebbuġ |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 7171 | 6614 | 13785
-
---- sheet '19-Il-Birgu' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Birgu |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1151 | 1110 | 2261
-
---- sheet '20-Il-Fgura' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Fgura |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6574 | 6492 | 13066
-
---- sheet '21-Il-Fonatana' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Fontana |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 526 | 516 | 1042
-
---- sheet '22-Il-Gudja' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Gudja |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1627 | 1602 | 3229
-
---- sheet '23-Il-Gzira' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Gżira |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 5598 | 4733 | 10331
-
---- sheet '24-Il-Hamrun' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Ħamrun |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 5571 | 4943 | 10514
-
---- sheet '25-Il-Kalkara' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Kalkara |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1618 | 1487 | 3105
-
---- sheet '26-Il-Marsa' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Marsa |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 3148 | 2320 | 5468
-
---- sheet '27-Il-Mellieha' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Mellieħa |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6561 | 6177 | 12738
-
---- sheet '28-Il-Mosta' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Mosta |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 11748 | 11734 | 23482
-
---- sheet '29-Il-Munxar' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Munxar |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 907 | 800 | 1707
-
---- sheet '30-Il-Qala' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Qala |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1185 | 1115 | 2300
-
---- sheet '31-Il-Qrendi' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Il-Qrendi |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1601 | 1547 | 3148
-
---- sheet '32-In-Nadur' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  In-Nadur |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2358 | 2190 | 4548
-
---- sheet '33-In-Naxxar' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  In-Naxxar |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 8459 | 8453 | 16912
-
---- sheet '34-Ir-Rabat' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ir-Rabat |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 5945 | 5991 | 11936
-
---- sheet '35-Ir-Rabat Ghawdex' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ir-Rabat, Għawdex |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 3731 | 3511 | 7242
-
---- sheet '36-Is-Siggiewi' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Is-Siġġiewi |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 4713 | 4605 | 9318
-
---- sheet '37-Is-Swieqi' (118 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Is-Swieqi |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6751 | 6293 | 13044
-
---- sheet '38-Ix-Xaghra' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ix-Xagħra |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2719 | 2442 | 5161
-
---- sheet '39-Ix-Xewkija' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ix-Xewkija |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1824 | 1731 | 3555
-
---- sheet '40-Ix-Xghajra' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ix-Xgħajra |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1153 | 1039 | 2192
-
---- sheet '41-Iz-Zebbug' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Iż-Żebbuġ, Għawdex |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1836 | 1467 | 3303
-
---- sheet '42-Iz-Zejtun' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Iż-Żejtun |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6288 | 6121 | 12409
-
---- sheet '43-Iz-Zurrieq' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Iż-Żurrieq |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6279 | 6016 | 12295
-
---- sheet '44-L-Gharb' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Għarb |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 774 | 775 | 1549
-
---- sheet '45-L-Ghasri' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Għasri |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 277 | 241 | 518
-
---- sheet '46-L-Iklin' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Iklin |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1728 | 1671 | 3399
-
---- sheet '47-L-Imdina' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Imdina |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 99 | 94 | 193
-
---- sheet '48-L-Imgarr' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Imġarr |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2484 | 2356 | 4840
-
---- sheet '49-L-Imqabba' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Imqabba |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1786 | 1739 | 3525
-
---- sheet '50-L-Imsida' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Imsida |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 7591 | 5996 | 13587
-
---- sheet '51-L-Imtarfa' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Imtarfa |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1248 | 1318 | 2566
-
---- sheet '52-L-Isla' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  L-Isla |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1213 | 1091 | 2304
-
---- sheet '53-Marsaskala' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Marsaskala |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 8759 | 8045 | 16804
-
---- sheet '54-Marsaxlokk' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Marsaxlokk |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2109 | 1879 | 3988
-
---- sheet '55-Pembroke' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Pembroke |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1789 | 1756 | 3545
-
---- sheet '56-Rahal Gdid' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Raħal Ġdid |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 5178 | 4161 | 9339
-
---- sheet '57-San Giljan' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  San Ġiljan |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 6251 | 5402 | 11653
-
---- sheet '58-San Gwann' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  San Ġwann |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 7355 | 6889 | 14244
-
---- sheet '59-San Lawrenz' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  San Lawrenz |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 392 | 380 | 772
-
---- sheet '60-San Pawl il-Bahar' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  San Pawl Il-Baħar |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 17482 | 14560 | 32042
-
---- sheet '61-Santa Lucija' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Santa Luċija |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1300 | 1317 | 2617
-
---- sheet '62-Santa Venera' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Santa Venera |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 4491 | 4343 | 8834
-
---- sheet "63-Ta' Kercem" (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ta' Kerċem |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 935 | 946 | 1881
-
---- sheet "64-Ta' Sannat" (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ta' Sannat |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1124 | 1062 | 2186
-
---- sheet "65-Ta' Xbiex" (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Ta' Xbiex |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 1084 | 1008 | 2092
-
---- sheet '66-Tal-Pieta' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Tal-Pieta' |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 3202 | 2690 | 5892
-
---- sheet '67-Sliema' (67 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Tas-Sliema |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 9959 | 9696 | 19655
-
---- sheet '68-Valletta' (68 rows x 11 cols) --------------------
-  ...TABLE 1.5. Total population
-  
-  Valletta |  |  |  |  |  |  |  |  |  | Back to contents
-  
-  Age | Males | Females | Total |  | Age | Males | Females | Total
-  Total | 2638 | 2519 | 5157
-
---- sheet '1.6_Pop_ sex_age_type of_res' (33 rows x 11 cols) --------------------
-  TABLE  1.6. Total population b
-  
-   | Males |  |  | Females |  |  | Total |  |  | Back to contents
-  Age | Number | % |  | Number | % |  | Number | %
-  
-   | Private residence
-
---- sheet '1.7_EU pop_sex' (38 rows x 13 cols) --------------------
-  TABLE 1.7. Total population in
-  
-   | Males |  |  | Females |  |  | Total |  |  | Back to contents
-  Country | Number | % |  | Number | % |  | Number | %
-  European Union - 27 countries  | 218534272 | 48.86641600941526 |  | 228673217 | 51.13358399058474 |  | 447207489 | 100
-  Austria | 4396952 | 49.22330001441899 |  | 4535712 | 50.77669998558101 |  | 8932664 | 100
-
---- sheet '1.8_EU pop_age' (82 rows x 17 cols) --------------------
-  TABLE 1.8. Total population in
-  
-   | 0-9 |  |  | 10-19 |  |  | 20-29 |  |  | 30-39 |  |  | 40-49 |  | 
-  Country | Number | % |  | Number | % |  | Number | % |  | Number | % |  | Number | %
-  European Union - 27 countries  | 43671650 | 9.765411151243041 |  | 46784216 | 10.461411570860344 |  | 49912291 | 11.160879955657451 |  | 57799380 | 12.924510752099682 |  | 62549755 | 13.986741398241657
-  Austria | 862055 | 9.650592477227399 |  | 858682 | 9.612832185336872 |  | 1102195 | 12.338928230145005 |  | 1227485 | 13.741533320854787 |  | 1179382 | 13.20302655512398
-
---- sheet '1.9_pop density EU' (34 rows x 11 cols) --------------------
-  TABLE 1.9. Population density 
-  
-  Country | Population per km2 |  | Back to contents
-  European Union - 27 countries | 109
-  Austria | 107.6
-  Belgium | 377.3
-
---- sheet '1.10_Pop_density_loc' (97 rows x 11 cols) --------------------
-  TABLE 1.10. Population density
-  
-  District and locality | Area 
-(km2) | Population | Population 
-per km2 |  | Back to contents
-  MALTA | 315.1535 | 519562 | 1649
-  Malta | 246.4863 | 480275 | 1948
-  Gozo and Comino | 68.6672 | 39287 | 572
-
---- sheet '1.11_dep_ratio_EU' (43 rows x 11 cols) --------------------
-  TABLE 1.11. Dependency ratio a
-  
-   | Dependency ratio | Old-age dependency ratio |  | Back to contents
-  Country | %
-  European Union - 27 countries  | 56 | 32.5
-  Austria | 50.6 | 28.9
-
---- sheet '1.12_dep_ratio_MT' (99 rows x 11 cols) --------------------
-  TABLE 1.12. Dependency ratio a
-  
-   | Dependency ratio | Old-age dependency ratio |  | Back to contents
-  District and locality | %
-  MALTA | 46.72582066285645 | 27.574384926462702
-  Malta | 46.23849411879337 | 27.10896750797014
-
-probe_xlsx: https://web.archive.org/web/20230702041150id_/https://nso.gov.mt/wp-content/uploads/Census-Vol-1_Chapter-5.xlsx
-  48,132 bytes
-  8 sheet(s): Contents, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7
-
---- sheet 'Contents' (9 rows x 2 cols) --------------------
-  Chapter 5 | Religious Affiliation
-  Table 5.1 | Population aged 15 and over by
-  Table 5.2 | Population aged 15 and over by
-  Table 5.3 | Population aged 15 and over by
-  Table 5.4 | Population aged 15 and over by
-  Table 5.5 | Population aged 15 and over by
-
---- sheet '5.1' (85 rows x 14 cols) --------------------
-  TABLE 5.1. Population aged 15 
-  
-  Sex and age | Roman Catholicism | Islam | Orthodoxy | Hinduism | Church of England | Protestantism | Buddhism | Judaism | Other 
-religious 
-groups | No religious affiliation | Total
-  Total | 373304 | 17454 | 16457 | 6411 | 5706 | 4516 | 2495 | 1249 | 911 | 23243 | 451746 |  | Back to contents
-  15-19 | 18428 | 1166 | 584 | 37 | 138 | 131 | 121 | 68 | 44 | 1446 | 22163
-  20-29 | 51142 | 5983 | 3321 | 2498 | 529 | 876 | 506 | 357 | 246 | 6983 | 72441
-
---- sheet '5.2' (85 rows x 14 cols) --------------------
-  TABLE 5.2. Population aged 15 
-  
-  District and sex | Roman Catholicism | Islam | Orthodoxy | Hinduism | Church of England | Protestantism | Buddhism | Judaism | Other 
-religious 
-groups | No religious affiliation | Total
-  MALTA | 373304 | 17454 | 16457 | 6411 | 5706 | 4516 | 2495 | 1249 | 911 | 23243 | 451746 |  | Back to contents
-  Malta | 344174 | 16709 | 15865 | 6184 | 4757 | 4153 | 2080 | 1178 | 846 | 21504 | 417450
-  Gozo and Comino | 29130 | 745 | 592 | 227 | 949 | 363 | 415 | 71 | 65 | 1739 | 34296
-
---- sheet '5.3' (102 rows x 14 cols) --------------------
-  TABLE 5.3. Population aged 15 
-  
-  District and locality | Roman Catholicism | Islam | Orthodoxy | Hinduism | Church of England | Protestantism | Buddhism | Judaism | Other 
-religious 
-groups | No religious affiliation | Total
-  MALTA | 373304 | 17454 | 16457 | 6411 | 5706 | 4516 | 2495 | 1249 | 911 | 23243 | 451746 |  | Back to contents
-  Malta | 344174 | 16709 | 15865 | 6184 | 4757 | 4153 | 2080 | 1178 | 846 | 21504 | 417450
-  Gozo and Comino | 29130 | 745 | 592 | 227 | 949 | 363 | 415 | 71 | 65 | 1739 | 34296
-
---- sheet '5.4' (85 rows x 6 cols) --------------------
-  TABLE 5.4. Population aged 15 
-  
-  Religion | Males | Females | Total
-   | Maltese |  |  |  | Back to contents
-  Total | 172246 | 175331 | 347577
-  Roman Catholicism | 165604 | 169450 | 335054
-
---- sheet '5.5' (85 rows x 19 cols) --------------------
-  TABLE 5.5. Population aged 15 
-  
-  Religion and sex | Maltese | Italian | British | Indian | Filipino | Serbian | Bulgarian | Libyan | Syrian | Nepalese | Albanian | Other 
-  EU Member 
-  States | Other European Countries | Other Citizenship | Stateless
-  Total | 347577 | 12606 | 9914 | 7286 | 7195 | 4839 | 3308 | 2498 | 1913 | 2783 | 2574 | 20457 | 7478 | 21235 | 83
-  Males | 172246 | 8012 | 5590 | 5181 | 2795 | 2855 | 1698 | 1774 | 1405 | 1786 | 2117 | 10745 | 4093 | 14501 | 62
-  Females | 175331 | 4594 | 4324 | 2105 | 4400 | 1984 | 1610 | 724 | 508 | 997 | 457 | 9712 | 3385 | 6734 | 21
-
---- sheet '5.6' (85 rows x 17 cols) --------------------
-  TABLE 5.6. Population aged 15 
-  
-  Religion and sex | Malta | United Kingdom | Italy | India | Philippines | Serbia | Australia | Libya | Russia | Bulgaria | Other EU Member States | Other European Countries | Other Countries | Total
-  Total | 328367 | 14230 | 12409 | 7455 | 7465 | 5384 | 4566 | 3047 | 2514 | 2691 | 20337 | 9893 | 33388 | 451746 | 
-  Males | 163015 | 7599 | 8027 | 5297 | 2819 | 3164 | 2218 | 2140 | 806 | 1310 | 10610 | 6352 | 21503 | 234860
-  Females | 165352 | 6631 | 4382 | 2158 | 4646 | 2220 | 2348 | 907 | 1708 | 1381 | 9727 | 3541 | 11885 | 216886
-
---- sheet '5.7' (85 rows x 10 cols) --------------------
-  TABLE 5.7. Population aged 15 
-  
-  Religion and sex | Caucasian | Asian | Arab | African | Hispanic or 
-Latino | More than one 
-racial origin | Total
-  Total | 401391 | 25070 | 7185 | 7502 | 6007 | 4591 | 451746 |  | Back to contents
-  Males | 203580 | 14323 | 5030 | 6088 | 3070 | 2769 | 234860
-  Females | 197811 | 10747 | 2155 | 1414 | 2937 | 1822 | 216886
-
-probe_xlsx: https://web.archive.org/web/20250912185151id_/https://nso.gov.mt/wp-content/uploads/End-of-year-population-estimates-by-locality-sex-and-citzenship_2012-2024.xlsx
-  65,306 bytes
-  1 sheet(s): Sheet 1
-
---- sheet 'Sheet 1' (79 rows x 119 cols) --------------------
-  Last updated: | 2025-07-10 00:00:00
-  
-  End of year population estimat
-  
-  LOCALITY CODE | LOCALITY NAME | 2012 |  |  |  |  |  |  |  |  | 2013 |  |  |  | 
-   |  | TOTAL |  |  | MALTESE |  |  | FOREIGN |  |  | TOTAL |  |  | MALTESE | 
-
+probe_pdf: https://web.archive.org/web/20230628153917id_/https://nso.gov.mt/wp-content/uploads/NSO_Census-Questionnaire_2021.pdf
+  892,278 bytes
+  13 pages
+probe_pdf: 13 pages, 3 mention ['religion', 'language', 'ethnic', 'speak', 'citizenship', 'belief']
+=== front matter ===
+Dear Resident(s),
+The national Census of Population and Housing will be held on Sunday 21 November 2021 and is the official counting process of 
+every resident and dwelling in Malta and Gozo as of midnight of this day. The National Statistics Office will collect, analyse and 
+publish all results related to the Census. 
+You are kindly requested to fill in this questionnaire and provide all information to the best of your knowledge. Participation in 
+the Census is mandatory and this information is being requested in accordance with the Malta Census Act of 1948 and the Data 
+Protection Act – Cap. 586 of the Laws of Malta implementing the General Data Protection Regulation (GDPR). The Office assures you 
+that all data collected shall remain confidential and used for statistical purposes only. The Office is obliged to protect your identity 
+and refrain from divulging any data to third parties, that might lead to the identification of persons or entities.
+In case of difficulty, you may seek assistance from the Enumerator who shall be contacting you between 8 and 28 November 2021. 
+You may also contact us on freephone 1710 or send an email to census2021@gov.mt.
+Thank you in advance for your co-operation.
+Etienne Caruana
+CENSUS OFFICER
+Reference Number
+WRITE IN BLOCK LETTERS
+House No.
+Entrance/Block (e.g. Ent. A, Block 2) Flat Number
+Street Name
+House Name
+
+=== pages mentioning ['religion', 'language', 'ethnic', 'speak', 'citizenship', 'belief'] (first 30) ===
+
+--- page 4 ----------------------------------------------------
+Which is your country of birth?
+(Mark one circle only)
+What is your racial origin?
+(Mark one circle only)
+Indicate your race through your biological parent/s.
+Do you have Maltese citizenship?
+(Mark one circle only)
+Do you have any foreign citizenship?
+(Mark one circle only)
+Which foreign citizenship do you have?
+(Mark all that apply)
+10 1
+ Malta
+2
+ United Kingdom
+3
+ Italy
+4
+ Germany
+5
+ Serbia
+6
+ Russia
+7
+ Canada
+8
+ United States
+9
+ Australia
+10
+ Philippines
+11
+ Other (Specify)
+11 1
+ Caucasian
+2
+ Asian
+3
+ African
+4
+ Arab
+5
+ Hispanic or Latino
+6
+ Other (Specify)
+7
+ More than one
+           racial origin
+12 1
+ Yes
+2
+ No
+13 1
+ Yes
+2
+ No GO TO 15
+14 1
+ British
+2
+ Italian
+3
+ German
+4
+ Serbian
+5
+ Russian
+6
+ Canadian
+7
+ American
+8
+ Australian
+9
+ Philippine
+10
+ Other (Specify)
+In this question a square is used,
+therefore you can choose/mark
+more than one option
+1 
+
+--- page 7 ----------------------------------------------------
+Do you have any long-term illness, disease and/or chronic condition
+(e.g. asthma, diabetes, heart disease, elevated blood pressure/
+cholesterol, chronic depression, etc.)?
+(Mark one circle only)
+Consider any illness or condition which has lasted, or is expected to last,
+for six (6) months or more.
+Do you have any of the following difficulties?
+(Mark one circle only)
+Consider difficulties which have been limiting you
+for at least the past six (6) months, or which are
+expected to continue for six (6) months or more.
+What is the main language that you grew up speaking
+from early childhood?
+(Mark one circle only)
+23
+Applicable only if you are five (5) years old or over.
+24
+1 Yes
+2 No
+1 No difficulty
+2 Yes, some difficulty
+3 Yes, a lot of difficulty
+4 Cannot see at all
+1 No difficulty
+2 Yes, some difficulty
+3 Yes, a lot of difficulty
+4 Cannot hear at all
+1 No difficulty
+2 Yes, som
+
+--- page 8 ----------------------------------------------------
+From where are you receiving your main formal education?
+(Mark one circle only)
+Are you able to read and write a short, simple sentence in at least one
+language?
+(Mark one circle only)
+What religion, religious denomination or body do you belong
+to/identify yourself with (regardless of the level of practice)?
+(Mark one circle only)
+Applicable only if you are ten (10) years old or over.
+1
+ Yes
+2
+ No
+26
+Applicable only if you are aged between five (5) and fifteen (15) years.
+1 Roman Catholic
+2
+ Orthodox
+3
+ Church of England
+4
+ Protestant
+5
+ Islam
+6
+ Judaism
+7
+ Buddhism
+8
+ Hinduism
+9
+ Other (Specify)
+10
+ No religious affiliation
+1
+ Public/State school
+2
+ Church school
+3
+ Private school
+4
+ Home schooling by a
+           professional
+5
+ Other (Specify)
+6
+ No formal education
+           received
+27
+STOP IF YOU ARE AGED FOURTEEN (14) OR LESS.  CONTINUE ONLY IF YOU ARE AGED FIFT
