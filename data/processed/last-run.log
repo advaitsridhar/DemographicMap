@@ -1,40 +1,18 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
+kosovo: ASKdata, 2024 census
+  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
+  38 municipalities bound one-to-one
+  Deçan: 27,775 enumerated / 27,775 estimated
+  Gjakovë: 78,699 enumerated / 78,699 estimated
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 234, in <module>
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kosovo.py", line 374, in <module>
     raise SystemExit(main())
                      ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 227, in main
-    records = build(args.year)
-              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 161, in build
-    rows += cube("om7009rr", f"all/{year}/{POPULATION}/{sex}/all")
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 105, in cube
-    payload = http_json(API.format(cube=name, path=path), timeout=300)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 932, in http_json
-    text = http_get(url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 899, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 400: Bad Request
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kosovo.py", line 367, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kosovo.py", line 279, in build
+    whole = eth[None]
+            ~~~^^^^^^
+KeyError: None
