@@ -1,6 +1,67 @@
-== post https://nip.tuik.gov.tr/Home/GetInformation
-  8,120 bytes, begins b'<div class="col-'
-  link: '' -> https://nip.tuik.gov.tr/Home/Export/ExportExcel?name=OrtancaYas&value=ADANA
-  link: '' -> https://nip.tuik.gov.tr/Home/Export/ExportPdf?name=OrtancaYas&value=ADANA
-  (2 links in all)
-  text: Yıl Düzey Toplam Erkek Kadın 2025 ADANA 34,5 33,6 35,4 2024 ADANA 34,0 33,2 34,9 2023 ADANA 33,5 32,7 34,4 2022 ADANA 33,0 32,2 33,9 2021 ADANA 32,6 31,9 33,4 2020 ADANA 32,1 31,4 32,8 2019 ADANA 31,9 31,2 32,6 2018 ADANA 31,5 30,9 32,1 2017 ADANA 31,1 30,4 31,7 2016 ADANA 30,7 30,1 31,3 2015 ADANA 30,3 29,8 30,9 2014 ADANA 30,0 29,4 30,5 2013 ADANA 29,6 29,1 30,2 2012 ADANA 29,3 28,8 29,7 2011 ADANA 28,8 28,3 29,3 2010 ADANA 28,3 27,9 28,7 2009 ADANA 27,8 27,4 28,3 2008 ADANA 27,5 27,1 27,9 2007 ADANA 27,4 27,0 27,8 2000 ADANA 23,5 23,0 23,9 1990 ADANA 19,9 19,5 20,4 1985 ADANA 18,9 18,6 19,2
+== get https://nip.tuik.gov.tr/
+  16,465 bytes, begins b'<!DOCTYPE html>\n'
+  ~ href="/images/nipLogo1.png" />
+  ~ href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+  ~ href="/a11y/assets/css/style.css?v=1naV0Y6Kipg866ApJroWvpHKpHrRGnqo2GS2zKysPZ8" />
+  ~ href="/lib/font-awesome/css/all.css" rel="stylesheet" />
+  ~ href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+  ~ href="/css/main.css" rel="stylesheet" />
+  ~ href="/lib/jqueryui/themes/base/jquery-ui.css" rel="stylesheet" />
+  ~ href="/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+  ~ href="/css/buttons.dataTables.min.css" rel="stylesheet" />
+  ~ href="/lib/noUiSlider/nouislider.min.css" rel="stylesheet" />
+  ~ href="/css/fontFamily.css" rel="stylesheet" />
+  ~ href="/?value=CinsiyeteGoreNufus">
+  ~ href="/Home/VeriKaynaklari"> Veri Kaynakları
+  ~ href="/Home/NufusKonutSayimlari">Nüfus ve Konut Sayımları
+  ~ href="/Home/GelenekselNufusSayimlari">Geleneksel Nüfus Sayımları
+  ~ href="/Home/Uavt">Ulusal Adres Veritabanı (UAVT)
+  ~ href="/Home/Adnks">Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS)
+  ~ href="/Home/NufusKonutSayimi2011">2011 Nüfus ve Konut Araştırması
+  ~ href="/Home/NufusKonutSayimi2021">2021 Nüfus ve Konut Sayımı
+  ~ href="#" onclick="event.preventDefault();">Bina ve Konut
+  ~ href="/?value=BinaIstatistikleri">Bina İstatistikleri
+  ~ href="/?value=KonutIstatistikleri">Konut İstatistikleri
+  ~ href="#" onclick="event.preventDefault();">Doğum Yeri
+  ~ href="/?value=DogumYerineNufus">Doğum Yerine Göre Nüfus
+  ~ href="/?value=YurtdisiDogumluNufus">Yurtdışı Doğumlu Nüfus
+  ~ href="#" onclick="event.preventDefault();">Eğitim
+  ~ href="/?value=EgitimDurumu">Eğitim Durumu
+  ~ href="/?value=OkumaYazmaDurumu">Okuma Yazma Durumu
+  ~ href="#" onclick="event.preventDefault();">Göç
+  ~ href="/?value=UlkeIciGoc">Ülke İçi Göç
+  ~ href="/?value=IllerArasiGoc">İller Arası Göç
+  ~ href="/?value=GocEtmeNedenleri">Göç Etme Nedenleri
+  ~ href="/?value=UluslararasiGoc">Uluslararası Göç
+  ~ href="#" onclick="event.preventDefault();">Hanehalkı Nitelikleri
+  ~ href="/?value=HanehalkiSayisi">Hanehalkı Sayısı
+  ~ href="/?value=HanehalkiBuyukluguneGoreHs">Hanehalkı Büyüklüğüne Göre Hanehalkı Sayısı
+  ~ href="/?value=HanehalkiTipi">Hanehalkı Tipi
+  ~ href="/?value=OrtalamaHanehalkiBuyuklugu">Ortalama Hanehalkı Büyüklüğü
+  ~ href="#" onclick="event.preventDefault();">Hayati İstatistikler
+  ~ href="/?value=Bosanma">Boşanma
+  ~ href="/?value=Dogum">Doğum
+  ~ href="/?value=Evlenme">Evlenme
+  ~ href="/?value=Olum">Ölüm
+  ~ href="#" onclick="event.preventDefault();">İsim Ve Soyisim İstatistikler
+  ~ href="/?value=YeniDoganIsimleri">En Çok Verilen Bebek İsimleri
+  ~ href="/?value=EnCokKullanilanIsimler">En Çok Kullanılan İsimler
+  ~ href="/?value=EnCokKullanilanSoyIsimler">En Çok Kullanılan Soyisimler
+  ~ href="https://tuikcocuk.tuik.gov.tr/"> Yıllara Göre İsim Grafiği
+  ~ href="/?value=MedeniDurum">Medeni Durum
+  ~ href="#" onclick="event.preventDefault();">Nüfus Büyüklüğü
+  ~ href="/?value=CinsiyeteGoreNufus">Cinsiyete Göre Nüfus
+  ~ href="/?value=NufusArtisHizi">Nüfus Artış Hızı
+  ~ href="/?value=NufusYogunlugu">Nüfus Yoğunluğu
+  ~ href="#" onclick="event.preventDefault();">Yabancı Nüfus
+  ~ href="/?value=YabanciNufusBuyuklugu">Yabancı Nüfus Büyüklüğü
+  ~ href="/?value=TabiiyetYabanciNufus">Tabiiyete Göre Yabancı Nüfus
+  ~ href="#" onclick="event.preventDefault();">Yaş ve Cinsiyet Yapısı
+  ~ href="/?value=OrtancaYas">Ortanca Yaş
+  ~ href="/?value=YasGrubunaGoreNufus">Yaş Grubuna Göre Nüfus
+  ~ href="/?value=YasBagimlilikOrani">Geniş Yaş Grupları ve Yaş Bağımlılık Oranı
+  ~ href="/?value=IlGostergeKartlari">İl Gösterge Kartları
+  ~ SayfaYukle('CinsiyeteGoreNufus'); }); function SayfaYukle(adres) { $.post(`Home/${adres}`,
+  ~ href="https://www.tuik.gov.tr/" target="_self" id="logo2Anchor">
+  ~ href="https://www.tuik.gov.tr/" target="_blank" rel="noopener noreferrer">TÜİK Ana Sayfası
+  ~ href="https://ty.tuik.gov.tr/" target="_blank" rel="nofollow noreferrer">
