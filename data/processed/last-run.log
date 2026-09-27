@@ -1,27 +1,20 @@
-hungary: KSH census 2022 database, version V67
-  197 districts, 20 counties (Budapest one of them), 101 single ages up to 100+
-  counties and Budapest against Hungary: parts sum to 9,603,634 = 9,603,634
-  Budapest: its 23 districts make 1,685,342 of 1,685,342; 0 are counted in no district
-  districts against Pest county: parts sum to 1,333,533 = 1,333,533
-  districts against Fejér county: parts sum to 419,656 = 419,656
-  districts against Komárom-Esztergom county: parts sum to 300,631 = 300,631
-  districts against Veszprém county: parts sum to 335,361 = 335,361
-  districts against Győr-Moson-Sopron county: parts sum to 465,945 = 465,945
-  districts against Vas county: parts sum to 249,513 = 249,513
-  districts against Zala county: parts sum to 260,800 = 260,800
-  districts against Baranya county: parts sum to 354,022 = 354,022
-  districts against Somogy county: parts sum to 293,470 = 293,470
-  districts against Tolna county: parts sum to 207,931 = 207,931
-  districts against Borsod-Abaúj-Zemplén county: parts sum to 623,024 = 623,024
-  districts against Heves county: parts sum to 285,892 = 285,892
-  districts against Nógrád county: parts sum to 182,459 = 182,459
-  districts against Hajdú-Bihar county: parts sum to 519,141 = 519,141
-  districts against Jász-Nagykun-Szolnok county: parts sum to 355,809 = 355,809
-  districts against Szabolcs-Szatmár-Bereg county: parts sum to 529,381 = 529,381
-  districts against Bács-Kiskun county: parts sum to 495,318 = 495,318
-  districts against Békés county: parts sum to 315,222 = 315,222
-  districts against Csongrád-Csanád county: parts sum to 391,184 = 391,184
-  national median 44.2 against Eurostat's 44.2 (HU, 1 January 2023)
-  2014 gazetteer: 3,176 settlements in 198 districts
-  2022 census: 3,154 settlements outside Budapest; 16 in another district than in 2014, 9 of them Polgárdi's
-hungary: settlements whose district changed since 2014 other than Polgárdi's: [('09982', ('106', '107')), ('12210', ('057', '066')), ('13134', ('057', '066')), ('15750', ('085', '077')), ('22248', ('131', '130')), ('27678', ('085', '082')), ('29407', ('091', '088'))]; in Fejér's redrawn districts but not in the 2014 gazetteer: []
+slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
+  om7005rr: 96 territories in 1 s
+  om7009rr: sex totals for 96 territories in 1 s
+  79 districts, national 5,409,407
+  districts against Slovakia: parts sum to 5,409,407 = 5,409,407
+  districts against SK010: parts sum to 739,635 = 739,635
+  districts against SK021: parts sum to 565,462 = 565,462
+  districts against SK022: parts sum to 562,536 = 562,536
+  districts against SK023: parts sum to 661,995 = 661,995
+  districts against SK031: parts sum to 684,190 = 684,190
+  districts against SK032: parts sum to 607,581 = 607,581
+  districts against SK041: parts sum to 810,075 = 810,075
+  districts against SK042: parts sum to 777,933 = 777,933
+  om7009rr: the country's single years in 26 s
+  national median 43.5 (1 January 2026) against Eurostat's 43.0 a year earlier (SK); 2026 is not published yet
+  national median: recomputed 43.5, om7005rr 43.5
+  slovakia: 0 office units unbound
+  slovakia: 0 polygons without an office unit
+  wrote data/processed/slovakia_okres.json (159 kB)
+  wrote slovakia_okres.json: 79 records
