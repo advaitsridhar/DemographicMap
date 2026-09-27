@@ -1,5 +1,68 @@
-serbia_census: RZS open data, 2022 census
-  3104020201IND01: 3,142,498 bytes, 318,000 records
-  age: 205 territories
-  3104020101IND01: 19,582,861 bytes, 45,240 records
-serbia_census: 3104020101IND01: cannot tell the category among ['nNacionalnostPS', 'nTipNaseljaMICS']
+== links https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/ ethn|relig|langu|gjuh|fet|etni|mother|tongue 60
+  HTTP 200 text/html; charset=utf-8 367,523 bytes
+  https://www.instat.gov.al/media/13650/tab14.xlsx  [Tab.14 Resident population by ethnicity and sex]
+  https://www.instat.gov.al/media/13660/tab16.xlsx  [Tab.16 Resident population by language usually spoken at home and sex]
+  https://www.instat.gov.al/media/13661/tab15.xlsx  [Tab.15 Resident population by religion and sex]
+  https://www.instat.gov.al/media/14409/tab_1_12_popullsia-banuese-sipas-përkatësisë-etnike-dhe-gjinisë_qarqe.xls  [Tab. 1.12 Resident population by ethnicity and sex]
+  https://www.instat.gov.al/media/14409/tab_1_12_popullsia-banuese-sipas-përkatësisë-etnike-dhe-gjinisë_qarqe.xls  []
+  https://www.instat.gov.al/media/14411/tab_1_13_popullsia-banuese-sipas-besimit-fetar-dhe-gjinisë_qarqe.xls  [Tab. 1.13 Resident population by religion and sex]
+  https://www.instat.gov.al/media/14411/tab_1_13_popullsia-banuese-sipas-besimit-fetar-dhe-gjinisë_qarqe.xls  []
+  https://www.instat.gov.al/media/14412/tab_1_14_popullsia-banuese-sipas-gjuhës-që-flitet-zakonisht-në-shtëpi-dhe-gjinisë_qarqe.xls  [Tab. 1.14 Resident population by language usually spoken at home and sex]
+  https://www.instat.gov.al/media/14412/tab_1_14_popullsia-banuese-sipas-gjuhës-që-flitet-zakonisht-në-shtëpi-dhe-gjinisë_qarqe.xls  []
+  https://www.instat.gov.al/media/3214/1113.xls  [1.1.13 Resident population by ethnic and cultural affiliation]
+  https://www.instat.gov.al/media/3215/1114.xls  [1.1.14 Resident population by religious affiliation]
+  https://www.instat.gov.al/media/3216/1115.xls  [1.1.15 Resident population by mother tongue]
+  https://www.instat.gov.al/media/3217/1116.xls  [1.1.16 Resident population who preferred not to answer/not relevant/not stated to ethnic a]
+  https://www.instat.gov.al/media/3218/1117.xls  [1.1.17 Resident population who preferred not to answer/not relevant/not stated to religiou]
+  https://www.instat.gov.al/media/3088/tab_1_1_8.xls  [Tab. 1.1.8 Resident female population 15 years and over ever having children born-alive an]
+  https://www.instat.gov.al/media/3097/tab_1112.xls  [Tab. 1.1.12 Resident population by ethnic and cultural affiliation]
+  https://www.instat.gov.al/media/3098/tab_1113.xls  [Tab. 1.1.13 Resident population by religion affiliation]
+  https://www.instat.gov.al/media/3099/tab_1114.xls  [Tab. 1.1.14 Resident population by mother tongue]
+  (18 links shown)
+== links https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/ (?i)census.{0,30}(2023|2011).{0,60}pdf|result|rezult|volume|main 60
+  HTTP 200 text/html; charset=utf-8 367,523 bytes
+  https://www.instat.gov.al/media/3249/tab_1_4_9.xls  [1.4.9 Private households by main type of heating and urban and rural area]
+  https://www.instat.gov.al/media/3250/tab_1_4_10.xls  [1.4.10 Private households by main type of energy used for heating and urban and rural area]
+  https://www.instat.gov.al/media/3524/tab_2_4_5.xls  [2.4.5 Private households by prefecture and main type of energy used for heating]
+  https://www.instat.gov.al/media/3128/tab_1_4_9.xls  [Tab. 1.4.9 Private households by main type of heating and urban and rural area]
+  https://www.instat.gov.al/media/3129/tab_1_4_10.xls  [Tab. 1.4.10 Private households by main type of energy used for heating and urban and rural]
+  https://www.instat.gov.al/media/3166/tab_2_4_6.xls  [Tab. 2.4.6 Private households by cmunicipality/commune and main type of energy used for he]
+  https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/publications/2023/main-results-of-the-population-and-housing-census-2023/  [Main Results of the Population and Housing Census 2023]
+  (7 links shown)
+== xls https://www.instat.gov.al/media/13668/tab6.xlsx 12 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 17,846 bytes
+  1 sheets: ['Table 1 - Cross-tabular summary']
+  -- sheet 'Table 1 - Cross-tabular summary': 62 rows x 15 cols
+    Tab. 6 Popullsia banuese sip
+    Resident population by sex, 
+    Gjinia dhe grupmosha  Sex an |  | Qarku Prefecture
+     |  | Gjithsej Total | Berat | Dibër | Durrës | Elbasan | Fier | Gjirokastër | Korçë | Kukës | Lezhë | Shkodër | Tiranë | Vlorë
+    Gjithsej Total | Gjithsej Total | 2402113 | 140956 | 107178 | 226863 | 232580 | 240377 | 60013 | 173091 | 61998 | 99384 | 154479 | 758513 | 146681
+     | 0-4 | 111894 | 4961 | 5607 | 11612 | 9933 | 9249 | 1770 | 6473 | 3807 | 4764 | 7189 | 41279 | 5250
+     | 5-9 | 125390 | 6099 | 6336 | 12787 | 11865 | 11395 | 2311 | 7948 | 4362 | 5502 | 7999 | 42487 | 6299
+     | 10-14 | 136645 | 7286 | 6747 | 13603 | 13765 | 13424 | 2827 | 9242 | 4821 | 6036 | 8381 | 42933 | 7580
+     | 15-19 | 142943 | 7949 | 7041 | 13728 | 13710 | 12521 | 2619 | 9435 | 4648 | 5864 | 9357 | 48499 | 7572
+     | 20-24 | 143180 | 7893 | 7167 | 14127 | 12979 | 9373 | 2091 | 8390 | 4183 | 5682 | 9209 | 55420 | 6666
+     | 25-29 | 144207 | 7318 | 6753 | 14513 | 13110 | 11141 | 2352 | 9023 | 3708 | 5727 | 9082 | 54369 | 7111
+     | 30-34 | 153567 | 7967 | 6947 | 15102 | 13949 | 13545 | 3076 | 10105 | 3702 | 5953 | 8981 | 56274 | 7966
+== xls https://www.instat.gov.al/media/3534/tab_3_1_1.xls 30 2
+  HTTP 200 application/vnd.ms-excel 38,912 bytes
+  1 sheets: ['Sheet1']
+  -- sheet 'Sheet1': 18 rows x 14 cols
+    3.1.1 Tregues të popullsisë 
+    3.1.1 Indicators of populati
+    Tregues të popullsisë        | Gjithsej               Total | Berat | Dibër | Durrës | Elbasan | Fier | Girokastër | Korçë | Kukës | Lezhë | Shkodër | Tiranë | Vlorë
+    Popullsia Urbane             | 53.52 | 45.44 | 26.11 | 74.56 | 39.08 | 39.77 | 51.84 | 39.85 | 34.09 | 53.82 | 44.37 | 70.2 | 65.62
+    Raporti Gjinor(% meshkuj/fem | 100.43 | 101.38 | 103.87 | 101.37 | 101.19 | 102.34 | 102.55 | 102.1 | 101.67 | 100.25 | 98.48 | 97.84 | 101.18
+    Raporti i varësisë           | 47.07 | 46.37 | 51.41 | 47.51 | 45.55 | 47.07 | 48.62 | 48.23 | 55.55 | 50.01 | 51.63 | 43.43 | 48.61
+    Raporti i varësisë së të rin | 30.39 | 28.66 | 37.82 | 31.72 | 30.71 | 29.32 | 24.82 | 27.44 | 43.16 | 32.95 | 32.76 | 28.75 | 28.01
+    Raporti i varësisë           | 16.68 | 17.72 | 13.59 | 15.79 | 14.84 | 17.75 | 23.8 | 20.79 | 12.39 | 17.06 | 18.88 | 14.68 | 20.59
+    Indeksi i zëvëndësimit       | 0.21 | 0.2 | 0.25 | 0.22 | 0.21 | 0.2 | 0.17 | 0.19 | 0.28 | 0.22 | 0.22 | 0.2 | 0.19
+    Indeksi i moshës së vjetër   | 0.11 | 0.12 | 0.09 | 0.11 | 0.1 | 0.12 | 0.16 | 0.14 | 0.08 | 0.11 | 0.12 | 0.1 | 0.14
+    Mosha mesatare               | 35.25 | 36.83 | 32.05 | 34.58 | 34.37 | 36.51 | 39.69 | 37.72 | 30.18 | 34.62 | 35.48 | 34.5 | 37.66
+    Mosha medianë                | 33.0 | 37.0 | 28.0 | 32.0 | 32.0 | 36.0 | 41.0 | 37.0 | 25.0 | 32.0 | 33.0 | 32.0 | 37.0
+    Përqindja e personave të mar | 66.99 | 70.99 | 65.53 | 68.01 | 67.56 | 71.27 | 69.28 | 69.4 | 62.13 | 65.82 | 65.23 | 64.02 | 68.44
+    Përqindja e personave të div | 1.4 | 1.2 | 0.74 | 1.29 | 1.16 | 0.97 | 1.55 | 1.63 | 0.7 | 1.06 | 1.24 | 1.85 | 1.81
+    Përqindja e popullsisë që ka | 6.08 | 5.43 | 2.83 | 5.3 | 4.57 | 6.12 | 8.02 | 6.67 | 1.52 | 5.82 | 4.34 | 6.88 | 12.35
+    Përqindja e popullsisë banue | 0.4 | 0.18 | 0.09 | 0.26 | 0.22 | 0.18 | 0.56 | 0.77 | 0.16 | 0.2 | 0.3 | 0.54 | 1.0
+    Shtetasit shqiptarë të lindu | 1.45 | 0.92 | 0.55 | 1.78 | 1.12 | 1.33 | 1.88 | 1.34 | 0.92 | 1.48 | 1.29 | 1.54 | 2.79
