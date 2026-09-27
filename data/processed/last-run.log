@@ -1,18 +1,79 @@
-austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
-  Vienna as a whole, left out beside its districts: [('90001', 'Wien <90001>')]
-  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
-  2114 municipalities
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70405.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70407.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70408.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70409.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70327.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70411.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  62280: no 2001 sheet; district 622's unclaimed sheets [('62201', 'Altenmarkt bei Fürstenfeld'), ('62212', 'Fürstenfeld'), ('62252', 'Söchau'), ('62258', 'Übersbach')] are its parts
-  135 municipalities formed by mergers since 2001, read as the sheets of their parts; 2376 municipalities of 2001 in all; listed by two of today's (split by cadastral community, counted once): ['61040', '62227', '62248', '62336', '62347', '62349']
-  municipalities of 2001 against Austria: parts sum to 8,032,926 = 8,032,926
-  94 districts
-  austria_census: 0 office units unbound
-  austria_census: 0 polygons without an office unit
-  wrote data/processed/austria_census.json (349 kB)
-  wrote austria_census.json: 94 records
+== pdfpage https://www.stat.gov.mk/Publikacii/knigaX.pdf 4,5 1800
+  HTTP 200 application/pdf 2,292,622 bytes
+  -- page 4:
+  P R E F A C E
+  The Census of Population, Households and Dwellings was carried out from the 1st to the 15th of
+  November 2002. The data in the Census forms have been written according to the situation on the 31st
+  October 2002 at 24:00 hrs, namely at midnight between 31st of October and 1st of November 2002.
+  The Census was carried out according to the Law on Census of Population, Households and Dwellings
+  in the Republic of Macedonia, 2001 (''Official Gazette of the Republic of Macedonia'' No 16/2001 and
+  changes and supplements to this Law published in the ''Official Gazette of the Republic of Macedonia''
+  No 37/2001, 70/2001 and 43/2002).
+  The methodology, definitions and classifications for this Census are completely harmonized with
+  the Law on Census and the Recommendations for Censuses on Population Households and Dwellings
+  prepared by the United Nations and the Statistical Service of the European Union - EUROSTAT. This
+  ensures the international comparison of the Census data.
+  The State Statistical Office has announced the first final results of the Census on Population,
+  Households and Dwellings 2002, on 1st of December 2003. According to the Census Law, the State Statistical
+  Office is obligated till the end of June 2004, to publish all 12 planned publications for the Census 2002.
+  This is the tenth publication (Book X, Census 2002) which contains 4 tables with data for the total
+  population, households and dwellings in the Republic of Macedonia, as well as the data of the total
+  population according to the ethnic characteristics - ethnic affiliation, mother tongue and religion. The data
+  in the tables are shown on the level of settlements, according to the existing territorial distribution of the
+  Republic of Macedonia.
+  We expect that, the data contained in this publication and 
+  -- page 5:
+  S O D R @ I N A
+  Predgovor........................................................................................................................................... 3
+  Karta 1 Op{tinite vo Republika Makedonija................................................................................ 7
+  Metodolo{ki objasnuvawa............................................................................................................... 8
+  Tabela 1: Vkupno naselenie, doma}instva i stanovi vo Republika Makedonija,.................... 18
+  Tabela 2: Vkupno naselenie na Republika Makedonija spored izjasnuvaweto za
+  nacionalnata pripadnost, po pol ................................................................................................. 62
+  Tabela 3: Vkupno naselenie na Republika Makedonija spored maj~iniot jazik, po pol...... 198
+  Tabela 4: Vkupno naselenie na Republika Makedonija spored izjasnuvaweto za
+  veroispovedta, po pol ................................................................................................................... 230
+  Census of population, households and dwellings in the republic of macedonia, 2002 5
+== pdf https://www.stat.gov.mk/Publikacii/knigaX.pdf (?i)drugovo|zajas|oslomej|vrane.tica|ki.evo 40
+  HTTP 200 application/pdf 2,292,622 bytes
+  471 pages
+    p25: Vrane{tica 1322 478 1015 Vrane{tica
+    p25: Vrane{tica 438 142 222 Vrane{tica
+    p30: Drugovo 3249 1152 2429 Drugovo
+    p30: Drugovo 1492 441 586 Drugovo
+    p31: Zajas 11605 2942 3190 Zajas
+    p31: Zajas 4712 1165 1258 Zajas
+    p32: Re~ani - Zajasko 101 21 20 Re~ani - Zajasko
+    p35: Ki~evo 30138 8330 10226 Ki~evo
+    p35: Ki~evo 27067 7510 9246 Ki~evo
+    p46: Oslomej 10425 2793 3316 Oslomej
+    p46: Oslomej 40 21 41 Oslomej
+    p83: Vrane{tica 1322 1033 10 276 - - 2 - 1 Vrane{tica
+    p83: Vrane{tica 438 437 - - - - 1 - - Vrane{tica
+    p99: Drugovo 3249 2784 155 292 1 - 8 - 9 Drugovo
+    p99: Drugovo 1492 1250 108 128 1 - 2 - 3 Drugovo
+    p102: Zajas 11605 211 11308 - - - 6 - 80 Zajas
+    p103: Zajas 4712 4 4682 - - - 4 - 22 Zajas
+    p103: Re~ani - Zajasko 101 - 100 - - - - - 1 Re~ani - Zajasko
+    p113: Ki~evo 30138 16140 9202 2430 1630 76 86 7 567 Ki~evo
+    p113: Ki~evo 27067 15031 7641 2406 1329 75 82 7 496 Ki~evo
+    p149: Oslomej 10425 110 10257 - - - - 1 57 Oslomej
+    p149: Oslomej 40 40 - - - - - - - Oslomej
+    p221: Vrane{tica 1322 1068 10 239 - - 2 2 1 Vrane{tica
+    p221: Vrane{tica 438 437 - - - - 1 - - Vrane{tica
+    p237: Drugovo 3249 2802 153 275 - - 8 4 7 Drugovo
+    p237: Drugovo 1492 1264 106 113 - - 2 4 3 Drugovo
+    p240: Zajas 11605 202 11317 - - 1 7 - 78 Zajas
+    p241: Zajas 4712 - 4689 - - - 3 - 20 Zajas
+    p241: Re~ani - Zajasko 101 - 100 - - - - - 1 Re~ani - Zajasko
+    p251: Ki~evo 30138 18385 9199 2209 114 17 64 7 143 Ki~evo
+    p251: Ki~evo 27067 16931 7635 2183 114 16 63 7 118 Ki~evo
+    p287: Oslomej 10425 103 10261 - - 1 - 1 59 Oslomej
+    p287: Oslomej 40 40 - - - - - - - Oslomej
+    p358: Vrane{tica 1322 1033 287 - - 2 Vrane{tica
+    p358: Vrane{tica 438 438 - - - - Vrane{tica
+    p374: Drugovo 3249 2790 448 2 - 9 Drugovo
+    p374: Drugovo 1492 1249 237 2 - 4 Drugovo
+    p377: Zajas 11605 208 11303 9 - 85 Zajas
+    p378: Zajas 4712 3 4687 3 - 19 Zajas
+    p378: Re~ani - Zajasko 101 - 100 - - 1 Re~ani - Zajasko
