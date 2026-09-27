@@ -30,6 +30,31 @@ class SplitRow(unittest.TestCase):
         self.assertEqual(values, [78733.0, None, 79591.0])
 
 
+class Mend(unittest.TestCase):
+    def test_a_row_split_by_a_footnote_is_rejoined(self):
+        rows = [cells("мужчины@71-118 718@211-229 028@232-250 667@286-304 929@308-326 "
+                      "641@362-380 133@383-401 мужчыны@440-487"),
+                cells("женщины@71-120 жанчыны@440-487"),
+                cells("827@211-229 055@232-250 772@286-304 789@308-326 747@362-380 "
+                      "379@383-401"),
+                cells("1)@300-306 1)@390-396")]
+        got = b.mend(rows)
+        self.assertEqual(len(got), 2)
+        label, values, after = b.split_row(got[1])
+        self.assertEqual((label, after), ("женщины", "жанчыны"))
+        self.assertEqual(values, [827055.0, 772789.0, 747379.0])
+
+    def test_a_mark_on_a_figure_is_taken_off(self):
+        row = cells("Витебская@57-109 область@112-152 454@211-229 078@232-250 333@286-304 "
+                    "7881)@308-330 259@362-380 034@383-401")
+        _, values, _ = b.split_row(b.mend([row])[0])
+        self.assertEqual(values, [454078.0, 333788.0, 259034.0])
+
+    def test_the_year_header_stays_apart(self):
+        rows = [cells("Працяг@57-90"), cells("1999@220-240 2009@290-310 2019@370-390")]
+        self.assertEqual(len(b.mend(rows)), 2)
+
+
 class Names(unittest.TestCase):
     def test_every_city_names_a_raion_we_know(self):
         for city, raion in b.CITY.items():

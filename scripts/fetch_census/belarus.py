@@ -153,11 +153,50 @@ def pdf_rows(blob: bytes) -> list[list[list[tuple[float, float, str]]]]:
                     rows[-1][1].append(cell)
                 else:
                     rows.append((top, [cell]))
-            out.append([sorted(cells) for _, cells in rows])
+            out.append(mend([sorted(cells) for _, cells in rows]))
     return out
 
 
 DIGITS = re.compile(r"^[\d–-]+$")
+FOOTNOTE = re.compile(r"^\d\)$")
+MARKED = re.compile(r"^(\d+)\d\)$")
+
+
+def unmarked(cells: list[tuple[float, float, str]]) -> list[tuple[float, float, str]]:
+    """The row without its footnote marks: a lone "1)" is dropped, and one set
+    against a figure ("7881)" for 788 with note 1) is taken off it."""
+    out = []
+    for x0, x1, text in cells:
+        if FOOTNOTE.match(text):
+            continue
+        if m := MARKED.match(text):
+            text = m.group(1)
+        out.append((x0, x1, text))
+    return out
+
+
+def mend(rows: list[list[tuple[float, float, str]]]) -> list[list[tuple[float, float, str]]]:
+    """Rejoin a row that a footnote mark pushed off its baseline: a row of
+    words only, its Russian label on the left and its Belarusian one on the
+    right, followed by a row of figures that fit in the gap between them."""
+    rows = [r for r in (unmarked(r) for r in rows) if r]
+    out = []
+    i = 0
+    while i < len(rows):
+        row = rows[i]
+        nxt = rows[i + 1] if i + 1 < len(rows) else []
+        if nxt and not any(DIGITS.match(t) for *_, t in row) \
+                and all(DIGITS.match(t) for *_, t in nxt):
+            lo, hi = nxt[0][0], max(x1 for _, x1, _ in nxt)
+            left = [c for c in row if c[1] <= lo]
+            right = [c for c in row if c[0] >= hi]
+            if left and right and len(left) + len(right) == len(row):
+                out.append(sorted(row + nxt))
+                i += 2
+                continue
+        out.append(row)
+        i += 1
+    return out
 
 
 def split_row(cells: list[tuple[float, float, str]], gap: float = 9.0
