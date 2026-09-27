@@ -1,12 +1,27 @@
-switzerland_census: Census 2000 by commune, carried to the units drawn in 01-01-2009
-  religion: 3344 rows; the whole population's columns: ['Protestantisch', 'Römisch-katholisch', 'Christkatholisch', 'Christlich-orthodox', 'Andere christliche Gemeinschaften', 'Jüdische Glaubensgemeinschaft', 'Islamische Gemeinschaften', 'Andere Kirchen und Religionsgemeinschaften', 'Keine Zugehörigkeit', 'Ohne Angabe']
-  language: 3344 rows; the whole population's columns: ['Landessprachen der Schweiz', 'Deutsch', 'Französisch', 'Italienisch', 'Rätoromanisch', 'Nicht-Landessprachen', 'Serbisch und Kroatisch', 'Albanisch', 'Portugiesisch', 'Spanisch', 'Englisch', 'Türkisch', 'Arabisch', 'Niederländisch', 'Andere Sprachen']
-  religion: communes against 2000: parts sum to 7,288,010 = 7,288,010
-  religion: the workbook's national row: parts sum to 7,288,010 = 7,288,010
-  language: communes against 2000: parts sum to 7,288,010 = 7,288,010
-  language: the workbook's national row: parts sum to 7,288,010 = 7,288,010
-  2896 communes in the census, 2896 in the register on 05-12-2000; census only []; register only (not lakes) []
-  drawn units against 2000: parts sum to 7,288,010 = 7,288,010
-  168 units written, 0 left out
-  wrote data/processed/switzerland_census.json (669 kB)
-  wrote switzerland_census.json: 168 records
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: 'declared by religion' is 13,468, its five named rows 13,449
+  Ajdovščina: religion 19 people in blanked cells ['Evangelical and other Protestant', 'other religion']
+  Beltinci: 'declared by religion' is 7,383, its five named rows 7,373
+  Beltinci: religion 10 people in blanked cells ['Orthodox', 'other religion']
+  Beltinci: language 13 people in blanked cells ['Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian']
+  Benedikt: 'declared by religion' is 1,525, its five named rows 1,522
+  Benedikt: religion 23 people in blanked cells ['Believer but belongs to no religion', 'Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+  Benedikt: language 6 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian', 'Serbo-Croatian']
+  Bistrica ob Sotli: 'declared by religion' is 1,191, its five named rows 1,185
+  Bistrica ob Sotli: religion 6 people in blanked cells ['Evangelical and other Protestant', 'Islam', 'other religion']
+  Bistrica ob Sotli: language 4 people in blanked cells ['Albanian', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Bled: language 10 people in blanked cells ['Hungarian', 'Italian']
+  Bloke: 'declared by religion' is 1,196, its five named rows 1,189
+  Bloke: religion 7 people in blanked cells ['Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+  Bloke: language 5 people in blanked cells ['Albanian', 'Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian', 'Other', 'Romany', 'Serbian']
+  Bohinj: 'declared by religion' is 3,629, its five named rows 3,558
+slovenia_census: Bohinj: religion rows fall 71 short of 5,222; blank cells ['Orthodox', 'other religion']
