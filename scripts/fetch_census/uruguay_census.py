@@ -741,11 +741,14 @@ def main() -> int:
                          "side of INE's historical department line, which the municipio's "
                          "own limits cross")
         notes.append("From INE's February 2026 release of the census microdata, which files "
-                     "each person under the 2020 electoral series of municipios, the series "
+                     "each person under the 2020 electoral series of municipios -- the series "
                      "the boundary file draws. INE's July 2026 release, which the department "
-                     "figures are from, files them under the 2025 series instead -- eleven "
-                     "new municipios and the limits of others revised -- and counts the "
-                     "departments slightly differently (by at most 0.3%)")
+                     "figures are from, files people under the 2025 series instead (eleven new "
+                     "municipios, the limits of others revised) and estimates differently: it "
+                     "weights the questionnaire's respondents where the February release adds "
+                     "people from administrative records. So a municipio's count moves by up "
+                     "to about 4% between the two even where its limits stayed the same "
+                     "(Montevideo's eight), while a department's moves by at most 0.3%")
         fields["population"]["note"] = ". ".join(notes) + "."
         records.append(record(
             f"URY-INE-{fold(parent['name'])}-{fold(shape['name'])}", shape["name"],
