@@ -1,18 +1,9 @@
-ireland: religion from SAP2022T2T4LEA22
-  166 areas, 4 categories
-ireland: ethnicity from SAP2022T2T2LEA22
-  166 areas, 7 categories
-ireland: language from SAP2022T2T5LEA22 and SAP2022T3T1LEA22
-  Polish: 123,968
-  Spanish: 48,113
-  French: 51,568
-  Other language: 527,858
-  English or Irish only: 4,224,206
-  166 local electoral areas; names shared by more than one area: ['Athlone']
-  wrote data/processed/ireland_lea.json (711 kB)
-  Newport, Tipperary (5873133B73905952621151): the census's Munster, drawn inside Connacht
-  Connacht: religion Catholic 74.9%, language English or Irish only 88.3%
-  Leinster: religion Catholic 64.6%, language English or Irish only 82.4%
-  Munster: religion Catholic 73.0%, language English or Irish only 87.5%
-  Ulster: religion Catholic 76.3%, language English or Irish only 90.0%
-  wrote data/processed/ireland_province.json (18 kB)
+  SAP2022T1T1ALEA22: 166 areas, 18 age groups
+  FY006B: 30 councils, 101 single years
+  the State: 5,149,139 people, median 38.8 (published 38.8)
+  Connacht: 6 councils, 591,363 people, median 40.6
+  Leinster: 15 councils, 2,870,354 people, median 37.8
+  Munster: 6 councils, 1,373,346 people, median 40.1
+  Ulster: 3 councils, 314,076 people, median 40.0
+  wrote data/processed/ireland_age.json (265 kB)
+  170 records
