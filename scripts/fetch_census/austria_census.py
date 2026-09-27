@@ -204,6 +204,13 @@ def read_sheet(code: str, page: str) -> dict[str, Any]:
             "name": name.group(1) if name else ("Wien" if vienna else "")}
 
 
+def leaves(s: dict[str, Any]) -> list[dict[str, Any]]:
+    """A sheet's 2001 municipalities: itself, or its parts, and theirs where a part merged again."""
+    if not s.get("merged"):
+        return [s]
+    return [leaf for part in s["parts"] for leaf in leaves(part)]
+
+
 def adopt_orphans(sheets: list[dict[str, Any]], missing: list[str], codes: list[str],
                   workers: int) -> list[dict[str, Any]]:
     """Give a municipality with no sheet at all the 2001 sheets nobody else claims.
@@ -217,7 +224,8 @@ def adopt_orphans(sheets: list[dict[str, Any]], missing: list[str], codes: list[
     they are its parts. The national count checks the result: a part
     counted twice or missed would miss 8,032,926.
     """
-    claimed = set(codes) | {p["code"] for s in sheets if s.get("merged") for p in s["parts"]}
+    claimed = set(codes) | {p["code"] for s in sheets if s.get("merged") for p in s["parts"]} \
+        | {leaf["code"] for s in sheets for leaf in leaves(s)}
     by_district: dict[str, list[str]] = {}
     for code in missing:
         by_district.setdefault(code[:3], []).append(code)
@@ -264,14 +272,18 @@ def build(year: int, workers: int) -> list[dict[str, Any]]:
     counted: dict[str, tuple[str, dict[str, Any]]] = {}
     split: dict[str, set[str]] = {}
     for s in sheets:
-        for part in (s["parts"] if s.get("merged") else [s]):
+        for part in leaves(s):
             split.setdefault(part["code"], set()).add(district(s["code"]))
             counted.setdefault(part["code"], (district(s["code"]), part))
     torn = {c: d for c, d in split.items() if len(d) > 1}
     if torn:
         raise SystemExit(f"austria_census: 2001 municipalities split across today's districts: {torn}")
     merged = [s for s in sheets if s.get("merged")]
-    shared = sorted(c for c in split if sum(1 for s in merged if c in s["merged"]) > 1)
+    listings: dict[str, int] = {}
+    for s in merged:
+        for leaf in {leaf["code"] for leaf in leaves(s)}:
+            listings[leaf] = listings.get(leaf, 0) + 1
+    shared = sorted(c for c, n in listings.items() if n > 1)
     log(f"  {len(merged)} municipalities formed by mergers since 2001, read as the sheets of "
         f"their parts; {len(counted)} municipalities of 2001 in all; listed by two of today's "
         f"(split by cadastral community, counted once): {shared}")
