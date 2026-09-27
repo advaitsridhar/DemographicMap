@@ -9,7 +9,7 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
     links:URL~~REGEX[~~N]        up to N links (href and text) matching REGEX
     xls:URL[~~ROWS[~~SHEETS]]    a workbook's sheets, sizes and first rows
     xlsrow:URL~~SHEET~~REGEX[~~N]  rows of one sheet whose text matches REGEX
-    zip:URL                      a zip archive's members
+    zip:URL[~~N]                 a zip archive's members (and the first N characters of each)
     px:URL                       a PxWeb API node: its children, or a table's variables
     pxtree:URL~~REGEX~~DEPTH~~N  walk a PxWeb tree, printing tables whose title matches
     pxq:URL~~B64JSON             POST a PxWeb query (base64 of the JSON body)
@@ -269,6 +269,10 @@ def probe(arg: str) -> None:
             zf = zipfile.ZipFile(io.BytesIO(body))
             for info in zf.infolist()[:120]:
                 say(f"  {info.file_size:>12,} {info.filename}")
+            # zip:URL~~N prints the first N characters of each of the first three members.
+            if extra:
+                for info in zf.infolist()[:3]:
+                    say(f"  -- {info.filename}: " + zf.read(info)[:int(extra[0])].decode("utf-8-sig", "replace"))
         elif mode == "px":
             data = json.loads(decode(body, headers).lstrip("﻿"))
             if isinstance(data, list):
