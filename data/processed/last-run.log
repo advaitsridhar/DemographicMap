@@ -1,47 +1,32 @@
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px 
-  HTTP 200 application/json; charset=utf-8 1,848 bytes
-  title: Population by age, sex and municipality, 2011 and 2024
-  var Viti (Year): 2 values: 0=2011, 1=2024
-  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogovc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Gjinia (Sex): 3 values: 0=Total, 1=Male, 2=Female
-  var Mosha (Age): 87 values: 0=0, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=10, 11=11
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_05.px 
-  HTTP 200 application/json; charset=utf-8 1,221 bytes
-  title: Population by ethnicity and sex at country and municipal level for the years 2011 and 2024
-  var Gjinia (Sex): 3 values: 0=Total, 1=Female, 2=Male
-  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Viti (Year): 2 values: 0=2024, 1=2011
-  var Përkatësia etnike (Ethnic affiliation): 11 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosniak, 4=Turk, 5=Romani, 6=Ashkali, 7=Egyptian, 8=Gorani, 9=Others, 10=Prefers not to answer
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_63.px 
-  HTTP 200 application/json; charset=utf-8 1,239 bytes
-  title: Population by ethnicity and sex at country and municipal level for the years 2011 and 2024 (with estimation)
-  var Gjinia (Sex): 3 values: 0=Total, 1=Female, 2=Male
-  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Viti (Year): 2 values: 0=2024, 1=2011
-  var Përkatësia etnike (Ethnic affiliation): 11 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosniak, 4=Turk, 5=Romani, 6=Ashkali, 7=Egyptian, 8=Gorani, 9=Others, 10=Prefers not to answer
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_10.px 
-  HTTP 200 application/json; charset=utf-8 1,167 bytes
-  title: Population by religion and sex at country and municipal level for the years 2011 and 2024
-  var KOMUNA (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Viti (Year): 2 values: 0=2024, 1=2011
-  var Gjinia (Sex): 3 values: 0=Male, 1=Female, 2=Total
-  var RELIGJIONI (Religion): 7 values: 0=Total, 1=Islam, 2=Orthodox, 3=Catholic, 4=Others, 5=No religious affiliation, 6=Prefers not to answer
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_22.px 
-  HTTP 200 application/json; charset=utf-8 1,180 bytes
-  title: Population by mother tongue and sex at the national and municipal level for the years 2011 and 2024
-  var Year (Year): 2 values: 0=2011, 1=2024
-  var Sex (Sex): 3 values: 0=Total, 1=Male, 2=Female
-  var Municipality (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Mother tongue (Mother tongue): 8 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosnian, 4=Turkish, 5=Romani, 6=Other (specify), 7=Not available
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab04census.px 
-  HTTP 200 application/json; charset=utf-8 1,172 bytes
-  title: Population by municipality, gender and age group 2024 (with estimation)
-  var Viti (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogovc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
-  var Gjinia (Sex): 3 values: 0=Total, 1=Male, 2=Female
-  var Grupmosha (Age group): 19 values: 0=Total, 1=0-4, 2=5-9, 3=10-14, 4=15-19, 5=20-24, 6=25-29, 7=30-34, 8=35-39, 9=40-44, 10=45-49, 11=50-54
-== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab02census.px 
-  HTTP 200 application/json; charset=utf-8 951 bytes
-  title: Population by municipalities and gender, 2011 and 2024
-  var Viti (Viti): 2 values: 2024=2024, 2011=2011
-  var Viti (Municipality): 39 values: 0=Deçan, 1=Gjakovë, 2=Gllogovc, 3=Gjilan, 4=Dragash, 5=Istog, 6=Kaçanik, 7=Klinë, 8=Fushë Kosovë, 9=Kamenicë, 10=Mitrovicë, 11=Leposaviq
-  var Grupmosha (Population): 3 values: 0=Total, 1=Male, 2=Female
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1502P21.px 
+  HTTP 200 application/json; charset=utf-8 615 bytes
+  title: Total resident population of the Republic of North Macedonia by age and sex, by settlement, Census 2021
+  var Населено место (Settlement): 0 values: 
+  var Возрасна група (Age group): 19 values: 999=Age group - TOTAL, 0=0-4, 1=5-9, 2=10-14, 3=15-19, 4=20-24, 5=25-29, 6=30-34, 7=35-39, 8=40-44, 9=45-49, 10=50-54
+  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Male, 2=Female
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1503P21.px 
+  HTTP 200 application/json; charset=utf-8 541 bytes
+  title: Total resident population of the Republic of North Macedonia by ethnic affiliation, by settlement, Census 2021
+  var Населено место (Settlement): 0 values: 
+  var Етничка припадност (Ethnic affiliation): 12 values: 0=Ethnic affiliation - TOTAL, 1=Macedonians, 3=Albanians, 6=Turks, 5=Roma, 4=Vlachs, 27=Serbs, 10=Bosniaks, 37=Other, 38=Undeclared, 99=Unknown, 88=Persons for whom data are taken from administrative sources
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px 
+  HTTP 200 application/json; charset=utf-8 551 bytes
+  title: Population of Republic of Macedonia by ethnic affiliation, by settlements, according to the population censuses 1948, 1963, 1961, 1971, 1981, 1991, 1994 and 2002
+  var Settlement / Municipality in year of census/Year of Census (Settlement / Municipality in year of census/Year of Census): 0 values: 
+  var Ethnic affiliation (Ethnic affiliation): 9 values: 0=Total, 1=Macedonians, 2=Albanians, 3=Turks, 4=Rhoma, 5=Vlachs, 6=Serbs, 7=Bosniaks, 8=Others
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisOpstini/ 
+  HTTP 200 application/json; charset=utf-8 1,750 bytes
+  t 01Popis_op_02_VkNasDomSt_ang.px  Total population, households and dwellings in the Republic of Macedonia, Census 2002
+  t 02Popis_op_02_VkNasPoVozrGrPol_ang.px  Total population of the Republic of Macedonia according to five-years age groups, by sex, Census 2002
+  t 03Popis_op_02_VkNasPoNacPr_ang.px  Total population according the ethnic affiliation, Census 2002
+  t 04Popis_op_02_VkNasNaVozr10-PolPism_ang.px  Total population at 10 years of age and over according to sex and literacy, Census 2002
+  t 05Popis_op_02_VkNasNaVozr15-SkolPod_ang.px  Total population aged 15 and over, according to the educational attainment, Census 2002
+  t 06Popis_op_02_VkNasNaVozr15-SporAkt_ang.px  Total population in the country at 15 years of age and more, according to the activity, Census 2002
+  t 07Popis_op_02_IndDomPrBrCl_ang.px  Individual households and average number of the household members, Census 2002
+  t 08Popis_op_02_IndDomTipGolSos_ang.px  Individual households according to the type, size and composition, Census 2002
+  t 09Popis_op_02_VidZivBrPovrStIndDom_ang.px  Type of living quarters, number and floor surface of dwellings, number of individual households and average floor surface by member of individual households, Census 2002
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1001P21.px 
+  HTTP 200 application/json; charset=utf-8 1,894 bytes
+  title: Total resident population, households and dwellings in the Republic of North Macedonia, by municipalities, Census 2021
+  var Општина (Municipality): 82 values: 0000=Republic of the North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
+  var Мерки (Measures): 3 values: 0=Population, 1=Households, 2=Dwellings
