@@ -1,1 +1,127 @@
-armenia_2011: no 'Ընդամենը' row with figures
+== r16_nor_12026_px
+  4,682 bytes
+    CONTENTS="12026: Church users,";
+    SOURCE="Statistics Norway";
+    INFOFILE="None";
+    NOTE="[See list over changes in regional classifications](https://www.ssb.no/offentlig-sektor/kommunekatalog/endringer-i-de-regionale-inndelingene) (in Norwegian). ##Frøyland and Orstad parish spans the municipalities of Klepp and Time. Consequently, figures on the distribution of members between these municipalities may be uncertain and should be interpreted with caution.";
+    DATA= 14348 17139 19588 19848 2456 2588 14189 11374 18916 19106 1863 1911 ;
+== r16_nor_12026_v2
+  63,995 characters
+  /"notes?"\s*:\s*\[[^\]]{0,1500}/: 1 -- ['"note":["[See list over changes in regional classifications']
+== r16_nor_08531_px
+  2,471 bytes
+    CONTENTS="08531: Members of congregations in religious and philosophical communities outside the Church of Norway,";
+    CONTACT("Members")="Øyvind Bolsgård, Statistics Norway# +47 40 81 13 63#obo@ssb.no##";
+    SOURCE="Statistics Norway";
+    INFOFILE="None";
+    NOTE="Including only for whom government susidy is received. Other religions include Bahài, Judaism, Sikhism and other religious communities. The figures for Oslo 2006 include 57 members living abroad, figures for 2007 include 85 members, figures for 2008 include 76 members, figures for 2009 include 82 living abroad.";
+    NOTE("region")="[See list over changes in regional classifications](https://www.ssb.no/offentlig-sektor/kommunekatalog/endringer-i-de-regionale-inndelingene) (in Norwegian). ";
+    DATA= 156183 61779 ;
+== r16_nor_klepp
+  dims ['KOKkommuneregion0000', 'ContentsCode', 'Tid'] sizes [6, 3, 3]
+    KOKkommuneregion0000: 4212=Vegårshei; 0912=Vegårshei (-2019); 1119=Hå; 1120=Klepp; 1121=Time; 1122=Gjesdal
+    ContentsCode: KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number)
+    Tid: 2016=2016; 2018=2018; 2020=2020
+  54 values; first [None, None, 1204, None, None, 2128, None, None, 661, 1226, 1205, None, 2104, 2093, None, 641, 651, None, 14484, 14339, 14316, 18800, 18814, 19120, 1506, 1683, 1846, 14324, 14346, 17139, 19042, 19354, 19848, 2252, 2363, 2588, 14306, 14267, 11374, 18656, 18795, 19106, 1710, 1806, 1911, 8849, 8696, 8550, 11902, 11899, 12064, 1315, 1403, 1549]
+  sum of all 396,235
+== r16_nor_12026_contents
+  title: 12026: Church users, by region, contents and year
+  var 'KOKkommuneregion0000' (region): 891 values
+      3101=Halden; 3103=Moss; 3105=Sarpsborg; 3107=Fredrikstad; 3110=Hvaler; 3112=Råde ... EKG12=KOSTRA-group 12; EKG13=KOSTRA-group 13; EKG14=KOSTRA-group 14; EKG15=KOSTRA-group 15; EKG16=KOSTRA-group 16; EKG17=KOSTRA-group 17
+      code lengths {3: 1, 4: 839, 5: 51}; prefixes {'': 839, 'EKA': 33, 'EKG': 17, 'EAK': 1, 'EAKUO': 1}
+  var 'ContentsCode' (contents): 28 values
+      KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSinnmeldtednk0000=Enrolled in the Church of Norway (number); KOSutmeldtednk0000=Resigned from the Church of Norway (number); KOSdoepte0000=Infants baptized (number); KOSdoeptesokn0000=Acts of baptisms in the parish (number); KOSkonfirmanter0000=Confirmed (number) ... KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number); KOSfodde0000=Born during the year (number); KOSdode0000=Died during the year (number); KOSpersoner150000=Number of 15 year-olds (number); KOSpersoner040000=Inhabitants aged 4 (number)
+      code lengths {11: 1, 12: 1, 13: 1, 17: 4, 18: 3, 19: 6, 20: 12}; prefixes {'KOSpersoner': 2, 'KOSmedlemmerdnk': 1, 'KOSinnmeldtednk': 1, 'KOSutmeldtednk': 1, 'KOSdoepte': 1, 'KOSdoeptesokn': 1, 'KOSkonfirmanter': 1, 'KOSgudsttotdelt': 1}
+      ALL: KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSinnmeldtednk0000=Enrolled in the Church of Norway (number); KOSutmeldtednk0000=Resigned from the Church of Norway (number); KOSdoepte0000=Infants baptized (number); KOSdoeptesokn0000=Acts of baptisms in the parish (number); KOSkonfirmanter0000=Confirmed (number); KOSgudsttotdelt0000=Participants in church services total (number); KOSgudstsohedelt0000=Participants in church services sundays and holidays (number); KOSgudstusohedel0000=Participants in church services except sundays and holidays (number); KOSgudstnattvede0000=Participants communion (number); KOSgudstbarnehde0000=Participants in church services for children in kindergarten (number); KOSgudstskbarnde0000=Participants in church services for schoolchildren (number); KOSgudstjulafdel0000=Participants Christmas Eve services (number); KOSgudstpaskedel0000=Easter services, participants (number); KOSkonskultmenig0001=Conserts and cultural events, in the management of the congregation, number of participants  (number); KOSkonskultandre0001=Conserts and cultural events, in the management of othe than the congregation, participants. (number); KOSkorvoksnemedl0000=Participants in choirs for adults/family choirs (number); KOSkorbarnmedl0000=Participants in choirs for children and youth (number); KOSbabysangant0000=Baby and toddlers singing (number); KOStrosopplfirea0000=Number of children who received 4-year book (number); KOStrosoppltolva0000=Diakonale tilbud. Fra 2015 er data hentet fra Kirkerådet på bakgrunn av rapporteringen for trosopplæringen. 'Lys Våken' for youths 11 years age, number of participants  (number); KOSsoknteller0000=Number of congregations in the municipality (number); KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number); KOSfodde0000=Born during the year (number); KOSdode0000=Died during the year (number); KOSpersoner150000=Number of 15 year-olds (number); KOSpersoner040000=Inhabitants aged 4 (number)
+  var 'Tid' (year) [time]: 11 values
+      2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+== r16_nor_search_livssyn
+  0 hits
+== r16_nor_search_trus
+  60 hits
+    MedlemKristTrus | /in/in07/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    MedlemKristTrus | /kf/kf04/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    MedlMenighDNK | /in/in07/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenighDNK | /kf/kf04/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenigRegUDNK | /in/in07/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenigRegUDNK | /kf/kf04/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenighUKirk | /in/in07/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    MedlMenighUKirk | /kf/kf04/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    MedlemTroLivsyn | /in/in07/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    MedlemTroLivsyn | /kf/kf04/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    MedlemKristTru2 | /in/in07/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    MedlemKristTru2 | /kf/kf04/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    MedlemTroLivsynF | /in/in07/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    MedlemTroLivsynF | /kf/kf04/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    EkteskapVigsel | /be/be01/ekteskap/SBMENU4202 | 05713: Marriages contracted, by type of marriages 1961 - 2025
+    Barnregnp01 | /sv/sv01/barnregnp | 12787: Net profit in private kindergartens, by type of owner (closed series) 2015 - 2022
+    Barnregnp01 | /ud/ud01/barnregnp | 12787: Net profit in private kindergartens, by type of owner (closed series) 2015 - 2022
+    PrivBhDispEierf | /sv/sv01/barnregnp | 12412: Allocation of positive net profit in private kindergartens, by type of owner (NOK 1 000) (closed series) 2015 - 2022
+    PrivBhDispEierf | /ud/ud01/barnregnp | 12412: Allocation of positive net profit in private kindergartens, by type of owner (NOK 1 000) (closed series) 2015 - 2022
+    Arealstat17 | /nm/nm01/arealstat/SBMENU11317 | 14346: Buildings by building type within natural hazard susceptibility areas (C) 2024 - 2026
+    Arealstat17 | /sv/sv14/arealstat/SBMENU11317 | 14346: Buildings by building type within natural hazard susceptibility areas (C) 2024 - 2026
+    KostraKommune0045 | /he/he04/helsetjko/SBMENU6780 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /he/he04/pleie/SBMENU7280 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /in/in10/barneverng/SBMENU7360 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /in/in10/soshjelpk/SBMENU6760 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /os/os02/kommregnko/SBMENU7689 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /os/os01/kostrahoved/SBMENU10423/SBMENU10474 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /sk/sk01/barneverng/SBMENU7360 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    KostraKommune0045 | /sk/sk04/soshjelpk/SBMENU6760 | 12369: Detailed accounting figures, operational accounts divided in functions, by function and type (UD) 2015 - 2025
+    Kostra2KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04910: L. Church - key figures (M) (closed series) 1999 - 2016
+    KostraKommune0043 | /bb/bb01/brann_kostra/SBMENU6320 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /bb/bb01/kombolig_kostra/SBMENU6300 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /he/he04/helsetjko/SBMENU9004 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /he/he04/kombolig_kostra/SBMENU6300 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /he/he04/pleie/SBMENU5942 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /in/in10/barneverng/SBMENU6240 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /in/in10/soshjelpk/SBMENU10857 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0044 | /in/in10/soshjelpk/SBMENU10857 | 12367: Detailed accounting figures in the operational accounts , by accounting scope , function and type (M) 2015 - 2025
+    KostraKommune0043 | /in/in12/barnehager/SBMENU6740 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+    KostraKommune0043 | /kf/kf02/kultur_kostra/SBMENU9007 | 12362:    Key figures for different service sectors, municipality, by function and type (M) 2015 - 2025
+== r16_isl_10200
+  title: Population by religious and life stance organizations and registration 1997-2017
+  var 'Religious organizations' (Religious organizations): 52 values
+      !=Total; 1=The Evangelical Lutheran Church of Iceland; 2=The Free Lutheran Church in Reykjavík; 3=The Independent Congregation; 8=The Free Lutheran Church in Hafnarfjörður; 7=The Roman Catholic Church Diocese ... $=New Avalon; %=DíaMat; @=Tibetan Buddhist; /=Islamic Cultural Center of Iceland; 9=Other and not specified; 0=No religious organisation
+      code lengths {1: 52}; prefixes {'': 26, 'V': 1, 'B': 1, 'K': 1, 'M': 1, 'C': 1, 'D': 1, 'E': 1}
+      ALL: !=Total; 1=The Evangelical Lutheran Church of Iceland; 2=The Free Lutheran Church in Reykjavík; 3=The Independent Congregation; 8=The Free Lutheran Church in Hafnarfjörður; 7=The Roman Catholic Church Diocese; 4=Seventhday Adventists Church in Iceland; 6=The Pentecostal Assembly; 5=The Sjónarhæð Congregation; V=Jehova's Witnesses; B=The Bahá'í Community; Á=The Asatru Association; K=Smarakirkja; M=Church of Jesus Christ of Latter-day Saints; C=The Way; D=Word of Life; E=The Rock - Christian Community; F=The Buddhist Association; G=The Free Church Kefas; H=The First Baptist Church; J=The Muslim Association of Iceland; L=The Icelandic Christ-Church; N=The Church of Evangelism; P=Believers' Fellowship; Q=Zen in Iceland; R=Betania; S=The Russian Orthodox Church; T=The Serbian Orthodox Church; U=Family Federation for World Peace and Unification; X=Reykjavik Chieftainship; Y=Homechurch; Þ=Soko Gakkai International; Æ=Muslim Cultural Centre in Iceland; Ö=Church of the Resurrected Life; Ú=Church of God Ministry of Jesus Christ International; W=Catch The Fire (CTF); Ý=Port of hope; Í=Heaven on earth; A=Icelandic House of Prayer; Ð=Emmanuel Baptist Church; É=Hjálpræðisherinn trúfélag; I=Iceland Christian Nation; Ó=Zuism; O=Sidmennt  the Icelandic Ethical Humanist Association; Z=The Redeemed Christian Church of God; #=The Apostles Church Beth-Shekhinah; $=New Avalon; %=DíaMat; @=Tibetan Buddhist; /=Islamic Cultural Center of Iceland; 9=Other and not specified; 0=No religious organisation
+  var 'Sex' (Sex): 3 values
+      0=Total; 1=Male; 2=Female
+      ALL: 0=Total; 1=Male; 2=Female
+  var 'Year' (Year) [time]: 21 values
+      0=1997; 1=1998; 2=1999; 3=2000; 4=2001; 5=2002 ... 15=2012; 16=2013; 17=2014; 18=2015; 19=2016; 20=2017
+      code lengths {1: 10, 2: 11}; prefixes {'': 21}
+      ALL: 0=1997; 1=1998; 2=1999; 3=2000; 4=2001; 5=2002; 6=2003; 7=2004; 8=2005; 9=2006; 10=2007; 11=2008; 12=2009; 13=2010; 14=2011; 15=2012; 16=2013; 17=2014; 18=2015; 19=2016; 20=2017
+  var 'Registrations' (Registrations): 3 values
+      UM=New registrations in excess of resignations; NS=New registrations total; BS=Resignations total
+      ALL: UM=New registrations in excess of resignations; NS=New registrations total; BS=Resignations total
+== r16_lva_tsg1107_px
+  4,324 bytes
+    DESCRIPTION="Pastāvīgie iedzīvotāji pa statistiskajiem reģioniem, republikas pilsētām un novadiem pēc dzimuma, mājās pārsvarā lietotās valodas un pa vecuma grupām 2011.gada 1.martā";
+    CONTENTS="TSG11-07. Pastāvīgie iedzīvotāji pa statistiskajiem reģioniem, republikas pilsētām un novadiem pēc dzimuma, mājās pārsvarā lietotās valodas un pa vecuma grupām 2011.gada 1.martā";
+    CONTACT="Tautas skaitīšanas daļa";
+    SOURCE="Centrālā statistikas pārvalde";
+    INFOFILE="TSKlv_meta";
+    NOTE="Pastāvīgie iedzīvotāji, kuri atbildējuši uz jautājumu par mājās pārsvarā lietoto valodu.##<A HREF=https://stat.gov.lv/lv/metadati/8244-2011-gada-tautas-skaitisana TARGET=_blank>Metadati</A>##<A HREF=https://www.csb.gov.lv/lv/statistika/datubazes-lietotie-apzimejumi TARGET=_blank>Datubāzēs lietotie nosacītie apzīmējumi</A>#";
+    DESCRIPTION[en]="Resident population in statistical regions, cities under state jurisdiction and counties by sex, language mostly spoken at home and age group; on 1 March 2011";
+    CONTENTS[en]="TSG11-07. Resident population in statistical regions, cities under state jurisdiction and counties by sex, language mostly spoken at home and age group; on 1 March 2011";
+    CONTACT[en]="Population census section";
+    SOURCE[en]="Central Statistical Bureau of Latvia";
+    INFOFILE[en]="TSK11an_meta";
+    NOTE[en]="Usually resident population that gave answer to question about language mainly used at home.##<A HREF=https://stat.gov.lv/en/metadata/8244-population-and-housing-census-2011 TARGET=_blank>Metadata</A>##<A HREF=https://www.csb.gov.lv/en/statistics/explanation-symbols-database TARGET=_blank>Explanation of symbols in database</A>#";
+    DATA= 1876812.000000000000000 585131.000000000000000 ;
+== r16_lva_tsg1101_px
+  2,647 bytes
+    DESCRIPTION="Pastāvīgie iedzīvotāji pa teritoriālajām vienībām pēc dzimuma 2011.gada 1.martā";
+    CONTENTS="TSG11-01. Pastāvīgie iedzīvotāji pa teritoriālajām vienībām pēc dzimuma 2011.gada 1.martā";
+    CONTACT="Tautas skaitīšanas daļa";
+    SOURCE="Centrālā statistikas pārvalde";
+    INFOFILE="TSKlv_meta";
+    NOTE="<A HREF=https://stat.gov.lv/lv/metadati/8244-2011-gada-tautas-skaitisana TARGET=_blank>Metadati</A>##<A HREF=https://www.csb.gov.lv/lv/statistika/datubazes-lietotie-apzimejumi TARGET=_blank>Datubāzēs lietotie nosacītie apzīmējumi</A>#";
+    DESCRIPTION[en]="Resident population on 1 March 2011 by territorial unit and sex";
+    CONTENTS[en]="TSG11-01. Resident population on 1 March 2011 by territorial unit and sex";
+    CONTACT[en]="Population census section";
+    SOURCE[en]="Central Statistical Bureau of Latvia";
+    INFOFILE[en]="TSK11an_meta";
+    NOTE[en]="<A HREF=https://stat.gov.lv/en/metadata/8244-population-and-housing-census-2011 TARGET=_blank>Metadata</A>##<A HREF=https://www.csb.gov.lv/en/statistics/explanation-symbols-database TARGET=_blank>Explanation of symbols in database</A>#";
+    DATA= 2070371 658640 ;
