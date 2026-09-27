@@ -1,72 +1,54 @@
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.csv?geography=W92000004&measures=20100
-  31,013 bytes; starts b'"DATE","'
-  107 lines, 54 with ['n09', 'mainlang', 'mainlang', 'welsh', 'english', 'polish', 'total', 'other']
-      1: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"0","Total: All usual residents aged 3 years and over","0","Main language (detailed)",1000000,0,"20100","Value",3018184,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d0d20100",0,106
-      2: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1","English (English or Welsh in Wales)","_1","Main language (detailed)",1000000,1,"20100","Value",2917644,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d1d20100",1,106
-      3: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"2","Welsh or Cymraeg (in England only)","_2","Main language (detailed)",1000000,2,"20100","Value",0,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d2d20100",2,106
-      4: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1001","Other UK language","1001","Main language (detailed)",1000000,3,"20100","Value",154,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d3a4a5a6a7a8a9a10a11d20100",3,106
-      5: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"3","Other UK language: Gaelic (Irish)","_3","Main language (detailed)",1000000,4,"20100","Value",40,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d3d20100",4,106
-      6: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"4","Other UK language: Gaelic (Scottish)","_4","Main language (detailed)",1000000,5,"20100","Value",10,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d4d20100",5,106
-      7: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"5","Other UK language: Manx Gaelic","_5","Main language (detailed)",1000000,6,"20100","Value",4,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d5d20100",6,106
-      8: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"6","Other UK language: Gaelic (Not otherwise specified)","_6","Main language (detailed)",1000000,7,"20100","Value",8,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d6d20100",7,106
-      9: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"7","Other UK language: Cornish","_7","Main language (detailed)",1000000,8,"20100","Value",7,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d7d20100",8,106
-     10: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"8","Other UK language: Scots","_8","Main language (detailed)",1000000,9,"20100","Value",28,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d8d20100",9,106
-     11: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"9","Other UK language: Ulster Scots","_9","Main language (detailed)",1000000,10,"20100","Value",1,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d9d20100",10,106
-     12: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"10","Other UK language: Romany English","_10","Main language (detailed)",1000000,11,"20100","Value",51,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d10d20100",11,106
-     13: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"11","Other UK language: Irish Traveller Cant","_11","Main language (detailed)",1000000,12,"20100","Value",5,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d11d20100",12,106
-     17: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1002","Other European language (EU)","1002","Main language (detailed)",1000000,16,"20100","Value",42801,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d15a16a17a18a19a20a21a22a23a24a25
-     18: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"15","Other European language (EU): Italian","_15","Main language (detailed)",1000000,17,"20100","Value",2367,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d15d20100",17,106
-     19: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"16","Other European language (EU): German","_16","Main language (detailed)",1000000,18,"20100","Value",1213,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d16d20100",18,106
-     20: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"17","Other European language (EU): Polish","_17","Main language (detailed)",1000000,19,"20100","Value",20862,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d17d20100",19,106
-     21: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"18","Other European language (EU): Slovak","_18","Main language (detailed)",1000000,20,"20100","Value",1416,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d18d20100",20,106
-     22: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"19","Other European language (EU): Czech","_19","Main language (detailed)",1000000,21,"20100","Value",1277,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d19d20100",21,106
-     23: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"20","Other European language (EU): Romanian","_20","Main language (detailed)",1000000,22,"20100","Value",6020,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d20d20100",22,106
-     24: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"21","Other European language (EU): Lithuanian","_21","Main language (detailed)",1000000,23,"20100","Value",1780,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d21d20100",23,106
-     25: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"22","Other European language (EU): Latvian","_22","Main language (detailed)",1000000,24,"20100","Value",488,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d22d20100",24,106
-     26: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"23","Other European language (EU): Hungarian","_23","Main language (detailed)",1000000,25,"20100","Value",2152,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d23d20100",25,106
-     27: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"24","Other European language (EU): Bulgarian","_24","Main language (detailed)",1000000,26,"20100","Value",2489,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d24d20100",26,106
-     28: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"25","Other European language (EU): Greek","_25","Main language (detailed)",1000000,27,"20100","Value",1414,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d25d20100",27,106
-     29: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"26","Other European language (EU): Dutch","_26","Main language (detailed)",1000000,28,"20100","Value",553,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d26d20100",28,106
-     30: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"27","Other European language (EU): Swedish","_27","Main language (detailed)",1000000,29,"20100","Value",240,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d27d20100",29,106
-     31: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"28","Other European language (EU): Danish","_28","Main language (detailed)",1000000,30,"20100","Value",102,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d28d20100",30,106
-     32: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"29","Other European language (EU): Finnish","_29","Main language (detailed)",1000000,31,"20100","Value",82,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d29d20100",31,106
-     33: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"30","Other European language (EU): Estonian","_30","Main language (detailed)",1000000,32,"20100","Value",68,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d30d20100",32,106
-     34: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"31","Other European language (EU): Slovenian","_31","Main language (detailed)",1000000,33,"20100","Value",67,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d31d20100",33,106
-     35: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"32","Other European language (EU): Maltese","_32","Main language (detailed)",1000000,34,"20100","Value",75,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d32d20100",34,106
-     36: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"33","Other European language (EU): Any other European language (EU)","_33","Main language (detailed)",1000000,35,"20100","Value",136,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d33d
-     37: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1003","Other European language (non EU)","1003","Main language (detailed)",1000000,36,"20100","Value",805,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d34a35a36a37d20100",36,106
-     38: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"34","Other European language (non EU): Albanian","_34","Main language (detailed)",1000000,37,"20100","Value",442,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d34d20100",37,106
-     39: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"35","Other European language (non EU): Ukrainian","_35","Main language (detailed)",1000000,38,"20100","Value",97,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d35d20100",38,106
-     40: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"36","Other European language (non EU): Any other Eastern European language (non EU)","_36","Main language (detailed)",1000000,39,"20100","Value",6,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d
-     41: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"37","Other European language (non EU): Northern European language (non EU)","_37","Main language (detailed)",1000000,40,"20100","Value",260,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265
-     42: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1004","Other European language (EU and non-EU)","1004","Main language (detailed)",1000000,41,"20100","Value",208,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d38d20100",41,106
-     43: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"38","Other European language (EU and non-EU): Bosnian, Croatian, Serbian, and Montenegrin","_38","Main language (detailed)",1000000,42,"20100","Value",208,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d
-     44: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"1005","Other European language (non-national)","1005","Main language (detailed)",1000000,43,"20100","Value",10,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d39a40d20100",43,106
-     45: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"39","Other European language (non-national): Any Romani language","_39","Main language (detailed)",1000000,44,"20100","Value",10,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d39d2010
-     46: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"40","Other European language (non-national): Yiddish","_40","Main language (detailed)",1000000,45,"20100","Value",0,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d40d20100",45,106
-     55: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"48","West or Central Asian language: Any other West or Central Asian language","_48","Main language (detailed)",1000000,54,"20100","Value",144,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013
-     69: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"61","South Asian language: Any other South Asian language","_61","Main language (detailed)",1000000,68,"20100","Value",459,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d61d20100",68,
-     73: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"64","East Asian language: All other Chinese","_64","Main language (detailed)",1000000,72,"20100","Value",4331,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d64d20100",72,106
-     80: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"71","East Asian language: Any other East Asian language","_71","Main language (detailed)",1000000,79,"20100","Value",228,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d71d20100",79,10
-     84: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"74","Caribbean Creole: English-based Caribbean Creole","_74","Main language (detailed)",1000000,83,"20100","Value",1,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d74d20100",83,106
-     85: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"75","Caribbean Creole: Any other Caribbean Creole","_75","Main language (detailed)",1000000,84,"20100","Value",9,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d75d20100",84,106
-     99: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"88","African language: Any other Nigerian language","_88","Main language (detailed)",1000000,98,"20100","Value",51,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d88d20100",98,106
-    100: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"89","African language: Any other West African language","_89","Main language (detailed)",1000000,99,"20100","Value",167,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d89d20100",99,106
-    101: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"90","African language: Any other African language","_90","Main language (detailed)",1000000,100,"20100","Value",277,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d90d20100",100,106
-    104: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"92","Sign language: Any other sign language","_92","Main language (detailed)",1000000,103,"20100","Value",155,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d92d20100",103,106
-    106: "2021","2021","2021","date",0,0,"W92000004","Wales","W92000004","regions",480,0,"94","Other language","_94","Main language (detailed)",1000000,105,"20100","Value",280,"A","Normal Value","F","Free (free for publication)","Nm-2043d1d32336e0d2013265930d94d20100",105,106
-== https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE423&date=latestMINUS1&gender=0&c_age=200&measures=20100&select=date_name,geography_code,geography_name,obs_value
-  8,980 bytes; starts b'"DATE_NA'
-  219 lines, 12 with ['n09', 'mainlang', 'mainlang', 'welsh', 'english', 'polish', 'total', 'other']
-     45: "2024","E08000018","Rotherham",276332
-    208: "2024","N09000001","Antrim and Newtownabbey",148100
-    209: "2024","N09000002","Armagh City, Banbridge and Craigavon",222511
-    210: "2024","N09000003","Belfast",352390
-    211: "2024","N09000004","Causeway Coast and Glens",141954
-    212: "2024","N09000005","Derry City and Strabane",152383
-    213: "2024","N09000006","Fermanagh and Omagh",117687
-    214: "2024","N09000007","Lisburn and Castlereagh",151669
-    215: "2024","N09000008","Mid and East Antrim",139913
-    216: "2024","N09000009","Mid Ulster",152718
-    217: "2024","N09000010","Newry, Mourne and Down",183115
-    218: "2024","N09000011","Ards and North Down",165415
+probe_xlsx: https://www.statistica.sm/pub1/StatisticaSM/dam/jcr:45790a21-d920-45de-b931-1836dc4fb29d/Pop_Anno_Eta_Pos.xlsx
+  9,940 bytes
+  1 sheet(s): Foglio1
+
+--- sheet 'Foglio1' (113 rows x 7 cols) --------------------
+  Popolazione residente e soggiornante per
+  
+   | Residenti |  |  | Soggiornanti
+   | M | F | Totale | M | F | Totale
+  0 | 103 | 51 | 154 | . | . | .
+  1 | 92 | 76 | 168 | 1 | 4 | 5
+  2 | 81 | 90 | 171 | 3 | 1 | 4
+  3 | 112 | 96 | 208 | 3 | 2 | 5
+  4 | 109 | 126 | 235 | 2 | 2 | 4
+  5 | 117 | 115 | 232 | 2 | 2 | 4
+  6 | 124 | 132 | 256 | 2 | 2 | 4
+  7 | 115 | 116 | 231 | 1 | 5 | 6
+
+probe_xlsx: https://www.statistica.sm/pub1/StatisticaSM/dam/jcr:f2871962-4ff6-4672-b42a-52fb0d539877/popolazione_residente_per_castello.xlsx
+  10,061 bytes
+  1 sheet(s): Foglio1
+
+--- sheet 'Foglio1' (38 rows x 25 cols) --------------------
+  Popolazione Residente per Castello
+  
+   |  | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025
+   |  |  |  |  |  |  |  |  |  |  |  | 2025 |  |  |  |  |  | 2026
+   |  |  |  |  |  |  |  |  |  |  |  | Lug | Ago | Set | Ott | Nov | Dic | Gen | Feb | Mar | Apr | Mag | Giu | Lug
+  San Marino | M | 1976 | 1976 | 1968 | 1964 | 1965 | 1960 | 1981 | 1998 | 2014 | 2036 | 2033 | 2033 | 2034 | 2029 | 2037 | 2036 | 2036 | 2032 | 2032 | 2037 | 2034 | 2040 | 2036
+   | F | 2087 | 2067 | 2086 | 2099 | 2083 | 2101 | 2109 | 2109 | 2100 | 2122 | 2113 | 2114 | 2110 | 2114 | 2120 | 2122 | 2118 | 2117 | 2120 | 2122 | 2120 | 2118 | 2115
+   | Total | 4063 | 4043 | 4054 | 4063 | 4048 | 4061 | 4090 | 4107 | 4114 | 4158 | 4146 | 4147 | 4144 | 4143 | 4157 | 4158 | 4154 | 4149 | 4152 | 4159 | 4154 | 4158 | 4151
+  Acquaviva | M | 1061 | 1079 | 1078 | 1084 | 1058 | 1061 | 1071 | 1067 | 1071 | 1083 | 1086 | 1089 | 1089 | 1086 | 1082 | 1083 | 1080 | 1080 | 1085 | 1087 | 1089 | 1083 | 1081
+   | F | 1081 | 1080 | 1076 | 1083 | 1065 | 1052 | 1047 | 1049 | 1059 | 1064 | 1069 | 1069 | 1069 | 1068 | 1065 | 1064 | 1065 | 1070 | 1071 | 1072 | 1073 | 1071 | 1070
+   | Total | 2142 | 2159 | 2154 | 2167 | 2123 | 2113 | 2118 | 2116 | 2130 | 2147 | 2155 | 2158 | 2158 | 2154 | 2147 | 2147 | 2145 | 2150 | 2156 | 2159 | 2162 | 2154 | 2151
+  Borgo Maggiore | M | 3390 | 3397 | 3434 | 3453 | 3459 | 3456 | 3458 | 3454 | 3475 | 3518 | 3516 | 3519 | 3517 | 3524 | 3515 | 3518 | 3525 | 3528 | 3525 | 3527 | 3532 | 3540 | 3542
+
+probe_xlsx: https://imsee.mc/en/content/download/310151/file/IMSEE-2025%20Census_Nationalities.xlsx
+  20,499 bytes
+  1 sheet(s): Nationalities 2025 Census
+
+--- sheet 'Nationalities 2025 Census' (164 rows x 3 cols) --------------------
+  
+  Number of residents by nationality in 20
+  
+  NOTE: Some residents hold multiple natio
+  
+  
+  
+  
+  
+  144 nationalities (excluding stateless p | Number of residents
+  Monegasque | 9332.999999999998
+  French | 8270.126521760612
+
