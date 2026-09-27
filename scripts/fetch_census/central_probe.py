@@ -722,7 +722,42 @@ def lux5() -> None:
             log(f"   - {flow.get('id')}({flow.get('version')}) {name[:150]}")
 
 
+def hun6() -> None:
+    page = text(fetch("https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1")[2])
+    for pattern in (r"fetch\([^)]{0,120}\)", r"[\"'`][^\"'`]{0,60}(?:api|\.json|data/)[^\"'`]{0,80}[\"'`]"):
+        hits = sorted(set(re.findall(pattern, page)))
+        log(f"   {len(hits)} matches of {pattern!r}")
+        for hit in hits[:40]:
+            log("   - " + hit[:200])
+    show("https://map.ksh.hu/nepszamlalas/", r"src=\"[^\"]+\"|href=\"[^\"]+\"", limit=30)
+
+
+def nld6() -> None:
+    show("https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+         r"href=\"[^\"]+\.(?:xlsx|csv|zip|ods)\"|<title>[^<]*|<p>[^<]{20,400}</p>", limit=20)
+    show("https://www.cbs.nl/nl-nl/zoeken?q=leeftijd%20gemeente%20geslacht%20maatwerk",
+         r"href=\"[^\"]*(?:maatwerk|cijfers/detail)[^\"]*\"", limit=30)
+
+
+def svk6() -> None:
+    page = show("https://gis.scitanie.sk/portal/sharing/rest/search?q=n%C3%A1rodnos%C5%A5&f=json&num=40")
+    try:
+        for row in json.loads(page).get("results", []):
+            log(f"   - {row.get('type')} | {row.get('title')} | {row.get('url')}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   {exc}")
+    for q in ("okres", "vierovyznanie", "jazyk"):
+        page = text(fetch(f"https://gis.scitanie.sk/portal/sharing/rest/search?q={q}&f=json&num=40")[2])
+        try:
+            for row in json.loads(page).get("results", []):
+                log(f"   [{q}] {row.get('type')} | {row.get('title')} | {row.get('url')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}")
+    show("https://www.scitanie.sk/mapa-stranok", r"href=\"[^\"]*obyvatelia/zakladne-vysledky[^\"]*\"", limit=60)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun6": hun6, "nld6": nld6, "svk6": svk6,
     "cze5": cze5, "hun5": hun5, "che5": che5, "svk5": svk5, "nld5": nld5, "lux5": lux5,
     "cze4": cze4, "pol4": pol4, "svk4": svk4, "hun4": hun4, "nld4": nld4, "lux4": lux4,
     "aut4": aut4, "deu4": deu4, "che4": che4,
