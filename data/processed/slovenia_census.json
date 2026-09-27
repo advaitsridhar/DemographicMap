@@ -7990,199 +7990,6 @@
     "language_note": "Mother tongue (materni jezik), Census 2002 (31 March 2002), the whole population, one answer; 'Other' is every language SURS does not name at municipal level. SiStat blanks cells of few people for confidentiality: one blank cell is rebuilt from the total, and where two or more are blank their people are left out, so a municipality's shares can fall short of 100. Not asked since 2002: the census has been register-based since 2011."
   },
   {
-    "id": "SVN-C2002-kopercapodistria",
-    "level": "admin2",
-    "name": "Koper/Capodistria",
-    "parent": "3739544B2739881953900",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": [
-      {
-        "group": "Catholic",
-        "pct": 46.3,
-        "count": 22017
-      },
-      {
-        "group": "Atheist",
-        "pct": 18.6,
-        "count": 8842
-      },
-      {
-        "group": "Not stated",
-        "pct": 13.3,
-        "count": 6342
-      },
-      {
-        "group": "Unknown",
-        "pct": 8.4,
-        "count": 3984
-      },
-      {
-        "group": "Orthodox",
-        "pct": 4.5,
-        "count": 2144
-      },
-      {
-        "group": "Islam",
-        "pct": 4.3,
-        "count": 2036
-      },
-      {
-        "group": "Believer, no church",
-        "pct": 4.1,
-        "count": 1949
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.2,
-        "count": 112
-      },
-      {
-        "group": "Protestant",
-        "pct": 0.2,
-        "count": 113
-      }
-    ],
-    "language": [
-      {
-        "group": "Slovene",
-        "pct": 74.1,
-        "count": 35246
-      },
-      {
-        "group": "Croatian",
-        "pct": 8.0,
-        "count": 3824
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 4.0,
-        "count": 1911
-      },
-      {
-        "group": "Unknown",
-        "pct": 3.8,
-        "count": 1789
-      },
-      {
-        "group": "Bosnian",
-        "pct": 2.8,
-        "count": 1311
-      },
-      {
-        "group": "Serbian",
-        "pct": 2.7,
-        "count": 1268
-      },
-      {
-        "group": "Italian",
-        "pct": 2.2,
-        "count": 1059
-      },
-      {
-        "group": "Other",
-        "pct": 1.2,
-        "count": 567
-      },
-      {
-        "group": "Albanian",
-        "pct": 0.5,
-        "count": 240
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.5,
-        "count": 227
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 42
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.1,
-        "count": 51
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 4
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Slovene",
-        "pct": 71.2,
-        "count": 33826
-      },
-      {
-        "group": "Other",
-        "pct": 12.8,
-        "count": 6097
-      },
-      {
-        "group": "Unknown",
-        "pct": 7.8,
-        "count": 3694
-      },
-      {
-        "group": "Not declared",
-        "pct": 3.5,
-        "count": 1680
-      },
-      {
-        "group": "Not stated",
-        "pct": 3.2,
-        "count": 1499
-      },
-      {
-        "group": "Italian",
-        "pct": 1.5,
-        "count": 712
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.1,
-        "count": 31
-      }
-    ],
-    "sources": [
-      {
-        "field": "religion/ethnicity/language",
-        "name": "Statistical Office of the Republic of Slovenia (SURS), Census 2002, SiStat 05W1001S-05W1007S (by municipality)",
-        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05W1002S.px",
-        "license": "SURS open data (free reuse with attribution)",
-        "year": 2002
-      }
-    ],
-    "country": "SVN",
-    "aliases": [
-      "Koper / Capodistria"
-    ],
-    "match_by": "shape_id",
-    "shape_id": "79292919B12317235172001",
-    "ethnicity_year": 2002,
-    "ethnicity_note": "Ethnic affiliation (narodna pripadnost), Census 2002 (31 March 2002), the whole population, one answer. SURS publishes Slovenes and the three constitutional minorities -- Italians, Hungarians, Roma -- by municipality; every other declared affiliation (Croats, Serbs, Bosniaks, Muslims and the rest) is 'Other', and so are the few Italians, Hungarians or Roma of a municipality whose count SiStat blanks. 'Not declared' did not declare an ethnic affiliation; 'Not stated' did not want to reply; 'Unknown' is those the census could not establish. SiStat blanks cells of few people for confidentiality: one blank cell is rebuilt from the subtotal it publishes beside it, and where two or more are blank their people are left out. Slovenia's census has been register-based since 2011 and has not asked the question since 2002.",
-    "religion_year": 2002,
-    "religion_note": "Religion (veroizpoved), Census 2002 (31 March 2002), the whole population, one answer; 'Believer, no church' believes but belongs to no religious community; 'Not stated' did not want to reply; 'Unknown' could not be established. SiStat blanks cells of few people for confidentiality: one blank cell is rebuilt from the subtotal published beside it, and where two or more are blank their people are left out, so a municipality's shares can fall short of 100. Not asked since 2002: the census has been register-based since 2011.",
-    "language_year": 2002,
-    "language_note": "Mother tongue (materni jezik), Census 2002 (31 March 2002), the whole population, one answer; 'Other' is every language SURS does not name at municipal level. SiStat blanks cells of few people for confidentiality: one blank cell is rebuilt from the total, and where two or more are blank their people are left out, so a municipality's shares can fall short of 100. Not asked since 2002: the census has been register-based since 2011."
-  },
-  {
     "id": "SVN-C2002-kostel",
     "level": "admin2",
     "name": "Kostel",
@@ -25451,6 +25258,43 @@
     "country": "SVN",
     "match_by": "shape_id",
     "shape_id": "79292919B46557097281880"
+  },
+  {
+    "id": "SVN-C2002-gap-kopercapodistria",
+    "level": "admin2",
+    "name": "Koper / Capodistria",
+    "parent": "3739544B2739881953900",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Not written: the municipality's territory changed after the 2002 census (it was created from, or gave land to, a municipality formed in 2006 or 2011), and SURS publishes the 2002 ethnicity, religion and mother tongue by the municipalities of 2002 only. Slovenia's census has not asked these questions since 2002."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not written: the municipality's territory changed after the 2002 census (it was created from, or gave land to, a municipality formed in 2006 or 2011), and SURS publishes the 2002 ethnicity, religion and mother tongue by the municipalities of 2002 only. Slovenia's census has not asked these questions since 2002."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Not written: the municipality's territory changed after the 2002 census (it was created from, or gave land to, a municipality formed in 2006 or 2011), and SURS publishes the 2002 ethnicity, religion and mother tongue by the municipalities of 2002 only. Slovenia's census has not asked these questions since 2002."
+    },
+    "sources": [],
+    "country": "SVN",
+    "match_by": "shape_id",
+    "shape_id": "79292919B12317235172001"
   },
   {
     "id": "SVN-C2002-gap-kostanjevicanakrki",
