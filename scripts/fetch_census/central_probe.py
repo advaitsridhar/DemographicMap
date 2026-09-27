@@ -1072,7 +1072,70 @@ def nld9() -> None:
          r"href=\"[^\"]+\.(?:xlsx|zip|csv)\"", limit=10)
 
 
+CHE_RELIGION_ASSETS = (36343816, 36429858, 35627011, 35607916, 35607913, 35607915, 35607929,
+                       35627019, 35607932, 36429856, 36429857)
+CHE_LANGUAGE_ASSETS = (36434442, 36434449, 36630112, 36063525, 36434435, 36063516, 36063463,
+                       36063461)
+
+
+def che8() -> None:
+    """What each BFS asset on the religion and language pages is, and the xlsx ones' heads."""
+    for asset in CHE_RELIGION_ASSETS + CHE_LANGUAGE_ASSETS:
+        status, head, body = fetch(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets/{asset}")
+        page = text(body)
+        titles = re.findall(r'"(?:title|name|filename|fileName|mimeType|language)"\s*:\s*"([^"]{1,160})"',
+                            page)
+        log(f"\n# asset {asset}: meta HTTP {status}: {' | '.join(dict.fromkeys(titles))[:600]}")
+        if status != 200:
+            log("   " + page[:300].replace("\n", " "))
+        status, head, body = fetch(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets/{asset}/master")
+        kind = head.get("Content-Type") or head.get("content-type") or head.get("error", "")
+        disp = head.get("Content-Disposition") or head.get("content-disposition") or ""
+        log(f"   master HTTP {status}, {len(body):,} bytes, {kind}, {disp[:120]}")
+        if status == 200 and body[:2] == b"PK":
+            import io as _io
+            import openpyxl
+            try:
+                book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+            except Exception as exc:  # noqa: BLE001
+                log(f"   not a workbook: {exc}")
+                continue
+            log(f"   sheets: {book.sheetnames[:12]}")
+            for sheet in book.worksheets[:2]:
+                log(f"   sheet {sheet.title!r}")
+                for row in sheet.iter_rows(values_only=True, max_row=16):
+                    cells = [str(c)[:28] for c in row[:12] if c is not None]
+                    if cells:
+                        log("     " + " | ".join(cells))
+
+
+def svn4() -> None:
+    """Census 2002 by municipality: religion, mother tongue and ethnic affiliation."""
+    show("https://www.stat.si/popis2002/si/", r"href=\"[^\"]+\"[^>]*>[^<]{3,80}<", limit=60)
+    show("https://www.stat.si/popis2002/si/rezultati/rezultati_red.asp", r"href=\"[^\"]+\"[^>]*>[^<]{3,80}<",
+         limit=80)
+    for q in ("ter=OBC&st=7", "ter=OBC&st=8", "ter=OBC&st=9"):
+        show(f"https://www.stat.si/popis2002/si/rezultati/rezultati_red.asp?{q}", raw=1200)
+
+
+def aut5() -> None:
+    """Census 2001 religion and Umgangssprache by Bezirk; the 2021 religion survey."""
+    show("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+         "bevoelkerungsstand/bevoelkerung-nach-religion",
+         r"href=\"[^\"]+\.(?:xlsx?|ods|csv|pdf)\"|href=\"[^\"]*(?:religion|Religion)[^\"]*\"", limit=40)
+    show("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+         "bevoelkerungsstand/bevoelkerung-nach-sprache",
+         r"href=\"[^\"]+\.(?:xlsx?|ods|csv|pdf)\"|href=\"[^\"]*(?:sprach|Sprach)[^\"]*\"", limit=40)
+    for url in ("https://www.statistik.at/blickgem/vz1/g10101.pdf",
+                "https://www.statistik.at/blickgem/G0101/g10101.pdf",
+                "https://www.statistik.at/fileadmin/pages/405/VZ2001_Hauptergebnisse_I_Oesterreich.pdf"):
+        status, head, body = fetch(url)
+        log(f"\n## {url}: HTTP {status}, {len(body):,} bytes, "
+            f"{head.get('Content-Type') or head.get('content-type') or head.get('error', '')}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che8": che8, "svn4": svn4, "aut5": aut5,
     "che7": che7, "nld9": nld9,
     "deu6": deu6,
     "hun13": hun13,
