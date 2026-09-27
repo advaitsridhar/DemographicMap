@@ -1,9 +1,420 @@
-== post https://api.nsd.no/graphql eyJxdWVyeSI6ICJ7czpfX3R5cGUobmFtZTpcIlNlYXJjaFF1ZXJ5XCIpe2ZpZWxkc3tuYW1lIGFyZ3N7bmFtZX0gdHlwZXtuYW1lIGtpbmQgb2ZUeXBle25hbWV9fX19IGU6X190eXBlKG5hbWU6XCJFU1NRdWVyeVwiKXtmaWVsZHN7bmFtZSBhcmdze25hbWV9IHR5cGV7bmFtZSBraW5kIG9mVHlwZXtuYW1lfX19fX0ifQ== 8000
-  HTTP 200 application/json; charset=utf-8 4,260 bytes
-  {"data":{"s":{"fields":[{"name":"seriesMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"SeriesMetadata"}}},{"name":"studyMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"StudyMetadata"}}},{"name":"multipleStudyMetadata","args":[{"name":"items"},{"name":"instance"},{"name":"agencyId"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":null}}},{"name":"dataFileMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":"DataFileMetadata","kind":"OBJECT","ofType":null}},{"name":"variableGroupMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":"VariableGroupMetadata","kind":"OBJECT","ofType":null}},{"name":"variableMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"VariableMetadata"}}},{"name":"multipleVariableMetadata","args":[{"name":"items"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":null}}},{"name":"conceptualVariableGroupMetadata","args":[{"name":"input"},{"name":"instance"},{"name":"agencyId"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"ConceptualVariableGroupMetadata"}}},{"name":"codeComparisonTable","args":[{"name":"input"},{"name":"instance"},{"name":"agencyId"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"CodeComparisonTable"}}},{"name":"countrySeriesMetadata","args":[{"name":"countryCode"},{"name":"seriesId"},{"name":"seriesVersion"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"CountrySeriesMetadata"}}},{"name":"themeSeriesMetadata","args":[{"name":"themeId"},{"name":"seriesId"},{"name":"seriesVersion"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"ThemeSeriesMetadata"}}},{"name":"relatedMaterialMetadata","args":[{"name":"id"},{"name":"version"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"SearchRelatedMaterial"}}},{"name":"doiList","args":[{"name":"instance"},{"name":"agencyId"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":null}}},{"name":"doiNewest","args":[{"name":"id"},{"name":"doi"},{"name":"instance"},{"name":"agencyId"},{"name":"tag"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"ColecticaItem"}}},{"name":"allOrganizations","args":[{"name":"instance"},{"name":"agencyId"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":null}}},{"name":"resolveStudyNumber","args":[{"name":"studyNumber"},{"name":"instance"},{"name":"agencyId"}],"type":{"name":"StudyMetadata","kind":"OBJECT","ofType":null}}]},"e":{"fields":[{"name":"users","args":[{"name":"first"},{"name":"last"},{"name":"before"},{"name":"after"},{"name":"sort"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"UserConnection"}}},{"name":"getSingleDownloads","args":[{"name":"first"},{"name":"last"},{"name":"before"},{"name":"after"},{"name":"sort"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"SingleDownloadConnection"}}},{"name":"getWizardDownloads","args":[{"name":"first"},{"name":"last"},{"name":"before"},{"name":"after"},{"name":"sort"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"WizardDownloadConnection"}}},{"name":"user","args":[{"name":"ssoId"}],"type":{"name":"ESSUser","kind":"OBJECT","ofType":null}},{"name":"startDownloadJob","args":[{"name":"input"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"String"}}},{"name":"pollDownloadJob","args":[{"name":"id"},{"name":"instance"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"DownloadPollResult"}}},{"name":"downloadSizeLimitedFile","args":[{"name":"input"}],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"String"}}},{"name":"exportStatus","args":[],"type":{"name":null,"kind":"NON_NULL","ofType":{"name":"ESSExportStatus"}}}]}}}
-== post https://api.nsd.no/graphql eyJxdWVyeSI6ICJ7c2VhcmNoe3Nlcmllc01ldGFkYXRhKGlkOlwiMzIxYjA2YWQtMWI5OC00YjdkLTkzYWQtY2E4YTI0ZTg3ODhhXCIsaW5zdGFuY2U6UFVCTElTSEVELGFnZW5jeUlkOklOVF9FU1NFUklDKXtpZCB2ZXJzaW9uIGNvdW50cnlDb3ZlcmFnZVRhYmxle2NvbHN7aWQgdmVyc2lvbiBjdXJhdGVkVmVyc2lvbn19fX19In0= 8000
-  HTTP 200 application/json; charset=utf-8 148 bytes
-  {"data":null,"errors":[{"message":"Cannot query field \"countryCoverageTable\" on type \"SeriesMetadata\".","locations":[{"line":1,"column":118}]}]}
-== post https://api.nsd.no/graphql eyJxdWVyeSI6ICJ7c2VhcmNoe2RhdGFGaWxlTWV0YWRhdGEoaWQ6XCIyNDJhYWEzOS0zYmJiLTQwZjUtOThiZi1iZmIxY2U1M2Q4ZWZcIixhZ2VuY3lJZDpJTlRfRVNTRVJJQyxpbnN0YW5jZTpQVUJMSVNIRUQpe2lkIHZlcnNpb24gbGFiZWx7ZW59IGRlZmF1bHRXZWlnaHR7bmFtZXtlbn19IGJhY2tncm91bmRWYXJpYWJsZXN7bmFtZXtlbn19fX19In0= 3000
-  HTTP 200 application/json; charset=utf-8 218 bytes
-  {"data":{"search":{"dataFileMetadata":{"id":"242aaa39-3bbb-40f5-98bf-bfb1ce53d8ef","version":179,"label":{"en":"ESS11e04_2"},"defaultWeight":{"name":{"en":"pspwght"}},"backgroundVariables":[{"name":{"en":"cntry"}}]}}}}
+
+=== lux4
+
+## LU1,DF_X021,1.1/all?startPeriod=2017&endPeriod=2017: HTTP 200, 114 lines
+   | DATAFLOW,FREQ,CANTON,TIME_PERIOD,OBS_VALUE,NOTE_YEAR_2,NOTE_YEAR_1,NOTE_CANTON_2,NOTE_CANTON_1,OBS_STATUS,DECIMALS
+   | LU1:DF_X021(1.1),A,0204,2017,34378,,,,,,0
+   | LU1:DF_X021(1.1),A,0308,2017,5311,,,,,,0
+   | LU1:DF_X021(1.1),A,C07,2017,18351,,,,,,0
+   DATAFLOW: 1 values, e.g. ['LU1:DF_X021(1.1)']
+   FREQ: 1 values, e.g. ['A']
+   CANTON: 113 values, e.g. ['0204', '0308', 'C07', '0404', '0504', '0704', '1204', '1001', '0505', '0702', 'C11', '1101']
+   TIME_PERIOD: 1 values, e.g. ['2017']
+   OBS_VALUE: 113 values, e.g. ['34378', '5311', '18351', '1195', '3141', '4284', '4999', '2699', '1760', '1705', '29525', '3810']
+   NOTE_YEAR_2: 1 values, e.g. ['']
+   NOTE_YEAR_1: 1 values, e.g. ['']
+   NOTE_CANTON_2: 2 values, e.g. ['', 'LU']
+   NOTE_CANTON_1: 1 values, e.g. ['']
+   OBS_STATUS: 1 values, e.g. ['']
+   DECIMALS: 1 values, e.g. ['0']
+
+## LU1,DSD_CENSUS_GROUP1_3@DF_B1607,1.0/all: HTTP 200, 9661 lines
+   | DATAFLOW,UNIT_MEASURE,MEASURE,FREQ,SEX,AGE,LMS,HST,FST,HAR,LOC_SIZE,WSTATUS,EDU,SIE,LPW,C_BIRTH,YAE,YAT,ROY,GEO,ACTIVITY,CITIZEN,ISCO08,TIME_PERIOD,OBS_VALUE,UNIT_MULT,DECIMALS
+   | LU1:DSD_CENSUS_GROUP1_3@DF_B1607(1.0),PERS,POP,A10,F,Y55T59,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,LU0000807,_Z,_Z,_Z,2021,252,0,0
+   | LU1:DSD_CENSUS_GROUP1_3@DF_B1607(1.0),PERS,POP,A10,F,Y40T44,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,LU0000202,_Z,_Z,_Z,2021,1032,0,0
+   | LU1:DSD_CENSUS_GROUP1_3@DF_B1607(1.0),PERS,POP,A10,F,Y30T34,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,_Z,LU0000604,_Z,_Z,_Z,2021,82,0,0
+   DATAFLOW: 1 values, e.g. ['LU1:DSD_CENSUS_GROUP1_3@DF_B1607(1.0)']
+   UNIT_MEASURE: 1 values, e.g. ['PERS']
+   MEASURE: 1 values, e.g. ['POP']
+   FREQ: 1 values, e.g. ['A10']
+   SEX: 3 values, e.g. ['F', 'M', '_T']
+   AGE: 28 values, e.g. ['Y55T59', 'Y40T44', 'Y30T34', 'Y85T89', 'Y20T24', 'Y50T64', 'Y65T69', 'Y_GE85', 'Y60T64', 'Y_GE100', '_T', 'Y45T49']
+   LMS: 1 values, e.g. ['_Z']
+   HST: 1 values, e.g. ['_Z']
+   FST: 1 values, e.g. ['_Z']
+   HAR: 1 values, e.g. ['_Z']
+   LOC_SIZE: 1 values, e.g. ['_Z']
+   WSTATUS: 1 values, e.g. ['_Z']
+   EDU: 1 values, e.g. ['_Z']
+   SIE: 1 values, e.g. ['_Z']
+   LPW: 1 values, e.g. ['_Z']
+   C_BIRTH: 1 values, e.g. ['_Z']
+   YAE: 1 values, e.g. ['_Z']
+   YAT: 1 values, e.g. ['_Z']
+   ROY: 1 values, e.g. ['_Z']
+   GEO: 115 values, e.g. ['LU0000807', 'LU0000202', 'LU0000604', '_T', 'LU0001002', 'LU0001008', 'LU0001206', 'LU0000709', 'LU0000607', 'LU0001006', 'LU0001101', 'LU0000207']
+   ACTIVITY: 1 values, e.g. ['_Z']
+   CITIZEN: 1 values, e.g. ['_Z']
+   ISCO08: 1 values, e.g. ['_Z']
+   TIME_PERIOD: 1 values, e.g. ['2021']
+   OBS_VALUE: 2008 values
+   UNIT_MULT: 1 values, e.g. ['0']
+   DECIMALS: 1 values, e.g. ['0']
+
+## https://statistiques.public.lu/fr/publications/recensement.html
+   HTTP 200, 117,027 bytes, text/html; charset=utf-8
+   81 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{4,}<'
+   - href="/etc.clientlibs/statistiques/clientlibs/base.css" type="text/css"> <
+   - href="/etc.clientlibs/statistiques/clientlibs/base/resources/images/favicons/apple-touch-icon.png"/> <
+   - href="/etc.clientlibs/statistiques/clientlibs/base/resources/images/favicons/android-chrome-192x192.png"/> <
+   - href="/etc.clientlibs/statistiques/clientlibs/base/resources/images/favicons/android-chrome-512x512.png"/> <
+   - href="/etc.clientlibs/statistiques/clientlibs/base/resources/images/favicons/site.webmanifest"/> <
+   - href="#headernav" data-href="#headernav">Aller au menu principal <
+   - href="#headernav-mobile" data-href="#headernav-mobile">Aller au menu principal <
+   - href="#main" data-href="#main">Aller au contenu <
+   - href="//statistiques.public.lu/fr.html" title="Statistiques.lu : le portail des statistiques - Accueil"> <
+   - href="#icon-dropdown-button" x="0" y="0"/> <
+   - href="//statistiques.public.lu/en/publications/recensement.html" rel="alternate" lang="en" hreflang="en" title="en - English" data-langlabel="English"> <
+   - href="#icon-search-anchor" x="0" y="0"/> <
+   - href="#icon-search-button" x="0" y="0"/> <
+   - href="https://lustat.statec.lu/" rel=" noopener" title="Accéder à notre base de données LUSTAT - Nouvelle fenêtre" target="_blank"> <
+   - href="https://lustat.statec.lu/?fs%5b0%5d=Th%C3%A8mes%2C1%7CStatistiques%20par%20niveau%20g%C3%A9ographique%23F%23%7CCommunes%23F2%23&pg=0&fc=Th%C3%A8mes" rel=" noopener" title="Communes - Nouvelle fenêtre" target="_blank"> <
+   - href="https://lustat.statec.lu/?fs%5b0%5d=Th%C3%A8mes%2C1%7C%C3%89conomie%20totale%20et%20prix%23E%23%7CPrix%23E5%23&pg=0&fc=Th%C3%A8mes" rel=" noopener" title="Indice des prix - Nouvelle fenêtre" target="_blank"> <
+   - href="https://statistiques.public.lu/fr/publications.html?r=f%2Faem_publication_type%2Ftags_type_publication%3Astatistiques%5Cconjoncture-flash" rel=" noopener" title="Inflation - Nouvelle fenêtre" target="_blank"> <
+   - href="//statistiques.public.lu/fr/donnees.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/nos-donnees.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/lustat.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/liste-tableaux-par-theme.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/themes.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/indicateurs-court-terme.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/sdds-plus-ecofin.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/methodologie.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/eco-cest-quoi.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/donnees/calendrier-diffusion.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/actualites.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/publications.html" lang="fr" hreflang="fr" aria-current="true"> <
+   - href="//statistiques.public.lu/fr/publications/publications.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/publications/recensement.html" lang="fr" hreflang="fr" aria-current="page"> <
+   - href="//statistiques.public.lu/fr/enquetes.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/enquetes.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/enquetes-entreprises.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/enquetes-particuliers.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/faq.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/campagne-participation-enquetes.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/enquetes/notification-enquete.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/statistique-publique.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/statistique-publique/statec.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/statistique-publique/statistique-publique.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/statistique-publique/statec/travailler-au-statec.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/statistique-publique/statec/travailler-au-statec/postes-vacants.html" lang="fr" hreflang="fr"> <
+   - href="#icon-navigation-anchor" x="0" y="0"/> <
+   - href="/fr.html"> <
+   - href="#icon-home-breadcrumbs" x="0" y="0"/> <
+   - href="/fr/publications.html"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/histoire-et-apercu.html" title="Histoire et aperçu " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/evolution-de-la-population.html" title="Évolution de la population " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/repartition-territoriale.html" title="Répartition territoriale " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/repartition-par-km2.html" title="Répartition par km² " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/nationalites.html" title="Nationalités " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/arriere-plan-migratoire.html" title="L&#39;arrière-plan migratoire " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/structure-urbaine.html" title="Structure urbaine " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/diversite-linguistique.html" title="La diversité linguistique " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/repartition-geographique-des-immigres.html" title="Répartition géographique des immigrés " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/aires-de-trajets-domicile-travail-internes-au-luxembourg.html" title="Les aires de trajets domicile / travail internes au Luxembourg " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/residents-entre-etudes-emploi-et-retraite.html" title="Les résidents entre études, emploi et retraite " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/residents-actifs.html" title="Les résidents actifs " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/panorama-du-logement-des-residents.html" title="Panorama du logement des résidents " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/etre-senior-au-luxembourg.html" title="Être senior au Luxembourg " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/niveaux-education-population-luxembourg.html" title="Niveaux d&#39;éducation de la population du Luxembourg " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/menages-et-types-de-familles.html" title="Ménages et types de familles " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/diversites-croissantes-de-la-jeunesse.html" title="Les diversités croissantes de la jeunesse " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/dependance-automobile-deplacements-domicile-travail.html" title="La dépendance automobile pour les déplacements domicile-travail " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/publications/recensement/recensement.html" title="Les communes en chiffres " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/actualites/2026/stn25-26-atlas-rp21.html" title="Atlas - Le Luxembourg en 150 cartes " class="cmp-grid__itemLink" aria-current="false"> <
+   - href="//statistiques.public.lu/fr/donnees/themes.html"> <
+   - href="https://www.granderegion.net/fr/institutions/observation-territoriale/reseau-des-offices-statistiques/" target="_blank" title="Découvrir le site de la Grande Région - Découvrir le site de la Grande Région - Nouvelle fenêtre" rel="noopener"> <
+   - href="//statistiques.public.lu/fr/support/newsletter.html">Inscrivez vous à notre newsletter<
+   - href="https://www.linkedin.com/company/statec" target="_blank" title="Linkedin - Linkedin - Nouvelle fenêtre" rel="noreferrer noopener"> <
+   - href="https://fr-fr.facebook.com/StatecLuxembourg/" target="_blank" title="Facebook - facebook - Nouvelle fenêtre" rel="noreferrer noopener"> <
+   - href="https://www.youtube.com/channel/UCdSodlLcmltVcDtrlsly-AQ" target="_blank" title="Youtube - youtube - Nouvelle fenêtre" rel="noreferrer noopener"> <
+   - href="https://www.instagram.com/statec_luxembourg/" target="_blank" title="Instagram - Instagram - Nouvelle fenêtre" rel="noreferrer noopener"> <
+   - href="//statistiques.public.lu/fr/support/contact.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/support/plan.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/support/rss.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/support/accessibilite.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/support/a-propos.html" lang="fr" hreflang="fr"> <
+   - href="//statistiques.public.lu/fr/support/notice.html" lang="fr" hreflang="fr"> <
+
+=== aut4
+
+## https://data.statistik.gv.at/data/OGD_f0743_VZ_HIS_GEM_1_HEADER.csv
+   HTTP 200, 188 bytes, 4 lines, text/csv;charset=UTF-8
+   | code;name;en_name;;;;;;;
+   | F-ISIS-1;Bevölkerung;Population;;;;;;;
+   | C-GRGEM17-0;Regionale Gliederung;Commune of residence <2411>;;;;;;;
+   | C-H88-0;Volkszählungsjahr;Census year <14>;;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_f0743_VZ_HIS_GEM_2_HEADER.csv
+   HTTP 200, 188 bytes, 4 lines, text/csv;charset=UTF-8
+   | code;name;en_name;;;;;;;
+   | F-ISIS-1;Bevölkerung;Population;;;;;;;
+   | C-H88-0;Volkszählungsjahr;Census year <14>;;;;;;;
+   | C-GRGEM17-0;Regionale Gliederung;Commune of residence <2411>;;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_f0743_VZ_HIS_GEM_3_HEADER.csv
+   HTTP 200, 189 bytes, 4 lines, text/csv;charset=UTF-8
+   | code;name;en_name;;;;;;;
+   | F-ISIS-1;Bevölkerung;Population;;;;;;;
+   | C-GRGEMAKT-0;Regionale Gliederung;Commune of residence <2411>;;;;;;;
+   | C-H88-0;Volkszählungsjahr;Census year <14>;;;;;;;
+
+## https://data.statistik.gv.at/data/OGD_f0743_VZ_HIS_GEM_4_HEADER.csv
+   HTTP 200, 189 bytes, 4 lines, text/csv;charset=UTF-8
+   | code;name;en_name;;;;;;;
+   | F-ISIS-1;Bevölkerung;Population;;;;;;;
+   | C-H88-0;Volkszählungsjahr;Census year <14>;;;;;;;
+   | C-GRGEMAKT-0;Regionale Gliederung;Commune of residence <2411>;;;;;;;
+
+## https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_f0743_VZ_HIS_GEM_1
+   HTTP 200, 15,953 bytes, text/html;charset=UTF-8
+   5 distinct matches of 'OGD_[A-Za-z0-9_\\-]+\\.csv|<title>[^<]*|Religion[^<]{0,80}|Umgangssprache[^<]{0,80}'
+   - <title>Statistik Austria Open.data
+   - OGD_f0743_VZ_HIS_GEM_1.csv
+   - OGD_f0743_VZ_HIS_GEM_1_HEADER.csv
+   - OGD_f0743_VZ_HIS_GEM_1_C-GRGEM17-0.csv
+   - OGD_f0743_VZ_HIS_GEM_1_C-H88-0.csv
+
+=== deu4
+
+## GENESIS find 'Sprache': HTTP 200, 6,213 bytes
+   status: {'Code': 0, 'Content': 'erfolgreich', 'Type': 'Information'}
+   - 12211-0009 | Erwerbstätige aus Hauptwohnsitzhaushalten: Deutschland,
+Jahre, Geschlecht, Stellung im Beruf, Berufe | 
+   - 12211-1009 | Erwerbstätige aus Hauptwohnsitzhaushalten: Bundesländer,
+Jahre, Geschlecht, Stellung im Beruf, Berufe | 
+   - 21111-0006 | Schüler mit Fremdsprachen-Unterricht: Deutschland,
+Schuljahr, Fremdsprachen, Schulart, Jahrgangsstufen | 
+   - 21111-0007 | Schüler mit sonderpädagogischer Förderung: Deutschland,
+Schuljahr, Schulart, Förderschwerpunkte | 
+   - 21111-0008 | Schüler mit sonderpädagogischer Förderung: Deutschland, Schuljahr, Geschlecht, Schulart, Förderschwerpunkte | 
+   - 21111-0015 | Schüler mit Fremdsprachen-Unterricht: Bundesländer,
+Schuljahr, Fremdsprachen, Schulart, Jahrgangsstufen | 
+   - 21111-0016 | Schüler mit sonderpädagogischer Förderung: Bundesländer,
+Schuljahr, Schulart, Förderschwerpunkte | 
+   - 21111-0017 | Schüler mit sonderpädagogischer Förderung: Bundesländer, Schuljahr, Geschlecht, Schulart, Förderschwerpunkte | 
+   - 21121-0004 | Schüler mit Fremdsprachen-Unterricht: Deutschland,
+Schuljahr, Schulart, Fremdsprachen | 
+   - 21121-0013 | Schüler mit Fremdsprachen-Unterricht: Bundesländer,
+Schuljahr, Schulart, Fremdsprachen | 
+   - 21311-0003 | Studierende: Deutschland, Semester, Nationalität,
+Geschlecht, Studienfach | 
+   - 21311-0006 | Studierende: Bundesländer, Semester, Nationalität,
+Geschlecht, Studienfach | 
+   - 21311-0012 | Studienanfänger: Deutschland, Semester, Nationalität,
+Geschlecht, Studienfach | 
+   - 21311-0015 | Studienanfänger: Bundesländer, Semester, Nationalität,
+Geschlecht, Studienfach | 
+   - 21321-0003 | Prüfungen an Hochschulen: Deutschland, Jahre, Nationalität,
+Geschlecht, Prüfungsergebnis, Studienfach | 
+   - 21321-0006 | Prüfungen an Hochschulen: Bundesländer, Jahre, Nationalität,
+Geschlecht, Prüfungsergebnis, Studienfach | 
+   - 21611-0210 | Buchtitelproduktion: Deutschland, Jahre, Sachgruppen | 
+   - 22541-0018 | Kinder in Tageseinrichtungen: Deutschland, Stichtag,
+Herkunft der Eltern, In der Familie vorrangig gesprochene
+Sprache | 
+   - 22541-0114 | Kinder in Tageseinrichtungen: Bundesländer, Stichtag, In der
+Familie vorrangig gesprochene Sprache | 
+   - 22543-0004 | Kinder in öffentlich geförderter Kindertagespflege:
+Deutschland, Stichtag, Geschlecht, In der Familie vorrangig
+gesprochene Sprache | 
+   - 22543-0022 | Kinder in öffentlich geförderter Kindertagespflege:
+Bundesländer, Stichtag, In der Familie vorrangig
+gesprochene Sprache | 
+   - 23141-0101 | Operationen und Prozeduren an vollstationären Patienten:
+Deutschland, Jahre, Operationen und Prozeduren (1-4-Steller
+Hierarchie) | 
+   - 23141-0102 | Operationen und Prozeduren an vollstationären Patienten:
+Deutschland, Jahre, Geschlecht, Altersgruppen, Operationen
+und Prozeduren (1-4-Steller Hierarchie) | 
+   - 23141-0103 | Operationen und Prozeduren an vollstationären Patienten:
+Deutschland, Jahre, Geschlecht, Altersgruppen, Wohnort des
+Patienten, Operationen und Prozeduren (1-4-Steller Hie | 
+   - 23141-0110 | Operationen und Prozeduren an vollstationären Patienten:
+Bundesländer, Jahre, Operationen und Prozeduren
+(1-4-Steller Hierarchie) | 
+   - 23141-0111 | Operationen und Prozeduren an vollstationären Patienten:
+Bundesländer, Jahre, Geschlecht, Altersgruppen, Operationen
+und Prozeduren (1-4-Steller Hierarchie) | 
+   - 52911-0001 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre (bis 2024) | 
+   - 52911-0002 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre (bis
+2024), Wirtschaftszweige | 
+   - 52911-0003 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre (bis
+2024), Beschäftigtengrößenklassen | 
+   - 52911-0004 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre (bis
+2024), Wirtschaftszweige, Beschäftigtengrößenklassen | 
+   - 52911-0005 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre | 
+   - 52911-0006 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre,
+Wirtschaftszweige | 
+   - 52911-0007 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre,
+Beschäftigtengrößenklassen | 
+   - 52911-0008 | IKT-Indikatoren für Unternehmen: Deutschland, Jahre,
+Wirtschaftszweige, Beschäftigtengrößenklassen | 
+   - 62361-0030 | Bruttostundenverdienste, Bruttomonatsverdienste: Deutschland, Stichmonat, Geschlecht, Berufe | 
+   - 62361-0034 | Bruttojahresverdienste: Deutschland, Jahre, Geschlecht, Berufe | 
+
+## GENESIS find 'Religion': HTTP 200, 2,802 bytes
+   status: {'Code': 0, 'Content': 'erfolgreich', 'Type': 'Information'}
+   - 21611-0010 | Sendezeit (Fernsehen): Deutschland, Jahre, ARD und
+Landesrundfunkanstalten, Ressorts | 
+   - 21611-0210 | Buchtitelproduktion: Deutschland, Jahre, Sachgruppen | 
+   - 62361-0030 | Bruttostundenverdienste, Bruttomonatsverdienste: Deutschland, Stichmonat, Geschlecht, Berufe | 
+   - 62361-0034 | Bruttojahresverdienste: Deutschland, Jahre, Geschlecht, Berufe | 
+   - 81000-0405 | VGR des Bundes - Geleistete Subventionen des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0406 | VGR des Bundes - Monetäre Sozialleistungen des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0407 | VGR des Bundes - Sonstige laufende Transfers des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0408 | VGR des Bundes - Vermögenstransfers des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0409 | VGR des Bundes - Arbeitnehmerentgelt des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0410 | VGR des Bundes - Bruttoinvestitionen des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0411 | VGR des Bundes - Ausgaben des Staates: Deutschland, Jahre,
+Staatliche Teilsektoren, Aufgabenbereiche | 
+   - 81000-0412 | VGR des Bundes - Konsumausgaben des Staates:
+Deutschland, Jahre, Staatliche Teilsektoren,
+Aufgabenbereiche | 
+   - 81000-0413 | VGR des Bundes - Ausgaben des Staates:
+Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG) | 
+   - 81000-0414 | VGR des Bundes - Konsumausgaben des Staates:
+Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG) | 
+   - 81000-0415 | VGR des Bundes - Bruttoinvestitionen des Staates:
+Deutschland, Jahre, Aufgabenbereiche des Staates (COFOG) | 
+
+=== che4
+   - px-x-0102020300_101: Kohortensterbetafeln 2023 für die Schweiz (1876-2030) nach Geburtsjahrgang, Geschlecht und Alter
+   - px-x-0102020300_102: Periodensterbetafeln 2023 für die Schweiz (1876-2150) nach Jahr, Geschlecht und Alter
+   - px-x-0103010000_120: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_322: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_323: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_121: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_422: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_123: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_122: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_420: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_423: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_421: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_320: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_321: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_398: Ständige und nichtständige Wohnbevölkerung nach Kanton, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Altersklasse, 2010-2019 nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlech
+   - px-x-0104020000_107: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055 - Bevölkerungswachstum und Bevölkerungsindikatoren nach Kanton, Szenario-Variante
+   - px-x-0104000000_101: Szenarien zur Bevölkerungsentwicklung der Schweiz 2025-2055 - Bevölkerung und Bewegungen nach Szenario-Variante, Staatsangehörigkeit (Kategorie), Geschlecht und Altersklasse
+   - px-x-0104020000_102: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, 'hohes' Szenario BR-00-2025 - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104000000_104: Szenarien zur Bevölkerungsentwicklung der Schweiz 2025-2055 - Bevölkerungswachstum und Bevölkerungsindikatoren nach Szenario-Variante
+   - px-x-0104020000_101: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, Referenzszenario AR-00-2025 - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104020000_105: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, Variante AR-06-2025 'tiefes Wanderungssaldo' - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104020000_106: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055 - zukünftige Bevölkerungsentwicklung nach Kanton, Szenario-Variante, Staatsangehörigkeit (Kategorie), Geschlecht und Altersklasse
+   - px-x-0104020000_109: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055 - Ziffern nach Kanton, Szenario-Variante, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104000000_103: Szenarien zur Bevölkerungsentwicklung der Schweiz 2025-2055 - Ziffern und Indikatoren nach Szenario-Variante, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104020000_104: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, Variante AR-05-2025 'hohes Wanderungssaldo' - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104020000_103: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, 'tiefes' Szenario CR-00-2025 - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104000000_102: Szenarien zur Bevölkerungsentwicklung der Schweiz 2025-2055 - Bevölkerung und Bewegungen nach Szenario-Variante, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0104020000_108: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055 - demografische Indikatoren nach Kanton, Szenario-Variante und Staatsangehörigkeit (Kategorie)
+   - px-x-0104020000_110: Szenarien zur Bevölkerungsentwicklung der Kantone 2025-2055, Variante AR-07-2025 'konstanter Wanderungssaldo' - zukünftige Bevölkerungsentwicklung nach Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter nach Kanton, Sta
+   - px-x-0102020202_103: Heiraten nach Jahr, Altersklasse des Ehemannes, Staatsangehörigkeit (Auswahl) des Ehemannes, Zivilstand des Ehemannes, Altersklasse der Ehefrau, Staatsangehörigkeit (Auswahl) der Ehefrau und Zivilstand der Ehefrau
+   - px-x-0102020202_104: Heiraten nach Jahr, Altersklasse des Ehemannes, Staatsangehörigkeit (Auswahl) des Ehemannes, Zivilstand des Ehemannes, Altersklasse der Ehefrau, Staatsangehörigkeit (Auswahl) der Ehefrau und Zivilstand der Ehefrau
+   - px-x-0102020202_105: Heiraten nach Jahr, Altersklasse des Ehemannes, Staatsangehörigkeit (Auswahl) des Ehemannes, Zivilstand des Ehemannes, Altersklasse der Ehefrau, Staatsangehörigkeit (Auswahl) der Ehefrau und Zivilstand der Ehefrau
+   - px-x-0103010000_324: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_424: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_124: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_110: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_111: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_112: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_113: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_114: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_115: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_116: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_117: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_118: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_119: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0103010000_311: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_312: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_313: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_314: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_315: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_316: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_317: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_318: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_319: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_411: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_412: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_414: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_415: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_416: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_417: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_418: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_419: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103030000_211: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_212: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_213: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_214: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_215: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_216: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_218: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_217: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103030000_219: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103010000_310: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
+   - px-x-0103010000_410: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0103010000_413: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat, Geschlecht und Zivilstand
+   - px-x-0102020000_202: Provisorische Bilanz der ständigen Wohnbevölkerung 2025 nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht, Alter und Demographische Komponente
+   - px-x-0103030000_222: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0102020000_104: Demografische Bilanz nach Alter und Kanton
+   - px-x-0102020000_101: Demografische Bilanz nach Kanton
+   - px-x-0103030000_223: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103010200_101: Binnenzuwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht, Zivilstand und Alter
+   - px-x-0103020200_101: Einwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0102030000_101: Ständige Wohnbevölkerung nach Geschlecht und Alter, 1860-2025
+   - px-x-0103030000_220: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103010000_325: Ständige und nichtständige Wohnbevölkerung nach Jahr, Bevölkerungstyp, Kanton, Staatsangehörigkeit (Auswahl), Geschlecht, Alter und Geburtsstaat
+   - px-x-0103020200_104: Einwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Herkunftsstaat, Geschlecht und Altersklasse
+   - px-x-0103010000_125: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
+   - px-x-0102010000_100: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geburtsort, Geschlecht und Zivilstand
+   - px-x-0103010000_151: Demografische Bilanz nach Staatsangehörigkeit
+   - px-x-0103020300_103: Auswanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geburtsstaat, Geschlecht und Altersklasse
+   - px-x-0103030000_224: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0102010000_101: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0103030000_299: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103020200_102: Einwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit, Geschlecht und Altersklasse
+   - px-x-0103010200_151: Binnenwanderung der ständigen Wohnbevölkerung nach Jahr, Zuzugskanton, Wegzugskanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0102020000_201: Demografische Bilanz nach institutionellen Gliederungen
+   - px-x-0103010000_102: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Geburtsort, Geschlecht und Alter
+   - px-x-0102020000_103: Demografische Bilanz nach Alter
+   - px-x-0103010000_425: Ständige und nichtständige Wohnbevölkerung nach Jahr, Bevölkerungstyp, Kanton, Geschlecht, Zivilstand, Staatsangehörigkeit und Geburtsstaat
+   - px-x-0103030000_102: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Geschlecht und Alter
+   - px-x-0103020300_101: Auswanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
+   - px-x-0103030000_225: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Bevölkerungstyp, Altersklasse und Geschlecht
+   - px-x-0103010000_399: Ständige und nichtständige Wohnbevölkerung nach Kanton, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Altersklasse, 2020-2025
+   - px-x-0102010000_102: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Geschlecht, Zivilstand und Alter
+   - px-x-0103020300_104: Auswanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Zielstaat, Geschlecht und Altersklasse
+   - px-x-0103030100_101: Erwerb des Schweizer Bürgerrechts nach Jahr, Kanton, Art des Erwerbs, Geschlecht, Alter und Staatsangehörigkeit ehemalig
+   - px-x-0103010000_101: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Geschlecht, Altersklasse und Staatsangehörigkeit
+   - px-x-0103030000_103: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Geschlecht und Alter
+   - px-x-0103010200_111: Binnenabwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht, Zivilstand und Alter
+   - px-x-0102010000_104: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geburtsort und Staatsangehörigkeit
+   - px-x-0103010000_201: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Staatsangehörigkeit (Kategorie), Geburtsort, Geschlecht und Altersklasse
+   - px-x-0102020000_105: Demografische Bilanz nach Zivilstand
+   - px-x-0103030100_102: Erwerb des Schweizer Bürgerrechts nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Staatsangehörigkeit ehemalig (Auswahl) und Geschlecht
+   - px-x-0102010000_103: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geschlecht, Zivilstand und Altersklasse
+   - px-x-0103010200_121: Wanderung der ständigen Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Staatsangehörigkeit (Auswahl), Geschlecht und Migrationstyp
+   - px-x-0103020200_103: Einwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geburtsstaat, Geschlecht und Altersklasse
+   - px-x-0103030000_221: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0103020300_102: Auswanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit, Geschlecht und Altersklasse
+   - px-x-0103010000_202: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Staatsangehörigkeit (Kategorie), Geburtsort, Geschlecht und Altersklasse
+   - px-x-0103010000_499: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit, Geburtsstaat und Geschlecht
+   - px-x-0103030000_298: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
+   - px-x-0102020202_110: Heiraten und Heiratshäufigkeit seit 1801
+   - px-x-0102020204_111: Lebendgeburten nach Monat und Geburtenhäufigkeit seit 1803
+   - px-x-0102020203_110: Scheidungen und Scheidungshäufigkeit seit 1876
+   - px-x-0102020206_111: Todesfälle nach Monat und Sterblichkeit seit 1803
+
+## https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/religionen.html
+   HTTP 200, 3,485,743 bytes, text/html;charset=utf-8
+   0 distinct matches of 'href=\\"[^\\"]*asset[^\\"]*\\"[^>]*>[^<]*<|href=\\"[^\\"]*dam-api[^\\"]*\\"'
