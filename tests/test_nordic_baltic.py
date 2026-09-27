@@ -126,6 +126,22 @@ class Norway(unittest.TestCase):
                                  "KOSpersoneralle0000": 100}, 2017, "X")
         self.assertEqual(sum(g["count"] for g in faith["religion"]), 100)
 
+    def test_a_fylke_splits_the_other_communities_only_when_the_tables_agree(self):
+        counts = {"KOSmedlemmerdnk0000": 60, "KOSmedltroslivs0000": 10,
+                  "KOSpersoneralle0000": 100}
+        kinds = {"999": 10, "400": 4, "600": 5, "900": 1}
+        faith = norway.religion_by_kind(counts, kinds, 2020, "X")
+        got = {g["group"]: g["count"] for g in faith["religion"]}
+        self.assertEqual(got[norway.NONE], 30)
+        self.assertEqual(got["Islam"], 4)
+        self.assertNotIn(norway.OTHER, got)
+        self.assertEqual(sum(got.values()), 100)
+        with self.assertRaises(SystemExit):
+            norway.religion_by_kind(counts, {**kinds, "999": 12}, 2020, "X")
+
+    def test_the_religions_outside_the_church_are_placed(self):
+        self.assertEqual(nc.unplaced("religion", norway.KINDS.values()), [])
+
 
 class Finland(unittest.TestCase):
     def test_every_drawn_sub_region_has_a_name_in_the_classification(self):
@@ -234,6 +250,31 @@ class Lithuania(unittest.TestCase):
         self.assertIsNone(lithuania.cell("●"))
         self.assertIsNone(lithuania.cell(""))
         self.assertEqual(lithuania.cell(0.0), 0.0)
+
+    def test_a_2011_county_is_read_with_its_parts_and_a_city_is_its_own_part(self):
+        values = ["LV", "LV006", "LV0010000", "LV0320200", "LV0320201", "LV0320244"]
+        texts = ["Latvija", "Rīgas reģions", "Rīga", "Aizkraukles novads", "..Aizkraukle",
+                 "..Aizkraukles pagasts"]
+        self.assertEqual(latvia.census_units(values, texts),
+                         {"LV0010000": ["Rīga"],
+                          "LV0320200": ["Aizkraukle", "Aizkraukles pagasts"]})
+
+    def test_a_2011_county_goes_where_its_decisive_parts_are(self):
+        new = {"a": ("Aizkraukle", "M1"), "b": ("Aizkraukles pagasts", "M1"),
+               "c": ("Pilskalnes pagasts", "M1"), "d": ("Pilskalnes pagasts", "M2"),
+               "e": ("Carnikavas pagasts", "M3"), "f": ("Rīga", "M4")}
+        placed, single = latvia.place_census_units(
+            {"old1": ["Aizkraukle", "Pilskalnes pagasts"], "old2": ["Carnikavas pagasts"],
+             "old3": ["Rīga"]}, new)
+        self.assertEqual(placed, {"old1": "M1", "old2": "M3", "old3": "M4"})
+        self.assertEqual(single, {"old2": "e", "old3": "f"})
+        # The nine cities of 2011 are today's seven state cities and three towns.
+        self.assertEqual(set(latvia.OLD_CITIES.values()),
+                         set(latvia.STATE_CITIES) | set(latvia.CITY_TOWNS) - {"LV0040010"})
+        with self.assertRaises(SystemExit):     # parts in two municipalities
+            latvia.place_census_units({"old": ["Aizkraukle", "Carnikavas pagasts"]}, new)
+        with self.assertRaises(SystemExit):     # only a shared name: nothing decides
+            latvia.place_census_units({"old": ["Pilskalnes pagasts"]}, new)
 
     def test_census_labels_are_placed(self):
         self.assertEqual(nc.unplaced("religion", lithuania.RELIGION_2011.values()), [])

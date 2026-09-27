@@ -30,9 +30,16 @@ after the map's boundaries were drawn -- CSB gave each a new code when it did
 without the town: the town and the parish are added together for it, and only
 while the town has no polygon of its own.
 
-Religion is not asked by Latvia's census (existing policy). Language was last
-asked in the 2011 census, which CSB tabulates by the municipalities of 2009-
-2021, not by the units drawn here; see the report.
+**Language** was last asked in the 2011 census (the 2021 census was compiled
+from registers, and none records language). CSB tabulates it (TSG11-07) by the
+110 counties and 9 cities of 2009-2021, and lists the towns and parishes each
+was made of (TSG11-01). A county is placed in the drawn municipality that
+holds its towns and parishes, found by name, and a municipality is the sum of
+the counties placed in it; a drawn town or parish that was a county on its
+own (several small counties were one parish) or a city takes that county's or city's own figure.
+Nothing is shared out to the parts of a county.
+
+Religion is not asked by Latvia's census (existing policy).
 
 Checks: single years and age groups make each unit's total, males and
 females make it, the municipalities make the country, and each municipality's
@@ -110,6 +117,166 @@ def query(table: str, pins: dict[str, Any]) -> list[tuple[dict[str, tuple[str, s
         {"code": k, "selection": ({"filter": "all", "values": ["*"]} if v == "*"
                                    else {"filter": "item", "values": list(v)})}
         for k, v in pins.items()], "response": {"format": "json-stat2"}}, pause=0.5))
+
+
+# The 2011 census, the last to ask the language mostly spoken at home, by the
+# 110 counties (novadi) and 9 cities of 2009-2021 (TSG11-07), and the towns
+# and parishes each of those was made of (TSG11-01).
+CENSUS = "https://data.stat.gov.lv/api/v1/{lang}/OSP_OD/tautassk/{path}"
+CENSUS_LANG = "taut/tsk2011/TSG11-07.px"
+CENSUS_UNITS = "demogr/tsk2011/TSG11-01.px"
+CENSUS_PAGE = ("https://data.stat.gov.lv/pxweb/en/OSP_OD/OSP_OD__tautassk__taut__tsk2011/"
+               "TSG11-07.px/")
+# The nine cities of 2009-2021 (TSG11-01's codes) -> the drawn unit each is
+# today: seven state cities, and Jēkabpils and Valmiera, towns inside their
+# novadi since 2021. Ogre was a town of Ogre county in 2011.
+OLD_CITIES = {"LV0010000": "LV0001000", "LV0050000": "LV0002000", "LV0090000": "LV0003000",
+              "LV0110000": "LV0031010", "LV0130000": "LV0004000", "LV0170000": "LV0005000",
+              "LV0210000": "LV0006000", "LV0250000": "LV0054010", "LV0270000": "LV0007000"}
+TERRITORY = "Teritoriālā vienība"
+HOME_LANGUAGE = "Mājās pārsvarā lietotā valoda"
+LANGUAGES = {"LAV": "Latvian", "RUS": "Russian", "BEL": "Belarusian", "UKR": "Ukrainian",
+             "POL": "Polish", "LIT": "Lithuanian", "OTH": "Other language"}
+
+
+def census_units(values: list[str], texts: list[str]) -> dict[str, list[str]]:
+    """TSG11-01's territory list -> {county or city code: the names of its parts}.
+
+    The list runs region, then each county or city with its towns and parishes
+    beneath it, marked by leading dots. A city with nothing beneath it is its
+    own one part.
+    """
+    parts: dict[str, list[str]] = {}
+    current = None
+    for code, text in zip(values, texts):
+        if not re.fullmatch(r"LV\d{7}", code):
+            current = None
+            continue
+        if text.lstrip().startswith("."):
+            if current is None:
+                raise SystemExit(f"TSG11-01: {code} {text!r} stands under no county or city")
+            parts[current].append(text.strip().lstrip(".").strip())
+        else:
+            current = code
+            parts[code] = []
+    return {code: names or [dict(zip(values, texts))[code].strip()]
+            for code, names in parts.items()}
+
+
+def place_census_units(old: dict[str, list[str]], new: dict[str, tuple[str, str]],
+                       ) -> tuple[dict[str, str], dict[str, str]]:
+    """Each 2011 county or city -> the drawn municipality holding its parts, and
+    each 2011 unit made of one part -> the drawn town or parish that part is.
+
+    ``new`` is {drawn unit code: (its name, its municipality's shape id)}. A
+    part whose name is borne by units in more than one municipality (there are
+    two Pilskalne parishes) decides nothing; every part that does decide must
+    name the same municipality, and at least half of a unit's parts must be
+    found, or the run stops.
+    """
+    where: dict[str, set[str]] = defaultdict(set)
+    code_of: dict[tuple[str, str], str] = {}
+    for code, (name, admin1) in new.items():
+        where[fold(name)].add(admin1)
+        code_of[(fold(name), admin1)] = code
+    def key(name: str) -> str:
+        """The name folded, and without "pilsēta" (city) where only that differs."""
+        if where.get(fold(name)):
+            return fold(name)
+        return fold(re.sub(r"\s+(?:republikas\s+)?(?:pilsēta|city)$", "", name.strip()))
+
+    placed: dict[str, str] = {}
+    single: dict[str, str] = {}
+    for unit, names in old.items():
+        names = [key(n) for n in names]
+        found = [where[n] for n in names if where.get(n)]
+        decisive = {next(iter(s)) for s in found if len(s) == 1}
+        if len(decisive) != 1 or 2 * len(found) < len(names):
+            raise SystemExit(f"TSG11-01 {unit}: its parts {names} point to {sorted(decisive)} "
+                             f"({len(found)} of {len(names)} found)")
+        placed[unit] = decisive.pop()
+        if len(names) == 1 and (names[0], placed[unit]) in code_of:
+            single[unit] = code_of[(names[0], placed[unit])]
+    return placed, single
+
+
+def census_language(records: list[dict[str, Any]], bound: dict[str, str],
+                    rows: dict[str, tuple[str, str]], shapes: list[dict[str, Any]]) -> None:
+    """The 2011 census's home language, written in place on the municipalities
+    (summed from the 2009-2021 units that make each) and on each drawn town or
+    parish that was a 2009-2021 unit on its own."""
+    parent = {s["id"]: s.get("parent") for s in shapes}
+    new = {code: (rows[code][0], parent[sid]) for code, sid in bound.items()}
+    meta_units = request_json(CENSUS.format(lang="lv", path=CENSUS_UNITS), pause=0.5)
+    territory = next(v for v in meta_units["variables"] if v["code"] == TERRITORY)
+    old = census_units(territory["values"], territory["valueTexts"])
+    for city, code in OLD_CITIES.items():
+        if city not in old or code not in new:
+            raise SystemExit(f"TSG11-01: the city {city} or its drawn unit {code} is missing")
+        old[city] = [new[code][0]]         # the city by its code, not its genitive name
+    placed, single = place_census_units(old, new)
+    body = request_json(CENSUS.format(lang="en", path=CENSUS_LANG), {"query": [
+        {"code": TERRITORY, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": "Dzimums", "selection": {"filter": "item", "values": ["T"]}},
+        {"code": HOME_LANGUAGE, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": "Skaits, īpatsvars", "selection": {"filter": "item", "values": ["NUMB"]}},
+        {"code": "Vecums (pilni gadi)", "selection": {"filter": "item", "values": ["TOTAL"]}},
+    ], "response": {"format": "json-stat2"}}, pause=0.5)
+    cells: dict[str, dict[str, float]] = defaultdict(dict)
+    for key, value in unstack(body):
+        cells[key[TERRITORY][0]][key[HOME_LANGUAGE][0]] = value
+    missing = sorted(set(old) - set(cells))
+    if missing:
+        raise SystemExit(f"TSG11-07: no language for the 2011 units {missing}")
+    for unit in list(old) + ["LV"]:
+        parts = sum(cells[unit].get(c, 0) for c in LANGUAGES)
+        if abs(parts - cells[unit].get("TOTAL", -1)) > 0.5:
+            raise SystemExit(f"TSG11-07 {unit}: languages make {parts:,.0f} of "
+                             f"{cells[unit].get('TOTAL')}")
+    check_parts({u: cells[u]["TOTAL"] for u in old}, cells["LV"]["TOTAL"],
+                "TSG11-07 2011: counties and cities -> Latvia", 0)
+    summed: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    made_of: dict[str, list[str]] = defaultdict(list)
+    for unit, admin1 in placed.items():
+        made_of[admin1].append(unit)
+        for c, label in LANGUAGES.items():
+            summed[admin1][label] += cells[unit][c]
+    names = dict(zip(territory["values"], territory["valueTexts"]))
+    date = "1 March 2011"
+    what = (f"Language mostly spoken at home, as answered in the census of {date} (CSB, "
+            "TSG11-07) -- the last census to ask it: the 2021 census was compiled from "
+            "registers and published no language.")
+    source = {"field": "language", "name": f"{SOURCE}, 2011 census, TSG11-07",
+              "url": CENSUS_PAGE, "year": 2011}
+
+    def write(rec: dict[str, Any], counts: dict[str, float], note: str) -> None:
+        rec["language"] = shares(counts, total=sum(counts.values()))
+        rec["language_year"] = 2011
+        rec["language_note"] = f"{what} {note}".strip()
+        rec["sources"].append(source)
+
+    got = 0
+    for rec in records:
+        if rec["level"] == "admin1" and rec.get("shape_id") in summed:
+            units = made_of[rec["shape_id"]]
+            write(rec, summed[rec["shape_id"]],
+                  f"Summed from the {len(units)} units of 2009-2021 that make the municipality: "
+                  + ", ".join(sorted(names[u].strip() for u in units)) + "."
+                  if len(units) > 1 else "")
+            got += 1
+    drawn1 = {r["shape_id"] for r in records if r["level"] == "admin1"}
+    log(f"  TSG11-07: {len(old)} units of 2011 placed in {len(summed)} municipalities; "
+        f"language written for {got}; municipalities with none: "
+        f"{sorted(r['name'] for r in records if r['level'] == 'admin1' and r['shape_id'] not in summed)}")
+    if not drawn1 <= set(summed):
+        raise SystemExit("TSG11-07: a drawn municipality holds no 2011 unit")
+    by_code = {r["codes"]["atvk"]: r for r in records if r["level"] == "admin2"}
+    for unit, code in single.items():
+        write(by_code[code], {label: cells[unit][c] for c, label in LANGUAGES.items()},
+              f"In 2011 this was a unit of its own ({names[unit].strip()}), so the census's "
+              "figure is for exactly this territory.")
+    log(f"  TSG11-07: language written for {len(single)} towns and parishes that were a unit "
+        "of 2009-2021 on their own")
 
 
 def municipality_of(code: str) -> str:
@@ -334,6 +501,7 @@ def main() -> int:
             f"LVA-CSB-{code}", rows[code][0], level="admin2", parent="LVA", country="LVA",
             parent_name=rows[code][1], codes={"atvk": code}, match_by="shape_id",
             shape_id=sid, **fields))
+    census_language(records, bound, rows, shapes)
     labels = {g["group"] for r in records if isinstance(r.get("ethnicity"), list)
               for g in r["ethnicity"]}
     log(f"  ethnicity labels the group tree cannot place: {unplaced('ethnicity', labels)}")

@@ -21,8 +21,8 @@ So every figure here is for those units' own vintage:
   and sex ratio from the single years; population from the same count.
 * **admin1** -- 07459 for 2023 by the codes of the three 2020-2023 fylker
   (30, 38, 54), the last year they existed. The other eight fylker did not
-  change in 2024 and already carry Eurostat's 2025 figures, so they are not
-  written.
+  change in 2024 -- KLASS lists the same kommune numbers under each in 2023
+  and today, which is checked -- and take 07459's latest year.
 * **religion** -- SSB table 12026 (KOSTRA, "church users"), which gives for
   every kommune and fylke the members of the Church of Norway, the members of
   the faith and life-stance communities outside it, and the population. That
@@ -37,7 +37,11 @@ So every figure here is for those units' own vintage:
   still counts the communities outside the Church (it leaves them at 0 in its
   most recent years, which is a gap and not a count of none). A fylke is the sum of
   its kommuner that year: KOSTRA's own fylke rows leave the communities
-  outside the Church at 0.
+  outside the Church at 0. For a fylke, SSB table 08531 (closed series,
+  2010-2020) splits the communities outside the Church by religion --
+  Buddhism, Islam, Christian communities, other religions, life-stance
+  communities -- and its total must equal the kommuner's sum before it is
+  used.
 
 **Language** is recorded by no Norwegian register or census, and ethnicity is
 the existing policy (immigrant background only).
@@ -173,6 +177,58 @@ def religion(counts: dict[str, float], year: int, where: str) -> dict[str, Any] 
             "the rest belong to neither. A count of membership, not of belief. SSB publishes "
             "the communities outside the Church by religion only by fylke, so here they are "
             "one group."),
+    }
+
+
+# SSB 08531's religions and life stances outside the Church of Norway, by
+# fylke, 2010-2020 (a closed series). "Christianity" there is every Christian
+# community outside the Church -- Catholic above all, Pentecostal, Orthodox
+# and the free churches together -- so its label says so; "Philosophy" is the
+# life-stance communities, the Humanist Association above all.
+KINDS = {"200": "Buddhism", "400": "Islam",
+         "600": "Christian communities outside the Church of Norway",
+         "902": "Other religion", "900": "Humanist and other life-stance communities"}
+FAITHS_URL = "https://www.ssb.no/en/statbank/table/08531"
+
+
+def faith_by_fylke() -> dict[tuple[str, int], dict[str, float]]:
+    """(fylke, year) -> members outside the Church by religion or life stance."""
+    meta = {v["code"]: v for v in request_json(f"{SSB}/08531")["variables"]}
+    body = query("08531", {"Region": list(FYLKER), "ReligionLivs": ["999", *KINDS],
+                           "ContentsCode": ["Medlemmer"], "Tid": meta["Tid"]["values"]})
+    out: dict[tuple[str, int], dict[str, float]] = defaultdict(dict)
+    for key, value in unstack(body):
+        out[(key["Region"][0], int(key["Tid"][0]))][key["ReligionLivs"][0]] = value
+    for (f, year), kinds in out.items():
+        parts = sum(v for k, v in kinds.items() if k != "999")
+        if abs(parts - kinds.get("999", 0)) > 0.5:
+            raise SystemExit(f"08531 {f} {year}: religions make {parts:,.0f} of "
+                             f"{kinds.get('999', 0):,.0f}")
+    return {k: v for k, v in out.items() if v.get("999")}
+
+
+def religion_by_kind(counts: dict[str, float], kinds: dict[str, float], year: int,
+                     where: str) -> dict[str, Any]:
+    """A fylke's membership with the communities outside the Church by religion.
+
+    08531 counts the same register as KOSTRA's summed kommuner, and must agree
+    with it before one is split by the other."""
+    church = counts["KOSmedlemmerdnk0000"]
+    other = counts["KOSmedltroslivs0000"]
+    people = counts["KOSpersoneralle0000"]
+    if abs(kinds["999"] - other) > 0.5:
+        raise SystemExit(f"08531 {where} {year}: {kinds['999']:,.0f} members outside the "
+                         f"Church against KOSTRA's {other:,.0f}")
+    rows = {CHURCH: church, NONE: people - church - other}
+    rows.update({KINDS[k]: v for k, v in kinds.items() if k in KINDS})
+    return {
+        "religion": shares(rows, total=people),
+        "religion_note": (
+            f"Registered membership at the end of {year}: {int(church):,} members of the "
+            f"Church of Norway (SSB table 12026, KOSTRA, summed over the fylke's kommuner) and "
+            f"{int(other):,} members of faith and life-stance communities outside it, by "
+            f"religion (SSB table 08531), of a population of {int(people):,}; the rest belong "
+            "to neither. A count of membership, not of belief."),
     }
 
 
@@ -321,6 +377,25 @@ def main() -> int:
     kostra_meta = {v["code"]: v for v in request_json(f"{SSB}/12026")["variables"]}
     latest = int(kostra_meta["Tid"]["values"][-1])
     structure: dict[int, list[str]] = {}
+
+    def kommuner_in(year: int) -> list[str]:
+        if year not in structure:
+            structure[year] = [c["code"] for c in request_json(
+                KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]
+        return structure[year]
+
+    # The eight fylker the 2024 reform left alone are the same territory
+    # today: a fylke whose kommuner carry the same numbers now as in its last
+    # year with the three that were split takes today's count, the newest
+    # there is. The three dissolved in 2024 keep 2023's.
+    kept = [f for f in FYLKER if f not in SPLIT_FYLKER
+            and {c for c in kommuner_in(FYLKE_YEAR) if c[:2] == f}
+            == {c for c in kommuner_in(now) if c[:2] == f}]
+    changed = [f for f in FYLKER if f not in SPLIT_FYLKER and f not in kept]
+    if changed:
+        log(f"  fylker whose kommuner changed since {FYLKE_YEAR}, left to Eurostat: {changed}")
+    kept_people, _ = ages_by_region(kept, now)
+    faiths = faith_by_fylke()
     for f in FYLKER:
         forms = office_names(region_names.get(f, f))
         shape = next((admin1[fold(n)] for n in forms if fold(n) in admin1), None)
@@ -332,6 +407,12 @@ def main() -> int:
                 year=FYLKE_YEAR, source=f"{SOURCE}, table 07459", url=POP_URL,
                 date=f"1 January {FYLKE_YEAR}", extra_note=(
                     f" {forms[0]} existed from 2020 to 2023; this is its last count."))
+        elif f in kept:
+            fields = kept_people[f].fields(
+                year=now, source=f"{SOURCE}, table 07459", url=POP_URL,
+                date=f"1 January {now}", extra_note=(
+                    f" The fylke has kept its kommuner since {FYLKE_YEAR}, the last year of "
+                    "the division the map draws, so this is its latest count."))
         # KOSTRA's own fylke rows carry no figure for the communities outside
         # the Church (they read 0 -- Oslo's fylke row against 140,631 in Oslo
         # kommune), so a fylke is the sum of its kommuner in that year. The
@@ -341,10 +422,7 @@ def main() -> int:
         # A fylke of 2020-2023 is the same territory in each of those years.
         for year in (range(FYLKE_YEAR, 2019, -1) if f in SPLIT_FYLKER
                      else range(latest, 2019, -1)):
-            if year not in structure:
-                structure[year] = [c["code"] for c in request_json(
-                    KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]
-            parts = [c for c in structure[year] if c[:2] == f]
+            parts = [c for c in kommuner_in(year) if c[:2] == f]
             summed: dict[str, float] = defaultdict(float)
             for counts in membership(parts, year).values():
                 for key, value in counts.items():
@@ -356,11 +434,16 @@ def main() -> int:
             fields.update(faith)
             fields["sources"].append({"field": "religion", "name": f"{SOURCE}, table 12026",
                                       "url": CHURCH_URL, "year": year})
+            if (f, year) in faiths:
+                fields.update(religion_by_kind(summed, faiths[(f, year)], year, forms[0]))
+                fields["sources"].append({"field": "religion", "name": f"{SOURCE}, table 08531",
+                                          "url": FAITHS_URL, "year": year})
         records.append(record(
             f"NOR-SSB-F{f}", shape["name"], level="admin1", parent="NOR", country="NOR",
             codes={"ssb": f}, match_by="shape_id", shape_id=shape["id"],
             aliases=[n for n in forms if n != shape["name"]], **fields))
-    log(f"  labels the group tree cannot place: {unplaced('religion', [CHURCH, OTHER, NONE])}")
+    log("  labels the group tree cannot place: "
+        f"{unplaced('religion', [CHURCH, OTHER, NONE, *KINDS.values()])}")
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records")
     return 0
