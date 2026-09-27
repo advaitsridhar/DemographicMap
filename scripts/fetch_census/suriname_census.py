@@ -97,8 +97,9 @@ def present(counts: dict[str, float]) -> list[dict]:
     return shares({k: v for k, v in counts.items() if v})
 
 
-def near(made: int, printed: int, what: str) -> None:
-    if abs(made - printed) > SLACK:
+def near(made: int, printed: int, what: str, share: float = 0.0) -> None:
+    """Within SLACK people (or ``share`` of the figure, if larger), logged; else stop."""
+    if abs(made - printed) > max(SLACK, share * printed):
         raise SystemExit(f"suriname_census: {what} make {made:,}, printed {printed:,}")
     if made != printed:
         log(f"  {what} make {made:,}, printed {printed:,}")
@@ -307,7 +308,12 @@ def main() -> int:
         raise SystemExit(f"suriname_census: the ethnic and age tables differ: "
                          f"{sorted(set(ressorts) ^ set(ages))}")
     for d, k in ressorts:
-        near(ages[(d, k)]["total"], ethnic[d][k]["total"], f"{d} {k}'s ages against its ethnic groups")
+        # Volume I (September 2013) moved a few dozen people between some of
+        # Paramaribo's ressorts after the March 2013 ethnic table (Weg naar Zee
+        # 16,069 against 16,037); the districts agree to the person. Each
+        # ressort's population is Volume I's, its ethnic shares the table's.
+        near(ages[(d, k)]["total"], ethnic[d][k]["total"],
+             f"{d} {k}'s ages against its ethnic groups", share=0.01)
     old_by_key: dict[str, list[str]] = defaultdict(list)
     for column in old:
         old_by_key[key(column)].append(column)
