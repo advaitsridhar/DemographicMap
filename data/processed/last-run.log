@@ -1,3 +1,49 @@
-luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
-  79 communes, 35 cantons, Luxembourg 643,941
-luxembourg: expected 102 communes and 12 cantons; the labels are ['Beaufort', 'Bech', 'Beckerich', 'Berdorf', 'Bertrange', 'Bettembourg', 'Bettendorf', 'Betzdorf', 'Bissen', 'Biwer', 'Boulaide', 'Bourscheid', 'Bous', 'Canton Capellen', 'Canton Clervaux', 'Canton Diekirch', 'Canton Echternach', 'Canton Esch', 'Canton Grevenmacher', 'Canton Luxembourg', 'Canton Mersch', 'Canton Redange', 'Canton Remich', 'Canton Vianden', 'Canton Wiltz', 'Clervaux', 'Colmar-Berg', 'Consdorf', 'Contern', 'Dalheim', 'Diekirch', 'Differdange', 'Dippach', 'Dudelange', 'Echternach', 'Ell', 'Erpeldange-sur-Sûre', 'Esch-sur-Alzette', 'Esch-sur-Sûre', 'Ettelbruck', 'Feulen', 'Fischbach', 'Flaxweiler', 'Frisange', 'Garnich', 'Goesdorf', 'Grevenmacher', 'Grosbous', 'Habscht', 'Heffingen', 'Helperknapp', 'Hesperange', 'Junglinster', 'Kayl', 'Kehlen', 'Kiischpelt', 'Koerich', 'Kopstal', 'Käerjeng', 'Lac de la Haute-Sûre', 'Larochette', 'Lenningen', 'Leudelange', 'Lintgen', 'Lorentzweiler', 'Luxembourg', 'Mamer', 'Manternach', 'Mersch', 'Mertert', 'Mertzig', 'Mondercange', 'Mondorf-les-Bains', 'Niederanven', 'Nommern', 'Parc Hosingen', 'Preizerdaul', 'Putscheid', 'Pétange', 'Rambrouch', 'Reckange-sur-Mess', 'Redange-sur-Attert', 'Reisdorf', 'Remich', 'Roeser', 'Rosport - Mompach', 'Rumelange', 'Saeul', 'Sandweiler', 'Sanem', 'Schengen', 'Schieren', 'Schifflange', 'Schuttrange', 'Stadtbredimus', 'Steinfort', 'Steinsel', 'Strassen', 'Tandel', 'Total', 'Troisvierges', 'Useldange', "Vallée de l'Ernz", 'Vianden', 'Vichten', 'Wahl', 'Waldbillig', 'Waldbredimus', 'Walferdange', 'Weiler-la-Tour', 'Weiswampach', 'Wiltz', 'Wincrange', 'Winseler', 'Wormeldange']
+
+=== deu6
+
+## helloworld/logincheck: HTTP 400: <html>
+<head>
+<base href="/error_path/">
+<title>400 Bad Request</title>
+</head>
+<body>
+<h1>Bad Request</h1>
+<p>The server detected a syntax error in your request.<br>
+Check your request and all parameters.</p>
+
+<p>Your request ID was: arkatNHa1c8l_cyD5I7csgAAAxE</p>
+
+
+                                                                                                    
+                              
+
+## catalogue/tables?selection=1000A-1018&language=de: HTTP 400: <html>
+<head>
+<base href="/error_path/">
+<title>400 Bad Request</title>
+</head>
+<body>
+<h1>Bad Request</h1>
+<p>The server detected a syntax error in your request.<br>
+Check your request and all parameters.</p>
+
+<p>Your request ID was: arkatVU5Nm7yghuCEshNuwAABGk</p>
+
+
+                                                                                                    
+                              
+
+## tablefile as written: HTTP 400, 791 bytes, text/html
+   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkatcv_W2Bf2410fOQSsQAACIQ</p>                                  
+
+## tablefile no key: HTTP 400, 791 bytes, text/html
+   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkats9WwjYeFk6n1suR2wAAAgw</p>                                  
+
+## tablefile Land cut: HTTP 400, 791 bytes, text/html
+   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkat0-kxOF53lDzNvwLBAAABXo</p>                                  
+
+## tablefile default: HTTP 400, 791 bytes, text/html
+   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkat5ZToeCeVQVamVc0cQAAAFo</p>                                  
+
+## tablefile Kreise: HTTP 400, 791 bytes, text/html
+   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkauCJwpXHJCk5Q5veUWwAAAkQ</p>                                  
