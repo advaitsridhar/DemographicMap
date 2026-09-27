@@ -275,6 +275,37 @@ def links(url: str, grep: str, limit: int = 80) -> None:
                 break
 
 
+def sdmx_codes(path: str, grep: str | None = None, limit: int = 120) -> None:
+    """The codelists an OSP structure refers to: id and names of each code."""
+    raw = fetch(f"{OSP}/{path}", accept="application/xml")
+    root = ET.fromstring(raw)
+    lists = [el for el in root.iter() if el.tag.endswith("}Codelist")]
+    print(f"  {len(raw):,} bytes, {len(lists)} codelists")
+    for cl in lists:
+        codes = [el for el in cl if el.tag.endswith("}Code")]
+        print(f"    codelist {cl.get('id')}: {len(codes)} codes")
+        shown = 0
+        for code in codes:
+            names = {n.get("{http://www.w3.org/XML/1998/namespace}lang"): n.text
+                     for n in code if n.tag.endswith("}Name")}
+            line = f"{code.get('id')} = {names.get('en')} | {names.get('lt')}"
+            if not grep or re.search(grep, line, re.I):
+                print(f"      {line}")
+                shown += 1
+                if shown >= limit:
+                    break
+
+
+def cdx(query: str, limit: int = 60) -> None:
+    """What the Wayback Machine holds under a URL prefix."""
+    url = ("https://web.archive.org/cdx/search/cdx?" + query
+           + f"&output=json&limit={limit}&collapse=urlkey")
+    rows = get_json(url)
+    print(f"  {max(len(rows) - 1, 0)} captures")
+    for row in rows[1:]:
+        print(f"    {row[1]} {row[2]} {row[3] if len(row) > 3 else ''} {row[4] if len(row) > 4 else ''}")
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -331,6 +362,22 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 6
+    "r6_ltu_codes": lambda: sdmx_codes("dataflow/LSD/S3R167_M3010203/latest?references=all",
+                                       grep=r"savivald|apskr|^\d\d |LT0|^00 "),
+    "r6_ltu_629more": lambda: sdmx_obs("S3R629_M3010217", "?startPeriod=2025&endPeriod=2026", limit=20),
+    "r6_ltu_cdx1": lambda: cdx("url=osp.stat.gov.lt/documents/10180/*&filter=original:.*(?:surasym|tautyb|Surasym).*"),
+    "r6_ltu_cdx2": lambda: cdx("url=osp.stat.gov.lt/gyventoju-ir-bustu-surasymai*"),
+    "r6_ltu_datagov": lambda: text("https://data.gov.lt/datasets?q=sura%C5%A1ymas",
+                                   grep=r"[^\"<>]{0,80}ura[sš]ym[^\"<>]{0,80}"),
+    "r6_ltu_getdata": lambda: text("https://get.data.gov.lt/datasets/gov/lsd/:ns", chars=2000),
+    "r6_fin_avain": lambda: px_list("https://pxdata.stat.fi/PxWeb/api/v1/en/Kuntien_avainluvut"),
+    "r6_fin_avain_q": lambda: px_search("https://pxdata.stat.fi/PxWeb/api/v1/en/Kuntien_avainluvut?query=church"),
+    "r6_isl_trufelog": lambda: isl(px_list, f"{HAGSTOFA}/Samfelag/menning/5_trufelog"),
+    "r6_est_usk2021": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/usk"),
+    "r6_lva_od": lambda: px_list("https://data.stat.gov.lv/api/v1/en/OSP_OD"),
+    "r6_lva_od_q": lambda: px_search("https://data.stat.gov.lv/api/v1/en/OSP_OD?query=language"),
     # Round 5
     "r5_ltu_203": lambda: sdmx_obs("S3R167_M3010203", "?startPeriod=2026&endPeriod=2026"),
     "r5_ltu_629": lambda: sdmx_obs("S3R629_M3010217", "?startPeriod=2026&endPeriod=2026"),
