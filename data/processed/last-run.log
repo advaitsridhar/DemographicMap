@@ -1,30 +1,10 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
-  80 municipalities
-  country: 1,836,713 residents, median age 41.1 from single years
-  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
-  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
-  the merged Kichevo: 77 settlements
-  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px (HTTP Error 429: )
-  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
-    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
-    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
-    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
-    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
-    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
-  old Kichevo: 24,768 people, median 41.5
-  old Drugovo: 2,748 people, median 46.6
-  old Oslomej: 4,819 people, median 41.7
-  old Vraneshtica: 1,003 people, median 50.2
-  old Zajas: 6,331 people, median 38.8
-  region East: 150,234
-  region Northeast: 152,982
-  region Pelagonia: 210,431
-  region Polog: 251,552
-  region Skopje: 607,007
-  region Southeast: 148,387
-  region Southwest: 177,398
-  region Vardar: 138,722
-  wrote data/processed/north_macedonia_census.json (665 kB)
-  wrote north_macedonia_census.json: 92 records
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 556}
+  wrote data/processed/croatia_county.json (178 kB)
+  wrote data/processed/croatia_unit.json (3367 kB)
