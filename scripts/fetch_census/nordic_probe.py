@@ -338,6 +338,21 @@ def osp_dims(flow: str, year: int = 2026) -> None:
     sdmx_obs(flow, f"?startPeriod={year}&endPeriod={year}", limit=2)
 
 
+def xls(url: str, rows: int = 40, width: int = 220) -> None:
+    """A legacy .xls workbook's sheets and first rows."""
+    import xlrd
+    raw = fetch(url, accept="*/*")
+    print(f"  {len(raw):,} bytes, starts {raw[:4]!r}")
+    book = xlrd.open_workbook(file_contents=raw)
+    for sheet in book.sheets():
+        print(f"  sheet {sheet.name!r}: {sheet.nrows} rows x {sheet.ncols} columns")
+        for i in range(min(rows, sheet.nrows)):
+            cells = [str(c) for c in sheet.row_values(i)]
+            while cells and not cells[-1]:
+                cells.pop()
+            print(f"    {i + 1}: " + " | ".join(cells)[:width])
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -394,6 +409,12 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 11
+    "r11_ltu_eth_lt": lambda: xlsx("https://web.archive.org/web/20220722150228id_/https://osp.stat.gov.lt/documents/10180/9601028/Gyventojai_pagal_tautybe.xlsx", rows=45),
+    "r11_ltu_rel_lt": lambda: xlsx("https://web.archive.org/web/20220818193000id_/https://osp.stat.gov.lt/documents/10180/9601028/Gyventojai_pagal_religine_bendruomene_0321.xlsx", rows=45),
+    "r11_ltu_eth2011": lambda: xls("https://web.archive.org/web/20130929225433id_/http://osp.stat.gov.lt/documents/10180/217110/Gyventojai_pagal_tautybe_savivaldybese.xls/3b346c37-b28f-4dcc-9836-874b6ea951f7"),
+    "r11_ltu_rel2011": lambda: xls("https://web.archive.org/web/20130929225123id_/http://osp.stat.gov.lt/documents/10180/217110/Gyv_religine_bendr_savivald.xls/b845994c-bcf6-4568-9b02-e849b55d6d37"),
+    "r11_ltu_lang_tail": lambda: xlsx("https://web.archive.org/web/20221227012930id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_mother_tongue_in_municipality-EN.xlsx/1c3c9ad4-5fa5-44b1-baa7-e6caef4b740b?version=1.0", rows=100),
     # Round 10
     "r10_ltu_eth": lambda: xlsx("https://web.archive.org/web/20221115072139id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_ethnicity_1108.xlsx"),
     "r10_ltu_lang": lambda: xlsx("https://web.archive.org/web/20221227012930id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_mother_tongue_in_municipality-EN.xlsx/1c3c9ad4-5fa5-44b1-baa7-e6caef4b740b?version=1.0"),
