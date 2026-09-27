@@ -1,8 +1,8 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  53 of 74 municipalities keep their number and took in no other since 2017; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Hornafjörður', 'Sveitarfélagið Skagafjörður', 'Vesturbyggð', 'Þingeyjarsveit']
-  their count in today's division against their own, 1 January 2018 against 1 December 2017: largest gaps Skorradalshreppur 3.6%, Norðurþing 3.6%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%, Tálknafjarðarhreppur 407.3% (Hagstofa revised its method in 2024, most where many residents are foreign)
-iceland: kept numbers that grew by a merger, not in ABSORBED: ['Tálknafjarðarhreppur']
+greece_age: Eurostat single years of age for Greece's decentralized administrations
+  demo_r_d2jan, 2025: 11 regions
+  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 954 men per 1,000 women
+  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 990 men per 1,000 women
+  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 995 men per 1,000 women
+  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 1008 men per 1,000 women
+  Egean (EL41+EL42): 534,963, median 44.5, 1077 men per 1,000 women
+greece_age: no single column with ('αρρεν', '2021') in ['ενδειξη επιπεδου', 'γεωγραφικος κωδικος', 'περιγραφη', 'μονιμος πληθυσμος 2011', 'μονιμος πληθυσμος 2021', 'αρρενες 2011', 'αρρενες 2021', 'θηλεις 2011', 'θηλεις 2021', 'ποσοστο αρρενων 2021', 'ποσοστο θηλεων 2021', 'ποσοστο μεταβολης (%) 2021/2011']
