@@ -567,8 +567,10 @@ def main() -> int:
                    f"{counted:,.0f} people are the municipality's in the same census")
                 + "). Only the five largest groups are named; 'Other' holds the rest and 'Not "
                 "stated' those who gave none. The office perturbs the cells for "
-                f"confidentiality, so the groups make {held:,.0f} of the {counted:,.0f} people "
-                "counted; the shares are of the groups."),
+                "confidentiality"
+                + (f", so the groups make {held:,.0f} of the {counted:,.0f} people counted; "
+                   "the shares are of the groups." if abs(held - counted) > 0.5 else
+                   ", and here the groups still make the total.")),
             "_ethnicity_source": {
                 "field": "ethnicity", "name": f"{SOURCE}, 2021 census", "url": source[1],
                 "archived": ARCHIVE.format(ts=source[0], url=source[1]).replace("id_/", "/"),
