@@ -141,7 +141,18 @@ def check_national_median(ages: Counter, geo: str, year: int, *, groups: bool = 
             else median_age(ages))
     theirs = eurostat_median(geo, year)
     if theirs is None:
-        log(f"  national median {mine} ({year}); no published figure to check against")
+        # Eurostat has not published this date yet. The year before is the
+        # nearest published figure; a population ages by a few tenths of a
+        # year in a year, so the check widens by that much and says so.
+        earlier = eurostat_median(geo, year - 1)
+        if earlier is None:
+            log(f"  national median {mine} ({year}); no published figure to check against")
+            return mine
+        if abs(mine - earlier) > tolerance + 0.4:
+            raise SystemExit(f"national median recomputed as {mine} for 1 January {year}; "
+                             f"Eurostat's for {year - 1} is {earlier}, too far for a year's ageing")
+        log(f"  national median {mine} (1 January {year}) against Eurostat's {earlier} a year "
+            f"earlier ({geo}); {year} is not published yet")
         return mine
     if abs(mine - theirs) > tolerance:
         raise SystemExit(f"national median recomputed as {mine}, Eurostat publishes {theirs} "

@@ -55,6 +55,12 @@ VIENNA = "Wien(Stadt)"
 LAENDER = {"1": "Burgenland", "2": "Kärnten", "3": "Niederösterreich", "4": "Oberösterreich",
            "5": "Salzburg", "6": "Steiermark", "7": "Tirol", "8": "Vorarlberg", "9": "Wien"}
 EXPECTED = 94
+# The register's names where the boundary file's differ: the three statutory
+# cities of Upper Austria, and three districts it names without their river
+# or town suffix. Each key is the district's own code.
+REGISTER_ALIASES = {"401": "Linz(Stadt)", "402": "Steyr(Stadt)", "403": "Wels(Stadt)",
+                    "404": "Braunau am Inn", "409": "Kirchdorf an der Krems",
+                    "412": "Ried im Innkreis"}
 
 
 def table(year: int, part: str = "") -> list[dict[str, str]]:
@@ -135,7 +141,7 @@ def build(year: int) -> list[dict[str, Any]]:
         by_name.setdefault(fold(shape["name"]), []).append(shape)
     records, unbound, used = [], [], set()
     for key in sorted(males):
-        name = VIENNA if key == VIENNA else names.get(key)
+        name = VIENNA if key == VIENNA else REGISTER_ALIASES.get(key, names.get(key))
         if name is None:
             raise SystemExit(f"austria: district {key} is not in Statistik Austria's register")
         hits = by_name.get(fold(name), [])
