@@ -4,7 +4,7 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import (albania_census, bosnia_age, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
+from scripts.fetch_census import (albania_census, bosnia_age, bucharest_sectors, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
                                   romania_census, serbia_census)
 
 
@@ -274,6 +274,14 @@ class AlbaniaTest(unittest.TestCase):
         unit = out["diber"]
         self.assertEqual(unit["groups"][albania_census.SUPPRESSED], 2.0)
         self.assertEqual(unit["groups"]["Not stated"], 8.0)
+
+
+class BucharestTest(unittest.TestCase):
+    def test_age_bands(self):
+        self.assertEqual(bucharest_sectors.band("0 - 4 ani"), (0.0, 5.0))
+        self.assertEqual(bucharest_sectors.band("10-14 ani"), (10.0, 5.0))
+        self.assertEqual(bucharest_sectors.band("85 ani si peste"), (85.0, None))
+        self.assertIsNone(bucharest_sectors.band("TOTAL BUCURESTI"))
 
 
 if __name__ == "__main__":
