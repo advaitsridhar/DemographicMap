@@ -2611,9 +2611,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.2,
+        "count": 28474
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 124
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2628,13 +2682,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B12693512772054",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Abasha Municipality.",
-    "sex_ratio_note": "10,713 men and 11,628 women enumerated in 2014 in Abasha Municipality."
+    "sex_ratio_note": "10,713 men and 11,628 women enumerated in 2014 in Abasha Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B69008319732164",
@@ -2668,9 +2731,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 95.7,
+        "count": 19860
+      },
+      {
+        "group": "Armenian",
+        "pct": 3.4,
+        "count": 698
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 101
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2685,13 +2802,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B69008319732164",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Adigeni Municipality.",
-    "sex_ratio_note": "8,222 men and 8,240 women enumerated in 2014 in Adigeni Municipality."
+    "sex_ratio_note": "8,222 men and 8,240 women enumerated in 2014 in Adigeni Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B31006280553532",
@@ -2724,14 +2850,77 @@
       "status": "not_available",
       "note": "Not enumerated: the 2014 census and Geostat's population estimates cover the territory under the government's control, and this unit lies in the Tskhinvali region, occupied since 1992-1993 and 2008."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not enumerated: the 2014 census and Geostat's population estimates cover the territory under the government's control, and this unit lies in the Tskhinvali region, occupied since 1992-1993 and 2008."
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 84.6,
+        "count": 6520
+      },
+      {
+        "group": "Ossetian",
+        "pct": 14.4,
+        "count": 1110
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.5,
+        "count": 37
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 20
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
+      }
+    ],
     "country": "GEO",
     "match_by": "shape_id",
-    "shape_id": "92138335B31006280553532"
+    "shape_id": "92138335B31006280553532",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards. Akhalgori raion was enumerated in 2002, when it was under the government's control, all but two of its village councils; it has not been since 2008."
   },
   {
     "id": "GEO-GEOSTAT-92138335B50579342077052",
@@ -2765,9 +2954,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 94.3,
+        "count": 57516
+      },
+      {
+        "group": "Georgian",
+        "pct": 5.3,
+        "count": 3214
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 157
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 51
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2782,13 +3025,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B50579342077052",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhalkalaki Municipality.",
-    "sex_ratio_note": "22,143 men and 22,927 women enumerated in 2014 in Akhalkalaki Municipality."
+    "sex_ratio_note": "22,143 men and 22,927 women enumerated in 2014 in Akhalkalaki Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B21082735865828",
@@ -2822,9 +3074,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 61.7,
+        "count": 28473
+      },
+      {
+        "group": "Armenian",
+        "pct": 36.6,
+        "count": 16879
+      },
+      {
+        "group": "Russian",
+        "pct": 0.9,
+        "count": 410
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 129
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 124
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2839,13 +3145,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B21082735865828",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhaltsikhe Municipality.",
-    "sex_ratio_note": "18,791 men and 20,104 women enumerated in 2014 in C. Akhaltsikhe and Axaltsikhe Municipality."
+    "sex_ratio_note": "18,791 men and 20,104 women enumerated in 2014 in C. Akhaltsikhe and Axaltsikhe Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B55198090861777",
@@ -2879,9 +3194,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 75.0,
+        "count": 31237
+      },
+      {
+        "group": "Kist",
+        "pct": 16.6,
+        "count": 6928
+      },
+      {
+        "group": "Ossetian",
+        "pct": 4.7,
+        "count": 1961
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 1105
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.4,
+        "count": 152
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 134
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 100
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2896,13 +3265,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B55198090861777",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhmeta Municipality.",
-    "sex_ratio_note": "15,632 men and 15,829 women enumerated in 2014 in Akhmeta Municipality."
+    "sex_ratio_note": "15,632 men and 15,829 women enumerated in 2014 in Akhmeta Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B78683832010722",
@@ -2936,9 +3314,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 15991
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 46
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2953,13 +3385,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B78683832010722",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ambrolauri Municipality.",
-    "sex_ratio_note": "5,501 men and 5,685 women enumerated in 2014 in C. Ambrolauri and Ambrolauri Municipality."
+    "sex_ratio_note": "5,501 men and 5,685 women enumerated in 2014 in C. Ambrolauri and Ambrolauri Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B53609413281794",
@@ -2993,9 +3434,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 82.0,
+        "count": 10671
+      },
+      {
+        "group": "Armenian",
+        "pct": 17.5,
+        "count": 2273
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 34
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3010,13 +3505,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B53609413281794",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Aspindza Municipality.",
-    "sex_ratio_note": "5,149 men and 5,223 women enumerated in 2014 in Aspindza Municipality."
+    "sex_ratio_note": "5,149 men and 5,223 women enumerated in 2014 in Aspindza Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B26356280366694",
@@ -3050,9 +3554,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.4,
+        "count": 29073
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 91
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 19
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3067,13 +3625,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B26356280366694",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Baghdati Municipality.",
-    "sex_ratio_note": "10,628 men and 10,954 women enumerated in 2014 in Baghdati Municipality."
+    "sex_ratio_note": "10,628 men and 10,954 women enumerated in 2014 in Baghdati Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B67119502314916",
@@ -3107,9 +3674,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Azerbaijani",
+        "pct": 66.0,
+        "count": 49026
+      },
+      {
+        "group": "Georgian",
+        "pct": 26.8,
+        "count": 19926
+      },
+      {
+        "group": "Armenian",
+        "pct": 5.8,
+        "count": 4316
+      },
+      {
+        "group": "Greek",
+        "pct": 0.6,
+        "count": 438
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 414
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3124,13 +3745,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B67119502314916",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Bolnisi Municipality.",
-    "sex_ratio_note": "26,804 men and 26,786 women enumerated in 2014 in Bolnisi Municipality."
+    "sex_ratio_note": "26,804 men and 26,786 women enumerated in 2014 in Bolnisi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B87948858644910",
@@ -3164,9 +3794,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 84.2,
+        "count": 27301
+      },
+      {
+        "group": "Armenian",
+        "pct": 9.6,
+        "count": 3124
+      },
+      {
+        "group": "Ossetian",
+        "pct": 2.2,
+        "count": 719
+      },
+      {
+        "group": "Russian",
+        "pct": 1.8,
+        "count": 585
+      },
+      {
+        "group": "Greek",
+        "pct": 1.7,
+        "count": 540
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 75
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3181,13 +3865,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B87948858644910",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Borjomi Municipality.",
-    "sex_ratio_note": "12,030 men and 13,184 women enumerated in 2014 in Borjomi Municipality."
+    "sex_ratio_note": "12,030 men and 13,184 women enumerated in 2014 in Borjomi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B81565536454444",
@@ -3221,9 +3914,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.0,
+        "count": 55802
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.4,
+        "count": 217
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 190
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 40
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3238,13 +3985,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B81565536454444",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chiatura Municipality.",
-    "sex_ratio_note": "19,412 men and 20,472 women enumerated in 2014 in Chiatura Municipality."
+    "sex_ratio_note": "19,412 men and 20,472 women enumerated in 2014 in Chiatura Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B48416461405502",
@@ -3278,9 +4034,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.2,
+        "count": 29895
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 127
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 30
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3295,13 +4105,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B48416461405502",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chkhorotsku Municipality.",
-    "sex_ratio_note": "11,037 men and 11,272 women enumerated in 2014 in Chkhorotsku Municipality."
+    "sex_ratio_note": "11,037 men and 11,272 women enumerated in 2014 in Chkhorotsku Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B42742975246173",
@@ -3335,9 +4154,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.3,
+        "count": 23932
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 80
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 30
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 16
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3352,13 +4225,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B42742975246173",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chokhatauri Municipality.",
-    "sex_ratio_note": "9,203 men and 9,798 women enumerated in 2014 in Chokhatauri Municipality."
+    "sex_ratio_note": "9,203 men and 9,798 women enumerated in 2014 in Chokhatauri Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B37038597196331",
@@ -3392,9 +4274,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 89.1,
+        "count": 27441
+      },
+      {
+        "group": "Armenian",
+        "pct": 4.2,
+        "count": 1286
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 3.3,
+        "count": 1019
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3,
+        "count": 701
+      },
+      {
+        "group": "Greek",
+        "pct": 0.5,
+        "count": 153
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.3,
+        "count": 102
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 69
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3409,13 +4345,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B37038597196331",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dedoplistsqaro Municipality.",
-    "sex_ratio_note": "10,183 men and 11,038 women enumerated in 2014 in Dedoplistsqaro Municipality."
+    "sex_ratio_note": "10,183 men and 11,038 women enumerated in 2014 in Dedoplistsqaro Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B81831500200346",
@@ -3449,9 +4394,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Azerbaijani",
+        "pct": 66.8,
+        "count": 18716
+      },
+      {
+        "group": "Georgian",
+        "pct": 31.2,
+        "count": 8759
+      },
+      {
+        "group": "Greek",
+        "pct": 0.8,
+        "count": 218
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 156
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.5,
+        "count": 147
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3466,13 +4465,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B81831500200346",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dmanisi Municipality.",
-    "sex_ratio_note": "9,579 men and 9,562 women enumerated in 2014 in Dmanisi Municipality."
+    "sex_ratio_note": "9,579 men and 9,562 women enumerated in 2014 in Dmanisi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B14041872176832",
@@ -3506,9 +4514,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 95.8,
+        "count": 32229
+      },
+      {
+        "group": "Ossetian",
+        "pct": 3.5,
+        "count": 1167
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 103
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 19
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3523,13 +4585,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B14041872176832",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dusheti Municipality.",
-    "sex_ratio_note": "12,785 men and 12,874 women enumerated in 2014 in Dusheti Municipality."
+    "sex_ratio_note": "12,785 men and 12,874 women enumerated in 2014 in Dusheti Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B94061680814673",
@@ -3643,9 +4714,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 70.6,
+        "count": 162983
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 23.8,
+        "count": 54986
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0,
+        "count": 4557
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.7,
+        "count": 3869
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.8,
+        "count": 1822
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 994
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 493
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 460
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.2,
+        "count": 455
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 21
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3660,13 +4785,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B7743259611047",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: C. Rustavi Municipality and Gardabani Municipality, the city counted apart and drawn inside this polygon.",
-    "sex_ratio_note": "100,003 men and 106,976 women enumerated in 2014 in C. Rustavi and Gardabani Municipality."
+    "sex_ratio_note": "100,003 men and 106,976 women enumerated in 2014 in C. Rustavi and Gardabani Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards. The city of Rustavi, counted apart, is added: the map draws it inside this polygon."
   },
   {
     "id": "GEO-GEOSTAT-92138335B26122981425536",
@@ -3700,9 +4834,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 92.8,
+        "count": 137957
+      },
+      {
+        "group": "Ossetian",
+        "pct": 4.3,
+        "count": 6405
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.3,
+        "count": 1972
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8,
+        "count": 1136
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.4,
+        "count": 607
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 344
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 97
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 123
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3717,13 +4905,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B26122981425536",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Gori Municipality.",
-    "sex_ratio_note": "60,744 men and 64,948 women enumerated in 2014 in C. Gori and Gori Municipality."
+    "sex_ratio_note": "60,744 men and 64,948 women enumerated in 2014 in C. Gori and Gori Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B93375493400178",
@@ -3837,9 +5034,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 98.0,
+        "count": 71148
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.7,
+        "count": 484
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.6,
+        "count": 463
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 350
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 58
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3854,13 +5105,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B37128228826405",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Gurjaani Municipality.",
-    "sex_ratio_note": "26,352 men and 27,985 women enumerated in 2014 in Gurjaani Municipality."
+    "sex_ratio_note": "26,352 men and 27,985 women enumerated in 2014 in Gurjaani Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B29628733887030",
@@ -3934,9 +5194,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 90.4,
+        "count": 45593
+      },
+      {
+        "group": "Ossetian",
+        "pct": 5.5,
+        "count": 2755
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 2.3,
+        "count": 1183
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.1,
+        "count": 542
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 217
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 34
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -3951,13 +5265,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B15578291241997",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kareli Municipality.",
-    "sex_ratio_note": "20,410 men and 20,906 women enumerated in 2014 in Kareli Municipality."
+    "sex_ratio_note": "20,410 men and 20,906 women enumerated in 2014 in Kareli Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B8569651640453",
@@ -3991,9 +5314,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 84.6,
+        "count": 44162
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 7.6,
+        "count": 3962
+      },
+      {
+        "group": "Ossetian",
+        "pct": 6.7,
+        "count": 3479
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.5,
+        "count": 254
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 271
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 35
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4008,13 +5385,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B8569651640453",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kaspi Municipality.",
-    "sex_ratio_note": "21,609 men and 22,162 women enumerated in 2014 in Kaspi Municipality."
+    "sex_ratio_note": "21,609 men and 22,162 women enumerated in 2014 in Kaspi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B46195092344531",
@@ -4048,9 +5434,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 97.7,
+        "count": 5142
+      },
+      {
+        "group": "Ossetian",
+        "pct": 1.7,
+        "count": 89
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4065,13 +5505,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B46195092344531",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kazbegi Municipality.",
-    "sex_ratio_note": "1,859 men and 1,936 women enumerated in 2014 in Kazbegi Municipality."
+    "sex_ratio_note": "1,859 men and 1,936 women enumerated in 2014 in Kazbegi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B2821497080336",
@@ -4105,9 +5554,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.7,
+        "count": 19958
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4122,13 +5625,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B2821497080336",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Keda Municipality.",
-    "sex_ratio_note": "8,410 men and 8,350 women enumerated in 2014 in Keda Municipality."
+    "sex_ratio_note": "8,410 men and 8,350 women enumerated in 2014 in Keda Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B11752515436938",
@@ -4162,9 +5674,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.4,
+        "count": 27728
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 85
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4179,13 +5745,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B11752515436938",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kharagauli Municipality.",
-    "sex_ratio_note": "9,627 men and 9,846 women enumerated in 2014 in Kharagauli Municipality."
+    "sex_ratio_note": "9,627 men and 9,846 women enumerated in 2014 in Kharagauli Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B61287460098363",
@@ -4219,9 +5794,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 96.7,
+        "count": 60670
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.2,
+        "count": 753
+      },
+      {
+        "group": "Ossetian",
+        "pct": 1.2,
+        "count": 744
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 322
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 96
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4236,13 +5865,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B61287460098363",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khashuri Municipality.",
-    "sex_ratio_note": "25,519 men and 27,084 women enumerated in 2014 in Khashuri Municipality."
+    "sex_ratio_note": "25,519 men and 27,084 women enumerated in 2014 in Khashuri Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B5338969449548",
@@ -4276,9 +5914,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 90.6,
+        "count": 192634
+      },
+      {
+        "group": "Armenian",
+        "pct": 3.7,
+        "count": 7872
+      },
+      {
+        "group": "Russian",
+        "pct": 3.4,
+        "count": 7329
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.7,
+        "count": 1445
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 1128
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.4,
+        "count": 873
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 678
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.2,
+        "count": 452
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 161
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 69
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4293,13 +5985,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B5338969449548",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: C. Batumi Municipality and Khelvachauri Municipality, the city counted apart and drawn inside this polygon.",
-    "sex_ratio_note": "98,369 men and 105,659 women enumerated in 2014 in C. Batumi and Khelvachauri Municipality."
+    "sex_ratio_note": "98,369 men and 105,659 women enumerated in 2014 in C. Batumi and Khelvachauri Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards. The city of Batumi, counted apart, is added: the map draws it inside this polygon."
   },
   {
     "id": "GEO-GEOSTAT-92138335B39519556094978",
@@ -4330,7 +6031,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The city of Poti, counted apart from every municipality, has no polygon of its own on this map, and its centre lies within 1.5 km of more than one: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km). The outline cannot say which polygon holds the city, so no figure is written here."
     },
     "sources": [],
     "country": "GEO",
@@ -4369,9 +6071,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.2,
+        "count": 31496
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 142
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 38
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 16
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4386,13 +6142,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B64138373774111",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khoni Municipality.",
-    "sex_ratio_note": "11,469 men and 12,101 women enumerated in 2014 in Khoni Municipality."
+    "sex_ratio_note": "11,469 men and 12,101 women enumerated in 2014 in Khoni Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B65831597067457",
@@ -4426,9 +6191,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.8,
+        "count": 33377
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4443,13 +6262,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B65831597067457",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khulo Municipality.",
-    "sex_ratio_note": "11,612 men and 11,715 women enumerated in 2014 in Khulo Municipality."
+    "sex_ratio_note": "11,612 men and 11,715 women enumerated in 2014 in Khulo Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B26955769626154",
@@ -4483,9 +6311,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 94.7,
+        "count": 83367
+      },
+      {
+        "group": "Russian",
+        "pct": 1.9,
+        "count": 1692
+      },
+      {
+        "group": "Greek",
+        "pct": 1.7,
+        "count": 1487
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.1,
+        "count": 958
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 211
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 176
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 50
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 79
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4500,13 +6382,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B26955769626154",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kobuleti Municipality.",
-    "sex_ratio_note": "36,982 men and 37,812 women enumerated in 2014 in Kobuleti Municipality."
+    "sex_ratio_note": "36,982 men and 37,812 women enumerated in 2014 in Kobuleti Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B54966066678196",
@@ -4540,9 +6431,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 69.3,
+        "count": 35376
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 22.3,
+        "count": 11392
+      },
+      {
+        "group": "Ossetian",
+        "pct": 4.4,
+        "count": 2239
+      },
+      {
+        "group": "Russian",
+        "pct": 2.4,
+        "count": 1204
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.1,
+        "count": 561
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 190
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4557,13 +6502,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B54966066678196",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Lagodekhi Municipality.",
-    "sex_ratio_note": "20,953 men and 20,725 women enumerated in 2014 in Lagodekhi Municipality."
+    "sex_ratio_note": "20,953 men and 20,725 women enumerated in 2014 in Lagodekhi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B47110763385386",
@@ -4594,7 +6548,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The city of Poti, counted apart from every municipality, has no polygon of its own on this map, and its centre lies within 1.5 km of more than one: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km). The outline cannot say which polygon holds the city, so no figure is written here."
     },
     "sources": [],
     "country": "GEO",
@@ -4633,9 +6588,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 8942
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.2,
+        "count": 21
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4650,13 +6659,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B53804357852579",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Lentekhi Municipality.",
-    "sex_ratio_note": "2,119 men and 2,267 women enumerated in 2014 in Lentekhi Municipality."
+    "sex_ratio_note": "2,119 men and 2,267 women enumerated in 2014 in Lentekhi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B51279478619931",
@@ -4690,9 +6708,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Azerbaijani",
+        "pct": 83.1,
+        "count": 98245
+      },
+      {
+        "group": "Georgian",
+        "pct": 8.0,
+        "count": 9503
+      },
+      {
+        "group": "Armenian",
+        "pct": 7.9,
+        "count": 9329
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 523
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 396
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 113
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4707,13 +6779,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B51279478619931",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Marneuli Municipality.",
-    "sex_ratio_note": "52,416 men and 51,884 women enumerated in 2014 in Marneuli Municipality."
+    "sex_ratio_note": "52,416 men and 51,884 women enumerated in 2014 in Marneuli Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B7804846431662",
@@ -4747,9 +6828,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 44399
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 131
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 37
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4764,13 +6899,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B7804846431662",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Martvili Municipality.",
-    "sex_ratio_note": "16,433 men and 17,030 women enumerated in 2014 in Martvili Municipality."
+    "sex_ratio_note": "16,433 men and 17,030 women enumerated in 2014 in Martvili Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B2863477847968",
@@ -4804,9 +6948,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.4,
+        "count": 14168
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 52
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4821,13 +7019,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B2863477847968",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Mestia Municipality.",
-    "sex_ratio_note": "4,642 men and 4,674 women enumerated in 2014 in Mestia Municipality."
+    "sex_ratio_note": "4,642 men and 4,674 women enumerated in 2014 in Mestia Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B12721672848691",
@@ -4861,9 +7068,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 90.7,
+        "count": 58808
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 3.4,
+        "count": 2236
+      },
+      {
+        "group": "Ossetian",
+        "pct": 2.3,
+        "count": 1464
+      },
+      {
+        "group": "Other",
+        "pct": 1.5,
+        "count": 954
+      },
+      {
+        "group": "Russian",
+        "pct": 0.9,
+        "count": 583
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.7,
+        "count": 427
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 129
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 113
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.1,
+        "count": 94
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4878,13 +7139,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B12721672848691",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Mtskheta Municipality.",
-    "sex_ratio_note": "28,173 men and 27,478 women enumerated in 2014 in C. Mtskheta and Mtskheta Municipality."
+    "sex_ratio_note": "28,173 men and 27,478 women enumerated in 2014 in C. Mtskheta and Mtskheta Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B7587308725021",
@@ -4918,9 +7188,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 95.8,
+        "count": 32857
+      },
+      {
+        "group": "Russian",
+        "pct": 2.7,
+        "count": 943
+      },
+      {
+        "group": "Georgian",
+        "pct": 1.4,
+        "count": 476
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -4935,13 +7259,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B7587308725021",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ninotsminda Municipality.",
-    "sex_ratio_note": "12,186 men and 12,305 women enumerated in 2014 in Ninotsminda Municipality."
+    "sex_ratio_note": "12,186 men and 12,305 women enumerated in 2014 in Ninotsminda Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B91265178482349",
@@ -5015,9 +7348,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 98.0,
+        "count": 9093
+      },
+      {
+        "group": "Ossetian",
+        "pct": 1.2,
+        "count": 108
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 30
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 19
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5032,13 +7419,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B42170823144897",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Oni Municipality.",
-    "sex_ratio_note": "2,894 men and 3,236 women enumerated in 2014 in Oni Municipality."
+    "sex_ratio_note": "2,894 men and 3,236 women enumerated in 2014 in Oni Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B33048390881049",
@@ -5072,9 +7468,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 95.4,
+        "count": 75142
+      },
+      {
+        "group": "Armenian",
+        "pct": 2.5,
+        "count": 1944
+      },
+      {
+        "group": "Russian",
+        "pct": 1.4,
+        "count": 1133
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.2,
+        "count": 159
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 111
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 23
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5089,13 +7539,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B33048390881049",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ozurgeti Municipality.",
-    "sex_ratio_note": "30,223 men and 32,640 women enumerated in 2014 in C. Ozurgeti and Ozurgeti Municipality."
+    "sex_ratio_note": "30,223 men and 32,640 women enumerated in 2014 in C. Ozurgeti and Ozurgeti Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B62270915316276",
@@ -5129,9 +7588,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 91.1,
+        "count": 34296
+      },
+      {
+        "group": "Other",
+        "pct": 5.6,
+        "count": 2101
+      },
+      {
+        "group": "Ossetian",
+        "pct": 2.0,
+        "count": 762
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.7,
+        "count": 248
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 158
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5146,13 +7659,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B62270915316276",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kvareli Municipality.",
-    "sex_ratio_note": "14,728 men and 15,099 women enumerated in 2014 in Qvareli Municipality."
+    "sex_ratio_note": "14,728 men and 15,099 women enumerated in 2014 in Qvareli Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B50184353982041",
@@ -5186,9 +7708,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 46591
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.2,
+        "count": 117
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 84
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5203,13 +7779,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B50184353982041",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sachkhere Municipality.",
-    "sex_ratio_note": "18,808 men and 18,967 women enumerated in 2014 in Sachkhere Municipality."
+    "sex_ratio_note": "18,808 men and 18,967 women enumerated in 2014 in Sachkhere Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B38539666487560",
@@ -5243,9 +7828,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 66.6,
+        "count": 39409
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 31.9,
+        "count": 18907
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 377
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.4,
+        "count": 231
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.2,
+        "count": 125
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 21
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5260,13 +7899,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B38539666487560",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sagarejo Municipality.",
-    "sex_ratio_note": "26,035 men and 25,726 women enumerated in 2014 in Sagarejo Municipality."
+    "sex_ratio_note": "26,035 men and 25,726 women enumerated in 2014 in Sagarejo Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B39490393091716",
@@ -5300,9 +7948,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 97.4,
+        "count": 58883
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1,
+        "count": 635
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.0,
+        "count": 615
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 125
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5317,13 +8019,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B39490393091716",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Samtredia Municipality.",
-    "sex_ratio_note": "23,086 men and 25,476 women enumerated in 2014 in Samtredia Municipality."
+    "sex_ratio_note": "23,086 men and 25,476 women enumerated in 2014 in Samtredia Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B76220270182366",
@@ -5357,9 +8068,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 98.9,
+        "count": 51532
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 263
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 92
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 114
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5374,13 +8139,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B76220270182366",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Senaki Municipality.",
-    "sex_ratio_note": "18,704 men and 20,948 women enumerated in 2014 in Senaki Municipality."
+    "sex_ratio_note": "18,704 men and 20,948 women enumerated in 2014 in Senaki Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B10016985210345",
@@ -5414,9 +8188,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.8,
+        "count": 21796
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5431,13 +8259,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B10016985210345",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Shuakhevi Municipality.",
-    "sex_ratio_note": "7,555 men and 7,489 women enumerated in 2014 in Shuakhevi Municipality."
+    "sex_ratio_note": "7,555 men and 7,489 women enumerated in 2014 in Shuakhevi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B21532266641065",
@@ -5471,9 +8308,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 96.9,
+        "count": 42226
+      },
+      {
+        "group": "Russian",
+        "pct": 1.2,
+        "count": 539
+      },
+      {
+        "group": "Armenian",
+        "pct": 1.0,
+        "count": 419
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.3,
+        "count": 118
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 123
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 45
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5488,13 +8379,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B21532266641065",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sighnagi Municipality.",
-    "sex_ratio_note": "14,169 men and 15,779 women enumerated in 2014 in Sighnaghi Municipality."
+    "sex_ratio_note": "14,169 men and 15,779 women enumerated in 2014 in Sighnaghi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B38650724309521",
@@ -5568,9 +8468,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 84.2,
+        "count": 910712
+      },
+      {
+        "group": "Armenian",
+        "pct": 7.6,
+        "count": 82586
+      },
+      {
+        "group": "Russian",
+        "pct": 3.0,
+        "count": 32580
+      },
+      {
+        "group": "Yazidi",
+        "pct": 1.6,
+        "count": 17116
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 1.0,
+        "count": 10942
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.9,
+        "count": 10268
+      },
+      {
+        "group": "Other",
+        "pct": 0.9,
+        "count": 9811
+      },
+      {
+        "group": "Greek",
+        "pct": 0.4,
+        "count": 3792
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3,
+        "count": 3328
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 471
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 73
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5585,13 +8539,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B42186772492502",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: C. Tbilisi Municipality.",
-    "sex_ratio_note": "502,890 men and 605,827 women enumerated in 2014 in C. Tbilisi."
+    "sex_ratio_note": "502,890 men and 605,827 women enumerated in 2014 in C. Tbilisi.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B27063767093254",
@@ -5625,9 +8588,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 85.5,
+        "count": 60370
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 11.9,
+        "count": 8373
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.7,
+        "count": 460
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.6,
+        "count": 412
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 381
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.5,
+        "count": 357
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 38
+      },
+      {
+        "group": "Kist",
+        "pct": 0.1,
+        "count": 58
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 20
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5642,13 +8659,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B27063767093254",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Telavi Municipality.",
-    "sex_ratio_note": "28,102 men and 30,248 women enumerated in 2014 in C. Telavi and Telavi Municipality."
+    "sex_ratio_note": "28,102 men and 30,248 women enumerated in 2014 in C. Telavi and Telavi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B93308463809472",
@@ -5679,7 +8705,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The city of Kutaisi, counted apart from every municipality, has no polygon of its own on this map, and its centre lies within 1.5 km of more than one: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km). The outline cannot say which polygon holds the city, so no figure is written here."
     },
     "sources": [],
     "country": "GEO",
@@ -5718,9 +8745,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 74.0,
+        "count": 18769
+      },
+      {
+        "group": "Armenian",
+        "pct": 10.4,
+        "count": 2632
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 6.5,
+        "count": 1641
+      },
+      {
+        "group": "Greek",
+        "pct": 5.1,
+        "count": 1281
+      },
+      {
+        "group": "Russian",
+        "pct": 2.7,
+        "count": 689
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.8,
+        "count": 205
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 107
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 16
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5735,13 +8816,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B97195929624765",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tetritsqaro Municipality.",
-    "sex_ratio_note": "10,335 men and 10,792 women enumerated in 2014 in Tetri Tsqaro Municipality."
+    "sex_ratio_note": "10,335 men and 10,792 women enumerated in 2014 in Tetri Tsqaro Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B62221031654939",
@@ -5775,9 +8865,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 98.3,
+        "count": 13777
+      },
+      {
+        "group": "Ossetian",
+        "pct": 1.0,
+        "count": 147
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 37
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 13
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5792,13 +8936,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B62221031654939",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tianeti Municipality.",
-    "sex_ratio_note": "4,828 men and 4,640 women enumerated in 2014 in Tianeti Municipality."
+    "sex_ratio_note": "4,828 men and 4,640 women enumerated in 2014 in Tianeti Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B41220356267483",
@@ -5829,7 +8982,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The city of Kutaisi, counted apart from every municipality, has no polygon of its own on this map, and its centre lies within 1.5 km of more than one: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km). The outline cannot say which polygon holds the city, so no figure is written here."
     },
     "sources": [],
     "country": "GEO",
@@ -5868,9 +9022,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 16539
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 29
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5885,13 +9093,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B16539680317834",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsageri Municipality.",
-    "sex_ratio_note": "5,070 men and 5,317 women enumerated in 2014 in Tsageri Municipality."
+    "sex_ratio_note": "5,070 men and 5,317 women enumerated in 2014 in Tsageri Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B98712033744581",
@@ -5925,9 +9142,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.1,
+        "count": 39764
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 224
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5942,13 +9213,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B98712033744581",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsalenjikha Municipality.",
-    "sex_ratio_note": "12,677 men and 13,481 women enumerated in 2014 in Tsalenjikha Municipality."
+    "sex_ratio_note": "12,677 men and 13,481 women enumerated in 2014 in Tsalenjikha Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B43211443172937",
@@ -5982,9 +9262,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 55.0,
+        "count": 11484
+      },
+      {
+        "group": "Greek",
+        "pct": 22.0,
+        "count": 4589
+      },
+      {
+        "group": "Georgian",
+        "pct": 12.0,
+        "count": 2510
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 9.5,
+        "count": 1992
+      },
+      {
+        "group": "Other",
+        "pct": 0.8,
+        "count": 163
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 125
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -5999,13 +9333,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B43211443172937",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsalka Municipality.",
-    "sex_ratio_note": "9,395 men and 9,454 women enumerated in 2014 in Tsalka Municipality."
+    "sex_ratio_note": "9,395 men and 9,454 women enumerated in 2014 in Tsalka Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B29553909486986",
@@ -6036,7 +9379,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The city of Kutaisi, counted apart from every municipality, has no polygon of its own on this map, and its centre lies within 1.5 km of more than one: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km). The outline cannot say which polygon holds the city, so no figure is written here."
     },
     "sources": [],
     "country": "GEO",
@@ -6075,9 +9419,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.5,
+        "count": 34279
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 96
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.1,
+        "count": 18
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -6092,13 +9490,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B24401992491818",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Vani Municipality.",
-    "sex_ratio_note": "12,072 men and 12,440 women enumerated in 2014 in Vani Municipality."
+    "sex_ratio_note": "12,072 men and 12,440 women enumerated in 2014 in Vani Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B27287539996765",
@@ -6132,9 +9539,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.0,
+        "count": 75412
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 370
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.2,
+        "count": 141
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 91
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -6149,13 +9610,22 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B27287539996765",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Zestaponi Municipality.",
-    "sex_ratio_note": "28,082 men and 29,546 women enumerated in 2014 in Zestaponi Municipality."
+    "sex_ratio_note": "28,082 men and 29,546 women enumerated in 2014 in Zestaponi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
   {
     "id": "GEO-GEOSTAT-92138335B56355921545740",
@@ -6189,9 +9659,63 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Georgian",
+        "pct": 99.0,
+        "count": 166039
+      },
+      {
+        "group": "Russian",
+        "pct": 0.7,
+        "count": 1142
+      },
+      {
+        "group": "Abkhaz",
+        "pct": 0.1,
+        "count": 172
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.1,
+        "count": 90
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 104
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 109
+      },
+      {
+        "group": "Azerbaijani",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -6206,12 +9730,21 @@
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
         "license": "Geostat, open publication",
         "year": 2014
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
+        "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+        "license": "Geostat, open publication",
+        "year": 2002
       }
     ],
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B56355921545740",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Zugdidi Municipality.",
-    "sex_ratio_note": "50,306 men and 55,203 women enumerated in 2014 in C. Zugdidi and Zugdidi Municipality."
+    "sex_ratio_note": "50,306 men and 55,203 women enumerated in 2014 in C. Zugdidi and Zugdidi Municipality.",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   }
 ]
