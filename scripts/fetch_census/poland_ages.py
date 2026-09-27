@@ -34,6 +34,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import time
 from typing import Any
 
@@ -115,11 +116,14 @@ def build() -> list[dict[str, Any]]:
         teryt = voiv_id[2:4]
         check_sum((value(5, "total", u) for u in data[5]["total"] if u[2:4] == teryt),
                   value(2, "total", voiv_id), f"powiats against {TERYT[teryt]}")
-    theirs = eurostat_median("PL", year + 1)
     mine = value(0, "median", country)
-    if theirs is not None and abs(theirs - mine) > 0.3:
+    theirs, when, tolerance = eurostat_median("PL", year + 1), year + 1, 0.3
+    if theirs is None:
+        # Not published yet: a year earlier, with a year's ageing allowed for.
+        theirs, when, tolerance = eurostat_median("PL", year), year, 0.7
+    if theirs is not None and abs(theirs - mine) > tolerance:
         raise SystemExit(f"poland_ages: GUS's national median {mine} against Eurostat's {theirs}")
-    log(f"  GUS national median {mine} ({year}); Eurostat {theirs} (1 January {year + 1})")
+    log(f"  GUS national median {mine} (31 December {year}); Eurostat {theirs} (1 January {when})")
 
     def fields(level: int, unit_id: str, what: str) -> dict[str, Any]:
         men, women = value(level, "men", unit_id), value(level, "women", unit_id)
@@ -144,7 +148,9 @@ def build() -> list[dict[str, Any]]:
     records, unbound, used = [], [], set()
     for unit_id, unit in sorted(data[5]["total"].items()):
         voiv = TERYT[unit_id[2:4]]
-        raw = unit["name"].replace("Powiat ", "", 1).strip()
+        # BDL dates a unit that was re-created ("Powiat m. Wałbrzych od 2013",
+        # the city powiat restored in 2013); the date is not part of its name.
+        raw = re.sub(r"\s+od \d{4}$", "", unit["name"].replace("Powiat ", "", 1).strip())
         name, aliases = powiat_names(voiv, raw)
         keys = {fold(n) for n in [name, *aliases]}
         hits = [s for k in keys for s in by_key.get(k, [])
