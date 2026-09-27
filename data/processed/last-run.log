@@ -1,19 +1,309 @@
-  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
-  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
-  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
-  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
-  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
-  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
-  estimate for 1 January 2026: 11 regions make the country's 3,941
-  fetched ADM2_simplified.geojson (1.3 MB)
-  GEO ADM2: 68 polygons from ADM2_simplified.geojson
-  Batumi's centre lies in 'Khelvachauri'; the nearest other polygon is 8.2 km away
-  Kutaisi: not placed; polygons near its centre: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km)
-  Poti: not placed; polygons near its centre: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km)
-  Rustavi's centre lies in 'Gardabani'; the nearest other polygon is 1.9 km away
-  polygons with no estimate row: ['Tbilisi']
-  second level: 54 polygons with a count; rows on no polygon: []
-  wrote data/processed/georgia.json (214 kB)
+probe_pdf: https://web.archive.org/web/20190821123832id_/http://census.ge/files/2002/geo/III%20tomi-1.pdf
+  1,498,367 bytes
+  420 pages
+probe_pdf: 420 pages, 14 mention ['erovneb', 'aRmsarebl', 'mSobliur']
+=== front matter ===
+saqarTvelos statistikis saxelmwifo 
+departamenti 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+saqarTvelos mosaxleobis 2002 wlis pirveli erovnuli 
+sayovelTao aRweris Sedegebi 
+ 
+ 
+ 
+ 
+ 
+ 
+tomi III 
+ 
+ 
+nawili I 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+YTbilisi 
+2004 
+ 3
+ 
+ 
+ 
+saqarTvelos mosaxleobis 2002 wlis pirveli 
+erovnuli sayovelTao aRweris Sedegebi 
+tomi III (nawili I) 
+ 
+saredaqcio kolegia: 
+Teimuraz beriZe (mTavari redaqtori) 
+
+=== pages mentioning ['erovneb', 'aRmsarebl', 'mSobliur'] (first 400) ===
+
+--- page 23 ----------------------------------------------------
+ 24
+cxrili #6
+mosaxleobis ganawileba erovnebebis da arsebobis saSualebaTa ZiriTadi wyaros mixedviT
+  sul
+maT Soris:
+qarT-
+veli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovne-
+bebi
+a 1 2 3 4 5 6 7 8 9 10
+sul mosaxleoba 4371535 3661173 3527 284761 15166 38028 67671 248929 7039 45241
+maT Soris mosaxleoba, romleb-
+mac arsebobis saSualebaTa
+ZiriTad wyarod miuTiTes:
+daqiravebiT m
+
+--- page 25 ----------------------------------------------------
+ 26
+cxrili #7
+calkeul erovnebaTa mosaxleobis ganawileba, romlebmac miuTiTes arsebobis saSualebaTa
+erTi wyaro
+(kaci)
+ sul
+maT Soris:
+qarTv-
+li afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai
+neli
+sxva
+erovnebebi
+saqarTvelo - sul 3788630 3156995 2978  257945  11862   31433 59752  219955  6115  41595
+maT Soris mosaxleoba romlebmac
+arsebobis saSualebaTa wyarod
+miuTiTes:
+daqiravebiT muSaobisaTvis 
+
+--- page 26 ----------------------------------------------------
+ 27
+ sul
+maT Soris:
+qarTv-
+li afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai
+neli
+sxva
+erovnebebi
+ pensia 402003 325260 338 15637 2410 5620 15983 30642 1925 4188
+ stipendia 3455 2915 8 176 14 17 64 217 4 40
+ umuSevrobis Semweoba 5434 4783 11 131 12 54 95 283 12 53
+ daxmareba (umuSevrobis Semweobis
+ garda) 41593 40907 83 48 17 45 207 176 27 83
+ saxelmwifo uzrunvelyofis sxva
+ saxe 23190 20958 
+
+--- page 27 ----------------------------------------------------
+ 28
+ sul
+maT Soris:
+qarTv-
+li afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai
+neli
+sxva
+erovnebebi
+ araregularuli, SemTxveviTi
+ anazRaureba da Semosavlebi 55594 4265 6 27 4159 185 532 1031 6006 64 934
+ Semosavali sakuTrebidan.
+ danazogidan 1041 894 - 32 1 6 19 68 2 19
+Semosavali sawarmodan romlis
+ mflobelic ar muSaobs 649 378 - 236 4 - 6 20 1 4
+ pensia 131225 108355 101 5502 840 1737 2666 104
+
+--- page 28 ----------------------------------------------------
+ 29
+ sul
+maT Soris:
+qarTv-
+li afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai
+neli
+sxva
+erovnebebi
+ Semosavali sakuTari glexuri
+ ((fermeruli) meurneobidan 27091 20453 15 3415 68 257 255 2559 15 54
+ Semosavali piradi damxmare
+ meurneobidan 273397 197904 178 46279 1345 3442 2205 20371 148 1525
+ ojaxis damxmare wevri
+ araregularuli anazRaurebiT 6923 4376 2 1221 30 65 156 948 18 107
+ araregularul
+
+--- page 236 ----------------------------------------------------
+ 237
+cxrili #23
+mosaxleobis ganawileba erovnebis, ekonomikuri aqtivobis da dasaqmebis statusis mixedviT
+ (kaci)
+ sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovne-
+bebi
+a 1 2 3 4 5 6 7 8 9 10
+sul mosaxleoba 4371535 3661173 3527 284761 15166 38028 67671 248929 7039 45241
+ekonomikurad aqtiuri
+mosaxleoba 1872392 1557224 1410 143343 7227 17680 23445 104892 
+
+--- page 242 ----------------------------------------------------
+ 243
+ cxrili #24
+mosaxleobis ganawileba erovnebis, ekonomikuri aqtivobis da dasaqmebis statusis mixedviT
+procentebSi Sesabamisi maCveneblis jamis mimarT
+(kaci)
+  sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovnebebi
+a 1 2 3 4 5 6 7 8 9 10
+sul mosaxleoba 100 83.8 0.1 6.5 0.3 0.9 1.5 5.7 0.2 1.0
+ekonomikurad aqtiuri mosax-
+leoba 100 83.2 0.1 7.7 0.4 0.9 1
+
+--- page 243 ----------------------------------------------------
+ 244
+  sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovnebebi
+a 1 2 3 4 5 6 7 8 9 10
+maT Soris:
+umuSevrebi, romlebic mzad
+arian Seudgnen muSaobas 100 86.6 0.1 2.7 0.3 0.9 1.9 6.0 0.2 1.4
+maT ricxviT:
+pensionerebi 100 85.5 0.1 2.4 0.4 1.1 2.8 6.1 0.5 1.1
+ekonomikurad araaqtiuri mo-
+saxleoba 100 84.2 0.1 5.7 0.3 0.8 1.8 5.8 0.2 1.2
+     maT Soris:
+pensione
+
+--- page 244 ----------------------------------------------------
+ 245
+  sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovnebebi
+a 1 2 3 4 5 6 7 8 9 10
+sakuTar sawarmoSi
+dasaqmebulebi muSakTa
+daqiravebis gareSe 100 88.1 - 2.0 0.2 1.3 1.2 6.9 - 0.3
+individualur safuZvelze
+dasaqmebulebi 100 82.3 0.1 6.8 0.3 0.8 1.2 6.5 0.1 2.0
+ojaxuri sawarmos muSakebi
+araregularuli
+anazRaurebiT 100 69.4 - 13.6 0.5 0.7 1.7 12.2 0.2 1.7
+pi
+
+--- page 245 ----------------------------------------------------
+ 246
+  sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovnebebi
+a 1 2 3 4 5 6 7 8 9 10
+pirebi, romlebic iReben
+daxmarebas an saxelmwifo
+uzrunvelyofis sxva saxe 100 93.0 0.1 2.1 0.1 0.4 1.0 2.5 0.1 0.6
+pirebi, romlebic iReben
+Semosavlebs mxolod
+sakuTrebidan da danazogidan 100 60.8 - 32.7 0.2 0.3 1.2 3.2 0.3 1.2
+sxva piris kmayofaze myofni 100 84.6 0.1 6.8 0
+
+--- page 246 ----------------------------------------------------
+ 247
+  sul
+maT Soris:
+qarTveli afxazi azerbai-
+janeli berZeni osi rusi somexi ukrai-
+neli
+sxva
+erovnebebi
+a 1 2 3 4 5 6 7 8 9 10
+dasaqmebuli mosaxleobis
+saerTo ricxvidan:
+pensionerebi 100 84.7 0.1 5.0 1.0 2.0 1.3 5.5 0.1 0.3
+moswavleebi 100 86.6 - 5.0 0.4 0.4 0.4 7.1 - -
+sul umuSevrebi 100 87.2 0.1 2.6 0.3 1.0 2.4 5.0 0.3 1.2
+maT Soris:
+umuSevrebi, romlebic mzad
+arian Seudgnen muSaobas 100 86.6 0.
+
+--- page 260 ----------------------------------------------------
+ 261
+cxrili #27
+dasaqmebuli mosaxleobis ganawileba erovnebisa da saqmianobis mixedviT
+(kaci)
+ sul
+maT Soris:
+qarT-
+veli afxazi
+azer-
+baija-
+neli
+ber-
+Zeni osi rusi somexi ukrai-
+neli
+sxva
+erov-
+nebebi
+dasaqmebuli mosaxleoba sul 1652578 1366953 12 15 137303 6611 15794 19301 91673 1918 11810
+maT Soris:
+samxedro mosamsaxureebi 9012 7938 6 168 9 47 356 402 47 39
+ samxedro mosamsaxureebi 9012 7938 6 16
+
+--- page 419 ----------------------------------------------------
+sarCevi
+Sesavali .................................................................................................................................................................................. 4
+mosaxleobis socialur-ekonomikuri daxasiaTeba nawili I .................................................................. 6
+cxrili #1 mosaxleobis ganawileba arsebobis saSualebaTa wyaroebis, sqesisa da as
+
+--- page 420 ----------------------------------------------------
+cxrili #21 dasaqmebuli mosaxleobis ganawileba saqmianobisa da dasaqmebis statusis
+mixedviT ............................................................................................................................................... 212
+cxrili #22 dasaqmebuli mosaxleobis ganawileba saqmianobisa da dasaqmebis statusis
+mixedviT procentebSi Sesabamisi maCveneblis jamis mimarT ......................
