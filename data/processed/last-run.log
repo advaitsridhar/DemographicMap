@@ -1,9 +1,4 @@
-  SAP2022T1T1ALEA22: 166 areas, 18 age groups
-  FY006B: 30 councils, 101 single years
-  the State: 5,149,139 people, median 38.8 (published 38.8)
-  Connacht: 6 councils, 591,363 people, median 40.6
-  Leinster: 15 councils, 2,870,354 people, median 37.8
-  Munster: 6 councils, 1,373,346 people, median 40.1
-  Ulster: 3 councils, 314,076 people, median 40.0
-  wrote data/processed/ireland_age.json (264 kB)
-  170 records
+liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
+  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14]
+  211.004: 1 cells; places ['Liechtenstein']
+liechtenstein: 211.004 has no rows for ['Vaduz', 'Triesen', 'Balzers', 'Triesenberg', 'Schaan', 'Planken', 'Eschen', 'Mauren', 'Gamprin', 'Ruggell', 'Schellenberg']; it has ['Liechtenstein']
