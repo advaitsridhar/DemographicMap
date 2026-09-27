@@ -1,326 +1,120 @@
-
-=== aut2
-
-## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_HEADER.csv
-   HTTP 200, 303 bytes, 6 lines, text/csv;charset=UTF-8
-   | code;name;en_name;;;;;;;
-   | F-ISIS-1;Fallzahl;Number;;;;;;;
-   | C-A10-0;Jahr;Time section;;;;;;;
-   | C-C11-0;Geschlecht;Sex;;;;;;;
-   | C-GRGEMAKT-0;Gemeinde (Vergröberung über Politischen Bezirk);Commune (aggregation by political district);;;;;;;
-   | C-GALTEJ112-0;Alter in Einzeljahren;Age in single years;;;;;;;
-
-## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026.csv
-   HTTP 200, 18,296,744 bytes, 393,943 lines, text/csv;charset=UTF-8
-   | C-A10-0;C-C11-0;C-GRGEMAKT-0;C-GALTEJ112-0;F-ISIS-1
-   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-1;63
-   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-2;66
-   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-3;65
-   | A10-2026;C11-1;GRGEMAKT-10101;GALTEJ112-4;64
-
-## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv
-   HTTP 200, 96,795 bytes, 2,117 lines, text/csv;charset=UTF-8
-   | code;name;;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
-   | GRGEMAKT-10101;Eisenstadt <10101>;;;;;;;;
-   | GRGEMAKT-10201;Rust <10201>;;;;;;;;
-   | GRGEMAKT-10301;Breitenbrunn am Neusiedler See <10301>;;;;;;;;
-   26 lines match 'GRGEMAKT-9|GRGEMAKT-10[12]'
-   > GRGEMAKT-10101;Eisenstadt <10101>;;;;;;;;
-   > GRGEMAKT-10201;Rust <10201>;;;;;;;;
-   > GRGEMAKT-90101;Wien 1.,Innere Stadt <90101>;;;;;;;;
-   > GRGEMAKT-90201;Wien 2.,Leopoldstadt <90201>;;;;;;;;
-   > GRGEMAKT-90301;Wien 3.,Landstraße <90301>;;;;;;;;
-   > GRGEMAKT-90401;Wien 4.,Wieden <90401>;;;;;;;;
-   > GRGEMAKT-90501;Wien 5.,Margareten <90501>;;;;;;;;
-   > GRGEMAKT-90601;Wien 6.,Mariahilf <90601>;;;;;;;;
-
-## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv
-   HTTP 200, 5,570 bytes, 102 lines, text/csv;charset=UTF-8
-   | code;name;FK;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
-   | GALTEJ112-1;0 Jahre;GALT5J100-1;under 1 year old;;;;;;
-   | GALTEJ112-2;1 Jahr;GALT5J100-1;1 year old;;;;;;
-   1 lines match 'GALTEJ112-1(0\\d|1\\d)\\b'
-   > GALTEJ112-100;99 Jahre;GALT5J100-20;99 years old;;;;;;
-
-## https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv
-   HTTP 200, 125 bytes, 3 lines, text/csv;charset=UTF-8
-   | code;name;;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
-   | C11-1;männlich;;male;;;;;;
-   | C11-2;weiblich;;female;;;;;;
-
-## https://www.statistik.at/verzeichnis/reglisten/polbezirke.csv
-   HTTP 200, 4,327 bytes, 121 lines, text/x-comma-separated-values
-   | Politische Bezirke, Gebietsstand 2026;;;;
-   | Erstellt am:;24.09.2026 08:31:14;;;
-   | Bundeslandkennziffer;Bundesland;Kennziffer pol. Bezirk;Politischer Bezirk;Politischer Bez. Code
-   | 1;Burgenland;101;Eisenstadt(Stadt);101
-   | 1;Burgenland;102;Rust(Stadt);102
-   | 1;Burgenland;103;Eisenstadt-Umgebung;103
-   | 1;Burgenland;104;Güssing;104
-   | 1;Burgenland;105;Jennersdorf;105
-
-=== che2
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2009
-   HTTP 200, 184,344 bytes, 2,829 lines, 
-   | HistoricalCode,BfsCode,ValidFrom,ValidTo,Level,Parent,Name,ShortName,Inscription,Radiation,Rec_Type_fr,Rec_Type_de
-   2009: 26 cantons, 166 districts, 2636 communes
-   D ZH 101 Bezirk Affoltern
-   D ZH 110 Bezirk Winterthur
-   D ZH 109 Bezirk Uster
-   D ZH 108 Bezirk Pfäffikon
-   D ZH 107 Bezirk Meilen
-   D ZH 106 Bezirk Horgen
-   D ZH 105 Bezirk Hinwil
-   D ZH 104 Bezirk Dielsdorf
-   D ZH 103 Bezirk Bülach
-   D ZH 102 Bezirk Andelfingen
-   D ZH 112 Bezirk Zürich
-   D ZH 111 Bezirk Dietikon
-   D BE 204 Amtsbezirk Biel
-   D BE 207 District de Courtelary
-   D BE 205 Amtsbezirk Büren
-   D BE 203 Amtsbezirk Bern
-   D BE 202 Amtsbezirk Aarwangen
-   D BE 201 Amtsbezirk Aarberg
-   D BE 206 Amtsbezirk Burgdorf
-   D BE 212 Amtsbezirk Konolfingen
-   D BE 211 Amtsbezirk Interlaken
-   D BE 210 Amtsbezirk Frutigen
-   D BE 209 Amtsbezirk Fraubrunnen
-   D BE 208 Amtsbezirk Erlach
-   D BE 214 District de Moutier
-   D BE 217 Amtsbezirk Niedersimmental
-   D BE 213 Amtsbezirk Laupen
-   D BE 215 District de la Neuveville
-   D BE 216 Amtsbezirk Nidau
-   D BE 225 Amtsbezirk Trachselwald
-   D BE 218 Amtsbezirk Oberhasli
-   D BE 226 Amtsbezirk Wangen
-   D BE 224 Amtsbezirk Thun
-   D BE 223 Amtsbezirk Signau
-   D BE 222 Amtsbezirk Seftigen
-   D BE 221 Amtsbezirk Schwarzenburg
-   D BE 220 Amtsbezirk Saanen
-   D BE 219 Amtsbezirk Obersimmental
-   D LU 305 Amt Willisau
-   D LU 304 Amt Sursee
-   D LU 303 Amt Luzern
-   D LU 302 Amt Hochdorf
-   D LU 301 Amt Entlebuch
-   D UR 400 Kanton Uri
-   D SZ 503 Bezirk Höfe
-   D SZ 502 Bezirk Gersau
-   D SZ 501 Bezirk Einsiedeln
-   D SZ 506 Bezirk Schwyz
-   D SZ 505 Bezirk March
-   D SZ 504 Bezirk Küssnacht (SZ)
-   D OW 600 Kanton Obwalden
-   D NW 700 Kanton Nidwalden
-   D GL 800 Kanton Glarus
-   D ZG 900 Kanton Zug
-   D FR 1007 District de la Veveyse
-   D FR 1006 Bezirk Sense
-   D FR 1005 Bezirk See / District du Lac
-   D FR 1004 District de la Sarine
-   D FR 1003 District de la Gruyère
-   D FR 1002 District de la Glâne
-   D FR 1001 District de la Broye
-   D SO 1105 Bezirk Gösgen
-   D SO 1110 Bezirk Thierstein
-   D SO 1109 Bezirk Solothurn
-   D SO 1107 Bezirk Lebern
-   D SO 1104 Bezirk Dorneck
-   D SO 1103 Bezirk Bucheggberg
-   D SO 1108 Bezirk Olten
-   D SO 1101 Bezirk Gäu
-   D SO 1102 Bezirk Thal
-   D SO 1106 Bezirk Wasseramt
-   D BS 1200 Kanton Basel-Stadt
-   D BL 1301 Bezirk Arlesheim
-   D BL 1302 Bezirk Laufen
-   D BL 1303 Bezirk Liestal
-   D BL 1304 Bezirk Sissach
-   D BL 1305 Bezirk Waldenburg
-   D SH 1406 Bezirk Unterklettgau
-   D SH 1405 Bezirk Stein
-   D SH 1404 Bezirk Schleitheim
-   D SH 1403 Bezirk Schaffhausen
-   D SH 1402 Bezirk Reiat
-   D SH 1401 Bezirk Oberklettgau
-   D AR 1501 Bezirk Hinterland
-   D AR 1503 Bezirk Vorderland
-   D AR 1502 Bezirk Mittelland
-   D AI 1600 Kanton Appenzell Innerrhoden
-   D SG 1727 Wahlkreis Toggenburg
-   D SG 1722 Wahlkreis Rorschach
-   D SG 1721 Wahlkreis St. Gallen
-   D SG 1724 Wahlkreis Werdenberg
-   D SG 1728 Wahlkreis Wil
-   D SG 1725 Wahlkreis Sarganserland
-   D SG 1726 Wahlkreis See-Gaster
-   D SG 1723 Wahlkreis Rheintal
-   D GR 1826 Bezirk Landquart
-   D GR 1827 Bezirk Maloja / Distretto di Maloggia
-   D GR 1822 Distretto di Bernina
-   D GR 1824 Bezirk Imboden
-   D GR 1831 Bezirk Surselva
-   D GR 1830 Bezirk Prättigau-Davos
-   D GR 1823 Bezirk Hinterrhein
-   D GR 1825 Bezirk Inn
-   D GR 1829 Bezirk Plessur
-   D GR 1828 Distretto di Moesa
-   D GR 1821 Bezirk Albula
-   D AG 1911 Bezirk Zurzach
-   D AG 1910 Bezirk Zofingen
-   D AG 1909 Bezirk Rheinfelden
-   D AG 1908 Bezirk Muri
-   D AG 1907 Bezirk Lenzburg
-   D AG 1906 Bezirk Laufenburg
-   D AG 1905 Bezirk Kulm
-   D AG 1904 Bezirk Brugg
-   D AG 1903 Bezirk Bremgarten
-   D AG 1902 Bezirk Baden
-   D AG 1901 Bezirk Aarau
-   D TG 2001 Bezirk Arbon
-   D TG 2008 Bezirk Weinfelden
-   D TG 2007 Bezirk Steckborn
-   D TG 2006 Bezirk Münchwilen
-   D TG 2005 Bezirk Kreuzlingen
-   D TG 2004 Bezirk Frauenfeld
-   D TG 2002 Bezirk Bischofszell
-   D TG 2003 Bezirk Diessenhofen
-   D TI 2106 Distretto di Mendrisio
-   D TI 2105 Distretto di Lugano
-   D TI 2104 Distretto di Locarno
-   D TI 2103 Distretto di Leventina
-   D TI 2102 Distretto di Blenio
-   D TI 2101 Distretto di Bellinzona
-   D TI 2107 Distretto di Riviera
-   D TI 2108 Distretto di Vallemaggia
-   D VD 2221 District d'Aigle
-   D VD 2222 District de la Broye-Vully
-   D VD 2223 District du Gros-de-Vaud
-   D VD 2224 District du Jura-Nord vaudois
-   D VD 2225 District de Lausanne
-   D VD 2226 District de Lavaux-Oron
-   D VD 2227 District de Morges
-   D VD 2228 District de Nyon
-   D VD 2229 District de l'Ouest lausannois
-   D VD 2230 District de la Riviera-Pays-d'Enhaut
-   D VS 2308 District de Monthey
-   D VS 2307 District de Martigny
-   D VS 2306 Bezirk Leuk
-   D VS 2305 District d'Hérens
-   D VS 2304 Bezirk Goms
-   D VS 2303 District d'Entremont
-   D VS 2302 District de Conthey
-   D VS 2301 Bezirk Brig
-   D VS 2309 Bezirk Raron
-   D VS 2310 District de Saint-Maurice
-   D VS 2311 District de Sierre
-   D VS 2312 District de Sion
-   D VS 2313 Bezirk Visp
-   D NE 2404 District de Neuchâtel
-   D NE 2401 District de Boudry
-   D NE 2403 District du Locle
-   D NE 2405 District du Val-de-Ruz
-   D NE 2406 District du Val-de-Travers
-   D NE 2402 District de la Chaux-de-Fonds
-   D GE 2500 Canton de Genève
-   D JU 2601 District de Delémont
-   D JU 2602 District des Franches-Montagnes
-   D JU 2603 District de Porrentruy
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2025
-   HTTP 200, 135,950 bytes, 2,291 lines, 
-   | HistoricalCode,BfsCode,ValidFrom,ValidTo,Level,Parent,Name,ShortName,Inscription,Radiation,Rec_Type_fr,Rec_Type_de
-   | 1,1,12.09.1848,,1,,Zürich,ZH,,,,
-   | 10053,101,12.09.1848,,2,1,Bezirk Affoltern,Affoltern,100,,,
-   | 10575,13,12.09.1848,,3,10053,Stallikon,Stallikon,,,,
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025
-   HTTP 200, 131,422 bytes, 1,271 lines, 
-   | InitialHistoricalCode,InitialCode,InitialName,InitialParentHistoricalCode,InitialParentName,InitialStep,TerminalHistoricalCode,TerminalCode,TerminalName,TerminalParentHistoricalCode,TerminalParentName,TerminalStep
-   | 10037,6486,Villiers,10185,District du Val-de-Ruz,29,16115,6487,Val-de-Ruz,10320,Canton de Neuchâtel,24
-   | 10055,4080,Villmergen,10024,Bezirk Bremgarten,26,15386,4080,Villmergen,10024,Bezirk Bremgarten,26
-   | 10167,2159,Villarvolard,10105,District de la Gruyère,29,15481,2129,Corbières,10105,District de la Gruyère,26
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025&includeUnmodified=true
-   HTTP 200, 260,064 bytes, 2,637 lines, 
-   | InitialHistoricalCode,InitialCode,InitialName,InitialParentHistoricalCode,InitialParentName,InitialStep,TerminalHistoricalCode,TerminalCode,TerminalName,TerminalParentHistoricalCode,TerminalParentName,TerminalStep
-   | 10009,4122,Villnachern,10023,Bezirk Brugg,,10009,4122,Villnachern,10023,Bezirk Brugg,
-   | 10037,6486,Villiers,10185,District du Val-de-Ruz,29,16115,6487,Val-de-Ruz,10320,Canton de Neuchâtel,24
-   | 10055,4080,Villmergen,10024,Bezirk Bremgarten,26,15386,4080,Villmergen,10024,Bezirk Bremgarten,26
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/levels?date=01-01-2025
-   HTTP 200, 333,469 bytes, 2,122 lines, 
-   | HistoricalCode,BfsCode,Name,CantonId,Canton,DistrictId,District,FUA2014,DEGURB2021,FUA2021,GCITIES2021,STREG2022,DEGURB2011,GCITIES2011,REGCH,AGKG2012,STADTE2012,STGD2012,RSC2012,AGKSA2012,AGGL2012,AGGLGK2012,STALAN2012,GDETYP2012_9,GDETYP2
-   | 10009,4122,Villnachern,19,Aargau,10023,Bezirk Brugg,0,2,0,0,14,2,0,3,0,0,0,5,0,0,0,3,23,236,0,0,0,5,1,0,0,0,0,3,23,236,12,12010
-   | 10078,6158,Vionnaz,23,Valais / Wallis,10013,District de Monthey,0,3,5586960,0,11,3,0,1,0,0,0,5,0,0,0,2,22,226,0,0,0,5,2,0,0,0,1,2,22,226,2,2040
-   | 10157,3023,Speicher,15,Appenzell Ausserrhoden,10098,Bezirk Mittelland,3203960,2,3203960,0,2,2,0,5,3203810,0,0,4,3203910,3203,3,2,22,227,3203810,0,0,4,1,3203910,3203,3,1,2,21,217,15,15050
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0104010000_101/px-x-0104010000_101.px
-   HTTP 400, 11 bytes
-   Bad Request
-   sample root rows: [{'dbid': 'px-x-0304010000_101', 'text': 'px-x-0304010000_101'}, {'dbid': 'px-x-0304010000_111', 'text': 'px-x-0304010000_111'}, {'dbid': 'px-x-0304010000_112', 'text': 'px-x-0304010000_112'}]
-
-=== lie2
-
-## PxWeb https://etab.llv.li/PXWeb/api/v1/de/
-   HTTP 200, 31 bytes
-   - None [None] eTab
-
-## PxWeb https://etab.llv.li/api/v1/de/
-   HTTP 404, 1,245 bytes
-   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-<title>404 - File or directory not found.</title>
-<style typ
-
-## PxWeb https://etab.llv.li/PXWeb/api/v1/de/eTab/
-   HTTP 200, 730 bytes
-   - Bevölkerung [l] Bevölkerung
-   - Arbeit und Erwerb [l] Arbeit und Erwerb
-   - Volkswirtschaft und Preise [l] Volkswirtschaft und Preise
-   - Wirtschaftsbereiche und Unternehmen [l] Wirtschaftsbereiche und Unternehmen
-   - Bauen und Wohnen [l] Bauen und Wohnen
-   - Soziales [l] Soziales
-   - Gesundheit [l] Gesundheit
-   - Bildung [l] Bildung
-   - Staat und Politik [l] Staat und Politik
-   - Raum, Umwelt und Energie [l] Raum, Umwelt und Energie
-   - Mobilität und Verkehr [l] Mobilität und Verkehr
-
-## https://www.statistikportal.li/de/themen/bevoelkerung/bevoelkerungsstand
-   HTTP 200, 957,474 bytes, text/html; charset=UTF-8
-   19 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|pdf)\\"|href=\\"[^\\"]*etab[^\\"]*\\"'
-   - href="/de/anwendungen-datenbanken/etab"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2023/04/1/211.2023.04.1_02_bevoelkerungsstand-2023dez-neue-definition-tab.xlsx"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2023/04/1/211.2023.04.1_01_faktenblatt-zur-anpassung-der-bevoelkerungsdefinition.pdf"
-   - href="https://www.statistikportal.li/etab/211.001"
-   - href="https://www.statistikportal.li/etab/211.002"
-   - href="https://www.statistikportal.li/etab/211.003"
-   - href="https://www.statistikportal.li/etab/211.004"
-   - href="https://www.statistikportal.li/etab/211.005"
-   - href="https://www.statistikportal.li/etab/211.006"
-   - href="https://www.statistikportal.li/etab/211.101"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_01_bevoelkerungsstand-2025dez-tabellen.xlsx"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_03_bevoelkerungsdichte-karte.pdf"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/03/1/211.2025.03.1_02_bevoelkerungsstatistik-2025dez-mq.pdf"
-   - href="https://www.statistikportal.li/etab/211.801"
-   - href="https://www.statistikportal.li/etab/211.901"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/01/1/211.2025.01.1_01_bevoelkerungsstand-2025juni-tab.xlsx"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/01/1/bevoelkerungsstatistik_juni_2025.pdf"
-   - href="/statistikportal/publications/211-bevoelkerungsstand/2025/02/1/211.2025.02.1_01_bevoelkerungsstand-vorlaeufige-dezember-2025-tabellen.xlsx"
-   - href="https://etab.llv.li"
-
-## https://www.statistikportal.li/de/erhebungen-register/volkszaehlung
-   HTTP 200, 495,296 bytes, text/html; charset=UTF-8
-   4 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|pdf)\\"|href=\\"[^\\"]*etab[^\\"]*\\"'
-   - href="/de/anwendungen-datenbanken/etab"
-   - href="/statistikportal/indicators/161.2025.11_02_volkszaehlung-papierfragebogen-muster-2025.pdf"
-   - href="/statistikportal/documents/20201015_fragebogen_vz2020_miteindruck_muster.pdf"
-   - href="https://etab.llv.li"
+== xls https://web.archive.org/web/20230606002135id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.04.xls 7 2
+  HTTP 200 application/vnd.ms-excel 75,264 bytes
+  1 sheets: ['TAB. 1.4_RPL2021']
+  -- sheet 'TAB. 1.4_RPL2021': 311 rows x 11 cols
+    1.4. POPULATIA REZIDENTA PE 
+    VARSTA LA 1 DECEMBRIE 2021   | ANUL  NASTERII | P O P U L A T I A    R E Z I
+     |  | TOTAL |  |  | M E D I U L  D E  R E Z I D 
+     |  |  |  |  | URBAN |  |  | RURAL
+     |  | Ambele  sexe | Masculin | Feminin | Ambele  sexe | Masculin | Feminin | Ambele  sexe | Masculin | Feminin
+    A | B | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0
+    ROMANIA
+== xls https://web.archive.org/web/20230701100334id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.01.xls 7 2
+  HTTP 200 application/vnd.ms-excel 141,824 bytes
+  1 sheets: ['2.1']
+  -- sheet '2.1': 446 rows x 23 cols
+    2.1. POPULATIA DUPA ETNIE LA
+    JUDET | ANUL | POPULATIA5  TOTAL | E T N  I A
+     |  |  | Romani | Maghiari | Romi | Ucraineni 1 | Germani | Turci | Rusi- Lipoveni | Tatari | Sarbi, Croati, Sloveni 2 | Slovaci | Bulgari | Greci | Evrei
+    A | B | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0
+    ROMANIA
+     | 1930 | 14280729.0 | 11118170.0 | 1423459.0 | 242656.0 | 45875.0 | 633488.0 | 26080.0 | 50725.0 | 15580.0 | 50310.0 | 50772.0 | 66348.0 | 23161.0 | 451892.0
+     | 1956 | 17489450.0 | 14996114.0 | 1587675.0 | 104216.0 | 60479.0 | 384708.0 | 14329.0 | 38731.0 | 20469.0 | 46517.0 | 23331.0 | 12040.0 | 11166.0 | 146264.0
+== xls https://web.archive.org/web/20230702045135id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.02.1-si-Tabel-2.02.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 408,035 bytes
+  2 sheets: ['Tab.2.2.1', 'Tab 2.2.2']
+  -- sheet 'Tab.2.2.1': 73 rows x 26 cols
+     | 2.2.1 POPULATIA REZIDENTA DU
+    MACROREGIUNEA  REGIUNEA DE D | POPULATIA REZIDENTA  TOTAL | ETNIA
+     |  | Români | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci | Italieni
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMANIA | 19053815 | 14801442 | 1002151 | 569477 | 45835 | 22907 | 20945 | 19394 | 18156 | 12026 | 10232 | 5975 | 4842 | 2086 | 4039
+    MACROREGIUNEA 1 | 4792860 | 3071971 | 935531 | 219329 | 27695 | 11819 | 352 | 340 | 59 | 141 | 5796 | 92 | 31 | 244 | 1064
+    NORD-VEST | 2521793 | 1744649 | 359089 | 110693 | 27449 | 5667 | 151 | 149 | 27 | 75 | 5754 | 41 | 14 | 124 | 632
+  -- sheet 'Tab 2.2.2': 3272 rows x 26 cols
+     | 2.2.2 POPULATIA REZIDENTA DU
+    JUDET  MUNICIPIU, ORAS, COMU | POPULATIA REZIDENTA  TOTAL | ETNIA
+     |  | Români | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci | Italieni
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 14801442 | 1002151 | 569477 | 45835 | 22907 | 20945 | 19394 | 18156 | 12026 | 10232 | 5975 | 4842 | 2086 | 4039
+    ALBA | 325941 | 268753 | 11494 | 13041 | 19 | 544 | 29 | 10 | * | 3 | 17 | 6 | * | * | 68
+    MUNICIPIUL ALBA IULIA | 64227 | 53788 | 727 | 571 | 4 | 66 | 15 | 8 | * | - | * | 4 | - | * | 28
+== xls https://web.archive.org/web/20230701100337id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.03.1-si-Tabel-2.03.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 407,822 bytes
+  2 sheets: ['Tab.2.3.1', 'Tab 2.3.2']
+  -- sheet 'Tab.2.3.1': 73 rows x 26 cols
+     | 2.3.1 POPULATIA REZIDENTA DU
+    MACROREGIUNE  REGIUNE DE DEZ | POPULATIA REZIDENTA  TOTAL | L I M B A  M A T E R N A
+     |  | Româna | Maghiara | Romani | Ucraineana | Germana | Turca | Rusa | Tatara | Sarba | Slovaca | Bulgara | Croata | Italiana | Greaca
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 15153198 | 1038806 | 199050 | 40861 | 15943 | 17101 | 14414 | 13805 | 10058 | 9241 | 4478 | 4664 | 4105 | 1069
+    MACROREGIUNEA 1 | 4792860 | 3180216 | 974711 | 74722 | 27086 | 7185 | 328 | 388 | 36 | 125 | 5136 | 78 | 28 | 1063 | 157
+    NORD-VEST | 2521793 | 1785269 | 385045 | 47682 | 26905 | 1793 | 138 | 176 | 15 | 69 | 5098 | 33 | 13 | 640 | 89
+  -- sheet 'Tab 2.3.2': 3272 rows x 26 cols
+     | 2.3.2 POPULATIA REZIDENTA DU
+    JUDET  MUNICIPIU, ORAS, COMU | POPULATIA REZIDENTA  TOTAL | L I M B A  M A T E R N A
+     |  | Româna | Maghiara | Romani | Ucraineana | Germana | Turca | Rusa | Tatara | Sarba | Slovaca | Bulgara | Croata | Italiana | Greaca
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 15153198 | 1038806 | 199050 | 40861 | 15943 | 17101 | 14414 | 13805 | 10058 | 9241 | 4478 | 4664 | 4105 | 1069
+    ALBA | 325941 | 279649 | 10955 | 2625 | 11 | 393 | 28 | 13 | * | 4 | 10 | 4 | * | 71 | *
+    MUNICIPIUL ALBA IULIA | 64227 | 54141 | 652 | 243 | 3 | 52 | 16 | 8 | - | * | 4 | * | - | 30 | *
+== xls https://web.archive.org/web/20230701100330id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.04.1-si-Tabel-2.04.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 463,240 bytes
+  2 sheets: ['Tab 2.4.1', 'Tab 2.4.2']
+  -- sheet 'Tab 2.4.1': 77 rows x 26 cols
+     | 2.4.1 POPULATIA REZIDENTA DU
+    MACROREGIUNE  REGIUNE DE DEZ | POPULATIA REZIDENTA  TOTAL | RELIGIA
+     |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser | Ortodoxa Sarba
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026 | 17159
+    MACROREGIUNEA 1 | 4792860 | 2805988 | 435586 | 473323 | 173298 | 98029 | 53863 | 23138 | 1987 | 47230 | 30696 | 9390 | 1830 | 14796 | 1888
+    NORD-VEST | 2521793 | 1535661 | 132237 | 244442 | 129512 | 73884 | 42982 | 10352 | 1235 | 6123 | 17409 | 3588 | 1208 | 1531 | 981
+  -- sheet 'Tab 2.4.2': 3276 rows x 29 cols
+     | 2.4.2 POPULATIA REZIDENTA DU
+    JUDET  MUNICIPIU, ORAS, COMU | POPULATIA REZIDENTA  TOTAL | RELIGIA
+     |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser | Ortodoxa Sarba
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026 | 17159
+    ALBA | 325941 | 253901 | 2849 | 9306 | 7238 | 7649 | 3133 | 462 | 93 | 1218 | 1658 | 728 | 105 | 322 | 116
+    MUNICIPIUL ALBA IULIA | 64227 | 47959 | 1029 | 530 | 1346 | 1046 | 919 | 56 | 37 | 27 | 314 | 95 | 31 | 62 | 15
+== xls https://web.archive.org/web/20230701141131id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.05.1-si-Tabel-2.05.2.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 155,280 bytes
+  2 sheets: ['Tab 2.5.1', 'Tab 2.5.2']
+  -- sheet 'Tab 2.5.1': 110 rows x 26 cols
+     | 2.5.1 POPULATIA REZIDENTA DU
+    MEDIU DE REZIDENTA  ETNIE | POPULATIA REZIDENTA  TOTAL | R E L I G I A
+     |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser | Ortodoxa Sarba
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026 | 17159
+    ETNIA
+    Români | 14801442 | 13548951 | 283320 | 28472 | 295970 | 95061 | 79334 | 51804 | 9223 | 1270 | 31763 | 30285 | 11272 | 4423 | 6252
+  -- sheet 'Tab 2.5.2': 1129 rows x 29 cols
+     | 2.5.2 POPULATIA REZIDENTA DU
+    JUDET  ETNIE | POPULATIA REZIDENTA  TOTAL | RELIGIA
+     |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser | Ortodoxa Sarba
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    ROMÂNIA | 19053815 | 14025064 | 741504 | 495433 | 404475 | 115457 | 103213 | 65861 | 58347 | 47992 | 43340 | 36374 | 28362 | 20026 | 17159
+    ETNIA
+    Români | 14801442 | 13548951 | 283320 | 28472 | 295970 | 95061 | 79334 | 51804 | 9223 | 1270 | 31763 | 30285 | 11272 | 4423 | 6252
+== xls https://web.archive.org/web/20230701100328id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.07.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 107,166 bytes
+  1 sheets: ['Tab.2.7']
+  -- sheet 'Tab.2.7': 723 rows x 28 cols
+     | 2.7 POPULATIA REZIDENTA DUPA
+    STATUTUL ACTIVITATII CURENTE | SEXE | POPULATIA REZIDENTA  TOTAL | ETNIE
+     |  |  | Romani | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi-Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+    ROMÂNIA
+     | Ambele sexe | 19053815 | 14801442 | 1002151 | 569477 | 45835 | 22907 | 20945 | 19394 | 18156 | 12026 | 10232 | 5975 | 4842 | 2086
+     | Masculin | 9245540 | 7159320 | 480563 | 290760 | 23033 | 11421 | 11315 | 9091 | 8630 | 5928 | 4890 | 2919 | 2377 | 1250
+== xls https://web.archive.org/web/20230701100330id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.09.xlsx 7 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 106,094 bytes
+  1 sheets: ['1']
+  -- sheet '1': 1184 rows x 14 cols
+     | 2.9. POPULATIA REZIDENTA FEM
+    MEDII DE REZIDENTA  GRUPA DE | POPULATIA REZIDENTA FEMININA | FEMEI DE 11 ANI SI PESTE CAR | FEMEI DE 11 ANI SI PESTE CAR |  |  |  |  |  |  | Numarul total al copiilor na | Copii nascuti-vii la 1000 fe | MEDII DE REZIDENTA  GRUPA DE
+     |  | FEMEI DE xx ANI ȘI PESTE CAR | Total | 1 copil | 2 copii | 3 copii | 4 copii | 5 copii | 6 copii si peste | Numarul total al copiilor na | Copii nascuti-vii la 1000 fe
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | A
+    ROMÂNIA |  |  |  |  |  |  |  |  |  |  |  | ROMÂNIA
+    Total | 8745753 | 3007449 | 5738304 | 2019180 | 2464412 | 703684 | 312106 | 131663 | 107259 | 11751378 | 1343.67 | Total
+    ETNIA |  |  |  |  |  |  |  |  |  |  |  | ETNIA
