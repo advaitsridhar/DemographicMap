@@ -170,10 +170,10 @@ def ages(year: int) -> tuple[dict[str, Counter], dict[str, Counter]]:
         raise SystemExit(f"liechtenstein: 211.004 has no {year}; it has {list(var[jahr])[:4]}")
     query = [
         {"code": jahr, "selection": {"filter": "item", "values": [var[jahr][str(year)]]}},
-        {"code": alter, "selection": {"filter": "all", "values": ["*"]}},
-        {"code": sex, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": alter, "selection": {"filter": "item", "values": list(var[alter].values())}},
+        {"code": sex, "selection": {"filter": "item", "values": list(var[sex].values())}},
         {"code": heimat, "selection": {"filter": "item", "values": [total_code(var[heimat])]}},
-        {"code": ort, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": ort, "selection": {"filter": "item", "values": list(var[ort].values())}},
     ]
     males: dict[str, Counter] = {}
     females: dict[str, Counter] = {}
@@ -202,9 +202,9 @@ def census(key: str, labels: dict[str, str]) -> dict[str, dict[str, float]]:
     place = pick(var, "Gemeinde")
     query = [
         {"code": stichtag, "selection": {"filter": "item", "values": [var[stichtag]["31.12.2020"]]}},
-        {"code": group, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": group, "selection": {"filter": "item", "values": list(var[group].values())}},
         {"code": sex, "selection": {"filter": "item", "values": [total_code(var[sex])]}},
-        {"code": place, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": place, "selection": {"filter": "item", "values": list(var[place].values())}},
     ]
     others = [c for c in var if c not in {stichtag, group, sex, place}]
     for code in others:                    # Heimat: both citizenships together
