@@ -1,29 +1,50 @@
-montenegro: Monstat, 2023 census
-  TABELA_Popis%20stanovnistva%202023%20I_CG.xlsx: 30,350 bytes
-  TABELA_Popis%20stanovnistva%202023%20II_CG.xlsx: 50,033 bytes
-  country: 623,633, median 40.2 from five-year groups
-  Andrijevica: 3,910, median 45.8
-  Bar: 45,812, median 40.3
-  Berane: 24,645, median 41.4
-  Bijelo Polje: 38,662, median 41.9
-  Budva: 27,445, median 37.4
-  Cetinje: 14,494, median 44.5
-  Danilovgrad: 18,617, median 41.2
-  Gusinje: 3,933, median 46.0
-  Herceg Novi: 30,824, median 43.4
-  Kolašin: 6,700, median 45.2
-  Kotor: 22,746, median 41.2
-  Mojkovac: 6,728, median 45.8
-  Nikšić: 65,705, median 42.2
-  Petnjica: 4,957, median 43.2
-  Plav: 9,050, median 39.9
-  Pljevlja: 24,134, median 49.3
-  Plužine: 2,177, median 51.7
-  Podgorica + Tuzi + Zeta: 208,555, median 37.7
-  Rožaje: 23,184, median 35.4
-  Šavnik: 1,569, median 50.0
-  Tivat: 16,338, median 39.1
-  Ulcinj: 20,507, median 41.1
-  Žabljak: 2,941, median 46.7
-  wrote data/processed/montenegro_census.json (353 kB)
-  wrote montenegro_census.json: 46 records
+kosovo: ASKdata, 2024 census
+  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
+  38 municipalities bound one-to-one
+  Deçan: 27,775 residents, 27,775 answered
+  Gjakova: 78,699 residents, 78,699 answered
+  Drenas: 48,079 residents, 48,079 answered
+  Gjilan: 82,980 residents, 82,980 answered
+  Dragash: 28,896 residents, 28,896 answered
+  Istog: 33,008 residents, 33,008 answered
+  Kaçanik: 27,716 residents, 27,716 answered
+  Klina: 30,503 residents, 30,503 answered
+  Fushë Kosovë: 63,949 residents, 63,949 answered
+  Kamenica: 22,868 residents, 22,868 answered
+  Mitrovica: 64,742 residents, 64,742 answered
+  Leposaviq: 9,485 residents, 3,185 answered -- ethnicity with ASK's estimate, religion and language stated
+  Lipjan: 55,044 residents, 55,044 answered
+  Novobërdë: 4,493 residents, 4,493 answered
+  Obiliq: 22,815 residents, 22,815 answered
+  Rahovec: 41,799 residents, 41,799 answered
+  Peja: 82,745 residents, 82,745 answered
+  Podujeva: 70,975 residents, 70,975 answered
+  Pristina: 227,466 residents, 227,466 answered
+  Prizren: 147,246 residents, 147,246 answered
+  Skenderaj: 40,664 residents, 40,664 answered
+  Shtime: 24,308 residents, 24,308 answered
+  Shtërpcë: 10,771 residents, 10,771 answered
+  Suhareka: 45,749 residents, 45,749 answered
+  Ferizaj: 109,255 residents, 109,255 answered
+  Viti: 35,566 residents, 35,566 answered
+  Vushtrri: 61,528 residents, 61,528 answered
+  Zubin Potok: 3,385 residents, 763 answered -- ethnicity with ASK's estimate, religion and language stated
+  Zveçan: 2,867 residents, 434 answered -- ethnicity with ASK's estimate, religion and language stated
+  Malisheva: 43,888 residents, 43,888 answered
+  Junik: 3,943 residents, 3,943 answered
+  Mamusha: 5,607 residents, 5,607 answered
+  Han i Elezit: 8,533 residents, 8,533 answered
+  Gracanica: 18,486 residents, 18,486 answered
+  Ranillug: 2,481 residents, 2,481 answered
+  Partesh: 3,240 residents, 3,240 answered
+  Kllokot: 3,041 residents, 3,041 answered
+  North Mitrovica: 7,920 residents, 2,326 answered -- ethnicity with ASK's estimate, religion and language stated
+  district District of Ferizaj: 180,583, median 32.2
+  district District of Gjakova: 152,216, median 35.1
+  district District of Gjilan: 150,176, median 34.9
+  district District of Mitrovica: 190,591, median 34.6
+  district District of Peja: 146,256, median 34.8
+  district District of Prishtina: 511,307, median 32.4
+  district District of Prizren: 271,386, median 33.9
+  wrote data/processed/kosovo_census.json (240 kB)
+  wrote kosovo_census.json: 45 records
