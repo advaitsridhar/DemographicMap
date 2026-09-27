@@ -1,57 +1,25 @@
-== r3_swe_ages
-  title: Population by region, marital status, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-  var 'Civilstand' (marital status): 5 values
-      OG=single; G=married; ÄNKL=widowers/widows; SK=divorced; SC=total, all mariatal statuses
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-      ALL: 0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years; 5-9=5–9 years; 6=6 years; 7=7 years; 8=8 years; 9=9 years; 10=10 years; 10-14=10–14 years; 10-19=10–19 years; 11=11 years; 12=12 years; 13=13 years; 14=14 years; 15=15 years; 15-19=15–19 years; 16=16 years; 17=17 years; 18=18 years; 19=19 years; 20=20 years; 20-24=20–24 years; 20-29=20–29 years; 21=21 years; 22=22 years; 23=23 years; 24=24 years; 25=25 years; 25-29=25–29 years; 26=26 years; 27=27 years; 28=28 years; 29=29 years; 30=30 years; 30-34=30–34 years; 30-39=30–39 years; 31=31 years; 32=32 years; 33=33 years; 34=34 years; 35=35 years; 35-39=35–39 years; 36=36 years; 37=37 years; 38=38 years; 39=39 years; 40=40 years; 40-44=40–44 years; 40-49=40–49 years; 41=41 years; 42=42 years; 43=43 years; 44=44 years; 45=45 years; 45-49=45–49 years; 46=46 years; 47=47 years; 48=48 years; 49=49 years; 50=50 years; 50-54=50–54 years; 50-59=50–59 years; 51=51 years; 52=52 years; 53=53 years; 54=54 years; 55=55 years; 55-59=55–59 years; 56=56 years; 57=57 years; 58=58 years; 59=59 years; 60=60 years; 60-64=60–64 years; 60-69=60–69 years; 61=61 years; 62=62 years; 63=63 years; 64=64 years; 65=65 years; 65-69=65–69 years; 66=66 years; 67=67 years; 68=68 years; 69=69 years; 70=70 years; 70-74=70–74 years; 70-79=70–79 years; 71=71 years; 72=72 years; 73=73 years; 74=74 years; 75=75 years; 75-79=75–79 years; 76=76 years; 77=77 years; 78=78 years; 79=79 years; 80=80 years; 80-84=80–84 years; 80-89=80–89 years; 81=81 years; 82=82 years; 83=83 years; 84=84 years; 85=85 years; 85-89=85–89 years; 86=86 years; 87=87 years; 88=88 years; 89=89 years; 90=90 years; 90-94=90–94 years; 90-99=90–99 years; 91=91 years; 92=92 years; 93=93 years; 94=94 years; 95=95 years; 95-99=95–99 years; 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 2 values
-      000007ME=Population; 000007MG=Population growth
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-== r3_nor_12026
-  dims ['KOKkommuneregion0000', 'ContentsCode', 'Tid'] sizes [4, 3, 3]
-    KOKkommuneregion0000: 0101=Halden (-2019); 0301=Oslo - Oslove; 0706=Sandefjord (-2016); 0710=Sandefjord (2017-2019)
-    ContentsCode: KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number)
-    Tid: 2016=2016; 2017=2017; 2018=2018
-  36 values; first [21676, 21647, 21511, 30790, 31037, 31177, 4766, 4692, 4975, 333711, 332647, 331375, 666757, 673468, 681071, 146521, 140631, 148274, 32063, None, None, 46195, None, None, 6205, None, None, None, 43355, 42958]
-  sum of all 3,939,850
-== r3_nor_eka
-  title: 12026: Church users, by region, contents and year
-  var 'KOKkommuneregion0000' (region): 891 values
-      3101=Halden; 3103=Moss; 3105=Sarpsborg; 3107=Fredrikstad; 3110=Hvaler; 3112=Råde ... EKG12=KOSTRA-group 12; EKG13=KOSTRA-group 13; EKG14=KOSTRA-group 14; EKG15=KOSTRA-group 15; EKG16=KOSTRA-group 16; EKG17=KOSTRA-group 17
-      code lengths {3: 1, 4: 839, 5: 51}; prefixes {'': 839, 'EKA': 33, 'EKG': 17, 'EAK': 1, 'EAKUO': 1}
-      /^EKA|^EAK/: 35 -- EAK=The whole country; EAKUO=The whole country except Oslo; EKA31=Østfold; EKA32=Akershus; EKA30=Viken (2020-2023); EKA01=Østfold (-2019); EKA02=Akershus (-2019); EKA03=Oslo - Oslove; EKA34=Innlandet; EKA04=Hedmark (-2019); EKA05=Oppland (-2019); EKA33=Buskerud; EKA06=Buskerud (-2019); EKA39=Vestfold; EKA40=Telemark; EKA38=Vestfold og Telemark (2020-2023); EKA07=Vestfold (-2019); EKA08=Telemark (-2019); EKA42=Agder; EKA09=Aust-Agder (-2019); EKA10=Vest-Agder (-2019); EKA11=Rogaland; EKA46=Vestland; EKA12=Hordaland (-2019); EKA14=Sogn og Fjordane (-2019); EKA15=Møre og Romsdal; EKA50=Trøndelag - Trööndelage; EKA16=Sør-Trøndelag (-2017); EKA17=Nord-Trøndelag (-2017); EKA18=Nordland - Nordlánnda; EKA55=Troms - Romsa - Tromssa; EKA56=Finnmark - Finnmárku - Finmarkku; EKA54=Troms og Finnmark - Romsa ja Finnmárku (2020-2023); EKA19=Troms - Romsa (-2019); EKA20=Finnmark Finnmárk (-2019)
-  var 'ContentsCode' (contents): 28 values
-      KOSmedlemmerdnk0000=Members of the Church of Norway (number); KOSinnmeldtednk0000=Enrolled in the Church of Norway (number); KOSutmeldtednk0000=Resigned from the Church of Norway (number); KOSdoepte0000=Infants baptized (number); KOSdoeptesokn0000=Acts of baptisms in the parish (number); KOSkonfirmanter0000=Confirmed (number) ... KOSpersoneralle0000=Total population (number); KOSmedltroslivs0000=Members in religious and life stance communities outside The Church of Norway (number); KOSfodde0000=Born during the year (number); KOSdode0000=Died during the year (number); KOSpersoner150000=Number of 15 year-olds (number); KOSpersoner040000=Inhabitants aged 4 (number)
-      code lengths {11: 1, 12: 1, 13: 1, 17: 4, 18: 3, 19: 6, 20: 12}; prefixes {'KOSpersoner': 2, 'KOSmedlemmerdnk': 1, 'KOSinnmeldtednk': 1, 'KOSutmeldtednk': 1, 'KOSdoepte': 1, 'KOSdoeptesokn': 1, 'KOSkonfirmanter': 1, 'KOSgudsttotdelt': 1}
-  var 'Tid' (year) [time]: 11 values
-      2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-== r3_isl_folder
-  3 items
-    MAN02005.px [t] Population by municipality, age and sex 1998-2026 - Division into municipalites as of 1 January 2026
-    MAN02008.px [t] Average annual population by municipality, age and sex 1998-2024 - Current municipalities
-    MAN10001.px [t] Population by municipality, sex, citizenship and quarters 2011-2026
-== r3_isl_2byggdir
-  4 items
-    Byggdakjarnar [l] Urban nuclei
-    Byggdakjarnarhverfi [l] Other areas
-    sveitarfelog [l] Municipalities
-    x_eldraefni [l] Earlier tables
-== r3_isl_mann
-  4 items
-    1_yfirlit [l] Overview
-    2_byggdir [l] Municipalities and urban nuclei
-    3_bakgrunnur [l] Immigrants
-    4_endurskodun [l] Population, change of method 2024
-== r3_isl_02001
-  FAILED: RuntimeError: HTTP 400: Bad Request
-== r3_isl_relig
-  1 hits
-    CEN09001.px | /manntal/1manntalfjolsk | Population and average age in institutions 31 December 2011
+== post https://nip.tuik.gov.tr/Home/OrtancaYas
+  20,665 bytes, begins b'\r\n<div id="nuKoS'
+  ~ -item nav-link active" id="nav-contact-tab" data-toggle="tab" href="#harita" role="tab" aria-controls="nav-harita" aria-selected="false">Harita</a> <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#grafik" r
+  ~ class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#grafik" role="tab" aria-controls="nav-grafik" aria-selected="true">Grafik</a> <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#tablo"
+  ~ lass="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#tablo" role="tab" aria-controls="nav-tablo" aria-selected="false">Tablo</a> </div> </nav> <div class="tab-content py-3 px-3 px-sm-0" id="nav-tab
+  ~ </label> </div> <div class="col-sm-10"> <select class="form-control" name="grafikDuzey" id="grafikDuzey"> <option value="T&#xDC;RK
+  ~ /option> <option value="&#x130;L">&#x130;l</option> </select> </div> </div> <div class="row">
+  ~ </label> </div> <div class="col-sm-10"> <select class="form-control" name="grafikIl" id="grafikIl"> <option value="ADANA">ADAN
+  ~ n> <option value="ZONGULDAK">ZONGULDAK</option> </select> </div> </div> </div> <div class="col-l
+  ~ </label> </div> <div class="col-sm-10"> <select class="form-control" name="tableDuzey" id="tableDuzey"> <option value="T&#xDC;RK&#
+  ~ /option> <option value="&#x130;L">&#x130;l</option> </select> </div> </div> <div class="row">
+  ~ </label> </div> <div class="col-sm-10"> <select class="form-control" name="tableIl" id="tableIl"> <option value="Hepsi">Hepsi</option>
+  ~ n> <option value="ZONGULDAK">ZONGULDAK</option> </select> </div> </div> </div> <div class="col-l
+  ~ l()); }); }); function GetInformation(type, position, value) { nipLoaderOpen(); $.post("/Home/GetInformation" , { "status": type, "name": "OrtancaYas", "value": value } , function
+  ~ }); }); function GetInformation(type, position, value) { nipLoaderOpen(); $.post("/Home/GetInformation" , { "status": type, "name": "OrtancaYas", "value": value } , function (data) {
+== post https://nip.tuik.gov.tr/Home/YasGrubunaGoreNufus
+  6,135 bytes, begins b'\r\n<div id="nuKoS'
+  ~ nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#grafik" role="tab" aria-controls="nav-grafik" aria-selected="true">Grafik</a> <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#tablo"
+  ~ lass="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#tablo" role="tab" aria-controls="nav-tablo" aria-selected="false">Tablo</a> </div> </nav> <div class="tab-content py-3 px-3 px-sm-0" id="nav-tab
+  ~ </label> </div> <div class="col-sm-10"> <select class="form-control" name="tableYil" id="tableYil"> <option value="0" selected>Hepsi</
+  ~ <select class="form-control" name="tableYil" id="tableYil"> <option value="0" selected>Hepsi</option> <option value="2025">2025</option>
+  ~ 0">1940</option> <option value="1935">1935</option> </select> </div> </div> </div> <div class="col-l
+  ~ }); $("#tableYil").change(function () { GetInformation(1, "#tabloIcerik", $("#tableYil option:selected").val()); }); }); function GetInformation(type, position, value) { nipLoaderOpen();
+  ~ l()); }); }); function GetInformation(type, position, value) { nipLoaderOpen(); $.post("/Home/GetInformation" , { "status": type, "name": "YasGrubunaGoreNufus", "value": value } ,
+  ~ }); }); function GetInformation(type, position, value) { nipLoaderOpen(); $.post("/Home/GetInformation" , { "status": type, "name": "YasGrubunaGoreNufus", "value": value } , function
