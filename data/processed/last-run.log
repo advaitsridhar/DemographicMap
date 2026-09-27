@@ -1,231 +1,198 @@
-== get https://www.stat.gov.az/source/demoqraphy/az/001_7-10.xls
-  81,408 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_7-10.xls: 4 sheets: 1.7 | 1.8 | 1.9 | 1.10
-  -- sheet '1.7': 80 rows x 8 cols
-    r0:  |  |  |  |  |  |  | 
-    r1:  | 1.7. Əhalinin cins üzrə bölg |  |  |  |  |  | 
-    r2:  | (min nəfər) |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  | İllər | Əhalinin sayı - cəmi | o cümlədən |  | Əhalinin ümumi sayına nisbət |  | Hər 1000 kişiyə düşən qadınl
-    r5:  |  |  | kişilər | qadınlar | kişilər | qadınlar | 
-    r6:  | 1926.0 | 2314.6 | 1212.9 | 1101.7 | 52.4 | 47.6 | 908.4
-    r7:  | 1939.0 | 3205.2 | 1642.6 | 1562.6 | 51.2 | 48.8 | 951.3
-    r8:  | 1959.0 | 3697.7 | 1756.6 | 1941.1 | 47.5 | 52.5 | 1105.0
-    r9:  | 1960.0 | 3815.7 | 1817.0 | 1998.7 | 47.6 | 52.4 | 1100.0
-    r10:  | 1961.0 | 3973.3 | 1901.5 | 2071.8 | 47.9 | 52.1 | 1089.6
-    r11:  | 1962.0 | 4118.2 | 1974.8 | 2143.4 | 48.0 | 52.0 | 1085.4
-    r12:  | 1963.0 | 4218.1 | 2029.0 | 2189.1 | 48.1 | 51.9 | 1078.9
-    r13:  | 1964.0 | 4369.0 | 2108.1 | 2260.9 | 48.3 | 51.7 | 1072.5
-  -- sheet '1.8': 52 rows x 18 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.8. Əhalinin yaş qrupları ü |  |  |  |  |  |  |  |  |  | 
-    r2:  | (min nəfər) |  |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  |  | 
-    r4:  | İllər | Əhalinin sayı - cəmi | o cümlədən yaş qrupları üzrə |  |  |  |  |  |  |  | 
-    r5:  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44
-    r6:  | 1959.0 | 3697.7 | 635.0 | 450.6 | 288.4 | 291.5 | 396.8 | 342.9 | 287.4 | 158.3 | 129.9
-    r7:  | 1970.0 | 5117.1 | 743.7 | 811.5 | 698.2 | 466.3 | 294.9 | 233.5 | 401.3 | 332.7 | 289.6
-    r8:  | 1979.0 | 6026.6 | 671.2 | 688.4 | 774.6 | 811.6 | 620.6 | 402.0 | 247.8 | 267.1 | 384.3
-    r9:  | 1989.0 | 7021.2 | 861.9 | 758.8 | 681.2 | 693.7 | 687.2 | 706.3 | 560.8 | 389.2 | 232.4
-    r10:  | 1990.0 | 7131.9 | 861.0 | 786.4 | 699.5 | 681.8 | 691.9 | 702.9 | 591.4 | 419.3 | 272.5
-    r11:  | 1991.0 | 7218.5 | 863.9 | 808.5 | 711.4 | 671.2 | 696.1 | 698.6 | 625.0 | 437.5 | 315.3
-    r12:  | 1992.0 | 7324.1 | 871.6 | 826.7 | 722.2 | 663.3 | 692.1 | 691.6 | 653.9 | 470.2 | 351.8
-    r13:  | 1993.0 | 7440.0 | 875.0 | 839.9 | 739.7 | 664.9 | 681.9 | 678.5 | 676.1 | 500.3 | 384.1
-  -- sheet '1.9': 21 rows x 39 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.9. Əhalinin yaş qrupları ü |  |  |  |  |  |  |  |  |  | 
-    r2:  |  |  |  |  |  |  |  |  |  |  | 
-    r3:  | Yaş qrupları | 1990.0 | 1991.0 | 1992.0 | 1993.0 | 1994.0 | 1995.0 | 1996.0 | 1997.0 | 1998.0 | 1999.0
-    r4:  | Cəmi | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0
-    r5:  | o cümlədən yaş qrupları üzrə |  |  |  |  |  |  |  |  |  | 
-    r6:  | 0-4 | 12.1 | 12.0 | 11.9 | 11.8 | 11.3 | 10.8 | 10.5 | 9.9 | 9.7 | 8.9
-    r7:  | 5-9 | 11.0 | 11.2 | 11.3 | 11.3 | 11.3 | 11.4 | 11.4 | 11.4 | 11.4 | 11.6
-    r8:  | 10-14 | 9.8 | 9.9 | 9.9 | 9.9 | 10.1 | 10.4 | 10.4 | 10.5 | 10.5 | 11.3
-    r9:  | 15-19 | 9.6 | 9.3 | 9.1 | 8.9 | 8.9 | 8.9 | 8.9 | 9.1 | 9.1 | 9.5
-    r10:  | 20-24 | 9.7 | 9.6 | 9.4 | 9.2 | 8.8 | 8.4 | 8.4 | 8.2 | 8.2 | 8.1
-    r11:  | 25-29 | 9.9 | 9.7 | 9.4 | 9.1 | 8.8 | 8.7 | 8.7 | 8.6 | 8.6 | 7.9
-    r12:  | 30-34 | 8.3 | 8.6 | 8.9 | 9.1 | 9.1 | 9.0 | 9.0 | 8.9 | 8.9 | 8.6
-    r13:  | 35-39 | 5.9 | 6.1 | 6.4 | 6.7 | 7.3 | 7.6 | 7.6 | 8.0 | 8.0 | 8.8
-== get https://www.stat.gov.az/source/demoqraphy/az/001_11-12.xls
-  45,568 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_11-12.xls: 2 sheets: 1.11 | 1.12
-  -- sheet '1.11': 57 rows x 11 cols
-    r0:  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.11. Əhalinin milli (etnik) |  |  |  |  |  |  |  |  | 
-    r2:  | (əhalinin siyahıyaalınmaları |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  | 
-    r4:  | Millətlər və etnik qrupların | 1926.0 | 1939.0 | 1959.0 | 1970.0 | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20192)
-    r5:  | Min nəfər |  |  |  |  |  |  |  |  | 
-    r6:  | Əhalinin sayı - cəmi | 2314.6 | 3205.2 | 3697.7 | 5117.1 | 6026.5 | 7021.2 | 7953.4 | 8922.4 | 9951.4
-    r7:  | o cümlədən, millətlər və etn |  |  |  |  |  |  |  |  | 
-    r8:  | azərbaycanlılar | 1438.0 | 1870.5 | 2494.4 | 3776.8 | 4708.8 | 5805.0 | 7205.5 | 8172.8 | 9436.1
-    r9:  | ləzgilər | 37.3 | 111.7 | 98.2 | 137.3 | 158.1 | 171.4 | 178.0 | 180.3 | 167.6
-    r10:  | talışlar | 77.3 | 87.5 | 0.1 | … | … | 21.2 | 76.8 | 112.0 | 87.6
-    r11:  | ruslar | 220.5 | 528.3 | 501.3 | 510.1 | 475.3 | 392.3 | 141.7 | 119.3 | 71.0
-    r12:  | ukraynalılar | 18.2 | 23.6 | 25.8 | 29.2 | 26.4 | 32.3 | 29.0 | 21.5 | 13.9
-    r13:  | avarlar | 19.1 | 15.7 | 17.3 | 30.7 | 36.0 | 44.1 | 50.9 | 49.8 | 48.6
-  -- sheet '1.12': 33 rows x 8 cols
-    r0:  |  |  |  |  |  |  | 
-    r1:  | 1.12. Əhalinin ana dili və s |  |  |  |  |  | 
-    r2:  | (2019-cu il əhalinin siyahıy |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  | Millətlər və etnik qrupların | Milli (etnik) mənsubiyyətə g | onlardan mənsub olduğu millə | Əhalinin sərbəst danışdığı d |  |  | 
-    r5:  |  |  |  | mənsub olduğu millətin (etni | azərbaycan dilində | rus dilində | ingilis dilində
-    r6:  | Azərbaycan Respublikası üzrə | 9951.4 | 98.6 | 99.2 | 99.6 | 7.5 | 1.3
-    r7:  | o cümlədən, millətlər və etn |  |  |  |  |  | 
-    r8:  | azərbaycanlılar | 9436.1 | 100.0 | 100.0 | - | 5.7 | 1.3
-    r9:  | ləzgilər | 167.6 | 75.1 | 85.2 | 96.1 | 38.9 | 0.8
-    r10:  | talışlar | 87.6 | 49.4 | 71.2 | 95.6 | 18.1 | 0.6
-    r11:  | ruslar | 71.0 | 99.4 | 99.5 | 78.2 | - | 4.8
-    r12:  | ukraynalılar | 13.9 | 59.6 | 59.7 | 89.5 | 90.2 | 5.3
-    r13:  | avarlar | 48.6 | 93.7 | 98.8 | 94.0 | 16.1 | 0.2
-== get https://www.stat.gov.az/source/demoqraphy/az/001_17.xls
-  160,256 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_17.xls: 3 sheets: 1.17. | 1.17. sheher | 1.17. kend
-  -- sheet '1.17.': 135 rows x 7 cols
-    r0:  | 1.17. Azərbaycan Respublikas |  |  |  |  | 
-    r1:  | (əhalinin siyahıyaalınmaları |  |  |  |  | 
-    r2:  |  |  |  |  |  | 
-    r3:  | İqtisadi rayonların və inzib | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20191)
-    r4:  | Şəhər və kənd yerləri üzrə - |  |  |  |  | 
-    r5:  | Azərbaycan Respublikası | 6026.5 | 7021.2 | 7953.4 | 8922.4 | 9951.4
-    r6:  |  |  |  |  |  | 
-    r7:  | Bakı şəhəri - cəmi | 1533.2 | 1794.9 | 1788.9 | 2045.8 | 2330.4
-    r8:  | o cümlədən: |  |  |  |  | 
-    r9:  | Binəqədi rayonu | 116.2 | 179.8 | 209.3 | 238.5 | 304.3
-    r10:  | Xətai rayonu | 282.9 | 231.4 | 215.6 | 244.9 | 271.0
-    r11:  | Xəzər rayonu | 94.8 | 112.0 | 116.5 | 168.7 | 202.5
-    r12:  | Qaradağ rayonu | 55.2 | 84.7 | 94.3 | 107.4 | 112.7
-    r13:  | Nərimanov rayonu | 203.8 | 171.7 | 148.0 | 161.2 | 178.6
-  -- sheet '1.17. sheher': 131 rows x 7 cols
-    r0:  |  |  |  |  |  | 
-    r1:  | İqtisadi rayonların və inzib | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20191)
-    r2:  | Şəhər yerləri üzrə |  |  |  |  | 
-    r3:  | Azərbaycan Respublikası | 3170.0 | 3805.9 | 4064.3 | 4739.1 | 5440.299999999999
-    r4:  |  |  |  |  |  | 
-    r5:  | Bakı şəhəri - cəmi | 1533.2 | 1794.9 | 1788.9 | 2045.8 | 2330.4
-    r6:  | o cümlədən: |  |  |  |  | 
-    r7:  | Binəqədi rayonu | 116.2 | 179.8 | 209.3 | 238.5 | 304.3
-    r8:  | Xətai rayonu | 282.9 | 231.4 | 215.6 | 244.9 | 271.0
-    r9:  | Xəzər rayonu | 94.8 | 112.0 | 116.5 | 168.7 | 202.5
-    r10:  | Qaradağ rayonu | 55.2 | 84.7 | 94.3 | 107.4 | 112.7
-    r11:  | Nərimanov rayonu | 203.8 | 171.7 | 148.0 | 161.2 | 178.6
-    r12:  | Nəsimi rayonu | 229.0 | 216.8 | 195.9 | 208.1 | 217.4
-    r13:  | Nizami rayonu | … | 170.2 | 159.1 | 177.8 | 182.9
-  -- sheet '1.17. kend': 131 rows x 7 cols
-    r0:  |  |  |  |  |  | 
-    r1:  | İqtisadi rayonların və inzib | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20191)
-    r2:  | Kənd yerləri üzrə |  |  |  |  | 
-    r3:  | Azərbaycan Respublikası | 2856.5 | 3215.3 | 3889.1 | 4183.299999999999 | 4511.1
-    r4:  |  |  |  |  |  | 
-    r5:  | Bakı şəhəri - cəmi | - | - | - | - | -
-    r6:  | o cümlədən: |  |  |  |  | 
-    r7:  | Binəqədi rayonu | - | - | - | - | -
-    r8:  | Xətai rayonu | - | - | - | - | -
-    r9:  | Xəzər rayonu | - | - | - | - | -
-    r10:  | Qaradağ rayonu | - | - | - | - | -
-    r11:  | Nərimanov rayonu | - | - | - | - | -
-    r12:  | Nəsimi rayonu | - | - | - | - | -
-    r13:  | Nizami rayonu | - | - | - | - | -
-== get https://www.stat.gov.az/source/demoqraphy/az/001_18.xls
-  168,960 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_18.xls: 1 sheets: 1.18
-  -- sheet '1.18': 301 rows x 39 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.18. Azərbaycan Respublikas |  |  |  |  |  |  |  |  |  | 
-    r2:  | (ilin əvvəlinə, min nəfər) |  |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  |  | 
-    r4:  | İqtisadi rayonların və inzib | 1990.0 | 1991.0 | 1992.0 | 1993.0 | 1994.0 | 1995.0 | 1996.0 | 1997.0 | 1998.0 | 1999.0
-    r5:  | Azərbaycan Respublikası | 7131.900000000001 | 7218.5 | 7324.1 | 7440.0 | 7549.6 | 7643.5 | 7726.2 | 7799.8 | 7876.7 | 7949.300000000001
-    r6:  | o cümlədən: |  |  |  |  |  |  |  |  |  | 
-    r7:  | şəhər əhalisi | 3847.3 | 3858.3 | 3884.4 | 3928.5 | 3970.9 | 4005.6 | 4034.5 | 4057.8 | 4082.5 | 4062.7000000000003
-    r8:  | kənd əhalisi | 3284.6 | 3360.2 | 3439.7000000000003 | 3511.5 | 3578.7000000000003 | 3637.9 | 3691.7 | 3742.0 | 3794.2 | 3886.5999999999995
-    r9:  |  |  |  |  |  |  |  |  |  |  | 
-    r10:  | Bakı şəhəri - cəmi | 1807.8000000000002 | 1762.2 | 1746.6 | 1758.4 | 1764.5 | 1765.5 | 1771.0 | 1779.0 | 1785.5 | 1788.0
-    r11:  | o cümlədən: |  |  |  |  |  |  |  |  |  | 
-    r12:  | Binəqədi rayonu | 183.5 | 179.2 | 181.7 | 185.0 | 188.2 | 189.9 | 195.1 | 201.6 | 203.1 | 209.2
-    r13:  | Xətai rayonu | 232.2 | 221.8 | 218.7 | 219.2 | 218.4 | 217.0 | 215.6 | 215.1 | 214.6 | 215.4
-== get https://www.stat.gov.az/source/demoqraphy/az/001_19.xls
-  112,640 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_19.xls: 1 sheets: 1.19.
-  -- sheet '1.19.': 475 rows x 11 cols
-    r0:  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.19. 2026-cı ilin əvvəlinə  |  |  |  |  |  |  |  |  | 
-    r2:  | inzibati ərazi vahidləri və  |  |  |  |  |  |  |  |  | 
-    r3:  | (min nəfər) |  |  |  |  |  |  |  |  | 
-    r4:  |  |  |  |  |  |  |  |  |  | 
-    r5:  | İqtisadi rayonların və inzib | Cəmi | o cümlədən |  | Şəhər əhalisi | o cümlədən |  | Kənd əhalisi | o cümlədən | 
-    r6:  |  |  | kişilər | qadınlar |  | kişilər | qadınlar |  | kişilər | qadınlar
-    r7:  | Azərbaycan Respublikası | 10262.4 | 5108.2 | 5154.2 | 5574.2 | 2741.2 | 2833.0 | 4688.2 | 2367.0 | 2321.2
-    r8:  |  |  |  |  |  |  |  |  |  | 
-    r9:  | Bakı şəhəri - cəmi | 2356.2 | 1154.7 | 1201.4999999999998 | 2356.2 | 1154.7 | 1201.4999999999998 | - | - | -
-    r10:  | o cümlədən: |  |  |  |  |  |  |  |  | 
-    r11:  | Binəqədi rayonu | 309.2 | 153.4 | 155.79999999999998 | 309.2 | 153.4 | 155.79999999999998 | - | - | -
-    r12:  | Xocəsən qəsəbəsi | 5.0 | 2.6 | 2.4 | 5.0 | 2.6 | 2.4 | - | - | -
-    r13:  | Sulutəpə qəsəbəsi | 20.4 | 10.6 | 9.799999999999999 | 20.4 | 10.6 | 9.799999999999999 | - | - | -
-== get https://www.stat.gov.az/source/demoqraphy/az/001_21.xls
-  45,056 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_21.xls: 1 sheets: 1.21.
-  -- sheet '1.21.': 135 rows x 7 cols
-    r0: 1.21. 2026-cı ilin əvvəlinə  |  |  |  |  |  | 
-    r1: 14-29 yaşda olan gənclərin s |  |  |  |  |  | 
-    r2:  | (min nəfər) |  |  |  |  | 
-    r3:  |  |  |  |  |  | 
-    r4:  | İqtisadi rayonların və inzib | Cəmi | o cümlədən |  |  | 
-    r5:  |  |  | şəhər yerləri üzrə | kənd yerləri üzrə | kişilər | qadınlar
-    r6:  | Azərbaycan Respublikası - cə | 2318.3 | 1230.1 | 1088.2000000000003 | 1221.9 | 1096.4
-    r7:  |  |  |  |  |  | 
-    r8:  | Bakı şəhəri - cəmi | 489.6 | 489.6 | - | 258.1 | 231.5
-    r9:  | o cümlədən: |  |  |  |  | 
-    r10:  | Binəqədi rayonu | 69.4 | 69.4 | - | 36.6 | 32.8
-    r11:  | Xətai rayonu | 52.6 | 52.6 | - | 27.7 | 24.9
-    r12:  | Xəzər rayonu | 51.2 | 51.2 | - | 27.0 | 24.2
-    r13:  | Qaradağ rayonu | 25.8 | 25.8 | - | 13.7 | 12.1
-== get https://www.stat.gov.az/source/demoqraphy/az/001_23.xls
-  828,928 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_23.xls: 35 sheets: 01.01.2020 il (bütün əhali) | 01.01.2020 il (kişilər) | 01.01.2020 il (qadınlar) | 01.01.2020 il (şəhər yerləri) | 01.01.2020 il (kənd yerləri) | 01.01.2021 il (bütün əhali) | 01.01.2021 il (kişilər) | 01.01.2021 il (qadınlar) | 01.01.2021 il (şəhər yerləri) | 01.01.2021 il (kənd yerləri) | 01.01.2022 il (bütün əhali) | 01.01.2022 il (kişilər) | 01.01.2022 il (qadınlar) | 01.01.2022 il (şəhər yerləri) | 01.01.2022 il (kənd yerləri) | 01.01.2023 il (bütün əhali) | 01.01.2023 il (kişilər) | 01.01.2023 il (qadınlar) | 01.01.2023 il (şəhər yerləri) | 01.01.2023 il (kənd yerləri) | 01.01.2024 il (bütün əhali) | 01.01.2024 il (kişilər) | 01.01.2024 il (qadınlar) | 01.01.2024 il (şəhər yerləri) | 01.01.2024 il (kənd yerləri) | 01.01.2025 il (bütün əhali) | 01.01.2025 il (kişilər) | 01.01.2025 il (qadınlar) | 01.01.2025 il (şəhər yerləri) | 01.01.2025 il (kənd yerləri) | 01.01.2026 il (bütün əhali) | 01.01.2026 il (kişilər) | 01.01.2026 il (qadınlar) | 01.01.2026 il (şəhər yerləri) | 01.01.2026 il (kənd yerləri)
-  -- sheet '01.01.2020 il (bütün əhali)': 136 rows x 22 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.23. 2020-ci ilin yanvar ay |  |  |  |  |  |  |  |  |  | 
-    r2:  | (nəfər) |  |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  |  | 
-    r4:  | İqtisadi rayonların və inzib | Cəmi - əhalinin sayı | o c ü m l ə d ə n y a ş q r  |  |  |  |  |  |  |  | 
-    r5:  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44
-    r6:  | C ə m i - h ə r i k i c i n  |  |  |  |  |  |  |  |  |  | 
-    r7:  | Azərbaycan Respublikası üzrə | 9974051.0 | 687123.0 | 825498.0 | 798674.0 | 651263.0 | 691988.0 | 879753.0 | 927905.0 | 793239.0 | 665878.0
-    r8:  |  |  |  |  |  |  |  |  |  |  | 
-    r9:  | Bakı şəhəri - cəmi | 2333142.0 | 131355.0 | 158525.0 | 168852.0 | 138506.0 | 151627.0 | 196609.0 | 227826.0 | 201955.0 | 172307.0
-    r10:  | o cümlədən: |  |  |  |  |  |  |  |  |  | 
-    r11:  | Binəqədi rayonu | 304704.0 | 20158.0 | 25883.0 | 23908.0 | 19242.0 | 20285.0 | 26756.0 | 30677.0 | 25526.0 | 20665.0
-    r12:  | Xətai rayonu | 271533.0 | 13546.0 | 15012.0 | 17364.0 | 15268.0 | 17014.0 | 21753.0 | 26315.0 | 25187.0 | 22869.0
-    r13:  | Xəzər rayonu | 202852.0 | 11294.0 | 17042.0 | 19615.0 | 13855.0 | 12796.0 | 16086.0 | 20020.0 | 18622.0 | 15321.0
-  -- sheet '01.01.2020 il (kişilər)': 136 rows x 22 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.23. 2020-ci ilin yanvar ay |  |  |  |  |  |  |  |  |  | 
-    r2:  | (nəfər) |  |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  |  | 
-    r4:  | İqtisadi rayonların və inzib | Cəmi - əhalinin sayı | o c ü m l ə d ə n y a ş q r  |  |  |  |  |  |  |  | 
-    r5:  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44
-    r6:  | C ə m i - k i ş i l ə r |  |  |  |  |  |  |  |  |  | 
-    r7:  | Azərbaycan Respublikası üzrə | 4960642.0 | 365044.0 | 440207.0 | 426667.0 | 347253.0 | 348753.0 | 426226.0 | 453804.0 | 393991.0 | 334048.0
-    r8:  |  |  |  |  |  |  |  |  |  |  | 
-    r9:  | Bakı şəhəri - cəmi | 1144526.0 | 68957.0 | 84415.0 | 90163.0 | 74022.0 | 76099.0 | 93022.0 | 109260.0 | 98336.0 | 85010.0
-    r10:  | o cümlədən: |  |  |  |  |  |  |  |  |  | 
-    r11:  | Binəqədi rayonu | 151389.0 | 10610.0 | 13742.0 | 12856.0 | 10287.0 | 9953.0 | 12261.0 | 14799.0 | 12628.0 | 10362.0
-    r12:  | Xətai rayonu | 133051.0 | 7152.0 | 7903.0 | 9207.0 | 8224.0 | 8695.0 | 10425.0 | 12819.0 | 12298.0 | 11216.0
-    r13:  | Xəzər rayonu | 101786.0 | 5861.0 | 9130.0 | 10459.0 | 7303.0 | 6496.0 | 7356.0 | 9302.0 | 9412.0 | 7989.0
-  -- sheet '01.01.2020 il (qadınlar)': 136 rows x 22 cols
-    r0:  |  |  |  |  |  |  |  |  |  |  | 
-    r1:  | 1.23. 2020-ci ilin yanvar ay |  |  |  |  |  |  |  |  |  | 
-    r2:  | (nəfər) |  |  |  |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  |  |  |  |  | 
-    r4:  | İqtisadi rayonların və inzib | Cəmi - əhalinin sayı | o c ü m l ə d ə n y a ş q r  |  |  |  |  |  |  |  | 
-    r5:  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44
-    r6:  | C ə m i - q a d ı n l a r |  |  |  |  |  |  |  |  |  | 
-    r7:  | Azərbaycan Respublikası üzrə | 5013409.0 | 322079.0 | 385291.0 | 372007.0 | 304010.0 | 343235.0 | 453527.0 | 474101.0 | 399248.0 | 331830.0
-    r8:  |  |  |  |  |  |  |  |  |  |  | 
-    r9:  | Bakı şəhəri - cəmi | 1188616.0 | 62398.0 | 74110.0 | 78689.0 | 64484.0 | 75528.0 | 103587.0 | 118566.0 | 103619.0 | 87297.0
-    r10:  | o cümlədən: |  |  |  |  |  |  |  |  |  | 
-    r11:  | Binəqədi rayonu | 153315.0 | 9548.0 | 12141.0 | 11052.0 | 8955.0 | 10332.0 | 14495.0 | 15878.0 | 12898.0 | 10303.0
-    r12:  | Xətai rayonu | 138482.0 | 6394.0 | 7109.0 | 8157.0 | 7044.0 | 8319.0 | 11328.0 | 13496.0 | 12889.0 | 11653.0
-    r13:  | Xəzər rayonu | 101066.0 | 5433.0 | 7912.0 | 9156.0 | 6552.0 | 6300.0 | 8730.0 | 10718.0 | 9210.0 | 7332.0
+
+=== pol
+
+## https://bdl.stat.gov.pl/api/v1/variables/search?name=mediana&format=json&page-size=100&lang=pl
+   HTTP 200, 6,514 bytes, application/json; charset=utf-8
+   totalRecords 42
+   - 154898 subj P2846 lvl 3 years  | mediana liczby członków | None | None | None
+   - 154899 subj P2846 lvl 3 years  | wolontariusze - mediana członków pracujących społecznie | None | None | None
+   - 154900 subj P2846 lvl 3 years  | wolontariusze - mediana wolontariuszy niezrzeszonych | None | None | None
+   - 154901 subj P2846 lvl 3 years  | wolontariusze - mediana wszystkich osób pracujących społecznie | None | None | None
+   - 458557 subj P2848 lvl 3 years  | pracujący w organizacjach | mediana liczby osób zatrudnionych na podstawie umów o pracę | None | None
+   - 458571 subj P2848 lvl 3 years  | pracujący w organizacjach | mediana liczby osób zatrudnionych na podstawie umów cywilnoprawnych | None | None
+   - 1650633 subj P4280 lvl 6 years  | styczeń | mediana wieku | ogółem | None
+   - 1650634 subj P4280 lvl 6 years  | styczeń | mediana wieku | mężczyźni | None
+   - 1650635 subj P4280 lvl 6 years  | styczeń | mediana wieku | kobiety | None
+   - 1650642 subj P4280 lvl 6 years  | luty | mediana wieku | ogółem | None
+   - 1650643 subj P4280 lvl 6 years  | luty | mediana wieku | mężczyźni | None
+   - 1650644 subj P4280 lvl 6 years  | luty | mediana wieku | kobiety | None
+   - 1650651 subj P4280 lvl 6 years  | marzec | mediana wieku | ogółem | None
+   - 1650652 subj P4280 lvl 6 years  | marzec | mediana wieku | mężczyźni | None
+   - 1650653 subj P4280 lvl 6 years  | marzec | mediana wieku | kobiety | None
+   - 1650660 subj P4280 lvl 6 years  | kwiecień | mediana wieku | ogółem | None
+   - 1650661 subj P4280 lvl 6 years  | kwiecień | mediana wieku | mężczyźni | None
+   - 1650662 subj P4280 lvl 6 years  | kwiecień | mediana wieku | kobiety | None
+   - 1650669 subj P4280 lvl 6 years  | maj | mediana wieku | ogółem | None
+   - 1650670 subj P4280 lvl 6 years  | maj | mediana wieku | mężczyźni | None
+   - 1650671 subj P4280 lvl 6 years  | maj | mediana wieku | kobiety | None
+   - 1650678 subj P4280 lvl 6 years  | czerwiec | mediana wieku | ogółem | None
+   - 1650679 subj P4280 lvl 6 years  | czerwiec | mediana wieku | mężczyźni | None
+   - 1650680 subj P4280 lvl 6 years  | czerwiec | mediana wieku | kobiety | None
+   - 1650687 subj P4280 lvl 6 years  | lipiec | mediana wieku | ogółem | None
+   - 1650688 subj P4280 lvl 6 years  | lipiec | mediana wieku | mężczyźni | None
+   - 1650689 subj P4280 lvl 6 years  | lipiec | mediana wieku | kobiety | None
+   - 1650696 subj P4280 lvl 6 years  | sierpień | mediana wieku | ogółem | None
+   - 1650697 subj P4280 lvl 6 years  | sierpień | mediana wieku | mężczyźni | None
+   - 1650698 subj P4280 lvl 6 years  | sierpień | mediana wieku | kobiety | None
+   - 1650705 subj P4280 lvl 6 years  | wrzesień | mediana wieku | ogółem | None
+   - 1650706 subj P4280 lvl 6 years  | wrzesień | mediana wieku | mężczyźni | None
+   - 1650707 subj P4280 lvl 6 years  | wrzesień | mediana wieku | kobiety | None
+   - 1650714 subj P4280 lvl 6 years  | październik | mediana wieku | ogółem | None
+   - 1650715 subj P4280 lvl 6 years  | październik | mediana wieku | mężczyźni | None
+   - 1650716 subj P4280 lvl 6 years  | październik | mediana wieku | kobiety | None
+   - 1650723 subj P4280 lvl 6 years  | listopad | mediana wieku | ogółem | None
+   - 1650724 subj P4280 lvl 6 years  | listopad | mediana wieku | mężczyźni | None
+   - 1650725 subj P4280 lvl 6 years  | listopad | mediana wieku | kobiety | None
+   - 1650732 subj P4280 lvl 6 years  | grudzień | mediana wieku | ogółem | None
+   - 1650733 subj P4280 lvl 6 years  | grudzień | mediana wieku | mężczyźni | None
+   - 1650734 subj P4280 lvl 6 years  | grudzień | mediana wieku | kobiety | None
+
+## https://bdl.stat.gov.pl/api/v1/variables/search?name=wiek&format=json&page-size=100&lang=pl
+   HTTP 200, 16,468 bytes, application/json; charset=utf-8
+   totalRecords 1923
+   - 149 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | ogółem | None | None
+   - 150 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | mężczyźni | None | None
+   - 151 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | kobiety | None | None
+   - 152 subj P1342 lvl 6 years  | w wieku produkcyjnym | ogółem | None | None
+   - 153 subj P1342 lvl 6 years  | w wieku produkcyjnym | mężczyźni | None | None
+   - 154 subj P1342 lvl 6 years  | w wieku produkcyjnym | kobiety | None | None
+   - 148537 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | ogółem | None | None
+   - 148539 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | mężczyźni | None | None
+   - 148541 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | kobiety | None | None
+   - 148536 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | ogółem | None | None
+   - 148538 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | mężczyźni | None | None
+   - 148540 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | kobiety | None | None
+   - 155 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | ogółem | None | None
+   - 156 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | mężczyźni | None | None
+   - 157 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | kobiety | None | None
+   - 4238 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | ogółem | None | None
+   - 4239 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | mężczyźni | None | None
+   - 4240 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | kobiety | None | None
+   - 4287 subj P1388 lvl 3 years  | ze względu na nieodpowiedni wiek | None | None | None
+   - 4410 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku ogółem | None | None
+   - 46538 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku cielęta rzeźne | None | None
+   - 46549 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku byczki na chów | None | None
+   - 46535 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku jałówki na chów | None | None
+   - 4411 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat ogółem | None | None
+   - 46536 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat byczki | None | None
+   - 46542 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat jałówki rzeźne | None | None
+   - 46540 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat jałówki pozostałe | None | None
+   - 4412 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej ogółem | None | None
+   - 46541 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej buhaje i woły | None | None
+   - 46548 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej jałówki rzeźne | None | None
+   - 46533 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej jałówki na chów | None | None
+   - 4413 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy ogółem | None | None
+   - 4414 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy mleczne | None | None
+   - 46551 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy pozostałe | None | None
+   - 4416 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku ogółem | None | None
+   - 46539 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku cielęta rzeźne | None | None
+   - 46547 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku byczki na chów | None | None
+   - 46550 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku jałówki na chów | None | None
+   - 4417 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat ogółem | None | None
+   - 46537 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat byczki | None | None
+   - 46534 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat jałówki rzeźne | None | None
+   - 46546 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat jałówki pozostałe | None | None
+   - 4418 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej ogółem | None | None
+   - 46543 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej buhaje i woły | None | None
+   - 46544 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej jałówki rzeźne | None | None
+   - 46545 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej jałówki na chów | None | None
+   - 4419 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy ogółem | None | None
+   - 4420 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy mleczne | None | None
+   - 46552 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy pozostałe | None | None
+   - 149172 subj P1796 lvl 6 years  | dzieci w wieku 0 lat (łącznie z oddziałami) | None | None | None
+   - 149173 subj P1796 lvl 6 years  | dzieci w wieku 1 lat (łącznie z oddziałami) | None | None | None
+   - 149174 subj P1796 lvl 6 years  | dzieci w wieku 2 lat (łącznie z oddziałami) | None | None | None
+   - 149175 subj P1796 lvl 6 years  | dzieci w wieku 3 lat (łącznie z oddziałami) | None | None | None
+   - 149176 subj P1796 lvl 6 years  | dzieci w wieku 4 lat i więcej (łącznie z oddziałami) | None | None | None
+   - 377282 subj P1799 lvl 6 years  | placówka zapewniająca całodobową opiekę osobom niepełnosprawnym, przewlekle chorym lub osobom w podeszłym wieku w ramach działalności gospodarczej lub statutowej | None | None | None
+   - 1609988 subj P1799 lvl 6 years  | mieszkańcy - w wieku do 18 lat | None | None | None
+   - 148330 subj P1799 lvl 6 years  | mieszkańcy - osoby w podeszłym wieku | None | None | None
+   - 1545206 subj P1799 lvl 6 years  | mieszkańcy - osoby w podeszłym wieku w roku sprawozdawczym | None | None | None
+   - 10597 subj P1810 lvl 3 years  | udzielone świadczenia zdrowotnego dzieci i młodzież w wieku 0-18 lat | None | None | None
+   - 10599 subj P1810 lvl 3 years  | udzielone świadczenia zdrowotne w izbie przyjęć dzieci i młodzież w wieku 0-18 lat | None | None | None
+   - 6248 subj P1822 lvl 3 years  | domy dziecka | wychowankowie w wieku 0-3 lat | None | None
+   - 6259 subj P1822 lvl 3 years  | rodzinne domy dziecka | wychowankowie w wieku 0-3 lat | None | None
+   - 6298 subj P1822 lvl 3 years  | wioski dziecięce | wychowankowie w wieku 0-3 lat | None | None
+   - 7175 subj P1824 lvl 3 years  | dzieci w wieku do 3 lat ogółem | None | None | None
+   - 8403 subj P1825 lvl 3 years  | placówki socjalizacyjne | wychowankowie w wieku 0-3 lat | None | None
+   - 8423 subj P1828 lvl 3 years  | wychowankowie w wieku 0-3 lat | None | None | None
+   - 6269 subj P1829 lvl 3 years  | wychowankowie w wieku 0-3 lat | None | None | None
+   - 57104 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | ogółem | None
+   - 57110 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo ogółem | None
+   - 57112 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo pracujący | None
+   - 57119 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
+   - 57113 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | bierni zawodowo | None
+   - 57095 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | ogółem | None
+   - 57111 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo ogółem | None
+   - 57120 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo pracujący | None
+   - 57093 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
+   - 57108 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | bierni zawodowo | None
+   - 57092 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | ogółem | None
+   - 57109 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo ogółem | None
+   - 57114 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo pracujący | None
+   - 57096 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
+   - 57117 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | bierni zawodowo | None
+   - 41358 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | ogółem | None
+   - 1839 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | mężczyźni | None
+   - 1840 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | kobiety | None
+   - 41331 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | ogółem | None
+   - 1841 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | mężczyźni | None
+   - 1842 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | kobiety | None
+   - 41335 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | ogółem | None
+   - 1843 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | mężczyźni | None
+   - 1844 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | kobiety | None
+   - 41336 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | ogółem | None
+   - 1845 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | mężczyźni | None
+   - 1846 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | kobiety | None
+   - 41321 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | ogółem | None
+   - 1847 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | mężczyźni | None
+   - 1848 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | kobiety | None
+   - 41334 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | ogółem | None
+   - 1849 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | mężczyźni | None
+   - 1850 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | kobiety | None
+
+=== cze
+
+## https://csu.gov.cz/otevrena-data
+   HTTP 404, 70,975 bytes, text/html; charset=utf-8
+   1 distinct matches of 'href=\\"[^\\"]*(?:produkty|opendata|otevren)[^\\"]*\\"'
+   - href="https://csu.gov.cz/otevrena_data"
+
+## https://data.csu.gov.cz/
+   HTTP 200, 8,860 bytes, text/html
+   16 distinct matches of 'href=\\"[^\\"]+\\"|<title>[^<]*'
+   - <title>DataStat
+   - href="/datastat/"
+   - href="favicon.ico"
+   - href="/assets/icons/favicon-32x32.png?version=2"
+   - href="/assets/icons/favicon-16x16.png?version=2"
+   - href="/assets/icons/apple-touch-icon.png?version=2"
+   - href="manifest.webmanifest"
+   - href="styles-MNE6BQ3F.css"
+   - href="chunk-PHC4Y2FU.js"
+   - href="chunk-53DOK3DP.js"
+   - href="chunk-W55LCGJA.js"
+   - href="chunk-FK4CORSO.js"
+   - href="chunk-ICZFJ42G.js"
+   - href="chunk-JUMWX6ZE.js"
+   - href="chunk-HFZR6LGU.js"
+   - href="chunk-3RTP2KMA.js"
+
+=== svk
+
+## DATAcube collection: HTTP 200, 567,485 bytes
+   678 datasets
+   - https://data.statistics.sk/api/v2/dataset/om7002rr/om7002rr_vuc/om7002rr_obd/om7002rr_nar/om7002rr_poh?lang=en | Demographic Balance by Nationality and Sex - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7005rr/om7005rr_vuc/om7005rr_obd/om7005rr_ukaz/om7005rr_poh?lang=en | Indices of the Age Structure - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7006rr/om7006rr_obc/om7006rr_obd/om7006rr_ukaz/om7006rr_poh/om7006rr_vsk?lang=en | Age Groups - Municipalities
+   - https://data.statistics.sk/api/v2/dataset/om7007rr/om7007rr_vuc/om7007rr_obd/om7007rr_ukaz/om7007rr_poh/om7007rr_vsk?lang=en | Age Groups - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7008rr/om7008rr_obc/om7008rr_obd/om7008rr_ukaz/om7008rr_poh/om7008rr_vek?lang=en | Age Structure - Municipalities
+   - https://data.statistics.sk/api/v2/dataset/om7009rr/om7009rr_vuc/om7009rr_obd/om7009rr_ukaz/om7009rr_poh/om7009rr_vek?lang=en | Age Structure - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7025rr/om7025rr_vuc/om7025rr_obd/om7025rr_vek/om7025rr_poh?lang=en | Marriages by Age and Permanent Residence of Men and Women - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7031rr/om7031rr_vuc/om7031rr_obd/om7031rr_ukaz?lang=en | Mean Ages of Mother at Birth - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7034rr/om7034rr_vuc/om7034rr_obd/om7034rr_vek/om7034rr_poh?lang=en | Deaths by Age and Sex - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7036rr/om7036rr_vuc/om7036rr_obd/om7036rr_poh/om7036rr_umr/om7036rr_vek?lang=en | Deaths by Causes of Death Age and Sex - SR-Reg-District
+   - https://data.statistics.sk/api/v2/dataset/om7038rr/om7038rr_vuc/om7038rr_obd/om7038rr_ukaz/om7038rr_poh?lang=en | Mean Age of Death by Sex - SR-Area-Reg-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7052rr/om7052rr_obc/om7052rr_obd/om7052rr_ukaz/om7052rr_poh?lang=en | Indices of the Age Structure - Municipalities
+   - https://data.statistics.sk/api/v2/dataset/om7054rr/om7054rr_vuc/om7054rr_obd/om7054rr_ukaz/om7054rr_poh/om7054rr_vek/om7054rr_vzd?lang=en | Demographic Balance by Education, Sex and Age Groups - SR-Area-Region-District, U-R
+   - https://data.statistics.sk/api/v2/dataset/om7055rr/om7055rr_vuc/om7055rr_obd/om7055rr_ukaz/om7055rr_poh/om7055rr_vek/om7055rr_vzd?lang=en | Demographic Balance by Education, Sex and Age - SR-Area-Region-District, U-R
