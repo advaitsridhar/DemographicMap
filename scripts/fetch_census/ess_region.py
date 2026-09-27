@@ -228,6 +228,20 @@ VARIABLES = """query($id: ID!, $version: Int) { search {
     variableList { name { en } label { en } } } } }"""
 
 TABLES = {"religion": ["rlgblg", "rlgdnm"], "language": ["lnghom1"]}
+# ESS10's self-completion file has no rlgblg: its questionnaire routes the
+# non-belonging past the denomination, which the file codes 66 ("not
+# applicable"). Its keys are rewritten into the belonging/denomination form
+# the other rounds use, so 66 reads as No religion and 77/88/99 as non-answers.
+SINGLE_QUESTION = {"ESS10SC"}
+
+
+def one_question_key(code: str) -> str:
+    """rlgdnm alone -> 'rlgblg/rlgdnm': 66 -> 2/66, 3 -> 1/3, 99 -> 9/99."""
+    if code == "66":
+        return "2/66"
+    if code in DENOMINATIONS:
+        return f"1/{code}"
+    return {"77": "7/77", "88": "8/88"}.get(code, "9/99")
 
 
 # ---------------------------------------------------------------------------
@@ -327,19 +341,29 @@ def fetch(rounds: list[str]) -> dict[str, Any]:
                                  "labels": {}}
         national[prefix] = {}
         for name, variables in TABLES.items():
+            rewrite = None
+            if name == "religion" and prefix in SINGLE_QUESTION:
+                variables, rewrite = ["rlgdnm"], one_question_key
+                entry["religion_variables"] = variables
             entry[name] = {}
             national[prefix][name] = {}
             for key, weight in (("weighted", WEIGHT), ("n", None)):
                 split = tabulate_by(df, variables, "region", weight)
-                entry[name][key] = {region: {"/".join(code): count
-                                             for code, count in sorted(cells.items())}
-                                    for (region, _), cells in sorted(split.items())}
+                entry[name][key] = {}
+                for (region, _), cells in sorted(split.items()):
+                    slot = entry[name][key].setdefault(region, {})
+                    for code, count in sorted(cells.items()):
+                        joined = "/".join(code)
+                        joined = rewrite(joined) if rewrite else joined
+                        slot[joined] = slot.get(joined, 0) + count
                 for (region, lab) in split:
                     entry["labels"].setdefault(region, lab)
                 _, whole = tabulate(df, ["cntry", *variables], weight)
                 by_country: dict[str, dict[str, float]] = defaultdict(dict)
                 for code, count in whole.items():
-                    by_country[code[0]]["/".join(code[1:])] = count
+                    joined = "/".join(code[1:])
+                    joined = rewrite(joined) if rewrite else joined
+                    by_country[code[0]][joined] = by_country[code[0]].get(joined, 0) + count
                 national[prefix][name][key] = dict(sorted(by_country.items()))
                 # Every respondent the country table counts must be in some
                 # region's table: a region split that lost people would bias
@@ -536,6 +560,11 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
             slot, n = got["slot"], got["n"]
             rounds = describe_rounds(slot["rounds"])
             precision = " Low precision: under 300 respondents." if n < LOW_PRECISION else ""
+            if field == "religion" and any(p in SINGLE_QUESTION for p, _ in slot["rounds"]):
+                precision += (" Round 10 here is the self-completion file, which asks the "
+                              "denomination alone: those it routes past it are counted as "
+                              "No religion, and the written mode draws more of them than an "
+                              "interview does.")
             fields[field] = composition(slot, field)
             fields[f"{field}_year"] = max(year for _, year in slot["rounds"])
             fields[f"{field}_basis"] = ("survey estimate: self-identification, residents "

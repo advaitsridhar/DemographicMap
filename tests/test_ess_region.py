@@ -46,6 +46,13 @@ class Codes(unittest.TestCase):
         for missing in ("7/66", "8/66", "9/66", "1/77", "1/88", "1/99", "1/66"):
             self.assertIsNone(ess.religion_group(missing), missing)
 
+    def test_self_completion_keys(self):
+        self.assertEqual(ess.one_question_key("66"), "2/66")
+        self.assertEqual(ess.one_question_key("3"), "1/3")
+        self.assertEqual(ess.one_question_key("99"), "9/99")
+        self.assertEqual(ess.religion_group(ess.one_question_key("66")), "No religion")
+        self.assertIsNone(ess.religion_group(ess.one_question_key("77")))
+
     def test_language_groups(self):
         self.assertEqual(ess.language_group("FRE"), "French")
         self.assertEqual(ess.language_group("FRM"), "French")  # a coder's slip, not Middle French
