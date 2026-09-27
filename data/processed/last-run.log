@@ -1,38 +1,9 @@
-== r6_ltu_codes
-  1,936 bytes, 0 codelists
-== r6_ltu_629more
-  150,632 bytes, 444 observations
-    dim savivaldybesRegdb: 74 values: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '15', '18', '19', '21', '23', '25', '27', '29', '30', '32', '33', '34', '36', '38', '39', '41', '42', '43', '45', '46', '47', '48', '49', '51', '52', '53'] ...
-    dim Lytis: 3 values: ['0', '1', '2']
-    dim MATVNT: 1 values: ['metai']
-    dim LAIKOTARPIS: 2 values: ['2025', '2026']
-    dim OBS_DECIMALS: 1 values: ['1']
-    dim OBS_STATUS: 1 values: ['nebuvo']
-    {'savivaldybesRegdb': '00', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 44
-    {'savivaldybesRegdb': '00', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 41
-    {'savivaldybesRegdb': '00', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 48
-    {'savivaldybesRegdb': '01', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 49
-    {'savivaldybesRegdb': '01', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 45
-    {'savivaldybesRegdb': '01', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 53
-    {'savivaldybesRegdb': '02', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 43
-    {'savivaldybesRegdb': '02', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 40
-    {'savivaldybesRegdb': '02', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 47
-    {'savivaldybesRegdb': '03', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 43
-    {'savivaldybesRegdb': '03', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 40
-    {'savivaldybesRegdb': '03', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 46
-    {'savivaldybesRegdb': '04', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 46
-    {'savivaldybesRegdb': '04', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 42
-    {'savivaldybesRegdb': '04', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 50
-    {'savivaldybesRegdb': '05', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 49
-    {'savivaldybesRegdb': '05', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 45
-    {'savivaldybesRegdb': '05', 'Lytis': '2', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 53
-    {'savivaldybesRegdb': '06', 'Lytis': '0', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 46
-    {'savivaldybesRegdb': '06', 'Lytis': '1', 'MATVNT': 'metai', 'LAIKOTARPIS': '2025', 'OBS_DECIMALS': '1'} = 42
-== r6_ltu_cdx1
-  FAILED: RuntimeError: HTTP 503: <html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head> <body style="padding:30px 0;"> <div style="float:left;width:260px;text-align:center;"> <img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg
-== r6_ltu_cdx2
-  FAILED: RuntimeError: HTTP 503: <html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head> <body style="padding:30px 0;"> <div style="float:left;width:260px;text-align:center;"> <img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg
-== r6_ltu_datagov
-  FAILED: RuntimeError: HTTP 500: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0"><style type="text/css"> html, body { mar
-== r6_ltu_getdata
-  FAILED: RuntimeError: HTTP 500: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd"><html><head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0"><style type="text/css"> html, body { mar
+== js https://ess.sikt.no/en/ (?:subsetJson.{0,200}|TooManyCategories.{0,100}|E204.{0,80}|maxCategories.{0,60}) 12 400
+  HTTP 200 text/html; charset=UTF-8 1,667 bytes
+  2 scripts; inline hits:
+  (no match)
+  -- https://ess.sikt.no/env.js HTTP 200 104 bytes
+  (no match)
+  -- https://ess.sikt.no/assets/index-Db1MnlBi.js HTTP 200 2,967,512 bytes
+  ~ d74ecfc061d57048bad9e76f302c5b9c61"],["754e3239f325570cdbbf4a87deee8a66b7f2b33479d468fbc1a50743bf56cc18","673fb86e5bda30fb3cd0ed304ea49a023ee33d0197a695d0c5d98093c536683"],["e3e6bd1071a1e96aff57859c82d570f0330800661d1c952f9fe2694691d9b9e8","59c9e0bba394e76f40c0aa58379a3cb6a5a2283993e90c4167002af4920e37f5"],["186b483d056a033826ae73d88f732985c4ccb1f32ba35f4b4cc47fdcf04aa6eb","3b952d32c67cf77e2e17446e204180ab21fb8090895138b4a4a797f86e80888b"],["df9d70a6b9876ce544c98561f4be4f725442e6d2b737d9c91a8321724ce0963f","55eb2dafd84d6ccd5f862b785dc39d4ab157222720ef9da217b8c45cf2ba2417"],["5edd5cc23c51e87a497ca815d5dce0f8ab52554f849ed8995de64c5f34ce7143","efae9c8dbc14130661e8cec030c89ad0c13c66c0d17a2905cdc706ab7399a868"],["290798c2b6476830da12fe02287e9e777aa3fba1c355b17a722d362f84614fba","e38da76dcd440621988d00bcf79af25d5b29c094db2a23146d003afd41943e7a"],["af3c423a95d9f5b3054754efa150ac
+  ~ le(o),"all-variable-list":le(s),"current-element":c.value[0],"datafile-version":le(u)},null,8,["url-elements","variable-group-list","variable-group-map","all-variable-list","current-element","datafile-version"])])]))}}),v1=UL("errors",{state:()=>({errorPolicy:"",errorObject:null,message:"",path:[],extensions:{},requestId:"",analysesErrors:["E202IllegalStringVariable","E203IllegalNumericVariable","E204TooManyCategoriesInVariable","E205VariableEmpty"]}),getters:{getWarningMessage:e=>{var r;if(e.analysesErrors.includes((r=e==null?void 0:e.extensions)==null?void 0:r.code))return"This variable can not be analyzed "},getErrorMessage:e=>{var r,t;return e.analysesErrors.includes((r=e==null?void 0:e.extensions)==null?void 0:r.code)?null:cxe(e.requestId,(t=e==null?void 0:e.extensions)==null?void 0:t.code)},getErrorRequestId:e=>{var r;return e.requestId&&!e.analysesErrors.includes((
