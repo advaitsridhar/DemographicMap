@@ -1,62 +1,53 @@
-== pxtree https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/  3 60
-  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1501P21.px  Total resident population, households and dwellings in the Republic of North Macedonia, by settlement, Census 2021
-  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1502P21.px  Total resident population of the Republic of North Macedonia by age and sex, by settlement, Census 2021
-  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1503P21.px  Total resident population of the Republic of North Macedonia by ethnic affiliation, by settlement, Census 2021
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1008P21.px 
-  HTTP 200 application/json; charset=utf-8 2,228 bytes
-  title: Total resident population in the Republic of North Macedonia by ethnic affiliation and sex, by municipalities, Census 2021
-  var Општина (Municipality): 82 values: 0000=Republic of the North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
-  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Men, 2=Women
-  var Етничка припадност (Ethnic affiliation): 12 values: 0=Ethnic affiliation - TOTAL, 1=Macedonians, 2=Albanians, 3=Turkish, 4=Romas, 5=Vlachs, 6=Serbians, 7=Bosniaks, 8=Other, 9= Undeclared, 10=Unknown, 11=Persons for whom data are taken from administrative sources
-== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1012P21.px 
-  HTTP 200 application/json; charset=utf-8 2,327 bytes
-  title: Total resident population in the Republic of North Macedonia by religious affiliation and sex, by municipalities, Census 2021
-  var Општина (Municipality): 82 values: 0000=Republic of the North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
-  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Men, 2=Women
-  var Религиска припадност (Religious affiliation): 14 values: 00=Religious affiliation - TOTAL, 01=Orthodox, 02=Muslims (Islam), 03=Catholics, 04=Christians, 05=Protestants, 08=Evangelists, 09= Evangelists- methodist, 11=Jehovah's Witnesses, 90=Other, 15= atheist, 16=Not declare
-== pxtree https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/  3 80
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px  Population by age, sex and municipality, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_03.px  Population by sex and age group and type of residence (urban/rural) for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2021_00.px  Population by sex in the Republic of Kosovo 1921-2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_01.px  Data on the population and households in Kosovo for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_02.px  Population by sex and single age at country level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_11.px  Population by age group, 1961-2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_06.px  Indicators of age structure by census years, 1961- 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_07.px  Population by marital status and sex at the national level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_08.px  Population by age group and sex, 1953-2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_09.px  Population by sex and age group and type of residence for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_10.px  Population by religion and sex at country and municipal level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_12.px  Kosovo's population by ethnicity and censuses 1948-2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_13.px  Population by type of settlement (urban/rural), sex, and age group, at country and municipality level, for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_21.px  Population by place of birth, sex and municipality, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_22.px  Population by mother tongue and sex at the national and municipal level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_04.px  Population by sex and age group at country and municipal level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_50.px  Population aged 15 years and over by marital status sex and age 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_51.px  Languages spoken other than mother tongue by sex and age of population aged 15 years and over 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_52.px  Population born in Kosovo by sex, age and municipality of birth 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_53.px  Population by sex, size-class of locality and age 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_54.px  Number of individuals in 1 km² according tot population censuses 1921-2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_55.px  Languages spoken other than the mother tongue by sex and age of the population aged 15 years and over, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_56.px  Population by Sex, Age Group, and Language, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_59.px  Population aged 15 years and over by number of languages spoken other than mother tongue, sex and age 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_60.px  Population aged 15 years and over by sex, type of area (urban/rural) and marital status 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_61.px  Population born in kosovo by age, sex and municipality of birth 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_62.px  Population by place of birth, sex and age 2011
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_63.px  Population by ethnicity and sex at country and municipal level for the years 2011 and 2024 (with estimation)
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_05.px  Population by ethnicity and sex at country and municipal level for the years 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab05census.px  Population by municipality, gender and age group, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab01census.px  Population of Kosovo according to censuses 1921 - 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab02census.px  Population by municipalities and gender, 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab03census.px  Population by municipalities, urban-rural residence, gender and age group 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab04census.px  Population by municipality, gender and age group 2024 (with estimation)
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab06census.px  Population aged 15 and over by marital status, gender and age group 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab07census.px  Population aged 15 and over by municipality, gender and marital status 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab08census.px  Population aged 15 and over by gender and number of languages ​​spoken other than mother tongue 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab09census.px  Female population 15 years and over by type of residence and number of children born alive 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab11census.px  Population by citizenship and gender 2011 and 2024
-  T https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab12census.px  Population of Kosovo by gender and censuses, 1921 - 2024
-== pxtree https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/ settlement|naseleni 3 40
-  l PopisOpstini  Census of population 2002 by municipality
-  l PopisiNaseleniMesta  Censuses of population 1948-2002 by settlements
-  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px  Population of Republic of Macedonia by ethnic affiliation, by settlements, according to the population censuses 1948, 1963, 1961, 1971, 1981, 1991, 19
-  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popisi_nm_1948_2002_NasPoVozrPol_ang.px  Population by age and sex, by settlements, according to the censuses conducted in the Republic of Macedonia after the Second World War
+
+== metadata for SAP2022T1T1ALEA22
+  200    20,319 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/SAP2022T1T1ALEA22/JSON-stat/2.0/en
+      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["SAP2022T1T1C01"],"label":{"SAP2022T1T1C01":"Populatio
+  label: Population
+  updated: 2023-09-15T11:00:00.000Z
+  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/statistics/population/censusofpopulation2022/]statistical release page[/url] on our website."]
+  extension: {"matrix": "SAP2022T1T1ALEA22", "reasons": ["Planned release"], "language": {"code": "en", "name": "English"}, "elimination": {"C04166V04937": "IE0", "C03737V04485": "AGET", "C03738V04487": "B"}, "contact": {"name": "", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 88, "value": "SAPMAP 2022"}, "product": {"code": "SM2022T1", "value": "Theme 1: Sex, Age and Marital St
+
+  dimension 'STATISTIC': Statistic -- 1 categories
+      SAP2022T1T1C01 Population
+
+  dimension 'TLIST(A1)': Census Year -- 1 categories
+      2022         2022
+
+  dimension 'C04166V04937': CSO Local Electoral Areas 2022 -- 167 categories
+      2ae19629-3eff-13a3-e055-000000000001 Borris-In-Ossory-Mountmellick, Laois
+      2ae19629-3f00-13a3-e055-000000000001 Portlaoise, Laois
+      2ae19629-3f01-13a3-e055-000000000001 Graiguecullen -Portarlington, Laois
+      2ae19629-3f02-13a3-e055-000000000001 Carlow, Carlow
+      2ae19629-3f03-13a3-e055-000000000001 Tullow, Carlow
+      2ae19629-3ef4-13a3-e055-553330000001 Muinebeag, Carlow
+      2ae19629-3f04-13a3-e055-000000000001 Manorhamilton, Leitrim
+      2ae19629-3f05-13a3-e055-000000000001 Ballinamore, Leitrim
+      2ae19629-3f06-13a3-e055-000000000001 Carrick-On-Shannon, Leitrim
+      2ae19629-3f07-13a3-e055-000000000001 Newcastle West, Limerick
+      2ae19629-3f08-13a3-e055-000000000001 Adare-Rathkeale, Limerick
+      2ae19629-3f09-13a3-e055-000000000001 Cappamore-Kilmallock, Limerick
+      2ae19629-3f0a-13a3-e055-000000000001 Limerick City West, Limerick
+      2ae19629-3f0b-13a3-e055-000000000001 Limerick City North, Limerick
+      ... and 153 more
+
+  dimension 'C03737V04485': Age -- 19 categories
+      AGE0-4       Age 0-4
+      AGE5-9       Age 5-9
+      AGE10-14     Age 10-14
+      AGE15-19     Age 15-19
+      AGE20-24     Age 20-24
+      AGE25-29     Age 25-29
+      AGE30-34     Age 30-34
+      AGE35-39     Age 35-39
+      AGE40-44     Age 40-44
+      AGE45-49     Age 45-49
+      AGE50-54     Age 50-54
+      AGE55-59     Age 55-59
+      AGE60-64     Age 60-64
+      AGE65-69     Age 65-69
+      ... and 5 more
+
+  dimension 'C03738V04487': Sex -- 3 categories
+      M            Males
+      F            Females
+      B            Both Sexes
