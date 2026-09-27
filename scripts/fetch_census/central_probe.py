@@ -1053,7 +1053,27 @@ def deu6() -> None:
             log("   " + text(body)[:300].replace("\n", " "))
 
 
+def che7() -> None:
+    for url in ("https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/religionen.html",
+                "https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/sprachen.html",
+                "https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen.assetdetail.html"):
+        show(url, r"assetdetail\.\d+\.html|dam-api[^\"' ]+|href=\"[^\"]*(?:xlsx|je-d-01\.08)[^\"]*\"", limit=40)
+
+
+def nld9() -> None:
+    url = ("https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetFeature&service=WFS&version=2.0.0"
+           "&typeNames=wijkenbuurten:gemeenten&propertyName=gemeentecode,gemeentenaam,water,mannen,vrouwen,jaar"
+           "&outputFormat=application/json&count=5")
+    show(url, raw=1500)
+    for year in (2022, 2023):
+        show(f"https://service.pdok.nl/cbs/wijkenbuurten/{year}/wfs/v1_0?request=GetFeature&service=WFS"
+             f"&version=2.0.0&typeNames=wijkenbuurten:gemeenten&resultType=hits", raw=400)
+    show("https://www.cbs.nl/nl-nl/maatwerk/2023/14/kerncijfers-wijken-en-buurten-2022",
+         r"href=\"[^\"]+\.(?:xlsx|zip|csv)\"", limit=10)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che7": che7, "nld9": nld9,
     "deu6": deu6,
     "hun13": hun13,
     "deu5": deu5,
