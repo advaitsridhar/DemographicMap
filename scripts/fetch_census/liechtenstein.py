@@ -58,6 +58,12 @@ CENSUS_YEAR = 2020
 GEMEINDEN = ("Vaduz", "Triesen", "Balzers", "Triesenberg", "Schaan", "Planken", "Eschen",
              "Mauren", "Gamprin", "Ruggell", "Schellenberg")
 
+# 211.004 counts people by locality (Wohnort), not by Gemeinde: three of the
+# eleven Gemeinden are two localities each in it. Nendeln is a village of
+# Eschen, Schaanwald of Mauren, and "Gamprin-Bendern" is the Gemeinde of
+# Gamprin under the names of its two villages.
+LOCALITY = {"Nendeln": "Eschen", "Schaanwald": "Mauren", "Gamprin-Bendern": "Gamprin"}
+
 RELIGION = {
     "Römisch-katholisch": "Roman Catholic",
     "Evangelisch-reformiert": "Reformed",
@@ -178,13 +184,16 @@ def ages(year: int) -> tuple[dict[str, Counter], dict[str, Counter]]:
     males: dict[str, Counter] = {}
     females: dict[str, Counter] = {}
     totals: dict[str, float] = {}
-    for key, value in post("age", query):
-        place = gemeinde_name(key[ort][1])
+    rows = post("age", query)
+    seen = sorted({k[ort][1] for k, _ in rows})
+    log(f"  211.004: {len(rows):,} cells; places {seen}")
+    for key, value in rows:
+        place = LOCALITY.get(key[ort][1].strip(), gemeinde_name(key[ort][1]))
         age_text = key[alter][1].strip()
         sex_text = key[sex][1].strip()
         if "Total" in age_text:
             if "Total" in sex_text:
-                totals[place] = value
+                totals[place] = totals.get(place, 0) + value
             continue
         years = int("".join(ch for ch in age_text if ch.isdigit()))
         if sex_text == "Männer":

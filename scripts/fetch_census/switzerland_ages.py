@@ -170,8 +170,10 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
             log(f"  the table's {len(px_communes)} communes are the register's of {end}"
                 + (f" (less its lake areas: {sorted(names_t[c] for c in lakes)})" if lakes else ""))
             break
-        log(f"  {end}: {len(only_px)} of the table's communes not in the register, "
-            f"{len(only_register)} the other way")
+        px_names = dict(zip(meta[place_code]["values"], meta[place_code]["valueTexts"]))
+        log(f"  {end}: {len(only_px)} of the table's communes not in the register "
+            f"{[px_names[c] for c in sorted(only_px)][:10]}, {len(only_register)} the other way "
+            f"{[names_t[c] for c in sorted(only_register)][:10]}")
     else:
         raise SystemExit("switzerland_ages: no register date matches the table's communes")
     initial_of: dict[str, set[str]] = {}          # today's commune -> its 2009 communes
