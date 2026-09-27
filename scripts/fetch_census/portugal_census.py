@@ -34,10 +34,20 @@ are pinned by id because the boundary file draws two polygons under one name:
   Ílhavo's two: the figures go on the larger part, and the smaller part is
   left without them -- ``shared.patch`` proposes merging each pair in
   ``make_redrawn.py`` so the one municipality is one unit;
-* "Oliveira de Frades" twice: a 144 km² polygon filed under Aveiro, the size
-  of the municipality (145 km²), and a 21 km² polygon under Viseu between
-  Águeda, Tondela and Vouzela. The figures go on the first; the second is
-  left out, because what it is could not be established.
+* "Oliveira de Frades" twice: a 144 km² polygon filed under Aveiro
+  (``2272694B21944289016738``), the size of the municipality (145 km²), and a
+  21 km² polygon under Viseu (``2272694B61775283939308``) between Tondela,
+  Vouzela and Águeda. The figures go on the first. The second is not the
+  municipality and what it is could not be established, so it is written as a
+  stated gap (``UNIDENTIFIED``) rather than given anyone's figures -- the
+  shared patch also keeps Wikidata's head count of the whole municipality off
+  it, where it had shown the municipality twice.
+
+**Districts are INE's, not the boundary file's.** Five municipalities are drawn
+under a district other than INE's (Espinho, Mesão Frio, Sardoal, Tábua and
+Oliveira de Frades), so a district's census figures differ from the sum of
+the municipalities drawn inside its outline by up to 3%. Each district's note
+names the municipalities concerned.
 
 Checks, each of which stops the run:
 
@@ -46,10 +56,13 @@ Checks, each of which stops the run:
 * the municipalities make Portugal's own published total;
 * INE publishes no median age for the census, but it does publish the mean
   (``0011707``, "idade média"): the national mean recomputed from the single
-  years must be within 0.6 years of it (the half-year is how a completed age
-  is read, and INE does not say which convention it uses);
+  years, each completed age read at its midpoint (age + 0.5, the convention
+  INE's published 45.44 matches), must be within 0.05 years of it;
 * the religion categories never exceed the published total of people aged 15
-  and over, and the municipalities' religion totals make Portugal's.
+  and over, and the municipalities' religion totals make Portugal's;
+* every polygon left without a municipality is one declared here: the smaller
+  part of Montijo or Ílhavo (until ``make_redrawn`` merges them) or an
+  ``UNIDENTIFIED`` one.
 
 Usage:
     python -m scripts.fetch_census.portugal_census
@@ -63,7 +76,10 @@ import time
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, dated, http_json, log, measure, record, shares, write_json
+from ._shared import (
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_json, log, measure, record, shares,
+    write_json,
+)
 from .binding import bind, fold
 from .redatam import median_age
 
@@ -78,6 +94,8 @@ SOURCE = "INE, Censos 2021 (Recenseamento da população e habitação)"
 LICENCE = "INE open data (attribution)"
 SITE = PROCESSED.parent.parent / "site" / "data"
 MEAN_AGE = "0011707"
+# How far the recomputed national mean age may sit from INE's published one.
+MEAN_TOLERANCE = 0.05
 
 DISTRICTS = {
     "01": "Aveiro", "02": "Beja", "03": "Braga", "04": "Bragança", "05": "Castelo Branco",
@@ -120,9 +138,25 @@ ALIASES = {
 # INE code -> polygon, where the boundary file draws two polygons under the
 # municipality's name (see the module docstring).
 PINNED = {
-    "1507": "2272694B10601306194261",   # Montijo, the 316 km² part
+    "1507": "2272694B10601306194261",   # Montijo, the 316 km² part inland
     "0110": "2272694B86153814936026",   # Ílhavo, the 19 km² part
     "1810": "2272694B21944289016738",   # Oliveira de Frades, the 144 km² polygon
+}
+# The other part of each municipality drawn in two (merged into the pinned one
+# by make_redrawn.py once the shared patch is applied).
+SECOND_PARTS = {
+    "2272694B43421578736002": "1507",   # Montijo, the 20 km² part on the Tagus
+    "2272694B64447610403706": "0110",   # Ílhavo, the 4 km² part
+}
+# Polygons that are no municipality INE counts, each with why.
+UNIDENTIFIED = {
+    "2272694B61775283939308": (
+        "The boundary file draws two polygons named Oliveira de Frades. The municipality "
+        "(145 km²) is the 144 km² one filed under Aveiro, which carries INE's 2021 census "
+        "figures; this 21 km² polygon, filed under Viseu between Tondela, Vouzela and "
+        "Águeda, is not the municipality, and which ground it is could not be established. "
+        "No figure is put on it, since a municipality's figures on a shape that is not it "
+        "would be a mis-match."),
 }
 
 
@@ -266,6 +300,112 @@ def add(parts: list[dict[str, Any]], key: str) -> Any:
     return sum(p[key] for p in parts)
 
 
+def mean_age(ages: Counter) -> float:
+    """The mean of completed ages, each read at its midpoint (age + 0.5)."""
+    people = sum(ages.values())
+    return sum((age + 0.5) * n for age, n in ages.items()) / people
+
+
+def district_sums(parts_a: list[dict[str, Any]],
+                  parts_r: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any]]:
+    """A district's single years and religion counts: its municipalities' added."""
+    summed_a = {k: add(parts_a, k) for k in ("men", "women", "ages")}
+    counts: dict[str, float] = {}
+    for part in parts_r:
+        for label, value in part["counts"].items():
+            counts[label] = counts.get(label, 0.0) + value
+    summed_r = {"counts": counts, "total": sum(p["total"] for p in parts_r)}
+    if summed_a["men"] + summed_a["women"] != sum(summed_a["ages"].values()):
+        raise SystemExit("portugal_census: a district's single years do not make its people")
+    return summed_a, summed_r
+
+
+def bind_municipalities(names: dict[str, str], admin1: list[dict[str, Any]],
+                        admin2: list[dict[str, Any]]
+                        ) -> tuple[dict[str, str], dict[str, dict[str, Any]]]:
+    """INE code -> polygon id, and district prefix -> first-level polygon.
+
+    Stops the run on a municipality with no polygon, two on one polygon, or a
+    polygon left over that is not declared (SECOND_PARTS, UNIDENTIFIED).
+    """
+    first = {fold(u["name"]): u for u in admin1}
+    district_shape: dict[str, dict[str, Any]] = {}
+    for prefix, district in DISTRICTS.items():
+        shape = first.get(fold(district))
+        if shape is None:
+            raise SystemExit(f"portugal_census: no first-level polygon for {district}")
+        district_shape[prefix] = shape
+    drawn = {s["id"] for s in admin2}
+    for sid in list(PINNED.values()) + list(UNIDENTIFIED):
+        if sid not in drawn:
+            raise SystemExit(f"portugal_census: declared polygon {sid} is not drawn")
+    parents = {u["id"]: u["name"] for u in admin1}
+    offices = {code: (name, district_shape[code[:2]]["name"]) for code, name in names.items()
+               if code not in PINNED}
+    kept_out = set(PINNED.values()) | set(UNIDENTIFIED)
+    bound, missing = bind(offices, [s for s in admin2 if s["id"] not in kept_out],
+                          parents, ALIASES)
+    bound.update({code: sid for code, sid in PINNED.items() if code in names})
+    if missing:
+        raise SystemExit(f"portugal_census: municipalities with no polygon: {missing}")
+    if len(set(bound.values())) != len(bound):
+        raise SystemExit("portugal_census: two municipalities on one polygon")
+    left = sorted(s["id"] for s in admin2 if s["id"] not in bound.values())
+    stray = [f"{s['name']} ({s['id']})" for s in admin2
+             if s["id"] in left and s["id"] not in SECOND_PARTS and s["id"] not in UNIDENTIFIED]
+    if stray:
+        raise SystemExit(f"portugal_census: polygons with no municipality, undeclared: {stray}")
+    log(f"  {len(bound)} municipalities bound; polygons left without one: "
+        + ", ".join(f"{sid} ({'second part' if sid in SECOND_PARTS else 'unidentified'})"
+                    for sid in left))
+    return bound, district_shape
+
+
+def drawn_elsewhere(bound: dict[str, str], names: dict[str, str],
+                    admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+                    district_shape: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """Municipalities the boundary file draws under a district other than INE's.
+
+    Returns, by first-level polygon id, those drawn *out* of it (INE's, drawn
+    under another) and *in* to it (another district's, drawn under it).
+    """
+    parent_of = {s["id"]: s.get("parent") for s in admin2}
+    label = {u["id"]: u["name"] for u in admin1}
+    out: dict[str, list[tuple[str, str]]] = {}
+    into: dict[str, list[tuple[str, str]]] = {}
+    lines = []
+    for code in sorted(bound):
+        own = district_shape[code[:2]]["id"]
+        drawn = parent_of.get(bound[code])
+        if drawn and drawn != own:
+            out.setdefault(own, []).append((names[code], label.get(drawn, drawn)))
+            into.setdefault(drawn, []).append((names[code], label[own]))
+            lines.append(f"{names[code]}: INE's {label[own]}, drawn under {label.get(drawn)}")
+    return {"out": out, "in": into, "lines": lines}
+
+
+def district_note(out: list[tuple[str, str]], into: list[tuple[str, str]]) -> str:
+    """What a district's outline on the map holds that its census figure does not."""
+    parts = [f"{name} under {other.title()}" for name, other in out]
+    if into:
+        parts.append(" and ".join(f"{name} (INE's {other.title()})" for name, other in into)
+                     + " inside this district's outline")
+    if not parts:
+        return ""
+    return (" These figures are INE's district, its own municipalities; the boundary file "
+            "draws " + " and ".join(parts) + ", so the municipalities drawn inside the "
+            "outline do not add up to them.")
+
+
+def unidentified_record(sid: str, name: str, why: str) -> dict[str, Any]:
+    """A stated gap for a polygon that is no municipality INE counts."""
+    return record(
+        f"PRT-INE-unidentified-{sid}", name, level="admin2", parent="PRT", country="PRT",
+        match_by="shape_id", shape_id=sid,
+        population=gap(NOT_AVAILABLE, why), median_age=gap(NOT_AVAILABLE, why),
+        sex_ratio=gap(NOT_AVAILABLE, why), religion=gap(NOT_AVAILABLE, why))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -295,9 +435,8 @@ def main() -> int:
         raise SystemExit("portugal_census: the municipalities' religion totals do not make "
                          "Portugal's")
     published_mean = float(get(MEAN_AGE, "PT")[0]["valor"])
-    people = sum(national["ages"].values())
-    mean = sum((age + 0.5) * n for age, n in national["ages"].items()) / people
-    if abs(mean - published_mean) > 0.6:
+    mean = mean_age(national["ages"])
+    if abs(mean - published_mean) > MEAN_TOLERANCE:
         raise SystemExit(f"portugal_census: Portugal's mean age from single years is "
                          f"{mean:.2f}, INE publishes {published_mean}")
     log(f"  Portugal: {whole:,.0f} people, median {median_age(national['ages'])}, mean "
@@ -305,53 +444,35 @@ def main() -> int:
 
     admin1 = json.loads((SITE / "admin1" / "PRT.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "PRT.units.json").read_text())
-    first = {fold(u["name"]): u for u in admin1}
-    district_shape: dict[str, dict[str, Any]] = {}
-    for prefix, district in DISTRICTS.items():
-        shape = first.get(fold(district))
-        if shape is None:
-            raise SystemExit(f"portugal_census: no first-level polygon for {district}")
-        district_shape[prefix] = shape
-    parents = {u["id"]: u["name"] for u in admin1}
-    offices = {code: (name, district_shape[code[:2]]["name"]) for code, name in names.items()
-               if code not in PINNED}
-    bound, missing = bind(offices, [s for s in admin2 if s["id"] not in PINNED.values()],
-                          parents, ALIASES)
-    bound.update(PINNED)
-    if missing:
-        raise SystemExit(f"portugal_census: municipalities with no polygon: {missing}")
-    if len(set(bound.values())) != len(bound):
-        raise SystemExit("portugal_census: two municipalities on one polygon")
+    bound, district_shape = bind_municipalities(names, admin1, admin2)
     labels = {s["id"]: s["name"] for s in admin2}
-    left = sorted(f"{s['name']} ({s['id']})" for s in admin2 if s["id"] not in bound.values())
-    log(f"  {len(bound)} municipalities bound; polygons left without one: {left}")
+    elsewhere = drawn_elsewhere(bound, names, admin1, admin2, district_shape)
+    for line in elsewhere["lines"]:
+        log(f"  {line}")
 
     records: list[dict[str, Any]] = []
     for code in sorted(names):
         sid = bound[code]
-        district = DISTRICTS[code[:2]]
         records.append(record(
             f"PRT-INE-{code}", labels[sid], level="admin2", parent="PRT", country="PRT",
             parent_name=district_shape[code[:2]]["name"], match_by="shape_id", shape_id=sid,
             codes={"dico": code},
             aliases=[names[code]] if names[code] != labels[sid] else [],
             **fields(ages[code], religion[code], f", in the municipality of {names[code]}")))
+    for sid, why in UNIDENTIFIED.items():
+        records.append(unidentified_record(sid, labels[sid], why))
     for shape in admin1:
         codes = [c for c in names if district_shape[c[:2]]["id"] == shape["id"]]
         if not codes:
             raise SystemExit(f"portugal_census: {shape['name']} has no municipality")
-        parts_a = [ages[c] for c in codes]
-        parts_r = [religion[c] for c in codes]
-        summed_a = {k: add(parts_a, k) for k in ("men", "women", "ages")}
-        counts: dict[str, float] = {}
-        for part in parts_r:
-            for label, value in part["counts"].items():
-                counts[label] = counts.get(label, 0.0) + value
-        summed_r = {"counts": counts, "total": sum(p["total"] for p in parts_r)}
+        summed_a, summed_r = district_sums([ages[c] for c in codes],
+                                           [religion[c] for c in codes])
+        entry = fields(summed_a, summed_r, f", summed over its {len(codes)} municipalities")
+        entry["population_note"] += district_note(
+            elsewhere["out"].get(shape["id"], []), elsewhere["in"].get(shape["id"], []))
         records.append(record(
             f"PRT-INE-{fold(shape['name'])}", shape["name"], level="admin1", parent="PRT",
-            country="PRT", match_by="shape_id", shape_id=shape["id"],
-            **fields(summed_a, summed_r, f", summed over its {len(codes)} municipalities")))
+            country="PRT", match_by="shape_id", shape_id=shape["id"], **entry))
         log(f"  {shape['name']}: {len(codes)} municipalities, "
             f"{summed_a['men'] + summed_a['women']:,.0f} people, median "
             f"{records[-1]['median_age']['value']}")

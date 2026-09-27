@@ -25,11 +25,21 @@ Survey estimates, so the file's name ends in ``_survey``: they fill what no
 count describes, and as a national (regional) office's survey they stand in
 front of the European Social Survey.
 
+**How many respondents.** Neither office publishes the respondents per unit,
+so each note carries what each office's methodology states, read from it on
+every run: Idescat's effective EULP 2023 sample for Catalonia (8,682 people
+aged 15 and over), and the IGE's design for its household survey -- 512 census
+sections of 18 dwellings each, every member of each household interviewed,
+allocated A Coruña 180, Lugo 90, Ourense 91, Pontevedra 151 sections (so at
+least 1,620 dwellings in the smallest province).
+
 Checks, each of which stops the run:
 
 * every unit's categories make its published total;
 * for Galicia, the four provinces make Galicia (the IGE's estimates are
-  calibrated to the population by province).
+  calibrated to the population by province);
+* each methodology still states the sample it is quoted for, and the sections
+  add to the total.
 
 Usage:
     python -m scripts.fetch_census.spain_language_survey
@@ -65,6 +75,19 @@ EULP_LABELS = {
     "OTHER_COMB_LANG": "Other language combinations", "_U": "Not stated",
 }
 CATALONIA = "Cataluña/Catalunya"
+EULP_METHOD = "https://www.idescat.cat/pub/?id=eulp&lang=en&m=m"
+
+
+def eulp_sample(page: str) -> int:
+    """The effective sample Idescat's methodology page states for the EULP 2023."""
+    import html
+    import re
+    flat = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", page)))
+    m = re.search(r"La mostra efectiva ha estat de ([\d.]+) individus", flat)
+    if not m:
+        raise SystemExit("spain_language_survey: Idescat's methodology no longer states the "
+                         "EULP's effective sample")
+    return int(m.group(1).replace(".", ""))
 
 
 def jsonstat_cells(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]]:
@@ -92,7 +115,7 @@ def jsonstat_cells(payload: dict[str, Any]) -> list[tuple[dict[str, str], float]
     return out
 
 
-def catalonia(payload: dict[str, Any]) -> dict[str, Any]:
+def catalonia(payload: dict[str, Any], sample: int | None = None) -> dict[str, Any]:
     cells = {key["LAN_ISO"]: value for key, value in jsonstat_cells(payload)}
     total = cells.pop("TOTAL", None)
     unknown = sorted(set(cells) - set(EULP_LABELS))
@@ -112,8 +135,12 @@ def catalonia(payload: dict[str, Any]) -> dict[str, Any]:
             f"{EULP_YEAR}: residents aged 15 and over by the language they habitually speak -- "
             "one language, two or three together, or another; those who did not say are Not "
             f"stated. A weighted survey estimate ({total:,.1f} thousand people aged 15 and over), "
-            "not a count; Idescat publishes it for Catalonia and for territorial areas that are "
-            "not provinces, so the provinces are left to other sources. INE's census does not "
+            "not a count, calibrated to the population register by sex, age, place of birth and "
+            "sub-area"
+            + (f", from an effective sample of {sample:,} people aged 15 and over (Idescat's "
+               "methodology)" if sample else "")
+            + "; Idescat publishes it for Catalonia and for territorial areas that are not "
+            "provinces, so the provinces are left to other sources. INE's census does not "
             "ask language."),
         "sources": [{"field": "language", "name": EULP_SOURCE, "url": EULP_PAGE,
                      "year": EULP_YEAR, "license": "Idescat (CC BY 4.0)"}],
@@ -135,6 +162,30 @@ IGE_LABELS = {
 IGE_OTHER = {"outra": "Other language", "non sabe": "Not stated", "non consta": "Not stated",
              "ns/nc": "Not stated"}
 GALICIA = {"12": "Galicia", "15": "Coruna", "27": "Lugo", "32": "Ourense", "36": "Pontevedra"}
+IGE_METHOD = "https://www.ige.gal/estatico/pdfs/s3/metodoloxias/met_EEF_gl.pdf"
+
+
+def ige_sample(text: str) -> dict[str, int]:
+    """The IGE's household survey design: census sections by province, and dwellings.
+
+    Returns {province code: dwellings}, and "12" for Galicia, from the sentence
+    the methodology states it in; the sections must add to the total.
+    """
+    import re
+    flat = re.sub(r"\s+", " ", text)
+    m = re.search(r"A mostra consta de (\d+) secci\S+ coa seguinte repartici\S+ por "
+                  r"provincias: A Coruña (\d+); Lugo (\d+); Ourense (\d+); Pontevedra (\d+)\. "
+                  r"En cada secci\S+ entrev ?\S*stanse (\d+) vivendas, co que resulta un total "
+                  r"de ([\d.]+) vivendas", flat)
+    if not m:
+        raise SystemExit("spain_language_survey: the IGE's methodology no longer states the "
+                         "survey's sample as it did")
+    total, coruna, lugo, ourense, pontevedra, per, dwellings = (
+        int(g.replace(".", "")) for g in m.groups())
+    if coruna + lugo + ourense + pontevedra != total or total * per != dwellings:
+        raise SystemExit(f"spain_language_survey: the IGE's sample does not add up: {m.groups()}")
+    return {"12": dwellings, "15": coruna * per, "27": lugo * per, "32": ourense * per,
+            "36": pontevedra * per}
 
 
 def ige_label(label: str) -> str:
@@ -191,7 +242,8 @@ def galicia(text: str) -> tuple[int, dict[str, dict[str, Any]]]:
     return year, out
 
 
-def galicia_fields(entry: dict[str, Any], year: int, name: str) -> dict[str, Any]:
+def galicia_fields(entry: dict[str, Any], year: int, name: str,
+                   dwellings: int | None = None) -> dict[str, Any]:
     counted = entry["measure"] != "Porcentaxe"
     rows = shares(entry["counts"], total=entry["total"])
     if not counted:
@@ -206,8 +258,11 @@ def galicia_fields(entry: dict[str, Any], year: int, name: str) -> dict[str, Any
             f"{name} aged 5 and over{size} by the language they usually speak -- always "
             "Galician, more Galician than Spanish, more Spanish than Galician, or always "
             "Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia "
-            "and each province and does not publish the respondents per province. INE's census "
-            "does not ask language."),
+            "and each province and does not publish the respondents per province"
+            + (f". Its household survey is designed to interview every member of the "
+               f"households in {dwellings:,} dwellings here (census sections of 18 dwellings, "
+               "by the IGE's methodology)" if dwellings else "")
+            + ". INE's census does not ask language."),
         "sources": [{"field": "language", "name": IGE_SOURCE, "url": IGE_PAGE, "year": year,
                      "license": "IGE (attribution)"}],
     }
@@ -224,6 +279,13 @@ def main() -> int:
     records: list[dict[str, Any]] = []
 
     from ._shared import http_get
+    import io
+    from pypdf import PdfReader
+    method = http_get(IGE_METHOD, binary=True, cache=True, timeout=180)
+    assert isinstance(method, bytes)
+    design = ige_sample(" ".join(page.extract_text() or ""
+                                 for page in PdfReader(io.BytesIO(method)).pages))
+    log(f"  IGE design: {design}")
     raw = http_get(IGE, binary=True, cache=False, timeout=180)
     assert isinstance(raw, bytes)
     year, gal = galicia(raw.decode("latin-1"))
@@ -237,12 +299,16 @@ def main() -> int:
         records.append(record(f"ESP-IGE-LANG-{code}", shape["name"], level=level, parent="ESP",
                               country="ESP", match_by="shape_id", shape_id=shape["id"],
                               codes={"ine_province": code} if code != "12" else {"ine_ccaa": "12"},
-                              **galicia_fields(gal[code], year, shape["name"])))
+                              **galicia_fields(gal[code], year, shape["name"], design[code])))
 
     shape = admin1.get(fold(CATALONIA))
     if shape is None:
         raise SystemExit(f"spain_language_survey: no drawn {CATALONIA!r}")
-    cat = catalonia(http_json(EULP, cache=False, timeout=120))
+    page = http_get(EULP_METHOD, cache=True, timeout=120)
+    assert isinstance(page, str)
+    sample = eulp_sample(page)
+    log(f"  EULP effective sample: {sample:,}")
+    cat = catalonia(http_json(EULP, cache=False, timeout=120), sample)
     records.append(record("ESP-EULP-CAT", shape["name"], level="admin1", parent="ESP",
                           country="ESP", match_by="shape_id", shape_id=shape["id"], **cat))
 

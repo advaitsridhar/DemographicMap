@@ -126,6 +126,16 @@ MCO_DISTRICTS = ["Monte-Carlo", "La Rousse", "La Condamine", "Jardin Exotique", 
                  "Fontvieille", "Larvotto", "Monaco-Ville"]
 MCO_DRAWN = {"Les Moneghetti": "Les Monegetti"}
 MCO_MERGED = ("Les Monegetti", "Sainte-Dévote")      # drawn apart, one district since 2013
+# The report, note to Figure 3: "The districts are those defined by Sovereign
+# Order No. 4,481 of 13 September 2013. Ravin Sainte-Dévote has been
+# incorporated into the district of Les Moneghetti."
+MCO_DISTRICT_NOTE = (
+    "Residents of the district at 31 December 2025, in the districts defined by Sovereign "
+    "Order No. 4,481 of 13 September 2013 (the report's note to Figure 3), which put the "
+    "Ravin de Sainte-Dévote in Les Moneghetti. A figure for this polygon from before 2013 "
+    "counted a district drawn before that order and need not be the same ground; the "
+    "Principality as a whole grew from 35,352 residents in 2008 to 38,857 in 2025 "
+    "(Figure 2).")
 MCO_AGES = [("16 y/o and under", 0, 16), ("17 to 24 y/o", 17, 24), ("25 to 34 y/o", 25, 34),
             ("35 to 44 y/o", 35, 44), ("45 to 54 y/o", 45, 54), ("55 to 64 y/o", 55, 64),
             ("65 to 74 y/o", 65, 74), ("75 y/o and over", 75, None)]
@@ -168,6 +178,16 @@ def monaco(text: str) -> dict[str, Any]:
         raise SystemExit(f"microstates: Monaco: age groups make {sum(g[4] for g in groups)}")
     median = grouped_median([(low, high, t) for low, high, _, _, t in groups])
     return {"districts": districts, "men": men, "women": women, "median": median}
+
+
+def check_district_order(text: str) -> None:
+    """The report must still say what MCO_DISTRICT_NOTE and the redraw rest on."""
+    flat = re.sub(r"\s+", " ", text)
+    for needle in ("Sovereign Order No. 4,481 of 13 September 2013",
+                   "Ravin Sainte-Dévote has been incorporated into the district of Les Moneghetti",
+                   "35,352", "38,857"):
+        if needle not in flat:
+            raise SystemExit(f"microstates: Monaco: the report no longer says {needle!r}")
 
 
 # --- Andorra ---------------------------------------------------------------
@@ -262,6 +282,7 @@ def main() -> int:
     blob = http_get(MCO_URL, binary=True, cache=False, timeout=180)
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+    check_district_order(text)
     mco = monaco(text)
     log(f"microstates: Monaco {MCO_YEAR}: {mco['men'] + mco['women']:,} residents, "
         f"{mco['men']:,} men, {mco['women']:,} women, median {mco['median']}")
@@ -293,8 +314,7 @@ def main() -> int:
             f"MCO-IMSEE-{fold(name)}", shape["name"], level="admin2", parent="MCO",
             country="MCO", match_by="shape_id", shape_id=shape["id"],
             population=measure(mco["districts"][name], year=MCO_YEAR, source=MCO_SOURCE),
-            population_note=("Residents of the district at 31 December 2025, in the districts "
-                             "of Sovereign Order 4,481 of 2013."),
+            population_note=MCO_DISTRICT_NOTE,
             sources=[{"field": "population", "name": MCO_SOURCE, "url": MCO_PAGE,
                       "year": MCO_YEAR}]))
 

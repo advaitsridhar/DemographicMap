@@ -45,7 +45,8 @@ from typing import Any
 from ._shared import PROCESSED, log, measure, record, write_json
 from .cod_ps_age import grouped_median
 from .ireland import (
-    LICENCE, PROVINCE, categories, find_dimension, read_dataset, reader,
+    COUNTY_ALIASES, LICENCE, PROVINCE, SITE, categories, drawn_elsewhere, find_dimension,
+    outline_note, read_dataset, reader,
 )
 from .redatam import median_age
 
@@ -61,15 +62,8 @@ PUBLISHED_MEDIAN = 38.8
 # FY006B names some units that are not a county's whole: Dublin's four
 # councils and the city and county councils of Cork and Galway are listed
 # separately, and so is each "County" total above some of them. Only the
-# units in PROVINCE (ireland's list of councils) are read, and each once.
-COUNTY_ALIASES = {
-    "Dun Laoghaire-Rathdown": "Dún Laoghaire-Rathdown",
-    "Cork City and Cork County": "Cork",
-    "Cork County": "Cork",
-    "Galway County": "Galway",
-    "Limerick City and County": "Limerick",
-    "Waterford City and County": "Waterford",
-}
+# units in PROVINCE (ireland's list of councils) are read, and each once, under
+# ireland's COUNTY_ALIASES.
 
 
 def band(label: str) -> tuple[int, int | None]:
@@ -185,6 +179,18 @@ def read_counties() -> dict[str, dict[str, Any]]:
     return out
 
 
+def area_median(entry: dict[str, Any]) -> float | None:
+    """An area's median age, interpolated within its five-year group, both sexes."""
+    groups = [(lo, hi, m + f) for (lo, hi, m), (_, _, f)
+              in zip(entry["M"]["groups"], entry["F"]["groups"])]
+    return grouped_median(groups)
+
+
+def province_years(parts: list[dict[str, Any]]) -> Counter:
+    """A province's single years of age: its councils' men and women added."""
+    return sum((c["M"]["years"] + c["F"]["years"] for c in parts), Counter())
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -225,9 +231,7 @@ def main() -> int:
         if province is None:
             raise SystemExit(f"ireland_age: {label}: no province for county {county!r}")
         by_province[province] += entry["B"]["total"]
-        groups = [(lo, hi, m + f) for (lo, hi, m), (_, _, f)
-                  in zip(entry["M"]["groups"], entry["F"]["groups"])]
-        median = grouped_median(groups)
+        median = area_median(entry)
         men, women = entry["M"]["total"], entry["F"]["total"]
         records.append(record(
             f"IRL-AGE-{code}", bare, level="admin2", parent="IRL", country="IRL",
@@ -243,6 +247,15 @@ def main() -> int:
             sources=[{"field": "median age/sex ratio", "name": source_lea, "url": URL,
                       "year": YEAR, "license": LICENCE}]))
 
+    # Where the boundary file draws an area inside another province's outline
+    # (Newport, Tipperary, inside Connacht), the province's figure and the
+    # areas drawn inside its outline disagree; its note says why.
+    import json
+    elsewhere = drawn_elsewhere({c: e["label"] for c, e in leas.items()},
+                                json.loads((SITE / "admin2" / "IRL.units.json").read_text()),
+                                json.loads((SITE / "admin1" / "IRL.units.json").read_text()))
+    people = {c: e["B"]["total"] for c, e in leas.items()}
+
     # Provinces: the councils' single years added together.
     for province in ("Connacht", "Leinster", "Munster", "Ulster"):
         parts = [c for c in counties.values() if c["province"] == province]
@@ -251,13 +264,14 @@ def main() -> int:
         if men + women != by_province[province]:
             raise SystemExit(f"ireland_age: {province} is {men + women:,.0f} by council and "
                              f"{by_province[province]:,.0f} by area")
-        years = sum((c["M"]["years"] + c["F"]["years"] for c in parts), Counter())
+        years = province_years(parts)
         label = province if province != "Ulster" else "Ulster (part of)"
         records.append(record(
             f"IRL-AGE-{province}", province, level="admin1", parent="IRL", country="IRL",
             population=measure(int(men + women), year=YEAR, source=source_county),
-            population_note=f"{label}: the usually resident population of its "
-                            f"{len(parts)} councils' areas, Census {YEAR}.",
+            population_note=(f"{label}: the usually resident population of its "
+                             f"{len(parts)} councils' areas, Census {YEAR}."
+                             + outline_note(province, elsewhere, people)),
             median_age=measure(median_age(years), unit="years", year=YEAR,
                                source=source_county),
             median_age_note=("Interpolated within the single year of age holding the middle "

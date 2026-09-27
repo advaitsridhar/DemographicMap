@@ -47,8 +47,10 @@ Checks, each of which stops the run:
   make its total, and those totals are Table 1.2's;
 * the localities make Malta's 519,562;
 * the NSO publishes an average age, not a median (Table 1.2): Malta's mean
-  recomputed from the localities' single years must be within 0.6 years of
-  it (the half-year is how a completed age is read);
+  recomputed from the localities' single years must be within 0.05 years of
+  it. The NSO averages completed ages as they stand (over 89 read as 90):
+  that reading gives 41.66 against its 41.68, where reading each age at its
+  midpoint gives 42.16;
 * every locality's religion categories make its published total aged 15 and
   over, and the localities make Malta's.
 
@@ -81,6 +83,8 @@ VOLUME_1 = ARCHIVE.format(stamp="20250628190541",
                           name="Census-of-Population-2021-volume1.pdf")
 PAGE = "https://nso.gov.mt/census-of-population-and-housing-2021-final-report/"
 NATIONAL = 519562
+# How far the recomputed national mean age may sit from the NSO's published one.
+MEAN_TOLERANCE = 0.05
 
 # Table 4.3 writes Gozo's Żebbuġ without the ", Għawdex" the workbooks give it.
 SPELLINGS = {"Iż-Żebbuġ": "Iż-Żebbuġ, Għawdex"}
@@ -240,7 +244,11 @@ def read_chapter_1() -> dict[str, dict[str, Any]]:
 
 def read_religion() -> dict[str, dict[str, Any]]:
     book = workbook(CHAPTER_5)
-    rows = [list(r) for r in book["5.3"].iter_rows(values_only=True)]
+    return religion_table([list(r) for r in book["5.3"].iter_rows(values_only=True)])
+
+
+def religion_table(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """Table 5.3's rows: locality -> religion counts aged 15+, checked."""
     header_at = next(i for i, r in enumerate(rows)
                      if r and cell(r[0]).startswith("District and locality"))
     header = [cell(v) for v in rows[header_at]]
@@ -284,23 +292,30 @@ def read_racial_origin() -> dict[str, dict[str, Any]]:
     """
     import pdfplumber
     blob = http_get(VOLUME_1, binary=True, cache=True, timeout=600)
-    out: dict[str, dict[str, Any]] = {}
+    pages = []
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         for page in pdf.pages:
             text = page.extract_text() or ""
-            if "TABLE 4.3. Total population by racial origin and locality" not in text:
+            if "TABLE 4.3. Total population by racial origin and locality" in text:
+                pages.append(text)
+    return racial_origin_table(pages)
+
+
+def racial_origin_table(pages: list[str]) -> dict[str, dict[str, Any]]:
+    """Table 4.3's page text: locality -> the six origins and the total, checked."""
+    out: dict[str, dict[str, Any]] = {}
+    for text in pages:
+        for line in text.splitlines():
+            m = ROW.match(line.replace("‐", "-").strip())
+            if not m:
                 continue
-            for line in text.splitlines():
-                m = ROW.match(line.replace("‐", "-").strip())
-                if not m:
-                    continue
-                name = SPELLINGS.get(m.group("name").strip(), m.group("name").strip())
-                values = [float(v.replace(",", "")) for v in m.groups()[1:]]
-                counts = dict(zip(RACIAL_ORIGINS, values[:6]))
-                if sum(counts.values()) != values[6]:
-                    raise SystemExit(f"malta_census: Table 4.3 {name}: origins make "
-                                     f"{sum(counts.values()):,.0f} against {values[6]:,.0f}")
-                out[name] = {"counts": counts, "total": values[6]}
+            name = SPELLINGS.get(m.group("name").strip(), m.group("name").strip())
+            values = [float(v.replace(",", "")) for v in m.groups()[1:]]
+            counts = dict(zip(RACIAL_ORIGINS, values[:6]))
+            if sum(counts.values()) != values[6]:
+                raise SystemExit(f"malta_census: Table 4.3 {name}: origins make "
+                                 f"{sum(counts.values()):,.0f} against {values[6]:,.0f}")
+            out[name] = {"counts": counts, "total": values[6]}
     missing = sorted(set(LOCALITIES) - set(out))
     if missing:
         raise SystemExit(f"malta_census: Table 4.3 has no row for {missing}")
@@ -403,12 +418,12 @@ def main() -> int:
                              f"{origin[name]['total']:,.0f}, Table 1.2 "
                              f"{ages[name]['men'] + ages[name]['women']:,.0f}")
     national = sum((e["ages"] for e in ages.values()), Counter())
-    people = sum(national.values())
-    mean = sum((a + 0.5) * n for a, n in national.items()) / people
+    mean = mean_age(national)
     log(f"  Malta: median {median(national)}, mean {mean:.2f} (Table 1.2 publishes "
         f"{published_mean:.2f})")
-    if published_mean is None or abs(mean - published_mean) > 0.6:
-        raise SystemExit("malta_census: the single years do not give the published mean age")
+    if published_mean is None or abs(mean - published_mean) > MEAN_TOLERANCE:
+        raise SystemExit(f"malta_census: the single years give a mean age of {mean:.2f}, "
+                         f"Table 1.2 publishes {published_mean}")
 
     admin1 = {u["name"]: u for u in json.loads((SITE / "admin1" / "MLT.units.json").read_text())}
     admin2 = {u["name"]: u for u in json.loads((SITE / "admin2" / "MLT.units.json").read_text())}
@@ -471,6 +486,11 @@ def main() -> int:
     write_json(args.out or PROCESSED / OUT, records)
     log(f"  {len(records)} records ({len(LOCALITIES)} localities at both levels)")
     return 0
+
+
+def mean_age(ages: Counter) -> float:
+    """The mean of completed ages as they stand, the NSO's reading (over 89 as 90)."""
+    return sum(age * n for age, n in ages.items()) / sum(ages.values())
 
 
 def median(ages: Counter) -> float | None:

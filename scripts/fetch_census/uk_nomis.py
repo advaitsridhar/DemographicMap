@@ -141,17 +141,19 @@ def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dic
     # Nomis answers an anonymous caller at most 25,000 cells at a time, and
     # TS024's 94 languages by 330 districts is 31,020: read whole, the answer
     # stopped at the 235th district and the other 95 had no language at all.
-    # So the table is read a page at a time until a page comes back short.
+    # So the table is read a page at a time until a page comes back empty. Not
+    # until one comes back short: a page can be cut below 25,000 cells, and
+    # stopping there left 95 districts with no language at all.
     observations: list[dict[str, Any]] = []
     while True:
         page = http_json(f"{url}&RecordOffset={len(observations)}", timeout=300)
         rows = page.get("obs", [])
-        if rows and observations and rows[0] == observations[0]:
+        if not rows:
+            break
+        if observations and rows[0] == observations[0]:
             raise SystemExit(f"uk_nomis: {dataset}: Nomis ignored the record offset and "
                              "answered the first page again")
         observations.extend(rows)
-        if len(rows) < PAGE_CELLS:
-            break
     if len(observations) > PAGE_CELLS:
         log(f"  {dataset}: {len(observations):,} cells, read in pages")
     out: dict[str, dict[str, Any]] = {}
@@ -185,6 +187,22 @@ def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dic
         keep = set(leaves(entry["counts"]))
         entry["counts"] = {k: v for k, v in entry["counts"].items() if k in keep}
     return out
+
+
+def check_complete(tables: dict[str, dict[str, dict[str, Any]]]) -> None:
+    """Every area with figures in one table has them in all three.
+
+    A read cut short leaves the last areas of one table empty while the other
+    tables have them, and the run used to write those areas with a gap marker.
+    """
+    filled = {field: {code for code, entry in table.items() if entry.get("counts")}
+              for field, table in tables.items()}
+    every = set().union(*filled.values())
+    short = {field: sorted(every - codes) for field, codes in filled.items() if every - codes}
+    if short:
+        raise SystemExit("uk_nomis: a table was read short -- areas missing from "
+                         + "; ".join(f"{field}: {len(codes)} ({', '.join(codes[:5])} ...)"
+                                     for field, codes in short.items()))
 
 
 def list_datasets(match: str) -> int:
@@ -299,6 +317,7 @@ def main() -> int:
         # no shape; left in, its name reached England's by containment.
         codes = [c for c in codes if c[:3] in ("E92", "W92")]
     check_totals(tables)
+    check_complete(tables)
     src = f"ONS Census {YEAR} (England and Wales) via Nomis"
     level = "admin1" if args.level == "nation" else "admin2"
     records: list[dict[str, Any]] = []

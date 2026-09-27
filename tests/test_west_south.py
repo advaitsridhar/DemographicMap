@@ -398,6 +398,377 @@ class IrelandAges(unittest.TestCase):
         self.assertEqual(band("Age 20-24"), (20, 24))
         self.assertEqual(band("Age 85 and over"), (85, None))
 
+    def test_area_median_is_interpolated_within_the_five_year_group(self):
+        from scripts.fetch_census.ireland_age import area_median
+        # 100 people: 30 aged 0-4, 40 aged 5-9, 30 aged 10+ (open); the 50th is
+        # 20 into the 40 of 5-9, so 5 + 20/40 * 5 = 7.5.
+        entry = {"M": {"groups": [(0, 4, 15), (5, 9, 20), (10, None, 15)]},
+                 "F": {"groups": [(0, 4, 15), (5, 9, 20), (10, None, 15)]}}
+        self.assertEqual(area_median(entry), 7.5)
+
+    def test_province_median_from_the_councils_single_years(self):
+        from scripts.fetch_census.ireland_age import province_years
+        from scripts.fetch_census.redatam import median_age
+        a = {"M": {"years": Counter({30: 10})}, "F": {"years": Counter({30: 10})}}
+        b = {"M": {"years": Counter({40: 10})}, "F": {"years": Counter({50: 10})}}
+        years = province_years([a, b])
+        self.assertEqual(sum(years.values()), 40)
+        self.assertEqual(years[30], 20)
+        self.assertLessEqual(median_age(years), 40.0)
+        self.assertGreaterEqual(median_age(years), 30.0)
+
+
+IRL_UNITS1 = [{"id": "C", "name": "Connacht"}, {"id": "L", "name": "Leinster"},
+              {"id": "M", "name": "Munster"}, {"id": "U", "name": "Ulster"}]
+
+
+class IrelandProvinces(unittest.TestCase):
+    def data(self):
+        areas = {"1": "Newport, Tipperary", "2": "Ballina, Mayo", "3": "Arklow, Wicklow",
+                 "4": "Macroom, Cork County", "5": "Letterkenny, Donegal"}
+        rel = {"1": {"Catholic": 80, "No religion": 20}, "2": {"Catholic": 90, "No religion": 10},
+               "3": {"Catholic": 70, "No religion": 30}, "4": {"Catholic": 60, "No religion": 40},
+               "5": {"Catholic": 50, "No religion": 50}}
+        fields = {"religion": rel, "ethnicity": {c: {"White Irish": 100} for c in areas}}
+        totals = {"religion": {c: 100 for c in areas}, "ethnicity": {c: 100 for c in areas}}
+        language = {c: {"English or Irish only": 90, "Polish": 10} for c in areas}
+        units2 = [{"id": "s1", "parent": "C", "aliases": ["Newport, Tipperary"]},
+                  {"id": "s2", "parent": "C", "aliases": ["Ballina, Mayo"]},
+                  {"id": "s3", "parent": "L", "aliases": ["Arklow, Wicklow"]}]
+        return areas, fields, totals, language, units2
+
+    def test_an_area_drawn_in_another_provinces_outline_is_found(self):
+        from scripts.fetch_census.ireland import drawn_elsewhere
+        areas, _, _, _, units2 = self.data()
+        found = drawn_elsewhere(areas, units2, IRL_UNITS1)
+        self.assertEqual([(e["label"], e["own"], e["drawn"]) for e in found],
+                         [("Newport, Tipperary", "Munster", "Connacht")])
+
+    def test_provinces_are_summed_by_county_not_by_outline(self):
+        from scripts.fetch_census.ireland import drawn_elsewhere, province_records
+        areas, fields, totals, language, units2 = self.data()
+        elsewhere = drawn_elsewhere(areas, units2, IRL_UNITS1)
+        out = {r["name"]: r for r in province_records(areas, fields, totals, language,
+                                                      elsewhere, IRL_UNITS1)}
+        munster = {g["group"]: g["count"] for g in out["Munster"]["religion"]}
+        self.assertEqual(munster, {"Catholic": 140, "No religion": 60})   # Newport and Macroom
+        self.assertEqual(out["Connacht"]["religion"][0]["count"], 90)     # Ballina alone
+        self.assertIn("inside this province's outline; these figures leave it out",
+                      out["Connacht"]["language_note"])
+        self.assertIn("the census counts it in Munster", out["Munster"]["religion_note"])
+        self.assertEqual(out["Munster"]["shape_id"], "M")
+
+    def test_a_county_with_no_province_stops_the_run(self):
+        from scripts.fetch_census.ireland import province_of
+        self.assertEqual(province_of("Macroom, Cork County"), "Munster")
+        with self.assertRaises(SystemExit):
+            province_of("Somewhere, Atlantis")
+
+    def test_the_language_note_says_non_response_is_inside(self):
+        from scripts.fetch_census.ireland import LANGUAGE_NOTE
+        self.assertIn("did not answer the question", LANGUAGE_NOTE)
+        self.assertIn("upper bound", LANGUAGE_NOTE)
+
+
+def ine_rows(sexes):
+    rows = []
+    for sex, ages in sexes.items():
+        rows.append({"dim_3_t": sex, "dim_4_t": "Total", "valor": str(sum(ages.values()))})
+        for age, n in ages.items():
+            label = "Menos de 1 ano" if age == 0 else f"{age} anos"
+            rows.append({"dim_3_t": sex, "dim_4_t": label, "valor": str(n)})
+    return rows
+
+
+class PortugalCensus(unittest.TestCase):
+    AGES = {"H": {0: 1, 20: 4, 99: 1}, "M": {0: 2, 20: 3, 100: 1}}
+
+    def ages_rows(self):
+        both = Counter(self.AGES["H"]) + Counter(self.AGES["M"])
+        return ine_rows({"HM": dict(both), **self.AGES})
+
+    def test_single_years_make_the_totals(self):
+        from unittest import mock
+        from scripts.fetch_census import portugal_census as m
+        with mock.patch.object(m, "get", return_value=self.ages_rows()):
+            out = m.read_ages("0101")
+        self.assertEqual((out["men"], out["women"]), (6.0, 6.0))
+        self.assertEqual(out["ages"][20], 7)
+        bad = self.ages_rows()
+        bad[1]["valor"] = "5"
+        with mock.patch.object(m, "get", return_value=bad):
+            with self.assertRaises(SystemExit):
+                m.read_ages("0101")
+
+    def test_the_unanswered_are_not_stated(self):
+        from unittest import mock
+        from scripts.fetch_census import portugal_census as m
+        rows = [{"dim_3_t": "Total", "valor": "8"}, {"dim_3_t": "Católica", "valor": "6"},
+                {"dim_3_t": "Sem religião", "valor": "2"}]
+        with mock.patch.object(m, "get", return_value=rows):
+            religion = m.read_religion("0101")
+        with mock.patch.object(m, "get", return_value=self.ages_rows()):
+            ages = m.read_ages("0101")
+        out = m.fields(ages, religion, "")
+        groups = {g["group"]: g["count"] for g in out["religion"]}
+        # 9 residents aged 15 and over, 8 of whom answered.
+        self.assertEqual(groups, {"Roman Catholic": 6, "No religion": 2, "Not stated": 1})
+        ages["ages"][30] += 4
+        ages["women"] += 4
+        groups = {g["group"]: g["count"] for g in m.fields(ages, religion, "")["religion"]}
+        self.assertEqual(groups["Not stated"], 5)
+        rows.append({"dim_3_t": "Seita nova", "valor": "1"})
+        with mock.patch.object(m, "get", return_value=rows):
+            with self.assertRaises(SystemExit):
+                m.read_religion("0101")
+
+    def test_districts_add_their_municipalities(self):
+        from scripts.fetch_census import portugal_census as m
+        a = {"men": 2, "women": 1, "ages": Counter({10: 2, 70: 1})}
+        b = {"men": 1, "women": 3, "ages": Counter({10: 1, 40: 3})}
+        ra = {"counts": {"Roman Catholic": 2}, "total": 2}
+        rb = {"counts": {"Roman Catholic": 1, "No religion": 1}, "total": 2}
+        ages, religion = m.district_sums([a, b], [ra, rb])
+        self.assertEqual((ages["men"], ages["women"], ages["ages"][10]), (3, 4, 3))
+        self.assertEqual(religion, {"counts": {"Roman Catholic": 3, "No religion": 1}, "total": 4})
+        a["men"] += 1
+        with self.assertRaises(SystemExit):
+            m.district_sums([a, b], [ra, rb])
+
+    def test_mean_age_reads_each_age_at_its_midpoint(self):
+        from scripts.fetch_census.portugal_census import mean_age
+        self.assertEqual(mean_age(Counter({0: 1, 1: 1})), 1.0)
+
+    def site(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parent.parent
+        return (json.loads((root / "site/data/admin1/PRT.units.json").read_text()),
+                json.loads((root / "site/data/admin2/PRT.units.json").read_text()),
+                root / "data/processed/portugal_census.json")
+
+    def test_declared_polygons_are_the_ones_named(self):
+        from scripts.fetch_census import portugal_census as m
+        admin1, admin2, _ = self.site()
+        name = {s["id"]: s["name"] for s in admin2}
+        parent = {s["id"]: s.get("parent") for s in admin2}
+        first = {u["id"]: u["name"] for u in admin1}
+        self.assertEqual(name[m.PINNED["1507"]], "Montijo")
+        self.assertEqual(name[m.PINNED["0110"]], "Ilhavo")
+        self.assertEqual(name[m.PINNED["1810"]], "Oliveira de Frades")
+        for sid, code in m.SECOND_PARTS.items():
+            if sid in name:                    # gone once make_redrawn merges it
+                self.assertEqual(name[sid], name[m.PINNED[code]])
+        for sid in m.UNIDENTIFIED:
+            self.assertEqual(name[sid], "Oliveira de Frades")
+            self.assertEqual(first[parent[sid]], "VISEU")
+        rec = m.unidentified_record("x", "Oliveira de Frades", "why")
+        self.assertEqual(rec["population"]["note"], "why")
+        self.assertNotIn("value", rec["population"])
+
+    def test_binding_and_the_municipalities_drawn_under_another_district(self):
+        import json
+        from scripts.fetch_census import portugal_census as m
+        admin1, admin2, processed = self.site()
+        if not processed.exists():
+            self.skipTest("portugal_census.json needs a network run to exist")
+        rows = json.loads(processed.read_text())
+        names = {r["codes"]["dico"]: (r["aliases"][0] if r["aliases"] else r["name"])
+                 for r in rows if r["level"] == "admin2" and "dico" in (r.get("codes") or {})}
+        bound, district = m.bind_municipalities(names, admin1, admin2)
+        self.assertEqual(len(bound), 308)
+        elsewhere = m.drawn_elsewhere(bound, names, admin1, admin2, district)
+        moved = sorted(line.split(":")[0] for line in elsewhere["lines"])
+        self.assertEqual(moved, ["Espinho", "Mesão Frio", "Oliveira de Frades", "Sardoal",
+                                 "Tábua"])
+        aveiro = next(u["id"] for u in admin1 if u["name"] == "AVEIRO")
+        note = m.district_note(elsewhere["out"][aveiro], elsewhere["in"][aveiro])
+        self.assertIn("Espinho under Porto", note)
+        self.assertIn("Oliveira de Frades (INE's Viseu) inside this district's outline", note)
+        self.assertEqual(m.district_note([], []), "")
+
+
+class PortugalDistrictsAreNotNuts3(unittest.TestCase):
+    """Beja, Braganca and Coimbra are not NUTS-3 regions, and Eurostat's
+    figures for the regions that share their outlines must not land on them."""
+
+    def test_no_wrong_region_on_a_district(self):
+        import json
+        import sys
+        from pathlib import Path
+        root = Path(__file__).resolve().parent.parent
+        sys.path.insert(0, str(root / "scripts"))
+        import nuts_crosswalk
+        codes = ("PT11E", "PT192", "PT1C2")
+        if not all(c in nuts_crosswalk.DECIDED for c in codes):
+            self.skipTest("the DECIDED entries arrive with the west_south shared.patch")
+        crosswalk = json.loads((root / "data/processed/nuts_crosswalk.json").read_text())
+        for code in codes:
+            self.assertIn("refused", crosswalk.get(code, {}), code)
+        path = root / "data/processed/eurostat_nuts3.json"
+        if path.exists():
+            placed = {r["codes"]["nuts"] for r in json.loads(path.read_text())
+                      if r.get("country") == "PRT" and r.get("match_by") == "shape_id"}
+            self.assertFalse(placed & set(codes),
+                             "re-run scripts.fetch_census.eurostat --level nuts3")
+
+
+MALTA_T53 = [
+    ["TABLE 5.3"],
+    ["District and locality", "Roman Catholicism", "Islam", "Orthodoxy", "Hinduism",
+     "Church of England", "Protestantism", "Buddhism", "Judaism", "Other religious groups",
+     "No religious affiliation", "Total"],
+    ["Valletta", 4000, 50, 20, 10, 5, 5, 0, 0, 10, 400, 4500],
+    ["L-Imdina", 200, None, None, None, None, None, None, None, None, 20, 220],
+    ["MALTA", 4200, 50, 20, 10, 5, 5, 0, 0, 10, 420, 4720],
+]
+
+
+class MaltaTables(unittest.TestCase):
+    def setUp(self):
+        from unittest import mock
+        from scripts.fetch_census import malta_census as m
+        self.m = m
+        self.patch = mock.patch.object(m, "LOCALITIES", {"Valletta": "Valletta",
+                                                         "L-Imdina": "Mdina"})
+        self.patch.start()
+
+    def tearDown(self):
+        self.patch.stop()
+
+    def test_religion_rows_make_their_totals_and_malta(self):
+        out = self.m.religion_table([list(r) for r in MALTA_T53])
+        self.assertEqual(out["L-Imdina"]["counts"]["No religion"], 20)
+        self.assertEqual(out["Valletta"]["total"], 4500)
+        bad = [list(r) for r in MALTA_T53]
+        bad[2][1] = 4001
+        with self.assertRaises(SystemExit):
+            self.m.religion_table(bad)
+
+    def test_racial_origin_rows(self):
+        from unittest import mock
+        page = ("TABLE 4.3. Total population by racial origin and locality\n"
+                "Valletta 5,000 300 100 200 50 350 6,000\n"
+                "L-Imdina 200 5 2 1 0 2 210\n"
+                "MALTA 5,200 305 102 201 50 352 6,210\n")
+        with mock.patch.object(self.m, "NATIONAL", 6210):
+            out = self.m.racial_origin_table([page])
+        self.assertEqual(out["Valletta"]["counts"]["More than one racial origin"], 350)
+        with mock.patch.object(self.m, "NATIONAL", 6210), self.assertRaises(SystemExit):
+            self.m.racial_origin_table([page.replace("6,000", "6,001")])
+
+    def test_single_years_and_the_nso_mean(self):
+        sheet = [["Age", "Males", "Females", "Total", None, "Age", "Males", "Females", "Total"],
+                 ["Less than 1", 1, 1, 2, None, "50", 1, "-", 1],
+                 ["0-9", 1, 1, 2, None, "Over 89", 0, 1, 1],
+                 ["Total", 2, 2, 4, None, None, None, None, None]]
+        out = self.m.single_years(sheet, "x")
+        self.assertEqual(out["ages"], Counter({0: 2, 50: 1, 90: 1}))
+        self.assertEqual(self.m.mean_age(out["ages"]), 35.0)       # completed years as they stand
+        sheet[3][1] = 3
+        with self.assertRaises(SystemExit):
+            self.m.single_years(sheet, "x")
+
+    def test_racial_origin_labels_are_placed(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import group_tree
+        for label in self.m.RACIAL_ORIGINS:
+            if label == "More than one racial origin" and \
+                    group_tree.parent_of("ethnicity", label) is None:
+                continue        # placed by shared.patch
+            self.assertIsNotNone(group_tree.parent_of("ethnicity", label), label)
+
+
+class UkMidYearSeries(unittest.TestCase):
+    def test_a_figure_far_from_mid_2021_carries_its_series(self):
+        from scripts.fetch_census.uk_mye import series_note
+        city = {2021: 8689, 2022: 12020, 2023: 14514, 2024: 15497, 2025: 15631}
+        note = series_note("City of London", "Office for National Statistics", city, 2025)
+        self.assertIn("8,689 (2021)", note)
+        self.assertIn("15,631 (2025)", note)
+        self.assertIn("1.80 times", note)
+        self.assertEqual(series_note("Westminster", "x", {2021: 205759, 2025: 212367}, 2025), "")
+
+
+class UkNomisComplete(unittest.TestCase):
+    def test_a_table_read_short_stops_the_run(self):
+        from scripts.fetch_census.uk_nomis import check_complete
+        full = {"E1": {"counts": {"a": 1}}, "E2": {"counts": {"a": 1}}}
+        check_complete({"ethnicity": full, "religion": full, "language": full})
+        with self.assertRaises(SystemExit):
+            check_complete({"ethnicity": full, "religion": full,
+                            "language": {"E1": {"counts": {"a": 1}}}})
+
+
+class MonacoDistrictOrder(unittest.TestCase):
+    def test_the_report_must_still_say_what_the_note_rests_on(self):
+        from scripts.fetch_census.microstates import check_district_order
+        text = ("Note: The districts are those defined by Sovereign Order No. 4,481 of 13\n"
+                "September 2013. Ravin Sainte-Dévote has been incorporated into the district "
+                "of Les\nMoneghetti. 35,352 38,857")
+        check_district_order(text)
+        with self.assertRaises(SystemExit):
+            check_district_order(text.replace("4,481", "4,482"))
+
+
+PROSPETTO = """PROSPETTO B. FAMIGLIE
+STIME Piemonte Valle
+20.000 99,9 99,9 99,9 99,9 99,9 99,9 99,9 99,9 99,9 99,9 99,9 99,9
+PROSPETTO C. VALORI INTERPOLATI DEGLI ERRORI CAMPIONARI RELATIVI PERCENTUALI
+STIME Italia Nord Nord-
+ovest Nord-est Centro Mezzogiorno Sud Isole A1 A2 B1 B2 B3 B4
+20.000 44,9 42,8 43,9 34,5 39,8 33,4 31,8 31,5 42,8 37,6 22,7 33,6 35,7 34,2
+STIME Piemonte Valle
+d'Aosta Liguria Lombardia Trentino-
+20.000 31,4 6,0 21,0 46,4 13,2 12,4 11,9 32,8 18,4 33,4 30,8 16,3
+60.000 16,2 3,1 11,0 24,2 6,8 6,3 6,0 17,1 9,6 17,1 15,8 8,7
+300.000 6,1 - 4,3 9,3 2,6 2,4 2,2 6,6 3,7 6,5 5,9 3,4
+STIME Marche Lazio Abruzzo Molise Campania Puglia Basilicata Calabria Sicilia Sardegna
+20.000 19,2 41,5 18,5 9,3 33,2 31,4 13,4 21,8 33,5 20,9
+"""
+
+
+class ItalySamplingError(unittest.TestCase):
+    def test_prospetto_c_is_read_after_its_title(self):
+        from scripts.fetch_census.italy_language_survey import prospetto_c
+        errors = prospetto_c(PROSPETTO)
+        self.assertEqual(errors["Valle d'Aosta"], {20000: 6.0, 60000: 3.1})
+        self.assertEqual(errors["Nord-Ovest"][20000], 43.9)
+        self.assertEqual(errors["Sardegna"][20000], 20.9)
+        with self.assertRaises(SystemExit):
+            prospetto_c(PROSPETTO.replace("20.000 19,2 41,5", "20.000 41,5"))
+
+    def test_effective_sample_of_the_smallest_region(self):
+        from scripts.fetch_census.italy_language_survey import (
+            effective_sample, precision_note)
+        level, cv, n = effective_sample(120000, {20000: 6.0, 60000: 3.1})
+        self.assertEqual((level, cv, n), (60000, 3.1, 1040))
+        self.assertIn("about 1,040 persons", precision_note(120000, {20000: 6.0, 60000: 3.1}))
+        with self.assertRaises(SystemExit):
+            precision_note(120000, {60000: 12.0})               # n about 70
+
+
+class SpainSurveySamples(unittest.TestCase):
+    def test_the_ige_design_adds_up(self):
+        from scripts.fetch_census.spain_language_survey import ige_sample
+        text = ("Tamaño da mostra\nA mostra consta de 512 seccións coa seguinte repartición por "
+                "provincias: A Coruña 180; Lugo\n90; Ourense 91; Pontevedra 151. En cada sección "
+                "entrev ístanse 18 vivendas, co que resulta un\ntotal de 9.216 vivendas.")
+        self.assertEqual(ige_sample(text), {"12": 9216, "15": 3240, "27": 1620, "32": 1638,
+                                            "36": 2718})
+        with self.assertRaises(SystemExit):
+            ige_sample(text.replace("Lugo\n90", "Lugo\n91"))
+
+    def test_the_eulp_effective_sample(self):
+        from scripts.fetch_census.spain_language_survey import catalonia, eulp_sample
+        page = "<p>La mostra efectiva ha estat de 8.682 individus.</p>"
+        self.assertEqual(eulp_sample(page), 8682)
+        self.assertIn("effective sample of 8,682", catalonia(EULP_2023, 8682)["language_note"])
+        with self.assertRaises(SystemExit):
+            eulp_sample("<p>nothing</p>")
+
 
 if __name__ == "__main__":
     unittest.main()

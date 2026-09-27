@@ -39,6 +39,15 @@ field from what the census does measure. The census asks Irish as an ability
 ("Can you speak Irish?"), not as a home language, so English and Irish are not
 told apart.
 
+**The provinces are the census's, not the outlines'.** The four provinces'
+religion, ethnicity and home language are written to ``ireland_province.json``,
+each the sum of its local electoral areas' counts, and an area's province is
+the one its county is in (the CSO appends the county to every area's name).
+Left to the build, the provinces would be summed from the areas drawn inside
+their outlines -- and the boundary file draws the Newport (Tipperary) area,
+which is in Munster, inside Connacht's outline: measured on the CGAZ polygons,
+99.5% of it lies in the Connacht polygon. The provinces' notes say so.
+
 Two things this reader is careful about.
 
 **The totals are named by the source, not guessed.** Every PxStat dataset
@@ -72,6 +81,8 @@ from ._shared import (
 
 BASE = "https://ws.cso.ie/public/api.restful"
 OUT = "ireland_lea.json"
+PROVINCE_OUT = "ireland_province.json"
+SITE = PROCESSED.parent.parent / "site" / "data"
 YEAR = 2022
 SOURCE = "CSO Census 2022 (Ireland), SAPMAP local electoral areas"
 LICENCE = "Creative Commons Attribution 4.0"
@@ -99,9 +110,11 @@ LANGUAGE_NOTE = (
     "the census asks \u2018Do you speak a language other than English or Irish at home?\u2019 "
     "and which. At local electoral area the CSO names Polish, Spanish and French and pools "
     "every other language, with speakers who did not name theirs, as Other language. Everyone "
-    "else aged 3 and over -- who speaks no language but English or Irish at home -- is "
-    "\u2018English or Irish only\u2019: the census asks Irish as an ability, not as a home "
-    "language, so the two are not told apart.")
+    "else aged 3 and over is \u2018English or Irish only\u2019: those who said they speak no "
+    "other language at home, and also those who did not answer the question, whom the CSO "
+    "does not publish apart at this geography (its table has no not-stated row for the "
+    "question itself), so the category is an upper bound. The census asks Irish as an "
+    "ability, not as a home language, so English and Irish are not told apart.")
 
 # The 26 counties and the four provinces, used only where a name is ambiguous.
 # Local government split several counties into city and county councils, and
@@ -245,6 +258,142 @@ def home_language(speakers: dict[str, float], aged_3: float, label: str) -> dict
     out = {LANGUAGE_LABELS[k]: v for k, v in named.items()}
     out[ENGLISH_OR_IRISH] = aged_3 - total
     return out
+
+
+# The CSO names some councils apart from their county ("Cork County", "Galway
+# County") and some together ("Limerick City and County"); each is filed under
+# the county PROVINCE knows.
+COUNTY_ALIASES = {
+    "Dun Laoghaire-Rathdown": "Dún Laoghaire-Rathdown",
+    "Cork City and Cork County": "Cork",
+    "Cork County": "Cork",
+    "Galway County": "Galway",
+    "Limerick City and County": "Limerick",
+    "Waterford City and County": "Waterford",
+}
+
+
+def province_of(label: str) -> str:
+    """The province of an area the CSO labels "Name, County"."""
+    county = label.rpartition(",")[2].strip()
+    province = PROVINCE.get(COUNTY_ALIASES.get(county, county))
+    if province is None:
+        raise SystemExit(f"ireland: {label}: no province for county {county!r}")
+    return province
+
+
+def drawn_elsewhere(labels: dict[str, str], units2: list[dict[str, Any]],
+                    units1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Areas the boundary file draws inside another province's outline.
+
+    Each area is found on the map by the label the last build gave it as an
+    alias ("Newport, Tipperary"); an area not found that way is skipped, since
+    this only describes the map and decides nothing.
+    """
+    province = {u["id"]: u["name"] for u in units1}
+    by_alias = {}
+    for unit in units2:
+        for alias in unit.get("aliases") or []:
+            by_alias[alias] = unit
+    out = []
+    for code, label in sorted(labels.items()):
+        unit = by_alias.get(label)
+        if unit is None:
+            continue
+        drawn = province.get(unit.get("parent"))
+        own = province_of(label)
+        if drawn and drawn != own:
+            out.append({"code": code, "label": label, "own": own, "drawn": drawn,
+                        "shape": unit["id"]})
+    return out
+
+
+def outline_note(province: str, elsewhere: list[dict[str, Any]],
+                 people: dict[str, float] | None = None) -> str:
+    """What a province's outline on the map holds that its census figures do not."""
+    parts = []
+    for e in elsewhere:
+        bare, _, county = (part.strip() for part in e["label"].rpartition(","))
+        count = f", {people[e['code']]:,.0f} people" if people and e["code"] in people else ""
+        area = f"the {bare} local electoral area ({county}{count})"
+        if e["own"] == province:
+            parts.append(f"The boundary file draws {area} inside {e['drawn']}'s outline; the "
+                         f"census counts it in {province}, and so do these figures.")
+        elif e["drawn"] == province:
+            parts.append(f"The boundary file draws {area}, which the census counts in "
+                         f"{e['own']}, inside this province's outline; these figures leave "
+                         "it out.")
+    return (" " + " ".join(parts)) if parts else ""
+
+
+def province_records(areas: dict[str, str], fields: dict[str, dict[str, dict[str, float]]],
+                     totals: dict[str, dict[str, float]], language: dict[str, dict[str, float]],
+                     elsewhere: list[dict[str, Any]], units1: list[dict[str, Any]]
+                     ) -> list[dict[str, Any]]:
+    """The four provinces, each its own areas' counts added (areas by county)."""
+    shapes = {u["name"]: u for u in units1}
+    members: dict[str, list[str]] = {}
+    for code, label in areas.items():
+        members.setdefault(province_of(label), []).append(code)
+    if sorted(members) != sorted(shapes):
+        raise SystemExit(f"ireland: provinces {sorted(members)} against drawn {sorted(shapes)}")
+    people = {code: totals["religion"].get(code) for code in areas}
+    out = []
+    state = {field: 0.0 for field in TABLES}
+    for province, codes in sorted(members.items()):
+        entry: dict[str, Any] = {}
+        for field in TABLES:
+            counts: dict[str, float] = {}
+            for code in codes:
+                for label, value in fields[field][code].items():
+                    counts[label] = counts.get(label, 0.0) + value
+            total = sum(totals[field].get(code) or sum(fields[field][code].values())
+                        for code in codes)
+            if abs(sum(counts.values()) - total) > total * 0.005:
+                raise SystemExit(f"ireland: {province} {field}: categories make "
+                                 f"{sum(counts.values()):,.0f} against {total:,.0f}")
+            state[field] += total
+            rows = shares(counts, total=total)
+            entry[field] = rows
+            entry[f"{field}_year"] = dated(rows, YEAR)
+            entry[f"{field}_note"] = (PROVINCE_NOTES[field] + f" {province}: its {len(codes)} "
+                                      "local electoral areas added together, each in the "
+                                      "province of its county."
+                                      + outline_note(province, elsewhere, people))
+        spoken: dict[str, float] = {}
+        for code in codes:
+            for label, value in language[code].items():
+                spoken[label] = spoken.get(label, 0.0) + value
+        rows = shares(spoken, total=sum(spoken.values()))
+        entry["language"] = rows
+        entry["language_year"] = dated(rows, YEAR)
+        entry["language_note"] = (LANGUAGE_NOTE + f" {province}: its {len(codes)} local "
+                                  "electoral areas added together, each in the province of its "
+                                  "county." + outline_note(province, elsewhere, people))
+        shape = shapes[province]
+        out.append(record(
+            f"IRL-PROV-{province}", shape["name"], level="admin1", parent="IRL", country="IRL",
+            match_by="shape_id", shape_id=shape["id"], **entry,
+            sources=[{"field": "religion/ethnicity/language", "name": SOURCE, "url": URL,
+                      "license": LICENCE}]))
+    whole = {field: sum(totals[field].get(code) or sum(fields[field][code].values())
+                        for code in areas) for field in TABLES}
+    if any(abs(state[f] - whole[f]) > 0.5 for f in TABLES):
+        raise SystemExit(f"ireland: the provinces make {state} against the areas' {whole}")
+    return out
+
+
+# The provinces' notes: the same census tables, added up.
+PROVINCE_NOTES = {
+    "religion": (
+        f"{SOURCE}, SAP2022T2T4LEA22, of all usual residents, in the four categories the CSO "
+        "publishes for local electoral areas -- Catholic, Other religion, No religion, Not "
+        "stated -- so \u2018Other religion\u2019 holds the Church of Ireland, Presbyterians, "
+        "Orthodox, Muslims and everyone else together, and a filter for Christianity reads a "
+        "province at its **Catholic share alone**. (The CSO publishes a fuller classification "
+        "for counties and provinces; these figures are the areas' four categories added.)"),
+    "ethnicity": f"{SOURCE}, SAP2022T2T2LEA22. Of all usual residents. " + NOTES["ethnicity"],
+}
 
 
 def note(field: str) -> str:
@@ -394,6 +543,18 @@ def main() -> int:
     log(f"  {len(records)} local electoral areas"
         + (f"; names shared by more than one area: {ambiguous}" if ambiguous else ""))
     write_json(args.out or PROCESSED / OUT, records)
+
+    import json
+    units1 = json.loads((SITE / "admin1" / "IRL.units.json").read_text())
+    units2 = json.loads((SITE / "admin2" / "IRL.units.json").read_text())
+    elsewhere = drawn_elsewhere(areas, units2, units1)
+    for e in elsewhere:
+        log(f"  {e['label']} ({e['shape']}): the census's {e['own']}, drawn inside {e['drawn']}")
+    provinces = province_records(areas, fields, totals, language, elsewhere, units1)
+    for r in provinces:
+        log(f"  {r['name']}: religion {r['religion'][0]['group']} {r['religion'][0]['pct']}%, "
+            f"language {r['language'][0]['group']} {r['language'][0]['pct']}%")
+    write_json(PROCESSED / PROVINCE_OUT, provinces)
     return 0
 
 

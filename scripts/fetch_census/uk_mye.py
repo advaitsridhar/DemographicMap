@@ -39,6 +39,13 @@ Median age is interpolated within the single year holding the middle person
 (``redatam.median_age``), with 90+ as the open top class. Sex ratio is males
 per 1,000 females, the unit every other age-sex reader on this map writes.
 
+**A figure far from the census year's is shown with its series.** Where a
+place's latest estimate is more than a quarter above or a fifth below its own
+mid-2021 estimate, the note gives the office's series year by year, so a
+reader sees the change is the office's and not a different place: the City of
+London is the case, 8,689 at mid-2021 and 15,631 at mid-2025 in the ONS's
+own estimates.
+
 Checks, each of which stops the run:
 
 * every place's single years add to its all-ages count, for each sex, and its
@@ -87,6 +94,10 @@ SUCCESSORS: dict[str, tuple[str, ...]] = {
     "Northamptonshire": ("E06000061", "E06000062"),
 }
 
+# A latest estimate outside this ratio to the place's mid-2021 estimate has its
+# series written into the note.
+SERIES_BAND = (0.8, 1.25)
+
 # Nomis' spelling -> the boundary file's, where they differ beyond case.
 RESPELLINGS: dict[str, str] = {}
 
@@ -109,6 +120,33 @@ def fetch(geography: str, date: str, gender: int) -> list[dict[str, str]]:
     text = http_get(url, cache=False, timeout=300)
     assert isinstance(text, str)
     return list(csv.DictReader(io.StringIO(text.lstrip("﻿"))))
+
+
+def read_series(geography: str) -> dict[str, dict[int, int]]:
+    """code -> {year: all persons} for the five latest years (one small request)."""
+    dates = ",".join(["latestMINUS4", "latestMINUS3", "latestMINUS2", "latestMINUS1", "latest"])
+    url = (f"{BASE}?geography={geography}&date={dates}&gender=0&c_age=200&measures=20100"
+           f"&select=date_name,geography_code,obs_value")
+    text = http_get(url, cache=False, timeout=300)
+    assert isinstance(text, str)
+    out: dict[str, dict[int, int]] = {}
+    for row in csv.DictReader(io.StringIO(text.lstrip("\ufeff"))):
+        value = (row.get("OBS_VALUE") or "").strip()
+        if value:
+            out.setdefault(row["GEOGRAPHY_CODE"], {})[int(row["DATE_NAME"][:4])] = int(float(value))
+    return out
+
+
+def series_note(name: str, office: str, years: dict[int, int], year: int) -> str:
+    """The office's series, when the figure shown is far from the census year's."""
+    base = years.get(2021)
+    latest = years.get(year)
+    if not base or not latest or SERIES_BAND[0] <= latest / base <= SERIES_BAND[1]:
+        return ""
+    shown = ", ".join(f"{years[y]:,} ({y})" for y in sorted(years) if y <= year)
+    return (f" The {office} estimates {name} at {shown}: {latest / base:.2f} times its "
+            "mid-2021 figure, in the office's own series for the same area, not a change "
+            "of boundary.")
 
 
 def tabulate(rows: list[dict[str, str]]) -> dict[str, dict[str, Any]]:
@@ -196,7 +234,7 @@ def combine(parts: list[dict[str, Any]], name: str) -> dict[str, Any]:
             "from": [p["name"] for p in parts]}
 
 
-def fields(place: dict[str, Any], code: str) -> dict[str, Any]:
+def fields(place: dict[str, Any], code: str, extra: str = "") -> dict[str, Any]:
     office = OFFICE[code[0]]
     year = place["year"]
     source = f"{office}, mid-{year} population estimates (Nomis NM_2002_1)"
@@ -210,7 +248,7 @@ def fields(place: dict[str, Any], code: str) -> dict[str, Any]:
                if joined else "."))
     return {
         "population": measure(whole, year=year, source=source),
-        "population_note": note,
+        "population_note": note + extra,
         "median_age": measure(median_age(ages), unit="years", year=year, source=source),
         "median_age_note": ("Interpolated within the single year of age holding the middle "
                             "person. " + note),
@@ -256,6 +294,7 @@ def main() -> int:
             raise SystemExit(f"uk_mye: two places named {place['name']}")
         drawn[key] = (code, place)
 
+    history = read_series(LOCAL)
     records: list[dict[str, Any]] = []
     shapes = {fold(s["name"]): s for s in admin2}
     if len(shapes) != len(admin2):
@@ -267,11 +306,22 @@ def main() -> int:
                          f"shapes with no row {unbound_shapes}")
     for key, shape in sorted(shapes.items()):
         code, place = drawn[key]
+        years: dict[int, int] = {}
+        for part in code.split("+"):
+            for y, n in history.get(part, {}).items():
+                years[y] = years.get(y, 0) + n
+        if years.get(place["year"]) not in (None, place["men"] + place["women"]):
+            raise SystemExit(f"uk_mye: {place['name']}: the series gives "
+                             f"{years.get(place['year']):,} for {place['year']}, the single "
+                             f"years {place['men'] + place['women']:,}")
+        extra = series_note(place["name"], OFFICE[code[0]], years, place["year"])
+        if extra:
+            log(f"  {place['name']}:{extra}")
         records.append(record(
             f"GBR-MYE-{code}", shape["name"], level="admin2", parent="GBR", country="GBR",
             match_by="shape_id", shape_id=shape["id"],
             codes={"gss_codes": code.split("+")} if "+" in code else {"gss_code": code},
-            **fields(place, code.split("+")[0])))
+            **fields(place, code.split("+")[0], extra)))
     nations_by_name = {fold(NATION_OF[c[0]]): (c, p) for c, p in nations.items()}
     for shape in admin1:
         hit = nations_by_name.get(fold(shape["name"]))
