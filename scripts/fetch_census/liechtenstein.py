@@ -124,7 +124,7 @@ def table_url(key: str) -> str:
 
 def post(key: str, query: list[dict[str, Any]]) -> list[tuple[dict[str, tuple[str, str]], float]]:
     url = table_url(key)
-    body = json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode()
+    body = json.dumps({"query": query, "response": {"format": "json-stat"}}).encode()
     req = urllib.request.Request(url, data=body, headers={
         "User-Agent": USER_AGENT, "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=120) as resp:
@@ -134,7 +134,7 @@ def post(key: str, query: list[dict[str, Any]]) -> list[tuple[dict[str, tuple[st
         payload = {"id": payload["dimension"]["id"], "size": payload["dimension"]["size"],
                    "dimension": payload["dimension"], "value": payload["value"]}
     asked = {q["code"]: len(q["selection"]["values"]) for q in query}
-    log(f"  {TABLES[key].rsplit('/', 1)[-1]}: asked {asked}, answered {payload.get('size')}")
+    log(f"  {TABLES[key].rsplit('/', 1)[-1]}: asked {asked}, answered {payload.get('size')}, {len(payload['value'])} values of type {type(payload['value']).__name__}")
     return unstack(payload)
 
 
