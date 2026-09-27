@@ -103,7 +103,15 @@ def spain() -> tuple[dict[str, dict[str, Any]], int]:
                 raise SystemExit(f"spain_italy_age: an age INE calls {simple}")
             age: int | None = int(match.group(1))
         elif meta(series, "Totales de edad"):
-            age = None
+            # The open top class ("100 y más años") is filed with the totals,
+            # beside "Todas las edades"; read as a total it overwrote it.
+            label = meta(series, "Totales de edad").get("Nombre", "")
+            if label == "Todas las edades":
+                age = None
+            elif (top := re.match(r"^(\d+) y más", label)):
+                age = int(top.group(1))
+            else:
+                continue
         else:
             continue
         if sex not in ("Total", "Hombres", "Mujeres") or province is None:
