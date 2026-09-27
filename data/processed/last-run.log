@@ -1,198 +1,93 @@
-
-=== pol
-
-## https://bdl.stat.gov.pl/api/v1/variables/search?name=mediana&format=json&page-size=100&lang=pl
-   HTTP 200, 6,514 bytes, application/json; charset=utf-8
-   totalRecords 42
-   - 154898 subj P2846 lvl 3 years  | mediana liczby członków | None | None | None
-   - 154899 subj P2846 lvl 3 years  | wolontariusze - mediana członków pracujących społecznie | None | None | None
-   - 154900 subj P2846 lvl 3 years  | wolontariusze - mediana wolontariuszy niezrzeszonych | None | None | None
-   - 154901 subj P2846 lvl 3 years  | wolontariusze - mediana wszystkich osób pracujących społecznie | None | None | None
-   - 458557 subj P2848 lvl 3 years  | pracujący w organizacjach | mediana liczby osób zatrudnionych na podstawie umów o pracę | None | None
-   - 458571 subj P2848 lvl 3 years  | pracujący w organizacjach | mediana liczby osób zatrudnionych na podstawie umów cywilnoprawnych | None | None
-   - 1650633 subj P4280 lvl 6 years  | styczeń | mediana wieku | ogółem | None
-   - 1650634 subj P4280 lvl 6 years  | styczeń | mediana wieku | mężczyźni | None
-   - 1650635 subj P4280 lvl 6 years  | styczeń | mediana wieku | kobiety | None
-   - 1650642 subj P4280 lvl 6 years  | luty | mediana wieku | ogółem | None
-   - 1650643 subj P4280 lvl 6 years  | luty | mediana wieku | mężczyźni | None
-   - 1650644 subj P4280 lvl 6 years  | luty | mediana wieku | kobiety | None
-   - 1650651 subj P4280 lvl 6 years  | marzec | mediana wieku | ogółem | None
-   - 1650652 subj P4280 lvl 6 years  | marzec | mediana wieku | mężczyźni | None
-   - 1650653 subj P4280 lvl 6 years  | marzec | mediana wieku | kobiety | None
-   - 1650660 subj P4280 lvl 6 years  | kwiecień | mediana wieku | ogółem | None
-   - 1650661 subj P4280 lvl 6 years  | kwiecień | mediana wieku | mężczyźni | None
-   - 1650662 subj P4280 lvl 6 years  | kwiecień | mediana wieku | kobiety | None
-   - 1650669 subj P4280 lvl 6 years  | maj | mediana wieku | ogółem | None
-   - 1650670 subj P4280 lvl 6 years  | maj | mediana wieku | mężczyźni | None
-   - 1650671 subj P4280 lvl 6 years  | maj | mediana wieku | kobiety | None
-   - 1650678 subj P4280 lvl 6 years  | czerwiec | mediana wieku | ogółem | None
-   - 1650679 subj P4280 lvl 6 years  | czerwiec | mediana wieku | mężczyźni | None
-   - 1650680 subj P4280 lvl 6 years  | czerwiec | mediana wieku | kobiety | None
-   - 1650687 subj P4280 lvl 6 years  | lipiec | mediana wieku | ogółem | None
-   - 1650688 subj P4280 lvl 6 years  | lipiec | mediana wieku | mężczyźni | None
-   - 1650689 subj P4280 lvl 6 years  | lipiec | mediana wieku | kobiety | None
-   - 1650696 subj P4280 lvl 6 years  | sierpień | mediana wieku | ogółem | None
-   - 1650697 subj P4280 lvl 6 years  | sierpień | mediana wieku | mężczyźni | None
-   - 1650698 subj P4280 lvl 6 years  | sierpień | mediana wieku | kobiety | None
-   - 1650705 subj P4280 lvl 6 years  | wrzesień | mediana wieku | ogółem | None
-   - 1650706 subj P4280 lvl 6 years  | wrzesień | mediana wieku | mężczyźni | None
-   - 1650707 subj P4280 lvl 6 years  | wrzesień | mediana wieku | kobiety | None
-   - 1650714 subj P4280 lvl 6 years  | październik | mediana wieku | ogółem | None
-   - 1650715 subj P4280 lvl 6 years  | październik | mediana wieku | mężczyźni | None
-   - 1650716 subj P4280 lvl 6 years  | październik | mediana wieku | kobiety | None
-   - 1650723 subj P4280 lvl 6 years  | listopad | mediana wieku | ogółem | None
-   - 1650724 subj P4280 lvl 6 years  | listopad | mediana wieku | mężczyźni | None
-   - 1650725 subj P4280 lvl 6 years  | listopad | mediana wieku | kobiety | None
-   - 1650732 subj P4280 lvl 6 years  | grudzień | mediana wieku | ogółem | None
-   - 1650733 subj P4280 lvl 6 years  | grudzień | mediana wieku | mężczyźni | None
-   - 1650734 subj P4280 lvl 6 years  | grudzień | mediana wieku | kobiety | None
-
-## https://bdl.stat.gov.pl/api/v1/variables/search?name=wiek&format=json&page-size=100&lang=pl
-   HTTP 200, 16,468 bytes, application/json; charset=utf-8
-   totalRecords 1923
-   - 149 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | ogółem | None | None
-   - 150 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | mężczyźni | None | None
-   - 151 subj P1342 lvl 6 years  | w wieku przedprodukcyjnym | kobiety | None | None
-   - 152 subj P1342 lvl 6 years  | w wieku produkcyjnym | ogółem | None | None
-   - 153 subj P1342 lvl 6 years  | w wieku produkcyjnym | mężczyźni | None | None
-   - 154 subj P1342 lvl 6 years  | w wieku produkcyjnym | kobiety | None | None
-   - 148537 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | ogółem | None | None
-   - 148539 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | mężczyźni | None | None
-   - 148541 subj P1342 lvl 6 years  | w wieku produkcyjnym mobilnym | kobiety | None | None
-   - 148536 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | ogółem | None | None
-   - 148538 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | mężczyźni | None | None
-   - 148540 subj P1342 lvl 6 years  | w wieku produkcyjnym niemobilnym | kobiety | None | None
-   - 155 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | ogółem | None | None
-   - 156 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | mężczyźni | None | None
-   - 157 subj P1342 lvl 6 years  | w wieku poprodukcyjnym | kobiety | None | None
-   - 4238 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | ogółem | None | None
-   - 4239 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | mężczyźni | None | None
-   - 4240 subj P1385 lvl 3 years  | ludność ogółem w wieku 15 lat i więcej (stan na 31 grudnia) | kobiety | None | None
-   - 4287 subj P1388 lvl 3 years  | ze względu na nieodpowiedni wiek | None | None | None
-   - 4410 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku ogółem | None | None
-   - 46538 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku cielęta rzeźne | None | None
-   - 46549 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku byczki na chów | None | None
-   - 46535 subj P1440 lvl 3 years  | ogółem | cielęta w wieku poniżej 1 roku jałówki na chów | None | None
-   - 4411 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat ogółem | None | None
-   - 46536 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat byczki | None | None
-   - 46542 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat jałówki rzeźne | None | None
-   - 46540 subj P1440 lvl 3 years  | ogółem | młode bydło w wieku 1-2 lat jałówki pozostałe | None | None
-   - 4412 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej ogółem | None | None
-   - 46541 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej buhaje i woły | None | None
-   - 46548 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej jałówki rzeźne | None | None
-   - 46533 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej jałówki na chów | None | None
-   - 4413 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy ogółem | None | None
-   - 4414 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy mleczne | None | None
-   - 46551 subj P1440 lvl 3 years  | ogółem | bydło w wieku 2 lat i więcej krowy pozostałe | None | None
-   - 4416 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku ogółem | None | None
-   - 46539 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku cielęta rzeźne | None | None
-   - 46547 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku byczki na chów | None | None
-   - 46550 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | cielęta w wieku poniżej 1 roku jałówki na chów | None | None
-   - 4417 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat ogółem | None | None
-   - 46537 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat byczki | None | None
-   - 46534 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat jałówki rzeźne | None | None
-   - 46546 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | młode bydło w wieku 1-2 lat jałówki pozostałe | None | None
-   - 4418 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej ogółem | None | None
-   - 46543 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej buhaje i woły | None | None
-   - 46544 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej jałówki rzeźne | None | None
-   - 46545 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej jałówki na chów | None | None
-   - 4419 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy ogółem | None | None
-   - 4420 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy mleczne | None | None
-   - 46552 subj P1440 lvl 3 years  | w gospodarstwach indywidualnych | bydło w wieku 2 lat i więcej krowy pozostałe | None | None
-   - 149172 subj P1796 lvl 6 years  | dzieci w wieku 0 lat (łącznie z oddziałami) | None | None | None
-   - 149173 subj P1796 lvl 6 years  | dzieci w wieku 1 lat (łącznie z oddziałami) | None | None | None
-   - 149174 subj P1796 lvl 6 years  | dzieci w wieku 2 lat (łącznie z oddziałami) | None | None | None
-   - 149175 subj P1796 lvl 6 years  | dzieci w wieku 3 lat (łącznie z oddziałami) | None | None | None
-   - 149176 subj P1796 lvl 6 years  | dzieci w wieku 4 lat i więcej (łącznie z oddziałami) | None | None | None
-   - 377282 subj P1799 lvl 6 years  | placówka zapewniająca całodobową opiekę osobom niepełnosprawnym, przewlekle chorym lub osobom w podeszłym wieku w ramach działalności gospodarczej lub statutowej | None | None | None
-   - 1609988 subj P1799 lvl 6 years  | mieszkańcy - w wieku do 18 lat | None | None | None
-   - 148330 subj P1799 lvl 6 years  | mieszkańcy - osoby w podeszłym wieku | None | None | None
-   - 1545206 subj P1799 lvl 6 years  | mieszkańcy - osoby w podeszłym wieku w roku sprawozdawczym | None | None | None
-   - 10597 subj P1810 lvl 3 years  | udzielone świadczenia zdrowotnego dzieci i młodzież w wieku 0-18 lat | None | None | None
-   - 10599 subj P1810 lvl 3 years  | udzielone świadczenia zdrowotne w izbie przyjęć dzieci i młodzież w wieku 0-18 lat | None | None | None
-   - 6248 subj P1822 lvl 3 years  | domy dziecka | wychowankowie w wieku 0-3 lat | None | None
-   - 6259 subj P1822 lvl 3 years  | rodzinne domy dziecka | wychowankowie w wieku 0-3 lat | None | None
-   - 6298 subj P1822 lvl 3 years  | wioski dziecięce | wychowankowie w wieku 0-3 lat | None | None
-   - 7175 subj P1824 lvl 3 years  | dzieci w wieku do 3 lat ogółem | None | None | None
-   - 8403 subj P1825 lvl 3 years  | placówki socjalizacyjne | wychowankowie w wieku 0-3 lat | None | None
-   - 8423 subj P1828 lvl 3 years  | wychowankowie w wieku 0-3 lat | None | None | None
-   - 6269 subj P1829 lvl 3 years  | wychowankowie w wieku 0-3 lat | None | None | None
-   - 57104 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | ogółem | None
-   - 57110 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo ogółem | None
-   - 57112 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo pracujący | None
-   - 57119 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
-   - 57113 subj P1950 lvl 7 years  | ogółem | w wieku produkcyjnym | bierni zawodowo | None
-   - 57095 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | ogółem | None
-   - 57111 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo ogółem | None
-   - 57120 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo pracujący | None
-   - 57093 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
-   - 57108 subj P1950 lvl 7 years  | mężczyźni | w wieku produkcyjnym | bierni zawodowo | None
-   - 57092 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | ogółem | None
-   - 57109 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo ogółem | None
-   - 57114 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo pracujący | None
-   - 57096 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | aktywni zawodowo bezrobotni | None
-   - 57117 subj P1950 lvl 7 years  | kobiety | w wieku produkcyjnym | bierni zawodowo | None
-   - 41358 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | ogółem | None
-   - 1839 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | mężczyźni | None
-   - 1840 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym mobilnym | kobiety | None
-   - 41331 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | ogółem | None
-   - 1841 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | mężczyźni | None
-   - 1842 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku produkcyjnym niemobilnym | kobiety | None
-   - 41335 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | ogółem | None
-   - 1843 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | mężczyźni | None
-   - 1844 subj P2067 lvl 6 years  | praca we własnym gospodarstwie | w wieku poprodukcyjnym | kobiety | None
-   - 41336 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | ogółem | None
-   - 1845 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | mężczyźni | None
-   - 1846 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym mobilnym | kobiety | None
-   - 41321 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | ogółem | None
-   - 1847 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | mężczyźni | None
-   - 1848 subj P2067 lvl 6 years  | praca najemna | w wieku produkcyjnym niemobilnym | kobiety | None
-   - 41334 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | ogółem | None
-   - 1849 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | mężczyźni | None
-   - 1850 subj P2067 lvl 6 years  | praca najemna | w wieku poprodukcyjnym | kobiety | None
-
-=== cze
-
-## https://csu.gov.cz/otevrena-data
-   HTTP 404, 70,975 bytes, text/html; charset=utf-8
-   1 distinct matches of 'href=\\"[^\\"]*(?:produkty|opendata|otevren)[^\\"]*\\"'
-   - href="https://csu.gov.cz/otevrena_data"
-
-## https://data.csu.gov.cz/
-   HTTP 200, 8,860 bytes, text/html
-   16 distinct matches of 'href=\\"[^\\"]+\\"|<title>[^<]*'
-   - <title>DataStat
-   - href="/datastat/"
-   - href="favicon.ico"
-   - href="/assets/icons/favicon-32x32.png?version=2"
-   - href="/assets/icons/favicon-16x16.png?version=2"
-   - href="/assets/icons/apple-touch-icon.png?version=2"
-   - href="manifest.webmanifest"
-   - href="styles-MNE6BQ3F.css"
-   - href="chunk-PHC4Y2FU.js"
-   - href="chunk-53DOK3DP.js"
-   - href="chunk-W55LCGJA.js"
-   - href="chunk-FK4CORSO.js"
-   - href="chunk-ICZFJ42G.js"
-   - href="chunk-JUMWX6ZE.js"
-   - href="chunk-HFZR6LGU.js"
-   - href="chunk-3RTP2KMA.js"
-
-=== svk
-
-## DATAcube collection: HTTP 200, 567,485 bytes
-   678 datasets
-   - https://data.statistics.sk/api/v2/dataset/om7002rr/om7002rr_vuc/om7002rr_obd/om7002rr_nar/om7002rr_poh?lang=en | Demographic Balance by Nationality and Sex - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7005rr/om7005rr_vuc/om7005rr_obd/om7005rr_ukaz/om7005rr_poh?lang=en | Indices of the Age Structure - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7006rr/om7006rr_obc/om7006rr_obd/om7006rr_ukaz/om7006rr_poh/om7006rr_vsk?lang=en | Age Groups - Municipalities
-   - https://data.statistics.sk/api/v2/dataset/om7007rr/om7007rr_vuc/om7007rr_obd/om7007rr_ukaz/om7007rr_poh/om7007rr_vsk?lang=en | Age Groups - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7008rr/om7008rr_obc/om7008rr_obd/om7008rr_ukaz/om7008rr_poh/om7008rr_vek?lang=en | Age Structure - Municipalities
-   - https://data.statistics.sk/api/v2/dataset/om7009rr/om7009rr_vuc/om7009rr_obd/om7009rr_ukaz/om7009rr_poh/om7009rr_vek?lang=en | Age Structure - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7025rr/om7025rr_vuc/om7025rr_obd/om7025rr_vek/om7025rr_poh?lang=en | Marriages by Age and Permanent Residence of Men and Women - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7031rr/om7031rr_vuc/om7031rr_obd/om7031rr_ukaz?lang=en | Mean Ages of Mother at Birth - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7034rr/om7034rr_vuc/om7034rr_obd/om7034rr_vek/om7034rr_poh?lang=en | Deaths by Age and Sex - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7036rr/om7036rr_vuc/om7036rr_obd/om7036rr_poh/om7036rr_umr/om7036rr_vek?lang=en | Deaths by Causes of Death Age and Sex - SR-Reg-District
-   - https://data.statistics.sk/api/v2/dataset/om7038rr/om7038rr_vuc/om7038rr_obd/om7038rr_ukaz/om7038rr_poh?lang=en | Mean Age of Death by Sex - SR-Area-Reg-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7052rr/om7052rr_obc/om7052rr_obd/om7052rr_ukaz/om7052rr_poh?lang=en | Indices of the Age Structure - Municipalities
-   - https://data.statistics.sk/api/v2/dataset/om7054rr/om7054rr_vuc/om7054rr_obd/om7054rr_ukaz/om7054rr_poh/om7054rr_vek/om7054rr_vzd?lang=en | Demographic Balance by Education, Sex and Age Groups - SR-Area-Region-District, U-R
-   - https://data.statistics.sk/api/v2/dataset/om7055rr/om7055rr_vuc/om7055rr_obd/om7055rr_ukaz/om7055rr_poh/om7055rr_vek/om7055rr_vzd?lang=en | Demographic Balance by Education, Sex and Age - SR-Area-Region-District, U-R
+== head https://www.recensamantromania.ro/ 
+  !! URLError: <urlopen error timed out>
+== links https://www.recensamantromania.ro/rezultate-rpl-2021/rezultate-definitive-caracteristici-demografice/ xls|rezultate 60
+  !! URLError: <urlopen error timed out>
+== text http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D 600
+  HTTP 200 application/json;charset=UTF-8 258,941 bytes
+  {"ancestors":[{"name":"home","code":"","childrenUrl":"context","comment":null,"url":"context"},{"name":"A. STATISTICA SOCIALA","code":"1","childrenUrl":"context","comment":null,"url":"context"},{"name":"POPULATIE SI STRUCTURA DEMOGRAFICA Comunicate de presa ","code":"10","childrenUrl":"context","comment":null,"url":"context"},{"name":"POPULATIA DUPA DOMICILIU","code":"1012","childrenUrl":"context","comment":null,"url":"context"}],"matrixName":"POPULATIA DUPA DOMICILIU la 1 ianuarie pe grupe de varsta si varste, sexe, judete si localitati","periodicitati":["Anuala"],"surseDeDate":[{"nume":"Popu
+== head https://insse.ro/cms/ 
+  !! URLError: <urlopen error [Errno 101] Network is unreachable>
+== head https://data.gov.ro/ 
+  !! URLError: <urlopen error timed out>
+== cdx recensamantromania.ro/wp-content/uploads/2023 80
+  HTTP 200: 320 captures
+  20230131161945 application/zip 1007999 https://www.recensamantromania.ro/wp-content/uploads/2023/01/15-tabele_CP_RPL-2021_provizorii_ian-2023.zip
+  20250406120559 application/vnd.openxmlformats-officedocument.wordprocessingml.document 2572811 https://www.recensamantromania.ro/wp-content/uploads/2023/01/CPdateprovizoriiRPL2021_ian-2023.docx
+  20230224191939 application/pdf 1005172 https://www.recensamantromania.ro/wp-content/uploads/2023/01/Hotarare-nr-14-CCRPL2021_ian-2023_FINAL.pdf
+  20230804044706 application/pdf 3083241 https://www.recensamantromania.ro/wp-content/uploads/2023/04/program-de-diseminare-rezultate-RPL-2021_CCRPL-_14_30.01.2023.pdf
+  20250406120529 application/vnd.ms-excel 21626 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P01_Populatia-rezidenta-pe-sexe-grupe-de-varsta-macroregiuni-regiuni-de-dezvoltare-si-judete.xls
+  20250406120528 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 102891 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P02_-Populatia-rezidenta-dupa-starea-civila-pe-sexe-grupe-de-varsta-si-judete.xlsx
+  20250406120527 application/vnd.ms-excel 21263 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P03_-Populatia-rezidenta-pe-sexe-dupa-etnie-pe-sexe-si-judete.xls
+  20250406120529 application/vnd.ms-excel 24045 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P04_Populatia-rezidenta-dupa-limba-materna-pe-sexe-macroregiuni-regiuni-de-dezvoltare-si-judete.xls
+  20250406120528 application/vnd.ms-excel 271650 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P05_-Populatia-rezidenta-dupa-etnie-si-limba-materna-pe-judete.xls
+  20231231121214 application/vnd.ms-excel 20839 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P06_-Populatia-rezidenta-pe-sexe-dupa-religie-pe-judete.xls
+  20250406120530 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 296170 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P07_-Populatia-rezidenta-dupa-etnie-si-religie-pe-judete.xlsx
+  20250406120530 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 18986 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P08_-Populatia-rezidenta-dupa-cel-mai-inalt-nivel-de-educatie-absolvit-pe-sexe-si-judete.xlsx
+  20250406120529 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 46597 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P09_-Populatia-rezidenta-dupa-etnie-si-nivelul-de-educatie-absolvit-pe-judete.xlsx
+  20250406120526 application/vnd.ms-excel 12766 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P10_-Populatia-rezidenta-de-2-ani-si-peste-dupa-nivelul-de-educatie-urmat-pe-sexe-macroregiuni-regiuni-de-dezvoltare-si-judete.xls
+  20250406120528 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 51763 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P11_-Populatia-rezidenta-de-2-ani-si-peste-care-urmeaza-cursurile-unei-institutii-de-invatamant-dupa-etnie-si-nivelul-de-educatie-urmat.xlsx
+  20250406120530 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 54485 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P12_Populatia-rezidenta-activa-si-inactiva-dupa-statutul-activitatii-curente-pe-sexe-macroregiuni-regiuni-de-dezvoltare-si-judete.xlsx
+  20250406120530 application/vnd.ms-excel 14837 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P13_Populatia-rezidenta-dupa-locul-nasterii-pe-sexe-si-judete-la-1-decembrie-2021.xls
+  20250406120531 application/vnd.ms-excel 17599 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P14_Persoane-care-si-au-schimbat-resedinta-dupa-resedinta-anterioara-pe-macroregiuni-regiuni-de-dezvoltare-si-judete-la-1-decembrie-2021.xls
+  20230622072114 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 118576 https://www.recensamantromania.ro/wp-content/uploads/2023/05/P15_-Populatia-rezidenta-pe-municipii-orase-si-comune-la-1-decembrie-2021-rezultate-provizorii.xlsx
+  20230601175316 application/vnd.ms-excel 13998 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.01.xls
+  20230601175320 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 104566 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.02.xlsx
+  20230601175321 application/vnd.ms-excel 247580 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls
+  20230606002135 application/vnd.ms-excel 18073 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.04.xls
+  20230601175316 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 344618 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.05_1.05.1-si-1.05.2.xlsx
+  20230601175317 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 50493 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.07.xlsx
+  20230601175326 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 118971 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.10_1.10.1-si-1.10.2.xlsx
+  20230601175324 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 91278 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.11_1.11.1-si-1.11.2.xlsx
+  20230606002135 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 339064 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.12_1.12.1-si-1.12.2.xlsx
+  20230601175318 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 110785 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.14.xlsx
+  20230601175315 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 171182 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.16_1.16.1-si-1.16.2.xlsx
+  20230601175320 application/vnd.ms-excel 46618 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.17_1.17.1-SI-1.17.2.xls
+  20230601175321 application/vnd.ms-excel 25183 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.18.xls
+  20230601175323 application/vnd.ms-excel 41293 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.19.xls
+  20230606002135 application/vnd.ms-excel 9238 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.20.xls
+  20230601175318 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 802939 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.22.xlsx
+  20230601175315 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 28858 https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.23.xlsx
+  20230601175317 application/vnd.ms-excel 174223 https://www.recensamantromania.ro/wp-content/uploads/2023/06/1.06_1.06.1-si-1.06.2.xls
+  20230707114007 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 30185 https://www.recensamantromania.ro/wp-content/uploads/2023/06/1.23_actualizat.xlsx
+  20240607220337 image/jpeg 163968 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-1024x724.jpg
+  20240611225751 image/jpeg 326906 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-1536x1086.jpg
+  20240611225755 image/jpeg 507479 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-2048x1448.jpg
+  20240611225744 image/jpeg 16784 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-300x212.jpg
+  20240611225748 image/jpeg 97692 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-768x543.jpg
+  20250406121155 image/jpeg 705740 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_cresteri_RPL2021_rap_2011-scaled.jpg
+  20240607220315 image/jpeg 145973 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-1024x724.jpg
+  20240607220330 image/jpeg 286980 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-1536x1086.jpg
+  20240607220333 image/jpeg 443265 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-2048x1448.jpg
+  20240607220319 image/jpeg 15979 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-300x212.jpg
+  20240607220321 image/jpeg 87901 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-768x543.jpg
+  20250406121132 image/jpeg 616297 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_etnii_scaderi_RPL2021_rap_2011-scaled.jpg
+  20240611225801 image/jpeg 210055 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-1024x724.jpg
+  20240611225815 image/jpeg 407399 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-1536x1086.jpg
+  20240611225822 image/jpeg 625435 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-2048x1448.jpg
+  20240611225805 image/jpeg 22043 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-300x212.jpg
+  20240611225809 image/jpeg 125863 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-768x543.jpg
+  20250406121151 image/jpeg 864381 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_maghiari_per_UAT_RPL2021-scaled.jpg
+  20240611225826 image/jpeg 148708 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-1024x724.jpg
+  20240611225835 image/jpeg 281701 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-1536x1086.jpg
+  20240611225846 image/jpeg 433982 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-2048x1448.jpg
+  20240611225830 image/jpeg 19020 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-300x212.jpg
+  20240611225832 image/jpeg 92071 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-768x543.jpg
+  20250406121150 image/jpeg 598736 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romani_per_UAT_2021-scaled.jpg
+  20240611225849 image/jpeg 222395 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-1024x724.jpg
+  20240611225908 image/jpeg 430770 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-1536x1086.jpg
+  20240611225913 image/jpeg 663675 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-2048x1448.jpg
+  20240611225855 image/jpeg 23289 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-300x212.jpg
+  20240611225859 image/jpeg 133638 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-768x543.jpg
+  20250406121134 image/jpeg 920321 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_romi_per_UAT_RPL2021-scaled.jpg
+  20240611225916 image/jpeg 220090 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-1024x724.jpg
+  20240611225940 image/jpeg 430650 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-1536x1086.jpg
+  20240611225943 image/jpeg 665815 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-2048x1448.jpg
+  20240611225921 image/jpeg 22626 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-300x212.jpg
+  20240611225938 image/jpeg 131532 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-768x543.jpg
+  20250406121138 image/jpeg 925373 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Pondere_ucraineni_per_UAT_RPL2021-scaled.jpg
+  20240611225947 image/jpeg 112137 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-1024x724.jpg
+  20240611230000 image/jpeg 191783 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-1536x1086.jpg
+  20240611230008 image/jpeg 272120 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-2048x1448.jpg
+  20240611225950 image/jpeg 18904 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-300x212.jpg
+  20240611225954 image/jpeg 75684 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-768x543.jpg
+  20250406121142 image/jpeg 356470 https://www.recensamantromania.ro/wp-content/uploads/2023/06/Ponderea-populatiei-dupa-etnie-la-nivel-teritorial-2021-scaled.jpg
