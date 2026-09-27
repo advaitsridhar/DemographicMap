@@ -44,16 +44,6 @@
         "group": "Islam",
         "pct": 2.2,
         "count": 6400
-      },
-      {
-        "group": "Other Christian",
-        "pct": 0.7,
-        "count": 2100
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.7,
-        "count": 2100
       }
     ],
     "language": {
@@ -68,7 +58,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -76,7 +67,7 @@
     "shape_id": "97560089B12055607938436",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Burgenland would have about 917 of the 27,656. Withheld as below the 3,000 people the table's footnote calls not interpretable: Other Christian, Other religion; the shares shown sum to 98.6%."
   },
   {
     "id": "AUT-REL2021-karnten",
@@ -147,7 +138,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -155,7 +147,7 @@
     "shape_id": "97560089B55365172259742",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Kärnten would have about 1,741 of the 27,656. Very uncertain (fewer than 6,000 people extrapolated): Other religion."
   },
   {
     "id": "AUT-REL2021-niederosterreich",
@@ -226,7 +218,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -234,7 +227,7 @@
     "shape_id": "97560089B30234814950985",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Niederösterreich would have about 5,240 of the 27,656."
   },
   {
     "id": "AUT-REL2021-oberosterreich",
@@ -305,7 +298,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -313,7 +307,7 @@
     "shape_id": "97560089B86772589826985",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Oberösterreich would have about 4,630 of the 27,656."
   },
   {
     "id": "AUT-REL2021-salzburg",
@@ -384,7 +378,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -392,7 +387,7 @@
     "shape_id": "97560089B65158936715310",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Salzburg would have about 1,734 of the 27,656."
   },
   {
     "id": "AUT-REL2021-steiermark",
@@ -463,7 +458,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -471,7 +467,7 @@
     "shape_id": "97560089B87855108402029",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Steiermark would have about 3,861 of the 27,656."
   },
   {
     "id": "AUT-REL2021-tirol",
@@ -523,11 +519,6 @@
         "group": "Other Christian",
         "pct": 1.0,
         "count": 7600
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.3,
-        "count": 2500
       }
     ],
     "language": {
@@ -542,7 +533,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -550,7 +542,7 @@
     "shape_id": "97560089B46292059412713",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Tirol would have about 2,351 of the 27,656. Withheld as below the 3,000 people the table's footnote calls not interpretable: Other religion; the shares shown sum to 99.7%."
   },
   {
     "id": "AUT-REL2021-vorarlberg",
@@ -602,11 +594,6 @@
         "group": "Other Christian",
         "pct": 1.3,
         "count": 5200
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.6,
-        "count": 2500
       }
     ],
     "language": {
@@ -621,7 +608,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -629,7 +617,7 @@
     "shape_id": "97560089B20931628540879",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Vorarlberg would have about 1,236 of the 27,656. Withheld as below the 3,000 people the table's footnote calls not interpretable: Other religion; the shares shown sum to 99.3%. Very uncertain (fewer than 6,000 people extrapolated): Other Christian."
   },
   {
     "id": "AUT-REL2021-wien",
@@ -700,7 +688,8 @@
         "name": "Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und Bundesland (survey estimate)",
         "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
         "license": "CC BY 4.0 (Statistik Austria)",
-        "year": 2021
+        "year": 2021,
+        "note": "Survey documentation: https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
       }
     ],
     "country": "AUT",
@@ -708,6 +697,6 @@
     "shape_id": "97560089B24691553772644",
     "religion_year": 2021,
     "religion_basis": "survey estimate: sample survey extrapolated to the whole population",
-    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, extrapolated to the Land's whole population and published in thousands to one decimal. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001."
+    "religion_note": "Statistik Austria's estimate of religious affiliation in 2021, from questions added to the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over in private households, answering face to face, 27,656 respondents nationally; children imputed from their parents, the institutional population estimated), weighted and extrapolated to the Land's whole population, published in thousands to one decimal. 'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is the Christians outside the three churches the table names (Roman Catholic, Evangelical A.B. and H.B., Orthodox), which may include Christians who named no church; 'Protestant' is the Evangelical church. A survey estimate: the register-based census has carried no religion since 2011, and the last census to ask was 2001. Sample: Statistik Austria does not publish the respondents per Land; spread as the population is, Wien would have about 5,945 of the 27,656."
   }
 ]
