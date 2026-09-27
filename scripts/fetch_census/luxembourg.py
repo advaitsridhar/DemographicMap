@@ -131,7 +131,7 @@ def build() -> list[dict[str, Any]]:
             by_key.setdefault(fold(shape["name"]), []).append(shape)
         unbound, used = [], set()
         for geo in geos:
-            name = labels[geo]
+            name = labels[geo].replace(" - ", "-")      # STATEC writes "Rosport - Mompach"
             if name in MERGED_SINCE_MAP:
                 log(f"  {name}: merged in 2018 from {' and '.join(MERGED_SINCE_MAP[name])}, "
                     f"which the map draws apart; not written")
