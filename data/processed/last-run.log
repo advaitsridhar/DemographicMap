@@ -1,76 +1,11 @@
-== get https://www.stat.gov.az/source/demoqraphy/ap/az/Azerbaycanin_ehalisi-2026.zip
-  1,847,041 bytes, begins b'PK\x03\x04\x14\x00\x00\x08\x08\x00\xf8v\xd9\\P\xe3'
-  zip, 1 members:
-    Azərbaycanın əhalisi-2026.pdf (2,025,978)
-== get https://www.stat.gov.az/source/demoqraphy/ap/az/1_5-6.xls
-  37,888 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/ap/az/1_5-6.xls: 2 sheets: 1.5 | 1.6
-  -- sheet '1.5': 34 rows x 12 cols
-    r0:  |  |  |  |  |  |  | 
-    r1:  | 1.5. Əhalinin milli (etnik) tə |  |  |  |  |  | 
-    r2:  | (əhalinin siyahıyaalınmaları ü |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  | Millətlər və etnik qrupların a | Min nəfər |  |  |  |  | yekuna nisbətən, faizlə
-    r5:  |  | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20192) | 1979.0
-    r6:  | Azərbaycan Respublikası üzrə - | 6026.5 | 7021.2 | 7953.4 | 8922.4 | 9951.4 | 100.0
-    r7:  | o cümlədən, millətlər və etnik |  |  |  |  |  | 
-    r8:  | azərbaycanlılar | 4708.8 | 5805.0 | 7205.5 | 8172.8 | 9436.1 | 78.1
-    r9:  | ləzgilər | 158.1 | 171.4 | 178.0 | 180.3 | 167.6 | 2.6
-    r10:  | talışlar | … | 21.2 | 76.8 | 112.0 | 87.6 | …
-    r11:  | ruslar | 475.3 | 392.3 | 141.7 | 119.3 | 71.0 | 7.9
-    r12:  | ukraynalılar | 26.4 | 32.3 | 29.0 | 21.5 | 13.9 | 0.4
-    r13:  | avarlar | 36.0 | 44.1 | 50.9 | 49.8 | 48.6 | 0.6
-    r14:  | türklər | 7.9 | 17.7 | 43.4 | 38.0 | 30.5 | 0.1
-    r15:  | tatlar | 8.9 | 10.2 | 10.9 | 25.2 | 27.7 | 0.14
-    r16:  | saxurlar | 8.5 | 13.3 | 15.9 | 12.3 | 13.4 | 0.1
-    r17:  | gürcülər | 11.4 | 14.2 | 14.9 | 9.9 | 8.4 | 0.2
-    r18:  | ingiloylar | ... | ... | ... | ... | 1.8 | ...
-    r19:  | kürdlər | 5.7 | 12.2 | 13.1 | 6.1 | 4.1 | 0.1
-    r20:  | tatarlar | 31.4 | 28.6 | 30.0 | 25.9 | 17.7 | 0.5
-    r21:  | qrızlar | ... | ... | ... | 4.4 | 2.1 | ...
-    r22:  | yəhudilər | 35.5 | 30.8 | 8.9 | 9.1 | 5.1 | 0.6
-    r23:  | udinlər | 5.8 | 6.1 | 4.1 | 3.8 | 3.5 | 0.1
-    r24:  | xınalıqlar | ... | ... | ... | 2.2 | 3.5 | ...
-    r25:  | buduqlar | ... | ... | ... | ... | 1.1 | ...
-    r26:  | ermənilər | 475.5 | 390.5 | 120.7 | 120.3 | 0.2 | 7.9
-    r27:  | haputlar | ... | ... | ... | ... | 2.5 | ...
-    r28:  | digər millətlər | 31.3 | 31.3 | 9.6 | 9.5 | 5.0 | 0.66
-    r29:  |  |  |  |  |  |  | 
-    r30:  |  |  |  |  |  |  | 
-    r31:  | 1) Bu və sonrakı cədvəldə siya |  |  |  |  |  | 
-    r32:  | Uşaqların milliyyəti (etnik qr |  |  |  |  |  | 
-    r33:  | 2) Əhalinin siyahıyaalınması d |  |  |  |  |  | 
-  -- sheet '1.6': 33 rows x 8 cols
-    r0:  |  |  |  |  |  |  | 
-    r1:  | 1.6. Əhalinin ana dili və sərb |  |  |  |  |  | 
-    r2:  | (2019-cu il əhalinin siyahıyaa |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  | Millətlər və etnik qrupların a | Milli (etnik) mənsubiyyətə gör | onlardan mənsub olduğu milləti | Əhalinin sərbəst danışdığı dil |  |  | 
-    r5:  |  |  |  | mənsub olduğu millətin (etnik  | azərbaycan dilində | rus dilində | ingilis dilində
-    r6:  | Azərbaycan Respublikası üzrə - | 9951.4 | 98.6 | 99.2 | 99.6 | 7.5 | 1.3
-    r7:  | o cümlədən, millətlər və etnik |  |  |  |  |  | 
-    r8:  | azərbaycanlılar | 9436.1 | 100.0 | 100.0 | - | 5.7 | 1.3
-    r9:  | ləzgilər | 167.6 | 75.1 | 85.2 | 96.1 | 38.9 | 0.8
-    r10:  | talışlar | 87.6 | 49.4 | 71.2 | 95.6 | 18.1 | 0.6
-    r11:  | ruslar | 71.0 | 99.4 | 99.5 | 78.2 | - | 4.8
-    r12:  | ukraynalılar | 13.9 | 59.6 | 59.7 | 89.5 | 90.2 | 5.3
-    r13:  | avarlar | 48.6 | 93.7 | 98.8 | 94.0 | 16.1 | 0.2
-    r14:  | türklər | 30.5 | 89.0 | 94.5 | 94.2 | 5.0 | 0.8
-    r15:  | tatlar | 27.7 | 31.6 | 56.4 | 97.9 | 4.3 | 0.2
-    r16:  | saxurlar | 13.4 | 96.3 | 97.7 | 94.7 | 9.6 | 0.2
-    r17:  | gürcülər | 8.4 | 97.3 | 98.4 | 90.4 | 19.7 | 0.8
-    r18:  | ingiloylar | 1.8 | 46.3 | 99.4 | 99.2 | 8.1 | 0.2
-    r19:  | kürdlər | 4.1 | 29.9 | 46.8 | 97.1 | 6.1 | 2.0
-    r20:  | tatarlar | 17.7 | 88.9 | 89.2 | 89.4 | 97.8 | 3.7
-    r21:  | qrızlar | 2.1 | 15.4 | 38.6 | 99.6 | 2.2 | 0.1
-    r22:  | yəhudilər | 5.1 | 97.5 | 97.6 | 93.5 | 71.9 | 8.6
-    r23:  | udinlər | 3.5 | 99.7 | 99.8 | 76.5 | 82.2 | 0.2
-    r24:  | xınalıqlar | 3.5 | 34.2 | 74.0 | 98.1 | 1.1 | 0.3
-    r25:  | buduqlar | 1.1 | 9.5 | 29.9 | 99.0 | 2.8 | 0.1
-    r26:  | ermənilər | 0.2 | 29.2 | 32.0 | 92.7 | 28.1 | 0.6
-    r27:  | haputlar | 2.5 | 68.8 | 70.0 | 99.7 | 28.3 | 1.7
-    r28:  | digər millətlər | 5.0 | 48.6 | 55.4 | 90.1 | 16.7 | 3.4
-    r29:  |  |  |  |  |  |  | 
-    r30:  |  |  |  |  |  |  | 
-    r31:  | 1) Əhalinin siyahıyaalınması d |  |  |  |  |  | 
-    r32:  | 2) Əhalinin sərbəst danışdığı  |  |  |  |  |  | 
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: east_probe.py [-h] [--match MATCH] [--match-type MATCH_TYPE]
+                     [--cdx-limit CDX_LIMIT] [--cdx-filter CDX_FILTER]
+                     [--wayback WAYBACK] [--rows ROWS] [--sheets SHEETS]
+                     [--start START] [--cols COLS] [--width WIDTH]
+                     [--grep GREP] [--indent] [--after AFTER] [--links LINKS]
+                     [--context CONTEXT] [--bytes BYTES] [--data DATA]
+                     [--hosts HOSTS] [--aia] [--sheet-match SHEET_MATCH]
+                     [--form]
+                     {cdx,get,post,head,hdx} target [target ...]
+east_probe.py: error: argument --grep: expected one argument
