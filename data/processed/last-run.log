@@ -1,3 +1,46 @@
-== text https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fl%20%3Fitem%20%3Fc%20WHERE%20%7B%20VALUES%20%3Fl%20%7B%20%22Pano%20Koutrafas%22%40en%20%22Kato%20Koutrafas%22%40en%20%22Chrysochou%22%40en%20%22Karamoullides%22%40en%20%22Kornos%22%40en%20%22Sia%22%40en%20%22Agios%20Isidoros%22%40en%20%22Steni%22%40en%20%22Pano%20Zodeia%22%40en%20%22Kato%20Zodeia%22%40en%20%22Axylou%22%40en%20%22Eledio%22%40en%20%22Oikos%22%40en%20%22Anageia%22%40en%20%22Psematismenos%22%40en%20%22Agioi%20Iliofotoi%22%40en%20%22Tremithousa%22%40en%20%22Trimithousa%22%40en%20%22Katydata%22%40en%20%22Agios%20Dometios%22%40en%20%7D%20%3Fitem%20rdfs%3Alabel%20%3Fl%3B%20wdt%3AP17%20wd%3AQ229%3B%20wdt%3AP625%20%3Fc%20%7D 6000
-  HTTP 200 ? 7,309 bytes
-  { "head" : { "vars" : [ "l", "item", "c" ] }, "results" : { "bindings" : [ { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Agios Dometios" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q2430460" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.32340626 35.17839717)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Kato Koutrafas" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q4818301" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.977491 35.10287825)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Axylou" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q4830720" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.56436188 34.80633594)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Agios Isidoros" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q4831291" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.47139785 35.00521259)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Karamoullides" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q6368348" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.44302242 34.99945385)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Katydata" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q6378557" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.8877251 35.08390151)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Kornos" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q6432453" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.39586623 34.92221349)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Oikos" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7081268" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.83138671 34.99934809)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Pano Koutrafas" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7131438" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.99275526 35.09307307)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Psematismenos" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7254097" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.35040335 34.74951561)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Sia" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7506498" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.39020203 34.95516532)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Steni" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7607571" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.47231968 34.997598)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Tremithousa" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7838121" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.44370055 34.8174164)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Trimithousa" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q7842235" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(32.48750157 34.97417944)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Pano Zodeia" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q16467618" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.01600249 35.1636582)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Agioi Iliofotoi" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q18712727" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.11305375 35.0682826)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Kato Zodeia" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q47318046" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.00724101 35.16779245)" } }, { "l" : { "xml:lang" : "en", "type" : "literal", "value" : "Agios Dometios" }, "item" : { "type" : "uri", "value" : "http://www.wikidata.org/entity/Q79258786" }, "c" : { "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral", "type" : "literal", "value" : "Point(33.3365 35.1683)" } } ] } }
+microstates: San Marino 2025: 34,172 residents in 9 castelli
+microstates: Monaco 2025: 38,857 residents, 19,127 men, 19,730 women, median 50.0
+  Les Moneghetti: left out -- the map draws Sainte-Dévote apart from it
+microstates: Andorra 2025: 89,058 residents in 44 settlements
+  SMR admin1 Città di San Marino: 4158, sex ratio 959
+  SMR admin1 Acquaviva: 2147, sex ratio 1018
+  SMR admin1 Borgo Maggiore: 7006, sex ratio 1009
+  SMR admin1 Chiesanuova: 1192, sex ratio 1017
+  SMR admin1 Domagnano: 3613, sex ratio 937
+  SMR admin1 Faetano: 1216, sex ratio 993
+  SMR admin1 Fiorentino: 2588, sex ratio 968
+  SMR admin1 Montegiardino: 987, sex ratio 994
+  SMR admin1 Serravalle: 11265, sex ratio 999
+  SMR admin2 Città di San Marino: 4158, sex ratio 959
+  SMR admin2 Acquaviva: 2147, sex ratio 1018
+  SMR admin2 Borgo Maggiore: 7006, sex ratio 1009
+  SMR admin2 Chiesanuova: 1192, sex ratio 1017
+  SMR admin2 Domagnano: 3613, sex ratio 937
+  SMR admin2 Faetano: 1216, sex ratio 993
+  SMR admin2 Fiorentino: 2588, sex ratio 968
+  SMR admin2 Montegiardino: 987, sex ratio 994
+  SMR admin2 Serravalle: 11265, sex ratio 999
+  MCO admin1 Monaco: 38857, sex ratio 969
+  MCO admin2 Monte-Carlo: 8318
+  MCO admin2 La Rousse: 7992
+  MCO admin2 La Condamine: 5446
+  MCO admin2 Jardin Exotique: 4997
+  MCO admin2 Fontvieille: 4297
+  MCO admin2 Larvotto: 2287
+  MCO admin2 Monaco-Ville: 1022
+  AND admin1 Andorra la Vella: 24836
+  AND admin1 Canillo: 6457
+  AND admin1 Encamp: 13520
+  AND admin1 Escaldes-Engordany: 16162
+  AND admin1 La Massana: 12148
+  AND admin1 Ordino: 5679
+  AND admin1 Sant Julia de Loria: 10256
+  AND admin2 Andorra la Vella: 24836
+  AND admin2 Canillo: 6457
+  AND admin2 Encamp: 13520
+  AND admin2 Escaldes-Engordany: 16162
+  AND admin2 La Massana: 12148
+  AND admin2 Ordino: 5679
+  AND admin2 Sant Julia de Loria: 10256
+  wrote data/processed/microstates.json (57 kB)
+  40 records
