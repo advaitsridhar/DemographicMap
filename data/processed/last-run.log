@@ -1,16 +1,220 @@
-== https://www.estadistica.ad/portal/sharing/rest/search?q=poblaci%C3%B3&f=json&num=100
-  Població 2010-2025 | Feature Service | https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer
-  Poblacions Andorra | Feature Service | https://sig.govern.ad/server/rest/services/Hosted/Poblacions_Andorra_WFL1/FeatureServer
-  Geocodificacio | Geoprocessing Service | https://sig.govern.ad/server/rest/services/IDE/Geocodificacio/GPServer
-  Chart Viewer | Web Mapping Application | /apps/instant/charts/index.html
-  Adreces WMS | WMS | https://sig.govern.ad/server/services/IDE/Adreces/MapServer/WMSServer
-  Barra lateral | Web Mapping Application | /apps/instant/sidebar/index.html
-  Portafolis | Web Mapping Application | /apps/instant/portfolio/index.html
-  Enquesta_allaus_public | Feature Service | https://sig.govern.ad/server/rest/services/Hosted/service_6c381ba2cadb48389c12e41a497eefef/FeatureServer
-  Enquesta_allaus_public | Form | None
-  9 shown of 9 items
-== https://www.estadistica.ad/portal/sharing/rest/search?q=sexe&f=json&num=100
-  Lutning | Raster function template | None
-  1 shown of 1 items
-== https://www.estadistica.ad/portal/sharing/rest/search?q=nacionalitat&f=json&num=100
-  0 shown of 0 items
+== https://api.idescat.cat/taules/v2/eulp/3202/23138/cat/data?lang=en
+  3,623 bytes; starts b'{\n  "ver'
+  {
+    "version" : "2.0",
+    "class" : "dataset",
+    "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/cat/data?lang=en",
+    "link" : {
+      "describedby" : [ {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/cat?lang=en",
+        "label" : "Population. By habitual language. Catalonia"
+      } ],
+      "monitor" : [ {
+        "type" : "application/json",
+        "href" : "https://api.idescat.cat/rectificacions/v1/rectificacions/cerca.json?id=577"
+      } ],
+      "related" : [ {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/at?lang=en",
+        "label" : "Population. By habitual language. Areas of the Territorial Plan"
+      }, {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/com?lang=en",
+        "label" : "Population. By habitual language. Counties and Aran"
+      }, {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/mun?lang=en",
+        "label" : "Population. By habitual language. Municipalities"
+      }, {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/3136/cat?lang=en",
+        "label" : "Population. By habitual language. Catalonia (2013–2018)"
+      }, {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/25365/cat?lang=en",
+        "label" : "Population. By habitual language. Catalonia (2008)"
+      } ]
+    },
+    "label" : "Population. By habitual language. Catalonia",
+    "source" : "Idescat and Ministry of Language Policy . Survey on Language Uses of the Population.",
+    "updated" : "2025-05-29",
+    "id" : [ "YEAR", "CAT", "LAN_ISO", "CONCEPT" ],
+    "size" : [ 1, 1, 12, 1 ],
+    "role" : {
+      "geo" : [ "CAT" ],
+      "metric" : [ "CONCEPT" ],
+      "time" : [ "YEAR" ]
+    },
+    "dimension" : {
+      "YEAR" : {
+        "category" : {
+          "index" : [ "2023" ],
+          "label" : {
+            "2023" : "2023"
+          }
+        },
+        "label" : "year"
+      },
+      "CAT" : {
+        "category" : {
+          "index" : [ "TOTAL" ],
+          "label" : {
+            "TOTAL" : "Catalunya"
+          }
+        },
+        "label" : "Catalonia"
+      },
+      "LAN_ISO" : {
+        "category" : {
+          "index" : [ "CA", "ES", "CA_ES", "OC_ARANESE", "CA_OTHER_LANG", "ES_OTHER_LANG", "CA_ES_OTHER_LANG", "AR", "OTHER_LANG", "OTHER_COMB_LANG", "_U", "TOTAL" ],
+          "label" : {
+            "CA" : "Catalan",
+            "ES" : "Spanish",
+            "CA_ES" : "Catalan and Spanish",
+            "OC_ARANESE" : "Aranese",
+            "CA_OTHER_LANG" : "Catalan and another language (or languages)",
+            "ES_OTHER_LANG" : "Spanish and another language (or languages)",
+            "CA_ES_OTHER_LANG" : "Catalan, Spanish and another language (or languages)",
+            "AR" : "Arabic",
+            "OTHER_LANG" : "other languages",
+            "OTHER_COMB_LANG" : "other language combinations",
+            "_U" : "Unknown",
+            "TOTAL" : "total"
+          }
+        },
+        "label" : "habitual language"
+      },
+      "CONCEPT" : {
+        "category" : {
+          "index" : [ "POP_YGE15T" ],
+          "label" : {
+            "POP_YGE15T" : "population aged 15 and over (thousands)"
+          },
+          "unit" : {
+            "POP_YGE15T" : {
+              "decimals" : 1
+            }
+          }
+        },
+        "label" : "concept",
+        "extension" : {
+          "%" : [ "POP_YGE15T" ]
+        }
+      }
+    },
+    "value" : [ 2211.1, 3154.7, 636.5, 1.4, 50.9, 275.1, 23.2, 74.2, 233.7, 24.9, 99.4, 6785.1 ],
+    "extension" : {
+      "source" : [ "Idescat and Ministry of Language Policy . Survey on Language Uses of the Population." ]
+    }
+  }
+== https://api.idescat.cat/taules/v2/eulp/21431/26076/cat/data?lang=en
+  6,931 bytes; starts b'{\n  "ver'
+  {
+    "version" : "2.0",
+    "class" : "dataset",
+    "href" : "https://api.idescat.cat/taules/v2/eulp/21431/26076/cat/data?lang=en",
+    "link" : {
+      "describedby" : [ {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/21431/26076/cat?lang=en",
+        "label" : "Population. By habitual language and territorial stratified sampling. Catalonia"
+      } ],
+      "related" : [ {
+        "class" : "dataset",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/21431/25328/cat?lang=en",
+        "label" : "Population. By habitual language and territorial stratified sampling. Catalonia (2018)"
+      } ]
+    },
+    "label" : "Population. By habitual language and territorial stratified sampling. Catalonia",
+    "note" : [ "Each territorial subarea has been treated as an independent population rather than as a subsample of Catalonia as a whole. For this reason, the sum of the results for the territorial subareas does not match the result for Catalonia." ],
+    "source" : "Idescat and Ministry of Language Policy . Survey on Language Uses of the Population.",
+    "updated" : "2025-11-27",
+    "id" : [ "YEAR", "CAT", "AT_STRAT", "LAN_ISO", "CONCEPT" ],
+    "size" : [ 1, 1, 16, 11, 1 ],
+    "role" : {
+      "geo" : [ "CAT" ],
+      "metric" : [ "CONCEPT" ],
+      "time" : [ "YEAR" ]
+    },
+    "dimension" : {
+      "YEAR" : {
+        "category" : {
+          "index" : [ "2023" ],
+          "label" : {
+            "2023" : "2023"
+          }
+        },
+        "label" : "year"
+      },
+      "CAT" : {
+        "category" : {
+          "index" : [ "TOTAL" ],
+          "label" : {
+            "TOTAL" : "Catalunya"
+          }
+        },
+        "label" : "Catalonia"
+      },
+      "AT_STRAT" : {
+        "category" : {
+          "index" : [ "AT01_BCN", "AT01_LH", "AT01_13N", "AT01_11_I", "AT01_11_II", "AT01_40", "AT01_41", "AT01_21", "AT02", "AT03", "AT04", "AT05", "AT06", "AT07_ALTP", "AT07_ARAN", "AT08" ],
+          "label" : {
+            "AT01_BCN" : "Barcelona ciutat",
+            "AT01_LH" : "Hospitalet de Llobregat",
+            "AT01_13N" : "Barcelonès Nord",
+            "AT01_11_I" : "Baix Llobregat I",
+            "AT01_11_II" : "Baix Llobregat II",
+            "AT01_40" : "Vallès Occidental",
+            "AT01_41" : "Vallès Oriental",
+            "AT01_21" : "Maresme",
+            "AT02" : "Comarques Gironines",
+            "AT03" : "Camp de Tarragona",
+            "AT04" : "Terres de l'Ebre",
+            "AT05" : "Ponent",
+            "AT06" : "Comarques Centrals",
+            "AT07_ALTP" : "Alt Pirineu",
+            "AT07_ARAN" : "Aran",
+            "AT08" : "Penedès"
+          }
+        },
+        "label" : "territorial area of ​​stratification"
+      },
+      "LAN_ISO" : {
+        "category" : {
+          "index" : [ "CA", "ES", "CA_ES", "OC_ARANESE", "CA_OTHER_LANG", "ES_OTHER_LANG", "CA_ES_OTHER_LANG", "AR", "OTHER_LANG", "OTHER_COMB_LANG", "TOTAL" ],
+          "label" : {
+            "CA" : "Catalan",
+            "ES" : "Spanish",
+            "CA_ES" : "Catalan and Spanish",
+            "OC_ARANESE" : "Aranese",
+            "CA_OTHER_LANG" : "Catalan and another language (or languages)",
+            "ES_OTHER_LANG" : "Spanish and another language (or languages)",
+            "CA_ES_OTHER_LANG" : "Catalan, Spanish and another language (or languages)",
+            "AR" : "Arabic",
+            "OTHER_LANG" : "other languages",
+            "OTHER_COMB_LANG" : "other language combinations",
+            "TOTAL" : "total"
+          }
+        },
+        "label" : "habitual language"
+      },
+      "CONCEPT" : {
+        "category" : {
+          "index" : [ "POP_YGE15T" ],
+          "label" : {
+            "POP_YGE15T" : "population aged 15 and over (thousands)"
+          },
+          "unit" : {
+            "POP_YGE15T" : {
+              "decimals" : 1
+            }
+          }
+        },
+        "label" : "concept",
+        "extension" : {
+          "%" : [ "POP_YGE15T" ]
+        }
+      }
+    },
+    "value" : [ 393.6, 689.9, 151.5, null, null, 82.9, null, null, 88.3, null, 1461.6, 24.6, 175.4, 11.8, null, null, 11.7, null, null, null, null, 239.4, 46.4, 222.4, 21.8, null, null, null, null, null, null, null, 325.2, 79.6, 208.9, 35.5, null, null, null, null, null, null, null, 346.7, 45.2, 257.6, 31.7, null, null, null, null, null, null, null, 370.6, 183.8, 462.1, 87.8, null, null, null, null, null, null, null, 802.8, 114.7, 189.8, 31.8, null, null, null, null, null, null, null, 363.5, 174.5, 151.4, 36.9, null, null, null, null, null, null, null, 399.9, 303.1, 215.3, 57.2, null, null, null, null, null, 39.8, null, 672.9, 176.1, 190.6, 47.1, null, null, null, null, null, null, null, 464.9, 107, 25.6, 9.1, null, null, null, null, null, null, null, 160.2, 162.8, 83, 22.1, null, null, 21.1, null, null, 14, null, 318.7, 213.8, 75, 29.2, null, null, null, null, null, 13.6, null, 358.6, 32.3, 14.7, 5, null, null, null, null, null, null, null, 57.3, 1.3, 4.2, 0.4, 1.5, null, 0.7, nu
