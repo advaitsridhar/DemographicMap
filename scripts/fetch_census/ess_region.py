@@ -780,6 +780,8 @@ def main() -> int:
                     help="read the tables from the portal before building")
     ap.add_argument("--first-round", type=int, default=FIRST_ROUND,
                     help=f"pool rounds from this one on (default {FIRST_ROUND})")
+    ap.add_argument("--curated", default=None,
+                    help="print curated country rows, e.g. AT:religion+language,FR:religion")
     ap.add_argument("--regions", default=None,
                     help="with the build: log every pooled region of these NUTS country codes")
     ap.add_argument("--discover", default=None,
@@ -845,10 +847,41 @@ def main() -> int:
             f"{r['name']} [{','.join(r['codes']['nuts'])}] "
             + " ".join(f"{f[:3]} n={n}" for f, n in r["codes"]["ess_n"].items())
             for r in filled))
-    for cntry, fields in sorted(national(args.first_round).items()):
+    whole = national(args.first_round)
+    for cntry, fields in sorted(whole.items()):
         for field, got in fields.items():
             log(f"  national {cntry} {field} n={got['n']} {got['rounds']}: "
                 + ", ".join(f"{g['group']} {g['pct']}" for g in got["groups"][:8]))
+    # Country rows for data/curated/admin0_detail.json, printed and not
+    # written: an adapter cannot reach a country record, so these are
+    # proposals for the curated file, where the owner decides.
+    for item in (args.curated or "").split(","):
+        if not item:
+            continue
+        cntry, _, fields = item.partition(":")
+        for field in fields.split("+"):
+            got = whole.get(cntry, {}).get(field)
+            if not got:
+                log(f"  curated {cntry} {field}: no national table")
+                continue
+            iso3 = ISO3[PREFIX.get(cntry, cntry)]
+            print(json.dumps({
+                "country": iso3, "field": field, "year": got["year"],
+                "basis": "survey estimate: self-identification, residents aged 15 and over "
+                         "in private households",
+                "groups": [{"group": g["group"], "pct": g["pct"]} for g in got["groups"]],
+                "source": f"European Social Survey (ESS ERIC), {got['rounds']}, national "
+                          f"samples pooled: {field}",
+                "url": PORTAL, "license": LICENCE,
+                "note": (f"European Social Survey, {got['rounds']}, pooled: "
+                         f"{QUESTION[field]}. A survey estimate, not a count: {got['n']:,} "
+                         f"respondents aged 15 and over in private households, weighted within "
+                         f"each round by the post-stratification weight (pspwght), rescaled to "
+                         f"the round's respondents, and pooled. The census does not ask this "
+                         f"question. Where one of the country's regions holds {MIN_N} "
+                         f"respondents or more, its division carries the same survey's "
+                         f"regional estimate (ess_region_survey.json)."),
+            }, ensure_ascii=False), flush=True)
     write_json(PROCESSED / OUT, records)
     log(f"  {len(records)} records")
     return 0
