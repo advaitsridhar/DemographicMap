@@ -1,1 +1,90 @@
-ess_region: the portal refused a query: [{"message": "Cannot query field \"variables\" on type \"DataFileMetadata\". Did you mean \"variableList\"?", "locations": [{"line": 4, "column": 5}]}]
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+== xlsrow https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx 20. . 40
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 18,279,747 bytes
+    r0: 20.
+    r1: STANOVNIŠTVO PREMA STA
+    r2: POPULATION BY AGE, SEX
+    r3: Molimo korisnike da pr
+    r4: Users are kindly reque
+    r5: 
+    r6:  |  |  |  |  |  |  |  |  | Starost Age
+    r7: Županija | Jedinica lokalne samou | County of | Local self-government  | Grad/općina   Town/Mun | Tip naselja | Type of settlement | Spol | Sex | Ukupno Total | 0 – 4 | 5 – 9 | 10 – 14 | 15 – 19 | 20 – 24 | 25 – 29 | 30 – 34 | 35 – 39 | 40 – 44 | 45 – 49 | 50 – 54 | 55 – 59 | 60 – 64 | 65 – 69 | 70 – 74 | 75 – 79 | 80 – 84 | 85 – 89 | 90 – 94 | 95 i više 95 and over
+    r8: Republika Hrvatska |  | Republic of Croatia |  |  | Ukupno | Total | sv. | All | 3871833 | 175535 | 181445 | 195436 | 188729 | 208852 | 214023 | 227551 | 255617 | 267349 | 260146 | 260056 | 279504 | 288351 | 279106 | 228612 | 146855 | 122719 | 67249 | 21019 | 3679
+    r9: Republika Hrvatska |  | Republic of Croatia |  |  | Ukupno | Total | m | M | 1865129 | 90245 | 93311 | 100216 | 97228 | 107102 | 109139 | 114778 | 128398 | 134213 | 130035 | 127953 | 134655 | 136338 | 129728 | 100506 | 59065 | 44672 | 21206 | 5604 | 737
+    r10: Republika Hrvatska |  | Republic of Croatia |  |  | Ukupno | Total | ž | W | 2006704 | 85290 | 88134 | 95220 | 91501 | 101750 | 104884 | 112773 | 127219 | 133136 | 130111 | 132103 | 144849 | 152013 | 149378 | 128106 | 87790 | 78047 | 46043 | 15415 | 2942
+    r11: Republika Hrvatska |  | Republic of Croatia |  |  | U gradskim naseljima | In urban settlements | sv. | All | 2199902 | 101064 | 103735 | 109324 | 102896 | 115019 | 124286 | 134852 | 151650 | 159084 | 152362 | 146846 | 151686 | 155441 | 153536 | 129744 | 85781 | 69768 | 38482 | 12122 | 2224
+    r12: Republika Hrvatska |  | Republic of Croatia |  |  | U gradskim naseljima | In urban settlements | m | M | 1037792 | 52215 | 53197 | 55876 | 52903 | 58679 | 62236 | 66736 | 74652 | 77936 | 74284 | 70560 | 70745 | 70092 | 67896 | 54373 | 33319 | 25581 | 12691 | 3345 | 476
+    r13: Republika Hrvatska |  | Republic of Croatia |  |  | U gradskim naseljima | In urban settlements | ž | W | 1162110 | 48849 | 50538 | 53448 | 49993 | 56340 | 62050 | 68116 | 76998 | 81148 | 78078 | 76286 | 80941 | 85349 | 85640 | 75371 | 52462 | 44187 | 25791 | 8777 | 1748
+    r14: Republika Hrvatska |  | Republic of Croatia |  |  | U ostalim naseljima | In other settlements | sv. | All | 1671931 | 74471 | 77710 | 86112 | 85833 | 93833 | 89737 | 92699 | 103967 | 108265 | 107784 | 113210 | 127818 | 132910 | 125570 | 98868 | 61074 | 52951 | 28767 | 8897 | 1455
+    r15: Republika Hrvatska |  | Republic of Croatia |  |  | U ostalim naseljima | In other settlements | m | M | 827337 | 38030 | 40114 | 44340 | 44325 | 48423 | 46903 | 48042 | 53746 | 56277 | 55751 | 57393 | 63910 | 66246 | 61832 | 46133 | 25746 | 19091 | 8515 | 2259 | 261
+    r16: Republika Hrvatska |  | Republic of Croatia |  |  | U ostalim naseljima | In other settlements | ž | W | 844594 | 36441 | 37596 | 41772 | 41508 | 45410 | 42834 | 44657 | 50221 | 51988 | 52033 | 55817 | 63908 | 66664 | 63738 | 52735 | 35328 | 33860 | 20252 | 6638 | 1194
+    r17: Zagrebačka |  | Zagreb |  |  | Ukupno | Total | sv. | All | 299985 | 13847 | 14582 | 16176 | 15606 | 16723 | 16400 | 17144 | 20137 | 21868 | 21290 | 20250 | 20769 | 21272 | 21517 | 17095 | 11180 | 8106 | 4410 | 1356 | 257
+    r18: Zagrebačka |  | Zagreb |  |  | Ukupno | Total | m | M | 145228 | 7064 | 7464 | 8294 | 8069 | 8546 | 8414 | 8641 | 10121 | 11110 | 10692 | 10153 | 10020 | 9883 | 9914 | 7496 | 4668 | 2961 | 1358 | 308 | 52
+    r19: Zagrebačka |  | Zagreb |  |  | Ukupno | Total | ž | W | 154757 | 6783 | 7118 | 7882 | 7537 | 8177 | 7986 | 8503 | 10016 | 10758 | 10598 | 10097 | 10749 | 11389 | 11603 | 9599 | 6512 | 5145 | 3052 | 1048 | 205
+    r20: Zagrebačka |  | Zagreb |  |  | U gradskim naseljima | In urban settlements | sv. | All | 99073 | 4882 | 5026 | 5436 | 4913 | 5237 | 5401 | 5909 | 7078 | 7708 | 7462 | 6668 | 6133 | 6228 | 6829 | 5931 | 4019 | 2517 | 1267 | 358 | 71
+    r21: Zagrebačka |  | Zagreb |  |  | U gradskim naseljima | In urban settlements | m | M | 46868 | 2508 | 2572 | 2786 | 2519 | 2635 | 2705 | 2934 | 3490 | 3768 | 3589 | 3342 | 2799 | 2709 | 2861 | 2453 | 1659 | 1002 | 430 | 91 | 16
+    r22: Zagrebačka |  | Zagreb |  |  | U gradskim naseljima | In urban settlements | ž | W | 52205 | 2374 | 2454 | 2650 | 2394 | 2602 | 2696 | 2975 | 3588 | 3940 | 3873 | 3326 | 3334 | 3519 | 3968 | 3478 | 2360 | 1515 | 837 | 267 | 55
+    r23: Zagrebačka |  | Zagreb |  |  | U ostalim naseljima | In other settlements | sv. | All | 200912 | 8965 | 9556 | 10740 | 10693 | 11486 | 10999 | 11235 | 13059 | 14160 | 13828 | 13582 | 14636 | 15044 | 14688 | 11164 | 7161 | 5589 | 3143 | 998 | 186
+    r24: Zagrebačka |  | Zagreb |  |  | U ostalim naseljima | In other settlements | m | M | 98360 | 4556 | 4892 | 5508 | 5550 | 5911 | 5709 | 5707 | 6631 | 7342 | 7103 | 6811 | 7221 | 7174 | 7053 | 5043 | 3009 | 1959 | 928 | 217 | 36
+    r25: Zagrebačka |  | Zagreb |  |  | U ostalim naseljima | In other settlements | ž | W | 102552 | 4409 | 4664 | 5232 | 5143 | 5575 | 5290 | 5528 | 6428 | 6818 | 6725 | 6771 | 7415 | 7870 | 7635 | 6121 | 4152 | 3630 | 2215 | 781 | 150
+    r26: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | Ukupno | Total | sv. | All | 17676 | 947 | 996 | 1082 | 1024 | 1074 | 1043 | 1056 | 1258 | 1348 | 1267 | 1180 | 1109 | 1095 | 1084 | 835 | 587 | 412 | 190 | 75 | 14
+    r27: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | Ukupno | Total | m | M | 8462 | 478 | 495 | 548 | 517 | 541 | 526 | 539 | 633 | 627 | 620 | 576 | 512 | 518 | 501 | 358 | 252 | 146 | 59 | 13 | 3
+    r28: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | Ukupno | Total | ž | W | 9214 | 469 | 501 | 534 | 507 | 533 | 517 | 517 | 625 | 721 | 647 | 604 | 597 | 577 | 583 | 477 | 335 | 266 | 131 | 62 | 11
+    r29: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U gradskim naseljima | In urban settlements | sv. | All | 11097 | 622 | 640 | 662 | 572 | 608 | 686 | 740 | 838 | 844 | 788 | 743 | 680 | 694 | 660 | 534 | 380 | 250 | 101 | 48 | 7
+    r30: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U gradskim naseljima | In urban settlements | m | M | 5311 | 313 | 325 | 342 | 290 | 326 | 349 | 376 | 417 | 395 | 384 | 362 | 292 | 328 | 300 | 222 | 161 | 84 | 35 | 9 | 1
+    r31: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U gradskim naseljima | In urban settlements | ž | W | 5786 | 309 | 315 | 320 | 282 | 282 | 337 | 364 | 421 | 449 | 404 | 381 | 388 | 366 | 360 | 312 | 219 | 166 | 66 | 39 | 6
+    r32: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U ostalim naseljima | In other settlements | sv. | All | 6579 | 325 | 356 | 420 | 452 | 466 | 357 | 316 | 420 | 504 | 479 | 437 | 429 | 401 | 424 | 301 | 207 | 162 | 89 | 27 | 7
+    r33: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U ostalim naseljima | In other settlements | m | M | 3151 | 165 | 170 | 206 | 227 | 215 | 177 | 163 | 216 | 232 | 236 | 214 | 220 | 190 | 201 | 136 | 91 | 62 | 24 | 4 | 2
+    r34: Zagrebačka | Grad | Zagreb | Town | Dugo Selo | U ostalim naseljima | In other settlements | ž | W | 3428 | 160 | 186 | 214 | 225 | 251 | 180 | 153 | 204 | 272 | 243 | 223 | 209 | 211 | 223 | 165 | 116 | 100 | 65 | 23 | 5
+    r35: Zagrebačka | Grad | Zagreb | Town | Ivanić-Grad | Ukupno | Total | sv. | All | 12982 | 653 | 640 | 674 | 654 | 698 | 712 | 729 | 860 | 945 | 839 | 875 | 967 | 979 | 964 | 737 | 460 | 337 | 202 | 47 | 10
+    r36: Zagrebačka | Grad | Zagreb | Town | Ivanić-Grad | Ukupno | Total | m | M | 6270 | 337 | 340 | 329 | 326 | 362 | 363 | 361 | 444 | 493 | 404 | 460 | 443 | 438 | 466 | 332 | 187 | 111 | 60 | 14 | -
+    r37: Zagrebačka | Grad | Zagreb | Town | Ivanić-Grad | Ukupno | Total | ž | W | 6712 | 316 | 300 | 345 | 328 | 336 | 349 | 368 | 416 | 452 | 435 | 415 | 524 | 541 | 498 | 405 | 273 | 226 | 142 | 33 | 10
+    r38: Zagrebačka | Grad | Zagreb | Town | Ivanić-Grad | U gradskim naseljima | In urban settlements | sv. | All | 8452 | 421 | 416 | 443 | 424 | 458 | 471 | 462 | 573 | 658 | 544 | 565 | 628 | 634 | 603 | 487 | 292 | 205 | 132 | 32 | 4
+    r39: Zagrebačka | Grad | Zagreb | Town | Ivanić-Grad | U gradskim naseljima | In urban settlements | m | M | 4030 | 220 | 226 | 211 | 198 | 242 | 233 | 230 | 297 | 335 | 253 | 291 | 278 | 284 | 266 | 216 | 117 | 76 | 46 | 11 | -
+== xlsrow https://statistica.gov.md/files/files/serii_de_timp/recensamant_2024/date_finale/Date_finale_RPL_2024_15_07_25.xlsx Cuprins . 16
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 769,173 bytes
+    r1: Recensământul Populați
+    r3: 1. Organizarea adminis
+    r4: 2. Suprafața, numărul 
+    r5: 3. Populația  recenzat
+    r6: 4. Populația pe sexe, 
+    r7: 5. Populația pe regiun
+    r8: 6. Populația la recens
+    r9: 7. Populația la recens
+    r10: 8. Modificări ale dens
+    r11: 9. Categoriile de oraș
+    r12: 10. Categoriile de ora
+    r13: 11. Populația cu reșed
+    r14: 12. Populația din spaț
+== xlsrow https://statistica.gov.md/files/files/serii_de_timp/recensamant_2024/date_finale/Date_finale_RPL_2024_15_07_25.xlsx T5 . 20
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 769,173 bytes
+    r0: Cuprins
+    r1: 
+    r2: Recensământul Populați
+    r3: 
+    r4: 5. Populația pe regiun
+    r5:  |  |  |  |  |  |  | persoane
+    r6: Regiuni de dezvoltare  | 1959¹ | 1970¹ | 1979¹ | 1989¹ | 2004²ʹ³ | 2014²,³ | 2024²´³
+    r7: Total | 2513483 | 3085080 | 3372051 | 3657665 | 3383332 | 2789204.9999999995 | 2409207
+    r8: Mun. Chişinău | 258910 | 415956 | 589140 | 770948 | 712218 | 616439.6986375465 | 720128
+    r9: Nord | 877776 | 1009219 | 1053466 | 1092872 | 969299 | 789412.9294662479 | 608651
+    r10: Mun. Bălţi | 67666 | 105505 | 126950 | 161475 | 127561 | 100427.23142383574 | 94546
+    r11: Briceni | 77846 | 81403 | 82457 | 85395 | 78027 | 65750.85457544852 | 46894
+    r12: Donduşeni | 54386 | 57467 | 57092 | 53902 | 46442 | 36590.266945917705 | 28108
+    r13: Drochia | 84974 | 93724 | 94915 | 96953 | 87092 | 70574.47265348822 | 53738
+    r14: Edineţ | 78042 | 85542 | 91713 | 94001 | 81390 | 68821.53677711514 | 50429
+    r15: Făleşti | 81270 | 95143 | 95865 | 94014 | 90320 | 74923.31690085486 | 56039
+    r16: Floreşti | 97939 | 109262 | 104385 | 104680 | 89389 | 72886.69630627322 | 53264
+    r17: Glodeni | 53964 | 61674 | 65555 | 64677 | 60975 | 48945.81853966059 | 35829
+    r18: Ocniţa | 57782 | 61544 | 62781 | 64485 | 56510 | 44813.41341719544 | 31610
+    r19: Rîşcani | 68040 | 73981 | 76847 | 75527 | 69454 | 56317.48735145818 | 43652
+== grep https://www.nsi.bg/statistical-data/151 statistical-data/151/[0-9]+[^<]{0,200} 60
+  HTTP 200 text/html; charset=utf-8 318,126 bytes
+  7 matches
+  statistical-data/151/1349"  >
+  statistical-data/151/1350"  >
+  statistical-data/151/489"  >
+  statistical-data/151/490"  >
+  statistical-data/151/487"  >
+  statistical-data/151/486"  >
+  statistical-data/151/485"  >
