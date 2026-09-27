@@ -1,9 +1,11 @@
-north_macedonia_2002: the 2002 census, Book X, for the five pre-2013 municipalities
-  knigaX.pdf: 2,292,622 bytes, 471 pages
-  Kichevo: 30,138 in 2002; language Macedonian 61.0, Albanian 30.5, Turkish 7.3; religion Orthodox 53.9, Islam 45.5, Other religion 0.5
-  Drugovo: 3,249 in 2002; language Macedonian 86.2, Turkish 8.5, Albanian 4.7; religion Orthodox 85.9, Islam 13.8, Other religion 0.3
-  Oslomej: 10,425 in 2002; language Albanian 98.4, Macedonian 1.0, Other 0.6; religion Islam 98.4, Orthodox 0.9, Other religion 0.6
-  Vraneshtica: 1,322 in 2002; language Macedonian 80.8, Turkish 18.1, Albanian 0.8; religion Orthodox 78.1, Islam 21.7, Other religion 0.2
-  Zajas: 11,605 in 2002; language Albanian 97.5, Macedonian 1.7, Other 0.7; religion Islam 97.4, Orthodox 1.8, Other religion 0.7
-  wrote data/processed/north_macedonia_2002.json (16 kB)
-  wrote north_macedonia_2002.json: 5 records
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  Otok Krk: 13,712, the sum of Krk, Punat, Baška, Vrbnik, Dobrinj
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 557}
+  wrote data/processed/croatia_county.json (178 kB)
+  wrote data/processed/croatia_unit.json (3376 kB)
