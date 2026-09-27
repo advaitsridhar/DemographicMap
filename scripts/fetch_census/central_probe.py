@@ -997,7 +997,30 @@ def deu5() -> None:
          "templateQueryString=vorwiegend+gesprochene+Sprache", r"href=\"[^\"]+\"[^>]*>[^<]{10,}<", limit=40)
 
 
+def hun13() -> None:
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    data = json.loads(text(fetch(f"{base}/structure/WBS003/{version}")[2]))
+    for cl in jpath(data, "data.codelists") or []:
+        if cl["id"] == "CL_TEL_SZ_ADAT":
+            codes = [(c["id"], jpath(c, "names.en"), c.get("parent")) for c in cl["codes"]]
+            log(f"   CL_TEL_SZ_ADAT from 60: {codes[60:]}")
+    for path in (f"dataflows/WBS003/{version}/d/TIME_PERIOD:2022,TERUL_GEO5:122,TEL_SZ_ADAT",
+                 f"dataflows/WBS003/{version}/d/TIME_PERIOD:2022,TERUL_GEO5:HU120,TEL_SZ_ADAT",
+                 f"dataflows/WBS001/{version}/d/TIME_PERIOD:2022,TERUL_GEO4:122,NEME_SEX:M,KEV_AGE"):
+        page = text(fetch(f"{base}/{path}")[2])
+        try:
+            rows = json.loads(page)
+            log(f"\n## {path}: {len(rows)} rows")
+            for r in rows[:200]:
+                key = r.get("TEL_SZ_ADAT") or r.get("KEV_AGE")
+                log(f"   {key}={r.get('OBS_VALUE')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {page[:300]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun13": hun13,
     "deu5": deu5,
     "hun12": hun12,
     "hun11": hun11,
