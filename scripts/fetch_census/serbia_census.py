@@ -68,8 +68,8 @@ LICENCE = "Statistical Office of the Republic of Serbia, open data (reuse with a
 NATIONAL = 6_647_003
 COUNTRY = "REPUBLIKA SRBIJA"
 # The keys every RZS record carries beside its own category.
-FRAME = {"nTer", "nTipNaselja", "nPol", "nJedinicaMere", "nIzvorI", "nStatusPodatka",
-         "nStarGrupa"}
+FRAME = {"nTer", "nTipNaselja", "nTipNaseljaMICS", "nPol", "nJedinicaMere", "nIzvorI",
+         "nStatusPodatka", "nStarGrupa"}
 # The map's first-level units -> RZS's areas (oblasti).
 AREAS = {
     "Belgrade": "Beogradska oblast", "Bor District": "Borska oblast",
@@ -171,8 +171,9 @@ def load(dataset: str) -> list[dict[str, Any]]:
         raise SystemExit(f"serbia_census: {dataset}: the open-data service did not return the dataset")
     rows = json.loads(text)
     log(f"  {dataset}: {len(blob):,} bytes, {len(rows):,} records")
+    # Every settlement-type key (nTipNaselja, nTipNaseljaMICS) at its total.
     return [r for r in rows if str(r.get("god")) == str(YEAR)
-            and r.get("nTipNaselja", "Ukupno").strip() == "Ukupno"]
+            and all(str(v).strip() == "Ukupno" for k, v in r.items() if k.startswith("nTipNaselja"))]
 
 
 def category_key(rows: list[dict[str, Any]], dataset: str) -> str:
