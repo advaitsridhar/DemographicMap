@@ -1,39 +1,32 @@
-switzerland_ages: BFS px-x-0102010000_101, 31 December 2025, read against the districts of 01-01-2009
-  01-01-2026: 7 of the table's communes not in the register ['......0700 Moutier', '......2016 Fétigny', '......2027 Ménières', '......2278 Ulmiz', '......2520 Halten', '......2529 Oekingen', '......4122 Villnachern'], 2 the other way ['Fétigny-Ménières', 'Moutier']
-  the table's 2115 communes are the register's of 31-12-2025
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_ages.py", line 344, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_ages.py", line 337, in main
-    records = build(args.year, args.batch)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_ages.py", line 255, in build
-    data, meta, code = read_population(year, px_communes, batch)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_ages.py", line 131, in read_population
-    payload = http_json(TABLE, {"query": query, "response": {"format": "json-stat2"}})
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 289, in http_json
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 429: 
+switzerland_religion: BFS structural survey, religion by canton, [2022, 2023, 2024]
+  2022: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
+  2023: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
+  2024: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
+  Vaud: 689,542 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 18.92577941367944)
+  Valais: 305,908 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 78.982378377563)
+  Genève: 399,556 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 14.160875633394832)
+  Bern: 887,905 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 43.809609194911765)
+  Fribourg: 278,720 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Other religion', 28.501502372893402)
+  Solothurn: 240,297 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 27.130269155133234)
+  Neuchâtel: 148,728 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 77.9547672250116)
+  Jura: 62,054 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Other religion', 64.72779319382124)
+  Basel-Stadt: 167,163 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 43.60716675522625)
+  Basel-Landschaft: 250,582 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 73.62871249857913)
+  Aargau: 603,476 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 35.69961110825201)
+  Zürich: 1,331,083 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 15.284296112546466)
+  Glarus: 34,931 aged 15+ (mean of 3 years); withheld ['Judaism', 'Not stated']; widest single-year interval ('Other religion', 79.93721998491728)
+  Schaffhausen: 73,012 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 58.593107486996715)
+  Appenzell Ausserrhoden: 46,502 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 73.2490822479114)
+  Appenzell Innerrhoden: 13,628 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion', 'Not stated']; widest single-year interval ('Other Christian', 80.19346399850338)
+  St. Gallen: 443,194 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 23.908492446361464)
+  Graubünden: 174,525 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 37.15158237838324)
+  Thurgau: 245,397 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 37.355629764258204)
+  Luzern: 358,093 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 55.173906980562535)
+  Uri: 31,528 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion']; widest single-year interval ('Not stated', 87.09182242342904)
+  Schwyz: 140,471 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 58.75643312562417)
+  Obwalden: 32,743 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion', 'Not stated']; widest single-year interval ('Islam', 39.54383187935596)
+  Nidwalden: 38,228 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 79.50460592201307)
+  Zug: 110,063 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 68.74523197621546)
+  Ticino: 305,822 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 64.7152517877991)
+  wrote data/processed/switzerland_religion_survey.json (62 kB)
+  wrote switzerland_religion_survey.json: 26 records

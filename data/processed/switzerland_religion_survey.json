@@ -22,43 +22,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 41.8,
-        "count": 292336
+        "pct": 41.0,
+        "count": 282893
       },
       {
         "group": "Roman Catholic",
-        "pct": 25.0,
-        "count": 175026
+        "pct": 25.5,
+        "count": 175787
       },
       {
         "group": "Reformed",
-        "pct": 17.5,
-        "count": 122511
-      },
-      {
-        "group": "Islam",
-        "pct": 6.3,
-        "count": 43916
+        "pct": 18.2,
+        "count": 125532
       },
       {
         "group": "Other Christian",
         "pct": 6.3,
-        "count": 44243
+        "count": 43354
+      },
+      {
+        "group": "Islam",
+        "pct": 6.0,
+        "count": 41534
       },
       {
         "group": "Not stated",
-        "pct": 1.5,
-        "count": 10613
+        "pct": 1.4,
+        "count": 9747
       },
       {
         "group": "Other religion",
         "pct": 1.3,
-        "count": 9056
+        "count": 8670
       },
       {
         "group": "Judaism",
         "pct": 0.3,
-        "count": 1958
+        "count": 2020
       }
     ],
     "language": {
@@ -81,7 +81,7 @@
     "shape_id": "70761945B85268669280160",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-valais",
@@ -106,38 +106,43 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 61.6,
-        "count": 192223
+        "pct": 62.7,
+        "count": 191750
       },
       {
         "group": "No religion",
-        "pct": 24.0,
-        "count": 74699
+        "pct": 23.2,
+        "count": 70848
       },
       {
         "group": "Reformed",
         "pct": 5.1,
-        "count": 15853
+        "count": 15509
       },
       {
         "group": "Islam",
         "pct": 3.8,
-        "count": 11714
+        "count": 11682
       },
       {
         "group": "Other Christian",
-        "pct": 3.4,
-        "count": 10551
+        "pct": 3.2,
+        "count": 9768
       },
       {
         "group": "Not stated",
         "pct": 1.3,
-        "count": 4076
+        "count": 4012
       },
       {
         "group": "Other religion",
-        "pct": 0.8,
-        "count": 2492
+        "pct": 0.7,
+        "count": 2072
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 263
       }
     ],
     "language": {
@@ -160,7 +165,7 @@
     "shape_id": "70761945B38573473865054",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-geneve",
@@ -185,43 +190,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 48.8,
-        "count": 197932
+        "pct": 47.6,
+        "count": 190378
       },
       {
         "group": "Roman Catholic",
-        "pct": 26.6,
-        "count": 107994
+        "pct": 27.6,
+        "count": 110265
       },
       {
         "group": "Islam",
-        "pct": 7.8,
-        "count": 31662
+        "pct": 7.5,
+        "count": 30089
       },
       {
         "group": "Reformed",
-        "pct": 6.7,
-        "count": 27280
+        "pct": 7.0,
+        "count": 28069
       },
       {
         "group": "Other Christian",
         "pct": 5.7,
-        "count": 22920
+        "count": 22703
       },
       {
         "group": "Not stated",
-        "pct": 2.2,
-        "count": 8855
+        "pct": 2.1,
+        "count": 8440
       },
       {
         "group": "Other religion",
-        "pct": 1.4,
-        "count": 5486
+        "pct": 1.5,
+        "count": 5871
       },
       {
         "group": "Judaism",
         "pct": 0.9,
-        "count": 3479
+        "count": 3738
       }
     ],
     "language": {
@@ -244,7 +249,7 @@
     "shape_id": "70761945B83881285484717",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-bern",
@@ -269,38 +274,43 @@
     "religion": [
       {
         "group": "Reformed",
-        "pct": 40.8,
-        "count": 365871
+        "pct": 42.5,
+        "count": 377244
       },
       {
         "group": "No religion",
-        "pct": 31.5,
-        "count": 282569
+        "pct": 30.0,
+        "count": 266028
       },
       {
         "group": "Roman Catholic",
         "pct": 13.9,
-        "count": 124493
+        "count": 123835
       },
       {
         "group": "Other Christian",
-        "pct": 6.8,
-        "count": 61275
+        "pct": 6.6,
+        "count": 58783
       },
       {
         "group": "Islam",
-        "pct": 4.7,
-        "count": 42122
+        "pct": 4.6,
+        "count": 41279
       },
       {
         "group": "Other religion",
-        "pct": 1.4,
-        "count": 12231
+        "pct": 1.5,
+        "count": 13050
       },
       {
         "group": "Not stated",
-        "pct": 0.7,
-        "count": 6591
+        "pct": 0.8,
+        "count": 6755
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 926
       }
     ],
     "language": {
@@ -323,7 +333,7 @@
     "shape_id": "70761945B78940680080703",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-fribourg",
@@ -348,33 +358,38 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 49.2,
-        "count": 139599
+        "pct": 51.4,
+        "count": 143226
       },
       {
         "group": "No religion",
-        "pct": 30.2,
-        "count": 85788
+        "pct": 27.8,
+        "count": 77559
       },
       {
         "group": "Reformed",
-        "pct": 10.5,
-        "count": 29660
+        "pct": 10.7,
+        "count": 29774
       },
       {
         "group": "Islam",
         "pct": 4.6,
-        "count": 13063
+        "count": 12780
       },
       {
         "group": "Other Christian",
-        "pct": 3.6,
-        "count": 10306
+        "pct": 3.8,
+        "count": 10652
       },
       {
         "group": "Not stated",
-        "pct": 1.1,
-        "count": 3224
+        "pct": 1.0,
+        "count": 2677
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 1906
       }
     ],
     "language": {
@@ -397,7 +412,7 @@
     "shape_id": "70761945B87604960987122",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-solothurn",
@@ -422,33 +437,38 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 42.3,
-        "count": 102870
+        "pct": 40.8,
+        "count": 98015
       },
       {
         "group": "Roman Catholic",
-        "pct": 25.4,
-        "count": 61869
+        "pct": 26.6,
+        "count": 63920
       },
       {
         "group": "Reformed",
-        "pct": 15.5,
-        "count": 37771
+        "pct": 16.4,
+        "count": 39341
       },
       {
         "group": "Islam",
-        "pct": 8.3,
-        "count": 20305
+        "pct": 8.2,
+        "count": 19747
       },
       {
         "group": "Other Christian",
-        "pct": 5.8,
-        "count": 14105
+        "pct": 5.5,
+        "count": 13322
       },
       {
         "group": "Other religion",
-        "pct": 1.8,
-        "count": 4319
+        "pct": 1.6,
+        "count": 3863
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 1963
       }
     ],
     "language": {
@@ -471,7 +491,7 @@
     "shape_id": "70761945B36749553910786",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-neuchatel",
@@ -496,38 +516,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 55.8,
-        "count": 83759
+        "pct": 54.4,
+        "count": 80860
       },
       {
         "group": "Roman Catholic",
-        "pct": 17.2,
-        "count": 25813
+        "pct": 17.8,
+        "count": 26402
       },
       {
         "group": "Reformed",
-        "pct": 14.6,
-        "count": 21898
-      },
-      {
-        "group": "Islam",
-        "pct": 4.9,
-        "count": 7391
+        "pct": 15.5,
+        "count": 23034
       },
       {
         "group": "Other Christian",
         "pct": 4.9,
-        "count": 7417
+        "count": 7349
+      },
+      {
+        "group": "Islam",
+        "pct": 4.8,
+        "count": 7212
       },
       {
         "group": "Not stated",
         "pct": 1.5,
-        "count": 2271
+        "count": 2218
       },
       {
         "group": "Other religion",
         "pct": 1.0,
-        "count": 1448
+        "count": 1494
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 156
       }
     ],
     "language": {
@@ -550,7 +575,7 @@
     "shape_id": "70761945B64873726514121",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-jura",
@@ -575,28 +600,38 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 57.3,
-        "count": 35779
+        "pct": 58.8,
+        "count": 36504
       },
       {
         "group": "No religion",
-        "pct": 25.7,
-        "count": 16058
+        "pct": 23.9,
+        "count": 14855
       },
       {
         "group": "Reformed",
-        "pct": 7.2,
-        "count": 4522
+        "pct": 8.0,
+        "count": 4993
       },
       {
         "group": "Islam",
-        "pct": 4.1,
-        "count": 2551
+        "pct": 3.8,
+        "count": 2367
       },
       {
         "group": "Other Christian",
-        "pct": 4.1,
-        "count": 2530
+        "pct": 3.8,
+        "count": 2364
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 573
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 370
       }
     ],
     "language": {
@@ -619,7 +654,7 @@
     "shape_id": "70761945B19914004537681",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-baselstadt",
@@ -644,33 +679,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 59.0,
-        "count": 99580
+        "pct": 57.2,
+        "count": 95620
       },
       {
         "group": "Roman Catholic",
-        "pct": 12.6,
-        "count": 21287
+        "pct": 13.3,
+        "count": 22189
       },
       {
         "group": "Reformed",
-        "pct": 11.1,
-        "count": 18698
+        "pct": 12.3,
+        "count": 20521
       },
       {
         "group": "Islam",
-        "pct": 8.5,
-        "count": 14358
+        "pct": 8.4,
+        "count": 13974
       },
       {
         "group": "Other Christian",
-        "pct": 5.7,
-        "count": 9687
+        "pct": 5.4,
+        "count": 8973
       },
       {
         "group": "Other religion",
-        "pct": 1.7,
-        "count": 2935
+        "pct": 2.0,
+        "count": 3270
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 1716
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 895
       }
     ],
     "language": {
@@ -693,7 +738,7 @@
     "shape_id": "70761945B62987387977087",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-basellandschaft",
@@ -718,33 +763,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 40.3,
-        "count": 102003
+        "pct": 39.3,
+        "count": 98546
       },
       {
         "group": "Reformed",
-        "pct": 23.9,
-        "count": 60642
+        "pct": 24.6,
+        "count": 61578
       },
       {
         "group": "Roman Catholic",
-        "pct": 22.1,
-        "count": 55879
-      },
-      {
-        "group": "Other Christian",
-        "pct": 5.9,
-        "count": 14975
+        "pct": 22.4,
+        "count": 56048
       },
       {
         "group": "Islam",
-        "pct": 5.5,
-        "count": 13904
+        "pct": 5.8,
+        "count": 14441
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 13630
       },
       {
         "group": "Other religion",
-        "pct": 1.6,
-        "count": 3935
+        "pct": 1.7,
+        "count": 4309
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 1641
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 384
       }
     ],
     "language": {
@@ -767,7 +822,7 @@
     "shape_id": "70761945B84766611276082",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-aargau",
@@ -792,38 +847,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 39.6,
-        "count": 242941
+        "pct": 38.0,
+        "count": 229200
       },
       {
         "group": "Roman Catholic",
-        "pct": 25.3,
-        "count": 155076
+        "pct": 26.6,
+        "count": 160438
       },
       {
         "group": "Reformed",
-        "pct": 17.6,
-        "count": 108104
+        "pct": 18.6,
+        "count": 112142
       },
       {
         "group": "Islam",
         "pct": 8.0,
-        "count": 48965
+        "count": 48081
       },
       {
         "group": "Other Christian",
-        "pct": 7.2,
-        "count": 44392
+        "pct": 6.9,
+        "count": 41365
       },
       {
         "group": "Other religion",
-        "pct": 1.4,
-        "count": 8585
+        "pct": 1.3,
+        "count": 8088
       },
       {
         "group": "Not stated",
-        "pct": 0.7,
-        "count": 4188
+        "pct": 0.6,
+        "count": 3588
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 571
       }
     ],
     "language": {
@@ -846,7 +906,7 @@
     "shape_id": "70761945B11338788345342",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-zurich",
@@ -871,43 +931,43 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 40.5,
-        "count": 545947
+        "pct": 39.2,
+        "count": 521379
       },
       {
         "group": "Reformed",
-        "pct": 21.8,
-        "count": 293675
+        "pct": 22.8,
+        "count": 303153
       },
       {
         "group": "Roman Catholic",
-        "pct": 21.3,
-        "count": 286768
+        "pct": 21.9,
+        "count": 291879
       },
       {
         "group": "Islam",
-        "pct": 7.0,
-        "count": 94236
+        "pct": 6.9,
+        "count": 91760
       },
       {
         "group": "Other Christian",
-        "pct": 6.6,
-        "count": 89575
+        "pct": 6.4,
+        "count": 85575
       },
       {
         "group": "Other religion",
         "pct": 1.7,
-        "count": 23165
+        "count": 22532
       },
       {
         "group": "Not stated",
         "pct": 0.6,
-        "count": 7768
+        "count": 8528
       },
       {
         "group": "Judaism",
         "pct": 0.5,
-        "count": 6271
+        "count": 6273
       }
     ],
     "language": {
@@ -930,7 +990,7 @@
     "shape_id": "70761945B4468941998498",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-glarus",
@@ -954,19 +1014,34 @@
     },
     "religion": [
       {
-        "group": "No religion",
-        "pct": 30.6,
-        "count": 10760
+        "group": "Reformed",
+        "pct": 29.0,
+        "count": 10144
       },
       {
         "group": "Roman Catholic",
-        "pct": 28.3,
-        "count": 9968
+        "pct": 28.4,
+        "count": 9926
       },
       {
-        "group": "Reformed",
-        "pct": 26.6,
-        "count": 9363
+        "group": "No religion",
+        "pct": 27.2,
+        "count": 9504
+      },
+      {
+        "group": "Islam",
+        "pct": 7.4,
+        "count": 2581
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 1903
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.8,
+        "count": 622
       }
     ],
     "language": {
@@ -989,7 +1064,7 @@
     "shape_id": "70761945B11753136967749",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-schaffhausen",
@@ -1014,28 +1089,38 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 37.5,
-        "count": 27914
+        "pct": 34.7,
+        "count": 25334
       },
       {
         "group": "Reformed",
-        "pct": 28.0,
-        "count": 20875
+        "pct": 29.3,
+        "count": 21368
       },
       {
         "group": "Roman Catholic",
-        "pct": 17.8,
-        "count": 13264
+        "pct": 18.6,
+        "count": 13577
       },
       {
         "group": "Islam",
-        "pct": 7.4,
-        "count": 5526
+        "pct": 8.0,
+        "count": 5838
       },
       {
         "group": "Other Christian",
-        "pct": 7.2,
-        "count": 5348
+        "pct": 6.9,
+        "count": 5071
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 1202
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 516
       }
     ],
     "language": {
@@ -1058,7 +1143,7 @@
     "shape_id": "70761945B22837365779622",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-appenzellausserrhoden",
@@ -1083,23 +1168,38 @@
     "religion": [
       {
         "group": "Reformed",
-        "pct": 32.2,
-        "count": 15095
+        "pct": 32.4,
+        "count": 15057
       },
       {
         "group": "No religion",
-        "pct": 30.7,
-        "count": 14385
+        "pct": 29.4,
+        "count": 13649
       },
       {
         "group": "Roman Catholic",
-        "pct": 25.7,
-        "count": 12048
+        "pct": 27.0,
+        "count": 12577
       },
       {
         "group": "Other Christian",
         "pct": 6.7,
-        "count": 3142
+        "count": 3133
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 1367
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 397
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 273
       }
     ],
     "language": {
@@ -1122,7 +1222,7 @@
     "shape_id": "70761945B71472094577065",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-appenzellinnerrhoden",
@@ -1147,13 +1247,28 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 67.4,
-        "count": 9306
+        "pct": 68.7,
+        "count": 9362
       },
       {
         "group": "No religion",
-        "pct": 17.5,
-        "count": 2411
+        "pct": 16.3,
+        "count": 2220
+      },
+      {
+        "group": "Reformed",
+        "pct": 10.0,
+        "count": 1361
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1,
+        "count": 290
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 290
       }
     ],
     "language": {
@@ -1176,7 +1291,7 @@
     "shape_id": "70761945B73029947081098",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-stgallen",
@@ -1201,38 +1316,38 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 36.2,
-        "count": 162551
+        "pct": 37.8,
+        "count": 167618
       },
       {
         "group": "No religion",
-        "pct": 30.2,
-        "count": 135485
+        "pct": 28.2,
+        "count": 125001
       },
       {
         "group": "Reformed",
-        "pct": 16.4,
-        "count": 73457
+        "pct": 17.1,
+        "count": 75853
       },
       {
         "group": "Islam",
-        "pct": 8.5,
-        "count": 38103
+        "pct": 8.4,
+        "count": 37024
       },
       {
         "group": "Other Christian",
-        "pct": 7.0,
-        "count": 31176
+        "pct": 6.7,
+        "count": 29496
       },
       {
         "group": "Other religion",
-        "pct": 1.1,
-        "count": 5070
+        "pct": 1.2,
+        "count": 5223
       },
       {
         "group": "Not stated",
         "pct": 0.6,
-        "count": 2510
+        "count": 2591
       }
     ],
     "language": {
@@ -1255,7 +1370,7 @@
     "shape_id": "70761945B27205007293794",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-graubunden",
@@ -1280,28 +1395,38 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 35.9,
-        "count": 63177
+        "pct": 37.3,
+        "count": 65180
       },
       {
         "group": "No religion",
-        "pct": 30.3,
-        "count": 53307
+        "pct": 28.2,
+        "count": 49255
       },
       {
         "group": "Reformed",
-        "pct": 26.2,
-        "count": 46179
+        "pct": 27.1,
+        "count": 47309
       },
       {
         "group": "Other Christian",
-        "pct": 4.0,
-        "count": 6995
+        "pct": 3.6,
+        "count": 6270
       },
       {
         "group": "Islam",
-        "pct": 2.1,
-        "count": 3761
+        "pct": 2.3,
+        "count": 3943
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 1365
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 1099
       }
     ],
     "language": {
@@ -1324,7 +1449,7 @@
     "shape_id": "70761945B85432491504073",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-thurgau",
@@ -1349,33 +1474,38 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 32.1,
-        "count": 80147
+        "pct": 31.2,
+        "count": 76514
       },
       {
         "group": "Roman Catholic",
-        "pct": 27.4,
-        "count": 68206
+        "pct": 27.6,
+        "count": 67760
       },
       {
         "group": "Reformed",
-        "pct": 25.1,
-        "count": 62591
+        "pct": 26.4,
+        "count": 64799
       },
       {
         "group": "Islam",
-        "pct": 7.0,
-        "count": 17547
+        "pct": 6.9,
+        "count": 17047
       },
       {
         "group": "Other Christian",
-        "pct": 6.7,
-        "count": 16664
+        "pct": 6.3,
+        "count": 15521
       },
       {
         "group": "Other religion",
         "pct": 1.0,
-        "count": 2518
+        "count": 2411
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 1190
       }
     ],
     "language": {
@@ -1398,7 +1528,7 @@
     "shape_id": "70761945B73326014959541",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-luzern",
@@ -1423,38 +1553,43 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 49.3,
-        "count": 179146
+        "pct": 51.4,
+        "count": 184051
       },
       {
         "group": "No religion",
-        "pct": 30.2,
-        "count": 109828
+        "pct": 28.2,
+        "count": 101066
       },
       {
         "group": "Reformed",
-        "pct": 8.4,
-        "count": 30666
+        "pct": 8.5,
+        "count": 30410
       },
       {
         "group": "Islam",
         "pct": 5.1,
-        "count": 18532
+        "count": 18247
       },
       {
         "group": "Other Christian",
-        "pct": 5.1,
-        "count": 18560
+        "pct": 4.9,
+        "count": 17403
       },
       {
         "group": "Other religion",
         "pct": 1.3,
-        "count": 4604
+        "count": 4540
       },
       {
         "group": "Not stated",
-        "pct": 0.5,
-        "count": 1979
+        "pct": 0.6,
+        "count": 2047
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 325
       }
     ],
     "language": {
@@ -1477,7 +1612,7 @@
     "shape_id": "70761945B29073934101403",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-uri",
@@ -1502,13 +1637,33 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 67.3,
-        "count": 21495
+        "pct": 69.2,
+        "count": 21818
       },
       {
         "group": "No religion",
-        "pct": 21.7,
-        "count": 6922
+        "pct": 20.4,
+        "count": 6416
+      },
+      {
+        "group": "Reformed",
+        "pct": 3.9,
+        "count": 1221
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.4,
+        "count": 1063
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 601
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 244
       }
     ],
     "language": {
@@ -1531,7 +1686,7 @@
     "shape_id": "70761945B76174754463268",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-schwyz",
@@ -1556,28 +1711,38 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 49.7,
-        "count": 70563
+        "pct": 51.5,
+        "count": 72350
       },
       {
         "group": "No religion",
-        "pct": 31.1,
-        "count": 44208
+        "pct": 28.3,
+        "count": 39731
       },
       {
         "group": "Reformed",
-        "pct": 8.3,
-        "count": 11736
-      },
-      {
-        "group": "Other Christian",
-        "pct": 4.7,
-        "count": 6747
+        "pct": 9.6,
+        "count": 13491
       },
       {
         "group": "Islam",
-        "pct": 4.6,
-        "count": 6607
+        "pct": 4.8,
+        "count": 6694
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 6060
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 1385
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 606
       }
     ],
     "language": {
@@ -1600,7 +1765,7 @@
     "shape_id": "70761945B29858350399599",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-obwalden",
@@ -1625,13 +1790,28 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 56.6,
-        "count": 18774
+        "pct": 60.2,
+        "count": 19724
       },
       {
         "group": "No religion",
-        "pct": 27.5,
-        "count": 9111
+        "pct": 24.9,
+        "count": 8157
+      },
+      {
+        "group": "Reformed",
+        "pct": 7.0,
+        "count": 2292
+      },
+      {
+        "group": "Islam",
+        "pct": 3.2,
+        "count": 1060
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.1,
+        "count": 1025
       }
     ],
     "language": {
@@ -1654,7 +1834,7 @@
     "shape_id": "70761945B39944874342149",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-nidwalden",
@@ -1680,17 +1860,37 @@
       {
         "group": "Roman Catholic",
         "pct": 57.0,
-        "count": 21988
+        "count": 21790
       },
       {
         "group": "No religion",
-        "pct": 28.0,
-        "count": 10798
+        "pct": 26.4,
+        "count": 10085
       },
       {
         "group": "Reformed",
-        "pct": 7.6,
-        "count": 2939
+        "pct": 9.0,
+        "count": 3437
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 1276
+      },
+      {
+        "group": "Islam",
+        "pct": 2.6,
+        "count": 999
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 355
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 248
       }
     ],
     "language": {
@@ -1713,7 +1913,7 @@
     "shape_id": "70761945B45925471978558",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-zug",
@@ -1738,33 +1938,43 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 42.0,
-        "count": 46646
+        "pct": 43.3,
+        "count": 47618
       },
       {
         "group": "No religion",
-        "pct": 34.4,
-        "count": 38193
+        "pct": 33.0,
+        "count": 36293
       },
       {
         "group": "Reformed",
-        "pct": 11.8,
-        "count": 13122
+        "pct": 11.4,
+        "count": 12580
       },
       {
         "group": "Other Christian",
-        "pct": 5.6,
-        "count": 6192
+        "pct": 5.8,
+        "count": 6413
       },
       {
         "group": "Islam",
-        "pct": 3.8,
-        "count": 4218
+        "pct": 4.2,
+        "count": 4658
       },
       {
         "group": "Other religion",
         "pct": 1.5,
-        "count": 1675
+        "count": 1597
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 663
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 237
       }
     ],
     "language": {
@@ -1787,7 +1997,7 @@
     "shape_id": "70761945B70106229378933",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   },
   {
     "id": "CHE-SE2024-ticino",
@@ -1812,38 +2022,43 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 56.2,
-        "count": 172999
+        "pct": 57.3,
+        "count": 175171
       },
       {
         "group": "No religion",
-        "pct": 30.6,
-        "count": 94116
+        "pct": 29.6,
+        "count": 90379
       },
       {
         "group": "Other Christian",
-        "pct": 5.8,
-        "count": 17901
+        "pct": 5.6,
+        "count": 17119
       },
       {
         "group": "Reformed",
-        "pct": 3.2,
-        "count": 9789
+        "pct": 3.3,
+        "count": 10188
       },
       {
         "group": "Islam",
-        "pct": 2.3,
-        "count": 7037
+        "pct": 2.2,
+        "count": 6864
       },
       {
         "group": "Not stated",
         "pct": 1.2,
-        "count": 3803
+        "count": 3676
       },
       {
         "group": "Other religion",
         "pct": 0.7,
-        "count": 2175
+        "count": 2233
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 190
       }
     ],
     "language": {
@@ -1866,6 +2081,6 @@
     "shape_id": "70761945B95773795125249",
     "religion_year": 2024,
     "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
-    "religion_note": "BFS structural survey 2024 (Strukturerhebung): religious affiliation of the permanent resident population aged 15 and over, weighted by BFS. It is a sample: estimates whose confidence interval is wider than ±25% of the estimate are dropped, and cells BFS suppresses for too few respondents are left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton in this table. The census has not asked every resident since 2000."
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. BFS does not print the number of respondents per canton. The census has not asked every resident since 2000."
   }
 ]
