@@ -8257,8 +8257,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: The map draws this district as it was in 2009, and Mettauertal, Böztal -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. BFS's tables of age and sex are in today's communes only, so no official figure covers exactly this polygon."
+      "value": 46425,
+      "year": 2009,
+      "source": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH"
     },
     "median_age": {
       "status": "not_available",
@@ -8277,13 +8278,22 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH",
+        "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2009
+      }
+    ],
     "country": "CHE",
     "codes": {
       "bfs_2009": "Bezirk Brugg"
     },
     "match_by": "shape_id",
-    "shape_id": "98125504B18372800811244"
+    "shape_id": "98125504B18372800811244",
+    "population_note": "BFS's permanent resident population on 31 December 2009, summed over the 31 communes of that year inside this district as drawn: The map draws this district as it was in 2009, and Mettauertal, Böztal -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. 2009 is the latest year in which the district's communes still lay wholly inside it."
   },
   {
     "id": "CHE-2009-bezirkhinterrhein",
@@ -8397,8 +8407,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: The map draws this district as it was in 2009, and Mettauertal, Böztal -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. BFS's tables of age and sex are in today's communes only, so no official figure covers exactly this polygon."
+      "value": 28463,
+      "year": 2009,
+      "source": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH"
     },
     "median_age": {
       "status": "not_available",
@@ -8417,13 +8428,22 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH",
+        "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2009
+      }
+    ],
     "country": "CHE",
     "codes": {
       "bfs_2009": "Bezirk Laufenburg"
     },
     "match_by": "shape_id",
-    "shape_id": "98125504B74023837430227"
+    "shape_id": "98125504B74023837430227",
+    "population_note": "BFS's permanent resident population on 31 December 2009, summed over the 23 communes of that year inside this district as drawn: The map draws this district as it was in 2009, and Mettauertal, Böztal -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. 2009 is the latest year in which the district's communes still lay wholly inside it."
   },
   {
     "id": "CHE-2009-bezirkoberklettgau",
@@ -8637,8 +8657,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: The map draws this district as it was in 2009, and Bellinzona, Monteceneri -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. BFS's tables of age and sex are in today's communes only, so no official figure covers exactly this polygon."
+      "value": 48406,
+      "year": 2009,
+      "source": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH"
     },
     "median_age": {
       "status": "not_available",
@@ -8657,13 +8678,22 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH",
+        "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2009
+      }
+    ],
     "country": "CHE",
     "codes": {
       "bfs_2009": "Distretto di Bellinzona"
     },
     "match_by": "shape_id",
-    "shape_id": "98125504B16008017639525"
+    "shape_id": "98125504B16008017639525",
+    "population_note": "BFS's permanent resident population on 31 December 2009, summed over the 18 communes of that year inside this district as drawn: The map draws this district as it was in 2009, and Bellinzona, Monteceneri -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. 2009 is the latest year in which the district's communes still lay wholly inside it."
   },
   {
     "id": "CHE-2009-distrettodilugano",
@@ -8677,8 +8707,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: The map draws this district as it was in 2009, and Monteceneri -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. BFS's tables of age and sex are in today's communes only, so no official figure covers exactly this polygon."
+      "value": 142477,
+      "year": 2009,
+      "source": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH"
     },
     "median_age": {
       "status": "not_available",
@@ -8697,13 +8728,22 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH",
+        "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2009
+      }
+    ],
     "country": "CHE",
     "codes": {
       "bfs_2009": "Distretto di Lugano"
     },
     "match_by": "shape_id",
-    "shape_id": "98125504B32406318267328"
+    "shape_id": "98125504B32406318267328",
+    "population_note": "BFS's permanent resident population on 31 December 2009, summed over the 63 communes of that year inside this district as drawn: The map draws this district as it was in 2009, and Monteceneri -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. 2009 is the latest year in which the district's communes still lay wholly inside it."
   },
   {
     "id": "CHE-2009-distrettodiriviera",
