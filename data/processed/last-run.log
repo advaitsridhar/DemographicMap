@@ -1,92 +1,58 @@
-== search 'single*year': 0 datasets
-== search 'main*language': 0 datasets
-== search 'ts024': 1 datasets
-  NM_2043_1    TS024 - Main language (detailed)
-== search 'population*estimates': 0 datasets
-== NM_2002_1: Population estimates - local authority based by single year of age
-  dimension GEOGRAPHY (CL_2002_1_GEOGRAPHY)
-  dimension GENDER (CL_2002_1_GENDER)
-  dimension C_AGE (CL_2002_1_C_AGE)
-  dimension MEASURES (CL_2002_1_MEASURES)
-  dimension FREQ (CL_2002_1_FREQ)
-  geography/TYPE: 14 codes
-    TYPE423: local authorities: county / unitary (as of April 2023)
-    TYPE424: local authorities: district / unitary (as of April 2023)
-    TYPE431: local authorities: county / unitary (as of April 2021)
-    TYPE432: local authorities: district / unitary (as of April 2021)
-    TYPE433: local authorities: county / unitary (as of April 2019)
-    TYPE434: local authorities: district / unitary (as of April 2019)
-    TYPE442: combined authorities (as of May 2025)
-    TYPE446: local authorities: county / unitary (as of April 2015)
-    TYPE448: local authorities: district / unitary (as of April 2015)
-    TYPE462: former metropolitan counties
-    TYPE463: local authorities: county / unitary (prior to April 2015)
-    TYPE464: local authorities: district / unitary (prior to April 2015)
-    TYPE480: regions
-    TYPE499: countries
-  c_age: 121 codes
-    200: All Ages
-    201: Aged 0 to 15
-    202: Aged 16+
-    203: Aged 16 to 64
-    250: Aged 16 to 24
-    204: Aged 16 to 17
-    205: Aged 18 to 24
-    206: Aged 18 to 21
-    207: Aged 25 to 49
-    208: Aged 50 to 64
-    209: Aged 65+
-    0: All Ages
-    1: Age 0 - 4
-    101: Age 0
-    102: Age 1
-    103: Age 2
-    104: Age 3
-    105: Age 4
-    3: Aged 5-9
-    106: Age 5
-    107: Age 6
-    108: Age 7
-    109: Age 8
-    110: Age 9
-    4: Aged 10-14
-    111: Age 10
-    112: Age 11
-    113: Age 12
-    114: Age 13
-    115: Age 14
-    5: Aged 15-19
-    116: Age 15
-    117: Age 16
-    118: Age 17
-    119: Age 18
-    120: Age 19
-    6: Aged 20-24
-    121: Age 20
-    122: Age 21
-    123: Age 22
-    124: Age 23
-    125: Age 24
-    7: Aged 25-29
-    126: Age 25
-    127: Age 26
-    128: Age 27
-    129: Age 28
-    130: Age 29
-    8: Aged 30-34
-    131: Age 30
-    132: Age 31
-    133: Age 32
-    134: Age 33
-    135: Age 34
-    9: Aged 35-39
-    136: Age 35
-    137: Age 36
-    138: Age 37
-    139: Age 38
-    140: Age 39
-  gender: 3 codes
-    0: Total
-    1: Male
-    2: Female
-  NM_2002_1/date: TypeError: 'NoneType' object is not subscriptable
+== pxtree https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/  4 200
+  l Popis2021  Population Census 2021
+    l NaselenieVkupno  Total population, households and dwellings
+      l NaseleniePopis2021  Population
+        l VozrastiPol  Age and sex
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/VozrastiPol/T1017P21.px  Total  resident population by single age and sex by regions, Census  2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/VozrastiPol/T1018P21.px  Total resident population by 5 year age  group and sex, by regions, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/VozrastiPol/T1019P21.px  Total resident population  by 5-years age groups and sex according to type of the settlement, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/VozrastiPol/T1020P21.px  Total resident population by single age  and sex by municipalities, Census 2021
+        l EtnoKulturniKarakteristiki  Ethno-cultural characteristics
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1008P21.px  Total resident population in the Republic of North Macedonia by ethnic affiliation and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1012P21.px  Total resident population in the Republic of North Macedonia by religious affiliation and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px  Total resident population in the Republic of North Macedonia by mother tongue and sex, by municipalities, Census 2021
+        l Drzavjanstvo  Citizenship
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Drzavjanstvo/T1021P21.px  Total resident population by citizenship, 5 - year age groups and sex , by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Drzavjanstvo/T1022P21.px  Total resident population by citizenship and  ethnic affiliation by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Drzavjanstvo/T1023P21.px  Citizens (from the Тotal population)of other countries according to the country of citizеnship, Census 2021
+        l Demografija  Demography
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1054P21.px  Total resident population of the Republic of North Macedonia aged 15 and over by marital status, sex and age, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1055P21.px  Total resident population aged 15 and over by type of marital arrangements, age and sex, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1056P21.px  Total resident female population of the Republic of North Macedonia aged 15 and over by age, number of live-born children, by municipalities, Census 2
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1057P21.px  Total autochthonous and immigrant population by age and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1058P21.px  Total resident population by most recent immigration, 5-year age groups and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Demografija/T1059P21.px  Total resident population by place of birth, 5-year age groups and sex, by municipalities, Census 2021
+        l ObrazovniKarakteristiki  Educational characteristics
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/ObrazovniKarakteristiki/T1028P21.px  Total resident population at the age of 15+, according to education attainment, sex, by municipality, Census, 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/ObrazovniKarakteristiki/T1029P21.px  Total resident population aged 15+ by field of educational attainment, sex and age, by municipality, Census, 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/ObrazovniKarakteristiki/T1030P21.px  Total resident population aged 15+, according to literacy and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/ObrazovniKarakteristiki/T1031P21.px  Total resident population aged 5+ in formal (regular) education, by level of education, sex abd age, by municipality, Census, 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/ObrazovniKarakteristiki/T1032P21.px  Total resident population aged 15+ in formal (regular) education by field of education, sex and age, by municipality, Census, 2021
+        l EkonomskiKarakteristiki  Economic characteristics
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1034P21.px  Total working age population aged 15 and over by age, sex and economic activity, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1035P21.px  Total working age population aged 15 and over by age, sex and economic status, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1036P21.px  Active population aged 15 and over, engaged by activity, sex and by general, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1037P21.px  Unemployed persons aged 15 and over according to the highest level of schooling, gender and age, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1038P21.px  Active population engaged in occupation at the age of 15 years and over, by gender according to the municipality in which it works, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1039P21.px  Total working age population aged 15 and over by gender, according to the type of means of transport most often used to work or school and municipalit
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1040P21.px  Active population aged 15 and over by occupation, gender and by municipality, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1041P21.px  Total able-bodied population aged 15 and over by age and means of subsistence, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1042P21.px  Supported population by age and sex, according to whether the breadwinner is / is not a member of the household, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1043P21.px  Supported population by age and sex, by municipalities, according to the occupation of the supporter, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1044P21.px  Supported population by age and sex, by municipalities, according to the activity of the supporter, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1045P21.px  Supported population by age and sex, by municipalities, according to the economic status of the supporter, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EkonomskiKarakteristiki/T1060P21.px  Inactive population aged 15 and over by age groups and sex, by municipalities, Census 2021
+        l Poprecenost  Disability
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Poprecenost/ HTTP 429
+      l Domakinstva  Households
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/Domakinstva/ HTTP 429
+      l Stanovi  Dwellings
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/Stanovi/ HTTP 429
+      l PodatociNaselenie  Data by settlements
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/ HTTP 429
+    l NaselenieSet  Dataset published on 30.03.2022
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/ HTTP 429
+  l PopisNaNaselenie  Census of population 1948 - 2002
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/ HTTP 429
+  l PopisZemjodelie  Agricultural Census, 2007
+  https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisZemjodelie/ HTTP 429
