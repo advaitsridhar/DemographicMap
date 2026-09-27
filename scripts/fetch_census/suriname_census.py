@@ -72,6 +72,7 @@ ALIASES = {
     "wegnaarsee": "wegnaarzee", "sarakreet": "sarakreek", "coeroenie": "coeroeni",
     "oostpolders": "oostelijkepolders", "westpolders": "westelijkepolders",
     "nwamsterdam": "nieuwamsterdam", "moengotapoe": "moengotapoe", "patamaka": "patamacca",
+    "moengotapu": "moengotapoe", "kwarasan": "koewarasan",
 }
 ETHNICITY = ("Indigenous", "Maroon", "Creole", "Afro-Surinamese", "Hindustani", "Javanese",
              "Chinese", "White", "Mixed", "Other", "Not stated", "Not stated")
