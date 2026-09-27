@@ -1524,7 +1524,21 @@ def aut9() -> None:
     ods_dump("https://www.statistik.at/fileadmin/pages/402/Religion.ods", rows=24)
 
 
+def deu9() -> None:
+    """Rhineland-Palatinate's own Zensus 2022 results, for its three statistical regions."""
+    for url in ("https://www.statistik.rlp.de/themen/zensus/ergebnisse",
+                "https://www.statistik.rlp.de/themen/zensus"):
+        page = show(url, r"href=\"[^\"]*(?:\.xlsx?|\.pdf|\.csv|religi|Religi|kreis|Kreis)[^\"]*\"",
+                    limit=40)
+        for link in re.findall(r"href=\"([^\"]*(?:ergebnisse|zensus)[^\"]*)\"", page)[:12]:
+            full = urllib.parse.urljoin(url, link)
+            if full.rstrip("/") != url.rstrip("/"):
+                show(full, r"href=\"[^\"]*(?:\.xlsx?|\.pdf|\.csv)\"|[^>]{0,80}Religion[^<]{0,80}",
+                     limit=15)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu9": deu9,
     "aut9": aut9,
     "round13": round13,
     "che12": che12,
