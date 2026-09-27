@@ -1,30 +1,139 @@
-  0011626: População residente (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo e Idade; Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
-      dim 1: Período de referência dos dados
-      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
-      dim 3: Sexo
-      dim 4: Idade
-      Dim_Num1 (1): S7A2021=2021
-      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
-      Dim_Num3 (3): T=HM, 1=H, 2=M
-      Dim_Num4 (102): T=Total, 1=Menos de 1 ano, 2=1 ano, 3=2 anos, 4=3 anos, 5=4 anos, 6=5 anos, 7=6 anos, 8=7 anos, 9=8 anos, 10=9 anos, 11=10 anos
-  0011644: População residente com 15 e mais anos de idade (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013) e Religião; Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
-      dim 1: Período de referência dos dados
-      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
-      dim 3: Religião
-      Dim_Num1 (1): S7A2021=2021
-      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
-      Dim_Num3 (12): T=Total, 1=Católica, 2=Ortodoxa, 3=Protestante/Evangélica, 4=Testemunhas do Jeová, 5=Outra cristã, 6=Budista, 7=Hindu, 8=Judaica, 9=Muçulmana, 10=Outra não cristã, 11=Sem religião
-  0011612: Relação de masculinidade (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013); Decenal - INE, Recenseamento da população e habitação - Censos 2021 | last  | Decenal
-      dim 1: Período de referência dos dados
-      dim 2: Local de residência à data dos Censos [2021] (NUTS - 2013)
-      Dim_Num1 (1): S7A2021=2021
-      Dim_Num2 (3436): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1601=Arcos de Valdevez, 160101=Aboim das Choças, 160102=Aguiã, 160104=Ázere, 160105=Cabana Maior, 160106=Cabreiro, 160108=Cendufe, 160109=Couto
-  0008273: População residente (N.º) por Local de residência (NUTS - 2013), Sexo e Grupo etário; Anual - INE, Estimativas anuais da população residente | last  | Anual
-      dim 1: Período de referência dos dados
-      dim 2: Local de residência (NUTS - 2013)
-      dim 3: Sexo
-      dim 4: Grupo etário
-      Dim_Num1 (13): S7A2011=2011, S7A2012=2012, S7A2013=2013, S7A2014=2014, S7A2015=2015, S7A2016=2016, S7A2017=2017, S7A2018=2018, S7A2019=2019, S7A2020=2020, S7A2021=2021, S7A2022=2022
-      Dim_Num2 (344): PT=Portugal, 1=Continente, 11=Norte, 111=Alto Minho, 1111601=Arcos de Valdevez, 1111602=Caminha, 1111603=Melgaço, 1111604=Monção, 1111605=Paredes de Coura, 1111606=Ponte da Barca, 1111607=Ponte de Lima, 1111608=Valença
-      Dim_Num3 (3): T=HM, 1=H, 2=M
-      Dim_Num4 (19): T=Total, 11=0 - 4 anos, 12=5 - 9 anos, 21=10 - 14 anos, 22=15 - 19 anos, 31=20 - 24 anos, 32=25 - 29 anos, 41=30 - 34 anos, 42=35 - 39 anos, 51=40 - 44 anos, 52=45 - 49 anos, 61=50 - 54 anos
+== xls https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Caracteristici_demografice_RPL2024.xlsx 9 40
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 332,053 bytes
+  13 sheets: ['Cuprins', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9', '2.10', '2.11', '2.12']
+  -- sheet 'Cuprins': 309 rows x 20 cols
+    Recensământul Populației și 
+    Cuprins
+    2.1 Populația pe grupe de vâ | Link
+    2.2 Populația pe grupe de vâ | Link
+    2.3 Populația pe  grupe de v | Link
+    2.4 Populația după grupe de  | Link
+    2.5 Populaţia după cetăţenie | Link
+    2.6 Populația după cetățenie | Link
+    2.7 Populația după țara nașt | Link
+  -- sheet '2.1': 279 rows x 12 cols
+    Cuprins
+    Recensământul Populației și 
+    2.1 Populația pe grupe de vâ
+     |  |  |  |  |  |  |  | persoane
+    Grupe de vârstă, ani | 2024² |  |  |  | 2014³
+     | Total | din total, pe sexe: |  | Bărbați la 100 de femei | Total | din total, pe sexe: |  | Bărbați la 100 de femei
+     |  | Masculin | Feminin |  |  | Masculin | Feminin
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+    Total | 2409207 | 1137343 | 1271864 | 89.42331884541115 | 2789205 | 1337759.1089537202 | 1451445.817298729 | 92.16734741386419
+  -- sheet '2.2': 318 rows x 16 cols
+    Cuprins
+    Recensământul Populației și 
+    2.2 Populația pe grupe de vâ
+     |  |  |  |  |  | persoane
+    Grupe de vârstă, ani | 2024² |  |  | 2014³
+     | Total | Urban | Rural | Total | Urban | Rural
+    A | 1 | 2 | 3 | 4 | 5 | 6
+    Total | 2409207 | 1118967.00000001 | 1290239.99999997 | 2789205 | 1073551.5366953025 | 1715653.394719475
+    0-4 | 135578 | 66914.0000000001 | 68663.9999999997 | 180881.22986671564 | 67280.9738194021 | 113600.28028941779
+  -- sheet '2.3': 954 rows x 21 cols
+    Cuprins
+    Recensământul Populației și 
+    2.3 Populația pe  grupe de v
+    
+    Cod statistic CUATM | Regiuni de dezvoltare, raioa |  | Grupa de vârstă, ani
+     |  | Total | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54 | 55-59 | 60-64
+    A | B | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+     | Total | 2409207 | 135578 | 166266 | 160918 | 145075 | 111169 | 107846 | 147105 | 188533 | 170365 | 154597 | 149828 | 152253 | 184362
+    100000 | Mun. Chișinău | 720128 | 45466 | 52275 | 46210 | 47372 | 43564 | 40018 | 52872 | 67813 | 57199 | 46323 | 40031 | 35553 | 42740
+  -- sheet '2.4': 954 rows x 7 cols
+    Cuprins
+    Recensământul Populației și 
+    2.4 Populația după grupe de 
+     |  |  |  |  | persoane
+    Cod statistic CUATM | Regiuni de dezvoltare, raioa | Total | Din total, pe grupe de perso
+     |  |  | sub vârsta aptă de muncă   ( | în vârsta aptă de muncă  (bă | peste vârsta aptă de muncă  
+    A | B | 1 | 2 | 3 | 4
+     | Total | 2409207 | 494474 | 1343068.9999999858 | 571664.0000000164
+    100000 | Mun. Chișinău | 720128 | 153055 | 431905 | 135168
+  -- sheet '2.5': 355 rows x 15 cols
+    Cuprins
+    Recensământul Populației și 
+    2.5 Populaţia după cetăţenie
+     |  |  |  |  |  |  |  | persoane
+     | 2024 |  |  |  | 2014
+     | Total | Grupe de vârstă, ani |  |  | Total | Grupe de vârstă, ani
+     |  | 0-17 | 18-64 | 65+ |  | 0-17 | 18-64 | 65+
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+    Total persoane
+  -- sheet '2.6': 322 rows x 10 cols
+    Cuprins
+    Recensământul Populației și 
+    2.6 Populația după cetățenie
+     |  |  |  |  | persoane și %
+    Cetăţenie | Persoane |  |  | În % față de total
+     | Total | Masculin | Feminin | Total | Masculin | Feminin
+    A | 1 | 2 | 3 | 4 | 5 | 6
+    2024²
+    Total | 2409207 | 1137343 | 1271864 | 100 | 100 | 100
+  -- sheet '2.7': 327 rows x 9 cols
+    Cuprins
+    Recensământul Populației și 
+    2.7 Populația după țara nașt
+    Cod statistic CUATM | Regiuni de dezvoltare și rai | Persoane |  |  |  | În % față de total care au d
+     |  | Total | Din ei au declarat locul naș | Născute în Republica Moldova | Născute în altă țară | Născute în Republica Moldova | Născute în altă țară
+    A | B | 1 | 2 | 3 | 4 | 5 | 6
+     | Total | 2409207 | 2407713 | 2300995 | 106718 | 95.56766109581997 | 4.432338904180025
+    0100000 | Mun. Chişinău | 720128 | 719372 | 662657 | 56715 | 92.11604010164422 | 7.883959898355789
+     | Nord | 608651 | 608334 | 587326 | 21008 | 96.54663392149708 | 3.4533660785029276
+  -- sheet '2.8': 316 rows x 11 cols
+    Cuprins
+    Recensământul Populației și 
+    2.8 Populația după locul naș
+     |  |  |  |  |  |  | persoane
+    Cod statistic CUATM | Regiuni de dezvoltare și rai | Total | Din ei au declarat locul naș | Locul nașterii
+     |  |  |  | Localitatea de reședință obi | Altă localitate din raionul/ | Alt raion/municipiu decât ce | Altă țară
+    A | B | 1 | 2 | 3 | 4 | 5 | 6
+     | Total | 2409207 | 2407713 | 1566817 | 229158 | 505020 | 106718
+    0100000 | Mun. Chişinău | 720128 | 719372 | 356265 | 39935 | 266457 | 56715
+  -- sheet '2.9': 112 rows x 14 cols
+    Cuprins
+    Recensământul Populației și 
+    2.9 Populația în vârstă de 1
+     |  |  |  |  |  |  |  |  | persoane și %
+    Grupe de vârstă, ani | Persoane |  |  |  |  | În % față de total
+     | Total | după stare civilă legală |  |  |  | Total | după stare civilă legală
+     |  | Niciodată căsătorit/ă | Căsătorit/ă | Văduv/ă | Divorțat/ă |  | Niciodată căsătorit/ă | Căsătorit/ă | Văduv/ă | Divorțat/ă
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+    2024²
+  -- sheet '2.10': 212 rows x 10 cols
+    Cuprins
+    Recensământul Populației și 
+    2.10 Populația în vârstă de 
+     |  |  |  |  |  | persoane
+    Cod statistic CUATM | Regiuni de dezvoltare și rai | Total persoane de 15 ani și  | Starea civilă legală
+     |  |  | Niciodată căsătorit/ă | Căsătorit/ă | Văduv/ă | Divorțat/ă
+    A | B | 1 | 2 | 3 | 4 | 5
+     | Total | 1946445 | 458919 | 1086612 | 198767 | 202147
+    0100000 | Mun. Chişinău | 576177 | 157700 | 306972 | 38585 | 72920
+  -- sheet '2.11': 99 rows x 19 cols
+    Cuprins
+    Recensământul Populației și 
+    2.11 Femei cu vârsta de 15 a
+    Grupe de vârstă, ani | Total femei de 15 ani și pes | Total femei de 15 ani și pes | din care au indicat numărul  |  |  |  |  |  |  |  |  |  |  | Total copii născuți-vii | Copii născuți-vii la 100 de 
+     |  |  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10+
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+    2024²
+    Total | 1046317 | 1045596 | 205277 | 205684 | 400073 | 161529 | 44776 | 17675 | 5824 | 2474 | 1127 | 504 | 653 | 1830240 | 175.0427507373785
+    15–19 | 71423 | 71423 | 69740 | 1505 | 167 | 10 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1873 | 3
+  -- sheet '2.12': 155 rows x 16 cols
+    Cuprins
+    Recensământul Populației și 
+    2.12 Femei în vârstă de 15 a
+    Starea civilă legală și grup | Total femei de 15 ani și pes | Total femei de 15 ani și pes | din care au indicat numărul  |  |  |  |  |  |  |  | Total copii născuți-vii | Copii născuți-vii la 100 de 
+     |  |  | 0 | 1 | 2 | 3 | 4 | 5 | 6-9 | 10+
+    A | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+    2024²
+    Total | 1046317 | 1045596 | 205277 | 205684 | 400073 | 161529 | 44776 | 17675 | 9929 | 653 | 1830240 | 175.0427507373785
+    15–19 | 71423 | 71423 | 69740 | 1505 | 167 | 10 | 1 | 0 | 0 | 0 | 1873 | 3
+== px https://cystatdb.cystat.gov.cy/api/v1/en/ 
+  HTTP 200 application/json; charset=utf-8 45 bytes
+  None None  8.CYSTAT-DB
+== px https://cystatdb.cystat.gov.cy/api/v1/el/ 
+  HTTP 200 application/json; charset=utf-8 45 bytes
+  None None  8.CYSTAT-DB
