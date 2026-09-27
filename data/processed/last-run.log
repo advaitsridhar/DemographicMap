@@ -1,49 +1,60 @@
-
-=== deu6
-
-## helloworld/logincheck: HTTP 400: <html>
-<head>
-<base href="/error_path/">
-<title>400 Bad Request</title>
-</head>
-<body>
-<h1>Bad Request</h1>
-<p>The server detected a syntax error in your request.<br>
-Check your request and all parameters.</p>
-
-<p>Your request ID was: arkatNHa1c8l_cyD5I7csgAAAxE</p>
-
-
-                                                                                                    
-                              
-
-## catalogue/tables?selection=1000A-1018&language=de: HTTP 400: <html>
-<head>
-<base href="/error_path/">
-<title>400 Bad Request</title>
-</head>
-<body>
-<h1>Bad Request</h1>
-<p>The server detected a syntax error in your request.<br>
-Check your request and all parameters.</p>
-
-<p>Your request ID was: arkatVU5Nm7yghuCEshNuwAABGk</p>
-
-
-                                                                                                    
-                              
-
-## tablefile as written: HTTP 400, 791 bytes, text/html
-   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkatcv_W2Bf2410fOQSsQAACIQ</p>                                  
-
-## tablefile no key: HTTP 400, 791 bytes, text/html
-   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkats9WwjYeFk6n1suR2wAAAgw</p>                                  
-
-## tablefile Land cut: HTTP 400, 791 bytes, text/html
-   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkat0-kxOF53lDzNvwLBAAABXo</p>                                  
-
-## tablefile default: HTTP 400, 791 bytes, text/html
-   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkat5ZToeCeVQVamVc0cQAAAFo</p>                                  
-
-## tablefile Kreise: HTTP 400, 791 bytes, text/html
-   <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your request.<br> Check your request and all parameters.</p>  <p>Your request ID was: arkauCJwpXHJCk5Q5veUWwAAAkQ</p>                                  
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T1_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 21,226 bytes
+  1 sheets: ['T1']
+  -- sheet 'T1': 93 rows x 13 cols
+    1. Stanovništvo prema pojedi
+    Population by age and sex
+    Starost | Bosna i Hercegovina Bosnia a |  |  | Federacija BiH Federation of |  |  | Republika Srpska Republika S |  |  | Brčko Distrikt BiH Brčko Dis
+    Age | ukupnо/total | muško/male | žensko/female | ukupnо/total | muško/male | žensko/female | ukupnо/total | muško/male | žensko/female | ukupnо/total | muško/male | žensko/female
+    0 | 32986 | 16903 | 16083 | 21718 | 11137 | 10581 | 10429 | 5330 | 5099 | 839 | 436 | 403
+    1 | 34294 | 17554 | 16740 | 22690 | 11702 | 10988 | 10772 | 5435 | 5337 | 832 | 417 | 415
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T2_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 84,622 bytes
+  1 sheets: ['T2']
+  -- sheet 'T2': 473 rows x 24 cols
+    2. Stanovništvo prema staros
+    Population by five-year age 
+    Teritorija / Area | Spol/Sex | Ukupno/ Total | Starost
+     |  |  | Age
+     |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54 | 55-59 | 60-64
+    BOSNA I HERCEGOVINA | Ukupno | 3531159 | 174064 | 176980 | 192675 | 242742 | 228056 | 252318 | 252633 | 249266 | 241138 | 260928 | 276575 | 258537 | 223251
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T3_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 44,625 bytes
+  1 sheets: ['T3']
+  -- sheet 'T3': 473 rows x 12 cols
+    3. Stanovništvo prema etničk
+    Population by ethnic/nationa
+    Teritorija / Area | Spol/Sex | Ukupno/ Total | Etnička/Nacionalna pripadnos
+     |  |  | Etnicity/Nationality
+     |  |  | Bošnjaci / Bosniaks | Hrvati /  Croats | Srbi /  Serbs | Ne izjašnjava se / Does not  | Ostali / Others | Nepoznato / Unknown
+    BOSNA I HERCEGOVINA | Ukupno | 3531159 | 1769592 | 544780 | 1086733 | 27055 | 96539 | 6460
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T4_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 49,637 bytes
+  1 sheets: ['T4']
+  -- sheet 'T4': 473 rows x 12 cols
+    4. Stanovništvo prema izjašn
+    Population by religion and s
+    Teritorija / Area | Spol/Sex | Ukupno / Total | Vjeroispovijest
+     |  |  | Religion
+     |  |  | Islamska / Islamic | Katolička / Catholic | Pravoslavna / Orthodox | Agnostik / Agnostic | Ateist / Atheist | Ne izjašnjava se / Does not  | Ostali / Others | Nepoznato / Unknown
+    BOSNA I HERCEGOVINA | Ukupno | 3531159 | 1790454 | 536333 | 1085760 | 10816 | 27853 | 32700 | 40655 | 6588
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T5_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 42,450 bytes
+  1 sheets: ['T5']
+  -- sheet 'T5': 473 rows x 9 cols
+    5. Stanovništvo prema matern
+    Population by mother tongue 
+    Teritorija / Area | Spol/Sex | Ukupno Total | Maternji jezik
+     |  |  | Mother tongue
+     |  |  | Bosanski /  Bosnian | Hrvatski /  Croatian | Srpski /  Serbian | Ostali /  Other | Nepoznato / Unknown
+    BOSNA I HERCEGOVINA | Ukupno | 3531159 | 1866585 | 515481 | 1086027 | 55579 | 7487
+== xls https://www.popis.gov.ba/popis2013/doc/RezultatiPopisa/BOS/FR_T6_B.xlsx 6 1
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 40,427 bytes
+  1 sheets: ['T6']
+  -- sheet 'T6': 473 rows x 8 cols
+    6. Stanovništvo staro 15 i v
+    Population aged 15 and over 
+    Teritorija / Area | Spol/Sex | Ukupno/ Total | ZAKONSKO BRAČNO STANJE
+     |  |  | Legal marital status
+     |  |  | Nikad oženjen/udata /  Never | Oženjen/udata / Married | Razveden/Razvedena / Divorce | Udovac /Udovica / Widowed/wi
+    BOSNA I HERCEGOVINA | Ukupno | 2987440 | 810941 | 1759134 | 100880 | 316485
