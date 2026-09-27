@@ -1,24 +1,160 @@
-austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
-  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
-  2115 municipalities
-  ! austria_census: 62264: merged from ['62227', '64131', '62203', '62250'], and ['64131'] could not be read
-      Gemeinde: Bad Waltersdorf   (62264) | Politischer Bezirk: Hartberg-Fürstenfeld   (622) | NUTS 3 Region: Oststeiermark  (AT224) | Bundesland (NUTS 2): Steiermark | Gebietsstandsveränderung seit 1.1.2015. | Zusammenlegung der Gemeinden: | 62227 Limbach bei Neudau (KG Oberlimbach 64131) | 62203 Bad Waltersdorf | 62250 Sebersdorf | Für die Gemeinde 62264 Bad Waltersdorf stehen leider für dieses Datenblatt noch keine Daten zur Verfügung. | Die Daten der Altgemeinden finden Sie unter dem jeweiligen Link: | http://www.statistik.at/blickgem/vz7/g62227.pdf Limbach bei Neudau | http://www.statistik.at/b
-  ! austria_census: 62274: merged from ['62227', '64151', '62231'], and ['64151'] could not be read
-      Gemeinde: Neudau   (62274) | Politischer Bezirk: Hartberg-Fürstenfeld   (622) | NUTS 3 Region: Oststeiermark  (AT224) | Bundesland (NUTS 2): Steiermark | Gebietsstandsveränderung seit 1.1.2015. | Zusammenlegung der Gemeinden: | 62227 Limbach bei Neudau (KG Unterlimbach 64151) | 62231 Neudau | Für die Gemeinde 62274 Neudau stehen leider für dieses Datenblatt noch keine Daten zur Verfügung. | Die Daten der Altgemeinden finden Sie unter dem jeweiligen Link: | http://www.statistik.at/blickgem/vz7/g62227.pdf Limbach bei Neudau | http://www.statistik.at/blickgem/vz7/g62231.pdf Neudau | Volkszählung 
-  ! austria_census: the sheet asked for 90101 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 17.056 100,0 7.970 9.086 | in % 100,0 .   46,7 53,3 | bis unter 15 1.671 9,8 832 839 Deutschland 376 2,2 | 15 bis 59 10.596 62,1 5.269 5.327 sonstige EU(15)-Bürger 486 2,8 | 60 und älter 4.789 28,1 1.869 2.920 Bundesrep. Jugoslawien 463 2,7 | Bosnien-Herzegowina 54 0,3 | Kroatien 137 0,8 | bis 4 561 3,3 297 264 Türkei 47 0,3 | 5 bis 9 533 3,1 266 267 sonstige Ausländer 1.071 6,3 | 10 bis 14 577 3,4 269 308 | 15 bis 19 695 4,1 337 358 Nach ausgewählten Geburtsländern | 20 bis 24 853 5,0 438 415 Deutschland 603 3,5 | 25 bis 29 1.066 6,3 519 547 sonstige EU(15)-Staaten 585 3,4 | 30 bis 34 1.283 7,5 643 640 Bundesrep. Jugoslawien 514 3,0 | 35 bis 39 1.276 7,5 650 626 Bosnien-Herzegowina 163 1,0 | 40 bis 44 1.217 7,1 603 614 Kroatien 140 0,8 | 45 bis 49 1.271 7,5 592 679 Türkei 87 0,5 | 50 bis 54 1.430 8,4 728 702 so
-  ! austria_census: the sheet asked for 90201 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 90.914 100,0 44.267 46.647 | in % 100,0 .   48,7 51,3 | bis unter 15 12.829 14,1 6.647 6.182 Deutschland 801 0,9 | 15 bis 59 58.533 64,4 30.066 28.467 sonstige EU(15)-Bürger 991 1,1 | 60 und älter 19.552 21,5 7.554 11.998 Bundesrep. Jugoslawien 6.778 7,5 | Bosnien-Herzegowina 1.682 1,9 | Kroatien 1.213 1,3 | bis 4 4.393 4,8 2.262 2.131 Türkei 3.228 3,6 | 5 bis 9 4.292 4,7 2.223 2.069 sonstige Ausländer 7.799 8,6 | 10 bis 14 4.144 4,6 2.162 1.982 | 15 bis 19 4.401 4,8 2.275 2.126 Nach ausgewählten Geburtsländern | 20 bis 24 5.502 6,1 2.751 2.751 Deutschland 1.457 1,6 | 25 bis 29 6.830 7,5 3.411 3.419 sonstige EU(15)-Staaten 1.175 1,3 | 30 bis 34 8.117 8,9 4.193 3.924 Bundesrep. Jugoslawien 6.693 7,4 | 35 bis 39 8.251 9,1 4.345 3.906 Bosnien-Herzegowina 2.487 2,7 | 40 bis 44 7.287 8,0 3.875 3.412 Kroatien 769 0,8 
-  ! austria_census: the sheet asked for 90301 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 81.281 100,0 38.113 43.168 | in % 100,0 .   46,9 53,1 | bis unter 15 10.771 13,3 5.471 5.300 Deutschland 950 1,2 | 15 bis 59 52.385 64,4 25.948 26.437 sonstige EU(15)-Bürger 1.032 1,3 | 60 und älter 18.125 22,3 6.694 11.431 Bundesrep. Jugoslawien 4.204 5,2 | Bosnien-Herzegowina 1.070 1,3 | Kroatien 828 1,0 | bis 4 3.582 4,4 1.843 1.739 Türkei 2.043 2,5 | 5 bis 9 3.597 4,4 1.836 1.761 sonstige Ausländer 4.905 6,0 | 10 bis 14 3.592 4,4 1.792 1.800 | 15 bis 19 3.758 4,6 1.929 1.829 Nach ausgewählten Geburtsländern | 20 bis 24 4.689 5,8 2.290 2.399 Deutschland 1.713 2,1 | 25 bis 29 6.187 7,6 3.035 3.152 sonstige EU(15)-Staaten 1.285 1,6 | 30 bis 34 7.575 9,3 3.783 3.792 Bundesrep. Jugoslawien 4.391 5,4 | 35 bis 39 7.515 9,2 3.784 3.731 Bosnien-Herzegowina 1.714 2,1 | 40 bis 44 6.464 8,0 3.221 3.243 Kroatien 656 0,8 
-  ! austria_census: the sheet asked for 90401 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 28.354 100,0 13.018 15.336 | in % 100,0 .   45,9 54,1 | bis unter 15 3.434 12,1 1.768 1.666 Deutschland 423 1,5 | 15 bis 59 18.041 63,6 8.826 9.215 sonstige EU(15)-Bürger 520 1,8 | 60 und älter 6.879 24,3 2.424 4.455 Bundesrep. Jugoslawien 1.051 3,7 | Bosnien-Herzegowina 229 0,8 | Kroatien 275 1,0 | bis 4 1.144 4,0 582 562 Türkei 295 1,0 | 5 bis 9 1.141 4,0 581 560 sonstige Ausländer 1.561 5,5 | 10 bis 14 1.149 4,1 605 544 | 15 bis 19 1.251 4,4 630 621 Nach ausgewählten Geburtsländern | 20 bis 24 1.477 5,2 745 732 Deutschland 829 2,9 | 25 bis 29 2.168 7,6 1.078 1.090 sonstige EU(15)-Staaten 628 2,2 | 30 bis 34 2.635 9,3 1.333 1.302 Bundesrep. Jugoslawien 1.168 4,1 | 35 bis 39 2.553 9,0 1.276 1.277 Bosnien-Herzegowina 434 1,5 | 40 bis 44 2.263 8,0 1.071 1.192 Kroatien 221 0,8 | 45 bis 49 1.876 6,6 876 1.000 Türke
-  ! austria_census: the sheet asked for 90501 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 49.111 100,0 23.394 25.717 | in % 100,0 .   47,6 52,4 | bis unter 15 7.000 14,3 3.552 3.448 Deutschland 497 1,0 | 15 bis 59 32.440 66,1 16.340 16.100 sonstige EU(15)-Bürger 409 0,8 | 60 und älter 9.671 19,7 3.502 6.169 Bundesrep. Jugoslawien 3.457 7,0 | Bosnien-Herzegowina 1.123 2,3 | Kroatien 748 1,5 | bis 4 2.411 4,9 1.254 1.157 Türkei 2.141 4,4 | 5 bis 9 2.375 4,8 1.200 1.175 sonstige Ausländer 3.040 6,2 | 10 bis 14 2.214 4,5 1.098 1.116 | 15 bis 19 2.262 4,6 1.131 1.131 Nach ausgewählten Geburtsländern | 20 bis 24 3.111 6,3 1.530 1.581 Deutschland 883 1,8 | 25 bis 29 4.348 8,9 2.138 2.210 sonstige EU(15)-Staaten 532 1,1 | 30 bis 34 4.773 9,7 2.438 2.335 Bundesrep. Jugoslawien 3.488 7,1 | 35 bis 39 4.536 9,2 2.348 2.188 Bosnien-Herzegowina 1.683 3,4 | 40 bis 44 3.877 7,9 2.021 1.856 Kroatien 450 0,9 | 45 bis 
-  ! austria_census: the sheet asked for 90601 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 27.867 100,0 13.121 14.746 | in % 100,0 .   47,1 52,9 | bis unter 15 3.464 12,4 1.749 1.715 Deutschland 444 1,6 | 15 bis 59 19.066 68,4 9.499 9.567 sonstige EU(15)-Bürger 426 1,5 | 60 und älter 5.337 19,2 1.873 3.464 Bundesrep. Jugoslawien 1.153 4,1 | Bosnien-Herzegowina 333 1,2 | Kroatien 264 0,9 | bis 4 1.117 4,0 547 570 Türkei 551 2,0 | 5 bis 9 1.111 4,0 577 534 sonstige Ausländer 1.783 6,4 | 10 bis 14 1.236 4,4 625 611 | 15 bis 19 1.340 4,8 709 631 Nach ausgewählten Geburtsländern | 20 bis 24 1.603 5,8 808 795 Deutschland 708 2,5 | 25 bis 29 2.369 8,5 1.148 1.221 sonstige EU(15)-Staaten 519 1,9 | 30 bis 34 2.843 10,2 1.447 1.396 Bundesrep. Jugoslawien 1.190 4,3 | 35 bis 39 2.763 9,9 1.400 1.363 Bosnien-Herzegowina 558 2,0 | 40 bis 44 2.314 8,3 1.119 1.195 Kroatien 213 0,8 | 45 bis 49 2.068 7,4 1.031 1.037 Tü
-  ! austria_census: the sheet asked for 90701 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 28.292 100,0 13.245 15.047 | in % 100,0 .   46,8 53,2 | bis unter 15 3.528 12,5 1.797 1.731 Deutschland 508 1,8 | 15 bis 59 19.596 69,3 9.625 9.971 sonstige EU(15)-Bürger 424 1,5 | 60 und älter 5.168 18,3 1.823 3.345 Bundesrep. Jugoslawien 1.522 5,4 | Bosnien-Herzegowina 468 1,7 | Kroatien 349 1,2 | bis 4 1.203 4,3 628 575 Türkei 681 2,4 | 5 bis 9 1.152 4,1 576 576 sonstige Ausländer 1.749 6,2 | 10 bis 14 1.173 4,1 593 580 | 15 bis 19 1.175 4,2 591 584 Nach ausgewählten Geburtsländern | 20 bis 24 1.759 6,2 881 878 Deutschland 785 2,8 | 25 bis 29 2.568 9,1 1.225 1.343 sonstige EU(15)-Staaten 522 1,8 | 30 bis 34 3.120 11,0 1.571 1.549 Bundesrep. Jugoslawien 1.485 5,2 | 35 bis 39 2.790 9,9 1.437 1.353 Bosnien-Herzegowina 684 2,4 | 40 bis 44 2.451 8,7 1.176 1.275 Kroatien 218 0,8 | 45 bis 49 2.127 7,5 1.018 1.109 Tü
-  ! austria_census: the sheet asked for 90801 is headed None
-      Wien | Merkmal Zusammen % Männer Frauen Merkmal Zusammen % | Wohnbevölkerung 22.572 100,0 10.689 11.883 | in % 100,0 .   47,4 52,6 | bis unter 15 2.574 11,4 1.326 1.248 Deutschland 382 1,7 | 15 bis 59 15.461 68,5 7.719 7.742 sonstige EU(15)-Bürger 464 2,1 | 60 und älter 4.537 20,1 1.644 2.893 Bundesrep. Jugoslawien 831 3,7 | Bosnien-Herzegowina 185 0,8 | Kroatien 178 0,8 | bis 4 878 3,9 462 416 Türkei 242 1,1 | 5 bis 9 851 3,8 438 413 sonstige Ausländer 1.371 6,1 | 10 bis 14 845 3,7 426 419 | 15 bis 19 942 4,2 470 472 Nach ausgewählten Geburtsländern | 20 bis 24 1.524 6,8 800 724 Deutschland 645 2,9 | 25 bis 29 2.092 9,3 1.072 1.020 sonstige EU(15)-Staaten 560 2,5 | 30 bis 34 2.231 9,9 1.153 1.078 Bundesrep. Jugoslawien 895 4,0 | 35 bis 39 2.098 9,3 1.052 1.046 Bosnien-Herzegowina 323 1,4 | 40 bis 44 1.895 8,4 929 966 Kroatien 130 0,6 | 45 bis 49 1.601 7,1 761 840 Türkei 324 1,4 | 50 bis
-austria_census: 25 sheets could not be read: ['62264', '62274', '90101', '90201', '90301', '90401', '90501', '90601', '90701', '90801', '90901', '91001', '91101', '91201', '91301', '91401', '91501', '91601', '91701', '91801', '91901', '92001', '92101', '92201', '92301']
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: religion: 19 people in blanked cells, left out
+  Beltinci: religion: 10 people in blanked cells, left out
+  Beltinci: language: 13 people in blanked cells, left out
+  Benedikt: religion: 3 people in blanked cells, left out
+  Benedikt: language: 6 people in blanked cells, left out
+  Bistrica ob Sotli: religion: 6 people in blanked cells, left out
+  Bistrica ob Sotli: language: 4 people in blanked cells, left out
+  Bled: language: 10 people in blanked cells, left out
+  Bloke: religion: 7 people in blanked cells, left out
+  Bloke: language: 5 people in blanked cells, left out
+  Bohinj: religion: 71 people in blanked cells, left out
+  Bohinj: language: 5 people in blanked cells, left out
+  Borovnica: religion: 70 people in blanked cells, left out
+  Borovnica: language: 11 people in blanked cells, left out
+  Bovec: religion: 21 people in blanked cells, left out
+  Bovec: language: 8 people in blanked cells, left out
+  Braslovče: religion: 17 people in blanked cells, left out
+  Braslovče: language: 9 people in blanked cells, left out
+  Brda: religion: 8 people in blanked cells, left out
+  Brda: language: 21 people in blanked cells, left out
+  Cankova: religion: 86 people in blanked cells, left out
+  Cankova: language: 4 people in blanked cells, left out
+  Cerklje na Gorenjskem: religion: 44 people in blanked cells, left out
+  Cerklje na Gorenjskem: language: 46 people in blanked cells, left out
+  Cerknica: language: 5 people in blanked cells, left out
+  Cerkno: religion: 8 people in blanked cells, left out
+  Cerkno: language: 6 people in blanked cells, left out
+  Cerkvenjak: ethnicity: 28 people in blanked cells, left out
+  Cerkvenjak: religion: 6 people in blanked cells, left out
+  Cerkvenjak: language: 9 people in blanked cells, left out
+  Destrnik: religion: 3 people in blanked cells, left out
+  Destrnik: language: 22 people in blanked cells, left out
+  Divača: religion: 6 people in blanked cells, left out
+  Divača: language: 22 people in blanked cells, left out
+  Dobje: ethnicity: 11 people in blanked cells, left out
+  Dobje: religion: 2 people in blanked cells, left out
+  Dobje: language: 4 people in blanked cells, left out
+  Dobrepolje: religion: 5 people in blanked cells, left out
+  Dobrepolje: language: 16 people in blanked cells, left out
+  Dobrna: ethnicity: 30 people in blanked cells, left out
+  Dobrna: religion: 7 people in blanked cells, left out
+  Dobrna: language: 11 people in blanked cells, left out
+  Dobrovnik/Dobronak: religion: 13 people in blanked cells, left out
+  Dobrovnik/Dobronak: language: 13 people in blanked cells, left out
+  Dol pri Ljubljani: language: 4 people in blanked cells, left out
+  Dolenjske Toplice: religion: 9 people in blanked cells, left out
+  Dolenjske Toplice: language: 4 people in blanked cells, left out
+  Dornava: religion: 8 people in blanked cells, left out
+  Dornava: language: 5 people in blanked cells, left out
+  Dravograd: language: 5 people in blanked cells, left out
+  Duplek: religion: 5 people in blanked cells, left out
+  Duplek: language: 6 people in blanked cells, left out
+  Gorenja vas - Poljane: language: 7 people in blanked cells, left out
+  Gorišnica: religion: 7 people in blanked cells, left out
+  Gorišnica: language: 8 people in blanked cells, left out
+  Gornji Grad: religion: 10 people in blanked cells, left out
+  Gornji Petrovci: religion: 2 people in blanked cells, left out
+  Gornji Petrovci: language: 30 people in blanked cells, left out
+  Grad: religion: 2 people in blanked cells, left out
+  Grad: language: 5 people in blanked cells, left out
+  Hajdina: religion: 19 people in blanked cells, left out
+  Hajdina: language: 5 people in blanked cells, left out
+  Hodoš/Hodos: religion: 13 people in blanked cells, left out
+  Hodoš/Hodos: language: 5 people in blanked cells, left out
+  Horjul: religion: 19 people in blanked cells, left out
+  Horjul: language: 5 people in blanked cells, left out
+  Hrastnik: language: 12 people in blanked cells, left out
+  Hrpelje - Kozina: religion: 82 people in blanked cells, left out
+  Hrpelje - Kozina: language: 6 people in blanked cells, left out
+  Idrija: religion: 54 people in blanked cells, left out
+  Idrija: language: 10 people in blanked cells, left out
+  Ig: language: 4 people in blanked cells, left out
+  Jezersko: religion: 9 people in blanked cells, left out
+  Jezersko: language: 5 people in blanked cells, left out
+  Juršinci: ethnicity: 155 people in blanked cells, left out
+  Juršinci: religion: 2 people in blanked cells, left out
+  Juršinci: language: 4 people in blanked cells, left out
+  Kanal: language: 7 people in blanked cells, left out
+  Kidričevo: religion: 6 people in blanked cells, left out
+  Kidričevo: language: 36 people in blanked cells, left out
+  Kobarid: religion: 38 people in blanked cells, left out
+  Kobarid: language: 9 people in blanked cells, left out
+  Kobilje: religion: 4 people in blanked cells, left out
+  Kobilje: language: 19 people in blanked cells, left out
+  Komen: religion: 13 people in blanked cells, left out
+  Komen: language: 4 people in blanked cells, left out
+  Komenda: language: 5 people in blanked cells, left out
+  Kostel: ethnicity: 11 people in blanked cells, left out
+  Kostel: religion: 8 people in blanked cells, left out
+  Kostel: language: 9 people in blanked cells, left out
+  Kozje: religion: 10 people in blanked cells, left out
+  Kozje: language: 11 people in blanked cells, left out
+  Križevci: ethnicity: 42 people in blanked cells, left out
+  Križevci: religion: 4 people in blanked cells, left out
+  Križevci: language: 6 people in blanked cells, left out
+  Kungota: religion: 17 people in blanked cells, left out
+  Kungota: language: 5 people in blanked cells, left out
+  Kuzma: ethnicity: 9 people in blanked cells, left out
+  Kuzma: religion: 6 people in blanked cells, left out
+  Kuzma: language: 7 people in blanked cells, left out
+  Laško: language: 9 people in blanked cells, left out
+  Lenart: religion: 21 people in blanked cells, left out
+  Litija: language: 5 people in blanked cells, left out
+  Ljubno: language: 9 people in blanked cells, left out
+  Ljutomer: language: 10 people in blanked cells, left out
+  Lovrenc na Pohorju: religion: 9 people in blanked cells, left out
+  Lovrenc na Pohorju: language: 6 people in blanked cells, left out
+  Loška dolina: religion: 6 people in blanked cells, left out
+  Loška dolina: language: 11 people in blanked cells, left out
+  Loški Potok: religion: 6 people in blanked cells, left out
+  Loški Potok: language: 75 people in blanked cells, left out
+  Lukovica: religion: 6 people in blanked cells, left out
+  Lukovica: language: 10 people in blanked cells, left out
+  Luče: ethnicity: 11 people in blanked cells, left out
+  Luče: religion: 4 people in blanked cells, left out
+  Luče: language: 6 people in blanked cells, left out
+  Majšperk: religion: 9 people in blanked cells, left out
+  Majšperk: language: 19 people in blanked cells, left out
+  Markovci: religion: 8 people in blanked cells, left out
+  Markovci: language: 6 people in blanked cells, left out
+  Medvode: language: 6 people in blanked cells, left out
+  Metlika: religion: 80 people in blanked cells, left out
+  Metlika: language: 4 people in blanked cells, left out
+  Mežica: language: 16 people in blanked cells, left out
+  Miren - Kostanjevica: religion: 75 people in blanked cells, left out
+  Miren - Kostanjevica: language: 11 people in blanked cells, left out
+  Mirna Peč: ethnicity: 36 people in blanked cells, left out
+  Mirna Peč: religion: 5 people in blanked cells, left out
+  Mirna Peč: language: 7 people in blanked cells, left out
+  Mislinja: religion: 5 people in blanked cells, left out
+  Mislinja: language: 4 people in blanked cells, left out
+  Moravske Toplice: religion: 21 people in blanked cells, left out
+  Moravske Toplice: language: 44 people in blanked cells, left out
+  Moravče: religion: 15 people in blanked cells, left out
+  Moravče: language: 42 people in blanked cells, left out
+  Mozirje: language: 7 people in blanked cells, left out
+  Muta: ethnicity: 65 people in blanked cells, left out
+  Muta: religion: 8 people in blanked cells, left out
+  Muta: language: 4 people in blanked cells, left out
+  Naklo: language: 10 people in blanked cells, left out
+  Nazarje: religion: 24 people in blanked cells, left out
+  Nazarje: language: 4 people in blanked cells, left out
+  Odranci: religion: 4 people in blanked cells, left out
+  Odranci: language: 6 people in blanked cells, left out
+  Oplotnica: religion: 9 people in blanked cells, left out
+  Oplotnica: language: 4 people in blanked cells, left out
+  Ormož: language: 5 people in blanked cells, left out
+  Osilnica: religion: 12 people in blanked cells, left out
+  Osilnica: language: 68 people in blanked cells, left out
+slovenia_census: Osilnica: language rows make 264 and blanked cells 68 of 332
