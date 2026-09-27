@@ -50,6 +50,12 @@ ATHOS = "Agion Oros"
 RESIDENT = ("https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/"
             "7adf2ca4-0baf-7b19-2860-1e7caea81e7f")
 RESIDENT_PAGE = "https://www.statistics.gr/el/2021-census-res-pop-results"
+# Eurostat's Central Macedonia (EL52) holds Mount Athos, which the map draws
+# as a unit of its own; Macedonia-Thrace's figures, summed from EL51 and EL52,
+# say so. Its residents are too few to move them: 0.07% of the head count.
+ATHOS_INSIDE = ("Eurostat's Central Macedonia (EL52) includes Mount Athos, which the map draws as a "
+                "unit of its own: its {total:,} residents (2021 census, all men) are counted in these "
+                "figures, {share:.2%} of them.")
 ATHOS_SOURCE = ("ELSTAT, 2021 Population-Housing Census, resident population by region, "
                 "regional unit and municipality (mon_plith_2021.xlsx)")
 
@@ -95,6 +101,7 @@ def build() -> list[dict[str, Any]]:
     if missing:
         raise SystemExit(f"greece_age: no first-level polygon for {missing}")
     records = []
+    athos_total, athos_men, athos_women = athos()
     for name, regions in ADMINISTRATIONS.items():
         pooled: Counter = Counter()
         men = women = 0.0
@@ -105,6 +112,9 @@ def build() -> list[dict[str, Any]]:
             women += totals[g]["F"]
         median = median_age(pooled)
         shape = admin1[name]
+        inside = (ATHOS_INSIDE.format(total=athos_total, share=athos_total / (men + women))
+                  if "EL52" in regions else None)
+        notes = {"population_note": inside, "sex_ratio_note": inside} if inside else {}
         records.append(record(
             f"GRC-{DATASET}-{shape['id']}", name, level="admin1", parent="GRC", country="GRC",
             match_by="shape_id", shape_id=shape["id"],
@@ -112,14 +122,15 @@ def build() -> list[dict[str, Any]]:
             median_age=measure(median, unit="years", year=year, source=SOURCE),
             median_age_note=("Interpolated within the single year of age that holds the middle "
                              f"person, from Eurostat's population by single year of age of the "
-                             f"regions {', '.join(regions)}, summed."),
+                             f"regions {', '.join(regions)}, summed." + (f" {inside}" if inside else "")),
+            **notes,
             sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females",
                               year=year, source=SOURCE),
             sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE,
                       "url": API.format(dataset=DATASET), "year": year}]))
         log(f"  {name} ({'+'.join(regions)}): {men + women:,.0f}, median {median}, "
             f"{round(100 * men / women, 1)} men per 100 women")
-    total, men, women = athos()
+    total, men, women = athos_total, athos_men, athos_women
     why_age = ("Mount Athos is counted inside the Central Macedonia region by Eurostat, and "
                "ELSTAT's 2021 census tables by age stop at the region, so no age structure is "
                "published for it alone.")
