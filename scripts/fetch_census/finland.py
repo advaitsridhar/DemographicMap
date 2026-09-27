@@ -293,13 +293,14 @@ def main() -> int:
         # confidentiality and come back empty, so the published languages
         # fall a little short of the published total. The shortfall is
         # people whose language is one of the withheld ones: it is added to
-        # "Other language" and counted in the note. The Åland archipelago's
-        # small municipalities lose a hundred people of 1,990 this way; more
-        # than 2% of a sub-region, or 200 people where that is more, is not
+        # "Other language" and counted in the note. Åland's small
+        # municipalities lose the most this way -- 428 of 16,889 in the
+        # countryside sub-region, a hundred of 1,990 in the archipelago; more
+        # than 5% of a sub-region, or 200 people where that is more, is not
         # suppression and stops the run.
         for region, counts in language.items():
             short = language_total[region] - sum(counts.values())
-            if short < -0.5 or short > max(0.02 * language_total[region], 200):
+            if short < -0.5 or short > max(0.05 * language_total[region], 200):
                 raise SystemExit(f"11rm: {names[region]}'s languages make "
                                  f"{sum(counts.values()):,.0f} of {language_total[region]:,.0f}")
             if short > 0.5:

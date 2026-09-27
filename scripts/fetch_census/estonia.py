@@ -106,6 +106,15 @@ DRAWN = {"Alaj": "Alajõe vald", "Kivi": "Kiviõli linn", "K": "Kärla vald", "M
          "Peipsinare vald": "Peipsiääre vald", "Mikitamie vald": "Mikitamäe vald",
          "Jaarva-Jaani": "Järva-Jaani vald"}
 
+# Polygons whose label names a unit the polygon is not, left unbound.
+NOT_THIS = {
+    "Maidla vald": (
+        "labelled Maidla, but it spans 26.81-27.22E and 59.14-59.44N, from Maidla's "
+        "south to the coast at Purtse and around the town of Kiviõli -- the Lüganuse "
+        "parish formed in 2013 from Lüganuse, Maidla and Püssi -- so neither Maidla's "
+        "figures nor Lüganuse's are put on it"),
+}
+
 # Units discontinued between 2012 and 2017 -> the unit they merged into, as
 # (name, kind). Every unit RV0241 marks as discontinued must be here, or the
 # run stops rather than bind a merged unit it does not know is merged.
@@ -129,8 +138,15 @@ COUNTY_ROW = re.compile(r"[A-ZÕÄÖÜŠŽ\- ]+ COUNTY")
 
 
 def split(name: str) -> tuple[str, str]:
-    """'Keila city' / 'Keila linn' -> ('Keila', 'linn'); a bare name -> (name, '')."""
+    """'Keila city' / 'Keila linn' -> ('Keila', 'linn'); a bare name -> (name, '').
+
+    RV0241 lists a small town with its own council as "Vändra rural
+    municipality (town)": a municipality of the town kind, beside the rural
+    municipality of the same name.
+    """
     name = name.strip().rstrip("*").strip()
+    if name.endswith(" rural municipality (town)"):
+        return name[: -len(" rural municipality (town)")].strip(), "alev"
     for suffix, kind in KIND:
         if name.lower().endswith(" " + suffix):
             return name[: -len(suffix)].strip(), kind
@@ -234,9 +250,12 @@ def composition(rows, place: str, var: str, total_code: str, skip: set[str],
             out[code]["__total__"] += value
         elif cat not in skip:
             out[code][relabel(text)] += value
+    # The census tables' categories fall a person or three short of their
+    # totals in a few places (Haabersti: 41,691 of 41,694); more than 0.1%, or
+    # five people, is a misread.
     for code, counts in out.items():
         parts = sum(v for k, v in counts.items() if k != "__total__")
-        if abs(parts - counts["__total__"]) > 0.5:
+        if abs(parts - counts["__total__"]) > max(5, 0.001 * counts["__total__"]):
             raise SystemExit(f"{var} at {code}: categories make {parts:,.0f} of "
                              f"{counts['__total__']:,.0f}")
     return out
@@ -365,6 +384,9 @@ def main() -> int:
     bound: dict[str, str] = {}
     left = []
     for s in shapes:
+        if s["name"] in NOT_THIS:
+            left.append(f"{s['name']} ({parents.get(s['parent'])}): {NOT_THIS[s['name']]}")
+            continue
         base, kind = split(DRAWN.get(s["name"], s["name"]))
         cc = drawn_county[s["id"]]
         if not kind and "vald" in drawn_kinds[(fold(base), cc)]:
