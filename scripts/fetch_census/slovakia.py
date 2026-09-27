@@ -171,14 +171,32 @@ def by_sex(rows: list[tuple[dict[str, tuple[str, str]], float]]
 
 
 def national_ages(rows: list[tuple[dict[str, tuple[str, str]], float]]) -> Counter:
-    """{age: count} for both sexes from om7009rr cells of one territory."""
-    both: Counter = Counter()
+    """{age: count} for both sexes from om7009rr cells of one territory.
+
+    The cube lists single years ("Y37") and open groups ("Y_GE100",
+    "Y_GE110") side by side, the lower open group being a subtotal of the
+    single years above it. Only the open group that starts where the single
+    years stop is a class of its own; the others are left out, and the sum
+    against the total (made by the caller) proves it.
+    """
+    singles: Counter = Counter()
+    opens: Counter = Counter()
     for key, value in rows:
         age_code, sex = key["om7009rr_vek"][0], key["om7009rr_poh"][0]
         if age_code == "Spolu" or sex == "SPOLU":
             continue
-        both[110 if age_code == "Y_GE110" else int(age_code[1:])] += value
-    return both
+        if age_code.startswith("Y_GE"):
+            opens[int(age_code[4:])] += value
+        elif age_code[:1] == "Y" and age_code[1:].isdigit():
+            singles[int(age_code[1:])] += value
+        else:
+            raise SystemExit(f"slovakia: an age code {age_code!r} the reader does not know")
+    top = max(singles) + 1
+    if top not in opens:
+        raise SystemExit(f"slovakia: single years stop at {top - 1} and no open group starts at {top}; "
+                         f"open groups {sorted(opens)}")
+    singles[top] += opens[top]
+    return singles
 
 
 def build(year: int) -> list[dict[str, Any]]:
