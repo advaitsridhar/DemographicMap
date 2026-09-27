@@ -103,15 +103,18 @@ DISTRICTS = {
     "VID": "Vidin", "VRC": "Vratsa", "JAM": "Yambol",
 }
 # The boundary file's spelling where it is not the transliteration.
-ALIASES = {"Georgi Damyanovo": "Georgi Bamyanovo"}
+ALIASES = {"Georgi Damyanovo": "Georgi Bamyanovo", "Dobrich-Selska": "Dobrichka",
+           "Ruzhintsi": "Ruzhinsi", "Strumyani": "Strumyarni"}
 # Municipalities formed since the boundary file's vintage, wholly from one it
 # draws: Sarnitsa was separated from Velingrad in 2015.
 INTO = {"Сърница": "Велинград"}
 
 
 def latin(name: str) -> str:
-    """Official Latin transliteration; -ия at a word's end is -ia."""
-    text = re.sub(r"ия\b", "ia", str(name).strip().lower())
+    """The official Latin transliteration, letter by letter. The Act's -ия to
+    -ia rule for a word's end is not applied: the boundary file writes
+    Provadiya and Dolna Mitropoliya."""
+    text = str(name).strip().lower()
     out = "".join(LATIN.get(c, c) for c in text)
     return "".join(w.capitalize() if w.isalpha() else w for w in re.split(r"(\W+)", out))
 
