@@ -99,6 +99,14 @@ NOTES = {
 }
 
 
+def with_subtotal(cells: dict[str, float], subtotal: str, others: list[str],
+                  total: float) -> dict[str, float]:
+    """The subtotal, rebuilt as the total less the other rows where it is blank and they are not."""
+    if subtotal in cells or any(k not in cells for k in others):
+        return cells
+    return {**cells, subtotal: total - sum(cells[k] for k in others)}
+
+
 def fill_single(cells: dict[str, float], keys: list[str], whole: float | None,
                 name: str) -> tuple[dict[str, float], float]:
     """Rebuild the one blank cell among ``keys`` from their published total.
@@ -216,15 +224,21 @@ def build() -> list[dict[str, Any]]:
         # Blanked cells are rebuilt from the subtotals SiStat publishes beside
         # them: one blank cell in a group is its subtotal less the rest; two or
         # more are left out, and how many people they hold is still known.
-        e, hid_e1 = fill_single(e, ["Declared -Slovenes", "Declared -others"],
-                                e.get("Declared - total"), name)
-        e, hid_e2 = fill_single(e, ["Undeclared", "Did not want to reply", "Unknown"],
-                                total - e["Declared - total"] if "Declared - total" in e else None,
-                                name)
+        e = with_subtotal(e, "Declared - total", ETHNIC_ROWS[2:], total)
+        r = with_subtotal(r, "Declared by religion - total", list(RELIGION)[5:], total)
+        if "Declared - total" in e:
+            e, hid_e1 = fill_single(e, ETHNIC_ROWS[:2], e["Declared - total"], name)
+            e, hid_e2 = fill_single(e, ETHNIC_ROWS[2:], total - e["Declared - total"], name)
+        else:
+            e, hid_e1 = fill_single(e, ETHNIC_ROWS, total, name)
+            hid_e2 = 0.0
         declared = r.get("Declared by religion - total")
-        r, hid_r1 = fill_single(r, list(RELIGION)[:5], declared, name)
-        r, hid_r2 = fill_single(r, list(RELIGION)[5:],
-                                total - declared if declared is not None else None, name)
+        if declared is not None:
+            r, hid_r1 = fill_single(r, list(RELIGION)[:5], declared, name)
+            r, hid_r2 = fill_single(r, list(RELIGION)[5:], total - declared, name)
+        else:
+            r, hid_r1 = fill_single(r, list(RELIGION), total, name)
+            hid_r2 = 0.0
         lang, hid_l = fill_single(lang, list(LANGUAGE), lang.get("Mother tongue - TOTAL"), name)
         for field, hidden in (("ethnicity", hid_e1 + hid_e2), ("religion", hid_r1 + hid_r2),
                               ("language", hid_l)):
