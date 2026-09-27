@@ -216,7 +216,12 @@ def estimate() -> tuple[int, dict[str, float]]:
     geo = next(c for c in variables if c.startswith("region"))
     year = max(variables["year"]["valueTexts"])
     cells = query(T_POP, {geo: [], "year": [year]})
-    return int(year), {key[0]: n for key, n in cells.items() if n is not None}
+    got = {key[0]: n for key, n in cells.items() if n is not None}
+    # The table is in thousands, to one decimal: the country reads about 3,700.
+    if not 1_000 < got.get("Georgia", 0) < 10_000:
+        raise SystemExit(f"georgia: the country's estimate reads {got.get('Georgia')}, "
+                         "not a number of thousands")
+    return int(year), {k: round(n * 1000) for k, n in got.items()}
 
 
 def ages_by_region() -> dict[str, dict[str, Any]]:
@@ -386,7 +391,7 @@ def main() -> int:
     regions = {ESTIMATE_REGION[k]: v for k, v in pop.items() if k in ESTIMATE_REGION}
     if set(regions) != set(REGION):
         raise SystemExit(f"georgia: the estimate's regions are {sorted(regions)}")
-    if abs(sum(regions.values()) - country) > 0.5:
+    if abs(sum(regions.values()) - country) > 50 * len(regions):  # rounded to 100 each
         raise SystemExit(f"georgia: the regions make {sum(regions.values()):,.0f}, the "
                          f"country {country:,.0f}")
     log(f"  estimate for 1 January {year}: {len(regions)} regions make the country's "
@@ -399,7 +404,7 @@ def main() -> int:
             "population": measure(int(regions[census]), year=year,
                                   source=SOURCE.format(table="population as of 1 January "
                                                        "by regions and self-governed units")),
-            "population_note": (f"Geostat's estimate for 1 January {year}"
+            "population_note": (f"Geostat's estimate for 1 January {year}, published in thousands to one decimal"
                                  + (", for the part of the region under the government's "
                                     "control" if name in ("Shida Kartli", "Mtskheta-Mtianeti")
                                     else "") + "."),
@@ -442,6 +447,9 @@ def main() -> int:
         by_name[k] = u["id"]
     units: dict[str, list[str]] = defaultdict(list)     # polygon -> estimate rows
     for label in pop:
+        if label == "C. Tbilisi Municipality":
+            units[by_name["tbilisi"]].append(label)     # a region and a unit at once
+            continue
         if label in ESTIMATE_REGION or label == "Georgia" or label.startswith(("-", "*")):
             continue
         k = fold(label)
@@ -465,11 +473,8 @@ def main() -> int:
             continue
         if k in by_name and label not in census_units[by_name[k]]:
             census_units[by_name[k]].append(label)
-    # Tbilisi is a region and a self-governed unit at once: counted once.
-    for sid, labels in census_units.items():
-        totals = [sex2[l].get("Both sexes") for l in labels]
-        if len(labels) > 1 and len(set(totals)) < len(totals):
-            census_units[sid] = [labels[0]]
+        elif k not in by_name and label not in regions_2014:
+            log(f"  2014 unit {label!r} has no polygon")
     left = []
     for u in admin2:
         sid, name = u["id"], u["name"]
@@ -499,7 +504,7 @@ def main() -> int:
                                        source=SOURCE.format(table="population as of 1 "
                                                             "January by regions and "
                                                             "self-governed units"))
-        values["population_note"] = (f"Geostat's estimate for 1 January {year}: {parts}"
+        values["population_note"] = (f"Geostat's estimate for 1 January {year}, published in thousands to one decimal: {parts}"
                                      + (", the city counted apart and drawn inside this "
                                         "polygon" if len(rows) > 1 else "") + ".")
         cites.append(cite("population", "population as of 1 January by regions and "
