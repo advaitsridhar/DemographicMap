@@ -1,17 +1,53 @@
-uk_mye: local authorities (county / unitary, April 2023)
-  TYPE423 latest: 207 places with both sexes so far
-  TYPE423 latestMINUS1: 218 places with both sexes so far
-uk_mye: the four nations
-  TYPE499 latest: 5 places with both sexes so far
-  TYPE499 latestMINUS1: 7 places with both sexes so far
-  England 2025: 153 places make 58,834,812, its own count
-  Scotland 2025: 32 places make 5,545,500, its own count
-  Wales 2025: 22 places make 3,175,181, its own count
-  Northern Ireland 2024: 11 places make 1,927,855, its own count
-  City of London: The Office for National Statistics estimates City of London at 8,689 (2021), 12,020 (2022), 14,514 (2023), 15,497 (2024), 15,631 (2025): 1.80 times its mid-2021 figure, in the office's own series for the same area, not a change of boundary.
-  220 records (216 local authorities, 4 nations); years {2025: 208, 2024: 12}
-  England: 58,834,812, median 40.6, 962 men per 1,000 women
-  Northern Ireland: 1,927,855, median 40.3, 971 men per 1,000 women
-  Scotland: 5,545,500, median 43.1, 944 men per 1,000 women
-  Wales: 3,175,181, median 43.2, 959 men per 1,000 women
-  wrote data/processed/uk_mye.json (396 kB)
+italy_language_survey: 23 rows; Italy 57,230 thousand persons aged 6 and over
+  Abruzzo: 2.2% for an estimate of 750,000 persons, the precision of a simple random sample of about 1,400 persons.
+  Basilicata: 2.9% for an estimate of 300,000 persons, the precision of a simple random sample of about 980 persons.
+  Calabria: 2.3% for an estimate of 1,000,000 persons, the precision of a simple random sample of about 1,640 persons.
+  Campania: 1.9% for an estimate of 3,000,000 persons, the precision of a simple random sample of about 2,320 persons.
+  Emilia-Romagna: 2.0% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,730 persons.
+  Friuli Venezia Giulia: 2.8% for an estimate of 500,000 persons, the precision of a simple random sample of about 1,670 persons.
+  Lazio: 2.1% for an estimate of 3,000,000 persons, the precision of a simple random sample of about 1,920 persons.
+  Liguria: 2.5% for an estimate of 750,000 persons, the precision of a simple random sample of about 1,600 persons.
+  Lombardia: 1.7% for an estimate of 5,000,000 persons, the precision of a simple random sample of about 3,040 persons.
+  Marche: 2.2% for an estimate of 750,000 persons, the precision of a simple random sample of about 1,960 persons.
+  Molise: 3.7% for an estimate of 100,000 persons, the precision of a simple random sample of about 1,450 persons.
+  Piemonte: 2.0% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,700 persons.
+  Puglia: 1.9% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,580 persons.
+  Sardegna: 2.4% for an estimate of 750,000 persons, the precision of a simple random sample of about 1,920 persons.
+  Sicilia: 2.4% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,420 persons.
+  Toscana: 1.9% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,140 persons.
+  Trentino-Alto Adige: 2.2% for an estimate of 400,000 persons, the precision of a simple random sample of about 3,010 persons.
+  Umbria: 2.9% for an estimate of 400,000 persons, the precision of a simple random sample of about 1,320 persons.
+  Valle d'Aosta: 3.1% for an estimate of 60,000 persons, the precision of a simple random sample of about 1,040 persons.
+  Veneto: 2.1% for an estimate of 2,000,000 persons, the precision of a simple random sample of about 2,970 persons.
+  Nord-Ovest: 1.3% for an estimate of 7,500,000 persons, the precision of a simple random sample of about 6,050 persons.
+  Nord-Est: 1.2% for an estimate of 5,000,000 persons, the precision of a simple random sample of about 8,250 persons.
+  Centro: 1.4% for an estimate of 5,000,000 persons, the precision of a simple random sample of about 6,520 persons.
+  Sud: 1.0% for an estimate of 7,500,000 persons, the precision of a simple random sample of about 7,800 persons.
+  Isole: 1.8% for an estimate of 3,000,000 persons, the precision of a simple random sample of about 3,470 persons.
+  admin2 Abruzzo: Italian and local dialect 44.5%, Italian 34.7, Italian dialects 13.8, Other language 6.1, Not stated 0.6, Other 0.3
+  admin2 Basilicata: Italian and local dialect 50.9%, Italian 27.5, Italian dialects 18.5, Other language 2.0, Not stated 0.9, Other 0.2
+  admin2 Calabria: Italian and local dialect 44.5%, Italian 25.3, Italian dialects 24.1, Other language 4.5, Not stated 1.1, Other 0.5
+  admin2 Campania: Italian and local dialect 48.9%, Italian dialects 26.3, Italian 20.7, Other language 3.2, Not stated 0.6, Other 0.3
+  admin2 Emilia-Romagna: Italian 55.6%, Italian and local dialect 27.5, Other language 9.4, Italian dialects 6.5, Other 0.6, Not stated 0.4
+  admin2 Friuli Venezia Giulia: Italian 40.9%, Italian and local dialect 24.7, Other language 23.9, Italian dialects 9.9, Not stated 0.5, Other 0.1
+  admin2 Lazio: Italian 59.2%, Italian and local dialect 25.5, Italian dialects 7.3, Other language 7.1, Not stated 0.8, Other 0.1
+  admin2 Liguria: Italian 70.1%, Italian and local dialect 15.2, Italian dialects 8.2, Other language 5.8, Not stated 0.5, Other 0.2
+  admin2 Lombardia: Italian 59.8%, Italian and local dialect 26.1, Other language 7.5, Italian dialects 5.6, Not stated 0.6, Other 0.4
+  admin2 Marche: Italian and local dialect 40.0%, Italian 35.5, Italian dialects 16.3, Other language 7.5, Not stated 0.6, Other 0.1
+  admin2 Molise: Italian 38.1%, Italian and local dialect 37.9, Italian dialects 18.8, Other language 4.3, Not stated 0.7, Other 0.2
+  admin2 Piemonte: Italian 61.4%, Italian and local dialect 24.4, Italian dialects 7.8, Other language 5.9, Other 0.3, Not stated 0.2
+  admin2 Puglia: Italian and local dialect 46.6%, Italian 34.5, Italian dialects 15.8, Other language 2.0, Not stated 0.8, Other 0.3
+  admin2 Sardegna: Italian 52.1%, Italian and local dialect 31.5, Other language 15.0, Italian dialects 0.6, Not stated 0.6, Other 0.2
+  admin2 Sicilia: Italian and local dialect 43.3%, Italian 26.6, Italian dialects 25.5, Other language 3.6, Not stated 0.9, Other 0.1
+  admin2 Toscana: Italian 74.9%, Italian and local dialect 15.1, Other language 6.8, Italian dialects 2.3, Not stated 0.5, Other 0.4
+  admin2 Trentino-Alto Adige: Local dialect (Italian or German) 38.4%, Italian 28.2, Italian and local dialect 16.4, Other language 16.1, Not stated 0.5, Other 0.4
+  admin2 Umbria: Italian 45.2%, Italian and local dialect 30.4, Italian dialects 14.9, Other language 8.1, Not stated 0.7, Other 0.7
+  admin2 Valle d'Aosta: Italian 64.1%, Italian and local dialect 16.6, Other language 14.3, Italian dialects 3.2, Other 1.2, Not stated 0.6
+  admin2 Veneto: Italian and local dialect 31.4%, Italian dialects 30.6, Italian 28.5, Other language 9.0, Other 0.3, Not stated 0.2
+  admin1 Nord-Ovest: Italian 61.3%, Italian and local dialect 24.5, Other language 6.9, Italian dialects 6.4, Not stated 0.5, Other 0.4
+  admin1 Nord-Est: Italian 40.1%, Italian and local dialect 27.9, Local dialect (Italian or German) 19.9, Other language 11.4, Other 0.4, Not stated 0.3
+  admin1 Centro: Italian 60.0%, Italian and local dialect 24.5, Italian dialects 7.5, Other language 7.1, Not stated 0.7, Other 0.2
+  admin1 Sud: Italian and local dialect 47.0%, Italian 27.3, Italian dialects 21.3, Other language 3.3, Not stated 0.7, Other 0.3
+  admin1 Isole: Italian and local dialect 40.4%, Italian 32.9, Italian dialects 19.3, Other language 6.4, Not stated 0.8, Other 0.1
+  wrote data/processed/italy_language_survey.json (72 kB)
+  25 records (20 regions, 5 ripartizioni)
