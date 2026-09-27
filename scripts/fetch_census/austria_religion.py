@@ -88,7 +88,7 @@ def read() -> dict[str, dict[str, float]]:
         columns[land] = hits[0]
     out: dict[str, dict[str, float]] = {land: {} for land in columns}
     for r in rows[head_at + 1:]:
-        if r and r[0].startswith("in Prozent"):
+        if any("Prozent" in c for c in r):
             break                       # the absolute block ends where the shares begin
         if not r or not r[0]:
             continue
@@ -97,6 +97,8 @@ def read() -> dict[str, dict[str, float]]:
             if re.search(r"\d", "".join(r[1:])):
                 raise SystemExit(f"austria_religion: a row this reader does not know: {r[:3]}")
             continue
+        if key in out["Österreich"]:
+            raise SystemExit(f"austria_religion: {r[0]!r} met twice before the shares")
         for land, j in columns.items():
             out[land][key] = thousands(r[j])
     return out
