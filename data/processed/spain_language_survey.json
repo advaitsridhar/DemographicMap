@@ -1,5 +1,340 @@
 [
   {
+    "id": "ESP-IGE-LANG-12",
+    "level": "admin1",
+    "name": "Galicia",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish only",
+        "pct": 29.7,
+        "count": 754879
+      },
+      {
+        "group": "Galician only",
+        "pct": 24.4,
+        "count": 620137
+      },
+      {
+        "group": "Mostly Spanish",
+        "pct": 24.1,
+        "count": 613540
+      },
+      {
+        "group": "Mostly Galician",
+        "pct": 21.9,
+        "count": 556328
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged 5 and over by the language they usually speak (table 2953)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004",
+        "year": 2023,
+        "license": "IGE (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "25490228B94236519555378",
+    "codes": {
+      "ine_ccaa": "12"
+    },
+    "language_year": 2023,
+    "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+    "language_note": "The IGE's household survey on knowledge and use of Galician, 2023: residents of Galicia aged 5 and over (2,544,885 people aged 5 and over) by the language they usually speak -- always Galician, more Galician than Spanish, more Spanish than Galician, or always Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia and each province and does not publish the respondents per province. INE's census does not ask language."
+  },
+  {
+    "id": "ESP-IGE-LANG-15",
+    "level": "admin2",
+    "name": "Coruna",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish only",
+        "pct": 33.5,
+        "count": 356978
+      },
+      {
+        "group": "Galician only",
+        "pct": 27.9,
+        "count": 297227
+      },
+      {
+        "group": "Mostly Spanish",
+        "pct": 21.0,
+        "count": 223841
+      },
+      {
+        "group": "Mostly Galician",
+        "pct": 17.5,
+        "count": 186708
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged 5 and over by the language they usually speak (table 2953)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004",
+        "year": 2023,
+        "license": "IGE (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B51396366921995",
+    "codes": {
+      "ine_province": "15"
+    },
+    "language_year": 2023,
+    "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+    "language_note": "The IGE's household survey on knowledge and use of Galician, 2023: residents of Coruna aged 5 and over (1,064,755 people aged 5 and over) by the language they usually speak -- always Galician, more Galician than Spanish, more Spanish than Galician, or always Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia and each province and does not publish the respondents per province. INE's census does not ask language."
+  },
+  {
+    "id": "ESP-IGE-LANG-27",
+    "level": "admin2",
+    "name": "Lugo",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Galician only",
+        "pct": 42.8,
+        "count": 129887
+      },
+      {
+        "group": "Mostly Galician",
+        "pct": 23.8,
+        "count": 72378
+      },
+      {
+        "group": "Mostly Spanish",
+        "pct": 17.5,
+        "count": 53117
+      },
+      {
+        "group": "Spanish only",
+        "pct": 15.9,
+        "count": 48326
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged 5 and over by the language they usually speak (table 2953)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004",
+        "year": 2023,
+        "license": "IGE (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B81853390501709",
+    "codes": {
+      "ine_province": "27"
+    },
+    "language_year": 2023,
+    "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+    "language_note": "The IGE's household survey on knowledge and use of Galician, 2023: residents of Lugo aged 5 and over (303,708 people aged 5 and over) by the language they usually speak -- always Galician, more Galician than Spanish, more Spanish than Galician, or always Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia and each province and does not publish the respondents per province. INE's census does not ask language."
+  },
+  {
+    "id": "ESP-IGE-LANG-32",
+    "level": "admin2",
+    "name": "Ourense",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Mostly Galician",
+        "pct": 32.8,
+        "count": 92394
+      },
+      {
+        "group": "Galician only",
+        "pct": 24.9,
+        "count": 70231
+      },
+      {
+        "group": "Mostly Spanish",
+        "pct": 23.9,
+        "count": 67239
+      },
+      {
+        "group": "Spanish only",
+        "pct": 18.4,
+        "count": 51958
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged 5 and over by the language they usually speak (table 2953)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004",
+        "year": 2023,
+        "license": "IGE (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B32314821802104",
+    "codes": {
+      "ine_province": "32"
+    },
+    "language_year": 2023,
+    "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+    "language_note": "The IGE's household survey on knowledge and use of Galician, 2023: residents of Ourense aged 5 and over (281,822 people aged 5 and over) by the language they usually speak -- always Galician, more Galician than Spanish, more Spanish than Galician, or always Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia and each province and does not publish the respondents per province. INE's census does not ask language."
+  },
+  {
+    "id": "ESP-IGE-LANG-36",
+    "level": "admin2",
+    "name": "Pontevedra",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish only",
+        "pct": 33.3,
+        "count": 297616
+      },
+      {
+        "group": "Mostly Spanish",
+        "pct": 30.1,
+        "count": 269343
+      },
+      {
+        "group": "Mostly Galician",
+        "pct": 22.9,
+        "count": 204848
+      },
+      {
+        "group": "Galician only",
+        "pct": 13.7,
+        "count": 122792
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged 5 and over by the language they usually speak (table 2953)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004",
+        "year": 2023,
+        "license": "IGE (attribution)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B43695015348250",
+    "codes": {
+      "ine_province": "36"
+    },
+    "language_year": 2023,
+    "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+    "language_note": "The IGE's household survey on knowledge and use of Galician, 2023: residents of Pontevedra aged 5 and over (894,599 people aged 5 and over) by the language they usually speak -- always Galician, more Galician than Spanish, more Spanish than Galician, or always Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia and each province and does not publish the respondents per province. INE's census does not ask language."
+  },
+  {
     "id": "ESP-EULP-CAT",
     "level": "admin1",
     "name": "Cataluña/Catalunya",

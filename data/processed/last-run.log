@@ -1,21 +1,8 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/georgia.py", line 526, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/georgia.py", line 365, in main
-    year, pop = estimate()
-                ^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/georgia.py", line 204, in estimate
-    cells = query(T_POP, {geo: [], "year": [year]})
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/georgia.py", line 179, in query
-    got = http_json(BASE + urllib.parse.quote(path), body)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 290, in http_json
-    return json.loads(resp.read().decode("utf-8", "replace"))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/__init__.py", line 335, in loads
-    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
-json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+  admin1 Galicia: Spanish only 29.7, Galician only 24.4, Mostly Spanish 24.1, Mostly Galician 21.9
+  admin2 Coruna: Spanish only 33.5, Galician only 27.9, Mostly Spanish 21.0, Mostly Galician 17.5
+  admin2 Lugo: Galician only 42.8, Mostly Galician 23.8, Mostly Spanish 17.5, Spanish only 15.9
+  admin2 Ourense: Mostly Galician 32.8, Galician only 24.9, Mostly Spanish 23.9, Spanish only 18.4
+  admin2 Pontevedra: Spanish only 33.3, Mostly Spanish 30.1, Mostly Galician 22.9, Galician only 13.7
+  admin1 Cataluña/Catalunya: Spanish 46.5, Catalan 32.6, Catalan and Spanish 9.4, Spanish and another language 4.1, Other language 3.4, Not stated 1.5, Arabic 1.1, Catalan and another language 0.8, Other language combinations 0.4, Catalan, Spanish and another language 0.3, Aranese Occitan 0.0
+  wrote data/processed/spain_language_survey.json (13 kB)
+  6 records
