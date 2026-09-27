@@ -165,7 +165,12 @@ def get(var: str, geo: str) -> list[dict[str, Any]]:
     url = API.format(var=var, geo=geo)
     for attempt in range(6):
         try:
-            payload = http_json(url, cache=True, retries=3, timeout=180)
+            # Only the first try may read the cache: an answer without data
+            # is cached like any other, and retrying from the cache read the
+            # same bad answer six times.
+            payload = http_json(url, cache=attempt == 0, retries=3, timeout=180)
+            if not (isinstance(payload, list) and payload and "Dados" in payload[0]):
+                raise ValueError(f"no data in INE's answer: {str(payload)[:160]}")
             rows = payload[0]["Dados"][str(YEAR)]
             if not rows:
                 raise SystemExit(f"portugal_census: {var} {geo}: no rows")
