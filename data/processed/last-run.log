@@ -1,23 +1,9 @@
-austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
-  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
-  2115 municipalities
-  62280: no 2001 sheet; district 622's unclaimed sheets [('62201', 'Altenmarkt bei Fürstenfeld'), ('62212', 'Fürstenfeld'), ('62252', 'Söchau'), ('62258', 'Übersbach')] are its parts
-  135 municipalities formed by mergers since 2001, read as the sheets of their parts; 2372 municipalities of 2001 in all; listed by two of today's (split by cadastral community, counted once): ['61040', '62227', '62248', '62336', '62347', '62349']
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 344, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 337, in main
-    records = build(args.year, args.workers)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 278, in build
-    check_sum((p["total"] for _, p in counted.values()), NATIONAL_2001,
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/central_ages.py", line 117, in check_sum
-    summed = sum(parts)
-             ^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 278, in <genexpr>
-    check_sum((p["total"] for _, p in counted.values()), NATIONAL_2001,
-               ~^^^^^^^^^
-KeyError: 'total'
+albania_census: INSTAT, 2023 census by prefecture
+  ethnicity: 12 prefectures; hidden cells in 0
+  religion: 12 prefectures; hidden cells in 0
+  language: 12 prefectures; hidden cells in 0
+  Berat: 140,956; Albanian 71.6, Not stated 26.4, Balkan Egyptian 0.7
+  Dibër: 107,178; Albanian 81.5, Not stated 15.9, Bulgarian 1.6
+  Durrës: 226,863; Albanian 91.9, Not stated 5.2, Bosniak 1.1
+  Elbasan: 232,580; Albanian 89.9, Not stated 7.2, Balkan Egyptian 1.4
+albania_census: no single polygon for the prefecture 'fierprefecturefier'; polygons ['berat', 'diber', 'durres', 'elbasan', 'fier', 'gjirokaster', 'korce', 'kukes', 'lezhe', 'shkoder', 'tirane', 'vlore']
