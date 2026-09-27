@@ -1,32 +1,330 @@
-== https://imsee.mc/en/thematics/population/population-census
-  Population census                                                                          /en/thematics/population/population-census
-  Population census                                                                          /en/thematics/population/population-census
-  PDF 493.4 kB 2025 Census Report                                                            /en/content/download/310026/file/2025%20Census%20Report.pdf?inLanguage=eng-GB&amp;version=4
-  XLSX 20 kB 2025 Census Nationalities distribution                                          /en/content/download/310151/file/IMSEE-2025%20Census_Nationalities.xlsx?inLanguage=eng-GB&amp;version=3
-  Population census                                                                          /en/thematics/population/publications/population-census
-  5 of 98 links shown
-== https://www.statistica.sm/pub1/StatisticaSM/Dati-statistici/Popolazione/Struttura-Demografica.html
-  Popolazione                                                                                /pub1/StatisticaSM/Dati-statistici/Popolazione.html
-  Struttura Demografica                                                                      /pub1/StatisticaSM/Dati-statistici/Popolazione/Struttura-Demografica.html
-  Dinamica demografica                                                                       /pub1/StatisticaSM/Dati-statistici/Popolazione/Dinamica-demografica.html
-  Famiglie                                                                                   /pub1/StatisticaSM/Dati-statistici/Popolazione/Famiglie.html
-  Salute e Previdenza Sociale                                                                /pub1/StatisticaSM/Dati-statistici/Popolazione/Salute-e-Previdenza-Sociale.html
-  Educazione                                                                                 /pub1/StatisticaSM/Dati-statistici/Popolazione/Educazione.html
-  Sammarinesi residenti all'estero                                                           /pub1/StatisticaSM/Dati-statistici/Popolazione/Sammarinesi-residenti-all-estero.html
-  Curiosità                                                                                  /pub1/StatisticaSM/Dati-statistici/Popolazione/Curiosità.html
-  La popolazione scolastica sammarinese                                                      /pub1/StatisticaSM/Pubblicazioni/La-popolazione-scolastica-sammarinese.html
-  ENG                                                                                        /pub1/StatisticaSM/en/Dati-statistici/Popolazione/Struttura-Demografica.html
-  Popolazione                                                                                /pub1/StatisticaSM/Dati-statistici/Popolazione.html
-  Bilancio_Demografico                                                                       /pub1/StatisticaSM/dam/jcr:a008d0e1-b963-43c6-afbd-848f04e99851/Bilancio_Demografico.xlsx
-  Pop_Anno_Eta_Pos                                                                           /pub1/StatisticaSM/dam/jcr:45790a21-d920-45de-b931-1836dc4fb29d/Pop_Anno_Eta_Pos.xlsx
-  popolazione_presente_per_cittadinanza                                                      /pub1/StatisticaSM/dam/jcr:f5d8e781-3266-4fd3-9d67-852950373b3f/popolazione_presente_per_cittadinanza.xlsx
-  popolazione_residente_per_castello                                                         /pub1/StatisticaSM/dam/jcr:f2871962-4ff6-4672-b42a-52fb0d539877/popolazione_residente_per_castello.xlsx
-  15 of 61 links shown
-== https://statdb.nso.gov.mt/
-  0 of 0 links shown
-== https://census2021.gov.mt/
-  retry 1/2 after 2s :: https://census2021.gov.mt/ :: <urlopen error [Errno -2] Name or service not known>
-  retry 2/2 after 4s :: https://census2021.gov.mt/ :: <urlopen error [Errno -2] Name or service not known>
-  RuntimeError: GET failed after 2 retries: https://census2021.gov.mt/
-== http://archive.org/wayback/available?url=nso.gov.mt/census-of-population-and-housing-2021
-  0 of 0 links shown
+== https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE423&date=latest&gender=0&c_age=200&measures=20100&select=date_name,geography_code,geography_name,obs_value
+  8,915 bytes; starts b'"DATE_NA'
+  "DATE_NAME","GEOGRAPHY_CODE","GEOGRAPHY_NAME","OBS_VALUE"
+  "2025","E06000001","Hartlepool",99656
+  "2025","E06000002","Middlesbrough",152795
+  "2025","E06000003","Redcar and Cleveland",139541
+  "2025","E06000004","Stockton-on-Tees",207158
+  "2025","E06000005","Darlington",113402
+  "2025","E06000047","County Durham",539146
+  "2025","E06000057","Northumberland",333975
+  "2025","E08000021","Newcastle upon Tyne",320838
+  "2025","E08000022","North Tyneside",215401
+  "2025","E08000023","South Tyneside",151255
+  "2025","E08000024","Sunderland",287070
+  "2025","E08000037","Gateshead",202509
+  "2025","E06000006","Halton",131912
+  "2025","E06000007","Warrington",215425
+  "2025","E06000008","Blackburn with Darwen",163801
+  "2025","E06000009","Blackpool",143492
+  "2025","E06000049","Cheshire East",425459
+  "2025","E06000050","Cheshire West and Chester",373951
+  "2025","E06000063","Cumberland",282343
+  "2025","E06000064","Westmorland and Furness",231307
+  "2025","E08000001","Bolton",309732
+  "2025","E08000002","Bury",199271
+  "2025","E08000003","Manchester",588256
+  "2025","E08000004","Oldham",251915
+  "2025","E08000005","Rochdale",237641
+  "2025","E08000006","Salford",297004
+  "2025","E08000007","Stockport",304879
+  "2025","E08000008","Tameside",240822
+  "2025","E08000009","Trafford",240981
+  "2025","E08000010","Wigan",347089
+  "2025","E08000011","Knowsley",163723
+  "2025","E08000012","Liverpool",507915
+  "2025","E08000013","St. Helens",189890
+  "2025","E08000014","Sefton",287583
+  "2025","E08000015","Wirral",329896
+  "2025","E10000017","Lancashire",1308567
+  "2025","E06000010","Kingston upon Hull, City of",273257
+  "2025","E06000011","East Riding of Yorkshire",360334
+  "2025","E06000012","North East Lincolnshire",160101
+  "2025","E06000013","North Lincolnshire",171421
+  "2025","E06000014","York",209118
+  "2025","E06000065","North Yorkshire",639133
+  "2025","E08000016","Barnsley",252784
+  "2025","E08000017","Doncaster",323016
+  "2025","E08000018","Rotherham",279161
+  "2025","E08000019","Sheffield",579517
+  "2025","E08000032","Bradford",557758
+  "2025","E08000033","Calderdale",210734
+  "2025","E08000034","Kirklees",445832
+  "2025","E08000035","Leeds",840550
+  "2025","E08000036","Wakefield",369450
+  "2025","E06000015","Derby",275344
+  "2025","E06000016","Leicester",383116
+  "2025","E06000017","Rutland",41629
+  "2025","E06000018","Nottingham",325765
+  "2025","E06000061","North Northamptonshire",379569
+  "2025","E06000062","West Northamptonshire",444218
+  "2025","E10000007","Derbyshire",827217
+  "2025","E10000018","Leicestershire",752448
+  "2025","E10000019","Lincolnshire",794009
+  "2025","E10000024","Nottinghamshire",862326
+  "2025","E06000019","Herefordshire, County of",192539
+  "2025","E06000020","Telford and Wrekin",199378
+  "2025","E06000021","Stoke-on-Trent",272282
+  "2025","E06000051","Shropshire",333162
+  "2025","E08000025","Birmingham",1176960
+  "2025","E08000026","Coventry",364766
+  "2025","E08000027","Dudley",333941
+  "2025","E08000028","Sandwell",352918
+  "2025","E08000029","Solihull",221449
+  "2025","E08000030","Walsall",295722
+  "2025","E08000031","Wolverhampton",281434
+  "2025","E10000028","Staffordshire",913073
+  "2025","E10000031","Warwickshire",644021
+  "2025","E10000034","Worcestershire",624209
+  "2025","E06000031","Peterborough",224757
+  "2025","E06000032","Luton",236380
+  "2025","E06000033","Southend-on-Sea",185214
+  "2025","E06000034","Thurrock",181664
+  "2025","E06000055","Bedford",196398
+  "2025","E06000056","Central Bedfordshire",321605
+  "2025","E10000003","Cambridgeshire",716983
+  "2025","E10000012","Essex",1576125
+  "2025","E10000015","Hertfordshire",1239398
+  "2025","E10000020","Norfolk",945427
+  "2025","E10000029","Suffolk",789850
+  "2025","E09000001","City of London",15631
+  "2025","E09000002","Barking and Dagenham",238295
+  "2025","E09000003","Barnet",408087
+  "2025","E09000004","Bexley",257103
+  "2025","E09000005","Brent",352201
+  "2025","E09000006","Bromley",336048
+  "2025","E09000007","Camden",216658
+  "2025","E09000008","Croydon",410085
+  "2025","E09000009","Ealing",387072
+  "2025","E09000010","Enfield",329400
+  "2025","E09000011","Greenwich",301225
+  "2025","E09000012","Hackney",266241
+  "2025","E09000013","Hammersmith and Fulham",190216
+  "2025","E09000014","Haringey",266218
+  "2025","E09000015","Harrow",272612
+  "2025","E09000016","Havering",280787
+  "2025","E09000017","Hillingdon",326671
+  "2025","E09000018","Hounslow",299486
+  "2025","E09000019","Islington",224551
+  "2025","E09000020","Kensington and Chelsea",145734
+  "2025","E09000021","Kingston upon Thames",172761
+  "2025","E09000022","Lambeth",314298
+  "2025","E09000023","Lewisham",301037
+  "2025","E09000024","Merton",218891
+  "2025","E09000025","Newham",376542
+  "2025","E09000026","Redbridge",321829
+  "2025","E09000027","Richmond upon Thames",196713
+  "2025","E09000028","Southwark",312366
+  "2025","E09000029","Sutton",213972
+  "2025","E09000030","Tower Hamlets",334240
+  "2025","E09000031","Waltham Forest",283713
+  "2025","E09000032","Wandsworth",339859
+  "2025","E09000033","Westminster",212367
+  "2025","E06000035","Medway",292697
+  "2025","E06000036","Bracknell Forest",132145
+  "2025","E06000037","West Berkshire",165523
+  "2025","E06000038","Reading",183762
+  "2025","E06000039","Slough",167450
+  "2025","E06000040","Windsor and Maidenhead",159776
+  "2025","E06000041","Wokingham",189024
+  "2025","E06000042","Milton Keynes",308866
+  "2025","E06000043","Brighton and Hove",284170
+  "2025","E06000044","Portsmouth",211475
+  "2025","E06000045","Southampton",259230
+  "2025","E06000046","Isle of Wight",140777
+  "2025","E06000060","Buckinghamshire",584296
+  "2025","E10000011","East Sussex",561855
+  "2025","E10000014","Hampshire",1451703
+  "2025","E10000016","Kent",1652769
+  "2025","E10000025","Oxfordshire",769831
+  "2025","E10000030","Surrey",1255255
+  "2025","E10000032","West Sussex",921240
+  "2025","E06000022","Bath and North East Somerset",200898
+  "2025","E06000023","Bristol, City of",495260
+  "2025","E06000024","North Somerset",227160
+  "2025","E06000025","South Gloucestershire",308787
+  "2025","E06000026","Plymouth",271361
+  "2025","E06000027","Torbay",139486
+  "2025","E06000030","Swindon",245286
+  "2025","E06000052","Cornwall",584782
+  "2025","E06000053","Isles of Scilly",2299
+  "2025","E06000054","Wiltshire",526392
+  "2025","E06000058","Bournemouth, Christchurch and Poole",405829
+  "2025","E06000059","Dorset",391036
+  "2025","E06000066","Somerset",590972
+  "2025","E10000008","Devon",845541
+  "2025","E10000013","Gloucestershire",671908
+  "2025","W06000001","Isle of Anglesey",68607
+  "2025","W06000002","Gwynedd",120295
+  "2025","W06000003","Conwy",114421
+  "2025","W06000004","Denbighshire",98247
+  "2025","W06000005","Flintshire",155954
+  "2025","W06000006","Wrexham",137977
+  "2025","W06000008","Ceredigion",72696
+  "2025","W06000009","Pembrokeshire",125849
+  "2025","W06000010","Carmarthenshire",190037
+  "2025","W06000011","Swansea",249429
+  "2025","W06000012","Neath Port Talbot",142028
+  "2025","W06000013","Bridgend",146986
+  "2025","W06000014","Vale of Glamorgan",135362
+  "2025","W06000015","Cardiff",381516
+  "2025","W06000016","Rhondda Cynon Taf",241015
+  "2025","W06000018","Caerphilly",176078
+  "2025","W06000019","Blaenau Gwent",67593
+  "2025","W06000020","Torfaen",93973
+  "2025","W06000021","Monmouthshire",95329
+  "2025","W06000022","Newport",168584
+  "2025","W06000023","Powys",134843
+  "2025","W06000024","Merthyr Tydfil",58362
+  "2025","S12000005","Clackmannanshire",51610
+  "2025","S12000006","Dumfries and Galloway",145490
+  "2025","S12000008","East Ayrshire",121350
+  "2025","S12000010","East Lothian",116460
+  "2025","S12000011","East Renfrewshire",99840
+  "2025","S12000013","Na h-Eileanan Siar",25770
+  "2025","S12000014","Falkirk",160230
+  "2025","S12000017","Highland",237260
+  "2025","S12000018","Inverclyde",78550
+  "2025","S12000019","Midlothian",100390
+  "2025","S12000020","Moray",94730
+  "2025","S12000021","North Ayrshire",133660
+  "2025","S12000023","Orkney Islands",21920
+  "2025","S12000026","Scottish Borders",116800
+  "2025","S12000027","Shetland Islands",22710
+  "2025","S12000028","South Ayrshire",112280
+  "2025","S12000029","South Lanarkshire",334330
+  "2025","S12000030","Stirling",94040
+  "2025","S12000033","Aberdeen City",230180
+  "2025","S12000034","Aberdeenshire",264640
+  "2025","S12000035","Argyll and Bute",87310
+  "2025","S12000036","City of Edinburgh",531370
+  "2025","S12000038","Renfrewshire",189270
+  "2025","S12000039","West Dunbartonshire",88340
+  "2025","S12000040","West Lothian",187240
+  "2025","S12000041","Angus",114610
+  "2025","S12000042","Dundee City",148390
+  "2025","S12000045","East Dunbartonshire",109550
+  "2025","S12000047","Fife",373990
+  "2025","S12000048","Perth and Kinross",154930
+  "2025","S12000049","Glasgow City",654330
+  "2025","S12000050","North Lanarkshire",343930
+  "2025","N09000001","Antrim and Newtownabbey",
+  "2025","N09000002","Armagh City, Banbridge and Craigavon",
+  "2025","N09000003","Belfast",
+  "2025","N09000004","Causeway Coast and Glens",
+  "2025","N09000005","Derry City and Strabane",
+  "2025","N09000006","Fermanagh and Omagh",
+  "2025","N09000007","Lisburn and Castlereagh",
+  "2025","N09000008","Mid and East Antrim",
+  "2025","N09000009","Mid Ulster",
+  "2025","N09000010","Newry, Mourne and Down",
+  "2025","N09000011","Ards and North Down",
+== https://www.nomisweb.co.uk/api/v01/dataset/NM_2043_1.data.csv?geography=K04000001&measures=20100&select=geography_name,c2021_mainlangprf_95_name,obs_value
+  2,891 bytes; starts b'"GEOGRAP'
+  "GEOGRAPHY_NAME","C2021_MAINLANGPRF_95_NAME","OBS_VALUE"
+  "England and Wales",,57704270
+  "England and Wales",,52569816
+  "England and Wales",,7349
+  "England and Wales",,4239
+  "England and Wales",,736
+  "England and Wales",,169
+  "England and Wales",,8
+  "England and Wales",,263
+  "England and Wales",,567
+  "England and Wales",,538
+  "England and Wales",,16
+  "England and Wales",,1906
+  "England and Wales",,36
+  "England and Wales",,120259
+  "England and Wales",,224719
+  "England and Wales",,215062
+  "England and Wales",,1858314
+  "England and Wales",,160010
+  "England and Wales",,46421
+  "England and Wales",,611845
+  "England and Wales",,49924
+  "England and Wales",,30028
+  "England and Wales",,471954
+  "England and Wales",,119656
+  "England and Wales",,38359
+  "England and Wales",,87356
+  "England and Wales",,111431
+  "England and Wales",,76675
+  "England and Wales",,19064
+  "England and Wales",,12503
+  "England and Wales",,6020
+  "England and Wales",,4741
+  "England and Wales",,2640
+  "England and Wales",,2360
+  "England and Wales",,1490
+  "England and Wales",,5837
+  "England and Wales",,74653
+  "England and Wales",,52328
+  "England and Wales",,14088
+  "England and Wales",,357
+  "England and Wales",,7880
+  "England and Wales",,18006
+  "England and Wales",,18006
+  "England and Wales",,5516
+  "England and Wales",,160
+  "England and Wales",,5356
+  "England and Wales",,91255
+  "England and Wales",,112978
+  "England and Wales",,203998
+  "England and Wales",,219402
+  "England and Wales",,6672
+  "England and Wales",,66443
+  "England and Wales",,87713
+  "England and Wales",,48705
+  "England and Wales",,9869
+  "England and Wales",,1374141
+  "England and Wales",,269849
+  "England and Wales",,51260
+  "England and Wales",,290745
+  "England and Wales",,22798
+  "England and Wales",,199495
+  "England and Wales",,188956
+  "England and Wales",,11022
+  "England and Wales",,31249
+  "England and Wales",,125363
+  "England and Wales",,65008
+  "England and Wales",,13013
+  "England and Wales",,74368
+  "England and Wales",,31015
+  "England and Wales",,361709
+  "England and Wales",,30820
+  "England and Wales",,55555
+  "England and Wales",,118271
+  "England and Wales",,22548
+  "England and Wales",,12117
+  "England and Wales",,18518
+  "England and Wales",,22966
+  "England and Wales",,8014
+  "England and Wales",,60899
+  "England and Wales",,12001
+  "England and Wales",,1722
+  "England and Wales",,68
+  "England and Wales",,1778
+  "England and Wales",,145
+  "England and Wales",,1633
+  "England and Wales",,205002
+  "England and Wales",,10834
+  "England and Wales",,22825
+  "England and Wales",,62240
+  "England and Wales",,921
+  "England and Wales",,19757
+  "England and Wales",,9942
+  "England and Wales",,11074
+  "England and Wales",,10154
+  "England and Wales",,2148
+  "England and Wales",,5492
+  "England and Wales",,10773
+  "England and Wales",,7489
+  "England and Wales",,4435
+  "England and Wales",,12161
+  "England and Wales",,14757
+  "England and Wales",,26738
+  "England and Wales",,21635
+  "England and Wales",,1532
+  "England and Wales",,3571
+  "England and Wales",,7546
