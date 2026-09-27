@@ -16,7 +16,8 @@ municipality merged since. One that has not been takes MAN02005's latest year
 instead: its number, or where it was renumbered (Hornafjörður, 7708 in
 2017) a new number with its name, has a count for 1 January 2018 in today's
 division that is its own of a month before, and it took in no other
-(``ABSORBED``). Single years
+(``ABSORBED``, ``MERGED_RENUMBERED``: Fjarðabyggð and Skagafjörður took in
+neighbours too small to show in the count). Single years
 of age, with an "unknown" row that is left out of the median and kept in the
 population.
 
@@ -70,6 +71,10 @@ REGION = {"0": "Capital Region", "1": "Capital Region", "2": "Southern Peninsula
 # Múlaþing 7400, Skagafjörður 5716, Húnabyggð 5613), or takes one whose count
 # then jumps (the Vesturbyggð of 2024 on Tálknafjarðarhreppur's 4604).
 ABSORBED = {"7300": "Fjarðabyggð took in Breiðdalshreppur in 2018"}
+# Municipalities that took in a small neighbour under a new number carrying
+# their own name, which the name-and-count test below would read as a plain
+# renumbering: Akrahreppur (about 200 people) is 5% of Skagafjörður.
+MERGED_RENUMBERED = {"5200": "Skagafjörður took in Akrahreppur in 2022, as 5716"}
 # Hagstofa's name -> the boundary file's, where they differ by more than
 # accents: two municipalities it calls a town (bær) and the office a
 # kaupstaður or the reverse, and two names the boundary file cuts off.
@@ -77,6 +82,15 @@ ALIASES = {"Hafnarfjarðarkaupstaður": "Hafnarfjarðarbær",
            "Akureyrarbær": "Akureyrarkaupstaður",
            "Sveitarfélagið Hornafjörður": "Sveitarfélagið Hornafjörðu",
            "Sveitarfélagið Skagafjörður": "Sveitarfélagið Skagafjörðu"}
+
+
+def stem(name: str) -> str:
+    """A municipality's name, folded to its first six letters without the
+    generic "Sveitarfélagið". MAN02005 answers in ASCII ("Sveitarfelagid
+    Hornafjordur") where MAN09000 keeps the Icelandic letters, so ð, þ and æ
+    are spelled out before the prefix is taken off."""
+    folded = fold(name).replace("ð", "d").replace("þ", "th").replace("æ", "ae")
+    return re.sub(r"^sveitarfelagid", "", folded)[:6]
 
 
 def read(url: str, year: str) -> tuple[dict[str, AgeSex], dict[str, float], dict[str, str]]:
@@ -150,14 +164,11 @@ def main() -> int:
     def same(c: str, n: str) -> bool:
         return abs(then.get(n, 0) - totals[c]) <= 0.08 * totals[c] + 30
 
-    def stem(name: str) -> str:
-        return fold(re.sub(r"^Sveitarfélagið ", "", name))[:6]
-
     now_units = sorted(c for c, n in now_totals.items() if c != "9999" and n > 0)
     today: dict[str, str] = {}
     kept_number = []
     for c in units:
-        if c in ABSORBED:
+        if c in ABSORBED or c in MERGED_RENUMBERED:
             continue
         if c in now_totals:
             # Its own number: the same territory if the count agrees, else

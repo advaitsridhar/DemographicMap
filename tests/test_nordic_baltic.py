@@ -143,6 +143,18 @@ class Iceland(unittest.TestCase):
         drawn = {u["name"] for u in units("ISL", "admin1")}
         self.assertEqual(set(iceland.REGION.values()), drawn)
 
+    def test_an_ascii_name_finds_its_icelandic_spelling(self):
+        # MAN02005 answers "Sveitarfelagid Hornafjordur" for MAN09000's
+        # "Sveitarfélagið Hornafjörður", renumbered 7708 -> 8401 in 2021.
+        self.assertEqual(iceland.stem("Sveitarfelagid Hornafjordur"),
+                         iceland.stem("Sveitarfélagið Hornafjörður"))
+        self.assertEqual(iceland.stem("Sveitarfélagið Hornafjörður"), "hornaf")
+        self.assertEqual(iceland.stem("Kopavogsbaer"), iceland.stem("Kópavogsbær"))
+
+    def test_a_merger_under_its_own_name_is_not_a_renumbering(self):
+        self.assertIn("5200", iceland.MERGED_RENUMBERED)
+        self.assertTrue(set(iceland.MERGED_RENUMBERED).isdisjoint(iceland.ABSORBED))
+
 
 class Estonia(unittest.TestCase):
     def test_kind_words_come_off(self):

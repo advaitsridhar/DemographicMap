@@ -409,6 +409,36 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 13: the register keepers' own tables, older censuses by old units.
+    "r13_isl_10001": lambda: isl(px_meta, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelog/"
+                                 "MAN10001.px"),
+    "r13_isl_eldra": lambda: isl(px_list, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelogeldra"),
+    "r13_isl_10289": lambda: isl(px_meta, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelog/"
+                                 "MAN10289.px"),
+    "r13_isl_skra1": lambda: links("https://www.skra.is/um-okkur/tolfraedi/",
+                                   r"tr[uú]|l[ií]fssk|xlsx|tolfr|sveitarf"),
+    "r13_isl_skra2": lambda: links("https://www.skra.is/um-okkur/frettir/",
+                                   r"tr[uú]f|l[ií]fssk|xlsx"),
+    "r13_fin_dvv1": lambda: links("https://dvv.fi/vaestotietojarjestelman-rekisteritilanne",
+                                  r"uskon|relig|xlsx|kunn"),
+    "r13_fin_dvv2": lambda: links("https://dvv.fi/en/statistics",
+                                  r"relig|xlsx|municip|statist"),
+    "r13_fin_dvv3": lambda: links("https://dvv.fi/tilastot", r"uskon|xlsx|kunn|tilast"),
+    "r13_fin_avain": lambda: px_list("https://pxdata.stat.fi/PxWeb/api/v1/en/Kuntien_avainluvut/uusin"),
+    "r13_est_rel2000": lambda: px_list(f"{STAT_EE}/rahvaloendus/rel2000"),
+    "r13_est_rl0430": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0430.PX", grep=r"OTH|COUNTY"),
+    "r13_est_rl0442": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0442.PX", grep=r"OTH|COUNTY"),
+    "r13_lva_taut2011": lambda: px_list("https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/taut/tsk2011"),
+    "r13_lva_demogr2011": lambda: px_list(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/demogr/tsk2011"),
+    "r13_lva_tsg1107": lambda: px_meta(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/taut/tsk2011/TSG11-07.px",
+        allvals="(?i).*(area|territ|region|county|valoda|language).*"),
+    "r13_nor_08531": lambda: px_meta(f"{SSB}/08531", allvals="Region"),
     # Round 12: registers and surveys for the fields the censuses leave out.
     "r12_swe_kyrkan": lambda: links("https://www.svenskakyrkan.se/statistik",
                                     r"xlsx|xls|kommun|medlem|statistik"),

@@ -21,7 +21,10 @@ territorial unit, beginning of year), the finest age CSB publishes below the
 municipality; the median is interpolated within the five-year group that holds
 the middle person, and the note says so. RIG040 (population by ethnicity by
 territorial unit, CSB's experimental statistics on the boundaries of the
-latest year) for the ethnicity. Three parishes lost their centre to a new town
+latest year) for the ethnicity, except for the ten state cities, for which
+RIG040 gives no composition that makes the city's total: those take IRE031,
+the register's count for the same territory. A unit whose ethnicities do not make its total gets none,
+and its gap says so. Three parishes lost their centre to a new town
 after the map's boundaries were drawn -- CSB gave each a new code when it did
 (Ādažu 401, Ķekavas 421, Mārupes 411) -- and the map draws the parish whole,
 without the town: the town and the parish are added together for it, and only
@@ -46,7 +49,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, measure, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .binding import fold
 from .cod_ps_age import grouped_median
 from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_parts, load_units,
@@ -63,6 +66,10 @@ OUT = PROCESSED / "latvia_territorial.json"
 
 STATE_CITIES = ("LV0001000", "LV0002000", "LV0003000", "LV0004000", "LV0005000",
                 "LV0006000", "LV0007000")
+# The three state cities the reform left inside a novads (Jēkabpils, Ogre,
+# Valmiera): towns on the admin2 layer, and rows of their own in CSB's
+# municipal tables, IRE031 among them.
+CITY_TOWNS = ("LV0031010", "LV0040010", "LV0054010")
 # Madona before its merger with Varakļāni, and Varakļāni: CSB's own codes for
 # the two municipalities the map draws, which it lists until 2025.
 PRE_MERGER = ("LV0038000", "LV0055000")
@@ -154,18 +161,25 @@ def main() -> int:
     lv41 = meta("IRD041", "lv")["AREA"]
     lv_names = dict(zip(lv41["values"], lv41["valueTexts"]))
 
-    eth_rows = query("IRE031", {"AREA": municipalities, "ETHNICITY": "*",
+    eth_rows = query("IRE031", {"AREA": municipalities + list(CITY_TOWNS), "ETHNICITY": "*",
                                 "ContentsCode": ["IRE031"], "TIME": [str(year), str(year - 1)]})
     ethnicity: dict[tuple[str, int], dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for key, value in eth_rows:
         code, when, (cat, text) = key["AREA"][0], int(key["TIME"][0]), key["ETHNICITY"]
         ethnicity[(code, when)]["__total__" if cat == "TOTAL" else ethnic_label(text)] += value
 
-    def eth_block(counts: dict[str, float], when: int, table: str, experimental: bool = False):
+    def eth_block(counts: dict[str, float], when: int, table: str, where: str,
+                  experimental: bool = False) -> dict[str, Any]:
+        """The ethnicity fields, or a note saying why there are none."""
         counts = dict(counts)
         total = counts.pop("__total__", 0.0)
         if not total or abs(sum(counts.values()) - total) > 0.5:
-            return {}
+            why = (f"CSB's {table} has no figure for this unit at the beginning of {when}"
+                   if not total else
+                   f"the ethnicities in CSB's {table} make {sum(counts.values()):,.0f} of the "
+                   f"unit's {total:,.0f} residents at the beginning of {when}")
+            log(f"  {table} {where}: {why}; ethnicity left out")
+            return {"ethnicity": gap(NOT_AVAILABLE, f"Not given: {why}.")}
         return {
             "ethnicity": shares(counts, total=total),
             "ethnicity_year": when,
@@ -202,10 +216,10 @@ def main() -> int:
             fields["sources"].append({"field": "median age", "name": f"{SOURCE}, IRD031",
                                       "url": PAGE.format(folder="IRD", table="IRD031"),
                                       "year": when})
-        block = eth_block(ethnicity[(code, when)], when, "IRE031")
-        if block:
+        block = eth_block(ethnicity[(code, when)], when, "IRE031", name)
+        if "_source" in block:
             fields["sources"].append(block.pop("_source"))
-            fields.update(block)
+        fields.update(block)
         records.append(record(
             f"LVA-CSB-{code}", name, level="admin1", parent="LVA", country="LVA",
             codes={"atvk": code}, match_by="shape_id", shape_id=shape["id"],
@@ -303,13 +317,19 @@ def main() -> int:
                          "url": PAGE.format(folder="IRD", table="IRD081"), "year": year}],
         }
         counts: dict[str, float] = defaultdict(float)
-        for part in parts:
-            for k, v in unit_eth.get(part, {}).items():
-                counts[k] += v
-        block = eth_block(counts, year, "RIG040", experimental=True)
-        if block:
+        if code in STATE_CITIES or code in CITY_TOWNS:
+            # A state city is one territory at both levels, and IRE031 is the
+            # register's count for it; RIG040 gives none of the ten a
+            # composition that makes its total.
+            block = eth_block(ethnicity[(code, year)], year, "IRE031", rows[code][0])
+        else:
+            for part in parts:
+                for k, v in unit_eth.get(part, {}).items():
+                    counts[k] += v
+            block = eth_block(counts, year, "RIG040", rows[code][0], experimental=True)
+        if "_source" in block:
             fields["sources"].append(block.pop("_source"))
-            fields.update(block)
+        fields.update(block)
         records.append(record(
             f"LVA-CSB-{code}", rows[code][0], level="admin2", parent="LVA", country="LVA",
             parent_name=rows[code][1], codes={"atvk": code}, match_by="shape_id",
