@@ -337,34 +337,38 @@ def language_row(line: str) -> tuple[str, list[float]] | None:
 
 
 def read_language() -> dict[str, dict[str, Any]]:
-    """Volume 3, Table 3.6: Maltese citizens aged 5+ by main language and locality."""
-    import pdfplumber
+    """Volume 3, Table 3.6: Maltese citizens aged 5+ by main language and locality.
+
+    Read with pypdf: pdfplumber returns the list of tables for this volume but
+    not the table pages' own text.
+    """
+    from pypdf import PdfReader
     blob = http_get(VOLUME_3, binary=True, cache=True, timeout=600)
     out: dict[str, dict[str, Any]] = {}
     folded = {re.sub(r"\s+", " ", name.lower()): name for name in LOCALITIES}
     pages, unread = 0, []
-    with pdfplumber.open(io.BytesIO(blob)) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text() or ""
-            flat = re.sub(r"\s+", "", text)
-            if "TABLE3.6.Maltesepopulation" not in flat:
+    for page in PdfReader(io.BytesIO(blob)).pages:
+        text = page.extract_text() or ""
+        flat = re.sub(r"\s+", "", text)
+        if ("TABLE3.6.Maltesepopulation" not in flat or "Listof" in flat
+                or "DistrictandlocalityMalteseEnglish" not in flat):
+            continue
+        pages += 1
+        for line in text.splitlines():
+            row = language_row(line)
+            if row is None:
+                unread.append(line)
                 continue
-            pages += 1
-            for line in text.splitlines():
-                row = language_row(line)
-                if row is None:
-                    unread.append(line)
-                    continue
-                name, values = row
-                name = SPELLINGS.get(name, name)
-                name = folded.get(re.sub(r"\s+", " ", name.lower()), name)
-                counts = dict(zip(LANGUAGES, values[:-1]))
-                if sum(counts.values()) != values[-1]:
-                    raise SystemExit(f"malta_census: Table 3.6 {name}: languages make "
-                                     f"{sum(counts.values()):,.0f} against {values[-1]:,.0f}")
-                if name in out and out[name]["total"] != values[-1]:
-                    raise SystemExit(f"malta_census: Table 3.6 prints {name} twice, differently")
-                out[name] = {"counts": counts, "total": values[-1]}
+            name, values = row
+            name = SPELLINGS.get(name, name)
+            name = folded.get(re.sub(r"\s+", " ", name.lower()), name)
+            counts = dict(zip(LANGUAGES, values[:-1]))
+            if sum(counts.values()) != values[-1]:
+                raise SystemExit(f"malta_census: Table 3.6 {name}: languages make "
+                                 f"{sum(counts.values()):,.0f} against {values[-1]:,.0f}")
+            if name in out and out[name]["total"] != values[-1]:
+                raise SystemExit(f"malta_census: Table 3.6 prints {name} twice, differently")
+            out[name] = {"counts": counts, "total": values[-1]}
     missing = sorted(set(LOCALITIES) - set(out))
     if missing:
         raise SystemExit(f"malta_census: Table 3.6 ({pages} pages) has no row for {missing}; "
