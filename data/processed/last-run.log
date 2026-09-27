@@ -1,46 +1,219 @@
-microstates: San Marino 2025: 34,172 residents in 9 castelli
-microstates: Monaco 2025: 38,857 residents, 19,127 men, 19,730 women, median 50.0
-  Les Moneghetti: left out -- the map draws Sainte-Dévote apart from it
-microstates: Andorra 2025: 89,058 residents in 44 settlements
-  SMR admin1 Città di San Marino: 4158, sex ratio 959
-  SMR admin1 Acquaviva: 2147, sex ratio 1018
-  SMR admin1 Borgo Maggiore: 7006, sex ratio 1009
-  SMR admin1 Chiesanuova: 1192, sex ratio 1017
-  SMR admin1 Domagnano: 3613, sex ratio 937
-  SMR admin1 Faetano: 1216, sex ratio 993
-  SMR admin1 Fiorentino: 2588, sex ratio 968
-  SMR admin1 Montegiardino: 987, sex ratio 994
-  SMR admin1 Serravalle: 11265, sex ratio 999
-  SMR admin2 Città di San Marino: 4158, sex ratio 959
-  SMR admin2 Acquaviva: 2147, sex ratio 1018
-  SMR admin2 Borgo Maggiore: 7006, sex ratio 1009
-  SMR admin2 Chiesanuova: 1192, sex ratio 1017
-  SMR admin2 Domagnano: 3613, sex ratio 937
-  SMR admin2 Faetano: 1216, sex ratio 993
-  SMR admin2 Fiorentino: 2588, sex ratio 968
-  SMR admin2 Montegiardino: 987, sex ratio 994
-  SMR admin2 Serravalle: 11265, sex ratio 999
-  MCO admin1 Monaco: 38857, sex ratio 969
-  MCO admin2 Monte-Carlo: 8318
-  MCO admin2 La Rousse: 7992
-  MCO admin2 La Condamine: 5446
-  MCO admin2 Jardin Exotique: 4997
-  MCO admin2 Fontvieille: 4297
-  MCO admin2 Larvotto: 2287
-  MCO admin2 Monaco-Ville: 1022
-  AND admin1 Andorra la Vella: 24836
-  AND admin1 Canillo: 6457
-  AND admin1 Encamp: 13520
-  AND admin1 Escaldes-Engordany: 16162
-  AND admin1 La Massana: 12148
-  AND admin1 Ordino: 5679
-  AND admin1 Sant Julia de Loria: 10256
-  AND admin2 Andorra la Vella: 24836
-  AND admin2 Canillo: 6457
-  AND admin2 Encamp: 13520
-  AND admin2 Escaldes-Engordany: 16162
-  AND admin2 La Massana: 12148
-  AND admin2 Ordino: 5679
-  AND admin2 Sant Julia de Loria: 10256
-  wrote data/processed/microstates.json (55 kB)
-  40 records
+== get https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/vykhodnye-reglamentnye-tablitsy/
+  121,697 bytes, begins b'    <!doctype ht'
+  link: '' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx) просмотр' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  link: 'Политика по обеспечению статистической конфиденциальности (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/privacy_policy-240314.pdf
+  link: 'Политика распространения официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politika_rasprosrtraneniya_osi.pdf
+  link: 'Политика пересмотра официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politica_peresm.pdf
+  link: 'Отчет о выполнении Плана мероприятий по реализации Стратегии развития государственной стат' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Otchet_dejat_Belstat_2025.pdf
+  link: 'Политика использования административных данных (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika_isp_admdata.pdf
+  link: 'Стратегия развития государственной статистики на период до 2030 года (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Stategija_2030.pdf
+  link: 'Программа статистических работ на 2026 год (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Programma_2026.pdf
+  link: 'Миссия. Видение (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Missia_Bidenie_2021.pdf
+  link: 'Руководство по качеству (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/РК СМК 04-2022-1.pdf
+  link: 'Политика в области качества (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika-kachestva_2026.pdf
+  link: 'Сертификат соответствия системы менеджмента качества требованиям СТБ ISO 9001-2015 (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Статистика Беларуси' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_compilation/index_17744/
+  link: 'О переписи населения' -> https://www.belstat.gov.by/metodologiya/belstat-obyasnit/zachem-nuzhna-perepis-naseleniya/
+  link: 'СК 00.013-2022 “Основные промышленные группы” (СКОПГ)(.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/SK_00_013_2022_.pdf
+  link: 'Собирательные группировки по видам экономической деятельности в соответствии с общегосудар' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir.-grup_OKED005-2011_izm2-260216.pdf
+  link: 'Собирательные группировки товаров в соответствии с единой Товарной номенклатурой внешнеэко' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_EAES-221219.pdf
+  link: 'Собирательные группировки товаров и услуг сферы ИКТ для статистики внешней торговли товара' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_IKT-221219.pdf
+  link: 'Переходные ключи от общегосударственного классификатора Республики Беларусь ОКРБ 002-2019 ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/klassifikator/PK_OKFS-200401.docx
+  link: 'Выборочное обследование домашних хозяйств в целях оценки состояния здоровья и положение же' -> https://www.belstat.gov.by/informatsiya-dlya-respondenta/vyborochnye-obsledovaniya/sostoyanie-zdorovya-i-polozhenie-zhenshchin-v-seme-osnovnye-itogi/
+  link: 'Приказ Национального статистического комитета Республики Беларусь от 15 февраля 2018 г. № ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/prikaz_39-240613.docx
+  link: 'Критерии оценки степени риска для отбора проверяемых субъектов при проведении выборочной п' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/kriterii-240613.docx
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Перепись населения 2009 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/
+  link: 'Статистический обзор ко Дню машиностроителя' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/statobzor_mashinostr_2026.pdf
+  link: 'Версия для печати' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/vykhodnye-reglamentnye-tablitsy/index.php
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  link: 'Политика по обеспечению статистической конфиденциальности (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/privacy_policy-240314.pdf
+  link: 'Политика распространения официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politika_rasprosrtraneniya_osi.pdf
+  link: 'Политика пересмотра официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politica_peresm.pdf
+  link: 'Отчет о выполнении Плана мероприятий по реализации Стратегии развития государственной стат' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Otchet_dejat_Belstat_2025.pdf
+  link: 'Политика использования административных данных (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika_isp_admdata.pdf
+  link: 'Стратегия развития государственной статистики на период до 2030 года (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Stategija_2030.pdf
+  link: 'Программа статистических работ на 2026 год (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Programma_2026.pdf
+  link: 'Миссия. Видение (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Missia_Bidenie_2021.pdf
+  link: 'Руководство по качеству (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/РК СМК 04-2022-1.pdf
+  link: 'Политика в области качества (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika-kachestva_2026.pdf
+  link: 'Сертификат соответствия системы менеджмента качества требованиям СТБ ISO 9001-2015 (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Статистика Беларуси' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_compilation/index_17744/
+  link: 'О переписи населения' -> https://www.belstat.gov.by/metodologiya/belstat-obyasnit/zachem-nuzhna-perepis-naseleniya/
+  link: 'СК 00.013-2022 “Основные промышленные группы” (СКОПГ)(.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/SK_00_013_2022_.pdf
+  link: 'Собирательные группировки по видам экономической деятельности в соответствии с общегосудар' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir.-grup_OKED005-2011_izm2-260216.pdf
+  link: 'Собирательные группировки товаров в соответствии с единой Товарной номенклатурой внешнеэко' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_EAES-221219.pdf
+  link: 'Собирательные группировки товаров и услуг сферы ИКТ для статистики внешней торговли товара' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_IKT-221219.pdf
+  link: 'Переходные ключи от общегосударственного классификатора Республики Беларусь ОКРБ 002-2019 ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/klassifikator/PK_OKFS-200401.docx
+  link: 'Выборочное обследование домашних хозяйств в целях оценки состояния здоровья и положение же' -> https://www.belstat.gov.by/informatsiya-dlya-respondenta/vyborochnye-obsledovaniya/sostoyanie-zdorovya-i-polozhenie-zhenshchin-v-seme-osnovnye-itogi/
+  link: 'Приказ Национального статистического комитета Республики Беларусь от 15 февраля 2018 г. № ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/prikaz_39-240613.docx
+  link: 'Критерии оценки степени риска для отбора проверяемых субъектов при проведении выборочной п' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/kriterii-240613.docx
+  (482 links in all)
+  text: Выходные регламентные таблицы --> var md = new MobileDetect(window.navigator.userAgent); var viewport = document.getElementById('viewport'); if (md.tablet()) { viewport.setAttribute("content", "width=
+== get https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/
+  129,485 bytes, begins b'    <!doctype ht'
+  link: '' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx) просмотр' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  link: 'Политика по обеспечению статистической конфиденциальности (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/privacy_policy-240314.pdf
+  link: 'Политика распространения официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politika_rasprosrtraneniya_osi.pdf
+  link: 'Политика пересмотра официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politica_peresm.pdf
+  link: 'Отчет о выполнении Плана мероприятий по реализации Стратегии развития государственной стат' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Otchet_dejat_Belstat_2025.pdf
+  link: 'Политика использования административных данных (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika_isp_admdata.pdf
+  link: 'Стратегия развития государственной статистики на период до 2030 года (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Stategija_2030.pdf
+  link: 'Программа статистических работ на 2026 год (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Programma_2026.pdf
+  link: 'Миссия. Видение (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Missia_Bidenie_2021.pdf
+  link: 'Руководство по качеству (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/РК СМК 04-2022-1.pdf
+  link: 'Политика в области качества (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika-kachestva_2026.pdf
+  link: 'Сертификат соответствия системы менеджмента качества требованиям СТБ ISO 9001-2015 (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Статистика Беларуси' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_compilation/index_17744/
+  link: 'О переписи населения' -> https://www.belstat.gov.by/metodologiya/belstat-obyasnit/zachem-nuzhna-perepis-naseleniya/
+  link: 'СК 00.013-2022 “Основные промышленные группы” (СКОПГ)(.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/SK_00_013_2022_.pdf
+  link: 'Собирательные группировки по видам экономической деятельности в соответствии с общегосудар' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir.-grup_OKED005-2011_izm2-260216.pdf
+  link: 'Собирательные группировки товаров в соответствии с единой Товарной номенклатурой внешнеэко' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_EAES-221219.pdf
+  link: 'Собирательные группировки товаров и услуг сферы ИКТ для статистики внешней торговли товара' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_IKT-221219.pdf
+  link: 'Переходные ключи от общегосударственного классификатора Республики Беларусь ОКРБ 002-2019 ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/klassifikator/PK_OKFS-200401.docx
+  link: 'Выборочное обследование домашних хозяйств в целях оценки состояния здоровья и положение же' -> https://www.belstat.gov.by/informatsiya-dlya-respondenta/vyborochnye-obsledovaniya/sostoyanie-zdorovya-i-polozhenie-zhenshchin-v-seme-osnovnye-itogi/
+  link: 'Приказ Национального статистического комитета Республики Беларусь от 15 февраля 2018 г. № ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/prikaz_39-240613.docx
+  link: 'Критерии оценки степени риска для отбора проверяемых субъектов при проведении выборочной п' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/kriterii-240613.docx
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Статистический обзор ко Дню машиностроителя' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/statobzor_mashinostr_2026.pdf
+  link: 'Как узнать переписчика' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/kak-uznat-perepischika/
+  link: 'Формы переписного листа и иной переписной документации' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/formy-perepisnogo-lista-i-inoy-perepisnoy-dokumentatsii/
+  link: 'Символика переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/simvolika-perepisi-naseleniya/
+  link: 'Символика переписи населения Республики Беларусь 2019 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/simvolika-perepisi-naseleniya/simvolika-perepisi-naseleniya-respubliki-belarus-2019-goda/
+  link: 'Символика пробной переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/simvolika-perepisi-naseleniya/simvolika-probnoy-perepisi-naseleniya/
+  link: 'Инфографика и плакаты' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/infografika-i-plakaty/
+  link: 'Видеоролики о переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/videoroliki-o-perepisi-naseleniya/
+  link: 'Пробная перепись населения 2017 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/probnaya-perepis-naseleniya-2017-goda/
+  link: 'Обращение Председателя Национального статистического комитета Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/probnaya-perepis-naseleniya-2017-goda/obrashchenie-predsedatelya-natsionalnogo-statisticheskogo-komiteta-respubliki-belarus/
+  link: 'Формы переписного листа и формы переписной документации для пробной переписи' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/probnaya-perepis-naseleniya-2017-goda/formy-perepisnogo-lista-i-formy-perepisnoy-dokumentatsii-dlya-probnoy-perepisi/
+  link: 'Что необходимо знать о пробной переписи' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/probnaya-perepis-naseleniya-2017-goda/chto-neobkhodimo-znat-o-probnoy-perepisi/
+  link: 'Видеоролик "Пробная перепись населения 2017 года"' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-video/Perepis.mp4
+  link: 'Нормативная правовая база' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza/
+  link: 'Закон Республики Беларусь от 13 июля 2006 года "О переписи населения" (.pdf)' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/zakon_144-3_ot_13-07-2006.pdf
+  link: 'Указ Президента Республики Беларусь от 24 октября 2016 г. № 384 "О проведении в 2019 году ' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/Ukaz_384_24_10_2016.pdf
+  link: 'Постановление Совета Министров Республики Беларусь от 23 ноября 2016 г. № 953 "О мерах по ' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/Postanovlenie_2016-11-23_953.pdf
+  link: 'Постановление Совета Министров Республики Беларусь от 28 июня 2018 г. № 505 "Об утверждени' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/post_505.pdf
+  link: 'Постановление Совета Министров Республики Беларусь от 10 сентября 2009 г. № 1178 "Об утвер' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/Postanovlenie_10-09-2009_1178.pdf
+  link: 'Постановление Национального статистического комитета Республики Беларусь от 29 ноября 2018' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/post_128.doc
+  link: 'просмотр' -> https://www.belstat.gov.by/viewer/?doclink=https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/post_128.doc#1
+  link: 'Постановление Национального статистического комитета Республики Беларусь от 10 октября 201' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/Post 2018-10-10_99.docx
+  link: 'просмотр' -> https://www.belstat.gov.by/viewer/?doclink=https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/Post 2018-10-10_99.docx#1
+  link: 'Приказ Национального статистического комитета Республики Беларусь от 28 февраля 2019 г. № ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/Prikaz_2019-02-28_30.doc
+  link: 'просмотр' -> https://www.belstat.gov.by/viewer/?doclink=https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/Prikaz_2019-02-28_30.doc#1
+  link: 'О проведении единовременной акции по популяризации участия граждан в интернет-переписи' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/o-provedenii-edinovremennoy-aktsii-po-populyarizatsii-uchastiya-grazhdan-v-internet-perepisi/
+  link: 'Версия для печати' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/index.php
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  (506 links in all)
+  text: Перепись населения 2019 года --> var md = new MobileDetect(window.navigator.userAgent); var viewport = document.getElementById('viewport'); if (md.tablet()) { viewport.setAttribute("content", "width=d
+== get https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  125,081 bytes, begins b'    <!doctype ht'
+  link: '' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx) просмотр' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  link: 'Политика по обеспечению статистической конфиденциальности (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/privacy_policy-240314.pdf
+  link: 'Политика распространения официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politika_rasprosrtraneniya_osi.pdf
+  link: 'Политика пересмотра официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politica_peresm.pdf
+  link: 'Отчет о выполнении Плана мероприятий по реализации Стратегии развития государственной стат' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Otchet_dejat_Belstat_2025.pdf
+  link: 'Политика использования административных данных (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika_isp_admdata.pdf
+  link: 'Стратегия развития государственной статистики на период до 2030 года (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Stategija_2030.pdf
+  link: 'Программа статистических работ на 2026 год (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Programma_2026.pdf
+  link: 'Миссия. Видение (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Missia_Bidenie_2021.pdf
+  link: 'Руководство по качеству (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/РК СМК 04-2022-1.pdf
+  link: 'Политика в области качества (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika-kachestva_2026.pdf
+  link: 'Сертификат соответствия системы менеджмента качества требованиям СТБ ISO 9001-2015 (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf
+  link: 'Статистика Беларуси' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_compilation/index_17744/
+  link: 'О переписи населения' -> https://www.belstat.gov.by/metodologiya/belstat-obyasnit/zachem-nuzhna-perepis-naseleniya/
+  link: 'СК 00.013-2022 “Основные промышленные группы” (СКОПГ)(.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/SK_00_013_2022_.pdf
+  link: 'Собирательные группировки по видам экономической деятельности в соответствии с общегосудар' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir.-grup_OKED005-2011_izm2-260216.pdf
+  link: 'Собирательные группировки товаров в соответствии с единой Товарной номенклатурой внешнеэко' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_EAES-221219.pdf
+  link: 'Собирательные группировки товаров и услуг сферы ИКТ для статистики внешней торговли товара' -> http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/klassifikatory/sobir_grupp_TNVED_IKT-221219.pdf
+  link: 'Переходные ключи от общегосударственного классификатора Республики Беларусь ОКРБ 002-2019 ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/klassifikator/PK_OKFS-200401.docx
+  link: 'Выборочное обследование домашних хозяйств в целях оценки состояния здоровья и положение же' -> https://www.belstat.gov.by/informatsiya-dlya-respondenta/vyborochnye-obsledovaniya/sostoyanie-zdorovya-i-polozhenie-zhenshchin-v-seme-osnovnye-itogi/
+  link: 'Приказ Национального статистического комитета Республики Беларусь от 15 февраля 2018 г. № ' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/prikaz_39-240613.docx
+  link: 'Критерии оценки степени риска для отбора проверяемых субъектов при проведении выборочной п' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-word/Respondent/kriterii-240613.docx
+  link: 'Статистический обзор ко Дню машиностроителя' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/statobzor_mashinostr_2026.pdf
+  link: 'Перепись населения 1999 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-1999/
+  link: 'Табличные данные' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-1999/tablichnye-dannye/
+  link: 'Графические данные' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-1999/graficheskie-dannye/
+  link: 'Перепись населения 2009 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/
+  link: 'Нормативная правовая база' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/normativnaya-pravovaya-baza/
+  link: 'Программа переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/programma-perepisi-naseleniya/
+  link: 'Символика переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/simvolika-perepisi-naseleniya/
+  link: 'Видеоролики о переписи населения 2009' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2009/videoroliki-o-perepisi-naseleniya-2009/
+  link: 'Перепись населения 2019 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/
+  link: 'Как узнать переписчика' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/kak-uznat-perepischika/
+  link: 'Формы переписного листа и иной переписной документации' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/formy-perepisnogo-lista-i-inoy-perepisnoy-dokumentatsii/
+  link: 'Символика переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/simvolika-perepisi-naseleniya/
+  link: 'Инфографика и плакаты' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/infografika-i-plakaty/
+  link: 'Видеоролики о переписи населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/videoroliki-o-perepisi-naseleniya/
+  link: 'Пробная перепись населения 2017 года' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/probnaya-perepis-naseleniya-2017-goda/
+  link: 'Нормативная правовая база' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza/
+  link: 'О проведении единовременной акции по популяризации участия граждан в интернет-переписи' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/o-provedenii-edinovremennoy-aktsii-po-populyarizatsii-uchastiya-grazhdan-v-internet-perepisi/
+  link: 'Версия для печати' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/index.php
+  link: 'Основные социально-экономические показатели по Республике Беларусь (.xlsx)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/express_info-2608.xlsx
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и г.Минску (.' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-excel/Oficial_statistika/2026/osep_obl-2608.xlsx
+  link: 'Социально-экономическое положение Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166690/
+  link: 'Основные социально-экономические показатели по Республике Беларусь, областям и городу Минс' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166691/
+  link: 'Социально-экономическое развитие регионов Республики Беларусь' -> https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/public_bulletin/index_166262/
+  link: 'Перепись населения' -> https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-naseleniya/
+  link: 'Результаты анкетирования пользователей официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/res_anketa_polsovatela-260212.pdf
+  link: 'Таблицы сводных данных' -> https://www.belstat.gov.by/ofitsialnaya-statistika/ssrd-mvf_2/tablitsy-svodnyh-dannyh/
+  link: 'Закон Республики Беларусь «О государственной статистике» (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/zakon_ogs-2026.pdf
+  link: 'Национальная модель производства официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/nmposi-250127.pdf
+  link: 'Политика по обеспечению статистической конфиденциальности (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/privacy_policy-240314.pdf
+  link: 'Политика распространения официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politika_rasprosrtraneniya_osi.pdf
+  link: 'Политика пересмотра официальной статистической информации (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/politica_peresm.pdf
+  link: 'Отчет о выполнении Плана мероприятий по реализации Стратегии развития государственной стат' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Otchet_dejat_Belstat_2025.pdf
+  link: 'Политика использования административных данных (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Politika_isp_admdata.pdf
+  link: 'Стратегия развития государственной статистики на период до 2030 года (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Stategija_2030.pdf
+  link: 'Программа статистических работ на 2026 год (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Programma_2026.pdf
+  link: 'Миссия. Видение (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/Missia_Bidenie_2021.pdf
+  link: 'Руководство по качеству (.pdf)' -> https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/РК СМК 04-2022-1.pdf
+  (498 links in all)
+  text: Перепись населения --> var md = new MobileDetect(window.navigator.userAgent); var viewport = document.getElementById('viewport'); if (md.tablet()) { viewport.setAttribute("content", "width=device-widt
