@@ -370,6 +370,27 @@ def klass_codes(url: str) -> None:
     print("  " + "; ".join(f"{c['code']}={c['name']}" for c in codes))
 
 
+def px_notes(url: str, query: dict[str, Any], grep: str | None = None, chars: int = 900) -> None:
+    """A small PxWeb query answered as a .px file: its NOTE, VALUENOTE and SOURCE
+    keywords, which the JSON metadata leaves out, and the data line."""
+    q = dict(query)
+    q["response"] = {"format": "px"}
+    raw = fetch(url, q, accept="*/*")
+    for enc in ("utf-8", "cp1252", "latin-1"):
+        try:
+            text = raw.decode(enc)
+            break
+        except UnicodeDecodeError:
+            continue
+    print(f"  {len(raw):,} bytes")
+    keys = r"(?:NOTEX?|VALUENOTEX?|CELLNOTEX?|SOURCE|CONTACT|INFOFILE|DESCRIPTION|DATANOTE|CONTENTS|DATA)"
+    for m in re.finditer(keys + r"(?:\[[^\]]*\])?(?:\([^)]*\))?=(.*?);\s*(?=[A-Z-]+(?:\[|\(|=)|$)",
+                         text, re.S):
+        chunk = " ".join(m.group(0).replace('"\r\n"', "").replace('"\n"', "").split())
+        if not grep or re.search(grep, chunk, re.I):
+            print(f"    {chunk[:chars]}")
+
+
 # ---------------------------------------------------------------------------
 # The probes
 # ---------------------------------------------------------------------------
@@ -409,6 +430,67 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 16: the checker's questions. How SSB's KOSTRA table places the
+    # members of communities outside the Church; the 2021 census's ethnicity
+    # and religion below the country in Lithuania; the register keepers of
+    # Finland and Iceland; the universe of Latvia's 2011 home language.
+    "r16_nor_12026_px": lambda: px_notes(f"{SSB}/12026", {"query": [
+        {"code": "KOKkommuneregion0000", "selection": {"filter": "item", "values": ["1120", "1121"]}},
+        {"code": "ContentsCode", "selection": {"filter": "item", "values": [
+            "KOSmedlemmerdnk0000", "KOSmedltroslivs0000", "KOSpersoneralle0000"]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": ["2019", "2020"]}}]}),
+    "r16_nor_12026_v2": lambda: text(
+        "https://data.ssb.no/api/pxwebapi/v2/tables/12026/metadata?lang=en",
+        grep=r'"notes?"\s*:\s*\[[^\]]{0,1500}'),
+    "r16_nor_08531_px": lambda: px_notes(f"{SSB}/08531", {"query": [
+        {"code": "Region", "selection": {"filter": "item", "values": ["03", "11"]}},
+        {"code": "ReligionLivs", "selection": {"filter": "item", "values": ["999"]}},
+        {"code": "ContentsCode", "selection": {"filter": "item", "values": ["Medlemmer"]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": ["2020"]}}]}),
+    "r16_nor_klepp": lambda: px_post(f"{SSB}/12026", {"query": [
+        {"code": "KOKkommuneregion0000", "selection": {"filter": "item", "values": [
+            "1119", "1120", "1121", "1122", "0912", "4212"]}},
+        {"code": "ContentsCode", "selection": {"filter": "item", "values": [
+            "KOSmedlemmerdnk0000", "KOSmedltroslivs0000", "KOSpersoneralle0000"]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": ["2016", "2018", "2020"]}}],
+        "response": {"format": "json-stat2"}}, limit=60),
+    "r16_nor_12026_contents": lambda: px_meta(f"{SSB}/12026", allvals="ContentsCode"),
+    "r16_nor_search_livssyn": lambda: px_search(f"{SSB}/?query=livssyn", limit=40),
+    "r16_nor_search_trus": lambda: px_search(f"{SSB}/?query=religious%20communities", limit=40),
+    "r16_isl_10200": lambda: isl(px_meta, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelogeldra/"
+                                 "MAN10200.px", allvals=r"(?i)(?!Tr).*"),
+    "r16_fin_cdx1": lambda: cdx("url=dvv.fi/documents/*&filter=original:.*(?:[Uu]skon|[Rr]eligi|"
+                                "[Ss]eurakun).*", limit=100),
+    "r16_fin_cdx2": lambda: cdx("url=dvv.fi/*&filter=original:.*(?:rekisteritilanne|tilastot).*",
+                                limit=80),
+    "r16_fin_cdx3": lambda: cdx("url=vrk.fi/*&filter=original:.*(?:[Uu]skon|[Rr]ekisteritil).*",
+                                limit=80),
+    "r16_fin_pxnet": lambda: links(
+        "https://web.archive.org/web/2019/http://pxnet2.stat.fi/PXWeb/pxweb/en/StatFin/"
+        "StatFin__vrm__vaerak/", r"relig|uskon|statfin_vaerak_pxt"),
+    "r16_ltu_215": lambda: sdmx_obs("S3R167_M3010215_1", "?startPeriod=2021&endPeriod=2021",
+                                    limit=6),
+    "r16_ltu_162": lambda: sdmx_obs("S3R162_M3010215_2", "?startPeriod=2021&endPeriod=2021",
+                                    limit=6),
+    "r16_ltu_flows": lambda: sdmx_dataflows(r"M30102(?:1[4-9]|2[0-9])|tikyb|religin|gimtoj"),
+    "r16_ltu_vilnius": lambda: xlsx(
+        "https://web.archive.org/web/20220621221246id_/https://osp.stat.gov.lt/documents/10180/"
+        "9601028/Vilnius_county_by_largest_ethnic_groups.xlsx", rows=45),
+    "r16_ltu_urban": lambda: xlsx(
+        "https://web.archive.org/web/20221011003824id_/https://osp.stat.gov.lt/documents/10180/"
+        "10367417/Urban_areas_population_by_largest_ethnic_group-EN.xlsx", rows=30),
+    "r16_lva_tsg1107_px": lambda: px_notes(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/taut/tsk2011/TSG11-07.px", {"query": [
+            {"code": "Teritoriālā vienība", "selection": {"filter": "item", "values": [
+                "LV", "LV0010000"]}},
+            {"code": "Dzimums", "selection": {"filter": "item", "values": ["T"]}},
+            {"code": "Skaits, īpatsvars", "selection": {"filter": "item", "values": ["NUMB"]}},
+            {"code": "Vecums (pilni gadi)", "selection": {"filter": "item", "values": ["TOTAL"]}}]}),
+    "r16_lva_tsg1101_px": lambda: px_notes(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/demogr/tsk2011/TSG11-01.px", {"query": [
+            {"code": "Teritoriālā vienība", "selection": {"filter": "item", "values": [
+                "LV", "LV0010000"]}},
+            {"code": "Dzimums", "selection": {"filter": "item", "values": ["T"]}}]}),
     # Round 15
     "r15_est_rl222": lambda: px_meta(
         f"{STAT_EE}/rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus/RL222.PX",
