@@ -1,17 +1,6 @@
   http://sreda.org/maps/arena_russia_main/arena_statistic.xls: 213,504 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 286, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 279, in main
-    records = build(blob)
-              ^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 230, in build
-    table, sizes, national = read(blob)
-                             ^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/russia_religion.py", line 193, in read
-    whole = next(j for j, c in enumerate(rows[header - 1]) if str(c).strip() == "Население в целом")
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-StopIteration
+  79 subjects, 56,900 respondents in all (n from 500 to 800)
+  Russia: Russian Orthodox Church 41.1, Believe in God, no specific religion 25.2, Atheist 13.0, Don't know 5.5, Muslim (neither Sunni nor Shia) 4.7, Non-denominational Christian 4.1, Sunni Islam 1.7, Orthodox (outside the Russian Orthodox Church) 1.5, Traditional religion of ancestors 1.2, Other religion 0.6, Buddhism 0.5, Orthodox Old Believers 0.3, Protestant 0.2, Shia Islam 0.2, Catholic 0.1, Judaism 0.1, Eastern religions and spiritual practices 0.1, Pentecostalism 0.1
+  79 records; not surveyed: Chechnya (RU-CE), Ingushetia (RU-IN), Chukotka (RU-CHU), Nenets AO (RU-NEN)
+  wrote data/processed/russia_religion_survey.json (223 kB)
+  wrote russia_religion_survey.json: 79 records
