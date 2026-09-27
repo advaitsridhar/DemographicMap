@@ -5,7 +5,8 @@ The Department of Statistics published a report of the 2010 Census of
 Population and Housing for each island. Each prints, for that island:
 
 * Table 2.0, every island's population by sex (the same table in each);
-* Table 4.5, its population by sex and single year of age;
+* Table 4.x (4.1 New Providence, 4.4 Acklins, ...), its population by sex
+  and single year of age;
 * Table 7.0, its population by religion; Table 8.0, by racial group.
 
 The census tabulates by island, and the map draws Abaco, Andros, Eleuthera,
@@ -134,10 +135,11 @@ def table_2_0(lines: list[str]) -> dict[str, tuple[int, int, int]]:
 
 
 def table_4_5(lines: list[str]) -> dict[str, Any]:
-    """{"ages": Counter(age: people), "total", "men", "women", "unstated"} from Table 4.5."""
+    """{"ages": Counter(age: people), "total", "men", "women", "unstated"} from Table 4.x."""
     ages: Counter = Counter()
     groups, whole, unstated = [], None, 0
-    for line in after(lines, "TABLE4.5"):
+    # Its number is the island's own: 4.1 for New Providence, 4.4 Acklins, 4.5 Andros.
+    for line in after(lines, "TABLE4"):
         label, figures = split(line)
         if not label and len(figures) == 4:
             # A single year: "1 127 70 57" is all figures, the age among them.
@@ -146,7 +148,7 @@ def table_4_5(lines: list[str]) -> dict[str, Any]:
             continue
         total, men, women = figures
         if men + women != total:
-            raise SystemExit(f"bahamas_census: Table 4.5's {label} does not add up")
+            raise SystemExit(f"bahamas_census: Table 4.x's {label} does not add up")
         flat = fold(label)
         if flat == "allages":
             whole = figures
@@ -161,14 +163,14 @@ def table_4_5(lines: list[str]) -> dict[str, Any]:
         elif m := re.fullmatch(r"(\d+)yearsandover", flat):
             ages[int(m[1])] += total
     if whole is None:
-        raise SystemExit("bahamas_census: Table 4.5 has no ALL AGES row")
+        raise SystemExit("bahamas_census: Table 4.x has no ALL AGES row")
     if sum(ages.values()) + unstated != whole[0]:
-        raise SystemExit(f"bahamas_census: Table 4.5's single years make "
+        raise SystemExit(f"bahamas_census: Table 4.x's single years make "
                          f"{sum(ages.values()) + unstated:,} of {whole[0]:,}")
     for label, total in groups:
         m = re.match(r"^(\d+)\s*-\s*(\d+)", label)
         if m and sum(ages[a] for a in range(int(m[1]), int(m[2]) + 1)) != total:
-            raise SystemExit(f"bahamas_census: Table 4.5's {label} is not its single years")
+            raise SystemExit(f"bahamas_census: Table 4.x's {label} is not its single years")
     return {"ages": ages, "total": whole[0], "men": whole[1], "women": whole[2],
             "unstated": unstated}
 
@@ -263,7 +265,7 @@ def main() -> int:
             sex_ratio_note="Men per thousand women, 2010 (Table 2.0).",
             median_age=measure(median_age(age["ages"]), unit="years", year=YEAR, source=source),
             median_age_note=("Interpolated within the single year holding the middle person "
-                             "(Table 4.5)" + (f"; {age['unstated']:,} of unstated age left out"
+                             "(Table 4.x of the island's report)" + (f"; {age['unstated']:,} of unstated age left out"
                                               if age["unstated"] else "") + "."),
             religion=present(religion), religion_year=YEAR, religion_note=rel_note,
             ethnicity=present(race), ethnicity_year=YEAR,
