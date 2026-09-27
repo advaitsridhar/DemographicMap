@@ -1,15 +1,20 @@
-cyprus_census: CYSTAT, Census of Population and Housing 2021
-  Cyprus (areas under Government control): 923,381 residents, median 40.0 from single years; 410 municipalities and communities
-  Famagusta: 54,318, median 39.5, 100.5 men per 100 women
-  Larnaca: 155,765, median 39.5, 97.7 men per 100 women
-  Limassol: 262,157, median 39.5, 94.6 men per 100 women
-  Nicosia: 350,035, median 40.5, 92.2 men per 100 women
-  Paphos: 101,106, median 41.0, 98.5 men per 100 women
-  drawn across a district line: [('Ormideia', 'Larnaca', 'Famagusta'), ('Xylofagou', 'Larnaca', 'Famagusta'), ('Sia', 'Nicosia', 'Larnaca')]
-  402 of 410 CYSTAT communities bound (1 polygon(s) carrying two); 8 unbound (9,707 people): ['Synoikismos Anthoupolis (1022, Nicosia, 1,690)', "Pano Koutrafas (1328, Nicosia, 19): its polygon's label is swapped with its neighbour's", "Kato Koutrafas (1329, Nicosia, 64): its polygon's label is swapped with its neighbour's", 'Mosfili (1468, Nicosia, 20)', "Dromolaxia - Meneou (4014, Larnaca, 6,838): drawn as its parts ['Dromolaxia', 'Meneou'], which make_redrawn is to merge", 'Akrotiri (5200, Limassol, 931)', 'Troodos (5356, Limassol, 17)', 'Chandria (5368, Limassol, 128)']
-  162 polygons outside Kyrenia with no community say why
-  retry in 3s: https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px (HTTP Error 429: )
-  CURATED religion 923381 [{"group": "Christian Orthodox", "pct": 74.5, "count": 688075}, {"group": "Not recorded/Not stated", "pct": 17.3, "count": 159835}, {"group": "Muslim", "pct": 2.1, "count": 19534}, {"group": "Roman Catholic", "pct": 1.5, "count": 13860}, {"group": "Anglican/Protestant", "pct": 1.0, "count": 9621}, {"group": "Atheist/No Religion", "pct": 1.0, "count": 9591}, {"group": "Buddhist", "pct": 0.9, "count": 7868}, {"group": "Maronite church", "pct": 0.5, "count": 4486}, {"group": "Other Religion", "pct": 0.5, "count": 4545}, {"group": "Armenian church", "pct": 0.2, "count": 2025}, {"group": "Hindu", "pct": 0.2, "count": 1681}, {"group": "Sikh", "pct": 0.2, "count": 2260}]
-  CURATED ethnicity 923381 [{"group": "Greek-Cypriot", "pct": 74.7, "count": 689412}, {"group": "Greek", "pct": 4.3, "count": 39384}, {"group": "Romanian", "pct": 2.3, "count": 20926}, {"group": "British", "pct": 2.2, "count": 20098}, {"group": "Other", "pct": 2.1, "count": 19768}, {"group": "Russian", "pct": 1.9, "count": 17086}, {"group": "Bulgarian", "pct": 1.8, "count": 16579}, {"group": "Syrian", "pct": 1.5, "count": 13975}, {"group": "Not stated", "pct": 1.3, "count": 11845}, {"group": "Filipino", "pct": 0.9, "count": 8716}, {"group": "Indian", "pct": 0.9, "count": 8535}, {"group": "Srilankan", "pct": 0.7, "count": 6747}, {"group": "Georgian", "pct": 0.6, "count": 5240}, {"group": "Maronite", "pct": 0.6, "count": 5245}, {"group": "Nepalese", "pct": 0.6, "count": 5989}, {"group": "Ukranian", "pct": 0.6, "count": 5616}, {"group": "Armenian", "pct": 0.4, "count": 3434}, {"group": "Egyptian", "pct": 0.3, "count": 3192}, {"group": "Lebanese", "pct": 0.3, "count": 2404}, {"group": "Polish", "pct": 0.3, "count": 2459}, {"group": "Vietnamese", "pct": 0.3, "count": 2646}, {"group": "Bangladeshi", "pct": 0.2, "count": 1430}, {"group": "Chinese", "pct": 0.2, "count": 2227}, {"group": "German", "pct": 0.2, "count": 2072}, {"group": "Moldovan", "pct": 0.2, "count": 1593}, {"group": "Turkish-Cypriot", "pct": 0.2, "count": 1617}, {"group": "Cameroonian", "pct": 0.1, "count": 1081}, {"group": "Iranian", "pct": 0.1, "count": 1218}, {"group": "Jewish", "pct": 0.1, "count": 1243}, {"group": "Pakistani", "pct": 0.1, "count": 1303}, {"group": "Latin", "pct": 0.0, "count": 301}]
-  wrote data/processed/cyprus_census.json (1735 kB)
-  wrote cyprus_census.json: 615 records
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  national median 45.4 from the counties' five-year groups (Eurostat, 1 January 2022: 45.4)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/croatia.py", line 620, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/croatia.py", line 613, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/croatia.py", line 552, in build
+    records, taken = undrawn(by_key, ages, shapes("HRV", "admin2"))
+                                           ^^^^^^
+UnboundLocalError: cannot access local variable 'shapes' where it is not associated with a value
