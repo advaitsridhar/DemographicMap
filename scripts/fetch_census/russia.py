@@ -1,11 +1,24 @@
 #!/usr/bin/env python3
-"""The 2020 Russian census, Volume 5: ethnic composition and native language.
+"""The 2020 Russian census by federal subject: Volumes 5 and 2.
 
-Two tables, both published per federal subject, both naming their own universe
-in the sheet:
+Two tables of Volume 5, both published per federal subject, both naming their
+own universe in the sheet:
 
     Tom5_tab1  1. НАЦИОНАЛЬНЫЙ СОСТАВ НАСЕЛЕНИЯ      -> ethnicity
     Tom5_tab6  6. НАСЕЛЕНИЕ ПО РОДНОМУ ЯЗЫКУ         -> language
+
+and one of Volume 2:
+
+    Tom2_tab2  2. НАСЕЛЕНИЕ ПО ВОЗРАСТНЫМ ГРУППАМ И ПОЛУ
+               -> population, median age, sex ratio
+
+Volume 2's table prints each subject's everyone-counted total by sex, the
+five-year groups it is made of, and Rosstat's own "Медианный возраст". The
+median is Rosstat's, not one interpolated here: the office computed it from
+single years, which is finer than the groups the table prints. The groups are
+still read, and must add up to the total, and the median interpolated from
+them must land within a year of Rosstat's -- the check that the row read is
+the subject's and not its town or country population.
 
 Not table 5. It is called ВЛАДЕНИЕ ЯЗЫКАМИ -- *proficiency*, which languages a
 person knows -- and a person may know several, so its columns are independent
@@ -43,8 +56,8 @@ from collections import Counter
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, record, shares,
-    write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, record,
+    shares, write_json,
 )
 
 # After ._shared, which is what puts scripts/ on the path.
@@ -220,6 +233,44 @@ UNIVERSE = {
 TABLE = {"ethnicity": "Tom5_tab1_VPN-2020.xlsx",
          "language": "Tom5_tab6_VPN-2020.xlsx"}
 
+# Volume 2, table 2, from its own capture: the archive holds each file at the
+# moments it was crawled, and this one was taken in October 2022.
+AGE_TABLE = "Tom2_tab2_VPN-2020.xlsx"
+AGE_CAPTURE = "20221003180330"
+AGE_LANDING = ("https://rosstat.gov.ru/vpn/2020/"
+               "Tom2_Vozrastno-polovoj_sostav_i_sostoyanie_v_brake")
+AGE_SOURCE = ("Федеральная служба государственной статистики (Rosstat), "
+              "Всероссийская перепись населения 2020 года, Том 2, таблица 2: "
+              "Население по возрастным группам и полу, retrieved via the "
+              f"Internet Archive capture of {AGE_CAPTURE[:4]}-"
+              f"{AGE_CAPTURE[4:6]}-{AGE_CAPTURE[6:8]}")
+
+# Volume 2 spells six subjects differently from Volume 5's sheet names, with
+# en dashes where Volume 5 has hyphens and whole words where it abbreviates.
+# Mapped onto the names SUBJECTS already keys, so one subject is one key.
+AGE_NAMES = {
+    "Архангельская область без автономного округа": "Архангельская область без АО",
+    "Республика Северная Осетия - Алания": "РСО-Алания",
+    "Ханты-Мансийский автономный округ - Югра": "ХМАО",
+    "Ямало-Ненецкий автономный округ": "ЯНАО",
+    "Тюменская область без автономных округов": "Тюменская область без АО",
+}
+
+# The blocks of Volume 2's table that are not subjects: the country, read as
+# the control, and the eight federal districts, which are sums of subjects.
+FEDERAL_DISTRICT = re.compile(r"федеральный округ$")
+
+# The census's own count of everyone, the control every subject's total adds
+# up to (with Crimea and Sevastopol, which this map does not draw here).
+COUNTRY_TOTAL = 147_182_123
+
+# How far Rosstat's median may sit from the one interpolated out of the
+# five-year groups it prints. Interpolating within a five-year group assumes
+# the people in it are spread evenly, which a single-year computation does
+# not, so the two differ by a few tenths; a whole year apart means the row
+# read is not the one the median belongs to.
+MEDIAN_SLACK = 1.0
+
 # How far the groups may sit from the universe the sheet publishes. The
 # ethnicity table nests -- Авары is followed by Андийцы, Ахвахцы and Дидойцы,
 # which are counted inside it -- so a reader that takes every row sums past
@@ -227,7 +278,7 @@ TABLE = {"ethnicity": "Tom5_tab1_VPN-2020.xlsx",
 TOLERANCE = 0.005
 
 
-def workbook(filename: str) -> bytes:
+def workbook(filename: str, capture: str = CAPTURE) -> bytes:
     """The file, or a refusal that says what arrived instead.
 
     The check earns its place even now that BASE asks for raw content: the
@@ -265,8 +316,9 @@ def workbook(filename: str) -> bytes:
         log(f"  {filename}: the checked-in copy is not a workbook; refetching")
 
     last = b""
+    base = BASE.replace(CAPTURE, capture)
     for attempt in range(4):
-        blob = http_get(BASE + filename, binary=True, cache=False,
+        blob = http_get(base + filename, binary=True, cache=False,
                         retries=1, timeout=90)
         if blob[:2] == b"PK":
             STORE.mkdir(parents=True, exist_ok=True)
@@ -464,6 +516,145 @@ def check(field: str, tables: dict[str, dict[str, Any]]) -> None:
             f"was last time.")
 
 
+GROUP = re.compile(r"^(\d+)\s*[–—-]\s*(\d+)$")
+OPEN_GROUP = re.compile(r"^(\d+)\s+и\s+более$")
+
+
+def dashes(text: str) -> str:
+    """One spelling of a name: en and em dashes as hyphens, spaces single."""
+    return " ".join(re.sub(r"\s*[–—]\s*", " - ", text).split())
+
+
+def ages(blob: bytes) -> dict[str, dict[str, Any]]:
+    """{subject: total, men, women, groups, median} from Volume 2's table 2.
+
+    Each block opens with the subject's name on a row of its own, then
+    "Городское и сельское население" -- everyone -- with the groups under it,
+    then the same again for the urban and the rural population. Only the
+    first, everyone, is read; a subject's block ends at the next name.
+    """
+    import openpyxl
+
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    sheet = book.worksheets[0]
+    out: dict[str, dict[str, Any]] = {}
+    current: dict[str, Any] | None = None
+    reading = False
+    for row in sheet.iter_rows(values_only=True):
+        name = dashes(str(row[0] or "").strip())
+        values = [number(c) for c in row[1:4]]
+        if not name:
+            continue
+        if all(v is None for v in values) and (
+                name == COUNTRY_SHEET or FEDERAL_DISTRICT.search(name)
+                or AGE_NAMES.get(name, name) in SUBJECTS or name in SKIP
+                or AGE_NAMES.get(name, name) in {dashes(s) for s in SUBJECTS}):
+            key = AGE_NAMES.get(name, name)
+            key = next((s for s in SUBJECTS if dashes(s) == key), key)
+            if key in out:
+                raise SystemExit(f"RUS ages: {name!r} opens two blocks")
+            current = out[key] = {"groups": [], "total": None, "men": None,
+                                  "women": None, "median": None}
+            reading = False
+            continue
+        if current is None:
+            continue
+        if name == "Городское и сельское население" and current["total"] is None:
+            current["total"], current["men"], current["women"] = values
+            reading = True
+            continue
+        if name in {"Городское население", "Сельское население"}:
+            reading = False
+            continue
+        if not reading:
+            continue
+        closed, open_ = GROUP.match(name), OPEN_GROUP.match(name)
+        if closed:
+            current["groups"].append((int(closed.group(1)), int(closed.group(2)),
+                                      values[0] or 0.0))
+        elif open_:
+            current["groups"].append((int(open_.group(1)), None, values[0] or 0.0))
+        elif name == "Медианный возраст":
+            current["median"] = values[0]
+            reading = False
+    book.close()
+    return out
+
+
+def grouped(groups: list[tuple[int, int | None, float]]) -> float | None:
+    """The median interpolated within its five-year group; the check on Rosstat's."""
+    base = sum(n for _, _, n in groups)
+    half, before = base / 2, 0.0
+    for low, high, people in sorted(groups, key=lambda g: g[0]):
+        if before + people >= half:
+            if high is None or people <= 0:
+                return None
+            return round(low + (half - before) / people * (high - low + 1), 1)
+        before += people
+    return None
+
+
+def check_ages(table: dict[str, dict[str, Any]]) -> None:
+    """Every subject's groups make its total, its sexes too, and the country adds up."""
+    missing = [s for s in SUBJECTS if s not in table]
+    if missing:
+        raise SystemExit(f"RUS ages: {len(missing)} configured subjects have no block "
+                         f"in {AGE_TABLE}: {', '.join(missing[:6])}")
+    worst = (None, 0.0)
+    for name, got in table.items():
+        total, men, women, median = (got["total"], got["men"], got["women"],
+                                     got["median"])
+        if not total or men is None or women is None or median is None:
+            raise SystemExit(f"RUS ages: {name}: no total, sexes or median read")
+        made = sum(n for _, _, n in got["groups"])
+        if abs(made - total) > 0.5 or abs(men + women - total) > 0.5:
+            raise SystemExit(
+                f"RUS ages: {name}: the groups make {made:,.0f} and the sexes "
+                f"{men + women:,.0f}, against a total of {total:,.0f}")
+        mine = grouped(got["groups"])
+        off = abs((mine or 0) - median)
+        if mine is None or off > MEDIAN_SLACK:
+            raise SystemExit(
+                f"RUS ages: {name}: Rosstat's median is {median} and the groups "
+                f"give {mine}; a year apart means this is not the row it goes with")
+        if off > worst[1]:
+            worst = (name, off)
+    country = table[COUNTRY_SHEET]["total"]
+    if country != COUNTRY_TOTAL:
+        raise SystemExit(f"RUS ages: the country's block reads {country:,.0f}, not "
+                         f"the census's {COUNTRY_TOTAL:,}")
+    # The subjects the census counts, once each: the configured 83, which hold
+    # Arkhangelsk and Tyumen without their okrugs, and Crimea and Sevastopol.
+    summed = sum(table[s]["total"] for s in SUBJECTS) + sum(
+        table[s]["total"] for s in ("Республика Крым", "г. Севастополь"))
+    if summed != country:
+        raise SystemExit(f"RUS ages: the subjects make {summed:,.0f}, the country "
+                         f"{country:,.0f}")
+    log(f"  ages: {len(SUBJECTS)} subjects' groups and sexes make their totals, the "
+        f"subjects make the country's {country:,.0f}; Rosstat's median and the "
+        f"grouped one are furthest apart in {worst[0]}, by {worst[1]:.1f} years")
+
+
+def age_fields(got: dict[str, Any]) -> dict[str, Any]:
+    """The three figures one subject carries from Volume 2."""
+    men, women = got["men"], got["women"]
+    return {
+        "population": measure(int(got["total"]), year=YEAR, source=AGE_SOURCE),
+        "population_note": ("Everyone the 2020 census counted in the subject "
+                            "(reference date 1 October 2021)."),
+        "median_age": measure(got["median"], unit="years", year=YEAR,
+                              source=AGE_SOURCE),
+        "median_age_note": ("Rosstat's own median age for the subject, as "
+                            "Volume 2 publishes it (\"Медианный возраст\"), "
+                            "everyone counted by the 2020 census."),
+        "sex_ratio": measure(round(100 * men / women, 1),
+                             unit="males_per_100_females", year=YEAR,
+                             source=AGE_SOURCE),
+        "sex_ratio_note": (f"{int(men):,} men and {int(women):,} women counted "
+                           "by the 2020 census."),
+    }
+
+
 def englished(field: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Rosstat's group names, in the language the rest of the map is in.
 
@@ -515,6 +706,12 @@ def main() -> int:
         fields[field] = read(blob, field)
         check(field, fields[field])
 
+    time.sleep(5)
+    blob = workbook(AGE_TABLE, AGE_CAPTURE)
+    log(f"ages: {AGE_TABLE}, {len(blob):,} bytes")
+    table = ages(blob)
+    check_ages(table)
+
     records = []
     for sheet, code in SUBJECTS.items():
         values: dict[str, Any] = {}
@@ -536,8 +733,12 @@ def main() -> int:
             match_by="iso_3166_2",
             aliases=list(BY_NAME.get(code, ())),
             **values,
+            **age_fields(table[sheet]),
             sources=[{"field": field, "name": SOURCE, "url": LANDING,
-                      "license": LICENCE, "year": YEAR} for field in TABLE],
+                      "license": LICENCE, "year": YEAR} for field in TABLE]
+            + [{"field": field, "name": AGE_SOURCE, "url": AGE_LANDING,
+                "license": LICENCE, "year": YEAR}
+               for field in ("population", "median_age", "sex_ratio")],
         ))
 
     # Every table, not just the first. Checking one of them let ХМАО and ЯНАО
