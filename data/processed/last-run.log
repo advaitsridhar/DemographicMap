@@ -1,99 +1,222 @@
-== hdx ukraine-subnational-boundaries-and-tabular-data
-  Ukraine.gdb.zip | Geodatabase | https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/134a344c-0d1c-4055-a5f3-1336f25b5655/download/ukraine.gdb.zip
-  Ukraine_uscb_201905.xlsx | XLSX | https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
-  4,486,575 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\xba\x00'
-  https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx: 10 sheets: Metadata | Data Dictionary | Age-Sex 2001 | Age-Sex 2017 | Crimea Population | Language | Nationality-Language | Households | Info and Com Technology | Income and Poverty
-  -- sheet 'Age-Sex 2017': 30 rows x 67 cols
-    r0: AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | P17_BTOTL | P17_BURB | P17_BRUR | P17_B0004 | P17_B0509 | P17_B1014 | P17_B1519 | P17_B2024 | P17_B2529 | P17_B3034 | P17_B3539 | P17_B4044 | P17_B4549 | P17_B5054 | P17_B5559 | P17_B6064 | P17_B6569 | P17_B7074 | P17_B7579
-    r1: Country or subnational | Administrative name co | Geographic match | Country name | First-order administra | Administrative level | Notes | GENC code | FIPS code | National statistical o | National statistical o | Both sexes total | Both sexes urban | Both sexes rural | Both sexes 0 to 4 | Both sexes 5 to 9 | Both sexes 10 to 14 | Both sexes 15 to 19 | Both sexes 20 to 24 | Both sexes 25 to 29 | Both sexes 30 to 34 | Both sexes 35 to 39 | Both sexes 40 to 44 | Both sexes 45 to 49 | Both sexes 50 to 54 | Both sexes 55 to 59 | Both sexes 60 to 64 | Both sexes 65 to 69 | Both sexes 70 to 74 | Both sexes 75 to 79
-    r2: UKRAINE | UKRAINE | UKR_00 | UKRAINE |  | 0 |  | UA | UP |  | UKRAINE | 42414905 | 29243516 | 13171389 | 2224075 | 2334380 | 1977081 | 1881631 | 2451572 | 3212459 | 3619265 | 3186012 | 3062265 | 2840642 | 2925578 | 3154026 | 2678385 | 2269745 | 1299459 | 1751144
-    r3: AVTONOMNA RESPUBLIKA K | UKRAINE_AVTONOMNA RESP | UKR_01 | UKRAINE | AVTONOMNA RESPUBLIKA K | 1 | Автономна Республіка К | UA-43 | UP11 | 1 | AVTONOMNA RESPUBLIKA K |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r4: MISTO SEVASTOPOL’ | UKRAINE_MISTO SEVASTOP | UKR_02 | UKRAINE | MISTO SEVASTOPOL’ | 1 | Севастополь (Gorod-Ger | UA-40 | UP20 | 85 | SEVASTOPOL (MISKRADA) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r5: CHERKAS’KA OBLAST’ | UKRAINE_CHERKAS’KA OBL | UKR_03 | UKRAINE | CHERKAS’KA OBLAST’ | 1 | Черкаська область (Che | UA-71 | UP01 | 71 | CHERKASKA OBLAST | 1227578 | 695968 | 531610 | 58602 | 60807 | 52781 | 52510 | 67074 | 92177 | 98731 | 84474 | 89661 | 86660 | 88915 | 91351 | 79380 | 72469 | 44245 | 59769
-    r6: CHERNIHIVS’KA OBLAST’ | UKRAINE_CHERNIHIVS’KA  | UKR_04 | UKRAINE | CHERNIHIVS’KA OBLAST’ | 1 | Чернігівська область ( | UA-74 | UP02 | 74 | CHERNIHIVSKA OBLAST | 1024870 | 659033 | 365837 | 46636 | 49484 | 43517 | 41218 | 52278 | 76307 | 85830 | 71061 | 71215 | 67944 | 72029 | 79070 | 71746 | 61967 | 32857 | 50599
-    r7: CHERNIVETS’KA OBLAST’ | UKRAINE_CHERNIVETS’KA  | UKR_05 | UKRAINE | CHERNIVETS’KA OBLAST’ | 1 | Чернівецька область (C | UA-77 | UP03 | 73 | CHERNIVETSKA OBLAST | 905055 | 386140 | 518915 | 55206 | 54050 | 47270 | 50143 | 62317 | 69678 | 77090 | 68303 | 64192 | 60049 | 58239 | 62041 | 49868 | 42282 | 26080 | 27754
-    r8: DNIPROPETROVS’KA OBLAS | UKRAINE_DNIPROPETROVS’ | UKR_06 | UKRAINE | DNIPROPETROVS’KA OBLAS | 1 | Дніпропетровська облас | UA-12 | UP04 | 12 | DNIPROPETROVSKA OBLAST | 3227102 | 2695059 | 532043 | 172540 | 178527 | 148542 | 129549 | 172560 | 243885 | 277908 | 246486 | 233409 | 215920 | 225907 | 243733 | 206873 | 173896 | 98628 | 148001
-    r9: DONETS’KA OBLAST’ | UKRAINE_DONETS’KA OBLA | UKR_07 | UKRAINE | DONETS’KA OBLAST’ | 1 | Донецька область (Done | UA-14 | UP05 | 14 | DONETSKA OBLAST | 4231172 | 3836366 | 394806 | 153139 | 207177 | 171730 | 156216 | 200758 | 311557 | 367473 | 327824 | 302543 | 277100 | 297208 | 346772 | 300253 | 248197 | 136122 | 215390
-    r10: IVANO-FRANKIVS’KA OBLA | UKRAINE_IVANO-FRANKIVS | UKR_08 | UKRAINE | IVANO-FRANKIVS’KA OBLA | 1 | Івано-Франківська обла | UA-26 | UP06 | 26 | IVANO-FRANKIVSKA OBLAS | 1377189 | 598843 | 778346 | 80986 | 83127 | 72855 | 72608 | 91529 | 110551 | 115341 | 101121 | 96458 | 91883 | 93420 | 99733 | 74774 | 61401 | 39339 | 42278
-    r11: KHARKIVS’KA OBLAST’ | UKRAINE_KHARKIVS’KA OB | UKR_09 | UKRAINE | KHARKIVS’KA OBLAST’ | 1 | Харківська область (Kh | UA-63 | UP07 | 63 | KHARKIVSKA OBLAST | 2685552 | 2159077 | 526475 | 129251 | 130221 | 109417 | 107598 | 166593 | 201129 | 235745 | 213709 | 200510 | 181716 | 187849 | 203069 | 178347 | 157418 | 77003 | 116513
-    r12: KHERSONS’KA OBLAST’ | UKRAINE_KHERSONS’KA OB | UKR_10 | UKRAINE | KHERSONS’KA OBLAST’ | 1 | Херсонська область (Kh | UA-65 | UP08 | 65 | KHERSONSKA OBLAST | 1054217 | 643055 | 411162 | 58825 | 59692 | 50788 | 48518 | 59769 | 81962 | 88297 | 76008 | 75361 | 71038 | 74483 | 77505 | 69907 | 56238 | 31152 | 44320
-    r13: KHMEL’NYTS’KA OBLAST’ | UKRAINE_KHMEL’NYTS’KA  | UKR_11 | UKRAINE | KHMEL’NYTS’KA OBLAST’ | 1 | Хмельницька область (K | UA-68 | UP09 | 68 | KHMELNYTSKA OBLAST | 1282104 | 720735 | 561369 | 69866 | 71240 | 61869 | 59655 | 74757 | 96239 | 99729 | 89773 | 91170 | 87660 | 90239 | 94527 | 81095 | 67311 | 43196 | 52679
-    r14: KIROVOHRADS’KA OBLAST’ | UKRAINE_KIROVOHRADS’KA | UKR_12 | UKRAINE | KIROVOHRADS’KA OBLAST’ | 1 | Кіровоградська область | UA-35 | UP10 | 35 | KIROVOHRADSKA OBLAST | 959341 | 601104 | 358237 | 49833 | 51448 | 44325 | 41634 | 54909 | 73942 | 73682 | 64693 | 68088 | 67509 | 68851 | 69613 | 60894 | 54236 | 34822 | 45631
-    r15: KYYIVS’KA OBLAST’ | UKRAINE_KYYIVS’KA OBLA | UKR_13 | UKRAINE | KYYIVS’KA OBLAST’ | 1 | Київська область (Kiev | UA-32 | UP13 | 32 | KYIVSKA OBLAST | 1728692 | 1066830 | 661862 | 103884 | 102529 | 80533 | 71047 | 93761 | 132940 | 154634 | 128610 | 124534 | 117246 | 123447 | 125533 | 105831 | 86706 | 52041 | 72554
-    r16: LUHANS’KA OBLAST’ | UKRAINE_LUHANS’KA OBLA | UKR_14 | UKRAINE | LUHANS’KA OBLAST’ | 1 | Луганська область (Lug | UA-09 | UP14 | 44 | LUHANSKA OBLAST | 2190693 | 1902627 | 288066 | 64631 | 103957 | 86764 | 78792 | 102992 | 161292 | 193876 | 169308 | 155828 | 144120 | 157737 | 189350 | 160442 | 133640 | 66421 | 115620
-    r17: L’VIVS’KA OBLAST’ | UKRAINE_L’VIVS’KA OBLA | UKR_15 | UKRAINE | L’VIVS’KA OBLAST’ | 1 | Львівська область (L’v | UA-46 | UP15 | 46 | LVIVSKA OBLAST | 2515657 | 1521708 | 993949 | 143962 | 142306 | 126412 | 129701 | 166153 | 193195 | 217730 | 185714 | 172214 | 169139 | 174036 | 188231 | 141826 | 114540 | 78322 | 81646
-    r18: MISTO KYYIV | UKRAINE_MISTO KYYIV | UKR_16 | UKRAINE | MISTO KYYIV | 1 | м. Київ (Gorod-Geroy K | UA-30 | UP12 | 80 | MISTO KYIV | 2884453 | 2884453 | 0 | 173799 | 159294 | 129312 | 125175 | 181926 | 208155 | 274909 | 255767 | 229218 | 186355 | 176485 | 194275 | 180602 | 157768 | 82872 | 97473
-    r19: MYKOLAYIVS’KA OBLAST’ | UKRAINE_MYKOLAYIVS’KA  | UKR_17 | UKRAINE | MYKOLAYIVS’KA OBLAST’ | 1 | Миколаївська область ( | UA-48 | UP16 | 48 | MYKOLAIVSKA OBLAST | 1149411 | 783133 | 366278 | 61340 | 63534 | 53974 | 50295 | 65038 | 89756 | 98217 | 85214 | 82704 | 76434 | 81338 | 85146 | 74949 | 63694 | 35714 | 47025
-    r20: ODES’KA OBLAST’ | UKRAINE_ODES’KA OBLAST | UKR_18 | UKRAINE | ODES’KA OBLAST’ | 1 | Одеська область (Odess | UA-51 | UP17 | 51 | ODESKA OBLAST | 2375456 | 1577447 | 798009 | 141926 | 141909 | 114982 | 106970 | 145300 | 183282 | 206023 | 178340 | 173769 | 158498 | 156970 | 163511 | 143682 | 125731 | 72293 | 89932
-    r21: POLTAVS’KA OBLAST’ | UKRAINE_POLTAVS’KA OBL | UKR_19 | UKRAINE | POLTAVS’KA OBLAST’ | 1 | Полтавська область (Po | UA-53 | UP18 | 53 | POLTAVSKA OBLAST | 1418990 | 873825 | 545165 | 68921 | 70647 | 60585 | 59337 | 77601 | 108343 | 115659 | 102811 | 106466 | 101535 | 103967 | 105259 | 89704 | 81594 | 47926 | 66386
-    r22: RIVNENS’KA OBLAST’ | UKRAINE_RIVNENS’KA OBL | UKR_20 | UKRAINE | RIVNENS’KA OBLAST’ | 1 | Рівненська область (Ro | UA-56 | UP19 | 56 | RIVNENSKA OBLAST | 1161703 | 547042 | 614661 | 84267 | 83892 | 70298 | 68069 | 77445 | 89207 | 95669 | 83729 | 79726 | 74009 | 73149 | 79613 | 59204 | 49210 | 28553 | 31108
-    r23: SUMS’KA OBLAST’ | UKRAINE_SUMS’KA OBLAST | UKR_21 | UKRAINE | SUMS’KA OBLAST’ | 1 | Сумська область (Sumsk | UA-59 | UP21 | 59 | SUMSKA OBLAST | 1102337 | 754684 | 347653 | 49949 | 51474 | 44860 | 46465 | 59456 | 81464 | 90864 | 81033 | 80788 | 76760 | 81687 | 87699 | 77112 | 66629 | 33213 | 49645
-    r24: TERNOPIL’S’KA OBLAST’ | UKRAINE_TERNOPIL’S’KA  | UKR_22 | UKRAINE | TERNOPIL’S’KA OBLAST’ | 1 | Тернопільська область  | UA-61 | UP22 | 61 | TERNOPILSKA OBLAST | 1055941 | 468947 | 586994 | 56084 | 59243 | 53364 | 53934 | 68038 | 81106 | 87768 | 78137 | 73449 | 71148 | 72872 | 77952 | 59796 | 51218 | 32410 | 35813
-    r25: VINNYTS’KA OBLAST’ | UKRAINE_VINNYTS’KA OBL | UKR_23 | UKRAINE | VINNYTS’KA OBLAST’ | 1 | Вінницька область (Vin | UA-05 | UP23 | 5 | VINNYTSKA OBLAST | 1583272 | 801118 | 782154 | 84114 | 86674 | 75951 | 76155 | 94855 | 118878 | 125225 | 106954 | 113442 | 109089 | 110510 | 111769 | 96277 | 83826 | 54787 | 70989
-    r26: VOLYNS’KA OBLAST’ | UKRAINE_VOLYNS’KA OBLA | UKR_24 | UKRAINE | VOLYNS’KA OBLAST’ | 1 | Волинська область (Vol | UA-07 | UP24 | 7 | VOLYNSKA OBLAST | 1038226 | 538516 | 499710 | 70444 | 73107 | 61616 | 56742 | 65516 | 81350 | 88507 | 77430 | 72191 | 65309 | 65531 | 71949 | 54294 | 44926 | 25927 | 27421
-    r27: ZAKARPATS’KA OBLAST’ | UKRAINE_ZAKARPATS’KA O | UKR_25 | UKRAINE | ZAKARPATS’KA OBLAST’ | 1 | Закарпатська область ( | UA-21 | UP25 | 21 | ZAKARPATSKA OBLAST | 1255944 | 460392 | 795552 | 87518 | 88415 | 74919 | 70199 | 84083 | 101221 | 105451 | 95337 | 90240 | 82422 | 80085 | 84563 | 66139 | 54131 | 32522 | 29598
-    r28: ZAPORIZ’KA OBLAST’ | UKRAINE_ZAPORIZ’KA OBL | UKR_26 | UKRAINE | ZAPORIZ’KA OBLAST’ | 1 | Запорізька область (Za | UA-23 | UP26 | 23 | ZAPORIZKA OBLAST | 1738699 | 1338926 | 399773 | 87014 | 89434 | 77487 | 68906 | 90718 | 131476 | 144128 | 129337 | 127323 | 117617 | 125460 | 134693 | 120551 | 99371 | 53585 | 81441
-    r29: ZHYTOMYRS’KA OBLAST’ | UKRAINE_ZHYTOMYRS’KA O | UKR_27 | UKRAINE | ZHYTOMYRS’KA OBLAST’ | 1 | Житомирська область (Z | UA-18 | UP27 | 18 | ZHYTOMYRSKA OBLAST | 1241251 | 728488 | 512763 | 71338 | 72192 | 62930 | 60195 | 76146 | 93367 | 100779 | 84839 | 87766 | 83482 | 85164 | 87069 | 74839 | 61346 | 39429 | 51559
-  -- sheet 'Crimea Population': 31 rows x 68 cols
-    r0: AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM2_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | PCR_BTOTL | PCR_BURB | PCR_BRUR | PCR_B0004 | PCR_B0509 | PCR_B1014 | PCR_B1519 | PCR_B2024 | PCR_B2529 | PCR_B3034 | PCR_B3539 | PCR_B4044 | PCR_B4549 | PCR_B5054 | PCR_B5559 | PCR_B6064 | PCR_B6569 | PCR_B7074
-    r1: Country or subnational | Administrative name co | Geographic match | Country name | First-order administra | Second-order administr | Administrative level | Notes | GENC code | FIPS code | National statistical o | National statistical o | Both sexes total | Urban population | Rural population | Both sexes 0 to 4 | Both sexes 5 to 9 | Both sexes 10 to 14 | Both sexes 15 to 19 | Both sexes 20 to 24 | Both sexes 25 to 29 | Both sexes 30 to 34 | Both sexes 35 to 39 | Both sexes 40 to 44 | Both sexes 45 to 49 | Both sexes 50 to 54 | Both sexes 55 to 59 | Both sexes 60 to 64 | Both sexes 65 to 69 | Both sexes 70 to 74
-    r2: UKRAINE | UKRAINE | UKR_00 | UKRAINE |  |  | 0 |  | UA | UP |  | UKRAINE |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r3: AVTONOMNA RESPUBLIKA K | UKRAINE_AVTONOMNA RESP | UKR_01 | UKRAINE | AVTONOMNA RESPUBLIKA K |  | 1 | Автономна Республіка К | UA-43 | UP11 | 1 | AVTONOMNA RESPUBLIKA K | 1912168 | 973489 | 938679 | 118675 | 114292 | 89746 | 78211 | 96979 | 143151 | 160091 | 140183 | 129628 | 118769 | 128584 | 146889 | 136127 | 111327 | 55969
-    r4: ALUSHTYNS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_01 | UKRAINE | AVTONOMNA RESPUBLIKA K | ALUSHTYNS’KA MIS’KRADA | 2 |  |  |  |  | ALUSHTA (MISKRADA) | 53951 | 29668 | 24283 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r5: ARMYANS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_02 | UKRAINE | AVTONOMNA RESPUBLIKA K | ARMYANS’KA MIS’KRADA | 2 |  |  |  |  | ARMIANSK (MISKRADA) | 24388 | 21956 | 2432 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r6: BAKHCHYSARAYS’KYY RAYO | UKRAINE_AVTONOMNA RESP | UKR_01_03 | UKRAINE | AVTONOMNA RESPUBLIKA K | BAKHCHYSARAYS’KYY RAYO | 2 | Bakhchisarayskiy Rayon |  |  |  | BAKHCHYSARAISKYI RAION | 90029 | 27188 | 62841 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r7: BILOHIRS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_04 | UKRAINE | AVTONOMNA RESPUBLIKA K | BILOHIRS’KYY RAYON | 2 | Belogorskiy Rayon; Bil |  |  |  | BILOHIRSKYI RAION (AVT | 60595 | 16442 | 44153 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r8: CHORNOMORS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_05 | UKRAINE | AVTONOMNA RESPUBLIKA K | CHORNOMORS’KYY RAYON | 2 | Ak-Mechetskiy Rayon; C |  |  |  | CHORNOMORSKYI RAION | 30302 | 0 | 30302 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r9: DZHANKOYS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_06 | UKRAINE | AVTONOMNA RESPUBLIKA K | DZHANKOYS’KYY RAYON | 2 | Dzhankoyskiy Rayon |  |  |  | DZHANKOISKYI RAION | 66873 | 0 | 66873 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r10: FEODOSIYS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_07 | UKRAINE | AVTONOMNA RESPUBLIKA K | FEODOSIYS’KA MIS’KRADA | 2 |  |  |  |  | FEODOSIIA (MISKRADA) | 100492 | 67993 | 32499 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r11: KIROVS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_08 | UKRAINE | AVTONOMNA RESPUBLIKA K | KIROVS’KYY RAYON | 2 | Islam-Terekskiy Rayon; |  |  |  | KIROVSKYI RAION | 51084 | 9312 | 41772 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r12: KRASNOHVARDIYS’KYY RAY | UKRAINE_AVTONOMNA RESP | UKR_01_09 | UKRAINE | AVTONOMNA RESPUBLIKA K | KRASNOHVARDIYS’KYY RAY | 2 | Krasnogvardeyskiy Rayo |  |  |  | KRASNOHVARDIISKYI RAIO | 84727 | 0 | 84727 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r13: KRASNOPEREKOPS’KYY RAY | UKRAINE_AVTONOMNA RESP | UKR_01_10 | UKRAINE | AVTONOMNA RESPUBLIKA K | KRASNOPEREKOPS’KYY RAY | 2 | Ishun’skiy Rayon; Kras |  |  |  | KRASNOPEREKOPSKYI RAIO | 24369 | 0 | 24369 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r14: LENINS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_11 | UKRAINE | AVTONOMNA RESPUBLIKA K | LENINS’KYY RAYON | 2 | Leninskiy Rayon; Stali |  |  |  | LENINSKYI RAION | 59679 | 10453 | 49226 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r15: DZHANKOYS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_12 | UKRAINE | AVTONOMNA RESPUBLIKA K | DZHANKOYS’KA MIS’KRADA | 2 |  |  |  |  | M. DZHANKOI | 38714 | 38714 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r16: KERCHENS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_13 | UKRAINE | AVTONOMNA RESPUBLIKA K | KERCHENS’KA MIS’KRADA | 2 |  |  |  |  | M. KERCH | 149566 | 149566 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r17: KRASNOPEREKOPS’KA MIS’ | UKRAINE_AVTONOMNA RESP | UKR_01_14 | UKRAINE | AVTONOMNA RESPUBLIKA K | KRASNOPEREKOPS’KA MIS’ | 2 |  |  |  |  | M. KRASNOPEREKOPSK | 25769 | 25769 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r18: SAKS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_15 | UKRAINE | AVTONOMNA RESPUBLIKA K | SAKS’KA MIS’KRADA | 2 | Nizhnegorskiy Rayon; N |  |  |  | M. SAKY | 24885 | 24885 | 0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r19: NYZHN’OHIRS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_16 | UKRAINE | AVTONOMNA RESPUBLIKA K | NYZHN’OHIRS’KYY RAYON | 2 | Larindorfskiy Rayon; P |  |  |  | NYZHNOHIRSKYI RAION | 44901 | 0 | 44901 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r20: PERVOMAYS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_17 | UKRAINE | AVTONOMNA RESPUBLIKA K | PERVOMAYS’KYY RAYON | 2 | Ak-Sheikhskiy Rayon; R |  |  |  | PERVOMAISKYI RAION (AV | 32262 | 0 | 32262 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r21: ROZDOL’NENS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_18 | UKRAINE | AVTONOMNA RESPUBLIKA K | ROZDOL’NENS’KYY RAYON | 2 |  |  |  |  | ROZDOLNENSKYI RAION | 30609 | 0 | 30609 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r22: SAKS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_19 | UKRAINE | AVTONOMNA RESPUBLIKA K | SAKS’KYY RAYON | 2 | Sakskii Raion; Sakskiy |  |  |  | SAKSKYI RAION | 76075 | 0 | 76075 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r23: SIMFEROPOL’S’KA MIS’KR | UKRAINE_AVTONOMNA RESP | UKR_01_20 | UKRAINE | AVTONOMNA RESPUBLIKA K | SIMFEROPOL’S’KA MIS’KR | 2 |  |  |  |  | SIMFEROPOL (MISKRADA) | 361647 | 341155 | 20492 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r24: SIMFEROPOL’S’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_21 | UKRAINE | AVTONOMNA RESPUBLIKA K | SIMFEROPOL’S’KYY RAYON | 2 | Simferopol’skiĭ Raĭon; |  |  |  | SIMFEROPOLSKYI RAION | 158317 | 0 | 158317 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r25: SOVYETS’KYY RAYON | UKRAINE_AVTONOMNA RESP | UKR_01_22 | UKRAINE | AVTONOMNA RESPUBLIKA K | SOVYETS’KYY RAYON | 2 | Ichkinskiy Rayon; Sove |  |  |  | SOVIETSKYI RAION | 31693 | 0 | 31693 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r26: SUDATS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_23 | UKRAINE | AVTONOMNA RESPUBLIKA K | SUDATS’KA MIS’KRADA | 2 | Sudakskiy Rayon |  |  |  | SUDAK (MISKRADA) | 32674 | 16756 | 15918 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r27: YALTYNS’KA MIS’KRADA | UKRAINE_AVTONOMNA RESP | UKR_01_24 | UKRAINE | AVTONOMNA RESPUBLIKA K | YALTYNS’KA MIS’KRADA | 2 |  |  |  |  | YALTA (MISKRADA) | 138833 | 87474 | 51359 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r28: YEVPATORIYS’KA MIS’KRA | UKRAINE_AVTONOMNA RESP | UKR_01_25 | UKRAINE | AVTONOMNA RESPUBLIKA K | YEVPATORIYS’KA MIS’KRA | 2 |  |  |  |  | YEVPATORIIA (MISKRADA) | 119734 | 106158 | 13576 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    r29: MISTO SEVASTOPOL’ | UKRAINE_MISTO SEVASTOP | UKR_02 | UKRAINE | MISTO SEVASTOPOL’ |  | 1 | Севастополь (Gorod-Ger | UA-40 | UP20 | 85 | SEVASTOPOL (MISKRADA) | 428753 | 398070 | 30683 | 25524 | 22960 | 19020 | 17567 | 24207 | 34614 | 39535 | 34105 | 30501 | 25872 | 26153 | 29795 | 29248 | 25301 | 12978
-    r30: MISTO SEVASTOPOL’ | UKRAINE_MISTO SEVASTOP | UKR_02_01 | UKRAINE | MISTO SEVASTOPOL’ | MISTO SEVASTOPOL’ | 2 | Севастополь (Gorod-Ger | UA-40 | UP20 | 85 | SEVASTOPOL (MISKRADA) | 428753 | 398070 | 30683 | 25524 | 22960 | 19020 | 17567 | 24207 | 34614 | 39535 | 34105 | 30501 | 25872 | 26153 | 29795 | 29248 | 25301 | 12978
-  -- sheet 'Info and Com Technology': 30 rows x 21 cols
-    r0: AREA_NAME | GEO_CONCAT | GEO_MATCH | CNTRY_NAME | ADM1_NAME | ADM_LEVEL | USCBCMNT | GENC_CODE | FIPS_CODE | NSO_CODE | NSO_NAME | ICT_MTCN | ICT_MTRN | ICT_MTHM | ICT_MHMC | ICT_MHRL | ICT_SMBC | ICT_SCTV | ICT_SINT | ICT_IBBF | ICT_IBBM
-    r1: Country or subnational | Administrative name co | Geographic match | Country name | First-order administra | Administrative level | Notes | GENC code | FIPS code | National statistical o | National statistical o | Main telephone sets of | Main telephone sets of | Main home telephones | Main home telephone se | Main home telephone se | Subscribers of mobile  | Subscribers of cable t | Internet subscribers | Internet subscribers w | Internet subscribers w
-    r2: UKRAINE | UKRAINE | UKR_00 | UKRAINE |  | 0 |  | UA | UP |  | UKRAINE | 6322200 | 858700 | 5421700 | 4673900 | 747800 | 55714700 | 2337000 | 23632300 | 5116800 | 17509000
-    r3: AVTONOMNA RESPUBLIKA K | UKRAINE_AVTONOMNA RESP | UKR_01 | UKRAINE | AVTONOMNA RESPUBLIKA K | 1 | Автономна Республіка К | UA-43 | UP11 | 1 | AVTONOMNA RESPUBLIKA K |  |  |  |  |  |  |  |  |  | 
-    r4: MISTO SEVASTOPOL’ | UKRAINE_MISTO SEVASTOP | UKR_02 | UKRAINE | MISTO SEVASTOPOL’ | 1 | Севастополь (Gorod-Ger | UA-40 | UP20 | 85 | SEVASTOPOL (MISKRADA) |  |  |  |  |  |  |  |  |  | 
-    r5: CHERKAS’KA OBLAST’ | UKRAINE_CHERKAS’KA OBL | UKR_03 | UKRAINE | CHERKAS’KA OBLAST’ | 1 | Черкаська область (Che | UA-71 | UP01 | 71 | CHERKASKA OBLAST | 142200 | 43300 | 146300 | 107700 | 38600 | 1336400 | 17700 | 669400 | 104200 | 481800
-    r6: CHERNIHIVS’KA OBLAST’ | UKRAINE_CHERNIHIVS’KA  | UKR_04 | UKRAINE | CHERNIHIVS’KA OBLAST’ | 1 | Чернігівська область ( | UA-74 | UP02 | 74 | CHERNIHIVSKA OBLAST | 145800 | 45000 | 157300 | 116900 | 40400 | 1310000 | 68000 | 599200 | 107900 | 464600
-    r7: CHERNIVETS’KA OBLAST’ | UKRAINE_CHERNIVETS’KA  | UKR_05 | UKRAINE | CHERNIVETS’KA OBLAST’ | 1 | Чернівецька область (C | UA-77 | UP03 | 73 | CHERNIVETSKA OBLAST | 65500 | 48000 | 91100 | 46200 | 44900 | 1135700 | 8500 | 365500 | 82600 | 282000
-    r8: DNIPROPETROVS’KA OBLAS | UKRAINE_DNIPROPETROVS’ | UKR_06 | UKRAINE | DNIPROPETROVS’KA OBLAS | 1 | Дніпропетровська облас | UA-12 | UP04 | 12 | DNIPROPETROVSKA OBLAST | 289200 | 19800 | 211100 | 195000 | 16100.000000000002 | 4230700 | 173700 | 1545200 | 308000 | 1211000
-    r9: DONETS’KA OBLAST’ | UKRAINE_DONETS’KA OBLA | UKR_07 | UKRAINE | DONETS’KA OBLAST’ | 1 | Донецька область (Done | UA-14 | UP05 | 14 | DONETSKA OBLAST | 129699.99999999999 | -998 | -998 | 84000 | -998 | 6587300 | 57900 | 1932000 | 253600 | 1312100
-    r10: IVANO-FRANKIVS’KA OBLA | UKRAINE_IVANO-FRANKIVS | UKR_08 | UKRAINE | IVANO-FRANKIVS’KA OBLA | 1 | Івано-Франківська обла | UA-26 | UP06 | 26 | IVANO-FRANKIVSKA OBLAS | 72900 | 41700 | 84500 | 47000 | 37500 | 1572500 | 15000 | 570100 | 119800 | 446500
-    r11: KHARKIVS’KA OBLAST’ | UKRAINE_KHARKIVS’KA OB | UKR_09 | UKRAINE | KHARKIVS’KA OBLAST’ | 1 | Харківська область (Kh | UA-63 | UP07 | 63 | KHARKIVSKA OBLAST | 433700 | 59700 | 353200 | 298500 | 54700 | 4109600.0000000005 | 28600 | 1377800 | 232000 | 1113200
-    r12: KHERSONS’KA OBLAST’ | UKRAINE_KHERSONS’KA OB | UKR_10 | UKRAINE | KHERSONS’KA OBLAST’ | 1 | Херсонська область (Kh | UA-65 | UP08 | 65 | KHERSONSKA OBLAST | 107000 | 20800 | 97600 | 79700 | 17900 | 1597800 | 21300 | 477100 | 105100 | 358000
-    r13: KHMEL’NYTS’KA OBLAST’ | UKRAINE_KHMEL’NYTS’KA  | UKR_11 | UKRAINE | KHMEL’NYTS’KA OBLAST’ | 1 | Хмельницька область (K | UA-68 | UP09 | 68 | KHMELNYTSKA OBLAST | 109200 | 27100 | 93900 | 71100 | 22700 | 1031900.0000000001 | 20300 | 575900 | 115600 | 440600
-    r14: KIROVOHRADS’KA OBLAST’ | UKRAINE_KIROVOHRADS’KA | UKR_12 | UKRAINE | KIROVOHRADS’KA OBLAST’ | 1 | Кіровоградська область | UA-35 | UP10 | 35 | KIROVOHRADSKA OBLAST | 83600 | 17300 | 70900 | 56600 | 14300 | 1192400 | 38900 | 407900 | 86400 | 312200
-    r15: KYYIVS’KA OBLAST’ | UKRAINE_KYYIVS’KA OBLA | UKR_13 | UKRAINE | KYYIVS’KA OBLAST’ | 1 | Київська область (Kiev | UA-32 | UP13 | 32 | KYIVSKA OBLAST | 14700 | 1500 | 3700 | 2400 | 1300 | 1609800 | 68900 | 1038200 | 144000 | 877800
-    r16: LUHANS’KA OBLAST’ | UKRAINE_LUHANS’KA OBLA | UKR_14 | UKRAINE | LUHANS’KA OBLAST’ | 1 | Луганська область (Lug | UA-09 | UP14 | 44 | LUHANSKA OBLAST | 68700 | 11800 | 53500 | 43300 | 10200 | 3280400 | 56600 | 830000 | 111400 | 667300
-    r17: L’VIVS’KA OBLAST’ | UKRAINE_L’VIVS’KA OBLA | UKR_15 | UKRAINE | L’VIVS’KA OBLAST’ | 1 | Львівська область (L’v | UA-46 | UP15 | 46 | LVIVSKA OBLAST | 287000 | 46000 | 251900 | 211700 | 40200 | 2750700 | 47800 | 1410300 | 254500 | 1149700
-    r18: MISTO KYYIV | UKRAINE_MISTO KYYIV | UKR_16 | UKRAINE | MISTO KYYIV | 1 | м. Київ (Gorod-Geroy K | UA-30 | UP12 | 80 | MISTO KYIV | 1495900 | -998 | -998 | 965300 | -998 | 5880000 | 1159500 | 3120400 | 1535800 | 1547400
-    r19: MYKOLAYIVS’KA OBLAST’ | UKRAINE_MYKOLAYIVS’KA  | UKR_17 | UKRAINE | MYKOLAYIVS’KA OBLAST’ | 1 | Миколаївська область ( | UA-48 | UP16 | 48 | MYKOLAIVSKA OBLAST | 140100 | -998 | -998 | 105400 | -998 | 1585800 | 63800 | 710400 | 180100 | 514700.00000000006
-    r20: ODES’KA OBLAST’ | UKRAINE_ODES’KA OBLAST | UKR_18 | UKRAINE | ODES’KA OBLAST’ | 1 | Одеська область (Odess | UA-51 | UP17 | 51 | ODESKA OBLAST | 1611900 | 60500 | 1480800 | 1431000 | 49800 | 3211000 | 114100 | 2537000 | 289900 | 2227100
-    r21: POLTAVS’KA OBLAST’ | UKRAINE_POLTAVS’KA OBL | UKR_19 | UKRAINE | POLTAVS’KA OBLAST’ | 1 | Полтавська область (Po | UA-53 | UP18 | 53 | POLTAVSKA OBLAST | -998 | -998 | -998 | -998 | -998 | 2003500 | 62800 | 650700 | 154500 | 474400
-    r22: RIVNENS’KA OBLAST’ | UKRAINE_RIVNENS’KA OBL | UKR_20 | UKRAINE | RIVNENS’KA OBLAST’ | 1 | Рівненська область (Ro | UA-56 | UP19 | 56 | RIVNENSKA OBLAST | 92100 | 27100 | 85400 | 62000 | 23300 | 1138800 | 8600 | 516100 | 91800 | 417500
-    r23: SUMS’KA OBLAST’ | UKRAINE_SUMS’KA OBLAST | UKR_21 | UKRAINE | SUMS’KA OBLAST’ | 1 | Сумська область (Sumsk | UA-59 | UP21 | 59 | SUMSKA OBLAST | 125200 | 27500 | 114600 | 94000 | 20600 | 1519300 | 71200 | 478400 | 102700 | 364100
-    r24: TERNOPIL’S’KA OBLAST’ | UKRAINE_TERNOPIL’S’KA  | UKR_22 | UKRAINE | TERNOPIL’S’KA OBLAST’ | 1 | Тернопільська область  | UA-61 | UP22 | 61 | TERNOPILSKA OBLAST | 78000 | 51300 | 102200 | 55400 | 46900 | 889500 | 19600 | 445600 | 96100 | 345900
-    r25: VINNYTS’KA OBLAST’ | UKRAINE_VINNYTS’KA OBL | UKR_23 | UKRAINE | VINNYTS’KA OBLAST’ | 1 | Вінницька область (Vin | UA-05 | UP23 | 5 | VINNYTSKA OBLAST | 143700 | 48500 | 140700 | 99400 | 41300 | 1464600 | 68700 | 833600 | 147600 | 671400
-    r26: VOLYNS’KA OBLAST’ | UKRAINE_VOLYNS’KA OBLA | UKR_24 | UKRAINE | VOLYNS’KA OBLAST’ | 1 | Волинська область (Vol | UA-07 | UP24 | 7 | VOLYNSKA OBLAST | 94300 | 21500 | 84300 | 66100 | 18200 | 1273400 | 14300 | 498900 | 95600 | 395800
-    r27: ZAKARPATS’KA OBLAST’ | UKRAINE_ZAKARPATS’KA O | UKR_25 | UKRAINE | ZAKARPATS’KA OBLAST’ | 1 | Закарпатська область ( | UA-21 | UP25 | 21 | ZAKARPATSKA OBLAST | 61600 | 44700 | 78700 | 38900 | 39800 | 1457500 | 30900 | 509500 | 92800 | 407000
-    r28: ZAPORIZ’KA OBLAST’ | UKRAINE_ZAPORIZ’KA OBL | UKR_26 | UKRAINE | ZAPORIZ’KA OBLAST’ | 1 | Запорізька область (Za | UA-23 | UP26 | 23 | ZAPORIZKA OBLAST | 249500 | 41700 | 225800 | 189200 | 36700 | 2376300 | 47200 | 889300 | 186600 | 567400
-    r29: ZHYTOMYRS’KA OBLAST’ | UKRAINE_ZHYTOMYRS’KA O | UKR_27 | UKRAINE | ZHYTOMYRS’KA OBLAST’ | 1 | Житомирська область (Z | UA-18 | UP27 | 18 | ZHYTOMYRSKA OBLAST | 121200 | 31600 | 121200 | 94100 | 27200 | 1169800 | 53100 | 643800 | 118200 | 459500
+ess_region: European Social Survey by region, rounds 7-11
+== ESS5e03_6 (id 0189b86b-8aa4-4be3-88ad-39c58b02f19f v89)
+   religion weighted: 326 regions hold 52,932 of 52,926
+   religion n: 326 regions hold 52,458 of 52,458
+   language weighted: 326 regions hold 52,931 of 52,918
+   language n: 326 regions hold 52,458 of 52,458
+== ESS6e02_7 (id 450fa78e-68ab-493f-b169-dbc7ab8ffec2 v85)
+   religion weighted: 351 regions hold 54,670 of 54,674
+   religion n: 351 regions hold 54,673 of 54,673
+   language weighted: 351 regions hold 54,663 of 54,661
+   language n: 351 regions hold 54,673 of 54,673
+== ESS7e02_3 (id 9c96a1b2-b027-43c1-8c74-e883f892d0bb v91)
+   religion weighted: 251 regions hold 40,194 of 40,188
+   religion n: 251 regions hold 40,185 of 40,185
+   language weighted: 251 regions hold 40,190 of 40,181
+   language n: 251 regions hold 40,185 of 40,185
+== ESS8e02_3 (id ffc43f48-e15a-4a1c-8813-47eda377c355 v98)
+   religion weighted: 275 regions hold 44,403 of 44,389
+   religion n: 275 regions hold 44,387 of 44,387
+   language weighted: 275 regions hold 44,381 of 44,383
+   language n: 275 regions hold 44,387 of 44,387
+== ESS9e03_3 (id b2b0bf39-176b-4eca-8d26-3c05ea83d2cb v280)
+   religion weighted: 313 regions hold 49,507 of 49,520
+   religion n: 313 regions hold 49,519 of 49,519
+   language weighted: 313 regions hold 49,524 of 49,531
+   language n: 313 regions hold 49,519 of 49,519
+== ESS10e03_3 (id f37d014a-6958-42d4-b03b-17c29e481d3d v286)
+   religion weighted: 248 regions hold 37,630 of 37,618
+   religion n: 248 regions hold 37,611 of 37,611
+   language weighted: 248 regions hold 37,626 of 37,612
+   language n: 248 regions hold 37,611 of 37,611
+== ESS10SCe03_2 (id 178d1c16-db15-466e-b1a5-cea36109e089 v147)
+   religion weighted: 81 regions hold 22,086 of 22,077
+   religion n: 81 regions hold 22,074 of 22,074
+   language weighted: 81 regions hold 22,087 of 22,076
+   language n: 81 regions hold 22,074 of 22,074
+== ESS11e04_2 (id 242aaa39-3bbb-40f5-98bf-bfb1ce53d8ef v179)
+   religion weighted: 328 regions hold 50,142 of 50,118
+   religion n: 328 regions hold 50,116 of 50,116
+   language weighted: 328 regions hold 50,147 of 50,125
+   language n: 328 regions hold 50,116 of 50,116
+  wrote data/raw/ess/ess_national.json (271 kB)
+  wrote ess_region_tabs.json.gz (116 kB) and ess_national.json
+  religion: 7,340 respondents carry no NUTS region (IL=6,025, 99999=1,315)
+  language: 7,340 respondents carry no NUTS region (IL=6,025, 99999=1,315)
+  language codes read as Other languages: IT:QAA=166, ME:SLA=89, BE:INE=49, ES:APA=21, LV:BAT=19, CH:ROA=17, DE:GEM=9, FR:ABK=7, IE:NIC=6, UK:IRA=6, RU:OSS=6, RU:ADY=5, PL:SLA=5, RU:UDM=4, AT:EGY=4, IE:PHI=4, IE:QPL=4, RS:SLA=4, AT:SLA=3, FR:MLG=3, IE:TEL=3, IE:IRA=3, BE:TIB=3, NL:AFR=3, RU:TGK=3, RU:KBD=3, IT:EGY=3, FR:HAT=3, IE:SNA=3, CH:TIB=2, DE:IRA=2, ES:MAN=2, FR:LAO=2, NL:SRN=2, RU:UZB=2, RU:AVA=2, RU:KUM=2, SE:AAR=2, AT:SYC=2, DE:SYC=2
+  religion AL011 -> Dibër: n=0 < 100 even from round 5, left out
+  religion AL013 -> Kukës: n=0 < 100 even from round 5, left out
+  religion AL015 -> Shkodër: n=0 < 100 even from round 5, left out
+  religion AL031 -> Berat: n=0 < 100 even from round 5, left out
+  religion AL033 -> Gjirokastër: n=0 < 100 even from round 5, left out
+  religion AT1 n=4429: crosswalk {"refused": "covers 97560089B30234814950985 at 0.80 but also holds ['97560089B12055607938436', '97560089B24691553772644'
+  religion ES23 -> La Rioja: n=68 < 100 even from round 5, left out
+  religion ES6 n=2030: crosswalk {"refused": "covers 25490228B88831207743232 at 0.87 but also holds ['25490228B18225280299410', '25490228B27950689864224'
+  religion ES63 -> Ceuta: n=19 < 100 even from round 5, left out
+  religion ES64 -> Melilla: n=14 < 100 even from round 5, left out
+  religion FI1D8 -> Kainuu: n=33 < 100 even from round 5, left out
+  religion FI2 -> Åland Islands: n=51 < 100 even from round 5, left out
+  religion FI20 -> Åland Islands: n=51 < 100 even from round 5, left out
+  religion FI200 -> Åland Islands: n=51 < 100 even from round 5, left out
+  religion HR021 -> Bjelovar-Bilogora: n=63 < 100 even from round 5, left out
+  religion HR023 -> Požega-Slavonia: n=25 < 100 even from round 5, left out
+  religion HR024 -> Brod-Posavina: n=99 < 100 even from round 5, left out
+  religion HR027 -> Karlovac: n=82 < 100 even from round 5, left out
+  religion HR032 -> Lika-Senj: n=95 < 100 even from round 5, left out
+  religion HR061 -> Međimurje: n=90 < 100 even from round 5, left out
+  religion HR063 -> Koprivnica-Križevci: n=86 < 100 even from round 5, left out
+  religion HU1 n=2475: crosswalk {"refused": "Budapest and Pest county together, on a Pest polygon that counts Pest county's people alone"}
+  religion HU12 n=737: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU11']"}
+  religion HU120 n=737: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU110']"}
+  religion ITC2 -> Valle d'Aosta: n=33 < 100 even from round 5, left out
+  religion ITC3 -> Liguria: n=51 < 100 even from round 5, left out
+  religion ITF1 -> Abruzzo: n=27 < 100 even from round 5, left out
+  religion ITF5 -> Basilicata: n=53 < 100 even from round 5, left out
+  religion ITG2 -> Sardegna: n=66 < 100 even from round 5, left out
+  religion ITH4 -> Friuli Venezia Giulia: n=79 < 100 even from round 5, left out
+  religion ITI2 -> Umbria: n=43 < 100 even from round 5, left out
+  religion LT027 -> Taurage County: n=60 < 100 even from round 5, left out
+  religion NO08 n=982: crosswalk {"refused": "covers 71437522B91482774809601 at 0.94 but also holds ['71437522B68338217323905']"}
+  religion PL92 n=212: crosswalk {"refused": "covers 17162690B84565288021286 at 0.81 but also holds ['PL91']"}
+  religion SE23 n=1431: crosswalk {"refused": "covers 68755315B39536810599908 at 0.81 but also holds ['68755315B55596512557513']"}
+  language AL011 -> Dibër: n=0 < 100 even from round 5, left out
+  language AL013 -> Kukës: n=0 < 100 even from round 5, left out
+  language AL015 -> Shkodër: n=0 < 100 even from round 5, left out
+  language AL031 -> Berat: n=0 < 100 even from round 5, left out
+  language AL033 -> Gjirokastër: n=0 < 100 even from round 5, left out
+  language AT1 n=4479: crosswalk {"refused": "covers 97560089B30234814950985 at 0.80 but also holds ['97560089B12055607938436', '97560089B24691553772644'
+  language ES23 -> La Rioja: n=67 < 100 even from round 5, left out
+  language ES6 n=2045: crosswalk {"refused": "covers 25490228B88831207743232 at 0.87 but also holds ['25490228B18225280299410', '25490228B27950689864224'
+  language ES63 -> Ceuta: n=19 < 100 even from round 5, left out
+  language ES64 -> Melilla: n=14 < 100 even from round 5, left out
+  language FI1D8 -> Kainuu: n=33 < 100 even from round 5, left out
+  language FI2 -> Åland Islands: n=51 < 100 even from round 5, left out
+  language FI20 -> Åland Islands: n=51 < 100 even from round 5, left out
+  language FI200 -> Åland Islands: n=51 < 100 even from round 5, left out
+  language HR021 -> Bjelovar-Bilogora: n=63 < 100 even from round 5, left out
+  language HR023 -> Požega-Slavonia: n=25 < 100 even from round 5, left out
+  language HR027 -> Karlovac: n=82 < 100 even from round 5, left out
+  language HR032 -> Lika-Senj: n=95 < 100 even from round 5, left out
+  language HR061 -> Međimurje: n=91 < 100 even from round 5, left out
+  language HR063 -> Koprivnica-Križevci: n=86 < 100 even from round 5, left out
+  language HU1 n=2521: crosswalk {"refused": "Budapest and Pest county together, on a Pest polygon that counts Pest county's people alone"}
+  language HU12 n=744: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU11']"}
+  language HU120 n=744: crosswalk {"refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU110']"}
+  language ITC2 -> Valle d'Aosta: n=33 < 100 even from round 5, left out
+  language ITC3 -> Liguria: n=51 < 100 even from round 5, left out
+  language ITF1 -> Abruzzo: n=27 < 100 even from round 5, left out
+  language ITF5 -> Basilicata: n=53 < 100 even from round 5, left out
+  language ITG2 -> Sardegna: n=66 < 100 even from round 5, left out
+  language ITH4 -> Friuli Venezia Giulia: n=76 < 100 even from round 5, left out
+  language ITI2 -> Umbria: n=45 < 100 even from round 5, left out
+  language LT027 -> Taurage County: n=61 < 100 even from round 5, left out
+  language NO08 n=990: crosswalk {"refused": "covers 71437522B91482774809601 at 0.94 but also holds ['71437522B68338217323905']"}
+  language PL92 n=215: crosswalk {"refused": "covers 17162690B84565288021286 at 0.81 but also holds ['PL91']"}
+  language SE23 n=1419: crosswalk {"refused": "covers 68755315B39536810599908 at 0.81 but also holds ['68755315B55596512557513']"}
+  ALB admin1: 6 units -- Korçë [AL034] rel n=117 lan n=117; Fier [AL032] rel n=121 lan n=121; Tiranë [AL022] rel n=286 lan n=286; Durrës [AL012] rel n=112 lan n=113; Vlorë [AL035] rel n=104 lan n=104; Elbasan [AL021] rel n=128 lan n=128
+  AUT admin1: 9 units -- Burgenland [AT11] rel n=372 lan n=374; Vorarlberg [AT34] rel n=488 lan n=489; Wien [AT13] rel n=2018 lan n=2051; Niederösterreich [AT12] rel n=2039 lan n=2054; Tirol [AT33] rel n=851 lan n=850; Kärnten [AT21] rel n=664 lan n=671; Salzburg [AT32] rel n=683 lan n=688; Oberösterreich [AT31] rel n=1873 lan n=1874; Steiermark [AT22] rel n=1536 lan n=1555
+  AUT admin2: 1 units -- Wien(Stadt) [AT13] rel n=2018 lan n=2051
+  BEL admin1: 2 units -- Wallonne Gewest [BE3] rel n=2428 lan n=2433; Vlaams Gewest [BE2] rel n=5099 lan n=5103
+  BEL admin2: 11 units -- Luxemburg [BE34] rel n=209 lan n=210; Brussels [BE1] rel n=678 lan n=683; Antwerpen [BE21] rel n=1411 lan n=1417; Luik [BE33] rel n=701 lan n=701; Namen [BE35] rel n=345 lan n=345; West-Vlaanderen [BE25] rel n=1008 lan n=1012; Limburg [BE22] rel n=762 lan n=756; Waals-Brabant [BE31] rel n=309 lan n=310; Henegouwen [BE32] rel n=864 lan n=867; Oost-Vlaanderen [BE23] rel n=1096 lan n=1096; Vlaams-Brabant [BE24] rel n=822 lan n=822
+  BGR admin1: 28 units -- Targovishte [BG334] rel n=113 lan n=112; Blagoevgrad [BG413] rel n=330 lan n=333; Sofia [BG412] rel n=209 lan n=216; Vidin [BG311] rel n=111 lan n=113; Pleven [BG314] rel n=264 lan n=266; Veliko Tarnovo [BG321] rel n=253 lan n=255; Razgrad [BG324] rel n=142 lan n=143; Sofia City [BG411] rel n=1124 lan n=1133; Sliven [BG342] rel n=190 lan n=191; Burgas [BG341] rel n=404 lan n=411; Kyustendil [BG415] rel n=159 lan n=160; Lovech [BG315] rel n=134 lan n=136; Shumen [BG333] rel n=153 lan n=153; Pazardzhik [BG423] rel n=301 lan n=301; Varna [BG331] rel n=433 lan n=435; Montana [BG312] rel n=225 lan n=226; Plovdiv [BG421] rel n=678 lan n=684; Smolyan [BG424] rel n=114 lan n=118; Kardzhali [BG425] rel n=170 lan n=178; Stara Zagora [BG344] rel n=321 lan n=323; Silistra [BG325] rel n=122 lan n=123; Ruse [BG323] rel n=238 lan n=248; Haskovo [BG422] rel n=252 lan n=254; Yambol [BG343] rel n=188 lan n=103; Vratsa [BG313] rel n=102 lan n=102; Dobrich [BG332] rel n=187 lan n=187; Pernik [BG414] rel n=117 lan n=119; Gabrovo [BG322] rel n=111 lan n=115
+  BGR admin2: 1 units -- Stolichna [BG411] rel n=1124 lan n=1133
+  CHE admin1: 2 units -- Zürich [CH04] rel n=1170 lan n=1166; Ticino [CH07] rel n=279 lan n=283
+  CZE admin1: 14 units -- Olomoucký kraj [CZ071] rel n=524 lan n=528; Hlavní město Praha [CZ01] rel n=1139 lan n=1138; Moravskoslezský kraj [CZ08] rel n=1091 lan n=1101; Kraj Vysočina [CZ063] rel n=419 lan n=426; Ústecký kraj [CZ042] rel n=773 lan n=776; Jihočeský kraj [CZ031] rel n=543 lan n=547; Královéhradecký kraj [CZ052] rel n=495 lan n=500; Středočeský kraj [CZ02] rel n=1106 lan n=1110; Karlovarský kraj [CZ041] rel n=271 lan n=272; Jihomoravský kraj [CZ064] rel n=980 lan n=994; Zlínský kraj [CZ072] rel n=465 lan n=478; Plzeňský kraj [CZ032] rel n=517 lan n=518; Pardubický kraj [CZ053] rel n=457 lan n=461; Liberecký kraj [CZ051] rel n=410 lan n=417
+  CZE admin2: 1 units -- Prague [CZ01] rel n=1139 lan n=1138
+  DEU admin1: 16 units -- Berlin [DE3] rel n=829 lan n=818; Sachsen-Anhalt [DEE] rel n=633 lan n=622; Niedersachsen [DE9] rel n=1818 lan n=1789; Brandenburg [DE4] rel n=730 lan n=721; Rheinland-Pfalz [DEB] rel n=889 lan n=874; Bremen [DE5] rel n=103 lan n=134; Hamburg [DE6] rel n=351 lan n=348; Schleswig-Holstein [DEF] rel n=676 lan n=672; Baden-Württemberg [DE1] rel n=2383 lan n=2374; Bayern [DE2] rel n=2973 lan n=2930; Mecklenburg-Vorpommern [DE8] rel n=481 lan n=472; Thüringen [DEG] rel n=626 lan n=617; Saarland [DEC] rel n=234 lan n=230; Hessen [DE7] rel n=1307 lan n=1284; Nordrhein-Westfalen [DEA] rel n=3805 lan n=3739; Sachsen [DED] rel n=1232 lan n=1194
+  DEU admin2: 9 units -- Berlin [DE3] rel n=829 lan n=818; Sachsen-Anhalt [DEE] rel n=633 lan n=622; Brandenburg [DE4] rel n=730 lan n=721; Bremen [DE5] rel n=103 lan n=134; Hamburg [DE6] rel n=351 lan n=348; Schleswig-Holstein [DEF] rel n=676 lan n=672; Mecklenburg-Vorpommern [DE8] rel n=481 lan n=472; Thüringen [DEG] rel n=626 lan n=617; Saarland [DEC] rel n=234 lan n=230
+  DNK admin1: 4 units -- Midtjylland [DK04] rel n=804 lan n=788; Hovedstaden [DK01] rel n=580 lan n=576; Syddanmark [DK03] rel n=737 lan n=725; Sjælland [DK02] rel n=584 lan n=585
+  ESP admin1: 16 units -- Comunitat Valenciana [ES52] rel n=954 lan n=962; Principado de Asturias [ES12] rel n=209 lan n=209; Illes Balears [ES53] rel n=189 lan n=190; Región de Murcia [ES62] rel n=272 lan n=275; Comunidad Foral de Navarra [ES22] rel n=154 lan n=156; Cantabria [ES13] rel n=138 lan n=140; Comunidad de Madrid [ES3] rel n=1308 lan n=1313; País Vasco/Euskadi [ES21] rel n=507 lan n=509; Aragón [ES24] rel n=301 lan n=304; Cataluña/Catalunya [ES51] rel n=1353 lan n=1361; Canarias [ES7] rel n=372 lan n=371; Castilla y León [ES41] rel n=591 lan n=593; Extremadura [ES43] rel n=263 lan n=264; Andalucía [ES61] rel n=1725 lan n=1737; Galicia [ES11] rel n=696 lan n=701; Castilla-La Mancha [ES42] rel n=448 lan n=451
+  ESP admin2: 6 units -- Balears, Illes [ES53] rel n=189 lan n=190; Asturias [ES12] rel n=209 lan n=209; Navarra [ES22] rel n=154 lan n=156; Cantabria [ES13] rel n=138 lan n=140; Madrid [ES3] rel n=1308 lan n=1313; Murcia [ES62] rel n=272 lan n=275
+  EST admin1: 1 units -- Harju maakond [EE001] rel n=3742 lan n=3768
+  FIN admin1: 8 units -- Finland Proper [FI1C1] rel n=763 lan n=761; Uusimaa [FI1B] rel n=2469 lan n=2451; Keski-Pohjanmaa [FI1D5] rel n=110 lan n=110; Tavastia Proper [FI1C2] rel n=245 lan n=246; South Karelia [FI1C5] rel n=205 lan n=208; Northern Ostrobothnia [FI1D9] rel n=115 lan n=114; Satakunta [FI196] rel n=435 lan n=437; Lapland [FI1D7] rel n=317 lan n=316
+  FRA admin1: 12 units -- Nouvelle-Aquitaine [FRI] rel n=982 lan n=990; Île-de-France [FR1] rel n=1379 lan n=1405; Bourgogne-Franche-Comté [FRC] rel n=426 lan n=423; Hauts-de-France [FRE] rel n=914 lan n=921; Centre-Val de Loire [FRB] rel n=422 lan n=421; Occitanie [FRJ] rel n=955 lan n=968; Bretagne [FRH] rel n=616 lan n=618; Auvergne-Rhône-Alpes [FRK] rel n=1275 lan n=1280; Grand Est [FRF] rel n=813 lan n=813; Normandie [FRD] rel n=535 lan n=534; Provence-Alpes-Côte d'Azur [FRL] rel n=724 lan n=728; Pays de la Loire [FRG] rel n=614 lan n=616
+  GRC admin1: 2 units -- Crete [EL43] rel n=370 lan n=371; Attica [EL3] rel n=1893 lan n=1913
+  GRC admin2: 13 units -- Kentrikis Makedonias [EL52] rel n=1012 lan n=1012; Stereas Elladas [EL64] rel n=283 lan n=285; Thessalias [EL61] rel n=382 lan n=382; Peloponnisoy [EL65] rel n=268 lan n=269; Voreioy Aigaioy [EL41] rel n=139 lan n=139; Dytikis Elladas [EL63] rel n=364 lan n=365; Notioy Aigaioy [EL42] rel n=154 lan n=157; Attikis [EL3] rel n=1893 lan n=1913; Ipeiroy [EL54] rel n=153 lan n=156; Kritis [EL43] rel n=370 lan n=371; Dytikis Makedonias [EL53] rel n=139 lan n=139; Ionion Nison [EL62] rel n=105 lan n=105; Anatolikis Makedonias kai Thr* [EL51] rel n=303 lan n=304
+  HRV admin1: 15 units -- Primorje-Gorski Kotar [HR031] rel n=396 lan n=399; Dubrovnik-Neretva [HR037] rel n=103 lan n=104; Sisak-Moslavina [HR028] rel n=109 lan n=112; Zadar County [HR033] rel n=210 lan n=215; Šibenik-Knin [HR034] rel n=134 lan n=137; Brod-Posavina [HR024] lan n=100; Zagreb County [HR065] rel n=224 lan n=225; Virovitica-Podravina [HR022] rel n=132 lan n=132; Krapina-Zagorje [HR064] rel n=142 lan n=143; Split-Dalmatia [HR035] rel n=498 lan n=503; City of Zagreb [HR05] rel n=519 lan n=524; Varaždin [HR062] rel n=182 lan n=183; Istria [HR036] rel n=227 lan n=227; Vukovar-Syrmia [HR026] rel n=109 lan n=111; Osijek-Baranja [HR025] rel n=249 lan n=251
+  HRV admin2: 1 units -- Grad Zagreb [HR05] rel n=519 lan n=524
+  HUN admin1: 18 units -- Fejér [HU211] rel n=388 lan n=391; Békés [HU332] rel n=285 lan n=291; Somogy [HU232] rel n=256 lan n=264; Győr-Moson-Sopron [HU221] rel n=291 lan n=299; Bács-Kiskun [HU331] rel n=478 lan n=454; Borsod-Abaúj-Zemplén [HU311] rel n=714 lan n=724; Csongrád-Csanád [HU333] rel n=298 lan n=313; Vas [HU222] rel n=273 lan n=274; Szabolcs-Szatmár-Bereg [HU323] rel n=639 lan n=650; Nógrád [HU313] rel n=114 lan n=115; Tolna [HU233] rel n=122 lan n=122; Hajdú-Bihar [HU321] rel n=466 lan n=481; Komárom-Esztergom [HU212] rel n=228 lan n=228; Zala [HU223] rel n=333 lan n=332; Heves [HU312] rel n=208 lan n=208; Veszprém [HU213] rel n=424 lan n=433; Baranya [HU231] rel n=339 lan n=340; Jász-Nagykun-Szolnok [HU322] rel n=421 lan n=418
+  ISL admin1: 1 units -- Capital Region [IS001] rel n=2302 lan n=2307
+  ITA admin1: 5 units -- Nord-Est [ITH] rel n=2253 lan n=2264; Isole [ITG] rel n=1139 lan n=1155; Centro [ITI] rel n=1923 lan n=1935; Sud [ITF] rel n=2456 lan n=2469; Nord-Ovest [ITC] rel n=2906 lan n=2917
+  ITA admin2: 11 units -- Campania [ITF3] rel n=217 lan n=217; Marche [ITI3] rel n=113 lan n=114; Calabria [ITF6] rel n=134 lan n=115; Puglia [ITF4] rel n=239 lan n=241; Lombardia [ITC4] rel n=361 lan n=363; Piemonte [ITC1] rel n=225 lan n=231; Lazio [ITI4] rel n=188 lan n=191; Sicilia [ITG1] rel n=191 lan n=192; Emilia-Romagna [ITH5] rel n=270 lan n=273; Toscana [ITI1] rel n=117 lan n=120; Veneto [ITH3] rel n=225 lan n=225
+  LTU admin1: 9 units -- Klaipeda County [LT023] rel n=277 lan n=280; Telsiai County [LT028] rel n=115 lan n=115; Marijampole County [LT024] rel n=227 lan n=229; Utena County [LT029] rel n=156 lan n=161; Siauliai County [LT026] rel n=359 lan n=366; Kaunas County [LT022] rel n=601 lan n=602; Vilnius County [LT01] rel n=767 lan n=773; Panevezys County [LT025] rel n=241 lan n=244; Alytus County [LT021] rel n=167 lan n=168
+  MKD admin1: 8 units -- Polog [MK006] rel n=275 lan n=276; Southeast [MK004] rel n=150 lan n=150; Northeast [MK007] rel n=130 lan n=129; Southwest [MK003] rel n=148 lan n=149; East [MK002] rel n=154 lan n=154; Skopje [MK008] rel n=293 lan n=292; Vardar [MK001] rel n=116 lan n=116; Pelagonia [MK005] rel n=158 lan n=159
+  NLD admin1: 12 units -- Fryslân [NL12] rel n=364 lan n=366; Zuid-Holland [NL36] rel n=1628 lan n=1625; Groningen [NL11] rel n=267 lan n=266; Drenthe [NL13] rel n=296 lan n=296; Zeeland [NL34] rel n=210 lan n=210; Flevoland [NL23] rel n=198 lan n=198; Noord-Brabant [NL41] rel n=1217 lan n=1218; Gelderland [NL22] rel n=1104 lan n=1109; Overijssel [NL21] rel n=632 lan n=636; Noord-Holland [NL32] rel n=1237 lan n=1241; Utrecht [NL35] rel n=670 lan n=667; Limburg [NL42] rel n=581 lan n=579
+  NOR admin1: 2 units -- Innlandet [NO02] rel n=212 lan n=211; Trøndelag [NO06] rel n=682 lan n=682
+  POL admin1: 16 units -- Silesian Voivodeship [PL22] rel n=945 lan n=951; Warmian-Masurian Voivodeship [PL62] rel n=269 lan n=273; Świętokrzyskie Voivodeship [PL72] rel n=154 lan n=151; Podlaskie Voivodeship [PL84] rel n=111 lan n=109; West Pomeranian Voivodeship [PL42] rel n=306 lan n=315; Kuyavian-Pomeranian Voivodeship [PL61] rel n=399 lan n=401; Subcarpathian Voivodeship [PL82] rel n=211 lan n=215; Lesser Poland Voivodeship [PL21] rel n=769 lan n=766; Opole Voivodeship [PL52] rel n=188 lan n=190; Lublin Voivodeship [PL81] rel n=187 lan n=186; Greater Poland Voivodeship [PL41] rel n=683 lan n=691; Pomeranian Voivodeship [PL63] rel n=474 lan n=478; Masovian Voivodeship [PL9] rel n=520 lan n=525; Łódź Voivodeship [PL71] rel n=276 lan n=274; Lubusz Voivodeship [PL43] rel n=236 lan n=240; Lower Silesian Voivodeship [PL51] rel n=543 lan n=547
+  PRT admin1: 1 units -- FARO [PT15] rel n=312 lan n=313
+  SRB admin1: 1 units -- Belgrade [RS11] rel n=1095 lan n=1098
+  SRB admin2: 1 units -- Belgrade [RS11] rel n=1095 lan n=1098
+  SVK admin1: 8 units -- Region of Žilina [SK031] rel n=528 lan n=525; Region of Košice [SK042] rel n=407 lan n=410; Region of Banská Bystrica [SK032] rel n=466 lan n=477; Region of Trnava [SK021] rel n=454 lan n=464; Region of Bratislava [SK01] rel n=261 lan n=271; Region of Nitra [SK023] rel n=610 lan n=609; Region of Trenčín [SK022] rel n=499 lan n=502; Region of Prešov [SK041] rel n=650 lan n=658
+  SWE admin1: 21 units -- Dalarnas län [SE312] rel n=108 lan n=108; Västerbottens län [SE331] rel n=122 lan n=122; Stockholms län [SE11] rel n=1792 lan n=1783; Örebro län [SE124] rel n=102 lan n=102; Kronobergs län [SE212] rel n=114 lan n=114; Gotlands län [SE214] rel n=228 lan n=228; Västra Götalands län [SE232] rel n=322 lan n=325; Gävleborgs län [SE313] rel n=191 lan n=190; Västernorrlands län [SE321] rel n=108 lan n=109; Uppsala län [SE121] rel n=113 lan n=113; Skåne län [SE224] rel n=443 lan n=447; Hallands län [SE231] rel n=111 lan n=111; Värmlands län [SE311] rel n=183 lan n=184; Jönköpings län [SE211] rel n=112 lan n=112; Västmanlands län [SE125] rel n=169 lan n=169; Jämtlands län [SE322] rel n=132 lan n=132; Östergötlands län [SE123] rel n=139 lan n=139; Blekinge län [SE221] rel n=136 lan n=136; Kalmar län [SE213] rel n=176 lan n=177; Norrbottens län [SE332] rel n=168 lan n=169; Södermanlands län [SE122] rel n=180 lan n=180
+  SWE admin2: 1 units -- Gotland [SE214] rel n=228 lan n=228
+  national AT religion n=10524 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 57.6, No religion 30.5, Islam 4.7, Protestant 3.8, Orthodox 1.7, Other Christian 0.9, Eastern religions 0.4, Judaism 0.2
+  national AT language n=10606 ESS rounds 7, 8, 9, 10, 11 (2014-2024): German 91.9, Turkish 2.3, Other languages 0.9, Serbian 0.7, Bosnian 0.6, Albanian 0.4, English 0.4, Romanian 0.4
+  national BE religion n=8205 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 56.6, Roman Catholic 32.5, Islam 6.8, Orthodox 1.1, Protestant 1.1, Other Christian 0.8, Eastern religions 0.4, Other religions 0.4
+  national BE language n=8219 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Dutch 52.1, French 38.5, Arabic 2.1, Other languages 1.6, English 1.5, Turkish 0.8, Romanian 0.5, Polish 0.4
+  national BG religion n=7054 ESS rounds 9, 10, 11 (2018-2024): Orthodox 64.5, No religion 21.0, Islam 12.6, Other Christian 0.8, Protestant 0.6, Roman Catholic 0.5, Judaism 0.1, Eastern religions 0.0
+  national BG language n=7138 ESS rounds 9, 10, 11 (2018-2024): Bulgarian 89.6, Turkish 7.2, Romani 3.0, Other languages 0.2
+  national CH religion n=7469 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 42.7, Roman Catholic 28.1, Protestant 19.9, Islam 4.5, Orthodox 1.9, Other Christian 1.2, Eastern religions 1.1, Other religions 0.4
+  national CH language n=7445 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Swiss German 55.3, French 22.1, German 6.1, Italian 5.3, Portuguese 2.2, Albanian 1.6, English 1.4, Other languages 1.1
+  national CY religion n=2322 ESS rounds 9, 10, 11 (2018-2024): Orthodox 85.3, No religion 12.2, Other Christian 0.9, Roman Catholic 0.7, Other religions 0.4, Islam 0.3, Protestant 0.2, Judaism 0.1
+  national CY language n=2275 ESS rounds 9, 10, 11 (2018-2024): Greek 95.5, English 1.5, Other languages 1.0, Bulgarian 0.7, Russian 0.7, Romanian 0.6
+  national CZ religion n=9190 ESS rounds 7, 8, 9, 10 (2014-2022): No religion 81.0, Roman Catholic 16.0, Other Christian 1.1, Protestant 1.0, Other religions 0.3, Judaism 0.2, Orthodox 0.2, Eastern religions 0.1
+  national CZ language n=9266 ESS rounds 7, 8, 9, 10 (2014-2022): Czech 99.3, English 0.2, Slovak 0.2, Other languages 0.1, Romani 0.1, Russian 0.1, Ukrainian 0.0
+  national DE religion n=19070 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 45.7, Protestant 22.6, Roman Catholic 22.3, Islam 3.8, Other Christian 3.5, Orthodox 0.9, Eastern religions 0.7, Other religions 0.4
+  national DE language n=18781 ESS rounds 7, 8, 9, 10, 11 (2014-2024): German 92.8, Turkish 1.2, Russian 1.0, Arabic 0.6, English 0.6, Polish 0.5, Other languages 0.4, Albanian 0.3
+  national DK religion n=3059 ESS rounds 7, 9 (2014-2019): Protestant 51.6, No religion 42.1, Islam 2.5, Roman Catholic 1.7, Other Christian 1.3, Other religions 0.4, Eastern religions 0.3, Judaism 0.1
+  national DK language n=3020 ESS rounds 7, 9 (2014-2019): Danish 96.6, Other languages 1.4, English 0.8, Arabic 0.3, German 0.3, Kurdish 0.2, Turkish 0.2, Faroese 0.1
+  national EE religion n=8752 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 72.8, Orthodox 16.8, Protestant 7.1, Other Christian 1.3, Roman Catholic 0.9, Other religions 0.7, Eastern religions 0.2, Islam 0.1
+  national EE language n=8803 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Estonian 72.4, Russian 27.2, Other languages 0.2, English 0.1, Ukrainian 0.1
+  national ES religion n=9581 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 54.5, No religion 40.0, Islam 1.8, Other Christian 1.5, Orthodox 1.1, Protestant 0.6, Other religions 0.3, Eastern religions 0.2
+  national ES language n=9636 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Spanish 83.8, Catalan 9.2, Galician 2.7, Basque 1.0, Other languages 0.8, Romanian 0.6, Arabic 0.5, English 0.3
+  national FI religion n=8880 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 49.3, Protestant 47.0, Other Christian 1.1, Orthodox 1.0, Islam 0.9, Other religions 0.3, Eastern religions 0.2, Roman Catholic 0.2
+  national FI language n=8864 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Finnish 91.8, Swedish 5.1, English 0.7, Russian 0.7, Estonian 0.6, Other languages 0.4, Arabic 0.2, Somali 0.2
+  national FR religion n=9655 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 49.2, Roman Catholic 38.9, Islam 7.5, Protestant 2.0, Other Christian 0.8, Judaism 0.5, Other religions 0.5, Orthodox 0.4
+  national FR language n=9717 ESS rounds 7, 8, 9, 10, 11 (2014-2024): French 94.1, Arabic 1.2, Other languages 0.9, English 0.7, Portuguese 0.7, Spanish 0.3, Turkish 0.3, Alsatian 0.2
+  national GB religion n=9210 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 55.6, Protestant 24.4, Roman Catholic 10.1, Islam 4.1, Eastern religions 2.4, Other Christian 2.0, Orthodox 0.7, Other religions 0.7
+  national GB language n=8869 ESS rounds 7, 8, 9, 10, 11 (2014-2024): English 94.4, Polish 1.4, Urdu 0.7, Chinese 0.4, French 0.4, Punjabi 0.4, Romanian 0.4, Arabic 0.3
+  national GR religion n=5513 ESS rounds 10, 11 (2020-2024): Orthodox 90.0, No religion 7.6, Other Christian 1.1, Other religions 0.6, Islam 0.4, Roman Catholic 0.3, Eastern religions 0.1
+  national GR language n=5545 ESS rounds 10, 11 (2020-2024): Greek 97.5, Albanian 1.4, Other languages 0.6, Bulgarian 0.2, Urdu 0.2, Turkish 0.1
+  national HR religion n=4918 ESS rounds 9, 10, 11 (2018-2024): Roman Catholic 67.6, No religion 27.7, Orthodox 2.5, Islam 1.0, Other Christian 0.5, Other religions 0.3, Protestant 0.2, Eastern religions 0.1
+  national HR language n=4963 ESS rounds 9, 10, 11 (2018-2024): Croatian 97.5, Romani 0.7, Bosnian 0.5, Serbian 0.5, Other languages 0.4, Italian 0.2, Albanian 0.1, Hungarian 0.1
+  national HU religion n=8752 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 46.0, Roman Catholic 40.2, Protestant 12.8, Other Christian 0.6, Eastern religions 0.1, Judaism 0.1, Orthodox 0.1, Other religions 0.1
+  national HU language n=8858 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Hungarian 99.2, English 0.3, German 0.3, Romani 0.2, Other languages 0.1
+  national IE religion n=11043 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 61.1, No religion 31.7, Protestant 2.5, Other Christian 2.0, Islam 1.1, Other religions 0.7, Eastern religions 0.5, Orthodox 0.5
+  national IE language n=11080 ESS rounds 7, 8, 9, 10, 11 (2014-2024): English 92.6, Polish 2.1, Other languages 1.1, Irish 0.6, Romanian 0.5, Lithuanian 0.4, Portuguese 0.4, Hindi 0.3
+  national IL religion n=7135 ESS rounds 7, 8, 10, 11 (2014-2024): Judaism 72.8, Islam 19.3, No religion 6.9, Orthodox 0.3, Roman Catholic 0.3, Other Christian 0.2, Other religions 0.2, Protestant 0.1
+  national IL language n=7239 ESS rounds 7, 8, 10, 11 (2014-2024): Hebrew 68.3, Arabic 21.4, Russian 5.2, English 1.3, Other languages 1.1, Amharic 0.9, French 0.7, Spanish 0.4
+  national IS religion n=3466 ESS rounds 8, 9, 10, 11 (2016-2024): No religion 58.9, Protestant 36.0, Roman Catholic 2.8, Other religions 1.4, Eastern religions 0.3, Other Christian 0.3, Islam 0.2, Orthodox 0.2
+  national IS language n=3471 ESS rounds 8, 9, 10, 11 (2016-2024): Icelandic 92.4, English 2.7, Polish 2.6, Other languages 1.9, Portuguese 0.2, Spanish 0.2
+  national IT religion n=10677 ESS rounds 8, 9, 10, 11 (2016-2024): Roman Catholic 71.1, No religion 23.1, Islam 2.4, Orthodox 1.5, Other Christian 0.8, Eastern religions 0.5, Other religions 0.4, Protestant 0.2
+  national IT language n=10740 ESS rounds 8, 9, 10, 11 (2016-2024): Italian 91.5, Other languages 1.7, Romanian 1.1, Arabic 1.0, Sicilian 0.9, German 0.7, Albanian 0.6, French 0.4
+  national LT religion n=9067 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 77.3, No religion 17.5, Orthodox 3.7, Other Christian 0.5, Protestant 0.5, Other religions 0.2, Eastern religions 0.1, Islam 0.1
+  national LT language n=9189 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Lithuanian 90.0, Russian 6.1, Polish 3.4, Ukrainian 0.3, English 0.1, Other languages 0.0
+  national LV religion n=3157 ESS rounds 9, 10, 11 (2018-2024): No religion 61.1, Roman Catholic 13.3, Protestant 11.8, Orthodox 10.1, Other Christian 3.0, Other religions 0.3, Eastern religions 0.2, Islam 0.1
+  national LV language n=3169 ESS rounds 9, 10, 11 (2018-2024): Latvian 76.6, Russian 22.5, Other languages 0.9
+  national ME religion n=3990 ESS rounds 9, 10, 11 (2018-2024): Orthodox 60.0, Islam 22.3, No religion 13.2, Roman Catholic 3.2, Other Christian 1.0, Eastern religions 0.3, Other religions 0.0
+  national ME language n=3956 ESS rounds 9, 10, 11 (2018-2024): Montenegrin 47.3, Serbian 40.5, Bosnian 5.4, Albanian 4.4, Other languages 2.3, English 0.2
+  national MK religion n=1424 ESS round 10 (2020-2022): Orthodox 72.5, Islam 22.8, No religion 3.9, Protestant 0.6, Roman Catholic 0.1
+  national MK language n=1425 ESS round 10 (2020-2022): Macedonian 82.4, Albanian 14.2, Bosnian 1.2, Turkish 1.1, Romani 0.6, Other languages 0.3, Aromanian 0.2
+  national NL religion n=8404 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 69.3, Protestant 13.0, Roman Catholic 11.5, Islam 3.3, Other Christian 1.6, Eastern religions 0.6, Other religions 0.4, Orthodox 0.2
+  national NL language n=8411 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Dutch 92.5, Frisian 2.1, English 1.0, Arabic 0.7, Turkish 0.7, Other languages 0.6, Limburgish 0.4, Polish 0.3
+  national NO religion n=7101 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 54.2, Protestant 39.2, Islam 2.5, Roman Catholic 1.5, Eastern religions 0.7, Orthodox 0.6, Other Christian 0.6, Other religions 0.6
+  national NO language n=6982 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Norwegian 94.4, English 1.2, Other languages 0.8, Swedish 0.6, Polish 0.5, Arabic 0.3, German 0.3, Kurdish 0.2
+  national PL religion n=8178 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 83.1, No religion 15.7, Other Christian 0.5, Orthodox 0.3, Protestant 0.3, Eastern religions 0.1, Other religions 0.1, Islam 0.0
+  national PL language n=8241 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Polish 99.5, Other languages 0.3, English 0.1, German 0.1
+  national PT religion n=6763 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 67.4, No religion 28.1, Other Christian 1.7, Protestant 1.7, Other religions 0.4, Orthodox 0.3, Islam 0.2, Eastern religions 0.1
+  national PT language n=6793 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Portuguese 98.7, Creole 0.3, Spanish 0.3, Other languages 0.2, Romanian 0.2, English 0.1, French 0.1, Ukrainian 0.1
+  national RS religion n=4996 ESS rounds 9, 10, 11 (2018-2024): Orthodox 77.5, No religion 16.0, Roman Catholic 3.5, Islam 1.9, Protestant 0.7, Other Christian 0.3, Eastern religions 0.1, Other religions 0.1
+  national RS language n=5000 ESS rounds 9, 10, 11 (2018-2024): Serbian 95.2, Hungarian 2.2, Bosnian 0.6, Romani 0.4, Slovak 0.4, English 0.3, Other languages 0.3, Albanian 0.2
+  national RU religion n=2348 ESS round 8 (2016-2017): Orthodox 50.1, No religion 42.2, Islam 6.1, Protestant 0.5, Eastern religions 0.4, Roman Catholic 0.3, Other Christian 0.2, Other religions 0.2
+  national RU language n=2430 ESS round 8 (2016-2017): Russian 95.5, Other languages 1.7, Tatar 1.3, Chuvash 1.2, Armenian 0.4
+  national SE religion n=8348 ESS rounds 7, 8, 9, 10, 11 (2014-2024): No religion 65.8, Protestant 26.0, Islam 3.4, Roman Catholic 1.5, Orthodox 1.1, Other Christian 1.1, Other religions 0.6, Eastern religions 0.4
+  national SE language n=8312 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Swedish 91.4, Arabic 1.5, English 1.3, Other languages 0.9, Persian 0.6, Kurdish 0.5, Bosnian 0.4, Spanish 0.4
+  national SI religion n=6292 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Roman Catholic 52.4, No religion 41.2, Islam 2.8, Orthodox 2.4, Protestant 0.7, Other Christian 0.3, Other religions 0.2, Eastern religions 0.0
+  national SI language n=6325 ESS rounds 7, 8, 9, 10, 11 (2014-2024): Slovene 95.4, Bosnian 2.0, Serbian 0.9, Albanian 0.5, Croatian 0.3, Macedonian 0.3, Hungarian 0.2, Italian 0.1
+  national SK religion n=3875 ESS rounds 9, 10, 11 (2018-2024): Roman Catholic 58.3, No religion 27.2, Protestant 7.0, Other Christian 6.2, Orthodox 0.8, Other religions 0.3, Eastern religions 0.2, Islam 0.1
+  national SK language n=3916 ESS rounds 9, 10, 11 (2018-2024): Slovak 90.1, Hungarian 7.8, Other languages 1.2, Romani 1.0
+  national UA religion n=2600 ESS round 11 (2023-2024): Orthodox 54.9, No religion 32.7, Roman Catholic 10.3, Protestant 1.0, Other Christian 0.9, Islam 0.1, Other religions 0.1, Judaism 0.0
+  national UA language n=2659 ESS round 11 (2023-2024): Ukrainian 74.7, Russian 24.9, Other languages 0.2, Romanian 0.2
+  wrote data/processed/ess_region_survey.json (1230 kB)
+  293 records

@@ -1,5 +1,560 @@
 [
   {
+    "id": "ESS-ALB-admin1-10019604B11091570243697",
+    "level": "admin1",
+    "name": "Korçë",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 59.0,
+        "count": 59
+      },
+      {
+        "group": "Orthodox",
+        "pct": 27.0,
+        "count": 27
+      },
+      {
+        "group": "No religion",
+        "pct": 11.0,
+        "count": 11
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.0,
+        "count": 2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 100.0,
+        "count": 100
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL034",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL034",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B11091570243697",
+    "codes": {
+      "nuts": [
+        "AL034"
+      ],
+      "ess_n": {
+        "religion": 117,
+        "language": 117
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 117 respondents in NUTS region AL034 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 117 respondents in NUTS region AL034 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ALB-admin1-10019604B18588012879070",
+    "level": "admin1",
+    "name": "Fier",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 54.9,
+        "count": 73
+      },
+      {
+        "group": "No religion",
+        "pct": 27.1,
+        "count": 36
+      },
+      {
+        "group": "Orthodox",
+        "pct": 9.8,
+        "count": 13
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 4.5,
+        "count": 6
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 3.0,
+        "count": 4
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.8,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 100.0,
+        "count": 133
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL032",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL032",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B18588012879070",
+    "codes": {
+      "nuts": [
+        "AL032"
+      ],
+      "ess_n": {
+        "religion": 121,
+        "language": 121
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 121 respondents in NUTS region AL032 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 121 respondents in NUTS region AL032 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ALB-admin1-10019604B30424798991477",
+    "level": "admin1",
+    "name": "Tiranë",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 59.9,
+        "count": 190
+      },
+      {
+        "group": "No religion",
+        "pct": 24.9,
+        "count": 79
+      },
+      {
+        "group": "Orthodox",
+        "pct": 11.7,
+        "count": 37
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.3,
+        "count": 4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.3,
+        "count": 4
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.9,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 98.4,
+        "count": 310
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 5
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL022",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL022",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B30424798991477",
+    "codes": {
+      "nuts": [
+        "AL022"
+      ],
+      "ess_n": {
+        "religion": 286,
+        "language": 286
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 286 respondents in NUTS region AL022 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 286 respondents in NUTS region AL022 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ALB-admin1-10019604B56812167051250",
+    "level": "admin1",
+    "name": "Durrës",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 54.3,
+        "count": 57
+      },
+      {
+        "group": "No religion",
+        "pct": 34.3,
+        "count": 36
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.7,
+        "count": 6
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.8,
+        "count": 5
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 100.0,
+        "count": 106
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL012",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL012",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B56812167051250",
+    "codes": {
+      "nuts": [
+        "AL012"
+      ],
+      "ess_n": {
+        "religion": 112,
+        "language": 113
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 112 respondents in NUTS region AL012 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 113 respondents in NUTS region AL012 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ALB-admin1-10019604B59649873769490",
+    "level": "admin1",
+    "name": "Vlorë",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 38.5,
+        "count": 30
+      },
+      {
+        "group": "Islam",
+        "pct": 33.3,
+        "count": 26
+      },
+      {
+        "group": "Orthodox",
+        "pct": 26.9,
+        "count": 21
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.3,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 94.9,
+        "count": 74
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.1,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL035",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL035",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B59649873769490",
+    "codes": {
+      "nuts": [
+        "AL035"
+      ],
+      "ess_n": {
+        "religion": 104,
+        "language": 104
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 104 respondents in NUTS region AL035 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 104 respondents in NUTS region AL035 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ALB-admin1-10019604B8832247678249",
+    "level": "admin1",
+    "name": "Elbasan",
+    "parent": "ALB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 64.1,
+        "count": 82
+      },
+      {
+        "group": "No religion",
+        "pct": 32.0,
+        "count": 41
+      },
+      {
+        "group": "Orthodox",
+        "pct": 3.1,
+        "count": 4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.8,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 99.2,
+        "count": 127
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): religion by NUTS region AL021",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS round 6 (2012-2013): language by NUTS region AL021",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ALB",
+    "match_by": "shape_id",
+    "shape_id": "10019604B8832247678249",
+    "codes": {
+      "nuts": [
+        "AL021"
+      ],
+      "ess_n": {
+        "religion": 128,
+        "language": 128
+      }
+    },
+    "religion_year": 2012,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS round 6 (2012-2013), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 128 respondents in NUTS region AL021 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2012,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS round 6 (2012-2013), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 128 respondents in NUTS region AL021 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 0 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-DEU-admin1-10402087B20892132820961",
     "level": "admin1",
     "name": "Berlin",
@@ -686,9 +1241,18 @@
         "count": 3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.7,
+        "count": 165
+      },
+      {
+        "group": "Other languages",
+        "pct": 8.3,
+        "count": 15
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -696,6 +1260,12 @@
       {
         "field": "religion",
         "name": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10 (2014-2022): religion by NUTS region DE5",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8, 9, 10 (2010-2022): language by NUTS region DE5",
         "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
         "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
       }
@@ -708,12 +1278,16 @@
         "DE5"
       ],
       "ess_n": {
-        "religion": 103
+        "religion": 103,
+        "language": 134
       }
     },
     "religion_year": 2021,
     "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
-    "religion_note": "European Social Survey, ESS rounds 7, 8, 9, 10 (2014-2022), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 103 respondents in NUTS region DE5 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Round 10 here is the self-completion file, which asks the denomination alone: those it routes past it are counted as No religion, and the written mode draws more of them than an interview does. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+    "religion_note": "European Social Survey, ESS rounds 7, 8, 9, 10 (2014-2022), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 103 respondents in NUTS region DE5 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Round 10 here is the self-completion file, which asks the denomination alone: those it routes past it are counted as No religion, and the written mode draws more of them than an interview does. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2021,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8, 9, 10 (2010-2022), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 134 respondents in NUTS region DE5 gave an answer (9 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 97 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-DEU-admin1-10402087B45896528657515",
@@ -1191,12 +1765,12 @@
       {
         "group": "German",
         "pct": 93.8,
-        "count": 2811
+        "count": 2812
       },
       {
         "group": "Other languages",
         "pct": 1.8,
-        "count": 55
+        "count": 54
       },
       {
         "group": "Russian",
@@ -4529,7 +5103,7 @@
         "count": 30
       },
       {
-        "group": "Swiss German",
+        "group": "Alsatian",
         "pct": 1.8,
         "count": 15
       },
@@ -9625,9 +10199,43 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 57.5,
+        "count": 96
+      },
+      {
+        "group": "No religion",
+        "pct": 28.7,
+        "count": 48
+      },
+      {
+        "group": "Islam",
+        "pct": 8.4,
+        "count": 14
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.8,
+        "count": 3
+      },
+      {
+        "group": "Judaism",
+        "pct": 1.2,
+        "count": 2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.2,
+        "count": 2
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.2,
+        "count": 2
+      }
+    ],
     "language": [
       {
         "group": "Bulgarian",
@@ -9650,6 +10258,12 @@
     },
     "sources": [
       {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 9, 10, 11 (2010-2024): religion by NUTS region BG343",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
         "field": "language",
         "name": "European Social Survey (ESS ERIC), ESS rounds 9, 10, 11 (2018-2024): language by NUTS region BG343",
         "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
@@ -9664,9 +10278,13 @@
         "BG343"
       ],
       "ess_n": {
+        "religion": 188,
         "language": 103
       }
     },
+    "religion_year": 2023,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 9, 10, 11 (2010-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 188 respondents in NUTS region BG343 gave an answer (7 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 97 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
     "language_year": 2023,
     "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
     "language_note": "European Social Survey, ESS rounds 9, 10, 11 (2018-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 103 respondents in NUTS region BG343 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
@@ -18258,6 +18876,96 @@
     "language_note": "European Social Survey, ESS rounds 7, 8 (2014-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 102 respondents in NUTS region SE124 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
+    "id": "ESS-SWE-admin1-68755315B33676065986160",
+    "level": "admin1",
+    "name": "Kronobergs län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 56.7,
+        "count": 55
+      },
+      {
+        "group": "Protestant",
+        "pct": 38.1,
+        "count": 37
+      },
+      {
+        "group": "Islam",
+        "pct": 4.1,
+        "count": 4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 88.9,
+        "count": 88
+      },
+      {
+        "group": "Other languages",
+        "pct": 11.1,
+        "count": 11
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE212",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE212",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B33676065986160",
+    "codes": {
+      "nuts": [
+        "SE212"
+      ],
+      "ess_n": {
+        "religion": 114,
+        "language": 114
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 114 respondents in NUTS region SE212 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 49 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 114 respondents in NUTS region SE212 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 49 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-SWE-admin1-68755315B38650871956455",
     "level": "admin1",
     "name": "Gotlands län",
@@ -18466,6 +19174,101 @@
     "language_year": 2016,
     "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
     "language_note": "European Social Survey, ESS rounds 7, 8 (2014-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 325 respondents in NUTS region SE232 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B40560830761561",
+    "level": "admin1",
+    "name": "Gävleborgs län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 79.7,
+        "count": 157
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.2,
+        "count": 32
+      },
+      {
+        "group": "Islam",
+        "pct": 2.0,
+        "count": 4
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.5,
+        "count": 3
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.5,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 94.4,
+        "count": 185
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.6,
+        "count": 11
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE313",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE313",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B40560830761561",
+    "codes": {
+      "nuts": [
+        "SE313"
+      ],
+      "ess_n": {
+        "religion": 191,
+        "language": 190
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 191 respondents in NUTS region SE313 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 91 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 190 respondents in NUTS region SE313 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 91 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-SWE-admin1-68755315B42087740049136",
@@ -18863,6 +19666,111 @@
     "language_note": "European Social Survey, ESS rounds 7, 8 (2014-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 111 respondents in NUTS region SE231 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
+    "id": "ESS-SWE-admin1-68755315B56925388039616",
+    "level": "admin1",
+    "name": "Värmlands län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 75.7,
+        "count": 137
+      },
+      {
+        "group": "Protestant",
+        "pct": 21.5,
+        "count": 39
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 2
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.6,
+        "count": 1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.6,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 92.9,
+        "count": 171
+      },
+      {
+        "group": "Other languages",
+        "pct": 4.3,
+        "count": 8
+      },
+      {
+        "group": "English",
+        "pct": 2.7,
+        "count": 5
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE311",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE311",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B56925388039616",
+    "codes": {
+      "nuts": [
+        "SE311"
+      ],
+      "ess_n": {
+        "religion": 183,
+        "language": 184
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 183 respondents in NUTS region SE311 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 91 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 184 respondents in NUTS region SE311 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 92 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-SWE-admin1-68755315B59709318110176",
     "level": "admin1",
     "name": "Jönköpings län",
@@ -18968,6 +19876,201 @@
     "language_note": "European Social Survey, ESS rounds 7, 8 (2014-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 112 respondents in NUTS region SE211 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
+    "id": "ESS-SWE-admin1-68755315B7109819079053",
+    "level": "admin1",
+    "name": "Västmanlands län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 66.9,
+        "count": 117
+      },
+      {
+        "group": "Protestant",
+        "pct": 29.1,
+        "count": 51
+      },
+      {
+        "group": "Islam",
+        "pct": 2.3,
+        "count": 4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.1,
+        "count": 2
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 92.0,
+        "count": 162
+      },
+      {
+        "group": "Other languages",
+        "pct": 8.0,
+        "count": 14
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE125",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE125",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B7109819079053",
+    "codes": {
+      "nuts": [
+        "SE125"
+      ],
+      "ess_n": {
+        "religion": 169,
+        "language": 169
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 169 respondents in NUTS region SE125 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 80 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 169 respondents in NUTS region SE125 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 80 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B77555777280839",
+    "level": "admin1",
+    "name": "Jämtlands län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 74.3,
+        "count": 78
+      },
+      {
+        "group": "Protestant",
+        "pct": 21.9,
+        "count": 23
+      },
+      {
+        "group": "Islam",
+        "pct": 1.0,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0,
+        "count": 1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.0,
+        "count": 1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 97.1,
+        "count": 102
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.9,
+        "count": 3
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE322",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE322",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B77555777280839",
+    "codes": {
+      "nuts": [
+        "SE322"
+      ],
+      "ess_n": {
+        "religion": 132,
+        "language": 132
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 132 respondents in NUTS region SE322 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 75 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 132 respondents in NUTS region SE322 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 75 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-SWE-admin1-68755315B80953081303888",
     "level": "admin1",
     "name": "Östergötlands län",
@@ -19066,6 +20169,391 @@
     "language_year": 2016,
     "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
     "language_note": "European Social Survey, ESS rounds 7, 8 (2014-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 139 respondents in NUTS region SE123 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B81473328083601",
+    "level": "admin1",
+    "name": "Blekinge län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 67.4,
+        "count": 91
+      },
+      {
+        "group": "Protestant",
+        "pct": 27.4,
+        "count": 37
+      },
+      {
+        "group": "Islam",
+        "pct": 2.2,
+        "count": 3
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.5,
+        "count": 2
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.7,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 94.0,
+        "count": 126
+      },
+      {
+        "group": "Other languages",
+        "pct": 6.0,
+        "count": 8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE221",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE221",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B81473328083601",
+    "codes": {
+      "nuts": [
+        "SE221"
+      ],
+      "ess_n": {
+        "religion": 136,
+        "language": 136
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 136 respondents in NUTS region SE221 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 80 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 136 respondents in NUTS region SE221 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 80 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B90115132982568",
+    "level": "admin1",
+    "name": "Kalmar län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 63.7,
+        "count": 93
+      },
+      {
+        "group": "Protestant",
+        "pct": 32.2,
+        "count": 47
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1,
+        "count": 3
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.4,
+        "count": 2
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.7,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 96.6,
+        "count": 142
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.4,
+        "count": 5
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE213",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE213",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B90115132982568",
+    "codes": {
+      "nuts": [
+        "SE213"
+      ],
+      "ess_n": {
+        "religion": 176,
+        "language": 177
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 176 respondents in NUTS region SE213 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 62 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 177 respondents in NUTS region SE213 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 63 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B90281797632670",
+    "level": "admin1",
+    "name": "Norrbottens län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 65.6,
+        "count": 101
+      },
+      {
+        "group": "Protestant",
+        "pct": 31.2,
+        "count": 48
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.9,
+        "count": 3
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 2
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 91.7,
+        "count": 144
+      },
+      {
+        "group": "Other languages",
+        "pct": 8.3,
+        "count": 13
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE332",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE332",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B90281797632670",
+    "codes": {
+      "nuts": [
+        "SE332"
+      ],
+      "ess_n": {
+        "religion": 168,
+        "language": 169
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 168 respondents in NUTS region SE332 gave an answer (2 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 92 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 169 respondents in NUTS region SE332 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 92 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-SWE-admin1-68755315B98869091115359",
+    "level": "admin1",
+    "name": "Södermanlands län",
+    "parent": "SWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 77.8,
+        "count": 140
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.7,
+        "count": 30
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.8,
+        "count": 5
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 1.1,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 2
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Swedish",
+        "pct": 95.0,
+        "count": 170
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.0,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): religion by NUTS region SE122",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8 (2010-2017): language by NUTS region SE122",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "SWE",
+    "match_by": "shape_id",
+    "shape_id": "68755315B98869091115359",
+    "codes": {
+      "nuts": [
+        "SE122"
+      ],
+      "ess_n": {
+        "religion": 180,
+        "language": 180
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 180 respondents in NUTS region SE122 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 97 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8 (2010-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 180 respondents in NUTS region SE122 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 97 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-CHE-admin1-70761945B4468941998498",
@@ -19375,50 +20863,40 @@
     "religion": [
       {
         "group": "No religion",
-        "pct": 54.3,
-        "count": 436
+        "pct": 57.2,
+        "count": 273
       },
       {
         "group": "Protestant",
-        "pct": 41.7,
-        "count": 335
+        "pct": 39.6,
+        "count": 189
       },
       {
         "group": "Islam",
         "pct": 1.5,
-        "count": 12
+        "count": 7
       },
       {
         "group": "Roman Catholic",
-        "pct": 1.1,
-        "count": 9
-      },
-      {
-        "group": "Orthodox",
-        "pct": 0.5,
-        "count": 4
+        "pct": 1.0,
+        "count": 5
       },
       {
         "group": "Other religions",
-        "pct": 0.5,
-        "count": 4
-      },
-      {
-        "group": "Eastern religions",
-        "pct": 0.4,
+        "pct": 0.6,
         "count": 3
       }
     ],
     "language": [
       {
         "group": "Norwegian",
-        "pct": 97.0,
-        "count": 771
+        "pct": 97.3,
+        "count": 460
       },
       {
         "group": "Other languages",
-        "pct": 3.0,
-        "count": 24
+        "pct": 2.7,
+        "count": 13
       }
     ],
     "ethnicity": {
@@ -19427,13 +20905,13 @@
     "sources": [
       {
         "field": "religion",
-        "name": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024): religion by NUTS region NO02",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024): religion by NUTS region NO02",
         "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
         "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
       },
       {
         "field": "language",
-        "name": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024): language by NUTS region NO02",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024): language by NUTS region NO02",
         "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
         "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
       }
@@ -19446,16 +20924,16 @@
         "NO02"
       ],
       "ess_n": {
-        "religion": 515,
-        "language": 511
+        "religion": 212,
+        "language": 211
       }
     },
     "religion_year": 2023,
     "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
-    "religion_note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 515 respondents in NUTS region NO02 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "religion_note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 212 respondents in NUTS region NO02 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
     "language_year": 2023,
     "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
-    "language_note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 511 respondents in NUTS region NO02 gave an answer (4 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+    "language_note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 211 respondents in NUTS region NO02 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-NOR-admin1-71437522B86105181076448",
@@ -25308,6 +26786,191 @@
     "language_note": "European Social Survey, ESS round 8 (2016-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 217 respondents in NUTS region ITF3 gave an answer (4 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
+    "id": "ESS-ITA-admin2-23120603B49951072422318",
+    "level": "admin2",
+    "name": "Marche",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 76.4,
+        "count": 97
+      },
+      {
+        "group": "No religion",
+        "pct": 18.1,
+        "count": 23
+      },
+      {
+        "group": "Islam",
+        "pct": 3.1,
+        "count": 4
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "Italian",
+        "pct": 96.9,
+        "count": 123
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.1,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 6, 8 (2012-2017): religion by NUTS region ITI3",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 6, 8 (2012-2017): language by NUTS region ITI3",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ITA",
+    "match_by": "shape_id",
+    "shape_id": "23120603B49951072422318",
+    "codes": {
+      "nuts": [
+        "ITI3"
+      ],
+      "ess_n": {
+        "religion": 113,
+        "language": 114
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 6, 8 (2012-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 113 respondents in NUTS region ITI3 gave an answer (4 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 95 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 6, 8 (2012-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 114 respondents in NUTS region ITI3 gave an answer (3 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 96 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-ITA-admin2-23120603B55310757134450",
+    "level": "admin2",
+    "name": "Calabria",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 80.8,
+        "count": 101
+      },
+      {
+        "group": "No religion",
+        "pct": 16.8,
+        "count": 21
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.8,
+        "count": 1
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.8,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Italian",
+        "pct": 98.1,
+        "count": 104
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.9,
+        "count": 2
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 6, 8 (2012-2017): religion by NUTS region ITF6",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 6, 8 (2012-2017): language by NUTS region ITF6",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "ITA",
+    "match_by": "shape_id",
+    "shape_id": "23120603B55310757134450",
+    "codes": {
+      "nuts": [
+        "ITF6"
+      ],
+      "ess_n": {
+        "religion": 134,
+        "language": 115
+      }
+    },
+    "religion_year": 2016,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 6, 8 (2012-2017), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 134 respondents in NUTS region ITF6 gave an answer (3 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 60 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2016,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 6, 8 (2012-2017), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 115 respondents in NUTS region ITF6 gave an answer (22 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 62 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-ITA-admin2-23120603B69806914684511",
     "level": "admin2",
     "name": "Puglia",
@@ -26491,6 +28154,101 @@
     "language_year": 2023,
     "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
     "language_note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 269 respondents in NUTS region EL65 gave an answer (0 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
+    "id": "ESS-GRC-admin2-26713481B43979888680650",
+    "level": "admin2",
+    "name": "Voreioy Aigaioy",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 89.0,
+        "count": 130
+      },
+      {
+        "group": "No religion",
+        "pct": 8.2,
+        "count": 12
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.4,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.7,
+        "count": 1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.7,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Greek",
+        "pct": 97.2,
+        "count": 140
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.8,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 10, 11 (2010-2024): religion by NUTS region EL41",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 10, 11 (2010-2024): language by NUTS region EL41",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "26713481B43979888680650",
+    "codes": {
+      "nuts": [
+        "EL41"
+      ],
+      "ess_n": {
+        "religion": 139,
+        "language": 139
+      }
+    },
+    "religion_year": 2023,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 5, 10, 11 (2010-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 139 respondents in NUTS region EL41 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 87 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2023,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 10, 11 (2010-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 139 respondents in NUTS region EL41 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 87 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-GRC-admin2-26713481B45081925310995",
@@ -28039,9 +29797,18 @@
         "count": 3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.7,
+        "count": 165
+      },
+      {
+        "group": "Other languages",
+        "pct": 8.3,
+        "count": 15
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -28049,6 +29816,12 @@
       {
         "field": "religion",
         "name": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10 (2014-2022): religion by NUTS region DE5",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 5, 6, 7, 8, 9, 10 (2010-2022): language by NUTS region DE5",
         "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
         "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
       }
@@ -28061,12 +29834,16 @@
         "DE5"
       ],
       "ess_n": {
-        "religion": 103
+        "religion": 103,
+        "language": 134
       }
     },
     "religion_year": 2021,
     "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
-    "religion_note": "European Social Survey, ESS rounds 7, 8, 9, 10 (2014-2022), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 103 respondents in NUTS region DE5 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Round 10 here is the self-completion file, which asks the denomination alone: those it routes past it are counted as No religion, and the written mode draws more of them than an interview does. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+    "religion_note": "European Social Survey, ESS rounds 7, 8, 9, 10 (2014-2022), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 103 respondents in NUTS region DE5 gave an answer (1 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Round 10 here is the self-completion file, which asks the denomination alone: those it routes past it are counted as No religion, and the written mode draws more of them than an interview does. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2021,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 5, 6, 7, 8, 9, 10 (2010-2022), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 134 respondents in NUTS region DE5 gave an answer (9 refused, did not know or did not answer and are left out), weighted by the post-stratification weight (pspwght) and pooled across rounds. Low precision: under 300 respondents. Rounds 7-11 (2014-2024) hold only 97 respondents here, under the 100 this map requires, so the pool reaches back to round 5 (2010). Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
     "id": "ESS-DEU-admin2-9070358B45896528657515",
