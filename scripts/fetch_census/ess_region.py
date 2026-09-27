@@ -458,7 +458,8 @@ def pool(tabs: dict[str, Any], field: str, first_round: int,
     parents, round by round, from ``first_round`` on.
     """
     out: dict[str, dict[str, Any]] = defaultdict(lambda: {
-        "w": Counter(), "n": Counter(), "missing": 0, "rounds": set(), "recoded": set()})
+        "w": Counter(), "n": Counter(), "missing": 0, "rounds": set(), "recoded": set(),
+        "labels": set()})
     per_round: dict[tuple[str, str], dict[str, Counter]] = defaultdict(
         lambda: {"w": Counter(), "n": Counter()})
     unplaced: Counter = Counter()
@@ -493,6 +494,8 @@ def pool(tabs: dict[str, Any], field: str, first_round: int,
                 slot["rounds"].add((prefix, year))
                 if original.strip().upper() != code:
                     slot["recoded"].add(original.strip().upper())
+                elif target == code and (entry.get("labels") or {}).get(region):
+                    slot["labels"].add(entry["labels"][region].strip())
                 part = per_round[(target, prefix)]
                 for key, n in cells.items():
                     group = classify(key)
@@ -663,9 +666,15 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
                             "name": f"European Social Survey (ESS ERIC), {rounds}: {field} "
                                     f"by NUTS region {got['code']}",
                             "url": PORTAL, "license": LICENCE})
+        # The survey's own names for the region, so a count read later under
+        # the region's official name is recognised as the same place.
+        aliases = sorted({label for f in ("religion", "language") if f in item
+                          for label in item[f]["slot"].get("labels", ())
+                          if label and label != place["name"]})
         records.append(record(
             f"ESS-{iso3}-{level}-{shape_id}", place["name"], level=level, parent=iso3,
             country=iso3, match_by="shape_id", shape_id=shape_id, sources=sources,
+            aliases=aliases or None,
             codes={"nuts": sorted({item[f]["code"] for f in ("religion", "language")
                                    if f in item}),
                    "ess_n": {f: item[f]["n"] for f in ("religion", "language") if f in item}},
