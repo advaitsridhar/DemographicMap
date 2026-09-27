@@ -32,6 +32,7 @@ import argparse
 import io
 import json
 import re
+import unicodedata
 from collections import defaultdict
 from typing import Any
 
@@ -91,7 +92,9 @@ NUMBER = re.compile(r"^\d{1,3}(,\d{3})*$")
 
 
 def squeeze(text: str) -> str:
-    return re.sub(r"[\s\-‐–]", "", text).lower()
+    """Spaces and hyphens out, lower case, and Armenian ligatures (ﬔ for մե)
+    spelled out."""
+    return re.sub(r"[\s\-‐–]", "", unicodedata.normalize("NFKC", text)).lower()
 
 
 def lines_of(chars: list[dict[str, Any]], upright: bool) -> list[str]:
@@ -148,7 +151,9 @@ def read_table(blob: bytes, stem: str) -> dict[str, Any]:
                      if split(ws)[0] and squeeze(split(ws)[0]) == "ընդամենը"
                      and len(split(ws)[1]) > 2), None)
     if total_at is None:
-        raise SystemExit("armenia_2011: no 'Ընդամենը' row with figures")
+        seen = [(round(top), split(ws)[0][:30], len(split(ws)[1]),
+                 [w.get("upright") for w in ws[:2]]) for top, ws in rows[:40]]
+        raise SystemExit(f"armenia_2011: no 'Ընդամենը' row with figures; rows: {seen}")
     total_top, total_words = rows[total_at]
     _, numbers = split(total_words)
     edges = [w["x1"] for w in numbers]
