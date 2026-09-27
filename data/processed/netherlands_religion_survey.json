@@ -1,0 +1,770 @@
+[
+  {
+    "id": "NLD-CBS-REL-groningen",
+    "level": "admin1",
+    "name": "Groningen",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 66.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 16.9
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.7
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.0
+      },
+      {
+        "group": "Islam",
+        "pct": 3.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B22599492826393",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-fryslan",
+    "level": "admin1",
+    "name": "Fryslân",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 62.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 23.7
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.0
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.9
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B16797155540126",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-drenthe",
+    "level": "admin1",
+    "name": "Drenthe",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 66.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 19.4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.6
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B35805836723247",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-overijssel",
+    "level": "admin1",
+    "name": "Overijssel",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 52.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 19.9
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.9
+      },
+      {
+        "group": "Islam",
+        "pct": 4.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B65865334514334",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-flevoland",
+    "level": "admin1",
+    "name": "Flevoland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 55.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 18.8
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 10.2
+      },
+      {
+        "group": "Islam",
+        "pct": 8.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B59803137683520",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-gelderland",
+    "level": "admin1",
+    "name": "Gelderland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 55.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 18.2
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.7
+      },
+      {
+        "group": "Islam",
+        "pct": 3.7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B62088949697264",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-utrecht",
+    "level": "admin1",
+    "name": "Utrecht",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 61.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.7
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 9.8
+      },
+      {
+        "group": "Islam",
+        "pct": 6.7
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B73841275384957",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-noordholland",
+    "level": "admin1",
+    "name": "Noord-Holland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 65.1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.2
+      },
+      {
+        "group": "Islam",
+        "pct": 7.9
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B7118592816602",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-zuidholland",
+    "level": "admin1",
+    "name": "Zuid-Holland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 56.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 15.8
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 11.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.1
+      },
+      {
+        "group": "Islam",
+        "pct": 8.0
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B20589914738510",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-zeeland",
+    "level": "admin1",
+    "name": "Zeeland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 50.7
+      },
+      {
+        "group": "Protestant",
+        "pct": 24.1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 16.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.5
+      },
+      {
+        "group": "Islam",
+        "pct": 2.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B50931527975892",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-noordbrabant",
+    "level": "admin1",
+    "name": "Noord-Brabant",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 52.6
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 32.8
+      },
+      {
+        "group": "Islam",
+        "pct": 5.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 4.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B61109061302483",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  },
+  {
+    "id": "NLD-CBS-REL-limburg",
+    "level": "admin1",
+    "name": "Limburg",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.5
+      },
+      {
+        "group": "No religion",
+        "pct": 42.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.7
+      },
+      {
+        "group": "Islam",
+        "pct": 4.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.4
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2",
+        "url": "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025",
+        "license": "CC BY 4.0 (CBS)",
+        "year": 2025
+      }
+    ],
+    "country": "NLD",
+    "match_by": "shape_id",
+    "shape_id": "6811986B81587772601460",
+    "religion_year": 2025,
+    "religion_basis": "survey estimate: self-identification, non-institutional population 15+",
+    "religion_note": "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the share of the non-institutional population aged 15 and over who count themselves to a religion, weighted by CBS; CBS prints a region only when at least 300 respondents stand behind it. 'No religion' is everyone who does not count themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since 1971 and no register records religion."
+  }
+]

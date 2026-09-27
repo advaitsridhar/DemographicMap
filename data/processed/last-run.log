@@ -1,5 +1,4 @@
-romania_census: RPL 2021, definitive results, through the Internet Archive
-  Tabel-1.03_1.3.1-si-1.03.2.xls: 769,536 bytes, Archive capture 20230601
-  age: 19,053,815 residents, 42 counties, 3,180 UATs; 18 columns
-  Tabel-2.02.1-si-Tabel-2.02.2.xlsx: 408,035 bytes, Archive capture 20230702
-romania_census: ethnicity ALBAC: the groups add to 1,757 against 1,846 with 2 suppressed cells
+  CBS's note: *Voor een aantal corop-regio's waren er te weinig (< 300) waarnemingen. In dat geval wordt alleen het percentage per provincie gegeven.
+  Nederland: {'Totaal gelovig': 42.9, 'Rooms-kaholiek': 17.2, 'Protestants': 13.1, 'Islam': 5.8, 'Ander geloof': 6.8}
+  wrote data/processed/netherlands_religion_survey.json (23 kB)
+  wrote netherlands_religion_survey.json: 12 records
