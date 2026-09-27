@@ -1,2 +1,8 @@
-poland_ages: BDL variables median 746289, total 72305, men 72300, women 72295
-poland_ages: no year for which every unit has all four variables
+== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT
+  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
+  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1601,1602,PT&lang=PT
+== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT
+  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT :: <urlopen error [Errno 110] Connection timed out>
+  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=PT&lang=PT
