@@ -1,11 +1,335 @@
-slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
-  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
-  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
-  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
-  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
-  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
-  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  192 municipalities of 2002; Slovenia 1,964,036
-slovenia_census: Ajdovščina: religion rows make 18,076, total 18095.0, population 18,095
+
+=== che11
+
+## DAM language=de&title=Religionszugeh%C3%B6rigkeit: 60 items
+   - 36429798 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.001 | 2010-2024 | Kantone, Kantone | Dominierende Religionszugehörigkeit
+   - 36491984 | TM10 Tabelle Datei | su-d-40.02.01.08.30-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit detailliert, 2022-2024 kumuliert
+   - 36429857 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Staatsangehörigkeit, 2020-2024 kumuliert
+   - 36429856 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit (Europa), 2020-2024 kumuliert
+   - 36491980 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit in der Schweiz
+   - 36429858 | DM11 Diagramm (Data-driven) | gd-d-01.08.02-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit, 2022-2024 kumuliert
+   - 36429855 | ID02 Dynamic Asset Tool | ds-x-01.08.02-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit, 2022-2024 kumuliert
+   - 36429839 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.006 | 2010-2024 | Kantone, Kantone | Wohnbevölkerung mit anderer Religionszugehörigkeit
+   - 36429818 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.005 | 2010-2024 | Kantone, Kantone | Wohnbevölkerung ohne Religionszugehörigkeit
+   - 36347568 | TM10 Tabelle Datei | je-d-01.08.02.02 | 2010-2024 | Schweiz, Schweiz, Kantone, Kantone, Sonstige Raumgliederungen, Grossregionen | Religionszugehörigkeit nach Grossregion und Kanton
+   - 36347565 | TM10 Tabelle Datei | je-d-01.08.02.03 | 2010-2024 | Sonstige Raumgliederungen, Statistische Städte | Religionszugehörigkeit nach grossen Städten
+   - 36347584 | TM10 Tabelle Datei | ts-x-40.02.01.08.26 | 2010-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36347570 | TM10 Tabelle Datei | su-d-40.02.01.08.26-2024 | 2024 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36347555 | TM10 Tabelle Datei | su-d-40.02.01.08.28-2024 | 2024 | Schweiz, Schweiz, Kantone, Kantone | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 36347556 | TM10 Tabelle Datei | su-d-40.02.01.08.27-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 36347578 | TM10 Tabelle Datei | su-d-40.02.01.08.29-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 36347553 | TM10 Tabelle Datei | je-d-01.08.02.01 | 1910-2024 | Schweiz, Schweiz | Religionszugehörigkeit seit 1910
+   - 35607916 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc07 | 2024 | Schweiz, Schweiz | Beten in den letzten zwölf Monaten nach Religionszugehörigkeit, 2024
+   - 35607919 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.05 | 1970-2023 | Schweiz, Schweiz | Entwicklung der Religionszugehörigkeit, 1970-2023
+   - 35607932 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc16 | 2014, 2019, 2024 | Schweiz, Schweiz | Religionszugehörigkeit der Kinder unter 15 Jahren, 2014-2024
+   - 35607918 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.08 | 2024 | Schweiz, Schweiz | Religiosität und Spiritualität nach Religionszugehörigkeit, 2024
+   - 35607913 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc03 | 2024 | Schweiz, Schweiz | Teilnahme an religiösen Veranstaltungen oder Gottesdiensten in den letzten zwölf Monaten nach Religionszugehörigkeit, 2024
+   - 34727038 | TM10 Tabelle Datei | su-d-40.02.01.08.30-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit detailliert, 2021-2023 kumuliert
+   - 34768338 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Staatsangehörigkeit, 2019-2023 kumuliert
+   - 34727035 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit
+   - 34768339 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit (Europa), 2019-2023 kumuliert
+   - 34768340 | DM11 Diagramm (Data-driven) | gd-d-01.08.02-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit, 2021-2023 kumuliert
+   - 34768372 | ID02 Dynamic Asset Tool | ds-x-01.08.02-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit, 2021-2023 kumuliert
+   - 33947033 | TM10 Tabelle Datei | su-d-40.02.01.08.26-2023 | 2023 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 33947019 | TM10 Tabelle Datei | su-d-40.02.01.08.28-2023 | 2023 | Schweiz, Schweiz, Kantone, Kantone | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 33947022 | TM10 Tabelle Datei | su-d-40.02.01.08.27-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 33947044 | TM10 Tabelle Datei | su-d-40.02.01.08.29-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 31646435 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-ssv-01.08.01 | 1970-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Personen ohne Religionszugehörigkeit, nach Gemeindegrössenklasse
+   - 31626710 | TM10 Tabelle Datei | su-b-ssv-01.08.02.05-2024 | 1920-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Wohnbevölkerung mit anderer Religionszugehörigkeit seit 1920
+   - 31626709 | TM10 Tabelle Datei | su-b-ssv-01.08.02.02-2024 | 1920-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Wohnbevölkerung ohne Religionszugehörigkeit seit 1920
+   - 31105457 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2018-2022 | Schweiz, Schweiz | Religionszugehörigkeit nach Nationalität
+   - 31068983 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2018-2022 | Schweiz, Schweiz | Religionszugehörigkeit nach Nationalität (Europa), 2018-2022 kumuliert
+   - 31068984 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2018-2022 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Nationalität, 2018-2022 kumuliert
+   - 31068982 | DM11 Diagramm (Data-driven) | gd-d-01.08.02 | 2020-2022 | Schweiz, Schweiz | Religionszugehörigkeit, 2020-2022 kumuliert
+   - 31068967 | TM10 Tabelle Datei | su-d-40.02.01.08.30-2022 | 2020-2022 | Schweiz, Schweiz | Religionszugehörigkeit, 2020-2022 kumuliert
+   - 31325173 | ID02 Dynamic Asset Tool | ds-x-01.08.02 | 2020-2022 | Schweiz, Schweiz | Religionszugehörigkeit, 2020-2022 kumuliert
+   - 30166092 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.06 | 2022 | Schweiz, Schweiz | Bevölkerung ohne Religionszugehörigkeit nach Altersklassen, 2022
+   - 30166112 | KM02 Karte (Statisch) | KM02b-01857-01-c-kant-2024-d | 2022 | Kantone, Kantone | Bevölkerung ohne Religionszugehörigkeit nach Kantonen
+   - 30166136 | Medienmitteilung | 2024-0258-d | 2022 | Schweiz, Schweiz | Die Bevölkerung ohne Religionszugehörigkeit ist neu die grösste Gruppe in der Schweiz
+   - 30166060 | TM10 Tabelle Datei | su-d-40.02.01.08.26-2022 | 2022 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 30166046 | TM10 Tabelle Datei | su-d-40.02.01.08.28-2022 | 2022 | Schweiz, Schweiz, Kantone, Kantone | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 30166043 | TM10 Tabelle Datei | su-d-40.02.01.08.27-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 30166070 | TM10 Tabelle Datei | su-d-40.02.01.08.29-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 25605085 | DM02 Diagramm (Statisch) | gr-d-01.08.02.06 | 2021 | Schweiz, Schweiz | Bevölkerung ohne Religionszugehörigkeit nach Altersklassen, 2021
+   - 25585930 | KM02 Karte (Statisch) | KM02b-01816-01-c-kant-2023-d | 31.12.2021 | Kantone, Kantone | Bevölkerung ohne Religionszugehörigkeit nach Kantonen
+   - 25605092 | DM02 Diagramm (Statisch) | gr-d-01.08.02.11 | 2019 | Schweiz, Schweiz | Glaubensformen nach Religionszugehörigkeit, 2019
+   - 25225675 | BFS Aktuell | 2241-2300 | 1970-2021 | Schweiz, Schweiz | Religionszugehörigkeit in der Schweiz
+   - 25605058 | DM02 Diagramm (Statisch) | gr-d-01.08.02.08 | 2019 | Schweiz, Schweiz | Religiosität und Spiritualität nach Religionszugehörigkeit, 2019
+   - 25605086 | DM02 Diagramm (Statisch) | gr-d-01.08.02.12 | 2019 | Schweiz, Schweiz | Religiöse und spirituelle Praktiken nach Religionszugehörigkeit, 2019
+   - 25605083 | DM02 Diagramm (Statisch) | gr-d-01.08.02.09 | 2019 | Schweiz, Schweiz | Rolle der Religion oder Spiritualität nach Religionszugehörigkeit, 2019
+   - 24469229 | DM02 Diagramm (Statisch) | gr-d-01.08.02 | 2019-2021 | Schweiz, Schweiz | Religionszugehörigkeit
+   - 24545366 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.002 | 2016-2021 | Kantone, Kantone | Religionszugehörigkeit
+   - 24469228 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2017-2021 | Schweiz, Schweiz | Religionszugehörigkeit nach Nationalität
+   - 24311604 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2017-2021 | Schweiz, Schweiz | Religionszugehörigkeit nach Nationalität
+   - 24469230 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2017-2021 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Nationalität
+
+## DAM language=de&title=Religion: 60 items
+   - 36429798 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.001 | 2010-2024 | Kantone, Kantone | Dominierende Religionszugehörigkeit
+   - 36429777 | Weblink | lk-q-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 36491984 | TM10 Tabelle Datei | su-d-40.02.01.08.30-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit detailliert, 2022-2024 kumuliert
+   - 36429857 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Staatsangehörigkeit, 2020-2024 kumuliert
+   - 36429856 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit (Europa), 2020-2024 kumuliert
+   - 36491980 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2020-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit in der Schweiz
+   - 36429858 | DM11 Diagramm (Data-driven) | gd-d-01.08.02-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit, 2022-2024 kumuliert
+   - 36429855 | ID02 Dynamic Asset Tool | ds-x-01.08.02-2024 | 2022-2024 | Schweiz, Schweiz | Religionszugehörigkeit, 2022-2024 kumuliert
+   - 36429839 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.006 | 2010-2024 | Kantone, Kantone | Wohnbevölkerung mit anderer Religionszugehörigkeit
+   - 36429818 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-01.08.02.005 | 2010-2024 | Kantone, Kantone | Wohnbevölkerung ohne Religionszugehörigkeit
+   - 36343816 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02evo | 1970-2024 | Schweiz, Schweiz | Entwicklung der Religionslandschaft
+   - 36347583 | TM10 Tabelle Datei | su-d-40.02.01.08.32-2024 | 1970-2024 | Schweiz, Schweiz | Entwicklung der Religionslandschaft in der Schweiz
+   - 36343791 | BM03 Infografik | gi-d-01.08.02-2026a | 1980-2024 | Schweiz, Schweiz | Religion
+   - 36343782 | Weblink | lk-q-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 36347568 | TM10 Tabelle Datei | je-d-01.08.02.02 | 2010-2024 | Schweiz, Schweiz, Kantone, Kantone, Sonstige Raumgliederungen, Grossregionen | Religionszugehörigkeit nach Grossregion und Kanton
+   - 36347565 | TM10 Tabelle Datei | je-d-01.08.02.03 | 2010-2024 | Sonstige Raumgliederungen, Statistische Städte | Religionszugehörigkeit nach grossen Städten
+   - 36347584 | TM10 Tabelle Datei | ts-x-40.02.01.08.26 | 2010-2024 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36347570 | TM10 Tabelle Datei | su-d-40.02.01.08.26-2024 | 2024 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36347555 | TM10 Tabelle Datei | su-d-40.02.01.08.28-2024 | 2024 | Schweiz, Schweiz, Kantone, Kantone | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 36347556 | TM10 Tabelle Datei | su-d-40.02.01.08.27-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 36347578 | TM10 Tabelle Datei | su-d-40.02.01.08.29-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 36347553 | TM10 Tabelle Datei | je-d-01.08.02.01 | 1910-2024 | Schweiz, Schweiz | Religionszugehörigkeit seit 1910
+   - 36250380 | Weblink | lk-t-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 36250374 | Statistik Aktuell | be-d-01.08-2025-01 | 2024 | Schweiz, Schweiz | Weitergabe der Religion durch die Familie
+   - 36186984 | Standardpublikation | 1615-2400 | 2014, 2019, 2024 | Schweiz, Schweiz | Kultur- und Freizeitverhalten in der Schweiz
+   - 34788128 | Standardpublikation | 1368-2401 | 1970-2024 | Schweiz, Schweiz | Sprachliche Praktiken in der Schweiz
+   - 34788123 | Medienmitteilung | 2025-0555-d | 2024 | Schweiz, Schweiz | Vielsprachige Schweiz: Die Mehrheit der Bevölkerung verwendet regelmässig mehrere Sprachen
+   - 35627006 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc15b | 2024 | Schweiz, Schweiz | Bedeutung von Religion und Spiritualität im Alltag nach Geschlecht, 2024
+   - 35627019 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc15c | 2024 | Schweiz, Schweiz | Bedeutung von Religion und Spiritualität im Alltag, 2024
+   - 35607916 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc07 | 2024 | Schweiz, Schweiz | Beten in den letzten zwölf Monaten nach Religionszugehörigkeit, 2024
+   - 35607919 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.05 | 1970-2023 | Schweiz, Schweiz | Entwicklung der Religionszugehörigkeit, 1970-2023
+   - 35647777 | Erhebung - Fragebogen print | do-d-01.08-esrk-q-2024.01 | 2024 | Schweiz, Schweiz | Erhebung zur Sprache und Religion 2024 - Fragebogen
+   - 35607909 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.07 | 2024 | Schweiz, Schweiz | Gründe für das Aufgeben der Religion, 2024
+   - 35408039 | Standardpublikation | 1368-2400 | 1970-2024 | Schweiz, Schweiz | Religion und Spiritualität in der Schweiz
+   - 34788017 | Weblink | lk-t-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 35607932 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc16 | 2014, 2019, 2024 | Schweiz, Schweiz | Religionszugehörigkeit der Kinder unter 15 Jahren, 2014-2024
+   - 35607918 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.08 | 2024 | Schweiz, Schweiz | Religiosität und Spiritualität nach Religionszugehörigkeit, 2024
+   - 35408014 | Medienmitteilung | 2025-0553-d | 2024 | Schweiz, Schweiz | Rückgang von Glaube und religiöser Praxis setzt sich fort
+   - 34788022 | Bericht | be-d-01.08-ELRC-02 | 2024 | Schweiz, Schweiz | Statistische Daten des BFS zu den Religionen: Quellen
+   - 35607913 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02elrc03 | 2024 | Schweiz, Schweiz | Teilnahme an religiösen Veranstaltungen oder Gottesdiensten in den letzten zwölf Monaten nach Religionszugehörigkeit, 2024
+   - 35996276 | SB02 Erhebung | inq-340-esrk-de | None | Schweiz, Schweiz | Erhebung zur Sprache, Religion und Kultur
+   - 34727018 | Weblink | lk-q-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 34727038 | TM10 Tabelle Datei | su-d-40.02.01.08.30-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit detailliert, 2021-2023 kumuliert
+   - 34768338 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.04 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Schweizer oder ausländischer Staatsangehörigkeit, 2019-2023 kumuliert
+   - 34727035 | TM10 Tabelle Datei | su-d-01.08.02.03 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit
+   - 34768339 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.02.03 | 2019-2023 | Schweiz, Schweiz | Religionszugehörigkeit nach Staatsangehörigkeit (Europa), 2019-2023 kumuliert
+   - 34768340 | DM11 Diagramm (Data-driven) | gd-d-01.08.02-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit, 2021-2023 kumuliert
+   - 34768372 | ID02 Dynamic Asset Tool | ds-x-01.08.02-2023 | 2021-2023 | Schweiz, Schweiz | Religionszugehörigkeit, 2021-2023 kumuliert
+   - 34047291 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.05.08.00.01 | 2024 | Schweiz, Schweiz | Kontakte zu Personen anderer Nationalität, Religion oder Hautfarbe
+   - 33748793 | Weblink | lk-q-bfs-gnp-01.08-0006 | None |  | Religionen
+   - 33947033 | TM10 Tabelle Datei | su-d-40.02.01.08.26-2023 | 2023 | Schweiz, Schweiz | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 33947019 | TM10 Tabelle Datei | su-d-40.02.01.08.28-2023 | 2023 | Schweiz, Schweiz, Kantone, Kantone | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 33947022 | TM10 Tabelle Datei | su-d-40.02.01.08.27-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 33947044 | TM10 Tabelle Datei | su-d-40.02.01.08.29-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Religionszugehörigkeit nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 31646435 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-ssv-01.08.01 | 1970-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Personen ohne Religionszugehörigkeit, nach Gemeindegrössenklasse
+   - 31626710 | TM10 Tabelle Datei | su-b-ssv-01.08.02.05-2024 | 1920-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Wohnbevölkerung mit anderer Religionszugehörigkeit seit 1920
+   - 31626709 | TM10 Tabelle Datei | su-b-ssv-01.08.02.02-2024 | 1920-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Anteil der Wohnbevölkerung ohne Religionszugehörigkeit seit 1920
+   - 30946814 | Erhebung - Begleitbroschüre | 1368-2400-07 | 2024 | Schweiz, Schweiz | Erhebung zur Sprache und Religion
+   - 31345749 | Weblink | lk-t-bfs-gnp-01.08-0008 | None |  | Online Fragebogen - Erhebung zur Sprache und Religion
+   - 30826054 | Weblink | lk-q-bfs-gnp-01.08-0006 | None |  | Religionen
+
+## DAM language=de&title=Hauptsprachen: 60 items
+   - 36680048 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-21.03.01-1009 | 2010-2024 | Sonstige Raumgliederungen, Arbeitsmarktregionen | Abweichungen vom Mittelwert der Arbeitsmarktregionen, für den Anteil der ständigen Wohnbevölkerung ab 15 Jahren die eine Landessprache als eine ihrer Haup
+   - 36680026 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-21.03.01-1004 | 2010-2024 | Sonstige Raumgliederungen, Arbeitsmarktregionen | Anteil der ständigen Wohnbevölkerung ab 15 Jahren die eine Landessprache als eine ihrer Hauptsprachen angegeben hat
+   - 36679553 | KM11 Karte (datengesteuert) | md-d-21.03.03.10.04-m | 2010-2024 | Sonstige Raumgliederungen, Arbeitsmarktregionen | Anteil der ständigen Wohnbevölkerung ab 15 Jahren die eine Landessprache als eine ihrer Hauptsprachen angegeben hat
+   - 36491978 | TM10 Tabelle Datei | su-d-40.02.01.08.09-2024 | 2022-2024 | Schweiz, Schweiz, Bezirke, Bezirke | Hauptsprachen nach Bezirk, 2022-2024 kumuliert
+   - 36491975 | TM10 Tabelle Datei | su-d-40.02.01.08.31-2024 | 2020-2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Statistische Städte | Hauptsprachen nach Städten, 2020-2024 kumuliert
+   - 36399600 | TM10 Tabelle Datei | su-d-40.02.01.08.22-2024 | 2024 | Schweiz, Schweiz | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36399605 | TM10 Tabelle Datei | su-d-40.02.01.08.24-2024 | 2024 | Schweiz, Schweiz, Kantone, Kantone | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 36399603 | TM10 Tabelle Datei | su-d-40.02.01.08.23-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 36399478 | TM10 Tabelle Datei | su-d-01.08.01.01 | 2010-2024 | Schweiz, Schweiz | Die häufigsten Hauptsprachen der ständigen Wohnbevölkerung
+   - 36399506 | TM10 Tabelle Datei | su-d-40.02.01.08.05-2024 | 2024 | Schweiz, Schweiz | Hauptsprachen in der Schweiz
+   - 36399475 | TM10 Tabelle Datei | je-d-01.08.01.02 | 2010-2024 | Schweiz, Schweiz, Kantone, Kantone, Sonstige Raumgliederungen, Grossregionen | Hauptsprachen nach Grossregion und Kanton
+   - 36399520 | TM10 Tabelle Datei | su-d-40.02.01.08.07-2024 | 2024 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach Kanton
+   - 36399513 | TM10 Tabelle Datei | su-d-40.02.01.08.06-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach Sprachgebiet
+   - 36399482 | TM10 Tabelle Datei | je-d-01.08.01.03 | 2010-2024 | Schweiz, Schweiz, Kantone, Kantone, Sonstige Raumgliederungen, Statistische Städte | Hauptsprachen nach grossen Städten
+   - 36399509 | TM10 Tabelle Datei | su-d-40.02.01.08.01-2024 | 2024 | Schweiz, Schweiz | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36399612 | TM10 Tabelle Datei | ts-x-40.02.01.08.01 | 2010-2024 | Schweiz, Schweiz, Kantone, Kantone, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 36399507 | TM10 Tabelle Datei | su-d-40.02.01.08.03-2024 | 2024 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 36399505 | TM10 Tabelle Datei | su-d-40.02.01.08.02-2024 | 2024 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 36399472 | TM10 Tabelle Datei | je-d-01.08.01.01 | 1910-2024 | Schweiz, Schweiz | Hauptsprachen seit 1910
+   - 36434442 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-01.08.01evo | 1970, 1980, 1990, 2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 | Schweiz, Schweiz | Hauptsprachen, 1970-2024
+   - 34947388 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-21.03.01-1009 | 2010-2023 | Sonstige Raumgliederungen, Arbeitsmarktregionen | Abweichungen vom Mittelwert der Arbeitsmarktregionen, für den Anteil der Personen ab 15 Jahren die eine Landessprache als eine ihrer Hauptsprachen angegeb
+   - 34947404 | KM10 Swiss Stats Map Explorer (STATATLAS) | mx-d-01-21.03.01-1004 | 2010-2023 | Sonstige Raumgliederungen, Arbeitsmarktregionen | Anteil der Personen ab 15 Jahren die eine Landessprache als eine ihrer Hauptsprachen angegeben haben
+   - 34727037 | TM10 Tabelle Datei | su-d-40.02.01.08.09-2023 | 2021-2023 | Schweiz, Schweiz, Bezirke, Bezirke | Hauptsprachen nach Bezirk, 2021-2023 kumuliert
+   - 34727032 | TM10 Tabelle Datei | su-d-40.02.01.08.31-2023 | 2019-2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Statistische Städte | Hauptsprachen nach Städten, 2019-2023 kumuliert
+   - 34247784 | TM10 Tabelle Datei | su-d-40.02.01.08.22-2023 | 2023 | Schweiz, Schweiz | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 34247804 | TM10 Tabelle Datei | su-d-40.02.01.08.24-2023 | 2023 | Schweiz, Schweiz, Kantone, Kantone | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 34247798 | TM10 Tabelle Datei | su-d-40.02.01.08.23-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 34247805 | TM10 Tabelle Datei | su-d-40.02.01.08.25-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 34247703 | TM10 Tabelle Datei | su-d-40.02.01.08.05-2023 | 2023 | Schweiz, Schweiz | Hauptsprachen in der Schweiz
+   - 34247720 | TM10 Tabelle Datei | su-d-40.02.01.08.07-2023 | 2023 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach Kanton
+   - 34247702 | TM10 Tabelle Datei | su-d-40.02.01.08.06-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach Sprachgebiet
+   - 34247730 | TM10 Tabelle Datei | su-d-40.02.01.08.08-2023 | 2023 | Sonstige Raumgliederungen, Raum mit städtischem Charakter | Hauptsprachen nach städtischem/ländlichem Gebiet
+   - 34247701 | TM10 Tabelle Datei | su-d-40.02.01.08.01-2023 | 2023 | Schweiz, Schweiz | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 34247704 | TM10 Tabelle Datei | su-d-40.02.01.08.03-2023 | 2023 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 34247699 | TM10 Tabelle Datei | su-d-40.02.01.08.02-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 34247700 | TM10 Tabelle Datei | su-d-40.02.01.08.04-2023 | 2023 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 31646427 | DM01 Diagramm (manuel. Datenanbindung) | gr-d-ssv-01.08.02 | 1920-2021 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Hauptsprachen, nach Gemeindegrössenklasse
+   - 31105002 | TM10 Tabelle Datei | su-d-40.02.01.08.22-2022 | 2022 | Schweiz, Schweiz | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 31105014 | TM10 Tabelle Datei | su-d-40.02.01.08.24-2022 | 2022 | Schweiz, Schweiz, Kantone, Kantone | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 31105001 | TM10 Tabelle Datei | su-d-40.02.01.08.23-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 31105015 | TM10 Tabelle Datei | su-d-40.02.01.08.25-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 31085911 | TM10 Tabelle Datei | su-d-40.02.01.08.05-2022 | 2022 | Schweiz, Schweiz | Hauptsprachen in der Schweiz
+   - 31068963 | TM10 Tabelle Datei | su-d-40.02.01.08.09-2022 | 2020-2022 | Schweiz, Schweiz, Bezirke, Bezirke | Hauptsprachen nach Bezirk, 2020-2022 kumuliert
+   - 31085931 | TM10 Tabelle Datei | su-d-40.02.01.08.07-2022 | 2022 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach Kanton
+   - 31085914 | TM10 Tabelle Datei | su-d-40.02.01.08.06-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach Sprachgebiet
+   - 31068962 | TM10 Tabelle Datei | su-d-40.02.01.08.31-2022 | 2018-2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Statistische Städte | Hauptsprachen nach Städten, 2018-2022 kumuliert
+   - 31085943 | TM10 Tabelle Datei | su-d-40.02.01.08.08-2022 | 2022 | Sonstige Raumgliederungen, Raum mit städtischem Charakter | Hauptsprachen nach städtischem/ländlichem Gebiet
+   - 31085912 | TM10 Tabelle Datei | su-d-40.02.01.08.01-2022 | 2022 | Schweiz, Schweiz | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 31085908 | TM10 Tabelle Datei | su-d-40.02.01.08.03-2022 | 2022 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 31085909 | TM10 Tabelle Datei | su-d-40.02.01.08.02-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 31085900 | TM10 Tabelle Datei | su-d-40.02.01.08.04-2022 | 2022 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 24311536 | TM10 Tabelle Datei | su-d-40.02.01.08.09-2021 | 2019-2021 | Schweiz, Schweiz, Bezirke, Bezirke | Hauptsprachen nach Bezirk, 2019-2021 kumuliert
+   - 24311541 | TM10 Tabelle Datei | su-d-40.02.01.08.31-2021 | 2017-2021 | Schweiz, Schweiz, Sonstige Raumgliederungen, Statistische Städte | Hauptsprachen nach Städten, 2017-2021 kumuliert
+   - 24205470 | TM10 Tabelle Datei | su-d-40.02.01.08.22-2021 | 2021 | Schweiz, Schweiz | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen in der Schweiz
+   - 24205510 | TM10 Tabelle Datei | su-d-40.02.01.08.24-2021 | 2021 | Schweiz, Schweiz, Kantone, Kantone | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Kanton
+   - 24205496 | TM10 Tabelle Datei | su-d-40.02.01.08.23-2021 | 2021 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und Sprachgebiet
+   - 24205491 | TM10 Tabelle Datei | su-d-40.02.01.08.25-2021 | 2021 | Schweiz, Schweiz, Sonstige Raumgliederungen, Städtische/Ländliche Gebiete | Anzahl Hauptsprachen nach verschiedenen soziodemografischen Merkmalen und städtischem/ländlichem Gebiet
+   - 24205419 | TM10 Tabelle Datei | su-d-40.02.01.08.05-2021 | 2021 | Schweiz, Schweiz | Hauptsprachen in der Schweiz
+   - 24205418 | TM10 Tabelle Datei | su-d-40.02.01.08.07-2021 | 2021 | Schweiz, Schweiz, Kantone, Kantone | Hauptsprachen nach Kanton
+   - 24205412 | TM10 Tabelle Datei | su-d-40.02.01.08.06-2021 | 2021 | Schweiz, Schweiz, Sonstige Raumgliederungen, Sprachgebiete | Hauptsprachen nach Sprachgebiet
+
+## DAM language=de&title=Volksz%C3%A4hlung%202000: 60 items
+   - 36018899 | Beschreibende Dokumente | do-d-01.01-snc-04 | 2021 | Schweiz, Schweiz | Swiss National Cohort: Linkage Volkszählung 2000 zur Registerzählung 2010/11
+   - 32407013 | SB02 Erhebung | inq-1-vz-de | None | Schweiz, Schweiz | Eidgenössische Volkszählung 1850-2000
+   - 22988622 | Bericht | be-d-01.01-snc-03 | 1990-2019 | Schweiz, Schweiz | Linkage Volkszählung 2000 zur Registerzählung 2010/11
+   - 6742 | BM06 Video | orzDZ36mMcs | None | Schweiz, Schweiz | Volkszählung 2000 - Pilotprojekt E-census
+   - 6682 | BM06 Video | DNWthkHcitY | None | Schweiz, Schweiz | Volkszählung 2000 - Bilanz
+   - 6745 | BM06 Video | OSmMJozT4zI | None | Schweiz, Schweiz | Volkszählung 2000 - Die Volkerts
+   - 193307 | TM10 Tabelle Datei | su-d-vz21-ch-01 | 2000 | Schweiz, Schweiz | Eidgenössische Volkszählung 2000: Allgemeine Uebersicht: Gebäude (1)
+   - 193317 | TM10 Tabelle Datei | su-d-vz21-ch-03 | 2000 | Schweiz, Schweiz | Eidgenössische Volkszählung 2000: Allgemeine Uebersicht: Wohnungen
+   - 193314 | TM10 Tabelle Datei | su-d-vz21-ch-02 | 2000 | Schweiz, Schweiz | Eidgenössische Volkszählung 2000: Allgemeine Übersicht: Gebäude (2)
+   - 147328 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_5-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 147314 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_2-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193377 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_9-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193374 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_8-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193364 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_7-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193358 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_6-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193342 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_4-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193324 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_1-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193336 | TM10 Tabelle Datei | su-d-vz-AKL5_HG_2000_3-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Fünfjahresaltersklassen; Eidgenössische Volkszählung 2000
+   - 193399 | TM10 Tabelle Datei | su-d-vz-ZIVL_HG_2000_1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Geschlecht, Nationalität und Zivilstand; Eidgenössische Volkszählung 2000
+   - 120116 | TM10 Tabelle Datei | su-d-vz-NATI_GESL_2000_3-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Nationalität nach Staaten; Eidgenössische Volkszählung 2000
+   - 120109 | TM10 Tabelle Datei | su-d-vz-NATI_GESL_2000_1-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Nationalität nach Staaten; Eidgenössische Volkszählung 2000
+   - 147348 | TM10 Tabelle Datei | su-d-vz-NATI_GESL_2000_2-1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie Nationalität nach Staaten; Eidgenössische Volkszählung 2000
+   - 147501 | TM10 Tabelle Datei | su-d-vz-SPRA_HG_2000_1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie nach Geschlecht, Nationalität und Hauptsprache; Eidgenössische Volkszählung 2000
+   - 193515 | TM10 Tabelle Datei | su-d-vz-REL_HG_2000_1 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke, Gemeinden, Politische Gemeinden | Wohnbevölkerung nach Kantonen, Bezirken, Gemeinden sowie nach Geschlecht, Nationalität und Religion; Eidgenössische Volkszählung 2000
+   - 342650 | Publikation mit externen Partnern | ARE-2006-01-d | 1990-2000 | Schweiz, Schweiz, Kantone, Kantone | Gebäude, Wohnungen und Bevölkerung ausserhalb der Bauzone
+   - 1031665 | KM05 Basisgeometrien | KM05-00832-00-c-polg-2012-df | 5.12.2005 | Gemeinden, Politische Gemeinden | Die 4 Berggebietsregionen der Schweiz am 5.12.2000 (Volkszählung) nach Gemeinden
+   - 342538 | Standardpublikation | 338-0032 | 2000 | Schweiz, Schweiz | Volkszählung 2000. Statistische Einsetzungsverfahren Band 1
+   - 342453 | Standardpublikation | 338-0033 | 2000 | Schweiz, Schweiz | Volkszählung 2000. Statistische Einsetzungsverfahren Band 2
+   - 342380 | Standardpublikation | 001-0076 | 2000 | Schweiz, Schweiz | Abschlussbericht zur Volkszählung 2000
+   - 340621 | Standardpublikation | 001-0015 | 1850-2000 | Schweiz, Schweiz, Gemeinden, Politische Gemeinden | Bevölkerungsentwicklung der Gemeinden 1850-2000
+   - 340057 | Standardpublikation | 001-0018 | 1900-2000 | Schweiz, Schweiz | Bevölkerungsstruktur, Hauptsprache und Religion
+   - 341613 | Standardpublikation | 001-0021 | 1990-2000 | Schweiz, Schweiz, Kantone, Kantone | Gebäude, Wohnungen und Wohnverhältnisse
+   - 342066 | Standardpublikation | 001-0024 | 1900-2000 | Schweiz, Schweiz | Haushalte und Familien
+   - 342638 | Standardpublikation | 001-0061 | 1970-2000 | Schweiz, Schweiz | Erwerbsleben, Pendlermobilität und Ausbildung
+   - 342284 | Standardpublikation | 001-0034 | 2000 | Schweiz, Schweiz, Kantone, Kantone, Bezirke, Bezirke | Die Raumgliederungen der Schweiz
+   - 340124 | Newsletter (Bulletin) | 493-0000 | 1990-2000 | Schweiz, Schweiz | Räumliche und strukturelle Bevölkerungsdynamik der Schweiz 1990-2000
+   - 341473 | Standardpublikation | 001-0027 | 1970-2000 | Schweiz, Schweiz | Migration und Integration
+   - 341667 | Standardpublikation | 001-0029 | 1970-2000 | Schweiz, Schweiz | Pendlermobilität in der Schweiz
+   - 344389 | Standardpublikation | 001-0035 | 2000 | Schweiz, Schweiz | Bildung und Arbeit
+   - 341721 | Standardpublikation | 001-0031 | 1990-2000 | Schweiz, Schweiz | Wohnversorgung und Wohnverhältnisse
+   - 342405 | Standardpublikation | 001-0039 | 1990-2000 | Schweiz, Schweiz | Metropolisierung, Städte und Agglomerationen
+   - 341921 | Standardpublikation | 001-0037 | 1870-2060 | Schweiz, Schweiz | Alter und Generationen
+   - 342036 | Standardpublikation | 001-0043 | 1950-2000 | Schweiz, Schweiz | Sprachenlandschaft in der Schweiz
+   - 342477 | Standardpublikation | 001-0071 | 1970-2000 | Schweiz, Schweiz | Familiale Lebensformen im Wandel
+   - 342050 | Standardpublikation | 001-0050 | 1970-2000 | Schweiz, Schweiz | Die Integration der ausländischen zweiten Generation und der Eingebürgerten in der Schweiz
+   - 342009 | Standardpublikation | 001-0048 | 1970-2000 | Schweiz, Schweiz | Der Übergang von der Ausbildung in den Beruf
+   - 342166 | Standardpublikation | 001-0053 | 1970-2000 | Schweiz, Schweiz | Interne Migration in der Schweiz
+   - 342266 | Standardpublikation | 001-0049 | 1970-2000 | Schweiz, Schweiz | Entwicklung der Sozialstruktur
+   - 342421 | Standardpublikation | 001-0056 | 2000 | Schweiz, Schweiz | Arbeitsteilung in Paarhaushalten
+   - 342435 | Standardpublikation | 001-0057 | 1970-2000 | Schweiz, Schweiz | Der berufsstrukturelle Wandel der Beschäftigung in der Schweiz 1970-2000.
+   - 342099 | Standardpublikation | 001-0068 | 1860-2000 | Schweiz, Schweiz, Kantone, Kantone | Die aktuelle Lage des Romanischen
+   - 342501 | Standardpublikation | 001-0069 | 1990-2000 | Schweiz, Schweiz, Kantone, Kantone | Die Bergregionen in der Schweiz
+   - 342576 | Standardpublikation | 001-0070 | 2000 | Schweiz, Schweiz | Bevölkerungszusammensetzung, Integration und Ausgrenzung in urbanen Zonen
+   - 342295 | Leporello | NS1218-00-d | 2000 | Schweiz, Schweiz | Publikationen zur Volkszählung 2000
+   - 4143595 | BFS Aktuell | 001-0073 | 2000 | Schweiz, Schweiz | Auswertungsprogramm Volkszählung 2000
+   - 18211 | Medienmitteilung | 0350-0503-60 | 2000 | Schweiz, Schweiz | Die Einbürgerung ist nicht immer Garantie für eine bessere Integration
+   - 18160 | Medienmitteilung | 0350-0502-90 | 2000 | Schweiz, Schweiz | Von der Vier- zur Vielsprachigkeit
+   - 17982 | Medienmitteilung | 0350-0501-80 | 1970-2000 | Schweiz, Schweiz | Gleichstellung der Geschlechter - eine Bilanz der letzten 30 Jahre
+   - 17922 | Medienmitteilung | MM_Stadt_Zürich_3_2005 | 1990-2000 | Schweiz, Schweiz | Veränderung der Wohnverhältnisse in der Stadt Zürich zwischen den Eidg. Volkszählungen von 1990 und 2000
+   - 17756 | Medienmitteilung | 0350-0500-40 | 2000 | Schweiz, Schweiz | Die ältere Bevölkerung lebt länger, ist autonomer und gesünder
+
+## DAM language=de&title=Bezirk%20Religion: 60 items
+   - 79382 | TM10 Tabelle Datei | su-d-vz18-b-0201 | 2000 | Bezirke, Bezirke | Amtsbezirk Aarberg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79386 | TM10 Tabelle Datei | su-d-vz18-b-0202 | 2000 | Bezirke, Bezirke | Amtsbezirk Aarwangen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98028 | TM10 Tabelle Datei | su-d-vz18-b-0203 | 2000 | Bezirke, Bezirke | Amtsbezirk Bern: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79393 | TM10 Tabelle Datei | su-d-vz18-b-0204 | 2000 | Bezirke, Bezirke | Amtsbezirk Biel: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98031 | TM10 Tabelle Datei | su-d-vz18-b-0206 | 2000 | Bezirke, Bezirke | Amtsbezirk Burgdorf: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79400 | TM10 Tabelle Datei | su-d-vz18-b-0205 | 2000 | Bezirke, Bezirke | Amtsbezirk Büren: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98034 | TM10 Tabelle Datei | su-d-vz18-b-0208 | 2000 | Bezirke, Bezirke | Amtsbezirk Erlach: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79411 | TM10 Tabelle Datei | su-d-vz18-b-0209 | 2000 | Bezirke, Bezirke | Amtsbezirk Fraubrunnen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98037 | TM10 Tabelle Datei | su-d-vz18-b-0210 | 2000 | Bezirke, Bezirke | Amtsbezirk Frutigen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79415 | TM10 Tabelle Datei | su-d-vz18-b-0211 | 2000 | Bezirke, Bezirke | Amtsbezirk Interlaken: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98040 | TM10 Tabelle Datei | su-d-vz18-b-0212 | 2000 | Bezirke, Bezirke | Amtsbezirk Konolfingen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79419 | TM10 Tabelle Datei | su-d-vz18-b-0213 | 2000 | Bezirke, Bezirke | Amtsbezirk Laupen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98047 | TM10 Tabelle Datei | su-d-vz18-b-0216 | 2000 | Bezirke, Bezirke | Amtsbezirk Nidau: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98051 | TM10 Tabelle Datei | su-d-vz18-b-0217 | 2000 | Bezirke, Bezirke | Amtsbezirk Niedersimmental: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98054 | TM10 Tabelle Datei | su-d-vz18-b-0218 | 2000 | Bezirke, Bezirke | Amtsbezirk Oberhasli: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98058 | TM10 Tabelle Datei | su-d-vz18-b-0219 | 2000 | Bezirke, Bezirke | Amtsbezirk Obersimmental: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98061 | TM10 Tabelle Datei | su-d-vz18-b-0220 | 2000 | Bezirke, Bezirke | Amtsbezirk Saanen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98065 | TM10 Tabelle Datei | su-d-vz18-b-0221 | 2000 | Bezirke, Bezirke | Amtsbezirk Schwarzenburg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98068 | TM10 Tabelle Datei | su-d-vz18-b-0222 | 2000 | Bezirke, Bezirke | Amtsbezirk Seftigen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98071 | TM10 Tabelle Datei | su-d-vz18-b-0223 | 2000 | Bezirke, Bezirke | Amtsbezirk Signau: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98075 | TM10 Tabelle Datei | su-d-vz18-b-0224 | 2000 | Bezirke, Bezirke | Amtsbezirk Thun: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98078 | TM10 Tabelle Datei | su-d-vz18-b-0225 | 2000 | Bezirke, Bezirke | Amtsbezirk Trachselwald: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79430 | TM10 Tabelle Datei | su-d-vz18-b-0226 | 2000 | Bezirke, Bezirke | Amtsbezirk Wangen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79734 | TM10 Tabelle Datei | su-d-vz18-b-1901 | 2000 | Bezirke, Bezirke | Bezirk Aarau: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79570 | TM10 Tabelle Datei | su-d-vz18-b-0101 | 2000 | Bezirke, Bezirke | Bezirk Affoltern: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98165 | TM10 Tabelle Datei | su-d-vz18-b-1801 | 2000 | Bezirke, Bezirke | Bezirk Albula: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98158 | TM10 Tabelle Datei | su-d-vz18-b-1711 | 2000 | Bezirke, Bezirke | Bezirk Alttoggenburg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98010 | TM10 Tabelle Datei | su-d-vz18-b-0102 | 2000 | Bezirke, Bezirke | Bezirk Andelfingen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98195 | TM10 Tabelle Datei | su-d-vz18-b-2001 | 2000 | Bezirke, Bezirke | Bezirk Arbon: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98127 | TM10 Tabelle Datei | su-d-vz18-b-1301 | 2000 | Bezirke, Bezirke | Bezirk Arlesheim: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79782 | TM10 Tabelle Datei | su-d-vz18-b-1902 | 2000 | Bezirke, Bezirke | Bezirk Baden: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79866 | TM10 Tabelle Datei | su-d-vz18-b-2002 | 2000 | Bezirke, Bezirke | Bezirk Bischofszell: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98183 | TM10 Tabelle Datei | su-d-vz18-b-1903 | 2000 | Bezirke, Bezirke | Bezirk Bremgarten: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79726 | TM10 Tabelle Datei | su-d-vz18-b-2301 | 2000 | Bezirke, Bezirke | Bezirk Brig: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79789 | TM10 Tabelle Datei | su-d-vz18-b-1904 | 2000 | Bezirke, Bezirke | Bezirk Brugg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98112 | TM10 Tabelle Datei | su-d-vz18-b-1103 | 2000 | Bezirke, Bezirke | Bezirk Bucheggberg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79578 | TM10 Tabelle Datei | su-d-vz18-b-0103 | 2000 | Bezirke, Bezirke | Bezirk Bülach: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98013 | TM10 Tabelle Datei | su-d-vz18-b-0104 | 2000 | Bezirke, Bezirke | Bezirk Dielsdorf: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98199 | TM10 Tabelle Datei | su-d-vz18-b-2003 | 2000 | Bezirke, Bezirke | Bezirk Diessenhofen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79375 | TM10 Tabelle Datei | su-d-vz18-b-0111 | 2000 | Bezirke, Bezirke | Bezirk Dietikon: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98115 | TM10 Tabelle Datei | su-d-vz18-b-1104 | 2000 | Bezirke, Bezirke | Bezirk Dorneck: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79446 | TM10 Tabelle Datei | su-d-vz18-b-0501 | 2000 | Bezirke, Bezirke | Bezirk Einsiedeln: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79634 | TM10 Tabelle Datei | su-d-vz18-b-2004 | 2000 | Bezirke, Bezirke | Bezirk Frauenfeld: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79594 | TM10 Tabelle Datei | su-d-vz18-b-1707 | 2000 | Bezirke, Bezirke | Bezirk Gaster: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98090 | TM10 Tabelle Datei | su-d-vz18-b-0502 | 2000 | Bezirke, Bezirke | Bezirk Gersau: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98169 | TM10 Tabelle Datei | su-d-vz18-b-1803 | 2000 | Bezirke, Bezirke | Bezirk Glenner: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98253 | TM10 Tabelle Datei | su-d-vz18-b-2304 | 2000 | Bezirke, Bezirke | Bezirk Goms: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79610 | TM10 Tabelle Datei | su-d-vz18-b-1714 | 2000 | Bezirke, Bezirke | Bezirk Gossau: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98109 | TM10 Tabelle Datei | su-d-vz18-b-1101 | 2000 | Bezirke, Bezirke | Bezirk Gäu: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79503 | TM10 Tabelle Datei | su-d-vz18-b-1105 | 2000 | Bezirke, Bezirke | Bezirk Gösgen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79622 | TM10 Tabelle Datei | su-d-vz18-b-1804 | 2000 | Bezirke, Bezirke | Bezirk Heinzenberg: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79560 | TM10 Tabelle Datei | su-d-vz18-b-1501 | 2000 | Bezirke, Bezirke | Bezirk Hinterland: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79638 | TM10 Tabelle Datei | su-d-vz18-b-1805 | 2000 | Bezirke, Bezirke | Bezirk Hinterrhein: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79618 | TM10 Tabelle Datei | su-d-vz18-b-0105 | 2000 | Bezirke, Bezirke | Bezirk Hinwil: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98016 | TM10 Tabelle Datei | su-d-vz18-b-0106 | 2000 | Bezirke, Bezirke | Bezirk Horgen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79450 | TM10 Tabelle Datei | su-d-vz18-b-0503 | 2000 | Bezirke, Bezirke | Bezirk Höfe: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79630 | TM10 Tabelle Datei | su-d-vz18-b-1806 | 2000 | Bezirke, Bezirke | Bezirk Imboden: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 79654 | TM10 Tabelle Datei | su-d-vz18-b-1807 | 2000 | Bezirke, Bezirke | Bezirk Inn: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98202 | TM10 Tabelle Datei | su-d-vz18-b-2005 | 2000 | Bezirke, Bezirke | Bezirk Kreuzlingen: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+   - 98186 | TM10 Tabelle Datei | su-d-vz18-b-1905 | 2000 | Bezirke, Bezirke | Bezirk Kulm: Wohnbevölkerung nach Hauptsprache, Religion, Nationalität und weiteren Merkmalen
+
+=== aut8
+
+## https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.csv
+   HTTP 200, 78,627 bytes, 2,118 lines, text/x-comma-separated-values
+   | Gemeindeliste sortiert nach Gemeindekennziffer, Gebietsstand 2026;;;;;
+   | Erstellt am:;24.09.2026 08:31:23;;;;
+   | Gemeindekennziffer;Gemeindename;Gemeindecode;Status;PLZ des Gem.Amtes;weitere Postleitzahlen
+   | 10101;Eisenstadt;10101;SR;7000;
+   2114 codes read from today's list
+   vz7/g62007: HTTP 200, 9,209 bytes; Fohnsdorf (62007) Volkszählung vom 15. Mai
+   vz7/g62008: HTTP 200, 9,110 bytes; Gaal (62008) Volkszählung vom 15. Mai
+   vz7/g62010: HTTP 200, 9,110 bytes; Hohentauern (62010) Volkszählung vom 15. Mai
+   vz7/g62014: HTTP 200, 9,118 bytes; Kobenz (62014) Volkszählung vom 15. Mai
+   vz7/g30738: HTTP 200, 8,330 bytes; Rauchenwarth (30738) Wiener Umland/Südteil (AT127) Niederösterreich
+   vz7/g30739: HTTP 200, 8,371 bytes; Schwadorf (30739) Wiener Umland/Südteil (AT127) Niederösterreich
+   vz7/g30740: HTTP 200, 8,439 bytes; Schwechat (30740) Wiener Umland/Südteil (AT127) Niederösterreich
+   vz7/g30741: HTTP 200, 8,355 bytes; Zwölfaxing (30741) Wiener Umland/Südteil (AT127) Niederösterreich
+   vz7/g32419: HTTP 200, 10,388 bytes; Schwechat (32419) Wiener Umland-Südteil (AT127) Niederösterreich
+   vz7/g60901: HTTP 200, 87,741 bytes; 
+   vz7/g61101: HTTP 200, 10,352 bytes; Eisenerz (61101) Östliche Obersteiermark (AT223) Steiermark
+   vz7/g62006: HTTP 200, 8,969 bytes; Flatschach (62006) Volkszählung vom 15. Mai
+   vz7/g10101: HTTP 200, 10,347 bytes; Eisenstadt (10101) Nordburgenland (AT112) Burgenland Merkmal
