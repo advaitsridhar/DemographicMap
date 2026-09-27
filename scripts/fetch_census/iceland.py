@@ -68,6 +68,9 @@ NOW_URL = ("https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_bygg
            "sveitarfelog/MAN02005.px")
 OUT = PROCESSED / "iceland_municipality.json"
 PAUSE = 12.0                         # Hagstofa answers 429 to a brisker pace
+# ...and throttles a runner for minutes at a time once it has: ten attempts,
+# the wait doubling from 5 s to a 300 s ceiling, wait out about twenty minutes.
+ATTEMPTS = 10
 VINTAGE = 2017
 
 REGION = {"0": "Capital Region", "1": "Capital Region", "2": "Southern Peninsula",
@@ -119,7 +122,7 @@ def yearly_totals(url: str, years: list[str]) -> dict[int, dict[str, float]]:
         {"code": "Aldur", "selection": {"filter": "item", "values": ["-1"]}},
         {"code": "Ár", "selection": {"filter": "item", "values": years}},
         {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
-    ], "response": {"format": "json-stat2"}}, pause=PAUSE)
+    ], "response": {"format": "json-stat2"}}, pause=PAUSE, attempts=ATTEMPTS)
     out: dict[int, dict[str, float]] = defaultdict(dict)
     for key, value in unstack(body):
         out[int(key["Ár"][0])][key["Sveitarfélag"][0]] = value
@@ -194,7 +197,7 @@ def last_counts(units: list[str], series: dict[int, dict[str, float]], names: di
 
 
 def read(url: str, year: str) -> tuple[dict[str, AgeSex], dict[str, float], dict[str, str]]:
-    meta = {v["code"]: v for v in request_json(url, pause=PAUSE)["variables"]}
+    meta = {v["code"]: v for v in request_json(url, pause=PAUSE, attempts=ATTEMPTS)["variables"]}
     muni, age, when, sex = "Sveitarfélag", "Aldur", "Ár", "Kyn"
     # Hagstofa tells a municipality from its successor of the same name by a
     # note on the label -- "Þingeyjarsveit (fyrir 2022)", before 2022 -- which
@@ -206,7 +209,7 @@ def read(url: str, year: str) -> tuple[dict[str, AgeSex], dict[str, float], dict
         {"code": age, "selection": {"filter": "all", "values": ["*"]}},
         {"code": when, "selection": {"filter": "item", "values": [year]}},
         {"code": sex, "selection": {"filter": "all", "values": ["*"]}},
-    ], "response": {"format": "json-stat2"}}, pause=PAUSE)
+    ], "response": {"format": "json-stat2"}}, pause=PAUSE, attempts=ATTEMPTS)
     people: dict[str, AgeSex] = defaultdict(AgeSex)
     totals: dict[str, float] = defaultdict(float)
     # Beside males and females: people of unknown age (MAN09000's "150") and,
@@ -251,7 +254,7 @@ def main() -> int:
     # for an unchanged municipality, its own count of a month before: within
     # 8%, since MAN02005's are recomputed by the method Hagstofa adopted in
     # 2024 (the largest gap is 5%), where a merger adds a whole municipality.
-    meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE)["variables"]}
+    meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE, attempts=ATTEMPTS)["variables"]}
     year = meta["Ár"]["values"][-1]
     now_people, now_totals, now_names = read(NOW, year)
     check_national_median("IS", int(year), now_people["9999"].median(), f"MAN02005 {year}")
@@ -260,7 +263,7 @@ def main() -> int:
         {"code": "Aldur", "selection": {"filter": "item", "values": ["-1"]}},
         {"code": "Ár", "selection": {"filter": "item", "values": [str(VINTAGE + 1)]}},
         {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
-    ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
+    ], "response": {"format": "json-stat2"}}, pause=PAUSE, attempts=ATTEMPTS))}
 
     def same(c: str, n: str) -> bool:
         return abs(then.get(n, 0) - totals[c]) <= 0.08 * totals[c] + 30
@@ -316,7 +319,7 @@ def main() -> int:
 
     # A merged municipality's last count of its own: the last 1 December
     # MAN09000 has it whole, in that year's division.
-    old_meta = {v["code"]: v for v in request_json(OLD, pause=PAUSE)["variables"]}
+    old_meta = {v["code"]: v for v in request_json(OLD, pause=PAUSE, attempts=ATTEMPTS)["variables"]}
     old_years = [y for y in old_meta["Ár"]["values"] if int(y) >= VINTAGE]
     series = yearly_totals(OLD, old_years)
     merged = sorted(c for c in units if c not in today)
@@ -339,7 +342,7 @@ def main() -> int:
             {"code": "Aldur", "selection": {"filter": "item", "values": ["-1"]}},
             {"code": "Ár", "selection": {"filter": "item", "values": ["2023"]}},
             {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
-        ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
+        ], "response": {"format": "json-stat2"}}, pause=PAUSE, attempts=ATTEMPTS))}
 
     records = []
     for code in units:

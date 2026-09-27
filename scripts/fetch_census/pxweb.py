@@ -658,7 +658,9 @@ def main() -> int:
                 "aliases": [entry["name"]] if local.get(code) else [],
                 "fields": {}, "population": None, "notes": {}})
             slot["population"] = slot["population"] or entry["total"]
-            slot["fields"][table.field] = shares(entry["counts"], total=entry["total"])
+            # A category with nobody in it says nothing a reader can use.
+            slot["fields"][table.field] = shares({k: v for k, v in entry["counts"].items() if v},
+                                                total=entry["total"])
             slot["notes"][table.field] = table.note
             slot["year"] = table.year
 

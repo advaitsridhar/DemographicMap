@@ -581,6 +581,20 @@ def main() -> int:
                          "name": f"{SOURCE}, IRD081",
                          "url": PAGE.format(folder="IRD", table="IRD081"), "year": year}],
         }
+        # A state city is one territory at both levels, and IRD041 has its
+        # single years: the same median as its admin1 record, not a second
+        # one interpolated within five-year groups.
+        if code in STATE_CITIES and people.get((code, year)) and \
+                abs(people[(code, year)].total - total) <= 0.5:
+            fields["median_age"] = measure(people[(code, year)].median(), unit="years",
+                                           year=year, source=f"{SOURCE}, IRD041")
+            fields["median_age_note"] = (
+                "Interpolated within the single year of age that holds the middle person, from "
+                f"CSB's residents by single year of age at {date} (IRD041), as for the city's "
+                "own municipal record.")
+            fields["sources"].append({"field": "median age", "name": f"{SOURCE}, IRD041",
+                                      "url": PAGE.format(folder="IRD", table="IRD041"),
+                                      "year": year})
         counts: dict[str, float] = defaultdict(float)
         if code in STATE_CITIES or code in CITY_TOWNS:
             # A state city is one territory at both levels, and IRE031 is the

@@ -40,7 +40,7 @@ USER_AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicM
 
 
 def request(url: str, payload: Any = None, *, accept: str = "application/json",
-            timeout: int = 180, pause: float = 0.0) -> bytes:
+            timeout: int = 180, pause: float = 0.0, attempts: int = 6) -> bytes:
     """GET, or POST ``payload`` as JSON; backs off on 429 and 5xx, fails fast on 4xx.
 
     Hagstofa and StatFin both answer 429 to a brisk pace, and a throttled
@@ -52,7 +52,7 @@ def request(url: str, payload: Any = None, *, accept: str = "application/json",
     if data is not None:
         headers["Content-Type"] = "application/json"
     delay = 5.0
-    for attempt in range(6):
+    for attempt in range(attempts):
         if pause:
             time.sleep(pause)
         try:
@@ -60,18 +60,18 @@ def request(url: str, payload: Any = None, *, accept: str = "application/json",
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return resp.read()
         except urllib.error.HTTPError as exc:
-            if exc.code in (429, 500, 502, 503, 504) and attempt < 5:
+            if exc.code in (429, 500, 502, 503, 504) and attempt < attempts - 1:
                 log(f"    HTTP {exc.code}; waiting {delay:.0f}s :: {url}")
                 time.sleep(delay)
-                delay *= 2
+                delay = min(delay * 2, 300.0)
                 continue
             body = exc.read()[:400].decode("utf-8", "replace")
             raise SystemExit(f"HTTP {exc.code} from {url}: {' '.join(body.split())}")
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
-            if attempt < 5:
+            if attempt < attempts - 1:
                 log(f"    {exc.__class__.__name__}; waiting {delay:.0f}s :: {url}")
                 time.sleep(delay)
-                delay *= 2
+                delay = min(delay * 2, 300.0)
                 continue
             raise
     raise SystemExit(f"gave up on {url}")
