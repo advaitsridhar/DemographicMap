@@ -1,15 +1,31 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
-  80 municipalities
-  country: 1,836,713 residents, median age 41.1 from single years
-  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
-  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
-  the merged Kichevo: 77 settlements
-  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
-    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
-    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
-    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
-    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
-    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
-north_macedonia: Kichevo settlements with no 2002 municipality: ['Belica', 'Bigor Dolenci', 'Cer', 'Chelopeci', 'Crvivci', 'Dolna Dushegubica', 'Dolno Dobrenoec', 'Ehloec', 'Gorna Dushegubica', 'Gorno Dobrenoec', 'Greshnica', 'Jagol Dolenci', 'Javorec', 'Karbunica', 'Lazarovci', 'Leshnica', 'Malkoec', 'Malo Crsko', 'Mamudovci', 'Manastirsko Dolenci', 'Midinci', 'Orlanci', 'Patec', 'Popoec', 'Rechani - Zajasko', 'Srbica', 'Staroec', 'Strelci', 'Vraneshtica']
+== xlsrow https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls 1 BUCUR|SECTOR|ILFOV|TOTAL 20
+  HTTP 200 application/vnd.ms-excel 769,536 bytes
+    r3: JUDET  MUNICIPIU, ORAS | POPULATIA REZIDENTA    | G R U P A   D E   V A  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | JUDET  MUNICIPIU, ORAS
+    r1643: BUCUREȘCI | 1284.0 | 29.0 | 39.0 | 43.0 | 45.0 | 56.0 | 43.0 | 62.0 | 77.0 | 93.0 | 91.0 | 102.0 | 94.0 | 125.0 | 149.0 | 90.0 | 58.0 | 56.0 | 32.0 | BUCUREȘCI
+    r1854: ILFOV | 542704.0 | 33478.0 | 33720.0 | 32988.0 | 26298.0 | 24737.0 | 31213.0 | 49048.0 | 49801.0 | 53194.0 | 44441.0 | 45457.0 | 21653.0 | 25776.0 | 26027.0 | 19109.0 | 10736.0 | 8332.0 | 6696.0 | ILFOV
+    r1876: DARAȘTI-ILFOV | 2865.0 | 134.0 | 106.0 | 139.0 | 144.0 | 122.0 | 143.0 | 192.0 | 175.0 | 247.0 | 234.0 | 301.0 | 144.0 | 181.0 | 185.0 | 158.0 | 102.0 | 75.0 | 83.0 | DARAȘTI-ILFOV
+    r3270: MUNICIPIUL BUCURESTI | 1716961.0 | 86179.0 | 87941.0 | 89899.0 | 71671.0 | 70987.0 | 92083.0 | 135370.0 | 140487.0 | 150886.0 | 128695.0 | 145330.0 | 79501.0 | 104852.0 | 118363.0 | 87593.0 | 50368.0 | 40649.0 | 36107.0 | MUNICIPIUL BUCURESTI
+== xlsrow https://web.archive.org/web/20230702045135id_/https://www.recensamantromania.ro/wp-content/uploads/2023/06/Tabel-2.02.1-si-Tabel-2.02.2.xlsx 1 BUCUR|SECTOR|ILFOV 20
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 408,035 bytes
+    r1643: BUCUREȘCI | 1284 | 1201 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | 83 | BUCUREȘCI
+    r1854: ILFOV | 542704 | 431627 | 397 | 9186 | 93 | 167 | 690 | 191 | 122 | 26 | 8 | 92 | 9 | 133 | 148 | 94 | 10 | 25 | * | 43 | 14 | 14 | 2169 | 97444 | ILFOV
+    r1876: DĂRĂȘTI-ILFOV | 2865 | 2404 | - | * | - | - | * | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | * | 456 | DĂRĂȘTI-ILFOV
+    r3270: MUNICIPIUL BUCUREȘTI | 1716961 | 1252190 | 2168 | 10740 | 355 | 1011 | 1342 | 844 | 719 | 147 | 41 | 239 | 19 | 553 | 433 | 906 | 22 | 123 | 4 | 390 | 56 | 80 | 5703 | 438876 | MUNICIPIUL BUCUREȘTI
+    r3271: MUNICIPIUL BUCUREȘTI | 1716961 | 1252190 | 2168 | 10740 | 355 | 1011 | 1342 | 844 | 719 | 147 | 41 | 239 | 19 | 553 | 433 | 906 | 22 | 123 | 4 | 390 | 56 | 80 | 5703 | 438876 | MUNICIPIUL BUCUREȘTI
+== xlsrow https://web.archive.org/web/20230601175318id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.22.xlsx 0 BUCUR|SECTOR|COMUNAsAB 20
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 810,548 bytes
+    r77: ALBA | 1721 | BUCURU | 61 | 34 | 27
+    r543: ALBA | 6440 | VALEA BUCURULUI | 17 | 10 | 7
+    r2623: BIHOR | 28834 | BUCUROAIA | 310 | 148 | 162
+    r7924: GORJ | 80178 | BUCUREASA | 503 | 258 | 245
+    r8713: HUNEDOARA | 88868 | BUCUREȘCI | 1284 | 622 | 662
+    r8714: HUNEDOARA | 88877 | BUCUREȘCI | 491 | 237 | 254
+    r10293: MEHEDINȚI | 110250 | BUCURA | 309 | 153 | 156
+    r16817:  |  | MUNICIPIUL BUCUREȘTI | 1716961 | 790749 | 926212
+    r16818: MUNICIPIUL BUCUREȘTI | 179132 | MUNICIPIUL BUCUREȘTI | 1716961 | 790749 | 926212
+    r16819: MUNICIPIUL BUCUREȘTI | 179141 | BUCUREȘTI SECTORUL 1 | 217367 | 98816 | 118551
+    r16820: MUNICIPIUL BUCUREȘTI | 179150 | BUCUREȘTI SECTORUL 2 | 291557 | 132436 | 159121
+    r16821: MUNICIPIUL BUCUREȘTI | 179169 | BUCUREȘTI SECTORUL 3 | 374737 | 173802 | 200935
+    r16822: MUNICIPIUL BUCUREȘTI | 179178 | BUCUREȘTI SECTORUL 4 | 268018 | 123069 | 144949
+    r16823: MUNICIPIUL BUCUREȘTI | 179187 | BUCUREȘTI SECTORUL 5 | 240288 | 113151 | 127137
+    r16824: MUNICIPIUL BUCUREȘTI | 179196 | BUCUREȘTI SECTORUL 6 | 324994 | 149475 | 175519
