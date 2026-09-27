@@ -922,7 +922,34 @@ def hun10() -> None:
             log(f"   first: {json.dumps(flows[0], ensure_ascii=False)[:600]}")
 
 
+def hun11() -> None:
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    index = json.loads(text(fetch(f"{base}/index/{version}/en")[2]))
+    for flow in index["dataflows"]:
+        if flow["id"] in ("WBS001", "WBS003", "WBS008", "WBS009", "WBS010"):
+            log(f"   {flow['id']}: {json.dumps(flow['dimensions'], ensure_ascii=False)[:1500]}")
+    dims = index.get("dimensions")
+    log(f"   dimensions entry: {json.dumps(dims, ensure_ascii=False)[:1500]}")
+    for flow in ("WBS001", "WBS003"):
+        page = text(fetch(f"{base}/structure/{flow}/{version}")[2])
+        log(f"\n## structure {flow}: {len(page):,} chars: {page[:1500]}")
+        try:
+            data = json.loads(page)
+            cls = jpath(data, "data.codelists") or []
+            for cl in cls:
+                codes = cl.get("codes", [])
+                log(f"   codelist {cl.get('id')}: {len(codes)} codes, e.g. "
+                    f"{[(c.get('id'), jpath(c, 'names.en') or c.get('name')) for c in codes[:8]]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}")
+    for path in (f"dataflows/WBS001/{version}", f"dataflows/WBS001/{version}/d/CL_TIME_PERIOD,CL_TERUL_GEO4,CL_NEME_SEX,CL_KEV_AGE",
+                 f"dataflows/WBS001/latest"):
+        show(f"{base}/{path}", raw=800)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun11": hun11,
     "hun10": hun10,
     "hun9": hun9, "svk9": svk9,
     "hun8": hun8, "svk8": svk8, "nld8": nld8,
