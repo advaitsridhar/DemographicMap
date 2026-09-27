@@ -126,13 +126,15 @@ def post(key: str, query: list[dict[str, Any]]) -> list[tuple[dict[str, tuple[st
     url = table_url(key)
     body = json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode()
     req = urllib.request.Request(url, data=body, headers={
-        "User-Agent": USER_AGENT, "Content-Type": "application/json", "Accept": "application/json"})
+        "User-Agent": USER_AGENT, "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=120) as resp:
         payload = json.loads(resp.read().decode("utf-8-sig"))
     if "dataset" in payload:              # json-stat 1, where a server ignores the ask
         payload = payload["dataset"]
         payload = {"id": payload["dimension"]["id"], "size": payload["dimension"]["size"],
                    "dimension": payload["dimension"], "value": payload["value"]}
+    asked = {q["code"]: len(q["selection"]["values"]) for q in query}
+    log(f"  {TABLES[key].rsplit('/', 1)[-1]}: asked {asked}, answered {payload.get('size')}")
     return unstack(payload)
 
 

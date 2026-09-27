@@ -154,7 +154,7 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
     old_communes = {r["BfsCode"]: r for r in snapshot if r["Level"] == "3"}
     meta = {v["code"]: v for v in http_json(TABLE)["variables"]}
     place_code = next(c for c in meta if c.startswith("Kanton"))
-    px_communes = [v for v in meta[place_code]["values"] if re.fullmatch(r"\d{4}", v)]
+    px_communes = [v for v in meta[place_code]["values"] if re.fullmatch(r"\d{4}", v) and v != "8100"]
     # Which structure the table's communes are in: the end date whose
     # correspondence lands on exactly the table's communes.
     lakes: set[str] = set()
