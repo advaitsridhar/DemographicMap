@@ -77,6 +77,38 @@ def tabulate(datafile: dict[str, Any], variables: list[str],
     return tab["variableValues"], cells
 
 
+TABULATE_BY = """query($input: FrequencyTabulationInput!) { analysis {
+  frequencyTabulationByVariables(input: $input) { responses {
+    by { variable value label }
+    response { variableValues { name values codeList { value label isMissing } }
+               table { path count } } } } } }"""
+
+
+def tabulate_by(datafile: dict[str, Any], variables: list[str], by: str,
+                weight: str | None) -> dict[tuple[str, str], dict[tuple[str, ...], float]]:
+    """One crosstab of ``variables`` per value of ``by``, as the viewer splits by country.
+
+    Keyed by (value, label) of ``by``; the cells are keyed by code as in tabulate.
+    """
+    data = gql(TABULATE_BY, {"input": {
+        "datafile": {"id": datafile["id"], "version": datafile["version"]},
+        "instance": "PUBLISHED", "agencyId": AGENCY, "breakVariables": variables,
+        "byVariables": [by], "weightVariable": weight, "includeMissing": True,
+        "includeEmpty": False, "metadataLanguage": "en"}})
+    out: dict[tuple[str, str], dict[tuple[str, ...], float]] = {}
+    for resp in data["analysis"]["frequencyTabulationByVariables"]["responses"]:
+        key = (resp["by"][0]["value"], resp["by"][0].get("label") or "")
+        tab = resp["response"]
+        values = [v["values"] for v in tab["variableValues"]]
+        cells: dict[tuple[str, ...], float] = {}
+        for cell in tab["table"]:
+            if cell["count"]:
+                code = tuple(values[i][j] for i, j in enumerate(cell["path"]))
+                cells[code] = cells.get(code, 0) + cell["count"]
+        out[key] = cells
+    return out
+
+
 def studies() -> list[dict[str, Any]]:
     data = gql(STUDIES, {"id": SERIES})
     return data["search"]["seriesMetadata"]["studies"]
@@ -165,7 +197,19 @@ def main() -> int:
                     help="list a round's variables whose name or label matches, e.g. ESS11 region")
     ap.add_argument("--tab", nargs="+", metavar="ARG",
                     help="ROUND VAR1,VAR2 [WEIGHT [LIMIT]]: print a tabulation's cells")
+    ap.add_argument("--by", nargs="+", metavar="ARG",
+                    help="ROUND VAR1,VAR2 BYVAR [WEIGHT [LIMIT]]: one tabulation per BYVAR value")
     args = ap.parse_args()
+    if args.by:
+        df = pick(main_files(), args.by[0])
+        weight = args.by[3] if len(args.by) > 3 and args.by[3] != "-" else None
+        limit = int(args.by[4]) if len(args.by) > 4 else 20
+        split = tabulate_by(df, args.by[1].split(","), args.by[2], weight)
+        log(f"   {len(split)} values of {args.by[2]}")
+        for (value, label), cells in sorted(split.items())[:limit]:
+            log(f"   {value} {label[:30]} n={sum(cells.values())}: "
+                + " ".join(f"{'/'.join(k)}={v}" for k, v in sorted(cells.items())[:14]))
+        return 0
     if args.variables:
         show_variables(*args.variables)
         return 0
