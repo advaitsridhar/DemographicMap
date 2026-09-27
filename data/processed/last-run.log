@@ -1,21 +1,16 @@
-bosnia_age: Popis 2013, age and sex
-  FR_T1_B.xlsx: 21,226 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 223, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 216, in main
-    records = build()
-              ^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 153, in build
-    single = single_years(rows_of(SINGLE))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 96, in single_years
-    total, men, women = number(r[j]), number(r[j + 1]), number(r[j + 2])
-                        ^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bosnia_age.py", line 64, in number
-    return float(t.replace(".", "").replace(",", ""))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: could not convert string to float: 'ukupnо/total'
+  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/ :: HTTP Error 500: 
+  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/ :: HTTP Error 500: 
+  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/tables :: HTTP Error 500: 
+  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/tables :: HTTP Error 500: 
+  retry 1/2 after 2s :: https://census.belstat.gov.by/sdpn/rest/api/census :: HTTP Error 500: 
+  retry 2/2 after 4s :: https://census.belstat.gov.by/sdpn/rest/api/census :: <urlopen error [Errno 110] Connection timed out>
+== get https://census.belstat.gov.by/sdpn/rest/api/
+  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/')
+== get https://census.belstat.gov.by/sdpn/rest/api/tables
+  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/tables')
+== get https://census.belstat.gov.by/sdpn/rest/api/census
+  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/sdpn/rest/api/census')
+== get https://census.belstat.gov.by/saiku/rest/saiku/api/repository?type=saiku
+  failed: TimeoutError('timed out')
+== get https://census.belstat.gov.by/manual.pdf
+  failed: TimeoutError('timed out')
