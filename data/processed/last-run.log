@@ -1,95 +1,264 @@
-== pxtree https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/  4 200
-  l Demography  Demography
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Demography/1810010E.px  Vital Statistics, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Demography/1810020E.px  Demographic Indicators, Annual
-  l Population  Population
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820010E.px  De Jure Population by Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820015E.px  Population Changes, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820020E.px  De Jure Population, Monthly
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820025E.px  End of the Year De Jure Population by Age Group and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820030E.px  Percentage of Population by Age Group and Dependency Ratios, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820035E.px  End of the Year De Jure Population by Age Group, Sex and Citizenship Group, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820045E.px  End of the Year De Jure Population by Age Group, Sex and Country of Birth Group, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820055E.px  End of the Year De Jure Population by District (Urban/Rural Areas), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820060E.px  Households at the End of the Year by District (Urban/Rural Areas), Annual
-    l Population and Vital Statistics at Census Years  Population and Vital Statistics at Census Years
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820210E.px  Population by Sex, Census Years
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820215E.px  Population by Age and Sex, Census Years
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820220E.px  Percentage Distribution of Population by Age and Sex, Census Years
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820225E.px  Fertility Indicators, Census Years
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820230E.px  Percentage Distribution of Population by Marital Status and Sex (for Persons Aged 15 and Over), Census Years
-  l Births and Deaths  Births
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830010E.px  Live Births by Sex and Birth Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830012E.px  Fertility Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830016E.px  Live Births by Month and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830018E.px  Live Births by Date of Occurrence, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830022E.px  Marital and Extra-Marital Births by Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830026E.px  Live Births (Total and Marital Births) by Age of Mother and Father, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830030E.px  Live Births (Total and Marital Births) by Age of Mother and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830034E.px  Live Births (Total and Marital Births) by Age and Place of Usual Residence of Mother (Urban/Rural Areas) and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830038E.px  Live Births by Age of Mother and Father, Place of Usual Residence of Mother (Urban/Rural Areas) and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830042E.px  Live Births by Age of Mother and Number of Newborns, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830046E.px  Live Births by Live Birth Order (1-8+), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830050E.px  Live Births by Birth Order (1-4+), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830054E.px  Live Births by Live Birth Order, Age and Place of Usual Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830058E.px  Mean Age of Mother at Child Birth, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830062E.px  Live Births by Single Year of Age of Mother and Live Birth Order, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830066E.px  Live Births by Place of Occurrence, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830070E.px  Live Births by Place of Usual Residence of Mother and Place of Occurrence, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830074E.px  Marital Live Births by Duration of Current Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830078E.px  Marital Live Births by Duration of Current Marriage, Age and Place of Usual Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830082E.px  Marital Live Births by Duration of Current Marriage, Live Birth Order and Age of Mother, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830086E.px  Marital Live Births by Duration of Current Marriage, Live Birth Order and Place of Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830090E.px  Marital Live Births by Duration and Order of Current Marriage and Age of Mother, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830094E.px  Live Births by Citizenship Group of Mother, Annual
-  l Deaths  Deaths
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830210E.px  Deaths by Sex and Death Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830214E.px  Deaths and Mortality Rates by Age and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830222E.px  Deaths by Month and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830226E.px  Life Expectancy at Birth, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830230E.px  Life Table by Age and Sex, Annual
-  l Migration  Migration
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840010E.px  Migration Movements, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840020E.px  Immigrants and Emigrants by Month and Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840030E.px  Immigrants by Age, Sex, Citizenship, Country of Birth and Country of Previous Residence, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840050E.px  Emigrants by Citizenship and Country of Next Residence, Annual
-  l Marriages  Marriages
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850010E.px  Marriages by Type and Marriage Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850014E.px  Marriages by Month of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850018E.px  Marriages by Nationality of Groom and Marriages by Nationality of Bride, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850022E.px  Mean Age of Groom and Bride by Order and Type of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850026E.px  Marriages of Residents and Age Specific Marriage Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850030E.px  Marriages of Residents by Nationality of Groom and Marriages of Residents by Nationality of Bride, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850034E.px  Marriages of Residents by Nationality of Groom and Bride, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850038E.px  Marriages of Residents by Type and Order of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850042E.px  Marriages of Residents (Total/First Marriage for Both) by Type and Age of Groom and Bride, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850046E.px  Marriages of Residents by Age, Type and Order, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850050E.px  Mean and Median Age of Bride and Groom for Residents by Type and Order of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850054E.px  Marriages of Residents by Age of Groom and Bride and Previous Marital Status, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850058E.px  Marriages of Residents by Type and Previous Marital Status of Groom and Bride, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850062E.px  Mean Age of Groom and Bride (Residents) by Previous Marital Status, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850066E.px  Marriages of Residents by Date of Marriage, Annual
-    l Civil Unions  Civil Unions
 
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850105E.px  Civil Unions, Total and Residents of Cyprus by Sex, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850110E.px  Civil Unions of Residents of Cyprus by District of Registration, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850115E.px  Civil Unions of Residents of Cyprus by Month of Registration, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850120E.px  Mean Age of Residents of Cyprus at the Time of Civil Union Registration, Annual
-  l Divorces  Divorces
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850210E.px  Divorces and Divorce Rates, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850214E.px  Divorces by Year of Marriage and Year of Divorce, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850222E.px  Divorces by District the Divorce was Issued, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850226E.px  Divorces by Nationality of Husband and Divorces by Nationality of Wife, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850230E.px  Divorces by Nationality of Husbands and Wives, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850234E.px  Divorces by Duration of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850235E.px  Mean and Median Duration of Marriage and Total Divorces, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850238E.px  Divorces by Number of Dependent Children, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850242E.px  Divorces by Number of Dependent Children and Duration of Marriage, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850243E.px  Mean and Median Duration of Marriage by Number of Dependent Children, Annual
-  T https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850250E.px  Dependent Children by Age and Year of Divorce, Annual
-    l Dissolutions of Civil Unions  Dissolutions of Civil Unions
-  https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/Dissolutions%20of%20Civil%20Unions/ HTTP 429
-  l Census of Population and Housing 2021  Census of Population and Housing 2021
-  https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/ HTTP 429
-  l Population Census 2011  Population Census 2011
-  https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/ HTTP 429
+== collection
+  200 45,570,908 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+      {   "class": "collection",   "link": {     "item": [       {         "dimension": {           "STATISTIC": {     
+
+  collection came from https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
+  13077 datasets in the collection
+
+== 237 datasets matching ['age', 'sex'], broken down by 'Electoral'
+  A0105     2021-07-19  1996 Population and Percentage Change 1996 and 2002
+      by: Towns by Electoral Division
+  AVA17     2020-11-02  Farms
+      by: Age of Holder; Selected Electoral Divisions
+  AVA43     2022-12-08  Age of Farm Holder
+      by: Electoral Division
+  B0105     2020-05-01  2002 Population and Percentage Change 1996 and 2002
+      by: Towns by Electoral Division
+  B0540     2020-05-22  2002 Population Aged 15 Years and Over
+      by: Principal Economic Status; Electoral Division
+  B0541     2020-05-05  2002 Population Aged 15 Years and Over
+      by: Principal Economic Status; Electoral Division
+  C0105     2021-07-16  Population and Percentage Change 2002 and 2006
+      by: Towns by Electoral Division
+  CD114     2021-07-16  Population and Percentage Change 2006 and 2011
+      by: Sex; Towns by Electoral Division
+  CD120     2020-05-08  Population of Inhabited Islands Off the Coast
+      by: Sex; Islands by Electoral Division
+  CD220     2020-05-12  Top 5 Electoral Division - Youngest average age
+      by: Electoral Division
+  CD221     2020-05-12  Top 5 Electoral Division - Oldest average age
+      by: Electoral Division
+  CD222     2020-05-12  Top 5 Electoral Division - Population aged 65 yrs and over
+      by: Electoral Division
+  CD223     2020-05-12  Top 5 Electoral Division - Population under 10 years of age
+      by: Electoral Division
+  CDC43     2022-04-22  COVID-19 Vaccination Rate Decile
+      by: Local Electoral Area; Age Group
+  CDC45     2022-07-27  COVID-19 Vaccination Rates
+      by: Local Electoral Area; Age Group
+  CDC47     2023-08-01  COVID-19 Vaccination Rates
+      by: Local Electoral Area; Age Group
+  CDP08     2020-10-30  Population and Actual and Percentage Change 2006 and 2011
+      by: Electoral Division
+  CNA35     2020-05-11  Population of Offshore Islands since 1841
+      by: Sex; Islands by Electoral Division
+  E3018     2021-02-25  Age Group of Population 2011 to 2016
+      by: Electoral Division
+  E3022     2020-07-10  Top 25 Electoral Divisions Percentage of Population Aged 65 Years and Over 2016
+      by: Electoral Division
+  EP008     2020-11-09  Population and Actual and Percentage Change 2011 to 2016
+      by: Electoral Division
+  F1012     2026-02-06  Age Group of the Population
+      by: Electoral Divisions
+  F1016     2023-08-15  Population
+      by: Sex; CSO Local Electoral Areas
+  F1060     2026-02-06  Population
+      by: Sex; Electoral Divisions
+  F3055     2026-02-06  Population aged 18 years and over  living with their parents
+      by: Sex; Electoral Divisions
+  F3056     2023-08-31  Population aged 18 years and over living with their parents
+      by: Sex; CSO Local Electoral Areas
+  F3075     2023-08-31  Average Number of Children in Family units in Private households
+      by: CSO Local Electoral Areas
+  F4003     2023-09-28  Persons with a Disability to a great extent or lesser extent as a Percentage of the Population
+      by: Age Group; Sex; CSO Local Electoral Areas 2022
+  F4004     2026-02-06  Persons with a Disability to a great extent or lesser extent as a Percentage of the Population
+      by: Sex; Age Group; Electoral Divisions
+  F4043     2023-09-28  Population
+      by: Sex; Smoking Tobacco Products; Age Group; CSO Local Electoral Areas
+  ... and 207 more
+
+== dimensions offered by the matching tables (counts of tables, not of categories)
+   118 tables  Sex
+    66 tables  Electoral Division
+    28 tables  CSO Local Electoral Areas 2022
+    26 tables  Local Electoral Area 2008
+    26 tables  Local Electoral Area 2014
+    26 tables  Local Electoral Area 2019
+    25 tables  CSO Electoral Divisions 2022
+    14 tables  Age
+    13 tables  CSO Local Electoral Areas
+    11 tables  Age of Children
+    10 tables  Electoral Divisions
+     9 tables  Age Group
+     8 tables  Type of Service
+     7 tables  Principal Economic Status
+     7 tables  Age Education Ceased
+     7 tables  Education Not Ceased
+     7 tables  Highest Level of Education Completed
+     7 tables  Time Leaving Home
+     7 tables  Journey Time
+     7 tables  General Health
+     7 tables  Occupation
+     7 tables  Industry
+     7 tables  Marital Status
+     7 tables  Usual Residence 1 Year Ago
+     7 tables  Language
+     7 tables  Ability to speak English
+     7 tables  Type of Sewerage
+     7 tables  Social Class
+     6 tables  Local Electoral Area
+     6 tables  Number of Children
+     5 tables  Field of Study
+     5 tables  Means of Travel
+     5 tables  Irish Speaker
+     5 tables  Frequency of Speaking Irish
+     4 tables  Towns by Electoral Division
+     4 tables  Type of Family
+     3 tables  Age of Youngest Child
+     3 tables  Age of Child
+     2 tables  Islands by Electoral Division
+     2 tables  Religion
+
+======================================================================
+
+== metadata for A0105
+  200   137,896 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/A0105/JSON-stat/2.0/en
+      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["A0105C1","A0105C2","A0105C3","A0105C4","A0105C5"],"la
+  label: 1996 Population and Percentage Change 1996 and 2002
+  updated: 2021-07-19T11:00:00.000Z
+  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/census/censusreports1821-2006/]statistical release page[/url] on our website.\nThis table was updated 19/07 to reflect change of spelling to a town name. No data has been changed"]
+  extension: {"matrix": "A0105", "reasons": ["Unplanned Revision"], "language": {"code": "en", "name": "English"}, "elimination": {"C02798V03367": null}, "contact": {"name": "Bernie Casey", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 14, "value": "Census 1996"}, "product": {"code": "C1996P1", "value": "Volume 1 - Population Classified by Area 1996"}, "official": true, "copyrigh
+
+  dimension 'STATISTIC': Statistic -- 5 categories
+      A0105C1      Population 1991
+      A0105C2      Population 1996
+      A0105C3      Males 1996
+      A0105C4      Females 1996
+      A0105C5      Percentage change since previous census
+
+  dimension 'TLIST(A1)': CensusYear -- 1 categories
+      1996         1996
+
+  dimension 'C02798V03367': Towns by Electoral Division -- 1969 categories
+      -            State
+      01           Carlow
+      100100       Carlow Town Total, Co. Carlow
+      100200       Carlow Town (ED 001 Carlow Urban), Co. Carlow
+      100300       Carlow Town (ED 002 Graigue Urban), Co. Carlow
+      100400       Carlow Town (ED 019 Carlow Rural (pt.)), Co. Carlow
+      100500       Carlow Town (ED 012 Ballinacarrig (pt.)), Co. Carlow
+      100600       Environs of Carlow Total (pt.)(a), Co. Carlow
+      100700       Environs of Carlow (ED 019 Carlow Rural (pt.)), Co. Carlow
+      100800       Environs of Carlow (ED 012 Ballinacarrig (pt.)), Co. Carlow
+      100900       Tullow Total, Co. Carlow
+      101000       Tullow (ED 048 Tullow Urban), Co. Carlow
+      101100       Tullow (ED 046 Tullowbeg (pt.)), Co. Carlow
+      101200       Tullow (ED 047 Tullow Rural (pt.)), Co. Carlow
+      ... and 1955 more
+
+======================================================================
+
+== metadata for AVA17
+  200   131,497 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/AVA17/JSON-stat/2.0/en
+      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["AVA17"],"label":{"AVA17":"Farms"},"unit":{"AVA17":{"d
+  label: Farms
+  updated: 2020-11-02T11:00:00.000Z
+  note: ["Results of the 1991 and 2000 Censuses were based solely on data provided by respondents, while the 2010 Census is based on a combination of both respondents and administrative data (The Single Farm Payment (SFP) and Animal Movement Identification (AIM) Systems). For a small proportion of Electoral Districts (EDs) some or all of the Census of Agriculture details are not being made available at th
+  extension: {"matrix": "AVA17", "language": {"code": "en", "name": "English"}, "elimination": {"C02076V02508": null, "C02394V03822": null}, "contact": {"name": "Sophie Emersion", "email": "agri@cso.ie", "phone": "(+353) 21 453 5453"}, "subject": {"code": 3, "value": "Agriculture"}, "product": {"code": "COA9110", "value": "Census of Agriculture 1991 to 2010"}, "official": true, "copyright": {"name": "Central S
+
+  dimension 'STATISTIC': Statistic -- 1 categories
+      AVA17        Farms
+
+  dimension 'C02076V02508': Age of Holder -- 5 categories
+      455          Under 35 years
+      465          35 - 44 years
+      500          45 - 54 years
+      535          55 - 64 years
+      575          65 years and over
+
+  dimension 'C02394V03822': Selected Electoral Divisions -- 2828 categories
+      01003        003 Clonmore, Co. Carlow
+      01004        004 Hacketstown, Co. Carlow
+      01005        005 Haroldstown, Co. Carlow
+      01006        006 Kineagh, Co. Carlow
+      01007        007 Rahill, Co. Carlow
+      01008        008 Rathvilly, Co. Carlow
+      01009        009 Tiknock, Co. Carlow
+      01010        010 Williamstown, Co. Carlow
+      01011        011 Agha, Co. Carlow
+      01012        012 Ballinacarrig (Part Rural), Co. Carlow
+      01013        013 Ballintemple, Co. Carlow
+      01014        014 Ballon, Co. Carlow
+      01015        015 Ballyellin, Co. Carlow
+      01016        016 Ballymoon, Co. Carlow
+      ... and 2814 more
+
+  dimension 'TLIST(A1)': Year -- 3 categories
+      1991         1991
+      2000         2000
+      2010         2010
+
+======================================================================
+
+== metadata for AVA43
+  200   349,168 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/AVA43/JSON-stat/2.0/en
+      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["COAAFHC01","COAAFHC02"],"label":{"COAAFHC01":"Average
+  label: Age of Farm Holder
+  updated: 2022-12-08T11:00:00.000Z
+  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/statistics/agriculture/censusofagriculture/]statistical release page[/url] on our website."]
+  extension: {"matrix": "AVA43", "reasons": ["Unplanned Revision"], "language": {"code": "en", "name": "English"}, "elimination": {"C03904V04656": "-"}, "contact": {"name": "Sophie Emersion", "email": "agri@cso.ie", "phone": "(+353) 21 453 5453"}, "subject": {"code": 3, "value": "Agriculture"}, "product": {"code": "COA", "value": "Census of Agriculture 2020"}, "official": true, "copyright": {"name": "Central S
+
+  dimension 'STATISTIC': Statistic -- 2 categories
+      COAAFHC01    Average Age of Holder
+      COAAFHC02    Median Age of Holder
+
+  dimension 'TLIST(A1)': Census Year -- 3 categories
+      2000         2000
+      2010         2010
+      2020         2020
+
+  dimension 'C03904V04656': Electoral Division -- 3410 categories
+      -            State
+      3576C59993454152E0530100007F0280 Brisha / Capard, Co.Laois, 08045/08046
+      3576C59992AD4152E0530100007F0280 Firry / Newgrove, Co.Longford, 09024/09035
+      2AE1962918C813A3E055000000000001 Fair Gate, Co.Louth, 10001
+      2AE19629193513A3E055000000000001 St. Laurence Gate, Co.Louth, 10002
+      2AE19629191E13A3E055000000000001 West Gate, Co.Louth, 10003
+      2AE19629193613A3E055000000000001 Dundalk Urban No. 1, Co.Louth, 10004
+      2AE19629193713A3E055000000000001 Dundalk Urban No. 2, Co.Louth, 10005
+      2AE1962918E313A3E055000000000001 Dundalk Urban No. 3, Co.Louth, 10006
+      2AE19629193813A3E055000000000001 Dundalk Urban No. 4, Co.Louth, 10007
+      2AE19629194E13A3E055000000000001 Ardee Rural, Co.Louth, 10008
+      2AE19629194F13A3E055000000000001 Ardee Urban, Co.Louth, 10009
+      2AE19629185813A3E055000000000001 Carlow Urban, Co.Carlow, 01001
+      2AE19629195E13A3E055000000000001 Castlebellingham, Co.Louth, 10010
+      ... and 3396 more
+
+======================================================================
+
+== metadata for B0105
+  200   138,026 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/B0105/JSON-stat/2.0/en
+      {"class":"dataset","dimension":{"C02798V03367":{"category":{"index":["-","01","100100","100200","100300","100400","10050
+  label: 2002 Population and Percentage Change 1996 and 2002
+  updated: 2020-05-01T11:00:00.000Z
+  note: ["Note 1 Towns with legally defined boundaries are listed in Appendix 3.Note 2 The composition of Towns and Boroughs whose boundaries have been extended is shown in Appendix 4.(a) Towns which are located in more than one County are listed in Appendix 5.", "For more information, please go to the [url=https://www.cso.ie/en/census/censusreports1821-2006/]statistical release page[/url] on our website.
+  extension: {"matrix": "B0105", "language": {"code": "en", "name": "English"}, "elimination": {"C02798V03367": null}, "contact": {"name": "Bernie Casey", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 13, "value": "Census 2002"}, "product": {"code": "C2002P1", "value": "Volume 1 - Population Classified by Area 2002"}, "official": true, "copyright": {"name": "Central Statistics Of
+
+  dimension 'C02798V03367': Towns by Electoral Division -- 1969 categories
+      -            State
+      01           Carlow
+      100100       Carlow Town Total, Co. Carlow
+      100200       Carlow Town (ED 001 Carlow Urban), Co. Carlow
+      100300       Carlow Town (ED 002 Graigue Urban), Co. Carlow
+      100400       Carlow Town (ED 019 Carlow Rural (pt.)), Co. Carlow
+      100500       Carlow Town (ED 012 Ballinacarrig (pt.)), Co. Carlow
+      100600       Environs of Carlow Total (pt.)(a), Co. Carlow
+      100700       Environs of Carlow (ED 019 Carlow Rural (pt.)), Co. Carlow
+      100800       Environs of Carlow (ED 012 Ballinacarrig (pt.)), Co. Carlow
+      100900       Tullow  Total, Co. Carlow
+      101000       Tullow (ED 048 Tullow Urban), Co. Carlow
+      101100       Tullow (ED 046 Tullowbeg (pt.)), Co. Carlow
+      101200       Tullow (ED 047 Tullow Rural (pt.)), Co. Carlow
+      ... and 1955 more
+
+  dimension 'TLIST(A1)': CensusYear -- 1 categories
+      2002         2002
+
+  dimension 'STATISTIC': Statistic -- 5 categories
+      B0105C1      Population 1996
+      B0105C2      Population 2002
+      B0105C3      Males 2002
+      B0105C4      Females 2002
+      B0105C5      Percentage change since previous census
