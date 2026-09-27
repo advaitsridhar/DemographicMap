@@ -1269,7 +1269,108 @@ def deu7() -> None:
             log(f"   Regionaldatenbank {term!r}: HTTP {status} {exc}: {text(reply)[:200]}")
 
 
+def px_all(url: str) -> None:
+    """Every value of every variable of one PxWeb table."""
+    status, _, body = fetch(url)
+    log(f"\n## PxWeb {url}: HTTP {status}")
+    try:
+        meta = json.loads(text(body))
+    except json.JSONDecodeError:
+        log("   " + text(body)[:300])
+        return
+    log(f"   title: {meta.get('title')}")
+    for var in meta.get("variables", []):
+        pairs = list(zip(var.get("values", []), var.get("valueTexts", [])))
+        shown = pairs if len(pairs) <= 80 else pairs[:12] + [("...", "...")] + pairs[-6:]
+        log(f"   {var.get('code')} ({var.get('text')}): {len(pairs)} values: "
+            + "; ".join(f"{v}={t}" for v, t in shown))
+
+
+def svn6() -> None:
+    """The 2002 census tables by municipality and by statistical region, in full."""
+    for table in ("05W1002S", "05W1006S", "05W1007S", "05W1001S", "0558601S", "05W2202S"):
+        px_all(f"https://pxweb.stat.si/SiStatData/api/v1/en/Data/{table}.px")
+
+
+def walk_strings(obj: Any, keys: tuple[str, ...], out: list[str], depth: int = 0) -> None:
+    if depth > 6:
+        return
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k in keys and isinstance(v, (str, int)):
+                out.append(f"{k}={v}")
+            else:
+                walk_strings(v, keys, out, depth + 1)
+    elif isinstance(obj, list):
+        for v in obj:
+            walk_strings(v, keys, out, depth + 1)
+
+
+def che10() -> None:
+    """The shape of BFS's asset search, and the religion and language tables it finds."""
+    for query in ("language=de&title=Religionszugeh%C3%B6rigkeit",
+                  "language=de&title=Hauptsprachen",
+                  "language=de&title=Religion%20Kanton"):
+        status, _, body = fetch(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets?{query}")
+        log(f"\n## DAM {query}: HTTP {status}, {len(body):,} bytes")
+        try:
+            data = json.loads(text(body))
+        except json.JSONDecodeError:
+            log("   " + text(body)[:300])
+            continue
+        if isinstance(data, dict):
+            log(f"   top-level keys: {list(data)[:20]}")
+            items = next((v for v in data.values() if isinstance(v, list)), [])
+        else:
+            items = data
+        log(f"   {len(items)} items")
+        if items and query.endswith("keit"):
+            log("   first item: " + json.dumps(items[0], ensure_ascii=False)[:2500])
+        for item in items[:60]:
+            found: list[str] = []
+            walk_strings(item, ("ident", "id", "title", "orderNr", "periodFrom", "periodTo",
+                                "mimetype", "mimeType", "articleModel"), found)
+            log("   - " + " | ".join(found[:12])[:300])
+
+
+def aut7() -> None:
+    """The other sheets of the 2001 Gemeinde series, and the 2021 religion survey's page."""
+    for section in ("vz2", "vz3", "vz4", "vz5", "vz6", "vz7"):
+        pdf_text(f"https://www.statistik.at/blickgem/{section}/g10101.pdf", pages=1, limit=1800)
+    show("https://www.statistik.at/blickgem/", r"src=\"[^\"]+\"|[\"'][^\"']*\.(?:json|do|jsp)[^\"']*[\"']",
+         limit=30)
+    for url in ("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung",
+                "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+                "bevoelkerungsstand"):
+        show(url, r"href=\"[^\"]*(?:religi|Religi|sprach|Sprach|umgang|volkszaehl|registerz)[^\"]*\"",
+             limit=40)
+
+
+def deu8() -> None:
+    """The Regionaldatenbank's Zensus tables, asked by code rather than by word."""
+    rdb = "https://www.regionalstatistik.de/genesisws/rest/2020"
+    for path, params in (("helloworld/logincheck", {}),
+                         ("catalogue/tables", {"selection": "1000A*", "pagelength": "50"}),
+                         ("catalogue/tables", {"selection": "12111*", "pagelength": "60"})):
+        body = urllib.parse.urlencode({**params, "language": "de"}).encode()
+        status, _, reply = fetch(f"{rdb}/{path}", data=body,
+                                 headers={"username": "GAST", "password": "GAST",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+        page = text(reply)
+        log(f"\n## Regionaldatenbank {path} {params}: HTTP {status}, {len(reply):,} bytes")
+        try:
+            data = json.loads(page)
+        except json.JSONDecodeError:
+            log("   " + " ".join(page[:300].split()))
+            continue
+        rows = data.get("List") or data.get("Tables") or []
+        log(f"   status {data.get('Status')}; {len(rows)} rows")
+        for row in rows[:60]:
+            log(f"   - {row.get('Code')} | {' '.join(str(row.get('Content', '')).split())[:170]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "svn6": svn6, "che10": che10, "aut7": aut7, "deu8": deu8,
     "aut6": aut6, "svn5": svn5, "che9": che9, "nld10": nld10, "lux6": lux6, "deu7": deu7,
     "che8": che8, "svn4": svn4, "aut5": aut5,
     "che7": che7, "nld9": nld9,
