@@ -1,2 +1,28 @@
-  INE table 69792: 53 places, 16377 series
-spain_italy_age: INE table 69792 has no 1 January among {'2026-04-01', '2026-07-01'}
+hungary: KSH census 2022 database, version V67
+  197 districts, 20 counties (Budapest one of them), 101 single ages up to 100+
+  counties and Budapest against Hungary: parts sum to 9,603,634 = 9,603,634
+  Budapest: its 23 districts make 1,685,342 of 1,685,342; 0 are counted in no district
+  districts against Pest county: parts sum to 1,333,533 = 1,333,533
+  districts against Fejér county: parts sum to 419,656 = 419,656
+  districts against Komárom-Esztergom county: parts sum to 300,631 = 300,631
+  districts against Veszprém county: parts sum to 335,361 = 335,361
+  districts against Győr-Moson-Sopron county: parts sum to 465,945 = 465,945
+  districts against Vas county: parts sum to 249,513 = 249,513
+  districts against Zala county: parts sum to 260,800 = 260,800
+  districts against Baranya county: parts sum to 354,022 = 354,022
+  districts against Somogy county: parts sum to 293,470 = 293,470
+  districts against Tolna county: parts sum to 207,931 = 207,931
+  districts against Borsod-Abaúj-Zemplén county: parts sum to 623,024 = 623,024
+  districts against Heves county: parts sum to 285,892 = 285,892
+  districts against Nógrád county: parts sum to 182,459 = 182,459
+  districts against Hajdú-Bihar county: parts sum to 519,141 = 519,141
+  districts against Jász-Nagykun-Szolnok county: parts sum to 355,809 = 355,809
+  districts against Szabolcs-Szatmár-Bereg county: parts sum to 529,381 = 529,381
+  districts against Bács-Kiskun county: parts sum to 495,318 = 495,318
+  districts against Békés county: parts sum to 315,222 = 315,222
+  districts against Csongrád-Csanád county: parts sum to 391,184 = 391,184
+  national median 44.2 against Eurostat's 44.2 (HU, 1 January 2023)
+  hungary: 0 office units unbound
+  hungary: 0 polygons without an office unit
+  wrote data/processed/hungary_census.json (1351 kB)
+  wrote hungary_census.json: 217 records
