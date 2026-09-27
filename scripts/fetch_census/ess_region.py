@@ -38,11 +38,15 @@ not in it, which undercounts recent immigrants' languages.
 **Weights and pooling.** Every table is weighted by ``pspwght``, the
 post-stratification weight including the design weight, which the ESS
 prescribes for analyses within one country; the service returns the weighted
-counts rounded to whole respondents. Rounds are pooled by adding those
-weighted counts, so each round counts in proportion to its sample. The
-default pool is rounds 7 to 11 (fieldwork 2014-2024); ``--first-round``
-changes it. A unit needs at least ``MIN_N`` = 100 respondents with a valid
-answer, unweighted; 100-299 is marked low precision in the note.
+counts rounded to whole respondents. Within a region, each round's weighted
+counts are rescaled to that round's respondents there before the rounds are
+added, so the weights correct who was sampled inside a round and each round
+counts in proportion to its interviews -- a round whose weights are on
+another scale by region (ESS10 in Norway) cannot outweigh the rest. The
+default pool is rounds 7 to 11 (fieldwork 2014-2024); a unit those rounds
+leave under ``MIN_N`` = 100 respondents with a valid answer, unweighted, is
+pooled from round 5 (2010) instead, and its note says so. 100-299 is marked
+low precision in the note.
 
 **Geography.** Respondents carry a NUTS code, at NUTS 1, 2 or 3 depending on
 the country and round. Codes from older NUTS versions are mapped to NUTS 2024
@@ -455,6 +459,8 @@ def pool(tabs: dict[str, Any], field: str, first_round: int,
     """
     out: dict[str, dict[str, Any]] = defaultdict(lambda: {
         "w": Counter(), "n": Counter(), "missing": 0, "rounds": set(), "recoded": set()})
+    per_round: dict[tuple[str, str], dict[str, Counter]] = defaultdict(
+        lambda: {"w": Counter(), "n": Counter()})
     unplaced: Counter = Counter()
     unlisted: Counter = Counter()
     for prefix, entry in tabs["rounds"].items():
@@ -487,13 +493,28 @@ def pool(tabs: dict[str, Any], field: str, first_round: int,
                 slot["rounds"].add((prefix, year))
                 if original.strip().upper() != code:
                     slot["recoded"].add(original.strip().upper())
+                part = per_round[(target, prefix)]
                 for key, n in cells.items():
                     group = classify(key)
                     if group is None:
                         slot["missing"] += n
                         continue
-                    slot["n"][group] += n
-                    slot["w"][group] += weighted.get(key, 0)
+                    part["n"][group] += n
+                    part["w"][group] += weighted.get(key, 0)
+    # Each round's weighted counts in a region are rescaled to that round's
+    # respondents there before the rounds are added. The weights then do
+    # their job inside a round -- correcting for who was sampled and who
+    # answered -- and each round counts in proportion to its interviews. The
+    # tables need it: ESS10's Norwegian weights put 382 weighted respondents
+    # on the 120 interviewed in Innlandet and 221 on the 536 in Oslo og
+    # Viken, and added unscaled, one round would have outweighed four.
+    for (target, _), part in per_round.items():
+        n, w = sum(part["n"].values()), sum(part["w"].values())
+        factor = n / w if w else 0.0
+        slot = out[target]
+        for group, count in part["n"].items():
+            slot["n"][group] += count
+            slot["w"][group] += part["w"][group] * factor if w else count
     if unplaced and not quiet:
         log(f"  {field}: {sum(unplaced.values()):,.0f} respondents carry no NUTS region "
             f"({', '.join(f'{k or repr(k)}={v:,.0f}' for k, v in unplaced.most_common(8))})")
@@ -585,8 +606,9 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
                                   f"{json.dumps(crosswalk[code])[:120]}")
                 continue
             if n < MIN_N:
-                report.append(f"{field} {code} -> {places[0]['name']}: n={n} < {MIN_N} "
-                              f"even from round {EXTEND_TO}, left out")
+                report.append(f"{field} {code} -> {places[0]['name']}: n={n} "
+                              f"({size(wider.get(code))} from round {EXTEND_TO}) < {MIN_N}, "
+                              f"left out")
                 continue
             for place in places:
                 key = (place["level"], place["shape_id"])
@@ -631,8 +653,9 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
                 f"European Social Survey, {rounds}, pooled: {QUESTION[field]}. A survey "
                 f"estimate, not a count: {n:,} respondents in NUTS region {got['code']} "
                 f"gave an answer ({int(slot['missing']):,} refused, did not know or did not "
-                f"answer and are left out), weighted by the post-stratification weight "
-                f"(pspwght) and pooled across rounds.{precision} Universe: residents aged 15 "
+                f"answer and are left out), weighted within each round by the "
+                f"post-stratification weight (pspwght), rescaled to that round's "
+                f"respondents here, and pooled.{precision} Universe: residents aged 15 "
                 f"and over in private households who could be interviewed in a survey "
                 f"language. Tabulated by the ESS Data Portal's open analysis service. "
                 f"{CENSUS[field]}")
@@ -653,11 +676,10 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
 def weight_scale(tabs: dict[str, Any]) -> list[str]:
     """Each round's and country's weighted respondents over its unweighted ones.
 
-    Pooling adds weighted counts across rounds, which is right only if the
-    weight has the same scale in every round: pspwght is scaled to average 1
-    within a country and round. A round whose weights average far from 1 would
-    count for more or less than its interviews, so it is reported here, and
-    the build stops on it.
+    pspwght is scaled to average 1 within a country and round. pool() rescales
+    every round in every region to its respondents, so a round off that scale
+    no longer counts for more than its interviews; it is reported here so the
+    log shows where the rescaling mattered.
     """
     lines = []
     for prefix, entry in tabs["rounds"].items():
@@ -690,14 +712,21 @@ def national(first_round: int = FIRST_ROUND) -> dict[str, dict[str, Any]]:
             for cntry, cells in tables[field]["n"].items():
                 slot = pooled[cntry]
                 slot["rounds"].add((prefix, ROUNDS[prefix][1]))
+                part_n: Counter = Counter()
+                part_w: Counter = Counter()
                 for key, n in cells.items():
                     group = (religion_group(key) if field == "religion"
                              else language_group(key, PREFIX.get(cntry, cntry)))
                     if group is None:
                         slot["missing"] += n
                         continue
+                    part_n[group] += n
+                    part_w[group] += tables[field]["weighted"][cntry].get(key, 0)
+                # Rescaled to the round's respondents, as pool() does.
+                factor = sum(part_n.values()) / sum(part_w.values()) if sum(part_w.values()) else 0
+                for group, n in part_n.items():
                     slot["n"][group] += n
-                    slot["w"][group] += tables[field]["weighted"][cntry].get(key, 0)
+                    slot["w"][group] += part_w[group] * factor if factor else n
         for cntry, slot in pooled.items():
             out.setdefault(cntry, {})[field] = {
                 "n": int(sum(slot["n"].values())), "rounds": describe_rounds(slot["rounds"]),

@@ -134,7 +134,21 @@ class Build(unittest.TestCase):
         data = tabs({"ESS9": {"religion": {"FRK": {"1/1": 50, "2/66": 49}}, "language": {}}})
         records, report = ess.build(data, CROSSWALK, first_round=7)
         self.assertEqual(records, [])
-        self.assertTrue(any("n=99 < 100" in line for line in report))
+        self.assertTrue(any("n=99 (99 from round 5) < 100" in line for line in report))
+
+    def test_rounds_rescaled_to_their_respondents(self):
+        # Round 10's weights are three times round 9's in this region: added
+        # raw they would make it count three times; rescaled, each round
+        # counts by its interviews (100 each), so the share is the average.
+        data = {"rounds": {
+            "ESS9": {"religion": {"n": {"FRK": {"1/1": 80, "2/66": 20}},
+                                  "weighted": {"FRK": {"1/1": 80, "2/66": 20}}}},
+            "ESS10": {"religion": {"n": {"FRK": {"1/1": 40, "2/66": 60}},
+                                   "weighted": {"FRK": {"1/1": 120, "2/66": 180}}}},
+        }}
+        slot = ess.pool(data, "religion", 7)["FRK"]
+        self.assertAlmostEqual(slot["w"]["Roman Catholic"], 120.0)
+        self.assertAlmostEqual(slot["w"]["No religion"], 80.0)
 
     def test_extension_to_older_rounds(self):
         data = tabs({
