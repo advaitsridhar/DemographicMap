@@ -11300,6 +11300,91 @@
     "ethnicity_note": "Each person's principal ethnic-racial ancestry, from the 2023 census's two questions: whether a person believes they have Afro or Black, Asian, White, Indigenous or other ancestry (yes or no to each), and, of those who said yes to more than one, which is the principal. One yes is counted with its ancestry; several and no principal is 'Mixed (several, no principal)'; no to all five is 'None of these ancestries'. Counting every yes, 6.6% of the 45,741 who answered here have Afro or Black ancestry and 5.0% Indigenous ancestry. Left out: 7,120 people here who were not asked -- counted from administrative records or on the short questionnaire -- and 440 who did not answer."
   },
   {
+    "id": "URY-INE-cerrolargo-cerrolargooutsideanymunicipio",
+    "level": "admin2",
+    "name": "Cerro Largo, outside any municipio",
+    "parent": "URY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57747,
+      "year": 2023,
+      "source": "INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata (February 2026 release, by 2020-series municipio)",
+      "note": "The people of the department INE files under no municipio. From INE's February 2026 release of the census microdata, which files each person under the 2020 electoral series of municipios -- the series the boundary file draws. INE's July 2026 release, which the department figures are from, files people under the 2025 series instead (eleven new municipios, the limits of others revised) and estimates differently: it weights the questionnaire's respondents where the February release adds people from administrative records. So a municipio's count moves by up to about 4% between the two even where its limits stayed the same (Montevideo's eight), while a department's moves by at most 0.3%."
+    },
+    "median_age": {
+      "value": 36.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata (February 2026 release, by 2020-series municipio)"
+    },
+    "sex_ratio": {
+      "value": 933,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata (February 2026 release, by 2020-series municipio)"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "Uruguay's 2023 census does not ask religion: the questionnaire's only 'religioso' is a kind of collective dwelling (Internado religioso), and INE's data dictionary for the person file has no religion variable."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "Uruguay's 2023 census does not ask language: neither the questionnaire nor INE's data dictionary for the person file has a language question."
+    },
+    "ethnicity": [
+      {
+        "group": "White",
+        "pct": 84.8,
+        "count": 42654
+      },
+      {
+        "group": "Afro or Black",
+        "pct": 8.8,
+        "count": 4448
+      },
+      {
+        "group": "Other",
+        "pct": 3.6,
+        "count": 1819
+      },
+      {
+        "group": "Indigenous",
+        "pct": 2.2,
+        "count": 1083
+      },
+      {
+        "group": "Mixed (several, no principal)",
+        "pct": 0.4,
+        "count": 212
+      },
+      {
+        "group": "Asian",
+        "pct": 0.2,
+        "count": 112
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata (February 2026 release, by 2020-series municipio)",
+        "url": "https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar",
+        "year": 2023
+      }
+    ],
+    "country": "URY",
+    "parent_name": "Cerro Largo",
+    "match_by": "shape_id",
+    "shape_id": "URY-REST-27058087B72518212949854",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from INE's census microdata, which withholds single years of age for everyone living in a locality of under 10,000 people; INE tabulates ages, not the median.",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Each person's principal ethnic-racial ancestry, from the 2023 census's two questions: whether a person believes they have Afro or Black, Asian, White, Indigenous or other ancestry (yes or no to each), and, of those who said yes to more than one, which is the principal. One yes is counted with its ancestry; several and no principal is 'Mixed (several, no principal)'; no to all five is 'None of these ancestries'. Counting every yes, 13.3% of the 50,328 who answered here have Afro or Black ancestry and 6.0% Indigenous ancestry. Left out: 6,946 people here who were not asked -- counted from administrative records or on the short questionnaire -- and 473 who did not answer."
+  },
+  {
     "id": "URY-INE-tacuarembo-tacuarembooutsideanymunicipio",
     "level": "admin2",
     "name": "Tacuarembó, outside any municipio",
