@@ -1,1 +1,27 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
+== https://hub.arcgis.com/api/v3/domains/www.estadistica.ad
+  HTTPError: HTTP Error 404: Not Found
+== https://www.estadistica.ad/portal/sharing/rest/search?q=type:Table&f=json&num=100
+  59 bytes; starts b'{"total"'
+  {"total":0,"start":1,"num":100,"nextStart":-1,"results":[]}
+== https://www.estadistica.ad/portal/sharing/rest/search?q=poblaci%C3%B3&f=json&num=100
+  24,278 bytes; starts b'{"total"'
+  {"total":9,"start":1,"num":100,"nextStart":-1,"results":[{"id":"d964be364f074ac3afe52e64a0f6817e","owner":"cartografia","created":1664370522561,"modified":1770113101674,"guid":null,"name":"Població_2010_2021","title":"Població 2010-2025","type":"Feature Service","typeKeywords":["ArcGIS","ArcGIS Server","Data","Feature Access","Feature Service","Metadata","providerSDS","Service","Hosted Service"],"description":"Obtenció de les estadístiques oficials de població del Principat, a \npartir de l'encr
+  Organisme/s col·laborador/s: Departament de Justícia i Interior; Censos \nparroquials dels Comuns i entitats vinculades; Caixa Andorrana de la \nSeguretat Social (CASS).
+  ","tags":["població","habitants"],"snippet":"Habitants per poblacions del període 2010-2025","thumbnail":"thumbnail/thumbnail.png","documentation":null,"extent":[[1.4564069986778194,42.439241559886675],[1.7348003063501147,42.619924211685074]],"categories":[],"spatialReference":"27563","accessInformation":"Àrea de Cartografia - Estadística","classification":null,"licenseInfo":"","culture":"ca-ad","properties":null,"advancedSettings":null,"url":"https://sig.govern.ad/server/rest/services/Hosted/Po
+  Exemples:
+  Presenteu un gràfic de barres que representi el valor de propietat mitjà per comtat en una àrea concreta
+  Compareu gràfics a partir de diverses estadístiques de població al dataset
+  Mostreu un gràfic de dispersió interactiu basat en dos valors del dataset juntament amb un conjunt essencial d'eines d'exploració del mapa
+  Requisits de dades
+  Aquesta aplicació requereix un mapa que tingui com a mínim un gràfic configurat. Per obtenir més informació, consulteu el tema d'ajuda Gràfics .
+  Funcions clau de l'aplicació
+  Diverses opcions de disseny: trieu si voleu mostrar els gràfics apilats al mapa o al seu costat
+  Administra els gràfics: reordeneu els gràfics de l'aplicació, canvieu-ne el nom o activeu-los i desactiveu-los
+  Gràfic de selecció múltiple: compareu dos gràfics a la subfinestra a la vegada
+  Marcadors: habiliteu marcadors configurats al Map Viewer per incloure un conjunt d'extensions predefinides. Límit de navegació: mantingueu l'àrea del mapa centrada mitjançant un límit de navegació o desactivant la funció de desplaçament
+  Inici, Controls de zoom, Llegenda, Llista de capes i Cerca
+  Compatibilitat
+  Aquesta aplicació s'ha dissenyat per fer-se servir en navegadors d'ordinadors d'escriptori, telèfons mòbils i tauletes. Ens comprometem amb els nostres esforços continus a fer q
+== https://www.estadistica.ad/portal/sharing/rest/portals/self?f=json
+  9,300 bytes; starts b'{"2DStyl'
+  {"2DStylesGroupQuery":"title:\"Esri 2D Styles\" AND owner:esri_en","3DBasemapGalleryGroupQuery":"title:\"ArcGIS Online 3D Basemaps\" AND owner:esri","EsriBoundaryLayersGroupQuery":"title:\"Esri Boundary Layers\" AND owner:esri_boundaries","EsriDemographicLayersGroupQuery":"title:\"Esri Demographic Layers\" AND owner:esri_demographics","access":"public","allSSL":true,"allowedRedirectUris":[],"analysisLayersGroupQuery":"","authorizedCrossOriginDomains":["https://sig.govern.ad/mission","https://big
