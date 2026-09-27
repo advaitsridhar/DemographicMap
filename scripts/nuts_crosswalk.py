@@ -14,6 +14,11 @@ unit, whatever either calls it; anything less is left to the name matcher,
 which refuses what it cannot place. Where a NUTS-2 region and a NUTS-3 region
 are the same polygon (Istanbul is TR10 and TR100), the finer one keeps it.
 
+NUTS-1 regions are the unions of their NUTS-2 regions. A region too coarsely
+drawn to reach ``SAME`` -- an exclave, an island group -- is still placed when
+it lies on nothing else (``alone``), and ``DECIDED`` settles the two regions
+the rules get wrong, with what was measured.
+
 Reads GISCO's outlines from data/raw/eurostat (``eurostat --fetch-geometry``
 on a runner) and the CGAZ files; writes data/processed/nuts_crosswalk.json.
 
@@ -39,6 +44,33 @@ SAME = 0.8
 HELD = 0.5
 # Two of the map's polygons at different levels this alike are one place.
 TWIN = 0.9
+# A region drawn too coarsely for SAME is still one polygon when this much of
+# the ground it shares with its country's polygons of a level is on that one,
+# at least UNDER of the polygon lies under it, and no other region of its
+# level covers more than ELSE of the polygon (see ``alone``).
+ALONE = 0.98
+UNDER = 0.4
+ELSE = 0.02
+
+# Regions settled by hand where the outline rules decide wrongly, each with
+# what was measured: the polygon a region is, or None for one it must not
+# reach.
+DECIDED: dict[str, tuple[str | None, str]] = {
+    # The rule refused Flanders as holding Brussels (BE1), but GISCO's 1:10
+    # million Brussels is drawn at 1.9 times its area and only half of it
+    # (0.504) spills onto the map's Flanders. The map cuts Brussels out of
+    # Flanders as a hole -- the two polygons share none of their ground -- and
+    # BE2 covers the map's Flanders at 0.89.
+    "BE2": ("27649430B69989386836371",
+            "Vlaams Gewest; refused by outline only because GISCO's coarse Brussels "
+            "spills onto it, while the map draws Brussels as a hole in it"),
+    # Kozep-Magyarorszag is Budapest and Pest county. The map draws no
+    # Budapest; its Pest polygon covers both (0.91) but the unit counts Pest
+    # county's people alone, 1.33 million against the region's 3.0 million, so
+    # the region's figures would contradict the population beside them.
+    "HU1": (None, "Budapest and Pest county together, on a Pest polygon that counts "
+                  "Pest county's people alone"),
+}
 ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 
 
@@ -60,6 +92,24 @@ def load_nuts(level: int) -> list[dict]:
              "geom": shape(f["geometry"]).buffer(0)} for f in data["features"]]
 
 
+def nuts1_from(level2: list[dict]) -> list[dict]:
+    """NUTS-1 regions as the union of their NUTS-2 regions.
+
+    A NUTS-1 code is the first three characters of each of its NUTS-2
+    regions' (FRK is FRK1 and FRK2), and the classification nests exactly, so
+    the union is the region's outline without a third download -- which the
+    runner could not commit anyway, since data/raw is ignored but for the
+    files already tracked.
+    """
+    from shapely.ops import unary_union
+    groups: dict[str, list[dict]] = defaultdict(list)
+    for region in level2:
+        groups[region["id"][:3]].append(region)
+    return [{"id": code, "cntr": parts[0]["cntr"],
+             "geom": unary_union([p["geom"] for p in parts]).buffer(0)}
+            for code, parts in sorted(groups.items())]
+
+
 def load_shapes(countries: set[str]) -> list[dict]:
     import fiona
     from shapely.geometry import shape
@@ -78,10 +128,61 @@ def load_shapes(countries: set[str]) -> list[dict]:
     return out
 
 
+def alone(region: dict, regions: list, lvl: int, tree, shapes: list[dict],
+          country: str | None) -> tuple[dict, str] | None:
+    """The one polygon a region too coarsely drawn to reach ``SAME`` must be.
+
+    GISCO's 1:10 million outlines generalise a small place or an island's
+    coast past what intersection over union forgives: Ceuta's outline covers
+    the map's Ceuta at 0.42, the Ionian Islands' at 0.73, though neither
+    region touches any other unit of Spain or Greece. Such a region is still
+    the one polygon if, at one level of the map, all the ground it shares with
+    the country lies on that polygon (``ALONE``), and no other region of its
+    NUTS level lies on the polygon at all -- which is what keeps a part of a
+    unit from passing for the whole (Gran Canaria lies only on the map's Las
+    Palmas, and so do Lanzarote and Fuerteventura). The polygon must also lie
+    mostly under the region (``UNDER``), so an outline that merely falls
+    inside a much larger unit is not taken for it.
+    """
+    geom = region["geom"]
+    by_level: dict[str, list[tuple[float, dict]]] = defaultdict(list)
+    for i in tree.query(geom, predicate="intersects"):
+        s = shapes[i]
+        if s["group"] != country:
+            continue
+        inter = geom.intersection(s["geom"]).area
+        if inter:
+            by_level[s["level"]].append((inter, s))
+    found = []
+    for level, hits in by_level.items():
+        total = sum(a for a, _ in hits)
+        area, unit = max(hits, key=lambda h: h[0])
+        if area < ALONE * total or area < UNDER * unit["geom"].area:
+            continue
+        others = [r["id"] for l2, r in regions
+                  if l2 == lvl and r is not region and r["cntr"] == region["cntr"]
+                  and r["geom"].intersects(unit["geom"])
+                  and r["geom"].intersection(unit["geom"]).area > ELSE * unit["geom"].area]
+        if others:
+            continue
+        found.append((area / unit["geom"].area, unit, f"drawn too coarsely for {SAME} (it covers {unit['id']}, "
+                            f"{unit['name']}, at {area / unit['geom'].area:.2f}) but lies on "
+                            f"nothing else of its {level} and shares it with no other region; "
+                            "placed there"))
+    # A place the map draws at both levels (Ceuta) is found at both; the one
+    # it covers more of is taken, and the other reached by the twin rule below.
+    if not found:
+        return None
+    _, unit, why = max(found, key=lambda f: f[0])
+    return unit, why
+
+
 def main() -> int:
     from shapely import STRtree
     iso3 = iso3_by_alpha2()
-    regions = [(lvl, r) for lvl in (2, 3) for r in load_nuts(lvl)]
+    level2 = load_nuts(2)
+    regions = ([(1, r) for r in nuts1_from(level2)] + [(2, r) for r in level2]
+               + [(3, r) for r in load_nuts(3)])
     countries = {iso3[r["cntr"]] for _, r in regions if r["cntr"] in iso3}
     shapes = load_shapes(countries)
     tree = STRtree([s["geom"] for s in shapes])
@@ -92,6 +193,19 @@ def main() -> int:
     for lvl, region in regions:
         country = iso3.get(region["cntr"])
         geom = region["geom"]
+        if region["id"] in DECIDED:
+            shape_id, why = DECIDED[region["id"]]
+            log(f"  {region['id']}: decided -- {why}")
+            if shape_id is None:
+                refused[region["id"]] = {"refused": why}
+                continue
+            unit = next(s for s in shapes if s["id"] == shape_id)
+            best[region["id"]] = {"nuts_level": lvl, "level": unit["level"],
+                                  "shape_id": unit["id"], "name": unit["name"],
+                                  "iou": round(geom.intersection(unit["geom"]).area
+                                               / geom.union(unit["geom"]).area, 3),
+                                  "decided": why}
+            continue
         top = None
         for i in tree.query(geom, predicate="intersects"):
             s = shapes[i]
@@ -103,7 +217,13 @@ def main() -> int:
             iou = inter / geom.union(s["geom"]).area
             if top is None or iou > top[0]:
                 top = (iou, s)
-        if top and top[0] >= SAME:
+        coarse = None
+        if top and top[0] < SAME:
+            coarse = alone(region, regions, lvl, tree, shapes, country)
+            if coarse:
+                log(f"  {region['id']}: {coarse[1]}")
+                top = (top[0], coarse[0])
+        if top and (top[0] >= SAME or coarse):
             unit = top[1]
             # Area hides a small, dense place: "Oslo og Viken" covers the
             # map's Viken at 0.94 and holds Oslo besides. So no other unit of
@@ -125,7 +245,10 @@ def main() -> int:
                 continue
             best[region["id"]] = {"nuts_level": lvl, "level": unit["level"],
                                   "shape_id": unit["id"], "name": unit["name"],
-                                  "iou": round(top[0], 3)}
+                                  "iou": round(geom.intersection(unit["geom"]).area
+                                               / geom.union(unit["geom"]).area, 3)}
+            if coarse:
+                best[region["id"]]["coarse"] = True
 
     # One region per polygon: the finer where NUTS-2 and NUTS-3 are the same
     # outline; and never two regions of one level on one polygon.

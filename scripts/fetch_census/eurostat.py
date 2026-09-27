@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""European Union -- Eurostat JSON-stat API at NUTS-2 / NUTS-3.
+"""European Union -- Eurostat JSON-stat API at NUTS-1, NUTS-2 and NUTS-3.
 
 Datasets:
 
@@ -15,7 +15,12 @@ registration but not ethnicity; Spain records co-official language by
 autonomous community only.  ``COLLECTION_POLICY`` below is what the app renders
 as "not collected" rather than "missing".
 
+NUTS-1 is read for the few countries whose first level it is -- France's
+regions, Germany's Laender, Belgium's regions, Italy's macro-regions -- and is
+placed only by outline (``scripts/nuts_crosswalk.py``), never by name.
+
 Usage:
+    python -m scripts.fetch_census.eurostat --level nuts1
     python -m scripts.fetch_census.eurostat --level nuts2
 """
 
@@ -280,7 +285,7 @@ def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--level", default="nuts2", choices=["nuts2", "nuts3"])
+    ap.add_argument("--level", default="nuts2", choices=["nuts1", "nuts2", "nuts3"])
     ap.add_argument("--year", default=None, help="reference year; default is the latest available")
     ap.add_argument("--out", default=None)
     ap.add_argument("--fetch-geometry", action="store_true",
@@ -297,7 +302,7 @@ def main() -> int:
     geo_pos, time_pos = dims.index("geo"), dims.index("time")
     labels = pop_payload["dimension"]["geo"]["category"]["label"]
 
-    want_len = 4 if args.level == "nuts2" else 5
+    want_len = {"nuts1": 3, "nuts2": 4, "nuts3": 5}[args.level]
     latest: dict[str, tuple[str, float]] = {}
     for key, value in pop.items():
         geo, year = key[geo_pos], key[time_pos]
@@ -370,7 +375,7 @@ def main() -> int:
 
         records.append(record(
             f"EU-{geo}", labels.get(geo, geo),
-            level="admin1" if args.level == "nuts2" else "admin2",
+            level="admin2" if args.level == "nuts3" else "admin1",
             parent=iso3,
             country=iso3,
             codes={"nuts": geo, "nuts_level": want_len - 2},
@@ -391,6 +396,16 @@ def main() -> int:
     decided = ({r["id"]: r["level"] for r in by_level(json.loads(json.dumps(records)))}
                if args.level == "nuts3" else None)
     placed, records = bind_by_outline(records)
+    if args.level == "nuts1":
+        # A NUTS-1 region reaches the map only by its outline. Most are
+        # groupings no map draws -- "Noreste", "Makroregion poludniowy" -- and
+        # the ones that are units are found by outline (France's regions,
+        # Germany's Laender, Italy's five macro-regions); a name left over is
+        # a grouping, or a region the outlines refused, and is not looked for.
+        if records:
+            log(f"  {len(records)} NUTS-1 regions not placed by outline, left out: "
+                + ", ".join(r["codes"]["nuts"] for r in records))
+        records = []
     if decided is not None:
         records = [{**r, "level": decided[r["id"]]} for r in records if r["id"] in decided]
     records = placed + joined_units(records)

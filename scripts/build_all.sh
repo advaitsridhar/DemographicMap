@@ -161,6 +161,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # manual run left behind and aged it silently. A file the build consumes
   # and never refreshes is worse than one it does not have.
   soft python3 -m scripts.fetch_census.ibge_sidra --level municipality
+  soft python3 -m scripts.fetch_census.eurostat --level nuts1
   soft python3 -m scripts.fetch_census.eurostat --level nuts2
   # The ABS publishes 2021-census religion/ancestry by LGA, SA2, postal area
   # and similar -- there is no state-level dataflow (see the G14 catalogue

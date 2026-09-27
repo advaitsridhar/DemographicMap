@@ -285,7 +285,10 @@ ADAPTER_FILES = [
     # beside it. It writes no composition -- the country asks none of the
     # three, which this file's own reading of the report is what established.
     "northkorea_county.json",
-    "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # NUTS-1 where it is a first-level unit -- France's regions, Germany's
+    # Laender, Belgium's regions, Italy's macro-regions, Mazowieckie -- placed
+    # only by outline; the finer files follow and hold their own ground.
+    "eurostat_nuts1.json", "eurostat_nuts2.json", "eurostat_nuts3.json",
     # The 2020 census's median age for every municipality, bound by JIS code.
     "japan_municipal.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
