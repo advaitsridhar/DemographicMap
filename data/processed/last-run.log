@@ -1,6 +1,26 @@
-kosovo: ASKdata, 2024 census
-  retry in 3s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
-  retry in 10s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
-  retry in 30s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
-  retry in 60s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
-PxWeb unreachable: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
+== links https://www.thearda.com/data-archive?fid=ISSP08&tab=3 (?:download|[.]zip|[.]sav|[.]dta|agree|terms) 20
+  HTTP 200 text/html; charset=utf-8 253,987 bytes
+  https://www.thearda.com/data-archive/metadata  [Download Machine Readable Cataloging (MARC) Files Containing Extensive Metadata on the ARD]
+  https://osf.io/download/h7mwt  [Completely labeled SPSS (.sav) file]
+  https://osf.io/download/baj7f  [Completely labeled SPSS (.por) file]
+  https://osf.io/download/npjfu  [Completely labeled Stata file]
+  https://osf.io/download/u8tpc  [Complete codebook with frequencies and percentages file]
+  https://osf.io/download/cy593  [Codebook with frequencies and percentages up to 10 responses file]
+  https://osf.io/download/h3uak  [Codebook with variable descriptions only file]
+  https://osf.io/download/ub5k2  [Excel Data file]
+  https://osf.io/download/5jzem  [Data file]
+  https://osf.io/download/bvyh2  [Column Locations file]
+  (10 links shown)
+== head https://access.gesis.org/dbk/69548 
+  HTTP 200 application/pdf 1,280,538 bytes Content-Disposition=attachment; filename=ZA7505_cdb.pdf
+== grep https://data.europa.eu/api/hub/search/datasets/s2251_91_4_493_eng?locale=en (?:accessURL|downloadURL|gesis|format) 12 120
+  HTTP 200 application/json 66,048 bytes
+  ~ \n* Band B' (BP): Trends in der EU/soziodemografischen\n* Band C: Land/Soziodemografie\n—\nForscher können sich auch an GESIS – Leibniz-Institut für Sozialwissenschaften wenden: [https://www.gesis.org/eurobarometer](https://www.gesis.org/eurobar
+  ~ Soziodemografie\n—\nForscher können sich auch an GESIS – Leibniz-Institut für Sozialwissenschaften wenden: [https://www.gesis.org/eurobarometer](https://www.gesis.org/eurobarometer)","fi":"Tutkimuksessa keskitytään henkilön käsityksiin, asenteis
+  ~ A678B7B443F95C8C303BFD9"],"rights":{"resource":"http://publications.europa.eu/resource/authority/access-right/PUBLIC"},"format":{"format_types":[{"id":"archive","label":{"en":"Archive"}},{"id":"compressed","label":{"en":"Compressed"}},{"id":"pack
+== head https://www.gesis.org/en/eurobarometer-data-service/search-data-access/data-access 
+  HTTP 403 text/html; charset=UTF-8 5,819 bytes
+  Just a moment... Enable JavaScript and cookies to continue
+== text https://www.worldvaluessurvey.org/AJOnline.jsp?WAVE=&COUNTRY= 1500
+  HTTP 200 text/html;charset=utf-8 10,979 bytes
+  WVS Database Welcome to the World Values Survey Data analysis tool . To view data from a wave, click on the wave period from those listed below. You may return to this screen at any time to select a different wave. 2017-2022 2010-2014 2005-2009 1999-2004 1995-1998 1990-1994 1981-1984 Study on values realized in the countries of Europe by EVS research network is not included into the current data-set and is avaliable for both downloading and online-analysis at: http://www.europeanvaluesstudy.eu
