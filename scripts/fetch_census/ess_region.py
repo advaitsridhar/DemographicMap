@@ -161,8 +161,13 @@ LANGUAGES: dict[str, str] = {
     "TIR": "Tigrinya", "TUR": "Turkish", "TWI": "Twi", "UKR": "Ukrainian",
     "URD": "Urdu", "VEC": "Venetian", "VIE": "Vietnamese", "WEL": "Welsh",
     "WLN": "Walloon", "WOL": "Wolof", "YID": "Yiddish", "YOR": "Yoruba",
-    "ZGH": "Berber",
+    "ZGH": "Berber", "CNR": "Montenegrin", "MAL": "Malayalam", "GUJ": "Gujarati",
+    "TAT": "Tatar", "CHV": "Chuvash", "SNK": "Soninke",
 }
+# A code that names a language only where it is spoken: Romansh is Swiss, and
+# "ROH" from a Slovak or Czech interview is a slip the coder made, most likely
+# for Romani (ROM) -- which is not guessed at either.
+ONLY_IN = {"ROH": {"CH"}}
 # Not an answer: refusal, don't know, no answer, and ISO's own non-answers.
 NO_LANGUAGE = {"777", "888", "999", "", ".", "MIS", "UND", "ZXX", "MUL"}
 OTHER_LANGUAGES = "Other languages"
@@ -192,6 +197,10 @@ OLD_CODES: dict[str, str] = {
     # The Netherlands, NUTS 2021: Utrecht and Zuid-Holland recoded when
     # Vijfheerenlanden (57,000 people) moved from the one to the other in 2019.
     "NL31": "NL35", "NL33": "NL36",
+}
+RECODED_NOTE = {
+    "NL35": " save Vijfheerenlanden, which joined Utrecht from Zuid-Holland in 2019",
+    "NL36": " save Vijfheerenlanden, which left for Utrecht in 2019",
 }
 # ESS country codes where NUTS uses another.
 PREFIX = {"GR": "EL", "GB": "UK"}
@@ -400,11 +409,13 @@ def religion_group(code: str) -> str | None:
     return None
 
 
-def language_group(code: str) -> str | None:
+def language_group(code: str, country: str | None = None) -> str | None:
     """'lnghom1' -> the map's label, or None for a non-answer."""
     code = code.strip().upper()
     if code in NO_LANGUAGE:
         return None
+    if country and code in ONLY_IN and country not in ONLY_IN[code]:
+        return OTHER_LANGUAGES
     return LANGUAGES.get(code, OTHER_LANGUAGES)
 
 
@@ -428,9 +439,8 @@ def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[s
     Every respondent is added to their region and to each of its NUTS
     parents, round by round, from ``first_round`` on.
     """
-    classify = religion_group if field == "religion" else language_group
     out: dict[str, dict[str, Any]] = defaultdict(lambda: {
-        "w": Counter(), "n": Counter(), "missing": 0, "rounds": set()})
+        "w": Counter(), "n": Counter(), "missing": 0, "rounds": set(), "recoded": set()})
     unplaced: Counter = Counter()
     unlisted: Counter = Counter()
     for prefix, entry in tabs["rounds"].items():
@@ -444,13 +454,23 @@ def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[s
             if code is None:
                 unplaced[region] += sum(cells.values())
                 continue
+            country = code[:2]
+
+            def classify(key: str) -> str | None:
+                if field == "religion":
+                    return religion_group(key)
+                return language_group(key, country)
+
             if field == "language":
                 for key, n in cells.items():
                     if key.strip().upper() not in LANGUAGES | dict.fromkeys(NO_LANGUAGE):
-                        unlisted[f"{code[:2]}:{key}"] += n
+                        unlisted[f"{country}:{key}"] += n
+            original = PREFIX.get(region[:2], region[:2]) + region[2:]
             for target in ancestors(code):
                 slot = out[target]
                 slot["rounds"].add((prefix, year))
+                if original.strip().upper() != code:
+                    slot["recoded"].add(original.strip().upper())
                 for key, n in cells.items():
                     group = classify(key)
                     if group is None:
@@ -560,6 +580,10 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
             slot, n = got["slot"], got["n"]
             rounds = describe_rounds(slot["rounds"])
             precision = " Low precision: under 300 respondents." if n < LOW_PRECISION else ""
+            if slot.get("recoded"):
+                precision += (f" Rounds coded to an older NUTS version count here through "
+                              f"{', '.join(sorted(slot['recoded']))}, each wholly inside "
+                              f"{got['code']}{RECODED_NOTE.get(got['code'], '')}.")
             if field == "religion" and any(p in SINGLE_QUESTION for p, _ in slot["rounds"]):
                 precision += (" Round 10 here is the self-completion file, which asks the "
                               "denomination alone: those it routes past it are counted as "
@@ -597,7 +621,6 @@ def national(first_round: int = FIRST_ROUND) -> dict[str, dict[str, Any]]:
     data = read_json(NATIONAL, {}) or {}
     out: dict[str, dict[str, Any]] = {}
     for field in ("religion", "language"):
-        classify = religion_group if field == "religion" else language_group
         pooled: dict[str, dict[str, Any]] = defaultdict(lambda: {
             "w": Counter(), "n": Counter(), "missing": 0, "rounds": set()})
         for prefix, tables in (data.get("rounds") or {}).items():
@@ -607,7 +630,8 @@ def national(first_round: int = FIRST_ROUND) -> dict[str, dict[str, Any]]:
                 slot = pooled[cntry]
                 slot["rounds"].add((prefix, ROUNDS[prefix][1]))
                 for key, n in cells.items():
-                    group = classify(key)
+                    group = (religion_group(key) if field == "religion"
+                             else language_group(key, PREFIX.get(cntry, cntry)))
                     if group is None:
                         slot["missing"] += n
                         continue
@@ -693,23 +717,24 @@ def main() -> int:
         return 0
 
     log(f"ess_region: European Social Survey by region, rounds {args.first_round}-11")
-    if args.fetch:
+    if args.fetch or not TABS.exists():
         tabs = fetch(list(ROUNDS))
     else:
-        if not TABS.exists():
-            raise SystemExit(f"ess_region: {TABS} is missing; run with --fetch")
         tabs = json.loads(gzip.decompress(TABS.read_bytes()))
     crosswalk = read_json(CROSSWALK, {}) or {}
     if not crosswalk:
         raise SystemExit(f"ess_region: {CROSSWALK} is missing")
     if args.regions:
         wanted = set(args.regions.split(","))
-        for field in ("religion", "language"):
-            for code, slot in sorted(pool(tabs, field, args.first_round).items()):
-                if code[:2] in wanted:
-                    log(f"  {field} {code} n={int(sum(slot['n'].values()))} "
-                        f"rounds={sorted(p for p, _ in slot['rounds'])} "
-                        f"-> {[p['name'] for p in placement(code, crosswalk)]}")
+        for prefix, entry in tabs["rounds"].items():
+            codes = sorted(r for r in entry["religion"]["n"] if (nuts2024(r) or r)[:2] in wanted)
+            log(f"  {prefix}: " + " ".join(
+                f"{r}={int(sum(entry['religion']['n'][r].values()))}" for r in codes))
+        for code, slot in sorted(pool(tabs, "religion", args.first_round).items()):
+            if code[:2] in wanted:
+                log(f"  religion {code} n={int(sum(slot['n'].values()))} "
+                    f"rounds={sorted(p for p, _ in slot['rounds'])} "
+                    f"-> {[p['name'] for p in placement(code, crosswalk)]}")
     records, report = build(tabs, crosswalk, args.first_round)
     for line in report:
         log(f"  {line}")
