@@ -154,8 +154,10 @@ CLEAN = 0.9
 PART = 0.25
 UNIT = re.compile(r"^UKR_\d{2}_\d{2}$")
 # A city council that is its raion's seat goes into the raion's polygon when
-# at least this share of the city's own area lies there.
-SEAT_MIN = 0.10
+# any of the city's own area lies there (the overlay lists shares from 0.5%):
+# the name says where the city belongs, and the coarse outline only whether
+# the polygon reaches it at all.
+SEAT_MIN = 0.005
 # Below this share of a raion's area inside the polygon its name binds it to,
 # the note says the boundary file draws the raion coarsely.
 COARSE = 0.75
@@ -478,7 +480,7 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
       moved to a neighbour's outline is exactly what that looks like;
     - a city council that is the seat of a raion so placed goes with its
       raion (the map draws no city polygons but Kyiv's and Sevastopol's),
-      provided a tenth of the city's area lies in that polygon;
+      provided the polygon reaches some of the city's area;
     - any other area goes to the polygon holding the majority of its area,
       and a polygon holding a quarter of an area placed elsewhere or nowhere
       this way is refused, as the census's figures cannot be split;
@@ -487,6 +489,12 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
       whole.
     """
     name_of = lambda sid: site_ids[sid]["name"]  # noqa: E731
+    # The polygon the map draws for the city of Kyiv is the city: an area of
+    # the oblast around it that the coarse outlines put inside it is not.
+    kyiv_ids = {s["id"] for s in shapes.get("Kyiv", [])}
+    lies = {m: (hits if by_match.get(m, ("",))[0] == KYIV
+                else [(sid, s) for sid, s in hits if sid not in kyiv_ids])
+            for m, hits in lies.items()}
     home: dict[tuple[str, str], str] = {}
     how: dict[tuple[str, str], str] = {}
     share_of: dict[tuple[str, str], float] = {}
@@ -552,6 +560,14 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
                                   f"{level2[raion]['nso'].title()}, goes with it into "
                                   f"{name_of(sid)!r} ({share:.0%} of its area lies there)")
                 continue
+            report.append(f"{OBLAST[key[0]]}: {nso} is the seat of "
+                          f"{level2[raion]['nso'].title()} but only {share:.0%} of its "
+                          f"area lies in {name_of(sid)!r}; placed by its area instead")
+        elif (near := max(((likeness(level2[r]["nso"], city_name(nso)), r)
+                           for r in seats[key[0]]), default=None)) and near[0] >= LIKE:
+            report.append(f"{OBLAST[key[0]]}: {nso} looks like the seat of "
+                          f"{level2[near[1]]['nso'].title()} ({near[0]:.2f}) but not "
+                          "clearly enough to place it there")
         if not hits or hits[0][1] < HOLD:
             undrawn[key] = "drawn in no polygon by a majority of its area"
             report.append(f"{OBLAST[key[0]]}: {nso} lies in no map polygon by a majority "
