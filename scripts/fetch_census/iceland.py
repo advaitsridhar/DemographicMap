@@ -12,9 +12,9 @@ today's 62 municipalities, which is the wrong vintage for every merged one.
 **admin2** -- table MAN09000 ("Population by municipality, age and sex 1
 December 1997-2022"), which keeps every year in the municipalities of that
 year: 1 December 2017, the last count before the 2018 mergers, for every
-municipality merged since. One that has not been -- its number survives and
-MAN02005, which lays every year out in today's division, gives it the same
-count on 1 January 2018 -- takes MAN02005's latest year instead. Single years
+municipality merged since. One that has not been -- its number is still in
+today's list, and it took in no other (``ABSORBED`` names the two that did
+while keeping their number) -- takes MAN02005's latest year instead. Single years
 of age, with an "unknown" row that is left out of the median and kept in the
 population.
 
@@ -60,6 +60,12 @@ VINTAGE = 2017
 REGION = {"0": "Capital Region", "1": "Capital Region", "2": "Southern Peninsula",
           "3": "Western Region", "4": "Westfjords", "5": "Northwestern Region",
           "6": "Northeastern Region", "7": "Eastern Region", "8": "Southern Region"}
+# Municipalities that kept their number while taking in another after 2017;
+# a merger otherwise gets a new number (Suðurnesjabær 2510, Múlaþing 7400,
+# Skagafjörður 5716, Húnabyggð 5613, the new Stykkishólmur 3716), and the
+# municipalities it replaced drop out of today's list.
+ABSORBED = {"7300": "Fjarðabyggð took in Breiðdalshreppur in 2018",
+            "4607": "Vesturbyggð took in Tálknafjarðarhreppur in 2024"}
 # Hagstofa's name -> the boundary file's, where they differ by more than
 # accents: two municipalities it calls a town (bær) and the office a
 # kaupstaður or the reverse, and two names the boundary file cuts off.
@@ -122,11 +128,11 @@ def main() -> int:
     bound, _m, _l, _p = bind_rows("ISL", "admin2",
                                   {c: (names[c], REGION[c[0]]) for c in units}, aliases=ALIASES)
     # Today's municipalities, which the regions below are summed from, and
-    # which also say which 2017 municipalities are unchanged: MAN02005 lays
-    # every year out in today's division, so a 2017 municipality whose number
-    # survives and whose MAN02005 count on 1 January 2018 is its own count of
-    # a month before is the same territory today. Fjarðabyggð kept its number
-    # when it took in Breiðdalshreppur in 2018, and fails the second test.
+    # which also say which 2017 municipalities are unchanged: one whose number
+    # is still in today's list and that took in no other (ABSORBED) is the
+    # same territory today. Comparing counts cannot say so: MAN02005's
+    # figures for 2018 are recomputed by the method of 2024, and differ from
+    # the 2017 table's by more than a merger would in places like Reykjavík.
     meta = {v["code"]: v for v in request_json(NOW, pause=PAUSE)["variables"]}
     year = meta["Ár"]["values"][-1]
     now_people, now_totals, now_names = read(NOW, year)
@@ -136,11 +142,22 @@ def main() -> int:
         {"code": "Ár", "selection": {"filter": "item", "values": [str(VINTAGE + 1)]}},
         {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
     ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
-    unchanged = {c for c in units if c in then and now_totals.get(c)
-                 and abs(then[c] - totals[c]) <= 0.015 * totals[c] + 5}
-    log(f"  {len(unchanged)} of {len(units)} municipalities are the same territory today "
-        f"(MAN02005 on 1 January {VINTAGE + 1} within 1.5% of MAN09000 on 1 December "
-        f"{VINTAGE}); changed: {sorted(names[c] for c in units if c not in unchanged)}")
+    unchanged = {c for c in units if now_totals.get(c) and c not in ABSORBED}
+    log(f"  {len(unchanged)} of {len(units)} municipalities keep their number and took in "
+        f"no other since {VINTAGE}; merged: "
+        f"{sorted(names[c] for c in units if c not in unchanged)}")
+    drift = sorted((abs(then.get(c, 0) - totals[c]) / totals[c], names[c]) for c in unchanged)
+    log(f"  their count in today's division against their own, 1 January {VINTAGE + 1} "
+        f"against 1 December {VINTAGE}: largest gaps "
+        + ", ".join(f"{n} {100 * d:.1f}%" for d, n in drift[-5:])
+        + " (Hagstofa revised its method in 2024, most where many residents are foreign)")
+    # The revision took people off the register; a merger adds them. A kept
+    # number whose count in today's division is well above its own took in
+    # a municipality ABSORBED does not name, and the run stops.
+    grown = sorted(names[c] for c in unchanged
+                   if then.get(c, 0) - totals[c] > 0.08 * totals[c] + 30)
+    if grown:
+        raise SystemExit(f"iceland: kept numbers that grew by a merger, not in ABSORBED: {grown}")
 
     records = []
     date = f"1 December {VINTAGE}"

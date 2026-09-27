@@ -237,7 +237,12 @@ def labels_religion(label: str) -> str:
     bare = label.lstrip(".").strip()
     return {"Does not feel an affiliation to any religion": "No religion",
             "Refused to answer": "Not stated", "Religious affiliation unknown": "Not stated",
-            "Religion unknown": "Not stated"}.get(bare, bare)
+            "Religion unknown": "Not stated", "Buddhist": "Buddhism",
+            # Estonia's two native faiths, revivals of the pre-Christian
+            # religion; "neopagan" is what files them in the group tree.
+            "Taara Beliver": "Taara faith (neopagan)",
+            "Taara Believer": "Taara faith (neopagan)",
+            "Earth Believer": "Maausk (neopagan)"}.get(bare, bare)
 
 
 def composition(rows, place: str, var: str, total_code: str, skip: set[str],
@@ -474,7 +479,13 @@ def main() -> int:
                 for k, v in census[field][c].items():
                     counts[k] += v
             total = counts.pop("__total__")
-            if field != "religion" and not 0.6 < total / totals[(code, str(year))] < 1.6:
+            # A unit summed from several 2011 units is checked against its own
+            # later count, which catches a part bound twice or missed; a single
+            # unit is bound by its name, and the census and the register
+            # disagree most on the islands, where the register keeps people
+            # who live elsewhere (Ruhnu: 55 counted in 2011, 127 registered).
+            if (field != "religion" and len(parts) > 1
+                    and not 0.6 < total / totals[(code, str(year))] < 1.6):
                 log(f"  {u['name']}: {table} counts {total:,.0f} in {CENSUS_YEAR} against "
                     f"{totals[(code, str(year))]:,.0f} in {year}; {field} left out")
                 continue
