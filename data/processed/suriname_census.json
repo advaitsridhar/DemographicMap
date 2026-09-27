@@ -1327,34 +1327,54 @@
     },
     "religion": [
       {
-        "group": "Christianity",
-        "pct": 58.7,
-        "count": 9762
+        "group": "Roman Catholic",
+        "pct": 36.5,
+        "count": 6678
       },
       {
-        "group": "Not stated",
-        "pct": 17.4,
-        "count": 2901
-      },
-      {
-        "group": "Traditional religion and other",
-        "pct": 11.5,
-        "count": 1911
-      },
-      {
-        "group": "Islam",
-        "pct": 6.8,
-        "count": 1134
+        "group": "Full Gospel",
+        "pct": 26.1,
+        "count": 4768
       },
       {
         "group": "No religion",
-        "pct": 4.7,
-        "count": 779
+        "pct": 10.8,
+        "count": 1984
       },
       {
-        "group": "Hinduism",
-        "pct": 0.9,
-        "count": 155
+        "group": "Moravian",
+        "pct": 6.5,
+        "count": 1180
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.4,
+        "count": 1162
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.8,
+        "count": 871
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.6,
+        "count": 842
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.9,
+        "count": 528
+      },
+      {
+        "group": "Kejawen",
+        "pct": 1.0,
+        "count": 184
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.5,
+        "count": 97
       }
     ],
     "language": [
@@ -1504,6 +1524,12 @@
         "name": "General Bureau of Statistics (ABS) Suriname, Census VII (2004): population characteristics per ressort",
         "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census-profile-on-ressort-level.xls",
         "year": 2004
+      },
+      {
+        "field": "religion",
+        "name": "General Bureau of Statistics (ABS) Suriname, Census 2012: District Results Volume III (Marowijne, Brokopondo, Sipaliwini), population by religion",
+        "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census8dis3.pdf",
+        "year": 2012
       }
     ],
     "country": "SUR",
@@ -1514,8 +1540,8 @@
     "median_age_note": "Interpolated within the five-year age group holding the middle person, 2012, the district; people of unknown age left out.",
     "ethnicity_year": 2012,
     "ethnicity_note": "Ethnic group (question 8), 2012; \"Weet niet\" and \"Geen antwoord\" are written together as Not stated, the district.",
-    "religion_year": 2004,
-    "religion_note": "Religion in the six groups the 2004 census's ressort profile tabulates, the district; the 2012 census publishes none below the country.",
+    "religion_year": 2012,
+    "religion_note": "Religion by denomination, 2012, from the ABS's District Results Volume III; \"E.B.G.\" (the Evangelische Broedergemeente) is written as Moravian, \"Volle Evangelie\" as Full Gospel and \"Javanisme\" as Kejawen.",
     "language_year": 2004,
     "language_basis": "households by the language most spoken in them",
     "language_note": "The language most spoken in the household, share of the 3,987 households, 2004, the district; the 2012 census publishes none below the country."
@@ -1778,34 +1804,49 @@
     },
     "religion": [
       {
-        "group": "Christianity",
-        "pct": 52.4,
-        "count": 7442
+        "group": "Roman Catholic",
+        "pct": 27.9,
+        "count": 4443
       },
       {
-        "group": "Not stated",
-        "pct": 18.5,
-        "count": 2632
-      },
-      {
-        "group": "Traditional religion and other",
-        "pct": 16.8,
-        "count": 2383
+        "group": "Moravian",
+        "pct": 22.7,
+        "count": 3606
       },
       {
         "group": "No religion",
-        "pct": 11.8,
-        "count": 1671
+        "pct": 17.5,
+        "count": 2778
       },
       {
-        "group": "Hinduism",
-        "pct": 0.4,
-        "count": 57
+        "group": "Other religion",
+        "pct": 10.2,
+        "count": 1625
       },
       {
-        "group": "Islam",
-        "pct": 0.2,
-        "count": 30
+        "group": "Not stated",
+        "pct": 7.1,
+        "count": 1133
+      },
+      {
+        "group": "Full Gospel",
+        "pct": 6.9,
+        "count": 1098
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.8,
+        "count": 1086
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.6,
+        "count": 88
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.3,
+        "count": 52
       }
     ],
     "language": [
@@ -1945,6 +1986,12 @@
         "name": "General Bureau of Statistics (ABS) Suriname, Census VII (2004): population characteristics per ressort",
         "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census-profile-on-ressort-level.xls",
         "year": 2004
+      },
+      {
+        "field": "religion",
+        "name": "General Bureau of Statistics (ABS) Suriname, Census 2012: District Results Volume III (Marowijne, Brokopondo, Sipaliwini), population by religion",
+        "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census8dis3.pdf",
+        "year": 2012
       }
     ],
     "country": "SUR",
@@ -1955,8 +2002,8 @@
     "median_age_note": "Interpolated within the five-year age group holding the middle person, 2012, the district; people of unknown age left out.",
     "ethnicity_year": 2012,
     "ethnicity_note": "Ethnic group (question 8), 2012; \"Weet niet\" and \"Geen antwoord\" are written together as Not stated, the district.",
-    "religion_year": 2004,
-    "religion_note": "Religion in the six groups the 2004 census's ressort profile tabulates, the district; the 2012 census publishes none below the country.",
+    "religion_year": 2012,
+    "religion_note": "Religion by denomination, 2012, from the ABS's District Results Volume III; \"E.B.G.\" (the Evangelische Broedergemeente) is written as Moravian, \"Volle Evangelie\" as Full Gospel and \"Javanisme\" as Kejawen.",
     "language_year": 2004,
     "language_basis": "households by the language most spoken in them",
     "language_note": "The language most spoken in the household, share of the 3,749 households, 2004, the district; the 2012 census publishes none below the country."
@@ -1991,34 +2038,49 @@
     },
     "religion": [
       {
-        "group": "Christianity",
-        "pct": 35.2,
-        "count": 12018
+        "group": "No religion",
+        "pct": 29.3,
+        "count": 10851
       },
       {
-        "group": "Traditional religion and other",
-        "pct": 26.8,
-        "count": 9133
+        "group": "Other religion",
+        "pct": 25.1,
+        "count": 9315
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.2,
+        "count": 4899
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.7,
+        "count": 3978
+      },
+      {
+        "group": "Moravian",
+        "pct": 9.0,
+        "count": 3339
+      },
+      {
+        "group": "Full Gospel",
+        "pct": 7.7,
+        "count": 2867
       },
       {
         "group": "Not stated",
-        "pct": 22.9,
-        "count": 7804
+        "pct": 4.6,
+        "count": 1706
       },
       {
-        "group": "No religion",
-        "pct": 14.8,
-        "count": 5065
+        "group": "Hindu",
+        "pct": 0.2,
+        "count": 56
       },
       {
-        "group": "Hinduism",
-        "pct": 0.3,
-        "count": 93
-      },
-      {
-        "group": "Islam",
+        "group": "Muslim",
         "pct": 0.1,
-        "count": 23
+        "count": 54
       }
     ],
     "language": [
@@ -2163,6 +2225,12 @@
         "name": "General Bureau of Statistics (ABS) Suriname, Census VII (2004): population characteristics per ressort",
         "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census-profile-on-ressort-level.xls",
         "year": 2004
+      },
+      {
+        "field": "religion",
+        "name": "General Bureau of Statistics (ABS) Suriname, Census 2012: District Results Volume III (Marowijne, Brokopondo, Sipaliwini), population by religion",
+        "url": "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census8dis3.pdf",
+        "year": 2012
       }
     ],
     "country": "SUR",
@@ -2173,8 +2241,8 @@
     "median_age_note": "Interpolated within the five-year age group holding the middle person, 2012, the district; people of unknown age left out.",
     "ethnicity_year": 2012,
     "ethnicity_note": "Ethnic group (question 8), 2012; \"Weet niet\" and \"Geen antwoord\" are written together as Not stated, the district.",
-    "religion_year": 2004,
-    "religion_note": "Religion in the six groups the 2004 census's ressort profile tabulates, the district; the 2012 census publishes none below the country.",
+    "religion_year": 2012,
+    "religion_note": "Religion by denomination, 2012, from the ABS's District Results Volume III; \"E.B.G.\" (the Evangelische Broedergemeente) is written as Moravian, \"Volle Evangelie\" as Full Gospel and \"Javanisme\" as Kejawen.",
     "language_year": 2004,
     "language_basis": "households by the language most spoken in them",
     "language_note": "The language most spoken in the household, share of the 9,915 households, 2004, the district; the 2012 census publishes none below the country."
