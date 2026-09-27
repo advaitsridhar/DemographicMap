@@ -1,56 +1,6 @@
-== get https://www.stat.gov.az/source/demoqraphy/az/001_23.xls
-  828,928 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_23.xls: 35 sheets: 01.01.2020 il (bütün əhali) | 01.01.2020 il (kişilər) | 01.01.2020 il (qadınlar) | 01.01.2020 il (şəhər yerləri) | 01.01.2020 il (kənd yerləri) | 01.01.2021 il (bütün əhali) | 01.01.2021 il (kişilər) | 01.01.2021 il (qadınlar) | 01.01.2021 il (şəhər yerləri) | 01.01.2021 il (kənd yerləri) | 01.01.2022 il (bütün əhali) | 01.01.2022 il (kişilər) | 01.01.2022 il (qadınlar) | 01.01.2022 il (şəhər yerləri) | 01.01.2022 il (kənd yerləri) | 01.01.2023 il (bütün əhali) | 01.01.2023 il (kişilər) | 01.01.2023 il (qadınlar) | 01.01.2023 il (şəhər yerləri) | 01.01.2023 il (kənd yerləri) | 01.01.2024 il (bütün əhali) | 01.01.2024 il (kişilər) | 01.01.2024 il (qadınlar) | 01.01.2024 il (şəhər yerləri) | 01.01.2024 il (kənd yerləri) | 01.01.2025 il (bütün əhali) | 01.01.2025 il (kişilər) | 01.01.2025 il (qadınlar) | 01.01.2025 il (şəhər yerləri) | 01.01.2025 il (kənd yerləri) | 01.01.2026 il (bütün əhali) | 01.01.2026 il (kişilər) | 01.01.2026 il (qadınlar) | 01.01.2026 il (şəhər yerləri) | 01.01.2026 il (kənd yerləri)
-  -- sheet '01.01.2020 il (bütün əhali)': 136 rows x 22 cols
-    r24:  | Naxçıvan iqtisadi rayonu-cəmi | 459811.0
-    r26:  | Naxçıvan şəhəri | 94568.0
-    r31:  | Sədərək rayonu | 22569.0
-    r35:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 867854.0
-    r38:  | Abşeron rayonu | 428498.0
-  -- sheet '01.01.2021 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 461716.0
-    r28:  | Naxçıvan şəhəri | 95137.0
-    r33:  | Sədərək rayonu | 22671.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 870195.0
-    r40:  | Abşeron rayonu | 429575.0
-  -- sheet '01.01.2022 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 463146.0
-    r28:  | Naxçıvan şəhəri | 95653.0
-    r33:  | Sədərək rayonu | 22747.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 871187.0
-    r40:  | Abşeron rayonu | 430094.0
-  -- sheet '01.01.2023 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 465731.0
-    r28:  | Naxçıvan şəhəri | 96385.0
-    r33:  | Sədərək rayonu | 22887.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 874088.0
-    r40:  | Abşeron rayonu | 431493.0
-  -- sheet '01.01.2024 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 468566.0
-    r28:  | Naxçıvan şəhəri | 97205.0
-    r33:  | Sədərək rayonu | 23038.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 876485.0
-    r40:  | Abşeron rayonu | 432816.0
-  -- sheet '01.01.2025 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 470943.0
-    r28:  | Naxçıvan şəhəri | 97855.0
-    r33:  | Sədərək rayonu | 23219.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 878437.0
-    r40:  | Abşeron rayonu | 434015.0
-  -- sheet '01.01.2026 il (bütün əhali)': 138 rows x 22 cols
-    r26:  | Naxçıvan iqtisadi rayonu-cəmi | 472429.0
-    r28:  | Naxçıvan şəhəri | 98073.0
-    r33:  | Sədərək rayonu | 23365.0
-    r37:  | Abşeron-Xızı iqtisadi rayonu-cəmi | 880209.0
-    r40:  | Abşeron rayonu | 435187.0
-== get https://www.stat.gov.az/source/demoqraphy/az/001_19.xls
-  112,640 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
-  https://www.stat.gov.az/source/demoqraphy/az/001_19.xls: 1 sheets: 1.19.
-  -- sheet '1.19.': 475 rows x 11 cols
-    r83:  | Naxçıvan iqtisadi rayonu - cəmi | 472.4
-    r85:  | Naxçıvan şəhəri | 98.1
-    r86:  | Naxçıvan şəhəri | 83.8
-    r101:  | Sədərək rayonu | 23.4
-    r109:  | Abşeron-Xızı iqtisadi rayonu - cəmi | 880.2
-    r115:  | Abşeron rayonu | 435.2
-    r116:  | Xırdalan şəhəri | 196.2
+  table 1.23 for 1 January 2026: 101 rows, every row's groups and sexes making its total
+  the 75 rayons and cities make the country's 10,262,351
+  Lənkəran rayonu: the map draws the rayon as 2 polygons; its remainder is written on neither
+  Ağdərə rayonu (12,173): Aghdara rayon, re-formed in Azstat's classification; the map draws no polygon for it
+  79 of 79 polygons written; left: []
+  wrote data/processed/azerbaijan_rayon.json (276 kB)
