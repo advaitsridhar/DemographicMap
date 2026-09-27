@@ -210,6 +210,30 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "NIC": {
         "language": "Nicaragua's census does not ask the population's language. The 2005 census's only language question (P08, \"¿Habla la lengua o idioma del pueblo indígena o comunidad étnica a la que pertenece?\") was put only to the members of the seven Caribbean-coast peoples and communities -- Rama, Garífuna, Mayangna, Miskitu, Ulwa, Creole and the coast's mestizos, whose 270,870 people are exactly its answers -- and asks whether they speak their people's language, not what anybody speaks. It is not a composition, and the rest of the country was not asked.",
     },
+    # The Caribbean's censuses that ask no language question, each measured
+    # on the questionnaire or the census base's data dictionary. Belize's
+    # and Suriname's do ask, and their readers fill it.
+    "JAM": {
+        "language": "Jamaica's census does not ask language. STATIN's 2011 Individual Questionnaire (4 pages) asks relationship, sex, age, birthplace, religion and ethnic origin, education, training, work, fertility and disability; no question asks what language anyone speaks.",
+    },
+    "TTO": {
+        "language": "Trinidad and Tobago's census does not ask language. The CSO's 2011 questionnaire (21 pages) asks religion and ethnic group; 'speak' appears only among its disability questions.",
+    },
+    "DMA": {
+        "language": "Dominica's census does not ask language. The 2011 Population and Housing Census questionnaire (15 pages) asks ethnic group (Q44) and religion (Q45); 'language' appears only in its disability questions.",
+    },
+    "ATG": {
+        "language": "Antigua and Barbuda's census does not ask language. The 2011 person questionnaire (8 pages) asks ethnic group and religion and nothing on language, and the census's REDATAM base (ATGPHC2011) holds no language variable.",
+    },
+    "LCA": {
+        "language": "Saint Lucia's census does not ask language. Neither the 2022 census's REDATAM base (PHC2022) nor the 2010 base (PHC2010C) holds a language variable -- their data dictionaries list every variable -- only difficulty speaking.",
+    },
+    "VCT": {
+        "language": "Saint Vincent and the Grenadines' census does not ask language. The 2012 census's REDATAM base (SVG2012) holds no language variable, its data dictionary listing every one, and the 2023 census report tabulates none.",
+    },
+    "BHS": {
+        "language": "The Bahamas' 2010 census did not ask language. The First Release's preface lists the individual questionnaire's topics -- age, sex, marital and union status, religion, racial group, citizenship and education -- and no island report tabulates language.",
+    },
     "SLV": {
         "religion": "El Salvador's census does not ask religion. The BCR describes the 2024 census's 74 questions as six sections -- location, dwelling, household, mortality, international emigration and population, the last covering age, sex, marital status, birthplace, schooling and indigenous and Afro-descendant self-identification -- and its 135-page census report, whose chapters run from population structure through fertility, mortality, migration, ethnicity, disability, education, language, work and ICT to housing, has none on religion.",
         "language": "El Salvador's census asks no first or main language. The 2024 census asks everyone aged 3 and over whether they speak a second language and which (the BCR's tables TAB_IDIO_1 and TAB_IDIO_2: 427,368 of 5,635,059 said yes, naming English, Náhuat, Pisbi, Potón, LESSA and others). That counts the speakers of second languages, several per person, not what the population speaks, so it is not a composition.",

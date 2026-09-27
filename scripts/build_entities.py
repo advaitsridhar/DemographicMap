@@ -456,6 +456,35 @@ ADAPTER_FILES = [
     "drc_province.json", "russia_subject.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
+    # The Caribbean from its statistics offices' own tables, after the Census
+    # Bureau's tabulations above (jamaica_parish, bahamas_island) so a tie
+    # goes to the office. Jamaica's 2022 count by parish and by community,
+    # bound by name within the parish (jamaica_census). Trinidad and
+    # Tobago's 2011 Demographic Report by municipality, Arima inside the
+    # map's Tunapuna-Piarco (tto_census).
+    "jamaica_census.json", "tto_census.json",
+    # Guyana's 2012 compositions and median age by region and its 2022
+    # preliminary count; the sub-regions as stated gaps (guyana_census).
+    # Suriname's 2012 census by ressort -- ethnic group, age and sex -- with
+    # 2004's ressort religion and household language (suriname_census).
+    "guyana_census.json", "suriname_census.json",
+    # Belize's 2022 tables by district (belize_census); The Bahamas' 2010
+    # island reports for the islands the map draws whole (bahamas_census);
+    # Barbados's 2021 tables by parish with the 2010 population
+    # (barbados_census).
+    "belize_census.json", "bahamas_census.json", "barbados_census.json",
+    # Median age and sex ratio from the Census Bureau's age-sex sheets for
+    # Dominica's parishes and the Bahamas' whole islands (caribbean_uscb).
+    "dominica_census.json", "bahamas_age_sex.json",
+    # Saint Lucia's 2022 districts and 2010 settlements (lucia_census),
+    # Grenada's 2021 parishes (grenada_census), Saint Vincent's 2012 districts
+    # summed into parishes with 2023's divisions where whole (vincent_census),
+    # Antigua and Barbuda's 2011 parishes (antigua_census).
+    "lucia_census.json", "grenada_census.json", "vincent_census.json",
+    "antigua_census.json",
+    # Last, and only gaps: what none of the above fills, with the reason. A
+    # gap never replaces a value, so its place in the list costs nothing.
+    "caribbean_gaps.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
     "canada_province.json", "canada_economic_region.json",
