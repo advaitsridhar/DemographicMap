@@ -1,0 +1,498 @@
+[
+  {
+    "id": "IRL-PROV-Connacht",
+    "level": "admin1",
+    "name": "Connacht",
+    "parent": "IRL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.9,
+        "count": 442722
+      },
+      {
+        "group": "No religion",
+        "pct": 12.2,
+        "count": 72051
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.2,
+        "count": 42501
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.8,
+        "count": 34089
+      }
+    ],
+    "language": [
+      {
+        "group": "English or Irish only",
+        "pct": 88.3,
+        "count": 504569
+      },
+      {
+        "group": "Other language",
+        "pct": 7.6,
+        "count": 43404
+      },
+      {
+        "group": "Polish",
+        "pct": 2.6,
+        "count": 14753
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 5284
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 3644
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White Irish",
+        "pct": 79.9,
+        "count": 465811
+      },
+      {
+        "group": "Other White",
+        "pct": 9.0,
+        "count": 52429
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.2,
+        "count": 30223
+      },
+      {
+        "group": "Asian or Asian Irish",
+        "pct": 2.1,
+        "count": 12432
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 9434
+      },
+      {
+        "group": "White Irish Traveller",
+        "pct": 1.2,
+        "count": 6714
+      },
+      {
+        "group": "Black or Black Irish",
+        "pct": 1.0,
+        "count": 5848
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "CSO Census 2022 (Ireland), SAPMAP local electoral areas",
+        "url": "https://data.cso.ie/product/c2022p5",
+        "license": "Creative Commons Attribution 4.0"
+      }
+    ],
+    "country": "IRL",
+    "match_by": "shape_id",
+    "shape_id": "36931253B96239511377188",
+    "religion_year": 2022,
+    "religion_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T4LEA22, of all usual residents, in the four categories the CSO publishes for local electoral areas -- Catholic, Other religion, No religion, Not stated -- so ‘Other religion’ holds the Church of Ireland, Presbyterians, Orthodox, Muslims and everyone else together, and a filter for Christianity reads a province at its **Catholic share alone**. (The CSO publishes a fuller classification for counties and provinces; these figures are the areas' four categories added.) Connacht: its 25 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people), which the census counts in Munster, inside this province's outline; these figures leave it out.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T2LEA22. Of all usual residents. The CSO's eight-category ethnic or cultural background question. White Irish Traveller is a distinct category here, as it is in Northern Ireland's census. Connacht: its 25 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people), which the census counts in Munster, inside this province's outline; these figures leave it out.",
+    "language_year": 2022,
+    "language_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T5LEA22 and SAP2022T3T1LEA22. Of usual residents aged 3 and over: the census asks ‘Do you speak a language other than English or Irish at home?’ and which. At local electoral area the CSO names Polish, Spanish and French and pools every other language, with speakers who did not name theirs, as Other language. Everyone else aged 3 and over is ‘English or Irish only’: those who said they speak no other language at home, and also those who did not answer the question, whom the CSO does not publish apart at this geography (its table has no not-stated row for the question itself), so the category is an upper bound. The census asks Irish as an ability, not as a home language, so English and Irish are not told apart. Connacht: its 25 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people), which the census counts in Munster, inside this province's outline; these figures leave it out."
+  },
+  {
+    "id": "IRL-PROV-Leinster",
+    "level": "admin1",
+    "name": "Leinster",
+    "parent": "IRL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 64.6,
+        "count": 1855671
+      },
+      {
+        "group": "No religion",
+        "pct": 16.6,
+        "count": 477355
+      },
+      {
+        "group": "Other religion",
+        "pct": 11.4,
+        "count": 327309
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.3,
+        "count": 210019
+      }
+    ],
+    "language": [
+      {
+        "group": "English or Irish only",
+        "pct": 82.4,
+        "count": 2284161
+      },
+      {
+        "group": "Other language",
+        "pct": 12.9,
+        "count": 357236
+      },
+      {
+        "group": "Polish",
+        "pct": 2.4,
+        "count": 66509
+      },
+      {
+        "group": "Spanish",
+        "pct": 1.2,
+        "count": 33805
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 31033
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White Irish",
+        "pct": 73.6,
+        "count": 2088079
+      },
+      {
+        "group": "Other White",
+        "pct": 10.7,
+        "count": 303780
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.7,
+        "count": 191324
+      },
+      {
+        "group": "Asian or Asian Irish",
+        "pct": 4.1,
+        "count": 116301
+      },
+      {
+        "group": "Other",
+        "pct": 2.4,
+        "count": 66964
+      },
+      {
+        "group": "Black or Black Irish",
+        "pct": 1.9,
+        "count": 53077
+      },
+      {
+        "group": "White Irish Traveller",
+        "pct": 0.6,
+        "count": 16455
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "CSO Census 2022 (Ireland), SAPMAP local electoral areas",
+        "url": "https://data.cso.ie/product/c2022p5",
+        "license": "Creative Commons Attribution 4.0"
+      }
+    ],
+    "country": "IRL",
+    "match_by": "shape_id",
+    "shape_id": "36931253B83705839043930",
+    "religion_year": 2022,
+    "religion_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T4LEA22, of all usual residents, in the four categories the CSO publishes for local electoral areas -- Catholic, Other religion, No religion, Not stated -- so ‘Other religion’ holds the Church of Ireland, Presbyterians, Orthodox, Muslims and everyone else together, and a filter for Christianity reads a province at its **Catholic share alone**. (The CSO publishes a fuller classification for counties and provinces; these figures are the areas' four categories added.) Leinster: its 82 local electoral areas added together, each in the province of its county.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T2LEA22. Of all usual residents. The CSO's eight-category ethnic or cultural background question. White Irish Traveller is a distinct category here, as it is in Northern Ireland's census. Leinster: its 82 local electoral areas added together, each in the province of its county.",
+    "language_year": 2022,
+    "language_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T5LEA22 and SAP2022T3T1LEA22. Of usual residents aged 3 and over: the census asks ‘Do you speak a language other than English or Irish at home?’ and which. At local electoral area the CSO names Polish, Spanish and French and pools every other language, with speakers who did not name theirs, as Other language. Everyone else aged 3 and over is ‘English or Irish only’: those who said they speak no other language at home, and also those who did not answer the question, whom the CSO does not publish apart at this geography (its table has no not-stated row for the question itself), so the category is an upper bound. The census asks Irish as an ability, not as a home language, so English and Irish are not told apart. Leinster: its 82 local electoral areas added together, each in the province of its county."
+  },
+  {
+    "id": "IRL-PROV-Munster",
+    "level": "admin1",
+    "name": "Munster",
+    "parent": "IRL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 73.0,
+        "count": 1002293
+      },
+      {
+        "group": "No religion",
+        "pct": 13.2,
+        "count": 181274
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.5,
+        "count": 103369
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.3,
+        "count": 86410
+      }
+    ],
+    "language": [
+      {
+        "group": "English or Irish only",
+        "pct": 87.5,
+        "count": 1163003
+      },
+      {
+        "group": "Other language",
+        "pct": 7.9,
+        "count": 105296
+      },
+      {
+        "group": "Polish",
+        "pct": 2.8,
+        "count": 37280
+      },
+      {
+        "group": "French",
+        "pct": 1.0,
+        "count": 13457
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 9482
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White Irish",
+        "pct": 79.7,
+        "count": 1080002
+      },
+      {
+        "group": "Other White",
+        "pct": 9.0,
+        "count": 121437
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.8,
+        "count": 78107
+      },
+      {
+        "group": "Asian or Asian Irish",
+        "pct": 2.4,
+        "count": 31999
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 21115
+      },
+      {
+        "group": "Black or Black Irish",
+        "pct": 1.1,
+        "count": 14813
+      },
+      {
+        "group": "White Irish Traveller",
+        "pct": 0.6,
+        "count": 8375
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "CSO Census 2022 (Ireland), SAPMAP local electoral areas",
+        "url": "https://data.cso.ie/product/c2022p5",
+        "license": "Creative Commons Attribution 4.0"
+      }
+    ],
+    "country": "IRL",
+    "match_by": "shape_id",
+    "shape_id": "36931253B96342403647060",
+    "religion_year": 2022,
+    "religion_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T4LEA22, of all usual residents, in the four categories the CSO publishes for local electoral areas -- Catholic, Other religion, No religion, Not stated -- so ‘Other religion’ holds the Church of Ireland, Presbyterians, Orthodox, Muslims and everyone else together, and a filter for Christianity reads a province at its **Catholic share alone**. (The CSO publishes a fuller classification for counties and provinces; these figures are the areas' four categories added.) Munster: its 46 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people) inside Connacht's outline; the census counts it in Munster, and so do these figures.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T2LEA22. Of all usual residents. The CSO's eight-category ethnic or cultural background question. White Irish Traveller is a distinct category here, as it is in Northern Ireland's census. Munster: its 46 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people) inside Connacht's outline; the census counts it in Munster, and so do these figures.",
+    "language_year": 2022,
+    "language_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T5LEA22 and SAP2022T3T1LEA22. Of usual residents aged 3 and over: the census asks ‘Do you speak a language other than English or Irish at home?’ and which. At local electoral area the CSO names Polish, Spanish and French and pools every other language, with speakers who did not name theirs, as Other language. Everyone else aged 3 and over is ‘English or Irish only’: those who said they speak no other language at home, and also those who did not answer the question, whom the CSO does not publish apart at this geography (its table has no not-stated row for the question itself), so the category is an upper bound. The census asks Irish as an ability, not as a home language, so English and Irish are not told apart. Munster: its 46 local electoral areas added together, each in the province of its county. The boundary file draws the Newport local electoral area (Tipperary, 17,525 people) inside Connacht's outline; the census counts it in Munster, and so do these figures."
+  },
+  {
+    "id": "IRL-PROV-Ulster",
+    "level": "admin1",
+    "name": "Ulster",
+    "parent": "IRL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.3,
+        "count": 239726
+      },
+      {
+        "group": "Other religion",
+        "pct": 11.1,
+        "count": 34928
+      },
+      {
+        "group": "No religion",
+        "pct": 7.9,
+        "count": 24775
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.7,
+        "count": 14647
+      }
+    ],
+    "language": [
+      {
+        "group": "English or Irish only",
+        "pct": 90.0,
+        "count": 272473
+      },
+      {
+        "group": "Other language",
+        "pct": 7.2,
+        "count": 21922
+      },
+      {
+        "group": "Polish",
+        "pct": 1.8,
+        "count": 5426
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 1794
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 1182
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White Irish",
+        "pct": 83.6,
+        "count": 259164
+      },
+      {
+        "group": "Other White",
+        "pct": 7.9,
+        "count": 24435
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.4,
+        "count": 13522
+      },
+      {
+        "group": "Asian or Asian Irish",
+        "pct": 1.8,
+        "count": 5474
+      },
+      {
+        "group": "Other",
+        "pct": 1.2,
+        "count": 3653
+      },
+      {
+        "group": "Black or Black Irish",
+        "pct": 0.8,
+        "count": 2507
+      },
+      {
+        "group": "White Irish Traveller",
+        "pct": 0.5,
+        "count": 1405
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "CSO Census 2022 (Ireland), SAPMAP local electoral areas",
+        "url": "https://data.cso.ie/product/c2022p5",
+        "license": "Creative Commons Attribution 4.0"
+      }
+    ],
+    "country": "IRL",
+    "match_by": "shape_id",
+    "shape_id": "36931253B39633918324997",
+    "religion_year": 2022,
+    "religion_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T4LEA22, of all usual residents, in the four categories the CSO publishes for local electoral areas -- Catholic, Other religion, No religion, Not stated -- so ‘Other religion’ holds the Church of Ireland, Presbyterians, Orthodox, Muslims and everyone else together, and a filter for Christianity reads a province at its **Catholic share alone**. (The CSO publishes a fuller classification for counties and provinces; these figures are the areas' four categories added.) Ulster: its 13 local electoral areas added together, each in the province of its county.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T2LEA22. Of all usual residents. The CSO's eight-category ethnic or cultural background question. White Irish Traveller is a distinct category here, as it is in Northern Ireland's census. Ulster: its 13 local electoral areas added together, each in the province of its county.",
+    "language_year": 2022,
+    "language_note": "CSO Census 2022 (Ireland), SAPMAP local electoral areas, SAP2022T2T5LEA22 and SAP2022T3T1LEA22. Of usual residents aged 3 and over: the census asks ‘Do you speak a language other than English or Irish at home?’ and which. At local electoral area the CSO names Polish, Spanish and French and pools every other language, with speakers who did not name theirs, as Other language. Everyone else aged 3 and over is ‘English or Irish only’: those who said they speak no other language at home, and also those who did not answer the question, whom the CSO does not publish apart at this geography (its table has no not-stated row for the question itself), so the category is an upper bound. The census asks Irish as an ability, not as a home language, so English and Irish are not told apart. Ulster: its 13 local electoral areas added together, each in the province of its county."
+  }
+]
