@@ -1,54 +1,627 @@
-probe_xlsx: https://www.statistica.sm/pub1/StatisticaSM/dam/jcr:45790a21-d920-45de-b931-1836dc4fb29d/Pop_Anno_Eta_Pos.xlsx
-  9,940 bytes
-  1 sheet(s): Foglio1
+probe_pdf: https://imsee.mc/en/content/download/310026/file/2025%20Census%20Report.pdf
+  505,197 bytes
+  23 pages
+probe_pdf: 23 pages, 20 mention ['ward', 'district', 'quartier', 'religion', 'language', 'median', 'sex', 'age']
+=== front matter ===
+  
+2025 POPULATION CENSUS 
+ 
+ 
+      
 
---- sheet 'Foglio1' (113 rows x 7 cols) --------------------
-  Popolazione residente e soggiornante per
+ 2025 Population census – May 2026 2 
+ 
+TABLE OF CONTENTS 
+ 
+Introduction .................................................................................................................................... 3 
+1. Evolution and main characteristics of the resident population ......................................... 4 
+1.1. Monaco’s population approaches the 39 000 mark in 2025 ............................................................................. 4 
+1.2. More than four residents in ten live in Monte-Carlo and La Rousse............................................................... 5 
+1.3. A population moving towards gender parity ...................................................................................................... 6 
+1.4. An ageing resident population ............................................................................................................................ 7 
+1.5. One resident aged 18 or over in two is married ................................................................................................ 9 
+1.6. Monegasques, French and Italians are the three main nationalities ............................................................ 10 
+1.7. The growth of international communities over the censuses ........................................................................ 11 
+1.8. Demographic characteristics that differ by nationality .................................................................................. 13 
+1.9. More than 2,700 new residents ......................................................................................................................... 14 
+1.10. More than one-third of residents are employed in Monaco ........................................................................... 16 
+1.11. The Monaco crèches  welcome four in ten resident children aged 2 and under .......................................... 17 
+2. Key housing characteristics ............................................................................................... 18 
+2.1. More than 22,500 housing units were recorded in Monaco in 2025 .............................................................. 18 
+2.2. The vast majority of housing units in Monaco are in the private sector ....................................................... 19 
+Methodological notes .................................................................................................................. 20 
   
-   | Residenti |  |  | Soggiornanti
-   | M | F | Totale | M | F | Totale
-  0 | 103 | 51 | 154 | . | . | .
-  1 | 92 | 76 | 168 | 1 | 4 | 5
-  2 | 81 | 90 | 171 | 3 | 1 | 4
-  3 | 112 | 96 | 208 | 3 | 2 | 5
-  4 | 109 | 126 | 235 | 2 | 2 | 4
-  5 | 117 | 115 | 232 | 2 | 2 | 4
-  6 | 124 | 132 | 256 | 2 | 2 | 4
-  7 | 115 | 116 | 231 | 1 | 5 | 6
+ 2025 Population census – May 2026 3 
+Introduction 
+The population census is a fundamental tool for gaining a better understanding of the demographic and 
+residential characteristics of a territory. In Monaco, this statistical mission dates back to 1757 and has been 
+regularly updated since then. An important milestone was reached in 2023, with the adoption of a new 
+census method based on administrative sources, known as “register -based,” in place of  traditional field 
+surveys. 
+This methodological change, validated by the Scientific Council for Statistics and Economic Studies, the 
+Government and the Prince’ s Palace, marks a major step forward: it now makes it possible to update 
+demographic data on the resident population annually, improving availability and reducing operating costs. 
+This 2025 report forms part of this new system and corresponds to the third year of implementation of the 
+new statistical approach. It highlights the main demographic changes observed and confirms the gradual 
+consolidation of this method. However, comparisons with results based on the previous  technique should 
+be interpreted with caution due to the methodological break introduced in 2023. 
+  
+ 2025 Population census – May 2026 4 
+1. Evolution and main characteristics of the resident population 
+1.1. Monaco’s population approaches the 39 000 mark in 2025 
+Since the first census in 1757, the Principality of Monaco has undergone numerous changes, particularly 
+territorial ones. These events have had an impact on the size of the population over the centuries as well as 
+on the frequency of the censuses, which we re carried out every five to ten years between 1861 and 2023 , 
+and annually since then. 
+Figure 1. Change in the resident population from 1757 to 2025
+ 
+ Change in calculation method  
+Source: Monaco Statistics - Population censuses 
+Figure 2. Change in the resident population from 2000 to 2025
+ 
+ Change in the calculation method 
+Source: Monaco Statistics - Population censuses 
+As of 31 December 2025, the Principality of Monaco had 38,857 residents, 434 more than one year earlier 
+(+1.1%). 
+ 
+The population has increased by nearly 7,000 inhabitants since 2000 and has almost doubled since 1951.  
+1,352
+0
+5,000
+10,000
+15,000
+20,000
+25,000
+30,000
+35,000
+40,000
+32,020
+35,352
+37,308
+38,367
+38,423
+38,857
+2000 2008 2016 2025
+ 2025 Population census – May 2026 5 
 
-probe_xlsx: https://www.statistica.sm/pub1/StatisticaSM/dam/jcr:f2871962-4ff6-4672-b42a-52fb0d539877/popolazione_residente_per_castello.xlsx
-  10,061 bytes
-  1 sheet(s): Foglio1
+=== pages mentioning ['ward', 'district', 'quartier', 'religion', 'language', 'median', 'sex', 'age'] (first 40) ===
 
---- sheet 'Foglio1' (38 rows x 25 cols) --------------------
-  Popolazione Residente per Castello
-  
-   |  | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025
-   |  |  |  |  |  |  |  |  |  |  |  | 2025 |  |  |  |  |  | 2026
-   |  |  |  |  |  |  |  |  |  |  |  | Lug | Ago | Set | Ott | Nov | Dic | Gen | Feb | Mar | Apr | Mag | Giu | Lug
-  San Marino | M | 1976 | 1976 | 1968 | 1964 | 1965 | 1960 | 1981 | 1998 | 2014 | 2036 | 2033 | 2033 | 2034 | 2029 | 2037 | 2036 | 2036 | 2032 | 2032 | 2037 | 2034 | 2040 | 2036
-   | F | 2087 | 2067 | 2086 | 2099 | 2083 | 2101 | 2109 | 2109 | 2100 | 2122 | 2113 | 2114 | 2110 | 2114 | 2120 | 2122 | 2118 | 2117 | 2120 | 2122 | 2120 | 2118 | 2115
-   | Total | 4063 | 4043 | 4054 | 4063 | 4048 | 4061 | 4090 | 4107 | 4114 | 4158 | 4146 | 4147 | 4144 | 4143 | 4157 | 4158 | 4154 | 4149 | 4152 | 4159 | 4154 | 4158 | 4151
-  Acquaviva | M | 1061 | 1079 | 1078 | 1084 | 1058 | 1061 | 1071 | 1067 | 1071 | 1083 | 1086 | 1089 | 1089 | 1086 | 1082 | 1083 | 1080 | 1080 | 1085 | 1087 | 1089 | 1083 | 1081
-   | F | 1081 | 1080 | 1076 | 1083 | 1065 | 1052 | 1047 | 1049 | 1059 | 1064 | 1069 | 1069 | 1069 | 1068 | 1065 | 1064 | 1065 | 1070 | 1071 | 1072 | 1073 | 1071 | 1070
-   | Total | 2142 | 2159 | 2154 | 2167 | 2123 | 2113 | 2118 | 2116 | 2130 | 2147 | 2155 | 2158 | 2158 | 2154 | 2147 | 2147 | 2145 | 2150 | 2156 | 2159 | 2162 | 2154 | 2151
-  Borgo Maggiore | M | 3390 | 3397 | 3434 | 3453 | 3459 | 3456 | 3458 | 3454 | 3475 | 3518 | 3516 | 3519 | 3517 | 3524 | 3515 | 3518 | 3525 | 3528 | 3525 | 3527 | 3532 | 3540 | 3542
+--- page 2 ----------------------------------------------------
+ 2025 Population census – May 2026 2
+TABLE OF CONTENTS
+Introduction .................................................................................................................................... 3
+1. Evolution and main characteristics of the resident population ......................................... 4
+1.1. Monaco’s population approaches the 39 000 mark in 2025 ............................................................................. 4
+1.2. More than four residents in ten live in Monte-Carlo and La Rousse............................................................... 5
+1.3. A population moving towards gender parity ...................................................................................................... 6
+1.4. An ageing resident population ............................................................................................................................ 7
+1.5. One resident aged 18 or over in two is married ................................................................................................ 9
+1.6. Monegasques, French and Italians are the three main nationalities ............................................................ 10
+1.7. The growth of international communities over the censuses ........................................................................ 11
+1.8. Demographic characteristics that differ by nationality .................................................................................. 13
+1.9. More than 2,700 new re
 
-probe_xlsx: https://imsee.mc/en/content/download/310151/file/IMSEE-2025%20Census_Nationalities.xlsx
-  20,499 bytes
-  1 sheet(s): Nationalities 2025 Census
+--- page 3 ----------------------------------------------------
+ 2025 Population census – May 2026 3
+Introduction
+The population census is a fundamental tool for gaining a better understanding of the demographic and
+residential characteristics of a territory. In Monaco, this statistical mission dates back to 1757 and has been
+regularly updated since then. An important milestone was reached in 2023, with the adoption of a new
+census method based on administrative sources, known as “register -based,” in place of  traditional field
+surveys.
+This methodological change, validated by the Scientific Council for Statistics and Economic Studies, the
+Government and the Prince’ s Palace, marks a major step forward: it now makes it possible to update
+demographic data on the resident population annually, improving availability and reducing operating costs.
+This 2025 report forms part of this new system and corresponds to the third year of implementation of the
+new statistical approach. It highlights the main demographic changes observed and confirms the gradual
+consolidation of this method. However, comparisons with results based on the previous  technique should
+be interpreted with caution due to the methodological break introduced in 2023.
 
---- sheet 'Nationalities 2025 Census' (164 rows x 3 cols) --------------------
-  
-  Number of residents by nationality in 20
-  
-  NOTE: Some residents hold multiple natio
-  
-  
-  
-  
-  
-  144 nationalities (excluding stateless p | Number of residents
-  Monegasque | 9332.999999999998
-  French | 8270.126521760612
+--- page 5 ----------------------------------------------------
+ 2025 Population census – May 2026 5
+1.2. More than four residents in ten live in Monte-Carlo and La Rousse
+The Principality’s limited territory has an average population density of 18,681 inhabitants per square
+kilometre.
+Monaco is administratively divided into ordered districts, each with its own specific characteristics. The size
+of the resident population varies greatly from one area to another.
+Table 1. Number of residents by district in 2025
+Source: Monaco Statistics - Population censuses
+Monte-Carlo has more than 8,300 inhabitants, followed by La Rousse with nearly 8,000 residents. Together,
+these districts account for more than four residents in ten.
+Figure 3. Breakdown of residents by district in 2025
+Note: The districts are those defined by Sovereign Order No. 4,481 of 13 September 2013. Ravin Sainte-Dévote has been
+incorporated into the district of Les Moneghetti.
+Source: Monaco Statistics - Population censuses
+With just over 1,000 inhabitants, Monaco -Ville is the least populated district in the Principality (2.6%),
+followed by Larvotto (2,287 residents, or 5.9% of the population).
+La Condamine and Jardin Exotique districts have 5,446 and 4,997 residents respectively, or 14.0% and
+12.9% of the population. Les Moneghetti and Fontvieille, for their part, have relatively similar populations,
+with 4,498 and 4,297 residents, a little over 11% each.
+Number of
+residents Share
+Monte-Carlo 8,318        21.4%
+La Rousse 7,992        20.6%
+La Condamine 5,446        14.0%
+Jard
 
+--- page 6 ----------------------------------------------------
+ 2025 Population census – May 2026 6
+1.3. A population moving towards gender parity
+Like other countries on the European continent, the population of the Principality of Monaco has had a
+gender balance that has been moving towards parity for several decades.
+Figure 4. Breakdown of the resident population by gender in 2025
+Source: Monaco Statistics - Population censuses
+Women account for 50.8% of Monaco’s resident population in 2025, i.e. 19,730 women for 19,127 men.
+Figure 5. Change in the breakdown of the resident population by sex from 1951 to 2025
+Source: Monaco Statistics - Population censuses
+Since 1951, the breakdown between men and women has tended to balance out. The gender gap was
+11.4 percentage points in 1951 and 5.0 points in 1990. In 2025, it is down to just 1.6 points.
+Women
+50.8%
+Men
+49.2%
+44.3% 44.2% 44.9% 45.3%
+45.7%
+47.1%
+47.5%
+48.5%
+48.7%
+48.9%
+49.2%
+55.7% 55.8% 55.1% 54.7%
+54.3% 52.9%
+52.5% 51.5%
+51.3%
+51.1% 50.8%
+0
+5,000
+10,000
+15,000
+20,000
+25,000
+1951 1956 1962 1968 1975 1982 1990 2000 2008 2016 2025
+Men Women
+
+--- page 7 ----------------------------------------------------
+ 2025 Population census – May 2026 7
+1.4. An ageing resident population
+The age pyramid of Monaco’s residents has an atypical shape, characterised by a high proportion of people
+aged 45 to 64.
+Figure 6. Resident population pyramid in 2025 (number of people)
+Source: Monaco Statistics - Population censuses
+Before age 30, the pyramid shows a very balanced distribution between women and men, with stable
+numbers ranging from 150 to 200 people per age and sex.
+The 50-70 age group records the highest numbers, with at least 220 people per age and sex, reaching up
+to 383 men at age 62 compared with 324 women at age 59, which highlights a higher proportion of men in
+these ages.
+From age 70 onwards, women become the majority in the resident population: they account for 54.1% of
+people aged 70 and over.
+There are 60 centenarians in 2025, i.e. less than 0.2% of the population.
+400 300 200 100 0 100 200 300 400
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+105 and more Men
+Women
+
+--- page 8 ----------------------------------------------------
+ 2025 Population census – May 2026 8
+Table 2. Resident population by age group and sex in 2025
+Source: Monaco Statistics - Population censuses
+In 2025, nearly 5,800 people, or 14.9% of the population, are aged 75 and over. This is the age group in
+which the gap between women and men is the widest, with women accounting for 16.3% of the female
+population compared with 13.5% for men.
+At the same time, residents under the age of 16 account for 15.1% of the population, a proportion that is
+almost identical to that of people aged 75 and over.
+Figure 7. Change in the mean age of residents by sex from 2000 to 2025
+Source: Monaco Statistics - Population censuses
+Despite a slight decrease for the first time since 2000, the average age of residents is 47.2 years in 2025
+(47.7 years for women compared with 46.5 years for men). It has increased by 2.5 years since 2000.
+The gender gap has narrowed significantly since 2000, falling from 3.3 years in favour of women to 1.2 years
+in 2025.
+Men Women Tot al % Men % Women % Total
+16 y/o and under 2,966 2,920 5,885 15.5% 14.8% 15.1%
+17 to 24 y/o 1,386 1,372 2,758 7.2% 7.0% 7.1%
+25 to 34 y/o 1,922 1,936 3,858 10.0% 9.8% 9.9%
+35 to 44 y/o 2,067 2,304 4,371 10.8% 11.7% 11.2%
+45 to 54 y/o 2,482 2,614 5,096 13.0% 13.2% 13.1%
+55 to 64 y/o 3,318 2,980 6,298 17.3% 15.1% 16.2%
+65 to 74 y/o 2,408 2,393 4,801 12.6% 12.1% 12.4%
+75 y/o and over 2,578 3,212 5,790 13.5% 16.3% 14.9%
+Total 19,127 19,730 38,857 100% 100% 100%
+44.8
+45.6
+46.4
+47.2
+43.1
+44.5
+45.5
+46
+
+--- page 9 ----------------------------------------------------
+ 2025 Population census – May 2026 9
+1.5. One resident aged 18 or over in two is married
+Five maritial statuses are recognised under Monegasque law:
+• single: a person who has never been married;
+• married: a person who is married to another person of the opposite sex;
+• widowed: a person whose spouse has died;
+• divorced: a person whose marriage has been dissolved by a divorce decree or agreement,
+recorded in the margin of the marriage certificate and birth certificate;
+• separated: a married person for whom a judgment of legal separation has been recorded in the
+margin of the marriage certificate.
+Table 3. Breakdown of the resident population by family situation in 2024 and 2025
+Note: Percentages are calculated for the population aged 18 and over.
+Source: Monaco Statistics - Population censuses
+In 2025, among the 32,629 adult residents, more than half are married (16,499) and nearly a third are single
+(32.5%).
+Figure 8. Family situation of residents aged 18 or over by gender in 2025
+Note: Percentages are calculated for the population aged 18 and over.
+Source: Monaco Statistics - Population censuses
+Men are proportionally more likely to be married than women (52.7% compared with 48.5%), while women
+are slightly more likely to be divorced or separated and significantly more likely to be widowed.
+2024 2025 S hare
+Variation
+24/25
+17 y/o and under 6,198 6, 228 0.5%
+Single 10,306 10,618 32.5% 3.0%
+Married 16,328 16,499 50.6% 1.0%
+Divorced/Separated 3,523 3,533 10.8% 0.3%
+Divorced
+
+--- page 10 ----------------------------------------------------
+ 2025 Population census – May 2026 10
+1.6. Monegasques, French and Italians are the three main nationalities
+In 2025, Monaco, a cosmopolitan city-state, is home to 144 different nationalities on its 2 km² territory.
+Table 4. Most common nationalities of residents, rate of multinationality, breakdown by sex and mean age
+in 2025
+Number Share of total
+population
+% of multi
+nationalities
+Share of
+men
+Share of
+women
+Mean
+age
+Monegasque 9,333 24.0% n.a. 46.0% 54.0% 45.4
+French 8,270 21.3% 6.9% 48.1% 51.9% 46.3
+Italian 7,559 19.5% 11.0% 54.1% 45.9% 48.6
+British 3,081 7.9% 23.4% 54.5% 45.5% 49.2
+Swiss 1,237 3.2% 25.1% 52.0% 48.0% 53.0
+Russian 1,209 3.1% 41.9% 41.5% 58.5% 42.0
+Belgian 1,038 2.7% 9.5% 53.2% 46.8% 51.5
+German 986 2.5% 15.3% 51.0% 49.0% 48.1
+Dutch 503 1.3% 9.0% 53.3% 46.7% 52.7
+Portuguese 492 1.3% 12.9% 52.0% 48.0% 42.9
+American 485 1.2% 43.8% 39.8% 60.2% 41.5
+Greek 454 1.2% 15.8% 54.2% 45.8% 51.6
+Canadian 416 1.1% 40.3% 50.6% 49.4% 51.3
+Spanish 366 0.9% 31.3% 53.3% 46.7% 47.9
+Ukrainian 361 0.9% 15.9% 33.8% 66.2% 34.6
+Swedish 350 0.9% 13.4% 47.5% 52.5% 44.1
+Australian 276 0.7% 36.7% 54.2% 45.8% 44.9
+Danish 269 0.7% 8.2% 58.5% 41.5% 44.1
+Romanian 261 0.7% 15.8% 34.6% 65.4% 40.4
+Austrian 233 0.6% 14.9% 57.2% 42.8% 48.6
+Cypriot 225 0.6% 71.4% 53.9% 46.1% 41.1
+Irish 223 0.6% 36.6% 54.7% 45.3% 49.0
+Lebanese 223 0.6% 44.6% 50.5% 49.5% 51.5
+Brazilian 214 0.6% 56.9% 40.2% 59.8% 42.8
+Filipino 205 0.5% 4.9% 27.0% 73.0% 52.1
+Israeli 191 0.5% 68.1% 55.3% 44.7% 48.6
+Polish 189 0.5% 2
+
+--- page 11 ----------------------------------------------------
+ 2025 Population census – May 2026 11
+1.7. The growth of international communities over the censuses
+Changes in the population over time result from various phenomena, the main ones being the natural
+balance (the difference between the number of births and deaths over the period) and net migration (the
+difference between arrivals and departures in the ter ritory). In terms of statistics by nationality, the
+acquisition of Monegasque nationality through naturalisation or marriage may also play a role.
+Figure 9. Change in the most represented nationalities from 1908 to 2025
+Note: Some residents have more than one nationality. In that case, they are counted in as many communities as they
+have nationalities. On the other hand, Monegasques, whether they have a single nationality or several, are only counted
+as Monegasque. As a result, the total of the shares presented is greater than 100%.
+Source: Monaco Statistics - Population censuses
+Monegasques have been the leading nationality represented in the Principality since 2023, reaching 24.0%
+of the population in 2025. Historically a minority, with fewer than one resident in ten between 1908 and
+1938, their share has increased steadily since then.
+By contrast, the share of French residents, which accounted for nearly 60% of residents in 1962, has
+continued to decline and now stands at 21.3% in 2025. The proportion of Italians has remained relatively
+stable over the long term, now reaching 19.5%.
+The share of other nationalities has co
+
+--- page 13 ----------------------------------------------------
+ 2025 Population census – May 2026 13
+1.8. Demographic characteristics that differ by nationality
+Some disparities appear among nationals of the most represented nationalities in 2025.
+Figure 10. Breakdown of men and women by nationality in 2025
+Source: Monaco Statistics - Population censuses
+Among Monegasques, French and Russians, women are more represented than in the resident population
+as a whole (50.8%), reaching 58.5% in the latter community. The Italian, British, Swiss, Belgian and German
+populations, by contrast, are predominantly male.
+Table 6. Mean age by sex and nationality in 2025
+  Men Women Total
+Monegasque 42.7 47.8 45.4
+French 43.3 49.0 46.3
+Italian 49.1 48.0 48.6
+British 51.2 46.8 49.2
+Swiss 52.3 53.7 53.0
+Russian 42.0 42.0 42.0
+Belgian 51.4 51.6 51.5
+German 47.0 49.3 48.1
+Source: Monaco Statistics - Population censuses
+The mean age of nationals of the four main nationalities is close to the overall figure, give or take two years
+(47.2 years for reference). Residents of Swiss and Belgian nationality are, by contrast, significantly older on
+average, at +5.8 years and +4.3 years respectively, while Russians are younger (-5.2 years).
+Figure 11. Family situation of residents aged 18 or over by nationality in 2025
+Source: Monaco Statistics - Population censuses
+British and Russian residents are relatively more often married than those of other nationalities.
+46.0% 48.1% 54.1% 54.5% 52.0% 41.5%
+53.2% 51.0%
+54.0% 51.9% 45.9% 45.5% 48.0% 58.5%
+46.8% 49.0%
+Monegasque 
+
+--- page 14 ----------------------------------------------------
+ 2025 Population census – May 2026 14
+1.9. More than 2,700 new residents
+Among the people counted in Monaco in 2025, more than 2,700, or nearly 7%, are non- Monegasque
+residents aged over 18 who settled in the Principality within the last three years. The same main nationalities
+(French, Italian, British, Russian, and Swiss) are represented among these “new residents.”
+Figure 12. Distribution of new residents by nationality
+Note: Some residents hold multiple nationalities. They are therefore counted in each community corresponding to one of their
+nationalities.
+Scope: Non-Monegasque aged > 18 residents who arrived between 2023 and 2025.
+Sources: Police department, Monaco Statistics – Population Census 2025
+Although the French community has declined the most in recent years in the Principality, the majority of
+foreign residents aged over 18 who have become residents of Monaco since 2023 are French, at nearly 550
+people. Italians and British each account for around 450 arrivals over the period. 190 Russians settled in the
+Principality over the last three years, and nearly 1,500 new arrivals were of another nationality.
+Figure 13. Distribution of residents aged 18 or over who arrived between 2023 and 2025 by sex and
+nationality
+Scope: Non-Monegasque aged > 18 residents who arrived between 2023 and 2025.
+Sources: Police department, Monaco Statistics – Population Census 2025
+Since 2023, adult French residents in the Principality have been a majority of women, at 52.9% compared
+wit
+
+--- page 15 ----------------------------------------------------
+ 2025 Population census – May 2026 15
+Table 7. Mean age at settlement of 18+ residents who arrived between 2023 and 2025 by sex and
+nationality
+  Men Women Total
+French 41.3 38.4 39.8
+Italian 43.3 41.9 42.7
+British 50.0 48.7 49.4
+Russian 47.4 43.2 44.4
+Swiss 49.7 48.9 49.4
+Scope: Non-Monegasque 18+ residents who arrived between 2023 and 2025.
+Sources: Police department, Monaco Statistics – Population Census 2025
+With an average age of 39.8, adult French residents who have settled since 2023 are younger than new
+residents of other nationalities. By contrast, British and Swiss nationals who settled recently in the
+Principality did so at an older age, with an average of 49.4.
+Among the nationalities most represented among new arrivals, Russians show the largest age gap between
+men and women, at 4.2 years, followed by French nationals at 2.8 years. Italians, British, and Swiss nationals
+also show a gap still in favour of men, albeit to a lesser extent.
+However, Analysing arrivals by nationality alone is not enough to fully reflect changes within a community .
+It is also useful to consider the country of origin of new residents for a more complete picture. Indeed, while
+almost all 18+ French residents who settled in Monaco since 2023 come from France (91.9%), three quarters
+of British residents previously lived in the United Kingdom, less than half of Italian nationals (47.9%) are
+originally from Italy, and less than a quarter of Russians come from the Russian Federation.
+Figure 1
+
+--- page 16 ----------------------------------------------------
+ 2025 Population census – May 2026 16
+1.10. More than one-third of residents are employed in Monaco
+Located between French municipalities and close to the Italian border, Monaco is a major employment hub
+on the Côte d’Azur. Mone gasque businesses and administrations employ more than 65,000 workers, the
+vast majority of whom live outside the Principality, with nearly nine in ten not residing in Monaco.
+Among working residents in Monaco, professional situations vary: employees, self -employed workers,
+business owners, ect. Furthermore, these activities may be carried out in the Principality or elsewhere. Here,
+only Monaco residents of working age, 18 to 64, who hold salaried jobs in the territory in 2025 are
+considered.
+Figure 1. Rate of salaried1 employment in Monaco among residents by age group and sector in 2025
+Sources: Caisses Sociales de Monaco, Human Resources and Training Department,
+Monaco Statistics – 2025 Population census
+The salaried employment rate in Monaco among residents aged 18 to 64 is 35.8% in 2025, with 25.7%
+working in the private sector and 10.1% in the public sector. The share of resident salaried workers is highest
+among those aged 35 to 44, where more than 30% work in the private sector and nearly 15% in the public
+sector, for a total of 45.5% in salaried employment.
+Table 8. Rate of salaried employment in Monaco among residents by age group in 2024 and 2025
+Sources: Caisses Sociales de Monaco, Human Resources and Training Department,
+Monaco Statistics
+
+--- page 17 ----------------------------------------------------
+ 2025 Population census – May 2026 17
+1.11. The Monaco crèches  welcome four in ten resident children aged 2 and under
+The Principality of Monaco has 15 early-years childcare facilities on its territory, including 13 public ones: 8
+collective crèche, 1 family crèche, 3 microcrèche, and 1 early-learning garden. They can also admit young
+children who are neither Monegasque nor residents, under certain conditions, just as schools do. Here, the
+children considered are residents in 2025 who attend a public or private crèche located in Monaco.
+Table 9. Number of resident children aged 0 to 2 attending crèche in Monaco by sector in 2024 and 2025
+Sources: Monaco City Hall, Princess Grace Hospital Center, Monegasque Red Cross, Monaco Statistics – Population Censuses
+Figure 16. Share of resident children aged 0 to 2 attending crèchres in Monaco by sector in 2024 and
+2025
+Sources: Monaco City Hall, Princess Grace Hospital Center, Monegasque Red Cross, Monaco Statistics – Population Censuses
+In 2025, 39.4% of children aged 2 and under living in Monaco are enrolled in crèches, a very slight decrease
+from 2024 (40.1%). At the same time, the number of resident children enrolled falls from 385 to 369.
+The share of children attending private nurseries is almost stable, up by 0.2 points, while the share attending
+public nurseries falls by 0.9 points.
+2024 2025
+Variation
+24/25
+Resident children attending crèches in Monaco 385 3 69 -4.2%
+of which in public crèches 327 311 -4.9%
+of which in priva
+
+--- page 18 ----------------------------------------------------
+ 2025 Population census – May 2026 18
+2. Key housing characteristics
+2.1. More than 22,500 housing units were recorded in Monaco in 2025
+Beyond counting residents, the census also aims to count the housing units used for residential purposes
+in a territory. The register -based approach makes it possible to obtain this information and covers those
+built by 31 December 2025, thus excluding bui ldings still under construction or those that had been
+demolished by that date.
+Table 10. Number of housing units by district in 2024 and 2025
+Source: Monaco Statistics - Population censuses
+In 2025, the Principality counts 22,577 housing units, up 1.8% year on year.
+Figure 17. Distribution of housing units by district in 2025
+Note: The districts are those defined by Sovereign Ordinance No. 4.481 of 13 September 2013. “Ravin Sainte-Dévote” has been
+included in the “Les Moneghetti” district.
+Source: Monaco Statistics – 2025 Population census
+Monte-Carlo and La Rousse together account for more than 10,200 housing units, or 45.4%. Larvotto and
+Monaco-Ville are the districts with the fewest dwellings, with 1,391 and 615 respectively.
+The other four districts: “La Condamine, Jardin Exotique, Les Moneghetti, and Fontvieille” each have
+between 2,200 and 2,900 housing units.
+2024 2025 Var 24/25
+Monte-Carlo 5,434 5,365 -1.3%
+L
+a Rousse 4,811 4,885 1.5%
+La Condamine 2,744 2,854 4.0%
+Jardin Exotique 2,709 2,852 5.3%
+Les Moneghetti 2,203 2,335 6.0%
+Fontvieille 2,274 2,280 0.3%
+Larvotto 1,392 1,391 -0
+
+--- page 19 ----------------------------------------------------
+ 2025 Population census – May 2026 19
+2.2. The vast majority of housing units in Monaco are in the private sector
+In this section, housing units, regardless of their regulatory status, are distinguished by ownership: on one
+side, the state -owned housing stock, consisting of homes owned by the Monegasque state, and on the
+other, the private sector.
+Tableau 11. Breakdown of housing units by district and sector in 2025
+Source: Monaco Statistics – 2025 Population census
+In 2025, the Principality has nearly 18,200 private dwellings (80.6%) and 4,380 state -owned dwellings
+(19.4%). The Jardin Exotique is now the district with the largest number of state-owned dwellings (937).
+Figure 18. Distribution of private and state-owned dwellings by district in 2025
+Source: Monaco Statistics – 2025 Population census
+There are significant disparities between districts in terms of state- owned dwellings. Fontvieille has the
+highest share, with 37.9% of its housing stock belonging to the State, followed by Jardin Exotique, La
+Condamine, and Les Moneghetti, where around three dwellings in ten are also state-owned.
+Despite its 5,365 dwellings, Monte-Carlo has only 172 state-owned units, or 2.9%. Larvotto has the lowest
+share of state-owned dwellings, at 1.1%.
+Nombre de
+logements
+p
+rivés
+Nombre de
+logements
+d
+omaniaux
+Nombre
+total de
+l
+ogements
+Monte-Carlo 5,193         172            5,365
+La Rousse 3,979         906            4,885
+La Condamine 2,029         825            2,854
+Jardin Exotique
+
+--- page 20 ----------------------------------------------------
+ 2025 Population census – May 2026 20
+Methodological notes
+The register -based census involves bringing together the various existing databases and information
+systems, namely:
+ Data on Monegasque nationals from the Civil Status and Nationality Department of Monaco City
+Hall;
+ Data on residence permits issued by the Police Department (Direction de la Sûreté Publique -
+DSP);
+ Data on pupils attending school in Monaco from the Department of Education, Youth and Sport
+(Direction de l'Éducation Nationale de la Jeunesse et des Sports - DENJS);
+ Data on births in Monaco from the Civil Status and Nationality Department of Monaco City Hall.
+The remaining population (foreign minors aged 3 to 17 not attending school in the Principality, foreign
+children born outside Monaco between 2023 and 2025) is estimated on the basis of 2016 census data.
+Distribution of the resident population in 2025
+Source: Monaco Statistics – 2025 Population census
+The aim is to obtain a database containing as much common information as possible between the various
+registers. The variables selected for each observation are as follows:
+- age;
+- gender;
+- the number of different nationalities;
+- nationality or nationalities (from 1 to 4, corresponding to the maximum number of multiple
+nationalities observed for a single resident in the source files used);
+- family situation.
+Monegasque residents: 24.0%
+Foreign residents over 18 y/o: 64.7%
+Estimated
+foreigners
+aged 0-17 y/o
+remaining:
+2.0%
+3-17 y/o foreigners
+a
+
+--- page 21 ----------------------------------------------------
+ 2025 Population census – May 2026 21
+ Monegasque nationals
+The Civil Status and Nationality Department of the Monaco City Hall updates the “sommier” (register of
+Monegasque nationals), which includes information such as each person's address. Only Monegasque
+nationals declaring that they reside in the Principality have been included in this database for the
+census.
+The family situation of Monegasques is known only for the complete population, without any details
+concerning residence. Therefore, for each age/gender combination, the percentage of residents is applied
+to the breakdown by family situation.
+ Foreign nationals over the age of 18
+The DSP issues a residence permit to any foreign national aged 16 or over wishing to stay in Monaco for
+more than three months or wishing to take up residence here. To avoid double counting with the register of
+schoolchildren, only foreign residents aged 18 and over holding a residence permit have been
+considered in the census.
+ Foreign nationals aged 3 to 17
+Foreigners aged 3 -17 attending school in Monaco
+The DENJS has a database of all pupils attending school in the Principality of Monaco in the public and
+private sectors (under contract and not). To avoid double counting, with the residence permit register, only
+resident pupils of foreign nationality aged between 3 and 17 inclusive have been included in this
+database for the census.
+Foreigners aged 3 -17 not attending school in Monaco
+Foreign children aged 3 to 17 not attending scho
+
+--- page 22 ----------------------------------------------------
+ 2025 Population census – May 2026 22
+ Breakdown of residents by district
+Housings
+Two data sources are used for housing data:
+- Address database of the Department of Forward Studies, Urban Planning and Mobility (Direction de
+la Prospective de l'Urbanisme et de la Mobilité - DPUM), which lists all the buildings in Monaco and
+the number of private and state-owned housing units in each;
+- Export of all state-owned housing from the State Property Authority.
+This second source replaces the data relating to public housing in the DPUM address database.
+Residents
+To estimate the number of residents per district, the distribution of housing units in 2025 and the size of
+households per district established in the 2016 census were used.
+By multiplying the number of housing units by the size of households, a projected population is obtained,
+from which the distribution by district is determined.
+The estimated resident population per district is obtained by applying this breakdown to the actual
+population of the 2025 census (38,857).
+
+--- page 23 ----------------------------------------------------
+2025 Population census
+May 2026
+To read Monaco Statistics publications: imsee.mc/en/publication
+To follow the latest news from Monaco Statistics: imsee.mc/en/agenda
+To subscribe to the Monaco Statistics newsletter: imsee.mc/en/newsletter
+To visit our LinkedIn page: linkedin.com/company/imsee
+INSTITUT MONÉGASQUE DE LA STATISTIQUE ET DES ÉTUDES
+ÉCONOMIQUES
+9 rue du Gabian
+98000 MONACO
+imsee.mc
+ISSN-L 2519-0865
