@@ -1,71 +1,50 @@
-
-=== hun10
-
-## index V67/en: keys ['dataflows', 'dimensions', 'dimensionGrouping'], 45 dataflows
-   - {"id": "WBS001", "name": "Population by sex, age and district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_NEME_SEX", "CL_KEV_AGE"]}
-   - {"id": "WBS002", "name": "Population by sex, age, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE"]}
-   - {"id": "WBS003", "name": "Population data by  settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO5", {"name": "Settlement data, population", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_NEME_KEV1", "CL_CSPOT_LMS1", "CL_TERM_KAT", "CL_ALLAMP_V1", "CL_BISKV_V2", "CL_GAKT_V1", "CL_DIGI", "CL_VALLAS_V1", "CL_NEMZ"]}]}
-   - {"id": "WBS004", "name": "Population aged 15 and over by legal marital status, fertility, county and type of settlement\n\n", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_CSPOT15_LMS1", "CL_TERM_KAT1", "CL_BISKV15_V1", "CL_GAKT15_V1"]}
-   - {"id": "WBS005", "name": "Population by citizenship, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V2", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS021", "name": "Population by residence at birth, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_TERUL_GEO_SZ", "CL_TERUL_TELTIP_SZ", "CL_ALLAMP_V3"]}
-   - {"id": "WBS022", "name": "Population by previous residence, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_TERUL_GEO_E", "CL_TERUL_TELTIP_E"]}
-   - {"id": "WBS027", "name": "Population living abroad for at least one year by county", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V1", "CL_TERUL_GEO_SZ2", "CL_KULORSZAG_CAT", "CL_KIEV_Y", "CL_KULEV_Y", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS008", "name": "Population by religion, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_VALLAS_V2", {"name": "Social characteristics", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_CSPOT_LMS1", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS009", "name": "Population by ethnic attributes, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEMZ", {"name": "Social characteristics", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_CSPOT_LMS1", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1", "CL_VALLAS_V1"]}]}
-   - {"id": "WBS010", "name": "Popultaion by language knowledge, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_BENYE", {"name": "Social characteristics", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS012", "name": "Population aged 5 and over by health condition, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_EGESZSEG", {"name": "Social characteristics", "items": ["CL_NEME_SEX", "CL_KEV_AGE_FOGY", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS025", "name": "Population aged 5 and over by health-related difficulties, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGY", "CL_LATAS_VIS", "CL_HALLAS_HEAR", "CL_JARAS_MOB", "CL_EMLEK_COG", "CL_ONEL_SC", "CL_NYELVH_COM"]}
-   - {"id": "WBS013", "name": "Population attending school, aged 6 and over by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_TANOV_V1", "CL_TANOV_V1"]}
-   - {"id": "WBS006", "name": "Population aged 15 and over by  level of education completed by county and type of settlement\n\n", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_BISKV_V3", "CL_BISKV_V3"]}
-   - {"id": "WBS019", "name": "Field of study of ​​the population with secondary and tertiary education", "dimensions": ["CL_TIME_PERIOD", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_BISKV_V0", "CL_TANTER"]}
-   - {"id": "WBS011", "name": "Population aged 6 and over by digital literacy, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_DIGI", "CL_DIGI", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS024", "name": "Population aged 6 and over by digital activities  regularly performed, by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", {"name": "Social characteristics", "items": ["CL_NEME_SEX", "CL_KEV_AGE_DIGI", "CL_BISKV_V1", "CL_GAKT_V1"]}, "CL_DIGITEVEK"]}
-   - {"id": "WBS007", "name": "Population by economic activity, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_GAKT_CAS2", "CL_GAKT_CAS2", "CL_BISKV_V1"]}
-   - {"id": "WBS014", "name": "Employed population by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_FOGLKOD_OCC1", "CL_FMIN_SIE2", "CL_BISKV15_V1"]}
-   - {"id": "WBS016", "name": "Employed population by branch of economic activity, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_MUNKKOD_IND2", "CL_BISKV15_V1"]}
-   - {"id": "WBS023", "name": "Employed population by commuting data, county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_BISKV15_V1", "CL_TERUL_GEO_H", "CL_ING_5"]}
-   - {"id": "WBS026", "name": "Employed population by settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO5_FOGL", {"name": "Settlement data, population", "items": ["CL_NEME_SEX", "CL_KEV_AGE_FOGL_TER", "CL_BISKV15_V1", "CL_ING"]}]}
-   - {"id": "WBS015", "name": "Unemployed population by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_FOGLKOD_OCC2", "CL_FMIN_SIE3", "CL_DOLIDO_V2", "CL_BISKV15_V1"]}
-   - {"id": "WBS017", "name": "Household types by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE1", "CL_HTIP_HST2"]}
-   - {"id": "WBL001", "name": "Occupied dwellings and number of occupants by district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_LLAKO_NOC1", "CL_LAKS_V"]}
-   - {"id": "WBL004", "name": "Dwellings by type of ownership and districts", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_TULAJ_V1", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF"]}
-   - {"id": "WBL006", "name": "Dwellings by number of rooms and district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_SZOBA_NOR1", "CL_FOZOH_V1", "CL_FURDO_BAT", "CL_WC_TOI"]}
-   - {"id": "WBL008", "name": "Water supply and sewage disposal system of dwellings by district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_VIZE_WSS1", "CL_MEVI_V1", "CL_CSAT_V1"]}
-   - {"id": "WBL009", "name": "Water supply and sewage disposal system of dwellings by county and type of settlement", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_VIZE_WSS2", "CL_MEVI_V2", "CL_CSAT_V2"]}
-   - {"id": "WBL010", "name": "Heating of dwellings and use of heating fuel by district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_FUTES_TOH", "CL_FUTAGOK"]}
-   - {"id": "WBL016", "name": "Equipment of dwellings by district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_FUTMODAG_V3", "CL_INTERNET", "CL_LEGKONDI", "CL_HOSZIV", "CL_NAPELEM", "CL_NAPKOLL"]}
-   first: {"id": "WBS001", "name": "Population by sex, age and district", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_NEME_SEX", "CL_KEV_AGE"]}
-
-## index V67/hu: keys ['dataflows', 'dimensions', 'dimensionGrouping'], 45 dataflows
-   - {"id": "WBS001", "name": "A népesség neme, életkora járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_NEME_SEX", "CL_KEV_AGE"]}
-   - {"id": "WBS002", "name": "A népesség neme, életkora vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE"]}
-   - {"id": "WBS003", "name": "A népesség adatai településenként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO5", {"name": "Települési adatok, népesség", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_NEME_KEV1", "CL_CSPOT_LMS1", "CL_TERM_KAT", "CL_ALLAMP_V1", "CL_BISKV_V2", "CL_GAKT_V1", "CL_DIGI", "CL_VALLAS_V1", "CL_NEMZ"]}]}
-   - {"id": "WBS004", "name": "A 15 éves  és idősebb népesség családi állapota és termékenysége vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_CSPOT15_LMS1", "CL_TERM_KAT1", "CL_BISKV15_V1", "CL_GAKT15_V1"]}
-   - {"id": "WBS005", "name": "A népesség állampolgársága vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V2", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS021", "name": "A népesség születéskori lakóhelye vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_TERUL_GEO_SZ", "CL_TERUL_TELTIP_SZ", "CL_ALLAMP_V3"]}
-   - {"id": "WBS022", "name": "A népesség előző lakóhelye vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_TERUL_GEO_E", "CL_TERUL_TELTIP_E"]}
-   - {"id": "WBS027", "name": "Legalább egy évet külföldön élt népesség vármegyénként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V1", "CL_TERUL_GEO_SZ2", "CL_KULORSZAG_CAT", "CL_KIEV_Y", "CL_KULEV_Y", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS008", "name": "A népesség  vallása vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_VALLAS_V2", {"name": "Társadalmi jellemzők", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_CSPOT_LMS1", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS009", "name": "A népesség nemzetiségi jellemzői vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEMZ", {"name": "Társadalmi jellemzők", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_CSPOT_LMS1", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1", "CL_VALLAS_V1"]}]}
-   - {"id": "WBS010", "name": "A népesség  nyelvismerete vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_BENYE", {"name": "Társadalmi jellemzők", "items": ["CL_NEME_SEX", "CL_KEV_AGE10", "CL_ALLAMP_V1", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS012", "name": "Az 5 éves és idősebb népesség  egészségi állapota vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_EGESZSEG", {"name": "Társadalmi jellemzők", "items": ["CL_NEME_SEX", "CL_KEV_AGE_FOGY", "CL_BISKV_V1", "CL_GAKT_V1"]}]}
-   - {"id": "WBS025", "name": "Az 5 éves és idősebb népesség egészségi állapotból eredő korlátozottsági adatai vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGY", "CL_LATAS_VIS", "CL_HALLAS_HEAR", "CL_JARAS_MOB", "CL_EMLEK_COG", "CL_ONEL_SC", "CL_NYELVH_COM"]}
-   - {"id": "WBS013", "name": "Az iskolába járó 6 éves és idősebb népesség vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_TANOV_V1", "CL_TANOV_V1"]}
-   - {"id": "WBS006", "name": "A 15 éves és idősebb népesség befejezetett iskolai végzettsége  vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_BISKV_V3", "CL_BISKV_V3"]}
-   - {"id": "WBS019", "name": "A közép- és a felsőfokú végzettséggel rendelkező népesség tanulmányi területe", "dimensions": ["CL_TIME_PERIOD", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_BISKV_V0", "CL_TANTER"]}
-   - {"id": "WBS011", "name": "A 6 éves és idősebb népesség  digitális jártassága vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_DIGI", "CL_DIGI", "CL_BISKV_V1", "CL_GAKT_V1"]}
-   - {"id": "WBS024", "name": "A 6 éves és idősebb népesség által rendszeresen végzett  digitális tevékenységek vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", {"name": "Társadalmi jellemzők", "items": ["CL_NEME_SEX", "CL_KEV_AGE_DIGI", "CL_BISKV_V1", "CL_GAKT_V1"]}, "CL_DIGITEVEK"]}
-   - {"id": "WBS007", "name": "A népesség gazdasági aktivitása vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_GAKT_CAS2", "CL_GAKT_CAS2", "CL_BISKV_V1"]}
-   - {"id": "WBS014", "name": "A foglalkoztatott népesség vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_FOGLKOD_OCC1", "CL_FMIN_SIE2", "CL_BISKV15_V1"]}
-   - {"id": "WBS016", "name": "A foglalkoztatott népesség nemzetgazdasági ág szerint vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_MUNKKOD_IND2", "CL_BISKV15_V1"]}
-   - {"id": "WBS023", "name": "A foglalkoztatott népesség ingázási adatai vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_BISKV15_V1", "CL_TERUL_GEO_H", "CL_ING_5"]}
-   - {"id": "WBS026", "name": "A foglalkoztatott népesség településenként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO5_FOGL", {"name": "Települési adatok, népesség", "items": ["CL_NEME_SEX", "CL_KEV_AGE_FOGL_TER", "CL_BISKV15_V1", "CL_ING"]}]}
-   - {"id": "WBS015", "name": "A munkanélküli népesség vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE_FOGL_MUNK", "CL_FOGLKOD_OCC2", "CL_FMIN_SIE3", "CL_DOLIDO_V2", "CL_BISKV15_V1"]}
-   - {"id": "WBS017", "name": "Háztartástípusok vármegyénként, településtípusonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO3", "CL_TERUL_TELTIP2", "CL_NEME_SEX", "CL_KEV_AGE1", "CL_HTIP_HST2"]}
-   - {"id": "WBL001", "name": "A lakott lakások és lakóik járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_LLAKO_NOC1", "CL_LAKS_V"]}
-   - {"id": "WBL004", "name": "A lakások tulajdonjellege járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_TULAJ_V1", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF"]}
-   - {"id": "WBL006", "name": "A lakások helyiségei járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_SZOBA_NOR1", "CL_FOZOH_V1", "CL_FURDO_BAT", "CL_WC_TOI"]}
-   - {"id": "WBL008", "name": "A lakások vízellátása, szennyvízelvezetése járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_VIZE_WSS1", "CL_MEVI_V1", "CL_CSAT_V1"]}
-   - {"id": "WBL010", "name": "A lakások fűtése, fűtőanyag használata járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_FUTES_TOH", "CL_FUTAGOK"]}
-   - {"id": "WBL016", "name": "A lakások felszereltsége járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_LAKAS_OCS", "CL_EPEV_POC1", "CL_FALA_V", "CL_LAT_V", "CL_KOMF", "CL_FUTMODAG_V3", "CL_INTERNET", "CL_LEGKONDI", "CL_HOSZIV", "CL_NAPELEM", "CL_NAPKOLL"]}
-   first: {"id": "WBS001", "name": "A népesség neme, életkora járásonként", "dimensions": ["CL_TIME_PERIOD", "CL_TERUL_GEO4", "CL_NEME_SEX", "CL_KEV_AGE"]}
+latvia: CSB IRD041, IRD031, IRE031, IRD081 and RIG040
+    IRD041 2026: municipalities -> Latvia: 42 parts sum to 1,845,096 against 1,845,096
+    IRD041 2025: municipalities -> Latvia: 43 parts sum to 1,860,565 against 1,860,565
+  admin1: 43 municipalities written
+    IRD081 2026: units -> Rīga: 1 parts sum to 588,911 against 588,911
+    IRD081 2026: units -> Daugavpils: 1 parts sum to 77,486 against 77,486
+    IRD081 2026: units -> Jelgava: 1 parts sum to 54,408 against 54,408
+    IRD081 2026: units -> Jūrmala: 1 parts sum to 52,926 against 52,926
+    IRD081 2026: units -> Liepāja: 1 parts sum to 66,746 against 66,746
+    IRD081 2026: units -> Rēzekne: 1 parts sum to 25,978 against 25,978
+    IRD081 2026: units -> Ventspils: 1 parts sum to 32,479 against 32,479
+    IRD081 2026: units -> Aizkraukles novads: 22 parts sum to 27,825 against 27,825
+    IRD081 2026: units -> Alūksnes novads: 16 parts sum to 12,894 against 12,894
+    IRD081 2026: units -> Augšdaugavas novads: 27 parts sum to 23,443 against 23,443
+    IRD081 2026: units -> Ādažu novads: 3 parts sum to 24,141 against 24,141
+    IRD081 2026: units -> Balvu novads: 21 parts sum to 17,163 against 17,163
+    IRD081 2026: units -> Bauskas novads: 20 parts sum to 40,006 against 40,006
+    IRD081 2026: units -> Cēsu novads: 23 parts sum to 40,963 against 40,963
+    IRD081 2026: units -> Dienvidkurzemes novads: 31 parts sum to 32,450 against 32,450
+    IRD081 2026: units -> Dobeles novads: 21 parts sum to 27,100 against 27,100
+    IRD081 2026: units -> Gulbenes novads: 14 parts sum to 18,215 against 18,215
+    IRD081 2026: units -> Jelgavas novads: 16 parts sum to 31,718 against 31,718
+    IRD081 2026: units -> Jēkabpils novads: 25 parts sum to 38,134 against 38,134
+    IRD081 2026: units -> Krāslavas novads: 26 parts sum to 19,040 against 19,040
+    IRD081 2026: units -> Kuldīgas novads: 20 parts sum to 26,386 against 26,386
+    IRD081 2026: units -> Ķekavas novads: 6 parts sum to 31,668 against 31,668
+    IRD081 2026: units -> Limbažu novads: 19 parts sum to 27,276 against 27,276
+    IRD081 2026: units -> Līvānu novads: 6 parts sum to 9,897 against 9,897
+    IRD081 2026: units -> Ludzas novads: 25 parts sum to 19,659 against 19,659
+    IRD081 2026: units -> Mārupes novads: 4 parts sum to 38,132 against 38,132
+    IRD081 2026: units -> Ogres novads: 20 parts sum to 57,165 against 57,165
+    IRD081 2026: units -> Olaines novads: 2 parts sum to 21,062 against 21,062
+    IRD081 2026: units -> Preiļu novads: 15 parts sum to 15,238 against 15,238
+    IRD081 2026: units -> Rēzeknes novads: 29 parts sum to 27,268 against 27,268
+    IRD081 2026: units -> Ropažu novads: 4 parts sum to 35,540 against 35,540
+    IRD081 2026: units -> Salaspils novads: 2 parts sum to 23,915 against 23,915
+    IRD081 2026: units -> Saldus novads: 21 parts sum to 26,192 against 26,192
+    IRD081 2026: units -> Saulkrastu novads: 3 parts sum to 10,113 against 10,113
+    IRD081 2026: units -> Siguldas novads: 8 parts sum to 31,546 against 31,546
+    IRD081 2026: units -> Smiltenes novads: 16 parts sum to 17,306 against 17,306
+    IRD081 2026: units -> Talsu novads: 22 parts sum to 34,264 against 34,264
+    IRD081 2026: units -> Tukuma novads: 23 parts sum to 42,991 against 42,991
+    IRD081 2026: units -> Valkas novads: 6 parts sum to 7,501 against 7,501
+    IRD081 2026: units -> Valmieras novads: 31 parts sum to 50,324 against 50,324
+    IRD081 2026: units -> Ventspils novads: 13 parts sum to 10,161 against 10,161
+  LVA admin2: 589 of 591 office units bound to 589 polygons (0 set aside as pieces)
+    office units with no polygon (2): Ķekava (LV0034220); Madonas novads (LV0038001)
+  ethnicity labels the group tree cannot place: ['Roma']
+  wrote data/processed/latvia_territorial.json (1834 kB)
+  wrote latvia_territorial.json: 632 records
