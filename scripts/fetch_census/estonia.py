@@ -104,7 +104,7 @@ DRAWN = {"Alaj": "Alajõe vald", "Kivi": "Kiviõli linn", "K": "Kärla vald", "M
          "Narva-Jvesuu linn": "Narva-Jõesuu linn", "Raikklla vald": "Raikküla vald",
          "Valgjhrve vald": "Valgjärve vald", "Kasepem vald": "Kasepää vald",
          "Peipsinare vald": "Peipsiääre vald", "Mikitamie vald": "Mikitamäe vald",
-         "Jaarva-Jaani": "Järva-Jaani vald"}
+         "Jaarva-Jaani": "Järva-Jaani vald", "Vandra": "Vändra vald"}
 
 # Polygons whose label names a unit the polygon is not, left unbound.
 NOT_THIS = {
@@ -250,12 +250,12 @@ def composition(rows, place: str, var: str, total_code: str, skip: set[str],
             out[code]["__total__"] += value
         elif cat not in skip:
             out[code][relabel(text)] += value
-    # The census tables' categories fall a person or three short of their
-    # totals in a few places (Haabersti: 41,691 of 41,694); more than 0.1%, or
-    # five people, is a misread.
+    # The census tables' categories fall a few people short of their totals
+    # in places (Haabersti 41,691 of 41,694; Paldiski 4,077 of 4,085); more
+    # than 0.3%, or ten people, is a misread.
     for code, counts in out.items():
         parts = sum(v for k, v in counts.items() if k != "__total__")
-        if abs(parts - counts["__total__"]) > max(5, 0.001 * counts["__total__"]):
+        if abs(parts - counts["__total__"]) > max(10, 0.003 * counts["__total__"]):
             raise SystemExit(f"{var} at {code}: categories make {parts:,.0f} of "
                              f"{counts['__total__']:,.0f}")
     return out

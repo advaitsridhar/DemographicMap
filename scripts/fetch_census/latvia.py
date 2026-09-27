@@ -132,6 +132,10 @@ def main() -> int:
                              f"{totals.get((code, when, 'T'))}")
     for when in (year, year - 1):
         present = [c for c in municipalities + merged if totals.get((c, when, "T"))]
+        # CSB carries the merged Madona back into 2025 beside the two it was
+        # made from; count one or the other.
+        if "LV0038000" in present:
+            present = [c for c in present if c not in merged]
         check_parts({c: totals[(c, when, "T")] for c in present}, totals[("LV", when, "T")],
                     f"IRD041 {when}: municipalities -> Latvia", 0)
     medians = {(key["AREA"][0], int(key["TIME"][0])): value for key, value in query(
