@@ -93,7 +93,12 @@ ALIASES = {"Agios Georgios Kafkallou": "Agios Georgios Kafkaliou",
            "Agia Marina Kelokedaron": "Ayia Marina Kelokedharon",
            "Chlorakas": "Chloraka", "Pafos": "Paphos",
            "Livadia Lefkosias": "Livadia Lefosias", "Moutoullas": "Moutoulias",
-           "Kalopanagiotis": "Kalapanagiotis"}
+           "Kalopanagiotis": "Kalapanagiotis", "Tremithousa": "Trimithousa"}
+# Communities CYSTAT counts as one that the boundary file draws as the parts
+# they were formed from. The figure goes on the first part's polygon only
+# once the parts are drawn as one (make_redrawn merges them under its id),
+# never on a part while the others are still drawn beside it.
+MERGED = {"Dromolaxia - Meneou": ("Dromolaxia", "Meneou")}
 SUFFIXES = ("lefkosias", "lemesou", "larnakas", "pafou", "ammochostou", "keryneias", "municipality")
 WHY_OUTSIDE = ("Kyrenia district has been outside the effective control of the Government of the "
                "Republic of Cyprus since 1974. The Republic's censuses since then, the 2021 census "
@@ -358,9 +363,17 @@ def build() -> list[dict[str, Any]]:
     used: set[str] = set()
     lost: list[str] = []
     across: list[str] = []
+    drawn = {fold(s["name"]) for s in admin2}
     for code, unit in sorted(comms.items()):
         dname = rev[unit["district"]]
         hit = None
+        parts = MERGED.get(unit["name"])
+        if parts:
+            if any(fold(p) in drawn for p in parts[1:]):
+                lost.append(f"{unit['name']} ({code}, {dname}, {unit['total']:,.0f}): drawn as "
+                            f"its parts {list(parts)}, which make_redrawn is to merge")
+                continue
+            unit = dict(unit, name=parts[0])
         for k in keys(unit["name"]):
             cands = [s for s in by_key.get((dname, k), []) if s["id"] not in used]
             if len({s["id"] for s in by_key.get((dname, k), [])}) == 1 and cands:
