@@ -1,22 +1,11 @@
-== get https://census.belstat.gov.by/config.js
-  889 bytes, begins b'window.BELSTAT_C'
-  ~ window.BELSTAT_CONFIG = { 'saikuUrl': '/saiku', 'saikuGuestFolder': 'query/open//public', 'saikuUserFolder': 'query/open//user',
-  ~ : 'query/open//public', 'saikuUserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belst
-  ~ lic', 'saikuUserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 't
-  ~ UserFolder': 'query/open//user', 'saikuExtension': 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables':
-  ~ 'saiku', 'api': '/sdpn/rest/api', 'adminApi': '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 're
-  ~ '/sdpn/rest/admin', 'officialBelstatSite': 'https://www.belstat.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 'regulations': 'https://www.belstat.gov.by/ofitsialnaya
-  ~ at.gov.by/', 'thematicTables': 'https://www.youtube.com/watch?v=hNh7CSbjZM4', 'regulations': 'https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
-  ~ aya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza', 'bulletins': 'https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
-  ~ iya/perepis-naseleniya-2019/itogi-perepisi-naseleniya-respubliki-belarus-2019-goda/', 'manual': 'https://www.belstat.gov.by/ofitsialnaya-statistika/bazy-dannyh/baza-dannyh-perepisi-naseleniya/rukovodst
-== get https://census.belstat.gov.by/static/js/main.019d9091.chunk.js
-  3,111 bytes, begins b'(this["webpackJs'
-  ~ =t(1),s=t.n(i),r=t(9),o=t.t(r,2),u=s.a.createContext(o)},9:function(e){e.exports=JSON.parse('{"saikuUrl":"/saiku","saikuGuestFolder":"query/open//public","saikuUserFolder":"query/open//user","saikuExtens
-  ~ ikuGuestFolder":"query/open//public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by",
-  ~ query/open//public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":
-  ~ /public","saikuUserFolder":"query/open//user","saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://ww
-  ~ saikuExtension":"saiku","api":"/sdpn/rest/api","adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroek
-  ~ ,"adminApi":"/sdpn/rest/admin","officialBelstatSite":"https://www.belstat.gov.by","thematicTables":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
-  ~ ya-sreda/perepis-naseleniya/perepis-naseleniya-2009/vykhodnye-reglamentnye-tablitsy","regulations":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
-  ~ ushchaya-sreda/perepis-naseleniya/perepis-naseleniya-2019/normativnaya-pravovaya-baza","bulletins":"https://www.belstat.gov.by/ofitsialnaya-statistika/makroekonomika-i-okruzhayushchaya-sreda/perepis-nasel
-  ~ naseleniya-respubliki-belarus-2019-goda","manual":"/manual.pdf"}')}},[[31,4,7]]]); //# sourceMappingURL=main.019d9091.chunk.js.map
+  Tom5_tab1_VPN-2020.xlsx: 1,610,049 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
+ethnicity: Tom5_tab1_VPN-2020.xlsx, 1,610,049 bytes
+  ethnicity: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие национальную принадлежность' (130,587,364); largest Русские 105,579,179, Татары 4,713,669, Чеченцы 1,674,854; 51 nested rows left to their parents
+  Tom5_tab6_VPN-2020.xlsx: 978,908 bytes from /home/runner/work/DemographicMap/DemographicMap/data/raw/russia
+language: Tom5_tab6_VPN-2020.xlsx, 978,908 bytes
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
+  warn(msg)
+  language: furthest from its own total is Российская Федерация at 1.0000 of 'Указавшие родной язык' (130,543,591); largest Русский 111,546,569, Татарский 4,073,253, Чеченский 1,644,313; 1 nested rows left to their parents
+  Tom2_tab2_VPN-2020.xlsx: 632,954 bytes, kept at /home/runner/work/DemographicMap/DemographicMap/data/raw/russia/Tom2_tab2_VPN-2020.xlsx
+ages: Tom2_tab2_VPN-2020.xlsx, 632,954 bytes
+RUS ages: г. Москва: no total, sexes or median read
