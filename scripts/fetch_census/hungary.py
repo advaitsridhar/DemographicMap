@@ -30,16 +30,18 @@ KSH's English and "I. kerület" to "XXIII. kerület" on the map. KSH counts
 some of Budapest's people in no district ("Budapest data not disaggregated
 by district", code 999); they are in Budapest's figure and no district's.
 
-**Fejér as drawn in 2013.** The map draws Fejér's districts as they were from
-2013 to 2014, with a Polgárdi district between Enying and Székesfehérvár;
-KSH's 2022 census counts Polgárdi's settlements in those two. WBS003 answers
-for every settlement too, so the three drawn districts are summed from their
-settlements as KSH's own gazetteer of 1 January 2014 (Helységnévtár,
-``hnt_letoltes_2014.xls``) assigns them: population, sex ratio and the three
-compositions. The gazetteer is also compared with the 2022 census's
-settlements everywhere else, and the run stops if any other district's
-settlements changed. The median age of those three is not written: KSH
-publishes age by settlement in ten-year groups only.
+**Districts as drawn in 2013.** The map draws the districts of 2013-2014: in
+Fejér a Polgárdi district between Enying and Székesfehérvár, which KSH's 2022
+census counts in those two, and elsewhere a few settlements in the district
+they have since left. Every settlement's district in KSH's own gazetteer of
+1 January 2014 (Helységnévtár, ``hnt_letoltes_2014.xls``) is compared with
+the 2022 census's; each district whose settlements changed is summed from
+its 2014 settlements, which WBS003 also answers for: population, sex ratio
+and the three compositions. A move between counties stops the run. KSH
+publishes age by settlement in ten-year groups only, so such a district keeps
+the single-year median of its 2022 namesake only where the two differ by no
+more than 2% of the people, and says by whom; otherwise the median is a
+stated gap.
 
 **First level.** The map files Budapest's districts under Pest, whose
 polygon therefore covers Budapest too, so the Pest record is Pest county and
@@ -78,17 +80,13 @@ IRREGULAR = {"Egri": "Eger", "Szeghalmi": "Szeghalom", "Mórahalmi": "Mórahalom
              "Kunszentmártoni": "Kunszentmártonj", "Hegyháti": "Hegyhát",
              "Kiskunfélegyházi": "Kiskunfélegyháza", "Nyíregyházi": "Nyíregyháza",
              "Orosházi": "Orosháza"}
-# The map draws one district KSH's 2022 count does not have: "Polgard", a
-# district of the 2013 division whose settlements KSH now counts in the Enying
-# and Szekesfehervar districts, the two polygons beside it. So neither of those
-# districts' 2022 figures fits its drawn polygon; the three are summed from
-# their settlements as the 2014 gazetteer assigns them (district codes 079,
-# 083 and 085), keyed here to the polygon's name.
-REDRAWN = {"Enyingi": "Enying", "Székesfehérvári": "Székesfehérvár"}
-DRAWN_2013 = {"079": "Enying", "083": "Polgard", "085": "Székesfehérvár"}
-# The 2022 districts that took in Polgárdi's settlements; no other district's
-# settlements may have moved since 2014.
-REDRAWN_CODES = {"079", "085"}
+# The one district of 2014 that KSH's 2022 count no longer has, and the
+# polygon the map draws for it; its settlements are now in Enying (079) and
+# Székesfehérvár (085).
+GONE_2014 = {"083": ("Polgard", "085")}
+# A district rebuilt from its settlements keeps its 2022 namesake's median
+# only when the settlements that differ hold at most this share of it.
+MEDIAN_TOLERANCE = 0.02
 RELIGION = {"RE_RC": "Roman Catholic", "RE_GC": "Greek Catholic", "RE_CA": "Reformed (Calvinist)",
             "RE_LU": "Lutheran", "RE_OC": "Orthodox", "RE_CD": "Other Christian",
             "RE_J": "Judaism", "RE_OCD": "Other religion", "RE_NOT": "No religion",
@@ -228,11 +226,9 @@ def build() -> list[dict[str, Any]]:
     by_key: dict[str, list[dict[str, Any]]] = {}
     for shape in shapes:
         by_key.setdefault(fold(shape["name"]), []).append(shape)
-    rebuilt = drawn_2013(ver, totals)
+    rebuilt = drawn_2014(ver, totals, parent_of)
     for code in districts:
         label = name_of[code]
-        if label.replace(" district", "").strip() in REDRAWN:
-            continue                  # drawn as in 2013: written from its settlements below
         if parent_of[code] == "HU110":
             number = int(label.split()[-1])
             keys = [fold(f"{ROMAN[number - 1]}. kerület")]
@@ -249,16 +245,20 @@ def build() -> list[dict[str, Any]]:
         fields = age_sex_fields(males[code], females[code], year=YEAR, source=source_age,
                                 total=totals[code], median_note=median_note.format(what="district"),
                                 ratio_note="Males per 100 females counted by the 2022 census.")
+        if code in rebuilt:
+            records.append(drawn_record(code, rebuilt[code], shape, source_age,
+                                        county=name_of[parent_of[code]], median=fields))
+            continue
         fields.update(fields_of[code])
         records.append(record(
             f"HUN-KSH-{code}", shape["name"], level="admin2", parent=shape["parent"],
             parent_name=name_of[parent_of[code]], country="HUN", codes={"ksh_terul": code},
             aliases=[label], match_by="shape_id", shape_id=shape["id"], sources=sources, **fields))
-    for code14, drawn in DRAWN_2013.items():
+    for code14, (drawn, _) in GONE_2014.items():
         shape = next(s for s in shapes if s["name"] == drawn)
         used.add(shape["id"])
         records.append(drawn_record(code14, rebuilt[code14], shape, source_age,
-                                    county=name_of[parent_of["085"]]))
+                                    county=name_of[parent_of[GONE_2014[code14][1]]], median=None))
     report_unbound("hungary", unbound, [s["name"] for s in shapes if s["id"] not in used])
     if unbound:
         raise SystemExit(f"hungary: {len(unbound)} districts unbound")
@@ -337,33 +337,32 @@ def read_gazetteer(table: list[list[Any]]) -> dict[str, tuple[str, str, str]]:
     return out
 
 
-def members_2013(old: dict[str, tuple[str, str, str]], now: dict[str, str]) -> dict[str, list[str]]:
-    """The 2014 districts drawn on the map, as lists of settlement codes.
+def members_2014(old: dict[str, tuple[str, str, str]], now: dict[str, str],
+                 county_of: dict[str, str]) -> dict[str, list[str]]:
+    """The 2014 districts whose settlements changed, each as its 2014 settlement codes.
 
     ``old`` is the 2014 gazetteer, ``now`` the 2022 census's settlement ->
-    district outside Budapest. Every settlement must sit where it sat in
-    2014, except Polgárdi's, which went to REDRAWN_CODES; anything else --
-    a settlement moved elsewhere, or one in Fejér's redrawn districts that
-    the gazetteer does not have -- stops the run.
+    district outside Budapest, ``county_of`` a district's county. A settlement
+    moved between counties, or one in a changed district that the gazetteer
+    does not have, stops the run: neither can be placed on the drawn map.
     """
     moved = {c: (old[c][1], p) for c, p in now.items() if c in old and old[c][1] != p}
-    unexpected = {c: m for c, m in moved.items() if not (m[0] == "083" and m[1] in REDRAWN_CODES)}
-    unknown = sorted(c for c, p in now.items() if c not in old and p in REDRAWN_CODES)
+    changed = {d for pair in moved.values() for d in pair}
+    unplaced = sorted(c for c, p in now.items() if c not in old and p in changed)
+    across = {c: m for c, m in moved.items()
+              if county_of.get(m[0], "?") != county_of.get(m[1], "!")}
     log(f"  2022 census: {len(now):,} settlements outside Budapest; {len(moved)} in another district "
-        f"than in 2014, {len(moved) - len(unexpected)} of them Polgárdi's")
-    if unexpected or unknown:
-        raise SystemExit(f"hungary: settlements whose district changed since 2014 other than "
-                         f"Polgárdi's: {sorted(unexpected.items())[:20]}; in Fejér's redrawn "
-                         f"districts but not in the 2014 gazetteer: {unknown}")
-    members: dict[str, list[str]] = {code: [] for code in DRAWN_2013}
-    for c, p in sorted(now.items()):
-        if p in REDRAWN_CODES:
-            if old[c][1] not in members:
-                raise SystemExit(f"hungary: settlement {c} was in district {old[c][1]} in 2014")
+        f"than in 2014: {sorted(moved.items())}")
+    if across or unplaced:
+        raise SystemExit(f"hungary: settlements moved between counties since 2014: {across}; in a "
+                         f"changed district but not in the 2014 gazetteer: {unplaced}")
+    members: dict[str, list[str]] = {code: [] for code in sorted(changed)}
+    for c in sorted(now):
+        if c in old and old[c][1] in members:
             members[old[c][1]].append(c)
     empty = [code for code, group in members.items() if not group]
     if empty:
-        raise SystemExit(f"hungary: no settlement of the 2014 districts {empty} in the 2022 census")
+        raise SystemExit(f"hungary: no 2022 settlement of the 2014 districts {empty}")
     return members
 
 
@@ -382,18 +381,23 @@ def sum_settlements(members: list[str], cells: dict[str, dict[str, float]],
     return summed
 
 
-def drawn_2013(ver: str, totals: dict[str, float]) -> dict[str, dict[str, Any]]:
-    """Enying, Polgárdi and Székesfehérvár as drawn, each summed from its 2014 settlements."""
+def drawn_2014(ver: str, totals: dict[str, float],
+               parent_of: dict[str, str]) -> dict[str, dict[str, Any]]:
+    """Every 2014 district whose settlements changed, summed from its 2014 settlements."""
     old = gazetteer_2014()
     geo5 = codelists("WBS003", ver)["CL_TERUL_GEO5"]
     parent = {c["id"]: c.get("parent") for c in geo5}
     budapest = {c for c, p in parent.items() if p == "HU110"}
     now = {c: p for c, p in parent.items()
            if re.fullmatch(r"\d{5}", c) and p and re.fullmatch(r"\d{3}", p) and p not in budapest}
-    members = members_2013(old, now)
+    county_of = {d: parent_of.get(d) for d in set(now.values())}
+    for gone, (_, heir) in GONE_2014.items():
+        county_of[gone] = parent_of.get(heir)
+    members = members_2014(old, now, county_of)
+    later = {code: sorted(c for c, p in now.items() if p == code) for code in members}
+    flat = sorted({c for group in [*members.values(), *later.values()] for c in group})
     cells: dict[str, dict[str, float]] = {}
     blanked: dict[str, int] = {}
-    flat = sorted(c for group in members.values() for c in group)
     for start in range(0, len(flat), 40):
         chunk = "+".join(flat[start:start + 40])
         for row in rows("WBS003", ver, f"TIME_PERIOD:{YEAR},TERUL_GEO5:{chunk},TEL_SZ_ADAT"):
@@ -401,32 +405,52 @@ def drawn_2013(ver: str, totals: dict[str, float]) -> dict[str, dict[str, Any]]:
             cells.setdefault(place, {})[row["TEL_SZ_ADAT"]] = value(row)
             if row.get("OBS_VALUE") in (None, ""):
                 blanked[place] = blanked.get(place, 0) + 1
-    names = {c: old[c][0] for c in flat}
+    names = {c: old[c][0] if c in old else c for c in flat}
     out: dict[str, dict[str, Any]] = {}
     for code, group in members.items():
         summed = sum_settlements(group, cells, names)
+        differ = sorted(set(group) ^ set(later[code]))
+        differ_people = sum(cells[c]["VALLAS_V1"] for c in differ)
         out[code] = {"cells": summed, "settlements": sorted(names[c] for c in group),
                      "codes": sorted(group), "blanked": sum(blanked.get(c, 0) for c in group),
-                     "name": old[group[0]][2] or DRAWN_2013[code]}
+                     "name": old[group[0]][2] or code,
+                     "differ": [(names[c], cells[c]["VALLAS_V1"], c in group) for c in differ],
+                     "share": differ_people / summed["VALLAS_V1"]}
         log(f"  2014 district {code} {out[code]['name']}: {len(group)} settlements, "
-            f"{summed['VALLAS_V1']:,.0f} people, {out[code]['blanked']} blanked cells")
-    # The three drawn districts are the two of 2022, person for person.
-    check_sum((u["cells"]["VALLAS_V1"] for u in out.values()), sum(totals[c] for c in REDRAWN_CODES),
-              "the 2013 districts' settlements against the 2022 Enying and Székesfehérvár districts")
+            f"{summed['VALLAS_V1']:,.0f} people, {out[code]['blanked']} blanked cells; differs from "
+            f"2022 by {differ_people:,.0f} ({100 * out[code]['share']:.1f}%): "
+            f"{[n for n, _, _ in out[code]['differ']]}")
+    # The rebuilt districts hold the same people as the 2022 districts they came from.
+    check_sum((u["cells"]["VALLAS_V1"] for u in out.values()),
+              sum(totals[code] for code in members if code in totals),
+              "the rebuilt 2014 districts against their 2022 districts")
     return out
 
 
 def drawn_record(code14: str, unit: dict[str, Any], shape: dict[str, Any], source_age: str,
-                 county: str) -> dict[str, Any]:
-    """The record for one district drawn as in 2013, from its settlements' sums."""
+                 county: str, median: dict[str, Any] | None) -> dict[str, Any]:
+    """The record for one district drawn as in 2013-2014, from its settlements' sums.
+
+    ``median`` is the 2022 namesake's age fields, or None where there is none.
+    """
     fields = composition(unit["cells"], shape["name"], blanked=unit["blanked"])
-    why = (f"The map draws Fejér's districts as they were in 2013-2014, with a Polgárdi district "
-           f"between Enying and Székesfehérvár, which KSH's 2022 census no longer has. This "
-           f"polygon's figures are the census's counts summed over the {len(unit['settlements'])} "
-           f"settlements KSH's gazetteer of 1 January 2014 puts in the {unit['name']} district: "
-           f"{', '.join(unit['settlements'])}.")
+    moved = "; ".join(f"{n} ({p:,.0f} people, {'then here' if here else 'now here'})"
+                      for n, p, here in unit["differ"])
+    why = (f"The map draws the districts of 2013-2014, and this one's settlements have changed "
+           f"since ({moved}). Its figures are the 2022 census's counts summed over the "
+           f"{len(unit['settlements'])} settlements KSH's gazetteer of 1 January 2014 puts in the "
+           f"{unit['name']} district.")
     for key in ("religion", "ethnicity", "language"):
         fields[f"{key}_note"] = fields[f"{key}_note"] + " " + why
+    if median is not None and unit["share"] <= MEDIAN_TOLERANCE:
+        age = {"median_age": median["median_age"],
+               "median_age_note": (median["median_age_note"] + f" It is the 2022 district's, which "
+                                   f"differs from the drawn one by {100 * unit['share']:.1f}% of its "
+                                   f"people ({moved}); KSH publishes age by settlement in ten-year "
+                                   f"groups only.")}
+    else:
+        age = {"median_age": gap(NOT_AVAILABLE, "Not written: " + why + " KSH publishes age by "
+                                 "settlement in ten-year groups only, too coarse for a median.")}
     return record(
         f"HUN-KSH2014-{code14}", shape["name"], level="admin2", parent=shape["parent"],
         parent_name=county, country="HUN",
@@ -437,14 +461,14 @@ def drawn_record(code14: str, unit: dict[str, Any], shape: dict[str, Any], sourc
         sex_ratio=measure(sex_ratio(unit["cells"]["M"], unit["cells"]["F"]), unit=SEX_RATIO_UNIT,
                           year=YEAR, source=source_age),
         sex_ratio_note="Males per 100 females counted by the 2022 census, same settlements.",
-        median_age=gap(NOT_AVAILABLE, "Not written: " + why + " KSH publishes age by settlement "
-                       "in ten-year groups only, too coarse for a median."),
         sources=[{"field": "population/sex_ratio/religion/ethnicity/language",
                   "name": SOURCE.format(flow="WBS003"), "url": PORTAL, "license": LICENCE,
                   "year": YEAR},
                  {"field": "population/sex_ratio/religion/ethnicity/language",
-                  "name": GAZETTEER_SOURCE, "url": GAZETTEER, "license": LICENCE, "year": 2014}],
-        **fields)
+                  "name": GAZETTEER_SOURCE, "url": GAZETTEER, "license": LICENCE, "year": 2014}]
+        + ([{"field": "median_age", "name": source_age, "url": PORTAL, "license": LICENCE,
+             "year": YEAR}] if "median_age_note" in age else []),
+        **age, **fields)
 
 
 def composition(c: dict[str, float], name: str, blanked: int = 0) -> dict[str, Any]:

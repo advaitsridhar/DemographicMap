@@ -201,18 +201,30 @@ def text_of(cell: Any) -> str:
 
 
 def read_popcom(rows: list[list[Any]]) -> tuple[dict[str, float], float]:
-    """{commune: population on 1 January 2017} and the file's own total."""
+    """{commune: population on 1 January 2017} and the file's own total.
+
+    A commune row is its LAU2 code, its name and one figure per date; the
+    total row is labelled "Total" and carries the same figures, which are
+    read in the order of the header's dates wherever the label sits.
+    """
     head = next(i for i, r in enumerate(rows) if POPCOM_COLUMN in [text_of(c) for c in r])
-    col = [text_of(c) for c in rows[head]].index(POPCOM_COLUMN)
+    header = [text_of(c) for c in rows[head]]
+    col = header.index(POPCOM_COLUMN)
+    dates = [j for j, c in enumerate(header) if re.fullmatch(r"\d{1,2}-\d{1,2}-\d{4}", c)]
     out, total = {}, None
     for r in rows[head + 1:]:
-        first = text_of(r[0])
-        if "Total" in (first, text_of(r[1] if len(r) > 1 else "")):
-            total = float(r[col])
-        elif re.fullmatch(r"\d{1,4}", first) and isinstance(r[col], (int, float)):
-            out[text_of(r[1])] = float(r[col])
+        cells = [text_of(c) for c in r]
+        numbers = [float(c) for c in r if isinstance(c, (int, float))]
+        if any(c.lower().startswith("total") for c in cells if c and not c[0].isdigit()):
+            if len(numbers) != len(dates):
+                raise SystemExit(f"luxembourg: the total row has {len(numbers)} figures for "
+                                 f"{len(dates)} dates: {cells[:4]}")
+            total = numbers[dates.index(col)]
+        elif re.fullmatch(r"\d{1,4}", cells[0] if cells else "") and isinstance(r[col], (int, float)):
+            out[cells[1]] = float(r[col])
     if total is None:
-        raise SystemExit("luxembourg: the 2000-2017 file has no Total row")
+        raise SystemExit(f"luxembourg: the 2000-2017 file has no total row; its last rows begin "
+                         f"{[[text_of(c) for c in r[:3]] for r in rows[-4:]]}")
     check_sum(out.values(), total, f"communes on {POPCOM_COLUMN} against Luxembourg")
     return out, total
 

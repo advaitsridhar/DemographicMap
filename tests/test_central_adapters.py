@@ -293,20 +293,57 @@ class HungaryDrawnIn2013(unittest.TestCase):
              ["Enying", "02802", "város", "Fejér", 3708.0, "Enyingi", "Enying", "079 1", "Enyingi", "Enying"],
              ["Aba", 17376.0, "város", "Fejér", 3708.0, "Abai", "Aba", "085 0", "Székesfehérvári",
               "Székesfehérvár"],
-             ["Abaliget", "12548", "község", "Baranya", 3207.0, "Pécsi", "Pécs", "028 0", "Pécsi", "Pécs"]]
+             ["Abaliget", "12548", "község", "Baranya", 3207.0, "Pécsi", "Pécs", "028 0", "Pécsi", "Pécs"],
+             ["Bicsérd", "13453", "község", "Baranya", 3207.0, "Pécsi", "Pécs", "029 0", "Szentlőrinci",
+              "Szentlőrinc"]]
 
     def test_the_gazetteer_is_read_by_its_two_header_rows(self):
         out = hungary.read_gazetteer(self.TABLE)
         self.assertEqual(out["17525"], ("Polgárdi", "083", "Polgárdi"))
         self.assertEqual(out["17376"][1], "085")               # a number read as a code
 
-    def test_polgardis_settlements_may_move_and_nothing_else(self):
+    COUNTY = {"079": "HU211", "083": "HU211", "085": "HU211", "028": "HU231", "029": "HU231",
+              "030": "HU232"}
+
+    def test_every_district_a_settlement_left_or_joined_is_rebuilt_from_2014(self):
         old = hungary.read_gazetteer(self.TABLE)
-        now = {"17525": "085", "02802": "079", "17376": "085", "12548": "028"}
-        members = hungary.members_2013(old, now)
-        self.assertEqual(members, {"079": ["02802"], "083": ["17525"], "085": ["17376"]})
+        now = {"17525": "085", "02802": "079", "17376": "085", "12548": "028", "13453": "029"}
+        # Polgárdi's settlement went to Székesfehérvár: 083 and 085 change, 079 and 028 do not.
+        self.assertEqual(hungary.members_2014(old, now, self.COUNTY),
+                         {"083": ["17525"], "085": ["17376"]})
+        # A move within a county elsewhere is rebuilt too, on both sides.
+        moved = hungary.members_2014(old, {**now, "12548": "029"}, self.COUNTY)
+        self.assertEqual((moved["028"], moved["029"]), (["12548"], ["13453"]))
+
+    def test_a_move_between_counties_stops_the_run(self):
+        old = hungary.read_gazetteer(self.TABLE)
+        now = {"17525": "085", "02802": "079", "17376": "085", "12548": "030"}
         with self.assertRaises(SystemExit):
-            hungary.members_2013(old, {**now, "12548": "029"})
+            hungary.members_2014(old, now, self.COUNTY)
+
+    def test_a_settlement_the_gazetteer_lacks_in_a_changed_district_stops_the_run(self):
+        old = hungary.read_gazetteer(self.TABLE)
+        now = {"17525": "085", "02802": "079", "17376": "085", "99999": "085"}
+        with self.assertRaises(SystemExit):
+            hungary.members_2014(old, now, self.COUNTY)
+
+    def unit(self, share):
+        cells = {"VALLAS_V1": 1000.0, "M": 490.0, "F": 510.0, "RE_C": 400.0, "RE_RC": 400.0,
+                 "RE_NOT": 300.0, "RE_NA": 300.0, "EG": 1000.0, "EG_HU": 1000.0, "MT": 1000.0,
+                 "MT_HU": 1000.0}
+        return {"cells": cells, "settlements": ["A", "B"], "codes": ["1", "2"], "blanked": 0,
+                "name": "Bicskei", "differ": [("C", 1000.0 * share, False)], "share": share}
+
+    def test_the_2022_median_is_kept_only_where_the_two_differ_by_two_percent_or_less(self):
+        shape = {"id": "s", "name": "Bicske", "parent": "p"}
+        median = {"median_age": {"value": 44.0}, "median_age_note": "Interpolated."}
+        close = hungary.drawn_record("077", self.unit(0.015), shape, "KSH", "Fejér", median)
+        self.assertEqual(close["median_age"], {"value": 44.0})
+        self.assertIn("differs from the drawn one by 1.5%", close["median_age_note"])
+        far = hungary.drawn_record("077", self.unit(0.05), shape, "KSH", "Fejér", median)
+        self.assertEqual(far["median_age"]["status"], "not_available")
+        self.assertEqual(far["population"]["value"], 1000)
+        self.assertEqual(far["sex_ratio"]["value"], 96.1)
 
     def test_a_settlement_whose_sexes_miss_its_people_stops_the_run(self):
         cells = {"17525": {"VALLAS_V1": 10.0, "M": 4.0, "F": 5.0}}
