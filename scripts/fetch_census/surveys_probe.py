@@ -8,9 +8,9 @@ is one probe, ``mode:url`` with optional ``~~`` parts after it:
 
     head:URL                     status, final URL after redirects, type and size
     text:URL[~~N]                the first N characters of the body, tags stripped
-    grep:URL~~REGEX[~~N]         up to N matches of REGEX in the raw body (with context)
+    grep:URL~~REGEX[~~N[~~CTX]]  up to N matches of REGEX in the raw body, CTX characters around
     links:URL~~REGEX[~~N]        up to N links (href and text) matching REGEX
-    js:URL~~REGEX[~~N]           the page's own scripts, each searched for REGEX
+    js:URL~~REGEX[~~N[~~CTX]]    the page's own scripts, each searched for REGEX
     post:URL~~B64JSON[~~N]       POST a JSON body (base64), print the first N characters
     zip:URL                      a zip archive's members
     xls:URL[~~ROWS[~~SHEETS]]    a workbook's sheets and first rows
@@ -186,7 +186,8 @@ def probe(arg: str) -> None:
         n = int(extra[0]) if extra else 2000
         say("  " + strip(decode(body, headers))[:n])
     elif mode == "grep":
-        grep(decode(body, headers), extra[0], int(extra[1]) if len(extra) > 1 else 20)
+        grep(decode(body, headers), extra[0], int(extra[1]) if len(extra) > 1 else 20,
+             int(extra[2]) if len(extra) > 2 else 80)
     elif mode == "links":
         rx = re.compile(extra[0], re.I) if extra and extra[0] else None
         n = int(extra[1]) if len(extra) > 1 else 60
@@ -205,15 +206,16 @@ def probe(arg: str) -> None:
         text = decode(body, headers)
         rx = extra[0] if extra else r"https?://[^\"'\s]+"
         n = int(extra[1]) if len(extra) > 1 else 30
+        ctx = int(extra[2]) if len(extra) > 2 else 80
         srcs = re.findall(r"(?is)<script\b[^>]*src=[\"']([^\"']+)[\"']", text)
         say(f"  {len(srcs)} scripts; inline hits:")
-        grep(text, rx, n)
+        grep(text, rx, n, ctx)
         for src in srcs[:12]:
             full = urllib.parse.urljoin(final or url, html.unescape(src))
             s2, _, h2, b2 = fetch(full)
             say(f"  -- {full} HTTP {s2} {len(b2):,} bytes")
             if s2 == 200:
-                grep(decode(b2, h2), rx, n)
+                grep(decode(b2, h2), rx, n, ctx)
     elif mode == "zip":
         try:
             zf = zipfile.ZipFile(io.BytesIO(body))
