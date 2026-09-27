@@ -1,10 +1,25 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
-  unpacked personas_ext_26_02.rar with 7z
-file personas_ext_26_02.csv: 1,451,687,919 bytes
-  utf-8-sig, ',', 102 columns: ['', 'ID_CENSO', 'DIRECCION_ID', 'DEPARTAMENTO', 'LOCALIDAD', 'VIVID', 'HOGID', 'PERID', 'REGION_4', 'AREA', 'MUNICIPIO_PAIS', 'TIPO_MUNICIPIO_PAIS', 'FUENTE_EXT', 'SIT_CALLE', 'CUESTIONARIO_COMPLETO', 'CUESTIONARIO_BASICO', 'RRAA', 'UNIVERSO', 'VIVVO00', 'PERPH02', 'PERNA01', 'PERNA01_TRAMO', 'PERPA01', 'PERPA02', 'PERPA02_1', 'PERPA03', 'PERPA03_1', 'PERER01_1', 'PERER01_2', 'PERER01_3', 'PERER01_4', 'PERER01_5', 'PERER02', 'PERDI01', 'PERDI02', 'PERDI04', 'PERDI03', 'PERDI07', 'PERDI06', 'PERTEA', 'PEREC01', 'PEREC02', 'PEREC03', 'PEREC04', 'PERMI01', 'PERMI01_2', 'PERMI01_4', 'PERMI02', 'PERMI05', 'PERMI05_1', 'PERMI06', 'PERMI06_2', 'PERMI06_4', 'PERMI07', 'PERMI07_2', 'PERMI07_4', 'PERMI03', 'PERMI04', 'PERED00', 'PERED01', 'PERED02', 'PERED02_2', 'PERED02_4', 'PERED03', 'PERED03_1', 'PERED04', 'PERED05', 'PERED05_1', 'PERED05_1_1', 'PERED05_2', 'PERED05_2_1', 'PERED08', 'PERAL01', 'PERAL13', 'PERAL03', 'PERAL04', 'PERAL06', 'PERAL08', 'PERAL09', 'PERAL09_2', 'PERAL09_4', 'PERAL11', 'PERAL14_4', 'PERAL14_5', 'PERFM01', 'PERFM01_2', 'PERFM01_3', 'PERFM02', 'PERFM04_1', 'PERFM05', 'NIVELEDU', 'POBPCOAC', 'AGREGADO_A_HOGAR_CENSADO', 'MADRE_PERID', 'EXTRANJERO', 'TIPO_EXTRANJERO', 'ASISTENCIA', 'TIPO_ASISTENCIA', 'NIVELEDU_ACT', 'TIPO_NIVELEDU_ACT', 'JUB_PEN', 'TIPO_JUB_PEN']
-  no such columns: ['MUNICIPIO', 'MUNICIPIO_136', 'MUNICIPIO_125']
-  3,499,451 rows; W sums to 0.000
-  DEPARTAMENTO: 19 values: [('01', 1302950), ('02', 77488), ('03', 608960), ('04', 91021), ('05', 135797), ('06', 62010), ('07', 26271), ('08', 70324), ('09', 59173), ('10', 212954), ('11', 121838), ('12', 57338), ('13', 109299), ('14', 80710), ('15', 136195), ('16', 119718), ('17', 83684), ('18', 96016), ('19', 47705)]
-  PERPH02: 2 values: [('1', 1694478), ('2', 1804973)]
+  Cuadro A2 read from https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
+  P03: 263 districts
+  P04: 263 districts
+  PERINDI: 263 districts
+  P1601: 263 districts
+  P1602: 263 districts
+  P1604: 263 districts
+  P1605: 263 districts
+  P1606: 263 districts
+  P1607: 263 districts
+  P1608: 263 districts
+  P1609: 263 districts
+  P1698: 263 districts
+  263 districts making INE's 6,109,903; every question's categories and 'No Aplica' making each district
+  236 of 236 districts bound; not: []
+  2002 religion: 201 district polygons filled; 46 with the reason they are not
+  wrote data/processed/paraguay_census.json (1254 kB)
+  wrote paraguay_census.json: 18 departments, 247 district polygons (236 with figures)
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_12699081.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990101.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990121.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990141.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990161.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990321.htm: trying again in 10s
