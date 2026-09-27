@@ -11,8 +11,8 @@ answers, each checked before a pin is written here:
 * two units share a name within one parent, and only location separates them.
 
 A pin is the strongest claim an adapter makes about a polygon (the build stops
-on a pin to a polygon it does not draw), so each group says what established
-it. Adapters that read the same office's codes share the table, so a pin fixed
+on a pin to a polygon it does not draw, or one no longer labelled as the pin
+says), so each group says what established it. Adapters that read the same office's codes share the table, so a pin fixed
 for one source is fixed for every source keyed by those codes.
 """
 
@@ -20,7 +20,7 @@ from __future__ import annotations
 
 from typing import Any
 
-PINS: dict[str, dict[str, str]] = {
+PINS: dict[str, dict[str, tuple[str, str]]] = {
     # IBGE municipality codes. The boundary file draws these where they are
     # but files them under the next state -- Amparo (PB) under Pernambuco,
     # Tibau (RN) under Ceará, Águas de Lindóia (SP) under Minas Gerais -- so a
@@ -29,22 +29,22 @@ PINS: dict[str, dict[str, str]] = {
     # the one Quixaba polygon and row left once Quixaba (PB), whose seat is
     # 110 km away in the other, is placed.
     "BRA": {
-        "2500734": "56859067B25087670535038",  # Amparo (PB)
-        "2501005": "56859067B30270285588633",  # Araruna (PB)
-        "2502003": "56859067B47597011454876",  # Belém do Brejo do Cruz (PB)
-        "2502201": "56859067B58755230690339",  # Bom Jesus (PB)
-        "2502300": "56859067B88877822125825",  # Bom Sucesso (PB)
-        "2602506": "56859067B9303192166892",   # Brejinho (PE)
-        "2512606": "56859067B6462044474109",   # Quixaba (PB)
-        "2611533": "56859067B2724242969158",   # Quixaba (PE)
-        "2612471": "56859067B75266900672705",  # Santa Cruz da Baixa Verde (PE)
-        "2612802": "56859067B87497954327615",  # Santa Terezinha (PE)
-        "2412500": "56859067B85156148538476",  # São Miguel (RN)
-        "2613800": "56859067B99318407457286",  # São Vicente Férrer (PE)
-        "2411056": "56859067B59166838740608",  # Tibau (RN)
-        "2414704": "56859067B38668332786629",  # Várzea (RN)
-        "2517100": "56859067B31592745893521",  # Várzea (PB)
-        "3500501": "56859067B8082951902088",   # Águas de Lindóia (SP)
+        "2500734": ("56859067B25087670535038", "Amparo"),  # Amparo (PB)
+        "2501005": ("56859067B30270285588633", "Araruna"),  # Araruna (PB)
+        "2502003": ("56859067B47597011454876", "Belém do Brejo do Cruz"),  # Belém do Brejo do Cruz (PB)
+        "2502201": ("56859067B58755230690339", "Bom Jesus"),  # Bom Jesus (PB)
+        "2502300": ("56859067B88877822125825", "Bom Sucesso"),  # Bom Sucesso (PB)
+        "2602506": ("56859067B9303192166892", "Brejinho"),   # Brejinho (PE)
+        "2512606": ("56859067B6462044474109", "Quixaba"),   # Quixaba (PB)
+        "2611533": ("56859067B2724242969158", "Quixaba"),   # Quixaba (PE)
+        "2612471": ("56859067B75266900672705", "Santa Cruz da Baixa Verde"),  # Santa Cruz da Baixa Verde (PE)
+        "2612802": ("56859067B87497954327615", "Santa Terezinha"),  # Santa Terezinha (PE)
+        "2412500": ("56859067B85156148538476", "São Miguel"),  # São Miguel (RN)
+        "2613800": ("56859067B99318407457286", "São Vicente Férrer"),  # São Vicente Férrer (PE)
+        "2411056": ("56859067B59166838740608", "Tibau"),  # Tibau (RN)
+        "2414704": ("56859067B38668332786629", "Várzea"),  # Várzea (RN)
+        "2517100": ("56859067B31592745893521", "Várzea"),  # Várzea (PB)
+        "3500501": ("56859067B8082951902088", "Águas de Lindóia"),   # Águas de Lindóia (SP)
     },
     # DANE DIVIPOLA codes. Each polygon is the only one in its department the
     # name can be: the boundary file writes Barranquilla by its legal title
@@ -54,23 +54,23 @@ PINS: dict[str, dict[str, str]] = {
     # Amazonas, Guainía and Vaupés with their seats or "Cor. Departamental" in
     # the name. None of the seventeen reached a polygon by name.
     "COL": {
-        "08001": "7082276B33268622823443",  # Barranquilla
-        "13810": "7082276B69446027092984",  # Tiquisio ("Tiquiso")
-        "23670": "7082276B77383139939829",  # San Andrés de Sotavento
-        "47170": "7082276B43456063324941",  # Chibolo ("Chivolo")
-        "52699": "7082276B62156244785095",  # Santacruz ("Santa Cruz (Guachavés)")
-        "54553": "7082276B36155963658062",  # Puerto Santander (Norte de Santander)
-        "70823": "7082276B69726867253152",  # San José de Toluviejo ("Tolú Viejo")
-        "91430": "7082276B65279517003270",  # La Victoria (ANM, Amazonas)
-        "91460": "7082276B32823628766031",  # Mirití-Paraná (ANM)
-        "91669": "7082276B22108715685729",  # Puerto Santander (ANM, "Santander (Araracuara)")
-        "94343": "7082276B12505915261295",  # Barrancominas ("Barranco Mina")
-        "94663": "7082276B54584642345614",  # Mapiripana (ANM)
-        "94887": "7082276B62655490891692",  # Pana Pana (ANM)
-        "94888": "7082276B96401380433737",  # Morichal (ANM)
-        "97511": "7082276B7457968430038",   # Pacoa (ANM)
-        "97777": "7082276B69012408325747",  # Papunahua (ANM)
-        "97889": "7082276B57930571389360",  # Yavaraté (ANM)
+        "08001": ("7082276B33268622823443", "Distrito Especial, Industrial Y Portuario De Barr*"),  # Barranquilla
+        "13810": ("7082276B69446027092984", "Tiquiso"),  # Tiquisio ("Tiquiso")
+        "23670": ("7082276B77383139939829", "San Andres De Sotavento"),  # San Andrés de Sotavento
+        "47170": ("7082276B43456063324941", "Chivolo"),  # Chibolo ("Chivolo")
+        "52699": ("7082276B62156244785095", "Santa Cruz (Guachavés)"),  # Santacruz ("Santa Cruz (Guachavés)")
+        "54553": ("7082276B36155963658062", "Puerto Santander"),  # Puerto Santander (Norte de Santander)
+        "70823": ("7082276B69726867253152", "Tolú Viejo"),  # San José de Toluviejo ("Tolú Viejo")
+        "91430": ("7082276B65279517003270", "La Victoria (Pacoa)"),  # La Victoria (ANM, Amazonas)
+        "91460": ("7082276B32823628766031", "Mirití-paraná (Campoamor)"),  # Mirití-Paraná (ANM)
+        "91669": ("7082276B22108715685729", "Santander (Araracuara)"),  # Puerto Santander (ANM, "Santander (Araracuara)")
+        "94343": ("7082276B12505915261295", "Barranco Mina"),  # Barrancominas ("Barranco Mina")
+        "94663": ("7082276B54584642345614", "Mapiripana"),  # Mapiripana (ANM)
+        "94887": ("7082276B62655490891692", "Paná-paná (Campo Alegre)"),  # Pana Pana (ANM)
+        "94888": ("7082276B96401380433737", "Morichal (Morichal Nuevo)"),  # Morichal (ANM)
+        "97511": ("7082276B7457968430038", "Pacoa (Cor. Departamental)"),   # Pacoa (ANM)
+        "97777": ("7082276B69012408325747", "Papunaua(cor. Departamental)"),  # Papunahua (ANM)
+        "97889": ("7082276B57930571389360", "Yavaraté  (Cor. Departamental)"),  # Yavaraté (ANM)
     },
     # INEGI municipio codes. Oaxaca has two San Juan Mixtepec and two San
     # Pedro Mixtepec, which the boundary file tells apart by judicial district
@@ -82,12 +82,12 @@ PINS: dict[str, dict[str, str]] = {
     # draw -- their people are still inside Tetela del Volcán and Puente de
     # Ixtla, whose figures no longer include them.
     "MEX": {
-        "20208": "50627088B120983506636",    # San Juan Mixtepec (Distrito 08, Juxtlahuaca)
-        "20209": "50627088B88987154065702",  # San Juan Mixtepec (Distrito 26, Miahuatlán)
-        "20318": "50627088B24493610345769",  # San Pedro Mixtepec (Distrito 22, Juquila)
-        "20319": "50627088B31998279857894",  # San Pedro Mixtepec (Distrito 26, Miahuatlán)
-        "21075": "50627088B56291356806731",  # Hueyapan (Puebla)
-        "30195": "50627088B45118812748540",  # Xoxocotla (Veracruz)
+        "20208": ("50627088B120983506636", "San Juan Mixtepec -Dto. 08 -"),    # San Juan Mixtepec (Distrito 08, Juxtlahuaca)
+        "20209": ("50627088B88987154065702", "San Juan Mixtepec -Dto. 26 -"),  # San Juan Mixtepec (Distrito 26, Miahuatlán)
+        "20318": ("50627088B24493610345769", "San Pedro Mixtepec -Dto. 22 -"),  # San Pedro Mixtepec (Distrito 22, Juquila)
+        "20319": ("50627088B31998279857894", "San Pedro Mixtepec -Dto. 26 -"),  # San Pedro Mixtepec (Distrito 26, Miahuatlán)
+        "21075": ("50627088B56291356806731", "Hueyapan"),  # Hueyapan (Puebla)
+        "30195": ("50627088B45118812748540", "Xoxocotla"),  # Xoxocotla (Veracruz)
     },
 }
 
@@ -105,8 +105,18 @@ UNDRAWN: dict[str, frozenset[str]] = {
 
 
 def pin(iso3: str, code: str) -> dict[str, Any]:
-    """The record fields binding an office's code to its polygon, or nothing."""
+    """The record fields binding an office's code to its polygon, or nothing.
+
+    The polygon's label in the boundary file travels with the pin: the build
+    checks the pinned polygon still carries it (a pin to a relabelled or
+    renumbered polygon is stale), and two readers' rows pinned to the same
+    polygon by the same office code are one place however each spells it --
+    DANE's "San Andrés Sotavento" and OCHA's "San Andrés de Sotavento".
+    """
     if code in UNDRAWN.get(iso3, ()):
         return {"no_shape": True}
-    shape = PINS.get(iso3, {}).get(code)
-    return {"match_by": "shape_id", "shape_id": shape} if shape else {}
+    pinned = PINS.get(iso3, {}).get(code)
+    if not pinned:
+        return {}
+    shape, label = pinned
+    return {"match_by": "shape_id", "shape_id": shape, "shape_label": label}

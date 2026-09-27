@@ -18,12 +18,13 @@ class Pins(unittest.TestCase):
             drawn = {u["id"] for level in ("admin1", "admin2")
                      for u in json.loads((ROOT / "site" / "data" / level / f"{iso3}.units.json")
                                          .read_text())}
-            for code, shape in table.items():
+            for code, (shape, label) in table.items():
                 self.assertIn(shape, drawn, f"{iso3} {code} pins a polygon the map does not draw")
+                self.assertTrue(label, f"{iso3} {code} pins no label")
 
     def test_no_polygon_pinned_twice(self):
         for iso3, table in PINS.items():
-            self.assertEqual(len(set(table.values())), len(table), iso3)
+            self.assertEqual(len({shape for shape, _ in table.values()}), len(table), iso3)
 
     def test_undrawn_is_never_pinned(self):
         for iso3, codes in UNDRAWN.items():
@@ -32,8 +33,9 @@ class Pins(unittest.TestCase):
                 self.assertEqual(pin(iso3, code), {"no_shape": True})
 
     def test_pin_fields(self):
+        shape, label = PINS["COL"]["08001"]
         self.assertEqual(pin("COL", "08001"),
-                         {"match_by": "shape_id", "shape_id": PINS["COL"]["08001"]})
+                         {"match_by": "shape_id", "shape_id": shape, "shape_label": label})
         self.assertEqual(pin("COL", "05001"), {})
         self.assertEqual(pin("XXX", "1"), {})
 

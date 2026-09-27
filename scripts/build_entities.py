@@ -1897,7 +1897,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                             for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "match_by", "_source", "_match"}:
+                   "match_by", "shape_label", "_source", "_match"}:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
@@ -5044,6 +5044,19 @@ def claim(claimed: dict[int, set[str]], entity: dict[str, Any], row: dict[str, A
     """
     name = row.get("name") or ""
     names = {name} | {a for a in row.get("aliases") or [] if a}
+    # A pin (scripts/fetch_census/pins.py) says which label it expects the
+    # polygon to carry. The first claim checks the polygon still carries it --
+    # a pin to a relabelled or renumbered polygon is stale -- and the label
+    # joins the names a later claim is compared with, so two readers' rows
+    # pinned there by the same office code are one place however each spells
+    # it: DANE's "San Andrés Sotavento" and OCHA's "San Andrés de Sotavento".
+    label = row.get("shape_label")
+    if label:
+        if id(entity) not in claimed and norm(label) != norm(entity.get("name") or ""):
+            raise SystemExit(
+                f"{iso3}: {name!r} is pinned to shape {wanted!r} as {label!r}, "
+                f"but the boundary file labels it {entity.get('name')!r}; the pin is stale")
+        names.add(label)
     held = claimed.get(id(entity))
     if held is not None and not ({norm(n) for n in held} & {norm(n) for n in names}):
         raise SystemExit(
