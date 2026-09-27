@@ -1,211 +1,88 @@
-== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn (?s)[{][^{}]{0,50}Indikator[^{}]{0,400} 2
-  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
-  188 matches
-  {
-    "id": "09020302",
-    "text": "Indikatori materijalnih tokova",
-    "parent": "250402",
-    "data": "Domaći ekstrakovani resursi (DEU), Uvoz, Izvoz, Direktni materijalni input (DMI), 8.4.2 (12.2.2) Domaća potrošnja materijala (DMC), Fizički trgovinski bilans (PTB), 8.4.2 (12.2.2) Domaća po
-  {
-    "id": "250501",
-    "text": "Indikatori pokretačkih faktora",
-    "parent": "2505",
-    "data": "",
-    "type": ""
-  
-== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn Teritorija[
-  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
-  !! error: unterminated character set at position 10
-?? unknown mode in ']-['
-?? unknown mode in ']NSTJ.:['
-?? unknown mode in '].[^,]{1,40}~~30'
-== grep https://data.stat.gov.rs/Home/Result/3104020301?languageCode=sr-Latn (?s)[{][^{}]{0,50}Indikator[^{}]{0,400} 2
-  HTTP 200 text/html; charset=utf-8 3,484,432 bytes
-  8618 matches
-  {
-    "id": "09020302",
-    "text": "Indikatori materijalnih tokova",
-    "parent": "250402",
-    "data": "Domaći ekstrakovani resursi (DEU), Uvoz, Izvoz, Direktni materijalni input (DMI), 8.4.2 (12.2.2) Domaća potrošnja materijala (DMC), Fizički trgovinski bilans (PTB), 8.4.2 (12.2.2) Domaća po
-  {
-    "id": "250501",
-    "text": "Indikatori pokretačkih faktora",
-    "parent": "2505",
-    "data": "",
-    "type": ""
-  
-== grep https://data.stat.gov.rs/Home/Result/3104020302?languageCode=sr-Latn (?s)[{][^{}]{0,50}Indikator[^{}]{0,400} 2
-  HTTP 200 text/html; charset=utf-8 5,015,131 bytes
-  13539 matches
-  {
-    "id": "09020302",
-    "text": "Indikatori materijalnih tokova",
-    "parent": "250402",
-    "data": "Domaći ekstrakovani resursi (DEU), Uvoz, Izvoz, Direktni materijalni input (DMI), 8.4.2 (12.2.2) Domaća potrošnja materijala (DMC), Fizički trgovinski bilans (PTB), 8.4.2 (12.2.2) Domaća po
-  {
-    "id": "250501",
-    "text": "Indikatori pokretačkih faktora",
-    "parent": "2505",
-    "data": "",
-    "type": ""
-  
-== pxtree https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/  4 150
-  l Demography  Demography
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Demography/1810010E.px  Vital Statistics, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Demography/1810020E.px  Demographic Indicators, Annual
-  l Population  Population
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820010E.px  De Jure Population by Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820015E.px  Population Changes, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820020E.px  De Jure Population, Monthly
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820025E.px  End of the Year De Jure Population by Age Group and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820030E.px  Percentage of Population by Age Group and Dependency Ratios, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820035E.px  End of the Year De Jure Population by Age Group, Sex and Citizenship Group, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820045E.px  End of the Year De Jure Population by Age Group, Sex and Country of Birth Group, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820055E.px  End of the Year De Jure Population by District (Urban/Rural Areas), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/1820060E.px  Households at the End of the Year by District (Urban/Rural Areas), Annual
-    l Population and Vital Statistics at Census Years  Population and Vital Statistics at Census Years
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820210E.px  Population by Sex, Census Years
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820215E.px  Population by Age and Sex, Census Years
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820220E.px  Percentage Distribution of Population by Age and Sex, Census Years
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820225E.px  Fertility Indicators, Census Years
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population/Population%20and%20Vital%20Statistics%20at%20Census%20Years/1820230E.px  Percentage Distribution of Population by Marital Status and Sex (for Persons Aged 15 and Over), Census Years
-  l Births and Deaths  Births
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830010E.px  Live Births by Sex and Birth Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830012E.px  Fertility Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830016E.px  Live Births by Month and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830018E.px  Live Births by Date of Occurrence, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830022E.px  Marital and Extra-Marital Births by Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830026E.px  Live Births (Total and Marital Births) by Age of Mother and Father, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830030E.px  Live Births (Total and Marital Births) by Age of Mother and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830034E.px  Live Births (Total and Marital Births) by Age and Place of Usual Residence of Mother (Urban/Rural Areas) and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830038E.px  Live Births by Age of Mother and Father, Place of Usual Residence of Mother (Urban/Rural Areas) and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830042E.px  Live Births by Age of Mother and Number of Newborns, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830046E.px  Live Births by Live Birth Order (1-8+), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830050E.px  Live Births by Birth Order (1-4+), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830054E.px  Live Births by Live Birth Order, Age and Place of Usual Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830058E.px  Mean Age of Mother at Child Birth, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830062E.px  Live Births by Single Year of Age of Mother and Live Birth Order, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830066E.px  Live Births by Place of Occurrence, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830070E.px  Live Births by Place of Usual Residence of Mother and Place of Occurrence, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830074E.px  Marital Live Births by Duration of Current Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830078E.px  Marital Live Births by Duration of Current Marriage, Age and Place of Usual Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830082E.px  Marital Live Births by Duration of Current Marriage, Live Birth Order and Age of Mother, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830086E.px  Marital Live Births by Duration of Current Marriage, Live Birth Order and Place of Residence of Mother (Urban/Rural Areas), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830090E.px  Marital Live Births by Duration and Order of Current Marriage and Age of Mother, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Births%20and%20Deaths/1830094E.px  Live Births by Citizenship Group of Mother, Annual
-  l Deaths  Deaths
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830210E.px  Deaths by Sex and Death Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830214E.px  Deaths and Mortality Rates by Age and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830222E.px  Deaths by Month and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830226E.px  Life Expectancy at Birth, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Deaths/1830230E.px  Life Table by Age and Sex, Annual
-  l Migration  Migration
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840010E.px  Migration Movements, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840020E.px  Immigrants and Emigrants by Month and Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840030E.px  Immigrants by Age, Sex, Citizenship, Country of Birth and Country of Previous Residence, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Migration/1840050E.px  Emigrants by Citizenship and Country of Next Residence, Annual
-  l Marriages  Marriages
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850010E.px  Marriages by Type and Marriage Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850014E.px  Marriages by Month of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850018E.px  Marriages by Nationality of Groom and Marriages by Nationality of Bride, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850022E.px  Mean Age of Groom and Bride by Order and Type of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850026E.px  Marriages of Residents and Age Specific Marriage Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850030E.px  Marriages of Residents by Nationality of Groom and Marriages of Residents by Nationality of Bride, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850034E.px  Marriages of Residents by Nationality of Groom and Bride, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850038E.px  Marriages of Residents by Type and Order of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850042E.px  Marriages of Residents (Total/First Marriage for Both) by Type and Age of Groom and Bride, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850046E.px  Marriages of Residents by Age, Type and Order, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850050E.px  Mean and Median Age of Bride and Groom for Residents by Type and Order of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850054E.px  Marriages of Residents by Age of Groom and Bride and Previous Marital Status, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850058E.px  Marriages of Residents by Type and Previous Marital Status of Groom and Bride, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850062E.px  Mean Age of Groom and Bride (Residents) by Previous Marital Status, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/1850066E.px  Marriages of Residents by Date of Marriage, Annual
-    l Civil Unions  Civil Unions
 
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850105E.px  Civil Unions, Total and Residents of Cyprus by Sex, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850110E.px  Civil Unions of Residents of Cyprus by District of Registration, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850115E.px  Civil Unions of Residents of Cyprus by Month of Registration, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Marriages/Civil%20Unions/1850120E.px  Mean Age of Residents of Cyprus at the Time of Civil Union Registration, Annual
-  l Divorces  Divorces
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850210E.px  Divorces and Divorce Rates, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850214E.px  Divorces by Year of Marriage and Year of Divorce, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850222E.px  Divorces by District the Divorce was Issued, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850226E.px  Divorces by Nationality of Husband and Divorces by Nationality of Wife, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850230E.px  Divorces by Nationality of Husbands and Wives, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850234E.px  Divorces by Duration of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850235E.px  Mean and Median Duration of Marriage and Total Divorces, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850238E.px  Divorces by Number of Dependent Children, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850242E.px  Divorces by Number of Dependent Children and Duration of Marriage, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850243E.px  Mean and Median Duration of Marriage by Number of Dependent Children, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/1850250E.px  Dependent Children by Age and Year of Divorce, Annual
-    l Dissolutions of Civil Unions  Dissolutions of Civil Unions
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/Dissolutions%20of%20Civil%20Unions/1850305E.px  Dissolutions of Civil Unions, Total and Residents of Cyprus, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/Dissolutions%20of%20Civil%20Unions/1850310E.px  Dissolutions of Civil Unions of Residents of Cyprus by District of Registration, Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Divorces/Dissolutions%20of%20Civil%20Unions/1850315E.px  Dissolutions of Civil Unions of Residents of Cyprus by Duration of Civil Union, Annual
-  l Census of Population and Housing 2021  Census of Population and Housing 2021
-    l Population  Population
+=== che7
 
-      l Population - Place of Residence  Population - Place of Residence
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891105E.px  Population Enumerated by District, Urban/Rural Area, Sex and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px  Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891114E.px  Population Enumerated by District, Municipality/Community, Quarter, Sex and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891117E.px  Population Enumerated by District, Municipality/Community, Quarter, Sex and Mean Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891122E.px  Population Enumerated by District, Postal Code and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891125E.px  Population Enumerated by District, Postal Code, Sex and Mean Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px  Population Enumerated by District, Sex and Single Year of Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891141E.px  Household Population Enumerated by District, Urban/Rural Area, Sex and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891150E.px  Institutional Population and Number of Institutions Enumerated by District, Urban/Rural Area and Type of Institution 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891160E.px  Housing Units, Households, Institutions and Population Enumerated by Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891161E.px  Housing Units, Households, Institutions and Population Enumerated by District and Municipality/Community 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891164E.px  Housing Units, Households, Institutions and Population Enumerated by District, Municipality/Community and Quarter 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891168E.px  Housing Units, Households and Population Enumerated By District, Municipality/Community and Postal Code 1.10.2021
-      l Population - Country of Citizenship, Country of Birth  Population - Country of Citizenship, Country of Birth
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891210E.px  Population Enumerated by Country of Birth, Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891213E.px  Population Enumerated by Citizenship Group, Sex, District and Municipality/Community 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891215E.px  Population Enumerated by Citizenship Group, Sex, District, Municipality/Community and Postal Code 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891217E.px  Population Enumerated by Citizenship Group, Sex, Age, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891221E.px  Population Enumerated by Country of Citizenship, Sex and District 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891226E.px  Population Enumerated by Country of Birth Group, Sex and Citizenship Group 1.10.2021
-      l Population - Education Attainment  Population - Education Attainment
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Education%20Attainment/1891510E.px  Population (Aged 15 and Over) Enumerated by Sex, Educational Attainment, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Education%20Attainment/1891515E.px  Population (Aged 15 and Over) Enumerated by Sex, Educational Attainment, District and Municipality/Community 1.10.2021
-      l Population - Language, Religion, Ethnic Religious Group  Population - Language, Religion, Ethnic / Religious Group
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891610E.px  Population Enumerated by Language, Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891613E.px  Population Enumerated by Language, Sex, Citizenship Group and District 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px  Population Enumerated by Language, Sex and District 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px  Population Enumerated by Religion, Sex and Citizenship Group 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891635E.px  Population Enumerated by Religion, Sex and Country of Birth Group 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px  Population Enumerated by Ethnic/Religious Group, Citizenship Group and Sex 1.10.2021
-      l Population - Marital Status  Population - Marital Status
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Marital%20Status/1891672E.px  Population Enumerated by Marital Status, Age and Sex 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Marital%20Status/1891674E.px  Population Enumerated by Marital Status, Sex, District and Urban/Rural Area 1.10.2021
-      l Population - Labour Force  Population - Labour Force
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891710E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891712E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by District and Municipality/Community 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891714E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex and Age 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891718E.px  Economically Active and Inactive Population (Aged 15 and Over) Enumerated by Sex, Urban/Rural Area and Citizenship Group 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891722E.px  Economically Active Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891726E.px  Economically Active Population (Aged 15 and Over) Enumerated by Economic Activity (NACE Rev. 2), Sex, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891731E.px  Employed Persons (Aged 15 and Over) Enumerated by Place of Residence (District and Municipality/Community) and Economic Activity (NACE Rev. 2) 1.10.20
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891732E.px  Employed Persons (Aged 15 and Over) Enumerated by Place of Residence (District and Municipality/Community) and Occupation 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891735E.px  Employed Persons (Aged 15 and Over) Enumerated by Sex, Educational Attainment, Place of Residence (Urban/Rural Area) and Economic Activity (NACE Rev. 
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891738E.px  Employed Persons (Aged 15 and Over) Enumerated by Sex, Educational Attainment, Place of Residence (Urban/Rural Area) and Occupation 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891780E.px  Economically Inactive Population (Aged 15 and Over) Enumerated by Sex, District and Urban/Rural Area 1.10.2021
-    l Living Quarters  Housing Units
+## https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/religionen.html
+   HTTP 200, 3,485,743 bytes, text/html;charset=utf-8
+   22 distinct matches of 'assetdetail\\.\\d+\\.html|dam-api[^\\"\' ]+|href=\\"[^\\"]*(?:xlsx|je-d-01\\.08)[^\\"]*\\"'
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36343816/thumbnail?width=555&amp;height=555
+   - assetdetail.36343816.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36429858/thumbnail?width=555&amp;height=555
+   - assetdetail.36429858.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35627011/thumbnail?width=555&amp;height=555
+   - assetdetail.35627011.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35607916/thumbnail?width=555&amp;height=555
+   - assetdetail.35607916.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35607913/thumbnail?width=555&amp;height=555
+   - assetdetail.35607913.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35607915/thumbnail?width=555&amp;height=555
+   - assetdetail.35607915.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35607929/thumbnail?width=555&amp;height=555
+   - assetdetail.35607929.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35627019/thumbnail?width=555&amp;height=555
+   - assetdetail.35627019.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/35607932/thumbnail?width=555&amp;height=555
+   - assetdetail.35607932.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36429856/thumbnail?width=555&amp;height=555
+   - assetdetail.36429856.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36429857/thumbnail?width=555&amp;height=555
+   - assetdetail.36429857.html
 
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893007E.px  Conventional Dwellings Enumerated by Year of Construction (Completion) of the Dwelling, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893010E.px  Occupied Conventional Dwellings Enumerated by Year of Construction (Completion) of the Dwelling, Tenure Status, District and Urban/Rural Area 1.10.202
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Living%20Quarters/1893015E.px  Conventional Dwellings Enumerated by Type of Building in Which the Dwelling is Located, District and Urban/Rural Area 1.10.2021
-    l Households  Households
+## https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/sprachen.html
+   HTTP 200, 3,473,622 bytes, text/html;charset=utf-8
+   16 distinct matches of 'assetdetail\\.\\d+\\.html|dam-api[^\\"\' ]+|href=\\"[^\\"]*(?:xlsx|je-d-01\\.08)[^\\"]*\\"'
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36434442/thumbnail?width=555&amp;height=555
+   - assetdetail.36434442.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36434449/thumbnail?width=555&amp;height=555
+   - assetdetail.36434449.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36630112/thumbnail?width=555&amp;height=555
+   - assetdetail.36630112.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36063525/thumbnail?width=555&amp;height=555
+   - assetdetail.36063525.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36434435/thumbnail?width=555&amp;height=555
+   - assetdetail.36434435.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36063516/thumbnail?width=555&amp;height=555
+   - assetdetail.36063516.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36063463/thumbnail?width=555&amp;height=555
+   - assetdetail.36063463.html
+   - dam-api.bfs.admin.ch/hub/api/dam/assets/36063461/thumbnail?width=555&amp;height=555
+   - assetdetail.36063461.html
 
-      l Households - Household Size  Households - Household Size
+## https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen.assetdetail.html
+   HTTP 400, 3,434,511 bytes, text/html;charset=utf-8
+   0 distinct matches of 'assetdetail\\.\\d+\\.html|dam-api[^\\"\' ]+|href=\\"[^\\"]*(?:xlsx|je-d-01\\.08)[^\\"]*\\"'
 
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Size/1895110E.px  Households Enumerated by Household Size, Average Household Size, District and Urban/Rural Area 1.10.2021
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Size/1895114E.px  Households Enumerated by Household Size, Average Household Size, District and Municipality/Community 1.10.2021
-      l Households - Household Type  Households - Household Type
+=== nld9
 
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Type/1895410E.px  Households Enumerated by Type, District and Urban/Rural Area 1.10.2021
-  l Population Census 2011  Population Census 2011
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862010E.px  Population Enumerated by Sex, Age, District, Municipality/Community and Quarter (1.10.2011), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862020E.px  Population Enumerated by Citizenship, Sex and District (1.10.2011), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862030E.px  Living Quarters Enumerated by Occupancy Status, District and Urban/Rural Area (1.10.2011), Annual
+## https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetFeature&service=WFS&version=2.0.0&typeNames=wijkenbuurten:gemeenten&propertyName=gemeentecode,gemeentenaam,water,mannen,vrouwen,jaar&outputFormat=application/json&count=5
+   HTTP 200, 784,655 bytes, application/json
+   {
+   "type": "FeatureCollection",
+   "name": "gemeenten",
+   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::28992" } },
+   "features": [
+   { "type": "Feature", "properties": { "gemeentecode": "GM0998", "gemeentenaam": "Buitenland", "water": "B", "mannen": -99999999, "vrouwen": -99999999, "jaar": 2022 }, "bbox": [ 116665.64, 379652.76, 124801.81, 385267.311000001 ], "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 123632.59, 379674.68 ], [ 123629.78, 379674.57 ], [ 123627.211, 379674.465 ], [ 123457.08, 379667.53 ], [ 123396.72500000149, 379665.149 ], [ 123347.85, 379663.22 ], [ 123343.4840000011, 379663.04899999872 ], [ 123337.89600000158, 379662.83 ], [ 123086.303, 379652.899 ], [ 123082.77, 379652.76 ], [ 123089.52299999818, 379657.849 ], [ 123089.79, 379658.05 ], [ 123090.64600000158, 379658.66299999878 ], [ 123098.27, 379664.13 ], [ 123107.9, 379673.25 ], [ 123115.79, 379682.89 ], [ 123118.06, 379684.11 ], [ 123168.8, 379681.4 ], [ 123172.81, 379682.34 ], [ 123186.1, 379691.66 ], [ 123206.74, 379715.58199999854 ], [ 123206.85, 379715.71 ], [ 123237.83, 379751.74 ], [ 123243.05, 379756.12 ], [ 123249.65, 379755.77 ], [ 123257.1, 379750.92 ], [ 123274.71, 379729.17 ], [ 123278.18, 379726.38 ], [ 123283.02, 379725.31 ], [ 123304.39, 379725.26 ], [ 123327.19, 379734.95 ], [ 123327.673, 379735.268 ], [ 123330.357000001, 379737.039000001 ], [ 123330.92, 379737.41 ], [ 123341.42, 379744.18 ], [ 123341.82, 379744.461 ], [ 123352.68, 379752.09 ], [ 123356.24
+
+## https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetFeature&service=WFS&version=2.0.0&typeNames=wijkenbuurten:gemeenten&resultType=hits
+   HTTP 200, 793 bytes, text/xml; subtype="gml/3.2.1"; charset=UTF-8
+   <?xml version='1.0' encoding="UTF-8" ?>
+   <wfs:FeatureCollection
+      xmlns:wijkenbuurten="http://wijkenbuurten.geonovum.nl"
+      xmlns:gml="http://www.opengis.net/gml/3.2"
+      xmlns:wfs="http://www.opengis.net/wfs/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://wijkenbuurten.geonovum.nl https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?SERVICE=WFS&amp;VE
+
+## https://service.pdok.nl/cbs/wijkenbuurten/2023/wfs/v1_0?request=GetFeature&service=WFS&version=2.0.0&typeNames=wijkenbuurten:gemeenten&resultType=hits
+   HTTP 200, 793 bytes, text/xml; subtype="gml/3.2.1"; charset=UTF-8
+   <?xml version='1.0' encoding="UTF-8" ?>
+   <wfs:FeatureCollection
+      xmlns:wijkenbuurten="http://wijkenbuurten.geonovum.nl"
+      xmlns:gml="http://www.opengis.net/gml/3.2"
+      xmlns:wfs="http://www.opengis.net/wfs/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://wijkenbuurten.geonovum.nl https://service.pdok.nl/cbs/wijkenbuurten/2023/wfs/v1_0?SERVICE=WFS&amp;VE
+
+## https://www.cbs.nl/nl-nl/maatwerk/2023/14/kerncijfers-wijken-en-buurten-2022
+   HTTP 200, 50,984 bytes, text/html; charset=utf-8
+   1 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx|zip|csv)\\"'
+   - href="https://download.cbs.nl/regionale-kaarten/kwb-2022.xlsx"
