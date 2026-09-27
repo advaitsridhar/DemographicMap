@@ -188,6 +188,18 @@ def split_row(cells: list[tuple[float, float, str]], gap: float = 9.0
     return " ".join(label), values, " ".join(after)
 
 
+def TITLE(number: str) -> re.Pattern:
+    """A table's own title, set in capitals -- not its line in the contents."""
+    return re.compile(rf"^{re.escape(number)}\.\s+[А-ЯЁ]{{4,}}\b")
+
+
+def title_page(pages, number: str) -> int:
+    for i, rows in enumerate(pages):
+        if any(TITLE(number).match(" ".join(t for *_, t in r)) for r in rows):
+            return i
+    raise SystemExit(f"belarus: the volume has no table {number}")
+
+
 # ---------------------------------------------------------------------------
 # Table 1.4: every oblast, city and raion by sex
 
@@ -195,15 +207,14 @@ def split_row(cells: list[tuple[float, float, str]], gap: float = 9.0
 def table_14(pages) -> dict[str, dict[str, dict[str, float]]]:
     """{oblast: {row label: {"all", "men", "women"}}}, the 2019 column of the
     all-population blocks."""
-    start = next(i for i, rows in enumerate(pages)
-                 if any("1.4." in " ".join(t for *_, t in r) for r in rows))
+    start = title_page(pages, "1.4")
     out: dict[str, dict[str, dict[str, float]]] = defaultdict(dict)
     section = None
     oblast = None
     unit = None
     for rows in pages[start:]:
         text = [" ".join(t for *_, t in r) for r in rows]
-        if any(re.match(r"^\s*1\.5\.", t) for t in text):
+        if any(TITLE("1.5").match(t) for t in text):
             break
         for cells, line in zip(rows, text):
             if line.startswith("Все население"):
@@ -247,14 +258,13 @@ def table_14(pages) -> dict[str, dict[str, dict[str, float]]]:
 
 def table_62(pages) -> dict[str, dict[str, float]]:
     """{oblast or 'г.Минск': {nationality: n, '_total': n}}, both sexes, 2019."""
-    start = next(i for i, rows in enumerate(pages)
-                 if any(" ".join(t for *_, t in r).startswith("6.2.") for r in rows))
+    start = title_page(pages, "6.2")
     out: dict[str, dict[str, float]] = {}
     area = None
     block = None
     for rows in pages[start:]:
         text = [" ".join(t for *_, t in r) for r in rows]
-        if any(t.startswith("6.3.") for t in text):
+        if any(TITLE("6.3").match(t) for t in text):
             break
         for cells, line in zip(rows, text):
             if m := re.match(r"^(\S+ область|г\.Минск)\s*/", line):
@@ -284,8 +294,7 @@ def table_62(pages) -> dict[str, dict[str, float]]:
 def table_73(pages) -> dict[str, dict[str, float]]:
     """{oblast or 'г.Минск': {"total", "mother_be", "mother_ru", "home_be",
     "home_ru"}}, the whole population, 2019."""
-    start = next(i for i, rows in enumerate(pages)
-                 if any(" ".join(t for *_, t in r).startswith("7.3.") for r in rows))
+    start = title_page(pages, "7.3")
     out: dict[str, dict[str, float]] = {}
     for rows in pages[start:start + 1]:
         for cells in rows:
