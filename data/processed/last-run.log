@@ -1,24 +1,31 @@
-estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
-  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
-    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
-    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
-    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
-    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
-    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
-    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
-    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
-    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
-    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
-    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
-    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
-    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
-    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
-    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
-    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
-    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
-  Estonia 1 January 2017: median age 41.8
-  EST admin2: 213 of 214 polygons bound
-    polygons left unbound (1): Vandra alev (Pärnu maakond)
-    units standing in 2017 with no polygon (4): Järvakandi rural municipality; Lääne-Saare rural municipality; Lüganuse rural municipality; Vändra rural municipality (town)
-  RL0429: 98 municipalities of 2011
-Emakeel at 176: categories make 41,691 of 41,694
+north_macedonia: MakStat, 2021 census
+  T1020P21.px: 82 areas, single years to 100 (open top)
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
+  80 municipalities
+  country: 1,836,713 residents, median age 41.1 from single years
+  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
+  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/PodatociNaselenie/T1503P21.px (HTTP Error 429: )
+  the merged Kichevo: 77 settlements
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px (HTTP Error 429: )
+  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
+    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
+    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
+    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
+    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
+    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
+  old Kichevo: 24,768 people, median 41.5
+  old Drugovo: 2,748 people, median 46.6
+  old Oslomej: 4,819 people, median 41.7
+  old Vraneshtica: 1,003 people, median 50.2
+  old Zajas: 6,331 people, median 38.8
+  region East: 150,234
+  region Northeast: 152,982
+  region Pelagonia: 210,431
+  region Polog: 251,552
+  region Skopje: 607,007
+  region Southeast: 148,387
+  region Southwest: 177,398
+  region Vardar: 138,722
+  wrote data/processed/north_macedonia_census.json (665 kB)
+  wrote north_macedonia_census.json: 92 records
