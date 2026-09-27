@@ -1,16 +1,8 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
-  unpacked personas_ext_26_02.rar with 7z
-  February file: 3,499,451 people in 159 (department, municipio) pairs; {'address shape 8 digits': 3147614, 'address shape 2 other': 351837, 'address in two municipios': 1, 'addresses': 1246312}
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
-  unpacked personas_ext_07_2026.rar with 7z
-  19 departments' weighted people, men and women make Cuadro 1
-  in the person file and not in Cuadro 14, each under one weighted person: {('16', '9898'): 0.0}
-  the weighted person file makes Cuadro 14's 166 rows, department by department and municipio by municipio
-  2,410,059 of 3,151,118 July rows placed: 2,671,658 weighted people by the February file's addresses, 1,131 by their census segment; 826,662 not placed, 0 placed in another department; segments: {'segment split': 4294, 'segment nearly whole': 7, 'segment whole': 47, 'segment with no placed people': 15}
-  not placed, by department: Montevideo 213,847, Artigas 18,653, Canelones 153,593, Cerro Largo 24,930, Colonia 38,056, Durazno 15,608, Flores 5,545, Florida 17,460, Lavalleja 18,821, Maldonado 105,071, Paysandú 25,809, Río Negro 13,769, Rivera 24,822, Rocha 37,522, Salto 27,694, San José 25,185, Soriano 19,176, Tacuarembó 26,168, Treinta y Tres 14,934
-  July address codes, by shape: {'8 digits placed': 2409099, '8 digits unknown': 738515, '2 other known': 3504}
-uruguay_census: 826,662 weighted people of the July file have no address the February file places, and 0 have one in another department
+  https://nimbus.ine.gob.bo/index.php/s/qEmK9gnkGCZ3K7D/download: 430,272,612 bytes, sha256 9C41C13E655B99BBE4944801953B70678317E3AE9599F35D791E1262AB372160
+  CRC check: every member intact
+  dictionary: 59 groups of P32, 82 languages, 123 province entries
+  11,365,333 people in 113 provinces and 9 departments, each department INE's published count
+  112 provinces bound to their polygons; 1 not: Territorio Indígena Multiétnico (809)
+  polygons with no province: []
+  wrote data/processed/bolivia_census.json (774 kB)
+  wrote bolivia_census.json: 121 records
