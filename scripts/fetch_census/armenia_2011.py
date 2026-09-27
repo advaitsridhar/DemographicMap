@@ -71,7 +71,7 @@ RELIGION = [
 ]
 LANGUAGE = [
     ("հրաժարվ", "Not stated"),
-    ("հայերեն", "Armenian"), ("եզդիերեն", "Yazidi"), ("ռուսերեն", "Russian"),
+    ("հայերեն", "Armenian"), ("եզդիերեն", "Ezidian"), ("ռուսերեն", "Russian"),
     ("քրդերեն", "Kurdish"), ("ասորերեն", "Assyrian"), ("հունարեն", "Greek"),
     ("ուկրաիներեն", "Ukrainian"), ("վրացերեն", "Georgian"), ("պարսկերեն", "Persian"),
     ("անգլերեն", "English"), ("գերմաներեն", "German"), ("ֆրանսերեն", "French"),
@@ -199,10 +199,16 @@ def read_table(blob: bytes, stem: str) -> dict[str, Any]:
         pending = ""
         if key in NEXT_BLOCK or key.startswith(NEXT_BLOCK) and key not in NATIONALITY:
             break
-        if len(numbers) != len(total):
-            raise SystemExit(f"armenia_2011: row {label!r} has {len(numbers)} figures, "
-                             f"the total {len(total)}")
-        body[key] = [int(w["text"].replace(",", "")) for w in numbers]
+        # Each figure to the column whose right edge it shares: a nil cell is
+        # sometimes printed as nothing at all.
+        values = [0] * len(total)
+        for w in numbers:
+            j = min(range(len(edges)), key=lambda j: abs(edges[j] - w["x1"]))
+            if abs(edges[j] - w["x1"]) > 8 or values[j]:
+                raise SystemExit(f"armenia_2011: row {label!r}: a figure at x {w['x1']:.0f} "
+                                 f"is under no column (edges {[round(e) for e in edges]})")
+            values[j] = int(w["text"].replace(",", ""))
+        body[key] = values
     return {"headings": headings, "total": total, "rows": body}
 
 
@@ -291,7 +297,7 @@ def main() -> int:
                             "table by marz yet."),
             language=shares(dict(tongues), total=total), language_year=YEAR,
             language_note=("Mother tongue (մայրենի լեզու), 2011 census, the permanent "
-                           "population; 'Yazidi' is the tongue the census names apart "
+                           "population; 'Ezidian' is the Yezidi tongue the census names apart "
                            "from Kurdish."),
             religion=shares(dict(religions), total=total), religion_year=YEAR,
             religion_note=("Religious belief (կրոնական դավանանք), 2011 census, the "

@@ -25,7 +25,7 @@ class Headings(unittest.TestCase):
         chars = turned("Եզդիերեն", 200)
         text = a.squeeze("".join(a.lines_of(chars)))
         got = a.classify(["ընդամենը", text], a.LANGUAGE, "language")
-        self.assertEqual(got, [True, "Yazidi"])
+        self.assertEqual(got, [True, "Ezidian"])
 
     def test_religion_headings(self):
         headings = ["բնակչություն", "կրոնականդավանանքով", "հայառաքելական", "շարֆադինական",
