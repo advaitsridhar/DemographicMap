@@ -1,50 +1,63 @@
-== head https://www.cystat.gov.cy/en/ 
-  HTTP 302 text/html; charset=utf-8 153 bytes
-== cdx cystat.gov.cy/en/SubthemeStatistics 20
-  HTTP 200: 31 captures
-  20221009061225 text/html 17112 https://www.cystat.gov.cy/en/SubthemeStatistics?id=28
-  20221012211822 text/html 15255 https://www.cystat.gov.cy/en/SubthemeStatistics?id=29
-  20221009174817 text/html 19109 https://www.cystat.gov.cy/en/SubthemeStatistics?id=31
-  20221013080317 text/html 18320 https://www.cystat.gov.cy/en/SubthemeStatistics?id=32
-  20221008225354 text/html 16054 https://www.cystat.gov.cy/en/SubthemeStatistics?id=33
-  20221009192242 text/html 95060 https://www.cystat.gov.cy/en/SubthemeStatistics?id=34
-  20221008081142 text/html 118948 https://www.cystat.gov.cy/en/SubthemeStatistics?id=35
-  20221009015622 text/html 92117 https://www.cystat.gov.cy/en/SubthemeStatistics?id=36
-  20221013082413 text/html 111575 https://www.cystat.gov.cy/en/SubthemeStatistics?id=38
-  20221009183934 text/html 18977 https://www.cystat.gov.cy/en/SubthemeStatistics?id=39
-  20221009033358 text/html 16613 https://www.cystat.gov.cy/en/SubthemeStatistics?id=40
-  20221009044414 text/html 92298 https://www.cystat.gov.cy/en/SubthemeStatistics?id=41
-  20221010041059 text/html 18821 https://www.cystat.gov.cy/en/SubthemeStatistics?id=42
-  20221009023456 text/html 18399 https://www.cystat.gov.cy/en/SubthemeStatistics?id=43
-  20221008204805 text/html 17998 https://www.cystat.gov.cy/en/SubthemeStatistics?id=44
-  20221010200230 text/html 18431 https://www.cystat.gov.cy/en/SubthemeStatistics?id=45
-  20221009063528 text/html 104194 https://www.cystat.gov.cy/en/SubthemeStatistics?id=46
-  20221010082309 text/html 19142 https://www.cystat.gov.cy/en/SubthemeStatistics?id=47
-  20221009083352 text/html 19230 https://www.cystat.gov.cy/en/SubthemeStatistics?id=48
-  20221009061226 text/html 99047 https://www.cystat.gov.cy/en/SubthemeStatistics?id=49
-== cdx www.cystat.gov.cy/el/KeyFiguresList 20
-  HTTP 200: 80 captures
-  20211117120150 text/html 28855 https://www.cystat.gov.cy/el/KeyFiguresList
-  20211227102047 text/html 26993 https://www.cystat.gov.cy/el/KeyFiguresList?&p=
-  20211227102148 text/html 27075 https://www.cystat.gov.cy/el/KeyFiguresList?&p=1
-  20220809171802 text/html 28841 https://www.cystat.gov.cy/el/KeyFiguresList?&p=10
-  20211227102434 text/html 26051 https://www.cystat.gov.cy/el/KeyFiguresList?&p=11
-  20220809171724 text/html 29515 https://www.cystat.gov.cy/el/KeyFiguresList?&p=12
-  20220809171738 text/html 28140 https://www.cystat.gov.cy/el/KeyFiguresList?&p=13
-  20220809171752 text/html 28962 https://www.cystat.gov.cy/el/KeyFiguresList?&p=14
-  20220809171808 text/html 28182 https://www.cystat.gov.cy/el/KeyFiguresList?&p=15
-  20220809171816 text/html 27617 https://www.cystat.gov.cy/el/KeyFiguresList?&p=16
-  20211227102126 text/html 26620 https://www.cystat.gov.cy/el/KeyFiguresList?&p=2
-  20220809171822 text/html 29332 https://www.cystat.gov.cy/el/KeyFiguresList?&p=21
-  20220809171827 text/html 28266 https://www.cystat.gov.cy/el/KeyFiguresList?&p=292
-  20220809171838 text/html 27968 https://www.cystat.gov.cy/el/KeyFiguresList?&p=297
-  20220809171845 text/html 28282 https://www.cystat.gov.cy/el/KeyFiguresList?&p=298
-  20220809171851 text/html 28043 https://www.cystat.gov.cy/el/KeyFiguresList?&p=299
-  20211227102521 text/html 26187 https://www.cystat.gov.cy/el/KeyFiguresList?&p=3
-  20220809171857 text/html 28113 https://www.cystat.gov.cy/el/KeyFiguresList?&p=300
-  20220809171833 text/html 27956 https://www.cystat.gov.cy/el/KeyFiguresList?&p=301
-  20211227102512 text/html 25464 https://www.cystat.gov.cy/el/KeyFiguresList?&p=302
-== cdx library.cystat.gov.cy/Statistical_Reports/Census 40
-  HTTP 200: 0 captures
-== cdx cystat.gov.cy/en/StaticFile 40
-  HTTP 200: 0 captures
+== grep https://data.stat.gov.rs/Home/Result/3104020101?languageCode=sr-Latn (?s)<table.{0,1500} 2
+  HTTP 200 text/html; charset=utf-8 6,548,286 bytes
+  2 matches
+  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 745px;\" width=\"745\">\r\n\t<tbody>\r\n\t\t<tr height=\"213\">\r\n\t\t\t<td height=\"213\" style=\"height: 213px; width: 745px;\">\r\n\t\t\t\tEW-MFA predstavljaju konzinstentnu kompilaciju sveukupnih materijalnih inputa u nacion
+  <table class="legend-table">
+        <tr class="legend-row">
+                <td class="legend-id">b</td>
+                <td>Prekid vremenske serije</td>
+                <td class="legend-id">c</td>
+                <td>Poverljiv podatak</td>
+                <td class="legend-id">d</td>
+     
+== grep https://data.stat.gov.rs/Home/Result/3104020101?languageCode=sr-Latn (?s).{0,300}Ada.{0,300} 3
+  HTTP 200 text/html; charset=utf-8 6,548,286 bytes
+  80 matches
+  t":"RS123","data":null},{"id":"80446","text":"Temerin","parent":"RS123","data":null},{"id":"80454","text":"Titel","parent":"RS123","data":null},{"id":"80462","text":"Vrbas","parent":"RS123","data":null},{"id":"RS124","text":"Severnobanatska oblast","parent":"RS12","data":null},{"id":"80012","text":"
+  PS": "Nepoznato   ",
+    "Pol": "Žensko",
+    "Vrednost": "2252",
+    "IDStatusPodatka": "A",
+    "IDStatusPoverljivosti": "F",
+    "IDJedinicaMere": "NR"
+  },
+  {
+    "Indikator": "Stanovništvo prema nacionalnoj pripadnosti i polu [broj] ",
+    "Period": "2022",
+    "Teritorija - NSTJ": "
+    "Period": "2022",
+    "Teritorija - NSTJ": "Ada",
+    "Tip naselja": "Ukupno",
+    "Nacionalnost PS": "Ukupno",
+    "Pol": "Muško",
+    "Vrednost": "6429",
+    "IDStatusPodatka": "A",
+    "IDStatusPoverljivosti": "F",
+    "IDJedinicaMere": "NR"
+  },
+  {
+    "Indikator": "Stanovništvo pr
+== grep https://data.stat.gov.rs/Home/Result/3104020101?languageCode=sr-Latn (?:href|action|url)[=:]s*[^s>]{5,120} 30
+  HTTP 200 text/html; charset=utf-8 6,548,286 bytes
+  20 matches
+  href="http
+  href="/Content/c
+  href="/Content/icomoon.c
+  href="/Content/dd.c
+  href="http
+  href="/favicon.ico" type="image/x-icon" /
+  href="http
+  href="/Content/print.c
+  href="http
+  href="/AdvancedSearch?languageCode=
+  href="#" title="Obla
+  href="#" title="Tabela 
+  href="#" title="Grafikon"
+  href="#" title="Metapodaci" data-menu-item="metadata"
+  href="#" title="Preuzmi link"
+  href="#" title="Preuzimanje podataka"
+  href="#" title="Štampanje" onclick="window.print(); return fal
+  href="#" onclick="$('#indikatori').
+  action="/Home/FormSubmit?languageCode=
+  url: url,
+                cache: fal
