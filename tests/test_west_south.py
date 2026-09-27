@@ -210,6 +210,106 @@ class BasqueLanguage(unittest.TestCase):
             m.check(table)
 
 
+EULP_2023 = {
+    "id": ["YEAR", "CAT", "LAN_ISO", "CONCEPT"], "size": [1, 1, 12, 1],
+    "dimension": {
+        "YEAR": {"category": {"index": ["2023"]}},
+        "CAT": {"category": {"index": ["TOTAL"]}},
+        "LAN_ISO": {"category": {"index": [
+            "CA", "ES", "CA_ES", "OC_ARANESE", "CA_OTHER_LANG", "ES_OTHER_LANG",
+            "CA_ES_OTHER_LANG", "AR", "OTHER_LANG", "OTHER_COMB_LANG", "_U", "TOTAL"]}},
+        "CONCEPT": {"category": {"index": ["POP_YGE15T"]}}},
+    "value": [2211.1, 3154.7, 636.5, 1.4, 50.9, 275.1, 23.2, 74.2, 233.7, 24.9, 99.4, 6785.1],
+}
+
+
+class CataloniaLanguage(unittest.TestCase):
+    def test_habitual_language_as_published(self):
+        from scripts.fetch_census.spain_language_survey import catalonia
+        rows = {r["group"]: r["pct"] for r in catalonia(EULP_2023)["language"]}
+        self.assertEqual(rows["Spanish"], 46.5)
+        self.assertEqual(rows["Catalan"], 32.6)
+        self.assertIn("Not stated", rows)
+        self.assertAlmostEqual(sum(rows.values()), 100.0, delta=0.3)
+
+    def test_a_short_table_stops_the_run(self):
+        import copy
+        from scripts.fetch_census.spain_language_survey import catalonia
+        bad = copy.deepcopy(EULP_2023)
+        bad["value"][0] -= 50
+        with self.assertRaises(SystemExit):
+            catalonia(bad)
+
+
+MONACO_TEXT = """
+Number of
+residents Share
+Monte-Carlo 8,318 21.4%
+La Rousse 7,992 20.6%
+La Condamine 5,446 14.0%
+Jardin Exotique 4,997 12.9%
+Les Moneghetti 4,498 11.6%
+Fontvieille 4,297 11.1%
+Larvotto 2,287 5.9%
+Monaco-Ville 1,022 2.6%
+Total 38,857 100%
+Men Women Tot al % Men % Women % Total
+16 y/o and under 2,966 2,920 5,885 15.5% 14.8% 15.1%
+17 to 24 y/o 1,386 1,372 2,758 7.2% 7.0% 7.1%
+25 to 34 y/o 1,922 1,936 3,858 10.0% 9.8% 9.9%
+35 to 44 y/o 2,067 2,304 4,371 10.8% 11.7% 11.2%
+45 to 54 y/o 2,482 2,614 5,096 13.0% 13.2% 13.1%
+55 to 64 y/o 3,318 2,980 6,298 17.3% 15.1% 16.2%
+65 to 74 y/o 2,408 2,393 4,801 12.6% 12.1% 12.4%
+75 y/o and over 2,578 3,212 5,790 13.5% 16.3% 14.9%
+Total 19,127 19,730 38,857 100% 100% 100%
+"""
+
+
+class Microstates(unittest.TestCase):
+    def test_monaco_tables(self):
+        from scripts.fetch_census.microstates import monaco
+        out = monaco(MONACO_TEXT)
+        self.assertEqual(out["districts"]["Les Moneghetti"], 4498)
+        self.assertEqual((out["men"], out["women"]), (19127, 19730))
+        self.assertAlmostEqual(out["median"], 50.0, delta=0.1)
+        with self.assertRaises(SystemExit):
+            monaco(MONACO_TEXT.replace("Larvotto 2,287", "Larvotto 2,288"))
+
+    def test_san_marino_castelli(self):
+        from scripts.fetch_census.microstates import san_marino
+        rows = [["Popolazione Residente"], ["", "", "2023", "2024", "2025"]]
+        castelli = {"San Marino": (2036, 2122), "Acquaviva": (1083, 1064),
+                    "Borgo Maggiore": (3518, 3488), "Chiesanuova": (601, 591),
+                    "Domagnano": (1748, 1865), "Faetano": (606, 610), "Fiorentino": (1273, 1315),
+                    "Montegiardino": (492, 495), "Serravalle": (5630, 5635)}
+        for name, (m, f) in castelli.items():
+            rows += [[name, "M", "0", "0", str(m)], ["", "F", "0", "0", str(f)],
+                     ["", "Total", "0", "0", str(m + f)]]
+        men = sum(m for m, _ in castelli.values())
+        women = sum(f for _, f in castelli.values())
+        rows += [["Totale Generale", "M", "0", "0", str(men)], ["", "F", "0", "0", str(women)],
+                 ["", "Totale", "0", "0", str(men + women)]]
+        year, out = san_marino(rows)
+        self.assertEqual(year, 2025)
+        self.assertEqual(out["San Marino"]["total"], 4158)
+        rows[-1][4] = str(men + women + 1)
+        with self.assertRaises(SystemExit):
+            san_marino(rows)
+
+    def test_andorra_parishes_from_settlements(self):
+        from scripts.fetch_census.microstates import andorra
+        feats = [{"attributes": {"parroquia": p, "pob_2024": 10, "pob_2025": n}}
+                 for p, n in (("Encamp", 5), ("Encamp", 7), ("Canillo", 3),
+                              ("Escaldes-Engordany", 4), ("Andorra la Vella", 9),
+                              ("La Massana", 2), ("Ordino", 1), ("Sant Julà de Lòria", 6))]
+        year, parishes, n = andorra(feats)
+        self.assertEqual((year, parishes["Encamp"], parishes["Sant Julià de Lòria"]), (2025, 12, 6))
+        feats.append({"attributes": {"parroquia": "Elsewhere", "pob_2025": 1}})
+        with self.assertRaises(SystemExit):
+            andorra(feats)
+
+
 class IrelandAges(unittest.TestCase):
     def test_bands(self):
         from scripts.fetch_census.ireland_age import band
