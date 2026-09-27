@@ -367,7 +367,180 @@ def lux2() -> None:
          limit=40)
 
 
+def che3() -> None:
+    """Which 2025 communes straddle a 2009 district, and the BFS tables on religion."""
+    lines = fetch("https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?"
+                  "startPeriod=01-01-2009&endPeriod=01-01-2025&includeUnmodified=true")[2]
+    rows = list(csv_rows(text(lines)))
+    spans: dict[str, set[str]] = {}
+    for r in rows:
+        spans.setdefault(f"{r['TerminalCode']} {r['TerminalName']}", set()).add(r["InitialParentName"])
+    log(f"   {len(rows)} correspondences, {len(spans)} terminal communes")
+    for commune, parents in sorted(spans.items()):
+        if len(parents) > 1:
+            log(f"   ! {commune}: {sorted(parents)}")
+    import time
+    status, _, body = fetch("https://www.pxweb.bfs.admin.ch/api/v1/de/")
+    dbs = [row.get("dbid") for row in json.loads(text(body))]
+    log(f"   titles of {len(dbs)} BFS tables matching religion or language:")
+    for dbid in dbs:
+        if not dbid or not dbid.startswith("px-x-01"):
+            continue
+        status, _, body = fetch(f"https://www.pxweb.bfs.admin.ch/api/v1/de/{dbid}/{dbid}.px", timeout=30)
+        try:
+            title = json.loads(text(body)).get("title", "")
+        except Exception:  # noqa: BLE001
+            title = f"HTTP {status}"
+        if re.search(r"(?i)relig|konfess|sprach", title):
+            log(f"   - {dbid}: {title[:220]}")
+        time.sleep(0.2)
+
+
+def csv_rows(page: str, delimiter: str = ","):
+    import csv
+    import io
+    return csv.DictReader(io.StringIO(page), delimiter=delimiter)
+
+
+def lie3() -> None:
+    base = "https://etab.llv.li/PXWeb/api/v1/de/eTab/"
+
+    def walk(path: str, depth: int) -> None:
+        status, _, body = fetch(base + urllib.parse.quote(path))
+        try:
+            rows = json.loads(text(body))
+        except Exception:  # noqa: BLE001
+            log(f"   {path}: HTTP {status} {text(body)[:120]}")
+            return
+        for row in rows:
+            rid = row.get("id")
+            log(f"   {'  ' * depth}{row.get('type')} {path}{rid} | {row.get('text')}"[:220])
+            if row.get("type") == "l" and depth < 3:
+                walk(f"{path}{rid}/", depth + 1)
+    walk("Bevölkerung/", 0)
+
+
+def pol3() -> None:
+    base = "https://bdl.stat.gov.pl/api/v1"
+    for url in (f"{base}/variables?subject-id=P3814&format=json&page-size=100&lang=pl",
+                f"{base}/subjects?parent-id=G7&format=json&page-size=100&lang=pl"):
+        page = show(url)
+        try:
+            for row in json.loads(page).get("results", []):
+                log(f"   - {row.get('id')} {row.get('name') or ''} {row.get('n1') or ''} | "
+                    f"{row.get('n2') or ''} | {row.get('n3') or ''} lvls {row.get('levels')} "
+                    f"years {str(row.get('years'))[-40:]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}")
+
+
+def svk3() -> None:
+    status, _, body = fetch("https://data.statistics.sk/api/v2/collection?lang=en")
+    items = jpath(json.loads(text(body)), "link.item") or []
+    for item in items:
+        label = item.get("label", "")
+        if re.search(r"(?i)2021|census|sodb|nationalit|religio|tongue|language", label):
+            log(f"   - {item.get('href')} | {label[:160]}")
+    show("https://data.statistics.sk/api/v2/dataset/om7005rr/SK0101/2024/IN010088/SPOLU?lang=en&type=json",
+         raw=700)
+    show("https://statdata.statistics.sk/public/ui/dc/domov/data-view", r"https?://[^\"' ]+", limit=20)
+
+
+def hun3() -> None:
+    import openpyxl
+    import io as _io
+    for code in ("1.1.2", "1.1.6", "1.1.7"):
+        url = f"https://nepszamlalas2022.ksh.hu/en/results/final-data/tables/nsz2022-{code}-eng.xlsx"
+        status, _, body = fetch(url)
+        log(f"\n## {url}: HTTP {status}, {len(body):,} bytes")
+        if status != 200:
+            continue
+        book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+        for sheet in book.worksheets[:6]:
+            rows = list(sheet.iter_rows(values_only=True, max_row=14))
+            log(f"   sheet {sheet.title!r}: {sheet.max_row} rows x {sheet.max_column} cols")
+            for row in rows:
+                cells = [str(c)[:28] for c in row[:14] if c is not None]
+                if cells:
+                    log("     " + " | ".join(cells))
+
+
+def svn3() -> None:
+    status, _, body = fetch("https://pxweb.stat.si/SiStatData/api/v1/en/Data/")
+    rows = json.loads(text(body))
+    for row in rows:
+        title = row.get("text", "")
+        if re.search(r"(?i)municipal", title) and re.search(r"(?i)\bage\b|census|ethnic|religio|tongue",
+                                                              title):
+            log(f"   - {row.get('id')} {title[:200]}")
+
+
+def nld3() -> None:
+    for url in ("https://www.cbs.nl/", "https://archive.org/wayback/available?url=opendata.cbs.nl/ODataApi/odata/03759ned",
+                "https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetCapabilities&service=WFS"):
+        show(url, raw=400)
+
+
+def lux3() -> None:
+    base = "https://lustat.statec.lu/rest/data"
+    for flow in ("LU1,DF_X021,1.1/all?startPeriod=2015&endPeriod=2017",
+                 "LU1,DSD_CENSUS_GROUP1_3@DF_B1607,1.0/all"):
+        lines = head_lines(f"{base}/{flow}", 3)
+        log(f"   ({len(lines)} lines)")
+        # which municipalities and periods, briefly
+        head = lines[0].split(",") if lines else []
+        log(f"   columns: {head}")
+    show("https://statistiques.public.lu/fr.html", r"href=\"[^\"]*(?:recens|rp20|langu)[^\"]*\"", limit=30)
+
+
+def cze3() -> None:
+    query = """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT ?d ?title ?url WHERE {
+  ?d a dcat:Dataset ; dct:title ?title ; dcat:distribution ?dist .
+  ?dist dcat:downloadURL ?url .
+  FILTER(CONTAINS(LCASE(STR(?title)), "věk"))
+  FILTER(CONTAINS(STR(?url), "csu.gov.cz") || CONTAINS(STR(?url), "czso.cz"))
+} LIMIT 60"""
+    url = "https://data.gov.cz/sparql?query=" + urllib.parse.quote(query)
+    page = show(url, headers={"Accept": "application/sparql-results+json"})
+    try:
+        for b in json.loads(page)["results"]["bindings"]:
+            log(f"   - {b['title']['value'][:110]} | {b['url']['value']}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   {exc}: {page[:300]}")
+
+
+def aut3() -> None:
+    page = text(fetch("https://data.statistik.gv.at/web/catalog.jsp")[2])
+    ids = sorted(set(re.findall(r"dataset=(OGD_[^\"&'<> ]+)", page)))
+    log(f"   {len(ids)} OGD datasets")
+    for i in ids:
+        if re.search(r"(?i)vz|volksz|relig|sprach|2001|census|reg", i):
+            log(f"   - {i}")
+
+
+def deu3() -> None:
+    base = "https://www-genesis.destatis.de/genesisWS/rest/2020"
+    for term in ("Sprache", "gesprochene Sprache"):
+        body = urllib.parse.urlencode({"term": term, "category": "tables", "pagelength": "50",
+                                       "language": "de"}).encode()
+        status, _, reply = fetch(f"{base}/find/find", data=body,
+                                 headers={"username": "GAST", "password": "GAST",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+        log(f"\n## GENESIS find {term!r}: HTTP {status}, {len(reply):,} bytes")
+        try:
+            data = json.loads(text(reply))
+            log(f"   status: {data.get('Status')}")
+            for row in (data.get("Tables") or [])[:50]:
+                log(f"   - {row.get('Code')} | {row.get('Content')[:160]} | {row.get('Time')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {text(reply)[:300]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che3": che3, "lie3": lie3, "pol3": pol3, "svk3": svk3, "hun3": hun3, "svn3": svn3,
+    "nld3": nld3, "lux3": lux3, "cze3": cze3, "aut3": aut3, "deu3": deu3,
     "aut": aut, "che": che, "lie": lie, "pol": pol, "cze": cze, "svk": svk,
     "hun": hun, "svn": svn, "nld": nld, "lux": lux,
     "aut2": aut2, "che2": che2, "lie2": lie2, "pol2": pol2, "cze2": cze2, "svk2": svk2,
