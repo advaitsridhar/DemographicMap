@@ -85,7 +85,8 @@ def read() -> tuple[dict[str, str], dict[str, dict[str, Counter]], dict[str, flo
         counts.setdefault(geo_code, {"M": Counter(), "F": Counter()})[sex][key] += value
     for geo, by_sex in counts.items():
         starts = sorted(a for a, _ in by_sex["M"] | by_sex["F"])
-        if starts != list(range(0, 101, 5)):
+        # The open top group is absent where nobody is 100 or older.
+        if starts not in (list(range(0, 101, 5)), list(range(0, 96, 5))):
             raise SystemExit(f"luxembourg: {labels.get(geo, geo)} has age groups {starts}")
     return labels, counts, totals
 

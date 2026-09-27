@@ -274,8 +274,9 @@ def main(argv: list[str] | None = None) -> int:
     try:
         text = tablefile(TABLE, auth, region_code)
     except urllib.error.HTTPError as err:
+        body = (err.read() or b"")[:600].decode("utf-8", "replace")
         raise SystemExit(
-            f"germany: {TABLE} answered HTTP {err.code} {err.reason}. A 401 "
+            f"germany: {TABLE} answered HTTP {err.code} {err.reason} ({body!r}). A 401 "
             f"here means the account was not accepted -- this API reads the "
             f"credential from the request headers and ignores it as a query "
             f"parameter, so a working account presented the wrong way looks "
