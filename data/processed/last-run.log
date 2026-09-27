@@ -1,29 +1,10 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
-  om7005rr: 96 territories in 1 s
-  om7009rr: sex totals for 96 territories in 1 s
-  79 districts, national 5,409,407
-  districts against Slovakia: parts sum to 5,409,407 = 5,409,407
-  districts against SK010: parts sum to 739,635 = 739,635
-  districts against SK021: parts sum to 565,462 = 565,462
-  districts against SK022: parts sum to 562,536 = 562,536
-  districts against SK023: parts sum to 661,995 = 661,995
-  districts against SK031: parts sum to 684,190 = 684,190
-  districts against SK032: parts sum to 607,581 = 607,581
-  districts against SK041: parts sum to 810,075 = 810,075
-  districts against SK042: parts sum to 777,933 = 777,933
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 266, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 259, in main
-    records = build(args.year)
-              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 215, in build
-    both = national_ages(cube("om7009rr", f"SK0/{year}/{POPULATION}/all/all"))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 180, in national_ages
-    both[110 if age_code == "Y_GE110" else int(age_code[1:])] += value
-                                           ^^^^^^^^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: '_GE100'
+netherlands_gemeente: CBS Kerncijfers wijken en buurten 2022, by gemeente
+  WFS: 428 features; water flags {'B': 1, 'JA': 82, 'NEE': 345}
+  345 gemeenten; Nederland 0
+  gemeenten against the Netherlands: parts sum to 17,590,672 = 17,590,672
+  men + women against the total: largest difference 0
+  Amsterdam: Weesp added, 903,399
+  netherlands_gemeente: 0 office units unbound
+  netherlands_gemeente: 0 polygons without an office unit
+  wrote data/processed/netherlands_gemeente.json (633 kB)
+  wrote netherlands_gemeente.json: 344 records
