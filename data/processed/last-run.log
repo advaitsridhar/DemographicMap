@@ -1,2 +1,37 @@
-luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
-luxembourg: Bech has age groups [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90]
+switzerland_ages: BFS px-x-0102010000_101, 31 December 2025, read against the districts of 01-01-2009
+  01-01-2026: 7 of the table's communes not in the register ['......0700 Moutier', '......2016 Fétigny', '......2027 Ménières', '......2278 Ulmiz', '......2520 Halten', '......2529 Oekingen', '......4122 Villnachern'], 2 the other way ['Fétigny-Ménières', 'Moutier']
+  the table's 2115 communes are the register's of 31-12-2025
+  communes against Switzerland: parts sum to 9,127,125 = 9,127,125
+  national median 43.1 (1 January 2026) against Eurostat's 42.9 a year earlier (CH); 2026 is not published yet
+  141 units written; 27 left out because a commune of today straddles them:
+    - Amtsbezirk Aarberg: Kallnach, Lyss, Rapperswil (BE)
+    - Amtsbezirk Büren: Lyss
+    - Amtsbezirk Fraubrunnen: Rapperswil (BE)
+    - Amtsbezirk Laupen: Kallnach, Murten
+    - Amtsbezirk Niedersimmental: Reutigen, Stocken-Höfen
+    - Amtsbezirk Thun: Reutigen, Stocken-Höfen
+    - Bezirk Albula: Thusis
+    - Bezirk Brugg: Mettauertal, Böztal
+    - Bezirk Hinterrhein: Thusis
+    - Bezirk Landquart: Chur
+    - Bezirk Laufenburg: Mettauertal, Böztal
+    - Bezirk Oberklettgau: Beringen
+    - Bezirk Plessur: Chur
+    - Bezirk Schaffhausen: Beringen
+    - Bezirk See / District du Lac: Murten
+    - Distretto di Bellinzona: Bellinzona, Monteceneri
+    - Distretto di Lugano: Monteceneri
+    - Distretto di Riviera: Bellinzona
+    - District d'Hérens: Sion
+    - District de Boudry: Neuchâtel
+    - District de Lavaux-Oron: Jorat-Mézières
+    - District de Neuchâtel: Neuchâtel
+    - District de Sion: Sion
+    - District de la Broye-Vully: Jorat-Mézières
+    - District du Gros-de-Vaud: Montanaire
+    - District du Jura-Nord vaudois: Montanaire
+    - District du Val-de-Ruz: Neuchâtel
+  units unbound: []
+  polygons with no unit: ['Bodensee']
+  wrote data/processed/switzerland_bezirk.json (337 kB)
+  wrote switzerland_bezirk.json: 168 records
