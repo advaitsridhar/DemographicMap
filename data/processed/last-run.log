@@ -1,70 +1,132 @@
-eurostat: demo_r_pjangrp3 (nuts3)
-  ALB: 13 NUTS-3 regions kept at admin1 -- 12 of 13 names match this map's admin1 (against 11 at admin2)
-  AUT: 35 NUTS-3 regions left out -- its names match 4 of this map's districts and 1 of its first-level units, out of 35; too few of either to say which level this file describes
-  BEL: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 46; too few of either to say which level this file describes
-  BGR: 28 NUTS-3 regions kept at admin1 -- 27 of 27 names match this map's admin1 (against 26 at admin2)
-  CHE: 26 NUTS-3 regions kept at admin1 -- 22 of 26 names match this map's admin1 (against 14 at admin2)
-  CZE: 14 NUTS-3 regions kept at admin1 -- 14 of 14 names match this map's admin1 (against 0 at admin2)
-  DEU: 407 NUTS-3 regions left out -- its names match 4 of this map's districts and 2 of its first-level units, out of 401; too few of either to say which level this file describes
-  DNK: 11 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 11; too few of either to say which level this file describes
-  ESP: 59 NUTS-3 regions kept at admin2 -- 44 of 59 names match this map's admin2 (against 3 at admin1)
-  EST: 7 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 5; too few of either to say which level this file describes
-  FIN: 28 NUTS-3 regions left out -- its names match 0 of this map's districts and 6 of its first-level units, out of 19; too few of either to say which level this file describes
-  FRA: 102 NUTS-3 regions kept at admin2 -- 96 of 102 names match this map's admin2 (against 0 at admin1)
-  GBR: 179 NUTS-3 regions kept at admin2 -- 91 of 178 names match this map's admin2 (against 0 at admin1)
-  GRC: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 52; too few of either to say which level this file describes
-  HRV: 35 NUTS-3 regions left out -- its names match 1 of this map's districts and 0 of its first-level units, out of 22; too few of either to say which level this file describes
-  HUN: 21 NUTS-3 regions kept at admin1 -- 19 of 21 names match this map's admin1 (against 4 at admin2)
-  IRL: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  ISL: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  ITA: 115 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 111; too few of either to say which level this file describes
-  LTU: 10 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
-  LVA: 9 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 6; too few of either to say which level this file describes
-  MKD: 9 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 9; too few of either to say which level this file describes
-  MLT: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  NLD: 55 NUTS-3 regions left out -- its names match 1 of this map's districts and 2 of its first-level units, out of 40; too few of either to say which level this file describes
-  NOR: 36 NUTS-3 regions left out -- its names match 0 of this map's districts and 8 of its first-level units, out of 28; too few of either to say which level this file describes
-  POL: 73 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 73; too few of either to say which level this file describes
-  PRT: 40 NUTS-3 regions left out -- its names match 0 of this map's districts and 2 of its first-level units, out of 27; too few of either to say which level this file describes
-  ROU: 42 NUTS-3 regions kept at admin1 -- 42 of 42 names match this map's admin1 (against 18 at admin2)
-  SRB: 25 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 25; too few of either to say which level this file describes
-  SVK: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  SVN: 12 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 12; too few of either to say which level this file describes
-  SWE: 21 NUTS-3 regions kept at admin1 -- 21 of 21 names match this map's admin1 (against 0 at admin2)
-  TUR: 81 NUTS-3 regions kept at admin1 -- 81 of 81 names match this map's admin1 (against 11 at admin2)
-  530 regions placed by outline; 81 refused or superseded by it; 1029 left to their names
-  GBR: Hartlepool and Stockton-on-Tees (NUTS 2021) left out -- it holds Hartlepool, Stockton-on-Tees and more
-  GBR: North and North East Lincolnshire (NUTS 2021) left out -- it holds North East Lincolnshire and more
-  GBR: Barnsley, Doncaster and Rotherham (NUTS 2021) left out -- it holds Barnsley, Doncaster, Rotherham and more
-  GBR: Calderdale and Kirklees (NUTS 2021) left out -- it holds Calderdale, Kirklees and more
-  GBR: Leicestershire CC and Rutland (NUTS 2021) left out -- it holds Rutland and more
-  GBR: Camden & City of London (NUTS 2021) left out -- it holds Camden, City of London and more
-  GBR: Kensington and Chelsea & Hammersmith and Fulham (NUTS 2021) left out -- it holds Hammersmith and Fulham, Kensington and Chelsea and more
-  GBR: Hackney & Newham (NUTS 2021) left out -- it holds Hackney, Newham and more
-  GBR: Haringey & Islington (NUTS 2021) left out -- it holds Haringey, Islington and more
-  GBR: Lewisham & Southwark (NUTS 2021) left out -- it holds Lewisham, Southwark and more
-  GBR: Bexley & Greenwich (NUTS 2021) left out -- it holds Bexley, Greenwich and more
-  GBR: Barking & Dagenham and Havering (NUTS 2021) left out -- it holds Barking & Dagenham, Havering and more
-  GBR: Redbridge & Waltham Forest (NUTS 2021) left out -- it holds Redbridge, Waltham Forest and more
-  GBR: Merton, Kingston upon Thames & Sutton (NUTS 2021) left out -- it holds Kingston upon Thames, Merton, Sutton and more
-  GBR: Harrow & Hillingdon (NUTS 2021) left out -- it holds Harrow, Hillingdon and more
-  GBR: Hounslow & Richmond upon Thames (NUTS 2021) left out -- it holds Hounslow, Richmond upon Thames and more
-  GBR: Bath and North East Somerset, North Somerset and South Gloucestershire (NUTS 2021) left out -- it holds Bath and North East Somerset, North Somerset, South Gloucestershire and more
-  GBR: Cornwall and Isles of Scilly (NUTS 2021) left out -- it holds Cornwall, Isles of Scilly and more
-  GBR: Conwy and Denbighshire (NUTS 2021) left out -- it holds Conwy, Denbighshire and more
-  GBR: Bridgend and Neath Port Talbot (NUTS 2021) left out -- it holds Bridgend, Neath Port Talbot and more
-  GBR: Monmouthshire and Newport (NUTS 2021) left out -- it holds Monmouthshire, Newport and more
-  GBR: Cardiff and Vale of Glamorgan (NUTS 2021) left out -- it holds Cardiff, Vale of Glamorgan and more
-  GBR: Flintshire and Wrexham (NUTS 2021) left out -- it holds Flintshire, Wrexham and more
-  GBR: Aberdeen City and Aberdeenshire (NUTS 2021) left out -- it holds Aberdeen City, Aberdeenshire and more
-  GBR: Inverness & Nairn and Moray, Badenoch & Strathspey (NUTS 2021) left out -- it holds Moray and more
-  GBR: Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute (NUTS 2021) left out -- it holds Argyll & Bute and more
-  GBR: Angus and Dundee City (NUTS 2021) left out -- it holds Angus, Dundee City and more
-  GBR: Clackmannanshire and Fife (NUTS 2021) left out -- it holds Clackmannanshire, Fife and more
-  GBR: East Lothian and Midlothian (NUTS 2021) left out -- it holds East Lothian, Midlothian and more
-  GBR: Perth & Kinross and Stirling (NUTS 2021) left out -- it holds Perth & Kinross, Stirling and more
-  GBR: East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond (NUTS 2021) left out -- it holds East Dunbartonshire, West Dunbartonshire and more
-  GBR: Inverclyde, East Renfrewshire and Renfrewshire (NUTS 2021) left out -- it holds East Renfrewshire, Inverclyde, Renfrewshire and more
-  GBR: East Ayrshire and North Ayrshire mainland (NUTS 2021) left out -- it holds East Ayrshire and more
-  wrote data/processed/eurostat_nuts3.json (1018 kB)
-  705 nuts3 records
+== r2_fin_11rf
+  title: Population 31.12.
+  var 'kunta_85_20190101' (Municipality) [elimination]: 457 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU004=Alahärmä; KU005=Alajärvi; KU006=Alastaro; KU009=Alavieska ... KU979=Yläne; KU980=Ylöjärvi; KU981=Ypäjä; KU988=Äetsä; KU989=Ähtäri; KU992=Äänekoski
+      code lengths {3: 1, 5: 456}; prefixes {'KU': 456, 'SSS': 1}
+  var 'timeperiod_y' (Year) [time]: 23 values
+      2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007; 2008=2008 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 23}; prefixes {'': 23}
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+  var 'ikaryhma_10_20180101' (Age) [elimination]: 102 values
+      SSS=Total; 000=0; 001=1; 002=2; 003=3; 004=4 ... 095=95; 096=96; 097=97; 098=98; 099=99; 100-=100 -
+      code lengths {3: 101, 4: 1}; prefixes {'': 101, 'SSS': 1}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== r2_fin_11rx
+  title: Population 31.12.
+  var 'uskontokunta_10_20190101' (Religious community) [elimination]: 26 values
+      SSS=TOTAL; A00=INDIGENEOUS RELIGIONS AND NEO-PAGANISM; B00=BUDDHISM; C00=HINDUISM; D00=ISLAM; E00=JUDAISM ... G02=Jehovah's Witnesses; G03=Church of Jesus Christ of Latter-day Saints; G04=Christian Community of Finland; G05=Liberal Catholic Church; G06=Others; H00=PERSONS NOT MEMBERS OF ANY RELIGIOUS COMMUNITY
+      code lengths {3: 26}; prefixes {'F': 12, 'G': 7, 'SSS': 1, 'A': 1, 'B': 1, 'C': 1, 'D': 1, 'E': 1}
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+  var 'ikaryhma_10_20180101' (Age) [elimination]: 6 values
+      SSS=Total; 0-14=0 - 14; 15-24=15 - 24; 25-44=25 - 44; 45-64=45 - 64; 65-=65 -
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== r2_fin_11rm
+  title: Population 31.12.
+  var 'alue_23_20260101' (Area) [elimination]: 309 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... KU976=Ylitornio; KU977=Ylivieska; KU980=Ylöjärvi; KU981=Ypäjä; KU989=Ähtäri; KU992=Äänekoski
+      code lengths {3: 1, 5: 308}; prefixes {'KU': 308, 'SSS': 1}
+  var 'kieli_15_20180102' (Language) [elimination]: 169 values
+      SSS=Total; 01=NATIONAL LANGUAGES, TOTAL; fi=Finnish; sv=Swedish; se=Sami; 02=FOREIGN LANGUAGES, TOTAL ... wo=Wolof; xh=Xhosa; za=Zhuang; Chuang; zu=Zulu; 98=Other language; X=Unknown
+      code lengths {1: 1, 2: 167, 3: 1}; prefixes {'': 3, 'SSS': 1, 'fi': 1, 'sv': 1, 'se': 1, 'ab': 1, 'aa': 1, 'ae': 1}
+      /^SK/: 1 -- sk=Slovak
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== r2_fin_class
+  510,016 characters
+  [{"sourceLocalId":"kunta_1_20250101/020","targetLocalId":"seutukunta_1_20250101/063","distributionSourceToTarget":null,"distributionTargetToSource":null,"modifiedDate":"2024-12-12T11:24:47Z","validFrom":null,"validTo":null,"correspondenceTable":{"localId":"kunta_1_20250101#seutukunta_1_20250101","sourceClassification":"kunta_1_20250101","targetClassification":"seutukunta_1_20250101","correspondenceTableTexts":"Kuntien ja seutukuntien vuoden 2025 välinen luokitusavain"},"source":{"localId":"kunta_1_20250101","internationalRecommendation":false,"nationalRecommendation":false,"classificationName":[{"langName":"suomi","lang":"fi","name":"Kunnat 2025"}],"classificationDescription":[{"langName":"suomi","lang":"fi","description":"Voimassa olevat kunnat 2025"}]},"target":{"localId":"seutukunta_1_2
+== r2_est_archive
+  24 items
+    RV02111.PX [t] RV02111: POPULATION BY AGE AND SEX, 1 JANUARY (1950–1999)
+    RV0213.PX [t] RV0213: COMPONENTS OF CHANGE IN POPULATION FIGURE BY COUNTY (2000–2016)
+    RV022.PX [t] RV022: POPULATION BY SEX, AGE GROUP AND COUNTY, 1 JANUARY (1990–2017)
+    RV0221.PX [t] RV0221: POPULATION BY SEX, AGE GROUP AND COUNTY, 1 JANUARY. ESTONIANS (1990–2017)
+    RV0221U.PX [t] RV0221U: POPULATION BY SEX, AGE GROUP AND COUNTY, 1 JANUARY. ESTONIANS (2018–2025)
+    RV0222.PX [t] RV0222: POPULATION BY SEX, ETHNIC NATIONALITY AND COUNTY, 1 JANUARY (2012–2017)
+    RV0231.PX [t] RV0231: AT LEAST 15-YEAR-OLD PERSONS BY EDUCATION, SEX, AGE GROUP AND COUNTY, 1 JANUARY (2012–2017)
+    RV0232.PX [t] RV0232: AT LEAST 15-YEAR-OLD PERSONS BY EDUCATION, SEX AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2012–2017)
+    RV0241.PX [t] RV0241: POPULATION BY SEX, AGE AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2012–2017)
+    RV028.PX [t] RV028: MEAN ANNUAL POPULATION BY SEX AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT (2000–2016)
+    RV0282.PX [t] RV0282: POPULATION BY SEX, AGE GROUP AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2000–2017)
+    RV0291.PX [t] RV0291: POPULATION NUMBER, AREA AND DENSITY BY ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2001–2017)
+    RV044.PX [t] RV044: LIFE EXPECTANCY BY SEX AND AGE (1958/59–1988)
+    RV06.PX [t] RV06: DEMOGRAPHIC LABOUR PRESSURE INDEX BY REGION/ADMINISTRATIVE UNIT, 1 JANUARY (1989–2017)
+    RV063.PX [t] RV063: DEPENDENCY RATIO BY REGION/ADMINISTRATIVE UNIT, 1 JANUARY (1989–2017)
+    RV069.PX [t] RV069: POPULATION BY COUNTRY OF BIRTH/CITIZENSHIP, COUNTY, SEX AND AGE GROUP, 1 JANUARY (2016–2017)
+    RV07.PX [t] RV07: NATIVE AND FOREIGN-ORIGIN POPULATION BY COUNTY, SEX AND AGE, 1 JANUARY (2012–2016)
+    RV086.PX [t] RV086: POPULATION PROJECTION UNTIL 2080 BY SEX AND AGE (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2019)
+    RV087.PX [t] RV087: POPULATION PROJECTION UNTIL 2045 BY COUNTY AND AGE GROUP (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2019)
+    RV088.PX [t] RV088: POPULATION PROJECTION 2020-2080: DEMOGRAPHIC INDICATORS BY COUNTY AND SEX
+    RV089.PX [t] RV089: POPULATION PROJECTION BY AGE AND SEX (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2012)
+    RV09.PX [t] RV09: POPULATION PROJECTION BY AGE AND SEX (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2006)
+    RV091.PX [t] RV091: POPULATION PROJECTION IN TALLINN BY AGE AND SEX (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2010)
+    RV092.PX [t] RV092: POPULATION PROJECTION BY COUNTY, AGE GROUP AND SEX (BASED ON THE POPULATION FIGURE AS AT 1 JANUARY 2012)
+== r2_est_rel2011
+  5 items
+    kodakondsus [l] Citizenship
+    rahvus-emakeel-ja-keelteoskus-murded [l] Ethnic nationality. Mother tongue and command of foreign languages. Dialects
+    perekonnaseis [l] Marital status
+    usk [l] Religious affiliation
+    naised-ja-lapsed [l] Women and children
+== r2_est_rl0428
+  title: RL0428: POPULATION BY ETHNIC NATIONALITY, SEX AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+  var 'Rahvus' (Ethnic nationality) [elimination]: 182 values
+      TOTAL=Ethnic nationalities total; ABA=Abazins; ABK=Abkhazians; ADY=Adyghe; AFR=Afrikaners; AAM=African Americans ... WAL=Walloons; RUS=Russians; VEN=Venezuelans; VEP=Vepsians; VIE=Vietnamese; UNK=Ethnic nationality unknown
+      code lengths {3: 181, 5: 1}; prefixes {'TOTAL': 1, 'ABA': 1, 'ABK': 1, 'ADY': 1, 'AFR': 1, 'AAM': 1, 'AGU': 1, 'AKA': 1}
+  var 'Elukoht' (Place of residence) [elimination]: 6 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; 784=..Tallinn city; VAL_1=Rural municipalities
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+== r2_est_search_age
+  55 hits
+    NH01.PX | /eri-valdkondade-statistika/noorteseire | NH01: YOUNG PEOPLE BY AGE GROUP, SEX AND ADMINISTRATIVE UNIT, 1 JANUARY
+    RV0241.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikunäitajad ja koosseis. Arhiiv | RV0241: POPULATION BY SEX, AGE AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2012–2017)
+    TT065.PX | /sotsiaalelu/tooturg/tootud/luhiajastatistika | TT065: REGISTERED UNEMPLOYED PERSONS BY REGION / ADMINISTRATIVE UNIT, SEX AND AGE GROUP (MONTHS)
+    RV0282.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikunäitajad ja koosseis. Arhiiv | RV0282: POPULATION BY SEX, AGE GROUP AND ADMINISTRATIVE UNIT OR TYPE OF SETTLEMENT, 1 JANUARY (2000–2017)
+    ST004.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Sissetulek. Arhiiv | ST004: AVERAGE MONTHLY GROSS INCOME PER EMPLOYEE AND RECIPIENTS OF GROSS INCOME BY REGION/ ADMINISTRATIVE UNIT, SEX AND AGE GROUP (2013–2022)
+    TT65.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Tooturg. Arhiiv | TT65: REGISTERED UNEMPLOYED PERSONS BY REGION / ADMINISTRATIVE UNIT, SEX AND AGE GROUP (2015–2017, MONTHS)
+    ST005.PX | /Lepetatud_tabelid/Sotsiaalelu. Arhiiv/Sissetulek. Arhiiv | ST005: AVERAGE MONTHLY GROSS INCOME PER EMPLOYEE AND RECIPIENTS OF GROSS INCOME BY REGION/ ADMINISTRATIVE UNIT, SEX AND AGE GROUP (2003–2017)
+    RL103.PX | /rahvaloendus/rel2000/rahvastiku-paiknemine-ajutine-kohal-ja-araolek | RL103: DE FACTO POPULATION IN ADMINISTRATIVE UNITS BY AGE
+    RL21001.px | /rahvaloendus/rel2021/rahvastiku_paiknemine/elukoht-ja-soo-vanusjaotus | RL21001: POPULATION BY PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), SEX AND AGE, 31 DECEMBER 2021
+    RV287U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV287U: NEWLY MARRIED PERSONS BY SOCIO-ECONOMIC STATUS, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RV37U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV37U: DIVORCED PERSONS BY SOCIO-ECONOMIC STATUS, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    RL0433.PX | /rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel-ja-keelteoskus-murded | RL0433: POPULATION BY MOTHER TONGUE, SEX, AGE GROUP AND ADMINISTRATIVE UNIT, 31 DECEMBER 2011
+    RL21422.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/kodakondsus | RL21422: POPULATION BY CITIZENSHIP, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21439.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/voorkeeleoskus-murded | RL21439: POPULATION BY COMMAND OF FOREIGN LANGUAGES, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21132.px | /rahvaloendus/rel2021/rahvastiku-majanduslik-aktiivsus/majanduslik-aktiivsus-elatusallikad | RL21132: POPULATION BY CURRENT ACTIVITY STATUS, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21429.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel | RL21429: POPULATION BY ETHNIC NATIONALITY, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21434.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/rahvus-emakeel | RL21434: POPULATION BY MOTHER TONGUE, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21142.px | /rahvaloendus/rel2021/rahvastiku-majanduslik-aktiivsus/majanduslik-aktiivsus-elatusallikad | RL21142: POPULATION BY MAIN SOURCE OF SUBSISTENCE, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21803.PX | /rahvaloendus/rel2021/elamistingimused | RL21803: POPULATION BY SEX, AGE GROUP, TYPE AND TENURE STATUS OF DWELLING, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21527.px | /rahvaloendus/rel2021/pelisus-ja-ranne/polis-ja-valisparitolu-rahvastik | RL21527: POPULATION BY NATIVE AND FOREIGN-ORIGIN, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21503.px | /rahvaloendus/rel2021/pelisus-ja-ranne/siseranne-tagasipoordumine | RL21503: POPULATION BY COUNTRY OF BIRTH, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RV285U.PX | /Lepetatud_tabelid/Rahvastik.Arhiiv/Rahvastikusündmused. Arhiiv | RV285U: NEWLY MARRIED PERSONS BY NUMBER OF COMMON CHILDREN, PLACE OF RESIDENCE, SEX AND AGE GROUP, 2017. BEFORE MARRIAGE IN CONSENSUAL UNION. ADMINISTRATIVE DIVISION AS AT 01.01.2018
+    NH15.px | /eri-valdkondade-statistika/noorteseire | NH15: EARLY LEAVERS FROM EDUCATION AND TRAINING BY SEX, COUNTY, AGE GROUP AND TYPE OF SETTLEMENT REGION, 1 JANUARY
+    NH18.px | /eri-valdkondade-statistika/noorteseire | NH18: COUNTRY OF BIRTH/CITIZENSHIP OF YOUNG PEOPLE BY COUNTY, AGE GROUP AND SEX, 1 JANUARY
+    RL21611.px | /rahvaloendus/rel2021/tervis | RL21611: POPULATION BY LIMITATIONS OF EVERYDAY ACTIVITIES DUE TO HEALTH PROBLEMS, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21446.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/voorkeeleoskus-murded | RL21446: POPULATION WITH ESTONIAN AS THEIR MOTHER TONGUE BY ABILITY TO SPEAK A DIALECT, AGE GROUP, SEX, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RLV445.px | /rahvaloendus/rel_vordlus/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad | RLV445: POPULATION WITH ESTONIAN AS THEIR MOTHER TONGUE BY ABILITY TO SPEAK A DIALECT, AGE GROUP, SEX AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT) (2011, 2021)
+    RL21324.px | /rahvaloendus/rel2021/rahvastiku_paiknemine/teine-elukoht | RL21324: PERSONS WITH TWO RESIDENCES BY SECONDARY PLACE OF RESIDENCE, SEX, AGE GROUP, AND USUAL PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21005.px | /rahvaloendus/rel2021/rahvastiku_paiknemine/elukoht-ja-soo-vanusjaotus | RL21005: MEAN AGE AND MEDIAN AGE OF POPULATION BY PLACE OF RESIDENCE (ADMINISTRATIVE UNIT) AND SEX, 31 DECEMBER 2021
+    RLV005.px | /rahvaloendus/rel_vordlus/rahvastiku_paiknemine | RLV005: MEAN AGE AND MEDIAN AGE OF POPULATION BY PLACE OF RESIDENCE (ADMINISTRATIVE UNIT) AND SEX (2000, 2011, 2021)
+    RL21703.px | /rahvaloendus/rel2021/Leibkonnad-ja-perkonnad | RL21703: POPULATION BY SEX, AGE GROUP, PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), AND PERSON'S HOUSEHOLD AND FAMILY STATUS, 31 DECEMBER 2021
+    RL0402.PX | /rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/perekonnaseis | RL0402: AT LEAST FIFTEEN-YEAR-OLD PERSONS BY LEGAL AND DE FACTO MARITAL STATUS, SEX, AGE GROUP AND ADMINISTRATIVE UNIT, 31 DECEMBER 2011
+    RL21403.px | /rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/perekonnaseis | RL21403: AT LEAST FIFTEEN-YEAR-OLD PERSONS BY LEGAL MARITAL STATUS, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21302.px | /rahvaloendus/rel2021/haridus | RL21302: AT LEAST 15-YEAR-OLD PERSONS BY EDUCATIONAL ATTAINMENT, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RLV302.px | /rahvaloendus/rel_vordlus/haridus | RLV302: AT LEAST 15-YEAR-OLD PERSONS BY EDUCATIONAL ATTAINMENT, SEX, AGE GROUP AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT) (2000, 2011, 2021)
+    RL0155.PX | /rahvaloendus/rel2011/rahvastiku-majanduslik-aktiivsus/hoivatud-ja-tooranne | RL0155: EMPLOYED PERSONS BY OCCUPATION, SEX, AGE GROUP AND COUNTY, 31 DECEMBER 2011
+    RL21601.px | /rahvaloendus/rel2021/tervis | RL21601: POPULATION BY OCCURRENCE OF LONG-TERM ILLNESS OR HEALTH PROBLEM, SEX, AGE GROUP, AND PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), 31 DECEMBER 2021
+    RL21554.px | /rahvaloendus/rel2021/pelisus-ja-ranne/siseranne | RL21554: POPULATION LIVING IN ESTONIA AT THE TIME OF LAST TWO POPULATION CENSUSES BY SEX, AGE GROUP, CURRENT PLACE OF RESIDENCE (ADMINISTRATIVE UNIT), AND 2011 PLACE OF RESIDENCE (COUNTY), 31 DECEMBER 2021
+    RL21155.px | /rahvaloendus/rel2021/rahvastiku-majanduslik-aktiivsus/hoivatud-ja-tooranne | RL21155: EMPLOYED PERSONS BY OCCUPATION, SEX, AGE GROUP, AND PLACE OF RESIDENCE (COUNTY), 31 DECEMBER 2021
+    RL0148.PX | /rahvaloendus/rel2011/rahvastiku-majanduslik-aktiivsus/hoivatud-ja-tooranne | RL0148: EMPLOYED PERSONS BY ECONOMIC ACTIVITY, SEX, AGE GROUP AND COUNTY, 31 DECEMBER 2011
