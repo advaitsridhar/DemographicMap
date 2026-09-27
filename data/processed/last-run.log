@@ -1,41 +1,96 @@
-page: https://www.stats.gov.kn/wp-json/wp/v2/media?search=population&per_page=100
-  31,178 bytes
-  0 distinct match(es) for '(?:source_url|link).{3,6}https?:[^,]+?(?:[.](?:pdf|xlsx|xls|zip)|census[^,]*)'
-page: https://www.stats.gov.kn/wp-json/wp/v2/media?search=2011&per_page=100
-  9,856 bytes
-  14 distinct match(es) for '(?:source_url|link).{3,6}https?:[^,]+?(?:[.](?:pdf|xlsx|xls|zip)|census[^,]*)'
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-1152x1536.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-1280x1707.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-150x150.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-1536x2048.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-225x300.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-300x300.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-300x400.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-391x260.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-474x324.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-500x667.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-768x1024.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1-800x1067.png"}
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1.png"
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2021\/02\/census-2011-results-1.png"}}
-page: https://www.stats.gov.kn/wp-json/wp/v2/media?search=parish&per_page=100
-  2,887 bytes
-  0 distinct match(es) for '(?:source_url|link).{3,6}https?:[^,]+?(?:[.](?:pdf|xlsx|xls|zip)|census[^,]*)'
-page: https://www.stats.gov.kn/wp-json/wp/v2/media?search=report&per_page=100
-  29,502 bytes
-  7 distinct match(es) for '(?:source_url|link).{3,6}https?:[^,]+?(?:[.](?:pdf|xlsx|xls|zip)|census[^,]*)'
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2017\/04\/St.-Kitts-and-Nevis-CPA-Vol.2-St.-Kitts-Final-Report-2008.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2017\/04\/St.-Kitts-and-Nevis-CPA-Vol.3-Nevis-Final-Report-2008.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2018\/02\/PRASC_CommDiss_Website_RecommendationsReport_201603_StKittsNevis.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2019\/07\/St.-Kitts-and-Nevis-CPA-Vol.2-St.-Kitts-Final-Report-2008.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2019\/07\/St.-Kitts-and-Nevis-CPA-Vol.3-Nevis-Final-Report-2008.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2019\/07\/St.Kitts-and-Nevis-CPA-Vol.1-Final-Report-2008.pdf
-    source_url":"https:\/\/www.stats.gov.kn\/wp-content\/uploads\/2019\/07\/St._Kitts_Nevis_Final_Report2001.pdf
-page: https://www.stats.gov.kn/wp-json/wp/v2/pages?search=census&per_page=100
-  235,724 bytes
-  5 distinct match(es) for '(?:source_url|link).{3,6}https?:[^,]+?(?:[.](?:pdf|xlsx|xls|zip)|census[^,]*)'
-    link":"https:\/\/www.stats.gov.kn\/census-2021-enumerator-application-form\/"
-    link":"https:\/\/www.stats.gov.kn\/census-2021-page\/"
-    link":"https:\/\/www.stats.gov.kn\/census-2021-page\/competition-page\/"
-    link":"https:\/\/www.stats.gov.kn\/census-faqs\/"
-    link":"https:\/\/www.stats.gov.kn\/topics\/demographic-social-statistics\/population\/population-growth-and-rates-by-census-years-1871-to-2011\/"
+page: https://stats.gov.bs/wp-json/wp/v2/media?search=settlement&per_page=100
+  34,101 bytes
+  20 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ACKLINS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BERRY-ISLANDS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BIMINIS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CAT-ISLAND-POPULATION-BY-SETTLEMENT_-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CROOKED-ISLAND-POPULATION-BY-SETTLEMENT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/EXUMA-AND-CAYS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/HARBOUR-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/INAGUA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LONG-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/MAYAGUANA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RAGGED-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RUM-CAY-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SAN-SALVADOR-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SPANISH-WELLS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+page: https://stats.gov.bs/wp-json/wp/v2/media?search=census&per_page=100
+  140,956 bytes
+  65 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/1990-CENSUS-BUILDING-AND-HOUSING-STOCK.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-2.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-3.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report-4.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/2010-Census-Disability-Report.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ABACO-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ACKLINS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ACKLINS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ANDROS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BERRY-ISLANDS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BERRY-ISLANDS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BIMINIS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/BIMINIS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CAT-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CAT-ISLAND-POPULATION-BY-SETTLEMENT_-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/CROOKED-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-INDUSTRY-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-INDUSTRY-2010-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-OCCUPATION-2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/DETAILED-OCCUPATION-2010-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/ELEUTHERA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/EXUMA-AND-CAYS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/EXUMA-CAYS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/GRAND-BAHAMA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/HARBOUR-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/HARBOUR-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/INAGUA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/INAGUA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LAND-AND-AREA-DENSITY-OF-POPULATION-BY-ISLAND-2000-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LONG-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/LONG-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/MAYAGUANA-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/MAYAGUANA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/Microsoft-Word-2010-CENSUS-FIRST-RELEASE-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NEW-PROVIDENCE-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/NORTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RAGGED-ISLAND-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RAGGED-ISLAND-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/RUM-CAY-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SAN-SALVADOR-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SAN-SALVADOR-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ABACO-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ANDROS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SOUTH-ELEUTHERA-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SPANISH-WELLS-2010-CENSUS-REPORT.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/SPANISH-WELLS-POPULATION-BY-SETTLEMENT_2010-CENSUS.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/TOTAL-POPULATION-BY-SEX-AND-BY-ISLAND-AND-NUMBER-OF-HOUSEHOLDS-1990-CENSUS-1.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/08\/TOTAL-POPULATION-BY-SEX-AND-BY-ISLAND-AND-NUMBER-OF-HOUSEHOLDS-1990-CENSUS.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/1990-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/2000-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/2010-Census-Building-and-Housing-Stock.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Bahamas-Census-of-Populaton-and-Housing-2010-Internal-Migration.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Bahamas-Census-of-Populaton-and-Housing-2010-International-Migration.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-5-Years-and-Over-by-Sex-Island-Of-Previous-Residence-and-Educational-Attainment-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-by-Age-Sex-and-Period-of-Migration-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Internal-Migrants-by-Sex-Island-of-Birth-and-Period-of-Change-in-Last-Ten-Years-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2020\/10\/Population-Changing-Island-of-Residence-in-the-Past-Ten-Years-by-Age-Sex-and-Island-of-Previous-Residence-2010-Census.xlsx
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Department-of-Statistics-announces-digitization-of-Census-2020-and-the-start-of-pre-testing.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/PRESS-RELEASE-First-training-for-Census-2020-workers11.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/PRESS-RELEASE-Preparation-for-Census-2020-begins-with-pre-test-training.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Preparations-for-Census-2020-begins-with-pre-test-training.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Press-Statement-\u2013-Census-2020-Pre-Test-Press-Conference21.pdf
+    source_url":"https:\/\/stats.gov.bs\/wp-content\/uploads\/2021\/07\/Press-Statement-\u2013-Dept.-of-Statistics-Announces-Digitization-of-Census-2020-and-Start-of-Pre-testing.pdf
+page: https://stats.gov.bs/wp-json/wp/v2/media?search=census&per_page=100&page=2
+  unreachable: HTTPError: HTTP Error 400: Bad Request
+page: https://stats.gov.bs/wp-json/wp/v2/media?search=2022&per_page=100
+  6,279 bytes
+  0 distinct match(es) for 'source_url.{3,6}https?:[^,]+?[.](?:pdf|xlsx|xls|zip)'
