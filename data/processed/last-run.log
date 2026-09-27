@@ -1,142 +1,218 @@
-== fin_vaerak
-  32 items
-    11rc.px [t] 11rc -- Population according to age (5-year) and sex, 1865-2025
-    11rd.px [t] 11rd -- Population according to age (1-year 0-112) and sex, 1972-2025
-    11re.px [t] 11re -- Population according to age (1-year) and sex by area, 1972-2025
-    11rf.px [t] 11rf -- Population according to age (1-year) and sex by area and the regional division of each statistical reference year, 2003-2025
-    11rg.px [t] 11rg -- Citizenship according to age and sex by region, 1990-2025
-    11rk.px [t] 11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
-    11rl.px [t] 11rl -- Language according to age and sex by region, 1990-2025
-    11rm.px [t] 11rm -- Language according to sex by municipality, 1990-2025
-    11rp.px [t] 11rp -- Country of birth according to age and sex by region, 1990-2025
-    11rs.px [t] 11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
-    11rt.px [t] 11rt -- Origin and background country according to age group and sex by region, 1990-2025
-    11ru.px [t] 11ru -- Origin according to background continent by area, 1990-2025
-    11rx.px [t] 11rx -- Belonging to a religious community by age and sex, 1990-2025
-    11ry.px [t] 11ry -- Marital status by age (1-year 0-112) and sex, 1990-2025
-    11rz.px [t] 11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
-    11s1.px [t] 11s1 -- Mean population according to age and sex by area, 1981-2025
-    11s2.px [t] 11s2 -- Finnish-speaking and Swedish-speaking population by age and sex and by area, 1990-2025
-    11s3.px [t] 11s3 -- Population according to urban-rural classification by age and sex, 2000-2025
-    11s5.px [t] 11s5 -- Population by month and area, 1990M01-2025M12
-    14x3.px [t] 14x3 -- Degree of urbanisation by area, 2023
-    14x4.px [t] 14x4 -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2023
-    159s.px [t] 159s -- Population according to citizenship, country of birth, language and origin (overlap of the groups), 1990-2025
-    159t.px [t] 159t -- Numbers and shares of persons with immigrant background by area, 1990-2025
-    15al.px [t] 15al -- Degree of urbanisation by area, 2024
-    15am.px [t] 15am -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2024
-== fin_11re
-  title: Population 31.12.
-  var 'alue_23_20260101' (Area) [elimination]: 309 values
-      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... KU976=Ylitornio; KU977=Ylivieska; KU980=Ylöjärvi; KU981=Ypäjä; KU989=Ähtäri; KU992=Äänekoski
-      code lengths {3: 1, 5: 308}; prefixes {'KU': 308, 'SSS': 1}
-  var 'ikaryhma_10_20180101' (Age) [elimination]: 102 values
-      SSS=Total; 000=0; 001=1; 002=2; 003=3; 004=4 ... 095=95; 096=96; 097=97; 098=98; 099=99; 100-=100 -
-      code lengths {3: 101, 4: 1}; prefixes {'': 101, 'SSS': 1}
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-  var 'timeperiod_y' (Year) [time]: 54 values
-      1972=1972; 1973=1973; 1974=1974; 1975=1975; 1976=1976; 1977=1977 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 54}; prefixes {'': 54}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
-== fin_11rl
-  title: Population 31.12.
-  var 'alue_23_20260101' (Region) [elimination]: 22 values
-      SSS=WHOLE COUNTRY; MA1=MA1 MAINLAND FINLAND; MK01=MK01 Uusimaa; MK02=MK02 Southwest Finland; MK04=MK04 Satakunta; MK05=MK05 Kanta-Häme ... MK16=MK16 Central Ostrobothnia; MK17=MK17 North Ostrobothnia; MK18=MK18 Kainuu; MK19=MK19 Lapland; MA2=MA2 ÅLAND; MK21=MK21 Åland
-      code lengths {3: 3, 4: 19}; prefixes {'MK': 19, 'MA': 2, 'SSS': 1}
-  var 'kieli_15_20180102' (Language) [elimination]: 169 values
-      SSS=Total; 01=NATIONAL LANGUAGES, TOTAL; fi=Finnish; sv=Swedish; se=Sami; 02=FOREIGN LANGUAGES, TOTAL ... wo=Wolof; xh=Xhosa; za=Zhuang; Chuang; zu=Zulu; 98=Other language; X=Unknown
-      code lengths {1: 1, 2: 167, 3: 1}; prefixes {'': 3, 'SSS': 1, 'fi': 1, 'sv': 1, 'se': 1, 'ab': 1, 'aa': 1, 'ae': 1}
-      /^SK/: 1 -- sk=Slovak
-  var 'ikaryhma_10_20180101' (Age) [elimination]: 17 values
-      SSS=Total; 0-4=0 - 4; 5-9=5 - 9; 10-14=10 - 14; 15-19=15 - 19; 20-24=20 - 24 ... 50-54=50 - 54; 55-59=55 - 59; 60-64=60 - 64; 65-69=65 - 69; 70-74=70 - 74; 75-=75 -
-      code lengths {3: 4, 5: 13}; prefixes {'': 16, 'SSS': 1}
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
-== fin_search_relig
-  41 hits
-    11rx.px | /vaerak | 11rx -- Belonging to a religious community by age and sex, 1990-2025
-    13wb.px | /yrti | 13wb -- Non-profit institutions serving households by legal form, 2018-2024
-    159d.px | /ava | 159d -- Studying of religion and worldview studies in grades 1 to 9 of comprehensive education and lower secondary education for adults, 2024
-    159n.px | /ava | 159n -- Studying of religion and worldview studies in grades 1 to 9 of comprehensive education and lower secondary education for adults by region, 2024
-    14up.px | /ati | 14up -- Index of wage and salary earnings, index of regular earnings and index of negotiated wages and salaries by industry, quarterly data, 2010Q1-2026Q2*
-    14uq.px | /ati | 14uq -- Index of wage and salary earnings, index of regular earnings and index of negotiated wages and salaries by industry, annual data, 2010-2025*
-    12a6.px | /jmete | 12a6 -- General government expenditure by function, annually, 1990-2024*
-    115s.px | /tyokay | 115s -- Employed persons by occupational group (Classification of Occupations 2010, levels 1 to 3), area, sex and year, 2010-2023
-    12tt.px | /tyonv | 12tt -- Jobseekers and vacancies by occupation during the month (1370), 2009M01-2026M08
-    15au.px | /pra | 15au -- Earnings of full-time wage and salary earners per month by sector, occupational group (Classification of Occupations 2010) and sex, 2024
-    15ay.px | /pra | 15ay -- Earnings of wage and salary earners per hour paid by sector, occupational group (Classification of Occupations 2010) and working hours, 2024
-    15az.px | /pra | 15az -- Earnings of wage and salary earners per hour paid by sector, occupational group (Classification of Occupations 2010) and sex, 2024
-    11ra.px | /vaerak | 11ra -- Key figures on population by region, 1990-2025
-    13kr.px | /rpk | 13kr -- Persons suspected of solved offences by the International Classification of Crime for Statistical Purposes (ICCS), year of solving, age, sex and nationality, 2006-2025
-    13kv.px | /rpk | 13kv -- Victims of offences and plaintiffs by the International Classification of Crime for Statistical Purposes (ICCS), year of report, age and sex, 2009-2025
-    154m.px | /rpk | 154m -- Offences recorded and their solving by the International Classification of Crime for Statistical Purposes (ICCS), year of reporting and the municipality of offence, 2006-2025
-    15b5.px | /khi | 15b5 -- Consumer Price Index (2025=100), monthly data, 1995M01-2026M08
-    15b7.px | /khi | 15b7 -- Harmonised Index of Consumer Prices (HICP) and Harmonised Index of Consumer Prices at Constant Taxes (HICP-CT) (2025=100), monthly data, 1996M01-2026M08
-    12ti.px | /tyonv | 12ti -- Unemployed jobseekers and vacancies by occupation at the end of the month (1270), 2009M01-2026M08
-    12tj.px | /tyonv | 12tj -- Unemployed, fully laid off and on reduced working week by occupation at the end of the month (1271), 2009M01-2026M08
-    12tu.px | /tyonv | 12tu -- Jobseekers and vacancies by occupation in each province during the month (1371), 2009M01-2026M08
-    13kq.px | /rpk | 13kq -- Offences recorded by the International Classification of Crime for Statistical Purposes (ICCS), year of reporting and the municipality of offence, 2006-2025
-    14pg.px | /ktutk | 14pg -- Household consumption expenditure by income quintile, 2012-2022
-    14ph.px | /ktutk | 14ph -- Household consumption expenditure by type of household, 2012-2022
-    14q4.px | /ktutk | 14q4 -- Household consumption expenditure by age of reference person, 2012-2022
-    14q7.px | /ktutk | 14q7 -- Household consumption expenditure by statistical grouping of municipalities, 2012-2022
-    14q8.px | /ktutk | 14q8 -- Households' consumption expenditure by sub-division, 2012-2022
-    14qu.px | /ktutk | 14qu -- Household consumption expenditure by socio-economic status and division, 2012-2022
-    15ag.px | /ntp | 15ag -- ANA Household Final Consumption Expenditure (COICOP2018), annually, 1990-2025*
-    115q.px | /tyokay | 115q -- Employed persons by occupation group (Classification of Occupations 2010, levels 1 to 5), occupational status, sex and year, 2010-2023
-    115r.px | /tyokay | 115r -- Employed persons by occupation group (Classification of Occupations 2010, levels 1 to 5), sex, age and year, 2010-2023
-    15df.px | /syyttr | 15df -- Number of sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2015-2024
-    15dg.px | /syyttr | 15dg -- Key figures from sentences by gender, age and offence (district courts and courts of appeal as first court instance, summary penal orders and fine orders and petty fines), 2015-2024
-    15dh.px | /syyttr | 15dh -- Number of sentences by district court and offence (district courts and courts of appeal as first court instance), 2015-2024
-    15di.px | /syyttr | 15di -- Key figures from sentences by district court and offence (district courts and courts of appeal as first court instance), 2015-2024
-    13ww.px | /alyr | 13ww -- Establishments of enterprises by industry and region, 2018-2024
-    13wv.px | /alyr | 13wv -- Establishments of enterprises by industryEstablishments of enterprises by industry, 2018-2024
-    13gw.px | /rpk | 13gw -- Offences recorded and their solving by offence heading according to the investigating authority, 2006-2025
-    13j2.px | /rpk | 13j2 -- Offences recorded by offence heading according to the month of reporting, preliminary data, 2006M01-2026M06*
-    13w3.px | /yrti | 13w3 -- Enterprises by industry (legal unit), 2018-2024
-== isl_search_muni
-  20 hits
-    MAN02120.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities 1901-1990
-    KOS03401.px | /kosningar/sveitastjorn/svf_2006 | Voters on the preliminary electoral roll 2006 by regions and municipalities
-    MAN02009.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities 1 December 1990-2004 - Final figures
-    MAN02001.px | /mannfjoldi/2_byggdir/sveitarfelog | Population by municipalities, sex and age 1 January 1998-2017 - Current municipalities
-    MAN05221.px | /Faeddirdanir/danir/danir | Deaths by municipalities, sex and age 1981-2016
-    MAN01301.px | /buferlaflutningar/buferlaflinnanlands/buferlaflinnanlandseldra | Migration by municipalities and year of migration 1987-2008
-    CEN01560.px | /manntal/1manntalfjolsk | Population by municipalities, sex and age 31 Dec. 2011
-    CEN04590.px | /manntal/4manntalhusn | Living quarters by municipalities and type 31 Dec. 2011
-    MAN07108.px | /fjolsk/Fjolskyldan | Nuclear families by municipalities and type of family 1998-2017
-    MAN08211.px | /mannfjoldi/2_byggdir/sveitarfelog | Mid-year population by sex, age and municipalities 1997-2010
-    MAN02114.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1996
-    MAN02115.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1995
-    MAN02116.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1994
-    MAN02117.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1993
-    MAN02118.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1992
-    MAN02119.px | /mannfjoldi/2_byggdir/sveitarfelogeldra | Population by municipalities, sex and age 1 December 1991
-    CEN01570.px | /manntal/1manntalfjolsk | Private households by municipalities, type and size of private households 31 Dec. 2011
-    CEN01580.px | /manntal/1manntalfjolsk | Families by municipalities, type and size of families 31 Dec. 2011
-    CEN04600.px | /manntal/4manntalhusn | Dwelling units by municipalities,  occupancy status and type of building 31 Dec. 2011
-    MAN02008.px | /mannfjoldi/2_byggdir/sveitarfelog | Average annual population by municipality, age and sex 1998-2016 - Current municipalities
-== isl_search_relig
-  6 hits
-    MEN03111.px | /midlun/1_Fjolmidlar/hljodvarp | Programming of the general interest private radio channel Bylgjan FM 1987, 1997-2010
-    MEN03103.px | /midlun/1_Fjolmidlar/hljodvarp | Private radio channels by programme profile 1996-2011
-    MEN03106.px | /midlun/1_Fjolmidlar/hljodvarp | Programming of the Icelandic National Broadcasting Service-Channel 1 1987-2010
-    MEN04004.px | /midlun/1_Fjolmidlar/sjonvarp | Private television channels by programme profile 1986-2011
-    SKO04105b.px | /skolamal/4_haskolastig/0_hsNemendur | Students by level, type of education, degree, line of study and sex 1997-2016
-    VIN02005.px | /launogtekjur/2_laun/1_laun | Earnings for full-time employees by occupation and sex 2014-2016
-== isl_list
-  7 items
-    buferlaflutningar [l] Migration
-    Faeddirdanir [l] Births and deaths
-    fjolsk [l] Family
-    kosningar [l] Elections
-    mannfjoldaspa [l] Population projections
-    mannfjoldi [l] Population
-    manntal [l] Census
+== swe_tables
+  12 items
+    BefolkManadCKM [t] Population per month by region, age and sex.  Year 2025M01 - 2026M07
+    BefolkManad [t] Population per month by region, age and sex. Year 2000M01 - 2024M12
+    BefolkningR1860NCKM [t] Population by age and sex. Year 2025
+    BefolkningR1860N [t] Population by age and sex. Year 1860 - 2024
+    BefolkningCKM [t] Population by region, marital status, age and sex. Year 2025
+    BefolkningNy [t] Population by region, marital status, age and sex.  Year 1968 - 2024
+    FolkmangdDecCKM [t] Population by region, age (extended age groups) and sex. Year 2025
+    FolkmangdDistriktCKM [t] Population by district, Landscape or Part of the country by sex. Year 2025
+    FolkmangdDistrikt [t] Population by district, Landscape or Part of the country by sex. Year 2015 - 2024
+    FkvotHVD [t] Dependency ratio by region. Year 2000 - 2025
+    FolkmangdNovCKM [t] Population 1 November by region, age and sex. Year 2025
+    FolkmangdNov [t] Population 1 November by region, age and sex. Year 2002 - 2024
+== swe_befolkning
+  title: Population by region, marital status, age, sex, observations and year
+  var 'Region' (region) [elimination]: 312 values
+      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
+      code lengths {2: 22, 4: 290}; prefixes {'': 312}
+  var 'Civilstand' (marital status) [elimination]: 4 values
+      OG=single; G=married; ÄNKL=widowers/widows; SK=divorced
+  var 'Alder' (age) [elimination]: 102 values
+      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years; tot=total
+      code lengths {1: 10, 2: 90, 3: 1, 4: 1}; prefixes {'': 101, 'tot': 1}
+  var 'Kon' (sex) [elimination]: 2 values
+      1=men; 2=women
+  var 'ContentsCode' (observations): 2 values
+      BE0101N1=Population; BE0101N2=Population growth
+  var 'Tid' (year) [time]: 57 values
+      1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
+      code lengths {4: 57}; prefixes {'': 57}
+== nor_07459
+  title: 07459: Population, by region, sex, age, contents and year
+  var 'Region' (region) [elimination]: 994 values
+      0=The whole country; 31=Østfold; 3101=Halden; 3103=Moss; 3105=Sarpsborg; 3107=Fredrikstad ... 2399=The continental shelf, unspecified; 25=Abroad; 26=Ocean areas; 88=Not resident in Norway; 99=County not stated; 9999=Unknown municipality
+      code lengths {1: 1, 2: 41, 4: 951, 5: 1}; prefixes {'': 994}
+      /^(30|38|54|0710|0301|1804|5001) /: 7 -- 30=Viken (2020-2023); 0301=Oslo - Oslove; 38=Vestfold og Telemark (2020-2023); 0710=Sandefjord (2017-2019); 5001=Trondheim - Tråante; 1804=Bodø; 54=Troms og Finnmark - Romsa ja Finnmárku (2020-2023)
+  var 'Kjonn' (sex) [elimination]: 2 values
+      2=Females; 1=Males
+  var 'Alder' (age) [elimination]: 106 values
+      000=0 years; 001=1 year; 002=2 years; 003=3 years; 004=4 years; 005=5 years ... 100=100 years; 101=101 years; 102=102 years; 103=103 years; 104=104 years; 105+=105 years or older
+      code lengths {3: 105, 4: 1}; prefixes {'': 106}
+  var 'ContentsCode' (contents): 1 values
+      Personer1=Persons
+  var 'Tid' (year) [time]: 41 values
+      1986=1986; 1987=1987; 1988=1988; 1989=1989; 1990=1990; 1991=1991 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 41}; prefixes {'': 41}
+== nor_search_church
+  225 hits
+    DNKMedlemmer | /kf/kf04/kirke_kostra/SBMENU12107 | 06929: Church of Norway. Members, church ceremonies and services, by diocese 2005 - 2025
+    MedlemKristTrus | /in/in07/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    MedlemKristTrus | /kf/kf04/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    KostraPubliserin0005 | /kf/kf04/kirke_kostra/SBMENU6460 | 12207: Employees in the Norwegian Church (M) 2015 - 2025
+    KostraPubliserin0005 | /os/os01/kostrahoved/SBMENU10444 | 12207: Employees in the Norwegian Church (M) 2015 - 2025
+    MedlMenigRegUDNK | /in/in07/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenigRegUDNK | /kf/kf04/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    KostraPubliserin0001 | /kf/kf04/kirke_kostra/SBMENU6460 | 11963: Church services (M) 2015 - 2025
+    KostraPubliserin0002 | /kf/kf04/kirke_kostra/SBMENU6460 | 12026: Church users (M) 2015 - 2025
+    KostraPubliserin0001 | /os/os01/kostrahoved/SBMENU10444 | 11963: Church services (M) 2015 - 2025
+    KostraPubliserin0002 | /os/os01/kostrahoved/SBMENU10444 | 12026: Church users (M) 2015 - 2025
+    Kostra3KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04693: L. Church - basic data (M) (closed series) 1999 - 2016
+    MedlMenighUKirk | /in/in07/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    MedlMenighUKirk | /kf/kf04/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    Kostra2KLKirkeni | /kf/kf04/kirke_kostra/SBMENU6428 | 04910: L. Church - key figures (M) (closed series) 1999 - 2016
+    Kostra4KLKirkekv | /kf/kf04/kirke_kostra/SBMENU6428 | 06413: L. Church - quality (M) (closed series) 1999 - 2016
+    MedlMenighDNK | /in/in07/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenighDNK | /kf/kf04/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlemTroLivsyn | /in/in07/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    MedlemTroLivsynF | /in/in07/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    MedlemKristTru2 | /in/in07/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    MedlemTroLivsyn | /kf/kf04/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    MedlemTroLivsynF | /kf/kf04/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    MedlemKristTru2 | /kf/kf04/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    KirkeNaer | /al/al06/regsys/FRA_GAMMEL_00167 | 06119: Employed persons and scheduled man-years within The Church of Norway, by organisational level, activity and sex (M) (closed series) 2004 - 2014
+    AArKirke | /al/al06/regsys/FRA_GAMMEL_00167 | 06932: Employed persons and scheduled man-years within The Church of Norway, by occupation, sex, age and diocese (closed series) 2006 - 2014
+    KirkeNaer | /sv/sv01/regsys/FRA_GAMMEL_00167 | 06119: Employed persons and scheduled man-years within The Church of Norway, by organisational level, activity and sex (M) (closed series) 2004 - 2014
+    AArKirke | /sv/sv01/regsys/FRA_GAMMEL_00167 | 06932: Employed persons and scheduled man-years within The Church of Norway, by occupation, sex, age and diocese (closed series) 2006 - 2014
+    EkteskapVigsel | /be/be01/ekteskap/SBMENU4202 | 05713: Marriages contracted, by type of marriages 1961 - 2025
+    FoUSTB001 | /vf/vf05/naringvirk/SBMENU10080 | 13662: Government budget allocations for research and development (R&D), by ministry (NOK million) 2000 - 2026
+    FoUSTB001 | /ti/ti01/naringvirk/SBMENU10080 | 13662: Government budget allocations for research and development (R&D), by ministry (NOK million) 2000 - 2026
+    Barnregnp04 | /sv/sv01/barnregnp | 14499: Private kindergartens. Net profit, by legal form 2023 - 2024
+    Barnregnp02 | /sv/sv01/barnregnp | 14459: Allocation of net profit of the year in private kindergartens, by type of organisational structure (NOK 1 000) 2023 - 2024
+    Barnregnp04 | /ud/ud01/barnregnp | 14499: Private kindergartens. Net profit, by legal form 2023 - 2024
+    Barnregnp02 | /ud/ud01/barnregnp | 14459: Allocation of net profit of the year in private kindergartens, by type of organisational structure (NOK 1 000) 2023 - 2024
+    StaFoArsvKjAld | /os/os04/stafo_statres | 09200: StatRes. Man-years in central government, by type of service, sex and age (closed series) 2009 - 2013
+    StaFoArsvKjUtd | /os/os04/stafo_statres | 09202: StatRes. Man-years in central government, by type of service, sex and level of education (closed series) 2009 - 2013
+    StaFoArsvArbTid | /os/os04/stafo_statres | 09205: StatRes. Man-years in central government, by type of service, sex and working hours per week (closed series) 2009 - 2013
+    StaFoArsvKjAld | /os/os07/stafo_statres | 09200: StatRes. Man-years in central government, by type of service, sex and age (closed series) 2009 - 2013
+    StaFoArsvKjUtd | /os/os07/stafo_statres | 09202: StatRes. Man-years in central government, by type of service, sex and level of education (closed series) 2009 - 2013
+== nor_search_relig
+  402 hits
+    MedlMenighDNK | /in/in07/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenighDNK | /kf/kf04/trosamf | 04214: Members and congregtions in unregistered religious and philosophical communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenigRegUDNK | /in/in07/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlMenigRegUDNK | /kf/kf04/trosamf | 04216: Members and congregations in registered religious communities outside the Church of Norway (closed series) 2003 - 2004
+    MedlemKristTrus | /in/in07/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    MedlemKristTrus | /kf/kf04/trosamf | 06339: Members of Christian communities outside the Church of Norway, by religious communities 2006 - 2026
+    MedlMenighUKirk | /in/in07/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    MedlMenighUKirk | /kf/kf04/trosamf | 04205: Members and congregations in registered and unregistered religious and philosophical communities outside the Church of Norway (C) (closed series) 2003 - 2004
+    MedlemTroLivsyn | /in/in07/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    MedlemTroLivsyn | /kf/kf04/trosamf | 06326: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy 2006 - 2026
+    ReligTilhKjonAld | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
+    ReligTilhLands | /kf/kf03/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
+    ReligTilhKjonAld | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
+    ReligTilhLands | /kf/kf04/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
+    ReligTilhKjonAld | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09144: Religious affiliation and participation among persons aged 16 years and older, by sex and age (closed series) 2011 - 2020
+    ReligTilhLands | /sk/sk03/orgakt/SBMENU10607/SBMENU10612 | 09145: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2011 - 2017
+    ReligTilhLands2 | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
+    ReligTilhFamilie | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
+    ReligTilhBosted | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
+    ReligTilhOkonStat | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
+    ReligTilhLands2 | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
+    ReligTilhFamilie | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
+    ReligTilhBosted | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
+    ReligTilhOkonStat | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
+    ReligTilhLands2 | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 13072: Religious affiliation and participation among persons aged 16 years and older, by region (closed series) 2020
+    ReligTilhFamilie | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09146: Religious affiliation and participation among persons aged 16 years and older, by family cycle (closed series) 2011 - 2020
+    ReligTilhBosted | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09147: Religious affiliation and participation among persons aged 16 years and older, by area of residence (closed series) 2011 - 2020
+    ReligTilhOkonStat | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09148: Religious affiliation and participation among persons aged 16 years and older, by economic status (closed series) 2011 - 2020
+    ReligTilhUtdKjon | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
+    ReligTilhUtdKjon | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
+    ReligTilhUtdKjon | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09150: Religious affiliation and participation among persons aged 16 years and older, by sex and education level (closed series) 2011 - 2020
+    ReligTilhUtdAld | /kf/kf03/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
+    ReligTilhUtdAld | /kf/kf04/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
+    ReligTilhUtdAld | /sk/sk03/orgakt/SBMENU10607/SBMENU10614 | 09149: Religious affiliation and participation among persons aged 16 years and older, by age and education level (closed series) 2011 - 2020
+    MedlemKristTru2 | /in/in07/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    MedlemKristTru2 | /kf/kf04/trosamf | 06340: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2006 - 2020
+    MedlemTroLivsynF | /in/in07/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    MedlemTroLivsynF | /kf/kf04/trosamf | 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by religion/philosophy (C) (closed series) 2010 - 2020
+    TrosLivsyn58 | /kf/kf01/kulturbar/SBMENU10000 | 05583: Visits at religious and ethical meeting, by sex, age and education, last 12 months (per cent) (closed series) 1994 - 2016
+    TrosLivsyn58 | /kf/kf02/kulturbar/SBMENU10000 | 05583: Visits at religious and ethical meeting, by sex, age and education, last 12 months (per cent) (closed series) 1994 - 2016
+== nor_klass_2017
+  427 codes
+  0101=Halden; 0104=Moss; 0105=Sarpsborg; 0106=Fredrikstad; 0111=Hvaler; 0118=Aremark; 0119=Marker; 0121=Rømskog; 0122=Trøgstad; 0123=Spydeberg; 0124=Askim; 0125=Eidsberg; 0127=Skiptvet; 0128=Rakkestad; 0135=Råde; 0136=Rygge; 0137=Våler (Østfold); 0138=Hobøl; 0211=Vestby; 0213=Ski; 0214=Ås; 0215=Frogn; 0216=Nesodden; 0217=Oppegård; 0219=Bærum; 0220=Asker; 0221=Aurskog-Høland; 0226=Sørum; 0227=Fet; 0228=Rælingen; 0229=Enebakk; 0230=Lørenskog; 0231=Skedsmo; 0233=Nittedal; 0234=Gjerdrum; 0235=Ullensaker; 0236=Nes (Akershus); 0237=Eidsvoll; 0238=Nannestad; 0239=Hurdal; 0301=Oslo; 0402=Kongsvinger; 0403=Hamar; 0412=Ringsaker; 0415=Løten; 0417=Stange; 0418=Nord-Odal; 0419=Sør-Odal; 0420=Eidskog; 0423=Grue; 0425=Åsnes; 0426=Våler (Hedmark); 0427=Elverum; 0428=Trysil; 0429=Åmot; 0430=Stor-Elvdal; 0432=Rendalen; 0434=Engerdal; 0436=Tolga; 0437=Tynset; 0438=Alvdal; 0439=Folldal; 0441=Os (Hedmark); 0501=Lillehammer; 0502=Gjøvik; 0511=Dovre; 0512=Lesja; 0513=Skjåk; 0514=Lom; 0515=Vågå; 0516=Nord-Fron; 0517=Sel; 0519=Sør-Fron; 0520=Ringebu; 0521=Øyer; 0522=Gausdal; 0528=Østre Toten; 0529=Vestre Toten; 0532=Jevnaker; 0533=Lunner; 0534=Gran; 0536=Søndre Land; 0538=Nordre Land; 0540=Sør-Aurdal; 0541=Etnedal; 0542=Nord-Aurdal; 0543=Vestre Slidre; 0544=Øystre Slidre; 0545=Vang; 0602=Drammen; 0604=Kongsberg; 0605=Ringerike; 0612=Hole; 0615=Flå; 0616=Nes (Buskerud); 0617=Gol; 0618=Hemsedal; 0619=Ål; 0620=Hol; 0621=Sigdal; 0622=Krødsherad; 0623=Modum; 0624=Øvre Eiker; 0625=Nedre Eiker; 0626=Lier; 0627=Røyken; 0628=Hurum; 0631=Flesberg; 0632=Rollag; 0633=Nore og Uvdal; 0701=Horten; 0702=Holmestrand; 0704=Tønsberg; 0709=Larvik; 0710=Sandefjord; 0711=Svelvik; 0713=Sande (Vestfold); 0714=Hof; 0716=Re; 0722=Nøtterøy; 0723=Tjøme; 0728=Lardal; 0805=Porsgrunn; 0806=Skien; 0807=Notodden; 0811=Siljan; 0814=Bamble; 0815=Kragerø; 0817=Drangedal; 0819=Nome; 0821=Bø (Telemark); 0822=Sauherad; 0826=Tinn; 0827=Hjartdal; 0828=Seljord; 0829=Kviteseid; 0830=Nissedal; 0831=Fyresdal; 0833=Tokke; 0834=Vinje; 0901=Risør; 0904=Grimstad; 0906=Arendal; 0911=Gjerstad; 0912=Vegårshei; 0914=Tvedestrand; 0919=Froland; 0926=Lillesand; 0928=Birkenes; 0929=Åmli; 0935=Iveland; 0937=Evje og Hornnes; 0938=Bygland; 0940=Valle; 0941=Bykle; 1001=Kristiansand; 1002=Mandal; 1003=Farsund; 1004=Flekkefjord; 1014=Vennesla; 1017=Songdalen; 1018=Søgne; 1021=Marnardal; 1026=Åseral; 1027=Audnedal; 1029=Lindesnes; 1032=Lyngdal; 1034=Hægebostad; 1037=Kvinesdal; 1046=Sirdal; 1101=Eigersund; 1102=Sandnes; 1103=Stavanger; 1106=Haugesund; 1111=Sokndal; 1112=Lund; 1114=Bjerkreim; 1119=Hå; 1120=Klepp; 1121=Time; 1122=Gjesdal; 1124=Sola; 1127=Randaberg; 1129=Forsand; 1130=Strand; 1133=Hjelmeland; 1134=Suldal; 1135=Sauda; 1141=Finnøy; 1142=Rennesøy; 1144=Kvitsøy; 1145=Bokn; 1146=Tysvær; 1149=Karmøy; 1151=Utsira; 1160=Vindafjord; 1201=Bergen; 1211=Etne; 1216=Sveio; 1219=Bømlo; 1221=Stord; 1222=Fitjar; 1223=Tysnes; 1224=Kvinnherad; 1227=Jondal; 1228=Odda; 1231=Ullensvang; 1232=Eidfjord; 1233=Ulvik; 1234=Granvin; 1235=Voss; 1238=Kvam; 1241=Fusa; 1242=Samnanger; 1243=Os (Hordaland); 1244=Austevoll; 1245=Sund; 1246=Fjell; 1247=Askøy; 1251=Vaksdal; 1252=Modalen; 1253=Osterøy; 1256=Meland; 1259=Øygarden; 1260=Radøy; 1263=Lindås; 1264=Austrheim; 1265=Fedje; 1266=Masfjorden; 1401=Flora; 1411=Gulen; 1412=Solund; 1413=Hyllestad; 1416=Høyanger; 1417=Vik; 1418=Balestrand; 1419=Leikanger; 1420=Sogndal; 1421=Aurland; 1422=Lærdal; 1424=Årdal; 1426=Luster; 1428=Askvoll; 1429=Fjaler; 1430=Gaular; 1431=Jølster; 1432=Førde; 1433=Naustdal; 1438=Bremanger; 1439=Vågsøy; 1441=Selje; 1443=Eid; 1444=Hornindal; 1445=Gloppen; 1449=Stryn; 1502=Molde; 1504=Ålesund; 1505=Kristiansund; 1511=Vanylven; 1514=Sande (Møre og Romsdal); 1515=Herøy (Møre og Romsdal); 1516=Ulstein; 1517=Hareid; 1519=Volda; 1520=Ørsta; 1523=Ørskog; 1524=Norddal; 1525=Stranda; 1526=Stordal; 1528=Sykkylven; 1529=Skodje; 1531=Sula; 1532=Giske; 1534=Haram; 1535=Vestnes; 1539=Rauma; 1543=Nesset; 1545=Midsund; 1546=Sandøy; 1547=Aukra; 1548=Fræna; 1551=Eide; 1554=Averøy; 1557=Gjemnes; 1560=Tingvoll; 1563=Sunndal; 1566=Surnadal; 1567=Rindal; 1571=Halsa; 1573=Smøla; 1576=Aure; 1601=Trondheim; 1612=Hemne; 1613=Snillfjord; 1617=Hitra; 1620=Frøya; 1621=Ørland; 1622=Agdenes; 1624=Rissa; 1627=Bjugn; 1630=Åfjord; 1632=Roan; 1633=Osen; 1634=Oppdal; 1635=Rennebu; 1636=Meldal; 1638=Orkdal; 1640=Røros; 1644=Holtålen; 1648=Midtre Gauldal; 1653=Melhus; 1657=Skaun; 1662=Klæbu; 1663=Malvik; 1664=Selbu; 1665=Tydal; 1702=Steinkjer; 1703=Namsos; 1711=Meråker; 1714=Stjørdal; 1717=Frosta; 1718=Leksvik; 1719=Levanger; 1721=Verdal; 1724=Verran; 1725=Namdalseid; 1736=Snåase - Snåsa; 1738=Lierne; 1739=Raarvihke - Røyrvik; 1740=Namsskogan; 1742=Grong; 1743=Høylandet; 1744=Overhalla; 1748=Fosnes; 1749=Flatanger; 1750=Vikna; 1751=Nærøy; 1755=Leka; 1756=Inderøy; 1804=Bodø; 1805=Narvik; 1811=Bindal; 1812=Sømna; 1813=Brønnøy; 1815=Vega; 1816=Vevelstad; 1818=Herøy (Nordland); 1820=Alstahaug; 1822=Leirfjord; 1824=Vefsn; 1825=Grane; 1826=Hattfjelldal; 1827=Dønna; 1828=Nesna; 1832=Hemnes; 1833=Rana; 1834=Lurøy; 1835=Træna; 1836=Rødøy; 1837=Meløy; 1838=Gildeskål; 1839=Beiarn; 1840=Saltdal; 1841=Fauske - Fuossko; 1845=Sørfold; 1848=Steigen; 1849=Hábmer - Hamarøy; 1850=Tysfjord - Divtasvuodna; 1851=Lødingen; 1852=Tjeldsund; 1853=Evenes; 1854=Ballangen; 1856=Røst; 1857=Værøy; 1859=Flakstad; 1860=Vestvågøy; 1865=Vågan; 1866=Hadsel; 1867=Bø (Nordland); 1868=Øksnes; 1870=Sortland; 1871=Andøy; 1874=Moskenes; 1902=Tromsø; 1903=Harstad; 1911=Kvæfjord; 1913=Skånland; 1917=Ibestad; 1919=Gratangen; 1920=Loabák - Lavangen; 1922=Bardu; 1923=Salangen; 1924=Målselv; 1925=Sørreisa; 1926=Dyrøy; 1927=Tranøy; 1928=Torsken; 1929=Berg; 1931=Lenvik; 1933=Balsfjord; 1936=Karlsøy; 1938=Lyngen; 1939=Storfjord - Omasvuotna - Omasvuono; 1940=Gáivuotna - Kåfjord; 1941=Skjervøy; 1942=Nordreisa; 1943=Kvænangen; 2002=Vardø; 2003=Vadsø; 2004=Hammerfest; 2011=Guovdageaidnu - Kautokeino; 2012=Alta; 2014=Loppa; 2015=Hasvik; 2017=Kvalsund; 2018=Måsøy; 2019=Nordkapp; 2020=Porsanger - Porsángu - Porsanki; 2021=Kárášjohka - Karasjok; 2022=Lebesby; 2023=Gamvik; 2024=Berlevåg; 2025=Deatnu - Tana; 2027=Unjárga - Nesseby; 2028=Båtsfjord; 2030=Sør-Varanger; 9999=Uoppgitt
+== dnk_folk1a
+  FOLK1A: Population at the first day of the quarter | unit Number | updated 2026-08-10T08:00:00
+  var 'OMRÅDE' (region) elim=True time=False: 105 values
+      000=All Denmark; 084=Region Hovedstaden; 101=Copenhagen; 147=Frederiksberg; 155=Dragør; 185=Tårnby ... 846=Mariagerfjord; 773=Morsø; 840=Rebild; 787=Thisted; 820=Vesthimmerlands; 851=Aalborg
+  var 'KØN' (sex) elim=True time=False: 3 values
+      TOT=Total; 1=Men; 2=Women
+  var 'ALDER' (age) elim=True time=False: 127 values
+      IALT=Age, total; 0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 120=120 years; 121=121 years; 122=122 years; 123=123 years; 124=124 years; 125=125 years
+  var 'CIVILSTAND' (marital status) elim=True time=False: 5 values
+      TOT=Total; U=Never married; G=Married/separated; E=Widowed; F=Divorced
+  var 'Tid' (time) elim=False time=True: 75 values
+      2008K1=2008Q1; 2008K2=2008Q2; 2008K3=2008Q3; 2008K4=2008Q4; 2009K1=2009Q1; 2009K2=2009Q2 ... 2025K2=2025Q2; 2025K3=2025Q3; 2025K4=2025Q4; 2026K1=2026Q1; 2026K2=2026Q2; 2026K3=2026Q3
+== dnk_km1
+  KM1: Population at the first day of the quarter | unit Number | updated 2026-08-10T08:00:00
+  var 'SOGN' (parish) elim=True time=False: 2299 values
+      7001=7001 Vor Frue (København Municipality); 7002=7002 Helligånds (København Municipality); 7003=7003 Trinitatis (København Municipality); 7004=7004 Sankt Andreas (København Municipality); 7007=7007 Sankt Johannes (København Municipality); 7008=7008 Simeons (København Municipality) ... 9360=9360 Skellerup-Ellinge (Nyborg Municipality); 9361=9361 Fuglse-Krønge-Torslunde (Lolland Municipality); 9362=9362 Hjerk-Harre (Skive Municipality); 9363=9363 Holsted-Sankt Peders (Vejen Municipality); 0000=0000 Without placeable address; 9999=9999 Without permanent residence
+  var 'FKMED' (member of the National Church) elim=True time=False: 2 values
+      F=Member of National Church; U=Not member of National Church
+  var 'Tid' (time) elim=False time=True: 79 values
+      2007K1=2007Q1; 2007K2=2007Q2; 2007K3=2007Q3; 2007K4=2007Q4; 2008K1=2008Q1; 2008K2=2008Q2 ... 2025K2=2025Q2; 2025K3=2025Q3; 2025K4=2025Q4; 2026K1=2026Q1; 2026K2=2026Q2; 2026K3=2026Q3
+== dnk_tables
+  5732 tables
+    KM1 | Population at the first day of the quarter | 2007Q1-2026Q3 | parish,member of the National Church,time | active=True
+    KMSTA001 | Population 1. January | 2008-2026 | parish,ancestry,member of the National Church,time | active=True
+    FAMFLYT5 | Inflow of residents by receiving municipality | 2017-2021 | in-migration municipality,type of move,type of family that has moved in,age of the youngest family member who has moved,age of the oldest family member who has moved,time | active=False
+    FAMFLYT6 | Outward migration by municipality | 2017-2021 | out-migration municipality,type of move,type of family that has left,age of the youngest family member who has moved,age of the oldest family member who has moved,time | active=False
+    KM11 | Population at the first day of the quarter | 2007Q1-2026Q3 | deanary,member of the National Church,time | active=True
+    KM5 | Population 1. January | 2007-2026 | parish,sex,age,member of the National Church,time | active=True
+    KM55 | Population 1. January | 2007-2026 | deanary,sex,age,member of the National Church,time | active=True
+    KM6 | Population 1. January | 2011-2026 | municipality,sex,age,member of the National Church,time | active=True
+    KMSTA002 | Population 1. January | 2008-2026 | deanary,ancestry,member of the National Church,time | active=True
+    KMSTA005 | Population 1. January (15 years+) | 2016-2025 | parish,socioeconomic status,member of the National Church,time | active=True
+    KMSTA006 | Population 1. January (15 years+) | 2016-2025 | deanary,socioeconomic status,member of the National Church,time | active=True
+    KMSTA009 | Population 1. January (15 years+) | 2016-2025 | parish,member of the National Church,commuting,time | active=True
+    KMSTA010 | Population 1. January (15 years+) | 2016-2025 | deanary,member of the National Church,commuting,time | active=True
+    KMST007A | Population 1. October (15 years+) | 2015-2025 | parish,member of the National Church,highest education completed,time | active=True
+    KMST008A | Population 1. October (15 years+) | 2015-2025 | deanary,member of the National Church,highest education completed,time | active=True
+    KM2 | Registration and resignation from the National Church | 2007Q1-2026Q2 | parish,age,member of the National Church,time | active=True
+    KM22 | Registration and resignation from the national church | 2007Q1-2026Q2 | deanary,age,member of the National Church,time | active=True
+    KMSTA007 | Population 1. January (15 years+) | 2016-2019 | parish,member of the National Church,highest education completed,time | active=False
+    KMSTA008 | Population 1. January (15 years+) | 2016-2019 | deanary,member of the National Church,highest education completed,time | active=False
+    KM4 | Religious ceremonies | 2006-2025 | parish,movement,time | active=True
+    KM44 | Religious ceremonies | 2006-2025 | deanary,movement,time | active=True
+    LONMED1 | Members per 31.12 | 2007-2018 | member of organisation,sex,time | active=False
+    LONMED3 | Members per 31.12 | 2007-2025 | member of organisation,sex,time | active=True
+    LONMED2 | Members per 31.12 | 2007-2025 | member of organisation,sex,time | active=True
+    LONMED | Members | 2008-2014 | member of organisation,sex,time | active=False
+    IFV1 | Household members | 2005-2014 | sex,age,the ability of the household to make ends meet,time | active=False
+    IFV3 | Household members | 2005-2014 | sex,age,socioeconomic status,the ability of the household to make ends meet,time | active=False
+    IFV4 | Household members | 2005-2014 | sex,age,type of household,the ability of the household to make ends meet,time | active=False
+    IFV5 | Household members | 2005-2014 | sex,age,financial burden of the total housing cost,time | active=False
+    IFV6 | Household members | 2005-2014 | sex,age,socioeconomic status,financial burden of the total housing cost,time | active=False
+    IFV7 | Household members | 2005-2014 | sex,age,type of household,financial burden of the total housing cost,time | active=False
+    BEST11 | Board members and managers | 2019-2024 | type,sex,education,age,residence province,time | active=True
+    BEST1 | Board members and managers | 2014-2021 | type,sex,education,age,residence province,time | active=False
+    BEST2 | Board members and managers | 2014-2021 | type,size of company,sex,time | active=False
+    BEST12 | Board members and managers | 2019-2024 | type,size of company,sex,time | active=True
+    BEST3 | Board members and managers | 2014-2021 | type,size of company,education,time | active=False
+    BEST13 | Board members and managers | 2019-2024 | type,size of company,education,time | active=True
+    BEST4 | Board members and managers | 2014-2021 | type,industry (DB07 19 grouping),sex,time | active=False
+    BEST14 | Board members and managers | 2019-2024 | type,industry (DB07 19 grouping),sex,time | active=True
+    BEST5 | Board members and managers | 2014-2021 | type,industry (DB07 19 grouping),education,time | active=False
+    BEST15 | Board members and managers | 2019-2024 | type,industry (DB07 19 grouping),education,time | active=True
+    BEST16 | Board members | 2023-2024 | board membership,sex,education,age,time | active=True
+    BEST17 | Board members | 2023-2024 | election type,sex,size of company,industry (DB07 19 grouping),time | active=True
+    BEST18 | Board members | 2023-2024 | board member,enterprise status,sex,size of company,industry (DB07 19 grouping),time | active=True
+    BEST19 | Board members | 2023-2024 | board member,enterprise status,sex,size of company,industry (DB07 19 grouping),time | active=True
+    LIGEDI6 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,education,age,time | active=False
+    LIGEDI11 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,education,age,time | active=True
+    LIGEDI12 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,size of company,time | active=True
+    LIGEDI7 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,size of company,time | active=False
+    LIGEDI8 | Gender equality indicator of board members and managers | 2014-2021 | indicator,type,industry (DB07 19 grouping),time | active=False
+    LIGEDI13 | Gender equality indicator of board members and managers | 2019-2024 | indicator,type,industry (DB07 19 grouping),time | active=True
+    BOG03 | Book production | 2007-2024 | subject,original language,published on,media,time | active=True
+    BOG06 | Book releases, commercial | 2009-2024 | subject,extent,edition,media,original language,time | active=True
+    BOGS02 | Sold books | 2022Q3-2025Q4 | main genre,published language,time | active=True
+    BOGS03 | Sold books | 2022Q3-2025Q4 | genre,original language,published language,time | active=True
+    KV2LIT5 | Membership of book clubs or reading centered communities | 2025-2025 | organizer,sex,age,time | active=True
+    IDRAKT01 | Members of sports organizations | 2014-2025 | region,activity,sex,age,time | active=True
+    IDRAKT02 | Memberships of sports organizations (share of population) | 2014-2025 | region,sex,age,time | active=True
+    LABY17 | Membership of sports clubs (in percentage) | 2014-2025 | municipality groups,time | active=True
+    IDRFOR01 | Sports associations and members | 2014-2025 | region,organisation,key figures,time | active=True
+    MEDLEM2 | Membership for youth and outdoor activities organisations | 2007-2025 | organisation,time | active=True
+    KV2FR3 | Association membership | 2024-2025 | type of association,sex,age,time | active=True
