@@ -1097,6 +1097,11 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
         # Spanish-speaking censuses. Mozambique's and Angola's mestiço is
         # another people and stays mixed, under its own spelling (Mestico).
         "Pardo", "Mestizo", "Ladino", "Mulatto", "Zambo", "Castizo",
+        # The Dominican Republic's 2022 census (question 64) offers "India o
+        # indio" beside mestiza and mulata: a skin tone of the mixed majority,
+        # not an indigenous people and not the nationality "Indian" the
+        # word's normalisation would otherwise file it under.
+        "Indio (Dominican Republic)",
     ),
     "Middle Eastern or North African (census category)": (
         "Middle Eastern or North African", "Other ethnic group: Arab",

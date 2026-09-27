@@ -360,6 +360,20 @@ ADAPTER_FILES = [
     # from the 2010 census's age-sex table, as the US Census Bureau tabulates
     # it (uscb_age_sex). They had neither; nothing else is written.
     "dominican_republic_age_sex.json",
+    # Cuba's 16 provinces and 168 municipios (cuba_census): population, median
+    # age and sex ratio from ONEI's 2024 estimates, skin colour from the 2012
+    # census; Banes and Antilla, redrawn in 2021, left as stated gaps.
+    "cuba_census.json",
+    # The Dominican Republic's 2022 census (dominican_census): age, sex and
+    # question 64 by province; population, age and sex by municipio, made to
+    # the boundary file's extents. Supersedes the 2010 file above.
+    "dominican_census.json",
+    # Haiti's departments and arrondissements (haiti_census): IHSI's 2015
+    # estimates by sex, and why religion stops at the country.
+    "haiti_census.json",
+    # Median age from UNFPA's 2024 COD-PS for Haiti, communes summed into
+    # IHSI's arrondissements; a projection, so fill-only.
+    "haiti_cod_ps_age.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
@@ -1790,7 +1804,10 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "cod_ps_age.json",
                        # Peru's 2017 census count by province: older than the
                        # map's figures, so it only fills a province with none.
-                       "peru_redatam_population.json"})
+                       "peru_redatam_population.json",
+                       # Haiti's median ages: a 2024 projection from the 2003
+                       # census, which a count would always replace.
+                       "haiti_cod_ps_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 

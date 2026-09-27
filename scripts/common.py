@@ -222,6 +222,21 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "religion": "Panama's census does not ask religion. INEC's REDATAM base of the 2023 census (LP2023) holds, for every person, relationship, sex, age, civil registration, citizenship, marital status, birthplace, residence before and in 2018, indigenous group (P08), Afro-descendant group (P09), social security, the disability questions, ICT use, literacy, schooling, work, income and children born. Religion is not among its 82 person variables, nor among the 72 of the 2010 census's base (LP2010).",
         "language": "Panama's census does not ask language. The 2023 census's person variables, as INEC's REDATAM base LP2023 lists them, are relationship, sex, age, registration, citizenship, marital status, birthplace, migration, indigenous group, Afro-descendant group, social security, disability, ICT use, literacy, schooling, work, income and fertility; no language or mother tongue is among them, nor among the 2010 census's (LP2010). Which indigenous people a person belongs to is on the ethnicity field.",
     },
+    # The Greater Antilles, each from the census's own list of its questions
+    # (cuba_census, dominican_census, haiti_census put on the map what each
+    # does ask).
+    "CUB": {
+        "religion": "Cuba's census does not ask religion. ONEI's national report on the 2012 Censo de Población y Viviendas lists every topic its questionnaire covered (Informe Nacional, section IV, Temáticas y cuestionario censal): residence, birthplace and migration; sex, age, skin colour, household headship and relationships, and disabilities; marital status; schooling, degrees and literacy; economic activity and commuting; and the dwelling. Religion is not among them.",
+        "language": "Cuba's census does not ask language or mother tongue: ONEI's list of every topic of the 2012 Censo de Población y Viviendas (Informe Nacional, section IV) has none.",
+    },
+    "DOM": {
+        "religion": "The Dominican Republic's census does not ask religion. The 2022 questionnaire (ONE, X Censo Nacional de Población y Vivienda 2022, Informe General, Anexo II: Boleta censal) asks each person questions 25 to 67 -- relationship, sex, age, birthplace, identity document, migration, disability, schooling, work, perceived colour and features (64) and fertility -- and the words religión, idioma and lengua appear nowhere in it. Nor are they among the 2010 census's person variables (ONE's REDATAM dictionary, P26 to P60).",
+        "language": "The Dominican Republic's census does not ask language: neither the 2022 questionnaire (ONE, X CNPV 2022, Anexo II, questions 25 to 67) nor the 2010 census's person variables contain a language question.",
+    },
+    "HTI": {
+        "ethnicity": "Haiti's census does not ask ethnicity. IHSI's coders' manual for the 2003 Recensement Général de la Population et de l'Habitat (§5.1.1.6 and §7.2.6) describes every question put to each person, F1.1 to F4.34: relationship, sex, age, mother's survival, religion, disability, birthplace and residence (F1); residence five years before, literacy and schooling (F2); economic activity (F3); and fertility (F4). Neither ethnicity nor language is among them, nor in IHSI's national tables or the census plan's list of volumes. Haiti has held no census since.",
+        "language": "Haiti's census does not ask the language a person speaks: IHSI's coders' manual for the 2003 RGPH lists every person question, F1.1 to F4.34, and none asks it.",
+    },
     # Pakistan is here because the country row was contradicting its own
     # districts. All 145 Pakistani units say the census asks no ethnicity
     # question -- read out of the Bureau's own National Census Report 2023 and
