@@ -21,8 +21,8 @@ So every figure here is for those units' own vintage:
   and sex ratio from the single years; population from the same count.
 * **admin1** -- 07459 for 2023 by the codes of the three 2020-2023 fylker
   (30, 38, 54), the last year they existed. The other eight fylker did not
-  change in 2024 -- KLASS lists the same kommune numbers under each in 2023
-  and today, which is checked -- and take 07459's latest year.
+  change in 2024 -- no kommune has changed its fylke digits since 2023 in
+  KLASS's list of changes, which is checked -- and take 07459's latest year.
 * **religion** -- SSB table 12026 (KOSTRA, "church users"), which gives for
   every kommune and fylke the members of the Church of Norway, the members of
   the faith and life-stance communities outside it, and the population. That
@@ -199,12 +199,15 @@ def faith_by_fylke() -> dict[tuple[str, int], dict[str, float]]:
     out: dict[tuple[str, int], dict[str, float]] = defaultdict(dict)
     for key, value in unstack(body):
         out[(key["Region"][0], int(key["Tid"][0]))][key["ReligionLivs"][0]] = value
-    for (f, year), kinds in out.items():
+    # A cell with no total (Oslo's in 2010 reads 0 beside 108,734 by
+    # religion) is not used; every one that is used must make its total.
+    used = {k: v for k, v in out.items() if v.get("999")}
+    for (f, year), kinds in used.items():
         parts = sum(v for k, v in kinds.items() if k != "999")
-        if abs(parts - kinds.get("999", 0)) > 0.5:
+        if abs(parts - kinds["999"]) > 0.5:
             raise SystemExit(f"08531 {f} {year}: religions make {parts:,.0f} of "
-                             f"{kinds.get('999', 0):,.0f}")
-    return {k: v for k, v in out.items() if v.get("999")}
+                             f"{kinds['999']:,.0f}")
+    return used
 
 
 def religion_by_kind(counts: dict[str, float], kinds: dict[str, float], year: int,
@@ -385,16 +388,24 @@ def main() -> int:
         return structure[year]
 
     # The eight fylker the 2024 reform left alone are the same territory
-    # today: a fylke whose kommuner carry the same numbers now as in its last
-    # year with the three that were split takes today's count, the newest
-    # there is. The three dissolved in 2024 keep 2023's.
-    kept = [f for f in FYLKER if f not in SPLIT_FYLKER
-            and {c for c in kommuner_in(FYLKE_YEAR) if c[:2] == f}
-            == {c for c in kommuner_in(now) if c[:2] == f}]
+    # today: no kommune has crossed into or out of one since its last year
+    # beside the three that were split -- KLASS lists every change of number
+    # since, and a change that keeps a kommune inside its fylke keeps the
+    # fylke's first two digits (Ålesund's split from Haram in 2024 did). Such
+    # a fylke takes today's count, the newest there is. The three dissolved in
+    # 2024 keep 2023's.
+    moves = request_json(CHANGES.format(start=f"{FYLKE_YEAR}-01-02", end=f"{now}-01-02"))
+    crossed = {code[:2] for change in moves.get("codeChanges", [])
+               if change["oldCode"][:2] != change["newCode"][:2]
+               for code in (change["oldCode"], change["newCode"])}
+    kept = [f for f in FYLKER if f not in SPLIT_FYLKER and f not in crossed]
     changed = [f for f in FYLKER if f not in SPLIT_FYLKER and f not in kept]
     if changed:
-        log(f"  fylker whose kommuner changed since {FYLKE_YEAR}, left to Eurostat: {changed}")
+        log(f"  fylker a kommune has crossed since {FYLKE_YEAR}, left to Eurostat: {changed}")
     kept_people, _ = ages_by_region(kept, now)
+    empty = [f for f in kept if kept_people[f].total <= 0]
+    if empty:
+        raise SystemExit(f"07459 {now}: no people for the fylker {empty}")
     faiths = faith_by_fylke()
     for f in FYLKER:
         forms = office_names(region_names.get(f, f))
