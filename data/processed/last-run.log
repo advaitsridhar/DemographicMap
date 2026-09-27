@@ -1,17 +1,32 @@
-denmark: Statistics Denmark FOLK1A and KM6
-  FOLK1A 2026K3: 40,005 rows
-    FOLK1A regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
-    FOLK1A kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
-    FOLK1A kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
-    FOLK1A kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
-    FOLK1A kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
-    FOLK1A kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
-  Denmark 1 July 2026: 6,031,699 people, median age 42.1
-  KM6 2026: 8,316 rows, 99 areas
-    KM6 members and non-members make FOLK1A 2026K1 in all 99 kommuner
-  DNK admin2: 97 of 99 office units bound to 98 polygons (0 set aside as pieces)
-    office units with no polygon (2): Christiansø (411); Nordfyns (480)
-    polygons with no office unit (1): Nordfyn [71786716B94140568065229]
-  labels the group tree cannot place: ['Not a member of the national church']
-  wrote data/processed/denmark_kommune.json (248 kB)
-  wrote denmark_kommune.json: 102 records
+== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT
+  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
+  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
+  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011626&Dim1=S7A2021&Dim2=1111601&lang=PT
+== https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT
+  retry 1/2 after 2s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
+  retry 2/2 after 4s :: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT :: <urlopen error timed out>
+  RuntimeError: GET failed after 2 retries: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011644&Dim1=S7A2021&Dim2=1111601&lang=PT
+== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/56945
+  123 bytes; starts b'[{"Id" :'
+  [{"Id" : 113388, "Nombre" : "Edad simple"},
+  {"Id" : 113389, "Nombre" : "Provincias"},
+  {"Id" : 113390, "Nombre" : "Sexo"}]
+  
+== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/59589
+  123 bytes; starts b'[{"Id" :'
+  [{"Id" : 114069, "Nombre" : "Edad simple"},
+  {"Id" : 114070, "Nombre" : "Provincias"},
+  {"Id" : 114071, "Nombre" : "Sexo"}]
+  
+== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/69792
+  123 bytes; starts b'[{"Id" :'
+  [{"Id" : 145745, "Nombre" : "Edad simple"},
+  {"Id" : 145746, "Nombre" : "Provincias"},
+  {"Id" : 145747, "Nombre" : "Sexo"}]
+  
+== https://servicios.ine.es/wstempus/js/ES/GRUPOS_TABLA/59238
+  146 bytes; starts b'[{"Id" :'
+  [{"Id" : 113934, "Nombre" : "Edad simple"},
+  {"Id" : 113935, "Nombre" : "Comunidades y ciudades autónomas"},
+  {"Id" : 113936, "Nombre" : "Sexo"}]
+  
