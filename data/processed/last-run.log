@@ -1,4 +1,25 @@
-  CBS's note: *Voor een aantal corop-regio's waren er te weinig (< 300) waarnemingen. In dat geval wordt alleen het percentage per provincie gegeven.
-  Nederland: {'Totaal gelovig': 42.9, 'Rooms-kaholiek': 17.2, 'Protestants': 13.1, 'Islam': 5.8, 'Ander geloof': 6.8}
-  wrote data/processed/netherlands_religion_survey.json (29 kB)
-  wrote netherlands_religion_survey.json: 12 records
+slovenia: SiStat 05C4003S.px and 05C4010S.px, 2026H1
+  212 municipalities; Slovenia 2,135,107
+  municipalities against Slovenia: parts sum to 2,135,107 = 2,135,107
+  national median 45.8 (1 January 2026) against Eurostat's 45.5 a year earlier (SI); 2026 is not published yet
+  Maribor: 2 polygons of that name; the others are slivers under 1% of its extent
+  slovenia: 0 office units unbound
+  slovenia: 1 polygons without an office unit: Maribor (bbox [15.699, 46.5167, 15.6998, 46.517])
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia.py", line 296, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia.py", line 289, in main
+    records = build(args.half)
+              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia.py", line 238, in build
+    explain_outliers(records, ages, year)
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia.py", line 251, in explain_outliers
+    r["sex_ratio_note"] += " " + lopsided_settlement(code, r["name"], year)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovenia.py", line 266, in lopsided_settlement
+    sexes = {"men": texts["Population - Men"], "women": texts["Population - Women"]}
+                    ~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Population - Men'
