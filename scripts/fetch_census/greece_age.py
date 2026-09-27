@@ -147,13 +147,25 @@ def athos() -> tuple[int, int, int]:
     blob = http_get(RESIDENT, binary=True, timeout=300)
     rows = [tuple(r) for r in openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
                                                      data_only=True).worksheets[0].iter_rows(values_only=True)]
-    header = [str(c or "") for c in rows[0]]
-    col = {k: header.index(k) for k in ("Μόνιμος Πληθυσμός 2021", "Άρρενες 2021", "Θήλεις 2021")}
+    import unicodedata
+
+    def plain(cell: object) -> str:
+        text = unicodedata.normalize("NFKD", " ".join(str(cell or "").split()).lower())
+        return "".join(c for c in text if not unicodedata.combining(c))
+    header = [plain(c) for c in rows[0]]
+
+    def column(*words: str) -> int:
+        hits = [j for j, h in enumerate(header) if all(w in h for w in words)]
+        if len(hits) != 1:
+            raise SystemExit(f"greece_age: no single column with {words} in {header}")
+        return hits[0]
+    col = {"total": column("μονιμος", "2021"), "men": column("αρρεν", "2021"),
+           "women": column("θηλ", "2021")}
     hit = [r for r in rows[1:] if str(r[2] or "").startswith("ΑΓΙΟ ΟΡΟΣ") and str(r[0]) == "4"]
     if len(hit) != 1:
         raise SystemExit(f"greece_age: {len(hit)} rows for Mount Athos in ELSTAT's table")
     r = hit[0]
-    total, men, women = (int(r[col[k]] or 0) for k in col)
+    total, men, women = (int(r[col[k]] or 0) for k in ("total", "men", "women"))
     if men + women != total:
         raise SystemExit(f"greece_age: Mount Athos's sexes {men} + {women} against {total}")
     log(f"  Mount Athos: {total:,} residents in 2021, {men:,} men, {women:,} women")

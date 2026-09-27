@@ -89,9 +89,12 @@ def single_years(rows: list[tuple[Any, ...]]) -> dict[str, dict[str, Any]]:
             areas[j] = k
     out = {k: {"ages": Counter(), "men": 0.0, "women": 0.0, "total": 0.0} for k in areas.values()}
     unknown = Counter()
-    for r in rows[head + 2:]:
+    for r in rows[head + 1:]:
         label = text(r[0])
         m = re.match(r"^(\d+)", label)
+        # The English header row and blank rows are not ages.
+        if label.lower().startswith("age") or not any(isinstance(c, (int, float)) for c in r[1:]):
+            continue
         for j, k in areas.items():
             total, men, women = number(r[j]), number(r[j + 1]), number(r[j + 2])
             if label.lower().startswith(("ukupno", "total")):
