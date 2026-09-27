@@ -1,10 +1,2 @@
-luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
-  102 communes, 12 cantons, Luxembourg 643,941
-  communes against Luxembourg: parts sum to 643,941 = 643,941
-  cantons against Luxembourg: parts sum to 643,941 = 643,941
-  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
-  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
-  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
-  luxembourg admin2: 1 office units unbound: Rosport - Mompach (LU0001006)
-  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
-luxembourg: admin2 does not pair up: ['Rosport - Mompach (LU0001006)'] / ['Boevange-sur-Attert', 'Hobscheid', 'Mompach', 'Rosport', 'Septfontaines', 'Tuntange']
+  INE table 69792: 53 places, 16377 series
+spain_italy_age: INE table 69792 has no 1 January among {'2026-04-01', '2026-07-01'}
