@@ -1,16 +1,11 @@
-  New Providence: 246,329 in Table 2.0, the age table, religions and races
-  Acklins: 565 in Table 2.0, the age table, religions and races
-  Berry Islands: 807 in Table 2.0, the age table, religions and races
-  TABLE7.0: 'OTHERDENOMINATIONS' read as Other religion
-  Biminis: 1,988 in Table 2.0, the age table, religions and races
-  Cat Island: 1,522 in Table 2.0, the age table, religions and races
-  TABLE7.0: 'PENECOSTAL' read as Pentecostal
-  Crooked Island: 330 in Table 2.0, the age table, religions and races
-  TABLE7.0: 'PENECOSTAL' read as Pentecostal
-  Harbour Island: 1,762 in Table 2.0, the age table, religions and races
-  Inagua: 913 in Table 2.0, the age table, religions and races
-  Long Island: 3,094 in Table 2.0, the age table, religions and races
-  TABLE7.0: 'OTHERCHRISTIAN DENOMIATION' read as Other Christian
-  Mayaguana: 277 in Table 2.0, the age table, religions and races
-  Ragged Island: 72 in Table 2.0, the age table, religions and races
-bahamas_census: Table 4.x's single years make 926 of 940
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
+  unpacked personas_ext_26_02.rar with 7z
+  February file: 3,499,451 people in 159 (department, municipio) pairs
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
+  unpacked personas_ext_07_2026.rar with 7z
+  19 departments' weighted people, men and women make Cuadro 1
+uruguay_census: the person file by its own municipios differs from Cuadro 14: []; not in it: [('16', '9898')]
