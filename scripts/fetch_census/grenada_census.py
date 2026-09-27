@@ -48,6 +48,10 @@ SOURCE = ("Central Statistical Office of Grenada, 2021 National Housing & Popula
           "Results (Preliminary)")
 YEAR = 2021
 TOTAL = 108_279
+# The CSO's server answers 403 to the default client name and serves the file
+# to the project's own (the one probe_dump used to read it); not a browser's.
+HEADERS = {"User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)",
+           "Accept": "*/*"}
 PARISHES = ("rest of st george", "town of st george", "st john", "st mark", "st patrick",
             "st andrew", "st david", "carriacou")
 MAP = {"Saint George": ("rest of st george", "town of st george"),
@@ -219,7 +223,7 @@ def grid(lines: list[str], width: int, known, what: str) -> dict[str, list[int]]
 
 def pages() -> list[list[str]]:
     import pdfplumber
-    with pdfplumber.open(io.BytesIO(http_get(REPORT, binary=True, cache=False))) as pdf:
+    with pdfplumber.open(io.BytesIO(http_get(REPORT, binary=True, cache=False, headers=HEADERS))) as pdf:
         return [(page.extract_text() or "").splitlines() for page in pdf.pages]
 
 
