@@ -1,26 +1,40 @@
-
-== collection
-  200 45,570,908 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
-      {   "class": "collection",   "link": {     "item": [       {         "dimension": {           "STATISTIC": {     
-
-  collection came from https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
-  13077 datasets in the collection
-
-== 4 datasets matching ['single'], broken down by 'County'
-  CD207     2020-05-12  Population
-      by: Single Year of Age; Sex; Province County or City
-  E8014     2020-06-30  Irish Travellers Usually Resident and Present in the State 2011 to 2016
-      by: Single Year of Age; Sex; County of Usual Residence
-  F2010     2023-07-27  Private Households in Permanent Housing Units
-      by: County and City; Single year of age; Nature of Occupancy
-  FY006B    2023-05-30  Population
-      by: Sex; Single Year of Age; County and City
-
-== dimensions offered by the matching tables (counts of tables, not of categories)
-     3 tables  Single Year of Age
-     3 tables  Sex
-     2 tables  County and City
-     1 tables  Province County or City
-     1 tables  County of Usual Residence
-     1 tables  Single year of age
-     1 tables  Nature of Occupancy
+slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 214, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 207, in main
+    records = build(args.year)
+              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 142, in build
+    for key, value in cube("om7009rr", f"all/{year}/{POPULATION}/all/all"):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/slovakia.py", line 105, in cube
+    payload = http_json(API.format(cube=name, path=path), timeout=300)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 932, in http_json
+    text = http_get(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 899, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
