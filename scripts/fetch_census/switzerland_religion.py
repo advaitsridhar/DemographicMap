@@ -8,11 +8,12 @@ zugehörigkeit nach Grossregion und Kanton" (DAM asset 36347568), gives one
 sheet per year with the weighted number of people in each religious group
 and each estimate's confidence interval, as a percentage of the estimate.
 
-The records follow the rules the language table's reader
-(``switzerland.py``) already applies to the same survey: an estimate whose
-interval is wider than ±25% of itself is dropped rather than shown, and a
-cell BFS suppressed ("X") is left out, so a canton's shares can fall short of
-100. They are survey estimates and say so in ``religion_basis``; the output
+A single year's estimate for a small group in a small canton carries an
+interval past ±50%, and dropping such estimates (as the language reader,
+``switzerland.py``, does) would drop the Reformed of Uri. So the three latest
+years are averaged instead, which narrows the error, and a group BFS
+suppressed ("X") in any of them is left out, so a canton's shares can fall
+short of 100. They are survey estimates and say so in ``religion_basis``; the output
 is a ``*_survey.json`` file, which the build uses only where no count exists.
 
 Usage:
@@ -34,7 +35,6 @@ SOURCE = ("Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02
           "(Religionszugehörigkeit nach Grossregion und Kanton)")
 LICENCE = "BFS open data (free reuse with attribution)"
 OUT = PROCESSED / "switzerland_religion_survey.json"
-MAX_INTERVAL = 25.0
 RELIGION = {
     "Evangelisch-reformiert": "Reformed", "Römisch-katholisch": "Roman Catholic",
     "Andere christliche Glaubensgemeinschaften": "Other Christian",
@@ -92,44 +92,55 @@ def read(year: int) -> dict[str, dict[str, tuple[float | None, float | None]]]:
     return out
 
 
-def build(year: int) -> list[dict[str, Any]]:
-    log(f"switzerland_religion: BFS structural survey, religion by canton, {year}")
-    table = read(year)
+def build(year: int, span: int = 3) -> list[dict[str, Any]]:
+    years = list(range(year - span + 1, year + 1))
+    log(f"switzerland_religion: BFS structural survey, religion by canton, {years}")
+    tables = {y: read(y) for y in years}
     shapes = units("CHE", "admin1")
     by_name = {fold(s["name"]): s for s in shapes}
     records, used = [], set()
-    note = (f"BFS structural survey {year} (Strukturerhebung): religious affiliation of the "
-            f"permanent resident population aged 15 and over, weighted by BFS. It is a sample: "
-            f"estimates whose confidence interval is wider than ±{MAX_INTERVAL:.0f}% of the "
-            f"estimate are dropped, and cells BFS suppresses for too few respondents are left "
-            f"out, so the shares can fall short of 100. BFS does not print the number of "
-            f"respondents per canton in this table. The census has not asked every resident "
-            f"since 2000.")
-    for name, cells in table.items():
+    note = (f"BFS structural survey (Strukturerhebung) {years[0]}-{years[-1]}: religious "
+            f"affiliation of the permanent resident population aged 15 and over, weighted by BFS; "
+            f"the shares are of the average of the {span} annual weighted estimates, which "
+            f"narrows the sampling error of a single year (whose confidence intervals, for the "
+            f"small groups of the small cantons, run past ±50%). A group BFS suppresses in any "
+            f"of the years for too few respondents is left out, so the shares can fall short of "
+            f"100. BFS does not print the number of respondents per canton. The census has not "
+            f"asked every resident since 2000.")
+    for name, cells in tables[year].items():
         parts = [p.strip() for p in ALIASES.get(name, name).split("/")]
         shape = next((by_name[fold(p)] for p in parts if fold(p) in by_name), None)
         if shape is None:
             continue                      # the country and its Grossregionen
-        total = cells["Total"][0]
-        if not total:
-            raise SystemExit(f"switzerland_religion: {name} has no total")
-        published = sum(v for k, (v, _) in cells.items() if k != "Total" and v is not None)
-        suppressed = [k for k, (v, _) in cells.items() if v is None]
-        if published > total * 1.001 or (not suppressed and published < total * 0.999):
-            raise SystemExit(f"switzerland_religion: {name}: groups make {published:,.0f} of "
-                             f"{total:,.0f} (suppressed {suppressed})")
+        per_year = []
+        for y in years:
+            row = tables[y].get(name)
+            if row is None:
+                raise SystemExit(f"switzerland_religion: {name} has no row in {y}")
+            total = row["Total"][0]
+            published = sum(v for k, (v, _) in row.items() if k != "Total" and v is not None)
+            suppressed = [k for k, (v, _) in row.items() if v is None]
+            if not total or published > total * 1.001 or (not suppressed and published < total * 0.999):
+                raise SystemExit(f"switzerland_religion: {name} {y}: groups make {published:,.0f} "
+                                 f"of {total} (suppressed {suppressed})")
+            per_year.append(row)
+        total = sum(r["Total"][0] for r in per_year) / span
         counts: dict[str, float] = {}
-        dropped = []
-        for german, (v, ci) in cells.items():
-            if german == "Total" or v is None:
+        withheld, widest = [], {}
+        for german in RELIGION:
+            values = [r.get(german, (None, None))[0] for r in per_year]
+            if all(r.get(german) is None for r in per_year):
                 continue
-            if ci is not None and ci > MAX_INTERVAL:
-                dropped.append(f"{RELIGION[german]} ±{ci:.0f}%")
+            if any(v is None for v in values):
+                withheld.append(RELIGION[german])
                 continue
-            counts[RELIGION[german]] = counts.get(RELIGION[german], 0.0) + v
+            counts[RELIGION[german]] = counts.get(RELIGION[german], 0.0) + sum(values) / span
+            widest[RELIGION[german]] = max((r[german][1] or 0.0) for r in per_year)
         rows = shares(counts, total=total)
         used.add(shape["id"])
-        log(f"  {shape['name']}: {total:,.0f} aged 15+; dropped {dropped}; suppressed {suppressed}")
+        log(f"  {shape['name']}: {total:,.0f} aged 15+ (mean of {span} years); withheld "
+            f"{withheld}; widest single-year interval "
+            f"{max(widest.items(), key=lambda kv: kv[1]) if widest else None}")
         records.append(record(
             f"CHE-SE{year}-{fold(shape['name'])}", shape["name"], level="admin1", parent="CHE",
             country="CHE", match_by="shape_id", shape_id=shape["id"],

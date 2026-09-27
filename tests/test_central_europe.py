@@ -99,5 +99,22 @@ class AustrianCensusSheets(unittest.TestCase):
         self.assertEqual(language["German"], 9960)              # not Deutschland
 
 
+class SlovenianBlankCells(unittest.TestCase):
+    def test_one_blank_cell_is_its_subtotal_less_the_rest(self):
+        from fetch_census import slovenia_census as svn
+        cells, hidden = svn.fill_single({"a": 5.0, "c": 2.0}, ["a", "b", "c"], 10.0, "x")
+        self.assertEqual((cells["b"], hidden), (3.0, 0.0))
+
+    def test_two_blank_cells_are_left_out_and_counted(self):
+        from fetch_census import slovenia_census as svn
+        cells, hidden = svn.fill_single({"a": 5.0}, ["a", "b", "c"], 10.0, "x")
+        self.assertEqual(("b" in cells, hidden), (False, 5.0))
+
+    def test_rows_that_overshoot_their_subtotal_stop_the_run(self):
+        from fetch_census import slovenia_census as svn
+        with self.assertRaises(SystemExit):
+            svn.fill_single({"a": 8.0, "b": 5.0}, ["a", "b"], 10.0, "x")
+
+
 if __name__ == "__main__":
     unittest.main()

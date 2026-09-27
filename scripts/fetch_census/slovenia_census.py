@@ -55,6 +55,8 @@ RENAMED = {"Sveti Jurij": "Sveti Jurij ob Ščavnici", "Kanal": "Kanal ob Soči"
            "Šentjur pri Celju": "Šentjur"}
 EXPECTED_2002 = 192
 
+ETHNIC_ROWS = ["Declared -Slovenes", "Declared -others", "Undeclared", "Did not want to reply",
+               "Unknown"]
 ETHNICITY = {"Declared -Slovenes": "Slovene", "Undeclared": "Not declared",
              "Did not want to reply": "Not stated", "Unknown": "Unknown"}
 MINORITIES = {"05W1003S": "Italian", "05W1004S": "Hungarian", "05W1005S": "Roma"}
@@ -75,33 +77,48 @@ NOTES = {
                   "minorities -- Italians, Hungarians, Roma -- by municipality; every other declared "
                   "affiliation (Croats, Serbs, Bosniaks, Muslims and the rest) is 'Other'. 'Not "
                   "declared' did not declare an ethnic affiliation; 'Not stated' did not want to "
-                  "reply; 'Unknown' is those the census could not establish. SiStat blanks a cell "
-                  "of very few people for confidentiality; such people are left out. Slovenia's "
+                  "reply; 'Unknown' is those the census could not establish. SiStat blanks cells of "
+                  "few people for confidentiality: one blank cell is rebuilt from the subtotal it "
+                  "publishes beside it, and where two or more are blank their people are left out. "
+                  "Slovenia's "
                   "census has been register-based since 2011 and has not asked the question since "
                   "2002."),
     "religion": ("Religion (veroizpoved), Census 2002 (31 March 2002), the whole population, one "
                  "answer; 'Believer, no church' believes but belongs to no religious community; "
                  "'Not stated' did not want to reply; 'Unknown' could not be established. SiStat "
-                 "blanks a cell of very few people for confidentiality; such people are left out, "
-                 "so a municipality's shares can fall short of 100 by a fraction of a percent. Not "
+                 "blanks cells of few people for confidentiality: one blank cell is rebuilt from "
+                 "the subtotal published beside it, and where two or more are blank their people "
+                 "are left out, so a municipality's shares can fall short of 100. Not "
                  "asked since 2002: the census has been register-based since 2011."),
     "language": ("Mother tongue (materni jezik), Census 2002 (31 March 2002), the whole population, "
                  "one answer; 'Other' is every language SURS does not name at municipal level. "
-                 "SiStat blanks a cell of very few people for confidentiality; such people are left "
-                 "out, so a municipality's shares can fall short of 100 by a fraction of a percent. "
+                 "SiStat blanks cells of few people for confidentiality: one blank cell is rebuilt "
+                 "from the total, and where two or more are blank their people are left out, so a "
+                 "municipality's shares can fall short of 100. "
                  "Not asked since 2002: the census has been register-based since 2011."),
 }
 
 
-def blanked_bound(blank: list[str], total: float) -> float:
-    """How many people blanked cells may hide where no subtotal measures them.
+def fill_single(cells: dict[str, float], keys: list[str], whole: float | None,
+                name: str) -> tuple[dict[str, float], float]:
+    """Rebuild the one blank cell among ``keys`` from their published total.
 
-    SiStat does not say its threshold. Where a published subtotal covers the
-    blanked cells (religion's "declared by religion", ethnicity's "declared"),
-    the shortfall is measured exactly against it instead; elsewhere it may be
-    at most 3% of the municipality, and the run logs every one.
+    Returns the cells and, where two or more are blank, how many people they
+    hold together (the total less the published ones), which the caller leaves
+    out. Without a total nothing can be rebuilt and nothing may be blank.
     """
-    return 0.03 * total
+    blank = [k for k in keys if k not in cells]
+    if whole is None:
+        if blank:
+            raise SystemExit(f"slovenia_census: {name}: {blank} blank with no total to measure them")
+        return cells, 0.0
+    rest = whole - sum(cells.get(k, 0.0) for k in keys)
+    if rest < -0.5 or (not blank and abs(rest) > 0.5):
+        raise SystemExit(f"slovenia_census: {name}: {keys} make {whole - rest:,.0f}, "
+                         f"their total is {whole:,.0f}")
+    if len(blank) == 1:
+        return {**cells, blank[0]: max(rest, 0.0)}, 0.0
+    return cells, max(rest, 0.0) if blank else 0.0
 
 
 def table(name: str) -> tuple[dict[str, dict[str, float]], dict[str, str]]:
@@ -188,23 +205,32 @@ def build() -> list[dict[str, Any]]:
         if key not in census_total or abs(census_total[key] - total) > 0.5:
             raise SystemExit(f"slovenia_census: {name}: 05W1002S counts {total:,.0f}, 05W1001S "
                              f"{census_total.get(key)}")
-        parts = ("Declared -Slovenes", "Declared -others", "Undeclared", "Did not want to reply",
-                 "Unknown")
-        blank = [k for k in parts if k not in e]
-        short = total - sum(e.get(k, 0.0) for k in parts)
-        # A blank cell (confidentiality) may leave the rows a few people short;
-        # nothing else is accepted.
-        declared_e = e.get("Declared - total")
-        if declared_e is not None and "Declared -Slovenes" in e and "Declared -others" not in e:
-            # the blanked "others" is measured by the published "declared" subtotal
-            e = {**e, "Declared -others": declared_e - e["Declared -Slovenes"]}
-            blank = [k for k in parts if k not in e]
-            short = total - sum(e.get(k, 0.0) for k in parts)
-        if short < -0.5 or short > (blanked_bound(blank, total) if blank else 0.5):
-            raise SystemExit(f"slovenia_census: {name}: ethnic rows do not partition {e}")
-        if blank and short > 0.5:
-            suppressed["ethnicity"] += short
-            log(f"  {name}: ethnicity {short:,.0f} people in blanked cells {blank}")
+        for field, cells, wanted, totals in (
+                ("ethnicity", e, ETHNIC_ROWS, {"POPULATION", "Declared - total"}),
+                ("religion", r, RELIGION, {"Total", "Declared by religion - total"}),
+                ("language", lang, LANGUAGE, {"Mother tongue - TOTAL"})):
+            unknown = set(cells) - set(wanted) - totals
+            if unknown:
+                raise SystemExit(f"slovenia_census: {name}: {field} rows this reader does not "
+                                 f"know: {sorted(unknown)} (it knows {sorted(wanted)})")
+        # Blanked cells are rebuilt from the subtotals SiStat publishes beside
+        # them: one blank cell in a group is its subtotal less the rest; two or
+        # more are left out, and how many people they hold is still known.
+        e, hid_e1 = fill_single(e, ["Declared -Slovenes", "Declared -others"],
+                                e.get("Declared - total"), name)
+        e, hid_e2 = fill_single(e, ["Undeclared", "Did not want to reply", "Unknown"],
+                                total - e["Declared - total"] if "Declared - total" in e else None,
+                                name)
+        declared = r.get("Declared by religion - total")
+        r, hid_r1 = fill_single(r, list(RELIGION)[:5], declared, name)
+        r, hid_r2 = fill_single(r, list(RELIGION)[5:],
+                                total - declared if declared is not None else None, name)
+        lang, hid_l = fill_single(lang, list(LANGUAGE), lang.get("Mother tongue - TOTAL"), name)
+        for field, hidden in (("ethnicity", hid_e1 + hid_e2), ("religion", hid_r1 + hid_r2),
+                              ("language", hid_l)):
+            if hidden > 0.5:
+                suppressed[field] += hidden
+                log(f"  {name}: {field}: {hidden:,.0f} people in blanked cells, left out")
         named = {g: minority[g].get(name, 0.0) for g in MINORITIES.values()}
         other = e.get("Declared -others", 0.0) - sum(named.values())
         if other < -0.5:
@@ -212,45 +238,14 @@ def build() -> list[dict[str, Any]]:
         eth = {label: e.get(k, 0.0) for k, label in ETHNICITY.items()}
         eth.update(named)
         eth["Other"] = other
-        for field, cells, wanted, totals in (
-                ("religion", r, RELIGION, {"Total", "Declared by religion - total"}),
-                ("language", lang, LANGUAGE, {"Mother tongue - TOTAL"})):
-            unknown = set(cells) - set(wanted) - totals
-            if unknown:
-                raise SystemExit(f"slovenia_census: {name}: {field} rows this reader does not "
-                                 f"know: {sorted(unknown)} (it knows {sorted(wanted)})")
         rel = {label: r.get(k, 0.0) for k, label in RELIGION.items()}
         lan = {label: lang.get(k, 0.0) for k, label in LANGUAGE.items()}
-        # Religion's blanked cells are mostly among the five named
-        # denominations, and "declared by religion" is published beside them:
-        # what they hide is measured exactly, whatever its size.
-        declared = r.get("Declared by religion - total")
-        denominations = list(RELIGION)[:5]
-        hidden = (declared - sum(r.get(k, 0.0) for k in denominations)) if declared is not None else 0.0
-        if hidden < -0.5 or (hidden > 0.5 and all(k in r for k in denominations)):
-            raise SystemExit(f"slovenia_census: {name}: 'declared by religion' {declared} against "
-                             f"its denominations {[r.get(k) for k in denominations]}")
-        for field, got, whole, cells, wanted, measured in (
-                ("religion", rel, r.get("Total"), r, RELIGION, max(hidden, 0.0)),
-                ("language", lan, lang.get("Mother tongue - TOTAL"), lang, LANGUAGE, 0.0)):
-            short = total - sum(got.values()) - measured
-            blank = sorted(k for k in wanted if k not in cells)
-            if measured > 0.5:
-                suppressed[field] += measured
-                log(f"  {name}: {field} {measured:,.0f} people in blanked denominations, "
-                    f"measured by the published subtotal")
-            if whole is None or abs(whole - total) > 0.5 or short < -0.5:
+        for field, got, hidden in (("ethnicity", eth, hid_e1 + hid_e2),
+                                   ("religion", rel, hid_r1 + hid_r2), ("language", lan, hid_l)):
+            if abs(sum(got.values()) + hidden - total) > 0.5 or hidden > 0.05 * total:
                 raise SystemExit(f"slovenia_census: {name}: {field} rows make "
-                                 f"{sum(got.values()):,.0f}, total {whole}, population {total:,.0f}")
-            if short > 0.5:
-                # SiStat blanks a cell of very few people for confidentiality;
-                # such a cell is absent here, so the rows fall a little short.
-                # Only that, and only by a little, is accepted.
-                if not blank or short > blanked_bound(blank, total):
-                    raise SystemExit(f"slovenia_census: {name}: {field} rows fall {short:,.0f} "
-                                     f"short of {total:,.0f}; blank cells {blank}")
-                suppressed[field] += short
-                log(f"  {name}: {field} {short:,.0f} people in blanked cells {blank}")
+                                 f"{sum(got.values()):,.0f} and blanked cells {hidden:,.0f} of "
+                                 f"{total:,.0f}")
         counts[name] = {"ethnicity": eth, "religion": rel, "language": lan, "total": {"": total}}
     check_sum((counts[n]["total"][""] for n in names), counts[national]["total"][""],
               "municipalities against Slovenia")
