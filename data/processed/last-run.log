@@ -1,3 +1,6 @@
-estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
-  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
-RV0241 2017: counties -> Estonia: 15 parts sum to 1,314,463 against a published 1,315,635 (-1,172)
+kosovo: ASKdata, 2024 census
+  retry in 3s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
+  retry in 10s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
+  retry in 30s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
+  retry in 60s: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
+PxWeb unreachable: https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px (<urlopen error [Errno 101] Network is unreachable>)
