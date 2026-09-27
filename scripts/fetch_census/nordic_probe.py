@@ -306,6 +306,16 @@ def cdx(query: str, limit: int = 60) -> None:
         print(f"    {row[1]} {row[2]} {row[3] if len(row) > 3 else ''} {row[4] if len(row) > 4 else ''}")
 
 
+def px_codes(url: str, var: str, pattern: str) -> None:
+    """Every value of one variable whose code matches, as code=label, compactly."""
+    meta = get_json(url)
+    v = next(x for x in meta["variables"] if x["code"] == var)
+    hits = [f"{c}={t}" for c, t in zip(v["values"], v["valueTexts"]) if re.fullmatch(pattern, c)]
+    print(f"  {len(hits)} of {len(v['values'])}")
+    for i in range(0, len(hits), 12):
+        print("    " + "; ".join(hits[i:i + 12]))
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -362,6 +372,13 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 9
+    "r9_lva_units_lv": lambda: px_codes("https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRD/IRD081",
+                                        "AREA", r"LV00\d{5}"),
+    "r9_lva_units_en": lambda: px_codes(f"{CSB}/POP/IR/IRD/IRD081", "AREA", r"LV00\d{5}"),
+    "r9_lva_ird041_lv": lambda: px_codes("https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRD/IRD041",
+                                         "AREA", r"LV.*"),
+    "r9_lva_rig040": lambda: px_codes(f"{CSB}/POP/IR/IRE/RIG040", "AllAreaLV", r"LV00\d{5}"),
     # Round 8
     "r8_ltu_cdx_9601028": lambda: cdx("url=osp.stat.gov.lt/documents/10180/9601028/*", limit=200),
     "r8_ltu_cdx_10367417": lambda: cdx("url=osp.stat.gov.lt/documents/10180/10367417/*", limit=200),
