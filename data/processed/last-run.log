@@ -1,9 +1,9 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  40 of 74 municipalities are the same territory today (MAN02005 on 1 January 2018 within 1.5% of MAN09000 on 1 December 2017); changed: ['Akrahreppur', 'Bláskógabyggð', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Dalvíkurbyggð', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Garðabær', 'Grundarfjarðarbær', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Mýrdalshreppur', 'Norðurþing', 'Reykjanesbær', 'Reykjavíkurborg', 'Sandgerðisbær', 'Seltjarnarnesbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skeiða- og Gnúpverjahreppur', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Hornafjörður', 'Sveitarfélagið Skagafjörður', 'Súðavíkurhreppur', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Ísafjarðarbær', 'Þingeyjarsveit']
-    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
-  wrote data/processed/iceland_municipality.json (155 kB)
-  wrote iceland_municipality.json: 81 records
+greece_age: Eurostat single years of age for Greece's decentralized administrations
+  demo_r_d2jan, 2025: 11 regions
+  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 954 men per 1,000 women
+  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 990 men per 1,000 women
+  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 995 men per 1,000 women
+  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 1008 men per 1,000 women
+  Egean (EL41+EL42): 534,963, median 44.5, 1077 men per 1,000 women
+  wrote data/processed/greece_age.json (10 kB)
+  wrote greece_age.json: 7 records

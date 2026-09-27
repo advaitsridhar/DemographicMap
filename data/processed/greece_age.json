@@ -1,0 +1,314 @@
+[
+  {
+    "id": "GRC-demo_r_d2jan-93993887B93147517098288",
+    "level": "admin1",
+    "name": "Macedonia-Thrace",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 954,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B93147517098288",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL51, EL52, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B75841959134679",
+    "level": "admin1",
+    "name": "Epirus-Western Macedonia",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 49.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 990,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B75841959134679",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL53, EL54, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B20638565859558",
+    "level": "admin1",
+    "name": "Thessalia-Central Greece",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 48.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 995,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B20638565859558",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL61, EL64, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B43116936981453",
+    "level": "admin1",
+    "name": "Peloponisos-W. Greece & Ionian",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 48.6,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 1008,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B43116936981453",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL62, EL63, EL65, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B85814589700959",
+    "level": "admin1",
+    "name": "Egean",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 1077,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B85814589700959",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL41, EL42, summed."
+  },
+  {
+    "id": "GRC-athos-admin1",
+    "level": "admin1",
+    "name": "Agion Oros",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Mount Athos is counted inside the Central Macedonia region by Eurostat, and ELSTAT's 2021 census tables by age stop at the region, so no age structure is published for it alone."
+    },
+    "sex_ratio": {
+      "status": "not_applicable",
+      "note": "Women may not enter Mount Athos; its residents are men, so a ratio of men to women is not defined."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B40019078264500"
+  },
+  {
+    "id": "GRC-athos-admin2",
+    "level": "admin2",
+    "name": "Agion Oros",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Mount Athos is counted inside the Central Macedonia region by Eurostat, and ELSTAT's 2021 census tables by age stop at the region, so no age structure is published for it alone."
+    },
+    "sex_ratio": {
+      "status": "not_applicable",
+      "note": "Women may not enter Mount Athos; its residents are men, so a ratio of men to women is not defined."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "26713481B40019078264500"
+  }
+]
