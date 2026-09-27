@@ -1,17 +1,36 @@
-denmark: Statistics Denmark FOLK1A and KM6
-  FOLK1A 2026K3: 40,005 rows
-    FOLK1A regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
-    FOLK1A kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
-    FOLK1A kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
-    FOLK1A kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
-    FOLK1A kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
-    FOLK1A kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
-  Denmark 1 July 2026: 6,031,699 people, median age 42.1
-  FOLK1A 2026K3 (1 July 2026): national median 42.1 against Eurostat's 42.2 for 1 January 2025 (-0.10 years, bound 0.7)
-  KM6 2026: 8,316 rows, 99 areas
-    KM6 members and non-members make FOLK1A 2026K1 in all 99 kommuner
-  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
-    office units with no polygon (1): Christiansø (411)
-  labels the group tree cannot place: ['Not a member of the national church']
-  wrote data/processed/denmark_kommune.json (262 kB)
-  wrote denmark_kommune.json: 103 records
+lithuania: S3R167_M3010203, S3R167_M3010202 and S3R629_M3010217, beginning of 2026
+  single years complete for 71 of 73 units; the rest take the five-year median: ['12', '69']
+    S3R167_M3010203 2026: counties -> Lithuania: 10 parts sum to 2,887,592 against 2,887,592
+    S3R167_M3010203 2026: municipalities -> Lithuania: 60 parts sum to 2,887,592 against 2,887,592
+  national median 44.6 (the office: 44.0 in completed years); units whose interpolated median is not in the office's year: ['06 46 vs 47.0', '78 47 vs 48.0', '91 46 vs 47.0']
+  S3R167_M3010202 2026: national median 44.6 against Eurostat's 44.3 for 1 January 2025 (+0.30 years, bound 0.7)
+    ethnicity 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    religion 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
+    language 2021: municipalities -> Lithuania: 60 parts sum to 2,810,758 against 2,810,761
+    2021 ethnicity: Vilnius county's municipalities -> the county: 8 parts sum to 810,797 against 810,797
+  2021 ethnicity: the town of Birštonas (3,072) is not all of Birštonas mun. (4,128); 2011's figure stays
+  2021 ethnicity: the town of Druskininkai (12,908) is not all of Druskininkai mun. (20,049); 2011's figure stays
+  2021 ethnicity: the town of Marijampolė (36,727) is not all of Marijampolė mun. (54,846); 2011's figure stays
+  2021 ethnicity: the town of Visaginas (19,446) is not all of Visaginas mun. (19,633); 2011's figure stays
+  2021 ethnicity: the town of Kalvarija (3,982) is not all of Kalvarija mun. (10,093); 2011's figure stays
+  2021 ethnicity: the town of Kazlų Rūda (5,590) is not all of Kazlų Rūda mun. (11,054); 2011's figure stays
+  2021 ethnicity: the town of Pagėgiai (1,576) is not all of Pagėgiai mun. (7,440); 2011's figure stays
+  2021 ethnicity: the town of Rietavas (3,234) is not all of Rietavas mun. (7,381); 2011's figure stays
+  2021 ethnicity replaces 2011's for 16 units: Alytus t. mun. (urban), Elektrėnai mun. (vilnius), Kaunas c. mun. (urban), Klaipėda c. mun. (urban), Neringa mun. (urban), Palanga t. mun. (urban), Panevėžys c. mun. (urban), Trakai d. mun. (vilnius), Ukmergė d. mun. (vilnius), Vilnius c. mun. (vilnius), Vilnius county (vilnius), Vilnius d. mun. (vilnius), Šalčininkai d. mun. (vilnius), Šiauliai c. mun. (urban), Širvintos d. mun. (vilnius), Švenčionys d. mun. (vilnius)
+  LTU admin2: 60 of 60 office units bound to 60 polygons (0 set aside as pieces)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/lithuania.py", line 625, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/lithuania.py", line 604, in main
+    **with_census(code)))
+      ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/lithuania.py", line 581, in with_census
+    out = fields(code)
+          ^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/lithuania.py", line 461, in fields
+    "population": measure(int(round(total(code))), year=year,
+                                    ^^^^^^^^^^^
+TypeError: 'float' object is not callable
