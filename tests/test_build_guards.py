@@ -224,6 +224,20 @@ class ASurveyNeverReplacesACount(unittest.TestCase):
                                  "religion_year": 2002})
         self.assertEqual(e["religion"], self.census)
 
+    def test_a_national_survey_stands_in_front_of_a_cross_national_one(self):
+        e = {"religion": {"status": "not_available"}, "sources": []}
+        self.b.merge_adapter(e, {"_source": "austria_religion_survey.json",
+                                 "religion": self.census, "religion_year": 2021})
+        self.b.merge_adapter(e, {"_source": "ess_region_survey.json",
+                                 "religion": self.survey, "religion_year": 2023})
+        self.assertEqual(e["religion"], self.census)
+        e = {"religion": {"status": "not_available"}, "sources": []}
+        self.b.merge_adapter(e, {"_source": "ess_region_survey.json",
+                                 "religion": self.survey, "religion_year": 2023})
+        self.b.merge_adapter(e, {"_source": "austria_religion_survey.json",
+                                 "religion": self.census, "religion_year": 2021})
+        self.assertEqual(e["religion"], self.census)
+
     def test_between_surveys_the_newer_stands(self):
         e = {"religion": {"status": "not_available"}, "sources": []}
         self.b.merge_adapter(e, {"_source": "ess_survey.json", "religion": self.survey,

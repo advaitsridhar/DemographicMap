@@ -1626,9 +1626,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
     "Romance languages": ("Aragonese", "French or French Creole",
                           # Bolivia's census: the Catalan of Valencia, by its own name.
-                          "Valencian"),
+                          "Valencian",
+                          # The European Social Survey's home languages (ess_region),
+                          # by their ISO 639 names: Spain's and Italy's regional
+                          # languages, and Judaeo-Spanish.
+                          "Asturian", "Sicilian", "Neapolitan", "Venetian", "Ladino"),
     "Germanic languages": ("Limburgish",
-                           "Limburgish, Limburgan, Limburger"),
+                           "Limburgish, Limburgan, Limburger",
+                           # ess_region: Alemannic as a French respondent names it.
+                           "Alsatian"),
     # -- The Atlas of the Languages of Iran, twelve provinces.
     #
     # ALI names a variety at the grain it surveyed, far finer than any

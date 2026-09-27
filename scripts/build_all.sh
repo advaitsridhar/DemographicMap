@@ -53,6 +53,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # and its output belongs in data/processed with the rest.
   soft python3 -m scripts.fetch_census.afrobarometer
   soft python3 -m scripts.fetch_census.afrobarometer_r8
+  # The European Social Survey's open tabulation service, by NUTS region; no
+  # account, and no microdata: it answers with weighted frequency tables.
+  soft python3 -m scripts.fetch_census.ess_region --fetch
   soft python3 -m scripts.fetch_census.us_acs --level state
   soft python3 -m scripts.fetch_census.us_acs --level county
   soft python3 -m scripts.fetch_census.uk_nomis --level district

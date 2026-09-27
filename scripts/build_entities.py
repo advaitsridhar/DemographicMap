@@ -81,6 +81,12 @@ ADAPTER_FILES = [
     # Round 8 fills a region Round 9 is short of and overwrites none.
     "afrobarometer_r8_language.json",
     "afrobarometer_region.json",
+    # The European Social Survey, rounds 7-11 (2014-2024; from 2010 where a
+    # region needs it to reach 100 respondents): religion and home language by
+    # NUTS region, from the ESS portal's open tabulation service, bound by the
+    # outline crosswalk. A survey, so it only fills (its name says so), and a
+    # cross-national one, so a national survey stands in front of it too.
+    "ess_region_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
@@ -1873,10 +1879,23 @@ FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 # has written. Between two surveys the newer stands, as between two counts.
 SURVEY_FIELDS = frozenset({"religion", "language", "ethnicity"})
 
+# And a national office's survey -- the Mikrozensus, a statistics office's
+# language survey, a large national sample -- stands in front of a
+# cross-national one, whose few hundred respondents a region are drawn to
+# compare countries rather than to describe a region.
+CROSS_NATIONAL_SURVEYS = frozenset({"ess_region_survey.json"})
+
 
 def is_survey(filename: str | None) -> bool:
     """A file of survey estimates, which fills compositions and replaces none."""
     return bool(filename) and filename.endswith("_survey.json")
+
+
+def composition_rank(filename: str | None) -> int:
+    """0 for a count, 1 for a national survey, 2 for a cross-national one."""
+    if filename in CROSS_NATIONAL_SURVEYS:
+        return 2
+    return 1 if is_survey(filename) else 0
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
@@ -1926,22 +1945,23 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     # old province's shape, against the 2019 census's 1,908,352. A newer figure
     # can be a different unit's.
     encyclopaedic = row.get("_source") in FILL_ONLY
-    survey = is_survey(row.get("_source"))
+    rank = composition_rank(row.get("_source"))
     origin = entity.get("_from") or {}
     dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
              and (origin.get(key) in FILL_ONLY) == encyclopaedic
-             and is_survey(origin.get(key)) == survey}
+             and composition_rank(origin.get(key)) == rank}
     newer = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs > ours}
     older = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
             if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
-    # A survey's estimate stands behind any count already written.
+    # A survey's estimate stands behind any count already written, and a
+    # cross-national survey's behind a national one's.
     held |= {key for key in SURVEY_FIELDS
-             if survey and not is_gap(row.get(key)) and not is_gap(entity.get(key))
-             and not is_survey(origin.get(key))}
+             if not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and composition_rank(origin.get(key)) < rank}
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).
     for key in held:
