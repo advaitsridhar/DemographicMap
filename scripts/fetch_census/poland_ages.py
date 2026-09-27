@@ -75,16 +75,29 @@ def variable(var: int, level: int) -> dict[str, dict[str, Any]]:
 def build() -> list[dict[str, Any]]:
     log("poland_ages: BDL variables " + ", ".join(f"{k} {v}" for k, v in VARIABLES.items()))
     data = {level: {k: variable(v, level) for k, v in VARIABLES.items()} for level in (0, 2, 5)}
-    years = None
-    for level, byvar in data.items():
-        for key, units_ in byvar.items():
-            for unit in units_.values():
-                have = set(unit["values"])
-                years = have if years is None else years & have
-    if not years:
-        raise SystemExit("poland_ages: no year for which every unit has all four variables")
-    year = max(years)
-    log(f"  latest year every unit has: {year}")
+    # BDL keeps units that no longer exist (a city that was a powiat for a
+    # decade) beside the current ones, with no values in recent years. A year
+    # is usable when exactly the current division -- 380 powiats, 16
+    # voivodeships, the country -- has all four variables in it.
+    expected = {0: 1, 2: 16, 5: EXPECTED}
+    all_years = sorted({y for byvar in data.values() for units_ in byvar.values()
+                        for unit in units_.values() for y in unit["values"]}, reverse=True)
+    year, current = None, {}
+    for candidate in all_years:
+        current = {level: sorted(u for u in data[level]["total"]
+                                 if all(candidate in data[level][k].get(u, {}).get("values", {})
+                                        for k in VARIABLES))
+                   for level in expected}
+        counts = {level: len(ids) for level, ids in current.items()}
+        log(f"  {candidate}: units with all four variables {counts}")
+        if counts == expected:
+            year = candidate
+            break
+    if year is None:
+        raise SystemExit("poland_ages: no year in which the current division has all four variables")
+    for level in expected:
+        for key in VARIABLES:
+            data[level][key] = {u: data[level][key][u] for u in current[level]}
 
     def value(level: int, key: str, unit_id: str) -> float:
         return data[level][key][unit_id]["values"][year]

@@ -756,7 +756,30 @@ def svk6() -> None:
     show("https://www.scitanie.sk/mapa-stranok", r"href=\"[^\"]*obyvatelia/zakladne-vysledky[^\"]*\"", limit=60)
 
 
+def lie7() -> None:
+    url = ("https://etab.llv.li/PXWeb/api/v1/de/eTab/" +
+           urllib.parse.quote("Bevölkerung/Bevölkerungsstand/Stichtag 31 Dezember/211.004.px"))
+    meta = json.loads(text(fetch(url)[2]))
+    for v in meta["variables"]:
+        log(f"   {v['code']!r}: {list(zip(v['values'], v['valueTexts']))[:16]}")
+    query = {"query": [
+        {"code": "Jahr", "selection": {"filter": "item", "values": ["0"]}},
+        {"code": "Altersjahr", "selection": {"filter": "item", "values": ["0"]}},
+        {"code": "Geschlecht", "selection": {"filter": "item", "values": ["0"]}},
+        {"code": "Heimat", "selection": {"filter": "item", "values": ["0"]}},
+        {"code": "Wohnort", "selection": {"filter": "item",
+                                          "values": [str(i) for i in range(14)]}}],
+        "response": {"format": "json-stat2"}}
+    for fmt in ("json-stat2", "json-stat", "csv"):
+        query["response"]["format"] = fmt
+        status, _, body = fetch(url, data=json.dumps(query).encode(),
+                                headers={"Content-Type": "application/json"})
+        log(f"\n## POST {fmt}: HTTP {status}, {len(body):,} bytes")
+        log("   " + text(body)[:1500].replace("\n", "\n   "))
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "lie7": lie7,
     "hun6": hun6, "nld6": nld6, "svk6": svk6,
     "cze5": cze5, "hun5": hun5, "che5": che5, "svk5": svk5, "nld5": nld5, "lux5": lux5,
     "cze4": cze4, "pol4": pol4, "svk4": svk4, "hun4": hun4, "nld4": nld4, "lux4": lux4,
