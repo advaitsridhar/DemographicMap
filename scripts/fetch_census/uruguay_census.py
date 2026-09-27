@@ -23,13 +23,13 @@ from ._shared import log
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_tls import completed_context  # noqa: E402
 
-ANDA = "https://www4.ine.gub.uy/Anda5/index.php/catalog/781"
+ANDA = "https://www4.ine.gub.uy/Anda5/index.php/catalog/{catalog}"
 HEADERS = {"User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"}
 
 
 def opener() -> urllib.request.OpenerDirector:
     """Cookies kept, and INE's certificate chain completed from its AIA (still verified)."""
-    ctx, _ = completed_context(urllib.parse.urlsplit(ANDA).hostname or "")
+    ctx, _ = completed_context(urllib.parse.urlsplit(ANDA.format(catalog=0)).hostname or "")
     return urllib.request.build_opener(urllib.request.HTTPSHandler(context=ctx),
                                        urllib.request.HTTPCookieProcessor(
                                            http.cookiejar.CookieJar()))
@@ -48,11 +48,13 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", choices=["microdata", "file"])
     ap.add_argument("--url", help="with --probe file: the file to read the head of")
+    ap.add_argument("--catalog", default="781", help="the ANDA catalogue entry")
     args = ap.parse_args()
     open_ = opener()
+    anda = ANDA.format(catalog=args.catalog)
     if args.probe == "microdata":
-        page, _ = fetch(open_, f"{ANDA}/get-microdata")
-        page, headers = fetch(open_, f"{ANDA}/get-microdata", {"accept": "Aceptar"})
+        page, _ = fetch(open_, f"{anda}/get-microdata")
+        page, headers = fetch(open_, f"{anda}/get-microdata", {"accept": "Aceptar"})
         text = page.decode("utf-8", "replace")
         print(f"after accepting: {len(text):,} characters, {headers.get('Content-Type')}")
         for href, label in re.findall(r'(?is)<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', text):
@@ -64,8 +66,8 @@ def main() -> int:
             print(f"  file mention: {chunk[:160]!r}")
         return 0
     if args.probe == "file":
-        page, _ = fetch(open_, f"{ANDA}/get-microdata")
-        fetch(open_, f"{ANDA}/get-microdata", {"accept": "Aceptar"})
+        page, _ = fetch(open_, f"{anda}/get-microdata")
+        fetch(open_, f"{anda}/get-microdata", {"accept": "Aceptar"})
         head, headers = fetch(open_, args.url, limit=4000)
         print({k: v for k, v in headers.items() if k.lower() in
                ("content-type", "content-length", "content-disposition")})
