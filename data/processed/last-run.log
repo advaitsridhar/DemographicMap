@@ -1,45 +1,9 @@
-== get https://nip.tuik.gov.tr/?value=OrtancaYas
-  16,457 bytes, begins b'<!DOCTYPE html>\n'
-  ~ ="width=device-width, initial-scale=1.0" /> <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?i
-  ~ der/nouislider.min.css" rel="stylesheet" /> <script src="/js/main.js"></script> <script src="/lib/jquery/dist/jquery.js"></script>
-  ~ t src="/js/main.js"></script> <script src="/lib/jquery/dist/jquery.js"></script> <script src="/lib/jqueryui/jquery-ui.js"></script>
-  ~ ery/dist/jquery.js"></script> <script src="/lib/jqueryui/jquery-ui.js"></script> <script src="/lib/datatables/js/jquery.dataTables.js"><
-  ~ ui.js"></script> <script src="/lib/datatables/js/jquery.dataTables.js"></script> <script src="/lib/Chart.js/chart.min.js"></script>
-  ~ atables/js/jquery.dataTables.js"></script> <script src="/lib/Chart.js/chart.min.js"></script> <script src="/lib/noUiSlider/nouislider.js
-  ~ uery.dataTables.js"></script> <script src="/lib/Chart.js/chart.min.js"></script> <script src="/lib/noUiSlider/nouislider.js"></script>
-  ~ js/chart.min.js"></script> <script src="/lib/noUiSlider/nouislider.js"></script> <script type="text/javascript" src="https://cdn.datata
-  ~ rc="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloud
-  ~ ipt" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloud
-  ~ src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloud
-  ~ " src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> <script type="text/javascript" src="https://cdn.datatab
-  ~ pt" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script> <script src="/js/formatted-numbers.js"></script> <s
-  ~ buttons.html5.min.js"></script> <script src="/js/formatted-numbers.js"></script> <script src="/js/dataTableTurkish.js"></script> <l
-  ~ /formatted-numbers.js"></script> <script src="/js/dataTableTurkish.js"></script> <link href="/css/fontFamily.css" rel="stylesheet" />
-  ~ ss/fontFamily.css" rel="stylesheet" /> <script src="/js/jspdf.min.js"></script> <script defer data-domain="nip.tuik.gov.tr" src="http
-  ~ ile-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script> <script>window.plausible = window.plausible || function
-  ~ <li> <a class="mainMenuMenuwithArrow" href="/Home/VeriKaynaklari"> Veri Kaynakları <
-  ~ <ul class="dropdown-menu"> <li><a href="/Home/NufusKonutSayimlari">Nüfus ve Konut Sayımları</a></li>
-  ~ ">Nüfus ve Konut Sayımları</a></li> <li><a href="/Home/GelenekselNufusSayimlari">Geleneksel Nüfus Sayımları</a></li>
-  ~ Geleneksel Nüfus Sayımları</a></li> <li><a href="/Home/Uavt">Ulusal Adres Veritabanı (UAVT)</a></li> <li>
-  ~ al Adres Veritabanı (UAVT)</a></li> <li><a href="/Home/Adnks">Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS)</a></li>
-  ~ üfus Kayıt Sistemi (ADNKS)</a></li> <li><a href="/Home/NufusKonutSayimi2011">2011 Nüfus ve Konut Araştırması</a></li>
-  ~ Nüfus ve Konut Araştırması</a></li> <li><a href="/Home/NufusKonutSayimi2021">2021 Nüfus ve Konut Sayımı</a></li>
-  ~ aYas'); }); function SayfaYukle(adres) { $.post(`Home/${adres}`, {}) .done(function (data) { $
-  ~ tion (xhr, status, error) { window.location.href = '/Home/Error'; }); } </script> </main> </div>
-  ~ ction --> <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <script src="/js/site.js?v=BxFAw9RUJ1E4NycpKEjCNDeoSvr4
-  ~ p/dist/js/bootstrap.bundle.min.js"></script> <script src="/js/site.js?v=BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY"></script> <sc
-  ~ pt> <script type="module"> import A11y from '/a11y/js/A11y.js'; new A11y({ language: 'tr' }) </scrip
-== get https://armstat.am/en/?nid=1006
-  163,519 bytes, begins b' <!DOCTYPE html '
-  ~ lns="http://www.w3.org/1999/xhtml"> <head> <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?i
-  ~ ipt src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--<link href="../font-awesome-4.7.0/css/font-awesome.min
-  ~ /css" />--> <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js'></script> <script type="text/javascript" src="../js/c
-  ~ cript src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js'></script> <script type="text/javascript" src="../js/common.js"></scr
-  ~ /Chart.js'></script> <script type="text/javascript" src="../js/common.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery
-  ~ ipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/
-  ~ ipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script type="text/javascript" src="https://cdnjs.c
-  ~ cript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script> <script type="text/javascript" src="../js/canvasjs.min.
-  ~ "></script> <script type="text/javascript" src="../js/canvasjs.min.js"></script> <script type="text/javascript" src="../js/tree.js"></scri
-  ~ sjs.min.js"></script> <script type="text/javascript" src="../js/tree.js"></script> <script src="../ScVusualImp/jquery.js"></script> <script s
-  ~ ipt" src="../js/tree.js"></script> <script src="../ScVusualImp/jquery.js"></script> <script src="../ScVusualImp/uhpv-full.min.js?en"></script>
-  ~ sualImp/jquery.js"></script> <script src="../ScVusualImp/uhpv-full.min.js?en"></script> <script type="text/javascript"> var page_id = 100
+== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics
+  1,723 bytes, begins b'[{"id":"07.px","'
+  json: [{"id": "07.px", "type": "t", "text": "Population by regions, age and sex", "updated": "2021-05-18T11:58:30"}, {"id": "08_Population 15 years of age and over by regions and marital status.px", "type": "t", "text": "Population 15 years of age and over by regions and marital status by Regions/ Municipalites, Urban/Rural and Marital status", "updated": "2021-05-18T11:59:56"}, {"id": "09_Population 15 years of age and over by marital status, age and sex.px", "type": "t", "text": "Population 15 years of age and over by marital status, age and sex by Age, Urban/Rural, Marital status and Sex", "updated": "2021-05-18T12:01:11"}, {"id": "10_Married population 15 years of age and over by age, status of registered marriages and sex.px", "type": "t", "text": "Married population 15 years of age and over by age, status of registered marriages and sex by Age, Urban/Rural, Status of registred marriages and Sex", "updated": "2021-05-18T12:02:53"}, {"id": "17_Total population by regions and ethnicity.px", "type": "t", "text": "Total population by regions and ethnicity by Regions, Urban/Rural and ethnicity", "updated": "2021-05-18T12:03:46"}, {"id": "20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px", "type": "t", "text": "Population by region, by native languages and fluently speak Georgian language by Regions, fluently speak Georgian language and native languages", "updated": "2021-11-18T16:29:00"}, {"id": "22_Population by regions and religion.px", "type": "t", "text": "Population by regions and religion by Regions, Urban/Rural and Religion", "updated": "2021-05-18T12:06:07"}, {"id": "Georgian Speaking Households.px", "type": "t", "text": "Households by fluently speak Georgian language at the regional level", "updated": "2021-05-18T12:06:57"}]
+== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/The%20Geographical%20Distribution%20Of%20The%20Population%20And%20Internal%20Migration
+  2,245 bytes, begins b'[{"id":"01_Popul'
+  json: [{"id": "01_Population by administrative-territorial units and sex.px", "type": "t", "text": "Population by administrative-territorial units and sex", "updated": "2021-05-20T11:05:00"}, {"id": "02TOTA~1.PX", "type": "t", "text": "Total population by self-governed units and urban/rural distribution and by sex by Self-governed units, Urban/Rural and sex", "updated": "2021-05-18T17:10:00"}, {"id": "03_Urban settlements by type and by size of population.px", "type": "t", "text": "Urban settlements by type and by size of population by regions, Urban settlement type and size", "updated": "2021-05-18T17:11:14"}, {"id": "04_Rural settlements by size of population.px", "type": "t", "text": "Rural settlements by size of population by Regions/ Municipalities, settlements and Size", "updated": "2021-05-18T17:12:24"}, {"id": "05_Municipalities by size of population.px", "type": "t", "text": "Municipalities by size of population by Regions, Municipalities and Size", "updated": "2021-05-18T17:13:08"}, {"id": "06_Communities by size of population.px", "type": "t", "text": "Communities by size of population by Regions/Municipalites, Communities and Size", "updated": "2021-05-18T17:13:44"}, {"id": "25_Population by place of birth, age and sex.px", "type": "t", "text": "Population by place of birth, age and sex by Place of birth, Sex and Age", "updated": "2021-05-18T17:15:06"}, {"id": "29_Internal migrants by previous and usual place of residence and by sex.px", "type": "t", "text": "Internal migrants by previous and usual place of residence and by sex by Usual place of residence, Sex and previous place of residence", "updated": "2021-05-18T17:15:53"}, {"id": "29-1_Internal migrants by previous and usual place of residence.px", "type": "t", "text": "Internal migrants by previous and usual place of residence by Usual Place of Residence, Urban/Rural and previous place of residence", "updated": "2021-05-18T17:16:38"}, {"id": "31_IDP's by age and sex.px", "type": "t", "text": "IDP's by age and sex by Age, Urban/Rural and Sex", "updated": "2021-05-18T17:17:27"}, {"id": "32_IDP~1.PX", "type": "t", "text": "IDP's by place of usual residence and place of residence before acquiring the IDP status by Place of usual residence, Sex and place of residence before acquiring the IDP status", "updated": "2021-05-18T17:18:34"}]
+== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Demography
+  346 bytes, begins b'[{"id":"Births",'
+  json: [{"id": "Births", "type": "l", "text": "Births"}, {"id": "Deaths", "type": "l", "text": "Deaths"}, {"id": "Divorces", "type": "l", "text": "Divorces"}, {"id": "Marriages", "type": "l", "text": "Marriages"}, {"id": "Migration", "type": "l", "text": "Migration"}, {"id": "Natural Increase", "type": "l", "text": "Natural Increase"}, {"id": "Population", "type": "l", "text": "Population"}]
