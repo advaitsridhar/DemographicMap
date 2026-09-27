@@ -1,68 +1,8 @@
-probe_arcgis: item d964be364f074ac3afe52e64a0f6817e
-  title                Població 2010-2025
-  type                 Feature Service
-  owner                cartografia
-  created              1664370522561
-  modified             1770113101674
-  accessInformation    Àrea de Cartografia - Estadística
-  tags                 ['població', 'habitants']
-  url                  https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer
-  size                 198683
-  numViews             5114
-  snippet              Habitants per poblacions del període 2010-2025
-
-  service: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer
-  retry 1/4 after 2s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
-  retry 2/4 after 4s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
-  retry 3/4 after 8s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
-  retry 4/4 after 16s :: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json :: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 899, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1362, in _send_request
-    self.putrequest(method, url, **skips)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1200, in putrequest
-    self._output(self._encode_request(request))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1280, in _encode_request
-    return request.encode('ascii')
-           ^^^^^^^^^^^^^^^^^^^^^^^
-UnicodeEncodeError: 'ascii' codec can't encode character '\xf3' in position 40: ordinal not in range(128)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 132, in main
-    root = get_json(service)
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_arcgis.py", line 56, in get_json
-    text = http_get(full, cache=False, timeout=120)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 920, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://sig.govern.ad/server/rest/services/Hosted/Població_2010_2021/FeatureServer?f=json
+uk_nomis: district (TYPE154)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+uk_nomis: TS024 Main language (detailed) (NM_2043_1)
+  NM_2043_1: categories are c2021_mlang_94
+  wrote data/processed/uk_lad.json (3393 kB)
+  330 records
+  330 local authority records
