@@ -1,50 +1,90 @@
-kosovo: ASKdata, 2024 census
-  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
-  38 municipalities bound one-to-one
-  Deçan: 27,775 residents, 27,775 answered
-  Gjakova: 78,699 residents, 78,699 answered
-  Drenas: 48,079 residents, 48,079 answered
-  Gjilan: 82,980 residents, 82,980 answered
-  Dragash: 28,896 residents, 28,896 answered
-  Istog: 33,008 residents, 33,008 answered
-  Kaçanik: 27,716 residents, 27,716 answered
-  Klina: 30,503 residents, 30,503 answered
-  Fushë Kosovë: 63,949 residents, 63,949 answered
-  Kamenica: 22,868 residents, 22,868 answered
-  Mitrovica: 64,742 residents, 64,742 answered
-  Leposaviq: 9,485 residents, 3,185 answered -- ethnicity with ASK's estimate, religion and language stated
-  Lipjan: 55,044 residents, 55,044 answered
-  Novobërdë: 4,493 residents, 4,493 answered
-  Obiliq: 22,815 residents, 22,815 answered
-  Rahovec: 41,799 residents, 41,799 answered
-  Peja: 82,745 residents, 82,745 answered
-  Podujeva: 70,975 residents, 70,975 answered
-  Pristina: 227,466 residents, 227,466 answered
-  Prizren: 147,246 residents, 147,246 answered
-  Skenderaj: 40,664 residents, 40,664 answered
-  Shtime: 24,308 residents, 24,308 answered
-  Shtërpcë: 10,771 residents, 10,771 answered
-  Suhareka: 45,749 residents, 45,749 answered
-  Ferizaj: 109,255 residents, 109,255 answered
-  Viti: 35,566 residents, 35,566 answered
-  Vushtrri: 61,528 residents, 61,528 answered
-  Zubin Potok: 3,385 residents, 763 answered -- ethnicity with ASK's estimate, religion and language stated
-  Zveçan: 2,867 residents, 434 answered -- ethnicity with ASK's estimate, religion and language stated
-  Malisheva: 43,888 residents, 43,888 answered
-  Junik: 3,943 residents, 3,943 answered
-  Mamusha: 5,607 residents, 5,607 answered
-  Han i Elezit: 8,533 residents, 8,533 answered
-  Gracanica: 18,486 residents, 18,486 answered
-  Ranillug: 2,481 residents, 2,481 answered
-  Partesh: 3,240 residents, 3,240 answered
-  Kllokot: 3,041 residents, 3,041 answered
-  North Mitrovica: 7,920 residents, 2,326 answered -- ethnicity with ASK's estimate, religion and language stated
-  district District of Ferizaj: 180,583, median 32.2
-  district District of Gjakova: 152,216, median 35.1
-  district District of Gjilan: 150,176, median 34.9
-  district District of Mitrovica: 190,591, median 34.6
-  district District of Peja: 146,256, median 34.8
-  district District of Prishtina: 511,307, median 32.4
-  district District of Prizren: 271,386, median 33.9
-  wrote data/processed/kosovo_census.json (240 kB)
-  wrote kosovo_census.json: 45 records
+
+=== deu10
+
+## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/07_RP_Regionaltabelle_Bevoelkerung_Z22.xlsx: HTTP 200, 336,398 bytes, 
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+   sheets: ['Titel Bevölkerung', 'Impressum', 'Erläuterungen zur Methodik', 'Bevölkerung', 'Bevölkerung_nachrichtlich'] (5)
+   sheet 'Titel Bevölkerung': 0 rows
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+   sheet 'Impressum': 25 rows
+     Impressum
+     Ergebnisse des Zensus 2022
+     Erscheinungsfolge: einmali
+     Herausgeber
+     Statistische Ämter des Bun
+     Statistisches Bundesamt
+     Gustav-Stresemann-Ring 11
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+   sheet 'Erläuterungen zur Methodik': 34 rows
+     Erläuterungen zur Methodik
+     1 | Allgemeine Informationen
+     Basis der Auswertung sind 
+     Für die Wahrung der Geheim
+     Die Bevölkerungszahl (Insg
+     Weiterführende methodische
+     www.zensus2022.de
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+
+## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/07_RP_Regionaltabelle_Demografie_Z22.xlsx: HTTP 200, 1,064,813 bytes, 
+   sheets: ['Titel Demografie', 'Impressum', 'Erläuterungen zur Methodik', 'Demografie'] (4)
+   sheet 'Titel Demografie': 0 rows
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+   sheet 'Impressum': 25 rows
+     Impressum
+     Ergebnisse des Zensus 2022
+     Erscheinungsfolge: einmali
+     Herausgeber
+     Statistische Ämter des Bun
+     Statistisches Bundesamt
+     Gustav-Stresemann-Ring 11
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+   sheet 'Erläuterungen zur Methodik': 85 rows
+     Erläuterungen zur Methodik
+     1 | Allgemeine Informationen
+     Basis der Auswertung sind 
+     Für die Wahrung der Geheim
+     Die Bevölkerungszahl (Insg
+     Das Ergebnis der Regionale
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+
+## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/Eckzahlen.xlsx: HTTP 200, 228,098 bytes, 
+   sheets: ['Glossar', 'Kfr. Städte & Landkreise', 'Vfr. Gemeinden & VG', 'VG-zugehörige Ortsgemeinden'] (4)
+   sheet 'Glossar': 13 rows
+     Methodische Hinweise | Um das Grundrecht aller Bü
+     Glossar
+     Bevölkerung | Zur Bevölkerung eines Verw
+     Gebäude mit Wohnraum | Für längere Dauer errichte
+     Wohnungen in Gebäuden mit  | Gesamtzahl der Wohnungen i
+   0 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+   sheet 'Kfr. Städte & Landkreise': 364 rows
+     T1 | Eckzahlen der kreisfreien 
+     Gebiets-schlüssel | Verwaltungsbezirk | Bevölkerung zum 30.06.2022 | Ergebnis des Zensus 2022 z
+     Bevölkerung1 | Gebäude mit Wohnraum  | Wohnungen in Gebäuden
+ mit | Haushalte
+     Anzahl
+     (0) | (1) | (2) | (3) | (4)
+     Kreisfreie Städte
+     07311 | Frankenthal (Pfalz) | 49538 | 47992 | 9105 | 23925 | 22611
+     07312 | Kaiserslautern | 101242 | 99689 | 21022 | 58723 | 53676
+     07111 | Koblenz | 114789 | 112963 | 21835 | 63391 | 59206
+     07313 | Landau in der Pfalz | 47991 | 47072 | 11114 | 25943 | 24415
+   4 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+     > 07111 | Koblenz | 114789 | 112963 | 21835 | 63391 | 59206
+     > 07211 | Trier4 | 109913 | 102780 | 21286 | 62985 | 56887
+     > 07137 | Mayen-Koblenz | 219893 | 215317 | 68357 | 110012 | 100846
+     > 07235 | Trier-Saarburg5 | 154823 | 147838 | 50976 | 74333 | 67785
+   sheet 'Vfr. Gemeinden & VG': 399 rows
+     T2 | Eckzahlen der verbandsfrei
+     Gebiets-schlüssel | Verwaltungsbezirk | Bevölkerung zum 30.06.2022 | Ergebnis des Zensus 2022 z
+     Bevölkerung1 | Gebäude mit Wohnraum  | Wohnungen in Gebäuden
+ mit | Haushalte
+     Anzahl
+     (0) | (1) | (2) | (3) | (4)
+     Verbandsfreie Gemeinden
+     073310003 | Alzey | 19883 | 19035 | 4780 | 9601 | 9026
+     071370003 | Andernach | 30904 | 29995 | 8111 | 15303 | 14233
+     073320002 | Bad Dürkheim | 19559 | 19020 | 5744 | 10527 | 9460
+     071330006 | Bad Kreuznach | 53167 | 53062 | 10918 | 28496 | 26412
+   1 rows match '(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen'
+     > 072355007 | Trier-Land | 22531 | 21137 | 7652 | 10911 | 9790
