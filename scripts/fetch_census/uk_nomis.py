@@ -48,8 +48,11 @@ DATASETS: dict[str, tuple[str, str, str | None]] = {
 }
 # TYPE154 = 2021 local authority districts; TYPE499 = regions; TYPE480 = countries.
 DEFAULT_GEOGRAPHY = "TYPE154"
-# The most cells Nomis returns an anonymous caller in one answer.
+# The most cells Nomis returns an anonymous caller in one answer, and how many
+# parts a truncated table is read in (by category; 94 languages in four parts
+# of 23 or 24 is under 8,000 cells a part for 331 districts).
 PAGE_CELLS = 25000
+CATEGORY_PARTS = 4
 
 # Two geographies, because one is not enough to cover the shapes that exist.
 #
@@ -132,30 +135,47 @@ def reconcile(table: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return table
 
 
+def truncated(page: dict[str, Any]) -> bool:
+    """Whether Nomis says it cut this answer short."""
+    return str((page.get("header") or {}).get("truncated", "")).lower() == "true"
+
+
+def classification(dataset: str, observations: list[dict[str, Any]]) -> str:
+    """The one census classification among an observation's keys (c2021_...)."""
+    cells = [k for k in (observations[0] if observations else {}) if k.startswith("c2021")]
+    if len(cells) != 1:
+        raise SystemExit(f"uk_nomis: {dataset}: no single census classification among "
+                         f"{sorted(observations[0]) if observations else []}")
+    return cells[0]
+
+
 def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dict[str, Any]]:
     # No `select=`: that parameter switches Nomis to a flat column format and
     # empties the nested "obs" list this parser reads.  Leaving the category
     # dimension unspecified returns every category, totals included, which is
     # exactly what shares() needs.
     url = f"{BASE}/{dataset}.data.json?geography={geography}&measures=20100"
-    # Nomis answers an anonymous caller at most 25,000 cells at a time, and
-    # TS024's 94 languages by 330 districts is 31,020: read whole, the answer
-    # stopped at the 235th district and the other 95 had no language at all.
-    # So the table is read a page at a time until a page comes back empty. Not
-    # until one comes back short: a page can be cut below 25,000 cells, and
-    # stopping there left 95 districts with no language at all.
-    observations: list[dict[str, Any]] = []
-    while True:
-        page = http_json(f"{url}&RecordOffset={len(observations)}", timeout=300)
-        rows = page.get("obs", [])
-        if not rows:
-            break
-        if observations and rows[0] == observations[0]:
-            raise SystemExit(f"uk_nomis: {dataset}: Nomis ignored the record offset and "
-                             "answered the first page again")
-        observations.extend(rows)
-    if len(observations) > PAGE_CELLS:
-        log(f"  {dataset}: {len(observations):,} cells, read in pages")
+    # Nomis answers an anonymous caller at most about 25,000 cells at a time,
+    # and TS024's 94 languages by 331 districts is 31,114: read whole, the
+    # answer stops at 24,910 cells, 95 districts short. The JSON answer says
+    # so itself (header.truncated) and ignores RecordOffset -- measured: an
+    # offset of 30,000 answers the same first 24,910 cells -- so a truncated
+    # table is read again in parts by category, each part checked whole.
+    page = http_json(url, timeout=300)
+    observations: list[dict[str, Any]] = page.get("obs", [])
+    if truncated(page):
+        name = cell or classification(dataset, observations)
+        codes = sorted({obs[name]["value"] for obs in observations})
+        parts = [codes[i::CATEGORY_PARTS] for i in range(CATEGORY_PARTS)]
+        observations = []
+        for part in parts:
+            piece = http_json(f"{url}&{name}={','.join(str(c) for c in part)}", timeout=300)
+            if truncated(piece):
+                raise SystemExit(f"uk_nomis: {dataset}: a part of {len(part)} categories "
+                                 "was truncated too")
+            observations.extend(piece.get("obs", []))
+        log(f"  {dataset}: truncated whole, read as {CATEGORY_PARTS} parts by category: "
+            f"{len(observations):,} cells")
     out: dict[str, dict[str, Any]] = {}
     for obs in observations:
         if cell is None:

@@ -692,6 +692,44 @@ class UkMidYearSeries(unittest.TestCase):
         self.assertEqual(series_note("Westminster", "x", {2021: 205759, 2025: 212367}, 2025), "")
 
 
+def nomis_obs(area, code, label, value):
+    return {"geography": {"geogcode": area, "description": area},
+            "c2021_mlang_94": {"value": code, "description": label},
+            "obs_value": {"value": value}}
+
+
+class UkNomisTruncated(unittest.TestCase):
+    def test_a_truncated_table_is_read_again_in_parts_by_category(self):
+        from unittest import mock
+        from scripts.fetch_census import uk_nomis as m
+        cats = [(0, "Total", 10), (1, "English", 8), (2, "Polish", 2)]
+        full = [nomis_obs(a, c, label, v) for a in ("E1", "E2") for c, label, v in cats]
+        calls = []
+
+        def answer(url, timeout=0):
+            calls.append(url)
+            if "c2021_mlang_94=" not in url:
+                return {"header": {"truncated": "true"}, "obs": full[:4]}
+            wanted = {int(c) for c in url.rsplit("=", 1)[1].split(",")}
+            return {"header": {"truncated": "false"},
+                    "obs": [o for o in full if o["c2021_mlang_94"]["value"] in wanted]}
+        with mock.patch.object(m, "http_json", side_effect=answer), \
+                mock.patch.object(m, "CATEGORY_PARTS", 2):
+            out = m.fetch_table("NM_2043_1", None, "TYPE154")
+        self.assertEqual(out["E2"]["total"], 10)
+        self.assertEqual(out["E2"]["counts"], {"English": 8, "Polish": 2})
+        self.assertEqual(len(calls), 3)
+
+    def test_a_part_still_truncated_stops_the_run(self):
+        from unittest import mock
+        from scripts.fetch_census import uk_nomis as m
+        page = {"header": {"truncated": "true"},
+                "obs": [nomis_obs("E1", 0, "Total", 1), nomis_obs("E1", 1, "English", 1)]}
+        with mock.patch.object(m, "http_json", return_value=page):
+            with self.assertRaises(SystemExit):
+                m.fetch_table("NM_2043_1", None, "TYPE154")
+
+
 class UkNomisComplete(unittest.TestCase):
     def test_a_table_read_short_stops_the_run(self):
         from scripts.fetch_census.uk_nomis import check_complete
