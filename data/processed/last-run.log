@@ -1,16 +1,78 @@
-cyprus_census: CYSTAT, Census of Population and Housing 2021
-  Cyprus (areas under Government control): 923,381 residents, median 40.0 from single years; 410 municipalities and communities
-  Famagusta: 54,318, median 39.5, 100.5 men per 100 women
-  Larnaca: 155,765, median 39.5, 97.7 men per 100 women
-  Limassol: 262,157, median 39.5, 94.6 men per 100 women
-  Nicosia: 350,035, median 40.5, 92.2 men per 100 women
-  Paphos: 101,106, median 41.0, 98.5 men per 100 women
-  bound across a district line, by a name unique in the country: ['Sia (Nicosia) on Sia (Larnaca)', 'Ormideia (Larnaca) on Ormideia (Famagusta)', 'Xylofagou (Larnaca) on Xylofagou (Famagusta)']
-  401 of 410 CYSTAT communities bound; 9 unbound (12,976 people): ['Synoikismos Anthoupolis (1022, Nicosia, 1,690)', 'Katydata (1416, Nicosia, 100)', 'Mosfili (1468, Nicosia, 20)', "Dromolaxia - Meneou (4014, Larnaca, 6,838): drawn as its parts ['Dromolaxia', 'Meneou'], which make_redrawn is to merge", 'Kornos (4215, Larnaca, 2,081)', 'Akrotiri (5200, Limassol, 931)', 'Troodos (5356, Limassol, 17)', 'Chandria (5368, Limassol, 128)', 'Tremithousa (6023, Paphos, 1,171)']
-  162 polygons outside Kyrenia with no CYSTAT community: ['Afanteia-Orniti (Famagusta)', 'Agia Kepir (Nicosia)', 'Agia Marina Skyllouras (Nicosia)', 'Agia Trias (Famagusta)', 'Agia Varvara (Nicosia)', 'Agios Andronikos Karpasias (Famagusta)', 'Agios Andronikos Trikomou (Famagusta)', 'Agios Chariton (Famagusta)', 'Agios Efstathios (Famagusta)', 'Agios Georgios Ammochostou (Famagusta)', 'Agios Georgios Soleas (Nicosia)', 'Agios Iakovos (Famagusta)', 'Agios Ilias (Famagusta)', 'Agios Ioannis Selemani (Nicosia)', 'Agios Nikolaos Ammochostou (Famagusta)', 'Agios Nikolaos Soleas (Nicosia)', 'Agios Sergios (Famagusta)', 'Agios Symeon (Famagusta)', 'Agios Theodoros Ammochostou (Famagusta)', 'Agios Vasileios (Nicosia)', 'Agkomi Ammochostou (Famagusta)', 'Aigialousa (Famagusta)', 'Akanthou (Famagusta)', 'Alayköy (Nicosia)', 'Alevga (Nicosia)', 'Aloda (Famagusta)', 'Ammadies (Nicosia)', 'Ammochostos (Famagusta)', 'Ampelikou (Nicosia)', 'Angastina (Famagusta)', 'Angolemi (Nicosia)', 'Ardana (Famagusta)', 'Argaki (Nicosia)', 'Arnadi (Famagusta)', 'Arsos Larnakas (Larnaca)', 'Artemi (Famagusta)', 'Askeia (Famagusta)', 'Avgolida (Famagusta)', 'Avlona (Nicosia)', 'Beïkioï (Nicosia)', 'Davios (Famagusta)', 'Dromolaxia (Larnaca)', 'Dyo Potamoi (Nicosia)', 'Elia Lefkosias (Nicosia)', 'Epicho (Nicosia)', 'Eptakomi (Famagusta)', 'Exo Metochi (Nicosia)', 'Flamoudi (Famagusta)', 'Foinikas (Paphos)', 'Frodisia (Nicosia)', 'Fyllia (Nicosia)', 'Gaidouras (Famagusta)', 'Galateia (Famagusta)', 'Galini (Nicosia)', 'Galinoporni (Famagusta)', 'Gastria (Famagusta)', 'Genagra (Famagusta)', 'Gerani (Famagusta)', 'Goufes (Famagusta)', 'Gypsou (Famagusta)', 'Kalo Chorio Kapouti (Nicosia)', 'Kalo Chorio Soleas (Nicosia)', 'Kalopsida (Famagusta)', 'Kalyvakia (Nicosia)', 'Kanli (Nicosia)', 'Karavostasi (Nicosia)', 'Kato Zodeia (Nicosia)', 'Katokopia (Nicosia)', 'Katydata (Nicosia)', 'Katydata (Nicosia)', 'Kazivera (Nicosia)', 'Kiados (Famagusta)', 'Kioneli (Nicosia)', 'Knodara (Famagusta)', 'Koilanemos (Famagusta)', 'Kokkina (Nicosia)', 'Koma tou Gialou (Famagusta)', 'Komi Kepir (Famagusta)', 'Kontea (Famagusta)', 'Kornokipos (Famagusta)', 'Koroveia (Famagusta)', 'Kouklia Ammochostou (Famagusta)', 'Kourou Monastiri (Nicosia)', 'Krideia (Famagusta)', 'Kyra (Nicosia)', 'Kythrea (Nicosia)', 'Lapathos (Famagusta)', 'Lefka (Nicosia)', 'Lefkonoiko (Famagusta)', 'Leonarisso (Famagusta)', 'Limnia (Famagusta)', 'Livadi (Paphos)', 'Livadia Ammochostou (Famagusta)', 'Loutros (Nicosia)', 'Lysi (Famagusta)', 'Lythragkomi (Famagusta)', 'Makrasyka (Famagusta)', 'Mandres (Famagusta)', 'Mandres Lefkosias (Nicosia)', 'Maratha (Famagusta)', 'Marathovounos (Famagusta)', 'Margo (Nicosia)', 'Maronas (Paphos)', 'Masari (Nicosia)', 'Melanarga (Famagusta)', 'Melounta (Famagusta)', 'Melouseia (Larnaca)', 'Meneou (Larnaca)', 'Mia Milia (Nicosia)', 'Milia Ammochostou (Famagusta)', 'Mora (Nicosia)', 'Morfou (Nicosia)', 'Mousoulita (Famagusta)', 'Neo Chorio Lefkosias (Nicosia)', 'Neta (Famagusta)', 'Nikitas (Nicosia)', 'Ortakioï (Nicosia)', 'Ovgoros (Famagusta)', 'Palaikythro (Nicosia)', 'Patanissos (Famagusta)', 'Patriki (Famagusta)', 'Pentageia (Nicosia)', 'Peristerona Ammochostou (Famagusta)', 'Peristeronari (Nicosia)', 'Perivolia Trikomou (Famagusta)', 'Petra (Nicosia)', 'Petra tou Digeni (Nicosia)', 'Pigi (Famagusta)', 'Platani (Famagusta)', 'Prastio Ammochostou (Famagusta)', 'Prastio Lefkosias (Nicosia)', 'Psyllatos (Famagusta)', 'Pyrga Ammochostou (Famagusta)', 'Pyrogi (Nicosia)', 'Rizokarpaso (Famagusta)', 'Santalaris (Famagusta)', 'Selladi tou Appi (Nicosia)', 'Sinta (Famagusta)', 'Skylloura (Nicosia)', 'Spathariko (Famagusta)', 'Strongylos (Famagusta)', 'Stylloi (Famagusta)', 'Sygkrasi (Famagusta)', 'Syrianochori (Nicosia)', 'Tavrou (Famagusta)', 'Trachonas (Nicosia)', 'Trachoni Lefkosias (Nicosia)', 'Tremetousia (Larnaca)', 'Trikomo (Famagusta)', 'Trimithousa (Paphos)', 'Trimithousa (Paphos)', 'Trypimeni (Famagusta)', 'Tymvou (Nicosia)', 'Variseia (Nicosia)', 'Vasili (Famagusta)', 'Vatili (Famagusta)', 'Vitsada (Famagusta)', 'Vokolida (Famagusta)', 'Voni (Nicosia)', 'Vothylakas (Famagusta)', 'Xerovounos (Nicosia)', 'Zacharia (Paphos)']
-  retry in 3s: https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px (HTTP Error 429: )
-  retry in 10s: https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px (HTTP Error 429: )
-  CURATED religion 923381 [{"group": "Christian Orthodox", "pct": 74.5, "count": 688075}, {"group": "Not recorded/Not stated", "pct": 17.3, "count": 159835}, {"group": "Muslim", "pct": 2.1, "count": 19534}, {"group": "Roman Catholic", "pct": 1.5, "count": 13860}, {"group": "Anglican/Protestant", "pct": 1.0, "count": 9621}, {"group": "Atheist/No Religion", "pct": 1.0, "count": 9591}, {"group": "Buddhist", "pct": 0.9, "count": 7868}, {"group": "Maronite church", "pct": 0.5, "count": 4486}, {"group": "Other Religion", "pct": 0.5, "count": 4545}, {"group": "Armenian church", "pct": 0.2, "count": 2025}, {"group": "Hindu", "pct": 0.2, "count": 1681}, {"group": "Sikh", "pct": 0.2, "count": 2260}]
-  CURATED ethnicity 923381 [{"group": "Greek-Cypriot", "pct": 74.7, "count": 689412}, {"group": "Greek", "pct": 4.3, "count": 39384}, {"group": "Romanian", "pct": 2.3, "count": 20926}, {"group": "British", "pct": 2.2, "count": 20098}, {"group": "Other", "pct": 2.1, "count": 19768}, {"group": "Russian", "pct": 1.9, "count": 17086}, {"group": "Bulgarian", "pct": 1.8, "count": 16579}, {"group": "Syrian", "pct": 1.5, "count": 13975}, {"group": "Not stated", "pct": 1.3, "count": 11845}, {"group": "Filipino", "pct": 0.9, "count": 8716}, {"group": "Indian", "pct": 0.9, "count": 8535}, {"group": "Srilankan", "pct": 0.7, "count": 6747}, {"group": "Georgian", "pct": 0.6, "count": 5240}, {"group": "Maronite", "pct": 0.6, "count": 5245}, {"group": "Nepalese", "pct": 0.6, "count": 5989}, {"group": "Ukranian", "pct": 0.6, "count": 5616}, {"group": "Armenian", "pct": 0.4, "count": 3434}, {"group": "Egyptian", "pct": 0.3, "count": 3192}, {"group": "Lebanese", "pct": 0.3, "count": 2404}, {"group": "Polish", "pct": 0.3, "count": 2459}, {"group": "Vietnamese", "pct": 0.3, "count": 2646}, {"group": "Bangladeshi", "pct": 0.2, "count": 1430}, {"group": "Chinese", "pct": 0.2, "count": 2227}, {"group": "German", "pct": 0.2, "count": 2072}, {"group": "Moldovan", "pct": 0.2, "count": 1593}, {"group": "Turkish-Cypriot", "pct": 0.2, "count": 1617}, {"group": "Cameroonian", "pct": 0.1, "count": 1081}, {"group": "Iranian", "pct": 0.1, "count": 1218}, {"group": "Jewish", "pct": 0.1, "count": 1243}, {"group": "Pakistani", "pct": 0.1, "count": 1303}, {"group": "Latin", "pct": 0.0, "count": 301}]
-  wrote data/processed/cyprus_census.json (986 kB)
-  wrote cyprus_census.json: 453 records
+== xls https://web.archive.org/web/20230723220506id_/https://bucuresti.insse.ro/wp-content/uploads/2023/01/Anexa-2_Tabele-cu-date-provizorii_RPL2021.xls 40 4
+  HTTP 200 application/vnd.ms-excel 113,152 bytes
+  7 sheets: ['Tabel 1', 'TABEL 2', 'Tabel 3', 'TABEL 4', 'Tabel 5', 'Tabel 6', 'Tabel 7']
+  -- sheet 'Tabel 1': 14 rows x 20 cols
+    1. POPULATIA REZIDENTA PE SE
+     | POPULATIA REZIDENTA   TOTAL | G R U P A   D E   V A R S T 
+     |  | 0 - 4 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64 | 65 - 69
+     |  | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani | ani
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    MUNICIPIUL BUCURESTI | 1716983.0 | 86179.0 | 87942.0 | 89899.0 | 71671.0 | 70990.0 | 92084.0 | 135373.0 | 140491.0 | 150885.0 | 128695.0 | 145331.0 | 79502.0 | 104853.0 | 118366.0
+    MASCULIN | 790772.0 | 44548.0 | 45293.0 | 46265.0 | 36779.0 | 34816.0 | 43266.0 | 64736.0 | 68742.0 | 73462.0 | 61483.0 | 66684.0 | 35564.0 | 43606.0 | 48477.0
+    FEMININ | 926211.0 | 41631.0 | 42649.0 | 43634.0 | 34892.0 | 36174.0 | 48818.0 | 70637.0 | 71749.0 | 77423.0 | 67212.0 | 78647.0 | 43938.0 | 61247.0 | 69889.0
+    Sursa: INS, Recensământul po
+  -- sheet 'TABEL 2': 15 rows x 25 cols
+    2. POPULATIA REZIDENTA PE SE
+     | POPULATIA REZIDENTA   TOTAL | E T N I A |  |  |  |  |  |  |  |  |  |  | E T N I A
+     |  | Români | Maghiari | Romi | Ucraineni | Germani | Turci | Rusi- Lipoveni | Tatari | Sarbi | Slovaci | Bulgari | Croati | Greci | Italieni
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    MUNICIPIUL BUCURESTI | 1716983.0 | 1252209.0 | 2168.0 | 10740.0 | 355.0 | 1011.0 | 1342.0 | 844.0 | 719.0 | 147.0 | 41.0 | 239.0 | 19.0 | 553.0 | 433.0
+    Masculin | 790772.0 | 569314.0 | 857.0 | 5310.0 | 142.0 | 529.0 | 914.0 | 330.0 | 317.0 | 68.0 | 20.0 | 100.0 | 10.0 | 347.0 | 338.0
+    Feminin | 926211.0 | 682895.0 | 1311.0 | 5430.0 | 213.0 | 482.0 | 428.0 | 514.0 | 402.0 | 79.0 | 21.0 | 139.0 | 9.0 | 206.0 | 95.0
+    * - număr redus de cazuri de
+    Sursa: INS, Recensământul po
+  -- sheet 'Tabel 3': 16 rows x 25 cols
+    3. POPULATIA REZIDENTA DUPA 
+     | POPULATIA REZIDENTA   TOTAL | L I M B A   M A T E R N A |  |  |  |  |  |  |  |  |  | L I M B A   M A T E R N A
+     |  | Romana | Maghiara | Romani | Ucraineana | Germana | Turca | Rusa | Tatara | Sarba | Slovaca | Bulgara | Croata | Italiana | Greaca
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    MUNICIPIUL BUCURESTI | 1716983.0 | 1259150.0 | 2073.0 | 2339.0 | 227.0 | 718.0 | 1056.0 | 729.0 | 453.0 | 115.0 | 32.0 | 171.0 | 11.0 | 437.0 | 312.0
+    MASCULIN | 790772.0 | 572796.0 | 783.0 | 1075.0 | 78.0 | 369.0 | 774.0 | 233.0 | 190.0 | 53.0 | 13.0 | 64.0 | 6.0 | 348.0 | 232.0
+    FEMININ | 926211.0 | 686354.0 | 1290.0 | 1264.0 | 149.0 | 349.0 | 282.0 | 496.0 | 263.0 | 62.0 | 19.0 | 107.0 | 5.0 | 89.0 | 80.0
+    * - număr redus de cazuri de
+    Sursa: INS, Recensământul po
+  -- sheet 'TABEL 4': 14 rows x 26 cols
+    4. POPULATIA REZIDENTA PE SE
+     | POPULATIA REZIDENTA   TOTAL | R E L I G I A |  |  |  |  |  |  |  |  |  |  | R E L I G I A
+     |  | Ortodoxa (Biserica Ortodoxa  | Romano-Catolica | Reformata | Penticostala (Cultul Crestin | Greco-Catolica (Biserica Rom | Baptista (Cultul Crestin Bap | Adventista de Ziua a Saptea | Musulmana (Cultul Musulman) | Unitariana (Biserica Unitari | Martorii lui Iehova | Crestina dupa Evanghelie | Crestina de Rit Vechi | Evanghelica Lutherana (Biser | Ortodoxa Sarba
+    A | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 | 6.0 | 7.0 | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 | 14.0 | 15.0
+    
+    MUNICIPIUL BUCURESTI | 1716983.0 | 1150470.0 | 17669.0 | 919.0 | 3587.0 | 2427.0 | 2885.0 | 3134.0 | 8015.0 | 68.0 | 1513.0 | 1807.0 | 829.0 | 531.0 | 372.0
+    Masculin | 790772.0 | 516189.0 | 7731.0 | 380.0 | 1607.0 | 1044.0 | 1220.0 | 1277.0 | 4789.0 | 31.0 | 563.0 | 786.0 | 389.0 | 245.0 | 189.0
+    Feminin | 926211.0 | 634281.0 | 9938.0 | 539.0 | 1980.0 | 1383.0 | 1665.0 | 1857.0 | 3226.0 | 37.0 | 950.0 | 1021.0 | 440.0 | 286.0 | 183.0
+    Sursa: INS, Recensământul po
+== pdf https://web.archive.org/web/20240301142131id_/https://bucuresti.insse.ro/wp-content/uploads/2024/01/02.-Populatia.pdf (?i)sector 40
+  HTTP 200 application/pdf 745,411 bytes
+  30 pages
+    p5: de domiciliu dintr-un sector în altul al Municipiului of legal residence from one sector to another within
+    p5: domiciliu în interiorul aceleiași localități sau în same locality or sector, or from one village to
+    p5: același sector și nici dintr-un sat în altul, în cadrul another, within the same commune, are not included.
+== xls https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx 30 2
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 13,913 bytes
+  1 sheets: ['Municipiul Bucure;ti']
+  -- sheet 'Municipiul Bucure;ti': 651 rows x 22 cols
+    Populația după domiciliu la 
+    - date definitive
+    Populația după domiciliu la 
+    Grupe de vârstă | MUNICIPIUL BUCUREȘTI |  |  | SECTOR 1 |  |  | SECTOR 2 |  |  | SECTOR 3 |  |  | SECTOR 4
+     | Total | Masculin | Feminin | Total | Masculin | Feminin | Total | Masculin | Feminin | Total | Masculin | Feminin | Total | Masculin | Feminin
+    TOTAL BUCURESTI | 2164295 | 1012982 | 1151313 | 265149 | 122588 | 142561 | 366070 | 168597 | 197473 | 494022 | 235420 | 258602 | 337093 | 156739 | 180354
+    0 - 4 ani | 107091 | 55055 | 52036 | 15670 | 8043 | 7627 | 15265 | 7752 | 7513 | 29980 | 15432 | 14548 | 15609 | 8105 | 7504
+    5 - 9 ani | 98485 | 50834 | 47651 | 12899 | 6610 | 6289 | 15622 | 8076 | 7546 | 23672 | 12237 | 11435 | 14966 | 7766 | 7200
+    10-14 ani | 100567 | 51771 | 48796 | 12868 | 6594 | 6274 | 16875 | 8697 | 8178 | 22639 | 11591 | 11048 | 15121 | 7844 | 7277
+    15-19 ani | 86767 | 44661 | 42106 | 11013 | 5695 | 5318 | 14462 | 7372 | 7090 | 19306 | 10004 | 9302 | 12803 | 6551 | 6252
+    20-24 ani | 80243 | 40835 | 39408 | 9605 | 4813 | 4792 | 13296 | 6774 | 6522 | 18506 | 9526 | 8980 | 11941 | 6079 | 5862
+    25-29 ani | 105909 | 51141 | 54768 | 12278 | 6054 | 6224 | 16354 | 7985 | 8369 | 24262 | 11797 | 12465 | 17052 | 7996 | 9056
+    30-34 ani | 175210 | 84380 | 90830 | 20053 | 9400 | 10653 | 26888 | 12840 | 14048 | 41014 | 20080 | 20934 | 29099 | 13751 | 15348
+    35-39 ani | 200594 | 98368 | 102226 | 24108 | 11441 | 12667 | 32454 | 15692 | 16762 | 47203 | 23701 | 23502 | 32270 | 15622 | 16648
+    40-44 ani | 208021 | 102536 | 105485 | 24327 | 11565 | 12762 | 35534 | 17253 | 18281 | 48266 | 24491 | 23775 | 32185 | 15913 | 16272
+    45-49 ani | 181681 | 88334 | 93347 | 20672 | 9744 | 10928 | 30654 | 14689 | 15965 | 41337 | 20557 | 20780 | 28453 | 13711 | 14742
+    50-54 ani | 188158 | 87088 | 101070 | 22258 | 10161 | 12097 | 31426 | 14242 | 17184 | 42222 | 19843 | 22379 | 29920 | 13786 | 16134
+    55-59 ani | 103777 | 47070 | 56707 | 12098 | 5497 | 6601 | 17046 | 7668 | 9378 | 24061 | 11148 | 12913 | 16567 | 7328 | 9239
+    60-64 ani | 124187 | 52972 | 71215 | 14867 | 6468 | 8399 | 21728 | 9046 | 12682 | 27332 | 11919 | 15413 | 19779 | 8354 | 11425
+    65-69 ani | 142345 | 59208 | 83137 | 16810 | 7306 | 9504 | 27591 | 11188 | 16403 | 30481 | 12785 | 17696 | 22106 | 9213 | 12893
+    70-74 ani | 107927 | 44349 | 63578 | 12262 | 5155 | 7107 | 21527 | 8923 | 12604 | 22312 | 9220 | 13092 | 16550 | 6790 | 9760
+    75-79 ani | 59030 | 22608 | 36422 | 7645 | 2910 | 4735 | 11163 | 4294 | 6869 | 11961 | 4529 | 7432 | 9067 | 3405 | 5662
+    80-84 ani | 44724 | 15222 | 29502 | 6360 | 2091 | 4269 | 8318 | 2807 | 5511 | 9521 | 3235 | 6286 | 6816 | 2284 | 4532
+    85 ani si peste | 49579 | 16550 | 33029 | 9356 | 3041 | 6315 | 9867 | 3299 | 6568 | 9947 | 3325 | 6622 | 6789 | 2241 | 4548
+    _x001A_
