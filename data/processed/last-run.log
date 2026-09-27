@@ -1,108 +1,17 @@
-== pxq https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px eyJxdWVyeSI6IFt7ImNvZGUiOiAiRElTVFJJQ1QiLCAic2VsZWN0aW9uIjogeyJmaWx0ZXIiOiAiaXRlbSIsICJ2YWx1ZXMiOiBbIjAiXX19LCB7ImNvZGUiOiAiU0VYIiwgInNlbGVjdGlvbiI6IHsiZmlsdGVyIjogIml0ZW0iLCAidmFsdWVzIjogWyIwIl19fSwgeyJjb2RlIjogIkxBTkdVQUdFICgxKSIsICJzZWxlY3Rpb24iOiB7ImZpbHRlciI6ICJpdGVtIiwgInZhbHVlcyI6IFsiMCIsICIxIl19fV0sICJyZXNwb25zZSI6IHsiZm9ybWF0IjogInB4In19 3000
-  HTTP 200 application/json; charset=utf-8 935 bytes
-  {"title":"Population Enumerated by Language, Sex and District 1.10.2021","variables":[{"code":"LANGUAGE (1)","text":"LANGUAGE (1)","values":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],"valueTexts":["Total","Greek","English","Russian","Arabic","Romanian","Bulgarian","Indian","Filipino","Sri Lankan","Ukranian","Georgian","Nepalese","French","Vietnamese","German","Chinese","Polish","Turkish","Persian","Armenian","Hebrew","Italian","Latvian","Slovakian","Moldovian","Bengali","Spanish","Swedish","Hungarian","Urdu","Yugoslavian","Dutch","Other languages","Not stated"]},{"code":"DISTRICT","text":"DISTRICT","values":["0","1","2","3","4","5"],"valueTexts":["Total","Lekfosia","Ammochostos","Larnaka","Lemesos","Pafos"]},{"code":"SEX","text":"SEX","values":["0","1","2"],"valueTexts":["Total","Males","Females"]}]}
-== pxq https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px eyJxdWVyeSI6IFt7ImNvZGUiOiAiQ0lUSVpFTlNISVAgR1JPVVAiLCAic2VsZWN0aW9uIjogeyJmaWx0ZXIiOiAiaXRlbSIsICJ2YWx1ZXMiOiBbIjAiXX19LCB7ImNvZGUiOiAiU0VYIiwgInNlbGVjdGlvbiI6IHsiZmlsdGVyIjogIml0ZW0iLCAidmFsdWVzIjogWyIwIl19fSwgeyJjb2RlIjogIlJFTElHSU9OICgxKSIsICJzZWxlY3Rpb24iOiB7ImZpbHRlciI6ICJpdGVtIiwgInZhbHVlcyI6IFsiMCIsICIxIl19fV0sICJyZXNwb25zZSI6IHsiZm9ybWF0IjogInB4In19 3000
-  HTTP 200 application/json; charset=utf-8 723 bytes
-  {"title":"Population Enumerated by Religion, Sex and Citizenship Group 1.10.2021","variables":[{"code":"RELIGION (1)","text":"RELIGION (1)","values":["0","1","2","3","4","5","6","7","8","9","10","11","12"],"valueTexts":["Total","Christian Orthodox","Armenian church","Maronite church","Roman Catholic","Muslim","Anglican/Protestant","Buddhist","Sikh","Hindu","Other Religion","Atheist/No Religion","Not recorded/Not stated (3)"]},{"code":"CITIZENSHIP GROUP","text":"CITIZENSHIP GROUP","values":["0","1","2","3","4"],"valueTexts":["Total","Cypriots (2)","Other European Union citizens","Non-European Union citizens","Not stated"]},{"code":"SEX","text":"SEX","values":["0","1","2"],"valueTexts":["Total","Males","Females"]}]}
-== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px DISTRICT 420
-  HTTP 200 application/json; charset=utf-8 8,814 bytes
-  title: Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021
-  var 'DISTRICT, MUNICIPALITY/COMMUNITY': 416 values
-    TOTAL=TOTAL, 1=LEFKOSIA DISTRICT, 1000=Lefkosia, 1010=Agios Dometios, 1011=Egkomi, 1012=Strovolos, 1013=Aglantzia, 1021=Lakatameia, 1022=Synoikismos Anthoupolis, 1023=Latsia Municipality, 1024=Geri, 1100=Sia, 1101=Mathiatis, 1102=Alampra, 1103=Agia Varvara Lefkosias, 1104=Kotsiatis, 1105=Nisou, 1106=Pera Chorio, 1107=Dali, 1108=Lympia, 1109=Lythrodontas, 1110=Louroukina, 1120=Potamia, 1121=Agios Sozomenos, 1200=Kampi, 1201=Farmakas, 1202=Apliki, 1203=Lazanias, 1204=Gourri, 1205=Fikardou, 1206=Agios Epifanios Oreinis, 1207=Kalo Chorio Oreinis, 1208=Malounta, 1209=Klirou, 1210=Arediou, 1211=Agios Ioannis Malountas, 1212=Agrokipia, 1213=Mitsero, 1220=Kapedes, 1221=Kataliontas, 1222=Analiontas, 1223=Kampia, 1224=Margi, 1225=Tseri, 1226=Politiko, 1227=Pera, 1228=Episkopeio, 1229=Psimolofou, 1230=Ergates, 1231=Anageia, 1232=Pano Deftera, 1233=Kato Deftera, 1240=Agioi Trimithias, 1241=Palaiometocho, 1242=Deneia, 1243=Kokkinotrimithia, 1244=Mammari, 1300=Palaichori Morfou, 1301=Askas, 1302=Alona, 1303=Fterikoudi, 1304=Polystypos, 1305=Lagoudera, 1306=Saranti, 1307=Livadia Lefkosias, 1308=Alithinou, 1309=Platanistasa, 1310=Palaichori Oreinis, 1320=Xyliatos, 1321=Agios Georgios Kafkallou, 1322=Nikitari, 1323=Vyzakia, 1324=Agia Marina Xyliatou, 1325=Agioi Iliofotoi, 1326=Kato Moni, 1327=Orounta, 1328=Pano Koutrafas, 1329=Kato Koutrafas, 1330=Potami, 1350=Pano Zodeia, 1360=Akaki, 1361=Peristerona Lefkosias, 1362=Astromeritis, 1368=Meniko, 1400=Spilia, 1402=Agia Eirini Lefkosias, 1403=Kannavia, 1404=Kakopetria, 1405=Agios Theodoros Soleas, 1406=Galata, 1407=Sinaoros, 1408=Kaliana, 1409=Temvria, 1410=Korakou, 1411=Evrychou, 1412=Flasou, 1414=Agios Epifanios Soleas, 1415=Linou, 1416=Katydata, 1417=Skouriotissa (Foukasa), 1420=Pedoulas, 1421=Mylikouri, 1422=Moutoullas, 1423=Oikos, 1424=Kalopanagiotis, 1425=Gerakies, 1426=Tsakistra, 1427=Kampos, 1456=Pano Pyrgos, 1457=Kato Pyrgos, 1460=Pigenia, 1461=Pachyammos, 1466=Agios Theodoros Tillirias, 1467=Mansoura, 1468=Mosfili, 3=AMMOCHOSTOS DISTRICT, 3100=Agia Napa, 3101=Paralimni, 3102=Deryneia, 3103=Sotira Ammochostou, 3104=Liopetri, 3105=Frenaros, 3110=Avgorou, 3111=Achna, 3114=Acheritou, 4=LARNAKA DISTRICT, 4000=Larnaka, 4010=Aradippou, 4011=Livadia Larnakas, 4014=Dromolaxia - Meneou, 4100=Kellia, 4101=Troulloi, 4102=Voroklini (Oroklini), 4103=Avdellero, 4104=Pyla, 4105=Xylotymvou, 4106=Ormideia, 4107=Xylofagou, 4108=Pergamos, 4110=Kiti, 4111=Perivolia Larnakas, 4112=Tersefanou, 4113=Softades, 4120=Mazotos, 4121=Alaminos, 4122=Anafotida, 4123=Aplanta, 4124=Kivisili, 4125=Alethriko, 4126=Klavdia, 4127=Anglisides, 4128=Menogeia, 4201=Petrofani, 4202=Athienou, 4210=Kalo Chorio Larnakas, 4211=Agia Anna, 4212=Mosfiloti, 4213=Psevdas, 4214=Pyrga Larnakas, 4215=Kornos, 4216=Delikipos, 4217=Kosi, 4300=Zygi, 4301=Mari, 4302=Kalavasos, 4303=Tochni, 4304=Choirokoitia, 4305=Psematismenos, 4306=Maroni, 4307=Agios Theodoros Larnakas, 4308=Skarinou, 4309=Kofinou, 4310=Kato Lefkara, 4311=Pano Lefkara, 4312=Kato Drys, 4313=Vavla, 4314=Lageia, 4315=Ora, 4316=Melini, 4317=Odou, 4318=Agioi Vavatsinias, 4319=Vavatsinia, 5=LEMESOS DISTRICT, 5000=Lemesos, 5011=Mesa Geitonia, 5012=Agios Athanasios, 5013=Germasogeia, 5020=Pano Polemidia, 5021=Ypsonas, 5022=Kato Polemidia, 5100=Palodeia, 5101=Paramytha, 5102=Spitali, 5103=Fasoula Lemesou, 5104=Mathikoloni, 5105=Gerasa, 5106=Apsiou, 5107=Apesia, 5108=Korfi, 5109=Limnatis, 5110=Kapileio, 5120=Mouttagiaka, 5121=Armenochori, 5122=Foinikaria, 5123=Akrounta, 5124=Agios Tychon, 5125=Parekklisia, 5126=Pentakomo, 5127=Monagroulli, 5128=Moni, 5129=Pyrgos Lemesou, 5130=Asgata, 5131=Vasa Kellakiou, 5132=Sanida, 5133=Prastio Kellakiou, 5134=Klonari, 5135=Vikla, 5136=Kellaki, 5137=Akapnou, 5138=Eptagoneia, 5140=Dierona, 5141=Arakapas, 5142=Agios Pavlos, 5143=Agios Konstantinos, 5144=Sykopetra, 5145=Louvaras, 5146=Kalo Chorio Lemesou, 5147=Zoopigi, 5200=Akrotiri, 5201=Asomatos Lemesou, 5202=Tserkezoi, 5203=Trachoni Lemesou, 5210=Kolossi, 5211=Erimi, 5212=Episkopi Lemesou, 5213=Kantou, 5214=Sotira Lemesou, 5220=Prastio Avdimou, 5221=Paramali, 5222=Avdimou, 5223=Platanisteia, 5224=Agios Thomas, 5225=Alektora, 5226=Anogyra, 5227=Pissouri, 5300=Souni-Zanakia, 5302=Alassa, 5303=Kato Kivides, 5304=Pano Kivides, 5305=Agios Amvrosios Lemesou, 5306=Agios Therapon, 5307=Lofou, 5308=Pachna, 5310=Agios Georgios Lemesou, 5311=Doros, 5312=Laneia, 5313=Silikou, 5314=Monagri, 5315=Trimiklini, 5316=Agios Mamas, 5317=Kouka, 5318=Moniatis, 5320=Dora, 5321=Gerovasa (Trozena), 5322=Arsos Lemesou, 5323=Kissousa, 5324=Malia, 5325=Vasa Koilaniou, 5326=Vouni, 5327=Pera Pedi, 5328=Mandria Lemesou, 5329=Potamiou, 5330=Omodos, 5331=Koilani, 5340=Agios Dimitrios, 5341=Palaiomylos, 5342=Prodromos, 5343=Kaminaria, 5344=Treis Elies, 5345=Lemithou, 5350=Kato Platres (Tornarides), 5351=Pano Platres, 5352=Foini, 5355=Amiantos, 5356=Troodos, 5360=Agios Theodoros Lemesou, 5361=Agios Ioannis Lemesou, 5362=Kato Mylos, 5363=Potamitissa, 5364=Dymes, 5365=Pelendri, 5366=Agros, 5367=Agridia, 5368=Chandria, 5369=Kyperounta, 6=PAFOS DISTRICT, 6000=Pafos, 6010=Geroskipou, 6011=Konia, 6012=Agia Marinouda, 6014=Acheleia, 6020=Chlorakas, 6021=Lempa, 6022=Empa, 6023=Tremithousa, 6024=Mesa Chorio, 6025=Mesogi, 6026=Tala, 6027=Kissonerga, 6100=Kouklia Pafou, 6101=Mandria Pafou, 6102=Nikokleia, 6103=Souskiou, 6104=Timi, 6106=Agia Varvara Pafou, 6107=Anarita, 6110=Marathounta, 6111=Armou, 6112=Episkopi Pafou, 6113=Nata, 6114=Choletria, 6115=Axylou, 6116=Eledio, 6120=Tsada, 6121=Koili, 6122=Stroumpi, 6123=Polemi, 6124=Kallepeia, 6125=Letymvou, 6126=Pitargou, 6127=Kourdaka, 6128=Lemona, 6129=Choulou, 6130=Akoursos, 6132=Kathikas, 6133=Pegeia, 6200=Pano Archimandrita, 6201=Fasoula Pafou, 6202=Mousere, 6204=Mamonia, 6205=Agios Georgios Pafou, 6206=Stavrokonnou, 6207=Prastio Pafou, 6208=Trachypedoula, 6210=Kelokedara, 6211=Salamiou, 6212=Kidasi, 6213=Kedares, 6214=Mesana, 6215=Praitori, 6216=Filousa Kelokedaron, 6217=Arminou, 6218=Agios Nikolaos Pafou, 6219=Agios Ioannis Pafou, 6220=Amargeti, 6221=Agia Marina Kelokedaron, 6222=Pentalia, 6223=Faleia, 6224=Galataria, 6225=Koilineia, 6226=Vretsia, 6227=Statos-Agios Fotios, 6228=Lapithiou, 6229=Mamountali, 6230=Pano Panagia, 6231=Asprogia, 6300=Psathi, 6301=Agios Dimitrianos, 6302=Kannaviou, 6303=Thrinia, 6304=Milia Pafou, 6305=Kritou Marottou, 6306=Fyti, 6307=Lasa, 6308=Drymou, 6310=Simou, 6311=Anadiou, 6312=Sarama, 6313=Evretou, 6315=Filousa Chrysochous, 6316=Kios, 6318=Meladeia, 6319=Melandra, 6320=Lysos, 6321=Peristerona Pafou, 6330=Theletra, 6331=Giolou, 6332=Pano Akourdaleia, 6333=Miliou, 6334=Kato Akourdaleia, 6335=Tera, 6336=Kritou Tera, 6337=Skoulli, 6338=Choli, 6339=Loukrounou, 6340=Karamoullides, 6341=Chrysochou, 6343=Polis, 6344=Neo Chorio Pafou, 6345=Goudi, 6350=Kato Arodes, 6351=Pano Arodes, 6352=Ineia, 6353=Drouseia, 6354=Fasli, 6355=Androlikou, 6360=Pelathousa, 6361=Kynousa, 6362=Makounta, 6363=Argaka, 6364=Gialia, 6365=Agia Marina Chrysochous, 6366=Nea Dimmata, 6367=Pomos, 6368=Steni, 6369=Agios Isidoros
-  var 'SEX': 3 values
-  var 'AGE': 18 values
-== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px AGE 90
-  HTTP 200 application/json; charset=utf-8 1,196 bytes
-  title: Population Enumerated by District, Sex and Single Year of Age 1.10.2021
-  var 'AGE': 82 values
-    0=Total, 1=0, 2=1, 3=2, 4=3, 5=4, 6=5, 7=6, 8=7, 9=8, 10=9, 11=10, 12=11, 13=12, 14=13, 15=14, 16=15, 17=16, 18=17, 19=18, 20=19, 21=20, 22=21, 23=22, 24=23, 25=24, 26=25, 27=26, 28=27, 29=28, 30=29, 31=30, 32=31, 33=32, 34=33, 35=34, 36=35, 37=36, 38=37, 39=38, 40=39, 41=40, 42=41, 43=42, 44=43, 45=44, 46=45, 47=46, 48=47, 49=48, 50=49, 51=50, 52=51, 53=52, 54=53, 55=54, 56=55, 57=56, 58=57, 59=58, 60=59, 61=60, 62=61, 63=62, 64=63, 65=64, 66=65, 67=66, 68=67, 69=68, 70=69, 71=70, 72=71, 73=72, 74=73, 75=74, 76=75, 77=76, 78=77, 79=78, 80=79, 81=80+
-  var 'DISTRICT': 6 values
-  var 'SEX': 3 values
-== links https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/ pdf|prefect|qark|municip|region 150
-  HTTP 200 text/html; charset=utf-8 367,523 bytes
-  https://www.instat.gov.al/media/13652/tab7.xlsx  [Tab.7 Resident population by municipality, sex and broad age group]
-  https://www.instat.gov.al/media/13662/tab12.xlsx  [Tab.12 Resident population by country of birth, prefecture of birth and prefecture of usua]
-  https://www.instat.gov.al/media/13668/tab6.xlsx  [Tab.6 Resident population by sex, age group and prefecture]
-  https://www.instat.gov.al/media/14407/tab_1_10_popullsia-banuese-sipas-shtetit-të-lindjes-qarkut-të-lindjes-dhe-qarkut-të-vendbanimit-të-zakonshëm_qarqe.xls  [Tab. 1.10 Resident population by country of birth, prefecture of birth and prefecture of u]
-  https://www.instat.gov.al/media/14407/tab_1_10_popullsia-banuese-sipas-shtetit-të-lindjes-qarkut-të-lindjes-dhe-qarkut-të-vendbanimit-të-zakonshëm_qarqe.xls  []
-  https://www.instat.gov.al/media/3203/tab_1_1_3.xls  [1.1.3 Resident population by size-class of the municipality/commune and sex]
-  https://www.instat.gov.al/media/3207/tab_1_1_6.xls  [1.1.6 Resident population by prefectures of usual residence in 1 October 2011 and prefectu]
-  https://www.instat.gov.al/media/3260/tab_211.xlsx  [2.1.1 Resident population, surface and density by prefecture]
-  https://www.instat.gov.al/media/3261/tab_212xls.xlsx  [2.1.2 Buildings for residential purposes and dwellings by prefectures and type of dwelling]
-  https://www.instat.gov.al/media/3262/tab_2_1_3xls.xlsx  [2.1.3 Resident population by sex, age group and prefecture]
-  https://www.instat.gov.al/media/3512/tab_2_1_4xls.xlsx  [2.1.4 Resident population by sex, prefecture and marital status]
-  https://www.instat.gov.al/media/3513/tab_2_1_5.xls  [2.1.5 Resident institutional population by prefecture and sex]
-  https://www.instat.gov.al/media/3514/tab_2_1_6.xls  [2.1.6 Resident population by prefecture of the usual residence on 1 October 2011 and prefe]
-  https://www.instat.gov.al/media/3515/t_217.xls  [2.1.7 Resident population who changed their place of usual residence within Albania since ]
-  https://www.instat.gov.al/media/3516/tab_2_1_8.xlsx  [2.1.8 Resident Albanian citizens ever-residing abroad who returned after 1 January 2001 by]
-  https://www.instat.gov.al/media/3517/tab_2_2_1.xlsx  [2.2.1 Population aged 10 years and over by sex, prefectures, age, school attendance, liter]
-  https://www.instat.gov.al/media/3518/tab_231.xls  [2.3.1 Resident population 15 years and over by prefecture, sex and disability status]
-  https://www.instat.gov.al/media/3519/tab_232.xls  [2.3.2 Resident disabled population 15 years and over by sex, prefectures and type of disab]
-  https://www.instat.gov.al/media/3520/tab_2_4_1.xls  [2.4.1 Private households by prefecture, type of household, urban and rural area and number]
-  https://www.instat.gov.al/media/3521/tab_2_4_2.xlsx  [2.4.2 Family nuclei by prefecture, type of family nucleus and member of family nucleus mem]
-  https://www.instat.gov.al/media/3522/tab_2_4_3.xlsx  [2.4.3 Family nuclei with at least one child by prefecture, type of family nucleus, number ]
-  https://www.instat.gov.al/media/3523/tab_2_4_4.xls  [2.4.4 Private households by household amenities and prefecture]
-  https://www.instat.gov.al/media/3524/tab_2_4_5.xls  [2.4.5 Private households by prefecture and main type of energy used for heating]
-  https://www.instat.gov.al/media/3525/tab_2_4_6.xls  [2.4.6 Private households by prefecture and tenure status of dwelling]
-  https://www.instat.gov.al/media/3526/tab_2_5_1.xls  [2.5.1 Buildings for residential purposes by prefecture, type of building and number of dwe]
-  https://www.instat.gov.al/media/3527/tab_2_5_2.xls  [2.5.2 Buildings for residential purposes by prefecture, number of floors and presence of l]
-  https://www.instat.gov.al/media/3528/tab_2_5_3.xls  [2.5.3 Buildings for residential purposes by prefecture and year of construction]
-  https://www.instat.gov.al/media/3530/tab_2_5_5.xls  [2.5.5 Inhabited dwellings by prefecture and water supply system]
-  https://www.instat.gov.al/media/3531/tab_2_5_6.xls  [2.5.6 Inhabited dwellings by prefecture and type of toilet]
-  https://www.instat.gov.al/media/3532/tab_2_5_7.xls  [2.5.7 Inhabited dwellings by prefecture and type of heating]
-  https://www.instat.gov.al/media/3533/tab_2_5_8.xls  [2.5.8 Conventional dwellings by prefecture and occupancy status]
-  https://www.instat.gov.al/media/3534/tab_3_1_1.xls  [3.1.1 Indicators of population by prefecture]
-  https://www.instat.gov.al/media/3535/tab_3_1_2_.xlsx  [3.1.2 Indicators of education by prefectures]
-  https://www.instat.gov.al/media/3536/tab_313.xls  [3.1.3 Indicators of disability (a lot or completely unable) by prefectures]
-  https://www.instat.gov.al/media/3537/tab_314.xls  [3.1.4 Selected indicators for private households by prefecture]
-  https://www.instat.gov.al/media/3538/tab_3_1_5.xls  [3.1.5 Indicators of buildings and dwellings by prefecture]
-  https://www.instat.gov.al/media/3084/tab_1_1_5.xlsx  [Tab. 1.1.5 Resident population by prefecture of the usual residence on 1 October 2011 and ]
-  https://www.instat.gov.al/media/3124/tab_1_4_5.xls  [Tab. 2.4.5 Private households by municipality/commune and household amenities]
-  https://www.instat.gov.al/media/3131/tab_1_5_1.xls  [Tab. 2.5.1 Buildings for residential purposes by cmunicipality/commune, type of building a]
-  https://www.instat.gov.al/media/3139/tab_2_1_1_.xls  [Tab. 2.1.1 Resident population,buildings for residential purposes and dwellings by municip]
-  https://www.instat.gov.al/media/3140/tab_2_1_2.xls  [Tab. 2.1.2 Resident population by sex, age group municipality/commune]
-  https://www.instat.gov.al/media/3141/tab_2_1_3.xls  [Tab. 2.1.3 Resident population by municipality/commune and marital status]
-  https://www.instat.gov.al/media/3151/tab221.xls  [Tab. 2.2.1 Resident population aged 10 years and over by municipality/commune, education a]
-  https://www.instat.gov.al/media/3152/tab_2_3_1.xlsx  [Tab. 2.3.1 Resident population aged 15 years and over by municipality/commune, sex and dis]
-  https://www.instat.gov.al/media/3155/tab_2_3_2.xlsx  [Tab. 2.3.2 Resident population aged 15 years and over by municipality/commune and type of ]
-  https://www.instat.gov.al/media/3157/tab_2_4_1.xls  [Tab. 2.4.1 Private households by municipality/commune and type of household]
-  https://www.instat.gov.al/media/3159/tab_2_4_2.xls  [Tab. 2.4.2 Number of household members by municipality/commune and type of household]
-  https://www.instat.gov.al/media/3162/tab_2_4_3.xls  [Tab. 2.4.3 Family nuclei by municipality/commune and type of family nucleus]
-  https://www.instat.gov.al/media/3163/tab_2_4_4.xlsx  [Tab. 2.4.4 Total members of family nuclei by municipality/commune and type of family nucle]
-  https://www.instat.gov.al/media/3166/tab_2_4_6.xls  [Tab. 2.4.6 Private households by cmunicipality/commune and main type of energy used for he]
-  https://www.instat.gov.al/media/3167/tab_2_4_7.xls  [Tab. 2.4.7 Private households by municipality/commune and tenure status of dwelling]
-  https://www.instat.gov.al/media/3170/tab_2_5_2.xls  [Tab. 2.5.2 Buildings for residential purposes by municipality/communes and number of floor]
-  https://www.instat.gov.al/media/3171/tab_2_5_3.xls  [Tab. 2.5.3 Buildings for residential purposes by municipality/commune and period of constr]
-  https://www.instat.gov.al/media/3172/tab_2_5_4.xls  [Tab. 2.5.4 Inhabitated dwellings by municipality/commune and water supply system]
-  https://www.instat.gov.al/media/3173/tab_2_5_5.xls  [Tab. 2.5.5 Inhabitated dwellings by municipality/commune and type of toilet]
-  https://www.instat.gov.al/media/3175/tab_2_5_6.xls  [Tab. 2.5.6 Inhabitated dwellings by municipality/commune and type of heating]
-  https://www.instat.gov.al/media/3176/tab_2_5_7.xls  [Tab. 2.5.7 Conventional dwellings by municipality/commune and occupancy status]
-  https://www.instat.gov.al/media/6497/ok.xlsx  [Tab. 1.1.6 Resident population by prefectures of usual residence in 1 October 2011 and pre]
-  https://www.instat.gov.al/media/4845/census-2020-newsletter-no1.pdf  []
-  https://www.instat.gov.al/media/4845/census-2020-newsletter-no1.pdf  []
-  https://www.instat.gov.al/media/5132/newaletter-cenus-2020-no2.pdf  []
-  https://www.instat.gov.al/media/5132/newaletter-cenus-2020-no2.pdf  []
-  https://www.instat.gov.al/media/5430/census-2020-newsletter-no-3.pdf  []
-  https://www.instat.gov.al/media/5430/census-2020-newsletter-no-3.pdf  []
-  https://www.instat.gov.al/media/6159/census-2020-news-letter-no4.pdf  []
-  https://www.instat.gov.al/media/6159/census-2020-news-letter-no4.pdf  []
-  https://www.instat.gov.al/media/6398/newsletter-cens-nr-5.pdf  []
-  https://www.instat.gov.al/media/6398/newsletter-cens-nr-5.pdf  []
-  https://www.instat.gov.al/media/6719/newsletter-census-no6.pdf  []
-  https://www.instat.gov.al/media/6719/newsletter-census-no6.pdf  []
-  https://www.instat.gov.al/media/8704/law-140_2020-on-census_non-official-translation.pdf  [Law on Census]
-  https://www.instat.gov.al/media/5045/pyetesori-i-censit-2020_eng-draft-final-27122018.pdf  [Final Draft- questionnaire of Population and Housing Census]
-  https://www.instat.gov.al/media/3699/1.pdf  [Law No 10 442, date 7.7.2011]
-  https://www.instat.gov.al/media/3700/2.pdf  [LAw No 6, date 30.09.2009]
-  https://www.instat.gov.al/media/3701/3.pdf  [Law No. 10 084, date 23.02.2009]
-  https://www.instat.gov.al/media/3702/4.pdf  [LAw No . 8669, date 26.10.2000]
-  https://www.instat.gov.al/media/3703/cenusquestionnaire.pdf  [Census Questionary 2011]
-  https://www.instat.gov.al/media/4391/protection_of_personal_data-2001.pdf  [Law for Protection of Personal Data]
-  https://www.instat.gov.al/media/4392/the-general-census-of-population-and-dwellings-2001.pdf  [Law for The General Census Of Population and Dwellings]
-  https://www.instat.gov.al/media/4393/individual-questionnaire-2001.pdf  [Individual Questionary]
-  https://www.instat.gov.al/en/themes/economy-and-finance/regional-accounts-in-albania/  [Regional Accounts in Albania]
-  https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/#navcollapse7  [General and Regional Statistics]
-  https://www.instat.gov.al/en/themes/general-and-regional-statistics/regions/  [Regions]
-  https://www.instat.gov.al/en/themes/general-and-regional-statistics/cities-and-degree-of-urbanization/  [Cities and degree of urbanization]
-  https://www.instat.gov.al/en/themes/general-and-regional-statistics/indicators-by-municipalities/  [Indicators by Municipalities]
-  (85 links shown)
+== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .{0,80}(?i:sector).{0,80} 12
+  HTTP 200 application/json;charset=UTF-8 258,941 bytes
+  0 matches
+== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .{0,40}(?i:bucuresti).{0,120} 6
+  HTTP 200 application/json;charset=UTF-8 258,941 bytes
+  2 matches
+  2,"parentId":null},{"label":"Municipiul Bucuresti","nomItemId":3104,"offset":44,"parentId":null}],"dimCode":3,"label":"Judete"},{"options":[{"label":"TOTAL","nomItemId":
+  ntId":3102},{"label":"179132 MUNICIPIUL BUCURESTI","nomItemId":3048,"offset":16972,"parentId":3104}],"dimCode":4,"label":"Localitati "},{"options":[{"label":"Anul 1992",
+== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D .dimensionsMap.{0,400} 2
+  HTTP 200 application/json;charset=UTF-8 258,941 bytes
+  1 matches
+  "dimensionsMap":[{"options":[{"label":"Total","nomItemId":1,"offset":1,"parentId":null},{"label":"   0- 4 ani","nomItemId":2,"offset":2,"parentId":null},{"label":"      0 ani","nomItemId":3,"offset":3,"parentId":null},{"label":"      1 ani","nomItemId":4,"offset":4,"parentId":null},{"label":"      2
+== grep http://statistici.insse.ro:8077/tempo-ins/matrix/POP107D (?i:ultimaActualizare|periodicitati|matrixName).{0,200} 6
+  HTTP 200 application/json;charset=UTF-8 258,941 bytes
+  2 matches
+  matrixName":"POPULATIA DUPA DOMICILIU la 1 ianuarie pe grupe de varsta si varste, sexe, judete si localitati","periodicitati":["Anuala"],"surseDeDate":[{"nume":"Populatia dupa domiciliu a Romaniei (la 1 ianuari
+  ultimaActualizare":"02-04-2026","observatii":"Datele utilizate pentru determinarea populatiei dupa domiciliu provin din doua tipuri de surse de date:\r\n1. surse administrative\r\nDirectia pentru Evidenta Persoanelor 
