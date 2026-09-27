@@ -1,54 +1,21 @@
-== pdf https://dzs.gov.hr/UserDocsImages/Press%20Corner/Prezentacije/Popis%202021._kona%C4%8Dni%20rezultati.pdf (?i)starost|medij|median|dob 30
-  HTTP 200 application/pdf 1,138,739 bytes
-  16 pages
-    p4: portalu e-Građani, istodobno popisujući kućanstvo i stan u kojem
-    p5: • stanovništvo prema spolu i starosti
-    p6: U razdoblju između Popisa 2011. i Popisa 2021.:
-    p10: STANOVNIŠTVO PREMA STAROSTI I SPOLU,
-    p15: • Objavljivanje podataka bit će pravodobno najavljeno u Kalendaru
-== xls https://podaci.dzs.hr/media/rqybclnx/popis_2021-stanovnistvo_po_naseljima.xlsx 8 30
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 3,058,869 bytes
-  5 sheets: ['Sadrzaj-Contents', 'Znakovi-Symbols', '1.', '2.', 'Metodol obj-Notes on methodolo']
-  -- sheet 'Sadrzaj-Contents': 18 rows x 18 cols
-    POPIS STANOVNIŠTVA, KUĆANSTA
-    CENSUS OF POPULATION, HOUSEH
-    Molimo korisnike da pri kori
-    Users are kindly requested t
-     |  | ZNAKOVI
-     |  | SYMBOLS
-    Tab. 1 |  | STANOVNIŠTVO PREMA STAROSTI 
-     |  | POPULATION BY AGE AND SEX, B
-  -- sheet 'Znakovi-Symbols': 10 rows x 6 cols
-    Molimo korisnike da pri kori
-    Users are kindly requested t
-    ZNAKOVI
-    SYMBOLS
-    - |  | nema pojave
-    - |  | no occurence
-  -- sheet '1.': 22010 rows x 29 cols
-    1.
-    STANOVNIŠTVO PREMA STAROSTI 
-    POPULATION BY AGE AND SEX, B
-    Molimo korisnike da pri kori
-    Users are kindly requested t
-     |  |  |  |  |  |  |  |  | Starost                   Ag
-    Županija | Jedinica lokalne samouprave | County of | Local self-government unit | Grad/općina   Town/Municipal | Naselje Settlement | Spol | Sex | Ukupno Total | 0 – 4 | 5 – 9 | 10 – 14 | 15 – 19 | 20 – 24 | 25 – 29 | 30 – 34
-    Republika Hrvatska |  | Republic of Croatia |  |  |  | sv. | All | 3871833 | 175535 | 181445 | 195436 | 188729 | 208852 | 214023 | 227551
-  -- sheet '2.': 62 rows x 26 cols
-    2.
-    STANOVNIŠTVO PREMA STAROSTI 
-    POPULATION BY AGE AND SEX, B
-    Molimo korisnike da pri kori
-    Users are kindly requested t
-     |  |  |  |  |  | Starost                   Ag
-    Županija | County of | Gradska četvrt Town District | Spol | Sex | Ukupno Total | 0 – 4 | 5 – 9 | 10 – 14 | 15 – 19 | 20 – 24 | 25 – 29 | 30 – 34 | 35 – 39 | 40 – 44 | 45 – 49
-    Grad Zagreb | City of Zagreb |  | sv. | All | 767131 | 39037 | 38579 | 39028 | 34474 | 39605 | 47276 | 51538 | 57126 | 59381 | 54446
-  -- sheet 'Metodol obj-Notes on methodolo': 37 rows x 12 cols
-    METODOLOŠKA OBJAŠNJENJA |  | NOTES ON METHODOLOGY
-    Molimo korisnike da pri kori |  | Users are kindly requested t
-    Uvod |  | Foreword
-    Popis stanovništva, kućansta |  | The Census of Population, Ho
-    Popis 2021. provodio se prem |  | The 2021 Census was conducte
-    U pripremi Popisa 2021. prim |  | The 2021 Census is harmonise
-    Podaci Popisa 2021. koriste  |  | Individual data collected in
-    Teritorijalni ustroj |  | Territorial constitution
+== https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=E09000001,E09000033&date=2011,2016,2019,2020,2021,2022,2023,2024,2025&gender=0&c_age=200&measures=20100&select=date_name,geography_name,obs_value
+  558 bytes; starts b'"DATE_NA'
+  "DATE_NAME","GEOGRAPHY_NAME","OBS_VALUE"
+  "2011","City of London",7412
+  "2011","Westminster",219582
+  "2016","City of London",7737
+  "2016","Westminster",213193
+  "2019","City of London",8765
+  "2019","Westminster",208415
+  "2020","City of London",8331
+  "2020","Westminster",205624
+  "2021","City of London",8689
+  "2021","Westminster",205759
+  "2022","City of London",12020
+  "2022","Westminster",213009
+  "2023","City of London",14514
+  "2023","Westminster",216343
+  "2024","City of London",15497
+  "2024","Westminster",215694
+  "2025","City of London",15631
+  "2025","Westminster",212367
