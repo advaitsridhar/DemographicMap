@@ -86,6 +86,7 @@ ALIASES = {
     "gracanice": "Gracanica", "mitroviceveriut": "North Mitrovica",
     "mitroviceeveriut": "North Mitrovica", "novoberde": "Novobërdë", "skenderaj": "Skenderaj",
     "shtime": "Shtime", "shterpce": "Shtërpcë", "fushekosove": "Fushë Kosovë",
+    "zveqan": "Zveçan", "leposaviq": "Leposaviq", "zubinpotok": "Zubin Potok",
 }
 COVERAGE = 0.995
 

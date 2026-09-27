@@ -90,6 +90,7 @@ LABELS: dict[str, dict[str, str]] = {
         "Jehovah's Witnesses": "Jehovah's Witnesses", "Adventists": "Seventh-day Adventist",
         "Hindus": "Hinduism", "Jews": "Judaism", "Judaism": "Judaism",
         "Other": "Other religion", "Others": "Other religion", "Undeclared": "Not declared",
+        "Not declare": "Not declared", "atheist": "Atheism", "Atheist": "Atheism",
         "Unknown": "Not stated",
     },
     "language": {
