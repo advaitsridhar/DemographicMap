@@ -1,9 +1,24 @@
-slovenia: SiStat 05C4003S.px and 05C4010S.px, 2026H1
-  212 municipalities; Slovenia 2,135,107
-  municipalities against Slovenia: parts sum to 2,135,107 = 2,135,107
-  national median 45.8 (1 January 2026) against Eurostat's 45.5 a year earlier (SI); 2026 is not published yet
-  Maribor: 2 polygons of that name; the others are slivers under 1% of its extent
-  slovenia: 0 office units unbound
-  slovenia: 1 polygons without an office unit: Maribor (bbox [15.699, 46.5167, 15.6998, 46.517])
-  wrote data/processed/slovenia_obcina.json (390 kB)
-  wrote slovenia_obcina.json: 212 records
+poland_ages: BDL variables median 746289, total 72305, men 72300, women 72295
+  2025: units with all four variables {0: 1, 2: 16, 5: 380}
+  powiats against Poland: parts sum to 37,332,510 = 37,332,510
+  powiats against MAŁOPOLSKIE: parts sum to 3,429,342 = 3,429,342
+  powiats against ŚLĄSKIE: parts sum to 4,261,792 = 4,261,792
+  powiats against LUBUSKIE: parts sum to 963,601 = 963,601
+  powiats against WIELKOPOLSKIE: parts sum to 3,471,302 = 3,471,302
+  powiats against ZACHODNIOPOMORSKIE: parts sum to 1,612,680 = 1,612,680
+  powiats against DOLNOŚLĄSKIE: parts sum to 2,857,273 = 2,857,273
+  powiats against OPOLSKIE: parts sum to 923,536 = 923,536
+  powiats against KUJAWSKO-POMORSKIE: parts sum to 1,971,891 = 1,971,891
+  powiats against POMORSKIE: parts sum to 2,358,409 = 2,358,409
+  powiats against WARMIŃSKO-MAZURSKIE: parts sum to 1,339,498 = 1,339,498
+  powiats against ŁÓDZKIE: parts sum to 2,328,825 = 2,328,825
+  powiats against ŚWIĘTOKRZYSKIE: parts sum to 1,147,293 = 1,147,293
+  powiats against LUBELSKIE: parts sum to 1,980,772 = 1,980,772
+  powiats against PODKARPACKIE: parts sum to 2,053,760 = 2,053,760
+  powiats against PODLASKIE: parts sum to 1,126,679 = 1,126,679
+  powiats against MAZOWIECKIE: parts sum to 5,505,857 = 5,505,857
+  GUS national median 43.8 (31 December 2025); Eurostat 43.4 (1 January 2025)
+  poland_ages: 0 office units unbound
+  poland_ages: 0 polygons without an office unit
+  wrote data/processed/poland_powiat_age.json (691 kB)
+  wrote poland_powiat_age.json: 381 records
