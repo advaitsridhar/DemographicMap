@@ -1,55 +1,99 @@
-latvia: CSB IRD041, IRD031, IRE031, IRD081 and RIG040
-    IRD041 2026: municipalities -> Latvia: 42 parts sum to 1,845,096 against 1,845,096
-    IRD041 2025: municipalities -> Latvia: 43 parts sum to 1,860,565 against 1,860,565
-  IRD041 2026: national median 44.7 against Eurostat's 44.4 for 1 January 2025 (+0.30 years, bound 0.7)
-  admin1: 43 municipalities written; interpolated medians outside CSB's completed year (off by one at most, else the run stops): none
-    IRD081 2026: units -> Rīga: 1 parts sum to 588,911 against 588,911
-    IRD081 2026: units -> Daugavpils: 1 parts sum to 77,486 against 77,486
-    IRD081 2026: units -> Jelgava: 1 parts sum to 54,408 against 54,408
-    IRD081 2026: units -> Jūrmala: 1 parts sum to 52,926 against 52,926
-    IRD081 2026: units -> Liepāja: 1 parts sum to 66,746 against 66,746
-    IRD081 2026: units -> Rēzekne: 1 parts sum to 25,978 against 25,978
-    IRD081 2026: units -> Ventspils: 1 parts sum to 32,479 against 32,479
-    IRD081 2026: units -> Aizkraukles novads: 22 parts sum to 27,825 against 27,825
-    IRD081 2026: units -> Alūksnes novads: 16 parts sum to 12,894 against 12,894
-    IRD081 2026: units -> Augšdaugavas novads: 27 parts sum to 23,443 against 23,443
-    IRD081 2026: units -> Ādažu novads: 3 parts sum to 24,141 against 24,141
-    IRD081 2026: units -> Balvu novads: 21 parts sum to 17,163 against 17,163
-    IRD081 2026: units -> Bauskas novads: 20 parts sum to 40,006 against 40,006
-    IRD081 2026: units -> Cēsu novads: 23 parts sum to 40,963 against 40,963
-    IRD081 2026: units -> Dienvidkurzemes novads: 31 parts sum to 32,450 against 32,450
-    IRD081 2026: units -> Dobeles novads: 21 parts sum to 27,100 against 27,100
-    IRD081 2026: units -> Gulbenes novads: 14 parts sum to 18,215 against 18,215
-    IRD081 2026: units -> Jelgavas novads: 16 parts sum to 31,718 against 31,718
-    IRD081 2026: units -> Jēkabpils novads: 25 parts sum to 38,134 against 38,134
-    IRD081 2026: units -> Krāslavas novads: 26 parts sum to 19,040 against 19,040
-    IRD081 2026: units -> Kuldīgas novads: 20 parts sum to 26,386 against 26,386
-    IRD081 2026: units -> Ķekavas novads: 6 parts sum to 31,668 against 31,668
-    IRD081 2026: units -> Limbažu novads: 19 parts sum to 27,276 against 27,276
-    IRD081 2026: units -> Līvānu novads: 6 parts sum to 9,897 against 9,897
-    IRD081 2026: units -> Ludzas novads: 25 parts sum to 19,659 against 19,659
-    IRD081 2026: units -> Mārupes novads: 4 parts sum to 38,132 against 38,132
-    IRD081 2026: units -> Ogres novads: 20 parts sum to 57,165 against 57,165
-    IRD081 2026: units -> Olaines novads: 2 parts sum to 21,062 against 21,062
-    IRD081 2026: units -> Preiļu novads: 15 parts sum to 15,238 against 15,238
-    IRD081 2026: units -> Rēzeknes novads: 29 parts sum to 27,268 against 27,268
-    IRD081 2026: units -> Ropažu novads: 4 parts sum to 35,540 against 35,540
-    IRD081 2026: units -> Salaspils novads: 2 parts sum to 23,915 against 23,915
-    IRD081 2026: units -> Saldus novads: 21 parts sum to 26,192 against 26,192
-    IRD081 2026: units -> Saulkrastu novads: 3 parts sum to 10,113 against 10,113
-    IRD081 2026: units -> Siguldas novads: 8 parts sum to 31,546 against 31,546
-    IRD081 2026: units -> Smiltenes novads: 16 parts sum to 17,306 against 17,306
-    IRD081 2026: units -> Talsu novads: 22 parts sum to 34,264 against 34,264
-    IRD081 2026: units -> Tukuma novads: 23 parts sum to 42,991 against 42,991
-    IRD081 2026: units -> Valkas novads: 6 parts sum to 7,501 against 7,501
-    IRD081 2026: units -> Valmieras novads: 31 parts sum to 50,324 against 50,324
-    IRD081 2026: units -> Ventspils novads: 13 parts sum to 10,161 against 10,161
-  LVA admin2: 589 of 589 office units bound to 589 polygons (0 set aside as pieces)
-    TSG11-07 2011: counties and cities -> Latvia: 119 parts sum to 1,876,812 against 1,876,812
-  TSG11-07: 1,876,812 of the 2,070,371 residents counted in 2011 answered the home-language question (90.7%)
-  TSG11-07: 118 units of 2011 placed in 43 municipalities, 1 divided by the reform (Aglonas novads); language written for 41 municipalities; left out as holding a divided county: ['Krāslavas novads', 'Preiļu novads']
-  TSG11-07 Iecavas novads: 8,215 people in 2011 against 2,865 in the drawn Iecavas pagasts today; not the same territory, left out
-  TSG11-07: language written for 22 towns and parishes that were a unit of 2009-2021 on their own
-  ethnicity labels the group tree cannot place: []
-  wrote data/processed/latvia_territorial.json (2044 kB)
-  wrote latvia_territorial.json: 632 records
+
+=== nld11
+
+## https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx: HTTP 200, 54,346 bytes, attachment; filename="Religie_2025_tabellen.xlsx"
+   sheets: ['Voorblad', 'Inhoud', 'Introductie', 'Tabel 1', 'Tabel 2', 'Tabel 3', 'Toelichting', 'Begrippen'] (8)
+   sheet 'Voorblad': 22 rows
+     Religie naar regio, 2021/2
+     CBS, Arbeid, inkomen en 
+l
+     maart 2026
+   0 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
+   sheet 'Inhoud': 25 rows
+     Inhoud
+     Inhoudsopgave
+     Introductie | Introductie en uitleg bij 
+     Tabel 1 | Percentage dat zich tot ee
+     Tabel 2 | Percentage per geloofsgroe
+     Tabel 3 | Percentage van de bevolkin
+     Toelichting | Technische toelichting
+     Begrippen | Begrippen, afkortingen en 
+     Contact
+     infoservice@cbs.nl
+     Verklaring van tekens
+     niets (blanco) = het cijfe
+     . = het cijfer is onbekend
+     * = voorlopige cijfers
+     ** = nader voorlopige cijf
+     2020-2024 = 2020 tot en me
+     2020/2024 = het gemiddelde
+     2022/’24 = oogstjaar, boek
+     2021/’21–2022/’24 = oogstj
+     Nota bene: in geval van af
+   1 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
+     > Begrippen | Begrippen, afkortingen
+   sheet 'Introductie': 5 rows
+     Introductie en uitleg bij 
+     Inleiding
+     Deze tabellen bevatten een
+     Tabel 1 bevat het percenta
+   1 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
+     > Deze tabellen bevatten
+
+## https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
+   HTTP 200, 50,135 bytes, text/html; charset=utf-8
+   0 distinct matches of '(?i)[^.<>]{0,200}(?:respondent|steekproef|enquête|waarneming|ondervraagd)[^.<>]{0,200}'
+
+=== aut11
+
+## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis
+   HTTP 200, 128,067 bytes, text/html; charset=utf-8
+   8 distinct matches of 'href=\\"[^\\"]*(?:\\.pdf|\\.ods|\\.xlsx|presse|Religion)[^\\"]*\\"'
+   - href="/medien/pressemitteilungen"
+   - href="/medien/pressebilder"
+   - href="/medien/pressekontakt"
+   - href="/fileadmin/pages/439/neu__Religion_2021_Bundesland.ods"
+   - href="/fileadmin/pages/439/neu_Religionszugehoerigkeit_2021__Privathaushalte.ods"
+   - href="/fileadmin/pages/439/wechsel_religion_nach_bundesland_2025.ods"
+   - href="/fileadmin/pages/439/neu__Religion__1_.ods"
+   - href="/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
+   ...0{fill:#555555;} .st1{fill:#B0063D;} .st2{fill:none;stroke:#000000;stroke-width:0.5314;stroke-miterlimit:3.8637;} Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Warenkorb 0 Karriere Erhebungen Merkliste DE EN Deutsch Englisch Statistiken zurück Statistiken Arbeitsmarkt Bevölkerung und Soziales Energie und Umwelt Forschung, Innovation, Digitalisierung Industrie, Bau, Handel und Dienstleistungen Internationaler Handel Land- und Fo
+   ...datenbank Unternehmensregister Adress-, Gebäude- und Wohnungsregister Verbrauchergesundheitsinformationssystem (VIS) Forschungsstättenkatalog Services/Tools zurück Services/Tools Serviceangebote Auskunftsservices Statistik Austria Portal – Login für Erhebungen Publikationen STATjournal Mail-Abonnements Wertsicherungsrechner Persönlicher Inflationsrechner Lebenserwartungsrechner Gehaltsrechner STATbox – Datenübertragung Regionale &amp; internationale Daten STATatlas – interaktive Karten Blick auf
+   ...ach Regionen ITGS-Tool – Außenhandel Daten nach SDDS+ Medien zurück Medien Pressemitteilungen Veröffentlichungskalender Veröffentlichungsrichtlinie Pressebilder Pressekontakt Über uns zurück Über uns Organisation Werte und Grundlagen Veranstaltungen Erhebungen Karriere Internationales Innovationen und experimentelle Statistik Suche Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Suche. Zur Auswahl von autovervollständigten Ergebn
+   ...ten 2025 5 975 Gestiegen +3,9 % zu 2024 Beschreibung Informationen zur Religionszugehörigkeit für die Gesamtbevölkerung liegen von 1951 bis 2001 als Selbstangabe aus den Volkszählungen vor. Seit der Umstellung der Volkszählungen auf registerbasierte Erhebung wird dieses Merkmal im Rahmen des Zensus nicht mehr erhoben. 2021 führte Statistik Austria im Auftrag des Bundeskanzleramts eine freiwillige Erhebung über "Religionszugehörigkeit der Bevölkerung in Privathaushalten" durch, welche nach Zuschä
+   ...elbstangabe aus den Volkszählungen vor. Seit der Umstellung der Volkszählungen auf registerbasierte Erhebung wird dieses Merkmal im Rahmen des Zensus nicht mehr erhoben. 2021 führte Statistik Austria im Auftrag des Bundeskanzleramts eine freiwillige Erhebung über "Religionszugehörigkeit der Bevölkerung in Privathaushalten" durch, welche nach Zuschätzung der Religionszugehörigkeit der Anstaltsbevölkerung die Zeitreihe seit 1951 ergänzt. Zusätzlich erfasst Statistik Austria die Zahl der Austritte 
+   ...l der Austritte sowie der Aufnahmen bzw. Wiederaufnahmen unter den kirchenbeitragspflichtigen Religionsgemeinschaften in Österreich (römisch-katholisch, evangelisch A.B. und H.B., altkatholisch). Diese Statistik der Religionswechsel beruht auf einer Erhebung bei den Religionsgemeinschaften und ist als Zeitreihe ab 2001 sowie ab 2011 auch für Bundesländer verfügbar. Grafiken, Tabellen, Karten Highlights Bevölkerung 1951 bis 2021 nach ausgewählter Religion bzw. Kirche und Religionsgesellschaft – a
+   ...ACT6"], "precision": 1 } ] }, "options": { "searching": true, "ordering": true, "pageLength": 25, "border_bottom": false, "export": true }, "footer": null, "rowGroups": null} Q: STATISTIK AUSTRIA, Volkszählungen 1951 bis 2001. 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich O
+   ...] }, "options": { "searching": true, "ordering": true, "pageLength": 25, "border_bottom": false, "export": true }, "footer": null, "rowGroups": null} Q: STATISTIK AUSTRIA, Volkszählungen 1951 bis 2001. 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichp
+   ...kräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichprobenerhebung 2021 gilt: Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet. – In 2021 wurden bei der Frage zu &quot;Religion&quot; &quot;weiß nicht&quot; und &quot;keine Angabe&quot; durch die Gewichtung ausgegl
+   ...ung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichprobenerhebung 2021 gilt: Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet. – In 2021 wurden bei der Frage zu &quot;Religion&quot; &quot;weiß nicht&quot; und &quot;keine Angabe&quot; durch die Gewichtung ausgeglichen, dahe
+   ods ...22,4 16,8 16,5 20,5 17,3 18,2 22,6 17,8 18,9 34,1 Q: STATISTIK AUSTRIA, 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu "Religionszugehörigkeit", 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – "Andere Religion, Konfession oder Glaubensgemeinschaft beinhaltet "Judentum", "Hinduismus", "Buddhismus", "Staatlich registrierte Bekenntnisgemeinschaften", "Sonstige Religion, Konfession oder Glaubensgemeinschaft". – Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufalls
+   ods ...istrierte Bekenntnisgemeinschaften", "Sonstige Religion, Konfession oder Glaubensgemeinschaft". – Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet, Werte mit weniger als 3 000 Personen sind statistisch nicht interpretierbar.
+
+=== svn7
+   4815 tables; 137 by settlement:
+   - 0558870S.px | Naseljena stanovanja po povprečni površini stanovanja na osebo, preračun na občine, veljavne dne 1. 1. 2007, Slovenija, popis 2002
+   - 05C1008S.px | Gostota naseljenosti in indeks feminitete, kohezijski regiji, Slovenija, polletno
+   - 05C2010S.px | Gostota naseljenosti in indeks feminitete, statistične regije, Slovenija, polletno
+   - 05C4010S.px | Gostota naseljenosti in indeks feminitete, občine, Slovenija, polletno
+   - 05C5002S.px | Prebivalstvo po velikih in petletnih starostnih skupinah in spolu, občine in naselja, Slovenija, 2008 - 2020
+   - 05C5003S.px | Prebivalstvo po spolu in po starosti, občine in naselja, Slovenija, letno
+   - 05C5006S.px | Prebivalstvo - izbrani kazalniki, občine in naselja, Slovenija, letno
+   - 05C5092S.px | Prebivalstvo po velikih in petletnih starostnih skupinah in spolu, občine in naselja, Slovenija, 2008H1 - 2014H2
+   - 05F4005S.px | Gospodinjstva po številu članov, občine in naselja, Slovenija, večletno
+   - 05G2018S.px | Prebivalstvo, staro 15 ali več let, po izobrazbi, občine in naselja, Slovenija, letno
+   - 05G3020S.px | Prebivalstvo, staro 15 ali več let, po statusu aktivnosti, občine in naselja, Slovenija, letno
+   - 05I1088S.px | Naravno gibanje prebivalstva, naselja, Slovenija, 2014 - 2019
+   - 05I1095S.px | Naravno gibanje prebivalstva, občine in naselja, Slovenija, 1979 - 2013
+   - 05I2088S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2012 - 2019
+   - 05I2089S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2017
+   - 05I2090S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2016
+   - 05I2091S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2015
+   - 05I2092S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2014
+   - 05I2093S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2013
+   - 05I2094S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2012
+   - 05I2095S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 1995 - 2011
+   - 05W0101S.px | Družine,naselja, Slovenija, popis 2002
+   - 05W0201S.px | Gospodinjstva, naselja, Slovenija, popis 2002
+   - 05W0301S.px | Prebivalstvo po statusu aktivnosti, občine in naselja, Slovenija, popis 2002
+   - 05W0302S.px | Delovno aktivno prebivalstvo po dejavnosti, naselja, Slovenija, popis 2002
