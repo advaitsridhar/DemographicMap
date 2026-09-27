@@ -92,8 +92,9 @@ PERCEPTION_SOURCE = (f"{SOURCE}, Cuadro 12: population aged 12 and over by the i
 NATIONAL = 10_773_983
 NATIONAL_12 = 8_616_295
 # Question 64's answers, in the order Cuadro 12 prints them, as the map names them.
-# "Morena" and "India" are colour terms in the Dominican Republic, not
-# Afro-descendant or indigenous peoples, and carry the country's name.
+# "Morena" and "India" are the Dominican Republic's own colour terms, and
+# carry the country's name: india is not an indigenous people, and ONE's
+# report groups none of the eight answers into a larger category.
 PERCEIVED = {"Negra o negro": "Black", "Morena o moreno": "Moreno (Dominican Republic)",
              "Mestiza o mestizo": "Mestizo", "Mulata o mulato": "Mulatto",
              "India o indio": "Indio (Dominican Republic)", "Asiática o asiático": "Asian",
@@ -449,8 +450,10 @@ def perception_fields(area: dict[str, Any], header: list[str]) -> dict[str, Any]
             "características culturales\"), in ONE's eight answers -- negra, morena, mestiza, "
             "mulata, india, asiática, blanca, otra. ONE tabulates it for everyone aged 12 and "
             f"over: {total:,} people here, of whom {answers[UNANSWERED]:,} are \"no sabe o no "
-            "responde\" and left out of the shares. Morena and india are colour terms in the "
-            "Dominican Republic, not Afro-descendant or indigenous peoples."),
+            "responde\" and left out of the shares. India (indio) is a colour term in the "
+            "Dominican Republic, the brown of much of its mixed majority, and not an indigenous "
+            "people; morena (moreno) names a darker skin. ONE's report on the census groups "
+            "none of the eight answers into a larger category."),
     }
 
 
