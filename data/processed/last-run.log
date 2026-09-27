@@ -1,19 +1,17 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 294, in main
-    records = build(args.year)
-              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 239, in build
-    check_sum((totals[g] for g in GEMEINDEN), national, "Gemeinden against Liechtenstein")
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/central_ages.py", line 117, in check_sum
-    summed = sum(parts)
-             ^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/liechtenstein.py", line 239, in <genexpr>
-    check_sum((totals[g] for g in GEMEINDEN), national, "Gemeinden against Liechtenstein")
-               ~~~~~~^^^
-KeyError: 'Vaduz'
+== get https://www.stat.gov.az/source/demoqraphy/az/001_17.xls
+  160,256 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_17.xls: 3 sheets: 1.17. | 1.17. sheher | 1.17. kend
+  -- sheet '1.17.': 135 rows x 7 cols
+    r134:  | 1) Əhalinin siyahıyaalınması dövründə işğal altında olmuş ərazilərdəki əhali istisna olmaqla. | 
+== get https://www.stat.gov.az/source/demoqraphy/az/001_18.xls
+  168,960 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_18.xls: 1 sheets: 1.18
+  -- sheet '1.18': 301 rows x 39 cols
+== get https://www.stat.gov.az/source/demoqraphy/az/001_19.xls
+  112,640 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_19.xls: 1 sheets: 1.19.
+  -- sheet '1.19.': 475 rows x 11 cols
+== get https://www.stat.gov.az/source/demoqraphy/az/001_23.xls
+  828,928 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_23.xls: 35 sheets: 01.01.2020 il (bütün əhali) | 01.01.2020 il (kişilər) | 01.01.2020 il (qadınlar) | 01.01.2020 il (şəhər yerləri) | 01.01.2020 il (kənd yerləri) | 01.01.2021 il (bütün əhali) | 01.01.2021 il (kişilər) | 01.01.2021 il (qadınlar) | 01.01.2021 il (şəhər yerləri) | 01.01.2021 il (kənd yerləri) | 01.01.2022 il (bütün əhali) | 01.01.2022 il (kişilər) | 01.01.2022 il (qadınlar) | 01.01.2022 il (şəhər yerləri) | 01.01.2022 il (kənd yerləri) | 01.01.2023 il (bütün əhali) | 01.01.2023 il (kişilər) | 01.01.2023 il (qadınlar) | 01.01.2023 il (şəhər yerləri) | 01.01.2023 il (kənd yerləri) | 01.01.2024 il (bütün əhali) | 01.01.2024 il (kişilər) | 01.01.2024 il (qadınlar) | 01.01.2024 il (şəhər yerləri) | 01.01.2024 il (kənd yerləri) | 01.01.2025 il (bütün əhali) | 01.01.2025 il (kişilər) | 01.01.2025 il (qadınlar) | 01.01.2025 il (şəhər yerləri) | 01.01.2025 il (kənd yerləri) | 01.01.2026 il (bütün əhali) | 01.01.2026 il (kişilər) | 01.01.2026 il (qadınlar) | 01.01.2026 il (şəhər yerləri) | 01.01.2026 il (kənd yerləri)
+  -- sheet '01.01.2020 il (bütün əhali)': 136 rows x 22 cols
