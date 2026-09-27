@@ -1,6 +1,2 @@
-== get https://nip.tuik.gov.tr/?value=OrtancaYas
-  16,457 bytes, begins b'<!DOCTYPE html>\n'
-  failed: error('missing ), unterminated subpattern at position 0')
-== get https://nip.tuik.gov.tr/Home/Adnks
-  18,445 bytes, begins b'<!DOCTYPE html>\n'
-  failed: error('missing ), unterminated subpattern at position 0')
+== xls https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx 5 24
+  !! URLError: <urlopen error [Errno 110] Connection timed out>
