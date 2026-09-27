@@ -145,6 +145,8 @@ def build() -> list[dict[str, Any]]:
                 totals[place] = totals.get(place, 0) + value(row)
                 continue
             (males if sex == "M" else females).setdefault(place, Counter())[years[age]] += value(row)
+    if "999" not in totals:
+        wanted.remove("999")          # no rows: nobody left undistributed by age
     for place in wanted:
         made = sum(males.get(place, Counter()).values()) + sum(females.get(place, Counter()).values())
         if abs(made - totals.get(place, -1)) > 0.5:
@@ -152,7 +154,16 @@ def build() -> list[dict[str, Any]]:
                              f"{totals.get(place)}")
     check_sum((totals[c] for c in counties), totals["HU"], "counties and Budapest against Hungary")
     for county in counties:
-        kids = [d for d in [*districts, "999"] if parent_of[d] == county]
+        kids = [d for d in districts if parent_of[d] == county]
+        if county == "HU110":
+            # Budapest's figure holds people KSH could not place in a
+            # district (code 999); they are nobody's district.
+            rest = totals[county] - sum(totals[d] for d in kids)
+            if not 0 <= rest < 0.01 * totals[county] or ("999" in totals and rest != totals["999"]):
+                raise SystemExit(f"hungary: Budapest's districts leave {rest:,.0f} unplaced")
+            log(f"  Budapest: its 23 districts make {totals[county] - rest:,.0f} of "
+                f"{totals[county]:,.0f}; {rest:,.0f} are counted in no district")
+            continue
         check_sum((totals[d] for d in kids), totals[county], f"districts against {name_of[county]}")
     both = Counter(males["HU"])
     both.update(females["HU"])
