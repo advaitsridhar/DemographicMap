@@ -19,9 +19,22 @@ person, which is the finest CYSTAT publishes for them.
 areas under the effective control of its Government. Kyrenia district lies
 wholly outside them, so it and its communities have no figure here, and say
 why. Nicosia and Famagusta districts lie partly outside them: the district
-figures are those of the part the census covered, and say so. The map's
-communities in the areas the census did not reach find no CYSTAT row and are
-left as they are.
+figures are those of the part the census covered, and say so. Every polygon
+with no CYSTAT community says why, and its population marker carries
+``displaces_before`` (1974), so that where the build honours it Wikidata's
+1973 counts for the communities outside the census stop standing in for a
+figure.
+
+**Binding.** A community goes on the polygon of its name in its district, or
+across a district line where the name is unique in the country (Ormideia and
+Xylofagou, Larnaca communities the boundary file files under Famagusta); the
+records and the district rows say where the map's districts and CYSTAT's
+part. Where the file draws a name twice, the community is pinned to the
+polygon holding its village (``PINNED``); the polygon labelled Sia holds Sia
+and Kornos and carries both (``SUMMED``); Pano and Kato Koutrafas, whose
+labels the file swaps, are left off (``SWAPPED``). Each was measured against
+GeoNames' and Wikidata's points for the villages. A community of fewer than
+50 residents has no median or sex ratio shown.
 
 **What is not here.** CYSTAT publishes the 2021 census's religion and
 ethnic/religious group for the whole country only -- by citizenship group
@@ -99,6 +112,43 @@ ALIASES = {"Agios Georgios Kafkallou": "Agios Georgios Kafkaliou",
 # once the parts are drawn as one (make_redrawn merges them under its id),
 # never on a part while the others are still drawn beside it.
 MERGED = {"Dromolaxia - Meneou": ("Dromolaxia", "Meneou")}
+# Communities whose name the boundary file draws twice, bound to the polygon
+# that holds the village (GeoNames' and Wikidata's points agree). The other
+# "Katydata" holds Agios Georgios (Lefkas); the other "Trimithousa" is the
+# Trimithousa of the Chrysochou area (Wikidata Q7842235), a village apart from
+# CYSTAT's Tremithousa near Paphos (Q7838121).
+PINNED = {"Katydata": "46923920B11980221307495", "Tremithousa": "46923920B17841566161623"}
+OTHER_OF_NAME = {
+    "46923920B20193016295799": (
+        "One of two polygons the boundary file labels Katydata. CYSTAT's Katydata (1416) is on the "
+        "other, which holds the village; this one holds Agios Georgios (Lefkas), by GeoNames, a "
+        "community CYSTAT's 2021 census does not list."),
+    "46923920B86597490798508": (
+        "The Trimithousa of the Chrysochou area (Wikidata Q7842235), a village apart from CYSTAT's "
+        "Tremithousa near Paphos (6023), which is on the other polygon of the name. CYSTAT's 2021 "
+        "census lists no community of this one's."),
+}
+# A polygon that is two communities: (its label, its map district) -> the
+# CYSTAT communities summed onto it. "Sia" (47.7 km2, filed under Larnaca)
+# holds the villages of both Sia (Nicosia district) and Kornos (Larnaca), by
+# GeoNames' and Wikidata's points, and the map draws no Kornos.
+SUMMED = {("Sia", "Larnaca"): ("Sia", "Kornos")}
+# Two neighbours whose labels the boundary file swaps: GeoNames and Wikidata
+# both put each village 0.6-1 km inside the other's polygon. Neither figure is
+# put on either.
+SWAPPED = ("Pano Koutrafas", "Kato Koutrafas")
+# Communities the map does not draw, inside the polygon of the one named:
+# GeoNames' Anthoupoli (Archangelos-Anthoupoli) lies in Lakatameia's, its
+# Troodos in Pano Platres's.
+HOLDS = {"Lakatameia": "Synoikismos Anthoupolis", "Pano Platres": "Troodos"}
+# Below this many residents a community's median age and sex ratio are not
+# shown: 19 people with 18 men read as a ratio of 1,800.
+MIN_RESIDENTS = 50
+# The year before which an encyclopaedia's head count for a polygon this file
+# says the census does not reach is displaced by the statement (the build's
+# ``displaces_before``): the Republic's last census of the whole island was
+# 1973's.
+DISPLACES_BEFORE = 1974
 SUFFIXES = ("lefkosias", "lemesou", "larnakas", "pafou", "ammochostou", "keryneias", "municipality")
 WHY_OUTSIDE = ("Kyrenia district has been outside the effective control of the Government of the "
                "Republic of Cyprus since 1974. The Republic's censuses since then, the 2021 census "
@@ -325,7 +375,8 @@ def build() -> list[dict[str, Any]]:
             records.append(record(
                 f"CYP-2021-{fold(name)}", name, level="admin1", parent="CYP", country="CYP",
                 match_by="shape_id", shape_id=shape["id"],
-                population=gap(NOT_AVAILABLE, WHY_OUTSIDE), median_age=gap(NOT_AVAILABLE, WHY_OUTSIDE),
+                population=dict(gap(NOT_AVAILABLE, WHY_OUTSIDE), displaces_before=DISPLACES_BEFORE),
+                median_age=gap(NOT_AVAILABLE, WHY_OUTSIDE),
                 sex_ratio=gap(NOT_AVAILABLE, WHY_OUTSIDE), religion=gap(NOT_AVAILABLE, WHY_OUTSIDE),
                 language=gap(NOT_AVAILABLE, WHY_OUTSIDE), ethnicity=gap(NOT_AVAILABLE, WHY_OUTSIDE)))
             continue
@@ -357,6 +408,7 @@ def build() -> list[dict[str, Any]]:
     # Second level: bind each CYSTAT community to the map's polygon of that
     # name within the same district, one-to-one.
     district_of = {s["id"]: s["name"] for s in admin1.values()}
+    by_id = {s["id"]: s for s in admin2}
     by_key: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for s in admin2:
         dname = district_of.get(s["parent"], "")
@@ -366,16 +418,43 @@ def build() -> list[dict[str, Any]]:
     bound: dict[str, dict[str, Any]] = {}
     used: set[str] = set()
     lost: list[str] = []
-    across: list[str] = []
+    across: list[tuple[str, str, str]] = []           # (community code, its district, the map's)
+    why_not: dict[str, str] = {}                      # polygon id -> why it has no community
     drawn = {fold(s["name"]) for s in admin2}
+    name_code = {unit["name"]: code for code, unit in comms.items()}
+    summed_codes = {name_code[n]: label for label, names in SUMMED.items() for n in names
+                    if n in name_code}
+    for label, names in SUMMED.items():
+        if any(n not in name_code for n in names):
+            raise SystemExit(f"cyprus_census: SUMMED names {names}, not all in CYSTAT's table")
     for code, unit in sorted(comms.items()):
         dname = rev[unit["district"]]
+        if code in summed_codes:
+            continue                                  # summed onto one polygon below
+        if unit["name"] in SWAPPED:
+            lost.append(f"{unit['name']} ({code}, {dname}, {unit['total']:,.0f}): its polygon's label "
+                        "is swapped with its neighbour's")
+            continue
         hit = None
+        if unit["name"] in PINNED:
+            hit = by_id.get(PINNED[unit["name"]])
+            if hit is None or not set(keys(hit["name"])) & set(keys(unit["name"])):
+                raise SystemExit(f"cyprus_census: PINNED sends {unit['name']} to "
+                                 f"{PINNED[unit['name']]}, which is {hit and hit['name']!r}")
+            bound[code] = hit
+            used.add(hit["id"])
+            continue
         parts = MERGED.get(unit["name"])
         if parts:
             if any(fold(p) in drawn for p in parts[1:]):
                 lost.append(f"{unit['name']} ({code}, {dname}, {unit['total']:,.0f}): drawn as "
                             f"its parts {list(parts)}, which make_redrawn is to merge")
+                for s in admin2:
+                    if fold(s["name"]) in {fold(p) for p in parts}:
+                        why_not[s["id"]] = (
+                            f"CYSTAT's 2021 census counts {unit['name']} ({code}) as one community of "
+                            f"{unit['total']:,.0f} residents, which the boundary file draws as "
+                            f"{' and '.join(parts)}; its figures go on them once they are drawn as one.")
                 continue
             unit = dict(unit, name=parts[0])
         for k in keys(unit["name"]):
@@ -385,34 +464,106 @@ def build() -> list[dict[str, Any]]:
                 break
         if hit is None:
             # The boundary file files a few communities under the district
-            # next door (Sia, Ormideia, Xylofagou): a name the whole country
-            # has once, on both sides, is the same place.
+            # next door (Ormideia, Xylofagou): a name the whole country has
+            # once, on both sides, is the same place.
             for k in keys(unit["name"]):
                 cands = {s["id"]: s for (d, kk), ss in by_key.items() if kk == k for s in ss}
                 same = [c for c in comms.values() if k in keys(c["name"])]
                 if len(cands) == 1 and len(same) == 1 and next(iter(cands)) not in used:
                     hit = next(iter(cands.values()))
-                    across.append(f"{unit['name']} ({dname}) on {hit['name']} "
-                                  f"({district_of.get(hit['parent'], '?')})")
                     break
         if hit is None:
             lost.append(f"{unit['name']} ({code}, {dname}, {unit['total']:,.0f})")
             continue
         bound[code] = hit
         used.add(hit["id"])
-    lost_people = sum(comms[c]["total"] for c in comms if c not in bound)
-    log(f"  bound across a district line, by a name unique in the country: {across}")
-    log(f"  {len(bound)} of {len(comms)} CYSTAT communities bound; {len(lost)} unbound "
-        f"({lost_people:,.0f} people): {lost}")
-    spare = [f"{s['name']} ({district_of.get(s['parent'], '?')})" for s in admin2
-             if s["id"] not in used and district_of.get(s["parent"]) != OUTSIDE]
-    log(f"  {len(spare)} polygons outside Kyrenia with no CYSTAT community: {spare}")
+    # Polygons that are two communities: the sum of both.
+    pooled: dict[str, dict[str, Any]] = {}
+    for (label, dname), names in SUMMED.items():
+        hits = [s for s in admin2 if s["name"] == label and district_of.get(s["parent"]) == dname]
+        if len(hits) != 1 or hits[0]["id"] in used:
+            raise SystemExit(f"cyprus_census: no single free polygon {label!r} in {dname}")
+        codes = [name_code[n] for n in names]
+        unit = {"name": " and ".join(names), "district": None, "groups": Counter(), "men": 0.0,
+                "women": 0.0, "total": 0.0, "codes": codes}
+        for c in codes:
+            unit["groups"].update(comms[c]["groups"])
+            for k in ("men", "women", "total"):
+                unit[k] += comms[c][k]
+        key = "+".join(codes)
+        pooled[key] = unit
+        bound[key] = hits[0]
+        used.add(hits[0]["id"])
     for code, shape in bound.items():
-        unit = comms[code]
+        for c in pooled[code]["codes"] if code in pooled else [code]:
+            theirs, drawn_in = rev[comms[c]["district"]], district_of.get(shape["parent"], "?")
+            if theirs != drawn_in:
+                across.append((c, theirs, drawn_in))
+    lost_people = sum(comms[c]["total"] for c in comms
+                      if c not in bound and not any(c in u["codes"] for u in pooled.values()))
+    log(f"  drawn across a district line: {[(comms[c]['name'], t, m) for c, t, m in across]}")
+    log(f"  {len(comms) - len(lost)} of {len(comms)} CYSTAT communities bound "
+        f"({len(pooled)} polygon(s) carrying two); {len(lost)} unbound ({lost_people:,.0f} people): {lost}")
+
+    # The districts say which communities the map draws across their lines:
+    # CYSTAT's district figure is its own district's, and the polygon is not.
+    for rec in records:
+        if rec["level"] != "admin1" or rec["name"] == OUTSIDE:
+            continue
+        name = rec["name"]
+        out_of = [c for c, t, m in across if t == name]
+        into = [c for c, t, m in across if m == name]
+        if not (out_of or into):
+            continue
+        words = []
+        if out_of:
+            words.append(f"includes {listing(comms, out_of)}, which the boundary file draws in "
+                         f"{' and '.join(sorted({m for c, t, m in across if t == name}))}")
+        if into:
+            words.append(f"leaves out {listing(comms, into)}, which CYSTAT counts in "
+                         f"{' and '.join(sorted({t for c, t, m in across if m == name}))} and the "
+                         "boundary file draws inside this district")
+        rec["population_note"] = " ".join(filter(None, [
+            rec.get("population_note"),
+            f"CYSTAT's figure for {name} district " + "; and it ".join(words) + "."]))
+
+    # The villages the map does not draw, inside the polygon of another.
+    inside_note: dict[str, str] = {}
+    for host, guest in HOLDS.items():
+        code = name_code.get(guest)
+        if code and code not in bound:
+            inside_note[host] = (f"The polygon also holds {guest} ({comms[code]['total']:,.0f} residents), "
+                                 "which CYSTAT counts as a community of its own and the map does not "
+                                 "draw; its people are not in this figure.")
+    for code, shape in bound.items():
+        unit = pooled.get(code) or comms[code]
         fields = {"population": measure(int(unit["total"]), year=YEAR, source=src["community"])}
+        notes = []
+        if code in pooled:
+            parts = [comms[c] for c in unit["codes"]]
+            notes.append(
+                f"The boundary file draws {' and '.join(p['name'] for p in parts)} as one polygon, "
+                f"labelled {shape['name']!r}: it holds both villages, by GeoNames' and Wikidata's points, "
+                f"and no polygon is drawn for {parts[-1]['name']}. It carries their sum ("
+                + ", ".join(f"{p['name']} {p['total']:,.0f}, {rev[p['district']]} district" for p in parts)
+                + ").")
+        for c, theirs, drawn_in in across:
+            if c == code or (code in pooled and c in unit["codes"]):
+                notes.append(f"CYSTAT counts {comms[c]['name']} in {theirs} district; the boundary file "
+                             f"draws it in {drawn_in}.")
+        if shape["name"] in inside_note:
+            notes.append(inside_note[shape["name"]])
+        if notes:
+            fields["population_note"] = " ".join(notes)
         grouped = [(lo, w, n) for (lo, w), n in unit["groups"].items()]
         old = sum(n for lo, w, n in grouped if w is None)
-        if unit["total"] > 0 and old >= unit["total"] / 2:
+        if 0 < unit["total"] < MIN_RESIDENTS:
+            few = gap(NOT_AVAILABLE, (
+                f"The 2021 census counts {count_of(unit['total'], 'resident')} here ({count_of(unit['men'], 'man', 'men')} "
+                f"and {count_of(unit['women'], 'woman', 'women')}); below {MIN_RESIDENTS} residents a median "
+                "age and a ratio of men to women describe a handful of people, and are not shown."))
+            fields.update(median_age=few, sex_ratio=few)
+        elif unit["total"] > 0 and old >= unit["total"] / 2:
             # Half its people or more are in the open top group (80 and over):
             # the median is somewhere above 80 and cannot be placed.
             fields.update(age_fields(None, unit["men"], unit["women"], year=YEAR,
@@ -429,26 +580,75 @@ def build() -> list[dict[str, Any]]:
             empty = gap(NOT_AVAILABLE, "The 2021 census counts no residents in this community, "
                                        "so it has no median age or sex ratio.")
             fields.update(median_age=empty, sex_ratio=empty)
-        if unit["total"] > 0 and not unit["women"]:
+        if unit["total"] >= MIN_RESIDENTS and not unit["women"]:
             fields["sex_ratio"] = gap(NOT_AVAILABLE, (
-                f"The 2021 census counts {unit['men']:,.0f} men and no women in this community, "
-                "so a ratio of men to women is not defined."))
+                f"The 2021 census counts {count_of(unit['men'], 'man', 'men')} and no women in this "
+                "community, so a ratio of men to women is not defined."))
+        elif unit["total"] >= MIN_RESIDENTS and isinstance(fields.get("sex_ratio"), dict) \
+                and fields["sex_ratio"].get("value") is not None \
+                and not 70 <= fields["sex_ratio"]["value"] <= 140:
+            fields["sex_ratio_note"] = (
+                f"As the census counts it: {count_of(unit['men'], 'man', 'men')} and "
+                f"{count_of(unit['women'], 'woman', 'women')}.")
         records.append(record(
             f"CYP-2021-{code}", shape["name"], level="admin2", parent="CYP", country="CYP",
-            match_by="shape_id", shape_id=shape["id"], codes={"cystat": code},
+            match_by="shape_id", shape_id=shape["id"],
+            codes={"cystat": code if code not in pooled else unit["codes"]},
             parent_name=district_of.get(shape["parent"]),
             religion=gap(NOT_AVAILABLE, WHY_COMMUNITY), language=gap(NOT_AVAILABLE, WHY_COMMUNITY),
             ethnicity=gap(NOT_AVAILABLE, WHY_COMMUNITY),
             sources=[cite("community", "population/median_age/sex_ratio")], **fields))
+
+    # Every other polygon says why it has no figure. Its population marker
+    # displaces an encyclopaedia's figure from before 1974 (Wikidata's 1973
+    # counts for the communities the Republic's censuses have not reached
+    # since), where the build honours ``displaces_before``.
+    swapped_ids = {s["id"] for s in admin2 if s["name"] in SWAPPED}
+    for sid in swapped_ids:
+        why_not[sid] = (
+            "The boundary file's labels for Pano and Kato Koutrafas are swapped: GeoNames and Wikidata "
+            "both put the village of Pano Koutrafas inside the polygon labelled Kato Koutrafas and "
+            "Kato Koutrafas inside the one labelled Pano Koutrafas. CYSTAT counts "
+            + " and ".join(f"{comms[name_code[n]]['name']} {comms[name_code[n]]['total']:,.0f}"
+                           for n in SWAPPED if n in name_code)
+            + " residents; neither figure is put on a polygon that may be the other village.")
     for s in admin2:
-        if district_of.get(s["parent"]) == OUTSIDE:
-            records.append(record(
-                f"CYP-2021-outside-{s['id']}", s["name"], level="admin2", parent="CYP", country="CYP",
-                match_by="shape_id", shape_id=s["id"], parent_name=OUTSIDE,
-                population=gap(NOT_AVAILABLE, WHY_OUTSIDE), median_age=gap(NOT_AVAILABLE, WHY_OUTSIDE),
-                sex_ratio=gap(NOT_AVAILABLE, WHY_OUTSIDE), religion=gap(NOT_AVAILABLE, WHY_OUTSIDE),
-                language=gap(NOT_AVAILABLE, WHY_OUTSIDE), ethnicity=gap(NOT_AVAILABLE, WHY_OUTSIDE)))
+        dname = district_of.get(s["parent"], "")
+        if s["id"] in used:
+            continue
+        if dname == OUTSIDE:
+            why = WHY_OUTSIDE
+        elif s["id"] in why_not:
+            why = why_not[s["id"]]
+        elif s["id"] in OTHER_OF_NAME:
+            why = OTHER_OF_NAME[s["id"]]
+        else:
+            why = (f"CYSTAT's 2021 census (table 1891108E) lists no municipality or community of this "
+                   f"name in {dname} district. The Republic's censuses since 1974 have been taken only "
+                   "in the areas under the effective control of its Government, and name each "
+                   "community they count; this is not one of them.")
+        pop = dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE)
+        records.append(record(
+            f"CYP-2021-{'outside' if dname == OUTSIDE else 'none'}-{s['id']}", s["name"], level="admin2",
+            parent="CYP", country="CYP", match_by="shape_id", shape_id=s["id"], parent_name=dname,
+            population=pop, median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+            religion=gap(NOT_AVAILABLE, why), language=gap(NOT_AVAILABLE, why),
+            ethnicity=gap(NOT_AVAILABLE, why)))
+    log(f"  {sum(1 for s in admin2 if s['id'] not in used and district_of.get(s['parent']) != OUTSIDE)} "
+        "polygons outside Kyrenia with no community say why")
     return records
+
+
+def count_of(n: float, one: str, many: str | None = None) -> str:
+    """'1 man', '2 men', '0 women'."""
+    return f"{n:,.0f} {one if round(n) == 1 else (many or one + 's')}"
+
+
+def listing(comms: dict[str, dict[str, Any]], codes: list[str]) -> str:
+    people = sum(comms[c]["total"] for c in codes)
+    names = [comms[c]["name"] for c in codes]
+    return (" and ".join([", ".join(names[:-1]), names[-1]] if len(names) > 1 else names)
+            + f" ({people:,.0f} people)")
 
 
 def main() -> int:
