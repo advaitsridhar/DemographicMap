@@ -185,12 +185,17 @@ def cmd_ine_pt(args: argparse.Namespace) -> int:
             dims = entry.get("Dimensoes") or {}
             for dim in (dims.get("Descricao_Dim") or [])[:8]:
                 log(f"      dim {dim.get('dim_num')}: {dim.get('abrv')}")
-            for dim in (dims.get("Categoria_Dim") or [])[:8]:
+            # Categoria_Dim is a list of one-key dicts, "Dim_Num2_1111601":
+            # [{...}], one per category; grouped by the dimension they are of.
+            grouped: dict[str, list[dict[str, Any]]] = {}
+            for dim in dims.get("Categoria_Dim") or []:
                 for key, cats in dim.items():
                     cats = cats if isinstance(cats, list) else [cats]
-                    sample = ", ".join(f"{c.get('cat_id')}={c.get('categ_dsg')}"
-                                       for c in cats[:args.dims])
-                    log(f"      {key} ({len(cats)}): {sample[:300]}")
+                    grouped.setdefault("_".join(key.split("_")[:2]), []).extend(cats)
+            for key, cats in grouped.items():
+                sample = ", ".join(f"{c.get('cat_id')}={c.get('categ_dsg')}"
+                                   for c in cats[:args.dims])
+                log(f"      {key} ({len(cats)}): {sample[:400]}")
     return 0
 
 
