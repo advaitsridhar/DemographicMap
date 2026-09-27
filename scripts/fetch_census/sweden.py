@@ -121,7 +121,8 @@ def main() -> int:
 
     shapes = load_units("SWE", "admin2")
     labels = {s["id"]: s["name"] for s in shapes}
-    bound, _m, _l, _p = bind_rows("SWE", "admin2", {c: (sv[c], sv[c[:2]]) for c in kommuner})
+    bound, _m, _l, _p = bind_rows("SWE", "admin2", {c: (sv[c], sv[c[:2]]) for c in kommuner},
+                                  aliases={"Göteborg": "Gothenburg"})
     admin1 = {fold(u["name"]): u for u in load_units("SWE", "admin1")}
     records = []
     for code in kommuner:

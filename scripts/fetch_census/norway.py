@@ -29,7 +29,9 @@ So every figure here is for those units' own vintage:
   outside the Church by religion only by fylke, so at kommune level they are
   one group. The year is 2017 for the kommuner (KOSTRA reports each year on
   that year's kommuner) and, for the fylker, 2023 for the three dissolved in
-  2024 and the latest year for the eight that were not. A fylke is the sum of
+  2024 and, for the eight that were not, the latest year in which KOSTRA
+  still counts the communities outside the Church (it leaves them at 0 in its
+  most recent years, which is a gap and not a count of none). A fylke is the sum of
   its kommuner that year: KOSTRA's own fylke rows leave the communities
   outside the Church at 0.
 
@@ -239,19 +241,24 @@ def main() -> int:
                 year=FYLKE_YEAR, source=f"{SOURCE}, table 07459", url=POP_URL,
                 date=f"1 January {FYLKE_YEAR}", extra_note=(
                     f" {forms[0]} existed from 2020 to 2023; this is its last count."))
-        year = FYLKE_YEAR if f in SPLIT_FYLKER else latest
         # KOSTRA's own fylke rows carry no figure for the communities outside
         # the Church (they read 0 -- Oslo's fylke row against 140,631 in Oslo
-        # kommune), so a fylke is the sum of its kommuner in that year.
-        if year not in structure:
-            structure[year] = [c["code"] for c in request_json(
-                KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]
-        parts = [c for c in structure[year] if c[:2] == f]
-        summed: dict[str, float] = defaultdict(float)
-        for counts in membership(parts, year).values():
-            for key, value in counts.items():
-                summed[key] += value
-        faith = religion(summed, year, forms[0])
+        # kommune), so a fylke is the sum of its kommuner in that year. The
+        # latest years leave that figure at 0 for the kommuner too, so a fylke
+        # that still exists takes the latest year that has it.
+        faith, year = None, None
+        for year in ([FYLKE_YEAR] if f in SPLIT_FYLKER else range(latest, 2019, -1)):
+            if year not in structure:
+                structure[year] = [c["code"] for c in request_json(
+                    KLASS.format(date=f"{year}-01-01"))["codes"] if c["code"] != "9999"]
+            parts = [c for c in structure[year] if c[:2] == f]
+            summed: dict[str, float] = defaultdict(float)
+            for counts in membership(parts, year).values():
+                for key, value in counts.items():
+                    summed[key] += value
+            faith = religion(summed, year, forms[0])
+            if faith:
+                break
         if faith:
             fields.update(faith)
             fields["sources"].append({"field": "religion", "name": f"{SOURCE}, table 12026",
