@@ -38,10 +38,12 @@ says in its note how much of it the polygon covers; where name and outline
 disagree (a label on a neighbour's outline looks exactly like that), the
 raion is placed nowhere and its polygon is refused. A city council the
 census counts apart goes with the raion it is the seat of (Uman with
-Umanskyi), the map drawing no city polygons but Kyiv's and Sevastopol's;
-any other city council goes to the polygon holding the majority of its area,
-and a polygon holding a quarter of such an area placed elsewhere or nowhere
-is refused, as are Sevastopol's polygons: the census counts the city whole.
+Umanskyi), the map drawing no city polygons but Kyiv's and Sevastopol's,
+when the raion's polygon holds more of the city than any other polygon does,
+and is placed nowhere otherwise; any other city council goes to the polygon
+holding the majority of its area; and a polygon holding a quarter of a city
+or area placed elsewhere or nowhere is refused, as are Sevastopol's
+polygons: the census counts the city whole.
 Kyiv's raions are the city the map draws as one polygon. Every oblast's count
 must be held by its areas' polygons, or the run stops.
 
@@ -82,6 +84,17 @@ SOURCE_2017 = ("State Statistics Service of Ukraine, population estimate for 1 "
 LICENCE = "CC BY-IGO, published via HDX"
 LAST_CENSUS = (" The 2001 census is the last Ukraine has held: the 2011 and 2020 "
                "rounds were postponed and cancelled.")
+# What the Bureau's Language sheet can say, which a reader of Bolhrad's 77.6%
+# "Other language" (its Bulgarian and Gagauz speakers) needs to know.
+LANGUAGE_COLUMNS = (" The Bureau's Language sheet names eight languages -- Ukrainian, "
+                    "Russian, Belarusian, Crimean Tatar, Moldavian, Romanian, Slovak and "
+                    "Hungarian -- and puts every other in 'Other language' (Bulgarian and "
+                    "Gagauz among them), with 'Unstated' apart.")
+# The people in none of the Language sheet's columns.
+UNTABULATED = "Other and unspecified"
+# The Bureau's nationality labels this map spells otherwise: "Ent" is the
+# Enets (энцы), a Samoyedic people the 2001 census lists by that name.
+RELABEL = {"Ent": "Enets"}
 
 # The Bureau's oblast name -> the map's.
 OBLAST = {
@@ -153,12 +166,14 @@ HOLD = 0.5
 CLEAN = 0.9
 PART = 0.25
 UNIT = re.compile(r"^UKR_\d{2}_\d{2}$")
-# A city council that is its raion's seat goes into the raion's polygon
-# whatever share of the city's own area the coarse outline puts there: the
-# map draws no polygon for such a city, so it is drawn inside some raion's,
-# and its name says whose. Uman's area lies 30% in the polygon named Uman,
-# Chuhuiv's and Brovary's not at all, and each is still its raion's seat.
-SEAT_MIN = 0.0
+# A city council that is its raion's seat goes into the raion's polygon when
+# that polygon holds more of the city's area than any other: the map draws no
+# polygon for such a city, so it is drawn inside some raion's, and its name
+# says whose. When another polygon holds more of it -- or the seat's polygon
+# none, as with Brovary, Chuhuiv and Voznesensk -- the outline has drawn the
+# city elsewhere, and a name is not enough to be sure: the city is placed
+# nowhere, and a polygon holding a quarter of it is refused. Any other polygon
+# holding a quarter of a seat placed with its raion is refused too.
 # Below this share of a raion's area inside the polygon its name binds it to,
 # the note says the boundary file draws the raion coarsely.
 COARSE = 0.75
@@ -480,8 +495,10 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
       the raion is placed nowhere and its polygon is refused, since a label
       moved to a neighbour's outline is exactly what that looks like;
     - a city council that is the seat of a raion so placed goes with its
-      raion (the map draws no city polygons but Kyiv's and Sevastopol's),
-      however little of the city's area the coarse outline puts there;
+      raion (the map draws no city polygons but Kyiv's and Sevastopol's)
+      when that raion's polygon holds more of the city than any other; when
+      another holds more, the outline has drawn the city elsewhere, and it
+      is placed nowhere;
     - any other area goes to the polygon holding the majority of its area,
       and a polygon holding a quarter of an area placed elsewhere or nowhere
       this way is refused, as the census's figures cannot be split;
@@ -500,6 +517,9 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
     how: dict[tuple[str, str], str] = {}
     share_of: dict[tuple[str, str], float] = {}
     undrawn: dict[tuple[str, str], str] = {}
+    # A raion whose seat city the outline draws outside its polygon: (the
+    # city, the share of it the raion's polygon holds).
+    outside: dict[tuple[str, str], tuple[str, float]] = {}
     refused: dict[str, str] = {}
     report: list[str] = []
     disagree: list[str] = []
@@ -554,16 +574,28 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
         if raion is not None:
             sid = home[raion]
             share = dict(hits).get(sid, 0.0)
-            if share >= SEAT_MIN or (hits and hits[0][0] == sid):
+            where = ", ".join(f"{name_of(o)} {s:.0%}" for o, s in hits[:3]) or "no raion polygon"
+            if hits and hits[0][0] == sid:
                 home[key], how[key], share_of[key] = sid, "seat", share
                 if share < HOLD:
                     report.append(f"{OBLAST[key[0]]}: {nso}, the seat of "
                                   f"{level2[raion]['nso'].title()}, goes with it into "
-                                  f"{name_of(sid)!r} ({share:.0%} of its area lies there)")
+                                  f"{name_of(sid)!r}, which holds more of it than any "
+                                  f"other polygon ({where})")
                 continue
+            # The seat polygon holds less of the city than another does, or
+            # none of it: the map draws the city elsewhere, and its count
+            # goes nowhere. Any polygon holding a quarter of it is refused
+            # below, as for any area placed nowhere; the seat's raion keeps
+            # its own count, and its note says the city is not in it.
+            undrawn[key] = (f"drawn by the boundary file outside the polygon of the raion "
+                            f"it is the seat of ({where})")
+            outside[raion] = (nso, share)
             report.append(f"{OBLAST[key[0]]}: {nso} is the seat of "
-                          f"{level2[raion]['nso'].title()} but only {share:.0%} of its "
-                          f"area lies in {name_of(sid)!r}; placed by its area instead")
+                          f"{level2[raion]['nso'].title()}, but {name_of(sid)!r} holds "
+                          f"{share:.0%} of it and another polygon more ({where}); "
+                          "placed nowhere")
+            continue
         elif (near := max(((likeness(level2[r]["nso"], city_name(nso)), r)
                            for r in seats[key[0]]), default=None)) and near[0] >= LIKE:
             report.append(f"{OBLAST[key[0]]}: {nso} looks like the seat of "
@@ -590,16 +622,17 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
                                     f"{nso.title()} lies in this polygon, so the census's "
                                     "figure for it would not describe what the polygon draws.")
 
-    # A polygon is refused when a quarter of an area placed by the overlay
-    # elsewhere, or placed nowhere, lies inside it. An area placed by its name
-    # or as its raion's seat spills into its neighbours only as far as the
-    # outlines are coarse, which says nothing about whose people they hold.
+    # A polygon is refused when a quarter of an area placed by the overlay or
+    # as its raion's seat elsewhere, or placed nowhere, lies inside it. A
+    # raion placed by its name spills into its neighbours only as far as the
+    # outlines are coarse, which says nothing about whose people they hold; a
+    # city is small and dense, and a quarter of it in a polygon is people.
     for match, key in by_match.items():
         if match not in lies or key[0] == SEVASTOPOL:
             continue
         if key in undrawn:
             where, spots = undrawn[key], lies[match]
-        elif how.get(key) == "overlay":
+        elif how.get(key) in ("overlay", "seat"):
             where, spots = f"counted with {name_of(home[key])!r}", lies[match][1:]
         else:
             continue
@@ -619,7 +652,8 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
     for sid in seva_ids:
         refused[sid] = seva_why
     return {"home": home, "how": how, "share": share_of, "undrawn": undrawn,
-            "refused": refused, "report": report, "disagree": disagree, "thin": thin}
+            "outside": outside, "refused": refused, "report": report,
+            "disagree": disagree, "thin": thin}
 
 
 def main() -> int:
@@ -742,6 +776,11 @@ def main() -> int:
                               f"draws it coarsely, with {s:.0%} of the area the census "
                               "counts as that raion inside it and the rest in its "
                               "neighbours." for name, s in coarse)
+                    + "".join(f" {city_name(placed['outside'][k][0])}, the raion's seat, "
+                              "is a city the census counts apart and is not in this "
+                              "figure: the boundary file draws only "
+                              f"{placed['outside'][k][1]:.0%} of it inside this polygon."
+                              for k in keys if k in placed["outside"])
                     + LAST_CENSUS)
         if len(names) == 1:
             raions_only += 1
@@ -763,15 +802,33 @@ def main() -> int:
                     missing.append(level2[k]["nso"].title())
                     continue
                 for label, n in row["counts"].items():
-                    counts[uscb.UKRAINE.relabel.get(label, label)] += n
+                    label = uscb.UKRAINE.relabel.get(label, label)
+                    counts[RELABEL.get(label, label)] += n
                 published += row["published"] or row["summed"]
             if missing:
                 values[field] = gap(NOT_AVAILABLE, f"The Bureau's {topic.sheet} sheet has "
                                     f"no figures for {', '.join(missing)}.")
                 continue
+            # The Language sheet's columns do not always make its own total:
+            # in Chaplynka 2,776 of 40,297 people (the Meskhetian Turks among
+            # them) are in none of them. The rest is shown, so the parts make
+            # the whole, and the note says how many it is.
+            rest = published - sum(counts.values())
+            if rest < -0.5:
+                raise SystemExit(f"ukraine_raion: {shape['name']}'s {field} groups make "
+                                 f"{sum(counts.values()):,.0f}, more than its "
+                                 f"{published:,.0f}")
+            extra = ""
+            if field == "language" and rest > 0.5:
+                counts[UNTABULATED] += rest
+                extra = (f" {rest:,.0f} of the {published:,.0f} people ({rest / published:.1%}) "
+                         "fall in none of the sheet's columns and are shown as "
+                         f"'{UNTABULATED}'.")
             values[field] = shares(dict(counts), total=published)
             values[f"{field}_year"] = YEAR
-            values[f"{field}_note"] = (topic.note or uscb.UKRAINE.note) + note
+            values[f"{field}_note"] = ((topic.note or uscb.UKRAINE.note)
+                                       + (LANGUAGE_COLUMNS if field == "language" else "")
+                                       + extra + note)
             cites.append({"field": field, "name": SOURCE,
                           "url": uscb.dataset_url(uscb.UKRAINE.dataset),
                           "license": LICENCE, "year": YEAR})

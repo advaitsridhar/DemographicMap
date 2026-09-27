@@ -236,6 +236,34 @@ UNIVERSE = {
 TABLE = {"ethnicity": "Tom5_tab1_VPN-2020.xlsx",
          "language": "Tom5_tab6_VPN-2020.xlsx"}
 
+# The row both tables print, outside their universe, for everyone whose form
+# carries no answer ("Лица, в переписных листах которых национальная
+# принадлежность не указана"; "... родной язык не указан").
+UNSTATED = "Лица, в переписных листах которых"
+
+# What each composition is a share of, and what it leaves out. The universe
+# is only those who answered: 130,587,364 of the 147,182,123 counted stated a
+# nationality, so about 16.6 million are outside every share, and saying so is
+# the difference between "Russians are 80.9%" and "80.9% of those who
+# answered".
+NOTE = {
+    "ethnicity": ("Nationality (национальная принадлежность) as each person stated "
+                  "it in the 2020 census (reference date 1 October 2021). The shares "
+                  "are of the {published:,} people in the subject who stated one; "
+                  "{left:,} of the {total:,} counted ({pct:.1f}%) have no answer on "
+                  "their census form and are left out. "
+                  "Peoples Rosstat "
+                  "lists inside another (Andi within Avars, Kryashens within Tatars) "
+                  "are counted with it. Shares are rounded to 0.1, so the smallest "
+                  "groups show as 0.0."),
+    "language": ("Native language (родной язык) as each person stated it in the 2020 "
+                 "census (reference date 1 October 2021). The shares are of the "
+                 "{published:,} people in the subject who stated one; {left:,} of the "
+                 "{total:,} counted ({pct:.1f}%) have no answer on their census form and "
+                 "are left out. Shares are rounded to 0.1, so the "
+                 "smallest languages show as 0.0."),
+}
+
 # Volume 2, table 2, from its own capture: the archive holds each file at the
 # moments it was crawled, and this one was taken in October 2022.
 AGE_TABLE = "Tom2_tab2_VPN-2020.xlsx"
@@ -460,6 +488,7 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
                 f"not asked.")
         at_name, at_value = where
         published: float | None = None
+        unstated: float | None = None
         seen: list[tuple[str, float, int]] = []
         for row in book[sheet].iter_rows():
             if len(row) <= at_value:
@@ -476,11 +505,15 @@ def read(blob: bytes, field: str) -> dict[str, dict[str, Any]]:
             value = number(row[at_value].value)
             if value is None:
                 continue
+            # The people who gave no answer, outside the universe: kept for
+            # the note, which says how many the shares leave out.
+            if name.startswith(UNSTATED):
+                unstated = (unstated or 0.0) + value
             seen.append((name, value, indent(row[at_name])))
         counts: dict[str, float] = {}
         for name, value in parents(seen):
             counts[name] = counts.get(name, 0.0) + value
-        out[key] = {"published": published, "counts": counts,
+        out[key] = {"published": published, "counts": counts, "unstated": unstated,
                     "nested": len(seen) - len(parents(seen))}
     book.close()
     return out
@@ -697,6 +730,26 @@ def englished(field: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
+def universe_note(field: str, got: dict[str, Any], total: float) -> str:
+    """What a subject's composition is a share of, and how many it leaves out.
+
+    The people with no answer are the subject's count less those who stated
+    one; where the sheet prints its own row for them, the two must agree, or
+    the count and the universe are not the same people.
+    """
+    published = got["published"] or sum(got["counts"].values())
+    left = total - published
+    if left < 0:
+        raise SystemExit(f"RUS {field}: {published:,.0f} stated an answer, more than "
+                         f"the {total:,.0f} counted")
+    if got.get("unstated") is not None and abs(got["unstated"] - left) > 0.5:
+        raise SystemExit(f"RUS {field}: the sheet's row of people with no answer holds "
+                         f"{got['unstated']:,.0f}, the count less those who answered "
+                         f"{left:,.0f}")
+    return NOTE[field].format(published=int(published), left=int(left), total=int(total),
+                              pct=100 * left / total)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", default="russia_subject.json")
@@ -751,6 +804,7 @@ def main() -> int:
             values[field] = englished(
                 field, shares(got["counts"], total=got["published"] or None))
             values[f"{field}_year"] = YEAR
+            values[f"{field}_note"] = universe_note(field, got, table[sheet]["total"])
         records.append(record(
             code, unit["name"], level="admin1", parent="RUS",
             country="RUS", iso_3166_2=code,

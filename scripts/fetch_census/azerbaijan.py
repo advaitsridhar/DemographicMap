@@ -131,9 +131,40 @@ CONTESTED_NOTE = (
     " The unit was wholly or partly outside the government's control from the "
     "early 1990s until 2020-2023, and the 2019 census did not enumerate that "
     "territory (Azstat, table 1.17: 'excluding the population in the "
-    "territories under occupation at the time of the census'). Azstat's annual "
-    "estimates attribute to it the population registered there, which should "
-    "not be read as a count of the people living on the ground.")
+    "territories under occupation at the time of the census'). The figure is "
+    "Azstat's estimate for the start of the year, which the table does not say "
+    "how it makes; with no census behind it, it should not be read as a count of "
+    "the people living there (Khankendi's has moved only from 4,295 to 4,387 "
+    "since 2020).")
+
+# What this file does not write, and why, on every unit it writes: Azstat's
+# yearbook gives the 2019 census's nationality (table 1.5) and native
+# language (table 1.6) for the country alone.
+UNREAD = {
+    "ethnicity": gap(NOT_AVAILABLE, (
+        "Azstat publishes the 2019 census's nationality for the country only (table "
+        "1.5 of 'The population of Azerbaijan'); no table gives it by rayon, city or "
+        "for Nakhchivan.")),
+    "language": gap(NOT_AVAILABLE, (
+        "Azstat publishes the 2019 census's native language for the country only "
+        "(table 1.6 of 'The population of Azerbaijan'); no table gives it by rayon, "
+        "city or for Nakhchivan.")),
+    "religion": gap(NOT_AVAILABLE, (
+        "Azstat's population tables, the 2019 census's among them, give no religion "
+        "by rayon, city or for Nakhchivan.")),
+}
+
+# Rows far from the figures the map carried before, with what was measured
+# (table 1.23's every sheet, 2020-2026, and table 1.19): Azstat's own series
+# is steady, and the earlier figures describe something else.
+CHECKED = {
+    "Abşeron rayonu": (" The rayon takes in the city of Xırdalan (196,200 at the start "
+                       "of 2026, table 1.19); Azstat's figure for it has run from "
+                       "428,498 (2020) to 435,187 (2026), about twice the 210,000 "
+                       "some older compilations give."),
+    "Sədərək rayonu": (" Azstat's figure for the rayon has run from 22,569 (2020) to "
+                       "23,365 (2026)."),
+}
 
 COUNTRY = "Azərbaycan Respublikası"
 NAKHCHIVAN = "Naxçıvan iqtisadi rayonu"
@@ -296,7 +327,7 @@ def main() -> int:
 
     for row, shape_name in POLYGON.items():
         shape = polygon(shape_name)
-        note = CONTESTED_NOTE if row in CONTESTED else ""
+        note = (CONTESTED_NOTE if row in CONTESTED else "") + CHECKED.get(row, "")
         records.append(record(f"AZE-AZSTAT-{shape['id']}", row, level="admin2",
                               parent="AZE", country="AZE", match_by="shape_id",
                               shape_id=shape["id"], **fields(table[row], year, note)))
@@ -371,6 +402,10 @@ def main() -> int:
                  "Ordubad rayonu", "Sədərək rayonu", "Şahbuz rayonu", "Şərur rayonu"]
     if abs(sum(table[r]["total"] for r in nakh_rows) - nakh["total"]) > 0.5:
         raise SystemExit("azerbaijan: Nakhchivan's units do not make its total")
+    for r in records:
+        for field, why in UNREAD.items():
+            if isinstance(r.get(field), dict) and not r[field].get("note"):
+                r[field] = why
     bound = {r["shape_id"] for r in records if r["level"] == "admin2"}
     left = sorted(u["name"] for u in admin2 if u["id"] not in bound)
     log(f"  {len(bound)} of {len(admin2)} polygons written; left: {left}")

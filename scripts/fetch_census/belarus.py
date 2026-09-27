@@ -43,6 +43,10 @@ from . import east_geo
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "belarus.json"
+# Why a raion has no composition: the volume stops at the oblast, which the
+# map shows one level up.
+BY_OBLAST = ("The 2019 census's second volume gives {what} by oblast and Minsk only "
+             "(table {table}), shown one level up, and not by raion.")
 VOLUME = "https://www.belstat.gov.by/upload/iblock/e2c/jpupn3rl7trtmxepj6vmh07qy6u5o09i.pdf"
 PAGE = ("https://www.belstat.gov.by/ofitsialnaya-statistika/publications/izdania/"
         "public_compilation/index_41896/")
@@ -493,6 +497,10 @@ def main() -> int:
                 "Belstat publishes no age distribution by raion from the 2019 census: its "
                 "second volume's age tables stop at the country, and give the oblasts' "
                 "mean age, not a median.")),
+            ethnicity=gap(NOT_AVAILABLE, BY_OBLAST.format(what="nationality",
+                                                          table="6.2")),
+            language=gap(NOT_AVAILABLE, BY_OBLAST.format(
+                what="language spoken at home and mother tongue", table="7.3")),
             sources=[cite("population", "1.4"), cite("sex_ratio", "1.4")]))
 
     # First level.
@@ -520,6 +528,11 @@ def main() -> int:
             "sex_ratio": measure(round(100 * head["men"] / head["women"], 1),
                                  unit="males_per_100_females", year=YEAR, source=src14),
             "sex_ratio_note": f"{int(head['men']):,} men and {int(head['women']):,} women.",
+            "median_age": gap(NOT_AVAILABLE, (
+                "The 2019 census's second volume gives each oblast's mean age (table "
+                "2.1), not a median, and its age distributions (tables 2.2 and 2.3) "
+                "only for the country; no median can be read for the "
+                + ("city." if name == MINSK_CITY else "oblast."))),
         }
         cites = [cite("population", "1.4"), cite("sex_ratio", "1.4")]
         key62 = "г.Минск" if oblast == "г.Минск" else oblast

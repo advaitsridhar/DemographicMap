@@ -86,10 +86,41 @@ class Placing(unittest.TestCase):
                               "UKR_01_04": [("Z", 0.95)]})
         self.assertEqual(got["home"][(self.OB, "a")], "U")
         self.assertEqual(got["home"][(self.OB, "b")], "K")
-        # The seat goes with its raion although most of its area lies next door.
+        # Most of the seat's area lies next door: the outline has drawn the
+        # city in Khrystynivka's polygon, so it goes nowhere, and both
+        # polygons holding a quarter of it are refused.
+        self.assertNotIn((self.OB, "c"), got["home"])
+        self.assertIn((self.OB, "c"), got["undrawn"])
+        self.assertEqual(got["outside"][(self.OB, "a")], ("M. UMAN", 0.3))
+        self.assertIn("U", got["refused"])
+        self.assertIn("K", got["refused"])
+        self.assertEqual(got["home"][(self.OB, "d")], "Z")
+
+    def test_a_seat_goes_with_its_raion_where_its_polygon_holds_most_of_it(self):
+        got = self.run_place({"UKR_01_01": [("U", 0.6), ("K", 0.4)],
+                              "UKR_01_02": [("K", 0.55), ("U", 0.45)],
+                              "UKR_01_03": [("U", 0.4), ("K", 0.1)],
+                              "UKR_01_04": [("Z", 0.95)]})
         self.assertEqual(got["home"][(self.OB, "c")], "U")
         self.assertEqual(got["how"][(self.OB, "c")], "seat")
-        self.assertEqual(got["home"][(self.OB, "d")], "Z")
+        self.assertEqual(got["refused"], {})
+
+    def test_a_quarter_of_a_seat_next_door_refuses_that_polygon(self):
+        got = self.run_place({"UKR_01_01": [("U", 0.9)], "UKR_01_02": [("K", 0.9)],
+                              "UKR_01_03": [("U", 0.6), ("K", 0.3)],
+                              "UKR_01_04": [("Z", 0.95)]})
+        self.assertEqual(got["home"][(self.OB, "c")], "U")
+        self.assertIn("K", got["refused"])
+        self.assertNotIn("U", got["refused"])
+
+    def test_a_seat_drawn_little_anywhere_leaves_its_raion_alone(self):
+        # A fifth of the city in a neighbour's polygon and the rest in none
+        # the overlay counts (Kyiv's, or water): the raion keeps its own count.
+        got = self.run_place({"UKR_01_01": [("U", 0.9)], "UKR_01_02": [("K", 0.9)],
+                              "UKR_01_03": [("K", 0.2)],
+                              "UKR_01_04": [("Z", 0.95)]})
+        self.assertIn((self.OB, "c"), got["undrawn"])
+        self.assertEqual(got["home"][(self.OB, "a")], "U")
         self.assertEqual(got["refused"], {})
 
     def test_a_name_on_a_neighbours_outline_refuses_the_polygon(self):

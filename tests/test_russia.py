@@ -82,5 +82,20 @@ class AgesTest(unittest.TestCase):
         self.assertEqual(got["population"]["value"], 300)
 
 
+class UniverseNoteTest(unittest.TestCase):
+    """A composition says it is a share of those who answered, and how many did not."""
+
+    def test_the_note_counts_who_is_left_out(self):
+        got = {"published": 800.0, "counts": {"Русские": 800.0}, "unstated": 200.0}
+        note = russia.universe_note("ethnicity", got, 1000)
+        self.assertIn("of the 800 people in the subject who stated one", note)
+        self.assertIn("200 of the 1,000 counted (20.0%)", note)
+
+    def test_a_no_answer_row_that_disagrees_stops_the_run(self):
+        got = {"published": 800.0, "counts": {"Русские": 800.0}, "unstated": 150.0}
+        with self.assertRaises(SystemExit):
+            russia.universe_note("language", got, 1000)
+
+
 if __name__ == "__main__":
     unittest.main()

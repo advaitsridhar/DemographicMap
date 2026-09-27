@@ -65,5 +65,12 @@ class Names(unittest.TestCase):
             self.assertNotIn(city, b.CITY)
 
 
+class Gaps(unittest.TestCase):
+    def test_a_raion_composition_says_where_the_volume_stops(self):
+        note = b.BY_OBLAST.format(what="nationality", table="6.2")
+        self.assertIn("by oblast and Minsk only (table 6.2)", note)
+        self.assertIn("not by raion", note)
+
+
 if __name__ == "__main__":
     unittest.main()

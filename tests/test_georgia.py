@@ -34,6 +34,29 @@ class Ages(unittest.TestCase):
             g.age_values(row, "x")
 
 
+class Tbilisi(unittest.TestCase):
+    """The municipality polygon of Tbilisi takes the 2014 region rows, not 2002's."""
+
+    def test_region_2014_gives_the_census_year_for_every_field(self):
+        ages = {"C. Tbilisi": {"groups": {"0-4": 50.0, "5-9": 50.0, "10 and over": 0.0},
+                               "sex": {"Both sexes": 100.0, "Males": 45.0,
+                                       "Females": 55.0}}}
+        row = {"counts": {"Georgian": 90.0, "Armenian": 10.0}, "total": 100.0, "hidden": 0}
+        comps = {field: {"C. Tbilisi": row} for field in g.T_COMP}
+        values, cites = g.region_2014(ages, comps, "C. Tbilisi", "Tbilisi")
+        for field in g.T_COMP:
+            self.assertEqual(values[f"{field}_year"], 2014)
+            self.assertEqual(values[field][0], {"group": "Georgian", "pct": 90.0, "count": 90})
+        self.assertEqual(values["median_age"]["year"], 2014)
+        self.assertEqual({c["field"] for c in cites},
+                         {"median_age", "sex_ratio", *g.T_COMP})
+
+    def test_the_municipal_gap_says_why(self):
+        note = g.BY_REGION_ONLY.format(what="religion", table="22", old="29")
+        self.assertIn("by region only", note)
+        self.assertIn("table 29", note)
+
+
 class Numbers(unittest.TestCase):
     def test_suppressed_cells_read_as_none(self):
         self.assertIsNone(g.number(".."))

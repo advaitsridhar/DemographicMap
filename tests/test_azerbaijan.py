@@ -41,6 +41,13 @@ class TableTest(unittest.TestCase):
         self.assertEqual(got["sex_ratio"]["value"], 87.5)
         self.assertEqual(got["population"]["value"], 30)
 
+    def test_every_unread_field_says_why(self):
+        for field in ("ethnicity", "language", "religion"):
+            self.assertEqual(az.UNREAD[field]["status"], "not_available")
+            self.assertIn("rayon", az.UNREAD[field]["note"])
+        # The contested units' note no longer says what the figure is made of.
+        self.assertNotIn("registered", az.CONTESTED_NOTE)
+
     def test_every_polygon_named_once(self):
         names = list(az.POLYGON.values()) + [c for _, c, _ in az.SPLIT.values()] + \
             [r for _, _, r in az.SPLIT.values() if r]

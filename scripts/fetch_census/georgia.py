@@ -149,6 +149,10 @@ NOTES = {
     "language": ("Native language (მშობლიური ენა), 2014 census, everyone enumerated in the "
                  "region; the languages Geostat names, the rest in 'Other'."),
 }
+BY_REGION_ONLY = ("Geostat's database publishes the 2014 census's {what} (table {table}) by "
+                  "region only, shown one level up; the census's Main Results show it by "
+                  "municipality only as charts, and volume I of the 2002 census gives it "
+                  "(table {old}) by region too.")
 MEDIAN_NOTE = ("From the 2014 census's population by five-year age group and sex, "
                "interpolated within the group holding the middle person: Geostat publishes "
                "single years of age for the country only.")
@@ -261,6 +265,27 @@ def age_values(row: dict[str, Any], name: str) -> dict[str, Any]:
                              year=CENSUS_YEAR, source=SOURCE.format(table=table)),
         "sex_ratio_note": f"{int(men):,} men and {int(women):,} women enumerated in 2014.",
     }
+
+
+def region_2014(ages: dict[str, dict[str, Any]], comps: dict[str, dict[str, dict[str, Any]]],
+                census: str, name: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """A region's 2014 census figures -- median age, sex and the three
+    compositions -- and their citations. Tbilisi's municipality polygon takes
+    the same rows as its region's: the two are one city."""
+    values: dict[str, Any] = dict(age_values(ages[census], name))
+    cites = [cite("median_age", "2014 census, table 07", CENSUS_YEAR),
+             cite("sex_ratio", "2014 census, table 07", CENSUS_YEAR)]
+    for field in T_COMP:
+        row = comps[field][census]
+        values[field] = shares(dict(row["counts"]), total=row["total"])
+        values[f"{field}_year"] = CENSUS_YEAR
+        values[f"{field}_note"] = NOTES[field] + (
+            f" {row['hidden']} categories are suppressed in this region "
+            f"({row['total'] - sum(row['counts'].values()):,.0f} people)."
+            if row["hidden"] else "")
+        cites.append(cite(field, f"2014 census, table {T_COMP[field].split('/')[-1][:2]}",
+                          CENSUS_YEAR))
+    return values, cites
 
 
 def compositions() -> dict[str, dict[str, dict[str, Any]]]:
@@ -538,6 +563,9 @@ def main() -> int:
     log(f"  estimate for 1 January {year}: {len(regions)} regions make the country's "
         f"{country:,.0f}")
 
+    def census_2014(census: str, name: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+        return region_2014(ages, comps, census, name)
+
     records: list[dict[str, Any]] = []
     for census, name in REGION.items():
         u = first[name]
@@ -549,22 +577,12 @@ def main() -> int:
                                  + (", for the part of the region under the government's "
                                     "control" if name in ("Shida Kartli", "Mtskheta-Mtianeti")
                                     else "") + "."),
-            **age_values(ages[census], name),
         }
         cites = [cite("population", "population as of 1 January by regions and self-governed "
-                      "units", year),
-                 cite("median_age", "2014 census, table 07", CENSUS_YEAR),
-                 cite("sex_ratio", "2014 census, table 07", CENSUS_YEAR)]
-        for field in T_COMP:
-            row = comps[field][census]
-            values[field] = shares(dict(row["counts"]), total=row["total"])
-            values[f"{field}_year"] = CENSUS_YEAR
-            values[f"{field}_note"] = NOTES[field] + (
-                f" {row['hidden']} categories are suppressed in this region "
-                f"({row['total'] - sum(row['counts'].values()):,.0f} people)."
-                if row["hidden"] else "")
-            cites.append(cite(field, f"2014 census, table {T_COMP[field].split('/')[-1][:2]}",
-                              CENSUS_YEAR))
+                      "units", year)]
+        more, more_cites = census_2014(census, name)
+        values.update(more)
+        cites += more_cites
         records.append(record(f"GEO-GEOSTAT-{u['id']}", name, level="admin1", parent="GEO",
                               country="GEO", match_by="shape_id", shape_id=u["id"],
                               sources=cites, **values))
@@ -573,8 +591,16 @@ def main() -> int:
         why = gap(NOT_AVAILABLE, UNCOUNTED_NOTE.format(what="Abkhazia"))
         records.append(record(f"GEO-GEOSTAT-{u['id']}", name, level="admin1", parent="GEO",
                               country="GEO", match_by="shape_id", shape_id=u["id"],
-                              median_age=why, sex_ratio=why, religion=why, language=why,
-                              ethnicity=why))
+                              population=why, median_age=why, sex_ratio=why, religion=why,
+                              language=why, ethnicity=why))
+    # The country's own 2014 rows, for a curated country record: the build
+    # will not sum Georgia's regions into the country, whose count (the
+    # Factbook's, with Abkhazia and South Ossetia) is not theirs.
+    for field in T_COMP:
+        row = comps[field]["GEORGIA"]
+        log("  country " + json.dumps({
+            "field": field, "total": row["total"], "hidden": row["hidden"],
+            "groups": shares(dict(row["counts"]), total=row["total"])}, ensure_ascii=False))
 
     # Second level: municipalities by name within the map's region, the cities
     # by where their centre lies.
@@ -672,7 +698,27 @@ def main() -> int:
             why = gap(NOT_AVAILABLE, refused[sid])
             records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
                                   country="GEO", match_by="shape_id", shape_id=sid,
-                                  population=why, sex_ratio=why, ethnicity=why))
+                                  population=why, sex_ratio=why, median_age=why,
+                                  ethnicity=why, religion=why, language=why))
+            continue
+        if sid == by_name["tbilisi"]:
+            # Tbilisi is a region and a municipality at once, one polygon at
+            # each level: the 2014 census's region rows describe it, and are
+            # newer than the 2002 raion table's.
+            rows = units.get(sid) or []
+            values = {"population": measure(int(sum(pop[r] for r in rows)), year=year,
+                                            source=SOURCE.format(
+                                                table="population as of 1 January by regions "
+                                                      "and self-governed units")),
+                      "population_note": (f"Geostat's estimate for 1 January {year}, "
+                                          "published in thousands to one decimal.")}
+            more, cites = census_2014("C. Tbilisi", name)
+            values.update(more)
+            cites.insert(0, cite("population", "population as of 1 January by regions and "
+                                 "self-governed units", year))
+            records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
+                                  country="GEO", match_by="shape_id", shape_id=sid,
+                                  sources=cites, **values))
             continue
         rows = units.get(sid)
         if not rows:
@@ -706,6 +752,10 @@ def main() -> int:
             "Geostat publishes no age by municipality beyond the 2014 census's three broad "
             "groups (0-14, 15-64, 65 and over, in its Main Results), from which no median "
             "can be read; its single years of age and five-year groups stop at the region."))
+        for field, table in (("religion", "22"), ("language", "20")):
+            values[field] = gap(NOT_AVAILABLE, BY_REGION_ONLY.format(
+                what={"religion": "religion", "language": "native language"}[field],
+                table=table, old={"religion": "29", "language": "23"}[field]))
         extra = ethnicity_2002_values(sid)
         if extra:
             cites.append(extra.pop("_cite"))

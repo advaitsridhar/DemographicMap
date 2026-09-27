@@ -71,6 +71,48 @@ class BindTest(unittest.TestCase):
         self.assertEqual(bound, {0: "a"})
 
 
+class MergedOkrugTest(unittest.TestCase):
+    """An okrug of today is never laid on one of the polygons it was made from."""
+
+    def town(self, name):
+        return rm.latin_stem(rm.translit(rm.ru_stem(rm.ru_core(name)))).replace("~", "")
+
+    def test_a_district_adjective_with_a_fleeting_vowel_is_its_towns(self):
+        # Kolomna and Kolomensky differ in their sixth letter.
+        self.assertTrue(rm.adjective_of(self.town("Коломна"),
+                                        rm.latin_stem("Kolomensky District")))
+        self.assertTrue(rm.adjective_of(self.town("Серпухов"),
+                                        rm.latin_stem("Serpukhovsky District")))
+        self.assertTrue(rm.adjective_of(self.town("Переславль-Залесский"),
+                                        rm.latin_stem("Pereslavsky District")))
+        self.assertFalse(rm.adjective_of(self.town("Коломна"),
+                                         rm.latin_stem("Lukhovitsky District")))
+        self.assertFalse(rm.adjective_of(self.town("Красноармейск"),
+                                         rm.latin_stem("Krasnogorsky District")))
+
+    def test_a_town_drawn_apart_refuses_its_okrug(self):
+        odintsovo = cunit("Одинцовский городской округ", total=471529, rural=60000,
+                          towns=["Одинцово", "Звенигород", "Кубинка"])
+        free = [shape("z", "Zvenigorod", "Городской округ Звенигород"),
+                shape("d", "Istrinsky District")]
+        town, where = rm.town_drawn_apart([odintsovo], free)
+        self.assertEqual((town, where["id"]), ("Звенигород", "z"))
+        kolomna = cunit("Городской округ Коломна", total=217703, rural=58494,
+                        towns=["Коломна", "Озёры"])
+        town, where = rm.town_drawn_apart([kolomna], [shape("o", "городской округ Озёры")])
+        self.assertEqual(where["id"], "o")
+
+    def test_a_district_polygon_is_not_taken_for_a_town(self):
+        pushkino = cunit("Городской округ Пушкинский", total=299385, rural=25158,
+                         towns=["Пушкино"])
+        self.assertIsNone(rm.town_drawn_apart([pushkino], [shape("p", "Pushkinsky District")]))
+
+    def test_the_lotoshino_okrug_is_declared(self):
+        bound, _ = rm.bind_subject([cunit("Городской округ Лотошино", rural=15940)],
+                                   [shape("a", "Lotoshinsky District")], {})
+        self.assertEqual(bound, {0: "a"})
+
+
 class KindTest(unittest.TestCase):
     def test_kinds(self):
         self.assertEqual(rm.shape_kind("Abansky Rayon"), "district")

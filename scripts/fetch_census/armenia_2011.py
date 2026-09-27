@@ -305,7 +305,13 @@ def main() -> int:
             ethnicity=shares(dict(nations), total=total), ethnicity_year=YEAR,
             ethnicity_note=("Nationality (ազգություն) as each person stated it, 2011 census, "
                             "the permanent population. The 2022 census has published no "
-                            "table by marz yet."),
+                            "table by marz yet. Table 5.2-1 names only the nationalities "
+                            "numerous in the marz -- here "
+                            + ", ".join(k for k in sorted(nations, key=lambda k: -nations[k])
+                                        if k not in ("Other ethnicity", "Not stated"))
+                            + f" -- and counts every other in 'Other' "
+                            f"({nations.get('Other ethnicity', 0):,.0f} people), so a group "
+                            "absent here may still live in the marz."),
             language=shares(dict(tongues), total=total), language_year=YEAR,
             language_note=("Mother tongue (մայրենի լեզու), 2011 census, the permanent "
                            "population; 'Ezidian' is the Yezidi tongue the census names apart "
