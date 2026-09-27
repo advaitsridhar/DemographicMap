@@ -262,9 +262,13 @@ def table_14(pages) -> dict[str, dict[str, dict[str, float]]]:
             if line.startswith(("Городское население", "Сельское население")):
                 section = "other"
                 continue
+            label, values, _ = split_row(cells)
+            if label == "г.Минск" and "г.Минск" not in out:
+                # Minsk is printed once, under no heading of its own, between
+                # Grodno's rural rows and Minsk oblast's.
+                section = "all"
             if section != "all":
                 continue
-            label, values, _ = split_row(cells)
             if len(values) != 3 or not label:
                 continue
             value = values[2]
