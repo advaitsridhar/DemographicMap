@@ -81,7 +81,7 @@ RAION = {
     "Лельчицкий": "Lyelchytsy", "Лоевский": "Loyew", "Мозырский": "Mazyr",
     "Наровлянский": "Naroulia", "Октябрьский": "Akciabrski", "Петриковский": "Pyetrykaw",
     "Речицкий": "Rechytsa", "Рогачевский": "Rahachow", "Рогачёвский": "Rahachow",
-    "Светлогорский": "Svietlahorsk", "Хойникский": "Khoiniki", "Чечерский": "Chachersk",
+    "Светлогорский": "Svietlahorsk", "Хойницкий": "Khoiniki", "Чечерский": "Chachersk",
     # Grodno
     "Берестовицкий": "Byerastavitsa", "Волковысский": "Vawkavysk",
     "Вороновский": "Voranava", "Гродненский": "Grodno", "Дятловский": "Dzyatlava",
@@ -404,6 +404,7 @@ def main() -> int:
                          "9,413,446")
 
     # Place every row on a polygon.
+    problems: list[str] = []
     places = {east_geo.fold(p["name"]): p for p in east_geo.places("BLR")}
     polys = east_geo.polygons("BLR")
     members: dict[str, list[tuple[str, str]]] = defaultdict(list)
@@ -419,16 +420,19 @@ def main() -> int:
                 city = name[2:]
                 raion = CITY.get(city)
                 if raion is None:
-                    raise SystemExit(f"belarus: no raion is declared for the city {city}")
+                    problems.append(f"no raion is declared for the city {city}")
+                    continue
                 target = by_name.get((region, RAION[raion]))
                 if target is None:
-                    raise SystemExit(f"belarus: {city}'s raion {raion} has no polygon")
+                    problems.append(f"{city}'s raion {raion} has no polygon")
+                    continue
                 if city in NOT_SEAT:
                     p = places.get(east_geo.fold(NOT_SEAT[city][1]))
                     inside = (east_geo.containing(polys, p["lon"], p["lat"]) if p else [])
                     if inside != [target["id"]]:
-                        raise SystemExit(f"belarus: {city}'s centre lies in {inside}, not "
-                                         f"{target['name']!r}")
+                        problems.append(f"{city}'s centre lies in {inside}, not "
+                                        f"{target['name']!r}")
+                        continue
                     notes[target["id"]].append(
                         f"the city of {NOT_SEAT[city][0]}, counted apart and drawn inside this "
                         "polygon (its centre lies in it)")
@@ -439,20 +443,25 @@ def main() -> int:
                 continue
             m = re.match(r"^(\S+) район$", name)
             if not m or m.group(1) not in RAION:
-                raise SystemExit(f"belarus: table 1.4 has a row {name!r} with no polygon")
+                problems.append(f"table 1.4 has a row {name!r} with no polygon")
+                continue
             target = by_name.get((region, RAION[m.group(1)]))
             if target is None:
-                raise SystemExit(f"belarus: {name} goes to {RAION[m.group(1)]!r} in {region}, "
-                                 "which the map lacks")
+                problems.append(f"{name} goes to {RAION[m.group(1)]!r} in {region}, "
+                                "which the map lacks")
+                continue
             if m.group(1) in MERGED:
                 town, host = MERGED[m.group(1)]
                 p = places.get(east_geo.fold(town))
                 inside = east_geo.containing(polys, p["lon"], p["lat"]) if p else []
                 if inside != [target["id"]]:
-                    raise SystemExit(f"belarus: {town}'s centre lies in {inside}, not {host!r}")
+                    problems.append(f"{town}'s centre lies in {inside}, not {host!r}")
+                    continue
                 notes[target["id"]].append(f"{name}, formed from Horki raion in 1989, which "
                                            "the map draws as part of this polygon")
             members[target["id"]].append((oblast, name))
+    if problems:
+        raise SystemExit("belarus: " + "; ".join(problems))
     left = [u["name"] for u in admin2 if u["id"] not in members]
     log(f"  {len(members)} of {len(admin2)} polygons hold a census row; left: {left}")
 
