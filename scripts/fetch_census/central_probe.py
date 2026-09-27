@@ -826,7 +826,44 @@ def nld7() -> None:
     xlsx_dump("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx", rows=16)
 
 
+def hun8() -> None:
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    for path in ("index/hu/V67", "index/en/V67", "index/hu", "dataflows", "structure"):
+        show(f"{base}/{path}", raw=1500)
+
+
+def svk8() -> None:
+    base = "https://gis.scitanie.sk/server/rest/services/Hosted/"
+    for service in ("obyv_ekchar_nar_dlnar", "obyv_ekchar_nar_matjaz", "obyv_ekchar_nabo_vekskup",
+                    "obyv_ekchar_matjaz_vekskup", "obyv_demo_vek_zloz"):
+        page = text(fetch(base + service + "/FeatureServer/layers?f=json")[2])
+        try:
+            layers = json.loads(page).get("layers", [])
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {service}: {exc}: {page[:200]}")
+            continue
+        log(f"\n## {service}: {len(layers)} layers")
+        for layer in layers:
+            fields = [f["name"] for f in layer.get("fields", [])]
+            log(f"   layer {layer.get('id')} {layer.get('name')!r}: {len(fields)} fields: "
+                f"{fields[:60]}")
+
+
+def nld8() -> None:
+    import io as _io
+    import openpyxl
+    body = fetch("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx")[2]
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    for name, cols in (("Tabel 2", 28), ("Toelichting", 3), ("Tabel 1", 6)):
+        log(f"\n## sheet {name}")
+        for row in book[name].iter_rows(values_only=True):
+            cells = [str(c)[:60] for c in row[:cols] if c is not None]
+            if cells:
+                log("   " + " | ".join(cells))
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun8": hun8, "svk8": svk8, "nld8": nld8,
     "hun7": hun7, "svk7": svk7, "nld7": nld7,
     "lie7": lie7,
     "hun6": hun6, "nld6": nld6, "svk6": svk6,
