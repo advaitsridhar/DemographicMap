@@ -1,53 +1,30 @@
-latvia: CSB IRD041, IRD031, IRE031, IRD081 and RIG040
-    IRD041 2026: municipalities -> Latvia: 42 parts sum to 1,845,096 against 1,845,096
-    IRD041 2025: municipalities -> Latvia: 43 parts sum to 1,860,565 against 1,860,565
-  admin1: 43 municipalities written
-    IRD081 2026: units -> Rīga: 1 parts sum to 588,911 against 588,911
-    IRD081 2026: units -> Daugavpils: 1 parts sum to 77,486 against 77,486
-    IRD081 2026: units -> Jelgava: 1 parts sum to 54,408 against 54,408
-    IRD081 2026: units -> Jūrmala: 1 parts sum to 52,926 against 52,926
-    IRD081 2026: units -> Liepāja: 1 parts sum to 66,746 against 66,746
-    IRD081 2026: units -> Rēzekne: 1 parts sum to 25,978 against 25,978
-    IRD081 2026: units -> Ventspils: 1 parts sum to 32,479 against 32,479
-    IRD081 2026: units -> Aizkraukles novads: 22 parts sum to 27,825 against 27,825
-    IRD081 2026: units -> Alūksnes novads: 16 parts sum to 12,894 against 12,894
-    IRD081 2026: units -> Augšdaugavas novads: 27 parts sum to 23,443 against 23,443
-    IRD081 2026: units -> Ādažu novads: 3 parts sum to 24,141 against 24,141
-    IRD081 2026: units -> Balvu novads: 21 parts sum to 17,163 against 17,163
-    IRD081 2026: units -> Bauskas novads: 20 parts sum to 40,006 against 40,006
-    IRD081 2026: units -> Cēsu novads: 23 parts sum to 40,963 against 40,963
-    IRD081 2026: units -> Dienvidkurzemes novads: 31 parts sum to 32,450 against 32,450
-    IRD081 2026: units -> Dobeles novads: 21 parts sum to 27,100 against 27,100
-    IRD081 2026: units -> Gulbenes novads: 14 parts sum to 18,215 against 18,215
-    IRD081 2026: units -> Jelgavas novads: 16 parts sum to 31,718 against 31,718
-    IRD081 2026: units -> Jēkabpils novads: 25 parts sum to 38,134 against 38,134
-    IRD081 2026: units -> Krāslavas novads: 26 parts sum to 19,040 against 19,040
-    IRD081 2026: units -> Kuldīgas novads: 20 parts sum to 26,386 against 26,386
-    IRD081 2026: units -> Ķekavas novads: 6 parts sum to 31,668 against 31,668
-    IRD081 2026: units -> Limbažu novads: 19 parts sum to 27,276 against 27,276
-    IRD081 2026: units -> Līvānu novads: 6 parts sum to 9,897 against 9,897
-    IRD081 2026: units -> Ludzas novads: 25 parts sum to 19,659 against 19,659
-    IRD081 2026: units -> Mārupes novads: 4 parts sum to 38,132 against 38,132
-    IRD081 2026: units -> Ogres novads: 20 parts sum to 57,165 against 57,165
-    IRD081 2026: units -> Olaines novads: 2 parts sum to 21,062 against 21,062
-    IRD081 2026: units -> Preiļu novads: 15 parts sum to 15,238 against 15,238
-    IRD081 2026: units -> Rēzeknes novads: 29 parts sum to 27,268 against 27,268
-    IRD081 2026: units -> Ropažu novads: 4 parts sum to 35,540 against 35,540
-    IRD081 2026: units -> Salaspils novads: 2 parts sum to 23,915 against 23,915
-    IRD081 2026: units -> Saldus novads: 21 parts sum to 26,192 against 26,192
-    IRD081 2026: units -> Saulkrastu novads: 3 parts sum to 10,113 against 10,113
-    IRD081 2026: units -> Siguldas novads: 8 parts sum to 31,546 against 31,546
-    IRD081 2026: units -> Smiltenes novads: 16 parts sum to 17,306 against 17,306
-    IRD081 2026: units -> Talsu novads: 22 parts sum to 34,264 against 34,264
-    IRD081 2026: units -> Tukuma novads: 23 parts sum to 42,991 against 42,991
-    IRD081 2026: units -> Valkas novads: 6 parts sum to 7,501 against 7,501
-    IRD081 2026: units -> Valmieras novads: 31 parts sum to 50,324 against 50,324
-    IRD081 2026: units -> Ventspils novads: 13 parts sum to 10,161 against 10,161
-  LVA admin2: 589 of 589 office units bound to 589 polygons (0 set aside as pieces)
-    TSG11-07 2011: counties and cities -> Latvia: 119 parts sum to 1,876,812 against 1,876,812
-  TSG11-07: 118 units of 2011 placed in 43 municipalities, 1 divided by the reform (Aglonas novads); language written for 41 municipalities; left out as holding a divided county: ['Krāslavas novads', 'Preiļu novads']
-  TSG11-07 Iecavas novads: 8,215 people in 2011 against 2,865 in the drawn Iecavas pagasts today; not the same territory, left out
-  TSG11-07: language written for 22 towns and parishes that were a unit of 2009-2021 on their own
-  ethnicity labels the group tree cannot place: []
-  wrote data/processed/latvia_territorial.json (2049 kB)
-  wrote latvia_territorial.json: 632 records
+switzerland_religion: BFS structural survey, religion by canton, 2024
+  2024: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
+  Vaud: 699,662 aged 15+; dropped []; suppressed []
+  Valais: 311,881 aged 15+; dropped ['Judaism ±74%']; suppressed []
+  Genève: 405,611 aged 15+; dropped []; suppressed []
+  Bern: 895,907 aged 15+; dropped ['Judaism ±44%']; suppressed []
+  Fribourg: 283,763 aged 15+; dropped ['Other religion ±26%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Solothurn: 243,244 aged 15+; dropped ['Not stated ±27%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Neuchâtel: 150,142 aged 15+; dropped ['Judaism ±68%']; suppressed []
+  Jura: 62,465 aged 15+; dropped ['Other religion ±65%', 'Not stated ±43%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Basel-Stadt: 168,791 aged 15+; dropped ['Judaism ±44%', 'Not stated ±32%']; suppressed []
+  Basel-Landschaft: 253,309 aged 15+; dropped ['Judaism ±74%', 'Not stated ±28%']; suppressed []
+  Aargau: 612,778 aged 15+; dropped ['Judaism ±36%']; suppressed []
+  Zürich: 1,347,408 aged 15+; dropped []; suppressed []
+  Glarus: 35,220 aged 15+; dropped ['Other Christian ±28%', 'Islam ±27%', 'Other religion ±41%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Schaffhausen: 74,428 aged 15+; dropped ['Other religion ±45%', 'Not stated ±48%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Appenzell Ausserrhoden: 46,838 aged 15+; dropped ['Islam ±33%', 'Other religion ±61%', 'Not stated ±73%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Appenzell Innerrhoden: 13,808 aged 15+; dropped ['Reformed ±28%', 'Other Christian ±68%', 'Islam ±73%']; suppressed ['Jüdische Glaubensgemeinschaften', 'Andere Religionsgemeinschaften', 'Religionszugehörigkeit unbekannt']
+  St. Gallen: 448,491 aged 15+; dropped []; suppressed ['Jüdische Glaubensgemeinschaften']
+  Graubünden: 175,977 aged 15+; dropped ['Other religion ±32%', 'Not stated ±34%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Thurgau: 249,376 aged 15+; dropped ['Not stated ±30%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Luzern: 363,523 aged 15+; dropped ['Judaism ±55%']; suppressed []
+  Uri: 31,946 aged 15+; dropped ['Reformed ±33%', 'Other Christian ±37%', 'Islam ±44%', 'Other religion ±86%', 'Not stated ±67%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Schwyz: 142,109 aged 15+; dropped ['Judaism ±87%', 'Other religion ±32%', 'Not stated ±44%']; suppressed []
+  Obwalden: 33,149 aged 15+; dropped ['Reformed ±25%', 'Other Christian ±34%', 'Islam ±34%', 'Other religion ±54%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Nidwalden: 38,598 aged 15+; dropped ['Other Christian ±31%', 'Islam ±41%', 'Other religion ±68%', 'Not stated ±79%']; suppressed ['Jüdische Glaubensgemeinschaften']
+  Zug: 111,083 aged 15+; dropped ['Judaism ±46%', 'Not stated ±30%']; suppressed []
+  Ticino: 308,002 aged 15+; dropped ['Judaism ±65%']; suppressed []
+  wrote data/processed/switzerland_religion_survey.json (55 kB)
+  wrote switzerland_religion_survey.json: 26 records
