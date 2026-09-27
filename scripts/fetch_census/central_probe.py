@@ -778,7 +778,56 @@ def lie7() -> None:
         log("   " + text(body)[:1500].replace("\n", "\n   "))
 
 
+def xlsx_dump(url: str, rows: int = 12, sheets: int = 8, cols: int = 14) -> None:
+    import io as _io
+    import openpyxl
+    status, _, body = fetch(url)
+    log(f"\n## {url}: HTTP {status}, {len(body):,} bytes")
+    if status != 200:
+        return
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    log(f"   sheets: {book.sheetnames}")
+    for sheet in book.worksheets[:sheets]:
+        log(f"   sheet {sheet.title!r}: {sheet.max_row} rows x {sheet.max_column} cols")
+        for row in sheet.iter_rows(values_only=True, max_row=rows):
+            cells = [str(c)[:30] for c in row[:cols] if c is not None]
+            if cells:
+                log("     " + " | ".join(cells))
+
+
+def hun7() -> None:
+    page = text(fetch("https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1")[2])
+    for pattern in (r"\bal\s*=\s*[^,;]{0,100}", r"apiBaseUrl\s*[:=]\s*[^,;]{0,100}", r"new ol\([^)]{0,100}\)",
+                    r"https://[a-z0-9.\-]*ksh\.hu[^\"'` ]*"):
+        hits = sorted(set(re.findall(pattern, page)))
+        log(f"   {pattern!r}: {hits[:12]}")
+    for url in ("https://nepszamlalas2022.ksh.hu/adatbazis/api/version",
+                "https://nepszamlalas2022.ksh.hu/api/version",
+                "https://nepszamlalas2022.ksh.hu/adatbazis/api/index/hu/0"):
+        show(url, raw=600)
+
+
+def svk7() -> None:
+    for q in ("obyv_", "Hosted narodnost", "okres narod", "materinsk", "nabozen"):
+        page = text(fetch("https://gis.scitanie.sk/portal/sharing/rest/search?q="
+                          + urllib.parse.quote(q) + "&f=json&num=100")[2])
+        try:
+            rows = json.loads(page).get("results", [])
+            log(f"   [{q}] {len(rows)} results")
+            for row in rows:
+                if row.get("url") and "server/rest" in (row.get("url") or ""):
+                    log(f"   - {row.get('type')} | {row.get('title')} | {row.get('url')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {page[:200]}")
+    show("https://gis.scitanie.sk/server/rest/services/Hosted?f=json", raw=3000)
+
+
+def nld7() -> None:
+    xlsx_dump("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx", rows=16)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun7": hun7, "svk7": svk7, "nld7": nld7,
     "lie7": lie7,
     "hun6": hun6, "nld6": nld6, "svk6": svk6,
     "cze5": cze5, "hun5": hun5, "che5": che5, "svk5": svk5, "nld5": nld5, "lux5": lux5,
