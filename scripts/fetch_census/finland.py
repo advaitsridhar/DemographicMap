@@ -186,8 +186,9 @@ def main() -> int:
             log(f"  key {year}: {exc}")
             continue
         found, missing = match(names)
+        spare = sorted(f"{c} {n}" for c, n in names.items() if c not in set(found.values()))
         log(f"  key {year}: {len(names)} sub-regions; {len(found)} of {len(DRAWN)} drawn "
-            f"names found" + (f"; missing {missing[:4]}" if missing else ""))
+            f"names found" + (f"; missing {missing}; unclaimed {spare}" if missing else ""))
         if not missing and len(names) == len(DRAWN):
             chosen = (year, muni, names, found)
             break
