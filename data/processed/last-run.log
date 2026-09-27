@@ -1,28 +1,100 @@
-== grep https://www.cystat.gov.cy/en/SubthemeStatistics?id=46 (?s).{0,200} 1
-  HTTP 302 text/html; charset=utf-8 170 bytes
-  2 matches
-  <html><head><title>Object moved</title></head><body>
-<h2>Object moved to <a href="https://www.cystat.gov.cy/en/SubthemeStatistics?id=46">here</a>.</h2>
-</body></html>
-
-== links https://www.statistics.gr/el/2021-census-res-pop-results xls|xlsx 40
-  HTTP 200 text/html;charset=UTF-8 147,360 bytes
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A01_F_BI.xlsx/ed1c7f78-5f1e-c892-7bf0-366d797e1843  [Πίνακας Α01. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά φύλο και ομάδες ηλικιών]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A02_F_BI.xlsx/fe0784cf-e357-639d-0e51-1f02e51c361e  [Πίνακας Α02. Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός κατά φύλο και ιθαγένεια]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A03_F_BI.xlsx/9dcf64e2-fabb-0dcc-b86a-aac1a9049ccc  [Πίνακας Α03. Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός κατά ομάδες χωρών ιθαγένειας και ο]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A04_F_BI.xlsx/62bacd1a-04a1-eaa3-3e9f-6e077d621c45  [Πίνακας Α04. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά ομάδες ηλικιών και τόπο γέννη]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A05_F_BI.xlsx/96ddb9db-1ee0-b0fe-ba3f-0dec65395653  [Πίνακας Α05. Απογραφή Πληθυσμού 2021. Μόνιμος πληθυσμός κατά φύλο και οικογενειακή κατάστα]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A06_F_BI.xlsx/9ef0182e-47c5-8aff-939d-9ffb11391ffa  [Πίνακας Α06. Απογραφή Πληθυσμού 2021. Ιδιωτικά νοικοκυριά και αριθμός μελών αυτών κατά μέγ]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A07_F_BI.xlsx/35f42a30-451e-c04c-a3ea-7e0a23263f7b  [Πίνακας Α07. Απογραφή Πληθυσμού 2021. Ιδιωτικά μονομελή νοικοκυριά κατά φύλο και ομάδες ηλ]
-  https://www.statistics.gr/documents/20181/17286366/A1602_SAM03_TB_DC_00_2011_A08_F_BI.xlsx/554735e7-3fc2-c974-c0db-283707ce31c9  [Πίνακας Α08. Απογραφή Πληθυσμού 2021. Ιδιωτικά νοικοκυριά κατά ιθαγένεια των μελών τους]
-  https://www.statistics.gr/documents/20181/17286366/MON_PLH_ELEKTR_APOGR_2021.xlsx/ad3e7f84-c277-c8b2-6be2-190666bf24fe  [Απογραφή Πληθυσμού 2021. Μόνιμος Πληθυσμός που απογράφηκε με ηλεκτρονική αυτοαπογραφή]
-  https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f?t=1679066566128  [εδώ]
-  https://www.statistics.gr/documents/20181/17286366/MON_PLI_DHM_KOIN_2021.xlsx/17bff52d-4fb3-6563-7d67-251116184f56  [εδώ]
-  https://www.statistics.gr/documents/20181/17286366/MON_PLI_DHM_OIKISN_2021.xlsx/2b5a5f24-4083-ede5-7201-3c4fb109fb44  [ΜΟΝΙΜΟΣ ΠΛΗΘΥΣΜΟΣ 2021 ΚΑΤΑ ΟΙΚΙΣΜΟ 29.03.2024]
-  (12 links shown)
-== links https://www.statistics.gr/en/2021-census-questionnaire pdf|questionnaire 10
-  HTTP 200 text/html;charset=UTF-8 131,413 bytes
-  https://www.statistics.gr/el/2021-census-questionnaire  [Ελληνικά]
-  https://www.statistics.gr/en/2021-census-questionnaire  [Ερωτηματολόγιο Απογραφής]
-  https://www.statistics.gr/en/2021-census-questionnaire  [Ερωτηματολόγιο Απογραφής]
-  (3 links shown)
+== grep https://data.stat.gov.rs/Home/Result/3104010101?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 719,554 bytes
+  0 matches
+== grep https://data.stat.gov.rs/Home/Result/3104010201?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 719,554 bytes
+  0 matches
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  181 matches
+  Indikator": "Stanovništvo prema starosti i polu [broj] ",
+    "Teritorija - NSTJ": "REPUBLIKA SRBIJA",
+    "Tip naselja": "Ukupno",
+    "Period": "
+== grep https://data.stat.gov.rs/Home/Result/3104020301?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 3,484,432 bytes
+  8611 matches
+  Indikator": "Stanovništvo prema veroispovesti [broj] ",
+    "Teritorija - NSTJ": "REPUBLIKA SRBIJA",
+    "Pol": "Ukupno",
+    "Period": "
+== grep https://data.stat.gov.rs/Home/Result/3104030101?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 1,078,398 bytes
+  22 matches
+  Indikator": "Domaćinstva prema broju članova [broj] ",
+    "Teritorija - NSTJ": "REPUBLIKA SRBIJA",
+    "Tip naselja": "Ukupno",
+    "Period": "
+== grep https://data.stat.gov.rs/Home/Result/3104040101?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 1,229,929 bytes
+  433 matches
+  Indikator": "Broj stambenih jedinica [broj] ",
+    "Teritorija - NSTJ": "REPUBLIKA SRBIJA",
+    "Tip naselja": "Ukupno",
+    "Period": "
+== grep https://data.stat.gov.rs/Home/Result/31040101?languageCode=sr-Latn Indikator.:.[^x22]+ 1
+  HTTP 200 text/html; charset=utf-8 719,554 bytes
+  0 matches
+== grep https://data.stat.gov.rs/AdvancedSearch?languageCode=sr-Latn 3104[0-9]{2,8}[^<]{0,120} 60
+  HTTP 200 text/html; charset=utf-8 1,001,071 bytes
+  297 matches
+  3104020701IND01","text":"Autohtono i doseljeno stanovništvo","a_attr":{"title":""},"data":"Tab559_Pod"},{"id":"1802010901IND01","t
+  3104040102IND01","text":"Broj  stanova prema broju soba i raspoloživosti pomoćnih prostorija","a_attr":{"title":""},"data":"Tab538
+  3104040103IND01","text":"Broj  stanova prema korisnoj površini stana","a_attr":{"title":""},"data":"Tab539_Pod"},{"id":"190302IND0
+  310404010404IND01","text":"Broj nastanjenih stanova prema svojini i osnovu po kojem domaćinstvo koristi stan","a_attr":{"title":""},
+  310401IND02","text":"Broj popisanih stanovnika","a_attr":{"title":""},"data":"Tab133_Pod"},{"id":"190101IND01","text":"Broj po
+  3104040101IND01","text":"Broj stambenih jedinica","a_attr":{"title":""},"data":"Tab537_Pod"},{"id":"05080101IND01","text":"Broj st
+  3104040105IND01","text":"Broj stanova prema opremljenosti instalacijama i osnovu korišćenja","a_attr":{"title":""},"data":"Tab562_
+  31040211IND01","text":"Dnevne migracije ekonomski aktivnog stanovništva koje obavlja zanimanje prema polu","a_attr":{"title":""}
+  31040211IND02","text":"Dnevne migracije učenika/studenata prema polu","a_attr":{"title":""},"data":"Tab600_Pod"},{"id":"18020111
+  3104030101IND01","text":"Domaćinstva prema broju članova","a_attr":{"title":""},"data":"Tab546_Pod"},{"id":"18020110IND01","text":
+  3104030103IND01","text":"Domaćinstva prema porodičnom sastavu i broju članova","a_attr":{"title":""},"data":"Tab586_Pod"},{"id":"3
+  310401IND03","text":"Dopuna iz administrativnih izvora","a_attr":{"title":""},"data":"Tab133_Pod"},{"id":"18060401IND01","text
+  3104020702IND01","text":"Doseljeno stanovništvo prema području sa kojeg se doselilo, vremenu doseljenja i polu","a_attr":{"title":
+  3104020803IND01","text":"Ekonomski aktivno stanovništvo koje obavlja zanimanje prema grupama zanimanja i polu","a_attr":{"title":"
+  3104020804IND01","text":"Ekonomski aktivno stanovništvo koje obavlja zanimanje prema radnom statusu  po polu","a_attr":{"title":""
+  3104020802IND01","text":"Ekonomski aktivno stanovništvo koje obavlja zanimanje prema sektorima delatnosti i polu","a_attr":{"title
+  310404010403IND01","text":"Nastanjeni stanovi prema prosečnoj površini po licu","a_attr":{"title":""},"data":"Tab557_Pod"},{"id":"05
+  3104040106IND01","text":"Nastanjeni stanovi prema vrsti grejanja i energenata za grejanje","a_attr":{"title":""},"data":"Tab572_Po
+  3104020902IND01","text":"Osobe s invaliditetom stare 2 i više godina prema vrsti problema, polu i starosti","a_attr":{"title":""},
+  3104030201IND01","text":"Porodice prema tipu","a_attr":{"title":""},"data":"Tab565_Pod"},{"id":"18020112IND01","text":"Porodice pr
+  3104030202IND01","text":"Porodice s decom prema tipu porodice, broju i starosti dece","a_attr":{"title":""},"data":"Tab567_Pod"},{
+  3104040102IND02","text":"Površina  stanova prema broju soba i raspoloživosti pomoćnih prostorija","a_attr":{"title":""},"data":"Ta
+  3104040101IND02","text":"Površina stambenih jedinica","a_attr":{"title":""},"data":"Tab537_Pod"},{"id":"3104040103IND02","text":"P
+  3104030102IND01","text":"Prosečan broj članova domaćinstva","a_attr":{"title":""},"data":"Tab304_Pod"},{"id":"010104IND05","text":
+  3104020306IND01","text":"Prosečna starost stanovništva prema nacionalnoj pripadnosti i polu","a_attr":{"title":""},"data":"Tab545_
+  3104020202IND01","text":"Prosečna starost stanovništva prema polu","a_attr":{"title":""},"data":"Tab157_Pod"},{"id":"180708IND01",
+  310404010402IND01","text":"Stambene jedinice prema broju domaćinstava","a_attr":{"title":""},"data":"Tab548_Pod"},{"id":"31040401040
+  3104040203IND01","text":"Stambene zgrade prema broju spratova u zgradi","a_attr":{"title":""},"data":"Tab580_Pod"},{"id":"31040402
+  3104040204IND01","text":"Stambene zgrade prema materijalu spoljnih zidova","a_attr":{"title":""},"data":"Tab592_Pod"},{"id":"31040
+  310404010702IND01","text":"Stanovi prema položaju stana u zgradi (spratnosti), po opštinama i gradovima","a_attr":{"title":""},"data
+  310404010701IND01","text":"Stanovi prema vrsti zgrade i godini izgradnje, po opštinama i gradovima","a_attr":{"title":""},"data":"Ta
+  3104020503IND01","text":"Stanovništvo  staro 15 i više godina prema godini rođenja, polu i bračnom statusu, po regionima","a_attr"
+  3104020703IND01","text":"Stanovništvo prema (mestu) državi rođenja i državljanstvu, po oblastima","a_attr":{"title":""},"data":"Ta
+  3104020801IND01","text":"Stanovništvo prema ekonomskoj aktivnosti, starosti i polu","a_attr":{"title":""},"data":"Tab574_Pod"},{"i
+  3104020302IND01","text":"Stanovništvo prema maternjem jeziku","a_attr":{"title":""},"data":"Tab541_Pod"},{"id":"3104020102IND01","
+  3104020304IND01","text":"Stanovništvo prema nacionalnoj pripadnosti i maternjem jeziku, po regionima","a_attr":{"title":""},"data"
+  3104020101IND01","text":"Stanovništvo prema nacionalnoj pripadnosti i polu","a_attr":{"title":""},"data":"Tab526_Pod"},{"id":"3104
+  3104020303IND01","text":"Stanovništvo prema nacionalnoj pripadnosti, starosti i polu","a_attr":{"title":""},"data":"Tab542_Pod"},{
+  3104021001IND01","text":"Stanovništvo prema pojedinačnoj starosti i polu, po regionima","a_attr":{"title":""},"data":"Tab343_Pod"}
+  3104020201IND01","text":"Stanovništvo prema starosti i polu","a_attr":{"title":""},"data":"Tab162_Pod"},{"id":"3104021002IND01","t
+  3104020301IND01","text":"Stanovništvo prema veroispovesti","a_attr":{"title":""},"data":"Tab540_Pod"},{"id":"3104020402IND01","tex
+  3104020502IND01","text":"Stanovništvo staro 15 i više godina koje živi u vanbračnoj zajednici prema  starosti i polu, po oblastima
+  3104020602IND01","text":"Stanovništvo staro 15 i više godina prema broju živorođene dece, polu, starosti i nacionalnoj pripadnosti
+  3104020403IND01","text":"Stanovništvo staro 15 i više godina prema kompjuterskoj pismenosti i polu","a_attr":{"title":""},"data":"
+  3104020307IND01","text":"Stanovništvo staro 15 i više godina prema nacionalnoj pripadnosti, starosti, polu i školskoj spremi, po r
+  3104020601IND01","text":"Stanovništvo staro 15 i više godina prema polu, starosti i broju živorođene dece","a_attr":{"title":""},"
+  3104020401IND01","text":"Stanovništvo staro 15 i više godina prema školskoj spremi i polu","a_attr":{"title":""},"data":"Tab550_Po
+  3104020501IND01","text":"Stanovništvo staro 15 i više godina prema zakonskom  bračnom statusu, starosti i polu","a_attr":{"title":
+  3104020901IND01","text":"Stanovništvo staro 2 i više godina prema statusu invaliditeta, polu, starosti i tipu naselja","a_attr":{"
+  310401IND04","text":"Ukupan broj domaćinstava","a_attr":{"title":""},"data":"Tab133_Pod"},{"id":"310401IND01","text":"Ukupan b
+  310401IND05","text":"Ukupan broj stanova","a_attr":{"title":""},"data":"Tab133_Pod"},{"id":"25050104IND01","text":"Ukupan ener
+  310404010404IND01","AggregantTypeId":"137"},{"IndicatorId":"17190203IND01","AggregantTypeId":"2"},{"IndicatorId":"09020102IND10","Ag
+  3104020902IND01","AggregantTypeId":"40"},{"IndicatorId":"12040201IND01","AggregantTypeId":"102"},{"IndicatorId":"13020201IND01","A
+  3104020701IND01","AggregantTypeId":"142"},{"IndicatorId":"130001050305IND87","AggregantTypeId":"102"},{"IndicatorId":"1300020103IN
+  3104020703IND01","AggregantTypeId":"131"},{"IndicatorId":"16010401IND01","AggregantTypeId":"222"},{"IndicatorId":"1301IND01","Aggr
+  3104020303IND01","AggregantTypeId":"2"},{"IndicatorId":"130001050202IND82","AggregantTypeId":"149"},{"IndicatorId":"130001050303IN
+  3104040103IND01","AggregantTypeId":"36"},{"IndicatorId":"09020702IND01","AggregantTypeId":"102"},{"IndicatorId":"130001021002IND48
+  3104020303IND01","AggregantTypeId":"40"},{"IndicatorId":"161002IND01","AggregantTypeId":"2"},{"IndicatorId":"07040205IND01","Aggre
+  310401IND04","AggregantTypeId":"2"},{"IndicatorId":"09030102IND01","AggregantTypeId":"89"},{"IndicatorId":"130001040502IND77",
+  310401IND01","AggregantTypeId":"102"},{"IndicatorId":"3104020307IND01","AggregantTypeId":"112"},{"IndicatorId":"090302IND02","
