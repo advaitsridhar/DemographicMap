@@ -1,10 +1,5 @@
-austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
-  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
-  2115 municipalities
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70341.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70504.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70505.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70506.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70508.pdf :: <urlopen error [Errno 101] Network is unreachable>
-  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70509.pdf :: <urlopen error [Errno 101] Network is unreachable>
-austria_census: no 2001 sheet for 1 municipalities: ['62280']
+serbia_census: RZS open data, 2022 census
+  3104020201IND01: 3,142,498 bytes, 318,000 records
+  age: 205 territories
+  3104020101IND01: 19,582,861 bytes, 45,240 records
+serbia_census: 3104020101IND01: cannot tell the category among ['nNacionalnostPS', 'nTipNaseljaMICS']
