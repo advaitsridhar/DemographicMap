@@ -164,7 +164,7 @@ def build() -> list[dict[str, Any]]:
             if not shape:
                 raise SystemExit(f"moldova_age: {unit['name']!r} is not a {level} shape")
             records.append(record(
-                f"MDA-age-{level}-{k}", display(unit["name"]), level=level, parent="MDA",
+                f"MDA-age-{level}-{k}", display(re.sub(r"^Raionul\s+", "", unit["name"])), level=level, parent="MDA",
                 country="MDA", match_by="shape_id", shape_id=shape,
                 population=measure(int(total), year=YEAR, source=SOURCE.format(table="8.3")),
                 median_age=measure(median, unit="years", year=YEAR, source=SOURCE.format(table="2.3")),
