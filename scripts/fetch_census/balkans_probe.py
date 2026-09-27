@@ -21,6 +21,7 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
                                  territory tree the page carries
     pxv:URL~~VARREGEX[~~N]       a PxWeb table's variables, every value (up to N) of those
                                  whose code matches VARREGEX
+    pdfpage:URL~~P1,P2..[~~N]    the first N characters of the text of the given pages (1-based)
     postraw:URL~~B64JSON[~~N]    POST without following redirects: status, Location,
                                  headers and the first N characters of the body
 
@@ -56,7 +57,7 @@ TIMEOUT = 60
 import http.cookiejar  # noqa: E402
 OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf",
-         "rsdata", "pxv", "postraw")
+         "rsdata", "pxv", "postraw", "pdfpage")
 
 
 def uri(url: str) -> str:
@@ -226,7 +227,7 @@ def probe(arg: str) -> None:
             summary(url, status, headers, body)
             say("  " + decode(body, headers)[:int(extra[1]) if len(extra) > 1 else 3000])
             return
-        status, headers, body = fetch(url, timeout=180 if mode in ("xls", "xlsrow", "zip", "pdf") else TIMEOUT)
+        status, headers, body = fetch(url, timeout=180 if mode in ("xls", "xlsrow", "zip", "pdf", "pdfpage") else TIMEOUT)
         summary(url, status, headers, body)
         if mode == "head" or status >= 400 and mode not in ("text",):
             if status >= 400:
@@ -349,6 +350,14 @@ def probe(arg: str) -> None:
                 say(f"  var {var.get('code')!r}: {len(vals)} values")
                 if rx.search(var.get("code", "")):
                     say("    " + ", ".join(f"{v}={t}" for v, t in list(zip(vals, texts))[:n]))
+        elif mode == "pdfpage":
+            import pdfplumber
+            n = int(extra[1]) if len(extra) > 1 else 3000
+            with pdfplumber.open(io.BytesIO(body)) as pdf:
+                for num in extra[0].split(","):
+                    page = pdf.pages[int(num) - 1]
+                    say(f"  -- page {num}:")
+                    say("  " + (page.extract_text() or "")[:n].replace("\n", "\n  "))
         elif mode == "pdf":
             import pdfplumber
             rx = re.compile(extra[0], re.I)

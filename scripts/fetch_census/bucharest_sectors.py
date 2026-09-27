@@ -57,7 +57,7 @@ def band(label: str) -> tuple[float, float | None] | None:
     m = re.match(r"^(\d+)\s*-\s*(\d+)\s*ani", text)
     if m:
         return float(m.group(1)), float(int(m.group(2)) - int(m.group(1)) + 1)
-    m = re.match(r"^(\d+)\s*ani\s*(si|și)\s*peste", text)
+    m = re.match(r"^(\d+)(ani)?sipeste$", fold(text))       # și, şi or si
     if m:
         return float(m.group(1)), None
     return None
@@ -109,11 +109,16 @@ def census_city_median() -> float:
     for j, c in enumerate(rows[head]):
         text = " ".join(str(c).split()).lower()
         m = re.match(r"^(\d+)\s*-\s*(\d+)", text)
-        top = re.match(r"^(\d+)\s*(ani\s*)?(si|și)\s*peste", text)
+        top = re.match(r"^(\d+)(ani)?sipeste$", fold(text))   # și, şi or si
         if m:
             bands.append((j, float(m.group(1)), float(int(m.group(2)) - int(m.group(1)) + 1)))
         elif top:
             bands.append((j, float(top.group(1)), None))
+    if bands and bands[-1][2] is not None:
+        # The open top group's label can run over the header's rows ("85" above
+        # "ani si peste"): it is the column after the last closed group.
+        j, lo, w = bands[-1]
+        bands.append((j + 1, lo + w, None))
     row = next(r for r in rows if fold(r[0]) == "municipiulbucuresti")
     total = float(row[1])
     groups = [(lo, w, float(row[j] or 0)) for j, lo, w in bands]
