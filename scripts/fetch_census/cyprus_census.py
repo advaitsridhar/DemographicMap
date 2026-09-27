@@ -84,6 +84,16 @@ LANGUAGES = {
     "indian": "Other", "srilankan": "Other", "yugoslavian": "Other",
     "otherlanguages": "Other", "notstated": "Not stated",
 }
+# CYSTAT's spelling -> the boundary file's, where they differ by more than
+# the district suffix or a parenthesis; each checked against the polygon's
+# district.
+ALIASES = {"Agios Georgios Kafkallou": "Agios Georgios Kafkaliou",
+           "Agios Theodoros Tillirias": "Agios Theodoros Tillrias",
+           "Agioi Vavatsinias": "Agloi Vavatsinias",
+           "Agia Marina Kelokedaron": "Ayia Marina Kelokedharon",
+           "Chlorakas": "Chloraka", "Pafos": "Paphos",
+           "Livadia Lefkosias": "Livadia Lefosias", "Moutoullas": "Moutoulias",
+           "Kalopanagiotis": "Kalapanagiotis"}
 SUFFIXES = ("lefkosias", "lemesou", "larnakas", "pafou", "ammochostou", "keryneias", "municipality")
 WHY_OUTSIDE = ("Kyrenia district has been outside the effective control of the Government of the "
                "Republic of Cyprus since 1974. The Republic's censuses since then, the 2021 census "
@@ -121,7 +131,10 @@ def district_key(text: str) -> str:
 def keys(name: str) -> list[str]:
     """The folded forms a community's name may take, most exact first."""
     out = []
-    for part in [name] + [p for p in re.split(r"\s+or\s+", name) if p != name]:
+    name = ALIASES.get(name, name)
+    bare = re.sub(r"\s*\([^)]*\)", "", name).strip()     # "Voroklini (Oroklini)"
+    forms = [name, bare] + [p for p in re.split(r"\s+or\s+", bare) if p != bare]
+    for part in forms:
         f = fold(part)
         out.append(f)
         bare = f
@@ -343,7 +356,8 @@ def build() -> list[dict[str, Any]]:
     rev = {v: k for k, v in DISTRICTS.items()}
     bound: dict[str, dict[str, Any]] = {}
     used: set[str] = set()
-    lost = []
+    lost: list[str] = []
+    across: list[str] = []
     for code, unit in sorted(comms.items()):
         dname = rev[unit["district"]]
         hit = None
@@ -353,11 +367,24 @@ def build() -> list[dict[str, Any]]:
                 hit = cands[0]
                 break
         if hit is None:
+            # The boundary file files a few communities under the district
+            # next door (Sia, Ormideia, Xylofagou): a name the whole country
+            # has once, on both sides, is the same place.
+            for k in keys(unit["name"]):
+                cands = {s["id"]: s for (d, kk), ss in by_key.items() if kk == k for s in ss}
+                same = [c for c in comms.values() if k in keys(c["name"])]
+                if len(cands) == 1 and len(same) == 1 and next(iter(cands)) not in used:
+                    hit = next(iter(cands.values()))
+                    across.append(f"{unit['name']} ({dname}) on {hit['name']} "
+                                  f"({district_of.get(hit['parent'], '?')})")
+                    break
+        if hit is None:
             lost.append(f"{unit['name']} ({code}, {dname}, {unit['total']:,.0f})")
             continue
         bound[code] = hit
         used.add(hit["id"])
     lost_people = sum(comms[c]["total"] for c in comms if c not in bound)
+    log(f"  bound across a district line, by a name unique in the country: {across}")
     log(f"  {len(bound)} of {len(comms)} CYSTAT communities bound; {len(lost)} unbound "
         f"({lost_people:,.0f} people): {lost}")
     spare = [f"{s['name']} ({district_of.get(s['parent'], '?')})" for s in admin2

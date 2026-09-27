@@ -37,6 +37,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import urllib.parse
 from typing import Any
 
@@ -140,7 +141,8 @@ def read(field: str) -> dict[str, dict[str, Any]]:
         head = next((str(r[0]) for r in rows if r and str(r[0] or "").strip().lower().startswith("qarku")), None)
         if head is None:
             raise SystemExit(f"albania_census: {field}: sheet {sheet!r} names no prefecture")
-        name = head.strip()[len("Qarku"):].strip()
+        # One cell or two: "Qarku Fier" | "Prefecture Fier", or "Qarku Fier  Prefecture Fier".
+        name = re.match(r"Qarku\s+(.+?)(?:\s{2,}|\s+Prefecture\b|$)", head.strip()).group(1).strip()
         unit: dict[str, Any] = {"name": name, "groups": {}, "hidden": 0}
         for r in rows:
             if not r or r[0] is None or len(r) < 4:

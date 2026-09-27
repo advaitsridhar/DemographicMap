@@ -213,6 +213,10 @@ class CyprusTest(unittest.TestCase):
         self.assertIn("agiavarvara", cyprus_census.keys("Agia Varvara Lefkosias"))
         self.assertEqual(cyprus_census.keys("Strovolos")[0], "strovolos")
 
+    def test_parentheses_and_aliases(self):
+        self.assertIn("voroklini", cyprus_census.keys("Voroklini (Oroklini)"))
+        self.assertIn("paphos", cyprus_census.keys("Pafos"))
+
     def test_languages_named_after_countries_are_other(self):
         self.assertEqual(cyprus_census.LANGUAGES["indian"], "Other")
         self.assertEqual(cyprus_census.LANGUAGES["ukranian"], "Ukrainian")
@@ -253,7 +257,7 @@ class AlbaniaTest(unittest.TestCase):
                          "Mixed")
 
     def test_hidden_cells_become_one_bar(self):
-        rows = [["Tab. 1.12"], ["Qarku Dibër", "Prefecture Dibër"],
+        rows = [["Tab. 1.12"], ["Qarku Dibër  Prefecture Dibër"],
                 ["Gjithsej  Total", 100.0, 50.0, 50.0],
                 ["Shqiptare  Albanian", 90.0, 45.0, 45.0],
                 ["Greke  Greek", "..", "..", 1.0],
