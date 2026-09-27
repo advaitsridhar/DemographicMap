@@ -246,6 +246,12 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "religion": "Panama's census does not ask religion. INEC's REDATAM base of the 2023 census (LP2023) holds, for every person, relationship, sex, age, civil registration, citizenship, marital status, birthplace, residence before and in 2018, indigenous group (P08), Afro-descendant group (P09), social security, the disability questions, ICT use, literacy, schooling, work, income and children born. Religion is not among its 82 person variables, nor among the 72 of the 2010 census's base (LP2010).",
         "language": "Panama's census does not ask language. The 2023 census's person variables, as INEC's REDATAM base LP2023 lists them, are relationship, sex, age, registration, citizenship, marital status, birthplace, migration, indigenous group, Afro-descendant group, social security, disability, ICT use, literacy, schooling, work, income and fertility; no language or mother tongue is among them, nor among the 2010 census's (LP2010). Which indigenous people a person belongs to is on the ethnicity field.",
     },
+    # Uruguay's 2023 census and Venezuela's 2011 (uruguay_census,
+    # venezuela_redatam put on the map what each does ask).
+    "URY": {
+        "religion": "Uruguay's 2023 census does not ask religion. The questionnaire's only 'religioso' is a kind of collective dwelling (Internado religioso), and INE's data dictionary for the census's person file has no religion variable.",
+        "language": "Uruguay's 2023 census does not ask language: neither its questionnaire nor INE's data dictionary for the person file has a language question or variable.",
+    },
     # The Greater Antilles, each from the census's own list of its questions
     # (cuba_census, dominican_census, haiti_census put on the map what each
     # does ask).
@@ -592,6 +598,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "VEN": {
         "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
+        "language": "Venezuela's 2011 census asked which languages a person speaks only of those who said they belong to an indigenous people (question 5, INE's Meta_Persona); no one else was asked, and INE's REDATAM base of the census carries no language variable. That is not a composition of what the population speaks.",
     },
     # Measured on INE's own data dictionary for the 2024 census's person
     # database, which labels every question the file holds, 24 to 59; none

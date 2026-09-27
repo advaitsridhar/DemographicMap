@@ -347,6 +347,22 @@ ADAPTER_FILES = [
     # Venezuela's 2011 census by state: the indigenous population by people,
     # and everyone else as one line.
     "venezuela_census.json",
+    # Venezuela's 2011 census on INE's REDATAM base: median age, sex ratio and
+    # ethnicity (the peoples and question 7's identity) for the 25 states and
+    # 334 municipios, and the 2011 count by municipio. After venezuela_census
+    # so its state ethnicity replaces the peoples-only line.
+    "venezuela_redatam.json",
+    # Paraguay's 2022 census on INE's REDATAM base by department and district:
+    # population, age, sex, language (several answers allowed), indigenous
+    # identity with the peoples by department from the 2022 Indigenous
+    # Census's Cuadro A2; and the 2002 census's religion, departments and the
+    # 201 districts drawn as they were then.
+    "paraguay_census.json",
+    # Uruguay's 2023 census microdata: departments from INE's July 2026
+    # weighted release (checked against Cuadros 1 and 14); municipios and the
+    # ground outside them from the February 2026 release, which files people
+    # by the 2020 series the map draws. Principal ethnic-racial ancestry.
+    "uruguay_census.json",
     # Peru's 2017 census by province, tabulated on INEI's REDATAM base:
     # median age, sex ratio, ethnicity, religion and mother tongue for the
     # 196 provinces, and median age, sex ratio and ethnicity for the first
@@ -3101,6 +3117,12 @@ def fill_remainders(admin1_by_country: dict[str, list[dict[str, Any]]],
             if not entity.get("water"):
                 kids[entity.get("parent")].append(entity)
         for rest in (e for e in rows if e.get("remainder")):
+            # A remainder a source counts directly keeps that count: Uruguay's
+            # census files its people under "Sin Municipio" by department, and
+            # the difference would also take in the people INE records with no
+            # municipio at all, and a municipio's strip across a department line.
+            if published(rest.get("population")) is not None:
+                continue
             parent = parents.get(rest.get("parent"))
             if parent is None:
                 continue

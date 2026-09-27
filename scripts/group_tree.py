@@ -202,7 +202,7 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("Catholicism", ("Catholic", "Oblates")),
     ("Protestantism", (
         "Protestant", "Salvation", "Fellowship", "Believer", "Praise",
-        "Outreach", "Faith", "Anabaptist", "Espiritista", "Evangelist",
+        "Outreach", "Faith", "Anabaptist", "Mennonite", "Espiritista", "Evangelist",
         "Jesus", "Assemblies", "Assembly", "Word for the World",
         "Things to Come", "Lord of the Nations", "Way of Salvation",
         "Baptist", "Pentecostal", "Evangelical", "Methodist", "Lutheran",
@@ -1022,6 +1022,14 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Píritu", "Sanemá", "Sapé", "Sáliva", "Timote (Timotocuica)", "Tukano", "Tunebo",
         "Waikerí", "Wapishana", "Warekena", "Yavarana", "Ye'kwana", "Yeral (Ñengatú)",
         "Yukpa",
+        # Paraguay's 2022 Indigenous Census, by the names its Cuadro A2 prints
+        # (Avá, Mbyá, Occidental and Ñandeva Guaraní are filed under Guaraní
+        # already). Maká and Guaná are written with the country: the patterns
+        # read a bare Maká as Cameroon's Makaa, and Brazil's Terena count a
+        # Guaná of their own.
+        "Aché", "Paĩ Tavyterã", "Enlhet Norte", "Enxet Sur", "Sanapaná", "Angaité",
+        "Guaná (Paraguay)", "Toba Maskoy", "Maká (Paraguay)", "Manjui", "Ybytoso",
+        "Tomárãho", "Qom",
     ),
     "Afro-descendant peoples of the Americas": (
         "Raizal", "Palenquero", "Maroon", "Creole",
