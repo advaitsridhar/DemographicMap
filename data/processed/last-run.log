@@ -1,16 +1,10 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/spain_italy_age.py", line 229, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/spain_italy_age.py", line 199, in main
-    canary, year = spain()
-                   ^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/spain_italy_age.py", line 73, in spain
-    sex = meta(series, "Sexo").get("Nombre")
-          ^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/spain_italy_age.py", line 60, in meta
-    for item in series.get("MetaData") or []:
-                ^^^^^^^^^^
-AttributeError: 'str' object has no attribute 'get'
+bulgaria_census: NSI, Census 2021
+  63412e676270...: 1,670,809 bytes
+  d6bebedae9d8...: 78,912 bytes
+  country: 6,519,789, median 46.7 from five-year groups
+  Sarnitsa (PAZ39) folded into Velingrad (PAZ08)
+  Zlatitsa is drawn as 2 polygons: figures on 11073933B76991292071364, merge ['11073933B60320132010156']
+  264 municipalities bound; left over: []
+  polygons with no municipality: []
+  wrote data/processed/bulgaria_census.json (1741 kB)
+  wrote bulgaria_census.json: 292 records
