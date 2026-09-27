@@ -94,7 +94,7 @@ def discover(countries: list[str]) -> None:
                 except SystemExit as exc:
                     log(f"   {probe[1]}: {str(exc)[:160]}")
                     continue
-                labels = {c["value"]: c["label"] for c in codes[1]["codeList"]}
+                labels = {c["value"]: c["label"] or "" for c in codes[1]["codeList"] or []}
                 for cc in countries:
                     row = sorted(((k[1], v) for k, v in cells.items() if k[0] == cc),
                                  key=lambda kv: -kv[1])
