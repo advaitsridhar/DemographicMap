@@ -183,14 +183,19 @@ def read(blob: bytes) -> tuple[dict[str, dict[str, float]], dict[str, int], dict
 
     sheet = xlrd.open_workbook(file_contents=blob).sheet_by_index(0)
     rows = [sheet.row_values(i) for i in range(sheet.nrows)]
-    header = next(i for i, r in enumerate(rows) if any(str(c).strip() in SUBJECTS for c in r))
-    columns = {str(c).strip(): j for j, c in enumerate(rows[header]) if str(c).strip()}
+    names = {folded(s): s for s in SUBJECTS}
+    header = next(i for i, r in enumerate(rows) if any(folded(c) in names for c in r))
+    columns = {names.get(folded(c), str(c).strip()): j for j, c in enumerate(rows[header])
+               if folded(c)}
     unknown = [c for c in columns if c not in SUBJECTS]
     missing = [s for s in SUBJECTS if s not in columns]
     if unknown or missing:
         raise SystemExit(f"russia_religion: headings not configured {unknown}; "
                          f"configured and absent {missing}")
-    whole = next(j for j, c in enumerate(rows[header - 1]) if str(c).strip() == "Население в целом")
+    whole = next((j for r in rows[:header + 1] for j, c in enumerate(r)
+                  if folded(c) == "население в целом"), None)
+    if whole is None:
+        raise SystemExit("russia_religion: no column for the whole population")
     questions = blocks(rows[header + 1:])
     card = next((q for q in questions if q.startswith(QUESTION)), None)
     if card is None:
