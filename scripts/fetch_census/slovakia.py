@@ -11,9 +11,10 @@ tables as JSON-stat cubes (data.statistics.sk, API v2). Two are read:
   median age (IN010088) for the same districts.
 
 The office publishes the median for exactly these units, so its figure is
-the one written; the median recomputed from the single years is only a check
-on the reading (the two must agree to within half a year). The sex ratio and
-the population are summed from the single years.
+the one written. The districts are read as totals by sex (population and sex
+ratio); the single years are read for the country alone, where the median
+recomputed from them must land within 0.3 years of both the office's own
+national median and Eurostat's.
 
 **Names.** geoBoundaries' Slovak districts are English ("District of X") and
 many lost their diacritics in a way no folding undoes -- "District of Kolice
@@ -36,7 +37,7 @@ from typing import Any
 
 from ._shared import PROCESSED, http_json, log, measure, record, write_json
 from .central_ages import (
-    age_sex_fields, check_national_median, check_sum, fold, report_unbound, units,
+    SEX_RATIO_UNIT, check_national_median, check_sum, fold, report_unbound, sex_ratio, units,
 )
 from .pxweb import unstack
 
@@ -99,7 +100,6 @@ MAP_NAMES = {
     "District of Zlatc Moravce": "Zlaté Moravce",
 }
 EXPECTED = 79
-BATCH = 15                         # territories per request (15 x 3 sexes x 112 ages)
 
 
 def cube(name: str, path: str) -> list[tuple[dict[str, tuple[str, str]], float]]:
@@ -156,63 +156,72 @@ def latest(year: int) -> int:
     raise SystemExit(f"slovakia: om7009rr answers for none of {year - 2}..{year}")
 
 
+def by_sex(rows: list[tuple[dict[str, tuple[str, str]], float]]
+           ) -> tuple[dict[str, dict[str, float]], dict[str, str]]:
+    """area -> {"SPOLU"|"1"|"2": count} from om7009rr cells with the age total."""
+    out: dict[str, dict[str, float]] = {}
+    names: dict[str, str] = {}
+    for key, value in rows:
+        area, label = key["om7009rr_vuc"]
+        if key["om7009rr_vek"][0] != "Spolu":
+            continue
+        names[area] = label
+        out.setdefault(area, {})[key["om7009rr_poh"][0]] = value
+    return out, names
+
+
+def national_ages(rows: list[tuple[dict[str, tuple[str, str]], float]]) -> Counter:
+    """{age: count} for both sexes from om7009rr cells of one territory."""
+    both: Counter = Counter()
+    for key, value in rows:
+        age_code, sex = key["om7009rr_vek"][0], key["om7009rr_poh"][0]
+        if age_code == "Spolu" or sex == "SPOLU":
+            continue
+        both[110 if age_code == "Y_GE110" else int(age_code[1:])] += value
+    return both
+
+
 def build(year: int) -> list[dict[str, Any]]:
     year = latest(year)
     log(f"slovakia: DATAcube om7009rr / om7005rr, 31 December {year}")
-    males: dict[str, Counter] = {}
-    females: dict[str, Counter] = {}
-    totals: dict[str, float] = {}
-    names: dict[str, str] = {}
-    # The cube refuses (400) a request for every territory and every age at
-    # once, so it is asked one territory at a time, the territories being the
-    # ones its sister cube lists.
     import time
-    import urllib.error
     started = time.monotonic()
     medians = {key["om7005rr_vuc"][0]: value
                for key, value in cube("om7005rr", f"all/{year}/{MEDIAN}/SPOLU")}
     log(f"  om7005rr: {len(medians)} territories in {time.monotonic() - started:.0f} s")
-    # A run that asked for the 88 territories one by one outlasted the
-    # runner's 45 minutes, so they are asked for in batches, a batch being a
-    # comma-separated list of territories, and one by one only if the cube
-    # refuses a batch.
-    rows = []
-    areas = sorted(medians)
-    for i in range(0, len(areas), BATCH):
-        batch = areas[i:i + BATCH]
-        t0 = time.monotonic()
-        try:
-            rows += cube("om7009rr", f"{','.join(batch)}/{year}/{POPULATION}/all/all")
-        except urllib.error.HTTPError as err:
-            log(f"  batch of {len(batch)}: HTTP {err.code}; one territory at a time")
-            for area in batch:
-                rows += cube("om7009rr", f"{area}/{year}/{POPULATION}/all/all")
-        log(f"  om7009rr: {min(i + BATCH, len(areas))} of {len(areas)} territories "
-            f"({time.monotonic() - t0:.0f} s)")
-    for key, value in rows:
-        area, area_label = key["om7009rr_vuc"]
-        sex = key["om7009rr_poh"][0]
-        age_code = key["om7009rr_vek"][0]
-        names[area] = area_label
-        if age_code == "Spolu":
-            if sex == "SPOLU":
-                totals[area] = value
-            continue
-        if sex == "SPOLU":
-            continue
-        age = 110 if age_code == "Y_GE110" else int(age_code[1:])
-        (males if sex == "1" else females).setdefault(area, Counter())[age] += value
-    if not totals:
-        raise SystemExit(f"slovakia: om7009rr has no figures for {year}")
+    # The office publishes the median for every district, so the single
+    # years are not needed district by district -- and asking for them is
+    # what outlasted the runner: batches of territories' 112 ages took more
+    # than five minutes a request, one at a time more than the runner's 45.
+    # So the districts are read as totals by sex, in one request, and the
+    # single years only for the country, where they check the office's median.
+    t0 = time.monotonic()
+    sexes, names = by_sex(cube("om7009rr", f"all/{year}/{POPULATION}/all/Spolu"))
+    log(f"  om7009rr: sex totals for {len(sexes)} territories in {time.monotonic() - t0:.0f} s")
+    for area, counts in sexes.items():
+        if set(counts) != {"SPOLU", "1", "2"}:
+            raise SystemExit(f"slovakia: {area} has sexes {sorted(counts)}")
+        if abs(counts["1"] + counts["2"] - counts["SPOLU"]) > 0.5:
+            raise SystemExit(f"slovakia: {area}: males {counts['1']:,.0f} + females "
+                             f"{counts['2']:,.0f} is not {counts['SPOLU']:,.0f}")
+    totals = {area: counts["SPOLU"] for area, counts in sexes.items()}
     district_codes = sorted(c for c in totals if len(c) == 6 and c.startswith("SK0"))
     log(f"  {len(district_codes)} districts, national {totals.get('SK0', 0):,.0f}")
     check_sum((totals[c] for c in district_codes), totals["SK0"], "districts against Slovakia")
     for region in REGIONS:
         check_sum((totals[c] for c in district_codes if c.startswith(region)), totals[region],
                   f"districts against {region}")
-    both = Counter(males["SK0"])
-    both.update(females["SK0"])
-    check_national_median(both, "SK", year + 1)
+    t0 = time.monotonic()
+    both = national_ages(cube("om7009rr", f"SK0/{year}/{POPULATION}/all/all"))
+    log(f"  om7009rr: the country's single years in {time.monotonic() - t0:.0f} s")
+    if abs(sum(both.values()) - totals["SK0"]) > 0.5:
+        raise SystemExit(f"slovakia: the country's single years make {sum(both.values()):,.0f}, "
+                         f"its total is {totals['SK0']:,.0f}")
+    mine = check_national_median(both, "SK", year + 1)
+    if abs(mine - medians["SK0"]) > 0.3:
+        raise SystemExit(f"slovakia: the national median recomputed as {mine}, om7005rr "
+                         f"publishes {medians['SK0']}")
+    log(f"  national median: recomputed {mine}, om7005rr {medians['SK0']}")
 
     bound = bind_districts({c: district_name(names[c]) for c in district_codes})
     source = SOURCE
@@ -222,28 +231,23 @@ def build(year: int) -> list[dict[str, Any]]:
         office_median = medians.get(code)
         if office_median is None:
             raise SystemExit(f"slovakia: om7005rr has no median age for {code}")
-        fields = age_sex_fields(
-            males[code], females[code], year=year, source=source, total=totals[code],
-            median_note=(f"The Statistical Office's own median age of the district's permanently "
-                         f"living population on 31 December {year} (om7005rr)."),
-            ratio_note=(f"Males per 100 females among the district's permanently living "
-                        f"population on 31 December {year}, from its single years of age "
-                        f"(om7009rr)."))
-        mine = fields["median_age"]["value"]
-        if abs(mine - office_median) > 0.6:
-            raise SystemExit(f"slovakia: {names[code]} median recomputed as {mine}, the office "
-                             f"publishes {office_median}")
-        fields["median_age"] = measure(round(office_median, 1), unit="years", year=year,
-                                       source=source)
+        males, females = sexes[code]["1"], sexes[code]["2"]
         label = shape["name"]
         name = district_name(names[code])
         records.append(record(
             f"SVK-{code}", name, level="admin2", parent=shape["parent"],
             parent_name=REGIONS[code[:5]], country="SVK", codes={"nuts_lau1": code},
             aliases=[label], match_by="shape_id", shape_id=shape["id"],
+            population=measure(int(round(totals[code])), year=year, source=source),
+            median_age=measure(round(office_median, 1), unit="years", year=year, source=source),
+            median_age_note=(f"The Statistical Office's own median age of the district's "
+                             f"permanently living population on 31 December {year} (om7005rr)."),
+            sex_ratio=measure(sex_ratio(males, females), unit=SEX_RATIO_UNIT, year=year,
+                              source=source),
+            sex_ratio_note=(f"Males per 100 females among the district's permanently living "
+                            f"population on 31 December {year} (om7009rr, all ages)."),
             sources=[{"field": "population/median_age/sex_ratio", "name": source,
-                      "url": PORTAL, "license": LICENCE, "year": year}],
-            **fields))
+                      "url": PORTAL, "license": LICENCE, "year": year}]))
     return records
 
 

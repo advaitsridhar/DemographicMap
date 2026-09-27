@@ -3,8 +3,10 @@
 
 CBS's "Kerncijfers wijken en buurten 2022" (KWB 2022) counts the registered
 population (BRP) of every gemeente, wijk and buurt on 1 January 2022, with
-men and women, and CBS publishes it as a workbook on download.cbs.nl. Its
-gemeenten are those of 1 January 2022: 345.
+men and women. CBS publishes it as a workbook on download.cbs.nl, which reset
+every connection from the fetch runner, and as the attributes of its own
+wijk- en buurtkaart 2022, which PDOK serves as a WFS: the same figures, read
+here from the WFS. Its gemeenten are those of 1 January 2022: 345.
 
 **Vintage.** The map draws 344 gemeenten: the 2022 division after Weesp
 joined Amsterdam on 24 March 2022, and before Brielle, Hellevoetsluis and
@@ -25,15 +27,17 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import io
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, write_json
 from .central_ages import SEX_RATIO_UNIT, check_sum, fold, report_unbound, sex_ratio, units
 
-WORKBOOK = "https://download.cbs.nl/regionale-kaarten/kwb-2022.xlsx"
+WFS = ("https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetFeature&service=WFS"
+       "&version=2.0.0&typeNames=wijkenbuurten:gemeenten&outputFormat=application/json&count=2000"
+       "&propertyName=gemeentecode,gemeentenaam,water,mannen,vrouwen,jaar")
 PAGE = "https://www.cbs.nl/nl-nl/maatwerk/2023/14/kerncijfers-wijken-en-buurten-2022"
-SOURCE = "CBS, Kerncijfers wijken en buurten 2022 (population register, 1 January 2022)"
+SOURCE = ("CBS, Kerncijfers wijken en buurten 2022 (population register, 1 January 2022), "
+          "via the wijk- en buurtkaart 2022 on PDOK")
 LICENCE = "CC BY 4.0 (CBS)"
 OUT = PROCESSED / "netherlands_gemeente.json"
 YEAR = 2022
@@ -47,52 +51,37 @@ MERGED_INTO = {"Weesp": "Amsterdam"}          # 24 March 2022, before the map's 
 MAP_NAMES = {"Hengelo": "Hengelo (O)", "Bergen (L.)": "Bergen (L)", "Bergen (NH.)": "Bergen (NH)"}
 
 
-def number(cell: Any) -> float | None:
-    if cell is None:
-        return None
-    if isinstance(cell, (int, float)):
-        return float(cell)
-    text = str(cell).strip().replace(" ", "")
-    if text in ("", ".", "-", "x"):
-        return None
-    try:
-        return float(text)
-    except ValueError:
-        return None
+def features(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """{gemeente code: {name, total, men, women}} from the WFS's GeoJSON.
+
+    The layer also holds "Buitenland" (GM0998), a placeholder for residents
+    abroad with -99999999 in every count, and may split a gemeente into its
+    land and water parts; a gemeente met twice must carry the same counts.
+    """
+    out: dict[str, dict[str, Any]] = {}
+    for feat in payload.get("features", []):
+        props = feat.get("properties") or {}
+        code = str(props.get("gemeentecode") or "").strip()
+        men, women = props.get("mannen"), props.get("vrouwen")
+        if not code.startswith("GM") or men is None or women is None or men < 0 or women < 0:
+            continue
+        entry = {"name": str(props.get("gemeentenaam")).strip(), "men": float(men),
+                 "women": float(women), "total": float(men) + float(women)}
+        if code in out and (out[code]["men"], out[code]["women"]) != (entry["men"], entry["women"]):
+            raise SystemExit(f"netherlands_gemeente: {code} appears twice with different counts")
+        out[code] = entry
+    return out
 
 
 def read() -> tuple[dict[str, dict[str, Any]], float | None]:
-    """{gemeente code: {name, total, men, women}} and the national total."""
-    import openpyxl
-    book = openpyxl.load_workbook(io.BytesIO(http_get(WORKBOOK, binary=True, timeout=300)),
-                                  read_only=True, data_only=True)
-    sheet = book[book.sheetnames[0]]
-    rows = sheet.iter_rows(values_only=True)
-    header: list[str] = []
-    for row in rows:
-        cells = [str(c).strip() if c is not None else "" for c in row]
-        if "a_inw" in cells and "recs" in cells:
-            header = cells
-            break
-    if not header:
-        raise SystemExit(f"netherlands_gemeente: no header with a_inw and recs in {book.sheetnames}")
-    code_col = next(i for i, c in enumerate(header) if c.startswith("gwb_code"))
-    at = {k: header.index(k) for k in ("regio", "recs", "a_inw", "a_man", "a_vrouw")}
-    log(f"  columns: {header[:12]} ...")
-    out: dict[str, dict[str, Any]] = {}
-    national = None
-    for row in rows:
-        if not row or len(row) <= max(at.values()) or row[at["recs"]] is None:
-            continue
-        kind = str(row[at["recs"]]).strip()
-        if kind == "Land":
-            national = number(row[at["a_inw"]])
-        if kind != "Gemeente":
-            continue
-        code = str(row[code_col]).strip()
-        out[code] = {"name": str(row[at["regio"]]).strip(), "total": number(row[at["a_inw"]]),
-                     "men": number(row[at["a_man"]]), "women": number(row[at["a_vrouw"]])}
-    return out, national
+    """{gemeente code: {name, total, men, women}}; the WFS has no national row."""
+    payload = http_json(WFS, timeout=300)
+    water = {}
+    for feat in payload.get("features", []):
+        key = (feat.get("properties") or {}).get("water")
+        water[key] = water.get(key, 0) + 1
+    log(f"  WFS: {len(payload.get('features', []))} features; water flags {water}")
+    return features(payload), None
 
 
 def build() -> list[dict[str, Any]]:

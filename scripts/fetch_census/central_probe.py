@@ -1134,7 +1134,143 @@ def aut5() -> None:
             f"{head.get('Content-Type') or head.get('content-type') or head.get('error', '')}")
 
 
+# ---------------------------------------------------------------------------
+# Round ten: older censuses and official surveys for the fields today's
+# censuses and registers do not ask.
+# ---------------------------------------------------------------------------
+
+def pdf_text(url: str, pages: int = 2, limit: int = 2500) -> None:
+    """A PDF's page count and the text of its first pages."""
+    status, head, body = fetch(url)
+    log(f"\n## PDF {url}: HTTP {status}, {len(body):,} bytes")
+    if status != 200 or not body.startswith(b"%PDF"):
+        log("   " + text(body)[:300].replace("\n", " "))
+        return
+    import io as _io
+    from pypdf import PdfReader
+    reader = PdfReader(_io.BytesIO(body))
+    log(f"   {len(reader.pages)} pages")
+    for i, page in enumerate(reader.pages[:pages]):
+        words = page.extract_text() or ""
+        log(f"   --- page {i + 1}\n   " + words[:limit].replace("\n", "\n   "))
+
+
+def aut6() -> None:
+    """What a 2001-census Gemeinde sheet of "Ein Blick auf die Gemeinde" holds, and where the index is."""
+    pdf_text("https://www.statistik.at/blickgem/vz1/g10101.pdf", pages=3)
+    for url in ("https://www.statistik.at/blickgem/", "https://www.statistik.at/blickgem/index.jsp",
+                "https://www.statistik.at/atlas/blick/"):
+        show(url, r"href=\"[^\"]+\"[^>]*>[^<]{2,60}<", limit=30)
+    show("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstruktur",
+         r"href=\"[^\"]*(?:religi|Religi|sprach|Sprach|umgang)[^\"]*\"", limit=30)
+
+
+def svn5() -> None:
+    """SiStat's census tables of 2002 and 1991, and the 2002 census site in the Wayback Machine."""
+    status, _, body = fetch("https://pxweb.stat.si/SiStatData/api/v1/en/Data/")
+    try:
+        rows = json.loads(text(body))
+    except json.JSONDecodeError:
+        log(f"   SiStat list: HTTP {status}, not JSON")
+        rows = []
+    hits = [r for r in rows if re.search(r"(?i)census|ethnic|religio|mother tongue|language",
+                                         str(r.get("text")))]
+    log(f"\n## SiStat: {len(rows)} tables, {len(hits)} about a census or ethnicity/language/religion")
+    for r in hits:
+        log(f"   - {r.get('id')} {str(r.get('text'))[:200]}")
+    head_lines("http://web.archive.org/cdx/search/cdx?url=stat.si/popis2002/si/rezultati/*"
+               "&limit=80&fl=timestamp,original,statuscode&filter=statuscode:200&collapse=urlkey", 80)
+
+
+def che9() -> None:
+    """BFS's asset search for the structural survey's religion and language tables by canton and district."""
+    for query in ("orderNr=je-d-01.08.03.02", "orderNr=je-d-01.08.03.01", "orderNr=je-d-01.08.02.02",
+                  "language=de&title=Religionszugeh%C3%B6rigkeit",
+                  "language=de&q=Religionszugeh%C3%B6rigkeit%20Kanton",
+                  "language=de&prodima=900046&articleModel=900052"):
+        head_lines(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets?{query}", 1)
+        status, _, body = fetch(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets?{query}")
+        page = text(body)
+        found = re.findall(r'"(?:title|orderNr|id|shortTextGnp)"\s*:\s*"?([^",]{1,140})', page)
+        log(f"   {len(found)} fields: {' | '.join(found[:40])}")
+    status, _, body = fetch("https://www.pxweb.bfs.admin.ch/api/v1/de/")
+    dbs = [row.get("dbid") for row in json.loads(text(body))]
+    import time
+    for dbid in dbs:
+        if not dbid or re.match(r"px-x-010[2-4]", dbid) or not re.match(r"px-x-01", dbid):
+            continue
+        status, _, body = fetch(f"https://www.pxweb.bfs.admin.ch/api/v1/de/{dbid}/{dbid}.px", timeout=30)
+        try:
+            title = json.loads(text(body)).get("title", "")
+        except Exception:  # noqa: BLE001
+            title = f"HTTP {status}"
+        log(f"   - {dbid}: {title[:200]}")
+        time.sleep(0.1)
+
+
+def nld10() -> None:
+    """StatLine's open-data hosts once more, and every attribute PDOK's 2022 gemeenten carry."""
+    for url in ("https://opendata.cbs.nl/ODataApi/odata/03759ned/Perioden?$format=json",
+                "https://datasets.cbs.nl/odata/v1/CBS/03759ned/PeriodenCodes",
+                "https://dataderden.cbs.nl/ODataApi/odata/",
+                "https://opendata.cbs.nl/statline/portal.html"):
+        show(url, raw=300)
+    show("https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=DescribeFeatureType&service=WFS"
+         "&version=2.0.0&typeNames=wijkenbuurten:gemeenten", r"name=\"[A-Za-z_0-9]+\"", limit=200)
+
+
+def lux6() -> None:
+    """The pre-2018 communes in LUSTAT's population series, and the 2021 language tables."""
+    show("https://lustat.statec.lu/rest/codelist/LU1/CL_CANTON_COMMUNE/latest",
+         r"id=\"[0-9C]+\"[^>]*>\s*<(?:com|common):Name xml:lang=\"en\">[^<]+", limit=130)
+    csv_accept = {"Accept": "application/vnd.sdmx.data+csv;version=1.0.0"}
+    status, _, body = fetch("https://lustat.statec.lu/rest/data/LU1,DF_X021,1.1/all?startPeriod=2011&endPeriod=2018",
+                            headers=csv_accept)
+    rows = list(csv_rows(text(body)))
+    log(f"\n## DF_X021 2011-2018: HTTP {status}, {len(rows)} rows")
+    per_year = Counter_(r.get("TIME_PERIOD") for r in rows)
+    log(f"   units per year: {dict(sorted(per_year.items()))}")
+    for url in ("https://statistiques.public.lu/fr/recensement/diversite-linguistique.html",
+                "https://statistiques.public.lu/en/recensement.html"):
+        show(url, r"href=\"[^\"]+\.(?:xlsx?|csv|zip|pdf)\"|href=\"[^\"]*(?:lingu|langu)[^\"]*\"", limit=30)
+
+
+def deu7() -> None:
+    """The Zensus database's refusal, asked several ways; the Regionaldatenbank's religion tables."""
+    import os
+    auth = {"username": os.environ.get("ZENSUS_USER", ""), "password": os.environ.get("ZENSUS_PASSWORD", "")}
+    log(f"   credential present: {bool(auth['username'])}, {bool(auth['password'])}")
+    base = "https://ergebnisse.zensus2022.de/api/rest/2020"
+    forms = {
+        "POST form, headers": dict(data=b"", headers={**auth, "Content-Type": "application/x-www-form-urlencoded"}),
+        "POST, headers, no type": dict(data=b"", headers=auth),
+        "GET, headers": dict(headers=auth),
+        "GET, no credential": dict(),
+    }
+    for label, kwargs in forms.items():
+        status, head, body = fetch(f"{base}/helloworld/logincheck", **kwargs)
+        log(f"   logincheck {label}: HTTP {status}: {' '.join(text(body)[:160].split())}")
+    status, head, body = fetch("https://ergebnisse.zensus2022.de/api/rest/2020/helloworld/whoami")
+    log(f"   whoami: HTTP {status}: {' '.join(text(body)[:160].split())}")
+    show("https://ergebnisse.zensus2022.de/datenbank/online/", raw=400)
+    rdb = "https://www.regionalstatistik.de/genesisws/rest/2020"
+    for term in ("Religion", "Zensus 2022"):
+        body = urllib.parse.urlencode({"term": term, "category": "tables", "pagelength": "40",
+                                       "language": "de"}).encode()
+        status, _, reply = fetch(f"{rdb}/find/find", data=body,
+                                 headers={"username": "GAST", "password": "GAST",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+        try:
+            data = json.loads(text(reply))
+            log(f"\n## Regionaldatenbank {term!r}: {len(data.get('Tables') or [])} tables")
+            for row in (data.get("Tables") or [])[:40]:
+                log(f"   - {row.get('Code')} | {' '.join(row.get('Content', '').split())[:170]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   Regionaldatenbank {term!r}: HTTP {status} {exc}: {text(reply)[:200]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "aut6": aut6, "svn5": svn5, "che9": che9, "nld10": nld10, "lux6": lux6, "deu7": deu7,
     "che8": che8, "svn4": svn4, "aut5": aut5,
     "che7": che7, "nld9": nld9,
     "deu6": deu6,
