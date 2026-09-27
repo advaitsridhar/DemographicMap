@@ -1,27 +1,98 @@
-== js https://www.atlasofeuropeanvalues.eu/maptool.html (?:[a-zA-Z0-9_/.-]+[.](?:json|csv|geojson|topojson)|nuts[a-zA-Z0-9_]*|regional[a-zA-Z]*) 40
-  HTTP 200 text/html; charset=UTF-8 70,881 bytes
-  8 scripts; inline hits:
-  (no match)
-  -- https://www.googletagmanager.com/gtag/js?id=G-SC80DKH22N HTTP 200 525,932 bytes
-  ~ AddCookieDeprecationLabel")),a(lU(vG,"taskAddEventProvenance")),a(lU(wG,"taskAddRegionalNonPersonalizedAdData")),a(lU(GG,"taskAddUachParams")),a(lU(HG,"taskCheckGoogleOwnedAndOperated")),a(
-  -- https://www.atlasofeuropeanvalues.eu/js/jquery-3.7.1.min.js HTTP 200 87,533 bytes
-  ~  this[e]=!0,e}}),ce.ajaxPrefilter("json jsonp",function(e,t,n){var r,i,o,a=!1!==e.jsonp&&(Zt.test(e.url)?"url":"string"==typeof e.data&&0===(e.contentType||"").indexO
-  ~ lways(function(){void 0===i?ce(ie).removeProp(r):ie[r]=i,e[r]&&(e.jsonpCallback=t.jsonpCallback,Kt.push(r)),o&&v(i)&&i(o[0]),o=i=void 0}),"script"}),le.createHTMLDocu
-  -- https://www.atlasofeuropeanvalues.eu/js/flags.js?v1 HTTP 200 1,209 bytes
-  (no match)
-  -- https://www.atlasofeuropeanvalues.eu/js/atlas-mobile.js HTTP 200 908 bytes
-  (no match)
-  -- https://www.atlasofeuropeanvalues.eu/js/charts/Chart4.min.js HTTP 200 205,361 bytes
-  (no match)
-  -- https://www.atlasofeuropeanvalues.eu/js/atlasmapaction.js?v6 HTTP 200 10,427 bytes
-  (no match)
-  -- https://www.atlasofeuropeanvalues.eu/js/jquery-ui.min.js HTTP 200 253,668 bytes
-  ~ -datepicker-current-day",this._dayOverClass="ui-datepicker-days-cell-over",this.regional=[],this.regional[""]={closeText:"Done",prevText:"Prev",nextText:"Next",currentT
-  -- https://www.atlasofeuropeanvalues.eu/js/autocomplete_multiple.js HTTP 200 1,287 bytes
-  (no match)
-== links https://europeanvaluesstudy.eu/methodology-data-documentation/data-downloads/ (?:download|gesis|ZA[0-9]+|online|analys) 40
-  HTTP 404 text/html; charset=UTF-8 290,881 bytes
-  Page not found – European Values Study Skip to content Search for: Search Search Home News About EVS Menu Toggle Organization Menu Toggle Council of Program Directors Executive committee Scientific Committee EVS Foundation National Partners Sponsoring and funding Menu Toggle Sponsors of the 2008 survey Sponsors of the 2017 survey Contact Surveys Menu Toggle EVS Surveys 1981-2026 Menu Toggle EVS Su
-== head https://search.gesis.org/research_data/ZA7500 
-  HTTP 403 text/html; charset=UTF-8 5,659 bytes
-  Just a moment... Enable JavaScript and cookies to continue
+== get https://armstat.am/en/?nid=1006
+  163,519 bytes, begins b' <!DOCTYPE html '
+  link: '' -> https://armstat.am/am/?nid=1006
+  link: '' -> https://armstat.am/en/?nid=1006
+  link: '' -> https://armstat.am/ru/?nid=1006
+  link: '' -> https://armstat.am/en/?nid=107
+  link: 'Population Census Armenian Sample Datafiles' -> https://armstat.am/en/?nid=210
+  link: 'Jobs: Vacant, Newly Created and Eliminated' -> https://armstat.am/en/?nid=1036
+  link: 'Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Y' -> https://armstat.am/en/?nid=1037
+  link: 'Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-20' -> https://armstat.am/en/?nid=1038
+  link: 'International tourism' -> https://armstat.am/en/?nid=1039
+  link: 'Documentation and Quality' -> https://armstat.am/en/?nid=24
+  link: 'Documentation' -> https://armstat.am/en/?nid=26
+  link: 'Documentation' -> https://armstat.am/en/?nid=671
+  link: 'Population Census' -> https://armstat.am/en/?nid=20
+  link: 'Population Census 2022' -> https://armstat.am/en/?nid=743
+  link: 'State commission of RA 2022 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=744
+  link: 'Resolutions of RA Government - Population Census 2022' -> https://armstat.am/en/?nid=746
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2022' -> https://armstat.am/en/?nid=747
+  link: 'Resolutions of RA State Council on Statistics - Population Census 2019' -> https://armstat.am/en/?nid=765
+  link: 'The Results of 2022 Population Census of RA' -> https://armstat.am/en/?nid=944
+  link: 'the result' -> https://armstat.am/en/?nid=1006
+  link: 'Population Census 2011' -> https://armstat.am/en/?nid=21
+  link: 'RA Law On Population Census' -> https://armstat.am/en/?nid=179
+  link: 'State commission of RA 2011 Population Census preparations and undertaking' -> https://armstat.am/en/?nid=182
+  link: 'Pilot Population Census' -> https://armstat.am/en/?nid=184
+  link: 'The Preliminary Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=186
+  link: 'The Results of 2011 Population Census of RA' -> https://armstat.am/en/?nid=187
+  link: 'Population Census 2001' -> https://armstat.am/en/?nid=22
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=664
+  link: 'The Results of 2001 Population Census of RA' -> https://armstat.am/en/?nid=748
+  link: 'Infographics' -> https://armstat.am/en/?nid=1004
+  link: 'Population Census 1989' -> https://armstat.am/en/?nid=1033
+  link: 'Agricultural Census' -> https://armstat.am/en/?nid=933
+  link: 'Agricultural Census 2024' -> https://armstat.am/en/?nid=935
+  link: 'Agricultural Census 2014' -> https://armstat.am/en/?nid=23
+  link: 'Law of the Republic of Armenia on Agricultural Census' -> https://armstat.am/en/?nid=115
+  link: 'Republican Commission on preparation and conduction of RA Agricultural Census 2014' -> https://armstat.am/en/?nid=119
+  link: 'Pilot Agricultural Census' -> https://armstat.am/en/?nid=121
+  link: 'On Agricultural Post-Enumeration for the Quality Assessment of the Results of RA Agricultu' -> https://armstat.am/en/?nid=122
+  link: 'Strategy of Publication and Dissemination of the data of 2014 Agricultural Census in the R' -> https://armstat.am/en/?nid=123
+  link: 'Searching system of Agricultural Census 2014 data (in Armenian)' -> https://armstat.am/en/?nid=680
+  link: 'Frequently Asked Questions' -> https://armstat.am/en/?nid=107
+  link: 'Yerevan RA capital in figures' -> https://armstat.am/en/?nid=405
+  link: 'Yerevan RA capital in figures, 2016' -> https://armstat.am/en/?nid=436
+  link: 'Yerevan RA capital in figures, 2015' -> https://armstat.am/en/?nid=437
+  link: 'Yerevan RA capital in figures, 2014' -> https://armstat.am/en/?nid=438
+  link: 'Yerevan RA capital in figures, 2013' -> https://armstat.am/en/?nid=439
+  link: 'Yerevan RA capital in figures, 2012' -> https://armstat.am/en/?nid=440
+  link: 'Yerevan RA capital in figures, 2011' -> https://armstat.am/en/?nid=441
+  link: 'Yerevan RA capital in figures, 2010' -> https://armstat.am/en/?nid=442
+  link: 'Yerevan RA capital in figures, 2009' -> https://armstat.am/en/?nid=443
+  link: 'Yerevan RA capital in figures, 2017' -> https://armstat.am/en/?nid=658
+  link: 'Yerevan RA capital in figures, 2018' -> https://armstat.am/en/?nid=727
+  link: 'Yerevan RA capital in figures, 2019' -> https://armstat.am/en/?nid=769
+  link: 'Yerevan RA capital in figures, 2020' -> https://armstat.am/en/?nid=811
+  link: 'Yerevan RA capital in figures, 2021' -> https://armstat.am/en/?nid=850
+  link: 'Yerevan RA capital in figures, 2022' -> https://armstat.am/en/?nid=882
+  link: 'Yerevan RA capital in figures, 2023' -> https://armstat.am/en/?nid=921
+  link: 'Yerevan RA capital in figures, 2024' -> https://armstat.am/en/?nid=976
+  link: 'ATLAS THE REPUBLIC OF ARMENIA BY THE REGIONS AND YEREVAN CITY, 2025' -> https://armstat.am/en/?nid=1008
+  link: 'Yerevan RA capital in figures, 2025' -> https://armstat.am/en/?nid=1009
+  link: 'RA Aragatsotn Marz in figures, 2025' -> https://armstat.am/en/?nid=1010
+  link: 'RA Ararat Marz in figures, 2024' -> https://armstat.am/en/?nid=1011
+  link: 'RA Armavir Marz in figures, 2025' -> https://armstat.am/en/?nid=1012
+  link: 'RA Gegharkunik Marz in figures, 2025' -> https://armstat.am/en/?nid=1013
+  link: 'RA Lori Marz in figures, 2025' -> https://armstat.am/en/?nid=1014
+  link: 'RA Kotayk Marz in figures, 2025' -> https://armstat.am/en/?nid=1015
+  link: 'RA Shirak Marz in figures, 2025' -> https://armstat.am/en/?nid=1016
+  link: 'RA Syunik Marz in figures, 2025' -> https://armstat.am/en/?nid=1017
+  link: 'RA Vayoc dzor Marz in figures, 2025' -> https://armstat.am/en/?nid=1018
+  link: 'RA Tavush Marz in figures, 2025' -> https://armstat.am/en/?nid=1019
+  link: 'Warning' -> https://armstat.am/en/?nid=1026
+  link: 'Announcement' -> https://armstat.am/en/?nid=1035
+  link: 'Institutional site' -> https://armstat.am/en/?nid=1041
+  link: 'ԼՐԱՏՈՒ թիվ 3 (153), 2025 թվականի մայիս-հունիս' -> https://armstat.am/en/?nid=1003
+  link: 'Newsletter N 4 (154), July-August 2025, (Armenian)' -> https://armstat.am/en/?nid=1005
+  link: 'Newsletter N 5 (155), September-October 2025, (Armenian)' -> https://armstat.am/en/?nid=1007
+  link: 'Newsletter N 6 (156), November-December 2025, (Armenian)' -> https://armstat.am/en/?nid=1025
+  link: 'Newsletter N 1 (157), January-February 2026, (Armenian)' -> https://armstat.am/en/?nid=1029
+  link: '2026' -> https://armstat.am/en/?nid=1030
+  link: 'Newsletter N 2 (158), March-April 2026 (Armenian)' -> https://armstat.am/en/?nid=1032
+  link: 'Newsletter N 3 (159 ) May-June 2026 (Armenian)' -> https://armstat.am/en/?nid=1034
+  link: 'Newsletter N 4 (160) July-August 2026 (Armenian)' -> https://armstat.am/en/?nid=1040
+  link: 'About Us' -> https://armstat.am/en/?nid=10
+  link: '2026' -> https://armstat.am/en/?nid=1023
+  link: '2026' -> https://armstat.am/en/?nid=1028
+  link: 'Business trips reports 2026' -> https://armstat.am/en/?nid=1027
+  link: '2026' -> https://armstat.am/en/?nid=1024
+  link: 'Key Documents' -> https://armstat.am/en/?nid=69
+  link: 'Quarterly Monitorings of Annual Statistical Programs 2026' -> https://armstat.am/en/?nid=1031
+  link: 'Individual 2023' -> https://armstat.am/en/?nid=1000
+  (859 links in all)
+  text: The Results of 2022 Population Census of RA / Statistical Committee of the Republic of Armenia --> .titleline { border-left: 3px solid red; height: 20px; margin-left:480px ; margin-top:20px; } --> &nbspARMSTAT Statistical Committee Republic of Armenia Sunday, 27 September 2026 Home Statistics Publicatiоns For Respondent About us Statistics Statistical Indicators 1 Databases ArmStatBank.am ArmDevInfo.am External trade database According to the Commodity Nomenclature at 4-digit level External trade database by country External trade database Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 2-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 4-digit level) Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature of External Economic Activity at 10-digit level) Microdata Statistical databases National Accounts Foreign accounts Government finance statistics Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (by household's member Household’s Integrated Living Conditions Survey anonymised microdata database (purchased and consume Household’s Integrated Living Conditions Survey Tools Demographic Database Population Census Armenian Sample Datafiles Instruction Labour Force Survey anonymised micro data database and questionnaire (by household's members) National Child Labour Survey, 2015 Labour Force Survey - World Bank Integrated Living Conditions Survey - World Bank Government operations Wages/salaries, number of payroll employees and number of entities Labour force survey (LFS) Officially registered jobseekers Indicators on high-tech goods foreign trade according to the collective grouping of high-tech products Age and sex distribution of RA permanent population, 2023-2024 Jobs: Vacant, Newly Created and Eliminated Age and sex distribution of permanent population (urban, rural) of RA by Marzes and city Yerevan, 2012-2022 (recalculated on the base of 2022 population census) Age and sex distribution of permanent population of RA by Marzes and city Yerevan, 2002-2011 International tourism Other databases External trade database by country 2017-2023 Statistics Dissemination Dissemination policy and strategy Special Data Dissemination Standard (SDDS) Revision Poli  retry 1/2 after 2s :: https://census.belstat.gov.by/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+  retry 2/2 after 4s :: https://census.belstat.gov.by/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+
+== get https://census.belstat.gov.by/
+  failed: RuntimeError('GET failed after 2 retries: https://census.belstat.gov.by/')
