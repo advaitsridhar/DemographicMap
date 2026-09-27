@@ -95,7 +95,7 @@ RELIGION_COLUMNS: dict[int, str] = {
     2: "Orthodox Christianity", 3: "Roman Catholic", 4: "Reformed",
     5: "Pentecostalism", 6: "Greek Catholic", 7: "Baptist",
     8: "Seventh-day Adventist", 9: "Islam", 10: "Unitarian",
-    11: "Jehovah's Witnesses", 12: "Evangelicalism", 13: "Old Believers",
+    11: "Jehovah's Witnesses", 12: "Evangelicalism", 13: "Old Believer",
     14: "Lutheranism", 15: "Serbian Orthodox", 16: "Evangelicalism",
     17: "Lutheranism", 18: "Judaism", 19: "Armenian Apostolic",
     20: "Other religion", 21: "No religion", 22: "Atheism", 23: "Not stated",

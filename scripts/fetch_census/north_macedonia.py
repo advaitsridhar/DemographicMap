@@ -36,7 +36,7 @@ nesting), the whole of the merged Kichevo inside Southwest.
 Median age is interpolated within the single year of age (municipalities,
 regions) or within the five-year group (the five old Kichevo units, whose
 settlement table is published in five-year groups); sex ratio is males per
-1,000 females.
+100 females.
 
 Usage:
     python -m scripts.fetch_census.north_macedonia

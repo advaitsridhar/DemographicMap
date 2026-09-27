@@ -12,7 +12,7 @@ and Gagauzia -- the 35 units the census counted:
 Median age is interpolated within the five-year group that holds the middle
 person: the bureau publishes nothing finer by district. The country's
 median from the same groups is logged beside the check that the units add up
-to the published 2,409,207. Sex ratio is males per 1,000 females.
+to the published 2,409,207. Sex ratio is males per 100 females.
 
 Bender and Transnistria, which the census did not reach, carry a stated gap;
 the map draws each unit at both levels, as moldova_census does.
@@ -172,14 +172,14 @@ def build() -> list[dict[str, Any]]:
                                  "middle person, from the census's usually resident population "
                                  "by age group (annex table 2.3): the bureau publishes nothing "
                                  "finer by district."),
-                sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
+                sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females",
                                   year=YEAR, source=SOURCE.format(table="8.3")),
                 sources=[{"field": "median_age", "name": SOURCE.format(table="2.3"), "url": AGES,
                           "page": PAGE, "year": YEAR, "license": LICENCE},
                          {"field": "population/sex_ratio", "name": SOURCE.format(table="8.3"),
                           "url": SEXES, "page": PAGE, "year": YEAR, "license": LICENCE}]))
         log(f"  {display(unit['name'])}: {total:,.0f}, median {median}, "
-            f"{round(1000 * men / women)} men per 1,000 women")
+            f"{round(100 * men / women, 1)} men per 100 women")
     for name in ("Bender", "Transnistria"):
         k = key(name)
         for level in ("admin1", "admin2"):

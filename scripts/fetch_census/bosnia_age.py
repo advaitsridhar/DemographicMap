@@ -13,7 +13,7 @@ The entities and Brčko -- the map's first level, and Republika Srpska and
 Brčko again at the second -- take the median from single years; the ten
 cantons from their five-year groups, interpolated within the group that holds
 the middle person (the agency publishes nothing finer by canton). Sex ratio is
-males per 1,000 females. The Agency's figures are the ones the state adopted;
+males per 100 females. The Agency's figures are the ones the state adopted;
 Republika Srpska's institute published a different reading of the same count.
 
 Usage:
@@ -179,7 +179,7 @@ def build() -> list[dict[str, Any]]:
                       parent="BIH", country="BIH", match_by="shape_id", shape_id=shape["id"],
                       median_age=measure(median, unit="years", year=YEAR, source=src),
                       median_age_note=note,
-                      sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
+                      sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females",
                                         year=YEAR, source=src),
                       sources=[{"field": "median_age/sex_ratio", "name": src,
                                 "url": SINGLE if table == "FR_T1" else GROUPED, "page": PAGE,

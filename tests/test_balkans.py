@@ -148,7 +148,7 @@ class CroatiaAgeTest(unittest.TestCase):
         unit = ages[("Istarska", "Grad", "Pula")]
         self.assertEqual((unit["total"], unit["men"], unit["women"]), (10, 5, 5))
         fields = croatia.age_fields(unit)
-        self.assertEqual(fields["sex_ratio"]["value"], 1000)
+        self.assertEqual(fields["sex_ratio"]["value"], 100.0)
         self.assertEqual(fields["median_age"]["value"], 4.2)
 
 

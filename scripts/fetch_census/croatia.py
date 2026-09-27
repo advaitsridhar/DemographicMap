@@ -316,7 +316,7 @@ def parse_ages(rows: list[tuple[Any, ...]]) -> dict[tuple[Any, Any, Any], dict[s
 
 
 def age_fields(unit: dict[str, Any] | None) -> dict[str, Any]:
-    """Median age within the five-year group, and males per 1,000 females."""
+    """Median age within the five-year group, and males per 100 females."""
     if not unit:
         return {}
     total = sum(n for _, _, n in unit["groups"])
@@ -336,8 +336,8 @@ def age_fields(unit: dict[str, Any] | None) -> dict[str, Any]:
             "the census's population by age group and sex (sheet 20 of the towns and "
             "municipalities workbook): the bureau publishes nothing finer by town.")
     if unit["women"]:
-        out["sex_ratio"] = measure(round(1000 * unit["men"] / unit["women"]),
-                                   unit="males_per_1000_females", year=YEAR, source=SOURCE)
+        out["sex_ratio"] = measure(round(100 * unit["men"] / unit["women"], 1),
+                                   unit="males_per_100_females", year=YEAR, source=SOURCE)
     return out
 
 

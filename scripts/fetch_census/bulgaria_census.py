@@ -27,7 +27,7 @@ is reported and left out.
 
 Median age is interpolated within the five-year group that holds the middle
 person (NSI publishes nothing finer by municipality); sex ratio is males per
-1,000 females.
+100 females.
 
 Usage:
     python -m scripts.fetch_census.bulgaria_census
@@ -271,7 +271,7 @@ def build() -> list[dict[str, Any]]:
             "median_age": measure(grouped_median(unit["groups"]), unit="years", year=YEAR,
                                   source=SOURCE.format(table=TABLE_NAMES["age"])),
             "median_age_note": MEDIAN_NOTE.format(level=level),
-            "sex_ratio": measure(round(1000 * unit["men"] / unit["women"]), unit="males_per_1000_females",
+            "sex_ratio": measure(round(100 * unit["men"] / unit["women"], 1), unit="males_per_100_females",
                                  year=YEAR, source=SOURCE.format(table=TABLE_NAMES["age"])),
         }
         cite = [{"field": "population/median_age/sex_ratio", "name": SOURCE.format(table=TABLE_NAMES["age"]),

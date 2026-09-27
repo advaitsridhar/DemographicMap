@@ -10,7 +10,7 @@ NUTS 3, never by these groupings, so five of the seven had none; Attica and
 Crete are one region each and already carry Eurostat's figure. This sums
 the regions' single years for each administration and interpolates the median
 within the single year that holds the middle person; sex ratio is males per
-1,000 females. The year is Eurostat's latest, the same as the regions' own
+100 females. The year is Eurostat's latest, the same as the regions' own
 figures beside these.
 
 Mount Athos is a self-governed monastic community inside the Central
@@ -111,12 +111,12 @@ def build() -> list[dict[str, Any]]:
             median_age_note=("Interpolated within the single year of age that holds the middle "
                              f"person, from Eurostat's population by single year of age of the "
                              f"regions {', '.join(regions)}, summed."),
-            sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
+            sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females",
                               year=year, source=SOURCE),
             sources=[{"field": "median_age/sex_ratio", "name": SOURCE,
                       "url": API.format(dataset=DATASET), "year": year}]))
         log(f"  {name} ({'+'.join(regions)}): {men + women:,.0f}, median {median}, "
-            f"{round(1000 * men / women)} men per 1,000 women")
+            f"{round(100 * men / women, 1)} men per 100 women")
     total, men, women = athos()
     why_age = ("Mount Athos is counted inside the Central Macedonia region by Eurostat, and "
                "ELSTAT's 2021 census tables by age stop at the region, so no age structure is "

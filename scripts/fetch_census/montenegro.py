@@ -26,7 +26,7 @@ no ``z`` must add up exactly.
 
 Median age is interpolated within the five-year group that holds the middle
 person (Monstat publishes nothing finer by municipality); sex ratio is males
-per 1,000 females.
+per 100 females, to one decimal.
 
 Usage:
     python -m scripts.fetch_census.montenegro
@@ -309,7 +309,7 @@ def build() -> list[dict[str, Any]]:
             "median_age": measure(median, unit="years", year=YEAR,
                                   source=SOURCE.format(release="release I", table=4)),
             "median_age_note": MEDIAN_NOTE,
-            "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
+            "sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
                                  year=YEAR, source=SOURCE.format(release="release I", table=4)),
         }
         joined = (" Podgorica is drawn as it was before Tuzi (2018) and Zeta (2022) were formed "

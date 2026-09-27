@@ -28,7 +28,7 @@ more than its total.
 **Median age** is interpolated within the five-year group that holds the
 middle person: INS publishes nothing finer by UAT. The country's median from
 the same groups is checked against the one from Tabel 1.04's single years.
-**Sex ratio** is males per 1,000 females, from Tabel 1.22.
+**Sex ratio** is males per 100 females, from Tabel 1.22.
 
 **Binding.** A UAT is matched to the map's polygon by name within its county,
 with the office's prefixes (MUNICIPIUL, ORAȘ) and diacritics folded away and
@@ -543,7 +543,7 @@ def build() -> list[dict[str, Any]]:
             f"ROU-2021-bucuresti-sector-{n}", shape["name"], level="admin2", parent="ROU",
             country="ROU", parent_name="BUCURESTI", match_by="shape_id", shape_id=shape["id"],
             population=measure(int(total), year=YEAR, source=SOURCE.format(table=TABLE_NAMES["sex"])),
-            sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females", year=YEAR,
+            sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females", year=YEAR,
                               source=SOURCE.format(table=TABLE_NAMES["sex"])),
             median_age=gap(NOT_AVAILABLE, whole_city.format(what="population by age")),
             ethnicity=gap(NOT_AVAILABLE, whole_city.format(what="ethnicity")),

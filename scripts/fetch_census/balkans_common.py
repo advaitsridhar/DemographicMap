@@ -8,8 +8,8 @@ up to the whole -- and each of those is written once, here.
 Median age is interpolated within the single year that holds the middle
 person (``redatam.median_age``), or, where an office publishes nothing finer,
 within the five-year group that holds it (``grouped_median``); the note of
-every record says which. Sex ratio is males per 1,000 females, the unit the
-map carries everywhere else.
+every record says which. Sex ratio is males per 100 females, to one decimal, as the
+Europe brief sets it.
 """
 
 from __future__ import annotations
@@ -123,7 +123,7 @@ def grouped_median(groups: Iterable[tuple[float, float | None, float]]) -> float
 def sex_ratio(men: float, women: float, *, year: int, source: str) -> dict[str, Any] | None:
     if not women:
         return None
-    return measure(round(1000 * men / women), unit="males_per_1000_females",
+    return measure(round(100 * men / women, 1), unit="males_per_100_females",
                    year=year, source=source)
 
 
