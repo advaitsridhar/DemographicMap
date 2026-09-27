@@ -650,6 +650,33 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
     return records, report
 
 
+def weight_scale(tabs: dict[str, Any]) -> list[str]:
+    """Each round's and country's weighted respondents over its unweighted ones.
+
+    Pooling adds weighted counts across rounds, which is right only if the
+    weight has the same scale in every round: pspwght is scaled to average 1
+    within a country and round. A round whose weights average far from 1 would
+    count for more or less than its interviews, so it is reported here, and
+    the build stops on it.
+    """
+    lines = []
+    for prefix, entry in tabs["rounds"].items():
+        for field in ("religion",):
+            n: Counter = Counter()
+            w: Counter = Counter()
+            for region, cells in entry[field]["n"].items():
+                code = nuts2024(region)
+                country = code[:2] if code else region[:2]
+                n[country] += sum(cells.values())
+                w[country] += sum(entry[field]["weighted"].get(region, {}).values())
+            for country in sorted(n):
+                ratio = w[country] / n[country] if n[country] else 0
+                if not 0.97 <= ratio <= 1.03:
+                    lines.append(f"{prefix} {country}: weighted {w[country]:,.0f} for "
+                                 f"{n[country]:,.0f} respondents ({ratio:.2f})")
+    return lines
+
+
 def national(first_round: int = FIRST_ROUND) -> dict[str, dict[str, Any]]:
     """Pooled national compositions, for the curated country rows (logged, not written)."""
     data = read_json(NATIONAL, {}) or {}
@@ -769,6 +796,16 @@ def main() -> int:
                 log(f"  religion {code} n={int(sum(slot['n'].values()))} "
                     f"rounds={sorted(p for p, _ in slot['rounds'])} "
                     f"-> {[p['name'] for p in placement(code, crosswalk)]}")
+    scale = weight_scale(tabs)
+    for line in scale:
+        log(f"  weight scale: {line}")
+    if args.regions:
+        for prefix, entry in tabs["rounds"].items():
+            for region in sorted(entry["religion"]["n"]):
+                if (nuts2024(region) or region)[:2] in set(args.regions.split(",")):
+                    n = sum(entry["religion"]["n"][region].values())
+                    w = sum(entry["religion"]["weighted"].get(region, {}).values())
+                    log(f"  weights {prefix} {region}: {w:,.0f} weighted for {n:,.0f}")
     records, report = build(tabs, crosswalk, args.first_round)
     for line in report:
         log(f"  {line}")
