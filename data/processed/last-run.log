@@ -1,11 +1,30 @@
-romania: National Institute of Statistics of Romania, Recensamantul Populatiei si al Locuintelor 2011, Volume 2: Populatia stabila -- structura etnica si confesionala
-  vol2_t1.xls: 136,704 bytes from the Archive capture of 2019-04-04
-  ethnicity table: 2 unrecognised headings: * NUMAR REDUS DE CAZURI DE OBSERVARE (MAI MIC DE 3), POPULATIA DUPA ETNIE LA RECENSAMINTELE DIN PERIOADA 1930-2011 - JUDETE
-  vol2_t12.xls: 178,688 bytes from the Archive capture of 2019-04-04
-  ethnicity: every county's groups add up to its printed population
-  religion: every county's groups add up to its printed population
-  42 counties with ethnicity, 42 with religion
-  most Hungarians: Harghita at 82.9% (257,707 people) -- Harghita and Covasna are the two counties with a Hungarian majority, so this should be one of them
-  wrote data/processed/romania_county.json (244 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/romania_county.json (238 kB)
-  42 counties with ethnicity and religion, 2011 census
+north_macedonia: MakStat, 2021 census
+  T1020P21.px: 82 areas, single years to 100 (open top)
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
+  80 municipalities
+  country: 1,836,713 residents, median age 41.1 from single years
+  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
+  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
+  the merged Kichevo: 77 settlements
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/PopisNaNaselenie/PopisiNaseleniMesta/Popis_nm_1948_2002_NasPoEtnPrip_ang.px (HTTP Error 429: )
+  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
+    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
+    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
+    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
+    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
+    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
+  old Kichevo: 24,768 people, median 41.5
+  old Drugovo: 2,748 people, median 46.6
+  old Oslomej: 4,819 people, median 41.7
+  old Vraneshtica: 1,003 people, median 50.2
+  old Zajas: 6,331 people, median 38.8
+  region East: 150,234
+  region Northeast: 152,982
+  region Pelagonia: 210,431
+  region Polog: 251,552
+  region Skopje: 607,007
+  region Southeast: 148,387
+  region Southwest: 177,398
+  region Vardar: 138,722
+  wrote data/processed/north_macedonia_census.json (665 kB)
+  wrote north_macedonia_census.json: 92 records
