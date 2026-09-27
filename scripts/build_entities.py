@@ -755,6 +755,16 @@ ADAPTER_GAPS: dict[str, str] = {
 # a gap is worth having; a gap that says why, wrongly, is worse than a silent
 # one, because it stops anyone looking again.
 SHAPE_GAPS: dict[str, dict[str, str]] = {
+    # El Salvador's second level has ten polygons geoBoundaries leaves
+    # unnamed: pieces of the Bay of Jiquilisco and the Gulf of Fonseca, ground
+    # along the Honduran border, and one in Sonsonate. With no name, no
+    # census row can be matched to them.
+    "SLV": {
+        "Null": (
+            "The boundary file draws this polygon with no name (\"Null\"), so "
+            "no census row can be matched to it; which district's ground it "
+            "is, the file does not say."),
+    },
     # Ecuador's two zonas no delimitadas the boundary file draws: ground whose
     # province was unsettled when it was drawn. INEC's 2022 table is by canton
     # and has no row for either.
@@ -3184,8 +3194,17 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
             if twin is None or entity.get("water"):
                 continue
             for field in sorted(VALUE_FIELDS):
-                if not is_gap(entity.get(field)) or is_gap(twin.get(field)) \
-                        or field not in twin:
+                mine, theirs = entity.get(field), twin.get(field)
+                if (is_gap(mine) and is_gap(theirs) and isinstance(theirs, dict)
+                        and theirs.get("note")
+                        and not (isinstance(mine, dict) and mine.get("note"))):
+                    # The same polygon's reason for the gap, where the first
+                    # level has one and this level none: Saint Kitts' parishes
+                    # say why no median age is published below the country,
+                    # and the same parishes drawn again said nothing.
+                    entity[field] = copy.deepcopy(theirs)
+                    continue
+                if not is_gap(mine) or is_gap(theirs) or field not in twin:
                     continue
                 entity[field] = copy.deepcopy(twin[field])
                 for suffix in SATELLITES:
