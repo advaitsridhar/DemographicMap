@@ -1,16 +1,27 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
-  unpacked personas_ext_26_02.rar with 7z
-  February file: 3,499,451 people in 159 (department, municipio) pairs; {'address shape 8 digits': 3147614, 'address shape 2 other': 351837, 'address in two municipios': 1, 'addresses': 1246312}
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
-  unpacked personas_ext_07_2026.rar with 7z
-  19 departments' weighted people, men and women make Cuadro 1
-  in the person file and not in Cuadro 14, each under one weighted person: {('16', '9898'): 0.0}
-  the weighted person file makes Cuadro 14's 166 rows, department by department and municipio by municipio
-  2,409,099 of 3,151,118 July rows placed by the February file's addresses; 827,793 weighted people not placed, 0 placed in another department
-  not placed, by department: Montevideo 213,847, Artigas 18,659, Canelones 153,593, Cerro Largo 24,960, Colonia 38,056, Durazno 15,660, Flores 6,207, Florida 17,467, Lavalleja 18,821, Maldonado 105,071, Paysandú 25,915, Río Negro 13,779, Rivera 24,882, Rocha 37,537, Salto 27,788, San José 25,185, Soriano 19,176, Tacuarembó 26,227, Treinta y Tres 14,964
-  July address codes, by shape: {'8 digits placed': 2409099, '8 digits unknown': 738515, '2 other known': 3504}
-uruguay_census: 827,793 weighted people of the July file have no address the February file places, and 0 have one in another department
+  Cuadro A2 read from https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
+  P03: 263 districts
+  P04: 263 districts
+  PERINDI: 263 districts
+  P1601: 263 districts
+  P1602: 263 districts
+  P1604: 263 districts
+  P1605: 263 districts
+  P1606: 263 districts
+  P1607: 263 districts
+  P1608: 263 districts
+  P1609: 263 districts
+  P1698: 263 districts
+  263 districts making INE's 6,109,903; every question's categories and 'No Aplica' making each district
+  236 of 236 districts bound; not: []
+  2002 religion: 201 district polygons filled; 46 with the reason they are not
+  wrote data/processed/paraguay_census.json (1267 kB)
+  wrote paraguay_census.json: 18 departments, 247 district polygons (236 with figures)
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191121.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191141.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191201.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191221.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191241.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191261.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191281.htm: trying again in 10s
+  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet?BASE=CPV2002&ITEM=PROGRED&: trying again in 10s
+  URLError reaching https://prod.redatam.org/redpry//tempo/118191/~tmp_118191321.htm: trying again in 10s
