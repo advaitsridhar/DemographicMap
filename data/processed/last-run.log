@@ -1,41 +1,28 @@
-== https://www.ige.gal/igebdt/igeapi/
-  39,511 bytes; starts b'\r\n\r\n\r\n\r\n'
-  199 lines, 34 with ['api', 'json', 'csv', 'taboa', 'lingua', 'fala', 'provincia', 'http']
-      0: IGE - Descarga de información. APIs
-     64: Descarga de información. APIs
-     94: Descarga de información. APIs
-     96: Descarga de información. APIs
-     98: Para mellorar o acceso aos datos e fomentar a innovación, o Instituto Galego de Estatística expón a súa información a través de tres Interfaces de Programación de Aplicacións (APIs).
-     99: Deste xeito os datos están accesibles aos desenvolvedores de software a través dunha petición HTTP GET. A partir destas os desenvolvedores poden obter información do Instituto e integrala nos seus propios servizos.
-    100: A utilización de calquera das APIs conleva a aceptación das condicións de uso que se explican ao final desta páxina.
-    101: Nas APIs, o IGE ofrece na súa web a posibilidade de configurar a información que cada usuario precise. Nesa mesma aplicación web se lle mostra cal é a URL desde a que se pode ter acceso a esa selección e que a súa aplicación pode utilizar directamente.
-    104: APIs dispoñibles
-    107: Método HTTP: GET
-    109: https://www.ige.gal/igebdt/igeapi/datos/{código da táboa}/[parámetros de selección]
-    110: Formato de resposta: CSV, JSON, JSON-stat
-    113: Método HTTP: GET
-    115: https://www.ige.gal/igebdt/igeapi/datosindi/{código do indicador}
-    116: Formato de resposta: CSV, JSON
-    119: Método HTTP: GET
-    121: https://www.ige.gal/igebdt/igeapi/datosindi/{código da serie}
-    122: Formato de resposta: CSV, JSON
-    124: CSV
-    125: Ofrécese esta posibilidade por ser o CSV un formato moi simple, aberto, ben coñecido e soportado por todos os programas de follas de cálculo e adecuado para a información de carácter tabular.
-    138: https://www.ige.gal/igebdt/igeapi/csv/datos/1552/1:0,9912:12,T[all:a]
-    153: JSON
-    154: JSON é un formato lixeiro para o intercambio de datos. É simple e amplamente empregado e apoiado, as principais linguaxes de programación poden manexar JSON.
-    164: https://www.ige.gal/igebdt/igeapi/json/datos/1552/1:0,9912:12,0:1981:1991:2001:2011
-    172: Exemplo de tratamento do formato JSON con Javascript:
-    173: IGE. Exemplo proceso JSON
-    174: JSON-stat
-    175: JSON-stat é un formato de difusión JSON sinxelo e lixeiro, o máis adecuado para a visualización de datos, aplicacións móbiles ou iniciativas de datos abertos, que foi deseñado para todo tipo de difusores. Máis información en JSON-stat.org
-    177: O IGE ofrece os seus datos nun formato lexible por máquinas a través de APIs. Este servizo ofrécese suxeito a estas condicións de uso e ás condicións contidas no Aviso legal desta páxina.
-    178: Os servizos que empreguen as APIs do IGE teñen que mostrar o seguinte aviso dentro da aplicación: "Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE".
-    179: Ao presentar os datos proporcionados polas APIs non está autorizado a modificar ou editar datos, metadatos ou os enlaces proporcionados.
-    180: O uso das APIs proporcionadas polo IGE non supón ningún tipo de apoio, relación ou afiliación entre o sitio web que as emprega e o IGE.
-    182: A cesión, emprego ou explotación das APIs deberán cumplir as estipulacións contidas na lexislación vixente e sempre se vincularán a usos lexítimos.
-    183: En caso de vulnerar estas condicións, o IGE resérvase o dereito a bloquear o seu acceso ás APIs. Vostede será responsable dos danos que poida supor a explotación indebida desta información.
-== https://www.ige.gal/igebdt/definicions/?C=02060040000&c=0206004
-  27,112 bytes; starts b'\n\n\n\n\n\n\n\r'
-  111 lines, 1 with ['api', 'json', 'csv', 'taboa', 'lingua', 'fala', 'provincia', 'http']
-     64: Descarga de información. APIs
+italy_language_survey: 23 rows; Italy 57,230 thousand persons aged 6 and over
+  admin2 Abruzzo: Italian and local dialect 44.5%, Italian 34.7, Italian dialects 13.8, Other language 6.1, Not stated 0.6, Other 0.3
+  admin2 Basilicata: Italian and local dialect 50.9%, Italian 27.5, Italian dialects 18.5, Other language 2.0, Not stated 0.9, Other 0.2
+  admin2 Calabria: Italian and local dialect 44.5%, Italian 25.3, Italian dialects 24.1, Other language 4.5, Not stated 1.1, Other 0.5
+  admin2 Campania: Italian and local dialect 48.9%, Italian dialects 26.3, Italian 20.7, Other language 3.2, Not stated 0.6, Other 0.3
+  admin2 Emilia-Romagna: Italian 55.6%, Italian and local dialect 27.5, Other language 9.4, Italian dialects 6.5, Other 0.6, Not stated 0.4
+  admin2 Friuli Venezia Giulia: Italian 40.9%, Italian and local dialect 24.7, Other language 23.9, Italian dialects 9.9, Not stated 0.5, Other 0.1
+  admin2 Lazio: Italian 59.2%, Italian and local dialect 25.5, Italian dialects 7.3, Other language 7.1, Not stated 0.8, Other 0.1
+  admin2 Liguria: Italian 70.1%, Italian and local dialect 15.2, Italian dialects 8.2, Other language 5.8, Not stated 0.5, Other 0.2
+  admin2 Lombardia: Italian 59.8%, Italian and local dialect 26.1, Other language 7.5, Italian dialects 5.6, Not stated 0.6, Other 0.4
+  admin2 Marche: Italian and local dialect 40.0%, Italian 35.5, Italian dialects 16.3, Other language 7.5, Not stated 0.6, Other 0.1
+  admin2 Molise: Italian 38.1%, Italian and local dialect 37.9, Italian dialects 18.8, Other language 4.3, Not stated 0.7, Other 0.2
+  admin2 Piemonte: Italian 61.4%, Italian and local dialect 24.4, Italian dialects 7.8, Other language 5.9, Other 0.3, Not stated 0.2
+  admin2 Puglia: Italian and local dialect 46.6%, Italian 34.5, Italian dialects 15.8, Other language 2.0, Not stated 0.8, Other 0.3
+  admin2 Sardegna: Italian 52.1%, Italian and local dialect 31.5, Other language 15.0, Italian dialects 0.6, Not stated 0.6, Other 0.2
+  admin2 Sicilia: Italian and local dialect 43.3%, Italian 26.6, Italian dialects 25.5, Other language 3.6, Not stated 0.9, Other 0.1
+  admin2 Toscana: Italian 74.9%, Italian and local dialect 15.1, Other language 6.8, Italian dialects 2.3, Not stated 0.5, Other 0.4
+  admin2 Trentino-Alto Adige: Local dialect (Italian or German) 38.4%, Italian 28.2, Italian and local dialect 16.4, Other language 16.1, Not stated 0.5, Other 0.4
+  admin2 Umbria: Italian 45.2%, Italian and local dialect 30.4, Italian dialects 14.9, Other language 8.1, Not stated 0.7, Other 0.7
+  admin2 Valle d'Aosta: Italian 64.1%, Italian and local dialect 16.6, Other language 14.3, Italian dialects 3.2, Other 1.2, Not stated 0.6
+  admin2 Veneto: Italian and local dialect 31.4%, Italian dialects 30.6, Italian 28.5, Other language 9.0, Other 0.3, Not stated 0.2
+  admin1 Nord-Ovest: Italian 61.3%, Italian and local dialect 24.5, Other language 6.9, Italian dialects 6.4, Not stated 0.5, Other 0.4
+  admin1 Nord-Est: Italian 40.1%, Italian and local dialect 27.9, Local dialect (Italian or German) 19.9, Other language 11.4, Other 0.4, Not stated 0.3
+  admin1 Centro: Italian 60.0%, Italian and local dialect 24.5, Italian dialects 7.5, Other language 7.1, Not stated 0.7, Other 0.2
+  admin1 Sud: Italian and local dialect 47.0%, Italian 27.3, Italian dialects 21.3, Other language 3.3, Not stated 0.7, Other 0.3
+  admin1 Isole: Italian and local dialect 40.4%, Italian 32.9, Italian dialects 19.3, Other language 6.4, Not stated 0.8, Other 0.1
+  wrote data/processed/italy_language_survey.json (66 kB)
+  25 records (20 regions, 5 ripartizioni)
