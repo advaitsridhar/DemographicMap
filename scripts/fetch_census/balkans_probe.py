@@ -31,6 +31,7 @@ import io
 import json
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -54,15 +55,26 @@ def fetch(url: str, data: bytes | None = None, headers: dict | None = None,
     hdrs = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     hdrs.update(headers or {})
     req = urllib.request.Request(uri(url), data=data, headers=hdrs)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            body = resp.read()
-            if resp.headers.get("Content-Encoding") == "gzip":
-                import gzip
-                body = gzip.decompress(body)
-            return resp.status, dict(resp.headers), body
-    except urllib.error.HTTPError as exc:
-        return exc.code, dict(exc.headers or {}), exc.read() or b""
+    # The Internet Archive refuses a connection outright when asked too fast;
+    # waiting and asking again is what it expects, so a refusal is retried.
+    for wait in (5, 20, 60, None):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                body = resp.read()
+                if resp.headers.get("Content-Encoding") == "gzip":
+                    import gzip
+                    body = gzip.decompress(body)
+                return resp.status, dict(resp.headers), body
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429, 503) and wait is not None and "archive.org" in url:
+                time.sleep(wait)
+                continue
+            return exc.code, dict(exc.headers or {}), exc.read() or b""
+        except urllib.error.URLError as exc:
+            if wait is None or "refused" not in str(exc.reason).lower() and "reset" not in str(exc.reason).lower():
+                raise
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 def decode(body: bytes, headers: dict) -> str:
