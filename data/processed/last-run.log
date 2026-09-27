@@ -1,8 +1,9 @@
-  https://nimbus.ine.gob.bo/index.php/s/qEmK9gnkGCZ3K7D/download: 430,272,612 bytes, sha256 9C41C13E655B99BBE4944801953B70678317E3AE9599F35D791E1262AB372160
-  CRC check: every member intact
-  dictionary: 59 groups of P32, 82 languages, 123 province entries
-  11,365,333 people in 113 provinces and 9 departments, each department INE's published count
-  112 provinces bound to their polygons; 1 not: Territorio Indígena Multiétnico (809)
-  polygons with no province: []
-  wrote data/processed/bolivia_census.json (774 kB)
-  wrote bolivia_census.json: 121 records
+page: https://web.archive.org/cdx/search/cdx?url=www5.ine.gub.uy/documents/CENSO%25202023/Tabulados/Personas/Cuadro_14_CAR_2023.xlsx&fl=timestamp,original,length,digest
+  144 bytes
+20260807005623 https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_14_CAR_2023.xlsx 16648 LG5N226F63XHJ6BI3ZSCVQPHK23SUYJP
+
+page: https://web.archive.org/cdx/search/cdx?url=www5.ine.gub.uy/documents/CENSO%25202023/Tabulados/Personas/Cuadro_1_CAR_2023.xlsx&fl=timestamp,original,length,digest
+  unreachable: HTTPError: HTTP Error 504: Gateway Time-out
+page: https://web.archive.org/cdx/search/cdx?url=www5.ine.gub.uy/documents/CENSO%25202023/Tabulados/*&matchType=prefix&fl=timestamp,original,length&from=2024&to=2026&limit=300
+  0 bytes
+
