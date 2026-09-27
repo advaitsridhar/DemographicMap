@@ -153,11 +153,12 @@ HOLD = 0.5
 CLEAN = 0.9
 PART = 0.25
 UNIT = re.compile(r"^UKR_\d{2}_\d{2}$")
-# A city council that is its raion's seat goes into the raion's polygon when
-# any of the city's own area lies there (the overlay lists shares from 0.5%):
-# the name says where the city belongs, and the coarse outline only whether
-# the polygon reaches it at all.
-SEAT_MIN = 0.005
+# A city council that is its raion's seat goes into the raion's polygon
+# whatever share of the city's own area the coarse outline puts there: the
+# map draws no polygon for such a city, so it is drawn inside some raion's,
+# and its name says whose. Uman's area lies 30% in the polygon named Uman,
+# Chuhuiv's and Brovary's not at all, and each is still its raion's seat.
+SEAT_MIN = 0.0
 # Below this share of a raion's area inside the polygon its name binds it to,
 # the note says the boundary file draws the raion coarsely.
 COARSE = 0.75
@@ -440,7 +441,7 @@ def likeness(nso: str, polygon: str) -> float:
 # How alike a city council's name and its raion's adjective must be for the
 # city to be that raion's seat: stricter than a polygon's name, as a city has
 # every raion of its oblast to be mistaken for.
-SEAT_LIKE = 0.88
+SEAT_LIKE = 0.80
 
 
 def city_name(nso: str) -> str:
@@ -480,7 +481,7 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
       moved to a neighbour's outline is exactly what that looks like;
     - a city council that is the seat of a raion so placed goes with its
       raion (the map draws no city polygons but Kyiv's and Sevastopol's),
-      provided the polygon reaches some of the city's area;
+      however little of the city's area the coarse outline puts there;
     - any other area goes to the polygon holding the majority of its area,
       and a polygon holding a quarter of an area placed elsewhere or nowhere
       this way is refused, as the census's figures cannot be split;
@@ -576,7 +577,12 @@ def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tup
             continue
         sid, share = hits[0]
         home[key], how[key], share_of[key] = sid, "overlay", share
-        if share < CLEAN:
+        if share < 1 - PART and "RAION" not in nso:
+            best = max(((likeness(level2[r]["nso"], city_name(nso)), level2[r]["nso"])
+                        for r in seats[key[0]]), default=(0.0, "none"))
+            report.append(f"{OBLAST[key[0]]}: {nso} placed by its area; the likeliest raion "
+                          f"to be its seat is {best[1].title()} ({best[0]:.2f}) of "
+                          f"{len(seats[key[0]])} placed by name in the oblast")
             thin.append(f"{nso} {share:.0%} in {name_of(sid)}, "
                         + ", ".join(f"{name_of(o)} {s:.0%}" for o, s in hits[1:3]))
         if share < 1 - PART:
