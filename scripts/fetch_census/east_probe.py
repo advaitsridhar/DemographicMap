@@ -69,7 +69,13 @@ def fetch(url: str, wayback: str | None) -> bytes:
             raise SystemExit(f"no capture of {url}")
         url = f"https://web.archive.org/web/{stamp}id_/{url}"
         print(f"  via {url}")
-    return http_get(url, binary=True, cache=False, retries=2, timeout=180)
+    return http_get(url, binary=True, cache=False, retries=2, timeout=180,
+                    aia=AIA)
+
+
+# Set by --aia: complete a server's missing intermediate certificate from its
+# own AIA extension (common.http_get's repair; still fully verified).
+AIA = False
 
 
 def describe_book(blob: bytes, name: str, args: argparse.Namespace) -> None:
@@ -221,7 +227,12 @@ def main() -> int:
     ap.add_argument("--hosts",
                     help="with a target holding {n}: a range like 1-95 to "
                          "substitute, for an office with one host per region")
+    ap.add_argument("--aia", action="store_true")
+    ap.add_argument("--form", action="store_true",
+                    help="POST --data as a urlencoded form (a=1&b=2)")
     args = ap.parse_args()
+    global AIA
+    AIA = args.aia
     targets = args.target
     if args.hosts:
         low, high = (int(x) for x in args.hosts.split("-"))
@@ -240,9 +251,11 @@ def main() -> int:
                     print(f"  {resp.status} {resp.headers.get('Content-Type')} "
                           f"{resp.headers.get('Content-Length')}")
             elif args.cmd == "post":
+                kind = ("application/x-www-form-urlencoded" if args.form
+                        else "application/json")
                 req = urllib.request.Request(
-                    target, data=(args.data or "{}").encode(), method="POST",
-                    headers={"User-Agent": UA, "Content-Type": "application/json"})
+                    target, data=(args.data or ("" if args.form else "{}")).encode(),
+                    method="POST", headers={"User-Agent": UA, "Content-Type": kind})
                 with urllib.request.urlopen(req, timeout=180) as resp:
                     describe(resp.read(), target, args)
             else:
