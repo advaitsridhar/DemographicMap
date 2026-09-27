@@ -862,7 +862,47 @@ def nld8() -> None:
                 log("   " + " | ".join(cells))
 
 
+def hun9() -> None:
+    page = text(fetch("https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1")[2])
+    for word in ("/api/index/", "/api/structure/", "/api/dataflows/"):
+        for m in list(re.finditer(re.escape(word), page))[:2]:
+            log(f"   ...{page[max(0, m.start() - 700):m.start() + 300]}...".replace("\n", " "))
+
+
+def svk9() -> None:
+    base = "https://gis.scitanie.sk/server/rest/services/Hosted/"
+    for service, layer in (("obyv_ekchar_nabo_vekskup", 5), ("obyv_ekchar_matjaz_vekskup", 5),
+                           ("obyv_ekchar_nar_vekskup", None), ("obyv_ekchar_nar_dlnar", 2)):
+        if layer is None:
+            page = text(fetch(base + service + "/FeatureServer/layers?f=json")[2])
+            try:
+                for lay in json.loads(page).get("layers", []):
+                    log(f"   {service} layer {lay['id']} {lay['name']!r}: "
+                        f"{[(f['name'], f.get('alias')) for f in lay.get('fields', [])][:40]}")
+            except Exception as exc:  # noqa: BLE001
+                log(f"   {exc}")
+            continue
+        page = text(fetch(f"{base}{service}/FeatureServer/{layer}?f=json")[2])
+        try:
+            info = json.loads(page)
+            log(f"\n## {service}/{layer} {info.get('name')!r}")
+            log(f"   fields: {[(f['name'], f.get('alias')) for f in info.get('fields', [])]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {page[:200]}")
+        q = (f"{base}{service}/FeatureServer/{layer}/query?where=1%3D1&outFields=*&returnGeometry=false"
+             f"&resultRecordCount=4&f=json")
+        page = text(fetch(q)[2])
+        try:
+            for feat in json.loads(page).get("features", []):
+                log(f"   row: {json.dumps(feat.get('attributes'), ensure_ascii=False)[:700]}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {page[:200]}")
+        count = text(fetch(f"{base}{service}/FeatureServer/{layer}/query?where=1%3D1&returnCountOnly=true&f=json")[2])
+        log(f"   count: {count[:100]}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun9": hun9, "svk9": svk9,
     "hun8": hun8, "svk8": svk8, "nld8": nld8,
     "hun7": hun7, "svk7": svk7, "nld7": nld7,
     "lie7": lie7,
