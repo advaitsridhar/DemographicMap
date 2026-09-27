@@ -48,6 +48,8 @@ DATASETS: dict[str, tuple[str, str, str | None]] = {
 }
 # TYPE154 = 2021 local authority districts; TYPE499 = regions; TYPE480 = countries.
 DEFAULT_GEOGRAPHY = "TYPE154"
+# The most cells Nomis returns an anonymous caller in one answer.
+PAGE_CELLS = 25000
 
 # Two geographies, because one is not enough to cover the shapes that exist.
 #
@@ -136,9 +138,24 @@ def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dic
     # dimension unspecified returns every category, totals included, which is
     # exactly what shares() needs.
     url = f"{BASE}/{dataset}.data.json?geography={geography}&measures=20100"
-    payload = http_json(url, timeout=300)
+    # Nomis answers an anonymous caller at most 25,000 cells at a time, and
+    # TS024's 94 languages by 330 districts is 31,020: read whole, the answer
+    # stopped at the 235th district and the other 95 had no language at all.
+    # So the table is read a page at a time until a page comes back short.
+    observations: list[dict[str, Any]] = []
+    while True:
+        page = http_json(f"{url}&RecordOffset={len(observations)}", timeout=300)
+        rows = page.get("obs", [])
+        if rows and observations and rows[0] == observations[0]:
+            raise SystemExit(f"uk_nomis: {dataset}: Nomis ignored the record offset and "
+                             "answered the first page again")
+        observations.extend(rows)
+        if len(rows) < PAGE_CELLS:
+            break
+    if len(observations) > PAGE_CELLS:
+        log(f"  {dataset}: {len(observations):,} cells, read in pages")
     out: dict[str, dict[str, Any]] = {}
-    for obs in payload.get("obs", []):
+    for obs in observations:
         if cell is None:
             cells = [k for k in obs if k.startswith("c2021")]
             if len(cells) != 1:
