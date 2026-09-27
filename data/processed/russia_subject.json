@@ -2,7 +2,7 @@
   {
     "id": "RU-BEL",
     "level": "admin1",
-    "name": "Белгородская область",
+    "name": "Belgorod Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -1143,8 +1143,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-BEL",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B21416061393121",
+    "aliases": [
+      "Белгородская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -1154,7 +1157,7 @@
   {
     "id": "RU-BRY",
     "level": "admin1",
-    "name": "Брянская область",
+    "name": "Bryansk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -2155,8 +2158,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-BRY",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B9124867987859",
+    "aliases": [
+      "Брянская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -2166,7 +2172,7 @@
   {
     "id": "RU-VLA",
     "level": "admin1",
-    "name": "Владимирская область",
+    "name": "Vladimir Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -3307,8 +3313,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-VLA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B91128253561055",
+    "aliases": [
+      "Владимирская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -3318,7 +3327,7 @@
   {
     "id": "RU-VOR",
     "level": "admin1",
-    "name": "Воронежская область",
+    "name": "Voronezh Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -4539,8 +4548,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-VOR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B2687808218031",
+    "aliases": [
+      "Воронежская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -4550,7 +4562,7 @@
   {
     "id": "RU-IVA",
     "level": "admin1",
-    "name": "Ивановская область",
+    "name": "Ivanovo Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -5621,8 +5633,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-IVA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B41275184158050",
+    "aliases": [
+      "Ивановская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -5632,7 +5647,7 @@
   {
     "id": "RU-KLU",
     "level": "admin1",
-    "name": "Калужская область",
+    "name": "Kaluga Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -6788,8 +6803,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KLU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B99237675212372",
+    "aliases": [
+      "Калужская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -6799,7 +6817,7 @@
   {
     "id": "RU-KOS",
     "level": "admin1",
-    "name": "Костромская область",
+    "name": "Kostroma Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -7820,8 +7838,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KOS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B70678486994214",
+    "aliases": [
+      "Костромская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -7831,7 +7852,7 @@
   {
     "id": "RU-KRS",
     "level": "admin1",
-    "name": "Курская область",
+    "name": "Kursk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -8897,8 +8918,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KRS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B94971452660823",
+    "aliases": [
+      "Курская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -8908,7 +8932,7 @@
   {
     "id": "RU-LIP",
     "level": "admin1",
-    "name": "Липецкая область",
+    "name": "Lipetsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -9959,8 +9983,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-LIP",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B5502896824563",
+    "aliases": [
+      "Липецкая область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -9970,7 +9997,7 @@
   {
     "id": "RU-MOS",
     "level": "admin1",
-    "name": "Московская область",
+    "name": "Moscow Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -11476,8 +11503,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-MOS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B74836580104791",
+    "aliases": [
+      "Московская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -11487,7 +11517,7 @@
   {
     "id": "RU-ORL",
     "level": "admin1",
-    "name": "Орловская область",
+    "name": "Oryol Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -12518,8 +12548,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ORL",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B3932420572168",
+    "aliases": [
+      "Орловская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -12529,7 +12562,7 @@
   {
     "id": "RU-RYA",
     "level": "admin1",
-    "name": "Рязанская область",
+    "name": "Ryazan Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -13630,8 +13663,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-RYA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B69714658607289",
+    "aliases": [
+      "Рязанская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -13641,7 +13677,7 @@
   {
     "id": "RU-SMO",
     "level": "admin1",
-    "name": "Смоленская область",
+    "name": "Smolensk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -14752,8 +14788,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SMO",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B31773571872137",
+    "aliases": [
+      "Смоленская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -14763,7 +14802,7 @@
   {
     "id": "RU-TAM",
     "level": "admin1",
-    "name": "Тамбовская область",
+    "name": "Tambov Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -15759,8 +15798,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TAM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B50284711669511",
+    "aliases": [
+      "Тамбовская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -15770,7 +15812,7 @@
   {
     "id": "RU-TVE",
     "level": "admin1",
-    "name": "Тверская область",
+    "name": "Tver Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -16911,8 +16953,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TVE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B63182593849600",
+    "aliases": [
+      "Тверская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -16922,7 +16967,7 @@
   {
     "id": "RU-TUL",
     "level": "admin1",
-    "name": "Тульская область",
+    "name": "Tula Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -18103,8 +18148,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TUL",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B42082792489997",
+    "aliases": [
+      "Тульская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -18114,7 +18162,7 @@
   {
     "id": "RU-YAR",
     "level": "admin1",
-    "name": "Ярославская область",
+    "name": "Yaroslavl Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -19230,8 +19278,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-YAR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B38848907206629",
+    "aliases": [
+      "Ярославская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -19241,7 +19292,7 @@
   {
     "id": "RU-MOW",
     "level": "admin1",
-    "name": "г. Москва",
+    "name": "Moscow",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -20772,8 +20823,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-MOW",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B19676032168465",
+    "aliases": [
+      "г. Москва"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -20783,7 +20837,7 @@
   {
     "id": "RU-KR",
     "level": "admin1",
-    "name": "Республика Карелия",
+    "name": "Republic of Karelia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -21859,8 +21913,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B96976580001980",
+    "aliases": [
+      "Республика Карелия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -21870,7 +21927,7 @@
   {
     "id": "RU-KO",
     "level": "admin1",
-    "name": "Республика Коми",
+    "name": "Komi Republic",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -22976,8 +23033,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KO",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B21210279674314",
+    "aliases": [
+      "Республика Коми"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -22987,7 +23047,7 @@
   {
     "id": "RU-ARK",
     "level": "admin1",
-    "name": "Архангельская область без АО",
+    "name": "Arkhangelsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -24063,8 +24123,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ARK",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B62882423633207",
+    "aliases": [
+      "Архангельская область без АО"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -24074,7 +24137,7 @@
   {
     "id": "RU-NEN",
     "level": "admin1",
-    "name": "Ненецкий автономный округ",
+    "name": "Nenets Autonomous Okrug",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -24695,8 +24758,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-NEN",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B3082792446388",
+    "aliases": [
+      "Ненецкий автономный округ"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -24706,7 +24772,7 @@
   {
     "id": "RU-VLG",
     "level": "admin1",
-    "name": "Вологодская область",
+    "name": "Vologda Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -25787,8 +25853,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-VLG",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B96664025860642",
+    "aliases": [
+      "Вологодская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -25798,7 +25867,7 @@
   {
     "id": "RU-KGD",
     "level": "admin1",
-    "name": "Калининградская область",
+    "name": "Kaliningrad",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -27024,8 +27093,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KGD",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B40138449315491",
+    "aliases": [
+      "Калининградская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -27035,7 +27107,7 @@
   {
     "id": "RU-LEN",
     "level": "admin1",
-    "name": "Ленинградская область",
+    "name": "Leningrad oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -28401,8 +28473,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-LEN",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B90810482533567",
+    "aliases": [
+      "Ленинградская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -28412,7 +28487,7 @@
   {
     "id": "RU-MUR",
     "level": "admin1",
-    "name": "Мурманская область",
+    "name": "Murmansk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -29553,8 +29628,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-MUR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B70218250039968",
+    "aliases": [
+      "Мурманская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -29564,7 +29642,7 @@
   {
     "id": "RU-NGR",
     "level": "admin1",
-    "name": "Новгородская область",
+    "name": "Novgorod Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -30570,8 +30648,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-NGR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B16533507618293",
+    "aliases": [
+      "Новгородская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -30581,7 +30662,7 @@
   {
     "id": "RU-PSK",
     "level": "admin1",
-    "name": "Псковская область",
+    "name": "Pskov Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -31647,8 +31728,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-PSK",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B86476767341172",
+    "aliases": [
+      "Псковская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -31658,7 +31742,7 @@
   {
     "id": "RU-SPE",
     "level": "admin1",
-    "name": "г. Санкт-Петербург",
+    "name": "Saint Petersburg",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -33204,8 +33288,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SPE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B8796515134902",
+    "aliases": [
+      "г. Санкт-Петербург"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -33215,7 +33302,7 @@
   {
     "id": "RU-AD",
     "level": "admin1",
-    "name": "Республика Адыгея",
+    "name": "Adygea",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -34301,8 +34388,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-AD",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B41832925814017",
+    "aliases": [
+      "Республика Адыгея"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -34312,7 +34402,7 @@
   {
     "id": "RU-KL",
     "level": "admin1",
-    "name": "Республика Калмыкия",
+    "name": "Kalmykia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -35268,8 +35358,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KL",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B57398385788417",
+    "aliases": [
+      "Республика Калмыкия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -35279,7 +35372,7 @@
   {
     "id": "RU-KDA",
     "level": "admin1",
-    "name": "Краснодарский край",
+    "name": "Krasnodar Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -36705,8 +36798,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KDA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B83675725671802",
+    "aliases": [
+      "Краснодарский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -36716,7 +36812,7 @@
   {
     "id": "RU-AST",
     "level": "admin1",
-    "name": "Астраханская область",
+    "name": "Astrakhan Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -37927,8 +38023,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-AST",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B68474107072963",
+    "aliases": [
+      "Астраханская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -37938,7 +38037,7 @@
   {
     "id": "RU-VGG",
     "level": "admin1",
-    "name": "Волгоградская область",
+    "name": "Volgograd Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -39114,8 +39213,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-VGG",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B90356867269748",
+    "aliases": [
+      "Волгоградская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -39125,7 +39227,7 @@
   {
     "id": "RU-ROS",
     "level": "admin1",
-    "name": "Ростовская область",
+    "name": "Rostov Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -40466,8 +40568,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ROS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B46424166303156",
+    "aliases": [
+      "Ростовская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -40477,7 +40582,7 @@
   {
     "id": "RU-DA",
     "level": "admin1",
-    "name": "Республика Дагестан",
+    "name": "Dagestan",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -41623,8 +41728,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-DA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B24428243574749",
+    "aliases": [
+      "Республика Дагестан"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -41634,7 +41742,7 @@
   {
     "id": "RU-IN",
     "level": "admin1",
-    "name": "Республика Ингушетия",
+    "name": "Ingushetia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -42265,8 +42373,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-IN",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B75413689166101",
+    "aliases": [
+      "Республика Ингушетия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -42276,7 +42387,7 @@
   {
     "id": "RU-KB",
     "level": "admin1",
-    "name": "Кабардино-Балкарская Республика",
+    "name": "Kabardino-Balkaria",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -43272,8 +43383,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KB",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B46612801043871",
+    "aliases": [
+      "Кабардино-Балкарская Республика"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -43283,7 +43397,7 @@
   {
     "id": "RU-KC",
     "level": "admin1",
-    "name": "Карачаево-Черкесская Республика",
+    "name": "Karachay-Cherkessia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -44164,8 +44278,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KC",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B95588705134862",
+    "aliases": [
+      "Карачаево-Черкесская Республика"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -44175,7 +44292,7 @@
   {
     "id": "RU-SE",
     "level": "admin1",
-    "name": "РСО-Алания",
+    "name": "North Ossetia–Alania",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -45201,8 +45318,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B7235812138525",
+    "aliases": [
+      "РСО-Алания"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -45212,7 +45332,7 @@
   {
     "id": "RU-CE",
     "level": "admin1",
-    "name": "Чеченская Республика",
+    "name": "Chechnya",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -46053,8 +46173,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-CE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B98838729156012",
+    "aliases": [
+      "Чеченская Республика"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -46064,7 +46187,7 @@
   {
     "id": "RU-STA",
     "level": "admin1",
-    "name": "Ставропольский край",
+    "name": "Stavropol Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -47345,8 +47468,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-STA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B89423349656391",
+    "aliases": [
+      "Ставропольский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -47356,7 +47482,7 @@
   {
     "id": "RU-BA",
     "level": "admin1",
-    "name": "Республика Башкортостан",
+    "name": "Bashkortostan",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -48587,8 +48713,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-BA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B30250450380208",
+    "aliases": [
+      "Республика Башкортостан"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -48598,7 +48727,7 @@
   {
     "id": "RU-ME",
     "level": "admin1",
-    "name": "Республика Марий Эл",
+    "name": "Mari El",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -49674,8 +49803,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ME",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B61240048498251",
+    "aliases": [
+      "Республика Марий Эл"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -49685,7 +49817,7 @@
   {
     "id": "RU-MO",
     "level": "admin1",
-    "name": "Республика Мордовия",
+    "name": "Republic of Mordovia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -50651,8 +50783,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-MO",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B16834140201491",
+    "aliases": [
+      "Республика Мордовия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -50662,7 +50797,7 @@
   {
     "id": "RU-TA",
     "level": "admin1",
-    "name": "Республика Татарстан",
+    "name": "Tatarstan",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -51963,8 +52098,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B46738131000378",
+    "aliases": [
+      "Республика Татарстан"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -51974,7 +52112,7 @@
   {
     "id": "RU-UD",
     "level": "admin1",
-    "name": "Удмуртская Республика",
+    "name": "Udmurtia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -53095,8 +53233,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-UD",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B34434912986355",
+    "aliases": [
+      "Удмуртская Республика"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -53106,7 +53247,7 @@
   {
     "id": "RU-CU",
     "level": "admin1",
-    "name": "Чувашская Республика",
+    "name": "Chuvashia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -54172,8 +54313,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-CU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B91429860602147",
+    "aliases": [
+      "Чувашская Республика"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -54183,7 +54327,7 @@
   {
     "id": "RU-PER",
     "level": "admin1",
-    "name": "Пермский край",
+    "name": "Perm Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -55444,8 +55588,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-PER",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B90469334921421",
+    "aliases": [
+      "Пермский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -55455,7 +55602,7 @@
   {
     "id": "RU-KIR",
     "level": "admin1",
-    "name": "Кировская область",
+    "name": "Kirov Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -56591,8 +56738,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KIR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B31225333555943",
+    "aliases": [
+      "Кировская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -56602,7 +56752,7 @@
   {
     "id": "RU-NIZ",
     "level": "admin1",
-    "name": "Нижегородская область",
+    "name": "Nizhny Novgorod Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -57818,8 +57968,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-NIZ",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B18259284234443",
+    "aliases": [
+      "Нижегородская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -57829,7 +57982,7 @@
   {
     "id": "RU-ORE",
     "level": "admin1",
-    "name": "Оренбургская область",
+    "name": "Orenburg Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -59005,8 +59158,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ORE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B76603557910928",
+    "aliases": [
+      "Оренбургская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -59016,7 +59172,7 @@
   {
     "id": "RU-PNZ",
     "level": "admin1",
-    "name": "Пензенская область",
+    "name": "Penza Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -60087,8 +60243,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-PNZ",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B59972517059449",
+    "aliases": [
+      "Пензенская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -60098,7 +60257,7 @@
   {
     "id": "RU-SAM",
     "level": "admin1",
-    "name": "Самарская область",
+    "name": "Samara Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -61389,8 +61548,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SAM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B25497318303482",
+    "aliases": [
+      "Самарская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -61400,7 +61562,7 @@
   {
     "id": "RU-SAR",
     "level": "admin1",
-    "name": "Саратовская область",
+    "name": "Saratov Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -62621,8 +62783,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SAR",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B21415173479872",
+    "aliases": [
+      "Саратовская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -62632,7 +62797,7 @@
   {
     "id": "RU-ULY",
     "level": "admin1",
-    "name": "Ульяновская область",
+    "name": "Ulyanovsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -63738,8 +63903,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ULY",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B42697300509311",
+    "aliases": [
+      "Ульяновская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -63749,7 +63917,7 @@
   {
     "id": "RU-KGN",
     "level": "admin1",
-    "name": "Курганская область",
+    "name": "Kurgan Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -64715,8 +64883,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KGN",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B71296032393878",
+    "aliases": [
+      "Курганская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -64726,7 +64897,7 @@
   {
     "id": "RU-SVE",
     "level": "admin1",
-    "name": "Свердловская область",
+    "name": "Sverdlovsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -66067,8 +66238,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SVE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B92397886288731",
+    "aliases": [
+      "Свердловская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -66078,7 +66252,7 @@
   {
     "id": "RU-TYU",
     "level": "admin1",
-    "name": "Тюменская область без АО",
+    "name": "Tyumen Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -67314,8 +67488,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TYU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B77673499236961",
+    "aliases": [
+      "Тюменская область без АО"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -67325,7 +67502,7 @@
   {
     "id": "RU-KHM",
     "level": "admin1",
-    "name": "ХМАО",
+    "name": "Khanty-Mansiysk Autonomous Okrug – Ugra",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -68596,8 +68773,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KHM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B731487536241",
+    "aliases": [
+      "ХМАО"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -68607,7 +68787,7 @@
   {
     "id": "RU-YAN",
     "level": "admin1",
-    "name": "ЯНАО",
+    "name": "Yamalo-Nenets Autonomous Okrug",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -69788,8 +69968,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-YAN",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B47279883421777",
+    "aliases": [
+      "ЯНАО"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -69799,7 +69982,7 @@
   {
     "id": "RU-CHE",
     "level": "admin1",
-    "name": "Челябинская область",
+    "name": "Chelyabinsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -71045,8 +71228,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-CHE",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B19466568926459",
+    "aliases": [
+      "Челябинская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -71056,7 +71242,7 @@
   {
     "id": "RU-AL",
     "level": "admin1",
-    "name": "Республика Алтай",
+    "name": "Altai Republic",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -71907,8 +72093,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-AL",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B30008444211385",
+    "aliases": [
+      "Республика Алтай"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -71918,7 +72107,7 @@
   {
     "id": "RU-TY",
     "level": "admin1",
-    "name": "Республика Тыва",
+    "name": "Tuva",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -72694,8 +72883,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TY",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B55293521919285",
+    "aliases": [
+      "Республика Тыва"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -72705,7 +72897,7 @@
   {
     "id": "RU-KK",
     "level": "admin1",
-    "name": "Республика Хакасия",
+    "name": "Khakassia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -73726,8 +73918,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KK",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B55422170414647",
+    "aliases": [
+      "Республика Хакасия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -73737,7 +73932,7 @@
   {
     "id": "RU-ALT",
     "level": "admin1",
-    "name": "Алтайский край",
+    "name": "Altai Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -74993,8 +75188,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ALT",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B80457268982215",
+    "aliases": [
+      "Алтайский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -75004,7 +75202,7 @@
   {
     "id": "RU-KYA",
     "level": "admin1",
-    "name": "Красноярский край",
+    "name": "Krasnoyarsk Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -76335,8 +76533,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KYA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B65133456612022",
+    "aliases": [
+      "Красноярский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -76346,7 +76547,7 @@
   {
     "id": "RU-IRK",
     "level": "admin1",
-    "name": "Иркутская область",
+    "name": "Irkutsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -77617,8 +77818,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-IRK",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B78872068540735",
+    "aliases": [
+      "Иркутская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -77628,7 +77832,7 @@
   {
     "id": "RU-KEM",
     "level": "admin1",
-    "name": "Кемеровская область - Кузбасс",
+    "name": "Kemerovo Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -78904,8 +79108,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KEM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B4400867918714",
+    "aliases": [
+      "Кемеровская область - Кузбасс"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -78915,7 +79122,7 @@
   {
     "id": "RU-NVS",
     "level": "admin1",
-    "name": "Новосибирская область",
+    "name": "Novosibirsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -80276,8 +80483,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-NVS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B27844369294009",
+    "aliases": [
+      "Новосибирская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -80287,7 +80497,7 @@
   {
     "id": "RU-OMS",
     "level": "admin1",
-    "name": "Омская область",
+    "name": "Omsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -81563,8 +81773,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-OMS",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B55503329301013",
+    "aliases": [
+      "Омская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -81574,7 +81787,7 @@
   {
     "id": "RU-TOM",
     "level": "admin1",
-    "name": "Томская область",
+    "name": "Tomsk Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -82765,8 +82978,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-TOM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B26811060113320",
+    "aliases": [
+      "Томская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -82776,7 +82992,7 @@
   {
     "id": "RU-BU",
     "level": "admin1",
-    "name": "Республика Бурятия",
+    "name": "Buryatia",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -83942,8 +84158,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-BU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B49563687485750",
+    "aliases": [
+      "Республика Бурятия"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -83953,7 +84172,7 @@
   {
     "id": "RU-SA",
     "level": "admin1",
-    "name": "Республика Саха (Якутия)",
+    "name": "Sakha Republic",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -85234,8 +85453,10 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SA",
-    "match_by": "iso_3166_2",
+    "match_by": "shape_id",
+    "shape_id": "28173009B48058606062294",
     "aliases": [
+      "Республика Саха (Якутия)",
       "Sakha Republic"
     ],
     "ethnicity_year": 2021,
@@ -85247,7 +85468,7 @@
   {
     "id": "RU-ZAB",
     "level": "admin1",
-    "name": "Забайкальский край",
+    "name": "Zabaykalsky Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -86318,8 +86539,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-ZAB",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B29209288820923",
+    "aliases": [
+      "Забайкальский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -86329,7 +86553,7 @@
   {
     "id": "RU-KAM",
     "level": "admin1",
-    "name": "Камчатский край",
+    "name": "Kamchatka Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -87455,8 +87679,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KAM",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B70023447378008",
+    "aliases": [
+      "Камчатский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -87466,7 +87693,7 @@
   {
     "id": "RU-PRI",
     "level": "admin1",
-    "name": "Приморский край",
+    "name": "Primorsky Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -88702,8 +88929,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-PRI",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B46831765844996",
+    "aliases": [
+      "Приморский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -88713,7 +88943,7 @@
   {
     "id": "RU-KHA",
     "level": "admin1",
-    "name": "Хабаровский край",
+    "name": "Khabarovsk Krai",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -89954,8 +90184,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-KHA",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B57295377776076",
+    "aliases": [
+      "Хабаровский край"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -89965,7 +90198,7 @@
   {
     "id": "RU-AMU",
     "level": "admin1",
-    "name": "Амурская область",
+    "name": "Amur Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -91046,8 +91279,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-AMU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B24080199016459",
+    "aliases": [
+      "Амурская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -91057,7 +91293,7 @@
   {
     "id": "RU-MAG",
     "level": "admin1",
-    "name": "Магаданская область",
+    "name": "Magadan Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -92053,8 +92289,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-MAG",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B2185273376578",
+    "aliases": [
+      "Магаданская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -92064,7 +92303,7 @@
   {
     "id": "RU-SAK",
     "level": "admin1",
-    "name": "Сахалинская область",
+    "name": "Sakhalin Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -93220,8 +93459,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-SAK",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B36269087375583",
+    "aliases": [
+      "Сахалинская область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -93231,7 +93473,7 @@
   {
     "id": "RU-YEV",
     "level": "admin1",
-    "name": "Еврейская автономная область",
+    "name": "Jewish Autonomous Oblast",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -94047,8 +94289,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-YEV",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B51962491984110",
+    "aliases": [
+      "Еврейская автономная область"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
@@ -94058,7 +94303,7 @@
   {
     "id": "RU-CHU",
     "level": "admin1",
-    "name": "Чукотский автономный округ",
+    "name": "Chukotka Autonomous Okrug",
     "parent": "RUS",
     "capital": {
       "status": "not_available"
@@ -94939,8 +95184,11 @@
     ],
     "country": "RUS",
     "iso_3166_2": "RU-CHU",
-    "match_by": "iso_3166_2",
-    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "28173009B11091203162490",
+    "aliases": [
+      "Чукотский автономный округ"
+    ],
     "ethnicity_year": 2021,
     "language_year": 2021,
     "population_note": "Everyone the 2020 census counted in the subject (reference date 1 October 2021).",
