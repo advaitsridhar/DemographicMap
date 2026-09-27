@@ -1,5 +1,27 @@
-switzerland_ages: BFS px-x-0102010000_101, 31 December 2025, read against the districts of 01-01-2009
-  01-01-2026: 8 of the table's communes not in the register ['......0700 Moutier', '......2016 Fétigny', '......2027 Ménières', '......2278 Ulmiz', '......2520 Halten', '......2529 Oekingen', '......4122 Villnachern', 'Schweiz'], 2 the other way ['Fétigny-Ménières', 'Moutier']
-  31-12-2025: 1 of the table's communes not in the register ['Schweiz'], 0 the other way []
-  01-01-2025: 2 of the table's communes not in the register ['......5395 Lema', 'Schweiz'], 7 the other way ['Bodio', 'Prato (Leventina)', 'Astano', 'Bedigliora', 'Curio', 'Miglieglia', 'Novaggio']
-switzerland_ages: no register date matches the table's communes
+probe_pdf: https://web.archive.org/web/20230607100505id_/https://nso.gov.mt/wp-content/uploads/Census-of-Population-2021-volume1-final.pdf
+  1,048,576 bytes
+EOF marker not found
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
+    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
+    reader = PdfReader(io.BytesIO(blob))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 151, in __init__
+    self._initialize_stream(stream)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 175, in _initialize_stream
+    self.read(stream)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 689, in read
+    self._find_eof_marker(stream)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 802, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 380, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
