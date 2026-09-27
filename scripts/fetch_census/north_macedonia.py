@@ -129,6 +129,11 @@ ALIASES = {
     "Debrca": "Debartsa",
 }
 OLD_KICHEVO = ("Kichevo", "Drugovo", "Oslomej", "Vraneshtica", "Zajas")
+# The 2021 settlement table's spelling -> the 2002 table's, where the two
+# transliterations differ by more than ц: Ehloec (Ехлоец), Karbunica
+# (Карбуница) and Rechani - Zajasko (Речани - Зајашко).
+SETTLEMENT_ALIASES = {"Ehloec": "Ehlovets", "Karbunica": "Karabunitsa",
+                      "Rechani - Zajasko": "Rechani-Zajashko"}
 
 
 def key(name: str) -> str:
@@ -459,7 +464,7 @@ def build() -> list[dict[str, Any]]:
         by_key[key(name)].append(name)
     stray = []
     for name in sorted(places):
-        hits = by_key.get(key(name), [])
+        hits = by_key.get(key(SETTLEMENT_ALIASES.get(name, name)), [])
         if len(hits) == 1:
             home.setdefault(name, home[hits[0]])
         else:
