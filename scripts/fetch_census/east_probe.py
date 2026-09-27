@@ -218,8 +218,16 @@ def main() -> int:
     ap.add_argument("--context", type=int, default=160)
     ap.add_argument("--bytes", type=int, default=1500)
     ap.add_argument("--data")
+    ap.add_argument("--hosts",
+                    help="with a target holding {n}: a range like 1-95 to "
+                         "substitute, for an office with one host per region")
     args = ap.parse_args()
-    for target in args.target:
+    targets = args.target
+    if args.hosts:
+        low, high = (int(x) for x in args.hosts.split("-"))
+        targets = [t.replace("{n}", f"{n:02d}") for t in args.target
+                   for n in range(low, high + 1)]
+    for target in targets:
         print(f"== {args.cmd} {target}")
         args.target = target
         try:
