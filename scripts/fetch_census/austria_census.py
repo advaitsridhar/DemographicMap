@@ -45,6 +45,7 @@ from .austria import DATA, LAENDER, REGISTER_ALIASES, VIENNA, districts
 from .central_ages import check_sum, fold, report_unbound, units
 
 SHEET = "https://www.statistik.at/blickgem/vz7/g{code}.pdf"
+GENERAL = "https://www.statistik.at/blickgem/blick1/g{code}.pdf"
 PORTAL = "https://www.statistik.at/blickgem/"
 SOURCE = ("Statistik Austria, Volkszählung 2001 (15 May 2001), Ein Blick auf die Gemeinde: "
           "Wohnbevölkerung nach Religion und Umgangssprache")
@@ -117,7 +118,23 @@ def sheet(code: str) -> dict[str, Any]:
     from pypdf import PdfReader
     blob = http_get(SHEET.format(code=code), binary=True, timeout=120)
     if not blob.startswith(b"%PDF"):
-        return {"code": code, "missing": True}
+        # A municipality merged after the 2001 sheets were last regenerated has
+        # none; its general sheet (blick1) still lists what it was made of.
+        general = http_get(GENERAL.format(code=code), binary=True, timeout=120)
+        if not general.startswith(b"%PDF"):
+            return {"code": code, "missing": True}
+        page = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(general)).pages)
+        merged = listed_parts(page)
+        if not merged or code in merged:
+            return {"code": code, "error": f"austria_census: {code}: no 2001 sheet, and its general "
+                    f"sheet lists no merger", "excerpt": " | ".join(page.split("\n"))[:600]}
+        parts = [sheet(old) for old in merged]
+        bad = [p for p in parts if p.get("error") or p.get("missing")]
+        if bad:
+            return {"code": code, "error": f"austria_census: {code}: merged from {merged}, and "
+                    f"{[p['code'] for p in bad]} could not be read",
+                    "excerpt": " | ".join(page.split("\n"))[:600]}
+        return {"code": code, "merged": merged, "parts": parts}
     page = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(blob)).pages)
     merged = merged_from(code, page)
     if merged:
@@ -135,6 +152,20 @@ def sheet(code: str) -> dict[str, Any]:
         return read_sheet(code, page)
     except SystemExit as exc:
         return {"code": code, "error": str(exc), "excerpt": " | ".join(page.split("\n"))[:900]}
+
+
+def listed_parts(page: str) -> list[str]:
+    """The codes listed one per line after "Zusammenlegung der Gemeinden", up to the first other line."""
+    if "Zusammenlegung der Gemeinden" not in page:
+        return []
+    out: list[str] = []
+    for line in page.split("Zusammenlegung der Gemeinden", 1)[1].split("\n")[1:]:
+        m = re.match(r"\s*(\d{5})\s", line)
+        if m:
+            out.append(m.group(1))
+        elif line.strip() and out:
+            break
+    return out
 
 
 def merged_from(code: str, page: str) -> list[str]:
