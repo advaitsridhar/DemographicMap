@@ -193,7 +193,10 @@ class BuiltSiteData(unittest.TestCase):
         rests = [r for r in self.records if r.get("remainder")]
         if not rests:
             self.skipTest("site data predates the remainders")
-        self.assertEqual(15, len(rests))
+        # Fifteen departments' ground outside their municipios, and Cerro
+        # Largo's: Melo, 12 km2 that the municipios leave out (make_remainders'
+        # MIN_AREA).
+        self.assertEqual(16, len(rests))
         self.assertTrue(all("outside any municipio" in r["name"] for r in rests))
 
     def test_every_municipio_hangs_off_a_real_department(self):
