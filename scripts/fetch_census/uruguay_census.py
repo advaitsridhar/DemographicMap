@@ -9,10 +9,11 @@ What it writes, for the 19 departments and the municipios the boundary file
 draws (and the ground outside them, drawn as one unit per department):
 
 * **Population, median age and sex ratio**: everyone INE estimates the
-  census counted -- 3,499,451 -- from the weighted person file of INE's July
-  2026 release (ANDA catalogue 781), the release INE's own tables now use.
-  The median is interpolated within the single year of age holding the
-  middle person.
+  census counted -- 3,499,451. Departments from the weighted person file of
+  INE's July 2026 release (ANDA catalogue 781), the release INE's own tables
+  now use; municipios from the February 2026 release (see below). The
+  median is interpolated within the single year of age (departments) or the
+  five-year group (municipios) holding the middle person.
 * **Ethnicity**: each person's principal ethnic-racial ancestry. The census
   asked everyone who answered its questionnaire whether they believe they
   have Afro or Black, Asian, White, Indigenous or other ancestry (yes or no
@@ -31,18 +32,20 @@ electoral series (124 of its 125: Ismael Cortinas, Flores's one municipio,
 is not drawn). INE's July 2026 release files each person under the 2025
 series instead -- 136 municipios, eleven of them new and "the limits of
 others revised" (INE's microdata guide, section 8.6) -- which the map does
-not draw. INE's February 2026 release filed the same people under the 2020
-series. So each person of the July file is placed in the municipio the
-February file gives their dwelling's address (DIRECCION_ID; the two files
-number their people differently). About a quarter of July's address codes
-are not in the February file; those people are placed by their census
-segment, in the municipio where the segment's other people all are. The
-municipios are tallied with the July weights. Every placement is checked:
-every address both files have must be in the same department in both, no
-more than 1% of the people may go unplaced, every
-2020 municipio must bind to one polygon of its own department, and the July
-file tallied by its own 2025 series must make INE's Cuadro 14 municipio by
-municipio, as its departments must make Cuadro 1.
+not draw. INE's February 2026 release (personas_ext_26_02, still on INE's
+site) files the same census's 3,499,451 people, one row each, under the
+2020 series, so the municipios and the ground outside them are tallied from
+it. Nothing links a person of one release to the same person in the other:
+matched on ID_CENSO, 81% of July's people fell in another department, and
+matched on the dwelling's address code (DIRECCION_ID), a quarter of July's
+codes are not in February's and the census segments of the rest are split
+between municipios -- the codes are renumbered, and a match is chance.
+
+Every table is checked: the July file's departments must make INE's
+Cuadro 1 (people, men and women), and its own 2025-series municipios INE's
+Cuadro 14 row by row; the February file must hold 3,499,451 and each
+department within 0.5% of Cuadro 1; every 2020 municipio must bind to one
+polygon of its own department, and every drawn polygon must be bound.
 
 Usage:
     python -m scripts.fetch_census.uruguay_census
@@ -94,8 +97,8 @@ FEBRUARY = ("https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/"
             "personas_ext_26_02.rar")
 SOURCE = ("INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata "
           "(July 2026 release, weighted)")
-SOURCE_MUNICIPIO = (SOURCE + ", each person placed in the 2020-series municipio INE's "
-                    "February 2026 release gives their address or census segment")
+SOURCE_MUNICIPIO = ("INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person "
+                    "microdata (February 2026 release, by 2020-series municipio)")
 
 # INE's department codes, Montevideo first and the rest alphabetically; the
 # map's first-level units carry the same names.
@@ -140,15 +143,11 @@ MIXED = "Mixed (several, no principal)"
 NONE_OF_THEM = "None of these ancestries"
 NOT_ASKED = "not asked"
 NO_ANSWER = "no answer"
-PERSON = ["DIRECCION_ID", "DEPARTAMENTO", "PERPH02", "PERNA01", "PERER02"] + [
-    f"PERER01_{k}" for k in ANCESTRIES]
-# The share of the July file's weighted people that may go unplaced (no
-# address the February file knows, in a segment that does not say which
-# municipio) before the run stops.
-UNPLACED = 0.01
-# The share of a census segment's address-placed people that must be in one
-# municipio for the segment to place the rest of its people there.
-SEGMENT_SHARE = 0.98
+ANCESTRY = ["PERER02"] + [f"PERER01_{k}" for k in ANCESTRIES]
+# How far a department's count in the February release may be from the July
+# release's before the two are taken to describe different things. The
+# largest measured is Cerro Largo's, 239 people (0.26%).
+DRIFT = 0.005
 
 NOT_COLLECTED = {
     "religion": ("Uruguay's 2023 census does not ask religion: the questionnaire's only "
@@ -374,17 +373,46 @@ def principal(row: dict[str, str]) -> str:
     return NO_ANSWER
 
 
+def age_group(label: str) -> int:
+    """The first year of a five-year group as PERNA01_TRAMO writes it ('05-09', '80+')."""
+    found = re.fullmatch(r"(\d+)(?:-\d+|\+)", label.strip())
+    if not found or int(found.group(1)) % 5:
+        raise SystemExit(f"uruguay_census: an age group {label!r}")
+    return int(found.group(1))
+
+
+def grouped_median(groups: Counter, width: int = 5) -> float | None:
+    """The age half the people are younger than, interpolated within its group."""
+    total = sum(groups.values())
+    half, cum = total / 2, 0.0
+    for start in sorted(groups):
+        n = groups[start]
+        if cum + n >= half and n > 0:
+            return round(start + width * (half - cum) / n, 1)
+        cum += n
+    return None
+
+
 class Tally:
-    """One unit's weighted people: by sex, single year of age and ancestry."""
+    """One unit's people, weighted or not: by sex, age and ancestry.
 
-    __slots__ = ("people", "men", "women", "ages", "ancestry", "yes", "rows")
+    ``width`` is 1 where the file gives single years of age (PERNA01) and 5
+    where it gives five-year groups (PERNA01_TRAMO).
+    """
 
-    def __init__(self) -> None:
+    __slots__ = ("people", "men", "women", "ages", "ancestry", "yes", "rows", "width")
+
+    def __init__(self, width: int = 1) -> None:
         self.people = self.men = self.women = 0.0
         self.ages: Counter = Counter()
         self.ancestry: Counter = Counter()
         self.yes: Counter = Counter()
         self.rows = 0
+        self.width = width
+
+    def median_age(self) -> float | None:
+        return median_age(self.ages) if self.width == 1 else grouped_median(self.ages,
+                                                                            self.width)
 
     def add(self, row: dict[str, str], weight: float) -> None:
         self.rows += 1
@@ -396,10 +424,13 @@ class Tally:
             self.women += weight
         else:
             raise SystemExit(f"uruguay_census: a person with sex {sex!r}")
-        age = row.get("PERNA01", "")
-        if not age.isdigit() or int(age) > 120:
-            raise SystemExit(f"uruguay_census: a person aged {age!r}")
-        self.ages[int(age)] += weight
+        if self.width == 1:
+            age = row.get("PERNA01", "")
+            if not age.isdigit() or int(age) > 120:
+                raise SystemExit(f"uruguay_census: a person aged {age!r}")
+            self.ages[int(age)] += weight
+        else:
+            self.ages[age_group(row.get("PERNA01_TRAMO", ""))] += weight
         found = principal(row)
         self.ancestry[found] += weight
         if found not in (NOT_ASKED, NO_ANSWER):
@@ -424,115 +455,31 @@ def weight_of(row: dict[str, str]) -> float:
         raise SystemExit(f"uruguay_census: a person with weight {row.get('W')!r}") from None
 
 
-def shape_of(address: str) -> str:
-    """What an address code looks like -- its length and which characters --
-    for the log, which never prints the code itself."""
-    kind = "digits" if address.isdigit() else ("empty" if not address else "other")
-    return f"{len(address)} {kind}"
+def february(rows: Iterable[dict[str, str]]) -> dict[tuple[str, str], Tally]:
+    """The February file's people by (department, 2020-series municipio).
 
-
-def address_key(address: str) -> str:
-    """An address code as both files can be matched on it: a code one file
-    writes as a number (no leading zero, or with '.0') is the same code."""
-    address = address.strip()
-    if address.endswith(".0"):
-        address = address[:-2]
-    return address.lstrip("0") if address.isdigit() else address
-
-
-def placements(rows: Iterable[dict[str, str]]
-               ) -> tuple[dict[str, tuple[str, str] | None], Counter, Counter]:
-    """{address: (department, 2020 municipio)} from the February file, its
-    people's counts by pair, and how many had no address or one in two places.
-
-    The two releases number their people differently (ID_CENSO is not the same
-    person in both), so a person is placed by the address the census gives
-    their dwelling (DIRECCION_ID). An address the February file puts in two
-    municipios is not used.
+    Each row is one person of the 3,499,451 (no weights in this release).
+    Ages are the five-year groups: the file withholds single years of age
+    for everyone living in a locality of under 10,000 people.
     """
-    where: dict[str, tuple[str, str] | None] = {}
-    pairs: dict[tuple[str, str], tuple[str, str]] = {}
-    counts: Counter = Counter()
-    stats: Counter = Counter()
+    out: dict[tuple[str, str], Tally] = defaultdict(lambda: Tally(5))
     for row in rows:
-        key = (row["DEPARTAMENTO"].zfill(2), row["MUNICIPIO_PAIS"].strip())
-        key = pairs.setdefault(key, key)           # one tuple per pair, not per person
-        counts[key] += 1
-        raw = row["DIRECCION_ID"].strip()
-        stats[f"address shape {shape_of(raw)}"] += 1
-        address = address_key(raw)
-        if not address:
-            stats["no address"] += 1
-            continue
-        seen = where.setdefault(address, key)
-        if seen is not None and seen != key:
-            where[address] = None
-            stats["address in two municipios"] += 1
-    stats["addresses"] = len(where)
-    return where, counts, stats
+        out[(row["DEPARTAMENTO"].zfill(2), row["MUNICIPIO_PAIS"].strip())].add(row, 1.0)
+    return dict(out)
 
 
-def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str] | None]
-          ) -> tuple[dict[str, Tally], dict[tuple[str, str], Tally], Counter, dict[str, float]]:
-    """The July file, weighted: by its departments, by the February file's
-    municipios, and by its own 2025-series municipios (people only).
-
-    A person whose address the February file has is placed by it. About a
-    quarter of the July file's address codes are not in the February file,
-    though the rest agree to the department; those people are placed by their
-    census segment (department, section, segment), in the municipio where
-    the segment's placed people all are -- SEGMENT_SHARE of them at least.
-    A segment whose placed people are split, or that has none, places no one.
-    """
+def july(rows: Iterable[dict[str, str]]) -> tuple[dict[str, Tally], Counter]:
+    """The July file, weighted: by department, and people by its own
+    2025-series municipios (to check against Cuadro 14)."""
     departments: dict[str, Tally] = defaultdict(Tally)
-    municipios: dict[tuple[str, str], Tally] = defaultdict(Tally)
     series_2025: Counter = Counter()
-    unplaced: dict[str, Any] = {"people": 0.0, "rows": 0, "other_department": 0.0,
-                                "total": 0.0, "by_address": 0.0, "by_segment": 0.0}
-    lost: Counter = Counter()
-    shapes: Counter = Counter()
-    unplaced["by_department"] = lost
-    unplaced["shapes"] = shapes
-    votes: dict[tuple[str, str, str], Counter] = defaultdict(Counter)
-    waiting: dict[tuple[str, str, str], Tally] = defaultdict(Tally)
     for row in rows:
         weight = weight_of(row)
         dept = row["DEPARTAMENTO"].zfill(2)
-        unplaced["total"] += weight
         departments[dept].add(row, weight)
         name = row["MUNICIPIO_136"].strip()
         series_2025[(dept, UNKNOWN if name == UNKNOWN else fold(name))] += weight
-        raw = row["DIRECCION_ID"].strip()
-        place = where.get(address_key(raw))
-        segment = (dept, row["SECCION"].strip(), row["SEGMENTO"].strip())
-        if place is None:
-            shapes[f"{shape_of(raw)} {'known' if address_key(raw) in where else 'unknown'}"] += 1
-            waiting[segment].add(row, weight)
-            continue
-        shapes[f"{shape_of(raw)} placed"] += 1
-        if place[0] != dept:
-            unplaced["other_department"] += weight
-        votes[segment][place] += weight
-        unplaced["by_address"] += weight
-        municipios[place].add(row, weight)
-    splits: Counter = Counter()
-    for segment, unit in waiting.items():
-        seen = votes.get(segment)
-        top, share = None, 0.0
-        if seen and sum(seen.values()) > 0:        # some people weigh nothing
-            top, most = seen.most_common(1)[0]
-            share = most / sum(seen.values())
-        if top is None or share < SEGMENT_SHARE:
-            splits["segment with no placed people" if top is None else "segment split"] += 1
-            unplaced["people"] += unit.people
-            unplaced["rows"] += unit.rows
-            lost[segment[0]] += unit.people
-            continue
-        splits["segment whole" if share == 1 else "segment nearly whole"] += 1
-        unplaced["by_segment"] += unit.people
-        municipios[top].merge(unit)
-    unplaced["segments"] = splits
-    return dict(departments), dict(municipios), series_2025, unplaced
+    return dict(departments), series_2025
 
 
 # --- checks -----------------------------------------------------------------
@@ -568,23 +515,24 @@ def check_municipios(series_2025: Counter, published: dict[tuple[str, str], int]
         "department by department and municipio by municipio")
 
 
-def check_placements(unplaced: dict[str, float], rows_july: int) -> None:
-    """Nearly every July person's address must be in the February file, and in
-    the same department there."""
-    log(f"  {rows_july - unplaced['rows']:,} of {rows_july:,} July rows placed: "
-        f"{unplaced.get('by_address', 0):,.0f} weighted people by the February file's "
-        f"addresses, {unplaced.get('by_segment', 0):,.0f} by their census segment; "
-        f"{unplaced['people']:,.0f} not placed, {unplaced['other_department']:,.0f} placed in "
-        f"another department; segments: {dict(unplaced.get('segments') or {})}")
-    lost = unplaced.get("by_department") or {}
-    log("  not placed, by department: " + ", ".join(
-        f"{DEPARTMENTS.get(d, d)} {v:,.0f}" for d, v in sorted(lost.items())))
-    log(f"  July address codes, by shape: {dict(unplaced.get('shapes') or {})}")
-    if unplaced["people"] > UNPLACED * unplaced["total"] or \
-            unplaced["other_department"] > 0.001 * unplaced["total"]:
-        raise SystemExit(f"uruguay_census: {unplaced['people']:,.0f} weighted people of the July "
-                         f"file have no address the February file places, and "
-                         f"{unplaced['other_department']:,.0f} have one in another department")
+def check_february(municipios: dict[tuple[str, str], Tally],
+                   published: dict[str, tuple[int, int, int]]) -> dict[str, int]:
+    """The February file must hold INE's 3,499,451, and each department within
+    DRIFT of what the July release (Cuadro 1) now publishes for it."""
+    people: Counter = Counter()
+    for (d, _), unit in municipios.items():
+        people[d] += unit.rows
+    if sum(people.values()) != NATIONAL or set(people) != set(DEPARTMENTS):
+        raise SystemExit(f"uruguay_census: the February file holds {sum(people.values()):,} "
+                         f"people in departments {sorted(people)}")
+    drift = {d: people[d] - published[d][0] for d in DEPARTMENTS}
+    far = {DEPARTMENTS[d]: v for d, v in drift.items() if abs(v) > DRIFT * published[d][0]}
+    if far:
+        raise SystemExit(f"uruguay_census: the February file's departments differ from Cuadro 1 "
+                         f"by more than {DRIFT:.1%}: {far}")
+    log(f"  the February file holds {NATIONAL:,}; its departments against Cuadro 1: "
+        + ", ".join(f"{DEPARTMENTS[d]} {v:+,}" for d, v in drift.items()))
+    return dict(people)
 
 
 def compare_series(municipios: dict[tuple[str, str], Tally],
@@ -673,12 +621,15 @@ def polygons(pairs: Iterable[tuple[str, str]], admin1: list[dict], admin2: list[
 # --- fields -----------------------------------------------------------------
 
 def core_fields(unit: Tally, source: str) -> dict[str, Any]:
+    how = ("the single year of age that holds the middle person, from INE's weighted census "
+           "microdata" if unit.width == 1 else
+           "the five-year age group that holds the middle person, from INE's census "
+           "microdata, which withholds single years of age for everyone living in a "
+           "locality of under 10,000 people")
     return {
         "population": measure(round(unit.people), year=YEAR, source=source),
-        "median_age": measure(median_age(unit.ages), unit="years", year=YEAR, source=source),
-        "median_age_note": (
-            "Interpolated within the single year of age that holds the middle person, from "
-            "INE's weighted census microdata; INE tabulates ages, not the median."),
+        "median_age": measure(unit.median_age(), unit="years", year=YEAR, source=source),
+        "median_age_note": f"Interpolated within {how}; INE tabulates ages, not the median.",
         "sex_ratio": measure(round(1000 * unit.men / unit.women), unit="males_per_1000_females",
                              year=YEAR, source=source),
     }
@@ -708,7 +659,8 @@ def ethnicity_fields(unit: Tally) -> dict[str, Any]:
             f"who answered here have Afro or Black ancestry and "
             f"{any_yes.get('Indigenous', 0):.1f}% Indigenous ancestry. Left out: {asked:,} "
             "people here who were not asked -- counted from administrative records or on the "
-            f"short questionnaire -- and {silent:,} who did not answer. Weighted counts."),
+            f"short questionnaire -- and {silent:,} who did not answer."
+            + (" Weighted counts." if unit.width == 1 else "")),
     }
 
 
@@ -741,39 +693,30 @@ def main() -> int:
     published_14 = cuadro_14(sheet_rows(fetch(www5, CUADRO_14)[0]))
 
     with tempfile.TemporaryDirectory() as tmp:
-        where, february, stats = placements(csv_rows(
+        municipios = february(csv_rows(
             download_url(www5, FEBRUARY, Path(tmp)), Path(tmp) / "feb",
-            ["DIRECCION_ID", "DEPARTAMENTO", "MUNICIPIO_PAIS"]))
-        log(f"  February file: {sum(february.values()):,} people in {len(february)} "
-            f"(department, municipio) pairs; {dict(stats)}")
+            ["DEPARTAMENTO", "MUNICIPIO_PAIS", "PERPH02", "PERNA01_TRAMO"] + ANCESTRY))
+        log(f"  February file: {sum(u.rows for u in municipios.values()):,} people in "
+            f"{len(municipios)} (department, municipio) pairs")
         anda = opener()
         accept(anda, JULY[0])
-        rows_july = 0
-
-        def counted(rows: Iterable[dict[str, str]]) -> Iterable[dict[str, str]]:
-            nonlocal rows_july
-            for row in rows:
-                rows_july += 1
-                yield row
-
-        departments, municipios, series_2025, unplaced = tally(
-            counted(csv_rows(download(anda, *JULY, Path(tmp)), Path(tmp) / "jul",
-                             PERSON + ["W", "MUNICIPIO_136", "SECCION", "SEGMENTO"])), where)
-        del where
+        departments, series_2025 = july(csv_rows(
+            download(anda, *JULY, Path(tmp)), Path(tmp) / "jul",
+            ["DEPARTAMENTO", "PERPH02", "PERNA01", "W", "MUNICIPIO_136"] + ANCESTRY))
 
     total = sum(u.people for u in departments.values())
     if abs(total - NATIONAL) > 1:
         raise SystemExit(f"uruguay_census: the July file weighs {total:,.1f}, not {NATIONAL:,}")
     check_departments(departments, published_1)
     check_municipios(series_2025, published_14)
-    check_placements(unplaced, rows_july)
+    check_february(municipios, published_1)
     compare_series(municipios, published_14)
 
     placed, left, why = polygons(municipios, admin1, admin2)
     for pair in left:
         log(f"  on no polygon: {DEPARTMENTS[pair[0]]} {pair[1]}: "
-            f"{municipios[pair].people:,.0f} weighted people")
-    by_polygon: dict[str, Tally] = defaultdict(Tally)
+            f"{municipios[pair].rows:,} people")
+    by_polygon: dict[str, Tally] = defaultdict(lambda: Tally(5))
     parts: dict[str, list[str]] = defaultdict(list)
     for pair, sid in placed.items():
         by_polygon[sid].merge(municipios[pair])
@@ -781,6 +724,7 @@ def main() -> int:
 
     records: list[dict[str, Any]] = []
     cite = {"name": SOURCE, "url": JULY_PAGE, "year": YEAR}
+    cite_february = {"name": SOURCE_MUNICIPIO, "url": FEBRUARY, "year": YEAR}
     drawn = {s["id"]: s for s in admin2}
     for sid, unit in sorted(by_polygon.items()):
         shape = drawn[sid]
@@ -796,21 +740,19 @@ def main() -> int:
             notes.append(f"Includes {', '.join(across)}: the municipio's people on the other "
                          "side of INE's historical department line, which the municipio's "
                          "own limits cross")
-        notes.append("INE's current tables file people under the 2025 electoral series of "
-                     "municipios, which the boundary file does not draw; these are the same "
-                     "weighted people, placed in the 2020-series municipio INE's February "
-                     "2026 release gives their address (or, where the two releases code "
-                     "the address differently, the municipio of the rest of their census "
-                     "segment)")
+        notes.append("From INE's February 2026 release of the census microdata, which files "
+                     "each person under the 2020 electoral series of municipios, the series "
+                     "the boundary file draws. INE's July 2026 release, which the department "
+                     "figures are from, files them under the 2025 series instead -- eleven "
+                     "new municipios and the limits of others revised -- and counts the "
+                     "departments slightly differently (by at most 0.3%)")
         fields["population"]["note"] = ". ".join(notes) + "."
         records.append(record(
             f"URY-INE-{fold(parent['name'])}-{fold(shape['name'])}", shape["name"],
             level="admin2", parent="URY", country="URY",
             parent_name=parent["name"], match_by="shape_id", shape_id=sid,
             **fields, **ethnicity_fields(unit), **not_collected(),
-            sources=[{"field": "population/median age/sex ratio/ethnicity", **cite},
-                     {"field": "municipio", "name": "INE Uruguay, Censo 2023 person "
-                      "microdata, February 2026 release", "url": FEBRUARY, "year": YEAR}]))
+            sources=[{"field": "population/median age/sex ratio/ethnicity", **cite_february}]))
     for code, name in DEPARTMENTS.items():
         shape = next(u for u in admin1 if u["name"] == name)
         unit = departments[code]

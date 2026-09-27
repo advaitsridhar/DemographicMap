@@ -14,10 +14,10 @@ from scripts.fetch_census import uruguay_census as uc  # noqa: E402
 def person(pid: str, dept: str = "11", sex: str = "1", age: str = "30",
            yes: tuple[int, ...] = (3,), main: str = "7777", weight: str = "1.5",
            municipio: str = "PIEDRAS COLORADAS", missing: str | None = None,
-           segment: str = "1") -> dict[str, str]:
-    row = {"DIRECCION_ID": pid, "DEPARTAMENTO": dept, "PERPH02": sex, "PERNA01": age,
-           "PERER02": main, "W": weight, "MUNICIPIO_136": municipio, "SECCION": "1",
-           "SEGMENTO": segment}
+           group: str = "30-34", pais: str = "Piedras Coloradas") -> dict[str, str]:
+    row = {"ID_CENSO": pid, "DEPARTAMENTO": dept, "PERPH02": sex, "PERNA01": age,
+           "PERER02": main, "W": weight, "MUNICIPIO_136": municipio,
+           "PERNA01_TRAMO": group, "MUNICIPIO_PAIS": pais}
     for k in uc.ANCESTRIES:
         row[f"PERER01_{k}"] = missing or ("1" if k in yes else "2")
     return row
@@ -80,53 +80,53 @@ class Tables(unittest.TestCase):
 
 class Tallies(unittest.TestCase):
     def setUp(self):
-        self.where = {"a": ("11", "Piedras Coloradas"), "b": ("12", "Piedras Coloradas"),
-                      "c": ("11", "Sin Municipio")}
-        self.rows = [person("a", age="20"), person("b", dept="12", sex="2", age="40"),
-                     person("c", sex="2", age="60", yes=(1, 3), main="1"),
-                     person("d", missing="8888", municipio="SIN MUNICIPIO")]
+        self.rows = [person("a", age="20", group="20-24"),
+                     person("b", dept="12", sex="2", age="40", group="40-44"),
+                     person("c", sex="2", age="60", yes=(1, 3), main="1", group="60-64",
+                            pais="Sin Municipio"),
+                     person("d", missing="8888", municipio="SIN MUNICIPIO", group="80+",
+                            pais="Sin Municipio")]
 
-    def test_people_are_weighed_by_department_and_by_february_municipio(self):
-        departments, municipios, series, unplaced = uc.tally(self.rows, self.where)
+    def test_july_weighs_people_by_department_and_its_own_municipios(self):
+        departments, series = uc.july(self.rows)
         self.assertEqual(departments["11"].people, 4.5)
-        self.assertEqual(municipios[("12", "Piedras Coloradas")].women, 1.5)
-        self.assertEqual(unplaced["rows"], 1)
+        self.assertEqual(departments["12"].women, 1.5)
         self.assertEqual(series[("11", "piedrascoloradas")], 3.0)
-        self.assertEqual(municipios[("11", "Sin Municipio")].ancestry["Afro or Black"], 1.5)
+        self.assertEqual(departments["11"].median_age(), 30.5)
 
-    def test_an_unknown_address_is_placed_by_a_segment_whose_people_are_in_one_municipio(self):
-        rows = self.rows + [person("e", segment="2"), person("f", segment="2", sex="2")]
-        where = {**self.where, "e": ("11", "Guichón")}
-        _, municipios, _, unplaced = uc.tally(rows, where)
-        self.assertEqual(municipios[("11", "Guichón")].people, 3.0)
-        self.assertEqual(unplaced["by_segment"], 1.5)
-        self.assertEqual(unplaced["segments"]["segment whole"], 1)
-        self.assertEqual(unplaced["segments"]["segment split"], 1)
+    def test_february_counts_people_by_municipio_in_five_year_groups(self):
+        municipios = uc.february(self.rows)
+        rest = municipios[("11", "Sin Municipio")]
+        self.assertEqual((rest.rows, rest.people, rest.width), (2, 2.0, 5))
+        self.assertEqual(rest.ancestry["Afro or Black"], 1.0)
+        self.assertEqual(rest.median_age(), 65.0)
 
-    def test_an_address_the_february_file_puts_in_two_municipios_places_no_one(self):
-        rows = [{"DIRECCION_ID": "a", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
-                {"DIRECCION_ID": "a", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
-                {"DIRECCION_ID": "b", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
-                {"DIRECCION_ID": "b", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Tambores"},
-                {"DIRECCION_ID": "", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Tambores"}]
-        where, counts, stats = uc.placements(rows)
-        self.assertEqual(where, {"a": ("11", "Guichón"), "b": None})
-        self.assertEqual(counts[("11", "Tambores")], 2)
-        self.assertEqual(stats["no address"], 1)
-        self.assertEqual(stats["address in two municipios"], 1)
-
-    def test_too_many_people_the_february_file_does_not_have_stop_the_run(self):
-        _, _, _, unplaced = uc.tally(self.rows, self.where)
+    def test_the_grouped_median_is_interpolated_within_its_group(self):
+        self.assertEqual(uc.grouped_median({0: 10, 5: 10, 10: 20}), 10.0)
+        self.assertEqual(uc.grouped_median({0: 10, 5: 30}), 6.7)
+        self.assertEqual(uc.age_group("05-09"), 5)
+        self.assertEqual(uc.age_group("80+"), 80)
         with self.assertRaises(SystemExit):
-            uc.check_placements(unplaced, len(self.rows))
+            uc.age_group("5555")
+
+    def test_a_february_department_far_from_cuadro_1_stops_the_run(self):
+        municipios = {(c, "Sin Municipio"): uc.Tally(5) for c in uc.DEPARTMENTS}
+        for unit in municipios.values():
+            unit.rows = 100_000
+        municipios[("01", "Sin Municipio")].rows = uc.NATIONAL - 1_800_000
+        published = {c: (u.rows, 0, 0) for (c, _), u in municipios.items()}
+        self.assertEqual(uc.check_february(municipios, published)["02"], 100_000)
+        published["02"] = (99_000, 0, 0)
+        with self.assertRaises(SystemExit):
+            uc.check_february(municipios, published)
 
     def test_departments_that_do_not_make_cuadro_1_stop_the_run(self):
-        departments, _, _, _ = uc.tally(self.rows, self.where)
+        departments, _ = uc.july(self.rows)
         with self.assertRaises(SystemExit):
             uc.check_departments(departments, {"11": (5, 2, 3), "12": (1, 0, 1)})
 
     def test_the_ethnicity_note_counts_who_is_left_out(self):
-        departments, _, _, _ = uc.tally(self.rows, self.where)
+        departments, _ = uc.july(self.rows)
         fields = uc.ethnicity_fields(departments["11"])
         self.assertEqual({r["group"]: r["count"] for r in fields["ethnicity"]},
                          {"White": 2, "Afro or Black": 2})
