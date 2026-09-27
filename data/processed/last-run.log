@@ -1,3 +1,5 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-  211.004: 1 cells; places ['Liechtenstein']
-liechtenstein: 211.004 has no rows for ['Vaduz', 'Triesen', 'Balzers', 'Triesenberg', 'Schaan', 'Planken', 'Eschen', 'Mauren', 'Gamprin', 'Ruggell', 'Schellenberg']; it has ['Liechtenstein']
+switzerland_ages: BFS px-x-0102010000_101, 31 December 2025, read against the districts of 01-01-2009
+  01-01-2026: 8 of the table's communes not in the register ['......0700 Moutier', '......2016 Fétigny', '......2027 Ménières', '......2278 Ulmiz', '......2520 Halten', '......2529 Oekingen', '......4122 Villnachern', 'Schweiz'], 2 the other way ['Fétigny-Ménières', 'Moutier']
+  31-12-2025: 1 of the table's communes not in the register ['Schweiz'], 0 the other way []
+  01-01-2025: 2 of the table's communes not in the register ['......5395 Lema', 'Schweiz'], 7 the other way ['Bodio', 'Prato (Leventina)', 'Astano', 'Bedigliora', 'Curio', 'Miglieglia', 'Novaggio']
+switzerland_ages: no register date matches the table's communes
