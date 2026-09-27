@@ -1,6 +1,24 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14], 4494 values of type list
-  211.004: 4,034 cells; places ['Balzers', 'Eschen', 'Gamprin-Bendern', 'Liechtenstein', 'Mauren', 'Nendeln', 'Planken', 'Ruggell', 'Schaan', 'Schaanwald', 'Schellenberg', 'Triesen', 'Triesenberg', 'Vaduz']
-  Gemeinden against Liechtenstein: parts sum to 41,228 = 41,228
-  213.001d.px: asked {'Stichtag': 1, 'Religion': 13, 'Geschlecht': 1, 'Gemeinde': 12, 'Heimat': 1}, answered [1, 13, 1, 1, 12], 156 values of type list
-liechtenstein: religion labels with no English name here: ['Buddhistisch', 'Keine Zugehörigkeit']
+estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
+  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
+    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
+    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
+    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
+    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
+    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
+    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
+    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
+    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
+    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
+    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
+    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
+    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
+    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
+    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
+    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
+    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
+  Estonia 1 January 2017: median age 41.8
+  EST admin2: 213 of 214 polygons bound
+    polygons left unbound (1): Maidla vald (Ida-Viru maakond): labelled Maidla, but it spans 26.81-27.22E and 59.14-59.44N, from Maidla's south to the coast at Purtse and around the town of Kiviõli -- the Lüganuse parish formed in 2013 from Lüganuse, Maidla and Püssi -- so neither Maidla's figures nor Lüganuse's are put on it
+    units standing in 2017 with no polygon (3): Järvakandi rural municipality; Lääne-Saare rural municipality; Lüganuse rural municipality
+  RL0429: 98 municipalities of 2011
+Emakeel at 0039_1: categories make 5,415 of 5,432
