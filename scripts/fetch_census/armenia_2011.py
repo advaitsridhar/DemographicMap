@@ -117,8 +117,17 @@ def lines_of(chars: list[dict[str, Any]]) -> list[str]:
 
 
 def split(words: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any]]]:
+    """(the row's label, its figures). Some tables set a thousands group a
+    space apart ("259 845") rather than after a comma; a group of three
+    digits a few points after a figure is part of it."""
     label = [w["text"] for w in words if not NUMBER.match(w["text"])]
-    numbers = [w for w in words if NUMBER.match(w["text"])]
+    numbers: list[dict[str, Any]] = []
+    for w in sorted((w for w in words if NUMBER.match(w["text"])), key=lambda w: w["x0"]):
+        if numbers and re.fullmatch(r"\d{3}", w["text"]) and w["x0"] - numbers[-1]["x1"] < 4:
+            numbers[-1] = {**numbers[-1], "text": numbers[-1]["text"] + "," + w["text"],
+                           "x1": w["x1"]}
+        else:
+            numbers.append(w)
     return " ".join(label), numbers
 
 

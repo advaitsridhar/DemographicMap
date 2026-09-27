@@ -55,6 +55,17 @@ class Rows(unittest.TestCase):
         self.assertEqual((label, len(numbers)), ("Ընդամենը", 2))
 
 
+class Figures(unittest.TestCase):
+    def test_a_thousands_group_set_a_space_apart_is_one_figure(self):
+        words = [{"text": "Հայ", "x0": 50, "x1": 65, "top": 1},
+                 {"text": "259", "x0": 130, "x1": 145, "top": 1},
+                 {"text": "845", "x0": 147, "x1": 160, "top": 1},
+                 {"text": "12", "x0": 180, "x1": 190, "top": 1}]
+        label, numbers = a.split(words)
+        self.assertEqual(label, "Հայ")
+        self.assertEqual([n["text"] for n in numbers], ["259,845", "12"])
+
+
 class Composition(unittest.TestCase):
     def test_columns_must_make_the_total(self):
         labels = [True, None, "Armenian Apostolic", "No religion", "Not stated", "Not stated"]
