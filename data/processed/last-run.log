@@ -1,27 +1,31 @@
-hungary: KSH census 2022 database, version V67
-  197 districts, 20 counties (Budapest one of them), 101 single ages up to 100+
-  counties and Budapest against Hungary: parts sum to 9,603,634 = 9,603,634
-  Budapest: its 23 districts make 1,685,342 of 1,685,342; 0 are counted in no district
-  districts against Pest county: parts sum to 1,333,533 = 1,333,533
-  districts against Fejér county: parts sum to 419,656 = 419,656
-  districts against Komárom-Esztergom county: parts sum to 300,631 = 300,631
-  districts against Veszprém county: parts sum to 335,361 = 335,361
-  districts against Győr-Moson-Sopron county: parts sum to 465,945 = 465,945
-  districts against Vas county: parts sum to 249,513 = 249,513
-  districts against Zala county: parts sum to 260,800 = 260,800
-  districts against Baranya county: parts sum to 354,022 = 354,022
-  districts against Somogy county: parts sum to 293,470 = 293,470
-  districts against Tolna county: parts sum to 207,931 = 207,931
-  districts against Borsod-Abaúj-Zemplén county: parts sum to 623,024 = 623,024
-  districts against Heves county: parts sum to 285,892 = 285,892
-  districts against Nógrád county: parts sum to 182,459 = 182,459
-  districts against Hajdú-Bihar county: parts sum to 519,141 = 519,141
-  districts against Jász-Nagykun-Szolnok county: parts sum to 355,809 = 355,809
-  districts against Szabolcs-Szatmár-Bereg county: parts sum to 529,381 = 529,381
-  districts against Bács-Kiskun county: parts sum to 495,318 = 495,318
-  districts against Békés county: parts sum to 315,222 = 315,222
-  districts against Csongrád-Csanád county: parts sum to 391,184 = 391,184
-  national median 44.2 against Eurostat's 44.2 (HU, 1 January 2023)
-  hungary: 3 office units unbound: Kiskunfélegyházi district (040): []; Nyíregyházi district (157): []; Orosházi district (050): []
-  hungary: 4 polygons without an office unit: Kiskunfélegyháza; Nyíregyháza; Orosháza; Polgard
-hungary: 3 districts unbound
+portugal_census: 308 municipalities
+  50 read
+  100 read
+  150 read
+  200 read
+  250 read
+  300 read
+  Portugal: 10,343,066 people, median 46.5, mean 45.44 against INE's published 45.44
+  308 municipalities bound; polygons left without one: ['Ilhavo (2272694B64447610403706)', 'Montijo (2272694B43421578736002)', 'Oliveira de Frades (2272694B61775283939308)']
+  AVEIRO: 19 municipalities, 700,787 people, median 47.2
+  BEJA: 14 municipalities, 144,401 people, median 48.5
+  BRAGA: 14 municipalities, 846,293 people, median 45.3
+  BRAGANÇA: 12 municipalities, 122,804 people, median 55.0
+  CASTELO BRANCO: 11 municipalities, 177,962 people, median 53.3
+  COIMBRA: 17 municipalities, 408,551 people, median 49.7
+  FARO: 16 municipalities, 467,343 people, median 46.6
+  GUARDA: 14 municipalities, 142,974 people, median 55.3
+  LEIRIA: 16 municipalities, 458,605 people, median 48.0
+  LISBOA: 16 municipalities, 2,275,385 people, median 44.2
+  PORTALEGRE: 15 municipalities, 104,923 people, median 51.4
+  PORTO: 18 municipalities, 1,785,405 people, median 45.8
+  Região Autónoma da Madeira: 11 municipalities, 250,744 people, median 46.1
+  Região Autónoma dos Açores: 19 municipalities, 236,413 people, median 42.2
+  SANTARÉM: 21 municipalities, 424,973 people, median 49.3
+  SETÚBAL: 13 municipalities, 874,806 people, median 45.2
+  VIANA DO CASTELO: 10 municipalities, 231,266 people, median 49.9
+  VILA REAL: 14 municipalities, 185,695 people, median 53.0
+  VISEU: 24 municipalities, 351,292 people, median 50.1
+  ÉVORA: 14 municipalities, 152,444 people, median 49.2
+  wrote data/processed/portugal_census.json (1140 kB)
+  328 records
