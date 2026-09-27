@@ -1,9 +1,7 @@
-uk_nomis: nation (TYPE499)
-uk_nomis: TS021 Ethnic group (NM_2041_1)
-uk_nomis: TS030 Religion (NM_2049_1)
-uk_nomis: TS024 Main language (detailed) (NM_2043_1)
-  NM_2043_1: categories are c2021_mlang_94
-  language labels the group tree does not place: ['North or South American language']
-  wrote data/processed/uk_nation.json (39 kB)
-  3 records
-  3 nation records
+uk_mye: local authorities (county / unitary, April 2023)
+  TYPE423 latest: 207 places with both sexes so far
+  TYPE423 latestMINUS1: 218 places with both sexes so far
+uk_mye: the four nations
+  TYPE499 latest: 5 places with both sexes so far
+  TYPE499 latestMINUS1: 7 places with both sexes so far
+uk_mye: nations read: ['E92000001', 'K02000001', 'K03000001', 'K04000001', 'N92000002', 'S92000003', 'W92000004']
