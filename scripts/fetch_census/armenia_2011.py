@@ -60,6 +60,7 @@ RELIGION = [
     # "Not having a religious belief" before "having" one, which it contains.
     ("չունեն", "No religion"), ("չունեց", "No religion"), ("չունի", "No religion"),
     ("դավանանքով", None), ("ունեցող", None),          # everyone with a religion
+    ("ըստկրոնական", None),      # its heading, where the grouping heading covers it
     ("հրաժարվ", "Not stated"), ("չնշած", "Not stated"), ("նշված", "Not stated"),
     ("առաքել", "Armenian Apostolic"), ("կաթոլ", "Catholic"),
     ("ուղղափառ", "Orthodox"), ("ավետարան", "Evangelical"),
