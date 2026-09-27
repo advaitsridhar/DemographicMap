@@ -1,10 +1,18 @@
-bucharest_sectors: DRSMB's population by domicile, 1 July 2022
-  Bucharest: median 43.1 by domicile (1 July 2022), 42.8 from the 2021 census's residents
-  SECTOR 1: 265,149 by domicile, median 42.9
-  SECTOR 2: 366,070 by domicile, median 44.5
-  SECTOR 3: 494,022 by domicile, median 42.1
-  SECTOR 4: 337,093 by domicile, median 43.1
-  SECTOR 5: 304,087 by domicile, median 42.5
-  SECTOR 6: 397,874 by domicile, median 43.4
-  wrote data/processed/bucharest_sectors.json (15 kB)
-  wrote bucharest_sectors.json: 6 records
+austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
+  Vienna as a whole, left out beside its districts: [('90001', 'Wien <90001>')]
+  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
+  2114 municipalities
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70405.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70407.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70408.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70409.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70327.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  retry 1/4 after 2s :: https://www.statistik.at/blickgem/vz7/g70411.pdf :: <urlopen error [Errno 101] Network is unreachable>
+  62280: no 2001 sheet; district 622's unclaimed sheets [('62201', 'Altenmarkt bei Fürstenfeld'), ('62212', 'Fürstenfeld'), ('62252', 'Söchau'), ('62258', 'Übersbach')] are its parts
+  135 municipalities formed by mergers since 2001, read as the sheets of their parts; 2376 municipalities of 2001 in all; listed by two of today's (split by cadastral community, counted once): ['61040', '62227', '62248', '62336', '62347', '62349']
+  municipalities of 2001 against Austria: parts sum to 8,032,926 = 8,032,926
+  94 districts
+  austria_census: 0 office units unbound
+  austria_census: 0 polygons without an office unit
+  wrote data/processed/austria_census.json (349 kB)
+  wrote austria_census.json: 94 records
