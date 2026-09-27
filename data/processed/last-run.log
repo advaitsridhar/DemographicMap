@@ -1,17 +1,31 @@
-slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
-  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
-  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
-  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
-  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
-  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
-  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
-  192 municipalities of 2002; Slovenia 1,964,036
-  Ajdovščina: 'declared by religion' is 13,468, its five named rows 13,449
-  Ajdovščina: religion 19 people in blanked cells ['Evangelical and other Protestant', 'other religion']
-  Beltinci: 'declared by religion' is 7,383, its five named rows 7,373
-  Beltinci: religion 10 people in blanked cells ['Orthodox', 'other religion']
-  Beltinci: language 13 people in blanked cells ['Bosnian', 'German', 'Hungarian', 'Italian', 'Macedonian']
-  Benedikt: 'declared by religion' is 1,525, its five named rows 1,522
-slovenia_census: Benedikt: religion rows fall 23 short of 2,084; blank cells ['Believer but belongs to no religion', 'Evangelical and other Protestant', 'Islam', 'Orthodox', 'other religion']
+estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
+  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
+    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
+    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
+    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
+    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
+    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
+    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
+    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
+    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
+    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
+    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
+    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
+    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
+    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
+    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
+    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
+    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
+  Estonia 1 January 2017: median age 41.8
+  EST admin2: 213 of 214 polygons bound
+    polygons left unbound (1): Maidla vald (Ida-Viru maakond): labelled Maidla, but it spans 26.81-27.22E and 59.14-59.44N, from Maidla's south to the coast at Purtse and around the town of Kiviõli -- the Lüganuse parish formed in 2013 from Lüganuse, Maidla and Püssi -- so neither Maidla's figures nor Lüganuse's are put on it
+    units standing in 2017 with no polygon (3): Järvakandi rural municipality; Lääne-Saare rural municipality; Lüganuse rural municipality
+  RL0429: 98 municipalities of 2011
+  RL0433: 226 municipalities of 2011
+  Usk: left out, categories off their total: ['257 (1,218 of 1,236)', '826 (1,065 of 1,082)', '460 (762 of 779)']
+  RL0452: 226 municipalities of 2011
+  ethnicity labels the group tree cannot place: []
+  language labels the group tree cannot place: []
+  religion labels the group tree cannot place: []
+  wrote data/processed/estonia_municipality.json (1086 kB)
+  wrote estonia_municipality.json: 228 records
