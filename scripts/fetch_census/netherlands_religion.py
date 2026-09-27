@@ -7,8 +7,19 @@ records religion. CBS measures it by survey and publishes it by region in
 www.cbs.nl: the share of the non-institutional population aged 15 and over
 who count themselves to a religion -- Roman Catholic, Protestant, Islam,
 another religion -- by province and COROP region, pooled over 2021 to 2025.
-CBS leaves out any region with fewer than 300 respondents, so every province
-printed rests on at least 300.
+The survey is Sociale samenhang en welzijn, about 7,500 respondents a year;
+CBS leaves out any region with fewer than 300 observations, so every province
+printed rests on at least 300, and on about 37,500 nationally.
+
+**"Ander geloof" is a residual, not a religion.** The question offers
+Protestant *or other Christian* church as one answer and then asks which, and
+CBS files everyone who belongs to neither the Roman Catholic Church, a
+Protestant church nor Islam, and does not say they have no religion, under
+"ander geloof": other Christian groups as much as Judaism, Hinduism, Buddhism
+and any other religion or philosophy of life (the workbook's "Begrippen"). It
+is written "Other or unspecified religion", which the group tree files with
+the residual answers, rather than "Other religion", which it files with the
+non-Abrahamic religions -- 7 to 8% of Groningen and Fryslân are not that.
 
 These are **survey estimates**, and the record says so in ``religion_basis``
 so that no roll-up sums them with a count; they go to their own file,
@@ -40,11 +51,30 @@ SOURCE = "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2"
 LICENCE = "CC BY 4.0 (CBS)"
 OUT = PROCESSED / "netherlands_religion_survey.json"
 YEAR = 2025
+OTHER = "Other or unspecified religion"
 COLUMNS = {"Rooms-katholiek": "Roman Catholic", "Rooms-kaholiek": "Roman Catholic",
-           "Protestants": "Protestant", "Islam": "Islam", "Ander geloof": "Other religion"}
+           "Protestants": "Protestant", "Islam": "Islam", "Ander geloof": OTHER}
+PER_YEAR = 7_500             # the workbook's "about 7,500 respondents" a year
+YEARS = (2021, 2025)
+MINIMUM = 300                # CBS prints no region with fewer observations
 TOTAL = "Totaal gelovig"
 PROVINCES = ("Groningen", "Fryslân", "Drenthe", "Overijssel", "Flevoland", "Gelderland",
              "Utrecht", "Noord-Holland", "Zuid-Holland", "Zeeland", "Noord-Brabant", "Limburg")
+
+
+NOTE = (
+    "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025, from the survey "
+    "Sociale samenhang en welzijn): the share of the non-institutional population aged 15 and "
+    "over who count themselves to a religion, weighted by CBS. Sample: about "
+    f"{PER_YEAR:,} respondents a year, some {PER_YEAR * (YEARS[1] - YEARS[0] + 1):,} over the five "
+    f"years; CBS prints a region only when at least {MINIMUM} observations stand behind it and "
+    "does not print the number, so this province rests on at least that. "
+    f"'{OTHER}' is CBS's 'ander geloof': everyone outside the Roman Catholic Church, the "
+    "Protestant churches and Islam who does not say they have no religion -- other Christian "
+    "groups as well as Judaism, Hinduism, Buddhism and any other religion or philosophy of "
+    "life; CBS does not divide it. 'No religion' is everyone who does not count themselves to "
+    "one (100 less 'Totaal gelovig'). The Netherlands has had no questionnaire census since "
+    "1971 and no register records religion.")
 
 
 def read() -> dict[str, dict[str, float]]:
@@ -94,13 +124,7 @@ def build() -> list[dict[str, Any]]:
             country="NLD", match_by="shape_id", shape_id=shape["id"],
             religion=rows, religion_year=YEAR,
             religion_basis="survey estimate: self-identification, non-institutional population 15+",
-            religion_note=(
-                "CBS survey estimate, pooled over 2021-2025 (Religie naar regio, 2021/2025): the "
-                "share of the non-institutional population aged 15 and over who count themselves "
-                "to a religion, weighted by CBS; CBS prints a region only when at least 300 "
-                "respondents stand behind it. 'No religion' is everyone who does not count "
-                "themselves to one (100 less 'Totaal gelovig'). The Netherlands has had no "
-                "questionnaire census since 1971 and no register records religion."),
+            religion_note=NOTE,
             sources=[{"field": "religion", "name": SOURCE, "url": PAGE, "license": LICENCE,
                       "year": YEAR}]))
     national = table["Nederland"]

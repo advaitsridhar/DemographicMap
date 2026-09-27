@@ -19,14 +19,18 @@ correspondence table says, for every commune of 2009, which commune of today
 it became. A 2009 district is then the sum of today's communes whose every
 2009 predecessor lay inside it.
 
-**Where that is impossible, nothing is written.** Seventeen of today's
-communes were merged across a 2009 district line -- Neuchâtel (2021) out of
-three districts, Bellinzona (2017) out of two, Lyss with Busswil, Chur with
-Haldenstein, Murten with Clavaleyres across a cantonal border -- and BFS
-publishes no split of them. A district one of them straddles cannot be
-summed without putting part of a merged commune's people on the wrong
-polygon, so those districts are left out and named in the log, and the
-map's other districts are filled.
+**Where a merger straddles a district, an older year is read.** Seventeen of
+today's communes were merged across a 2009 district line -- Neuchâtel (2021)
+out of three districts, Bellinzona (2017) out of two, Lyss with Busswil, Chur
+with Haldenstein, Murten with Clavaleyres across a cantonal border -- and BFS
+publishes no split of them. A district one of them straddles cannot take
+today's figures without putting part of a merged commune's people on the
+wrong polygon. BFS's balance of the resident population by district and
+commune (su-d-01.02.04.07) has one sheet a year, each in that year's
+communes; such a district takes its population on 31 December of the latest
+year in which its communes still nested, checked through AGVCH and against
+the sheet's national total, and says which year. That table has no age or
+sex, so those districts' median age and sex ratio stay gaps with the reason.
 
 **Special polygons.** Basel-Stadt is drawn as its three communes, which are
 read as communes. Appenzell Ausserrhoden is drawn whole although BFS's 2009
@@ -52,7 +56,7 @@ import time
 from collections import Counter
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .central_ages import age_sex_fields, check_national_median, check_sum, fold, units
 from .pxweb import http_json, unstack
 
@@ -64,6 +68,10 @@ SOURCE = ("Federal Statistical Office (BFS/OFS), STATPOP, px-x-0102010000_101, a
           "historicised register of communes (AGVCH)")
 LICENCE = "BFS open data (free reuse with attribution)"
 OUT = PROCESSED / "switzerland_bezirk.json"
+BALANCE = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master"
+BALANCE_SOURCE = ("Federal Statistical Office (BFS/OFS), Bilanz der ständigen Wohnbevölkerung nach "
+                  "Bezirken und Gemeinden, 1991-2025 (su-d-01.02.04.07), and AGVCH")
+FIRST_BALANCE_YEAR = 2009
 
 # The two halves of the Raron district as drawn, by their 2009 communes.
 RARON = {
@@ -214,6 +222,70 @@ def drawn_units(snapshot: list[dict[str, str]]
     return bound, unbound, left
 
 
+def balance_sheet(rows: list[list[Any]]) -> tuple[dict[str, float], float]:
+    """{commune code: population on 31 December} and the national total, from one year's sheet.
+
+    Communes are the rows that begin with their BFS number ("......0942 Thun"
+    since 2011, "942 Thun" before); districts and cantons begin with words.
+    """
+    at = next(j for r in rows[:8] for j, c in enumerate(r) if str(c or "").strip() == "31. Dezember")
+    communes: dict[str, float] = {}
+    national = None
+    for r in rows:
+        first = str(r[0] or "").strip()
+        m = re.match(r"^\.*\s*(\d{1,4})\s+\S", first)
+        if m and isinstance(r[at], (int, float)):
+            communes[m.group(1).zfill(4)] = float(r[at])
+        elif re.match(r"^Schweiz\b", first) and isinstance(r[at], (int, float)):
+            national = float(r[at])
+    if national is None:
+        raise SystemExit("switzerland_ages: a balance sheet with no national row")
+    check_sum(communes.values(), national, "the balance sheet's communes against Switzerland")
+    return communes, national
+
+
+def older_population(targets: list[tuple[str, set[str]]], start: int
+                     ) -> dict[str, tuple[int, float, int]]:
+    """{district: (year, population on 31 December, communes)} at the latest year it nests.
+
+    ``targets`` are the 2009 districts as (name, their 2009 communes). A
+    year's communes nest in a district when every commune of that year with
+    a 2009 predecessor inside it has all its predecessors inside it.
+    """
+    import openpyxl
+    if not targets:
+        return {}
+    book = openpyxl.load_workbook(io.BytesIO(http_get(BALANCE, binary=True, timeout=300)),
+                                  read_only=True, data_only=True)
+    left = dict(targets)
+    out: dict[str, tuple[int, float, int]] = {}
+    for when in range(start, FIRST_BALANCE_YEAR - 1, -1):
+        if not left:
+            break
+        if str(when) not in book.sheetnames:
+            raise SystemExit(f"switzerland_ages: the balance has no sheet {when}: {book.sheetnames}")
+        sheet, _ = balance_sheet([list(r) for r in book[str(when)].iter_rows(values_only=True)])
+        for end in (f"31-12-{when}", f"01-01-{when + 1}"):
+            rows = agvch(f"correspondances?startPeriod={VINTAGE}&endPeriod={end}&includeUnmodified=true")
+            initial_of: dict[str, set[str]] = {}
+            names_t: dict[str, str] = {}
+            for r in rows:
+                t = str(int(r["TerminalCode"])).zfill(4)
+                initial_of.setdefault(t, set()).add(r["InitialCode"])
+                names_t[t] = r["TerminalName"]
+            extra = set(initial_of) - set(sheet)
+            if not set(sheet) - set(initial_of) and all(LAKE.search(names_t[t]) for t in extra):
+                break
+        else:
+            raise SystemExit(f"switzerland_ages: the {when} sheet's communes are no register state")
+        for name, members in list(left.items()):
+            todays = [t for t, ini in initial_of.items() if ini & members and t in sheet]
+            if todays and all(initial_of[t] <= members for t in todays):
+                out[name] = (when, sum(sheet[t] for t in todays), len(todays))
+                del left[name]
+    return out
+
+
 def build(year: int, batch: int) -> list[dict[str, Any]]:
     log(f"switzerland_ages: BFS px-x-0102010000_101, 31 December {year}, "
         f"read against the districts of {VINTAGE}")
@@ -284,16 +356,7 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
         if straddling:
             names_ = [next(r["TerminalName"] for r in rows if str(int(r["TerminalCode"])).zfill(4) == t)
                       for t in straddling]
-            skipped.append(f"{name}: {', '.join(names_)}")
-            note = (f"Not written: the map draws this district as it was in 2009, and "
-                    f"{', '.join(names_)} -- today's commune(s) -- merged 2009 communes from inside "
-                    f"and outside it. BFS publishes today's communes only, so no official figure "
-                    f"covers exactly this polygon.")
-            records.append(record(
-                f"CHE-2009-{fold(name)}", shape["name"], level="admin2", parent=shape["parent"],
-                country="CHE", match_by="shape_id", shape_id=shape["id"],
-                population=gap(NOT_AVAILABLE, note),
-                median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note)))
+            skipped.append((name, members, shape, names_))
             continue
         m, f, total = Counter(), Counter(), 0.0
         for t in todays:
@@ -318,10 +381,35 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
             sources=[{"field": "population/median_age/sex_ratio", "name": source, "url": PORTAL,
                       "license": LICENCE, "year": year}],
             **fields))
-    log(f"  {len(records) - len(skipped)} units written; {len(skipped)} left out because a "
-        f"commune of today straddles them:")
-    for line in skipped:
-        log(f"    - {line}")
+    log(f"  {len(records)} units written from {year}; {len(skipped)} straddled by a commune of "
+        f"today, read from an older year:")
+    older = older_population([(name, members) for name, members, _, _ in skipped], year - 1)
+    for name, members, shape, names_ in skipped:
+        why = (f"The map draws this district as it was in 2009, and {', '.join(names_)} -- "
+               f"today's commune(s) -- merged 2009 communes from inside and outside it; BFS "
+               f"publishes no split of a merged commune.")
+        found = older.get(name)
+        gap_note = (f"Not written: {why} BFS's tables of age and sex are in today's communes "
+                    f"only, so no official figure covers exactly this polygon.")
+        fields: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, gap_note),
+                                  "sex_ratio": gap(NOT_AVAILABLE, gap_note)}
+        if found is None:
+            fields["population"] = gap(NOT_AVAILABLE, gap_note)
+            log(f"    - {name}: {', '.join(names_)}; no year nests")
+        else:
+            when, value, count = found
+            fields["population"] = measure(int(value), year=when, source=BALANCE_SOURCE)
+            fields["population_note"] = (
+                f"BFS's permanent resident population on 31 December {when}, summed over the "
+                f"{count} communes of that year inside this district as drawn: {why} {when} is the "
+                f"latest year in which the district's communes still lay wholly inside it.")
+            fields["sources"] = [{"field": "population", "name": BALANCE_SOURCE, "url": BALANCE,
+                                  "license": LICENCE, "year": when}]
+            log(f"    - {name}: {', '.join(names_)}; {value:,.0f} on 31 December {when}")
+        records.append(record(
+            f"CHE-2009-{fold(name)}", shape["name"], level="admin2", parent=shape["parent"],
+            country="CHE", codes={"bfs_2009": name}, match_by="shape_id", shape_id=shape["id"],
+            **fields))
     log(f"  units unbound: {unbound}")
     log(f"  polygons with no unit: {left}")
     if unbound or set(left) - WATER:

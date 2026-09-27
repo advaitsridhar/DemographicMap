@@ -11,6 +11,19 @@ Catholic, the Evangelical (A.B. and H.B.) and the Orthodox churches named
 inside it -- Islam, other religions, and no religion; they make the Land's
 population.
 
+**The survey.** The questions were added to the Mikrozensus labour force
+survey in all four quarters of 2021 and put, face to face, to everyone aged
+16 and over in the sampled private households: 27,656 people answered (95.7%
+of those asked). Children's answers were imputed from their parents' and the
+institutional population's estimated, and the result extrapolated to each
+Land (Statistik Austria's standard documentation,
+``std_b_religionzugehoerigkeit.pdf``). Statistik Austria does not publish the
+respondents per Land; the note gives the number there would be were they
+spread as the population is. The table's own footnote says an extrapolated
+value below 6,000 people is very uncertain and one below 3,000 not
+interpretable: those below 3,000 are withheld here and named, and those
+below 6,000 are named as uncertain.
+
 These are survey estimates and say so in ``religion_basis``; the output is a
 ``*_survey.json`` file, which the build uses only where no count exists and
 ranks above the cross-national European Social Survey.
@@ -37,6 +50,11 @@ PORTAL = ("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoel
 SOURCE = ("Statistik Austria, Bevölkerung 2021 nach ausgewählter Religionszugehörigkeit und "
           "Bundesland (survey estimate)")
 LICENCE = "CC BY 4.0 (Statistik Austria)"
+DOCUMENTATION = ("https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/"
+                 "std_b_religionzugehoerigkeit.pdf")
+RESPONDENTS = 27_656            # the standard documentation's count of people who answered
+NOT_INTERPRETABLE = 3_000       # the table's footnote: below this, not interpretable
+VERY_UNCERTAIN = 6_000          # and below this, very uncertain
 OUT = PROCESSED / "austria_religion_survey.json"
 YEAR = 2021
 LAENDER = ("Burgenland", "Kärnten", "Niederösterreich", "Oberösterreich", "Salzburg",
@@ -48,12 +66,16 @@ ROWS = {"Gesamtbevölkerung": "total", "Christentum": "christian",
         "Keine": "No religion", "Keiner": "No religion"}
 NS = {"table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
       "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0"}
-NOTE = ("Statistik Austria's estimate of religious affiliation in 2021 from its sample survey, "
-        "extrapolated to the Land's whole population and published in thousands to one decimal. "
-        "'Other Christian' is the Christians outside the three churches the table names (Roman "
-        "Catholic, Evangelical A.B. and H.B., Orthodox); 'Protestant' is the Evangelical church. "
-        "A survey estimate: the register-based census has carried no religion since 2011, and "
-        "the last census to ask was 2001.")
+NOTE = ("Statistik Austria's estimate of religious affiliation in 2021, from questions added to "
+        "the Mikrozensus labour force survey (all four quarters of 2021; people aged 16 and over "
+        "in private households, answering face to face, 27,656 respondents nationally; children "
+        "imputed from their parents, the institutional population estimated), weighted and "
+        "extrapolated to the Land's whole population, published in thousands to one decimal. "
+        "'Don't know' and no answer were redistributed by the weighting. 'Other Christian' is "
+        "the Christians outside the three churches the table names (Roman Catholic, Evangelical "
+        "A.B. and H.B., Orthodox), which may include Christians who named no church; "
+        "'Protestant' is the Evangelical church. A survey estimate: the register-based census "
+        "has carried no religion since 2011, and the last census to ask was 2001.")
 
 
 def rows_of(blob: bytes) -> list[list[str]]:
@@ -127,17 +149,45 @@ def build() -> list[dict[str, Any]]:
         v = table[land]
         counts = {k: max(v[k], 0.0) for k in (*named, "Other Christian", "Islam",
                                               "Other religion", "No religion")}
+        counts, sample = screen(counts, v["total"], table["Österreich"]["total"], land)
         rows = shares(counts, total=v["total"])
         log(f"  {land}: {v['total']:,.0f}; " + ", ".join(f"{r['group']} {r['pct']}" for r in rows))
         records.append(record(
             f"AUT-REL2021-{fold(land)}", shape["name"], level="admin1", parent="AUT",
             country="AUT", match_by="shape_id", shape_id=shape["id"],
             sources=[{"field": "religion", "name": SOURCE, "url": PORTAL, "license": LICENCE,
-                      "year": YEAR}],
+                      "year": YEAR, "note": f"Survey documentation: {DOCUMENTATION}"}],
             religion=rows, religion_year=dated(rows, YEAR),
             religion_basis="survey estimate: sample survey extrapolated to the whole population",
-            religion_note=NOTE))
+            religion_note=NOTE + " " + sample))
     return records
+
+
+def screen(counts: dict[str, float], total: float, austria: float,
+           land: str) -> tuple[dict[str, float], str]:
+    """The groups the office's own thresholds allow, and the note on the sample.
+
+    A group extrapolated to fewer than NOT_INTERPRETABLE people is withheld,
+    one below VERY_UNCERTAIN is named as uncertain; the note also gives the
+    respondents the Land would have were the sample spread as the population.
+    """
+    kept = {k: v for k, v in counts.items() if v >= NOT_INTERPRETABLE}
+    withheld = sorted(k for k in counts if k not in kept)
+    shaky = sorted(k for k, v in kept.items() if v < VERY_UNCERTAIN)
+    n = RESPONDENTS * total / austria
+    if n < 100:
+        raise SystemExit(f"austria_religion: {land} would have about {n:,.0f} respondents")
+    text = (f"Sample: Statistik Austria does not publish the respondents per Land; spread as the "
+            f"population is, {land} would have about {n:,.0f} of the 27,656"
+            + (" (low precision)." if n < 300 else "."))
+    if withheld:
+        text += (f" Withheld as below the {NOT_INTERPRETABLE:,} people the table's footnote calls "
+                 f"not interpretable: {', '.join(withheld)}; the shares shown sum to "
+                 f"{100 * sum(kept.values()) / total:.1f}%.")
+    if shaky:
+        text += (f" Very uncertain (fewer than {VERY_UNCERTAIN:,} people extrapolated): "
+                 f"{', '.join(shaky)}.")
+    return kept, text
 
 
 def main() -> int:

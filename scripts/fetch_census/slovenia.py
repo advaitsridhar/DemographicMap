@@ -47,6 +47,14 @@ PORTAL = "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px"
 SOURCE = "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
 LICENCE = "SURS open data (free reuse with attribution)"
 OUT = PROCESSED / "slovenia_obcina.json"
+SETTLEMENTS = "05C5003S.px"
+# A sex ratio outside this band is explained on the record: the settlement
+# that carries the excess is named, with its men and women as SiStat counts
+# them. Where an institution explains it, it is named here.
+USUAL_RATIO = (85.0, 120.0)
+INSTITUTIONS = {"Slovenska vas": "the men's prison at Dob (Zavod za prestajanje kazni zapora Dob)"}
+# A median this high is explained with the share of the old.
+OLD_MEDIAN = 55.0
 CARONS = set("čšžćđ")
 EXPECTED = 212
 
@@ -227,9 +235,50 @@ def build(half: str) -> list[dict[str, Any]]:
             sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": PORTAL,
                       "license": LICENCE, "year": year}],
             **fields))
+    explain_outliers(records, ages, year)
     if len(records) < EXPECTED:
         log(f"  ! {EXPECTED - len(records)} municipalities left unbound (listed above)")
     return records
+
+
+def explain_outliers(records: list[dict[str, Any]], ages: dict[str, Counter], year: int) -> None:
+    """Say on the record why a sex ratio or a median age stands out."""
+    top = max(r["median_age"]["value"] for r in records)
+    for r in records:
+        code = r["codes"]["surs_obcina"]
+        ratio = r["sex_ratio"]["value"]
+        if not USUAL_RATIO[0] <= ratio <= USUAL_RATIO[1]:
+            r["sex_ratio_note"] += " " + lopsided_settlement(code, r["name"], year)
+        median = r["median_age"]["value"]
+        if median >= OLD_MEDIAN:
+            people = sum(ages[code].values())
+            old = sum(n for age, n in ages[code].items() if age >= 65)
+            r["median_age_note"] += (f" {100 * old / people:.0f}% of its {people:,.0f} people are 65 or "
+                                     f"older" + ("; the highest median of Slovenia's municipalities."
+                                                 if median == top else "."))
+
+
+def lopsided_settlement(code: str, name: str, year: int) -> str:
+    """The settlement that carries a municipality's excess of one sex, in SiStat's count."""
+    v = meta(SETTLEMENTS)
+    place, when, what = code_like(v, "SETTLEMENT"), code_like(v, "YEAR"), code_like(v, "MEASURE")
+    texts = dict(zip(v[what]["valueTexts"], v[what]["values"]))
+    sexes = {"men": texts["Population - Men"], "women": texts["Population - Women"]}
+    wanted = [c for c in v[place]["values"] if len(c) == 6 and c.startswith(code)]
+    latest = str(max(int(y) for y in v[when]["values"] if int(y) <= year + 1))
+    counts: dict[str, dict[str, float]] = {}
+    for key, value in query(SETTLEMENTS, {place: wanted, when: [latest], what: list(sexes.values())}):
+        label = key[place][1].split(" ", 1)[-1]
+        counts.setdefault(label, {})["men" if key[what][0] == sexes["men"] else "women"] = value
+    if not counts:
+        raise SystemExit(f"slovenia: {SETTLEMENTS} has no settlements for {name} ({code})")
+    worst, c = max(counts.items(), key=lambda kv: abs(kv[1].get("men", 0) - kv[1].get("women", 0)))
+    excess = sum(x.get("men", 0) - x.get("women", 0) for x in counts.values())
+    log(f"  {name}: {excess:+,.0f} men over women, {c['men'] - c['women']:+,.0f} of them in {worst}")
+    where = f", where {INSTITUTIONS[worst]} stands" if worst in INSTITUTIONS else ""
+    return (f"The excess is one settlement's: {worst} counts {c['men']:,.0f} men and "
+            f"{c['women']:,.0f} women ({SETTLEMENTS}, {latest}){where}, against "
+            f"{excess:+,.0f} men over women in the whole municipality.")
 
 
 def main() -> int:

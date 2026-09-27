@@ -14,10 +14,18 @@ five-year group that holds the middle person, and each note says so.
 mergers since then fall inside the map: Habscht (Hobscheid and Septfontaines,
 2018), Helperknapp (Boevange-sur-Attert and Tuntange, 2018) and
 Rosport-Mompach (2018), so the census counts those three merged communes and
-not their six drawn parts, whose polygons are left out rather than given a
-merged commune's figure. Groussbus-Wal (Grosbous and Wahl) and
-Bous-Waldbredimus merged in 2023, after the census, which still counts their
-four parts separately; they fit the map. The cantons have not changed.
+not their six drawn parts, which are never given a merged commune's figure.
+Groussbus-Wal (Grosbous and Wahl) and Bous-Waldbredimus merged in 2023, after
+the census, which still counts their four parts separately; they fit the map.
+The cantons have not changed.
+
+**The six drawn parts** take STATEC's last figures for exactly those communes,
+from its files on data.public.lu: the population on 1 January 2017
+(``popcom2000-2017_LAU2.xlsx``, the year before the merger), and median age
+and sex ratio from the 2011 census (population of usual residence on 1
+February 2011, by commune and five-year age group, and by commune and sex).
+Each file is checked against its own national total, and each field says its
+year.
 
 Usage:
     python -m scripts.fetch_census.luxembourg
@@ -32,8 +40,9 @@ import re
 from collections import Counter
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
-from .central_ages import age_sex_fields, check_national_median, check_sum, fold, report_unbound, units
+from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from .central_ages import (SEX_RATIO_UNIT, age_sex_fields, check_national_median, check_sum, fold,
+                           median_of_groups, report_unbound, sex_ratio, units)
 
 DATA = ("https://lustat.statec.lu/rest/data/LU1,DSD_CENSUS_GROUP1_3@DF_B1607,1.0/all"
         "?dimensionAtObservation=AllDimensions")
@@ -42,6 +51,18 @@ SOURCE = "STATEC, Recensement de la population 2021, LUSTAT DF_B1607"
 LICENCE = "CC BY 4.0 (STATEC)"
 OUT = PROCESSED / "luxembourg_commune.json"
 YEAR = 2021
+LUXDATA = "https://download.data.public.lu/resources/"
+POPCOM = (LUXDATA + "population-par-commune-et-code-lau2-depuis-2000/20170511-141118/"
+          "popcom2000-2017_LAU2.xlsx")
+RP2011_AGE = (LUXDATA + "population-de-residence-habituelle-par-commune-et-age-au-1er-fevrier-2011/"
+              "20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx")
+RP2011_SEX = (LUXDATA + "population-de-residence-habituelle-par-commune-et-sexe-au-1er-fevrier-2011/"
+              "20160711-131552/Population_par_commune_et_sexe_au_1er_fevrier_2011.xlsx")
+POPCOM_SOURCE = "STATEC, Population par commune et code LAU2 depuis 2000 (1 January 2017)"
+RP2011_SOURCE = "STATEC, Recensement de la population 2011 (1 February 2011), population by commune"
+POPCOM_COLUMN = "1-1-2017"
+# STATEC's older files write one of the six differently from the map.
+OLD_NAMES = {"Boevange-sur-Attert": "Boevange-Attert"}
 # The census's communes that merged drawn ones, which the map does not draw.
 MERGED_SINCE_MAP = {"Habscht": ("Hobscheid", "Septfontaines"),
                     "Helperknapp": ("Boevange-sur-Attert", "Tuntange"),
@@ -118,7 +139,7 @@ def build() -> list[dict[str, Any]]:
     for geo in communes:
         both.update(counts[geo]["M"])
         both.update(counts[geo]["F"])
-    check_national_median(both, "LU", YEAR + 1, groups=True, tolerance=0.6)
+    check_national_median(both, "LU", YEAR + 1, groups=True)
 
     records = []
     note = ("Interpolated within the five-year age group that holds the middle person, from "
@@ -159,20 +180,131 @@ def build() -> list[dict[str, Any]]:
                 **fields))
         left = [s["name"] for s in shapes if s["id"] not in used]
         report_unbound(f"luxembourg {level}", unbound, left)
-        for shape in shapes:
-            merged = next((m for m, parts in MERGED_SINCE_MAP.items() if shape["name"] in parts), None)
-            if level != "admin2" or shape["id"] in used or merged is None:
-                continue
-            why = (f"Not written: {shape['name']} merged into {merged} in 2018, so the 2021 census "
-                   f"counts {merged} as one commune; STATEC publishes no figure for the drawn part.")
-            records.append(record(
-                f"LUX-2017-{fold(shape['name'])}", shape["name"], level="admin2",
-                parent=shape["parent"], country="LUX", match_by="shape_id", shape_id=shape["id"],
-                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
+        if level == "admin2":
+            records += premerger_records([s for s in shapes if s["id"] not in used])
         expected_left = {n for parts in MERGED_SINCE_MAP.values() for n in parts} if level == "admin2" else set()
         if unbound or set(left) != expected_left:
             raise SystemExit(f"luxembourg: {level} does not pair up: {unbound} / {left}")
     return records
+
+
+def book_rows(url: str) -> list[list[Any]]:
+    """The first sheet of one of STATEC's .xlsx files, as rows of cells."""
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(http_get(url, binary=True, timeout=120)),
+                                  read_only=True, data_only=True)
+    return [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
+
+
+def text_of(cell: Any) -> str:
+    return " ".join(str(cell if cell is not None else "").split())
+
+
+def read_popcom(rows: list[list[Any]]) -> tuple[dict[str, float], float]:
+    """{commune: population on 1 January 2017} and the file's own total."""
+    head = next(i for i, r in enumerate(rows) if POPCOM_COLUMN in [text_of(c) for c in r])
+    col = [text_of(c) for c in rows[head]].index(POPCOM_COLUMN)
+    out, total = {}, None
+    for r in rows[head + 1:]:
+        first = text_of(r[0])
+        if "Total" in (first, text_of(r[1] if len(r) > 1 else "")):
+            total = float(r[col])
+        elif re.fullmatch(r"\d{1,4}", first) and isinstance(r[col], (int, float)):
+            out[text_of(r[1])] = float(r[col])
+    if total is None:
+        raise SystemExit("luxembourg: the 2000-2017 file has no Total row")
+    check_sum(out.values(), total, f"communes on {POPCOM_COLUMN} against Luxembourg")
+    return out, total
+
+
+def read_rp2011_ages(rows: list[list[Any]]) -> dict[str, Counter]:
+    """{commune: Counter{(first, last or None): n}} from the 2011 census's five-year groups."""
+    head = next(i for i, r in enumerate(rows) if any(text_of(c) == "0 à 4 ans" for c in r))
+    labels = [text_of(c) for c in rows[head]]
+    groups: dict[int, tuple[int, int | None]] = {}
+    for j, label in enumerate(labels):
+        m = re.fullmatch(r"(\d+) à (\d+) ans", label)
+        if m:
+            groups[j] = (int(m.group(1)), int(m.group(2)))
+        elif re.fullmatch(r"(\d+) et plus", label):
+            groups[j] = (int(label.split()[0]), None)
+    total_col = labels.index("Total")
+    if sorted(a for a, _ in groups.values()) != list(range(0, 101, 5)):
+        raise SystemExit(f"luxembourg: the 2011 age groups are {labels}")
+    out: dict[str, Counter] = {}
+    for r in rows[head + 1:]:
+        name = text_of(r[0])
+        if not name or not isinstance(r[total_col], (int, float)):
+            continue
+        counts = Counter({g: float(r[j] or 0) for j, g in groups.items()})
+        if abs(sum(counts.values()) - float(r[total_col])) > 0.5:
+            raise SystemExit(f"luxembourg: 2011 {name}: the age groups make {sum(counts.values()):,.0f}, "
+                             f"the total is {r[total_col]:,.0f}")
+        out[name] = counts
+    return out
+
+
+def read_rp2011_sexes(rows: list[list[Any]]) -> dict[str, tuple[float, float]]:
+    """{commune: (men, women)} from the 2011 census, each checked against its total."""
+    head = next(i for i, r in enumerate(rows) if "Masculin" in [text_of(c) for c in r])
+    labels = [text_of(c) for c in rows[head]]
+    m_col, f_col, t_col = labels.index("Masculin"), labels.index("Féminin"), labels.index("Total")
+    out: dict[str, tuple[float, float]] = {}
+    for r in rows[head + 1:]:
+        name = text_of(r[0])
+        if not name or not isinstance(r[t_col], (int, float)):
+            continue
+        if abs(float(r[m_col]) + float(r[f_col]) - float(r[t_col])) > 0.5:
+            raise SystemExit(f"luxembourg: 2011 {name}: men and women do not make its total")
+        out[name] = (float(r[m_col]), float(r[f_col]))
+    return out
+
+
+def premerger_records(shapes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The six communes merged in 2018, from STATEC's last figures for each."""
+    pop2017, _ = read_popcom(book_rows(POPCOM))
+    ages = read_rp2011_ages(book_rows(RP2011_AGE))
+    sexes = read_rp2011_sexes(book_rows(RP2011_SEX))
+    national = ages.pop("Total", None)
+    if national is None or abs(sum(sum(c.values()) for c in ages.values()) - sum(national.values())) > 0.5:
+        raise SystemExit("luxembourg: the 2011 communes' age groups do not make the country's")
+    men, women = sexes.pop("Total", (None, None))
+    if men is None or abs(sum(m + f for m, f in sexes.values()) - (men + women)) > 0.5:
+        raise SystemExit("luxembourg: the 2011 communes' sexes do not make the country's")
+    check_national_median(national, "LU", 2011, groups=True)
+    out = []
+    for shape in shapes:
+        merged = next((m for m, parts in MERGED_SINCE_MAP.items() if shape["name"] in parts), None)
+        if merged is None:
+            raise SystemExit(f"luxembourg: polygon {shape['name']} is not one of the six merged in 2018")
+        name = OLD_NAMES.get(shape["name"], shape["name"])
+        if name not in pop2017 or name not in ages or name not in sexes:
+            raise SystemExit(f"luxembourg: STATEC's older files do not all name {name}")
+        m, f = sexes[name]
+        if abs(sum(ages[name].values()) - (m + f)) > 0.5:
+            raise SystemExit(f"luxembourg: {name}: the 2011 age and sex tables disagree")
+        why = (f"{shape['name']} merged into {merged} in 2018, and the 2021 census counts {merged} as "
+               f"one commune; the map draws the communes of 2015-2017, so this polygon takes STATEC's "
+               f"last figures for the commune itself.")
+        out.append(record(
+            f"LUX-2017-{fold(shape['name'])}", shape["name"], level="admin2", parent=shape["parent"],
+            country="LUX", codes={"statec_name": name}, match_by="shape_id", shape_id=shape["id"],
+            aliases=[name] if name != shape["name"] else [],
+            population=measure(int(pop2017[name]), year=2017, source=POPCOM_SOURCE),
+            population_note=f"STATEC's population of the commune on 1 January 2017. {why}",
+            median_age=measure(median_of_groups([(a, b, n) for (a, b), n in ages[name].items()]),
+                               unit="years", year=2011, source=RP2011_SOURCE),
+            median_age_note=(f"Interpolated within the five-year age group that holds the middle "
+                             f"person, from the 2011 census's population of usual residence by "
+                             f"commune and five-year age group (1 February 2011). {why}"),
+            sex_ratio=measure(sex_ratio(m, f), unit=SEX_RATIO_UNIT, year=2011, source=RP2011_SOURCE),
+            sex_ratio_note=f"Males per 100 females counted by the 2011 census. {why}",
+            sources=[{"field": "population", "name": POPCOM_SOURCE, "url": POPCOM,
+                      "license": LICENCE, "year": 2017},
+                     {"field": "median_age/sex_ratio", "name": RP2011_SOURCE, "url": RP2011_AGE,
+                      "license": LICENCE, "year": 2011}]))
+        log(f"  {shape['name']}: {int(pop2017[name]):,} (2017); 2011 census {m + f:,.0f}")
+    return out
 
 
 def main() -> int:
