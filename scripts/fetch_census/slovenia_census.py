@@ -48,7 +48,9 @@ SOURCE = ("Statistical Office of the Republic of Slovenia (SURS), Census 2002, S
           "05W1001S-05W1007S (by municipality)")
 LICENCE = "SURS open data (free reuse with attribution)"
 OUT = PROCESSED / "slovenia_census.json"
-SPLIT_IN_2011 = {"Koper", "Trebnje"}      # lost Ankaran and Mirna after the 2007 recalculation
+# Lost Ankaran and Mirna in 2011, after the 2007 recalculation; named as SURS names
+# them before any bilingual form ("Koper/Capodistria").
+SPLIT_IN_2011 = {"Koper", "Trebnje"}
 # Municipalities renamed since 2002 without a change of territory: the 2002
 # name -> today's, which the 2007 recalculation and the map both use.
 RENAMED = {"Sveti Jurij": "Sveti Jurij ob Ščavnici", "Kanal": "Kanal ob Soči",
@@ -316,6 +318,10 @@ def build() -> list[dict[str, Any]]:
             out[f"{field}_note"] = NOTES[field]
         return out
 
+    split_2011 = [n for n in names if n.split("/")[0].strip() in SPLIT_IN_2011]
+    if len(split_2011) != len(SPLIT_IN_2011):
+        raise SystemExit(f"slovenia_census: the municipalities split in 2011 are {split_2011}, "
+                         f"not {sorted(SPLIT_IN_2011)}")
     records = []
     written: set[str] = set()
     for name in names:
@@ -324,7 +330,7 @@ def build() -> list[dict[str, Any]]:
             log(f"  {name}: no polygon of that name; its 2002 figure counts in its cohesion "
                 f"region only")
             continue
-        if fold(today(name)) not in same or name in SPLIT_IN_2011:
+        if fold(today(name)) not in same or name.split("/")[0].strip() in SPLIT_IN_2011:
             continue
         written.add(shape["id"])
         records.append(record(
