@@ -1369,7 +1369,61 @@ def deu8() -> None:
             log(f"   - {row.get('Code')} | {' '.join(str(row.get('Content', '')).split())[:170]}")
 
 
+def dam_items(query: str, pages: int = 3) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for page in range(pages):
+        status, _, body = fetch(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets?{query}&skip={20 * page}")
+        try:
+            data = json.loads(text(body))
+        except json.JSONDecodeError:
+            break
+        items = data.get("data") or []
+        out += items
+        if len(items) < 20:
+            break
+    return out
+
+
+def che11() -> None:
+    """BFS's structural-survey tables on religion and main language, with their geography."""
+    for query in ("language=de&title=Religionszugeh%C3%B6rigkeit",
+                  "language=de&title=Religion",
+                  "language=de&title=Hauptsprachen",
+                  "language=de&title=Volksz%C3%A4hlung%202000",
+                  "language=de&title=Bezirk%20Religion"):
+        items = dam_items(query)
+        log(f"\n## DAM {query}: {len(items)} items")
+        for item in items:
+            bfs, desc = item.get("bfs") or {}, item.get("description") or {}
+            cat = desc.get("categorization") or {}
+            space = ", ".join(s.get("name", "") for s in cat.get("spatialdivision") or [])
+            log(f"   - {jpath(item, 'ids.damId')} | {jpath(bfs, 'articleModel.name')} | "
+                f"{jpath(item, 'shop.orderNr')} | {jpath(desc, 'bibliography.period')} | {space} | "
+                f"{jpath(desc, 'titles.main')}"[:300])
+
+
+def aut8() -> None:
+    """Which Gemeinde codes the 2001 sheets answer to: today's, or those of 2001."""
+    lines = head_lines("https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.csv", 4)
+    codes = [m.group(1) for line in lines for m in [re.match(r"^\s*\d;[^;]*;(\d{5});", line)] if m]
+    if not codes:
+        codes = [m.group(0) for line in lines for m in [re.search(r"\b[1-9]\d{4}\b", line)] if m]
+    log(f"   {len(codes)} codes read from today's list")
+    picks = ([c for c in codes if c[:3] in ("620", "621", "622", "623")][:4]
+             + [c for c in codes if c.startswith("307")][-4:]
+             + ["32419", "60901", "61101", "62006", "10101"])
+    for code in picks:
+        status, head, body = fetch(f"https://www.statistik.at/blickgem/vz7/g{code}.pdf")
+        first = ""
+        if status == 200 and body.startswith(b"%PDF"):
+            import io as _io
+            from pypdf import PdfReader
+            first = " ".join((PdfReader(_io.BytesIO(body)).pages[0].extract_text() or "").split()[:6])
+        log(f"   vz7/g{code}: HTTP {status}, {len(body):,} bytes; {first}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che11": che11, "aut8": aut8,
     "svn6": svn6, "che10": che10, "aut7": aut7, "deu8": deu8,
     "aut6": aut6, "svn5": svn5, "che9": che9, "nld10": nld10, "lux6": lux6, "deu7": deu7,
     "che8": che8, "svn4": svn4, "aut5": aut5,
