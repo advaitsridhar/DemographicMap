@@ -130,13 +130,7 @@ def sheet(code: str) -> dict[str, Any]:
             return {"code": code, "error": f"austria_census: {code}: merged from {merged}, and "
                     f"{[p['code'] for p in bad]} could not be read",
                     "excerpt": " | ".join(page.split("\n"))[:600]}
-        out = {"code": code, "total": sum(p["total"] for p in parts), "religion": {},
-               "language": {}, "merged": merged}
-        for p in parts:
-            for field in ("religion", "language"):
-                for k, v in p[field].items():
-                    out[field][k] = out[field].get(k, 0.0) + v
-        return out
+        return {"code": code, "merged": merged, "parts": parts}
     try:
         return read_sheet(code, page)
     except SystemExit as exc:
@@ -148,7 +142,10 @@ def merged_from(code: str, page: str) -> list[str]:
     if "Zusammenlegung der Gemeinden" not in page or "keine Daten" not in page:
         return []
     block = page.split("Zusammenlegung der Gemeinden", 1)[1].split("Für die Gemeinde", 1)[0]
-    olds = re.findall(r"\b(\d{5})\b", block)
+    # One line per old municipality: "62203 Bad Waltersdorf", or, where only
+    # part of it came, "62227 Limbach bei Neudau (KG Oberlimbach 64131)" --
+    # the second number is a cadastral community's, not a municipality's.
+    olds = re.findall(r"(?:^|\n)\s*(\d{5})\s", block)
     if not olds or code in olds:
         raise SystemExit(f"austria_census: {code}: a merger listed without its parts: {block[:200]!r}")
     return olds
@@ -156,7 +153,9 @@ def merged_from(code: str, page: str) -> list[str]:
 
 def read_sheet(code: str, page: str) -> dict[str, Any]:
     head = re.search(r"\((\d{5})\)", page)
-    if not head or head.group(1) != code:
+    # Vienna's Gemeindebezirke have sheets headed "Wien" and no code.
+    vienna = code.startswith("9") and not head and page.lstrip().startswith("Wien")
+    if not vienna and (not head or head.group(1) != code):
         raise SystemExit(f"austria_census: the sheet asked for {code} is headed "
                          f"{head.group(1) if head else None}")
     total = re.search(r"Wohnbevölkerung\s+(\d{1,3}(?:\.\d{3})*)\s+100,0", page)
@@ -188,18 +187,36 @@ def build(year: int, workers: int) -> list[dict[str, Any]]:
     if missing:
         raise SystemExit(f"austria_census: no 2001 sheet for {len(missing)} municipalities: "
                          f"{missing[:40]}")
+    # Each 2001 municipality is counted once, in the district of the
+    # municipality of today it went to. One that was split between two of
+    # today's (Limbach bei Neudau, by cadastral community) is listed by both;
+    # it is counted once, and only if both are in the same district.
+    def district(code: str) -> str:
+        return VIENNA if code.startswith("9") else code[:3]
+
+    counted: dict[str, tuple[str, dict[str, Any]]] = {}
+    split: dict[str, set[str]] = {}
+    for s in sheets:
+        for part in (s["parts"] if s.get("merged") else [s]):
+            split.setdefault(part["code"], set()).add(district(s["code"]))
+            counted.setdefault(part["code"], (district(s["code"]), part))
+    torn = {c: d for c, d in split.items() if len(d) > 1}
+    if torn:
+        raise SystemExit(f"austria_census: 2001 municipalities split across today's districts: {torn}")
     merged = [s for s in sheets if s.get("merged")]
-    log(f"  {len(merged)} municipalities formed by mergers since 2001, read as their "
-        f"{sum(len(s['merged']) for s in merged)} parts")
-    check_sum((s["total"] for s in sheets), NATIONAL_2001, "municipalities against Austria (2001)")
+    shared = sorted(c for c in split if sum(1 for s in merged if c in s["merged"]) > 1)
+    log(f"  {len(merged)} municipalities formed by mergers since 2001, read as the sheets of "
+        f"their parts; {len(counted)} municipalities of 2001 in all; listed by two of today's "
+        f"(split by cadastral community, counted once): {shared}")
+    check_sum((p["total"] for _, p in counted.values()), NATIONAL_2001,
+              "municipalities of 2001 against Austria")
 
     sums: dict[str, dict[str, Any]] = {}
-    for s in sheets:
-        key = VIENNA if s["code"].startswith("9") else s["code"][:3]
+    for key, part in counted.values():
         into = sums.setdefault(key, {"total": 0.0, "religion": {}, "language": {}})
-        into["total"] += s["total"]
+        into["total"] += part["total"]
         for field in ("religion", "language"):
-            for k, v in s[field].items():
+            for k, v in part[field].items():
                 into[field][k] = into[field].get(k, 0.0) + v
     log(f"  {len(sums)} districts")
 
