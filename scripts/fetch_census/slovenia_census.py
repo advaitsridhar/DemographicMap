@@ -53,6 +53,12 @@ SPLIT_IN_2011 = {"Koper", "Trebnje"}      # lost Ankaran and Mirna after the 200
 # name -> today's, which the 2007 recalculation and the map both use.
 RENAMED = {"Sveti Jurij": "Sveti Jurij ob Ščavnici", "Kanal": "Kanal ob Soči",
            "Šentjur pri Celju": "Šentjur"}
+# ...and where the boundary file still uses the old name, the polygon is found by it.
+DRAWN_AS = {"Kanal": "Kanal"}
+# The boundary file files Brda under the country rather than a cohesion region
+# (its polygon does not sit inside the first-level outline); it is in the
+# Goriška statistical region, which is in Western Slovenia.
+COHESION = {"Brda": "Zahodna Slovenija"}
 EXPECTED_2002 = 192
 WITHHELD_SHARE = 0.10       # above this share of people in blanked cells, a field is not written
 
@@ -292,7 +298,7 @@ def build() -> list[dict[str, Any]]:
         log(f"  {group}s: {published:,.0f} of {whole:,.0f} published by municipality; "
             f"{len(blank)} municipalities blank")
 
-    bound = bind({str(i): today(n) for i, n in enumerate(names)})
+    bound = bind({str(i): DRAWN_AS.get(n, today(n)) for i, n in enumerate(names)})
     polygon = {names[int(i)]: shape for i, shape in bound.items()}
     source = [{"field": "religion/ethnicity/language", "name": SOURCE, "url": PORTAL,
                "license": LICENCE, "year": YEAR}]
@@ -341,11 +347,19 @@ def build() -> list[dict[str, Any]]:
 
     regions = {u["id"]: u for u in units("SVN", "admin1")}
     sums: dict[str, dict[str, dict[str, float]]] = {}
-    homeless = [n for n in names if polygon.get(n) is None or polygon[n]["parent"] not in regions]
+    by_region_name = {fold(u["name"]): uid for uid, u in regions.items()}
+
+    def region_of(name: str) -> str | None:
+        shape = polygon.get(name)
+        if shape is not None and shape["parent"] in regions:
+            return shape["parent"]
+        return by_region_name.get(fold(COHESION.get(name, "")))
+
+    homeless = [n for n in names if region_of(n) is None]
     if homeless:
-        raise SystemExit(f"slovenia_census: no polygon, so no cohesion region, for {homeless}")
+        raise SystemExit(f"slovenia_census: no cohesion region for {homeless}")
     for name in names:
-        shape = polygon[name]
+        shape = {"parent": region_of(name)}
         into = sums.setdefault(shape["parent"], {"ethnicity": {}, "religion": {}, "language": {},
                                                  "total": {"": 0.0}})
         for field, cells in counts[name].items():
