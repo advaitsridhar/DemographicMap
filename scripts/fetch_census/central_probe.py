@@ -538,7 +538,129 @@ def deu3() -> None:
             log(f"   {exc}: {text(reply)[:300]}")
 
 
+def cze4() -> None:
+    lines = head_lines("https://data.csu.gov.cz/opendata/sady/OBY02BHVD/distribuce/csv", 4)
+    if lines:
+        rows = list(csv_rows("\n".join(lines)))
+        kinds = Counter_(r.get("uzemi_cis") or r.get("UZEMI_CIS") or "?" for r in rows)
+        years = Counter_(r.get("casref_do") or r.get("rok") or "?" for r in rows)
+        log(f"   territory kinds {dict(kinds)}; periods {dict(list(years.items())[-6:])}")
+        log(f"   columns {list(rows[0].keys()) if rows else []}")
+
+
+def Counter_(items):  # noqa: N802 - a local alias keeps the import where it is used
+    from collections import Counter
+    return Counter(items)
+
+
+def pol4() -> None:
+    base = "https://bdl.stat.gov.pl/api/v1"
+    show(f"{base}/data/by-variable/746289?format=json&unit-level=5&page-size=2&lang=pl", raw=700)
+    show(f"{base}/data/by-variable/746289?format=json&unit-level=0&lang=pl", raw=500)
+    for subject in ("P1336", "P2137"):
+        page = show(f"{base}/variables?subject-id={subject}&format=json&page-size=12&lang=pl")
+        try:
+            for row in json.loads(page).get("results", []):
+                log(f"   - {row.get('id')} {row.get('n1')} | {row.get('n2')} | {row.get('n3')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}")
+
+
+def svk4() -> None:
+    show("https://data.statistics.sk/api/v2/dataset/om7009rr/SK0101/2024/IN010053/1/all?lang=en&type=json",
+         raw=600)
+    page = show("https://data.statistics.sk/api/v2/dataset/om7005rr/all/2024/IN010088/SPOLU?lang=en&type=json")
+    try:
+        data = json.loads(page)
+        log(f"   ids {data.get('id')} sizes {data.get('size')} values {str(data.get('value'))[:300]}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   {exc}")
+    show("https://www.scitanie.sk/", r"href=\"[^\"]+\"", limit=80)
+
+
+def hun4() -> None:
+    show("https://nepszamlalas2022.ksh.hu/", r"href=\"[^\"]*(?:tabl|xlsx|terulet|kiadvany|adatbazis)[^\"]*\"",
+         limit=60)
+    show("https://nepszamlalas2022.ksh.hu/eredmenyek/vegleges-adatok/tablak/",
+         r"href=\"[^\"]+\.xlsx\"", limit=80)
+    show("https://nepszamlalas2022.ksh.hu/adatbazis/", raw=1500)
+
+
+def nld4() -> None:
+    for prefix in ("opendata.cbs.nl/ODataFeed/odata/03759ned", "opendata.cbs.nl/ODataApi/odata/03759ned",
+                   "opendata.cbs.nl/CsvDownload/csv/03759ned", "opendata.cbs.nl/ODataApi/OData/03759ned"):
+        head_lines(f"http://web.archive.org/cdx/search/cdx?url={prefix}*&limit=25&fl=timestamp,original,length",
+                   25)
+
+
+def lux4() -> None:
+    csv_accept = {"Accept": "application/vnd.sdmx.data+csv;version=1.0.0"}
+    for flow in ("LU1,DF_X021,1.1/all?startPeriod=2017&endPeriod=2017",
+                 "LU1,DSD_CENSUS_GROUP1_3@DF_B1607,1.0/all"):
+        status, _, body = fetch(f"https://lustat.statec.lu/rest/data/{flow}", headers=csv_accept)
+        lines = text(body).splitlines()
+        log(f"\n## {flow}: HTTP {status}, {len(lines)} lines")
+        for line in lines[:4]:
+            log("   | " + line[:300])
+        if len(lines) > 1:
+            rows = list(csv_rows("\n".join(lines)))
+            for col in rows[0]:
+                vals = Counter_(r[col] for r in rows)
+                if len(vals) < 400:
+                    log(f"   {col}: {len(vals)} values, e.g. {list(vals)[:12]}")
+                else:
+                    log(f"   {col}: {len(vals)} values")
+    show("https://statistiques.public.lu/fr/publications/recensement.html", r"href=\"[^\"]+\"[^>]*>[^<]{4,}<",
+         limit=80)
+
+
+def aut4() -> None:
+    for i in (1, 2, 3, 4):
+        stem = f"https://data.statistik.gv.at/data/OGD_f0743_VZ_HIS_GEM_{i}"
+        head_lines(stem + "_HEADER.csv", 12)
+    show("https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_f0743_VZ_HIS_GEM_1",
+         r"OGD_[A-Za-z0-9_\-]+\.csv|<title>[^<]*|Religion[^<]{0,80}|Umgangssprache[^<]{0,80}")
+
+
+def deu4() -> None:
+    base = "https://genesis.destatis.de/genesisWS/rest/2020"
+    for term in ("Sprache", "Religion"):
+        body = urllib.parse.urlencode({"term": term, "category": "tables", "pagelength": "60",
+                                       "language": "de"}).encode()
+        status, _, reply = fetch(f"{base}/find/find", data=body,
+                                 headers={"username": "GAST", "password": "GAST",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+        log(f"\n## GENESIS find {term!r}: HTTP {status}, {len(reply):,} bytes")
+        try:
+            data = json.loads(text(reply))
+            log(f"   status: {data.get('Status')}")
+            for row in (data.get("Tables") or [])[:60]:
+                log(f"   - {row.get('Code')} | {row.get('Content')[:170]} | {row.get('Time')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {text(reply)[:300]}")
+
+
+def che4() -> None:
+    import time
+    status, _, body = fetch("https://www.pxweb.bfs.admin.ch/api/v1/de/")
+    dbs = [row.get("dbid") for row in json.loads(text(body))]
+    for dbid in dbs:
+        if not dbid or not re.match(r"px-x-010[2-6]", dbid):
+            continue
+        status, _, body = fetch(f"https://www.pxweb.bfs.admin.ch/api/v1/de/{dbid}/{dbid}.px", timeout=30)
+        try:
+            title = json.loads(text(body)).get("title", "")
+        except Exception:  # noqa: BLE001
+            title = f"HTTP {status} {text(body)[:60]}"
+        log(f"   - {dbid}: {title[:230]}")
+        time.sleep(0.15)
+    show("https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/sprachen-religionen/religionen.html",
+         r"href=\"[^\"]*asset[^\"]*\"[^>]*>[^<]*<|href=\"[^\"]*dam-api[^\"]*\"", limit=40)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "cze4": cze4, "pol4": pol4, "svk4": svk4, "hun4": hun4, "nld4": nld4, "lux4": lux4,
+    "aut4": aut4, "deu4": deu4, "che4": che4,
     "che3": che3, "lie3": lie3, "pol3": pol3, "svk3": svk3, "hun3": hun3, "svn3": svn3,
     "nld3": nld3, "lux3": lux3, "cze3": cze3, "aut3": aut3, "deu3": deu3,
     "aut": aut, "che": che, "lie": lie, "pol": pol, "cze": cze, "svk": svk,
