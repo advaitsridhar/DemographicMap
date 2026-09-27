@@ -1,202 +1,74 @@
-
-=== aut
-
-## https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026
-   HTTP 200, 19,108 bytes, text/html;charset=UTF-8
-   7 distinct matches of 'OGD_[A-Za-z0-9_\\-]+\\.csv|<title>[^<]*'
-   - <title>Statistik Austria Open.data
-   - OGD_bevstandjbab2002_BevStand_2026.csv
-   - OGD_bevstandjbab2002_BevStand_2026_HEADER.csv
-   - OGD_bevstandjbab2002_BevStand_2026_C-A10-0.csv
-   - OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv
-   - OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv
-   - OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv
-
-## https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2025
-   HTTP 200, 19,108 bytes, text/html;charset=UTF-8
-   7 distinct matches of 'OGD_[A-Za-z0-9_\\-]+\\.csv|<title>[^<]*'
-   - <title>Statistik Austria Open.data
-   - OGD_bevstandjbab2002_BevStand_2025.csv
-   - OGD_bevstandjbab2002_BevStand_2025_HEADER.csv
-   - OGD_bevstandjbab2002_BevStand_2025_C-A10-0.csv
-   - OGD_bevstandjbab2002_BevStand_2025_C-C11-0.csv
-   - OGD_bevstandjbab2002_BevStand_2025_C-GRGEMAKT-0.csv
-   - OGD_bevstandjbab2002_BevStand_2025_C-GALTEJ112-0.csv
-
-## https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024
-   HTTP 200, 19,108 bytes, text/html;charset=UTF-8
-   7 distinct matches of 'OGD_[A-Za-z0-9_\\-]+\\.csv|<title>[^<]*'
-   - <title>Statistik Austria Open.data
-   - OGD_bevstandjbab2002_BevStand_2024.csv
-   - OGD_bevstandjbab2002_BevStand_2024_HEADER.csv
-   - OGD_bevstandjbab2002_BevStand_2024_C-A10-0.csv
-   - OGD_bevstandjbab2002_BevStand_2024_C-C11-0.csv
-   - OGD_bevstandjbab2002_BevStand_2024_C-GRGEMAKT-0.csv
-   - OGD_bevstandjbab2002_BevStand_2024_C-GALTEJ112-0.csv
-
-## https://data.statistik.gv.at/web/catalog.jsp
-   HTTP 200, 1,068,146 bytes, text/html;charset=UTF-8
-   55 distinct matches of 'dataset=OGD_bev[^\\"&\'<> ]+'
-   - dataset=OGD_bevstandjbab2002_BevStand_2002
-   - dataset=OGD_bevstandjbab2002_BevStand_2003
-   - dataset=OGD_bevstandjbab2002_BevStand_2004
-   - dataset=OGD_bevstandjbab2002_BevStand_2005
-   - dataset=OGD_bevstandjbab2002_BevStand_2006
-   - dataset=OGD_bevstandjbab2002_BevStand_2007
-   - dataset=OGD_bevstandjbab2002_BevStand_2008
-   - dataset=OGD_bevstandjbab2002_BevStand_2009
-   - dataset=OGD_bevstandjbab2002_BevStand_2010
-   - dataset=OGD_bevstandjbab2002_BevStand_2011
-   - dataset=OGD_bevstandjbab2002_BevStand_2012
-   - dataset=OGD_bevstandjbab2002_BevStand_2013
-   - dataset=OGD_bevstandjbab2002_BevStand_2014
-   - dataset=OGD_bevstandjbab2002_BevStand_2015
-   - dataset=OGD_bevstandjbab2002_BevStand_2016
-   - dataset=OGD_bevstandjbab2002_BevStand_2017
-   - dataset=OGD_bevstandjbab2002_BevStand_2018
-   - dataset=OGD_bevstandjbab2002_BevStand_2019
-   - dataset=OGD_bevstandjbab2002_BevStand_2020
-   - dataset=OGD_bevstandjbab2002_BevStand_2021
-   - dataset=OGD_bevstandjbab2002_BevStand_2022
-   - dataset=OGD_bevstandjbab2002_BevStand_2023
-   - dataset=OGD_bevstandjbab2002_BevStand_2024
-   - dataset=OGD_bevstandjbab2002_BevStand_2025
-   - dataset=OGD_bevstandjbab2002_BevStand_2026
-   - dataset=OGD_bevwan020_AUSSENWAND_100
-   - dataset=OGD_bevwan020_AUSSENWAND_201
-   - dataset=OGD_bevwan020_AUSSENWAND_300
-   - dataset=OGD_bevwan020_AUSSENWAND_202
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_10
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_8
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_9
-   - dataset=OGD_bevstprog_PR_BEVJD_10
-   - dataset=OGD_bevstprog_PR_BEVJD_11
-   - dataset=OGD_bevstprog_PR_BEVJD_9
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_10
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_8
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_9
-   - dataset=OGD_bevjahresanf_PR_BEVJA_10
-   - dataset=OGD_bevjahresanf_PR_BEVJA_11
-   - dataset=OGD_bevjahresanf_PR_BEVJA_9
-   - dataset=OGD_bevbewegung_BEV_BEW_3
-   - dataset=OGD_bevbewegung_BEV_BEW_2
-   - dataset=OGD_bevstprog_PR_BEVJD_4
-   - dataset=OGD_bevstprog_PR_BEVJD_7
-   - dataset=OGD_bevstprog_PR_BEVJD_8
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_4
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_5
-   - dataset=OGD_bevstprogjdgebland_PR_BEVJDGB_7
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_4
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_5
-   - dataset=OGD_bevjahresanfgebland_PR_BEVJAGB_7
-   - dataset=OGD_bevjahresanf_PR_BEVJA_4
-   - dataset=OGD_bevjahresanf_PR_BEVJA_7
-   - dataset=OGD_bevjahresanf_PR_BEVJA_8
-
-=== che
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_101/px-x-0102010000_101.px
-   HTTP 200, 73,063 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Staatsangehörigkeit (Kategorie) (Staatsangehörigkeit (Kategorie)): 3 values; -99999=Staatsangehörigkeit (Kategorie) - Total, 1=Schweiz, 2=Ausland
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
-
-## BFS PxWeb root: HTTP 200, 39,001 bytes
-   650 databases
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2009
-   HTTP 200, 184,344 bytes, text/plain; charset=utf-8
-   HistoricalCode,BfsCode,ValidFrom,ValidTo,Level,Parent,Name,ShortName,Inscription,Radiation,Rec_Type_fr,Rec_Type_de
-   1,1,12.09.1848,,1,,Zürich,ZH,,,,
-   10053,101,12.09.1848,,2,1,Bezirk Affoltern,Affoltern,100,,,
-   10575,13,12.09.1848,,3,10053,Stallikon,Stallikon,,,,
-   11742,2,12.09.1848,,3,10053,Affoltern am Albis,Affoltern am Albis,,,,
-   11801,3,12.09.1848,,3,10053,Bonstetten,Bonstetten,,,,
-   11992,4,01.01.1911,,3,10053,Hausen am Albis,Hausen am Albis,3769,,,
-   12249,5,12.09.1848,,3,10053,Hedingen,Hedingen,,,,
-   12433,9,12.09.1848,,3,10053,Mettmenstetten,Mettmenstetten,,,,
-   12497,10,12.09.1848,,3,10053,Obfeld
-   2829 lines
-
-=== lie
-
-## https://www.statistikportal.li/de
-   HTTP 200, 520,434 bytes, text/html; charset=UTF-8
-   29 distinct matches of 'href=\\"[^\\"]*(?:bev|volks|etab|Bev|Volks)[^\\"]*\\"'
-   - href="/de/themen/bevoelkerung"
-   - href="/de/themen/bevoelkerung/bevoelkerungsstand"
-   - href="/de/themen/bevoelkerung/bevoelkerungsbewegung"
-   - href="/de/themen/bevoelkerung/bevoelkerungsstruktur"
-   - href="/de/themen/bevoelkerung/bevoelkerungsszenarien"
-   - href="/de/themen/bevoelkerung/geburten-todesfaelle"
-   - href="/de/themen/bevoelkerung/ehen-partnerschaften"
-   - href="/de/themen/bevoelkerung/lebenserwartung"
-   - href="/de/themen/bevoelkerung/migration-binnenwanderung"
-   - href="/de/themen/bevoelkerung/einbuergerungen-registrierungen"
-   - href="/de/themen/bevoelkerung/asylwesen"
-   - href="/de/themen/bevoelkerung/haushalte-familien"
-   - href="/de/themen/bevoelkerung/neugeborenennamen"
-   - href="/de/themen/bevoelkerung/familiennamen"
-   - href="/de/themen/volkswirtschaft-und-preise"
-   - href="/de/themen/volkswirtschaft-und-preise/volkswirtschaftliche-gesamtrechnungen"
-   - href="/de/themen/volkswirtschaft-und-preise/warenhandel"
-   - href="/de/themen/volkswirtschaft-und-preise/konsumentenpreisindex"
-   - href="/de/themen/volkswirtschaft-und-preise/baupreisindex"
-   - href="/de/themen/volkswirtschaft-und-preise/bankzinsen"
-   - href="/de/uebergreifendes-indikatoren/volkszaehlung"
-   - href="/de/anwendungen-datenbanken/etab"
-   - href="/de/erhebungen-register/volkszaehlung"
-   - href="/de/volkszaehlung"
-   - href="http://www.llv.li/de/landesverwaltung/amt-fuer-bevoelkerungsschutz"
-   - href="http://www.llv.li/de/landesverwaltung/amt-fuer-volkswirtschaft"
-   - href="/de/news/themen-%3C%3Cbevoelkerungsstand%3E%3E-und-%3C%3Cerwerbstaetigkeit%3E%3E-aktualisiert-7"
-   - href="/de/news/revisionsprogramm-volkswirtschaftliche-gesamtrechnung-vgr-2026-2029"
-   - href="https://etab.llv.li"
-
-## https://etab.llv.li/
-   HTTP 200, 21,826 bytes, text/html; charset=utf-8
-   45 distinct matches of 'href=\\"[^\\"]+\\"|<title>[^<]*'
-   - href="../../Resources/Styles/reset.css"
-   - href="../../Resources/Styles/PxWeb.css"
-   - href="../../Resources/Styles/CommandBar.css"
-   - href="../../Resources/Styles/variableselector.css"
-   - href="../../Resources/Styles/datasort.css"
-   - href="../../Resources/Styles/excel.css"
-   - href="../../Resources/Styles/footnote.css"
-   - href="../../Resources/Styles/tablequery.css"
-   - href="../../Resources/Styles/hierarchical.css"
-   - href="../../Resources/Styles/information.css"
-   - href="../../Resources/Styles/searchvalues.css"
-   - href="../../Resources/Styles/table.css"
-   - href="../../Resources/Styles/tableinformation.css"
-   - href="../../Resources/Styles/tablelist.css"
-   - href="../../Resources/Styles/tableofcontent.css"
-   - href="../../Resources/Styles/textsearch.css"
-   - href="../../Resources/Styles/TreeView.css"
-   - href="../../Resources/Styles/navigationFlow.css"
-   - href="../../Resources/Styles/breadcrumb.css"
-   - href="../../Resources/Styles/search.css"
-   - href="../../Resources/Styles/jQuery/redmond/jquery-ui-1.10.3.custom.css"
-   - href="../../Resources/Styles/jQuery/tablesorter/style.css"
-   - href="../../Resources/Styles/Custom.css"
-   - href="../../Resources/Styles/savequery.css"
-   - href="../../Resources/Styles/selectfromgroup.css"
-   - href="../../LLV_addons/llv.css"
-   - <title> PX-Web - Select table
-   - href="https://www.llv.li/as"
-   - href="https://www.statistikportal.li"
-   - href="/PXWeb/LLV_addons/wegleitung_etab.pdf"
-   - href="#"
-   - href="/PXWeb/LLV_addons/wegleitung_etab_eng.pdf"
-   - href="/PXWeb/pxweb/de/?rxid=60218105-0f00-4a3a-853e-86eafd79888e"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Bev&#246;lkerung')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Arbeit und Erwerb')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Volkswirtschaft und Preise')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Wirtschaftsbereiche und Unternehmen')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Bauen und Wohnen')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Soziales')"
-   - href="javascript:__doPostBack('ctl00$ContentPlaceHolderMain$TableOfContent1$TableOfContent1$MenuNavigationTree','peTab__Gesundheit')"
+== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014
+  651 bytes, begins b'[{"id":"Demograp'
+  json: [{"id": "Demographic And Social Characteristics", "type": "l", "text": "Demographic And Social Characteristics"}, {"id": "Disability", "type": "l", "text": "Disability"}, {"id": "Economic Characteristics", "type": "l", "text": "Economic Characteristics"}, {"id": "Education", "type": "l", "text": "Education"}, {"id": "Households", "type": "l", "text": "Households"}, {"id": "International Migration", "type": "l", "text": "International Migration"}, {"id": "Living Conditions", "type": "l", "text": "Living Conditions"}, {"id": "The Geographical Distribution Of The Population And Internal Migration", "type": "l", "text": "The Geographical Distribution Of The Population And Internal Migration"}]
+== get https://nip.tuik.gov.tr/?value=OrtancaYas
+  16,457 bytes, begins b'<!DOCTYPE html>\n'
+  ~ ns.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> <script type="text/javascript" src="https://
+  ~ ip.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> <script type="text/javascript" src="htt
+  ~ ke.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> <script type="text/javascript" src="https
+== get https://armstat.am/en/?nid=1006
+  163,519 bytes, begins b' <!DOCTYPE html '
+  ~ /> <link href="../css/en.css" rel="stylesheet" type="text/css" /> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--<link href="../font-a
+  ~ css/en.css" rel="stylesheet" type="text/css" /> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--<link href="../font-awesome-4.7.0/css/fon
+  ~ in.css" rel="stylesheet" type="text/css" />--> <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js'></script> <script type="text/javascript" src="../js/common
+  ~ t> <script type="text/javascript" src="../js/common.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://ajax
+  ~ xt/javascript" src="../js/common.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://ajax.googleapis.com/ajax
+  ~ ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script type="text
+  ~ ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script type="text/javascript" src="ht
+  ~ in.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script> <script type="text/javascript" src="../js/canv
+  ~ <div class="langs"> <div class="lang"><a title="հայերեն տարբերակ" href="../am/?nid=1006"><img alt="հայերեն տարբերակ" src="../img/flag_am.gif" width="18" height="12" /></a></
+  ~ eight="12" /></a></div> <div class="lang_sel"><a title="english version" href="../en/?nid=1006"><img alt="english version" src="../img/flag_en.gif" width="18" height="12" /></a></
+  ~ 8" height="12" /></a></div> <div class="lang"><a title="русская версия" href="../ru/?nid=1006"><img alt="русская версия" src="../img/flag_ru.gif" width="18" height="12" /></a></
+  ~ stMenu"><a href="./">Home </a></div> <div class="menuHeaders secondMenu"><a href="./?nid=12" >Statistics</a></div> <div class="menuHeaders thirdMenu"><a href="./?nid=82" >Pub
+  ~ ref="./?nid=12" >Statistics</a></div> <div class="menuHeaders thirdMenu"><a href="./?nid=82" >Publicatiоns</a></div> <div class="menuHeaders fourthMenu"><a href="./?nid=9" t
+  ~ ="./?nid=82" >Publicatiоns</a></div> <div class="menuHeaders fourthMenu"><a href="./?nid=9" target="_parent" >For Respondent</a></div> <div class="menuHeaders fifthMenu"><a
+  ~ t="_parent" >For Respondent</a></div> <div class="menuHeaders fifthMenu"><a href="./?nid=51" target="_parent">About us</a></div> </div> <div id="menu_r2"> <a href="./?n
+  ~ =51" target="_parent">About us</a></div> </div> <div id="menu_r2"> <a href="./?nid=107" target="_parent" title="FAQ"><img src="../img/faq-icon.jpg" width="40" height="35" st
+  ~ .jpg" width="40" height="35" style="float:right;margin-right:10px;"/></a> <a href="./?nid=110" target="_parent" title="Site map"><i class="fa fa-sitemap" aria-hidden="true" style=
+  ~ o" aria-hidden="true" style="position:relative;font-size:16px;"></i></a> <a href="./?nid=792" target="_blank" style="margin-top:2px;"><img src="../img/COVID_19.png" alt="COVID-19
+  ~ play:block;"><img src="../img/ico_nochild.gif" alt="go" /><a id="1" class="1" href="./?nid=1">Statistics</a> <ul> <li id="page_12" style= "display:block;"><img src="../img/ico_noch
+  ~ lay:block;"><img src="../img/ico_nochild.gif" alt="go" /><a id="12" class="1" href="./?nid=12">Statistical Indicators</a> <ul> <li id="page_471" style= "display:none;"><img src="..
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="471" class="1" href="./?nid=471">1</a></li> </ul> </li> <li id="page_13" style= "display:block;"><img src="../img/ico
+  ~ lay:block;"><img src="../img/ico_nochild.gif" alt="go" /><a id="13" class="1" href="./?nid=13">Databases</a> <ul> <li id="page_17" style= "display:block;"><img src="../img/ico_noch
+  ~ g src="../img/ico_nochild.gif" alt="go" /><a id="17" class="1" target="_blank" href="./?nid=17">ArmStatBank.am</a></li> <li id="page_16" style= "display:none;"><img src="../img/ico_
+  ~ g src="../img/ico_nochild.gif" alt="go" /><a id="16" class="1" target="_blank" href="./?nid=16">ArmDevInfo.am</a></li> <li id="page_148" style= "display:none;"><img src="../img/ico_
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="148" class="1" href="./?nid=148">External trade database According to the Commodity Nomenclature at 4-digit level</a><
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="159" class="1" href="./?nid=159">External trade database by country</a></li> <li id="page_160" style= "display:block;
+  ~ ay:block;"><img src="../img/ico_nochild.gif" alt="go" /><a id="160" class="1" href="./?nid=160">External trade database</a> <ul> <li id="page_766" style= "display:none;"><img src="
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="766" class="1" href="./?nid=766">Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="777" class="1" href="./?nid=777">Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="778" class="1" href="./?nid=778">Foreign Trade of the Republic of Armenia (According to the EEU Commodity Nomenclature
+  ~ lay:block;"><img src="../img/ico_nochild.gif" alt="go" /><a id="15" class="1" href="./?nid=15">Microdata</a></li> <li id="page_14" style= "display:none;"><img src="../img/ico_nochi
+  ~ play:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="14" class="1" href="./?nid=14">Statistical databases</a> <ul> <li id="page_202" style= "display:none;"><img src="../
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="202" class="1" href="./?nid=202">National Accounts</a></li> <li id="page_203" style= "display:none;"><img src="../img
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="203" class="1" href="./?nid=203">Foreign accounts</a></li> <li id="page_204" style= "display:none;"><img src="../img/
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="204" class="1" href="./?nid=204">Government finance statistics</a></li> <li id="page_205" style= "display:none;"><img
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="205" class="1" href="./?nid=205">Household’s Integrated Living Conditions Survey anonymised microdata database (by hou
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="206" class="1" href="./?nid=206">Household’s Integrated Living Conditions Survey anonymised microdata database (by hou
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="207" class="1" href="./?nid=207">Household’s Integrated Living Conditions Survey anonymised microdata database (purcha
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="208" class="1" href="./?nid=208">Household’s Integrated Living Conditions Survey Tools</a></li> <li id="page_209" sty
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="209" class="1" href="./?nid=209">Demographic Database</a></li> <li id="page_210" style= "display:none;"><img src="../
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="210" class="1" href="./?nid=210">Population Census Armenian Sample Datafiles</a></li> <li id="page_211" style= "displ
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="211" class="1" href="./?nid=211">Instruction</a></li> <li id="page_212" style= "display:none;"><img src="../img/ico_n
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="212" class="1" href="./?nid=212">Labour Force Survey anonymised micro data database and questionnaire (by household's
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="213" class="1" href="./?nid=213">National Child Labour Survey, 2015</a></li> <li id="page_715" style= "display:none;"
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="715" class="1" href="./?nid=715">Labour Force Survey - World Bank</a></li> <li id="page_716" style= "display:none;"><
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="716" class="1" href="./?nid=716">Integrated Living Conditions Survey - World Bank </a></li> <li id="page_911" style=
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="911" class="1" href="./?nid=911">Government operations</a></li> <li id="page_964" style= "display:none;"><img src="..
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="964" class="1" href="./?nid=964">Wages/salaries, number of payroll employees and number of entities</a></li> <li id="p
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="965" class="1" href="./?nid=965">Labour force survey (LFS)</a></li> <li id="page_966" style= "display:none;"><img src
+  ~ lay:none;"><img src="../img/ico_nochild.gif" alt="go" /><a id="966" class="1" href="./?nid=966">Officially registered jobseekers</a></li> <li id="page_967" style= "display:none;"><
+== get https://brest.belstat.gov.by/ofitsialnaya-statistika/mnogootraslevaya-statistika/perepis-naseleniya-2019
+  64,554 bytes, begins b'<!doctype html>\n'
+  ~ ace":"BX","loaded":true});</script> <script>BX.setJSList(["\/bitrix\/js\/main\/core\/core_ajax.js","\/bitrix\/js\/main\/core\/core_promise.js","\/bitrix\/js\/main\/polyfill\/promise\/j
+  ~ </div> </form> </div> <script> BX.ready(function(){ new JCTitleSearch({ 'AJAX_PAGE' : '/ofitsialnaya-statistika/mnogootraslevaya-statistika/perepis-naseleniya-2019/',
+  ~ ://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/o-belstate/sertifikat_stb_iso_9001.pdf" title="Сертификат соответствия" target="_blank"><img alt="Сертификат соответствия" src="
+  ~ показатели по Брестской области</a><ul><li><a href="/upload/2026/svodn/august-2026_BrReg.xlsx">Основные социально-экономические показатели Брестской области (.xlsx)<a class="docviewe
+  ~ dn/august-2026_BrReg.xlsx">Основные социально-экономические показатели Брестской области (.xlsx)<a class="docviewer" style="margin-left:5px" target="_blank" href="/viewer/?doclink=http
+  ~ k" href="/viewer/?doclink=https://brest.belstat.gov.by/upload/2026/svodn/august-2026_BrReg.xlsx"><i class="fa fa-file" aria-hidden="true"><span>просмотр</span></i></a></a><li><a target
+  ~ em"> <div class="news-header"> <a href="/upload/2026/trud/Брестская область 08.pdf">Номинальная начисленная средняя заработная плата работников Брестской области в августе
+  ~ f="http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/respondent/395uk_2018-10-05.pdf">Указ Президента Республики Беларусь от 24 октября 2016 г. № 384 "О проведении в 2019 год
+  ~ графика и плакаты по переписи населения 2019 </a><ul><li><a href="/upload/2019/demogr/Info.pdf">Этапы проведения переписи населения</a><li><a href="/perepis-naseleniya-2019/infografika
+  ~ iya-2019/infografika-po-perepisi-naseleniya-2019-goda/Главные вопросы о переписи населения.pdf">Главные вопросы о переписи населения</a><li><a href="http://www.belstat.gov.by/informats
+  ~ е показатели по Брестской области</a><ul><li><a href="/upload/2026/svodn/august-2026_BrReg.xlsx">Основные социально-экономические показатели Брестской области (.xlsx)</a><li><a href="h
+  ~ dn/august-2026_BrReg.xlsx">Основные социально-экономические показатели Брестской области (.xlsx)</a><li><a href="https://brest.belstat.gov.by/ofitsialnaya-statistika/publications/publi
