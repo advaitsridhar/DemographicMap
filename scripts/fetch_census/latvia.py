@@ -80,6 +80,16 @@ ETHNICITY = {"Latvians": "Latvian", "Russians": "Russian", "Belarusians": "Belar
                  "Other or not stated"}
 
 
+def ethnic_label(text: str) -> str:
+    """CSB's label for an ethnicity, in the map's words. RIG040 words its
+    residual as "Other ethnicities excluding Latvians, Russians, ...", which
+    names peoples it does not count, so every residual is matched by its
+    first words."""
+    if text.startswith("Other ethnicities"):
+        return "Other or not stated"
+    return ETHNICITY.get(text, text)
+
+
 def url(table: str, lang: str = "en") -> str:
     return f"{EN if lang == 'en' else LV}/{TABLES[table]}"
 
@@ -149,7 +159,7 @@ def main() -> int:
     ethnicity: dict[tuple[str, int], dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for key, value in eth_rows:
         code, when, (cat, text) = key["AREA"][0], int(key["TIME"][0]), key["ETHNICITY"]
-        ethnicity[(code, when)]["__total__" if cat == "TOTAL" else ETHNICITY.get(text, text)] += value
+        ethnicity[(code, when)]["__total__" if cat == "TOTAL" else ethnic_label(text)] += value
 
     def eth_block(counts: dict[str, float], when: int, table: str, experimental: bool = False):
         counts = dict(counts)
@@ -241,7 +251,7 @@ def main() -> int:
     unit_eth: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for key, value in rig:
         code, (cat, text) = key["AllAreaLV"][0], key["ETHNICITY"]
-        unit_eth[code]["__total__" if cat == "TOTAL" else ETHNICITY.get(text, text)] += value
+        unit_eth[code]["__total__" if cat == "TOTAL" else ethnic_label(text)] += value
 
     # Drawn names: "Ainažu pag." for a parish, the town's name for a town.
     def drawn(shape: dict[str, Any]) -> str:

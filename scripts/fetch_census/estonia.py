@@ -242,7 +242,12 @@ def labels_religion(label: str) -> str:
             # religion; "neopagan" is what files them in the group tree.
             "Taara Beliver": "Taara faith (neopagan)",
             "Taara Believer": "Taara faith (neopagan)",
-            "Earth Believer": "Maausk (neopagan)"}.get(bare, bare)
+            "Earth Believer": "Maausk (neopagan)",
+            # The Russian Old Believers of the Peipsi shore: Orthodox by
+            # descent, and the tree reads a bare "Believer" as a Protestant
+            # church.
+            "Old Believer": "Old Believers (Orthodox)",
+            "Old Believers": "Old Believers (Orthodox)"}.get(bare, bare)
 
 
 def composition(rows, place: str, var: str, total_code: str, skip: set[str],

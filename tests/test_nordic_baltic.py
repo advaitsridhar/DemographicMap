@@ -171,6 +171,14 @@ class Estonia(unittest.TestCase):
         drawn = {u["name"] for u in units("EST", "admin2")}
         self.assertTrue(set(estonia.DRAWN) <= drawn)
 
+    def test_faiths_are_filed_by_their_tradition(self):
+        tree = __import__("group_tree")
+        self.assertIn("Orthodoxy", tree.ancestry("religion", estonia.labels_religion("Old Believer")))
+        self.assertIn("Pagan and neo-pagan",
+                      tree.ancestry("religion", estonia.labels_religion("..Earth Believer")))
+        self.assertIn("Pagan and neo-pagan",
+                      tree.ancestry("religion", estonia.labels_religion("Taara Beliver")))
+
     def test_pxweb_withholds_the_eleven_redrawn_counties(self):
         table = pxweb.INSTANCES["EST"]["tables"][0]
         self.assertEqual(len(table.withhold), 11)
@@ -187,6 +195,13 @@ class Latvia(unittest.TestCase):
 
     def test_ethnicity_labels_are_placed(self):
         self.assertEqual(nc.unplaced("ethnicity", set(latvia.ETHNICITY.values())), [])
+
+    def test_every_residual_is_other_or_not_stated(self):
+        self.assertEqual(latvia.ethnic_label(
+            "Other ethnicities excluding Latvians, Russians, Belarusians, Ukrainians, Poles, "
+            "Lithuanians, including not selected and not indicated ethnicity"),
+            "Other or not stated")
+        self.assertEqual(latvia.ethnic_label("Roma"), "Romani")
 
 
 class Lithuania(unittest.TestCase):
