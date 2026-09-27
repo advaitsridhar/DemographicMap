@@ -184,6 +184,32 @@ class UkMidYear(unittest.TestCase):
             combine([a, b], "Cumbria")
 
 
+class BasqueLanguage(unittest.TestCase):
+    def table(self):
+        rows = {"01": (300, 60, 200, 30, 10), "48": (1000, 150, 700, 100, 50),
+                "20": (700, 250, 300, 120, 30)}
+        cells = []
+        for code, (total, *langs) in rows.items():
+            cells.append(({"territorio histórico": (code, code), "lengua": ("10", "Total")}, total))
+            for lang, value in zip(("20", "30", "40", "50"), langs):
+                cells.append(({"territorio histórico": (code, code), "lengua": (lang, lang)}, value))
+        whole = [sum(r[i] for r in rows.values()) for i in range(5)]
+        for lang, value in zip(("10", "20", "30", "40", "50"), whole):
+            cells.append(({"territorio histórico": ("00", "CAPV"), "lengua": (lang, lang)}, value))
+        from scripts.fetch_census import basque_language as m
+        return m, m.tabulate(cells)
+
+    def test_territories_make_the_community(self):
+        m, table = self.table()
+        m.check(table)
+        rows = m.fields(table["20"])["language"]
+        self.assertEqual({r["group"] for r in rows},
+                         {"Basque", "Spanish", "Basque and Spanish", "Other language"})
+        table["01"]["20"] += 5
+        with self.assertRaises(SystemExit):
+            m.check(table)
+
+
 class IrelandAges(unittest.TestCase):
     def test_bands(self):
         from scripts.fetch_census.ireland_age import band
