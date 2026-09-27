@@ -21,10 +21,16 @@ Forbidden, page and file alike. The archive holds the office's own
 workbooks at their own addresses (captured 9 December 2023 and 2 July 2023),
 and those captures are read byte for byte (``id_``), not a copy.
 
-The census asked two more questions this map shows -- "What is your racial
-origin?" (Q11) and "What is the main language that you grew up speaking from
-early childhood?" -- but the chapters that tabulate them are not among the
-captured workbooks; see the report for where that stands.
+The census asked two more questions this map shows:
+
+* "What is your racial origin?" (Q11): Volume 1, Table 4.3, every resident by
+  locality. No workbook of that chapter was captured, so the table is read off
+  the report's own pages (the archive's capture of the Volume 1 PDF), and
+  written as the ethnicity field with ``ethnicity_basis`` "racial origin".
+* "What is the main language that you grew up speaking from early
+  childhood?" (aged 5+): tabulated by locality only for Maltese citizens
+  (Volume 3, Table 3.6) and for everyone only by district. Neither is a
+  locality's population, so language is written as a gap that says so.
 
 **Names.** The census writes each locality's Maltese name with its article
 ("Il-Birgu", "Ħal Qormi", "Raħal Ġdid"); the boundary file writes a short
@@ -55,7 +61,9 @@ import re
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, dated, http_get, log, measure, record, shares, write_json
+from ._shared import (
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares, write_json,
+)
 
 OUT = "malta_census.json"
 YEAR = 2021
@@ -65,8 +73,20 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 ARCHIVE = "https://web.archive.org/web/{stamp}id_/https://nso.gov.mt/wp-content/uploads/{name}"
 CHAPTER_1 = ARCHIVE.format(stamp="20231209013436", name="Census-Vol-1_Chapter-1.xlsx")
 CHAPTER_5 = ARCHIVE.format(stamp="20230702041150", name="Census-Vol-1_Chapter-5.xlsx")
+VOLUME_1 = ARCHIVE.format(stamp="20250628190541",
+                          name="Census-of-Population-2021-volume1.pdf")
 PAGE = "https://nso.gov.mt/census-of-population-and-housing-2021-final-report/"
 NATIONAL = 519562
+
+# Table 4.3 writes Gozo's Żebbuġ without the ", Għawdex" the workbooks give it.
+SPELLINGS = {"Iż-Żebbuġ": "Iż-Żebbuġ, Għawdex"}
+
+LANGUAGE_NOTE = (
+    "The 2021 census asked every resident aged 5 and over \"What is the main language that "
+    "you grew up speaking from early childhood?\", but the NSO tabulates the answer by "
+    "locality only for Maltese citizens (Volume 3, Table 3.6) -- about four residents in "
+    "five -- and for all residents only by district (Table 3.3). Neither is this locality's "
+    "whole population, so no language composition is shown.")
 
 # The census's name -> the boundary file's.
 LOCALITIES = {
@@ -115,7 +135,9 @@ def workbook(url: str):
 
 
 def cell(value: Any) -> str:
-    return re.sub(r"\s+", " ", str(value)).strip() if value is not None else ""
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value).replace("‐", "-")).strip()
 
 
 def number(value: Any) -> float | None:
@@ -162,8 +184,10 @@ def single_years(rows: list[list[Any]], where: str) -> dict[str, Any]:
     if sum(men.values()) != total[0] or sum(women.values()) != total[1]:
         raise SystemExit(f"malta_census: {where}: single years make {sum(men.values()):,.0f} "
                          f"men and {sum(women.values()):,.0f} women against {total}")
-    if sorted(set(men) | set(women)) != list(range(0, 91)):
-        raise SystemExit(f"malta_census: {where}: ages are not 0 to 89 and over 89")
+    # An age nobody in the locality has is printed as dashes and read as no
+    # row at all; what must hold is that every age read is 0 to 89 or "over 89".
+    if not set(men) | set(women) <= set(range(0, 91)):
+        raise SystemExit(f"malta_census: {where}: ages {sorted(set(men) | set(women))}")
     return {"men": total[0], "women": total[1], "ages": men + women}
 
 
@@ -171,7 +195,7 @@ def read_chapter_1() -> dict[str, dict[str, Any]]:
     book = workbook(CHAPTER_1)
     table_12: dict[str, tuple[Any, ...]] = {}
     for row in book["T1.2_pop_sex_age_locality"].iter_rows(values_only=True):
-        name = cell(row[0]) if row else ""
+        name = SPELLINGS.get(cell(row[0]), cell(row[0])) if row else ""
         m, f, t, _, _, _, mean = (number(v) for v in (list(row) + [None] * 8)[1:8])
         if name and t is not None:
             table_12[name] = (m, f, t, mean)
@@ -214,7 +238,7 @@ def read_religion() -> dict[str, dict[str, Any]]:
     total_at = header.index("Total")
     out: dict[str, dict[str, Any]] = {}
     for row in rows[header_at + 1:]:
-        name = cell(row[0]) if row else ""
+        name = SPELLINGS.get(cell(row[0]), cell(row[0])) if row else ""
         if name not in LOCALITIES and name != "MALTA":
             continue
         counts = {label: number(row[i]) or 0.0 for i, label in cols.items()}
@@ -234,6 +258,46 @@ def read_religion() -> dict[str, dict[str, Any]]:
     return out
 
 
+RACIAL_ORIGINS = ("Caucasian", "Asian", "Arab", "African", "Hispanic or Latino",
+                  "More than one racial origin")
+ROW = re.compile(r"^(?P<name>\D+?)\s+" + r"\s+".join([r"([\d,]+)"] * 7) + r"\s*$")
+
+
+def read_racial_origin() -> dict[str, dict[str, Any]]:
+    """Table 4.3 of the Volume 1 report, read off its two pages.
+
+    No workbook of Chapter 4 was captured, so the report's own table is read:
+    each line is a locality and seven counts -- Caucasian, Asian, Arab,
+    African, Hispanic or Latino, more than one racial origin, and the total.
+    """
+    import pdfplumber
+    blob = http_get(VOLUME_1, binary=True, cache=True, timeout=600)
+    out: dict[str, dict[str, Any]] = {}
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text() or ""
+            if "TABLE 4.3. Total population by racial origin and locality" not in text:
+                continue
+            for line in text.splitlines():
+                m = ROW.match(line.replace("‐", "-").strip())
+                if not m:
+                    continue
+                name = SPELLINGS.get(m.group("name").strip(), m.group("name").strip())
+                values = [float(v.replace(",", "")) for v in m.groups()[1:]]
+                counts = dict(zip(RACIAL_ORIGINS, values[:6]))
+                if sum(counts.values()) != values[6]:
+                    raise SystemExit(f"malta_census: Table 4.3 {name}: origins make "
+                                     f"{sum(counts.values()):,.0f} against {values[6]:,.0f}")
+                out[name] = {"counts": counts, "total": values[6]}
+    missing = sorted(set(LOCALITIES) - set(out))
+    if missing:
+        raise SystemExit(f"malta_census: Table 4.3 has no row for {missing}")
+    if sum(out[n]["total"] for n in LOCALITIES) != NATIONAL or out["MALTA"]["total"] != NATIONAL:
+        raise SystemExit("malta_census: Table 4.3's localities do not make Malta")
+    log(f"  table 4.3: {len(LOCALITIES)} localities' racial origin make {NATIONAL:,}")
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -243,6 +307,12 @@ def main() -> int:
     ages = read_chapter_1()
     published_mean = ages.pop("_mean")
     religion = read_religion()
+    origin = read_racial_origin()
+    for name in LOCALITIES:
+        if origin[name]["total"] != ages[name]["men"] + ages[name]["women"]:
+            raise SystemExit(f"malta_census: {name}: Table 4.3 counts "
+                             f"{origin[name]['total']:,.0f}, Table 1.2 "
+                             f"{ages[name]['men'] + ages[name]['women']:,.0f}")
     national = sum((e["ages"] for e in ages.values()), Counter())
     people = sum(national.values())
     mean = sum((a + 0.5) * n for a, n in national.items()) / people
@@ -259,8 +329,9 @@ def main() -> int:
 
     records: list[dict[str, Any]] = []
     for name, drawn in sorted(LOCALITIES.items(), key=lambda kv: kv[1]):
-        a, r = ages[name], religion[name]
+        a, r, o = ages[name], religion[name], origin[name]
         rows = shares(r["counts"], total=r["total"])
+        origins = shares(o["counts"], total=o["total"])
         for level, shapes in (("admin1", admin1), ("admin2", admin2)):
             records.append(record(
                 f"MLT-NSO-{level}-{drawn}", drawn, level=level, parent="MLT", country="MLT",
@@ -282,9 +353,20 @@ def main() -> int:
                                "and over (Table 5.3). Every respondent is in one of the ten "
                                "categories; 'Other religion' is the NSO's 'other religious "
                                "groups'."),
+                ethnicity=origins,
+                ethnicity_year=dated(origins, YEAR),
+                ethnicity_note=(f"Census {YEAR} question \"What is your racial origin?\" "
+                                "(through one's biological parents), all residents (Volume 1, "
+                                "Table 4.3). The questionnaire also offered 'Other'; the NSO "
+                                "publishes none, having coded those answers into the six "
+                                "groups shown. Citizenship is a separate question."),
+                ethnicity_basis="racial origin",
+                language=gap(NOT_AVAILABLE, LANGUAGE_NOTE),
                 sources=[{"field": "population/median age/sex ratio", "name": SOURCE,
                           "url": CHAPTER_1, "year": YEAR, "license": LICENCE},
                          {"field": "religion", "name": SOURCE, "url": CHAPTER_5,
+                          "year": YEAR, "license": LICENCE},
+                         {"field": "ethnicity", "name": SOURCE, "url": VOLUME_1,
                           "year": YEAR, "license": LICENCE}]))
     write_json(args.out or PROCESSED / OUT, records)
     log(f"  {len(records)} records ({len(LOCALITIES)} localities at both levels)")
