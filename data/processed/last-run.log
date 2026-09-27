@@ -7,16 +7,10 @@
   certs = pkcs7.load_der_pkcs7_certificates(blob)
   https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
   unpacked personas_ext_07_2026.rar with 7z
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uruguay_census.py", line 908, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uruguay_census.py", line 759, in main
-    departments, municipios, series_2025, unplaced = tally(
-                                                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uruguay_census.py", line 524, in tally
-    share = most / sum(seen.values())
-            ~~~~~^~~~~~~~~~~~~~~~~~~~
-ZeroDivisionError: float division by zero
+  19 departments' weighted people, men and women make Cuadro 1
+  in the person file and not in Cuadro 14, each under one weighted person: {('16', '9898'): 0.0}
+  the weighted person file makes Cuadro 14's 166 rows, department by department and municipio by municipio
+  2,410,059 of 3,151,118 July rows placed: 2,671,658 weighted people by the February file's addresses, 1,131 by their census segment; 826,662 not placed, 0 placed in another department; segments: {'segment split': 4294, 'segment nearly whole': 7, 'segment whole': 47, 'segment with no placed people': 15}
+  not placed, by department: Montevideo 213,847, Artigas 18,653, Canelones 153,593, Cerro Largo 24,930, Colonia 38,056, Durazno 15,608, Flores 5,545, Florida 17,460, Lavalleja 18,821, Maldonado 105,071, Paysandú 25,809, Río Negro 13,769, Rivera 24,822, Rocha 37,522, Salto 27,694, San José 25,185, Soriano 19,176, Tacuarembó 26,168, Treinta y Tres 14,934
+  July address codes, by shape: {'8 digits placed': 2409099, '8 digits unknown': 738515, '2 other known': 3504}
+uruguay_census: 826,662 weighted people of the July file have no address the February file places, and 0 have one in another department
