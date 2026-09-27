@@ -1,59 +1,40 @@
-== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px ^AGE$
-  HTTP 200 application/json; charset=utf-8 8,814 bytes
-  title: Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021
-  var 'DISTRICT, MUNICIPALITY/COMMUNITY': 416 values
-  var 'SEX': 3 values
-  var 'AGE': 18 values
-    0=Total, 1=0-4, 2=5-9, 3=10-14, 4=15-19, 5=20-24, 6=25-29, 7=30-34, 8=35-39, 9=40-44, 10=45-49, 11=50-54, 12=55-59, 13=60-64, 14=65-69, 15=70-74, 16=75-79, 17=80+
-== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px LANG
-  HTTP 200 application/json; charset=utf-8 935 bytes
-  title: Population Enumerated by Language, Sex and District 1.10.2021
-  var 'LANGUAGE (1)': 35 values
-    0=Total, 1=Greek, 2=English, 3=Russian, 4=Arabic, 5=Romanian, 6=Bulgarian, 7=Indian, 8=Filipino, 9=Sri Lankan, 10=Ukranian, 11=Georgian, 12=Nepalese, 13=French, 14=Vietnamese, 15=German, 16=Chinese, 17=Polish, 18=Turkish, 19=Persian, 20=Armenian, 21=Hebrew, 22=Italian, 23=Latvian, 24=Slovakian, 25=Moldovian, 26=Bengali, 27=Spanish, 28=Swedish, 29=Hungarian, 30=Urdu, 31=Yugoslavian, 32=Dutch, 33=Other languages, 34=Not stated
-  var 'DISTRICT': 6 values
-  var 'SEX': 3 values
-== pxv https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px ETHNIC
-  HTTP 200 application/json; charset=utf-8 1,003 bytes
-  title: Population Enumerated by Ethnic/Religious Group, Citizenship Group and Sex 1.10.2021
-  var 'ETHNIC/RELIGIOUS GROUP (1)': 32 values
-    0=Total, 1=Greek-Cypriot, 2=Maronite, 3=Armenian, 4=Turkish-Cypriot, 5=Latin, 6=Greek, 7=Romanian, 8=British, 9=Russian, 10=Bulgarian, 11=Syrian, 12=Filipino, 13=Indian, 14=Srilankan, 15=Nepalese, 16=Ukranian, 17=Georgian, 18=Egyptian, 19=Vietnamese, 20=Polish, 21=Lebanese, 22=Chinese, 23=German, 24=Moldovan, 25=Bangladeshi, 26=Pakistani, 27=Jewish, 28=Iranian, 29=Cameroonian, 30=Other, 31=Not stated
-  var 'CITIZENSHIP GROUP': 5 values
-  var 'SEX': 3 values
-== px https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/ 
-  HTTP 200 application/json; charset=utf-8 525 bytes
-  l Demography  Demography
-  l Population  Population
-  l Births and Deaths  Births
-  l Deaths  Deaths
-  l Migration  Migration
-  l Marriages  Marriages
-  l Divorces  Divorces
-  l Census of Population and Housing 2021  Census of Population and Housing 2021
-  l Population Census 2011  Population Census 2011
-== px https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/ 
-  HTTP 200 application/json; charset=utf-8 1,332 bytes
-  l Agriculture, Livestock, Fishing  Agriculture, Livestock, Fishing
-  l Business Register  Business Register
-  l Construction  Construction
-  l Education  Education
-  l Energy  Energy
-  l Environment  Environment
-  l External Trade  External Trade
-  l Health  Health
-  l Industry  Industry
-  l Information Society  Information Society
-  l Innovation  Innovation
-  l Labour Cost and Earnings  Labour Cost and Earnings
-  l Labour Market  Labour Market
-  l Living Conditions, Social Protection  Living Conditions, Social Protection, Crime
-  l National Accounts  National Accounts
-  l Population  Population
-  l Price Indices  Price Indices
-  l Public Finance  Public Finance
-  l Research and Development  Research and Development
-  l Services  Services and Transport
-  l Tourism  Tourism
-  l Trade  Trade
-== px https://cystatdb23px.cystat.gov.cy/api/v1/en/ 
-  HTTP 200 application/json; charset=utf-8 45 bytes
-  None None  8.CYSTAT-DB
+
+=== deu11
+
+## https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/07_RP_Regionaltabelle_Bevoelkerung_Z22.xlsx: HTTP 200, 336,398 bytes
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+   sheet 'Bevölkerung': 2488 rows x 7 cols
+     Zensus 2022 - Ausgewählte Erge
+     Bevölkerung nach Zensus und Ve
+     Amtlicher  Gemeinde-schlüssel  | Name | Regionalebene | Bevölkerung Zensus 2022* | Bevölkerung Bevölkerungsfortsc | Veränderung Zensus 2022 zur Be
+     absolut | %
+     07 | Rheinland-Pfalz | Land | 4094169 | 4150696 | -56527 | -1.3618679855137548
+     071 | früher: Reg.-Bez. Koblenz | Regierungsbezirk | 1517589 | 1520358 | -2769 | -0.1821281566578398
+     07111 | Koblenz, kreisfreie Stadt | Stadtkreis/kreisfreie Stadt/La | 112963 | 115098 | -2135 | -1.8549410067942103
+     071110000000 | Koblenz, Stadt | Gemeinde | 112963 | 115098 | -2135 | -1.8549410067942103
+     07131 | Ahrweiler | Stadtkreis/kreisfreie Stadt/La | 127699 | 128112 | -413 | -0.3223741725989759
+     > 07 | Rheinland-Pfal | Land | 4094169 | 4150696 | -56527 | -1.36186798551
+     > 071 | früher: Reg.-B | Regierungsbezi | 1517589 | 1520358 | -2769 | -0.18212815665
+     > 07111 | Koblenz, kreis | Stadtkreis/kre | 112963 | 115098 | -2135 | -1.85494100679
+     > 072 | früher: Reg.-B | Regierungsbezi | 521418 | 544027 | -22609 | -4.15585991136
+     > 07211 | Trier, kreisfr | Stadtkreis/kre | 102727 | 111506 | -8779 | -7.87311893530
+     > 073 | früher: Reg.-B | Regierungsbezi | 2055162 | 2086311 | -31149 | -1.49301805914
+     > 07311 | Frankenthal (P | Stadtkreis/kre | 47992 | 49124 | -1132 | -2.30437260809
+   sheet 'Bevölkerung_nachrichtlich': 2477 rows x 5 cols
+     Zensus 2022 - Bevölkerungszahl
+     Bevölkerungszahlen des Zensus 
+     Amtlicher  Gemeinde-schlüssel  | Name | Regionalebene | Bevölkerung (nachrichtlich) Ze | Abweichung Bevölkerung (nachri
+     07 | Rheinland-Pfalz | Land | 4094318 | 149
+     071 | früher: Reg.-Bez. Koblenz | Regierungsbezirk | 1517589 | –
+     07111 | Koblenz, kreisfreie Stadt | Stadtkreis/kreisfreie Stadt/La | 112963 | –
+     071110000000 | Koblenz, Stadt | Gemeinde | 112963 | –
+     07131 | Ahrweiler | Stadtkreis/kreisfreie Stadt/La | 127699 | –
+     071310007007 | Bad Neuenahr-Ahrweiler, Stadt | Gemeinde | 25930 | –
+     > 07 | Rheinland-Pfal | Land | 4094318 | 149
+     > 071 | früher: Reg.-B | Regierungsbezi | 1517589 | –
+     > 07111 | Koblenz, kreis | Stadtkreis/kre | 112963 | –
+     > 072 | früher: Reg.-B | Regierungsbezi | 521504 | 86
+     > 07211 | Trier, kreisfr | Stadtkreis/kre | 102780 | 53
+     > 073 | früher: Reg.-B | Regierungsbezi | 2055225 | 63
+     > 07311 | Frankenthal (P | Stadtkreis/kre | 47992 | –
