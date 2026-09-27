@@ -271,6 +271,9 @@ class Lithuania(unittest.TestCase):
         # The nine cities of 2011 are today's seven state cities and three towns.
         self.assertEqual(set(latvia.OLD_CITIES.values()),
                          set(latvia.STATE_CITIES) | set(latvia.CITY_TOWNS) - {"LV0040010"})
+        # A county of one parish, listed with nothing beneath it.
+        self.assertEqual(latvia.place_census_units({"old": ["Carnikavas novads"]}, new),
+                         ({"old": "M3"}, {"old": "e"}))
         with self.assertRaises(SystemExit):     # parts in two municipalities
             latvia.place_census_units({"old": ["Aizkraukle", "Carnikavas pagasts"]}, new)
         with self.assertRaises(SystemExit):     # only a shared name: nothing decides

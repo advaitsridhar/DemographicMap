@@ -180,23 +180,32 @@ def place_census_units(old: dict[str, list[str]], new: dict[str, tuple[str, str]
         where[fold(name)].add(admin1)
         code_of[(fold(name), admin1)] = code
     def key(name: str) -> str:
-        """The name folded, and without "pilsēta" (city) where only that differs."""
-        if where.get(fold(name)):
-            return fold(name)
-        return fold(re.sub(r"\s+(?:republikas\s+)?(?:pilsēta|city)$", "", name.strip()))
+        """The name folded; failing that, without "pilsēta" (city), or -- for a
+        county TSG11-01 lists with nothing beneath it, a county of one parish
+        (Skrīveru novads) -- as the parish of the same name."""
+        name = name.strip()
+        for form in (name, re.sub(r"\s+(?:republikas\s+)?(?:pilsēta|city)$", "", name),
+                     re.sub(r"\s+novads$", " pagasts", name)):
+            if where.get(fold(form)):
+                return fold(form)
+        return fold(name)
 
     placed: dict[str, str] = {}
     single: dict[str, str] = {}
+    failed = []
     for unit, names in old.items():
         names = [key(n) for n in names]
         found = [where[n] for n in names if where.get(n)]
         decisive = {next(iter(s)) for s in found if len(s) == 1}
         if len(decisive) != 1 or 2 * len(found) < len(names):
-            raise SystemExit(f"TSG11-01 {unit}: its parts {names} point to {sorted(decisive)} "
-                             f"({len(found)} of {len(names)} found)")
+            failed.append(f"{unit}: parts {names} point to {sorted(decisive)} "
+                          f"({len(found)} of {len(names)} found)")
+            continue
         placed[unit] = decisive.pop()
         if len(names) == 1 and (names[0], placed[unit]) in code_of:
             single[unit] = code_of[(names[0], placed[unit])]
+    if failed:
+        raise SystemExit(f"TSG11-01: {len(failed)} units of 2011 not placed: " + "; ".join(failed))
     return placed, single
 
 
