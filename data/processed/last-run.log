@@ -1,16 +1,3 @@
-denmark: Statistics Denmark FOLK1A and KM6
-  FOLK1A 2026K3: 40,005 rows
-    FOLK1A regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
-    FOLK1A kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
-    FOLK1A kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
-    FOLK1A kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
-    FOLK1A kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
-    FOLK1A kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
-  Denmark 1 July 2026: 6,031,699 people, median age 42.1
-  KM6 2026: 8,316 rows, 99 areas
-    KM6 members and non-members make FOLK1A 2026K1 in all 99 kommuner
-  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
-    office units with no polygon (1): Christiansø (411)
-  labels the group tree cannot place: ['Not a member of the national church']
-  wrote data/processed/denmark_kommune.json (250 kB)
-  wrote denmark_kommune.json: 103 records
+romania_census: RPL 2021, definitive results, through the Internet Archive
+  Tabel-1.03_1.3.1-si-1.03.2.xls: 769,536 bytes, Archive capture 20230601
+romania_census: no ROMÂNIA row
