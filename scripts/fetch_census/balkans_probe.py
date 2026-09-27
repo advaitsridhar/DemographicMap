@@ -11,6 +11,7 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
     xlsrow:URL~~SHEET~~REGEX[~~N]  rows of one sheet whose text matches REGEX
     zip:URL                      a zip archive's members
     px:URL                       a PxWeb API node: its children, or a table's variables
+    pxtree:URL~~REGEX~~DEPTH~~N  walk a PxWeb tree, printing tables whose title matches
     pxq:URL~~B64JSON             POST a PxWeb query (base64 of the JSON body)
     cdx:URLPREFIX[~~N]           Internet Archive captures under a URL prefix
     pdf:URL~~REGEX[~~N]          lines of a PDF's text matching REGEX
@@ -41,7 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import USER_AGENT  # noqa: E402
 
 TIMEOUT = 60
-MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxq", "cdx", "pdf")
+MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf")
 
 
 def uri(url: str) -> str:
@@ -135,6 +136,41 @@ def probe(arg: str) -> None:
                 f = line.split(" ")
                 if len(f) >= 7:
                     say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
+            return
+        if mode == "pxtree":
+            rx = re.compile(extra[0], re.I) if extra and extra[0] else None
+            depth = int(extra[1]) if len(extra) > 1 else 4
+            limit = int(extra[2]) if len(extra) > 2 else 150
+            shown = [0]
+
+            def walk(path: str, level: int) -> None:
+                if shown[0] >= limit:
+                    return
+                status, headers, body = fetch(path)
+                if status != 200:
+                    say(f"  {path} HTTP {status}")
+                    return
+                try:
+                    nodes = json.loads(decode(body, headers).lstrip("﻿"))
+                except ValueError:
+                    say(f"  {path}: not JSON")
+                    return
+                if not isinstance(nodes, list):
+                    return
+                for node in nodes:
+                    nid = node.get("id") or node.get("dbid")
+                    text = node.get("text", "")
+                    child = path.rstrip("/") + "/" + urllib.parse.quote(str(nid))
+                    if node.get("type") == "t":
+                        if rx is None or rx.search(text) or rx.search(str(nid)):
+                            say(f"  T {child}  {text[:150]}")
+                            shown[0] += 1
+                            if shown[0] >= limit:
+                                return
+                    elif level < depth:
+                        say(f"  {'  ' * level}l {nid}  {text[:80]}")
+                        walk(child + "/", level + 1)
+            walk(url, 0)
             return
         if mode == "pxq":
             body_json = base64.b64decode(extra[0]).decode()
