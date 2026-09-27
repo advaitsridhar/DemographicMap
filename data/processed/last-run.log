@@ -1,264 +1,92 @@
-
-== collection
-  200 45,570,908 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
-      {   "class": "collection",   "link": {     "item": [       {         "dimension": {           "STATISTIC": {     
-
-  collection came from https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadCollection
-  13077 datasets in the collection
-
-== 237 datasets matching ['age', 'sex'], broken down by 'Electoral'
-  A0105     2021-07-19  1996 Population and Percentage Change 1996 and 2002
-      by: Towns by Electoral Division
-  AVA17     2020-11-02  Farms
-      by: Age of Holder; Selected Electoral Divisions
-  AVA43     2022-12-08  Age of Farm Holder
-      by: Electoral Division
-  B0105     2020-05-01  2002 Population and Percentage Change 1996 and 2002
-      by: Towns by Electoral Division
-  B0540     2020-05-22  2002 Population Aged 15 Years and Over
-      by: Principal Economic Status; Electoral Division
-  B0541     2020-05-05  2002 Population Aged 15 Years and Over
-      by: Principal Economic Status; Electoral Division
-  C0105     2021-07-16  Population and Percentage Change 2002 and 2006
-      by: Towns by Electoral Division
-  CD114     2021-07-16  Population and Percentage Change 2006 and 2011
-      by: Sex; Towns by Electoral Division
-  CD120     2020-05-08  Population of Inhabited Islands Off the Coast
-      by: Sex; Islands by Electoral Division
-  CD220     2020-05-12  Top 5 Electoral Division - Youngest average age
-      by: Electoral Division
-  CD221     2020-05-12  Top 5 Electoral Division - Oldest average age
-      by: Electoral Division
-  CD222     2020-05-12  Top 5 Electoral Division - Population aged 65 yrs and over
-      by: Electoral Division
-  CD223     2020-05-12  Top 5 Electoral Division - Population under 10 years of age
-      by: Electoral Division
-  CDC43     2022-04-22  COVID-19 Vaccination Rate Decile
-      by: Local Electoral Area; Age Group
-  CDC45     2022-07-27  COVID-19 Vaccination Rates
-      by: Local Electoral Area; Age Group
-  CDC47     2023-08-01  COVID-19 Vaccination Rates
-      by: Local Electoral Area; Age Group
-  CDP08     2020-10-30  Population and Actual and Percentage Change 2006 and 2011
-      by: Electoral Division
-  CNA35     2020-05-11  Population of Offshore Islands since 1841
-      by: Sex; Islands by Electoral Division
-  E3018     2021-02-25  Age Group of Population 2011 to 2016
-      by: Electoral Division
-  E3022     2020-07-10  Top 25 Electoral Divisions Percentage of Population Aged 65 Years and Over 2016
-      by: Electoral Division
-  EP008     2020-11-09  Population and Actual and Percentage Change 2011 to 2016
-      by: Electoral Division
-  F1012     2026-02-06  Age Group of the Population
-      by: Electoral Divisions
-  F1016     2023-08-15  Population
-      by: Sex; CSO Local Electoral Areas
-  F1060     2026-02-06  Population
-      by: Sex; Electoral Divisions
-  F3055     2026-02-06  Population aged 18 years and over  living with their parents
-      by: Sex; Electoral Divisions
-  F3056     2023-08-31  Population aged 18 years and over living with their parents
-      by: Sex; CSO Local Electoral Areas
-  F3075     2023-08-31  Average Number of Children in Family units in Private households
-      by: CSO Local Electoral Areas
-  F4003     2023-09-28  Persons with a Disability to a great extent or lesser extent as a Percentage of the Population
-      by: Age Group; Sex; CSO Local Electoral Areas 2022
-  F4004     2026-02-06  Persons with a Disability to a great extent or lesser extent as a Percentage of the Population
-      by: Sex; Age Group; Electoral Divisions
-  F4043     2023-09-28  Population
-      by: Sex; Smoking Tobacco Products; Age Group; CSO Local Electoral Areas
-  ... and 207 more
-
-== dimensions offered by the matching tables (counts of tables, not of categories)
-   118 tables  Sex
-    66 tables  Electoral Division
-    28 tables  CSO Local Electoral Areas 2022
-    26 tables  Local Electoral Area 2008
-    26 tables  Local Electoral Area 2014
-    26 tables  Local Electoral Area 2019
-    25 tables  CSO Electoral Divisions 2022
-    14 tables  Age
-    13 tables  CSO Local Electoral Areas
-    11 tables  Age of Children
-    10 tables  Electoral Divisions
-     9 tables  Age Group
-     8 tables  Type of Service
-     7 tables  Principal Economic Status
-     7 tables  Age Education Ceased
-     7 tables  Education Not Ceased
-     7 tables  Highest Level of Education Completed
-     7 tables  Time Leaving Home
-     7 tables  Journey Time
-     7 tables  General Health
-     7 tables  Occupation
-     7 tables  Industry
-     7 tables  Marital Status
-     7 tables  Usual Residence 1 Year Ago
-     7 tables  Language
-     7 tables  Ability to speak English
-     7 tables  Type of Sewerage
-     7 tables  Social Class
-     6 tables  Local Electoral Area
-     6 tables  Number of Children
-     5 tables  Field of Study
-     5 tables  Means of Travel
-     5 tables  Irish Speaker
-     5 tables  Frequency of Speaking Irish
-     4 tables  Towns by Electoral Division
-     4 tables  Type of Family
-     3 tables  Age of Youngest Child
-     3 tables  Age of Child
-     2 tables  Islands by Electoral Division
-     2 tables  Religion
-
-======================================================================
-
-== metadata for A0105
-  200   137,896 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/A0105/JSON-stat/2.0/en
-      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["A0105C1","A0105C2","A0105C3","A0105C4","A0105C5"],"la
-  label: 1996 Population and Percentage Change 1996 and 2002
-  updated: 2021-07-19T11:00:00.000Z
-  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/census/censusreports1821-2006/]statistical release page[/url] on our website.\nThis table was updated 19/07 to reflect change of spelling to a town name. No data has been changed"]
-  extension: {"matrix": "A0105", "reasons": ["Unplanned Revision"], "language": {"code": "en", "name": "English"}, "elimination": {"C02798V03367": null}, "contact": {"name": "Bernie Casey", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 14, "value": "Census 1996"}, "product": {"code": "C1996P1", "value": "Volume 1 - Population Classified by Area 1996"}, "official": true, "copyrigh
-
-  dimension 'STATISTIC': Statistic -- 5 categories
-      A0105C1      Population 1991
-      A0105C2      Population 1996
-      A0105C3      Males 1996
-      A0105C4      Females 1996
-      A0105C5      Percentage change since previous census
-
-  dimension 'TLIST(A1)': CensusYear -- 1 categories
-      1996         1996
-
-  dimension 'C02798V03367': Towns by Electoral Division -- 1969 categories
-      -            State
-      01           Carlow
-      100100       Carlow Town Total, Co. Carlow
-      100200       Carlow Town (ED 001 Carlow Urban), Co. Carlow
-      100300       Carlow Town (ED 002 Graigue Urban), Co. Carlow
-      100400       Carlow Town (ED 019 Carlow Rural (pt.)), Co. Carlow
-      100500       Carlow Town (ED 012 Ballinacarrig (pt.)), Co. Carlow
-      100600       Environs of Carlow Total (pt.)(a), Co. Carlow
-      100700       Environs of Carlow (ED 019 Carlow Rural (pt.)), Co. Carlow
-      100800       Environs of Carlow (ED 012 Ballinacarrig (pt.)), Co. Carlow
-      100900       Tullow Total, Co. Carlow
-      101000       Tullow (ED 048 Tullow Urban), Co. Carlow
-      101100       Tullow (ED 046 Tullowbeg (pt.)), Co. Carlow
-      101200       Tullow (ED 047 Tullow Rural (pt.)), Co. Carlow
-      ... and 1955 more
-
-======================================================================
-
-== metadata for AVA17
-  200   131,497 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/AVA17/JSON-stat/2.0/en
-      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["AVA17"],"label":{"AVA17":"Farms"},"unit":{"AVA17":{"d
-  label: Farms
-  updated: 2020-11-02T11:00:00.000Z
-  note: ["Results of the 1991 and 2000 Censuses were based solely on data provided by respondents, while the 2010 Census is based on a combination of both respondents and administrative data (The Single Farm Payment (SFP) and Animal Movement Identification (AIM) Systems). For a small proportion of Electoral Districts (EDs) some or all of the Census of Agriculture details are not being made available at th
-  extension: {"matrix": "AVA17", "language": {"code": "en", "name": "English"}, "elimination": {"C02076V02508": null, "C02394V03822": null}, "contact": {"name": "Sophie Emersion", "email": "agri@cso.ie", "phone": "(+353) 21 453 5453"}, "subject": {"code": 3, "value": "Agriculture"}, "product": {"code": "COA9110", "value": "Census of Agriculture 1991 to 2010"}, "official": true, "copyright": {"name": "Central S
-
-  dimension 'STATISTIC': Statistic -- 1 categories
-      AVA17        Farms
-
-  dimension 'C02076V02508': Age of Holder -- 5 categories
-      455          Under 35 years
-      465          35 - 44 years
-      500          45 - 54 years
-      535          55 - 64 years
-      575          65 years and over
-
-  dimension 'C02394V03822': Selected Electoral Divisions -- 2828 categories
-      01003        003 Clonmore, Co. Carlow
-      01004        004 Hacketstown, Co. Carlow
-      01005        005 Haroldstown, Co. Carlow
-      01006        006 Kineagh, Co. Carlow
-      01007        007 Rahill, Co. Carlow
-      01008        008 Rathvilly, Co. Carlow
-      01009        009 Tiknock, Co. Carlow
-      01010        010 Williamstown, Co. Carlow
-      01011        011 Agha, Co. Carlow
-      01012        012 Ballinacarrig (Part Rural), Co. Carlow
-      01013        013 Ballintemple, Co. Carlow
-      01014        014 Ballon, Co. Carlow
-      01015        015 Ballyellin, Co. Carlow
-      01016        016 Ballymoon, Co. Carlow
-      ... and 2814 more
-
-  dimension 'TLIST(A1)': Year -- 3 categories
-      1991         1991
-      2000         2000
-      2010         2010
-
-======================================================================
-
-== metadata for AVA43
-  200   349,168 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/AVA43/JSON-stat/2.0/en
-      {"class":"dataset","dimension":{"STATISTIC":{"category":{"index":["COAAFHC01","COAAFHC02"],"label":{"COAAFHC01":"Average
-  label: Age of Farm Holder
-  updated: 2022-12-08T11:00:00.000Z
-  note: ["", "For more information, please go to the [url=https://www.cso.ie/en/statistics/agriculture/censusofagriculture/]statistical release page[/url] on our website."]
-  extension: {"matrix": "AVA43", "reasons": ["Unplanned Revision"], "language": {"code": "en", "name": "English"}, "elimination": {"C03904V04656": "-"}, "contact": {"name": "Sophie Emersion", "email": "agri@cso.ie", "phone": "(+353) 21 453 5453"}, "subject": {"code": 3, "value": "Agriculture"}, "product": {"code": "COA", "value": "Census of Agriculture 2020"}, "official": true, "copyright": {"name": "Central S
-
-  dimension 'STATISTIC': Statistic -- 2 categories
-      COAAFHC01    Average Age of Holder
-      COAAFHC02    Median Age of Holder
-
-  dimension 'TLIST(A1)': Census Year -- 3 categories
-      2000         2000
-      2010         2010
-      2020         2020
-
-  dimension 'C03904V04656': Electoral Division -- 3410 categories
-      -            State
-      3576C59993454152E0530100007F0280 Brisha / Capard, Co.Laois, 08045/08046
-      3576C59992AD4152E0530100007F0280 Firry / Newgrove, Co.Longford, 09024/09035
-      2AE1962918C813A3E055000000000001 Fair Gate, Co.Louth, 10001
-      2AE19629193513A3E055000000000001 St. Laurence Gate, Co.Louth, 10002
-      2AE19629191E13A3E055000000000001 West Gate, Co.Louth, 10003
-      2AE19629193613A3E055000000000001 Dundalk Urban No. 1, Co.Louth, 10004
-      2AE19629193713A3E055000000000001 Dundalk Urban No. 2, Co.Louth, 10005
-      2AE1962918E313A3E055000000000001 Dundalk Urban No. 3, Co.Louth, 10006
-      2AE19629193813A3E055000000000001 Dundalk Urban No. 4, Co.Louth, 10007
-      2AE19629194E13A3E055000000000001 Ardee Rural, Co.Louth, 10008
-      2AE19629194F13A3E055000000000001 Ardee Urban, Co.Louth, 10009
-      2AE19629185813A3E055000000000001 Carlow Urban, Co.Carlow, 01001
-      2AE19629195E13A3E055000000000001 Castlebellingham, Co.Louth, 10010
-      ... and 3396 more
-
-======================================================================
-
-== metadata for B0105
-  200   138,026 B  https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadMetadata/B0105/JSON-stat/2.0/en
-      {"class":"dataset","dimension":{"C02798V03367":{"category":{"index":["-","01","100100","100200","100300","100400","10050
-  label: 2002 Population and Percentage Change 1996 and 2002
-  updated: 2020-05-01T11:00:00.000Z
-  note: ["Note 1 Towns with legally defined boundaries are listed in Appendix 3.Note 2 The composition of Towns and Boroughs whose boundaries have been extended is shown in Appendix 4.(a) Towns which are located in more than one County are listed in Appendix 5.", "For more information, please go to the [url=https://www.cso.ie/en/census/censusreports1821-2006/]statistical release page[/url] on our website.
-  extension: {"matrix": "B0105", "language": {"code": "en", "name": "English"}, "elimination": {"C02798V03367": null}, "contact": {"name": "Bernie Casey", "email": "census@cso.ie", "phone": "(+353) 1 895 1460"}, "subject": {"code": 13, "value": "Census 2002"}, "product": {"code": "C2002P1", "value": "Volume 1 - Population Classified by Area 2002"}, "official": true, "copyright": {"name": "Central Statistics Of
-
-  dimension 'C02798V03367': Towns by Electoral Division -- 1969 categories
-      -            State
-      01           Carlow
-      100100       Carlow Town Total, Co. Carlow
-      100200       Carlow Town (ED 001 Carlow Urban), Co. Carlow
-      100300       Carlow Town (ED 002 Graigue Urban), Co. Carlow
-      100400       Carlow Town (ED 019 Carlow Rural (pt.)), Co. Carlow
-      100500       Carlow Town (ED 012 Ballinacarrig (pt.)), Co. Carlow
-      100600       Environs of Carlow Total (pt.)(a), Co. Carlow
-      100700       Environs of Carlow (ED 019 Carlow Rural (pt.)), Co. Carlow
-      100800       Environs of Carlow (ED 012 Ballinacarrig (pt.)), Co. Carlow
-      100900       Tullow  Total, Co. Carlow
-      101000       Tullow (ED 048 Tullow Urban), Co. Carlow
-      101100       Tullow (ED 046 Tullowbeg (pt.)), Co. Carlow
-      101200       Tullow (ED 047 Tullow Rural (pt.)), Co. Carlow
-      ... and 1955 more
-
-  dimension 'TLIST(A1)': CensusYear -- 1 categories
-      2002         2002
-
-  dimension 'STATISTIC': Statistic -- 5 categories
-      B0105C1      Population 1996
-      B0105C2      Population 2002
-      B0105C3      Males 2002
-      B0105C4      Females 2002
-      B0105C5      Percentage change since previous census
+== search 'single*year': 0 datasets
+== search 'main*language': 0 datasets
+== search 'ts024': 1 datasets
+  NM_2043_1    TS024 - Main language (detailed)
+== search 'population*estimates': 0 datasets
+== NM_2002_1: Population estimates - local authority based by single year of age
+  dimension GEOGRAPHY (CL_2002_1_GEOGRAPHY)
+  dimension GENDER (CL_2002_1_GENDER)
+  dimension C_AGE (CL_2002_1_C_AGE)
+  dimension MEASURES (CL_2002_1_MEASURES)
+  dimension FREQ (CL_2002_1_FREQ)
+  geography/TYPE: 14 codes
+    TYPE423: local authorities: county / unitary (as of April 2023)
+    TYPE424: local authorities: district / unitary (as of April 2023)
+    TYPE431: local authorities: county / unitary (as of April 2021)
+    TYPE432: local authorities: district / unitary (as of April 2021)
+    TYPE433: local authorities: county / unitary (as of April 2019)
+    TYPE434: local authorities: district / unitary (as of April 2019)
+    TYPE442: combined authorities (as of May 2025)
+    TYPE446: local authorities: county / unitary (as of April 2015)
+    TYPE448: local authorities: district / unitary (as of April 2015)
+    TYPE462: former metropolitan counties
+    TYPE463: local authorities: county / unitary (prior to April 2015)
+    TYPE464: local authorities: district / unitary (prior to April 2015)
+    TYPE480: regions
+    TYPE499: countries
+  c_age: 121 codes
+    200: All Ages
+    201: Aged 0 to 15
+    202: Aged 16+
+    203: Aged 16 to 64
+    250: Aged 16 to 24
+    204: Aged 16 to 17
+    205: Aged 18 to 24
+    206: Aged 18 to 21
+    207: Aged 25 to 49
+    208: Aged 50 to 64
+    209: Aged 65+
+    0: All Ages
+    1: Age 0 - 4
+    101: Age 0
+    102: Age 1
+    103: Age 2
+    104: Age 3
+    105: Age 4
+    3: Aged 5-9
+    106: Age 5
+    107: Age 6
+    108: Age 7
+    109: Age 8
+    110: Age 9
+    4: Aged 10-14
+    111: Age 10
+    112: Age 11
+    113: Age 12
+    114: Age 13
+    115: Age 14
+    5: Aged 15-19
+    116: Age 15
+    117: Age 16
+    118: Age 17
+    119: Age 18
+    120: Age 19
+    6: Aged 20-24
+    121: Age 20
+    122: Age 21
+    123: Age 22
+    124: Age 23
+    125: Age 24
+    7: Aged 25-29
+    126: Age 25
+    127: Age 26
+    128: Age 27
+    129: Age 28
+    130: Age 29
+    8: Aged 30-34
+    131: Age 30
+    132: Age 31
+    133: Age 32
+    134: Age 33
+    135: Age 34
+    9: Aged 35-39
+    136: Age 35
+    137: Age 36
+    138: Age 37
+    139: Age 38
+    140: Age 39
+  gender: 3 codes
+    0: Total
+    1: Male
+    2: Female
+  NM_2002_1/date: TypeError: 'NoneType' object is not subscriptable
