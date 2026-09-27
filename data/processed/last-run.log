@@ -1,3 +1,12 @@
-switzerland_religion: BFS structural survey, religion by canton, 2024
-  2024: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften*', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
-switzerland_religion: categories this reader does not know: ['Islamische Glaubensgemeinschaften*']
+switzerland_census: Census 2000 by commune, carried to the units drawn in 01-01-2009
+  religion: 3344 rows; the whole population's columns: ['Protestantisch', 'Römisch-katholisch', 'Christkatholisch', 'Christlich-orthodox', 'Andere christliche Gemeinschaften', 'Jüdische Glaubensgemeinschaft', 'Islamische Gemeinschaften', 'Andere Kirchen und Religionsgemeinschaften', 'Keine Zugehörigkeit', 'Ohne Angabe']
+  language: 3344 rows; the whole population's columns: ['Landessprachen der Schweiz', 'Deutsch', 'Französisch', 'Italienisch', 'Rätoromanisch', 'Nicht-Landessprachen', 'Serbisch und Kroatisch', 'Albanisch', 'Portugiesisch', 'Spanisch', 'Englisch', 'Türkisch', 'Arabisch', 'Niederländisch', 'Andere Sprachen']
+  religion: communes against 2000: parts sum to 7,288,010 = 7,288,010
+  religion: the workbook's national row: parts sum to 7,288,010 = 7,288,010
+  language: communes against 2000: parts sum to 7,288,010 = 7,288,010
+  language: the workbook's national row: parts sum to 7,288,010 = 7,288,010
+  2896 communes in the census, 2896 in the register on 05-12-2000; census only []; register only (not lakes) []
+  drawn units against 2000: parts sum to 7,288,010 = 7,288,010
+  168 units written, 0 left out
+  wrote data/processed/switzerland_census.json (669 kB)
+  wrote switzerland_census.json: 168 records
