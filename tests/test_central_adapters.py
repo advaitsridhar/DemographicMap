@@ -427,6 +427,12 @@ class LuxembourgBeforeTheMergers(unittest.TestCase):
         with self.assertRaises(SystemExit):
             luxembourg.read_popcom(bad)
 
+    def test_a_table_that_starts_in_column_b_with_figures_as_text_reads_the_same(self):
+        shifted = [[None, *r] for r in self.POPCOM]
+        shifted[2][4] = "2293"                      # a figure stored as text
+        out, total = luxembourg.read_popcom(shifted)
+        self.assertEqual((out["Rosport"], total), (2293.0, 3596.0))
+
     def test_the_2011_age_groups_make_each_communes_total(self):
         ages = luxembourg.read_rp2011_ages(self.AGES)
         self.assertEqual(ages["Rosport"][(0, 4)], 10.0)

@@ -200,32 +200,55 @@ def text_of(cell: Any) -> str:
     return " ".join(str(cell if cell is not None else "").split())
 
 
+def num(cell: Any) -> float | None:
+    """A cell's figure, whether the sheet stores it as a number or as text."""
+    if isinstance(cell, bool):
+        return None
+    if isinstance(cell, (int, float)):
+        return float(cell)
+    text = text_of(cell).replace(" ", "").replace("\u202f", "")
+    return float(text) if re.fullmatch(r"\d+(?:\.\d+)?", text) else None
+
+
+def column(rows: list[list[Any]], upto: int, label: str) -> int:
+    """The column a label heads, in any of the header rows up to ``upto``."""
+    for r in rows[:upto + 1]:
+        cells = [text_of(c) for c in r]
+        if label in cells:
+            return cells.index(label)
+    raise SystemExit(f"luxembourg: no column headed {label!r} in {[[text_of(c) for c in r] for r in rows[:upto + 1]]}")
+
+
 def read_popcom(rows: list[list[Any]]) -> tuple[dict[str, float], float]:
     """{commune: population on 1 January 2017} and the file's own total.
 
     A commune row is its LAU2 code, its name and one figure per date; the
-    total row is labelled "Total" and carries the same figures, which are
-    read in the order of the header's dates wherever the label sits.
+    total row is labelled "Total". Columns are found by their headers, so it
+    does not matter where on the sheet the table starts.
     """
     head = next(i for i, r in enumerate(rows) if POPCOM_COLUMN in [text_of(c) for c in r])
-    header = [text_of(c) for c in rows[head]]
-    col = header.index(POPCOM_COLUMN)
-    dates = [j for j, c in enumerate(header) if re.fullmatch(r"\d{1,2}-\d{1,2}-\d{4}", c)]
+    col = column(rows, head, POPCOM_COLUMN)
+    code_col, name_col = column(rows, head, "Code LAU2"), column(rows, head, "Commune")
     out, total = {}, None
     for r in rows[head + 1:]:
         cells = [text_of(c) for c in r]
-        numbers = [float(c) for c in r if isinstance(c, (int, float))]
-        if any(c.lower().startswith("total") for c in cells if c and not c[0].isdigit()):
-            if len(numbers) != len(dates):
-                raise SystemExit(f"luxembourg: the total row has {len(numbers)} figures for "
-                                 f"{len(dates)} dates: {cells[:4]}")
-            total = numbers[dates.index(col)]
-        elif re.fullmatch(r"\d{1,4}", cells[0] if cells else "") and isinstance(r[col], (int, float)):
-            out[cells[1]] = float(r[col])
+        if len(r) <= col:
+            continue
+        code = cells[code_col]
+        if num(r[code_col]) is not None and num(r[col]) is not None:
+            code = str(int(num(r[code_col])))
+        if "Total" in (cells[code_col], cells[name_col]):
+            total = num(r[col])
+        elif re.fullmatch(r"\d{1,4}", code) and num(r[col]) is not None:
+            out[cells[name_col]] = num(r[col])
     if total is None:
-        raise SystemExit(f"luxembourg: the 2000-2017 file has no total row; its last rows begin "
-                         f"{[[text_of(c) for c in r[:3]] for r in rows[-4:]]}")
-    check_sum(out.values(), total, f"communes on {POPCOM_COLUMN} against Luxembourg")
+        raise SystemExit(f"luxembourg: the 2000-2017 file has no total row; its last rows are "
+                         f"{[[text_of(c) for c in r[:4]] for r in rows[-4:]]}")
+    if abs(sum(out.values()) - total) > 0.5:
+        raise SystemExit(f"luxembourg: {len(out)} communes make {sum(out.values()):,.0f} on "
+                         f"{POPCOM_COLUMN}, the total is {total:,.0f}; the first rows after the header "
+                         f"are {[[repr(c) for c in r[:4]] for r in rows[head + 1:head + 4]]}")
+    check_sum(out.values(), total, f"{len(out)} communes on {POPCOM_COLUMN} against Luxembourg")
     return out, total
 
 
@@ -241,17 +264,18 @@ def read_rp2011_ages(rows: list[list[Any]]) -> dict[str, Counter]:
         elif re.fullmatch(r"(\d+) et plus", label):
             groups[j] = (int(label.split()[0]), None)
     total_col = labels.index("Total")
+    name_col = column(rows, head, "Commune")
     if sorted(a for a, _ in groups.values()) != list(range(0, 101, 5)):
         raise SystemExit(f"luxembourg: the 2011 age groups are {labels}")
     out: dict[str, Counter] = {}
     for r in rows[head + 1:]:
-        name = text_of(r[0])
-        if not name or not isinstance(r[total_col], (int, float)):
+        name = text_of(r[name_col]) if len(r) > total_col else ""
+        if not name or num(r[total_col]) is None:
             continue
-        counts = Counter({g: float(r[j] or 0) for j, g in groups.items()})
-        if abs(sum(counts.values()) - float(r[total_col])) > 0.5:
+        counts = Counter({g: num(r[j]) or 0.0 for j, g in groups.items()})
+        if abs(sum(counts.values()) - num(r[total_col])) > 0.5:
             raise SystemExit(f"luxembourg: 2011 {name}: the age groups make {sum(counts.values()):,.0f}, "
-                             f"the total is {r[total_col]:,.0f}")
+                             f"the total is {num(r[total_col]):,.0f}")
         out[name] = counts
     return out
 
@@ -261,14 +285,16 @@ def read_rp2011_sexes(rows: list[list[Any]]) -> dict[str, tuple[float, float]]:
     head = next(i for i, r in enumerate(rows) if "Masculin" in [text_of(c) for c in r])
     labels = [text_of(c) for c in rows[head]]
     m_col, f_col, t_col = labels.index("Masculin"), labels.index("Féminin"), labels.index("Total")
+    name_col = column(rows, head, "Commune")
     out: dict[str, tuple[float, float]] = {}
     for r in rows[head + 1:]:
-        name = text_of(r[0])
-        if not name or not isinstance(r[t_col], (int, float)):
+        name = text_of(r[name_col]) if len(r) > t_col else ""
+        if not name or num(r[t_col]) is None:
             continue
-        if abs(float(r[m_col]) + float(r[f_col]) - float(r[t_col])) > 0.5:
+        men, women = num(r[m_col]) or 0.0, num(r[f_col]) or 0.0
+        if abs(men + women - num(r[t_col])) > 0.5:
             raise SystemExit(f"luxembourg: 2011 {name}: men and women do not make its total")
-        out[name] = (float(r[m_col]), float(r[f_col]))
+        out[name] = (men, women)
     return out
 
 
