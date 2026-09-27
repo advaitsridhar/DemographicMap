@@ -1,126 +1,142 @@
-source: https://web.archive.org/web/20231209013436id_/https://nso.gov.mt/wp-content/uploads/Census-Vol-1_Chapter-1.xlsx
-  457,357 bytes
-  sheets: Contents, T1.1_pop_by_locality, T1.2_pop_sex_age_locality, T1.3_pop_sex_age, Table 1.4_Southern Harbour, Table 1.4_Northern_Harbour, Table 1.4_ South _Eastern, Table 1.4_western, Table 1.4_Northern , Table 1.4_Gozo and Comino, 1-Birkirkara, 2-Birzebbugia, 3-Bormla, 4-Floriana, 5-Ghajnsielem, 6-Had-Dingli, 7-Hal Balzan, 8-Hal Gharghur, 9-Hal Ghaxaq, 10-Hal Kirkop, 11-Hal Lija, 12-Hal Luqa, 13-Hal Qormi, 14-Hal Safi, 15-Hal Tarxien, 16-H'Attard, 17-Haz Zabbar, 18-Haz Zebbug, 19-Il-Birgu, 20-Il-Fgura, 21-Il-Fonatana, 22-Il-Gudja, 23-Il-Gzira, 24-Il-Hamrun, 25-Il-Kalkara, 26-Il-Marsa, 27-Il-Mellieha, 28-Il-Mosta, 29-Il-Munxar, 30-Il-Qala, 31-Il-Qrendi, 32-In-Nadur, 33-In-Naxxar, 34-Ir-Rabat, 35-Ir-Rabat Ghawdex, 36-Is-Siggiewi, 37-Is-Swieqi, 38-Ix-Xaghra, 39-Ix-Xewkija, 40-Ix-Xghajra, 41-Iz-Zebbug, 42-Iz-Zejtun, 43-Iz-Zurrieq, 44-L-Gharb, 45-L-Ghasri, 46-L-Iklin, 47-L-Imdina, 48-L-Imgarr, 49-L-Imqabba, 50-L-Imsida, 51-L-Imtarfa, 52-L-Isla, 53-Marsaskala, 54-Marsaxlokk, 55-Pembroke, 56-Rahal Gdid, 57-San Giljan, 58-San Gwann, 59-San Lawrenz, 60-San Pawl il-Bahar, 61-Santa Lucija, 62-Santa Venera, 63-Ta' Kercem, 64-Ta' Sannat, 65-Ta' Xbiex, 66-Tal-Pieta, 67-Sliema, 68-Valletta, 1.6_Pop_ sex_age_type of_res, 1.7_EU pop_sex, 1.8_EU pop_age, 1.9_pop density EU, 1.10_Pop_density_loc, 1.11_dep_ratio_EU, 1.12_dep_ratio_MT
-  -- sheet 'T1.2_pop_sex_age_locality'
-    0: TABLE 1.2. Total population by sex, average age and locality …
-    2:  | Total population |  |  |  | Average age |  |  |  | Back to contents
-    4: District and locality | Males | Females | Total |  | Males | Females | Total
-    5: MALTA | 270021 | 249541 | 519562 |  | 40.6343 | 42.8049 | 41.6768
-    6: Malta | 249610 | 230665 | 480275 |  | 40.4551 | 42.6456 | 41.5071
-    7: Gozo and Comino | 20411 | 18876 | 39287 |  | 42.8266 | 44.752 | 43.7517
-    9: Southern Harbour | 44624 | 41385 | 86009 |  | 41.9229 | 45.0648 | 43.4347
-    10: Bormla | 2389 | 2265 | 4654 |  | 42.6664 | 47.2945 | 44.9188
-    11: Floriana | 997 | 988 | 1985 |  | 46.0441 | 49.9383 | 47.9824
-    12: Ħal Luqa | 3632 | 3617 | 7249 |  | 45.0424 | 51.5657 | 48.2973
-    13: Ħal Tarxien | 4812 | 4652 | 9464 |  | 40.4759 | 43.0696 | 41.7508
-    14: Ħaż-Żabbar | 8821 | 8327 | 17148 |  | 39.999 | 41.4017 | 40.6801
-    15: Il-Birgu | 1151 | 1110 | 2261 |  | 47.7993 | 50.209 | 48.9823
-    16: Il-Fgura | 6574 | 6492 | 13066 |  | 40.9782 | 42.8329 | 41.8997
-    17: Il-Kalkara | 1618 | 1487 | 3105 |  | 42.2775 | 45.1385 | 43.6477
-    18: Il-Marsa | 3148 | 2320 | 5468 |  | 40.7332 | 45.1681 | 42.6149
-    19: Ix-Xgħajra | 1153 | 1039 | 2192 |  | 36.856 | 37.1761 | 37.0078
-    20: L-Isla | 1213 | 1091 | 2304 |  | 45.7626 | 48.8148 | 47.2079
-    21: Raħal Ġdid | 5178 | 4161 | 9339 |  | 41.0628 | 45.5282 | 43.0524
-    22: Santa Luċija | 1300 | 1317 | 2617 |  | 46.93 | 50.1815 | 48.5663
-    23: Valletta | 2638 | 2519 | 5157 |  | 45.1315 | 49.1437 | 47.0913
-    25: Northern Harbour | 82444 | 74853 | 157297 |  | 40.335 | 42.7065 | 41.4635
-    26: Birkirkara | 13331 | 12476 | 25807 |  | 39.8214 | 41.7289 | 40.7436
-    27: Ħal Qormi | 9471 | 8628 | 18099 |  | 40.6578 | 43.3746 | 41.9529
-    28: Il-Gżira | 5598 | 4733 | 10331 |  | 40.1461 | 43.0224 | 41.4638
-    29: Il-Ħamrun | 5571 | 4943 | 10514 |  | 41.9207 | 45.9397 | 43.8102
-    30: Is-Swieqi | 6751 | 6293 | 13044 |  | 38.3145 | 38.9879 | 38.6394
-    31: L-Imsida | 7591 | 5996 | 13587 |  | 37.3055 | 40.1473 | 38.5596
-    32: Pembroke | 1789 | 1756 | 3545 |  | 38.8234 | 39.8263 | 39.3202
-    33: San Ġiljan | 6251 | 5402 | 11653 |  | 40.8775 | 43.1277 | 41.9206
-    34: San Ġwann | 7355 | 6889 | 14244 |  | 41.3874 | 42.8952 | 42.1166
-    35: Santa Venera | 4491 | 4343 | 8834 |  | 39.0557 | 41.2376 | 40.1284
-    36: Ta' Xbiex | 1084 | 1008 | 2092 |  | 44.9041 | 46.4355 | 45.642
-    37: Tal-Pieta' | 3202 | 2690 | 5892 |  | 39.5375 | 43.6959 | 41.436
-    38: Tas-Sliema | 9959 | 9696 | 19655 |  | 43.1037 | 45.7117 | 44.3903
-    40: South Eastern | 40928 | 37020 | 77948 |  | 39.5845 | 41.4349 | 40.4633
-    41: Birżebbuġa | 6850 | 4994 | 11844 |  | 37.925 | 41.5378 | 39.4483
-    42: Ħal Għaxaq | 2859 | 2679 | 5538 |  | 39.2371 | 41.8193 | 40.4863
-    43: Ħal Kirkop | 1309 | 1218 | 2527 |  | 40.0283 | 41.4696 | 40.723
-    44: Ħal Safi | 1461 | 1180 | 2641 |  | 37.1451 | 40.6983 | 38.7327
-    45: Il-Gudja | 1627 | 1602 | 3229 |  | 42.3749 | 42.5194 | 42.4466
-    46: Il-Qrendi | 1601 | 1547 | 3148 |  | 40.4697 | 41.0381 | 40.749
-    47: Iż-Żejtun | 6288 | 6121 | 12409 |  | 41.5821 | 44.4463 | 42.9949
-    48: Iż-Żurrieq | 6279 | 6016 | 12295 |  | 39.7802 | 41.1363 | 40.4438
-    49: L-Imqabba | 1786 | 1739 | 3525 |  | 39.5062 | 40.2329 | 39.8647
-    50: Marsaskala | 8759 | 8045 | 16804 |  | 38.7669 | 39.0837 | 38.9185
-    51: Marsaxlokk | 2109 | 1879 | 3988 |  | 40.9587 | 42.7807 | 41.8172
-    54: … TABLE 1.2. Total population by sex, average age and locality
-    56:  | Total population |  |  |  | Average age
-    58: District and locality | Males | Females | Total |  | Males | Females | Total
-    59: Western | 33000 | 32266 | 65266 |  | 41.3804 | 43.425 | 42.3912
-    60: Ħad-Dingli | 1978 | 1887 | 3865 |  | 40.7897 | 40.9078 | 40.8473
-    61: Ħal Balzan | 2344 | 2430 | 4774 |  | 42.6638 | 46.1407 | 44.4336
-    62: Ħal Lija | 1581 | 1581 | 3162 |  | 42.217 | 43.4143 | 42.8156
-    63: Ħ'Attard | 6193 | 6075 | 12268 |  | 41.1863 | 43.1853 | 42.1762
-    64: Ħaż-Żebbuġ | 7171 | 6614 | 13785 |  | 39.6045 | 40.8509 | 40.2025
-    65: Ir-Rabat | 5945 | 5991 | 11936 |  | 44.1537 | 47.9609 | 46.0647
-    66: Is-Siġġiewi | 4713 | 4605 | 9318 |  | 39.8407 | 41.2037 | 40.5143
-    67: L-Iklin | 1728 | 1671 | 3399 |  | 42.4311 | 43.6092 | 43.0103
-    68: L-Imdina | 99 | 94 | 193 |  | 49.1919 | 58.6915 | 53.8187
-    69: L-Imtarfa | 1248 | 1318 | 2566 |  | 40.5425 | 41.8771 | 41.228
-    ...
-  -- sheet '1-Birkirkara'
-    0: TABLE 1.5. Total population by sex, age and locality…
-    2: Birkirkara |  |  |  |  |  |  |  |  |  | Back to contents
-    4: Age | Males | Females | Total |  | Age | Males | Females | Total
-    5: Total | 13331 | 12476 | 25807
-    7: 0-9 | 1171 | 1057 | 2228 |  | 50-59 | 1382 | 1234 | 2616
-    8: Less than 1 | 120 | 113 | 233 |  | 50 | 171 | 135 | 306
-    9: 1 | 139 | 107 | 246 |  | 51 | 164 | 128 | 292
-    10: 2 | 116 | 81 | 197 |  | 52 | 137 | 117 | 254
-    11: 3 | 99 | 111 | 210 |  | 53 | 126 | 125 | 251
-    12: 4 | 110 | 91 | 201 |  | 54 | 127 | 120 | 247
-    13: 5 | 114 | 98 | 212 |  | 55 | 131 | 119 | 250
-    14: 6 | 117 | 108 | 225 |  | 56 | 128 | 123 | 251
-    15: 7 | 131 | 116 | 247 |  | 57 | 125 | 133 | 258
-    16: 8 | 113 | 103 | 216 |  | 58 | 146 | 114 | 260
-    17: 9 | 112 | 129 | 241 |  | 59 | 127 | 120 | 247
-    19: 10-19 | 1228 | 1138 | 2366 |  | 60-69 | 1355 | 1439 | 2794
-    20: 10 | 130 | 117 | 247 |  | 60 | 143 | 148 | 291
-    21: 11 | 108 | 101 | 209 |  | 61 | 131 | 151 | 282
-    22: 12 | 140 | 116 | 256 |  | 62 | 135 | 167 | 302
-    23: 13 | 123 | 125 | 248 |  | 63 | 143 | 170 | 313
-    24: 14 | 126 | 115 | 241 |  | 64 | 156 | 136 | 292
-    25: 15 | 125 | 120 | 245 |  | 65 | 140 | 134 | 274
-    26: 16 | 142 | 102 | 244 |  | 66 | 131 | 118 | 249
-    27: 17 | 107 | 106 | 213 |  | 67 | 126 | 142 | 268
-    28: 18 | 111 | 114 | 225 |  | 68 | 115 | 128 | 243
-    29: 19 | 116 | 122 | 238 |  | 69 | 135 | 145 | 280
-    31: 20-29 | 1959 | 1691 | 3650 |  | 70-79 | 1074 | 1246 | 2320
-    32: 20 | 135 | 128 | 263 |  | 70 | 137 | 158 | 295
-    33: 21 | 156 | 144 | 300 |  | 71 | 126 | 125 | 251
-    34: 22 | 155 | 131 | 286 |  | 72 | 116 | 142 | 258
-    35: 23 | 140 | 145 | 285 |  | 73 | 131 | 153 | 284
-    36: 24 | 180 | 150 | 330 |  | 74 | 125 | 147 | 272
-    37: 25 | 205 | 166 | 371 |  | 75 | 136 | 139 | 275
-    38: 26 | 239 | 190 | 429 |  | 76 | 95 | 132 | 227
-    39: 27 | 225 | 191 | 416 |  | 77 | 92 | 110 | 202
-    40: 28 | 239 | 217 | 456 |  | 78 | 69 | 74 | 143
-    41: 29 | 285 | 229 | 514 |  | 79 | 47 | 66 | 113
-    43: 30-39 | 2675 | 2265 | 4940 |  | 80-89 | 331 | 456 | 787
-    44: 30 | 267 | 241 | 508 |  | 80 | 50 | 72 | 122
-    45: 31 | 296 | 250 | 546 |  | 81 | 45 | 54 | 99
-    46: 32 | 245 | 267 | 512 |  | 82 | 47 | 64 | 111
-    47: 33 | 297 | 229 | 526 |  | 83 | 50 | 57 | 107
-    48: 34 | 275 | 224 | 499 |  | 84 | 30 | 48 | 78
-    49: 35 | 275 | 208 | 483 |  | 85 | 28 | 43 | 71
-    50: 36 | 272 | 209 | 481 |  | 86 | 34 | 38 | 72
-    51: 37 | 247 | 225 | 472 |  | 87 | 23 | 25 | 48
-    52: 38 | 262 | 199 | 461 |  | 88 | 9 | 27 | 36
-    53: 39 | 239 | 213 | 452 |  | 89 | 15 | 28 | 43
-    55: 40-49 | 2117 | 1898 | 4015 |  | Over 89 | 39 | 52 | 91
-    56: 40 | 218 | 221 | 439
-    57: 41 | 236 | 149 | 385
-    58: 42 | 206 | 187 | 393
-    59: 43 | 217 | 213 | 430
-    60: 44 | 219 | 192 | 411
-    61: 45 | 231 | 191 | 422
-    62: 46 | 233 | 186 | 419
-    63: 47 | 195 | 207 | 402
-    64: 48 | 176 | 190 | 366
-    65: 49 | 186 | 162 | 348
+
+=== hun8
+
+## https://nepszamlalas2022.ksh.hu/api/index/hu/V67
+   HTTP 404, 0 bytes, 
+   
+
+## https://nepszamlalas2022.ksh.hu/api/index/en/V67
+   HTTP 404, 0 bytes, 
+   
+
+## https://nepszamlalas2022.ksh.hu/api/index/hu
+   HTTP 404, 0 bytes, 
+   
+
+## https://nepszamlalas2022.ksh.hu/api/dataflows
+   HTTP 404, 84 bytes, application/json
+   {"timestamp":1790514193754,"status":404,"error":"Not Found","path":"/api/dataflows"}
+
+## https://nepszamlalas2022.ksh.hu/api/structure
+   HTTP 404, 84 bytes, application/json
+   {"timestamp":1790514194226,"status":404,"error":"Not Found","path":"/api/structure"}
+
+=== svk8
+
+## obyv_ekchar_nar_dlnar: 3 layers
+   layer 0 'AR4315_DA8699_rank_kraj': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'da8699', 'da8699_sk', 'da8699_en', 'pocet', 'pocet_rank', 'da8699_order', 'nazov', 'skratka', 'orig_fid']
+   layer 2 'AR4315_DA8699_rank_okres': 14 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'da8699', 'da8699_sk', 'da8699_en', 'pocet', 'pocet_rank', 'da8699_order', 'nazov', 'kraj']
+   layer 1 'AR4315_DA8699_rank_obec': 14 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'da8699', 'da8699_sk', 'da8699_en', 'pocet', 'pocet_rank', 'da8699_order', 'cislo', 'nazov']
+
+## obyv_ekchar_nar_matjaz: 3 layers
+   layer 0 'AR4315_AR4316_rank_kraj': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'ar4316', 'ar4316_sk', 'ar4316_en', 'pocet', 'pocet_rank', 'ar4316_order', 'nazov', 'skratka', 'orig_fid']
+   layer 2 'AR4315_AR4316_rank_okres': 14 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'ar4316', 'ar4316_sk', 'ar4316_en', 'pocet', 'pocet_rank', 'ar4316_order', 'nazov', 'kraj']
+   layer 1 'AR4315_AR4316_rank_obec': 14 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'filter_order', 'ar4316', 'ar4316_sk', 'ar4316_en', 'pocet', 'pocet_rank', 'ar4316_order', 'cislo', 'nazov']
+
+## obyv_ekchar_nabo_vekskup: 6 layers
+   layer 0 'AR4318_DA8717_kraj_cntr_t': 16 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4318_cnt', 'filter_order', 'da8717_order', 'nazov', 'skratka', 'orig_fid']
+   layer 2 'AR4318_DA8717_okres_cntr_t': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4318_cnt', 'filter_order', 'da8717_order', 'nazov', 'kraj']
+   layer 1 'AR4318_DA8717_obec_cntr_t': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4318_cnt', 'filter_order', 'da8717_order', 'cislo', 'nazov']
+   layer 3 'AR4318_kraj_t_SK': 28 fields: ['objectid', 'uzemie', 'cv_28', 'cv_28p', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_50', 'cv_50p', 'spolu', 'nazov', 'SHAPE__Length', 'SHAPE__Area']
+   layer 5 'AR4318_okres_t_SK': 29 fields: ['objectid', 'uzemie', 'cv_28', 'cv_28p', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_50', 'cv_50p', 'spolu', 'nazov', 'kraj', 'SHAPE__Length', 'SHAPE__Area']
+   layer 4 'AR4318_obec_t_SK': 31 fields: ['objectid', 'uzemie', 'cv_28', 'cv_28p', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_50', 'cv_50p', 'spolu', 'cislo', 'nazov', 'kraj', 'okres', 'SHAPE__Length', 'SHAPE__Area']
+
+## obyv_ekchar_matjaz_vekskup: 6 layers
+   layer 3 'AR4316_kraj_t_SK': 28 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_6', 'cv_6p', 'cv_5', 'cv_5p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_11', 'cv_11p', 'cv_14', 'cv_14p', 'cv_50', 'cv_50p', 'spolu', 'nazov', 'SHAPE__Length', 'SHAPE__Area']
+   layer 5 'AR4316_okres_t_SK': 29 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_6', 'cv_6p', 'cv_5', 'cv_5p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_11', 'cv_11p', 'cv_14', 'cv_14p', 'cv_50', 'cv_50p', 'spolu', 'nazov', 'kraj', 'SHAPE__Length', 'SHAPE__Area']
+   layer 4 'AR4316_obec_t_SK': 31 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_6', 'cv_6p', 'cv_5', 'cv_5p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_11', 'cv_11p', 'cv_14', 'cv_14p', 'cv_50', 'cv_50p', 'spolu', 'cislo', 'nazov', 'kraj', 'okres', 'SHAPE__Length', 'SHAPE__Area']
+   layer 6 'AR4316_DA8717_kraj_cntr_t': 16 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4316_cnt', 'filter_order', 'da8717_order', 'nazov', 'skratka', 'orig_fid']
+   layer 7 'AR4316_DA8717_obec_cntr_t': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4316_cnt', 'filter_order', 'da8717_order', 'cislo', 'nazov']
+   layer 8 'AR4316_DA8717_okres_cntr_t': 15 fields: ['objectid', 'uzemie', 'filter', 'filter_sk', 'filter_en', 'da8717', 'da8717_sk', 'da8717_en', 'da8717_cnt', 'da8717_rel', 'ar4316_cnt', 'filter_order', 'da8717_order', 'nazov', 'kraj']
+
+## obyv_demo_vek_zloz: 4 layers
+   layer 4 'DA8719_stat_t_SK': 50 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_10', 'cv_10p', 'cv_11', 'cv_11p', 'cv_12', 'cv_12p', 'cv_13', 'cv_13p', 'cv_14', 'cv_14p', 'cv_15', 'cv_15p', 'cv_16', 'cv_16p', 'cv_17', 'cv_17p', 'cv_18', 'cv_18p', 'cv_19', 'cv_19p', 'cv_20', 'cv_20p', 'cv_21', 'cv_21p', 'cv_22', 'cv_22p', 'spolu', 'state_name', 'SHAPE__Length', 'SHAPE__Area']
+   layer 1 'DA8719_kraj_t_SK': 50 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_10', 'cv_10p', 'cv_11', 'cv_11p', 'cv_12', 'cv_12p', 'cv_13', 'cv_13p', 'cv_14', 'cv_14p', 'cv_15', 'cv_15p', 'cv_16', 'cv_16p', 'cv_17', 'cv_17p', 'cv_18', 'cv_18p', 'cv_19', 'cv_19p', 'cv_20', 'cv_20p', 'cv_21', 'cv_21p', 'cv_22', 'cv_22p', 'spolu', 'nazov', 'SHAPE__Length', 'SHAPE__Area']
+   layer 3 'DA8719_okres_t_SK': 50 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_10', 'cv_10p', 'cv_11', 'cv_11p', 'cv_12', 'cv_12p', 'cv_13', 'cv_13p', 'cv_14', 'cv_14p', 'cv_15', 'cv_15p', 'cv_16', 'cv_16p', 'cv_17', 'cv_17p', 'cv_18', 'cv_18p', 'cv_19', 'cv_19p', 'cv_20', 'cv_20p', 'cv_21', 'cv_21p', 'cv_22', 'cv_22p', 'spolu', 'nazov', 'SHAPE__Length', 'SHAPE__Area']
+   layer 2 'DA8719_obec_t_SK': 51 fields: ['objectid', 'uzemie', 'cv_1', 'cv_1p', 'cv_2', 'cv_2p', 'cv_3', 'cv_3p', 'cv_4', 'cv_4p', 'cv_5', 'cv_5p', 'cv_6', 'cv_6p', 'cv_7', 'cv_7p', 'cv_8', 'cv_8p', 'cv_9', 'cv_9p', 'cv_10', 'cv_10p', 'cv_11', 'cv_11p', 'cv_12', 'cv_12p', 'cv_13', 'cv_13p', 'cv_14', 'cv_14p', 'cv_15', 'cv_15p', 'cv_16', 'cv_16p', 'cv_17', 'cv_17p', 'cv_18', 'cv_18p', 'cv_19', 'cv_19p', 'cv_20', 'cv_20p', 'cv_21', 'cv_21p', 'cv_22', 'cv_22p', 'spolu', 'cislo', 'nazov', 'SHAPE__Length', 'SHAPE__Area']
+
+=== nld8
+
+## sheet Tabel 2
+   Tabel 2
+   Percentage per geloofsgroep per provincie en corop, 15 jaar 
+   Totaal gelovig | Rooms-kaholiek | Protestants | Islam | Ander geloof
+   %
+   Nederland | Totaal | 42.9 | 17.2 | 13.1 | 5.8 | 6.8
+   Provincie | Corop*
+   Groningen | Totaal | 33.7 | 6 | 16.9 | 3 | 7.7
+   Fryslân | Totaal | 38 | 5.9 | 23.7 | 1.5 | 7
+   Noord-Friesland | 37.8 | 5.1 | 23.9 | 1.1 | 7.8
+   Zuidwest-Friesland | 40 | 10.3 | 22.9 | 1 | 5.8
+   Zuidoost-Friesland | 36.8 | 3.6 | 24 | 2.6 | 6.6
+   Drenthe | Totaal | 33.5 | 6.6 | 19.4 | 2.9 | 4.6
+   Overijssel | Totaal | 47.5 | 15.2 | 19.9 | 4.5 | 7.9
+   Noord-Overijssel | 50.2 | 7 | 34.3 | 2.7 | 6.2
+   Zuidwest-Overijssel | 41.1 | 16.6 | 10.2 | 6.3 | 8
+   Twente | 47.6 | 19.7 | 13.9 | 5.1 | 8.9
+   Flevoland | Totaal | 45 | 10.2 | 18.8 | 8.1 | 8
+   Gelderland | Totaal | 44.2 | 15.6 | 18.2 | 3.7 | 6.7
+   Veluwe | 51.8 | 6.7 | 32.9 | 3.4 | 8.7
+   Achterhoek | 42.8 | 20.4 | 12.6 | 3.7 | 6.2
+   Arnhem/Nijmegen | 36.9 | 21.2 | 6.4 | 4 | 5.3
+   Zuidwest-Gelderland | 48.3 | 14.8 | 23.9 | 3.8 | 5.8
+   Utrecht | Totaal | 38.6 | 9.8 | 15.7 | 6.7 | 6.4
+   Noord-Holland | Totaal | 34.9 | 12.2 | 7 | 7.9 | 7.8
+   Kop van Noord-Holland | 32.5 | 18.6 | 7.8 | 3 | 3.1
+   Alkmaar en omgeving | 32.4 | 14.5 | 7.9 | 2.2 | 7.7
+   IJmond | 34.6 | 14.8 | 6.3 | 6.5 | 6.9
+   Agglomeratie Haarlem | 27.5 | 10.5 | 5.5 | 5.2 | 6.3
+   Zaanstreek | 34.7 | 7.7 | 8.9 | 10 | 8
+   Groot-Amsterdam | 37.3 | 11 | 5.7 | 11.4 | 9.2
+   Het Gooi en Vechtstreek | 35.3 | 9.9 | 13.5 | 3.3 | 8.6
+   Zuid-Holland | Totaal | 43.6 | 11.6 | 15.8 | 8 | 8.1
+   Agglomeratie Leiden en Bollenstreek | 42.2 | 15.9 | 16 | 4.6 | 5.7
+   Agglomeratie  s-Gravenhage | 44.4 | 12.9 | 10.2 | 10.3 | 11
+   Delft en Westland | 40 | 16.7 | 14.5 | 3.5 | 5.4
+   Oost-Zuid-Holland | 46.5 | 13.2 | 21.1 | 6.2 | 6.1
+   Groot-Rijnmond | 42 | 9.7 | 14.7 | 9 | 8.5
+   Zuidoost-Zuid-Holland | 49.2 | 6.5 | 29.1 | 7.4 | 6.2
+   Zeeland | Totaal | 49.3 | 16.2 | 24.1 | 2.5 | 6.5
+   Noord-Brabant | Totaal | 47.4 | 32.8 | 4.8 | 5.4 | 4.5
+   West-Noord-Brabant | 48.5 | 31.4 | 4.4 | 7.6 | 5.1
+   Midden-Noord-Brabant | 48.9 | 29.7 | 9.6 | 5.1 | 4.5
+   Noordoost-Noord-Brabant | 47.5 | 37.1 | 3.1 | 4.3 | 3
+   Zuidoost-Noord-Brabant | 45.6 | 32.1 | 3.8 | 4.6 | 5.2
+   Limburg | Totaal | 57.9 | 46.5 | 2.4 | 4.4 | 4.7
+   Noord-Limburg | 51 | 41.6 | 2.6 | 3.4 | 3.4
+   Midden-Limburg | 61.9 | 51.1 | 0.8 | 5.1 | 4.9
+   Zuid-Limburg | 59.5 | 46.9 | 2.9 | 4.6 | 5.1
+   *Voor een aantal corop-regio's waren er te weinig (< 300) wa
+   Bron: CBS.
+
+## sheet Toelichting
+   Technische toelichting
+   Populatie
+   De Nederlandse niet-institutionele bevolking van 15 jaar en 
+   Peildatum
+   De gegevens gaan over 2016/2020 en 2021/2025.
+   Bescherming van persoonsgegevens
+   In dit onderzoek is gebruik gemaakt van enquêtegegevens. Om 
+   Privacy
+   Privacy is een groot goed. Ook als je niks te verbergen hebt
+   Het CBS verzamelt gegevens van natuurlijke personen, bedrijv
+   www.cbs.nl/privacy
+
+## sheet Tabel 1
+   Tabel 1
+   Percentage dat zich tot een geloof rekent per provincie, 15 
+   2016/2020 | 2021/2025
+   %
+   Groningen | 32.9 | 33.7
+   Fryslân | 41.9 | 38
+   Drenthe | 36.2 | 33.5
+   Overijssel | 53.6 | 47.5
+   Flevoland | 44.9 | 45
+   Gelderland | 50 | 44.2
+   Utrecht | 43.7 | 38.6
+   Noord-Holland | 34.9 | 34.9
+   Zuid-Holland | 47.2 | 43.6
+   Zeeland | 49.5 | 49.3
+   Noord-Brabant | 56.9 | 47.4
+   Limburg | 67.1 | 57.9
+   Bron: CBS.
