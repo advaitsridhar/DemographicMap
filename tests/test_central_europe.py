@@ -61,5 +61,43 @@ class DutchKeyFiguresFromTheWfs(unittest.TestCase):
             nld.features(differ)
 
 
+# Eisenstadt's 2001 sheet (vz7/g10101.pdf) as pypdf extracts it: two columns
+# run together, which is what the reader has to cope with.
+EISENSTADT = """Eisenstadt (10101)
+Wohnbevölkerung 11.334 100,0 5.337 5.997
+bis unter 15 1.732 15,3 881 851 Deutschland 58 0,5
+65 bis 69 511 4,5 233 278 Deutsch 9.960 87,9
+70 bis 74 516 4,6 206 310 Burgenland-Kroatisch 317 2,8
+75 bis 79 517 4,6 167 350 Slowenisch 17 0,1
+80 bis 84 264 2,3 93 171 Tschechisch 25 0,2
+85 und älter 244 2,2 64 180 Ungarisch 373 3,3
+Serbisch 84 0,7
+Kroatisch 216 1,9
+ledig 4.556 40,2 2.343 2.213 Bosnisch 16 0,1
+verheiratet 5.082 44,8 2.559 2.523 Türkisch 40 0,4
+verwitwet 937 8,3 144 793 Sonstige und unbekannt 286 2,5
+römisch-katholisch 9.500 83,8
+Österreicher 10.586 93,4 4.957 5.629 evangelisch 681 6,0
+sonst. EU(15)-Bürger 81 0,7 44 37 orthodox 124 1,1
+sonstige Ausländer 667 5,9 336 331 islamisch 180 1,6
+israelitisch 5 0,0
+Nach Geburtsland sonstiges 105 0,9
+Österreich 10.155 89,6 4.805 5.350 ohne Bekenntnis 575 5,1
+sonst. EU(15)-Staaten 179 1,6 71 108 unbekannt 164 1,4
+"""
+
+
+class AustrianCensusSheets(unittest.TestCase):
+    def test_religion_and_language_are_read_apart_from_their_neighbours(self):
+        from fetch_census import austria_census as aut
+        religion = aut.find(EISENSTADT, aut.RELIGION, "10101", "religion")
+        language = aut.find(EISENSTADT, aut.LANGUAGE, "10101", "language")
+        self.assertEqual(sum(religion.values()), 11334)
+        self.assertEqual(sum(language.values()), 11334)
+        self.assertEqual(religion["Not stated"], 164)          # not "Sonstige und unbekannt"
+        self.assertEqual(language["Croatian"], 216)             # not Burgenland-Kroatisch
+        self.assertEqual(language["German"], 9960)              # not Deutschland
+
+
 if __name__ == "__main__":
     unittest.main()

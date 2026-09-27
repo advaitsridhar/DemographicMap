@@ -79,11 +79,15 @@ NOTES = {
                   "been register-based since 2011 and has not asked the question since 2002."),
     "religion": ("Religion (veroizpoved), Census 2002 (31 March 2002), the whole population, one "
                  "answer; 'Believer, no church' believes but belongs to no religious community; "
-                 "'Not stated' did not want to reply; 'Unknown' could not be established. Not asked "
-                 "since 2002: the census has been register-based since 2011."),
-    "language": ("Mother tongue (materni jezik), Census 2002 (31 March 2002), the whole population, "
-                 "one answer; 'Other' is every language SURS does not name at municipal level. Not "
+                 "'Not stated' did not want to reply; 'Unknown' could not be established. SiStat "
+                 "blanks a cell of very few people for confidentiality; such people are left out, "
+                 "so a municipality's shares can fall short of 100 by a fraction of a percent. Not "
                  "asked since 2002: the census has been register-based since 2011."),
+    "language": ("Mother tongue (materni jezik), Census 2002 (31 March 2002), the whole population, "
+                 "one answer; 'Other' is every language SURS does not name at municipal level. "
+                 "SiStat blanks a cell of very few people for confidentiality; such people are left "
+                 "out, so a municipality's shares can fall short of 100 by a fraction of a percent. "
+                 "Not asked since 2002: the census has been register-based since 2011."),
 }
 
 
@@ -163,6 +167,7 @@ def build() -> list[dict[str, Any]]:
         raise SystemExit(f"slovenia_census: {len(names)} municipalities, not {EXPECTED_2002}")
 
     counts: dict[str, dict[str, dict[str, float]]] = {}
+    suppressed = {"religion": 0.0, "language": 0.0}
     for name in [national, *names]:
         e, r, lang = ethnic[name], religion[name], language[name]
         total = e["POPULATION"]
@@ -181,16 +186,42 @@ def build() -> list[dict[str, Any]]:
         eth = {label: e[k] for k, label in ETHNICITY.items()}
         eth.update(named)
         eth["Other"] = other
+        for field, cells, wanted, totals in (
+                ("religion", r, RELIGION, {"Total", "Declared by religion - total"}),
+                ("language", lang, LANGUAGE, {"Mother tongue - TOTAL"})):
+            unknown = set(cells) - set(wanted) - totals
+            if unknown:
+                raise SystemExit(f"slovenia_census: {name}: {field} rows this reader does not "
+                                 f"know: {sorted(unknown)} (it knows {sorted(wanted)})")
         rel = {label: r.get(k, 0.0) for k, label in RELIGION.items()}
         lan = {label: lang.get(k, 0.0) for k, label in LANGUAGE.items()}
-        for field, got, whole in (("religion", rel, r.get("Total")),
-                                  ("language", lan, lang.get("Mother tongue - TOTAL"))):
-            if whole is None or abs(whole - total) > 0.5 or abs(sum(got.values()) - total) > 0.5:
+        declared = r.get("Declared by religion - total")
+        named = sum(r.get(k, 0.0) for k in list(RELIGION)[:5])
+        if declared is not None and abs(declared - named) > 0.5:
+            log(f"  {name}: 'declared by religion' is {declared:,.0f}, its five named rows "
+                f"{named:,.0f}")
+        for field, got, whole, cells, wanted in (
+                ("religion", rel, r.get("Total"), r, RELIGION),
+                ("language", lan, lang.get("Mother tongue - TOTAL"), lang, LANGUAGE)):
+            short = total - sum(got.values())
+            blank = sorted(k for k in wanted if k not in cells)
+            if whole is None or abs(whole - total) > 0.5 or short < -0.5:
                 raise SystemExit(f"slovenia_census: {name}: {field} rows make "
                                  f"{sum(got.values()):,.0f}, total {whole}, population {total:,.0f}")
+            if short > 0.5:
+                # SiStat blanks a cell of very few people for confidentiality;
+                # such a cell is absent here, so the rows fall a little short.
+                # Only that, and only by a little, is accepted.
+                if not blank or short > max(10, 0.002 * total):
+                    raise SystemExit(f"slovenia_census: {name}: {field} rows fall {short:,.0f} "
+                                     f"short of {total:,.0f}; blank cells {blank}")
+                suppressed[field] += short
+                log(f"  {name}: {field} {short:,.0f} people in blanked cells {blank}")
         counts[name] = {"ethnicity": eth, "religion": rel, "language": lan, "total": {"": total}}
     check_sum((counts[n]["total"][""] for n in names), counts[national]["total"][""],
               "municipalities against Slovenia")
+    log(f"  people in blanked cells, all municipalities: religion {suppressed['religion']:,.0f}, "
+        f"mother tongue {suppressed['language']:,.0f}")
     for group in MINORITIES.values():
         check_sum((minority[group].get(n, 0.0) for n in names), minority[group][national],
                   f"{group}s by municipality against Slovenia")

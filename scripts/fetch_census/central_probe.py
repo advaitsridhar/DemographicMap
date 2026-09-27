@@ -1422,7 +1422,54 @@ def aut8() -> None:
         log(f"   vz7/g{code}: HTTP {status}, {len(body):,} bytes; {first}")
 
 
+def book_dump(url: str, rows: int = 14, cols: int = 16, grep: str | None = None,
+              limit: int = 12) -> None:
+    """An .xlsx or .xls workbook's sheets, first rows, and rows matching ``grep``."""
+    import io as _io
+    status, head, body = fetch(url)
+    disp = head.get("Content-Disposition") or head.get("content-disposition") or ""
+    log(f"\n## {url}: HTTP {status}, {len(body):,} bytes, {disp[:100]}")
+    if status != 200:
+        log("   " + text(body)[:200])
+        return
+    sheets: list[tuple[str, list[list[Any]]]] = []
+    if body[:2] == b"PK":
+        import openpyxl
+        book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+        for sh in book.worksheets:
+            sheets.append((sh.title, [list(r) for r in sh.iter_rows(values_only=True)]))
+    elif body[:4] == b"\xd0\xcf\x11\xe0":
+        import xlrd
+        book = xlrd.open_workbook(file_contents=body)
+        for sh in book.sheets():
+            sheets.append((sh.name, [sh.row_values(i) for i in range(sh.nrows)]))
+    else:
+        log("   neither xlsx nor xls: " + text(body)[:200])
+        return
+    log(f"   sheets: {[name for name, _ in sheets][:20]} ({len(sheets)})")
+    for name, table_rows in sheets[:3]:
+        log(f"   sheet {name!r}: {len(table_rows)} rows")
+        for row in table_rows[:rows]:
+            cells = [str(c)[:26] for c in row[:cols] if c not in (None, "")]
+            if cells:
+                log("     " + " | ".join(cells))
+        if grep:
+            hits = [r for r in table_rows if any(re.search(grep, str(c)) for c in r[:4])]
+            log(f"   {len(hits)} rows match {grep!r}")
+            for row in hits[:limit]:
+                log("     > " + " | ".join(str(c)[:22] for c in row[:cols] if c not in (None, "")))
+
+
+def che12() -> None:
+    """The 2000 census's religion and main language by commune, and religion by canton since 2010."""
+    dam = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/{}/master"
+    book_dump(dam.format(193515), grep=r"Bezirk|Amt|District|Distretto|^\s*\.{3,}|^\d{1,4}\s", limit=10)
+    book_dump(dam.format(147501), grep=r"Bezirk|Amt|District|Distretto", limit=6)
+    book_dump(dam.format(36347568), rows=30)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che12": che12,
     "che11": che11, "aut8": aut8,
     "svn6": svn6, "che10": che10, "aut7": aut7, "deu8": deu8,
     "aut6": aut6, "svn5": svn5, "che9": che9, "nld10": nld10, "lux6": lux6, "deu7": deu7,
