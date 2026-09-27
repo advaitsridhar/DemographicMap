@@ -1,35 +1,16 @@
-https://www5.ine.gub.uy/documents/CENSO%202023/Tabulados/Personas/Cuadro_1_CAR_2023.xlsx
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  15,271 bytes
-  1 sheet(s)
-  -- 'Cuadro1_CAR': 34 rows x 17 cols
-     ['CUADRO 1', '', '', '', '', '', '', '', '', '', '', '']
-     ['Población por departamento de residencia', '', '', '', '', '', '', '', '', '', '', '']
-     ['Departamento', 'Total', 'Hombres', 'Mujeres', '', 'Área Urbana', '', '', '', 'Área Rural', '', '']
-     ['', '', '', '', '', 'Total', 'Hombres', 'Mujeres', '', 'Total', 'Hombres', 'Mujeres']
-     ['Total', '3499451', '1694478', '1804973', '', '3324679', '1595224', '1729456', '', '174772', '99254', '75517']
-     ['Montevideo', '1302721', '615186', '687535', '', '1281323', '601670', '679654', '', '21398', '13516', '7881']
-     ['Resto del país', '2196730', '1079292', '1117438', '', '2043356', '993554', '1049802', '', '153374', '85738', '67636']
-     ['Artigas', '77488', '38085', '39403', '', '74218', '36165', '38053', '', '3270', '1920', '1350']
-     ['Canelones', '608960', '297666', '311294', '', '566870', '275386', '291484', '', '42090', '22280', '19810']
-     ['Cerro Largo', '91260', '44702', '46558', '', '85904', '41623', '44280', '', '5356', '3079', '2278']
-     ['Colonia', '135757', '66655', '69102', '', '124806', '60685', '64122', '', '10951', '5970', '4980']
-     ['Durazno', '62010', '30797', '31213', '', '57459', '28155', '29304', '', '4551', '2642', '1909']
-     ['Flores', '26301', '12968', '13333', '', '24092', '11659', '12433', '', '2209', '1309', '900']
-     ['Florida', '70324', '34776', '35548', '', '61568', '29835', '31733', '', '8756', '4941', '3815']
-     ['Lavalleja', '59173', '29119', '30054', '', '53879', '26081', '27798', '', '5294', '3038', '2256']
-     ['Maldonado', '212954', '104260', '108694', '', '206115', '100151', '105964', '', '6839', '4109', '2730']
-     ['Paysandú', '121838', '60139', '61699', '', '117649', '57710', '59939', '', '4189', '2429', '1760']
-     ['Río Negro', '57338', '28776', '28562', '', '52749', '26165', '26584', '', '4589', '2611', '1978']
-     ['Rivera', '109299', '52739', '56560', '', '101274', '48090', '53184', '', '8025', '4649', '3376']
-     ['Rocha', '80710', '39609', '41101', '', '76678', '37218', '39460', '', '4032', '2391', '1641']
-     ['Salto', '136195', '66989', '69206', '', '128652', '62844', '65807', '', '7543', '4145', '3399']
-     ['San José', '119718', '59384', '60334', '', '103718', '50152', '53567', '', '16000', '9232', '6767']
-     ['Soriano', '83684', '41767', '41917', '', '76807', '37827', '38980', '', '6877', '3940', '2937']
-     ['Tacuarembó', '96016', '47339', '48677', '', '86113', '41923', '44191', '', '9903', '5416', '4486']
-     ['Treinta y Tres', '47705', '23522', '24183', '', '44805', '21885', '22919', '', '2900', '1637', '1264']
-     ['Fuente: Instituto Nacional de Estadístic', '', '', '', '', '', '', '', '', '', '', '']
-     ['Notas:', '', '', '', '', '', '', '', '', '', '', '']
-     ['Datos ponderados. Por mayor detalle refe', '', '', '', '', '', '', '', '', '', '', '']
-     ['Los totales pueden presentar leves discr', '', '', '', '', '', '', '', '', '', '', '']
+  New Providence: 246,329 in Table 2.0, the age table, religions and races
+  Acklins: 565 in Table 2.0, the age table, religions and races
+  Berry Islands: 807 in Table 2.0, the age table, religions and races
+  TABLE7.0: 'OTHERDENOMINATIONS' read as Other religion
+  Biminis: 1,988 in Table 2.0, the age table, religions and races
+  Cat Island: 1,522 in Table 2.0, the age table, religions and races
+  TABLE7.0: 'PENECOSTAL' read as Pentecostal
+  Crooked Island: 330 in Table 2.0, the age table, religions and races
+  TABLE7.0: 'PENECOSTAL' read as Pentecostal
+  Harbour Island: 1,762 in Table 2.0, the age table, religions and races
+  Inagua: 913 in Table 2.0, the age table, religions and races
+  Long Island: 3,094 in Table 2.0, the age table, religions and races
+  TABLE7.0: 'OTHERCHRISTIAN DENOMIATION' read as Other Christian
+  Mayaguana: 277 in Table 2.0, the age table, religions and races
+  Ragged Island: 72 in Table 2.0, the age table, religions and races
+bahamas_census: Table 4.x's single years make 98 of 99
