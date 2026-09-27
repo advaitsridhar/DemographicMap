@@ -11,7 +11,8 @@ Crete are one region each and already carry Eurostat's figure. This sums
 the regions' single years for each administration and interpolates the median
 within the single year that holds the middle person; sex ratio is males per
 100 females. The year is Eurostat's latest, the same as the regions' own
-figures beside these.
+figures beside these, and the head count is written from the same table: the
+map's figure for these five is Wikidata's.
 
 Mount Athos is a self-governed monastic community inside the Central
 Macedonia region for statistics: no Eurostat region is it alone, and ELSTAT's
@@ -107,13 +108,14 @@ def build() -> list[dict[str, Any]]:
         records.append(record(
             f"GRC-{DATASET}-{shape['id']}", name, level="admin1", parent="GRC", country="GRC",
             match_by="shape_id", shape_id=shape["id"],
+            population=measure(round(men + women), year=year, source=SOURCE),
             median_age=measure(median, unit="years", year=year, source=SOURCE),
             median_age_note=("Interpolated within the single year of age that holds the middle "
                              f"person, from Eurostat's population by single year of age of the "
                              f"regions {', '.join(regions)}, summed."),
             sex_ratio=measure(round(100 * men / women, 1), unit="males_per_100_females",
                               year=year, source=SOURCE),
-            sources=[{"field": "median_age/sex_ratio", "name": SOURCE,
+            sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE,
                       "url": API.format(dataset=DATASET), "year": year}]))
         log(f"  {name} ({'+'.join(regions)}): {men + women:,.0f}, median {median}, "
             f"{round(100 * men / women, 1)} men per 100 women")
@@ -154,13 +156,15 @@ def athos() -> tuple[int, int, int]:
         return "".join(c for c in text if not unicodedata.combining(c))
     header = [plain(c) for c in rows[0]]
 
-    def column(*words: str) -> int:
-        hits = [j for j, h in enumerate(header) if all(w in h for w in words)]
+    def column(name: str) -> int:
+        # Whole names: "ποσοστο αρρενων 2021" (the share of men) sits beside
+        # "αρρενες 2021" (the count).
+        hits = [j for j, h in enumerate(header) if h == name]
         if len(hits) != 1:
-            raise SystemExit(f"greece_age: no single column with {words} in {header}")
+            raise SystemExit(f"greece_age: no single column {name!r} in {header}")
         return hits[0]
-    col = {"total": column("μονιμος", "2021"), "men": column("αρρεν", "2021"),
-           "women": column("θηλ", "2021")}
+    col = {"total": column("μονιμος πληθυσμος 2021"), "men": column("αρρενες 2021"),
+           "women": column("θηλεις 2021")}
     hit = [r for r in rows[1:] if str(r[2] or "").startswith("ΑΓΙΟ ΟΡΟΣ") and str(r[0]) == "4"]
     if len(hit) != 1:
         raise SystemExit(f"greece_age: {len(hit)} rows for Mount Athos in ELSTAT's table")

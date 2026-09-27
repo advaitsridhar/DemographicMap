@@ -144,9 +144,10 @@ def five_years(rows: list[tuple[Any, ...]]) -> dict[str, dict[str, Any]]:
         if sex.startswith("ukupno"):
             unit["total"] = number(r[2])
             unit["groups"] = [(lo, w, number(r[j])) for j, lo, w in bands]
-        elif sex.startswith("mu"):
+        # The sex column reads "Ukupno", "M", "Ž" (FR_T2 prints the letters alone).
+        elif sex == "m" or sex.startswith("mu"):
             unit["men"] = number(r[2])
-        elif sex.startswith("ž") or sex.startswith("z"):
+        elif sex in ("ž", "z") or sex.startswith(("že", "ze")):
             unit["women"] = number(r[2])
             unit["done"] = True
     return out

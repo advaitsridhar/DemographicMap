@@ -4,7 +4,7 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import croatia, montenegro, moldova_age, north_macedonia, romania_census
+from scripts.fetch_census import bosnia_age, croatia, montenegro, moldova_age, north_macedonia, romania_census
 
 
 class CommonTest(unittest.TestCase):
@@ -150,6 +150,19 @@ class CroatiaAgeTest(unittest.TestCase):
         fields = croatia.age_fields(unit)
         self.assertEqual(fields["sex_ratio"]["value"], 100.0)
         self.assertEqual(fields["median_age"]["value"], 4.2)
+
+
+class BosniaAgeTest(unittest.TestCase):
+    def test_fr_t2_reads_the_sex_letters(self):
+        rows = [("Područje", "Spol", "Ukupno", "0-4", "5-9", "85+", "Prosječna starost"),
+                ("UNSKO-SANSKI KANTON", "Ukupno", 30, 10, 15, 5, 36.5),
+                ("UNSKO-SANSKI KANTON", "M", 14, 5, 7, 2, 35.0),
+                ("UNSKO-SANSKI KANTON", "Ž", 16, 5, 8, 3, 37.6),
+                ("BIHAĆ", "Ukupno", 3, 1, 1, 1, 40.0)]
+        out = bosnia_age.five_years(rows)
+        unit = out["UNSKO-SANSKI KANTON"]
+        self.assertEqual((unit["total"], unit["men"], unit["women"]), (30, 14, 16))
+        self.assertEqual(unit["groups"], [(0.0, 5.0, 10), (5.0, 5.0, 15), (85.0, None, 5)])
 
 
 if __name__ == "__main__":
