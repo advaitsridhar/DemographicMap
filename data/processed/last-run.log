@@ -1,5 +1,5 @@
 STATISTIC (Statistic): 1 categories, total None
-    SAP2022T2T5C01: Speakers of foreign languages by language spoken
+    SAP2022T3T1C01: Population aged 3 years and over by ability to speak Irish
 TLIST(A1) (Census Year): 1 categories, total None
     2022: 2022
 C04166V04937 (CSO Local Electoral Areas 2022): 167 categories, total 'IE0'
@@ -63,9 +63,8 @@ C04166V04937 (CSO Local Electoral Areas 2022): 167 categories, total 'IE0'
     2ae19629-3ef4-13a3-e055-000005400001: Cahir, Tipperary
     2ae19629-3f31-13a3-e055-000000000001: Dungarvan, Waterford
     2ae19629-3f32-13a3-e055-000000000001: Portlaw-Kilmacthomas, Waterford
-C03741V04490 (Language): 5 categories, total 'T'
-    ES: Spanish
-    FR: French
-    PL: Polish
-    OTH: Other (incl. not stated)
+C03765V04514 (Ability to Speak Irish): 4 categories, total 'T'
+    Y: Yes
+    N: No
+    NS: Not Stated
     T: Total
