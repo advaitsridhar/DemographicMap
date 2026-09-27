@@ -1,9 +1,2 @@
-== https://www.estadistica.ad/api/v3/datasets?q=poblacio
-  HTTPError: HTTP Error 404: Not Found
-== https://www.estadistica.ad/api/search/v1/collections/all/items?q=poblacio&limit=30
-  HTTPError: HTTP Error 404: Not Found
-== https://www.estadistica.ad/portal/sharing/rest/search?q=poblacio&f=json&num=50
-  6,087 bytes; starts b'{"total"'
-  {"total":5,"start":1,"num":50,"nextStart":-1,"results":[{"id":"b5d19729291a4355a56a37845fb63371","owner":"cartografia","created":1658311943014,"modified":1742289345303,"guid":null,"name":"Poblacions_Andorra_WFL1","title":"Poblacions Andorra","type":"Feature Service","typeKeywords":["ArcGIS Server","Data","Feature Access","Feature Service","Metadata","providerSDS","Service","Hosted Service"],"descr
-== https://www.estadistica.ad/serveiestudis/web/index.asp
-  HTTPError: HTTP Error 404: Not Found
+germany: Zensus 2022 table 1000A-1018, cut by GEORB1 (regierungsbezirk)
+germany: 1000A-1018 answered HTTP 400 Bad Request. A 401 here means the account was not accepted -- this API reads the credential from the request headers and ignores it as a query parameter, so a working account presented the wrong way looks exactly like a rejected one.
