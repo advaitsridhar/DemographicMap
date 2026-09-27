@@ -473,10 +473,16 @@ def check_departments(departments: dict[str, Tally],
 def check_municipios(series_2025: Counter, published: dict[tuple[str, str], int]) -> None:
     wrong = {k: (round(series_2025.get(k, 0)), v) for k, v in published.items()
              if abs(series_2025.get(k, 0) - v) > 1}
-    extra = sorted(k for k in series_2025 if k not in published)
+    # A row the table leaves out must round to no one (San José's people with
+    # no municipio recorded weigh less than one person).
+    extra = sorted((k, round(v, 2)) for k, v in series_2025.items()
+                   if k not in published and v >= 1)
     if wrong or extra:
         raise SystemExit(f"uruguay_census: the person file by its own municipios differs from "
                          f"Cuadro 14: {sorted(wrong.items())[:10]}; not in it: {extra[:10]}")
+    small = {k: round(v, 3) for k, v in series_2025.items() if k not in published}
+    if small:
+        log(f"  in the person file and not in Cuadro 14, each under one weighted person: {small}")
     log(f"  the weighted person file makes Cuadro 14's {len(published)} rows, "
         "department by department and municipio by municipio")
 
