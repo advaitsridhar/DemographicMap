@@ -133,6 +133,19 @@ ADMIN1_FILE = re.compile(r"admin_?1(?!\d).*\.csv$", re.I)
 ADMIN2_FILE = re.compile(r"admin_?2(?!\d).*\.csv$", re.I)
 # What the file writes in location_level, per level. Both spellings appear.
 LEVEL_NAMES = {1: ("1", "admin1"), 2: ("2", "admin2")}
+# Levels at which the publisher's units are not the map's, so no row of them
+# may be joined: a name that happens to begin like one of the map's units
+# would put a different place's figures on it.
+OTHER_UNITS: dict[tuple[str, int], str] = {
+    # El Salvador's 2024 reform merged its 262 municipios into 44 ("San
+    # Vicente Norte", "Santa Ana Este"), and CLEAR Global's second level is
+    # those 44 plus two lake areas. The map draws the 262, now districts, so
+    # "San Vicente Norte" reached the old municipio of San Vicente by prefix
+    # and "Lago de Coatepeque" the municipio of Coatepeque.
+    ("SLV", 2): "El Salvador's second level here is the 44 municipios of the 2024 "
+                "reform, which the map does not draw: it draws the 262 older "
+                "municipios, now districts",
+}
 YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 
 
@@ -467,6 +480,9 @@ def country_records(package: dict[str, Any], level: int = 1
     log(f"    licence: {licence(package)}")
     if not iso:
         log("    refused: the catalogue gives no ISO3 for this dataset")
+        return []
+    if (iso, level) in OTHER_UNITS:
+        log(f"    refused at level {level}: {OTHER_UNITS[(iso, level)]}")
         return []
     resource = level_resource(package, level)
     if resource is None:
