@@ -1,176 +1,30 @@
-
-=== cze5
-
-## https://csu.gov.cz/docs/107508/bc8f2d41-4d3a-a8f4-02fa-800d9cd27266/130181-24data2023.csv
-   HTTP 200, 13,628,673 bytes, 93,025 lines, text/csv;charset=utf-8
-   | "idhod","hodnota","stapro_kod","pohlavi_cis","pohlavi_kod","vek_cis","vek_kod","uzemi_cis","uzemi_kod","obdobi","pohlavi_txt","vek_txt","uzemi_txt","uzemi_typ"
-   | "1286408928","1384732","2406",,,,,"100","3018","2023-12-31",,,"Hlavní město Praha","kraj"
-   | "1284319375","12586","2406",,,"7700","400000600001000","100","3018","2023-12-31",,"0","Hlavní město Praha","kraj"
-   | "1284269706","13722","2406",,,"7700","400001600002000","100","3018","2023-12-31",,"1","Hlavní město Praha","kraj"
-   idhod: 93024 values, e.g. ['1286408928', '1284319375', '1284269706', '1284358398', '1284259038', '1284198940', '1284299575', '1284222992']
-   hodnota: 7428 values, e.g. ['1384732', '12586', '13722', '15702', '14172', '14409', '14850', '15033']
-   stapro_kod: 1 values, e.g. ['2406']
-   pohlavi_cis: 2 values, e.g. ['', '102']
-   pohlavi_kod: 3 values, e.g. ['', '1', '2']
-   vek_cis: 2 values, e.g. ['', '7700']
-   vek_kod: 102 values, e.g. ['', '400000600001000', '400001600002000', '400002600003000', '400003600004000', '400004600005000', '400005600006000', '400006600007000']
-   uzemi_cis: 5 values, e.g. ['100', '101', '99', '65', '97']
-   uzemi_kod: 302 values, e.g. ['3018', '3026', '3034', '3042', '3051', '3069', '3077', '3085']
-   obdobi: 1 values, e.g. ['2023-12-31']
-   pohlavi_txt: 3 values, e.g. ['', 'muž', 'žena']
-   vek_txt: 102 values, e.g. ['', '0', '1', '2', '3', '4', '5', '6']
-   uzemi_txt: 236 values, e.g. ['Hlavní město Praha', 'Středočeský kraj', 'Jihočeský kraj', 'Plzeňský kraj', 'Karlovarský kraj', 'Ústecký kraj', 'Liberecký kraj', 'Královéhradecký kraj']
-   uzemi_typ: 5 values, e.g. ['kraj', 'okres', 'region soudržnosti', 'správní obvod obce s rozšířenou působností', 'stát']
-
-## https://data.gov.cz/sparql?query=PREFIX%20dct%3A%20%3Chttp%3A//purl.org/dc/terms/%3E%0APREFIX%20dcat%3A%20%3Chttp%3A//www.w3.org/ns/dcat%23%3E%0ASELECT%20%3Ftitle%20%3Furl%20WHERE%20%7B%0A%20%20%3Fd%20a%20dcat%3ADataset%20%3B%20dct%3Atitle%20%3Ftitle%20%3B%20dcat%3Adistribution%20%3Fdist%20.%0A%20%20%3Fdist%20dcat%3AdownloadURL%20%3Furl%20.%0A%20%20FILTER%28CONTAINS%28STR%28%3Furl%29%2C%20%22130181%22%29%20%7C%7C%20CONTAINS%28LCASE%28STR%28%3Ftitle%29%29%2C%20%22jednotek%20v%C4%9Bku%22%29%29%0A%7D%20LIMIT%2080
-   HTTP 200, 4,598 bytes, application/sparql-results+json
-   - Počet obyvatel podle pohlaví a jednotek věku k 31. 12. | https://data.csu.gov.cz/opendata/sady/OBY02BHVD/distribuce/csv
-   - Počet obyvatel podle pohlaví a jednotek věku k 31. 12. | https://data.csu.gov.cz/opendata/sady/OBY02BHVD/distribuce/json
-   - Obyvatelstvo podle jednotek věku a pohlaví ve správních obvodech obcí s rozšířenou působností - rok 2020 | https://csu.gov.cz/docs/107508/ff7b718b-683d-1222-983b-4c513368b6ef/130181-21data043021.csv
-   - Obyvatelstvo podle jednotek věku a pohlaví ve správních obvodech obcí s rozšířenou působností - rok 2021 | https://csu.gov.cz/docs/107508/e1e5b90d-f8b7-b127-f5b1-6c50b6c512dd/130181-22data050222.csv
-   - Sčítání 2021 - Obyvatelstvo podle jednotek věku a pohlaví | https://csu.gov.cz/docs/107508/2a435746-ada6-36ff-88ab-0773089ddd27/sldb2021_vek1_pohlavi.csv
-   - Obyvatelstvo podle jednotek věku a pohlaví - rok 2022 | https://csu.gov.cz/docs/107508/1cab7ab3-4d2e-4d0e-c2a8-425e3442218c/130181-23data2022.csv
-   - Obyvatelstvo podle jednotek věku a pohlaví - rok 2023 | https://csu.gov.cz/docs/107508/bc8f2d41-4d3a-a8f4-02fa-800d9cd27266/130181-24data2023.csv
-   - Obyvatelstvo podle jednotek věku a pohlaví ve správních obvodech obcí s rozšířenou působností - rok 2019 | https://csu.gov.cz/docs/107508/d481dd09-cc5e-c63f-e515-6acb6a6ef01b/130181-20data043020.csv
-   - Obyvatelstvo podle jednotek věku a pohlaví - rok 2024 | https://csu.gov.cz/docs/107508/825ad7ae-f155-50e1-7d9f-1706bd7ce4c2/130181-25data2024.csv
-   - Projektovaný počet obyvatel podle pohlaví a jednotek věku k 1. 1.  | https://data.csu.gov.cz/opendata/sady/OBY02PROJ1A/distribuce/csv
-   - Projektovaný počet obyvatel podle pohlaví a jednotek věku k 1. 1.  | https://data.csu.gov.cz/opendata/sady/OBY02PROJ1A/distribuce/json
-   - Obyvatelstvo podle jednotek věku a pohlaví ve správních obvodech obcí s rozšířenou působností - rok 2018 | https://csu.gov.cz/docs/107508/beaf7142-05a2-6183-b94c-341a59eee319/130181-19data042020.csv
-   - Počet obyvatel podle pohlaví a jednotek věku | https://data.csu.gov.cz/opendata/sady/OBY02B/distribuce/csv
-   - Počet obyvatel podle pohlaví a jednotek věku | https://data.csu.gov.cz/opendata/sady/OBY02B/distribuce/json
-   - Projektovaný počet obyvatel podle pohlaví a jednotek věku k 1. 1. | https://data.csu.gov.cz/opendata/sady/OBY02PROJ2A/distribuce/csv
-   - Projektovaný počet obyvatel podle pohlaví a jednotek věku k 1. 1. | https://data.csu.gov.cz/opendata/sady/OBY02PROJ2A/distribuce/json
-
-=== hun5
-
-## https://nepszamlalas2022.ksh.hu/eredmenyek/statikus-tablak
-   HTTP 200, 11,458 bytes, text/html; charset=UTF-8
-   45 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{3,}<'
-   - href="favicon.ico" type="image/x-icon"> <
-   - href="favicon.png"> <
-   - href=".."> <
-   - href="assets/css/bootstrap.min.css" rel="stylesheet"> <
-   - href="." data-bs-toggle="tooltip" title="Népszámlálás 2022 főoldala"> <
-   - href="nepszamlalas-2022">Népszámlálás 2022<
-   - href="kerdoiv">Kérdőív<
-   - href="fogalmak">Fogalmak<
-   - href="hireink">Hírek<
-   - href="a-nepszamlalasok-tortenete">A népszámlálások története<
-   - href="jogi-hatter">Jogi háttér<
-   - href="adatvedelem">Adatvédelem<
-   - href="kozossegvallalas">Közösségvállalás<
-   - href="korabbi-nepszamlalasok">Korábbi népszámlálások<
-   - href="nemzetkozi-nepszamlalasi-adatbazisok">Nemzetközi népszámlálási adatbázisok<
-   - href="https://nepszamlalas2022.ksh.hu/adatbazis/">Adatbázis<
-   - href="eredmenyek/vizualizaciok">Vizualizációk<
-   - href="https://map.ksh.hu/nepszamlalas/">Térképek<
-   - href="eredmenyek/statikus-tablak">Statikus táblák<
-   - href="eredmenyek/kiadvanyok">Kiadványok<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.1.xlsx">1.1.1. A népesség száma, népsűrűség<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.2.xlsx">1.1.2. Kor és nemek szerinti megoszlás, állampolgárság<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.3.xlsx">1.1.3. Családi állapot, termékenység<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.4.xlsx">1.1.4. Iskolázottság<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.5.xlsx">1.1.5. Gazdasági aktivitás<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.6.xlsx">1.1.6. Nemzetiség, anyanyelv<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.7.xlsx">1.1.7. Vallás<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.1.8.xlsx">1.1.8. Egészségi állapot<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.2.1.xlsx">1.2.1. A háztartások száma és összetétele<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.2.2.xlsx">1.2.2. A háztartások mérete, korösszetétele<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.1.xlsx">1.3.1. A lakások száma<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.2.xlsx">1.3.2. A lakott lakások tulajdonjellege<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.3.xlsx">1.3.3. A lakott lakások alapadatai<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.4.1.xlsx">1.3.4.1. A lakott lakások felszereltsége<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.4.2.xlsx">1.3.4.2. A lakott lakások fűtési mód szerint<
-   - href="eredmenyek/vegleges-adatok/tablazatok/nsz2022-1.3.4.3.xlsx">1.3.4.3. A lakott lakások komfortosság szerint<
-   - href="eredmenyek/vegleges-adatok/oevk.pdf">Az országgyűlési egyéni választókerületek területi beosztása<
-   - href="eredmenyek/vegleges-adatok/oevk_terkep.pdf">Az országgyűlési egyéni választókerületek területi beosztásának térképe<
-   - href="eredmenyek/vegleges-adatok/orszaggyulesi_egyeni_valasztokeruletek_adatai_2022.xlsx">Az országgyűlési egyéni választókerületek adatai<
-   - href="https://www.facebook.com/KozpontiStatisztikaiHivatal" aria-label="A KSH Facebook oldala" data-bs-toggle="tooltip" title="Ugrás a KSH Facebook oldalára"> <
-   - href="https://www.instagram.com/kozpontistatisztikaihivatal/" aria-label="A KSH Instagram oldala" data-bs-toggle="tooltip" title="Ugrás a KSH Instagram oldalára"> <
-   - href="kapcsolat">Kapcsolat<
-   - href="impresszum">Impresszum<
-   - href="felhasznalasi-feltetelek">Felhasználási feltételek<
-   - href="media/KSH_Nepszamlalas_adatkezelesi_tajekoztatoja_masodik.pdf">Adatvédelmi tájékoztató<
-
-## https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1
-   HTTP 200, 1,680,867 bytes, application/javascript
-   75 distinct matches of '(?:https?:)?//[^\\"\' ]+|/api/[^\\"\' ]+|\\.php[^\\"\' ]*'
-   - https://reactjs.org/docs/error-decoder.html?invariant=
-   - http://www.w3.org/1999/xlink
-   - http://www.w3.org/XML/1998/namespace
-   - http://www.w3.org/2000/svg
-   - http://www.w3.org/1998/Math/MathML
-   - http://www.w3.org/1999/xhtml
-   - https://github.com/SortableJS/react-sortablejs.
-   - https://github.com/exceljs/exceljs/blob/master/UPGRADE-4.0.md
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/calcChain
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/image
-   - http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/table
-   - http://schemas.openxmlformats.org/spreadsheetml/2006/main
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships
-   - http://schemas.openxmlformats.org/markup-compatibility/2006
-   - http://schemas.microsoft.com/office/spreadsheetml/2010/11/main
-   - http://schemas.openxmlformats.org/officeDocument/2006/extended-properties
-   - http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
-   - http://schemas.openxmlformats.org/package/2006/content-types
-   - http://schemas.openxmlformats.org/package/2006/metadata/core-properties
-   - http://purl.org/dc/elements/1.1/
-   - http://purl.org/dc/terms/
-   - http://purl.org/dc/dcmitype/
-   - http://www.w3.org/2001/XMLSchema-instance
-   - http://schemas.openxmlformats.org/package/2006/relationships
-   - http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing
-   - http://schemas.openxmlformats.org/drawingml/2006/main
-   - http://schemas.microsoft.com/office/drawing/2014/main
-   - http://schemas.microsoft.com/office/excel/2006/main
-   - http://schemas.microsoft.com/office/spreadsheetml/2009/9/main
-   - http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing
-
-=== che5
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103030000_211/px-x-0103030000_211.px
-   HTTP 200, 73,193 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
-   Jahr (Jahr): 1 values; 2011=2011
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2315 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last 6810=......6810 La Baroche
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Wohnort vor 1 Jahr (Wohnort vor 1 Jahr): 8 values; -99999=Wohnort vor 1 Jahr - Total, 1=Gleiche Gemeinde wie heute, 2=Andere Gemeinde im gleichen Kanton, 3=Gemeinde in einem anderen Kanton, 4=Im Ausland, -4=Noch nicht geboren, -6=Nicht zuteilbar gemäss den aktuellen Grenzen, -9=Ohne Angabe
-   Staatsangehörigkeit (Auswahl) (Staatsangehörigkeit (Auswahl)): 13 values; -99999=Staatsangehörigkeit (Auswahl) - Total, 1=Schweiz, 2=EU-Staaten, 3=EFTA-Staaten, 4=Übriges Europa (Europa ohne EU und EFTA), 5=Afrika, 6=Nordamerika, 7=Lateinamerika und Karibik ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Altersklasse (Altersklasse): 22 values; -99999=Alterklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103030000_220/px-x-0103030000_220.px
-   HTTP 200, 72,234 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
-   Jahr (Jahr): 1 values; 2020=2020
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2285 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last 6812=......6812 Basse-Vendline
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Wohnort vor 1 Jahr (Wohnort vor 1 Jahr): 8 values; -99999=Wohnort vor 1 Jahr - Total, 1=Gleiche Gemeinde wie heute, 2=Andere Gemeinde im gleichen Kanton, 3=Gemeinde in einem anderen Kanton, 4=Im Ausland, -4=Noch nicht geboren, -6=Nicht zuteilbar gemäss den aktuellen Grenzen, -9=Ohne Angabe
-   Staatsangehörigkeit (Auswahl) (Staatsangehörigkeit (Auswahl)): 12 values; -99999=Staatsangehörigkeit (Auswahl) - Total, 1=Schweiz, 2=EU-Staaten, 3=EFTA-Staaten, 4=Übriges Europa (Europa ohne EU und EFTA), 5=Afrika, 6=Nordamerika, 7=Lateinamerika und Karibik ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Altersklasse (Altersklasse): 22 values; -99999=Alterklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103030000_223/px-x-0103030000_223.px
-   HTTP 200, 72,253 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Wohnort vor 1 Jahr, Staatsangehörigkeit (Auswahl), Geschlecht und Altersklasse
-   Jahr (Jahr): 1 values; 2023=2023
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Wohnort vor 1 Jahr (Wohnort vor 1 Jahr): 8 values; -99999=Wohnort vor 1 Jahr - Total, 1=Gleiche Gemeinde wie heute, 2=Andere Gemeinde im gleichen Kanton, 3=Gemeinde in einem anderen Kanton, 4=Im Ausland, -4=Noch nicht geboren, -6=Nicht zuteilbar gemäss den aktuellen Grenzen, -9=Ohne Angabe
-   Staatsangehörigkeit (Auswahl) (Staatsangehörigkeit (Auswahl)): 12 values; -99999=Staatsangehörigkeit (Auswahl) - Total, 1=Schweiz, 2=EU-Staaten, 3=EFTA-Staaten, 4=Übriges Europa (Europa ohne EU und EFTA), 5=Afrika, 6=Nordamerika, 7=Lateinamerika und Karibik ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Altersklasse (Altersklasse): 22 values; -99999=Alterklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-
-## https://www.agvchapp.bfs.admin.ch/api/communes/correspondances?startPeriod=01-01-2009&endPeriod=01-01-2011
-   HTTP 503, 53,204 bytes, 1 lines, text/html
-   | <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"> <head> <title> Bundesamt für Informatik und Telekom
+sweden: SCB population by region, age and sex
+  single years against each region's published total: worst 1.005%
+  BefolkningCKM 2025: 290 kommuner, 21 län; Sweden 10,605,532, median age 41.4
+    län -> Sweden: 21 parts sum to 10,605,544 against 10,605,526
+    kommuner -> Stockholms län: 26 parts sum to 2,486,253 against 2,486,251
+    kommuner -> Uppsala län: 8 parts sum to 410,584 against 410,579
+    kommuner -> Södermanlands län: 9 parts sum to 300,450 against 300,438
+    kommuner -> Östergötlands län: 13 parts sum to 472,515 against 472,529
+    kommuner -> Jönköpings län: 13 parts sum to 369,727 against 369,726
+    kommuner -> Kronobergs län: 8 parts sum to 203,120 against 203,122
+    kommuner -> Kalmar län: 12 parts sum to 245,475 against 245,478
+    kommuner -> Gotlands län: 1 parts sum to 60,854 against 60,854
+    kommuner -> Blekinge län: 5 parts sum to 156,614 against 156,619
+    kommuner -> Skåne län: 33 parts sum to 1,433,091 against 1,433,081
+    kommuner -> Hallands län: 6 parts sum to 346,089 against 346,088
+    kommuner -> Västra Götalands län: 49 parts sum to 1,777,801 against 1,777,805
+    kommuner -> Värmlands län: 16 parts sum to 283,051 against 283,034
+    kommuner -> Örebro län: 12 parts sum to 308,365 against 308,359
+    kommuner -> Västmanlands län: 10 parts sum to 280,749 against 280,757
+    kommuner -> Dalarnas län: 15 parts sum to 286,031 against 286,041
+    kommuner -> Gävleborgs län: 10 parts sum to 283,447 against 283,453
+    kommuner -> Västernorrlands län: 7 parts sum to 240,643 against 240,641
+    kommuner -> Jämtlands län: 8 parts sum to 132,737 against 132,736
+    kommuner -> Västerbottens län: 15 parts sum to 279,034 against 279,024
+    kommuner -> Norrbottens län: 14 parts sum to 248,927 against 248,929
+  SWE admin2: 289 of 290 office units bound to 290 polygons (0 set aside as pieces)
+    office units with no polygon (1): Göteborg (1480)
+    polygons with no office unit (1): Gothenburg [70781695B76264906816615]
+  wrote data/processed/sweden_kommun.json (622 kB)
+  wrote sweden_kommun.json: 310 records
