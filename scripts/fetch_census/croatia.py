@@ -250,6 +250,97 @@ def bars(field: str, unit: dict[str, Any]) -> Any:
     return shares({k: v for k, v in groups.items() if v}, total=total) or gap(NOT_AVAILABLE)
 
 
+AGE_SHEET = "20."
+
+
+def parse_ages(rows: list[tuple[Any, ...]]) -> dict[tuple[Any, Any, Any], dict[str, Any]]:
+    """{(county, type, name): {"groups": [(lower, width, n)], "men", "women", "total"}}
+    from sheet 20, population by five-year age group, sex and type of settlement.
+
+    Each unit has nine rows -- all, urban and other settlements, each for both
+    sexes, men and women -- and only the three "Ukupno" (all settlements) rows
+    are read. The unit's name and type are in the same columns as on the
+    other sheets; its county row has both blank.
+    """
+    header_at = next((i for i, r in enumerate(rows)
+                      if r and str(r[0] or "").strip().startswith("Županija")), None)
+    if header_at is None:
+        raise SystemExit("croatia: sheet 20 has no header row starting with 'Županija'")
+    header = rows[header_at]
+    total_col = next((j for j, c in enumerate(header)
+                      if str(c or "").replace("\n", " ").strip().lower().startswith("ukupno")), None)
+    if total_col is None:
+        raise SystemExit(f"croatia: sheet 20 has no total column: {header}")
+    bands: list[tuple[int, float, float | None]] = []
+    for j in range(total_col + 1, len(header)):
+        label = " ".join(str(header[j] or "").split())
+        m = re.match(r"^(\d+)\s*[–-]\s*(\d+)", label)
+        top = re.match(r"^(\d+)\s*(\+|i više|and over)", label)
+        if m:
+            bands.append((j, float(m.group(1)), float(int(m.group(2)) - int(m.group(1)) + 1)))
+        elif top:
+            bands.append((j, float(top.group(1)), None))
+        elif label:
+            raise SystemExit(f"croatia: sheet 20 age column {label!r}")
+    if not bands or bands[-1][2] is not None:
+        raise SystemExit("croatia: sheet 20's age groups do not end in an open group")
+    out: dict[tuple[Any, Any, Any], dict[str, Any]] = {}
+    for row in rows[header_at + 1:]:
+        if not row or row[0] is None or len(row) <= total_col:
+            continue
+        county = str(row[0]).strip()
+        if county.startswith("Republika") or str(row[5] or "").strip() != "Ukupno":
+            continue
+        kind = str(row[1] or "").strip() or None
+        name = str(row[4] or "").strip() or None
+        sex = str(row[7] or "").strip().lower()
+        unit = out.setdefault((county, kind, name), {"groups": [], "men": None, "women": None,
+                                                     "total": None})
+        if sex.startswith("sv"):
+            unit["total"] = count(row[total_col])
+            unit["groups"] = [(lo, w, count(row[j])) for j, lo, w in bands]
+            check = sum(n for _, _, n in unit["groups"])
+            if check != unit["total"]:
+                raise SystemExit(f"croatia: {county} / {name} ages add to {check:,} against "
+                                 f"{unit['total']:,}")
+        elif sex == "m":
+            unit["men"] = count(row[total_col])
+        elif sex in ("ž", "z"):
+            unit["women"] = count(row[total_col])
+    for key, unit in out.items():
+        if None in (unit["men"], unit["women"], unit["total"]) or \
+                unit["men"] + unit["women"] != unit["total"]:
+            raise SystemExit(f"croatia: {key} sexes {unit['men']} + {unit['women']} against "
+                             f"{unit['total']}")
+    return out
+
+
+def age_fields(unit: dict[str, Any] | None) -> dict[str, Any]:
+    """Median age within the five-year group, and males per 1,000 females."""
+    if not unit:
+        return {}
+    total = sum(n for _, _, n in unit["groups"])
+    half, cum, median = total / 2, 0.0, None
+    for lower, width, n in unit["groups"]:
+        if n and cum + n >= half:
+            if width is None:
+                raise SystemExit("croatia: a median in the open top age group")
+            median = round(lower + width * (half - cum) / n, 1)
+            break
+        cum += n
+    out: dict[str, Any] = {}
+    if median is not None:
+        out["median_age"] = measure(median, unit="years", year=YEAR, source=SOURCE)
+        out["median_age_note"] = (
+            "Interpolated within the five-year age group that holds the middle person, from "
+            "the census's population by age group and sex (sheet 20 of the towns and "
+            "municipalities workbook): the bureau publishes nothing finer by town.")
+    if unit["women"]:
+        out["sex_ratio"] = measure(round(1000 * unit["men"] / unit["women"]),
+                                   unit="males_per_1000_females", year=YEAR, source=SOURCE)
+    return out
+
+
 def build() -> list[dict[str, Any]]:
     import openpyxl
     log("croatia: Popis 2021, counties and towns/municipalities")
@@ -269,6 +360,15 @@ def build() -> list[dict[str, Any]]:
                              f"({len(theirs)} vs {len(keys)})")
     by_key = {field: {(u["county"], u["type"], u["name"]): u for u in units}
               for field, units in parsed.items()}
+    ages = parse_ages(sheet_rows(workbook, AGE_SHEET))
+    missing = [k for k in keys if k not in ages and (k[1] is None or k[1] in UNIT_KINDS)]
+    if missing:
+        raise SystemExit(f"croatia: sheet 20 lacks {len(missing)} units: {missing[:5]}")
+    for key in keys:
+        if key in ages and ages[key]["total"] != by_key["ethnicity"][key]["total"]:
+            raise SystemExit(f"croatia: {key} counts {ages[key]['total']:,} on sheet 20 and "
+                             f"{by_key['ethnicity'][key]['total']:,} on sheet 1")
+    log(f"  sheet {AGE_SHEET} (age and sex): {len(ages)} units, every total the same as sheet 1's")
     records = []
     skipped: dict[str, int] = {}
     for key in keys:
@@ -287,6 +387,7 @@ def build() -> list[dict[str, Any]]:
             fields[field] = bars(field, by_key[field][key])
             fields[f"{field}_year"] = dated(fields[field], YEAR)
             fields[f"{field}_note"] = NOTES[field]
+        fields.update(age_fields(ages.get(key)))
         county_id = f"HRV-{slugify(county)}"
         shapes = []
         if name is None:
@@ -306,7 +407,9 @@ def build() -> list[dict[str, Any]]:
                 country="HRV", aliases=aliases,
                 population=measure(unit["total"], year=YEAR, source=SOURCE),
                 sources=[{"field": "population/ethnicity/religion/language", "name": SOURCE,
-                          "url": PAGE, "license": LICENCE}],
+                          "url": PAGE, "license": LICENCE},
+                         {"field": "median_age/sex_ratio", "name": SOURCE + ", sheet 20",
+                          "url": URL, "license": LICENCE}],
                 **fields,
             ))
     for kind, n in skipped.items():
