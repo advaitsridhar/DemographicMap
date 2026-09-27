@@ -36,6 +36,8 @@ SEX_RATIO_UNIT = "males_per_100_females"
 # Eurostat's national median from the office's figures, for the check.
 EUROSTAT = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
             "demo_pjanind?format=JSON&lang=EN&indic_de=MEDAGEPOP&geo={geo}")
+EUROSTAT_POPULATION = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+                       "demo_pjan?format=JSON&lang=EN&sex=T&age=TOTAL&geo={geo}&time={year}")
 
 
 def units(iso3: str, level: str) -> list[dict[str, Any]]:
@@ -123,12 +125,21 @@ def check_sum(parts: Iterable[float], whole: float, what: str, tolerance: float 
 
 def eurostat_median(geo: str, year: int) -> float | None:
     """Eurostat's published median age of a country on 1 January ``year``."""
+    return _eurostat_value(EUROSTAT.format(geo=geo) + f"&time={year}", f"median for {geo} {year}")
+
+
+def eurostat_population(geo: str, year: int) -> float | None:
+    """Eurostat's published population of a country on 1 January ``year`` (demo_pjan)."""
+    return _eurostat_value(EUROSTAT_POPULATION.format(geo=geo, year=year), f"population for {geo} {year}")
+
+
+def _eurostat_value(url: str, what: str) -> float | None:
     from .eurostat import unpack
     from ._shared import http_json
     try:
-        payload = http_json(EUROSTAT.format(geo=geo) + f"&time={year}", timeout=120)
+        payload = http_json(url, timeout=120)
     except Exception as exc:  # noqa: BLE001 - reported, then the check is skipped by name
-        log(f"  Eurostat median for {geo} {year} unavailable ({exc.__class__.__name__})")
+        log(f"  Eurostat {what} unavailable ({exc.__class__.__name__})")
         return None
     values = list(unpack(payload).values())
     return values[0] if values else None

@@ -24,8 +24,15 @@ geoBoundaries names after their seat, and the rename of powiat jeleniogórski
 to karkonoski in 2021. Each powiat is bound within its voivodeship, read off
 the TERYT code inside the BDL unit id.
 
-The Masovian voivodeship has no median on this map because Eurostat splits
-it in two at NUTS 2; its GUS figure is written at the first level.
+**One definition at both levels.** GUS's population is its national
+definition of residence; the population Eurostat publishes for Poland is the
+usual-resident population, about 2% smaller, and it is what the map's
+voivodeships held before. Powiats on one definition under voivodeships on the
+other exceeded their parents by up to 5.5%, so every voivodeship is written
+from the same BDL variables as its powiats -- population, GUS's own median and
+the sex ratio -- and the two levels sum to each other. The note on each
+population says which definition it is and measures the national difference
+against Eurostat's figure for the next 1 January.
 
 Usage:
     python -m scripts.fetch_census.poland_ages
@@ -39,7 +46,8 @@ import time
 from typing import Any
 
 from ._shared import PROCESSED, http_json, log, measure, record, write_json
-from .central_ages import SEX_RATIO_UNIT, check_sum, eurostat_median, fold, report_unbound, sex_ratio, units
+from .central_ages import (SEX_RATIO_UNIT, check_sum, eurostat_median, eurostat_population, fold,
+                           report_unbound, sex_ratio, units)
 from .poland import VOIVODESHIPS, powiat_names
 
 API = "https://bdl.stat.gov.pl/api/v1/data/by-variable/{var}?format=json&unit-level={level}&page-size=100&page={page}&lang=pl"
@@ -53,7 +61,6 @@ TERYT = {"02": "DOLNOŚLĄSKIE", "04": "KUJAWSKO-POMORSKIE", "06": "LUBELSKIE", 
          "18": "PODKARPACKIE", "20": "PODLASKIE", "22": "POMORSKIE", "24": "ŚLĄSKIE",
          "26": "ŚWIĘTOKRZYSKIE", "28": "WARMIŃSKO-MAZURSKIE", "30": "WIELKOPOLSKIE",
          "32": "ZACHODNIOPOMORSKIE"}
-LACKING_ADMIN1 = {"MAZOWIECKIE"}
 EXPECTED = 380
 
 
@@ -124,11 +131,14 @@ def build() -> list[dict[str, Any]]:
     if theirs is not None and abs(theirs - mine) > tolerance:
         raise SystemExit(f"poland_ages: GUS's national median {mine} against Eurostat's {theirs}")
     log(f"  GUS national median {mine} (31 December {year}); Eurostat {theirs} (1 January {when})")
+    definition = population_definition(national, year)
 
     def fields(level: int, unit_id: str, what: str) -> dict[str, Any]:
         men, women = value(level, "men", unit_id), value(level, "women", unit_id)
         return {
             "population": measure(int(value(level, "total", unit_id)), year=year, source=SOURCE),
+            "population_note": (f"GUS's population of the {what} on 31 December {year} (BDL P2137). "
+                                + definition),
             "median_age": measure(round(value(level, "median", unit_id), 1), unit="years",
                                   year=year, source=SOURCE),
             "median_age_note": f"GUS's own median age of the {what}'s population, {year} (BDL P3814).",
@@ -171,14 +181,34 @@ def build() -> list[dict[str, Any]]:
     first_by_name = {u["name"]: u for u in firsts}
     for voiv_id in sorted(data[2]["total"]):
         voiv = TERYT[voiv_id[2:4]]
-        if voiv not in LACKING_ADMIN1:
-            continue
         shape = first_by_name[VOIVODESHIPS[voiv]]
         records.append(record(
             f"POL-BDL-{voiv_id}", shape["name"], level="admin1", parent="POL", country="POL",
             codes={"bdl": voiv_id}, match_by="shape_id", shape_id=shape["id"],
             **fields(2, voiv_id, "voivodeship")))
     return records
+
+
+def population_definition(national: float, year: int) -> str:
+    """What GUS's population counts, measured against Eurostat's for Poland."""
+    eu, when = eurostat_population("PL", year + 1), year + 1
+    if eu is None:
+        eu, when = eurostat_population("PL", year), year
+    text = ("It is GUS's national definition of residence, the one its own tables use; every "
+            "powiat and voivodeship of Poland on this map is on it, so they sum to one another.")
+    if eu is None:
+        log("  Eurostat's population of Poland unavailable; the definition note says so")
+        return text + " Eurostat's usual-resident figure for Poland could not be read to compare."
+    gap_pct = 100.0 * (national - eu) / eu
+    log(f"  GUS's Poland {national:,.0f} (31 December {year}) against Eurostat's {eu:,.0f} "
+        f"(1 January {when}): {gap_pct:+.1f}%")
+    if not 0 <= gap_pct <= 5:
+        raise SystemExit(f"poland_ages: GUS's national population is {gap_pct:+.1f}% from Eurostat's; "
+                         f"the two definitions differ by about 2%, so this is something else")
+    return (text + f" Eurostat publishes Poland's usual-resident population (people who have lived "
+            f"in the country for twelve months or more, or intend to), which is smaller: "
+            f"{eu:,.0f} on 1 January {when}, against GUS's {national:,.0f} on 31 December {year}, "
+            f"which is {gap_pct:.1f}% larger.")
 
 
 def main() -> int:
