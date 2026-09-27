@@ -14,7 +14,7 @@ from scripts.fetch_census import uruguay_census as uc  # noqa: E402
 def person(pid: str, dept: str = "11", sex: str = "1", age: str = "30",
            yes: tuple[int, ...] = (3,), main: str = "7777", weight: str = "1.5",
            municipio: str = "PIEDRAS COLORADAS", missing: str | None = None) -> dict[str, str]:
-    row = {"ID_CENSO": pid, "DEPARTAMENTO": dept, "PERPH02": sex, "PERNA01": age,
+    row = {"DIRECCION_ID": pid, "DEPARTAMENTO": dept, "PERPH02": sex, "PERNA01": age,
            "PERER02": main, "W": weight, "MUNICIPIO_136": municipio}
     for k in uc.ANCESTRIES:
         row[f"PERER01_{k}"] = missing or ("1" if k in yes else "2")
@@ -91,6 +91,18 @@ class Tallies(unittest.TestCase):
         self.assertEqual(unplaced["rows"], 1)
         self.assertEqual(series[("11", "piedrascoloradas")], 3.0)
         self.assertEqual(municipios[("11", "Sin Municipio")].ancestry["Afro or Black"], 1.5)
+
+    def test_an_address_the_february_file_puts_in_two_municipios_places_no_one(self):
+        rows = [{"DIRECCION_ID": "a", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
+                {"DIRECCION_ID": "a", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
+                {"DIRECCION_ID": "b", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
+                {"DIRECCION_ID": "b", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Tambores"},
+                {"DIRECCION_ID": "", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Tambores"}]
+        where, counts, stats = uc.placements(rows)
+        self.assertEqual(where, {"a": ("11", "Guichón"), "b": None})
+        self.assertEqual(counts[("11", "Tambores")], 2)
+        self.assertEqual(stats["no address"], 1)
+        self.assertEqual(stats["address in two municipios"], 1)
 
     def test_too_many_people_the_february_file_does_not_have_stop_the_run(self):
         _, _, _, unplaced = uc.tally(self.rows, self.where)

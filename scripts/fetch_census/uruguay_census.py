@@ -33,9 +33,10 @@ series instead -- 136 municipios, eleven of them new and "the limits of
 others revised" (INE's microdata guide, section 8.6) -- which the map does
 not draw. INE's February 2026 release filed the same people under the 2020
 series. So each person of the July file is placed in the municipio the
-February file gives them, by the census's own person identifier, and the
-municipios are tallied with the July weights. Every placement is checked:
-the two files must agree on nearly every person and department, every
+February file gives their dwelling's address (DIRECCION_ID; the two files
+number their people differently), and the municipios are tallied with the
+July weights. Every placement is checked: nearly every July address must be
+in the February file and in the same department there, every
 2020 municipio must bind to one polygon of its own department, and the July
 file tallied by its own 2025 series must make INE's Cuadro 14 municipio by
 municipio, as its departments must make Cuadro 1.
@@ -91,7 +92,7 @@ FEBRUARY = ("https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/"
 SOURCE = ("INE Uruguay, Censo de Población, Hogares y Viviendas 2023, person microdata "
           "(July 2026 release, weighted)")
 SOURCE_MUNICIPIO = (SOURCE + ", each person placed in the 2020-series municipio INE's "
-                    "February 2026 release gives them")
+                    "February 2026 release gives their address")
 
 # INE's department codes, Montevideo first and the rest alphabetically; the
 # map's first-level units carry the same names.
@@ -136,8 +137,11 @@ MIXED = "Mixed (several, no principal)"
 NONE_OF_THEM = "None of these ancestries"
 NOT_ASKED = "not asked"
 NO_ANSWER = "no answer"
-PERSON = ["ID_CENSO", "DEPARTAMENTO", "PERPH02", "PERNA01", "PERER02"] + [
+PERSON = ["DIRECCION_ID", "DEPARTAMENTO", "PERPH02", "PERNA01", "PERER02"] + [
     f"PERER01_{k}" for k in ANCESTRIES]
+# The share of the July file's weighted people that may go unplaced (no
+# address the February file knows) before the run stops.
+UNPLACED = 0.02
 
 NOT_COLLECTED = {
     "religion": ("Uruguay's 2023 census does not ask religion: the questionnaire's only "
@@ -413,29 +417,47 @@ def weight_of(row: dict[str, str]) -> float:
         raise SystemExit(f"uruguay_census: a person with weight {row.get('W')!r}") from None
 
 
-def placements(rows: Iterable[dict[str, str]]) -> tuple[dict[str, tuple[str, str]], Counter]:
-    """{person: (department, 2020 municipio)} from the February file, and its counts."""
-    where: dict[str, tuple[str, str]] = {}
+def placements(rows: Iterable[dict[str, str]]
+               ) -> tuple[dict[str, tuple[str, str] | None], Counter, Counter]:
+    """{address: (department, 2020 municipio)} from the February file, its
+    people's counts by pair, and how many had no address or one in two places.
+
+    The two releases number their people differently (ID_CENSO is not the same
+    person in both), so a person is placed by the address the census gives
+    their dwelling (DIRECCION_ID). An address the February file puts in two
+    municipios is not used.
+    """
+    where: dict[str, tuple[str, str] | None] = {}
     pairs: dict[tuple[str, str], tuple[str, str]] = {}
     counts: Counter = Counter()
+    stats: Counter = Counter()
     for row in rows:
         key = (row["DEPARTAMENTO"].zfill(2), row["MUNICIPIO_PAIS"].strip())
         key = pairs.setdefault(key, key)           # one tuple per pair, not per person
-        if row["ID_CENSO"] in where:
-            raise SystemExit(f"uruguay_census: the February file has {row['ID_CENSO']} twice")
-        where[row["ID_CENSO"]] = key
         counts[key] += 1
-    return where, counts
+        address = row["DIRECCION_ID"].strip()
+        if not address:
+            stats["no address"] += 1
+            continue
+        seen = where.setdefault(address, key)
+        if seen is not None and seen != key:
+            where[address] = None
+            stats["address in two municipios"] += 1
+    stats["addresses"] = len(where)
+    return where, counts, stats
 
 
-def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str]]
+def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str] | None]
           ) -> tuple[dict[str, Tally], dict[tuple[str, str], Tally], Counter, dict[str, float]]:
     """The July file, weighted: by its departments, by the February file's
     municipios, and by its own 2025-series municipios (people only)."""
     departments: dict[str, Tally] = defaultdict(Tally)
     municipios: dict[tuple[str, str], Tally] = defaultdict(Tally)
     series_2025: Counter = Counter()
-    unplaced = {"people": 0.0, "rows": 0, "other_department": 0.0, "total": 0.0}
+    unplaced: dict[str, Any] = {"people": 0.0, "rows": 0, "other_department": 0.0,
+                                "total": 0.0}
+    lost: Counter = Counter()
+    unplaced["by_department"] = lost
     for row in rows:
         weight = weight_of(row)
         dept = row["DEPARTAMENTO"].zfill(2)
@@ -443,10 +465,11 @@ def tally(rows: Iterable[dict[str, str]], where: dict[str, tuple[str, str]]
         departments[dept].add(row, weight)
         name = row["MUNICIPIO_136"].strip()
         series_2025[(dept, UNKNOWN if name == UNKNOWN else fold(name))] += weight
-        place = where.get(row["ID_CENSO"])
+        place = where.get(row["DIRECCION_ID"].strip())
         if place is None:
             unplaced["people"] += weight
             unplaced["rows"] += 1
+            lost[dept] += weight
             continue
         if place[0] != dept:
             unplaced["other_department"] += weight
@@ -488,15 +511,19 @@ def check_municipios(series_2025: Counter, published: dict[tuple[str, str], int]
 
 
 def check_placements(unplaced: dict[str, float], rows_july: int) -> None:
-    """Nearly every July person must be in the February file, in the same department."""
-    if unplaced["people"] > 0.001 * unplaced["total"] or \
+    """Nearly every July person's address must be in the February file, and in
+    the same department there."""
+    if unplaced["people"] > UNPLACED * unplaced["total"] or \
             unplaced["other_department"] > 0.001 * unplaced["total"]:
         raise SystemExit(f"uruguay_census: {unplaced['people']:,.0f} weighted people of the July "
-                         f"file are not in the February file, and {unplaced['other_department']:,.0f}"
-                         " are in another department there")
+                         f"file have no address the February file places, and "
+                         f"{unplaced['other_department']:,.0f} have one in another department")
     log(f"  {rows_july - unplaced['rows']:,} of {rows_july:,} July rows placed by the February "
-        f"file; {unplaced['people']:,.0f} weighted people not found there, "
-        f"{unplaced['other_department']:,.0f} in another department there")
+        f"file's addresses; {unplaced['people']:,.0f} weighted people not placed, "
+        f"{unplaced['other_department']:,.0f} placed in another department")
+    lost = unplaced.get("by_department") or {}
+    log("  not placed, by department: " + ", ".join(
+        f"{DEPARTMENTS[d]} {v:,.0f}" for d, v in sorted(lost.items())))
 
 
 def compare_series(municipios: dict[tuple[str, str], Tally],
@@ -653,11 +680,11 @@ def main() -> int:
     published_14 = cuadro_14(sheet_rows(fetch(www5, CUADRO_14)[0]))
 
     with tempfile.TemporaryDirectory() as tmp:
-        where, february = placements(csv_rows(download_url(www5, FEBRUARY, Path(tmp)),
-                                              Path(tmp) / "feb",
-                                              ["ID_CENSO", "DEPARTAMENTO", "MUNICIPIO_PAIS"]))
-        log(f"  February file: {len(where):,} people in {len(february)} "
-            "(department, municipio) pairs")
+        where, february, stats = placements(csv_rows(
+            download_url(www5, FEBRUARY, Path(tmp)), Path(tmp) / "feb",
+            ["DIRECCION_ID", "DEPARTAMENTO", "MUNICIPIO_PAIS"]))
+        log(f"  February file: {sum(february.values()):,} people in {len(february)} "
+            f"(department, municipio) pairs; {dict(stats)}")
         anda = opener()
         accept(anda, JULY[0])
         rows_july = 0
@@ -671,7 +698,7 @@ def main() -> int:
         departments, municipios, series_2025, unplaced = tally(
             counted(csv_rows(download(anda, *JULY, Path(tmp)), Path(tmp) / "jul",
                              PERSON + ["W", "MUNICIPIO_136"])), where)
-    del where
+        del where
 
     total = sum(u.people for u in departments.values())
     if abs(total - NATIONAL) > 1:
@@ -711,7 +738,7 @@ def main() -> int:
         notes.append("INE's current tables file people under the 2025 electoral series of "
                      "municipios, which the boundary file does not draw; these are the same "
                      "weighted people, placed in the 2020-series municipio INE's February "
-                     "2026 release gives each of them")
+                     "2026 release gives their address")
         fields["population"]["note"] = ". ".join(notes) + "."
         records.append(record(
             f"URY-INE-{fold(parent['name'])}-{fold(shape['name'])}", shape["name"],
