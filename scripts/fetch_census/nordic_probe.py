@@ -177,6 +177,48 @@ def sdmx_dataflows(grep: str) -> None:
                 break
 
 
+def sdmx_series(flow: str, query: str = "", limit: int = 6) -> None:
+    """An OSP dataflow's series: how many, their dimensions, and a few keys."""
+    raw = fetch(f"{OSP}/data/{flow}{query}", accept="application/xml")
+    root = ET.fromstring(raw)
+    series = [el for el in root.iter() if el.tag.endswith("}Series")]
+    print(f"  {len(raw):,} bytes, {len(series)} series")
+    dims: dict[str, Counter] = {}
+    for s in series:
+        for kv in s.iter():
+            if kv.tag.endswith("}Value") and kv.get("id"):
+                dims.setdefault(kv.get("id"), Counter())[kv.get("value")] += 1
+    for name, values in dims.items():
+        vals = list(values)
+        print(f"    dim {name}: {len(vals)} values: {vals[:12]}{' ...' if len(vals) > 12 else ''}")
+    for s in series[:limit]:
+        key = {kv.get("id"): kv.get("value") for kv in s.iter()
+               if kv.tag.endswith("}Value") and kv.get("id")}
+        obs = []
+        for o in s.iter():
+            if o.tag.endswith("}Obs"):
+                d = o.find(".//{*}ObsDimension")
+                v = o.find(".//{*}ObsValue")
+                obs.append((d.get("value") if d is not None else None,
+                            v.get("value") if v is not None else None))
+        print(f"    {key} -> {obs[-3:]}")
+
+
+def fin_class(year: str) -> None:
+    """Statistics Finland's municipality -> sub-region key for one year: the sub-regions."""
+    url = (f"https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+           f"kunta_1_{year}0101%23seutukunta_1_{year}0101/maps?content=data&meta=max&lang=fi")
+    body = get_json(url)
+    print(f"  {len(body)} maps; first: {json.dumps(body[0], ensure_ascii=False)[:1500]}")
+    targets = Counter(m.get("targetLocalId") for m in body)
+    print(f"  {len(targets)} sub-regions")
+
+
+def isl(fn, *a, **k):
+    time.sleep(6)
+    return fn(*a, **k)
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -233,6 +275,46 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 3
+    "r3_swe_ages": lambda: px_meta(f"{SCB}/BE/BE0101/BE0101A/BefolkningCKM", allvals="Alder"),
+    "r3_nor_12026": lambda: px_post(f"{SSB}/12026", {"query": [
+        {"code": "KOKkommuneregion0000", "selection": {"filter": "item", "values": ["0710", "0301", "0101", "0706"]}},
+        {"code": "ContentsCode", "selection": {"filter": "item", "values": [
+            "KOSmedlemmerdnk0000", "KOSmedltroslivs0000", "KOSpersoneralle0000"]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": ["2016", "2017", "2018"]}}],
+        "response": {"format": "json-stat2"}}),
+    "r3_nor_eka": lambda: px_meta(f"{SSB}/12026", grep=r"^EKA|^EAK"),
+    "r3_fin_class2020": lambda: fin_class("2020"),
+    "r3_fin_class2014": lambda: fin_class("2014"),
+    "r3_fin_passiivi": lambda: px_search(
+        "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin_Passiivi?query=religious"),
+    "r3_isl_folder": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/sveitarfelog"),
+    "r3_isl_2byggdir": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir"),
+    "r3_isl_mann": lambda: isl(px_list, f"{HAGSTOFA}/Ibuar/mannfjoldi"),
+    "r3_isl_02001": lambda: isl(px_meta, f"{HAGSTOFA}/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02001.px",
+                               allvals="Sveitarf.*"),
+    "r3_isl_relig": lambda: isl(px_search, f"{HAGSTOFA}/Ibuar?query=religious%20organizations"),
+    "r3_est_ethfolder": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded"),
+    "r3_est_usk": lambda: px_list(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/usk"),
+    "r3_est_rv0241": lambda: px_meta(
+        f"{STAT_EE}/Lepetatud_tabelid/Rahvastik.Arhiiv/"
+        "Rahvastikun%C3%A4itajad%20ja%20koosseis.%20Arhiiv/RV0241.PX", allvals="Haldus.*|Elukoht.*|.*[Uu]nit.*"),
+    "r3_est_rv0222": lambda: px_meta(
+        f"{STAT_EE}/Lepetatud_tabelid/Rahvastik.Arhiiv/"
+        "Rahvastikun%C3%A4itajad%20ja%20koosseis.%20Arhiiv/RV0222.PX"),
+    "r3_lva_ird": lambda: px_list(f"{CSB}/POP/IR/IRD"),
+    "r3_lva_lang": lambda: px_search(f"{CSB}?query=language"),
+    "r3_lva_census": lambda: px_search(f"{CSB}?query=census%202021"),
+    "r3_ltu_flows": lambda: sdmx_dataflows(
+        r"tautyb|gimtoji|native language|religi|tikyb|mother tongue|ethnicity|surašymo"),
+    "r3_ltu_s3r167_203": lambda: sdmx_series("S3R167_M3010203", "?startPeriod=2026&endPeriod=2026"),
+    "r3_ltu_s3r629": lambda: sdmx_series("S3R629_M3010217", "?startPeriod=2026&endPeriod=2026"),
+    "r3_ltu_s3r0155": lambda: sdmx_series("S3R0155_M3010203_1", "?startPeriod=2026&endPeriod=2026"),
+    "r3_ltu_s3r167_216": lambda: sdmx_series("S3R167_M3010216", "?startPeriod=2026&endPeriod=2026"),
+    "r3_ltu_s3r167_210": lambda: sdmx_series("S3R167_M3010210", "?startPeriod=2026&endPeriod=2026"),
     # Round 2
     "r2_swe_ckm": lambda: px_meta(f"{SCB}/BE/BE0101/BE0101A/BefolkningCKM"),
     "r2_nor_kostra": lambda: px_list(f"{SSB}/kf/kf04/kirke_kostra/SBMENU12107"),
