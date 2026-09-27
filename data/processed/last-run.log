@@ -1,10 +1,23 @@
-croatia: Popis 2021, counties and towns/municipalities
-  18,279,747 bytes
-  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
-  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
-  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
-  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
-  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
-  {'admin1': 21, 'admin2': 556}
-  wrote data/processed/croatia_county.json (178 kB)
-  wrote data/processed/croatia_unit.json (3367 kB)
+== ESS10SCe03_2 limitation=None weight={'name': {'en': 'pspwght'}} variables=433
+   cntry: Country
+   dweight: Design weight
+   pspwght: Post-stratification weight including design weight
+   pweight: Population size weight (must be combined with dweight or pspwght)
+   anweight: Analysis weight
+   rlgdnm: Religion or denomination belonging to at present
+   lnghom1: Language most often spoken at home: first mentioned
+   lnghom2: Language most often spoken at home: second mentioned
+   region: Region
+== ESS10e03_3 limitation=None weight={'name': {'en': 'pspwght'}} variables=627
+   cntry: Country
+   dweight: Design weight
+   pspwght: Post-stratification weight including design weight
+   pweight: Population size weight (must be combined with dweight or pspwght)
+   anweight: Analysis weight
+   rlgblg: Belonging to particular religion or denomination
+   rlgdnm: Religion or denomination belonging to at present
+   rlgblge: Ever belonging to particular religion or denomination
+   lnghom1: Language most often spoken at home: first mentioned
+   lnghom2: Language most often spoken at home: second mentioned
+   regunit: Regional unit
+   region: Region
