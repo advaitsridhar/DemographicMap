@@ -1,6 +1,9 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14], 4494 values of type list
-  211.004: 4,034 cells; places ['Balzers', 'Eschen', 'Gamprin-Bendern', 'Liechtenstein', 'Mauren', 'Nendeln', 'Planken', 'Ruggell', 'Schaan', 'Schaanwald', 'Schellenberg', 'Triesen', 'Triesenberg', 'Vaduz']
-  Gemeinden against Liechtenstein: parts sum to 41,228 = 41,228
-  213.001d.px: asked {'Stichtag': 1, 'Religion': 13, 'Geschlecht': 1, 'Gemeinde': 12, 'Heimat': 1}, answered [1, 13, 1, 1, 12], 156 values of type list
-liechtenstein: Liechtenstein: 'Evangelisch (reformiert, protestantisch)' is 2,572, its churches 583
+slovenia: SiStat 05C4003S.px and 05C4010S.px, 2026H1
+  212 municipalities; Slovenia 2,135,107
+  municipalities against Slovenia: parts sum to 2,135,107 = 2,135,107
+  national median 45.8 (1 January 2026) against Eurostat's 45.5 a year earlier (SI); 2026 is not published yet
+  Maribor: 2 polygons of that name; the others are slivers under 1% of its extent
+  slovenia: 0 office units unbound
+  slovenia: 1 polygons without an office unit: Maribor (bbox [15.699, 46.5167, 15.6998, 46.517])
+  wrote data/processed/slovenia_obcina.json (390 kB)
+  wrote slovenia_obcina.json: 212 records

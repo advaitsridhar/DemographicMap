@@ -3914,6 +3914,62 @@
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
   {
+    "id": "SVN-070",
+    "level": "admin2",
+    "name": "Maribor",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114872,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 99.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "070"
+    },
+    "aliases": [],
+    "match_by": "shape_id",
+    "shape_id": "79292919B61607630754818",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
     "id": "SVN-071",
     "level": "admin2",
     "name": "Medvode",
@@ -4814,6 +4870,64 @@
     "aliases": [],
     "match_by": "shape_id",
     "shape_id": "79292919B890236178832",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
+    "id": "SVN-087",
+    "level": "admin2",
+    "name": "Ormož",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11792,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 49.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 104.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "087"
+    },
+    "aliases": [
+      "Ormo"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B61887521642572",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
@@ -6350,6 +6464,64 @@
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
   {
+    "id": "SVN-115",
+    "level": "admin2",
+    "name": "Starše",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4111,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "115"
+    },
+    "aliases": [
+      "Star-e"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B30339441017456",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
     "id": "SVN-116",
     "level": "admin2",
     "name": "Sveti Jurij ob Ščavnici",
@@ -7214,6 +7386,64 @@
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
   {
+    "id": "SVN-131",
+    "level": "admin2",
+    "name": "Tržič",
+    "parent": "3739544B2739881953900",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15044,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "131"
+    },
+    "aliases": [
+      "Trsic"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B98583397902155",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
     "id": "SVN-132",
     "level": "admin2",
     "name": "Turnišče",
@@ -7324,6 +7554,64 @@
     "aliases": [],
     "match_by": "shape_id",
     "shape_id": "79292919B51584758650333",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
+    "id": "SVN-134",
+    "level": "admin2",
+    "name": "Velike Lašče",
+    "parent": "3739544B2739881953900",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4546,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 105.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "134"
+    },
+    "aliases": [
+      "Velike La"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B24232853487661",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
@@ -11192,6 +11480,64 @@
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
   {
+    "id": "SVN-204",
+    "level": "admin2",
+    "name": "Sveta Trojica v Slov. goricah",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2297,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 45.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 106.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "204"
+    },
+    "aliases": [
+      "Sveta Trojica v Slovenskih goricah"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B38330608029659",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
     "id": "SVN-205",
     "level": "admin2",
     "name": "Sveti Tomaž",
@@ -11476,6 +11822,64 @@
     ],
     "match_by": "shape_id",
     "shape_id": "79292919B85316657475600",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
+    "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
+    "id": "SVN-210",
+    "level": "admin2",
+    "name": "Sveti Jurij v Slov. goricah",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2238,
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "sex_ratio": {
+      "value": 104.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Office of the Republic of Slovenia (SURS), SiStat 05C4003S and 05C4010S",
+        "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C4003S.px",
+        "license": "SURS open data (free reuse with attribution)",
+        "year": 2026
+      }
+    ],
+    "country": "SVN",
+    "codes": {
+      "surs_obcina": "210"
+    },
+    "aliases": [
+      "Sveti Jurij v Slovenskih goricah"
+    ],
+    "match_by": "shape_id",
+    "shape_id": "79292919B91963682425983",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
   },
