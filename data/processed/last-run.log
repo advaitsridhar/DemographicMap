@@ -1,12 +1,76 @@
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014
-  651 bytes, begins b'[{"id":"Demograp'
-  json: [{"id": "Demographic And Social Characteristics", "type": "l", "text": "Demographic And Social Characteristics"}, {"id": "Disability", "type": "l", "text": "Disability"}, {"id": "Economic Characteristics", "type": "l", "text": "Economic Characteristics"}, {"id": "Education", "type": "l", "text": "Education"}, {"id": "Households", "type": "l", "text": "Households"}, {"id": "International Migration", "type": "l", "text": "International Migration"}, {"id": "Living Conditions", "type": "l", "text": "Living Conditions"}, {"id": "The Geographical Distribution Of The Population And Internal Migration", "type": "l", "text": "The Geographical Distribution Of The Population And Internal Migration"}]
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Demography/Population
-  1,640 bytes, begins b'[{"id":"01-popul'
-  json: [{"id": "01-population-by-self-governed-unit.px", "type": "t", "text": "Population as of 1 January by regions and self-governed units", "updated": "2026-04-24T11:05:44"}, {"id": "02-1-population-by-age-and-sex.px", "type": "t", "text": "Population as of 1 January by age and sex (single years of age)", "updated": "2026-04-24T11:54:33"}, {"id": "02-population-by-age-groups-and-sex.px", "type": "t", "text": "Population as of 1 January by 5-year age groups and sex", "updated": "2026-04-24T11:56:08"}, {"id": "03-density-by-regions.px", "type": "t", "text": "Density by regions (number of population per 1 sq.km)", "updated": "2026-04-24T12:01:06"}, {"id": "04-mid-year-population-by-self-governed-units.px", "type": "t", "text": "Mid-year population by regions and self-governed units", "updated": "2026-04-24T15:07:59"}, {"id": "05-mid-year-population-by-age-and-sex.px", "type": "t", "text": "Mid-year population by 5-year age groups and sex", "updated": "2026-04-24T12:04:37"}, {"id": "06-median-age-by-sex.px", "type": "t", "text": "Median age by sex", "updated": "2026-04-24T14:04:11"}, {"id": "07-percentage-of-population-at-aged-65-and-over-by-sex.px", "type": "t", "text": "Percentage of population aged 65 and over by sex", "updated": "2026-04-24T12:13:25"}, {"id": "08-age-dependency-ratios.px", "type": "t", "text": "Age dependency ratios", "updated": "2026-04-24T12:17:17"}, {"id": "1-2-population-by-regions-and-urban-rural.px", "type": "t", "text": "Population as of 1 January by regions and urban-rural settlements", "updated": "2026-04-24T11:07:36"}, {"id": "1-3-population-by-cities-and-boroughs.px", "type": "t", "text": "Population as of 1 January by cities and boroughs", "updated": "2026-04-24T11:51:40"}]
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database
-  1,066 bytes, begins b'[{"id":"Agricult'
-  json: [{"id": "Agriculture", "type": "l", "text": "Agriculture"}, {"id": "Business Statistics", "type": "l", "text": "Business Statistics"}, {"id": "Construction", "type": "l", "text": "Construction"}, {"id": "Demography", "type": "l", "text": "Demography"}, {"id": "Environment Statistics", "type": "l", "text": "Environment Statistics"}, {"id": "External Trade", "type": "l", "text": "External Trade"}, {"id": "FDI", "type": "l", "text": "FDI"}, {"id": "Gender Statistics", "type": "l", "text": "Gender Statistics"}, {"id": "Hotels and Restaurants", "type": "l", "text": "Hotels and Restaurants"}, {"id": "Industry", "type": "l", "text": "Industry"}, {"id": "National Accounts", "type": "l", "text": "National Accounts"}, {"id": "Number of markets and fairs", "type": "l", "text": "Number of markets and fairs"}, {"id": "Population Census 2014", "type": "l", "text": "Population Census 2014"}, {"id": "Price Statistics", "type": "l", "text": "Price Statistics"}, {"id": "Social Statistics", "type": "l", "text": "Social Statistics"}, {"id": "Trade", "type": "l", "text": "Trade"}, {"id": "Transport and Communication", "type": "l", "text": "Transport and Communication"}]
-== get https://pc-axis.geostat.ge/PXweb/api/v1/en/Database/Population%20Census%202014/Demographic%20And%20Social%20Characteristics
-  1,723 bytes, begins b'[{"id":"07.px","'
-  json: [{"id": "07.px", "type": "t", "text": "Population by regions, age and sex", "updated": "2021-05-18T11:58:30"}, {"id": "08_Population 15 years of age and over by regions and marital status.px", "type": "t", "text": "Population 15 years of age and over by regions and marital status by Regions/ Municipalites, Urban/Rural and Marital status", "updated": "2021-05-18T11:59:56"}, {"id": "09_Population 15 years of age and over by marital status, age and sex.px", "type": "t", "text": "Population 15 years of age and over by marital status, age and sex by Age, Urban/Rural, Marital status and Sex", "updated": "2021-05-18T12:01:11"}, {"id": "10_Married population 15 years of age and over by age, status of registered marriages and sex.px", "type": "t", "text": "Married population 15 years of age and over by age, status of registered marriages and sex by Age, Urban/Rural, Status of registred marriages and Sex", "updated": "2021-05-18T12:02:53"}, {"id": "17_Total population by regions and ethnicity.px", "type": "t", "text": "Total population by regions and ethnicity by Regions, Urban/Rural and ethnicity", "updated": "2021-05-18T12:03:46"}, {"id": "20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px", "type": "t", "text": "Population by region, by native languages and fluently speak Georgian language by Regions, fluently speak Georgian language and native languages", "updated": "2021-11-18T16:29:00"}, {"id": "22_Population by regions and religion.px", "type": "t", "text": "Population by regions and religion by Regions, Urban/Rural and Religion", "updated": "2021-05-18T12:06:07"}, {"id": "Georgian Speaking Households.px", "type": "t", "text": "Households by fluently speak Georgian language at the regional level", "updated": "2021-05-18T12:06:57"}]
+== get https://www.stat.gov.az/source/demoqraphy/ap/az/Azerbaycanin_ehalisi-2026.zip
+  1,847,041 bytes, begins b'PK\x03\x04\x14\x00\x00\x08\x08\x00\xf8v\xd9\\P\xe3'
+  zip, 1 members:
+    Azərbaycanın əhalisi-2026.pdf (2,025,978)
+== get https://www.stat.gov.az/source/demoqraphy/ap/az/1_5-6.xls
+  37,888 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/ap/az/1_5-6.xls: 2 sheets: 1.5 | 1.6
+  -- sheet '1.5': 34 rows x 12 cols
+    r0:  |  |  |  |  |  |  | 
+    r1:  | 1.5. Əhalinin milli (etnik) tə |  |  |  |  |  | 
+    r2:  | (əhalinin siyahıyaalınmaları ü |  |  |  |  |  | 
+    r3:  |  |  |  |  |  |  | 
+    r4:  | Millətlər və etnik qrupların a | Min nəfər |  |  |  |  | yekuna nisbətən, faizlə
+    r5:  |  | 1979.0 | 1989.0 | 1999.0 | 2009.0 | 20192) | 1979.0
+    r6:  | Azərbaycan Respublikası üzrə - | 6026.5 | 7021.2 | 7953.4 | 8922.4 | 9951.4 | 100.0
+    r7:  | o cümlədən, millətlər və etnik |  |  |  |  |  | 
+    r8:  | azərbaycanlılar | 4708.8 | 5805.0 | 7205.5 | 8172.8 | 9436.1 | 78.1
+    r9:  | ləzgilər | 158.1 | 171.4 | 178.0 | 180.3 | 167.6 | 2.6
+    r10:  | talışlar | … | 21.2 | 76.8 | 112.0 | 87.6 | …
+    r11:  | ruslar | 475.3 | 392.3 | 141.7 | 119.3 | 71.0 | 7.9
+    r12:  | ukraynalılar | 26.4 | 32.3 | 29.0 | 21.5 | 13.9 | 0.4
+    r13:  | avarlar | 36.0 | 44.1 | 50.9 | 49.8 | 48.6 | 0.6
+    r14:  | türklər | 7.9 | 17.7 | 43.4 | 38.0 | 30.5 | 0.1
+    r15:  | tatlar | 8.9 | 10.2 | 10.9 | 25.2 | 27.7 | 0.14
+    r16:  | saxurlar | 8.5 | 13.3 | 15.9 | 12.3 | 13.4 | 0.1
+    r17:  | gürcülər | 11.4 | 14.2 | 14.9 | 9.9 | 8.4 | 0.2
+    r18:  | ingiloylar | ... | ... | ... | ... | 1.8 | ...
+    r19:  | kürdlər | 5.7 | 12.2 | 13.1 | 6.1 | 4.1 | 0.1
+    r20:  | tatarlar | 31.4 | 28.6 | 30.0 | 25.9 | 17.7 | 0.5
+    r21:  | qrızlar | ... | ... | ... | 4.4 | 2.1 | ...
+    r22:  | yəhudilər | 35.5 | 30.8 | 8.9 | 9.1 | 5.1 | 0.6
+    r23:  | udinlər | 5.8 | 6.1 | 4.1 | 3.8 | 3.5 | 0.1
+    r24:  | xınalıqlar | ... | ... | ... | 2.2 | 3.5 | ...
+    r25:  | buduqlar | ... | ... | ... | ... | 1.1 | ...
+    r26:  | ermənilər | 475.5 | 390.5 | 120.7 | 120.3 | 0.2 | 7.9
+    r27:  | haputlar | ... | ... | ... | ... | 2.5 | ...
+    r28:  | digər millətlər | 31.3 | 31.3 | 9.6 | 9.5 | 5.0 | 0.66
+    r29:  |  |  |  |  |  |  | 
+    r30:  |  |  |  |  |  |  | 
+    r31:  | 1) Bu və sonrakı cədvəldə siya |  |  |  |  |  | 
+    r32:  | Uşaqların milliyyəti (etnik qr |  |  |  |  |  | 
+    r33:  | 2) Əhalinin siyahıyaalınması d |  |  |  |  |  | 
+  -- sheet '1.6': 33 rows x 8 cols
+    r0:  |  |  |  |  |  |  | 
+    r1:  | 1.6. Əhalinin ana dili və sərb |  |  |  |  |  | 
+    r2:  | (2019-cu il əhalinin siyahıyaa |  |  |  |  |  | 
+    r3:  |  |  |  |  |  |  | 
+    r4:  | Millətlər və etnik qrupların a | Milli (etnik) mənsubiyyətə gör | onlardan mənsub olduğu milləti | Əhalinin sərbəst danışdığı dil |  |  | 
+    r5:  |  |  |  | mənsub olduğu millətin (etnik  | azərbaycan dilində | rus dilində | ingilis dilində
+    r6:  | Azərbaycan Respublikası üzrə - | 9951.4 | 98.6 | 99.2 | 99.6 | 7.5 | 1.3
+    r7:  | o cümlədən, millətlər və etnik |  |  |  |  |  | 
+    r8:  | azərbaycanlılar | 9436.1 | 100.0 | 100.0 | - | 5.7 | 1.3
+    r9:  | ləzgilər | 167.6 | 75.1 | 85.2 | 96.1 | 38.9 | 0.8
+    r10:  | talışlar | 87.6 | 49.4 | 71.2 | 95.6 | 18.1 | 0.6
+    r11:  | ruslar | 71.0 | 99.4 | 99.5 | 78.2 | - | 4.8
+    r12:  | ukraynalılar | 13.9 | 59.6 | 59.7 | 89.5 | 90.2 | 5.3
+    r13:  | avarlar | 48.6 | 93.7 | 98.8 | 94.0 | 16.1 | 0.2
+    r14:  | türklər | 30.5 | 89.0 | 94.5 | 94.2 | 5.0 | 0.8
+    r15:  | tatlar | 27.7 | 31.6 | 56.4 | 97.9 | 4.3 | 0.2
+    r16:  | saxurlar | 13.4 | 96.3 | 97.7 | 94.7 | 9.6 | 0.2
+    r17:  | gürcülər | 8.4 | 97.3 | 98.4 | 90.4 | 19.7 | 0.8
+    r18:  | ingiloylar | 1.8 | 46.3 | 99.4 | 99.2 | 8.1 | 0.2
+    r19:  | kürdlər | 4.1 | 29.9 | 46.8 | 97.1 | 6.1 | 2.0
+    r20:  | tatarlar | 17.7 | 88.9 | 89.2 | 89.4 | 97.8 | 3.7
+    r21:  | qrızlar | 2.1 | 15.4 | 38.6 | 99.6 | 2.2 | 0.1
+    r22:  | yəhudilər | 5.1 | 97.5 | 97.6 | 93.5 | 71.9 | 8.6
+    r23:  | udinlər | 3.5 | 99.7 | 99.8 | 76.5 | 82.2 | 0.2
+    r24:  | xınalıqlar | 3.5 | 34.2 | 74.0 | 98.1 | 1.1 | 0.3
+    r25:  | buduqlar | 1.1 | 9.5 | 29.9 | 99.0 | 2.8 | 0.1
+    r26:  | ermənilər | 0.2 | 29.2 | 32.0 | 92.7 | 28.1 | 0.6
+    r27:  | haputlar | 2.5 | 68.8 | 70.0 | 99.7 | 28.3 | 1.7
+    r28:  | digər millətlər | 5.0 | 48.6 | 55.4 | 90.1 | 16.7 | 3.4
+    r29:  |  |  |  |  |  |  | 
+    r30:  |  |  |  |  |  |  | 
+    r31:  | 1) Əhalinin siyahıyaalınması d |  |  |  |  |  | 
+    r32:  | 2) Əhalinin sərbəst danışdığı  |  |  |  |  |  | 
