@@ -1,16 +1,8 @@
-uk_mye: local authorities (county / unitary, April 2023)
-  TYPE423 latest: 207 places with both sexes so far
-  TYPE423 latestMINUS1: 218 places with both sexes so far
-uk_mye: the four nations
-  TYPE499 latest: 5 places with both sexes so far
-  TYPE499 latestMINUS1: 7 places with both sexes so far
-  England 2025: 153 places make 58,834,812, its own count
-  Scotland 2025: 32 places make 5,545,500, its own count
-  Wales 2025: 22 places make 3,175,181, its own count
-  Northern Ireland 2024: 11 places make 1,927,855, its own count
-  220 records (216 local authorities, 4 nations); years {2025: 208, 2024: 12}
-  England: 58,834,812, median 40.6, 962 men per 1,000 women
-  Northern Ireland: 1,927,855, median 40.3, 971 men per 1,000 women
-  Scotland: 5,545,500, median 43.1, 944 men per 1,000 women
-  Wales: 3,175,181, median 43.2, 959 men per 1,000 women
-  wrote data/processed/uk_mye.json (396 kB)
+uk_nomis: county (TYPE155)
+uk_nomis: TS021 Ethnic group (NM_2041_1)
+uk_nomis: TS030 Religion (NM_2049_1)
+uk_nomis: TS024 Main language (detailed) (NM_2043_1)
+  NM_2043_1: categories are c2021_mlang_94
+  wrote data/processed/uk_county.json (2188 kB)
+  173 records
+  173 local authority records
