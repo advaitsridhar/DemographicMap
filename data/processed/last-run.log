@@ -1,2 +1,15 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-liechtenstein: 211.004 has no rows for ['Vaduz', 'Triesen', 'Balzers', 'Triesenberg', 'Schaan', 'Planken', 'Eschen', 'Mauren', 'Gamprin', 'Ruggell', 'Schellenberg']; it has ['Liechtenstein']
+north_macedonia: MakStat, 2021 census
+  T1020P21.px: 82 areas, single years to 100 (open top)
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
+  80 municipalities
+  country: 1,836,713 residents, median age 41.1 from single years
+  municipalities: 66 bound; units left 14: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 18: ['Bogdantsi', 'Brvenitsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
+  79 municipalities bound one-to-one; the merged Kichevo goes to five polygons
+  the merged Kichevo: 77 settlements
+  2002 settlements of the Kichevo area: Kichevo 7 (30,138 people), Drugovo 28 (3,249 people), Oslomej 17 (10,425 people), Vraneshtica 15 (1,322 people), Zajas 13 (11,605 people)
+    Vraneshtica: its 2002 settlements add to 1,322, its 2002 count is 1,322
+    Drugovo: its 2002 settlements add to 3,249, its 2002 count is 3,249
+    Zajas: its 2002 settlements add to 11,605, its 2002 count is 11,605
+    Kichevo: its 2002 settlements add to 30,138, its 2002 count is 30,138
+    Oslomej: its 2002 settlements add to 10,425, its 2002 count is 10,420
+north_macedonia: Kichevo settlements with no 2002 municipality: ['Belica', 'Bigor Dolenci', 'Cer', 'Chelopeci', 'Crvivci', 'Dolna Dushegubica', 'Dolno Dobrenoec', 'Ehloec', 'Gorna Dushegubica', 'Gorno Dobrenoec', 'Greshnica', 'Jagol Dolenci', 'Javorec', 'Karbunica', 'Lazarovci', 'Leshnica', 'Malkoec', 'Malo Crsko', 'Mamudovci', 'Manastirsko Dolenci', 'Midinci', 'Orlanci', 'Patec', 'Popoec', 'Rechani - Zajasko', 'Srbica', 'Staroec', 'Strelci', 'Vraneshtica']
