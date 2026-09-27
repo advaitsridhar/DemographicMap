@@ -1,2 +1,164 @@
-cyprus_census: CYSTAT, Census of Population and Housing 2021
-https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px: neither json-stat2 nor json-stat 1.0 (['title', 'variables'])
+== xls https://www.instat.gov.al/media/14409/tab_1_12_popullsia-banuese-sipas-përkatësisë-etnike-dhe-gjinisë_qarqe.xls 45 2
+  HTTP 200 application/vnd.ms-excel 151,324 bytes
+  12 sheets: ['Berat', 'Diber', 'Durres', 'Elbasan', 'Fier', 'Gjirokater', 'Korce', 'Kukes', 'Lezhe', 'Shkoder', 'Tirane', 'Vlore']
+  -- sheet 'Berat': 22 rows x 4 cols
+    Tab. 1.12 Popullsia banuese 
+    Resident population by ethni
+    Qarku Berat | Prefecture Ber
+    Përkatësia etnike  Ethnicity | Gjinia  Sex
+     | Gjithsej  Total | Meshkuj Male | Femra  Female
+    Gjithsej  Total | 140956.0 | 69842.0 | 71114.0
+    Shqiptare  Albanian | 100928.0 | 50517.0 | 50411.0
+    Greke  Greek | 69.0 | 31.0 | 38.0
+    Maqedonase  Macedonian | 17.0 | 5.0 | 12.0
+    Malazeze  Montenegrin | 14.0 | 6.0 | 8.0
+    Aromune  Aromanian | 73.0 | 49.0 | 24.0
+    Rome  Roma | 574.0 | 299.0 | 275.0
+    Egjyptiane  Egyptian | 940.0 | 492.0 | 448.0
+    Boshnjake  Bosnian | 15.0 | 8.0 | 7.0
+    Serbe  Serbian | 17.0 | 9.0 | 8.0
+    Bullgare  Bulgarian | 76.0 | 45.0 | 31.0
+    Tjetër grup etno-kulturor  O | 27.0 | 12.0 | 15.0
+    Grup etno-kulturor i përzier | 2.0 | 1.0 | 1.0
+    Asnjë  None | 7.0 | 3.0 | 4.0
+    Preferoj të mos përgjigjem   | 972.0 | 481.0 | 491.0
+    Nuk disponohet  Not availabl | 37225.0 | 17884.0 | 19341.0
+  -- sheet 'Diber': 27 rows x 4 cols
+    Tab. 1.12 Popullsia banuese 
+    Resident population by ethni
+    Qarku Dibër | Prefecture Dib
+    Përkatësia etnike  Ethnicity | Gjinia  Sex
+     | Gjithsej  Total | Meshkuj Male | Femra  Female
+    Gjithsej  Total | 107178.0 | 54051.0 | 53127.0
+    Shqiptare  Albanian | 87398.0 | 44168.0 | 43230.0
+    Greke  Greek | 25.0 | 12.0 | 13.0
+    Maqedonase  Macedonian | 217.0 | 109.0 | 108.0
+    Malazeze  Montenegrin | 18.0 | 13.0 | 5.0
+    Aromune  Aromanian | 15.0 | 8.0 | 7.0
+    Rome  Roma | 129.0 | 67.0 | 62.0
+    Egjyptiane  Egyptian | 385.0 | 191.0 | 194.0
+    Boshnjake  Bosnian | 24.0 | 19.0 | 5.0
+    Serbe  Serbian | 18.0 | 15.0 | 3.0
+    Bullgare  Bulgarian | 1736.0 | 958.0 | 778.0
+    Tjetër grup etno-kulturor  O | 11.0 | 9.0 | 2.0
+    Grup etno-kulturor i përzier | 1.0 | .. | 1.0
+    Asnjë  None | 11.0 | 6.0 | 5.0
+    Preferoj të mos përgjigjem   | 113.0 | 54.0 | 59.0
+    Nuk disponohet  Not availabl | 17077.0 | 8422.0 | 8655.0
+    Shënim ( .. nënkupton se nuk
+    Note (.. implies that there 
+== xls https://www.instat.gov.al/media/14411/tab_1_13_popullsia-banuese-sipas-besimit-fetar-dhe-gjinisë_qarqe.xls 25 2
+  HTTP 200 application/vnd.ms-excel 124,711 bytes
+  12 sheets: ['Berat', 'Diber', 'Durres', 'Elbasan', 'Fier', 'Gjirokaster', 'Korce', 'Kukes', 'Lezhe', 'Shkoder', 'Tirane', 'Vlore']
+  -- sheet 'Berat': 17 rows x 4 cols
+    Tab. 1.13 Popullsia banuese 
+    Resident population by relig
+    Qarku Berat | Prefecture Ber
+    Besimi fetar Religion | Gjinia  Sex
+     | Gjithsej  Total | Meshkuj  Male | Femra  Female
+    Gjithsej  Total | 140956.0 | 69842.0 | 71114.0
+    Mysliman Muslim | 41430.0 | 20512.0 | 20918.0
+    Mysliman - Bektashi  Muslim  | 11422.0 | 5925.0 | 5497.0
+    Krishterë - Katolik  Christi | 863.0 | 406.0 | 457.0
+    Krishterë - Ortodoks  Christ | 8201.0 | 4036.0 | 4165.0
+    Krishterë - Ungjillore (Prot | 293.0 | 130.0 | 163.0
+    Tjetër besim fetar  Other re | 336.0 | 111.0 | 225.0
+    Besimtarë të pacilësuar  Bel | 21412.0 | 10591.0 | 10821.0
+    Ateist  Atheists | 7155.0 | 3787.0 | 3368.0
+    Preferoj të mos përgjigjem   | 12619.0 | 6460.0 | 6159.0
+    Nuk disponohet  Not availabl | 37225.0 | 17884.0 | 19341.0
+  -- sheet 'Diber': 17 rows x 4 cols
+    Tab. 1.13 Popullsia banuese 
+    Resident population by relig
+    Qarku Dibër | Prefecture Dib
+    Besimi fetar Religion | Gjinia  Sex
+     | Gjithsej  Total | Meshkuj  Male | Femra  Female
+    Gjithsej  Total | 107178.0 | 54051.0 | 53127.0
+    Mysliman Muslim | 67181.0 | 34103.0 | 33078.0
+    Mysliman - Bektashi  Muslim  | 6317.0 | 3120.0 | 3197.0
+    Krishterë - Katolik  Christi | 1712.0 | 835.0 | 877.0
+    Krishterë - Ortodoks  Christ | 111.0 | 63.0 | 48.0
+    Krishterë - Ungjillore (Prot | 73.0 | 29.0 | 44.0
+    Tjetër besim fetar  Other re | 12.0 | 5.0 | 7.0
+    Besimtarë të pacilësuar  Bel | 9589.0 | 4825.0 | 4764.0
+    Ateist  Atheists | 717.0 | 381.0 | 336.0
+    Preferoj të mos përgjigjem   | 4389.0 | 2268.0 | 2121.0
+    Nuk disponohet  Not availabl | 17077.0 | 8422.0 | 8655.0
+== xls https://www.instat.gov.al/media/14412/tab_1_14_popullsia-banuese-sipas-gjuhës-që-flitet-zakonisht-në-shtëpi-dhe-gjinisë_qarqe.xls 18 2
+  HTTP 200 application/vnd.ms-excel 94,999 bytes
+  12 sheets: ['Berat', 'Diber', 'Durres', 'Elbasan', 'Fier', 'Gjirokaster', 'Korce', 'Kukes', 'Lezhe', 'Shkoder', 'Tirane', 'Vlore']
+  -- sheet 'Berat': 12 rows x 4 cols
+    Tab. 1. 14 Popullsia banuese
+    Resident population by langu
+    Qarku Berat | Prefecture Ber
+    Gjuha e folur në shtëpi  Lan | Gjinia  Sex
+     | Gjithsej Total | Meshkuj Male | Femra Female
+    Gjithsej  Total | 140956.0 | 69842.0 | 71114.0
+    Shqip  Albanian | 101485.0 | 50815.0 | 50670.0
+    Gjuhë tjetër  Other language | 294.0 | 159.0 | 135.0
+    Disa gjuhë  Mixed languages | 364.0 | 178.0 | 186.0
+    Preferoj të mos përgjigjem   | 1588.0 | 806.0 | 782.0
+    Nuk disponohet  Not availabl | 37225.0 | 17884.0 | 19341.0
+  -- sheet 'Diber': 12 rows x 4 cols
+    Tab. 1. 14 Popullsia banuese
+    Resident population by langu
+    Qarku Dibër | Prefecture Dib
+    Gjuha e folur në shtëpi  Lan | Gjinia  Sex
+     | Gjithsej Total | Meshkuj Male | Femra Female
+    Gjithsej  Total | 107178.0 | 54051.0 | 53127.0
+    Shqip  Albanian | 86993.0 | 43939.0 | 43054.0
+    Gjuhë tjetër  Other language | 2254.0 | 1223.0 | 1031.0
+    Disa gjuhë  Mixed languages | 274.0 | 163.0 | 111.0
+    Preferoj të mos përgjigjem   | 580.0 | 304.0 | 276.0
+    Nuk disponohet  Not availabl | 17077.0 | 8422.0 | 8655.0
+== xls https://www.instat.gov.al/media/3140/tab_2_1_2.xls 14 3
+  HTTP 200 application/vnd.ms-excel 492,261 bytes
+  13 sheets: ['Berat', 'Diber', 'Durres', 'Elbasan', 'Fier', 'Gjirokaster', 'Korce', 'Kukes', 'Lezhe', 'Shkoder', 'Tirane', 'Vlore', 'Sheet13']
+  -- sheet 'Berat': 34 rows x 33 cols
+    2.1.2 Popullsia banuese sipa
+    2.1.2 Resident population by
+    Bashkia/Komuna  Municipality | Gjinia dhe grup mosha       
+     | Gjithsej Total | Meshkuj Male | Femra Female
+     | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+
+    Gjithsej Total | 141944.0 | 27791.0 | 96974.0 | 17179.0 | 71460.0 | 14318.0 | 48828.0 | 8314.0 | 70484.0 | 13473.0 | 48146.0 | 8865.0
+    BERAT | 36496.0 | 6543.0 | 25331.0 | 4622.0 | 18213.0 | 3404.0 | 12631.0 | 2178.0 | 18283.0 | 3139.0 | 12700.0 | 2444.0
+    BOGOVË | 1098.0 | 180.0 | 771.0 | 147.0 | 570.0 | 91.0 | 404.0 | 75.0 | 528.0 | 89.0 | 367.0 | 72.0
+    CUKALAT | 3045.0 | 723.0 | 2041.0 | 281.0 | 1565.0 | 384.0 | 1049.0 | 132.0 | 1480.0 | 339.0 | 992.0 | 149.0
+    ÇEPAN | 740.0 | 130.0 | 496.0 | 114.0 | 389.0 | 75.0 | 252.0 | 62.0 | 351.0 | 55.0 | 244.0 | 52.0
+    ÇOROVODË | 4051.0 | 783.0 | 2751.0 | 517.0 | 2036.0 | 425.0 | 1367.0 | 244.0 | 2015.0 | 358.0 | 1384.0 | 273.0
+    GJERBËS | 813.0 | 165.0 | 544.0 | 104.0 | 420.0 | 87.0 | 282.0 | 51.0 | 393.0 | 78.0 | 262.0 | 53.0
+    KOZARE | 5622.0 | 1236.0 | 3775.0 | 611.0 | 2825.0 | 636.0 | 1878.0 | 311.0 | 2797.0 | 600.0 | 1897.0 | 300.0
+    KUÇOVË | 12654.0 | 2052.0 | 8639.0 | 1963.0 | 6125.0 | 1016.0 | 4224.0 | 885.0 | 6529.0 | 1036.0 | 4415.0 | 1078.0
+  -- sheet 'Diber': 42 rows x 39 cols
+    2.1.2 Popullsia banuese sipa
+    2.1.2 Resident population by
+    Bashkia/Komuna  Municipality | Gjinia dhe grup mosha       
+     | Gjithsej Total | Meshkuj Male | Femra Female
+     | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+
+    Gjithsej Total | 137047.0 | 34229.0 | 90513.0 | 12305.0 | 69825.0 | 18104.0 | 46086.0 | 5635.0 | 67222.0 | 16125.0 | 44427.0 | 6670.0
+    ARRAS | 3055.0 | 814.0 | 1997.0 | 244.0 | 1576.0 | 445.0 | 1020.0 | 111.0 | 1479.0 | 369.0 | 977.0 | 133.0
+    BAZ | 2228.0 | 469.0 | 1454.0 | 305.0 | 1081.0 | 229.0 | 704.0 | 148.0 | 1147.0 | 240.0 | 750.0 | 157.0
+    BULQIZË | 8177.0 | 2223.0 | 5524.0 | 430.0 | 4125.0 | 1179.0 | 2761.0 | 185.0 | 4052.0 | 1044.0 | 2763.0 | 245.0
+    BURREL | 10862.0 | 2562.0 | 7390.0 | 910.0 | 5541.0 | 1375.0 | 3756.0 | 410.0 | 5321.0 | 1187.0 | 3634.0 | 500.0
+    DERJAN | 1102.0 | 234.0 | 734.0 | 134.0 | 547.0 | 126.0 | 358.0 | 63.0 | 555.0 | 108.0 | 376.0 | 71.0
+    FUSHË BULQIZË | 3342.0 | 813.0 | 2203.0 | 326.0 | 1670.0 | 428.0 | 1108.0 | 134.0 | 1672.0 | 385.0 | 1095.0 | 192.0
+    FUSHË MUHUR | 2780.0 | 663.0 | 1885.0 | 232.0 | 1458.0 | 334.0 | 1013.0 | 111.0 | 1322.0 | 329.0 | 872.0 | 121.0
+    FUSHË ÇIDHËN | 2909.0 | 739.0 | 1930.0 | 240.0 | 1508.0 | 399.0 | 1012.0 | 97.0 | 1401.0 | 340.0 | 918.0 | 143.0
+  -- sheet 'Durres': 27 rows x 45 cols
+    2.1.2 Popullsia banuese sipa
+    2.1.2 Resident population by
+    Bashkia/Komuna  Municipality | Gjinia dhe grup mosha       
+     | Gjithsej Total | Meshkuj Male | Femra Female
+     | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+
+    Gjithsej Total | 262785.0 | 56503.0 | 178150.0 | 28132.0 | 132289.0 | 29694.0 | 89016.0 | 13579.0 | 130496.0 | 26809.0 | 89134.0 | 14553.0
+    BUBQ | 5951.0 | 1250.0 | 4008.0 | 693.0 | 3010.0 | 658.0 | 2033.0 | 319.0 | 2941.0 | 592.0 | 1975.0 | 374.0
+    CUDHI | 1812.0 | 480.0 | 1162.0 | 170.0 | 971.0 | 257.0 | 631.0 | 83.0 | 841.0 | 223.0 | 531.0 | 87.0
+    DURRËS | 113249.0 | 21799.0 | 78528.0 | 12922.0 | 56511.0 | 11467.0 | 38817.0 | 6227.0 | 56738.0 | 10332.0 | 39711.0 | 6695.0
+    FUSHË KRUJË | 18477.0 | 4504.0 | 12483.0 | 1490.0 | 9571.0 | 2391.0 | 6505.0 | 675.0 | 8906.0 | 2113.0 | 5978.0 | 815.0
+    GJEPALAJ | 3449.0 | 730.0 | 2294.0 | 425.0 | 1729.0 | 366.0 | 1152.0 | 211.0 | 1720.0 | 364.0 | 1142.0 | 214.0
+    ISHËM | 5001.0 | 1174.0 | 3229.0 | 598.0 | 2487.0 | 596.0 | 1598.0 | 293.0 | 2514.0 | 578.0 | 1631.0 | 305.0
+    KATUND I RI | 10161.0 | 2453.0 | 6715.0 | 993.0 | 5071.0 | 1273.0 | 3332.0 | 466.0 | 5090.0 | 1180.0 | 3383.0 | 527.0
+    KODËR THUMANË | 12335.0 | 2955.0 | 8184.0 | 1196.0 | 6282.0 | 1596.0 | 4127.0 | 559.0 | 6053.0 | 1359.0 | 4057.0 | 637.0
+== xlsrow https://www.instat.gov.al/media/3140/tab_2_1_2.xls 0 (?i)rreth|district|qark|prefect|berat|kucov|korc 40
+  HTTP 200 application/vnd.ms-excel 492,261 bytes
+    r9: BERAT | 36496.0 | 6543.0 | 25331.0 | 4622.0 | 18213.0 | 3404.0 | 12631.0 | 2178.0 | 18283.0 | 3139.0 | 12700.0 | 2444.0
