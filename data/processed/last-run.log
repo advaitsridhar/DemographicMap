@@ -1,11 +1,3 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: east_probe.py [-h] [--match MATCH] [--match-type MATCH_TYPE]
-                     [--cdx-limit CDX_LIMIT] [--cdx-filter CDX_FILTER]
-                     [--wayback WAYBACK] [--rows ROWS] [--sheets SHEETS]
-                     [--start START] [--cols COLS] [--width WIDTH]
-                     [--grep GREP] [--indent] [--after AFTER] [--links LINKS]
-                     [--context CONTEXT] [--bytes BYTES] [--data DATA]
-                     [--hosts HOSTS] [--aia] [--sheet-match SHEET_MATCH]
-                     [--form]
-                     {cdx,get,post,head,hdx} target [target ...]
-east_probe.py: error: argument --grep: expected one argument
+  volume 2: 491 pages
+  table 1.4: 0 rows in 0 oblasts and Minsk; every oblast is its cities and raions; the country makes 0
+belarus: the oblasts and Minsk make 0, the census 9,413,446
