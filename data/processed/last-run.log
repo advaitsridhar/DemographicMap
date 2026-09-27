@@ -1,12 +1,3 @@
-pxweb: Statistics Latvia (LVA)
-  POP/IR/IRE/IRE031
-    left out (code is not 9 characters): 5 — LV005 Latgale statistical region, LV009 Zemgale statistical region, LV00A Riga statistical region (from 01.01.2024.), LV00B Kurzeme statistical region (from 01.01.2024.), LV00C Vidzeme statistical region (from 01.01.2024.)
-    left out (inside Jēkabpils municipality): 1 — LV0031010 Jēkabpils
-    left out (inside Ogre municipality): 1 — LV0040010 Ogre
-    left out (inside Valmiera municipality): 1 — LV0054010 Valmiera
-    left out (the country itself): 1 — LV Latvia
-    42 units, categories sum to the published total in each
-    ...and to 1,845,096 against a published national 1,845,096
-    withheld LV0038001 Madona municipality (from 01.07.2025.): Madona after absorbing Varakļāni on 1 July 2025; the map draws the two apart, and latvia.py writes each
-  wrote data/processed/latvia_municipality.json (89 kB)
-  41 records
+estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
+  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
+RV0241 2017: counties -> Estonia: 15 parts sum to 1,314,463 against a published 1,315,635 (-1,172)
