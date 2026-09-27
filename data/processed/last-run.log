@@ -1,4 +1,1 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=belstat.gov.by&matchType=domain&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28perepis%7Ccensus%7C2019%7C2009%29.%2A%5B.%5D%28xlsx%3F%7Cpdf%7Czip%7Crar%29%24 :: IncompleteRead(11002 bytes read)
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=belstat.gov.by&matchType=domain&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28perepis%7Ccensus%7C2019%7C2009%29.%2A%5B.%5D%28xlsx%3F%7Cpdf%7Czip%7Crar%29%24 :: IncompleteRead(8759 bytes read)
-== cdx belstat.gov.by
-  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=belstat.gov.by&matchType=domain&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28perepis%7Ccensus%7C2019%7C2009%29.%2A%5B.%5D%28xlsx%3F%7Cpdf%7Czip%7Crar%29%24')
+slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
