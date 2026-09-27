@@ -86,7 +86,7 @@ ALIASES = {
     "gracanice": "Gracanica", "mitroviceveriut": "North Mitrovica",
     "mitroviceeveriut": "North Mitrovica", "novoberde": "Novobërdë", "skenderaj": "Skenderaj",
     "shtime": "Shtime", "shterpce": "Shtërpcë", "fushekosove": "Fushë Kosovë",
-    "zveqan": "Zveçan", "leposaviq": "Leposaviq", "zubinpotok": "Zubin Potok",
+    "mitrovicaveriore": "North Mitrovica", "zveqan": "Zveçan", "leposaviq": "Leposaviq", "zubinpotok": "Zubin Potok",
 }
 COVERAGE = 0.995
 
@@ -221,17 +221,20 @@ def build() -> list[dict[str, Any]]:
     admin1 = {s["id"]: s for s in shapes("XKX", "admin1")}
     by_key = {key(s["name"]): s for s in admin2}
     bound: dict[str, dict[str, Any]] = {}
+    lost = []
     for p in places:
         target = ALIASES.get(fold(p), p)
         shape = by_key.get(key(target))
         if shape is None:
-            raise SystemExit(f"kosovo: ASK's {p!r} matches no polygon")
+            lost.append(p)
+            continue
         if shape["id"] in {s["id"] for s in bound.values()}:
             raise SystemExit(f"kosovo: two municipalities on {shape['name']}")
         bound[p] = shape
     spare = [s["name"] for s in admin2 if s["id"] not in {b["id"] for b in bound.values()}]
-    if spare:
-        raise SystemExit(f"kosovo: polygons with no municipality: {spare}")
+    if lost or spare:
+        raise SystemExit(f"kosovo: ASK's municipalities with no polygon {lost}; "
+                         f"polygons with no municipality: {spare}")
     log(f"  {len(bound)} municipalities bound one-to-one")
 
     src = {k: SOURCE.format(table=v.rsplit("/", 1)[-1].replace(".px", "")) for k, v in TABLES.items()}

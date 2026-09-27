@@ -125,6 +125,8 @@ ALIASES = {
     "Chucher-Sandevo": "Chucher - Sandevo",
     "Chucher Sandevo": "Chucher - Sandevo",
     "Mavrovo and Rostushe": "Mavrovo and Rostusha",
+    "Mavrovo i Rostushe": "Mavrovo and Rostusha",
+    "Debrca": "Debartsa",
 }
 OLD_KICHEVO = ("Kichevo", "Drugovo", "Oslomej", "Vraneshtica", "Zajas")
 
