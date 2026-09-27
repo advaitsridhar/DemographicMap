@@ -1,309 +1,43 @@
-== r2_lva_ird081
-  title: Population by sex and age group in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year by Sex, Age group, Territorial unit and Time period
-  var 'SEX' (Sex) [elimination]: 3 values
-      T=Total; M=Males; F=Females
-  var 'AgeGroup' (Age group) [elimination]: 25 values
-      TOTAL=Total; UNDER_WAGE=Under working age; WAGE=Of working age; OVER_WAGE=Over working age; Y0-14=0–14 years; Y15-64=15–64 years ... Y60-64=60–64 years; Y65-69=65–69 years; Y70-74=70–74 years; Y75-79=75–79 years; Y80-84=80–84 years; Y_GE85=85 years and more
-      code lengths {4: 3, 5: 2, 6: 18, 9: 1, 10: 1}; prefixes {'Y': 21, 'TOTAL': 1, 'UNDER': 1, 'WAGE': 1, 'OVER': 1}
-  var 'AREA' (Territorial unit) [elimination]: 2245 values
-      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV006=Riga statistical region (Riga) (before 01.01.2024.)  ; LV007=Pierīga statistical region (before 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV008=Vidzeme statistical region (before 01.01.2024.) ... LVDPA0618=Zosna; LVDPA0620=Zūras; LVDPA1279=Zvaigzne; LVDPA1310=Zvejnieki; LVDPA0879=Zvirgzdene; LVDPA0244=Žīguri
-      code lengths {2: 1, 5: 9, 7: 140, 9: 2095}; prefixes {'LVDPA': 1466, 'LV': 639, 'LVRIG': 58, 'LVVLM': 27, 'LVJRM': 26, 'LVDGP': 25, 'UNK': 4}
-      /pag|Ain/: 28 -- LVJRM10=..Priedaine; LV0020460=..Klintaine rural territory; LV0022460=..Eglaine rural territory; LV0035200=..Ainaži; LV0035400=..Ainaži rural territory; LV0038200=..Cesvaine; LV0038430=..Cesvaine rural territory; LV0041000=Olaine municipality; LV0041200=..Olaine; LV0041400=..Olaine rural territory; LV0043570=..Ozolaine rural territory; LV0054400=..Bērzaine rural territory; LVDPA0093=Ainaži; LVDPA0599=Bērzaine; LVDPA0986=Bērzaines Z; LVDPA0793=Bērzpils (Olaine parish); LVDPA0107=Cesvaine; LVDPA0703=Cesvaines stacija; LVDPA0121=Eglaine; LVDPA0800=Oglaine; LVDPA0113=Olaine; LVDPA1598=Olaines naftas bāze; LVDPA0485=Ozolaine; LVDPA0385=Priedaine; LVDPA1384=Priedaines R; LVDPA0788=Saulaine; LVDPA1299=Skujaine; LVDPA1488=Virši (Olaine parish)
-  var 'ContentsCode' (Unit): 1 values
-      IRD081=Number
-  var 'TIME' (Time period) [time]: 57 values
-      1970=1970; 1971=1971; 1972=1972; 1973=1973; 1974=1974; 1975=1975 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 57}; prefixes {'': 57}
-== r2_lva_rig010
-  title: Population in regions, cities, municipalities, towns, rural territories, villages (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by sex and age group (experimental statistics) by All territories, Age group, Sex, Indicator and Time period
-  var 'AllAreaLV' (All territories) [elimination]: 3868 values
-      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV006=Riga statistical region (Riga) (before 01.01.2024.)  ; LV007=Pierīga statistical region (before 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV008=Vidzeme statistical region (before 01.01.2024.) ... LVDPA0620=Zūras; LVDPA1279=Zvaigzne; LVDPA1310=Zvejnieki; LVDPA0879=Zvirgzdene; LVDPA0701=Židina; LVDPA0244=Žīguri
-      code lengths {2: 1, 5: 9, 7: 177, 9: 2326, 10: 1, 11: 1352, 12: 2}; prefixes {'LV': 1993, 'LVDPA': 1697, 'LVRIG': 58, 'LVVLM': 27, 'LVJRM': 26, 'LVDGP': 25, 'LVJLG': 17, 'UNK': 10}
-      /Ainaž/: 3 -- LV0035200=..Ainaži; LV0035400=..Ainaži rural territory; LVDPA0093=Ainaži
-  var 'AgeGroup' (Age group) [elimination]: 10 values
-      TOTAL=Total; Y0-17=0–17 years; Y0-6=0–6 years; Y7-14=7–14 years; Y15-24=15–24 years; Y25-34=25–34 years; Y35-44=35–44 years; Y45-54=45–54 years; Y55-64=55–64 years; Y_GE65=65 years and more
-  var 'SEX' (Sex) [elimination]: 3 values
-      T=Total; M=Males; F=Females
-  var 'ContentsCode' (Indicator): 2 values
-      RIG010=Number; RIG0101=%
-  var 'TIME' (Time period) [time]: 13 values
-      2000=2000; 2011=2011; 2016=2016; 2017=2017; 2018=2018; 2019=2019 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 13}; prefixes {'': 13}
-== r2_lva_rig040
-  title: Population in regions, cities, municipalities, towns, rural territories (based on the boundaries in force at the beginning of 2026), neighbourhoods and densely populated areas by ethnicity (experimental statistics) by All territories, Ethnicity, Indicator and Time period
-  var 'AllAreaLV' (All territories) [elimination]: 2549 values
-      LV=Latvia; LV00A=Riga statistical region (from 01.01.2024.); LV00C=Vidzeme statistical region (from 01.01.2024.); LV00B=Kurzeme statistical region (from 01.01.2024.); LV009=Zemgale statistical region; LV005=Latgale statistical region ... LVDPA0620=Zūras; LVDPA1279=Zvaigzne; LVDPA1310=Zvejnieki; LVDPA0879=Zvirgzdene; LVDPA0701=Židina; LVDPA0244=Žīguri
-      code lengths {2: 1, 5: 5, 7: 177, 9: 2365, 10: 1}; prefixes {'LVDPA': 1736, 'LV': 635, 'LVRIG': 58, 'LVVLM': 27, 'LVJRM': 26, 'LVDGP': 25, 'LVJLG': 17, 'UNK': 10}
-      /Ainaž/: 3 -- LV0035200=..Ainaži; LV0035400=..Ainaži rural territory; LVDPA0093=Ainaži
-  var 'ETHNICITY' (Ethnicity) [elimination]: 20 values
-      TOTAL=Total; E_LAT=Latvians; E_RUS=Russians; E_BRU=Belarusians; E_UKR=Ukrainians; E_POL=Poles ... E_EST=Estonians; E_MOL=Moldavians; E_IND=Indians; E_GEO=Georgians; E_UZB=Uzbeks; OTH_NSP_UNK=Other ethnicities, including not selected and not indicated ethnicity
-      code lengths {5: 18, 11: 1, 13: 1}; prefixes {'E': 17, 'OTH': 2, 'TOTAL': 1}
-  var 'ContentsCode' (Indicator): 2 values
-      RIG0401=%; RIG040=Number
-  var 'TIME' (Time period) [time]: 13 values
-      2000=2000; 2011=2011; 2016=2016; 2017=2017; 2018=2018; 2019=2019 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 13}; prefixes {'': 13}
-== r2_lva_search_age
-  8 hits
-    IRG011 | /POP/IR/IRG | Population number and share by sex, marital status and age group in regions, State cities and municipalities at the beginning of year 2012 - 2026
-    IRG031 | /POP/IR/IRG | Population by sex, ethnicity, marital status and main age group in regions, State cities and municipalities at the beginning of year 2012 - 2026
-    IRG030 | /POP/IR/A_IR | Population by sex, ethnicity, marital status and main age group in regions, cities and municipalities at the beginning of year 2020 - 2022
-    IRG010 | /POP/IR/A_IR | Population number and share by sex, marital status and age group in regions, cities and municipalities at the beginning of year 2011 - 2022
-    IRG020 | /POP/IR/A_IR | Population by sex and marital status in regions, cities, municipalities, towns and rural territories at the beginning of year 2020 - 2022
-    IRG021 | /POP/IR/IRG | Population by sex and marital status in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 2012 - 2026
-    ATD080 | /TIR/AT/ATD | Exports and imports by countries (CN at 8-digit level) 2005 - 2026
-    ATD080m | /TIR/AT/ATD | Exports and imports by countries (CN at 8-digit level) 2005M01 - 2026M07
-== r2_ltu_flows
-  9503 dataflows
-    S3R094_M3010221 | S3R094 - Indexes of ageing at the beginning of the year | S3R094 - Demografinės senatvės koeficientas metų pradžioje
-    S3R162_M3010215_2 | S3R162 - Proportion of the population by ethnicity, compared to the total resident population | S3R162 - Gyventojų pagal tautybę dalis, palyginti su bendru nuolatinių gyventojų skaičiumi
-    S3R166_M3010218 | S3R166 - Resident population as of 1 July | S3R166 - Nuolatinių gyventojų skaičius liepos 1 d.
-    S3R166_M3010219 | S3R166 - Resident population as of 1 July | S3R166 - Nuolatinių gyventojų skaičius liepos 1 d.
-    S3R167_M3010210 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010222 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010216 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010214 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010205 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010213 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010206 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010224 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010202 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010203 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010215_1 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010210_1 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010319 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R167_M3010320 | S3R167 - Resident population at the beginning of the year | S3R167 - Nuolatinių gyventojų skaičius metų pradžioje
-    S3R168_M3010101_1 | S3R168 - Resident population at the beginning of the month | S3R168 - Nuolatinių gyventojų skaičius mėnesio pradžioje
-    S3R170_M3010211_2 | S3R170 - Population density at the beginning of the year | S3R170 - Gyventojų tankis metų pradžioje
-    S3R177_M3010512 | S3R177 - Deliveries | S3R177 - Gimdymai
-    S3R178_M3010509 | S3R178 - Age-specific fertility rate | S3R178 - Gimstamumo rodiklis pagal motinos amžių
-    S3R178_M3010509_1 | S3R178 - Age-specific fertility rate | S3R178 - Gimstamumo rodiklis pagal motinos amžių
-    S3R179_M3010514 | S3R179 - Live births outside marriage | S3R179 - Gimusieji santuokos neįregistravusiems tėvams
-    S3R179_M3010524 | S3R179 - Live births outside marriage | S3R179 - Gimusieji santuokos neįregistravusiems tėvams
-    S3R180_M3010501_1 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010511 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010502 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010505 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010503 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010507 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010504 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010506 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010515 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010520 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010521 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010522 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010523 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R180_M3010525 | S3R180 - Live births | S3R180 - Gimusieji
-    S3R304_M3010601_1 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R304_M3010609 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R304_M3010624 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R304_M3010601_3 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R304_M3010627 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R336_M3010501_1 | S3R336 - Natural population change | S3R336 - Natūrali gyventojų kaita
-    S3R354_M3010605 | S3R354 - Stillbirths | S3R354 - Negyvagimiai
-    S3R354_M3010605_1 | S3R354 - Stillbirths | S3R354 - Negyvagimiai
-    S3R556_M3010408_3 | S3R556 - Number of children aged 0–17 who after divorce stayed with one of the parents | S3R556 - 0–17 metų amžiaus vaikų, likusių po ištuokos su vienu iš tėvų, skaičius
-    S3R584_M3010802 | S3R584 - Life expectancy | S3R584 - Vidutinė tikėtina gyvenimo trukmė
-    S3R584_M3010801_1 | S3R584 - Life expectancy | S3R584 - Vidutinė tikėtina gyvenimo trukmė
-    S3R629_M3010217 | S3R629 - Median age of the population at the beginning of the year | S3R629 - Medianinis gyventojų amžius metų pradžioje
-    S3R630_M3010513 | S3R630 - Mean age of women at childbirth | S3R630 - Vidutinis gimdančių moterų amžius
-    S3R633_M3010223 | S3R633 - Average annual population | S3R633 - Vidutinis metinis gyventojų skaičius
-    S3R633_M3010211_1 | S3R633 - Average annual population | S3R633 - Vidutinis metinis gyventojų skaičius
-    S3R633_M3010223_1 | S3R633 - Average annual population | S3R633 - Vidutinis metinis gyventojų skaičius
-    S3R651_M3010310 | S3R651 - Mean age at marriage | S3R651 - Vidutinis susituokusiųjų amžius
-    S3R652_M3010310 | S3R652 - Mean age at first marriage | S3R652 - Vidutinis susituokusiųjų amžius, tuokiantis pirmą kartą
-    S3R692_M3010501_2 | S3R692 - Crude birth rate | S3R692 - Bendrasis gimstamumo rodiklis
-    S3R694_M3010601_2 | S3R694 - Crude death rate | S3R694 - Bendrasis mirtingumo rodiklis
-    S3R694_M3010606_2 | S3R694 - Crude death rate | S3R694 - Bendrasis mirtingumo rodiklis
-    S3R695_M3010501_2 | S3R695 - Crude rate of natural population change | S3R695 - Bendrasis natūralios gyventojų kaitos rodiklis
-    S3R696_M3010701_2 | S3R696 - Infant mortality rate | S3R696 - Kūdikių mirtingumo rodiklis
-    S3R696_M3010702_2 | S3R696 - Infant mortality rate | S3R696 - Kūdikių mirtingumo rodiklis
-    S3R696_M3010702_3 | S3R696 - Infant mortality rate | S3R696 - Kūdikių mirtingumo rodiklis
-    S3R698_M3010211_4 | S3R698 - Number of women per 1000 men at the beginning of the year | S3R698 - Moterų skaičius, tenkantis 1 tūkst. vyrų, metų pradžioje
-    S3R708_M3010602 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S3R708_M3010621_1 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S3R708_M3010622_1 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S3R708_M3010620_1 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S3R708_M3010623_1 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S3R708_M3010603_1 | S3R708 - Deaths per 100 000 population | S3R708 - Mirusiųjų skaičius, tenkantis 100 tūkst. gyventojų
-    S9R085_S10020107 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R085_S10020108_2 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R085_S10020110 | S9R085 - Land area (agricultural censuses) | S9R085 - Žemės plotas (žemės ūkio surašymai)
-    S9R106_S10020105_2 | S9R106 - Standard production | S9R106 - Standartinė produkcija (žemės ūkio surašymai)
-    S9R106_S10020203_3 | S9R106 - Standard production | S9R106 - Standartinė produkcija (žemės ūkio surašymai)
-    S9R111_S10020402 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020403 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020404 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020405 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S9R111_S10020406 | S9R111 - Number of workers (agricultural censuses) | S9R111 - Darbuotojų skaičius (žemės ūkio surašymai)
-    S3R216_M3010220 | S3R216 - Dependency ratio at the beginning of the year | S3R216 - Bendrasis išlaikomo amžiaus žmonių koeficientas metų pradžioje
-    S3R220_M3010408_2 | S3R220 - Number of divorced couples with common children aged 0–17 | S3R220 - Išsituokusių porų, turinčių 0–17 metų amžiaus bendrų vaikų, skaičius
-    S3R221_M3010404 | S3R221 - Divorced persons | S3R221 - Išsituokusieji
-    S3R221_M3010405 | S3R221 - Divorced persons | S3R221 - Išsituokusieji
-    S3R221_M3010407 | S3R221 - Divorced persons | S3R221 - Išsituokusieji
-    S3R221_M3010412 | S3R221 - Divorced persons | S3R221 - Išsituokusieji
-    S3R224_M3010401_1 | S3R224 - Divorces | S3R224 - Ištuokos
-    S3R224_M3010406_1 | S3R224 - Divorces | S3R224 - Ištuokos
-    S3R224_M3010410 | S3R224 - Divorces | S3R224 - Ištuokos
-    S3R224_M3010411 | S3R224 - Divorces | S3R224 - Ištuokos
-    S3R224_M3010316 | S3R224 - Divorces | S3R224 - Ištuokos
-    S3R225_M3010401_2 | S3R225 - Crude divorce rate | S3R225 - Bendrasis ištuokų rodiklis
-    S3R225_M3010406_2 | S3R225 - Crude divorce rate | S3R225 - Bendrasis ištuokų rodiklis
-    S3R303_M3010701_1 | S3R303 - Infant deaths | S3R303 - Mirusieji kūdikiai
-    S3R303_M3010702_1 | S3R303 - Infant deaths | S3R303 - Mirusieji kūdikiai
-    S3R303_M3010704 | S3R303 - Infant deaths | S3R303 - Mirusieji kūdikiai
-    S3R303_M3010703 | S3R303 - Infant deaths | S3R303 - Mirusieji kūdikiai
-    S3R304_M3010606_1 | S3R304 - Deaths | S3R304 - Mirusieji
-    S3R304_M3010607 | S3R304 - Deaths | S3R304 - Mirusieji
-    S9R194_S10020206 | S9R194 - Number of farms which have agricultural crops by farm type (agricultural censuses) | S9R194 - Ūkių, turinčių pasėlių, skaičius pagal ūkio tipą (žemės ūkio surašymai)
-    S9R195_S10020118_1 | S9R195 - Crops area by farm type (agricultural censuses) | S9R195 - Pasėlių plotas pagal ūkio tipą (žemės ūkio surašymai)
-    S9R195_S10020118_2 | S9R195 - Crops area by farm type (agricultural censuses) | S9R195 - Pasėlių plotas pagal ūkio tipą (žemės ūkio surašymai)
-    S3R876_M3010516 | S3R876 - Gross reproduction rate | S3R876 - Bruto reprodukcijos rodiklis
-    S3R877_M3010516 | S3R877 - Net reproduction rate | S3R877 - Neto reprodukcijos rodiklis
-    S9R189_S10020119 | S9R189 - Crop area (agricultural censuses) | S9R189 - Pasėlių plotas (žemės ūkio surašymas)
-    S9R189_S10020120 | S9R189 - Crop area (agricultural censuses) | S9R189 - Pasėlių plotas (žemės ūkio surašymas)
-    S3R879_M3010311 | S3R879 - Total first marriage rate | S3R879 - Suminis pirmų santuokų rodiklis
-    S3R880_M3010409 | S3R880 - Total divorce rate | S3R880 - Suminis ištuokų rodiklis
-    S9R190_S10020802 | S9R190 - Number of grain combine harvesters by grain crop area (agricultural censuses) | S9R190 - Javų kombainų skaičius pagal grūdinių augalų plotą (žemės ūkio surašymai)
-    S9R191_S10020803 | S9R191 - Number of potato planters, harvesters and combine harvestersby potato area (agricultural censuses) | S9R191 - Bulviasodžių, bulviakasių ir bulvių kombainų skaičius pagal bulvių plotą (žemės ūkio surašymai)
-    S9R192_S10020802 | S9R192 - Number of farms which have grain combine harvesters (agricultural censuses) | S9R192 - Ūkių, turinčių javų kombainų, skaičius (žemės ūkio surašymai)
-    S9R193_S10020803 | S9R193 - Number of farms which have potato planters, harvesters and combine harvesters (agricultural censuses) | S9R193 - Ūkių, turinčių bulviasodžių, bulviakasių ir bulvių kombainų, skaičius (žemės ūkio surašymai)
-    S9R153_S10020304 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020302 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020303 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R153_S10020301 | S9R153 - Number of pigs (agricultural censuses) | S9R153 - Kiaulių skaičius (žemės ūkio surašymai)
-    S9R154_S10020313 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020315 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020317 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020321 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020322 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R154_S10020323 | S9R154 - Number of farms which have farm animals (or such kind of farm animals) (agricultural censuses) | S9R154 - Ūkių, turinčių ūkinių gyvūnų (arba tam tikros rūšies ūkinių gyvūnų) , skaičius (žemės ūkio surašymai)
-    S9R155_S10020306 | S9R155 - Number of sheep (agricultural censuses) | S9R155 - Avių skaičius (žemės ūkio surašymai)
-    S9R156_S10020309 | S9R156 - Number of other farm animals (agricultural censuses) | S9R156 - Kitų ūkinių gyvūnų skaičius (žemės ūkio surašymai)
-    S9R156_S10020308 | S9R156 - Number of other farm animals (agricultural censuses) | S9R156 - Kitų ūkinių gyvūnų skaičius (žemės ūkio surašymai)
-    S9R157_S10020310 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020311 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020312 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R157_S10020313 | S9R157 - Number of poultry (agricultural censuses) | S9R157 - Paukščių skaičius (žemės ūkio surašymai)
-    S9R158_S10020315 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020316 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020317 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R158_S10020318 | S9R158 - Number of cattle (agricultural censuses) | S9R158 - Galvijų skaičius (žemės ūkio surašymai)
-    S9R159_S10020401_1 | S9R159 - Number of persons employed in terms of annual work (agricultural censuses) | S9R159 - Sąlyginių darbuotojų skaičius (žemės ūkio surašymai)
-    S9R159_S10020401_2 | S9R159 - Number of persons employed in terms of annual work (agricultural censuses) | S9R159 - Sąlyginių darbuotojų skaičius (žemės ūkio surašymai)
-    S9R160_S10020601 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R160_S10020602 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R160_S10020603 | S9R160 - Number of farms which have keeping systems for such kind farm animals (agricultural censuses) | S9R160 - Ūkių, turinčių tam tikros rūšies ūkinių gyvūnų laikymo sistemas, skaičius (žemės ūkio surašymai)
-    S9R161_S10020602 | S9R161 - Number of places in keeping system for laying hens (agricultural censuses) | S9R161 - Vietų skaičius vištų dedeklių laikymo sistemoje (žemės ūkio surašymai)
-    S9R162_S10020603 | S9R162 - Number of places in keeping system for pigs (agricultural censuses) | S9R162 - Vietų skaičius kiaulių laikymo sistemoje (žemės ūkio surašymai)
-    S9R163_S10020604 | S9R163 - Area there tillage methods are applied (agricultural censuses) | S9R163 - Plotas, kuriame taikomas dirbimo metodas (žemės ūkio surašymai)
-    S9R164_S10020605 | S9R164 - Area there soil covered in winter (agricultural censuses) | S9R164 - Plotas, kuriame naudojama danga žiemą (žemės ūkio surašymai)
-    S9R165_S10020601 | S9R165 - Number of places in keeping system for livestock (agricultural censuses) | S9R165 - Vietų skaičius galvijų laikymo sistemoje (žemės ūkio surašymai)
-    S9R166_S10020101 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R166_S10020102 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R166_S10020103 | S9R166 - Unutilised agricultural land area (agricultural censuses) | S9R166 - Nenaudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R167_S10020104_2 | S9R167 - Average size of farms by agricultural land (agricultural censuses) | S9R167 - Ūkių vidutinis dydis pagal žemės ūkio naudmenas (žemės ūkio surašymai)
-    S9R168_S10020104_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020105_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020201 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020202 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R168_S10020203_1 | S9R168 - Number of farms (agricultural censuses) | S9R168 - Ūkių skaičius (žemės ūkio surašymai)
-    S9R169_S10020106 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020108_1 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020109 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R169_S10020117_1 | S9R169 - Number of farms which have utilised agricultural land (or such kind of utilised agricultural land) (agricultural censuses) | S9R169 - Ūkių,  turinčių naudojamos žemės (arba tam tikros rūšies naudojamos žemės ), skaičius (žemės ūkio surašymai)
-    S9R170_S10020111 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020112 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020113 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020114 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020115 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020116 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020117_2 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R170_S10020203_2 | S9R170 - Utilised agricultural land area (agricultural censuses) | S9R170 - Naudojamų žemės ūkio naudmenų plotas (žemės ūkio surašymai)
-    S9R171_S10020701_2 | S9R171 - Area of building for keeping livestock (agricultural censuses) | S9R171 - Pastato gyvuliams laikyti plotas (žemės ūkio surašymai)
-    S9R172_S10020701_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R172_S10020702_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R172_S10020703_1 | S9R172 - Number of farms which have such kind of agrucultural machinery or farm buildings (agricultural censuses) | S9R172 - Ūkių, turinčių tam tikros rūšies žemės ūkio technikos ar pastatų, skaičius (žemės ūkio surašymai)
-    S9R173_S10020702_2 | S9R173 - Capacity of warehouses (agricultural censuses) | S9R173 - Sandėlio talpa (žemės ūkio surašymai)
-    S9R174_S10020704 | S9R174 - Number of tractors (agricultural censuses) | S9R174 - Traktorių skaičius (žemės ūkio surašymai)
-    S9R175_S10020703_2 | S9R175 - Capacity of storage warehouses (agricultural censuses) | S9R175 - Saugyklos talpa (žemės ūkio surašymai)
-    S9R176_S10020801_1 | S9R176 - Number of he main agricultural machines and equipment (agricultural censuses) | S9R176 - Pagrindinių žemės ūkio mašinų ir įrenginių skaičius (žemės ūkio surašymai)
-    S9R176_S10020801_2 | S9R176 - Number of he main agricultural machines and equipment (agricultural censuses) | S9R176 - Pagrindinių žemės ūkio mašinų ir įrenginių skaičius (žemės ūkio surašymai)
-    S9R177_S10020203_1 | S9R177 - Number of workers (excluding temporary hired) (agricultural censuses) | S9R177 - Darbuotojų skaičius (išskyrus laikinai samdomus) (žemės ūkio surašymai)
-    S9R179_S10020503_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020506_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020509_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020510_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020515_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020516_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020517_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020518_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020519_1 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020205 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020208 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R179_S10020209 | S9R179 - Number of farms which have agricultural crops (or such kind of agricultural crops) (agricultural censuses) | S9R179 - Ūkių, turinčių pasėlių (arba tam tikros rūšies pasėlių), skaičius (žemės ūkio surašymai)
-    S9R180_S10020501 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R180_S10020502 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R180_S10020503_2 | S9R180 - Potatoes area (agricultural censuses) | S9R180 - Bulvių plotas (žemės ūkio surašymai)
-    S9R181_S10020506_2 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R181_S10020504 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R181_S10020505 | S9R181 - Rape area (agricultural censuses) | S9R181 - Rapsų plotas (žemės ūkio surašymai)
-    S9R182_S10020510_2 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020507 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020508 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R182_S10020509_2 | S9R182 - Leguminous crops area (agricultural censuses) | S9R182 - Ankštinių augalų plotas (žemės ūkio surašymai)
-    S9R183_S10020511_2 | S9R183 - Area of other agricultural crops on farms larger than 1 ha (agricultural censuses) | S9R183 - Kitų žemės ūkio augalų plotas didesniuose nei 1 ha ūkiuose (žemės ūkio surašymai)
-    S9R183_S10020512_2 | S9R183 - Area of other agricultural crops on farms larger than 1 ha (agricultural censuses) | S9R183 - Kitų žemės ūkio augalų plotas didesniuose nei 1 ha ūkiuose (žemės ūkio surašymai)
-    S9R184_S10020513 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020514 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020515_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020516_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020517_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020518_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S9R184_S10020519_2 | S9R184 - Cereals area (agricultural censuses) | S9R184 - Javų plotas (žemės ūkio surašymai)
-    S3R838_M3010608 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R838_M3010603 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R838_M3010622 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R838_M3010623 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R838_M3010620 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R838_M3010621 | S3R838 - Deaths by cause of death | S3R838 - Mirusiųjų skaičius pagal mirties priežastis
-    S3R842_M3010101_2 | S3R842 - Live births by month | S3R842 - Mėnesinis gyvų gimusių kūdikių skaičius
-    S3R843_M3010102 | S3R843 - Divorces by month | S3R843 - Mėnesinis ištuokų skaičius
-    S3R844_M3010101_2 | S3R844 - Deaths by month | S3R844 - Mėnesinis mirusiųjų skaičius
-    S3R845_M3010102_1 | S3R845 - Marriages by month | S3R845 - Mėnesinis santuokų skaičius
-    S3R994_M3010517 | S3R994 - Mean age of women at birth of first child | S3R994 - Vidutinis pirmą vaiką gimdančių moterų amžius
-    S3R0155_M3010203_1 | S3R0155 - Resident population age structure at the beginning of the year | S3R0155 - Nuolatinių gyventojų amžiaus struktūra metų pradžioje
-    S3R0161_M3010518 | S3R0161 - The number of children born to young mothers per 1000 women of the respective age | S3R0161 - Jaunoms motinoms gimusių vaikų skaičius, tenkantis 1 tūkst. atitinkamo amžiaus moterų
-    S3R0477_M3010220_1 | S3R0477 - Old-age dependency ratio at the beginning of the year | S3R0477 - Išlaikomo amžiaus pagyvenusių žmonių koeficientas metų pradžioje
-    S3R0583_M3010228_1 | S3R0583 - Live births. Projection | S3R0583 - Gimusieji. Prognozė
-    S3R0584_M3010237_1 | S3R0584 - Median age of the population at the beginning of the year. Projection | S3R0584 - Medianinis gyventojų amžius metų pradžioje. Prognozė
-    S3R0585_M3010231_1 | S3R0585 - Deaths. Projection | S3R0585 - Mirusieji. Prognozė
-    S3R0586_M3010233_1 | S3R0586 - Net international migration. Projection | S3R0586 - Neto tarptautinė migracija. Prognozė
-    S3R0587_M3010232_1 | S3R0587 - Life expectancy. Projection | S3R0587 - Vidutinė tikėtina gyvenimo trukmė. Prognozė
-    S3R0588_M3010230_1 | S3R0588 - Total fertility rate. Projection | S3R0588 - Suminis gimstamumo rodiklis. Prognozė
-    S3R0589_M3010236_1 | S3R0589 - Dependency ratio at the beginning of the year. Projection | S3R0589 - Išlaikomo amžiaus žmonių koeficientas metų pradžioje. Prognozė
-    S3R0590_M3010235_1 | S3R0590 - Population age structure at the beginning of the year. Projection | S3R0590 - Gyventojų amžiaus struktūra metų pradžioje. Prognozė
-    S3R0591_M3010226_1 | S3R0591 - Population at the beginning of the year. Projection | S3R0591 - Gyventojų skaičius metų pradžioje. Prognozė
-    S3R0591_M3010227_1 | S3R0591 - Population at the beginning of the year. Projection | S3R0591 - Gyventojų skaičius metų pradžioje. Prognozė
-    S3R0433_M3010801_2 | S3R0433 - Life expectancy (experimental statistics) | S3R0433 - Vidutinė tikėtina gyvenimo trukmė (eksperimentinė statistika)
-    S3R0289_M3010226 | S3R0289 - Population at the beginning of the year. Eurostat projection | S3R0289 - Gyventojų skaičius metų pradžioje. Eurostato prognozė
-    S3R0290_M3010235 | S3R0290 - Population age structure at the beginning of the year. Eurostat projection | S3R0290 - Gyventojų amžiaus struktūra metų pradžioje. Eurostato prognozė
-    S3R0291_M3010236 | S3R0291 - Dependency ratio at the beginning of the year. Eurostat projection | S3R0291 - Išlaikomo amžiaus žmonių koeficientas metų pradžioje. Eurostato prognozė
-    S3R0292_M3010237 | S3R0292 - Median age of the population at the beginning of the year. Eurostat projection | S3R0292 - Medianinis gyventojų amžius metų pradžioje. Eurostato prognozė
-    S3R0293_M3010228 | S3R0293 - Live births. Eurostat projection | S3R0293 - Gimusieji. Eurostato prognozė
-    S3R0294_M3010229 | S3R0294 - Age-specific fertility rate. Projection | S3R0294 - Gimstamumo rodiklis pagal motinos amžių. Prognozė
-    S3R0295_M3010230 | S3R0295 - Total fertility rate. Eurostat projection | S3R0295 - Suminis gimstamumo rodiklis. Eurostato prognozė
-    S3R0296_M3010231 | S3R0296 - Deaths. Eurostat projection | S3R0296 - Mirusieji. Eurostato prognozė
-    S3R0297_M3010232 | S3R0297 - Life expectancy. Eurostat projection | S3R0297 - Vidutinė tikėtina gyvenimo trukmė. Eurostato prognozė
-    S3R0298_M3010233 | S3R0298 - Net international migration. Eurostat projection | S3R0298 - Neto tarptautinė migracija. Eurostato prognozė
-    S3R0326_M3010314 | S3R0326 - First marriages per 1,000 population at the age specified | S3R0326 - Pirmų santuokų skaičius, tenkantis 1 tūkst. atitinkamo amžiaus gyventojų
-    S3R0327_M3010317 | S3R0327 - Arrivals in counties | S3R0327 - Atvykusieji į apskritis
-    S3R0328_M3010317 | S3R0328 - Departures from counties | S3R0328 - Išvykusieji iš apskričių
-    S3R0329_M3010317 | S3R0329 - Net internal migration by county | S3R0329 - Neto vidaus migracija apskrityse
-    S3R0330_M3010318 | S3R0330 - Arrivals in counties from others counties | S3R0330 - Atvykusieji į apskritis iš kitų apskričių
-    S3R0331_M3010318 | S3R0331 - Departures from counties to others counties | S3R0331 - Išvykusieji iš apskričių į kitas apskritis
-    S3R0332_M3010318 | S3R0332 - Internal migrants within the county | S3R0332 - Vidaus migrantai, pakeitę nuolatinę gyvenamąją vietą toje pačioje apskrityje
-    S3R0336_M3010625 | S3R0336 - Perinatal mortality rate | S3R0336 - Perinatalinio mirtingumo rodiklis
-    S3R0337_M3010626 | S3R0337 - Deaths, per 100 000  population of corresponding age | S3R0337 - Mirusių asmenų skaičius, tenkantis 100 tūkst. atitinkamo amžiaus gyventojų
-    S3R430_M3010306_1 | S3R430 - Marriages | S3R430 - Santuokos
-    ...
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/ 
+  HTTP 200 application/json; charset=utf-8 587 bytes
+  t T1008P21.px  Total resident population in the Republic of North Macedonia by ethnic affiliation and sex, by municipalities, Census 2021
+  t T1012P21.px  Total resident population in the Republic of North Macedonia by religious affiliation and sex, by municipalities, Census 2021
+  t T1015P21.px  Total resident population in the Republic of North Macedonia by mother tongue and sex, by municipalities, Census 2021
+== pxtree https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/  3 60
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1001P21.px  Total resident population, households and dwellings in the Republic of North Macedonia, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1002P21.px  Total resident population in the Republic of North Macedonia by individual years of age and sex, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1003P21.px  Total resident population in the Republic of North Macedonia by 5-year age groups and sex, by municipalities, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1006P21.px  Total resident population in the Republic of North Macedonia by ethnic affiliation and sex, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1008P21a.px  Total enumerated population, total resident population and total non-resident population - Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1010P21.px  Total resident population in the Republic of North Macedonia by religious affiliation and sex, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1013P21.px  Total resident population in the Republic of North Macedonia by mother tongue and sex, Census 2021
+  T https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieSet/T1016P21.px  Total resident population in the Republic of North Macedonia by language usually spoken in the household and sex, Census 2021
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/VozrastiPol/T1020P21.px 
+  HTTP 200 application/json; charset=utf-8 2,912 bytes
+  title: Total resident population by single age  and sex by municipalities, Census 2021
+  var Општина (Municipality): 82 values: 0000=Republic of North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
+  var Возраст (Age): 102 values: 999=Age - TOTAL, 0=0, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=10
+  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Male, 2=Female
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px 
+  HTTP 200 application/json; charset=utf-8 2,236 bytes
+  title: Total resident population in the Republic of North Macedonia by mother tongue and sex, by municipalities, Census 2021
+  var Општина (Municipalities): 82 values: 0000=Republic of the North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
+  var Пол (Sex): 3 values: 0=Sex - TOTAL, 1=Men, 2=Women
+  var Мајчин јазик (Mother tongue): 12 values: 00=Mother tongue - TOTAL, 01=Macedonian, 03=Albanian, 06=Turkish, 05=Romani, 04=Vlachs, 27=Serbian, 10=Bosniak, 37=Other languages not mentioned, 39=Sign language, 99=Unknown, 88=Persons for whom data are taken from administrative sources
+== px https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/Drzavjanstvo/T1022P21.px 
+  HTTP 200 application/json; charset=utf-8 2,338 bytes
+  title: Total resident population by citizenship and  ethnic affiliation by municipalities, Census 2021
+  var Општина (Municipality): 82 values: 0000=Republic of North Macedonia, 0019=City of Skopje, 0094=Aerodrom, 0108=Butel, 0027=Gazi Baba, 0035=Gjorche Petrov, 0043=Karposh, 0051=Kisela Voda, 0116=Saraj, 0060=Centar, 0078=Chair, 0086=Shuto Orizari
+  var Државјанство (Citizenship): 5 values: 0=Citizenship - TOTAL, 1=Only Republic of North Macedonia, 2=Republic of North Macedonia and another country, 3=Another country, 4=Stateless
+  var Етничка припадност (Ethnic affiliation): 12 values: 0=Ethnic affiliation - TOTAL, 1=Macedonians, 3=Albanians, 6=Turks, 5=Roma, 4=Vlachs, 27=Serbs, 10=Bosniaks, 37=Other, 38=Undeclared, 99=Unknown, 88=Persons for whom data are taken  from administrative sources
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/ 
+  HTTP 200 application/json; charset=utf-8 597 bytes
+  l Qasja në ICT  Access to ICT
+  l 5_Ndërtesat, banesat dhe ekonomitë familjare  Buildings, Dwellings, and Households
+  l 6_Sipas vendbanimeve  By Settlements 
+  l 1_Demographic_Characteristics  Demographic characteristics
+  l Disability status  Disability status
+  l 2_Education  Education
+  l Fertility  Fertility
+  l 4_Labour market  Labour market
+  l Migration  Migration
