@@ -1,7 +1,243 @@
-  Yerevan: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ասորերեն', 'հունարեն', 'ուկրաիներեն', 'վրացերեն', 'պարսկերեն', 'անգլերեն', 'այլ', 'հրաժարվելենպատասխանել']
-  Yerevan: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'մոլոկան', 'շարֆադինական', 'հեթանոսական', 'այլ', 'կրոնականդավանանքչունեցողներ', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքըչնշածներ']
-  Yerevan: 1,060,138 people; Armenian Apostolic 1,007,130, Not stated 23,072, No religion 9,771, Evangelical 6,703, Jehovah's Witnesses 3,504
-  Aragatsotn: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'քրդերեն', 'այլ', 'հրաժարվելենպատասխանել']
-  Aragatsotn: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'շարֆադինական', 'հեթանոսական', 'ավետարանական', 'ուղղափառ', 'եհովայիվկա', 'այլ', 'չունենկրոնականդավանանք', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքընշվածչէ']
-  Aragatsotn: 132,925 people; Armenian Apostolic 119,875, Yazidi 5,310, Not stated 3,557, Paganism 1,393, No religion 1,099
-armenia_2011: row 'Հայ' has 19 figures, the total 21
+== r17_ltu_vilnius
+  16,773 bytes, starts b'PK\x03\x04'
+  sheet 'Pritaikytas konfidencialumas': 122 rows x 9 columns
+    1: Largest ethnic groups in Vilnius county
+    2: 2021 Population and Housing Census data
+    3:  
+    4: In order to ensure personal data confidentiality, the methods of statistical disclosure control, which change the values of the data set, are applied. Due to application of such methods, the sum of rows may not coincide 
+    5: 
+    6: 
+    7: Administrative territory                                       (apskr. – county, sav. – municipality, m. sav. – city, town municipality, r. sav. – district municipality, m. – town, sen. – ward) | Total | Lithuanians | Po
+    8: Iš viso | 2810761 | 2378118 | 183421 | 141122 | 28183 | 14168 | 16116 | 49633
+    9: Vilniaus apskr. | 810797 | 511426 | 170919 | 70170 | 21055 | 6170 | 7378 | 23670
+    10: Elektrėnų sav. | 23376 | 19651 | 1572 | 1163 | 235 | 178 | 170 | 408
+    11: Beižionių sen. | 240 | 215 | 14 | 0 | 0 | 0 | 0 | 3
+    12: Elektrėnų sen. | 12243 | 10274 | 465 | 832 | 166 | 148 | 117 | 243
+    13: Gilučių sen. | 462 | 426 | 11 | 12 | 3 | 0 | 0 | 8
+    14: Kazokiškių sen. | 391 | 324 | 46 | 7 | 0 | 0 | 0 | 11
+    15: Kietaviškių sen. | 1257 | 1134 | 43 | 40 | 0 | 3 | 17 | 18
+    16: Pastrėvio sen. | 641 | 584 | 36 | 9 | 3 | 0 | 4 | 10
+    17: Semeliškių sen. | 1024 | 872 | 93 | 23 | 9 | 0 | 11 | 22
+    18: Vievio sen. | 7118 | 5819 | 860 | 236 | 55 | 26 | 25 | 92
+    19: Šalčininkų r. sav. | 30052 | 3789 | 22933 | 1517 | 857 | 174 | 161 | 621
+    20: Akmenynės sen. | 652 | 42 | 561 | 8 | 24 | 0 | 12 | 4
+    21: Baltosios Vokės sen. | 1703 | 356 | 1124 | 124 | 37 | 10 | 24 | 30
+    22: Butrimonių sen. | 1483 | 67 | 1346 | 24 | 9 | 11 | 0 | 27
+    23: Dainavos sen. | 680 | 73 | 580 | 13 | 0 | 0 | 3 | 6
+    24: Dieveniškių sen. | 1585 | 298 | 1130 | 43 | 75 | 5 | 3 | 37
+    25: Eišiškių sen. | 3805 | 371 | 3193 | 83 | 60 | 12 | 30 | 56
+    26: Gerviškių sen. | 1790 | 166 | 1473 | 76 | 26 | 8 | 5 | 34
+    27: Jašiūnų sen. | 3545 | 487 | 2465 | 368 | 104 | 33 | 13 | 70
+    28: Kalesninkų sen. | 1638 | 186 | 1352 | 32 | 17 | 6 | 19 | 22
+    29: Pabarės sen. | 1119 | 192 | 881 | 14 | 16 | 3 | 0 | 16
+    30: Poškonių sen. | 566 | 225 | 326 | 6 | 5 | 0 | 0 | 0
+    31: Šalčininkų sen. | 9533 | 1194 | 6996 | 595 | 380 | 82 | 42 | 247
+    32: Turgelių sen. | 1953 | 132 | 1506 | 124 | 95 | 11 | 8 | 72
+    33: Širvintų r. sav. | 15023 | 13150 | 1291 | 254 | 64 | 51 | 45 | 168
+    34: Alionių sen. | 706 | 548 | 125 | 18 | 0 | 0 | 0 | 9
+    35: Čiobiškio sen. | 647 | 627 | 17 | 3 | 0 | 4 | 0 | 0
+    36: Gelvonų sen. | 1035 | 988 | 27 | 9 | 4 | 0 | 0 | 4
+    37: Jauniūnų sen. | 1626 | 886 | 634 | 37 | 15 | 14 | 8 | 32
+    38: Kernavės sen. | 399 | 353 | 29 | 8 | 0 | 0 | 0 | 6
+    39: Musninkų sen. | 977 | 926 | 32 | 13 | 5 | 3 | 6 | 3
+    40: Širvintų miesto sen. | 5827 | 5290 | 292 | 108 | 21 | 17 | 20 | 73
+    41: Širvintų sen. | 2865 | 2638 | 115 | 43 | 22 | 4 | 6 | 34
+    42: Zibalų sen. | 941 | 893 | 18 | 15 | 0 | 0 | 0 | 3
+    43: Švenčionių r. sav. | 22966 | 12709 | 5583 | 2834 | 911 | 154 | 122 | 647
+    44: Adutiškio sen. | 795 | 581 | 113 | 49 | 38 | 0 | 3 | 3
+    45: Cirkliškio sen. | 755 | 498 | 103 | 107 | 26 | 3 | 0 | 14
+== r17_ltu_vilnius_lt
+  16,631 bytes, starts b'PK\x03\x04'
+  sheet 'Pritaikytas konfidencialumas': 122 rows x 9 columns
+    1: Gausiausių tautybių gyventojai Vilniaus apskrityje
+    2: 2021 m. gyventojų ir būstų surašymo rezultatai
+    3: 
+    4: Siekiant užtikrinti asmens duomenų konfidencialumą naudojami statistinio duomenų atskleidžiamumo kontrolės metodai, keičiantys duomenų rinkinio reikšmes. Dėl šių metodų taikymo suminės eilutės gali nesutapti su sumuojamų
+    5: 
+    6: 
+    7:  | Iš viso | Lietuviai | Lenkai | Rusai | Baltarusiai | Ukrainiečiai | Kiti | Nenurodyta
+    8: Iš viso | 2810761 | 2378118 | 183421 | 141122 | 28183 | 14168 | 16116 | 49633
+    9: Vilniaus apskr. | 810797 | 511426 | 170919 | 70170 | 21055 | 6170 | 7378 | 23670
+    10: Elektrėnų sav. | 23376 | 19651 | 1572 | 1163 | 235 | 178 | 170 | 408
+    11: Beižionių sen. | 240 | 215 | 14 | 0 | 0 | 0 | 0 | 3
+    12: Elektrėnų sen. | 12243 | 10274 | 465 | 832 | 166 | 148 | 117 | 243
+    13: Gilučių sen. | 462 | 426 | 11 | 12 | 3 | 0 | 0 | 8
+    14: Kazokiškių sen. | 391 | 324 | 46 | 7 | 0 | 0 | 0 | 11
+    15: Kietaviškių sen. | 1257 | 1134 | 43 | 40 | 0 | 3 | 17 | 18
+    16: Pastrėvio sen. | 641 | 584 | 36 | 9 | 3 | 0 | 4 | 10
+    17: Semeliškių sen. | 1024 | 872 | 93 | 23 | 9 | 0 | 11 | 22
+    18: Vievio sen. | 7118 | 5819 | 860 | 236 | 55 | 26 | 25 | 92
+    19: Šalčininkų rajono sav. | 30052 | 3789 | 22933 | 1517 | 857 | 174 | 161 | 621
+    20: Akmenynės sen. | 652 | 42 | 561 | 8 | 24 | 0 | 12 | 4
+    21: Baltosios Vokės sen. | 1703 | 356 | 1124 | 124 | 37 | 10 | 24 | 30
+    22: Butrimonių sen. | 1483 | 67 | 1346 | 24 | 9 | 11 | 0 | 27
+    23: Dainavos sen. | 680 | 73 | 580 | 13 | 0 | 0 | 3 | 6
+    24: Dieveniškių sen. | 1585 | 298 | 1130 | 43 | 75 | 5 | 3 | 37
+    25: Eišiškių sen. | 3805 | 371 | 3193 | 83 | 60 | 12 | 30 | 56
+    26: Gerviškių sen. | 1790 | 166 | 1473 | 76 | 26 | 8 | 5 | 34
+    27: Jašiūnų sen. | 3545 | 487 | 2465 | 368 | 104 | 33 | 13 | 70
+    28: Kalesninkų sen. | 1638 | 186 | 1352 | 32 | 17 | 6 | 19 | 22
+    29: Pabarės sen. | 1119 | 192 | 881 | 14 | 16 | 3 | 0 | 16
+    30: Poškonių sen. | 566 | 225 | 326 | 6 | 5 | 0 | 0 | 0
+    31: Šalčininkų sen. | 9533 | 1194 | 6996 | 595 | 380 | 82 | 42 | 247
+    32: Turgelių sen. | 1953 | 132 | 1506 | 124 | 95 | 11 | 8 | 72
+    33: Širvintų rajono sav. | 15023 | 13150 | 1291 | 254 | 64 | 51 | 45 | 168
+    34: Alionių sen. | 706 | 548 | 125 | 18 | 0 | 0 | 0 | 9
+    35: Čiobiškio sen. | 647 | 627 | 17 | 3 | 0 | 4 | 0 | 0
+    36: Gelvonų sen. | 1035 | 988 | 27 | 9 | 4 | 0 | 0 | 4
+    37: Jauniūnų sen. | 1626 | 886 | 634 | 37 | 15 | 14 | 8 | 32
+    38: Kernavės sen. | 399 | 353 | 29 | 8 | 0 | 0 | 0 | 6
+    39: Musninkų sen. | 977 | 926 | 32 | 13 | 5 | 3 | 6 | 3
+    40: Širvintų miesto sen. | 5827 | 5290 | 292 | 108 | 21 | 17 | 20 | 73
+    41: Širvintų sen. | 2865 | 2638 | 115 | 43 | 22 | 4 | 6 | 34
+    42: Zibalų sen. | 941 | 893 | 18 | 15 | 0 | 0 | 0 | 3
+    43: Švenčionių rajono sav. | 22966 | 12709 | 5583 | 2834 | 911 | 154 | 122 | 647
+    44: Adutiškio sen. | 795 | 581 | 113 | 49 | 38 | 0 | 3 | 3
+    45: Cirkliškio sen. | 755 | 498 | 103 | 107 | 26 | 3 | 0 | 14
+== r17_ltu_urban
+  47,129 bytes, starts b'PK\x03\x04'
+  sheet 'XDO_METADATA': 80 rows x 3 columns
+    1: Version
+    2: ARU-dbdrv
+    3: Extractor Version
+    4: Template Code
+    5: Template Type | TYPE_EXCEL_TEMPLATE
+    6: Preprocess XSLT File
+    7: Last Modified Date
+    8: Last Modified By
+    9: 
+    10: Data Constraints:
+    11: XDO_?XDOFIELD1? | <?PAVAD_MEN?>
+    12: XDO_?XDOFIELD2? | <?P_2015M01?>
+    13: XDO_?XDOFIELD3? | <?P_2015M02?>
+    14: XDO_?XDOFIELD4? | <?P_2015M03?>
+    15: XDO_?XDOFIELD5? | <?P_2015M04?>
+    16: XDO_?XDOFIELD6? | <?P_2015M05?>
+    17: XDO_?XDOFIELD7? | <?P_2015M06?>
+    18: XDO_?XDOFIELD8? | <?P_2015M07?>
+    19: XDO_?XDOFIELD9? | <?P_2015M08?>
+    20: XDO_?XDOFIELD10? | <?P_2015M09?>
+    21: XDO_?XDOFIELD11? | <?P_2015M10?>
+    22: XDO_?XDOFIELD12? | <?P_2015M11?>
+    23: XDO_?XDOFIELD13? | <?P_2015M12?>
+    24: XDO_?XDOFIELD14? | <?P_2016M01?>
+    25: XDO_?XDOFIELD15? | <?P_2016M02?>
+    26: XDO_?XDOFIELD16? | <?P_2016M03?>
+    27: XDO_?XDOFIELD17? | <?P_2016M04?>
+    28: XDO_?XDOFIELD18? | <?P_2016M05?>
+    29: XDO_?XDOFIELD19? | <?P_2016M06?>
+    30: XDO_?XDOFIELD20? | <?P_2016M07?>
+    31: XDO_?XDOFIELD21? | <?P_2016M08?>
+    32: XDO_?XDOFIELD22? | <?P_2016M09?>
+    33: XDO_?XDOFIELD23? | <?P_2016M10?>
+    34: XDO_?XDOFIELD24? | <?P_2016M11?>
+    35: XDO_?XDOFIELD25? | <?P_2016M12?>
+    36: XDO_?XDOFIELD26? | <?P_2017M01?>
+    37: XDO_?XDOFIELD27? | <?P_2017M02?>
+    38: XDO_?XDOFIELD28? | <?P_2017M03?>
+    39: XDO_?XDOFIELD29? | <?P_2017M04?>
+    40: XDO_?XDOFIELD30? | <?P_2017M05?>
+  sheet '2021 m.': 151 rows x 15 columns
+    1: 
+    2: 
+    3: 
+    4: 
+    5: Urban areas population by largest ethnic group1: 2021 |  |  |  |  |  |  |  |  |  |  |  |  |  |  
+    6:  | Total | Lithuanians | Russians | Poles | Belarusians | Ukrainians | Other | Not indicated
+    7: Total | 1916751 | 1599077 | 119621 | 112486 | 22900 | 11985 | 12795 | 37887
+    8: Akmenė | 2355 | 2258 | 20 | 0 | 0 | 6 | 56 | 11
+    9: Alytus | 52727 | 50908 | 467 | 404 | 98 | 83 | 243 | 531
+    10: Anykščiai | 8697 | 8314 | 245 | 31 | 7 | 11 | 16 | 80
+    11: Ariogala | 2743 | 2708 | 5 | 3 | 3 | 3 | 0 | 27
+    12: Baltoji Vokė | 998 | 241 | 88 | 617 | 21 | 7 | 15 | 12
+    13: Birštonas | 3072 | 2996 | 20 | 10 | 3 | 5 | 5 | 33
+    14: Biržai | 10734 | 10429 | 82 | 24 | 12 | 18 | 21 | 153
+    15: Daugai | 1016 | 967 | 18 | 8 | 4 | 0 | 10 | 13
+    16: Druskininkai | 12908 | 11573 | 370 | 473 | 169 | 55 | 32 | 239
+    17: Dūkštas | 732 | 513 | 99 | 76 | 20 | 4 | 6 | 9
+    18: Dusetos | 531 | 488 | 19 | 5 | 0 | 0 | 6 | 9
+    19: Eišiškės | 2908 | 293 | 74 | 2417 | 49 | 10 | 31 | 44
+    20: Elektrėnai | 11255 | 9362 | 805 | 440 | 169 | 144 | 110 | 227
+    21: Ežerėlis | 1640 | 1586 | 21 | 3 | 0 | 3 | 0 | 25
+    22: Gargždai | 15065 | 14652 | 138 | 12 | 17 | 18 | 57 | 166
+    23: Garliava | 10366 | 10107 | 102 | 14 | 7 | 11 | 25 | 96
+    24: Gelgaudiškis | 1572 | 1532 | 7 | 4 | 9 | 0 | 0 | 16
+    25: Grigiškės | 9950 | 4932 | 1375 | 2354 | 700 | 101 | 155 | 334
+    26: Ignalina | 5106 | 4466 | 329 | 158 | 46 | 21 | 30 | 55
+    27: Jieznas | 1047 | 1023 | 8 | 4 | 3 | 0 | 0 | 10
+    28: Jonava | 27381 | 24104 | 1956 | 327 | 161 | 207 | 188 | 436
+    29: Joniškėlis | 1026 | 1007 | 5 | 0 | 0 | 3 | 0 | 8
+    30: Joniškis | 8612 | 8360 | 102 | 17 | 17 | 16 | 23 | 79
+    31: Jurbarkas | 10186 | 9968 | 44 | 14 | 3 | 9 | 38 | 118
+    32: Kaišiadorys | 8380 | 8005 | 140 | 68 | 17 | 7 | 10 | 130
+    33: Kalvarija | 3982 | 3879 | 31 | 9 | 4 | 5 | 9 | 44
+    34: Kaunas | 298753 | 281943 | 8634 | 1085 | 550 | 977 | 1268 | 4305
+    35: Kavarskas | 503 | 485 | 8 | 0 | 0 | 7 | 0 | 3
+    36: Kazlų Rūda | 5590 | 5428 | 59 | 11 | 12 | 15 | 21 | 46
+    37: Kėdainiai | 23461 | 22200 | 580 | 158 | 66 | 72 | 91 | 292
+    38: Kelmė | 7688 | 7547 | 83 | 5 | 0 | 4 | 10 | 38
+    39: Kybartai | 4126 | 3904 | 70 | 17 | 10 | 0 | 69 | 50
+    40: Klaipėda | 152008 | 117781 | 24368 | 499 | 1835 | 2649 | 1437 | 3438
+== r17_nor_trosamf
+  253,861 characters
+  /[^<>]{0,300}(?:fylke|kommune|registrert|bustad|busett|bosted|adresse)[^<>]{0,300}/: 48 -- ['"Sesongjustering","menuStatisticsEducation":"Utdanning","webcruiterAdvertisementList.professionalField":"Fagfelt","nameSearch.types.onlygiven":"eneste fornavn","calculatePriceChangeFrom":"Berekn prisendring frå","pifProductOther":"Forskjellige ferdige varer","bpiCalculatorTitle":"Berekn endringar i bustadprisen for brukte bustader","pifChooseHomeImport":"Heime- og importmarknad","generalInformation":"Generelt om sesongjustering","project.period":"Periode","bkibolAmount":"Beløp","employee.briefSummary":"Kort om","employee.pressPictureLabel":"Pressebilde {0} av {1} - åpnes i ny fane","cookiePrivacyLin', 'stNumber":"Du kan beregne leie fram til {0} {1}","amountEqualled":"Beløpet svarer til","menu":"Meny","highcharts.printChart":"Skriv ut graf","language":"english","published":"Publisert","notification.affectedMunicipalsHelp":"Om kommunar er valt her, vil varselet bare synast under valde kommunar på /kommunefakta","DATASET_PUBLISHED":"Dataset publisert","calculatorLastNumber":"Siste tilgjengelege tal er for {0} {1}.","men":"menn","footerHiddenTitle":"Bunnmeny","statCalendarText":"Se kommende statistikk","statisticsAbout":"Statistikk om","employee.department":"Avdeling","articlePluralName":"Artiklar","q', 't2":", vennligst prøv igjen. Om problemet vedvarer, ta kontakt med SSB.","GET_DATA_STARTED":"Startet å hente data","error.text1":"Siden feilet å laste med feilkode","contactFormValidateName":"Du må skrive inn navn","specialCases":"Spesielle tilfelle","menuDropdown.partDescription":"En meny med alle kommuner, med søkeinputt for filtrering.","404.or":"eller","searchResult.screenReader.result":"Ditt søk på {0} ga {1} treff","highcharts.downloadXLS":"Last ned tala som XLS","november":"November","calculatorUknownError":"Ukjent feil, prøv igjen","menuStatisticsPopulation":"Befolkning","bkibolExpenditureAll', 'a som CSV","startValue":"Startverdi","button.showAll":"Vis alle","nameSearch.graph.loading":"Hentar graf, ver grei og vent...","contactFormChooseReceiver":"Vel kva førespurnaden gjeld","keyFigureText.decrease":"en nedgang på","notification.partDescription":"Vis ein eller fleire varslingar for denne kommunen","404.goBack":"Gå tilbake til forrige side","FAILED_TO_GET_DATA":"Kunne ikke hente data fra tjeneste","bpiChooseRegion.Region.011":"Nord-Noreg","modified":"Endra","bpiChooseRegion.Region.010":"Trøndelag uten Trondheim","may":"Mai","GenericErrorMessage":"Beklager, noe gikk feil","articleList.headin', '","highcharts.download":"Last ned som ...","pifProductTypeHeader":"Kva slags vare er det?","husleieChooseFiguresToCalculateRent":"Velg om du vil justere fram til tolv måneder etter forrige justering, eller bruke nyeste tall.","project.aboutProject":"Om prosjektet","menuDropdown.searchBarText":"Velg kommune","bpiChooseRegion.Region.009":"Møre og Romsdal og Vestland uten Bergen","bpiChooseRegion.Region.008":"Agder og Rogaland uten Stavanger","copyrightStatisticsNorway":"© Statistisk sentralbyrå","qualityAssessment":"Kvalitetsvurdering","bpiChooseRegion.Region.007":"Innlandet","bpiChooseRegion.Region.00', 'Andel av fødte (%)","cookieBannerAcceptButton":"Godta alle","updated":"Oppdatert","highcharts.chartMenuLabel":"Last ned graf","externalLinksHeading":"Andre nettstader","statisticStatbankBoxTitle":"Sjå alle tal frå denne statistikken","contentType.search.report":"Rapport","bkibolMultiDwellingHouse":"Bustadblokk","contactFormLabelName":"Skriv inn navn","REQUEST_SOURCELIST":"Ber om kildeliste","menuStatisticsAgriculture":"Jord, skog, jakt, og fiskeri","amount":"Beløp","project.modelManager":"Modellansvarleg","frequency":"Hyppighet og aktualitet","pifProductManufactured":"Bearbeidde varer grupperte ette', ',"contentType.search.publikasjon":"Rapport/Notat","relationOtherStatistics":"Samanheng med annan statistikk","menuStatisticsConstruction":"Bygg, bolig og eiendom","calculatorNextPublishText":"Siste tilgjengelige tall er for {0} {1}. Tall for {2} kommer ca. {3}. {4}.","contactFormValidateEmail":"Mailadresse er ikke gyldig","interval.M.09":"September","interval.M.08":"August","pifProductFood":"Matvarer og levande dyr","interval.M.07":"Juli","menuStatisticsElections":"Valg","newsletter.emailLabel":"E-postadresse","nameSearch.graph.threeOrLessText":"År der 3 eller færre barn har fått namnet visast som 0"', 'l beregne husleie fram til","dropdown.chooseSubject":"Vel emne","husleieSubmit":"Se ny husleie","statbankList.title":"Sjå alle tal frå denne statistikken","bpiChooseDwellingType.Boligtype.03":"Blokkleilegheiter","bpiChooseDwellingType.Boligtype.02":"Småhus","bpiChooseDwellingType.Boligtype.01":"Einebustader","bpiChooseDwellingType.Boligtype.00":"Alle bustadtyper","standardRatings":"Standard klassifikasjonar","searchResult.sort.date":"Dato","endedStatistics":"Nedlagd statistikk","employee.position":"Stilling","notification.type":"Varseltype","project.collaborators":"Samarbeidspartnarar","FAILED_TO_FI', ':"Vis som tabell","menuDropdown.description":"Innholdet til sticky-menyen","menuContactUs":"Kontakt oss","women":"kvinner","seePriceChange":"Sjå prisendring","newsletter.buttonTitle":"Meld deg på","GET_SOURCE_LIST_COMPLETE":"Kildeliste hentet og oppdatert","newsletter.emailVerificationError":"E-postadressen er ikje gyldig","calculatorErrorCalculationFailed":"Beregning feilet","menuStatisticsCulture":"Kultur og fritid","conceptsAndVariables":"Definisjonar av viktige omgrep og variablar","timeCoverage":"Tidsperiode","menuMyPage":"Mitt SSB","toTheTop":"Til toppen","highcharts.downloadPDF":"Last ned som ', 'elter må fylles ut","statbankMainFigures":"Sjå hovedtal for denne statistikken","404.title":"Denne siden finnes ikke","employee.phone":"Telefon","background":"Bakgrunn","nameSearch.graph.header":"Navnestatistikk for","notification.affectedMunicipals":"Dersom varselet gjeld kommunar, vel kva for ein kommune her.","calculatorValidateDropdownMonth":"Du må velge måned","menuStatisticsEnergy":"Energi og industri","videoEmbed.play":"Spel av","project.projectPhrase":"Prosjekt","and":"og","kpiResultScreenReader":"Beløpet svarer til {0} kroner. {1} {2} prosent fra {3} til {4}","april":"April","auditProcedures', 'igur","keyFigure.noChange":"Inga endring","nameSearch.readMore":"Sjå meir om namnet i namnestatistikken","bkibolWorkTypePlumbing":"Røyrleggjararbeid","bkibolValidateYear":"Du kan kun skrive inn årstall frå 1979 til","notification.description":"Varsle til ein eller fleire kommunar om deira innhold i kommunefakta","menuResearch":"Forsking","404.search":"Du kan også prøve å søke etter innholdet.","contactFormReceiverStatistikk":"Statistikk og forskning","bpiChooseDwellingType":"Vel bustadtype","period.generic":"Tall for {0}","relatedArticlesHeading":"Analysar, artiklar og publikasjonar","employee.image"', ':"Bilde","nameSearch.types.firstgiven":"første fornavn","keyFigure.decrease":"Nedgang","enterYear":"Skriv inn år(åååå)","husleieTitle":"Beregn ny husleie","menuStatisticsWholesale":"Varehandel og tjenesteyting","error.frontPage":"til forsiden vår.","bkibolDetachedHouse":"Einebustad av tre"},"alternativeLanguages":[{"code":"en","title":"English","altVersionExists":true,"path":"/en/kultur-og-fritid/religion-og-livssyn/statistikk/trus-og-livssynssamfunn-utanfor-den-norske-kyrkja"}]},"useAnniversary":true}}', '"Sesongjustering","menuStatisticsEducation":"Utdanning","webcruiterAdvertisementList.professionalField":"Fagfelt","nameSearch.types.onlygiven":"eneste fornavn","calculatePriceChangeFrom":"Berekn prisendring frå","pifProductOther":"Forskjellige ferdige varer","bpiCalculatorTitle":"Berekn endringar i bustadprisen for brukte bustader","pifChooseHomeImport":"Heime- og importmarknad","generalInformation":"Generelt om sesongjustering","project.period":"Periode","bkibolAmount":"Beløp","employee.briefSummary":"Kort om","employee.pressPictureLabel":"Pressebilde {0} av {1} - åpnes i ny fane","cookiePrivacyLin', 'stNumber":"Du kan beregne leie fram til {0} {1}","amountEqualled":"Beløpet svarer til","menu":"Meny","highcharts.printChart":"Skriv ut graf","language":"english","published":"Publisert","notification.affectedMunicipalsHelp":"Om kommunar er valt her, vil varselet bare synast under valde kommunar på /kommunefakta","DATASET_PUBLISHED":"Dataset publisert","calculatorLastNumber":"Siste tilgjengelege tal er for {0} {1}.","men":"menn","footerHiddenTitle":"Bunnmeny","statCalendarText":"Se kommende statistikk","statisticsAbout":"Statistikk om","employee.department":"Avdeling","articlePluralName":"Artiklar","q', 't2":", vennligst prøv igjen. Om problemet vedvarer, ta kontakt med SSB.","GET_DATA_STARTED":"Startet å hente data","error.text1":"Siden feilet å laste med feilkode","contactFormValidateName":"Du må skrive inn navn","specialCases":"Spesielle tilfelle","menuDropdown.partDescription":"En meny med alle kommuner, med søkeinputt for filtrering.","404.or":"eller","searchResult.screenReader.result":"Ditt søk på {0} ga {1} treff","highcharts.downloadXLS":"Last ned tala som XLS","november":"November","calculatorUknownError":"Ukjent feil, prøv igjen","menuStatisticsPopulation":"Befolkning","bkibolExpenditureAll', 'a som CSV","startValue":"Startverdi","button.showAll":"Vis alle","nameSearch.graph.loading":"Hentar graf, ver grei og vent...","contactFormChooseReceiver":"Vel kva førespurnaden gjeld","keyFigureText.decrease":"en nedgang på","notification.partDescription":"Vis ein eller fleire varslingar for denne kommunen","404.goBack":"Gå tilbake til forrige side","FAILED_TO_GET_DATA":"Kunne ikke hente data fra tjeneste","bpiChooseRegion.Region.011":"Nord-Noreg","modified":"Endra","bpiChooseRegion.Region.010":"Trøndelag uten Trondheim","may":"Mai","GenericErrorMessage":"Beklager, noe gikk feil","articleList.headin', '","highcharts.download":"Last ned som ...","pifProductTypeHeader":"Kva slags vare er det?","husleieChooseFiguresToCalculateRent":"Velg om du vil justere fram til tolv måneder etter forrige justering, eller bruke nyeste tall.","project.aboutProject":"Om prosjektet","menuDropdown.searchBarText":"Velg kommune","bpiChooseRegion.Region.009":"Møre og Romsdal og Vestland uten Bergen","bpiChooseRegion.Region.008":"Agder og Rogaland uten Stavanger","copyrightStatisticsNorway":"© Statistisk sentralbyrå","qualityAssessment":"Kvalitetsvurdering","bpiChooseRegion.Region.007":"Innlandet","bpiChooseRegion.Region.00', 'Andel av fødte (%)","cookieBannerAcceptButton":"Godta alle","updated":"Oppdatert","highcharts.chartMenuLabel":"Last ned graf","externalLinksHeading":"Andre nettstader","statisticStatbankBoxTitle":"Sjå alle tal frå denne statistikken","contentType.search.report":"Rapport","bkibolMultiDwellingHouse":"Bustadblokk","contactFormLabelName":"Skriv inn navn","REQUEST_SOURCELIST":"Ber om kildeliste","menuStatisticsAgriculture":"Jord, skog, jakt, og fiskeri","amount":"Beløp","project.modelManager":"Modellansvarleg","frequency":"Hyppighet og aktualitet","pifProductManufactured":"Bearbeidde varer grupperte ette', ',"contentType.search.publikasjon":"Rapport/Notat","relationOtherStatistics":"Samanheng med annan statistikk","menuStatisticsConstruction":"Bygg, bolig og eiendom","calculatorNextPublishText":"Siste tilgjengelige tall er for {0} {1}. Tall for {2} kommer ca. {3}. {4}.","contactFormValidateEmail":"Mailadresse er ikke gyldig","interval.M.09":"September","interval.M.08":"August","pifProductFood":"Matvarer og levande dyr","interval.M.07":"Juli","menuStatisticsElections":"Valg","newsletter.emailLabel":"E-postadresse","nameSearch.graph.threeOrLessText":"År der 3 eller færre barn har fått namnet visast som 0"', 'l beregne husleie fram til","dropdown.chooseSubject":"Vel emne","husleieSubmit":"Se ny husleie","statbankList.title":"Sjå alle tal frå denne statistikken","bpiChooseDwellingType.Boligtype.03":"Blokkleilegheiter","bpiChooseDwellingType.Boligtype.02":"Småhus","bpiChooseDwellingType.Boligtype.01":"Einebustader","bpiChooseDwellingType.Boligtype.00":"Alle bustadtyper","standardRatings":"Standard klassifikasjonar","searchResult.sort.date":"Dato","endedStatistics":"Nedlagd statistikk","employee.position":"Stilling","notification.type":"Varseltype","project.collaborators":"Samarbeidspartnarar","FAILED_TO_FI', ':"Vis som tabell","menuDropdown.description":"Innholdet til sticky-menyen","menuContactUs":"Kontakt oss","women":"kvinner","seePriceChange":"Sjå prisendring","newsletter.buttonTitle":"Meld deg på","GET_SOURCE_LIST_COMPLETE":"Kildeliste hentet og oppdatert","newsletter.emailVerificationError":"E-postadressen er ikje gyldig","calculatorErrorCalculationFailed":"Beregning feilet","menuStatisticsCulture":"Kultur og fritid","conceptsAndVariables":"Definisjonar av viktige omgrep og variablar","timeCoverage":"Tidsperiode","menuMyPage":"Mitt SSB","toTheTop":"Til toppen","highcharts.downloadPDF":"Last ned som ', 'elter må fylles ut","statbankMainFigures":"Sjå hovedtal for denne statistikken","404.title":"Denne siden finnes ikke","employee.phone":"Telefon","background":"Bakgrunn","nameSearch.graph.header":"Navnestatistikk for","notification.affectedMunicipals":"Dersom varselet gjeld kommunar, vel kva for ein kommune her.","calculatorValidateDropdownMonth":"Du må velge måned","menuStatisticsEnergy":"Energi og industri","videoEmbed.play":"Spel av","project.projectPhrase":"Prosjekt","and":"og","kpiResultScreenReader":"Beløpet svarer til {0} kroner. {1} {2} prosent fra {3} til {4}","april":"April","auditProcedures', 'igur","keyFigure.noChange":"Inga endring","nameSearch.readMore":"Sjå meir om namnet i namnestatistikken","bkibolWorkTypePlumbing":"Røyrleggjararbeid","bkibolValidateYear":"Du kan kun skrive inn årstall frå 1979 til","notification.description":"Varsle til ein eller fleire kommunar om deira innhold i kommunefakta","menuResearch":"Forsking","404.search":"Du kan også prøve å søke etter innholdet.","contactFormReceiverStatistikk":"Statistikk og forskning","bpiChooseDwellingType":"Vel bustadtype","period.generic":"Tall for {0}","relatedArticlesHeading":"Analysar, artiklar og publikasjonar","employee.image"', ':"Bilde","nameSearch.types.firstgiven":"første fornavn","keyFigure.decrease":"Nedgang","enterYear":"Skriv inn år(åååå)","husleieTitle":"Beregn ny husleie","menuStatisticsWholesale":"Varehandel og tjenesteyting","error.frontPage":"til forsiden vår.","bkibolDetachedHouse":"Einebustad av tre"},"baseUrl":"https://www.ssb.no","cookieBannerTitle":"Vi bruker informasjons\xadkapsler","cookieBannerText":"Nødvendige informasjons\xadkapsler gjør at ssb.no fungerer og er sikkert, og kan derfor ikke velges bort. Vi har flere valgfrie informasjons\xadkapsler som lar oss se hvor brukerne våre klikke', '"Sesongjustering","menuStatisticsEducation":"Utdanning","webcruiterAdvertisementList.professionalField":"Fagfelt","nameSearch.types.onlygiven":"eneste fornavn","calculatePriceChangeFrom":"Berekn prisendring frå","pifProductOther":"Forskjellige ferdige varer","bpiCalculatorTitle":"Berekn endringar i bustadprisen for brukte bustader","pifChooseHomeImport":"Heime- og importmarknad","generalInformation":"Generelt om sesongjustering","project.period":"Periode","bkibolAmount":"Beløp","employee.briefSummary":"Kort om","employee.pressPictureLabel":"Pressebilde {0} av {1} - åpnes i ny fane","cookiePrivacyLin', 'stNumber":"Du kan beregne leie fram til {0} {1}","amountEqualled":"Beløpet svarer til","menu":"Meny","highcharts.printChart":"Skriv ut graf","language":"english","published":"Publisert","notification.affectedMunicipalsHelp":"Om kommunar er valt her, vil varselet bare synast under valde kommunar på /kommunefakta","DATASET_PUBLISHED":"Dataset publisert","calculatorLastNumber":"Siste tilgjengelege tal er for {0} {1}.","men":"menn","footerHiddenTitle":"Bunnmeny","statCalendarText":"Se kommende statistikk","statisticsAbout":"Statistikk om","employee.department":"Avdeling","articlePluralName":"Artiklar","q', 't2":", vennligst prøv igjen. Om problemet vedvarer, ta kontakt med SSB.","GET_DATA_STARTED":"Startet å hente data","error.text1":"Siden feilet å laste med feilkode","contactFormValidateName":"Du må skrive inn navn","specialCases":"Spesielle tilfelle","menuDropdown.partDescription":"En meny med alle kommuner, med søkeinputt for filtrering.","404.or":"eller","searchResult.screenReader.result":"Ditt søk på {0} ga {1} treff","highcharts.downloadXLS":"Last ned tala som XLS","november":"November","calculatorUknownError":"Ukjent feil, prøv igjen","menuStatisticsPopulation":"Befolkning","bkibolExpenditureAll', 'a som CSV","startValue":"Startverdi","button.showAll":"Vis alle","nameSearch.graph.loading":"Hentar graf, ver grei og vent...","contactFormChooseReceiver":"Vel kva førespurnaden gjeld","keyFigureText.decrease":"en nedgang på","notification.partDescription":"Vis ein eller fleire varslingar for denne kommunen","404.goBack":"Gå tilbake til forrige side","FAILED_TO_GET_DATA":"Kunne ikke hente data fra tjeneste","bpiChooseRegion.Region.011":"Nord-Noreg","modified":"Endra","bpiChooseRegion.Region.010":"Trøndelag uten Trondheim","may":"Mai","GenericErrorMessage":"Beklager, noe gikk feil","articleList.headin', '","highcharts.download":"Last ned som ...","pifProductTypeHeader":"Kva slags vare er det?","husleieChooseFiguresToCalculateRent":"Velg om du vil justere fram til tolv måneder etter forrige justering, eller bruke nyeste tall.","project.aboutProject":"Om prosjektet","menuDropdown.searchBarText":"Velg kommune","bpiChooseRegion.Region.009":"Møre og Romsdal og Vestland uten Bergen","bpiChooseRegion.Region.008":"Agder og Rogaland uten Stavanger","copyrightStatisticsNorway":"© Statistisk sentralbyrå","qualityAssessment":"Kvalitetsvurdering","bpiChooseRegion.Region.007":"Innlandet","bpiChooseRegion.Region.00', 'Andel av fødte (%)","cookieBannerAcceptButton":"Godta alle","updated":"Oppdatert","highcharts.chartMenuLabel":"Last ned graf","externalLinksHeading":"Andre nettstader","statisticStatbankBoxTitle":"Sjå alle tal frå denne statistikken","contentType.search.report":"Rapport","bkibolMultiDwellingHouse":"Bustadblokk","contactFormLabelName":"Skriv inn navn","REQUEST_SOURCELIST":"Ber om kildeliste","menuStatisticsAgriculture":"Jord, skog, jakt, og fiskeri","amount":"Beløp","project.modelManager":"Modellansvarleg","frequency":"Hyppighet og aktualitet","pifProductManufactured":"Bearbeidde varer grupperte ette', ',"contentType.search.publikasjon":"Rapport/Notat","relationOtherStatistics":"Samanheng med annan statistikk","menuStatisticsConstruction":"Bygg, bolig og eiendom","calculatorNextPublishText":"Siste tilgjengelige tall er for {0} {1}. Tall for {2} kommer ca. {3}. {4}.","contactFormValidateEmail":"Mailadresse er ikke gyldig","interval.M.09":"September","interval.M.08":"August","pifProductFood":"Matvarer og levande dyr","interval.M.07":"Juli","menuStatisticsElections":"Valg","newsletter.emailLabel":"E-postadresse","nameSearch.graph.threeOrLessText":"År der 3 eller færre barn har fått namnet visast som 0"', 'l beregne husleie fram til","dropdown.chooseSubject":"Vel emne","husleieSubmit":"Se ny husleie","statbankList.title":"Sjå alle tal frå denne statistikken","bpiChooseDwellingType.Boligtype.03":"Blokkleilegheiter","bpiChooseDwellingType.Boligtype.02":"Småhus","bpiChooseDwellingType.Boligtype.01":"Einebustader","bpiChooseDwellingType.Boligtype.00":"Alle bustadtyper","standardRatings":"Standard klassifikasjonar","searchResult.sort.date":"Dato","endedStatistics":"Nedlagd statistikk","employee.position":"Stilling","notification.type":"Varseltype","project.collaborators":"Samarbeidspartnarar","FAILED_TO_FI', ':"Vis som tabell","menuDropdown.description":"Innholdet til sticky-menyen","menuContactUs":"Kontakt oss","women":"kvinner","seePriceChange":"Sjå prisendring","newsletter.buttonTitle":"Meld deg på","GET_SOURCE_LIST_COMPLETE":"Kildeliste hentet og oppdatert","newsletter.emailVerificationError":"E-postadressen er ikje gyldig","calculatorErrorCalculationFailed":"Beregning feilet","menuStatisticsCulture":"Kultur og fritid","conceptsAndVariables":"Definisjonar av viktige omgrep og variablar","timeCoverage":"Tidsperiode","menuMyPage":"Mitt SSB","toTheTop":"Til toppen","highcharts.downloadPDF":"Last ned som ', 'elter må fylles ut","statbankMainFigures":"Sjå hovedtal for denne statistikken","404.title":"Denne siden finnes ikke","employee.phone":"Telefon","background":"Bakgrunn","nameSearch.graph.header":"Navnestatistikk for","notification.affectedMunicipals":"Dersom varselet gjeld kommunar, vel kva for ein kommune her.","calculatorValidateDropdownMonth":"Du må velge måned","menuStatisticsEnergy":"Energi og industri","videoEmbed.play":"Spel av","project.projectPhrase":"Prosjekt","and":"og","kpiResultScreenReader":"Beløpet svarer til {0} kroner. {1} {2} prosent fra {3} til {4}","april":"April","auditProcedures', 'igur","keyFigure.noChange":"Inga endring","nameSearch.readMore":"Sjå meir om namnet i namnestatistikken","bkibolWorkTypePlumbing":"Røyrleggjararbeid","bkibolValidateYear":"Du kan kun skrive inn årstall frå 1979 til","notification.description":"Varsle til ein eller fleire kommunar om deira innhold i kommunefakta","menuResearch":"Forsking","404.search":"Du kan også prøve å søke etter innholdet.","contactFormReceiverStatistikk":"Statistikk og forskning","bpiChooseDwellingType":"Vel bustadtype","period.generic":"Tall for {0}","relatedArticlesHeading":"Analysar, artiklar og publikasjonar","employee.image"', ':"Bilde","nameSearch.types.firstgiven":"første fornavn","keyFigure.decrease":"Nedgang","enterYear":"Skriv inn år(åååå)","husleieTitle":"Beregn ny husleie","menuStatisticsWholesale":"Varehandel og tjenesteyting","error.frontPage":"til forsiden vår.","bkibolDetachedHouse":"Einebustad av tre"},"alternativeLanguages":[{"code":"en","title":"English","altVersionExists":true,"path":"/en/kultur-og-fritid/religion-og-livssyn/statistikk/trus-og-livssynssamfunn-utanfor-den-norske-kyrkja"}]},"useAnniversary":true}}', 'Frå 2021 vart det ikkje lengre bustadkommune knytt til organisasjonane i filene SSB mottok, derfor er det heller ikkje fylkesinndeling lengre i statistikken. Også frå 2021 vart det innført eit minstetal medlemmer i eit samfunn for utbetaling av statstilskot på 50 medlemmer.', 'trus- og livssynssamfunn som er godkjende hjå statsforvaltaren&nbsp;og som søker om&nbsp;statstilskot for rapportert tal på medlemmer i samfunnet er med i populasjonen for statistikken. Eininga i statistikken er det enkelte samfunn. Einskilde samfunn vel å ikkje søke om statstilskot sjølv om dei er registrerte og godkjende hjå statsforvaltaren. Døme på slike samfunn som ikkje søker om statstilskot er Jesu Kristi Kyrkje av Siste Dagers Hellige. Registrerte og uregistrerte trus- og livssynssamfunn som ikkje har søkt om statstilskot det enkelte år, er ikkje med i statistikken. Statistikken inneheld ikkje o', 'Fordelinga etter fylke er frå 2006 gjort ut frå bukommune der samfunnet er registrert. Dette fell ikkje alltid saman med bustadfylket til det enkelte medlem.', 'Frå 2021 vart det ikkje lengre bustadkommune knytt til organisasjonane i filene SSB mottok, derfor er det heller ikkje fylkesinndeling lengre i statistikken. Også frå 2021 vart det innført eit minstetal medlemmer i eit samfunn for utbetaling av statstilskot på 50 medlemmer. Dette kan påverka kor mange samfunn som søker om statstilskot.']
+== r17_nor_trosamf_en
+  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html> <html lang="nb"> <head> <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8" /> <title>Side ikke funnet / Page not found</title> <meta name="viewport" content="width=device-width" /> <link rel="stylesheet" href="https://fonts.googleapis.com/cs
+== r17_nor_vardok
+  27,125 characters
+  /[^<>]{0,400}(?:fylke|kommune|registrert|bosted)[^<>]{0,400}/: 0 -- []
+== r17_nor_kirke
+  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html> <html lang="nb"> <head> <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8" /> <title>Side ikke funnet / Page not found</title> <meta name="viewport" content="width=device-width" /> <link rel="stylesheet" href="https://fonts.googleapis.com/cs
+== r17_fin_dvv_old
+  292,929 characters, 835 links
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/tilastot-ja-luettelot
+    43 captures -> https://web.archive.org/web/20220105215801*/https://dvv.fi/tilastot-ja-luettelot
+     -> https://web.archive.org/web/20220105215801/http://web.archive.org/screenshot/https://dvv.fi/tilastot-ja-luettelot
+    Vaalitilastot -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaalitilastot
+    Suomen kansalaiset vaalipiireittäin ja kunnittain -> https://web.archive.org/web/20220105215801/https://dvv.fi/suomen-kansalaiset-vaalipiireittain-ja-kunnittain
+    Todistukset väestötietojärjestelmästä -> https://web.archive.org/web/20220105215801/https://dvv.fi/todistukset-vaestotietojarjestelmasta
+    Henkilötiedot väestötietojärjestelmässä -> https://web.archive.org/web/20220105215801/https://dvv.fi/todistukset-ja-henkilotiedot-vaestotietojarjestelmassa
+    Tietojen luovuttaminen väestötietojärjestelmästä -> https://web.archive.org/web/20220105215801/https://dvv.fi/tietojen-luovuttaminen-vaestotietojarjestelmasta
+    Tietojen luovuttamisen kieltäminen -> https://web.archive.org/web/20220105215801/https://dvv.fi/tietojen-luovuttamisen-kieltaminen-vaestotietojarjestelmasta
+    Uskontokunnan jäsenyys -> https://web.archive.org/web/20220105215801/https://dvv.fi/uskontokunnan-jasenyys
+    Ulkomaalaisen rekisteröinti väestötietojärjestelmään -> https://web.archive.org/web/20220105215801/https://dvv.fi/ulkomaalaisen-rekisterointi-vaestotietojarjestelmaan
+    Ulkomaalaisen rekisteröinti väestötietojärjestelmään -> https://web.archive.org/web/20220105215801/https://dvv.fi/ulkomaalaisen-rekisterointi
+    Väestötietojärjestelmän hakupalvelut -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-hakupalvelut
+    Väestötietojen käytön edellytykset -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojen-kayton-edellytykset
+    Väestötietojärjestelmän ylläpito -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-yllapito
+    Luettelot -> https://web.archive.org/web/20220105215801/https://dvv.fi/tilastot-ja-luettelot
+    Asiantuntijapalvelut tiedonhallintalautakunnalle -> https://web.archive.org/web/20220105215801/https://dvv.fi/asiantuntijapalvelut-tiedonhallintalautakunnalle
+    Digi- ja väestötietovirasto -> https://web.archive.org/web/20220105215801/https://dvv.fi/digi-ja-vaestotietovirasto
+    Johtajien yhteystiedot -> https://web.archive.org/web/20220105215801/https://dvv.fi/digi-ja-vaestotietoviraston-johto
+    Väestötietojärjestelmän tietojen käytön valvonta ja lokitiedot -> https://web.archive.org/web/20220105215801/https://dvv.fi/tietojen-kayton-valvonta-ja-lokitiedot
+    Väestötietojärjestelmä -> https://web.archive.org/web/20220105215801/https://dvv.fi/vtj-tietosuoja
+    Väestötietojärjestelmän käyttäjärekisteri -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-kayttajarekisteri
+    Väestötietojärjestelmä -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelma
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/tilastot-ja-luettelot
+    Väestötietojärjestelmän hakupalvelut -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-hakupalvelut
+    Väestötietojen käytön edellytykset -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojen-kayton-edellytykset
+    Väestötietojärjestelmän ylläpito -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-yllapito
+    Luettelot -> https://web.archive.org/web/20220105215801/https://dvv.fi/tilastot-ja-luettelot
+    Asiantuntijapalvelut tiedonhallintalautakunnalle -> https://web.archive.org/web/20220105215801/https://dvv.fi/asiantuntijapalvelut-tiedonhallintalautakunnalle
+    Väestötietojärjestelmän ylläpito -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-yllapito
+    Alueluovutuksen johdosta lakanneet kunnat -> https://web.archive.org/web/20220105215801/https://dvv.fi/documents/16079645/17003563/Alueluovutuksen+johdosta+lakanneet+kunnat.pdf/f07f0647-5e08-84e9-ffbb-ca065c63cf61/Alueluovutuksen+johdosta+lakanneet+kunnat.pdf?version=1.2&amp;t=1620715366156
+    Evankelis-luterilaiset seurakunnat 1.1.2022 -> https://web.archive.org/web/20220105215801/https://dvv.fi/documents/16079645/17003563/Evankelis-luterilaiset+seurakunnat+1.1.2022.pdf/65051844-c640-5ec4-f20d-4b608debb5c8/Evankelis-luterilaiset+seurakunnat+1.1.2022.pdf?version=1.5&amp;t=1641210483954
+    Maakunnat -> https://web.archive.org/web/20220105215801/https://dvv.fi/documents/16079645/17003563/Maakunnat.pdf/bd2f600d-ff99-b4f9-d02b-42a18ee2f7b0/Maakunnat.pdf?version=1.3&amp;t=1623233621604
+    Ortodoksiset seurakunnat 1.1.2022 -> https://web.archive.org/web/20220105215801/https://dvv.fi/documents/16079645/17003563/Ortodoksiset+seurakunnat+1.1.2022.pdf/54e0ec44-1435-49f2-2337-9b0dd03fd1ba/Ortodoksiset+seurakunnat+1.1.2022.pdf?version=1.5&amp;t=1641210513650
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaalitilastot
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/todistukset-vaestotietojarjestelmasta
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/todistukset-ja-henkilotiedot-vaestotietojarjestelmassa
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/tietojen-luovuttaminen-vaestotietojarjestelmasta
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/tietojen-luovuttamisen-kieltaminen-vaestotietojarjestelmasta
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/uskontokunnan-jasenyys
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/ulkomaalaisen-rekisterointi-vaestotietojarjestelmaan
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-hakupalvelut
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojen-kayton-edellytykset
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelman-yllapito
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/asiantuntijapalvelut-tiedonhallintalautakunnalle
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/digi-ja-vaestotietovirasto
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/digi-ja-vaestotietoviraston-johto
+     -> https://web.archive.org/web/20220105215801/https://dvv.fi/vaestotietojarjestelma
+     -> https://web.archive.org/web/20220105215801/https://www.linkedin.com/company/digi-ja-vaestotietovirasto
+== r17_fin_dvv_now
+  FAILED: RuntimeError: HTTP 404: <!doctype html> <html class="ltr site-theme top-frame" dir="ltr" lang="fi-FI"> <head> <title>fi | Digi- ja väestötietovirasto </title> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta content="initial-scale=1.0, width=device-width" name="viewport"> <meta content
