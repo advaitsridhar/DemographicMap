@@ -2,7 +2,7 @@
   certs = pkcs7.load_der_pkcs7_certificates(blob)
   https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/personas_ext_26_02.rar -> personas_ext_26_02.rar (78,158,176 bytes)
   unpacked personas_ext_26_02.rar with 7z
-  February file: 3,499,451 people in 159 (department, municipio) pairs
+  February file: 3,499,451 people in 159 (department, municipio) pairs; {'address in two municipios': 1, 'addresses': 1246312}
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
   https://www4.ine.gub.uy/Anda5/index.php/catalog/781/download/1503 -> personas_ext_07_2026.rar (135,339,245 bytes)
@@ -10,4 +10,4 @@
   19 departments' weighted people, men and women make Cuadro 1
   in the person file and not in Cuadro 14, each under one weighted person: {('16', '9898'): 0.0}
   the weighted person file makes Cuadro 14's 166 rows, department by department and municipio by municipio
-uruguay_census: 13 weighted people of the July file are not in the February file, and 2,848,387 are in another department there
+uruguay_census: 827,793 weighted people of the July file have no address the February file places, and 0 have one in another department
