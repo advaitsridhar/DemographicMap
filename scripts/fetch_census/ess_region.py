@@ -1,41 +1,238 @@
 #!/usr/bin/env python3
-"""European Social Survey: religion and home language by region (discovery stage).
+"""European Social Survey: religion and home language by region, rounds 5-11.
 
-Reads the ESS Data Portal's own open tabulation service -- the GraphQL
-endpoint behind the portal's variable viewer -- and never the microdata.
+Most of Western and Northern Europe does not ask religion or home language in
+its census -- France, Spain, Belgium, Austria, Sweden, Greece and more carry a
+``not_collected`` policy for one or both -- and the map's first-level units
+there have had nothing. The European Social Survey asks both of about 1,500 to
+3,000 adults (15 and over) in each country every second year, and it records
+the NUTS region every respondent lives in. Pooled over several rounds, a
+region holds hundreds of respondents: enough for a composition with a stated
+precision, and the only regional figure that exists for most of these units.
+
+**Where the figures come from.** The microdata sit behind the ESS Data
+Portal's registration, which this project does not have and does not get
+around. What the portal serves openly, with no account, is its own
+tabulation service -- the GraphQL endpoint (``api.nsd.no/graphql``) behind
+the portal's variable viewer, which returns weighted and unweighted
+frequency tables. This reader asks it for the tables it needs and nothing
+else: religious belonging and denomination, and the language most often
+spoken at home, each split by region with the service's own ``byVariables``
+option (the one the viewer uses to split by country). No microdata are read
+or stored; the tables are aggregates, and they are kept in
+``data/raw/ess/ess_region_tabs.json.gz`` so the build can be re-run and
+checked without the network.
+
+**The questions.** ``rlgblg`` "Do you consider yourself as belonging to any
+particular religion or denomination?" and, if yes, ``rlgdnm`` "Which one?"
+(Roman Catholic, Protestant, Eastern Orthodox, other Christian, Jewish,
+Islamic, Eastern religions, other non-Christian). "No" is written as "No
+religion": it is an answer. Refusals, don't-knows and no-answers are left out
+of the base and counted in the note. ``lnghom1`` "What language or languages
+do you speak most often at home? (first mentioned)", coded to ISO 639-2; the
+respondent names up to two and only the first is read. The universe is the
+resident population aged 15 and over living in private households; people
+who cannot take the interview in one of the country's survey languages are
+not in it, which undercounts recent immigrants' languages.
+
+**Weights and pooling.** Every table is weighted by ``pspwght``, the
+post-stratification weight including the design weight, which the ESS
+prescribes for analyses within one country; the service returns the weighted
+counts rounded to whole respondents. Rounds are pooled by adding those
+weighted counts, so each round counts in proportion to its sample. The
+default pool is rounds 7 to 11 (fieldwork 2014-2024); ``--first-round``
+changes it. A unit needs at least ``MIN_N`` = 100 respondents with a valid
+answer, unweighted; 100-299 is marked low precision in the note.
+
+**Geography.** Respondents carry a NUTS code, at NUTS 1, 2 or 3 depending on
+the country and round. Codes from older NUTS versions are mapped to NUTS 2024
+only where the older region is exactly a newer one or exactly a union of them
+(``OLD_CODES``: France's 2016 merger of its 22 regions into 13, Greece's 2016
+recoding, Italy's 2010 recoding, the Netherlands' 2021 recoding). A NUTS code
+is aggregated to its NUTS parents -- the hierarchy is exact within one
+version -- so a country coded at NUTS 2 also gives NUTS 1 estimates. A region
+is then bound to a polygon only if ``data/processed/nuts_crosswalk.json``
+places it there by outline (following ``superseded_by`` to the finer code of
+the same outline); a region the crosswalk refuses or does not place is left
+out and logged. A region's estimate is never copied onto its members.
+
+**Licence.** ESS data are published under CC BY-NC-SA 4.0 by ESS ERIC; the
+source line cites the rounds with that licence.
 
 Usage:
-    python -m scripts.fetch_census.ess_region --discover FR,ES,SE
+    python -m scripts.fetch_census.ess_region --fetch      # tables from the portal, then build
+    python -m scripts.fetch_census.ess_region              # build from the stored tables
+    python -m scripts.fetch_census.ess_region --discover FR,ES
+    python -m scripts.fetch_census.ess_region --by ESS11 rlgblg region pspwght 30
 """
 
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
+import re
 import sys
 import time
 import urllib.error
 import urllib.request
+from collections import Counter, defaultdict
+from datetime import date
 from typing import Any
 
-from ._shared import log
+from ._shared import PROCESSED, RAW, log, read_json, record, shares, write_json
 from common import USER_AGENT  # noqa: E402  (on the path through _shared)
 
 API = "https://api.nsd.no/graphql"
+PORTAL = "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a"
 SERIES = "321b06ad-1b98-4b7d-93ad-ca8a24e8788a"
 AGENCY = "INT_ESSERIC"
+HERE = RAW / "ess"
+TABS = HERE / "ess_region_tabs.json.gz"
+NATIONAL = HERE / "ess_national.json"
+CROSSWALK = PROCESSED / "nuts_crosswalk.json"
+OUT = "ess_region_survey.json"
+WEIGHT = "pspwght"
+LICENCE = "CC BY-NC-SA 4.0 (ESS ERIC)"
+
+MIN_N = 100
+LOW_PRECISION = 300
+# A home language named by fewer respondents than this in a unit is folded
+# into "Other languages": one interview is half a point in a unit of 200.
+MIN_LANGUAGE_N = 5
+
+# The rounds read, by the label prefix of their integrated file on the portal,
+# with the year the round is named for and its fieldwork years. ESS10 was
+# fielded in two files: face to face, and self-completion where the pandemic
+# stopped interviewing (Austria, Germany, Spain, Latvia, Poland, Sweden ...).
+ROUNDS: dict[str, tuple[int, int, str]] = {
+    "ESS5": (5, 2010, "2010-2011"),
+    "ESS6": (6, 2012, "2012-2013"),
+    "ESS7": (7, 2014, "2014-2015"),
+    "ESS8": (8, 2016, "2016-2017"),
+    "ESS9": (9, 2018, "2018-2019"),
+    "ESS10": (10, 2020, "2020-2022"),
+    "ESS10SC": (10, 2021, "2021-2022"),
+    "ESS11": (11, 2023, "2023-2024"),
+}
+FIRST_ROUND = 7
+
+# rlgdnm: the denomination of those who belong (rlgblg = 1).
+DENOMINATIONS = {
+    "1": "Roman Catholic", "2": "Protestant", "3": "Orthodox",
+    "4": "Other Christian", "5": "Judaism", "6": "Islam",
+    "7": "Eastern religions", "8": "Other religions",
+}
+
+# lnghom1, ISO 639-2 (bibliographic) as the ESS codes it, in the map's words.
+# A code whose ISO name is a historical stage of a living language is a
+# coder's slip for the living one (French, Middle for French); a code that
+# cannot be what a resident of Europe speaks at home (Apache, Egyptian
+# (Ancient)) is not guessed at and goes to "Other languages" with the codes
+# not listed here, and every one of them is logged.
+LANGUAGES: dict[str, str] = {
+    "ALB": "Albanian", "AMH": "Amharic", "ARA": "Arabic", "ARC": "Aramaic",
+    "ARG": "Aragonese", "ARM": "Armenian", "AST": "Asturian", "AZE": "Azerbaijani",
+    "BAQ": "Basque", "BAM": "Bambara", "BEL": "Belarusian", "BEN": "Bengali",
+    "BER": "Berber", "BOS": "Bosnian", "BRE": "Breton", "BUL": "Bulgarian",
+    "CAT": "Catalan", "CHE": "Chechen", "CHI": "Chinese", "COS": "Corsican",
+    "CPF": "Creole", "CPP": "Creole", "CRP": "Creole", "CZE": "Czech",
+    "DAN": "Danish", "DUT": "Dutch", "ENG": "English", "ENM": "English",
+    "EST": "Estonian", "FAO": "Faroese", "FIL": "Filipino", "FIN": "Finnish",
+    "FRE": "French", "FRM": "French", "FRO": "French", "FRR": "Frisian",
+    "FRS": "Frisian", "FRY": "Frisian", "FUL": "Fula", "FUR": "Friulian",
+    "GEO": "Georgian", "GER": "German", "GLA": "Scottish Gaelic", "GLE": "Irish",
+    "GLG": "Galician", "GRE": "Greek", "GSW": "Swiss German", "HEB": "Hebrew",
+    "HIN": "Hindi", "HRV": "Croatian", "HUN": "Hungarian", "IBO": "Igbo",
+    "ICE": "Icelandic", "IND": "Indonesian", "ITA": "Italian", "JPN": "Japanese",
+    "KAB": "Kabyle", "KIN": "Kinyarwanda", "KOR": "Korean", "KUR": "Kurdish",
+    "LAD": "Ladino", "LAV": "Latvian", "LIM": "Limburgish", "LIN": "Lingala",
+    "LIT": "Lithuanian", "LTZ": "Luxembourgish", "MAC": "Macedonian", "MAY": "Malay",
+    "MLT": "Maltese", "NAP": "Neapolitan", "NDS": "Low German", "NEP": "Nepali",
+    "NNO": "Norwegian", "NOB": "Norwegian", "NOR": "Norwegian", "OCI": "Occitan",
+    "PAN": "Punjabi", "PAP": "Papiamento", "PER": "Persian", "POL": "Polish",
+    "POR": "Portuguese", "PRO": "Occitan", "PUS": "Pashto", "ROH": "Romansh",
+    "ROM": "Romani", "RUM": "Romanian", "RUP": "Aromanian", "RUS": "Russian",
+    "SCN": "Sicilian", "SCO": "Scots", "SCR": "Croatian", "SCC": "Serbian",
+    "SIN": "Sinhala", "SLO": "Slovak", "SLV": "Slovene", "SMA": "Sami",
+    "SME": "Sami", "SMI": "Sami", "SOM": "Somali", "SPA": "Spanish",
+    "SRD": "Sardinian", "SRP": "Serbian", "SWA": "Swahili", "SWE": "Swedish",
+    "SYR": "Syriac", "TAM": "Tamil", "TGL": "Tagalog", "THA": "Thai",
+    "TIR": "Tigrinya", "TUR": "Turkish", "TWI": "Twi", "UKR": "Ukrainian",
+    "URD": "Urdu", "VEC": "Venetian", "VIE": "Vietnamese", "WEL": "Welsh",
+    "WLN": "Walloon", "WOL": "Wolof", "YID": "Yiddish", "YOR": "Yoruba",
+    "ZGH": "Berber",
+}
+# Not an answer: refusal, don't know, no answer, and ISO's own non-answers.
+NO_LANGUAGE = {"777", "888", "999", "", ".", "MIS", "UND", "ZXX", "MUL"}
+OTHER_LANGUAGES = "Other languages"
+
+# NUTS codes of an older version that are exactly a NUTS 2024 region, or
+# exactly part of one. Everything else from an older version is left out.
+OLD_CODES: dict[str, str] = {
+    # France, 2016: the 22 regions of NUTS 2013 (NUTS 2) merged into the 13
+    # of NUTS 2016 (NUTS 1), by loi n° 2015-29 of 16 January 2015. Each old
+    # region is wholly inside one new one.
+    "FR21": "FRF", "FR41": "FRF", "FR42": "FRF",
+    "FR22": "FRE", "FR30": "FRE",
+    "FR23": "FRD", "FR25": "FRD",
+    "FR24": "FRB",
+    "FR26": "FRC", "FR43": "FRC",
+    "FR51": "FRG", "FR52": "FRH",
+    "FR53": "FRI", "FR61": "FRI", "FR63": "FRI",
+    "FR62": "FRJ", "FR81": "FRJ",
+    "FR71": "FRK", "FR72": "FRK",
+    "FR82": "FRL", "FR83": "FRM",
+    # Greece, NUTS 2016: the same thirteen regions regrouped and recoded.
+    "EL11": "EL51", "EL12": "EL52", "EL13": "EL53", "EL14": "EL61",
+    "EL21": "EL54", "EL22": "EL62", "EL23": "EL63", "EL24": "EL64", "EL25": "EL65",
+    # Italy, NUTS 2010: Nord-Est and Centro recoded (ITD -> ITH, ITE -> ITI).
+    "ITD1": "ITH1", "ITD2": "ITH2", "ITD3": "ITH3", "ITD4": "ITH4", "ITD5": "ITH5",
+    "ITE1": "ITI1", "ITE2": "ITI2", "ITE3": "ITI3", "ITE4": "ITI4",
+    # The Netherlands, NUTS 2021: Utrecht and Zuid-Holland recoded when
+    # Vijfheerenlanden (57,000 people) moved from the one to the other in 2019.
+    "NL31": "NL35", "NL33": "NL36",
+}
+# ESS country codes where NUTS uses another.
+PREFIX = {"GR": "EL", "GB": "UK"}
+ISO3 = {
+    "AL": "ALB", "AT": "AUT", "BE": "BEL", "BG": "BGR", "CH": "CHE", "CY": "CYP",
+    "CZ": "CZE", "DE": "DEU", "DK": "DNK", "EE": "EST", "EL": "GRC", "ES": "ESP",
+    "FI": "FIN", "FR": "FRA", "HR": "HRV", "HU": "HUN", "IE": "IRL", "IS": "ISL",
+    "IT": "ITA", "LT": "LTU", "LU": "LUX", "LV": "LVA", "ME": "MNE", "MK": "MKD",
+    "NL": "NLD", "NO": "NOR", "PL": "POL", "PT": "PRT", "RS": "SRB", "SE": "SWE",
+    "SI": "SVN", "SK": "SVK", "TR": "TUR", "UK": "GBR", "XK": "XKX",
+}
+NUTS_SHAPE = re.compile(r"^[A-Z]{2}[0-9A-Z]{1,3}$")
 
 TABULATE = """query($input: FrequencyTabulationInput!) { analysis {
   frequencyTabulation(input: $input) {
     variableValues { name values codeList { value label isMissing } }
     table { path count } } } }"""
 
+TABULATE_BY = """query($input: FrequencyTabulationInput!) { analysis {
+  frequencyTabulationByVariables(input: $input) { responses {
+    by { variable value label }
+    response { variableValues { name values codeList { value label isMissing } }
+               table { path count } } } } } }"""
+
 STUDIES = """query($id: ID!) { search {
   seriesMetadata(id: $id, instance: PUBLISHED, agencyId: INT_ESSERIC) {
     title { en }
     studies { id version title { en }
-      mainDataFiles { id version label { en } defaultWeight { name { en } } } } } } }"""
+      mainDataFiles { id version label { en } } } } } }"""
 
+VARIABLES = """query($id: ID!, $version: Int) { search {
+  dataFileMetadata(id: $id, version: $version, agencyId: INT_ESSERIC, instance: PUBLISHED) {
+    label { en } disseminationLimitation defaultWeight { name { en } }
+    variableList { name { en } label { en } } } } }"""
+
+TABLES = {"religion": ["rlgblg", "rlgdnm"], "language": ["lnghom1"]}
+
+
+# ---------------------------------------------------------------------------
+# The portal's tabulation service
+# ---------------------------------------------------------------------------
 
 def gql(query: str, variables: dict[str, Any] | None = None) -> dict[str, Any]:
     """POST one query; a GraphQL error stops the run with the server's message."""
@@ -43,6 +240,7 @@ def gql(query: str, variables: dict[str, Any] | None = None) -> dict[str, Any]:
     req = urllib.request.Request(API, data=body, headers={
         "User-Agent": USER_AGENT, "Content-Type": "application/json",
         "Accept": "application/json"})
+    payload: dict[str, Any] = {}
     for wait in (5, 20, 60, None):
         try:
             with urllib.request.urlopen(req, timeout=300) as resp:
@@ -59,37 +257,31 @@ def gql(query: str, variables: dict[str, Any] | None = None) -> dict[str, Any]:
     return payload["data"]
 
 
-def tabulate(datafile: dict[str, Any], variables: list[str],
-             weight: str | None) -> tuple[list[dict[str, Any]], dict[tuple[str, ...], float]]:
-    """The portal's crosstab of ``variables``: their code lists and the cells by code."""
-    data = gql(TABULATE, {"input": {
-        "datafile": {"id": datafile["id"], "version": datafile["version"]},
-        "instance": "PUBLISHED", "agencyId": AGENCY, "breakVariables": variables,
-        "weightVariable": weight, "includeMissing": True, "includeEmpty": False,
-        "metadataLanguage": "en"}})
-    tab = data["analysis"]["frequencyTabulation"]
+def _cells(tab: dict[str, Any]) -> dict[tuple[str, ...], float]:
     values = [v["values"] for v in tab["variableValues"]]
     cells: dict[tuple[str, ...], float] = {}
     for cell in tab["table"]:
         if cell["count"]:
             key = tuple(values[i][j] for i, j in enumerate(cell["path"]))
             cells[key] = cells.get(key, 0) + cell["count"]
-    return tab["variableValues"], cells
+    return cells
 
 
-TABULATE_BY = """query($input: FrequencyTabulationInput!) { analysis {
-  frequencyTabulationByVariables(input: $input) { responses {
-    by { variable value label }
-    response { variableValues { name values codeList { value label isMissing } }
-               table { path count } } } } } }"""
+def tabulate(datafile: dict[str, Any], variables: list[str],
+             weight: str | None) -> tuple[list[dict[str, Any]], dict[tuple[str, ...], float]]:
+    """The service's crosstab of ``variables``: their code lists and the cells by code."""
+    data = gql(TABULATE, {"input": {
+        "datafile": {"id": datafile["id"], "version": datafile["version"]},
+        "instance": "PUBLISHED", "agencyId": AGENCY, "breakVariables": variables,
+        "weightVariable": weight, "includeMissing": True, "includeEmpty": False,
+        "metadataLanguage": "en"}})
+    tab = data["analysis"]["frequencyTabulation"]
+    return tab["variableValues"], _cells(tab)
 
 
 def tabulate_by(datafile: dict[str, Any], variables: list[str], by: str,
                 weight: str | None) -> dict[tuple[str, str], dict[tuple[str, ...], float]]:
-    """One crosstab of ``variables`` per value of ``by``, as the viewer splits by country.
-
-    Keyed by (value, label) of ``by``; the cells are keyed by code as in tabulate.
-    """
+    """One crosstab of ``variables`` per value of ``by``, as the viewer splits by country."""
     data = gql(TABULATE_BY, {"input": {
         "datafile": {"id": datafile["id"], "version": datafile["version"]},
         "instance": "PUBLISHED", "agencyId": AGENCY, "breakVariables": variables,
@@ -98,56 +290,13 @@ def tabulate_by(datafile: dict[str, Any], variables: list[str], by: str,
     out: dict[tuple[str, str], dict[tuple[str, ...], float]] = {}
     for resp in data["analysis"]["frequencyTabulationByVariables"]["responses"]:
         key = (resp["by"][0]["value"], resp["by"][0].get("label") or "")
-        tab = resp["response"]
-        values = [v["values"] for v in tab["variableValues"]]
-        cells: dict[tuple[str, ...], float] = {}
-        for cell in tab["table"]:
-            if cell["count"]:
-                code = tuple(values[i][j] for i, j in enumerate(cell["path"]))
-                cells[code] = cells.get(code, 0) + cell["count"]
-        out[key] = cells
+        out[key] = _cells(resp["response"])
     return out
 
 
 def studies() -> list[dict[str, Any]]:
     data = gql(STUDIES, {"id": SERIES})
     return data["search"]["seriesMetadata"]["studies"]
-
-
-def discover(countries: list[str]) -> None:
-    for study in studies():
-        title = study["title"]["en"]
-        for df in study.get("mainDataFiles") or []:
-            weight = (df.get("defaultWeight") or {}).get("name", {}).get("en")
-            log(f"== {title} :: {df['label']['en']} id={df['id']} v={df['version']} weight={weight}")
-            for probe in (["cntry", "region"], ["cntry", "lnghom1"], ["cntry", "rlgdnm"]):
-                try:
-                    codes, cells = tabulate(df, probe, None)
-                except SystemExit as exc:
-                    log(f"   {probe[1]}: {str(exc)[:160]}")
-                    continue
-                labels = {c["value"]: c["label"] or "" for c in codes[1]["codeList"] or []}
-                for cc in countries:
-                    row = sorted(((k[1], v) for k, v in cells.items() if k[0] == cc),
-                                 key=lambda kv: -kv[1])
-                    if not row:
-                        continue
-                    shown = " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
-                                     for k, v in row[:40])
-                    log(f"   {probe[1]} {cc} n={int(sum(v for _, v in row))}: {shown}")
-            # A weighted count: is it rounded, and on what scale?
-            try:
-                _, cells = tabulate(df, ["cntry"], weight)
-                log(f"   weighted by {weight}: " + " ".join(
-                    f"{k[0]}={v}" for k, v in sorted(cells.items())[:6]))
-            except SystemExit as exc:
-                log(f"   weighted: {str(exc)[:160]}")
-
-
-VARIABLES = """query($id: ID!, $version: Int) { search {
-  dataFileMetadata(id: $id, version: $version, agencyId: INT_ESSERIC, instance: PUBLISHED) {
-    label { en } disseminationLimitation defaultWeight { name { en } }
-    variableList { name { en } label { en } } } } }"""
 
 
 def main_files() -> dict[str, dict[str, Any]]:
@@ -157,49 +306,352 @@ def main_files() -> dict[str, dict[str, Any]]:
 
 
 def pick(files: dict[str, dict[str, Any]], prefix: str) -> dict[str, Any]:
-    hits = [df for label, df in files.items() if label.startswith(prefix + "e")]
+    """The one integrated file whose label is ``prefix`` and an edition ('ESS10e03_3')."""
+    hits = [df for label, df in files.items() if re.fullmatch(prefix + r"e\d.*", label)]
     if len(hits) != 1:
         raise SystemExit(f"ess_region: {prefix!r} names {len(hits)} datafiles: {sorted(files)}")
     return hits[0]
 
 
-def show_variables(prefix: str, pattern: str) -> None:
-    import re
+def fetch(rounds: list[str]) -> dict[str, Any]:
+    """Every table the build needs, from the portal, checked for completeness."""
     files = main_files()
-    for rnd in prefix.split(","):
-        df = pick(files, rnd)
+    out: dict[str, Any] = {"fetched": date.today().isoformat(), "api": API,
+                           "weight": WEIGHT, "rounds": {}}
+    national: dict[str, Any] = {}
+    for prefix in rounds:
+        df = pick(files, prefix)
+        label = df["label"]["en"]
+        log(f"== {label} (id {df['id']} v{df['version']})")
+        entry: dict[str, Any] = {"file": label, "id": df["id"], "version": df["version"],
+                                 "labels": {}}
+        national[prefix] = {}
+        for name, variables in TABLES.items():
+            entry[name] = {}
+            national[prefix][name] = {}
+            for key, weight in (("weighted", WEIGHT), ("n", None)):
+                split = tabulate_by(df, variables, "region", weight)
+                entry[name][key] = {region: {"/".join(code): count
+                                             for code, count in sorted(cells.items())}
+                                    for (region, _), cells in sorted(split.items())}
+                for (region, lab) in split:
+                    entry["labels"].setdefault(region, lab)
+                _, whole = tabulate(df, ["cntry", *variables], weight)
+                by_country: dict[str, dict[str, float]] = defaultdict(dict)
+                for code, count in whole.items():
+                    by_country[code[0]]["/".join(code[1:])] = count
+                national[prefix][name][key] = dict(sorted(by_country.items()))
+                # Every respondent the country table counts must be in some
+                # region's table: a region split that lost people would bias
+                # every share it gives. A respondent with no region recorded
+                # is the only allowed loss, and it must be small.
+                regional = sum(sum(c.values()) for c in entry[name][key].values())
+                total = sum(sum(c.values()) for c in by_country.values())
+                log(f"   {name} {key}: {len(split)} regions hold {regional:,.0f} of "
+                    f"{total:,.0f}")
+                if key == "n" and not total * 0.99 <= regional <= total:
+                    raise SystemExit(f"ess_region: {label} {name}: the regions hold "
+                                     f"{regional} respondents and the countries {total}")
+        out["rounds"][prefix] = entry
+    HERE.mkdir(parents=True, exist_ok=True)
+    TABS.write_bytes(gzip.compress(json.dumps(out, ensure_ascii=False, sort_keys=True,
+                                              separators=(",", ":")).encode(), mtime=0))
+    write_json(NATIONAL, {"fetched": out["fetched"], "api": API, "weight": WEIGHT,
+                          "rounds": national})
+    log(f"  wrote {TABS.name} ({TABS.stat().st_size // 1024} kB) and {NATIONAL.name}")
+    return out
+
+
+# ---------------------------------------------------------------------------
+# From tables to compositions
+# ---------------------------------------------------------------------------
+
+def religion_group(code: str) -> str | None:
+    """'rlgblg/rlgdnm' -> the map's label, or None for a non-answer."""
+    belong, _, denomination = code.partition("/")
+    if belong == "2":
+        return "No religion"
+    if belong == "1":
+        return DENOMINATIONS.get(denomination)
+    return None
+
+
+def language_group(code: str) -> str | None:
+    """'lnghom1' -> the map's label, or None for a non-answer."""
+    code = code.strip().upper()
+    if code in NO_LANGUAGE:
+        return None
+    return LANGUAGES.get(code, OTHER_LANGUAGES)
+
+
+def nuts2024(code: str) -> str | None:
+    """A respondent's region code as a NUTS 2024 code, or None if it is not one."""
+    code = code.strip().upper()
+    if len(code) >= 2 and code[:2] in PREFIX:
+        code = PREFIX[code[:2]] + code[2:]
+    code = OLD_CODES.get(code, code)
+    return code if NUTS_SHAPE.match(code) else None
+
+
+def ancestors(code: str) -> list[str]:
+    """The code and its NUTS parents down to NUTS 1: FRK -> [FRK]; ITC4 -> [ITC, ITC4]."""
+    return [code[:n] for n in range(3, len(code) + 1)]
+
+
+def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[str, Any]]:
+    """{NUTS code: weighted and unweighted counts by group, rounds, non-answers}.
+
+    Every respondent is added to their region and to each of its NUTS
+    parents, round by round, from ``first_round`` on.
+    """
+    classify = religion_group if field == "religion" else language_group
+    out: dict[str, dict[str, Any]] = defaultdict(lambda: {
+        "w": Counter(), "n": Counter(), "missing": 0, "rounds": set()})
+    unplaced: Counter = Counter()
+    unlisted: Counter = Counter()
+    for prefix, entry in tabs["rounds"].items():
+        number, year, _ = ROUNDS[prefix]
+        if number < first_round:
+            continue
+        table = entry[field]
+        for region, cells in table["n"].items():
+            code = nuts2024(region)
+            weighted = table["weighted"].get(region, {})
+            if code is None:
+                unplaced[region] += sum(cells.values())
+                continue
+            if field == "language":
+                for key, n in cells.items():
+                    if key.strip().upper() not in LANGUAGES | dict.fromkeys(NO_LANGUAGE):
+                        unlisted[f"{code[:2]}:{key}"] += n
+            for target in ancestors(code):
+                slot = out[target]
+                slot["rounds"].add((prefix, year))
+                for key, n in cells.items():
+                    group = classify(key)
+                    if group is None:
+                        slot["missing"] += n
+                        continue
+                    slot["n"][group] += n
+                    slot["w"][group] += weighted.get(key, 0)
+    if unplaced:
+        log(f"  {field}: {sum(unplaced.values()):,.0f} respondents carry no NUTS region "
+            f"({', '.join(f'{k or repr(k)}={v:,.0f}' for k, v in unplaced.most_common(8))})")
+    if unlisted:
+        log(f"  language codes read as Other languages: "
+            + ", ".join(f"{k}={v:,.0f}" for k, v in unlisted.most_common(40)))
+    return dict(out)
+
+
+def composition(slot: dict[str, Any], field: str) -> list[dict[str, Any]]:
+    """Weighted shares, with a language named by too few respondents folded into Other."""
+    weighted = Counter(slot["w"])
+    if field == "language":
+        for group, n in slot["n"].items():
+            if group != OTHER_LANGUAGES and n < MIN_LANGUAGE_N:
+                weighted[OTHER_LANGUAGES] += weighted.pop(group, 0)
+    rows = shares({g: v for g, v in weighted.items() if v > 0})
+    total = sum(r["pct"] for r in rows)
+    if rows and abs(total - 100) > 0.6:
+        raise SystemExit(f"ess_region: shares sum to {total}")
+    return rows
+
+
+def placement(code: str, crosswalk: dict[str, Any]) -> list[dict[str, Any]]:
+    """The polygons the crosswalk says this NUTS code is: its own, and a twin's."""
+    entry = crosswalk.get(code)
+    seen = set()
+    while entry and entry.get("superseded_by") and entry["superseded_by"] not in seen:
+        seen.add(entry["superseded_by"])
+        entry = crosswalk.get(entry["superseded_by"])
+    if not entry or "shape_id" not in entry:
+        return []
+    out = [{"level": entry["level"], "shape_id": entry["shape_id"], "name": entry["name"]}]
+    out += [{"level": t["level"], "shape_id": t["shape_id"], "name": t["name"]}
+            for t in entry.get("also") or []]
+    return out
+
+
+def describe_rounds(rounds: set[tuple[str, int]]) -> str:
+    years = sorted(ROUNDS[p][2] for p, _ in rounds)
+    names = sorted({ROUNDS[p][0] for p, _ in rounds})
+    span = f"{years[0][:4]}-{years[-1][-4:]}"
+    return f"ESS round{'s' if len(names) > 1 else ''} {', '.join(map(str, names))} ({span})"
+
+
+QUESTION = {
+    "religion": ("religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider "
+                 "yourself as belonging to any particular religion or denomination?\" and, if "
+                 "so, which; \"no\" is written as No religion"),
+    "language": ("the language most often spoken at home, first mentioned (lnghom1); "
+                 f"a language named by fewer than {MIN_LANGUAGE_N} respondents here is in "
+                 "Other languages"),
+}
+CENSUS = {
+    "religion": "The census does not ask religion here, or its figure is not published for "
+                "this unit; a census or register count replaces this estimate wherever one "
+                "is read.",
+    "language": "The census does not ask home language here, or its figure is not published "
+                "for this unit; a census or register count replaces this estimate wherever "
+                "one is read.",
+}
+
+
+def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
+          first_round: int = FIRST_ROUND) -> tuple[list[dict[str, Any]], list[str]]:
+    """Records for every polygon a pooled NUTS region reaches with n >= MIN_N."""
+    by_shape: dict[tuple[str, str], dict[str, Any]] = {}
+    report: list[str] = []
+    for field in ("religion", "language"):
+        pooled = pool(tabs, field, first_round)
+        for code in sorted(pooled):
+            slot = pooled[code]
+            n = int(sum(slot["n"].values()))
+            places = placement(code, crosswalk)
+            iso3 = ISO3.get(code[:2])
+            if not places or iso3 is None:
+                if len(code) > 2 and n >= MIN_N and code in crosswalk:
+                    report.append(f"{field} {code} n={n}: crosswalk "
+                                  f"{json.dumps(crosswalk[code])[:120]}")
+                continue
+            if n < MIN_N:
+                report.append(f"{field} {code} -> {places[0]['name']}: n={n} < {MIN_N}, left out")
+                continue
+            for place in places:
+                key = (place["level"], place["shape_id"])
+                current = by_shape.get(key, {}).get(field)
+                if current and current["n"] >= n:
+                    continue
+                by_shape.setdefault(key, {"place": place, "iso3": iso3})[field] = {
+                    "code": code, "n": n, "slot": slot}
+    records = []
+    for (level, shape_id), item in sorted(by_shape.items()):
+        place, iso3 = item["place"], item["iso3"]
+        fields: dict[str, Any] = {}
+        sources = []
+        for field in ("religion", "language"):
+            got = item.get(field)
+            if not got:
+                continue
+            slot, n = got["slot"], got["n"]
+            rounds = describe_rounds(slot["rounds"])
+            precision = " Low precision: under 300 respondents." if n < LOW_PRECISION else ""
+            fields[field] = composition(slot, field)
+            fields[f"{field}_year"] = max(year for _, year in slot["rounds"])
+            fields[f"{field}_basis"] = ("survey estimate: self-identification, residents "
+                                        "aged 15 and over in private households")
+            fields[f"{field}_note"] = (
+                f"European Social Survey, {rounds}, pooled: {QUESTION[field]}. A survey "
+                f"estimate, not a count: {n:,} respondents in NUTS region {got['code']} "
+                f"gave an answer ({int(slot['missing']):,} refused, did not know or did not "
+                f"answer and are left out), weighted by the post-stratification weight "
+                f"(pspwght) and pooled across rounds.{precision} Universe: residents aged 15 "
+                f"and over in private households who could be interviewed in a survey "
+                f"language. Tabulated by the ESS Data Portal's open analysis service. "
+                f"{CENSUS[field]}")
+            sources.append({"field": field,
+                            "name": f"European Social Survey (ESS ERIC), {rounds}: {field} "
+                                    f"by NUTS region {got['code']}",
+                            "url": PORTAL, "license": LICENCE})
+        records.append(record(
+            f"ESS-{iso3}-{level}-{shape_id}", place["name"], level=level, parent=iso3,
+            country=iso3, match_by="shape_id", shape_id=shape_id, sources=sources,
+            codes={"nuts": sorted({item[f]["code"] for f in ("religion", "language")
+                                   if f in item}),
+                   "ess_n": {f: item[f]["n"] for f in ("religion", "language") if f in item}},
+            **fields))
+    return records, report
+
+
+def national(first_round: int = FIRST_ROUND) -> dict[str, dict[str, Any]]:
+    """Pooled national compositions, for the curated country rows (logged, not written)."""
+    data = read_json(NATIONAL, {}) or {}
+    out: dict[str, dict[str, Any]] = {}
+    for field in ("religion", "language"):
+        classify = religion_group if field == "religion" else language_group
+        pooled: dict[str, dict[str, Any]] = defaultdict(lambda: {
+            "w": Counter(), "n": Counter(), "missing": 0, "rounds": set()})
+        for prefix, tables in (data.get("rounds") or {}).items():
+            if ROUNDS[prefix][0] < first_round:
+                continue
+            for cntry, cells in tables[field]["n"].items():
+                slot = pooled[cntry]
+                slot["rounds"].add((prefix, ROUNDS[prefix][1]))
+                for key, n in cells.items():
+                    group = classify(key)
+                    if group is None:
+                        slot["missing"] += n
+                        continue
+                    slot["n"][group] += n
+                    slot["w"][group] += tables[field]["weighted"][cntry].get(key, 0)
+        for cntry, slot in pooled.items():
+            out.setdefault(cntry, {})[field] = {
+                "n": int(sum(slot["n"].values())), "rounds": describe_rounds(slot["rounds"]),
+                "year": max(y for _, y in slot["rounds"]), "groups": composition(slot, field)}
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Discovery
+# ---------------------------------------------------------------------------
+
+def discover(countries: list[str]) -> None:
+    for study in studies():
+        title = study["title"]["en"]
+        for df in study.get("mainDataFiles") or []:
+            log(f"== {title} :: {df['label']['en']} id={df['id']} v={df['version']}")
+            for probe in (["cntry", "lnghom1"], ["cntry", "rlgdnm"]):
+                try:
+                    codes, cells = tabulate(df, probe, None)
+                except SystemExit as exc:
+                    log(f"   {probe[1]}: {str(exc)[:200]}")
+                    continue
+                labels = {c["value"]: c["label"] or "" for c in codes[1]["codeList"] or []}
+                for cc in countries:
+                    row = sorted(((k[1], v) for k, v in cells.items() if k[0] == cc),
+                                 key=lambda kv: -kv[1])
+                    if row:
+                        log(f"   {probe[1]} {cc} n={int(sum(v for _, v in row))}: "
+                            + " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
+                                       for k, v in row[:40]))
+
+
+def show_variables(prefixes: str, pattern: str) -> None:
+    files = main_files()
+    rx = re.compile(pattern, re.I)
+    for prefix in prefixes.split(","):
+        df = pick(files, prefix)
         meta = gql(VARIABLES, {"id": df["id"], "version": df["version"]})["search"]["dataFileMetadata"]
         log(f"== {meta['label']['en']} limitation={meta.get('disseminationLimitation')} "
             f"weight={meta.get('defaultWeight')} variables={len(meta['variableList'])}")
-        rx = re.compile(pattern, re.I)
         for var in meta["variableList"]:
             name, label = var["name"]["en"], (var.get("label") or {}).get("en") or ""
             if rx.search(name) or rx.search(label):
                 log(f"   {name}: {label[:90]}")
 
 
-def show_tab(prefix: str, variables: str, weight: str | None, limit: int) -> None:
-    df = pick(main_files(), prefix)
-    codes, cells = tabulate(df, variables.split(","), weight)
-    for var in codes:
-        log(f"   {var['name']}: {len(var['values'])} values; first "
-            + " ".join(f"{c['value']}={c['label']}" for c in (var['codeList'] or [])[:12]))
-    for key, count in sorted(cells.items())[:limit]:
-        log(f"   {' '.join(key)} {count}")
-
-
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--fetch", action="store_true",
+                    help="read the tables from the portal before building")
+    ap.add_argument("--first-round", type=int, default=FIRST_ROUND,
+                    help=f"pool rounds from this one on (default {FIRST_ROUND})")
+    ap.add_argument("--regions", default=None,
+                    help="with the build: log every pooled region of these NUTS country codes")
     ap.add_argument("--discover", default=None,
                     help="comma-separated ESS country codes: list rounds and their codes")
-    ap.add_argument("--variables", nargs=2, metavar=("ROUND", "REGEX"),
-                    help="list a round's variables whose name or label matches, e.g. ESS11 region")
-    ap.add_argument("--tab", nargs="+", metavar="ARG",
-                    help="ROUND VAR1,VAR2 [WEIGHT [LIMIT]]: print a tabulation's cells")
+    ap.add_argument("--variables", nargs=2, metavar=("ROUNDS", "REGEX"),
+                    help="list rounds' variables whose name or label matches")
     ap.add_argument("--by", nargs="+", metavar="ARG",
                     help="ROUND VAR1,VAR2 BYVAR [WEIGHT [LIMIT]]: one tabulation per BYVAR value")
     args = ap.parse_args()
+    if args.discover:
+        discover(args.discover.split(","))
+        return 0
+    if args.variables:
+        show_variables(*args.variables)
+        return 0
     if args.by:
         df = pick(main_files(), args.by[0])
         weight = args.by[3] if len(args.by) > 3 and args.by[3] != "-" else None
@@ -210,18 +662,42 @@ def main() -> int:
             log(f"   {value} {label[:30]} n={sum(cells.values())}: "
                 + " ".join(f"{'/'.join(k)}={v}" for k, v in sorted(cells.items())[:14]))
         return 0
-    if args.variables:
-        show_variables(*args.variables)
-        return 0
-    if args.tab:
-        weight = args.tab[2] if len(args.tab) > 2 and args.tab[2] != "-" else None
-        limit = int(args.tab[3]) if len(args.tab) > 3 else 60
-        show_tab(args.tab[0], args.tab[1], weight, limit)
-        return 0
-    if args.discover:
-        discover(args.discover.split(","))
-        return 0
-    raise SystemExit("ess_region: nothing to do yet")
+
+    log(f"ess_region: European Social Survey by region, rounds {args.first_round}-11")
+    if args.fetch:
+        tabs = fetch(list(ROUNDS))
+    else:
+        if not TABS.exists():
+            raise SystemExit(f"ess_region: {TABS} is missing; run with --fetch")
+        tabs = json.loads(gzip.decompress(TABS.read_bytes()))
+    crosswalk = read_json(CROSSWALK, {}) or {}
+    if not crosswalk:
+        raise SystemExit(f"ess_region: {CROSSWALK} is missing")
+    if args.regions:
+        wanted = set(args.regions.split(","))
+        for field in ("religion", "language"):
+            for code, slot in sorted(pool(tabs, field, args.first_round).items()):
+                if code[:2] in wanted:
+                    log(f"  {field} {code} n={int(sum(slot['n'].values()))} "
+                        f"rounds={sorted(p for p, _ in slot['rounds'])} "
+                        f"-> {[p['name'] for p in placement(code, crosswalk)]}")
+    records, report = build(tabs, crosswalk, args.first_round)
+    for line in report:
+        log(f"  {line}")
+    by_country = Counter((r["country"], r["level"]) for r in records)
+    for (iso3, level), count in sorted(by_country.items()):
+        filled = [r for r in records if r["country"] == iso3 and r["level"] == level]
+        log(f"  {iso3} {level}: {count} units -- " + "; ".join(
+            f"{r['name']} [{','.join(r['codes']['nuts'])}] "
+            + " ".join(f"{f[:3]} n={n}" for f, n in r["codes"]["ess_n"].items())
+            for r in filled))
+    for cntry, fields in sorted(national(args.first_round).items()):
+        for field, got in fields.items():
+            log(f"  national {cntry} {field} n={got['n']} {got['rounds']}: "
+                + ", ".join(f"{g['group']} {g['pct']}" for g in got["groups"][:8]))
+    write_json(PROCESSED / OUT, records)
+    log(f"  {len(records)} records")
+    return 0
 
 
 if __name__ == "__main__":
