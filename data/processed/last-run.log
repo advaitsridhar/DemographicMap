@@ -1,32 +1,45 @@
-switzerland_religion: BFS structural survey, religion by canton, [2022, 2023, 2024]
-  2022: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
-  2023: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
-  2024: columns {1: 'Total', 2: 'Evangelisch-reformiert', 4: 'Römisch-katholisch', 6: 'Andere christliche Glaubensgemeinschaften', 8: 'Jüdische Glaubensgemeinschaften', 10: 'Islamische Glaubensgemeinschaften', 12: 'Andere Religionsgemeinschaften', 14: 'Ohne Religionszugehörigkeit', 16: 'Religionszugehörigkeit unbekannt'}
-  Vaud: 689,542 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 18.92577941367944)
-  Valais: 305,908 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 78.982378377563)
-  Genève: 399,556 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 14.160875633394832)
-  Bern: 887,905 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 43.809609194911765)
-  Fribourg: 278,720 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Other religion', 28.501502372893402)
-  Solothurn: 240,297 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 27.130269155133234)
-  Neuchâtel: 148,728 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 77.9547672250116)
-  Jura: 62,054 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Other religion', 64.72779319382124)
-  Basel-Stadt: 167,163 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 43.60716675522625)
-  Basel-Landschaft: 250,582 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 73.62871249857913)
-  Aargau: 603,476 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 35.69961110825201)
-  Zürich: 1,331,083 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 15.284296112546466)
-  Glarus: 34,931 aged 15+ (mean of 3 years); withheld ['Judaism', 'Not stated']; widest single-year interval ('Other religion', 79.93721998491728)
-  Schaffhausen: 73,012 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 58.593107486996715)
-  Appenzell Ausserrhoden: 46,502 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 73.2490822479114)
-  Appenzell Innerrhoden: 13,628 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion', 'Not stated']; widest single-year interval ('Other Christian', 80.19346399850338)
-  St. Gallen: 443,194 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 23.908492446361464)
-  Graubünden: 174,525 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 37.15158237838324)
-  Thurgau: 245,397 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 37.355629764258204)
-  Luzern: 358,093 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 55.173906980562535)
-  Uri: 31,528 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion']; widest single-year interval ('Not stated', 87.09182242342904)
-  Schwyz: 140,471 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 58.75643312562417)
-  Obwalden: 32,743 aged 15+ (mean of 3 years); withheld ['Judaism', 'Other religion', 'Not stated']; widest single-year interval ('Islam', 39.54383187935596)
-  Nidwalden: 38,228 aged 15+ (mean of 3 years); withheld ['Judaism']; widest single-year interval ('Not stated', 79.50460592201307)
-  Zug: 110,063 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 68.74523197621546)
-  Ticino: 305,822 aged 15+ (mean of 3 years); withheld []; widest single-year interval ('Judaism', 64.7152517877991)
-  wrote data/processed/switzerland_religion_survey.json (62 kB)
-  wrote switzerland_religion_survey.json: 26 records
+slovenia_census: Census 2002 by municipality, SiStat 05W1001S-05W1007S
+  2002 count on the 2002 and the 2007 municipalities: 170 of 193 the same; changed or renamed: ['bled', 'divaca', 'gorisnica', 'gornjaradgona', 'hajdina', 'hrpeljekozina', 'kranj', 'krsko', 'lenart', 'litija', 'mozirje', 'novagorica', 'novomesto', 'ormoz', 'prebold', 'sencur', 'skofjaloka', 'slovenskabistrica', 'trbovlje', 'trebnje', 'videm', 'vrhnika', 'zelezniki']
+  on the 2007 map and not in 2002: ['apace', 'cirkulane', 'gorje', 'kostanjevicanakrki', 'logdragomer', 'makole', 'mokronogtrebelno', 'poljcane', 'recicaobsavinji', 'rencevogrsko', 'sentrupert', 'smarjesketoplice', 'smartnoprilitiji', 'sredisceobdravi', 'straza', 'svetatrojicavslovgoricah', 'svetijurijvslovgoricah', 'svetitomaz']
+  05W1002S: Population, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNA PRIPADNOST']
+  05W1006S: Population, census 2002 by MUNICIPALITY and RELIGION; variables ['OBČINA', 'VEROIZPOVED']
+  05W1007S: Population, census 2002 by MUNICIPALITY and MOTHER TONGUE; variables ['OBČINA', 'MATERIN JEZIK']
+  05W1003S: Population declared as Italians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1004S: Population declared as Hungarians, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  05W1005S: Population declared as Roma, census 2002 by MUNICIPALITY and DECLARED AS; variables ['OBČINA', 'NARODNO OPREDELJENI']
+  192 municipalities of 2002; Slovenia 1,964,036
+  Ajdovščina: religion: 19 people in blanked cells, left out
+  Beltinci: religion: 10 people in blanked cells, left out
+  Beltinci: language: 13 people in blanked cells, left out
+  Benedikt: religion: 3 people in blanked cells, left out
+  Benedikt: language: 6 people in blanked cells, left out
+  Bistrica ob Sotli: religion: 6 people in blanked cells, left out
+  Bistrica ob Sotli: language: 4 people in blanked cells, left out
+  Bled: language: 10 people in blanked cells, left out
+  Bloke: religion: 7 people in blanked cells, left out
+  Bloke: language: 5 people in blanked cells, left out
+  Bohinj: religion: 71 people in blanked cells, left out
+  Bohinj: language: 5 people in blanked cells, left out
+  Borovnica: religion: 70 people in blanked cells, left out
+  Borovnica: language: 11 people in blanked cells, left out
+  Bovec: religion: 21 people in blanked cells, left out
+  Bovec: language: 8 people in blanked cells, left out
+  Braslovče: religion: 17 people in blanked cells, left out
+  Braslovče: language: 9 people in blanked cells, left out
+  Brda: religion: 8 people in blanked cells, left out
+  Brda: language: 21 people in blanked cells, left out
+  Cankova: religion: 86 people in blanked cells, left out
+  Cankova: language: 4 people in blanked cells, left out
+  Cerklje na Gorenjskem: religion: 44 people in blanked cells, left out
+  Cerklje na Gorenjskem: language: 46 people in blanked cells, left out
+  Cerknica: language: 5 people in blanked cells, left out
+  Cerkno: religion: 8 people in blanked cells, left out
+  Cerkno: language: 6 people in blanked cells, left out
+  Cerkvenjak: ethnicity: 28 people in blanked cells, left out
+  Cerkvenjak: religion: 6 people in blanked cells, left out
+  Cerkvenjak: language: 9 people in blanked cells, left out
+  Destrnik: religion: 3 people in blanked cells, left out
+  Destrnik: language: 22 people in blanked cells, left out
+  Divača: religion: 6 people in blanked cells, left out
+  Divača: language: 22 people in blanked cells, left out
+slovenia_census: Dobje: ['Declared -others'] blank with no total to measure them
