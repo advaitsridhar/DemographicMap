@@ -152,7 +152,8 @@ class Iceland(unittest.TestCase):
         self.assertEqual(iceland.stem("Kopavogsbaer"), iceland.stem("Kópavogsbær"))
 
     def test_a_merger_under_its_own_name_is_not_a_renumbering(self):
-        self.assertIn("5200", iceland.MERGED_RENUMBERED)
+        self.assertIn("5200", iceland.MERGED_RENUMBERED)     # Skagafjörður + Akrahreppur
+        self.assertIn("3711", iceland.MERGED_RENUMBERED)     # Stykkishólmur + Helgafellssveit
         self.assertTrue(set(iceland.MERGED_RENUMBERED).isdisjoint(iceland.ABSORBED))
 
 

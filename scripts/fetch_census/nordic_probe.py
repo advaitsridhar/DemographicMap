@@ -409,6 +409,31 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 14
+    "r14_nor_08531_2020": lambda: px_post(f"{SSB}/08531", {"query": [
+        {"code": "Region", "selection": {"filter": "item", "values": [
+            "0", "03", "11", "15", "18", "30", "34", "38", "42", "46", "50", "54"]}},
+        {"code": "ReligionLivs", "selection": {"filter": "all", "values": ["*"]}},
+        {"code": "ContentsCode", "selection": {"filter": "item", "values": ["Medlemmer"]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": ["2020"]}}],
+        "response": {"format": "json-stat2"}}, limit=80),
+    "r14_est_2000eth": lambda: px_list(f"{STAT_EE}/rahvaloendus/rel2000/rahvus-emakeel-veerkeelte-oskus"),
+    "r14_lva_tsg1101": lambda: px_meta(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk/demogr/tsk2011/TSG11-01.px",
+        allvals=r"(?i).*(terit|vien|area).*"),
+    "r14_fin_dvv_cdx": lambda: cdx("url=dvv.fi/documents/*&filter=original:.*(?:[Uu]skonto|[Rr]eligi).*",
+                                   limit=80),
+    "r14_fin_dvv_cdx2": lambda: cdx("url=dvv.fi/*&filter=original:.*(?:[Tt]ilasto|[Ss]tatisti).*",
+                                    limit=60),
+    "r14_fin_avain_meta": lambda: px_meta(
+        "https://pxdata.stat.fi/PxWeb/api/v1/en/Kuntien_avainluvut/uusin/kuntien_avainluvut_viimeisin.px",
+        allvals=r"(?i)(tiedot|contents.*|information)"),
+    "r14_isl_skra_news": lambda: text(
+        "https://www.skra.is/um-okkur/frettir/frett/2026/09/10/"
+        "Skraning-i-tru-og-lifsskodunarfelog-fram-til-1.-september-2026/",
+        grep=r"[^<>]{0,120}(?:sveitarf|xlsx|landshlut)[^<>]{0,120}"),
+    "r14_isl_skra_tru": lambda: links("https://www.skra.is/folk/tru-og-lifsskodun/",
+                                      r"xlsx|t[öo]lfr|fj[öo]ldi|sveitarf|frett"),
     # Round 13: the register keepers' own tables, older censuses by old units.
     "r13_isl_10001": lambda: isl(px_meta, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelog/"
                                  "MAN10001.px"),
