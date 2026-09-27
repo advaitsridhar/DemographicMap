@@ -1,10 +1,3 @@
-bulgaria_census: NSI, Census 2021
-  63412e676270...: 1,670,809 bytes
-  d6bebedae9d8...: 78,912 bytes
-  country: 6,519,789, median 46.7 from five-year groups
-  Sarnitsa (PAZ39) folded into Velingrad (PAZ08)
-  Zlatitsa is drawn as 2 polygons: figures on 11073933B76991292071364, merge ['11073933B60320132010156']
-  264 municipalities bound; left over: []
-  polygons with no municipality: []
-  wrote data/processed/bulgaria_census.json (1741 kB)
-  wrote bulgaria_census.json: 292 records
+hungary: KSH census 2022 database, version V67
+  197 districts, 20 counties (Budapest one of them), 101 single ages up to 100+
+hungary: Budapest data not disaggregated by district: ages make 0, the total None
