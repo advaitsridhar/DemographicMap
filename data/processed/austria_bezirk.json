@@ -1,0 +1,5266 @@
+[
+  {
+    "id": "AUT-PB-101",
+    "level": "admin2",
+    "name": "Eisenstadt(Stadt)",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16396,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 93.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "101"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B42934090716904",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-102",
+    "level": "admin2",
+    "name": "Rust(Stadt)",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1918,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 52.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 93.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "102"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B63332464794516",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-103",
+    "level": "admin2",
+    "name": "Eisenstadt-Umgebung",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44805,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "103"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B42773382597279",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-104",
+    "level": "admin2",
+    "name": "Güssing",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25707,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 53.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "104"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B95513222830775",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-105",
+    "level": "admin2",
+    "name": "Jennersdorf",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17148,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 52.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "105"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B56118074720485",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-106",
+    "level": "admin2",
+    "name": "Mattersburg",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41176,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "106"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B54924722393177",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-107",
+    "level": "admin2",
+    "name": "Neusiedl am See",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 61738,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 94.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "107"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B9829477646273",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-108",
+    "level": "admin2",
+    "name": "Oberpullendorf",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37619,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 51.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "108"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B63430755874658",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-109",
+    "level": "admin2",
+    "name": "Oberwart",
+    "parent": "97560089B12055607938436",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 55188,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 50.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Burgenland",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "109"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B34947061849091",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-201",
+    "level": "admin2",
+    "name": "Klagenfurt(Stadt)",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 105734,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 91.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "201"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B120046562569",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-202",
+    "level": "admin2",
+    "name": "Villach(Stadt)",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66051,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 92.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "202"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B91657793065449",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-203",
+    "level": "admin2",
+    "name": "Hermagor",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17910,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 51.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "203"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B75103702321427",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-204",
+    "level": "admin2",
+    "name": "Klagenfurt Land",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62031,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "204"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B38736902146486",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-205",
+    "level": "admin2",
+    "name": "Sankt Veit an der Glan",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 53749,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "205"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B79241155070811",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-206",
+    "level": "admin2",
+    "name": "Spittal an der Drau",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 75119,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "206"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B5563288813378",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-207",
+    "level": "admin2",
+    "name": "Villach Land",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 65608,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "207"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B90792399877062",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-208",
+    "level": "admin2",
+    "name": "Völkermarkt",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41845,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "208"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B94258611275926",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-209",
+    "level": "admin2",
+    "name": "Wolfsberg",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 51861,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "209"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B95590877678273",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-210",
+    "level": "admin2",
+    "name": "Feldkirchen",
+    "parent": "97560089B55365172259742",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30082,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Kärnten",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "210"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B47665987386389",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-301",
+    "level": "admin2",
+    "name": "Krems an der Donau(Stadt)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25581,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "301"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B91135602876428",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-302",
+    "level": "admin2",
+    "name": "Sankt Pölten(Stadt)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60112,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "302"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B80710785745839",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-303",
+    "level": "admin2",
+    "name": "Waidhofen an der Ybbs(Stadt)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11053,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "303"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B22426676215566",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-304",
+    "level": "admin2",
+    "name": "Wiener Neustadt(Stadt)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 50025,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 41.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "304"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B50853821374645",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-305",
+    "level": "admin2",
+    "name": "Amstetten",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 118334,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "305"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B96499603225399",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-306",
+    "level": "admin2",
+    "name": "Baden",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 150523,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "306"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B55208293376472",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-307",
+    "level": "admin2",
+    "name": "Bruck an der Leitha",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110638,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "307"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B44160776014902",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-308",
+    "level": "admin2",
+    "name": "Gänserndorf",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110110,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "308"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B11117294773802",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-309",
+    "level": "admin2",
+    "name": "Gmünd",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35265,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 51.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "309"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B74783988457601",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-310",
+    "level": "admin2",
+    "name": "Hollabrunn",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 51945,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "310"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B25663415293212",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-311",
+    "level": "admin2",
+    "name": "Horn",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30663,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "311"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B37819300822483",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-312",
+    "level": "admin2",
+    "name": "Korneuburg",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 94235,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "312"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B4505835090563",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-313",
+    "level": "admin2",
+    "name": "Krems(Land)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 56384,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "313"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B17511586897466",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-314",
+    "level": "admin2",
+    "name": "Lilienfeld",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25072,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "314"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B21749172067380",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-315",
+    "level": "admin2",
+    "name": "Melk",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 79735,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "315"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B79532405595503",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-316",
+    "level": "admin2",
+    "name": "Mistelbach",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76861,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "316"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B80454690020215",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-317",
+    "level": "admin2",
+    "name": "Mödling",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 121469,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 93.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "317"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B30005967940450",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-318",
+    "level": "admin2",
+    "name": "Neunkirchen",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87316,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "318"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B78442529062401",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-319",
+    "level": "admin2",
+    "name": "Sankt Pölten(Land)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 134771,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "319"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B36790044704136",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-320",
+    "level": "admin2",
+    "name": "Scheibbs",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41819,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "320"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B41539684313682",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-321",
+    "level": "admin2",
+    "name": "Tulln",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 109882,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "321"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B69834744400271",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-322",
+    "level": "admin2",
+    "name": "Waidhofen an der Thaya",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25211,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 50.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "322"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B32658939517567",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-323",
+    "level": "admin2",
+    "name": "Wiener Neustadt(Land)",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 81225,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "323"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B56305741888940",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-325",
+    "level": "admin2",
+    "name": "Zwettl",
+    "parent": "97560089B30234814950985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41312,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 101.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Niederösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "325"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B69216186018190",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-401",
+    "level": "admin2",
+    "name": "Linz(Stadt)",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 214272,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 40.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "401"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B96217640183416",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-402",
+    "level": "admin2",
+    "name": "Steyr(Stadt)",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37898,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "402"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B44973380908998",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-403",
+    "level": "admin2",
+    "name": "Wels(Stadt)",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 65764,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 41.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "403"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B59174273305720",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-404",
+    "level": "admin2",
+    "name": "Braunau am Inn",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110529,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "404"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B55197725393171",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-405",
+    "level": "admin2",
+    "name": "Eferding",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33884,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "405"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B58956451713860",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-406",
+    "level": "admin2",
+    "name": "Freistadt",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 68330,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "406"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B58764549276326",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-407",
+    "level": "admin2",
+    "name": "Gmunden",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 102952,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "407"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B77434838752176",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-408",
+    "level": "admin2",
+    "name": "Grieskirchen",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66739,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "408"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B9940951169199",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-409",
+    "level": "admin2",
+    "name": "Kirchdorf an der Krems",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58133,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "409"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B38894740445417",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-410",
+    "level": "admin2",
+    "name": "Linz-Land",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 157749,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "410"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B77519525915524",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-411",
+    "level": "admin2",
+    "name": "Perg",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 71086,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "411"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B82951321979539",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-412",
+    "level": "admin2",
+    "name": "Ried im Innkreis",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 63787,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "412"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B74865377205393",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-413",
+    "level": "admin2",
+    "name": "Rohrbach",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57233,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 103.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "413"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B3648245440037",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-414",
+    "level": "admin2",
+    "name": "Schärding",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58157,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "414"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B77378087983833",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-415",
+    "level": "admin2",
+    "name": "Steyr-Land",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62642,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "415"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B95795857580368",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-416",
+    "level": "admin2",
+    "name": "Urfahr-Umgebung",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88437,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "416"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B23101130248383",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-417",
+    "level": "admin2",
+    "name": "Vöcklabruck",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 142147,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "417"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B27080070946592",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-418",
+    "level": "admin2",
+    "name": "Wels-Land",
+    "parent": "97560089B86772589826985",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 77420,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Oberösterreich",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "418"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B79017974410181",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-501",
+    "level": "admin2",
+    "name": "Salzburg(Stadt)",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 157834,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 93.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "501"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B48902523635521",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-502",
+    "level": "admin2",
+    "name": "Hallein",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62185,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "502"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B58062952294319",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-503",
+    "level": "admin2",
+    "name": "Salzburg-Umgebung",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 159753,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "503"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B80883353663725",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-504",
+    "level": "admin2",
+    "name": "Sankt Johann im Pongau",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83453,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "504"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B81375384151440",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-505",
+    "level": "admin2",
+    "name": "Tamsweg",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20334,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "505"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B5163353655398",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-506",
+    "level": "admin2",
+    "name": "Zell am See",
+    "parent": "97560089B65158936715310",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 89967,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Salzburg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "506"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B17202762284767",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-601",
+    "level": "admin2",
+    "name": "Graz(Stadt)",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 306971,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 39.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "601"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B62018826292176",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-603",
+    "level": "admin2",
+    "name": "Deutschlandsberg",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60962,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "603"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B41302115637619",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-606",
+    "level": "admin2",
+    "name": "Graz-Umgebung",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 165656,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "606"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B3684891259076",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-610",
+    "level": "admin2",
+    "name": "Leibnitz",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88164,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "610"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B13674595787966",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-611",
+    "level": "admin2",
+    "name": "Leoben",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 58697,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "611"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B99745106362124",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-612",
+    "level": "admin2",
+    "name": "Liezen",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 79241,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "612"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B47205834081822",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-614",
+    "level": "admin2",
+    "name": "Murau",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26659,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 50.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "614"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B5680127390919",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-616",
+    "level": "admin2",
+    "name": "Voitsberg",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 51101,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "616"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B18383956859097",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-617",
+    "level": "admin2",
+    "name": "Weiz",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 92542,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 45.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "617"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B66706481000186",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-620",
+    "level": "admin2",
+    "name": "Murtal",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 71178,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "620"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B5280501817334",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-621",
+    "level": "admin2",
+    "name": "Bruck-Mürzzuschlag",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 96245,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 50.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "621"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B94683998284044",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-622",
+    "level": "admin2",
+    "name": "Hartberg-Fürstenfeld",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 91015,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "622"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B55609752698856",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-623",
+    "level": "admin2",
+    "name": "Südoststeiermark",
+    "parent": "97560089B87855108402029",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83333,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 49.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Steiermark",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "623"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B2105693319096",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-701",
+    "level": "admin2",
+    "name": "Innsbruck-Stadt",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 132820,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 40.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "701"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B66440199286019",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-702",
+    "level": "admin2",
+    "name": "Imst",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62770,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "702"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B38890589563780",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-703",
+    "level": "admin2",
+    "name": "Innsbruck-Land",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 187119,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "703"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B66922118471265",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-704",
+    "level": "admin2",
+    "name": "Kitzbühel",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66374,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 48.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 94.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "704"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B44298066383841",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-705",
+    "level": "admin2",
+    "name": "Kufstein",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114363,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "705"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B59844818715451",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-706",
+    "level": "admin2",
+    "name": "Landeck",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 45149,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 97.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "706"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B1495369757846",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-707",
+    "level": "admin2",
+    "name": "Lienz",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 48937,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 47.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "707"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B80741192481461",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-708",
+    "level": "admin2",
+    "name": "Reutte",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33998,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 46.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "708"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B67671541166056",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-709",
+    "level": "admin2",
+    "name": "Schwaz",
+    "parent": "97560089B46292059412713",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87530,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Tirol",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "709"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B36703389506709",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-801",
+    "level": "admin2",
+    "name": "Bludenz",
+    "parent": "97560089B20931628540879",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 65757,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 44.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 100.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Vorarlberg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "801"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B41160672699042",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-802",
+    "level": "admin2",
+    "name": "Bregenz",
+    "parent": "97560089B20931628540879",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 138246,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 43.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Vorarlberg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "802"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B81751018593131",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-803",
+    "level": "admin2",
+    "name": "Dornbirn",
+    "parent": "97560089B20931628540879",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 94624,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 41.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Vorarlberg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "803"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B2788459518344",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-804",
+    "level": "admin2",
+    "name": "Feldkirch",
+    "parent": "97560089B20931628540879",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 113680,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 42.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Vorarlberg",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "804"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B80242755253081",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  },
+  {
+    "id": "AUT-PB-900",
+    "level": "admin2",
+    "name": "Wien(Stadt)",
+    "parent": "97560089B24691553772644",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2040914,
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "median_age": {
+      "value": 39.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "sex_ratio": {
+      "value": 96.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistik Austria, Bevölkerung zu Jahresbeginn nach Alter, Geschlecht und Gemeinde (OGD_bevstandjbab2002_BevStand_2026)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026",
+        "license": "CC BY 4.0 (Statistik Austria open data)",
+        "year": 2026
+      }
+    ],
+    "parent_name": "Wien",
+    "country": "AUT",
+    "codes": {
+      "statistik_austria_pol_bezirk": "900"
+    },
+    "match_by": "shape_id",
+    "shape_id": "14549572B24691553772644",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistik Austria's count of the district's residents on 1 January 2026 by single year of age (0 to 99, then 100 and over), summed from its municipalities. Vienna's 23 Gemeindebezirke are summed as the one district the map draws.",
+    "sex_ratio_note": "Males per 100 females among the district's residents on 1 January 2026."
+  }
+]
