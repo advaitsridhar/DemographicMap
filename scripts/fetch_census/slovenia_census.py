@@ -75,8 +75,10 @@ NOTES = {
                   "minorities -- Italians, Hungarians, Roma -- by municipality; every other declared "
                   "affiliation (Croats, Serbs, Bosniaks, Muslims and the rest) is 'Other'. 'Not "
                   "declared' did not declare an ethnic affiliation; 'Not stated' did not want to "
-                  "reply; 'Unknown' is those the census could not establish. Slovenia's census has "
-                  "been register-based since 2011 and has not asked the question since 2002."),
+                  "reply; 'Unknown' is those the census could not establish. SiStat blanks a cell "
+                  "of very few people for confidentiality; such people are left out. Slovenia's "
+                  "census has been register-based since 2011 and has not asked the question since "
+                  "2002."),
     "religion": ("Religion (veroizpoved), Census 2002 (31 March 2002), the whole population, one "
                  "answer; 'Believer, no church' believes but belongs to no religious community; "
                  "'Not stated' did not want to reply; 'Unknown' could not be established. SiStat "
@@ -167,7 +169,7 @@ def build() -> list[dict[str, Any]]:
         raise SystemExit(f"slovenia_census: {len(names)} municipalities, not {EXPECTED_2002}")
 
     counts: dict[str, dict[str, dict[str, float]]] = {}
-    suppressed = {"religion": 0.0, "language": 0.0}
+    suppressed = {"religion": 0.0, "language": 0.0, "ethnicity": 0.0}
     for name in [national, *names]:
         e, r, lang = ethnic[name], religion[name], language[name]
         total = e["POPULATION"]
@@ -175,15 +177,22 @@ def build() -> list[dict[str, Any]]:
         if key not in census_total or abs(census_total[key] - total) > 0.5:
             raise SystemExit(f"slovenia_census: {name}: 05W1002S counts {total:,.0f}, 05W1001S "
                              f"{census_total.get(key)}")
-        if abs(e["Declared - total"] - e["Declared -Slovenes"] - e["Declared -others"]) > 0.5 or \
-                abs(total - e["Declared - total"] - e["Undeclared"] - e["Did not want to reply"]
-                    - e["Unknown"]) > 0.5:
+        parts = ("Declared -Slovenes", "Declared -others", "Undeclared", "Did not want to reply",
+                 "Unknown")
+        blank = [k for k in parts if k not in e]
+        short = total - sum(e.get(k, 0.0) for k in parts)
+        # A blank cell (confidentiality) may leave the rows a few people short;
+        # nothing else is accepted.
+        if short < -0.5 or short > (max(10, 0.002 * total) if blank else 0.5):
             raise SystemExit(f"slovenia_census: {name}: ethnic rows do not partition {e}")
+        if blank and short > 0.5:
+            suppressed["ethnicity"] += short
+            log(f"  {name}: ethnicity {short:,.0f} people in blanked cells {blank}")
         named = {g: minority[g].get(name, 0.0) for g in MINORITIES.values()}
-        other = e["Declared -others"] - sum(named.values())
+        other = e.get("Declared -others", 0.0) - sum(named.values())
         if other < -0.5:
             raise SystemExit(f"slovenia_census: {name}: the three minorities exceed 'others'")
-        eth = {label: e[k] for k, label in ETHNICITY.items()}
+        eth = {label: e.get(k, 0.0) for k, label in ETHNICITY.items()}
         eth.update(named)
         eth["Other"] = other
         for field, cells, wanted, totals in (
@@ -220,7 +229,8 @@ def build() -> list[dict[str, Any]]:
         counts[name] = {"ethnicity": eth, "religion": rel, "language": lan, "total": {"": total}}
     check_sum((counts[n]["total"][""] for n in names), counts[national]["total"][""],
               "municipalities against Slovenia")
-    log(f"  people in blanked cells, all municipalities: religion {suppressed['religion']:,.0f}, "
+    log(f"  people in blanked cells, all municipalities: ethnicity "
+        f"{suppressed['ethnicity']:,.0f}, religion {suppressed['religion']:,.0f}, "
         f"mother tongue {suppressed['language']:,.0f}")
     for group in MINORITIES.values():
         check_sum((minority[group].get(n, 0.0) for n in names), minority[group][national],

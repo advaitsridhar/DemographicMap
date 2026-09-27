@@ -87,10 +87,15 @@ def municipalities(year: int) -> list[str]:
     """Today's municipality codes (Vienna as its 23 Gemeindebezirke)."""
     blob = http_get(DATA.format(year=year, part="_C-GRGEMAKT-0"), binary=True)
     rows = csv.DictReader(io.StringIO(blob.decode("utf-8-sig")), delimiter=";")
-    codes = sorted(row["code"].split("-")[-1] for row in rows)
-    if not all(re.fullmatch(r"\d{5}", c) for c in codes):
-        raise SystemExit(f"austria_census: codes that are not five digits: "
-                         f"{[c for c in codes if not re.fullmatch(r'[0-9]{5}', c)][:10]}")
+    listed = {row["code"].split("-")[-1]: row["name"] for row in rows}
+    codes = sorted(c for c in listed if re.fullmatch(r"\d{5}", c))
+    others = {c: n for c, n in listed.items() if c not in codes}
+    if others:
+        # The list carries a code for the country as a whole beside the
+        # municipalities; nothing else is expected.
+        log(f"  not municipalities, left out: {others}")
+        if len(others) > 1:
+            raise SystemExit(f"austria_census: unexpected non-municipal codes {others}")
     return codes
 
 
