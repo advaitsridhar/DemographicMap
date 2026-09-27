@@ -1,10 +1,19 @@
-greece_age: Eurostat single years of age for Greece's decentralized administrations
-  demo_r_d2jan, 2025: 11 regions
-  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 95.4 men per 100 women
-  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 99.0 men per 100 women
-  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 99.5 men per 100 women
-  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 100.8 men per 100 women
-  Egean (EL41+EL42): 534,963, median 44.5, 107.7 men per 100 women
-  Mount Athos: 1,746 residents in 2021, 1,746 men, 0 women
-  wrote data/processed/greece_age.json (12 kB)
-  wrote greece_age.json: 7 records
+bosnia_age: Popis 2013, age and sex
+  FR_T1_B.xlsx: 21,226 bytes
+  FR_T2_B.xlsx: 84,622 bytes
+  country: 3,531,159, median 39.9 from single years
+  Federation of Bosnia and Herzegovina: median 38.6
+  Republika Srpska: median 42.4
+  Brčko District: median 40.5
+  Una-Sana Canton: median 36.4
+  Posavina Canton: median 41.8
+  Tuzla Canton: median 38.9
+  Zenica-Doboj Canton: median 38.0
+  Bosnian-Podrinje Canton Goražde: median 42.6
+  Central Bosnia Canton: median 37.5
+  Herzegovina-Neretva Canton: median 40.1
+  West Herzegovina Canton: median 38.3
+  Sarajevo Canton: median 39.3
+  Canton 10: median 42.1
+  wrote data/processed/bosnia_age.json (27 kB)
+  wrote bosnia_age.json: 15 records
