@@ -1,74 +1,27 @@
-== js https://www.worldvaluessurvey.org/WVSOnline.jsp (?:AJ[A-Za-z]+|[A-Za-z]+[.]jsp[?]?[A-Za-z=]*|online[A-Za-z]*) 30
-  HTTP 200 text/html;charset=utf-8 12,459 bytes
-  5 scripts; inline hits:
-  ~ png" href="favicon.png"> <META CONTENT="WVS Data ArchiveJDS,Survey, JDSurvey, online data analysis, encuestas,WVS Database,World Values Survey Data-Archive" NAME="k
-  ~ ata-Archive" NAME="keywords"> <META CONTENT="World Values Survey Data-Archive Online Survey analysis website" NAME="description"> <meta http-equiv="Content-Type" 
-  ~ ink href="css/reset.css" rel="stylesheet" type="text/css"> <link href="css/ajtypography.css" rel="stylesheet" type="text/css"> <link href="css/sub.css?version=202
-  ~ css/custom_search.css" rel="stylesheet" type="text/css"> <link href="css/ajWVS.css?version=2020-07-22" rel="stylesheet" type="text/css"> <script type='text/
-  ~ dialogBox=false; var dialogDiv=""; function Home() { datos.action="wvs.jsp"; datos.submit(); } function SetContent(clave) { datos.CMSID.value=cl
-  ~  datos.action="WVS"+clave.substring(1)+".jsp"; } else { datos.action="WVSContents.jsp"; } datos.submit(); } function jdAddCssStyle(nombre,estilo) { if
-  ~ 2000; jdAddCssStyle(".body","width:"+w+"px !important;"); jdAddCssStyle(".AJPage","width:"+w+"px !important;"); jdAddCssStyle(".AJFoot","width:"+w+"px !impor
-  ~ "); jdAddCssStyle(".AJPage","width:"+w+"px !important;"); jdAddCssStyle(".AJFoot","width:"+w+"px !important;"); jdAddCssStyle(".bodyFrame","width:"+w+"px !im
-  ~ le(".bodyFrame","width:"+w+"px !important;"); } </script> <div class="AJHead"></div> <div id=PAGE class="AJPage"> <div class=AJFondo> <div id="page_
-  ~ ript> <div class="AJHead"></div> <div id=PAGE class="AJPage"> <div class=AJFondo> <div id="page_content"> <div id="content_container" style="padding-rig
-  ~ style="padding:0px;width:700px;"> <iframe id="frame1" name="frame1" src="AJOnline.jsp?WAVE=&COUNTRY=" style="width:700px;border:0px;" frameborder="0" sc
-  ~ " title="WVS interesting links">WVS links</a></li> --> <!-- <li><a href="WVSSiteMap.jsp" title="Site Map">Site Map</a></li> --> <!-- <li><a href="WVSNewsEventsM
-  ~ WVSSiteMap.jsp" title="Site Map">Site Map</a></li> --> <!-- <li><a href="WVSNewsEventsMap.jsp" title="News and events index">Index of news & events</a></li> --> <!-- 
-  ~  and events index">Index of news & events</a></li> --> <!-- <li><a href="WVSPublicationsMap.jsp" title="Publications index">Index of publications</a></li> --> <!-- <li>
-  ~ Publications index">Index of publications</a></li> --> <!-- <li><a href="WVSSupport.jsp" title="Send support request">Support</a></li> --> <!-- </ul> --> <!-- 
-  ~ hidden name=DOID> <input type=hidden name=INID> <input type=hidden name=AJArchive value="WVS Data Archive"> <input type=hidden name=EdFunction> <input type=hid
-  ~ JavaScript> function SetPubDoc(id) { datos.PUB.value=id; datos.action="WVSPublicationsDocuments.jsp"; datos.target="_top"; datos.submit(); } function SetPubBook(id) { 
-  ~ mit(); } function SetPubBook(id) { datos.PUB.value=id; datos.action="WVSPublicationsBooks.jsp"; datos.target="_top"; datos.submit(); } function SetPubPaper(id) { 
-  ~ it(); } function SetPubPaper(id) { datos.PUB.value=id; datos.action="WVSPublicationsPapers.jsp"; datos.target="_top"; datos.submit(); } function SetPubPres(id) { 
-  ~ mit(); } function SetPubPres(id) { datos.PUB.value=id; datos.action="WVSPublicationsPresentations.jsp"; datos.target="_top"; datos.submit(); } </script> <script> 
-  ~  geodatos=encodeURIComponent("128.24.161.32\tx\tx\tx\tx\tx\tx\tx"); $.get("jdsStatJD.jsp?ID="+geodatos+ "&url=http%3A%2F%2F192.168.33.22%3A8380%2FWVSOnline.jsp&refere
-  ~ et("jdsStatJD.jsp?ID="+geodatos+ "&url=http%3A%2F%2F192.168.33.22%3A8380%2FWVSOnline.jsp&referer=null&cms=%23online", function (resp2) { }); </script
-  -- https://www.worldvaluessurvey.org/js/jds.js HTTP 200 11,083 bytes
-  ~ vento.returnValue=false; } else { evento.which= 0; } } } function AJReturn(evento) { var key=evento.keyCode? evento.keyCode : evento.charCode; if (key
-  ~ Code : evento.charCode; if (key ==13) { datos.submit(); } } function AJRefresh() { datos.submit(); } function SetDivPosition(midiv,xtop,xleft) { midiv.s
-  ~ urn -1; } function DescargarLic(xId) { datos.FIC.value=xId; datos.action="latLicense.jsp"; datos.submit(); } function DescargarLic2(lblWarning1,lblWarning2) { if 
-  ~ { wtslog6('wts311547','4',this,'LAT:DWNDOCS.'+fichero,'4'); } catch (mensaje) { } } function ShowDocDC(fichero,titulo) { ShowAviso(); anotaAcceso(
-  ~ wDocDC(fichero,titulo) { ShowAviso(); anotaAcceso(fichero); datos.action="latDownloadFileDC.jsp"; datos.FIC.value=fichero; datos.FICNAME.value=titulo; datos.submit(); 
-  ~ wnloadDocUrl(fichero) { ShowAviso(); anotaAcceso(fichero); datos.action="latDownloadFile.jsp"; datos.FIC.value=fichero; datos.submit(); setTimeout(function(){datos.
-  ~ hero=xnombre; anotaAcceso(fichero); datos.FIC.value=xId; datos.action="latDownloadDoc.jsp"; datos.submit(); setTimeout(function(){datos.action="";datos.target="";},3
-  ~ ShowAviso() { } function ShowNew(xId) { datos.ID.value=xId; datos.action="WVSNewsShow.jsp"; datos.submit(); } function SetUrl(cad) { datos.action="http://"+cad; 
-  ~  SetParticipant(idpar) { try { datos.INID.value=idpar; datos.action="WVSParticipants.jsp"; datos.target=""; datos.submit(); } catch (mensaje) { alert("Se
-  -- https://www.worldvaluessurvey.org/maps/FusionCharts.js HTTP 200 83,125 bytes
-  ~ },"{ startOpened: true }")}}},!1)}})(); FusionCharts(["private","modules.mantle.ajax",function(){var a=this,f=window,g=parseFloat(navigator.appVersion.split("MSIE")
-  ~ hOffAutoHideShow:function(){N=!1},ua:q,getFlashPlayerVersion:function(){return{major:q.pv[0],minor:q.pv[1],release:q.pv[2]}},hasFlashPlayerVersion:l,createSWF:funct
-  -- https://www.worldvaluessurvey.org/js/jquery.tools.min.js HTTP 200 118,965 bytes
-  ~ ll("left")}catch(a){setTimeout(ma,1);return}c.ready()}}function Qa(a,b){b.src?c.ajax({url:b.src,async:false,dataType:"script"}):c.globalEval(b.text||b.textContent||
-  ~ ;if(b)if(c.isFunction(b)){d=b;b=null}else if(typeof b==="object"){b=c.param(b,c.ajaxSettings.traditional);f="POST"}var j=this;c.ajax({url:a,type:f,dataType:"html",data:b,co
-  ~ ction(d){return{name:b.name,value:d}}):{name:b.name,value:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b
-  ~ eturn{name:b.name,value:d}}):{name:b.name,value:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b){c.fn[b]
-  ~ e:b.name,value:d}}):{name:b.name,value:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b){c.fn[b]=function(d){
-  ~ e:d}}):{name:b.name,value:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b){c.fn[b]=function(d){return thi
-  ~ me:b.name,value:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b){c.fn[b]=function(d){return this.bind(b,d)}
-  ~ lue:a}}).get()}});c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a,b){c.fn[b]=function(d){return this.bind(b,d)}});c.exte
-  ~ f=f||d;d=b;b={}}return c.ajax({type:"POST",url:a,data:b,success:d,dataType:f})},ajaxSetup:function(a){c.extend(c.ajaxSettings,a)},ajaxSettings:{url:location.href, globa
-  -- https://www.worldvaluessurvey.org/js/grid/dhtmlxcommon.js HTTP 200 16,475 bytes
-  ~ s},window[a].prototype=d.prototype,c&&dhtmlXHeir(window[a].prototype,c)}; dhtmlxAjax={get:function(a,b){var c=new dtmlXMLLoaderObject(!0);c.async=arguments.length<3
-  -- https://www.worldvaluessurvey.org/js/grid/dhtmlxtabbar.js HTTP 200 30,092 bytes
-  ~ "iframe":case "iframes-on-demand":this.cells(a)._delay=["url",b,!1];break;case "ajax":var c=this.cells(a), d=this;c._delay=["urlajax",b,!0];if(!c.attachHTMLStringA)
-  ~ ipt){var g=b[e].match(/<script[^>]*src\s*=\s*("|')([^"']+)("|')/); if(g)f=dhtmlxAjax.getSync(g[2]).xmlDoc.responseText;f&&window.execScript(f)}else window.eval(f)}}
-== grep https://www.pewresearch.org/dataset/western-europe-survey-dataset/ (?:log.?in|sign.?in|download|region|account|register) 15
-  HTTP 200 text/html; charset=UTF-8 334,438 bytes
-  ~ alAddress","streetAddress":"901 E St NW","addressLocality":"Washington","addressRegion":"DC","postalCode":"20004","addressCountry":"US"},"sameAs":["https://x.com/pewr
-  ~ orage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","H
-  ~ ourceURL=wp-block-button-inline-css */ </style> <style id="prc-platform-dataset-download-style-inline-css"> .wp-block-prc-platform-dataset-download{padding:0}.is-logged
-  ~ c-datasets/build/download-block/style-index.css */ </style> <style id="prc-user-accounts-user-state-style-inline-css"> .wp-block-prc-user-accounts-user-state.is-prehyd
-  ~ ww.pewresearch.org/my-account"><span class="wp-block-navigation-item__label">My Account</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a
-  ~ cially recognized religious organizations, in some cases levying the tax on all registered members.</p> </div> </article> </li><li class="wp-block-post post-71
-  ~ ign-to-gutter wp-container-21 is-position-sticky"><h2 class="prc-card__heading">Download Dataset</h2><div class="prc-card__content"><div style="margin-top:0" class="wp-
-  ~ r(--wp--preset--spacing--50)"> <form data-wp-context="{&quot;formId&quot;:&quot;login-email&quot;,&quot;formPostId&quot;:0,&quot;formName&quot;:&quot;In Western Euro
-  ~ k="prc-user-accounts/content-gate::actions.markAsReturning" href="#login-email">Login</a></p> </div> </div><div class="hidden" data-state-child="returning" data-wp-
-  ~ -text="state.formMessage"></span></strong>. Please check your inbox to continue signing in.</p> <div class="wp-block-buttons prc-login-success-message__actions is-
-  ~ ","completeProfile":"https://www.pewresearch.org/my-account/complete-profile/","signInRedirect":"https://www.pewresearch.org/dataset/western-europe-survey-dataset/"}}
-== grep https://www.thearda.com/data-archive?fid=ISSP08 (?:download|register|log.?in|region|agree) 20
-  HTTP 200 text/html; charset=utf-8 278,955 bytes
-  ~ ted to American and international religion are available for online preview and download"> <meta name="generator" content="Joomla! - Open Source Content Management"> 
-  ~ n/national-profiles" target="_self"><img src="/images-megamenus/arda-mega-thumb-regions.jpg" class="imgfade" loading="lazy" alt="World Religion menu, Regions menu ite
-  ~ ega-thumb-regions.jpg" class="imgfade" loading="lazy" alt="World Religion menu, Regions menu item"></a></div><div class="subnav-grid-title"><a href="/world-religion/n
-  ~ iv class="subnav-grid-subtitle"><a href="/data-archive/metadata" target="_self">Download Machine Readable Cataloging (MARC) Files Containing Extensive Metadata on the A
-  ~ "><a href="/data-archive/metadata" target="_self">Download Machine Readable Cataloging (MARC) Files Containing Extensive Metadata on the ARDA's 1000+ Survey Data Set
-  ~  Characteristics of States Dataset Project - Demographics v. 2.0 (RCS-Dem 2.0), REGIONS ONLY</OPTION> <OPTION VALUE="RELGCOPE">Religious Coping in Iran</OPTION> <OP
+== js https://www.atlasofeuropeanvalues.eu/maptool.html (?:[a-zA-Z0-9_/.-]+[.](?:json|csv|geojson|topojson)|nuts[a-zA-Z0-9_]*|regional[a-zA-Z]*) 40
+  HTTP 200 text/html; charset=UTF-8 70,881 bytes
+  8 scripts; inline hits:
+  (no match)
+  -- https://www.googletagmanager.com/gtag/js?id=G-SC80DKH22N HTTP 200 525,932 bytes
+  ~ AddCookieDeprecationLabel")),a(lU(vG,"taskAddEventProvenance")),a(lU(wG,"taskAddRegionalNonPersonalizedAdData")),a(lU(GG,"taskAddUachParams")),a(lU(HG,"taskCheckGoogleOwnedAndOperated")),a(
+  -- https://www.atlasofeuropeanvalues.eu/js/jquery-3.7.1.min.js HTTP 200 87,533 bytes
+  ~  this[e]=!0,e}}),ce.ajaxPrefilter("json jsonp",function(e,t,n){var r,i,o,a=!1!==e.jsonp&&(Zt.test(e.url)?"url":"string"==typeof e.data&&0===(e.contentType||"").indexO
+  ~ lways(function(){void 0===i?ce(ie).removeProp(r):ie[r]=i,e[r]&&(e.jsonpCallback=t.jsonpCallback,Kt.push(r)),o&&v(i)&&i(o[0]),o=i=void 0}),"script"}),le.createHTMLDocu
+  -- https://www.atlasofeuropeanvalues.eu/js/flags.js?v1 HTTP 200 1,209 bytes
+  (no match)
+  -- https://www.atlasofeuropeanvalues.eu/js/atlas-mobile.js HTTP 200 908 bytes
+  (no match)
+  -- https://www.atlasofeuropeanvalues.eu/js/charts/Chart4.min.js HTTP 200 205,361 bytes
+  (no match)
+  -- https://www.atlasofeuropeanvalues.eu/js/atlasmapaction.js?v6 HTTP 200 10,427 bytes
+  (no match)
+  -- https://www.atlasofeuropeanvalues.eu/js/jquery-ui.min.js HTTP 200 253,668 bytes
+  ~ -datepicker-current-day",this._dayOverClass="ui-datepicker-days-cell-over",this.regional=[],this.regional[""]={closeText:"Done",prevText:"Prev",nextText:"Next",currentT
+  -- https://www.atlasofeuropeanvalues.eu/js/autocomplete_multiple.js HTTP 200 1,287 bytes
+  (no match)
+== links https://europeanvaluesstudy.eu/methodology-data-documentation/data-downloads/ (?:download|gesis|ZA[0-9]+|online|analys) 40
+  HTTP 404 text/html; charset=UTF-8 290,881 bytes
+  Page not found – European Values Study Skip to content Search for: Search Search Home News About EVS Menu Toggle Organization Menu Toggle Council of Program Directors Executive committee Scientific Committee EVS Foundation National Partners Sponsoring and funding Menu Toggle Sponsors of the 2008 survey Sponsors of the 2017 survey Contact Surveys Menu Toggle EVS Surveys 1981-2026 Menu Toggle EVS Su
+== head https://search.gesis.org/research_data/ZA7500 
+  HTTP 403 text/html; charset=UTF-8 5,659 bytes
+  Just a moment... Enable JavaScript and cookies to continue
