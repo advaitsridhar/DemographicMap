@@ -69,21 +69,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 35902,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 40286,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 36.8,
+      "value": 38.5,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 101.8,
+      "value": 102.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -97,9 +97,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -111,9 +111,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B4103585132621",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (18,112 males, 17,790 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (20,353 males, 19,923 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-1100",
@@ -127,21 +127,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 4569,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 4609,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 39.0,
+      "value": 40.2,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 97.6,
+      "value": 98.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -155,9 +155,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -169,9 +169,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B41148599816454",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (2,257 males, 2,312 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,289 males, 2,317 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-1300",
@@ -185,21 +185,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 15691,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 20724,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.3,
+      "value": 37.1,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
       "value": 98.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -213,9 +213,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -227,9 +227,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B25721014671193",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (7,773 males, 7,918 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,265 males, 10,456 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-1400",
@@ -243,21 +243,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 29371,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 32398,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.2,
+      "value": 36.4,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 100.5,
+      "value": 105.3,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -271,9 +271,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -287,9 +287,9 @@
     "aliases": [
       "Hafnarfjarðarbær"
     ],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (14,725 males, 14,646 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (16,606 males, 15,772 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-1604",
@@ -303,21 +303,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 10514,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 13772,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.5,
+      "value": 37.1,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 107.5,
+      "value": 108.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -331,9 +331,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -345,9 +345,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B92465939344192",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (5,448 males, 5,066 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,174 males, 6,595 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-1606",
@@ -419,21 +419,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 17732,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 22697,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 33.6,
+      "value": 35.6,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 113.3,
+      "value": 116.4,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -447,9 +447,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -461,9 +461,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B48140939724428",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (9,418 males, 8,314 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,206 males, 10,485 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-2300",
@@ -477,21 +477,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 3326,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 819,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 33.9,
+      "value": 47.4,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 110.9,
+      "value": 154.3,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -505,9 +505,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -519,9 +519,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B76002453234506",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,749 males, 1,577 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (497 males, 322 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-2503",
@@ -651,21 +651,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1269,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1896,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.4,
+      "value": 35.8,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 110.1,
+      "value": 108.6,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -679,9 +679,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -693,9 +693,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B53257850023541",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (665 males, 604 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (987 males, 909 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3000",
@@ -709,21 +709,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 7225,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 8440,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.5,
+      "value": 36.3,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 105.5,
+      "value": 104.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -737,9 +737,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -751,9 +751,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B30892314657027",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (3,710 males, 3,515 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (4,303 males, 4,131 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3506",
@@ -825,21 +825,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 656,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 805,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 40.6,
+      "value": 43.5,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 105.6,
+      "value": 116.1,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -853,9 +853,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -867,9 +867,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B64770191202242",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (337 males, 319 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (432 males, 372 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3609",
@@ -883,21 +883,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 3745,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 4082,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.6,
+      "value": 40.3,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 112.5,
+      "value": 112.4,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -911,9 +911,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -925,9 +925,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B50787148750106",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,983 males, 1,762 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,160 males, 1,922 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3709",
@@ -941,21 +941,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 884,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 857,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.1,
+      "value": 38.2,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 106.5,
+      "value": 113.5,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -969,9 +969,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -983,9 +983,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B76246482597042",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (456 males, 428 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (455 males, 401 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3710",
@@ -1173,21 +1173,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1637,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1669,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 36.0,
+      "value": 38.6,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 106.4,
+      "value": 111.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1201,9 +1201,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1215,9 +1215,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B30460955116065",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (844 males, 793 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (881 males, 788 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-3811",
@@ -1231,21 +1231,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 666,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 653,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 44.1,
+      "value": 44.8,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 115.5,
+      "value": 110.6,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1259,9 +1259,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1273,9 +1273,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B70126368142347",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (357 males, 309 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (343 males, 310 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-4100",
@@ -1289,21 +1289,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 943,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1003,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.5,
+      "value": 39.2,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 114.3,
+      "value": 110.7,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1317,9 +1317,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1331,9 +1331,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B6311767935335",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (503 males, 440 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (527 males, 476 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-4200",
@@ -1347,21 +1347,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 3709,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 3987,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.3,
+      "value": 38.1,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 105.6,
+      "value": 108.6,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1375,9 +1375,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1389,9 +1389,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B55108803715122",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,905 males, 1,804 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,073 males, 1,909 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-4502",
@@ -1579,21 +1579,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 196,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 219,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 42.0,
+      "value": 41.9,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 117.8,
+      "value": 125.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1607,9 +1607,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1621,9 +1621,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B7322015257461",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (106 males, 90 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (122 males, 97 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-4901",
@@ -1753,21 +1753,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 449,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 422,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 43.3,
+      "value": 45.6,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 108.8,
+      "value": 111.0,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1781,9 +1781,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1795,9 +1795,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B90835463390859",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (234 males, 215 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (222 males, 200 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-5200",
@@ -1872,20 +1872,20 @@
     },
     "population": {
       "value": 1190,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 40.3,
+      "value": 44.0,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 94.4,
+      "value": 100.7,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -1899,9 +1899,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -1913,9 +1913,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B78038893235430",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (578 males, 612 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (596 males, 592 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-5604",
@@ -1987,21 +1987,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 480,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 450,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.5,
+      "value": 39.6,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 103.4,
+      "value": 106.4,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2015,9 +2015,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2029,9 +2029,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B17586381133924",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (244 males, 236 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (232 males, 218 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-5611",
@@ -2219,21 +2219,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 18789,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 20284,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 36.5,
+      "value": 37.8,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 99.8,
+      "value": 102.3,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2247,9 +2247,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2263,9 +2263,9 @@
     "aliases": [
       "Akureyrarkaupstaður"
     ],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (9,384 males, 9,405 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,251 males, 10,020 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6100",
@@ -2279,21 +2279,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 3278,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 3017,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 41.6,
+      "value": 39.8,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 134.8,
+      "value": 110.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2307,9 +2307,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2321,9 +2321,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B18729557885943",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,882 males, 1,396 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,586 males, 1,431 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6250",
@@ -2337,21 +2337,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 2011,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1969,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 44.9,
+      "value": 43.9,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 102.7,
+      "value": 102.5,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2365,9 +2365,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2379,9 +2379,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B2207988314752",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,019 males, 992 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (996 males, 972 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6400",
@@ -2395,21 +2395,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1889,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1925,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.8,
+      "value": 39.1,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 105.8,
+      "value": 103.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2423,9 +2423,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2437,9 +2437,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B31014041409595",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (971 males, 918 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (977 males, 947 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6513",
@@ -2453,21 +2453,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1012,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1206,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 39.7,
+      "value": 38.2,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 100.0,
+      "value": 102.0,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2481,9 +2481,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2495,9 +2495,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B64056494481770",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (506 males, 506 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (609 males, 597 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6515",
@@ -2569,21 +2569,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 482,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 517,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.4,
+      "value": 37.9,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 142.2,
+      "value": 112.8,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -2597,9 +2597,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -2611,9 +2611,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B70204278120324",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (283 males, 199 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (274 males, 243 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-6602",
@@ -3091,21 +3091,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 661,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 633,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 42.5,
+      "value": 42.4,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 100.9,
+      "value": 97.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3119,9 +3119,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3133,9 +3133,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B85031335132444",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (332 males, 329 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (312 males, 321 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-7505",
@@ -3439,21 +3439,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 2299,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 2631,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 35.8,
+      "value": 34.7,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 110.5,
+      "value": 110.0,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3467,9 +3467,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3483,9 +3483,9 @@
     "aliases": [
       "Sveitarfélagið Hornafjörðu"
     ],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,207 males, 1,092 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,378 males, 1,253 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8200",
@@ -3499,21 +3499,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 8964,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 12671,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 36.4,
+      "value": 37.0,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 102.9,
+      "value": 103.4,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3527,9 +3527,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3541,9 +3541,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B44443724675216",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (4,547 males, 4,417 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,437 males, 6,226 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8508",
@@ -3731,21 +3731,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1801,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 2142,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.0,
+      "value": 37.1,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 108.7,
+      "value": 107.6,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3759,9 +3759,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3773,9 +3773,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B21062297179388",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (938 males, 863 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,110 males, 1,032 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8614",
@@ -3789,21 +3789,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1599,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1966,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 39.1,
+      "value": 39.4,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 99.6,
+      "value": 110.3,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3817,9 +3817,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3831,9 +3831,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B57462919825437",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (798 males, 801 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,031 males, 935 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8710",
@@ -3905,21 +3905,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 2554,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 3344,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 40.7,
+      "value": 38.8,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 101.9,
+      "value": 101.6,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3933,9 +3933,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -3947,9 +3947,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B51739533992730",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,289 males, 1,265 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,685 males, 1,659 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8717",
@@ -3963,21 +3963,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 2106,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 2907,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.1,
+      "value": 37.7,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 112.3,
+      "value": 118.2,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -3991,9 +3991,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -4005,9 +4005,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B93058264602287",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (1,114 males, 992 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,575 males, 1,332 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8719",
@@ -4079,21 +4079,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 679,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 667,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.9,
+      "value": 38.6,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 149.6,
+      "value": 112.1,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -4107,9 +4107,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -4121,9 +4121,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B10209439874100",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (407 males, 272 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (352 males, 314 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8721",
@@ -4137,21 +4137,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1115,
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "value": 1453,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 33.2,
+      "value": 33.0,
       "unit": "years",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 104.2,
+      "value": 100.7,
       "unit": "males_per_100_females",
-      "year": 2017,
-      "source": "Statistics Iceland, MAN09000"
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
     },
     "religion": {
       "status": "not_available"
@@ -4165,9 +4165,9 @@
     "sources": [
       {
         "field": "population/median age/sex ratio",
-        "name": "Statistics Iceland, MAN09000",
-        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
-        "year": 2017
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
       }
     ],
     "country": "ISL",
@@ -4179,9 +4179,9 @@
     "match_by": "shape_id",
     "shape_id": "244011B85102906551816",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (569 males, 546 females).",
-    "population_note": "Registered residents on 1 December 2017. The municipality as it stood in 2017, which is the unit the map draws; it has since been merged."
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (729 males, 724 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
   },
   {
     "id": "ISL-HAG-2017-8722",
@@ -4305,12 +4305,12 @@
       "status": "not_available"
     },
     "population": {
-      "value": 11211,
+      "value": 13842,
       "year": 2026,
       "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 38.3,
+      "value": 37.5,
       "unit": "years",
       "year": 2026,
       "source": "Statistics Iceland, MAN02005"
@@ -4342,7 +4342,7 @@
     "match_by": "shape_id",
     "shape_id": "53860390B32173012790841",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the region's municipalities, which Hagstofa numbers by region.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (5,863 males, 5,342 females).",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,241 males, 6,595 females).",
     "population_note": "Registered residents on 1 January 2026. Summed from the region's municipalities, which Hagstofa numbers by region."
   },
   {
@@ -4513,18 +4513,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 36570,
+      "value": 33939,
       "year": 2026,
       "source": "Statistics Iceland, MAN02005"
     },
     "median_age": {
-      "value": 37.0,
+      "value": 37.3,
       "unit": "years",
       "year": 2026,
       "source": "Statistics Iceland, MAN02005"
     },
     "sex_ratio": {
-      "value": 108.4,
+      "value": 108.3,
       "unit": "males_per_100_females",
       "year": 2026,
       "source": "Statistics Iceland, MAN02005"
@@ -4550,7 +4550,7 @@
     "match_by": "shape_id",
     "shape_id": "53860390B85658391135359",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the region's municipalities, which Hagstofa numbers by region.",
-    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (19,020 males, 17,539 females).",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,642 males, 16,286 females).",
     "population_note": "Registered residents on 1 January 2026. Summed from the region's municipalities, which Hagstofa numbers by region."
   },
   {

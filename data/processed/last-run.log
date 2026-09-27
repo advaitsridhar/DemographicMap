@@ -1,20 +1,12 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
-  om7005rr: 96 territories in 1 s
-  om7009rr: sex totals for 96 territories in 1 s
-  79 districts, national 5,409,407
-  districts against Slovakia: parts sum to 5,409,407 = 5,409,407
-  districts against SK010: parts sum to 739,635 = 739,635
-  districts against SK021: parts sum to 565,462 = 565,462
-  districts against SK022: parts sum to 562,536 = 562,536
-  districts against SK023: parts sum to 661,995 = 661,995
-  districts against SK031: parts sum to 684,190 = 684,190
-  districts against SK032: parts sum to 607,581 = 607,581
-  districts against SK041: parts sum to 810,075 = 810,075
-  districts against SK042: parts sum to 777,933 = 777,933
-  om7009rr: the country's single years in 27 s
-  national median 43.5 (1 January 2026) against Eurostat's 43.0 a year earlier (SK); 2026 is not published yet
-  national median: recomputed 43.5, om7005rr 43.5
-  slovakia: 0 office units unbound
-  slovakia: 0 polygons without an office unit
-  wrote data/processed/slovakia_okres.json (159 kB)
-  wrote slovakia_okres.json: 79 records
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
+  74 municipalities on 1 December 2017
+  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
+    office units with no polygon (1): Vestmannaeyjabær (8000)
+  53 of 74 municipalities are the same territory today; renumbered: ['Sveitarfélagið Hornafjörður 7708->8401']; number taken by a merger: ['Tálknafjarðarhreppur 4604: 1,243 against 245']; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
+  1 January 2018 in today's division against 1 December 2017: largest gaps Grundarfjarðarbær 3.5%, Skorradalshreppur 3.6%, Norðurþing 3.6%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%
+  merged municipalities, 1 December 2017 against today's in 1 January 2018: Eastern Region 9,751/9,650, Northeastern Region 2,034/1,977, Northwestern Region 5,510/5,469, Southern Peninsula 3,384/3,335, Western Region 1,237/1,215, Westfjords 1,268/1,243
+  summed into the region the map draws them in, not their number's: ['Sveitarfelagid Hornafjordur (Eastern Region, numbered in Southern Region)']
+    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
+  wrote data/processed/iceland_municipality.json (156 kB)
+  wrote iceland_municipality.json: 81 records
