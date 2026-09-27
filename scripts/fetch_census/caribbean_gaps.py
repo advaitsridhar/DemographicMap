@@ -35,7 +35,7 @@ from typing import Any
 
 from ._shared import (NOT_AVAILABLE, PROCESSED, gap, log, record,
                       write_json)
-from .bahamas_census import ISLANDS, RUM_CAY
+from .bahamas_census import ISLANDS
 from .binding import fold
 from common import NOT_APPLICABLE  # noqa: E402  (on the path _shared sets)
 
@@ -87,8 +87,6 @@ BAHAMAS_SPLIT = ("The Bahamas' 2010 census tabulates age, sex, religion and raci
 BAHAMAS_UNCOUNTED = ("The Bahamas' 2010 census tabulates by island and, within the larger "
                      "islands, by its own supervisory districts; this unit of the map's "
                      "second-level drawing is neither, so nothing is written for it.")
-RUM_CAY_NOTE = ("Rum Cay has no 2010 island report; Table 2.0 of the others gives only its "
-                "count and sexes.")
 REDONDA = "Redonda is uninhabited; the census counts no one there."
 
 
@@ -122,9 +120,7 @@ def main() -> int:
         for shape in units("BHS", level):
             notes = {"language": LANGUAGE["BHS"]}
             name = fold(shape["name"])
-            if name == fold(RUM_CAY[1]):
-                notes.update({f: RUM_CAY_NOTE for f in ("median_age", "religion", "ethnicity")})
-            elif name not in whole:
+            if name not in whole:
                 why = BAHAMAS_SPLIT if level == "admin1" else BAHAMAS_UNCOUNTED
                 fields = ("median_age", "sex_ratio", "religion", "ethnicity")
                 notes.update({f: why for f in fields + (("population",) if level == "admin2"

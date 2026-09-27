@@ -14,12 +14,15 @@ Grand Bahama and Exuma as several districts each; an island's figures are
 none of those districts'. Thirteen islands the map draws whole: New
 Providence, Acklins, the Berry Islands, the Biminis, Cat Island, Crooked
 Island (with Long Cay), Harbour Island, Inagua, Long Island, Mayaguana,
-Ragged Island, San Salvador and Spanish Wells; Rum Cay, which has no report
-of its own, has Table 2.0's count and sexes.
+Ragged Island, San Salvador and Spanish Wells; and Rum Cay, which has no
+report of its own: San Salvador's prints Rum Cay's age table (4.17) beside its
+own (4.18), and its religion and racial group only for the two together (Tables
+7.0 and 8.0 are "San Salvador & Rum Cay"), so both islands' religion and racial
+group are written as gaps saying so.
 
 What this writes:
 
-* **The first-level districts**: religion, for the thirteen. (Their median
+* **The first-level districts**: religion, for the islands drawn whole. (Their median
   age and sex ratio are caribbean_uscb.py's and their racial groups uscb.py's,
   both from the Census Bureau's tabulation of the same census.)
 * **The second-level units**, a separate drawing whose islands carry the
@@ -47,7 +50,8 @@ import re
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from .binding import fold
 from .redatam import median_age
 
@@ -73,8 +77,15 @@ ISLANDS = {
     "Ragged Island": ("RAGGED-ISLAND-2010-CENSUS-REPORT.pdf", "RAGGEDISLAND", "Ragged Island"),
     "San Salvador": ("SAN-SALVADOR-2010-CENSUS-REPORT.pdf", "SANSALVADOR", "San Salvador"),
     "Spanish Wells": ("SPANISH-WELLS-2010-CENSUS-REPORT.pdf", "SPANISHWELLS", "Spanish Wells"),
+    # Rum Cay has no report of its own: San Salvador's carries its age table
+    # (4.17) beside San Salvador's (4.18).
+    "Rum Cay": ("SAN-SALVADOR-2010-CENSUS-REPORT.pdf", "RUMCAY", "Rum Cay"),
 }
-RUM_CAY = ("RUMCAY", "Rum Cay")
+# The islands whose religion and race tables their report prints together.
+COMBINED = {"San Salvador": "Rum Cay", "Rum Cay": "San Salvador"}
+COMBINED_NOTE = ("The 2010 census's report prints {a}'s religion and racial group together "
+                 "with {b}'s (Tables 7.0 and 8.0 are San Salvador & Rum Cay), so neither "
+                 "island's is written.")
 RELIGION = {
     "anglican": "Anglican", "assembliesofgod": "Assemblies of God", "baptist": "Baptist",
     "brethren": "Brethren", "churchofgod": "Church of God",
@@ -129,7 +140,12 @@ def after(lines: list[str], title: str, island: str | None = None) -> list[str]:
             if island is None:
                 inside = True
             elif named:
-                inside = fold(island).startswith(named) or named.startswith(fold(island))
+                # "bimini" names the Biminis and "crookedislandandlongcay" Crooked
+                # Island; "sansalvadorrumcay" names two islands and neither alone.
+                rest = named[len(fold(island)):] if named.startswith(fold(island)) else None
+                inside = fold(island).startswith(named) or (
+                    rest is not None and not any(rest.startswith(fold(r))
+                                                 for _, r, _ in ISLANDS.values()))
             # A continuation title naming no island continues the table before it.
             continue
         if flat.startswith("table") and inside and not flat.startswith(fold(title)):
@@ -174,16 +190,19 @@ def table_4_5(lines: list[str], island: str | None = None) -> dict[str, Any]:
             break
         if flat == "allages":
             whole = figures
-        elif flat == "underoneyear":
+        elif flat in ("underoneyear", "under1year"):
             ages[0] += total
         elif flat == "notstated":
             unstated = total
+        elif m := re.fullmatch(r"(\d+)years?(?:and)?over", flat):
+            # "90 YEARS AND OVER", or San Salvador's "90-YEARS&OVER".
+            ages[int(m[1])] += total
         elif "-" in label:
             groups.append((label, total))
         elif re.fullmatch(r"\d+", flat):
             ages[int(flat)] += total
-        elif m := re.fullmatch(r"(\d+)yearsandover", flat):
-            ages[int(m[1])] += total
+        else:
+            raise SystemExit(f"bahamas_census: age row {label!r} is not one this reads")
     if whole is None:
         raise SystemExit("bahamas_census: Table 4.x has no ALL AGES row")
     if sum(ages.values()) + unstated != whole[0]:
@@ -264,17 +283,22 @@ def main() -> int:
     admin2 = {fold(u["name"]): u for u in json.loads((SITE / "admin2" / "BHS.units.json").read_text())}
     records = []
     counts_2_0: dict[str, tuple[int, int, int]] = {}
+    read: dict[str, list[str]] = {}
     for district, (report, row, unit2) in ISLANDS.items():
-        lines = report_lines(report)
+        lines = read.setdefault(report, report_lines(report) if report not in read else [])
         counts_2_0 = table_2_0(lines) or counts_2_0
         island = counts_2_0.get(fold(row))
         age = table_4_5(lines, row)
-        religion_total, religion = composition(lines, "TABLE7.0", RELIGION, 9, row)
-        race_total, race = composition(lines, "TABLE8.0", RACE, 11, row)
+        if district in COMBINED:
+            religion_total, religion = race_total, race = (island and island[0]), None
+        else:
+            religion_total, religion = composition(lines, "TABLE7.0", RELIGION, 9, row)
+            race_total, race = composition(lines, "TABLE8.0", RACE, 11, row)
         if island is None or {island[0], age["total"], religion_total, race_total} != {island[0]}:
             raise SystemExit(f"bahamas_census: {district}: Table 2.0 {island}, ages "
                              f"{age['total']}, religions {religion_total}, races {race_total}")
-        log(f"  {district}: {island[0]:,} in Table 2.0, the age table, religions and races")
+        log(f"  {district}: {island[0]:,} in Table 2.0 and the age table"
+            + ("" if district in COMBINED else ", religions and races"))
         source = f"{SOURCE}: {district}"
         url = BASE + report
         rel_note = ("Religion, 2010 (Table 7.0 of the island's report). The smaller "
@@ -284,10 +308,21 @@ def main() -> int:
         shape1 = admin1.get(fold(district))
         if shape1 is None:
             raise SystemExit(f"bahamas_census: {district} has no first-level polygon")
+        if district in COMBINED:
+            why = COMBINED_NOTE.format(a=district, b=COMBINED[district])
+            compositions = dict(religion=gap(NOT_AVAILABLE, why),
+                                ethnicity=gap(NOT_AVAILABLE, why))
+        else:
+            compositions = dict(religion=present(religion), religion_year=YEAR,
+                                religion_note=rel_note, ethnicity=present(race),
+                                ethnicity_year=YEAR,
+                                ethnicity_note="Racial group, 2010 (Table 8.0 of the "
+                                               "island's report).")
         records.append(record(
             f"BHS-DOS-{fold(district)}", shape1["name"], level="admin1", parent="BHS",
             country="BHS", match_by="shape_id", shape_id=shape1["id"],
-            religion=present(religion), religion_year=YEAR, religion_note=rel_note,
+            **{k: v for k, v in compositions.items() if not k.startswith("ethnicity")
+               or district in COMBINED},
             sources=[{"field": "religion", "name": source, "url": url, "year": YEAR}]))
         if unit2 is None:
             continue
@@ -306,25 +341,9 @@ def main() -> int:
             median_age_note=("Interpolated within the single year holding the middle person "
                              "(Table 4.x of the island's report)" + (f"; {age['unstated']:,} of unstated age left out"
                                               if age["unstated"] else "") + "."),
-            religion=present(religion), religion_year=YEAR, religion_note=rel_note,
-            ethnicity=present(race), ethnicity_year=YEAR,
-            ethnicity_note="Racial group, 2010 (Table 8.0 of the island's report).",
+            **compositions,
             sources=[{"field": "population/sex_ratio/median_age/religion/ethnicity",
                       "name": source, "url": url, "year": YEAR}]))
-    rum = counts_2_0.get(fold(RUM_CAY[0]))
-    shape2 = admin2.get(fold(RUM_CAY[1]))
-    if rum and shape2:
-        source = f"{SOURCE}, Table 2.0"
-        records.append(record(
-            "BHS-DOS-2-rumcay", shape2["name"], level="admin2", parent="BHS", country="BHS",
-            match_by="shape_id", shape_id=shape2["id"],
-            population=measure(rum[0], year=YEAR, source=source),
-            population_note="Everyone the 2010 census counted on Rum Cay (Table 2.0).",
-            sex_ratio=measure(round(1000 * rum[1] / rum[2]), unit="males_per_1000_females",
-                              year=YEAR, source=source),
-            sex_ratio_note="Men per thousand women, 2010 (Table 2.0).",
-            sources=[{"field": "population/sex_ratio", "name": source,
-                      "url": BASE + ISLANDS["San Salvador"][0], "year": YEAR}]))
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {sum(1 for r in records if r['level'] == 'admin1')} districts, "
         f"{sum(1 for r in records if r['level'] == 'admin2')} second-level islands")

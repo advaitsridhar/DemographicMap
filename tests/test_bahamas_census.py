@@ -44,6 +44,15 @@ class Report(unittest.TestCase):
         total, counts = b.composition(RACE, "TABLE8.0", b.RACE, 11)
         self.assertEqual(counts, {"Black": 9, "White": 1})
 
+    def test_a_neighbours_table_and_a_joint_table_are_not_the_islands(self):
+        lines = ["TABLE4.17 RUMCAY", "ALLAGES 3 2 1", "0-4 3 2 1", "1 3 2 1",
+                 "TABLE4.18 SANSALVADOR", "ALLAGES 5 3 2", "0-4 1 1 0", "UNDER1YEAR 1 1 0",
+                 "90-YEARS&OVER 4 2 2", "TABLE 7.0 SANSALVADOR&RUMCAY", "ANGLICAN 8"]
+        self.assertEqual(b.table_4_5(lines, "SANSALVADOR")["ages"], {0: 1, 90: 4})
+        self.assertEqual(b.table_4_5(lines, "RUMCAY")["ages"], {1: 3})
+        self.assertEqual(b.after(lines, "TABLE7.0", "SANSALVADOR"), [])
+        self.assertEqual(b.after(lines, "TABLE7.0", "RUMCAY"), [])
+
     def test_table_2_0_rows_without_thousands_commas(self):
         out = b.table_2_0(["TABLE2.0", "NORTHANDROS 3898 1943 1955 1189",
                            "ACKLINS 565 320 245 209"])
