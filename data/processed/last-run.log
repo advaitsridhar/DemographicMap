@@ -1,50 +1,267 @@
-  retry 1/2 after 2s :: https://web.archive.org/web/20221230185316id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5_VPN-2020.xlsx :: <urlopen error [Errno 111] Connection refused>
-  retry 2/2 after 4s :: https://web.archive.org/web/20221230185316id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5_VPN-2020.xlsx :: <urlopen error [Errno 111] Connection refused>
-== get https://web.archive.org/web/20221230185331id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab4_VPN-2020.xlsx
-  10,371,005 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00c\xe8'
-  https://web.archive.org/web/20221230185331id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab4_VPN-2020.xlsx: 86 sheets: Российская Федерация | Белгородская область | Брянская область | Владимирская область | Воронежская область | Ивановская область | Калужская область | Костромская область | Курская область | Липецкая область | Московская область | Орловская область | Рязанская область | Смоленская область | Тамбовская область | Тверская область | Тульская область | Ярославская область | г. Москва | Республика Карелия | Республика Коми | Архангельская область без АО | Ненецкий автономный округ | Вологодская область | Калининградская область | Ленинградская область | Мурманская область | Новгородская область | Псковская область | г. Санкт-Петербург | Республика Адыгея | Республика Калмыкия | Республика Крым | Краснодарский край | Астраханская область | Волгоградская область | Ростовская область | г. Севастополь | Республика Дагестан | Республика Ингушетия | Кабардино-Балкарская Республика | Карачаево-Черкесская Республика | РСО-Алания | Чеченская Республика | Ставропольский край | Республика Башкортостан | Республика Марий Эл | Республика Мордовия | Республика Татарстан | Удмуртская Республика | Чувашская Республика | Пермский край | Кировская область | Нижегородская область | Оренбургская область | Пензенская область | Самарская область | Саратовская область | Ульяновская область | Курганская область | Свердловская область | Тюменская область без АО | ХМАО | ЯНАО | Челябинская область | Республика Алтай | Республика Тыва | Республика Хакасия | Алтайский край | Красноярский край | Иркутская область | Кемеровская область - Кузбасс | Новосибирская область | Омская область | Томская область | Республика Бурятия | Республика Саха(Якутия) | Забайкальский край | Камчатский край | Приморский край
-  -- sheet 'Российская Федерация': 24088 rows x 10 cols
-    r0: 4. ВЛАДЕНИЕ ЯЗЫКАМИ И ИСПОЛЬЗО |  |  |  |  |  |  | 
-    r1:  |  |  |  |  |  |  | 
-    r2: Российская Федерация |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  | Городское и сельское население |  | Городское население |  | Сельское население |  | 
-    r5:  | Численность лиц, владеющих соо | из них используют его в повсед | Численность лиц, владеющих соо | из них используют его в повсед | Численность лиц, владеющих соо | из них используют его в повсед | 
-    r6: Указавшие владение языком |  |  |  |  |  |  | 
-    r7: Указанные населением языки вла |  |  |  |  |  |  | 
-    r8: Указавшие владение языком | 135125671 | 134623178 | 98688597 | 98421943 | 36437074 | 36201235 | 
-    r9: Указанные населением языки вла | 156681236 | 147836260 | 111200469 | 105287711 | 45480767 | 42548549 | 
-    r10: Абазинский | 30194 | 28576 | 7631 | 6781 | 22563 | 21795 | 
-    r11: Абхазский | 4255 | 2567 | 3485 | 2105 | 770 | 462 | 
-== get https://web.archive.org/web/20221230185316id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5_VPN-2020.xlsx
-  108,107 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00A7'
-  https://web.archive.org/web/20221230185316id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5_VPN-2020.xlsx: 1 sheets: РФ
-  -- sheet 'РФ': 382 rows x 57 cols
-    r0: 5. ВЛАДЕНИЕ ЯЗЫКАМИ НАСЕЛЕНИЕМ |  |  |  |  |  |  | 
-    r1:  |  |  |  |  |  |  | 
-    r2: Российская Федерация |  |  |  |  |  |  | 
-    r3:  |  |  |  |  |  |  | 
-    r4:  |  | Все население | из них |  |  |  | 
-    r5:  |  |  | Русские | Казаки | Татары | Кряшены | Чеченцы
-    r6:  | Указавшие владение языком | 135125671 | 104756962 | 50268 | 4682533 | 29911 | 1648030
-    r7:  | Указанные населением языки вла | 156681236 | 111295744 | 55819 | 7698440 | 54462 | 3091460
-    r8:  | Абазинский | 30194 | 332 | - | 10 | - | 7
-    r9:  | Абхазский | 4255 | 596 | - | 6 | - | 9
-    r10:  | Аварский | 654363 | 1873 | 3 | 99 | - | 2411
-    r11:  | Авестийский | 4 | 1 | - | - | - | -
-== get https://web.archive.org/web/20241117042519id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5.xlsx
-  313,704 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\x04n'
-  https://web.archive.org/web/20241117042519id_/https://rosstat.gov.ru/storage/mediabank/Tom5_tab5.xlsx: 46 sheets: Краснодарский край | г. Краснодар | г. Анапа | г. Армавир | г. Геленджик | г. Горячий Ключ | г. Новороссийск | г. Сочи | пгт Сириус | Абинский | Апшеронский | Белоглинский | Белореченский | Брюховецкий | Выселковский | Гулькевичский | Динской | Ейский | Кавказский | Калининский | Каневской | Кореновский | Красноармейский | Крыловский | Крымский | Курганинский | Кущевский | Лабинский | Ленинградский | Мостовский | Новокубанский | Новопокровский | Отрадненский | Павловский | Приморско-Ахтарский | Северский | Славянский | Староминский | Тбилисский | Темрюкский | Тимашевский | Тихорецкий | Туапсинский | Успенский | Усть-Лабинский | Щербиновский
-  -- sheet 'Краснодарский край': 186 rows x 59 cols
-    r0: 5. ВЛАДЕНИЕ ЯЗЫКАМИ НАСЕЛЕНИЕМ |  |  |  |  |  |  | 
-    r1: Краснодарский край |  |  |  |  |  |  | 
-    r2:  |  |  |  |  |  |  | 
-    r3:  | Все население | Указавшие национальную принадл | из них |  |  |  | 
-    r4:  |  |  | Русские | Армяне | Украинцы | Татары | Греки
-    r5:  | 5709012 | 5511577 | 5092086 | 209042 | 29169 | 18788 | 13048
-    r6: Указанные населением языки вла | 6110303 | 5906817 | 5313276 | 299315 | 39026 | 24734 | 16740
-    r7: Абазинский | 92 | 92 | 7 | - | - | - | -
-    r8: Абхазский | 683 | 683 | 99 | 58 | - | 2 | 2
-    r9: Аварский | 645 | 645 | 29 | 3 | - | - | -
-    r10: Агульский | 233 | 233 | 2 | - | - | - | -
-    r11: Адыгейский | 6593 | 6567 | 403 | 19 | 1 | 6 | 1
+== text https://www.atlasofeuropeanvalues.eu/js/atlasmapaction.js 11000
+  HTTP 200 application/javascript; charset=utf-8 10,427 bytes
+  var AtlasMapAction = { path:'/atlas/', lng:'en', unify_legends: false, map_compare: false, lock_wave: false, lock_response_group: false, map_classic_color: "false", map_world_data: "false", dataStruct: false, mapNames: false, manageWave: function() { this.lock_wave = !this.lock_wave; if (this.lock_wave) { jQuery('#lock-wave').show(); jQuery('#select_data_wave_one_form').show(); jQuery('#select_data_wave_two_form').show(); jQuery('#change-wave').hide(); } else { jQuery('#lock-wave').hide(); jQuery('#select_data_wave_one_form').hide(); jQuery('#select_data_wave_two_form').hide(); jQuery('#change-wave').show(); } }, manageResponseGroup: function() { this.lock_response_group = !this.lock_response_group; if (this.lock_response_group) { jQuery('#lock-response-group').show(); jQuery('#select_response_group_one_form').show(); jQuery('#select_response_group_two_form').show(); jQuery('#change-response-group').hide(); } else { jQuery('#lock-response-group').hide(); jQuery('#select_response_group_one_form').hide(); jQuery('#select_response_group_two_form').hide(); jQuery('#change-response-group').show(); } }, changeColorCode: function() { if (this.map_classic_color == "false") { this.map_classic_color = "true"; jQuery("#evalue-color-code").show(); jQuery("#change-color-code").hide(); } else { this.map_classic_color = "false"; jQuery("#change-color-code").show(); jQuery("#evalue-color-code").hide(); } this.constructIframeUrl(); }, changeDataSpan: function() { if (this.map_world_data == "false") { this.map_world_data = "true"; jQuery("#europe-data").show(); jQuery("#world-data").hide(); } else { this.map_world_data = "false"; jQuery("#world-data").show(); jQuery("#europe-data").hide(); } this.constructIframeUrl(); }, compareMaps: function() { this.map_compare = true; jQuery('#main').css({'width':'100%'}); jQuery('#map2-holder').show(); jQuery('#map-one').css({'width':'100%'}); jQuery('#map1-holder').css({'width':'calc(50% - 4px)'}); jQuery('#compare-maps').hide(); jQuery('#single-map').show(); jQuery('#map_config').val("compare"); this.unifyLegends(false); }, singleMap: function() { this.map_compare = false; jQuery('#main').css({'width':'85%'}); jQuery('#map2-holder').hide(); jQuery('#map-one').css({'width':'100%'}); jQuery('#map1-holder').css({'width':'100%'}); jQuery('#compare-maps').show(); jQuery('#single-map').hide(); jQuery('#unify-legends').hide(); jQuery('#separate-legends').hide(); jQuery('#map_config').val("single"); this.constructIframeUrl(); }, unifyLegends: function(change = true) { if ( change ) this.unify_legends = !this.unify_legends; if ( this.unify_legends && this.map_compare ) { jQuery('#separate-legends').show(); jQuery('#unify-legends').hide(); } if ( !this.unify_legends && this.map_compare ) { jQuery('#separate-legends').hide(); jQuery('#unify-legends').show(); } this.constructIframeUrl(); }, constructIframeUrl: function() { if ( this.map_compare && this.unify_legends ) { map_two_link = AtlasMapAction.path+'map.php?'; map_two_link += 'map='+jQuery('#select_map_two').val(); map_two_link += '&c='+AtlasMapAction.map_classic_color; map_two_link += '&world='+AtlasMapAction.map_world_data; map_two_link += '&map_wave='+jQuery('#select_data_wave_two').val(); map_two_link += '&map_response_group='+jQuery('#select_response_group_two').val(); map_two_link += '&main_map='+jQuery('#select_map_one').val(); map_two_link += '&main_map_wave='+jQuery('#select_data_wave_one').val(); map_two_link += '&main_map_response_group='+jQuery('#select_response_group_one').val(); map_two_link += '&lng='+AtlasMapAction.lng; map_two_link += '&if=2'; if ( jQuery('#map-two').attr('src') != map_two_link ) { jQuery('#map-two').attr('src', map_two_link); } map_one_link = AtlasMapAction.path+'map.php?'; map_one_link += 'map='+jQuery('#select_map_one').val(); map_one_link += '&c='+AtlasMapAction.map_classic_color; map_one_link += '&world='+AtlasMapAction.map_world_data; map_one_link += '&map_wave='+jQuery('#select_data_wave_one').val(); map_one_link += '&map_response_group='+jQuery('#select_response_group_one').val(); map_one_link += '&main_map='+jQuery('#select_map_two').val(); map_one_link += '&main_map_wave='+jQuery('#select_data_wave_two').val(); map_one_link += '&main_map_response_group='+jQuery('#select_response_group_two').val(); map_one_link += '&lng='+AtlasMapAction.lng; map_one_link += '&if=1'; if ( jQuery('#map-one').attr('src') != map_one_link ) { jQuery('#map-one').attr('src', map_one_link); } } else if ( this.map_compare && !this.unify_legends ) { map_two_link = AtlasMapAction.path+'map.php?'; map_two_link += 'map='+jQuery('#select_map_two').val(); map_two_link += '&c='+AtlasMapAction.map_classic_color; map_two_link += '&world='+AtlasMapAction.map_world_data; map_two_link += '&map_wave='+jQuery('#select_data_wave_two').val(); map_two_link += '&map_response_group='+jQuery('#select_response_group_two').val(); map_two_link += '&lng='+AtlasMapAction.lng; map_two_link += '&if=2'; if ( jQuery('#map-two').attr('src') != map_two_link ) { jQuery('#map-two').attr('src', map_two_link); } map_one_link = AtlasMapAction.path+'map.php?'; map_one_link += 'map='+jQuery('#select_map_one').val(); map_one_link += '&c='+AtlasMapAction.map_classic_color; map_one_link += '&world='+AtlasMapAction.map_world_data; map_one_link += '&map_wave='+jQuery('#select_data_wave_one').val(); map_one_link += '&map_response_group='+jQuery('#select_response_group_one').val(); map_one_link += '&lng='+AtlasMapAction.lng; map_one_link += '&if=1'; if ( jQuery('#map-one').attr('src') != map_one_link ) { jQuery('#map-one').attr('src', map_one_link); } } else { map_one_link = AtlasMapAction.path+'map.php?'; map_one_link += 'map='+jQuery('#select_map_one').val(); map_one_link += '&c='+AtlasMapAction.map_classic_color; map_one_link += '&world='+AtlasMapAction.map_world_data; map_one_link += '&map_wave='+jQuery('#select_data_wave_one').val(); map_one_link += '&map_response_group='+jQuery('#select_response_group_one').val(); map_one_link += '&lng='+AtlasMapAction.lng; map_one_link += '&if=1'; if ( jQuery('#map-one').attr('src') != map_one_link ) { jQuery('#map-one').attr('src', map_one_link); } } }, sendSearch:function( map_index = 'one' ) { var search_string = jQuery('#keyword_map_'+map_index).val(); //if ( search_string == "" ) { // return false; //} var wave = jQuery('#select_data_wave_'+map_index).val(); var response_group = jQuery('#select_response_group_'+map_index).val(); jQuery.ajax({ type: "POST", url:AtlasMapAction.path+"webservice.php", data: '{"func":"map_search", "search_string": "'+search_string+'", "wave":"'+wave+'", "response_group":"'+response_group+'", "lang":"'+AtlasMapAction.lng+'"}', contentType: "application/json; charset=utf-8", dataType: "json", success: function (res) { callback_response(res) }, error: function (res) { error_response(res) }, async: true }); function callback_response(res) { select_map = jQuery('#select_map_'+map_index); selected_val = select_map.val(); select_map.empty(); for (var map_v_name in res['maps']) { console.log(map_v_name); //long_name = JSON.parse(this.map_long_name); if (map_v_name == selected_val) { $(" ", { val: map_v_name, selected: "selected", text: res['maps'][map_v_name] }).appendTo(select_map); } else { $(" ", { val: map_v_name, text: res['maps'][map_v_name] }).appendTo(select_map); } }; AtlasMapAction.constructIframeUrl(); } function error_response(res) { return; } }, callIframe: function(country_id, iframe, highlight = 0 ) { if ( AtlasMapAction.map_compare === false ) { return; } let iframe_target = 'map-two' if ( iframe == 2 ) { iframe_target = 'map-one' } console.log(iframe); const iframeWin = document.getElementById(iframe_target).contentWindow; if ( highlight == 1 ) { iframeWin.AtlasMap.highlightFeature(country_id); } else { iframeWin.AtlasMap.resetHighlight(country_id); } } }
+== js https://www.worldvaluessurvey.org/AJOnline.jsp?WAVE=&COUNTRY= (?:[A-Za-z]+[.]jsp|function.[A-Za-z]+) 40 60
+  HTTP 200 text/html;charset=utf-8 10,980 bytes
+  15 scripts; inline hits:
+  ~ ocument.Datos; var dialogBox=false; var dialogDiv=""; function Home() { datos.action="AJOnline.jsp"; } </script> <div 
+  ~ e; var dialogDiv=""; function Home() { datos.action="AJOnline.jsp"; } </script> <div id=PAGE class="AJPage"> <div 
+  ~ =CRUCEX> <script language=JavaScript> var ultIndex=""; function SetCrucex(val) { datos.CRUCEX.value=val; } function SetHome() 
+  ~  function SetCrucex(val) { datos.CRUCEX.value=val; } function SetHome() { $("#PROCESSING").hide(); $("#WVSHOME").show(); 
+  ~ de(); $("#WVSMAP").hide(); $("#WVSSER").hide(); } function SetIndex() { $("#PROCESSING").hide(); $("#WVSHOME").hide(); 
+  ~ de(); $("#WVSMAP").hide(); $("#WVSSER").hide(); } function SetCountries() { $("#PROCESSING").hide(); $("#WVSHOME").hide(); 
+  ~ de(); $("#WVSMAP").hide(); $("#WVSSER").hide(); } function SetQuestion() { $("#PROCESSING").hide(); $("#WVSHOME").hide(); 
+  ~ ow(); $("#WVSMAP").hide(); $("#WVSSER").hide(); } function SetMaps() { $("#PROCESSING").hide(); $("#WVSHOME").hide(); 
+  ~ de(); $("#WVSMAP").show(); $("#WVSSER").hide(); } function SetSeries() { $("#PROCESSING").hide(); $("#WVSHOME").hide(); 
+  ~ de(); $("#WVSMAP").hide(); $("#WVSSER").show(); } function SetProcessing() { $("#WVSHOME").hide(); $("#WVSINDEX").hide(); 
+  ~ ; $("#WVSSER").hide(); $("#PROCESSING").show(); } function ShowWave(wave) { datos.MAIDX.value=""; datos.WAVE.value=wave; 
+  ~ .MAIDX.value=""; datos.WAVE.value=wave; datos.action="AJOnlineCountries.jsp"; datos.target="WVSCOU_FRM"; datos.submit(); SetC
+  ~ rget=""; //setTimeout(function(){LoadIndex()},30); } function ShowWaveCountry(wave,country) { datos.WAVE.value=wave; datos.COUNTRY.
+  ~ os.submit(); datos.action=""; datos.target=""; } function LoadIndex() { datos.action="AJOnlineIndex.jsp"; datos.target="W
+  ~ os.target=""; } function LoadIndex() { datos.action="AJOnlineIndex.jsp"; datos.target="WVSINDEX_FRM"; datos.submit(); ul
+  ~ s.WAVE.value; datos.action=""; datos.target=""; } function ShowIndex() { datos.COUNTRY.value=""; if (ultIndex!=datos.WAVE.
+  ~  SetIndex(); datos.action=""; datos.target=""; } function ShowCountries() { datos.action="AJOnlineCountries.jsp"; datos.targe
+  ~ Countries(); datos.action=""; datos.target=""; } function ShowQuestion(cad) { SetProcessing(); if (cad!=null) datos.MAIDX.va
+  ~ ; if (cad!=null) datos.MAIDX.value=cad; datos.action="AJOnlineQtn.jsp"; datos.target="WVSQTN_FRM"; datos.submit(); // Se
+  ~ tQuestion(); datos.action=""; datos.target=""; } function ShowMaps() { SetProcessing(); datos.action="AJOnlineMap.jsp"; 
+  ~  function ShowMaps() { SetProcessing(); datos.action="AJOnlineMap.jsp"; datos.target="WVSMAP_FRM"; datos.submit(); // S
+  ~  SetMaps(); datos.action=""; datos.target=""; } function ShowSeries() { SetProcessing(); datos.action="AJOnlineSer.jsp"; 
+  ~ unction ShowSeries() { SetProcessing(); datos.action="AJOnlineSer.jsp"; datos.target="WVSSER_FRM"; datos.submit(); // S
+  ~  SetSeries(); datos.action=""; datos.target=""; } function SetSamplesSel(saids,amids,satitulos) { datos.AMIDS.value=amids; dat
+  ~ DS.value=saids; datos.SATITULOS.value=satitulos; } function autoResizeChild(idFrame,newHeight){ try { if ($("#"+idFrame).height(
+  ~ catch(message) { alert("ERROR"+message); } } function autoResize() { try { miHeight=document.body.scrollHeight; 
+  ~  } catch (mensaje) { alert("AR:"+mensaje); } } function Inicia() { try { autoResize(); } catch (mensaje) 
+  ~ saje); } } setTimeout(function(){Inicia()},30); function MoveQtnMae(direccion,maidx) { datos.MAIDX.value=maidx; retur
+  ~ atos.MAIDX.value=maidx; return MoveQtn(direccion); } function MoveQtn(direccion) { try { SetProcessing(); var objDoc = 
+  ~ on SetPubDoc(id) { datos.PUB.value=id; datos.action="WVSPublicationsDocuments.jsp"; datos.target="_top"; datos.submit(); } function
+  ~ n SetPubBook(id) { datos.PUB.value=id; datos.action="WVSPublicationsBooks.jsp"; datos.target="_top"; datos.submit(); } function
+  ~  SetPubPaper(id) { datos.PUB.value=id; datos.action="WVSPublicationsPapers.jsp"; datos.target="_top"; datos.submit(); } function
+  ~ n SetPubPres(id) { datos.PUB.value=id; datos.action="WVSPublicationsPresentations.jsp"; datos.target="_top"; datos.submit(); } </script>
+  ~ omponent("48.217.227.84\tx\tx\tx\tx\tx\tx\tx"); $.get("jdsStatJD.jsp?ID="+geodatos+ "&url=http%3A%2F%2F192.168.33.22%3A838
+  ~ ="+geodatos+ "&url=http%3A%2F%2F192.168.33.22%3A8380%2FAJOnline.jsp&referer=null&cms=", function (resp2) { }); 
+  -- https://www.worldvaluessurvey.org/js/dtree/jquery/jquery.min.js HTTP 200 93,436 bytes
+  ~ /*! jQuery v1.8.2 jquery.com | jquery.org/license */ (function(a,b){function G(a){var b=F[a]={};return p.each(a.split(s),fun
+  ~ y v1.8.2 jquery.com | jquery.org/license */ (function(a,b){function G(a){var b=F[a]={};return p.each(a.split(s),function(a,c){b[c
+  ~ =F[a]={};return p.each(a.split(s),function(a,c){b[c]=!0}),b}function J(a,c,d){if(d===b&&a.nodeType===1){var e="data-"+c.replace(I,
+  ~ ?p.parseJSON(d):d}catch(f){}p.data(a,c,d)}else d=b}return d}function K(a){var b;for(b in a){if(b==="data"&&p.isEmptyObject(a[b]))c
+  ~ mptyObject(a[b]))continue;if(b!=="toJSON")return!1}return!0}function ba(){return!1}function bb(){return!0}function bh(a){return!a||
+  ~ ue;if(b!=="toJSON")return!1}return!0}function ba(){return!1}function bb(){return!0}function bh(a){return!a||!a.parentNode||a.parent
+  ~ rn!1}return!0}function ba(){return!1}function bb(){return!0}function bh(a){return!a||!a.parentNode||a.parentNode.nodeType===11}func
+  ~ n bh(a){return!a||!a.parentNode||a.parentNode.nodeType===11}function bi(a,b){do a=a[b];while(a&&a.nodeType!==1);return a}function b
+  ~ unction bi(a,b){do a=a[b];while(a&&a.nodeType!==1);return a}function bj(a,b,c){b=b||0;if(p.isFunction(b))return p.grep(a,function(a
+  ~ &&a.nodeType!==1);return a}function bj(a,b,c){b=b||0;if(p.isFunction(b))return p.grep(a,function(a,d){var e=!!b.call(a,d,a);return
+  ~ eturn p.grep(a,function(a,d){return p.inArray(a,b)>=0===c})}function bk(a){var b=bl.split("|"),c=a.createDocumentFragment();if(c.cr
+  ~ ateElement)while(b.length)c.createElement(b.pop());return c}function bC(a,b){return a.getElementsByTagName(b)[0]||a.appendChild(a.o
+  ~ Name(b)[0]||a.appendChild(a.ownerDocument.createElement(b))}function bD(a,b){if(b.nodeType!==1||!p.hasData(a))return;var c,d,e,f=p.
+  ~ event.add(b,c,h[c][d])}g.data&&(g.data=p.extend({},g.data))}function bE(a,b){var c;if(b.nodeType!==1)return;b.clearAttributes&&b.cl
+  ~ text!==a.text&&(b.text=a.text),b.removeAttribute(p.expando)}function bF(a){return typeof a.getElementsByTagName!="undefined"?a.getE
+  ~  a.querySelectorAll!="undefined"?a.querySelectorAll("*"):[]}function bG(a){bv.test(a.type)&&(a.defaultChecked=a.checked)}function b
+  ~ unction bG(a){bv.test(a.type)&&(a.defaultChecked=a.checked)}function bY(a,b){if(b in a)return b;var c=b.charAt(0).toUpperCase()+b.s
+  ~ =bW.length;while(e--){b=bW[e]+c;if(b in a)return b}return d}function bZ(a,b){return a=b||a,p.css(a,"display")==="none"||!p.contains
+  ~ p.css(a,"display")==="none"||!p.contains(a.ownerDocument,a)}function b$(a,b){var c,d,e=[],f=0,g=a.length;for(;f<g;f++){c=a[f];if(!
+  ~ =bP.exec(b);return d?Math.max(0,d[1]-(c||0))+(d[2]||"px"):b}function ca(a,b,c,d){var e=c===(d?"border":"content")?4:b==="width"?1:0
+  ~ &(f+=parseFloat(bH(a,"border"+bV[e]+"Width"))||0));return f}function cb(a,b,c){var d=b==="width"?a.offsetWidth:a.offsetHeight,e=!0,
+  ~ oat(d)||0}return d+ca(a,b,c||(f?"border":"content"),e)+"px"}function cc(a){if(bS[a])return bS[a];var b=p("<"+a+">").appendTo(e.body
+  ~ ),c=bH(b,"display"),e.body.removeChild(bI)}return bS[a]=c,c}function ci(a,b,c,d){var e;if(p.isArray(b))p.each(b,function(b,e){c||ce
+  ~ [a]=c,c}function ci(a,b,c,d){var e;if(p.isArray(b))p.each(b,function(b,e){c||ce.test(a)?d(a,e):ci(a+"["+(typeof e=="object"?b:"")+
+  ~ ==="object")for(e in b)ci(a+"["+e+"]",b[e],c,d);else d(a,b)}function cz(a){return function(b,c){typeof b!="string"&&(c=b,b="*");var
+  ~ ;var d,e,f,g=b.toLowerCase().split(s),h=0,i=g.length;if(p.isFunction(c))for(;h<i;h++)d=g[h],f=/^\+/.test(d),f&&(d=d.substr(1)||"*"
+  ~ d.substr(1)||"*"),e=a[d]=a[d]||[],e[f?"unshift":"push"](c)}}function cA(a,c,d,e,f,g){f=f||c.dataTypes[0],g=g||{},g[f]=!0;var h,i=a[
+  ~ ,d,e,h,g)));return(l||!h)&&!g["*"]&&(h=cA(a,c,d,e,"*",g)),h}function cB(a,c){var d,e,f=p.ajaxSettings.flatOptions||{};for(d in c)c[
+  ~ )c[d]!==b&&((f[d]?a:e||(e={}))[d]=c[d]);e&&p.extend(!0,a,e)}function cC(a,c,d){var e,f,g,h,i=a.contents,j=a.dataTypes,k=a.responseF
+  ~ eak}h||(h=f)}g=g||h}if(g)return g!==j[0]&&j.unshift(g),d[g]}function cD(a,b){var c,d,e,f,g=a.dataTypes.slice(),h=g[0],i={},j=0;a.da
+  ~ sion from "+h+" to "+e}}}h=e}return{state:"success",data:b}}function cL(){try{return new a.XMLHttpRequest}catch(b){}}function cM(){
+  ~ b}}function cL(){try{return new a.XMLHttpRequest}catch(b){}}function cM(){try{return new a.ActiveXObject("Microsoft.XMLHTTP")}catch
+  ~ {return new a.ActiveXObject("Microsoft.XMLHTTP")}catch(b){}}function cU(){return setTimeout(function(){cN=b},0),cN=p.now()}function
+  ~ ction cU(){return setTimeout(function(){cN=b},0),cN=p.now()}function cV(a,b){p.each(b,function(b,c){var d=(cT[b]||[]).concat(cT["*"
+  ~ ]),e=0,f=d.length;for(;e<f;e++)if(d[e].call(a,b,c))return})}function cW(a,b,c){var d,e=0,f=0,g=cS.length,h=p.Deferred().always(func
+  ~ d=cS[e].call(j,a,k,j.opts);if(d)return d}return cV(j,k),p.isFunction(j.opts.start)&&j.opts.start.call(a,j),p.fx.timer(p.extend(i,{
+  ~ ne,j.opts.complete).fail(j.opts.fail).always(j.opts.always)}function cX(a,b){var c,d,e,f,g;for(c in a){d=p.camelCase(c),e=b[d],f=a[
+  ~ ete a[d];for(c in f)c in a||(a[c]=f[c],b[c]=e)}else b[d]=e}}function cY(a,b,c){var d,e,f,g,h,i,j,k,l=this,m=a.style,n={},o=[],q=a.n
+  ~ ,q&&(i.end=i.start,i.start=e==="width"||e==="height"?1:0))}}function cZ(a,b,c,d,e){return new cZ.prototype.init(a,b,c,d,e)}function
+  ~ ction cZ(a,b,c,d,e){return new cZ.prototype.init(a,b,c,d,e)}function c$(a,b){var c,d={height:a},e=0;b=b?1:0;for(;e<4;e+=2-b)c=bV[e
+  -- https://www.worldvaluessurvey.org/js/jds.js HTTP 200 11,083 bytes
+  ~ place(/[\s\xA0]+$/, ""))} String.prototype.startsWith = function(str) {return (this.match("^"+str)==str)} String.prototype.
+  ~ th = function(str) {return (this.match(str+"$")==str)} function JDSReplace(streng, soeg, erstat) { var st = streng; if (soeg.lengt
+  ~ ngth); idx = st.indexOf(soeg); } return st; } function JDSToken(xCadena, xtoken) { if (xCadena == null) { return ""; 
+  ~ se { xRes=xCadena.substring(0,i); } return xRes; } function JDSTokenRemove(xCadena, xtoken) { if (xCadena == null) { return ""; 
+  ~ ena.substring(i+xtoken.length); } return xCadena; } function AbreVentana(xw,xh,xt,xl,xdir,ventana,sc,rs) { var tools="toolbar=no,l
+  ~  if (ventana!="_blank") xwin.focus(); return xwin; } function JDSInt(cad) { var res=parseInt(cad); if(isNaN(res)) { retu
+  ~ NaN(res)) { return 0; } else { return res; } } function JDSKbdInt(evento) { var key=evento.keyCode? evento.keyCode : evento
+  ~ nValue=false; } else { evento.which= 0; } } } function AJReturn(evento) { var key=evento.keyCode? evento.keyCode : evento
+  ~ to.charCode; if (key ==13) { datos.submit(); } } function AJRefresh() { datos.submit(); } function SetDivPosition(midiv,xto
+  ~ t(); } } function AJRefresh() { datos.submit(); } function SetDivPosition(midiv,xtop,xleft) { midiv.style.top=(xtop+document.getEle
+  ~ eft+document.getElementById("PAGE").offsetLeft)+"px"; } function SetOptionDiv(xdiv) { if (dialogBox) return; dialogBox=true; dialog
+  ~ tyle.display="inline"; SetDivPosition(midiv,200,170); } function CancelDiv(xdiv) { dialogBox=false; history.go(0); } function Ca
+  ~ n CancelDiv(xdiv) { dialogBox=false; history.go(0); } function CancelOpt() { dialogBox=false; var midiv=document.getElementById(
+  ~ alogDiv); midiv.style.display="none"; dialogDiv=""; } function AcceptDiv(xopcion) { datos.EdFunction.value=xopcion; datos.submit
+  ~  dialogDiv=""; } function AcceptDiv(xopcion) { datos.EdFunction.value=xopcion; datos.submit(); } function trim(inputString) {
+  ~ ) { datos.EdFunction.value=xopcion; datos.submit(); } function trim(inputString) { if (typeof inputString != "string") { re
+  ~  to the user } // progressively enhance the search box function prepareSearchBox() { var search_box = document.getElementById('q'); s
+  ~ clearSearchBox; search_box.onblur = resetSearchBox; } function clearSearchBox(e) { if (!e) var e = window.event // e refers to the ev
+  ~ rs to the event this.style.backgroundImage = ''; } function resetSearchBox(e) { if (!e) var e = window.event // e refers to the ev
+  ~ f)'; } } // old function, we'll keep it here for now function cleanSlate(textbox, defaultValue) { // if the box contains the defau
+  ~ olour to black textbox.style.color = '#111111'; } function jtrim(inputString) { if (typeof inputString != "string") { re
+  ~ retValue; // Return the trimmed string back to the user } function checkMail() { var x = document.Datos.FAEMAIL.value; var filter =
+  ~ )+$/; if (filter.test(x)) return 0; else return -1; } function DescargarLic(xId) { datos.FIC.value=xId; datos.action="latLicense.js
+  ~  DescargarLic(xId) { datos.FIC.value=xId; datos.action="latLicense.jsp"; datos.submit(); } function DescargarLic2(lblWarning1,
+  ~ { datos.SeccionLic.value="1"; datos.submit(); } } function SetIdioma(idi,clave) { if (idi!=724) idi=0; datos.Idioma.value=id
+  ~ 24) idi=0; datos.Idioma.value=idi; datos.submit(); } function anotaAcceso(fichero) { try { wtslog6('wts311547','4',this,'LAT:D
+  ~ AT:DWNDOCS.'+fichero,'4'); } catch (mensaje) { } } function ShowDocDC(fichero,titulo) { ShowAviso(); anotaAcceso(fichero); 
+  ~ o) { ShowAviso(); anotaAcceso(fichero); datos.action="latDownloadFileDC.jsp"; datos.FIC.value=fichero; datos.FICNAME.value=titulo; 
+  ~ meout(function(){datos.action="";datos.target="";},30); } function DownloadDocUrl(fichero) { ShowAviso(); anotaAcceso(fichero); datos.
+  ~ ) { ShowAviso(); anotaAcceso(fichero); datos.action="latDownloadFile.jsp"; datos.FIC.value=fichero; datos.submit(); setTimeo
+  ~ meout(function(){datos.action="";datos.target="";},30); } function DescargarDoc(xId,xnombre) { ShowAviso(); var fichero=xId; if (xnom
+  ~ aAcceso(fichero); datos.FIC.value=xId; datos.action="latDownloadDoc.jsp"; datos.submit(); setTimeout(function(){datos.action=""
+  ~ meout(function(){datos.action="";datos.target="";},30); } function ShowAviso() { } function ShowNew(xId) { datos.ID.value=xId; dat
+  ~ on="";datos.target="";},30); } function ShowAviso() { } function ShowNew(xId) { datos.ID.value=xId; datos.action="WVSNewsShow.js
+  ~ nction ShowNew(xId) { datos.ID.value=xId; datos.action="WVSNewsShow.jsp"; datos.submit(); } function SetUrl(cad) { datos.acti
+  ~ Id; datos.action="WVSNewsShow.jsp"; datos.submit(); } function SetUrl(cad) { datos.action="http://"+cad; datos.target="_blank
+  ~ meout(function(){datos.action="";datos.target="";},30); } function getBodyHeight() { var body = document.body, html = document.documen
+  ~ tml.scrollHeight, html.offsetHeight ); return height; } function getDivTop(xdiv) { var rect = document.getElementById(xdiv).getBound
+  ~ tById(xdiv).getBoundingClientRect(); return rect.top; } function getDivHeight(xdiv) { var rect = document.getElementById(xdiv).getBound
+  ~ getBoundingClientRect(); return rect.bottom-rect.top; } function getDivWidth(xdiv) { var rect = document.getElementById(xdiv).getBound
+  -- https://www.worldvaluessurvey.org/js/fusioncharts.js HTTP 200 2,447,645 bytes
+  ~ s required by subsequent modules to * extend/scale or add functionality to the FusionCharts object. * @private * * @module fu
+  ~ acy map script notifyLibraryInit = function () {// function to notify init of library var wasReady = global.r
+  ~ dy` of jQuery library and * `Ext.onReady` function of ExtJS library. One should interact with the FusionCharts fr
+  ~ dy} function. One advantage that {@link FusionCharts.ready} function has over * this `ready` event is that the `re
+  ~  * functions passed to the {@link FusionCharts.ready} function is executed even when attached after the * `
+  ~  }, FusionCharts, // recursive function that copies one object into another. merge = function (
+  ~  } } return sink; }; // Function that auto-generates a unique id. global.uniqueId = function
+  ~  suffix. You can call * {@link FusionCharts#resizeTo} function on the chart instance to set the width later on. * 
+  ~ tion. Setting the DOMElement in {@link FusionCharts.render} function overrides * the value set here. * * @param {FusionC
+  ~ g a single chart by its `id` is to use {@link FusionCharts} function itself * but without the `new` operator and by passing t
+  ~ ptions options: {}, /** * The function returns the `DOMElement` that is created inside chart container by 
+  ~  }, /** * Extend FusionCharts functionalities by adding modules and other items. * @private 
+  ~ tion () { var _timer, script; function init() { /* jshint noarg: false */ 
+  ~ ments.callee.done){return;} // flag this function so we don't do the same thing twice arguments
+  ~ imeout(notifyLibraryInit, 1); } function checkInit () { if (hasLoaded.test(doc.readyState)) {
+  ~ ifiedException' }, /** * This function raises the error event after appropriately formatting the paramete
+  ~ n debugger is enabled, it forwards its output to a callback function as explained in * {@link FusionCharts.debugger~debug
+  ~ rameters that can be forwarded to this callback * function can be adjusted based on the `outputFormat` set on the debugger
+  ~ . * * @property {string} verbose - This function formats outputs with all details, and still maintains a human 
+  ~ e eventHandler that indirectly calls * the output function via output helpers whenever any event is raised. */ 
+  ~ function (e, a) { // Verify whether the output function exists or not. if (typeof logger.outputTo !== 'functi
+  ~  * {@link FusionCharts.debugger~debuggerCallback} function needs to be attached to the debugger to which all *
+  ~  * activities of the debgger will be forwarded to a function provided through this method. * * @param
+  ~ llback) { // Check whether the logger is a function or not. If it is a // function, we set a refe
+  ~ tation that you may have. To enable the debugger, call this function and pass a callback that * outputs the message to
+  ~ gger parameter, we // set it to the logger function reference. if (typeof outputTo === 'function') { 
+  ~ mation on this very popular component. This * function fetches the script from their latest stable release channel as ment
+  ~ entifier = objectProtoToString.call([]), isArray = function(obj) { return objectProtoToString.call(obj) === ar
+  ~ , event, args) { // We change the scope of the function with respect to the // object that raised the event
+  ~ * @param {function} eventObject.stopPropagation - Call this function from within a listener to prevent * subsequent
+  ~  of creating, updating, rendering or removing a chart. This function lets you tap into any of these * events and provide yo
+  ~ ype, listener); }, /** * This function allows to register callback functions to be executed when FusionCh
+  ~ vailable. One can attach multiple callbacks by calling this function any * number of time. * * The cal
+  ~ [context={@link FusionCharts}] - In the situation where the function passed via `fn` * parameter needs to be executed in a di
+  ~ not ever // rollback. Thus we redefine the function for performant consumption post readiness. cor
+  ~ tistics is passed to the `type` * parameter, this function would return an object containing all counters, otherwise it retu
+  ~ /^(FusionCharts|FusionWidgets|FusionMaps)/; /** * Function to determine the script base uri for a script name */ 
+  ~ TML')] = scriptText; } // Execute callback function when the script was loaded. if (typeof success === 'func
+  ~ ? str.replace(all ? (/(^|\s)([a-z])/g) : (/(^|\s)([a-z])/), function(m,p1,p2){ return p1 + p2.toUpperCase(); }
+  ~ val of Flash variant of the charts discards the use of this function since * JavaScript are always "active" and does not loos
+  -- https://www.worldvaluessurvey.org/js/fusioncharts.maps.js HTTP 200 268,299 bytes
+  ~ ash wherever needed */ dehashify = function(color) { return color && color.replace(/^#?([a-f0
+  ~ r faster execution remove all validation // as this function will be called internaly function getTransitColor(color
+  ~  // as this function will be called internaly function getTransitColor(colorArr1, colorArr2, transitOffset) { var R1 =
+  ~  }; } //sort color arr function sortFN(a, b) { return a.maxvalue - b.maxvalue; 
+  ~  return a.maxvalue - b.maxvalue; } function getExtremeColors(color) { var hsb = rgbToHSB(color); 
+  ~  //ColorRange parser for gradient ColorRange function ColorRange(options) { var colorRange = options.colorRange
+  ~ } ColorRange.prototype = { getColorObj: function(value) { var colorArr = this.colorArr, 
+  ~ functions */ //scale labe creater function function getScaleLabel(value, isPercent) { if (isPercent) { 
+  ~ radientLegendOptions = lib.configureGradientLegendOptions = function(hcJSON, fcJSON) { var legendObj = hcJSON.legend, 
+  ~  } }; /** @todo create a single function to calculate the text & scale label space for all colorObj */ 
+  ~ point: this }; }; calcPercent = function(num) { return mathRound(num * 100) / 100; }
+  ~  }; lib.rendererRoot.drawGradientLegendItem = function(legend) { var chart = this, paper = ch
+  ~  //various handler sliderDragged = function(xChange, yChange, dx, dy, isSlider1) { var newS
+  ~  } }; sliderDragging = function(dx, dy) { var config = this, 
+  ~  return a; }, /* * Function to check if the element is whose scpoe the function is being 
+  ~  * Function to check if the element is whose scpoe the function is being * called is a descendant of the passed elem
+  ~  this.group = group || rapi.mapGroup; function init() { var ent = this, e
+  ~ rLegacy(); } } function sanitizeEntityOptions(options) { // The entity object cannot hav
+  ~  return options; } function drawLabels () { var ent = this, 
+  ~ notations.addGroup(groupObj); } function destroy() { var ent = this, i
+  ~  delete ent.group; } function initComplete () { if (options.entities.labelsOnTop) { 
+  ~ eConfig[HAS_NEW_DS] = true; } function hasFeature(key) { var ent = this, 
+  ~  return false; } function getDefaultTooltip () { var ent = this, 
+  ~  return tooltip; } function getDisplayValue (labelObj, includeValue, includeUserData) { 
+  ~  return displayValue; } function drawLabelConnectors (connectorArr) { var entity = this, 
+  ~  }); } } function draw () { var entity = this, 
+  ~  return entity; } function setHoverPoint(e) { var entity = this, c
+  ~  entity.legacyEventArgs], e); } function getLabelObject (labelObj, userValue, userDV) { var entity
+  ~  } }; } function drawLabel (annotationsArray) { var entity = this, 
+  ~  * well. * */ function attr (attribute, val) { var svgElems = this.svg
+  ~ ute, val); } } function show () { var svgElems = this.svgElems, 
+  ~ tyAttr); } } function hide () { var entity = this, 
+  ~ tityAttr); } } function entityClick (e) { var entity = this.node.__entity; 
+  ~ nk: link }); } function entityOver (e) { var entity = this.node.__entity, 
+  ~ e over and mouse out events. **/ function addMouseGestures () { var entity = this, 
+  ~  * respectively. */ function setDefaultValues () { var chartMarkerOpts = markerConfig,
+  ~ apes as per their definition. */ function defineMarkersNShapes () { var defineArr = jsonData.definition
+  ~ nector objectd and draw them. */ function drawConnectors () { var showLabels = connectorConfig.sh
+  ~  values associated with them. */ function parseMarkers () { var markerData = jsonData[MARKER_IT
+  ~  } } } function addMarkerItem (options) { var item = options, 
+  -- https://www.worldvaluessurvey.org/js/grid/dhtmlxcommon.js HTTP 200 16,475 bytes
+  ~ lease contact sales@dhtmlx.com to obtain license */ dhtmlx=function(a){for(var b in a)dhtmlx[b]=a[b];return dhtmlx};dhtmlx.extend
+  ~ 0)},postSync:function(a,b){return this.post(a,b,null,!0)}}; function dtmlXMLLoaderObject(a,b,c,d){this.xmlDoc="";this.async=typeof c!="undefined"?c:
+  ~ LoaderObject.count=0; dtmlXMLLoaderObject.prototype.waitLoadFunction=function(a){var b=!0;return this.check=function(){if(a&&a.onloadActi
+  ~ (this.async)this.xmlDoc.onreadystatechange=new this.waitLoadFunction(this);this.xmlDoc.open(b?"POST":"GET",a,this.async);d?(this.xmlD
+  ~ ),b[d].push(this.xmlNodeToJSON(a.childNodes[c])))}return b};function callerFunction(a,b){return this.handler=function(c){if(!c)c=window.event;a
+  ~ }return b};function callerFunction(a,b){return this.handler=function(c){if(!c)c=window.event;a(c,b);return!0}}function getAbsolute
+  ~ s.handler=function(c){if(!c)c=window.event;a(c,b);return!0}}function getAbsoluteLeft(a){return getOffset(a).left} function getAbsoluteTop(a){ret
+  ~ rn!0}}function getAbsoluteLeft(a){return getOffset(a).left} function getAbsoluteTop(a){return getOffset(a).top}function getOffsetSum(a){for(var
+  ~ a).left} function getAbsoluteTop(a){return getOffset(a).top}function getOffsetSum(a){for(var b=0,c=0;a;)b+=parseInt(a.offsetTop),c+=parseInt(
+  ~ rseInt(a.offsetLeft),a=a.offsetParent;return{top:b,left:c}} function getOffsetRect(a){var b=a.getBoundingClientRect(),c=document.body,d=docume
+  ~ f,k=b.left+g-h;return{top:Math.round(i),left:Math.round(k)}}function getOffset(a){return a.getBoundingClientRect?getOffsetRect(a):getOffse
+  ~ n a.getBoundingClientRect?getOffsetRect(a):getOffsetSum(a)} function convertStringToBoolean(a){typeof a=="string"&&(a=a.toLowerCase());switch(a){case "
+  ~ se "yes":case "y":case 1:case !0:return!0;default:return!1}}function getUrlSymbol(a){return a.indexOf("?")!=-1?"&":"?"}function dhtmlDragAndD
+  ~ }function getUrlSymbol(a){return a.indexOf("?")!=-1?"&":"?"}function dhtmlDragAndDropObject(){if(window.dhtmlDragAndDrop)return window.dhtmlDragAndDrop
+  ~ iterateNext();i;)f[f.length]=i,i=h.iterateNext();return f}};function j(){if(!this.catches)this.catches=[];return this}j.prototype.
+  ~ s[e].tagName==b&&(c[c.length]=a[d].childNodes[e]);return c};function dhtmlXHeir(a,b){for(var c in b)typeof b[c]=="function"&&(a[c]=b[c]);re
+  ~ r(var c in b)typeof b[c]=="function"&&(a[c]=b[c]);return a} function dhtmlxEvent(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.atta
+  -- https://www.worldvaluessurvey.org/js/grid/dhtmlxgrid.js HTTP 200 94,466 bytes
+  ~ .replace(/&nbsp;/g," ").replace(/(^[ \t]*)|([ \t]*$)/g,"")};function dhtmlxArray(a){return dhtmlXHeir(a||[],dhtmlxArray._master)} dhtmlxArra
+  ~ (a||[],dhtmlxArray._master)} dhtmlxArray._master={_dhx_find:function(a){for(var b=0;b<this.length;b++)if(a==this[b])return b;retur
+  ~ ms:function(a,b){var c=this[a];this[a]=this[b];this[b]=c}}; function dhtmlXGridObject(a){if(_isIE)try{document.execCommand("BackgroundImageCache"
+  ~ fault";this.entBox.onselectstart=function(){return!1};var d=function(e){var a=document.createElement("TABLE");a.cellSpacing= a.cel
+  ~ }};this.getChangedRows=function(a){var b=[];this.forEachRow(function(c){var d=this.rowsAr[c];if(d.tagName=="TR"){var g=d.childNode
+  ~ xml.s_row+">";if(this.isTreeGrid())this._h2.forEachChildF(0,function(b){var c=this._serializeRow(this.render_row_tree(-1,b.id));a.
+  ~ tHeight)/this._srdh),this.rowsBuffer.length]}}; (function(){function a(a,b){this[a]=b}function b(a,b){this[a].call(this,b)}functio
+  ~ rowsBuffer.length]}}; (function(){function a(a,b){this[a]=b}function b(a,b){this[a].call(this,b)}function c(a,b){this[a].call(this
+  ~ ction a(a,b){this[a]=b}function b(a,b){this[a].call(this,b)}function c(a,b){this[a].call(this,b.join(this.delim))}function d(a,b){
+  ~ is,b)}function c(a,b){this[a].call(this,b.join(this.delim))}function d(a,b){for(var c=0;c<b.length;c++)if(typeof b[c]=="object"){v
+  ~ "){var d=this.getCombo(c),e;for(e in b[c])d.put(e,b[c][e])}}function e(a,b){function c(a,b,d){e[b]||(e[b]=[]);if(typeof d=="object
+  -- https://www.worldvaluessurvey.org/js/grid/dhtmlxgridcell.js HTTP 200 24,181 bytes
+  ~ onent please contact sales@dhtmlx.com to obtain license */ function dhtmlXGridCellObject(a){this.destructor=function(){return this.base=this.grid=th
+  ~ Width=function(){return this.cell.scrollWidth};this.setFont=function(a){fntAr=a.split("-");this.cell.style.fontFamily=fntAr[0];thi
+  ~ Math=function(){return this._val?this.val:this.getValue()}; function eXcell(){this.val=this.obj=null;this.changeState=function(){return
+  ~ t:this.cell.textContent}}eXcell_rotxt.prototype=new eXcell; function dhtmlXGridComboObject(){this.keys=new dhtmlxArray;this.values=new dhtmlxArray;thi
+  ~ s._save[a][0],this.values[a]=this._save[a][1]}};return this}function Hashtable(){this.keys=new dhtmlxArray;this.values=new dhtmlxArray;ret
+  -- https://www.worldvaluessurvey.org/js/grid/ext/dhtmlxgrid_start.js HTTP 200 3,927 bytes
+  ~ onent please contact sales@dhtmlx.com to obtain license */ function dhtmlXGridFromTable(a,d){typeof a!="object"&&(a=document.getElementById(a));var
+  ~ eChild(a);return c}dhtmlXGridObject.prototype._process_html=function(a){if(a.tagName&&a.tagName=="TABLE")return this._process_inne
+  -- https://www.worldvaluessurvey.org/js/grid/ext/dhtmlxgrid_form.js HTTP 200 4,023 bytes
+  ~ rows=[];this._deleted_rows=[];this.attachEvent("onRowAdded",function(b){a._added_rows.push(b);a.forEachCell(b,function(a){a.cell.w
+  ~ RowAdded",function(b){a._added_rows.push(b);a.forEachCell(b,function(a){a.cell.wasChanged=!0});return!0});this.attachEvent("onBefo
+  -- https://www.worldvaluessurvey.org/js/grid/ext/dhtmlxgrid_splt.js HTTP 200 26,654 bytes
+  ~ l)&&this._init_point()}; dhtmlXGridObject.prototype.splitAt=function(e){function m(a){var b=a.wheelDelta/-40;if(a.wheelDelta===win
+  ~ it_point()}; dhtmlXGridObject.prototype.splitAt=function(e){function m(a){var b=a.wheelDelta/-40;if(a.wheelDelta===window.undefine
+  ~ jBox;d.scrollTop+=b*40;a.preventDefault&&a.preventDefault()}function r(a,b){b.style.whiteSpace="";var d=b.nextSibling,c=b.parentNo
+  ~ e.display;a.style.display=b.style.display;b.style.display=e}function o(a,b,d,c){var i=Array(e).join(this.delim),f=[];if(a==2)for(v
+  ~ d",this._correctRowHeight);var s=function(){this.forEachRow(function(a){this._correctRowHeight(a)})};this.attachEvent("onPageChang
+  ~ ._fake.setRowTextNormal(a)};this.getChangedRows=function(a){function b(a){for(var b=0;b<a.childNodes.length;b++)if(a.childNodes[b]
+  ~ sChanged)return d[d.length]= a.idd}var d=[];this.forEachRow(function(c){var e=this.rowsAr[c],f=this._fake.rowsAr[c];if(!(e.tagName
+  -- https://www.worldvaluessurvey.org/js/grid/ext/dhtmlxgrid_nxml.js HTTP 200 10,518 bytes
+  ~ o obtain license */ dhtmlXGridObject.prototype.loadCSVFile=function(b,d){this.load(b,d,"csv")};dhtmlXGridObject.prototype.enableC
+  -- https://www.worldvaluessurvey.org/js/grid/ext/dhtmlxgrid_filter.js HTTP 200 13,077 bytes
+  ~ m to obtain license */ dhtmlXGridObject.prototype.filterBy=function(a,b,c){if(this.isTreeGrid())return this.filterTreeBy(a,b,c);i
+  ~ _isIE)a.style.marginTop="1px";this.attachEvent("onEditCell",function(c,d,g){this._build_m_order();c==2&&this.filters&&(this._m_ord
+  ~ ||0;f<this._cCount;f++){if(this._h2)this._h2.forEachChild(0,function(b){if(c&&e.length==c)return e;d(a,this._get_cell_value(b.buff
+== links https://www.thearda.com/data-archive?fid=ISSP08 (?:download|[.]zip|[.]sav|[.]dta|codebook|fid=) 25
+  HTTP 200 text/html; charset=utf-8 278,955 bytes
+  https://www.thearda.com/data-archive/metadata  [Download Machine Readable Cataloging (MARC) Files Containing Extensive Metadata on the ARD]
+  https://www.thearda.com/data-archive?fid=ISSP08&tab=2  [Codebook]
+  https://www.thearda.com/data-archive?fid=ISSP08&tab=3  [Downloads]
+  (3 links shown)
