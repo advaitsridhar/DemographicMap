@@ -1,1 +1,348 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=45.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=45.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=46.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=46.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+== cdx 41.rosstat.gov.ru/storage/mediabank/
+  20250203153702 application/vnd.openxmlforma    250598 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_1_VPN-2020.xlsx
+  20250203153707 application/vnd.openxmlforma    102863 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_2_VPN-2020.xlsx
+  20250203153709 application/vnd.openxmlforma    147061 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_3_VPN-2020.xlsx
+  20250203153713 application/vnd.openxmlforma    179719 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_4_VPN-2020.xlsx
+  20250203153715 application/vnd.openxmlforma     11861 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_5_VPN-2020.xlsx
+  20250203153701 application/vnd.openxmlforma     11647 https://41.rosstat.gov.ru/storage/mediabank/Tom 10_tab_6_VPN-2020.xlsx
+  20250203145200 application/vnd.openxmlforma     12116 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_1_VPN-2020.xlsx
+  20250203145158 application/vnd.openxmlforma     53479 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_2_VPN-2020.xlsx
+  20250203145203 application/vnd.openxmlforma     88407 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_3_VPN-2020.xlsx
+  20250203145204 application/vnd.openxmlforma     98214 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_4_VPN-2020.xlsx
+  20250203145208 application/vnd.openxmlforma     96219 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_5_VPN-2020.xlsx
+  20250203145157 application/vnd.openxmlforma     81043 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_6_VPN-2020.xlsx
+  20250203145159 application/vnd.openxmlforma     21505 https://41.rosstat.gov.ru/storage/mediabank/Tom 11_tab_7_VPN-2020.xlsx
+  20250203141613 application/vnd.openxmlforma     11473 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_ 9_VPN-2020.xlsx
+  20250203141620 application/vnd.openxmlforma     17374 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_10_VPN-2020.xlsx
+  20250203141618 application/vnd.openxmlforma     18890 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_1_VPN-2020.xlsx
+  20250203141616 application/vnd.openxmlforma     10060 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_2_VPN-2020.xlsx
+  20250203141626 application/vnd.openxmlforma     16581 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_3_VPN-2020.xlsx
+  20250203141626 application/vnd.openxmlforma     28611 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_4_VPN-2020.xlsx
+  20250203141625 application/vnd.openxmlforma     10848 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_5_VPN-2020.xlsx
+  20250203141623 application/vnd.openxmlforma     10917 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_6_VPN-2020.xlsx
+  20250203141614 application/vnd.openxmlforma     10737 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_7_VPN-2020.xlsx
+  20250203141621 application/vnd.openxmlforma     10793 https://41.rosstat.gov.ru/storage/mediabank/Tom 1_tab_8_VPN-2020.xlsx
+  20250203134004 application/vnd.openxmlforma     37252 https://41.rosstat.gov.ru/storage/mediabank/Tom 2_tab_ 1_VPN-2020.xlsx
+  20250203134005 application/vnd.openxmlforma     16079 https://41.rosstat.gov.ru/storage/mediabank/Tom 2_tab_ 2_VPN-2020.xlsx
+  20250203134006 application/vnd.openxmlforma     10018 https://41.rosstat.gov.ru/storage/mediabank/Tom 2_tab_ 3_VPN-2020 .xlsx
+  20250203134011 application/vnd.openxmlforma      9824 https://41.rosstat.gov.ru/storage/mediabank/Tom 2_tab_ 4_VPN-2020.xlsx
+  20250203134013 application/vnd.openxmlforma     25664 https://41.rosstat.gov.ru/storage/mediabank/Tom 2_tab_ 5_VPN-2020.xlsx
+  20250203141640 application/vnd.openxmlforma    137155 https://41.rosstat.gov.ru/storage/mediabank/Tom 3_tab_ 4_VPN-2020.xlsx
+  20250203141641 application/vnd.openxmlforma    235025 https://41.rosstat.gov.ru/storage/mediabank/Tom 3_tab_1_VPN-2020.xlsx
+  20250203141638 application/vnd.openxmlforma    123389 https://41.rosstat.gov.ru/storage/mediabank/Tom 3_tab_2_VPN-2020.xlsx
+  20250203141644 application/vnd.openxmlforma    189147 https://41.rosstat.gov.ru/storage/mediabank/Tom 3_tab_3_VPN-2020 .xlsx
+  20250203151304 application/vnd.openxmlforma     18222 https://41.rosstat.gov.ru/storage/mediabank/Tom 4_tab_ 1_VPN-2020.xlsx
+  20250203151302 application/vnd.openxmlforma    122281 https://41.rosstat.gov.ru/storage/mediabank/Tom 4_tab_ 2_VPN-2020.xlsx
+  20250203151308 application/vnd.openxmlforma    618792 https://41.rosstat.gov.ru/storage/mediabank/Tom 4_tab_ 3_VPN-2020.xlsx
+  20250203151303 application/vnd.openxmlforma    564713 https://41.rosstat.gov.ru/storage/mediabank/Tom 4_tab_ 4_VPN-2020.xlsx
+  20230907011959 application/vnd.openxmlforma     52291 https://41.rosstat.gov.ru/storage/mediabank/Tom 5_tab_ 21_VPN-2020.xlsx
+  20230907012010 application/vnd.openxmlforma    375031 https://41.rosstat.gov.ru/storage/mediabank/Tom 5_tab_10_VPN-2020.xlsx
+  20230907011957 application/vnd.openxmlforma    287856 https://41.rosstat.gov.ru/storage/mediabank/Tom 5_tab_11_VPN-2020.xlsx
+  20230907161643 application/vnd.openxmlforma    138314 https://41.rosstat.gov.ru/storage/mediabank/Tom 5_tab_12_VPN-2020.xlsx
+  40 shown of 88 captured under 41.rosstat.gov.ru/storage/mediabank/
+== cdx 42.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 42.rosstat.gov.ru/storage/mediabank/
+== cdx 43.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 43.rosstat.gov.ru/storage/mediabank/
+== cdx 44.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 44.rosstat.gov.ru/storage/mediabank/
+== cdx 45.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=45.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 46.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=46.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 47.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 47.rosstat.gov.ru/storage/mediabank/
+== cdx 48.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 48.rosstat.gov.ru/storage/mediabank/
+== cdx 49.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 49.rosstat.gov.ru/storage/mediabank/
+== cdx 50.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 50.rosstat.gov.ru/storage/mediabank/
+== cdx 51.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 51.rosstat.gov.ru/storage/mediabank/
+== cdx 52.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 52.rosstat.gov.ru/storage/mediabank/
+== cdx 53.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 53.rosstat.gov.ru/storage/mediabank/
+== cdx 54.rosstat.gov.ru/storage/mediabank/
+  20230808130313 application/vnd.openxmlforma     15289 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.01.xlsx
+  20230808130318 application/vnd.openxmlforma     76764 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.02.xlsx
+  20230808130323 application/vnd.openxmlforma     64304 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.03.xlsx
+  20230808130328 application/vnd.openxmlforma     13309 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.04.xlsx
+  20230808130333 application/vnd.openxmlforma     19254 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.05.xlsx
+  20230808130343 application/vnd.openxmlforma     14129 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.06.xlsx
+  20230809110337 application/vnd.openxmlforma     13330 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.07.xlsx  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=55.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=55.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=56.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=56.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=61.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=61.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=62.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=62.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+
+  20230809110343 application/vnd.openxmlforma     21726 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.08.xlsx
+  20230809110348 application/vnd.openxmlforma     15099 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.09.xlsx
+  20230809110354 application/vnd.openxmlforma     14453 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.10.xlsx
+  20230809110402 application/vnd.openxmlforma     20421 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.11.xlsx
+  20230809110408 application/vnd.openxmlforma     19416 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.12.xlsx
+  20230809110414 application/vnd.openxmlforma     58707 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.13.xlsx
+  20230809110427 application/vnd.openxmlforma     13422 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.14.xlsx
+  20230810094929 application/vnd.openxmlforma     10480 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_IP.actual_info.2016-12-30.002.list.v20170629.15.xlsx
+  20230808125303 application/vnd.openxmlforma      8212 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.0.00.xlsx
+  20230808125312 application/vnd.openxmlforma     11773 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.0.01.1.xlsx
+  20230808125317 application/vnd.openxmlforma     12435 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.0.01.2.xlsx
+  20230808125321 application/vnd.openxmlforma     12266 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.0.01.3.xlsx
+  20230808125308 application/vnd.openxmlforma     12469 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.0.01.xlsx
+  20230808125326 application/vnd.openxmlforma     61620 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.01.xlsx
+  20230808125331 application/vnd.openxmlforma      9529 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.03.xlsx
+  20230808125335 application/vnd.openxmlforma      9551 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.04.xlsx
+  20230808125346 application/vnd.openxmlforma     10276 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.05.xlsx
+  20230808125400 application/vnd.openxmlforma     12971 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.07.1.xlsx
+  20230808125405 application/vnd.openxmlforma     15235 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.07.2.xlsx
+  20230808125411 application/vnd.openxmlforma     15012 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.07.3.xlsx
+  20230808125351 application/vnd.openxmlforma     15212 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.07.xlsx
+  20230808125422 application/vnd.openxmlforma     11125 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.08.1.xlsx
+  20230808125428 application/vnd.openxmlforma     49811 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.08.2.xlsx
+  20230808125435 application/vnd.openxmlforma      9575 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.10.xlsx
+  20230808125439 application/vnd.openxmlforma      9625 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.11.xlsx
+  20230808125445 application/vnd.openxmlforma     10476 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.12.xlsx
+  20230808125449 application/vnd.openxmlforma     15714 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.14.xlsx
+  20230808125454 application/vnd.openxmlforma     11319 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.16.1.xlsx
+  20230808125505 application/vnd.openxmlforma     52304 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.16.2.xlsx
+  20230808125510 application/vnd.openxmlforma      9433 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.17.xlsx
+  20230808125520 application/vnd.openxmlforma      9464 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.18.xlsx
+  20230808125526 application/vnd.openxmlforma     10729 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.19.xlsx
+  20230808125531 application/vnd.openxmlforma     20502 https://54.rosstat.gov.ru/storage/mediabank/p54_MiSP2015.itog_UrL.1.1.20.xlsx
+  40 shown of 132 captured under 54.rosstat.gov.ru/storage/mediabank/
+== cdx 55.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=55.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 56.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=56.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 57.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 57.rosstat.gov.ru/storage/mediabank/
+== cdx 58.rosstat.gov.ru/storage/mediabank/
+  20230421184613 application/vnd.ms-excel         10583 https://58.rosstat.gov.ru/storage/mediabank/itogi_vpn2010.xls
+  1 shown of 1 captured under 58.rosstat.gov.ru/storage/mediabank/
+== cdx 59.rosstat.gov.ru/storage/mediabank/
+  20230822015748 application/vnd.openxmlforma     14297 https://59.rosstat.gov.ru/storage/mediabank/ToMXBdsP/1.5m.xlsx
+  1 shown of 1 captured under 59.rosstat.gov.ru/storage/mediabank/
+== cdx 60.rosstat.gov.ru/storage/mediabank/
+  20230811233103 application/vnd.ms-excel          8662 https://60.rosstat.gov.ru/storage/mediabank/2jGGtOmL/Информация о контрактах _10.12.20.xls
+  20230814191649 application/vnd.ms-excel          7126 https://60.rosstat.gov.ru/storage/mediabank/ftOMBMVg/РАБОЧАЯ СИЛА_на 01.12.xls
+  2 shown of 2 captured under 60.rosstat.gov.ru/storage/mediabank/
+== cdx 61.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=61.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 62.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=62.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 63.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 63.rosstat.gov.ru/storage/mediabank/
+== cdx 64.rosstat.gov.ru/storage/mediabank/
+  20230528175042 application/vnd.openxmlforma     53708 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_1_kvartal_2022.xlsx
+  20230812011756 application/vnd.openxmlforma     56862 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_1_kvartal_2023.xlsx
+  20241124024336 application/vnd.openxmlforma     59936 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_1_kvartal_2024.xlsx
+  20230528175030 application/vnd.openxmlforma     55221 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_2_kvartal_2022.xlsx
+  20240610195056 application/vnd.openxmlforma     57888 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_2_kvartal_2023.xlsx
+  20241124024305 application/vnd.openxmlforma     62992 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_2_kvartal_2024.xlsx  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=67.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=67.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=68.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=68.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+
+  20230528175019 application/vnd.openxmlforma     54917 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_3_kvartal_2022.xlsx
+  20240610195040 application/vnd.openxmlforma     60900 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_3_kvartal_2023.xlsx
+  20230528175012 application/vnd.openxmlforma     55202 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_4_kvartal_2022.xlsx
+  20240610195036 application/vnd.openxmlforma     64244 https://64.rosstat.gov.ru/storage/mediabank/itogi_zp_4_kvartal_2023.xlsx
+  20230416042142 application/vnd.openxmlforma     13668 https://64.rosstat.gov.ru/storage/mediabank/metodolog_SHMP itogi_2021.xlsx
+  20230416042054 application/vnd.openxmlforma     12042 https://64.rosstat.gov.ru/storage/mediabank/predislovie_SHMP itogi_2021.xlsx
+  20240610192639 application/vnd.openxmlforma     49239 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 10_VPN2020.xlsx
+  20240610192606 application/vnd.openxmlforma    393461 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 1_VPN2020.xlsx
+  20240610192609 application/vnd.openxmlforma     37468 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 2_VPN2020.xlsx
+  20240610192613 application/vnd.openxmlforma    340822 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 3_VPN2020.xlsx
+  20240610192617 application/vnd.openxmlforma    220891 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 4_VPN2020.xlsx
+  20240610192620 application/vnd.openxmlforma    261608 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 5_VPN2020.xlsx
+  20240610192624 application/vnd.openxmlforma    160382 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 6_VPN2020.xlsx
+  20240610192628 application/vnd.openxmlforma     52038 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 7_VPN2020.xlsx
+  20240610192630 application/vnd.openxmlforma     47517 https://64.rosstat.gov.ru/storage/mediabank/Tom5_Tab 8_VPN2020.xlsx
+  20241117042600 application/vnd.openxmlforma    128189 https://64.rosstat.gov.ru/storage/mediabank/VPS_c vpn (2024)230924.xlsx
+  20240519181507 application/vnd.openxmlforma    119275 https://64.rosstat.gov.ru/storage/mediabank/VPS_c vpn.xlsx
+  23 shown of 23 captured under 64.rosstat.gov.ru/storage/mediabank/
+== cdx 65.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 65.rosstat.gov.ru/storage/mediabank/
+== cdx 66.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 66.rosstat.gov.ru/storage/mediabank/
+== cdx 67.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=67.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 68.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=68.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 69.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 69.rosstat.gov.ru/storage/mediabank/
+== cdx 70.rosstat.gov.ru/storage/mediabank/
+  20240606202751 application/vnd.openxmlforma    237983 https://70.rosstat.gov.ru/storage/mediabank/Tom1(1).xlsx
+  20231004060535 application/vnd.openxmlforma    238189 https://70.rosstat.gov.ru/storage/mediabank/Tom1.xlsx
+  20231004061336 application/vnd.openxmlforma    136996 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab1_VPN-2020(4).xlsx
+  20231004061343 application/vnd.openxmlforma     54461 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab2_VPN-2020(4).xlsx
+  20231004061348 application/vnd.openxmlforma    157272 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab3_VPM-2020.xlsx
+  20231004061401 application/vnd.openxmlforma    125251 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab4_VPN-2020(4).xlsx
+  20231004061408 application/vnd.openxmlforma     15613 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab5_VPN-2020(3).xlsx
+  20231004061413 application/vnd.openxmlforma     15112 https://70.rosstat.gov.ru/storage/mediabank/Tom10_tab6_VPN-2020(2).xlsx
+  20231004061439 application/vnd.openxmlforma    414667 https://70.rosstat.gov.ru/storage/mediabank/Tom11.xlsx
+  20231004060612 application/vnd.openxmlforma   1159973 https://70.rosstat.gov.ru/storage/mediabank/Tom2.xlsx
+  20231004060654 application/vnd.openxmlforma    331174 https://70.rosstat.gov.ru/storage/mediabank/Tom3_tab1_VPN-2020(3).xlsx
+  20231004060702 application/vnd.openxmlforma     35233 https://70.rosstat.gov.ru/storage/mediabank/Tom3_tab2_VPN-2020(2).xlsx
+  20231004060714 application/vnd.openxmlforma     69721 https://70.rosstat.gov.ru/storage/mediabank/Tom3_tab3_VPN-2020(3).xlsx
+  20231004060732 application/vnd.openxmlforma    251202 https://70.rosstat.gov.ru/storage/mediabank/Tom3_tab4_VPN-2020(3).xlsx
+  20231004060739 application/vnd.openxmlforma    154812 https://70.rosstat.gov.ru/storage/mediabank/Tom3_tab5_VPN-2020(3).xlsx
+  20231004060802 application/vnd.ms-excel         76325 https://70.rosstat.gov.ru/storage/mediabank/Tom4_tab1_VPN-2020.xls
+  20230418193618 application/vnd.openxmlforma     21446 https://70.rosstat.gov.ru/storage/mediabank/Tom4_tab2_VPN-2020(1).xlsx
+  20231004060809 application/vnd.ms-excel         77993 https://70.rosstat.gov.ru/storage/mediabank/Tom4_tab2_VPN-2020.xls
+  20230418075439 application/vnd.openxmlforma    110577 https://70.rosstat.gov.ru/storage/mediabank/Tom4_tab4_VPN-2020(1).xlsx
+  20231004060849 application/vnd.openxmlforma    211801 https://70.rosstat.gov.ru/storage/mediabank/Tom5.xlsx
+  20231004060925 application/vnd.openxmlforma     22106 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab1_VPN-2020(5).xlsx
+  20231004060932 application/vnd.openxmlforma    206969 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab2_VPN-2020(4).xlsx
+  20231004060939 application/vnd.openxmlforma     21476 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab3_VPN-2020(6).xlsx
+  20231004060946 application/vnd.openxmlforma     30322 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab4_VPN-2020(4).xlsx
+  20231004060955 application/vnd.openxmlforma     38643 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab5_VPN-2020(4).xlsx
+  20231004061001 application/vnd.openxmlforma     39343 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab6_VPN-2020(7).xlsx
+  20231004061010 application/vnd.openxmlforma     25662 https://70.rosstat.gov.ru/storage/mediabank/Tom6_tab7_VPN-2020(5).xlsx
+  20231004061031 application/vnd.openxmlforma    237714 https://70.rosstat.gov.ru/storage/mediabank/Tom7_tab1_VPN-2020(5).xlsx
+  20231004061046 application/vnd.openxmlforma    445091 https://70.rosstat.gov.ru/storage/mediabank/Tom7_tab2_VPN-2020(3).xlsx
+  20231004061137 application/vnd.openxmlforma    360910 https://70.rosstat.gov.ru/storage/mediabank/Tom8.xlsx
+  20231004061216 application/vnd.openxmlforma    439889 https://70.rosstat.gov.ru/storage/mediabank/Tom9_tab1_VPN-2020(3).xlsx
+  20231004061230 application/vnd.openxmlforma    422680 https://70.rosstat.gov.ru/storage/mediabank/Tom9_tab2_VPN-2020(3).xlsx
+  20231004061247 application/vnd.openxmlforma     73706 https://70.rosstat.gov.ru/storage/mediabank/Tom9_tab3_VPN-2020(3).xlsx
+  20231004061254 application/vnd.openxmlforma    369960 https://70.rosstat.gov.ru/storage/mediabank/Tom9_tab4_VPN-2020(3).xlsx
+  20231004061302 application/vnd.openxmlforma     18582 https://70.rosstat.gov.ru/storage/mediabank/Tom9_tab5_VPN-2020(5).xlsx
+  35 shown of 35 captured under 70.rosstat.gov.ru/storage/mediabank/
+== cdx 71.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 71.rosstat.gov.ru/storage/mediabank/
+== cdx 72.rosstat.gov.ru/storage/mediabank/
+  20231008073046 application/vnd.openxmlforma     17573 https://72.rosstat.gov.ru/storage/mediabank/tab-10_VPN-2020(3).xlsx
+  20231008072914 application/vnd.openxmlforma     17091 https://72.rosstat.gov.ru/storage/mediabank/tab-1_VPN-2020(3).xlsx
+  20231008072928 application/vnd.openxmlforma      9468 https://72.rosstat.gov.ru/storage/mediabank/tab-2_VPN-2020(3).xlsx
+  20231008072941 application/vnd.openxmlforma     17189 https://72.rosstat.gov.ru/storage/mediabank/tab-3_VPN-2020(3).xlsx
+  20231008072947 application/vnd.openxmlforma     17185 https://72.rosstat.gov.ru/storage/mediabank/tab-4_VPN-2020(3).xlsx
+  20231008072957 application/vnd.openxmlforma     10896 https://72.rosstat.gov.ru/storage/mediabank/tab-5_VPN-2020(2).xlsx
+  20231008073014 application/vnd.openxmlforma     11236 https://72.rosstat.gov.ru/storage/mediabank/tab-6_VPN-2020(3).xlsx
+  20231008073027 application/vnd.openxmlforma     10412 https://72.rosstat.gov.ru/storage/mediabank/tab-7_VPN-2020(3).xlsx
+  20231008073033 application/vnd.openxmlforma     10052 https://72.rosstat.gov.ru/storage/mediabank/tab-8_VPN-2020(3).xlsx
+  20231008073039 application/vnd.openxmlforma     11267 https://72.rosstat.gov.ru/storage/mediabank/tab-9_VPN-2020(3).xlsx
+  20231009000118 application/vnd.openxmlforma     23369 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab1_VPN-2020(9).xlsx
+  20231009000124 application/vnd.openxmlforma     14577 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab2_VPN-2020(6).xlsx
+  20231009000129 application/vnd.openxmlforma     15571 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab3_VPM-2020(1).xlsx
+  20231009000139 application/vnd.openxmlforma     13753 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab4_VPN-2020(6).xlsx
+  20240708104552 application/vnd.openxmlforma     11851 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab5_VPN-2020и.xlsx
+  20231009000158 application/vnd.openxmlforma     11762 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab5_VPN-2020(7).xlsx
+  20240708104555 application/vnd.openxmlforma     11301 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab6_VPN-2020и.xlsx
+  20231009000206 application/vnd.openxmlforma     11508 https://72.rosstat.gov.ru/storage/mediabank/Tom10_tab6_VPN-2020(4).xlsx
+  20231009000210 application/vnd.openxmlforma     11877 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab1_VPN-2020(6).xlsx
+  20231009000217 application/vnd.openxmlforma     13761 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab2_VPN-2020(5).xlsx
+  20231009000228 application/vnd.openxmlforma     22154 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab3_VPN-2020(6).xlsx
+  20231009000241 application/vnd.openxmlforma     24347 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab4_VPN-2020(4).xlsx
+  20231009000247 application/vnd.openxmlforma     23915 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab5_VPN-2020(5).xlsx
+  20231009000253 application/vnd.openxmlforma     20215 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab6_VPN-2020(5).xlsx
+  20231009000300 application/vnd.openxmlforma     21188 https://72.rosstat.gov.ru/storage/mediabank/Tom11_tab7_VPN-2020(5).xlsx
+  20231008073052 application/vnd.openxmlforma     37225 https://72.rosstat.gov.ru/storage/mediabank/Tom2_tab1_VPN-2020(3).xlsx
+  20231008073109 application/vnd.openxmlforma     16192 https://72.rosstat.gov.ru/storage/mediabank/Tom2_tab2_VPN-2020(3).xlsx
+  20231008073123 application/vnd.openxmlforma     10020 https://72.rosstat.gov.ru/storage/mediabank/Tom2_tab3_VPN-2020(3).xlsx
+  20231008073129 application/vnd.openxmlforma     10132 https://72.rosstat.gov.ru/storage/mediabank/Tom2_tab4_VPN-2020(3).xlsx
+  20231008073136 application/vnd.openxmlforma     26624 https://72.rosstat.gov.ru/storage/mediabank/Tom2_tab5_VPN-2020(3).xlsx
+  20231008073143 application/vnd.openxmlforma     47622 https://72.rosstat.gov.ru/storage/mediabank/Tom3_tab1_VPN-2020(4).xlsx
+  20231008073150 application/vnd.openxmlforma     20349 https://72.rosstat.gov.ru/storage/mediabank/Tom3_tab2_VPN-2020(3).xlsx
+  20231008073156 application/vnd.openxmlforma     40251 https://72.rosstat.gov.ru/storage/mediabank/Tom3_tab3_VPN-2020(4).xlsx
+  20231008073210 application/vnd.openxmlforma     29758 https://72.rosstat.gov.ru/storage/mediabank/Tom3_tab4_VPN-2020(4).xlsx
+  20231008073223 application/vnd.openxmlforma     23082 https://72.rosstat.gov.ru/storage/mediabank/Tom4_tab1_VPN-2020(2).xlsx
+  20231008073228 application/vnd.openxmlforma    121301 https://72.rosstat.gov.ru/storage/mediabank/Tom4_tab2_VPN-2020(4).xlsx
+  20231008073745 application/vnd.openxmlforma     20270 https://72.rosstat.gov.ru/storage/mediabank/Tom7_tab1_VPN-2020(7).xlsx
+  20231008073751 application/vnd.openxmlforma     15141 https://72.rosstat.gov.ru/storage/mediabank/Tom7_tab2_VPN-2020(5).xlsx
+  20231008073803 application/vnd.openxmlforma      8880 https://72.rosstat.gov.ru/storage/mediabank/Tom8_tab1_VPN-2020(5).xlsx
+  20231008073817 application/vnd.openxmlforma      9621 https://72.rosstat.gov.ru/storage/mediabank/Tom8_tab2_VPN-2020(4).xlsx
+  40 shown of 52 captured under 72.rosstat.gov.ru/storage/mediabank/
+== cdx 73.rosstat.gov.ru/storage/mediabank/
+  20230606205236 application/vnd.openxmlforma     49931 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab10_VPN-2020.xlsx
+  20230606205247 application/vnd.openxmlforma     81334 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab11_VPN-2020.xlsx
+  20230606205254 application/vnd.openxmlforma     53542 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab12_VPN-2020.xlsx
+  20230606205300 application/vnd.openxmlforma     66830 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab13_VPN-2020.xlsx
+  20230606205304 application/vnd.openxmlforma     85285 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab14_VPN-2020.xlsx
+  20230606205310 application/vnd.openxmlforma    100176 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab15_VPN-2020.xlsx
+  20230606205327 application/vnd.openxmlforma     90046 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab16_VPN-2020.xlsx
+  20230606205333 application/vnd.openxmlforma     43946 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab17_VPN-2020.xlsx
+  20230606205339 application/vnd.openxmlforma    209373 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab18_VPN-2020.xlsx
+  20230606205346 application/vnd.openxmlforma     11686 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab19_VPN-2020.xlsx
+  20230606205131 application/vnd.openxmlforma     56166 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab1_VPN-2020.xlsx
+  20230606205351 application/vnd.openxmlforma     37225 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab20_VPN-2020.xlsx
+  20230606205358 application/vnd.openxmlforma     23855 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab21_VPN-2020.xlsx
+  20230606205403 application/vnd.openxmlforma     22720 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab22_VPN-2020.xlsx
+  20230606205409 application/vnd.openxmlforma     20047 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab23_VPN-2020.xlsx
+  20230606205137 application/vnd.openxmlforma    194209 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab2_VPN-2020.xlsx
+  20230606205154 application/vnd.openxmlforma     49037 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab3_VPN-2020.xlsx
+  20230606205200 application/vnd.openxmlforma     54031 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab4_VPN-2020.xlsx
+  20230606205207 application/vnd.openxmlforma    112989 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab5_VPN-2020.xlsx
+  20230606205212 application/vnd.openxmlforma     53578 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab6_VPN-2020.xlsx
+  20230606205219 application/vnd.openxmlforma    119549 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab7_VPN-2020.xlsx
+  20230606205224 application/vnd.openxmlforma     54896 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab8_VPN-2020.xlsx
+  20230606205229 application/vnd.openxmlforma    134907 https://73.rosstat.gov.ru/storage/mediabank/73_Tom5_tab9_VPN-2020.xlsx
+  23 shown of 23 captured under 73.rosstat.gov.ru/storage/mediabank/
+== cdx 74.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 74.rosstat.gov.ru/storage/mediabank/
+== cdx 75.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 75.rosstat.gov.ru/storage/mediabank/
+== cdx 76.rosstat.gov.ru/storage/mediabank/  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=76.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=76.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=77.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=77.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=83.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=83.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=84.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=85.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=85.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=87.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=87.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=88.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=88.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=91.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=91.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=92.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=92.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24 :: <urlopen error [Errno 111] Connection refused>
+
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=76.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 77.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=77.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 78.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 78.rosstat.gov.ru/storage/mediabank/
+== cdx 79.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 79.rosstat.gov.ru/storage/mediabank/
+== cdx 80.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 80.rosstat.gov.ru/storage/mediabank/
+== cdx 81.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 81.rosstat.gov.ru/storage/mediabank/
+== cdx 82.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 82.rosstat.gov.ru/storage/mediabank/
+== cdx 83.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=83.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 84.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 84.rosstat.gov.ru/storage/mediabank/
+== cdx 85.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=85.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 86.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 86.rosstat.gov.ru/storage/mediabank/
+== cdx 87.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=87.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 88.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 88.rosstat.gov.ru/storage/mediabank/
+== cdx 89.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 89.rosstat.gov.ru/storage/mediabank/
+== cdx 90.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 90.rosstat.gov.ru/storage/mediabank/
+== cdx 91.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=91.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 92.rosstat.gov.ru/storage/mediabank/
+  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=92.rosstat.gov.ru%2Fstorage%2Fmediabank%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000&filter=original%3A%28%3Fi%29.%2A%28tom%7Cvpn%7Cperepis%7Citog%29.%2A%5B.%5Dxlsx%3F%24')
+== cdx 93.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 93.rosstat.gov.ru/storage/mediabank/
+== cdx 94.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 94.rosstat.gov.ru/storage/mediabank/
+== cdx 95.rosstat.gov.ru/storage/mediabank/
+  0 shown of -1 captured under 95.rosstat.gov.ru/storage/mediabank/
