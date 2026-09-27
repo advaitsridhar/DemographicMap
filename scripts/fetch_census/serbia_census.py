@@ -38,6 +38,7 @@ import argparse
 import io
 import json
 import re
+import time
 import zipfile
 from collections import Counter, defaultdict
 from typing import Any
@@ -151,11 +152,25 @@ def key(name: str) -> str:
 
 
 def load(dataset: str) -> list[dict[str, Any]]:
-    blob = http_get(API.format(id=dataset), binary=True, timeout=600)
-    zf = zipfile.ZipFile(io.BytesIO(blob))
-    member = next(n for n in zf.namelist() if n.lower().endswith(".json"))
-    rows = json.loads(zf.read(member).decode("utf-8-sig"))
-    log(f"  {dataset}: {len(blob):,} bytes zipped, {len(rows):,} records")
+    """A dataset's records. The service answers with a zip holding one JSON
+    file; a busy server sometimes answers with something else, which is
+    asked again and, if it persists, shown."""
+    for attempt in range(4):
+        blob = http_get(API.format(id=dataset), binary=True, timeout=600)
+        if blob[:2] == b"PK":
+            zf = zipfile.ZipFile(io.BytesIO(blob))
+            member = next(n for n in zf.namelist() if n.lower().endswith(".json"))
+            text = zf.read(member).decode("utf-8-sig")
+            break
+        if blob.lstrip()[:1] == b"[":
+            text = blob.decode("utf-8-sig")
+            break
+        log(f"  {dataset}: not a zip or JSON ({len(blob):,} bytes: {blob[:200]!r}); asking again")
+        time.sleep(30 * (attempt + 1))
+    else:
+        raise SystemExit(f"serbia_census: {dataset}: the open-data service did not return the dataset")
+    rows = json.loads(text)
+    log(f"  {dataset}: {len(blob):,} bytes, {len(rows):,} records")
     return [r for r in rows if str(r.get("god")) == str(YEAR)
             and r.get("nTipNaselja", "Ukupno").strip() == "Ukupno"]
 
