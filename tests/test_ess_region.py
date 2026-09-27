@@ -136,6 +136,35 @@ class Build(unittest.TestCase):
         self.assertEqual(records, [])
         self.assertTrue(any("n=99 < 100" in line for line in report))
 
+    def test_extension_to_older_rounds(self):
+        data = tabs({
+            "ESS9": {"religion": {"FRK": {"1/1": 40, "2/66": 30}}, "language": {}},
+            "ESS6": {"religion": {"FR71": {"1/1": 20, "2/66": 20}}, "language": {}},  # Rhône-Alpes
+        })
+        (rec,) = ess.build(data, CROSSWALK, first_round=7)[0]
+        self.assertEqual(rec["codes"]["ess_n"]["religion"], 110)
+        self.assertIn("hold only 70 respondents", rec["religion_note"])
+        self.assertIn("FR71", rec["religion_note"])   # the recoded old region is named
+
+    def test_code_whose_outline_moved(self):
+        cw = {"NO02": {"superseded_by": "NO020"},
+              "NO020": {"nuts_level": 3, "level": "admin1", "shape_id": "S-INN",
+                        "name": "Innlandet", "iou": 0.98}}
+        data = tabs({
+            "ESS9": {"religion": {"NO02": {"1/2": 500}}, "language": {}},   # Hedmark og Oppland
+            "ESS10": {"religion": {"NO02": {"1/2": 60, "2/66": 50}}, "language": {}},
+        })
+        (rec,) = ess.build(data, cw, first_round=7)[0]
+        self.assertEqual(rec["codes"]["ess_n"]["religion"], 110)
+        self.assertEqual(rec["religion_year"], 2020)
+
+    def test_alemannic_by_country(self):
+        self.assertEqual(ess.language_group("GSW", "CH"), "Swiss German")
+        self.assertEqual(ess.language_group("GSW", "FR"), "Alsatian")
+        self.assertEqual(ess.language_group("GSW", "AT"), "German")
+        self.assertEqual(ess.language_group("ROH", "CH"), "Romansh")
+        self.assertEqual(ess.language_group("ROH", "SK"), "Other languages")
+
     def test_small_languages_fold_into_other(self):
         data = tabs({"ESS9": {"religion": {}, "language": {
             "FRK": {"FRE": 180, "ARA": 12, "POR": 4, "BRE": 2, "999": 5, "APA": 2},

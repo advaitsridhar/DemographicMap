@@ -168,6 +168,9 @@ LANGUAGES: dict[str, str] = {
 # "ROH" from a Slovak or Czech interview is a slip the coder made, most likely
 # for Romani (ROM) -- which is not guessed at either.
 ONLY_IN = {"ROH": {"CH"}}
+# ISO's Alemannic (GSW, "Swiss German") is Alsatian when a French respondent
+# names it, and a dialect of German in Germany and Austria.
+BY_COUNTRY = {("FR", "GSW"): "Alsatian", ("DE", "GSW"): "German", ("AT", "GSW"): "German"}
 # Not an answer: refusal, don't know, no answer, and ISO's own non-answers.
 NO_LANGUAGE = {"777", "888", "999", "", ".", "MIS", "UND", "ZXX", "MUL"}
 OTHER_LANGUAGES = "Other languages"
@@ -198,6 +201,14 @@ OLD_CODES: dict[str, str] = {
     # Vijfheerenlanden (57,000 people) moved from the one to the other in 2019.
     "NL31": "NL35", "NL33": "NL36",
 }
+# A code that kept its name across a NUTS revision while its outline moved,
+# with the first round coded to the newer version: the older rounds' figure
+# for it is not the polygon's, and is not counted. Norway's NO02 was Hedmark
+# og Oppland in NUTS 2016 (rounds 5-9) and is Innlandet in NUTS 2021 (rounds
+# 10-11), without Lunner and Jevnaker, which moved to Viken in 2020.
+DIFFERENT_BEFORE = {"NO02": 10}
+# Where the pool starts when the default rounds hold fewer than MIN_N.
+EXTEND_TO = 5
 RECODED_NOTE = {
     "NL35": " save Vijfheerenlanden, which joined Utrecht from Zuid-Holland in 2019",
     "NL36": " save Vijfheerenlanden, which left for Utrecht in 2019",
@@ -416,6 +427,8 @@ def language_group(code: str, country: str | None = None) -> str | None:
         return None
     if country and code in ONLY_IN and country not in ONLY_IN[code]:
         return OTHER_LANGUAGES
+    if country and (country, code) in BY_COUNTRY:
+        return BY_COUNTRY[(country, code)]
     return LANGUAGES.get(code, OTHER_LANGUAGES)
 
 
@@ -433,7 +446,8 @@ def ancestors(code: str) -> list[str]:
     return [code[:n] for n in range(3, len(code) + 1)]
 
 
-def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[str, Any]]:
+def pool(tabs: dict[str, Any], field: str, first_round: int,
+         quiet: bool = False) -> dict[str, dict[str, Any]]:
     """{NUTS code: weighted and unweighted counts by group, rounds, non-answers}.
 
     Every respondent is added to their region and to each of its NUTS
@@ -467,6 +481,8 @@ def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[s
                         unlisted[f"{country}:{key}"] += n
             original = PREFIX.get(region[:2], region[:2]) + region[2:]
             for target in ancestors(code):
+                if number < DIFFERENT_BEFORE.get(target, 0):
+                    continue
                 slot = out[target]
                 slot["rounds"].add((prefix, year))
                 if original.strip().upper() != code:
@@ -478,10 +494,10 @@ def pool(tabs: dict[str, Any], field: str, first_round: int) -> dict[str, dict[s
                         continue
                     slot["n"][group] += n
                     slot["w"][group] += weighted.get(key, 0)
-    if unplaced:
+    if unplaced and not quiet:
         log(f"  {field}: {sum(unplaced.values()):,.0f} respondents carry no NUTS region "
             f"({', '.join(f'{k or repr(k)}={v:,.0f}' for k, v in unplaced.most_common(8))})")
-    if unlisted:
+    if unlisted and not quiet:
         log(f"  language codes read as Other languages: "
             + ", ".join(f"{k}={v:,.0f}" for k, v in unlisted.most_common(40)))
     return dict(out)
@@ -546,11 +562,21 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
     """Records for every polygon a pooled NUTS region reaches with n >= MIN_N."""
     by_shape: dict[tuple[str, str], dict[str, Any]] = {}
     report: list[str] = []
+    def size(slot: dict[str, Any] | None) -> int:
+        return int(sum(slot["n"].values())) if slot else 0
+
     for field in ("religion", "language"):
         pooled = pool(tabs, field, first_round)
-        for code in sorted(pooled):
-            slot = pooled[code]
-            n = int(sum(slot["n"].values()))
+        # The same tables pooled from round EXTEND_TO, for a region the
+        # default rounds leave under MIN_N: older answers are better than
+        # none, and the note says how far back the pool reaches and why.
+        wider = pool(tabs, field, EXTEND_TO, quiet=True) if EXTEND_TO < first_round else {}
+        for code in sorted(set(pooled) | set(wider)):
+            slot, short = pooled.get(code), None
+            n = size(slot)
+            if n < MIN_N and size(wider.get(code)) >= MIN_N:
+                short, slot = n, wider[code]
+                n = size(slot)
             places = placement(code, crosswalk)
             iso3 = ISO3.get(code[:2])
             if not places or iso3 is None:
@@ -559,15 +585,17 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
                                   f"{json.dumps(crosswalk[code])[:120]}")
                 continue
             if n < MIN_N:
-                report.append(f"{field} {code} -> {places[0]['name']}: n={n} < {MIN_N}, left out")
+                report.append(f"{field} {code} -> {places[0]['name']}: n={n} < {MIN_N} "
+                              f"even from round {EXTEND_TO}, left out")
                 continue
             for place in places:
                 key = (place["level"], place["shape_id"])
                 current = by_shape.get(key, {}).get(field)
-                if current and current["n"] >= n:
+                # Recent rounds first, then the larger pool.
+                if current and (current["short"] is None, current["n"]) >= (short is None, n):
                     continue
                 by_shape.setdefault(key, {"place": place, "iso3": iso3})[field] = {
-                    "code": code, "n": n, "slot": slot}
+                    "code": code, "n": n, "slot": slot, "short": short}
     records = []
     for (level, shape_id), item in sorted(by_shape.items()):
         place, iso3 = item["place"], item["iso3"]
@@ -580,6 +608,12 @@ def build(tabs: dict[str, Any], crosswalk: dict[str, Any],
             slot, n = got["slot"], got["n"]
             rounds = describe_rounds(slot["rounds"])
             precision = " Low precision: under 300 respondents." if n < LOW_PRECISION else ""
+            if got["short"] is not None:
+                first = ROUNDS[f"ESS{first_round}"][2][:4]
+                precision += (f" Rounds {first_round}-11 ({first}-2024) hold only "
+                              f"{got['short']} respondents here, under the {MIN_N} this map "
+                              f"requires, so the pool reaches back to round {EXTEND_TO} "
+                              f"({ROUNDS[f'ESS{EXTEND_TO}'][2][:4]}).")
             if slot.get("recoded"):
                 precision += (f" Rounds coded to an older NUTS version count here through "
                               f"{', '.join(sorted(slot['recoded']))}, each wholly inside "
