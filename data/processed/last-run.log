@@ -1,14 +1,9 @@
-lithuania: S3R167_M3010203, S3R167_M3010202 and S3R629_M3010217, beginning of 2026
-  single years complete for 71 of 73 units; the rest take the five-year median: ['12', '69']
-    S3R167_M3010203 2026: counties -> Lithuania: 10 parts sum to 2,887,592 against 2,887,592
-    S3R167_M3010203 2026: municipalities -> Lithuania: 60 parts sum to 2,887,592 against 2,887,592
-  national median 44.6 (the office: 44.0 in completed years); units whose interpolated median is not in the office's year: ['06 46 vs 47.0', '78 47 vs 48.0', '91 46 vs 47.0']
-    ethnicity 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
-    religion 2011: municipalities -> Lithuania: 60 parts sum to 3,043,429 against 3,043,429
-    language 2021: municipalities -> Lithuania: 60 parts sum to 2,810,758 against 2,810,761
-  LTU admin2: 60 of 60 office units bound to 60 polygons (0 set aside as pieces)
-  ethnicity labels the group tree cannot place: []
-  religion labels the group tree cannot place: []
-  language labels the group tree cannot place: []
-  wrote data/processed/lithuania_municipality.json (460 kB)
-  wrote lithuania_municipality.json: 70 records
+bulgaria_census: NSI, Census 2021
+  63412e676270...: 1,670,809 bytes
+  d6bebedae9d8...: 78,912 bytes
+  country: 6,519,789, median 46.7 from five-year groups
+  Sarnitsa (PAZ39) folded into Velingrad (PAZ08)
+  Zlatitsa is drawn as 2 polygons: figures on 11073933B76991292071364, merge ['11073933B60320132010156']
+  258 municipalities bound; left over: ['Струмяни = Strumyani (BLG49)', 'Добрич-селска = Dobrich-Selska (DOB15)', 'Долна Митрополия = Dolna Mitropolia (PVN10)', 'Провадия = Provadia (VAR24)', 'Ружинци = Ruzhintsi (VID33)', 'Мизия = Mizia (VRC28)']
+  polygons with no municipality: ['Dobrichka (Dobrich)', 'Dolna Mitropoliya (Pleven)', 'Miziya (Vratsa)', 'Provadiya (Varna)', 'Ruzhinsi (Vidin)', 'Strumyarni (Blagoevgrad)']
+bulgaria_census: too many municipalities unbound to trust the matching
