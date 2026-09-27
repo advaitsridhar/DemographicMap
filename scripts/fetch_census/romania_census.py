@@ -115,14 +115,15 @@ NOTES = {
     "ethnicity": ("Ethnicity (etnie), 2021 census, resident population, free declaration and "
                   "optional. 'Not stated' is the census's 'information not available' -- people "
                   "who declined or were counted from administrative sources, over a tenth of "
-                  "Romania. Counts of one or two that INS suppresses (printed *) are left out."),
+                  "Romania. Cells INS suppressed for disclosure control (printed *) are one bar, "
+                  "'Suppressed by INS': their people are counted, their groups not published."),
     "language": ("Mother tongue (limba maternă), 2021 census, resident population, optional. "
-                 "'Not stated' is the census's 'information not available'. Suppressed counts "
-                 "of one or two (printed *) are left out."),
+                 "'Not stated' is the census's 'information not available'. Cells INS "
+                 "suppressed (printed *) are one bar, 'Suppressed by INS'."),
     "religion": ("Religion (religia), 2021 census, resident population, optional: each "
                  "denomination as the census names it. 'Not stated' is the census's "
-                 "'information not available'. Suppressed counts of one or two (printed *) are "
-                 "left out."),
+                 "'information not available'. Cells INS suppressed (printed *) are one bar, "
+                 "'Suppressed by INS'."),
 }
 MEDIAN_NOTE = ("Interpolated within the five-year age group that holds the middle person, from "
                "the census's resident population by age group ({table}): INS publishes nothing "
@@ -283,21 +284,28 @@ def uat_rows(rows: list[list[Any]], counties: set[str], field: str | None
 
 
 SHORTFALL: dict[str, float] = {}
+SUPPRESSED = "Suppressed by INS"
 
 
 def check_row(row: dict[str, Any], what: str) -> None:
-    """The printed groups fall short of the printed total by what the stars hide.
+    """The printed groups and the stars account for the printed total exactly.
 
-    INS suppresses small cells and, to protect them, some cells beside them:
-    Baia de Arieș's ethnicity hides ten people under two stars. So a star is
-    allowed up to ten people, the shortfall must never be negative, and it
-    must stay under 2% of the row -- a misread column or row breaks all three.
+    INS prints * for a small count and, to stop it being worked out from the
+    total, for other cells in the same row -- Albac's ethnicity hides 89
+    people under two stars, one of them the "information not available"
+    column. A star's size is not published, but the stars of a row together
+    hide exactly the row's total less its printed cells. So the shortfall
+    must never be negative, a row with no star must have none, and what the
+    stars hide is kept as one bar of its own (``SUPPRESSED``) rather than
+    spread over the answers or dropped.
     """
-    shown = sum(row["groups"].values())
+    shown = sum(v for k, v in row["groups"].items() if k != SUPPRESSED)
     short = row["total"] - shown
-    if short < -0.5 or short > 10 * row["stars"] + 0.5 or short > 0.02 * row["total"] + 0.5:
+    if short < -0.5 or (row["stars"] == 0 and short > 0.5):
         raise SystemExit(f"romania_census: {what} {row['name']}: the groups add to {shown:,.0f} "
                          f"against {row['total']:,.0f} with {row['stars']} suppressed cells")
+    if short > 0.5:
+        row["groups"][SUPPRESSED] = short
     if row["total"]:
         SHORTFALL[what] = max(SHORTFALL.get(what, 0.0), short / row["total"])
 
@@ -399,7 +407,7 @@ def build() -> list[dict[str, Any]]:
                     check_row(u, field)
         log(f"  {field}: {country['total']:,.0f} residents, 42 counties, "
             f"{sum(len(data[c]['uats']) for c in found):,} UATs; {len(labels)} columns"
-            + (f"; the most any row's stars hide is {100 * SHORTFALL[field]:.2f}% of it"
+            + (f"; the most any row's stars hide is {100 * SHORTFALL[field]:.1f}% of it"
                if field in SHORTFALL else ""))
     # The four tables list the same UATs with the same totals, in the same order.
     base = tables["age"]
