@@ -218,5 +218,28 @@ class CyprusTest(unittest.TestCase):
         self.assertEqual(cyprus_census.LANGUAGES["ukranian"], "Ukrainian")
 
 
+class SpreadsheetMLTest(unittest.TestCase):
+    def test_skipped_columns_and_numbers(self):
+        blob = b"""<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+ <Worksheet ss:Name="T1"><Table>
+  <Row><Cell><Data ss:Type="String">Berat</Data></Cell><Cell ss:Index="3"><Data ss:Type="Number">12</Data></Cell></Row>
+  <Row ss:Index="3"><Cell><Data ss:Type="String">x</Data></Cell></Row>
+ </Table></Worksheet></Workbook>"""
+        rows = common.spreadsheetml(blob)["T1"]
+        self.assertEqual(rows[0], ["Berat", None, 12.0])
+        self.assertEqual(rows[1], [])
+        self.assertEqual(rows[2], ["x"])
+
+    def test_json_stat_one_is_read_as_two(self):
+        v1 = {"dataset": {"dimension": {"id": ["A"], "size": [2],
+                                        "A": {"category": {"index": {"a": 0, "b": 1},
+                                                           "label": {"a": "x", "b": "y"}}}},
+                          "value": [1, 2]}}
+        out = common.unstack(common.json_stat1(v1, "u"))
+        self.assertEqual(out, [({"A": ("a", "x")}, 1.0), ({"A": ("b", "y")}, 2.0)])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -238,6 +238,35 @@ def languages() -> dict[str, dict[str | None, float]]:
     return out
 
 
+NATIONAL_TABLES = {
+    "religion": BASE + "Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px",
+    "ethnicity": BASE + "Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px",
+}
+
+
+def national() -> None:
+    """The country's religion and ethnic/religious group, which CYSTAT
+    publishes for the whole country only: printed for a curated country row,
+    not written to any unit."""
+    import json
+    for field, url in NATIONAL_TABLES.items():
+        meta = px_meta(url)
+        sex, cit = var(meta, "SEX"), var(meta, "CITIZENSHIP")
+        group = next(c for c in meta if c not in (sex, cit))
+        counts: dict[str, float] = {}
+        whole = 0.0
+        for dims, value in px_table(url, {sex: [total_code(meta[sex])], cit: [total_code(meta[cit])],
+                                          group: "*"}):
+            label = re.sub(r"\s*\(\d+\)\s*$", "", dims[group][1].strip())
+            if label.lower() == "total":
+                whole = value
+            else:
+                counts[label] = counts.get(label, 0.0) + value
+        check_sum(sum(counts.values()), whole, f"cyprus_census: national {field}")
+        log(f"  CURATED {field} {int(whole)} " + json.dumps(
+            shares({k: v for k, v in counts.items() if v}, total=whole), ensure_ascii=False))
+
+
 def cite(table: str, field: str) -> dict[str, Any]:
     return {"field": field, "name": SOURCE.format(title=TITLES[table]), "url": TABLES[table],
             "page": PAGE, "year": YEAR, "license": LICENCE}
@@ -359,6 +388,7 @@ def main() -> int:
     ap.parse_args()
     log("cyprus_census: CYSTAT, Census of Population and Housing 2021")
     records = build()
+    national()
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
     return 0

@@ -116,6 +116,11 @@ def summary(url: str, status: int, headers: dict, body: bytes) -> None:
 
 def rows_of(blob: bytes) -> dict[str, list[list[str]]]:
     out: dict[str, list[list[str]]] = {}
+    if blob.lstrip()[:5] == b"<?xml":
+        # Excel 2003 XML under an .xls name (INSTAT's tables).
+        from .balkans_common import spreadsheetml
+        return {name: [["" if v is None else str(v) for v in row] for row in rows]
+                for name, rows in spreadsheetml(blob).items()}
     if blob[:2] == b"PK":
         import openpyxl
         wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)

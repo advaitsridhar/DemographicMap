@@ -32,7 +32,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import USER_AGENT, shard_path  # noqa: E402
 
-__all__ = ["px_meta", "px_table", "median_age", "grouped_median", "sex_ratio",
+__all__ = ["px_meta", "px_table", "json_stat1", "spreadsheetml", "median_age", "grouped_median", "sex_ratio",
            "age_fields", "fold", "shapes", "match_names", "unstack", "check_sum"]
 
 
@@ -93,7 +93,28 @@ def px_table(url: str, select: dict[str, list[str] | str]) -> list[tuple[dict[st
         else:
             query.append({"code": code, "selection": {"filter": "item", "values": list(values)}})
     payload = _request(url, {"query": query, "response": {"format": "json-stat2"}})
+    if not isinstance(payload, dict) or "id" not in payload:
+        # An older PxWeb (CYSTAT's) does not speak json-stat2; json-stat 1.0
+        # wraps the same cube in "dataset" with the ids inside "dimension".
+        payload = _request(url, {"query": query, "response": {"format": "json-stat"}})
+        payload = json_stat1(payload, url)
     return unstack(payload)
+
+
+def json_stat1(payload: Any, url: str) -> dict[str, Any]:
+    """A json-stat 1.0 response as the json-stat2 shape ``unstack`` reads."""
+    if isinstance(payload, dict) and "id" in payload:
+        return payload
+    data = payload.get("dataset") if isinstance(payload, dict) else None
+    if data is None and isinstance(payload, dict) and len(payload) == 1:
+        data = next(iter(payload.values()))
+    if not isinstance(data, dict) or "dimension" not in data:
+        keys = list(payload)[:10] if isinstance(payload, dict) else type(payload).__name__
+        raise SystemExit(f"{url}: neither json-stat2 nor json-stat 1.0 ({keys})")
+    dims = data["dimension"]
+    ids, sizes = dims["id"], dims["size"]
+    return {"id": ids, "size": sizes, "dimension": {k: dims[k] for k in ids},
+            "value": data["value"]}
 
 
 # ---------------------------------------------------------------------------
@@ -199,6 +220,39 @@ def match_names(units: dict[str, str], polygons: list[dict[str, Any]], *,
     log(f"  {who}: {len(bound)} bound; units left {len(left_units)}: {left_units[:20]}; "
         f"shapes left {len(left_shapes)}: {left_shapes[:20]}")
     return bound, left_units, left_shapes
+
+
+def spreadsheetml(blob: bytes) -> dict[str, list[list[Any]]]:
+    """An Excel 2003 XML workbook (SpreadsheetML) -- what INSTAT serves under
+    an .xls name -- as {sheet: rows}, each row a list of cell values with the
+    columns ss:Index skips filled with None and numbers as floats."""
+    import xml.etree.ElementTree as ET
+    ns = {"ss": "urn:schemas-microsoft-com:office:spreadsheet"}
+    root = ET.fromstring(blob)
+    out: dict[str, list[list[Any]]] = {}
+    idx = "{urn:schemas-microsoft-com:office:spreadsheet}Index"
+    for ws in root.findall("ss:Worksheet", ns):
+        name = ws.get("{urn:schemas-microsoft-com:office:spreadsheet}Name") or str(len(out))
+        rows: list[list[Any]] = []
+        for row in ws.findall("ss:Table/ss:Row", ns):
+            if row.get(idx):
+                while len(rows) < int(row.get(idx)) - 1:
+                    rows.append([])
+            cells: list[Any] = []
+            for cell in row.findall("ss:Cell", ns):
+                if cell.get(idx):
+                    while len(cells) < int(cell.get(idx)) - 1:
+                        cells.append(None)
+                data = cell.find("ss:Data", ns)
+                value: Any = None
+                if data is not None:
+                    text = "".join(data.itertext())
+                    kind = data.get("{urn:schemas-microsoft-com:office:spreadsheet}Type")
+                    value = float(text) if kind == "Number" and text.strip() else text
+                cells.append(value)
+            rows.append(cells)
+        out[name] = rows
+    return out
 
 
 def check_sum(parts: float, whole: float, what: str, tolerance: float = 0.0) -> None:
