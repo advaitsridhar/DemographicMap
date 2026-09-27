@@ -1,24 +1,8 @@
-poland_ages: BDL variables median 746289, total 72305, men 72300, women 72295
-  2025: units with all four variables {0: 1, 2: 16, 5: 380}
-  powiats against Poland: parts sum to 37,332,510 = 37,332,510
-  powiats against MAŁOPOLSKIE: parts sum to 3,429,342 = 3,429,342
-  powiats against ŚLĄSKIE: parts sum to 4,261,792 = 4,261,792
-  powiats against LUBUSKIE: parts sum to 963,601 = 963,601
-  powiats against WIELKOPOLSKIE: parts sum to 3,471,302 = 3,471,302
-  powiats against ZACHODNIOPOMORSKIE: parts sum to 1,612,680 = 1,612,680
-  powiats against DOLNOŚLĄSKIE: parts sum to 2,857,273 = 2,857,273
-  powiats against OPOLSKIE: parts sum to 923,536 = 923,536
-  powiats against KUJAWSKO-POMORSKIE: parts sum to 1,971,891 = 1,971,891
-  powiats against POMORSKIE: parts sum to 2,358,409 = 2,358,409
-  powiats against WARMIŃSKO-MAZURSKIE: parts sum to 1,339,498 = 1,339,498
-  powiats against ŁÓDZKIE: parts sum to 2,328,825 = 2,328,825
-  powiats against ŚWIĘTOKRZYSKIE: parts sum to 1,147,293 = 1,147,293
-  powiats against LUBELSKIE: parts sum to 1,980,772 = 1,980,772
-  powiats against PODKARPACKIE: parts sum to 2,053,760 = 2,053,760
-  powiats against PODLASKIE: parts sum to 1,126,679 = 1,126,679
-  powiats against MAZOWIECKIE: parts sum to 5,505,857 = 5,505,857
-  GUS national median 43.8 (31 December 2025); Eurostat 43.4 (1 January 2025)
-  poland_ages: 0 office units unbound
-  poland_ages: 0 polygons without an office unit
-  wrote data/processed/poland_powiat_age.json (691 kB)
-  wrote poland_powiat_age.json: 381 records
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
+  74 municipalities on 1 December 2017
+  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
+    office units with no polygon (1): Vestmannaeyjabær (8000)
+    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
+  wrote data/processed/iceland_municipality.json (155 kB)
+  wrote iceland_municipality.json: 81 records
