@@ -1,103 +1,29 @@
-== pxtree https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/  4 120
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862010E.px  Population Enumerated by Sex, Age, District, Municipality/Community and Quarter (1.10.2011), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862020E.px  Population Enumerated by Citizenship, Sex and District (1.10.2011), Annual
-  T https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Population%20Census%202011/1862030E.px  Living Quarters Enumerated by Occupancy Status, District and Urban/Rural Area (1.10.2011), Annual
-== xls https://www.instat.gov.al/media/13650/tab14.xlsx 40 3
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12,633 bytes
-  1 sheets: ['Table 1 - Cross-tabular summary']
-  -- sheet 'Table 1 - Cross-tabular summary': 21 rows x 4 cols
-    Tab. 14 Popullsia banuese si
-    Resident population by ethni
-    Përkatësisa etnike Ethnicity | Gjinia Sex
-     | Gjithsej Total | Meshkuj Male | Femra Female
-    Gjithsej Total | 2402113 | 1190448 | 1211665
-    Shqiptare Albanian | 2186917 | 1082031 | 1104886
-    Greke Greek | 23485 | 12063 | 11422
-    Maqedonase Macedonian | 2281 | 1136 | 1145
-    Malazeze Montenegrin | 511 | 260 | 251
-    Aromune Aromanian | 2459 | 1314 | 1145
-    Rome Roma | 9813 | 5000 | 4813
-    Egjyptiane Egyptian | 12375 | 6304 | 6071
-    Boshnjake Bosnian | 2963 | 1476 | 1487
-    Serbe Serbian | 584 | 315 | 269
-    Bullgare Bulgarian | 7057 | 3691 | 3366
-    Tjetër grup etno-kulturor Ot | 3798 | 2133 | 1665
-    Grup etno-kulturor i përzier | 770 | 392 | 378
-    Asnjë None | 1142 | 588 | 554
-    Preferoj të mos përgjigjem P | 13507 | 6774 | 6733
-    Nuk disponohet Not available | 134451 | 66971 | 67480
-== xls https://www.instat.gov.al/media/13661/tab15.xlsx 12 3
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12,383 bytes
-  1 sheets: ['Table 1 - Cross-tabular summary']
-  -- sheet 'Table 1 - Cross-tabular summary': 16 rows x 4 cols
-    Tab. 15 Popullsia banuese si
-    Resident population by relig
-    Besimi fetar Religion | Gjinia Sex
-     | Gjithsej Total | Meshkuj Male | Femra Female
-    Gjithsej Total | 2402113 | 1190448 | 1211665
-    Mysliman Muslim | 1101718 | 545828 | 555890
-    Mysliman - Bektashi Muslim - | 115644 | 58854 | 56790
-    Krishterë - Katolik Christia | 201530 | 98349 | 103181
-    Krishterë - Ortodoks Christi | 173645 | 84157 | 89488
-    Krishterë - Ungjillore (Prot | 9658 | 4302 | 5356
-    Tjetër besim fetar Other rel | 3670 | 1535 | 2135
-    Besimtarë të pacilcësuar Bel | 332155 | 162380 | 169775
-== xls https://www.instat.gov.al/media/13660/tab16.xlsx 12 3
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12,091 bytes
-  1 sheets: ['Table 1 - Cross-tabular summary']
-  -- sheet 'Table 1 - Cross-tabular summary': 11 rows x 4 cols
-    Tab. 16 Popullsia banuese si
-    Resident population by langu
-    Gjuha e folur në shtëpi Lang | Gjinia Sex
-     | Gjithsej Total | Meshkuj Male | Femra Female
-    Gjithsej Total | 2402113 | 1190448 | 1211665
-    Shqip Albanian | 2187788 | 1082827 | 1104961
-    Gjuhë tjetër Other language | 37033 | 19094 | 17939
-    Disa gjuhë Mixed languages | 13719 | 6823 | 6896
-    Preferoj të mos përgjigjem P | 29120 | 14732 | 14388
-    Nuk disponohet Not available | 134453 | 66972 | 67481
-== xls https://www.instat.gov.al/media/13652/tab7.xlsx 12 3
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 17,895 bytes
-  1 sheets: ['Table 1 - Cross-tabular summary']
-  -- sheet 'Table 1 - Cross-tabular summary': 68 rows x 13 cols
-    Tab.7 Popullsia banuese sipa
-    Resident population by munic
-    Bashkia Municipality | Gjinia dhe grupmosha Sex and
-     | Gjithsej Total |  |  |  | Meshkuj Male |  |  |  | Femra Female
-     | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+ | Gjithsej Total | 0-14 | 15-64 | 65+
-    Gjithsej Total | 2402113 | 373929 | 1555080 | 473104 | 1190448 | 194245 | 767395 | 228808 | 1211665 | 179684 | 787685 | 244296
-    Berat | 62232 | 8799 | 39011 | 14422 | 31051 | 4561 | 19484 | 7006 | 31181 | 4238 | 19527 | 7416
-    Kuçovë | 31077 | 3602 | 19878 | 7597 | 15278 | 1869 | 9755 | 3654 | 15799 | 1733 | 10123 | 3943
-    Poliçan | 8762 | 924 | 5484 | 2354 | 4306 | 476 | 2674 | 1156 | 4456 | 448 | 2810 | 1198
-    Skrapar | 10750 | 1133 | 7033 | 2584 | 5419 | 593 | 3528 | 1298 | 5331 | 540 | 3505 | 1286
-    Dimal | 28135 | 3888 | 18975 | 5272 | 13788 | 1998 | 9146 | 2644 | 14347 | 1890 | 9829 | 2628
-    Bulqizë | 26826 | 4732 | 17481 | 4613 | 13608 | 2477 | 8954 | 2177 | 13218 | 2255 | 8527 | 2436
-== px https://databaza.instat.gov.al:8083/pxweb/api/v1/en/ 
-  HTTP 500 text/html; charset=utf-8 1,819 bytes
-  PX-Web An error has occurred. The error has been registered Return to start page
-== px https://databaza.instat.gov.al:8083/pxweb/api/v1/en/DST/ 
-  HTTP 500 text/html; charset=utf-8 1,831 bytes
-  PX-Web An error has occurred. The error has been registered Return to start page
-== links https://www.instat.gov.al/en/census-2023/ xls|pdf|tab|census 60
-  HTTP 200 text/html; charset=utf-8 35,505 bytes
-  https://www.instat.gov.al/en/census-2023/about/what-is-the-census/  [WHAT is the CENSUS?]
-  https://www.instat.gov.al/en/census-2023/about/why-do-we-need-census/  [Why do we need Census?]
-  https://www.instat.gov.al/en/census-2023/about/am-i-obligated-to-answer/  [Am I obligated to answer?]
-  https://www.instat.gov.al/en/census-2023/about/publication-and-dissemination/  [Publication and Dissemination]
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/final-conference-of-the-population-and-housing-census-2023/  []
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/final-conference-of-the-population-and-housing-census-2023/  [Final Conference of the Population and Housing Census 2023]
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/meetings-with-teachers-and-pupils-on-census-in-schools/  []
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/meetings-with-teachers-and-pupils-on-census-in-schools/  [Meetings with teachers and pupils on "Census in schools"]
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/meeting-with-pupils-of-the-basic-education-in-gjirokaster/  []
-  https://www.instat.gov.al/en/census-2023/activities/activities-for-population-and-housing-census/meeting-with-pupils-of-the-basic-education-in-gjirokaster/  [Meeting with pupils of the basic education in Gjirokastër]
-  https://www.instat.gov.al/en/census-2023/  [Census 2023]
-  https://www.instat.gov.al/en/census-2023/about/  [About]
-  https://www.instat.gov.al/en/census-2023/legal-basesstrategies/  [Legal Bases/Strategies]
-  https://www.instat.gov.al/en/census-2023/privacy-and-security/  [Privacy and security]
-  https://www.instat.gov.al/en/census-2023/jobs/  [Jobs]
-  https://www.instat.gov.al/en/census-2023/activities/  [Activities]
-  https://www.instat.gov.al/en/census-2023/frequently-asked-questions/  [Frequently asked questions]
-  https://databaza.instat.gov.al:8083/pxweb/en/DST/  [--> Database]
-  https://www.instat.gov.al  [Database]
-  https://www.instat.gov.al/en/themes/censuses/  [Census]
-  (20 links shown)
+serbia_census: RZS open data, 2022 census
+  3104020201IND01: 3,142,498 bytes zipped, 318,000 records
+  age: 205 territories
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 348, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 341, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 266, in build
+    comps = {f: compositions(f) for f in ("ethnicity", "religion", "language")}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 266, in <dictcomp>
+    comps = {f: compositions(f) for f in ("ethnicity", "religion", "language")}
+                ^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 178, in compositions
+    rows = [r for r in load(dataset) if str(r.get("nPol", "")).strip() == "Ukupno"]
+                       ^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/serbia_census.py", line 155, in load
+    zf = zipfile.ZipFile(io.BytesIO(blob))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1330, in __init__
+    self._RealGetContents()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1397, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
