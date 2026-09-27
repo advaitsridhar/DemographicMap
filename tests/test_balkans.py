@@ -4,7 +4,7 @@ import unittest
 from collections import Counter
 
 from scripts.fetch_census import balkans_common as common
-from scripts.fetch_census import (bosnia_age, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
+from scripts.fetch_census import (albania_census, bosnia_age, croatia, cyprus_census, montenegro, moldova_age, north_macedonia,
                                   romania_census, serbia_census)
 
 
@@ -239,6 +239,37 @@ class SpreadsheetMLTest(unittest.TestCase):
                           "value": [1, 2]}}
         out = common.unstack(common.json_stat1(v1, "u"))
         self.assertEqual(out, [({"A": ("a", "x")}, 1.0), ({"A": ("b", "y")}, 2.0)])
+
+
+class AlbaniaTest(unittest.TestCase):
+    def test_labels_take_the_longest_beginning(self):
+        self.assertEqual(albania_census.label_of("religion", "Mysliman - Bektashi  Muslim - Bektashi"),
+                         "Bektashi")
+        self.assertEqual(albania_census.label_of("religion", "Mysliman Muslim"), "Islam")
+        self.assertEqual(albania_census.label_of("religion", "Besimtarë të pacilësuar  Believers"),
+                         "Unaffiliated believer")
+        self.assertIsNone(albania_census.label_of("ethnicity", "Gjithsej  Total"))
+        self.assertEqual(albania_census.label_of("ethnicity", "Grup etno-kulturor i përzier  Mixed"),
+                         "Mixed")
+
+    def test_hidden_cells_become_one_bar(self):
+        rows = [["Tab. 1.12"], ["Qarku Dibër", "Prefecture Dibër"],
+                ["Gjithsej  Total", 100.0, 50.0, 50.0],
+                ["Shqiptare  Albanian", 90.0, 45.0, 45.0],
+                ["Greke  Greek", "..", "..", 1.0],
+                ["Nuk disponohet  Not available", 8.0, 4.0, 4.0],
+                ["Shënim ( .. nënkupton", None, None, None]]
+        saved = (albania_census.http_get, albania_census.spreadsheetml, albania_census.NATIONAL)
+        albania_census.http_get = lambda *a, **k: b""
+        albania_census.spreadsheetml = lambda blob: {"Diber": rows}
+        albania_census.NATIONAL = 100
+        try:
+            out = albania_census.read("ethnicity")
+        finally:
+            albania_census.http_get, albania_census.spreadsheetml, albania_census.NATIONAL = saved
+        unit = out["diber"]
+        self.assertEqual(unit["groups"][albania_census.SUPPRESSED], 2.0)
+        self.assertEqual(unit["groups"]["Not stated"], 8.0)
 
 
 if __name__ == "__main__":
