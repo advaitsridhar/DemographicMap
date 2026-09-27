@@ -98,9 +98,9 @@ def municipalities(year: int) -> list[str]:
     if whole and any(c.startswith("9") and not c.startswith("900") for c in codes):
         log(f"  Vienna as a whole, left out beside its districts: {[(c, listed[c]) for c in whole]}")
         codes = [c for c in codes if c not in whole]
-    others = {c: n for c, n in listed.items() if c not in codes}
+    others = {c: n for c, n in listed.items() if c not in codes and c not in whole}
     if others:
-        # The list carries a code for the country as a whole beside the
+        # The list carries a code for the unclassifiable beside the
         # municipalities; nothing else is expected.
         log(f"  not municipalities, left out: {others}")
         if len(others) > 1:
