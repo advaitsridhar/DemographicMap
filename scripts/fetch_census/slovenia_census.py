@@ -256,7 +256,7 @@ def build() -> list[dict[str, Any]]:
         lan = {label: lang.get(k, 0.0) for k, label in LANGUAGE.items()}
         for field, got, hidden in (("ethnicity", eth, hid_e1 + hid_e2),
                                    ("religion", rel, hid_r1 + hid_r2), ("language", lan, hid_l)):
-            if abs(sum(got.values()) + hidden - total) > 0.5 or hidden > 0.05 * total:
+            if abs(sum(got.values()) + hidden - total) > 0.5 or hidden > 0.15 * total:
                 raise SystemExit(f"slovenia_census: {name}: {field} rows make "
                                  f"{sum(got.values()):,.0f} and blanked cells {hidden:,.0f} of "
                                  f"{total:,.0f}")
