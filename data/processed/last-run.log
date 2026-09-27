@@ -1,20 +1,11 @@
-
-=== che16
-   4161 Eiken | 1 Jan 1993 | 31 Dec 1979 | under Bezirk Laufenburg
-   4162 Etzgen | 1 Jan 432 | 31 Dec 427 | under Bezirk Laufenburg
-   4163 Frick | 1 Jan 4680 | 31 Dec 4733 | under Bezirk Laufenburg
-   4164 Gansingen | 1 Jan 964 | 31 Dec 952 | under Bezirk Laufenburg
-   4165 Gipf-Oberfrick | 1 Jan 3170 | 31 Dec 3201 | under Bezirk Laufenburg
-   4166 Herznach | 1 Jan 1286 | 31 Dec 1288 | under Bezirk Laufenburg
-   4505 Neukirch an der Thur | 1 Jan 0 | 31 Dec 0 | under Bezirk Bischofszell
-   4670 Illighausen | 1 Jan 0 | 31 Dec 0 | under Bezirk Kreuzlingen
-   4695 Scherzingen | 1 Jan 0 | 31 Dec 0 | under Bezirk Kreuzlingen
-   5001 Arbedo-Castione | 1 Jan 4133 | 31 Dec 4200 | under Distretto di Bellinzona
-   5003 Cadenazzo | 1 Jan 2279 | 31 Dec 2347 | under Distretto di Bellinzona
-   5004 Camorino | 1 Jan 2610 | 31 Dec 2706 | under Distretto di Bellinzona
-   5397 Centovalli | 1 Jan 1143 | 31 Dec 1142 | under Distretto di Locarno
-   5171 Caslano | 1 Jan 3935 | 31 Dec 3996 | under Distretto di Lugano
-   5173 Certara | 1 Jan 62 | 31 Dec 60 | under Distretto di Lugano
-   5174 Cimadera | 1 Jan 120 | 31 Dec 130 | under Distretto di Lugano
-   5176 Comano | 1 Jan 1843 | 31 Dec 1905 | under Distretto di Lugano
-   5269 Breggia | 1 Jan 1912 | 31 Dec 1929 | under Distretto di Mendrisio
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    HTTP 429; waiting 5s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 10s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 20s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 40s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 80s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 160s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+HTTP 429 from https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px: {"error":"429 - Too many requests in too short timeframe. Please try again later."}
