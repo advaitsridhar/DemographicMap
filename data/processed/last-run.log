@@ -1,7 +1,13 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
-  80 municipalities
-  country: 1,836,713 residents, median age 41.1 from single years
-  municipalities: 64 bound; units left 16: ['Bogdanci (1082)', 'Brvenica (1147)', 'Vinica (1201)', 'Debrca (1031)', 'Zrnovci (1457)', 'Jegunovce (1481)', 'Kavadarci (1490)', 'Karbinci (1511)', 'Mavrovo i Rostushe (1724)', 'Makedonska Kamenica (1732)', 'Novaci (1821)', 'Petrovec (1902)', 'Plasnica (1937)', 'Rankovce (1988)', 'Strumica (2143)', 'Tearce (2160)']; shapes left 20: ['Bogdantsi', 'Brvenitsa', 'Debartsa', 'Drugovo', 'Jegunovtse', 'Karbintsi', 'Kavadartsi', 'Makedonska Kamenitsa', 'Mavrovo and Rostusha', 'Novatsi', 'Oslomej', 'Petrovets', 'Plasnitsa', 'Rankovtse', 'Strumitsa', 'Teartse', 'Vinitsa', 'Vraneshtitsa', 'Zajas', 'Zrnovtsi']
-north_macedonia: unbound municipalities ['Debrca', 'Mavrovo i Rostushe']; polygons with none ['Debartsa', 'Mavrovo and Rostusha']
+== http://web.archive.org/cdx/search/cdx?url=nso.gov.mt/wp-content/uploads/*&collapse=urlkey&limit=5000&fl=original,timestamp,statuscode
+  395,232 bytes; starts b'https://'
+  5000 lines, 7 with ['census', 'census', 'census', 'locality', 'locality', 'population-by', 'regional']
+   4554: https://nso.gov.mt/wp-content/uploads/2023/01/Census-of-Population-and-housing-2021-02-scaled.jpg 20230404002001 200
+   4555: https://nso.gov.mt/wp-content/uploads/2023/01/Census_2020_questionnaire.pdf 20231201193906 200
+   4576: https://nso.gov.mt/wp-content/uploads/2023/01/Pig_Census.pdf 20231201200810 200
+   4579: https://nso.gov.mt/wp-content/uploads/2023/01/Regional-GVA-Inventory_final.pdf 20241008162856 200
+   4689: https://nso.gov.mt/wp-content/uploads/2023/02/Regional-300x199.png 20241115062821 200
+   4690: https://nso.gov.mt/wp-content/uploads/2023/02/Regional.png 20230516095002 200
+   4997: https://nso.gov.mt/wp-content/uploads/Agric_Census2001.pdf 20230924003739 200
+== https://www.estadistica.ad/
+  19,788 bytes; starts b'<!DOCTYP'
+  2 lines, 0 with ['census', 'census', 'census', 'locality', 'locality', 'population-by', 'regional']
