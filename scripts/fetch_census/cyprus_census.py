@@ -425,6 +425,14 @@ def build() -> list[dict[str, Any]]:
         elif unit["total"] > 0:
             fields.update(age_fields(None, unit["men"], unit["women"], year=YEAR,
                                      source=src["community"], note=five, grouped=grouped))
+        else:
+            empty = gap(NOT_AVAILABLE, "The 2021 census counts no residents in this community, "
+                                       "so it has no median age or sex ratio.")
+            fields.update(median_age=empty, sex_ratio=empty)
+        if unit["total"] > 0 and not unit["women"]:
+            fields["sex_ratio"] = gap(NOT_AVAILABLE, (
+                f"The 2021 census counts {unit['men']:,.0f} men and no women in this community, "
+                "so a ratio of men to women is not defined."))
         records.append(record(
             f"CYP-2021-{code}", shape["name"], level="admin2", parent="CYP", country="CYP",
             match_by="shape_id", shape_id=shape["id"], codes={"cystat": code},
