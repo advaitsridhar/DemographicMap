@@ -40,6 +40,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import difflib
 import io
 import json
 import re
@@ -203,6 +204,11 @@ def composition(lines: list[str], title: str, labels: dict[str, str], width: int
             if title == "TABLE8.0" and flat == "male":
                 break
             continue
+        close = difflib.get_close_matches(flat, list(labels), n=1, cutoff=0.88)
+        if flat not in labels and close:
+            # A misprint of a known category ("PENECOSTAL"), logged.
+            log(f"  {title}: {label!r} read as {labels[close[0]]}")
+            flat = close[0]
         if flat not in labels:
             # The reports name their residual rows several ways ("OTHER",
             # "OTHER DENOMINATIONS", ...); any other unknown row stops the run.
