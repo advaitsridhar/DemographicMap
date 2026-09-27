@@ -1,253 +1,31 @@
-== http://web.archive.org/cdx/search/cdx?url=estadistica.ad/*&filter=original:.*(obla|arr|dat|xifres|ensus|egistre).*&collapse=urlkey&fl=original,timestamp,statuscode&limit=400
-  42,657 bytes; starts b'https://'
-  400 lines, 400 with ['http']
-      0: https://www.estadistica.ad/_base/array 20220705040611 302
-      1: http://www.estadistica.ad/_dataset.title 20221114025847 302
-      2: https://www.estadistica.ad/admin/data/findItems 20220705130916 302
-      3: http://estadistica.ad:80/anuari/anuaripoblacio.PDF 20020127035450 200
-      4: http://www.estadistica.ad/anuari/templates/govern/images/arrow.png 20111113151250 200
-      5: http://www.estadistica.ad/anuari/templates/govern/images/arrow2.png 20111113151331 200
-      6: http://www.estadistica.ad/anuari/templates/govern/images/arrow3.png 20111113151332 200
-      7: http://www.estadistica.ad/anuari/templates/govern/images/icon-date.gif 20111113151252 200
-      8: http://www.estadistica.ad/anuari/templates/system/images/selector-arrow.png 20111113151212 200
-      9: https://www.estadistica.ad/api/v2/datasets/ 20220704174255 302
-     10: https://www.estadistica.ad/api/v3/datasets/ 20220625105229 302
-     11: https://www.estadistica.ad/api/v3/domains/validate?hostname= 20220626085438 302
-     12: https://www.estadistica.ad/api/v3/schemata/datasets/ 20220704174042 302
-     13: http://www.estadistica.ad/assets/images/umbrella/default-dataset-thumb-8631a85e37254d2c44b851c329d25c23.png 20221115022851 302
-     14: https://www.estadistica.ad/assets/images/umbrella/default-dataset-thumb.png 20220703225039 302
-     15: http://www.estadistica.ad/assets/opendata-b7158b21af804cad877f01d7bc3e602d.css 20221114002117 302
-     16: http://www.estadistica.ad/assets/opendata-rtl-bf645fcb74bb4265df65b1e7c3eece5f.css 20221114002107 302
-     17: http://www.estadistica.ad/attributeValidation.isDirty 20231116231050 302
-     18: http://www.estadistica.ad/attributeValidation.isInvalid 20231116230957 302
-     19: http://www.estadistica.ad/attributeValidation.isValid 20231116230940 302
-     20: http://www.estadistica.ad/attributeValidation.message 20231116231151 302
-     21: https://www.estadistica.ad/bigdataanalytic.png 20220705101801 302
-     22: http://www.estadistica.ad/cdanuari/ANG/images/barra_administracio.gif 20070731131417 200
-     23: http://www.estadistica.ad/cdanuari/ANG/images/barra_titol.jpg 20070731131432 200
-     24: http://www.estadistica.ad/cdanuari/ANG/images/linea_marron.gif 20071124144720 200
-     25: http://www.estadistica.ad/cdanuari/ANG/images/xifres.jpg 20071124144818 200
-     26: http://www.estadistica.ad/cdanuari/ANG/pdf/xifres.PDF 20071124164816 200
-     27: http://www.estadistica.ad/cdanuari/CAS/images/barra_administracio.gif 20070731131139 200
-     28: http://www.estadistica.ad/cdanuari/CAS/images/barra_titol.jpg 20070731131219 200
-     29: http://www.estadistica.ad/cdanuari/CAS/images/linea_marron.gif 20071124144559 200
-     30: http://www.estadistica.ad/cdanuari/CAS/images/xifres.jpg 20071124144700 200
-     31: http://www.estadistica.ad/cdanuari/CAS/pdf/xifres.PDF 20071124161511 200
-     32: http://www.estadistica.ad/cdanuari/CAT/images/barra_administracio.gif 20070731130745 200
-     33: http://www.estadistica.ad/cdanuari/CAT/images/barra_titol.jpg 20070623175719 200
-     34: http://www.estadistica.ad/cdanuari/CAT/images/linea_marron.gif 20071124144431 200
-     35: http://www.estadistica.ad/cdanuari/CAT/images/xifres.jpg 20071124144514 200
-     36: http://www.estadistica.ad/cdanuari/CAT/pdf/xifres.PDF 20071124151921 200
-     37: http://www.estadistica.ad/cdanuari/FRA/images/barra_administracio.gif 20070623175524 200
-     38: http://www.estadistica.ad/cdanuari/FRA/images/barra_titol.jpg 20070623175604 200
-     39: http://www.estadistica.ad/cdanuari/FRA/images/linea_marron.gif 20071124144224 200
-     40: http://www.estadistica.ad/cdanuari/FRA/images/xifres.jpg 20071124144407 200
-     41: http://www.estadistica.ad/cdanuari/FRA/pdf/xifres.PDF 20071124150942 200
-     42: http://www.estadistica.ad/cdanuari/images/barra_administracio.gif 20130923084406 404
-     43: http://www.estadistica.ad/cdanuari/images/barra_titol.jpg 20130923084406 404
-     44: http://www.estadistica.ad/cdanuari/images/linea_marron.gif 20130923084407 404
-     45: http://www.estadistica.ad/cdanuari/pdf/xifres.PDF 20061007060416 200
-     46: http://www.estadistica.ad:80/cdanuari2005/images/barra_administracio.gif 20060616104736 200
-     47: http://www.estadistica.ad:80/cdanuari2005/images/barra_titol.jpg 20060616104630 200
-     48: http://www.estadistica.ad:80/cdanuari2005/images/linea_marron.gif 20060619212812 200
-     49: http://www.estadistica.ad:80/cdanuari2005/images/xifres.jpg 20060620194813 200
-     50: http://www.estadistica.ad:80/cdanuari2005/pdf/xifres.PDF 20060620194747 200
-     51: http://www.estadistica.ad/chiffres/chiffres_poblacio.zip 20071124142915 200
-     52: http://www.estadistica.ad/cifras/cifras_poblacio.zip 20071124144051 200
-     53: http://www.estadistica.ad/cifras/cifraspoblacion.PDF 20221116193044 302
-     54: http://www.estadistica.ad/components.dataset_attribute_item 20221115002605 302
-     55: http://www.estadistica.ad/components.datasetSearch 20221115020656 302
-     56: https://www.estadistica.ad/core/arrayUtils 20220706224616 302
-     57: https://www.estadistica.ad/data 20220624210154 302
-     58: https://www.estadistica.ad/data-interoperability/ 20240803075131 302
-     59: https://www.estadistica.ad/data.json 20220704135648 302
-     60: https://www.estadistica.ad/data/attributes/ 20220624210152 302
-     61: https://www.estadistica.ad/dataengineeringmodel.png 20240731082733 302
-     62: https://www.estadistica.ad/dataengineeringworkbook.png 20240731082730 302
-     63: https://www.estadistica.ad/datapipeline.png 20240731082739 302
-     64: http://www.estadistica.ad/dataset-annotations/add-annotation-form 20221115001413 302
-     65: http://www.estadistica.ad/dataset-annotations/annotation-list 20221115001426 302
-     66: http://www.estadistica.ad/dataset-annotations/annotation-list/list-item 20221115001215 302
-     67: http://www.estadistica.ad/dataset-annotations/delete-comment-modal 20221115001439 302
-     68: http://www.estadistica.ad/dataset.content 20221115011221 302
-     69: http://www.estadistica.ad/dataset.displayField 20221115020203 302
-     70: http://www.estadistica.ad/dataset.fields 20221115011236 302
-     71: http://www.estadistica.ad/dataset.geometryType 20221115020106 302
-     72: http://www.estadistica.ad/dataset.licenseInfo 20221115015704 302
-     73: http://www.estadistica.ad/dataset.maxRecordCount 20221115002737 302
-     74: http://www.estadistica.ad/dataset.owner 20221114233727 302
-     75: http://www.estadistica.ad/dataset.recordCount 20221115002721 302
-     76: http://www.estadistica.ad/dataset.structuredLicense 20221115015658 302
-     77: http://www.estadistica.ad/dataset.url 20221114233456 302
-     78: http://www.estadistica.ad/datasetController.model 20221113220913 302
-     79: https://www.estadistica.ad/datasets 20220625105227 302
-     80: http://www.estadistica.ad/datasets.alerts 20231117001624 302
-     81: http://www.estadistica.ad/datasets.backToList 20231118073630 302
-     82: http://www.estadistica.ad/datasets.dataset 20221113175223 302
-     83: http://www.estadistica.ad/datasets.filterTooltip 20231118073622 302
-     84: http://www.estadistica.ad/datasets.leaveMap 20231118073636 302
-     85: http://www.estadistica.ad/datasetTitleMeta.meta_description 20231117235055 302
-     86: http://www.estadistica.ad/datasetTitleMeta.title 20231117235045 302
-     87: http://www.estadistica.ad:80/deexifres.htm 20010728155419 200
-     88: https://www.estadistica.ad/display-apps-data-and-maps.htm 20220703183556 302
-     89: http://www.estadistica.ad/ember-arcgis-hub-components/components/content-hero/metadata-list 20221114140453 302
-     90: http://www.estadistica.ad/ember-arcgis-hub-components/components/date-filter/component 20221115031351 302
-     91: http://www.estadistica.ad/ember-arcgis-hub-components/components/date-filter/date-picker/component 20221115035509 302
-     92: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-date/component 20221115011701 302
-     93: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-like/component 20221115011738 302
-     94: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-notimplemented/component 20221115011811 302
-     95: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-notsupported/component 20221115011853 302
-     96: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-range/component 20221115012008 302
-     97: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-single-value/component 20221115012149 302
-     98: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter-term/component 20221115012257 302
-     99: http://www.estadistica.ad/ember-arcgis-layout-cards/components/dataset-filter/component 20221115012318 302
-    100: http://www.estadistica.ad/ember-arcgis-layout-cards/components/date-range-picker/component 20231117020055 302
-    101: http://www.estadistica.ad/ember-arcgis-layout-cards/components/event-date-range/component 20221115115724 302
-    102: http://www.estadistica.ad/ember-arcgis-layout-cards/components/event-list-card/event-list-date/component 20221115155709 302
-    103: http://www.estadistica.ad/ember-arcgis-layout-cards/components/featured-dataset-card/component 20221115213537 302
-    104: http://www.estadistica.ad/ember-arcgis-layout-cards/components/featured-dataset-link/component 20221115223341 302
-    105: http://www.estadistica.ad/ember-arcgis-layout-cards/helpers/array 20231117041455 302
-    106: http://www.estadistica.ad/ember-arcgis-layout-cards/is-dataset/util 20231117191521 302
-    107: http://www.estadistica.ad/ember-arcgis-layout-cards/services/dataset-display 20231118083920 302
-    108: http://www.estadistica.ad/ember-arcgis-layout-cards/services/hub-dataset 20231118101849 302
-    109: https://www.estadistica.ad/ember-arcgis-opendata-components/assets/images/category-icons.svg 20240728055040 302
-    110: https://www.estadistica.ad/ember-arcgis-opendata-components/assets/images/chart-type-icons.svg 20240728055042 302
-    111: https://www.estadistica.ad/ember-arcgis-opendata-components/assets/images/contextual-help/ 20220625222253 302
-    112: http://www.estadistica.ad/ember-arcgis-opendata-components/category-icon/util 20221114002730 302
-    113: http://www.estadistica.ad/ember-arcgis-opendata-components/collection-icon/util 20221114010900 302
-    114: http://www.estadistica.ad/ember-arcgis-opendata-components/components/bottom-panel/component 20221114073927 302
-    115: http://www.estadistica.ad/ember-arcgis-opendata-components/components/community/community-signin/component 20221114115720 302
-    116: http://www.estadistica.ad/ember-arcgis-opendata-components/components/community/members-table/component 20221114115744 302
-    117: http://www.estadistica.ad/ember-arcgis-opendata-components/components/community/members-table/member-row/component 20221114115758 302
-    118: http://www.estadistica.ad/ember-arcgis-opendata-components/components/community/notification-sender/component 20221114115815 302
-    119: http://www.estadistica.ad/ember-arcgis-opendata-components/components/community/shopping-cart/component 20221114115839 302
-    120: http://www.estadistica.ad/ember-arcgis-opendata-components/components/configurable-item-picker/component 20221114135642 302
-    121: http://www.estadistica.ad/ember-arcgis-opendata-components/components/configurable-item-picker/footer/component 20221114135654 302
-    122: http://www.estadistica.ad/ember-arcgis-opendata-components/components/configurable-item-picker/results-list/component 20221114135704 302
-    123: http://www.estadistica.ad/ember-arcgis-opendata-components/components/configurable-item-picker/sidebar-left/component 20221114135714 302
-    124: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-metadata-form/component 20221114211943 302
-    125: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-metadata-form/simple-input-field/component 20221114211956 302
-    126: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-metadata-form/simple-select-field/component 20221114212011 302
-    127: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-metadata-form/simple-textarea-field/component 20221114212027 302
-    128: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-metadata-form/tags-field/component 20221114212038 302
-    129: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-selector/component 20221114212128 302
-    130: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-selector/events/component 20221114212138 302
-    131: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-selector/groups/component 20221114212157 302
-    132: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-selector/layer/component 20221114212208 302
-    133: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content-toolbar/component 20221114212318 302
-    134: http://www.estadistica.ad/ember-arcgis-opendata-components/components/content/collection-radios/component 20221114212357 302
-    135: http://www.estadistica.ad/ember-arcgis-opendata-components/components/contextual-help-actions/component 20221114212829 302
-    136: http://www.estadistica.ad/ember-arcgis-opendata-components/components/ddau-modal/component 20221115035610 302
-    137: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-mode-facets/component 20221115070145 302
-    138: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-mode-facets/date-range-facet/component 20221115070204 302
-    139: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-mode-facets/facet/component 20221115070232 302
-    140: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar-breadcrumbs/component 20221115083524 302
-    141: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar-breadcrumbs/dynamic-breadcrumb/component 20221115083613 302
-    142: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar-breadcrumbs/ellipsis-breadcrumb/component 20221115083949 302
-    143: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar-breadcrumbs/static-breadcrumb/component 20221115084037 302
-    144: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar/component 20221115084109 302
-    145: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar/controls/component 20221115084148 302
-    146: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar/new-menu/component 20221115085016 302
-    147: http://www.estadistica.ad/ember-arcgis-opendata-components/components/edit-navbar/overflow-menu/component 20221115085148 302
-    148: http://www.estadistica.ad/ember-arcgis-opendata-components/components/email-message/component 20221115101657 302
-    149: http://www.estadistica.ad/ember-arcgis-opendata-components/components/event-calendar-links/component 20221115115648 302
-    150: http://www.estadistica.ad/ember-arcgis-opendata-components/components/event-registration-button/component 20221115175953 302
-    151: http://www.estadistica.ad/ember-arcgis-opendata-components/components/feature-service-preview/component 20221115213519 302
-    152: http://www.estadistica.ad/ember-arcgis-opendata-components/components/file-picker/component 20221115224016 302
-    153: http://www.estadistica.ad/ember-arcgis-opendata-components/components/file-picker/dropzone/component 20221115224320 302
-    154: http://www.estadistica.ad/ember-arcgis-opendata-components/components/fixed-footer/component 20221115224516 302
-    155: http://www.estadistica.ad/ember-arcgis-opendata-components/components/follow-initiative-button/component 20221115225033 302
-    156: http://www.estadistica.ad/ember-arcgis-opendata-components/components/forms/counter-field/component 20221115225543 302
-    157: http://www.estadistica.ad/ember-arcgis-opendata-components/components/forms/do-field-eager/component 20221115225918 302
-    158: http://www.estadistica.ad/ember-arcgis-opendata-components/components/forms/do-field-with-warnings/component 20221115230001 302
-    159: http://www.estadistica.ad/ember-arcgis-opendata-components/components/forms/item-tag-picker/component 20221115230343 302
-    160: http://www.estadistica.ad/ember-arcgis-opendata-components/components/forms/locale-picker/component 20221115231252 302
-    161: http://www.estadistica.ad/ember-arcgis-opendata-components/components/global-navbar/component 20221116131809 302
-    162: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-basic-button/component 20221116160827 302
-    163: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-facets/component 20221116161155 302
-    164: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-facets/facet-item/component 20221116161210 302
-    165: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/component 20221116161328 302
-    166: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/hub-notification/action-controls/component 20221116161404 302
-    167: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/hub-notification/component 20221116161416 302
-    168: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/hub-notification/group-application/component 20221116161431 302
-    169: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/hub-notification/group-invitation/component 20221116161500 302
-    170: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-notifications/notification-badge/component 20221116161606 302
-    171: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-profile-editor/component 20221116161651 302
-    172: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-profile-password/component 20221116161720 302
-    173: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-profile-settings/component 20221116161742 302
-    174: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-profile/component 20221116161916 302
-    175: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-side-panel/component 20221116162253 302
-    176: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-side-panel/content/component 20221116162333 302
-    177: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-side-panel/outlet/component 20221116162451 302
-    178: http://www.estadistica.ad/ember-arcgis-opendata-components/components/hub-side-panel/tab-controls/component 20221116162645 302
-    179: http://www.estadistica.ad/ember-arcgis-opendata-components/components/icon-button/component 20221116172224 302
-    180: http://www.estadistica.ad/ember-arcgis-opendata-components/components/icon-with-label/component 20221116172247 302
-    181: http://www.estadistica.ad/ember-arcgis-opendata-components/components/image-uploader/file-picker/component 20221116190120 302
-    182: http://www.estadistica.ad/ember-arcgis-opendata-components/components/image-uploader/focal-point/component 20221116190549 302
-    183: http://www.estadistica.ad/ember-arcgis-opendata-components/components/image-uploader/image-editor/component 20221116190615 302
-    184: http://www.estadistica.ad/ember-arcgis-opendata-components/components/image-uploader/picker-editor-modal/component 20221116191238 302
-    185: http://www.estadistica.ad/ember-arcgis-opendata-components/components/image-uploader/url-uploader/component 20221116191700 302
-    186: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-access/component 20221116192933 302
-    187: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-link/component 20221116193028 302
-    188: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-pager/component 20221116193452 302
-    189: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-picker/component 20221116193523 302
-    190: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-picker/item-preview/component 20221116193558 302
-    191: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-picker/item-row/component 20221116193639 302
-    192: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-picker/layer-picker-row/component 20221116193713 302
-    193: http://www.estadistica.ad/ember-arcgis-opendata-components/components/item-picker/layer-picker/component 20221116193731 302
-    194: http://www.estadistica.ad/ember-arcgis-opendata-components/components/link-tel/component 20221116205318 302
-    195: http://www.estadistica.ad/ember-arcgis-opendata-components/components/message-modal/component 20221117044646 302
-    196: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-dataset-search/component 20221117053927 302
-    197: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-toolbar-renderer/component 20221117054034 302
-    198: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-toolbar-renderer/item/component 20221117054119 302
-    199: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-toolbar-renderer/overflow-menu/component 20221117054144 302
-    200: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-toolbar-search/component 20221117054219 302
-    201: http://www.estadistica.ad/ember-arcgis-opendata-components/components/mobile-toolbar-snackbar/component 20221117054716 302
-    202: http://www.estadistica.ad/ember-arcgis-opendata-components/components/multiline-ellipsis/component 20221117055315 302
-    203: http://www.estadistica.ad/ember-arcgis-opendata-components/components/my-data/content-view/component 20221117073758 302
-    204: http://www.estadistica.ad/ember-arcgis-opendata-components/components/my-data/events-view/component 20221117073830 302
-    205: http://www.estadistica.ad/ember-arcgis-opendata-components/components/my-data/favorites-view/component 20221117073901 302
-    206: http://www.estadistica.ad/ember-arcgis-opendata-components/components/my-data/tab-container/component 20221117073930 302
-    207: http://www.estadistica.ad/ember-arcgis-opendata-components/components/new-button/component 20221117074704 302
-    208: http://www.estadistica.ad/ember-arcgis-opendata-components/components/notification-alert/component 20221117074839 302
-    209: http://www.estadistica.ad/ember-arcgis-opendata-components/components/notification-prompt/component 20221117074927 302
-    210: http://www.estadistica.ad/ember-arcgis-opendata-components/components/od-favorite-item/component 20221117081615 302
-    211: http://www.estadistica.ad/ember-arcgis-opendata-components/components/od-search-sort/component 20221117082111 302
-    212: http://www.estadistica.ad/ember-arcgis-opendata-components/components/panel-modal-receiver/component 20221117100347 302
-    213: http://www.estadistica.ad/ember-arcgis-opendata-components/components/people-toolbar/component 20221117100718 302
-    214: http://www.estadistica.ad/ember-arcgis-opendata-components/components/progress-indicator/component 20221117143131 302
-    215: http://www.estadistica.ad/ember-arcgis-opendata-components/components/relative-date/component 20221117155634 302
-    216: http://www.estadistica.ad/ember-arcgis-opendata-components/components/required-field-label/component 20221117162020 302
-    217: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/component 20221117171304 302
-    218: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/container/component 20221117171353 302
-    219: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/no-results/component 20221117171416 302
-    220: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/pagination-separator/component 20221117171517 302
-    221: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/paginator/component 20221117172738 302
-    222: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-item/component 20221117193121 302
-    223: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/base-item/component 20221117193428 302
-    224: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/event/component 20221117193528 302
-    225: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/feed-item/component 20221117201715 302
-    226: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/form-item/component 20221117201753 302
-    227: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/generic-item/component 20221117202656 302
-    228: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/group-manager-modal/component 20221117215400 302
-    229: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/group/component 20221117215421 302
-    230: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/initiative-item/component 20221117215451 302
-    231: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/initiative-model/component 20221117215914 302
-    232: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/modal-search-event/component 20221117215958 302
-    233: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/modal-search-group-sharing 20221117220457 302
-    234: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/modal-search-group/component 20221117234226 302
-    235: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/modal-search-item/component 20221117234307 302
-    236: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/page-item/component 20221117234359 302
-    237: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/service-item/component 20221118001432 302
-    238: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/site-item/component 20221118002000 302
-    239: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/solution-item/component 20221118002736 302
-    240: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/survey/component 20221118005012 302
-    241: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/team/component 20221118012236 302
-    242: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/templates/component 20221118013032 302
-    243: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/templates/initiative/component 20221118013328 302
-    244: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/templates/solution/component 20221118013535 302
-    245: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/type-specific-item/component 20221118013716 302
-    246: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/result-items/user/component 20221118014353 302
-    247: http://www.estadistica.ad/ember-arcgis-opendata-components/components/results-list/results/component 20221118015903 302
-    248: http://www.estadistica.ad/ember-arcgis-opendata-components/components/save-button/component 20221118023939 302
-    249: http://www.estadistica.ad/ember-arcgis-opendata-components/components/scroll-box/component 20221118024022 302
+norway: SSB 07459 and 12026 for the 2017 kommuner
+  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
+    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
+  Norway 1 January 2017: 5,258,317 people, median age 39.3
+  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
+    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
+    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
+  310 of 426 kommuner unchanged since 2017: 1 January 2026 for their population, age and sex, and 2020 for membership
+  12026 Oslo 2025: no members outside the Church among 728,714 people -- not published rather than none; left out
+  12026 Oslo 2024: no members outside the Church among 724,290 people -- not published rather than none; left out
+  12026 Rogaland 2025: no members outside the Church among 508,922 people -- not published rather than none; left out
+  12026 Rogaland 2024: no members outside the Church among 504,496 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2025: no members outside the Church among 273,169 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2024: no members outside the Church among 272,413 people -- not published rather than none; left out
+  12026 Nordland 2025: no members outside the Church among 243,272 people -- not published rather than none; left out
+  12026 Nordland 2024: no members outside the Church among 243,582 people -- not published rather than none; left out
+  12026 Innlandet 2025: no members outside the Church among 379,488 people -- not published rather than none; left out
+  12026 Innlandet 2024: no members outside the Church among 377,556 people -- not published rather than none; left out
+  12026 Agder 2025: no members outside the Church among 323,930 people -- not published rather than none; left out
+  12026 Agder 2024: no members outside the Church among 322,188 people -- not published rather than none; left out
+  12026 Vestland 2025: no members outside the Church among 658,342 people -- not published rather than none; left out
+  12026 Vestland 2024: no members outside the Church among 655,210 people -- not published rather than none; left out
+    HTTP 429; waiting 5s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 10s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 20s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 40s :: https://data.ssb.no/api/v0/en/table/12026
+  12026 Trøndelag 2025: no members outside the Church among 489,166 people -- not published rather than none; left out
+  12026 Trøndelag 2024: no members outside the Church among 486,815 people -- not published rather than none; left out
+  labels the group tree cannot place: ['Member of another faith or life-stance community', 'Not a member of a registered faith or life-stance community']
+  wrote data/processed/norway_kommune.json (1239 kB)
+  wrote norway_kommune.json: 430 records
