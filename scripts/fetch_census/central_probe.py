@@ -1484,7 +1484,48 @@ def round13() -> None:
         show(url, links, limit=30)
 
 
+def ods_dump(url: str, rows: int = 30, cols: int = 12) -> None:
+    """An OpenDocument spreadsheet's sheets and first rows (content.xml read directly)."""
+    import io as _io
+    import zipfile
+    import xml.etree.ElementTree as ET
+    status, _, body = fetch(url)
+    log(f"\n## {url}: HTTP {status}, {len(body):,} bytes")
+    if status != 200 or body[:2] != b"PK":
+        return
+    ns = {"table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
+          "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0"}
+    root = ET.fromstring(zipfile.ZipFile(_io.BytesIO(body)).read("content.xml"))
+    for sheet in root.iter(f"{{{ns['table']}}}table"):
+        name_key = "{%s}name" % ns["table"]
+        log(f"   sheet {sheet.get(name_key)!r}")
+        shown = 0
+        for row in sheet.iter(f"{{{ns['table']}}}table-row"):
+            cells = []
+            for cell in row.iter(f"{{{ns['table']}}}table-cell"):
+                words = " ".join("".join(p.itertext()) for p in cell.iter(f"{{{ns['text']}}}p"))
+                repeat = int(cell.get(f"{{{ns['table']}}}number-columns-repeated", "1"))
+                cells += [words] * min(repeat, 3)
+            cells = [c[:24] for c in cells if c][:cols]
+            if cells:
+                log("     " + " | ".join(cells))
+                shown += 1
+            if shown >= rows:
+                break
+
+
+def aut9() -> None:
+    """Statistik Austria's page on religious affiliation (the 2021 survey) and its tables."""
+    page = show("https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/"
+                "weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis",
+                r"href=\"[^\"]+\.(?:ods|xlsx?|pdf|csv)\"|<p>[^<]{40,400}</p>", limit=30)
+    for link in re.findall(r"href=\"([^\"]+\.(?:ods|xlsx))\"", page)[:6]:
+        ods_dump(urllib.parse.urljoin("https://www.statistik.at/", link), rows=40)
+    ods_dump("https://www.statistik.at/fileadmin/pages/402/Religion.ods", rows=24)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "aut9": aut9,
     "round13": round13,
     "che12": che12,
     "che11": che11, "aut8": aut8,
