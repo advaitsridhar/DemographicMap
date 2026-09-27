@@ -57,7 +57,7 @@ from typing import Any
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, write_json,
 )
-from .balkans_common import exact_shares, shapes
+from .balkans_common import exact_shares, shapes as map_shapes
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -549,7 +549,7 @@ def build() -> list[dict[str, Any]]:
                              f"{by_key['ethnicity'][key]['total']:,} on sheet 1")
     log(f"  sheet {AGE_SHEET} (age and sex): {len(ages)} units, every total the same as sheet 1's")
     national_median(ages)
-    records, taken = undrawn(by_key, ages, shapes("HRV", "admin2"))
+    records, taken = undrawn(by_key, ages, map_shapes("HRV", "admin2"))
     skipped: dict[str, int] = {}
     for key in keys:
         county, kind, name = key
