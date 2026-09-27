@@ -1,50 +1,771 @@
-== r14_nor_08531_2020
-  dims ['Region', 'ReligionLivs', 'ContentsCode', 'Tid'] sizes [12, 6, 1, 1]
-    Region: 0=The whole country; 30=Viken (2020-2023); 03=Oslo - Oslove; 34=Innlandet; 38=Vestfold og Telemark (2020-2023) ... 46=Vestland; 15=Møre og Romsdal; 50=Trøndelag - Trööndelage; 18=Nordland - Nordlánnda; 54=Troms og Finnmark - Romsa ja Finnmárku (2020-2023)
-    ReligionLivs: 999=All; 200=Buddism; 400=Islam; 600=Christianity; 902=Other religion; 900=Philosophy
-    ContentsCode: Medlemmer=Members
-    Tid: 2020=2020
-  72 values; first [697257, 21555, 182826, 372651, 20757, 99468, 184627, 6025, 51509, 95253, 6956, 24884, 156183, 4211, 66832, 58085, 7496, 19559, 28259, 1005, 5990, 15240, 362, 5662, 57202, 1575, 11031, 35377, 866, 8353, 49984, 1537, 6926, 36866, 261, 4394, 61779, 2021, 12331, 38509, 1491, 7427, 60518, 1719, 8984, 38877, 1427, 9511, 21619, 872, 2583, 14807, 516, 2841, 37065, 1555, 7090, 18094, 844, 9482, 15763, 392, 2484, 9284, 141, 3462, 16832, 431, 3185, 9677, 195, 3344]
-  sum of all 2,774,176
-== r14_est_2000eth
-  8 items
-    RL222.PX [t] RL222: POPULATION BY THE PLACE OF RESIDENCE AND ETHNIC NATIONALITY
-    RL223.PX [t] RL223: POPULATION BY THE PLACE OF RESIDENCE AND MOTHER TONGUE
-    RL224.PX [t] RL224: POPULATION BY THE PLACE OF RESIDENCE AND COMMAND OF FOREIGN LANGUAGES
-    RL225.PX [t] RL225: POPULATION BY ETHNIC NATIONALITY, MOTHER TONGUE AND CITIZENSHIP
-    RL226.PX [t] RL226: POPULATION BY ETHNIC NATIONALITY, COMMAND OF FOREIGN LANGUAGES AND CITIZENSHIP
-    RL227.PX [t] RL227: POPULATION BY MOTHER TONGUE, COMMAND OF FOREIGN LANGUAGES AND CITIZENSHIP
-    RL2281.PX [t] RL2281: POPULATION BY AGE, MOTHER TONGUE, EDUCATIONAL ATTAINMENT AND ETHNIC NATIONALITY*
-    RL2282.PX [t] RL2282: POPULATION BY AGE, COMMAND OF FOREIGN LANGUAGES, EDUCATIONAL ATTAINMENT AND ETHNIC NATIONALITY*
-== r14_lva_tsg1101
-  title: Resident population on 1 March 2011 by territorial unit and sex
-  var 'Teritoriālā vienība' (Territorial unit) [elimination]: 690 values
-      LV=LATVIA; LV006=Riga region; LV007=Pieriga region; LV008=Vidzeme region; LV003=Kurzeme region; LV009=Zemgale region ... LV0980270=..Ugāle parish; LV0980274=..Usma parish; LV0980278=..Užava parish; LV0980284=..Vārve parish; LV0980290=..Ziras parish; LV0980294=..Zlēkas parish
-      code lengths {2: 1, 5: 6, 9: 683}; prefixes {'LV': 690}
-      ALL: LV=LATVIA; LV006=Riga region; LV007=Pieriga region; LV008=Vidzeme region; LV003=Kurzeme region; LV009=Zemgale region; LV005=Latgale region; LV0010000=Riga city; LV0050000=Daugavpils city; LV0090000=Jelgava city; LV0110000=Jēkabpils city; LV0130000=Jūrmala city; LV0170000=Liepāja city; LV0210000=Rēzekne city; LV0250000=Valmiera city; LV0270000=Ventspils city; LV0320200=Aizkraukle county; LV0320201=..Aizkraukle town; LV0320244=..Aizkraukle parish; LV0321000=Jaunjelgava county; LV0321007=..Jaunjelgava town; LV0321027=..Jaunjelgava parish; LV0321050=..Daudzese parish; LV0321078=..Sece parish; LV0321080=..Sērene parish; LV0321084=..Staburags parish; LV0321086=..Sunēkste parish; LV0321400=Pļaviņas county; LV0321413=.. Pļaviņas town; LV0321442=..Aiviekste parish; LV0321458=..Klintaine parish; LV0321492=..Vietalva parish; LV0326100=Koknese county; LV0326146=..Bebri parish; LV0326154=..Irši parish; LV0326160=..Koknese parish; LV0327100=Nereta county; LV0327166=..Mazzalve parish; LV0327170=..Nereta parish; LV0327174=..Pilskalne parish (Nereta county); LV0327196=..Zalve parish; LV0328200=Skrīveri county; LV0360200=Alūksne county; LV0360201=..Alūksne town; LV0360242=..Alsviķi parish; LV0360244=..Anna parish; LV0360252=..Ilzene parish; LV0360256=..Jaunalūksne parish; LV0360258=..Jaunanna parish; LV0360260=..Jaunlaicene parish; LV0360264=..Kalncempji parish; LV0360268=..Liepna parish; LV0360272=..Maliena parish; LV0360274=..Mālupe parish; LV0360276=..Mārkalne parish; LV0360280=..Pededze parish; LV0360288=..Veclaicene parish; LV0360294=..Zeltiņi parish; LV0360296=..Ziemeri parish; LV0360800=Ape county; LV0360805=..Ape town; LV0360825=..Ape parish; LV0360848=..Gaujiena parish; LV0360884=..Trapene parish; LV0360890=..Vireši parish; LV0380200=Balvi county; LV0380201=..Balvi town; LV0380246=..Balvi parish; LV0380248=..Bērzkalne parish; LV0380250=..Bērzpils parish; LV0380252=..Briežuciems parish; LV0380256=..Krišjāņi parish; LV0380258=..Kubuli parish; LV0380266=..Lazduleja parish; LV0380286=..Tilža parish; LV0380290=..Vectilža parish; LV0380294=..Vīksna parish; LV0381600=Viļaka county; LV0381615=..Viļaka town; LV0381660=..Kuprava parish; LV0381670=..Medņeva parish; LV0381678=..Susāji parish; LV0381682=..Šķilbēni parish; LV0381692=..Vecumi parish; LV0381698=..Žīguri parish; LV0384400=Baltinava county; LV0387500=Rugāji county; LV0387564=..Lazdukalns parish; LV0387574=..Rugāji parish; LV0400200=Bauska county; LV0400201=..Bauska town; LV0400246=..Brunava parish; LV0400250=..Ceraukste parish; LV0400252=..Code parish; LV0400256=..Dāviņi parish; LV0400260=..Gailīši parish; LV0400268=..Īslīce parish; LV0400272=..Mežotne parish; LV0400292=..Vecsaule parish; LV0406400=Iecava county; LV0407700=Rundāle county; LV0407776=..Rundāle parish; LV0407788=..Svitene parish; LV0407796=..Viesturi parish; LV0409500=Vecumnieki county; LV0409544=..Bārbele parish; LV0409562=..Kurmene parish; LV0409580=..Skaistkalne parish; LV0409584=..Stelpe parish; LV0409590=..Valle parish; LV0409594=..Vecumnieki parish; LV0420200=Cēsis county; LV0420201=..Cēsis town; LV0420290=..Vaive parish; LV0421200=Līgatne county; LV0421211=..Līgatne town; LV0421262=..Līgatne parish; LV0424701=Amata county; LV0424742=..Amata parish; LV0424746=..Drabeši parish; LV0424768=..Nitaure parish; LV0424778=..Skujene parish; LV0424796=..Zaube parish; LV0425700=Jaunpiebalga county; LV0425756=..Jaunpiebalga parish; LV0425798=..Zosēni parish; LV0427300=Priekuļi county; LV0427360=..Liepa parish; LV0427364=..Mārsnēni parish; LV0427372=..Priekuļi parish; LV0427394=..Veselava parish; LV0427500=Pārgauja county; LV0427574=..Raiskums parish; LV0427580=..Stalbe parish; LV0427582=..Straupe parish; LV0427700=Rauna county; LV0427748=..Drusti parish; LV0427776=..Rauna parish; LV0429300=Vecpiebalga county; LV0429350=..Dzērbene parish; LV0429354=..Ineši parish; LV0429358=..Kaive parish; LV0429386=..Taurene parish; LV0429392=..Vecpiebalga parish; LV0440200=Daugavpils county; LV0440242=..Ambeļi parish; LV0440246=..Biķernieki parish; LV0440250=..Demene parish; LV0440252=..Dubna parish; LV0440260=..Kalkūne parish; LV0440262=..Kalupe parish; LV0440264=..Laucesa parish; LV0440268=..Līksna parish; LV0440270=..Maļinova parish; LV0440272=..Medumi parish; LV0440274=..Naujene parish; LV0440276=..Nīcgale parish; LV0440284=..Saliena parish; LV0440286=..Skrudaliena parish; LV0440288=..Svente parish; LV0440292=..Tabore parish; LV0440294=..Vabole parish; LV0440296=..Vecsaliena parish; LV0440298=..Višķi parish; LV0440801=Ilūkste county; LV0440807=..Ilūkste town; LV0440815=..Subate town; LV0440835=..Prode parish; LV0440844=..Bebrene parish; LV0440854=..Dviete parish; LV0440856=..Eglaine parish; LV0440880=..Pilskalne parish (Ilūkste county); LV0440890=..Šēdere parish; LV0460200=Dobele county; LV0460201=..Dobele town; LV0460242=..Annenieki parish; LV0460246=..Auri parish; LV0460252=..Bērze parish; LV0460254=..Biksti parish; LV0460260=..Dobele parish; LV0460268=..Jaunbērze parish; LV0460272=..Krimūna parish; LV0460280=..Naudīte parish; LV0460284=..Penkule parish; LV0460298=..Zebrene parish; LV0460800=Auce county; LV0460805=..Auce town; LV0460825=..Vecauce parish; LV0460850=..Bēne parish; LV0460864=..Īle parish; LV0460876=..Lielauce parish; LV0460890=..Ukri parish; LV0460894=..Vītiņi parish; LV0468900= Tērvete county; LV0468944=..Augstkalne parish; LV0468956=..Bukaiši parish; LV0468988=..Tērvete parish; LV0500200=Gulbene county; LV0500201=..Gulbene town; LV0500244=..Beļava parish; LV0500248=..Dauksti parish; LV0500252=..Druviena parish; LV0500256=..Galgauska parish; LV0500260=..Jaungulbene parish; LV0500264=..Lejasciems parish; LV0500268=..Litene parish; LV0500272=..Lizums parish; LV0500276=..Līgo parish; LV0500284=..Ranka parish; LV0500288=..Stāmeriena parish; LV0500290=..Stradi parish; LV0500294=..Tirza parish; LV0540200=Jelgava county; LV0540248=..Eleja parish; LV0540252=..Glūda parish; LV0540256=..Jaunsvirlauka parish; LV0540258=..Kalnciems parish; LV0540260=..Lielplatone parish; LV0540262=..Livbērze parish; LV0540270=..Platone parish; LV0540274=..Sesava parish; LV0540282=..Svēte parish; LV0540286=..Valgunde parish; LV0540290=..Vilce parish; LV0540292=..Vircava parish; LV0540296=..Zaļenieki parish; LV0546701=Ozolnieki county; LV0546744=..Cena parish; LV0546766=..Ozolnieki parish; LV0546778=..Salgale parish; LV0560200=Jēkabpils county; LV0560248=..Ābeļi parish; LV0560252=..Dignāja parish; LV0560254=..Dunava parish; LV0560266=..Kalna parish; LV0560274=..Leimaņi parish; LV0560282=..Rubene parish; LV0560298=..Zasa parish; LV0560800=Aknīste county; LV0560805=..Aknīste town; LV0560825=..Aknīste parish; LV0560844=..Asare parish; LV0560862=..Gārsene parish; LV0561800=Viesīte county; LV0561815=..Viesīte town; LV0561835=..Viesīte parish; LV0561858=..Elkšņi parish; LV0561880=..Rite parish; LV0561888=..Sauka parish; LV0566900=Krustpils county; LV0566946=..Atašiene parish; LV0566968=..Krustpils parish; LV0566970=..Kūkas parish; LV0566976=..Mežāre parish; LV0566994=..Varieši parish; LV0566996=..Vīpe parish; LV0568700=Sala county; LV0568786=..Sala parish (Sala county); LV0568790=..Sēlpils parish; LV0600202=Krāslava county; LV0600201=..Krāslava town; LV0600248=..Auleja parish; LV0600262=..Indra parish; LV0600264=..Izvalta parish; LV0600268=..Kalnieši parish; LV0600270=..Kaplava parish; LV0600274=..Kombuļi parish; LV0600278=..Krāslava parish; LV0600284=..Piedruja parish; LV0600286=..Robežnieki parish; LV0600288=..Skaista parish; LV0600296=..Ūdriši parish; LV0601000=Dagda county; LV0601009=..Dagda town; LV0601042=..Andrupene parish; LV0601044=..Andzeļi parish; LV0601046=..Asūne parish; LV0601050=..Bērziņi parish; LV0601054=..Dagda parish; LV0601056=..Ezernieki parish; LV0601076=..Konstantinova parish; LV0601080=..Ķepova parish; LV0601090=..Svariņi parish; LV0601092=..Šķaune parish; LV0604300=Aglona county; LV0604342=..Aglona parish; LV0604358=..Grēveri parish; LV0604372=..Kastuļina parish; LV0604394=..Šķeltova parish; LV0620200=Kuldīga county; LV0620201=..Kuldīga town; LV0620246=..Ēdole parish; LV0620250=..Gudenieki parish; LV0620254=..Īvande parish; LV0620258=..Kabile parish; LV0620260=..Kurmāle parish; LV0620264=..Laidi parish; LV0620272=..Padure parish; LV0620274=..Pelči parish; LV0620280=..Renda parish; LV0620284=..Rumba parish; LV0620290=..Snēpele parish; LV0620292=..Turlava parish; LV0620296=..Vārme parish; LV0621200=Skrunda county; LV0621209=..Skrunda town; LV0621229=..Skrunda parish; LV0621268=..Nīkrace parish; LV0621278=..Ranki parish; LV0621282=..Rudbārži parish; LV0624200=Alsunga county; LV0640600=Aizpute county; LV0640605=..Aizpute town; LV0640642=..Aizpute parish; LV0640648=..Cīrava parish; LV0640666=..Kalvene parish; LV0640668=..Kazdanga parish; LV0640672=..Laža parish; LV0640801=Durbe county; LV0640807=..Durbe town; LV0640827=..Durbe parish; LV0640850=..Dunalka parish; LV0640888=..Tadaiķi parish; LV0640894=..Vecpils parish; LV0641000=Grobiņa county; LV0641009=..Grobiņa town; LV0641044=..Bārta parish; LV0641056=..Gavieze parish; LV0641060=..Grobiņa parish; LV0641076=..Medze parish; LV0641401=Pāvilosta county; LV0641413=..Pavilosta town; LV0641486=..Saka parish; LV0641496=..Vērgale parish; LV0641600=Priekule county; LV0641615=..Priekule town; LV0641646=..Bunka parish; LV0641658=..Gramzda parish; LV0641664=..Kalēti parish; LV0641682=..Priekule parish; LV0641698=..Virga parish; LV0647900=Nīca county; LV0647978=..Nīca county; LV0647980=..Otaņķi parish; LV0648500=Rucava county; LV0648552=..Dunika parish; LV0648584=..Rucava parish; LV0649300=Vainode county; LV0649354=..Embute parish; LV0649392=..Vaiņode parish; LV0660200=Limbaži county; LV0660201=..Limbaži town; LV0660252=..Katvari parish; LV0660264=..Limbaži parish; LV0660268=..Pžle parish; LV0660276=..Skulte parish; LV0660280=..Umurga parish; LV0660284=..Vidriži parish; LV0660288=..Viļķene parish; LV0661000=Aloja county; LV0661007=..Aloja town; LV0661017=..Staicele town; LV0661027=..Aloja parish; LV0661037=..Staicele parish; LV0661044=..Braslava parish; LV0661048=..Brīvzemnieki parish; LV0661400=Salacgrīva county; LV0661405=..Ainaži town; LV0661415=..Salacgrīva town; LV0661425=..Ainaži parish; LV0661435=..Salacgrīva parish; LV0661460=..Liepupe parish; LV0680200=Ludza county; LV0680201=..Ludza town; LV0680246=..Briģi parish; LV0680250=..Cirma parish; LV0680258=..Isnauda parish; LV0680260=..Istra parish; LV0680278=..Nirza parish; LV0680280=..Ņuksi parish; LV0680286=..Pilda parish; LV0680288=..Pureņi parish; LV0680292=..Rundēni parish; LV0681000=Kārsava county; LV0681009=..Kārsava town; LV0681054=..Goliševa parish; LV0681068=..Malnava parish; LV0681070=..Mežvidi parish; LV0681072=..Mērdzene parish; LV0681094=..Salnava parish; LV0681801=Zilupe county; LV0681817=..Zilupe town; LV0681864=..Lauderi parish; LV0681884=..Pasiene parish; LV0681896=..Zaļesje parish; LV0684901=Cibla county; LV0684944=..Blonti parish; LV0684948=..Cibla parish; LV0684966=..Līdumnieki parish; LV0684990=..Pušmucova parish; LV0684998=..Zvirgzdene parish; LV0700200=Madona county; LV0700201=..Madona town; LV0700242=..Arona parish; LV0700244=..Barkava parish; LV0700246=..Bērzaune parish; LV0700250=..Dzelzava parish; LV0700262=..Kalsnava parish; LV0700266=..Lazdona parish; LV0700268=..Liezēre parish; LV0700270=..Ļaudona parish; LV0700274=..Mārciena parish; LV0700276=..Mētriena parish; LV0700282=..Ošupe parish; LV0700286=..Prauliena parish; LV0700290=..Sarkaņi parish; LV0700296=..Vestiena parish; LV0700800=Cesvaine county; LV0700807=..Cesvaine town; LV0700827=..Cesvaine parish; LV0701400=Lubāna county; LV0701413=..Lubāna town; LV0701458=..Indrāni parish; LV0701800=Varakļāni county; LV0701817=..Varakļāni town; LV0701878=..Murmastiene parish; LV0701894=..Varakļāni parish; LV0705500=Ērgļi county; LV0705554=..Ērgļi parish; LV0705560=..Jumurda parish; LV0705592=..Sausnēja parish; LV0740202=Ogre county; LV0740201=..Ogre town; LV0740252=..Krape parish; LV0740256=..Ķeipene parish; LV0740260=..Laubere parish; LV0740268=..Madliena parish; LV0740272=..Mazozoli parish; LV0740276=..Meņģele parish; LV0740280=..Ogresgals parish; LV0740288=..Suntaži parish; LV0740292=..Taurupe parish; LV0740600=Ikšķile county; LV0740605=..Ikšķile town; LV0740625=..Tīnūži parish; LV0741001=Ķegums county; LV0741009=..Ķegums town; LV0741029=..Tome parish; LV0741044=..Birzgale parish; LV0741084=..Rembate parish; LV0741401=Lielvārde county; LV0741413=..Lielvārde town; LV0741433=..Lielvārde parish; LV0741448=..Jumprava parish; LV0741464=..Lēdmane parish; LV0760202=Preiļi county; LV0760201=..Preiļi town; LV0760244=..Aizkalne parish; LV0760256=..Pelēči parish; LV0760258=..Preiļi parish; LV0760274=..Sauna parish; LV0761201=Līvāni county; LV0761211=..Līvāni town; LV0761252=..Jersika parish; LV0761266=..Rožupe parish; LV0761268=..Rudzāti parish; LV0761282=..Sutri parish; LV0761286=..Turki parish; LV0766300=Riebiņi county; LV0766348=..Galēni parish; LV0766362=..Riebiņi parish; LV0766370=..Rušona parish; LV0766376=..Silajāņi parish; LV0766378=..Sīļukalns parish; LV0766380=..Stabulnieki parish; LV0769101=Vārkava county; LV0769164=..Rožkalni parish; LV0769190=..Upmala parish; LV0769194=..Vārkava parish; LV0780200=Rēzekne county; LV0780242=..Audriņi parish; LV0780244=..Bērzgale parish; LV0780246=..Čornaja parish; LV0780250=..Dricāni parish; LV0780252=..Feimaņi parish; LV0780254=..Gaigalava parish; LV0780256=..Griškāni parish; LV0780258=..Ilzeskalns parish; LV0780260=..Kantinieki parish; LV0780262=..Kaunata parish; LV0780266=..Lendži parish; LV0780268=..Lūznava parish; LV0780270=..Malta parish; LV0780272=..Mākoņkalns parish; LV0780274=..Nagļi parish; LV0780276=..Ozolaine parish; LV0780278=..Ozolmuiža parish; LV0780280=..Puša parish; LV0780282=..Rikava parish; LV0780284=..Nautrēni parish; LV0780286=..Sakstagals parish; LV0780288=..Silmala parish; LV0780292=..Stoļerova parish; LV0780294=..Stružāni parish; LV0780296=..Vērēmi parish; LV0781800=Viļāni county; LV0781817=..Viļānu town; LV0781848=..Dekšāres parish; LV0781890=..Sokolki parish; LV0781898=..Viļāni parish; LV0800600=Baldone county; LV0800605=..Baldone town; LV0800625=..Baldone parish; LV0800800=Ķekava county; LV0800807=..Baloži town; LV0800856=..Daugmale parish; LV0800870=..Ķekava parish; LV0801000=Olaine county; LV0801009=..Olaine town; LV0801080=..Olaine parish; LV0801200=Salaspils county; LV0801211=..Salaspils town; LV0801231=..Salaspils parish; LV0801400=Saulkrasti county; LV0801413=..Saulkrasti town; LV0801433=..Saulkrasti parish; LV0801601=Sigulda county; LV0801615=..Sigulda town; LV0801642=..Allaži parish; LV0801666=..More parish; LV0801694=..Sigulda parish; LV0801800=Inčukalns county; LV0801817=..Vangaži town; LV0801864=..Inčukalns parish; LV0804400=Ādaži county; LV0804900=Babīte county; LV0804948=..Babīte parish; LV0804988=..Sala parish (Babīte county); LV0805200=Carnikava county; LV0806000=Garkalne county; LV0806900=Krimulda county; LV0806956=..Lēdurga parish; LV0806968=..Krimulda parish; LV0807400=Mālpils county; LV0807600=Mārupe county; LV0808400=Ropaži county; LV0809200=Sēja county; LV0809600=Stopiņi county; LV0840200=Saldus county; LV0840201=..Saldus town; LV0840248=..Ezere parish; LV0840256=..Jaunauce parish; LV0840258=..Jaunlutriņi parish; LV0840262=..Kursīši parish; LV0840266=..Lutriņi parish; LV0840270=..Nīgrande parish; LV0840272=..Novadnieki parish; LV0840276=..Pampāļi parish; LV0840282=..Ruba parish; LV0840286=..Saldus parish; LV0840288=..Šķēde parish; LV0840292=..Vadakste parish; LV0840294=..Zaņa parish; LV0840296=..Zirņi parish; LV0840298=..Zvārde parish; LV0840601=Brocŗni county; LV0840605=..Brocŗni town; LV0840625=..Ciecere parish; LV0840644=..Blīdene parish; LV0840652=..Gaiķi parish; LV0840680=..Remte parish; LV0880200=Talsi county; LV0880201=..Talsi town; LV0880213=..Sabile town; LV0880215=..Stende town; LV0880217=..Valdemārpils town; LV0880237=..Ārlava parish; LV0880242=..Abava parish; LV0880246=..Balgale parish; LV0880254=..Ģibuļi parish; LV0880258=..Īve parish; LV0880264=..Ķūļciems parish; LV0880268=..Laidze parish; LV0880270=..Lauciene parish; LV0880272=..Lībagi parish; LV0880274=..Lube parish; LV0880286=..Strazde parish; LV0880292=..Valdgale parish; LV0880294=..Vandzene parish; LV0880296=..Virbi parish; LV0885100=Dundaga county; LV0885150=..Dundaga parish; LV0885162=..Kolka parish; LV0887600=Mērsrags county; LV0888301=Roja county; LV0900200=Tukums county; LV0900201=..Tukums town; LV0900246=..Degole parish; LV0900248=..Džūkste parish; LV0900254=..Irlava parish; LV0900258=..Jaunsāti parish; LV0900268=..Lestene parish; LV0900274=..Pūre parish; LV0900278=..Sēme parish; LV0900280=..Slampe parish; LV0900284=..Tume parish; LV0900296=..Zentene parish; LV0901201=Kandava county; LV0901211=..Kandava town; LV0901244=..Cēre parish; LV0901262=..Kandava parish; LV0901270=..Matkule parish; LV0901288=..Vēne parish; LV0901292=..Zante parish; LV0901294=..Zemīte parish; LV0905100=Engure county; LV0905150=..Engure parish; LV0905166=..Lapmežciems parish; LV0905182=..Smārde parish; LV0905700=Jaunpils county; LV0905756=..Jaunpils parish; LV0905790=..Viesati parish; LV0940200=Valka county; LV0940201=..Valka town; LV0940252=..Ērģeme parish; LV0940266=..Kārķi parish; LV0940288=..Valka parish; LV0940292=..Vijciems parish; LV0940296=..Zvārtava parish; LV0941600=Smiltene county; LV0941615=..Smiltene town; LV0941644=..Bilska parish; LV0941646=..Blome parish; LV0941648=..Branti parish; LV0941658=..Grundzāle parish; LV0941670=..Launkalne parish; LV0941674=..Palsmane parish; LV0941680=..Smiltene parish; LV0941690=..Variņi parish; LV0941800=Strenči county; LV0941813=..Seda town; LV0941817=..Strenči town; LV0941860=..Jērcēni parish; LV0941876=..Plāņi parish; LV0960200= Kocēni county; LV0960244=..Bērzaine parish; LV0960252=..Dikļi parish; LV0960264=..Kocēni parish; LV0960288=..Vaidava parish; LV0960296=..Zilākalns parish; LV0961000=Mazsalaca county; LV0961011=..Mazsalaca town; LV0961031=..Mazsalaca parish; LV0961076=..Ramata parish; LV0961082=..Sēļi parish; LV0961084=..Skaņkalne parish; LV0961600=Rūjiena county; LV0961615=..Rūjiena town; LV0961656=..Ipiķi parish; LV0961658=..Jeri parish; LV0961668=..Lode parish; LV0961694=..Vilpulka parish; LV0964700=Beverīna county; LV0964746=..Brenguļi parish; LV0964762=..Kauguri parish; LV0964784=..Trikāta parish; LV0967101=Burtnieki county; LV0967148=..Burtnieki parish; LV0967154=..Ēvele parish; LV0967170=..Matīši parish; LV0967178=..Rencēni parish; LV0967190=..Valmiera parish; LV0967192=..Vecate parish; LV0967300=Naukšēni county; LV0967366=.. Ķoņi parish; LV0967372=.. Naukšēni parish; LV0980200=Ventspils county; LV0980213=..Piltene town; LV0980233=..Piltene parish; LV0980244=..Ance parish; LV0980250=..Jūrkalne parish; LV0980256=..Pope parish; LV0980260=..Puze parish; LV0980266=..Tārgale parish; LV0980270=..Ugāle parish; LV0980274=..Usma parish; LV0980278=..Užava parish; LV0980284=..Vārve parish; LV0980290=..Ziras parish; LV0980294=..Zlēkas parish
-  var 'Dzimums' (Sex) [elimination]: 3 values
-      T=Total; M=males; F=females
-== r14_fin_dvv_cdx
-  FAILED: RuntimeError: HTTP 503: <html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head> <body style="padding:30px 0;"> <div style="float:left;width:260px;text-align:center;"> <img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg
-== r14_fin_dvv_cdx2
-  FAILED: RuntimeError: HTTP 504: <html> <head><title>504 Gateway Time-out</title></head> <body> <center><h1>504 Gateway Time-out</h1></center> <hr><center>nginx</center> </body> </html>
-== r14_fin_avain_meta
-  title: Municipal key figures
-  var 'Alue' (Region) [elimination]: 562 values
-      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7Lapland; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 North Ostrobothnia; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
-      code lengths {3: 18, 4: 83, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
-  var 'Tiedot' (Information): 27 values
-      M411=Population, 2025; M476=Population change from the previous year, %, 2025; M391=Persons aged under 15, %, 2025; M421=Persons aged 15 to 64, %, 2025; M478=Persons aged 64 or over, %, 2025; M404=Swedish-speaking, %, 2025 ... M162=Share of unemployed persons in the labour force, %, 2024; M78=Share of pensioners in the population, %, 2024; M152=Jobs in the area, 2023; M72=Share of jobs in primary production, %, 2023; M84=Share of jobs in secondary production, %, 2023; M106=Share of jobs in services, %, 2023
-      code lengths {3: 6, 4: 21}; prefixes {'M': 27}
-      ALL: M411=Population, 2025; M476=Population change from the previous year, %, 2025; M391=Persons aged under 15, %, 2025; M421=Persons aged 15 to 64, %, 2025; M478=Persons aged 64 or over, %, 2025; M404=Swedish-speaking, %, 2025; M410=Foreign citizens, %, 2025; M408=Degree of urbanisation, %, 2024; M303=Excess of births, persons, 2024; M297=Intermunicipal migration gain/loss, persons, 2024; M302=Families, 2024; M44=Household-dwelling units, 2024; M62=Household-dwelling units living in terraced houses and detached houses, %, 2024; M70=Household-dwelling units living in rental dwellings, %, 2024; M488=Share of persons aged 15 or over with at least upper secondary qualifications, %, 2024; M486=Persons with tertiary level qualifications, share of persons aged 15 or over, %, 2024; M485=Economic dependency ratio, 2024; M151=Workplace self-sufficiency, 2023; M137=Employed labour force resident in the area, 2024; M536=Employment rate of persons aged 20 to 64, %, 2024; M130=Employees working in their municipality of residence, share of employed persons, %, 2023; M162=Share of unemployed persons in the labour force, %, 2024; M78=Share of pensioners in the population, %, 2024; M152=Jobs in the area, 2023; M72=Share of jobs in primary production, %, 2023; M84=Share of jobs in secondary production, %, 2023; M106=Share of jobs in services, %, 2023
-== r14_isl_skra_news
-  55,931 characters
-  /[^<>]{0,120}(?:sveitarf|xlsx|landshlut)[^<>]{0,120}/: 3 -- ['a href="/gogn/thjodskrargattin/fjoldi-ibua-sveitarfelaga-eftir-manudum/"', 'Fjöldi íbúa sveitarfélaga eftir mánuðum', 'a href="/library/Samnyttar-skrar-/Frettir/20260910_Tru_lifskodunarfelog.xlsx"']
-== r14_isl_skra_tru
-  48,355 characters, 146 links
-    Hámarksfjöldi íbúa -> https://www.skra.is/folk/flutningur/hamarksfjoldi-ibua/
-    Fjöldi íbúa sveitarfélaga eftir mánuðum -> https://www.skra.is/gogn/thjodskrargattin/fjoldi-ibua-sveitarfelaga-eftir-manudum/
-    Fréttir -> https://www.skra.is/um-okkur/frettir/
-    Fréttir -> https://www.skra.is/um-okkur/frettir/
-     -> https://www.skra.is/um-okkur/frettir/frett/2024/10/03/Thjodskra-Islands-hefur-hlotid-Hinsegin-vottun-fra-Samtokunum-78-/
-     -> https://www.skra.is/um-okkur/frettir/frett/2025/10/10/Thjodskra-hlytur-vidurkenningu-Jafnvaegisvogarinnar-2025/
+
+=== aut6
+
+## PDF https://www.statistik.at/blickgem/vz1/g10101.pdf: HTTP 200, 10,129 bytes
+   1 pages
+   --- page 1
+   Gemeinde: Eisenstadt   (10101)
+   Politischer Bezirk: Eisenstadt (Stadt)   (101)
+   NUTS 3 Region: Nordburgenland   (AT112)
+   Bundesland (NUTS 2): Burgenland
+   24.09.2004 1) 17.09.2002 2)
+   Ergebnisse VZ 2001
+   Wohnbevölkerung 11.332    11.334     1991 10.349 2,4
+   Veränderung seit 1991 985     1981 10.102 0,4
+   durch Geburtenbilanz -119     1971 10.062 8,0
+   1.104     1961 9.315 23,1
+   Bürgerzahl 10.584    10.586     1951 7.568 -16,0
+   Nebenwohnsitzfälle 1.142    1.140     1939 9.005 1,2
+   1934 8.897 30,9
+   Fläche, Dichte, Seehöhe 1923 6.796 -3,9
+   Katasterfläche (in km2) 42,91 1910 7.073 -4,3
+   Dichte (Einw./km2) 264     1900 7.387 0,5
+   Seehöhe (m) 182     1890 7.351 4,5
+   1880 7.035 5,1
+   1869 6.696
+   1)  Laut Kundmachung vom 23.9.2004 und damit rechtlich verbindliches Ergebnis für die Ermittlung der "Volkszahl" 
+        (§ 9 Abs. 9 Finanzausgleichsgesetz 2005) und die Ermittlung der Mandate (§ 4 NRWO 1992). Wenn keine 
+        Korrektur (k. K.) erfolgt ist, gilt das Ergebnis laut Kundmachung vom 17.9.2002.
+   durch Wanderungsbilanz
+   AnzahlMerkmal Volks-
+   zählungsjahr Anzahl Änd. %
+   Die Korrektur betrifft nur die Zahl der Wohnbevölkerung (u. a. Grundlage für den Finanzausgleich) und die Bürgerzahl 
+   (Grundlage für die Berechnung der Mandatsverteilung). Diese Ergebnisse werden als „rechtlich verbindliche Ergebnisse“ 
+   bezeichnet, im Unterschied zu den „statistischen Ergebnissen“ (Kundmachung vom 17.9.2002), die davon unberührt 
+   bleiben, da zum Zeitpunkt der Kundmachung der korrigierten Ergebnisse (23.9.2004) die Volkszählungsdaten 2001 
+   schon längst veröffentlicht waren, und zwar in Form umfangreicher Publikationen und Datenbanken. Da die korrigierten 
+   Ergebnisse nur sehr wenig von den zuvor publizierten „statistischen Ergebnissen“ abwichen, wurde beschlossen, die 
+   letzteren nicht zu verändern und somit eine Neuberechnung aller statistischen Ergebnisse und eine erneute Publikation 
+   samt Einlagerung in die Datenbanken zu vermeiden.
+   2)  Wenn kein korrigiertes Ergebnis vorliegt (k. K.), ist dies das rechtlich verbindliche Ergebnis wie unter 1), ansonsten 
+        das statistisches Ergebnis als Grundlage für merkmalsbezogene statistische Auswertungen und Publikationen.
+   Am 23. September 2004 erfolgte im Amtsblatt zur Wiener Zeitung die Kundmachung der Korrektur der bei der 
+   Volkszählung 2001 erhobenen Zahl der Wohnbevölkerung (Personen, die im Bundesgebiet ihren Hauptwohnsitz haben) 
+   und der Bürgerzahl (Österreicher mit Hauptwohnsitz).
+   Diese Korrektur war erforderlich, da zum Zeitpunkt der Veröffentlichung des Erg
+
+## https://www.statistik.at/blickgem/
+   HTTP 200, 16,671 bytes, text/html
+   18 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{2,60}<'
+   - href="Assets/Fonts/Icons/icons.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-regular.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-600.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-700.woff2" type="font/woff2" crossorigin="anonymous"> --> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Regular.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Bold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Semibold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"> --> <
+   - href="frameworks/material-components-web/Material_Icons.css" rel="stylesheet"> <
+   - href="frameworks/material-components-web/Material_Icons_Outlined.css" rel="stylesheet"> <
+   - href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> --> <
+   - href="frameworks/material-components-web/material-components-web.min.css" rel="stylesheet"> <
+   - href="css/default.css"> <
+   - href="css/statinterface.css"> <
+   - href="css/fontawesome-pro-6.0.0-web/css/all.min.css"> <
+   - href="#" aria-current="page" id="gem_list_button"> <
+   - href="https://www.statistik.at/" target="_blank">© Statistik Austria<
+
+## https://www.statistik.at/blickgem/index.jsp
+   HTTP 200, 16,671 bytes, text/html
+   18 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{2,60}<'
+   - href="Assets/Fonts/Icons/icons.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-regular.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-600.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-700.woff2" type="font/woff2" crossorigin="anonymous"> --> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Regular.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Bold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Semibold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"> --> <
+   - href="frameworks/material-components-web/Material_Icons.css" rel="stylesheet"> <
+   - href="frameworks/material-components-web/Material_Icons_Outlined.css" rel="stylesheet"> <
+   - href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> --> <
+   - href="frameworks/material-components-web/material-components-web.min.css" rel="stylesheet"> <
+   - href="css/default.css"> <
+   - href="css/statinterface.css"> <
+   - href="css/fontawesome-pro-6.0.0-web/css/all.min.css"> <
+   - href="#" aria-current="page" id="gem_list_button"> <
+   - href="https://www.statistik.at/" target="_blank">© Statistik Austria<
+
+## https://www.statistik.at/atlas/blick/
+   HTTP 200, 16,671 bytes, text/html
+   18 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]{2,60}<'
+   - href="Assets/Fonts/Icons/icons.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-regular.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-600.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSansPro/source-sans-pro-v14-latin-700.woff2" type="font/woff2" crossorigin="anonymous"> --> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Regular.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Bold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="Assets/Fonts/SourceSans3/SourceSans3-Semibold.ttf.woff2" type="font/woff2" crossorigin="anonymous"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons"> <
+   - href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"> --> <
+   - href="frameworks/material-components-web/Material_Icons.css" rel="stylesheet"> <
+   - href="frameworks/material-components-web/Material_Icons_Outlined.css" rel="stylesheet"> <
+   - href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> --> <
+   - href="frameworks/material-components-web/material-components-web.min.css" rel="stylesheet"> <
+   - href="css/default.css"> <
+   - href="css/statinterface.css"> <
+   - href="css/fontawesome-pro-6.0.0-web/css/all.min.css"> <
+   - href="#" aria-current="page" id="gem_list_button"> <
+   - href="https://www.statistik.at/" target="_blank">© Statistik Austria<
+
+## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstruktur
+   HTTP 404, 87,741 bytes, text/html; charset=utf-8
+   0 distinct matches of 'href=\\"[^\\"]*(?:religi|Religi|sprach|Sprach|umgang)[^\\"]*\\"'
+
+=== svn5
+
+## SiStat: 4815 tables, 218 about a census or ethnicity/language/religion
+   - 0556501S.px Population by age groups and sex, municipalities, Slovenia, census 1991
+   - 0556502S.px Population by ethnic affiliation, municipalities, Slovenia, census 1991
+   - 0556503S.px Population aged 15 years or over by educational attainment and sex, municipalities, Slovenia, census 1991
+   - 0556504S.px Population by sex and activity [excluding persons who are working abroad and their family members who live with them abroad], municipalities, Slovenia, census 1991
+   - 0556505S.px Households by number of members, municipalities, Slovenia, census 1991
+   - 0556506S.px Families by type, municipalities, Slovenia, census 1991
+   - 0556507S.px Families by number of children, municipalities, Slovenia, census 1991
+   - 0558211S.px Families by type, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558212S.px Families by the number of children, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558310S.px Family and non-family households by number of members, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558509S.px Labour force by status in employment, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558586S.px Persons in employment by sectors of activity and sex, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558601S.px Population by age groups and sex, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558616S.px Some population groups, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558683S.px Women aged 15 or over by the number of live-born children, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558708S.px Population aged 15 years or over by educational attainment, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558784S.px Population attending educational programmes for obtaining state approved education*, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558814S.px Dwellings by useful floor space and the number of rooms, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558815S.px Buildings with dwellings and other residential premises by type of building, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558862S.px Buildings with dwellings by the year of construction, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558863S.px Buildings with dwellings by material of the bearing structure of the building and type of roofing, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558864S.px Dwellings and useful floor space by number of rooms, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558866S.px Dwellings by the year of last renovation, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558868S.px Dwellings by installations and utility spaces, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558870S.px Occupied dwellings by average useful floor space per person, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 0558871S.px Dwellings for leisure and recreation by number of rooms and useful floor space, recalculation according to municipalities, as of 1 January 2007, Slovenia, census 2002
+   - 05K1088S.px Women, aged 15 years or more, by the number of live-born children and age, Slovenia, censuses 1948, 1953, 1961, 1971, 1981, 1991
+   - 05W0101S.px Families, settlements, Slovenia, census 2002
+   - 05W0201S.px Households, settlements, Slovenia, census 2002
+   - 05W0301S.px Population by activity status, municipalities and settlements, Slovenia, census 2002
+   - 05W0302S.px Persons in employment by activity, settlements, Slovenia, census 2002
+   - 05W0303S.px Persons in employment and daily commuters by place of residence and place of work in Slovenia, municipalities and settlements, Slovenia, census 2002
+   - 05W0304S.px Persons in employment and daily commuters by place of work in Slovenia and place of residence, municipalities and settlements, Slovenia, census 2002
+   - 05W0401S.px Population by age groups and sex - total, municipalities and settlements, Slovenia, census 2002
+   - 05W0402S.px Population by five-years age groups, municipalities and settlements, Slovenia, census 2002
+   - 05W0403S.px Population by selected age groups, ageing index and mean age, municipalities and settlements, Slovenia, census 2002
+   - 05W0404S.px Population by type of migration, municipalities and settlements, Slovenia, census 2002
+   - 05W0405S.px Population, settlements, Slovenia, census 2002
+   - 05W0501S.px Population aged 15 years or over by educational attainment, municipalities and settlements, Slovenia, census 2002
+   - 05W0502S.px Population attending educational programmes for obtaining state approved education by the level of education they will obtain after finishing the programme, municipalities and settlements, Slovenia, c
+   - 05W0503S.px Population in formal education and daily commuters by place of residence and place of schooling in Slovenia, municipalities and settlements, Slovenia, census 2002
+   - 05W0601S.px Buildings and dwellings, settlements, Slovenia, census 2002
+   - 05W0602S.px Dwellings and useful floor space by use, municipalities and settlements, Slovenia, census 2002
+   - 05W0603S.px Dwellings by type of ownership and useful floor space of dwellings, municipalities and settlements, Slovenia, census 2002
+   - 05W0604S.px Occupied dwellings and useful floor space by tenure status, municipalities and settlements, Slovenia, census 2002
+   - 05W0605S.px Occupied dwellings by average useful floor space per person, municipalities and settlements, Slovenia, census 2002
+   - 05W0606S.px Dwellings by useful floor space and number of rooms, average useful floor space and average number of rooms, settlements, Slovenia, census 2002
+   - 05W0607S.px Dwellings by the year of construction of the building, municipalities and settlements, Slovenia, census 2002
+   - 05W0608S.px Dwellings by installations, municipalities and settlements, Slovenia, census 2002
+   - 05W0609S.px Buildings with dwellings by the year of construction, municipalities and settlements, Slovenia, census 2002
+   - 05W0701S.px Families by type, municipalities, Slovenia, census 2002
+   - 05W0702S.px Families by the number of children, municipalites, Slovenia, census 2002
+   - 05W0801S.px Family and non-family households by number of members, municipalities, Slovenia, census 2002
+   - 05W0901S.px Labour force by status in employment and sex, municipalities of residence, Slovenia, census 2002
+   - 05W0902S.px Persons in employment by municipality of residence, municipality of place of work and sex, municipalities, Slovenia, census 2002
+   - 05W0903S.px Persons in employment - daily commuters by municipality of residence and municipality of place of work, municipalities, Slovenia, census 2002
+   - 05W1001S.px Population by age groups and sex, municipalities, Slovenia, census 2002
+   - 05W1002S.px Population by ethnic affiliation, municipalities, Slovenia, census 2002
+   - 05W1003S.px Population declared as Italians, municipalities, Slovenia, census 2002
+   - 05W1004S.px Population declared as Hungarians, municipalities, Slovenia, census 2002
+   - 05W1005S.px Population declared as Roma, municipalities, Slovenia, census 2002
+   - 05W1006S.px Population by religion, municipalities, Slovenia, census 2002
+   - 05W1007S.px Population by mother tongue, municipalities, Slovenia, census 2002
+   - 05W1008S.px Some population groups, municipalities, Slovenia, census 2002
+   - 05W1009S.px Immigrants to Slovenia by country of first residence and sex, municipalities, Slovenia, census 2002
+   - 05W1010S.px Immigrants to Slovenia by year of first immigration and sex, municipalities, Slovenia, census 2002
+   - 05W1011S.px Last migration by type of migration and sex, municipalities, Slovenia, census 2002
+   - 05W1101S.px Population aged 15 years or over by educational attainment, municipalities, Slovenia, census 2002
+   - 05W1102S.px Population in formal education by municipality of residence, municipality of place of schooling and sex, municipalities, Slovenia, census 2002
+   - 05W1103S.px Population in formal education - daily commuters by municipality of residence and municipality of place of schooling, municipalities, Slovenia, census 2002
+   - 05W1201S.px Dwellings and useful floor space by use and other occupied premises, municipalities, Slovenia, census 2002
+   - 05W1202S.px Dwellings by useful floor space and the number of rooms, municipalities, Slovenia, census 2002
+   - 05W1203S.px Buildings with dwellings and other residential premises by type of building, municipalities, Slovenia, census 2002
+   - 05W1204S.px Buildings with dwellings by the year of construction, municipalities, Slovenia, census 2002
+   - 05W1205S.px Buildings with dwellings by material of the bearing structure of the building and type of roofing, municipalities, Slovenia, census 2002
+   - 05W1206S.px Dwellings and useful floor space by number of rooms, municipalities, Slovenia, census 2002
+   - 05W1207S.px Dwellings and useful floor space by type of ownership and average useful floor space of dwellings, municipalities, Slovenia, census 2002
+   - 05W1208S.px Dwellins by the year of last renovation, municipalities, Slovenia, census 2002
+   - 05W1209S.px Dwellings by the year of construction of the building, municipalities, Slovenia, census 2002
+   - 05W1210S.px Dwellings by installations and utility spaces, municipalities, Slovenia, census 2002
+   - 05W1211S.px Dwellings by presence of different premises, municipalities, Slovenia, census 2002
+   - 05W1212S.px Occupied dwellings by average useful floor space per person, municipalities, Slovenia, census 2002
+   - 05W1213S.px Dwellings for leisure and recreation by number of rooms, useful floor space and type of building and total useful floor space, municipalities, Slovenia, census 2002
+   - 05W1214S.px Households in dwellings by tenure status, municipalites, Slovenia, census 2002
+   - 05W1301S.px Families by the number of children and type of settlement, Slovenia, censuses 1991, 2002
+   - 05W1302S.px Families by the number of children, type of family and type of settlement, Slovenia, census 2002
+   - 05W1303S.px Families with childen under 6, by the number of children, type of family and type of settlement, Slovenia, census 2002
+   - 05W1304S.px Families with children under 25, by the number of children, type of family and type of settlement, Slovenia, census 2002
+   - 05W1401S.px Households by number of members and type of settlement, Slovenia, censuses 1991, 2002
+   - 05W1402S.px Households by number of members, type of household and type of settlement, Slovenia, census 2002
+   - 05W1403S.px Households by number of children under 15, by number of members and type of settlement, Slovenia, census 2002
+   - 05W1404S.px Households by number of persons aged 65 or over, number of members and type of settlement, Slovenia, census 2002
+   - 05W1501S.px Principal characteristics of the population by activity and sex, Slovenia, censuses 1991, 2002
+   - 05W1502S.px Population aged 15 years or over by activity status, educational attainment and sex, Slovenia, census 2002
+   - 05W1601S.px Population by age groups, sex and type of settlement, Slovenia, censuses 1991, 2002
+   - 05W1602S.px Selected age groups, mean age and ageing index, by type of settlement, Slovenia, censuses 1991, 2002
+   - 05W1604S.px Population aged 15 years or over by marital status, sex and age groups, Slovenia, censuses 1991, 2002
+   - 05W1605S.px Population by ethnic affiliation, Slovenia, censuses 1953, 1961, 1971, 1981, 1991, 2002
+   - 05W1606S.px Population by religion and type of settlement, Slovenia, censuses 1991, 2002
+   - 05W1607S.px Population by mother tongue, Slovenia, censuses 1991, 2002
+   - 05W1608S.px Population by citizenship, sex and age, Slovenia, census 2002
+   - 05W1609S.px Population by ethnic affiliation, age groups and sex, Slovenia, census 2002
+   - 05W1701S.px Population aged 15 years or over by educational attainment and sex, Slovenia, censuses 1991, 2002
+   - 05W1702S.px Population aged 15 years or over by educational attainment, age and sex, Slovenia, census 2002
+   - 05W1801S.px Dwellings by the number of rooms, Slovenia, censuses 1991, 2002
+   - 05W1802S.px Dwellings by useful floor space, Slovenia, censuses 1991, 2002
+   - 05W1803S.px Dwellings and useful floor space by use, other occupied premises and number of occupants, Slovenia, census 2002
+   - 05W1804S.px Dwellings by useful floor space, number of rooms, type of settlement and the total number of rooms in dwellings, Slovenia, census 2002
+   - 05W1805S.px Dwellings and useful floor space of dwellings by year of construction, type of settlement, type of building and the number of floors, Slovenia, census 2002
+   - 05W1806S.px Buildings with dwellings by material of the bearing structure of the building, type of roofing, type of construction and type of settlement, Slovenia, census 2002
+   - 05W1807S.px Dwellings by type of ownership, useful floor space, number of rooms and type of settlement, Slovenia, census 2002
+   - 05W1808S.px Dwellings, useful floor space and number of rooms by position of a dwelling and type of settlement, Slovenia, census 2002
+   - 05W1809S.px Occupied dwellings by number of households, type of building, number of rooms, useful floor space and type of settlement, Slovenia, census 2002
+   - 05W1810S.px Households in dwellings by tenure status, type of building, number of rooms, useful floor space, utilility spaces, installations and type of settlement, Slovenia, census 2002
+   - 05W1811S.px Total dwellings, dwellings for residence and business purposes by number of rooms, number of rooms used only for business purposes and type of settlement, Slovenia, census 2002
+   - 05W1901S.px Families by type, statistical regions, Slovenia, census 2002
+   - 05W1902S.px Families by the number of children, statistical regions, Slovenia, census 2002
+   - 05W1903S.px Families by the number of children and type of family, statistical regions, Slovenia, census 2002
+   - 05W2001S.px Family and non-family households by number of members, statistical regions, Slovenia, census 2002
+   - 05W2002S.px Households by type and the number of members, number of labour force, and number of members by selected age groups, statistical regions, Slovenia, census 2002
+   - 05W2101S.px Labour force by status in employment, statistical regions, Slovenia, census 2002
+   - 05W2102S.px Activity measures by sex and statistical region of residence, Slovenia, census 2002
+   - 05W2103S.px Labour force by status in employment and sex, statistical regions of residence, Slovenia, census 2002
+   - 05W2104S.px Persons in employment by status in employment and sex, statistical regions of work, Slovenia, census 2002
+   - 05W2105S.px Persons in employment by activities, sez and education, statistical regions of residence, Slovenia, census 2002
+   - 05W2106S.px Persons in employment by activities, sex and education, statistical regions of work, Slovenia, census 2002
+   - 05W2107S.px Unemployed persons by age groups, sex and education, statistical regions, Slovenia, census 2002
+   - 05W2201S.px Population by age groups and sex, statistical regions, Slovenia, census 2002
+   - 05W2202S.px Population by ethnic affiliation, statistical regions, Slovenia, census 2002
+   - 05W2203S.px Population declared as Italians, statistical regions, Slovenia, census 2002
+   - 05W2204S.px Population declared as Hungarians, statistical regions, Slovenia, census 2002
+   - 05W2205S.px Population declared as Roma, statistical regions, Slovenia, census 2002
+   - 05W2206S.px Population by religion, statistical regions, Slovenia, census 2002
+   - 05W2207S.px Population by mother tongue, statistical regions, Slovenia, census 2002
+   - 05W2208S.px Some population groups, statistical regions, Slovenia, census 2002
+   - 05W2209S.px Population by ethnic affiliation, statistical regions, Slovenia, census 2002
+   - 05W2210S.px Population by religion, statistical regions, Slovenia, census 2002
+   - 05W2211S.px Population by language of conversation in the family, statistical regions, Slovenia, census 2002
+   - 05W2212S.px Population by age and sex, statistical regions, Slovenia, census 2002
+   - 05W2213S.px Immigrants to Slovenia by the number of years of living in Slovenia, statistical regions, Slovenia, census 2002
+   - 05W2214S.px Immigrants to Slovenia by the area of first residence and the number of years of living in Slovenia, statistical regions, Slovenia, census 2002
+   - 05W2215S.px Migration of population by age at migration, statistical regions, Slovenia, census 2002
+   - 05W2216S.px Migration of population by area of previous residence and age at migration, statistical regions, Slovenia, census 2002
+   - 05W2301S.px Population aged 15 years or over by educational attainment, statistical regions, Slovenia, census 2002
+   - 05W2302S.px Population aged 15 or over by educational attainment and sex, statistical regions, Slovenia, census 2002
+   - 05W2401S.px Dwellings and useful floor space by use and other occupied premises, statistical regions, Slovenia, census 2002
+   - 05W2402S.px Dwellings by useful floor space and the number of rooms, statistical regions, Slovenia, census 2002
+   - 05W2403S.px Buildings with dwellings and other residential premises by type of building, statistical regions, Slovenia, census 2002
+   - 05W2404S.px Dwellings by useful floor space, number of rooms and the total number of rooms in the dwellings, statistical regions, Slovenia, census 2002
+   - 05W2405S.px Buildings with dwellings and dwellings by year of construction, statistical regions, Slovenia, census 2002
+   - 05W2406S.px Building with dwellings by use, type of construction and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2407S.px Buildings with dwellings by type of building and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2408S.px Buildings with dwellings by the material of the bearing structure, type of roofing and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2409S.px Buildings with dwellings by type of building, number of floors, material of the bearing structure of the building, type of roofing and dwellings by type of building and number of floors, statistical r
+   - 05W2410S.px Buildings with dwellings with asbestos-cement roofing by the year of the last change of the roofing and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2411S.px Dwellings and useful floor space by type of ownership and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2412S.px Dwellings and useful floor space by type of ownership, type of settlement and type of building, statistical regions, Slovenia, census 2002
+   - 05W2413S.px Dwellings by the material of the bearing structure of the building, type of roofing and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2414S.px Dwellings by main source of heating, statistical regions, Slovenia, census 2002
+   - 05W2415S.px Dwellings by sources of heating, statistical regions, Slovenia, census 2002
+   - 05W2416S.px Dwellings by type of heating, statistical regions, Slovenia, census 2002
+   - 05W2417S.px Dwellings for leisure and recreation by number of rooms, useful floor space, type of building and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2418S.px Dwellings by installations, utility spaces and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2419S.px Households in dwellings by installations, utility spaces and type of settlement, statistical regions, Slovenia, census 2002
+   - 05W2501S.px Families by the number of children and type of family, administrative units, Slovenia, census 2002
+   - 05W2601S.px Households by the number of members and type of household, administrative units, Slovenia, census 2002
+   - 05W2701S.px Labour force by status in employment, administrative units, Slovenia, census 2002
+   - 05W2801S.px Population by age groups and type of settlement, administrative units, Slovenia, census 2002
+   - 05W2802S.px Population by age groups and citizenship, administrative units, Slovenia, census 2002
+   - 05W2901S.px Population aged 15 years or over by educational attainment, administrative units, Slovenia, census 2002
+   - 05W3001S.px Dwellings and useful floor space by use, other occupied premises and number of occupants in dwellings, administrative units, Slovenia, census 2002
+   - 05W3002S.px Dwellings by useful floor space and the number of rooms and the total number of rooms in dwellings, administrative units, Slovenia, census 2002
+   - 05W3003S.px Buildings with dwellings by the year of construction of the building, administrative units, Slovenia. census 2002
+   - 05W3004S.px Buildings with dwellings by the material of the bearing structure and type of roofing, administrative units, Slovenia, census 2002
+   - 05W3005S.px Occupied dwellings by average useful floor space per person, administrative units, Slovenia, census 2002
+   - 0952775S.px Pupils studying foreign languages and languages of environment in the scope of curriculum, end of the school year, Slovenia, 2006/2007 - 2014/2015
+   - 0952776S.px Pupils studying foreign language as an optional subject, end of the school year, Slovenia, 2005/2006 - 2014/2015
+   - 0952777S.px Pupils studying foreign languages and other subjects as a facultative subject by grades, end of the school year, Slovenia, 2005/2006 - 2014/2015
+   - 0952778S.px Pupils in regular programmes of basic education studying foreign languages in the scope of curriculum by language and class, Slovenia, annually
+   - 0953245S.px Pupils, learning foreign languages by grade, type of education and languages, Slovenia, annually
+   - 0953360S.px Adults, learning foreign languages by type of education, type of organisation and languages [old methodology], Slovenia, 2008/2009 - 2014/2015
+   - 0953401S.px Teachers, professional support, counselling and management stuff in upper secondary schools for youth by sex, teaching language and type of employment, Slovenia, 2008 - 2014
+   - 0953402S.px Teachers, professional support, counselling and management stuff in upper secondary schools for youth by sex, teaching language and educational attainment, Slovenia, 2008 - 2014
+   - 0953403S.px Counselling stuff in upper secondary schools for youth by professional profile, sex, teaching language and form of ownership, municipalities, Slovenia, 2008 - 2014
+   - 0953404S.px Teachers, professional support, counselling and management stuff in upper secondary schools for youth by sex, teaching language, and age groups, Slovenia, 2008 - 2014
+   - 0953805S.px Participants in language programs, statistical regions, Slovenia, 2013 - 2015
+   - 0953806S.px Language programs, realised hours, statistical regions, Slovenia, 2013 - 2015
+   - 0954006S.px Number of adults by sex, age groups and knowledge of foreign languages, Slovenia, 2011 - 2022
+   - 0954106S.px Number of adults by sex, level of education and konowledge of foreign languages, Slovenia, 2011 - 2022
+   - 0954120S.px Number of adults by sex, parents' level of education and knowledge of foreign languages, Slovenia, 2011 - 2022
+   - 0957706S.px Number of adults by sex, labour status and knowledge of foreign languages, Slovenia, 2011 - 2022
+   - 0957806S.px Number of adults by sex, degree of urbanisation of permanent residence and knowledge of foreign languages, Slovenia, 2011 - 2022
+   - 0987301S.px Share of adults by number of foreign languages they understand or use by sex and age groups, Slovenia, multiannually
+   - 0987302S.px Share of adults by number of foreign languages they understand or use by sex and level of education, Slovenia, multiannually
+   - 0987303S.px Adults by level of knowledge of the best-known foreign language by sex and age groups, Slovenia, multiannually
+   - 0987304S.px Share of adults by level of knowledge of the best-known foreign language by sex and level of education, Slovenia, multiannually
+   - 0987305S.px Share of adults by the most common foreign language they understand or use by age groups, Slovenia, multiannually
+   - 0987306S.px Share of adults by the most common foreign language they understand or use by level of education, Slovenia, multiannually
+   - 1009822S.px Number of radio and TV broadcasting organisations by language, Slovenia, 2005, 2008, 2011
+   - 1059405S.px Type and language of books in school libraries, Slovenia, 2006, 2009, 2012
+   - 1059719S.px Number of theatres by language, Slovenia, 2005, 2008, 2011
+   - 1059808S.px Orchestras / choirs by language, Slovenia, 2005, 2008, 2011
+   - 1907101S.px Dwelling stock, dwellings by year of construction according to the 1991 methodology of census, municipalities, Slovenia, 1999 - 2001
+   - 1907102S.px Dwelling stock, dwellings by year of construction according to the 2002 methodology of census, municipalities, Slovenia, 2002 - 2010
+   - 1907103S.px Dwellings stock, dwellings by installation and auxiliary spaces according to the 1991 methodology of census, municipalities, Slovenia, 1999 - 2001
+   - 1907104S.px Dwellings stock, dwellings by installation and auxiliary spaces according to the 2002 methodology of census, municipalities, Slovenia, 2002 - 2010
+   - 1907105S.px Dwelling stock, dwellings by number of rooms and useful floor space according to the 1991 methodology of census, municipalities, Slovenia, 1999 - 2001
+   - 1907106S.px Dwelling stock, dwellings by number of rooms and useful floor space, according to the 2002 methodology of census, municipalities, Slovenia, 2002 - 2010
+   - 1907107S.px Dwelling stock, dwellings by number of rooms and useful floor space, according to the 2002 methodology of census, statistical regions , Slovenia, 2002 - 2010
+   - 1907108S.px Dwellings stock, dwellings by installation and auxiliary spaces, according to the 2002 methodology of census, statistical regions, Slovenia, 2002 - 2010
+   - 1907109S.px Dwellings stock, dwellings by year of construction, according to the 2002 methodology of census, statistical regions, Slovenia, 2002 - 2010
+   - 1907110S.px Estimation of the dwelling stock, dwellings by year of construction, according to the 2011 methodology of census, municipalities, Slovenia, 2010 - 2014
+   - 1907111S.px Estimation of dwellings stock, dwellings by installation and auxiliary spaces, according to the 2011 methodology, municipalities of census, Slovenia, 2010 - 2014
+   - 1907112S.px Estimation of dwelling stocks, dwellings by number of rooms and useful floor space, according to the 2011 methodologyof census, municipalities, Slovenia, 2010 - 2014
+   - 1907113S.px Estimation of dwelling stocks, dwellings by number of rooms and useful floor space, according to the 2011 methodology of census, statistical regions, Slovenia, 2010 - 2014
+   - 1907114S.px Estimation of dwellings stock, dwellings by installation and auxiliary spaces, according to the 2011 methodology of census, statistical regions, Slovenia, 2010 - 2014
+   - 1907115S.px Estimation of dwellings stock, dwellings by year of construction according to the 2011 methodology of census, statistical regions, Slovenia, 2010 - 2014
+   - H130S.px Population and households, censuses, Slovenia, multiannually
+
+## http://web.archive.org/cdx/search/cdx?url=stat.si/popis2002/si/rezultati/*&limit=80&fl=timestamp,original,statuscode&filter=statuscode:200&collapse=urlkey
+   HTTP 503, 11,832 bytes, 14 lines, text/html
+   | <html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>
+   | <body style="padding:30px 0;">
+   | <div style="float:left;width:260px;text-align:center;">
+   | <img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAACmCAAAAACAHSAbAAAOuklEQVR42t2d2bmsqhKAIQcyIRQyIQ+SIAOeiYAIyIAYePHrW1WgOCC6etp9bi2n3SL8lMUMbvbYynSQ6JXUccI7s6NktZJcKqVje4SejkYJIZWemn9GC2HpWku3CsYbeN64hP/MsBsl
+   | <img xsrc="logo_wm.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAAA3BAMAAAACpp4pAAAAMFBMVEX///+nKC4CBAROUFDAwMD4+PiGhoatNjzBaGzY2Nj47u/KfYHXnaDt1NX05OW0RUolqTtyAAAF00lEQVR42u2XT2jbVhzHf60tZfLS4HcICuTg8uQZ0kMwVmpIDkNz4sJyGGKNs
+   | <img xsrc="logo_ol.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABfBAMAAAD4yCOtAAAAMFBMVEX///8HbKv8/Pz+/v7y9PTY2dkAAACOjo+2ubxaWloiIyPl5ue7z95Lj72Drc3V5O9B1ZLgAAAGjElEQVR42u2YX0xbVRzHT84pAdLKco1LSOTCyb0s2TKdJ+0S/zyYpnYZbIC4j
+   | <img xsrc="logo_ait.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACCBAMAAABWaCxcAAAAMFBMVEUAdcj////N4/RKndc4k9SizOsjh8+y1e7d7Pfy+PwNe8qDvOSSxOdzs+Bmq95cptuwcM7yAAADDUlEQVR42u2Zz27TQBDGZ0makPBHniS0OE1osATnVubEiYoXCG+QgsS5QeKe
+   | </div>
+   | <div style="overflow:hidden;width:500px;padding:0 30px">
+   | <h1 style="margin-top:0">Temporarily Offline</h1>
+   | <p>Internet Archive services are temporarily offline.</p>
+   | <p>Please check our official accounts, including <a href="https://twitter.com/internetarchive/">Twitter/X</a>, <a href="https://bsky.app/profile/did:plc:73dpznbu4wqwtcyurwbiulov">Bluesky</a> or <a href="https://mastodon.archive.org/deck/@in
+   | <p>We apologize for the inconvenience.</p>
+   | </div></body></html>
+
+=== che9
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?orderNr=je-d-01.08.03.02
+   HTTP 200, 2,132 bytes, 44 lines, application/json
+   | {
+   0 fields: 
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?orderNr=je-d-01.08.03.01
+   HTTP 200, 2,132 bytes, 44 lines, application/json
+   | {
+   0 fields: 
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?orderNr=je-d-01.08.02.02
+   HTTP 200, 7,221 bytes, 236 lines, application/json
+   | {
+   26 fields: 900300 | 900030 | 900029 | 900001 | 900014 | 900011 | 900010 | 901022 | 901024 | 900002 | 312 | 900091 | 900001 | 900092 | 900002 | 900008 | 900022 | 900001 | 900065 | 900001 | 900065 | 900001 | 900065 | 900004 | 910000 | je-d-01.08.02.02
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?language=de&title=Religionszugeh%C3%B6rigkeit
+   HTTP 200, 99,289 bytes, 3,562 lines, application/json
+   | {
+   449 fields: 900300 | 900052 | 900049 | 900001 | 900010 | 901022 | 901024 | 900002 | 312 | 900092 | 900002 | 900001 | 900065 | 900001 | 900009 | 900001 | 900065 | 900001 | 900065 | 900004 | 930000 | mx-d-01-01.08.02.001 | 900300 | 900030 | 900029 | 900001 | 900016 | 900026 | 900010 | 901022 | 901024 | 900002 | 312 | 900091 | 900001 | 900001 | 900065 | 900001 | 900065 | 900001
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?language=de&q=Religionszugeh%C3%B6rigkeit%20Kanton
+   HTTP 200, 106,893 bytes, 3,872 lines, application/json
+   | {
+   512 fields: 900300 | 900073 | 900072 | 900001 | 900226 | 901283 | 900003 | 11 | 900001 | 900065 | 900001 | 900065 | 900001 | 900065 | 900004 | lk-q-bfs-gnp-17.03-0040 | 900300 | 900073 | 900072 | 900001 | 900226 | 901283 | 900003 | 11 | 900091 | 900001 | 900092 | 900002 | 900093 | 900003 | 900004 | 900007 | 900008 | 900023 | 900001 | 900065 | 900001 | 900065 | 900001 | 900065
+
+## https://dam-api.bfs.admin.ch/hub/api/dam/assets?language=de&prodima=900046&articleModel=900052
+   HTTP 200, 2,132 bytes, 44 lines, application/json
+   | {
+   0 fields: 
+
+=== nld10
+
+## https://opendata.cbs.nl/ODataApi/odata/03759ned/Perioden?$format=json
+   HTTP -1, 0 bytes, URLError: <urlopen error [Errno 101] Network is unreachable>
+   
+
+## https://datasets.cbs.nl/odata/v1/CBS/03759ned/PeriodenCodes
+   HTTP -1, 0 bytes, URLError: <urlopen error [Errno 104] Connection reset by peer>
+   
+
+## https://dataderden.cbs.nl/ODataApi/odata/
+   HTTP -1, 0 bytes, URLError: <urlopen error [Errno 101] Network is unreachable>
+   
+
+## https://opendata.cbs.nl/statline/portal.html
+   HTTP -1, 0 bytes, URLError: <urlopen error [Errno 101] Network is unreachable>
+   
+
+## https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=DescribeFeatureType&service=WFS&version=2.0.0&typeNames=wijkenbuurten:gemeenten
+   HTTP 200, 19,148 bytes, application/gml+xml; version=3.2; charset=UTF-8
+   208 distinct matches of 'name=\\"[A-Za-z_0-9]+\\"'
+   - name="gemeenten"
+   - name="gemeentenType"
+   - name="geom"
+   - name="gemeentecode"
+   - name="gemeentenaam"
+   - name="indelingswijzigingWijkenEnBuurten"
+   - name="water"
+   - name="omgevingsadressendichtheid"
+   - name="stedelijkheidAdressenPerKm2"
+   - name="bevolkingsdichtheidInwonersPerKm2"
+   - name="aantalInwoners"
+   - name="mannen"
+   - name="vrouwen"
+   - name="percentagePersonen0Tot15Jaar"
+   - name="percentagePersonen15Tot25Jaar"
+   - name="percentagePersonen25Tot45Jaar"
+   - name="percentagePersonen45Tot65Jaar"
+   - name="percentagePersonen65JaarEnOuder"
+   - name="percentageOngehuwd"
+   - name="percentageGehuwd"
+   - name="percentageGescheid"
+   - name="percentageVerweduwd"
+   - name="geboorteTotaal"
+   - name="geboortesPer1000Inwoners"
+   - name="sterfteTotaal"
+   - name="sterfteRelatief"
+   - name="aantalHuishoudens"
+   - name="percentageEenpersoonshuishoudens"
+   - name="percentageHuishoudensZonderKinderen"
+   - name="percentageHuishoudensMetKinderen"
+   - name="gemiddeldeHuishoudsgrootte"
+   - name="percentageWesterseMigratieachtergrond"
+   - name="percentageNietWesterseMigratieachtergrond"
+   - name="percentageUitMarokko"
+   - name="percentageUitNederlandseAntillenEnAruba"
+   - name="percentageUitSuriname"
+   - name="percentageUitTurkije"
+   - name="percentageOverigeNietwestersemigratieachtergrond"
+   - name="aantalBedrijvenLandbouwBosbouwVisserij"
+   - name="aantalBedrijvenNijverheidEnergie"
+   - name="aantalBedrijvenHandelEnHoreca"
+   - name="aantalBedrijvenVervoerInformatieCommunicatie"
+   - name="aantalBedrijvenFinancieelOnroerendGoed"
+   - name="aantalBedrijvenZakelijkeDienstverlening"
+   - name="aantalBedrijvenOverheidOnderwijsEnZorg"
+   - name="aantalBedrijvenCultuurRecreatieOverige"
+   - name="aantalBedrijfsvestigingen"
+   - name="woningvoorraad"
+   - name="gemiddeldeWoningwaarde"
+   - name="percentageEengezinswoning"
+   - name="percentageMeergezinswoning"
+   - name="percentageBewoond"
+   - name="percentageKoopwoningen"
+   - name="percentageHuurwoningen"
+   - name="percHuurwoningenInBezitWoningcorporaties"
+   - name="percHuurwoningenInBezitOverigeVerhuurders"
+   - name="percentageWoningenMetEigendomOnbekend"
+   - name="percentageBouwjaarklasseTot2000"
+   - name="percentageBouwjaarklasseVanaf2000"
+   - name="percentageLeegstandWoningen"
+   - name="gemiddeldGasverbruikTotaal"
+   - name="gemiddeldGasverbruikAppartement"
+   - name="gemiddeldGasverbruikTussenwoning"
+   - name="gemiddeldGasverbruikHoekwoning"
+   - name="gemiddeldGasverbruik2Onder1KapWoning"
+   - name="gemiddeldGasverbruikVrijstaandeWoning"
+   - name="gemiddeldGasverbruikHuurwoning"
+   - name="gemiddeldGasverbruikkoopwoning"
+   - name="gemiddeldElektriciteitsverbruikTotaal"
+   - name="gemiddeldElektriciteitsverbruikAppartement"
+   - name="gemiddeldElektriciteitsverbruikTussenwoning"
+   - name="gemiddeldElektriciteitsverbruikHoekwoning"
+   - name="gemElektriciteitsverbruik2Onder1KapWoning"
+   - name="gemElektriciteitsverbruikVrijstaandeWoning"
+   - name="gemiddeldElektriciteitsverbruikHuurwoning"
+   - name="gemiddeldElektriciteitsverbruikkoopwoning"
+   - name="percentageWoningenMetStadsverwarming"
+   - name="opleidingsniveauLaag"
+   - name="opleidingsniveauMiddelbaar"
+   - name="opleidingsniveauHoog"
+   - name="nettoArbeidsparticipatie"
+   - name="percentageWerknemers"
+   - name="percentageZelfstandigen"
+   - name="aantalInkomensontvangers"
+   - name="gemiddeldInkomenPerInkomensontvanger"
+   - name="gemiddeldInkomenPerInwoner"
+   - name="percentagePersonenMetLaagInkomen"
+   - name="percentagePersonenMetHoogInkomen"
+   - name="percentageHuishoudensMetLaagInkomen"
+   - name="percentageHuishoudensMetHoogInkomen"
+   - name="percentageHuishoudensOnderOfRondSociaalMinimum"
+   - name="percentageHuishoudensMetLageKoopkracht"
+   - name="aantalPersonenMetEenAoUitkeringTotaal"
+   - name="aantalPersonenMetEenWwUitkeringTotaal"
+   - name="aantalPersonenMetEenAlgBijstandsuitkeringTot"
+   - name="aantalPersonenMetEenAowUitkeringTotaal"
+   - name="gemiddeldGestandaardiseerdInkomenVanHuishoudens"
+   - name="huishoudensTot110PercentVanSociaalMinimum"
+   - name="huishoudensTot120PercentVanSociaalMinimum"
+   - name="mediaanVermogenVanParticuliereHuish"
+   - name="aantalJongerenMetJeugdzorgInNatura"
+   - name="percentageJongerenMetJeugdzorgInNatura"
+   - name="aantalWmoClienten"
+   - name="aantalWmoClientenPer1000Inwoners"
+   - name="personenautosTotaal"
+   - name="personenautosPerHuishouden"
+   - name="personenautosPerKm2"
+   - name="motortweewielersTotaal"
+   - name="aantalPersonenautosMetBrandstofBenzine"
+   - name="aantalPersonenautosMetOverigeBrandstof"
+   - name="oppervlakteTotaalInHa"
+   - name="oppervlakteLandInHa"
+   - name="oppervlakteWaterInHa"
+   - name="huisartsenpraktijkGemiddeldeAfstandInKm"
+   - name="huisartsenpraktijkGemiddeldAantalBinnen1Km"
+   - name="huisartsenpraktijkGemiddeldAantalBinnen3Km"
+   - name="huisartsenpraktijkGemiddeldAantalBinnen5Km"
+   - name="huisartsenpostGemiddeldeAfstandInKm"
+   - name="apotheekGemiddeldeAfstandInKm"
+   - name="ziekenhuisInclBuitenpolikliniekGemAfstInKm"
+   - name="ziekenhuisInclBuitenpoliGemAantalBinnen5Km"
+   - name="ziekenhuisInclBuitenpoliGemAantalBinnen10Km"
+   - name="ziekenhuisInclBuitenpoliGemAantalBinnen20Km"
+   - name="ziekenhuisExclBuitenpolikliniekGemAfstInKm"
+   - name="ziekenhuisExclBuitenpoliGemAantalBinnen5Km"
+   - name="ziekenhuisExclBuitenpoliGemAantalBinnen10Km"
+   - name="ziekenhuisExclBuitenpoliGemAantalBinnen20Km"
+   - name="groteSupermarktGemiddeldeAfstandInKm"
+   - name="groteSupermarktGemiddeldAantalBinnen1Km"
+   - name="groteSupermarktGemiddeldAantalBinnen3Km"
+   - name="groteSupermarktGemiddeldAantalBinnen5Km"
+   - name="winkelsOvDagelijkseLevensmGemAfstInKm"
+   - name="winkelsOvDagelLevensmGemAantalBinnen1Km"
+   - name="winkelsOvDagelLevensmGemAantalBinnen3Km"
+   - name="winkelsOvDagelLevensmGemAantalBinnen5Km"
+   - name="warenhuisGemiddeldeAfstandInKm"
+   - name="warenhuisGemiddeldAantalBinnen5Km"
+   - name="warenhuisGemiddeldAantalBinnen10Km"
+   - name="warenhuisGemiddeldAantalBinnen20Km"
+   - name="cafeGemiddeldeAfstandInKm"
+   - name="cafeGemiddeldAantalBinnen1Km"
+   - name="cafeGemiddeldAantalBinnen3Km"
+   - name="cafeGemiddeldAantalBinnen5Km"
+   - name="cafetariaGemiddeldeAfstandInKm"
+   - name="cafetariaGemiddeldAantalBinnen1Km"
+   - name="cafetariaGemiddeldAantalBinnen3Km"
+   - name="cafetariaGemiddeldAantalBinnen5Km"
+   - name="restaurantGemiddeldeAfstandInKm"
+   - name="restaurantGemiddeldAantalBinnen1Km"
+   - name="restaurantGemiddeldAantalBinnen3Km"
+   - name="restaurantGemiddeldAantalBinnen5Km"
+   - name="hotelGemiddeldeAfstandInKm"
+   - name="hotelGemiddeldAantalBinnen5Km"
+   - name="hotelGemiddeldAantalBinnen10Km"
+   - name="hotelGemiddeldAantalBinnen20Km"
+   - name="kinderdagverblijfGemiddeldeAfstandInKm"
+   - name="kinderdagverblijfGemiddeldAantalBinnen1Km"
+   - name="kinderdagverblijfGemiddeldAantalBinnen3Km"
+   - name="kinderdagverblijfGemiddeldAantalBinnen5Km"
+   - name="buitenschoolseOpvangGemAfstandInKm"
+   - name="buitenschoolseOpvangGemiddeldAantalBinnen1Km"
+   - name="buitenschoolseOpvangGemiddeldAantalBinnen3Km"
+   - name="buitenschoolseOpvangGemiddeldAantalBinnen5Km"
+   - name="basisonderwijsGemiddeldeAfstandInKm"
+   - name="basisonderwijsGemiddeldAantalBinnen1Km"
+   - name="basisonderwijsGemiddeldAantalBinnen3Km"
+   - name="basisonderwijsGemiddeldAantalBinnen5Km"
+   - name="voortgezetOnderwijsGemAfstandInKm"
+   - name="voortgezetOnderwijsGemiddeldAantalBinnen3Km"
+   - name="voortgezetOnderwijsGemiddeldAantalBinnen5Km"
+   - name="voortgezetOnderwijsGemiddeldAantalBinnen10Km"
+   - name="vmboGemiddeldeAfstandInKm"
+   - name="vmboGemiddeldAantalBinnen3Km"
+   - name="vmboGemiddeldAantalBinnen5Km"
+   - name="vmboGemiddeldAantalBinnen10Km"
+   - name="havoVwoGemiddeldeAfstandInKm"
+   - name="havoVwoGemiddeldAantalBinnen3Km"
+   - name="havoVwoGemiddeldAantalBinnen5Km"
+   - name="havoVwoGemiddeldAantalBinnen10Km"
+   - name="brandweerkazerneGemiddeldeAfstandInKm"
+   - name="opritHoofdverkeerswegGemiddeldeAfstandInKm"
+   - name="treinstationGemiddeldeAfstandInKm"
+   - name="overstapstationGemiddeldeAfstandInKm"
+   - name="zwembadGemiddeldeAfstandInKm"
+   - name="kunstijsbaanGemiddeldeAfstandInKm"
+   - name="bibliotheekGemiddeldeAfstandInKm"
+   - name="poppodiumGemiddeldeAfstandInKm"
+   - name="bioscoopGemiddeldeAfstandInKm"
+   - name="bioscoopGemiddeldAantalBinnen5Km"
+   - name="bioscoopGemiddeldAantalBinnen10Km"
+   - name="bioscoopGemiddeldAantalBinnen20Km"
+   - name="saunaGemiddeldeAfstandInKm"
+   - name="zonnebankGemiddeldeAfstandInKm"
+   - name="attractieparkGemiddeldeAfstandInKm"
+   - name="attractieparkGemiddeldAantalBinnen10Km"
+   - name="attractieparkGemiddeldAantalBinnen20Km"
+   - name="attractieparkGemiddeldAantalBinnen50Km"
+   - name="theaterGemiddeldeAfstandInKm"
+   - name="theaterGemiddeldAantalBinnen5Km"
+   - name="theaterGemiddeldAantalBinnen10Km"
+
+=== lux6
+
+## https://lustat.statec.lu/rest/codelist/LU1/CL_CANTON_COMMUNE/latest
+   HTTP 200, 50,121 bytes, application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1
+   116 distinct matches of 'id=\\"[0-9C]+\\"[^>]*>\\s*<(?:com|common):Name xml:lang=\\"en\\">[^<]+'
+   - id="C01"> <common:Name xml:lang="en">Capellen
+   - id="C02"> <common:Name xml:lang="en">Esch
+   - id="C03"> <common:Name xml:lang="en">Luxembourg
+   - id="C04"> <common:Name xml:lang="en">Mersch
+   - id="C05"> <common:Name xml:lang="en">Clervaux
+   - id="C06"> <common:Name xml:lang="en">Diekirch
+   - id="C07"> <common:Name xml:lang="en">Redange
+   - id="C08"> <common:Name xml:lang="en">Wiltz
+   - id="C09"> <common:Name xml:lang="en">Vianden
+   - id="C10"> <common:Name xml:lang="en">Echternach
+   - id="C11"> <common:Name xml:lang="en">Grevenmacher
+   - id="C12"> <common:Name xml:lang="en">Remich
+   - id="0101"> <common:Name xml:lang="en">Dippach
+   - id="0102"> <common:Name xml:lang="en">Garnich
+   - id="0103"> <common:Name xml:lang="en">Habscht
+   - id="0104"> <common:Name xml:lang="en">Käerjeng
+   - id="0105"> <common:Name xml:lang="en">Kehlen
+   - id="0106"> <common:Name xml:lang="en">Koerich
+   - id="0107"> <common:Name xml:lang="en">Kopstal
+   - id="0108"> <common:Name xml:lang="en">Mamer
+   - id="0110"> <common:Name xml:lang="en">Steinfort
+   - id="0201"> <common:Name xml:lang="en">Bettembourg
+   - id="0202"> <common:Name xml:lang="en">Differdange
+   - id="0203"> <common:Name xml:lang="en">Dudelange
+   - id="0204"> <common:Name xml:lang="en">Esch-sur-Alzette
+   - id="0205"> <common:Name xml:lang="en">Frisange
+   - id="0206"> <common:Name xml:lang="en">Kayl
+   - id="0207"> <common:Name xml:lang="en">Leudelange
+   - id="0208"> <common:Name xml:lang="en">Mondercange
+   - id="0209"> <common:Name xml:lang="en">Pétange
+   - id="0210"> <common:Name xml:lang="en">Reckange-sur-Mess
+   - id="0211"> <common:Name xml:lang="en">Roeser
+   - id="0212"> <common:Name xml:lang="en">Rumelange
+   - id="0213"> <common:Name xml:lang="en">Sanem
+   - id="0214"> <common:Name xml:lang="en">Schifflange
+   - id="0301"> <common:Name xml:lang="en">Bertrange
+   - id="0302"> <common:Name xml:lang="en">Contern
+   - id="0303"> <common:Name xml:lang="en">Hesperange
+   - id="0304"> <common:Name xml:lang="en">Luxembourg
+   - id="0305"> <common:Name xml:lang="en">Niederanven
+   - id="0306"> <common:Name xml:lang="en">Sandweiler
+   - id="0307"> <common:Name xml:lang="en">Schuttrange
+   - id="0308"> <common:Name xml:lang="en">Steinsel
+   - id="0309"> <common:Name xml:lang="en">Strassen
+   - id="0310"> <common:Name xml:lang="en">Walferdange
+   - id="0311"> <common:Name xml:lang="en">Weiler-la-Tour
+   - id="0401"> <common:Name xml:lang="en">Colmar-Berg
+   - id="0402"> <common:Name xml:lang="en">Bissen
+   - id="0403"> <common:Name xml:lang="en">Helperknapp
+   - id="0404"> <common:Name xml:lang="en">Fischbach
+   - id="0405"> <common:Name xml:lang="en">Heffingen
+   - id="0406"> <common:Name xml:lang="en">Larochette
+   - id="0407"> <common:Name xml:lang="en">Lintgen
+   - id="0408"> <common:Name xml:lang="en">Lorentzweiler
+   - id="0409"> <common:Name xml:lang="en">Mersch
+   - id="0410"> <common:Name xml:lang="en">Nommern
+   - id="0501"> <common:Name xml:lang="en">Clervaux
+   - id="0502"> <common:Name xml:lang="en">Wincrange
+   - id="0503"> <common:Name xml:lang="en">Parc Hosingen
+   - id="0504"> <common:Name xml:lang="en">Troisvierges
+   - id="0505"> <common:Name xml:lang="en">Weiswampach
+   - id="0601"> <common:Name xml:lang="en">Bettendorf
+   - id="0602"> <common:Name xml:lang="en">Bourscheid
+   - id="0603"> <common:Name xml:lang="en">Diekirch
+   - id="0604"> <common:Name xml:lang="en">Erpeldange-sur-Sûre
+   - id="0605"> <common:Name xml:lang="en">Ettelbruck
+   - id="0606"> <common:Name xml:lang="en">Feulen
+   - id="0607"> <common:Name xml:lang="en">Mertzig
+   - id="0608"> <common:Name xml:lang="en">Reisdorf
+   - id="0609"> <common:Name xml:lang="en">Schieren
+   - id="0610"> <common:Name xml:lang="en">Vallée de l'Ernz
+   - id="0701"> <common:Name xml:lang="en">Beckerich
+   - id="0702"> <common:Name xml:lang="en">Préizerdaul
+   - id="0703"> <common:Name xml:lang="en">Ell
+   - id="0704"> <common:Name xml:lang="en">Rambrouch
+   - id="0705"> <common:Name xml:lang="en">Grosbous
+   - id="0706"> <common:Name xml:lang="en">Redange/Attert
+   - id="0707"> <common:Name xml:lang="en">Saeul
+   - id="0708"> <common:Name xml:lang="en">Useldange
+   - id="0709"> <common:Name xml:lang="en">Vichten
+   - id="0710"> <common:Name xml:lang="en">Wahl
+   - id="0711"> <common:Name xml:lang="en">Groussbus-Wal
+   - id="0801"> <common:Name xml:lang="en">Boulaide
+   - id="0802"> <common:Name xml:lang="en">Esch-sur-Sûre
+   - id="0804"> <common:Name xml:lang="en">Goesdorf
+   - id="0805"> <common:Name xml:lang="en">Kiischpelt
+   - id="0806"> <common:Name xml:lang="en">Lac de la Haute-Sûre
+   - id="0807"> <common:Name xml:lang="en">Wiltz
+   - id="0808"> <common:Name xml:lang="en">Winseler
+   - id="0901"> <common:Name xml:lang="en">Tandel
+   - id="0902"> <common:Name xml:lang="en">Putscheid
+   - id="0903"> <common:Name xml:lang="en">Vianden
+   - id="1001"> <common:Name xml:lang="en">Beaufort
+   - id="1002"> <common:Name xml:lang="en">Bech
+   - id="1003"> <common:Name xml:lang="en">Berdorf
+   - id="1004"> <common:Name xml:lang="en">Consdorf
+   - id="1005"> <common:Name xml:lang="en">Echternach
+   - id="1006"> <common:Name xml:lang="en">Rosport-Mompach
+   - id="1008"> <common:Name xml:lang="en">Waldbillig
+   - id="1101"> <common:Name xml:lang="en">Betzdorf
+   - id="1102"> <common:Name xml:lang="en">Biwer
+   - id="1103"> <common:Name xml:lang="en">Flaxweiler
+   - id="1104"> <common:Name xml:lang="en">Grevenmacher
+   - id="1105"> <common:Name xml:lang="en">Junglinster
+   - id="1106"> <common:Name xml:lang="en">Manternach
+   - id="1107"> <common:Name xml:lang="en">Mertert
+   - id="1108"> <common:Name xml:lang="en">Wormeldange
+   - id="1201"> <common:Name xml:lang="en">Bous
+   - id="1202"> <common:Name xml:lang="en">Dalheim
+   - id="1203"> <common:Name xml:lang="en">Lenningen
+   - id="1204"> <common:Name xml:lang="en">Mondorf-les-Bains
+   - id="1205"> <common:Name xml:lang="en">Remich
+   - id="1206"> <common:Name xml:lang="en">Schengen
+   - id="1207"> <common:Name xml:lang="en">Stadtbredimus
+   - id="1208"> <common:Name xml:lang="en">Waldbredimus
+   - id="1209"> <common:Name xml:lang="en">Bous-Waldbredimus
+
+## DF_X021 2011-2018: HTTP 200, 904 rows
+   units per year: {'2011': 113, '2012': 113, '2013': 113, '2014': 113, '2015': 113, '2016': 113, '2017': 113, '2018': 113}
+
+## https://statistiques.public.lu/fr/recensement/diversite-linguistique.html
+   HTTP 404, 39,239 bytes, text/html; charset=utf-8
+   0 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|zip|pdf)\\"|href=\\"[^\\"]*(?:lingu|langu)[^\\"]*\\"'
+
+## https://statistiques.public.lu/en/recensement.html
+   HTTP 404, 39,239 bytes, text/html; charset=utf-8
+   0 distinct matches of 'href=\\"[^\\"]+\\.(?:xlsx?|csv|zip|pdf)\\"|href=\\"[^\\"]*(?:lingu|langu)[^\\"]*\\"'
+
+=== deu7
+   credential present: True, True
+   logincheck POST form, headers: HTTP 400: <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your reques
+   logincheck POST, headers, no type: HTTP 400: <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your reques
+   logincheck GET, headers: HTTP 400: <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your reques
+   logincheck GET, no credential: HTTP 400: <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your reques
+   whoami: HTTP 400: <html> <head> <base href="/error_path/"> <title>400 Bad Request</title> </head> <body> <h1>Bad Request</h1> <p>The server detected a syntax error in your reques
+
+## https://ergebnisse.zensus2022.de/datenbank/online/
+   HTTP 400, 791 bytes, text/html
+   <html>
+   <head>
+   <base href="/error_path/">
+   <title>400 Bad Request</title>
+   </head>
+   <body>
+   <h1>Bad Request</h1>
+   <p>The server detected a syntax error in your request.<br>
+   Check your request and all parameters.</p>
+   
+   <p>Your request ID was: arlDDTs7E_J4hjNxynuC9QAABnk</p>
+   
+   
+                                                                                                       
+                                 
+
+## Regionaldatenbank 'Religion': 0 tables
+
+## Regionaldatenbank 'Zensus 2022': 0 tables
