@@ -1,8 +1,140 @@
-uk_nomis: county (TYPE155)
-uk_nomis: TS021 Ethnic group (NM_2041_1)
-uk_nomis: TS030 Religion (NM_2049_1)
-uk_nomis: TS024 Main language (detailed) (NM_2043_1)
-  NM_2043_1: categories are c2021_mlang_94
-  wrote data/processed/uk_county.json (2188 kB)
-  173 records
-  173 local authority records
+== https://api.idescat.cat/taules/v2/eulp?lang=en
+  22,179 bytes; starts b'{\n  "cla'
+  {
+    "class" : "collection",
+    "href" : "https://api.idescat.cat/taules/v2/eulp?lang=en",
+    "label" : "Survey on Language Uses of the Population",
+    "link" : {
+      "item" : [ {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3170?lang=en",
+        "label" : "Population. By first language"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3165?lang=en",
+        "label" : "Population. By first language and sex"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3167?lang=en",
+        "label" : "Population. By first language and age in large age groups"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/2973?lang=en",
+        "label" : "Population. By first language and place of birth"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3163?lang=en",
+        "label" : "Population. By first language. Most frequent languages"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/21429?lang=en",
+        "label" : "Population. By first language and territorial stratified sampling"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3190?lang=en",
+        "label" : "Population. By language of identification"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3178?lang=en",
+        "label" : "Population. By language of identification and sex"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/2990?lang=en",
+        "label" : "Population. By language of identification and place of birth"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3184?lang=en",
+        "label" : "Population. By language of identification and age in large age groups"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3173?lang=en",
+        "label" : "Population. By language of identification. Most frequent languages"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/21430?lang=en",
+        "label" : "Population. By language of identification and territorial stratified sampling"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3202?lang=en",
+        "label" : "Population. By habitual language"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3194?lang=en",
+        "label" : "Population. By habitual language and sex"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3196?lang=en",
+        "label" : "Population. By habitual language and age in large age groups"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/2989?lang=en",
+        "label" : "Population. By habitual language and place of birth"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/3192?lang=en",
+        "label" : "Population. By habitual language. Most frequent languages"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/21431?lang=en",
+        "label" : "Population. By habitual language and territorial stratified sampling"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/4951?lang=en",
+        "label" : "Population. By habitual language and first language"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/4952?lang=en",
+        "label" : "Population. By language of identification and first language"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/4953?lang=en",
+        "label" : "Population. By language of identification and habitual language"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/20912?lang=en",
+        "label" : "Population. By language uses with family members"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/20913?lang=en",
+        "label" : "Population. By language uses with family members and sex"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/20914?lang=en",
+        "label" : "Population. By language uses with family members and age groups"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp/20915?lang=en",
+        "label" : "Population. By language uses with family members and place of birth"
+      }, {
+        "class" : "collection",
+       
+== https://sig.govern.ad/server/rest/services/Hosted/Poblaci%C3%B3_2010_2021/FeatureServer?f=json
+  2,234 bytes; starts b'{"allowG'
+  {"allowGeometryUpdates":true,"supportsApplyEditsWithGlobalIds":false,"maxRecordCount":2000,"description":"","units":"esriMeters","maxViewsCount":20,"syncEnabled":false,"tables":[],"hasVersionedData":false,"hasViews":false,"layerOverridesEnabled":true,"supportsRelationshipsResource":true,"layers":[{"name":"Població_2010_25","id":0,"type":"Feature Layer","geometryType":"esriGeometryPoint"}],"spatial
+== https://sig.govern.ad/server/rest/services/Hosted/Poblaci%C3%B3_2010_2021/FeatureServer/0?f=json
+  9,570 bytes; starts b'{"isCoGo'
+  {"isCoGoEnabled":false,"extent":{"ymin":15877.396099999547,"xmin":527771.5838999972,"ymax":35749.53319999948,"xmax":550471.8233999982,"spatialReference":{"falseM":-100000,"xyTolerance":0.001,"mUnits":10000,"zUnits":10000,"latestWkid":27563,"zTolerance":0.001,"wkid":27563,"xyUnits":10000,"mTolerance":0.001,"falseX":-35929000,"falseY":-29737100,"falseZ":-100000}},"isDataBranchVersioned":false,"suppo
+== https://www.estadistica.ad/portal/sharing/rest/search?q=owner:cartografia&f=json&num=100
+  174,627 bytes; starts b'{"total"'
+  {"total":250,"start":1,"num":100,"nextStart":101,"results":[{"id":"e313de8d519e4f5a83437f063c9dd6cb","owner":"cartografia","created":1681804910242,"modified":1698164999946,"guid":null,"name":"Ortofoto_Expedita_2022_2","title":"Ortofoto Expedita 2022","type":"Map Service","typeKeywords":["ArcGIS Server","Data","Map Service","Service","WMTS","Hosted Service"],"description":"Ortofoto expedita amb una
+  Una ortofoto expedita és una ortofoto obtinguda a partir de l'orientació directa del vol amb les dades proporcionades pel sistema GNSS/IMU. Sobre les ortofotos expedites no es fan càlculs d'aerotriangulació ni s'apliquen ajustaments radiomètrics. Es tracta d´un producte provisional que té l´avantatge de poder disposar d´un producte aproximat d´una forma ràpida després de la finalització del vol ab
+  Així aquest és un producte que permet realitzar anàlisis visuals generals, no \nes recomana realitzar mesuraments de dimensions d'objectes ni tampoc \nd\u2019àrees.
+  ","tags":["Ortofoto2022","Ortofotoexpedita2022","ortofoto","tpkx"],"snippet":"Ortofoto expedita del vol efectuat al setembre del 2022","thumbnail":"thumbnail/thumbnail1681822430758.png","documentation":null,"extent":[[1.3808006451039996,42.408917581887195],[1.8071343415823091,42.65733136259989]],"categories":[],"spatialReference":"4326","accessInformation":"Àrea de Cartografia - Ministeri de Terri
+  El Ministeri de Territori i Urbanisme recull, per a la Base de Dades de Riscos Geològics d\u2019Andorra , informació sobre els següents fenòmens: aiguats, despreniments, esllavissades, fluxos torrencials, lliscaments i allaus.
+  Per\n aquest motiu, si heu vist com s'ha produït, el resultat o heu sentit \nquelcom sobre alguns d'aquests fenòmens , podeu informar-nos per correu electrònic a bdrga@govern.ad ","tags":["riscos geològics","maparecull","riscosgeològics","riscosandorra","riscos"],"snippet":"Mapa inventari dels riscos geològics d'Andorra","thumbnail":"thumbnail/thumbnail1656397297057.png","documentation":null,"exte
+  Data de les dades: La digitalització del mapa s'ha fet en base a les ortofotografies de l'any 2012. \n Base de referència del mapa: \n Fotografies aèries de l'any 2012 (0,25 m de resolució) de l'Àrea de Cartografia i Topografia del M. I. Govern d'Andorra. \n Metodologia del Mapa de Cobertes del Sòl \nd'Andorra de l'any 1995, editat l'any 2001 per l'Institut d'Estudis \nAndorrans i realitzat pel CR
+  ","tags":["cobertes","cobertes2012","mapacobertes2012","cenma"],"snippet":"Mapa de Cobertes del Sòl d'Andorra (2012)","thumbnail":"thumbnail/thumbnail1678351361629.png","documentation":null,"extent":[[1,42],[1,42]],"categories":[],"spatialReference":"WGS_1984_Web_Mercator_Auxiliary_Sphere","accessInformation":"Àrea de Cartografia - ARI","classification":null,"licenseInfo":null,"culture":"ca-ad","p
+  · Precisió: 1 m en planimetria i 1,5 m en altimetria
+  · Cobreix tot el Principat d\u2019Andorra ","tags":["topogràfic","topogràfic2012","mapatopogràfic","topografiaAndorra"],"snippet":"Mosaic ràster del mapa topogràfic 1/5000 de l'any 2012","thumbnail":"thumbnail/thumbnail1681462528555.png","documentation":null,"extent":[[1.3793831206536302,42.40821899067603],[1.8083107025150194,42.6585528176917]],"categories":[],"spatialReference":"4326","accessInfo
+  Geometries corregides l'any 2025 ","tags":["carreteres","carreteresAndorra","carreteresandorra2022","xarxaviària"],"snippet":"Carreteres d'Andorra segons Llei 18/2016 del 30 de novembre.","thumbnail":"thumbnail/thumbnail.png","documentation":null,"extent":[[1.4191862455909254,42.43527763735935],[1.7374775685884416,42.6329721297766]],"categories":[],"spatialReference":"102100","accessInformation":"
+  Base de referència del mapa:
+  Mapa topogràfic del Principat d'Andorra escala 1/5000 any 1995 (suport digital - Àrea de Cartografia i Topografia del M.I. Govern d'Andorra). Fotografies aèries de diferents anys Cartografia realitzada sobre el terreny.
+  Base de referència de la informació associada: Interpretació a partir de fotografies aèries de diferents anys i treballs de geomorfologia realitzats amb anterioritat. La cartografia i la informació associada s'ha corroborat a partir del treball de camp.
+  Mètode de treball:
+  El mètode de treball descrit a la memòria del mapa és el següent:
+  1. Interpretació del relleu en base a fotografies aèries de diferents anys i escales proporcionades pel Ministeri d'Ordenament Territorial. Aquest treball ha permès la confecció d'un mapa geomorfològic preliminar de tot el Principat. 2. Recopilació dels treballs geomorfològics antecedents de les que cal destacar la Tesi Doctoral de Prat (1980) i la base dades de l'empresa en Euroconsult S.A.. Els 
+  Autoria:
+  Cartografia geomorfològica del mapa: Ramon Copons (Euroconsult S.A.)
+  Digitalització del mapa: Ignasi Caritg (Euroconsult S.A.) i Gemma Sànchez (Euroconsult S.A.)
+  Memòria del mapa: Ramon Copons (Euroconsult S.A.)
+  Textos "una mica de geomorfologia" de l'edició en CD: Montserrat Mases, Marta González i Natàli
