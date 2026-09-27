@@ -409,6 +409,19 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 12: registers and surveys for the fields the censuses leave out.
+    "r12_swe_kyrkan": lambda: links("https://www.svenskakyrkan.se/statistik",
+                                    r"xlsx|xls|kommun|medlem|statistik"),
+    "r12_fin_evl": lambda: links("https://www.kirkontilastot.fi/",
+                                 r"xlsx|jasen|jäsen|kunta|kunn|tilast"),
+    "r12_fin_evl2": lambda: links("https://evl.fi/tietoa-kirkosta/tilastotietoa/",
+                                  r"xlsx|jasen|jäsen|kunta|kunn|tilast"),
+    "r12_fin_search_uskonto": lambda: px_search(
+        "https://pxdata.stat.fi/PxWeb/api/v1/fi/StatFin?query=uskonnollinen"),
+    "r12_nor_search_sami": lambda: px_search(f"{SSB}/?query=sami%20language"),
+    "r12_dnk_tables_lang": lambda: statbank_tables(r"sprog|language|tongue|dialect"),
+    "r12_isl_search_lang": lambda: px_search(f"{HAGSTOFA}/Ibuar?query=language"),
+    "r12_lva_search_relig": lambda: px_search(f"{CSB}?query=religious"),
     # Round 11
     "r11_ltu_eth_lt": lambda: xlsx("https://web.archive.org/web/20220722150228id_/https://osp.stat.gov.lt/documents/10180/9601028/Gyventojai_pagal_tautybe.xlsx", rows=45),
     "r11_ltu_rel_lt": lambda: xlsx("https://web.archive.org/web/20220818193000id_/https://osp.stat.gov.lt/documents/10180/9601028/Gyventojai_pagal_religine_bendruomene_0321.xlsx", rows=45),
