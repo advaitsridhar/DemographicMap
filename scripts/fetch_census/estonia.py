@@ -310,6 +310,10 @@ def main() -> int:
                          f"not know: {unknown}")
     whole = next(c for c, t in zip(m[place]["values"], m[place]["valueTexts"])
                  if t == "Whole country")
+    # People whose county the register does not know are in the country's
+    # total and in no county's.
+    nowhere = [c for c, t in zip(m[place]["values"], m[place]["valueTexts"])
+               if t == "County unknown"]
     ages = [a for a in m["Vanus"]["values"] if a != "000"]
     open_top = max(ages, key=int)            # "87" is "85 and older"
     people: dict[tuple[str, str], AgeSex] = defaultdict(AgeSex)
@@ -327,7 +331,7 @@ def main() -> int:
                     people[(code, year)].add(85 if age == open_top else int(age),
                                              "m" if sex == "2" else "f", value)
 
-    read_ages(sorted(units) + sorted(county_rows.values()) + [whole], [str(YEAR)])
+    read_ages(sorted(units) + sorted(county_rows.values()) + [whole] + nowhere, [str(YEAR)])
     read_ages(sorted(gone), [str(y) for y in range(2012, YEAR)])
     for key, got in people.items():
         if abs(got.total - totals.get(key, -1)) > 0.5:
@@ -336,8 +340,10 @@ def main() -> int:
     last = {c: max((int(y) for (cc, y), a in people.items() if cc == c and a.total > 0),
                    default=None) for c in units}
     standing = [c for c in units if last[c] == YEAR]
-    check_parts({cc: totals[(row, str(YEAR))] for cc, row in county_rows.items()},
-                totals[(whole, str(YEAR))], f"RV0241 {YEAR}: counties -> Estonia", 0)
+    check_parts({**{cc: totals[(row, str(YEAR))] for cc, row in county_rows.items()},
+                 **{"unknown": totals.get((c, str(YEAR)), 0.0) for c in nowhere}},
+                totals[(whole, str(YEAR))],
+                f"RV0241 {YEAR}: counties and county unknown -> Estonia", 0)
     for cc, row in county_rows.items():
         check_parts({c: totals[(c, str(YEAR))] for c in standing if units[c]["county"] == cc},
                     totals[(row, str(YEAR))], f"RV0241 {YEAR}: units -> {COUNTIES[cc]}", 0)

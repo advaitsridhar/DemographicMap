@@ -268,6 +268,7 @@ def main() -> int:
     unknown = [c for c in current if c[2:] not in muni]
     language: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     language_total: dict[str, float] = defaultdict(float)
+    withheld: dict[str, float] = {}
     if unknown:
         log(f"  current municipalities the {key_year} key does not place: {unknown}; "
             "no language is written")
@@ -288,11 +289,23 @@ def main() -> int:
                     language_total[region] += value
                 elif lang not in ("01", "02"):
                     language[region][labels[lang]] += value
+        # A municipality's small language counts are withheld for
+        # confidentiality and come back empty, so the published languages
+        # fall a little short of the published total. The shortfall is
+        # people whose language is one of the withheld ones: it is added to
+        # "Other language" and counted in the note. More than 2% missing is
+        # not suppression and stops the run.
         for region, counts in language.items():
-            if abs(sum(counts.values()) - language_total[region]) > 0.5:
+            short = language_total[region] - sum(counts.values())
+            if short < -0.5 or short > 0.02 * language_total[region]:
                 raise SystemExit(f"11rm: {names[region]}'s languages make "
                                  f"{sum(counts.values()):,.0f} of {language_total[region]:,.0f}")
-        log(f"  11rm {lyear}: languages make each sub-region's total")
+            if short > 0.5:
+                counts["Other language"] += short
+                withheld[region] = short
+        log(f"  11rm {lyear}: languages make each sub-region's total; withheld small counts "
+            f"added to 'Other language' in {len(withheld)} sub-regions, "
+            f"{sum(withheld.values()):,.0f} people in all")
 
     shapes_rows = {found[d]: (d, "") for d in DRAWN}
     bound, _m, _l, _p = bind_rows("FIN", "admin2", shapes_rows)
@@ -312,7 +325,10 @@ def main() -> int:
             fields["language_note"] = (
                 f"Mother tongue as recorded in the population register on 31 December {lyear} "
                 f"(Statistics Finland, table 11rm), summed from the sub-region's current "
-                f"municipalities. One language per resident, so these are shares of everyone.")
+                f"municipalities. One language per resident, so these are shares of everyone."
+                + (f" {int(withheld[region]):,} people whose language Statistics Finland "
+                   "withholds at municipal level as too small a count are in 'Other language'."
+                   if withheld.get(region) else ""))
             fields["sources"].append({"field": "language", "name": f"{SOURCE}, table 11rm",
                                       "url": LANG_URL, "year": int(lyear)})
         records.append(record(
