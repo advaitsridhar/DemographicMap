@@ -32,7 +32,7 @@ import re
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
 from .central_ages import age_sex_fields, check_national_median, check_sum, fold, report_unbound, units
 
 DATA = ("https://lustat.statec.lu/rest/data/LU1,DSD_CENSUS_GROUP1_3@DF_B1607,1.0/all"
@@ -48,7 +48,7 @@ MERGED_SINCE_MAP = {"Habscht": ("Hobscheid", "Septfontaines"),
                     "Rosport-Mompach": ("Rosport", "Mompach")}
 # The boundary file's spellings where they differ from STATEC's.
 MAP_NAMES = {"Vallée de l'Ernz": "Vallbe de l'Ernz", "Redange": "Redange/Attert",
-             "Redange-sur-Attert": "Redange/Attert"}
+             "Redange-sur-Attert": "Redange/Attert", "Canton Esch": "Canton Esch-sur-Alzette"}
 
 
 def read() -> tuple[dict[str, str], dict[str, dict[str, Counter]], dict[str, float]]:
@@ -159,6 +159,16 @@ def build() -> list[dict[str, Any]]:
                 **fields))
         left = [s["name"] for s in shapes if s["id"] not in used]
         report_unbound(f"luxembourg {level}", unbound, left)
+        for shape in shapes:
+            merged = next((m for m, parts in MERGED_SINCE_MAP.items() if shape["name"] in parts), None)
+            if level != "admin2" or shape["id"] in used or merged is None:
+                continue
+            why = (f"Not written: {shape['name']} merged into {merged} in 2018, so the 2021 census "
+                   f"counts {merged} as one commune; STATEC publishes no figure for the drawn part.")
+            records.append(record(
+                f"LUX-2017-{fold(shape['name'])}", shape["name"], level="admin2",
+                parent=shape["parent"], country="LUX", match_by="shape_id", shape_id=shape["id"],
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
         expected_left = {n for parts in MERGED_SINCE_MAP.values() for n in parts} if level == "admin2" else set()
         if unbound or set(left) != expected_left:
             raise SystemExit(f"luxembourg: {level} does not pair up: {unbound} / {left}")
