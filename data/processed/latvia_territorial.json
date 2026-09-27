@@ -14580,43 +14580,10 @@
     "religion": {
       "status": "not_available"
     },
-    "language": [
-      {
-        "group": "Latvian",
-        "pct": 67.4,
-        "count": 4195
-      },
-      {
-        "group": "Russian",
-        "pct": 32.1,
-        "count": 1997
-      },
-      {
-        "group": "Other language",
-        "pct": 0.3,
-        "count": 19
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.1,
-        "count": 7
-      },
-      {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 4
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 3
-      }
-    ],
+    "language": {
+      "status": "not_available",
+      "note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. CSB publishes it by the counties and cities of 2009-2021, and this was part of a county whose figure is not shared out among its parts."
+    },
     "ethnicity": [
       {
         "group": "Latvian",
@@ -14666,12 +14633,6 @@
         "name": "Central Statistical Bureau of Latvia, RIG040",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/RIG040/",
         "year": 2026
-      },
-      {
-        "field": "language",
-        "name": "Central Statistical Bureau of Latvia, 2011 census, TSG11-07",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_OD/OSP_OD__tautassk__taut__tsk2011/TSG11-07.px/",
-        "year": 2011
       }
     ],
     "country": "LVA",
@@ -14685,9 +14646,7 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
     "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (5,465 males, 5,427 females).",
     "ethnicity_year": 2026,
-    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
-    "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Carnikavas novads), so the census's figure is for exactly this territory."
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0024200",
@@ -17632,43 +17591,10 @@
     "religion": {
       "status": "not_available"
     },
-    "language": [
-      {
-        "group": "Latvian",
-        "pct": 81.6,
-        "count": 6707
-      },
-      {
-        "group": "Russian",
-        "pct": 18.0,
-        "count": 1481
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.1,
-        "count": 12
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.1,
-        "count": 7
-      },
-      {
-        "group": "Other language",
-        "pct": 0.1,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 0
-      }
-    ],
+    "language": {
+      "status": "not_available",
+      "note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. CSB publishes it by the counties and cities of 2009-2021, and this was part of a county whose figure is not shared out among its parts."
+    },
     "ethnicity": [
       {
         "group": "Latvian",
@@ -17718,12 +17644,6 @@
         "name": "Central Statistical Bureau of Latvia, RIG040",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/RIG040/",
         "year": 2026
-      },
-      {
-        "field": "language",
-        "name": "Central Statistical Bureau of Latvia, 2011 census, TSG11-07",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_OD/OSP_OD__tautassk__taut__tsk2011/TSG11-07.px/",
-        "year": 2011
       }
     ],
     "country": "LVA",
@@ -17737,9 +17657,7 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer.",
     "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (1,485 males, 1,380 females).",
     "ethnicity_year": 2026,
-    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
-    "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Iecavas novads), so the census's figure is for exactly this territory."
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0025470",
@@ -44401,43 +44319,10 @@
     "religion": {
       "status": "not_available"
     },
-    "language": [
-      {
-        "group": "Latvian",
-        "pct": 71.8,
-        "count": 10361
-      },
-      {
-        "group": "Russian",
-        "pct": 27.6,
-        "count": 3979
-      },
-      {
-        "group": "Other language",
-        "pct": 0.5,
-        "count": 67
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.1,
-        "count": 11
-      },
-      {
-        "group": "Belarusian",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Lithuanian",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 2
-      }
-    ],
+    "language": {
+      "status": "not_available",
+      "note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. CSB publishes it by the counties and cities of 2009-2021, and this was part of a county whose figure is not shared out among its parts."
+    },
     "ethnicity": [
       {
         "group": "Latvian",
@@ -44487,12 +44372,6 @@
         "name": "Central Statistical Bureau of Latvia, RIG040",
         "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__IR__IRE/RIG040/",
         "year": 2026
-      },
-      {
-        "field": "language",
-        "name": "Central Statistical Bureau of Latvia, 2011 census, TSG11-07",
-        "url": "https://data.stat.gov.lv/pxweb/en/OSP_OD/OSP_OD__tautassk__taut__tsk2011/TSG11-07.px/",
-        "year": 2011
       }
     ],
     "country": "LVA",
@@ -44506,9 +44385,7 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person; CSB publishes the population of parishes and towns by five-year group, and nothing finer. Counted with the town of Mārupe, which CSB separated from the parish after the map's boundaries were drawn.",
     "sex_ratio_note": "Males per 100 females among residents at the beginning of 2026 (11,823 males, 13,012 females).",
     "ethnicity_year": 2026,
-    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one.",
-    "language_year": 2011,
-    "language_note": "Language mostly spoken at home, as answered in the census of 1 March 2011 (CSB, TSG11-07) -- the last census to ask it: the 2021 census was compiled from registers and published no language. In 2011 this was a unit of its own (Mārupes novads), so the census's figure is for exactly this territory."
+    "ethnicity_note": "Ethnicity as recorded in the population register at the beginning of 2026 (CSB, RIG040, experimental statistics). 'Other or not stated' is CSB's own residual: other ethnicities together with people who selected none or did not indicate one."
   },
   {
     "id": "LVA-CSB-LV0039420",
