@@ -49,7 +49,8 @@ import urllib.parse
 from collections import Counter, defaultdict
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from . import east_geo
 from .cod_ps_age import grouped_median
 from .pxweb import TIMEOUT
@@ -327,6 +328,146 @@ def sexes_2014() -> dict[str, dict[str, float]]:
 
 
 # ---------------------------------------------------------------------------
+# The 2002 census's ethnicity by raion
+#
+# The only published ethnicity below the region. Volume I of the 2002 census
+# results (Tbilisi, 2003), table 22, "permanent population by nationality, by
+# region, city and raion", read from the Internet Archive's capture of the
+# copy on census.ge. The book is set in the pre-Unicode AcadNusx Georgian font,
+# so its text reads as Latin letters ("qarTveli" is ქართველი); the names below
+# are written as the text reads. The raions of 2002 are the municipalities of
+# 2006 onwards, renamed and not redrawn, which is what the map draws.
+
+CENSUS_2002 = ("https://web.archive.org/web/20190821123826id_/"
+               "http://census.ge/files/2002/geo/I%20tomi.pdf")
+YEAR_2002 = 2002
+GROUPS_2002 = ["Georgian", "Abkhaz", "Ossetian", "Armenian", "Russian", "Azerbaijani",
+               "Greek", "Ukrainian", "Kist", "Yazidi"]
+# The table's row -> the map's polygon (a municipality), or the city key for a
+# city the map draws inside one, or None for a region's own row.
+RAION_2002 = {
+    "q. baTumi": "batumi", "qedis": "Keda", "qobuleTis": "Kobuleti", "Suaxevis": "Shuakhevi",
+    "xelvaCauris": "Khelvachauri", "xulos": "Khulo", "lanCxuTis": "Lanchkhuti",
+    "ozurgeTis": "Ozurgeti", "Coxatauris": "Chokhatauri", "q. quTaisi": "kutaisi",
+    "tyibulis": "Tkibuli", "wyaltubos": "Tsqaltubo", "WiaTuris": "Chiatura",
+    "baRdaTis": "Baghdati", "vanis": "Vani", "zestafonis": "Zestaponi", "Terjolis": "Terjola",
+    "samtrediis": "Samtredia", "saCxeris": "Sachkhere", "xaragaulis": "Kharagauli",
+    "xonis": "Khoni", "axmetis": "Akhmeta", "gurjaanis": "Gurjaani",
+    "dedofliswyaros": "Dedoplis Tskaro", "Telavis": "Telavi", "lagodexis": "Lagodekhi",
+    "sagarejos": "Sagarejo", "siRnaRis": "Sighnaghi", "yvarelis": "Qvareli",
+    "axalgoris": "Akhalgori", "duSeTis": "Dusheti", "TianeTis": "Tianeti", "mcxeTis": "Mtskheta",
+    "yazbegis": "Kazbegi", "ambrolauris": "Ambrolauri", "onis": "Oni", "cageris": "Tsageri",
+    "lentexis": "Lentekhi", "zugdidis": "Zugdidi", "abaSis": "Abasha", "martvilis": "Martvili",
+    "senakis": "Senaki", "Cxorowyus": "Chkhorotsku", "walenjixis": "Tsalenjikha",
+    "xobis": "Khobi", "mestiis": "Mestia", "q. foTi": "poti", "adigenis": "Adigeni",
+    "aspinZis": "Aspindza", "axalqalaqis": "Akhalkalaki", "axalcixis": "Akhaltsikhe",
+    "borjomis": "Borjomi", "ninowmindis": "Ninotsminda", "q. rusTavi": "rustavi",
+    "bolnisis": "Bolnisi", "gardabnis": "Gardabani", "dmanisis": "Dmanisi",
+    "marneulis": "Marneuli", "TeTri wyaros": "Tetri Sqaro", "walkis": "Tsalka",
+    "goris": "Gori", "kaspis": "Kaspi", "qarelis": "Kareli", "xaSuris": "Khashuri",
+    "q. Tbilisis meria": "Tbilisi",
+}
+REGIONS_2002 = {
+    "saqarTvelo - sul": "Georgia", "aWaris ar": "Adjara", "guria": "Guria",
+    "imereTi": "Imereti", "kaxeTi": "Kakheti", "mcxeTa-mTianeTi": "Mtskheta-Mtianeti",
+    "raWa-leCxumi da qvemo svaneTi": "Racha-Lechkhumi and Kvemo Svaneti",
+    "samegrelo-zemo svaneTi": "Samegrelo-Zemo Svaneti", "samcxe-javaxeTi": "Samtskhe-Javakheti",
+    "qvemo qarTli": "Kvemo Kartli", "Sida qarTli": "Shida Kartli",
+    "afxazeTis ar - (kodoris xeoba)": "Abkhazia (Kodori gorge)",
+}
+# Each region's rows, in the order the table prints them after the region.
+NUMBER = re.compile(r"^(\d+|-)$")
+NOTE_2002 = (
+    "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest "
+    "published below the region: Geostat publishes the 2014 census's ethnicity by region "
+    "only. Table 22 of volume I of the 2002 results names ten nationalities by raion; "
+    "'Other' is the rest of the raion's count. The census covered the territory under the "
+    "government's control, so a raion's villages outside it (in Gori, Kareli, Oni and "
+    "Akhalgori raions) are not in its count. The raions of 2002 are the municipalities "
+    "of 2006 onwards.")
+
+
+def row_name(text: str) -> str:
+    text = " ".join(text.split())
+    text = re.sub(r"\s+raioni$", "", text)
+    return text
+
+
+def ethnicity_2002(blob: bytes) -> dict[str, dict[str, Any]]:
+    """{table row name: {"total": n, "counts": {label: n}}} from table 22."""
+    import sys
+    sys.path.insert(0, str(PROCESSED.parent.parent / "scripts"))
+    from probe_pdf import PAGE_BREAK, laid_out
+
+    pages = laid_out(blob).split(PAGE_BREAK)
+    start = next(i for i, p in enumerate(pages) if "cxrili #22" in p)
+    end = next(i for i, p in enumerate(pages) if "cxrili #23" in p)
+    lines = [l.strip() for p in pages[start:end + 1] for l in p.split("\n")]
+    lines = lines[:next(i for i, l in enumerate(lines) if "cxrili #23" in l)]
+    return parse_table22(lines)
+
+
+def parse_table22(lines: list[str]) -> dict[str, dict[str, Any]]:
+    """Table 22's rows, a name split over the lines around its figures joined."""
+    known = set(RAION_2002) | set(REGIONS_2002)
+    out: dict[str, dict[str, Any]] = {}
+    pending = ""
+    for i, line in enumerate(lines):
+        tokens = line.split()
+        numbers = []
+        while tokens and NUMBER.match(tokens[-1]):
+            numbers.insert(0, tokens.pop())
+        if len(numbers) < 11:
+            pending = line
+            continue
+        numbers = numbers[-11:]
+        prefix = " ".join(tokens)
+        after = lines[i + 1] if i + 1 < len(lines) else ""
+        tries = [row_name(prefix), row_name(f"{pending} {prefix}"),
+                 row_name(f"{pending} {prefix} {after}"), row_name(f"{prefix} {after}")]
+        name = next((t for t in tries if t in known), None)
+        if name is None:
+            raise SystemExit(f"georgia: table 22 has a row {line!r} (after {pending!r}) "
+                             "that names no raion, city or region")
+        values = [0.0 if n == "-" else float(n) for n in numbers]
+        total, groups = values[0], values[1:]
+        if sum(groups) > total:
+            raise SystemExit(f"georgia: table 22's {name}: the nationalities make "
+                             f"{sum(groups):,.0f}, more than its {total:,.0f}")
+        counts = dict(zip(GROUPS_2002, groups))
+        counts["Other"] = total - sum(groups)
+        out[name] = {"total": total, "counts": counts}
+        pending = ""
+    if missing := sorted(known - set(out)):
+        raise SystemExit(f"georgia: table 22 has no row for {missing}")
+    # Every region is its raions and cities, and the regions are the country.
+    members: dict[str, list[str]] = defaultdict(list)
+    region = None
+    for name in out:
+        if name in REGIONS_2002:
+            region = name
+        elif region:
+            members[region].append(name)
+    for region, names in members.items():
+        if region == "saqarTvelo - sul":
+            continue
+        made = sum(out[n]["total"] for n in names)
+        if abs(made - out[region]["total"]) > 0.5:
+            raise SystemExit(f"georgia: table 22's {region} is {out[region]['total']:,.0f}, "
+                             f"its raions and cities {made:,.0f}")
+    # Tbilisi is a region and a city at once, and the table prints it as a city.
+    country = (sum(out[r]["total"] for r in REGIONS_2002 if r != "saqarTvelo - sul")
+               + out["q. Tbilisis meria"]["total"])
+    if abs(country - out["saqarTvelo - sul"]["total"]) > 0.5:
+        raise SystemExit(f"georgia: table 22's regions make {country:,.0f}, the country "
+                         f"{out['saqarTvelo - sul']['total']:,.0f}")
+    log(f"  2002 census table 22: {len(out) - len(REGIONS_2002)} raions and cities; every "
+        f"region is its rows and the regions make the country's "
+        f"{out['saqarTvelo - sul']['total']:,.0f}")
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Placing the cities the map draws inside a municipality
 
 
@@ -475,6 +616,43 @@ def main() -> int:
             census_units[by_name[k]].append(label)
         elif k not in by_name and label not in regions_2014:
             log(f"  2014 unit {label!r} has no polygon")
+
+    # The 2002 census's ethnicity, by the raion each polygon is and the city
+    # drawn inside it.
+    eth02 = ethnicity_2002(http_get(CENSUS_2002, binary=True, timeout=600))
+    by_map_name = {u["name"]: u["id"] for u in admin2}
+    rows_2002: dict[str, list[str]] = defaultdict(list)
+    for row, target in RAION_2002.items():
+        if target in CITIES:
+            if target in homes:
+                rows_2002[homes[target]].append(row)
+            continue
+        if target not in by_map_name:
+            raise SystemExit(f"georgia: 2002's {row} goes to {target!r}, which the map lacks")
+        rows_2002[by_map_name[target]].append(row)
+
+    def ethnicity_2002_values(sid: str) -> dict[str, Any]:
+        rows = rows_2002.get(sid)
+        if not rows:
+            return {}
+        counts: Counter = Counter()
+        total = 0.0
+        for r in rows:
+            counts.update(eth02[r]["counts"])
+            total += eth02[r]["total"]
+        city = [r for r in rows if r.startswith("q. ")]
+        return {"ethnicity": shares(dict(counts), total=total),
+                "ethnicity_year": YEAR_2002,
+                "ethnicity_note": NOTE_2002 + (
+                    f" The city of {city[0][3:].replace('T', 't').title()}, counted apart, is "
+                    "added: the map draws it inside this polygon." if city and
+                    not city[0].startswith("q. Tbilisis") else "")
+                + (" Akhalgori raion was enumerated in 2002, when it was under the "
+                   "government's control, all but two of its village councils; it has not "
+                   "been since 2008." if rows == ["axalgoris"] else ""),
+                "_cite": cite("ethnicity", "2002 census, volume I, table 22 (census.ge, "
+                              "via the Internet Archive)", YEAR_2002)}
+
     left = []
     for u in admin2:
         sid, name = u["id"], u["name"]
@@ -482,16 +660,19 @@ def main() -> int:
         if name in UNCOUNTED:
             why = gap(NOT_AVAILABLE, UNCOUNTED_NOTE.format(
                 what="Abkhazia" if where == "Abkhazia" else "the Tskhinvali region"))
+            extra = ethnicity_2002_values(sid)
+            cites = [extra.pop("_cite")] if extra else []
             records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
                                   country="GEO", match_by="shape_id", shape_id=sid,
                                   population=why, median_age=why, sex_ratio=why,
-                                  religion=why, language=why, ethnicity=why))
+                                  religion=why, language=why,
+                                  **({"ethnicity": why} | extra), sources=cites))
             continue
         if sid in refused:
             why = gap(NOT_AVAILABLE, refused[sid])
             records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
                                   country="GEO", match_by="shape_id", shape_id=sid,
-                                  population=why, sex_ratio=why))
+                                  population=why, sex_ratio=why, ethnicity=why))
             continue
         rows = units.get(sid)
         if not rows:
@@ -525,6 +706,10 @@ def main() -> int:
             "Geostat publishes no age by municipality beyond the 2014 census's three broad "
             "groups (0-14, 15-64, 65 and over, in its Main Results), from which no median "
             "can be read; its single years of age and five-year groups stop at the region."))
+        extra = ethnicity_2002_values(sid)
+        if extra:
+            cites.append(extra.pop("_cite"))
+            values.update(extra)
         records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
                               country="GEO", match_by="shape_id", shape_id=sid,
                               sources=cites, **values))
