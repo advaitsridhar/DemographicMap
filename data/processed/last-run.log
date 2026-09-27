@@ -1,8 +1,4 @@
-greece_age: Eurostat single years of age for Greece's decentralized administrations
-  demo_r_d2jan, 2025: 11 regions
-  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 954 men per 1,000 women
-  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 990 men per 1,000 women
-  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 995 men per 1,000 women
-  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 1008 men per 1,000 women
-  Egean (EL41+EL42): 534,963, median 44.5, 1077 men per 1,000 women
-greece_age: no single column with ('αρρεν', '2021') in ['ενδειξη επιπεδου', 'γεωγραφικος κωδικος', 'περιγραφη', 'μονιμος πληθυσμος 2011', 'μονιμος πληθυσμος 2021', 'αρρενες 2011', 'αρρενες 2021', 'θηλεις 2011', 'θηλεις 2021', 'ποσοστο αρρενων 2021', 'ποσοστο θηλεων 2021', 'ποσοστο μεταβολης (%) 2021/2011']
+bosnia_age: Popis 2013, age and sex
+  FR_T1_B.xlsx: 21,226 bytes
+  FR_T2_B.xlsx: 84,622 bytes
+bosnia_age: FR_T2 has no full rows for UNSKO-SANSKI KANTON
