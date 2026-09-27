@@ -452,9 +452,23 @@ def build() -> list[dict[str, Any]]:
     places = settlements()
     refuse_unknown()
     home = old_municipality_of()
-    stray = sorted(set(places) - set(home))
+    # The two tables transliterate a few names differently; they are compared
+    # folded, and each 2021 settlement must find exactly one 2002 one.
+    by_key: dict[str, list[str]] = defaultdict(list)
+    for name in home:
+        by_key[key(name)].append(name)
+    stray = []
+    for name in sorted(places):
+        hits = by_key.get(key(name), [])
+        if len(hits) == 1:
+            home.setdefault(name, home[hits[0]])
+        else:
+            stray.append(name)
     if stray:
-        raise SystemExit(f"north_macedonia: Kichevo settlements with no 2002 municipality: {stray}")
+        raise SystemExit(f"north_macedonia: Kichevo settlements with no 2002 municipality: {stray}; "
+                         f"the 2002 settlements of the five are "
+                         + "; ".join(f"{m}: {sorted(n for n, v in home.items() if v == m)}"
+                                     for m in OLD_KICHEVO))
     parts: dict[str, dict[str, Any]] = {k: {"groups": defaultdict(Counter), "ethnicity": Counter()}
                                         for k in OLD_KICHEVO}
     for name, place in places.items():
