@@ -61,8 +61,16 @@ class Table:
                  note: str = "", drop: tuple[str, ...] = (),
                  geo_len: int | None = None, geo_stem: int | None = None,
                  geo_prefix: str | None = None, national: str | None = None,
-                 withhold: dict[str, str] | None = None):
+                 withhold: dict[str, str] | None = None,
+                 relabel: dict[str, str] | None = None):
         self.path = path
+        # The office's category label -> the map's. The group tree files a
+        # people by its English adjective ("Polish") and knows the residuals
+        # only by the map's words ("Other", "Not stated", "Other or not
+        # stated"); an office's plural or its own wording for a residual is
+        # otherwise drawn "unclassified". A label not listed is kept as the
+        # office writes it.
+        self.relabel = relabel or {}
         self.field = field
         self.geo = geo
         self.group = group
@@ -179,9 +187,14 @@ INSTANCES: dict[str, dict[str, Any]] = {
                             "county is the pre-reform one, which estonia.py reads"
                       for code in ("45", "50", "52", "56", "60", "64", "68", "71", "79",
                                    "81", "87")},
+            # The same words estonia.py writes for the eleven other counties.
+            relabel={"Estonians": "Estonian", "Russians": "Russian",
+                     "Other ethnic nationalities": "Other",
+                     "Ethnic nationality unknown": "Not stated"},
             note="Ethnic nationality as recorded in the population register on "
                  "1 January 2026, not a census answer. Estonia asks it of "
-                 "residents rather than inferring it from citizenship."),
+                 "residents rather than inferring it from citizenship. 'Not "
+                 "stated' is the register's 'ethnic nationality unknown'."),
         ],
     },
     "FIN": {
@@ -270,10 +283,18 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # municipalities from the beginning of 2025, before the merger.
             withhold={"LV0038001": "Madona after absorbing Varakļāni on 1 July 2025; the map "
                                    "draws the two apart, and latvia.py writes each"},
+            # latvia.py's words for the same table (IRE031), so the two files
+            # agree label for label.
+            relabel={"Latvians": "Latvian", "Russians": "Russian",
+                     "Belarusians": "Belarusian", "Ukrainians": "Ukrainian",
+                     "Poles": "Polish", "Lithuanians": "Lithuanian", "Jews": "Jewish",
+                     "Roma": "Romani", "Estonians": "Estonian", "Germans": "German",
+                     "Other ethnicities, including not selected and not indicated "
+                     "ethnicity": "Other or not stated"},
             note="Ethnicity as recorded in the population register at the "
-                 "beginning of 2026. 'Other ethnicities' also holds people who "
-                 "selected none and people who did not indicate one, so it is "
-                 "not a count of anyone in particular."),
+                 "beginning of 2026. 'Other or not stated' is CSB's own residual: "
+                 "other ethnicities together with people who selected none or did "
+                 "not indicate one, so it is not a count of anyone in particular."),
         ],
     },
 }
@@ -548,7 +569,8 @@ def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | N
         elif group_label.startswith(CHILD_MARKER):
             continue                    # counted already inside its parent
         elif group_code not in table.drop:
-            entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
+            label = table.relabel.get(group_label, group_label)
+            entry["counts"][label] = entry["counts"].get(label, 0.0) + value
     # Containment can only be seen once every code is in hand: a town looks
     # exactly like a municipality until the municipality turns up beside it.
     for code, parent in drop_nested(list(areas), table).items():
@@ -662,6 +684,11 @@ def main() -> int:
                         if slot["population"] else gap(NOT_AVAILABLE)),
             sources=[source], **fields))
 
+    from .nordic_common import unplaced
+    for field in sorted({t.field for t in spec["tables"]}):
+        labels = {g["group"] for r in records if isinstance(r.get(field), list)
+                  for g in r[field]}
+        log(f"  {field} labels the group tree cannot place: {unplaced(field, labels) or 'none'}")
     out = args.out or PROCESSED / f"{spec['file']}.json"
     write_json(out, records)
     log(f"  {len(records)} records")

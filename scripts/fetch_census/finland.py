@@ -47,7 +47,8 @@ from typing import Any
 
 from ._shared import PROCESSED, log, record, shares, write_json
 from .binding import fold
-from .nordic_common import AgeSex, bind_rows, check_parts, request_json
+from .nordic_common import (AgeSex, bind_rows, check_national_median, check_parts, fold_small,
+                            request_json)
 from .pxweb import unstack
 
 STATFIN = "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/vaerak"
@@ -256,6 +257,11 @@ def main() -> int:
         raise SystemExit(f"finland: 11rf has no year in the {key_year} division")
     log(f"  the map's sub-regions are those of {key_year}; population on 31 December "
         f"{data_year}")
+    finland = AgeSex()
+    for c in codes:
+        finland += people[c]
+    # Statistics Finland's 31 December is Eurostat's 1 January of the next year.
+    check_national_median("FI", data_year + 1, finland.median(), f"11rf {data_year}")
     region_people: dict[str, AgeSex] = defaultdict(AgeSex)
     for k, sk in muni.items():
         region_people[sk] += people[f"KU{k}"]
@@ -370,7 +376,10 @@ def main() -> int:
                            " Its municipalities are the same today, so this is the latest "
                            "count.")))
         if language.get(region):
-            fields["language"] = shares(language[region], total=language_total[region])
+            kept, n_small, small = fold_small(language[region], language_total[region],
+                                              "Other language",
+                                              keep=("Finnish", "Swedish", "Sami"))
+            fields["language"] = shares(kept, total=language_total[region])
             fields["language_year"] = int(lyear)
             fields["language_note"] = (
                 f"Mother tongue as recorded in the population register on 31 December {lyear} "
@@ -378,13 +387,16 @@ def main() -> int:
                 f"municipalities. One language per resident, so these are shares of everyone."
                 + (f" {int(withheld[region]):,} people whose language Statistics Finland "
                    "withholds at municipal level as too small a count are in 'Other language'."
-                   if withheld.get(region) else ""))
+                   if withheld.get(region) else "")
+                + (f" So are the {n_small} languages each spoken by under 0.05% of the "
+                   f"sub-region ({int(small):,} people in all)." if n_small else ""))
             fields["sources"].append({"field": "language", "name": f"{SOURCE}, table 11rm",
                                       "url": LANG_URL, "year": int(lyear)})
         records.append(record(
-            f"FIN-SK{key_year}-{region}", names[region], level="admin2", parent="FIN",
+            f"FIN-SK{key_year}-{region}", drawn, level="admin2", parent="FIN",
             country="FIN", codes={"seutukunta": region, "vintage": key_year},
-            match_by="shape_id", shape_id=sid, aliases=[drawn], **fields))
+            match_by="shape_id", shape_id=sid,
+            aliases=[names[region]] if names[region] != drawn else [], **fields))
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records")
     return 0

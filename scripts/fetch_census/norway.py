@@ -16,9 +16,13 @@ So every figure here is for those units' own vintage:
 * **admin2** -- SSB table 07459 (population by region, sex and single year of
   age, 1 January). A kommune that no merger or split has touched since 2017
   -- KLASS's list of changes shows only renumberings for it, one old code to
-  one new -- takes the latest year under its current number; the rest take
-  2017, by the 2017 codes KLASS lists as valid on 1 January 2017. Median age
-  and sex ratio from the single years; population from the same count.
+  one new -- takes the latest year under its current number. One that was
+  merged or split takes its last count whole: 1 January of the year before
+  the change, under the number it had then (``lineage``) -- 2017 for the
+  mergers of 2018 (Hof, Lardal, Nøtterøy, Tjøme, Rissa, Leksvik and the
+  kommuner they joined), 2019 for those of 2020, 2023 for the splits of 2024.
+  Median age and sex ratio from the single years; population from the same
+  count.
 * **admin1** -- 07459 for 2023 by the codes of the three 2020-2023 fylker
   (30, 38, 54), the last year they existed. The other eight fylker did not
   change in 2024 -- no kommune has changed its fylke digits since 2023 in
@@ -30,8 +34,14 @@ So every figure here is for those units' own vintage:
   membership, not belief, and the note says so. SSB publishes the communities
   outside the Church by religion only by fylke, so at kommune level they are
   one group. KOSTRA reports each year on that year's kommuner, so a kommune
-  unchanged since 2017 takes the latest year that still counts the
-  communities outside the Church, and a merged or split one takes 2017; for
+  takes the latest year that still counts the communities outside the Church,
+  or its own last whole year if that is earlier. SSB places the Church's
+  members by parish, and its note on 12026 says Frøyland and Orstad parish
+  spans Klepp and Time, so the split between those two "may be uncertain":
+  their figures bear it out (Klepp 0.6% in no community in 2020, Time 30.5%)
+  and are not given (``SPLIT_PARISH``); a remainder under 3% anywhere else
+  would be left out the same way. Members outside the Church are counted
+  where the state grant is paid for them (SSB's note on 08531). For
   the fylker, 2023 for the three dissolved in
   2024 and, for the eight that were not, the latest year in which KOSTRA
   still counts the communities outside the Church (it leaves them at 0 in its
@@ -58,12 +68,13 @@ from __future__ import annotations
 
 import argparse
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
 from .binding import fold
-from .nordic_common import (AgeSex, bind_rows, check_parts, load_units, request_json,
+from .nordic_common import (AgeSex, bind_rows, check_national_median, check_parts,
+                            load_units, request_json,
                             unplaced)
 from .pxweb import unstack
 
@@ -152,6 +163,29 @@ def membership(codes: list[str], year: int) -> dict[str, dict[str, float]]:
     return out
 
 
+# How SSB places the two counts, in its own notes. The Church's members are
+# placed by their parish (sokn): 12026's note says that "Frøyland and Orstad
+# parish spans the municipalities of Klepp and Time. Consequently, figures on
+# the distribution of members between these municipalities may be uncertain"
+# -- and in 2020 Klepp's read 86.4% in the Church and 0.6% in no community,
+# Time's 59.5% and 30.5%, against 75% and 13% for both in 2016. The members
+# outside the Church are those "for whom government subsidy is received"
+# (08531's note), which is what KOSTRA's kommune rows sum to.
+PLACEMENT_NOTE = (" SSB places the Church's members by their parish, and counts members of "
+                  "the communities outside it only where the state grant is paid for them.")
+SPLIT_PARISH = {"1120": "Klepp", "1121": "Time"}
+SPLIT_PARISH_NOTE = (
+    "Not given: SSB places the Church of Norway's members by parish, and notes on table 12026 "
+    "that 'Frøyland and Orstad parish spans the municipalities of Klepp and Time. Consequently, "
+    "figures on the distribution of members between these municipalities may be uncertain and "
+    "should be interpreted with caution.' The figures bear it out: in 2020 Klepp's read 86.4% "
+    "in the Church and 0.6% in no registered community, Time's 59.5% and 30.5%.")
+# The remainder -- people in no registered community -- is at least 5.7% in
+# every kommune but Klepp. One below 3% is a placement across a kommune
+# boundary rather than a count, and is not published.
+NONE_FLOOR = 0.03
+
+
 def religion(counts: dict[str, float], year: int, where: str) -> dict[str, Any] | None:
     church = counts.get("KOSmedlemmerdnk0000")
     other = counts.get("KOSmedltroslivs0000")
@@ -165,7 +199,13 @@ def religion(counts: dict[str, float], year: int, where: str) -> dict[str, Any] 
     if church + other > people:
         raise SystemExit(f"12026 {where} {year}: {church + other:,.0f} members against a "
                          f"population of {people:,.0f}")
-    rows = {CHURCH: church, OTHER: other, NONE: people - church - other}
+    none = people - church - other
+    if none < NONE_FLOOR * people:
+        log(f"  12026 {where} {year}: {none:,.0f} of {people:,.0f} people in no registered "
+            f"community ({100 * none / people:.1f}%), under the {100 * NONE_FLOOR:.0f}% floor; "
+            "left out as a placement across a boundary")
+        return None
+    rows = {CHURCH: church, OTHER: other, NONE: none}
     return {
         "religion": shares(rows, total=people),
         "religion_year": year,
@@ -176,7 +216,7 @@ def religion(counts: dict[str, float], year: int, where: str) -> dict[str, Any] 
             f"faith and life-stance communities outside it, of a population of {int(people):,}; "
             "the rest belong to neither. A count of membership, not of belief. SSB publishes "
             "the communities outside the Church by religion only by fylke, so here they are "
-            "one group."),
+            "one group." + PLACEMENT_NOTE),
     }
 
 
@@ -231,7 +271,7 @@ def religion_by_kind(counts: dict[str, float], kinds: dict[str, float], year: in
             f"Church of Norway (SSB table 12026, KOSTRA, summed over the fylke's kommuner) and "
             f"{int(other):,} members of faith and life-stance communities outside it, by "
             f"religion (SSB table 08531), of a population of {int(people):,}; the rest belong "
-            "to neither. A count of membership, not of belief."),
+            "to neither. A count of membership, not of belief." + PLACEMENT_NOTE),
     }
 
 
@@ -239,21 +279,27 @@ CHANGES = ("https://data.ssb.no/api/klass/v1/classifications/131/changes.json"
            "?from={start}&to={end}")
 
 
-def successors(codes: list[str], start: str, end: str) -> dict[str, str]:
-    """2017 code -> its code on ``end``, for every kommune whose territory the
-    changes between the two dates left whole.
+Lineage = tuple[list[tuple[str, str]], str | None]
+
+
+def lineage(codes: list[str], start: str, end: str) -> dict[str, Lineage]:
+    """2017 code -> ([(date, code), ...], the date its territory ended or None).
 
     KLASS lists each change as an old code and a new one. A renumbering --
     every kommune in 2020 and again in 2024, when the fylker were redrawn --
-    is one old code to one new code on that date. A merger is several old
-    codes to one new one, a split one old code to several; a kommune in
-    either is dropped here, and keeps the figures of the map's own year.
+    is one old code to one new code on that date, and the kommune goes on
+    under the new one. A merger is several old codes to one new one, a split
+    one old code to several: the territory of every kommune in either ends on
+    that date, and so does that of a kommune that kept its number while others
+    were merged into it.
     """
     body = request_json(CHANGES.format(start=start, end=end))
     events: dict[str, list[tuple[str, str]]] = defaultdict(list)
     for change in body.get("codeChanges", []):
         events[change["changeOccurred"]].append((change["oldCode"], change["newCode"]))
     current = {c: c for c in codes}
+    history: dict[str, list[tuple[str, str]]] = {c: [("", c)] for c in codes}
+    ended: dict[str, str | None] = {c: None for c in codes}
     for when in sorted(events):
         forward: dict[str, set[str]] = defaultdict(set)
         backward: dict[str, set[str]] = defaultdict(set)
@@ -268,14 +314,36 @@ def successors(codes: list[str], start: str, end: str) -> dict[str, str]:
             if code not in forward:
                 if code in kept:
                     del current[origin]
+                    ended[origin] = when
                 continue
             news = forward[code]
             new = next(iter(news))
             if len(news) == 1 and len(backward[new]) == 1 and new not in kept:
                 current[origin] = new
+                history[origin].append((when, new))
             else:
                 del current[origin]
-    return current
+                ended[origin] = when
+    return {c: (history[c], ended[c]) for c in codes}
+
+
+def code_on(history: list[tuple[str, str]], date: str) -> str:
+    """The kommune's number on ``date`` (ISO), changes of that day included."""
+    return [code for when, code in history if when <= date][-1]
+
+
+def last_whole_year(ended: str) -> int:
+    """The last 1 January a kommune whose territory ended on ``ended`` was whole:
+    a change on 1 January is already in that day's count."""
+    year = int(ended[:4])
+    return year - 1 if ended[5:] == "01-01" else year
+
+
+def successors(codes: list[str], start: str, end: str) -> dict[str, str]:
+    """2017 code -> its code on ``end``, for every kommune whose territory the
+    changes between the two dates left whole."""
+    return {c: hist[-1][1] for c, (hist, ended) in lineage(codes, start, end).items()
+            if ended is None}
 
 
 def main() -> int:
@@ -293,6 +361,7 @@ def main() -> int:
                 f"07459 {VINTAGE}: kommuner -> Norway", 0)
     log(f"  Norway 1 January {VINTAGE}: {people['0'].total:,.0f} people, median age "
         f"{people['0'].median()}")
+    check_national_median("NO", VINTAGE, people["0"].median(), f"07459 {VINTAGE}")
 
     shapes = load_units("NOR", "admin2")
     drawn = {fold(map_name(s)) for s in shapes}
@@ -303,66 +372,87 @@ def main() -> int:
     bound, _m, _l, _p = bind_rows("NOR", "admin2", rows, shape_name=map_name, aliases=ALIASES)
     labels = {s["id"]: s["name"] for s in shapes}
     church = membership(kommuner, VINTAGE)
-    date = f"1 January {VINTAGE}"
 
     # A kommune no merger or split has touched since 2017 is the same
     # territory today, under whatever number the fylke reforms gave it, and
-    # takes today's count; the rest keep 2017's. Membership likewise, from
-    # the latest KOSTRA year that still counts the communities outside the
-    # Church.
+    # takes today's count. One merged or split since takes its last count
+    # whole: the last 1 January before the change, under the number it had
+    # then (Klæbu was 1662 in 2017 and 5030 in 2019, its last year before it
+    # joined Trondheim). Membership likewise: KOSTRA's latest year that still
+    # counts the communities outside the Church, or the kommune's last whole
+    # year if that is earlier.
     meta = {v["code"]: v for v in request_json(f"{SSB}/07459")["variables"]}
     now = int(meta["Tid"]["values"][-1])
     # KLASS leaves out changes on the end date itself: the day after
-    # 1 January gives the division of 1 January of that year, and 31 December
-    # the division KOSTRA counts a year's membership in.
-    today = successors(kommuner, f"{VINTAGE}-01-02", f"{now}-01-02")
-    now_people, _ = ages_by_region(sorted(set(today.values())), now)
+    # 1 January gives the division of 1 January of that year.
+    lines = lineage(kommuner, f"{VINTAGE}-01-02", f"{now}-01-02")
+    last = {c: (now if ended is None else last_whole_year(ended)) for c, (_h, ended)
+            in lines.items()}
+    pop_code = {c: code_on(lines[c][0], f"{last[c]}-01-01") for c in kommuner}
+    by_year: dict[int, dict[str, AgeSex]] = {VINTAGE: people}
+    for year in sorted(set(last.values()) - {VINTAGE}):
+        by_year[year], _ = ages_by_region(sorted({pop_code[c] for c in kommuner
+                                                  if last[c] == year}), year)
+    log(f"  {sum(e is None for _h, e in lines.values())} of {len(kommuner)} kommuner unchanged "
+        f"since {VINTAGE} (1 January {now}); the rest at their last whole year: "
+        + ", ".join(f"{y}: {n}" for y, n in sorted(
+            Counter(last[c] for c in kommuner if lines[c][1] is not None).items())))
     kostra_years = [int(y) for y in
                     {v["code"]: v for v in request_json(f"{SSB}/12026")["variables"]}
                     ["Tid"]["values"]]
-    church_now: dict[str, dict[str, float]] = {}
     church_year = None
     for year in sorted(kostra_years, reverse=True):
         if year <= VINTAGE:
             break
-        then = successors(kommuner, f"{VINTAGE}-01-02", f"{year}-12-31")
-        counts = membership(sorted(set(then.values())), year)
+        alive = sorted({code_on(lines[c][0], f"{year}-12-31") for c in kommuner
+                        if last[c] >= year})
+        counts = membership(alive, year)
         if sum(c.get("KOSmedltroslivs0000", 0) for c in counts.values()) > 0:
-            church_now = {c: counts.get(code, {}) for c, code in then.items()}
             church_year = year
             break
-    log(f"  {len(today)} of {len(kommuner)} kommuner unchanged since {VINTAGE}: 1 January "
-        f"{now} for their population, age and sex, and {church_year} for membership")
+    faith_year = {c: min(last[c], church_year or VINTAGE) for c in kommuner}
+    faith_code = {c: code_on(lines[c][0], f"{faith_year[c]}-12-31") for c in kommuner}
+    faiths: dict[int, dict[str, dict[str, float]]] = {VINTAGE: church}
+    for year in sorted(set(faith_year.values()) - {VINTAGE}):
+        faiths[year] = membership(sorted({faith_code[c] for c in kommuner
+                                          if faith_year[c] == year}), year)
+    log(f"  membership: KOSTRA's latest year counting the communities outside the Church is "
+        f"{church_year}; kommuner by year: "
+        + ", ".join(f"{y}: {n}" for y, n in sorted(Counter(faith_year.values()).items())))
     records = []
     no_church = []
     for c in kommuner:
         sid = bound.get(c)
         if sid is None:
             continue
-        if c in today and now_people[today[c]].total > 0:
-            fields = now_people[today[c]].fields(
-                year=now, source=f"{SOURCE}, table 07459", url=POP_URL, date=f"1 January {now}",
-                extra_note=(f" The kommune (number {today[c]} today) has not been merged or "
-                            f"split since {VINTAGE}, the year the map draws, so this is its "
-                            "latest count."))
+        hist, ended = lines[c]
+        year = last[c]
+        ages = by_year[year].get(pop_code[c])
+        if ages is None or ages.total <= 0:
+            raise SystemExit(f"07459 {year}: no count for {rows[c][0]} ({pop_code[c]})")
+        if ended is None:
+            note = (f" The kommune (number {pop_code[c]} today) has not been merged or split "
+                    f"since {VINTAGE}, the year the map draws, so this is its latest count.")
         else:
-            fields = people[c].fields(year=VINTAGE, source=f"{SOURCE}, table 07459",
-                                      url=POP_URL, date=date, extra_note=(
-                                          f" The kommune as it stood in {VINTAGE}, which is "
-                                          "the unit the map draws; it has since been merged "
-                                          "or split."))
-        faith = None
-        if c in church_now:
-            faith = religion(church_now[c], church_year, rows[c][0])
-        if faith:
-            faith_year = church_year
+            note = (f" The kommune as the map draws it (its {VINTAGE} territory), at its last "
+                    f"count before it was merged or split on {ended}"
+                    + (f", when its number was {pop_code[c]}." if pop_code[c] != c else "."))
+        fields = ages.fields(year=year, source=f"{SOURCE}, table 07459", url=POP_URL,
+                             date=f"1 January {year}", extra_note=note)
+        fy = faith_year[c]
+        if c in SPLIT_PARISH:
+            faith = None
+            fields["religion"] = gap(NOT_AVAILABLE, SPLIT_PARISH_NOTE)
+            log(f"  12026 {rows[c][0]}: withheld -- a parish spans it and its neighbour")
         else:
-            faith = religion(church.get(c, {}), VINTAGE, rows[c][0])
-            faith_year = VINTAGE
+            faith = religion(faiths[fy].get(faith_code[c], {}), fy, rows[c][0])
+            if not faith and fy != VINTAGE:
+                fy = VINTAGE
+                faith = religion(church.get(c, {}), VINTAGE, rows[c][0])
         if faith:
             fields.update(faith)
             fields["sources"].append({"field": "religion", "name": f"{SOURCE}, table 12026",
-                                      "url": CHURCH_URL, "year": faith_year})
+                                      "url": CHURCH_URL, "year": fy})
         else:
             no_church.append(rows[c][0])
         records.append(record(

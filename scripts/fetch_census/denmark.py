@@ -50,7 +50,8 @@ from typing import Any
 
 from ._shared import PROCESSED, log, record, shares, write_json
 from .binding import fold
-from .nordic_common import (AgeSex, bind_rows, check_parts, load_units, request,
+from .nordic_common import (AgeSex, bind_rows, check_national_median, check_parts,
+                            load_units, request,
                             request_json, unplaced)
 
 API = "https://api.statbank.dk/v1"
@@ -138,6 +139,9 @@ def main() -> int:
         check_parts({c: people[c].total for c in kommuner if region_of.get(c) == region},
                     people[region].total, f"FOLK1A kommuner -> {names[region]}", 0)
     log(f"  Denmark {date}: {national:,.0f} people, median age {people['000'].median()}")
+    # FOLK1A's quarter against Eurostat's 1 January of the same year: half a
+    # year's ageing at most, well inside the bound.
+    check_national_median("DK", year, people["000"].median(), f"FOLK1A {quarter} ({date})")
 
     # KM6: members and non-members of the National Church, 1 January.
     km_meta = info("KM6")
@@ -182,7 +186,9 @@ def main() -> int:
                 f"Membership of the Evangelical Lutheran Church in Denmark (Folkekirken) on 1 "
                 f"January {km_year}, as the Civil Registration System records it for every "
                 f"resident (Statistics Denmark, KM6): {int(counts['F']):,} members and "
-                f"{int(counts['U']):,} non-members. A count of registered membership, not of "
+                f"{int(counts['U']):,} non-members, who together make the whole population "
+                f"on that day (FOLK1A {km_year}K1; the population shown here is of {date} "
+                f"{year}). A count of registered membership, not of "
                 "belief. Denmark registers no other denomination, so the non-members -- people "
                 "of other faiths and of none alike -- are one group."),
         }

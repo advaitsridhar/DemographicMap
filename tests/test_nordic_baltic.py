@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from scripts.fetch_census import (denmark, estonia, finland, iceland, latvia,  # noqa: E402
-                                  lithuania, norway, nordic_common as nc, pxweb)
+                                  lithuania, norway, nordic_common as nc, pxweb, sweden)
 
 
 def units(iso3: str, level: str) -> list[dict]:
@@ -195,10 +195,28 @@ class Estonia(unittest.TestCase):
         for (base, kind), (succ, skind) in estonia.SUCCESSOR.items():
             self.assertIn(skind, ("vald", "linn"))
 
-    def test_the_mislabelled_polygon_is_not_bound(self):
-        self.assertIn("Maidla vald", estonia.NOT_THIS)
+    def test_the_relabelled_polygon_is_bound_only_as_the_last_of_its_county(self):
         drawn = {u["name"] for u in units("EST", "admin2")}
         self.assertTrue(set(estonia.DRAWN) <= drawn)
+        self.assertIn("Maidla vald", estonia.RELABELLED)
+        shapes = [{"id": "m", "name": "Maidla vald"}, {"id": "k", "name": "Kivi"}]
+        units_ = {"1": {"name": "Lüganuse vald", "base": "Lüganuse", "kind": "vald",
+                        "county": "44", "gone": False},
+                  "2": {"name": "Kiviõli linn", "base": "Kiviõli", "kind": "linn",
+                        "county": "44", "gone": False}}
+        county = {"m": "44", "k": "44"}
+        bound = {"k": "2"}
+        notes = estonia.bind_relabelled(shapes, bound, units_, ["1", "2"], county)
+        self.assertEqual(bound["m"], "1")
+        self.assertIn("Lüganuse", notes["m"])
+        # Two units left in the county: nothing decides, so nothing is bound.
+        bound = {}
+        estonia.bind_relabelled(shapes, bound, units_, ["1", "2"], county)
+        self.assertNotIn("m", bound)
+        # The unit is bound elsewhere already: the polygon stays a gap.
+        bound = {"k": "1"}
+        estonia.bind_relabelled(shapes, bound, units_, ["1"], county)
+        self.assertNotIn("m", bound)
 
     def test_faiths_are_filed_by_their_tradition(self):
         tree = __import__("group_tree")
@@ -294,6 +312,245 @@ class Lithuania(unittest.TestCase):
     def test_census_labels_are_placed(self):
         self.assertEqual(nc.unplaced("religion", lithuania.RELIGION_2011.values()), [])
         self.assertEqual(nc.unplaced("ethnicity", lithuania.ETHNIC_2011.values()), [])
+
+
+def cell(region: str, age: str, sex: str) -> dict:
+    return {"Region": (region, region), "Alder": (age, age), "Kon": (sex, sex)}
+
+
+class Sweden(unittest.TestCase):
+    def test_the_open_class_is_a_hundred_and_tot1_is_the_total(self):
+        cells = [(cell("0114", "0", "1"), 10), (cell("0114", "99", "2"), 5),
+                 (cell("0114", "100+1", "1"), 3), (cell("0114", "TOT1", "1"), 13),
+                 (cell("0114", "TOT1", "2"), 5)]
+        people, published = sweden.read_cells(cells)
+        self.assertEqual(people["0114"].males[100], 3)
+        self.assertEqual(people["0114"].females[99], 5)
+        self.assertEqual(published["0114"], 18)
+        self.assertEqual(people["0114"].total, 18)
+
+    def test_a_band_or_another_total_stops_the_run(self):
+        for age in ("0-4", "TOT", "TOT2"):
+            with self.assertRaises(SystemExit):
+                sweden.read_cells([(cell("0114", age, "1"), 10)])
+
+    def test_cell_key_noise_passes_and_a_misread_does_not(self):
+        people = {"0114": nc.AgeSex()}
+        people["0114"].add(30, "m", 11_614)
+        # Vaxholm's single years came to 11,614 against a published 11,635.
+        self.assertLess(sweden.check_cells(people, {"0114": 11_635}), 0.002)
+        with self.assertRaises(SystemExit):
+            sweden.check_cells(people, {"0114": 12_614})
+        with self.assertRaises(SystemExit):
+            sweden.check_cells(people, {})
+
+    def test_every_kommun_binds_by_scbs_names_goteborg_included(self):
+        shapes = units("SWE", "admin2")
+        lan = {u["id"]: u["name"] for u in units("SWE", "admin1")}
+        codes = {pid: f"{i + 1:02d}" for i, pid in enumerate(sorted(lan))}
+        sv = {code: lan[pid] for pid, code in codes.items()}
+        kommuner = []
+        for i, s in enumerate(sorted(shapes, key=lambda s: s["id"])):
+            code = codes[s["parent"]] + f"{i:02d}"[-2:]
+            while code in sv:                  # keep the codes unique within a län
+                code = codes[s["parent"]] + f"{int(code[2:]) + 1:02d}"[-2:]
+            sv[code] = {"Gothenburg": "Göteborg"}.get(s["name"], s["name"])
+            kommuner.append(code)
+        self.assertIn("Göteborg", sv.values())
+        bound = sweden.bind_kommuner(sv, kommuner)
+        self.assertEqual(len(set(bound.values())), 290)
+
+    def test_every_lan_binds_by_its_swedish_name(self):
+        names = ["Stockholms län", "Uppsala län", "Södermanlands län", "Östergötlands län",
+                 "Jönköpings län", "Kronobergs län", "Kalmar län", "Gotlands län",
+                 "Blekinge län", "Skåne län", "Hallands län", "Västra Götalands län",
+                 "Värmlands län", "Örebro län", "Västmanlands län", "Dalarnas län",
+                 "Gävleborgs län", "Västernorrlands län", "Jämtlands län",
+                 "Västerbottens län", "Norrbottens län"]
+        sv = {f"{i:02d}": n for i, n in enumerate(names, 1)}
+        bound = sweden.bind_lan(sv, sorted(sv))
+        self.assertEqual(len({s["id"] for s in bound.values()}), 21)
+        with self.assertRaises(SystemExit):
+            sweden.bind_lan({**sv, "99": "Nowhere län"}, sorted(sv) + ["99"])
+
+
+class NationalMedian(unittest.TestCase):
+    def test_a_median_off_the_published_one_stops_the_run(self):
+        with mock.patch.object(nc, "published_median", return_value=(41.0, "Eurostat")):
+            nc.check_national_median("SE", 2026, 41.2, "x")
+            with self.assertRaises(SystemExit):
+                nc.check_national_median("SE", 2026, 41.5, "x")
+
+    def test_a_year_not_yet_published_is_checked_against_the_year_before(self):
+        answers = {2026: (None, "not yet"), 2025: (41.0, "Eurostat")}
+        with mock.patch.object(nc, "published_median", side_effect=lambda g, y: answers[y]):
+            nc.check_national_median("SE", 2026, 41.6, "x")      # within 0.7
+            with self.assertRaises(SystemExit):
+                nc.check_national_median("SE", 2026, 41.8, "x")
+
+    def test_small_groups_fold_into_other_and_zero_rows_go(self):
+        counts = {"Finnish": 9_000, "Swedish": 990, "Sami": 1, "Wolof": 4, "Zulu": 0,
+                  "Other language": 5}
+        out, n, people = nc.fold_small(counts, 10_000, "Other language",
+                                       keep=("Finnish", "Swedish", "Sami"))
+        self.assertEqual(out, {"Finnish": 9_000, "Swedish": 990, "Sami": 1,
+                               "Other language": 9})
+        self.assertEqual((n, people), (1, 4))
+
+
+class NorwayVintage(unittest.TestCase):
+    CHANGES = {"codeChanges": [
+        {"oldCode": "1662", "newCode": "5030", "changeOccurred": "2018-01-01"},
+        {"oldCode": "5030", "newCode": "5001", "changeOccurred": "2020-01-01"},
+        {"oldCode": "5001", "newCode": "5001", "changeOccurred": "2020-01-01"},
+        {"oldCode": "0714", "newCode": "0715", "changeOccurred": "2018-01-01"},
+        {"oldCode": "0702", "newCode": "0715", "changeOccurred": "2018-01-01"},
+        {"oldCode": "1141", "newCode": "1103", "changeOccurred": "2020-01-01"},
+        {"oldCode": "0101", "newCode": "3001", "changeOccurred": "2020-01-01"},
+        {"oldCode": "3001", "newCode": "3101", "changeOccurred": "2024-01-01"},
+    ]}
+
+    def lines(self):
+        with mock.patch.object(norway, "request_json", return_value=self.CHANGES):
+            return norway.lineage(["1662", "0714", "0702", "1103", "0101"],
+                                  "2017-01-02", "2026-01-02")
+
+    def test_a_merged_kommune_is_counted_at_its_last_whole_year_under_its_number_then(self):
+        lines = self.lines()
+        hist, ended = lines["1662"]                     # Klæbu, into Trondheim in 2020
+        self.assertEqual(ended, "2020-01-01")
+        year = norway.last_whole_year(ended)
+        self.assertEqual(year, 2019)
+        self.assertEqual(norway.code_on(hist, f"{year}-01-01"), "5030")
+        self.assertEqual(norway.last_whole_year(lines["0714"][1]), 2017)   # Hof, 2018
+        self.assertEqual(norway.code_on(lines["0714"][0], "2017-01-01"), "0714")
+
+    def test_a_kommune_that_kept_its_number_while_others_joined_it_ends_too(self):
+        self.assertEqual(self.lines()["1103"][1], "2020-01-01")     # Stavanger
+
+    def test_a_renumbered_kommune_goes_on_under_its_new_number(self):
+        hist, ended = self.lines()["0101"]
+        self.assertIsNone(ended)
+        self.assertEqual(norway.code_on(hist, "2026-01-01"), "3101")
+        self.assertEqual(norway.code_on(hist, "2020-12-31"), "3001")
+
+    def test_a_change_during_the_year_leaves_that_january_whole(self):
+        self.assertEqual(norway.last_whole_year("2020-07-01"), 2020)
+
+    def test_klepp_and_time_are_withheld_and_a_remainder_under_three_percent_is_not_kept(self):
+        self.assertEqual(set(norway.SPLIT_PARISH.values()), {"Klepp", "Time"})
+        self.assertIn("Frøyland and Orstad", norway.SPLIT_PARISH_NOTE)
+        klepp = {"KOSmedlemmerdnk0000": 17_139, "KOSmedltroslivs0000": 2_588,
+                 "KOSpersoneralle0000": 19_848}
+        self.assertIsNone(norway.religion(klepp, 2020, "Klepp"))
+        time_ = {"KOSmedlemmerdnk0000": 11_374, "KOSmedltroslivs0000": 1_911,
+                 "KOSpersoneralle0000": 19_106}
+        self.assertIn("parish", norway.religion(time_, 2020, "Time")["religion_note"])
+
+
+class IcelandVintage(unittest.TestCase):
+    NAMES = {"2503": "Sandgerðisbær", "2504": "Sveitarfélagið Garður", "2510": "Suðurnesjabær",
+             "7300": "Fjarðabyggð", "7613": "Breiðdalshreppur", "7708": "Hornafjörður",
+             "8401": "Hornafjörður", "7000": "Seyðisfjarðarkaupstaður", "7400": "Múlaþing",
+             "0000": "Reykjavíkurborg"}
+
+    def series(self, **extra):
+        base = {
+            2017: {"2503": 1785, "2504": 1599, "7300": 4780, "7613": 183, "7708": 2300,
+                   "7000": 674, "0000": 120_000},
+            2018: {"2510": 3450, "7300": 5000, "7708": 2320, "7000": 670, "0000": 122_000},
+            2019: {"2510": 3500, "7300": 5010, "7708": 2340, "7000": 675, "0000": 124_000},
+            2020: {"2510": 3550, "7300": 5020, "8401": 2350, "7400": 690, "0000": 125_000},
+        }
+        base.update(extra)
+        return base
+
+    def test_each_merged_municipality_keeps_its_own_last_count(self):
+        last = iceland.last_counts(["2503", "2504", "7300", "7613", "7708", "7000", "0000"],
+                                   self.series(), self.NAMES)
+        self.assertEqual(last["2503"], (2017, "2503"))          # into Suðurnesjabær, 2018
+        self.assertEqual(last["7613"], (2017, "7613"))          # into Fjarðabyggð, 2018
+        self.assertEqual(last["7300"], (2017, "7300"))          # took Breiðdalshreppur in
+        self.assertEqual(last["7000"], (2019, "7000"))          # into Múlaþing, 2020
+        self.assertEqual(last["7708"], (2020, "8401"))          # renumbered, not merged
+        self.assertEqual(last["0000"], (2020, "0000"))
+
+    def test_people_who_vanish_without_reappearing_stop_the_run(self):
+        broken = self.series()
+        broken[2018] = {k: v for k, v in broken[2018].items() if k != "2510"}
+        with self.assertRaises(SystemExit):
+            iceland.last_counts(["2503", "2504", "7300", "7613", "7708", "7000", "0000"],
+                                broken, self.NAMES)
+
+    def test_grindavik_note_names_the_evacuation(self):
+        note = iceland.EVACUATED["2300"].format(now=819, year="2026", then=3669)
+        self.assertIn("evacuated on 10 November 2023", note)
+        self.assertIn("819", note)
+
+
+class PxwebLabels(unittest.TestCase):
+    def test_the_baltic_registers_labels_are_placed(self):
+        for iso in ("EST", "LVA"):
+            table = pxweb.INSTANCES[iso]["tables"][0]
+            self.assertEqual(nc.unplaced("ethnicity", table.relabel.values()), [], iso)
+
+    def test_latvias_two_readers_of_ire031_use_the_same_words(self):
+        table = pxweb.INSTANCES["LVA"]["tables"][0]
+        for office, ours in table.relabel.items():
+            self.assertEqual(latvia.ethnic_label(office), ours)
+
+    def test_a_relabelled_category_is_summed_under_its_new_name(self):
+        table = pxweb.INSTANCES["EST"]["tables"][0]
+        payload = {"id": ["Maakond", "Rahvus"], "size": [1, 3],
+                   "dimension": {"Maakond": {"category": {"index": {"37": 0},
+                                                          "label": {"37": "Harju county"}}},
+                                 "Rahvus": {"category": {
+                                     "index": {"1": 0, "2": 1, "9": 2},
+                                     "label": {"1": "Total", "2": "Estonians",
+                                               "9": "Ethnic nationality unknown"}}}},
+                   "value": [10, 8, 2]}
+        with mock.patch.object(pxweb, "variables", return_value={}), \
+                mock.patch.object(pxweb, "build_query", return_value={}), \
+                mock.patch.object(pxweb, "http_json", return_value=payload):
+            areas, _ = pxweb.fetch("base", table)
+        self.assertEqual(areas["37"]["counts"], {"Estonian": 8, "Not stated": 2})
+
+
+class Lithuania2021(unittest.TestCase):
+    HEAD = ["Administrative territory", "Total", "Lithuanians", "Poles", "Russians",
+            "Belarusians", "Ukrainians", "Other", "Not indicated"]
+
+    def test_perturbed_rows_pass_within_the_slack_and_a_misread_does_not(self):
+        rows = [["Title"], self.HEAD,
+                ["Elektrėnų sav.", 23376, 19651, 1572, 1163, 235, 178, 170, 408]]
+        out, totals = lithuania.parse_perturbed(rows, lithuania.ETHNIC_2021, "t")
+        self.assertEqual(out["Elektrėnų sav."]["Polish"], 1572)
+        self.assertEqual(totals["Elektrėnų sav."], 23376)
+        rows[2][2] = 29651
+        with self.assertRaises(SystemExit):
+            lithuania.parse_perturbed(rows, lithuania.ETHNIC_2021, "t")
+        with self.assertRaises(SystemExit):
+            lithuania.parse_perturbed([["x"], self.HEAD + ["Martians"]],
+                                      lithuania.ETHNIC_2021, "t")
+
+    def test_a_city_is_its_municipality_only_where_the_census_counts_the_same_people(self):
+        names = {"10": {"lt": "Vilniaus apskritis", "en": "Vilnius county"},
+                 **{str(20 + i): {"lt": f"M{i} sav.", "en": f"M{i} mun."} for i in range(8)},
+                 "40": {"lt": "Kauno m. sav.", "en": "Kaunas c. mun."},
+                 "41": {"lt": "Visagino sav.", "en": "Visaginas mun."},
+                 "42": {"lt": "Kauno r. sav.", "en": "Kaunas d. mun."}}
+        munis = [str(20 + i) for i in range(8)] + ["40", "41", "42"]
+        vil_rows = {"Vilniaus apskr.": {"Lithuanian": 80}, **{
+            f"M{i} sav.": {"Lithuanian": 10} for i in range(8)}}
+        vil_tot = {k: 80 if k.startswith("Vilniaus") else 10 for k in vil_rows}
+        urban = ({"Kaunas": {"Lithuanian": 298_753}, "Visaginas": {"Russian": 17_000}},
+                 {"Kaunas": 298_753, "Visaginas": 17_000})
+        out = lithuania.ethnicity_2021((vil_rows, vil_tot), urban, names, munis, ["10"],
+                                       {"40": 298_753, "41": 18_000, "42": 90_000})
+        self.assertEqual(out["40"][2], "urban")
+        self.assertNotIn("41", out)            # the town is not all of the municipality
+        self.assertNotIn("42", out)            # a district municipality is never the city
+        self.assertEqual(out["10"][2], "vilnius")
 
 
 if __name__ == "__main__":

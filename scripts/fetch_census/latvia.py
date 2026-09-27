@@ -61,7 +61,8 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .binding import fold
 from .cod_ps_age import grouped_median
-from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_parts, load_units,
+from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_national_median,
+                            check_parts, load_units,
                             parent_names, request_json, sex_ratio, unplaced)
 from .pxweb import unstack
 
@@ -255,6 +256,29 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
                              f"{cells[unit].get('TOTAL')}")
     check_parts({u: cells[u]["TOTAL"] for u in old}, cells["LV"]["TOTAL"],
                 "TSG11-07 2011: counties and cities -> Latvia", 0)
+    # TSG11-07 counts only the residents who answered the question (CSB's note
+    # to the table: "usually resident population that gave answer to question
+    # about language mainly used at home") -- 1,876,812 of the 2,070,371 the
+    # census counted. TSG11-01 has everyone, by the same units, so each note
+    # can say how many were left out.
+    counted = {key[TERRITORY][0]: value for key, value in unstack(request_json(
+        CENSUS.format(lang="en", path=CENSUS_UNITS), {"query": [
+            {"code": TERRITORY, "selection": {"filter": "item", "values": list(old) + ["LV"]}},
+            {"code": "Dzimums", "selection": {"filter": "item", "values": ["T"]}},
+        ], "response": {"format": "json-stat2"}}, pause=0.5))}
+    over = [u for u in list(old) + ["LV"] if cells[u]["TOTAL"] > counted.get(u, 0) + 0.5]
+    if over:
+        raise SystemExit(f"TSG11-07: more answers than residents in {over}")
+    log(f"  TSG11-07: {cells['LV']['TOTAL']:,.0f} of the {counted['LV']:,.0f} residents counted "
+        f"in 2011 answered the home-language question "
+        f"({100 * cells['LV']['TOTAL'] / counted['LV']:.1f}%)")
+
+    def universe(units: list[str]) -> str:
+        answered = sum(cells[u]["TOTAL"] for u in units)
+        everyone = sum(counted[u] for u in units)
+        return (f"The shares are of the {answered:,.0f} residents who answered the question, "
+                f"{100 * answered / everyone:.1f}% of the {everyone:,.0f} the census counted "
+                f"here; the other {everyone - answered:,.0f} gave no answer and are left out.")
     summed: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     made_of: dict[str, list[str]] = defaultdict(list)
     for unit, admin1 in placed.items():
@@ -270,7 +294,8 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
               "url": CENSUS_PAGE, "year": 2011}
 
     def write(rec: dict[str, Any], counts: dict[str, float], note: str) -> None:
-        rec["language"] = shares(counts, total=sum(counts.values()))
+        rec["language"] = shares({k: v for k, v in counts.items() if v > 0},
+                                 total=sum(counts.values()))
         rec["language_year"] = 2011
         rec["language_note"] = f"{what} {note}".strip()
         rec["sources"].append(source)
@@ -294,9 +319,9 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
         elif sid in summed:
             units = made_of[sid]
             write(rec, summed[sid],
-                  f"Summed from the {len(units)} units of 2009-2021 that make the municipality: "
-                  + ", ".join(sorted(names[u].strip() for u in units)) + "."
-                  if len(units) > 1 else "")
+                  (f"Summed from the {len(units)} units of 2009-2021 that make the municipality: "
+                   + ", ".join(sorted(names[u].strip() for u in units)) + ". "
+                   if len(units) > 1 else "") + universe(units))
             got += 1
     drawn1 = {r["shape_id"] for r in records if r["level"] == "admin1"}
     log(f"  TSG11-07: {len(placed)} units of 2011 placed in {len(summed)} municipalities, "
@@ -323,7 +348,7 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
             continue
         write(by_code[code], {label: cells[unit][c] for c, label in LANGUAGES.items()},
               f"In 2011 this was a unit of its own ({names[unit].strip()}), so the census's "
-              "figure is for exactly this territory.")
+              "figure is for exactly this territory. " + universe([unit]))
     # Every other town and parish was part of a larger county in 2011, and a
     # county's figure is not shared out to its parts.
     county_of: dict[str, str] = {}
@@ -384,6 +409,7 @@ def main() -> int:
             present = [c for c in present if c not in merged]
         check_parts({c: totals[(c, when, "T")] for c in present}, totals[("LV", when, "T")],
                     f"IRD041 {when}: municipalities -> Latvia", 0)
+    check_national_median("LV", year, people[("LV", year)].median(), f"IRD041 {year}")
     medians = {(key["AREA"][0], int(key["TIME"][0])): value for key, value in query(
         "IRD031", {"SEX": ["T"], "AREA": municipalities, "ContentsCode": ["IRD0311"],
                    "TIME": [str(year), str(year - 1)]})}
@@ -410,7 +436,7 @@ def main() -> int:
             log(f"  {table} {where}: {why}; ethnicity left out")
             return {"ethnicity": gap(NOT_AVAILABLE, f"Not given: {why}.")}
         return {
-            "ethnicity": shares(counts, total=total),
+            "ethnicity": shares({k: v for k, v in counts.items() if v > 0}, total=total),
             "ethnicity_year": when,
             "ethnicity_note": (
                 f"Ethnicity as recorded in the population register at the beginning of {when} "
@@ -422,6 +448,7 @@ def main() -> int:
         }
 
     records = []
+    off_median: list[str] = []
     admin1 = {fold(u["name"]): u for u in load_units("LVA", "admin1")}
     for code in municipalities:
         when = year - 1 if code in PRE_MERGER else year
@@ -437,14 +464,22 @@ def main() -> int:
                                  " Madona and Varakļāni merged on 1 July 2025 and are drawn "
                                  "apart, so both are read before the merger."
                                  if code in PRE_MERGER else ""))
+        # CSB publishes the median in completed years (IRD031: 43 for Liepāja,
+        # where the single years put the middle person at 43.9). The map gives
+        # medians to a tenth of a year, interpolated within the single year
+        # that holds the middle person, as the parishes and towns below are;
+        # CSB's figure is the check that it is the same median.
         if (code, when) in medians:
-            fields["median_age"] = measure(medians[(code, when)], unit="years", year=when,
-                                           source=f"{SOURCE}, IRD031")
-            fields["median_age_note"] = (f"The median age at the beginning of {when} as CSB "
-                                         "publishes it for the municipality (IRD031).")
-            fields["sources"].append({"field": "median age", "name": f"{SOURCE}, IRD031",
-                                      "url": PAGE.format(folder="IRD", table="IRD031"),
-                                      "year": when})
+            ours = fields["median_age"]["value"]
+            if ours is None or abs(int(ours) - medians[(code, when)]) > 1:
+                raise SystemExit(f"IRD041 {code} {when}: median {ours} against CSB's "
+                                 f"{medians[(code, when)]} in completed years")
+            if int(ours) != int(medians[(code, when)]):
+                off_median.append(f"{name} {ours} vs {medians[(code, when)]:.0f}")
+            fields["median_age_note"] += (
+                f" CSB publishes the median in completed years (IRD031: "
+                f"{medians[(code, when)]:.0f} here); this is the same median to a tenth of a "
+                "year, as the rest of the map gives it.")
         block = eth_block(ethnicity[(code, when)], when, "IRE031", name)
         if "_source" in block:
             fields["sources"].append(block.pop("_source"))
@@ -453,7 +488,8 @@ def main() -> int:
             f"LVA-CSB-{code}", name, level="admin1", parent="LVA", country="LVA",
             codes={"atvk": code}, match_by="shape_id", shape_id=shape["id"],
             aliases=[shape["name"]] if shape["name"] != name else [], **fields))
-    log(f"  admin1: {len(records)} municipalities written")
+    log(f"  admin1: {len(records)} municipalities written; interpolated medians outside CSB's "
+        f"completed year (off by one at most, else the run stops): {off_median or 'none'}")
 
     # --- admin2: parishes and towns by five-year group.
     m81 = meta("IRD081")

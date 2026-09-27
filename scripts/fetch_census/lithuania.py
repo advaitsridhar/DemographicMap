@@ -49,7 +49,8 @@ from typing import Any
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .binding import fold
 from .cod_ps_age import grouped_median
-from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_parts, load_units,
+from .nordic_common import (SEX_RATIO_UNIT, AgeSex, bind_rows, check_national_median,
+                            check_parts, load_units,
                             request, sex_ratio, unplaced)
 
 OSP = "https://osp-rs.stat.gov.lt/rest_xml"
@@ -118,10 +119,31 @@ def expand_en(name: str) -> str:
 # 403, "Just a moment..."), so its census workbooks are read from the Internet
 # Archive's captures of the same files -- the office's files byte for byte, at
 # the URLs the office published them under. The 2021 round published mother
-# tongue by municipality; its ethnicity and religion workbooks are national
-# only, so those two come from the 2011 census, which published both by
-# municipality. The 60 municipalities have not changed since 2000.
+# tongue by municipality. It published religion for the whole country only
+# (probes r10, r11: one column, 2,810,761), and ethnicity by municipality only
+# in two workbooks: Vilnius county by municipality and eldership, and the
+# towns and cities ("urban areas"), each with the five largest groups, the
+# rest, and those who gave none. Those cover the eight municipalities of
+# Vilnius county and the city municipalities whose territory is the city
+# itself -- the census counts the same people in both, which is checked --
+# and 2011's figures, which the 2011 census published by municipality, cover
+# the rest. The 60 municipalities have not changed since 2000.
 ARCHIVE = "https://web.archive.org/web/{ts}id_/{url}"
+ETH_2021_VILNIUS = ("20220621221246", "https://osp.stat.gov.lt/documents/10180/9601028/"
+                    "Vilnius_county_by_largest_ethnic_groups.xlsx")
+ETH_2021_URBAN = ("20221011003824", "https://osp.stat.gov.lt/documents/10180/10367417/"
+                  "Urban_areas_population_by_largest_ethnic_group-EN.xlsx")
+ETHNIC_2021 = {"Lithuanians": "Lithuanian", "Poles": "Polish", "Russians": "Russian",
+               "Belarusians": "Belarusian", "Ukrainians": "Ukrainian", "Other": "Other",
+               "Others": "Other", "Other ethnicities": "Other", "Not indicated": "Not stated",
+               "Not stated": "Not stated", "Lietuviai": "Lithuanian", "Lenkai": "Polish",
+               "Rusai": "Russian", "Baltarusiai": "Belarusian", "Ukrainiečiai": "Ukrainian",
+               "Kiti": "Other", "Nenurodyta": "Not stated"}
+# The office perturbs these two workbooks' cells to protect confidentiality
+# ("the sum of rows may not coincide"): a row's groups come within a few
+# people of its total (Elektrėnai 23,377 of 23,376), and a misread misses by
+# thousands.
+PERTURBED_SLACK = (15, 0.002)
 LANG_2021 = ("20221227012930", "https://osp.stat.gov.lt/documents/10180/10367417/"
              "Population_by_mother_tongue_in_municipality-EN.xlsx/"
              "1c3c9ad4-5fa5-44b1-baa7-e6caef4b740b?version=1.0")
@@ -206,6 +228,94 @@ def read_table(source: tuple[str, str], labels: dict[str, str]) -> tuple[
                              f"{sum(counts.values()):,.0f} of {total:,.0f}")
         out[name], totals[name], withheld[name] = counts, total, max(short, 0.0)
     return out, totals, withheld
+
+
+def read_perturbed(source: tuple[str, str], labels: dict[str, str]
+                   ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    """A 2021 workbook of largest groups: {row name: {label: count}}, {row name: total}.
+
+    Every column after the total must be a known group, and each row's groups
+    must make its total within the perturbation's slack, or the run stops.
+    """
+    raw = request(ARCHIVE.format(ts=source[0], url=source[1]), accept="*/*", timeout=240)
+    rows = workbook_rows(raw)
+    return parse_perturbed(rows, labels, source[1].rsplit("/", 1)[-1])
+
+
+def parse_perturbed(rows: list[list[Any]], labels: dict[str, str], what: str
+                    ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    head = next(i for i, r in enumerate(rows)
+                if len(r) > 1 and str(r[1] or "").strip() in ("Iš viso", "Total"))
+    columns = [str(c or "").strip() for c in rows[head]][2:]
+    while columns and not columns[-1]:
+        columns.pop()
+    unknown = [c for c in columns if c not in labels]
+    if unknown:
+        raise SystemExit(f"{what}: columns {unknown} are no group this adapter knows")
+    out, totals = {}, {}
+    for row in rows[head + 1:]:
+        name = str(row[0] or "").strip()
+        total = cell(row[1]) if len(row) > 1 else None
+        if not name or total is None:
+            continue
+        values = [cell(v) for v in row[2:2 + len(columns)]]
+        if any(v is None for v in values):
+            continue
+        counts: dict[str, float] = defaultdict(float)
+        for col, n in zip(columns, values):
+            counts[labels[col]] += n
+        off = sum(counts.values()) - total
+        if abs(off) > max(PERTURBED_SLACK[0], PERTURBED_SLACK[1] * total):
+            raise SystemExit(f"{what}: {name}'s groups make {sum(counts.values()):,.0f} of "
+                             f"{total:,.0f}")
+        out[name], totals[name] = dict(counts), total
+    return out, totals
+
+
+def ethnicity_2021(vilnius: tuple[dict[str, dict[str, float]], dict[str, float]],
+                   urban: tuple[dict[str, dict[str, float]], dict[str, float]],
+                   names: dict[str, dict[str, str]], municipalities: list[str],
+                   counties: list[str], census_total: dict[str, float]
+                   ) -> dict[str, tuple[dict[str, float], float, str]]:
+    """{code: (counts, total, how)} for every unit the 2021 census's ethnicity reaches.
+
+    The Vilnius county workbook names the county and its municipalities in the
+    code list's own Lithuanian forms ("Šalčininkų r. sav."). A town or city of
+    the urban workbook is a municipality only where the municipality is a city
+    or town one (or has no district) of the same name, and the census counts
+    the same people in both -- ``census_total`` is the 2021 mother-tongue
+    workbook's count for the municipality, from the same census.
+    """
+    out: dict[str, tuple[dict[str, float], float, str]] = {}
+    by_lt = {names[c]["lt"]: c for c in municipalities}
+    by_lt.update({names[c]["lt"].replace("apskritis", "apskr."): c for c in counties})
+    rows, totals = vilnius
+    found = {by_lt[r]: r for r in rows if r in by_lt}
+    county = [c for c in found if c in counties]
+    munis = [c for c in found if c in municipalities]
+    if len(county) != 1 or len(munis) != 8:
+        raise SystemExit(f"Vilnius county workbook: {len(county)} county rows and "
+                         f"{len(munis)} municipality rows found, not 1 and 8")
+    check_parts({c: totals[found[c]] for c in munis}, totals[found[county[0]]],
+                "2021 ethnicity: Vilnius county's municipalities -> the county", 0.00002, 10)
+    for c in county + munis:
+        out[c] = (rows[found[c]], totals[found[c]], "vilnius")
+    urows, utotals = urban
+    by_stem = defaultdict(list)
+    for r in urows:
+        by_stem[fold(r)].append(r)
+    for c in municipalities:
+        stem, kind = en_key(names[c]["en"])
+        if c in out or kind == "d" or len(by_stem.get(stem, [])) != 1:
+            continue
+        r = by_stem[stem][0]
+        whole = census_total.get(c)
+        if whole and abs(utotals[r] - whole) <= max(10, 0.001 * whole):
+            out[c] = (urows[r], utotals[r], "urban")
+        else:
+            log(f"  2021 ethnicity: the town of {r} ({utotals[r]:,.0f}) is not all of "
+                f"{names[c]['en']} ({whole or 0:,.0f}); 2011's figure stays")
+    return out
 
 
 def en_key(name: str) -> tuple[str, str]:
@@ -338,6 +448,7 @@ def main() -> int:
     log(f"  national median {median('00')} (the office: {medians.get('00')} in "
         f"completed years); units whose interpolated median is not in the office's year: "
         f"{off or 'none'}")
+    check_national_median("LT", year, median("00"), f"{SINGLE} {year}")
 
     def fields(code: str) -> dict[str, Any]:
         men, women = grouped[(code, "1")], grouped[(code, "2")]
@@ -412,14 +523,18 @@ def main() -> int:
             if held[row] > 0.5:
                 counts[other] = counts.get(other, 0.0) + held[row]
             comp[code].update({
-                field: shares(counts, total=totals_[row]),
+                field: shares({k: v for k, v in counts.items() if v > 0}, total=totals_[row]),
                 f"{field}_year": census_year,
                 f"{field}_note": (
                     f"{what} (Statistics Lithuania, {census_year} census)."
                     + (f" {int(held[row]):,} people are in cells the office withholds as "
                        f"confidential, and are counted in '{other}'." if held[row] > 0.5 else "")
-                    + (" The 2021 round published ethnicity and religion only for the whole "
-                       "country." if census_year == 2011 else "")),
+                    + ({"religion": " The 2021 census published religion only for the whole "
+                                    "country.",
+                        "ethnicity": " The 2021 census published ethnicity below the country "
+                                     "only for Vilnius county and for towns and cities, and "
+                                     "this unit is neither."}.get(field, "")
+                       if census_year == 2011 else "")),
                 f"_{field}_source": {
                     "field": field, "name": f"{SOURCE}, {census_year} census",
                     "url": (LANG_2021 if field == "language" else
@@ -432,6 +547,35 @@ def main() -> int:
                                                     else REL_2011)[1]).replace("id_/", "/"),
                     "year": census_year},
             })
+
+    # --- The 2021 census's ethnicity, where it reaches below the country.
+    census_total = {code: lang_tot[row] for row, code in en_rows.items()}
+    newer = ethnicity_2021(read_perturbed(ETH_2021_VILNIUS, ETHNIC_2021),
+                           read_perturbed(ETH_2021_URBAN, ETHNIC_2021),
+                           names, municipalities, counties, census_total)
+    for code, (counts, total, how) in newer.items():
+        held = sum(counts.values())
+        source = ETH_2021_VILNIUS if how == "vilnius" else ETH_2021_URBAN
+        comp[code].update({
+            "ethnicity": shares({k: v for k, v in counts.items() if v > 0}, total=held),
+            "ethnicity_year": 2021,
+            "ethnicity_note": (
+                "Ethnicity (tautybė) from the 2021 census's statistical survey of ethnicity, "
+                "mother tongue and religion, weighted to all residents (Statistics Lithuania, "
+                + ("'Largest ethnic groups in Vilnius county'" if how == "vilnius" else
+                   "'Urban areas population by largest ethnic group', for the city, whose "
+                   f"{total:,.0f} people are the municipality's in the same census")
+                + "). Only the five largest groups are named; 'Other' holds the rest and 'Not "
+                "stated' those who gave none. The office perturbs the cells for "
+                f"confidentiality, so the groups make {held:,.0f} of the {total:,.0f} people "
+                "counted; the shares are of the groups."),
+            "_ethnicity_source": {
+                "field": "ethnicity", "name": f"{SOURCE}, 2021 census", "url": source[1],
+                "archived": ARCHIVE.format(ts=source[0], url=source[1]).replace("id_/", "/"),
+                "year": 2021},
+        })
+    log(f"  2021 ethnicity replaces 2011's for {len(newer)} units: "
+        + ", ".join(sorted(names[c]["en"] + f" ({how})" for c, (_x, _t, how) in newer.items())))
 
     def with_census(code: str) -> dict[str, Any]:
         out = fields(code)
@@ -450,11 +594,13 @@ def main() -> int:
         sid = bound.get(code)
         if sid is None:
             continue
-        name = rows_[code][0]
+        # The map's own label leads -- it writes some municipalities in
+        # English and some in Lithuanian -- and the office's forms follow.
+        name = labels[sid]
         records.append(record(
             f"LTU-OSP-{code}", name, level="admin2", parent="LTU", country="LTU",
             codes={"osp": code}, match_by="shape_id", shape_id=sid,
-            aliases=sorted({labels[sid], expand_en(names[code]["en"])} - {name}),
+            aliases=sorted({rows_[code][0], expand_en(names[code]["en"])} - {name}),
             **with_census(code)))
     admin1 = {fold(u["name"].replace(" County", "")): u for u in load_units("LTU", "admin1")}
     for code in counties:

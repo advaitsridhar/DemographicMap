@@ -54,7 +54,8 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
 from .binding import fold
-from .nordic_common import AgeSex, check_parts, load_units, parent_names, request_json, unplaced
+from .nordic_common import (AgeSex, check_national_median, check_parts, load_units,
+                            parent_names, request_json, unplaced)
 from .pxweb import unstack
 
 STAT = "https://andmed.stat.ee/api/v1/en/stat"
@@ -115,13 +116,59 @@ DRAWN = {"Alaj": "Alajõe vald", "Kivi": "Kiviõli linn", "K": "Kärla vald", "M
          "Jaarva-Jaani": "Järva-Jaani vald", "Vandra": "Vändra vald"}
 
 # Polygons whose label names a unit the polygon is not, left unbound.
-NOT_THIS = {
-    "Maidla vald": (
-        "labelled Maidla, but it spans 26.81-27.22E and 59.14-59.44N, from Maidla's "
-        "south to the coast at Purtse and around the town of Kiviõli -- the Lüganuse "
-        "parish formed in 2013 from Lüganuse, Maidla and Püssi -- so neither Maidla's "
-        "figures nor Lüganuse's are put on it"),
+NOT_THIS: dict[str, str] = {}
+
+# Polygons whose label is a name the unit carried before a merger the layer
+# does draw, and the unit they are instead -- bound only if the count says so
+# as well (``bind_relabelled``): the polygon must be the only one in its
+# county left unbound, the unit the only one standing there with no polygon,
+# so the county's units then make its count exactly.
+#
+# "Maidla vald" (Ida-Viru) spans 26.81-27.22E and 59.14-59.44N, from Maidla's
+# south to the coast at Purtse and around the town of Kiviõli (drawn apart as
+# "Kivi"), and the boundary file names Püssi as its largest settlement: that
+# is the Lüganuse parish formed in October 2013 from Lüganuse, Maidla and
+# Püssi, whose 1 January 2017 count is the one missing from Ida-Viru's twenty
+# polygons. Maidla on its own was a third of that ground and had no Püssi.
+RELABELLED = {
+    "Maidla vald": (("Lüganuse", "vald"),
+                    "The boundary file labels this polygon 'Maidla vald', a name from before "
+                    "October 2013; it spans the Lüganuse parish formed then from Lüganuse, "
+                    "Maidla and Püssi (26.81-27.22E, 59.14-59.44N, with Püssi its largest "
+                    "settlement), and Lüganuse is the one Ida-Viru unit of 2017 without "
+                    "another polygon, so these are Lüganuse's figures."),
 }
+
+
+def bind_relabelled(shapes: list[dict[str, Any]], bound: dict[str, str],
+                    units: dict[str, dict[str, Any]], standing: list[str],
+                    drawn_county: dict[str, str | None]) -> dict[str, str]:
+    """{shape id: why} for each ``RELABELLED`` polygon bound to the unit it is.
+
+    Binds in place only where the polygon is its county's one polygon left and
+    the unit its county's one standing unit left; anything else leaves it
+    unbound, which is a gap and not a wrong figure.
+    """
+    notes: dict[str, str] = {}
+    for s in shapes:
+        if s["name"] not in RELABELLED or s["id"] in bound:
+            continue
+        (base, kind), why = RELABELLED[s["name"]]
+        cc = drawn_county[s["id"]]
+        left_shapes = [x for x in shapes if drawn_county[x["id"]] == cc and x["id"] not in bound]
+        left_units = [c for c in standing if units[c]["county"] == cc
+                      and c not in bound.values()]
+        target = [c for c in left_units
+                  if (fold(units[c]["base"]), units[c]["kind"]) == (fold(base), kind)]
+        if [x["id"] for x in left_shapes] == [s["id"]] and left_units == target and target:
+            bound[s["id"]] = target[0]
+            notes[s["id"]] = why
+            log(f"  {s['name']} bound to {units[target[0]]['name']}: the one polygon and the "
+                "one unit its county has left")
+        else:
+            log(f"  {s['name']} left unbound: {len(left_shapes)} polygons and "
+                f"{[units[c]['name'] for c in left_units]} left in its county")
+    return notes
 
 # Units discontinued between 2012 and 2017 -> the unit they merged into, as
 # (name, kind). Every unit RV0241 marks as discontinued must be here, or the
@@ -304,7 +351,7 @@ def census_block(field: str, table: str, counts: dict[str, float], total: float,
     # Alajõe's religions 103%, so they are shares of what the categories hold.
     held = sum(counts.values())
     return {
-        field: shares(counts, total=held),
+        field: shares({k: v for k, v in counts.items() if v > 0}, total=held),
         f"{field}_year": year,
         f"{field}_note": (
             f"{WHAT[field]}, 31 December {year} (Statistics Estonia, {table})."
@@ -401,6 +448,7 @@ def main() -> int:
         check_parts({c: totals[(c, str(YEAR))] for c in standing if units[c]["county"] == cc},
                     totals[(row, str(YEAR))], f"RV0241 {YEAR}: units -> {COUNTIES[cc]}", 0)
     log(f"  Estonia 1 January {YEAR}: median age {people[(whole, str(YEAR))].median()}")
+    check_national_median("EE", YEAR, people[(whole, str(YEAR))].median(), f"RV0241 {YEAR}")
 
     # --- 2. Bind the drawn polygons, each within its own county.
     shapes = load_units("EST", "admin2")
@@ -421,6 +469,8 @@ def main() -> int:
         if s["name"] in NOT_THIS:
             left.append(f"{s['name']} ({parents.get(s['parent'])}): {NOT_THIS[s['name']]}")
             continue
+        if s["name"] in RELABELLED:
+            continue                       # bound below, once the rest are placed
         base, kind = split(DRAWN.get(s["name"], s["name"]))
         cc = drawn_county[s["id"]]
         if not kind and "vald" in drawn_kinds[(fold(base), cc)]:
@@ -439,6 +489,9 @@ def main() -> int:
         if not units[code]["gone"] and parts:
             del bound[sid]
             left.append(f"{units[code]['name']} (merged from {sorted(parts)}, drawn apart)")
+    relabelled = bind_relabelled(shapes, bound, units, standing, drawn_county)
+    left += [f"{s['name']} ({parents.get(s['parent'])})" for s in shapes
+             if s["name"] in RELABELLED and s["id"] not in bound]
     log(f"  EST admin2: {len(bound)} of {len(shapes)} polygons bound")
     if left:
         log(f"    polygons left unbound ({len(left)}): " + "; ".join(left))
@@ -489,6 +542,8 @@ def main() -> int:
                 "map draws." + (" It was merged away after this date, so this is its last "
                                 "count." if u["gone"] else "")))
         fields["population"]["value"] = int(round(totals[(code, str(year))]))
+        if sid in relabelled:
+            fields["population_note"] += " " + relabelled[sid]
         for field, (table, *_rest) in specs.items():
             parts = parts_2011(code, field)
             # A part whose categories missed its total was dropped above.
@@ -524,9 +579,11 @@ def main() -> int:
             fields.update(block)
         shape = next(s for s in shapes if s["id"] == sid)
         records.append(record(
-            f"EST-SE-{year}-{code}", u["name"], level="admin2", parent="EST", country="EST",
+            f"EST-SE-{year}-{code}", f"{u['base']} {u['kind']}", level="admin2", parent="EST",
+            country="EST",
             parent_name=COUNTIES[u["county"]], codes={"rv0241": code, "vintage": year},
-            match_by="shape_id", shape_id=sid, aliases=[shape["name"]], **fields))
+            match_by="shape_id", shape_id=sid,
+            aliases=sorted({shape["name"], u["name"]} - {f"{u['base']} {u['kind']}"}), **fields))
 
     # --- 4. The old counties.
     admin1 = {fold(a["name"]): a for a in load_units("EST", "admin1")}
@@ -560,7 +617,7 @@ def main() -> int:
         else:
             counts = dict(eth17[cc])
             total = counts.pop("__total__")
-            fields["ethnicity"] = shares(counts, total=total)
+            fields["ethnicity"] = shares({k: v for k, v in counts.items() if v > 0}, total=total)
             fields["ethnicity_year"] = YEAR
             fields["ethnicity_note"] = (
                 f"Ethnic nationality as recorded in the population register on 1 January {YEAR}, "

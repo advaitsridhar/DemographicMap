@@ -240,6 +240,87 @@ class AgeSex:
         return out
 
 
+def fold_small(counts: dict[str, float], total: float, other: str, floor: float = 0.0005,
+               keep: Iterable[str] = ()) -> tuple[dict[str, float], int, float]:
+    """Counts with the zero rows dropped and every group under ``floor`` of the
+    total (0.05%, which rounds to 0.0%) counted in ``other``; returns the new
+    counts, how many groups were folded and how many people they hold.
+
+    A list of 160 languages each rounded to 0.0% sums to 99.3%, and a row that
+    reads 0 says nothing a reader can use.
+    """
+    keep = set(keep) | {other}
+    out: dict[str, float] = {}
+    folded, people = 0, 0.0
+    for label, n in counts.items():
+        if not n or n <= 0:
+            continue
+        if label not in keep and total and n / total < floor:
+            folded += 1
+            people += n
+            continue
+        out[label] = out.get(label, 0.0) + n
+    if people:
+        out[other] = out.get(other, 0.0) + people
+    return out, folded, people
+
+
+EUROSTAT_MEDIAN = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+                   "demo_pjanind?format=JSON&lang=EN&geo={geo}&indic_de=MEDAGEPOP"
+                   "&sinceTimePeriod={since}")
+# The brief's bound on a national median recomputed from the single years
+# against a published one.
+MEDIAN_TOLERANCE = 0.3
+
+
+def published_median(geo: str, year: int) -> tuple[float | None, str]:
+    """Eurostat's median age for a country on 1 January ``year`` (demo_pjanind).
+
+    Eurostat computes it from the national office's own count by single year
+    of age, which is the table read here, so the two should agree to within
+    the interpolation; none of the five Nordic offices publishes a national
+    median of its own in the tables these adapters read. Returns the value, or
+    None and why not.
+    """
+    try:
+        body = request_json(EUROSTAT_MEDIAN.format(geo=geo, since=year - 2), timeout=60)
+    except (SystemExit, Exception) as exc:              # a cross-check, not a source
+        return None, f"Eurostat unreachable ({str(exc)[:120]})"
+    index = body.get("dimension", {}).get("time", {}).get("category", {}).get("index", {})
+    values = body.get("value", {})
+    if str(year) not in index or str(index[str(year)]) not in values:
+        return None, f"Eurostat has no median for {geo} on 1 January {year} yet " \
+                     f"(latest: {max(index, default='none')})"
+    return float(values[str(index[str(year)])]), "Eurostat demo_pjanind"
+
+
+def check_national_median(geo: str, year: int, ours: float | None, what: str) -> None:
+    """Stop if the recomputed national median is more than 0.3 years off Eurostat's.
+
+    Where Eurostat has not yet published that 1 January, the year before is
+    the nearest figure; a population ages by a few tenths of a year in a year,
+    so the bound widens by 0.4 and the log says so.
+    """
+    if ours is None:
+        log(f"  {what}: no national median to check")
+        return
+    theirs, why = published_median(geo, year)
+    bound, when = MEDIAN_TOLERANCE, year
+    if theirs is None:
+        theirs, why2 = published_median(geo, year - 1)
+        if theirs is None:
+            log(f"  {what}: national median {ours}; nothing published to check it against "
+                f"-- {why}; {why2}")
+            return
+        bound, when = MEDIAN_TOLERANCE + 0.4, year - 1
+    log(f"  {what}: national median {ours} against Eurostat's {theirs} for 1 January {when} "
+        f"({ours - theirs:+.2f} years, bound {bound})")
+    if abs(ours - theirs) > bound:
+        raise SystemExit(f"{what}: the national median recomputed from the single years, "
+                         f"{ours}, is {ours - theirs:+.2f} years off Eurostat's {theirs} for "
+                         f"1 January {when}")
+
+
 def check_parts(parts: dict[str, float], whole: float, what: str,
                 tolerance: float = 0.0005, slack: float = 2) -> None:
     """The parts must make the whole, within rounding; otherwise stop."""
