@@ -204,7 +204,13 @@ def composition(lines: list[str], title: str, labels: dict[str, str], width: int
                 break
             continue
         if flat not in labels:
-            raise SystemExit(f"bahamas_census: {title} category {label!r} is not one this reads")
+            # The reports name their residual rows several ways ("OTHER",
+            # "OTHER DENOMINATIONS", ...); any other unknown row stops the run.
+            if not (title == "TABLE7.0" and flat.startswith("other")):
+                raise SystemExit(f"bahamas_census: {title} category {label!r} is not one this "
+                                 "reads")
+            log(f"  {title}: {label!r} read as Other religion")
+            flat = "other"
         counts[labels[flat]] = counts.get(labels[flat], 0) + figures[0]
     if total is None or sum(counts.values()) != total:
         raise SystemExit(f"bahamas_census: {title}'s groups make {sum(counts.values()):,} of "
