@@ -109,7 +109,7 @@ ESTIMATE_REGION = {
 }
 # Geostat's spelling of a municipality -> the boundary file's, where they differ.
 SPELLING = {"tqibuli": "tkibuli", "dedoplistsqaro": "dedoplistskaro", "sighnagi": "sighnaghi",
-            "kvareli": "qvareli", "tetritsqaro": "tetrisqaro"}
+            "kvareli": "qvareli", "tetritsqaro": "tetrisqaro", "axaltsikhe": "akhaltsikhe"}
 # The four self-governing cities the map draws no polygon for, with their
 # approximate centres (GeoNames).
 CITIES = {"batumi": "Batumi", "kutaisi": "Kutaisi", "poti": "Poti", "rustavi": "Rustavi"}
