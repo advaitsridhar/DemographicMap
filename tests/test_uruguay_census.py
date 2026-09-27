@@ -13,9 +13,11 @@ from scripts.fetch_census import uruguay_census as uc  # noqa: E402
 
 def person(pid: str, dept: str = "11", sex: str = "1", age: str = "30",
            yes: tuple[int, ...] = (3,), main: str = "7777", weight: str = "1.5",
-           municipio: str = "PIEDRAS COLORADAS", missing: str | None = None) -> dict[str, str]:
+           municipio: str = "PIEDRAS COLORADAS", missing: str | None = None,
+           segment: str = "1") -> dict[str, str]:
     row = {"DIRECCION_ID": pid, "DEPARTAMENTO": dept, "PERPH02": sex, "PERNA01": age,
-           "PERER02": main, "W": weight, "MUNICIPIO_136": municipio}
+           "PERER02": main, "W": weight, "MUNICIPIO_136": municipio, "SECCION": "1",
+           "SEGMENTO": segment}
     for k in uc.ANCESTRIES:
         row[f"PERER01_{k}"] = missing or ("1" if k in yes else "2")
     return row
@@ -91,6 +93,15 @@ class Tallies(unittest.TestCase):
         self.assertEqual(unplaced["rows"], 1)
         self.assertEqual(series[("11", "piedrascoloradas")], 3.0)
         self.assertEqual(municipios[("11", "Sin Municipio")].ancestry["Afro or Black"], 1.5)
+
+    def test_an_unknown_address_is_placed_by_a_segment_whose_people_are_in_one_municipio(self):
+        rows = self.rows + [person("e", segment="2"), person("f", segment="2", sex="2")]
+        where = {**self.where, "e": ("11", "Guichón")}
+        _, municipios, _, unplaced = uc.tally(rows, where)
+        self.assertEqual(municipios[("11", "Guichón")].people, 3.0)
+        self.assertEqual(unplaced["by_segment"], 1.5)
+        self.assertEqual(unplaced["segments"]["segment whole"], 1)
+        self.assertEqual(unplaced["segments"]["segment split"], 1)
 
     def test_an_address_the_february_file_puts_in_two_municipios_places_no_one(self):
         rows = [{"DIRECCION_ID": "a", "DEPARTAMENTO": "11", "MUNICIPIO_PAIS": "Guichón"},
