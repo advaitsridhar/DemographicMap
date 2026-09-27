@@ -1,7 +1,8 @@
-== https://www.ige.gal/igebdt/esqv.jsp?c=0206004&paxina=001&idioma=gl
-  23,427 bytes; starts b'\r\n\r\n\r\n\r\n'
-  550 lines, 0 with ['cod=', 'cod=', 'lingua', 'lingua', 'fala']
-== https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl
-  retry 1/2 after 2s :: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl :: HTTP Error 500: Error Interno del Servidor
-  retry 2/2 after 4s :: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl :: HTTP Error 500: Error Interno del Servidor
-  RuntimeError: GET failed after 2 retries: https://www.ige.gal/igebdt/esqv.jsp?ruta=verArbore.jsp?COD=0206004&idioma=gl
+== https://www.eustat.eus/bankupx/api/v1/es/DB
+  retry 1/2 after 2s :: https://www.eustat.eus/bankupx/api/v1/es/DB :: <urlopen error timed out>
+  retry 2/2 after 4s :: https://www.eustat.eus/bankupx/api/v1/es/DB :: <urlopen error timed out>
+  RuntimeError: GET failed after 2 retries: https://www.eustat.eus/bankupx/api/v1/es/DB
+== https://www.eustat.eus/bankupx/api/v1/es/DB/-/
+  retry 1/2 after 2s :: https://www.eustat.eus/bankupx/api/v1/es/DB/-/ :: <urlopen error timed out>
+  retry 2/2 after 4s :: https://www.eustat.eus/bankupx/api/v1/es/DB/-/ :: <urlopen error timed out>
+  RuntimeError: GET failed after 2 retries: https://www.eustat.eus/bankupx/api/v1/es/DB/-/
