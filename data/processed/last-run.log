@@ -1,99 +1,43 @@
 
-=== nld11
+=== hun14
+   Fejér's districts: [('077', 'Bicskei járás'), ('078', 'Dunaújvárosi járás'), ('079', 'Enyingi járás'), ('080', 'Gárdonyi járás'), ('081', 'Martonvásári járás'), ('082', 'Móri járás'), ('084', 'Sárbogárdi járás'), ('085', 'Székesfehérvári járás')]
+   079 Enyingi járás: 9 settlements: [('32753', 'Dég'), ('02802', 'Enying'), ('28990', 'Kisláng'), ('07506', 'Lajoskomárom'), ('07269', 'Lepsény'), ('16948', 'Mátyásdomb'), ('05689', 'Mezőkomárom'), ('06576', 'Mezőszentgyörgy'), ('18740', 'Szabadhídvég')]
+   085 Székesfehérvári járás: 25 settlements: [('17376', 'Aba'), ('23153', 'Bakonykúti'), ('09779', 'Csór'), ('06734', 'Csősz'), ('06114', 'Füle'), ('32018', 'Iszkaszentgyörgy'), ('15972', 'Jenő'), ('16683', 'Káloz'), ('30650', 'Kőszárhegy'), ('19114', 'Lovasberény'), ('25715', 'Moha'), ('13903', 'Nádasdladány'), ('28848', 'Pátka'), ('17525', 'Polgárdi'), ('31802', 'Sárkeresztes'), ('02699', 'Sárkeszi'), ('25140', 'Sárosd'), ('11776', 'Sárszentmihály'), ('20206', 'Seregélyes'), ('33321', 'Soponya'), ('28705', 'Szabadbattyán'), ('14827', 'Székesfehérvár'), ('29267', 'Tác'), ('17622', 'Úrhida'), ('30243', 'Zámoly')]
+   https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls: HTTP 200, 3,338,752 bytes, application/vnd.ms-excel
 
-## https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx: HTTP 200, 54,346 bytes, attachment; filename="Religie_2025_tabellen.xlsx"
-   sheets: ['Voorblad', 'Inhoud', 'Introductie', 'Tabel 1', 'Tabel 2', 'Tabel 3', 'Toelichting', 'Begrippen'] (8)
-   sheet 'Voorblad': 22 rows
-     Religie naar regio, 2021/2
-     CBS, Arbeid, inkomen en 
-l
-     maart 2026
-   0 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
-   sheet 'Inhoud': 25 rows
-     Inhoud
-     Inhoudsopgave
-     Introductie | Introductie en uitleg bij 
-     Tabel 1 | Percentage dat zich tot ee
-     Tabel 2 | Percentage per geloofsgroe
-     Tabel 3 | Percentage van de bevolkin
-     Toelichting | Technische toelichting
-     Begrippen | Begrippen, afkortingen en 
-     Contact
-     infoservice@cbs.nl
-     Verklaring van tekens
-     niets (blanco) = het cijfe
-     . = het cijfer is onbekend
-     * = voorlopige cijfers
-     ** = nader voorlopige cijf
-     2020-2024 = 2020 tot en me
-     2020/2024 = het gemiddelde
-     2022/’24 = oogstjaar, boek
-     2021/’21–2022/’24 = oogstj
-     Nota bene: in geval van af
-   1 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
-     > Begrippen | Begrippen, afkortingen
-   sheet 'Introductie': 5 rows
-     Introductie en uitleg bij 
-     Inleiding
-     Deze tabellen bevatten een
-     Tabel 1 bevat het percenta
-   1 rows match '(?i)respondent|waarnem|steekproef|ongewogen|aantal|onderzoek|enquête|bron'
-     > Deze tabellen bevatten
-
-## https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
-   HTTP 200, 50,135 bytes, text/html; charset=utf-8
-   0 distinct matches of '(?i)[^.<>]{0,200}(?:respondent|steekproef|enquête|waarneming|ondervraagd)[^.<>]{0,200}'
-
-=== aut11
-
-## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/weiterfuehrende-bevoelkerungsstatistiken/religionsbekenntnis
-   HTTP 200, 128,067 bytes, text/html; charset=utf-8
-   8 distinct matches of 'href=\\"[^\\"]*(?:\\.pdf|\\.ods|\\.xlsx|presse|Religion)[^\\"]*\\"'
-   - href="/medien/pressemitteilungen"
-   - href="/medien/pressebilder"
-   - href="/medien/pressekontakt"
-   - href="/fileadmin/pages/439/neu__Religion_2021_Bundesland.ods"
-   - href="/fileadmin/pages/439/neu_Religionszugehoerigkeit_2021__Privathaushalte.ods"
-   - href="/fileadmin/pages/439/wechsel_religion_nach_bundesland_2025.ods"
-   - href="/fileadmin/pages/439/neu__Religion__1_.ods"
-   - href="/fileadmin/shared/QM/Standarddokumentationen/B_2/std_b_religionzugehoerigkeit.pdf"
-   ...0{fill:#555555;} .st1{fill:#B0063D;} .st2{fill:none;stroke:#000000;stroke-width:0.5314;stroke-miterlimit:3.8637;} Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Warenkorb 0 Karriere Erhebungen Merkliste DE EN Deutsch Englisch Statistiken zurück Statistiken Arbeitsmarkt Bevölkerung und Soziales Energie und Umwelt Forschung, Innovation, Digitalisierung Industrie, Bau, Handel und Dienstleistungen Internationaler Handel Land- und Fo
-   ...datenbank Unternehmensregister Adress-, Gebäude- und Wohnungsregister Verbrauchergesundheitsinformationssystem (VIS) Forschungsstättenkatalog Services/Tools zurück Services/Tools Serviceangebote Auskunftsservices Statistik Austria Portal – Login für Erhebungen Publikationen STATjournal Mail-Abonnements Wertsicherungsrechner Persönlicher Inflationsrechner Lebenserwartungsrechner Gehaltsrechner STATbox – Datenübertragung Regionale &amp; internationale Daten STATatlas – interaktive Karten Blick auf
-   ...ach Regionen ITGS-Tool – Außenhandel Daten nach SDDS+ Medien zurück Medien Pressemitteilungen Veröffentlichungskalender Veröffentlichungsrichtlinie Pressebilder Pressekontakt Über uns zurück Über uns Organisation Werte und Grundlagen Veranstaltungen Erhebungen Karriere Internationales Innovationen und experimentelle Statistik Suche Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Suche. Zur Auswahl von autovervollständigten Ergebn
-   ...ten 2025 5 975 Gestiegen +3,9 % zu 2024 Beschreibung Informationen zur Religionszugehörigkeit für die Gesamtbevölkerung liegen von 1951 bis 2001 als Selbstangabe aus den Volkszählungen vor. Seit der Umstellung der Volkszählungen auf registerbasierte Erhebung wird dieses Merkmal im Rahmen des Zensus nicht mehr erhoben. 2021 führte Statistik Austria im Auftrag des Bundeskanzleramts eine freiwillige Erhebung über "Religionszugehörigkeit der Bevölkerung in Privathaushalten" durch, welche nach Zuschä
-   ...elbstangabe aus den Volkszählungen vor. Seit der Umstellung der Volkszählungen auf registerbasierte Erhebung wird dieses Merkmal im Rahmen des Zensus nicht mehr erhoben. 2021 führte Statistik Austria im Auftrag des Bundeskanzleramts eine freiwillige Erhebung über "Religionszugehörigkeit der Bevölkerung in Privathaushalten" durch, welche nach Zuschätzung der Religionszugehörigkeit der Anstaltsbevölkerung die Zeitreihe seit 1951 ergänzt. Zusätzlich erfasst Statistik Austria die Zahl der Austritte 
-   ...l der Austritte sowie der Aufnahmen bzw. Wiederaufnahmen unter den kirchenbeitragspflichtigen Religionsgemeinschaften in Österreich (römisch-katholisch, evangelisch A.B. und H.B., altkatholisch). Diese Statistik der Religionswechsel beruht auf einer Erhebung bei den Religionsgemeinschaften und ist als Zeitreihe ab 2001 sowie ab 2011 auch für Bundesländer verfügbar. Grafiken, Tabellen, Karten Highlights Bevölkerung 1951 bis 2021 nach ausgewählter Religion bzw. Kirche und Religionsgesellschaft – a
-   ...ACT6"], "precision": 1 } ] }, "options": { "searching": true, "ordering": true, "pageLength": 25, "border_bottom": false, "export": true }, "footer": null, "rowGroups": null} Q: STATISTIK AUSTRIA, Volkszählungen 1951 bis 2001. 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich O
-   ...] }, "options": { "searching": true, "ordering": true, "pageLength": 25, "border_bottom": false, "export": true }, "footer": null, "rowGroups": null} Q: STATISTIK AUSTRIA, Volkszählungen 1951 bis 2001. 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichp
-   ...kräfteerhebung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichprobenerhebung 2021 gilt: Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet. – In 2021 wurden bei der Frage zu &quot;Religion&quot; &quot;weiß nicht&quot; und &quot;keine Angabe&quot; durch die Gewichtung ausgegl
-   ...ung zu &quot;Religionszugehörigkeit&quot;, 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – &quot;Andere Religion, Konfession oder Glaubensgemeinschaft&quot;: Bis 1971 einschließlich Islamisch, bis 1991 einschließlich Orthodox. – Für die Stichprobenerhebung 2021 gilt: Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet. – In 2021 wurden bei der Frage zu &quot;Religion&quot; &quot;weiß nicht&quot; und &quot;keine Angabe&quot; durch die Gewichtung ausgeglichen, dahe
-   ods ...22,4 16,8 16,5 20,5 17,3 18,2 22,6 17,8 18,9 34,1 Q: STATISTIK AUSTRIA, 2021: Zusatzfragen zur Mikrozensus-Arbeitskräfteerhebung zu "Religionszugehörigkeit", 1. bis 4. Quartal 2021. Erstellt am 05.05.2022. – "Andere Religion, Konfession oder Glaubensgemeinschaft beinhaltet "Judentum", "Hinduismus", "Buddhismus", "Staatlich registrierte Bekenntnisgemeinschaften", "Sonstige Religion, Konfession oder Glaubensgemeinschaft". – Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufalls
-   ods ...istrierte Bekenntnisgemeinschaften", "Sonstige Religion, Konfession oder Glaubensgemeinschaft". – Werte mit weniger als hochgerechnet 6 000 Personen sind sehr stark zufallsbehaftet, Werte mit weniger als 3 000 Personen sind statistisch nicht interpretierbar.
-
-=== svn7
-   4815 tables; 137 by settlement:
-   - 0558870S.px | Naseljena stanovanja po povprečni površini stanovanja na osebo, preračun na občine, veljavne dne 1. 1. 2007, Slovenija, popis 2002
-   - 05C1008S.px | Gostota naseljenosti in indeks feminitete, kohezijski regiji, Slovenija, polletno
-   - 05C2010S.px | Gostota naseljenosti in indeks feminitete, statistične regije, Slovenija, polletno
-   - 05C4010S.px | Gostota naseljenosti in indeks feminitete, občine, Slovenija, polletno
-   - 05C5002S.px | Prebivalstvo po velikih in petletnih starostnih skupinah in spolu, občine in naselja, Slovenija, 2008 - 2020
-   - 05C5003S.px | Prebivalstvo po spolu in po starosti, občine in naselja, Slovenija, letno
-   - 05C5006S.px | Prebivalstvo - izbrani kazalniki, občine in naselja, Slovenija, letno
-   - 05C5092S.px | Prebivalstvo po velikih in petletnih starostnih skupinah in spolu, občine in naselja, Slovenija, 2008H1 - 2014H2
-   - 05F4005S.px | Gospodinjstva po številu članov, občine in naselja, Slovenija, večletno
-   - 05G2018S.px | Prebivalstvo, staro 15 ali več let, po izobrazbi, občine in naselja, Slovenija, letno
-   - 05G3020S.px | Prebivalstvo, staro 15 ali več let, po statusu aktivnosti, občine in naselja, Slovenija, letno
-   - 05I1088S.px | Naravno gibanje prebivalstva, naselja, Slovenija, 2014 - 2019
-   - 05I1095S.px | Naravno gibanje prebivalstva, občine in naselja, Slovenija, 1979 - 2013
-   - 05I2088S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2012 - 2019
-   - 05I2089S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2017
-   - 05I2090S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2016
-   - 05I2091S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2015
-   - 05I2092S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2014
-   - 05I2093S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2013
-   - 05I2094S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 2012
-   - 05I2095S.px | Selitveno gibanje prebivalstva, naselja, Slovenija, 1995 - 2011
-   - 05W0101S.px | Družine,naselja, Slovenija, popis 2002
-   - 05W0201S.px | Gospodinjstva, naselja, Slovenija, popis 2002
-   - 05W0301S.px | Prebivalstvo po statusu aktivnosti, občine in naselja, Slovenija, popis 2002
-   - 05W0302S.px | Delovno aktivno prebivalstvo po dejavnosti, naselja, Slovenija, popis 2002
+## https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls: HTTP 200, 3,338,752 bytes, 
+   sheets: ['Helységek 2014.01.01.', 'Az önkorm. hivatali kódja', 'Településrészek 2014.01.01.', 'Külterület települési jellege', 'Megj. postai ir. számhoz'] (5)
+   sheet 'Helységek 2014.01.01.': 3180 rows
+     Helység | Megye megnevezése  | Kistérség  | Járás  | Közös önkormányzati hivata | Terület  (hektár) | Lakó-népesség | Lakások száma | Becsült terület-adatokkal
+     megnevezése | KSH kódja | jogállása | kódja | neve | székhelye | kódja | neve | székhelye | kódja | székhelye
+     Aba | 17376 | város | Fejér | 3708.0 | Abai | Aba | 085 0 | Székesfehérvári | Székesfehérvár | 1.0 | 8805.0 | 4471.0 | 1546.0
+     Abádszalók | 12441 | város | Jász-Nagykun-Szolnok | 4605.0 | Tiszafüredi | Tiszafüred | 164 0 | Kunhegyesi | Kunhegyes | 2.0 | Abádszalók | 13223.0 | 4328.0 | 2042.0
+     Abaliget | 12548 | község | Baranya | 3207.0 | Pécsi | Pécs | 028 0 | Pécsi | Pécs | 6.0 | Orfű | 1609.0 | 623.0 | 241.0
+     Abasár | 24554 | község | Heves | 4004.0 | Gyöngyösi | Gyöngyös | 106 0 | Gyöngyösi | Gyöngyös | 1.0 | 2082.0 | 2537.0 | 1189.0
+   1 rows match '(?i)polg[aá]rd'
+     > Polgárdi | 17525 | város | Fejér | 3707.0 | Székesfehérvári | Székesfehérvár | 083 1 | Polgárdi | Polgárdi | 2.0 | Polgárdi | 7216.0 | 6783.0 | 2342.0
+   sheet 'Az önkorm. hivatali kódja': 7 rows
+     A települési önkormányzat  | A kód jelentése
+     1.0 | önálló polgármesteri hivat
+     2.0 | közös önkormányzati hivata
+     3.0 | önálló polgármesteri hivat
+     4.0 | közös önkormányzati hivata
+     5.0 | közös önkormányzati hivata
+   0 rows match '(?i)polg[aá]rd'
+   sheet 'Településrészek 2014.01.01.': 13493 rows
+     Helység KSH kód | Helység hivatalos megnevez | Megye kódja | Településrész megnevezése | Településrész jelleg kód | Postai irányító-szám | A külterület települési je | A településrész távolsága  | A népszámlálási lakónépess | A lakások száma | Lakott egyéb lakóegységek 
+     17376 | Aba | 7.0 | Belsőbáránd | 1.0 | 8128.0 | – | 3.5 | 225.0 | 89.0 | –
+     17376 | Aba | 7.0 | Bodakajtor | 1.0 | 8127.0 | – | 5.0 | 296.0 | 83.0 | –
+     17376 | Aba | 7.0 | Központi belterület | 0.0 | 8127.0 | – | – | 3915.0 | 1332.0 | 2.0
+     17376 | Aba | 7.0 | Külterület | 2.0 | 8127.0 | Lh. | 1.0 | 115.0 | 38.0 | 1.0
+     12441 | Abádszalók | 16.0 | Abádimajor | 2.0 | 5241.0 | Mgl. | 2.0 | – | – | –
+   9 rows match '(?i)polg[aá]rd'
+     > 10472 | Császártöltés | 3.0 | Csalai és Polgárdi tan | 2.0 | 6239.0 | Mgl. | 1.0 | – | – | –
+     > 08095 | Imrehegy | 3.0 | Polgárdi | 2.0 | 6238.0 | Mgl. | 6.0 | – | – | –
+     > 17525 | Polgárdi | 7.0 | Kiscséripuszta | 1.0 | 8155.0 | – | 5.2 | 148.0 | 52.0 | –
+     > 17525 | Polgárdi | 7.0 | Központi belterület | 0.0 | 8154.0 | – | – | 5867.0 | 2168.0 | 5.0
+     > 17525 | Polgárdi | 7.0 | Nagycséripuszta | 2.0 | 8154.0 | Mgl. | 6.0 | 73.0 | 34.0 | –
+     > 17525 | Polgárdi | 7.0 | Polgárdi ipartelepek | 2.0 | 8153.0 | Ipt. | 4.0 | 370.0 | 45.0 | –
+     > 17525 | Polgárdi | 7.0 | Polgárdiszőlőhegy | 2.0 | 8154.0 | Mgl. | 5.0 | 137.0 | 25.0 | 37.0
+     > 17525 | Polgárdi | 7.0 | Polgárditekeres | 2.0 | 8154.0 | Szo. | 7.0 | 196.0 | – | –
+     > 17525 | Polgárdi | 7.0 | Vasúti őrházak | 2.0 | 8154.0 | Forg. | 5.0 | 11.0 | 6.0 | –
