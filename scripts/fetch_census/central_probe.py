@@ -1739,7 +1739,140 @@ def svn7() -> None:
         log(f"   - {r.get('id')} | {r.get('text')}"[:200])
 
 
+def pdf_grep(url: str, pattern: str, *, width: int = 300, limit: int = 20) -> None:
+    """Every match of ``pattern`` in a PDF's text, with the words around it."""
+    status, _, body = fetch(url)
+    log(f"\n## PDF {url}: HTTP {status}, {len(body):,} bytes")
+    if status != 200 or not body.startswith(b"%PDF"):
+        return
+    import io as _io
+    from pypdf import PdfReader
+    reader = PdfReader(_io.BytesIO(body))
+    words = " ".join(" ".join((p.extract_text() or "").split()) for p in reader.pages)
+    hits = list(re.finditer(pattern, words))
+    log(f"   {len(reader.pages)} pages, {len(hits)} matches of {pattern!r}")
+    for m in hits[:limit]:
+        log("   ..." + words[max(0, m.start() - width):m.start() + width])
+
+
+def sheet_text(url: str, sheets: tuple[str, ...], limit: int = 60) -> None:
+    """Every non-empty row of the named sheets, cells with their column index."""
+    import io as _io
+    import openpyxl
+    status, _, body = fetch(url)
+    log(f"\n## {url}: HTTP {status}, {len(body):,} bytes")
+    if status != 200:
+        return
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    for name in sheets:
+        if name not in book.sheetnames:
+            log(f"   no sheet {name!r}; {book.sheetnames}")
+            continue
+        rows = [r for r in book[name].iter_rows(values_only=True) if any(c not in (None, "") for c in r)]
+        log(f"   sheet {name!r}: {len(rows)} rows")
+        for r in rows[:limit]:
+            log("     " + " | ".join(f"[{j}] {' '.join(str(c).split())[:400]}" for j, c in enumerate(r)
+                                   if c not in (None, "")))
+
+
+def aut12() -> None:
+    """The sample behind the 2021 religion questions, from Statistik Austria's standard documentation."""
+    pdf_grep("https://www.statistik.at/fileadmin/shared/QM/Standarddokumentationen/B_2/"
+             "std_b_religionzugehoerigkeit.pdf",
+             r"(?i)stichprob|befragt|respondent|bundesl|haushalte|personen|ausschöpf|rücklauf|n\s*=",
+             width=260, limit=30)
+
+
+def nld12() -> None:
+    """CBS's workbook's own explanation: the survey, its sample, and what 'Ander geloof' holds."""
+    sheet_text("https://www.cbs.nl/-/media/_excel/2026/11/religie_2025_tabellen.xlsx",
+               ("Introductie", "Toelichting", "Begrippen"), limit=60)
+
+
+def che14() -> None:
+    """The structural survey's sample by canton, and BFS population tables on an older commune state."""
+    for asset in (36432820, 35167595, 31425811):
+        book_dump(f"https://dam-api.bfs.admin.ch/hub/api/dam/assets/{asset}/master", rows=45, cols=12)
+    for order in ("su-d-01.02.04.08", "su-d-01.02.04.10", "hs-d-01.02.02.02.09.20",
+                  "hs-d-01.02.02.02.09.21", "hs-d-01.02.02.02.09.22", "hs-d-01.02.02.02.09.26",
+                  "hs-d-01.02.02.01.20", "je-d-01.02.03.01"):
+        for item in dam_items(f"orderNr={order}", pages=1):
+            desc = item.get("description") or {}
+            log(f"   {order}: {jpath(item, 'ids.damId')} | {jpath(desc, 'bibliography.period')} | "
+                f"{jpath(desc, 'titles.main')}"[:240])
+    for item in dam_items("language=de&title=Wohnbev%C3%B6lkerung%20nach%20Bezirken%20und%20Gemeinden",
+                          pages=3):
+        desc = item.get("description") or {}
+        log(f"   - {jpath(item, 'ids.damId')} | {jpath(item, 'shop.orderNr')} | "
+            f"{jpath(desc, 'bibliography.period')} | {jpath(desc, 'titles.main')}"[:240])
+
+
+def lux8() -> None:
+    """STATEC's population by commune 2000-2017 and the 2011 census by commune, age and sex."""
+    grep = r"(?i)rosport|mompach|hobscheid|septfontaines|boevange|tuntange|total|luxembourg$|^commune"
+    for url in ("https://download.data.public.lu/resources/population-par-commune-et-code-lau2-depuis-2000/"
+                "20170511-141118/popcom2000-2017_LAU2.xlsx",
+                "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-age-"
+                "au-1er-fevrier-2011/20160711-131312/Population_par_commune_et_age_au_1er_fevrier_2011.xlsx",
+                "https://download.data.public.lu/resources/population-de-residence-habituelle-par-commune-et-sexe-"
+                "au-1er-fevrier-2011/20160711-131552/Population_par_commune_et_sexe_au_1er_fevrier_2011.xlsx"):
+        book_dump(url, rows=8, cols=26, grep=grep, limit=14)
+
+
+def svn8() -> None:
+    """Šentrupert and the settlement of Dob pri Mirni by sex (the prison at Dob)."""
+    url = "https://pxweb.stat.si/SiStatData/api/v1/sl/Data/05C5003S.px"
+    meta = pxweb_meta(url, values=6)
+    if not meta:
+        return
+    var = {v["code"]: v for v in meta["variables"]}
+    place = next(c for c, v in var.items() if re.search(r"(?i)obč|nasel", v["text"]))
+    hits = [(v, t) for v, t in zip(var[place]["values"], var[place]["valueTexts"])
+            if re.search(r"(?i)šentrupert|dob pri mirni|^\s*dob\b", t)]
+    log(f"   {place}: {hits}")
+    query = []
+    for code, v in var.items():
+        if code == place:
+            query.append({"code": code, "selection": {"filter": "item", "values": [h[0] for h in hits]}})
+        elif re.search(r"(?i)spol", v["text"]):
+            query.append({"code": code, "selection": {"filter": "all", "values": ["*"]}})
+        elif re.search(r"(?i)leto|obdobje|čas", v["text"]) or v.get("time"):
+            query.append({"code": code, "selection": {"filter": "top", "values": ["1"]}})
+        else:
+            query.append({"code": code, "selection": {"filter": "item", "values": [v["values"][0]]}})
+    body = json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode()
+    status, _, reply = fetch(url, data=body, headers={"Content-Type": "application/json"})
+    try:
+        from .pxweb import unstack
+        for key, value in unstack(json.loads(text(reply))):
+            log(f"   {key}: {value}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   HTTP {status}: {exc}: {text(reply)[:300]}")
+
+
+def hun15() -> None:
+    """The 2014 gazetteer's header with column numbers, and one settlement's WBS003 cells."""
+    import xlrd
+    status, _, body = fetch("https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls")
+    book = xlrd.open_workbook(file_contents=body)
+    sheet = book.sheet_by_index(0)
+    for i in range(4):
+        log(f"   row {i}: " + " | ".join(f"[{j}] {' '.join(str(c).split())}" for j, c in
+                                        enumerate(sheet.row_values(i)) if c not in (None, "")))
+    counts = Counter_(str(sheet.cell_value(i, 0)).strip() != "" for i in range(sheet.nrows))
+    log(f"   {sheet.nrows} rows; non-empty first cells {counts}")
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    rows = json.loads(text(fetch(f"{base}/dataflows/WBS003/{version}/d/TIME_PERIOD:2022,"
+                                 f"TERUL_GEO5:17525+02802,TEL_SZ_ADAT")[2]))
+    log(f"   WBS003 for Polgárdi and Enying: {len(rows)} rows")
+    for r in rows:
+        if r["TERUL_GEO5"] == "17525":
+            log(f"     {r['TEL_SZ_ADAT']}={r.get('OBS_VALUE')}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "aut12": aut12, "nld12": nld12, "che14": che14, "lux8": lux8, "svn8": svn8, "hun15": hun15,
     "hun14": hun14, "che13": che13, "lux7": lux7, "pol5": pol5, "nld11": nld11, "aut11": aut11,
     "svn7": svn7,
     "aut10": aut10,
