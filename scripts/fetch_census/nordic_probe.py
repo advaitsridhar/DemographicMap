@@ -362,6 +362,32 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 7
+    "r7_ltu_cl1": lambda: sdmx_codes("codelist/LSD/savivaldybesRegdb/latest", limit=90),
+    "r7_ltu_cl2": lambda: sdmx_codes("datastructure/LSD/M3010203/latest?references=children", limit=90),
+    "r7_ltu_cl3": lambda: text(f"{OSP}/dataflow/LSD/S3R167_M3010203/latest?references=all", chars=1800),
+    "r7_ltu_cdx": lambda: cdx("url=osp.stat.gov.lt/documents/10180/*&filter=original:.*(?:surasym|tautyb).*"),
+    "r7_isl_trufelog": lambda: isl(px_list, f"{HAGSTOFA}/Samfelag/menning/5_trufelog/trufelog"),
+    "r7_lva_tsk": lambda: px_list("https://data.stat.gov.lv/api/v1/en/OSP_OD/tautassk"),
+    "r7_lva_tsk2021": lambda: px_search("https://data.stat.gov.lv/api/v1/en/OSP_OD?query=2021"),
+    "r7_lva_ird081_units": lambda: px_meta(f"{CSB}/POP/IR/IRD/IRD081", grep=r"^LV00\d{5}"),
+    "r7_est_rv0241_star": lambda: px_meta(
+        f"{STAT_EE}/Lepetatud_tabelid/Rahvastik.Arhiiv/"
+        "Rahvastikun%C3%A4itajad%20ja%20koosseis.%20Arhiiv/RV0241.PX", grep=r"\*|COUNTY"),
+    "r7_est_rl0429_units": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0429.PX", grep=r"OTH|COUNTY"),
+    "r7_est_rl0433_units": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2011/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel-ja-keelteoskus-murded/RL0433.PX", allvals="Elukoht"),
+    "r7_est_rl21434": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "rahvus-emakeel/RL21434.px", grep=r"COUNTY|county|maakond"),
+    "r7_est_rl21452": lambda: px_meta(
+        f"{STAT_EE}/rahvaloendus/rel2021/rahvastiku-demograafilised-ja-etno-kultuurilised-naitajad/"
+        "usk/RL21452.px", grep=r"COUNTY|county|maakond"),
+    "r7_est_rv0222u": lambda: px_meta(
+        f"{STAT_EE}/rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX"),
     # Round 6
     "r6_ltu_codes": lambda: sdmx_codes("dataflow/LSD/S3R167_M3010203/latest?references=all",
                                        grep=r"savivald|apskr|^\d\d |LT0|^00 "),
