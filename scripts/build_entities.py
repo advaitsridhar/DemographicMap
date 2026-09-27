@@ -1672,7 +1672,9 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
 #
 # Two kinds of answer go in data/curated/admin0_detail.json. A row with
 # ``groups`` replaces the field with a census's own division of it, which is
-# always the better answer and is used wherever such a table exists. A row with
+# always the better answer and is used wherever such a table exists -- or,
+# where the census does not ask, a survey's, marked as one by its ``basis``
+# (the European Social Survey's pooled national samples). A row with
 # only a ``note`` says what the bucket holds and why it is not divided, which
 # is what is left when the census published one number and no break-up of it.
 # Neither invents a split.
