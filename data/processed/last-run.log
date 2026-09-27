@@ -1,19 +1,10 @@
-bosnia_age: Popis 2013, age and sex
-  FR_T1_B.xlsx: 21,226 bytes
-  FR_T2_B.xlsx: 84,622 bytes
-  country: 3,531,159, median 39.9 from single years
-  Federation of Bosnia and Herzegovina: median 38.6
-  Republika Srpska: median 42.4
-  Brčko District: median 40.5
-  Una-Sana Canton: median 36.4
-  Posavina Canton: median 41.8
-  Tuzla Canton: median 38.9
-  Zenica-Doboj Canton: median 38.0
-  Bosnian-Podrinje Canton Goražde: median 42.6
-  Central Bosnia Canton: median 37.5
-  Herzegovina-Neretva Canton: median 40.1
-  West Herzegovina Canton: median 38.3
-  Sarajevo Canton: median 39.3
-  Canton 10: median 42.1
-  wrote data/processed/bosnia_age.json (27 kB)
-  wrote bosnia_age.json: 15 records
+bulgaria_census: NSI, Census 2021
+  63412e676270...: 1,670,809 bytes
+  d6bebedae9d8...: 78,912 bytes
+  country: 6,519,789, median 46.7 from five-year groups
+  Sarnitsa (PAZ39) folded into Velingrad (PAZ08)
+  Zlatitsa is drawn as 2 polygons: figures on 11073933B76991292071364, merge ['11073933B60320132010156']
+  264 municipalities bound; left over: []
+  polygons with no municipality: []
+  wrote data/processed/bulgaria_census.json (1741 kB)
+  wrote bulgaria_census.json: 292 records
