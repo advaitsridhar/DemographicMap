@@ -140,8 +140,10 @@ def single_years(rows: list[list[Any]], where: str) -> dict[str, Any]:
             if label == "Total" and start == 0 and t is not None:
                 total = (m, f, t)
                 continue
-            if m is None or f is None or t is None or "-" in label:
+            if t is None or "-" in label:
                 continue          # a decade's subtotal, or a blank
+            # A sex with nobody of that age is printed as a dash, not a 0.
+            m, f = m or 0.0, f or 0.0
             if label == "Less than 1":
                 age = 0
             elif label.startswith("Over "):
