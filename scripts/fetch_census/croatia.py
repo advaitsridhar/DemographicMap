@@ -32,8 +32,16 @@ each unit names its county. The workbook lists the City of Zagreb by its
 seventeen city districts rather than as one unit; those are skipped and the
 city is written from its own county row, since it is both a county and a
 second-level shape. The boundary file has 545 shapes for 556 units and
-misspells two ("Opicina Muter-Kornati"); those are declared as aliases, and
-the rest of the difference is visible as unmatched rows, not papered over.
+misspells several; those are declared as aliases. It predates some of the
+municipalities of 1997-2006 and draws them inside the polygon of the one they
+were carved from: such a polygon takes the sum of the municipalities it is
+(``UNDRAWN``), each measured against GeoNames' settlements, and Pirovac,
+Tisno, Tribunj and Murter-Kornati, which it draws as three polygons that cut
+Tisno in two, wait for make_redrawn to draw the three as one.
+
+The national median from the counties' five-year groups is checked against
+Eurostat's for 1 January 2022, DZS printing none in its census release; the
+shares are rounded by largest remainder, so each composition adds to 100.
 
 Usage:
     python -m scripts.fetch_census.croatia
@@ -47,9 +55,9 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
-    write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, write_json,
 )
+from .balkans_common import exact_shares, shapes
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -62,7 +70,11 @@ SOURCE = "Croatian Bureau of Statistics (DZS), Census of Population, Households 
 LICENCE = "DZS open data (free reuse with attribution)"
 YEAR = 2021
 SHEETS = {"ethnicity": "1.", "religion": "2.", "language": "4."}
-EXPECTED = {"admin1": 21, "admin2": (550, 565)}
+# 556 towns and municipalities (the City of Zagreb among them), less the 19
+# drawn inside another's polygon, plus the 5 or 6 polygons that carry them
+# (and, until the Pirovac merge is drawn, 3 polygons that say why they have
+# no figure).
+EXPECTED = {"admin1": 21, "admin2": (540, 550)}
 UNIT_KINDS = ("Grad", "Općina")
 
 # The bureau's county name (column A of every sheet) -> the boundary file's.
@@ -95,8 +107,6 @@ COUNTIES = {
 # Mali Lošinj). Istria's bilingual names ("Grad Buje – Buie") are aliased
 # generically to their Croatian half.
 UNIT_ALIASES = {
-    "Općina Murter-Kornati": ["Opicina Muter-Kornati"],
-    "Općina Pirovac": ["Opicina Pirovac"],
     "Grad Ivanić-Grad": ["Grad Ivanić Grad"],
     "Općina Budinščina": ["Općina Budinšćina"],
     "Općina Hrašćina": ["Općina Hraščina"],
@@ -247,7 +257,7 @@ def bars(field: str, unit: dict[str, Any]) -> Any:
     if abs(summed - total) > max(0.005 * total, 5):
         raise SystemExit(f"croatia: {unit['county']} / {unit['name']} {field} sums to "
                          f"{summed:,} against the total {total:,}")
-    return shares({k: v for k, v in groups.items() if v}, total=total) or gap(NOT_AVAILABLE)
+    return exact_shares(groups, total) or gap(NOT_AVAILABLE)
 
 
 AGE_SHEET = "20."
@@ -341,60 +351,173 @@ def age_fields(unit: dict[str, Any] | None) -> dict[str, Any]:
     return out
 
 
-# The island of Krk is seven municipalities. The boundary file draws two of
-# them (Malinska-Dubašnica and Omišalj) and one polygon, "Otok Krk", for the
-# other five: 323.5 km2, which with the two drawn ones (40.6 and 38.0 km2)
-# makes the island's 402 km2 (405.8 with its islets). So that polygon is those
-# five together, and takes their sum.
-KRK_COUNTY = "Primorsko-goranska"
-KRK_PARTS = (("Grad", "Krk"), ("Općina", "Punat"), ("Općina", "Baška"), ("Općina", "Vrbnik"),
-             ("Općina", "Dobrinj"))
+# Municipalities the boundary file does not draw. Its second level predates
+# several of the towns and municipalities of 1997-2006, and draws each of
+# them inside the polygon of the municipality it was carved from, under that
+# one's name; the polygon is the old unit and takes the sum of the ones it
+# now is. Each was measured against GeoNames (CC BY 4.0): every settlement
+# GeoNames files under one of the parts lies inside the polygon, and no
+# settlement of any other municipality does (probe of 27 September 2026,
+# ``balkans_probe gn:HR``):
+#
+# * the island of Krk is seven municipalities, and the file draws two of them
+#   (Malinska-Dubasnica, Omisalj) and "Otok Krk" for the other five: 323.5
+#   km2, which with the two drawn ones (40.6 and 38.0 km2) makes the
+#   island's 402 km2;
+# * "Grad Varazdinske Toplice" holds Ljubescica's 5 settlements beside its own
+#   23; "Opcina Berek" Ivanska's 13 beside its own 13; "Opcina Kapela"
+#   Rovisce's 12 and Zrinski Topolovac's 3 beside its own 26; "Grad
+#   Benkovac" Stankovci's 7 and Lisane Ostrovicke's 3 beside its own 41 --
+#   and the seat of every part as well.
+#
+# Each entry: the polygon's label, the county, and the parts (type, name),
+# the polygon's own municipality first (none, for Krk).
+UNDRAWN: tuple[tuple[str, str, tuple[tuple[str, str], ...]], ...] = (
+    ("Otok Krk", "Primorsko-goranska",
+     (("Grad", "Krk"), ("Općina", "Punat"), ("Općina", "Baška"), ("Općina", "Vrbnik"),
+      ("Općina", "Dobrinj"))),
+    ("Grad Varaždinske Toplice", "Varaždinska",
+     (("Grad", "Varaždinske Toplice"), ("Općina", "Ljubešćica"))),
+    ("Općina Berek", "Bjelovarsko-bilogorska", (("Općina", "Berek"), ("Općina", "Ivanska"))),
+    ("Općina Kapela", "Bjelovarsko-bilogorska",
+     (("Općina", "Kapela"), ("Općina", "Rovišće"), ("Općina", "Zrinski Topolovac"))),
+    ("Grad Benkovac", "Zadarska",
+     (("Grad", "Benkovac"), ("Općina", "Stankovci"), ("Općina", "Lišane Ostrovičke"))),
+)
+# And four municipalities the file draws as three polygons that are not
+# three units. "Opicina Pirovac" holds Pirovac, Tribunj and the mainland of
+# Tisno (Tisno, Dazlina, Dubrava, Matesici); "Opicina Muter-Kornati" is the
+# island of Murter, which is Murter (of Murter-Kornati) and Tisno's island
+# villages Betina and Jezera; "Otok Kornat" is the rest of Murter-Kornati. No
+# municipality's figure fits any one of them, and the four fit the three
+# together. So their sum goes on them only once make_redrawn draws the three
+# as one, under the first's id (a merge proposed with this); until then the
+# four are left unbound and the three polygons say why.
+REDRAWN_CLUSTER = ("Opicina Pirovac", "Šibensko-kninska",
+                   (("Općina", "Pirovac"), ("Općina", "Tisno"), ("Općina", "Tribunj"),
+                    ("Općina", "Murter-Kornati")),
+                   ("Opicina Muter-Kornati", "Otok Kornat"))
+WHY_CLUSTER = (
+    "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and "
+    "Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, "
+    "Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's "
+    "villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four "
+    "municipalities' sum is written once the three are drawn as one.")
 
 
-def krk(by_key: dict[str, dict[tuple, dict[str, Any]]],
-        ages: dict[tuple, dict[str, Any]]) -> dict[str, Any]:
-    from .balkans_common import shapes as map_shapes
-    polys = map_shapes("HRV", "admin2")
-    shape = [s for s in polys if s["name"] == "Otok Krk"]
-    drawn = [s["name"] for s in polys for kind, name in KRK_PARTS if s["name"] == f"{kind} {name}"]
-    if len(shape) != 1 or drawn:
-        raise SystemExit(f"croatia: Krk is no longer drawn as 'Otok Krk' beside its parts: "
-                         f"{len(shape)} polygons of that name, parts drawn {drawn}")
-    keys = [(KRK_COUNTY, kind, name) for kind, name in KRK_PARTS]
+def cluster(label: str, county: str, parts: tuple[tuple[str, str], ...],
+            shape: dict[str, Any], by_key: dict[str, dict[tuple, dict[str, Any]]],
+            ages: dict[tuple, dict[str, Any]]) -> dict[str, Any]:
+    """One record for a polygon that is several municipalities: their sum."""
+    keys = [(county, kind, name) for kind, name in parts]
     missing = [k for k in keys if k not in by_key["ethnicity"] or k not in ages]
     if missing:
-        raise SystemExit(f"croatia: the Krk municipalities {missing} are not in the workbook")
+        raise SystemExit(f"croatia: the municipalities {missing} of {label!r} are not in the workbook")
+    names = [name for _, name in parts]
+    listed = ", ".join(names[:-1]) + " and " + names[-1]
     fields: dict[str, Any] = {}
     total = sum(by_key["ethnicity"][k]["total"] for k in keys)
     for field in SHEETS:
         counts: dict[str, int] = {}
         for k in keys:
-            for label, n in by_key[field][k]["counts"].items():
-                counts[label] = counts.get(label, 0) + n
-        fields[field] = bars(field, {"county": KRK_COUNTY, "name": "Otok Krk", "total": total,
+            if by_key[field][k]["total"] != by_key["ethnicity"][k]["total"]:
+                raise SystemExit(f"croatia: {k} counts differ between sheets")
+            for lab, n in by_key[field][k]["counts"].items():
+                counts[lab] = counts.get(lab, 0) + n
+        fields[field] = bars(field, {"county": county, "name": label, "total": total,
                                      "counts": counts})
         fields[f"{field}_year"] = dated(fields[field], YEAR)
-        fields[f"{field}_note"] = NOTES[field] + (" Summed over Krk, Punat, Baška, Vrbnik and "
-                                                  "Dobrinj, the five municipalities this polygon is.")
+        fields[f"{field}_note"] = (NOTES[field] + f" Summed over {listed}, the municipalities "
+                                   "this polygon is.")
     groups: dict[tuple, int] = {}
     for k in keys:
         for lo, w, n in ages[k]["groups"]:
             groups[(lo, w)] = groups.get((lo, w), 0) + n
+    if sum(groups.values()) != total:
+        raise SystemExit(f"croatia: {label}'s ages add to {sum(groups.values()):,} against {total:,}")
     fields.update(age_fields({"groups": [(lo, w, n) for (lo, w), n in groups.items()],
                               "men": sum(ages[k]["men"] for k in keys),
                               "women": sum(ages[k]["women"] for k in keys)}))
-    log(f"  Otok Krk: {total:,}, the sum of {', '.join(n for _, n in KRK_PARTS)}")
-    return record("HRV-primorsko-goranska-otok-krk", "Otok Krk", level="admin2",
-                  parent=f"HRV-{slugify(KRK_COUNTY)}", parent_name=COUNTIES[KRK_COUNTY],
-                  country="HRV", match_by="shape_id", shape_id=shape[0]["id"],
+    log(f"  {label}: {total:,}, the sum of {listed}")
+    return record(f"HRV-{slugify(county)}-{slugify(label)}", label, level="admin2",
+                  parent=f"HRV-{slugify(county)}", parent_name=COUNTIES[county],
+                  country="HRV", match_by="shape_id", shape_id=shape["id"],
                   population=measure(total, year=YEAR, source=SOURCE),
-                  population_note=("The five municipalities of the island of Krk that the map "
-                                   "draws as one polygon: Krk, Punat, Baška, Vrbnik and Dobrinj."),
+                  population_note=(f"The boundary file draws {listed} as this one polygon, "
+                                   f"labelled {label!r}; it carries their sum."),
                   sources=[{"field": "population/ethnicity/religion/language", "name": SOURCE,
                             "url": PAGE, "license": LICENCE},
                            {"field": "median_age/sex_ratio", "name": SOURCE + ", sheet 20",
                             "url": URL, "license": LICENCE}],
                   **fields)
+
+
+def one_shape(polys: list[dict[str, Any]], label: str) -> dict[str, Any]:
+    hits = [s for s in polys if s["name"] == label]
+    if len(hits) != 1:
+        raise SystemExit(f"croatia: {len(hits)} polygons labelled {label!r}, not one")
+    return hits[0]
+
+
+def undrawn(by_key: dict[str, dict[tuple, dict[str, Any]]], ages: dict[tuple, dict[str, Any]],
+            polys: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], set[tuple]]:
+    """The records for the polygons that are several municipalities, and the
+    municipalities they take (which get no record of their own)."""
+    drawn = {s["name"] for s in polys}
+    out: list[dict[str, Any]] = []
+    taken: set[tuple] = set()
+    for label, county, parts in UNDRAWN:
+        shape = one_shape(polys, label)
+        # A part drawn in its own right means the polygon is no longer the sum.
+        again = [f"{k} {n}" for k, n in parts if f"{k} {n}" in drawn and f"{k} {n}" != label]
+        if again:
+            raise SystemExit(f"croatia: {again} are now drawn beside {label!r}; "
+                             "it is no longer their sum")
+        out.append(cluster(label, county, parts, shape, by_key, ages))
+        taken |= {(county, k, n) for k, n in parts}
+    label, county, parts, apart = REDRAWN_CLUSTER
+    shape = one_shape(polys, label)
+    taken |= {(county, k, n) for k, n in parts}
+    if not any(a in drawn for a in apart):
+        out.append(cluster(label, county, parts, shape, by_key, ages))
+    else:
+        why = gap(NOT_AVAILABLE, WHY_CLUSTER)
+        for s in [shape] + [one_shape(polys, a) for a in apart]:
+            out.append(record(f"HRV-{slugify(county)}-{slugify(s['name'])}-not-one-unit",
+                              s["name"], level="admin2", parent=f"HRV-{slugify(county)}",
+                              parent_name=COUNTIES[county], country="HRV", match_by="shape_id",
+                              shape_id=s["id"], median_age=why, sex_ratio=why, ethnicity=why,
+                              religion=why, language=why))
+        log(f"  {label} and {', '.join(apart)} are still drawn apart: Pirovac, Tisno, Tribunj "
+            "and Murter-Kornati are left unbound until make_redrawn draws them as one")
+    return out, taken
+
+
+# Croatia's median age, which DZS's census release does not print (its age
+# page is a chart): Eurostat's for 1 January 2022, from DZS's population after
+# the census (demo_pjanind, MEDAGEPOP; 45.3 a year earlier). The census's own
+# ages, interpolated within five-year groups, must come within 0.3 years of it.
+NATIONAL_MEDIAN = 45.4
+NATIONAL_MEDIAN_SOURCE = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+                          "demo_pjanind?geo=HR&indic_de=MEDAGEPOP&time=2022")
+
+
+def national_median(ages: dict[tuple, dict[str, Any]]) -> float:
+    """The country's median from its counties' five-year groups, checked
+    against Eurostat's."""
+    groups: dict[tuple, int] = {}
+    for (county, kind, name), unit in ages.items():
+        if name is None:                  # a county's own row
+            for lo, w, n in unit["groups"]:
+                groups[(lo, w)] = groups.get((lo, w), 0) + n
+    median = age_fields({"groups": [(lo, w, n) for (lo, w), n in groups.items()],
+                         "men": 1, "women": 1})["median_age"]["value"]
+    if abs(median - NATIONAL_MEDIAN) > 0.3:
+        raise SystemExit(f"croatia: the national median from the census's groups is {median}, "
+                         f"against Eurostat's {NATIONAL_MEDIAN} for 1 January 2022")
+    log(f"  national median {median} from the counties' five-year groups "
+        f"(Eurostat, 1 January 2022: {NATIONAL_MEDIAN})")
+    return median
 
 
 def build() -> list[dict[str, Any]]:
@@ -425,7 +548,8 @@ def build() -> list[dict[str, Any]]:
             raise SystemExit(f"croatia: {key} counts {ages[key]['total']:,} on sheet 20 and "
                              f"{by_key['ethnicity'][key]['total']:,} on sheet 1")
     log(f"  sheet {AGE_SHEET} (age and sex): {len(ages)} units, every total the same as sheet 1's")
-    records = []
+    national_median(ages)
+    records, taken = undrawn(by_key, ages, shapes("HRV", "admin2"))
     skipped: dict[str, int] = {}
     for key in keys:
         county, kind, name = key
@@ -437,6 +561,8 @@ def build() -> list[dict[str, Any]]:
             # the city itself is written below from its county row.
             skipped[kind] = skipped.get(kind, 0) + 1
             continue
+        if key in taken:
+            continue                      # summed onto the polygon it is drawn inside
         unit = by_key["ethnicity"][key]
         fields: dict[str, Any] = {}
         for field in SHEETS:
@@ -468,7 +594,6 @@ def build() -> list[dict[str, Any]]:
                           "url": URL, "license": LICENCE}],
                 **fields,
             ))
-    records.append(krk(by_key, ages))
     for kind, n in skipped.items():
         log(f"  skipped {n} rows of type {kind!r}: not a town or municipality")
     by_level = {"admin1": 0, "admin2": 0}

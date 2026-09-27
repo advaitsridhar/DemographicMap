@@ -33,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import USER_AGENT, shard_path  # noqa: E402
 
 __all__ = ["px_meta", "px_table", "json_stat1", "spreadsheetml", "median_age", "grouped_median", "sex_ratio",
-           "age_fields", "fold", "shapes", "match_names", "unstack", "check_sum"]
+           "age_fields", "fold", "shapes", "match_names", "unstack", "check_sum", "exact_shares"]
 
 
 # ---------------------------------------------------------------------------
@@ -259,3 +259,27 @@ def check_sum(parts: float, whole: float, what: str, tolerance: float = 0.0) -> 
     """Refuse a sum that is not its whole."""
     if abs(parts - whole) > max(tolerance * abs(whole), 0.5):
         raise SystemExit(f"{what}: the parts add to {parts:,.0f} against {whole:,.0f}")
+
+
+def exact_shares(counts: dict[str, float], total: float) -> list[dict[str, Any]]:
+    """Counts -> shares to one decimal that add to exactly what they cover.
+
+    ``_shared.shares`` rounds each share on its own, and a table of many small
+    groups drifts: Murter-Kornati's eighteen ethnic groups added to 100.7.
+    Here the tenths are shared out by largest remainder, so the shares add to
+    the counts' own share of the total (100.0 where the categories partition
+    it) and no share is off by more than a tenth. Order and form are those of
+    ``shares``: largest first, name breaking a tie.
+    """
+    if not total:
+        return []
+    items = [(k, v) for k, v in counts.items() if v]
+    exact = {k: 1000.0 * v / total for k, v in items}
+    floors = {k: int(x) for k, x in exact.items()}
+    target = round(sum(exact.values()))
+    spare = target - sum(floors.values())
+    for k in sorted(exact, key=lambda k: (-(exact[k] - floors[k]), k))[:max(spare, 0)]:
+        floors[k] += 1
+    out = [{"group": k, "pct": floors[k] / 10, "count": int(v)} for k, v in items]
+    out.sort(key=lambda r: (-r["pct"], r["group"]))
+    return out
