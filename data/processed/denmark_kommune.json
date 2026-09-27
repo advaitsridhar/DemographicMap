@@ -3975,6 +3975,83 @@
     "religion_note": "Membership of the Evangelical Lutheran Church in Denmark (Folkekirken) on 1 January 2026, as the Civil Registration System records it for every resident (Statistics Denmark, KM6): 45,486 members and 14,541 non-members. A count of registered membership, not of belief. Denmark registers no other denomination, so the non-members -- people of other faiths and of none alike -- are one group."
   },
   {
+    "id": "DNK-DST-480",
+    "level": "admin2",
+    "name": "Nordfyns",
+    "parent": "DNK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29124,
+      "year": 2026,
+      "source": "Statistics Denmark, FOLK1A"
+    },
+    "median_age": {
+      "value": 49.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Denmark, FOLK1A"
+    },
+    "sex_ratio": {
+      "value": 103.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Denmark, FOLK1A"
+    },
+    "religion": [
+      {
+        "group": "Church of Denmark",
+        "pct": 81.9,
+        "count": 23896
+      },
+      {
+        "group": "Not a member of the national church",
+        "pct": 18.1,
+        "count": 5283
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Denmark, FOLK1A",
+        "url": "https://www.statbank.dk/FOLK1A",
+        "year": 2026
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Denmark, KM6",
+        "url": "https://www.statbank.dk/KM6",
+        "year": 2026
+      }
+    ],
+    "country": "DNK",
+    "parent_name": "Syddanmark",
+    "codes": {
+      "dst": "480"
+    },
+    "match_by": "shape_id",
+    "shape_id": "71786716B94140568065229",
+    "aliases": [
+      "Nordfyn"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Denmark, FOLK1A's count of residents by single year of age on 1 July 2026; the office tabulates the ages, not this median.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 July 2026 (14,776 males, 14,348 females).",
+    "population_note": "Registered residents on 1 July 2026.",
+    "religion_year": 2026,
+    "religion_basis": "registered membership",
+    "religion_note": "Membership of the Evangelical Lutheran Church in Denmark (Folkekirken) on 1 January 2026, as the Civil Registration System records it for every resident (Statistics Denmark, KM6): 23,896 members and 5,283 non-members. A count of registered membership, not of belief. Denmark registers no other denomination, so the non-members -- people of other faiths and of none alike -- are one group."
+  },
+  {
     "id": "DNK-DST-482",
     "level": "admin2",
     "name": "Langeland",
