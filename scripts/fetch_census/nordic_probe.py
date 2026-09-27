@@ -430,6 +430,35 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 17: retries of the archive's refusals, and SSB's own words on
+    # where the members of a community outside the Church are counted.
+    "r17_ltu_vilnius": lambda: xlsx(
+        "https://web.archive.org/web/20220621221246id_/https://osp.stat.gov.lt/documents/10180/"
+        "9601028/Vilnius_county_by_largest_ethnic_groups.xlsx", rows=45),
+    "r17_ltu_vilnius_lt": lambda: xlsx(
+        "https://web.archive.org/web/20220818192852id_/https://osp.stat.gov.lt/documents/10180/"
+        "9601028/Gausiausiu_tautybiu_gyventojai_pagal_tautybe_Vilniaus_apskrityje.xlsx", rows=45),
+    "r17_ltu_urban": lambda: xlsx(
+        "https://web.archive.org/web/20221011003824id_/https://osp.stat.gov.lt/documents/10180/"
+        "10367417/Urban_areas_population_by_largest_ethnic_group-EN.xlsx", rows=40),
+    "r17_nor_trosamf": lambda: text(
+        "https://www.ssb.no/kultur-og-fritid/religion-og-livssyn/statistikk/"
+        "trus-og-livssynssamfunn-utanfor-den-norske-kyrkja",
+        grep=r"[^<>]{0,300}(?:fylke|kommune|registrert|bustad|busett|bosted|adresse)[^<>]{0,300}"),
+    "r17_nor_trosamf_en": lambda: text(
+        "https://www.ssb.no/en/kultur-og-fritid/religion-og-livssyn/statistikk/"
+        "religious-communities-and-life-stance-communities",
+        grep=r"[^<>]{0,300}(?:county|municipalit|registered|resid|address)[^<>]{0,300}"),
+    "r17_nor_vardok": lambda: text("https://www.ssb.no/a/metadata/conceptvariable/vardok/2337/nb",
+                                   grep=r"[^<>]{0,400}(?:fylke|kommune|registrert|bosted)[^<>]{0,400}"),
+    "r17_nor_kirke": lambda: text(
+        "https://www.ssb.no/kultur-og-fritid/religion-og-livssyn/statistikk/den-norske-kyrkja",
+        grep=r"[^<>]{0,300}(?:sokn|kommune|bustad|busett|registrert|Frøyland)[^<>]{0,300}"),
+    "r17_fin_dvv_old": lambda: links(
+        "https://web.archive.org/web/2021/https://dvv.fi/tilastot-ja-luettelot",
+        r"uskon|rekisteritil|xlsx|tilast|kunn|v[äa]est"),
+    "r17_fin_dvv_now": lambda: links("https://dvv.fi/tilastot-ja-luettelot",
+                                     r"uskon|rekisteritil|xlsx|tilast|kunn|v[äa]est"),
     # Round 16: the checker's questions. How SSB's KOSTRA table places the
     # members of communities outside the Church; the 2021 census's ethnicity
     # and religion below the country in Lithuania; the register keepers of
