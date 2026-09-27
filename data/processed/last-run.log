@@ -1,20 +1,32 @@
-pxweb: Statistics Estonia (EST)
-  rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
-    left out (named in drop=): 3 — 784 ..Tallinn, 793 ..Tartu city, unk County unknown
-    left out (the country itself): 1 — 00 Whole country
-    15 units, categories sum to the published total in each
-    ...and to 1,360,745 against a published national 1,360,745
-    withheld 45 Ida-Viru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 50 Jõgeva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 52 Järva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 56 Lääne county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 60 Lääne-Viru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 64 Põlva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 68 Pärnu county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 71 Rapla county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 79 Tartu county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 81 Valga county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-    withheld 87 Võru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
-  ethnicity labels the group tree cannot place: none
-  wrote data/processed/estonia_county.json (6 kB)
-  4 records
+estonia: Statistics Estonia RV0241, RV0222 and the 2011 and 2021 censuses
+  RV0241: 230 municipalities, 18 discontinued by 2017: Kaarma rural municipality (vald), Kärdla city (linn), Kärla rural municipality (vald), Kõrgessaare rural municipality (vald), Kõue rural municipality (vald), Lavassaare rural municipality (vald), Lümanda rural municipality (vald), Maidla rural municipality (vald), Oru rural municipality (vald), Paistu rural municipality (vald), Pärsti rural municipality (vald), Põlva city (linn), Püssi city (linn), Risti rural municipality (vald), Saarepeedi rural municipality (vald), Taebla rural municipality (vald), Viiratsi rural municipality (vald), Vändra rural municipality (vald)
+    RV0241 2017: counties and county unknown -> Estonia: 16 parts sum to 1,315,635 against 1,315,635
+    RV0241 2017: units -> Harju maakond: 23 parts sum to 582,556 against 582,556
+    RV0241 2017: units -> Hiiu maakond: 4 parts sum to 9,335 against 9,335
+    RV0241 2017: units -> Ida-Viru maakond: 20 parts sum to 143,880 against 143,880
+    RV0241 2017: units -> Jõgeva maakond: 13 parts sum to 30,840 against 30,840
+    RV0241 2017: units -> Järva maakond: 12 parts sum to 30,378 against 30,378
+    RV0241 2017: units -> Lääne maakond: 10 parts sum to 24,301 against 24,301
+    RV0241 2017: units -> Lääne-Viru maakond: 15 parts sum to 58,856 against 58,856
+    RV0241 2017: units -> Põlva maakond: 13 parts sum to 27,963 against 27,963
+    RV0241 2017: units -> Pärnu maakond: 19 parts sum to 82,535 against 82,535
+    RV0241 2017: units -> Rapla maakond: 10 parts sum to 34,085 against 34,085
+    RV0241 2017: units -> Saare maakond: 14 parts sum to 33,307 against 33,307
+    RV0241 2017: units -> Tartu maakond: 22 parts sum to 145,550 against 145,550
+    RV0241 2017: units -> Valga maakond: 13 parts sum to 30,084 against 30,084
+    RV0241 2017: units -> Viljandi maakond: 12 parts sum to 47,288 against 47,288
+    RV0241 2017: units -> Võru maakond: 13 parts sum to 33,505 against 33,505
+  Estonia 1 January 2017: median age 41.8
+  RV0241 2017: national median 41.8 against Eurostat's 41.8 for 1 January 2017 (+0.00 years, bound 0.3)
+  Maidla vald bound to Lüganuse rural municipality: the one polygon and the one unit its county has left
+  EST admin2: 214 of 214 polygons bound
+    units standing in 2017 with no polygon (2): Järvakandi rural municipality; Lääne-Saare rural municipality
+  RL0429: 98 municipalities of 2011
+  RL0433: 226 municipalities of 2011
+  Usk: left out, categories off their total: ['257 (1,218 of 1,236)', '826 (1,065 of 1,082)', '460 (762 of 779)']
+  RL0452: 226 municipalities of 2011
+  ethnicity labels the group tree cannot place: []
+  language labels the group tree cannot place: []
+  religion labels the group tree cannot place: []
+  wrote data/processed/estonia_municipality.json (1063 kB)
+  wrote estonia_municipality.json: 229 records
