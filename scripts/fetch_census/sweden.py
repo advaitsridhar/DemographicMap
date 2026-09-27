@@ -18,7 +18,9 @@ mother tongue or ethnicity; those fields keep the existing policy, and nothing
 here writes them.
 
 Checks: each region's single years make its published total; the kommuner make
-their län; the län make the country.
+their län; the län make the country. From 2025 SCB perturbs every cell by the
+cell-key method ("CKM" in the table's name), so these hold to within a few
+people rather than exactly; the run prints the worst difference.
 
 Usage:
     python -m scripts.fetch_census.sweden
@@ -38,6 +40,9 @@ BASE = "https://api.scb.se/OV0104/v1/doris/{lang}/ssd/BE/BE0101/BE0101A/{table}"
 # The table, its population content code, its open age class and the total
 # that belongs to the single-year banding.
 TABLE, CONTENT, TOP, TOTAL = "BefolkningCKM", "000007ME", "100+1", "TOT1"
+CKM_SLACK = 15           # people: the cell-key perturbation's reach on one total
+CKM_NOTE = (" SCB perturbs every published cell slightly (the cell-key method), so a "
+            "count can differ by a few people from the register itself.")
 SOURCE = "Statistics Sweden (SCB)"
 PAGE = ("https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/"
         "{table}/")
@@ -74,19 +79,28 @@ def main() -> int:
             published[region] += value
             continue
         people[region].add(100 if age == top else int(age), "m" if sex == "1" else "f", value)
+    # From 2025 SCB protects its tables with the cell-key method: every cell,
+    # totals included, carries a small random perturbation, so a region's
+    # single years need not add to its published total exactly. A difference
+    # of a few people is that noise; anything larger is a misread.
+    worst = 0.0
     for region, got in people.items():
-        if abs(got.total - published[region]) > 0.5:
+        off = abs(got.total - published[region])
+        worst = max(worst, off / max(published[region], 1))
+        if off > max(CKM_SLACK, 0.001 * published[region]):
             raise SystemExit(f"{table} {region}: single years make {got.total:,.0f} against "
                              f"a published {published[region]:,.0f}")
+    log(f"  single years against each region's published total: worst {100 * worst:.3f}%")
     counties = sorted(c for c in names if len(c) == 2 and c != "00")
     kommuner = sorted(c for c in names if len(c) == 4)
     date = f"31 December {year}"
     log(f"  {table} {year}: {len(kommuner)} kommuner, {len(counties)} län; "
         f"Sweden {people['00'].total:,.0f}, median age {people['00'].median()}")
-    check_parts({c: people[c].total for c in counties}, people["00"].total, "län -> Sweden", 0)
+    check_parts({c: people[c].total for c in counties}, people["00"].total, "län -> Sweden",
+                0.0002, CKM_SLACK)
     for county in counties:
         check_parts({c: people[c].total for c in kommuner if c[:2] == county},
-                    people[county].total, f"kommuner -> {sv[county]}", 0)
+                    people[county].total, f"kommuner -> {sv[county]}", 0.0002, CKM_SLACK)
 
     shapes = load_units("SWE", "admin2")
     labels = {s["id"]: s["name"] for s in shapes}
@@ -103,7 +117,8 @@ def main() -> int:
             f"SWE-SCB-{code}", sv[code], level="admin2", parent="SWE", country="SWE",
             parent_name=sv[code[:2]], codes={"scb": code}, match_by="shape_id", shape_id=sid,
             aliases=[labels[sid]] if labels[sid] != sv[code] else [],
-            **people[code].fields(year=int(year), source=source, url=page, date=date)))
+            **people[code].fields(year=int(year), source=source, url=page, date=date,
+                                  extra_note=CKM_NOTE)))
     for code in counties:
         shape = admin1.get(fold(sv[code]))
         if shape is None:
@@ -112,7 +127,8 @@ def main() -> int:
             f"SWE-SCB-{code}", shape["name"], level="admin1", parent="SWE", country="SWE",
             codes={"scb": code}, match_by="shape_id", shape_id=shape["id"],
             aliases=[names[code]],
-            **people[code].fields(year=int(year), source=source, url=page, date=date)))
+            **people[code].fields(year=int(year), source=source, url=page, date=date,
+                                  extra_note=CKM_NOTE)))
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records")
     return 0

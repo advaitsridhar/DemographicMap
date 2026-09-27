@@ -60,7 +60,7 @@ KM6_URL = "https://www.statbank.dk/KM6"
 OUT = PROCESSED / "denmark_kommune.json"
 
 # StatBank's English names that the boundary file spells otherwise.
-ALIASES = {"Vesthimmerlands": "Vesthimmerland"}
+ALIASES = {"Vesthimmerlands": "Vesthimmerland", "Nordfyns": "Nordfyn"}
 CHURCH = "Church of Denmark"
 # Not "Not a member of the Church of Denmark": the group tree files any label
 # containing "Church" under Protestantism, which is the one thing a non-member
