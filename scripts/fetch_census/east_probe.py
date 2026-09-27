@@ -77,10 +77,21 @@ def describe_book(blob: bytes, name: str, args: argparse.Namespace) -> None:
     sheets: list[tuple[str, list[list[Any]]]] = []
     if blob[:2] == b"PK":
         import openpyxl
-        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True,
+        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=not args.indent,
                                       data_only=True)
-        for ws in book.worksheets:
-            sheets.append((ws.title, [list(r) for r in ws.iter_rows(values_only=True)]))
+        for ws in book.worksheets[:max(args.sheets, 1) if args.indent else None]:
+            if args.indent:
+                # The first cell's indent and weight, which is how Rosstat
+                # and Belstat say which rows sit inside which.
+                rows = []
+                for r in ws.iter_rows():
+                    a = r[0]
+                    tag = (f"i{int(a.alignment.indent or 0)}"
+                           f"{'b' if a.font and a.font.b else ''}")
+                    rows.append([tag] + [c.value for c in r])
+                sheets.append((ws.title, rows))
+            else:
+                sheets.append((ws.title, [list(r) for r in ws.iter_rows(values_only=True)]))
     else:
         import xlrd
         book = xlrd.open_workbook(file_contents=blob)
@@ -92,12 +103,17 @@ def describe_book(blob: bytes, name: str, args: argparse.Namespace) -> None:
         width = max((len(r) for r in rows), default=0)
         print(f"  -- sheet {title!r}: {len(rows)} rows x {width} cols")
         shown = 0
+        tail = 0
         for i, row in enumerate(rows):
             if i < args.start:
                 continue
             line = " | ".join(text(c, args.width) for c in row[:args.cols])
-            if grep and not grep.search(line):
+            if grep and grep.search(line):
+                tail = args.after
+            elif grep and tail <= 0:
                 continue
+            else:
+                tail -= 1
             print(f"    r{i}: {line}")
             shown += 1
             if shown >= args.rows:
@@ -189,6 +205,9 @@ def main() -> int:
     ap.add_argument("--cols", type=int, default=14)
     ap.add_argument("--width", type=int, default=24)
     ap.add_argument("--grep")
+    ap.add_argument("--indent", action="store_true")
+    ap.add_argument("--after", type=int, default=0,
+                    help="with --grep, also print this many rows after a match")
     ap.add_argument("--links")
     ap.add_argument("--context", type=int, default=160)
     ap.add_argument("--bytes", type=int, default=1500)
