@@ -1,18 +1,108 @@
-albania_census: INSTAT, 2023 census by prefecture
-  ethnicity: 12 prefectures; hidden cells in 0
-  religion: 12 prefectures; hidden cells in 0
-  language: 12 prefectures; hidden cells in 0
-  Berat: 140,956; Albanian 71.6, Not stated 26.4, Balkan Egyptian 0.7
-  Dibër: 107,178; Albanian 81.5, Not stated 15.9, Bulgarian 1.6
-  Durrës: 226,863; Albanian 91.9, Not stated 5.2, Bosniak 1.1
-  Elbasan: 232,580; Albanian 89.9, Not stated 7.2, Balkan Egyptian 1.4
-  Fier: 240,377; Albanian 96.0, Not stated 1.8, Roma 0.8
-  Gjirokastër: 60,013; Albanian 82.7, Greek 14.3, Not stated 1.1
-  Korçë: 173,091; Albanian 90.6, Not stated 5.1, Balkan Egyptian 1.1
-  Kukës: 61,998; Albanian 94.9, Bulgarian 3.5, Not stated 1.0
-  Lezhë: 99,384; Albanian 96.8, Not stated 1.9, Balkan Egyptian 0.4
-  Shkodër: 154,479; Albanian 95.9, Not stated 2.9, Balkan Egyptian 0.4
-  Tiranë: 758,513; Albanian 93.9, Not stated 3.8, Not declared 0.8
-  Vlorë: 146,681; Albanian 87.6, Greek 8.2, Not stated 1.3
-  wrote data/processed/albania_census.json (73 kB)
-  wrote albania_census.json: 12 records
+== links https://bucuresti.insse.ro/ (?i)recens|rpl|2021|sector 40
+  !! URLError: <urlopen error [Errno 101] Network is unreachable>
+== cdx bucuresti.insse.ro/wp-content/uploads/2023 60
+  HTTP 200: 240 captures
+  20230726202312 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 21233 https://bucuresti.insse.ro/wp-content/uploads/2023/01/1.-POPULATIA-DUPA-DOMICILIU-LA-1-IULIE-2022-DATE-PROVIZORII.xlsx
+  20230710093835 application/vnd.ms-excel 20832 https://bucuresti.insse.ro/wp-content/uploads/2023/01/AGENDA-DE-LUCRU-DRSMB_IANUARIE_2023-x.xls
+  20230723220506 application/vnd.ms-excel 23484 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Anexa-2_Tabele-cu-date-provizorii_RPL2021.xls
+  20230810201001 application/vnd.ms-excel 13696 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Anexa-6-executie-bugetara-DEC-2022-.xls
+  20230429091709 application/pdf 421829 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Anunt-concurs_01.03.2023-1.pdf
+  20230429091858 application/pdf 430826 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Anunt-concurs_15.03.2023.pdf
+  20230429091718 application/pdf 664227 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Bibliografie-_01.03.2023.pdf
+  20230429091905 application/pdf 693389 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Bibliografie-_15.03.2023.pdf
+  20230821154548 application/pdf 5499434 https://bucuresti.insse.ro/wp-content/uploads/2023/01/BSL_Mun.Bucuresti_noiembrie-2022.pdf
+  20230723220459 application/pdf 524158 https://bucuresti.insse.ro/wp-content/uploads/2023/01/COMUNICAT-DE-PRESA-MUNICIPIUL-BUCURESTI_RPL2021_ian-2023-1.pdf
+  20230816094039 application/pdf 71564 https://bucuresti.insse.ro/wp-content/uploads/2023/01/DA_DIMA_A_inc.pdf
+  20230816094044 application/pdf 61470 https://bucuresti.insse.ro/wp-content/uploads/2023/01/DI_DIMA_I_inc.pdf
+  20230123105621 image/jpeg 284143 https://bucuresti.insse.ro/wp-content/uploads/2023/01/exractPdfPages_2_1053126156_750856657-1-1087x1536.jpg
+  20230123105620 image/jpeg 11975 https://bucuresti.insse.ro/wp-content/uploads/2023/01/exractPdfPages_2_1053126156_750856657-1-212x300.jpg
+  20230123105620 image/jpeg 134242 https://bucuresti.insse.ro/wp-content/uploads/2023/01/exractPdfPages_2_1053126156_750856657-1-724x1024.jpg
+  20230123105620 image/jpeg 150435 https://bucuresti.insse.ro/wp-content/uploads/2023/01/exractPdfPages_2_1053126156_750856657-1-768x1086.jpg
+  20230123105623 image/jpeg 333272 https://bucuresti.insse.ro/wp-content/uploads/2023/01/exractPdfPages_2_1053126156_750856657-1.jpg
+  20230429091724 application/pdf 3451617 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Fisa-post-337046.pdf
+  20230429091911 application/pdf 3445384 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Fisa-post_15.03.2023.pdf
+  20230429091733 application/vnd.openxmlformats-officedocument.wordprocessingml.document 24610 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Formular-inscriere-concurs.docx
+  20230821154540 application/vnd.ms-excel 23642 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Mun.Bucuresti_noiembrie-2022.xls
+  20230821154618 application/vnd.ms-excel 26302 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Nivel-national_noiembrie-2022.xls
+  20230818235008 application/pdf 450505 https://bucuresti.insse.ro/wp-content/uploads/2023/01/PENSIONARI-SI-PENSIA-MEDIE-IN-MB-TRIM-III-2022.pdf
+  20230429091759 application/pdf 242950 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-final_01.03.2023.pdf
+  20230429091752 application/pdf 246629 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-probei-interviu_01.03.2023.pdf
+  20230429091948 application/pdf 255620 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-probei-interviu_15.03.2023.pdf
+  20230429091746 application/pdf 267018 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-probei-scrise_01.03.2023.pdf
+  20230429091934 application/pdf 273194 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-probei-scrise_15.03.2023.pdf
+  20230429091923 application/pdf 297083 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Rezultatul-selectiei-de-dosare-concurs-15.03.2023.pdf
+  20230429091738 application/pdf 269048 https://bucuresti.insse.ro/wp-content/uploads/2023/01/selectie-dosare-pentru-concurs-01.03.2023.pdf
+  20230810201257 application/pdf 1783475 https://bucuresti.insse.ro/wp-content/uploads/2023/01/Strategia-anuala-de-achizitie-publica-2023.pdf
+  20230817044947 application/pdf 94395 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Adriana_Moroca_DA.pdf
+  20230817044957 application/pdf 90683 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Adriana_Moroca_DI.pdf
+  20230710093840 application/vnd.ms-excel 18500 https://bucuresti.insse.ro/wp-content/uploads/2023/02/AGENDA-DE-LUCRU-DRSMB_FEBRUARIE_2023_.xls
+  20230809212235 application/vnd.ms-excel 13107 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Anexa-6-executie-bugetara-ian-2023.xls
+  20230501010237 application/pdf 414890 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Anunt-concurs_29.03.2023.pdf
+  20230501010244 application/pdf 688106 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Bibliografie-concurs_29.03.2023.pdf
+  20230821154637 application/pdf 5483752 https://bucuresti.insse.ro/wp-content/uploads/2023/02/BSL_Mun.Bucuresti_decembrie-2022.pdf
+  20230703122905 image/jpeg 9698 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Capture2-215x300.jpg
+  20230703122912 image/jpeg 22204 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Capture2.jpg
+  20230501010257 application/pdf 3430163 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Fisa-post_337073.pdf
+  20230821154632 application/vnd.ms-excel 23433 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Mun.Bucuresti_decembrie-2022.xls
+  20230821154655 application/vnd.ms-excel 26046 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Nivel-National_decembrie-2022.xls
+  20230501010334 application/pdf 264090 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Rezultat-final_29.03.2023.pdf
+  20230501010326 application/pdf 253476 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Rezultatul-probei-interviu_29.03.2023.pdf
+  20230501010312 application/pdf 271497 https://bucuresti.insse.ro/wp-content/uploads/2023/02/Rezultatul-selectiei-de-dosare-concurs-29.03.2023.pdf
+  20230726202519 application/vnd.ms-excel 54654578 https://bucuresti.insse.ro/wp-content/uploads/2023/02/SCS2022_extins.xls
+  20230822121937 application/pdf 376058 https://bucuresti.insse.ro/wp-content/uploads/2023/02/SOMERII-IN-MUNICIPIUL-BUCURESTI-IN-TRIMESTRUL-III-2022.pdf
+  20230822122309 application/pdf 282700 https://bucuresti.insse.ro/wp-content/uploads/2023/02/TURISMUL-IN-MB_TRIM.-I_2022.pdf
+  20230822122317 application/pdf 282792 https://bucuresti.insse.ro/wp-content/uploads/2023/02/TURISMUL-IN-MB_TRIM.-II_2022.pdf
+  20230822122322 application/pdf 282816 https://bucuresti.insse.ro/wp-content/uploads/2023/02/TURISMUL-IN-MB_TRIM.-III_2022.pdf
+  20230710093849 application/vnd.ms-excel 17791 https://bucuresti.insse.ro/wp-content/uploads/2023/03/AGENDA-DE-LUCRU-DRSMB_MARTIE_2023_.xls
+  20230710093646 application/pdf 1947484 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Anexa-1_conduita-profesionala_2022.pdf
+  20230710093659 application/pdf 2285406 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Anexa-2_disciplina_2022.pdf
+  20230809212239 application/vnd.ms-excel 13412 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Anexa-6-executie-bugetara-feb-2023-3-.xls
+  20230501005525 application/pdf 780015 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Anunt-concurs-promovare-in-grad_25.04.2023.pdf
+  20230501194335 application/pdf 727543 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Anunt-concurs-recrutare-functie-publica-de-executie-gard-profesional-superior_02.05.2023.pdf
+  20230501194341 application/pdf 752005 https://bucuresti.insse.ro/wp-content/uploads/2023/03/Bibliografie_02.05.2023.pdf
+  20240725112746 application/pdf 197408 https://bucuresti.insse.ro/wp-content/uploads/2023/03/comunicat-presa_IPC-si-castig-salarial-real.pdf
+  20230814125627 application/pdf 82871 https://bucuresti.insse.ro/wp-content/uploads/2023/03/DA_BUTISEACAD.pdf
+== cdx bucuresti.insse.ro/wp-content/uploads/2024 40
+  HTTP 200: 160 captures
+  20240301145555 application/pdf 392809 https://bucuresti.insse.ro/wp-content/uploads/2024/01/01.-Geografie.pdf
+  20240301142131 application/pdf 712090 https://bucuresti.insse.ro/wp-content/uploads/2024/01/02.-Populatia.pdf
+  20240301143958 application/pdf 947503 https://bucuresti.insse.ro/wp-content/uploads/2024/01/03-Piata-fortei-de-munca.pdf
+  20240301143106 application/pdf 415596 https://bucuresti.insse.ro/wp-content/uploads/2024/01/04.-Veniturile-si-cheltuielile-si-consumul-populatiei-2021.pdf
+  20240301132858 application/pdf 530930 https://bucuresti.insse.ro/wp-content/uploads/2024/01/05.-Locuinte-si-utilitati-publice.pdf
+  20240301135924 application/pdf 381815 https://bucuresti.insse.ro/wp-content/uploads/2024/01/06.-Securitate-si-asistenta-sociala.pdf
+  20240301151526 application/pdf 415183 https://bucuresti.insse.ro/wp-content/uploads/2024/01/07.-Sanatate.pdf
+  20240301133436 application/pdf 670752 https://bucuresti.insse.ro/wp-content/uploads/2024/01/08.-Educatie.pdf
+  20240301134607 application/pdf 250270 https://bucuresti.insse.ro/wp-content/uploads/2024/01/09.-Cultura-si-sport.pdf
+  20240301135317 application/pdf 279420 https://bucuresti.insse.ro/wp-content/uploads/2024/01/10-Conturi-regionale.pdf
+  20240301132529 application/pdf 315320 https://bucuresti.insse.ro/wp-content/uploads/2024/01/11.-Stiinta-si-tehnologie.pdf
+  20240301143220 application/pdf 799885 https://bucuresti.insse.ro/wp-content/uploads/2024/01/12-Agricultura-silvicultura.pdf
+  20240301133537 application/pdf 671618 https://bucuresti.insse.ro/wp-content/uploads/2024/01/13-Activitatea-intreprenderii.pdf
+  20240301143414 application/pdf 382638 https://bucuresti.insse.ro/wp-content/uploads/2024/01/14.-Transporturi-posta-si-telecomunicatii.pdf
+  20240301145648 application/pdf 408058 https://bucuresti.insse.ro/wp-content/uploads/2024/01/15.-Turism.pdf
+  20240301151000 application/pdf 197059 https://bucuresti.insse.ro/wp-content/uploads/2024/01/16.-Finante_2021.pdf
+  20240301131216 application/pdf 388218 https://bucuresti.insse.ro/wp-content/uploads/2024/01/17.-Justitie.pdf
+  20240603151544 application/vnd.ms-excel 17131 https://bucuresti.insse.ro/wp-content/uploads/2024/01/AGENDA-DE-LUCRU-DRSMB_FEBRUARIE_2024.xls
+  20240603151541 application/vnd.ms-excel 19447 https://bucuresti.insse.ro/wp-content/uploads/2024/01/AGENDA-DE-LUCRU-DRSMB_IANUARIE_2024.xls
+  20240714190446 application/vnd.ms-excel 12841 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Anexa-6-executie-bugetara-DECEMBRIE-2023-3-.xls
+  20240714191041 application/pdf 3567319 https://bucuresti.insse.ro/wp-content/uploads/2024/01/BSL_Mun.Bucuresti_noiembrie-2023.pdf
+  20240301144644 application/pdf 804180 https://bucuresti.insse.ro/wp-content/uploads/2024/01/DRSMB_Plan-publicatii-2024.pdf
+  20240714191144 application/vnd.ms-excel 24248 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Mun.Bucuresti_noiembrie-2023.xls
+  20240714191147 application/vnd.ms-excel 27625 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Nivel-national_noiembrie-2023.xls
+  20240708173611 application/pdf 416930 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Pensionari-si-pensia-medie-in-MB_trimestrul-III-2023.pdf
+  20240526051559 application/vnd.ms-excel 10720 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Populatia-dupa-domiciliu-la-1-iulie-2023_Municipiul-Bucuresti_provizorii.xls
+  20240625174603 application/pdf 378143 https://bucuresti.insse.ro/wp-content/uploads/2024/01/SOMERII-IN-MUNICIPIUL-BUCURESTI-IN-TRIMESTRUL-III-2023.pdf
+  20240715120638 application/pdf 1765228 https://bucuresti.insse.ro/wp-content/uploads/2024/01/Strategia-anuala-de-achizitii-publice-2024.pdf
+  20240715135501 application/pdf 1877848 https://bucuresti.insse.ro/wp-content/uploads/2024/02/Anexa-1_2023_DRSMB.pdf
+  20240625175204 application/vnd.ms-excel 12679 https://bucuresti.insse.ro/wp-content/uploads/2024/02/Anexa-6-executie-bugetara-IANUARIE-2024.xls
+  20240625174323 application/pdf 487077 https://bucuresti.insse.ro/wp-content/uploads/2024/02/Locuinte-terminate-in-Municipiul-Bucuresti-in-trimestrul-III-2023.pdf
+  20240526051610 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 11970 https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx
+  20240525224150 application/pdf 894641 https://bucuresti.insse.ro/wp-content/uploads/2024/03/11.01.2024-INS-Precizari-chestionar-AMIGO-2024.pdf
+  20240525224931 application/pdf 972884 https://bucuresti.insse.ro/wp-content/uploads/2024/03/19.03.2024-INS-ABF_-Manual-final.pdf
+  20240525230736 application/pdf 936431 https://bucuresti.insse.ro/wp-content/uploads/2024/03/19.03.2024-INS-ACAV-2024_Manual_final.pdf
+  20240603151546 application/vnd.ms-excel 17841 https://bucuresti.insse.ro/wp-content/uploads/2024/03/AGENDA-DE-LUCRU-DRSMB_MARTIE_2024.xls
+  20240625175207 application/vnd.ms-excel 13188 https://bucuresti.insse.ro/wp-content/uploads/2024/03/Anexa-6-executie-bugetara-FEBRUARIE-2024-3-.xls
+  20240625174203 application/pdf 315849 https://bucuresti.insse.ro/wp-content/uploads/2024/03/Balanta-fortei-de-munca-la-1-ianuarie-2023.pdf
+  20240523044252 application/vnd.openxmlformats-officedocument.wordprocessingml.document 154151 https://bucuresti.insse.ro/wp-content/uploads/2024/03/Bibliografie_24.04.2024.docx
+  20240714191151 application/pdf 3565644 https://bucuresti.insse.ro/wp-content/uploads/2024/03/BSL_Municipiul-Bucuresti_decembrie-2023.pdf
+== links https://bucuresti.insse.ro/produse-si-servicii/statistici-teritoriale/ (?i)recens|rpl|sector|xls|pdf 40
+  !! URLError: <urlopen error [Errno 101] Network is unreachable>
