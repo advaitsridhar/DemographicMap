@@ -1,3 +1,8 @@
-north_macedonia: MakStat, 2021 census
-  T1020P21.px: 82 areas, single years to 100 (open top)
-north_macedonia: religion category "Jehovah's Witnesses" has no entry in LABELS
+usage: east_probe.py [-h] [--match MATCH] [--match-type MATCH_TYPE]
+                     [--cdx-limit CDX_LIMIT] [--cdx-filter CDX_FILTER]
+                     [--wayback WAYBACK] [--rows ROWS] [--sheets SHEETS]
+                     [--start START] [--cols COLS] [--width WIDTH]
+                     [--grep GREP] [--indent] [--after AFTER] [--links LINKS]
+                     [--context CONTEXT] [--bytes BYTES] [--data DATA]
+                     {cdx,get,post,head} target [target ...]
+east_probe.py: error: unrecognized arguments: том|Средний|Медианный|моложе|трудосп|старше|Из общей|[0-9]).+
