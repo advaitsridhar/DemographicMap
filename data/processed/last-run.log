@@ -1,20 +1,11 @@
-slovakia: DATAcube om7009rr / om7005rr, 31 December 2025
-  om7005rr: 96 territories in 1 s
-  om7009rr: sex totals for 96 territories in 1 s
-  79 districts, national 5,409,407
-  districts against Slovakia: parts sum to 5,409,407 = 5,409,407
-  districts against SK010: parts sum to 739,635 = 739,635
-  districts against SK021: parts sum to 565,462 = 565,462
-  districts against SK022: parts sum to 562,536 = 562,536
-  districts against SK023: parts sum to 661,995 = 661,995
-  districts against SK031: parts sum to 684,190 = 684,190
-  districts against SK032: parts sum to 607,581 = 607,581
-  districts against SK041: parts sum to 810,075 = 810,075
-  districts against SK042: parts sum to 777,933 = 777,933
-  om7009rr: the country's single years in 26 s
-  national median 43.5 (1 January 2026) against Eurostat's 43.0 a year earlier (SK); 2026 is not published yet
-  national median: recomputed 43.5, om7005rr 43.5
-  slovakia: 0 office units unbound
-  slovakia: 0 polygons without an office unit
-  wrote data/processed/slovakia_okres.json (159 kB)
-  wrote slovakia_okres.json: 79 records
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    HTTP 429; waiting 5s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 10s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 20s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 40s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 80s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 160s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 300s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+HTTP 429 from https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px: {"error":"429 - Too many requests in too short timeframe. Please try again later."}
