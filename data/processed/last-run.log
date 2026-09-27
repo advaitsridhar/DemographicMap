@@ -1,8 +1,21 @@
-usage: east_probe.py [-h] [--match MATCH] [--match-type MATCH_TYPE]
-                     [--cdx-limit CDX_LIMIT] [--cdx-filter CDX_FILTER]
-                     [--wayback WAYBACK] [--rows ROWS] [--sheets SHEETS]
-                     [--start START] [--cols COLS] [--width WIDTH]
-                     [--grep GREP] [--indent] [--after AFTER] [--links LINKS]
-                     [--context CONTEXT] [--bytes BYTES] [--data DATA]
-                     {cdx,get,post,head} target [target ...]
-east_probe.py: error: unrecognized arguments: том|Средний|Медианный|моложе|трудосп|старше|Из общей|[0-9]).+
+
+=== che3
+   2636 correspondences, 2121 terminal communes
+   ! 2275 Murten: ['Amtsbezirk Laupen', 'Bezirk See / District du Lac']
+   ! 2932 Beringen: ['Bezirk Oberklettgau', 'Bezirk Schaffhausen']
+   ! 304 Kallnach: ['Amtsbezirk Aarberg', 'Amtsbezirk Laupen']
+   ! 306 Lyss: ['Amtsbezirk Aarberg', 'Amtsbezirk Büren']
+   ! 310 Rapperswil (BE): ['Amtsbezirk Aarberg', 'Amtsbezirk Fraubrunnen']
+   ! 3668 Thusis: ['Bezirk Albula', 'Bezirk Hinterrhein']
+   ! 3901 Chur: ['Bezirk Landquart', 'Bezirk Plessur']
+   ! 4184 Mettauertal: ['Bezirk Brugg', 'Bezirk Laufenburg']
+   ! 4185 Böztal: ['Bezirk Brugg', 'Bezirk Laufenburg']
+   ! 5002 Bellinzona: ['Distretto di Bellinzona', 'Distretto di Riviera']
+   ! 5238 Monteceneri: ['Distretto di Bellinzona', 'Distretto di Lugano']
+   ! 5693 Montanaire: ['District du Gros-de-Vaud', 'District du Jura-Nord vaudois']
+   ! 5806 Jorat-Mézières: ['District de Lavaux-Oron', 'District de la Broye-Vully']
+   ! 6266 Sion: ["District d'Hérens", 'District de Sion']
+   ! 6458 Neuchâtel: ['District de Boudry', 'District de Neuchâtel', 'District du Val-de-Ruz']
+   ! 767 Reutigen: ['Amtsbezirk Niedersimmental', 'Amtsbezirk Thun']
+   ! 770 Stocken-Höfen: ['Amtsbezirk Niedersimmental', 'Amtsbezirk Thun']
+   titles of 650 BFS tables matching religion or language:
