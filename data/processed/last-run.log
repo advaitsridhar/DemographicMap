@@ -1,22 +1,23 @@
-luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
-  102 communes, 12 cantons, Luxembourg 643,941
-  communes against Luxembourg: parts sum to 643,941 = 643,941
-  cantons against Luxembourg: parts sum to 643,941 = 643,941
-  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
-  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
-  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
-  Rosport-Mompach: merged in 2018 from Rosport and Mompach, which the map draws apart; not written
-  luxembourg admin2: 0 office units unbound
-  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
-  105 communes on 1-1-2017 against Luxembourg: parts sum to 590,667 = 590,667
-  national median 39.1 against Eurostat's 39.0 (LU, 1 January 2011)
-  Boevange-sur-Attert: 2,375 (2017); 2011 census 2,037
-  Hobscheid: 3,518 (2017); 2011 census 3,096
-  Mompach: 1,303 (2017); 2011 census 1,065
-  Rosport: 2,293 (2017); 2011 census 2,076
-  Septfontaines: 812 (2017); 2011 census 744
-  Tuntange: 1,720 (2017); 2011 census 1,275
-  luxembourg admin1: 0 office units unbound
-  luxembourg admin1: 0 polygons without an office unit
-  wrote data/processed/luxembourg_commune.json (207 kB)
-  wrote luxembourg_commune.json: 117 records
+switzerland_ages: BFS px-x-0102010000_101, 31 December 2025, read against the districts of 01-01-2009
+  01-01-2026: 7 of the table's communes not in the register ['......0700 Moutier', '......2016 Fétigny', '......2027 Ménières', '......2278 Ulmiz', '......2520 Halten', '......2529 Oekingen', '......4122 Villnachern'], 2 the other way ['Fétigny-Ménières', 'Moutier']
+  the table's 2115 communes are the register's of 31-12-2025
+  communes against Switzerland: parts sum to 9,127,125 = 9,127,125
+  national median 43.1 (1 January 2026) against Eurostat's 42.9 a year earlier (CH); 2026 is not published yet
+  141 units written from 2025; 27 straddled by a commune of today, read from an older year:
+  the balance sheet's communes against Switzerland: parts sum to 9,051,029 = 9,051,029
+  the balance sheet's communes against Switzerland: parts sum to 8,962,258 = 8,962,258
+  the balance sheet's communes against Switzerland: parts sum to 8,815,385 = 8,815,385
+  the balance sheet's communes against Switzerland: parts sum to 8,738,791 = 8,738,791
+  the balance sheet's communes against Switzerland: parts sum to 8,670,300 = 8,670,300
+  the balance sheet's communes against Switzerland: parts sum to 8,606,033 = 8,606,033
+  the balance sheet's communes against Switzerland: parts sum to 8,544,527 = 8,544,527
+  the balance sheet's communes against Switzerland: parts sum to 8,484,130 = 8,484,130
+  the balance sheet's communes against Switzerland: parts sum to 8,419,550 = 8,419,550
+  the balance sheet's communes against Switzerland: parts sum to 8,327,126 = 8,327,126
+  the balance sheet's communes against Switzerland: parts sum to 8,237,666 = 8,237,666
+  the balance sheet's communes against Switzerland: parts sum to 8,139,631 = 8,139,631
+  the balance sheet's communes against Switzerland: parts sum to 8,039,060 = 8,039,060
+  the balance sheet's communes against Switzerland: parts sum to 7,954,662 = 7,954,662
+  the balance sheet's communes against Switzerland: parts sum to 7,864,012 = 7,864,012
+  the balance sheet's communes against Switzerland: parts sum to 7,785,806 = 7,785,806
+switzerland_ages: the 2009 sheet's communes are no register state
