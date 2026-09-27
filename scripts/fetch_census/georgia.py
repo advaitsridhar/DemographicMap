@@ -52,7 +52,21 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from . import east_geo
 from .cod_ps_age import grouped_median
-from .pxweb import http_json
+from .pxweb import TIMEOUT
+
+
+def http_json(url: str, payload: dict | None = None) -> Any:
+    """GET, or POST a PX-Web query; Geostat's answers to a POST open with a BOM."""
+    import urllib.request
+
+    data = json.dumps(payload).encode() if payload is not None else None
+    req = urllib.request.Request(url, data=data, headers={
+        "User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)",
+        "Accept": "application/json",
+        **({"Content-Type": "application/json"} if data else {}),
+    })
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+        return json.loads(resp.read().decode("utf-8-sig", "replace"))
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "georgia.json"
