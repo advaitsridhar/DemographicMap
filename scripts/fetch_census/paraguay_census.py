@@ -841,6 +841,16 @@ def religion_by_polygon(districts: dict[str, dict], admin2: list[dict[str, Any]]
     return out
 
 
+def unfilled(reason: str) -> dict[str, Any]:
+    """The 2022 fields of a polygon no 2022 count is, each saying why.
+
+    A gap never replaces a figure another source has for the polygon (OCHA's
+    projections cover the tangled districts); it says why this source has none.
+    """
+    return {field: gap("not_available", reason)
+            for field in ("population", "median_age", "sex_ratio", "ethnicity", "language")}
+
+
 def drawn_groups(units: dict[str, Any]) -> dict[str, list[str]]:
     """The districts as drawn: {drawn district: the 2022 districts inside it}."""
     tangled = {code for olds, news, _, _ in TANGLES for code in olds + news}
@@ -943,8 +953,7 @@ def main() -> int:
             records.append(record(
                 f"PRY-INE-{fold(dept)}-{fold(polygon)}", polygon, level="admin2", parent="PRY",
                 country="PRY", parent_name=dept, match_by="shape_id", shape_id=shape["id"],
-                ethnicity=gap("not_available", reason), language=gap("not_available", reason),
-                **religion_of[shape["id"]],
+                **unfilled(reason), **religion_of[shape["id"]],
                 sources=[{"field": "note", **source_2022}, source_2002]))
     for dept, polygon in SLIVERS:
         shape = shape_of[(dept, polygon)]
@@ -954,8 +963,7 @@ def main() -> int:
         records.append(record(
             f"PRY-INE-{fold(dept)}-{fold(polygon)}", polygon, level="admin2", parent="PRY",
             country="PRY", parent_name=dept, match_by="shape_id", shape_id=shape["id"],
-            ethnicity=gap("not_available", reason), language=gap("not_available", reason),
-            **religion_of[shape["id"]],
+            **unfilled(reason), **religion_of[shape["id"]],
             sources=[{"field": "note", **source_2022}, source_2002]))
 
     for code, dept in sorted(DEPARTMENTS.items()):
