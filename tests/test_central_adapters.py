@@ -380,8 +380,17 @@ class SlovenianOutliers(unittest.TestCase):
         with mock.patch.object(slovenia, "meta", return_value=meta), \
                 mock.patch.object(slovenia, "query", return_value=cells):
             text = slovenia.lopsided_settlement("211", "Šentrupert", 2026)
-        self.assertIn("Slovenska vas counts 416 men and 58 women", text)
+        self.assertIn("mostly one settlement's: Slovenska vas counts 416 men and 58 women", text)
         self.assertIn("Dob", text)
+        spread = []
+        for code, name, men, women in (("211001", "Vrh", 150.0, 100.0), ("211002", "Brinje", 90.0, 50.0),
+                                       ("211003", "Bistrica", 80.0, 50.0)):
+            spread.append(({"MUNICIPALITY/SETTLEMENT": (code, f"{code} {name}"), "MEASURES": ("1", "")}, men))
+            spread.append(({"MUNICIPALITY/SETTLEMENT": (code, f"{code} {name}"), "MEASURES": ("2", "")}, women))
+        with mock.patch.object(slovenia, "meta", return_value=meta), \
+                mock.patch.object(slovenia, "query", return_value=spread):
+            text = slovenia.lopsided_settlement("211", "Šentrupert", 2026)
+        self.assertIn("spread across its settlements; the largest part is Vrh's", text)
 
     def test_the_oldest_municipality_says_how_many_are_old(self):
         records = [{"codes": {"surs_obcina": "1"}, "name": "Osilnica",

@@ -284,9 +284,14 @@ def lopsided_settlement(code: str, name: str, year: int) -> str:
     excess = sum(x.get("men", 0) - x.get("women", 0) for x in counts.values())
     log(f"  {name}: {excess:+,.0f} men over women, {c['men'] - c['women']:+,.0f} of them in {worst}")
     where = f", where {INSTITUTIONS[worst]} stands" if worst in INSTITUTIONS else ""
-    return (f"The excess is one settlement's: {worst} counts {c['men']:,.0f} men and "
-            f"{c['women']:,.0f} women ({SETTLEMENTS}, {latest}){where}, against "
-            f"{excess:+,.0f} men over women in the whole municipality.")
+    own = c.get("men", 0) - c.get("women", 0)
+    counted = (f"{worst} counts {c.get('men', 0):,.0f} men and {c.get('women', 0):,.0f} women "
+               f"({SETTLEMENTS}, {latest}){where}")
+    if excess and own / excess >= 0.5:
+        return (f"The excess is mostly one settlement's: {counted}, {own:+,.0f} of the "
+                f"municipality's {excess:+,.0f} men over women.")
+    return (f"The excess is spread across its settlements; the largest part is {worst}'s: "
+            f"{counted}, {own:+,.0f} of the municipality's {excess:+,.0f} men over women.")
 
 
 def main() -> int:
