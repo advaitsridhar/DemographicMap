@@ -1,9 +1,14 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  53 of 74 municipalities are the same territory today; renumbered: ['Sveitarfélagið Skagafjörður 5200->5716']; number taken by a merger: ['Tálknafjarðarhreppur 4604: 1,243 against 245']; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Hornafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
-  1 January 2018 in today's division against 1 December 2017: largest gaps Skorradalshreppur 3.6%, Norðurþing 3.6%, Sveitarfélagið Skagafjörður 4.1%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%
-  merged municipalities, 1 December 2017 against today's in 1 January 2018: Eastern Region 12,050/9,650, Northeastern Region 2,034/1,977, Northwestern Region 1,565/1,363, Southern Peninsula 3,384/3,335, Southern Region 0/2,269, Western Region 1,237/1,215, Westfjords 1,268/1,243
-iceland: merged municipalities do not make today's: {'Eastern Region': (12050.0, 9650.0), 'Northwestern Region': (1565.0, 1363.0), 'Southern Region': (0.0, 2269.0)}
+luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)
+  102 communes, 12 cantons, Luxembourg 643,941
+  communes against Luxembourg: parts sum to 643,941 = 643,941
+  cantons against Luxembourg: parts sum to 643,941 = 643,941
+  national median 39.7 against Eurostat's 39.7 (LU, 1 January 2022)
+  Habscht: merged in 2018 from Hobscheid and Septfontaines, which the map draws apart; not written
+  Helperknapp: merged in 2018 from Boevange-sur-Attert and Tuntange, which the map draws apart; not written
+  Rosport-Mompach: merged in 2018 from Rosport and Mompach, which the map draws apart; not written
+  luxembourg admin2: 0 office units unbound
+  luxembourg admin2: 6 polygons without an office unit: Boevange-sur-Attert; Hobscheid; Mompach; Rosport; Septfontaines; Tuntange
+  luxembourg admin1: 0 office units unbound
+  luxembourg admin1: 0 polygons without an office unit
+  wrote data/processed/luxembourg_commune.json (196 kB)
+  wrote luxembourg_commune.json: 117 records
