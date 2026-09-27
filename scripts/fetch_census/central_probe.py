@@ -1931,7 +1931,26 @@ def svn9() -> None:
         log(f"   {name}: total {v.get('0')}, men {v.get('1')}, women {v.get('2')}")
 
 
+def che16() -> None:
+    """The 2009 balance sheet's rows the register lacks, and the 2010 mergers' predecessors in it."""
+    import io as _io
+    import openpyxl
+    status, _, body = fetch("https://dam-api.bfs.admin.ch/hub/api/dam/assets/36681837/master", timeout=300)
+    book = openpyxl.load_workbook(_io.BytesIO(body), read_only=True, data_only=True)
+    rows = list(book["2009"].iter_rows(values_only=True))
+    want = re.compile(r"^\.*\s*0*(4505|4670|4695|5269|5397|4161|4163|4162|4164|4165|4166|5171|5173|5174|"
+                      r"5175|5176|5003|5004|5001)\b")
+    context = None
+    for r in rows:
+        first = str(r[0] or "").strip()
+        if not re.match(r"^\.*\s*\d", first):
+            context = first
+        if want.match(first):
+            log(f"   {first} | 1 Jan {r[1]} | 31 Dec {r[9]} | under {context}")
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "che16": che16,
     "che15": che15, "nld13": nld13, "svn9": svn9,
     "aut12": aut12, "nld12": nld12, "che14": che14, "lux8": lux8, "svn8": svn8, "hun15": hun15,
     "hun14": hun14, "che13": che13, "lux7": lux7, "pol5": pol5, "nld11": nld11, "aut11": aut11,
