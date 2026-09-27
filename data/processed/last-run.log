@@ -1,39 +1,12 @@
-== links https://www.cystat.gov.cy/en/SubthemeStatistics?id=46 census|xls|2021|Census|Population 40
-  HTTP 200 text/html; charset=utf-8 73,613 bytes
-  https://www.cystat.gov.cy/SubthemeStatistics?id=46  [Population]
-  https://cystatdb23px.cystat.gov.cy/pxweb/en/8.CYSTAT-DB/8.CYSTAT-DB__Population__  [CYSTAT-DB]
-  https://www.cystat.gov.cy/Announcement?id=74370  [Census of Population and Housing 2021 (New Table) CYSTAT-DB (ONLINE DATABASE) 27 Aug 2026]
-  https://www.cystat.gov.cy/Announcement?id=74354  [Census of Population and Housing 2021 (New Tables) CYSTAT-DB (ONLINE DATABASE) 18 Aug 2026]
-  https://www.cystat.gov.cy/Announcement?id=74258  [Population 2025 (Provisional Data Update) CYSTAT-DB (ONLINE DATABASE) 09 Jul 2026]
-  https://www.cystat.gov.cy/PressRelease?id=73731  [Demographic Statistics 2024 The population in the Government controlled area of Cyprus is ]
-  https://www.cystat.gov.cy/Announcement?id=73619  [Census of Population and Housing 2021 (New Table) CYSTAT-DB (ONLINE DATABASE) 11 Nov 2025]
-  https://www.cystat.gov.cy/MethodologicalDisplay?s=46  [Methodological Information - Population]
-  https://www.cystat.gov.cy/en/MethodologicalDetails?m=2314  [Methodological Information - Census of Population and Housing 2021]
-  https://www.cystat.gov.cy/QuestionnaireList?s=46  [Survey Questionnaires - Population]
-  https://www.cystat.gov.cy/QualityReportList?s=46  [Quality / Metadata Reports - Population]
-  https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_demography  [EUROSTAT - Statistics Explained - Population and Demography]
-  https://ec.europa.eu/eurostat/web/population-demography  [EUROSTAT - Population and Demography Statistics]
-  (13 links shown)
-== links https://www.cystat.gov.cy/en/KeyFiguresList?s=46 census|xls|Census 30
-  HTTP 200 text/html; charset=utf-8 79,758 bytes
-  https://library.cystat.gov.cy/NEW/POP_CEN_11-POP_MUN_PC_STREET-081123.xlsx  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-BIRTH_DEATH_MIGRATION-A74_19-EN-301120.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-MARRIAGE_DIVORCE-A74_19-EN-301120.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-POPULATION-A74_19-EN-301120.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-DEMOGRAPHY-A90_19-EN-301120.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-SUMMARY-A95_19-EN-301120.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-BIRTH_DEATH_MIGRATION-A74_18-EN-291119.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-MARRIAGE_DIVORCE-A74_18-EN-291119.xls  []
-  https://library.cystat.gov.cy/Documents/KeyFigure/POP-POPULATION-A74_18-EN-291119.xls  []
-  https://library.cystat.gov.cy/NEW/POP_CEN_11-POP_PLACE_RESID-EN-220419.xls  []
-  (10 links shown)
-== xlsrow https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f 0 ΑΓΙΟ|ΑΓΙΟΝ|ΟΡΟΣ 8
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 70,805 bytes disposition=attachment; filename="mon_plith_2021.xlsx"
-    r77: 4 | 99 | ΑΓΙΟ ΟΡΟΣ (ΑΥΤΟΔΙΟΙΚΗΤ | 1811 | 1746 | 1811 | 1746 | 0 | 0 | 100 | 0 | -3.5891772501380452
-    r78: 5 | 9901 | ΑΓΙΟ ΟΡΟΣ (ΑΥΤΟΔΙΟΙΚΗΤ | 1811 | 1746 | 1811 | 1746 | 0 | 0 | 100 | 0
-    r252: 5 | 4405 | ΔΗΜΟΣ ΠΥΛΟΥ - ΝΕΣΤΟΡΟΣ | 21077 | 17194 | 10742 | 8838 | 10335 | 8356 | 51.401651738978714 | 48.598348261021286
-    r287: 5 | 4802 | ΔΗΜΟΣ ΑΓΙΟΥ ΔΗΜΗΤΡΙΟΥ | 71294 | 71664 | 34668 | 34624 | 36626 | 37040 | 48.314355883009604 | 51.6856441169904
-    r318: 5 | 5104 | ΔΗΜΟΣ ΝΙΚΑΙΑΣ - ΑΓΙΟΥ  | 105430 | 103488 | 51200 | 50061 | 54230 | 53427 | 48.37372448979592 | 51.62627551020408
-    r338: 5 | 5502 | ΔΗΜΟΣ ΑΓΙΟΥ ΕΥΣΤΡΑΤΙΟΥ | 270 | 257 | 130 | 138 | 140 | 119 | 53.69649805447471 | 46.30350194552529
-    r405: 5 | 7201 | ΔΗΜΟΣ ΑΓΙΟΥ ΝΙΚΟΛΑΟΥ | 27074 | 27785 | 13372 | 13634 | 13702 | 14151 | 49.06964189310779 | 50.93035810689221
-    r411: 5 | 7302 | ΔΗΜΟΣ ΑΓΙΟΥ ΒΑΣΙΛΕΙΟΥ | 7427 | 7018 | 3755 | 3578 | 3672 | 3440 | 50.98318609290396 | 49.016813907096044
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn (?s){s*.Indikator.{0,400} 3
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  0 matches
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn Teritorijas-sNSTJ.:s.[^,]{1,40} 40
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  0 matches
+== grep https://data.stat.gov.rs/Home/Result/3104020201?languageCode=sr-Latn Starost.:s.[^,]{1,30} 40
+  HTTP 200 text/html; charset=utf-8 1,140,684 bytes
+  0 matches
+== grep https://data.stat.gov.rs/Home/Result/3104020301?languageCode=sr-Latn Veroispovest[^:]{0,5}:s.[^,]{1,60} 60
+  HTTP 200 text/html; charset=utf-8 3,484,432 bytes
+  0 matches
