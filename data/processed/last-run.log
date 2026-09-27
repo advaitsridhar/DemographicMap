@@ -1,77 +1,47 @@
-
-=== pol2
-
-## https://bdl.stat.gov.pl/api/v1/subjects/P4280?format=json&lang=pl
-   HTTP 200, 620 bytes, application/json; charset=utf-8
-   {"id":"P4280","parentId":"G481","name":"Pracujący w gospodarce narodowej wg płci i miejsca zamieszkania (dane miesięczne)","hasVariables":true,"children":[],"years":[2022,2023,2024,2025,2026],"availability":[{"year":"2022","levels":[6],"quarterly":"K"},{"year":"2023","levels":[6],"quarterly":"K"},{"year":"2024","levels":[6],"quarterly":"K"},{"year":"2025","levels":[6],"quarterly":"K"},{"year":"2026","levels":[6],"quarterly":"K"}],"dimensions":["Miesiące","Zakres przedmiotowy","Płeć"],"lastUpdate":"2026-09-22T10:10:13.06","description":"Stan na koniec miesiąca. Bez pracujących zamieszkałych za granicą."}
-
-## https://bdl.stat.gov.pl/api/v1/subjects/search?name=roczniki&format=json&page-size=50&lang=pl
-   HTTP 200, 54 bytes, application/json; charset=utf-8
-
-## https://bdl.stat.gov.pl/api/v1/subjects/search?name=mediana&format=json&page-size=50&lang=pl
-   HTTP 200, 1,498 bytes, application/json; charset=utf-8
-   - P3891 lvls [5] vars True Mediana cen za 1 m2 lokali mieszkalnych | parent G596
-   - P3892 lvls [5] vars True Mediana cen za 1 m2 lokali mieszkalnych (dane kwartalne) | parent G596
-   - P3787 lvls [5] vars True Mediana cen za 1 m2 lokali mieszkalnych sprzedanych w ramach transakcji rynkowych | parent G597
-   - P3793 lvls [5] vars True Mediana cen za 1 m2 lokali mieszkalnych sprzedanych w ramach transakcji rynkowych (dane kwartalne) | parent G597
-   - P3814 lvls [5] vars True Mediana wieku ludności według płci | parent G7
-   - P3813 lvls [3] vars True Mediana wieku ludności według płci w podziale na miasto i wieś | parent G7
-   - P4610 lvls [5, 6] vars True Mediana wynagrodzeń miesięcznych brutto według badania Rozkład wynagrodzeń w gospodarce narodowej | parent G403
-
-## https://bdl.stat.gov.pl/api/v1/subjects/search?name=struktura%20ludno&format=json&page-size=50&lang=pl
-   HTTP 200, 54 bytes, application/json; charset=utf-8
-
-## https://bdl.stat.gov.pl/api/v1/subjects/search?name=ludno%C5%9B%C4%87%20wed%C5%82ug&format=json&page-size=50&lang=pl
-   HTTP 200, 795 bytes, application/json; charset=utf-8
-   - P4463 lvls [6] vars True Ludność według płci i okresu zamieszkiwania w miejscowości aktualnego zamieszkania | parent G640
-   - P4488 lvls [5] vars True Ludność według rodzaju głównego źródła utrzymania i płci | parent G640
-
-## https://bdl.stat.gov.pl/api/v1/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl
-   HTTP 200, 1,222 bytes, application/json; charset=utf-8
-   {"totalRecords":380,"links":{"first":"https://bdl.stat.gov.pl/api/v1/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl&page=0","self":"https://bdl.stat.gov.pl/api/v1/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl&page=0","next":"https://bdl.stat.gov.pl/api/v1/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl&page=1","last":"https://bdl.stat.gov.pl/api/v1/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl&page=126"},"variableId":1650633,"measureUnitId":80,"aggregateId":1,"lastUpdate":null,"results":[{"id":"011212001000","name":"Powiat bocheński","values":[{"year":"2023","val":41.0,"attrId":1},{"year":"2024","val":42.0,"attrId":1},{"year":"2025","val":42.0,"attrId":1},{"year":"2026","val":42.0,"attrId":1}]},{"id":"011212006000","name":"Powiat krakowski","values":[{"year":"2023","val":42.0,"attrId":1},{"year":
-
-=== cze2
-
-## https://csu.gov.cz/otevrena_data
-   HTTP 200, 67,432 bytes, text/html; charset=utf-8
-   1 distinct matches of 'href=\\"[^\\"]+\\"[^>]*>[^<]*(?:[Vv]ěk|[Oo]byvatel)[^<]*<'
-   - href="https://csu.gov.cz/obyvatelstvo" class="csu-header-subnav__link">Obyvatelstvo<
-
-## https://csu.gov.cz/otevrena_data
-   HTTP 200, 67,432 bytes, text/html; charset=utf-8
-   4 distinct matches of 'href=\\"[^\\"]*(?:produkty|katalog|sady)[^\\"]*\\"'
-   - href="https://csu.gov.cz/katalog-produktu"
-   - href="https://data.gov.cz/datov%C3%A9-sady?poskytovatel&#x3D;https%3A%2F%2Frpp-opendata.egon.gov.cz%2Fodrpp%2Fzdroj%2Forg%C3%A1n-ve%C5%99ejn%C3%A9-moci%2F00025593"
-   - href="https://csu.gov.cz/otevrena-data-v-katalogu-produktu-csu"
-   - href="https://csu.gov.cz/produkty/registr-ekonomickych-subjektu-otevrena-data"
-
-=== svk2
-
-## https://data.statistics.sk/api/v2/dimension/om7009rr/om7009rr_vuc?lang=en
-   HTTP 200, 4,755 bytes, application/json
-   96 values: M=City; SK_CAP=Bratislava (districts I - V); SK0=Slovak Republic; SK01=Region of Bratislava (NUTS2); SK010=Region of Bratislava; SK0101=District of Bratislava I; SK0102=District of Bratislava II; SK0103=District of Bratislava III; SK0104=District of Bratislava IV; SK0105=District of Bratislava V; SK0106=District of Malacky; SK0107=District of Pezinok ... V=Country
-
-## https://data.statistics.sk/api/v2/dimension/om7009rr/om7009rr_obd?lang=en
-   HTTP 200, 388 bytes, application/json
-   0 values: 
-
-## https://data.statistics.sk/api/v2/dimension/om7009rr/om7009rr_ukaz?lang=en
-   HTTP 200, 268 bytes, application/json
-   2 values: IN010052=Permanently living mid-year population (Person); IN010053=Permanently living population on 31 December (Person)
-
-## https://data.statistics.sk/api/v2/dimension/om7009rr/om7009rr_poh?lang=en
-   HTTP 200, 166 bytes, application/json
-   3 values: SPOLU=Total; 1=Men; 2=Women
-
-## https://data.statistics.sk/api/v2/dimension/om7009rr/om7009rr_vek?lang=en
-   HTTP 200, 3,091 bytes, application/json
-   113 values: Spolu=Total; Y0=Zero years; Y1=1 year; Y2=2 years; Y3=3 years; Y4=4 years; Y5=5 years; Y6=6 years; Y7=7 years; Y8=8 years; Y9=9 years; Y10=10 years ... Y_GE110=110 years or over
-
-## https://data.statistics.sk/api/v2/dimension/om7005rr/om7005rr_ukaz?lang=en
-   HTTP 200, 705 bytes, application/json
-   9 values: IN010084=Economic persons dependency ratio (Percent); IN010085=Young age dependency ratio (Percent); IN010086=Old age dependency ratio (Percent); IN010087=Ageing index (Percent); IN010088=Median age (Year); IN010089=Mean age of resident (Year); IN010147=Proportion of persons of the pre-productive age (Percent); IN010148=Proportion of persons of the productive age (Percent); IN010149=Proportion of persons of the post- productive age (Percent)
-
-## https://www.scitanie.sk/
-   HTTP 200, 38,913 bytes, text/html; charset=UTF-8
-   1 distinct matches of 'href=\\"[^\\"]*(?:otvoren|open|data|csv|xlsx)[^\\"]*\\"'
-   - href="https://statdata.statistics.sk/public/ui/dc/domov/data-view"
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_00.px 
+  HTTP 200 application/json; charset=utf-8 1,848 bytes
+  title: Population by age, sex and municipality, 2011 and 2024
+  var Viti (Year): 2 values: 0=2011, 1=2024
+  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogovc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Gjinia (Sex): 3 values: 0=Total, 1=Male, 2=Female
+  var Mosha (Age): 87 values: 0=0, 1=1, 2=2, 3=3, 4=4, 5=5, 6=6, 7=7, 8=8, 9=9, 10=10, 11=11
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_05.px 
+  HTTP 200 application/json; charset=utf-8 1,221 bytes
+  title: Population by ethnicity and sex at country and municipal level for the years 2011 and 2024
+  var Gjinia (Sex): 3 values: 0=Total, 1=Female, 2=Male
+  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Viti (Year): 2 values: 0=2024, 1=2011
+  var Përkatësia etnike (Ethnic affiliation): 11 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosniak, 4=Turk, 5=Romani, 6=Ashkali, 7=Egyptian, 8=Gorani, 9=Others, 10=Prefers not to answer
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_63.px 
+  HTTP 200 application/json; charset=utf-8 1,239 bytes
+  title: Population by ethnicity and sex at country and municipal level for the years 2011 and 2024 (with estimation)
+  var Gjinia (Sex): 3 values: 0=Total, 1=Female, 2=Male
+  var Komuna (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Viti (Year): 2 values: 0=2024, 1=2011
+  var Përkatësia etnike (Ethnic affiliation): 11 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosniak, 4=Turk, 5=Romani, 6=Ashkali, 7=Egyptian, 8=Gorani, 9=Others, 10=Prefers not to answer
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_10.px 
+  HTTP 200 application/json; charset=utf-8 1,167 bytes
+  title: Population by religion and sex at country and municipal level for the years 2011 and 2024
+  var KOMUNA (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Viti (Year): 2 values: 0=2024, 1=2011
+  var Gjinia (Sex): 3 values: 0=Male, 1=Female, 2=Total
+  var RELIGJIONI (Religion): 7 values: 0=Total, 1=Islam, 2=Orthodox, 3=Catholic, 4=Others, 5=No religious affiliation, 6=Prefers not to answer
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/census2024_22.px 
+  HTTP 200 application/json; charset=utf-8 1,180 bytes
+  title: Population by mother tongue and sex at the national and municipal level for the years 2011 and 2024
+  var Year (Year): 2 values: 0=2011, 1=2024
+  var Sex (Sex): 3 values: 0=Total, 1=Male, 2=Female
+  var Municipality (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogoc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Mother tongue (Mother tongue): 8 values: 0=Total, 1=Albanian, 2=Serb, 3=Bosnian, 4=Turkish, 5=Romani, 6=Other (specify), 7=Not available
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab04census.px 
+  HTTP 200 application/json; charset=utf-8 1,172 bytes
+  title: Population by municipality, gender and age group 2024 (with estimation)
+  var Viti (Municipality): 39 values: 0=KOSOVA, 1=Deçan, 2=Gjakovë, 3=Gllogovc, 4=Gjilan, 5=Dragash, 6=Istog, 7=Kaçanik, 8=Klinë, 9=Fushë Kosovë, 10=Kamenicë, 11=Mitrovicë
+  var Gjinia (Sex): 3 values: 0=Total, 1=Male, 2=Female
+  var Grupmosha (Age group): 19 values: 0=Total, 1=0-4, 2=5-9, 3=10-14, 4=15-19, 5=20-24, 6=25-29, 7=30-34, 8=35-39, 9=40-44, 10=45-49, 11=50-54
+== px https://askdata.rks-gov.net/api/v1/en/ASKdata/Census%20population/1_Demographic_Characteristics/tab02census.px 
+  HTTP 200 application/json; charset=utf-8 951 bytes
+  title: Population by municipalities and gender, 2011 and 2024
+  var Viti (Viti): 2 values: 2024=2024, 2011=2011
+  var Viti (Municipality): 39 values: 0=Deçan, 1=Gjakovë, 2=Gllogovc, 3=Gjilan, 4=Dragash, 5=Istog, 6=Kaçanik, 7=Klinë, 8=Fushë Kosovë, 9=Kamenicë, 10=Mitrovicë, 11=Leposaviq
+  var Grupmosha (Population): 3 values: 0=Total, 1=Male, 2=Female
