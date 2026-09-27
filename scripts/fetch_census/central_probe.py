@@ -948,7 +948,37 @@ def hun11() -> None:
         show(f"{base}/{path}", raw=800)
 
 
+def hun12() -> None:
+    base = "https://nepszamlalas2022.ksh.hu/api"
+    version = json.loads(text(fetch(f"{base}/version")[2]))["version"]
+    page = text(fetch("https://nepszamlalas2022.ksh.hu/adatbazis/app.js?v1")[2])
+    for m in list(re.finditer(r"OBS_VALUE", page))[:3]:
+        log(f"   ...{page[max(0, m.start() - 600):m.start() + 400]}...".replace("\n", " "))
+    for flow in ("WBS001", "WBS003"):
+        data = json.loads(text(fetch(f"{base}/structure/{flow}/{version}")[2]))
+        dsds = jpath(data, "data.dataStructures") or []
+        for dsd in dsds:
+            dims = jpath(dsd, "dataStructureComponents.dimensionList.dimensions") or []
+            log(f"   {flow} dimensions: {[(d.get('id'), jpath(d, 'localRepresentation.enumeration')) for d in dims]}")
+        for cl in jpath(data, "data.codelists") or []:
+            codes = cl.get("codes", [])
+            if cl["id"] in ("CL_TERUL_GEO4", "CL_TERUL_GEO5"):
+                named = [(c["id"], jpath(c, "names.en") or c.get("name"), c.get("parent")) for c in codes]
+                log(f"   {cl['id']}: {len(codes)}; first 30: {named[:30]}")
+                log(f"   {cl['id']}: codes by length: {Counter_(len(c['id']) for c in codes)}")
+                log(f"   {cl['id']}: sample 5-char: {[n for n in named if len(n[0]) == 5][:10]}")
+                log(f"   {cl['id']}: sample 3-char: {[n for n in named if len(n[0]) == 3][:40]}")
+            if cl["id"] in ("CL_TEL_SZ_ADAT", "CL_KEV_AGE"):
+                log(f"   {cl['id']}: {[(c['id'], jpath(c, 'names.en') or c.get('name'), c.get('parent')) for c in codes]}"[:6000])
+    tries = [f"dataflows/WBS001/{version}/d/TIME_PERIOD:2022,TERUL_GEO4:HU110,NEME_SEX:M,KEV_AGE",
+             f"dataflows/WBS001/{version}/d/TIME_PERIOD:2022,TERUL_GEO4:HU110,NEME_SEX:M+F,KEV_AGE:TOTAL+Y1+Y2",
+             f"dataflows/WBS001/{version}/d/TERUL_GEO4:HU110"]
+    for path in tries:
+        show(f"{base}/{path}", raw=900)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "hun12": hun12,
     "hun11": hun11,
     "hun10": hun10,
     "hun9": hun9, "svk9": svk9,
