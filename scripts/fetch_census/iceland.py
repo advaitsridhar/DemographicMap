@@ -67,7 +67,7 @@ OLD_URL = ("https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_bygg
 NOW_URL = ("https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__"
            "sveitarfelog/MAN02005.px")
 OUT = PROCESSED / "iceland_municipality.json"
-PAUSE = 6.0                          # Hagstofa answers 429 to a brisker pace
+PAUSE = 12.0                         # Hagstofa answers 429 to a brisker pace
 VINTAGE = 2017
 
 REGION = {"0": "Capital Region", "1": "Capital Region", "2": "Southern Peninsula",

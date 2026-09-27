@@ -553,7 +553,7 @@ def main() -> int:
     newer = ethnicity_2021(read_perturbed(ETH_2021_VILNIUS, ETHNIC_2021),
                            read_perturbed(ETH_2021_URBAN, ETHNIC_2021),
                            names, municipalities, counties, census_total)
-    for code, (counts, total, how) in newer.items():
+    for code, (counts, counted, how) in newer.items():
         held = sum(counts.values())
         source = ETH_2021_VILNIUS if how == "vilnius" else ETH_2021_URBAN
         comp[code].update({
@@ -564,10 +564,10 @@ def main() -> int:
                 "mother tongue and religion, weighted to all residents (Statistics Lithuania, "
                 + ("'Largest ethnic groups in Vilnius county'" if how == "vilnius" else
                    "'Urban areas population by largest ethnic group', for the city, whose "
-                   f"{total:,.0f} people are the municipality's in the same census")
+                   f"{counted:,.0f} people are the municipality's in the same census")
                 + "). Only the five largest groups are named; 'Other' holds the rest and 'Not "
                 "stated' those who gave none. The office perturbs the cells for "
-                f"confidentiality, so the groups make {held:,.0f} of the {total:,.0f} people "
+                f"confidentiality, so the groups make {held:,.0f} of the {counted:,.0f} people "
                 "counted; the shares are of the groups."),
             "_ethnicity_source": {
                 "field": "ethnicity", "name": f"{SOURCE}, 2021 census", "url": source[1],
