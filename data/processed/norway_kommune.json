@@ -34404,16 +34404,37 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 46.4,
+        "count": 323114
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 31.2,
+        "count": 217713
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 22.4,
+        "count": 156183
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "03"
@@ -34422,7 +34443,10 @@
     "shape_id": "71437522B68338217323905",
     "aliases": [
       "Oslove"
-    ]
+    ],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 323,114 members of the Church of Norway and 156,183 members of faith and life-stance communities outside it, of a population of 697,010; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F11",
@@ -34444,23 +34468,47 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 68.6,
+        "count": 330888
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 18.6,
+        "count": 89978
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 12.8,
+        "count": 61779
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "11"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B34429177417176",
-    "aliases": []
+    "aliases": [],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 330,888 members of the Church of Norway and 61,779 members of faith and life-stance communities outside it, of a population of 482,645; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F15",
@@ -34482,23 +34530,47 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 77.8,
+        "count": 206506
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 14.1,
+        "count": 37419
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 8.1,
+        "count": 21619
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "15"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B77332488034218",
-    "aliases": []
+    "aliases": [],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 206,506 members of the Church of Norway and 21,619 members of faith and life-stance communities outside it, of a population of 265,544; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F18",
@@ -34520,16 +34592,37 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 79.1,
+        "count": 190229
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 14.3,
+        "count": 34353
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 6.6,
+        "count": 15763
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "18"
@@ -34538,7 +34631,10 @@
     "shape_id": "71437522B77650769364207",
     "aliases": [
       "Nordlánnda"
-    ]
+    ],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 190,229 members of the Church of Norway and 15,763 members of faith and life-stance communities outside it, of a population of 240,345; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F30",
@@ -34616,23 +34712,47 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 78.3,
+        "count": 290287
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 14.0,
+        "count": 52057
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 7.6,
+        "count": 28259
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "34"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B26647745844979",
-    "aliases": []
+    "aliases": [],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 290,287 members of the Church of Norway and 28,259 members of faith and life-stance communities outside it, of a population of 370,603; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F38",
@@ -34710,23 +34830,47 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 66.1,
+        "count": 204294
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 17.7,
+        "count": 54565
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 16.2,
+        "count": 49984
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "42"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B35395315697437",
-    "aliases": []
+    "aliases": [],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 204,294 members of the Church of Norway and 49,984 members of faith and life-stance communities outside it, of a population of 308,843; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F46",
@@ -34748,23 +34892,47 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 73.4,
+        "count": 468644
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 17.2,
+        "count": 109659
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 9.5,
+        "count": 60518
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "46"
     },
     "match_by": "shape_id",
     "shape_id": "71437522B18029124622078",
-    "aliases": []
+    "aliases": [],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 468,644 members of the Church of Norway and 60,518 members of faith and life-stance communities outside it, of a population of 638,821; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F50",
@@ -34786,16 +34954,37 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Church of Norway",
+        "pct": 75.1,
+        "count": 354005
+      },
+      {
+        "group": "Not a member of a registered faith or life-stance community",
+        "pct": 17.0,
+        "count": 80054
+      },
+      {
+        "group": "Member of another faith or life-stance community",
+        "pct": 7.9,
+        "count": 37065
+      }
+    ],
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Norway (SSB), table 12026",
+        "url": "https://www.ssb.no/en/statbank/table/12026",
+        "year": 2020
+      }
+    ],
     "country": "NOR",
     "codes": {
       "ssb": "50"
@@ -34804,7 +34993,10 @@
     "shape_id": "71437522B86105181076448",
     "aliases": [
       "Trööndelage"
-    ]
+    ],
+    "religion_year": 2020,
+    "religion_basis": "registered membership",
+    "religion_note": "Registered membership at the end of 2020 (SSB table 12026, KOSTRA): 354,005 members of the Church of Norway and 37,065 members of faith and life-stance communities outside it, of a population of 471,124; the rest belong to neither. A count of membership, not of belief. SSB publishes the communities outside the Church by religion only by fylke, so here they are one group."
   },
   {
     "id": "NOR-SSB-F54",

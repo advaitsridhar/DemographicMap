@@ -1,192 +1,30 @@
-probe_pdf: https://web.archive.org/web/20230628153917id_/https://nso.gov.mt/wp-content/uploads/NSO_Census-Questionnaire_2021.pdf
-  892,278 bytes
-  13 pages
-probe_pdf: 13 pages, 3 mention ['religion', 'language', 'ethnic', 'speak', 'citizenship', 'belief']
-=== front matter ===
-Dear Resident(s),
-The national Census of Population and Housing will be held on Sunday 21 November 2021 and is the official counting process of 
-every resident and dwelling in Malta and Gozo as of midnight of this day. The National Statistics Office will collect, analyse and 
-publish all results related to the Census. 
-You are kindly requested to fill in this questionnaire and provide all information to the best of your knowledge. Participation in 
-the Census is mandatory and this information is being requested in accordance with the Malta Census Act of 1948 and the Data 
-Protection Act – Cap. 586 of the Laws of Malta implementing the General Data Protection Regulation (GDPR). The Office assures you 
-that all data collected shall remain confidential and used for statistical purposes only. The Office is obliged to protect your identity 
-and refrain from divulging any data to third parties, that might lead to the identification of persons or entities.
-In case of difficulty, you may seek assistance from the Enumerator who shall be contacting you between 8 and 28 November 2021. 
-You may also contact us on freephone 1710 or send an email to census2021@gov.mt.
-Thank you in advance for your co-operation.
-Etienne Caruana
-CENSUS OFFICER
-Reference Number
-WRITE IN BLOCK LETTERS
-House No.
-Entrance/Block (e.g. Ent. A, Block 2) Flat Number
-Street Name
-House Name
-
-=== pages mentioning ['religion', 'language', 'ethnic', 'speak', 'citizenship', 'belief'] (first 30) ===
-
---- page 4 ----------------------------------------------------
-Which is your country of birth?
-(Mark one circle only)
-What is your racial origin?
-(Mark one circle only)
-Indicate your race through your biological parent/s.
-Do you have Maltese citizenship?
-(Mark one circle only)
-Do you have any foreign citizenship?
-(Mark one circle only)
-Which foreign citizenship do you have?
-(Mark all that apply)
-10 1
- Malta
-2
- United Kingdom
-3
- Italy
-4
- Germany
-5
- Serbia
-6
- Russia
-7
- Canada
-8
- United States
-9
- Australia
-10
- Philippines
-11
- Other (Specify)
-11 1
- Caucasian
-2
- Asian
-3
- African
-4
- Arab
-5
- Hispanic or Latino
-6
- Other (Specify)
-7
- More than one
-           racial origin
-12 1
- Yes
-2
- No
-13 1
- Yes
-2
- No GO TO 15
-14 1
- British
-2
- Italian
-3
- German
-4
- Serbian
-5
- Russian
-6
- Canadian
-7
- American
-8
- Australian
-9
- Philippine
-10
- Other (Specify)
-In this question a square is used,
-therefore you can choose/mark
-more than one option
-1 
-
---- page 7 ----------------------------------------------------
-Do you have any long-term illness, disease and/or chronic condition
-(e.g. asthma, diabetes, heart disease, elevated blood pressure/
-cholesterol, chronic depression, etc.)?
-(Mark one circle only)
-Consider any illness or condition which has lasted, or is expected to last,
-for six (6) months or more.
-Do you have any of the following difficulties?
-(Mark one circle only)
-Consider difficulties which have been limiting you
-for at least the past six (6) months, or which are
-expected to continue for six (6) months or more.
-What is the main language that you grew up speaking
-from early childhood?
-(Mark one circle only)
-23
-Applicable only if you are five (5) years old or over.
-24
-1 Yes
-2 No
-1 No difficulty
-2 Yes, some difficulty
-3 Yes, a lot of difficulty
-4 Cannot see at all
-1 No difficulty
-2 Yes, some difficulty
-3 Yes, a lot of difficulty
-4 Cannot hear at all
-1 No difficulty
-2 Yes, som
-
---- page 8 ----------------------------------------------------
-From where are you receiving your main formal education?
-(Mark one circle only)
-Are you able to read and write a short, simple sentence in at least one
-language?
-(Mark one circle only)
-What religion, religious denomination or body do you belong
-to/identify yourself with (regardless of the level of practice)?
-(Mark one circle only)
-Applicable only if you are ten (10) years old or over.
-1
- Yes
-2
- No
-26
-Applicable only if you are aged between five (5) and fifteen (15) years.
-1 Roman Catholic
-2
- Orthodox
-3
- Church of England
-4
- Protestant
-5
- Islam
-6
- Judaism
-7
- Buddhism
-8
- Hinduism
-9
- Other (Specify)
-10
- No religious affiliation
-1
- Public/State school
-2
- Church school
-3
- Private school
-4
- Home schooling by a
-           professional
-5
- Other (Specify)
-6
- No formal education
-           received
-27
-STOP IF YOU ARE AGED FOURTEEN (14) OR LESS.  CONTINUE ONLY IF YOU ARE AGED FIFT
+norway: SSB 07459 and 12026 for the 2017 kommuner
+  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
+    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
+  Norway 1 January 2017: 5,258,317 people, median age 39.3
+  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
+    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
+    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
+  12026 Oslo 2025: no members outside the Church among 728,714 people -- not published rather than none; left out
+  12026 Oslo 2024: no members outside the Church among 724,290 people -- not published rather than none; left out
+  12026 Rogaland 2025: no members outside the Church among 508,922 people -- not published rather than none; left out
+  12026 Rogaland 2024: no members outside the Church among 504,496 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2025: no members outside the Church among 273,169 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2024: no members outside the Church among 272,413 people -- not published rather than none; left out
+  12026 Nordland 2025: no members outside the Church among 243,272 people -- not published rather than none; left out
+  12026 Nordland 2024: no members outside the Church among 243,582 people -- not published rather than none; left out
+  12026 Innlandet 2025: no members outside the Church among 379,488 people -- not published rather than none; left out
+  12026 Innlandet 2024: no members outside the Church among 377,556 people -- not published rather than none; left out
+  12026 Agder 2025: no members outside the Church among 323,930 people -- not published rather than none; left out
+  12026 Agder 2024: no members outside the Church among 322,188 people -- not published rather than none; left out
+  12026 Vestland 2025: no members outside the Church among 658,342 people -- not published rather than none; left out
+  12026 Vestland 2024: no members outside the Church among 655,210 people -- not published rather than none; left out
+    HTTP 429; waiting 5s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 10s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 20s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 40s :: https://data.ssb.no/api/v0/en/table/12026
+  12026 Trøndelag 2025: no members outside the Church among 489,166 people -- not published rather than none; left out
+  12026 Trøndelag 2024: no members outside the Church among 486,815 people -- not published rather than none; left out
+  labels the group tree cannot place: ['Member of another faith or life-stance community', 'Not a member of a registered faith or life-stance community']
+  wrote data/processed/norway_kommune.json (1195 kB)
+  wrote norway_kommune.json: 430 records
