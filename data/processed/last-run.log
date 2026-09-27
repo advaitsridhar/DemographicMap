@@ -1,74 +1,26 @@
-== links https://www.instat.gov.al/en/themes/censuses/ census|2023|xls 40
-  HTTP 200 text/html; charset=utf-8 24,479 bytes
-  https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/  [Census of Population and Housing Census - 2023 The Institute of Statistics of Albania (INS]
-  https://www.instat.gov.al/en/themes/censuses/agriculture-census/  [Agriculture Census Agricultural Census is a broad statistical activity planned, organized ]
-  https://www.instat.gov.al/en/themes/censuses/economic-enterprises-census/  [Economic Enterprises Census Economic Census Census of Non-Agriculture Economic Enterprices]
-  https://www.instat.gov.al/en/themes/censuses/  [Census]
-  (4 links shown)
-== px https://databaza.instat.gov.al:8083/api/v1/en/ 
-  HTTP 404 text/html 1,245 bytes
-  404 - File or directory not found. Server Error 404 - File or directory not found. The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-== px http://databaza.instat.gov.al/api/v1/en/ 
-  !! URLError: <urlopen error timed out>
-== cdx instat.gov.al/media/1 60
-  HTTP 200: 240 captures
-  20220620004755 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 9029 http://www.instat.gov.al/media/10001/t6.xlsx
-  20240707040855 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 9460 https://www.instat.gov.al/media/10001/tab_6.xlsx
-  20220519115644 application/pdf 480207 http://www.instat.gov.al/media/10002/ihck_prill_2022.pdf
-  20220519165325 application/pdf 516624 http://www.instat.gov.al/media/10003/hicp_april_2022.pdf
-  20220615014735 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 81254 http://www.instat.gov.al/media/10004/tab1-indeksi-mujor-i-harmonizuar-i-%C3%A7mimeve-t%C3%AB-konsumit.xlsx
-  20220615015634 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 87099 http://www.instat.gov.al/media/10005/tab2-ndryshimet-mujore-t%C3%AB-indeksi-t%C3%AB-harmonizuar-t%C3%AB-%C3%A7mimeve-t%C3%AB-konsumit.xlsx
-  20220615014726 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 73853 http://www.instat.gov.al/media/10006/tab3-ndryshimet-vjetore-te-indeksit-te-harmonizuar-te-cmimeve-te-konsumit.xlsx
-  20220519165602 application/pdf 917122 http://www.instat.gov.al/media/10008/accommodation-establishments-march-2022.pdf
-  20121113163553 application/vnd.ms-excel 6129 http://www.instat.gov.al/media/100088/t1.xls
-  20131021122446 application/vnd.ms-excel 8277 http://www.instat.gov.al:80/media/100088/t__papun__t__regjistruar.xls
-  20150816032701 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 8830 http://www.instat.gov.al:80/media/100088/tab1.xlsx
-  20220616172713 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12815 http://www.instat.gov.al/media/10009/m3_2022-tab_1_vizitor%C3%AB.xlsx
-  20121113163555 application/vnd.ms-excel 5648 http://www.instat.gov.al/media/100091/t2.xls
-  20150816032707 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 10745 http://www.instat.gov.al:80/media/100091/t3.xlsx
-  20131021122526 application/vnd.ms-excel 5757 http://www.instat.gov.al:80/media/100091/t__papun__t__regjistruar_sipas_gjinis__dhe_nivelit_arsimor.xls
-  20131021124936 application/vnd.ms-excel 5044 http://www.instat.gov.al:80/media/100094/shkalla_e_papun_sis__s__regjistruar.xls
-  20121113163558 application/vnd.ms-excel 2553 http://www.instat.gov.al/media/100094/t3.xls
-  20220616172748 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12376 http://www.instat.gov.al/media/10010/m3_2022-tab_2_net%C3%AB-q%C3%ABndrime.xlsx
-  20220519170304 application/pdf 980350 http://www.instat.gov.al/media/10012/strukturat-akomoduese-mars-2022.pdf
-  20220520135809 application/pdf 674319 http://www.instat.gov.al/media/10013/pbb-rajonale-2020.pdf
-  20220520165153 application/pdf 1025805 http://www.instat.gov.al/media/10014/regional-gdp-2020-english_press-release.pdf
-  20220520135935 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 294162 http://instat.gov.al/media/10015/llogarit%C3%AB_rajonale_n%C3%AB_shqip%C3%ABri_2015-2020.xlsx
-  20220615014942 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 294175 http://www.instat.gov.al/media/10017/llogarit%C3%AB_rajonale_n%C3%AB_shqip%C3%ABri_2015-2020.xlsx
-  20230615101049 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 299872 https://www.instat.gov.al/media/10017/llogarit%C3%AB_rajonale_n%C3%AB_shqip%C3%ABri_2016-2021-anglisht.xlsx
-  20220524050253 image/png 330239 http://www.instat.gov.al/media/10018/tregu-i-punes-kapak.png
-  20220524050241 application/pdf 1499284 http://www.instat.gov.al/media/10019/tregu-i-punes-2021.pdf
-  20220524050311 application/pdf 426771 http://www.instat.gov.al/media/10020/njoftim-per-media-tregu-i-punes-2021.pdf
-  20220524045156 application/pdf 366288 http://www.instat.gov.al/media/10021/press-release-labour-market-2021.pdf
-  20220524174306 application/pdf 542001 http://www.instat.gov.al/media/10022/bilanci-i-energjis%C3%AB-elektrike-tr-i-2022.pdf
-  20220524165135 application/pdf 306974 http://www.instat.gov.al/media/10023/balance-of-electric-power-q-i-2022.pdf
-  20131113154650 application/vnd.ms-excel 2453 http://www.instat.gov.al/media/10023/ndr1.xls
-  20220615014719 application/vnd.ms-excel 9842 http://www.instat.gov.al/media/10024/bilanci-i-energjis%C3%AB-elektrike-tremujor%C3%AB.xls
-  20220525145446 application/pdf 1567083 http://www.instat.gov.al/media/10025/tregu-i-punes-2021__.pdf
-  20121113162624 application/vnd.ms-excel 2620 http://www.instat.gov.al/media/10026/ndr2.xls
-  20231118044919 application/vnd.ms-excel 6870 https://www.instat.gov.al/media/10026/t1.xls
-  20220615014558 application/vnd.ms-excel 6280 http://www.instat.gov.al/media/10026/tab-1.xls
-  20231118044924 application/vnd.ms-excel 6610 https://www.instat.gov.al/media/10027/t2.xls
-  20220615014826 application/vnd.ms-excel 6013 http://www.instat.gov.al/media/10027/tab-2.xls
-  20230521101507 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12950 https://www.instat.gov.al/media/10028/t3.xlsx
-  20220615014625 application/vnd.ms-excel 7419 http://www.instat.gov.al/media/10028/tab-3.xls
-  20121113162626 application/vnd.ms-excel 3395 http://www.instat.gov.al/media/10029/ndr3.xls
-  20220615014948 application/vnd.ms-excel 7704 http://www.instat.gov.al/media/10029/tab-4.xls
-  20230521101522 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12415 https://www.instat.gov.al/media/10029/tab4.xlsx
-  20220615025540 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 11944 http://www.instat.gov.al/media/10030/pun%C3%ABk%C3%ABrkues-t%C3%AB-papun%C3%AB-t%C3%AB-regjistruar-sipas-gjinis%C3%AB-dhe-nivelit-arsimor-2017-2021.xlsx
-  20231118043217 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12105 https://www.instat.gov.al/media/10030/tab1.xlsx
-  20220615025453 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 9028 http://www.instat.gov.al/media/10031/t%C3%AB-pun%C3%ABsuar-n%C3%AB-sektorin-shtet%C3%ABror-sipas-grupeve-kryesore-t%C3%AB-profesioneve-2017-2021.xlsx
-  20231118043229 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 9157 https://www.instat.gov.al/media/10031/t2.xlsx
-  20121114013501 application/pdf 1969523 http://www.instat.gov.al/media/100318/shqiperia_ne_shifra_2010.pdf
-  20220526165436 application/pdf 847932 http://www.instat.gov.al/media/10032/l%C3%ABvizjet-e-shtetasve-n%C3%AB-shqip%C3%ABri-prill-2022.pdf
-  20131113154703 application/vnd.ms-excel 2507 http://www.instat.gov.al/media/10032/ndr4.xls
-  20220526165311 application/pdf 350507 http://www.instat.gov.al/media/10033/movem-of-citizens-april-2022.pdf
-  20121114013942 application/pdf 1753717 http://www.instat.gov.al/media/100333/regional_accounts_anglisht.pdf
-  20121113164732 application/pdf 1772004 http://www.instat.gov.al/media/100336/llogarite_rajonale_shqip.pdf
-  20220527172801 application/pdf 582900 http://www.instat.gov.al/media/10034/statistikat-e-transportit_prill_2022.pdf
-  20121113162644 application/vnd.ms-excel 3002 http://www.instat.gov.al/media/10035/ndr5.xls
-  20220527165202 application/pdf 332372 http://www.instat.gov.al/media/10035/transport-statistics_april_2022.pdf
-  20220530165202 application/pdf 388336 http://www.instat.gov.al/media/10036/lejet-e-nd%C3%ABrtimit-t1-2022.pdf
-  20220530165150 application/pdf 320162 http://www.instat.gov.al/media/10037/building-permits-issued-t1-2022.pdf
-  20121113162646 application/vnd.ms-excel 5935 http://www.instat.gov.al/media/10038/ndr6.xls
-  20220531165130 application/pdf 729078 http://www.instat.gov.al/media/10038/press-release_shqip_2022.pdf
+greece_age: Eurostat single years of age for Greece's decentralized administrations
+  demo_r_d2jan, 2025: 11 regions
+  Macedonia-Thrace (EL51+EL52): 2,337,595, median 47.2, 954 men per 1,000 women
+  Epirus-Western Macedonia (EL53+EL54): 567,636, median 49.8, 990 men per 1,000 women
+  Thessalia-Central Greece (EL61+EL64): 1,183,208, median 48.9, 995 men per 1,000 women
+  Peloponisos-W. Greece & Ionian (EL62+EL63+EL65): 1,363,540, median 48.6, 1008 men per 1,000 women
+  Egean (EL41+EL42): 534,963, median 44.5, 1077 men per 1,000 women
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/greece_age.py", line 175, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/greece_age.py", line 168, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/greece_age.py", line 120, in build
+    total, men, women = athos()
+                        ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/greece_age.py", line 151, in athos
+    col = {k: header.index(k) for k in ("Μόνιμος Πληθυσμός 2021", "Άρρενες 2021", "Θήλεις 2021")}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/greece_age.py", line 151, in <dictcomp>
+    col = {k: header.index(k) for k in ("Μόνιμος Πληθυσμός 2021", "Άρρενες 2021", "Θήλεις 2021")}
+              ^^^^^^^^^^^^^^^
+ValueError: 'Άρρενες 2021' is not in list
