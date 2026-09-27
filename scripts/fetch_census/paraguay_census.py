@@ -29,10 +29,15 @@ draws:
   136,302 indigenous people in its communities; the 3,747 PERINDI counts
   beyond it are one line, "Indigenous (people not published)". Every
   department's A2 peoples must fit inside its PERINDI count.
-* **Religion** (departments, 2002): P17, the religion professed by everyone
-  aged 10 and over. The 2002 census is the last to ask it: the 2012
-  questionnaire has no religion question (its only "religiosa" is a kind of
-  collective dwelling) and the 2022 base carries no religion variable.
+* **Religion** (2002): P17, the religion professed by everyone aged 10 and
+  over, for departments and for the districts drawn as they were in 2002.
+  The 2002 census is the last to ask it: the 2012 questionnaire has no
+  religion question (its only "religiosa" is a kind of collective dwelling)
+  and the 2022 base carries no religion variable. Twenty-two drawn districts
+  were created after 2002 (SINCE_2002, each with its law), and they and the
+  21 districts they were carved from carry a stated gap: no 2002 count is
+  any of those polygons. Each department's districts must make its table,
+  answer by answer.
 
 **Districts drawn before they were split.** The boundary file draws 245
 districts as they were about 2012; the 2022 census counts 263. A district
@@ -188,6 +193,62 @@ TANGLES = [
 ]
 # Two slivers the boundary file draws beside San Juan del Paraná's polygon.
 SLIVERS = (("ITAPUA", "San Juan De Parana"), ("ITAPUA", "San Juan Delparana"))
+# Drawn districts that did not exist at the 2002 census: (department, polygon)
+# -> (the 2002 districts their ground was then counted in, the creating law).
+# Each of those 2002 districts has lost ground since, so neither the new
+# polygon nor theirs is any 2002 district, and both carry a stated gap.
+SINCE_2002 = {
+    ("ALTO PARAGUAY", "Bahia Negra"): (("1701",), "Ley 2563 of 2005, from Fuerte Olimpo"),
+    ("ALTO PARAGUAY", "Carmelo Peralta"): (("1702",), "Ley 3471 of 2008, from Puerto Casado"),
+    ("ALTO PARANA", "Dr. Raul Peña"): (("1014",), "Ley 4725 of 2012, from Naranjal"),
+    ("ALTO PARANA", "Santa Fe Del Parana"): (("1005", "1017"),
+                                             "Ley 2180 of 2003, from Hernandarias and Mbaracayú"),
+    ("ALTO PARANA", "Tavapy"): (("1015",), "Ley 4322 of 2011, from Santa Rosa del Monday"),
+    ("AMAMBAY", "Zanja Pyta"): (("1301",), "Ley 4417 of 2011, from Pedro Juan Caballero"),
+    ("BOQUERON", "Filadelfia"): (("1602",), "Ley 2928 of 2006, from Mariscal Estigarribia"),
+    ("BOQUERON", "Loma Plata"): (("1602",), "Ley 2927 of 2006, from Mariscal Estigarribia"),
+    ("CAAGUAZU", "Nueva Toledo"): (("0514", "0516"),
+                                   "Ley 4494 of 2011, from Raúl Arsenio Oviedo and Mariscal "
+                                   "Francisco Solano López"),
+    ("CAAGUAZU", "Tembiapora"): (("0514",), "Ley 3421 of 2008, from Raúl Arsenio Oviedo"),
+    ("CAAZAPA", "3 De Mayo"): (("0610",), "Ley 4604 of 2012, from Yuty"),
+    ("CANINDEYU", "Yasy Kañy"): (("1403",), "Ley 2005 of 2002, from Curuguaty"),
+    ("CANINDEYU", "Ybyrarobana"): (("1402", "1403"),
+                                   "Ley 4571 of 2011, from Corpus Christi and Curuguaty"),
+    ("CONCEPCION", "Azotey"): (("0103",), "Ley 3960 of 2009, from Horqueta"),
+    ("CONCEPCION", "San Carlos"): (("0101",), "Ley 3516 of 2008, from Concepción"),
+    ("CONCEPCION", "Sgto. Jose Felix Lopez"): (("0101",), "Ley 4418 of 2011, from Concepción"),
+    ("GUAIRA", "Tebicuary"): (("0404",), "Ley 3469 of 2008, from Coronel Martínez"),
+    ("PRESIDENTE HAYES", "General Jose Maria Bruguez"): (("1504",),
+                                                         "Ley 3514 of 2008, from Villa Hayes"),
+    ("PRESIDENTE HAYES", "Tte 1Ro Manuel Irala Fernandez"): (("1504",),
+                                                             "Ley 2873 of 2006, from Villa Hayes"),
+    ("PRESIDENTE HAYES", "Tte. Esteban Martinez"): (("1504",), "Ley 3000 of 2006, from Villa Hayes"),
+    ("SAN PEDRO", "Liberacion"): (("0203", "0216"), "Ley 4363 of 2011, from Choré and Guajayvi"),
+    ("SAN PEDRO", "Yryvu Cua"): (("0208", "0217"),
+                                 "Ley 1989 of 2002, from San Estanislao and Capiibary"),
+}
+# The two Bella Vistas, which the boundary file draws as one polygon.
+BELLA_VISTA_2002 = ("0702", "1302")
+# 2002's district names -> the boundary file's, beyond ALIASES.
+ALIASES_2002 = {
+    "GENERAL ISIDORO RESQUIN": "General Resquin", "DR. BOTRELL": "Dr. Bottrell",
+    "DR. CECILIO BAEZ": "Cecilio Baez", "TEBICUARYMI": "Tebicuary-Mi", "YBYCUI": "Yvycui",
+    "YBYTYMI": "Yvytimi", "JUAN LEON MALLORQUIN": "Dr. Juan Leon Mallorquin",
+    "JUAN E OLEARY": "Juan E. O´Leary", "NACUNDAY": "Ñacunday",
+    "GRAL. JOSE EDUVIGIS DIAZ": "General Diaz", "LAURELES": "Los Laureles",
+    "SAN JUAN BAUTISTA DEL ÑEEMBUCU": "San Juan Bautista De Ñeembucu",
+    "SALTO DEL GUAIRA": "Saltos Del Guaira", "YGATIMI": "Villa Ygatimí", "YPEHU": "Ype Jhu",
+    "PTO. PINASCO": "Puerto Pinasco", "YBY YA'U": "Yvy Ya´U",
+    "SAN PEDRO DEL YCUAMANDIYU": "San Pedro Del Ykuamandiyu",
+    "GRAL. HIGINIO MORINIGO": "General Higinio Morinigo",
+    "DR. J. EULOGIO ESTIGARRIBIA": "J Eulogio Estigarribia",
+    "J. AUGUSTO SALDIVAR": "J Augusto Saldivar", "GUAYAIBI": "Guajayvi",
+    "MARISCAL FRANCISCO SOLANO LOPEZ": "Mcal. Francisco Solano Lopez",
+    "MCAL. JOSE F. ESTIGARRIBIA": "Mariscal Estigarribia",
+    # The district of Puerto Casado was La Victoria until it took the town's name.
+    "LA VICTORIA": "Puerto Casado",
+}
 # INE's district names -> the boundary file's, where they differ by more than
 # accents and case.
 ALIASES = {
@@ -637,31 +698,146 @@ def fetch(session: Session) -> tuple[dict[str, dict[str, dict]], list[dict], lis
         [t for page in server.output(program) for t in tables(page)], "habla")
     session.get(PORTAL.format(base=BASE_2002))
     old = Server(CMDSET, BASE_2002, session=session, who="paraguay_census")
-    religion = old.frequency("PERSONA.P17", areabreak="DEPTO")
-    sexes_2002 = old.frequency("PERSONA.P03", areabreak="DEPTO")
+    religion = {level: old.frequency("PERSONA.P17", areabreak=level)
+                for level in ("DEPTO", "DISTRITO")}
+    sexes_2002 = {level: old.frequency("PERSONA.P03", areabreak=level)
+                  for level in ("DEPTO", "DISTRITO")}
     return by_question, religion, sexes_2002
 
 
-def religion_by_department(religion: list[dict], sexes: list[dict]) -> dict[str, dict]:
-    """{department code: its 2002 religion table}, each making its population."""
+def religion_by_area(religion: list[dict], sexes: list[dict], width: int) -> dict[str, dict]:
+    """{area code: its 2002 religion table}, each making its population.
+
+    Every area's answers and its "No Aplica" (the under-tens) must make the
+    people counted there, and the areas must make the 2002 census's
+    5,163,198. ``width`` is the code's length: 2 for departments, 4 for
+    districts.
+    """
     people = {t["area"]: t["total"] for t in sexes if t["area"]}
+    what = "departments" if width == 2 else "districts"
     if sum(people.values()) != NATIONAL_2002:
-        raise SystemExit(f"paraguay_census: 2002's departments make {sum(people.values()):,}, "
+        raise SystemExit(f"paraguay_census: 2002's {what} make {sum(people.values()):,}, "
                          f"not {NATIONAL_2002:,}")
     out = {}
     for table in religion:
         code = table["area"]
         if not code:
             continue
-        if code not in DEPARTMENTS or table["total"] + (table["na"] or 0) != people.get(code):
-            raise SystemExit(f"paraguay_census: 2002 religion: department {code!r} has "
+        if (len(code) != width or code[:2] not in DEPARTMENTS
+                or table["total"] + (table["na"] or 0) != people.get(code)):
+            raise SystemExit(f"paraguay_census: 2002 religion: {code!r} has "
                              f"{table['total']} answers and {table['na']} not applicable "
                              f"against {people.get(code)}")
         if sum(n for _, n in table["rows"]) != table["total"]:
             raise SystemExit(f"paraguay_census: 2002 religion: {code}'s rows do not make it")
         out[code] = table
-    if set(out) != set(DEPARTMENTS):
-        raise SystemExit(f"paraguay_census: 2002 religion covers {sorted(out)}")
+    if set(out) != set(people) or (width == 2 and set(out) != set(DEPARTMENTS)):
+        raise SystemExit(f"paraguay_census: 2002 religion covers {sorted(set(out) ^ set(people))} "
+                         "and the population table does not, or the other way round")
+    return out
+
+
+def religion_by_department(religion: list[dict], sexes: list[dict]) -> dict[str, dict]:
+    return religion_by_area(religion, sexes, 2)
+
+
+def rows_of(tables_: list[dict]) -> Counter:
+    total: Counter = Counter()
+    for table in tables_:
+        for label, n in table["rows"]:
+            total[label] += n
+    return total
+
+
+def districts_2002(religion: dict[str, dict], departments: dict[str, dict]) -> dict[str, dict]:
+    """{2002 district: its religion table}, Asunción's six as one (code "0000").
+
+    Each department's districts must make, answer by answer, INE's table for
+    the department.
+    """
+    for code, table in departments.items():
+        mine = [t for c, t in religion.items() if c[:2] == code]
+        if rows_of(mine) != rows_of([table]):
+            raise SystemExit(f"paraguay_census: 2002 religion: {NAMES[code]}'s districts do not "
+                             "make its table")
+    out = {c: t for c, t in religion.items() if c[:2] != "00"}
+    capital = [t for c, t in religion.items() if c[:2] == "00"]
+    out["0000"] = {"area": "0000", "name": "ASUNCION",
+                   "rows": sorted(rows_of(capital).items()),
+                   "total": sum(t["total"] for t in capital), "na": None,
+                   "parts": [t["name"] for t in capital]}
+    return out
+
+
+def religion_gaps() -> tuple[dict[tuple[str, str], str], dict[str, str]]:
+    """Why a polygon has no 2002 religion: ({(department, new polygon): why},
+    {2002 district that has lost ground since: why})."""
+    lost: dict[str, list[str]] = {}
+    for (dept, polygon), (olds, law) in SINCE_2002.items():
+        for code in olds:
+            lost.setdefault(code, []).append(f"{polygon} ({law})")
+    new = {(dept, polygon): (
+        f"This district did not exist at the 2002 census, the last to ask religion: it was "
+        f"created by {law}, and its people were counted as part of "
+        f"{'the district' if len(olds) == 1 else 'the districts'} it came from.")
+        for (dept, polygon), (olds, law) in SINCE_2002.items()}
+    shrunk = {code: (
+        "This district has lost ground since the 2002 census, the last to ask religion: "
+        + "; ".join(news) + (" was" if len(news) == 1 else " were") + " carved from it. The 2002 "
+        "count is of the larger district, so it is not this polygon's.")
+        for code, news in lost.items()}
+    return new, shrunk
+
+
+def religion_by_polygon(districts: dict[str, dict], admin2: list[dict[str, Any]],
+                        parents: dict[str, str]) -> dict[str, dict[str, Any]]:
+    """{polygon id: its 2002 religion fields, or the gap that says why there are none}.
+
+    Every 2002 district but the two Bella Vistas binds by name to one polygon
+    of its own department, and every polygon not set aside is bound: a
+    polygon left over, or a district, stops the run.
+    """
+    new, shrunk = religion_gaps()
+    shape_of = {(parents[s["parent"]], s["name"]): s for s in admin2}
+    missing = sorted(k for k in list(new) + list(SLIVERS) + [("AMAMBAY", "Bella Vista")]
+                     if k not in shape_of)
+    if missing:
+        raise SystemExit(f"paraguay_census: 2002 religion: no polygon for {missing}")
+    out: dict[str, dict[str, Any]] = {
+        shape_of[key]["id"]: {"religion": gap("not_available", why)} for key, why in new.items()}
+    for key in SLIVERS:
+        out[shape_of[key]["id"]] = {"religion": gap(
+            "not_available", "A sliver the boundary file draws beside San Juan del Paraná's own "
+            "polygon, which carries the district's 2002 religion; the census counts no one here "
+            "apart from the district.")}
+    answered = " and ".join(f"{districts[c]['total']:,}" for c in BELLA_VISTA_2002)
+    out[shape_of[("AMAMBAY", "Bella Vista")]["id"]] = {"religion": gap(
+        "not_available", "The boundary file draws Itapúa's Bella Vista and Amambay's Bella Vista "
+        f"as one polygon. The 2002 census counts them apart ({answered} people aged 10 and over "
+        "answering), and neither district is this polygon.")}
+    shapes = [s for s in admin2 if s["id"] not in out]
+    wanted = {c: (t["name"], DEPARTMENTS[c[:2]]) for c, t in districts.items()
+              if c not in BELLA_VISTA_2002}
+    bound, unbound = bind(wanted, shapes, parents, {**ALIASES, **ALIASES_2002})
+    if unbound:
+        raise SystemExit(f"paraguay_census: 2002 districts with no polygon: {unbound}")
+    empty = sorted(s["name"] for s in shapes if s["id"] not in set(bound.values()))
+    if empty:
+        raise SystemExit(f"paraguay_census: polygons with no 2002 district: {empty}")
+    drawn = {s["id"]: s for s in admin2}
+    for code, sid in bound.items():
+        if parents[drawn[sid]["parent"]] != DEPARTMENTS[code[:2]]:
+            raise SystemExit(f"paraguay_census: 2002's {wanted[code][0]} bound to "
+                             f"{drawn[sid]['name']}, in another department")
+        out[sid] = ({"religion": gap("not_available", shrunk[code])} if code in shrunk
+                    else religion_fields(districts[code]))
+    if set(shrunk) - set(bound):
+        raise SystemExit(f"paraguay_census: 2002 districts {sorted(set(shrunk) - set(bound))} "
+                         "lost ground and are not drawn")
+    if len(out) != len(admin2):
+        raise SystemExit("paraguay_census: 2002 religion: not every polygon is accounted for")
+    log(f"  2002 religion: {len(bound) - len(set(shrunk))} district polygons filled; "
+        f"{len(out) - len(bound) + len(set(shrunk))} with the reason they are not")
     return out
 
 
@@ -702,9 +878,11 @@ def main() -> int:
     # long tabulation rather than after it.
     peoples = peoples_table(peoples_text())
     session.get(PORTAL.format(base=BASE))
-    by_question, religion, sexes_2002 = fetch(session)
+    by_question, religion_2002, sexes_2002 = fetch(session)
     units = district_counts(by_question)
-    religion = religion_by_department(religion, sexes_2002)
+    religion = religion_by_department(religion_2002["DEPTO"], sexes_2002["DEPTO"])
+    districts_02 = districts_2002(
+        religion_by_area(religion_2002["DISTRITO"], sexes_2002["DISTRITO"], 4), religion)
 
     admin1 = json.loads((SITE / "admin1" / "PRY.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "PRY.units.json").read_text())
@@ -728,9 +906,11 @@ def main() -> int:
     empty = sorted(s["name"] for s in shapes if s["id"] not in set(bound.values()))
     if empty:
         raise SystemExit(f"paraguay_census: polygons with no district: {empty}")
+    religion_of = religion_by_polygon(districts_02, admin2, parents)
 
     records: list[dict[str, Any]] = []
     source_2022 = {"name": SOURCE, "url": PAGE, "year": YEAR}
+    source_2002 = {"field": "religion", "name": SOURCE_2002, "url": PAGE_2002, "year": YEAR_2002}
     drawn = {s["id"]: s for s in admin2}
     for target, codes in sorted(groups.items()):
         unit = summed([units[c] for c in codes])
@@ -748,8 +928,9 @@ def main() -> int:
             match_by="shape_id", shape_id=shape["id"],
             aliases=[shape["name"]] if fold(shape["name"]) != fold(name) else [],
             **fields, **district_ethnicity(unit), **language_fields(unit, "here"),
+            **religion_of[shape["id"]],
             sources=[{"field": "population/median age/sex ratio/ethnicity/language",
-                      **source_2022}]))
+                      **source_2022}, source_2002]))
     for olds, news, polys, why in TANGLES:
         people = sum(units[c]["people"] for c in olds + news)
         names = ", ".join(title(units[c]["name"]) for c in olds + news)
@@ -763,7 +944,8 @@ def main() -> int:
                 f"PRY-INE-{fold(dept)}-{fold(polygon)}", polygon, level="admin2", parent="PRY",
                 country="PRY", parent_name=dept, match_by="shape_id", shape_id=shape["id"],
                 ethnicity=gap("not_available", reason), language=gap("not_available", reason),
-                sources=[{"field": "note", **source_2022}]))
+                **religion_of[shape["id"]],
+                sources=[{"field": "note", **source_2022}, source_2002]))
     for dept, polygon in SLIVERS:
         shape = shape_of[(dept, polygon)]
         reason = ("A sliver the boundary file draws beside San Juan del Paraná's own polygon, "
@@ -773,7 +955,8 @@ def main() -> int:
             f"PRY-INE-{fold(dept)}-{fold(polygon)}", polygon, level="admin2", parent="PRY",
             country="PRY", parent_name=dept, match_by="shape_id", shape_id=shape["id"],
             ethnicity=gap("not_available", reason), language=gap("not_available", reason),
-            sources=[{"field": "note", **source_2022}]))
+            **religion_of[shape["id"]],
+            sources=[{"field": "note", **source_2022}, source_2002]))
 
     for code, dept in sorted(DEPARTMENTS.items()):
         unit = summed([u for c, u in units.items() if c[:2] == code])

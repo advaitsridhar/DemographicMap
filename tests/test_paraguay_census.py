@@ -148,6 +148,50 @@ class Religion(unittest.TestCase):
             pc.religion_fields({"rows": [("Zoroastrismo", 1)]})
 
 
+def religion_table(code: str, name: str, rows: list[tuple[str, int]], na: int) -> dict:
+    return {"area": code, "name": name, "rows": rows, "total": sum(n for _, n in rows), "na": na}
+
+
+class Religion2002(unittest.TestCase):
+    def setUp(self):
+        self.religion = [religion_table("", "", [("Católica", 150)], 50),
+                         religion_table("0010", "LA ENCARNACION", [("Católica", 50)], 10),
+                         religion_table("0011", "CATEDRAL", [("Católica", 40), ("Mennonita", 5)], 5),
+                         religion_table("0101", "CONCEPCION", [("Católica", 55)], 35)]
+        self.sexes = [{"area": "", "total": 200}, {"area": "0010", "total": 60},
+                      {"area": "0011", "total": 50}, {"area": "0101", "total": 90}]
+        self.depts = {"00": religion_table("00", "ASUNCION", [("Católica", 90), ("Mennonita", 5)], 15),
+                      "01": religion_table("01", "CONCEPCION", [("Católica", 55)], 35)}
+
+    def test_districts_are_checked_and_asuncion_is_one(self):
+        with mock.patch.object(pc, "NATIONAL_2002", 200):
+            found = pc.religion_by_area(self.religion, self.sexes, 4)
+        districts = pc.districts_2002(found, self.depts)
+        self.assertEqual(sorted(districts), ["0000", "0101"])
+        self.assertEqual(dict(districts["0000"]["rows"]), {"Católica": 90, "Mennonita": 5})
+
+    def test_answers_and_under_tens_that_do_not_make_the_district_stop_the_run(self):
+        self.religion[1] = religion_table("0010", "LA ENCARNACION", [("Católica", 50)], 9)
+        with mock.patch.object(pc, "NATIONAL_2002", 200), self.assertRaises(SystemExit):
+            pc.religion_by_area(self.religion, self.sexes, 4)
+
+    def test_districts_that_do_not_make_their_department_stop_the_run(self):
+        self.depts["00"] = religion_table("00", "ASUNCION", [("Católica", 91), ("Mennonita", 4)], 15)
+        with mock.patch.object(pc, "NATIONAL_2002", 200):
+            found = pc.religion_by_area(self.religion, self.sexes, 4)
+        with self.assertRaises(SystemExit):
+            pc.districts_2002(found, self.depts)
+
+    def test_new_districts_and_the_ones_they_came_from_say_why(self):
+        new, shrunk = pc.religion_gaps()
+        self.assertEqual(len(new), 22)
+        self.assertIn("Ley 2928 of 2006", new[("BOQUERON", "Filadelfia")])
+        self.assertIn("Filadelfia", shrunk["1602"])
+        self.assertIn("Loma Plata", shrunk["1602"])
+        self.assertIn("were carved", shrunk["1602"])
+        self.assertEqual(len(shrunk), 21)
+
+
 class Names(unittest.TestCase):
     def test_ine_capitals_are_written_as_names(self):
         self.assertEqual(pc.title("SAN JUAN DEL PARANÁ"), "San Juan del Paraná")
