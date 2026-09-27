@@ -55,7 +55,6 @@ MARZ = {533: ("Yerevan", "Երևան"), 534: ("Aragatsotn", "Արագածոտն"
         539: ("Kotayk", "Կոտայք"), 540: ("Shirak", "Շիրակ"), 541: ("Syunik", "Սյունիք"),
         542: ("Vayots Dzor", "Վայոցձոր"), 543: ("Tavush", "Տավուշ")}
 
-TOTAL = ("ընդամենը", "բնակչություն")
 # Heading words -> label, tried in order (the first that a heading holds).
 RELIGION = [
     ("դավանանքով", None), ("ունեցող", None),          # everyone with a religion
@@ -97,40 +96,51 @@ def squeeze(text: str) -> str:
     return re.sub(r"[\s\-‐–]", "", unicodedata.normalize("NFKC", text)).lower()
 
 
-def lines_of(chars: list[dict[str, Any]], upright: bool) -> list[str]:
-    """Glyphs grouped into lines of text. Upright glyphs share a baseline and
-    read left to right. Sideways ones are set either in columns (sharing an x,
-    read from the bottom up) or turned right over (sharing a baseline, read
-    right to left); whichever grouping makes fewer lines is the one used, and
-    a line read the wrong way round is matched reversed (see classify)."""
+def lines_of(chars: list[dict[str, Any]]) -> list[str]:
+    """A heading's glyphs grouped into lines of text. The tables set a heading
+    either across (glyphs sharing a baseline) or up the page, one glyph above
+    the next (sharing an x, read from the bottom up), and the glyphs say
+    nothing of which: each is drawn upright. Whichever grouping makes fewer
+    lines is the one used. Some headings are set across but right to left;
+    classify matches every word reversed as well."""
     by_top: dict[int, list[dict[str, Any]]] = defaultdict(list)
     by_x: dict[int, list[dict[str, Any]]] = defaultdict(list)
     for c in chars:
         by_top[round(c["top"] / 2.5)].append(c)
         by_x[round(c["x0"] / 2.5)].append(c)
-    if upright or len(by_top) <= len(by_x):
+    if len(by_top) <= len(by_x):
         return ["".join(c["text"] for c in sorted(by_top[k], key=lambda c: c["x0"]))
                 for k in sorted(by_top)]
     return ["".join(c["text"] for c in sorted(by_x[k], key=lambda c: -c["top"]))
             for k in sorted(by_x)]
 
 
-def page_rows(page) -> list[tuple[float, list[dict[str, Any]]]]:
-    """Upright words grouped by baseline: [(top, words left to right)]."""
-    words = [w for w in page.extract_words(keep_blank_chars=False) if w.get("upright", True)]
+def split(words: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any]]]:
+    label = [w["text"] for w in words if not NUMBER.match(w["text"])]
+    numbers = [w for w in words if NUMBER.match(w["text"])]
+    return " ".join(label), numbers
+
+
+def page_rows(words: list[dict[str, Any]]) -> list[tuple[float, list[dict[str, Any]]]]:
+    """Words grouped by baseline: [(top, words left to right)]. A label set a
+    few points above its own figures ("Ընդամենը" over the total's) is joined
+    to them."""
     rows: list[tuple[float, list[dict[str, Any]]]] = []
     for w in sorted(words, key=lambda w: (w["top"], w["x0"])):
         if rows and abs(rows[-1][0] - w["top"]) <= 2.5:
             rows[-1][1].append(w)
         else:
             rows.append((w["top"], [w]))
-    return [(top, sorted(ws, key=lambda w: w["x0"])) for top, ws in rows]
-
-
-def split(words: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any]]]:
-    label = [w["text"] for w in words if not NUMBER.match(w["text"])]
-    numbers = [w for w in words if NUMBER.match(w["text"])]
-    return " ".join(label), numbers
+    joined: list[tuple[float, list[dict[str, Any]]]] = []
+    for top, ws in rows:
+        if joined and top - joined[-1][0] < 6:
+            label, numbers = split(joined[-1][1])
+            below, figures = split(ws)
+            if label and not numbers and figures and not below:
+                joined[-1] = (joined[-1][0], joined[-1][1] + ws)
+                continue
+        joined.append((top, ws))
+    return [(top, sorted(ws, key=lambda w: w["x0"])) for top, ws in joined]
 
 
 def read_table(blob: bytes, stem: str) -> dict[str, Any]:
@@ -140,13 +150,17 @@ def read_table(blob: bytes, stem: str) -> dict[str, Any]:
 
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         page = pdf.pages[0]
-        rows = page_rows(page)
+        rows = page_rows(page.extract_words(keep_blank_chars=False))
         chars = page.chars
     texts = [(top, squeeze("".join(w["text"] for w in ws))) for top, ws in rows]
     unit_top = next((top for top, t in texts if "մշտական" in t), None)
     if unit_top is None or not any(squeeze(stem) in t for _, t in texts):
         raise SystemExit(f"armenia_2011: the table's heading does not name {stem}: "
                          f"{[t for _, t in texts[:4]]}")
+    # The headings start under the one set across the columns they group
+    # ("Մայրենի լեզուն", "Ըստ կրոնական դավանանքի").
+    zone_top = next((top for top, t in texts if top > unit_top
+                     and ("մայրենիլեզու" in t or "կրոնականդավանանք" in t)), unit_top)
     total_at = next((i for i, (top, ws) in enumerate(rows)
                      if split(ws)[0] and squeeze(split(ws)[0]) == "ընդամենը"
                      and len(split(ws)[1]) > 2), None)
@@ -163,16 +177,11 @@ def read_table(blob: bytes, stem: str) -> dict[str, Any]:
                       if not NUMBER.match(w["text"]) and w["x1"] < numbers[0]["x0"]),
                      default=numbers[0]["x0"] - 30)
     bands = list(zip([label_edge] + edges[:-1], edges))
-    zone = [c for c in chars if unit_top + 4 < c["top"] < total_top - 1]
+    zone = [c for c in chars if zone_top + 3 < c["top"] < total_top - 1 and c["text"].strip()]
     headings = []
     for lo, hi in bands:
         inside = [c for c in zone if lo + 1 < (c["x0"] + c["x1"]) / 2 <= hi + 2]
-        sideways = [c for c in inside if not c.get("upright", True)]
-        if sideways:
-            text = "".join(lines_of(sideways, upright=False))
-        else:
-            text = "".join(lines_of(inside, upright=True))
-        headings.append(squeeze(text))
+        headings.append(squeeze("".join(lines_of(inside))))
     # The first block's rows: after the total, until the next block begins.
     body: dict[str, list[int]] = {}
     pending = ""
@@ -198,10 +207,12 @@ def read_table(blob: bytes, stem: str) -> dict[str, Any]:
 
 def classify(headings: list[str], words: list[tuple[str, str | None]], what: str
              ) -> list[str | None | bool]:
-    """Each column's label; True for the total, None for a subtotal."""
+    """Each column's label; True for the total, None for a subtotal. The first
+    column is the total whatever its heading reads (some tables set that
+    heading on the line the zone starts under); composition checks it."""
     out: list[str | None | bool] = []
     for text in headings:
-        if any(t in text or t[::-1] in text for t in TOTAL) and not out:
+        if not out:
             out.append(True)
             continue
         hit = next((label for word, label in words if word in text or word[::-1] in text),
