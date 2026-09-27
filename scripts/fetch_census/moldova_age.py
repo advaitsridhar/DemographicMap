@@ -60,6 +60,14 @@ def rows_of(url: str, sheet: str) -> list[tuple[Any, ...]]:
     return [tuple(r) for r in wb[sheet].iter_rows(values_only=True)]
 
 
+def persons(cell: Any) -> float:
+    """A count, rounded: the workbook stores some sums as 39562.9999999999,
+    which truncating would read as 39,562."""
+    if isinstance(cell, float):
+        return float(round(cell))
+    return float(count(cell))
+
+
 def text(cell: Any) -> str:
     return " ".join(str(cell or "").split())
 
@@ -88,8 +96,8 @@ def ages(rows: list[tuple[Any, ...]]) -> tuple[dict[str, dict[str, Any]], list[t
         name = next((c for c in cells[:3] if c and not re.fullmatch(r"[\dA-Z]+", c)), "")
         if not name or total_col >= len(r) or r[total_col] in (None, ""):
             continue
-        groups = [(lo, w, float(count(r[j]))) for j, lo, w in bands]
-        total = float(count(r[total_col]))
+        groups = [(lo, w, persons(r[j])) for j, lo, w in bands]
+        total = persons(r[total_col])
         check_sum(sum(n for _, _, n in groups), total, f"moldova_age: ages of {name}")
         if name.lower() == "total":
             country = groups
@@ -120,8 +128,8 @@ def sexes(rows: list[tuple[Any, ...]]) -> dict[str, tuple[float, float, float]]:
                      and not re.fullmatch(r"[\dA-Z]+", c)), "")
         if not UNIT_NAME.match(name):
             continue
-        men, women = float(count(r[men_col])), float(count(r[women_col]))
-        total = float(count(r[men_col - 1]))
+        men, women = persons(r[men_col]), persons(r[women_col])
+        total = persons(r[men_col - 1])
         check_sum(men + women, total, f"moldova_age: sexes of {name}")
         out.setdefault(key(name), (total, men, women))
     if len(out) != UNITS:
