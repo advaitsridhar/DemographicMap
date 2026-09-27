@@ -1,1 +1,10 @@
-bahamas_census: Table 4.5 has no ALL AGES row
+  Paramaribo centrum: Volume I 20,632, the ethnic table 20,631
+  Paramaribo beekhuizen: Volume I 17,187, the ethnic table 17,185
+  Paramaribo wegnaarzee: Volume I 16,069, the ethnic table 16,037
+  Paramaribo livorno: Volume I 9,303, the ethnic table 8,209; its ages and sexes are left out
+  Wanica koewarasan: Volume I 27,072, the ethnic table 27,713; its ages and sexes are left out
+  Wanica denieuwegrond: Volume I 26,129, the ethnic table 26,161
+  Wanica lelydorp: Volume I 18,207, the ethnic table 18,663; its ages and sexes are left out
+  62 ressorts; 58 bound, 3 across a district line: [('Paramaribo', 'wegnaarzee'), ('Paramaribo', 'pontbuiten'), ('Wanica', 'kwatta')]; left out: [('Paramaribo', 'beekhuizen'), ('Paramaribo', 'latour'), ('Paramaribo', 'tammenga'), ('Paramaribo', 'welgelegen')]
+  wrote data/processed/suriname_census.json (360 kB)
+  wrote suriname_census.json: 10 districts, 58 ressorts
