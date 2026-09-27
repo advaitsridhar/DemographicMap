@@ -87,6 +87,8 @@ LABELS: dict[str, dict[str, str]] = {
         "Evangelists- methodist": "Evangelical Methodist",
         "Evangelists - methodist": "Evangelical Methodist",
         "Buddhists": "Buddhism", "Atheists": "Atheism", "Agnostics": "Agnosticism",
+        "Jehovah's Witnesses": "Jehovah's Witnesses", "Adventists": "Seventh-day Adventist",
+        "Hindus": "Hinduism", "Jews": "Judaism", "Judaism": "Judaism",
         "Other": "Other religion", "Others": "Other religion", "Undeclared": "Not declared",
         "Unknown": "Not stated",
     },
@@ -131,13 +133,25 @@ def key(name: str) -> str:
     return fold(name).replace("ts", "c")
 
 
+UNKNOWN: dict[str, set[str]] = defaultdict(set)
+
+
 def label_of(field: str, label: str) -> str:
+    """The map's name for a census category; an unknown one is collected and
+    the run refused once the whole table has been read, naming them all."""
     text = " ".join(label.split())
     if text.lower().startswith(ADMIN_SOURCES[:30]):
         return NO_DATA[field]
     if text in LABELS[field]:
         return LABELS[field][text]
-    raise SystemExit(f"north_macedonia: {field} category {label!r} has no entry in LABELS")
+    UNKNOWN[field].add(text)
+    return text
+
+
+def refuse_unknown() -> None:
+    if any(UNKNOWN.values()):
+        raise SystemExit("north_macedonia: categories with no entry in LABELS: "
+                         + "; ".join(f"{f}: {sorted(v)}" for f, v in UNKNOWN.items() if v))
 
 
 def age_of(label: str) -> int | None:
@@ -310,6 +324,7 @@ def five_year(groups: dict[str, Counter]) -> tuple[list[tuple[float, float | Non
 def build() -> list[dict[str, Any]]:
     names, ages = municipal_ages(TABLES["age"])
     comps = {field: composition(field, TABLES[field]) for field in ("ethnicity", "religion", "language")}
+    refuse_unknown()
     national = next(c for c, n in names.items() if "macedonia" in n.lower())
     city = next(c for c, n in names.items() if "city of skopje" in n.lower())
     munis = {c: n for c, n in names.items() if c not in (national, city)}
@@ -415,6 +430,7 @@ def build() -> list[dict[str, Any]]:
     for field in comps:
         region[field].update(comps[field][kichevo])
     places = settlements()
+    refuse_unknown()
     home = old_municipality_of()
     stray = sorted(set(places) - set(home))
     if stray:
