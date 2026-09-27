@@ -1,14 +1,136 @@
-== https://www.scotlandscensus.gov.uk/census-results/download-data/
-  HTTPError: HTTP Error 403: Forbidden
-== https://www.scotlandscensus.gov.uk/census-results/download-data/census-table-data/
-  HTTPError: HTTP Error 403: Forbidden
-== https://www.istat.it/it/archivio/207961
-  Tavole di dati                                                                             https://www.istat.it/dati/tavole-di-dati/
-  Testo integrale e nota metodologica                                                        https://www.istat.it/wp-content/uploads/2017/12/Report_Uso-italiano_dialetti_altrelingue_2015.pdf
-  Tavole                                                                                     https://www.istat.it/wp-content/uploads/2017/12/Lingue-e-dialetti_2015_Tavole.xlsx
-                                                                                             https://www.facebook.com/sharer/sharer.php?u=https://www.istat.it/comunicato-stampa/luso-della-lingua-italiana-dei-dialetti-e-di-altre-lingue-in-italia-anno-2015
-                                                                                             https://twitter.com/intent/tweet?text=Home2&url=https://www.istat.it/comunicato-stampa/luso-della-lingua-italiana-dei-dialetti-e-di-altre-lingue-in-italia-anno-2015
-                                                                                             https://www.linkedin.com/sharing/share-offsite/?url=https://www.istat.it/comunicato-stampa/luso-della-lingua-italiana-dei-dialetti-e-di-altre-lingue-in-italia-anno-2015
-  6 of 207 links shown
-== https://www.istat.it/comunicato-stampa/luso-della-lingua-italiana-dei-dialetti-e-delle-lingue-straniere-anno-2015/
-  HTTPError: HTTP Error 404: Not Found
+== https://www.eustat.eus/bankupx/api/v1/es/DB
+  502,854 bytes; starts b'[{"id":"'
+  [{"id":"PX__fe_inem06.px","type":"t","text":"Paro registrado de la C.A. de Euskadi por ámbitos territoriales y sexo. 1997 - 2022","updated":"2023-01-09T15:04:41"},{"id":"PX__feinem_inem06.px","type":"t","text":"Paro registrado de la C.A. de Euskadi por ámbitos territoriales y sexo","updated":"2021-0
+== https://api.idescat.cat/taules/v2?lang=en
+  5,475 bytes; starts b'{\n  "cla'
+  {
+    "class" : "collection",
+    "href" : "https://api.idescat.cat/taules/v2?lang=en",
+    "label" : "Available statistics",
+    "link" : {
+      "item" : [ {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/afi?lang=en",
+        "label" : "Contributors and Affiliations to Social Security based on Contributors' Registered Place of Residence"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/censph?lang=en",
+        "label" : "Population and Housing Census"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/comest?lang=en",
+        "label" : "Foreign Trade"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/comtec?lang=en",
+        "label" : "Foreign Trade according to Technological Content"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/pibt?lang=en",
+        "label" : "Quarterly Accounts"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/piba?lang=en",
+        "label" : "Annual Economic Accounts for Catalonia"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/ee?lang=en",
+        "label" : "Companies and Establishments"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eulp?lang=en",
+        "label" : "Survey on Language Uses of the Population"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/eut?lang=en",
+        "label" : "Survey on the Use of Time"
+      }, {
+        "class" : "collection",
+        "href" : "https://api.idescat.cat/taules/v2/ceph?lang=en",
+        "label" : "
+== https://www.ige.gal/igebdt/esqv.jsp?paxina=002001&c=0206004&idioma=gl
+  23,445 bytes; starts b'\r\n\r\n\r\n\r\n'
+  Principais datos
+  IGE -
+  Galego
+  Castellano
+  -->
+  Datos
+  Documentación
+  Servizos
+  O IGE
+  Territorio e medio
+  Poboación e condicións sociais
+  Poboación
+  Sanidade
+  Educación
+  Traballo
+  Benestar e condicións de vida
+  Cultura, deporte e lecer
+  Estrutura produtiva
+  Agricultura, explotación forestal e pesca
+  Industria e enerxía
+  Construción e vivenda
+  Servizos
+  Administración pública
+  Economía
+  Prezos
+  Coñecemento e tecnoloxía
+  Ciencia e tecnoloxía
+  Temas transversais
+  Banco de series de conxuntura
+  Boletín de conxuntura
+  Estatísticas de xénero
+  Estatística históricas de Galicia
+  Estudo sobre salarios
+  Indicadores
+  Observatorio transfronteirizo
+  Obxectivos de desenvolvemento sustentable
+  Por ámbito xeográfico
+  Información municipal e comarcal
+  Información por cuadrícula de 1 km²
+  Panorama dos sete grandes concellos
+  Panorama rural-urbano
+  Galicia en síntese
+  Datos estatísticos básicos
+  Galicia en cifras
+  Principais datos de Galicia
+  Principais indicadores económicos
+  Catálogo de rexistros administrativos de interese estatístico
+  Clasificacións
+  Cuestionarios
+  Documentos técnicos
+  Metodoloxías
+  Proxectos técnicos
+  Vocabulario estatístico
+  Axuda
+  Acceso á información/Outra información estatística
+  Solicitude de información
+  Peticións de información
+  Informes
+  Publicacións
+  Biblioteca
+  Datos abertos
+  Ligazóns
+  Recollida de información nas enquisas
+  Portal educativo
+  Para desenvolvedores/programadores
+  Descarga de información. APIs
+  Software
+  Widgets do IGE
+  Servizos para a prensa
+  Noticias
+  Calendario
+  Lista de subscrición
+  Servizo de noticias RSS
+  Redes sociais
+  IGE
+  Presentación
+  Estatuto
+  Organigrama
+  Plan de actuación anual
+  Transparencia e goberno aberto
+  Formación e emprego
+  Perfil do contrata
+== https://www.cis.es/es/estudios/catalogo-de-estudios
+  HTTPError: HTTP Error 404: 
