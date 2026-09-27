@@ -1,23 +1,39 @@
-cyprus_census: CYSTAT, Census of Population and Housing 2021
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 368, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 361, in main
-    records = build()
-              ^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 247, in build
-    single = single_years()
-             ^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 143, in single_years
-    for dims, value in px_table(TABLES["single"], {dist: "*", sex: "*", age: "*"}):
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/balkans_common.py", line 96, in px_table
-    return unstack(payload)
-           ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 388, in unstack
-    ids: list[str] = payload["id"]
-                     ~~~~~~~^^^^^^
-KeyError: 'id'
+== xls https://www.instat.gov.al/media/14409/tab_1_12_popullsia-banuese-sipas-përkatësisë-etnike-dhe-gjinisë_qarqe.xls 30 2
+  HTTP 200 application/vnd.ms-excel 151,324 bytes
+  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
+== xls https://www.instat.gov.al/media/14411/tab_1_13_popullsia-banuese-sipas-besimit-fetar-dhe-gjinisë_qarqe.xls 20 2
+  HTTP 200 application/vnd.ms-excel 124,711 bytes
+  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
+== xls https://www.instat.gov.al/media/14412/tab_1_14_popullsia-banuese-sipas-gjuhës-që-flitet-zakonisht-në-shtëpi-dhe-gjinisë_qarqe.xls 14 2
+  HTTP 200 application/vnd.ms-excel 94,999 bytes
+  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
+== xls https://www.instat.gov.al/media/3140/tab_2_1_2.xls 14 3
+  HTTP 200 application/vnd.ms-excel 492,261 bytes
+  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
+== xlsrow https://www.instat.gov.al/media/3140/tab_2_1_2.xls 0 (?i)rreth|district|qark|prefect 50
+  HTTP 200 application/vnd.ms-excel 492,261 bytes
+  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
+== xls https://www.instat.gov.al/media/3215/1114.xls 20 2
+  HTTP 200 application/vnd.ms-excel 19,456 bytes
+  1 sheets: ['Sheet1']
+  -- sheet 'Sheet1': 32 rows x 3 cols
+    1.1.14 Popullsia banuese sip
+    1.1.14 Resident population b
+    Përkatësia fetare | Popullsia banuese | Përqindja e popullsisë banue
+    Religious affiliation | Resident population | Percentage of resident popul
+    Gjithsej
+    Total | 2.800.138 | 100.0
+    Myslimanë
+    Muslims | 1.587.608 | 56,70
+    Bektashinj
+    Bektashi | 58628.0 | 2,09
+    Katolikë
+    Catholics | 280921.0 | 10,03
+    Ortodoks
+    Orthodox | 188992.0 | 6,75
+    Ungjillorë
+    Evangelists | 3797.0 | 0,14
+    Të tjerë të krishterë
+    Other Christians | 1919.0 | 0,07
+    Besimtarë të pacilësuar*
+    Believers without denominati | 153.63 | 5,49
