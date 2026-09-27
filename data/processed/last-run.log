@@ -1,18 +1,138 @@
-== ESS1 :: ESS1e06_7 id=bcc624a3-edbb-4df3-ab18-9a96702c92ae v=67 weight=None
-   region: ess_region: the portal refused a query: [{"message": "Request failed with status code 400", "locations": [{"line": 2, "column": 3}], "path": ["analysis", "frequ
-   lnghom1: ess_region: the portal refused a query: [{"message": "Request failed with status code 400", "locations": [{"line": 2, "column": 3}], "path": ["analysis", "frequ
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 128, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 122, in main
-    discover(args.discover.split(","))
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 103, in discover
-    shown = " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/ess_region.py", line 103, in <genexpr>
-    shown = " ".join(f"{k}={labels.get(k, '?')[:22]}:{int(v)}"
-                            ~~~~~~~~~~~~~~~~~~^^^^^
-TypeError: 'NoneType' object is not subscriptable
+== get https://www.stat.gov.az/source/demoqraphy/az/001_23.xls
+  828,928 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_23.xls: 35 sheets: 01.01.2020 il (bütün əhali) | 01.01.2020 il (kişilər) | 01.01.2020 il (qadınlar) | 01.01.2020 il (şəhər yerləri) | 01.01.2020 il (kənd yerləri) | 01.01.2021 il (bütün əhali) | 01.01.2021 il (kişilər) | 01.01.2021 il (qadınlar) | 01.01.2021 il (şəhər yerləri) | 01.01.2021 il (kənd yerləri) | 01.01.2022 il (bütün əhali) | 01.01.2022 il (kişilər) | 01.01.2022 il (qadınlar) | 01.01.2022 il (şəhər yerləri) | 01.01.2022 il (kənd yerləri) | 01.01.2023 il (bütün əhali) | 01.01.2023 il (kişilər) | 01.01.2023 il (qadınlar) | 01.01.2023 il (şəhər yerləri) | 01.01.2023 il (kənd yerləri) | 01.01.2024 il (bütün əhali) | 01.01.2024 il (kişilər) | 01.01.2024 il (qadınlar) | 01.01.2024 il (şəhər yerləri) | 01.01.2024 il (kənd yerləri) | 01.01.2025 il (bütün əhali) | 01.01.2025 il (kişilər) | 01.01.2025 il (qadınlar) | 01.01.2025 il (şəhər yerləri) | 01.01.2025 il (kənd yerləri) | 01.01.2026 il (bütün əhali) | 01.01.2026 il (kişilər) | 01.01.2026 il (qadınlar) | 01.01.2026 il (şəhər yerləri) | 01.01.2026 il (kənd yerləri)
+  -- sheet '01.01.2020 il (bütün əhali)': 136 rows x 22 cols
+    r7:  | Azərbaycan Respublikası üzrə - cəmi | 9974051.0
+    r59:  | Xankəndi şəhəri | 4295.0
+    r62:  | Ağdərə rayonu | ...
+    r65:  | Xocalı rayonu | 11065.0
+    r67:  | Şuşa rayonu | 22338.0
+    r86:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 910235.0
+    r91:  | Lənkəran rayonu | 224100.0
+    r102:  | Yevlax rayonu | 125884.0
+    r112:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 612783.0
+    r118:  | Şəki rayonu | 180871.0
+    r124:  | Kəlbəcər rayonu | 71334.0
+    r126:  | Laçın rayonu | 73268.0
+  -- sheet '01.01.2021 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10026076.0
+    r61:  | Xankəndi şəhəri | 4313.0
+    r64:  | Ağdərə rayonu | ...
+    r67:  | Xocalı rayonu | 11214.0
+    r69:  | Şuşa rayonu | 24638.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 917138.0
+    r93:  | Lənkəran rayonu | 224981.0
+    r104:  | Yevlax rayonu | 126851.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 616855.0
+    r120:  | Şəki rayonu | 181878.0
+    r126:  | Kəlbəcər rayonu | 71986.0
+    r128:  | Laçın rayonu | 73870.0
+  -- sheet '01.01.2022 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10063309.0
+    r61:  | Xankəndi şəhəri | 4335.0
+    r64:  | Ağdərə rayonu | ...
+    r67:  | Xocalı rayonu | 11333.0
+    r69:  | Şuşa rayonu | 26842.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 922932.0
+    r93:  | Lənkəran rayonu | 225567.0
+    r104:  | Yevlax rayonu | 127243.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 619684.0
+    r120:  | Şəki rayonu | 182534.0
+    r126:  | Kəlbəcər rayonu | 72508.0
+    r128:  | Laçın rayonu | 74364.0
+  -- sheet '01.01.2023 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10127145.0
+    r61:  | Xankəndi şəhəri | 4352.0
+    r64:  | Ağdərə rayonu | ...
+    r67:  | Xocalı rayonu | 11474.0
+    r69:  | Şuşa rayonu | 28677.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 930601.0
+    r93:  | Lənkəran rayonu | 226549.0
+    r104:  | Yevlax rayonu | 128373.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 623596.0
+    r120:  | Şəki rayonu | 183495.0
+    r126:  | Kəlbəcər rayonu | 73244.0
+    r128:  | Laçın rayonu | 74999.0
+  -- sheet '01.01.2024 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10180770.0
+    r61:  | Xankəndi şəhəri | 4367.0
+    r64:  | Ağdərə rayonu | ...
+    r67:  | Xocalı rayonu | 15408.0
+    r69:  | Şuşa rayonu | 25078.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 937655.0
+    r93:  | Lənkəran rayonu | 227481.0
+    r104:  | Yevlax rayonu | 129246.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 626622.0
+    r120:  | Şəki rayonu | 184217.0
+    r126:  | Kəlbəcər rayonu | 73868.0
+    r128:  | Laçın rayonu | 75669.0
+  -- sheet '01.01.2025 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10224889.0
+    r61:  | Xankəndi şəhəri | 4381.0
+    r64:  | Ağdərə rayonu | 12117.0
+    r67:  | Xocalı rayonu | 15553.0
+    r69:  | Şuşa rayonu | 25202.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 943761.0
+    r93:  | Lənkəran rayonu | 228090.0
+    r104:  | Yevlax rayonu | 130018.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 629013.0
+    r120:  | Şəki rayonu | 184796.0
+    r126:  | Kəlbəcər rayonu | 72381.0
+    r128:  | Laçın rayonu | 76159.0
+  -- sheet '01.01.2026 il (bütün əhali)': 138 rows x 22 cols
+    r9:  | Azərbaycan Respublikası üzrə - cəmi | 10262351.0
+    r61:  | Xankəndi şəhəri | 4387.0
+    r64:  | Ağdərə rayonu | 12173.0
+    r67:  | Xocalı rayonu | 15657.0
+    r69:  | Şuşa rayonu | 25312.0
+    r88:  | Lənkəran-Astara iqtisadi rayonu-cəmi | 949313.0
+    r93:  | Lənkəran rayonu | 228602.0
+    r104:  | Yevlax rayonu | 130615.0
+    r114:  | Şəki-Zaqatala iqtisadi rayonu-cəmi | 630899.0
+    r120:  | Şəki rayonu | 185204.0
+    r126:  | Kəlbəcər rayonu | 72829.0
+    r128:  | Laçın rayonu | 76662.0
+== get https://www.stat.gov.az/source/demoqraphy/az/001_17.xls
+  160,256 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_17.xls: 3 sheets: 1.17. | 1.17. sheher | 1.17. kend
+  -- sheet '1.17.': 135 rows x 7 cols
+    r0:  | 1.17. Azərbaycan Respublikasının iqtisad | 
+    r5:  | Azərbaycan Respublikası | 6026.5
+    r57:  | Xankəndi şəhəri | 38.9
+    r62:  | Xocalı rayonu | 20.1
+    r64:  | Şuşa rayonu | 16.0
+    r83:  | Lənkəran-Astara iqtisadi rayonu - cəmi | 510.20000000000005
+    r88:  | Lənkəran rayonu | 140.3
+    r99:  | Yevlax rayonu | 75.3
+    r109:  | Şəki-Zaqatala iqtisadi rayonu - cəmi | 390.80000000000007
+    r115:  | Şəki rayonu | 119.1
+    r121:  | Kəlbəcər rayonu | 58.1
+    r123:  | Laçın rayonu | 47.3
+    r134:  | 1) Əhalinin siyahıyaalınması dövründə iş | 
+== get https://www.stat.gov.az/source/demoqraphy/az/001_19.xls
+  112,640 bytes, begins b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00'
+  https://www.stat.gov.az/source/demoqraphy/az/001_19.xls: 1 sheets: 1.19.
+  -- sheet '1.19.': 475 rows x 11 cols
+    r1:  | 1.19. 2026-cı ilin əvvəlinə Azərbaycan R | 
+    r7:  | Azərbaycan Respublikası | 10262.4
+    r99:  | Ağdərə qəsəbəsi | -
+    r198:  | Xankəndi şəhəri | 4.4
+    r199:  | Xankəndi şəhəri | 2.1
+    r220:  | Ağdərə rayonu | 12.2
+    r221:  | Ağdərə şəhəri | 0.2
+    r244:  | Xocalı rayonu | 15.7
+    r245:  | Xocalı şəhəri | 8.7
+    r251:  | Şuşa rayonu | 25.3
+    r252:  | Şuşa şəhəri | 19.4
+    r322:  | Lənkəran-Astara iqtisadi rayonu - cəmi | 949.3
+    r334:  | Lənkəran rayonu | 228.6
+    r335:  | Lənkəran şəhəri | 51.6
+    r367:  | Yevlax rayonu | 130.6
+    r368:  | Yevlax şəhəri | 65.8
+    r405:  | Şəki-Zaqatala iqtisadi rayonu - cəmi | 630.9
+    r419:  | Şəki rayonu | 185.2
+    r420:  | Şəki şəhəri | 65.3
+    r435:  | Kəlbəcər rayonu | 72.8
+    r436:  | Kəlbəcər şəhəri | 12.5
+    r440:  | Laçın rayonu | 76.7
+    r441:  | Laçın şəhəri | 14.0
