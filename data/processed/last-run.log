@@ -1,25 +1,128 @@
-  Cuadro A2 read from https://www.datos.gov.py/sites/default/files/Cuadro%20A2..csv
-  P03: 263 districts
-  P04: 263 districts
-  PERINDI: 263 districts
-  P1601: 263 districts
-  P1602: 263 districts
-  P1604: 263 districts
-  P1605: 263 districts
-  P1606: 263 districts
-  P1607: 263 districts
-  P1608: 263 districts
-  P1609: 263 districts
-  P1698: 263 districts
-  263 districts making INE's 6,109,903; every question's categories and 'No Aplica' making each district
-  236 of 236 districts bound; not: []
-  2002 religion: 201 district polygons filled; 46 with the reason they are not
-  wrote data/processed/paraguay_census.json (1254 kB)
-  wrote paraguay_census.json: 18 departments, 247 district polygons (236 with figures)
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_12699081.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990101.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990121.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990141.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990161.htm: trying again in 10s
-  URLError reaching https://prod.redatam.org/binpry/RpWebStats.exe/CmdSet: trying again in 10s
-  URLError reaching https://prod.redatam.org/redpry//tempo/126990/~tmp_126990321.htm: trying again in 10s
+https://www5.ine.gub.uy/documents/CENSO%202023/Microdatos/Diccionario%20de%20variables%202023.xlsx
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  95,720 bytes
+  5 sheet(s)
+  -- 'VIVIENDA': 118 rows x 7 cols
+     ['', '', '17', 'Cuartel militar o policial', '']
+     ['', '', '22', 'Refugios', '']
+     ['', '', '21', 'Centro de rehabilitación no carcelaria con internación permanente', '']
+     ['', '', '18', 'Otra colectiva', '']
+     ['CONDICIÓN DE OCUPACIÓN', 'VIVVO02', '1', 'Ocupada', 'VIVIENDAS OCUPADAS Y DESOCUPADAS']
+     ['', '', '2', 'Desocupada', '']
+     ['', 'VIVVO03', '1', 'Ocupada con residentes presentes', 'VIVIENDAS OCUPADAS Y DESOCUPADAS']
+     ['', '', '2', 'Ocupada con residentes ausentes', '']
+     ['', '', '3', 'Desocupada: de uso temporal u ocasional', '']
+     ['', '', '4', 'Desocupada: para alquilar o vender', '']
+     ['', '', '5', 'Desocupada: en construcción o reparación', '']
+     ['', '', '6', 'Desocupada: ruinosa, destruida o inhabitable, tapiada', '']
+     ['', '', '7', 'Desocupada: vacante', '']
+     ['', '', '8', 'Desocupada: ignorado', '']
+     ['RESIDENTES HABITUALES QUE NO INTEGRAN EL HOGAR COLECTIVO', 'VIVVO04', '1', 'Sí', 'VIVIENDAS COLECTIVAS OCUPADAS Y DESOCUPADAS']
+     ['', '', '2', 'No', '']
+     ['DATOS DE LA VIVIENDA PARTICULAR OCUPADA', '', '', '', '']
+     ['MATERIAL PREDOMINANTE EN PAREDES EXTERIORES', 'VIVDV01', '1', 'Ladrillos, ticholos, piedras o bloques CON terminación', 'VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Ladrillos, ticholos, piedras o bloques SIN terminación', '']
+     ['', '', '3', 'Materiales livianos (madera o chapa) CON revestimiento', '']
+     ['', '', '4', 'Materiales livianos (madera o chapa) SIN revestimiento', '']
+     ['', '', '8', 'Sistema constructivo no tradicional de tipo construcción en seco (isopanel, steel frame, w', '']
+     ['', '', '9', 'Sistema constructivo no tradicional de tipo construcción en seco (isopanel, steel frame, w', '']
+     ['', '', '5', 'Barro (terrón, adobe o fajina)', '']
+     ['', '', '6', 'Materiales de desecho', '']
+     ['', '', '7', 'Otro material', '']
+     ['MATERIAL PREDOMINANTE DE LOS TECHOS', 'VIVDV02', '7', 'Planchada de hormigón o bovedilla CON protección (tejas u otros)', 'VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '8', 'Planchada de hormigón o bovedilla SIN protección', '']
+     ['', '', '2', 'Liviano CON cielo raso', '']
+     ['', '', '3', 'Liviano SIN cielo raso', '']
+     ['', '', '9', 'Sistema constructivo no tradicional (isopanel, techo verde, steel frame) CON cielo raso', '']
+     ['', '', '10', 'Sistema constructivo no tradicional (isopanel, techo verde, steel frame) SIN cielo raso', '']
+     ['', '', '4', 'Quincha', '']
+     ['', '', '5', 'Materiales de desecho', '']
+     ['', '', '6', 'Otro material', '']
+     ['MATERIAL PREDOMINANTE DE LOS PISOS', 'VIVDV03', '1', 'Cerámica, baldosas, piedra laja, madera, moqueta, linóleo, vinílico', 'VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Arena y portland', '']
+     ['', '', '3', 'Sólo contrapiso sin piso', '']
+     ['', '', '4', 'Tierra sin piso ni contrapiso', '']
+     ['', '', '5', 'Otro material', '']
+  -- 'HOGAR': 106 rows x 16384 cols
+     ['', '', '3', 'No dispone de baño', '']
+     ['USO DEL BAÑO', 'HOGSH02', '1', 'De uso exclusivo del hogar', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Compartido con otros hogares', '']
+     ['EVACUACIÓN DEL SERVICIO SANITARIO', 'HOGSH03', '1', 'Red general o saneamiento', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Fosa séptica, pozo negro', '']
+     ['', '', '3', 'Entubado hacia el arroyo', '']
+     ['', '', '4', 'Superficie, hueco en el suelo u otro', '']
+     ['SERVICIO DE COCINA', '', '', '', '']
+     ['LUGAR PARA COCINAR', 'HOGSC01', '1', 'Sí, privado de este hogar', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Sí, compartido con otros hogares', '']
+     ['', '', '3', 'No', '']
+     ['HABITACIONES UTILIZADAS CON FINES RESIDENCIALES', '', '', '', '']
+     ['HABITACIONES TOTALES', 'HOGHD00', 'Nº', 'Cantidad de habitaciones que no son baños ni cocinas', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['HABITACIONES PARA DORMIR', 'HOGHD01', 'Nº', 'Cantidad de habitaciones para dormir', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['FUENTE DE ENERGÍA PARA COCINAR', '', '', '', '']
+     ['FUENTE PRINCIPAL DE ENERGÍA PARA COCINAR', 'HOGSC02', '1', 'Electricidad', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Gas por cañería', '']
+     ['', '', '3', 'Supergás', '']
+     ['', '', '4', 'Queroseno', '']
+     ['', '', '5', 'Leña o carbón', '']
+     ['', '', '6', 'Otra fuente', '']
+     ['', '', '7', 'Ninguna', '']
+     ['FUENTE DE ENERGÍA PARA CALEFACCIONAR LOS AMBIENTES', '', '', '', '']
+     ['FUENTE PRINCIPAL DE ENERGÍA PARA CALEFACCIONAR', 'HOGCA01', '1', 'Electricidad', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'Leña o derivados', '']
+     ['', '', '3', 'Gas por cañería', '']
+     ['', '', '4', 'Supergás', '']
+     ['', '', '5', 'Queroseno', '']
+     ['', '', '6', 'Gas oil', '']
+     ['', '', '7', 'Fuel-oil', '']
+     ['', '', '8', 'Otra fuente', '']
+     ['', '', '9', 'Ninguna', '']
+     ['DISPOSICIÓN DE RESIDUOS SÓLIDOS', '', '', '', '']
+     ['DISPOSICIÓN DE RESIDUOS', 'HOGRS01', '1', 'La tiran en un contenedor o depósito', 'HOGARES EN VIVIENDAS PARTICULARES OCUPADAS CON RESIDENTES PRESENTES']
+     ['', '', '2', 'La recoge un camión o carrito de basura', '']
+     ['', '', '3', 'La queman', '']
+     ['', '', '4', 'La entierran', '']
+     ['', '', '5', 'La tiran en un terreno baldío o calle', '']
+     ['', '', '6', 'La tiran al río, arroyo o mar', '']
+     ['', '', '7', 'Otra forma de desecharla', '']
+  -- 'PERSONA': 1048576 rows x 16384 cols
+     ['CARACTERÍSTICAS GENERALES', '', '', '', '']
+     ['SEXO AL NACER', 'PERPH02', '1', 'Varón', 'POBLACIÓN ESTIMADA']
+     ['', '', '2', 'Mujer', '']
+     ['EDAD', 'PERNA01', 'Años', 'Edad en años cumplidos. Las personas residentes en localidades con menos de 10.000 habitan', 'POBLACIÓN ESTIMADA (EXCLUYENDO LOS RESIDENTES EN LOCALIDADES DE MENOS DE 10.000 HABITANTES']
+     ['EDAD AGRUPADA POR TRAMOS QUINQUENALES', 'PERNA01_TRAMO', 'Años por tramos quinquenales', 'Edad en años cumplidos, agrupada según tramos quinquenales.', 'POBLACIÓN ESTIMADA']
+     ['RELACIÓN DE PARENTESCO', '', '', '', '']
+     ['RELACIÓN DE PARENTESCO', 'PERPA01', '1', 'Jefe/a o persona de referencia', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'Cónyuge', '']
+     ['', '', '3', 'Hijo/a de referente y cónyuge', '']
+     ['', '', '4', 'Hijo/a sólo del referente', '']
+     ['', '', '5', 'Hijo/a del cónyuge', '']
+     ['', '', '7', 'Padre/madre', '']
+     ['', '', '9', 'Hermano/a', '']
+     ['', '', '11', 'Nieto/a', '']
+     ['', '', '16', 'Abuelo/a', '']
+     ['', '', '8', 'Suegro/a', '']
+     ['', '', '6', 'Yerno/nuera', '']
+     ['', '', '10', 'Cuñado/a', '']
+     ['', '', '12', 'Otro parentesco distinto de los anteriores', '']
+     ['', '', '13', 'Otro vínculo: NO pariente', '']
+     ['', '', '14', 'Servicio doméstico o familiar del mismo', '']
+     ['', '', '15', 'Miembro de hogar colectivo', '']
+     ['MADRE VIVE EN EL HOGAR', 'PERPA02', '1', 'Sí, vive en el hogar', 'POBLACIÓN CENSADA POR CUESTIONARIO Y MENORES DE RRAA INTEGRADOS A HOGARES CENSADOS']
+     ['', '', '2', 'No vive en el hogar', '']
+     ['', 'PERPA02_1', '', 'Número de persona si PERPA02=1', 'POBLACIÓN CENSADA POR CUESTIONARIO Y MENORES DE RRAA INTEGRADOS A HOGARES CENSADOS']
+     ['PADRE VIVE EN EL HOGAR', 'PERPA03', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['', 'PERPA03_1', '', 'Número de persona si PERPA03=1', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['ASCENDENCIA ÉTNICO-RACIAL', '', '', '', '']
+     ['AFRO O NEGRA', 'PERER01_1', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['ASIÁTICA', 'PERER01_2', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['BLANCA', 'PERER01_3', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['INDÍGENA', 'PERER01_4', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['OTRA', 'PERER01_5', '1', 'Sí', 'POBLACIÓN CENSADA POR CUESTIONARIO']
+     ['', '', '2', 'No', '']
+     ['ASCENDENCIA PRINCIPAL', 'PERER02', '1', 'Afro o Negra', 'POBLACIÓN CENSADA POR CUESTIONARIO']
