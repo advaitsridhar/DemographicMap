@@ -97,11 +97,12 @@ def build() -> list[dict[str, Any]]:
     log("luxembourg: RP 2021 by commune, sex and five-year age group (LUSTAT DF_B1607)")
     labels, counts, totals = read()
     national = totals.get("_T")
-    # A commune's code is its LAU code, LU0000 and three digits; the cantons
-    # share several communes' names (Luxembourg, Wiltz, Mersch) and are told
-    # apart by code, never by label.
-    communes = sorted(g for g in counts if re.fullmatch(r"LU0000\d{3}", g))
-    cantons = sorted(g for g in counts if g != "_T" and g not in communes)
+    # The codes do not follow one pattern (the communes' LAU codes vary in
+    # length), but every canton's label reads "Canton X", which is also how
+    # the cantons that share a commune's name (Luxembourg, Wiltz, Mersch) are
+    # told apart from it.
+    cantons = sorted(g for g in counts if g != "_T" and labels.get(g, "").startswith("Canton "))
+    communes = sorted(g for g in counts if g != "_T" and g not in cantons)
     log(f"  {len(communes)} communes, {len(cantons)} cantons, Luxembourg {national:,.0f}")
     if len(communes) != 102 or len(cantons) != 12:
         raise SystemExit(f"luxembourg: expected 102 communes and 12 cantons; the labels are "
