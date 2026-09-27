@@ -316,6 +316,28 @@ def px_codes(url: str, var: str, pattern: str) -> None:
         print("    " + "; ".join(hits[i:i + 12]))
 
 
+def xlsx(url: str, rows: int = 30, width: int = 220) -> None:
+    """A workbook's sheets, their sizes and first rows."""
+    import io
+    import openpyxl
+    raw = fetch(url, accept="*/*")
+    print(f"  {len(raw):,} bytes, starts {raw[:4]!r}")
+    book = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
+    for sheet in book.worksheets:
+        print(f"  sheet {sheet.title!r}: {sheet.max_row} rows x {sheet.max_column} columns")
+        for i, row in enumerate(sheet.iter_rows(values_only=True)):
+            if i >= rows:
+                break
+            cells = ["" if c is None else str(c) for c in row]
+            while cells and not cells[-1]:
+                cells.pop()
+            print(f"    {i + 1}: " + " | ".join(cells)[:width])
+
+
+def osp_dims(flow: str, year: int = 2026) -> None:
+    sdmx_obs(flow, f"?startPeriod={year}&endPeriod={year}", limit=2)
+
+
 def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
     raw = fetch(url, accept="*/*").decode("utf-8", "replace")
     print(f"  {len(raw):,} characters")
@@ -372,6 +394,17 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 10
+    "r10_ltu_eth": lambda: xlsx("https://web.archive.org/web/20221115072139id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_ethnicity_1108.xlsx"),
+    "r10_ltu_lang": lambda: xlsx("https://web.archive.org/web/20221227012930id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_mother_tongue_in_municipality-EN.xlsx/1c3c9ad4-5fa5-44b1-baa7-e6caef4b740b?version=1.0"),
+    "r10_ltu_rel": lambda: xlsx("https://web.archive.org/web/20221115072138id_/https://osp.stat.gov.lt/documents/10180/10367417/Population_by_religious_community_1108.xlsx"),
+    "r10_ltu_202": lambda: osp_dims("S3R167_M3010202"),
+    "r10_ltu_205": lambda: osp_dims("S3R167_M3010205"),
+    "r10_ltu_206": lambda: osp_dims("S3R167_M3010206"),
+    "r10_ltu_213": lambda: osp_dims("S3R167_M3010213"),
+    "r10_ltu_214": lambda: osp_dims("S3R167_M3010214"),
+    "r10_ltu_222": lambda: osp_dims("S3R167_M3010222"),
+    "r10_ltu_224": lambda: osp_dims("S3R167_M3010224"),
     # Round 9
     "r9_lva_units_lv": lambda: px_codes("https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRD/IRD081",
                                         "AREA", r"LV00\d{5}"),
