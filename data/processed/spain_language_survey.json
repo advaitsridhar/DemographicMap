@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ESP-EULP-CAT",
+    "level": "admin1",
+    "name": "Cataluña/Catalunya",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 46.5,
+        "count": 3154700
+      },
+      {
+        "group": "Catalan",
+        "pct": 32.6,
+        "count": 2211100
+      },
+      {
+        "group": "Catalan and Spanish",
+        "pct": 9.4,
+        "count": 636500
+      },
+      {
+        "group": "Spanish and another language",
+        "pct": 4.1,
+        "count": 275100
+      },
+      {
+        "group": "Other language",
+        "pct": 3.4,
+        "count": 233700
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5,
+        "count": 99400
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.1,
+        "count": 74200
+      },
+      {
+        "group": "Catalan and another language",
+        "pct": 0.8,
+        "count": 50900
+      },
+      {
+        "group": "Other language combinations",
+        "pct": 0.4,
+        "count": 24900
+      },
+      {
+        "group": "Catalan, Spanish and another language",
+        "pct": 0.3,
+        "count": 23200
+      },
+      {
+        "group": "Aranese Occitan",
+        "pct": 0.0,
+        "count": 1400
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Idescat and the Generalitat of Catalonia, Survey on Language Uses of the Population (EULP) 2023: population aged 15 and over by habitual language",
+        "url": "https://www.idescat.cat/pub/?id=eulp&lang=en",
+        "year": 2023,
+        "license": "Idescat (CC BY 4.0)"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "25490228B80227492032103",
+    "language_year": 2023,
+    "language_basis": "survey estimate: habitual language, residents aged 15+",
+    "language_note": "Idescat and the Generalitat's Survey on Language Uses of the Population (EULP) 2023: residents aged 15 and over by the language they habitually speak -- one language, two or three together, or another; those who did not say are Not stated. A weighted survey estimate (6,785.1 thousand people aged 15 and over), not a count; Idescat publishes it for Catalonia and for territorial areas that are not provinces, so the provinces are left to other sources. INE's census does not ask language."
+  }
+]
