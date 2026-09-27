@@ -343,11 +343,11 @@ def sexes(rows: list[list[Any]], counties: set[str], order: dict[str, list[dict[
         seq = blocks.get(county, [])
         at = 0
         for i, uat in enumerate(uats):
-            want = fold(bare(uat["name"]))
+            want = fold(bare(uat["name"]), True)
             while at < len(seq):
                 r = seq[at]
                 at += 1
-                if fold(bare(text(r[2]))) == want and number(r[3]) == uat["total"]:
+                if fold(bare(text(r[2])), True) == want and number(r[3]) == uat["total"]:
                     men, women = number(r[4]), number(r[5])
                     if men is None or women is None:
                         break
@@ -416,8 +416,8 @@ def build() -> list[dict[str, Any]]:
     base = tables["age"]
     for field in ("ethnicity", "language", "religion"):
         for c in counties:
-            a = [(fold(bare(u["name"])), u["total"]) for u in base[c]["uats"]]
-            b = [(fold(bare(u["name"])), u["total"]) for u in tables[field][c]["uats"]]
+            a = [(fold(bare(u["name"]), True), u["total"]) for u in base[c]["uats"]]
+            b = [(fold(bare(u["name"]), True), u["total"]) for u in tables[field][c]["uats"]]
             if a != b:
                 diff = [x for x, y in zip(a, b) if x != y][:3]
                 raise SystemExit(f"romania_census: {field} lists {c}'s UATs differently: {diff}")
