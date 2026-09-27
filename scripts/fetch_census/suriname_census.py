@@ -18,7 +18,9 @@ All from the General Bureau of Statistics (ABS):
   VII"): each ressort's population by religion, in the six groups the ABS
   tabulates there, and its households by the language most spoken in them.
   The 2012 census publishes neither below the country, so these are the most
-  recent figures by ressort; the districts' are their ressorts' sums.
+  recent figures by ressort; the districts' are their ressorts' sums -- except
+  Marowijne's, Brokopondo's and Sipaliwini's religion, which the ABS's 2012
+  District Results Volume III (census8dis3.pdf) gives by denomination.
 
 The ressorts are bound to the map's by name within the district, spellings
 the sources and the map plainly share written out in ALIASES; a ressort the
@@ -56,6 +58,18 @@ VOL1 = ("https://statistics-suriname.org/wp-content/uploads/2019/05/Publicatie-C
         "Volume-1-Demografische-en-Sociale-Karakteristieken-en-Migratie.pdf")
 PROFILE = ("https://www.statistics-suriname.org/wp-content/uploads/2019/03/"
            "census-profile-on-ressort-level.xls")
+DISTRICTS_III = "https://www.statistics-suriname.org/wp-content/uploads/2019/03/census8dis3.pdf"
+SOURCE_III = ("General Bureau of Statistics (ABS) Suriname, Census 2012: District Results "
+              "Volume III (Marowijne, Brokopondo, Sipaliwini), population by religion")
+RELIGION_2012 = {
+    "roomskatholiek": "Roman Catholic", "volleevangelie": "Full Gospel", "ebg": "Moravian",
+    "overigchristen": "Other Christian", "hindoe": "Hindu", "hindoesanatan": "Hindu",
+    "overighindoeinclaryah": "Hindu", "islam": "Muslim", "islamsoenniet": "Muslim",
+    "overigislaminclahmadyah": "Muslim", "javanisme": "Kejawen",
+    "anderegodsdienst": "Other religion",
+    "anderegodsdienstjodendomwintijehovasgetuigen": "Other religion",
+    "geengodsdienst": "No religion", "onbekend": "Not stated",
+}
 SOURCE_ETN = ("General Bureau of Statistics (ABS) Suriname, Census 2012: population by "
               "ressort and ethnic group (question 8)")
 SOURCE_VOL1 = ("General Bureau of Statistics (ABS) Suriname, Census 2012 Volume I, Tables "
@@ -250,6 +264,38 @@ def table_10(lines: list[str]) -> dict[str, dict[str, Any]]:
     return out
 
 
+def religion_2012(lines: list[str]) -> dict[str, Counter]:
+    """{district: Counter(religion: people)} from District Results Volume III's slides."""
+    out: dict[str, Counter] = {}
+    district = None
+    for i, line in enumerate(lines):
+        text = line.strip()
+        if text.startswith("Bevolking naar Godsdienst") and i + 1 < len(lines):
+            district = lines[i + 1].strip().title()
+            if district not in DISTRICTS:
+                raise SystemExit(f"suriname_census: a religion slide for {district!r}")
+            out[district] = Counter()
+            continue
+        m = re.match(r"^(.+?)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+[\d.]+$", text)
+        if not m or district is None:
+            continue
+        men, women, total = (int(x.replace(",", "")) for x in m.groups()[1:])
+        if men + women != total:
+            raise SystemExit(f"suriname_census: {district} {m[1]} does not add up")
+        label = fold(m[1])
+        if label == "totaal":
+            if sum(out[district].values()) != total:
+                raise SystemExit(f"suriname_census: {district}'s religions make "
+                                 f"{sum(out[district].values())} of {total}")
+            out[district]["_total"] = total
+            district = None
+            continue
+        if label not in RELIGION_2012:
+            raise SystemExit(f"suriname_census: 2012 religion {m[1]!r} is not one this reads")
+        out[district][RELIGION_2012[label]] += total
+    return out
+
+
 # -- 2004: the ressort profile -----------------------------------------------------------
 
 def profile(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
@@ -356,6 +402,10 @@ def main() -> int:
         raise SystemExit(f"suriname_census: the ethnic and age tables differ: "
                          f"{sorted(set(ressorts) ^ set(ages))}")
     districts = table_10(pdf_lines(VOL1, 70, 72))
+    recent_religion = religion_2012(pdf_lines(DISTRICTS_III))
+    for d, counts in recent_religion.items():
+        near(counts.pop("_total"), ethnic[d]["_total"]["total"],
+             f"{d}'s 2012 religions against its ethnic table row")
     for d in DISTRICTS:
         near(districts[d]["total"], ethnic[d]["_total"]["total"],
              f"{d}'s Table 10 against its ethnic table row")
@@ -450,11 +500,20 @@ def main() -> int:
             lang.update(old[district_2004[r]]["language"])
             households += old[district_2004[r]]["households"]
         shape = district_shape[d]
+        values = fields(districts[d], ethnic[d]["_total"]["total"],
+                        ethnic[d]["_total"]["counts"], rel, lang, households, ", the district")
+        if d in recent_religion:
+            values.update(
+                religion=present(recent_religion[d]), religion_year=2012,
+                religion_note=("Religion by denomination, 2012, from the ABS's District "
+                               "Results Volume III; \"E.B.G.\" (the Evangelische "
+                               "Broedergemeente) is written as Moravian, \"Volle Evangelie\" "
+                               "as Full Gospel and \"Javanisme\" as Kejawen."))
+            values["sources"] = values["sources"] + [
+                {"field": "religion", "name": SOURCE_III, "url": DISTRICTS_III, "year": 2012}]
         records.append(record(
             f"SUR-ABS-{fold(d)}", shape["name"], level="admin1", parent="SUR", country="SUR",
-            match_by="shape_id", shape_id=shape["id"],
-            **fields(districts[d], ethnic[d]["_total"]["total"], ethnic[d]["_total"]["counts"],
-                     rel, lang, households, ", the district")))
+            match_by="shape_id", shape_id=shape["id"], **values))
     for (d, k), shape in bound.items():
         o = old[district_2004[(d, k)]]
         records.append(record(
