@@ -1537,7 +1537,17 @@ def deu9() -> None:
                      limit=15)
 
 
+def deu10() -> None:
+    """Rhineland-Palatinate's Zensus 2022 regional population table: is religion in it?"""
+    base = "https://www.statistik.rlp.de/fileadmin/statistik.rlp.de/Dokumente_und_Bilder/1_Themen/3_Zensus/"
+    for name in ("07_RP_Regionaltabelle_Bevoelkerung_Z22.xlsx", "07_RP_Regionaltabelle_Demografie_Z22.xlsx",
+                 "Eckzahlen.xlsx"):
+        book_dump(base + name, rows=12, cols=14, grep=r"(?i)religi|kathol|evangel|Koblenz|Trier|Rheinhessen",
+                  limit=8)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu10": deu10,
     "deu9": deu9,
     "aut9": aut9,
     "round13": round13,

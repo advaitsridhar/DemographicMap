@@ -54,6 +54,7 @@ SPLIT_IN_2011 = {"Koper", "Trebnje"}      # lost Ankaran and Mirna after the 200
 RENAMED = {"Sveti Jurij": "Sveti Jurij ob Ščavnici", "Kanal": "Kanal ob Soči",
            "Šentjur pri Celju": "Šentjur"}
 EXPECTED_2002 = 192
+WITHHELD_SHARE = 0.10       # above this share of people in blanked cells, a field is not written
 
 ETHNIC_ROWS = ["Declared -Slovenes", "Declared -others", "Undeclared", "Did not want to reply",
                "Unknown"]
@@ -254,13 +255,22 @@ def build() -> list[dict[str, Any]]:
         eth["Other"] = other
         rel = {label: r.get(k, 0.0) for k, label in RELIGION.items()}
         lan = {label: lang.get(k, 0.0) for k, label in LANGUAGE.items()}
+        withheld: dict[str, str] = {}
         for field, got, hidden in (("ethnicity", eth, hid_e1 + hid_e2),
                                    ("religion", rel, hid_r1 + hid_r2), ("language", lan, hid_l)):
-            if abs(sum(got.values()) + hidden - total) > 0.5 or hidden > 0.15 * total:
+            if abs(sum(got.values()) + hidden - total) > 0.5:
                 raise SystemExit(f"slovenia_census: {name}: {field} rows make "
                                  f"{sum(got.values()):,.0f} and blanked cells {hidden:,.0f} of "
                                  f"{total:,.0f}")
-        counts[name] = {"ethnicity": eth, "religion": rel, "language": lan, "total": {"": total}}
+            if hidden > WITHHELD_SHARE * total:
+                # Shares that leave out more than a tenth of the people would
+                # misdescribe the municipality; the field is a stated gap.
+                withheld[field] = (f"Not written: SiStat blanks {hidden:,.0f} of the "
+                                   f"municipality's {total:,.0f} people in its 2002 {field} table "
+                                   f"for confidentiality, more than a tenth of them.")
+                log(f"  {name}: {field} withheld, {hidden:,.0f} of {total:,.0f} blanked")
+        counts[name] = {"ethnicity": eth, "religion": rel, "language": lan, "total": {"": total},
+                        "withheld": withheld}
     check_sum((counts[n]["total"][""] for n in names), counts[national]["total"][""],
               "municipalities against Slovenia")
     log(f"  people in blanked cells, all municipalities: ethnicity "
@@ -275,10 +285,13 @@ def build() -> list[dict[str, Any]]:
     source = [{"field": "religion/ethnicity/language", "name": SOURCE, "url": PORTAL,
                "license": LICENCE, "year": YEAR}]
 
-    def fields(c: dict[str, dict[str, float]]) -> dict[str, Any]:
+    def fields(c: dict[str, Any]) -> dict[str, Any]:
         out: dict[str, Any] = {}
         total = c["total"][""]
         for field in ("ethnicity", "religion", "language"):
+            if field in c.get("withheld", {}):
+                out[field] = gap(NOT_AVAILABLE, c["withheld"][field])
+                continue
             rows = shares({k: v for k, v in c[field].items() if v}, total=total)
             out[field] = rows
             out[f"{field}_year"] = dated(rows, YEAR)
@@ -324,6 +337,8 @@ def build() -> list[dict[str, Any]]:
         into = sums.setdefault(shape["parent"], {"ethnicity": {}, "religion": {}, "language": {},
                                                  "total": {"": 0.0}})
         for field, cells in counts[name].items():
+            if field == "withheld":
+                continue
             for k, v in cells.items():
                 into[field][k] = into[field].get(k, 0.0) + v
     check_sum((s["total"][""] for s in sums.values()), counts[national]["total"][""],
