@@ -37,8 +37,12 @@ from build_entities import BOUNDARIES, PROCESSED, REMAINDERS, whole  # noqa: E40
 OUT = PROCESSED / "admin2_remainders.geojson"
 # Slivers: anything thinner than about 200 m along a shared edge.
 SLIVER = 0.002
-# A remainder smaller than this share of its first-order unit is edge noise.
+# A remainder smaller than this share of its first-order unit is edge noise --
+# unless it is larger than MIN_AREA outright. Cerro Largo's is 0.08% of the
+# department and 12 km2: Melo, the capital, in no municipio, where 57,747
+# people live. The noise left after the sliver pass is under half a km2.
 MIN_SHARE = 0.01
+MIN_AREA = 0.0005  # square degrees, about 6 km2 at Uruguay's latitude
 SIMPLIFY = 0.001
 
 
@@ -66,7 +70,7 @@ def remainders(iso3: str, label: str) -> list[dict]:
         inside = [g for _, g in seconds if polygon.contains(g.representative_point())]
         rest = polygon.difference(unary_union(inside)) if inside else polygon
         rest = rest.buffer(-SLIVER).buffer(SLIVER).intersection(polygon)
-        if rest.is_empty or rest.area < MIN_SHARE * polygon.area:
+        if rest.is_empty or rest.area < min(MIN_SHARE * polygon.area, MIN_AREA):
             continue
         name = props["shapeName"]
         out.append({
