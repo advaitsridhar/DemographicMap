@@ -44,7 +44,7 @@ from .redatam import median_age
 OUT = "spain_italy_age.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 INE_TABLE = "69792"
-INE_DATA = f"https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/{INE_TABLE}?nult=2&tip=AM"
+INE_DATA = f"https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/{INE_TABLE}?nult=4&tip=AM"
 INE_VALUES = f"https://servicios.ine.es/wstempus/js/ES/VALORES_GRUPOSTABLA/{INE_TABLE}/145746"
 INE_PAGE = f"https://www.ine.es/jaxiT3/Tabla.htm?t={INE_TABLE}"
 INE_SOURCE = "INE, Estadística Continua de Población (table 69792)"
