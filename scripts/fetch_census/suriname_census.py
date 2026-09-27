@@ -6,10 +6,14 @@ All from the General Bureau of Statistics (ABS):
 * **2012, ethnic group by ressort** (census8etn.pdf): every ressort of every
   district, its population by the thirteen answers to question 8, and each
   district's total row.
-* **2012, age and sex by ressort** (Volume I, Tables 9.1-9.62): each
-  ressort's population by five-year age group and sex. The population, the
+* **2012, age and sex** (Volume I): each district's population by five-year
+  age group and sex (Table 10), and each ressort's (Tables 9.1-9.62). The
   sex ratio and the median age (interpolated within the five-year group
-  holding the middle person, those of unknown age left out).
+  holding the middle person, those of unknown age left out). A ressort's
+  population is the ethnic table's, whose ressorts make their district's row;
+  Volume I's ressort tables agree with it to within a few people except
+  Livorno (9,303 against 8,209; its Paramaribo ressorts make 1,129 more than
+  the district), whose ages and sexes are therefore not written.
 * **2004, the ressort profile** (census-profile-on-ressort-level.xls, "census
   VII"): each ressort's population by religion, in the six groups the ABS
   tabulates there, and its households by the language most spoken in them.
@@ -40,7 +44,8 @@ import re
 from collections import Counter, defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from .binding import fold
 from .cod_ps_age import grouped_median
 
@@ -202,6 +207,49 @@ def age_tables(lines: list[str]) -> dict[tuple[str, str], dict[str, Any]]:
     return out
 
 
+AGE10 = re.compile(r"(?:([A-Z][a-z]+)\s+)?(\d+\s*-\s*\d+|\d+\+|Onbekend|Totaal)\s+([\d,]+)\s+"
+                   r"([\d,]+)\s+([\d,]+)")
+
+
+def table_10(lines: list[str]) -> dict[str, dict[str, Any]]:
+    """{district: {"groups", "unknown", "total", "men", "women"}} from Volume I, Table 10.
+
+    Two districts abreast, as the ressort tables are; a block's first line
+    names both districts before their first age group.
+    """
+    out: dict[str, dict[str, Any]] = {}
+    pair: list[dict[str, Any]] = []
+    for line in lines:
+        rows = AGE10.findall(line.strip())
+        if len(rows) != 2:
+            continue
+        if rows[0][0] and rows[1][0]:
+            pair = [{"district": r[0], "groups": [], "unknown": 0} for r in rows]
+        if not pair:
+            continue
+        for table, (_, label, total, men, women) in zip(pair, rows):
+            total, men, women = (int(x.replace(",", "")) for x in (total, men, women))
+            if men + women != total:
+                raise SystemExit(f"suriname_census: Table 10's {table['district']} {label} "
+                                 "does not add up")
+            if label == "Onbekend":
+                table["unknown"] = total
+            elif label == "Totaal":
+                made = sum(g[2] for g in table["groups"]) + table["unknown"]
+                if made != total:
+                    raise SystemExit(f"suriname_census: Table 10's {table['district']} ages "
+                                     f"make {made}, its total {total}")
+                table.update(total=total, men=men, women=women)
+                out[table["district"]] = table
+            else:
+                span = re.match(r"(\d+)\s*(?:-\s*(\d+)|\+)", label)
+                table["groups"].append((int(span[1]), int(span[2]) if span[2] else None, total))
+    if set(out) != set(DISTRICTS) or sum(t["total"] for t in out.values()) != NATIONAL_2012:
+        raise SystemExit(f"suriname_census: Table 10 has {sorted(out)}, "
+                         f"{sum(t['total'] for t in out.values()):,} people")
+    return out
+
+
 # -- 2004: the ressort profile -----------------------------------------------------------
 
 def profile(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
@@ -307,13 +355,25 @@ def main() -> int:
     if set(ressorts) != set(ages):
         raise SystemExit(f"suriname_census: the ethnic and age tables differ: "
                          f"{sorted(set(ressorts) ^ set(ages))}")
+    districts = table_10(pdf_lines(VOL1, 70, 72))
+    for d in DISTRICTS:
+        near(districts[d]["total"], ethnic[d]["_total"]["total"],
+             f"{d}'s Table 10 against its ethnic table row")
+    # A ressort's population is the ethnic table's, whose ressorts make their
+    # district's row. Volume I's ressort tables mostly agree to the person; a
+    # few differ (its Paramaribo ressorts make 242,053 against the district's
+    # 240,924, Livorno 9,303 against 8,209), and where they differ by more than
+    # 1% Volume I's ages and sexes are not taken to describe the ressort.
+    agree = set()
     for d, k in ressorts:
-        # Volume I (September 2013) moved a few dozen people between some of
-        # Paramaribo's ressorts after the March 2013 ethnic table (Weg naar Zee
-        # 16,069 against 16,037); the districts agree to the person. Each
-        # ressort's population is Volume I's, its ethnic shares the table's.
-        near(ages[(d, k)]["total"], ethnic[d][k]["total"],
-             f"{d} {k}'s ages against its ethnic groups", share=0.01)
+        made, printed = ages[(d, k)]["total"], ethnic[d][k]["total"]
+        if abs(made - printed) <= max(SLACK, 0.01 * printed):
+            agree.add((d, k))
+            if made != printed:
+                log(f"  {d} {k}: Volume I {made:,}, the ethnic table {printed:,}")
+        else:
+            log(f"  {d} {k}: Volume I {made:,}, the ethnic table {printed:,}; its ages and "
+                "sexes are left out")
     old_by_key: dict[str, list[str]] = defaultdict(list)
     for column in old:
         old_by_key[key(column)].append(column)
@@ -342,17 +402,26 @@ def main() -> int:
     if unbound:
         raise SystemExit(f"suriname_census: map ressorts with no census ressort: {unbound}")
 
-    def fields(groups, men, women, people, eth, rel, lang, households, where) -> dict[str, Any]:
-        return dict(
-            population=measure(people, year=2012, source=SOURCE_VOL1),
-            population_note=f"The 2012 census's de jure population{where}.",
-            sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
-                              year=2012, source=SOURCE_VOL1),
-            sex_ratio_note=f"Men per thousand women, 2012{where}.",
-            median_age=measure(grouped_median(sorted(groups, key=lambda g: g[0])),
-                               unit="years", year=2012, source=SOURCE_VOL1),
-            median_age_note=("Interpolated within the five-year age group holding the middle "
-                             f"person, 2012{where}; people of unknown age left out."),
+    def fields(age, people, eth, rel, lang, households, where) -> dict[str, Any]:
+        out: dict[str, Any] = dict(
+            population=measure(people, year=2012, source=SOURCE_ETN),
+            population_note=f"The 2012 census's de jure population{where}.")
+        if age is None:
+            why = ("Volume I's age table for the ressort counts a different number of people "
+                   "from the census's ressort table (more than 1% apart), so neither its "
+                   "ages nor its sexes are taken to be the ressort's.")
+            out.update(median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why))
+        else:
+            out.update(
+                sex_ratio=measure(round(1000 * age["men"] / age["women"]),
+                                  unit="males_per_1000_females", year=2012, source=SOURCE_VOL1),
+                sex_ratio_note=f"Men per thousand women, 2012{where}.",
+                median_age=measure(grouped_median(sorted(age["groups"], key=lambda g: g[0])),
+                                   unit="years", year=2012, source=SOURCE_VOL1),
+                median_age_note=("Interpolated within the five-year age group holding the "
+                                 f"middle person, 2012{where}; people of unknown age left "
+                                 "out."))
+        return out | dict(
             ethnicity=present(eth), ethnicity_year=2012,
             ethnicity_note=("Ethnic group (question 8), 2012; \"Weet niet\" and \"Geen "
                             f"antwoord\" are written together as Not stated{where}."),
@@ -365,23 +434,16 @@ def main() -> int:
             language_note=(f"The language most spoken in the household, share of the "
                            f"{households:,} households, 2004{where}; the 2012 census "
                            "publishes none below the country."),
-            sources=[{"field": "population/sex_ratio/median_age", "name": SOURCE_VOL1,
+            sources=[{"field": "sex_ratio/median_age", "name": SOURCE_VOL1,
                       "url": VOL1, "year": 2012},
-                     {"field": "ethnicity", "name": SOURCE_ETN, "url": ETN, "year": 2012},
+                     {"field": "population/ethnicity", "name": SOURCE_ETN, "url": ETN,
+                      "year": 2012},
                      {"field": "religion/language", "name": SOURCE_2004, "url": PROFILE,
                       "year": 2004}])
 
     records = []
     for d in DISTRICTS:
         mine = [(dd, k) for dd, k in ressorts if dd == d]
-        groups = Counter()
-        for r in mine:
-            for lo, hi, n in ages[r]["groups"]:
-                groups[(lo, hi)] += n
-        men = sum(ages[r]["men"] for r in mine)
-        women = sum(ages[r]["women"] for r in mine)
-        people = sum(ages[r]["total"] for r in mine)
-        near(people, ethnic[d]["_total"]["total"], f"{d}'s ressorts' ages against its row")
         rel, lang, households = Counter(), Counter(), 0
         for r in mine:
             rel.update(old[district_2004[r]]["religion"])
@@ -391,18 +453,17 @@ def main() -> int:
         records.append(record(
             f"SUR-ABS-{fold(d)}", shape["name"], level="admin1", parent="SUR", country="SUR",
             match_by="shape_id", shape_id=shape["id"],
-            **fields([(lo, hi, n) for (lo, hi), n in groups.items()], men, women, people,
-                     ethnic[d]["_total"]["counts"], rel, lang, households,
-                     ", the district's ressorts summed")))
+            **fields(districts[d], ethnic[d]["_total"]["total"], ethnic[d]["_total"]["counts"],
+                     rel, lang, households, ", the district")))
     for (d, k), shape in bound.items():
-        a = ages[(d, k)]
         o = old[district_2004[(d, k)]]
         records.append(record(
             f"SUR-ABS-{fold(d)}-{k}", shape["name"], level="admin2", parent="SUR",
             country="SUR", parent_name=district_of[shape["parent"]], match_by="shape_id",
             shape_id=shape["id"],
-            **fields(a["groups"], a["men"], a["women"], a["total"], ethnic[d][k]["counts"],
-                     o["religion"], o["language"], o["households"], "")))
+            **fields(ages[(d, k)] if (d, k) in agree else None, ethnic[d][k]["total"],
+                     ethnic[d][k]["counts"], o["religion"], o["language"], o["households"],
+                     "")))
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(DISTRICTS)} districts, {len(bound)} ressorts")
     return 0

@@ -42,6 +42,23 @@ class Ages(unittest.TestCase):
             s.age_tables(lines)
 
 
+class Districts(unittest.TestCase):
+    def test_table_10_names_its_districts_on_their_first_line(self):
+        lines = []
+        for first, second in zip(s.DISTRICTS[0::2], s.DISTRICTS[1::2]):
+            lines += [f"{first} 0 - 4 1,000 500 500 {second} 0 - 4 10 5 5",
+                      "85+ 100 40 60 85+ 2 1 1", "Onbekend 1 1 0 Onbekend 0 0 0",
+                      "Totaal 1,101 541 560 Totaal 12 6 6"]
+        old = s.NATIONAL_2012
+        s.NATIONAL_2012 = 5 * 1_101 + 5 * 12
+        try:
+            out = s.table_10(lines)
+        finally:
+            s.NATIONAL_2012 = old
+        self.assertEqual(out["Wanica"]["groups"], [(0, 4, 10), (85, None, 2)])
+        self.assertEqual(out["Paramaribo"]["total"], 1_101)
+
+
 class Profile(unittest.TestCase):
     ROWS = [["", "Tabel"], [3.0, "Variabele", "Total", "Flora", "Kwatta"],
             [5.0, "Religion"], ["", "Total", 10.0, 6.0, 4.0],
