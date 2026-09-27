@@ -23,18 +23,27 @@ its dialog pages, not its tables, so this is the reachable form of the
 office's own count, in five-year groups -- the median is interpolated within
 the group holding the middle person, and says so.
 
-**Binding.** By geometry, checked by name. The Bureau publishes its own
-polygons for the areas it tabulated (Ukraine.gdb, same HDX dataset, keyed by
-the same GEO_MATCH code as the tables); each area goes to the map polygon
-holding the majority of its area, which is what says where a city counted
-apart is drawn. Every raion is also matched by name within its oblast -- the
-census's adjective ("Bakhchysaraiskyi") against the polygon's town
-("Bakhchysarai"), or through the renaming declared below (2016's
-decommunisation renamed a raion in most oblasts, and the census predates it)
--- and the run lists every raion where the two disagree. A polygon into which
-a quarter or more of an area it is not given reaches is refused with the
-reason, as are Sevastopol's polygons: the census counts the city whole. Every
-oblast's count must be held by its areas' polygons, or the run stops.
+**Binding.** By name, checked by geometry. Every raion is matched by name
+within its oblast -- the census's adjective ("Bakhchysaraiskyi") against the
+polygon's town ("Bakhchysarai"), or through the renaming declared below
+(2016's decommunisation renamed a raion in most oblasts, and the census
+predates it). The Bureau publishes its own polygons for the areas it
+tabulated (Ukraine.gdb, same HDX dataset, keyed by the same GEO_MATCH code as
+the tables), and laid over the map's they are the check: a raion is bound to
+the polygon its name gives only when that polygon also holds more of the
+raion's area than any other. The boundary file's outlines are coarse -- a
+raion's seat almost always falls inside the polygon named for it, while a
+third of its area can lie in the neighbours' -- so a raion bound this way
+says in its note how much of it the polygon covers; where name and outline
+disagree (a label on a neighbour's outline looks exactly like that), the
+raion is placed nowhere and its polygon is refused. A city council the
+census counts apart goes with the raion it is the seat of (Uman with
+Umanskyi), the map drawing no city polygons but Kyiv's and Sevastopol's;
+any other city council goes to the polygon holding the majority of its area,
+and a polygon holding a quarter of such an area placed elsewhere or nowhere
+is refused, as are Sevastopol's polygons: the census counts the city whole.
+Kyiv's raions are the city the map draws as one polygon. Every oblast's count
+must be held by its areas' polygons, or the run stops.
 
 **Oblasts.** Median age and sex ratio from the Bureau's other Age-Sex sheet:
 the Service's estimate for 1 January 2017 by oblast, sex and five-year group,
@@ -144,6 +153,14 @@ HOLD = 0.5
 CLEAN = 0.9
 PART = 0.25
 UNIT = re.compile(r"^UKR_\d{2}_\d{2}$")
+# A city council that is its raion's seat goes into the raion's polygon when
+# at least this share of the city's own area lies there.
+SEAT_MIN = 0.10
+# Below this share of a raion's area inside the polygon its name binds it to,
+# the note says the boundary file draws the raion coarsely.
+COARSE = 0.75
+KYIV = "MISTO KYYIV"
+SEVASTOPOL = "MISTO SEVASTOPOL’"
 
 
 def census_shapes() -> dict[str, Any]:
@@ -418,6 +435,171 @@ def likeness(nso: str, polygon: str) -> float:
     return best + (0.10 if skeleton_agrees(nso, polygon) else 0.0)
 
 
+# How alike a city council's name and its raion's adjective must be for the
+# city to be that raion's seat: stricter than a polygon's name, as a city has
+# every raion of its oblast to be mistaken for.
+SEAT_LIKE = 0.88
+
+
+def city_name(nso: str) -> str:
+    """"M. UMAN" -> "Uman"; "BILA TSERKVA (MISKRADA)" -> "Bila Tserkva"."""
+    return re.sub(r"\s*\(.*$", "", re.sub(r"^M\.\s*", "", nso.strip())).title()
+
+
+def seat_of(nso: str, raions: list[tuple[Any, str]]) -> Any:
+    """The raion whose adjective is made from this city's name (Umanskyi of
+    Uman, Bilotserkivskyi of Bila Tserkva), when exactly one is, clearly."""
+    town = city_name(nso)
+    scored = sorted(((likeness(r_nso, town), key) for key, r_nso in raions),
+                    key=lambda s: -s[0])
+    if not scored or scored[0][0] < SEAT_LIKE:
+        return None
+    if len(scored) > 1 and scored[0][0] - scored[1][0] < LIKE_MARGIN:
+        return None
+    return scored[0][1]
+
+
+def place(level2: dict[tuple[str, str], dict[str, Any]], by_match: dict[str, tuple[str, str]],
+          named: dict[tuple[str, str], dict[str, Any]],
+          lies: dict[str, list[tuple[str, float]]], drawn: set[str],
+          shapes: dict[str, list[dict[str, Any]]],
+          site_ids: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """Which polygon holds each area the census counts, and which polygons are refused.
+
+    The boundary file's raion polygons carry the right names but coarse
+    outlines: most raions' seats fall inside the polygon named for them, while
+    a raion's area as the Bureau draws it often spills a third into its
+    neighbours. So a polygon is a raion by its name, and the overlay is the
+    check on the name rather than the judge of it:
+
+    - a raion goes to the polygon its name binds it to when that polygon also
+      holds more of the raion's area than any other; where the two disagree
+      the raion is placed nowhere and its polygon is refused, since a label
+      moved to a neighbour's outline is exactly what that looks like;
+    - a city council that is the seat of a raion so placed goes with its
+      raion (the map draws no city polygons but Kyiv's and Sevastopol's),
+      provided a tenth of the city's area lies in that polygon;
+    - any other area goes to the polygon holding the majority of its area,
+      and a polygon holding a quarter of an area placed elsewhere or nowhere
+      this way is refused, as the census's figures cannot be split;
+    - Kyiv's raions are the city of Kyiv, the one polygon the map draws for
+      it; Sevastopol's polygons are refused, the census counting the city
+      whole.
+    """
+    name_of = lambda sid: site_ids[sid]["name"]  # noqa: E731
+    home: dict[tuple[str, str], str] = {}
+    how: dict[tuple[str, str], str] = {}
+    share_of: dict[tuple[str, str], float] = {}
+    undrawn: dict[tuple[str, str], str] = {}
+    refused: dict[str, str] = {}
+    report: list[str] = []
+    disagree: list[str] = []
+    thin: list[str] = []
+
+    for match, key in by_match.items():
+        nso = level2[key]["nso"]
+        hits = lies.get(match, [])
+        if key[0] in (KYIV, SEVASTOPOL):
+            home[key] = shapes[OBLAST[key[0]]][0]["id"]
+            how[key] = "city"
+            continue
+        if key not in named:
+            continue
+        sid = named[key]["id"]
+        if match not in drawn:
+            home[key], how[key] = sid, "name"
+            report.append(f"{OBLAST[key[0]]}: {nso} has no polygon in the geodatabase; "
+                          f"placed by name in {name_of(sid)!r}")
+            continue
+        share = dict(hits).get(sid, 0.0)
+        if hits and hits[0][0] == sid:
+            home[key], how[key], share_of[key] = sid, "name", share
+            if share < CLEAN:
+                thin.append(f"{nso} {share:.0%} in {name_of(sid)}, "
+                            + ", ".join(f"{name_of(o)} {s:.0%}" for o, s in hits[1:3]))
+            continue
+        top, top_share = hits[0] if hits else (None, 0.0)
+        disagree.append(f"{OBLAST[key[0]]}: {nso} is named for {name_of(sid)!r} and lies in "
+                        + (f"{name_of(top)!r} ({top_share:.0%}; {share:.0%} in its own)"
+                           if top else "no polygon"))
+        undrawn[key] = "placed in no polygon: the map's name for it and its outline disagree"
+        refused[sid] = (f"The boundary file names this polygon for {nso.title()}, but only "
+                        f"{share:.0%} of the area the 2001 census counts as that raion lies "
+                        "in it" + (f" and {top_share:.0%} in {name_of(top)!r}" if top else "")
+                        + "; the name and the outline disagree, so neither says which "
+                        "figure the polygon holds.")
+
+    seats: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for key, kind in how.items():
+        if kind == "name":
+            seats[key[0]].append(key)
+    for match, key in by_match.items():
+        if key in home or key in undrawn:
+            continue
+        nso = level2[key]["nso"]
+        if match not in drawn:
+            raise SystemExit(f"ukraine_raion: {nso} ({match}) has no polygon in the "
+                             "geodatabase and no name to place it by")
+        hits = lies[match]
+        raion = seat_of(nso, [(r, level2[r]["nso"]) for r in seats[key[0]]])
+        if raion is not None:
+            sid = home[raion]
+            share = dict(hits).get(sid, 0.0)
+            if share >= SEAT_MIN or (hits and hits[0][0] == sid):
+                home[key], how[key], share_of[key] = sid, "seat", share
+                if share < HOLD:
+                    report.append(f"{OBLAST[key[0]]}: {nso}, the seat of "
+                                  f"{level2[raion]['nso'].title()}, goes with it into "
+                                  f"{name_of(sid)!r} ({share:.0%} of its area lies there)")
+                continue
+        if not hits or hits[0][1] < HOLD:
+            undrawn[key] = "drawn in no polygon by a majority of its area"
+            report.append(f"{OBLAST[key[0]]}: {nso} lies in no map polygon by a majority "
+                          "of its area: " + ", ".join(f"{name_of(o)} {s:.0%}"
+                                                      for o, s in hits[:3]))
+            continue
+        sid, share = hits[0]
+        home[key], how[key], share_of[key] = sid, "overlay", share
+        if share < CLEAN:
+            thin.append(f"{nso} {share:.0%} in {name_of(sid)}, "
+                        + ", ".join(f"{name_of(o)} {s:.0%}" for o, s in hits[1:3]))
+        if share < 1 - PART:
+            refused.setdefault(sid, f"Only {share:.0%} of the area the 2001 census counts as "
+                                    f"{nso.title()} lies in this polygon, so the census's "
+                                    "figure for it would not describe what the polygon draws.")
+
+    # A polygon is refused when a quarter of an area placed by the overlay
+    # elsewhere, or placed nowhere, lies inside it. An area placed by its name
+    # or as its raion's seat spills into its neighbours only as far as the
+    # outlines are coarse, which says nothing about whose people they hold.
+    for match, key in by_match.items():
+        if match not in lies or key[0] == SEVASTOPOL:
+            continue
+        if key in undrawn:
+            where, spots = undrawn[key], lies[match]
+        elif how.get(key) == "overlay":
+            where, spots = f"counted with {name_of(home[key])!r}", lies[match][1:]
+        else:
+            continue
+        for sid, share in spots:
+            if share >= PART and sid not in refused and sid != home.get(key):
+                refused[sid] = (f"{share:.0%} of the area the 2001 census counts as "
+                                f"{level2[key]['nso'].title()} lies in this polygon, and "
+                                f"that area's people are {where}; the census's figures "
+                                "cannot be split between the two.")
+    seva_why = ("The 2001 census counts Sevastopol whole; the map cuts it into polygons, "
+                "and the whole city's figures describe none of them.")
+    seva_ids = {s["id"] for s in shapes.get("Sevastopol", [])}
+    for key in (k for k in level2 if k[0] == SEVASTOPOL):
+        for sid, share in lies.get(level2[key]["match"], []):
+            if sid in seva_ids or share >= PART:
+                refused[sid] = seva_why
+    for sid in seva_ids:
+        refused[sid] = seva_why
+    return {"home": home, "how": how, "share": share_of, "undrawn": undrawn,
+            "refused": refused, "report": report, "disagree": disagree, "thin": thin}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -471,52 +653,13 @@ def main() -> int:
 
     # The raions by name, as the check on the overlay: the two ways must agree.
     raions = [(k, r) for k, r in level2.items() if "RAION" in r["nso"]
-              and k[0] not in ("MISTO KYYIV", "MISTO SEVASTOPOL’")]
+              and k[0] not in (KYIV, SEVASTOPOL)]
     named, report = bind_raions(raions, shapes)
-    home: dict[tuple[str, str], str] = {}
-    thin: list[str] = []
-    disagree: list[str] = []
-    undrawn: list[tuple[str, str]] = []
-    refused: dict[str, str] = {}
-    for match, key in by_match.items():
-        nso = level2[key]["nso"]
-        if match not in units and key[0] in ("MISTO KYYIV", "MISTO SEVASTOPOL’"):
-            # The two cities the map draws apart: Kyiv as one polygon, and
-            # Sevastopol, whose polygons are refused below whatever lies where.
-            home[key] = shapes[OBLAST[key[0]]][0]["id"]
-            report.append(f"{OBLAST[key[0]]}: {nso} has no polygon in the geodatabase; "
-                          f"placed in the city's own polygon")
-            continue
-        if match not in units:
-            # No polygon of the Bureau's: a raion can still go by its name; a
-            # city council cannot, as nothing then says where it is drawn.
-            if key in named:
-                home[key] = named[key]["id"]
-                report.append(f"{OBLAST[key[0]]}: {nso} has no polygon in the geodatabase; "
-                              f"placed by name in {named[key]['name']!r}")
-                continue
-            raise SystemExit(f"ukraine_raion: {nso} ({match}) has no polygon in the "
-                             "geodatabase and no name to place it by")
-        hits = lies[match]
-        if not hits or hits[0][1] < HOLD:
-            # The map does not draw most of this area: counted, and nowhere.
-            undrawn.append(key)
-            report.append(f"{OBLAST[key[0]]}: {nso} lies in no map polygon by a majority "
-                          "of its area: " + ", ".join(f"{site_ids[o]['name']} {s:.0%}"
-                                                      for o, s in hits[:3]))
-            continue
-        sid, share = hits[0]
-        home[key] = sid
-        if share < CLEAN:
-            thin.append(f"{nso} {share:.0%} in {site_ids[sid]['name']}, "
-                        + ", ".join(f"{site_ids[o]['name']} {s:.0%}" for o, s in hits[1:3]))
-        if share < 1 - PART:
-            refused[sid] = (f"Only {share:.0%} of the area the 2001 census counts as "
-                            f"{nso.title()} lies in this polygon, so the census's figure "
-                            "for it would not describe what the polygon draws.")
-        if key in named and named[key]["id"] != sid:
-            disagree.append(f"{OBLAST[key[0]]}: {nso} is named for "
-                            f"{named[key]['name']!r} and lies in {site_ids[sid]['name']!r}")
+    placed = place(level2, by_match, named, lies, set(units), shapes, site_ids)
+    home, how, undrawn, refused = (placed["home"], placed["how"], placed["undrawn"],
+                                   placed["refused"])
+    report += placed["report"]
+    disagree, thin = placed["disagree"], placed["thin"]
     for line in report:
         log("  " + line)
     log(f"  names bind {len(named)} of {len(raions)} raions; the overlay disagrees with "
@@ -537,28 +680,6 @@ def main() -> int:
                 f"{site_ids[sid]['name']!r}, which the map files under "
                 f"{parent_name[site_ids[sid]['parent']]}")
 
-    # A polygon is refused when a sizeable part of an area it is not given
-    # lies inside it, or when it holds Sevastopol, which the census counts
-    # whole and the map cuts in two.
-    for match, key in by_match.items():
-        if match not in lies:
-            continue
-        where = (f"counted with {site_ids[home[key]]['name']!r}" if key in home
-                 else "drawn in no polygon by a majority of its area")
-        for sid, share in lies[match] if key in undrawn else lies[match][1:]:
-            if share >= PART and sid not in refused:
-                refused[sid] = (f"{share:.0%} of the area the 2001 census counts as "
-                                f"{level2[key]['nso'].title()} lies in this polygon, and "
-                                f"that area's people are {where}; the census's figures "
-                                "cannot be split between the two.")
-    seva_why = ("The 2001 census counts Sevastopol whole; the map cuts it into polygons, "
-                "and the whole city's figures describe none of them.")
-    for key in (k for k in level2 if k[0] == "MISTO SEVASTOPOL’"):
-        for sid, share in lies.get(level2[key]["match"], []):
-            if share >= 0.01:
-                refused[sid] = seva_why
-    for shape in shapes["Sevastopol"]:
-        refused[shape["id"]] = seva_why
     for sid, why in sorted(refused.items()):
         log(f"  refused {site_ids[sid]['name']} ({parent_name[site_ids[sid]['parent']]}): "
             f"{why}")
@@ -566,7 +687,7 @@ def main() -> int:
     # Every oblast's census count is held by the polygons, refused or not, or
     # named above as drawn nowhere.
     for oblast, whole in level1.items():
-        made = sum(level2[k]["total"] for k in list(home) + undrawn if k[0] == oblast)
+        made = sum(level2[k]["total"] for k in list(home) + list(undrawn) if k[0] == oblast)
         if abs(made - whole["total"]) > 0.5:
             raise SystemExit(f"ukraine_raion: {oblast}'s polygons hold {made:,.0f} of "
                              f"its {whole['total']:,.0f}")
@@ -585,10 +706,21 @@ def main() -> int:
             note = (f" The city of Kyiv: its {len(keys)} raions of 2001 added together."
                     + LAST_CENSUS)
         else:
+            coarse = [(level2[k]["nso"].title(), placed["share"][k]) for k in keys
+                      if how.get(k) == "name" and placed["share"].get(k, 1.0) < COARSE]
+            seat = [level2[k]["nso"].title() for k in keys if how.get(k) == "seat"]
             note = (" The polygon is " + " with ".join(names)
                     + (", which the census counts apart and the map draws inside it"
                        if len(names) > 1 else "")
-                    + "." + LAST_CENSUS)
+                    + "." + (" " + " and ".join(seat) + (" is" if len(seat) == 1 else " are")
+                             + " placed as the raion's seat: the map draws no polygon of "
+                             "its own for a city of oblast significance."
+                             if seat else "")
+                    + "".join(f" The polygon is {name} by its name; the boundary file "
+                              f"draws it coarsely, with {s:.0%} of the area the census "
+                              "counts as that raion inside it and the rest in its "
+                              "neighbours." for name, s in coarse)
+                    + LAST_CENSUS)
         if len(names) == 1:
             raions_only += 1
         values: dict[str, Any] = {

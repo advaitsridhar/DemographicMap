@@ -57,6 +57,66 @@ class Figures(unittest.TestCase):
         self.assertEqual(got["sex_ratio"]["value"], 66.7)
 
 
+class Placing(unittest.TestCase):
+    """Two raions, Umanskyi and Khrystynivskyi, drawn coarsely, and the city of Uman."""
+
+    OB = "CHERKAS’KA OBLAST’"
+
+    def setUp(self):
+        self.level2 = {
+            (self.OB, "a"): {"nso": "UMANSKYI RAION", "match": "UKR_01_01"},
+            (self.OB, "b"): {"nso": "KHRYSTYNIVSKYI RAION", "match": "UKR_01_02"},
+            (self.OB, "c"): {"nso": "M. UMAN", "match": "UKR_01_03"},
+            (self.OB, "d"): {"nso": "M. VATUTINE", "match": "UKR_01_04"},
+        }
+        self.by_match = {r["match"]: k for k, r in self.level2.items()}
+        self.site = {"U": {"id": "U", "name": "Uman"}, "K": {"id": "K", "name": "Khrystynivka"},
+                     "Z": {"id": "Z", "name": "Zvenyhorodka"}}
+        self.shapes = {"Cherkasy Oblast": list(self.site.values()), "Sevastopol": []}
+        self.named = {(self.OB, "a"): self.site["U"], (self.OB, "b"): self.site["K"]}
+
+    def run_place(self, lies):
+        return u.place(self.level2, self.by_match, self.named, lies,
+                       set(self.by_match), self.shapes, self.site)
+
+    def test_name_and_largest_share_agree_however_coarse(self):
+        got = self.run_place({"UKR_01_01": [("U", 0.6), ("K", 0.4)],
+                              "UKR_01_02": [("K", 0.55), ("U", 0.45)],
+                              "UKR_01_03": [("K", 0.7), ("U", 0.3)],
+                              "UKR_01_04": [("Z", 0.95)]})
+        self.assertEqual(got["home"][(self.OB, "a")], "U")
+        self.assertEqual(got["home"][(self.OB, "b")], "K")
+        # The seat goes with its raion although most of its area lies next door.
+        self.assertEqual(got["home"][(self.OB, "c")], "U")
+        self.assertEqual(got["how"][(self.OB, "c")], "seat")
+        self.assertEqual(got["home"][(self.OB, "d")], "Z")
+        self.assertEqual(got["refused"], {})
+
+    def test_a_name_on_a_neighbours_outline_refuses_the_polygon(self):
+        got = self.run_place({"UKR_01_01": [("K", 0.7), ("U", 0.3)],
+                              "UKR_01_02": [("K", 0.9)],
+                              "UKR_01_03": [("U", 0.9)],
+                              "UKR_01_04": [("Z", 0.95)]})
+        self.assertIn((self.OB, "a"), got["undrawn"])
+        self.assertIn("U", got["refused"])
+        # Umanskyi's area placed nowhere reaches into Khrystynivka's polygon.
+        self.assertIn("K", got["refused"])
+
+    def test_a_city_split_between_polygons_refuses_the_other(self):
+        got = self.run_place({"UKR_01_01": [("U", 0.9)], "UKR_01_02": [("K", 0.9)],
+                              "UKR_01_03": [("U", 0.9)],
+                              "UKR_01_04": [("Z", 0.6), ("K", 0.4)]})
+        self.assertEqual(got["home"][(self.OB, "d")], "Z")
+        self.assertIn("K", got["refused"])
+        self.assertIn("Z", got["refused"])
+
+    def test_seat_of_needs_one_clear_raion(self):
+        raions = [("a", "UMANSKYI RAION"), ("b", "KHRYSTYNIVSKYI RAION")]
+        self.assertEqual(u.seat_of("M. UMAN", raions), "a")
+        self.assertIsNone(u.seat_of("M. VATUTINE", raions))
+        self.assertEqual(u.city_name("BILA TSERKVA (MISKRADA)"), "Bila Tserkva")
+
+
 class Overlay(unittest.TestCase):
     def test_shares_are_of_the_area_counted(self):
         polys = {"west": box(0, 0, 1, 1), "east": box(1, 0, 2, 1)}
