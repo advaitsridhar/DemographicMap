@@ -13,9 +13,10 @@ of their own measure it themselves, with samples drawn to describe them:
   Territorial Plan and for its own sampling strata -- none of which is a
   province -- so it is written for the autonomous community only.
 * **Galicia** -- the IGE's *Enquisa estrutural a fogares: coñecemento e uso do
-  galego*, 2023: the population aged 5 and over by the language they usually
-  speak, for Galicia and each of its four provinces (IGE table given below),
-  read from the IGE's API.
+  galego*: the population aged 5 and over by the language they usually speak
+  (always Galician, more Galician than Spanish, more Spanish than Galician,
+  always Spanish), for Galicia and each of its four provinces -- IGE table
+  2953, the latest wave (2023), read from the IGE's API.
 
 (The Basque Country's home language is not here: Eustat asks it in its own
 census, which is a count; see ``basque_language``.)
@@ -119,6 +120,99 @@ def catalonia(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# --- Galicia ---------------------------------------------------------------
+
+IGE = "https://www.ige.gal/igebdt/igeapi/csv/datos/2953"
+IGE_PAGE = "https://www.ige.gal/igebdt/selector.jsp?COD=2953&paxina=001&c=0206004"
+IGE_SOURCE = ("IGE, Enquisa estrutural a fogares: coñecemento e uso do galego -- persons aged "
+              "5 and over by the language they usually speak (table 2953)")
+IGE_LABELS = {
+    "En galego sempre": "Galician only",
+    "Máis galego ca castelán": "Mostly Galician",
+    "Máis castelán ca galego": "Mostly Spanish",
+    "En castelán sempre": "Spanish only",
+}
+IGE_OTHER = {"outra": "Other language", "non sabe": "Not stated", "non consta": "Not stated",
+             "ns/nc": "Not stated"}
+GALICIA = {"12": "Galicia", "15": "Coruna", "27": "Lugo", "32": "Ourense", "36": "Pontevedra"}
+
+
+def ige_label(label: str) -> str:
+    label = " ".join(label.split())
+    if label in IGE_LABELS:
+        return IGE_LABELS[label]
+    for start, english in IGE_OTHER.items():
+        if label.lower().startswith(start):
+            return english
+    raise SystemExit(f"spain_language_survey: an IGE language category not declared: {label!r}")
+
+
+def galicia(text: str) -> tuple[int, dict[str, dict[str, Any]]]:
+    """Table 2953 as the IGE's API writes it -> geography code -> shares (and counts)."""
+    import csv
+    import io
+    rows = list(csv.DictReader(io.StringIO(text)))
+    if not rows or "Lingua na que fala habitualmente" not in rows[0]:
+        raise SystemExit(f"spain_language_survey: IGE 2953 has columns {list(rows[0]) if rows else []}")
+    year = max(int(r["CodTempo"]) for r in rows)
+    measures = {r["Medidas"].strip() for r in rows}
+    measure = next((m for m in measures if m.lower().startswith("n")), None) or "Porcentaxe"
+    cells: dict[str, dict[str, float]] = {}
+    for r in rows:
+        if int(r["CodTempo"]) != year or " ".join(r["Idade"].split()) != "Total":
+            continue
+        if r["Medidas"].strip() != measure or r["CodEspazo"].strip() not in GALICIA:
+            continue
+        language = " ".join(r["Lingua na que fala habitualmente"].split())
+        value = float(r["DatoN"]) if r["DatoN"].strip() else None
+        if value is None:
+            continue
+        cells.setdefault(r["CodEspazo"].strip(), {})[language] = value
+    if sorted(cells) != sorted(GALICIA):
+        raise SystemExit(f"spain_language_survey: IGE 2953 {year} covers {sorted(cells)}")
+    out: dict[str, dict[str, Any]] = {}
+    for code, row in cells.items():
+        total = row.pop("Total", None)
+        counts: dict[str, float] = {}
+        for label, value in row.items():
+            english = ige_label(label)
+            counts[english] = counts.get(english, 0.0) + value
+        whole = total if total is not None else (100.0 if measure == "Porcentaxe" else None)
+        if whole is None or abs(sum(counts.values()) - whole) > max(0.6, 0.005 * whole):
+            raise SystemExit(f"spain_language_survey: IGE {GALICIA[code]}: categories make "
+                             f"{sum(counts.values()):,.2f} against {whole}")
+        out[code] = {"counts": counts, "total": whole, "measure": measure}
+    if measure != "Porcentaxe":
+        for label in out["12"]["counts"]:
+            made = sum(out[c]["counts"].get(label, 0.0) for c in GALICIA if c != "12")
+            if abs(made - out["12"]["counts"][label]) > max(2.0, 0.002 * made):
+                raise SystemExit(f"spain_language_survey: the provinces make {made:,.0f} "
+                                 f"{label}, Galicia {out['12']['counts'][label]:,.0f}")
+    return year, out
+
+
+def galicia_fields(entry: dict[str, Any], year: int, name: str) -> dict[str, Any]:
+    counted = entry["measure"] != "Porcentaxe"
+    rows = shares(entry["counts"], total=entry["total"])
+    if not counted:
+        rows = [{"group": r["group"], "pct": r["pct"]} for r in rows]
+    size = f" ({entry['total']:,.0f} people aged 5 and over)" if counted else ""
+    return {
+        "language": rows,
+        "language_year": year,
+        "language_basis": "survey estimate: language usually spoken, residents aged 5+",
+        "language_note": (
+            f"The IGE's household survey on knowledge and use of Galician, {year}: residents of "
+            f"{name} aged 5 and over{size} by the language they usually speak -- always "
+            "Galician, more Galician than Spanish, more Spanish than Galician, or always "
+            "Spanish. A weighted survey estimate, not a count; the IGE publishes it for Galicia "
+            "and each province and does not publish the respondents per province. INE's census "
+            "does not ask language."),
+        "sources": [{"field": "language", "name": IGE_SOURCE, "url": IGE_PAGE, "year": year,
+                     "license": "IGE (attribution)"}],
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -126,7 +220,24 @@ def main() -> int:
     args = ap.parse_args()
 
     admin1 = {fold(u["name"]): u for u in json.loads((SITE / "admin1" / "ESP.units.json").read_text())}
+    admin2 = {fold(u["name"]): u for u in json.loads((SITE / "admin2" / "ESP.units.json").read_text())}
     records: list[dict[str, Any]] = []
+
+    from ._shared import http_get
+    raw = http_get(IGE, binary=True, cache=False, timeout=180)
+    assert isinstance(raw, bytes)
+    year, gal = galicia(raw.decode("latin-1"))
+    for code, name in GALICIA.items():
+        level, units = ("admin1", admin1) if code == "12" else ("admin2", admin2)
+        shape = units.get(fold(name))
+        if shape is None:
+            raise SystemExit(f"spain_language_survey: no drawn {name!r}")
+        if level == "admin2" and shape.get("parent") != admin1[fold("Galicia")]["id"]:
+            raise SystemExit(f"spain_language_survey: {name} is not drawn inside Galicia")
+        records.append(record(f"ESP-IGE-LANG-{code}", shape["name"], level=level, parent="ESP",
+                              country="ESP", match_by="shape_id", shape_id=shape["id"],
+                              codes={"ine_province": code} if code != "12" else {"ine_ccaa": "12"},
+                              **galicia_fields(gal[code], year, shape["name"])))
 
     shape = admin1.get(fold(CATALONIA))
     if shape is None:

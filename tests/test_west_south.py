@@ -310,6 +310,56 @@ class Microstates(unittest.TestCase):
             andorra(feats)
 
 
+def ige_csv(values):
+    head = ('"Idade","Lingua na que fala habitualmente","Medidas","CodTempo","Tempo",'
+            '"CodEspazo","Espazo","DatoN","DatoT"')
+    lines = [head]
+    for (code, place), row in values.items():
+        for language, value in row.items():
+            for year in (2018, 2023):
+                lines.append(f'"Total   ","{language}","Porcentaxe",{year},"{year}","{code}",'
+                             f'"{code} {place}",{value},"x"')
+                lines.append(f'"De 5 a 14 anos  ","{language}","Porcentaxe",{year},"{year}",'
+                             f'"{code}","{code} {place}",1,"x"')
+    return "\n".join(lines)
+
+
+class GaliciaLanguage(unittest.TestCase):
+    ROW = {"En galego sempre": 24.37, "Máis galego ca castelán": 21.86,
+           "Máis castelán ca galego": 24.11, "En castelán sempre": 29.66, "Total": 100}
+
+    def test_latest_wave_for_galicia_and_its_provinces(self):
+        from scripts.fetch_census.spain_language_survey import galicia, galicia_fields
+        places = {("12", "Galicia"): self.ROW, ("15", "A Coruña"): self.ROW,
+                  ("27", "Lugo"): self.ROW, ("32", "Ourense"): self.ROW,
+                  ("36", "Pontevedra"): self.ROW}
+        year, out = galicia(ige_csv(places))
+        self.assertEqual(year, 2023)
+        rows = galicia_fields(out["27"], year, "Lugo")["language"]
+        self.assertEqual({r["group"] for r in rows},
+                         {"Galician only", "Mostly Galician", "Mostly Spanish", "Spanish only"})
+        self.assertNotIn("count", rows[0])
+
+    def test_an_undeclared_category_stops_the_run(self):
+        from scripts.fetch_census.spain_language_survey import galicia
+        odd = dict(self.ROW, **{"Outro caso raro": 0.0})
+        places = {(c, n): odd for c, n in (("12", "Galicia"), ("15", "A Coruña"), ("27", "Lugo"),
+                                             ("32", "Ourense"), ("36", "Pontevedra"))}
+        with self.assertRaises(SystemExit):
+            galicia(ige_csv(places))
+
+    def test_labels_are_placed(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import group_tree
+        from scripts.fetch_census.spain_language_survey import IGE_LABELS, EULP_LABELS
+        for label in list(IGE_LABELS.values()) + list(EULP_LABELS.values()):
+            if label in ("Other language combinations",):
+                continue        # placed by shared.patch
+            self.assertIsNotNone(group_tree.parent_of("language", label), label)
+
+
 class MaltaLanguage(unittest.TestCase):
     def test_runs_of_dashes_are_that_many_empty_cells(self):
         from scripts.fetch_census.malta_census import language_row
