@@ -37,7 +37,9 @@ was made of (TSG11-01). A county is placed in the drawn municipality that
 holds its towns and parishes, found by name, and a municipality is the sum of
 the counties placed in it; a drawn town or parish that was a county on its
 own (several small counties were one parish) or a city takes that county's or city's own figure.
-Nothing is shared out to the parts of a county.
+Nothing is shared out to the parts of a county, and a municipality holding
+part of a county the reform divided (Aglona's parishes went to Krāslava and
+Preiļi) is not the sum of whole counties and gets no figure.
 
 Religion is not asked by Latvia's census (existing policy).
 
@@ -164,21 +166,26 @@ def census_units(values: list[str], texts: list[str]) -> dict[str, list[str]]:
 
 
 def place_census_units(old: dict[str, list[str]], new: dict[str, tuple[str, str]],
-                       ) -> tuple[dict[str, str], dict[str, str]]:
-    """Each 2011 county or city -> the drawn municipality holding its parts, and
-    each 2011 unit made of one part -> the drawn town or parish that part is.
+                       ) -> tuple[dict[str, str], dict[str, str], dict[str, list[str]]]:
+    """Each 2011 county or city -> the drawn municipality holding its parts;
+    each 2011 unit made of one part -> the drawn town or parish that part is;
+    and each 2011 county the 2021 reform divided -> the municipalities its
+    parts went to.
 
     ``new`` is {drawn unit code: (its name, its municipality's shape id)}. A
     part whose name is borne by units in more than one municipality (there are
-    two Pilskalne parishes) decides nothing; every part that does decide must
-    name the same municipality, and at least half of a unit's parts must be
-    found, or the run stops.
+    two Pilskalne parishes) decides nothing. A unit is placed when every part
+    that decides names the same municipality and at least half its parts are
+    found; it is divided when every part is found and they name several
+    (Aglona's four parishes went to Krāslava and Preiļi); otherwise the run
+    stops.
     """
     where: dict[str, set[str]] = defaultdict(set)
     code_of: dict[tuple[str, str], str] = {}
     for code, (name, admin1) in new.items():
         where[fold(name)].add(admin1)
         code_of[(fold(name), admin1)] = code
+
     def key(name: str) -> str:
         """The name folded; failing that, without "pilsēta" (city), or -- for a
         county TSG11-01 lists with nothing beneath it, a county of one parish
@@ -192,11 +199,15 @@ def place_census_units(old: dict[str, list[str]], new: dict[str, tuple[str, str]
 
     placed: dict[str, str] = {}
     single: dict[str, str] = {}
+    divided: dict[str, list[str]] = {}
     failed = []
     for unit, names in old.items():
         names = [key(n) for n in names]
         found = [where[n] for n in names if where.get(n)]
         decisive = {next(iter(s)) for s in found if len(s) == 1}
+        if len(decisive) > 1 and len(found) == len(names):
+            divided[unit] = sorted(decisive)
+            continue
         if len(decisive) != 1 or 2 * len(found) < len(names):
             failed.append(f"{unit}: parts {names} point to {sorted(decisive)} "
                           f"({len(found)} of {len(names)} found)")
@@ -206,7 +217,7 @@ def place_census_units(old: dict[str, list[str]], new: dict[str, tuple[str, str]
             single[unit] = code_of[(names[0], placed[unit])]
     if failed:
         raise SystemExit(f"TSG11-01: {len(failed)} units of 2011 not placed: " + "; ".join(failed))
-    return placed, single
+    return placed, single, divided
 
 
 def census_language(records: list[dict[str, Any]], bound: dict[str, str],
@@ -223,7 +234,7 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
         if city not in old or code not in new:
             raise SystemExit(f"TSG11-01: the city {city} or its drawn unit {code} is missing")
         old[city] = [new[code][0]]         # the city by its code, not its genitive name
-    placed, single = place_census_units(old, new)
+    placed, single, divided = place_census_units(old, new)
     body = request_json(CENSUS.format(lang="en", path=CENSUS_LANG), {"query": [
         {"code": TERRITORY, "selection": {"filter": "all", "values": ["*"]}},
         {"code": "Dzimums", "selection": {"filter": "item", "values": ["T"]}},
@@ -264,26 +275,54 @@ def census_language(records: list[dict[str, Any]], bound: dict[str, str],
         rec["language_note"] = f"{what} {note}".strip()
         rec["sources"].append(source)
 
+    # A municipality that holds part of a county the reform divided is not
+    # the sum of whole counties, and gets no figure.
+    touched: dict[str, list[str]] = defaultdict(list)
+    for unit, admin1s in divided.items():
+        for admin1 in admin1s:
+            touched[admin1].append(names[unit].strip())
     got = 0
     for rec in records:
-        if rec["level"] == "admin1" and rec.get("shape_id") in summed:
-            units = made_of[rec["shape_id"]]
-            write(rec, summed[rec["shape_id"]],
+        if rec["level"] != "admin1":
+            continue
+        sid = rec.get("shape_id")
+        if sid in touched:
+            rec["language"] = gap(NOT_AVAILABLE, (
+                f"{what} The 2021 reform divided {', '.join(touched[sid])} of 2009-2021 "
+                "between this municipality and another, and CSB publishes its figure whole, so "
+                "the municipality's cannot be summed."))
+        elif sid in summed:
+            units = made_of[sid]
+            write(rec, summed[sid],
                   f"Summed from the {len(units)} units of 2009-2021 that make the municipality: "
                   + ", ".join(sorted(names[u].strip() for u in units)) + "."
                   if len(units) > 1 else "")
             got += 1
     drawn1 = {r["shape_id"] for r in records if r["level"] == "admin1"}
-    log(f"  TSG11-07: {len(old)} units of 2011 placed in {len(summed)} municipalities; "
-        f"language written for {got}; municipalities with none: "
-        f"{sorted(r['name'] for r in records if r['level'] == 'admin1' and r['shape_id'] not in summed)}")
-    if not drawn1 <= set(summed):
+    log(f"  TSG11-07: {len(placed)} units of 2011 placed in {len(summed)} municipalities, "
+        f"{len(divided)} divided by the reform ({', '.join(names[u].strip() for u in divided)}); "
+        f"language written for {got} municipalities; left out as holding a divided county: "
+        f"{sorted(r['name'] for r in records if r['level'] == 'admin1' and r['shape_id'] in touched)}")
+    if not drawn1 <= set(summed) | set(touched):
         raise SystemExit("TSG11-07: a drawn municipality holds no 2011 unit")
     by_code = {r["codes"]["atvk"]: r for r in records if r["level"] == "admin2"}
     for unit, code in single.items():
         write(by_code[code], {label: cells[unit][c] for c, label in LANGUAGES.items()},
               f"In 2011 this was a unit of its own ({names[unit].strip()}), so the census's "
               "figure is for exactly this territory.")
+    # Every other town and parish was part of a larger county in 2011, and a
+    # county's figure is not shared out to its parts.
+    county_of: dict[str, str] = {}
+    for unit, parts in old.items():
+        for part in parts:
+            county_of.setdefault(fold(part), names[unit].strip())
+    for code, rec in by_code.items():
+        if not isinstance(rec.get("language"), list):
+            county = county_of.get(fold(rec["name"]))
+            rec["language"] = gap(NOT_AVAILABLE, (
+                f"{what} CSB publishes it by the counties and cities of 2009-2021, and "
+                + (f"this was part of {county}, " if county else "this was part of a county ")
+                + "whose figure is not shared out among its parts."))
     log(f"  TSG11-07: language written for {len(single)} towns and parishes that were a unit "
         "of 2009-2021 on their own")
 

@@ -52,7 +52,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
 from .binding import fold
 from .nordic_common import AgeSex, check_parts, load_units, parent_names, request_json, unplaced
 from .pxweb import unstack
@@ -76,6 +76,14 @@ SOURCE = "Statistics Estonia"
 OUT = PROCESSED / "estonia_municipality.json"
 YEAR = 2017
 CENSUS_YEAR = 2011
+# Why a unit has no ethnicity: measured in probe rounds 7, 13 and 15 of
+# nordic_probe (RL0429's 163 places, RL0430 and RL0442's six, RL222's 71).
+UNPUBLISHED = {"ethnicity": (
+    "The 2011 census publishes ethnic nationality (Statistics Estonia, RL0429) for the larger "
+    "units only, and folds this one into its county's 'other local governments'. No other "
+    "table reaches it: the 2000 census (RL222) gives rural municipalities only as a county "
+    "total, the 2021 census is tabulated by the municipalities of the 2017 reform, and the "
+    "population register's ethnic nationality (RV0222) is published by county.")}
 
 # Old county code -> the boundary file's name.
 COUNTIES = {"37": "Harju maakond", "39": "Hiiu maakond", "44": "Ida-Viru maakond",
@@ -477,7 +485,16 @@ def main() -> int:
         for field, (table, *_rest) in specs.items():
             parts = parts_2011(code, field)
             # A part whose categories missed its total was dropped above.
-            if not parts or any(c not in census[field] for c in parts):
+            if not parts:
+                fields[field] = gap(NOT_AVAILABLE, UNPUBLISHED.get(field, (
+                    f"The 2011 census ({table}) does not publish this unit or every unit it "
+                    "was formed from.")))
+                continue
+            if any(c not in census[field] for c in parts):
+                fields[field] = gap(NOT_AVAILABLE, (
+                    f"The categories of the 2011 census's table ({table}) fall short of this "
+                    "unit's total by more than rounding -- Statistics Estonia protects small "
+                    "cells -- so no composition is given."))
                 continue
             counts: dict[str, float] = defaultdict(float)
             for c in parts:

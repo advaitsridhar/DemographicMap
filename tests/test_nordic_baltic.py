@@ -263,19 +263,24 @@ class Lithuania(unittest.TestCase):
         new = {"a": ("Aizkraukle", "M1"), "b": ("Aizkraukles pagasts", "M1"),
                "c": ("Pilskalnes pagasts", "M1"), "d": ("Pilskalnes pagasts", "M2"),
                "e": ("Carnikavas pagasts", "M3"), "f": ("Rīga", "M4")}
-        placed, single = latvia.place_census_units(
+        placed, single, divided = latvia.place_census_units(
             {"old1": ["Aizkraukle", "Pilskalnes pagasts"], "old2": ["Carnikavas pagasts"],
              "old3": ["Rīga"]}, new)
         self.assertEqual(placed, {"old1": "M1", "old2": "M3", "old3": "M4"})
         self.assertEqual(single, {"old2": "e", "old3": "f"})
+        self.assertEqual(divided, {})
         # The nine cities of 2011 are today's seven state cities and three towns.
         self.assertEqual(set(latvia.OLD_CITIES.values()),
                          set(latvia.STATE_CITIES) | set(latvia.CITY_TOWNS) - {"LV0040010"})
         # A county of one parish, listed with nothing beneath it.
         self.assertEqual(latvia.place_census_units({"old": ["Carnikavas novads"]}, new),
-                         ({"old": "M3"}, {"old": "e"}))
-        with self.assertRaises(SystemExit):     # parts in two municipalities
-            latvia.place_census_units({"old": ["Aizkraukle", "Carnikavas pagasts"]}, new)
+                         ({"old": "M3"}, {"old": "e"}, {}))
+        # A county the reform divided: every part found, in two municipalities.
+        self.assertEqual(latvia.place_census_units(
+            {"old": ["Aizkraukle", "Carnikavas pagasts"]}, new), ({}, {}, {"old": ["M1", "M3"]}))
+        with self.assertRaises(SystemExit):     # parts in two, and one not found
+            latvia.place_census_units({"old": ["Aizkraukle", "Carnikavas pagasts", "X", "Y",
+                                               "Z"]}, new)
         with self.assertRaises(SystemExit):     # only a shared name: nothing decides
             latvia.place_census_units({"old": ["Pilskalnes pagasts"]}, new)
 
