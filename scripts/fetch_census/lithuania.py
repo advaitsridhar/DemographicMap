@@ -380,7 +380,10 @@ def main() -> int:
                          municipalities)
     en_rows.update({r: c for r in lang for c in counties
                     if fold(r) == fold(names[c]["en"])})
-    for field, table, totals_, held, year, keyed, what in (
+    # The census year is its own name: ``fields`` above reads ``year``, the
+    # register's, when the records are built after this loop, and a loop
+    # variable of that name dated every 2026 count 2021.
+    for field, table, totals_, held, census_year, keyed, what in (
             ("ethnicity", eth, eth_tot, eth_held, 2011, by_lt,
              "Ethnicity (tautybė) as answered in the 2011 census, of all residents"),
             ("religion", rel, rel_tot, rel_held, 2011, by_lt,
@@ -400,7 +403,7 @@ def main() -> int:
         if national is not None:
             # The 2021 survey's weighted municipal totals come within a few
             # people of the national one (2,810,758 of 2,810,761).
-            check_parts(parts, national, f"{field} {year}: municipalities -> Lithuania",
+            check_parts(parts, national, f"{field} {census_year}: municipalities -> Lithuania",
                         0.00001, 10)
         for code, row in found.items():
             counts = dict(table[row])
@@ -410,15 +413,15 @@ def main() -> int:
                 counts[other] = counts.get(other, 0.0) + held[row]
             comp[code].update({
                 field: shares(counts, total=totals_[row]),
-                f"{field}_year": year,
+                f"{field}_year": census_year,
                 f"{field}_note": (
-                    f"{what} (Statistics Lithuania, {year} census)."
+                    f"{what} (Statistics Lithuania, {census_year} census)."
                     + (f" {int(held[row]):,} people are in cells the office withholds as "
                        f"confidential, and are counted in '{other}'." if held[row] > 0.5 else "")
                     + (" The 2021 round published ethnicity and religion only for the whole "
-                       "country." if year == 2011 else "")),
+                       "country." if census_year == 2011 else "")),
                 f"_{field}_source": {
-                    "field": field, "name": f"{SOURCE}, {year} census",
+                    "field": field, "name": f"{SOURCE}, {census_year} census",
                     "url": (LANG_2021 if field == "language" else
                             ETH_2011 if field == "ethnicity" else REL_2011)[1],
                     "archived": ARCHIVE.format(ts=(LANG_2021 if field == "language" else
@@ -427,7 +430,7 @@ def main() -> int:
                                                url=(LANG_2021 if field == "language" else
                                                     ETH_2011 if field == "ethnicity"
                                                     else REL_2011)[1]).replace("id_/", "/"),
-                    "year": year},
+                    "year": census_year},
             })
 
     def with_census(code: str) -> dict[str, Any]:
