@@ -1,9 +1,154 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  54 of 74 municipalities are the same territory today; renumbered: ['Stykkishólmsbær 3711->3716', 'Sveitarfélagið Hornafjörður 7708->8401']; number taken by a merger: ['Tálknafjarðarhreppur 4604: 1,243 against 245']; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
-  1 January 2018 in today's division against 1 December 2017: largest gaps Grundarfjarðarbær 3.5%, Skorradalshreppur 3.6%, Norðurþing 3.6%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%
-  merged municipalities, 1 December 2017 against today's in 1 January 2018: Eastern Region 9,751/9,650, Northeastern Region 2,034/1,977, Northwestern Region 5,510/5,469, Southern Peninsula 3,384/3,335, Western Region 59/0, Westfjords 1,268/1,243
-iceland: merged municipalities do not make today's: {'Western Region': (59.0, 0.0)}
+== r13_isl_10001
+  title: Populations by religious and life stance organizations 1998-2026
+  var 'Ár' (Year) [time]: 29 values
+      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 29}; prefixes {'': 29}
+  var 'Trú- og lífsskoðunarfélög' (Religious): 64 values
+      -=Total; 1=The Evangelical Lutheran Church of Iceland; 2=The Independent Congregation of Reykjavík; 3=The Independent Congregation; 8=The Independent Congregation of Hafnarfjörður; 7=The Roman Catholic Church ... (=The Theosophical Society of Iceland; Ä=Ahmadiyya Muslim Community; °=Parish of St. Bartholomew the Apostle; Ë=ISKCON ICELAND; 9=Other and not specified; 0=No religious organisation
+      code lengths {1: 64}; prefixes {'': 37, '-': 1, 'V': 1, 'B': 1, 'K': 1, 'M': 1, 'C': 1, 'D': 1}
+  var 'Skipting' (Division): 7 values
+      0=Total; 1=Males; 2=Females; 3=0 - 17 years; 4=18 years and over; 5=Percent; 6=Parish fees payers
+== r13_isl_eldra
+  16 items
+    MAN10200.px [t] Population by religious and life stance organizations and registration 1997-2017
+    MAN10294.px [t] Population by parishes, congregations and deaneries 1 December 2018
+    MAN10295.px [t] Population by parishes, congregations and deaneries 1 December 2017
+    MAN10296.px [t] Population by parishes, congregations and deaneries 1 December 2016   
+    MAN10297.px [t] Population by parishes, congregations and deaneries 1 December 2015  
+    MAN10298.px [t] Population by parishes, congregations and deaneries 1 December 2014 
+    MAN10299.px [t] Population by parishes, congregations and deaneries 1 December 2013
+    MAN10300.px [t] Population by parishes, congregations and deaneries 1 December 2012
+    MAN10301.px [t] Population by parishes, congregations and deaneries 1 December 2011
+    MAN10303.px [t] Members of the National Lutheran Church by parishes, congregations and deaneries 2009
+    MAN10304.px [t] Members of the State Lutheran church by parishes, congregations and deaneries 2007-2008
+    MAN10306.px [t] Members of the State Lutheran church by deaneries, parishes and congregations 2006
+    MAN10307.px [t] Members of the State Lutheran church by deaneries, parishes and congregations 2005
+    MAN10308.px [t] Members of the State Lutheran church by deaneries, parishes and congregations 2004
+    MAN10309.px [t] Members of the State Lutheran church by deaneries, parishes and congregations 2003
+    MAN10310.px [t] Members of the State Lutheran church by deaneries, parishes and congregations 2002
+== r13_isl_10289
+  title: Population by parishes, congregations and deaneries 1 December 2023
+  var 'Sóknir' (Parishes): 308 values
+      0=0 Total; 1=01 Reykjavíkurprófastsdæmi vestra; 2=01.01 Dómkirkjuprestakall, Dómkirkjusókn; 3=01.02 Nesprestakall, Nessókn; 4=01.03 Seltjarnarnesprestakall, Seltjarnarnessókn; 5=01.04 Hallgrímsprestakall, Hallgrímssókn ... 302=09.11 Hveragerðisprestakall; 303=09.11.01 Kotstrandarsókn; 304=09.11.02 Hveragerðissókn; 305=09.12 Þorlákshafnarprestakall; 306=09.12.01 Hjallasókn; 307=09.12.02 Strandarsókn
+      code lengths {1: 10, 2: 90, 3: 208}; prefixes {'': 308}
+  var 'Aðild' (Membership): 4 values
+      0=Younger than 16 years; 1=Total, 16 years and older; 2=Members of the National Church; 3=Not Members of the National Church
+  var 'Kyn' (Sex): 3 values
+      0=Total; 1=Males; 2=Females
+== r13_isl_skra1
+  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html> <html lang="is"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="id" content="f9d1ac1f-e463-11e5-943a-005056851dd2"/> <meta name="theme-color" content="#57616a">
+== r13_isl_skra2
+  95,315 characters, 155 links
+    Trú- og lífsskoðun -> https://www.skra.is/folk/tru-og-lifsskodun/
+    Skráning samhliða nýskráningu í þjóðskrá -> https://www.skra.is/folk/tru-og-lifsskodun/skraning-samhlida-nyskraningu-i-thjodskra/
+    Breyting á skráningu -> https://www.skra.is/folk/tru-og-lifsskodun/breyting-a-skraningu/
+     -> https://www.skra.is/um-okkur/frettir/frett/2026/09/10/Skraning-i-tru-og-lifsskodunarfelog-fram-til-1.-september-2026/
+    Trú- og lífsskoðun -> https://www.skra.is/folk/tru-og-lifsskodun/
+== r13_fin_dvv1
+  FAILED: RuntimeError: HTTP 404: <!doctype html> <html class="ltr site-theme top-frame" dir="ltr" lang="fi-FI"> <head> <title>fi | Digi- ja väestötietovirasto </title> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta content="initial-scale=1.0, width=device-width" name="viewport"> <meta content
+== r13_fin_dvv2
+  FAILED: RuntimeError: HTTP 404: <!doctype html> <html class="ltr site-theme top-frame" dir="ltr" lang="en-US"> <head> <title>fi | Digital and population data services agency </title> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta content="initial-scale=1.0, width=device-width" name="viewport">
+== r13_fin_dvv3
+  FAILED: RuntimeError: HTTP 404: <!doctype html> <html class="ltr site-theme top-frame" dir="ltr" lang="fi-FI"> <head> <title>fi | Digi- ja väestötietovirasto </title> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta content="initial-scale=1.0, width=device-width" name="viewport"> <meta content
+== r13_fin_avain
+  3 items
+    142h.px [t] 142h -- Regional time series, 1987-2025
+    kuntien_avainluvut_aikasarja.px [t] Municipal key figures 1987-2025
+    kuntien_avainluvut_viimeisin.px [t] Municipal key figures
+== r13_est_rel2000
+  18 items
+    vanus [l] Age
+    eluruumidega-hooned [l] Buildings containing dwellings
+    kodakondsus [l] Citizenship
+    rahvastiku-paiknemine-ajutine-kohal-ja-araolek [l] Distribution of the population. Temporary presence and absence
+    eluruumid [l] Dwellings
+    majanduslikult-aktiivne-rahvastik [l] Economically active population
+    haridus [l] Education
+    rahvus-emakeel-veerkeelte-oskus [l] Ethnic nationality. Mother tongue. Command of foreign languages
+    perekonnad [l] Families
+    leibkonnad-rahvastik-leibkondades [l] Households. Population in households
+    rahvastiku-ja-leibkondade-elamistingimused [l] Living conditions of the population and households
+    perekonnaseis [l] Marital status
+    sunnikoht-vanemate-sunnikoht [l] Place of birth. Parents' place of birth
+    elukoht-1989-aasta-rahvaloenduse-ajal [l] Place of residence at the time of the 1989 Population Census
+    pikaajalise-haiguse-vei-puudega-rahvastik [l] Population with long-term illness or disability
+    usk [l] Religious affiliation
+    elatusallikad-tooalane-ja-sotsiaal-majanduslik-staatus [l] Sources of subsistence. Employment and socio-economic status
+    laste-arv-naistel [l] Women's number of children
+== r13_est_rl0430
+  title: RL0430: POPULATION BY ETHNIC NATIONALITY, SEX, AGE GROUP, LABOUR STATUS AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+  var 'Elukoht' (Place of residence) [elimination]: 6 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; 784=..Tallinn city; VAL_1=Rural municipalities
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+  var 'Rahvus' (Ethnic nationality) [elimination]: 41 values
+      TOTAL=Ethnic nationalities total; ARM=Armenians; AZE=Azerbaijanis; BAK=Bashkirs; BUL=Bulgarians; EST=Estonians ... USA=US Americans; UZB=Uzbeks; BEL=Belarusians; RUS=Russians; OTH=Other ethnic nationalities; UNK=Ethnic nationality unknown
+      code lengths {3: 40, 5: 1}; prefixes {'TOTAL': 1, 'ARM': 1, 'AZE': 1, 'BAK': 1, 'BUL': 1, 'EST': 1, 'GEO': 1, 'CHI': 1}
+      /OTH|COUNTY/: 1 -- OTH=Other ethnic nationalities
+  var 'Vanuserühm' (Age group) [elimination]: 6 values
+      Y_TOTAL=Age groups total; Y_LT15=0-14; Y15-29=15-29; Y30-49=30-49; Y50-64=50-64; Y_GE65=65 and older
+  var 'Hõiveseisund' (Labour status) [elimination]: 5 values
+      TOTAL=Labour status total; EMP=Employed persons; UNE=Unemployed persons; INAC=Inactive persons; UNK=Labour status unknown
+== r13_est_rl0442
+  title: RL0442: POPULATION BY ETHNIC NATIONALITY, MOTHER TONGUE, CITIZENSHIP, SEX, AGE GROUP AND PLACE OF RESIDENCE, 31 DECEMBER 2011
+  var 'Elukoht' (Place of residence) [elimination]: 6 values
+      EE00=Whole country; AS_LIN=Urban settlements; AS_MAA=Rural settlements; LIN_4=Cities; 784=..Tallinn city; VAL_1=Rural municipalities
+  var 'Sugu' (Sex) [elimination]: 3 values
+      T=Males and females; M=Males; F=Females
+  var 'Vanuserühm' (Age group) [elimination]: 6 values
+      Y_TOTAL=Age groups total; Y_LT15=0-14; Y15-29=15-29; Y30-49=30-49; Y50-64=50-64; Y_GE65=65 and older
+  var 'Rahvus' (Ethnic nationality) [elimination]: 61 values
+      TOTAL=Ethnic nationalities total; ara=Arab; arm=Armenian; aze=Azerbaijani; aue=Angloaustralian; ava=Avar ... uzb=Uzbek; bel=Belarusian; rus=Russian; vep=Vepsian; OTH=Other ethnic nationalities; UNK=Ethnic nationality unknown
+      code lengths {3: 60, 5: 1}; prefixes {'TOTAL': 1, 'ara': 1, 'arm': 1, 'aze': 1, 'aue': 1, 'ava': 1, 'bak': 1, 'bul': 1}
+      /OTH|COUNTY/: 1 -- OTH=Other ethnic nationalities
+  var 'Kodakondsus' (Citizenship) [elimination]: 6 values
+      TOTAL=Citizenship total; EE=Estonian citizenship; RU=Russian citizenship; OTH=Citizenship of another country; NSP=Citizenship undetermined; UNK=Citizenship unknown
+      /OTH|COUNTY/: 1 -- OTH=Citizenship of another country
+  var 'Emakeel' (Mother tongue) [elimination]: 10 values
+      TOTAL=Mother tongue total; RK=National language; K_OTH=Other mother tongue; est=..Estonian; rus=..Russian; ukr=..Ukrainian; eng=..English; fin=..Finnish; OTH=..other mother tongue; UNK=Mother tongue unknown
+      /OTH|COUNTY/: 4 -- TOTAL=Mother tongue total; K_OTH=Other mother tongue; OTH=..other mother tongue; UNK=Mother tongue unknown
+== r13_lva_taut2011
+  9 items
+    TSG11-05.px [t] Resident population on March 1, 2011 by citizenship, sex and age group
+    TSG11-051.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by citizenship, sex and age group; on 1 March 2011
+    TSG11-06.px [t] Resident population on March 1, 2011 by ethnicity, sex and age group
+    TSG11-060.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by ethnicity; on 1 march 2011
+    TSG11-061.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by ethnicity, gender and by place of birth; on 1 March 2011
+    TSG11-062.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by ethnicity, gender, legal marital status and age group on March 1, 2011
+    TSG11-07.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by sex, language mostly spoken at home and age group; on 1 March 2011
+    TSG11-071.px [t] Ethnicities of resident population in statistical regions, cities under state jurisdiction and counties by language mostly spoken at home; on 1 March 2011
+    TSG11-08.px [t] Resident population of Latvia by main language spoken at home and use of latgalian, subtype of latvian language, on a daily basis by age group; on 1 March 2011
+== r13_lva_demogr2011
+  5 items
+    TSG11-01.px [t] Resident population on 1 March 2011 by territorial unit and sex
+    TSG11-02.px [t] Men and women by age group by statistical region, city under state jurisdiction and county; on 1 March 2011
+    TSG11-04.px [t] Resident population on March 1, 2011 by country of birth, sex and age group
+    TSG11-041.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by place of birth, sex and age group; on 1 March 2011
+    TSG11-25.px [t] Resident population in statistical regions, cities under state jurisdiction and counties by usual place of residence one year before population and housing census; on 1 March 2010
+== r13_lva_tsg1107
+  title: Resident population in statistical regions, cities under state jurisdiction and counties by sex, language mostly spoken at home and age group; on 1 March 2011
+  var 'Teritoriālā vienība' (Territorial unit) [elimination]: 126 values
+      LV=LATVIA; LV006=Riga region; LV007=Pierīga region; LV008=Vidzeme region; LV003=Kurzeme region; LV009=Zemgale region ... LV0409500=Vecumnieki county; LV0980200=Ventspils county; LV0561800=Viesīte county; LV0381600=Viļaka county; LV0781800=Viļāni county; LV0681801=Zilupe county
+      code lengths {2: 1, 5: 6, 9: 119}; prefixes {'LV': 126}
+  var 'Dzimums' (Sex) [elimination]: 3 values
+      T=Total; M=males; F=females
+  var 'Mājās pārsvarā lietotā valoda' (Language mostly spoken at home) [elimination]: 8 values
+      TOTAL=Total; LAV=latvian; RUS=russian; BEL=belarusian; UKR=ukrainian; POL=polish; LIT=lithuanian; OTH=other
+      ALL: TOTAL=Total; LAV=latvian; RUS=russian; BEL=belarusian; UKR=ukrainian; POL=polish; LIT=lithuanian; OTH=other
+  var 'Skaits, īpatsvars' (Total, per cent): 2 values
+      NUMB=Total; PC=Per cent
+  var 'Vecums (pilni gadi)' (Age (full years)) [elimination]: 20 values
+      TOTAL=Total; Y0-4=0-4; Y5-9=5-9; Y10-14=10-14; Y15-19=15-19; Y20-24=20-24 ... Y65-69=65-69; Y70-74=70-74; Y75-79=75-79; Y80-84=80-84; Y85-89=85-89; Y_GE90=90+
+      code lengths {4: 2, 5: 1, 6: 17}; prefixes {'Y': 19, 'TOTAL': 1}
+== r13_nor_08531
+  title: 08531: Members of congregations in religious and philosophical communities outside the Church of Norway, by region, religion/philosophy, contents and year
+  var 'Region' (region) [elimination]: 42 values
+      0=The whole country; 31=Østfold; 32=Akershus; 30=Viken (2020-2023); 01=Østfold (-2019); 02=Akershus (-2019) ... 22=Jan Mayen; 23=The Continental Shelf; 25=Abroad; 26=Ocean areas; 88=Not resident in Norway; 99=County not stated
+      code lengths {1: 1, 2: 41}; prefixes {'': 42}
+      ALL: 0=The whole country; 31=Østfold; 32=Akershus; 30=Viken (2020-2023); 01=Østfold (-2019); 02=Akershus (-2019); 03=Oslo - Oslove; 34=Innlandet; 04=Hedmark (-2019); 05=Oppland (-2019); 33=Buskerud; 06=Buskerud (-2019); 38=Vestfold og Telemark (2020-2023); 39=Vestfold; 40=Telemark; 07=Vestfold (-2019); 08=Telemark (-2019); 42=Agder; 09=Aust-Agder (-2019); 10=Vest-Agder (-2019); 11=Rogaland; 46=Vestland; 12=Hordaland (-2019); 13=Bergen (-1971); 14=Sogn og Fjordane (-2019); 15=Møre og Romsdal; 50=Trøndelag - Trööndelage; 16=Sør-Trøndelag (-2017); 17=Nord-Trøndelag (-2017); 18=Nordland - Nordlánnda; 55=Troms - Romsa - Tromssa; 56=Finnmark - Finnmárku - Finmarkku; 54=Troms og Finnmark - Romsa ja Finnmárku (2020-2023); 19=Troms - Romsa (-2019); 20=Finnmark - Finnmárku (-2019); 21=Svalbard; 22=Jan Mayen; 23=The Continental Shelf; 25=Abroad; 26=Ocean areas; 88=Not resident in Norway; 99=County not stated
+  var 'ReligionLivs' (religion/philosophy) [elimination]: 6 values
+      999=All; 200=Buddism; 400=Islam; 600=Christianity; 902=Other religion; 900=Philosophy
+  var 'ContentsCode' (contents): 1 values
+      Medlemmer=Members
+  var 'Tid' (year) [time]: 11 values
+      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020
