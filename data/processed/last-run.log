@@ -1,39 +1,37 @@
-== xls https://www.instat.gov.al/media/14409/tab_1_12_popullsia-banuese-sipas-përkatësisë-etnike-dhe-gjinisë_qarqe.xls 30 2
-  HTTP 200 application/vnd.ms-excel 151,324 bytes
-  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
-== xls https://www.instat.gov.al/media/14411/tab_1_13_popullsia-banuese-sipas-besimit-fetar-dhe-gjinisë_qarqe.xls 20 2
-  HTTP 200 application/vnd.ms-excel 124,711 bytes
-  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
-== xls https://www.instat.gov.al/media/14412/tab_1_14_popullsia-banuese-sipas-gjuhës-që-flitet-zakonisht-në-shtëpi-dhe-gjinisë_qarqe.xls 14 2
-  HTTP 200 application/vnd.ms-excel 94,999 bytes
-  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
-== xls https://www.instat.gov.al/media/3140/tab_2_1_2.xls 14 3
-  HTTP 200 application/vnd.ms-excel 492,261 bytes
-  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
-== xlsrow https://www.instat.gov.al/media/3140/tab_2_1_2.xls 0 (?i)rreth|district|qark|prefect 50
-  HTTP 200 application/vnd.ms-excel 492,261 bytes
-  !! XLRDError: Unsupported format, or corrupt file: Expected BOF record; found b'<?xml ve'
-== xls https://www.instat.gov.al/media/3215/1114.xls 20 2
-  HTTP 200 application/vnd.ms-excel 19,456 bytes
-  1 sheets: ['Sheet1']
-  -- sheet 'Sheet1': 32 rows x 3 cols
-    1.1.14 Popullsia banuese sip
-    1.1.14 Resident population b
-    Përkatësia fetare | Popullsia banuese | Përqindja e popullsisë banue
-    Religious affiliation | Resident population | Percentage of resident popul
-    Gjithsej
-    Total | 2.800.138 | 100.0
-    Myslimanë
-    Muslims | 1.587.608 | 56,70
-    Bektashinj
-    Bektashi | 58628.0 | 2,09
-    Katolikë
-    Catholics | 280921.0 | 10,03
-    Ortodoks
-    Orthodox | 188992.0 | 6,75
-    Ungjillorë
-    Evangelists | 3797.0 | 0,14
-    Të tjerë të krishterë
-    Other Christians | 1919.0 | 0,07
-    Besimtarë të pacilësuar*
-    Believers without denominati | 153.63 | 5,49
+serbia_census: RZS open data, 2022 census
+  3104020201IND01: 3,142,498 bytes, 318,000 records
+  age: 205 territories
+  3104020101IND01: 19,582,861 bytes, 45,240 records
+  ethnicity: 205 territories, nNacionalnostPS
+  3104020301IND01: 3,130,274 bytes, 8,610 records
+  religion: 205 territories, nVeroispovest
+  3104020302IND01: 4,930,467 bytes, 13,530 records
+  language: 205 territories, nMaternjiJezik
+  145 second-level polygons bound one-to-one; they add to the country
+  Belgrade (Beogradska oblast): 1,681,405, municipalities 1,681,405, median 43.0
+  Bor District (Borska oblast): 101,100, municipalities 101,100, median 50.4
+  Branicevo District (Braničevska oblast): 156,367, municipalities 156,367, median 48.8
+  Central Banat District (Srednjobanatska oblast): 157,711, municipalities 157,711, median 46.7
+  Jablanica District (Jablanička oblast): 184,502, municipalities 184,502, median 46.2
+  Kolubara District (Kolubarska oblast): 154,497, municipalities 154,497, median 47.0
+  Macva District (Mačvanska oblast): 265,377, municipalities 265,377, median 46.3
+  Moravica District (Moravička oblast): 189,281, municipalities 189,281, median 47.0
+  Nisava District (Nišavska oblast): 343,950, municipalities 343,950, median 45.1
+  North Backa District (Severnobačka oblast): 160,163, municipalities 160,163, median 45.6
+  North Banat District (Severnobanatska oblast): 117,896, municipalities 117,896, median 47.4
+  Pcinja District (Pčinjska oblast): 193,802, municipalities 193,802, median 42.5
+  Pirot District (Pirotska oblast): 76,700, municipalities 76,700, median 49.6
+  Podunavlje District (Podunavska oblast): 175,573, municipalities 175,573, median 45.6
+  Pomoravlje District (Pomoravska oblast): 182,047, municipalities 182,047, median 48.3
+  Rasina District (Rasinska oblast): 207,197, municipalities 207,197, median 48.0
+  Raska District (Raška oblast): 296,532, municipalities 296,532, median 41.0
+  South Backa District (Južnobačka oblast): 607,178, municipalities 607,178, median 42.1
+  South Banat District (Južnobanatska oblast): 260,244, municipalities 260,244, median 45.5
+  Sumadija District (Šumadijska oblast): 269,728, municipalities 269,728, median 45.3
+  Syrmia District (Sremska oblast): 282,547, municipalities 282,547, median 45.8
+  Toplica District (Toplička oblast): 77,341, municipalities 77,341, median 46.4
+  West Backa District (Zapadnobačka oblast): 154,491, municipalities 154,491, median 48.1
+  Zajecar District (Zaječarska oblast): 96,715, municipalities 96,715, median 51.4
+  Zlatibor District (Zlatiborska oblast): 254,659, municipalities 254,659, median 47.2
+  wrote data/processed/serbia_census.json (1485 kB)
+  wrote serbia_census.json: 170 records
