@@ -1,3 +1,4 @@
-kosovo: ASKdata, 2024 census
-  Kosovo: 1,602,515 enumerated, 1,602,515 with ASK's estimate; national median 33.5 from single years
-kosovo: ASK's 'Zveqan' matches no polygon
+north_macedonia: MakStat, 2021 census
+  T1020P21.px: 82 areas, single years to 100 (open top)
+  retry in 3s: https://makstat.stat.gov.mk/PXWeb/api/v1/en/MakStat/Popisi/Popis2021/NaselenieVkupno/NaseleniePopis2021/EtnoKulturniKarakteristiki/T1015P21.px (HTTP Error 429: )
+north_macedonia: categories with no entry in LABELS: religion: ['Not declare', 'atheist']
