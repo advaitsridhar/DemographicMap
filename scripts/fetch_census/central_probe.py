@@ -1019,7 +1019,42 @@ def hun13() -> None:
             log(f"   {exc}: {page[:300]}")
 
 
+def deu6() -> None:
+    """The Zensus 2022 database's answers to a few forms of the same request.
+
+    The account reaches this probe through the environment and goes only into
+    request headers; nothing here prints it.
+    """
+    import os
+    auth = {"username": os.environ.get("ZENSUS_USER", ""), "password": os.environ.get("ZENSUS_PASSWORD", "")}
+    base = "https://ergebnisse.zensus2022.de/api/rest/2020"
+    for path in ("helloworld/logincheck", "catalogue/tables?selection=1000A-1018&language=de"):
+        status, _, body = fetch(f"{base}/{path}", data=b"", headers={**auth, "Content-Type":
+                                                                     "application/x-www-form-urlencoded"})
+        log(f"\n## {path}: HTTP {status}: {text(body)[:400]}")
+    variants = {
+        "as written": {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                       "language": "de", "regionalvariable": "GEORB1", "regionalschluessel": ""},
+        "no key": {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                   "language": "de", "regionalvariable": "GEORB1"},
+        "Land cut": {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                     "language": "de", "regionalvariable": "GEOBL1"},
+        "default": {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                    "language": "de"},
+        "Kreise": {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                   "language": "de", "regionalvariable": "GEOLK4"},
+    }
+    for label, params in variants.items():
+        status, head, body = fetch(f"{base}/data/tablefile", data=urllib.parse.urlencode(params).encode(),
+                                   headers={**auth, "Content-Type": "application/x-www-form-urlencoded"})
+        kind = head.get("Content-Type") or head.get("content-type")
+        log(f"\n## tablefile {label}: HTTP {status}, {len(body):,} bytes, {kind}")
+        if not body.startswith(b"PK"):
+            log("   " + text(body)[:300].replace("\n", " "))
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu6": deu6,
     "hun13": hun13,
     "deu5": deu5,
     "hun12": hun12,

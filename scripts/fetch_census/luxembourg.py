@@ -83,11 +83,13 @@ def read() -> tuple[dict[str, str], dict[str, dict[str, Counter]], dict[str, flo
         else:
             continue                  # an aggregate over the five-year groups
         counts.setdefault(geo_code, {"M": Counter(), "F": Counter()})[sex][key] += value
+    # SDMX leaves out a cell that is zero, so a small commune with nobody
+    # over 90 simply has no older groups; what is present must be the grid.
+    grid = set(range(0, 101, 5))
     for geo, by_sex in counts.items():
-        starts = sorted(a for a, _ in by_sex["M"] | by_sex["F"])
-        # The open top group is absent where nobody is 100 or older.
-        if starts not in (list(range(0, 101, 5)), list(range(0, 96, 5))):
-            raise SystemExit(f"luxembourg: {labels.get(geo, geo)} has age groups {starts}")
+        starts = {a for a, _ in by_sex["M"] | by_sex["F"]}
+        if not starts <= grid or not {0, 5, 10} <= starts:
+            raise SystemExit(f"luxembourg: {labels.get(geo, geo)} has age groups {sorted(starts)}")
     return labels, counts, totals
 
 
