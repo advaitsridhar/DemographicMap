@@ -1,41 +1,46 @@
-moldova_age: 2024 census, age and sex by district
-  Anexa_Caracteristici_demografice_RPL2024.xlsx: 332,053 bytes
-  Anexa_Localitati_RPL2024.xlsx: 541,766 bytes
-  country: median 41.2 from five-year groups
-  Raionul Anenii Noi: 57,687, median 43.0, 932 men per 1,000 women
-  Bălți: 94,546, median 39.0, 825 men per 1,000 women
-  Raionul Basarabeasca: 14,914, median 47.1, 910 men per 1,000 women
-  Raionul Briceni: 46,894, median 46.7, 869 men per 1,000 women
-  Raionul Cahul: 72,775, median 42.7, 903 men per 1,000 women
-  Raionul Călărași: 43,864, median 44.7, 958 men per 1,000 women
-  Raionul Cantemir: 33,181, median 43.0, 981 men per 1,000 women
-  Raionul Căușeni: 57,261, median 43.9, 932 men per 1,000 women
-  Chișinău: 720,128, median 37.4, 865 men per 1,000 women
-  Raionul Cimișlia: 30,986, median 47.0, 956 men per 1,000 women
-  Raionul Criuleni: 52,926, median 41.0, 939 men per 1,000 women
-  Raionul Dondușeni: 28,108, median 46.8, 860 men per 1,000 women
-  Raionul Drochia: 53,738, median 46.7, 853 men per 1,000 women
-  Raionul Dubăsari: 21,781, median 43.2, 944 men per 1,000 women
-  Raionul Edineț: 50,429, median 46.3, 852 men per 1,000 women
-  Raionul Fălești: 56,039, median 44.9, 872 men per 1,000 women
-  Raionul Florești: 53,264, median 45.4, 877 men per 1,000 women
-  Gagauzia: 103,668, median 42.3, 872 men per 1,000 women
-  Raionul Glodeni: 35,829, median 45.5, 884 men per 1,000 women
-  Raionul Hîncești: 69,462, median 43.1, 944 men per 1,000 women
-  Raionul Ialoveni: 74,458, median 40.1, 945 men per 1,000 women
-  Raionul Leova: 28,835, median 43.7, 984 men per 1,000 women
-  Raionul Nisporeni: 36,413, median 43.6, 954 men per 1,000 women
-  Raionul Ocnița: 31,610, median 47.8, 853 men per 1,000 women
-  Raionul Orhei: 79,242, median 42.1, 928 men per 1,000 women
-  Raionul Rezina: 30,243, median 44.3, 963 men per 1,000 women
-  Raionul Rîșcani: 43,652, median 45.8, 862 men per 1,000 women
-  Raionul Sîngerei: 55,933, median 42.6, 893 men per 1,000 women
-  Raionul Șoldănești: 25,394, median 44.9, 953 men per 1,000 women
-  Raionul Soroca: 58,609, median 46.1, 878 men per 1,000 women
-  Raionul Ștefan Vodă: 42,285, median 44.6, 938 men per 1,000 women
-  Raionul Strășeni: 61,362, median 41.8, 942 men per 1,000 women
-  Raionul Taraclia: 26,435, median 45.0, 921 men per 1,000 women
-  Raionul Telenești: 41,452, median 44.4, 957 men per 1,000 women
-  Raionul Ungheni: 75,804, median 40.5, 923 men per 1,000 women
-  wrote data/processed/moldova_age.json (182 kB)
-  wrote moldova_age.json: 74 records
+== xls https://www.nsi.bg/file/download/63412e676270c92e166a333004767d40f0e23dc3 7 40
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 1,670,809 bytes disposition=attachment; filename="Census2021_Population_BG.xlsx"
+  1 sheets: ['1']
+  -- sheet '1': 5581 rows x 59 cols
+    НАСЕЛЕНИЕ ПО СТАТИСТИЧЕСКИ Р
+     |  | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой)
+     |  | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214 | 20214
+     |  | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо | Общо
+     |  | Общо | 0 - 4 | 5 - 9 | 10 - 14 | 15 - 19 | 20 - 24 | 25 - 29 | 30 - 34 | 35 - 39 | 40 - 44 | 45 - 49 | 50 - 54 | 55 - 59 | 60 - 64
+    BG | Общо за страната | 6519789 | 288484 | 302883 | 326355 | 286241 | 266787 | 301125 | 403227 | 433748 | 475519 | 502019 | 480978 | 451100 | 468656
+    BG3 | Северна и Югоизточна Българи | 3182048 | 136650 | 146559 | 161309 | 144257 | 124890 | 135130 | 178608 | 194830 | 219115 | 243162 | 239329 | 227992 | 235353
+== xls https://www.nsi.bg/file/download/d6bebedae9d8dc7824e050bfc47124b402d9129b 7 40
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 78,912 bytes disposition=attachment; filename="Census2021_Ethnocultural characteristics_BG.xlsx"
+  4 sheets: ['1', '2', '3', '4']
+  -- sheet '1': 38 rows x 3 cols
+    НАСЕЛЕНИЕ ПО ЕТНИЧЕСКА ПРИНА
+     |  | (брой)
+     |  | 2021
+    Общо за страната | Общо | 6519789
+    Общо за страната | Българска | 5118494
+    Общо за страната | Турска | 508378
+    Общо за страната | Ромска | 266720
+  -- sheet '2': 319 rows x 10 cols
+    НАСЕЛЕНИЕ ПО ЕТНИЧЕСКА ПРИНА
+     |  | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой)
+     |  | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021
+     |  | Общо | Българска | Турска | Ромска | Друга | Не мога да определя | Не желая да отговоря | Непоказана1
+    BG | Общо за страната | 6519789 | 5118494 | 508378 | 266720 | 79006 | 15746 | 63767 | 467678
+    BG3 | Северна и Югоизточна Българи | 3182048 | 2432919 | 329692 | 163938 | 35411 | 8458 | 29420 | 182210
+    BG31 | Северозападен | 690685 | 608950 | 8781 | 40315 | 2514 | 1779 | 5181 | 23165
+  -- sheet '3': 319 rows x 10 cols
+    НАСЕЛЕНИЕ ПО МАЙЧИН ЕЗИК, СТ
+     |  | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой)
+     |  | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021
+     |  | Общо | Български | Турски | Ромски | Друг | Не мога да определя | Не желая да отговоря | Непоказан1
+    BG | Общо за страната | 6519789 | 5037607 | 514386 | 227974 | 62906 | 10633 | 49602 | 616681
+    BG3 | Северна и Югоизточна Българи | 3182048 | 2398053 | 344606 | 136504 | 33279 | 6438 | 23890 | 239278
+    BG31 | Северозападен | 690685 | 615396 | 7231 | 29973 | 3160 | 1239 | 3339 | 30347
+  -- sheet '4': 319 rows x 11 cols
+    НАСЕЛЕНИЕ ПО ВЕРОИЗПОВЕДАНИЕ
+     |  | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой) | (брой)
+     |  | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021 | 2021
+     |  | Общо | Християнско | Мюсюлманско | Юдейско | Друго | Нямам | Не мога да определя | Не желая да отговоря | Непоказано1
+    BG | Общо за страната | 6519789 | 4219270 | 638708 | 1736 | 6451 | 305102 | 259235 | 472606 | 616681
+    BG3 | Северна и Югоизточна Българи | 3182048 | 2058585 | 350246 | 470 | 1871 | 179229 | 137630 | 214739 | 239278
+    BG31 | Северозападен | 690685 | 507319 | 9139 | 58 | 204 | 56662 | 40657 | 46299 | 30347
