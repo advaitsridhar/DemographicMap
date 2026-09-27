@@ -466,7 +466,8 @@ def main() -> int:
         fields["population"]["value"] = int(round(totals[(code, str(year))]))
         for field, (table, *_rest) in specs.items():
             parts = parts_2011(code, field)
-            if not parts:
+            # A part whose categories missed its total was dropped above.
+            if not parts or any(c not in census[field] for c in parts):
                 continue
             counts: dict[str, float] = defaultdict(float)
             for c in parts:
@@ -509,6 +510,8 @@ def main() -> int:
         fields["population"]["value"] = int(round(totals[(row, str(YEAR))]))
         if cc in UNCHANGED:
             for field, (table, data) in now.items():
+                if UNCHANGED[cc] not in data:
+                    continue
                 counts = dict(data[UNCHANGED[cc]])
                 total = counts.pop("__total__")
                 block = census_block(field, table, counts, total, [COUNTIES[cc]], 2021)
