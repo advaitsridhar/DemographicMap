@@ -1,15 +1,12 @@
-  retry 1/2 after 2s :: https://armstatbank.am/pxweb/api/v1/en :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-  retry 2/2 after 4s :: https://armstatbank.am/pxweb/api/v1/en :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-  retry 1/2 after 2s :: https://armstatbank.am/pxweb/api/v1/en/ArmStatBank :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-  retry 2/2 after 4s :: https://armstatbank.am/pxweb/api/v1/en/ArmStatBank :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-  retry 1/2 after 2s :: https://armstatbank.am/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-  retry 2/2 after 4s :: https://armstatbank.am/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'armstatbank.am'. (_ssl.c:1016)>
-== get https://armstatbank.am/pxweb/api/v1/en
-  failed: RuntimeError('GET failed after 2 retries: https://armstatbank.am/pxweb/api/v1/en')
-== get https://armstatbank.am/pxweb/api/v1/en/ArmStatBank
-  failed: RuntimeError('GET failed after 2 retries: https://armstatbank.am/pxweb/api/v1/en/ArmStatBank')
-== get https://armstatbank.am/
-  failed: RuntimeError('GET failed after 2 retries: https://armstatbank.am/')
-== get https://census2024.geostat.ge/en
-  659 bytes, begins b'<!DOCTYPE html>\r'
-  text: Census 2024
+ireland: religion from SAP2022T2T4LEA22
+  166 areas, 4 categories
+ireland: ethnicity from SAP2022T2T2LEA22
+  166 areas, 7 categories
+ireland: language from SAP2022T2T5LEA22 and SAP2022T3T1LEA22
+  Polish: 123,968
+  Spanish: 48,113
+  French: 51,568
+  Other language: 527,858
+  English or Irish only: 4,224,206
+  166 local electoral areas; names shared by more than one area: ['Athlone']
+  wrote data/processed/ireland_lea.json (677 kB)
