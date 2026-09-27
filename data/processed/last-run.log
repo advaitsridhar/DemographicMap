@@ -1,42 +1,7 @@
-== https://api.idescat.cat/taules/v2/eulp/21431/26076?lang=en
-  385 bytes; starts b'{\n  "cla'
-  {
-    "class" : "collection",
-    "href" : "https://api.idescat.cat/taules/v2/eulp/21431/26076?lang=en",
-    "label" : "Population. By habitual language and territorial stratified sampling",
-    "link" : {
-      "item" : [ {
-        "class" : "dataset",
-        "href" : "https://api.idescat.cat/taules/v2/eulp/21431/26076/cat?lang=en",
-        "label" : "Catalonia"
-      } ]
-    },
-    "version" : "2.0"
-  }
-== https://api.idescat.cat/taules/v2/eulp/3202/23138?lang=en
-  827 bytes; starts b'{\n  "cla'
-  {
-    "class" : "collection",
-    "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138?lang=en",
-    "label" : "Population. By habitual language (2023)",
-    "link" : {
-      "item" : [ {
-        "class" : "dataset",
-        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/cat?lang=en",
-        "label" : "Catalonia"
-      }, {
-        "class" : "dataset",
-        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/at?lang=en",
-        "label" : "By areas of the Territorial Plan"
-      }, {
-        "class" : "dataset",
-        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/com?lang=en",
-        "label" : "By counties and Aran"
-      }, {
-        "class" : "dataset",
-        "href" : "https://api.idescat.cat/taules/v2/eulp/3202/23138/mun?lang=en",
-        "label" : "By municipalities"
-      } ]
-    },
-    "version" : "2.0"
-  }
+== https://www.ige.gal/web/mostrar_actividade_estatistica.jsp?idioma=gl&codigo=0206004
+  36,613 bytes; starts b'\r\n\r\n\r\n\r\n'
+  805 lines, 4 with ['igebdt', 'selector', 'cod=', 'taboa', 'taboa', 'lingua']
+    145: 				let allRadio = document.querySelectorAll('.state');
+    267: 									<li><a href="/igebdt/datos-basicos/">Principais datos de Galicia</a></li>
+    333: 									<li><a href="/igebdt/igeapi/">Descarga de información. APIs</a></li>
+    687: 				<a href="/igebdt/definicions/?C=02060040000&c=0206004" class="is-hover-link-nounderline">
