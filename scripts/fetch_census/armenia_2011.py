@@ -57,9 +57,10 @@ MARZ = {533: ("Yerevan", "Երևան"), 534: ("Aragatsotn", "Արագածոտն"
 
 # Heading words -> label, tried in order (the first that a heading holds).
 RELIGION = [
+    # "Not having a religious belief" before "having" one, which it contains.
+    ("չունեն", "No religion"), ("չունեց", "No religion"), ("չունի", "No religion"),
     ("դավանանքով", None), ("ունեցող", None),          # everyone with a religion
-    ("չունեն", "No religion"), ("չունի", "No religion"),
-    ("հրաժարվ", "Not stated"), ("նշված", "Not stated"),
+    ("հրաժարվ", "Not stated"), ("չնշած", "Not stated"), ("նշված", "Not stated"),
     ("առաքել", "Armenian Apostolic"), ("կաթոլ", "Catholic"),
     ("ուղղափառ", "Orthodox"), ("ավետարան", "Evangelical"),
     ("բողոք", "Protestant"), ("եհովա", "Jehovah's Witnesses"),
