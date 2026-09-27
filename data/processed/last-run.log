@@ -1,51 +1,23 @@
-
-=== aut10
-
-## https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.csv
-   HTTP 200, 78,627 bytes, 2,118 lines, text/x-comma-separated-values
-   | Gemeindeliste sortiert nach Gemeindekennziffer, Gebietsstand 2026;;;;;
-   35 lines match '^6228|^622[0-9]{2};'
-   > 62202;Bad Blumau;62202;;8283;
-   > 62205;Buch-St. Magdalena;62205;;8274;8272 8294
-   > 62206;Burgau;62206;M;8291;
-   > 62209;Ebersdorf;62209;;8273;8272
-   > 62211;Friedberg;62211;ST;8240;8243
-   > 62214;Greinbach;62214;;8230;8225
-   > 62216;Großsteinbach;62216;;8265;8264
-   > 62219;Hartberg;62219;ST;8230;
-   > 62220;Hartberg Umgebung;62220;;8230;8225 8274
-   > 62226;Lafnitz;62226;;8233;8230
-   > 62232;Ottendorf an der Rittschein;62232;;8312;8262
-   > 62233;Pinggau;62233;M;8243;2872 7423
-   > 62235;Pöllauberg;62235;;8225;8250
-   > 62242;Sankt Jakob im Walde;62242;;8255;8673 8674
-   > 62244;Sankt Johann in der Haide;62244;;8295;8230 8294
-   > 62245;Sankt Lorenzen am Wechsel;62245;;8242;8234 8251
-   > 62247;Schäffern;62247;;8244;2852 2870 2871
-   > 62256;Stubenberg;62256;;8223;8222 8224
-   > 62262;Wenigzell;62262;;8254;8253
-   > 62264;Bad Waltersdorf;62264;M;8271;8264 8272 8283
-   > 62265;Dechantskirchen;62265;;8241;
-   > 62266;Feistritztal;62266;;8221;8212 8222 8224 8265
-   > 62268;Grafendorf bei Hartberg;62268;M;8232;8225 8230 8233 8234 8250
-   > 62269;Großwilfersdorf;62269;;8263;8262 8264 8362
-   > 62270;Hartl;62270;;8224;8222 8265 8271 8272 8273
-   > 62271;Ilz;62271;M;8262;8261 8265 8311
-   > 62272;Kaindorf;62272;M;8224;8225
-   > 62273;Bad Loipersdorf;62273;;8282;8280
-   > 62274;Neudau;62274;M;8292;
-   > 62275;Pöllau;62275;M;8225;8224 8230
-   > 62276;Rohr bei Hartberg;62276;;8294;8274 8293
-   > 62277;Rohrbach an der Lafnitz;62277;;8234;8233 8241 8250
-   > 62278;Vorau;62278;M;8250;8234 8251 8252 8253 8254
-   > 62279;Waldbach-Mönichwald;62279;;8252;8251 8253
-   > 62280;Fürstenfeld;62280;ST;8280;8282 8362
-   vz1/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   vz2/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   vz3/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   vz7/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   blick1/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   blick2/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   blick3/g62280: HTTP 200, 87,741 bytes, text/html; charset=utf-8; 
-   ae1/g62280: HTTP 200, 406,737 bytes, application/pdf; Gemeinde: Fürstenfeld (62280) | Politischer Bezirk: Hartberg-Fürstenfeld   (622) | NUTS 3 Region: Oststeiermark   (AT224) | Bundesland (NUTS 2): Steiermark | Zusammen in % Männer Frauen | Bevölkerung 10 381 100,0 4 966 5 415 |   in % 100,0 . 47,8 52,2 | Erwerbsstatus | 5 191 50,0 2 646 2 545 | 4 867 46,9 2 491 2 376 | 324 3,1 155 169 | 5 190 50,0 2 320 2 870 | 1 287 12,4 679 608 | 3 019 29,1 1 279 1 740
-   ae2/g62280: HTTP 200, 409,525 bytes, application/pdf; Gemeinde: Fürstenfeld   (62280) | Politischer Bezirk: Hartberg-Fürstenfeld   (622) | NUTS 3 Region: Oststeiermark   (AT224) | Bundesland (NUTS 2): Steiermark | Erwerbstätige1 Schüler:innen | und Studierende | … am Wohnort 4 787 1 073 | Nichtpendler:innen 380 -  | Gemeindebinnenpendler:innen 1 715 824 | Auspendler:innen 2 692 249 |    in eine andere Gemeinde des Politischen Bezirks 654 54 |    in einen anderen Politischen Bezirk des Bundeslandes 1 390 144 |    in ein anderes Bundesland 615 51 |    ins Ausland2
+cyprus_census: CYSTAT, Census of Population and Housing 2021
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 368, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 361, in main
+    records = build()
+              ^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 247, in build
+    single = single_years()
+             ^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cyprus_census.py", line 143, in single_years
+    for dims, value in px_table(TABLES["single"], {dist: "*", sex: "*", age: "*"}):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/balkans_common.py", line 96, in px_table
+    return unstack(payload)
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 388, in unstack
+    ids: list[str] = payload["id"]
+                     ~~~~~~~^^^^^^
+KeyError: 'id'
