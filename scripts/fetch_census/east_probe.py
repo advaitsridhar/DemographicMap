@@ -105,6 +105,8 @@ def describe_book(blob: bytes, name: str, args: argparse.Namespace) -> None:
             sheets.append((ws.name, [ws.row_values(i) for i in range(ws.nrows)]))
     print(f"  {name}: {len(sheets)} sheets: "
           + " | ".join(t for t, _ in sheets[:80]))
+    if args.sheet_match:
+        sheets = [s for s in sheets if re.search(args.sheet_match, s[0], re.I)]
     for title, rows in sheets[:args.sheets]:
         width = max((len(r) for r in rows), default=0)
         print(f"  -- sheet {title!r}: {len(rows)} rows x {width} cols")
@@ -228,6 +230,7 @@ def main() -> int:
                     help="with a target holding {n}: a range like 1-95 to "
                          "substitute, for an office with one host per region")
     ap.add_argument("--aia", action="store_true")
+    ap.add_argument("--sheet-match", help="only sheets whose title matches")
     ap.add_argument("--form", action="store_true",
                     help="POST --data as a urlencoded form (a=1&b=2)")
     args = ap.parse_args()
