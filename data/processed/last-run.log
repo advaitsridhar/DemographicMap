@@ -1,10 +1,23 @@
-== postraw https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px eyJxdWVyeSI6IFt7ImNvZGUiOiAiRElTVFJJQ1QiLCAic2VsZWN0aW9uIjogeyJmaWx0ZXIiOiAiaXRlbSIsICJ2YWx1ZXMiOiBbIjAiXX19LCB7ImNvZGUiOiAiU0VYIiwgInNlbGVjdGlvbiI6IHsiZmlsdGVyIjogIml0ZW0iLCAidmFsdWVzIjogWyIwIl19fSwgeyJjb2RlIjogIkFHRSIsICJzZWxlY3Rpb24iOiB7ImZpbHRlciI6ICJpdGVtIiwgInZhbHVlcyI6IFsiMCIsICIxIl19fV0sICJyZXNwb25zZSI6IHsiZm9ybWF0IjogImpzb24tc3RhdCJ9fQ== 1200
-  HTTP 301 Location=https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census of Population and Housing 2021/Population/Population - Place of Residence/1891129E.px type=text/html; charset=UTF-8 279 bytes
-  <head><title>Document Moved</title></head>
-<body><h1>Object Moved</h1>This document may be found <a HREF="https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census of Population and Housing 2021/Population/Population - Place of Residence/1891129E.px">here</a></body>
-== postraw https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px eyJxdWVyeSI6IFt7ImNvZGUiOiAiRElTVFJJQ1QiLCAic2VsZWN0aW9uIjogeyJmaWx0ZXIiOiAiaXRlbSIsICJ2YWx1ZXMiOiBbIjAiXX19LCB7ImNvZGUiOiAiU0VYIiwgInNlbGVjdGlvbiI6IHsiZmlsdGVyIjogIml0ZW0iLCAidmFsdWVzIjogWyIwIl19fSwgeyJjb2RlIjogIkFHRSIsICJzZWxlY3Rpb24iOiB7ImZpbHRlciI6ICJpdGVtIiwgInZhbHVlcyI6IFsiMCIsICIxIl19fV0sICJyZXNwb25zZSI6IHsiZm9ybWF0IjogImpzb24ifX0= 1200
-  HTTP 301 Location=https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census of Population and Housing 2021/Population/Population - Place of Residence/1891129E.px type=text/html; charset=UTF-8 279 bytes
-  <head><title>Document Moved</title></head>
-<body><h1>Object Moved</h1>This document may be found <a HREF="https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census of Population and Housing 2021/Population/Population - Place of Residence/1891129E.px">here</a></body>
-== head https://cystatdb23px.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891129E.px 
-  HTTP 200 application/json; charset=utf-8 1,196 bytes
+austria_census: Volkszählung 2001 sheets (vz7) for the municipalities of 2026
+  not municipalities, left out: {'0': 'Nicht klassifizierbar <0>'}
+  2115 municipalities
+  62280: no 2001 sheet; district 622's unclaimed sheets [('62201', 'Altenmarkt bei Fürstenfeld'), ('62212', 'Fürstenfeld'), ('62252', 'Söchau'), ('62258', 'Übersbach')] are its parts
+  135 municipalities formed by mergers since 2001, read as the sheets of their parts; 2372 municipalities of 2001 in all; listed by two of today's (split by cadastral community, counted once): ['61040', '62227', '62248', '62336', '62347', '62349']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 344, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 337, in main
+    records = build(args.year, args.workers)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 278, in build
+    check_sum((p["total"] for _, p in counted.values()), NATIONAL_2001,
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/central_ages.py", line 117, in check_sum
+    summed = sum(parts)
+             ^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/austria_census.py", line 278, in <genexpr>
+    check_sum((p["total"] for _, p in counted.values()), NATIONAL_2001,
+               ~^^^^^^^^^
+KeyError: 'total'
