@@ -15,6 +15,12 @@ Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it:
     pxq:URL~~B64JSON             POST a PxWeb query (base64 of the JSON body)
     cdx:URLPREFIX[~~N]           Internet Archive captures under a URL prefix
     pdf:URL~~REGEX[~~N]          lines of a PDF's text matching REGEX
+    rsdata:URL[~~N[~~KEY=REGEX]]  data.stat.gov.rs: the records a result page embeds --
+                                 their keys, and up to N distinct values of each (after
+                                 keeping only records whose KEY matches REGEX); and the
+                                 territory tree the page carries
+    pxv:URL~~VARREGEX[~~N]       a PxWeb table's variables, every value (up to N) of those
+                                 whose code matches VARREGEX
 
 The commands are split on whitespace by the workflow, so no part may hold a
 space: a regex uses ``\\s`` instead. Read-only; the output is the log.
@@ -47,7 +53,8 @@ TIMEOUT = 60
 # until the session cookie it set is sent back.
 import http.cookiejar  # noqa: E402
 OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
-MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf")
+MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf",
+         "rsdata", "pxv")
 
 
 def uri(url: str) -> str:
@@ -274,6 +281,46 @@ def probe(arg: str) -> None:
                     texts = var.get("valueTexts", [])
                     sample = ", ".join(f"{v}={t}" for v, t in list(zip(vals, texts))[:12])
                     say(f"  var {var.get('code')} ({var.get('text')}): {len(vals)} values: {sample}")
+        elif mode == "rsdata":
+            n = int(extra[0]) if extra else 40
+            text = decode(body, headers)
+            recs = []
+            for blob in re.findall(r'\{[^{}]*"Vrednost"[^{}]*\}', text):
+                try:
+                    recs.append(json.loads(blob))
+                except ValueError:
+                    pass
+            if len(extra) > 1 and "=" in extra[1]:
+                key, _, rx = extra[1].partition("=")
+                recs = [r for r in recs if any(k.startswith(key) and re.search(rx, str(v)) for k, v in r.items())]
+            say(f"  {len(recs)} records")
+            keys = []
+            for r in recs:
+                for k in r:
+                    if k not in keys:
+                        keys.append(k)
+            for k in keys:
+                vals = []
+                for r in recs:
+                    v = str(r.get(k))
+                    if v not in vals:
+                        vals.append(v)
+                say(f"  {k}: {len(vals)} distinct: " + " | ".join(v.strip()[:40] for v in vals[:n]))
+            tree = re.findall(r'\{"id":"([^"]+)","text":"([^"]+)","parent":"(RS[^"]*)"', text)
+            say(f"  territory tree: {len(tree)} items under RS codes; first {n}: "
+                + " | ".join(f"{i}={t}<{p}" for i, t, p in tree[:n]))
+            q = re.findall(r'name="query"[^>]*value="([^"]{0,600})', text)
+            say(f"  query inputs: {[html.unescape(v)[:600] for v in q[:2]]}")
+        elif mode == "pxv":
+            data = json.loads(decode(body, headers).lstrip("\ufeff"))
+            rx = re.compile(extra[0], re.I) if extra else re.compile(".")
+            n = int(extra[1]) if len(extra) > 1 else 500
+            say(f"  title: {data.get('title')}")
+            for var in data.get("variables", []):
+                vals, texts = var.get("values", []), var.get("valueTexts", [])
+                say(f"  var {var.get('code')!r}: {len(vals)} values")
+                if rx.search(var.get("code", "")):
+                    say("    " + ", ".join(f"{v}={t}" for v, t in list(zip(vals, texts))[:n]))
         elif mode == "pdf":
             import pdfplumber
             rx = re.compile(extra[0], re.I)
