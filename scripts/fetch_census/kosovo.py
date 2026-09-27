@@ -120,6 +120,28 @@ def muni_var(meta: dict[str, dict[str, Any]]) -> str:
     return hits[0]
 
 
+_SHAPE_KEYS: dict[str, str] = {}
+
+
+def canon(label: str) -> str:
+    """One name for a municipality whichever table spells it: the boundary
+    file's, where it can be found. ASK's tables disagree with each other
+    ("Gllogoc" and "Gllogovc", "Novobërdë" and "Novobërda"), so each table's
+    rows are keyed by this before any two are compared."""
+    label = label.strip()
+    if label.upper() == "KOSOVA":
+        return "KOSOVA"
+    if not _SHAPE_KEYS:
+        _SHAPE_KEYS.update({key(s["name"]): re.sub(r"^Municipality of\s+", "", s["name"])
+                            for s in shapes("XKX", "admin2")})
+    base = key(ALIASES.get(fold(label), label))
+    for form in (base, base[:-1] + "a" if base.endswith("e") else base,
+                 base[:-1] + "e" if base.endswith("a") else base, base + "a", base.rstrip("ae")):
+        if form in _SHAPE_KEYS:
+            return _SHAPE_KEYS[form]
+    return label
+
+
 def year_pick(meta: dict[str, dict[str, Any]]) -> dict[str, list[str]]:
     out = {}
     for c, v in meta.items():
@@ -141,7 +163,7 @@ def ages(url: str, grouped: bool) -> dict[str, dict[str, Any]]:
         "men": 0.0, "women": 0.0, "total": 0.0, "ages": Counter(), "groups": Counter(),
         "by_sex": Counter(), "rows": Counter()})
     for dims, value in px_table(url, {muni: "*", sex: "*", age: "*", **year_pick(meta)}):
-        place, who, label = dims[muni][1].strip(), dims[sex][1].lower(), dims[age][1].strip()
+        place, who, label = canon(dims[muni][1]), dims[sex][1].lower(), dims[age][1].strip()
         unit = out[place]
         if label.lower() == "total":
             unit["rows"][who] = value
@@ -184,7 +206,7 @@ def composition(field: str, url: str) -> dict[str, dict[Any, float]]:
     total_sex = value_code(meta[sex], "Total")
     out: dict[str, dict[Any, float]] = defaultdict(dict)
     for dims, value in px_table(url, {muni: "*", sex: [total_sex], group: "*", **years}):
-        place, label = dims[muni][1].strip(), dims[group][1].strip()
+        place, label = canon(dims[muni][1]), dims[group][1].strip()
         if label.lower() == "total":
             out[place][None] = value
             continue
@@ -206,8 +228,12 @@ def build() -> list[dict[str, Any]]:
     country = next(p for p in single if p.upper() == "KOSOVA")
     places = [p for p in single if p != country]
     for p in places:
-        if p not in estimated:
-            raise SystemExit(f"kosovo: {p} is in the single-year table and not the estimated one")
+        for name, table in (("estimated ages", estimated), ("ethnicity", comps["ethnicity"]),
+                            ("religion", comps["religion"]), ("language", comps["language"]),
+                            ("estimated ethnicity", eth_est)):
+            if p not in table:
+                raise SystemExit(f"kosovo: {p} is in the single-year table and not in the "
+                                 f"{name} table, which lists {sorted(table)}")
     check_sum(sum(single[p]["total"] for p in places), single[country]["total"],
               "kosovo: municipalities against Kosovo (enumerated)")
     est_country = next(p for p in estimated if p.upper() == "KOSOVA")

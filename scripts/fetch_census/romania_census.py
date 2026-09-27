@@ -134,6 +134,8 @@ ALIASES = {
     ("ALBA", "RIMETEA"): "RAMETEA",
 }
 COUNTY_FLOOR = 150_000
+# Romania's resident population on 1 December 2021, as every table prints it.
+NATIONAL = 19_053_815
 
 
 def fold(text: Any, i_hat: bool = False) -> str:
@@ -269,7 +271,13 @@ def uat_rows(rows: list[list[Any]], counties: set[str], field: str | None
             continue
         current["uats"].append(row)
     if country is None:
-        raise SystemExit("romania_census: no ROMÂNIA row")
+        # Tabel 1.03.2 starts at the first county; the country is its counties.
+        summed: dict[Any, float] = defaultdict(float)
+        for c in out.values():
+            for k, v in c["groups"].items():
+                summed[k] += v
+        country = {"name": "ROMÂNIA (summed)", "total": sum(c["total"] for c in out.values()),
+                   "groups": dict(summed), "stars": sum(c["stars"] for c in out.values())}
     out[""] = {**country, "uats": []}
     return [c[1] for c in columns], out
 
@@ -361,6 +369,8 @@ def build() -> list[dict[str, Any]]:
         country = data[""]
         check_sum(sum(data[c]["total"] for c in found), country["total"],
                   f"romania_census: {field}, counties against the country")
+        check_sum(country["total"], NATIONAL,
+                  f"romania_census: {field}, the country against the published {NATIONAL:,}")
         for c in found:
             check_sum(sum(u["total"] for u in data[c]["uats"]), data[c]["total"],
                       f"romania_census: {field}, UATs of {c}")
