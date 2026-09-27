@@ -41,7 +41,7 @@ import re
 import urllib.parse
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
 from .balkans_common import check_sum, fold, shapes, spreadsheetml
 
 OUT = "albania_census.json"
@@ -88,6 +88,11 @@ LABELS: dict[str, dict[str, str]] = {
         "preferojtemospergjigjem": "Not declared", "nukdisponohet": "Not stated",
     },
 }
+WHY_DISTRICT = ("INSTAT publishes the 2023 census by prefecture and by the 61 municipalities of "
+                "2015, and the 2011 census by prefecture and by the 373 municipalities and "
+                "communes of its day; none of its tables is by the 36 former districts the map "
+                "draws here, or carries the district a commune belonged to, so no figure of this "
+                "field exists for the district.")
 NOTES = {
     "ethnicity": ("Ethnic affiliation (përkatësia etnike), 2023 census, resident population, a "
                   "voluntary question. 'Not stated' is the census's 'not available': residents "
@@ -227,6 +232,13 @@ def build() -> list[dict[str, Any]]:
     spare = [s["name"] for s in polys.values() if s["id"] not in bound]
     if spare:
         raise SystemExit(f"albania_census: prefectures with no table: {spare}")
+    # The 36 former districts: no table of any of these fields reaches them.
+    for s in shapes("ALB", "admin2"):
+        records.append(record(
+            f"ALB-district-{s['id']}", s["name"], level="admin2", parent="ALB", country="ALB",
+            match_by="shape_id", shape_id=s["id"],
+            **{f: gap(NOT_AVAILABLE, WHY_DISTRICT) for f in
+               ("median_age", "sex_ratio", "religion", "language", "ethnicity")}))
     return records
 
 

@@ -109,6 +109,10 @@ WHY_RELIGION = ("CYSTAT publishes the 2021 census's religion for the whole count
 WHY_ETHNICITY = ("CYSTAT publishes the 2021 census's ethnic/religious group for the whole country "
                  "only, by citizenship group (1891642E); its database has no table of it by "
                  "district, and the 2011 census's tables there carry none.")
+WHY_COMMUNITY = ("CYSTAT publishes the 2021 census's language by district only, and its religion "
+                 "and ethnic/religious group for the whole country only (1891616E, 1891632E, "
+                 "1891642E); no table of any of the three is published by municipality or "
+                 "community.")
 PART_NOTE = ("Counts the part of the district under the effective control of the Government of "
              "the Republic of Cyprus, where the 2021 census was taken; it was not taken in the rest.")
 
@@ -425,6 +429,8 @@ def build() -> list[dict[str, Any]]:
             f"CYP-2021-{code}", shape["name"], level="admin2", parent="CYP", country="CYP",
             match_by="shape_id", shape_id=shape["id"], codes={"cystat": code},
             parent_name=district_of.get(shape["parent"]),
+            religion=gap(NOT_AVAILABLE, WHY_COMMUNITY), language=gap(NOT_AVAILABLE, WHY_COMMUNITY),
+            ethnicity=gap(NOT_AVAILABLE, WHY_COMMUNITY),
             sources=[cite("community", "population/median_age/sex_ratio")], **fields))
     for s in admin2:
         if district_of.get(s["parent"]) == OUTSIDE:
@@ -432,7 +438,8 @@ def build() -> list[dict[str, Any]]:
                 f"CYP-2021-outside-{s['id']}", s["name"], level="admin2", parent="CYP", country="CYP",
                 match_by="shape_id", shape_id=s["id"], parent_name=OUTSIDE,
                 population=gap(NOT_AVAILABLE, WHY_OUTSIDE), median_age=gap(NOT_AVAILABLE, WHY_OUTSIDE),
-                sex_ratio=gap(NOT_AVAILABLE, WHY_OUTSIDE)))
+                sex_ratio=gap(NOT_AVAILABLE, WHY_OUTSIDE), religion=gap(NOT_AVAILABLE, WHY_OUTSIDE),
+                language=gap(NOT_AVAILABLE, WHY_OUTSIDE), ethnicity=gap(NOT_AVAILABLE, WHY_OUTSIDE)))
     return records
 
 
