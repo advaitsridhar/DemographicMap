@@ -1,0 +1,1910 @@
+[
+  {
+    "id": "GBR-E92000001",
+    "level": "admin1",
+    "name": "England",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 56490048,
+      "year": 2021,
+      "source": "ONS Census 2021 (England and Wales) via Nomis"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 46.3,
+        "count": 26167899
+      },
+      {
+        "group": "No religion",
+        "pct": 36.7,
+        "count": 20715664
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.7,
+        "count": 3801186
+      },
+      {
+        "group": "Not answered",
+        "pct": 6.0,
+        "count": 3400548
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.8,
+        "count": 1020533
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.9,
+        "count": 520092
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 332410
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.5,
+        "count": 262433
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.5,
+        "count": 269283
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 90.8,
+        "count": 49652172
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 590983
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.9,
+        "count": 465933
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.5,
+        "count": 288659
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.5,
+        "count": 267610
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.4,
+        "count": 195483
+      },
+      {
+        "group": "Bengali (with Sylheti and Chatgaya)",
+        "pct": 0.4,
+        "count": 194822
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 221076
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 211997
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 188205
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 157643
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 108942
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 118630
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 85204
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.2,
+        "count": 117876
+      },
+      {
+        "group": "Other Chinese",
+        "pct": 0.2,
+        "count": 113940
+      },
+      {
+        "group": "Persian or Farsi",
+        "pct": 0.2,
+        "count": 86277
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 89910
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 123728
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 110651
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 51885
+      },
+      {
+        "group": "Cantonese Chinese",
+        "pct": 0.1,
+        "count": 53984
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 28752
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 45208
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 75261
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 50622
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.1,
+        "count": 64593
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.1,
+        "count": 37871
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.1,
+        "count": 62990
+      },
+      {
+        "group": "Mandarin Chinese",
+        "pct": 0.1,
+        "count": 29831
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.1,
+        "count": 73292
+      },
+      {
+        "group": "Other African language",
+        "pct": 0.1,
+        "count": 30857
+      },
+      {
+        "group": "Other South Asian language",
+        "pct": 0.1,
+        "count": 30556
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.1,
+        "count": 48163
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 48508
+      },
+      {
+        "group": "Somali",
+        "pct": 0.1,
+        "count": 61373
+      },
+      {
+        "group": "Tagalog or Filipino",
+        "pct": 0.1,
+        "count": 59127
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 30691
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.0,
+        "count": 7304
+      },
+      {
+        "group": "Akan",
+        "pct": 0.0,
+        "count": 19702
+      },
+      {
+        "group": "Amharic",
+        "pct": 0.0,
+        "count": 10654
+      },
+      {
+        "group": "Any Romani language",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Any sign communication system",
+        "pct": 0.0,
+        "count": 3383
+      },
+      {
+        "group": "Bosnian, Croatian, Serbian, and Montenegrin",
+        "pct": 0.0,
+        "count": 17798
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.0,
+        "count": 20739
+      },
+      {
+        "group": "Caribbean Creole",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Cornish",
+        "pct": 0.0,
+        "count": 560
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 5918
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 18511
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 2572
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 4659
+      },
+      {
+        "group": "Gaelic (not otherwise specified)",
+        "pct": 0.0,
+        "count": 255
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 6618
+      },
+      {
+        "group": "Igbo",
+        "pct": 0.0,
+        "count": 10972
+      },
+      {
+        "group": "Irish",
+        "pct": 0.0,
+        "count": 696
+      },
+      {
+        "group": "Irish Traveller Cant",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 22205
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 11894
+      },
+      {
+        "group": "Krio",
+        "pct": 0.0,
+        "count": 918
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 5440
+      },
+      {
+        "group": "Luganda",
+        "pct": 0.0,
+        "count": 2135
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 7762
+      },
+      {
+        "group": "Maltese",
+        "pct": 0.0,
+        "count": 1415
+      },
+      {
+        "group": "Manx Gaelic",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 10865
+      },
+      {
+        "group": "North or South American language",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Oceanic or Australian language",
+        "pct": 0.0,
+        "count": 1700
+      },
+      {
+        "group": "Other Caribbean Creole",
+        "pct": 0.0,
+        "count": 1624
+      },
+      {
+        "group": "Other East Asian language",
+        "pct": 0.0,
+        "count": 11774
+      },
+      {
+        "group": "Other European language",
+        "pct": 0.0,
+        "count": 13674
+      },
+      {
+        "group": "Other West or Central Asian language",
+        "pct": 0.0,
+        "count": 9725
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 7266
+      },
+      {
+        "group": "Other sign language",
+        "pct": 0.0,
+        "count": 1376
+      },
+      {
+        "group": "Pakistani Pahari (with Mirpuri and Potwari)",
+        "pct": 0.0,
+        "count": 22794
+      },
+      {
+        "group": "Romany English",
+        "pct": 0.0,
+        "count": 1855
+      },
+      {
+        "group": "Scots",
+        "pct": 0.0,
+        "count": 511
+      },
+      {
+        "group": "Scottish Gaelic",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Shona",
+        "pct": 0.0,
+        "count": 10607
+      },
+      {
+        "group": "Sinhala",
+        "pct": 0.0,
+        "count": 12716
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 2293
+      },
+      {
+        "group": "Swahili or Kiswahili",
+        "pct": 0.0,
+        "count": 10044
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 12263
+      },
+      {
+        "group": "Thai",
+        "pct": 0.0,
+        "count": 22078
+      },
+      {
+        "group": "Tigrinya",
+        "pct": 0.0,
+        "count": 22324
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 13991
+      },
+      {
+        "group": "Ulster Scots",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 18099
+      },
+      {
+        "group": "Welsh",
+        "pct": 0.0,
+        "count": 7349
+      },
+      {
+        "group": "Yiddish",
+        "pct": 0.0,
+        "count": 5356
+      },
+      {
+        "group": "Yoruba",
+        "pct": 0.0,
+        "count": 9822
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White: English, Welsh, Scottish, Northern Irish or British",
+        "pct": 73.5,
+        "count": 41540791
+      },
+      {
+        "group": "White: Other White",
+        "pct": 6.3,
+        "count": 3585003
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Indian",
+        "pct": 3.3,
+        "count": 1843248
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Pakistani",
+        "pct": 2.8,
+        "count": 1570285
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: African",
+        "pct": 2.6,
+        "count": 1468474
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Other Asian",
+        "pct": 1.7,
+        "count": 952127
+      },
+      {
+        "group": "Other ethnic group: Any other ethnic group",
+        "pct": 1.6,
+        "count": 908950
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
+        "pct": 1.1,
+        "count": 629567
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
+        "pct": 1.1,
+        "count": 619419
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.9,
+        "count": 499310
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.9,
+        "count": 494251
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Chinese",
+        "pct": 0.8,
+        "count": 431165
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.8,
+        "count": 454350
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.8,
+        "count": 474190
+      },
+      {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.6,
+        "count": 320203
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
+        "pct": 0.5,
+        "count": 293831
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 241528
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.2,
+        "count": 99138
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 64218
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/language",
+        "name": "ONS Census 2021 (England and Wales) via Nomis",
+        "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.json",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "codes": {
+      "ons_code": "E92000001"
+    },
+    "ethnicity_year": 2021,
+    "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
+    "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded.",
+    "language_year": 2021,
+    "language_note": "ONS 2021 main language (TS024, detailed), of usual residents aged 3 and over: the one language each person names as their main one."
+  },
+  {
+    "id": "GBR-K04000001",
+    "level": "admin1",
+    "name": "England and Wales",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 59597542,
+      "year": 2021,
+      "source": "ONS Census 2021 (England and Wales) via Nomis"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 46.2,
+        "count": 27522672
+      },
+      {
+        "group": "No religion",
+        "pct": 37.2,
+        "count": 22162062
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.5,
+        "count": 3868133
+      },
+      {
+        "group": "Not answered",
+        "pct": 6.0,
+        "count": 3595589
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.7,
+        "count": 1032775
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.9,
+        "count": 524140
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 348334
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.5,
+        "count": 272508
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.5,
+        "count": 271327
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 91.1,
+        "count": 52569816
+      },
+      {
+        "group": "Polish",
+        "pct": 1.1,
+        "count": 611845
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.8,
+        "count": 471954
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.5,
+        "count": 290745
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.5,
+        "count": 269849
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.4,
+        "count": 203998
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 224719
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 215062
+      },
+      {
+        "group": "Bengali (with Sylheti and Chatgaya)",
+        "pct": 0.3,
+        "count": 199495
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 188956
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 160010
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 111431
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 120259
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 87356
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.2,
+        "count": 119656
+      },
+      {
+        "group": "Other Chinese",
+        "pct": 0.2,
+        "count": 118271
+      },
+      {
+        "group": "Persian or Farsi",
+        "pct": 0.2,
+        "count": 87713
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 91255
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 125363
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 112978
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1,
+        "count": 52328
+      },
+      {
+        "group": "Cantonese Chinese",
+        "pct": 0.1,
+        "count": 55555
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 30028
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 46421
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 76675
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 51260
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.1,
+        "count": 66443
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.1,
+        "count": 38359
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.1,
+        "count": 65008
+      },
+      {
+        "group": "Mandarin Chinese",
+        "pct": 0.1,
+        "count": 30820
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.1,
+        "count": 74368
+      },
+      {
+        "group": "Other African language",
+        "pct": 0.1,
+        "count": 31353
+      },
+      {
+        "group": "Other South Asian language",
+        "pct": 0.1,
+        "count": 31015
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.1,
+        "count": 48705
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 49924
+      },
+      {
+        "group": "Somali",
+        "pct": 0.1,
+        "count": 62240
+      },
+      {
+        "group": "Tagalog or Filipino",
+        "pct": 0.1,
+        "count": 60899
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 31249
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.0,
+        "count": 7489
+      },
+      {
+        "group": "Akan",
+        "pct": 0.0,
+        "count": 19757
+      },
+      {
+        "group": "Amharic",
+        "pct": 0.0,
+        "count": 10834
+      },
+      {
+        "group": "Any Romani language",
+        "pct": 0.0,
+        "count": 160
+      },
+      {
+        "group": "Any sign communication system",
+        "pct": 0.0,
+        "count": 3571
+      },
+      {
+        "group": "Bosnian, Croatian, Serbian, and Montenegrin",
+        "pct": 0.0,
+        "count": 18006
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.0,
+        "count": 21635
+      },
+      {
+        "group": "Caribbean Creole",
+        "pct": 0.0,
+        "count": 145
+      },
+      {
+        "group": "Cornish",
+        "pct": 0.0,
+        "count": 567
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 6020
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 19064
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 2640
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 4741
+      },
+      {
+        "group": "Gaelic (not otherwise specified)",
+        "pct": 0.0,
+        "count": 263
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 6672
+      },
+      {
+        "group": "Igbo",
+        "pct": 0.0,
+        "count": 11074
+      },
+      {
+        "group": "Irish",
+        "pct": 0.0,
+        "count": 736
+      },
+      {
+        "group": "Irish Traveller Cant",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 22548
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 12117
+      },
+      {
+        "group": "Krio",
+        "pct": 0.0,
+        "count": 921
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 5492
+      },
+      {
+        "group": "Luganda",
+        "pct": 0.0,
+        "count": 2148
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 8014
+      },
+      {
+        "group": "Maltese",
+        "pct": 0.0,
+        "count": 1490
+      },
+      {
+        "group": "Manx Gaelic",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 11022
+      },
+      {
+        "group": "North or South American language",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Oceanic or Australian language",
+        "pct": 0.0,
+        "count": 1722
+      },
+      {
+        "group": "Other Caribbean Creole",
+        "pct": 0.0,
+        "count": 1633
+      },
+      {
+        "group": "Other East Asian language",
+        "pct": 0.0,
+        "count": 12001
+      },
+      {
+        "group": "Other European language",
+        "pct": 0.0,
+        "count": 14074
+      },
+      {
+        "group": "Other West or Central Asian language",
+        "pct": 0.0,
+        "count": 9869
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 7546
+      },
+      {
+        "group": "Other sign language",
+        "pct": 0.0,
+        "count": 1532
+      },
+      {
+        "group": "Pakistani Pahari (with Mirpuri and Potwari)",
+        "pct": 0.0,
+        "count": 22798
+      },
+      {
+        "group": "Romany English",
+        "pct": 0.0,
+        "count": 1906
+      },
+      {
+        "group": "Scots",
+        "pct": 0.0,
+        "count": 538
+      },
+      {
+        "group": "Scottish Gaelic",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Shona",
+        "pct": 0.0,
+        "count": 10773
+      },
+      {
+        "group": "Sinhala",
+        "pct": 0.0,
+        "count": 13013
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 2360
+      },
+      {
+        "group": "Swahili or Kiswahili",
+        "pct": 0.0,
+        "count": 10154
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 12503
+      },
+      {
+        "group": "Thai",
+        "pct": 0.0,
+        "count": 22966
+      },
+      {
+        "group": "Tigrinya",
+        "pct": 0.0,
+        "count": 22825
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 14088
+      },
+      {
+        "group": "Ulster Scots",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 18518
+      },
+      {
+        "group": "Welsh",
+        "pct": 0.0,
+        "count": 7349
+      },
+      {
+        "group": "Yiddish",
+        "pct": 0.0,
+        "count": 5356
+      },
+      {
+        "group": "Yoruba",
+        "pct": 0.0,
+        "count": 9942
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White: English, Welsh, Scottish, Northern Irish or British",
+        "pct": 74.4,
+        "count": 44355038
+      },
+      {
+        "group": "White: Other White",
+        "pct": 6.2,
+        "count": 3667997
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Indian",
+        "pct": 3.1,
+        "count": 1864318
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Pakistani",
+        "pct": 2.7,
+        "count": 1587819
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: African",
+        "pct": 2.5,
+        "count": 1488381
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Other Asian",
+        "pct": 1.6,
+        "count": 972783
+      },
+      {
+        "group": "Other ethnic group: Any other ethnic group",
+        "pct": 1.6,
+        "count": 923775
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
+        "pct": 1.1,
+        "count": 644881
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
+        "pct": 1.0,
+        "count": 623119
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.9,
+        "count": 513042
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.9,
+        "count": 507465
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.8,
+        "count": 467113
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.8,
+        "count": 488225
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Chinese",
+        "pct": 0.7,
+        "count": 445619
+      },
+      {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.6,
+        "count": 331844
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
+        "pct": 0.5,
+        "count": 297778
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 249596
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.2,
+        "count": 100981
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 67768
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/language",
+        "name": "ONS Census 2021 (England and Wales) via Nomis",
+        "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.json",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "codes": {
+      "ons_code": "K04000001"
+    },
+    "ethnicity_year": 2021,
+    "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
+    "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded.",
+    "language_year": 2021,
+    "language_note": "ONS 2021 main language (TS024, detailed), of usual residents aged 3 and over: the one language each person names as their main one."
+  },
+  {
+    "id": "GBR-W92000004",
+    "level": "admin1",
+    "name": "Wales",
+    "parent": "GBR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3107494,
+      "year": 2021,
+      "source": "ONS Census 2021 (England and Wales) via Nomis"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 46.5,
+        "count": 1446398
+      },
+      {
+        "group": "Christian",
+        "pct": 43.6,
+        "count": 1354773
+      },
+      {
+        "group": "Not answered",
+        "pct": 6.3,
+        "count": 195041
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.2,
+        "count": 66947
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 15926
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.4,
+        "count": 12242
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 10075
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "count": 2044
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 4048
+      }
+    ],
+    "language": [
+      {
+        "group": "English or Welsh",
+        "pct": 96.7,
+        "count": 2917644
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 20862
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 8515
+      },
+      {
+        "group": "Bengali (with Sylheti and Chatgaya)",
+        "pct": 0.2,
+        "count": 4671
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.2,
+        "count": 6020
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 2489
+      },
+      {
+        "group": "Cantonese Chinese",
+        "pct": 0.1,
+        "count": 1571
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 1628
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 2152
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 2367
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.1,
+        "count": 1850
+      },
+      {
+        "group": "Lithuanian",
+        "pct": 0.1,
+        "count": 1780
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.1,
+        "count": 2018
+      },
+      {
+        "group": "Other Chinese",
+        "pct": 0.1,
+        "count": 4331
+      },
+      {
+        "group": "Panjabi",
+        "pct": 0.1,
+        "count": 2086
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 3644
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.1,
+        "count": 3065
+      },
+      {
+        "group": "Tagalog or Filipino",
+        "pct": 0.1,
+        "count": 1772
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 1635
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 2327
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.1,
+        "count": 2239
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
+        "group": "Akan",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 442
+      },
+      {
+        "group": "Amharic",
+        "pct": 0.0,
+        "count": 180
+      },
+      {
+        "group": "Any Romani language",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Any sign communication system",
+        "pct": 0.0,
+        "count": 188
+      },
+      {
+        "group": "Bosnian, Croatian, Serbian, and Montenegrin",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "British Sign Language",
+        "pct": 0.0,
+        "count": 893
+      },
+      {
+        "group": "Caribbean Creole",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Cornish",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1277
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 553
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Gaelic (not otherwise specified)",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 1213
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1414
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.0,
+        "count": 751
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 638
+      },
+      {
+        "group": "Igbo",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Irish",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Irish Traveller Cant",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 343
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 225
+      },
+      {
+        "group": "Krio",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Latvian",
+        "pct": 0.0,
+        "count": 488
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Luganda",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 252
+      },
+      {
+        "group": "Maltese",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Mandarin Chinese",
+        "pct": 0.0,
+        "count": 989
+      },
+      {
+        "group": "Manx Gaelic",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.0,
+        "count": 1076
+      },
+      {
+        "group": "North or South American language",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Oceanic or Australian language",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Other African language",
+        "pct": 0.0,
+        "count": 495
+      },
+      {
+        "group": "Other Caribbean Creole",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Other East Asian language",
+        "pct": 0.0,
+        "count": 228
+      },
+      {
+        "group": "Other European language",
+        "pct": 0.0,
+        "count": 402
+      },
+      {
+        "group": "Other South Asian language",
+        "pct": 0.0,
+        "count": 459
+      },
+      {
+        "group": "Other West or Central Asian language",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 280
+      },
+      {
+        "group": "Other sign language",
+        "pct": 0.0,
+        "count": 155
+      },
+      {
+        "group": "Pakistani Pahari (with Mirpuri and Potwari)",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Pashto",
+        "pct": 0.0,
+        "count": 542
+      },
+      {
+        "group": "Persian or Farsi",
+        "pct": 0.0,
+        "count": 1436
+      },
+      {
+        "group": "Romany English",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1345
+      },
+      {
+        "group": "Scots",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Scottish Gaelic",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Shona",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Sinhala",
+        "pct": 0.0,
+        "count": 298
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 1416
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Somali",
+        "pct": 0.0,
+        "count": 867
+      },
+      {
+        "group": "Swahili or Kiswahili",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 240
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 558
+      },
+      {
+        "group": "Thai",
+        "pct": 0.0,
+        "count": 888
+      },
+      {
+        "group": "Tigrinya",
+        "pct": 0.0,
+        "count": 501
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Ulster Scots",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 421
+      },
+      {
+        "group": "Welsh",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yiddish",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yoruba",
+        "pct": 0.0,
+        "count": 120
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "White: English, Welsh, Scottish, Northern Irish or British",
+        "pct": 90.6,
+        "count": 2814247
+      },
+      {
+        "group": "White: Other White",
+        "pct": 2.7,
+        "count": 82994
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Indian",
+        "pct": 0.7,
+        "count": 21070
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Other Asian",
+        "pct": 0.7,
+        "count": 20656
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Pakistani",
+        "pct": 0.6,
+        "count": 17534
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: African",
+        "pct": 0.6,
+        "count": 19907
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
+        "pct": 0.5,
+        "count": 15314
+      },
+      {
+        "group": "Asian, Asian British or Asian Welsh: Chinese",
+        "pct": 0.5,
+        "count": 14454
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.5,
+        "count": 14035
+      },
+      {
+        "group": "Other ethnic group: Any other ethnic group",
+        "pct": 0.5,
+        "count": 14825
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.4,
+        "count": 12763
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.4,
+        "count": 13732
+      },
+      {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.4,
+        "count": 11641
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.4,
+        "count": 13214
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.3,
+        "count": 8068
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
+        "pct": 0.1,
+        "count": 3700
+      },
+      {
+        "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
+        "pct": 0.1,
+        "count": 3947
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 3550
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 1843
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/language",
+        "name": "ONS Census 2021 (England and Wales) via Nomis",
+        "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2041_1.data.json",
+        "license": "Open Government Licence v3.0"
+      }
+    ],
+    "codes": {
+      "ons_code": "W92000004"
+    },
+    "ethnicity_year": 2021,
+    "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
+    "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded.",
+    "language_year": 2021,
+    "language_note": "ONS 2021 main language (TS024, detailed), of usual residents aged 3 and over: the one language each person names as their main one. In Wales the answer 'English or Welsh' was one box, so the census does not separate the two there; Welsh ability is a separate question."
+  }
+]
