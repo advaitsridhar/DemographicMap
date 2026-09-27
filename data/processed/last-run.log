@@ -1,41 +1,29 @@
-moldova_age: 2024 census, age and sex by district
-  Anexa_Caracteristici_demografice_RPL2024.xlsx: 332,053 bytes
-  Anexa_Localitati_RPL2024.xlsx: 541,766 bytes
-  country: median 41.2 from five-year groups
-  Raionul Anenii Noi: 57,687, median 43.0, 93.2 men per 100 women
-  Bălți: 94,546, median 39.0, 82.5 men per 100 women
-  Raionul Basarabeasca: 14,914, median 47.1, 91.0 men per 100 women
-  Raionul Briceni: 46,894, median 46.7, 86.9 men per 100 women
-  Raionul Cahul: 72,775, median 42.7, 90.3 men per 100 women
-  Raionul Călărași: 43,864, median 44.7, 95.8 men per 100 women
-  Raionul Cantemir: 33,181, median 43.0, 98.1 men per 100 women
-  Raionul Căușeni: 57,261, median 43.9, 93.2 men per 100 women
-  Chișinău: 720,128, median 37.4, 86.5 men per 100 women
-  Raionul Cimișlia: 30,986, median 47.0, 95.6 men per 100 women
-  Raionul Criuleni: 52,926, median 41.0, 93.9 men per 100 women
-  Raionul Dondușeni: 28,108, median 46.8, 86.0 men per 100 women
-  Raionul Drochia: 53,738, median 46.7, 85.3 men per 100 women
-  Raionul Dubăsari: 21,781, median 43.2, 94.4 men per 100 women
-  Raionul Edineț: 50,429, median 46.3, 85.2 men per 100 women
-  Raionul Fălești: 56,039, median 44.9, 87.2 men per 100 women
-  Raionul Florești: 53,264, median 45.4, 87.7 men per 100 women
-  Gagauzia: 103,668, median 42.3, 87.2 men per 100 women
-  Raionul Glodeni: 35,829, median 45.5, 88.4 men per 100 women
-  Raionul Hîncești: 69,462, median 43.1, 94.4 men per 100 women
-  Raionul Ialoveni: 74,458, median 40.1, 94.5 men per 100 women
-  Raionul Leova: 28,835, median 43.7, 98.4 men per 100 women
-  Raionul Nisporeni: 36,413, median 43.6, 95.4 men per 100 women
-  Raionul Ocnița: 31,610, median 47.8, 85.3 men per 100 women
-  Raionul Orhei: 79,242, median 42.1, 92.8 men per 100 women
-  Raionul Rezina: 30,243, median 44.3, 96.3 men per 100 women
-  Raionul Rîșcani: 43,652, median 45.8, 86.2 men per 100 women
-  Raionul Sîngerei: 55,933, median 42.6, 89.3 men per 100 women
-  Raionul Șoldănești: 25,394, median 44.9, 95.3 men per 100 women
-  Raionul Soroca: 58,609, median 46.1, 87.8 men per 100 women
-  Raionul Ștefan Vodă: 42,285, median 44.6, 93.8 men per 100 women
-  Raionul Strășeni: 61,362, median 41.8, 94.2 men per 100 women
-  Raionul Taraclia: 26,435, median 45.0, 92.1 men per 100 women
-  Raionul Telenești: 41,452, median 44.4, 95.7 men per 100 women
-  Raionul Ungheni: 75,804, median 40.5, 92.3 men per 100 women
-  wrote data/processed/moldova_age.json (181 kB)
-  wrote moldova_age.json: 74 records
+montenegro: Monstat, 2023 census
+  TABELA_Popis%20stanovnistva%202023%20I_CG.xlsx: 30,350 bytes
+  TABELA_Popis%20stanovnistva%202023%20II_CG.xlsx: 50,033 bytes
+  country: 623,633, median 40.2 from five-year groups
+  Andrijevica: 3,910, median 45.8
+  Bar: 45,812, median 40.3
+  Berane: 24,645, median 41.4
+  Bijelo Polje: 38,662, median 41.9
+  Budva: 27,445, median 37.4
+  Cetinje: 14,494, median 44.5
+  Danilovgrad: 18,617, median 41.2
+  Gusinje: 3,933, median 46.0
+  Herceg Novi: 30,824, median 43.4
+  Kolašin: 6,700, median 45.2
+  Kotor: 22,746, median 41.2
+  Mojkovac: 6,728, median 45.8
+  Nikšić: 65,705, median 42.2
+  Petnjica: 4,957, median 43.2
+  Plav: 9,050, median 39.9
+  Pljevlja: 24,134, median 49.3
+  Plužine: 2,177, median 51.7
+  Podgorica + Tuzi + Zeta: 208,555, median 37.7
+  Rožaje: 23,184, median 35.4
+  Šavnik: 1,569, median 50.0
+  Tivat: 16,338, median 39.1
+  Ulcinj: 20,507, median 41.1
+  Žabljak: 2,941, median 46.7
+  wrote data/processed/montenegro_census.json (353 kB)
+  wrote montenegro_census.json: 46 records
