@@ -237,9 +237,141 @@ def lux() -> None:
         log(f"   {exc}: {page[:300]}")
 
 
+def head_lines(url: str, n: int = 6, *, grep: str | None = None, limit: int = 40) -> list[str]:
+    status, head, body = fetch(url)
+    page = text(body)
+    lines = page.splitlines()
+    log(f"\n## {url}\n   HTTP {status}, {len(body):,} bytes, {len(lines):,} lines, "
+        f"{head.get('Content-Type') or head.get('error', '')}")
+    for line in lines[:n]:
+        log("   | " + line[:240])
+    if grep:
+        hits = [line for line in lines if re.search(grep, line)]
+        log(f"   {len(hits)} lines match {grep!r}")
+        for line in hits[:limit]:
+            log("   > " + line[:240])
+    return lines
+
+
+def aut2() -> None:
+    stem = "https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026"
+    head_lines(stem + "_HEADER.csv", 12)
+    head_lines(stem + ".csv", 5)
+    head_lines(stem + "_C-GRGEMAKT-0.csv", 4, grep=r"GRGEMAKT-9|GRGEMAKT-10[12]", limit=8)
+    head_lines(stem + "_C-GALTEJ112-0.csv", 3, grep=r"GALTEJ112-1(0\d|1\d)\b", limit=20)
+    head_lines(stem + "_C-C11-0.csv", 4)
+    head_lines("https://www.statistik.at/verzeichnis/reglisten/polbezirke.csv", 8)
+
+
+def che2() -> None:
+    lines = head_lines("https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=01-01-2009", 1)
+    rows = [line.split(",") for line in lines[1:]]
+    cantons = {r[0]: r[7] for r in rows if len(r) > 7 and r[4] == "1"}
+    districts = [r for r in rows if len(r) > 7 and r[4] == "2"]
+    log(f"   2009: {len(cantons)} cantons, {len(districts)} districts, "
+        f"{sum(1 for r in rows if len(r) > 7 and r[4] == '3')} communes")
+    for r in districts:
+        log(f"   D {cantons.get(r[5], r[5])} {r[1]} {r[6]}")
+    for q in ("snapshot?date=01-01-2025", "correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025",
+              "correspondances?startPeriod=01-01-2009&endPeriod=01-01-2025&includeUnmodified=true",
+              "levels?date=01-01-2025"):
+        head_lines("https://www.agvchapp.bfs.admin.ch/api/communes/" + q, 4)
+    pxweb_meta("https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0104010000_101/px-x-0104010000_101.px")
+    status, _, body = fetch("https://www.pxweb.bfs.admin.ch/api/v1/de/")
+    try:
+        rows = json.loads(text(body))
+        for row in rows:
+            label = f"{row.get('dbid') or row.get('id')} {row.get('text')}"
+            if re.search(r"(?i)relig|konfess|sprach", label):
+                log("   - " + label[:200])
+        log(f"   sample root rows: {rows[:3]}")
+    except Exception as exc:  # noqa: BLE001
+        log(f"   {exc}")
+
+
+def lie2() -> None:
+    for url in ("https://etab.llv.li/PXWeb/api/v1/de/", "https://etab.llv.li/api/v1/de/",
+                "https://etab.llv.li/PXWeb/api/v1/de/eTab/"):
+        pxweb_meta(url)
+    show("https://www.statistikportal.li/de/themen/bevoelkerung/bevoelkerungsstand",
+         r"href=\"[^\"]+\.(?:xlsx?|csv|pdf)\"|href=\"[^\"]*etab[^\"]*\"", limit=40)
+    show("https://www.statistikportal.li/de/erhebungen-register/volkszaehlung",
+         r"href=\"[^\"]+\.(?:xlsx?|csv|pdf)\"|href=\"[^\"]*etab[^\"]*\"", limit=40)
+
+
+def pol2() -> None:
+    base = "https://bdl.stat.gov.pl/api/v1"
+    show(f"{base}/subjects/P4280?format=json&lang=pl", raw=1200)
+    for q in ("roczniki", "mediana", "struktura ludno", "ludność według"):
+        page = show(f"{base}/subjects/search?name={urllib.parse.quote(q)}&format=json&page-size=50&lang=pl")
+        try:
+            for row in json.loads(page).get("results", [])[:30]:
+                log(f"   - {row.get('id')} lvls {row.get('levels')} vars {row.get('hasVariables')} "
+                    f"{row.get('name')} | parent {row.get('parentId')}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}")
+    show(f"{base}/data/by-variable/1650633?format=json&unit-level=5&page-size=3&lang=pl", raw=900)
+
+
+def cze2() -> None:
+    show("https://csu.gov.cz/otevrena_data", r"href=\"[^\"]+\"[^>]*>[^<]*(?:[Vv]ěk|[Oo]byvatel)[^<]*<",
+         limit=40)
+    show("https://csu.gov.cz/otevrena_data", r"href=\"[^\"]*(?:produkty|katalog|sady)[^\"]*\"", limit=30)
+
+
+def svk2() -> None:
+    for dim in ("om7009rr_vuc", "om7009rr_obd", "om7009rr_ukaz", "om7009rr_poh", "om7009rr_vek",
+                "om7005rr_ukaz"):
+        cube = dim.split("_")[0]
+        page = show(f"https://data.statistics.sk/api/v2/dimension/{cube}/{dim}?lang=en")
+        try:
+            data = json.loads(page)
+            cat = jpath(data, f"dimension.{dim}.category") or jpath(data, "category") or {}
+            labels = cat.get("label", {})
+            keys = list(labels)
+            log(f"   {len(keys)} values: " + "; ".join(f"{k}={labels[k]}" for k in keys[:12])
+                + (f" ... {keys[-1]}={labels[keys[-1]]}" if len(keys) > 12 else ""))
+        except Exception as exc:  # noqa: BLE001
+            log(f"   {exc}: {page[:300]}")
+    show("https://www.scitanie.sk/", r"href=\"[^\"]*(?:otvoren|open|data|csv|xlsx)[^\"]*\"", limit=40)
+
+
+def hun2() -> None:
+    show("https://nepszamlalas2022.ksh.hu/en/results/tables", r"href=\"[^\"]+\"[^>]*>[^<]{3,}<", limit=80)
+    show("https://www.ksh.hu/stadat?lang=en&theme=nep", r"<a [^>]*href=\"[^\"]+\"[^>]*>[^<]{3,}</a>", limit=80)
+
+
+def svn2() -> None:
+    for path in ("", "Data/", "Data/05C4010S.px", "Data/05C4004S.px", "Data/05C5002S.px",
+                 "Data/05C2002S.px"):
+        pxweb_meta(f"https://pxweb.stat.si/SiStatData/api/v1/en/{path}")
+
+
+def nld2() -> None:
+    for url in ("https://datasets.cbs.nl/odata/v1/CBS/03759ned",
+                "https://odata4.cbs.nl/CBS/03759ned",
+                "https://opendata.cbs.nl/ODataApi/odata/03759ned",
+                "http://opendata.cbs.nl/ODataApi/odata/03759ned"):
+        show(url, raw=500)
+
+
+def lux2() -> None:
+    base = "https://lustat.statec.lu/rest"
+    for flow in ("DF_B1607", "DF_X021", "DF_B1102"):
+        show(f"{base}/dataflow/LU1/{flow}/latest?references=all&detail=referencepartial",
+             r"<(?:str|structure):Name[^>]*xml:lang=\"en\"[^>]*>[^<]+|id=\"[A-Z_0-9]+\"", limit=40,
+             headers={"Accept": "application/vnd.sdmx.structure+xml;version=2.1"})
+    show(f"{base}/data/LU1,DF_B1607,1.0/all?startPeriod=2021&dimensionAtObservation=AllDimensions",
+         raw=1500, headers={"Accept": "application/vnd.sdmx.data+csv;version=1.0.0"})
+    show("https://statistiques.public.lu/fr/recensement.html", r"href=\"[^\"]*(?:langu|xls|recensement)[^\"]*\"",
+         limit=40)
+
+
 PROBES: dict[str, Callable[[], None]] = {
     "aut": aut, "che": che, "lie": lie, "pol": pol, "cze": cze, "svk": svk,
     "hun": hun, "svn": svn, "nld": nld, "lux": lux,
+    "aut2": aut2, "che2": che2, "lie2": lie2, "pol2": pol2, "cze2": cze2, "svk2": svk2,
+    "hun2": hun2, "svn2": svn2, "nld2": nld2, "lux2": lux2,
 }
 
 
