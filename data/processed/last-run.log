@@ -1,30 +1,126 @@
-== get https://dataportal.belstat.gov.by/
-  43,900 bytes, begins b'<!doctype html>\n'
-  ~ href="/"
-  ~ href="assets/belstat_logo_16x16.png"
-  ~ href="assets/belstat_logo_16x16.png"
-  ~ href="assets/belstat_logo_32x32.png"
-  ~ href="assets/belstat_logo_96x96.png"
-  ~ href="https://fonts.googleapis.com"
-  ~ href="https://fonts.gstatic.com" crossorigin
-  ~ href="styles.65e414324143e9af.css" media="print" onload="this.media='all'"
-  ~ href="styles.65e414324143e9af.css"
-  ~ src="runtime.603eea8274797a6d.js" type="module"
-  ~ src="polyfills.4dbf809f9e5839f7.js" type="module"
-  ~ src="scripts.b3b1d499dbb72365.js" defer
-  ~ src="main.58ce0ca0909b745d.js" type="module"
-== get https://dataportal.belstat.gov.by/osids/thematic-sections-info/34
-  43,900 bytes, begins b'<!doctype html>\n'
-  ~ href="/"
-  ~ href="assets/belstat_logo_16x16.png"
-  ~ href="assets/belstat_logo_16x16.png"
-  ~ href="assets/belstat_logo_32x32.png"
-  ~ href="assets/belstat_logo_96x96.png"
-  ~ href="https://fonts.googleapis.com"
-  ~ href="https://fonts.gstatic.com" crossorigin
-  ~ href="styles.65e414324143e9af.css" media="print" onload="this.media='all'"
-  ~ href="styles.65e414324143e9af.css"
-  ~ src="runtime.603eea8274797a6d.js" type="module"
-  ~ src="polyfills.4dbf809f9e5839f7.js" type="module"
-  ~ src="scripts.b3b1d499dbb72365.js" defer
-  ~ src="main.58ce0ca0909b745d.js" type="module"
+== post https://nip.tuik.gov.tr/Home/CinsiyeteGoreNufus
+  22,102 bytes, begins b'\r\n<div id="nuKoS'
+  ~ name="grafikDuzey" id="grafikDuzey"
+  ~ <option value="T&#xDC;RK&#x130;YE">T&#xFC;rkiye</option>
+  ~ <option value="&#x130;L">&#x130;l</option>
+  ~ name="grafikIl" id="grafikIl"
+  ~ <option value="ADANA">ADANA</option>
+  ~ <option value="ADIYAMAN">ADIYAMAN</option>
+  ~ <option value="AFYONKARAH&#x130;SAR">AFYONKARAH&#x130;SAR</option>
+  ~ <option value="A&#x11E;RI">A&#x11E;RI</option>
+  ~ <option value="AKSARAY">AKSARAY</option>
+  ~ <option value="AMASYA">AMASYA</option>
+  ~ <option value="ANKARA">ANKARA</option>
+  ~ <option value="ANTALYA">ANTALYA</option>
+  ~ <option value="ARDAHAN">ARDAHAN</option>
+  ~ <option value="ARTV&#x130;N">ARTV&#x130;N</option>
+  ~ <option value="AYDIN">AYDIN</option>
+  ~ <option value="BALIKES&#x130;R">BALIKES&#x130;R</option>
+  ~ <option value="BARTIN">BARTIN</option>
+  ~ <option value="BATMAN">BATMAN</option>
+  ~ <option value="BAYAZIT">BAYAZIT</option>
+  ~ <option value="BAYBURT">BAYBURT</option>
+  ~ <option value="B&#x130;LEC&#x130;K">B&#x130;LEC&#x130;K</option>
+  ~ <option value="B&#x130;NG&#xD6;L">B&#x130;NG&#xD6;L</option>
+  ~ <option value="B&#x130;TL&#x130;S">B&#x130;TL&#x130;S</option>
+  ~ <option value="BOLU">BOLU</option>
+  ~ <option value="BURDUR">BURDUR</option>
+  ~ <option value="BURSA">BURSA</option>
+  ~ <option value="CEBEL&#x130;BEREKET">CEBEL&#x130;BEREKET</option>
+  ~ <option value="&#xC7;ANAKKALE">&#xC7;ANAKKALE</option>
+  ~ <option value="&#xC7;ANKIRI">&#xC7;ANKIRI</option>
+  ~ <option value="&#xC7;ORUM">&#xC7;ORUM</option>
+  ~ <option value="DEN&#x130;ZL&#x130;">DEN&#x130;ZL&#x130;</option>
+  ~ <option value="D&#x130;YARBAKIR">D&#x130;YARBAKIR</option>
+  ~ <option value="D&#xDC;ZCE">D&#xDC;ZCE</option>
+  ~ <option value="ED&#x130;RNE">ED&#x130;RNE</option>
+  ~ <option value="ELAZI&#x11E;">ELAZI&#x11E;</option>
+  ~ <option value="ELAZI&#x11E; (ELAZ&#x130;Z)">ELAZI&#x11E; (ELAZ&#x130;Z)</option>
+  ~ <option value="ERZ&#x130;NCAN">ERZ&#x130;NCAN</option>
+  ~ <option value="ERZURUM">ERZURUM</option>
+  ~ <option value="ESK&#x130;&#x15E;EH&#x130;R">ESK&#x130;&#x15E;EH&#x130;R</option>
+  ~ <option value="GAZ&#x130;ANTEP">GAZ&#x130;ANTEP</option>
+== post https://nip.tuik.gov.tr/Home/YasGrubunaGoreNufus
+  6,135 bytes, begins b'\r\n<div id="nuKoS'
+  ~ name="tableYil" id="tableYil"
+  ~ <option value="0" selected>Hepsi</option>
+  ~ <option value="2025">2025</option>
+  ~ <option value="2024">2024</option>
+  ~ <option value="2023">2023</option>
+  ~ <option value="2022">2022</option>
+  ~ <option value="2021">2021</option>
+  ~ <option value="2020">2020</option>
+  ~ <option value="2019">2019</option>
+  ~ <option value="2018">2018</option>
+  ~ <option value="2017">2017</option>
+  ~ <option value="2016">2016</option>
+  ~ <option value="2015">2015</option>
+  ~ <option value="2014">2014</option>
+  ~ <option value="2013">2013</option>
+  ~ <option value="2012">2012</option>
+  ~ <option value="2011">2011</option>
+  ~ <option value="2010">2010</option>
+  ~ <option value="2009">2009</option>
+  ~ <option value="2008">2008</option>
+  ~ <option value="2007">2007</option>
+  ~ <option value="2000">2000</option>
+  ~ <option value="1990">1990</option>
+  ~ <option value="1985">1985</option>
+  ~ <option value="1980">1980</option>
+  ~ <option value="1975">1975</option>
+  ~ <option value="1970">1970</option>
+  ~ <option value="1965">1965</option>
+  ~ <option value="1960">1960</option>
+  ~ <option value="1955">1955</option>
+  ~ <option value="1950">1950</option>
+  ~ <option value="1945">1945</option>
+  ~ <option value="1940">1940</option>
+  ~ <option value="1935">1935</option>
+  ~ GetInformation(0, "#grafikIcerik", "")
+  ~ GetInformation(0, "#grafikIcerik", "")
+  ~ GetInformation(1, "#tabloIcerik", 0)
+  ~ GetInformation(1, "#tabloIcerik", $("#tableYil option:selected").val())
+  ~ GetInformation(type, position, value) { nipLoaderOpen()
+  ~ GetInformation" , { "status": type, "name": "YasGrubunaGoreNufus", "value": value } , function (data) { $(position).html(data)
+== post https://nip.tuik.gov.tr/Home/IlGostergeKartlari
+  8,531 bytes, begins b'<!--\n<div id="nu'
+  ~ name="tableIl" id="tableIl"
+  ~ <option value="ADANA">ADANA</option>
+  ~ <option value="ADIYAMAN">ADIYAMAN</option>
+  ~ <option value="AFYONKARAH&#x130;SAR">AFYONKARAH&#x130;SAR</option>
+  ~ <option value="A&#x11E;RI">A&#x11E;RI</option>
+  ~ <option value="AKSARAY">AKSARAY</option>
+  ~ <option value="AMASYA">AMASYA</option>
+  ~ <option value="ANKARA">ANKARA</option>
+  ~ <option value="ANTALYA">ANTALYA</option>
+  ~ <option value="ARDAHAN">ARDAHAN</option>
+  ~ <option value="ARTV&#x130;N">ARTV&#x130;N</option>
+  ~ <option value="AYDIN">AYDIN</option>
+  ~ <option value="BALIKES&#x130;R">BALIKES&#x130;R</option>
+  ~ <option value="BARTIN">BARTIN</option>
+  ~ <option value="BATMAN">BATMAN</option>
+  ~ <option value="BAYBURT">BAYBURT</option>
+  ~ <option value="B&#x130;LEC&#x130;K">B&#x130;LEC&#x130;K</option>
+  ~ <option value="B&#x130;NG&#xD6;L">B&#x130;NG&#xD6;L</option>
+  ~ <option value="B&#x130;TL&#x130;S">B&#x130;TL&#x130;S</option>
+  ~ <option value="BOLU">BOLU</option>
+  ~ <option value="BURDUR">BURDUR</option>
+  ~ <option value="BURSA">BURSA</option>
+  ~ <option value="&#xC7;ANAKKALE">&#xC7;ANAKKALE</option>
+  ~ <option value="&#xC7;ANKIRI">&#xC7;ANKIRI</option>
+  ~ <option value="&#xC7;ORUM">&#xC7;ORUM</option>
+  ~ <option value="DEN&#x130;ZL&#x130;">DEN&#x130;ZL&#x130;</option>
+  ~ <option value="D&#x130;YARBAKIR">D&#x130;YARBAKIR</option>
+  ~ <option value="D&#xDC;ZCE">D&#xDC;ZCE</option>
+  ~ <option value="ED&#x130;RNE">ED&#x130;RNE</option>
+  ~ <option value="ELAZI&#x11E;">ELAZI&#x11E;</option>
+  ~ <option value="ERZ&#x130;NCAN">ERZ&#x130;NCAN</option>
+  ~ <option value="ERZURUM">ERZURUM</option>
+  ~ <option value="ESK&#x130;&#x15E;EH&#x130;R">ESK&#x130;&#x15E;EH&#x130;R</option>
+  ~ <option value="GAZ&#x130;ANTEP">GAZ&#x130;ANTEP</option>
+  ~ <option value="G&#x130;RESUN">G&#x130;RESUN</option>
+  ~ <option value="G&#xDC;M&#xDC;&#x15E;HANE">G&#xDC;M&#xDC;&#x15E;HANE</option>
+  ~ <option value="HAKKAR&#x130;">HAKKAR&#x130;</option>
+  ~ <option value="HATAY">HATAY</option>
+  ~ <option value="I&#x11E;DIR">I&#x11E;DIR</option>
+  ~ <option value="ISPARTA">ISPARTA</option>
