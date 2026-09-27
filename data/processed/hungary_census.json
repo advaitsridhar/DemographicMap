@@ -14929,7 +14929,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-057",
+    "id": "HUN-KSH2014-057",
     "level": "admin2",
     "name": "Gönc",
     "parent": "22733592B38895068362950",
@@ -14940,18 +14940,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 15665,
+      "value": 17784,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 39.7,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 96.7,
+      "value": 96.4,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -14959,98 +14957,73 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 38.0,
-        "count": 5954
+        "pct": 39.5,
+        "count": 7020
       },
       {
         "group": "Not stated",
-        "pct": 30.4,
-        "count": 4764
+        "pct": 29.8,
+        "count": 5300
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 19.8,
-        "count": 3098
+        "pct": 19.1,
+        "count": 3403
       },
       {
         "group": "Greek Catholic",
-        "pct": 5.2,
-        "count": 812
+        "pct": 5.0,
+        "count": 885
       },
       {
         "group": "No religion",
-        "pct": 4.7,
-        "count": 734
+        "pct": 4.6,
+        "count": 822
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 1.0,
-        "count": 161
+        "count": 182
       },
       {
         "group": "Other Christian",
-        "pct": 0.6,
-        "count": 89
+        "pct": 0.5,
+        "count": 87
       },
       {
         "group": "Lutheran",
         "pct": 0.3,
-        "count": 44
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.0,
-        "count": 7
+        "count": 47
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 86.3,
-        "count": 13518
+        "pct": 86.8,
+        "count": 15441
       },
       {
         "group": "Not stated",
         "pct": 9.2,
-        "count": 1444
+        "count": 1637
       },
       {
         "group": "Slovak",
-        "pct": 4.6,
-        "count": 719
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 8
-      },
-      {
-        "group": "Other",
-        "pct": 0.1,
-        "count": 13
+        "pct": 4.0,
+        "count": 709
       },
       {
         "group": "Romani",
         "pct": 0.1,
-        "count": 14
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.1,
-        "count": 8
+        "count": 9
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 7
+        "count": 3
       },
       {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Ukrainian",
+        "group": "Slovene",
         "pct": 0.0,
         "count": 5
       }
@@ -15058,94 +15031,90 @@
     "ethnicity": [
       {
         "group": "Hungarian",
-        "pct": 80.5,
-        "count": 12604
+        "pct": 81.4,
+        "count": 14469
       },
       {
         "group": "Romani",
-        "pct": 12.3,
-        "count": 1928
+        "pct": 11.4,
+        "count": 2026
       },
       {
         "group": "Not stated",
-        "pct": 10.5,
-        "count": 1646
+        "pct": 10.4,
+        "count": 1848
       },
       {
         "group": "Slovak",
-        "pct": 4.6,
-        "count": 713
+        "pct": 4.0,
+        "count": 705
       },
       {
         "group": "Rusyn",
-        "pct": 0.6,
-        "count": 94
+        "pct": 0.5,
+        "count": 91
       },
       {
         "group": "German",
         "pct": 0.1,
-        "count": 13
+        "count": 10
       },
       {
         "group": "Other",
         "pct": 0.1,
-        "count": 21
+        "count": 11
       },
       {
         "group": "Slovene",
         "pct": 0.1,
-        "count": 11
+        "count": 10
       },
       {
         "group": "Polish",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Romanian",
         "pct": 0.0,
         "count": 4
       },
       {
         "group": "Ukrainian",
         "pct": 0.0,
-        "count": 7
+        "count": 3
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Borsod-Abaúj-Zemplén county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "057"
+      "ksh_jaras_2014": "057",
+      "ksh_settlements": "02273,03595,08402,08846,09399,09742,10968,11022,11581,11697,12210,13134,13763,14474,15264,15662,15839,15936,17932,18643,18944,20969,21087,22187,22956,23418,24420,24730,24970,26198,26718,29054"
     },
     "aliases": [
-      "Gönci district"
+      "Gönci district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B6414083113465",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district."
   },
   {
     "id": "HUN-KSH-058",
@@ -17180,7 +17149,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-066",
+    "id": "HUN-KSH2014-066",
     "level": "admin2",
     "name": "Szerencs",
     "parent": "22733592B38895068362950",
@@ -17191,232 +17160,191 @@
       "status": "not_available"
     },
     "population": {
-      "value": 36715,
+      "value": 34596,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 41.6,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 94.1,
+      "value": 94.2,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "religion": [
       {
-        "group": "Roman Catholic",
-        "pct": 34.4,
-        "count": 12613
+        "group": "Not stated",
+        "pct": 33.6,
+        "count": 11613
       },
       {
-        "group": "Not stated",
-        "pct": 33.1,
-        "count": 12149
+        "group": "Roman Catholic",
+        "pct": 33.4,
+        "count": 11547
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 19.8,
-        "count": 7281
+        "pct": 20.2,
+        "count": 6973
       },
       {
         "group": "No religion",
-        "pct": 7.0,
-        "count": 2567
+        "pct": 7.2,
+        "count": 2476
       },
       {
         "group": "Greek Catholic",
         "pct": 3.8,
-        "count": 1386
+        "count": 1309
       },
       {
         "group": "Other Christian",
         "pct": 1.0,
-        "count": 354
+        "count": 348
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.7,
-        "count": 260
+        "count": 243
       },
       {
         "group": "Lutheran",
-        "pct": 0.2,
-        "count": 63
-      },
-      {
-        "group": "Other religion",
         "pct": 0.1,
-        "count": 24
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 7
+        "count": 43
       },
       {
         "group": "Orthodox",
         "pct": 0.0,
-        "count": 11
+        "count": 5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 15
       }
     ],
     "language": [
       {
         "group": "Hungarian",
         "pct": 90.1,
-        "count": 33081
+        "count": 31158
       },
       {
         "group": "Not stated",
-        "pct": 9.7,
-        "count": 3575
+        "pct": 9.8,
+        "count": 3382
       },
       {
         "group": "Other",
         "pct": 0.1,
-        "count": 28
-      },
-      {
-        "group": "Boyash",
-        "pct": 0.0,
-        "count": 8
+        "count": 19
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 7
+        "count": 3
       },
       {
         "group": "German",
         "pct": 0.0,
-        "count": 15
+        "count": 4
       },
       {
         "group": "Romani",
         "pct": 0.0,
-        "count": 14
+        "count": 5
       },
       {
         "group": "Romanian",
         "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 3
+        "count": 5
       },
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 10
+        "count": 3
       }
     ],
     "ethnicity": [
       {
         "group": "Hungarian",
-        "pct": 86.3,
-        "count": 31682
+        "pct": 86.2,
+        "count": 29817
       },
       {
         "group": "Not stated",
         "pct": 10.5,
-        "count": 3846
+        "count": 3642
       },
       {
         "group": "Romani",
         "pct": 5.8,
-        "count": 2115
+        "count": 2017
       },
       {
         "group": "German",
         "pct": 0.9,
-        "count": 336
+        "count": 326
       },
       {
         "group": "Other",
         "pct": 0.1,
-        "count": 32
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
         "count": 21
       },
       {
-        "group": "Armenian",
+        "group": "Romanian",
         "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 6
+        "count": 14
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 8
+        "count": 4
       },
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 9
+        "count": 3
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Borsod-Abaúj-Zemplén county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "066"
+      "ksh_jaras_2014": "066",
+      "ksh_settlements": "03133,03443,03902,06929,07825,11660,12469,18245,19664,21272,21768,28398,28787,30739"
     },
     "aliases": [
-      "Szerencsi district"
+      "Szerencsi district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B12023756452525",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district."
   },
   {
     "id": "HUN-KSH-067",
@@ -19924,7 +19852,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-077",
+    "id": "HUN-KSH2014-077",
     "level": "admin2",
     "name": "Bicske",
     "parent": "22733592B12094485051524",
@@ -19935,18 +19863,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 36091,
+      "value": 35344,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 43.3,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 95.3,
+      "value": 94.9,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -19954,125 +19880,177 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 40.4,
-        "count": 14563
+        "pct": 40.6,
+        "count": 14335
       },
       {
         "group": "Roman Catholic",
-        "pct": 26.3,
-        "count": 9477
+        "pct": 26.0,
+        "count": 9197
       },
       {
         "group": "No religion",
-        "pct": 15.2,
-        "count": 5487
+        "pct": 15.0,
+        "count": 5312
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 14.2,
-        "count": 5122
+        "pct": 14.4,
+        "count": 5082
       },
       {
         "group": "Lutheran",
         "pct": 1.1,
-        "count": 411
+        "count": 400
       },
       {
         "group": "Other Christian",
         "pct": 1.1,
-        "count": 382
+        "count": 381
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.9,
-        "count": 322
+        "count": 315
       },
       {
         "group": "Greek Catholic",
         "pct": 0.5,
-        "count": 196
+        "count": 191
       },
       {
         "group": "Other religion",
-        "pct": 0.3,
-        "count": 92
+        "pct": 0.2,
+        "count": 85
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 26
+        "count": 20
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 13
+        "count": 5
       }
     ],
     "language": [
       {
         "group": "Hungarian",
         "pct": 86.7,
-        "count": 31278
+        "count": 30626
       },
       {
         "group": "Not stated",
         "pct": 12.8,
-        "count": 4632
+        "count": 4539
       },
       {
         "group": "German",
-        "pct": 0.4,
-        "count": 128
+        "pct": 0.3,
+        "count": 109
       },
       {
         "group": "Other",
         "pct": 0.3,
-        "count": 104
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 22
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 3
+        "count": 98
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Greek",
         "pct": 0.0,
-        "count": 5
+        "count": 4
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 11
+        "count": 7
       },
       {
         "group": "Romani",
         "pct": 0.0,
-        "count": 18
+        "count": 17
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 83.7,
+        "count": 29589
+      },
+      {
+        "group": "Not stated",
+        "pct": 15.0,
+        "count": 5300
+      },
+      {
+        "group": "German",
+        "pct": 3.0,
+        "count": 1066
+      },
+      {
+        "group": "Romani",
+        "pct": 1.0,
+        "count": 352
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 99
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 4
+        "count": 5
       },
       {
         "group": "Serbian",
@@ -20082,7 +20060,7 @@
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 9
+        "count": 11
       },
       {
         "group": "Ukrainian",
@@ -20090,122 +20068,41 @@
         "count": 16
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Hungarian",
-        "pct": 83.6,
-        "count": 30182
-      },
-      {
-        "group": "Not stated",
-        "pct": 15.0,
-        "count": 5418
-      },
-      {
-        "group": "German",
-        "pct": 3.2,
-        "count": 1167
-      },
-      {
-        "group": "Romani",
-        "pct": 1.0,
-        "count": 363
-      },
-      {
-        "group": "Other",
-        "pct": 0.3,
-        "count": 107
-      },
-      {
-        "group": "Polish",
-        "pct": 0.1,
-        "count": 26
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 44
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.1,
-        "count": 20
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.1,
-        "count": 21
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 3
-      }
-    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
-        "license": "KSH (free reuse with attribution)",
-        "year": 2022
-      },
-      {
-        "field": "religion/ethnicity/language",
+        "field": "population/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
       }
     ],
     "parent_name": "Fejér county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "077"
+      "ksh_jaras_2014": "077",
+      "ksh_settlements": "02316,02750,10481,11624,13897,14465,15176,17482,19549,20002,23490,29939,30544,34306"
     },
     "aliases": [
-      "Bicskei district"
+      "Bicskei district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B82209146768719",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district."
   },
   {
     "id": "HUN-KSH-078",
@@ -20497,7 +20394,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-079",
+    "id": "HUN-KSH2014-079",
     "level": "admin2",
     "name": "Enying",
     "parent": "22733592B12094485051524",
@@ -20508,35 +20405,201 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 12041,
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
       "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "value": 96.2,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Not stated",
+        "pct": 36.7,
+        "count": 4422
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 31.5,
+        "count": 3794
+      },
+      {
+        "group": "Reformed (Calvinist)",
+        "pct": 14.3,
+        "count": 1720
+      },
+      {
+        "group": "No religion",
+        "pct": 12.3,
+        "count": 1479
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.1,
+        "count": 372
+      },
+      {
+        "group": "Catholic (unspecified)",
+        "pct": 1.3,
+        "count": 155
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.5,
+        "count": 56
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 0.2,
+        "count": 25
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "Hungarian",
+        "pct": 88.4,
+        "count": 10646
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.0,
+        "count": 1323
+      },
+      {
+        "group": "German",
+        "pct": 0.3,
+        "count": 36
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 28
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 87.8,
+        "count": 10567
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.6,
+        "count": 1399
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8,
+        "count": 94
+      },
+      {
+        "group": "German",
+        "pct": 0.4,
+        "count": 44
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 21
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
+      }
+    ],
+    "parent_name": "Fejér county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "079"
+      "ksh_jaras_2014": "079",
+      "ksh_settlements": "02802,05689,07506,18740,32753"
     },
+    "aliases": [
+      "Enyingi district (2013)"
+    ],
     "match_by": "shape_id",
-    "shape_id": "29324351B88573603654075"
+    "shape_id": "29324351B88573603654075",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "religion_year": 2022,
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district.",
+    "language_year": 2022,
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district."
   },
   {
     "id": "HUN-KSH-080",
@@ -21087,7 +21150,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-082",
+    "id": "HUN-KSH2014-082",
     "level": "admin2",
     "name": "Mór",
     "parent": "22733592B12094485051524",
@@ -21098,18 +21161,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 33762,
+      "value": 32133,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 44.2,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 94.3,
+      "value": 94.1,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -21117,100 +21178,147 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 40.7,
-        "count": 13742
+        "pct": 41.0,
+        "count": 13183
       },
       {
         "group": "Roman Catholic",
-        "pct": 27.4,
-        "count": 9265
+        "pct": 27.5,
+        "count": 8842
       },
       {
         "group": "No religion",
         "pct": 15.7,
-        "count": 5295
+        "count": 5038
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 8.3,
-        "count": 2812
+        "pct": 7.7,
+        "count": 2480
       },
       {
         "group": "Lutheran",
-        "pct": 5.5,
-        "count": 1847
+        "pct": 5.7,
+        "count": 1835
       },
       {
         "group": "Other Christian",
         "pct": 1.0,
-        "count": 348
+        "count": 322
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.8,
-        "count": 279
+        "count": 266
       },
       {
         "group": "Greek Catholic",
         "pct": 0.2,
-        "count": 79
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.2,
-        "count": 56
+        "count": 69
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 36
+        "count": 31
       },
       {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 3
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 47
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 88.3,
-        "count": 29818
+        "pct": 88.1,
+        "count": 28312
       },
       {
         "group": "Not stated",
-        "pct": 10.9,
-        "count": 3665
+        "pct": 11.0,
+        "count": 3547
       },
       {
         "group": "Other",
         "pct": 0.4,
-        "count": 123
+        "count": 116
       },
       {
         "group": "German",
         "pct": 0.3,
-        "count": 113
+        "count": 107
       },
       {
         "group": "Ukrainian",
         "pct": 0.3,
-        "count": 92
+        "count": 87
       },
       {
         "group": "Romanian",
         "pct": 0.2,
-        "count": 57
+        "count": 55
       },
       {
         "group": "Romani",
         "pct": 0.1,
-        "count": 23
+        "count": 19
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 10
+        "count": 6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 85.7,
+        "count": 27547
+      },
+      {
+        "group": "Not stated",
+        "pct": 12.6,
+        "count": 4044
+      },
+      {
+        "group": "German",
+        "pct": 3.1,
+        "count": 1003
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6,
+        "count": 203
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 124
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3,
+        "count": 103
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.2,
+        "count": 64
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.2,
+        "count": 57
       },
       {
         "group": "Bulgarian",
@@ -21220,130 +21328,49 @@
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 3
+        "count": 4
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 5
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Hungarian",
-        "pct": 86.0,
-        "count": 29026
-      },
-      {
-        "group": "Not stated",
-        "pct": 12.4,
-        "count": 4186
-      },
-      {
-        "group": "German",
-        "pct": 3.0,
-        "count": 1015
-      },
-      {
-        "group": "Romani",
-        "pct": 0.6,
-        "count": 209
-      },
-      {
-        "group": "Other",
-        "pct": 0.4,
-        "count": 131
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.3,
-        "count": 107
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.2,
-        "count": 69
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.2,
-        "count": 65
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 9
+        "count": 8
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Fejér county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "082"
+      "ksh_jaras_2014": "082",
+      "ksh_settlements": "02200,02343,02893,05360,08730,17774,18254,18485,21908,23588,31103,32203"
     },
     "aliases": [
-      "Móri district"
+      "Móri district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B71845769198435",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district."
   },
   {
     "id": "HUN-KSH-084",
@@ -21590,7 +21617,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-085",
+    "id": "HUN-KSH2014-085",
     "level": "admin2",
     "name": "Székesfehérvár",
     "parent": "22733592B12094485051524",
@@ -21601,35 +21628,281 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 140106,
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
       "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "value": 92.6,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Not stated",
+        "pct": 42.5,
+        "count": 59496
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.7,
+        "count": 37343
+      },
+      {
+        "group": "No religion",
+        "pct": 18.0,
+        "count": 25200
+      },
+      {
+        "group": "Reformed (Calvinist)",
+        "pct": 9.1,
+        "count": 12696
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.3,
+        "count": 1775
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.0,
+        "count": 1400
+      },
+      {
+        "group": "Catholic (unspecified)",
+        "pct": 0.9,
+        "count": 1250
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 0.3,
+        "count": 454
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 297
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 120
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
+    "language": [
+      {
+        "group": "Hungarian",
+        "pct": 87.4,
+        "count": 122492
+      },
+      {
+        "group": "Not stated",
+        "pct": 12.0,
+        "count": 16858
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 449
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 144
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 151
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Boyash",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 86.2,
+        "count": 120816
+      },
+      {
+        "group": "Not stated",
+        "pct": 13.1,
+        "count": 18411
+      },
+      {
+        "group": "German",
+        "pct": 0.6,
+        "count": 842
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4,
+        "count": 531
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 478
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 80
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 164
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
+      }
+    ],
+    "parent_name": "Fejér county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "085"
+      "ksh_jaras_2014": "085",
+      "ksh_settlements": "02699,06734,09779,11776,14827,15750,16683,17376,17622,19114,20206,23153,25140,25715,27678,28705,28848,29267,30243,31802,32018,33321"
     },
+    "aliases": [
+      "Székesfehérvári district (2013)"
+    ],
     "match_by": "shape_id",
-    "shape_id": "29324351B96157182813674"
+    "shape_id": "29324351B96157182813674",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "religion_year": 2022,
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district.",
+    "language_year": 2022,
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district."
   },
   {
     "id": "HUN-KSH-086",
@@ -22175,7 +22448,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-088",
+    "id": "HUN-KSH2014-088",
     "level": "admin2",
     "name": "Kapuvár",
     "parent": "22733592B30896182433416",
@@ -22186,18 +22459,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 24070,
+      "value": 23111,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 46.1,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 96.6,
+      "value": 96.4,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -22206,227 +22477,183 @@
       {
         "group": "Roman Catholic",
         "pct": 57.8,
-        "count": 13922
+        "count": 13355
       },
       {
         "group": "Not stated",
-        "pct": 29.1,
-        "count": 6997
+        "pct": 29.0,
+        "count": 6709
       },
       {
         "group": "Lutheran",
-        "pct": 4.6,
-        "count": 1118
+        "pct": 4.8,
+        "count": 1111
       },
       {
         "group": "No religion",
-        "pct": 4.6,
-        "count": 1109
+        "pct": 4.5,
+        "count": 1046
       },
       {
         "group": "Reformed (Calvinist)",
         "pct": 1.5,
-        "count": 367
+        "count": 345
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 1.2,
-        "count": 287
+        "count": 286
       },
       {
         "group": "Other Christian",
-        "pct": 0.8,
-        "count": 182
+        "pct": 0.7,
+        "count": 173
       },
       {
         "group": "Greek Catholic",
         "pct": 0.2,
-        "count": 57
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.1,
-        "count": 18
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 3
+        "count": 48
       },
       {
         "group": "Orthodox",
         "pct": 0.0,
-        "count": 10
+        "count": 6
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 9
       }
     ],
     "language": [
       {
         "group": "Hungarian",
         "pct": 91.4,
-        "count": 21989
+        "count": 21125
       },
       {
         "group": "Not stated",
         "pct": 7.6,
-        "count": 1836
+        "count": 1747
       },
       {
         "group": "German",
         "pct": 0.8,
-        "count": 189
-      },
-      {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 38
+        "count": 177
       },
       {
         "group": "Romani",
         "pct": 0.2,
-        "count": 51
+        "count": 49
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 30
       },
       {
         "group": "Ukrainian",
         "pct": 0.1,
-        "count": 19
+        "count": 13
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.0,
-        "count": 11
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 6
+        "count": 5
       },
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 8
+        "count": 5
       }
     ],
     "ethnicity": [
       {
         "group": "Hungarian",
         "pct": 90.9,
-        "count": 21885
+        "count": 21019
       },
       {
         "group": "Not stated",
         "pct": 8.2,
-        "count": 1974
+        "count": 1884
       },
       {
         "group": "Romani",
         "pct": 0.8,
-        "count": 204
+        "count": 195
       },
       {
         "group": "German",
-        "pct": 0.6,
-        "count": 133
+        "pct": 0.5,
+        "count": 122
       },
       {
         "group": "Other",
         "pct": 0.3,
-        "count": 80
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 16
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.1,
-        "count": 13
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.1,
-        "count": 15
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 3
+        "count": 67
       },
       {
         "group": "Croatian",
         "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 7
+        "count": 5
       },
       {
         "group": "Serbian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ukrainian",
         "pct": 0.0,
         "count": 9
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Győr-Moson-Sopron county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "088"
+      "ksh_jaras_2014": "088",
+      "ksh_settlements": "04020,04589,06239,10029,10588,14438,14793,15042,15121,15714,15954,17880,21980,22442,23843,25797,28334,32595,33695"
     },
     "aliases": [
-      "Kapuvári district"
+      "Kapuvári district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B81254697002874",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district."
   },
   {
     "id": "HUN-KSH-089",
@@ -22947,7 +23174,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-091",
+    "id": "HUN-KSH2014-091",
     "level": "admin2",
     "name": "Sopron",
     "parent": "22733592B30896182433416",
@@ -22958,7 +23185,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 101206,
+      "value": 102165,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
@@ -22969,7 +23196,7 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
-      "value": 93.9,
+      "value": 94.0,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -22977,235 +23204,242 @@
     "religion": [
       {
         "group": "Roman Catholic",
-        "pct": 41.9,
-        "count": 42422
+        "pct": 42.1,
+        "count": 42989
       },
       {
         "group": "Not stated",
-        "pct": 39.2,
-        "count": 39663
+        "pct": 39.1,
+        "count": 39951
       },
       {
         "group": "No religion",
         "pct": 8.9,
-        "count": 9041
+        "count": 9103
       },
       {
         "group": "Lutheran",
         "pct": 4.4,
-        "count": 4451
+        "count": 4455
       },
       {
         "group": "Reformed (Calvinist)",
         "pct": 3.0,
-        "count": 3085
+        "count": 3099
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.9,
-        "count": 889
+        "count": 919
       },
       {
         "group": "Other Christian",
         "pct": 0.9,
-        "count": 961
+        "count": 958
       },
       {
         "group": "Greek Catholic",
         "pct": 0.4,
-        "count": 387
+        "count": 367
       },
       {
         "group": "Other religion",
         "pct": 0.2,
-        "count": 212
+        "count": 201
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 76
+        "count": 61
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 19
+        "count": 13
       }
     ],
     "language": [
       {
         "group": "Hungarian",
         "pct": 85.5,
-        "count": 86497
+        "count": 87361
       },
       {
         "group": "Not stated",
-        "pct": 12.9,
-        "count": 13024
+        "pct": 12.8,
+        "count": 13112
       },
       {
         "group": "German",
         "pct": 1.1,
-        "count": 1128
+        "count": 1130
       },
       {
         "group": "Croatian",
         "pct": 0.6,
-        "count": 623
+        "count": 607
       },
       {
         "group": "Other",
         "pct": 0.4,
-        "count": 377
+        "count": 358
       },
       {
         "group": "Romani",
         "pct": 0.1,
-        "count": 105
+        "count": 98
       },
       {
         "group": "Romanian",
         "pct": 0.1,
-        "count": 93
+        "count": 78
       },
       {
         "group": "Ukrainian",
         "pct": 0.1,
-        "count": 71
+        "count": 61
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 34
+        "count": 30
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 17
+        "count": 9
       },
       {
         "group": "Greek",
         "pct": 0.0,
-        "count": 15
+        "count": 11
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 31
+        "count": 24
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 13
+        "count": 9
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 27
+        "count": 22
       },
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 37
+        "count": 33
       },
       {
         "group": "Slovene",
         "pct": 0.0,
-        "count": 15
+        "count": 11
       }
     ],
     "ethnicity": [
       {
         "group": "Hungarian",
         "pct": 84.2,
-        "count": 85166
+        "count": 86032
       },
       {
         "group": "Not stated",
         "pct": 14.3,
-        "count": 14485
+        "count": 14572
       },
       {
         "group": "German",
         "pct": 1.9,
-        "count": 1905
+        "count": 1903
       },
       {
         "group": "Croatian",
         "pct": 1.2,
-        "count": 1257
+        "count": 1242
       },
       {
         "group": "Other",
         "pct": 0.5,
-        "count": 532
+        "count": 524
       },
       {
         "group": "Romani",
         "pct": 0.4,
-        "count": 445
+        "count": 433
       },
       {
         "group": "Romanian",
         "pct": 0.1,
-        "count": 122
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.1,
-        "count": 60
+        "count": 113
       },
       {
         "group": "Ukrainian",
         "pct": 0.1,
-        "count": 111
+        "count": 99
       },
       {
         "group": "Armenian",
         "pct": 0.0,
-        "count": 26
+        "count": 18
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 30
+        "count": 22
       },
       {
         "group": "Greek",
         "pct": 0.0,
-        "count": 45
+        "count": 40
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 48
+        "count": 40
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 21
+        "count": 14
       },
       {
         "group": "Serbian",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Slovak",
         "pct": 0.0,
         "count": 44
       },
       {
         "group": "Slovene",
         "pct": 0.0,
-        "count": 24
+        "count": 19
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
@@ -23214,21 +23448,23 @@
     "parent_name": "Győr-Moson-Sopron county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "091"
+      "ksh_jaras_2014": "091",
+      "ksh_settlements": "02495,04622,04880,06895,07649,07746,08518,08563,09487,09885,10047,10658,11068,11253,11369,12414,14687,15237,15343,16319,17969,18403,19673,20792,22831,23375,23773,25724,26347,29090,29328,29407,30021,30191,31194,31370,31440,31635,32939"
     },
     "aliases": [
-      "Soproni district"
+      "Soproni district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B85982525713850",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age. It is the 2022 district's, which differs from the drawn one by 0.9% of its people (Agyagosszergény (959 people, then here)); KSH publishes age by settlement in ten-year groups only.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district."
   },
   {
     "id": "HUN-KSH-092",
@@ -26702,7 +26938,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-106",
+    "id": "HUN-KSH2014-106",
     "level": "admin2",
     "name": "Gyöngyös",
     "parent": "22733592B80362656403521",
@@ -26713,18 +26949,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 66931,
+      "value": 68383,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 45.7,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 90.3,
+      "value": 90.2,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -26732,135 +26966,202 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 42.1,
-        "count": 28180
+        "pct": 42.0,
+        "count": 28719
       },
       {
         "group": "Roman Catholic",
-        "pct": 37.8,
-        "count": 25313
+        "pct": 38.1,
+        "count": 26049
       },
       {
         "group": "No religion",
-        "pct": 13.3,
-        "count": 8912
+        "pct": 13.2,
+        "count": 9025
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 3.2,
-        "count": 2116
+        "pct": 3.1,
+        "count": 2141
       },
       {
         "group": "Other Christian",
         "pct": 1.7,
-        "count": 1147
+        "count": 1165
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.9,
-        "count": 571
+        "count": 587
       },
       {
         "group": "Greek Catholic",
         "pct": 0.4,
-        "count": 287
+        "count": 286
       },
       {
         "group": "Lutheran",
         "pct": 0.3,
-        "count": 179
+        "count": 174
       },
       {
         "group": "Other religion",
         "pct": 0.2,
-        "count": 160
+        "count": 149
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 49
+        "count": 38
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 17
+        "count": 14
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 88.6,
-        "count": 59326
+        "pct": 88.7,
+        "count": 60658
       },
       {
         "group": "Not stated",
-        "pct": 10.7,
-        "count": 7134
+        "pct": 10.6,
+        "count": 7251
       },
       {
         "group": "Romani",
         "pct": 0.6,
-        "count": 405
+        "count": 395
       },
       {
         "group": "Ukrainian",
         "pct": 0.3,
-        "count": 210
+        "count": 199
       },
       {
         "group": "Other",
         "pct": 0.2,
-        "count": 162
-      },
-      {
-        "group": "Boyash",
-        "pct": 0.1,
-        "count": 34
+        "count": 149
       },
       {
         "group": "German",
         "pct": 0.1,
-        "count": 60
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 39
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.1,
-        "count": 40
+        "count": 51
       },
       {
         "group": "Armenian",
         "pct": 0.0,
-        "count": 7
+        "count": 4
+      },
+      {
+        "group": "Boyash",
+        "pct": 0.0,
+        "count": 30
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 16
+        "count": 9
       },
       {
         "group": "Croatian",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Greek",
         "pct": 0.0,
         "count": 3
       },
       {
         "group": "Polish",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Romanian",
         "pct": 0.0,
         "count": 18
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 87.0,
+        "count": 59472
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.4,
+        "count": 7811
+      },
+      {
+        "group": "Romani",
+        "pct": 2.9,
+        "count": 1981
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 176
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.3,
+        "count": 210
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3,
+        "count": 231
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 75
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 88
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 14
       },
       {
         "group": "Serbian",
@@ -26868,125 +27169,44 @@
         "count": 4
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Hungarian",
-        "pct": 86.9,
-        "count": 58166
-      },
-      {
-        "group": "Not stated",
-        "pct": 11.5,
-        "count": 7688
-      },
-      {
-        "group": "Romani",
-        "pct": 2.9,
-        "count": 1954
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.4,
-        "count": 239
-      },
-      {
-        "group": "Other",
-        "pct": 0.3,
-        "count": 190
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.3,
-        "count": 218
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 90
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 95
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.1,
-        "count": 52
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 25
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 3
-      }
-    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
-        "license": "KSH (free reuse with attribution)",
-        "year": 2022
-      },
-      {
-        "field": "religion/ethnicity/language",
+        "field": "population/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
       }
     ],
     "parent_name": "Heves county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "106"
+      "ksh_jaras_2014": "106",
+      "ksh_settlements": "03513,05236,05759,05935,07515,08323,09201,09982,11411,12502,13338,14580,15796,16090,16540,17534,19123,23241,24554,26879,28088,29045,31246,31486,34324"
     },
     "aliases": [
-      "Gyöngyösi district"
+      "Gyöngyösi district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B27767094770808",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district."
   },
   {
-    "id": "HUN-KSH-107",
+    "id": "HUN-KSH2014-107",
     "level": "admin2",
     "name": "Hatvan",
     "parent": "22733592B80362656403521",
@@ -26997,18 +27217,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 50266,
+      "value": 48814,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 45.0,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 92.5,
+      "value": 92.7,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -27016,100 +27234,167 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 40.7,
-        "count": 20474
+        "pct": 40.8,
+        "count": 19935
       },
       {
         "group": "Roman Catholic",
-        "pct": 38.7,
-        "count": 19448
+        "pct": 38.3,
+        "count": 18712
       },
       {
         "group": "No religion",
-        "pct": 14.0,
-        "count": 7019
+        "pct": 14.1,
+        "count": 6906
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 3.0,
-        "count": 1518
+        "pct": 3.1,
+        "count": 1493
       },
       {
         "group": "Other Christian",
         "pct": 1.5,
-        "count": 773
+        "count": 753
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.8,
-        "count": 395
+        "count": 389
       },
       {
         "group": "Lutheran",
         "pct": 0.7,
-        "count": 328
+        "count": 325
       },
       {
         "group": "Greek Catholic",
-        "pct": 0.4,
-        "count": 178
+        "pct": 0.3,
+        "count": 169
       },
       {
         "group": "Other religion",
         "pct": 0.2,
-        "count": 86
+        "count": 78
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 35
+        "count": 33
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 12
+        "count": 9
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 88.8,
-        "count": 44621
+        "pct": 88.7,
+        "count": 43289
       },
       {
         "group": "Not stated",
-        "pct": 10.7,
-        "count": 5384
+        "pct": 10.8,
+        "count": 5267
       },
       {
         "group": "Other",
         "pct": 0.2,
-        "count": 90
+        "count": 81
       },
       {
         "group": "Romani",
         "pct": 0.2,
-        "count": 107
+        "count": 102
       },
       {
         "group": "Ukrainian",
         "pct": 0.2,
-        "count": 123
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 28
+        "count": 118
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 8
+        "count": 4
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 7
+        "count": 3
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 87.3,
+        "count": 42603
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.9,
+        "count": 5788
+      },
+      {
+        "group": "Romani",
+        "pct": 1.5,
+        "count": 756
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3,
+        "count": 127
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 84
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 45
+      },
+      {
+        "group": "Armenian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Croatian",
@@ -27117,142 +27402,66 @@
         "count": 3
       },
       {
-        "group": "German",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
         "group": "Greek",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Serbian",
         "pct": 0.0,
         "count": 6
       },
       {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 11
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Hungarian",
-        "pct": 87.4,
-        "count": 43909
-      },
-      {
-        "group": "Not stated",
-        "pct": 11.8,
-        "count": 5911
-      },
-      {
-        "group": "Romani",
-        "pct": 1.6,
-        "count": 788
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.3,
-        "count": 136
-      },
-      {
-        "group": "Other",
-        "pct": 0.2,
-        "count": 89
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 69
-      },
-      {
-        "group": "Romanian",
-        "pct": 0.1,
-        "count": 54
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.1,
-        "count": 28
-      },
-      {
-        "group": "Armenian",
+        "group": "Polish",
         "pct": 0.0,
         "count": 7
       },
       {
-        "group": "Bulgarian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Croatian",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 11
+        "count": 5
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 13
+        "count": 8
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 22
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Heves county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "107"
+      "ksh_jaras_2014": "107",
+      "ksh_settlements": "03452,04145,07241,16841,17181,20242,21722,22309,24943,27650,30401,33686,34379"
     },
     "aliases": [
-      "Hatvani district"
+      "Hatvani district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B59642904520588",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district."
   },
   {
     "id": "HUN-KSH-108",
@@ -33118,7 +33327,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-KSH-130",
+    "id": "HUN-KSH2014-130",
     "level": "admin2",
     "name": "Monor",
     "parent": "22733592B46801225244053",
@@ -33129,18 +33338,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 73304,
+      "value": 71410,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 41.2,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 94.0,
+      "value": 93.9,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -33148,256 +33355,242 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 40.1,
-        "count": 29369
-      },
-      {
-        "group": "No religion",
-        "pct": 17.9,
-        "count": 13132
+        "pct": 40.3,
+        "count": 28753
       },
       {
         "group": "Roman Catholic",
+        "pct": 17.7,
+        "count": 12631
+      },
+      {
+        "group": "No religion",
         "pct": 17.6,
-        "count": 12880
+        "count": 12597
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 14.2,
-        "count": 10406
+        "pct": 14.0,
+        "count": 9975
       },
       {
         "group": "Lutheran",
-        "pct": 5.9,
-        "count": 4332
+        "pct": 6.0,
+        "count": 4316
       },
       {
         "group": "Other Christian",
         "pct": 2.3,
-        "count": 1673
+        "count": 1649
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 0.9,
+        "count": 608
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 0.8,
-        "count": 606
-      },
-      {
-        "group": "Greek Catholic",
-        "pct": 0.8,
-        "count": 612
+        "count": 595
       },
       {
         "group": "Other religion",
         "pct": 0.3,
-        "count": 209
+        "count": 201
       },
       {
         "group": "Orthodox",
         "pct": 0.1,
-        "count": 60
+        "count": 52
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 25
+        "count": 19
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 87.2,
-        "count": 63887
+        "pct": 87.1,
+        "count": 62174
       },
       {
         "group": "Not stated",
         "pct": 12.2,
-        "count": 8910
+        "count": 8735
       },
       {
         "group": "Other",
         "pct": 0.4,
-        "count": 264
+        "count": 257
       },
       {
         "group": "Romani",
         "pct": 0.2,
-        "count": 138
+        "count": 132
       },
       {
         "group": "Romanian",
         "pct": 0.2,
-        "count": 152
+        "count": 148
       },
       {
         "group": "German",
         "pct": 0.1,
-        "count": 58
+        "count": 55
       },
       {
         "group": "Ukrainian",
         "pct": 0.1,
-        "count": 43
+        "count": 36
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 33
+        "count": 30
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 19
+        "count": 17
       },
       {
         "group": "Croatian",
         "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Greek",
-        "pct": 0.0,
-        "count": 5
+        "count": 3
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Rusyn",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 5
+        "count": 15
       },
       {
         "group": "Slovak",
         "pct": 0.0,
-        "count": 31
+        "count": 27
       }
     ],
     "ethnicity": [
       {
         "group": "Hungarian",
         "pct": 85.3,
-        "count": 62558
+        "count": 60915
       },
       {
         "group": "Not stated",
-        "pct": 13.6,
-        "count": 9991
+        "pct": 13.7,
+        "count": 9794
       },
       {
         "group": "Romani",
-        "pct": 1.5,
-        "count": 1100
+        "pct": 1.4,
+        "count": 1004
       },
       {
         "group": "German",
         "pct": 0.4,
-        "count": 291
+        "count": 288
       },
       {
         "group": "Other",
         "pct": 0.3,
-        "count": 237
+        "count": 228
       },
       {
         "group": "Romanian",
         "pct": 0.3,
-        "count": 231
+        "count": 225
       },
       {
         "group": "Slovak",
         "pct": 0.3,
-        "count": 211
+        "count": 209
       },
       {
         "group": "Polish",
         "pct": 0.1,
-        "count": 40
+        "count": 38
       },
       {
         "group": "Ukrainian",
         "pct": 0.1,
-        "count": 49
+        "count": 45
       },
       {
         "group": "Armenian",
         "pct": 0.0,
-        "count": 10
+        "count": 4
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 28
+        "count": 23
       },
       {
         "group": "Croatian",
         "pct": 0.0,
-        "count": 24
+        "count": 20
       },
       {
         "group": "Greek",
         "pct": 0.0,
-        "count": 23
+        "count": 22
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 12
+        "count": 5
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 22
+        "count": 19
       },
       {
         "group": "Slovene",
         "pct": 0.0,
-        "count": 6
+        "count": 3
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Pest county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "130"
+      "ksh_jaras_2014": "130",
+      "ksh_settlements": "09441,09821,10551,18476,21847,22585,23038,25098,27827,29735,34397"
     },
     "aliases": [
-      "Monori district"
+      "Monori district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B45686510905327",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district."
   },
   {
-    "id": "HUN-KSH-131",
+    "id": "HUN-KSH2014-131",
     "level": "admin2",
     "name": "Nagykáta",
     "parent": "22733592B46801225244053",
@@ -33408,18 +33601,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 73346,
+      "value": 75240,
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "value": 43.4,
-      "unit": "years",
-      "year": 2022,
-      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
+      "status": "not_available",
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "value": 96.3,
+      "value": 96.4,
       "unit": "males_per_100_females",
       "year": 2022,
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
@@ -33427,70 +33618,70 @@
     "religion": [
       {
         "group": "Not stated",
-        "pct": 42.3,
-        "count": 31021
+        "pct": 42.0,
+        "count": 31637
       },
       {
         "group": "Roman Catholic",
-        "pct": 34.9,
-        "count": 25586
+        "pct": 34.3,
+        "count": 25835
       },
       {
         "group": "No religion",
-        "pct": 12.3,
-        "count": 9004
+        "pct": 12.7,
+        "count": 9539
       },
       {
         "group": "Reformed (Calvinist)",
-        "pct": 5.8,
-        "count": 4286
+        "pct": 6.3,
+        "count": 4717
       },
       {
         "group": "Other Christian",
         "pct": 1.5,
-        "count": 1130
+        "count": 1154
       },
       {
         "group": "Lutheran",
         "pct": 1.4,
-        "count": 1056
+        "count": 1072
       },
       {
         "group": "Catholic (unspecified)",
         "pct": 1.0,
-        "count": 708
+        "count": 719
       },
       {
         "group": "Greek Catholic",
         "pct": 0.5,
-        "count": 354
+        "count": 358
       },
       {
         "group": "Other religion",
         "pct": 0.2,
-        "count": 141
-      },
-      {
-        "group": "Orthodox",
-        "pct": 0.1,
-        "count": 44
+        "count": 144
       },
       {
         "group": "Judaism",
         "pct": 0.0,
-        "count": 16
+        "count": 9
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 33
       }
     ],
     "language": [
       {
         "group": "Hungarian",
-        "pct": 86.8,
-        "count": 63647
+        "pct": 86.9,
+        "count": 65360
       },
       {
         "group": "Not stated",
-        "pct": 12.9,
-        "count": 9435
+        "pct": 12.8,
+        "count": 9610
       },
       {
         "group": "Other",
@@ -33500,185 +33691,156 @@
       {
         "group": "Romani",
         "pct": 0.2,
-        "count": 136
-      },
-      {
-        "group": "German",
-        "pct": 0.1,
-        "count": 41
+        "count": 131
       },
       {
         "group": "Romanian",
         "pct": 0.1,
-        "count": 93
+        "count": 90
       },
       {
         "group": "Boyash",
         "pct": 0.0,
-        "count": 21
+        "count": 10
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 12
+        "count": 5
       },
       {
         "group": "Croatian",
         "pct": 0.0,
-        "count": 8
+        "count": 4
       },
       {
-        "group": "Greek",
+        "group": "German",
         "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Polish",
-        "pct": 0.0,
-        "count": 5
+        "count": 32
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Serbian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Slovak",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 5
+        "count": 8
       },
       {
         "group": "Ukrainian",
         "pct": 0.0,
-        "count": 31
+        "count": 21
       }
     ],
     "ethnicity": [
       {
         "group": "Hungarian",
         "pct": 85.5,
-        "count": 62702
+        "count": 64345
       },
       {
         "group": "Not stated",
-        "pct": 13.8,
-        "count": 10123
+        "pct": 13.7,
+        "count": 10320
       },
       {
         "group": "Romani",
-        "pct": 1.6,
-        "count": 1162
+        "pct": 1.7,
+        "count": 1258
       },
       {
         "group": "German",
         "pct": 0.2,
-        "count": 126
+        "count": 124
       },
       {
         "group": "Other",
         "pct": 0.2,
-        "count": 126
+        "count": 129
       },
       {
         "group": "Romanian",
         "pct": 0.2,
-        "count": 159
+        "count": 157
       },
       {
         "group": "Slovak",
         "pct": 0.1,
-        "count": 51
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.1,
-        "count": 48
-      },
-      {
-        "group": "Armenian",
-        "pct": 0.0,
-        "count": 8
+        "count": 44
       },
       {
         "group": "Bulgarian",
         "pct": 0.0,
-        "count": 20
+        "count": 10
       },
       {
         "group": "Croatian",
         "pct": 0.0,
-        "count": 19
+        "count": 8
       },
       {
         "group": "Greek",
         "pct": 0.0,
-        "count": 14
+        "count": 3
       },
       {
         "group": "Polish",
         "pct": 0.0,
-        "count": 9
+        "count": 6
       },
       {
         "group": "Rusyn",
         "pct": 0.0,
-        "count": 13
+        "count": 6
       },
       {
         "group": "Serbian",
         "pct": 0.0,
-        "count": 28
+        "count": 16
       },
       {
         "group": "Slovene",
         "pct": 0.0,
-        "count": 12
+        "count": 9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 34
       }
     ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "religion/ethnicity/language",
-        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
-        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
-        "year": 2022
+        "year": 2014
       }
     ],
     "parent_name": "Pest county",
     "country": "HUN",
     "codes": {
-      "ksh_terul": "131"
+      "ksh_jaras_2014": "131",
+      "ksh_settlements": "03692,07542,09122,09405,13435,14146,14571,15015,17303,21467,21713,22248,28644,28653,31361,31796"
     },
     "aliases": [
-      "Nagykátai district"
+      "Nagykátai district (2013)"
     ],
     "match_by": "shape_id",
     "shape_id": "29324351B84817632279640",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age.",
-    "sex_ratio_note": "Males per 100 females counted by the 2022 census.",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
     "religion_year": 2022,
-    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out.",
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'.",
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district.",
     "language_year": 2022,
-    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district."
   },
   {
     "id": "HUN-KSH-132",
@@ -50934,7 +51096,7 @@
     "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer."
   },
   {
-    "id": "HUN-2013-Polgard",
+    "id": "HUN-KSH2014-083",
     "level": "admin2",
     "name": "Polgard",
     "parent": "22733592B12094485051524",
@@ -50945,32 +51107,191 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 19425,
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
       "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not written: the map draws Fejér's districts as they were in 2013, with a Polgárd district between Enying and Székesfehérvár; KSH's 2022 census counts that district's settlements in its Enying and Székesfehérvár districts, so no published figure covers exactly this polygon."
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Not stated",
+        "pct": 42.7,
+        "count": 8304
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.0,
+        "count": 5057
+      },
+      {
+        "group": "No religion",
+        "pct": 18.3,
+        "count": 3549
+      },
+      {
+        "group": "Reformed (Calvinist)",
+        "pct": 10.3,
+        "count": 1996
+      },
+      {
+        "group": "Catholic (unspecified)",
+        "pct": 1.1,
+        "count": 211
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 120
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 0.4,
+        "count": 69
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.4,
+        "count": 71
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "language": [
+      {
+        "group": "Hungarian",
+        "pct": 88.0,
+        "count": 17096
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.6,
+        "count": 2254
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2,
+        "count": 41
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 86.7,
+        "count": 16851
+      },
+      {
+        "group": "Not stated",
+        "pct": 12.7,
+        "count": 2458
+      },
+      {
+        "group": "Romani",
+        "pct": 1.1,
+        "count": 220
+      },
+      {
+        "group": "German",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "population/sex_ratio/religion/ethnicity/language",
+        "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
+        "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2014
+      }
+    ],
+    "parent_name": "Fejér county",
     "country": "HUN",
+    "codes": {
+      "ksh_jaras_2014": "083",
+      "ksh_settlements": "06114,06576,07269,13903,15972,16948,17525,28990,30650"
+    },
+    "aliases": [
+      "Polgárdi district (2013)"
+    ],
     "match_by": "shape_id",
-    "shape_id": "29324351B59079160651156"
+    "shape_id": "29324351B59079160651156",
+    "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district.",
+    "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "religion_year": 2022,
+    "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district.",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Ethnicity (nemzetiség), Census 2022: a person could declare up to two and every declaration is counted, so each share is the percentage of the population naming that ethnicity and the shares sum to more than 100. 'Not stated' is those who gave no answer. The thirteen domestic nationalities are named; all others are 'Other'. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district.",
+    "language_year": 2022,
+    "language_note": "Mother tongue, Census 2022: a person could name up to two, and every declaration is counted, so the shares sum to more than 100. Romani and Boyash (Beás) are counted apart; 'Not stated' is those who gave no answer. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district."
   },
   {
     "id": "HUN-KSH-HU120-BP",
