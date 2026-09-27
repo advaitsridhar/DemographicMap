@@ -1,4 +1,19 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020)
-  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14]
-  211.004: 1 cells; places ['Liechtenstein']
-liechtenstein: 211.004 has no rows for ['Vaduz', 'Triesen', 'Balzers', 'Triesenberg', 'Schaan', 'Planken', 'Eschen', 'Mauren', 'Gamprin', 'Ruggell', 'Schellenberg']; it has ['Liechtenstein']
+pxweb: Statistics Estonia (EST)
+  rahvastik/rahvastikunaitajad-ja-koosseis/rahvaarv-ja-rahvastiku-koosseis/RV0222U.PX
+    left out (named in drop=): 3 — 784 ..Tallinn, 793 ..Tartu city, unk County unknown
+    left out (the country itself): 1 — 00 Whole country
+    15 units, categories sum to the published total in each
+    ...and to 1,360,745 against a published national 1,360,745
+    withheld 45 Ida-Viru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 50 Jõgeva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 52 Järva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 56 Lääne county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 60 Lääne-Viru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 64 Põlva county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 68 Pärnu county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 71 Rapla county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 79 Tartu county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 81 Valga county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+    withheld 87 Võru county: its territory changed in 2017 (new county code); the drawn county is the pre-reform one, which estonia.py reads
+  wrote data/processed/estonia_county.json (6 kB)
+  4 records
