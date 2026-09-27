@@ -43,6 +43,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import USER_AGENT  # noqa: E402
 
 TIMEOUT = 60
+# A cookie jar: CYSTAT's site answers every page with a redirect to itself
+# until the session cookie it set is sent back.
+import http.cookiejar  # noqa: E402
+OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 MODES = ("head", "text", "grep", "links", "xls", "xlsrow", "zip", "px", "pxtree", "pxq", "cdx", "pdf")
 
 
@@ -59,7 +63,7 @@ def fetch(url: str, data: bytes | None = None, headers: dict | None = None,
     # waiting and asking again is what it expects, so a refusal is retried.
     for wait in (5, 20, 60, None):
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with OPENER.open(req, timeout=timeout) as resp:
                 body = resp.read()
                 if resp.headers.get("Content-Encoding") == "gzip":
                     import gzip
