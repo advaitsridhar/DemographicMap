@@ -742,6 +742,30 @@ def statfin_counts(body: dict[str, Any], area: str, country: str
     return counts, totals
 
 
+def withheld_cells(counts: dict[str, dict[str, float]], totals: dict[str, float],
+                   current: list[str]) -> dict[str, float]:
+    """{municipality: people in its withheld cells}.
+
+    A municipality's small background-country counts are withheld for
+    confidentiality, so its itemised countries fall a little short of its
+    published total. The shortfall is people of some withheld (small)
+    background: the caller counts it in "Other" and says so in the unit's note.
+    A shortfall larger than max(WITHHELD_SHARE of the total, WITHHELD_FLOOR) is
+    not suppression and stops the run, as do an excess and a missing total."""
+    out: dict[str, float] = {}
+    for muni in current:
+        got = counts.setdefault(muni, {})
+        if muni not in totals:
+            raise SystemExit(f"11rv {muni}: no total")
+        short = totals[muni] - sum(got.values())
+        if short < -0.5 or short > max(WITHHELD_SHARE * totals[muni], WITHHELD_FLOOR):
+            raise SystemExit(f"11rv {muni}: countries make {sum(got.values()):,.0f} of "
+                             f"{totals[muni]:,.0f}")
+        if short > 0.5:
+            out[muni] = short
+    return out
+
+
 def statfin_label(code: str, name: str) -> str | None:
     if code == "246":
         return "Finnish"
@@ -823,23 +847,7 @@ def finland() -> list[dict[str, Any]]:
         c, t = statfin_counts(body, area, country)
         counts.update(c)
         totals.update(t)
-    # A municipality's small background-country counts are withheld for
-    # confidentiality, so its itemised countries fall a little short of its
-    # published total. The shortfall is people of some withheld (small)
-    # background: it is counted in "Other" and said in the unit's note. A
-    # shortfall larger than max(WITHHELD_SHARE of the total, WITHHELD_FLOOR)
-    # is not suppression and stops the run, as does an excess.
-    withheld: dict[str, float] = {}
-    for muni in current:
-        got = counts.setdefault(muni, {})
-        if muni not in totals:
-            raise SystemExit(f"11rv {muni}: no total")
-        short = totals[muni] - sum(got.values())
-        if short < -0.5 or short > max(WITHHELD_SHARE * totals[muni], WITHHELD_FLOOR):
-            raise SystemExit(f"11rv {muni}: countries make {sum(got.values()):,.0f} of "
-                             f"{totals[muni]:,.0f}")
-        if short > 0.5:
-            withheld[muni] = short
+    withheld = withheld_cells(counts, totals, current)
     log(f"  11rv {year}: withheld small counts counted in 'Other' in {len(withheld)} "
         f"municipalities, {sum(withheld.values()):,.0f} people in all")
     national_people = sum(totals[c] for c in current)

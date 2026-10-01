@@ -75,11 +75,18 @@ SVK_YEAR = 2021
 SVK_TITLE = "Medlemmar i Svenska kyrkan i förhållande till folkmängd den 31.12.2021"
 SWEDEN_CHURCH = "Church of Sweden"
 SWEDEN_OUTSIDE = "Not a member of the national church"
-# A kommun's printed share may round its members against a population that
-# leaves out members of a parish with no territory (Karlskrona's admiralty
-# parish: 66.0% printed against 66.1% computed).
+# Each row prints two shares after its counts: the residents who are members
+# of the Church, in whatever parish ("Folkbokförda medlemmar inom
+# församlingen i % av folkmängden"), and the members of its own parishes
+# against its population ("Medlemmar i församlingen i % av folkmängden") --
+# the second is the counts' own ratio, rounded. They differ only where a
+# parish without territory counts members who live elsewhere (Karlskrona's
+# admiralty parish: 66.0% against 66.1%). The split of the counts must match
+# the second to rounding, or the first within PCT_SLACK when only it is printed.
+RATIO_SLACK = 0.06
 PCT_SLACK = 0.6
-ROW = re.compile(r"^(?P<name>.+?) (?P<kind>kommun|län) (?P<rest>\d.*)$")
+ROW = re.compile(r"^(?P<name>.+?) (?P<kind>kommun|län)(?: \(\d+\))? (?P<rest>\d.*)$")
+UNPLACED = "På kommunen skrivna "
 
 
 def numbers(groups: list[str]) -> int | None:
@@ -94,46 +101,58 @@ def numbers(groups: list[str]) -> int | None:
     return int("".join(groups))
 
 
-def population_and_members(rest: str) -> tuple[int, int]:
-    """The first two numbers of a row, told apart by the share printed after them.
+def percent(token: str) -> float | None:
+    found = re.fullmatch(r"(\d+),(\d)%", token)
+    return float(f"{found.group(1)}.{found.group(2)}") if found else None
 
-    The table prints thousands with a space, so "556 399 76,4%" could be one
+
+def population_and_members(rest: str) -> tuple[int, int, float]:
+    """The first two numbers of a row, told apart by the shares printed after
+    them, and the first share: the residents who are members, in whatever parish.
+
+    The table prints thousands with a space, so "556 399 71,8%" could be one
     number or two; it is the split whose members-over-population matches the
-    printed share, members never more than the population. Anything but one
-    such split stops the run."""
-    tokens = rest.split()
+    printed ratio, members never more than the population. Anything but one
+    such split stops the run. A leading code in brackets is passed over."""
+    tokens = re.sub(r"^\(\d+\)\s+", "", rest).split()
     groups = []
     for token in tokens:
         if not re.fullmatch(r"\d{1,3}", token):
             break
         groups.append(token)
-    following = tokens[len(groups)] if len(groups) < len(tokens) else ""
-    found = re.fullmatch(r"(\d+),(\d)%", following)
-    if not found:
+    shares_ = [percent(t) for t in tokens[len(groups):len(groups) + 2]]
+    if not shares_ or shares_[0] is None:
         raise SystemExit(f"svenska kyrkan: no share after the counts in {rest[:80]!r}")
-    pct = float(f"{found.group(1)}.{found.group(2)}")
+    residents = shares_[0]
+    ratio, slack = ((shares_[1], RATIO_SLACK) if len(shares_) > 1 and shares_[1] is not None
+                    else (residents, PCT_SLACK))
     fits = []
     for i in range(1, len(groups)):
         pop, members = numbers(groups[:i]), numbers(groups[i:])
         if pop and members is not None and members <= pop \
-                and abs(100 * members / pop - pct) <= PCT_SLACK:
+                and abs(100 * members / pop - ratio) <= slack:
             fits.append((pop, members))
     if len(fits) != 1:
         raise SystemExit(f"svenska kyrkan: {len(fits)} readings of {rest[:80]!r}: {fits}")
-    return fits[0]
+    return fits[0][0], fits[0][1], residents
 
 
-def svk_rows(lines: list[str]) -> tuple[dict[str, tuple[int, int]], dict[str, tuple[int, int]],
-                                          tuple[int, int] | None]:
-    """{kommun: (population, members)}, {län: ...} and the row of people
-    registered in a kommun without a property ("På kommunen skrivna")."""
-    kommuner: dict[str, tuple[int, int]] = {}
-    lan: dict[str, tuple[int, int]] = {}
+Row = tuple[int, int, float]
+
+
+def svk_rows(lines: list[str]) -> tuple[dict[str, Row], dict[str, Row], Row | None]:
+    """{kommun: (population, members, residents' share)}, {län: ...} and the
+    row of people registered in a kommun without a property ("På kommunen
+    skrivna"), which the table prints once, for the whole country."""
+    kommuner: dict[str, Row] = {}
+    lan: dict[str, Row] = {}
     unplaced_row = None
     for line in lines:
         line = " ".join(line.split())
-        if line.startswith("På kommunen skrivna "):
-            unplaced_row = population_and_members(line[len("På kommunen skrivna "):])
+        if line.startswith(UNPLACED):
+            if unplaced_row is not None:
+                raise SystemExit("svenska kyrkan: two rows of people without a property")
+            unplaced_row = population_and_members(line[len(UNPLACED):])
             continue
         found = ROW.match(line)
         if not found or "församling" in found.group("name"):
@@ -216,7 +235,7 @@ def sweden() -> list[dict[str, Any]]:
         f"{100 * worst[0]:.2f}% ({worst[1]})")
     if worst[0] > 0.03:
         raise SystemExit(f"svenska kyrkan: {worst[1]} is {100 * worst[0]:.1f}% off SCB's count")
-    total = sum(p for p, _ in lan.values()) + (nowhere[0] if nowhere else 0)
+    total = sum(row[0] for row in lan.values()) + (nowhere[0] if nowhere else 0)
     if abs(total - scb["00"]) > 0.0005 * scb["00"]:
         raise SystemExit(f"svenska kyrkan: the län and the unplaced make {total:,} against "
                          f"SCB's {scb['00']:,.0f}")
@@ -224,7 +243,12 @@ def sweden() -> list[dict[str, Any]]:
     bound = bind_kommuner(sv, sorted(scb_kommuner))
     records = []
     for name, code in sorted(code_of.items(), key=lambda kv: kv[1]):
-        pop, members = kommuner[name]
+        pop, members, residents = kommuner[name]
+        elsewhere = (f" Of the kommun's residents, {residents:.1f}% are members, in whatever "
+                     "parish; the count above is of the members of its own parishes, wherever "
+                     "they live -- the two differ where a parish without territory (Karlskrona's "
+                     "admiralty parish) has members in more than one kommun."
+                     if abs(residents - 100 * members / pop) >= 0.15 else "")
         records.append(record(
             f"SWE-SVK-{code}", sv[code], level="admin2", parent="SWE", country="SWE",
             parent_name=sv[code[:2]], codes={"scb": code}, match_by="shape_id",
@@ -240,7 +264,7 @@ def sweden() -> list[dict[str, Any]]:
                 "members of other faiths and of none alike -- is one group: no Swedish register "
                 "records religion, and the Church's is the only membership count published by "
                 "kommun. The population leaves out the few people registered in the kommun "
-                "without a property, whom SCB cannot place in a parish."),
+                "without a property, whom SCB cannot place in a parish." + elsewhere),
             sources=[{"field": "religion", "name": "Church of Sweden (Svenska kyrkan), "
                       f"members against population 31 December {SVK_YEAR}, counted by SCB",
                       "url": used, "year": SVK_YEAR}]))

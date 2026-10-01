@@ -305,6 +305,10 @@ def labels_religion(label: str) -> str:
             "Old Believers": "Old Believers (Orthodox)"}.get(bare, bare)
 
 
+# The most people a place's categories may miss its total by, whatever its size.
+PROTECTED = 20
+
+
 def composition(rows, place: str, var: str, total_code: str, skip: set[str],
                 relabel) -> dict[str, dict[str, float]]:
     """{place code: {label: count}}, the total under '__total__'; categories must make it."""
@@ -318,14 +322,16 @@ def composition(rows, place: str, var: str, total_code: str, skip: set[str],
     # The census tables' categories fall a few people short of their totals
     # in places -- Haabersti 41,691 of 41,694, Paldiski 4,077 of 4,085, a unit
     # of 320 by eleven -- which is the office's protection of small cells, and
-    # random, place by place. A place off by more than 1%, or fifteen people,
-    # is dropped and named; many of them would be a misread, and stop the run.
+    # random, place by place. The religion table, with the most small
+    # categories, loses the most: seventeen or eighteen people in three rural
+    # units of 779 to 1,236. A place off by more than 1%, or twenty people, is
+    # dropped and named; many of them would be a misread, and stop the run.
     off = []
     for code, counts in list(out.items()):
         if "_" in code:
             continue           # "Hiiu county rural municipalities" and the like: not used
         parts = sum(v for k, v in counts.items() if k != "__total__")
-        if abs(parts - counts["__total__"]) > max(15, 0.01 * counts["__total__"]):
+        if abs(parts - counts["__total__"]) > max(PROTECTED, 0.01 * counts["__total__"]):
             off.append(f"{code} ({parts:,.0f} of {counts['__total__']:,.0f})")
             del out[code]
     if len(off) > 0.05 * max(len(out), 1):
@@ -347,7 +353,7 @@ WHAT = {
 def census_block(field: str, table: str, counts: dict[str, float], total: float,
                  parts: list[str], year: int) -> dict[str, Any]:
     # The categories may miss the total by a few people (``composition``
-    # allows fifteen, or 1%): shares of the total would then not make 100,
+    # allows twenty, or 1%): shares of the total would then not make 100,
     # Alajõe's religions 103%, so they are shares of what the categories hold.
     held = sum(counts.values())
     return {

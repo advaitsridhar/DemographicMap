@@ -7,7 +7,8 @@ Nøtterøy and Tjøme, Hof, Lardal, Rissa and Leksvik are still their own
 (merged 1 January 2018) -- 426 kommuner in all. The layer has 424 polygons:
 five of them are small pieces of Frogn, Horten, Malvik and Nome drawn beside
 the kommune itself, and a few small island kommuner have no polygon; the run
-log names both. The admin1 layer is the eleven fylker of 2020-2023, three of
+log names both. Each piece gets a record saying why it has no figures
+(``piece_records``): SSB counts the kommune whole. The admin1 layer is the eleven fylker of 2020-2023, three of
 which (Viken, Vestfold og Telemark, Troms og Finnmark) were split again on 1
 January 2024 and so have no current figure at all.
 
@@ -346,6 +347,37 @@ def successors(codes: list[str], start: str, end: str) -> dict[str, str]:
             if ended is None}
 
 
+PIECE_FIELDS = ("population", "median_age", "sex_ratio", "religion", "ethnicity")
+
+
+def piece_records(pieces: list[dict[str, Any]], shapes: list[dict[str, Any]],
+                  bound: dict[str, str], names: dict[str, str]) -> list[dict[str, Any]]:
+    """A record for each small piece the boundary file draws beside a
+    kommune's own polygon (``split_pieces``), saying why it has no figures:
+    Statistics Norway counts the kommune whole, and its figures are on its
+    main polygon. A piece whose kommune is not bound stops the run."""
+    kommune_of = {sid: c for c, sid in bound.items()}
+    main = {(fold(map_name(s)), s.get("parent")): s["id"] for s in shapes
+            if s["id"] in kommune_of}
+    out = []
+    for n, piece in enumerate(sorted(pieces, key=lambda s: s["id"]), 1):
+        c = kommune_of.get(main.get((fold(map_name(piece)), piece.get("parent")), ""))
+        if c is None:
+            raise SystemExit(f"norway: the piece {piece['name']} [{piece['id']}] lies beside "
+                             "no bound kommune")
+        why = (f"This polygon is a small detached piece of {names[c]} kommune, which the "
+               "boundary file draws apart from the kommune's own polygon. Statistics Norway "
+               "counts the kommune whole, and its figures are shown on that polygon; none are "
+               "published for this piece alone, so none are given here.")
+        out.append(record(f"NOR-SSB-{VINTAGE}-{c}-piece-{n}", names[c], level="admin2",
+                          parent="NOR", country="NOR", codes={"ssb": c, "vintage": VINTAGE},
+                          match_by="shape_id", shape_id=piece["id"],
+                          **{f: gap(NOT_AVAILABLE, why) for f in PIECE_FIELDS}))
+    if out:
+        log(f"  pieces given a stated reason: {len(out)}")
+    return out
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
     log(f"norway: SSB 07459 and 12026 for the {VINTAGE} kommuner")
@@ -369,7 +401,8 @@ def main() -> int:
     for c in kommuner:
         forms = names[c] + [ALIASES[f] for f in names[c] if f in ALIASES]
         rows[c] = (next((f for f in forms if fold(f) in drawn), forms[0]), c[:2])
-    bound, _m, _l, _p = bind_rows("NOR", "admin2", rows, shape_name=map_name, aliases=ALIASES)
+    bound, _m, _l, pieces = bind_rows("NOR", "admin2", rows, shape_name=map_name,
+                                      aliases=ALIASES)
     labels = {s["id"]: s["name"] for s in shapes}
     church = membership(kommuner, VINTAGE)
 
@@ -461,6 +494,7 @@ def main() -> int:
             aliases=sorted({labels[sid], *names[c]} - {rows[c][0]}), **fields))
     if no_church:
         log(f"  no membership figures for {len(no_church)}: {no_church}")
+    records += piece_records(pieces, shapes, bound, {c: rows[c][0] for c in rows})
 
     # The fylker.
     admin1 = {fold(u["name"]): u for u in load_units("NOR", "admin1")}
