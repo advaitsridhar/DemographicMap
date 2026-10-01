@@ -1445,7 +1445,7 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
-    "id": "HRV-šibensko-kninska-opicina-pirovac-not-one-unit",
+    "id": "HRV-šibensko-kninska-opicina-pirovac",
     "level": "admin2",
     "name": "Opicina Pirovac",
     "parent": "HRV-šibensko-kninska",
@@ -1456,113 +1456,334 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 8042,
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
+      "value": 51.0,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
+      "value": 97.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 85.0,
+        "count": 6832
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.4,
+        "count": 517
+      },
+      {
+        "group": "No religion",
+        "pct": 2.9,
+        "count": 236
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5,
+        "count": 124
+      },
+      {
+        "group": "Agnostics and sceptics",
+        "pct": 1.1,
+        "count": 85
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.9,
+        "count": 72
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.8,
+        "count": 66
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6,
+        "count": 44
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 43
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.2,
+        "count": 17
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Croatian",
+        "pct": 96.4,
+        "count": 7752
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 39
+      },
+      {
+        "group": "German",
+        "pct": 0.5,
+        "count": 42
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 37
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.3,
+        "count": 28
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 28
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 21
+      },
+      {
+        "group": "Slovenian",
+        "pct": 0.3,
+        "count": 23
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2,
+        "count": 13
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Croatian",
+        "pct": 95.6,
+        "count": 7689
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.8,
+        "count": 66
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 53
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.5,
+        "count": 40
+      },
+      {
+        "group": "German",
+        "pct": 0.4,
+        "count": 36
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 30
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.3,
+        "count": 20
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 12
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2,
+        "count": 17
+      },
+      {
+        "group": "Regional affiliation",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.2,
+        "count": 18
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity/religion/language",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
+        "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
+        "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
+      }
+    ],
     "parent_name": "Šibenik-Knin",
     "country": "HRV",
     "match_by": "shape_id",
-    "shape_id": "41942358B56064565121242"
-  },
-  {
-    "id": "HRV-šibensko-kninska-opicina-muter-kornati-not-one-unit",
-    "level": "admin2",
-    "name": "Opicina Muter-Kornati",
-    "parent": "HRV-šibensko-kninska",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "sources": [],
-    "parent_name": "Šibenik-Knin",
-    "country": "HRV",
-    "match_by": "shape_id",
-    "shape_id": "41942358B86068104638384"
-  },
-  {
-    "id": "HRV-šibensko-kninska-otok-kornat-not-one-unit",
-    "level": "admin2",
-    "name": "Otok Kornat",
-    "parent": "HRV-šibensko-kninska",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "This polygon is not one municipality. The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as three polygons that cut Tisno in two: 'Opicina Pirovac' holds Pirovac, Tribunj and mainland Tisno, 'Opicina Muter-Kornati' the island of Murter with Tisno's villages Betina and Jezera, and 'Otok Kornat' the rest of Murter-Kornati. The four municipalities' sum is written once the three are drawn as one."
-    },
-    "sources": [],
-    "parent_name": "Šibenik-Knin",
-    "country": "HRV",
-    "match_by": "shape_id",
-    "shape_id": "41942358B73644152682265"
+    "shape_id": "41942358B56064565121242",
+    "population_note": "The boundary file draws Pirovac, Tisno, Tribunj and Murter-Kornati as this one polygon, labelled 'Opicina Pirovac'; it carries their sum.",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Ethnicity (narodnost), Popis 2021, one answer per person, voluntary. The census's residual answers (a regional affiliation, a religious affiliation given as an ethnicity, undistributed answers) and the people who did not declare or whose answer is unknown are kept as their own bars. Summed over Pirovac, Tisno, Tribunj and Murter-Kornati, the municipalities this polygon is.",
+    "religion_year": 2021,
+    "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars. Summed over Pirovac, Tisno, Tribunj and Murter-Kornati, the municipalities this polygon is.",
+    "language_year": 2021,
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept. Summed over Pirovac, Tisno, Tribunj and Murter-Kornati, the municipalities this polygon is.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-zagrebačka-grad-dugo-selo",

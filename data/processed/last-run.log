@@ -1,16 +1,17 @@
-fetch_factbook: syncing source
-  cloning https://github.com/factbook/factbook.json (shallow)
-  260 Factbook entities
-  no country index; building it from Natural Earth's admin-0 countries
-  fetched ne_10m_admin_0_countries.geojson (13.3 MB)
-  wrote data/raw/codes/country_index.json (77 kB)
-  note: at and as both map to AUS; keeping both, ids suffixed
-  note: cr and as both map to AUS; keeping both, ids suffixed
-  note: wq and um both map to UMI; keeping both, ids suffixed
-  note: bq and um both map to UMI; keeping both, ids suffixed
-  note: sv and jn both map to SJM; keeping both, ids suffixed
-  note: we and gz both map to PSE; keeping both, ids suffixed
-  note: ip and fr both map to FRA; keeping both, ids suffixed
-  10 entities without an ISO3 code (kept with GEC- ids): east-n-southeast-asia/pf, east-n-southeast-asia/pg, europe/ax, europe/dx, europe/ee, oceans/oo, oceans/xo, oceans/xq, oceans/zh, oceans/zn
-  wrote data/processed/admin0.json (879 kB)
-  260 records | 250 ISO3-matched | religion 222 | ethnicity 201 | ethnicity not-collected 10
+croatia: Popis 2021, counties and towns/municipalities
+  18,279,747 bytes
+  sheet 1. (ethnicity): 29 categories: ['Croats', 'Albanians', 'Austrians', 'Bosniacs', 'Bulgarians', 'Montenegrins', 'Czechs', 'Hungarians', 'Macedonians', 'Germans', 'Poles', 'Roma', 'Romanians', 'Russians', 'Ruthenians', 'Slovaks', 'Slovenians', 'Serbs', 'Italians', 'Turks', 'Ukrainians', 'Vlachs', 'Jews', 'Other', 'Regional affiliation', 'Declared religion', 'Not classified', 'Not declared', 'Unknown']
+  sheet 2. (religion): 12 categories: ['Catholics', 'Orthodox', 'Protestants', 'Other Christians', 'Muslims', 'Jews', 'Oriental religions', 'Other religions, movements and life philosophies', 'Agnostics and sceptics', 'Not religious and atheists', 'Not declared', 'Unknown']
+  sheet 4. (language): 26 categories: ['Croatian', 'Croato-Serbian', 'Albanian', 'Bosnian', 'Bulgarian', 'Montenegrin', 'Czech', 'Hungarian', 'Macedonian', 'German', 'Polish', 'Romani', 'Romanian', 'Russian', 'Ruthenian', 'Slovak', 'Slovenian', 'Serbian', 'Serbo-Croatian', 'Italian', 'Turkish', 'Ukrainian', 'Vlach', 'Hebrew', 'Other languages', 'Unknown']
+  sheet 20. (age and sex): 593 units, every total the same as sheet 1's
+  national median 45.4 from the counties' five-year groups (Eurostat, 1 January 2022: 45.4)
+  Otok Krk: 13,712, the sum of Krk, Punat, Baška, Vrbnik and Dobrinj
+  Grad Varaždinske Toplice: 7,226, the sum of Varaždinske Toplice and Ljubešćica
+  Općina Berek: 3,362, the sum of Berek and Ivanska
+  Općina Kapela: 7,258, the sum of Kapela, Rovišće and Zrinski Topolovac
+  Grad Benkovac: 12,104, the sum of Benkovac, Stankovci and Lišane Ostrovičke
+  Opicina Pirovac: 8,042, the sum of Pirovac, Tisno, Tribunj and Murter-Kornati
+  skipped 17 rows of type 'Gradska četvrt': not a town or municipality
+  {'admin1': 21, 'admin2': 543}
+  wrote data/processed/croatia_county.json (178 kB)
+  wrote data/processed/croatia_unit.json (3298 kB)
