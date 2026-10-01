@@ -72,7 +72,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, RAW, download, gap, http_get, lo
                       record, shares, write_json)
 from . import east_geo, uscb
 from .cod_ps_age import grouped_median
-from .nordic_common import check_national_median
+from .east_checks import check_median
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "ukraine_raion.json"
@@ -885,8 +885,8 @@ def main() -> int:
     # against Eurostat's for 1 January 2017 (from the Service's single years).
     used17 = [r for r in ages17.values() if r["level"] == 1 and r["total"]]
     if used17:
-        check_national_median("UA", 2017, grouped_median(list(add(used17)["groups"])),
-                              f"ukraine_raion: the {len(used17)} regions of 2017 together")
+        check_median("UA", 2017, grouped_median(list(add(used17)["groups"])),
+                     f"ukraine_raion: the {len(used17)} regions of 2017 together")
     placed = {r["shape_id"] for r in records if r["level"] == "admin2"}
     left = sorted(u["name"] for u in admin2 if u["id"] not in placed)
     log(f"  {len(members) - len(set(members) & set(refused))} polygons written from "

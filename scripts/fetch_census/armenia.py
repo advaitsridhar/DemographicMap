@@ -26,7 +26,7 @@ from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
-from .nordic_common import check_national_median
+from .east_checks import check_median
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "armenia.json"
@@ -158,8 +158,8 @@ def main() -> int:
     # groups for that date, which are Armstat's row for row and put the
     # middle person at 39.1; that year is not this sheet's, so it is said here
     # and not checked against.
-    check_national_median("AM", when.year, grouped_median(sorted(table["RA"]["total"]["groups"])),
-                          "armenia: the republic")
+    check_median("AM", when.year, grouped_median(sorted(table["RA"]["total"]["groups"])),
+                 "armenia: the republic")
 
     admin1 = {u["name"]: u for u in json.loads((SITE / "admin1" / "ARM.units.json").read_text())}
     source = SOURCE.format(year=when.year)
