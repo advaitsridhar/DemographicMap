@@ -1,11 +1,14 @@
-  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
-  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
-  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
-  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
-  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
-  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
-  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
-  georgia: the country's 2014 census ages: national median 37.7 against Eurostat's 37.4 for 1 January 2015 (+0.30 years, bound 0.3)
-georgia: the country's 2014 census ages: the national median recomputed from the single years, 37.7, is +0.30 years off Eurostat's 37.4 for 1 January 2015
+  01.01.2026: 11 marzes make the republic's 3,096,896; every block's groups make its total
+  armenia: the republic: national median 39.9 from five-year groups; Eurostat publishes none to check it against (Eurostat has no median for AM on 1 January 2026 yet (latest: 2025); Eurostat has no median for AM on 1 January 2025 yet (latest: 2025))
+  Yerevan: 1,147,664, median 42.1, 82.0 men per 100 women
+  Aragatsotn: 136,138, median 38.8, 100.2 men per 100 women
+  Ararat: 270,607, median 37.5, 97.5 men per 100 women
+  Armavir: 270,385, median 38.4, 96.7 men per 100 women
+  Gegharkunik: 217,364, median 37.7, 100.7 men per 100 women
+  Lori: 229,462, median 39.9, 88.7 men per 100 women
+  Kotayk: 297,222, median 38.3, 91.5 men per 100 women
+  Shirak: 242,292, median 39.0, 91.3 men per 100 women
+  Syunik: 118,259, median 39.8, 95.2 men per 100 women
+  Vayots Dzor: 49,489, median 39.9, 95.1 men per 100 women
+  Tavush: 118,014, median 39.1, 95.1 men per 100 women
+  wrote data/processed/armenia.json (30 kB)
