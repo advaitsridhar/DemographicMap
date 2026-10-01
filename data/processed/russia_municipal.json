@@ -9423,7 +9423,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 30532,
+      "value": 25501,
       "year": 2021,
       "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
     },
@@ -9432,7 +9432,7 @@
       "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
     },
     "sex_ratio": {
-      "value": 103.9,
+      "value": 94.6,
       "unit": "males_per_100_females",
       "year": 2021,
       "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
@@ -9460,8 +9460,8 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B1644674550414",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Лабытнанги.",
-    "sex_ratio_note": "15,558 men and 14,974 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Лабытнанги."
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Лабытнанги. Kharp (5,031 people) is not in this figure, though the census counts it in this unit: it was part of Priuralsky District until 23 April 2021, when it was joined to the Labytnangi urban okrug, and the boundary file still draws it inside Priuralsky District, so its own row in the census's table is counted there.",
+    "sex_ratio_note": "12,399 men and 13,102 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Лабытнанги. Kharp (5,031 people) is not in this figure, though the census counts it in this unit: it was part of Priuralsky District until 23 April 2021, when it was joined to the Labytnangi urban okrug, and the boundary file still draws it inside Priuralsky District, so its own row in the census's table is counted there."
   },
   {
     "id": "RUS-VPN2020-50074027B16590534350990",
@@ -27402,58 +27402,6 @@
     "shape_id": "50074027B29341937409288",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Обь.",
     "sex_ratio_note": "14,958 men and 15,487 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Обь."
-  },
-  {
-    "id": "RUS-VPN2020-50074027B29364235379676",
-    "level": "admin2",
-    "name": "городской округ Аргун",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 59615,
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "value": 98.6,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
-        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
-        "license": "Rosstat open data",
-        "year": 2021
-      }
-    ],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B29364235379676",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Аргун.",
-    "sex_ratio_note": "29,591 men and 30,024 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Аргун."
   },
   {
     "id": "RUS-VPN2020-50074027B29408552391691",
@@ -61995,7 +61943,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 9860,
+      "value": 14891,
       "year": 2021,
       "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
     },
@@ -62004,7 +61952,7 @@
       "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
     },
     "sex_ratio": {
-      "value": 96.3,
+      "value": 116.0,
       "unit": "males_per_100_females",
       "year": 2021,
       "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
@@ -62032,8 +61980,8 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B56233113775442",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Муниципальный округ Приуральский район.",
-    "sex_ratio_note": "4,837 men and 5,023 women; Everyone the 2020 census counted (reference date 1 October 2021) in Муниципальный округ Приуральский район."
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Муниципальный округ Приуральский район. With Kharp (5,031 people), from its own row in the census's table: it was part of Priuralsky District until 23 April 2021, when it was joined to the Labytnangi urban okrug, and the boundary file still draws it inside Priuralsky District.",
+    "sex_ratio_note": "7,996 men and 6,895 women; Everyone the 2020 census counted (reference date 1 October 2021) in Муниципальный округ Приуральский район. With Kharp (5,031 people), from its own row in the census's table: it was part of Priuralsky District until 23 April 2021, when it was joined to the Labytnangi urban okrug, and the boundary file still draws it inside Priuralsky District."
   },
   {
     "id": "RUS-VPN2020-50074027B56261269840227",
@@ -66350,58 +66298,6 @@
     "shape_id": "50074027B59167521890578",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Валуйский городской округ.",
     "sex_ratio_note": "33,096 men and 32,857 women; Everyone the 2020 census counted (reference date 1 October 2021) in Валуйский городской округ."
-  },
-  {
-    "id": "RUS-VPN2020-50074027B59167920748755",
-    "level": "admin2",
-    "name": "Achkhoy-Martanovsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 97298,
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "value": 97.6,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
-        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
-        "license": "Rosstat open data",
-        "year": 2021
-      }
-    ],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B59167920748755",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Ачхой-Мартановский муниципальный район.",
-    "sex_ratio_note": "48,047 men and 49,251 women; Everyone the 2020 census counted (reference date 1 October 2021) in Ачхой-Мартановский муниципальный район."
   },
   {
     "id": "RUS-VPN2020-50074027B59238589503343",
@@ -99580,58 +99476,6 @@
     "sex_ratio_note": "2,188 men and 2,139 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ поселок Видяево."
   },
   {
-    "id": "RUS-VPN2020-50074027B84914409766003",
-    "level": "admin2",
-    "name": "Groznensky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 84348,
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "value": 94.9,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
-        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
-        "license": "Rosstat open data",
-        "year": 2021
-      }
-    ],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B84914409766003",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Грозненский муниципальный район.",
-    "sex_ratio_note": "41,070 men and 43,278 women; Everyone the 2020 census counted (reference date 1 October 2021) in Грозненский муниципальный район."
-  },
-  {
     "id": "RUS-VPN2020-50074027B84921708867300",
     "level": "admin2",
     "name": "Krasnozorensky District",
@@ -106286,58 +106130,6 @@
     "shape_id": "50074027B8978578155052",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Тигильский муниципальный район.",
     "sex_ratio_note": "1,915 men and 1,801 women; Everyone the 2020 census counted (reference date 1 October 2021) in Тигильский муниципальный район."
-  },
-  {
-    "id": "RUS-VPN2020-50074027B89871819113429",
-    "level": "admin2",
-    "name": "Urus-Martanovsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 166070,
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "value": 99.6,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
-        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
-        "license": "Rosstat open data",
-        "year": 2021
-      }
-    ],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B89871819113429",
-    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Урус-Мартановский муниципальный район.",
-    "sex_ratio_note": "82,887 men and 83,183 women; Everyone the 2020 census counted (reference date 1 October 2021) in Урус-Мартановский муниципальный район."
   },
   {
     "id": "RUS-VPN2020-50074027B89987768012006",
@@ -119483,6 +119275,45 @@
     "shape_id": "50074027B27866786044045"
   },
   {
+    "id": "RUS-VPN2020-50074027B29364235379676",
+    "level": "admin2",
+    "name": "городской округ Аргун",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Chechen-Aul (9,208 people), which the census counts in the city of Argun with Berdykel (8,346 people, whom GeoNames cannot place), lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Chechen-Aul (9,208 people), which the census counts in the city of Argun with Berdykel (8,346 people, whom GeoNames cannot place), lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B29364235379676"
+  },
+  {
     "id": "RUS-VPN2020-50074027B31438457510607",
     "level": "admin2",
     "name": "Roshal urban okrug",
@@ -120029,6 +119860,45 @@
     "shape_id": "50074027B57730030228269"
   },
   {
+    "id": "RUS-VPN2020-50074027B59167920748755",
+    "level": "admin2",
+    "name": "Achkhoy-Martanovsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Kulary (5,918 people), which the census counts in Achkhoy-Martanovsky District, lies inside the map's Groznensky District; Bamut (5,838 people), which the census counts in the new Sernovodsky District, lies inside the map's Achkhoy-Martanovsky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Kulary (5,918 people), which the census counts in Achkhoy-Martanovsky District, lies inside the map's Groznensky District; Bamut (5,838 people), which the census counts in the new Sernovodsky District, lies inside the map's Achkhoy-Martanovsky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B59167920748755"
+  },
+  {
     "id": "RUS-VPN2020-50074027B63283607391559",
     "level": "admin2",
     "name": "Vyshnevolotsky District",
@@ -120183,6 +120053,84 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B83273775031724"
+  },
+  {
+    "id": "RUS-VPN2020-50074027B84914409766003",
+    "level": "admin2",
+    "name": "Groznensky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Starye Atagi (14,280 people), which the census counts in Urus-Martanovsky District, lies inside the map's Groznensky District; Kulary (5,918 people), which the census counts in Achkhoy-Martanovsky District, lies inside the map's Groznensky District; Chechen-Aul (9,208 people), which the census counts in the city of Argun with Berdykel (8,346 people, whom GeoNames cannot place), lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Starye Atagi (14,280 people), which the census counts in Urus-Martanovsky District, lies inside the map's Groznensky District; Kulary (5,918 people), which the census counts in Achkhoy-Martanovsky District, lies inside the map's Groznensky District; Chechen-Aul (9,208 people), which the census counts in the city of Argun with Berdykel (8,346 people, whom GeoNames cannot place), lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B84914409766003"
+  },
+  {
+    "id": "RUS-VPN2020-50074027B89871819113429",
+    "level": "admin2",
+    "name": "Urus-Martanovsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Starye Atagi (14,280 people), which the census counts in Urus-Martanovsky District, lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2020 census's unit and this polygon are not the same ground: Starye Atagi (14,280 people), which the census counts in Urus-Martanovsky District, lies inside the map's Groznensky District. The census's figure for the unit would describe a different area, and the change cannot be undone from its rows, so none is written."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B89871819113429"
   },
   {
     "id": "RUS-VPN2020-50074027B9105763704567",
