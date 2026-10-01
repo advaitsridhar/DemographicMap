@@ -1,619 +1,86 @@
-== r18_swe_walk
-  BE0101A [l] Number of inhabitants
-    FolkmangdDistriktCKM [t] Population by district, Landscape or Part of the country by sex. Year 2025
-    FolkmangdDistrikt [t] Population by district, Landscape or Part of the country by sex. Year 2015 - 2024
-  BE0101G [l] Summary of vital events
-    ManadFoddDodCKM [t] Births and deaths per month by sex. Year 2025
-    ManadFoddDod [t] Births and deaths per month by sex. Year 1851 - 2024
-  BE0101H [l] Live births
-    FoddaKCKM [t] Births by region, Mother’s age and child’s sex. Year 2025
-  title: Live births, number by region, age of the Mother, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'AlderModer' (age of the Mother): 56 values
-      TotSA=total, all ages; -14=–14 years; 15=15 years; 15-19=15–19 years; 15-24=15–24 years; 16=16 years ... TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages; us=data not available; US10=data not available; US5=data not available
-      code lengths {2: 35, 3: 3, 4: 5, 5: 13}; prefixes {'': 46, '-': 3, 'TOT': 3, 'US': 2, 'TotSA': 1, 'us': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      00000863=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    FoddaK [t] Births by region, Mother’s age and child’s sex.  Year 1968 - 2024
-  title: Live births, number by region, age of the Mother, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'AlderModer' (age of the Mother) [elimination]: 38 values
-      -14=–14 years; 15=15 years; 16=16 years; 17=17 years; 18=18 years; 19=19 years ... 46=46 years; 47=47 years; 48=48 years; 49+=49+ years; tot=total; us=data not available
-      code lengths {2: 35, 3: 3}; prefixes {'': 35, '-': 1, 'tot': 1, 'us': 1}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101E2=Number
-  var 'Tid' (year) [time]: 57 values
-      1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 57}; prefixes {'': 57}
-    FodperFodCKM [t] Number of born children by sex, mother´s age and number of children per birth. Year 2025
-    MedelAlder1 [t] Mean age at birth of child by live-birth order, region and sex. Year 2000 - 2025
-  title: Mean age at birth of the child, number by region, Live-birth order, parent, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'BarnOrdning' (Live-birth order) [elimination]: 4 values
-      1=First child; 2=Second child; 3=Third child or more; Tot=Total
-  var 'Foralder' (parent): 2 values
-      1=fathers; 2=mothers
-  var 'ContentsCode' (observations): 1 values
-      000001J3=Number
-  var 'Tid' (year) [time]: 26 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 26}; prefixes {'': 26}
-    FodelstalHVD [t] Crude birth rate. The ratio of the number of live births to the average population by region. Year 2010 - 2025
-  title: The ratio of the number of live births to the average population  by region, observations and year
-  var 'Region' (region) [elimination]: 31 values
-      00=Sweden; SE00=Sweden; SE11=Stockholm; SE110=Stockholm county; SE12=East-Central Sweden; SE121=Uppsala county ... SE32=Central Norrland; SE321=Västernorrland county; SE322=Jämtland county; SE33=Upper Norrland; SE331=Västerbotten county; SE332=Norrbotten county
-      code lengths {2: 1, 4: 9, 5: 21}; prefixes {'SE': 30, '': 1}
-      /^(0114|0180|01|00) /: 1 -- 00=Sweden
-  var 'ContentsCode' (observations): 1 values
-      0000070A=The ratio of the number of live births to the average population 
-  var 'Tid' (year) [time]: 16 values
-      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 16}; prefixes {'': 16}
-  BE0101I [l] Deaths
-    DodaManadRegCKM [t] Deaths per month by region, Region of birth, age and sex. Year 2025
-  title: Deaths per month by region, region of birth, age, sex, month, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Fodelseregion' (region of birth): 3 values
-      samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-      ALL: samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-  var 'Alder' (age): 6 values
-      TotSA=total, all ages; 0-34=0–34 years; 35-69=35–69 years; 70-79=70–79 years; 80-89=80–89 years; 90+=90+ years
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'Manad' (month): 14 values
-      00=Whole year; 01=January; 02=February; 03=March; 04=April; 05=May ... 08=August; 09=September; 10=October; 11=November; 12=December; 90=Unknown
-      code lengths {2: 14}; prefixes {'': 14}
-      /^(0114|0180|01|00) /: 2 -- 00=Whole year; 01=January
-  var 'ContentsCode' (observations): 2 values
-      0000088E=Age at end of year; 0000088F=Age at death
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    DodaManadReg [t] Deaths per month by region, Region of birth, age and sex. Year 2000 - 2024
-  title: Deaths per month by region, region of birth, age, sex, month, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Fodelseregion' (region of birth) [elimination]: 2 values
-      09=born in Sweden; 11=Foreign-born
-      ALL: 09=born in Sweden; 11=Foreign-born
-  var 'Alder' (age) [elimination]: 6 values
-      0-34=0–34 years; 35-64=35–64 years; 65-74=65–74 years; 75-84=75–84 years; 85+=85+ years; totalt=total
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'Manad' (month) [elimination]: 13 values
-      01=January; 02=February; 03=March; 04=April; 05=May; 06=June ... 08=August; 09=September; 10=October; 11=November; 12=December; 90=Unknown
-      code lengths {2: 13}; prefixes {'': 13}
-      /^(0114|0180|01|00) /: 1 -- 01=January
-  var 'ContentsCode' (observations): 2 values
-      000005JV=Age at end of year; 000005JU=Age at death
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    DodaFodelsearKCKM [t] Deaths by region, age (the year of birth) and sex.  Year 2025
-  title: Deaths, number by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000008FN=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    DodaFodelsearK [t] Deaths by region, age (the year of birth) and sex. Year 1968 - 2024
-  title: Deaths, number by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 102 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years; tot=total
-      code lengths {1: 10, 2: 90, 3: 1, 4: 1}; prefixes {'': 101, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101D8=Number
-  var 'Tid' (year) [time]: 57 values
-      1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 57}; prefixes {'': 57}
-    LevandeFodda [t] Live births, stillbirths and infant mortality rates by sex.Year 1749 - 2025
-    DodFoddaAlderMorK1 [t] Stillborn by region, age of the mother and sex. Year 2000 - 2025
-  title: Stillborn, number by region, age of the Mother, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'AlderModer' (age of the Mother) [elimination]: 8 values
-      -17=–17 years; 18-19=18–19 years; 20-24=20–24 years; 25-29=25–29 years; 30-34=30–34 years; 35-39=35–39 years; 40-44=40–44 years; 45+=45 year and older
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101AR=Number
-  var 'Tid' (year) [time]: 26 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 26}; prefixes {'': 26}
-    Medellivsl [t] Life expectancy at birth by region and sex 1998-2002 - 2021-2025
-  title: Life expectancy by region, sex, observations and period
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Kon' (sex): 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000000NH=Number
-  var 'Tid' (period) [time]: 24 values
-      1998-2002=1998-2002; 1999-2003=1999-2003; 2000-2004=2000-2004; 2001-2005=2001-2005; 2002-2006=2002-2006; 2003-2007=2003-2007 ... 2016-2020=2016-2020; 2017-2021=2017-2021; 2018-2022=2018-2022; 2019-2023=2019-2023; 2020-2024=2020-2024; 2021-2025=2021-2025
-      code lengths {9: 24}; prefixes {'': 24}
-  BE0101J [l] Migration - internal and external
-    FlyttFodRegCKM [t] Migration by region of birth, region, age and sex.  Year 2025
-  title: Migration by region, age, sex, region of birth, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'Fodelseregion' (region of birth): 3 values
-      samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-      ALL: samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-  var 'ContentsCode' (observations): 12 values
-      0000087L=All in-migrations; 0000087M=All out-migrations; 0000087I=In-migrations from other municipalities within the county; 0000087J=In-migrations from other counties in Sweden; 0000087N=Out-migrations to other municipalities within the county; 0000087O=Out-migrations to other counties in Sweden; 0000087K=Immigrations; 0000087P=Emigrations; 0000087G=Excess of migration; 0000087E=Net migration within county; 0000087F=Net migration other counties; 0000087H=Excess of immigration
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    FlyttFodReg [t] Migration by region of birth, region, age and sex. Year 2002 - 2024
-  title: Migration by region, age, sex, region of birth, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 102 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years; tot=total
-      code lengths {1: 10, 2: 90, 3: 1, 4: 1}; prefixes {'': 101, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'Fodelseregion' (region of birth) [elimination]: 2 values
-      09=born in Sweden; 11=Foreign-born
-      ALL: 09=born in Sweden; 11=Foreign-born
-  var 'ContentsCode' (observations): 12 values
-      000001IB=All in-migrations; 000001E4=All out-migrations; 000001E7=In-migrations from other municipalities within the county; 000001E8=In-migrations from other counties in Sweden; 000001EA=Out-migrations to other municipalities within the county; 000001E9=Out-migrations to other counties in Sweden; 000001EB=Immigrations; 000001EC=Emigrations; 000001ED=Excess of migration; 000001EE=Net migration within county; 000001J5=Net migration other counties; 000001J6=Excess of immigration
-  var 'Tid' (year) [time]: 23 values
-      2002=2002; 2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 23}; prefixes {'': 23}
-    ImmiEmiFodCKM [t] Immigrations and emigrations by country of birth and sex. Year 2025
-    ImmiEmiFod [t] Immigrations and emigrations by country of birth and sex. Year 2000 - 2024
-    ImmiCKM [t] Immigrations by region, country of birth and sex. Year 2025
-  title: Immigrations by region, country of birth, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Fodelseland' (country of birth) [elimination]: 219 values
-      TOT=total; TotRL=all regions of birth incl. Sweden; 010=Sweden; OFR=unknown region of birth; AF=Afghanistan; AFR=Africa ... YE=Yemen; YU=Yugoslavia; ZM=Zambia; ZW=Zimbabwe; SF1500=other countries of birth; ÖOF=unknown country of birth
-      code lengths {2: 207, 3: 6, 4: 1, 5: 2, 6: 1, 8: 1, 10: 1}; prefixes {'': 2, 'TOT': 1, 'TotRL': 1, 'OFR': 1, 'AF': 1, 'AFR': 1, 'AL': 1, 'DZ': 1}
-      ALL: TOT=total; TotRL=all regions of birth incl. Sweden; 010=Sweden; OFR=unknown region of birth; AF=Afghanistan; AFR=Africa; AL=Albania; DZ=Algeria; AD=Andorra; AO=Angola; AI=Anguilla; AG=Antigua and Barbuda; AR=Argentina; AM=Armenia; ASI=Asia; AU=Australia; AT=Austria; AZ=Azerbaijan; BS=Bahamas; BH=Bahrain; BD=Bangladesh; BB=Barbados; BY=Belarus; BE=Belgium; BZ=Belize; BJ=Benin; BM=Bermuda; BT=Bhutan; BO=Bolivia; BA=Bosnia and Herzegovina; BW=Botswana; BR=Brazil; VG=British Virgin Islands; BN=Brunei; BG=Bulgaria; BF=Burkina Faso; BI=Burundi; KH=Cambodia; CM=Cameroon; CA=Canada; CV=Cape Verde; CF=Central African Republic; TD=Chad; CL=Chile; CN=China; CO=Colombia; KM=Comoros; CG=Congo, the Republic of the; CR=Costa Rica; CI=Cote d´Ivoire; HR=Croatia; CU=Cuba; CY=Cyprus; CZ=Czech Republic; QT=Czechoslovakia; CD=Democratic Republic of the Congo; DK=Denmark; DJ=Djibouti; DM=Dominica; DO=Dominican Republic; EC=Ecuador; EG=Egypt; SV=El Salvador; GQ=Equatorial Guinea; ER=Eritrea; EE=Estonia; SZ=Eswatini; ET=Ethiopia; EUexNord=EU excl. the Nordic countries; EurExEUNor=Europe excl. EU and the Nordic countries; FJ=Fiji; FI=Finland; FR=France; GA=Gabon; GM=Gambia; GZ=Gaza Strip; GE=Georgia; DE=Germany; GH=Ghana; GI=Gibraltar; GR=Greece; GD=Grenada; GT=Guatemala; GN=Guinea; GW=Guinea-Bissau; GY=Guyana; HT=Haiti; HN=Honduras; HK=Hong Kong; HU=Hungary; IS=Iceland; IN=India; ID=Indonesia; IR=Iran (Islamic Republic of); IQ=Iraq; IE=Ireland; IL=Israel; IT=Italy; JM=Jamaica; JP=Japan; JO=Jordan; KZ=Kazakhstan; KE=Kenya; NL=Kingdom of the Netherlands ; KI=Kiribati; KP=Korea, Democratic People´s Republic of; KR=Korea, Republic of Korea; XK=Kosovo; KW=Kuwait; KG=Kyrgyzstan; LA=Lao People´s Democratic Republic; LV=Latvia; LB=Lebanon; LS=Lesotho; LR=Liberia; LY=Libyan Arab Jamahiriya; LI=Liechtenstein; LT=Lithuania; LU=Luxembourg; MG=Madagascar; MW=Malawi; MY=Malaysia; MV=Maldives; ML=Mali; MT=Malta; MH=Marshall Islands; MR=Mauritania; MU=Mauritius; MX=Mexico; FM=Micronesia; MZ=Moçambique; MD=Moldova, Republic of; MC=Monaco; MN=Mongolia; ME=Montenegro; MA=Morocco; MM=Myanmar; NA=Namibia; NR=Nauru; NP=Nepal; NZ=New Zealand; NI=Nicaragua; NE=Niger; NG=Nigeria; MK=North Macedonia; NO=Norway; NSAOS=North and South America, Oceania, Soviet Union; OM=Oman; PK=Pakistan; PW=Palau; PS=Palestinian territory, occupied; PA=Panama; PG=Papua New Guinea; PY=Paraguay; PE=Peru; PH=Philippines; PL=Poland; PT=Portugal; QA=Qatar; RO=Romania; RU=Russian Federation; RW=Rwanda; KN=Saint Kitts and Nevis; LC=Saint Lucia; VC=Saint Vincent and the Grenadines; WS=Samoa; SM=San Marino; ST=Sao Tome and Principe; SA=Saudi Arabia; SN=Senegal; RS=Serbia; CS=Serbia and Montenegro; SC=Seychelles; SL=Sierra Leone; SG=Singapore; SK=Slovakia; SI=Slovenia; SB=Solomon Islands; SO=Somalia; ZA=South Africa; SS=South Sudan; SU=Soviet Union; ES=Spain; LK=Sri Lanka; SD=Sudan; SR=Suriname; SE=Sweden; CH=Switzerland; SY=Syrian Arab Republic; TJ=Tadzjikistan; TW=Taiwan; TZ=Tanzania, United Republic of; TH=Thailand; NEXS=The Nordic countries, excluding Sweden; TL=Timor-Leste; TG=Togo; TO=Tonga; TT=Trinidad and Tobago; TN=Tunisia; TM=Turkmenistan; TV=Tuvalu; TR=Türkiye; UG=Uganda; UA=Ukraine; AE=United Arab Emirates; GB=United Kingdom; US=United States of America; UY=Uruguay; UZ=Uzbekistan; VU=Vanuatu; VA=Vatican City; VE=Venezuela; VN=Viet Nam; YE=Yemen; YU=Yugoslavia; ZM=Zambia; ZW=Zimbabwe; SF1500=other countries of birth; ÖOF=unknown country of birth
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000008E4=Immigrations
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    ImmiEmiMedbCKM [t] Immigrations and emigrations by country of citizenship and sex. Year 2025
-    ImmiEmiMedb [t] Immigrations and emigrations by country of citizenship and sex. Year 2000 - 2024
-    ImmiEmiFlyttNCKM [t] Immigrations and emigrations by country of emi-/immigration, region of birth, age and sex Year 2025
-  title: Immigrations and emigrations by country of emi-/immigration, region of birth, age, sex, observations and year
-  var 'UtInFlyttnLand' (country of emi-/immigration) [elimination]: 204 values
-      TOT=total; AF=Afghanistan; AL=Albania; DZ=Algeria; AD=Andorra; AO=Angola ... VE=Venezuela; VN=Viet Nam; YE=Yemen; YU=Yugoslavia; ZM=Zambia; ZW=Zimbabwe
-      code lengths {2: 202, 3: 1, 4: 1}; prefixes {'TOT': 1, 'AF': 1, 'AL': 1, 'DZ': 1, 'AD': 1, 'AO': 1, 'AI': 1, 'AG': 1}
-  var 'Fodelselandgrupp' (region of birth) [elimination]: 4 values
-      SAMT2=total; MigL=Country of migration; SWE=Sweden; Ovr=Other countries incl. unknown
-      ALL: SAMT2=total; MigL=Country of migration; SWE=Sweden; Ovr=Other countries incl. unknown
-  var 'Alder' (age): 4 values
-      TotSA=total, all ages; -19=0–19 years; 20-69=20–69 years; 70+=70+ years
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 3 values
-      0000087C=Immigrations; 0000087B=Emigrations; 0000087D=Net Migration
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    ImmiEmiFlyttN [t] Immigrations and emigrations by country of emi-/immigration, region of birth, age and sex. Year 2000 - 2024
-  title: Immigrations and emigrations by country of emi-/immigration, region of birth, age, sex, observations and year
-  var 'UtInFlyttnLand' (country of emi-/immigration) [elimination]: 204 values
-      TOT=total; AF=Afghanistan; AL=Albania; DZ=Algeria; AD=Andorra; AO=Angola ... VE=Venezuela; VN=Viet Nam; YE=Yemen; YU=Yugoslavia; ZM=Zambia; ZW=Zimbabwe
-      code lengths {2: 202, 3: 1, 4: 1}; prefixes {'TOT': 1, 'AF': 1, 'AL': 1, 'DZ': 1, 'AD': 1, 'AO': 1, 'AI': 1, 'AG': 1}
-  var 'Fodelselandgrupp' (region of birth) [elimination]: 4 values
-      SAMT2=total; MigL=Country of migration; SWE=Sweden; Ovr=Other countries incl. unknown
-      ALL: SAMT2=total; MigL=Country of migration; SWE=Sweden; Ovr=Other countries incl. unknown
-  var 'Alder' (age) [elimination]: 4 values
-      SAMA=total; 0-19=0–19 years; 20-64=20–64 years; 65+=65+ years
-  var 'Kon' (sex) [elimination]: 3 values
-      1+2=total; 2=women; 1=men
-  var 'ContentsCode' (observations): 3 values
-      000005TU=Immigrations; 000005TT=Emigrations; 000005TV=Net Migration
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    ImmibosattmedbCKM [t] Immigrations (except citizens from Nordic countries) by grounds for settlement, country of citizenship and sex.  Year 2025
-    ImmiBosattMedb [t] Immigrations (except citizens from Nordic countries) by grounds for settlement, country of citizenship and sex. Year 2004 - 2024
-    GFBGrovCKM [t] Immigrations (except citizens from Nordic countries) by grounds for settlement (grouped), country of citizenship, age and sex.  Year 2025
-    GFBGrov [t] Immigrations (except citizens from Nordic countries) by grounds for settlement (grouped), country of citizenship, age and sex. Year 2004 - 2024
-    ImmiBosatt [t] Immigrations (except citizens from Nordic countries) by grounds for settlement, birth and sex. Year 2001 - 2010
-  BE0101D [l] Mean population
-    MedelfolkFodarCKM [t] Mean population (by year of birth) by region, age and sex.  Year 2025
-  title: Mean population (by year of birth) by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000008FP=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    MedelfolkFodelsear [t] Mean population (by year of birth) by region, age and sex. Year 2006 - 2024
-  title: Mean population (by year of birth) by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 102 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years; tot=total
-      code lengths {1: 10, 2: 90, 3: 1, 4: 1}; prefixes {'': 101, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101A5=Number
-  var 'Tid' (year) [time]: 19 values
-      2006=2006; 2007=2007; 2008=2008; 2009=2009; 2010=2010; 2011=2011 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 19}; prefixes {'': 19}
-  BE0101E [l] Foreign-born persons
-    FodelselandArKCKM [t] Population by country of birth, age and sex. Year 2025
-    FodelselandArK [t] Population by country of birth, age and sex. Year 2000 - 2024
-    FolkmRegFlandKCKM [t] Population by region, country of birth and sex.  Year 2025
-  title: Population, number by region, region of birth, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Fodelseregion' (region of birth): 189 values
-      TOTfod=All birth countries; AF=Afghanistan; AL=Albania; DZ=Algeria; AO=Angola; AR=Argentina ... VN=Viet Nam; ZM=Zambia; ZW=Zimbabwe; AT=Austria; ÖOF=unknown country of birth; OVFOD=other countries
-      code lengths {2: 186, 3: 1, 5: 1, 6: 1}; prefixes {'TOTfod': 1, 'AF': 1, 'AL': 1, 'DZ': 1, 'AO': 1, 'AR': 1, 'AM': 1, 'AU': 1}
-      ALL: TOTfod=All birth countries; AF=Afghanistan; AL=Albania; DZ=Algeria; AO=Angola; AR=Argentina; AM=Armenia; AU=Australia; AZ=Azerbaijan; BS=Bahamas; BH=Bahrain; BD=Bangladesh; BB=Barbados; BY=Belarus; BE=Belgium; BZ=Belize; BJ=Benin; BM=Bermuda; BT=Bhutan; BO=Bolivia; BA=Bosnia and Herzegovina; BW=Botswana; BR=Brazil; BG=Bulgaria; BF=Burkina Faso; BI=Burundi; CF=Central African Republic; CL=Chile; CO=Colombia; CR=Costa Rica; CY=Cyprus; DK=Denmark; CD=Democratic Republic of the Congo; DJ=Djibouti; DM=Dominica; DO=Dominican Republic; EC=Ecuador; EG=Egypt; GQ=Equatorial Guinea; SV=El Salvador; CI=Cote d´Ivoire; ER=Eritrea; EE=Estonia; SZ=Eswatini; ET=Ethiopia; FJ=Fiji; PH=Philippines; FI=Finland; FR=France; AE=United Arab Emirates; GB=United Kingdom; US=United States of America; GA=Gabon; GM=Gambia; GE=Georgia; GH=Ghana; GR=Greece; GD=Grenada; GT=Guatemala; GN=Guinea; GW=Guinea-Bissau; GY=Guyana; HT=Haiti; HN=Honduras; HK=Hong Kong; IN=India; ID=Indonesia; IQ=Iraq; IR=Iran (Islamic Republic of); IE=Ireland; IS=Iceland; IL=Israel; IT=Italy; JM=Jamaica; JP=Japan; YE=Yemen; JO=Jordan; YU=Yugoslavia; KH=Cambodia; CM=Cameroon; CA=Canada; CV=Cape Verde; KZ=Kazakhstan; KE=Kenya; CN=China; KG=Kyrgyzstan; CG=Congo, the Republic of the; XK=Kosovo; HR=Croatia; CU=Cuba; KW=Kuwait; LA=Lao People´s Democratic Republic; LS=Lesotho; LV=Latvia; LB=Lebanon; LR=Liberia; LY=Libyan Arab Jamahiriya; LT=Lithuania; LU=Luxembourg; MG=Madagascar; MW=Malawi; MY=Malaysia; MV=Maldives; ML=Mali; MT=Malta; MA=Morocco; MR=Mauritania; MU=Mauritius; MX=Mexico; MZ=Moçambique; MD=Moldova, Republic of; MC=Monaco; MN=Mongolia; ME=Montenegro; MM=Myanmar; NA=Namibia; NL=Kingdom of the Netherlands ; NP=Nepal; NI=Nicaragua; NE=Niger; NG=Nigeria; KP=Korea, Democratic People´s Republic of; MK=North Macedonia; NO=Norway; NZ=New Zealand; OM=Oman; PK=Pakistan; PS=Palestinian territory, occupied; PA=Panama; PG=Papua New Guinea; PY=Paraguay; PE=Peru; PL=Poland; PT=Portugal; QA=Qatar; RO=Romania; RW=Rwanda; RU=Russian Federation; LC=Saint Lucia; VC=Saint Vincent and the Grenadines; WS=Samoa; ST=Sao Tome and Principe; SA=Saudi Arabia; CH=Switzerland; SN=Senegal; RS=Serbia; CS=Serbia and Montenegro; SC=Seychelles; SL=Sierra Leone; SG=Singapore; SK=Slovakia; SI=Slovenia; SO=Somalia; SU=Soviet Union; ES=Spain; LK=Sri Lanka; SD=Sudan; SR=Suriname; SE=Sweden; ZA=South Africa; KR=Korea, Republic of Korea; SS=South Sudan; SY=Syrian Arab Republic; TJ=Tadzjikistan; TW=Taiwan; TZ=Tanzania, United Republic of; TD=Chad; TH=Thailand; CZ=Czech Republic; QT=Czechoslovakia; TG=Togo; TO=Tonga; TT=Trinidad and Tobago; TN=Tunisia; TR=Türkiye; TM=Turkmenistan; DE=Germany; UG=Uganda; UA=Ukraine; HU=Hungary; UY=Uruguay; UZ=Uzbekistan; VE=Venezuela; VN=Viet Nam; ZM=Zambia; ZW=Zimbabwe; AT=Austria; ÖOF=unknown country of birth; OVFOD=other countries
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      0000086S=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    FolkmRegFlandK [t] Population by region, country of birth and sex. Year 2000 - 2024
-  title: Population, number by region, region of birth, sex, observations and year
-  var 'Region' (region): 311 values
-      01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö; 0123=Järfälla ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 21, 4: 290}; prefixes {'': 311}
-      /^(0114|0180|01|00) /: 3 -- 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Fodelseregion' (region of birth): 185 values
-      TOTfod=All birth countries; AF=Afghanistan; AL=Albania; DZ=Algeria; AO=Angola; AR=Argentina ... VN=Viet Nam; ZM=Zambia; ZW=Zimbabwe; AT=Austria; ÖOF=unknown country of birth; OVFOD=other countries
-      code lengths {2: 182, 3: 1, 5: 1, 6: 1}; prefixes {'TOTfod': 1, 'AF': 1, 'AL': 1, 'DZ': 1, 'AO': 1, 'AR': 1, 'AM': 1, 'AU': 1}
-      ALL: TOTfod=All birth countries; AF=Afghanistan; AL=Albania; DZ=Algeria; AO=Angola; AR=Argentina; AM=Armenia; AU=Australia; AZ=Azerbaijan; BS=Bahamas; BH=Bahrain; BD=Bangladesh; BB=Barbados; BY=Belarus; BE=Belgium; BJ=Benin; BM=Bermuda; BT=Bhutan; BO=Bolivia; BA=Bosnia and Herzegovina; BW=Botswana; BR=Brazil; BG=Bulgaria; BF=Burkina Faso; BI=Burundi; CF=Central African Republic; CL=Chile; CO=Colombia; CR=Costa Rica; CY=Cyprus; DK=Denmark; CD=Democratic Republic of the Congo; DJ=Djibouti; DM=Dominica; DO=Dominican Republic; EC=Ecuador; EG=Egypt; GQ=Equatorial Guinea; SV=El Salvador; CI=Cote d´Ivoire; ER=Eritrea; EE=Estonia; SZ=Eswatini; ET=Ethiopia; FJ=Fiji; PH=Philippines; FI=Finland; FR=France; AE=United Arab Emirates; GB=United Kingdom; US=United States of America; GA=Gabon; GM=Gambia; GE=Georgia; GH=Ghana; GR=Greece; GD=Grenada; GT=Guatemala; GN=Guinea; GW=Guinea-Bissau; GY=Guyana; HT=Haiti; HN=Honduras; HK=Hong Kong; IN=India; ID=Indonesia; IQ=Iraq; IR=Iran (Islamic Republic of); IE=Ireland; IS=Iceland; IL=Israel; IT=Italy; JM=Jamaica; JP=Japan; YE=Yemen; JO=Jordan; YU=Yugoslavia; KH=Cambodia; CM=Cameroon; CA=Canada; CV=Cape Verde; KZ=Kazakhstan; KE=Kenya; CN=China; KG=Kyrgyzstan; CG=Congo, the Republic of the; XK=Kosovo; HR=Croatia; CU=Cuba; KW=Kuwait; LA=Lao People´s Democratic Republic; LS=Lesotho; LV=Latvia; LB=Lebanon; LR=Liberia; LY=Libyan Arab Jamahiriya; LT=Lithuania; LU=Luxembourg; MG=Madagascar; MW=Malawi; MY=Malaysia; MV=Maldives; ML=Mali; MT=Malta; MA=Morocco; MR=Mauritania; MU=Mauritius; MX=Mexico; MZ=Moçambique; MD=Moldova, Republic of; MC=Monaco; MN=Mongolia; ME=Montenegro; MM=Myanmar; NA=Namibia; NL=Kingdom of the Netherlands ; NP=Nepal; NI=Nicaragua; NE=Niger; NG=Nigeria; KP=Korea, Democratic People´s Republic of; MK=North Macedonia; NO=Norway; NZ=New Zealand; OM=Oman; PK=Pakistan; PS=Palestinian territory, occupied; PA=Panama; PG=Papua New Guinea; PY=Paraguay; PE=Peru; PL=Poland; PT=Portugal; QA=Qatar; RO=Romania; RW=Rwanda; RU=Russian Federation; LC=Saint Lucia; SA=Saudi Arabia; CH=Switzerland; SN=Senegal; RS=Serbia; CS=Serbia and Montenegro; SC=Seychelles; SL=Sierra Leone; SG=Singapore; SK=Slovakia; SI=Slovenia; SO=Somalia; SU=Soviet Union; ES=Spain; LK=Sri Lanka; SD=Sudan; SR=Suriname; SE=Sweden; ZA=South Africa; KR=Korea, Republic of Korea; SS=South Sudan; SY=Syrian Arab Republic; TJ=Tadzjikistan; TW=Taiwan; TZ=Tanzania, United Republic of; TD=Chad; TH=Thailand; CZ=Czech Republic; QT=Czechoslovakia; TG=Togo; TO=Tonga; TT=Trinidad and Tobago; TN=Tunisia; TR=Türkiye; TM=Turkmenistan; DE=Germany; UG=Uganda; UA=Ukraine; HU=Hungary; UY=Uruguay; UZ=Uzbekistan; VE=Venezuela; VN=Viet Nam; ZM=Zambia; ZW=Zimbabwe; AT=Austria; ÖOF=unknown country of birth; OVFOD=other countries
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'ContentsCode' (observations): 1 values
-      000003WN=Number
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    InrUtrFodRegAlKonCKM [t] Swedish and foreign-born population by region, age and sex.  Year 2025
-  title: Population, number by region, age, sex, region of birth, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 137 values
-      0=0 years; TotSA=total, all ages; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years ... 100+1=100+ years; 100+10=100+ years; 100+5=100+ years; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 1, 4: 2, 5: 31, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'TotSA': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'Fodelseregion' (region of birth): 3 values
-      samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-      ALL: samt=all regions of birth; 09=born in Sweden; 11=Foreign-born
-  var 'ContentsCode' (observations): 1 values
-      0000086R=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    InrUtrFoddaRegAlKon [t] Swedish and foreign-born population by region, age and sex. Year 2000 - 2024
-  title: Population, number by region, age, sex, region of birth, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 101 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 95=95 years; 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years
-      code lengths {1: 10, 2: 90, 4: 1}; prefixes {'': 101}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'Fodelseregion' (region of birth) [elimination]: 2 values
-      09=born in Sweden; 11=Foreign-born
-      ALL: 09=born in Sweden; 11=Foreign-born
-  var 'ContentsCode' (observations): 1 values
-      000001NS=Number
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    UtrikesFoddaAntArCKM [t] Foreign-born by country of birth and year since last immigration.  Year 2025
-    UtrikesFoddaAntAr [t] Foreign-born by country of birth and year since last immigration. Year 2000 - 2024
-    FolkmFodlandHVD [t] Population by grouped country of birth and Human Development Index. Year 2009 - 2025
-  BE0101F [l] Foreign citizens
-    UtlmedbRCKM [t] Foreign citizens by country of citizenship, age and sex.  Year 2025
-    UtlmedbR [t] Foreign citizens by country of citizenship, age and sex. Year 1973 - 2024
-    UtlmedbTotNKCKM [t] Foreign citizens by region, age in ten year groups and sex.  Year 2025
-  title: Foreign citizens, number by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 9 values
-      TotSA=total, all ages; 0-9=0–9 years; 10-19=10–19 years; 20-29=20–29 years; 30-39=30–39 years; 40-49=40–49 years; 50-59=50–59 years; 60-69=60–69 years; 70+=70+ years
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      0000087R=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    UtlmedbTotNK [t] Foreign citizens by region, age in ten year groups and sex. Year 1973 - 2024
-  title: Foreign citizens, number by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 8 values
-      -4=0–4 years; 5-14=5–14 years; 15-24=15–24 years; 25-34=25–34 years; 35-44=35–44 years; 45-54=45–54 years; 55-64=55–64 years; 65+=65+ years
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101A0=Number
-  var 'Tid' (year) [time]: 52 values
-      1973=1973; 1974=1974; 1975=1975; 1976=1976; 1977=1977; 1978=1978 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 52}; prefixes {'': 52}
-    FolkmMedblandHVD [t] Population by group of citizenship and Human Development Index. Year 2009 - 2025
-  BE0101Q [l] Foreign/Swedish background
-    UtlSvBakgFinCKM [t] Number of persons with foreign or Swedish background (detailed division) by region, age and sex.  Year 2025
-  title: Number of persons by region, foreign/Swedish background, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'UtlBakgrund' (foreign/Swedish background): 5 values
-      TotUI=total, all foreign and Swedish born; 08=foreign born; 4=born in Sweden with two foreign born parents; 5=born in Sweden with one parent born in Sweden and one foreign born parent; 6=born in Sweden with two parents born in Sweden
-      ALL: TotUI=total, all foreign and Swedish born; 08=foreign born; 4=born in Sweden with two foreign born parents; 5=born in Sweden with one parent born in Sweden and one foreign born parent; 6=born in Sweden with two parents born in Sweden
-  var 'Alder' (age) [elimination]: 137 values
-      0=0 years; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years; 3=3 years ... 100+1=100+ years; 100+5=100+ years; tot=total; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 2, 4: 2, 5: 30, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      0000086U=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    UtlSvBakgFin [t] Number of persons with foreign or Swedish background (detailed division) by region, age and sex. Year 2002 - 2024
-  title: Number of persons by region, foreign/Swedish background, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'UtlBakgrund' (foreign/Swedish background) [elimination]: 4 values
-      08=foreign born; 4=born in Sweden with two foreign born parents; 5=born in Sweden with one parent born in Sweden and one foreign born parent; 6=born in Sweden with two parents born in Sweden
-      ALL: 08=foreign born; 4=born in Sweden with two foreign born parents; 5=born in Sweden with one parent born in Sweden and one foreign born parent; 6=born in Sweden with two parents born in Sweden
-  var 'Alder' (age) [elimination]: 101 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 95=95 years; 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years
-      code lengths {1: 10, 2: 90, 4: 1}; prefixes {'': 101}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000001NT=Number
-  var 'Tid' (year) [time]: 23 values
-      2002=2002; 2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 23}; prefixes {'': 23}
-    UtlSvBakgGrovCKM [t] Number of persons with foreign or Swedish background (rough division) by region, age and sex.  Year 2025
-  title: Number of persons by region, foreign/Swedish background, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'UtlBakgrund' (foreign/Swedish background): 3 values
-      TotalC=total, foreign/Swedish background; 1=foreign background; 2=swedish background
-      ALL: TotalC=total, foreign/Swedish background; 1=foreign background; 2=swedish background
-  var 'Alder' (age) [elimination]: 137 values
-      0=0 years; -4=0–4 years; -9=0–9 years; 1=1 year; 2=2 years; 3=3 years ... 100+1=100+ years; 100+5=100+ years; tot=total; TOT1=total, all ages; TOT10=total, all ages; TOT5=total, all ages
-      code lengths {1: 10, 2: 92, 3: 2, 4: 2, 5: 30, 6: 1}; prefixes {'': 131, 'TOT': 3, '-': 2, 'tot': 1}
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      0000086V=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    UtlSvBakgGrov [t] Number of persons with foreign or Swedish background (rough division) by region, age and sex. Year 2002 - 2024
-  title: Number of persons by region, foreign/Swedish background, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'UtlBakgrund' (foreign/Swedish background) [elimination]: 2 values
-      1=foreign background; 2=swedish background
-      ALL: 1=foreign background; 2=swedish background
-  var 'Alder' (age) [elimination]: 101 values
-      0=0 years; 1=1 year; 2=2 years; 3=3 years; 4=4 years; 5=5 years ... 95=95 years; 96=96 years; 97=97 years; 98=98 years; 99=99 years; 100+=100+ years
-      code lengths {1: 10, 2: 90, 4: 1}; prefixes {'': 101}
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      000001NU=Number
-  var 'Tid' (year) [time]: 23 values
-      2002=2002; 2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 23}; prefixes {'': 23}
-    FolkmForUrspCKMv2 [t] Foreign-born persons and persons with at least one foreign-born parent by sex and country of birth or parent´s countries of birth, respectively.  Year 2018 - 2025
-  BE0101N [l] Changes of citizenship
-    MedborgarByteTotKCKM [t] Number of persons who have acquired Swedish citizenship by region, age and sex.  Year 2025
-  title: Number of persons who have acquired Swedish citizenship by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age): 7 values
-      TotSA=total, all ages; 0-6=0–6 years; 7-17=7–17 years; 18-29=18–29 years; 30-49=30–49 years; 50-69=50–69 years; 70+=70+ years
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      0000088O=Number
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    MedborgarByteTotK [t] Number of persons who have acquired Swedish citizenship by region, age and sex. Year 2000 - 2024
-  title: Number of persons who have acquired Swedish citizenship by region, age, sex, observations and year
-  var 'Region' (region) [elimination]: 312 values
-      00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0115=Vallentuna; 0117=Österåker; 0120=Värmdö ... 2560=Älvsbyn; 2580=Luleå; 2581=Piteå; 2582=Boden; 2583=Haparanda; 2584=Kiruna
-      code lengths {2: 22, 4: 290}; prefixes {'': 312}
-      /^(0114|0180|01|00) /: 4 -- 00=Sweden; 01=Stockholm county; 0114=Upplands Väsby; 0180=Stockholm
-  var 'Alder' (age) [elimination]: 6 values
-      0-6=0–6 years; 7-17=7–17 years; 18-24=18–24 years; 25-44=25–44 years; 45-64=45–64 years; 65+=65+ years
-  var 'Kon' (sex) [elimination]: 2 values
-      1=men; 2=women
-  var 'ContentsCode' (observations): 1 values
-      BE0101B8=Number
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    MedborgByteLandKCKM [t] Number of persons who have acquired Swedish citizenship per quarter by country of citizenship and sex.  Year 2025 - 2026
-    MedborgarByteLandK [t] Number of persons who have acquired Swedish citizenship per quarter by country of citizenship and sex. Year 2000 - 2024
-  BE0101B [l] Average age
-  BE0101L [l] Married, divorced and widowed
-  BE0101O [l] Registered partnership
-  BE0101K [l] Adoptees
-    AdopteradeCKM [t] Adopted persons by sex, region of birth, number of adoptive parents and year of birth.  Year 2025
-  title: Adopted persons by sex, year of birth, observations and year
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'Fodelsear' (year of birth): 117 values
-      TotSA=total, all years of birth; -1910=–1910; 1911=1911; 1912=1912; 1913=1913; 1914=1914 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 115, 5: 2}; prefixes {'': 115, 'TotSA': 1, '-': 1}
-      ALL: TotSA=total, all years of birth; -1910=–1910; 1911=1911; 1912=1912; 1913=1913; 1914=1914; 1915=1915; 1916=1916; 1917=1917; 1918=1918; 1919=1919; 1920=1920; 1921=1921; 1922=1922; 1923=1923; 1924=1924; 1925=1925; 1926=1926; 1927=1927; 1928=1928; 1929=1929; 1930=1930; 1931=1931; 1932=1932; 1933=1933; 1934=1934; 1935=1935; 1936=1936; 1937=1937; 1938=1938; 1939=1939; 1940=1940; 1941=1941; 1942=1942; 1943=1943; 1944=1944; 1945=1945; 1946=1946; 1947=1947; 1948=1948; 1949=1949; 1950=1950; 1951=1951; 1952=1952; 1953=1953; 1954=1954; 1955=1955; 1956=1956; 1957=1957; 1958=1958; 1959=1959; 1960=1960; 1961=1961; 1962=1962; 1963=1963; 1964=1964; 1965=1965; 1966=1966; 1967=1967; 1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973; 1974=1974; 1975=1975; 1976=1976; 1977=1977; 1978=1978; 1979=1979; 1980=1980; 1981=1981; 1982=1982; 1983=1983; 1984=1984; 1985=1985; 1986=1986; 1987=1987; 1988=1988; 1989=1989; 1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995; 1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007; 2008=2008; 2009=2009; 2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-  var 'ContentsCode' (observations): 5 values
-      000008AP=All adopted persons; 000008AL=Born in Sweden with one adoptive parent; 000008AM=Born in Sweden with two adoptive parent; 000008AN=Foreign born with one adoptive parent; 000008AO=Foreign born with two adoptive parent
-  var 'Tid' (year) [time]: 1 values
-      2025=2025
-    Adopterade [t] Adopted persons by sex, region of birth, number of adoptive parents and year of birth. Year 2000 - 2024
-  title: Adopted persons by sex, year of birth, observations and year
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'Fodelsear' (year of birth) [elimination]: 115 values
-      -1910=–1910; 1911=1911; 1912=1912; 1913=1913; 1914=1914; 1915=1915 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 114, 5: 1}; prefixes {'': 114, '-': 1}
-      ALL: -1910=–1910; 1911=1911; 1912=1912; 1913=1913; 1914=1914; 1915=1915; 1916=1916; 1917=1917; 1918=1918; 1919=1919; 1920=1920; 1921=1921; 1922=1922; 1923=1923; 1924=1924; 1925=1925; 1926=1926; 1927=1927; 1928=1928; 1929=1929; 1930=1930; 1931=1931; 1932=1932; 1933=1933; 1934=1934; 1935=1935; 1936=1936; 1937=1937; 1938=1938; 1939=1939; 1940=1940; 1941=1941; 1942=1942; 1943=1943; 1944=1944; 1945=1945; 1946=1946; 1947=1947; 1948=1948; 1949=1949; 1950=1950; 1951=1951; 1952=1952; 1953=1953; 1954=1954; 1955=1955; 1956=1956; 1957=1957; 1958=1958; 1959=1959; 1960=1960; 1961=1961; 1962=1962; 1963=1963; 1964=1964; 1965=1965; 1966=1966; 1967=1967; 1968=1968; 1969=1969; 1970=1970; 1971=1971; 1972=1972; 1973=1973; 1974=1974; 1975=1975; 1976=1976; 1977=1977; 1978=1978; 1979=1979; 1980=1980; 1981=1981; 1982=1982; 1983=1983; 1984=1984; 1985=1985; 1986=1986; 1987=1987; 1988=1988; 1989=1989; 1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995; 1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005; 2006=2006; 2007=2007; 2008=2008; 2009=2009; 2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015; 2016=2016; 2017=2017; 2018=2018; 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-  var 'ContentsCode' (observations): 4 values
-      BE0101DA=Born in Sweden with one adoptive parent; BE0101DB=Born in Sweden with two adoptive parent; BE0101DC=Foreign born with one adoptive parent; BE0101DD=Foreign born with two adoptive parent
-  var 'Tid' (year) [time]: 25 values
-      2000=2000; 2001=2001; 2002=2002; 2003=2003; 2004=2004; 2005=2005 ... 2019=2019; 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024
-      code lengths {4: 25}; prefixes {'': 25}
-    NyaAdopteradeCKM [t] New adoptions in the population by sex, age and region of birth.  Year 2020 - 2025
-  title: New adoptions in the population, number of by sex, age, region of birth, observations and year
-  var 'Kon' (sex) [elimination]: 3 values
-      TotSa=total, all men and women; 1=men; 2=women
-  var 'Alder' (age): 3 values
-      TotSA=total, all ages; 0-17=0–17 years; 18-=18+ years
-  var 'Fodelseregion' (region of birth): 8 values
-      TotRL=all regions of birth incl. Sweden; 010=Sweden; NEXS=The Nordic countries, excluding Sweden; EurEjNordSv=Europe excl. Nordic countries and Sweden; AFR=Africa; ASI=Asia; NSAOS=North and South America, Oceania, Soviet Union; OFR=unknown region of birth
-      ALL: TotRL=all regions of birth incl. Sweden; 010=Sweden; NEXS=The Nordic countries, excluding Sweden; EurEjNordSv=Europe excl. Nordic countries and Sweden; AFR=Africa; ASI=Asia; NSAOS=North and South America, Oceania, Soviet Union; OFR=unknown region of birth
-  var 'ContentsCode' (observations): 1 values
-      000008E6=number of
-  var 'Tid' (year) [time]: 6 values
-      2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-  BE0101P [l] Asylum-seekers
-    AsylsokandeN [t] Asylum-seekers by country of citizenship and sex. Month, quarter, half year, whole year. Year 2002 - 2026
-    EnsamkommandeN [t] Unaccompanied asylum-seeking minors by sex, age, citizenship. Month, quarter, half year, whole year. Year 2002 - 2026
-    MigrMott2015 [t] Asylum-seekers in the Swedish Migration Agency´s receptions system by citizenship, age and sex. Year 2002 - 2025
-  BE0101C [l] Population density
-  BE0101S [l] Household
-    HushallT06CKM [t] Number of persons by household status, background and sex.  Year 2025
-    HushallT06 [t] Number of persons by household status, background and sex. Year 2011 - 2024
-  BE0101X [l] Key figures
-  BE0101Y [l] Regional statistics at a lower level than municipality (DeSO/RegSO)
-    FolkmDesoLandKon [t] Population per region by region of birth and sex. Year 2010 - 2025
-  title: Population per region by region, region of birth, sex, observations and year
-  var 'Region' (region): 19182 values
-      00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0114A0010_DeSO2025=0114A0010; 0114A0010=0114A0010; 0114C1010_DeSO2025=0114C1010 ... 2584R013_RegSO2025=2584R013 Kiruna (Triangeln); 2584R013=Kiruna (Triangeln); 2584R014_RegSO2025=2584R014 Kiruna (Östermalm); 2584R014=Kiruna (Östermalm); 2584R015_RegSO2025=2584R015 Kiruna (Norrmalm); 2584R015=Kiruna (Övre Norrmalm)
-      code lengths {2: 22, 4: 290, 8: 3363, 9: 5984, 18: 9523}; prefixes {'': 19182}
-      /^(0114|0180|01|00) /: 4 -- 00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0180=0180 Stockholm
-  var 'Fodelseregion' (region of birth) [elimination]: 4 values
-      sv=Sweden; eu=Europe except Sweden; öv=rest of the world incl. unknown country of birth; tot=total
-      ALL: sv=Sweden; eu=Europe except Sweden; öv=rest of the world incl. unknown country of birth; tot=total
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'ContentsCode' (observations): 1 values
-      000007Y5=Number
-  var 'Tid' (year) [time]: 16 values
-      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 16}; prefixes {'': 16}
-    FolkmDesoMedKon [t] Population per region by citizenship and sex. Year 2010 - 2025
-  title: Population per region by region, citizenship, sex, observations and year
-  var 'Region' (region): 19182 values
-      00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0114A0010_DeSO2025=0114A0010; 0114A0010=0114A0010; 0114C1010_DeSO2025=0114C1010 ... 2584R013_RegSO2025=2584R013 Kiruna (Triangeln); 2584R013=Kiruna (Triangeln); 2584R014_RegSO2025=2584R014 Kiruna (Östermalm); 2584R014=Kiruna (Östermalm); 2584R015_RegSO2025=2584R015 Kiruna (Norrmalm); 2584R015=Kiruna (Övre Norrmalm)
-      code lengths {2: 22, 4: 290, 8: 3363, 9: 5984, 18: 9523}; prefixes {'': 19182}
-      /^(0114|0180|01|00) /: 4 -- 00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0180=0180 Stockholm
-  var 'Medborgarskap' (citizenship) [elimination]: 4 values
-      sv=Swedish; eusv=European citizenship except Swedish; övvärlstat=Rest of the world incl. Stateless and unknown; SA=total
-      ALL: sv=Swedish; eusv=European citizenship except Swedish; övvärlstat=Rest of the world incl. Stateless and unknown; SA=total
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'ContentsCode' (observations): 1 values
-      000007Y2=Number
-  var 'Tid' (year) [time]: 16 values
-      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 16}; prefixes {'': 16}
-    FolkmDesoBakgrKon [t] Population per region by foreign or Swedish background and sex. Year 2010 - 2025
-  title: Population per region by region, foreign/Swedish background, sex, observations and year
-  var 'Region' (region): 19182 values
-      00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0114A0010_DeSO2025=0114A0010; 0114A0010=0114A0010; 0114C1010_DeSO2025=0114C1010 ... 2584R013_RegSO2025=2584R013 Kiruna (Triangeln); 2584R013=Kiruna (Triangeln); 2584R014_RegSO2025=2584R014 Kiruna (Östermalm); 2584R014=Kiruna (Östermalm); 2584R015_RegSO2025=2584R015 Kiruna (Norrmalm); 2584R015=Kiruna (Övre Norrmalm)
-      code lengths {2: 22, 4: 290, 8: 3363, 9: 5984, 18: 9523}; prefixes {'': 19182}
-      /^(0114|0180|01|00) /: 4 -- 00=00 Sweden; 01=01 Stockholm county; 0114=0114 Upplands Väsby; 0180=0180 Stockholm
-  var 'UtlBakgrund' (foreign/Swedish background) [elimination]: 3 values
-      2=swedish background; 1=foreign background; SA=total
-      ALL: 2=swedish background; 1=foreign background; SA=total
-  var 'Kon' (sex) [elimination]: 3 values
-      1=men; 2=women; 1+2=total
-  var 'ContentsCode' (observations): 1 values
-      000007Y4=Number
-  var 'Tid' (year) [time]: 16 values
-      2010=2010; 2011=2011; 2012=2012; 2013=2013; 2014=2014; 2015=2015 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 16}; prefixes {'': 16}
-  BE0101M [l] Circular migration - Old tables, not updated
-  https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0101/BE0101M: FAILED RuntimeError: HTTP 400: Bad Request
-== r18_swe_search
-  FAILED: RuntimeError: HTTP 400: Bad Request
+== r18_isl_walk
+  Faedingarland [l] Country of birth
+    MAN12103.px [t] Population by country of birth, sex and age 1 January 1998-2026
+    MAN12104.px [t] Population by sex, municipality and country of birth 1 January 1998-2026
+  title: Population by sex, municipality and country of birth 1 January 1998-2026
+  var 'Sveitarfélag' (Municipality): 63 values
+      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
+      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
+  var 'Fæðingarland' (Country of birth): 215 values
+      9999=Total; 99IS=Iceland; 99DK=Denmark; 99FI=Finland; 99FO=Faroe Islands; 99GL=Greenland ... 99NZ=New Zealand; 99PG=Papua New Guinea; 99SB=Solomon Islands; 99TO=Tonga; 99XV=Oceania, country not specified; 99XX=Foreign country not specified
+      code lengths {4: 215}; prefixes {'': 215}
+  var 'Kyn' (Sex): 4 values
+      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
+  var 'Ár' (Year) [time]: 29 values
+      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 29}; prefixes {'': 29}
+  Rikisfang [l] Citizenship
+    MAN04001.px [t] Foreign citizens 1950-2026
+    MAN04103.px [t] Population by country of citizenship, sex and age 1 January 1998-2026
+    MAN04203.px [t] Population by sex, municipality and citizenship 1 January 1998-2026
+  title: Population by sex, municipality and citizenship 1 January 1998-2026
+  var 'Sveitarfélag' (Municipality): 63 values
+      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
+      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
+  var 'Ríkisfang' (Citizenship): 190 values
+      01=Total; IS=Iceland; DK=Denmark; FI=Finland; NO=Norway; SE=Sweden ... PG=Papua New Guinea; SB=Solomon Islands; TO=Tonga; VU=Vanuatu; XX=Foreign country not specified; XZ=Stateless
+      code lengths {2: 190}; prefixes {'': 1, 'IS': 1, 'DK': 1, 'FI': 1, 'NO': 1, 'SE': 1, 'AT': 1, 'BE': 1}
+  var 'Kyn' (Sex): 4 values
+      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
+  var 'Ár' (Year) [time]: 29 values
+      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 29}; prefixes {'': 29}
+    MAN04208.px [t] Population by sex, municipality, citizenship and age 1 January 1998-2026
+  title: Population by sex, municipality, citizenship and age 1 January 1998-2026
+  var 'Sveitarfélag' (Municipality): 63 values
+      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
+      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
+  var 'Ríkisfang' (Citizenship): 3 values
+      Tot=Total; IS=Icelandic citizenship; Erl=Foreign citizenship
+  var 'Aldur' (Age): 112 values
+      999=Total; 0=Under 1 year; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 105=105 years; 106=106 years; 107=107 years; 108=108 years; 109=109 years; 110=110 years
+      code lengths {1: 10, 2: 90, 3: 12}; prefixes {'': 112}
+  var 'Ár' (Year) [time]: 29 values
+      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 29}; prefixes {'': 29}
+  var 'Kyn' (Sex): 4 values
+      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
+  Rikisfbr [l] Changes of citizenship
+    MAN04119.px [t] Foreign citizens gaining Icelandic citizenship by former citizenship, sex and age 1991-2025
+    MAN04120.px [t] Foreign citizens gaining Icelandic citizenship by country of birth, sex and age 1991-2025
+  Uppruni [l] Origin
+    MAN43000.px [t] Population by origin, sex and age 1996-2026
+    MAN43002.px [t] Population born abroad by background, sex, age and country of birth 1996-2026
+    MAN43004.px [t] Population born abroad by background, sex and country of birth 1996-2026
+    MAN43005.px [t] Immigrants by sex and municipality 1 January 1996-2026
+  title: Immigrants by sex and municipality 1 January 1996-2026
+  var 'Sveitarfélag' (Municipality): 63 values
+      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
+      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
+  var 'Aldur' (Age): 113 values
+      999=Total; 0=Under 1 year; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 106=106 years; 107=107 years; 108=108 years; 109=109 years; 110=110 years; 150=Unkown
+      code lengths {1: 10, 2: 90, 3: 13}; prefixes {'': 113}
+  var 'Kyn' (Sex): 4 values
+      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
+  var 'Ár' (Year) [time]: 31 values
+      1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 31}; prefixes {'': 31}
+    MAN43006.px [t] Immigrants in Reykjavík by districts 1998-2026
+    MAN43007.px [t] Immigrants by length of stay and municipality 1 January 1996-2026
+  title: Immigrants by length of stay and municipality 1 January 1996-2026
+  var 'Ár' (Year) [time]: 31 values
+      1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
+      code lengths {4: 31}; prefixes {'': 31}
+  var 'Sveitarfélag' (Municipality): 63 values
+      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
+      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
+  var 'Kyn' (Sex): 4 values
+      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
+  var 'Lengd dvalar' (Lenght of stay): 6 values
+      0=Total; 1=Under 1 year; 2=1-2 years; 3=3-5 years; 4=6-10 years; 5=11 years or longer
+  Vernd_dvalarleyfi [l] International protection and residence permits
+    MAN44001.px [t] New residence permits by type, citizenship and sex 2008-2023
+    MAN44002.px [t] New residence permits by type, age and sex 2008-2023
+    MAN45001.px [t] Asylum applications by citizenship, sex and age 1997-2019
+    MAN45002.px [t] International protection grants by citizenship, type, age and sex 1997-2019
+    MAN46001.px [t] Outgoing Dublin transfers by partner country and sex 2008-2023
