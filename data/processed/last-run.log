@@ -1,5 +1,15 @@
-luxembourg_nationality: RP 2021 by commune and citizenship (LUSTAT DF_B1625)
-  102 communes, 12 cantons
-  communes against Luxembourg: parts sum to 643,941 = 643,941
-  cantons against Luxembourg: parts sum to 643,941 = 643,941
-luxembourg_nationality: 2011 columns this reader does not group: ['Pays des Caraïbes, d’Amérique du sud ou centrale', 'Pays d’Amérique du nord']
+netherlands_gemeente: CBS Kerncijfers wijken en buurten 2022, 03759ned and 84910NED, by gemeente
+  WFS: 428 features; water flags {'B': 1, 'JA': 82, 'NEE': 345}
+  345 gemeenten; Nederland 0
+  gemeenten against the Netherlands: parts sum to 17,590,672 = 17,590,672
+  men + women against the total: largest difference 0
+  03759ned against the key figures, men and women: largest difference 0.0050% (Haarlemmermeer men 79,261 / 79,257)
+  03759ned's national row: parts sum to 17,590,672 = 17,590,672
+  national median 42.7 against Eurostat's 42.7 (NL, 1 January 2022)
+  named backgrounds: Turkish, Moroccan, Surinamese, Indonesian, German, Polish, Dutch Caribbean, Syrian, Belgian, British, Chinese, Iraqi, Indian, Italian, Afghan, Spanish
+  provinces against the Netherlands, 84910NED: parts sum to 17,590,672 = 17,590,672
+  Amsterdam: Weesp added, 903,399
+  netherlands_gemeente: 0 office units unbound
+  netherlands_gemeente: 0 polygons without an office unit
+  wrote data/processed/netherlands_gemeente.json (1783 kB)
+  wrote netherlands_gemeente.json: 356 records
