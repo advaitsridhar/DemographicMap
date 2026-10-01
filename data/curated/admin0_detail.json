@@ -2214,6 +2214,409 @@
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
    "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,312 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "CYP",
+   "field": "religion",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891632E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Religion, 2021 census, resident population, CYSTAT's table 1891632E at its total of citizenship groups and sexes -- published for the country only, not by district. 'Not stated' is the census's 'not recorded/not stated'; the Maronite and Armenian churches are the census's own rows. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Orthodox",
+     "pct": 74.5,
+     "count": 688075
+    },
+    {
+     "group": "Not stated",
+     "pct": 17.3,
+     "count": 159835
+    },
+    {
+     "group": "Islam",
+     "pct": 2.1,
+     "count": 19534
+    },
+    {
+     "group": "Catholic",
+     "pct": 1.5,
+     "count": 13860
+    },
+    {
+     "group": "No religion",
+     "pct": 1.0,
+     "count": 9591
+    },
+    {
+     "group": "Protestant",
+     "pct": 1.0,
+     "count": 9621
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.9,
+     "count": 7868
+    },
+    {
+     "group": "Maronite Catholic",
+     "pct": 0.5,
+     "count": 4486
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.5,
+     "count": 4545
+    },
+    {
+     "group": "Armenian Apostolic",
+     "pct": 0.2,
+     "count": 2025
+    },
+    {
+     "group": "Hinduism",
+     "pct": 0.2,
+     "count": 1681
+    },
+    {
+     "group": "Sikhism",
+     "pct": 0.2,
+     "count": 2260
+    }
+   ]
+  },
+  {
+   "country": "CYP",
+   "field": "ethnicity",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891642E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Ethnic/religious group, 2021 census, resident population, CYSTAT's table 1891642E at its total of citizenship groups and sexes -- published for the country only. The question records the constitutional communities (Greek-Cypriot, Turkish-Cypriot, and the Maronite, Armenian and Latin religious groups) and, for everyone else, a national group, which is why most rows below Greek-Cypriot name a country. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Greek-Cypriot",
+     "pct": 74.7,
+     "count": 689412
+    },
+    {
+     "group": "Greek",
+     "pct": 4.3,
+     "count": 39384
+    },
+    {
+     "group": "Romanian",
+     "pct": 2.3,
+     "count": 20926
+    },
+    {
+     "group": "British",
+     "pct": 2.2,
+     "count": 20098
+    },
+    {
+     "group": "Other",
+     "pct": 2.1,
+     "count": 19768
+    },
+    {
+     "group": "Russian",
+     "pct": 1.9,
+     "count": 17086
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 1.8,
+     "count": 16579
+    },
+    {
+     "group": "Syrian",
+     "pct": 1.5,
+     "count": 13975
+    },
+    {
+     "group": "Not stated",
+     "pct": 1.3,
+     "count": 11845
+    },
+    {
+     "group": "Filipino",
+     "pct": 0.9,
+     "count": 8716
+    },
+    {
+     "group": "Indian",
+     "pct": 0.9,
+     "count": 8535
+    },
+    {
+     "group": "Sri Lankan",
+     "pct": 0.7,
+     "count": 6747
+    },
+    {
+     "group": "Cypriot Maronite",
+     "pct": 0.6,
+     "count": 5245
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.6,
+     "count": 5240
+    },
+    {
+     "group": "Nepalese",
+     "pct": 0.6,
+     "count": 5989
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.6,
+     "count": 5616
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.4,
+     "count": 3434
+    },
+    {
+     "group": "Egyptian",
+     "pct": 0.3,
+     "count": 3192
+    },
+    {
+     "group": "Lebanese",
+     "pct": 0.3,
+     "count": 2404
+    },
+    {
+     "group": "Polish",
+     "pct": 0.3,
+     "count": 2459
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.3,
+     "count": 2646
+    },
+    {
+     "group": "Bangladeshi",
+     "pct": 0.2,
+     "count": 1430
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.2,
+     "count": 2227
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 2072
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.2,
+     "count": 1593
+    },
+    {
+     "group": "Turkish-Cypriot",
+     "pct": 0.2,
+     "count": 1617
+    },
+    {
+     "group": "Cameroonian",
+     "pct": 0.1,
+     "count": 1081
+    },
+    {
+     "group": "Iranian",
+     "pct": 0.1,
+     "count": 1218
+    },
+    {
+     "group": "Jewish",
+     "pct": 0.1,
+     "count": 1243
+    },
+    {
+     "group": "Pakistani",
+     "pct": 0.1,
+     "count": 1303
+    },
+    {
+     "group": "Cypriot Latin",
+     "pct": 0.0,
+     "count": 301
+    }
+   ]
+  },
+  {
+   "country": "CYP",
+   "field": "language",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891616E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Language, 2021 census, resident population, the five districts of table 1891616E summed (cyprus_census.py). The rows 'Indian', 'Sri Lankan' and 'Yugoslavian', which name a country rather than a language, are within Other. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Greek",
+     "pct": 79.5,
+     "count": 733732
+    },
+    {
+     "group": "English",
+     "pct": 4.8,
+     "count": 44482
+    },
+    {
+     "group": "Russian",
+     "pct": 2.3,
+     "count": 21642
+    },
+    {
+     "group": "Arabic",
+     "pct": 2.1,
+     "count": 19663
+    },
+    {
+     "group": "Other",
+     "pct": 2.0,
+     "count": 18351
+    },
+    {
+     "group": "Romanian",
+     "pct": 2.0,
+     "count": 18691
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 1.6,
+     "count": 14678
+    },
+    {
+     "group": "Not stated",
+     "pct": 1.2,
+     "count": 11111
+    },
+    {
+     "group": "Filipino",
+     "pct": 0.8,
+     "count": 7554
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.4,
+     "count": 3445
+    },
+    {
+     "group": "Nepali",
+     "pct": 0.4,
+     "count": 3421
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.4,
+     "count": 4090
+    },
+    {
+     "group": "French",
+     "pct": 0.3,
+     "count": 2546
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.3,
+     "count": 2500
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.2,
+     "count": 2179
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 2281
+    },
+    {
+     "group": "Polish",
+     "pct": 0.2,
+     "count": 2013
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.2,
+     "count": 1551
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 1067
+    },
+    {
+     "group": "Bengali",
+     "pct": 0.1,
+     "count": 657
+    },
+    {
+     "group": "Hebrew",
+     "pct": 0.1,
+     "count": 885
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.1,
+     "count": 559
+    },
+    {
+     "group": "Italian",
+     "pct": 0.1,
+     "count": 846
+    },
+    {
+     "group": "Latvian",
+     "pct": 0.1,
+     "count": 733
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.1,
+     "count": 678
+    },
+    {
+     "group": "Persian",
+     "pct": 0.1,
+     "count": 1166
+    },
+    {
+     "group": "Slovak",
+     "pct": 0.1,
+     "count": 703
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.1,
+     "count": 657
+    },
+    {
+     "group": "Swedish",
+     "pct": 0.1,
+     "count": 605
+    },
+    {
+     "group": "Urdu",
+     "pct": 0.1,
+     "count": 492
+    },
+    {
+     "group": "Dutch",
+     "pct": 0.0,
+     "count": 403
+    }
+   ]
   }
  ]
 }
