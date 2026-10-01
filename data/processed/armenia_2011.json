@@ -219,6 +219,225 @@
     "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
   },
   {
+    "id": "ARM-2011-60910142B16508502425174",
+    "level": "admin2",
+    "name": "Yerevan",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 95.0,
+        "count": 1007130
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 23072
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 9771
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.6,
+        "count": 6703
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 3504
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3440
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 2236
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.2,
+        "count": 1670
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 1276
+      },
+      {
+        "group": "Molokan",
+        "pct": 0.1,
+        "count": 690
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.1,
+        "count": 646
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 98.5,
+        "count": 1043885
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1,
+        "count": 11771
+      },
+      {
+        "group": "Ezidian",
+        "pct": 0.2,
+        "count": 2459
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 609
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 184
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 393
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 305
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 98.9,
+        "count": 1048940
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 4940
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.3,
+        "count": 3268
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 1075
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 603
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 264
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 468
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.4",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "60910142B16508502425174",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian, Yazidi, Ukrainian, Persian, Greek, Georgian, Assyrian -- and counts every other in 'Other' (1,075 people), so a group absent here may still live in the marz. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row."
+  },
+  {
     "id": "ARM-2011-6114869B21685892816693",
     "level": "admin1",
     "name": "Aragatsotn",

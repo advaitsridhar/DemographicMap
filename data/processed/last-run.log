@@ -1,15 +1,35 @@
-  01.01.2026: 11 marzes make the republic's 3,096,896; every block's groups make its total
-  armenia: the republic: national median 39.9 from five-year groups; Eurostat publishes none to check it against (Eurostat has no median for AM on 1 January 2026 yet (latest: 2025); Eurostat has no median for AM on 1 January 2025 yet (latest: 2025))
-  Yerevan: 1,147,664, median 42.1, 82.0 men per 100 women
-  Aragatsotn: 136,138, median 38.8, 100.2 men per 100 women
-  Ararat: 270,607, median 37.5, 97.5 men per 100 women
-  Armavir: 270,385, median 38.4, 96.7 men per 100 women
-  Gegharkunik: 217,364, median 37.7, 100.7 men per 100 women
-  Lori: 229,462, median 39.9, 88.7 men per 100 women
-  Kotayk: 297,222, median 38.3, 91.5 men per 100 women
-  Shirak: 242,292, median 39.0, 91.3 men per 100 women
-  Syunik: 118,259, median 39.8, 95.2 men per 100 women
-  Vayots Dzor: 49,489, median 39.9, 95.1 men per 100 women
-  Tavush: 118,014, median 39.1, 95.1 men per 100 women
-  second level: Yerevan's polygon takes the city's row; 38 raions of before 1995 are written as gaps that say why
-  wrote data/processed/armenia.json (130 kB)
+  Yerevan: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ասորերեն', 'հունարեն', 'ուկրաիներեն', 'վրացերեն', 'պարսկերեն', 'անգլերեն', 'այլ', 'հրաժարվելենպատասխանել']
+  Yerevan: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'մոլոկան', 'շարֆադինական', 'հեթանոսական', 'այլ', 'կրոնականդավանանքչունեցողներ', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքըչնշածներ']
+  Yerevan: 1,060,138 people; Armenian Apostolic 1,007,130, Not stated 23,072, No religion 9,771, Evangelical 6,703, Jehovah's Witnesses 3,504
+  Aragatsotn: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'քրդերեն', 'այլ', 'հրաժարվելենպատասխանել']
+  Aragatsotn: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'շարֆադինական', 'հեթանոսական', 'ավետարանական', 'ուղղափառ', 'եհովայիվկա', 'այլ', 'չունենկրոնականդավանանք', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքընշվածչէ']
+  Aragatsotn: 132,925 people; Armenian Apostolic 119,875, Yazidi 5,310, Not stated 3,557, Paganism 1,393, No religion 1,099
+  Ararat: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ասորերեն', 'այլլեզու', 'հրաժարվելեպատասխան']
+  Ararat: 5.4 headings ['բնակչություն', 'կրոնականդավանանքունեցողներ', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'շարֆադինական', 'հեթանոսական', 'այլ', 'կրոնականդավանանքչունեցողներ', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքըչնշածներ']
+  Ararat: 260,367 people; Armenian Apostolic 239,270, Not stated 8,709, Evangelical 3,437, Yazidi 3,171, No religion 1,938
+  Armavir: 5.2-1 headings [',,ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ասորերեն', 'քրդերեն', 'այլ', 'հրաժարվելեպատասխան']
+  Armavir: 5.4 headings ['բնակչություն', 'կրոնականդավանանքունեցողներ', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'շարֆադինական', 'հեթանոսական', 'այլ', 'կրոնականդավանանքչունեցողներ', 'կրոնականդավանանքըչնշածներ', 'հրաժարվելենպատասխանել']
+  Armavir: 265,770 people; Armenian Apostolic 239,089, Yazidi 11,892, Not stated 4,775, Evangelical 3,541, Paganism 2,284
+  Gegharkunik: 5.2-1 headings ['ընդամենը', 'հայերեն', 'ռուսերեն', 'այլ', 'հրաժարվելեպատասխան']
+  Gegharkunik: 5.4 headings ['ըբնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'այլ', 'կրոնականդավանանքըչնշածներ', 'կրոնականդավանանքչունեցողնե', 'հրաժարվելենպատասխանել']
+  Gegharkunik: 235,075 people; Armenian Apostolic 224,535, Not stated 5,567, Evangelical 2,459, No religion 1,440, Jehovah's Witnesses 526
+  Lori: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'հունարեն', 'այլ', 'հրաժարվելեն']
+  Lori: 5.4 headings ['բնակչություն', 'կրոնականդավանանքունեցողներ', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'մոլոկան', 'շարֆադինական', 'այլ', 'չունենորեւէկրոնականդավանանք', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքըչնշածներ']
+  Lori: 235,537 people; Armenian Apostolic 211,555, Not stated 6,402, No religion 5,207, Evangelical 5,159, Catholic 3,080
+  Kotayk: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ասորերեն', 'այլ', 'հրահրաժարվեենպատասխանել']
+  Kotayk: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'շարֆադինական', 'հեթանոսական', 'այլ', 'կրոնականդավանանքչունեցողնե', 'կրոնականդավանանքըչնշածներ', 'հրաժարվելենպատասխանել']
+  Kotayk: 254,397 people; Armenian Apostolic 236,624, Not stated 5,867, Evangelical 3,548, No religion 2,604, Yazidi 2,429
+  Shirak: 5.2-1 headings ['ընդամենը', 'հայերեն', 'եզդիերեն', 'ռուսերեն', 'ուկրաիներեն', 'այլ', 'հրաժարվելե']
+  Shirak: 5.4 headings ['բնակչություն', 'ըստկրոնականդավանանքի', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'շարֆադինական', 'հեթանոսական', 'այլ', 'չունենորեւէկրոնականդավանանք', 'հրաժարվելենպատասխանել', 'չնշածներ']
+  Shirak: 251,941 people; Armenian Apostolic 231,893, Catholic 8,592, Not stated 7,207, No religion 1,022, Orthodox 882
+  Syunik: 5.2-1 headings ['ընդամենը', 'հայերեն', 'ռուսերեն', 'այլ', 'հրաժարվելենպատասխանել']
+  Syunik: 5.4 headings ['բնակչություն', 'կրոնականդավանանքով', 'հայառաքելական', 'կաթոլիկ', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'այլ', 'չունենորեւէկրոնականդավանանք', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքընշվածչէ']
+  Syunik: 141,771 people; Armenian Apostolic 121,643, Not stated 15,124, No religion 4,019, Evangelical 379, Jehovah's Witnesses 266
+  Vayots Dzor: 5.2-1 headings ['ըընդամենըղ)', 'հայերեն', 'ռուսերեն', 'այլ', 'հրաժարվելեն']
+  Vayots Dzor: 5.4 headings ['բնակչությունընդա', 'մեկրոնականնըդավանանքով', 'հայառաքելականդկար', 'վոաավետարաննաանականկան', 'քնըեհովայիվկա', 'այլ', 'չունենորեւէկրոնականդավանանք', 'կրոնականդավանանքընշվածչէ', 'հրաժարվելենպատասխանել']
+  Vayots Dzor: 52,324 people; Armenian Apostolic 48,780, Not stated 2,134, No religion 651, Evangelical 539, Other religion 166
+  Tavush: 5.2-1 headings ['ընդամեն', 'հայերեն', 'ռուսերե', 'ենայլ']
+  Tavush: 5.4 headings ['բնակչություն', 'կրոնականդավանանքունեցողներ', 'հայառաքելական', 'ուղղափառ', 'ավետարանական', 'եհովայիվկա', 'այլ', 'կրոնականդավանանքչունեցողներ', 'հրաժարվելենպատասխանել', 'կրոնականդավանանքըչնշածներ']
+  Tavush: 128,609 people; Armenian Apostolic 116,125, No religion 5,361, Not stated 4,800, Evangelical 1,617, Other religion 333
+  wrote data/processed/armenia_2011.json (53 kB)
+  wrote armenia_2011.json: 12 records
