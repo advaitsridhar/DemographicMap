@@ -631,8 +631,17 @@ def main() -> int:
 
     index = read_json(RAW / "codes" / "country_index.json", [])
     if not index:
-        log("  ERROR: run scripts/fetch_natural_earth.py first "
-            "(it writes data/raw/codes/country_index.json).")
+        # data/raw is not committed, so a fresh checkout -- a runner -- has no
+        # index. Build it here from Natural Earth's countries, as
+        # fetch_natural_earth does, without that script's other output
+        # (cities.json), which this run has no business rewriting.
+        from fetch_natural_earth import build_country_index, load
+        log("  no country index; building it from Natural Earth's admin-0 countries")
+        index = build_country_index(load("ne_10m_admin_0_countries"))
+        write_json(RAW / "codes" / "country_index.json", index)
+    if not index:
+        log("  ERROR: no country index, and Natural Earth gave none "
+            "(fetch_natural_earth.py writes data/raw/codes/country_index.json).")
         return 1
     resolver = CountryResolver(index)
 
