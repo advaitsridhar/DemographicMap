@@ -2597,8 +2597,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 92.1,
@@ -2687,6 +2689,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -2699,6 +2708,7 @@
     "shape_id": "92138335B12693512772054",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Abasha Municipality.",
     "sex_ratio_note": "10,713 men and 11,628 women enumerated in 2014 in Abasha Municipality.",
+    "median_age_note": "From the 2014 census's population of Abasha (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -2719,8 +2729,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 38.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.8,
@@ -2809,6 +2821,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -2821,6 +2840,7 @@
     "shape_id": "92138335B69008319732164",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Adigeni Municipality.",
     "sex_ratio_note": "8,222 men and 8,240 women enumerated in 2014 in Adigeni Municipality.",
+    "median_age_note": "From the 2014 census's population of Adigeni (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -2944,8 +2964,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 34.2,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 96.6,
@@ -3034,6 +3056,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3046,6 +3075,7 @@
     "shape_id": "92138335B50579342077052",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhalkalaki Municipality.",
     "sex_ratio_note": "22,143 men and 22,927 women enumerated in 2014 in Akhalkalaki Municipality.",
+    "median_age_note": "From the 2014 census's population of Akhalkalaki (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3066,8 +3096,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 37.1,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.5,
@@ -3156,6 +3188,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3168,6 +3207,7 @@
     "shape_id": "92138335B21082735865828",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhaltsikhe Municipality.",
     "sex_ratio_note": "18,791 men and 20,104 women enumerated in 2014 in C. Akhaltsikhe and Axaltsikhe Municipality.",
+    "median_age_note": "From the 2014 census's population of Akhaltsikhe (city) and Akhaltsikhe (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3188,8 +3228,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 39.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 98.8,
@@ -3278,6 +3320,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3290,6 +3339,7 @@
     "shape_id": "92138335B55198090861777",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Akhmeta Municipality.",
     "sex_ratio_note": "15,632 men and 15,829 women enumerated in 2014 in Akhmeta Municipality.",
+    "median_age_note": "From the 2014 census's population of Akhmeta (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3310,8 +3360,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 53.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 96.8,
@@ -3400,6 +3452,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3412,6 +3471,7 @@
     "shape_id": "92138335B78683832010722",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ambrolauri Municipality.",
     "sex_ratio_note": "5,501 men and 5,685 women enumerated in 2014 in C. Ambrolauri and Ambrolauri Municipality.",
+    "median_age_note": "From the 2014 census's population of Ambrolauri (city) and Ambrolauri (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3432,8 +3492,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 38.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 98.6,
@@ -3522,6 +3584,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3534,6 +3603,7 @@
     "shape_id": "92138335B53609413281794",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Aspindza Municipality.",
     "sex_ratio_note": "5,149 men and 5,223 women enumerated in 2014 in Aspindza Municipality.",
+    "median_age_note": "From the 2014 census's population of Aspindza (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3554,8 +3624,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.6,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.0,
@@ -3644,6 +3716,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3656,6 +3735,7 @@
     "shape_id": "92138335B26356280366694",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Baghdati Municipality.",
     "sex_ratio_note": "10,628 men and 10,954 women enumerated in 2014 in Baghdati Municipality.",
+    "median_age_note": "From the 2014 census's population of Baghdati (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3676,8 +3756,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 36.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 100.1,
@@ -3766,6 +3848,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3778,6 +3867,7 @@
     "shape_id": "92138335B67119502314916",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Bolnisi Municipality.",
     "sex_ratio_note": "26,804 men and 26,786 women enumerated in 2014 in Bolnisi Municipality.",
+    "median_age_note": "From the 2014 census's population of Bolnisi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3798,8 +3888,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 41.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 91.2,
@@ -3888,6 +3980,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -3900,6 +3999,7 @@
     "shape_id": "92138335B87948858644910",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Borjomi Municipality.",
     "sex_ratio_note": "12,030 men and 13,184 women enumerated in 2014 in Borjomi Municipality.",
+    "median_age_note": "From the 2014 census's population of Borjomi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -3920,8 +4020,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 45.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 94.8,
@@ -4010,6 +4112,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4022,6 +4131,7 @@
     "shape_id": "92138335B81565536454444",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chiatura Municipality.",
     "sex_ratio_note": "19,412 men and 20,472 women enumerated in 2014 in Chiatura Municipality.",
+    "median_age_note": "From the 2014 census's population of Chiatura (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4042,8 +4152,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.9,
@@ -4132,6 +4244,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4144,6 +4263,7 @@
     "shape_id": "92138335B48416461405502",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chkhorotsku Municipality.",
     "sex_ratio_note": "11,037 men and 11,272 women enumerated in 2014 in Chkhorotsku Municipality.",
+    "median_age_note": "From the 2014 census's population of Chkhorotsku (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4164,8 +4284,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.9,
@@ -4254,6 +4376,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4266,6 +4395,7 @@
     "shape_id": "92138335B42742975246173",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Chokhatauri Municipality.",
     "sex_ratio_note": "9,203 men and 9,798 women enumerated in 2014 in Chokhatauri Municipality.",
+    "median_age_note": "From the 2014 census's population of Chokhatauri (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4286,8 +4416,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 92.3,
@@ -4376,6 +4508,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4388,6 +4527,7 @@
     "shape_id": "92138335B37038597196331",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dedoplistsqaro Municipality.",
     "sex_ratio_note": "10,183 men and 11,038 women enumerated in 2014 in Dedoplistsqaro Municipality.",
+    "median_age_note": "From the 2014 census's population of Dedoplistskaro (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4408,8 +4548,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 37.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 100.2,
@@ -4498,6 +4640,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4510,6 +4659,7 @@
     "shape_id": "92138335B81831500200346",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dmanisi Municipality.",
     "sex_ratio_note": "9,579 men and 9,562 women enumerated in 2014 in Dmanisi Municipality.",
+    "median_age_note": "From the 2014 census's population of Dmanisi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4530,8 +4680,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 43.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.3,
@@ -4620,6 +4772,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4632,6 +4791,7 @@
     "shape_id": "92138335B14041872176832",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Dusheti Municipality.",
     "sex_ratio_note": "12,785 men and 12,874 women enumerated in 2014 in Dusheti Municipality.",
+    "median_age_note": "From the 2014 census's population of Dusheti (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -4732,8 +4892,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 33.6,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.5,
@@ -4822,6 +4984,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4834,6 +5003,7 @@
     "shape_id": "92138335B7743259611047",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: C. Rustavi Municipality and Gardabani Municipality, the city counted apart and drawn inside this polygon.",
     "sex_ratio_note": "100,003 men and 106,976 women enumerated in 2014 in C. Rustavi and Gardabani Municipality.",
+    "median_age_note": "From the 2014 census's population of Rustavi (city) and Gardabani (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards. The city of Rustavi, counted apart, is added: the map draws it inside this polygon."
   },
@@ -4854,8 +5024,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 37.5,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.5,
@@ -4944,6 +5116,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -4956,6 +5135,7 @@
     "shape_id": "92138335B26122981425536",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Gori Municipality.",
     "sex_ratio_note": "60,744 men and 64,948 women enumerated in 2014 in C. Gori and Gori Municipality.",
+    "median_age_note": "From the 2014 census's population of Gori (city) and Gori (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5056,8 +5236,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 94.2,
@@ -5146,6 +5328,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5158,6 +5347,7 @@
     "shape_id": "92138335B37128228826405",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Gurjaani Municipality.",
     "sex_ratio_note": "26,352 men and 27,985 women enumerated in 2014 in Gurjaani Municipality.",
+    "median_age_note": "From the 2014 census's population of Gurjaani (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5218,8 +5408,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 39.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.6,
@@ -5308,6 +5500,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5320,6 +5519,7 @@
     "shape_id": "92138335B15578291241997",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kareli Municipality.",
     "sex_ratio_note": "20,410 men and 20,906 women enumerated in 2014 in Kareli Municipality.",
+    "median_age_note": "From the 2014 census's population of Kareli (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5340,8 +5540,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.1,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.5,
@@ -5430,6 +5632,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5442,6 +5651,7 @@
     "shape_id": "92138335B8569651640453",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kaspi Municipality.",
     "sex_ratio_note": "21,609 men and 22,162 women enumerated in 2014 in Kaspi Municipality.",
+    "median_age_note": "From the 2014 census's population of Kaspi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5462,8 +5672,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 43.5,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 96.0,
@@ -5552,6 +5764,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5564,6 +5783,7 @@
     "shape_id": "92138335B46195092344531",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kazbegi Municipality.",
     "sex_ratio_note": "1,859 men and 1,936 women enumerated in 2014 in Kazbegi Municipality.",
+    "median_age_note": "From the 2014 census's population of Kazbegi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5584,8 +5804,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 36.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 100.7,
@@ -5674,6 +5896,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5686,6 +5915,7 @@
     "shape_id": "92138335B2821497080336",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Keda Municipality.",
     "sex_ratio_note": "8,410 men and 8,350 women enumerated in 2014 in Keda Municipality.",
+    "median_age_note": "From the 2014 census's population of Keda (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5706,8 +5936,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 46.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.8,
@@ -5796,6 +6028,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5808,6 +6047,7 @@
     "shape_id": "92138335B11752515436938",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kharagauli Municipality.",
     "sex_ratio_note": "9,627 men and 9,846 women enumerated in 2014 in Kharagauli Municipality.",
+    "median_age_note": "From the 2014 census's population of Kharagauli (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5828,8 +6068,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 39.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 94.2,
@@ -5918,6 +6160,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -5930,6 +6179,7 @@
     "shape_id": "92138335B61287460098363",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khashuri Municipality.",
     "sex_ratio_note": "25,519 men and 27,084 women enumerated in 2014 in Khashuri Municipality.",
+    "median_age_note": "From the 2014 census's population of Khashuri (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -5950,8 +6200,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 34.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.1,
@@ -6040,6 +6292,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6052,6 +6311,7 @@
     "shape_id": "92138335B5338969449548",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: C. Batumi Municipality and Khelvachauri Municipality, the city counted apart and drawn inside this polygon.",
     "sex_ratio_note": "98,369 men and 105,659 women enumerated in 2014 in C. Batumi and Khelvachauri Municipality.",
+    "median_age_note": "From the 2014 census's population of Batumi (city) and Khelvachauri (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards. The city of Batumi, counted apart, is added: the map draws it inside this polygon."
   },
@@ -6112,8 +6372,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 44.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 94.8,
@@ -6202,6 +6464,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6214,6 +6483,7 @@
     "shape_id": "92138335B64138373774111",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khoni Municipality.",
     "sex_ratio_note": "11,469 men and 12,101 women enumerated in 2014 in Khoni Municipality.",
+    "median_age_note": "From the 2014 census's population of Khoni (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6234,8 +6504,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 34.1,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.1,
@@ -6324,6 +6596,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6336,6 +6615,7 @@
     "shape_id": "92138335B65831597067457",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Khulo Municipality.",
     "sex_ratio_note": "11,612 men and 11,715 women enumerated in 2014 in Khulo Municipality.",
+    "median_age_note": "From the 2014 census's population of Khulo (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6356,8 +6636,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 36.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.8,
@@ -6446,6 +6728,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6458,6 +6747,7 @@
     "shape_id": "92138335B26955769626154",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kobuleti Municipality.",
     "sex_ratio_note": "36,982 men and 37,812 women enumerated in 2014 in Kobuleti Municipality.",
+    "median_age_note": "From the 2014 census's population of Kobuleti (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6478,8 +6768,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 38.6,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 101.1,
@@ -6568,6 +6860,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6580,6 +6879,7 @@
     "shape_id": "92138335B54966066678196",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Lagodekhi Municipality.",
     "sex_ratio_note": "20,953 men and 20,725 women enumerated in 2014 in Lagodekhi Municipality.",
+    "median_age_note": "From the 2014 census's population of Lagodekhi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6640,8 +6940,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 46.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 93.5,
@@ -6730,6 +7032,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6742,6 +7051,7 @@
     "shape_id": "92138335B53804357852579",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Lentekhi Municipality.",
     "sex_ratio_note": "2,119 men and 2,267 women enumerated in 2014 in Lentekhi Municipality.",
+    "median_age_note": "From the 2014 census's population of Lentekhi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6762,8 +7072,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 32.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 101.0,
@@ -6852,6 +7164,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6864,6 +7183,7 @@
     "shape_id": "92138335B51279478619931",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Marneuli Municipality.",
     "sex_ratio_note": "52,416 men and 51,884 women enumerated in 2014 in Marneuli Municipality.",
+    "median_age_note": "From the 2014 census's population of Marneuli (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -6884,8 +7204,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 45.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 96.5,
@@ -6974,6 +7296,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -6986,6 +7315,7 @@
     "shape_id": "92138335B7804846431662",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Martvili Municipality.",
     "sex_ratio_note": "16,433 men and 17,030 women enumerated in 2014 in Martvili Municipality.",
+    "median_age_note": "From the 2014 census's population of Martvili (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7006,8 +7336,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 37.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.3,
@@ -7096,6 +7428,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7108,6 +7447,7 @@
     "shape_id": "92138335B2863477847968",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Mestia Municipality.",
     "sex_ratio_note": "4,642 men and 4,674 women enumerated in 2014 in Mestia Municipality.",
+    "median_age_note": "From the 2014 census's population of Mestia (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7128,8 +7468,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 36.6,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 102.5,
@@ -7218,6 +7560,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7230,6 +7579,7 @@
     "shape_id": "92138335B12721672848691",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Mtskheta Municipality.",
     "sex_ratio_note": "28,173 men and 27,478 women enumerated in 2014 in C. Mtskheta and Mtskheta Municipality.",
+    "median_age_note": "From the 2014 census's population of Mtskheta (city) and Mtskheta (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7250,8 +7600,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 33.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.0,
@@ -7340,6 +7692,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7352,6 +7711,7 @@
     "shape_id": "92138335B7587308725021",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ninotsminda Municipality.",
     "sex_ratio_note": "12,186 men and 12,305 women enumerated in 2014 in Ninotsminda Municipality.",
+    "median_age_note": "From the 2014 census's population of Ninotsminda (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7412,8 +7772,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 52.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 89.4,
@@ -7502,6 +7864,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7514,6 +7883,7 @@
     "shape_id": "92138335B42170823144897",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Oni Municipality.",
     "sex_ratio_note": "2,894 men and 3,236 women enumerated in 2014 in Oni Municipality.",
+    "median_age_note": "From the 2014 census's population of Oni (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7534,8 +7904,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 92.6,
@@ -7624,6 +7996,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7636,6 +8015,7 @@
     "shape_id": "92138335B33048390881049",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Ozurgeti Municipality.",
     "sex_ratio_note": "30,223 men and 32,640 women enumerated in 2014 in C. Ozurgeti and Ozurgeti Municipality.",
+    "median_age_note": "From the 2014 census's population of Ozurgeti (city) and Ozurgeti (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7656,8 +8036,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.5,
@@ -7746,6 +8128,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7758,6 +8147,7 @@
     "shape_id": "92138335B62270915316276",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Kvareli Municipality.",
     "sex_ratio_note": "14,728 men and 15,099 women enumerated in 2014 in Qvareli Municipality.",
+    "median_age_note": "From the 2014 census's population of Kvareli (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7778,8 +8168,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.2,
@@ -7868,6 +8260,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -7880,6 +8279,7 @@
     "shape_id": "92138335B50184353982041",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sachkhere Municipality.",
     "sex_ratio_note": "18,808 men and 18,967 women enumerated in 2014 in Sachkhere Municipality.",
+    "median_age_note": "From the 2014 census's population of Sachkhere (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -7900,8 +8300,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 36.2,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 101.2,
@@ -7990,6 +8392,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8002,6 +8411,7 @@
     "shape_id": "92138335B38539666487560",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sagarejo Municipality.",
     "sex_ratio_note": "26,035 men and 25,726 women enumerated in 2014 in Sagarejo Municipality.",
+    "median_age_note": "From the 2014 census's population of Sagarejo (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8022,8 +8432,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 90.6,
@@ -8112,6 +8524,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8124,6 +8543,7 @@
     "shape_id": "92138335B39490393091716",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Samtredia Municipality.",
     "sex_ratio_note": "23,086 men and 25,476 women enumerated in 2014 in Samtredia Municipality.",
+    "median_age_note": "From the 2014 census's population of Samtredia (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8144,8 +8564,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 43.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 89.3,
@@ -8234,6 +8656,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8246,6 +8675,7 @@
     "shape_id": "92138335B76220270182366",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Senaki Municipality.",
     "sex_ratio_note": "18,704 men and 20,948 women enumerated in 2014 in Senaki Municipality.",
+    "median_age_note": "From the 2014 census's population of Senaki (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8266,8 +8696,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 35.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 100.9,
@@ -8356,6 +8788,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8368,6 +8807,7 @@
     "shape_id": "92138335B10016985210345",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Shuakhevi Municipality.",
     "sex_ratio_note": "7,555 men and 7,489 women enumerated in 2014 in Shuakhevi Municipality.",
+    "median_age_note": "From the 2014 census's population of Shuakhevi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8388,8 +8828,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 46.7,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 89.8,
@@ -8478,6 +8920,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8490,6 +8939,7 @@
     "shape_id": "92138335B21532266641065",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Sighnagi Municipality.",
     "sex_ratio_note": "14,169 men and 15,779 women enumerated in 2014 in Sighnaghi Municipality.",
+    "median_age_note": "From the 2014 census's population of Sighnaghi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8801,8 +9251,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 39.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 92.9,
@@ -8891,6 +9343,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -8903,6 +9362,7 @@
     "shape_id": "92138335B27063767093254",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Telavi Municipality.",
     "sex_ratio_note": "28,102 men and 30,248 women enumerated in 2014 in C. Telavi and Telavi Municipality.",
+    "median_age_note": "From the 2014 census's population of Telavi (city) and Telavi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -8963,8 +9423,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 39.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 95.8,
@@ -9053,6 +9515,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9065,6 +9534,7 @@
     "shape_id": "92138335B97195929624765",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tetritsqaro Municipality.",
     "sex_ratio_note": "10,335 men and 10,792 women enumerated in 2014 in Tetri Tsqaro Municipality.",
+    "median_age_note": "From the 2014 census's population of Tetritskaro (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9085,8 +9555,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 47.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 104.1,
@@ -9175,6 +9647,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9187,6 +9666,7 @@
     "shape_id": "92138335B62221031654939",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tianeti Municipality.",
     "sex_ratio_note": "4,828 men and 4,640 women enumerated in 2014 in Tianeti Municipality.",
+    "median_age_note": "From the 2014 census's population of Tianeti (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9247,8 +9727,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 51.4,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 95.4,
@@ -9337,6 +9819,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9349,6 +9838,7 @@
     "shape_id": "92138335B16539680317834",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsageri Municipality.",
     "sex_ratio_note": "5,070 men and 5,317 women enumerated in 2014 in Tsageri Municipality.",
+    "median_age_note": "From the 2014 census's population of Tsageri (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9369,8 +9859,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 43.5,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 94.0,
@@ -9459,6 +9951,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9471,6 +9970,7 @@
     "shape_id": "92138335B98712033744581",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsalenjikha Municipality.",
     "sex_ratio_note": "12,677 men and 13,481 women enumerated in 2014 in Tsalenjikha Municipality.",
+    "median_age_note": "From the 2014 census's population of Tsalenjikha (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9491,8 +9991,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 34.5,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 99.4,
@@ -9581,6 +10083,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9593,6 +10102,7 @@
     "shape_id": "92138335B43211443172937",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Tsalka Municipality.",
     "sex_ratio_note": "9,395 men and 9,454 women enumerated in 2014 in Tsalka Municipality.",
+    "median_age_note": "From the 2014 census's population of Tsalka (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9653,8 +10163,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 47.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 97.0,
@@ -9743,6 +10255,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9755,6 +10274,7 @@
     "shape_id": "92138335B24401992491818",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Vani Municipality.",
     "sex_ratio_note": "12,072 men and 12,440 women enumerated in 2014 in Vani Municipality.",
+    "median_age_note": "From the 2014 census's population of Vani (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9775,8 +10295,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 42.0,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 95.0,
@@ -9865,6 +10387,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9877,6 +10406,7 @@
     "shape_id": "92138335B27287539996765",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Zestaponi Municipality.",
     "sex_ratio_note": "28,082 men and 29,546 women enumerated in 2014 in Zestaponi Municipality.",
+    "median_age_note": "From the 2014 census's population of Zestaponi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   },
@@ -9897,8 +10427,10 @@
       "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Geostat publishes no age by municipality beyond the 2014 census's three broad groups (0-14, 15-64, 65 and over, in its Main Results), from which no median can be read; its single years of age and five-year groups stop at the region."
+      "value": 40.9,
+      "unit": "years",
+      "year": 2014,
+      "source": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it"
     },
     "sex_ratio": {
       "value": 91.1,
@@ -9987,6 +10519,13 @@
         "year": 2014
       },
       {
+        "field": "median_age",
+        "name": "National Statistics Office of Georgia (Geostat), 2014 census, population by self-governed unit, sex and five-year age group, as OCHA's Common Operational Dataset for Georgia (cod-ps-geo) relays it",
+        "url": "https://data.humdata.org/dataset/cod-ps-geo",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False",
+        "year": 2014
+      },
+      {
         "field": "ethnicity",
         "name": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2002 census, volume I, table 22 (census.ge, via the Internet Archive)",
         "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
@@ -9999,6 +10538,7 @@
     "shape_id": "92138335B56355921545740",
     "population_note": "Geostat's estimate for 1 January 2026, published in thousands to one decimal: Zugdidi Municipality.",
     "sex_ratio_note": "50,306 men and 55,203 women enumerated in 2014 in C. Zugdidi and Zugdidi Municipality.",
+    "median_age_note": "From the 2014 census's population of Zugdidi (city) and Zugdidi (municipality) by five-year age group (to 85 and over), interpolated within the group holding the middle person. Geostat's own database and Main Results give a municipality's ages in three broad groups only; this is Geostat's five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's own (table 02), unit by unit. The city counted apart is drawn inside this polygon.",
     "ethnicity_year": 2002,
     "ethnicity_note": "Nationality (ეროვნება) as each person declared it, from the 2002 census -- the latest published below the region: Geostat publishes the 2014 census's ethnicity by region only. Table 22 of volume I of the 2002 results names ten nationalities by raion; 'Other' is the rest of the raion's count. The census covered the territory under the government's control, so a raion's villages outside it (in Gori, Kareli, Oni and Akhalgori raions) are not in its count. The raions of 2002 are the municipalities of 2006 onwards."
   }
