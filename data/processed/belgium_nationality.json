@@ -1,0 +1,1360 @@
+[
+  {
+    "id": "BEL-NUTS-BE1-nat",
+    "level": "admin1",
+    "name": "Brussels Hoofdstedelijk",
+    "parent": "BEL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 64.2,
+        "count": 787590
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 14.7,
+        "count": 180850
+      },
+      {
+        "group": "French",
+        "pct": 5.5,
+        "count": 66894
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.6,
+        "count": 44310
+      },
+      {
+        "group": "Italian",
+        "pct": 2.8,
+        "count": 34764
+      },
+      {
+        "group": "Moroccan",
+        "pct": 2.8,
+        "count": 34102
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.4,
+        "count": 29499
+      },
+      {
+        "group": "Polish",
+        "pct": 1.7,
+        "count": 20994
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.6,
+        "count": 19114
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.7,
+        "count": 8212
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE1"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27649430B17719898407236",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE2-nat",
+    "level": "admin1",
+    "name": "Vlaams Gewest",
+    "parent": "BEL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 90.3,
+        "count": 6019936
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.3,
+        "count": 288681
+      },
+      {
+        "group": "Dutch",
+        "pct": 2.2,
+        "count": 145212
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 43372
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.7,
+        "count": 48830
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 25458
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.4,
+        "count": 29807
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 23555
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 21693
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 18165
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE2"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27649430B69989386836371",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE3-nat",
+    "level": "admin1",
+    "name": "Wallonne Gewest",
+    "parent": "BEL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 89.2,
+        "count": 3268382
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.9,
+        "count": 142375
+      },
+      {
+        "group": "Italian",
+        "pct": 2.6,
+        "count": 93992
+      },
+      {
+        "group": "French",
+        "pct": 2.3,
+        "count": 83996
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.5,
+        "count": 16948
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.5,
+        "count": 16540
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.5,
+        "count": 16534
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 12582
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.2,
+        "count": 7172
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5208
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE3"
+    },
+    "match_by": "shape_id",
+    "shape_id": "27649430B38670918582344",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE10-nat",
+    "level": "admin2",
+    "name": "Brussels",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 64.2,
+        "count": 787590
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 14.7,
+        "count": 180850
+      },
+      {
+        "group": "French",
+        "pct": 5.5,
+        "count": 66894
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.6,
+        "count": 44310
+      },
+      {
+        "group": "Italian",
+        "pct": 2.8,
+        "count": 34764
+      },
+      {
+        "group": "Moroccan",
+        "pct": 2.8,
+        "count": 34102
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.4,
+        "count": 29499
+      },
+      {
+        "group": "Polish",
+        "pct": 1.7,
+        "count": 20994
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.6,
+        "count": 19114
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.7,
+        "count": 8212
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE10"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B18913386279163",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE21-nat",
+    "level": "admin2",
+    "name": "Antwerpen",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 87.7,
+        "count": 1647482
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 5.1,
+        "count": 96729
+      },
+      {
+        "group": "Dutch",
+        "pct": 3.5,
+        "count": 65346
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.9,
+        "count": 16614
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 14903
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.8,
+        "count": 14378
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.5,
+        "count": 9798
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.3,
+        "count": 6507
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 3488
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 4073
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE21"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B2396966306431",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE22-nat",
+    "level": "admin2",
+    "name": "Limburg",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 89.0,
+        "count": 786082
+      },
+      {
+        "group": "Dutch",
+        "pct": 5.4,
+        "count": 47502
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.4,
+        "count": 29856
+      },
+      {
+        "group": "Italian",
+        "pct": 0.9,
+        "count": 7999
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 4239
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3,
+        "count": 2266
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.2,
+        "count": 2166
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 1775
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 522
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 821
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE22"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B67770072661487",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE23-nat",
+    "level": "admin2",
+    "name": "Oost-Vlaanderen",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 92.4,
+        "count": 1417298
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.6,
+        "count": 71121
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.9,
+        "count": 14545
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 7979
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.5,
+        "count": 7393
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.3,
+        "count": 4208
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 2589
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 2676
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 2612
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 3455
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE23"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B82996872575786",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE24-nat",
+    "level": "admin2",
+    "name": "Vlaams-Brabant",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 89.2,
+        "count": 1037736
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.8,
+        "count": 56363
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.2,
+        "count": 14242
+      },
+      {
+        "group": "Dutch",
+        "pct": 1.0,
+        "count": 11843
+      },
+      {
+        "group": "Italian",
+        "pct": 0.8,
+        "count": 9066
+      },
+      {
+        "group": "French",
+        "pct": 0.7,
+        "count": 8110
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 8656
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 6445
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 6344
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.4,
+        "count": 4381
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE24"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B83431002442680",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE25-nat",
+    "level": "admin2",
+    "name": "West-Vlaanderen",
+    "parent": "27649430B69989386836371",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 93.9,
+        "count": 1131338
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 2.9,
+        "count": 34612
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.9,
+        "count": 10551
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 6984
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 7595
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.5,
+        "count": 5976
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.2,
+        "count": 2438
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 1881
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 2082
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 1644
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE25"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B39448605328026",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE31-nat",
+    "level": "admin2",
+    "name": "Waals-Brabant",
+    "parent": "27649430B38670918582344",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 89.6,
+        "count": 365892
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.4,
+        "count": 14082
+      },
+      {
+        "group": "French",
+        "pct": 2.5,
+        "count": 10139
+      },
+      {
+        "group": "Italian",
+        "pct": 1.4,
+        "count": 5911
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.8,
+        "count": 3194
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.7,
+        "count": 2922
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 2555
+      },
+      {
+        "group": "Polish",
+        "pct": 0.4,
+        "count": 1449
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.3,
+        "count": 1356
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.2,
+        "count": 825
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE31"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B69139919320544",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE32-nat",
+    "level": "admin2",
+    "name": "Henegouwen",
+    "parent": "27649430B38670918582344",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 87.6,
+        "count": 1181891
+      },
+      {
+        "group": "Italian",
+        "pct": 4.0,
+        "count": 53653
+      },
+      {
+        "group": "French",
+        "pct": 3.6,
+        "count": 47978
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.2,
+        "count": 43041
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.5,
+        "count": 6777
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.5,
+        "count": 6164
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 4822
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 2989
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 904
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1642
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE32"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B73119179556728",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE33-nat",
+    "level": "admin2",
+    "name": "Luik",
+    "parent": "27649430B38670918582344",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 88.5,
+        "count": 985816
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 5.5,
+        "count": 61699
+      },
+      {
+        "group": "Italian",
+        "pct": 2.5,
+        "count": 27540
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 12082
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.7,
+        "count": 7454
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 7449
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.4,
+        "count": 4083
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.4,
+        "count": 4407
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1275
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 1519
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE33"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B30775418393346",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE34-nat",
+    "level": "admin2",
+    "name": "Luxemburg",
+    "parent": "27649430B38670918582344",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 90.4,
+        "count": 263835
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.6,
+        "count": 10568
+      },
+      {
+        "group": "French",
+        "pct": 2.5,
+        "count": 7175
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.5,
+        "count": 4363
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 1868
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.5,
+        "count": 1447
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.3,
+        "count": 926
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.2,
+        "count": 450
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2,
+        "count": 448
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 650
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE34"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B13309387984844",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "BEL-NUTS-BE35-nat",
+    "level": "admin2",
+    "name": "Namen",
+    "parent": "27649430B38670918582344",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 94.1,
+        "count": 470948
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 2.6,
+        "count": 12985
+      },
+      {
+        "group": "French",
+        "pct": 1.3,
+        "count": 6622
+      },
+      {
+        "group": "Italian",
+        "pct": 1.0,
+        "count": 5020
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3,
+        "count": 1328
+      },
+      {
+        "group": "Moroccan",
+        "pct": 0.2,
+        "count": 911
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 789
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 1058
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 434
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 394
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3)",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+        "license": "Eurostat (free reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "BEL",
+    "codes": {
+      "nuts": "BE35"
+    },
+    "match_by": "shape_id",
+    "shape_id": "21686613B39201499637991",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by country of citizenship on 1 January 2021: the register-based census's count of each resident's citizenship (Statbel, Census 2021, through Eurostat's Census Hub) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Belgians with a second citizenship are counted as Belgian. Written by the map owner's decision of 19 September 2026."
+  }
+]

@@ -1,13 +1,9 @@
-luxembourg_nationality: RP 2021 by commune and citizenship (LUSTAT DF_B1625)
-  102 communes, 12 cantons
-  communes against Luxembourg: parts sum to 643,941 = 643,941
-  cantons against Luxembourg: parts sum to 643,941 = 643,941
-  2011 communes against Luxembourg: parts sum to 512,353 = 512,353
-  Boevange-sur-Attert: 2011 census, 2,037 people
-  Hobscheid: 2011 census, 3,096 people
-  Mompach: 2011 census, 1,065 people
-  Rosport: 2011 census, 2,076 people
-  Septfontaines: 2011 census, 744 people
-  Tuntange: 2011 census, 1,275 people
-  wrote data/processed/luxembourg_nationality.json (251 kB)
-  wrote luxembourg_nationality.json: 117 records
+belgium_nationality: Eurostat cens_21ctz_r3, Belgium, 1 January 2021
+  cens_21ctz_r3: dimensions ['freq', 'citizen', 'sex', 'age', 'unit', 'geo', 'time'], sizes [1, 221, 1, 1, 1, 15, 1]
+  regions against Belgium: parts sum to 11,554,767 = 11,554,767
+  provinces against BE1: parts sum to 1,226,329 = 1,226,329
+  provinces against BE2: parts sum to 6,664,709 = 6,664,709
+  provinces against BE3: parts sum to 3,663,729 = 3,663,729
+  named: Belgian, French, Dutch, Italian, Romanian, Moroccan, Spanish, Polish, Portuguese
+  wrote data/processed/belgium_nationality.json (37 kB)
+  wrote belgium_nationality.json: 14 records
