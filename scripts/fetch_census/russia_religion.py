@@ -231,12 +231,34 @@ def read(blob: bytes) -> tuple[dict[str, dict[str, float]], dict[str, int], dict
     return table, sizes, national
 
 
+def country_row(national: dict[str, float], respondents: int) -> dict[str, Any]:
+    """Russia's shares as weighted counts of ``respondents``, largest first.
+
+    The shares are Sreda's, weighted by the subjects' populations, so the
+    counts are respondents re-weighted, not people who answered so: they add
+    up to the survey's whole sample, as the European Social Survey's pooled
+    national rows do."""
+    total = sum(national.values())
+    if abs(total - 100) > 0.5:
+        raise SystemExit(f"russia_religion: Russia's answers make {total:.2f}%")
+    groups = [{"group": g, "pct": round(p, 1), "count": round(p / total * respondents)}
+              for g, p in national.items() if p > 0]
+    return {"field": "religion", "respondents": respondents,
+            "groups": sorted(groups, key=lambda r: (-r["pct"], r["group"]))}
+
+
 def build(blob: bytes) -> list[dict[str, Any]]:
     table, sizes, national = read(blob)
     log(f"  {len(table)} subjects, {sum(sizes.values()):,} respondents in all "
         f"(n from {min(sizes.values())} to {max(sizes.values())})")
     log("  Russia: " + ", ".join(f"{k} {v:.1f}" for k, v in
                                  sorted(national.items(), key=lambda kv: -kv[1])))
+    # The country's row, for a curated country record (an adapter cannot reach
+    # admin0): Sreda's population-weighted shares at the workbook's full
+    # precision, and as weighted counts of the respondents -- the convention
+    # the European Social Survey's pooled rows follow.
+    log("  country " + json.dumps(country_row(national, sum(sizes.values())),
+                                  ensure_ascii=False))
     units = json.loads((SITE / "admin1" / "RUS.units.json").read_text())
     by_code = {u.get("iso_3166_2"): u for u in units}
     lost = [s for s, code in SUBJECTS.items() if code not in by_code]

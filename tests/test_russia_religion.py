@@ -41,5 +41,22 @@ class Configuration(unittest.TestCase):
         self.assertEqual(len(set(r.ANSWERS.values())), len(r.ANSWERS))
 
 
+class CountryRow(unittest.TestCase):
+    def test_weighted_shares_become_counts_of_the_whole_sample(self):
+        row = r.country_row({"Russian Orthodox Church": 41.12, "Atheist": 13.0,
+                             "Believe in God, no specific religion": 45.88, "Judaism": 0.0},
+                            56900)
+        self.assertEqual([g["group"] for g in row["groups"]],
+                         ["Believe in God, no specific religion", "Russian Orthodox Church",
+                          "Atheist"])
+        self.assertEqual(row["groups"][1], {"group": "Russian Orthodox Church", "pct": 41.1,
+                                            "count": 23397})
+        self.assertAlmostEqual(sum(g["count"] for g in row["groups"]), 56900, delta=1)
+
+    def test_shares_that_do_not_make_a_whole_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            r.country_row({"Atheist": 13.0, "Judaism": 0.1}, 56900)
+
+
 if __name__ == "__main__":
     unittest.main()
