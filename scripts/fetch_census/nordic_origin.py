@@ -215,6 +215,13 @@ def label_of(name: str = "", code: str = "") -> str | None:
     text = str(name).strip()
     if fold(text) in BY_NAME:
         return BY_NAME[fold(text)]
+    # "Republic of North Macedonia", "The Gambia", "Congo, Democratic Republic of"
+    bare = re.sub(r"^(?:the |republic of |kingdom of |state of |federal republic of )", "",
+                  text, flags=re.I)
+    bare = re.sub(r",\s*(?:the\s+)?(?:republic|kingdom|state)(?:\s+of)?(?:\s+the)?\s*$", "",
+                  bare, flags=re.I)
+    if fold(bare) in BY_NAME:
+        return BY_NAME[fold(bare)]
     for pattern, label in RESIDUAL_PATTERNS:
         if re.search(pattern, text, re.I):
             return label
@@ -521,6 +528,10 @@ SSB_PAGE = "https://www.ssb.no/en/statbank/table/09817"
 # 09817's own sums: every country, and the two groups of countries it
 # publishes beside them.
 SSB_TOTAL, SSB_GROUPS = "999", ("VES", "IVE")
+# SSB protects 09817's cells, so a kommune's countries can miss its printed
+# total by a person or two (Hof 0709 in 2017: 6,101 against 6,100). The share
+# is then of the countries' own sum. A misread misses by hundreds.
+SSB_SLACK = 5
 
 
 def ssb_counts(body: dict[str, Any]) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
@@ -534,9 +545,13 @@ def ssb_counts(body: dict[str, Any]) -> tuple[dict[str, dict[str, float]], dict[
         elif country not in SSB_GROUPS:
             counts[region][country] = counts[region].get(country, 0.0) + value
     for region, got in counts.items():
-        if abs(sum(got.values()) - totals.get(region, 0.0)) > 0.5:
+        if abs(sum(got.values()) - totals.get(region, 0.0)) > max(SSB_SLACK,
+                                                                   0.001 * totals.get(region, 0)):
             raise SystemExit(f"09817 {region}: countries make {sum(got.values()):,.0f} of "
                              f"{totals.get(region)}")
+        # The countries are what is itemised; their sum is the count of
+        # immigrants and Norwegian-born to immigrant parents used below.
+        totals[region] = sum(got.values())
     return counts, totals
 
 
@@ -708,6 +723,9 @@ FIN_REGIONS = {"01": "Uusimaa", "02": "Finland Proper", "04": "Satakunta",
 # the one they merged into: the merged one's people are in its successor's
 # figure today, which must then lie in the same sub-region of the map's year.
 FIN_MERGED_SINCE = {"099": "214"}          # Honkajoki into Kankaanpää, 1 January 2021
+# The most of a municipality's total its withheld small cells may make.
+WITHHELD_SHARE = 0.05
+WITHHELD_FLOOR = 200
 
 
 def statfin_counts(body: dict[str, Any], area: str, country: str
@@ -805,10 +823,25 @@ def finland() -> list[dict[str, Any]]:
         c, t = statfin_counts(body, area, country)
         counts.update(c)
         totals.update(t)
-    for muni, got in counts.items():
-        if abs(sum(got.values()) - totals.get(muni, -1)) > 0.5:
+    # A municipality's small background-country counts are withheld for
+    # confidentiality, so its itemised countries fall a little short of its
+    # published total. The shortfall is people of some withheld (small)
+    # background: it is counted in "Other" and said in the unit's note. A
+    # shortfall larger than max(WITHHELD_SHARE of the total, WITHHELD_FLOOR)
+    # is not suppression and stops the run, as does an excess.
+    withheld: dict[str, float] = {}
+    for muni in current:
+        got = counts.setdefault(muni, {})
+        if muni not in totals:
+            raise SystemExit(f"11rv {muni}: no total")
+        short = totals[muni] - sum(got.values())
+        if short < -0.5 or short > max(WITHHELD_SHARE * totals[muni], WITHHELD_FLOOR):
             raise SystemExit(f"11rv {muni}: countries make {sum(got.values()):,.0f} of "
-                             f"{totals.get(muni)}")
+                             f"{totals[muni]:,.0f}")
+        if short > 0.5:
+            withheld[muni] = short
+    log(f"  11rv {year}: withheld small counts counted in 'Other' in {len(withheld)} "
+        f"municipalities, {sum(withheld.values()):,.0f} people in all")
     national_people = sum(totals[c] for c in current)
     floor = NAMED_SHARE * national_people
     national_codes: dict[str, float] = defaultdict(float)
@@ -832,11 +865,15 @@ def finland() -> list[dict[str, Any]]:
             raise SystemExit(f"finland: sub-region {sk_names[sk]} lies in regions {homes}")
     sums: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     people: dict[str, float] = defaultdict(float)
+    hidden: dict[str, float] = defaultdict(float)
     for code in current:
         for unit in (f"SK{place_sk[code[2:]]}", f"MK{place_mk[code[2:]]}"):
             people[unit] += totals[code]
             for c, n in counts.get(code, {}).items():
                 sums[unit][labels[c]] += n
+            if withheld.get(code):
+                sums[unit][OTHER] += withheld[code]
+                hidden[unit] += withheld[code]
     check_parts({u: n for u, n in people.items() if u.startswith("MK")}, national_people,
                 "11rv: regions -> Finland", 0)
     source = {"field": "ethnicity", "name": "Statistics Finland, table 11rv", "url": STATFIN_PAGE,
@@ -852,8 +889,12 @@ def finland() -> list[dict[str, Any]]:
 
     def block(unit: str) -> dict[str, Any]:
         made = compose(dict(sums[unit]), named)
+        extra = (f" {hidden[unit]:,.0f} people whose background country Statistics Finland "
+                 "withholds at municipal level as too small a count are in 'Other'."
+                 if hidden.get(unit) else "")
         return ethnicity_block(made, people[unit], year=int(year),
-                               basis="origin and background country", note=note, source=source)
+                               basis="origin and background country", note=note + extra,
+                               source=source)
 
     shapes_rows = {found[d]: (d, "") for d in fi.DRAWN}
     bound, missing, left, _p = bind_rows("FIN", "admin2", shapes_rows)
