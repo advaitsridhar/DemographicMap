@@ -1,7 +1,82 @@
-  cod-ps-tur: level 1: tur_admpop_adm1_2022.csv (880 rows), level 2: tur_admpop_adm2_2022.csv (973 rows)
-  81 provinces and 973 districts, all the register's resident population in 2022; 799 and 0 empty rows passed over
-  973 districts make their 81 provinces, and these the country's 85,279,553, TÜİK's published total; every row's sexes and age groups make its total
-  turkey_districts: the country (the register on 31 December 2022): national median 33.5 from five-year groups, against Eurostat's 33.5 for 1 January 2023 (+0.00 years, bound 0.3)
-  972 of 973 districts bound to the map's 972 polygons; rows left: ['Adalar (Istanbul): 0 polygons']; polygons left: []
-  wrote data/processed/turkey_districts.json (3424 kB)
-  wrote turkey_districts.json: 972 records
+== get https://data.humdata.org/dataset/448e3320-d3bf-4f85-bc55-b173602579a6/resource/73c736b7-a8c3-411a-b779-e55101051709/download/geo_admpop_adm2_geostat_2014.csv
+  36,669 bytes, begins b'\xef\xbb\xbfYEAR,ADM0_PCO'
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1125,Gldani,გლდანის,raioni,district,175722,51494,3,94679,82535,177214
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1129,Didube,დიდუბის,raioni,district,70018,22878,3,39443,30575,70018
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1133,Vake,ვაკის,raioni,district,111323,36218,3,62180,49723,111903
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1135,Isani,ისნის,raioni,district,125439,38184,3,68508,57102,125610
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1139,Krtsanisi,კრწანისის,raioni,district,38942,11405,3,21129,18157,39286
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1143,Mtatsminda,მთაწმინდის,raioni,district,48907,15468,3,27740,21312,49052
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1147,Nadzaladevi,ნაძალადევის,raioni,district,153990,46113,3,83894,70173,154067
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1153,Saburtalo,საბურთალოს,raioni,district,138314,42967,3,76265,62228,138493
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1158,Samgori,სამგორის,raioni,district,177757,53744,3,95526,82318,177844
+  ~ 2014,GE,Georgia,საქართველო,GE11,c. Tbilisi,ქ. თბილისი,GE1163,Chughureti,ჩუღურეთის,raioni,district,65137,20833,3,36463,28767,65230
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1511,c. Batumi,ქ. ბათუმი,kalaki,city,152620,41591,4,80082,72757,152839
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1523,Keda,ქედის,municipaliteti,municipality,16753,3815,4,8350,8410,16760
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1525,Kobuleti,ქობულეთის,municipaliteti,municipality,74794,18421,4,37812,36982,74794
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1529,Shuakhevi,შუახევის,municipaliteti,municipality,15044,3633,4,7489,7555,15044
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1532,Khelvachauri,ხელვაჩაურის ,municipaliteti,municipality,51189,10950,5,25577,25612,51189
+  ~ 2014,GE,Georgia,საქართველო,GE15,Autonomous Republic of Adjara,აჭარის ავტონომიური რესპუბლიკა,GE1535,Khulo,ხულოს,municipaliteti,municipality,23317,5372,4,11715,11612,23327
+  ~ 2014,GE,Georgia,საქართველო,GE23,Guria,გურია,GE2311,c. Ozurgeti,ქ. ოზურგეთი,kalaki,city,14730,4895,3,8119,6666,14785
+  ~ 2014,GE,Georgia,საქართველო,GE23,Guria,გურია,GE2323,Lanchkhuti,ლანჩხუთის ,municipaliteti,municipality,31457,9752,3,16252,15234,31486
+  ~ 2014,GE,Georgia,საქართველო,GE23,Guria,გურია,GE2325,Ozurgeti ,ოზურგეთის,municipaliteti,municipality,48069,14286,3,24521,23557,48078
+  ~ 2014,GE,Georgia,საქართველო,GE23,Guria,გურია,GE2327,Chokhatauri ,ჩოხატაურის,municipaliteti,municipality,18983,5998,3,9798,9203,19001
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2611,c. Kutaisi,ქ. ქუთაისი,kalaki,city,146526,45249,3,78441,69194,147635
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2623,Baghdati,ბაღდათის,municipaliteti,municipality,21582,7047,3,10954,10628,21582
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2627,Vani,ვანის,municipaliteti,municipality,24504,8253,3,12440,12072,24512
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2629,Zestaponi,ზესტაფონის,municipaliteti,municipality,57628,18187,3,29546,28082,57628
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2631,Terjola,თერჯოლის,municipaliteti,municipality,35502,11021,3,17793,17770,35563
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2633,Samtredia ,სამტრედიის,municipaliteti,municipality,48534,15081,3,25476,23086,48562
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2635,Sachkhere ,საჩხერის,municipaliteti,municipality,37775,11336,3,18967,18808,37775
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2636,Tkibuli,ტყიბულის ,municipaliteti,municipality,20832,7489,3,10732,10107,20839
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2638,Tskaltubo,წყალტუბოს ,municipaliteti,municipality,55894,17032,3,28540,28343,56883
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2640,Chiatura,ჭიათურის,municipaliteti,municipality,39848,13827,3,20472,19412,39884
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2642,Kharagauli,ხარაგაულის,municipaliteti,municipality,19452,6754,3,9846,9627,19473
+  ~ 2014,GE,Georgia,საქართველო,GE26,Imereti,იმერეთი,GE2644,Khoni,ხონის,municipaliteti,municipality,23552,7740,3,12101,11469,23570
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2911,c. Telavi,ქ. თელავი,kalaki,city,19617,6416,3,10661,8968,19629
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2924,Akhmeta,ახმეტის,municipaliteti,municipality,31461,10063,3,15829,15632,31461
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2926,Gurjaani,გურჯაანის,municipaliteti,municipality,54321,17679,3,27985,26352,54337
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2928,Dedoplistskaro,დედოფლისწყაროს,municipaliteti,municipality,21221,7412,3,11038,10183,21221
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2930,Telavi,თელავის,municipaliteti,municipality,38696,11634,3,19587,19134,38721
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2932,Lagodekhi,ლაგოდეხის,municipaliteti,municipality,41669,12660,3,20725,20953,41678
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2934,Sagarejo,საგარეჯოს ,municipaliteti,municipality,51733,13406,4,25726,26035,51761
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2936,Sighnaghi,სიღნაღის,municipaliteti,municipality,29811,10406,3,15779,14169,29948
+  ~ 2014,GE,Georgia,საქართველო,GE29,Kakheti,კახეთი,GE2938,Kvareli,ყვარლის,municipaliteti,municipality,29713,9299,3,15099,14728,29827
+  ~ 2014,GE,Georgia,საქართველო,GE32,Mtskheta-Mtianeti,მცხეთა-მთიანეთი,GE3211,c. Mtskheta,ქ. მცხეთა,kalaki,city,7898,2323,3,4221,3719,7940
+  ~ 2014,GE,Georgia,საქართველო,GE32,Mtskheta-Mtianeti,მცხეთა-მთიანეთი,GE3225,Dusheti,დუშეთის,municipaliteti,municipality,25601,9099,3,12874,12785,25659
+  ~ 2014,GE,Georgia,საქართველო,GE32,Mtskheta-Mtianeti,მცხეთა-მთიანეთი,GE3227,Tianeti,თიანეთის,municipaliteti,municipality,9468,3711,3,4640,4828,9468
+  ~ 2014,GE,Georgia,საქართველო,GE32,Mtskheta-Mtianeti,მცხეთა-მთიანეთი,GE3229,Mtskheta,მცხეთის,municipaliteti,municipality,45735,13325,3,23257,24454,47711
+  ~ 2014,GE,Georgia,საქართველო,GE32,Mtskheta-Mtianeti,მცხეთა-მთიანეთი,GE3231,Kazbegi,ყაზბეგის,municipaliteti,municipality,3749,1405,3,1936,1859,3795
+  ~ 2014,GE,Georgia,საქართველო,GE35,Racha-Lechkhumi and Kvemo Svaneti ,რაჭა-ლეჩხუმი და ქვემო სვანეთი,GE3511,c. Ambrolauri,ქ. ამბროლაური,kalaki,city,2047,721,3,1088,959,2047
+  ~ 2014,GE,Georgia,საქართველო,GE35,Racha-Lechkhumi and Kvemo Svaneti ,რაჭა-ლეჩხუმი და ქვემო სვანეთი,GE3523,Ambrolauri,ამბროლაურის,municipaliteti,municipality,9139,3950,2,4597,4542,9139
+  ~ 2014,GE,Georgia,საქართველო,GE35,Racha-Lechkhumi and Kvemo Svaneti ,რაჭა-ლეჩხუმი და ქვემო სვანეთი,GE3526,Lentekhi,ლენტეხის,municipaliteti,municipality,4386,1543,3,2267,2119,4386
+  ~ 2014,GE,Georgia,საქართველო,GE35,Racha-Lechkhumi and Kvemo Svaneti ,რაჭა-ლეჩხუმი და ქვემო სვანეთი,GE3529,Oni,ონის,municipaliteti,municipality,6130,2593,2,3236,2894,6130
+  ~ 2014,GE,Georgia,საქართველო,GE35,Racha-Lechkhumi and Kvemo Svaneti ,რაჭა-ლეჩხუმი და ქვემო სვანეთი,GE3531,Tsageri,ცაგერის ,municipaliteti,municipality,10379,4095,3,5317,5070,10387
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3811,c. Zugdidi,ქ. ზუგდიდი,kalaki,city,42995,13113,3,23252,19746,42998
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3814,c. Poti,ქ. ფოთი,kalaki,city,41465,12744,3,21916,19549,41465
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3823,Abasha,აბაშის,municipaliteti,municipality,22337,7262,3,11628,10713,22341
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3825,Zugdidi,ზუგდიდის ,municipaliteti,municipality,62504,18206,3,31951,30560,62511
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3828,Martvili,მარტვილის,municipaliteti,municipality,33408,10571,3,17030,16433,33463
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3830,Mestia,მესტიის,municipaliteti,municipality,9316,2726,3,4674,4642,9316
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3832,Senaki,სენაკის,municipaliteti,municipality,39641,12745,3,20948,18704,39652
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3834,Chkhorotsku,ჩხოროწყუს ,municipaliteti,municipality,22309,6936,3,11272,11037,22309
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3836,Tsalenjikha,წალენჯიხის ,municipaliteti,municipality,26158,8123,3,13481,12677,26158
+  ~ 2014,GE,Georgia,საქართველო,GE38,Samegrelo-Zemo Svaneti,სამეგრელო-ზემო სვანეთი,GE3838,Khobi,ხობის,municipaliteti,municipality,30548,9081,3,15539,15009,30548
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4111,c. Akhaltsikhe,ქ. ახალციხე,kalaki,city,17838,5175,3,9403,8500,17903
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4123,Adigeni,ადიგენის,municipaliteti,municipality,16429,4651,4,8240,8222,16462
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4125,Aspindza,ასპინძის,municipaliteti,municipality,10347,2876,4,5223,5149,10372
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4127,Akhalkalaki,ახალქალაქის ,municipaliteti,municipality,45070,11092,4,22927,22143,45070
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4129,Akhaltsikhe,ახალციხის,municipaliteti,municipality,20940,6223,3,10701,10291,20992
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4131,Borjomi ,ბორჯომის,municipaliteti,municipality,25194,7936,3,13184,12030,25214
+  ~ 2014,GE,Georgia,საქართველო,GE41,Samtskhe-Javakheti,სამცხე-ჯავახეთი,GE4133,Ninotsminda,ნინოწმინდის,municipaliteti,municipality,24302,6028,4,12305,12186,24491
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4411,c. Rustavi,ქ. რუსთავი ,kalaki,city,123015,37488,3,65244,59859,125103
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4424,Bolnisi,ბოლნისის,municipaliteti,municipality,53564,14309,4,26786,26804,53590
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4426,Gardabani,გარდაბნის ,municipaliteti,municipality,81345,20540,4,41732,40144,81876
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4428,Dmanisi,დმანისის,municipaliteti,municipality,19139,5524,3,9562,9579,19141
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4430,Tetritskaro,თეთრიწყაროს,municipaliteti,municipality,21127,6706,3,10792,10335,21127
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4432,Marneuli,მარნეულის,municipaliteti,municipality,104300,24523,4,51884,52416,104300
+  ~ 2014,GE,Georgia,საქართველო,GE44,Kvemo Kartli,ქვემო ქართლი,GE4434,Tsalka,წალკის ,municipaliteti,municipality,18836,5489,3,9454,9395,18849
+  ~ 2014,GE,Georgia,საქართველო,GE47,Shida Kartli,შიდა ქართლი,GE4711,c. Gori,ქ. გორი,kalaki,city,48137,15021,3,26002,22141,48143
+  ~ 2014,GE,Georgia,საქართველო,GE47,Shida Kartli,შიდა ქართლი,GE4724,Gori,გორის,municipaliteti,municipality,77528,23263,3,38946,38603,77549
+  ~ 2014,GE,Georgia,საქართველო,GE47,Shida Kartli,შიდა ქართლი,GE4726,Kaspi,კასპის ,municipaliteti,municipality,43760,13881,3,22162,21609,43771
+  ~ 2014,GE,Georgia,საქართველო,GE47,Shida Kartli,შიდა ქართლი,GE4728,Kareli,ქარელის,municipaliteti,municipality,41194,12533,3,20906,20410,41316
+  ~ 2014,GE,Georgia,საქართველო,GE47,Shida Kartli,შიდა ქართლი,GE4731,Khashuri,ხაშურის,municipaliteti,municipality,52476,15592,3,27084,25519,52603
