@@ -66,19 +66,69 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only."
-    },
-    "language_year": null,
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.7
+      },
+      {
+        "group": "other",
+        "pct": 0.3,
+        "bound": "<"
+      }
+    ],
+    "religion_year": 2009,
+    "language": [
+      {
+        "group": "Afghan Persian or Dari",
+        "pct": 77.0
+      },
+      {
+        "group": "Pashto",
+        "pct": 48.0
+      },
+      {
+        "group": "Uzbeki",
+        "pct": 11.0
+      },
+      {
+        "group": "English",
+        "pct": 6.0
+      },
+      {
+        "group": "Turkmani",
+        "pct": 3.0
+      },
+      {
+        "group": "Urdu",
+        "pct": 3.0
+      },
+      {
+        "group": "Pashaie",
+        "pct": 1.0
+      },
+      {
+        "group": "Nuristani",
+        "pct": 1.0
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.0
+      },
+      {
+        "group": "Balochi",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
+    "language_year": 2020,
     "ethnicity": {
-      "status": "not_collected",
-      "note": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only."
+      "status": "not_available",
+      "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie, Nur"
     },
     "ethnicity_year": null,
     "sources": [
@@ -89,7 +139,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim 99.7% (Sunni 84.7 - 89.7%, Shia 10 - 15%), other <0.3% (2009 est.)\".",
+    "language_note": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only. The figure shown is the CIA World Factbook's estimate, which reads: \"Afghan Persian or Dari (official, lingua franca) 77%, Pashto (official) 48%, Uzbeki 11%, English 6%, Turkmani 3%, Urdu 3%, Pashaie 1%, Nuristani 1%, Arabic 1%, Balochi 1%, other <1% (2020 est.)\"."
   },
   {
     "id": "GEC-AX",
@@ -384,20 +436,34 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Algeria's census does not ask religion; censuses on a religious, linguistic or ethnic basis are barred to preserve national unity. The 2022 RGPH form has no such question."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
+    "religion_year": 2012,
     "language": {
       "status": "not_collected",
       "note": "Algeria's census has not asked language since 1966, on a division set that matches no current boundary; the 2022 RGPH form has no such question."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Algeria's census does not ask ethnicity, barred with religion and language; the 2022 RGPH form has no such question."
-    },
+    "ethnicity": [
+      {
+        "group": "Arab-Amazigh",
+        "pct": 99.0
+      },
+      {
+        "group": "European",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -407,7 +473,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Algeria's census does not ask religion; censuses on a religious, linguistic or ethnic basis are barred to preserve national unity. The 2022 RGPH form has no such question. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim (official; predominantly Sunni) 99%, other (includes Christian, Jewish, Ahmadi Muslim, Shia Muslim, Ibadi Muslim) <1% (2012 est.)\".",
+    "ethnicity_note": "Algeria's census does not ask ethnicity, barred with religion and language; the 2022 RGPH form has no such question. The figure shown is the CIA World Factbook's estimate, which reads: \"Arab-Amazigh 99%, European less than 1%\"."
   },
   {
     "id": "ASM",
@@ -1192,18 +1260,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Antiguan Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Antigua and Barbuda's census does not ask language. The 2011 person questionnaire (8 pages) asks ethnic group and religion and nothing on language, and the census's REDATAM base (ATGPHC2011) holds no language variable."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -1339,43 +1399,37 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead."
-    },
-    "religion_year": null,
-    "language": [
+    "religion": [
       {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "Roman Catholic",
+        "pct": 62.9
       },
       {
-        "group": "Italian",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "Evangelical",
+        "pct": 15.3
       },
       {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "Jehovah's Witness and Church of Jesus Christ",
+        "pct": 1.4
       },
       {
-        "group": "German",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "other",
+        "pct": 1.2
       },
       {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "none",
+        "pct": 18.9
       },
       {
-        "group": "indigenous",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "unspecified",
+        "pct": 0.3
       }
     ],
+    "religion_year": 2019,
+    "language": {
+      "status": "not_collected",
+      "note": "Argentina's 2022 census has no language question for the population; it asks only whether a person who recognises themselves as indigenous speaks or understands their people's language, which is not a composition. That share is given in each unit's ethnicity note."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -1400,7 +1454,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 62.9%, Evangelical 15.3% (Pentecostal 13%, other Evangelical 2.3%), Jehovah's Witness and Church of Jesus Christ 1.4%, other 1.2% (includes Muslim, Jewish), none 18.9% (includes agnostic and atheist), unspecified 0.3% (2019 est.)\"."
   },
   {
     "id": "ARM",
@@ -2038,21 +2093,91 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Austria's register-based census carries no religion; the last religion question was in the 2001 census."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Austria's register-based census carries no language; the last Umgangssprache question was in 2001."
-    },
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity."
-    },
-    "ethnicity_year": null,
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 55.2
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.3
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.9
+      },
+      {
+        "group": "Evangelical Christian",
+        "pct": 3.8
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1
+      },
+      {
+        "group": "other",
+        "pct": 5.4
+      },
+      {
+        "group": "none",
+        "pct": 22.4
+      }
+    ],
+    "religion_year": 2021,
+    "language": [
+      {
+        "group": "German",
+        "pct": 88.6
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.3
+      },
+      {
+        "group": "Serbian",
+        "pct": 2.2
+      },
+      {
+        "group": "Croatian",
+        "pct": 1.6
+      },
+      {
+        "group": "other",
+        "pct": 5.3
+      }
+    ],
+    "language_year": 2001,
+    "ethnicity": [
+      {
+        "group": "Austrian",
+        "pct": 80.8
+      },
+      {
+        "group": "German",
+        "pct": 2.6
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 1.9
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.8
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.3
+      },
+      {
+        "group": "other",
+        "pct": 10.0
+      }
+    ],
+    "ethnicity_year": 2018,
     "sources": [
       {
         "field": "*",
@@ -2061,7 +2186,10 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Austria's register-based census carries no religion; the last religion question was in the 2001 census. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 55.2%, Muslim 8.3%, Orthodox 4.9%, Evangelical Christian 3.8%, Jewish 0.1%, other 5.4%, none 22.4% (2021 est.)\".",
+    "language_note": "Austria's register-based census carries no language; the last Umgangssprache question was in 2001. The figure shown is the CIA World Factbook's estimate, which reads: \"German (official nationwide) 88.6%, Turkish 2.3%, Serbian 2.2%, Croatian (official in Burgenland) 1.6%, other (includes Slovene, official in southern Carinthia, and Hungarian, official in Burgenland) 5.3% (2001 est.)\".",
+    "ethnicity_note": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Austrian 80.8%, German 2.6%, Bosnian and Herzegovinian 1.9%, Turkish 1.8%, Serbian 1.6%, Romanian 1.3%, other 10% (2018 est.)\"."
   },
   {
     "id": "AZE",
@@ -2504,11 +2632,17 @@
       }
     ],
     "religion_year": 2022,
-    "language": {
-      "status": "not_available",
-      "note": "Bangladesh's census does not ask language. The 2022 questionnaire has 35 questions -- 15 in the household module and 20 in the individual module, which the National Report (Volume I) lists as age, sex, marital status, religion, disability, education, working status, training, mobile phone and internet use, banking inclusion and ethnic population -- and none of them is language. The census project's own long-questionnaire sample survey does ask it: the Report on Socio-Economic and Demographic Survey 2023 (BBS, June 2024, 553 pages) collects mother tongue in Module 4 and publishes Table 3.6, Population by Mother Tongue and Second Language, Division and Location. That table has two mother-tongue columns for the eight divisions, Bangla and Others, and no mother tongue but Bangla is named anywhere in its 553 pages. A named group against a residual is not a composition, and the survey publishes nothing below the division, so no zila has a mother-tongue figure from either round. The one Bangladeshi instrument that is district-representative asks the question and never tabulates it: MICS 2019 puts it to every household as question HC1B, \"What is the mother tongue/native language of the head of the household?\", and prints exactly two answers beside it, BANGLA and OTHER LANGUAGE. In 564 pages that phrase appears once, on the blank questionnaire, and the survey's own District Summary Findings Report does not contain the word language at all. So the limit is not only that the figures stop at the division: every Bangladeshi instrument that asks mother tongue codes it as one language against an unnamed rest, which is not a composition at any level. What the census asks about a minority's identity is ethnic group, under the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010."
-    },
-    "language_year": null,
+    "language": [
+      {
+        "group": "Bangla",
+        "pct": 98.8
+      },
+      {
+        "group": "other",
+        "pct": 1.2
+      }
+    ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Bengali",
@@ -2529,7 +2663,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Bangladesh's census does not ask language. The 2022 questionnaire has 35 questions -- 15 in the household module and 20 in the individual module, which the National Report (Volume I) lists as age, sex, marital status, religion, disability, education, working status, training, mobile phone and internet use, banking inclusion and ethnic population -- and none of them is language. The census project's own long-questionnaire sample survey does ask it: the Report on Socio-Economic and Demographic Survey 2023 (BBS, June 2024, 553 pages) collects mother tongue in Module 4 and publishes Table 3.6, Population by Mother Tongue and Second Language, Division and Location. That table has two mother-tongue columns for the eight divisions, Bangla and Others, and no mother tongue but Bangla is named anywhere in its 553 pages. A named group against a residual is not a composition, and the survey publishes nothing below the division, so no zila has a mother-tongue figure from either round. The one Bangladeshi instrument that is district-representative asks the question and never tabulates it: MICS 2019 puts it to every household as question HC1B, \"What is the mother tongue/native language of the head of the household?\", and prints exactly two answers beside it, BANGLA and OTHER LANGUAGE. In 564 pages that phrase appears once, on the blank questionnaire, and the survey's own District Summary Findings Report does not contain the word language at all. So the limit is not only that the figures stop at the division: every Bangladeshi instrument that asks mother tongue codes it as one language against an unnamed rest, which is not a composition at any level. What the census asks about a minority's identity is ethnic group, under the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010. The figure shown is the CIA World Factbook's estimate, which reads: \"Bangla 98.8% (official, also known as Bengali), other 1.2% (2011 est.)\"."
   },
   {
     "id": "BRB",
@@ -2746,11 +2881,25 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Belarus's 2019 census asked nationality and language, not religion."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 48.3
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.1
+      },
+      {
+        "group": "other",
+        "pct": 3.5
+      },
+      {
+        "group": "non-believers",
+        "pct": 41.1
+      }
+    ],
+    "religion_year": 2011,
     "language": [
       {
         "group": "Russian",
@@ -2805,7 +2954,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Belarus's 2019 census asked nationality and language, not religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Orthodox 48.3%, Catholic 7.1%, other 3.5%, non-believers 41.1% (2011 est.)\"."
   },
   {
     "id": "BEL",
@@ -2880,21 +3030,85 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Belgium's census is compiled from registers and has never carried religion."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 57.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.3
+      },
+      {
+        "group": "other Christian",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.8
+      },
+      {
+        "group": "other",
+        "pct": 1.7
+      },
+      {
+        "group": "atheist",
+        "pct": 9.1
+      },
+      {
+        "group": "nonbeliever/agnostic",
+        "pct": 20.2
+      }
+    ],
+    "religion_year": 2018,
+    "language": [
+      {
+        "group": "Dutch",
+        "pct": 60.0
+      },
+      {
+        "group": "French",
+        "pct": 40.0
+      },
+      {
+        "group": "German",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Belgium does not collect ethnicity; language community is administrative, not a census question."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Belgian",
+        "pct": 75.2
+      },
+      {
+        "group": "Italian",
+        "pct": 4.1
+      },
+      {
+        "group": "Moroccan",
+        "pct": 3.7
+      },
+      {
+        "group": "French",
+        "pct": 2.4
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.0
+      },
+      {
+        "group": "Dutch",
+        "pct": 2.0
+      },
+      {
+        "group": "other",
+        "pct": 10.6
+      }
+    ],
+    "ethnicity_year": 2012,
     "sources": [
       {
         "field": "*",
@@ -2903,7 +3117,10 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Belgium's census is compiled from registers and has never carried religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 57.1%, Protestant 2.3%, other Christian, 2.8%, Muslim 6.8%, other 1.7%, atheist 9.1%, nonbeliever/agnostic 20.2% (2018 est.)\".",
+    "language_note": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none. The figure shown is the CIA World Factbook's estimate, which reads: \"Dutch (official) 60%, French (official) 40%, German (official) less than 1%\".",
+    "ethnicity_note": "Belgium does not collect ethnicity; language community is administrative, not a census question. The figure shown is the CIA World Factbook's estimate, which reads: \"Belgian 75.2%, Italian 4.1%, Moroccan 3.7%, French 2.4%, Turkish 2%, Dutch 2%, other 10.6% (2012 est.)\"."
   },
   {
     "id": "BLZ",
@@ -3491,20 +3708,54 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Bhutan's census does not ask language or mother tongue."
-    },
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving."
-    },
+    "religion": [
+      {
+        "group": "Lamaistic Buddhist",
+        "pct": 75.3
+      },
+      {
+        "group": "Indian- and Nepali-influenced Hinduism",
+        "pct": 22.1
+      },
+      {
+        "group": "other",
+        "pct": 2.6
+      }
+    ],
+    "religion_year": 2005,
+    "language": [
+      {
+        "group": "Sharchopkha",
+        "pct": 28.0
+      },
+      {
+        "group": "Dzongkha",
+        "pct": 24.0
+      },
+      {
+        "group": "Lhotshamkha",
+        "pct": 22.0
+      },
+      {
+        "group": "other",
+        "pct": 26.0
+      }
+    ],
+    "language_year": 2005,
+    "ethnicity": [
+      {
+        "group": "Ngalop",
+        "pct": 50.0
+      },
+      {
+        "group": "ethnic Nepali",
+        "pct": 35.0
+      },
+      {
+        "group": "indigenous or migrant tribes",
+        "pct": 15.0
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -3514,7 +3765,10 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either. The figure shown is the CIA World Factbook's estimate, which reads: \"Lamaistic Buddhist 75.3%, Indian- and Nepali-influenced Hinduism 22.1%, other 2.6% (2005 est.)\".",
+    "language_note": "Bhutan's census does not ask language or mother tongue. The figure shown is the CIA World Factbook's estimate, which reads: \"Sharchopkha 28%, Dzongkha (official) 24%, Lhotshamkha 22%, other 26% (includes foreign languages) (2005 est.)\".",
+    "ethnicity_note": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving. The figure shown is the CIA World Factbook's estimate, which reads: \"Ngalop (also known as Bhote) 50%, ethnic Nepali 35% (predominantly Lhotshampas), indigenous or migrant tribes 15%\"."
   },
   {
     "id": "BOL",
@@ -3702,7 +3956,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Bolivia's 2024 census does not ask religion. INE's data dictionary for the census's person database lists every question it holds, 24 to 59 -- relationship, sex, age, birth registration, health care, nación o pueblo, languages spoken and first learned, birthplace, residence, schooling, literacy, disability, work, marital status and children -- and religion is not among them. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 65%, Protestant 19.6% (Evangelical (non-specific) 11.9%, Evangelical Baptist 2.1%, Evangelical Pentecostal 1.8%, Evangelical Methodist 0.7%, Adventist 2.8%, Protestant (non-specific) 0.3%), Believer (not belonging to the church) 0.9%, other 4.8%, atheist 1.7%, agnostic 0.6%, none...\"."
   },
   {
     "id": "BIH",
@@ -4225,7 +4480,7 @@
     "language_year": null,
     "ethnicity": [
       {
-        "group": "mixed",
+        "group": "Pardo",
         "pct": 45.3
       },
       {
@@ -6775,11 +7030,43 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead. The China Family Panel Studies asked it in 2012 and supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "folk religion",
+        "pct": 21.9
+      },
+      {
+        "group": "Buddhist",
+        "pct": 18.2
+      },
+      {
+        "group": "Christian",
+        "pct": 5.1
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.8
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "bound": "<"
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.1,
+        "bound": "<"
+      },
+      {
+        "group": "other",
+        "pct": 0.7
+      },
+      {
+        "group": "unaffiliated",
+        "pct": 52.1
+      }
+    ],
+    "religion_year": 2021,
     "language": [
       {
         "group": "Standard Chinese or Mandarin",
@@ -6847,7 +7134,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead. The China Family Panel Studies asked it in 2012 and supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them. The figure shown is the CIA World Factbook's estimate, which reads: \"folk religion 21.9%, Buddhist 18.2%, Christian 5.1%, Muslim 1.8%, Hindu < 0.1%, Jewish < 0.1%, other 0.7% (includes Daoist (Taoist)), unaffiliated 52.1% (2021 est.)\"."
   },
   {
     "id": "CXR",
@@ -7038,8 +7326,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available",
-      "note": "No composition published by the Factbook for this entity."
+      "status": "not_collected",
+      "note": "France's census does not ask language. INSEE's Enquete Famille (1999, run with the census) and INED and INSEE's Trajectoires et Origines surveys (2008-09, 2019-20) ask which languages people were raised in or speak, and are published for France as a whole, not by region or departement; the European Social Survey fills the regions where it has 100 respondents (12 of 13; not Corse)."
     },
     "language_year": null,
     "ethnicity": {
@@ -7255,16 +7543,61 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Colombia's census does not ask religion; DANE publishes no religious statistics. The 2018 census asked ethnic self-recognition, which is on the map."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Colombia's 2018 census has no language question for the population; it asks only whether a person who is indigenous speaks their native language, which is not a composition."
-    },
-    "language_year": null,
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 63.6
+      },
+      {
+        "group": "Protestant",
+        "pct": 17.2
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.6
+      },
+      {
+        "group": "Church of Jesus Christ",
+        "pct": 0.1
+      },
+      {
+        "group": "other",
+        "pct": 0.3
+      },
+      {
+        "group": "believer",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "atheist",
+        "pct": 1.0
+      },
+      {
+        "group": "none",
+        "pct": 14.2
+      },
+      {
+        "group": "unspecified",
+        "pct": 1.8
+      }
+    ],
+    "religion_year": 2023,
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 98.9
+      },
+      {
+        "group": "indigenous",
+        "pct": 1.0
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1
+      }
+    ],
+    "language_year": 2023,
     "ethnicity": [
       {
         "group": "Mestizo and White",
@@ -7292,7 +7625,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Colombia's census does not ask religion; DANE publishes no religious statistics. The 2018 census asked ethnic self-recognition, which is on the map. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 63.6%, Protestant 17.2% (Evangelical 16.7%, Adventist 0.3%, other Protestant 0.2%), Jehovah's Witness 0.6%, Church of Jesus Christ 0.1%, other 0.3%, believer, 0.2%. agnostic 1%, atheist 1%, none 14.2%, unspecified 1.8% (2023 est.)\".",
+    "language_note": "Colombia's 2018 census has no language question for the population; it asks only whether a person who is indigenous speaks their native language, which is not a composition. The figure shown is the CIA World Factbook's estimate, which reads: \"Spanish (official) 98.9%, indigenous 1%, Portuguese 0.1%; 65 indigenous languages exist (2023 est.)\"."
   },
   {
     "id": "COM",
@@ -7914,18 +8249,10 @@
       }
     ],
     "religion_year": 2021,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Costa Rica's census has no language question for the population. The 2011 census asks only whether a person who said they are indigenous speaks an indigenous language (P09: its 'No Aplica' is everyone P07 did not count as indigenous, 4,197,569 people), which is not a composition of what anybody speaks."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -7966,7 +8293,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Costa Rica's census does not ask religion. INEC's REDATAM base of the 2011 census holds, for every person, relationship, sex, age, birthplace and arrival, P07 whether indigenous, P08 which people, P09 whether they speak an indigenous language, P10 ethnic-racial self-identification, social security, disability, schooling, ICT use, residence five years before, marital status, occupation, industry, place of work and children born. Religion is not among them. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 47.5%, Evangelical and Pentecostal 19.8%, Jehovah's Witness 1.4%, other Protestant 1.2%, other 3.1%, none 27% (2021 est.)\"."
   },
   {
     "id": "HRV",
@@ -8225,13 +8553,10 @@
       }
     ],
     "religion_year": 2020,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Cuba's census does not ask language or mother tongue: ONEI's list of every topic of the 2012 Censo de Población y Viviendas (Informe Nacional, section IV) has none."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -8256,7 +8581,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Cuba's census does not ask religion. ONEI's national report on the 2012 Censo de Población y Viviendas lists every topic its questionnaire covered (Informe Nacional, section IV, Temáticas y cuestionario censal): residence, birthplace and migration; sex, age, skin colour, household headship and relationships, and disabilities; marital status; schooling, degrees and literacy; economic activity and commuting; and the dwelling. Religion is not among them. The figure shown is the CIA World Factbook's estimate, which reads: \"Christian 58.9%, folk religion 17.6%, Buddhist <1%, Hindu <1%, Jewish <1%, Muslim <1%, other <1%, none 23.2% (2020 est.)\"."
   },
   {
     "id": "CUW",
@@ -9169,34 +9495,26 @@
       }
     ],
     "religion_year": 2024,
-    "language": [
+    "language": {
+      "status": "not_collected",
+      "note": "Denmark's census is compiled from the Civil Registration System, which records no language. Of Statistics Denmark's 5,732 StatBank tables, the only four with a language variable count books (BOG03, BOG06, BOGS02, BOGS03)."
+    },
+    "language_year": null,
+    "ethnicity": [
       {
         "group": "Danish",
-        "pct": null,
-        "pct_status": "not_available"
+        "pct": 84.2
       },
       {
-        "group": "Faroese",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "Turkish",
+        "pct": 1.1
       },
       {
-        "group": "Greenlandic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "German",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "other",
+        "pct": 14.7
       }
     ],
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Denmark records ancestry/citizenship, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity_year": 2023,
     "sources": [
       {
         "field": "*",
@@ -9205,7 +9523,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Denmark records ancestry/citizenship, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Danish (includes Greenlandic (who are predominantly Inuit) and Faroese) 84.2%, Turkish 1.1%, other 14.7% (largest groups are Polish, Romanian, Syrian, Ukrainian, German, and Iraqi) (2023 est.)\"."
   },
   {
     "id": "GEC-DX",
@@ -9505,18 +9824,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Dominica's census does not ask language. The 2011 Population and Housing Census questionnaire (15 pages) asks ethnic group (Q44) and religion (Q45); 'language' appears only in its disability questions."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -10094,18 +10405,10 @@
       }
     ],
     "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Nawat",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "El Salvador's census asks no first or main language. The 2024 census asks everyone aged 3 and over whether they speak a second language and which (the BCR's tables TAB_IDIO_1 and TAB_IDIO_2: 427,368 of 5,635,059 said yes, naming English, Náhuat, Pisbi, Potón, LESSA and others). That counts the speakers of second languages, several per person, not what the population speaks, so it is not a composition."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -10138,7 +10441,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "El Salvador's census does not ask religion. The BCR describes the 2024 census's 74 questions as six sections -- location, dwelling, household, mortality, international emigration and population, the last covering age, sex, marital status, birthplace, schooling and indigenous and Afro-descendant self-identification -- and its 135-page census report, whose chapters run from population structure through fertility, mortality, migration, ethnicity, disability, education, language, work and ICT to housing, has none on religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 43.9%, Protestant 39.6% (Evangelical - unspecified 38.2%, Evangelical - Methodist 1.3%, Evangelical - Baptist 0.1%), none 16.3%, unspecified 0.2% (2023 est.)\"."
   },
   {
     "id": "GNQ",
@@ -11629,7 +11933,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Finland's population register records membership of a religious community for everyone, but Statistics Finland publishes it for the whole country only (table 11rx, by age and sex); no StatFin table, and none of the municipal key figures, gives it by region or municipality. The register keeper (DVV) publishes election statistics, citizens by municipality and lists of parishes, not membership counts. The Evangelical Lutheran Church publishes its own members by municipality, which is one church's count and not the register's. The figure shown is the CIA World Factbook's estimate, which reads: \"Lutheran 66.6%, Greek Orthodox 1.1%, other 1.7%, none 30.6% (2022 est.)\"."
   },
   {
     "id": "FRA",
@@ -11728,11 +12033,45 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "France does not collect religion in its census for the same reason."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 47.0
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.0
+      },
+      {
+        "group": "Buddhist",
+        "pct": 2.0
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0
+      },
+      {
+        "group": "none",
+        "pct": 33.0
+      },
+      {
+        "group": "unspecified",
+        "pct": 9.0
+      }
+    ],
+    "religion_year": 2021,
     "language": [
       {
         "group": "French",
@@ -11758,7 +12097,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "France does not collect religion in its census for the same reason. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 47%, Muslim 4%, Protestant 2%, Buddhist 2%, Orthodox 1%, Jewish 1%, other 1%, none 33%, unspecified 9% (2021 est.)\".",
+    "language_note": "France's census does not ask language. INSEE's Enquete Famille (1999, run with the census) and INED and INSEE's Trajectoires et Origines surveys (2008-09, 2019-20) ask which languages people were raised in or speak, and are published for France as a whole, not by region or departement; the European Social Survey fills the regions where it has 100 respondents (12 of 13; not Corse). The figure shown is the CIA World Factbook's estimate, which reads: \"French (official) 100%, declining regional dialects and languages (Provençal, Breton, Alsatian, Corsican, Catalan, Basque, Flemish, Occitan, Picard)\"."
   },
   {
     "id": "PYF",
@@ -12543,11 +12884,37 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 85.4
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.0
+      },
+      {
+        "group": "Poland",
+        "pct": 1.0
+      },
+      {
+        "group": "other/stateless/unspecified",
+        "pct": 8.3
+      }
+    ],
+    "ethnicity_year": 2022,
     "sources": [
       {
         "field": "*",
@@ -12556,7 +12923,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID. The figure shown is the CIA World Factbook's estimate, which reads: \"German 85.4%, Turkish 1.8%, Ukrainian 1.4%, Syrian 1.1%, Romanian 1%, Poland 1%, other/stateless/unspecified 8.3% (2022 est.)\"."
   },
   {
     "id": "GHA",
@@ -12995,15 +13363,47 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Greece's census has not asked mother tongue since 1951."
-    },
+    "religion": [
+      {
+        "group": "Greek Orthodox",
+        "pct": 85.5,
+        "range": [
+          81.0,
+          90.0
+        ]
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.0
+      },
+      {
+        "group": "other",
+        "pct": 3.0
+      },
+      {
+        "group": "none",
+        "pct": 9.5,
+        "range": [
+          4.0,
+          15.0
+        ]
+      },
+      {
+        "group": "unspecified",
+        "pct": 1.0
+      }
+    ],
+    "religion_year": 2015,
+    "language": [
+      {
+        "group": "Greek",
+        "pct": 99.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0
+      }
+    ],
     "language_year": null,
     "ethnicity": [
       {
@@ -13028,7 +13428,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth. The figure shown is the CIA World Factbook's estimate, which reads: \"Greek Orthodox 81-90%, Muslim 2%, other 3%, none 4-15%, unspecified 1% (2015 est.)\".",
+    "language_note": "Greece's census has not asked mother tongue since 1951. The figure shown is the CIA World Factbook's estimate, which reads: \"Greek (official) 99%, other (includes English and French) 1%\"."
   },
   {
     "id": "GRL",
@@ -13554,7 +13956,7 @@
     "language_year": 2018,
     "ethnicity": [
       {
-        "group": "Mestizo",
+        "group": "Ladino",
         "pct": 56.0
       },
       {
@@ -13587,7 +13989,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Guatemala's census does not ask religion. INE's data dictionary for the 2018 census's person database lists every question it holds -- age, sex, birthplace, residence in 2013, pueblo, the language a person learned to speak in, other languages, disability, schooling, literacy, phone and internet use, work, marital status and children -- and religion is not among them. The figure shown is the CIA World Factbook's estimate, which reads: \"Evangelical 45.7%, Roman Catholic 42.4%, none 11%, unspecified 0.9% (2023 est.)\"."
   },
   {
     "id": "GGY",
@@ -14282,18 +14685,10 @@
       }
     ],
     "religion_year": 2018,
-    "language": [
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Haiti's census does not ask the language a person speaks: IHSI's coders' manual for the 2003 RGPH lists every person question, F1.1 to F4.34, and none asks it."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -14314,7 +14709,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Haiti's census does not ask ethnicity. IHSI's coders' manual for the 2003 Recensement Général de la Population et de l'Habitat (§5.1.1.6 and §7.2.6) describes every question put to each person, F1.1 to F4.34: relationship, sex, age, mother's survival, religion, disability, birthplace and residence (F1); residence five years before, literacy and schooling (F2); economic activity (F3); and fertility (F4). Neither ethnicity nor language is among them, nor in IHSI's national tables or the census plan's list of volumes. Haiti has held no census since. The figure shown is the CIA World Factbook's estimate, which reads: \"Black 95%, mixed and White 5%\"."
   },
   {
     "id": "HMD",
@@ -14567,18 +14963,10 @@
       }
     ],
     "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Amerindian dialects",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Honduras's census does not ask language or mother tongue. The 2013 census's person variables, as INE's REDATAM base lists them, are relationship, sex, age, registration, ethnic self-identification and people, disability, birthplace, literacy, schooling, migration, work, marital status, e-mail, phone, children born and the identity card; no language is among them. The census counts the Lenca, Miskito, Garifuna and other peoples by self-identification, which is on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -14607,7 +14995,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Honduras's census does not ask religion. INE's REDATAM base of the 2013 census (CPVHND2013NAC) holds, for every person, relationship, sex, age, civil registration, how the person identifies (P05) and which people (P06), the disability questions, birthplace, literacy, schooling, residence five years before, work, marital status, e-mail and mobile phone, children born and the identity card. Religion is not among them. The figure shown is the CIA World Factbook's estimate, which reads: \"Evangelical 55%, Roman Catholic 33.4%, none 10.1%, unspecified 1.5% (2023 est.)\"."
   },
   {
     "id": "HKG",
@@ -15027,11 +15416,29 @@
       "note": "Iceland's register-based census carries no language."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Iceland's census is register-based and records citizenship and country of birth, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Icelandic",
+        "pct": 78.7
+      },
+      {
+        "group": "Polish",
+        "pct": 5.8
+      },
+      {
+        "group": "Danish",
+        "pct": 1.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 13.5
+      }
+    ],
+    "ethnicity_year": 2024,
     "sources": [
       {
         "field": "*",
@@ -15040,7 +15447,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Registers Iceland records every resident's religious or life-stance organisation, but Statistics Iceland publishes the count for the whole country only: MAN10001 (by organisation, 1998-2026) and the older MAN10200 (by organisation, sex and registrations, 1997-2017) have no geography, and the tables below the country (MAN10289-MAN10310) count members of the National Church by the Church's parishes and deaneries, which are not municipalities or regions. Registers Iceland's own releases are national too. The figure shown is the CIA World Factbook's estimate, which reads: \"Evangelical Lutheran Church of Iceland (official) 58.6% Roman Catholic 3.8%, Independent Congregation of Reykjavik 2.6%, Independent Congregation of Hafnarfjordur 1.9%, pagan worship 1.5%, Icelandic Ethical Humanist Association 1.4%, other (includes Zuist and Pentecostal) or unspecified 18.7%,...\".",
+    "ethnicity_note": "Iceland's census is register-based and records citizenship and country of birth, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Icelandic 78.7%, Polish 5.8%, Danish 1%, Ukrainian 1%, other 13.5% (2024 est.)\"."
   },
   {
     "id": "IND",
@@ -15221,11 +15630,21 @@
       }
     ],
     "language_year": 2011,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Indo-Aryan",
+        "pct": 72.0
+      },
+      {
+        "group": "Dravidian",
+        "pct": 25.0
+      },
+      {
+        "group": "and other",
+        "pct": 3.0
+      }
+    ],
+    "ethnicity_year": 2000,
     "sources": [
       {
         "field": "*",
@@ -15234,7 +15653,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead. The figure shown is the CIA World Factbook's estimate, which reads: \"Indo-Aryan 72%, Dravidian 25%, and other 3% (2000)\"."
   },
   {
     "id": "IDN",
@@ -15576,10 +15996,43 @@
       }
     ],
     "religion_year": 2020,
-    "language": {
-      "status": "not_collected",
-      "note": "Iran's census does not ask language."
-    },
+    "language": [
+      {
+        "group": "Persian Farsi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Azeri and other Turkic dialects",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Kurdish",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Gilaki and Mazandarani",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Luri",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Balochi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Arabic",
+        "pct": null,
+        "pct_status": "not_available"
+      }
+    ],
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -15721,10 +16174,28 @@
       "note": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not."
-    },
+    "ethnicity": [
+      {
+        "group": "Arab",
+        "pct": 77.5,
+        "range": [
+          75.0,
+          80.0
+        ]
+      },
+      {
+        "group": "Kurdish",
+        "pct": 17.5,
+        "range": [
+          15.0,
+          20.0
+        ]
+      },
+      {
+        "group": "other",
+        "pct": 5.0
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -15734,7 +16205,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not. The figure shown is the CIA World Factbook's estimate, which reads: \"Arab 75-80%, Kurdish 15-20%, other 5% (includes Turkmen, Yezidi, Shabak, Kaka'i, Bedouin, Romani, Assyrian, Circassian, Sabaean-Mandaean, Persian)\"."
   },
   {
     "id": "IRL",
@@ -15842,10 +16314,17 @@
       }
     ],
     "religion_year": 2022,
-    "language": {
-      "status": "not_collected",
-      "note": "Ireland's census asks which foreign languages a person speaks and whether they can speak Irish. Neither is a breakdown of the population by language: the first excludes English speakers, the second counts an ability."
-    },
+    "language": [
+      {
+        "group": "English",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Irish",
+        "pct": 37.7
+      }
+    ],
     "language_year": null,
     "ethnicity": [
       {
@@ -16329,7 +16808,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Italy's census does not ask religion (neither the 2011 questionnaire nor the permanent census since 2018 has the question), and ISTAT's household surveys ask religious practice, not affiliation; the European Social Survey fills the regions where it has 100 respondents. The figure shown is the CIA World Factbook's estimate, which reads: \"Christian 80.8% (overwhelmingly Roman Catholic with very small groups of Jehovah's Witnesses and Protestants), Muslim 4.9%, unaffiliated 13.4%, other 0.9% (2020 est.)\"."
   },
   {
     "id": "JAM",
@@ -16429,18 +16909,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Jamaican patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Jamaica's census does not ask language. STATIN's 2011 Individual Questionnaire (4 pages) asks relationship, sex, age, birthplace, religion and ethnic origin, education, training, work, fertility and disability; no question asks what language anyone speaks."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -18006,28 +18478,10 @@
       }
     ],
     "religion_year": 2015,
-    "language": [
-      {
-        "group": "Lao",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "various ethnic languages",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -18149,11 +18603,33 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Latvia's census does not ask religion; it asks ethnicity and language."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Lutheran",
+        "pct": 36.2
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 19.5
+      },
+      {
+        "group": "Orthodox",
+        "pct": 19.1
+      },
+      {
+        "group": "other Christian",
+        "pct": 1.6
+      },
+      {
+        "group": "other",
+        "pct": 0.1
+      },
+      {
+        "group": "unspecified/none",
+        "pct": 23.5
+      }
+    ],
+    "religion_year": 2017,
     "language": [
       {
         "group": "Latvian",
@@ -18216,7 +18692,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Latvia's censuses do not ask religion: the 2011 census asked ethnicity and the language spoken at home, and the 2021 census was compiled from registers, none of which records a religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Lutheran 36.2%, Roman Catholic 19.5%, Orthodox 19.1%, other Christian 1.6%, other 0.1%, unspecified/none 23.5% (2017 est.)\"."
   },
   {
     "id": "LBN",
@@ -19256,11 +19733,25 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Luxembourg's census (RP 2021) does not ask religion."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 70.6
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.3
+      },
+      {
+        "group": "other",
+        "pct": 0.4
+      },
+      {
+        "group": "unaffiliated",
+        "pct": 26.7
+      }
+    ],
+    "religion_year": 2020,
     "language": [
       {
         "group": "Luxembourgish",
@@ -19292,11 +19783,45 @@
       }
     ],
     "language_year": 2021,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Luxembourg's census records nationality, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Luxembourger",
+        "pct": 52.9
+      },
+      {
+        "group": "Portuguese",
+        "pct": 14.5
+      },
+      {
+        "group": "French",
+        "pct": 7.6
+      },
+      {
+        "group": "Italian",
+        "pct": 3.7
+      },
+      {
+        "group": "Belgian",
+        "pct": 3.0
+      },
+      {
+        "group": "German",
+        "pct": 2.0
+      },
+      {
+        "group": "Spanish",
+        "pct": 1.3
+      },
+      {
+        "group": "Romania",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 14.0
+      }
+    ],
+    "ethnicity_year": 2022,
     "sources": [
       {
         "field": "*",
@@ -19305,7 +19830,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Luxembourg's census (RP 2021) does not ask religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Christian (predominantly Roman Catholic) 70.6%, Muslim 2.3%, other (includes Buddhist, folk religions, Hindu, Jewish) 0.4%, unaffiliated 26.7% (2020 est.)\".",
+    "ethnicity_note": "Luxembourg's census records nationality, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Luxembourger 52.9%, Portuguese 14.5%, French 7.6%, Italian 3.7%, Belgian 3%, German 2%, Spanish 1.3%, Romania 1%, other 14% (2022 est.)\"."
   },
   {
     "id": "MAC",
@@ -21178,28 +21705,10 @@
       }
     ],
     "religion_year": null,
-    "language": [
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Italian",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Monegasque",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Monaco's census has been register-based since 2023 (2025 Census report, introduction) and records nationality, not language."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -21260,7 +21769,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Monaco's census has been register-based since 2023 (2025 Census report, introduction) and records nationality, not religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 90% (official), other 10%\".",
+    "ethnicity_note": "Monaco's census records nationality, not ethnicity. A resident can hold several nationalities and Monaco Statistics counts each one, so the nationality table does not add to the population. The figure shown is the CIA World Factbook's estimate, which reads: \"Monegasque 32.1%, French 19.9%, Italian 15.3%, British 5%, Belgian 2.3%, Swiss 2%, German 1.9%, Russian 1.8%, American 1.1%, Dutch 1.1%, Moroccan 1%, other 16.6% (2016 est.)\"."
   },
   {
     "id": "MNG",
@@ -21416,7 +21927,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Mongolia's census does not ask language or mother tongue. The individual questionnaire of the 2020 Population and Housing Census, reproduced in the appendix of the National Statistics Office's national report, runs from \"What is your relationship with household head?\" through gender, age, birthplace, migration, disability, education, literacy, employment and marital status to question 29, \"Do you have a religion?\", and asks nothing about a language at all. In the report's 298 pages the word appears twice: in the definition of literacy -- \"a person who can read and write simple sentences in any languages was considered as literate\" -- and in a note on sign language among the Washington Group's questions on functional difficulty. Ethnic group and religion are both asked, and the aimags carry them. The figure shown is the CIA World Factbook's estimate, which reads: \"Mongolian 90% (official, Khalkha dialect is predominant), Turkic, Russian (1999)\"."
   },
   {
     "id": "MNE",
@@ -22054,7 +22566,7 @@
         "pct": 99.0
       },
       {
-        "group": "Mestizo",
+        "group": "Mestico",
         "pct": 0.8
       },
       {
@@ -22786,11 +23298,37 @@
       "note": "The Netherlands has had no questionnaire census since 1971 and no register records language."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "The Netherlands records migration background, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Dutch",
+        "pct": 75.4
+      },
+      {
+        "group": "EU",
+        "pct": 6.4
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.4
+      },
+      {
+        "group": "Moroccan",
+        "pct": 2.4
+      },
+      {
+        "group": "Surinamese",
+        "pct": 2.1
+      },
+      {
+        "group": "Indonesian",
+        "pct": 2.0
+      },
+      {
+        "group": "other",
+        "pct": 9.3
+      }
+    ],
+    "ethnicity_year": 2021,
     "sources": [
       {
         "field": "*",
@@ -22799,7 +23337,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "The Netherlands records migration background, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Dutch 75.4%, EU (excluding Dutch) 6.4%, Turkish 2.4%, Moroccan 2.4%, Surinamese 2.1%, Indonesian 2%, other 9.3% (2021 est.)\"."
   },
   {
     "id": "NCL",
@@ -23303,7 +23842,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Nicaragua's census does not ask the population's language. The 2005 census's only language question (P08, \"¿Habla la lengua o idioma del pueblo indígena o comunidad étnica a la que pertenece?\") was put only to the members of the seven Caribbean-coast peoples and communities -- Rama, Garífuna, Mayangna, Miskitu, Ulwa, Creole and the coast's mestizos, whose 270,870 people are exactly its answers -- and asks whether they speak their people's language, not what anybody speaks. It is not a composition, and the rest of the country was not asked. The figure shown is the CIA World Factbook's estimate, which reads: \"Spanish (official) 99.5%, Indigenous 0.3%, Portuguese 0.1%, other 0.1% (2020 est.)\"."
   },
   {
     "id": "NER",
@@ -23580,11 +24120,25 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Nigeria's census does not ask religion. The National Population Commission stated in 2022 and 2023 that the question was excluded from the 2023 questionnaire for its sensitivity, as it was from 1991 and 2006; the only subnational figures are survey estimates."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 53.5
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 10.6
+      },
+      {
+        "group": "other Christian",
+        "pct": 35.3
+      },
+      {
+        "group": "other",
+        "pct": 0.6
+      }
+    ],
+    "religion_year": 2018,
     "language": [
       {
         "group": "English",
@@ -23618,11 +24172,45 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Nigeria's census does not ask ethnicity, excluded from the 2023 questionnaire with religion for the same stated reason; the only subnational figures are survey estimates."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Hausa",
+        "pct": 30.0
+      },
+      {
+        "group": "Yoruba",
+        "pct": 15.5
+      },
+      {
+        "group": "Igbo",
+        "pct": 15.2
+      },
+      {
+        "group": "Fulani",
+        "pct": 6.0
+      },
+      {
+        "group": "Tiv",
+        "pct": 2.4
+      },
+      {
+        "group": "Kanuri/Beriberi",
+        "pct": 2.4
+      },
+      {
+        "group": "Ibibio",
+        "pct": 1.8
+      },
+      {
+        "group": "Ijaw/Izon",
+        "pct": 1.8
+      },
+      {
+        "group": "other",
+        "pct": 24.9
+      }
+    ],
+    "ethnicity_year": 2018,
     "sources": [
       {
         "field": "*",
@@ -23631,7 +24219,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Nigeria's census does not ask religion. The National Population Commission stated in 2022 and 2023 that the question was excluded from the 2023 questionnaire for its sensitivity, as it was from 1991 and 2006; the only subnational figures are survey estimates. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim 53.5%, Roman Catholic 10.6%, other Christian 35.3%, other 0.6% (2018 est.)\".",
+    "ethnicity_note": "Nigeria's census does not ask ethnicity, excluded from the 2023 questionnaire with religion for the same stated reason; the only subnational figures are survey estimates. The figure shown is the CIA World Factbook's estimate, which reads: \"Hausa 30%, Yoruba 15.5%, Igbo (Ibo) 15.2%, Fulani 6%, Tiv 2.4%, Kanuri/Beriberi 2.4%, Ibibio 1.8%, Ijaw/Izon 1.8%, other 24.9% (2018 est.)\"."
   },
   {
     "id": "NIU",
@@ -23962,17 +24552,17 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures."
+      "note": "North Korea's census does not ask religion. Its 2008 questionnaire has 53 questions -- H1 to H14 on the household, P1 to P29 on the person, M1 to M10 on deaths -- and none of them is about religion; in the 278 pages of the National Report the word occurs once, as the occupation 'religious professionals', 103 people, in Table 37. No table of the 53 is a religion table and the state publishes no other figures."
     },
     "religion_year": null,
     "language": {
       "status": "not_collected",
-      "note": "North Korea's 2008 census asked no language question."
+      "note": "North Korea's census does not ask language. In the 278 pages of the 2008 National Report 'mother tongue' appears nowhere and 'language' appears once, in Table 22's definition of literacy -- the ability to read and write a simple message in any language -- which counts an ability and records no language. No table of the 53 is a language table."
     },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "North Korea's 2008 census asked no ethnicity question."
+      "note": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province."
     },
     "ethnicity_year": null,
     "sources": [
@@ -24353,29 +24943,26 @@
       }
     ],
     "religion_year": 2021,
-    "language": [
+    "language": {
+      "status": "not_collected",
+      "note": "Norway's census is compiled from registers (wholly since 2011), and no Norwegian register records a resident's language. Statistics Norway publishes language only for pupils -- those taught Sami (tables 07587, 07683) or given mother-tongue tuition (03742, closed in 2017) -- and not for the population."
+    },
+    "language_year": null,
+    "ethnicity": [
       {
-        "group": "Bokmal Norwegian",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "Norwegian",
+        "pct": 81.5
       },
       {
-        "group": "Nynorsk Norwegian",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "other European",
+        "pct": 8.9
       },
       {
-        "group": "small Sami- and Finnish-speaking minorities",
-        "pct": null,
-        "pct_status": "not_available"
+        "group": "other",
+        "pct": 9.6
       }
     ],
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Norway records immigrant background, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity_year": 2021,
     "sources": [
       {
         "field": "*",
@@ -24384,7 +24971,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Norway records immigrant background, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Norwegian 81.5% (includes about 60,000 Sami), other European 8.9%, other 9.6% (2021 est.)\"."
   },
   {
     "id": "GEC-OO",
@@ -24736,10 +25324,36 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked."
-    },
+    "ethnicity": [
+      {
+        "group": "Punjabi",
+        "pct": 44.7
+      },
+      {
+        "group": "Pashtun",
+        "pct": 15.4
+      },
+      {
+        "group": "Sindhi",
+        "pct": 14.1
+      },
+      {
+        "group": "Saraiki",
+        "pct": 8.4
+      },
+      {
+        "group": "Muhajirs",
+        "pct": 7.6
+      },
+      {
+        "group": "Baloch",
+        "pct": 3.6
+      },
+      {
+        "group": "other",
+        "pct": 6.3
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -24749,7 +25363,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked. The figure shown is the CIA World Factbook's estimate, which reads: \"Punjabi 44.7%, Pashtun (Pathan) 15.4%, Sindhi 14.1%, Saraiki 8.4%, Muhajirs 7.6%, Baloch 3.6%, other 6.3%\"."
   },
   {
     "id": "PLW",
@@ -24983,48 +25598,10 @@
       }
     ],
     "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Indigenous languages",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Panamanian English Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Chinese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "other",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Panama's census does not ask language. The 2023 census's person variables, as INEC's REDATAM base LP2023 lists them, are relationship, sex, age, registration, citizenship, marital status, birthplace, migration, indigenous group, Afro-descendant group, social security, disability, ICT use, literacy, schooling, work, income and fertility; no language or mother tongue is among them, nor among the 2010 census's (LP2010). Which indigenous people a person belongs to is on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -25057,7 +25634,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Panama's census does not ask religion. INEC's REDATAM base of the 2023 census (LP2023) holds, for every person, relationship, sex, age, civil registration, citizenship, marital status, birthplace, residence before and in 2018, indigenous group (P08), Afro-descendant group (P09), social security, the disability questions, ICT use, literacy, schooling, work, income and children born. Religion is not among its 82 person variables, nor among the 72 of the 2010 census's base (LP2010). The figure shown is the CIA World Factbook's estimate, which reads: \"Evangelical 55%, Roman Catholic 33.4%, none 10.1%, unspecified 1.5% (2023 est.)\"."
   },
   {
     "id": "PNG",
@@ -25172,8 +25750,8 @@
     ],
     "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Melanesian, Papuan, Negrito, Micronesian, Polynesian"
+      "status": "not_collected",
+      "note": "Papua New Guinea's census does not ask ethnicity. Appendix 1 of the National Statistical Office's 2011 National Report lists what the 33 questions of the one-page census form collected -- age, sex, marital status, religion, migration, economic activity, occupation, industry, fertility, mortality and household income-generating activities -- and ethnicity is not among them; the country has no national ethnic classification, its people being counted instead by province and by the language of their place. The 2024 census's Final Figures publish nothing of the kind either."
     },
     "ethnicity_year": null,
     "sources": [
@@ -25184,7 +25762,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Papua New Guinea's census does not ask mother tongue or language spoken at home. The one language question is literacy: the 2011 National Report's Table 4.6 gives the share of people aged 10 and over who can read and write English, Pidgin (Tok Pisin), Motu or Tokples -- 'language of my place', the report's own name for all 800-odd local languages together. Those four are overlapping abilities in three lingua francas and one residual, not a composition of what anybody speaks, so no language share is published for the country or for any province. The figure shown is the CIA World Factbook's estimate, which reads: \"Tok Pisin (official), English (official), Hiri Motu (official), some 839 living indigenous languages are spoken (about 12% of the world's total)\"."
   },
   {
     "id": "GEC-PF",
@@ -26127,23 +26706,17 @@
       }
     ],
     "religion_year": 2021,
-    "language": [
+    "language": {
+      "status": "not_collected",
+      "note": "Portugal's census (Censos 2021) does not ask language, and INE publishes no survey of the language spoken at home by district or municipality; the European Social Survey fills the one district where it has 100 respondents (Faro)."
+    },
+    "language_year": null,
+    "ethnicity": [
       {
         "group": "Portuguese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Mirandese",
-        "pct": null,
-        "pct_status": "not_available"
+        "pct": 95.0
       }
     ],
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Portugal's census records nationality, not ethnicity; an ethno-racial question was considered for 2021 and not included."
-    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -26153,7 +26726,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Portugal's census records nationality, not ethnicity; an ethno-racial question was considered for 2021 and not included. The figure shown is the CIA World Factbook's estimate, which reads: \"Portuguese 95%; citizens from Portugal’s former colonies in Africa, Asia (Han Chinese), and South America (Brazilian) and other foreign born 5%\"."
   },
   {
     "id": "PRI",
@@ -26676,11 +27250,29 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Russian Orthodox",
+        "pct": 17.5,
+        "range": [
+          15.0,
+          20.0
+        ]
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.5,
+        "range": [
+          10.0,
+          15.0
+        ]
+      },
+      {
+        "group": "other Christian",
+        "pct": 2.0
+      }
+    ],
+    "religion_year": 2006,
     "language": [
       {
         "group": "Russian",
@@ -26743,7 +27335,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map. The figure shown is the CIA World Factbook's estimate, which reads: \"Russian Orthodox 15-20%, Muslim 10-15%, other Christian 2% (2006 est.)\"."
   },
   {
     "id": "RWA",
@@ -27359,18 +27952,10 @@
       }
     ],
     "religion_year": 2010,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Saint Lucian Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Saint Lucia's census does not ask language. Neither the 2022 census's REDATAM base (PHC2022) nor the 2010 base (PHC2010C) holds a language variable -- their data dictionaries list every variable -- only difficulty speaking."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -27731,23 +28316,10 @@
       }
     ],
     "religion_year": 2012,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Vincentian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Saint Vincent and the Grenadines' census does not ask language. The 2012 census's REDATAM base (SVG2012) holds no language variable, its data dictionary listing every one, and the 2023 census report tabulates none."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -28294,10 +28866,16 @@
       "note": "Saudi Arabia's 2022 census does not ask language."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Saudi Arabia's 2022 census records citizenship, not ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Arab",
+        "pct": 90.0
+      },
+      {
+        "group": "Afro-Asian",
+        "pct": 10.0
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -28307,7 +28885,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Saudi Arabia's 2022 census records citizenship, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Arab 90%, Afro-Asian 10%\"."
   },
   {
     "id": "SEN",
@@ -29523,21 +30102,99 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Slovenia's register-based census carries no religion; last asked in 2002."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Slovenia's register-based census carries no mother tongue; last asked in 2002."
-    },
-    "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Slovenia's census has been register-based since 2011; ethnic affiliation was last asked in 2002."
-    },
-    "ethnicity_year": null,
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 69.0
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.0
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.0
+      },
+      {
+        "group": "Christian",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 3.0
+      },
+      {
+        "group": "atheist",
+        "pct": 14.0
+      },
+      {
+        "group": "non-believer/agnostic",
+        "pct": 4.0
+      },
+      {
+        "group": "refused to answer",
+        "pct": 2.0
+      }
+    ],
+    "religion_year": 2019,
+    "language": [
+      {
+        "group": "Slovene",
+        "pct": 87.7
+      },
+      {
+        "group": "Croatian",
+        "pct": 2.8
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.8
+      },
+      {
+        "group": "Bosnian",
+        "pct": 1.6
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.6
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.4
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2
+      },
+      {
+        "group": "other or unspecified",
+        "pct": 3.9
+      }
+    ],
+    "language_year": 2002,
+    "ethnicity": [
+      {
+        "group": "Slovene",
+        "pct": 83.1
+      },
+      {
+        "group": "Serb",
+        "pct": 2.0
+      },
+      {
+        "group": "Croat",
+        "pct": 1.8
+      },
+      {
+        "group": "Bosniak",
+        "pct": 1.1
+      },
+      {
+        "group": "other or unspecified",
+        "pct": 12.0
+      }
+    ],
+    "ethnicity_year": 2002,
     "sources": [
       {
         "field": "*",
@@ -29546,7 +30203,10 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Slovenia's register-based census carries no religion; last asked in 2002. The figure shown is the CIA World Factbook's estimate, which reads: \"Catholic 69%, Orthodox 4%, Muslim 3%, Christian 1%, other 3%, atheist 14%, non-believer/agnostic 4%, refused to answer 2% (2019 est.)\".",
+    "language_note": "Slovenia's register-based census carries no mother tongue; last asked in 2002. The figure shown is the CIA World Factbook's estimate, which reads: \"Slovene (official) 87.7%, Croatian 2.8%, Serbo-Croatian 1.8%, Bosnian 1.6%, Serbian 1.6%, Hungarian 0.4% (official, only in municipalities where Hungarian nationals reside), Italian 0.2% (official, only in municipalities where Italian nationals reside), other or unspecified 3.9% (2002 est.)\".",
+    "ethnicity_note": "Slovenia's census has been register-based since 2011; ethnic affiliation was last asked in 2002. The figure shown is the CIA World Factbook's estimate, which reads: \"Slovene 83.1%, Serb 2%, Croat 1.8%, Bosniak 1.1%, other or unspecified 12% (2002 est.)\"."
   },
   {
     "id": "SLB",
@@ -30281,11 +30941,31 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped religion from the questionnaire by decision of the Presidency."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 60.5
+      },
+      {
+        "group": "folk religion",
+        "pct": 32.9
+      },
+      {
+        "group": "Muslim",
+        "pct": 6.2
+      },
+      {
+        "group": "other",
+        "pct": 1.0,
+        "bound": "<"
+      },
+      {
+        "group": "unaffiliated",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
+    "religion_year": 2020,
     "language": [
       {
         "group": "English",
@@ -30324,11 +31004,111 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped ethnicity with religion."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Dinka",
+        "pct": 37.5,
+        "range": [
+          35.0,
+          40.0
+        ]
+      },
+      {
+        "group": "Nuer",
+        "pct": 15.0
+      },
+      {
+        "group": "Shilluk",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Azande",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Bari",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Kakwa",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Kuku",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Murle",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Mandari",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Didinga",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Ndogo",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Bviri",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Lndi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Anuak",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Bongo",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Lango",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Dungotona",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Acholi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Baka",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Fertit",
+        "pct": null,
+        "pct_status": "not_available"
+      }
+    ],
+    "ethnicity_year": 2011,
     "sources": [
       {
         "field": "*",
@@ -30337,7 +31117,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped religion from the questionnaire by decision of the Presidency. The figure shown is the CIA World Factbook's estimate, which reads: \"Christian 60.5%, folk religion 32.9%, Muslim 6.2%, other <1%, unaffiliated <1% (2020 est.)\".",
+    "ethnicity_note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped ethnicity with religion. The figure shown is the CIA World Factbook's estimate, which reads: \"Dinka (Jieng) approximately 35-40%, Nuer (Naath) approximately 15%, Shilluk (Chollo), Azande, Bari, Kakwa, Kuku, Murle, Mandari, Didinga, Ndogo, Bviri, Lndi, Anuak, Bongo, Lango, Dungotona, Acholi, Baka, Fertit (2011 est.)\"."
   },
   {
     "id": "ESP",
@@ -30418,11 +31200,33 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Spain's census does not ask religion (CIS survey data exists instead)."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 58.2
+      },
+      {
+        "group": "atheist",
+        "pct": 16.2
+      },
+      {
+        "group": "agnostic",
+        "pct": 10.8
+      },
+      {
+        "group": "other",
+        "pct": 2.7
+      },
+      {
+        "group": "non-believer",
+        "pct": 10.5
+      },
+      {
+        "group": "unspecified",
+        "pct": 1.7
+      }
+    ],
+    "religion_year": 2021,
     "language": [
       {
         "group": "Castilian Spanish",
@@ -30447,11 +31251,25 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Spain's census records nationality and birthplace, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Spanish",
+        "pct": 84.8
+      },
+      {
+        "group": "Moroccan",
+        "pct": 1.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.2
+      },
+      {
+        "group": "other",
+        "pct": 12.3
+      }
+    ],
+    "ethnicity_year": 2021,
     "sources": [
       {
         "field": "*",
@@ -30460,7 +31278,10 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Spain's census does not ask religion (CIS survey data exists instead). The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 58.2%, atheist 16.2%, agnostic 10.8%, other 2.7%, non-believer 10.5%, unspecified 1.7% (2021 est.)\".",
+    "language_note": "Spain's census (INE) does not ask language. Some regional governments survey it in their own communities -- Eustat's census for the Basque Country and its provinces, the IGE's survey for Galicia and its provinces, Idescat's EULP survey for Catalonia (not published by province) -- and the units those reach carry it, as do the communities where the European Social Survey has 100 respondents. The figure shown is the CIA World Factbook's estimate, which reads: \"Castilian Spanish (official) 74%, Catalan (official in Catalonia, the Balearic Islands, and the Valencian Community) 17%, Galician (official in Galicia) 7%, Basque (official in the Basque Country and Navarre) 2%, Aranese (official in part of Catalonia) <5,000 speakers\".",
+    "ethnicity_note": "Spain's census records nationality and birthplace, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Spanish 84.8%, Moroccan 1.7%, Romanian 1.2%, other 12.3% (2021 est.)\"."
   },
   {
     "id": "GEC-PG",
@@ -30781,10 +31602,67 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Sudan's 2008 census dropped ethnicity with religion; the last count of ethnic group was 1956, on nine provinces that match no current boundary."
-    },
+    "ethnicity": [
+      {
+        "group": "Sudanese Arab",
+        "pct": 70.0
+      },
+      {
+        "group": "Fur",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Beja",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Nuba",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Ingessana",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Uduk",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Fallata",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Masalit",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Dajo",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Gimir",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Tunjur",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Berti",
+        "pct": null,
+        "pct_status": "not_available"
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -30794,7 +31672,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Sudan's 2008 census dropped ethnicity with religion; the last count of ethnic group was 1956, on nine provinces that match no current boundary. The figure shown is the CIA World Factbook's estimate, which reads: \"Sudanese Arab (approximately 70%), Fur, Beja, Nuba, Ingessana, Uduk, Fallata, Masalit, Dajo, Gimir, Tunjur, Berti; there are over 500 ethnic groups\"."
   },
   {
     "id": "SUR",
@@ -31124,21 +32003,49 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Church of Sweden",
+        "pct": 53.9
+      },
+      {
+        "group": "other",
+        "pct": 8.9
+      },
+      {
+        "group": "none or unspecified",
+        "pct": 37.2
+      }
+    ],
+    "religion_year": 2021,
     "language": {
       "status": "not_collected",
       "note": "Sweden's census is compiled from registers, and no register records mother tongue."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Sweden records country of birth and citizenship, not ethnicity."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Swedish",
+        "pct": 79.6
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.9
+      },
+      {
+        "group": "Iraqi",
+        "pct": 1.4
+      },
+      {
+        "group": "Finnish",
+        "pct": 1.3
+      },
+      {
+        "group": "other",
+        "pct": 15.8
+      }
+    ],
+    "ethnicity_year": 2022,
     "sources": [
       {
         "field": "*",
@@ -31147,7 +32054,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000. The figure shown is the CIA World Factbook's estimate, which reads: \"Church of Sweden (Lutheran) 53.9%, other (includes Roman Catholic, Orthodox, Baptist, Muslim, Jewish, and Buddhist) 8.9%, none or unspecified 37.2% (2021 est.)\".",
+    "ethnicity_note": "Sweden records country of birth and citizenship, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Swedish 79.6%, Syrian 1.9%, Iraqi 1.4%, Finnish 1.3%, other 15.8% (2022 est.)\"."
   },
   {
     "id": "CHE",
@@ -31296,11 +32205,41 @@
       }
     ],
     "language_year": 2019,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Swiss",
+        "pct": 69.2
+      },
+      {
+        "group": "German",
+        "pct": 4.2
+      },
+      {
+        "group": "Italian",
+        "pct": 3.2
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.5
+      },
+      {
+        "group": "French",
+        "pct": 2.1
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.1
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.0
+      },
+      {
+        "group": "other",
+        "pct": 16.7
+      }
+    ],
+    "ethnicity_year": 2020,
     "sources": [
       {
         "field": "*",
@@ -31309,7 +32248,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey. The figure shown is the CIA World Factbook's estimate, which reads: \"Swiss 69.2%, German 4.2%, Italian 3.2%, Portuguese 2.5%, French 2.1%, Kosovan 1.1%, Turkish 1%, other 16.7% (2020 est.)\"."
   },
   {
     "id": "SYR",
@@ -31396,10 +32336,20 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms."
-    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 87.0
+      },
+      {
+        "group": "Christian",
+        "pct": 10.0
+      },
+      {
+        "group": "Druze",
+        "pct": 3.0
+      }
+    ],
     "religion_year": null,
     "language": [
       {
@@ -31452,7 +32402,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim 87% (official; includes Sunni 74% and Alawi, Ismaili, and Shia 13%), Christian 10% (includes Orthodox, Uniate, and Nestorian), Druze 3%\"."
   },
   {
     "id": "TWN",
@@ -31826,11 +32777,45 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Tanzania's census has not asked religion since 1967; the 2022 census did not, and the only subnational figures are survey estimates."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 63.1
+      },
+      {
+        "group": "Muslim",
+        "pct": 34.1
+      },
+      {
+        "group": "folk religion",
+        "pct": 1.1
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.0,
+        "bound": "<"
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.0,
+        "bound": "<"
+      },
+      {
+        "group": "Jewish",
+        "pct": 1.0,
+        "bound": "<"
+      },
+      {
+        "group": "other",
+        "pct": 1.0,
+        "bound": "<"
+      },
+      {
+        "group": "unspecified",
+        "pct": 1.6
+      }
+    ],
+    "religion_year": 2020,
     "language": [
       {
         "group": "Kiswahili or Swahili",
@@ -31859,10 +32844,16 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Tanzania's census has not asked ethnic group since 1973; the 2022 census did not."
-    },
+    "ethnicity": [
+      {
+        "group": "mainland - African",
+        "pct": 99.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -31872,7 +32863,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Tanzania's census has not asked religion since 1967; the 2022 census did not, and the only subnational figures are survey estimates. The figure shown is the CIA World Factbook's estimate, which reads: \"Christian 63.1%, Muslim 34.1%, folk religion 1.1%, Buddhist <1%, Hindu <1%, Jewish <1%, other <1%, unspecified 1.6% (2020 est.)\".",
+    "ethnicity_note": "Tanzania's census has not asked ethnic group since 1973; the 2022 census did not. The figure shown is the CIA World Factbook's estimate, which reads: \"mainland - African 99% (of which 95% are Bantu consisting of more than 130 tribes), other 1% (consisting of Asian, European, and Arab); Zanzibar - Arab, African, mixed Arab and African\"."
   },
   {
     "id": "THA",
@@ -32129,18 +33122,10 @@
       }
     ],
     "religion_year": 2010,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "The Bahamas' 2010 census did not ask language. The First Release's preface lists the individual questionnaire's topics -- age, sex, marital and union status, religion, racial group, citizenship and education -- and no island report tabulates language."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -32261,18 +33246,19 @@
       }
     ],
     "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "The Dominican Republic's census does not ask language: neither the 2022 questionnaire (ONE, X CNPV 2022, Anexo II, questions 25 to 67) nor the 2010 census's person variables contain a language question."
+    },
     "language_year": null,
     "ethnicity": [
       {
-        "group": "mixed",
-        "pct": 70.4
+        "group": "Mestizo or Indio",
+        "pct": 58.0
+      },
+      {
+        "group": "Mulatto",
+        "pct": 12.4
       },
       {
         "group": "Black",
@@ -32296,7 +33282,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "The Dominican Republic's census does not ask religion. The 2022 questionnaire (ONE, X Censo Nacional de Población y Vivienda 2022, Informe General, Anexo II: Boleta censal) asks each person questions 25 to 67 -- relationship, sex, age, birthplace, identity document, migration, disability, schooling, work, perceived colour and features (64) and fertility -- and the words religión, idioma and lengua appear nowhere in it. Nor are they among the 2010 census's person variables (ONE's REDATAM dictionary, P26 to P60). The figure shown is the CIA World Factbook's estimate, which reads: \"Evangelical 50.2%, Roman Catholic 30.1%, none 18.5%, unspecified 1.2% (2023 est.)\"."
   },
   {
     "id": "GMB",
@@ -32599,8 +33586,8 @@
     ],
     "language_year": 2015,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Austronesian (Malayo-Polynesian) (includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan (includes Bunak, Fataluku, Bakasai), small Chinese minority"
+      "status": "not_collected",
+      "note": "Timor-Leste's census does not ask ethnicity. The 2022 questionnaire, reproduced as Annex III of INETL's census main report, runs its individual module from E1 to E77 -- marital status, parents, birth registration, place of birth, migration, citizenship, literacy, education, labour, religion, mother tongues, disability, fertility, birth attendance -- and asks nothing about ethnicity, race, tribe or ancestry. What it does ask, at E58, is \"what languages did <Name> learn as a child?\", and Timorese identity largely tracks that answer; the Factbook's ethnic-groups line for Timor-Leste is the census's mother-tongue list sorted into Austronesian and Papuan, with no shares, so it is not used here. The mother tongues themselves are on the language field, which is the question that was actually asked."
     },
     "ethnicity_year": null,
     "sources": [
@@ -33163,43 +34150,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Trinidadian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tobagonian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Caribbean Hindustani",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Trinidadian Creole French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Chinese",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Trinidad and Tobago's census does not ask language. The CSO's 2011 questionnaire (21 pages) asks religion and ethnic group; 'speak' appears only among its disability questions."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -33305,10 +34259,17 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Tunisia's census (2014, 2024) carries no religion question; the national figure is an estimate, not a count, and the only subnational figures are survey estimates."
-    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.0
+      },
+      {
+        "group": "other",
+        "pct": 1.0,
+        "bound": "<"
+      }
+    ],
     "religion_year": null,
     "language": [
       {
@@ -33328,10 +34289,20 @@
       }
     ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Tunisia's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Arab",
+        "pct": 98.0
+      },
+      {
+        "group": "European",
+        "pct": 1.0
+      },
+      {
+        "group": "Jewish and other",
+        "pct": 1.0
+      }
+    ],
     "ethnicity_year": null,
     "sources": [
       {
@@ -33341,7 +34312,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Tunisia's census (2014, 2024) carries no religion question; the national figure is an estimate, not a count, and the only subnational figures are survey estimates. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim (official; Sunni) 99%, other (includes Christian, Jewish, Shia Muslim, and Baha'i) <1%\".",
+    "ethnicity_note": "Tunisia's census does not ask ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Arab 98%, European 1%, Jewish and other 1%\"."
   },
   {
     "id": "TUR",
@@ -33440,21 +34413,45 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Turkey does not publish religion. Its statistical database lists 92 subjects and none is religion; population figures come from an address-based register."
-    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 99.8
+      },
+      {
+        "group": "other",
+        "pct": 0.2
+      }
+    ],
     "religion_year": null,
     "language": {
       "status": "not_collected",
       "note": "Turkey has not collected mother tongue since the 1965 census."
     },
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Turkey has not collected ethnicity since the 1965 census; its address-based register records residence and citizenship instead."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Turkish",
+        "pct": 72.5,
+        "range": [
+          70.0,
+          75.0
+        ]
+      },
+      {
+        "group": "Kurdish",
+        "pct": 19.0
+      },
+      {
+        "group": "other minorities",
+        "pct": 8.5,
+        "range": [
+          6.0,
+          11.0
+        ]
+      }
+    ],
+    "ethnicity_year": 2016,
     "sources": [
       {
         "field": "*",
@@ -33463,7 +34460,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Turkey does not publish religion. Its statistical database lists 92 subjects and none is religion; population figures come from an address-based register. The figure shown is the CIA World Factbook's estimate, which reads: \"Muslim 99.8% (mostly Sunni), other 0.2% (mostly Christians and Jews)\".",
+    "ethnicity_note": "Turkey has not collected ethnicity since the 1965 census; its address-based register records residence and citizenship instead. The figure shown is the CIA World Factbook's estimate, which reads: \"Turkish 70-75%, Kurdish 19%, other minorities 6-11% (2016 est.)\"."
   },
   {
     "id": "TKM",
@@ -34882,13 +35881,10 @@
       }
     ],
     "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Uruguay's 2023 census does not ask language: neither its questionnaire nor INE's data dictionary for the person file has a language question or variable."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -34921,7 +35917,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Uruguay's 2023 census does not ask religion. The questionnaire's only 'religioso' is a kind of collective dwelling (Internado religioso), and INE's data dictionary for the census's person file has no religion variable. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 36.5%, Protestant 5% (Evangelical (non-specific) 4.6%, Adventist 0.2%, Protestant (non-specific) 0.3%), African American Cults/Umbanda 2.8%, Jehovah's Witness 0.6%, Church of Jesus Christ 0.2%, other 1%, Believer (not belonging to the church) 1.8%, agnostic 0.3%, atheist 1.3%,...\"."
   },
   {
     "id": "UZB",
@@ -35304,11 +36301,50 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question."
-    },
-    "religion_year": null,
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 48.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 31.6
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 1.4
+      },
+      {
+        "group": "African American/umbanda",
+        "pct": 0.7
+      },
+      {
+        "group": "other",
+        "pct": 0.1
+      },
+      {
+        "group": "believer",
+        "pct": 3.5
+      },
+      {
+        "group": "agnostic",
+        "pct": 0.1
+      },
+      {
+        "group": "atheist",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "none",
+        "pct": 13.6
+      },
+      {
+        "group": "unspecified",
+        "pct": 0.6
+      }
+    ],
+    "religion_year": 2023,
     "language": [
       {
         "group": "Spanish",
@@ -35341,7 +36377,9 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "religion_note": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 48.1%, Protestant 31.6% (Evangelical 31.4%, Adventist 0.2%), Jehovah's Witness 1.4%, African American/umbanda 0.7%, other 0.1%, believer 3.5%, agnostic 0.1%, atheist, 0.4%, none 13.6%, unspecified 0.6% (2023 est.)\".",
+    "language_note": "Venezuela's 2011 census asked which languages a person speaks only of those who said they belong to an indigenous people (question 5, INE's Meta_Persona); no one else was asked, and INE's REDATAM base of the census carries no language variable. That is not a composition of what the population speaks. The figure shown is the CIA World Factbook's estimate, which reads: \"Spanish (official) 98.2%, indigenous 1.3%, Portuguese 0.1%, other 0.4% (2023 est.)\"."
   },
   {
     "id": "VNM",
