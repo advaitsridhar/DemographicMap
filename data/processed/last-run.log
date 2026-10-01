@@ -1,10 +1,6 @@
-nordic_origin: ISL
-  53 of 74 municipalities of 2017 are the same territory today; merged since: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
-  MAN04203 2026: 394,324 people; named (31): Icelandic, Polish, Lithuanian, Ukrainian, Romanian, Latvian, Venezuelan, Spanish, Portuguese, Filipino, German, Vietnamese, Czech, American, Italian, Croatian, Palestinian, British, Greek, Hungarian, Danish, French, Syrian, Slovak, Indian, Thai, Nigerian, Afghan, Bulgarian, Swedish, Iraqi
-    MAN04203 2026: municipalities -> Iceland: 62 parts sum to 394,324 against 394,324
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-    MAN04203 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
-  municipalities given no figure, merged since 2017: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
-  81 records: admin1 8, admin2 73; labels the group tree cannot place: none
-  wrote data/processed/iceland_origin.json (233 kB)
+netherlands_gemeente: CBS Kerncijfers wijken en buurten 2022, 03759ned and 84910NED, by gemeente
+  WFS: 428 features; water flags {'B': 1, 'JA': 82, 'NEE': 345}
+  345 gemeenten; Nederland 0
+  gemeenten against the Netherlands: parts sum to 17,590,672 = 17,590,672
+  men + women against the total: largest difference 0
+netherlands_gemeente: Haarlem: 03759ned counts 80,029 men and 82,869 women, the key figures 80,033 and 82,873
