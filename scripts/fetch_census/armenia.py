@@ -13,7 +13,7 @@ The map's second level is the raions Armenia had before the 1995 reform into
 marzes, and Yerevan. Armstat publishes no table for those raions -- its
 censuses and yearly counts go by marz and by community -- so each is written
 as a gap that says so, on every field. (Wikidata's figures joined to them by
-name are the municipalities formed by consolidation in 2016-2021, another
+name are the municipalities formed by consolidation from 2016 on, another
 unit; shared.patch lists them in NOT_THIS_SHAPE.) Yerevan is a marz and a
 city at once, drawn at both levels, and its polygon at the second level
 takes the city's own row.
