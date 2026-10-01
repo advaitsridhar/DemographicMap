@@ -93,6 +93,32 @@ GERMAN: dict[str, str] = {
 }
 
 
+# Eurostat's citizenship codes (ISO 3166 alpha-2, with EL for Greece, UK for
+# the United Kingdom and XK for Kosovo) -> the nationality adjective.
+ISO2: dict[str, str] = {
+    "BE": "Belgian", "BG": "Bulgarian", "CZ": "Czech", "DK": "Danish", "DE": "German",
+    "EE": "Estonian", "IE": "Irish", "EL": "Greek", "ES": "Spanish", "FR": "French",
+    "HR": "Croatian", "IT": "Italian", "CY": "Cypriot", "LV": "Latvian", "LT": "Lithuanian",
+    "LU": "Luxembourger", "HU": "Hungarian", "MT": "Maltese", "NL": "Dutch", "AT": "Austrian",
+    "PL": "Polish", "PT": "Portuguese", "RO": "Romanian", "SI": "Slovene", "SK": "Slovak",
+    "FI": "Finnish", "SE": "Swedish", "IS": "Icelandic", "LI": "Liechtensteiner",
+    "NO": "Norwegian", "CH": "Swiss", "UK": "British", "BA": "Bosnian and Herzegovinian",
+    "ME": "Montenegrin", "MD": "Moldovan", "MK": "North Macedonian", "GE": "Georgian",
+    "AL": "Albanian", "RS": "Serbian", "TR": "Turkish", "UA": "Ukrainian", "XK": "Kosovan",
+    "BY": "Belarusian", "RU": "Russian", "CM": "Cameroonian", "CD": "Congolese",
+    "ER": "Eritrean", "ET": "Ethiopian", "SO": "Somali", "DZ": "Algerian", "EG": "Egyptian",
+    "MA": "Moroccan", "TN": "Tunisian", "GN": "Guinean", "SN": "Senegalese",
+    "NG": "Nigerian", "GH": "Ghanaian", "CI": "Ivorian", "CA": "Canadian", "US": "American",
+    "BR": "Brazilian", "CO": "Colombian", "VE": "Venezuelan", "PE": "Peruvian",
+    "AF": "Afghan", "SY": "Syrian", "IQ": "Iraqi", "IR": "Iranian", "IN": "Indian",
+    "PK": "Pakistani", "CN": "Chinese", "PH": "Filipino", "VN": "Vietnamese", "TH": "Thai",
+    "JP": "Japanese", "KR": "South Korean", "LB": "Lebanese", "IL": "Israeli",
+    "AM": "Armenian", "AZ": "Azerbaijani", "KZ": "Kazakh", "BD": "Bangladeshi", "NP": "Nepalese",
+    "LK": "Sri Lankan", "AU": "Australian", "CV": "Cape Verdean", "AO": "Angolan",
+    "RW": "Rwandan", "BI": "Burundian", "PS": "Palestinian",
+}
+
+
 def key(name: str) -> str:
     """A country name folded for lookup: no accents, no punctuation, no
     parenthesised remark, no indentation marks, lower case."""
