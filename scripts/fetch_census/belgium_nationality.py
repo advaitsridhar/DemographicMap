@@ -54,9 +54,10 @@ PROVINCES = {"BE10": "Brussels", "BE21": "Antwerpen", "BE22": "Limburg",
 
 
 def leaf(code: str) -> bool:
-    """A citizenship category that partitions the population: a country, a
-    continent's remainder ("AFR_OTH"), the stateless or the unknown. The
-    groups (EU_FOR, NEU, AFR, ...) and the total are sums of these."""
+    """A citizenship category that partitions the population: a country (the
+    Belgians, "NAT" in the Census Hub, are read as "BE"), a continent's
+    remainder ("AFR_OTH"), the stateless or the unknown. The groups (FOR,
+    EU_FOR, NEU, AFR, ...) and the total are sums of these."""
     return bool(re.fullmatch(r"[A-Z]{2}", code)) or code.endswith("_OTH") or code in ("STLS", "UNK")
 
 
@@ -79,6 +80,13 @@ def read() -> dict[str, dict[str, float]]:
     out: dict[str, dict[str, float]] = {}
     for key, value in unpack(payload).items():
         out.setdefault(key[i_geo], {})[key[i_cit]] = value
+    # The Census Hub counts the reporting country's own citizens as "NAT",
+    # not under its country code.
+    for geo, counts in out.items():
+        if "NAT" in counts:
+            if counts.get("BE"):
+                raise SystemExit(f"belgium_nationality: {geo} counts Belgians both as NAT and BE")
+            counts["BE"] = counts.pop("NAT")
     return out
 
 

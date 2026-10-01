@@ -56,9 +56,9 @@ EU27_2011 = ("Belgique", "Bulgarie", "République tchèque", "Danemark", "Allema
              "Irlande", "Grèce", "Espagne", "France", "Italie", "Chypre", "Lettonie", "Lituanie",
              "Hongrie", "Malte", "Pays-Bas", "Autriche", "Pologne", "Portugal", "Roumanie",
              "Slovénie", "Slovaquie", "Finlande", "Suède")
-NON_EU_2011 = ("Royaume-Uni", "Autre pays européen", "Pays en Afrique", "Pays des Caraïbes",
-               "Pays d’Amérique", "Pays d'Amérique", "Pays d’Asie", "Pays d'Asie",
-               "Pays d’Océanie", "Pays d'Océanie")
+NON_EU_2011 = ("Royaume-Uni", "Autre pays européen", "Pays en Afrique",
+               "Pays des Caraïbes, d’Amérique du sud ou centrale", "Pays d’Amérique du nord",
+               "Pays d’Asie", "Pays d’Océanie")
 
 
 def read() -> tuple[dict[str, str], dict[str, dict[str, float]]]:
@@ -100,7 +100,7 @@ def partition(counts: dict[str, float], where: str) -> dict[str, float]:
 def read_2011(rows: list[list[Any]]) -> dict[str, dict[str, float]]:
     """{commune: {NAT, EU_FOR, NEU, STLS, UNK, _T}} from the 2011 table."""
     head = next(i for i, r in enumerate(rows) if "Belgique" in [text_of(c) for c in r])
-    names = [text_of(c) for c in rows[head]]
+    names = [text_of(c).replace("'", "’") for c in rows[head]]
     known = {"Luxembourg", "Apatrides", "Non indiqué", "Total", *EU27_2011, *NON_EU_2011}
     unknown = [n for n in names if n and n not in known]
     if unknown:
