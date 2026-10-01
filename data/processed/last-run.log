@@ -1,71 +1,73 @@
 
-## https://www.destatis.de/static/DE/zensus/gitterdaten/Regionaltabelle_Demografie.xlsx
-   HTTP 200, 5,408,238 bytes, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-   6 sheets: Titel Demografie | Impressum | Erläuterungen zur Methodik | Demografie | Erläuterung zu CSV-Tabellen | CSV-Demografie
-   -- sheet 'Titel Demografie': 0 rows x 0 cols
-   -- sheet 'Impressum': 26 rows x 3 cols
-     r0:  | Impressum | 
-     r1:  |  | 
-     r2:  | Ergebnisse des Zensus 2022 - D | 
-     r3:  |  | 
-     r4:  | Erscheinungsfolge: einmalig | 
-     r5:  | Korrektur am 22.8.2024: Änderu | 
-     r6:  |  | 
-     r7:  | Herausgeber | 
-     r8:  |  | 
-     r9:  | Statistische Ämter des Bundes  | 
-     r10:  |  | 
-     r11:  | Statistisches Bundesamt | 
-     r12:  | Gustav-Stresemann-Ring 11 | 
-     r13:  | 65189 Wiesbaden | 
-   -- sheet 'Erläuterungen zur Methodik': 85 rows x 4 cols
-     r0:  | Erläuterungen zur Methodik |  | 
-     r1:  |  |  | 
-     r2: 1 | Allgemeine Informationen |  | 
-     r3:  |  |  | 
-     r4:  | Basis der Auswertung sind die  |  | 
-     r5:  |  |  | 
-     r6:  | Für die Wahrung der Geheimhalt |  | 
-     r7:  |  |  | 
-     r8:  | Die Bevölkerungszahl (Insgesam |  | 
-     r9:  |  |  | 
-     r10:  | Das Ergebnis der Regionalebene |  | 
-     r11:  |  |  | 
-     r12:  | In bundesweit 163 Gemeinden ko |  | 
-     r13:  |  |  | 
-   -- sheet 'Demografie': 12777 rows x 30 cols
-     r0: Zensus 2022 - Ausgewählte Erge |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-     r1: Bevölkerung nach Geschlecht, S |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-     r2: Amtlicher Regionalschlüssel (A | Name | Regionalebene | Insgesamt | Männlich | Weiblich | Staatsangehörigkeit |  | Im Alter von… bis … Jahren |  |  |  |  |  |  |  |  |  |  | Mit Familienstand |  |  |  |  | Mit Einwanderungsgeschichte |  |  | Mit einseitiger Einwanderungs- | Ohne Einwanderungs- geschichte | 
-     r3:  |  |  |  |  |  | deutsch | ausländisch | unter 3 | 3 - 5 | 6 - 9 | 10 - 15 | 16 - 18 | 19 - 24 | 25 - 39 | 40 - 59 | 60 - 66 | 67 - 74 | 75 und älter | ledig | verheiratet / eingetr. Lebensp | verwitwet / eingetr. Lebenspar | geschieden / eingetr. Lebenspa | ohne Angabe | zusammen | Eingewanderte | Nachkommen von Eingewanderten |  |  | 
-     r4: 00 | Deutschland | Bund | 82719540 | 40674034 | 42045507 | 71806193 | 10913347 | 2295609 | 2390643 | 3072412 | 4527350 | 2281984 | 5170473 | 15614208 | 22926935 | 8158389 | 7118108 | 9163427 | 34765559 | 35181395 | 5687099 | 6355348 | 730137 | 18142064 | 15589690 | 2552372 | 1438808 | 63138669 | 
-     r5: 01 | Schleswig-Holstein | Land | 2927542 | 1428581 | 1498962 | 2668988 | 258555 | 75193 | 80399 | 105410 | 161651 | 83418 | 179361 | 506327 | 830350 | 289147 | 259827 | 356457 | 1197086 | 1244415 | 209157 | 249151 | 27732 | 473967 | 408796 | 65167 | 36864 | 2416709 | 
-     r6: 01001 | Flensburg, Stadt | Stadtkreis/kreisfreie Stadt/La | 95015 | 46834 | 48181 | 80294 | 14722 | 2587 | 2554 | 3149 | 4814 | 2444 | 9427 | 21279 | 23801 | 7872 | 7234 | 9855 | 47754 | 31308 | 5749 | 8709 | 1494 | 23516 | 20388 | 3131 | 1242 | 70262 | 
-     r7: 010010000000 | Flensburg, Stadt | Gemeinde | 95015 | 46834 | 48181 | 80294 | 14722 | 2587 | 2554 | 3149 | 4814 | 2444 | 9427 | 21279 | 23801 | 7872 | 7234 | 9855 | 47754 | 31308 | 5749 | 8709 | 1494 | 23516 | 20388 | 3131 | 1242 | 70262 | 
-     r8: 01002 | Kiel, Landeshauptstadt | Stadtkreis/kreisfreie Stadt/La | 249132 | 121818 | 127313 | 218560 | 30577 | 6698 | 6492 | 8294 | 11987 | 6175 | 24055 | 59979 | 62342 | 20353 | 18002 | 24749 | 130983 | 79206 | 14056 | 21361 | 3534 | 55074 | 46214 | 8858 | 3494 | 190565 | 
-     r9: 010020000000 | Kiel, Landeshauptstadt | Gemeinde | 249132 | 121818 | 127313 | 218560 | 30577 | 6698 | 6492 | 8294 | 11987 | 6175 | 24055 | 59979 | 62342 | 20353 | 18002 | 24749 | 130983 | 79206 | 14056 | 21361 | 3534 | 55074 | 46214 | 8858 | 3494 | 190565 | 
-     r10: 01003 | Lübeck, Hansestadt | Stadtkreis/kreisfreie Stadt/La | 215958 | 103625 | 112333 | 191444 | 24516 | 5172 | 5471 | 7189 | 10974 | 5570 | 15278 | 42848 | 58060 | 19967 | 18294 | 27129 | 97929 | 79492 | 15852 | 20985 | 1702 | 43655 | 37786 | 5868 | 3220 | 169083 | 
-     r11: 010030000000 | Lübeck, Hansestadt | Gemeinde | 215958 | 103625 | 112333 | 191444 | 24516 | 5172 | 5471 | 7189 | 10974 | 5570 | 15278 | 42848 | 58060 | 19967 | 18294 | 27129 | 97929 | 79492 | 15852 | 20985 | 1702 | 43655 | 37786 | 5868 | 3220 | 169083 | 
-     r12: 01004 | Neumünster, Stadt | Stadtkreis/kreisfreie Stadt/La | 79625 | 39465 | 40159 | 70138 | 9486 | 2062 | 2049 | 2747 | 4475 | 2367 | 5560 | 14688 | 21796 | 7550 | 6800 | 9528 | 34009 | 31519 | 5928 | 7679 | 487 | 16885 | 14351 | 2538 | 1238 | 61500 | 
-     r13: 010040000000 | Neumünster, Stadt | Gemeinde | 79625 | 39465 | 40159 | 70138 | 9486 | 2062 | 2049 | 2747 | 4475 | 2367 | 5560 | 14688 | 21796 | 7550 | 6800 | 9528 | 34009 | 31519 | 5928 | 7679 | 487 | 16885 | 14351 | 2538 | 1238 | 61500 | 
-
-## https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/bevoelkerung_religionszugehoerigkeit_je_gemeinde.xlsx?__blob=publicationFile
-   HTTP 404, 64,945 bytes, text/html;charset=utf-8 
-   link: 'Inhalt' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/SiteGlobals/ErrorPages/ErrorPage404.html?nn=3628#content
-   link: 'Hauptmenü' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/SiteGlobals/ErrorPages/ErrorPage404.html?nn=3628#navPrimary
-   link: 'Suche' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/SiteGlobals/ErrorPages/ErrorPage404.html?nn=3628#search
-   link: 'Jobs' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Ueber-uns/Karriere/_inhalt.html
-   link: 'Presse' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Presse/_inhalt.html
-   link: 'Daten übermitteln' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Service/Online-Melden/_inhalt_servicenavi.html
-   link: '' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Service/LeichteSprache/_inhalt.html
-   link: '' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Service/Gebaerdensprache/_inhalt.html
-   link: 'English' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/EN/Home/_node.html
-   link: '' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Home/_inhalt.html
-   link: '' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Service/Suche/suche_node.html
-   link: 'Menü' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Service/Sitemap/sitemap_node.html
-   link: 'Übersicht: Themen' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Themen/_inhalt.html
-   link: 'Themen im Fokus' -> https://www.zensus2022.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/Publikationen/Downloads-Publikationen/Sonderauswertungen/DE/Themen/_inhalt.html#themaHeadline_1425464_1
-   (121 links in all)
-   text: 404 - Statistisches Bundesamt Springe direkt zu: Inhalt Hauptmenü Suche Servicemenü Jobs Presse Daten übermitteln English Suche Suchbegriff eingeben Schlie&szlig;en Menü Themen Übersicht: Themen Statistik Themen im Fokus 35 Jahre Deutsche Einheit Der Durchschnittsmensch in Deutschland Fachkräfte Klima Rente Gesellschaft und Umwelt Bevölkerung Bildung, Forschung und Kultur Einkommen, Konsum und Lebensbedingungen Gesundheit Gleichstellungsindikatoren Nachhaltigkeitsindikatoren Registerzensus Soziales Umwelt, Umweltökonomische Gesamtrechnungen Verkehrsunfälle Wohnen Wirtschaft Außenhandel Groß- und Einzelhandel Globalisierungsindikatoren Konjunkturindikatoren Preise Volkswirtschaftliche Gesamtrechnungen, Inlandsprodukt Branchen und Unternehmen Bauen Dienstleistungen Energie Gastgewerbe, Tourismus Handwerk Industrie, Verarbeitendes Gewerbe Land- und Forstwirtschaft, Fischerei Transport und Verkehr Unternehmen Arbeit Arbeits- und Lohnnebenkosten Arbeitsmarkt Verdienste Staat Bürokratiekosten Justiz und Rechtspflege Öffentliche Finanzen Öffentlicher Dienst Steuern Länder und Regionen Europa in Zahlen Internationales Regionales EXSTAT - Experimentelle Statistiken Datenangebote und Methoden Datenzugang und Anwendungen Bibliothek Data Literacy Datenbanken Open Data Statistik visualisiert Veröffentlichungsverzeichnis Methoden und Qualität Demografische und Regionale Standards Klassifikationen Mediathek Qualität Rechtsgrundlagen Revisionen Saisonbereinigung WISTA - Das Wissenschaftsmaga
+## https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en
+   HTTP 200, 1,970,528 bytes, text/plain;charset=UTF-8 attachment;filename=table_of_contents_en.txt
+   69 matches of 'cens_21[a-z0-9_]{2,14}.{0,160}'
+   ~ cens_21dc" "folder" " " " " " " " "
+   ~ cens_21agr2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 171651
+   ~ cens_21ctz_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 31169981
+   ~ cens_21ctza_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1574861
+   ~ cens_21ctzo_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3372814
+   ~ cens_21ctzf_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 5931246
+   ~ cens_21ctzhs_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2097665
+   ~ cens_21ctzha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3670227
+   ~ cens_21cob_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 34416168
+   ~ cens_21coba_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1576035
+   ~ cens_21cobo_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3379603
+   ~ cens_21cobe_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3132173
+   ~ cens_21cobhs_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 7912772
+   ~ cens_21cobha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3671639
+   ~ cens_21fh" "folder" " " " " " " " "
+   ~ cens_21m_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 212370
+   ~ cens_21mh" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 7512
+   ~ cens_21me_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2685680
+   ~ cens_21f_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 424168
+   ~ cens_21fe_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2687410
+   ~ cens_21he_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 4325195
+   ~ cens_21l_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1982428
+   ~ cens_21lha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 424891
+   ~ cens_21ec" "folder" " " " " " " " "
+   ~ cens_21ah" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 47269
+   ~ cens_21a_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1715762
+   ~ cens_21ae_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2693661
+   ~ cens_21am_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1351460
+   ~ cens_21empo_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3387281
+   ~ cens_21empn_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3414350
+   ~ cens_21empl" "dataset" "22.09.2025" "21.05.2025" "2021" "2021" 112796
+   ~ cens_21loc_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2909577
+   ~ cens_21le_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2702597
+   ~ cens_21mc" "folder" " " " " " " " "
+   ~ cens_21are_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 478325
+   ~ cens_21ara_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 241460
+   ~ cens_21arco_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1559605
+   ~ cens_21argc_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3958020
+   ~ cens_21arf_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 4591462
+   ~ cens_21reso_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 4342207
+   ~ cens_21resh_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 2702683
+   ~ cens_21df" "folder" " " " " " " " "
+   ~ cens_21fhcs_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 317917
+   ~ cens_21hhct_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 134832
+   ~ cens_21hhcs_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 242576
+   ~ cens_21dd" "folder" " " " " " " " "
+   ~ cens_21dwbo_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 18796
+   ~ cens_21dwbno_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 176791
+   ~ cens_21dwbnr_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1428789
+   ~ cens_21dwob_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 47200
+   ~ cens_21dwop_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 67420
+   ~ cens_21ua" "folder" " " " " " " " "
+   ~ cens_21ua_a5" "dataset" "07.03.2023" "07.03.2023" "2021" "2021" 873
+   ~ cens_21ua_a5r3" "dataset" "13.03.2023" "13.03.2023" "2021" "2021" 20511
+   ~ cens_21ua_a" "dataset" "13.03.2023" "13.03.2023" "2021" "2021" 1962
+   ~ cens_21ua_ar3" "dataset" "13.03.2023" "13.03.2023" "2021" "2021" 54936
+   ~ cens_21ua_ms" "dataset" "07.07.2022" "07.07.2022" "2021" "2021" 2031
+   ~ cens_21ua_msr3" "dataset" "07.07.2022" "07.07.2022" "2021" "2021" 34680
+   ~ cens_21ua_yae" "dataset" "12.10.2022" "12.10.2022" "2021" "2021" 3420
+   ~ cens_21urb01" "dataset" "29.01.2026" "29.01.2026" "2021" "2021" 10534
+   ~ cens_21urb02" "dataset" "29.01.2026" "29.01.2026" "2021" "2021" 630
+   ~ cens_21dwbo_r2" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 18796
+   ~ cens_21dwbno_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 176791
+   ~ cens_21dwbnr_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 1428789
+   ~ cens_21dwob_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 47200
+   ~ cens_21dwop_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 67420
+   ~ cens_21cobha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3671639
+   ~ cens_21lha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 424891
+   ~ cens_21ctzha_r3" "dataset" "21.05.2025" "21.05.2025" "2021" "2021" 3670227
