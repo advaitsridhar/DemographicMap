@@ -1,15 +1,5 @@
-austria_nationality: Bev_Staatsangeh_Geburtsland_Gebietseinheiten_2026.ods, sheet 'Staatsangehörigkeit'
-  Länder against Austria: parts sum to 9,215,956 = 9,215,956
-  districts against Austria: parts sum to 9,215,956 = 9,215,956
-  districts against Burgenland: parts sum to 301,695 = 301,695
-  districts against Kärnten: parts sum to 569,990 = 569,990
-  districts against Niederösterreich: parts sum to 1,729,541 = 1,729,541
-  districts against Oberösterreich: parts sum to 1,537,159 = 1,537,159
-  districts against Salzburg: parts sum to 573,526 = 573,526
-  districts against Steiermark: parts sum to 1,271,764 = 1,271,764
-  districts against Tirol: parts sum to 779,060 = 779,060
-  districts against Vorarlberg: parts sum to 412,307 = 412,307
-  districts against Wien: parts sum to 2,040,914 = 2,040,914
-  districts: 94 bound; unbound []; polygons left []
-  wrote data/processed/austria_nationality.json (318 kB)
-  wrote austria_nationality.json: 103 records
+luxembourg_nationality: RP 2021 by commune and citizenship (LUSTAT DF_B1625)
+  102 communes, 12 cantons
+  communes against Luxembourg: parts sum to 643,941 = 643,941
+  cantons against Luxembourg: parts sum to 643,941 = 643,941
+luxembourg_nationality: 2011 columns this reader does not group: ['Pays des Caraïbes, d’Amérique du sud ou centrale', 'Pays d’Amérique du nord']
