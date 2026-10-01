@@ -4254,10 +4254,33 @@
       "year": 2017,
       "source": "Statistics Estonia, RV0241"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The categories of the 2011 census's table (RL0452) fall short of this unit's total by more than rounding -- Statistics Estonia protects small cells -- so no composition is given."
-    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 71.9,
+        "count": 876
+      },
+      {
+        "group": "Lutheran",
+        "pct": 14.5,
+        "count": 177
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.6,
+        "count": 129
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 21
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.2,
+        "count": 15
+      }
+    ],
     "language": [
       {
         "group": "Estonian",
@@ -4286,6 +4309,12 @@
         "name": "Statistics Estonia, RL0433",
         "url": "https://andmed.stat.ee/en/stat/RL0433",
         "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Estonia, RL0452",
+        "url": "https://andmed.stat.ee/en/stat/RL0452",
+        "year": 2011
       }
     ],
     "country": "EST",
@@ -4304,7 +4333,9 @@
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2017 (756 males, 769 females).",
     "population_note": "Registered residents on 1 January 2017. The municipality as it stood before the 2017 reform, which is the unit the map draws.",
     "language_year": 2011,
-    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 1,482 of the 1,488 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,482. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
+    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 1,482 of the 1,488 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,482. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw.",
+    "religion_year": 2011,
+    "religion_note": "Religious affiliation, asked of everyone aged 15 and over; 'Not stated' joins those who refused, those whose affiliation is unknown, and those who said they had one without saying which, 31 December 2011 (Statistics Estonia, RL0452). The table's categories hold 1,218 of the 1,236 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,218. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
   },
   {
     "id": "EST-SE-2017-28",
@@ -12778,10 +12809,33 @@
       "year": 2017,
       "source": "Statistics Estonia, RV0241"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The categories of the 2011 census's table (RL0452) fall short of this unit's total by more than rounding -- Statistics Estonia protects small cells -- so no composition is given."
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 44.1,
+        "count": 336
+      },
+      {
+        "group": "No religion",
+        "pct": 29.5,
+        "count": 225
+      },
+      {
+        "group": "Not stated",
+        "pct": 13.4,
+        "count": 102
+      },
+      {
+        "group": "Lutheran",
+        "pct": 11.4,
+        "count": 87
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 12
+      }
+    ],
     "language": [
       {
         "group": "Estonian",
@@ -12810,6 +12864,12 @@
         "name": "Statistics Estonia, RL0433",
         "url": "https://andmed.stat.ee/en/stat/RL0433",
         "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Estonia, RL0452",
+        "url": "https://andmed.stat.ee/en/stat/RL0452",
+        "year": 2011
       }
     ],
     "country": "EST",
@@ -12828,7 +12888,9 @@
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2017 (534 males, 473 females).",
     "population_note": "Registered residents on 1 January 2017. The municipality as it stood before the 2017 reform, which is the unit the map draws.",
     "language_year": 2011,
-    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 882 of the 888 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 882. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
+    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 882 of the 888 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 882. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw.",
+    "religion_year": 2011,
+    "religion_note": "Religious affiliation, asked of everyone aged 15 and over; 'Not stated' joins those who refused, those whose affiliation is unknown, and those who said they had one without saying which, 31 December 2011 (Statistics Estonia, RL0452). The table's categories hold 762 of the 779 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 762. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
   },
   {
     "id": "EST-SE-2017-166",
@@ -26257,10 +26319,33 @@
       "year": 2017,
       "source": "Statistics Estonia, RV0241"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The categories of the 2011 census's table (RL0452) fall short of this unit's total by more than rounding -- Statistics Estonia protects small cells -- so no composition is given."
-    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 74.6,
+        "count": 795
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.0,
+        "count": 117
+      },
+      {
+        "group": "Lutheran",
+        "pct": 8.2,
+        "count": 87
+      },
+      {
+        "group": "Orthodox",
+        "pct": 4.8,
+        "count": 51
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4,
+        "count": 15
+      }
+    ],
     "language": [
       {
         "group": "Estonian",
@@ -26299,6 +26384,12 @@
         "name": "Statistics Estonia, RL0433",
         "url": "https://andmed.stat.ee/en/stat/RL0433",
         "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Estonia, RL0452",
+        "url": "https://andmed.stat.ee/en/stat/RL0452",
+        "year": 2011
       }
     ],
     "country": "EST",
@@ -26317,7 +26408,9 @@
     "sex_ratio_note": "Males per 100 females among residents on 1 January 2017 (666 males, 618 females).",
     "population_note": "Registered residents on 1 January 2017. The municipality as it stood before the 2017 reform, which is the unit the map draws.",
     "language_year": 2011,
-    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 1,248 of the 1,254 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,248. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
+    "language_note": "Mother tongue as answered in the census, 31 December 2011 (Statistics Estonia, RL0433). The table's categories hold 1,248 of the 1,254 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,248. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw.",
+    "religion_year": 2011,
+    "religion_note": "Religious affiliation, asked of everyone aged 15 and over; 'Not stated' joins those who refused, those whose affiliation is unknown, and those who said they had one without saying which, 31 December 2011 (Statistics Estonia, RL0452). The table's categories hold 1,065 of the 1,082 people it counts here -- Statistics Estonia protects small cells -- and the shares are of the 1,065. The 2021 census is tabulated by the municipalities formed in 2017, which the map does not draw."
   },
   {
     "id": "EST-SE-2017-118",
