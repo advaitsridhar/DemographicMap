@@ -1,8 +1,3 @@
-nordic_origin: NOR
-  09817: 426 kommuner of 2017; by year read: 2017: 8, 2019: 108, 2025: 1, 2026: 309
-  named (43): Norwegian, Polish, Ukrainian, Lithuanian, Syrian, Somali, Pakistani, Swedish, Iraqi, Eritrean, German, Filipino, Afghan, Russian, Iranian, Indian, Thai, Vietnamese, Turkish, Romanian, Danish, Bosnian, British, Kosovar, Sri Lankan, Latvian, Ethiopian, Chinese, American, Moroccan, Serbian, Dutch, Spanish, Bulgarian, French, Sudanese, Chilean, Finnish, Brazilian, Icelandic, Italian, Congolese, Croatian
-  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
-    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
-    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
-  430 records: admin1 11, admin2 419; labels the group tree cannot place: ['Congolese', 'Eritrean', 'Ethiopian', 'Kosovar']
-  wrote data/processed/norway_origin.json (1990 kB)
+belgium_nationality: Eurostat cens_21ctz_r3, Belgium, 1 January 2021
+  cens_21ctz_r3: dimensions ['freq', 'citizen', 'sex', 'age', 'unit', 'geo', 'time'], sizes [1, 221, 1, 1, 1, 15, 1]
+belgium_nationality: BE: the citizenship categories make 1,478,859, the total is 11554767.0
