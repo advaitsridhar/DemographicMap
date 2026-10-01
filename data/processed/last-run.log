@@ -1,312 +1,69 @@
-== r18b_fin_evl_2019
-  32,328 bytes, starts b'PK\x03\x04'
-  sheet 'SeurakunnatFörsamlingar': 382 rows x 4 columns
-    1: Seurakuntien jäsenmäärä / Församlingarnas medlemsantal 31.12.2019 - Alueet / Områdena 2020
-    2: 
-    3: Seurakunta / Församling | Tunnus/Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Agricola sv | 001025 | Borgå | 5993
-    5: Agricolan suom | 001024 | Helsinki | 6688
-    6: Akaa | 000131 | Tampere | 11885
-    7: Alajärvi | 000420 | Lapua | 8170
-    8: Alavieska | 000203 | Oulu | 2234
-    9: Alavus | 000421 | Lapua | 9772
-    10: Anjalankoski | 000282 | Mikkeli | 10518
-    11: Asikkala | 000132 | Mikkeli | 5817
-    12: Askola | 000002 | Helsinki | 3689
-    13: Aura | 000035 | Turku | 2928
-    14: Bergö | 000484 | Borgå | 391
-    15: Borgå sv.domk | 000485 | Borgå | 12321
-    16: Brändö-Kumlinge | 000598 | Borgå | 570
-    17: Eckerö | 000489 | Borgå | 715
-    18: Ekenäsnejdens sv | 001020 | Borgå | 9372
-    19: Elimäki | 000284 | Mikkeli | 5983
-    20: Eno | 000350 | Kuopio | 4177
-    21: Enontekiö | 000204 | Oulu | 1505
-    22: Esbo sv | 000491 | Borgå | 14697
-    23: Espoon Tuomiokirkko | 000004 | Espoo | 46108
-    24: Espoonlahti | 000571 | Espoo | 30445
-    25: Eura | 000036 | Turku | 9540
-  sheet 'TalousyksikötEkonomiskaenheter': 270 rows x 4 columns
-    1: Talousyksiköiden jäsenmäärä / Medlemsantal av ekonomiska enheter 31.12.2019 - Alueet / Områdena 2020
-    2: 
-    3: Talousyksikkö/Ekonomisk enhet | Tunnus(Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Akaa | 000131 | Tampere | 11885
-    5: Alajärvi | 000420 | Lapua | 8170
-    6: Alavieska | 000203 | Oulu | 2234
-    7: Alavus | 000421 | Lapua | 9772
-    8: Asikkala | 000132 | Mikkeli | 5817
-    9: Askola | 000002 | Helsinki | 3689
-    10: Aura | 000035 | Turku | 2928
-    11: Brändö-Kumlinge | 000598 | Borgå | 570
-    12: Eckerö | 000489 | Borgå | 715
-    13: Enontekiö | 000204 | Oulu | 1505
-    14: Espoon ev.lut.srky-Esbo ev.luth.ksamf | 000801 | Espoo | 165530
-    15: Eura | 000036 | Turku | 9540
-    16: Eurajoki | 000037 | Turku | 7578
-    17: Evijärvi | 000422 | Lapua | 2026
-    18: Finström-Geta | 000493 | Borgå | 2357
-    19: Forssa | 000134 | Tampere | 12704
-    20: Haapajärvi | 000205 | Oulu | 6168
-    21: Haapavesi | 000206 | Oulu | 5667
-    22: Hailuoto | 000207 | Oulu | 742
-    23: Hamina | 001011 | Mikkeli | 18909
-    24: Hammarland | 000497 | Borgå | 1205
-    25: Hangö ksamf-Hangon srky | 000804 | Borgå | 5592
-== r18b_fin_evl_2019_live
-  32,328 bytes, starts b'PK\x03\x04'
-  sheet 'SeurakunnatFörsamlingar': 382 rows x 4 columns
-    1: Seurakuntien jäsenmäärä / Församlingarnas medlemsantal 31.12.2019 - Alueet / Områdena 2020
-    2: 
-    3: Seurakunta / Församling | Tunnus/Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Agricola sv | 001025 | Borgå | 5993
-    5: Agricolan suom | 001024 | Helsinki | 6688
-    6: Akaa | 000131 | Tampere | 11885
-    7: Alajärvi | 000420 | Lapua | 8170
-    8: Alavieska | 000203 | Oulu | 2234
-  sheet 'TalousyksikötEkonomiskaenheter': 270 rows x 4 columns
-    1: Talousyksiköiden jäsenmäärä / Medlemsantal av ekonomiska enheter 31.12.2019 - Alueet / Områdena 2020
-    2: 
-    3: Talousyksikkö/Ekonomisk enhet | Tunnus(Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Akaa | 000131 | Tampere | 11885
-    5: Alajärvi | 000420 | Lapua | 8170
-    6: Alavieska | 000203 | Oulu | 2234
-    7: Alavus | 000421 | Lapua | 9772
-    8: Asikkala | 000132 | Mikkeli | 5817
-== r18b_fin_evl_2020
-  32,350 bytes, starts b'PK\x03\x04'
-  sheet 'SeurakunnatFörsamlingar': 382 rows x 4 columns
-    1: Seurakuntien jäsenmäärä / Församlingarnas medlemsantal 31.12.2020
-    2: 
-    3: Seurakunta / Församling | Tunnus/Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Agricola sv | 001025 | Borgå | 5859
-    5: Agricolan suom | 001024 | Helsinki | 6591
-    6: Akaa | 000131 | Tampere | 11621
-    7: Alajärvi | 000420 | Lapua | 7977
-    8: Alavieska | 000203 | Oulu | 2232
-    9: Alavus | 000421 | Lapua | 9610
-    10: Anjalankoski | 000282 | Mikkeli | 10247
-    11: Asikkala | 000132 | Mikkeli | 5704
-    12: Askola | 000002 | Helsinki | 3605
-    13: Aura | 000035 | Turku | 2923
-    14: Bergö | 000484 | Borgå | 381
-    15: Borgå sv.domk | 000485 | Borgå | 12176
-    16: Brändö-Kumlinge | 000598 | Borgå | 554
-    17: Eckerö | 000489 | Borgå | 702
-    18: Ekenäsnejdens sv | 001020 | Borgå | 9210
-    19: Elimäki | 000284 | Mikkeli | 5774
-    20: Eno | 000350 | Kuopio | 4066
-    21: Enontekiö | 000204 | Oulu | 1445
-    22: Esbo sv | 000491 | Borgå | 14454
-    23: Espoon Tuomiokirkko | 000004 | Espoo | 45420
-    24: Espoonlahti | 000571 | Espoo | 29825
-    25: Eura | 000036 | Turku | 9386
-  sheet 'TalousyksikötEkonomiskaenheter': 270 rows x 4 columns
-    1: Talousyksiköiden jäsenmäärä / Medlemsantal av ekonomiska enheter 31.12.2020
-    2: 
-    3: Talousyksikkö/Ekonomisk enhet | Tunnus(Kod | Hiippakunta/Stift | Henk./Pers.
-    4: Akaa | 000131 | Tampere | 11621
-    5: Alajärvi | 000420 | Lapua | 7977
-    6: Alavieska | 000203 | Oulu | 2232
-    7: Alavus | 000421 | Lapua | 9610
-    8: Asikkala | 000132 | Mikkeli | 5704
-    9: Askola | 000002 | Helsinki | 3605
-    10: Aura | 000035 | Turku | 2923
-    11: Brändö-Kumlinge | 000598 | Borgå | 554
-    12: Eckerö | 000489 | Borgå | 702
-    13: Enontekiö | 000204 | Oulu | 1445
-    14: Espoon ev.lut.srky-Esbo ev.luth.ksamf | 000801 | Espoo | 162960
-    15: Eura | 000036 | Turku | 9386
-    16: Eurajoki | 000037 | Turku | 7541
-    17: Evijärvi | 000422 | Lapua | 2004
-    18: Finström-Geta | 000493 | Borgå | 2328
-    19: Forssa | 000134 | Tampere | 12490
-    20: Haapajärvi | 000205 | Oulu | 6042
-    21: Haapavesi | 000206 | Oulu | 5570
-    22: Hailuoto | 000207 | Oulu | 728
-    23: Hamina | 001011 | Mikkeli | 18514
-    24: Hammarland | 000497 | Borgå | 1170
-    25: Hangö ksamf-Hangon srky | 000804 | Borgå | 5382
-== r18b_fin_tableau1
-  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html><html lang=en><head><script id=AwsWAFScript src=https://c17315bd03da.edge.captcha-sdk.awswaf.com/c17315bd03da/jsapi.js defer=defer></script><script charset=UTF-8 src=https://a.sfdcstatic.com/enterprise/tableau/prod/20260410/v1/oneTrust/scripttemplates/otSDKStub.js data-domain-script=2
-== r18b_fin_tableau2
-  FAILED: RuntimeError: HTTP 404: <!DOCTYPE html><html lang=en><head><script id=AwsWAFScript src=https://c17315bd03da.edge.captcha-sdk.awswaf.com/c17315bd03da/jsapi.js defer=defer></script><script charset=UTF-8 src=https://a.sfdcstatic.com/enterprise/tableau/prod/20260410/v1/oneTrust/scripttemplates/otSDKStub.js data-domain-script=2
-== r18b_swe_kyrkan_cdx
-  150 captures
-    20240916162343 https://www.svenskakyrkan.se/filer/%C3%85ttonde%20avdelningen-%20F%C3%B6rsamlingstillh%C3%B6righet%20och%20indelning,%20jan%202016.pdf application/pdf 200
-    20220815213900 https://www.svenskakyrkan.se/filer/%c3%85tv%20f%c3%b6rsamling_Medlemmar.pdf application/pdf 200
-    20230811005441 https://www.svenskakyrkan.se/filer/%C3%96P%20Information%20Medlemmar_2020.pdf application/pdf 200
-    20251007115037 https://www.svenskakyrkan.se/filer/1109959/R%C3%A5dak%C3%B6ren%2060%20%C3%A5r%20inbjudan%20k%C3%B6rmedlemmar%2020251018(1).pdf application/pdf 200
-    20230811011702 https://www.svenskakyrkan.se/filer/1111969/Anledningar%20att%20vara%20medlem_slutkorr_221006.pdf application/pdf 200
-    20230811113116 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskott%202021-01-29%20%C2%A751-.pdf application/pdf 200
-    20230811071322 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskott%202021-01-29%20%C2%A751-.pdf?id=2355940 application/pdf 200
-    20230811062000 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskottet%202020-06-10%20%C2%A7%C2%A716-%C2%A7%C2%A724.pdf application/pdf 200
-    20230811053138 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskottet%202020-06-10%20%C2%A7%C2%A716-%C2%A7%C2%A724.pdf?id=2076008 application/pdf 200
-    20230811060932 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskottet%202020-09-17%20%C2%A7%C2%A725-%C2%A7%C2%A733.pdf application/pdf 200
-    20230811070541 https://www.svenskakyrkan.se/filer/1111969/Kommunikationsutskottet%202020-09-17%20%C2%A7%C2%A725-%C2%A7%C2%A733.pdf?id=2104543 application/pdf 200
-    20260508084452 https://www.svenskakyrkan.se/filer/1221883/Fbladnbynr12021tillhemsidan.pdf application/pdf 200
-    20260508080825 https://www.svenskakyrkan.se/filer/1221883/Fbladnbynr42020tillhemsidan.pdf application/pdf 200
-    20230811040457 https://www.svenskakyrkan.se/filer/1345076/DKV%20medlemsbrev%202.%202021.pdf application/pdf 200
-    20230811040552 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%201%202021%20slutligt.pdf application/pdf 200
-    20230811024027 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%201%20DKV%20februari%202023.pdf application/pdf 200
-    20230811032205 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%201%20DKV,%20mars%202022.pdf application/pdf 200
-    20230811012350 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%202%20DKV%20maj%202023.pdf application/pdf 200
-    20230811044006 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%203%20aug%202021.pdf application/pdf 200
-    20230811045820 https://www.svenskakyrkan.se/filer/1345076/Medlemsbrev%204%20DKV,%20nov-21%20.pdf application/pdf 200
-    20230811054343 https://www.svenskakyrkan.se/filer/1347415/Medlemsblad%201%202022.pdf application/pdf 200
-    20230811060555 https://www.svenskakyrkan.se/filer/1347415/Medlemsblad%201%202022.pdf?id=2360436 application/pdf 200
-    20250515064046 https://www.svenskakyrkan.se/filer/1374643/42%20En%20stund%20i%20stillhet%20%E2%80%93%20f%C3%B6rslag%20till%20nya%20psalmer%20(pdf).pdf application/pdf 200
-    20250514132246 https://www.svenskakyrkan.se/filer/1374643/42%20En%20stund%20i%20stillhet%20%e2%80%93%20koralversion%20(pdf).pdf application/pdf 200
-    20250806023649 https://www.svenskakyrkan.se/filer/1374643/Bli%20medlem,%20barn.pdf application/pdf 200
-    20250806023649 https://www.svenskakyrkan.se/filer/1374643/Bli%20medlem,%20vuxna.pdf application/pdf 200
-    20220120135557 https://www.svenskakyrkan.se/filer/1374643/Dopstatistik%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf application/pdf 200
-    20211005033235 https://www.svenskakyrkan.se/filer/1374643/Dopstatistik%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf?id=2195452 application/pdf 200
-    20240512180251 https://www.svenskakyrkan.se/filer/1374643/https://www.svenskakyrkan.se/(S(fvb4e145gu2pccrropgrsj55))/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2023.pdf?id=2705246 text/html 400
-    20201031223219 https://www.svenskakyrkan.se/filer/1374643/Kloster_Kommuniteter_BM_201020.pdf application/pdf 200
-    20220419145311 https://www.svenskakyrkan.se/filer/1374643/Kloster_Kommuniteter_BM_201020.pdf?id=2117548 application/pdf 200
-    20240401041722 https://www.svenskakyrkan.se/filer/1374643/Kultursamh%C3%A4llet%20%E2%80%93%20utvecklad%20samverkan%20mellan%20stat,%20region%20och%20kommun.pdf application/pdf 200
-    20240403022354 https://www.svenskakyrkan.se/filer/1374643/Kultursamh%C3%A4llet%20%E2%80%93%20utvecklad%20samverkan%20mellan%20stat,%20region%20och%20kommun.pdf?id=2707685 application/pdf 200
-    20250430232507 http://www.svenskakyrkan.se/filer/1374643/Medlemmar unk 302
-    20240523161311 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Sven text/html 404
-    20241119195512 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyr text/html 404
-    20240909145848 http://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan unk 302
-    20240807160012 http://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201 unk 302
-    20240530223340 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972- text/html 404
-    20200611171657 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2019.pdf application/pdf 200
-    20201129220757 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2019.pdf?id=2068054 application/pdf 200
-    20220108110854 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2020.pdf application/pdf 200
-    20211003083839 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2020.pdf?id=2227146 application/pdf 200
-    20220615003659 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2021.pdf application/pdf 200
-    20220615004408 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2021.pdf?id=2439854 application/pdf 200
-    20230407001545 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2022.pdf application/pdf 200
-    20250505153858 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2022.pdf, text/html 404
-    20230402212130 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2022.pdf?id=2554894 application/pdf 200
-    20240327075130 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2023.pdf application/pdf 200
-    20240522071508 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2023.pdf?id=2705246 application/pdf 200
-    20260420115022 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%2520i%2520Svenska%2520kyrkan%25201972-2025.pdf%3Fid%3D3016165 text/html 400
-    20220120151620 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf application/pdf 200
-    20211005022132 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf?id=2195455 application/pdf 200
-    20220120135300 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20pastorat%20och%20stift%20samt%20riket%20(pdf).pdf application/pdf 200
-    20211005021251 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20pastorat%20och%20stift%20samt%20riket%20(pdf).pdf?id=2195456 application/pdf 200
-    20260108134437 http://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%25 unk 302
-    20220710030454 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019- text/html 404
-    20220710030509 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf text/html 404
-    20220120132225 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf).pdf application/pdf 200
-    20211005041333 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf).pdf?id=2195458 application/pdf 200
-    20221223184800 http://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1 unk 301
-    20220401215811 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1).pdf application/pdf 200
-    20220401215759 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1).pdf?id=2398412 application/pdf 200
-    20200831145101 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF.pdf application/pdf 200
-    20220401215810 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf application/pdf 200
-    20221029093500 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf?id=2398410&fbclid=IwAR1Fw4qH4Va9JLKXXfIrzmo0a65EKfkQyeeX3Oyd2tAr8EeUf7Xy-lS4Yss application/pdf 200
-    20220331171106 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf?id=2398410 application/pdf 200
-    20200901082709 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP.pdf application/pdf 200
-    20240326233529 https://www.svenskakyrkan.se/filer/1374643/SFRV-N%C3%A4mnden-f%C3%B6r-kommunikation-o-mediafr%C3%A5gor-(NKM)-1985-1989.pdf application/pdf 200
-    20240326214206 https://www.svenskakyrkan.se/filer/1374643/SFRV-N%C3%A4mnden-f%C3%B6r-kommunikation-o-mediafr%C3%A5gor-(NKM)-1985-1989.pdf?id=2710155 application/pdf 200
-    20251219171925 https://www.svenskakyrkan.se/filer/1490852/10.1%20Tj%C3%A4nsteutl%C3%A5tanden%20-%20Svar%20till%20motion%20Bunkeflo%20strandkyrka,%20Bunkeflo%20kyrka%20samt%20tillh%C3%B6rande%20byggnad.pdf application/pdf 200
-    20251107000458 https://www.svenskakyrkan.se/filer/1490852/10.1%20Tj%C3%A4nsteutl%C3%A5tanden%20-%20Svar%20till%20motion%20Bunkeflo%20strandkyrka,%20Bunkeflo%20kyrka%20samt%20tillh%C3%B6rande%20byggnad.pdf?id=2957267 application/pdf 200
-    20201126161931 https://www.svenskakyrkan.se/filer/1512419/medlemsG%C3%85VA-2020sept.pdf application/pdf 200
-    20230811045705 https://www.svenskakyrkan.se/filer/1512419/medlemsG%C3%85VA-2023(1).pdf application/pdf 200
-    20230811052806 https://www.svenskakyrkan.se/filer/1558630/Medlemmar.pdf application/pdf 200
-    20230811120434 https://www.svenskakyrkan.se/filer/1619964/GDPR%20Medlemskap.docx application/vnd.openxmlformats-officedocument.wordprocessingml.document 200
-    20250821021700 https://www.svenskakyrkan.se/filer/1730781/DE%20S%c3%a5%20blir%20du%20medlem%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20250910202650 https://www.svenskakyrkan.se/filer/1730781/EN%20S%c3%a5%20blir%20du%20medlem%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20250823213049 https://www.svenskakyrkan.se/filer/1730781/ES%20S%c3%a5%20blir%20du%20medlem%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20250822065325 https://www.svenskakyrkan.se/filer/1730781/FR%20S%c3%a5%20blir%20du%20medlem%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20250822051342 https://www.svenskakyrkan.se/filer/1730781/S%c3%a5%20blir%20du%20medlem%20-%20Arabiska.pdf application/pdf 200
-    20250827174142 https://www.svenskakyrkan.se/filer/1730781/S%c3%a5%20blir%20du%20medlem%20-%20Tigrinja.pdf application/pdf 200
-    20250823122538 https://www.svenskakyrkan.se/filer/1730781/S%c3%a5%20blir%20du%20medlem%20i%20Svenska%20kyrkan%20-%20Farsi.pdf application/pdf 200
-    20230811041652 https://www.svenskakyrkan.se/filer/1878852/KR230213%20PROTOKOLLSBILAGA%204%20Medlemsstatistik.pdf application/pdf 200
-    20230811011232 https://www.svenskakyrkan.se/filer/1878852/KR230424%20PROTOKOLLSBILAGA%206%20Medlemsstatistik.pdf application/pdf 200
-    20241203144016 https://www.svenskakyrkan.se/filer/20170411%20Medlemsstatistik.pdf application/pdf 200
-    20260508083634 https://www.svenskakyrkan.se/filer/2017nr4tillhemsidan.pdf application/pdf 200
-    20260508090709 https://www.svenskakyrkan.se/filer/2018nr1tillhemsidan.pdf application/pdf 200
-    20220629135632 https://www.svenskakyrkan.se/filer/2091291/Medlemmar.pdf application/pdf 200
-    20230811043045 https://www.svenskakyrkan.se/filer/2186364/infoblad_medlemskap.pdf application/pdf 200
-    20250721084615 https://www.svenskakyrkan.se/filer/500073/Kommunicera_med_utan_kampanj_A4.pdf application/pdf 200
-    20250721092307 https://www.svenskakyrkan.se/filer/500073/Lyssna%20till%20Gud%20i%20tystnad%20och%20stillhet.pdf application/pdf 200
-    20240724014900 https://www.svenskakyrkan.se/filer/500262/Information%20om%20entrepren%C3%B6rsbost%C3%A4derna%20i%20Lule%C3%A5%20kommun.pdf application/pdf 200
-    20250926031657 https://www.svenskakyrkan.se/filer/500263/Finanspolicy%20i%20Visby%20stift%20med%20tillh%C3%B6rande%20pr%C3%A4stl%C3%B6netillg%C3%A5ngar.pdf application/pdf 200
-    20220520040307 https://www.svenskakyrkan.se/filer/500263/Medlemsbrev%20feb%202022.pdf application/pdf 200
-    20250928214139 https://www.svenskakyrkan.se/filer/500355/Fr%C3%A5gor%20och%20svar%20Kommunicera%20kyrkoval%202025%20241114.pdf application/pdf 200
-    20250926084921 https://www.svenskakyrkan.se/filer/500355/Presentation%20Kommunicera%20kyrkoval%202025%20241114.pdf application/pdf 200
-    20210618211119 https://www.svenskakyrkan.se/filer/500355/Processbeskrivningar_Kommunikation_v2.0.pdf application/pdf 200
-    20220709045906 https://www.svenskakyrkan.se/filer/500679/Kommunikation%20GDPR%20maj%202022.pdf application/pdf 200
-    20220709084642 https://www.svenskakyrkan.se/filer/500679/Kommunikation%20GDPR%20maj%202022.pdf?id=2447409 application/pdf 200
-    20250911234344 https://www.svenskakyrkan.se/filer/501848/Bli%20medlem%20barn.pdf application/pdf 200
-    20230811042334 https://www.svenskakyrkan.se/filer/502671/Integritetspolicy%20-%20Kommunikation.pdf application/pdf 200
-    20210921113653 https://www.svenskakyrkan.se/filer/503918/Integritetspolicy%20-%20Kommunikation_hasselby_20200915(1).pdf application/pdf 200
-    20210927021359 https://www.svenskakyrkan.se/filer/503918/Integritetspolicy%20In-%20och%20uttr%c3%a4den%20medlemsskap%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20231014014455 https://www.svenskakyrkan.se/filer/509797/Medlemmar%20GDPR(1).pdf application/pdf 200
-    20240916220428 https://www.svenskakyrkan.se/filer/527722/Medlemsbroschyr-webb-sidor.pdf application/pdf 200
-    20230811071411 https://www.svenskakyrkan.se/filer/543579/dubbelsidig%20-%20Medlem%20i%20Victoriaf%C3%B6rsamlingen%202022.pdf application/pdf 200
-    20230811042546 https://www.svenskakyrkan.se/filer/544771/FULLMAKT%20medlemsm%C3%B6te%202023.pdf application/pdf 200
-    20230811073349 https://www.svenskakyrkan.se/filer/546770/2022-04-05%20Medlemsuppgifter%20formul%C3%A4r.pdf application/pdf 200
-    20230811040113 https://www.svenskakyrkan.se/filer/546770/2022-04-05%20Medlemsuppgifter%20formul%C3%A4r.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
-    20220707165004 https://www.svenskakyrkan.se/filer/560687/Att%20arbeta%20kommunikativt%20i%20projekt%202017-06-26.pdf application/pdf 200
-    20220816135535 https://www.svenskakyrkan.se/filer/560687/Att%20arbeta%20kommunikativt%20i%20projekt%202017-06-26.pdf?id=2390813 application/pdf 200
-    20230811085644 http://www.svenskakyrkan.se/filer/560687/Inomkyrklig%20kommunikationsstrategi%202009-04-23.pdf application/pdf 200
-    20220816123829 https://www.svenskakyrkan.se/filer/560687/Inomkyrklig%20kommunikationsstrategi%202009-04-23.pdf?id=2390803 application/pdf 200
-    20230811094321 http://www.svenskakyrkan.se/filer/560687/Kommunicera%20ideella%20uppdrag%20-%20checklista.pdf unk 301
-    20220818204801 https://www.svenskakyrkan.se/filer/560687/Kommunicera%20ideella%20uppdrag%20-%20checklista.pdf?id=2390586 application/pdf 200
-    20220709024054 https://www.svenskakyrkan.se/filer/560687/Kommunikationskoncept%20f%C3%B6r%20Svenska%20kyrkan%202016-11-01.pdf application/pdf 200
-    20220707154558 https://www.svenskakyrkan.se/filer/560687/Kommunikationskoncept%20f%C3%B6r%20Svenska%20kyrkan%202016-11-01.pdf?id=2390802 application/pdf 200
-    20220707174057 https://www.svenskakyrkan.se/filer/560687/Kommunikationsplattform%202004-06-22.pdf application/pdf 200
-    20220814011652 https://www.svenskakyrkan.se/filer/560687/Kommunikationsplattform%202004-06-22.pdf?id=2390801 application/pdf 200
-    20220707223626 https://www.svenskakyrkan.se/filer/560687/Kommunikationsstrategi%20med%20ansvarsf%C3%B6rdelning%202011-10-24(2).pdf application/pdf 200
-    20220708121337 https://www.svenskakyrkan.se/filer/560687/Kommunikationsstrategi%20med%20ansvarsf%C3%B6rdelning%202011-10-24(2).pdf?id=2390800 application/pdf 200
-    20230811001144 https://www.svenskakyrkan.se/filer/560687/Personuppgiftsbehandling,%20Kommunikationstj%C3%A4nster.pdf application/pdf 200
-    20230811003754 https://www.svenskakyrkan.se/filer/560687/Personuppgiftsbehandling,%20Kommunikationstj%C3%A4nster.pdf?id=2568767 application/pdf 200
-    20210916160850 https://www.svenskakyrkan.se/filer/560687/PLT%20karta%20kommun%202.5%20mindre%20storlek.pdf application/pdf 200
-    20230811011308 https://www.svenskakyrkan.se/filer/560687/S%C3%A4rskilda%20villkor,%20Kommunikationstj%C3%A4nster.pdf application/pdf 200
-    20230811010744 https://www.svenskakyrkan.se/filer/560687/S%C3%A4rskilda%20villkor,%20Kommunikationstj%C3%A4nster.pdf?id=2568766 application/pdf 200
-    20210922172747 https://www.svenskakyrkan.se/filer/561925/Medlemstalong.pdf application/pdf 200
-    20250813202120 https://www.svenskakyrkan.se/filer/562438/Medlemmar(1).pdf application/pdf 200
-    20230810235945 https://www.svenskakyrkan.se/filer/562807/Medlemmar.pdf application/pdf 200
-    20201025082018 https://www.svenskakyrkan.se/filer/562807/Medlemmar.pdf?id=2101026 application/pdf 200
-    20230811120227 https://www.svenskakyrkan.se/filer/563043/Personuppgiftsbehandling%20medlemmar.pdf application/pdf 200
-    20260512181022 https://www.svenskakyrkan.se/filer/563051/Medlemsbroschyr.pdf application/pdf 200
-    20230811092535 https://www.svenskakyrkan.se/filer/563932/GDPR%20-%20Medlem%20i%20Svenska%20kyrkan.pdf application/pdf 200
-    20230811040227 https://www.svenskakyrkan.se/filer/564018/Kyrkotillh%C3%B6riga%202022-12-31.pdf application/pdf 200
-    20230811033046 https://www.svenskakyrkan.se/filer/564018/Kyrkotillh%C3%B6riga%202022-12-31.pdf?id=2534398 application/pdf 200
-    20221007095820 https://www.svenskakyrkan.se/filer/566183/Medlemsblankett%202022.pdf application/pdf 200
-    20230812140606 https://www.svenskakyrkan.se/filer/566183/Medlemsblankett%202023.pdf application/pdf 200
-    20220927124857 https://www.svenskakyrkan.se/filer/566183/Medlemsinfo%202022.pdf application/pdf 200
-    20230811060552 https://www.svenskakyrkan.se/filer/566183/Medlemsinfo%202023(1).pdf application/pdf 200
-    20230811040213 https://www.svenskakyrkan.se/filer/577432/Bli%20medlem.pdf application/pdf 200
-    20220816103827 https://www.svenskakyrkan.se/filer/587548/Sv%20kyrkans%20l%C3%B6neavtal%2020%20Kommunal%20201204.pdf?id=2367913 application/pdf 200
-    20220816103140 https://www.svenskakyrkan.se/filer/587548/Sv%20kyrkans%20l%C3%B6neavtal%2022%20Kommunal%20220503.pdf?id=2447207 application/pdf 200
-    20230606070108 https://www.svenskakyrkan.se/filer/587615/%c2%a7%20139%20Kyrkostyrelsens%20mandat%20att%20tillhandah%c3%a5lla%20administrativa%20tj%c3%a4nster,%20beslut.pdf application/pdf 200
-    20260723040329 https://www.svenskakyrkan.se/filer/587615/012%20Kyrkotillh%c3%b6righet%20ska%20inte%20p%c3%a5verka%20m%c3%b6jligheten%20till%20f%c3%b6rs%c3%b6rjningsst%c3%b6d..pdf application/pdf 200
-    20220810211613 https://www.svenskakyrkan.se/filer/587615/Beslut%20%c2%a7%20090%20F%c3%b6rsamlingstillh%c3%b6righet%20och%20uppdrag%20som%20f%c3%b6rtroendevald.pdf application/pdf 200
-    20240715233058 https://www.svenskakyrkan.se/filer/587615/Beslut%20%c2%a7%20167%20Minskat%20antal%20medlemmar.pdf application/pdf 200
-    20220627210331 https://www.svenskakyrkan.se/filer/587615/Bet%c3%a4nkande%20Eu%202021%2002%20Medlemskapet%20i%20ACT%20Alliance.pdf application/pdf 200
-    20220702044757 https://www.svenskakyrkan.se/filer/587615/Bet%c3%a4nkande%20O%202021%2002%20F%c3%b6rsamlingstillh%c3%b6righet%20och%20uppdrag%20som%20f%c3%b6rtroendevald.pdf application/pdf 200
-    20250804142137 https://www.svenskakyrkan.se/filer/587615/Bet%C3%A4nkande%20O%202022%2010%20F%C3%B6rsamlingstillh%C3%B6righet%20och%20lagen%20om%20Svenska%20kyrkan.pdf application/pdf 200
-== r18b_isl_skra_old
-  24,007 bytes, starts b'PK\x03\x04'
-  sheet 'Sheet1': 54 rows x 10 columns
-    1: Fjöldi skráninga í trú- og lífsskoðunarfélög þann 1. september sl. og samanburður við skráningu þann 1. desember 2017.
-    2: 
-    3: tru | Trú- og lífsskoðunarfélga | 2018-09-01 00:00:00 | 2017-12-01 00:00:00 | Fækkun/fjölgun | Breyting í %
-    4: 0 | Þjóðkirkjan | 270190 | 272500 | -2310 | -0.008477064220183461
-    5: 2 | Utan trú- og lífsskoðunarfélaga | 28063 | 26089 | 1974 | 0.0756640729809499
-    6: 3 | Kaþólska kirkjan | 19422 | 18892 | 530 | 0.028054202837179743
-    7: 4 | Fríkirkjan í Reykjavík | 10775 | 10724 | 51 | 0.004755688176053763
-    8: 5 | Fríkirkjan í Hafnarfirði | 7458 | 7329 | 129 | 0.017601309864920145
-    9: 6 | Ásatrúarfélagið | 4791 | 4469 | 322 | 0.07205191317968218
-    10: 7 | Óháði Söfnuðurinn | 3701 | 3694 | 7 | 0.0018949648077963843
-    11: 8 | Siðmennt | 2747 | 2388 | 359 | 0.1503350083752093
-    12: 9 | Hvítasunnukirkjan á Íslandi | 2396 | 2394 | 2 | 0.0008354218880535225
-  sheet 'Sheet2': 51 rows x 8 columns
-    1: Trú- og lífsskoðunarfélga | Fjöldi
-    2: Utan trú- og lífsskoðunarfélaga |  |  |  |  | Utan trú- og lífsskoðunarfélaga | 28063 | 0.061736624428018305
-    3: Þjóðkirkjan |  |  |  |  | Þjóðkirkjan | 270190 | 0.5943989792326646
-    4:  |  |  |  |  | Kaþólska kirkjan | 19422 | 0.04272703273495248
-    5: Óháði Söfnuðurinn | 3701 |  |  |  | Ótilgreint | 93278 | 0.20520503343892996
-    6: Kirkja sjöunda dags aðventista á Íslandi | 956 |  |  |  | Ásatrúarfélagið | 4791 | 0.010539862724392819
-    7: Sjónarhæðarsöfnuðurinn | 69 |  |  |  | Fríkirkjan í Hafnarfirði | 7458 | 0.016407074973600846
-    8: Hvítasunnukirkjan á Íslandi | 2396 |  |  |  | Fríkirkjan í Reykjavík | 10775 | 0.02370424146427314
-    9: Kaþólska kirkjan |  |  |  |  | Önnur trúfélög og lífsskoðunarfélög | 20583 | 0.0452811510031679
-    10:  |  |  |  |  |  | 454560
-    11: Ótilgreint
-    12: Postulakirkjan Beth-Shekhinah | 28
+== r18b_fin_vaerak
+  32 items
+    11ra.px [t] 11ra -- Key figures on population by region, 1990-2025
+    11rb.px [t] 11rb -- Population and change in population size by sex, 1750-2025
+    11rc.px [t] 11rc -- Population according to age (5-year) and sex, 1865-2025
+    11rd.px [t] 11rd -- Population according to age (1-year 0-112) and sex, 1972-2025
+    11re.px [t] 11re -- Population according to age (1-year) and sex by area, 1972-2025
+    11rf.px [t] 11rf -- Population according to age (1-year) and sex by area and the regional division of each statistical reference year, 2003-2025
+    11rg.px [t] 11rg -- Citizenship according to age and sex by region, 1990-2025
+    11rh.px [t] 11rh -- Citizenship according to sex by municipality, 1990-2025
+    11rk.px [t] 11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
+    11rl.px [t] 11rl -- Language according to age and sex by region, 1990-2025
+    11rm.px [t] 11rm -- Language according to sex by municipality, 1990-2025
+    11rp.px [t] 11rp -- Country of birth according to age and sex by region, 1990-2025
+    11rq.px [t] 11rq -- Country of birth according to sex by municipality, 1990-2025
+    11rs.px [t] 11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
+    11rt.px [t] 11rt -- Origin and background country according to age group and sex by region, 1990-2025
+    11ru.px [t] 11ru -- Origin according to background continent by area, 1990-2025
+    11rv.px [t] 11rv -- Origin and background country by sex, by municipality, 1990-2025
+    11rx.px [t] 11rx -- Belonging to a religious community by age and sex, 1990-2025
+    11ry.px [t] 11ry -- Marital status by age (1-year 0-112) and sex, 1990-2025
+    11rz.px [t] 11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
+    11s1.px [t] 11s1 -- Mean population according to age and sex by area, 1981-2025
+    11s2.px [t] 11s2 -- Finnish-speaking and Swedish-speaking population by age and sex and by area, 1990-2025
+    11s3.px [t] 11s3 -- Population according to urban-rural classification by age and sex, 2000-2025
+    11s5.px [t] 11s5 -- Population by month and area, 1990M01-2025M12
+    14x3.px [t] 14x3 -- Degree of urbanisation by area, 2023
+    14x4.px [t] 14x4 -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2023
+    14x5.px [t] 14x5 -- Urban settlements by population and population density, 2023
+    159s.px [t] 159s -- Population according to citizenship, country of birth, language and origin (overlap of the groups), 1990-2025
+    159t.px [t] 159t -- Numbers and shares of persons with immigrant background by area, 1990-2025
+    15al.px [t] 15al -- Degree of urbanisation by area, 2024
+    15am.px [t] 15am -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2024
+    15an.px [t] 15an -- Urban settlements by population and population density, 2024
+== r18b_fin_11ru
+  title: Population 31.12.
+  var 'alue_23_20260101' (Area) [elimination]: 309 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... KU976=Ylitornio; KU977=Ylivieska; KU980=Ylöjärvi; KU981=Ypäjä; KU989=Ähtäri; KU992=Äänekoski
+      code lengths {3: 1, 5: 308}; prefixes {'KU': 308, 'SSS': 1}
+      /^(KU091|KU049|SK011|MK01|SSS) /: 3 -- SSS=WHOLE COUNTRY; KU049=Espoo; KU091=Helsinki
+  var 'syntypera_101_20180101' (Origin) [elimination]: 7 values
+      SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
+      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
+      ALL: SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
+  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
+      SSS=Total; 1=Males; 2=Females
+      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
+  var 'valtio_19_20190101' (Background country) [elimination]: 9 values
+      SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; AFR=AFRICA; AME=AMERICA; AAS=ASIA; OSE=OCEANIA; MUU=OTHER OR UNKNOWN
+      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=TOTAL
+      ALL: SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; AFR=AFRICA; AME=AMERICA; AAS=ASIA; OSE=OCEANIA; MUU=OTHER OR UNKNOWN
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+  var 'contentscode' (Information): 1 values
+      vaerak-vaesto=Population 31 Dec
+== r18b_fin_159t
+  title: Population 31 Dec
+  var 'timeperiod_y' (Year) [time]: 36 values
+      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
+      code lengths {4: 36}; prefixes {'': 36}
+  var 'alue_23_20260101' (Area) [elimination]: 568 values
+      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7Lapland; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 North Ostrobothnia; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
+      code lengths {3: 18, 4: 89, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
+      /^(KU091|KU049|SK011|MK01|SSS) /: 5 -- SSS=WHOLE COUNTRY; KU049=Espoo; KU091=Helsinki; MK01=MK01 Uusimaa; SK011=SK011 Helsinki
+  var 'contentscode' (Information): 13 values
+      vaerak-vaesto=Population 31 Dec; vaesto_kansa_ulk=Citizens of foreign countries; vaesto_svaltio_ulk=Persons born abroad; vaesto_kieli_ulk=Foreign-language speakers; vaesto_tausta_ulk=Persons with foreign background; vaesto_kansa_ulk_p=Share of foreign citizens, % ... vaesto_kieli_ulk_p=Share of foreign-language speakers, %; vaesto_tausta_ulk_p=Share of persons with foreign background , %; ulkom_kansa_ulk_p=Share of foreign citizens among foreign citizens in the whole country, %; ulkom_svaltio_ulk_p=Share of persons born abroad among persons born abroad in the whole country, %; ulkom_kieli_ulk_p=Share of foreign-language speakers among foreign-language speakers in the whole country, %; ulkom_tausta_ulk_p=Share of persons with foreign background among persons with foreign backgr. in the whole country, %
+      code lengths {13: 1, 16: 2, 17: 3, 18: 4, 19: 2, 20: 1}; prefixes {'vaesto': 8, 'ulkom': 4, 'vaerak-vaesto': 1}
+      ALL: vaerak-vaesto=Population 31 Dec; vaesto_kansa_ulk=Citizens of foreign countries; vaesto_svaltio_ulk=Persons born abroad; vaesto_kieli_ulk=Foreign-language speakers; vaesto_tausta_ulk=Persons with foreign background; vaesto_kansa_ulk_p=Share of foreign citizens, %; vaesto_svaltio_ulk_p=Share of persons born abroad, %; vaesto_kieli_ulk_p=Share of foreign-language speakers, %; vaesto_tausta_ulk_p=Share of persons with foreign background , %; ulkom_kansa_ulk_p=Share of foreign citizens among foreign citizens in the whole country, %; ulkom_svaltio_ulk_p=Share of persons born abroad among persons born abroad in the whole country, %; ulkom_kieli_ulk_p=Share of foreign-language speakers among foreign-language speakers in the whole country, %; ulkom_tausta_ulk_p=Share of persons with foreign background among persons with foreign backgr. in the whole country, %
