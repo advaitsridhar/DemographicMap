@@ -1,3 +1,10 @@
-switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
-  nationalities against Switzerland: parts sum to 9,127,125 = 9,127,125
-nationalities above the naming threshold with no label: 8239 (78,804)
+
+## https://lustat.statec.lu/rest/dataflow/LU1/all/latest
+   HTTP 200, 989,929 bytes, application/vnd.sdmx.structure+json; charset=utf-8; version=1.0 
+   6 matches of '.{0,20}(?:DF_X021|DF_B1625|DF_B1626|in.detail.on.1st|DF_B1101|DF_B1102|DF_B1103).{0,260}'
+   ~ B1100(1.0)"},{"id":"DF_B1101","version":"1.0","agencyID":"LU1","isFinal":true,"name":"Population by sex and nationality on 1st January (x 1 000)","names":{"en":"Population by sex and nationality on 1st January (x 1 000)"},"description":"Publication date: 05/05/2026 - Periodicity: yearly
+   ~ B1101(1.0)"},{"id":"DF_B1102","version":"1.0","agencyID":"LU1","isFinal":true,"name":"Population by age and sex on 1st January","names":{"en":"Population by age and sex on 1st January"},"description":"Publication date: 05/05/2026 - Periodicity: yearly - Author: STATEC / CTIE - Category:
+   ~ on by nationalities in detail on 1st January","names":{"en":"Population by nationalities in detail on 1st January"},"description":"Publication date: 05/05/2026 - Periodicity: yearly - Author: STATEC / CTIE - Category: Population and employment - Population structure - Keywords: population, citiz
+   ~ _X020(1.1)"},{"id":"DF_X021","version":"1.1","agencyID":"LU1","isFinal":true,"name":"Population by canton and municipality","names":{"en":"Population by canton and municipality"},"description":"Publication Date: 05/05/2026 - Periodicity: yearly - Author: STATEC / CTIE - Category: Popula
+   ~ SD_CENSUS_GROUP7_10@DF_B1625","version":"1.0","agencyID":"LU1","isFinal":false,"name":"Population by canton and municipality, citizenship and sex","names":{"en":"Population by canton and municipality, citizenship and sex"},"description":"Publication date: 18/12/2024 - Periodicity: every
+   ~ SD_CENSUS_GROUP7_10@DF_B1626","version":"1.0","agencyID":"LU1","isFinal":false,"name":"Population by canton and municipality, country of birth and sex","names":{"en":"Population by canton and municipality, country of birth and sex"},"description":"Publication date: 18/12/2024 - Periodici
