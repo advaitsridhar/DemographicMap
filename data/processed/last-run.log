@@ -1,73 +1,494 @@
-== r18_fin_11rt
-  title: Population 31.12.
-  var 'alue_23_20260101' (Region) [elimination]: 22 values
-      SSS=WHOLE COUNTRY; MA1=MA1 MAINLAND FINLAND; MK01=MK01 Uusimaa; MK02=MK02 Southwest Finland; MK04=MK04 Satakunta; MK05=MK05 Kanta-Häme ... MK16=MK16 Central Ostrobothnia; MK17=MK17 North Ostrobothnia; MK18=MK18 Kainuu; MK19=MK19 Lapland; MA2=MA2 ÅLAND; MK21=MK21 Åland
-      code lengths {3: 3, 4: 19}; prefixes {'MK': 19, 'MA': 2, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 2 -- SSS=WHOLE COUNTRY; MK01=MK01 Uusimaa
-  var 'valtio_19_20190101' (Background country) [elimination]: 210 values
-      SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania ... 882=Samoa; 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; X=Unknown
-      code lengths {1: 1, 3: 209}; prefixes {'': 202, 'SSS': 1, 'ULK': 1, 'EUR': 1, 'AFR': 1, 'AME': 1, 'AAS': 1, 'OSE': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=TOTAL
-      ALL: SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania; 020=Andorra; 056=Belgium; 070=Bosnia and Herzegovina; 100=Bulgaria; 890=Former Yugoslavia; 810=Former Soviet Union; 891=Former Serbia and Montenegro; 200=Former Czechoslovakia; 724=Spain; 372=Ireland; 352=Iceland; 380=Italy; 040=Austria; 832=Jersey; 300=Greece; 191=Croatia; 196=Cyprus; 428=Latvia; 438=Liechtenstein; 440=Lithuania; 442=Luxembourg; 470=Malta; 833=Isle of Man; 498=Moldova; 492=Monaco; 499=Montenegro; 578=Norway; 807=North Macedonia; 620=Portugal; 616=Poland; 250=France; 642=Romania; 752=Sweden; 276=Germany; 674=San Marino; 688=Serbia; 703=Slovakia; 705=Slovenia; 756=Switzerland; 208=Denmark; 203=Czechia; 792=Turkey; 804=Ukraine; 348=Hungary; 112=Belarus; 336=Vatican City; 643=Russia; 233=Estonia; 826=United Kingdom; AFR=AFRICA; 012=Algeria; 024=Angola; 204=Benin; 072=Botswana; 854=Burkina Faso; 108=Burundi; 262=Djibouti; 818=Egypt; 232=Eritrea; 710=South Africa; 728=South Sudan; 231=Ethiopia; 266=Gabon; 270=Gambia; 288=Ghana; 324=Guinea; 624=Guinea-Bissau; 120=Cameroon; 132=Cape Verde; 404=Kenya; 140=Central African Republic; 174=Comoros; 178=Congo; 180=Democratic Republic of the Congo; 426=Lesotho; 430=Liberia; 434=Libya; 450=Madagascar; 454=Malawi; 466=Mali; 504=Morocco; 478=Mauritania; 480=Mauritius; 508=Mozambique; 516=Namibia; 562=Niger; 566=Nigeria; 384=Cote d Ivoire; 226=Equatorial Guinea; 646=Rwanda; 894=Zambia; 678=Sao Tome and Príncipe; 686=Senegal; 690=Seychelles; 694=Sierra Leone; 706=Somalia; 729=Sudan; 748=Eswatini; 834=Tanzania; 768=Togo; 148=Chad; 788=Tunisia; 800=Uganda; 716=Zimbabwe; AME=AMERICA; 028=Antigua and Barbuda; 032=Argentina; 044=Bahamas; 052=Barbados; 084=Belize; 068=Bolivia; 076=Brazil; 152=Chile; 188=Costa Rica; 212=Dominica; 214=Dominican Republic; 218=Ecuador; 222=El Salvador; 530=Former Netherlands Antilles; 308=Grenada; 320=Guatemala; 328=Guyana; 332=Haiti; 340=Honduras; 388=Jamaica; 124=Canada; 170=Colombia; 192=Cuba; 484=Mexico; 558=Nicaragua; 591=Panama; 600=Paraguay; 604=Peru; 659=Saint Kitts and Nevis; 662=Saint Lucia; 670=Saint Vincent and the Grenadines; 740=Suriname; 780=Trinidad and Tobago; 858=Uruguay; 862=Venezuela; 840=United States; AAS=ASIA; 004=Afghanistan; 784=United Arab Emirates; 051=Armenia; 031=Azerbaijan; 048=Bahrain; 050=Bangladesh; 064=Bhutan; 096=Brunei Darussalam; 410=South Korea; 608=Philippines; 268=Georgia; 360=Indonesia; 356=India; 368=Iraq; 364=Iran; 376=Israel; 626=Timor-Leste; 392=Japan; 887=Yemen; 400=Jordan; 116=Cambodia; 398=Kazakstan; 156=China; 417=Kyrgyzstan; 414=Kuwait; 418=Laos; 422=Lebanon; 462=Maldives; 458=Malaysia; 496=Mongolia; 104=Myanmar; 524=Nepal; 512=Oman; 586=Pakistan; 275=Palestine; 408=North Korea; 634=Qatar; 682=Saudi Arabia; 702=Singapore; 144=Sri Lanka; 760=Syria; 762=Tajikistan; 764=Thailand; 795=Turkmenistan; 860=Uzbekistan; 704=Vietnam; OSE=OCEANIA; 036=Australia; 242=Fiji; 296=Kiribati; 584=Marshall Islands; 583=Micronesia; 520=Nauru; 585=Palau; 598=Papua New Guinea; 090=Solomon Islands; 882=Samoa; 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; X=Unknown
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'ikaryhma_10_20180101' (Age) [elimination]: 16 values
-      SSS=Total; 0-6=0 - 6; 7-14=7 - 14; 15-19=15 - 19; 20-24=20 - 24; 25-29=25 - 29 ... 50-54=50 - 54; 55-59=55 - 59; 60-64=60 - 64; 65-69=65 - 69; 70-74=70 - 74; 75-=75 -
-      code lengths {3: 3, 4: 1, 5: 12}; prefixes {'': 15, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'syntypera_101_20180101' (Origin) [elimination]: 7 values
-      SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-      ALL: SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
-== r18_fin_11rg
-  title: Population 31.12.
-  var 'alue_23_20260101' (Region) [elimination]: 22 values
-      SSS=WHOLE COUNTRY; MA1=MA1 MAINLAND FINLAND; MK01=MK01 Uusimaa; MK02=MK02 Southwest Finland; MK04=MK04 Satakunta; MK05=MK05 Kanta-Häme ... MK16=MK16 Central Ostrobothnia; MK17=MK17 North Ostrobothnia; MK18=MK18 Kainuu; MK19=MK19 Lapland; MA2=MA2 ÅLAND; MK21=MK21 Åland
-      code lengths {3: 3, 4: 19}; prefixes {'MK': 19, 'MA': 2, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 2 -- SSS=WHOLE COUNTRY; MK01=MK01 Uusimaa
-  var 'valtio_19_20190101' (Nationality) [elimination]: 210 values
-      SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania ... 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; 991=Without citizenship; X=Unknown
-      code lengths {1: 1, 3: 209}; prefixes {'': 202, 'SSS': 1, 'ULK': 1, 'EUR': 1, 'AFR': 1, 'AME': 1, 'AAS': 1, 'OSE': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=TOTAL
-      ALL: SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania; 020=Andorra; 056=Belgium; 070=Bosnia and Herzegovina; 100=Bulgaria; 890=Former Yugoslavia; 810=Former Soviet Union; 891=Former Serbia and Montenegro; 724=Spain; 372=Ireland; 352=Iceland; 380=Italy; 040=Austria; 832=Jersey; 300=Greece; 191=Croatia; 196=Cyprus; 428=Latvia; 438=Liechtenstein; 440=Lithuania; 442=Luxembourg; 470=Malta; 833=Isle of Man; 498=Moldova; 492=Monaco; 499=Montenegro; 578=Norway; 807=North Macedonia; 620=Portugal; 616=Poland; 250=France; 642=Romania; 752=Sweden; 276=Germany; 674=San Marino; 688=Serbia; 703=Slovakia; 705=Slovenia; 756=Switzerland; 208=Denmark; 203=Czechia; 792=Turkey; 804=Ukraine; 348=Hungary; 112=Belarus; 336=Vatican City; 643=Russia; 233=Estonia; 826=United Kingdom; AFR=AFRICA; 012=Algeria; 024=Angola; 204=Benin; 072=Botswana; 854=Burkina Faso; 108=Burundi; 262=Djibouti; 818=Egypt; 232=Eritrea; 710=South Africa; 728=South Sudan; 231=Ethiopia; 266=Gabon; 270=Gambia; 288=Ghana; 324=Guinea; 624=Guinea-Bissau; 120=Cameroon; 132=Cape Verde; 404=Kenya; 140=Central African Republic; 174=Comoros; 178=Congo; 180=Democratic Republic of the Congo; 426=Lesotho; 430=Liberia; 434=Libya; 450=Madagascar; 454=Malawi; 466=Mali; 504=Morocco; 478=Mauritania; 480=Mauritius; 508=Mozambique; 516=Namibia; 562=Niger; 566=Nigeria; 384=Cote d Ivoire; 226=Equatorial Guinea; 646=Rwanda; 894=Zambia; 678=Sao Tome and Príncipe; 686=Senegal; 690=Seychelles; 694=Sierra Leone; 706=Somalia; 729=Sudan; 748=Eswatini; 834=Tanzania; 768=Togo; 148=Chad; 788=Tunisia; 800=Uganda; 716=Zimbabwe; AME=AMERICA; 028=Antigua and Barbuda; 032=Argentina; 044=Bahamas; 052=Barbados; 084=Belize; 068=Bolivia; 076=Brazil; 152=Chile; 188=Costa Rica; 212=Dominica; 214=Dominican Republic; 218=Ecuador; 222=El Salvador; 530=Former Netherlands Antilles; 308=Grenada; 320=Guatemala; 328=Guyana; 332=Haiti; 340=Honduras; 388=Jamaica; 124=Canada; 170=Colombia; 192=Cuba; 484=Mexico; 558=Nicaragua; 591=Panama; 600=Paraguay; 604=Peru; 659=Saint Kitts and Nevis; 662=Saint Lucia; 670=Saint Vincent and the Grenadines; 740=Suriname; 780=Trinidad and Tobago; 858=Uruguay; 862=Venezuela; 840=United States; AAS=ASIA; 004=Afghanistan; 784=United Arab Emirates; 051=Armenia; 031=Azerbaijan; 048=Bahrain; 050=Bangladesh; 064=Bhutan; 096=Brunei Darussalam; 410=South Korea; 608=Philippines; 268=Georgia; 360=Indonesia; 356=India; 368=Iraq; 364=Iran; 376=Israel; 626=Timor-Leste; 392=Japan; 887=Yemen; 400=Jordan; 116=Cambodia; 398=Kazakstan; 156=China; 417=Kyrgyzstan; 414=Kuwait; 418=Laos; 422=Lebanon; 462=Maldives; 458=Malaysia; 496=Mongolia; 104=Myanmar; 524=Nepal; 512=Oman; 586=Pakistan; 275=Palestine; 408=North Korea; 634=Qatar; 682=Saudi Arabia; 702=Singapore; 144=Sri Lanka; 760=Syria; 762=Tajikistan; 764=Thailand; 795=Turkmenistan; 860=Uzbekistan; 704=Vietnam; OSE=OCEANIA; 036=Australia; 242=Fiji; 296=Kiribati; 584=Marshall Islands; 583=Micronesia; 520=Nauru; 585=Palau; 598=Papua New Guinea; 090=Solomon Islands; 882=Samoa; 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; 991=Without citizenship; X=Unknown
-  var 'ikaryhma_10_20180101' (Age) [elimination]: 17 values
-      SSS=Total; 0-4=0 - 4; 5-9=5 - 9; 10-14=10 - 14; 15-19=15 - 19; 20-24=20 - 24 ... 50-54=50 - 54; 55-59=55 - 59; 60-64=60 - 64; 65-69=65 - 69; 70-74=70 - 74; 75-=75 -
-      code lengths {3: 4, 5: 13}; prefixes {'': 16, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
-== r18_fin_11rp
-  title: Population 31.12.
-  var 'alue_23_20260101' (Region) [elimination]: 22 values
-      SSS=WHOLE COUNTRY; MA1=MA1 MAINLAND FINLAND; MK01=MK01 Uusimaa; MK02=MK02 Southwest Finland; MK04=MK04 Satakunta; MK05=MK05 Kanta-Häme ... MK16=MK16 Central Ostrobothnia; MK17=MK17 North Ostrobothnia; MK18=MK18 Kainuu; MK19=MK19 Lapland; MA2=MA2 ÅLAND; MK21=MK21 Åland
-      code lengths {3: 3, 4: 19}; prefixes {'MK': 19, 'MA': 2, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 2 -- SSS=WHOLE COUNTRY; MK01=MK01 Uusimaa
-  var 'valtio_19_20190101' (Country of birth) [elimination]: 210 values
-      SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania ... 882=Samoa; 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; X=Unknown
-      code lengths {1: 1, 3: 209}; prefixes {'': 202, 'SSS': 1, 'ULK': 1, 'EUR': 1, 'AFR': 1, 'AME': 1, 'AAS': 1, 'OSE': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=TOTAL
-      ALL: SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; 528=Netherlands; 008=Albania; 020=Andorra; 056=Belgium; 070=Bosnia and Herzegovina; 100=Bulgaria; 890=Former Yugoslavia; 810=Former Soviet Union; 891=Former Serbia and Montenegro; 200=Former Czechoslovakia; 724=Spain; 372=Ireland; 352=Iceland; 380=Italy; 040=Austria; 832=Jersey; 300=Greece; 191=Croatia; 196=Cyprus; 428=Latvia; 438=Liechtenstein; 440=Lithuania; 442=Luxembourg; 470=Malta; 833=Isle of Man; 498=Moldova; 492=Monaco; 499=Montenegro; 578=Norway; 807=North Macedonia; 620=Portugal; 616=Poland; 250=France; 642=Romania; 752=Sweden; 276=Germany; 674=San Marino; 688=Serbia; 703=Slovakia; 705=Slovenia; 756=Switzerland; 208=Denmark; 203=Czechia; 792=Turkey; 804=Ukraine; 348=Hungary; 112=Belarus; 336=Vatican City; 643=Russia; 233=Estonia; 826=United Kingdom; AFR=AFRICA; 012=Algeria; 024=Angola; 204=Benin; 072=Botswana; 854=Burkina Faso; 108=Burundi; 262=Djibouti; 818=Egypt; 232=Eritrea; 710=South Africa; 728=South Sudan; 231=Ethiopia; 266=Gabon; 270=Gambia; 288=Ghana; 324=Guinea; 624=Guinea-Bissau; 120=Cameroon; 132=Cape Verde; 404=Kenya; 140=Central African Republic; 174=Comoros; 178=Congo; 180=Democratic Republic of the Congo; 426=Lesotho; 430=Liberia; 434=Libya; 450=Madagascar; 454=Malawi; 466=Mali; 504=Morocco; 478=Mauritania; 480=Mauritius; 508=Mozambique; 516=Namibia; 562=Niger; 566=Nigeria; 384=Cote d Ivoire; 226=Equatorial Guinea; 646=Rwanda; 894=Zambia; 678=Sao Tome and Príncipe; 686=Senegal; 690=Seychelles; 694=Sierra Leone; 706=Somalia; 729=Sudan; 748=Eswatini; 834=Tanzania; 768=Togo; 148=Chad; 788=Tunisia; 800=Uganda; 716=Zimbabwe; AME=AMERICA; 028=Antigua and Barbuda; 032=Argentina; 044=Bahamas; 052=Barbados; 084=Belize; 068=Bolivia; 076=Brazil; 152=Chile; 188=Costa Rica; 212=Dominica; 214=Dominican Republic; 218=Ecuador; 222=El Salvador; 530=Former Netherlands Antilles; 308=Grenada; 320=Guatemala; 328=Guyana; 332=Haiti; 340=Honduras; 388=Jamaica; 124=Canada; 170=Colombia; 192=Cuba; 484=Mexico; 558=Nicaragua; 591=Panama; 600=Paraguay; 604=Peru; 659=Saint Kitts and Nevis; 662=Saint Lucia; 670=Saint Vincent and the Grenadines; 740=Suriname; 780=Trinidad and Tobago; 858=Uruguay; 862=Venezuela; 840=United States; AAS=ASIA; 004=Afghanistan; 784=United Arab Emirates; 051=Armenia; 031=Azerbaijan; 048=Bahrain; 050=Bangladesh; 064=Bhutan; 096=Brunei Darussalam; 410=South Korea; 608=Philippines; 268=Georgia; 360=Indonesia; 356=India; 368=Iraq; 364=Iran; 376=Israel; 626=Timor-Leste; 392=Japan; 887=Yemen; 400=Jordan; 116=Cambodia; 398=Kazakstan; 156=China; 417=Kyrgyzstan; 414=Kuwait; 418=Laos; 422=Lebanon; 462=Maldives; 458=Malaysia; 496=Mongolia; 104=Myanmar; 524=Nepal; 512=Oman; 586=Pakistan; 275=Palestine; 408=North Korea; 634=Qatar; 682=Saudi Arabia; 702=Singapore; 144=Sri Lanka; 760=Syria; 762=Tajikistan; 764=Thailand; 795=Turkmenistan; 860=Uzbekistan; 704=Vietnam; OSE=OCEANIA; 036=Australia; 242=Fiji; 296=Kiribati; 584=Marshall Islands; 583=Micronesia; 520=Nauru; 585=Palau; 598=Papua New Guinea; 090=Solomon Islands; 882=Samoa; 776=Tonga; 798=Tuvalu; 554=New Zealand; 548=Vanuatu; X=Unknown
-  var 'ikaryhma_10_20180101' (Age) [elimination]: 17 values
-      SSS=Total; 0-4=0 - 4; 5-9=5 - 9; 10-14=10 - 14; 15-19=15 - 19; 20-24=20 - 24 ... 50-54=50 - 54; 55-59=55 - 59; 60-64=60 - 64; 65-69=65 - 69; 70-74=70 - 74; 75-=75 -
-      code lengths {3: 4, 5: 13}; prefixes {'': 16, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
+== r18_nor_search1
+  864 hits
+    Lonnstakaar | /in/in01/innvregsys/FRA_GAMMEL_00172 | 08077: Wage earners not registered as resident, by country background and sex. Yearly figures (closed series) 2007 - 2014
+    KortSysFylLand | /al/al06/innvregsys/FRA_GAMMEL_00172 | 08070: Wage earners not registered as resident, by county of work and country background. 4th quarter (C) (closed series) 2008K4 - 2016K4
+    Lonnstakaar | /al/al06/innvregsys/FRA_GAMMEL_00172 | 08077: Wage earners not registered as resident, by country background and sex. Yearly figures (closed series) 2007 - 2014
+    KortSysFylLand | /in/in01/innvregsys/FRA_GAMMEL_00172 | 08070: Wage earners not registered as resident, by county of work and country background. 4th quarter (C) (closed series) 2008K4 - 2016K4
+    KortSysLandKjAld | /al/al06/innvregsys/SBMENU7041 | 08069: Sex, country background and age among wage earners not registered as resident. 4th quarter 2003 - 2025
+    Lonnstakere02 | /al/al06/innvregsys/FRA_GAMMEL_00172 | 06111: Wage earners not registered as resident, by country background, sex and age (closed series) 2003K4 - 2008K4
+    Lonnfylklandbag | /al/al06/innvregsys/FRA_GAMMEL_00172 | 08081: Wage earners not registered as resident, by county of work and country background. Yearly figures (C) (closed series) 2007 - 2014
+    LonnLandNaer | /al/al06/innvregsys/FRA_GAMMEL_00172 | 08083: Wage earners not registered as resident, by country background and industry division (SIC2007). Yearly figures (closed series) 2008 - 2014
+    KortSysLandKjAld | /in/in01/innvregsys/SBMENU7041 | 08069: Sex, country background and age among wage earners not registered as resident. 4th quarter 2003 - 2025
+    SysBosLandNar1 | /in/in01/innvregsys/SBMENU7041 | 11610: County and country background among employed persons and wage earners not registered as resident. 4th quarter (C) 2008 - 2025
+    Lonnstakere02 | /in/in01/innvregsys/FRA_GAMMEL_00172 | 06111: Wage earners not registered as resident, by country background, sex and age (closed series) 2003K4 - 2008K4
+    Lonnfylklandbag | /in/in01/innvregsys/FRA_GAMMEL_00172 | 08081: Wage earners not registered as resident, by county of work and country background. Yearly figures (C) (closed series) 2007 - 2014
+    LonnLandNaer | /in/in01/innvregsys/FRA_GAMMEL_00172 | 08083: Wage earners not registered as resident, by country background and industry division (SIC2007). Yearly figures (closed series) 2008 - 2014
+    SysBosLandNar1 | /al/al06/innvregsys/SBMENU7041 | 11610: County and country background among employed persons and wage earners not registered as resident. 4th quarter (C) 2008 - 2025
+    LedigInnvandNye | /al/al03/innvarbl | 07117: Registered unemployed 15-74 years, by country background, world region and sex. Absolute numbers and in per cent of the labour force (closed series) 2001K1 - 2020K4
+    LedigInnvandNY | /al/al03/innvarbl | 06735: Registered unemployed immigrants and persons participating in labour market schemes, 16-74 years, by country background and sex (closed series) 2002K1 - 2008K3
+    LedigInnvandNye | /in/in01/innvarbl | 07117: Registered unemployed 15-74 years, by country background, world region and sex. Absolute numbers and in per cent of the labour force (closed series) 2001K1 - 2020K4
+    LedigInnvandNY | /in/in01/innvarbl | 06735: Registered unemployed immigrants and persons participating in labour market schemes, 16-74 years, by country background and sex (closed series) 2002K1 - 2008K3
+    FolkeInnvLand | /be/be05/innvbef/SBMENU10467 | 10518: Immigrants and Norwegian-born to immigrant parents, in total. Change in population, by country background 2011 - 2025
+    FolkeInnvLand | /be/be07/innvbef/SBMENU10467 | 10518: Immigrants and Norwegian-born to immigrant parents, in total. Change in population, by country background 2011 - 2025
+    FolkeInnvLand | /in/in03/innvbef/SBMENU10467 | 10518: Immigrants and Norwegian-born to immigrant parents, in total. Change in population, by country background 2011 - 2025
+    SysBosLandNar2 | /al/al06/innvregsys/SBMENU7041 | 11613: Industry division (SIC2007) and country background among employed persons and wage earners not registers as residents.  4th quarter 2008 - 2025
+    SysBosLandNar | /al/al06/innvregsys/FRA_GAMMEL_00172 | 08435: Employed persons aged 15-74 years, by resident status, industry (SIC2007) and country background. 4th quarter (closed series) 2008K4 - 2016K4
+    SysBosLandNar2 | /in/in01/innvregsys/SBMENU7041 | 11613: Industry division (SIC2007) and country background among employed persons and wage earners not registers as residents.  4th quarter 2008 - 2025
+    SysBosLandNar | /in/in01/innvregsys/FRA_GAMMEL_00172 | 08435: Employed persons aged 15-74 years, by resident status, industry (SIC2007) and country background. 4th quarter (closed series) 2008K4 - 2016K4
+    ForstgenArbNye | /al/al03/innvarbl | 07116: Registered unemployed immigrants and persons participating in labour market schemes 15-74 years, in per cent of persons in total, by country background, time of residence in Norway and sex (closed series) 2001K1 - 2020K4
+    ForstgenArblNY | /al/al03/innvarbl | 06736: Registered unemployed immigrants and persons participating in labour market schemes 16-74 years, by country background, time of residence in Norway and sex (closed series) 2002K1 - 2008K3
+    ForstgenArbNye | /in/in01/innvarbl | 07116: Registered unemployed immigrants and persons participating in labour market schemes 15-74 years, in per cent of persons in total, by country background, time of residence in Norway and sex (closed series) 2001K1 - 2020K4
+    ForstgenArblNY | /in/in01/innvarbl | 06736: Registered unemployed immigrants and persons participating in labour market schemes 16-74 years, by country background, time of residence in Norway and sex (closed series) 2002K1 - 2008K3
+    FolkemLandbakg | /be/be05/innvbef/FRA_GAMMEL_00043 | 05166: Immigrants and Norwegian-born to immigrant parents. Groups of country background (closed series) 1970 - 2011
+    FolkemLandbakg | /be/be07/innvbef/FRA_GAMMEL_00043 | 05166: Immigrants and Norwegian-born to immigrant parents. Groups of country background (closed series) 1970 - 2011
+    FolkemLandbakg | /in/in03/innvbef/FRA_GAMMEL_00043 | 05166: Immigrants and Norwegian-born to immigrant parents. Groups of country background (closed series) 1970 - 2011
+    Innvregsys21 | /al/al06/innvregsys/SBMENU10674 | 13903: Sex, country background and age among wage earners not registered as resident. Yearly figures 2015 - 2025
+    Innvregsys22 | /al/al06/innvregsys/SBMENU10674 | 13904: Industry division (SIC2007) and country background among wage earners not registered as residents. Yearly figures 2015 - 2025
+    Innvregsys21 | /in/in01/innvregsys/SBMENU10674 | 13903: Sex, country background and age among wage earners not registered as resident. Yearly figures 2015 - 2025
+    Innvregsys22 | /in/in01/innvregsys/SBMENU10674 | 13904: Industry division (SIC2007) and country background among wage earners not registered as residents. Yearly figures 2015 - 2025
+    KFValgLandbakgrAlder | /in/in13/vundkomm/SBMENU8720 | 08645: Municipal council and county council election. Electoral turnout among the sample of Norwegian citizens with immigrant background, by country background and age (closed series) 2003 - 2007
+    KFValgLandbakgrAlder | /va/va02/vundkomm/SBMENU8720 | 08645: Municipal council and county council election. Electoral turnout among the sample of Norwegian citizens with immigrant background, by country background and age (closed series) 2003 - 2007
+    VundkoOppsInnv | /in/in13/vundkomm/SBMENU4422 | 11242: Municipal and county council election. Support for the different parties, by sex, age and immigration category/country background (per cent) 2015 - 2023
+    VundkoOppsInnv | /va/va02/vundkomm/SBMENU4422 | 11242: Municipal and county council election. Support for the different parties, by sex, age and immigration category/country background (per cent) 2015 - 2023
+    StortingsVST6 | /in/in13/valgdeltakelse/SBMENU8140 | 08328: Storting election. Electoral turnout among the sample of Immigrants and Norwegian- born to immigrants with Norwegian citizenship, by country background and age (closed series) 2005 - 2013
+    StortingsVST6 | /va/va02/valgdeltakelse/SBMENU8140 | 08328: Storting election. Electoral turnout among the sample of Immigrants and Norwegian- born to immigrants with Norwegian citizenship, by country background and age (closed series) 2005 - 2013
+    StortingsVST6 | /va/va04/valgdeltakelse/SBMENU8140 | 08328: Storting election. Electoral turnout among the sample of Immigrants and Norwegian- born to immigrants with Norwegian citizenship, by country background and age (closed series) 2005 - 2013
+    Valgdeltakelse06 | /in/in13/valgdeltakelse/SBMENU7960 | 13710: Storting election. Electoral turnout among immigrants and norwegian born immigrants, by country and sex (per cent) 2021 - 2025
+    Valgdeltakelse06 | /va/va02/valgdeltakelse/SBMENU7960 | 13710: Storting election. Electoral turnout among immigrants and norwegian born immigrants, by country and sex (per cent) 2021 - 2025
+    Valgdeltakelse06 | /va/va04/valgdeltakelse/SBMENU7960 | 13710: Storting election. Electoral turnout among immigrants and norwegian born immigrants, by country and sex (per cent) 2021 - 2025
+    LegeKonsAldLand | /in/in05/fastlegetj/SBMENU4031 | 09493: Immigrants' consultations at general practitioners, by age and country of origin 2010 - 2025
+    LegeKonsAldLand | /he/he04/fastlegetj/SBMENU4031 | 09493: Immigrants' consultations at general practitioners, by age and country of origin 2010 - 2025
+    InnvUNoBakgr2 | /be/be05/innvbef/SBMENU10467 | 05184: Immigrants, by sex and country background 1970 - 2026
+    InnvUNoBakgr2 | /be/be07/innvbef/SBMENU10467 | 05184: Immigrants, by sex and country background 1970 - 2026
+    InnvUNoBakgr2 | /in/in03/innvbef/SBMENU10467 | 05184: Immigrants, by sex and country background 1970 - 2026
+    Innvregsys16 | /al/al06/innvregsys/SBMENU7400 | 12816: Number of years resident in Norway and country background among immigrants, by sex 2015 - 2025
+    Innvregsys16 | /in/in01/innvregsys/SBMENU7400 | 12816: Number of years resident in Norway and country background among immigrants, by sex 2015 - 2025
+    InnvBef12 | /be/be05/innvbef/SBMENU10462 | 13882: Immigrants and Norwegian-born to immigrant parents, separately, by country background (world division). Urban districts of Oslo (UD) 2012 - 2026
+    InnvBef12 | /be/be07/innvbef/SBMENU10462 | 13882: Immigrants and Norwegian-born to immigrant parents, separately, by country background (world division). Urban districts of Oslo (UD) 2012 - 2026
+    InnvBef12 | /in/in03/innvbef/SBMENU10462 | 13882: Immigrants and Norwegian-born to immigrant parents, separately, by country background (world division). Urban districts of Oslo (UD) 2012 - 2026
+    Arblonn22 | /al/al05/arblonn/SBMENU10040 | 13630: Employees, jobs and remuneration in cash by immigrant category and country background. Preliminary and final figures 2016M01 - 2026M08
+    SysBosLandNar3 | /al/al06/innvregsys/SBMENU7041 | 14358: Employed labour immigrants and wage earners not registered as residents, by country background and industry. 4th quarter 2016 - 2025
+    Arblonn22 | /in/in01/arblonn/SBMENU10040 | 13630: Employees, jobs and remuneration in cash by immigrant category and country background. Preliminary and final figures 2016M01 - 2026M08
+    Arblonn22 | /al/al05/lonnansatt/SBMENU10120 | 13630: Employees, jobs and remuneration in cash by immigrant category and country background. Preliminary and final figures 2016M01 - 2026M08
+== r18_nor_search2
+  0 hits
+== r18_nor_search3
+  7 hits
+    FolkStatsb | /be/be01/folkemengde/SBMENU6923 | 11366: Population, by citizenship (M) (UD) 2016 - 2026
+    FolkStatsb | /be/be05/folkemengde/SBMENU6923 | 11366: Population, by citizenship (M) (UD) 2016 - 2026
+    FolkStatsb | /in/in03/folkemengde/SBMENU6923 | 11366: Population, by citizenship (M) (UD) 2016 - 2026
+    VundkoArsiInnv2 | /in/in13/vundkomm/SBMENU4425 | 13285: Municipal and county council election. Reasons not to vote, by sex, age and immigration category (per cent) 2019
+    VundkoArsiInnv2 | /va/va02/vundkomm/SBMENU4425 | 13285: Municipal and county council election. Reasons not to vote, by sex, age and immigration category (per cent) 2019
+    VundkoArsiInnv | /in/in13/vundkomm/SBMENU8720 | 11250: Municipal and county council election. Reasons not to vote, by sex, age and immigration category (per cent) (closed series) 2015
+    VundkoArsiInnv | /va/va02/vundkomm/SBMENU8720 | 11250: Municipal and county council election. Reasons not to vote, by sex, age and immigration category (per cent) (closed series) 2015
+== r18_dnk_folk1c
+  FOLK1C: Population at the first day of the quarter | unit Number | updated 2026-08-10T08:00:00
+  var 'OMRÅDE' (region) elim=True time=False: 105 values
+      000=All Denmark; 084=Region Hovedstaden; 101=Copenhagen; 147=Frederiksberg; 155=Dragør; 185=Tårnby ... 846=Mariagerfjord; 773=Morsø; 840=Rebild; 787=Thisted; 820=Vesthimmerlands; 851=Aalborg
+      /^(101|147|851|000|084)/: 5 -- 000=All Denmark; 084=Region Hovedstaden; 101=Copenhagen; 147=Frederiksberg; 851=Aalborg
+  var 'KØN' (sex) elim=True time=False: 3 values
+      TOT=Total; 1=Men; 2=Women
+  var 'ALDER' (age) elim=True time=False: 22 values
+      IALT=Age, total; 0-4=0-4 years; 5-9=5-9 years; 10-14=10-14 years; 15-19=15-19 years; 20-24=20-24 years ... 75-79=75-79 years; 80-84=80-84 years; 85-89=85-89 years; 90-94=90-94 years; 95-99=95-99 years; 100OV=100 years and over
+  var 'HERKOMST' (ancestry) elim=True time=False: 4 values
+      TOT=Total; 5=Persons of Danish origin; 4=Immigrants; 3=Descendant
+  var 'IELAND' (country of origin) elim=True time=False: 242 values
+      0000=Total; 5100=Denmark; 5122=Albania; 5124=Andorra; 5706=Belarus; 5126=Belgium ... 5273=Tuvalu; 5275=Vanuatu; 5532=East Timor; 5599=Pacific Islands; 5103=Stateless; 5999=Not stated
+      /^(101|147|851|000|084)/: 1 -- 0000=Total
+  var 'Tid' (time) elim=False time=True: 75 values
+      2008K1=2008Q1; 2008K2=2008Q2; 2008K3=2008Q3; 2008K4=2008Q4; 2009K1=2009Q1; 2009K2=2009Q2 ... 2025K2=2025Q2; 2025K3=2025Q3; 2025K4=2025Q4; 2026K1=2026Q1; 2026K2=2026Q2; 2026K3=2026Q3
+== r18_dnk_tables
+  5737 tables
+    FOLK3FOD | Population 1. January | 2008-2026 | day of birth,birth month,country of birth,time | active=True
+    BEF5 | Population 1. January | 1990-2026 | sex,age,country of birth,time | active=True
+    FOLK1B | Population at the first day of the quarter | 2008Q1-2026Q3 | region,sex,age,citizenship,time | active=True
+    FOLK1C | Population at the first day of the quarter | 2008Q1-2026Q3 | region,sex,age,ancestry,country of origin,time | active=True
+    FOLK1D | Population at the first day of the quarter | 2008Q1-2026Q3 | region,sex,age,citizenship,time | active=True
+    FOLK1E | Population at the first day of the quarter | 2008Q1-2026Q3 | region,sex,age,ancestry,time | active=True
+    FOLK2 | Population 1. January | 1980-2026 | age,sex,ancestry,citizenship,country of origin,time | active=True
+    DKSTAT | People, who have acquired Danish citizenship | 1979-2025 | sex,age,former citizenship,time | active=True
+    IEPCT | The groups of ancestry share of the total population 1. January | 1980-2026 | ancestry,time | active=True
+    KMSTA001 | Population 1. January | 2008-2026 | parish,ancestry,member of the National Church,time | active=True
+    KRBEF2A | Population 1. January | 2006-2009 | region,sex,marital status,age,citizenship,time | active=False
+    BEF2A | Population 1. January | 1979-2006 | region,sex,marital status,age,citizenship,time | active=False
+    KRBEF3 | Population 1. January | 2006-2009 | region,age,sex,ancestry,citizenship,country of origin,time | active=False
+    BEF3 | Population 1. January | 1980-2006 | region,age,sex,ancestry,citizenship,country of origin,time | active=False
+    BEF707 | Population 1. July | 2007-2008 | region,sex,marital status,age,citizenship,time | active=False
+    BEF7 | Population 1. July | 1993-2006 | region,sex,marital status,age,citizenship,time | active=False
+    KRYDS1 | Population 1. January | 2019-2026 | The origin of the main character,The country of birth of the main character,The citizenship of the main character,The country of birth of the mother,mothers citizenship,The country of birth of the father,the citizenship of the father,time | active=True
+    KRYDS2 | People of Danish origin 1. January | 2019-2026 | The country of birth of the main character,country of birth and citizenship of the parents,age of the main character,time | active=True
+    KRYDS3 | Population 1. January | 2019-2026 | The origin of the main character,The country of birth of the main character,The country of birth of the mother,The country of birth of the father,time | active=True
+    KRYDS4 | Population 1. January | 2019-2026 | The origin of the main character,country of birth and citizenship of the parents,age of the main character,time | active=True
+    INDOPH1 | Immigrants 1. January | 2008-2026 | first permit of residence,region,time | active=True
+    INDOPH2 | Immigrants 1. January | 2008-2026 | first permit of residence,group of countries of origin,time | active=True
+    INDOPH3 | Immigrants 1. January | 2008-2026 | present permit of residence,region,time | active=True
+    INDOPH4 | Immigrants 1. January | 2008-2026 | present permit of residence,group of countries of origin,time | active=True
+    EB1 | Children of descendants 1. January | 2007-2026 | Original ancestry,sex,age,country of origin,time | active=True
+    EB2 | Children of descendants 1. January | 2007-2026 | Original ancestry,sex,age,country of origin,time | active=True
+    EB3 | Children of descendants 1. January | 2007-2026 | Original ancestry,sex,age,country of origin,region,time | active=True
+    EB4 | Population 1. January | 2008-2026 | ancestry,sex,age,country of origin,region,time | active=True
+    VAN5M | Asylum applications | 2014M01-2026M08 | citizenship,type of asylum,time | active=True
+    VAN5 | Asylum applications | 1990Q1-2023Q3 | citizenship,type of asylum,time | active=False
+    VAN5RKAM | Asylum applications (asylum applications lodged in Denmark) | 2014M01-2026M08 | citizenship,sex,age,time | active=True
+    VAN5RKA | Asylum applications (asylum applications lodged in Denmark) | 2014Q1-2023Q3 | citizenship,sex,age,time | active=False
+    VAN66 | Residence permits (year) | 1997-2025 | citizenship,residence permit,time | active=True
+    VAN66KA | Residence permits (year) | 2014-2025 | citizenship,residence permit,sex,age,time | active=True
+    VAN66P | Permanent residence permits (year) | 2003-2025 | citizenship,residence permit,time | active=True
+    VAN77M | Residence permits (monthly) | 2014M01-2026M08 | citizenship,residence permit,time | active=True
+    VAN77 | Residence permits (quarter) | 1997Q1-2023Q3 | citizenship,residence permit,time | active=False
+    VAN77KA | Residence permits (quarter) | 2014Q1-2023Q3 | citizenship,residence permit,sex,age,time | active=False
+    VAN77KAM | Residence permits (monthly) | 2014M01-2026M08 | citizenship,residence permit,sex,age,time | active=True
+    VAN77PM | Permanent residence permits (monthly) | 2015M01-2026M08 | citizenship,residence permit,time | active=True
+    VAN8K | Immigrations (provisional data) (quarter) | 2016Q1-2026Q2 | citizenship,sex,residence permit,time | active=True
+    VAN8A | Immigrations (year) | 1997-2025 | citizenship,sex,residence permit,time | active=True
+    VAN5KA | Asylum applications | 2014Q1-2019Q2 | type of asylum,citizenship,sex,age,time | active=False
+    VAN6 | Residence permits (year) | 1996-2011 | citizenship,residence permit,time | active=False
+    VAN7 | Residence permits (quarter) | 2006Q1-2012Q3 | citizenship,residence permit,time | active=False
+    VAN8 | Immigrations | 1997-2015 | citizenship,sex,residence permit,time | active=False
+    FRDK121 | Population projections 2021 for the country | 2021-2060 | ancestry,sex,age,time | active=False
+    FRDK125 | Population projections 2025 for the country | 2025-2070 | ancestry,sex,age,time | active=False
+    FRDK124 | Population projections 2024 for the country | 2024-2070 | ancestry,sex,age,time | active=False
+    FRDK126 | Population projections 2026 for the country | 2026-2070 | ancestry,sex,age,time | active=True
+    FRDK123 | Population projections 2023 for the country | 2023-2070 | ancestry,sex,age,time | active=False
+    FRDK122 | Population projections 2022 for the country | 2022-2060 | ancestry,sex,age,time | active=False
+    FRDK225 | Key figures 2025: Summary components of changes according to population projecti | 2025-2070 | ancestry,type of movement,time | active=False
+    FRDK224 | Key figures 2024: Summary components of changes according to population projecti | 2024-2070 | ancestry,type of movement,time | active=False
+    FRDK226 | Key figures 2026: Summary components of changes according to population projecti | 2026-2070 | ancestry,type of movement,time | active=True
+    FRDK223 | Key figures 2023: Summary components of changes according to population projecti | 2023-2070 | ancestry,type of movement,time | active=False
+    FRDK222 | Key figures 2022: Summary components of changes according to population projecti | 2022-2060 | ancestry,type of movement,time | active=False
+    FRDK221 | Key figures 2021: Summary components of changes according to population projecti | 2021-2060 | ancestry,type of movement,time | active=False
+    FRDK325 | Assumptions of fertility for the population projection 2025 | 2025-2069 | age,ancestry,time | active=False
+    FRDK324 | Assumptions of fertility for the population projection 2024 | 2024-2069 | age,ancestry,time | active=False
+    FRDK326 | Assumptions of fertility for the population projection 2026 | 1992-2069 | age,ancestry,time | active=True
+    FRDK323 | Assumptions of fertility for the population projection 2023 | 2023-2069 | age,ancestry,time | active=False
+    FRDK322 | Assumptions of fertility for the population projection 2022 | 2022-2059 | age,ancestry,time | active=False
+    FRDK321 | Assumptions of fertility for the population projection 2021 | 2021-2059 | age,ancestry,time | active=False
+    FRDK523 | Assumptions of migrations for the population projection 2023 | 2023-2069 | sex,age,ancestry,movement,time | active=False
+    FRDK525 | Assumptions of migrations for the population projection 2025 | 2025-2069 | sex,age,ancestry,movement,time | active=False
+    FRDK526 | Assumptions of migrations for the population projection 2026 | 2026-2069 | sex,age,ancestry,movement,time | active=True
+    FRDK524 | Assumptions of migrations for the population projection 2024 | 2024-2069 | sex,age,ancestry,movement,time | active=False
+    FRDK522 | Assumptions of migrations for the population projection 2022 | 2022-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK521 | Assumptions of migrations for the population projection 2021 | 2021-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK120 | Population projections 2020 for the country | 2020-2060 | ancestry,sex,age,time | active=False
+    FRDK220 | Key figures 2020: Summary components of changes according to population projecti | 2020-2060 | ancestry,type of movement,time | active=False
+    FRDK320 | Assumptions of fertility for the population projection 2020 | 2020-2059 | age,ancestry,time | active=False
+    FRDK520 | Assumptions of migrations for the population projection 2020 | 2020-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK119 | Population projections 2019 for the country | 2019-2060 | ancestry,sex,age,time | active=False
+    FRDK219 | Key figures 2019: Summary components of changes according to population projecti | 2019-2060 | ancestry,type of movement,time | active=False
+    FRDK319 | Assumptions of fertility for the population projection 2019 | 2019-2059 | age,ancestry,time | active=False
+    FRDK519 | Assumptions of migrations for the population projection 2019 | 2019-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK118 | Population projections 2018 for the country | 2018-2060 | ancestry,sex,age,time | active=False
+    FRDK218 | Key figures 2018: Summary components of changes according to population projecti | 2018-2060 | ancestry,type of movement,time | active=False
+    FRDK318 | Assumptions of fertility for the population projection 2018 | 2018-2059 | age,ancestry,time | active=False
+    FRDK518 | Assumptions of migrations for the population projection 2018 | 2018-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK117 | Population projections 2017 for the country | 2017-2060 | ancestry,sex,age,time | active=False
+    FRDK217 | Key figures 2017: Summary components of changes according to population projecti | 2017-2060 | ancestry,type of movement,time | active=False
+    FRDK317 | Assumptions of fertility for the population projection 2017 | 2017-2059 | age,ancestry,time | active=False
+    FRDK517 | Assumptions of migrations for the population projection 2017 | 2017-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK116 | Population projections 2016 for the country | 2016-2060 | ancestry,sex,age,time | active=False
+    FRDK216 | Key figures 2016: Summary components of changes according to population projecti | 2016-2060 | ancestry,type of movement,time | active=False
+    FRDK316 | Assumptions of fertility for the population projection 2016 | 2016-2059 | age,ancestry,time | active=False
+    FRDK516 | Assumptions of migrations for the population projection 2016 | 2016-2059 | sex,age,ancestry,movement,time | active=False
+    FRDK115 | Population projections 2015 for the country | 2015-2050 | ancestry,sex,age,time | active=False
+    FRDK215 | Key figures 2015: Summary components of changes according to population projecti | 2015-2050 | ancestry,type of movement,time | active=False
+    FRDK315 | Assumptions of fertility for the population projection 2015 | 2015-2049 | age,ancestry,time | active=False
+    FRDK515 | Assumptions of migrations for the population projection 2015 | 2015-2049 | sex,age,ancestry,movement,time | active=False
+    FRDK114 | Population projections for the country | 2014-2050 | ancestry,country of origin,sex,age,time | active=False
+    FRDK214 | Key-figures: Population projection change for the country | 2014-2050 | ancestry,country of origin,type of movement,time | active=False
+    FRDK314 | Assumptions of fertility for the population projection 2014 | 2014-2049 | age,ancestry,time | active=False
+    FRDK514 | Assumptions of migrations for the population projection 2014 | 2014-2049 | sex,age,ancestry,movement,time | active=False
+    FRDK113 | Population projections for the country | 2013-2050 | ancestry,country of origin,sex,age,time | active=False
+    FRDK213 | Key-figures: Population projection change for the country | 2013-2050 | ancestry,country of origin,type of movement,time | active=False
+    ADOP1 | Adoptions | 1985-2006 | adoption type,age of child,sex of child,country of birth,time | active=False
+    ADOP3 | Adoptions | 2006-2009 | age of father,age of mother,sex of child,adoption type,childs age,country of birth,time | active=False
+    FODIE | Live births | 2007-2025 | region,mothers ancestry,mothers country of origin,mothers citizenship,age of mother,sex of child,time | active=True
+    FERT1 | Total fertility rate (ages 15-49) | 1986-2025 | ancestry,time | active=True
+    VAN1KVT | Immigrations (provisional data) | 2007Q2-2026Q2 | region,sex,age,country of last residence,citizenship,time | active=True
+    VAN1UGE | Immigrations | 2021U52-2026U35 | region,sex,age,country of last residence,citizenship,time | active=True
+    VAN1AAR | Immigrations | 2007-2025 | region,sex,age,country of last residence,citizenship,time | active=True
+    INDVAN | Immigrations | 1980-2025 | sex,age,citizenship,country of last residence,time | active=True
+    VAN2KVT | Emigrations (provisional data) | 2007Q2-2026Q2 | region,sex,age,country of destination,citizenship,time | active=True
+    VAN2AAR | Emigrations | 2007-2025 | region,sex,age,country of destination,citizenship,time | active=True
+    UDVAN | Emigrations | 1980-2025 | sex,age,citizenship,country of destination,time | active=True
+    VAN211 | Immigrations | 2006-2006 | region,country of last residence,citizenship,age,sex,time | active=False
+    VAN21A | Immigrations | 1980-2005 | region,country of last residence,citizenship,age,sex,time | active=False
+    VAN222 | Emigrations | 2006-2006 | region,country of destination,citizenship,age,sex,time | active=False
+    VAN22A | Emigrations | 1980-2005 | region,country of destination,citizenship,age,sex,time | active=False
+    SBR08 | Hospital utilisation in the population | 2017-2025 | key figures,ancestry,age,sex,time | active=True
+    INDL004 | Hospital patients | 2019-2023 | type of hospital service,ancestry,age,sex,time | active=False
+    INDP08 | Rates for admissions | 2006-2018 | index type,ancestry,age,sex,time | active=False
+    AMBU004 | Out-patients | 2019-2023 | type of hospital service,ancestry,age,sex,time | active=False
+    AMBP08 | Rates for out-patient treatments | 2006-2018 | index type,ancestry,age,sex,time | active=False
+    SKADP08 | Index for emergencytreatments | 2006-2018 | index type,ancestry,age,sex,time | active=False
+    SYGHER | Population | 2006-2025 | key figures,type of benefits,ancestry,sex,age,time | active=True
+    MEDIHER | Purchases of prescription medicine | 2020-2025 | ancestry,key figures,type of medicine,age,sex,time | active=True
+    MEDICIN2 | Sale of prescription drugs (experimental statistics) | 2016-2021 | ancestry,type of medicine,key figures,sex,age groups,time | active=False
+    KMSTA002 | Population 1. January | 2008-2026 | deanary,ancestry,member of the National Church,time | active=True
+    RAS200 | Activity and employment rates (end November) | 2008-2024 | region,ancestry,age,sex,frequency,time | active=True
+    RAS201 | Population (end November) | 2008-2024 | region,socioeconomic status,ancestry,age,sex,time | active=True
+    RAS204 | Activity and employment rates (end November) | 2008-2024 | country of origin,frequency,age,sex,time | active=True
+    RAS205 | Population (end November) | 2008-2024 | country of origin,socioeconomic status,age,sex,time | active=True
+    RAS206 | Immigrants 16-66 years | 2008-2024 | country of origin,period of residence permit,socioeconomic status,sex,age,time | active=True
+    RAS208 | Population (end November) | 2008-2024 | country of origin,socioeconomic status,age,sex,time | active=True
+    RAS1F1 | Activity and employment rates | 2006-2011 | region,ancestry,age,sex,frequency,time | active=False
+    RAS1F | Economic activity and employment rates | 1997-2006 | region,ancestry,age,sex,frequency,time | active=False
+    RAS1 | Population | 1981-2006 | region,socioeconomic status,ancestry,age,sex,time | active=False
+    RAS207 | Population | 2006-2011 | region,socioeconomic status,ancestry,age,sex,time | active=False
+    RAS11 | Population | 1997-2001 | region,socioeconomic status,ancestry,age,sex,time | active=False
+    RAS2 | Population | 1997-2006 | region,socioeconomic status,ancestry,age,sex,time | active=False
+    RAS1Z | Population | 1981-1996 | region,job title,citizenship,age,sex,time | active=False
+    LIGEAB1 | Population (16-64 years) | 2008-2024 | socioeconomic status,ancestry,family type,sex,age,time | active=True
+    FLOW3 | Immigratione (last year) | 2009-2022 | country of origin,socioeconomic status,sex,age,time | active=False
+    FLOW4 | Immigratione (last year) | 2022-2022 | country of origin,socioeconomic status,time | active=False
+    FLOW5 | Immigratione (last year) | 2022-2022 | country of origin,industry (DB07 10-grouping),time | active=False
+    FLOW6 | Immigratione (last year) | 2022-2022 | country of origin,industry (DB07 127-grouping),time | active=False
+    LIGEAI1 | Gender equality indicator of activity and employment rates (16-64 years) | 2008-2024 | frequency,indicator,family type,ancestry,age,time | active=True
+    KAS200 | Average activity and employment rates | 2017-2024 | region,ancestry,age,sex,frequency,period,time | active=True
+    KAS201 | Average population | 2017-2024 | region,socioeconomic status,ancestry,age,sex,period,time | active=True
+    KAS204 | Average activity and employment rates | 2017-2024 | country of origin,frequency,age,sex,period,time | active=True
+    KAS205 | Average population | 2017-2024 | country of origin,socioeconomic status,age,sex,period,time | active=True
+    KAS208 | Average population | 2017-2024 | country of origin,socioeconomic status,age,sex,period,time | active=True
+    AMR2 | The populations's attachment to the labour market (Full-time people) | 2008-2024 | socioeconomic status,sex,age,ancestry,time | active=True
+    ATYP032 | Employees | 2008-2024 | hours of work,selected employees,sex,ancestry,time | active=True
+    ATYP074 | Salaried positions | 2008-2024 | weekly hours of work,selected employees,sex,ancestry,time | active=True
+    RAS308 | Employed (end November) | 2008-2024 | country of origin,industry (DB07),socioeconomic status,age,sex,time | active=True
+    RAS311 | Employed (end November) | 2008-2024 | industry (DB07),ancestry,sex,time | active=True
+    RAS316 | Employed immigrants (end November) | 2008-2024 | first permit of residence,period of residence permit,age,sex,time | active=True
+    RAS318 | Employed immigrants (end November) | 2008-2024 | first permit of residence,family type,sex,time | active=True
+    RAS314 | Employed immigrants (end November) | 2008-2024 | first permit of residence,socioeconomic status,sector,sex,time | active=True
+    LIGEAB8 | Employed salary earners | 2008-2024 | extent of working time,ancestry,family type,sex,age,time | active=True
+    LIGEAI8 | Gender equality indicator on employed salary earners | 2008-2024 | indicator,extent of working time,ancestry,family type,age,time | active=True
+    KAS308 | Average number of employed | 2008-2024 | country of origin,industry (DB07),socioeconomic status,age,sex,period,time | active=True
+    KAS311 | Average number of employed | 2008-2024 | industry (DB07),ancestry,sex,period,time | active=True
+    RASA1 | Employed (work place) | 2006-2011 | region,industry (DB07),socioeconomic status,ancestry,age,sex,time | active=False
+    RASB1 | Employed (residens) | 2006-2011 | region,industry (DB07),socioeconomic status,ancestry,age,sex,time | active=False
+    RASA1X | Employed | 2006-2008 | region,industry,socioeconomic status,ancestry,age,sex,time | active=False
+    RASB1X | Employed | 2006-2008 | region,industry,socioeconomic status,ancestry,age,sex,time | active=False
+    RASA01 | Employed | 2001-2006 | area of workplace,industry (DB07),socioeconomic status,ancestry,age,sex,time | active=False
+    RASB01 | Employed | 2001-2006 | region,industry (DB07),socioeconomic status,ancestry,age,sex,time | active=False
+    RASA | Employed | 1997-2006 | region,industry,socioeconomic status,ancestry,age,sex,time | active=False
+    RASB | Employed | 1997-2006 | region,industry,socioeconomic status,ancestry,age,sex,time | active=False
+    RAS34X | Labour force aged 16-66 | 1981-1999 | region,citizenship,marital status,age,sex,time | active=False
+    INDV1 | Full-time employees | 2002-2009 | region,unit,ancestry,age,sex,years in Denmark,time | active=False
+    INDV2 | Full-time Employees | 2002-2009 | ancestry,unit,age,sex,years in Denmark,time | active=False
+    LBESK43 | Employees | 2008Q1-2025Q4 | unit,ancestry,sex,age,time | active=True
+    LBESK353 | Employees | 2018Q1-2026Q2 | unit,residence province,sex,ancestry,time | active=True
+    LBESK45 | Employees | 2008Q1-2025Q4 | unit,residence province,sex,ancestry,time | active=True
+    LBESK351 | Employees | 2018Q1-2026Q2 | unit,workplace regionpart,sex,ancestry,time | active=True
+    LBESK64 | Employees | 2008Q1-2025Q4 | unit,workplace regionpart,sex,ancestry,time | active=True
+    LBESK357 | Employees | 2018Q1-2026Q2 | unit,sex,country of origin,time | active=True
+    LBESK46 | Immigrants with employee job | 2008Q1-2025Q4 | unit,industry (DB07 19-grouping),country of origin,sex,time | active=True
+    LBESK311 | Employees | 2018Q1-2026Q2 | unit,industry (DB25 10- and 20-grouping),sex,ancestry,time | active=True
+    LBESK331 | Employees | 2018Q1-2026Q2 | unit,sector,sex,ancestry,time | active=True
+    LBESK355 | Employees | 2018Q1-2026Q2 | unit,ancestry,sex,time | active=True
+    LBESK62 | Employees | 2008Q1-2025Q4 | unit,industry (DB07 19-grouping),sector,sex,ancestry,time | active=True
+    AULK03 | Full-time unemployed persons | 2007Q1-2026Q2 | region,country of origin,sex,time | active=True
+    AULK03X | Full-time net unemployed persons | 2001Q1-2010Q3 | region,country of origin,sex,time | active=False
+    AUL03 | Full-time unemployed persons | 2007-2025 | region,country of origin,sex,time | active=True
+    AUL03X | Full-time unemployed persons | 2001-2009 | region,country of origin,sex,time | active=False
+    AULP03 | Full-time unemployed persons in per cent of the labour force | 2007-2024 | region,country of origin,sex,time | active=True
+    RASIE11 | Labour force to calculate unemployment rates (ultimo november) | 2007-2024 | ancestry,country of origin,age,sex,time | active=True
+    RASIE22 | Labour force to calculate unemployment rates (ultimo november) | 2007-2024 | ancestry,country of origin,region,time | active=True
+    RASIE207 | Labour force, age group 16-66 years | 2006-2006 | ancestry,country of origin,region,time | active=False
+    RUIE1 | Unemployed | 1996Q1-2007Q4 | ancestry,country of origin,age,sex,time | active=False
+    RUIE1D | Unemployed in per cent of the labour force | 1996Q1-2005Q4 | ancestry,country of origin,age,sex,time | active=False
+    AB123 | Unemployed persons | 1995Q1-2001Q3 | region,category of insurance,citizenship,marital status,age,sex,time | active=False
+    ABIE1 | Unemployed | 1996Q1-2007Q4 | ancestry,country of origin,age,sex,time | active=False
+    ABIE1D | Unemployed in per cent of the labour force | 1996Q1-2005Q4 | ancestry,country of origin,age,sex,time | active=False
+    ABIE2 | Unemployed | 1996Q1-2006Q4 | ancestry,country of origin,region,time | active=False
+    ABIE207 | Unemployed | 2007Q1-2007Q4 | ancestry,country of origin,region,time | active=False
+    ABIE2D | Unemployed in per cent of the labour force | 1996Q1-2005Q4 | ancestry,country of origin,region,time | active=False
+    RASIE1 | Labour force, age group 16-66 years | 1996-2006 | ancestry,country of origin,age,sex,time | active=False
+    RASIE2 | Labour force, age group 16-66 years | 1996-2005 | ancestry,country of origin,region,time | active=False
+    INDKP109 | Income for people (14 years+) | 2008-2024 | region/province,unit,sex,age,ancestry,type of income,time | active=True
+    FORMUE14 | Wealth | 2014-2024 | type of wealth,unit,age,ancestry,population,time | active=True
+    UHV5 | Total external trade | 1988M01-2024M03 | imports and exports,SHORT-TERM (industrial origin),country,time | active=False
+    KONJ2M | Value of exports | 1988M01-2024M03 | SHORT-TERM (industrial origin),country,imports and exports,time | active=False
+    KONJ2Y | Value of exports | 1988-2023 | SHORT-TERM (industrial origin),country,imports and exports,time | active=False
+    KONJ3M | Quantity index and index of unit values for exports | 1995M01-2020M01 | SHORT-TERM (industrial origin),index type,time | active=False
+    KONJ42 | Quantity index and index of unit values for exports | 1995-2019 | SHORT-TERM (industrial origin),index type,time | active=False
+    KONJ31 | Quantity index and index of unit values for imports  | 1980Q1-1992Q4 | SHORT-TERM (industrial origin),index type,time | active=False
+    KONJ4 | Quantity index and index of unit values for exports  | 1993-2000 | SHORT-TERM (industrial origin),index type,time | active=False
+    KONJ41 | Quantity index and index of unit values for exports  | 1980-1992 | SHORT-TERM (industrial origin),index type,time | active=False
+    KONJIX | Index on exports and main KONJ groups | 1995M01-2020M02 | index type,SHORT-TERM (industrial origin),time | active=False
+    DNRUUM | Outstanding domestic loans from the MFI sector excl. Danmarks Nationalbank | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),purpose,time | active=True
+    DNRUUPI | Outstanding domestic loans from banks | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),purpose,time | active=True
+    DNRUIPI | Outstanding domestic deposits in banks | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNRUIM | Outstanding domestic deposits in the MFI sector excl. Danmarks Nationalbank | 2003M01-2026M08 | data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNRNUM | New dom. loans excl. revolving loans, etc. from MFI sector excl. Danm. Nat.bank | 2003M01-2026M08 | purpose,data type,domestic sector,currency,maturity (original maturity),interest rate fixation,size of loan,time | active=True
+    DNRNUPI | New domestic loans excl. revolving loans, etc. from banks | 2003M01-2026M08 | purpose,data type,domestic sector,currency,maturity (original maturity),original interest rate fixation,size of loan and repo business,time | active=True
+    DNRNURI | New domestic mortgage loans excl. revolving loans etc. from mortgage banks | 2003M01-2026M08 | data type,domestic sector,currency,maturity (original maturity),original interest rate fixation,size of loan,time | active=True
+    DNRNIM | New domestic deposits in the MFI sector excl. Danmarks Nationalbank | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNRNIPI | New domestic deposits in banks | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNVPDKR2 | Danish mortgage bonds | 1999M12-2026M08 | type of mortgage bond,original maturity,remaining maturity,coupon (nominal interest rate),currency,issuer,investor sector,covered bonds,data type,time | active=True
+    DNVPSTRS | Structured bonds by characteristics | 1999M12-2025M11 | underlying asset type,option properties,principal protection,maturity (original maturity),coupon type,valuation,data type,time | active=False
+    DNSUBOI | Danish issuances of sustainable bonds | 2020M12-2026M07 | type of sustainability,level of assurance,issuer sector,holder sector,value,original maturity,currency,time | active=True
+    DNSUBOH | Danish holders of sustainable bonds | 2020M12-2026M07 | type of sustainability,level of assurance,holder sector,issuer sector,issuer country,value,original maturity,currency,time | active=True
+    AUK04 | Persons receiving public benefits | 2007Q1-2026Q2 | region,type of benefits,country of origin,sex,time | active=True
+    AUH04 | Persons receiving public benefits | 2007-2025 | region,type of benefits,country of origin,sex,time | active=True
+    LIGEIB5 | Persons receiving public benefits | 2007-2025 | sex,age,type of benefits,ancestry,time | active=True
+    LIGEII5 | Gender equality indicator on persons receiving public benefits | 2007-2025 | indicator,age,type of benefits,ancestry,time | active=True
+    KY027 | Cash benefits | 2007-2015 | unit,type of benefits,national origin,time | active=False
+    KY028 | Cash benefits | 2007-2015 | unit,national origin,ancestry,time | active=False
+    KY038 | Cash benefits (full-time) | 2007-2024 | region,type of benefits,national origin,ancestry,time | active=False
+    KY048 | Cash benefits (full-time) | 2016-2025 | region,type of benefits,national origin,ancestry,time | active=True
+    KRISE2 | Stays and residents at crisis shelters | 2017-2025 | ancestry,duration,resident status,time | active=True
+    STRAF42 | Decisions, total | 1995-2025 | national origin,type of offence,type of decision,age,sex,time | active=True
+    STRAFNA3 | Persons guilty in crimes | 2000-2025 | sex,age,country of origin,time | active=True
+    STRAFNA4 | Persons guilty in crimes | 2000-2025 | type of offence,country of origin,time | active=True
+    STRAFNA5 | Persons guilty in crimes | 2000-2025 | country of origin,type of decision,time | active=True
+    STRAFNA6 | Persons guilty in crimes | 2005-2025 | region,sex,age,national origin,time | active=True
+    STRAFNA9 | Persons guilty in crimes | 2000-2025 | sex,age,ancestry,time | active=True
+    STRFNA10 | Persons guilty in crimes | 2000-2025 | type of offence,ancestry,time | active=True
+    STRFNA11 | Persons guilty in crimes | 2000-2025 | type of decision,ancestry,time | active=True
+    STRFNA12 | Guilty persons | 2018-2025 | sex,age,ancestry,citizenship,time | active=True
+    STRFNA13 | Guilty persons | 2018-2025 | citizenship,type of offence,time | active=True
+    STRFNA14 | Guilty persons | 2018-2025 | citizenship,ancestry,type of decision,time | active=True
+    STRFNA23 | Naturalised danes | 2018-2021 | ancestry,decided criminal cases five years before naturalisation,decided criminal cases five years after naturalisation,time | active=False
+    LIVHE1 | Quality of life | 2015-2015 | contentment,unit,ancestry,region,sex,time | active=False
+    LIVHE2 | Quality of life | 2015-2015 | meaningful,unit,ancestry,region,sex,time | active=False
+    LIVHE3 | Quality of life | 2015-2015 | state of mind,unit,ancestry,region,sex,time | active=False
+    LIVHE4 | Quality of life | 2015-2015 | health,unit,ancestry,region,sex,time | active=False
+    LIVHE5 | Quality of life | 2015-2015 | restrictions of life,unit,ancestry,region,sex,time | active=False
+    LIVHE6 | Quality of life | 2015-2015 | everyday life,unit,ancestry,region,sex,time | active=False
+    LIVHE7 | Quality of life | 2015-2015 | social relations,unit,ancestry,region,sex,time | active=False
+    LIVHE8 | Quality of life | 2015-2015 | economic,unit,ancestry,region,sex,time | active=False
+    LIVHE9 | Quality of life | 2015-2015 | confidence,unit,ancestry,region,sex,time | active=False
+    LIVHE10 | Quality of life | 2015-2015 | safety and credit,unit,ancestry,region,sex,time | active=False
+    HFUDD10 | Educational attainment (15-69 years) | 2006-2019 | region,ancestry,highest education completed,age,sex,time | active=False
+    HFUDD11 | Educational attainment (15-69 years) | 2008-2025 | region,ancestry,highest education completed,age,sex,time | active=True
+    KRHFU1 | Educational attainment (15-69 years) | 2006-2015 | region,ancestry,education,age,sex,time | active=False
+    HFUDD20 | Educational attainment (15-29 years) | 2006-2019 | region,ancestry,highest education completed,receiving education,age,sex,time | active=False
+    HFUDD21 | Educational attainment (15-29 years) | 2008-2025 | region,ancestry,highest education completed,receiving education,age,sex,time | active=True
+    KRHFU3 | 15-29 year-olds, education | 2006-2015 | region,ancestry,highest education completed,receiving education,age,sex,time | active=False
+    HFU1 | Educational attainment of the population | 1991-2006 | region,ancestry,education,age,sex,time | active=False
+    HFU3 | Educational attainment of the youth | 1991-2006 | region,ancestry,highest education completed,receiving education,age,sex,time | active=False
+    LIGEUB1 | Educational attainment (15-69 years) | 2005-2025 | region,ancestry,highest education completed,age,sex,time | active=True
+    LIGEUI1 | Gender equality indicator of educational attainment (15-69 years) | 2005-2025 | highest education completed,indicator,age,region,ancestry,time | active=True
+    STATUSU1 | 18-25 year-olds, upper secondary school or vocational education | 2008-2025 | educational graduation statement,education,age,sex,ancestry,time | active=True
+    STATUS22 | 18-25 year-olds | 2005-2022 | status for upper secondary school and vocational education,age,sex,basic school location,ancestry,time | active=False
+    AFGANG45 | 18-25 year-olds | 2001-2014 | status for upper secondary school and vocational education,age,sex,basic school location,ancestry,time | active=False
+    STATUSV1 | 25-45 year-olds, higher education | 2008-2025 | educational graduation statement,education,age,sex,ancestry,time | active=True
+    AFGANG50 | 25-45 year-olds | 2002-2014 | status for higher education,age,sex,basic school location,ancestry,time | active=False
+    STATUS50 | 25-45 year-olds | 2005-2022 | status for higher education,age,sex,basic school location,ancestry,time | active=False
+    UDDAKT12 | Educational activity | 2005-2025 | education,age,ancestry,national origin,sex,status,time | active=True
+    U13 | Enrolled | 2005-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U23 | Entrants | 2005-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U33 | Graduates | 2005-2014 | education,age,ancestry,national origin,sex,time | active=False
+    UDDAKT20 | Educational activity in basic school | 2005-2025 | education,age,ancestry,national origin,sex,type of institution from basic school,region,status,time | active=True
+    U1907 | Enrolled, basic school | 2005-2014 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    U19 | Enrolled, basic school | 2001-2005 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    SPECIAL1 | Enrolled, basic school | 2011-2025 | class,type of school,special needs education,ancestry,sex,time | active=True
+    SPECIAL2 | Enrolled, basic school | 2011-2025 | class,special needs education,ancestry,sex,time | active=True
+    UDDAKT22 | Enrolled, basic school | 2011-2015 | class,type of school,region,special needs education,ancestry,sex,time | active=False
+    U2907 | Entrants, basic school | 2005-2014 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    U29 | Entrants, basic school | 2001-2005 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    U3907 | Graduates, basic school | 2005-2014 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    U39 | Graduates, basic school | 2001-2005 | education,age,ancestry,national origin,sex,type of institution,region,time | active=False
+    LIGEUI4X | Gender equality indicator on people with special needs education in basic school | 2011-2015 | indicator,class,region,ancestry,time | active=False
+    LIGEUI4 | Gender equality indicator on people with special needs education in basic school | 2011-2025 | indicator,class,ancestry,time | active=True
+    U19107 | Enrolled, upper secondary school | 2005-2014 | education,region,ancestry,national origin,sex,time | active=False
+    UDDAKT30 | Educational activity in upper secondary school | 2005-2025 | education,region of residence,ancestry,national origin,sex,status,time | active=True
+    U191 | Enrolled, upper secondary school | 2001-2005 | education,region,ancestry,national origin,sex,time | active=False
+    U29107 | Entrants, upper secondary school | 2005-2014 | education,region,ancestry,national origin,sex,time | active=False
+    U291 | Entrants, upper secondary school | 2001-2005 | education,region,ancestry,national origin,sex,time | active=False
+    U39107 | Graduates, upper secondary school | 2005-2014 | education,region,ancestry,national origin,sex,time | active=False
+    U391 | Graduates, upper secondary school | 2001-2005 | education,region,ancestry,national origin,sex,time | active=False
+    U14 | Enrolled,, vocational education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    UDDAKT34 | Educational activity at upper secondary vocational educations | 2005-2025 | education,age,ancestry,national origin,sex,status,education part,time | active=True
+    EUD34 | Educational activity at upper secondary vocational educations | 2005-2025 | education,age,ancestry,national origin,sex,status,education part,time | active=True
+    UDDAKT35 | Educational activity at upper secondary vocational educations | 2005-2025 | education,age,ancestry,national origin,sex,status,enrolment type,time | active=True
+    U24 | Entrants, vocational education and training | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U34 | Graduates, vocational education and training | 2005-2014 | education,age,ancestry,national origin,sex,time | active=False
+    EUD1 | Enrolled, vocational education and training | 2005-2014 | region,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD1X | Enrolled, vocational education and training | 1997-2006 | county,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD2 | Entrants, vocational education and training | 2005-2014 | region,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD2X | Entrants, vocational education and training | 1997-2006 | county,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD3 | Number of drop-outs in vocational education and training | 2005-2014 | region,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD3X | Number of drop-outs in vocational education and training | 1997-2006 | county,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD4X | Graduates, vocational education and training | 1997-2006 | county,education,age,enrolment type,ancestry,sex,time | active=False
+    EUD4 | Graduates, vocational education and training | 2005-2014 | region,education,age,enrolment type,ancestry,sex,time | active=False
+    UDDAKT40 | Educational activity at short cycle higher educations | 2005-2025 | education,age,ancestry,national origin,sex,status,time | active=True
+    U15 | Enrolled, short cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U25 | Entrants, short-cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U35 | Graduates, short-cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    UDDAKT50 | Educational activity at medium cycle higher educations | 2005-2025 | education,age,ancestry,national origin,sex,status,time | active=True
+    U16 | Enrolled, medium cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U26 | Entrants, medium-cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U36 | Graduates, medium-cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U17 | Enrolled, bachelor education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    UDDAKT60 | Educational activity at bachelor educations | 2005-2025 | education,age,ancestry,national origin,sex,status,time | active=True
+    U27 | Entrants, bachelor students | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U37 | Graduates, bachelor education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U18 | Enrolled, long cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    UDDAKT70 | Educational activity at long cycle higher educations | 2005-2025 | education,age,ancestry,national origin,sex,status,time | active=True
+    U28 | Entrants, long-cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    U38 | Graduates, long cycle higher education | 1991-2014 | education,age,ancestry,national origin,sex,time | active=False
+    INST01 | Basic schools | 2005-2014 | status,institution,education,ancestry,sex,time | active=False
+    INST10 | Basic schools | 2005-2025 | status,institution,education,ancestry,sex,time | active=True
+    INST02 | General upper secondary school | 2005-2014 | status,institution,education,ancestry,sex,time | active=False
+    INST11 | General upper secondary school | 2005-2025 | status,institution,education,ancestry,sex,time | active=True
+    INST03 | Vocational upper secondary school | 2005-2014 | status,institution,education,ancestry,sex,time | active=False
+    INST12 | Vocational upper secondary school | 2005-2025 | status,institution,education,ancestry,sex,time | active=True
+    INST04 | Social and health school | 2005-2014 | status,institution,education,ancestry,sex,age,time | active=False
+    INST05 | Vocational institutions | 2005-2014 | status,institution,education,ancestry,sex,age,time | active=False
+    INST15 | Vocational institutions | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST16 | Business academy | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST06 | Business academy | 2005-2014 | status,institution,education,ancestry,sex,age,time | active=False
+    INST07 | Medium-cycle higher educational institutions | 2005-2014 | status,institution,education,ancestry,sex,age,time | active=False
+    INST17 | Medium-cycle higher educational institutions | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST18 | Maritime education institutions | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST19 | Police and defense education institutions | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST08 | Universities | 2005-2014 | status,institution,education,ancestry,sex,age,time | active=False
+    INST20 | Universities | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    INST25 | Cultural educational institutions | 2005-2025 | status,institution,education,ancestry,sex,age,time | active=True
+    FORLOB10 | From primary and lower secondary school to further education | 2022-2025 | cohort,school leaving certificate,region district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=True
+    AFGANG11 | From primary and lower secondary school to further education | 2006-2014 | cohort,school leaving certificate,region district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    AFGANG1 | From primary and lower secondary school to further education | 2004-2005 | cohort,school leaving certificate,county district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    FORLOB15 | From upper secondary education to further education | 2022-2025 | cohort,school leaving certificate,region district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=True
+    AFGANG21 | From general upper secondary to further education | 2006-2014 | cohort,school leaving certificate,county district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    AFGANG2 | From general upper secondary school leaving certificate to further education | 2004-2005 | cohort,school leaving certificate,county district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    AFGANG31 | From vocational upper secondary school leaving certificate to further education | 2006-2014 | cohort,school leaving certificate,county district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    AFGANG3 | From vocational upper secondary school leaving certificate to further education | 2004-2005 | cohort,school leaving certificate,county district of graduation institutions,educational graduation statement,graduation statement at certain periods,education,sex,ancestry,time | active=False
+    OVGARB10 | From education to further education or employment | 2012-2022 | end program in the education group,ancestry,sex,educational graduation statement,Status after leaving the education group,graduation statement at certain periods,Age upon leaving a gruoup,time | active=True
+    AFG33T | From vocational education to labour | 2001-2012 | education,region,socioeconomic status,graduation statement at certain periods,sex,ancestry,time | active=False
+    FORLOB51 | From vocational education to labour | 2001-2014 | region,socioeconomic status,graduation statement at certain periods,sex,ancestry,time | active=False
+    GENMF10 | Completion of education groups | 2008-2025 | commenced programme in the education group,ancestry,sex,1 and 5 year status,age at the start of a group,time | active=True
+    LIGEUB5 | Completion of education groups | 2008-2025 | commenced programme in the education group,ancestry,sex,1 and 5 year status,age at the start of a group,time | active=True
+    LIGEUI5 | Gender equality indicator on drop out within 5 years | 2008-2020 | commenced programme in the education group,indicator,age,ancestry,time | active=True
+    VEUFULF1 | Persons who have completed a full program in adult education | 1996-2014 | education,age,sex,ancestry,points in time,time | active=False
+    VEUHEL10 | Persons who have completed a full program in adult education | 2005-2025 | education,age,sex,ancestry,points in time,time | active=True
+    VEU107 | Participation in supplementary courses, all courses | 2006-2011 | region,field of education,highest education completed,age,sex,ancestry,unit,points in time,time | active=False
+    VEU1 | Participation in supplementary courses | 1996-2006 | region,field of education,highest education completed,age,sex,ancestry,unit,points in time,time | active=False
+    VEU21 | Participation in supplementary courses, general and preparatory courses | 1996-2011 | field of education,highest education completed,age,sex,ancestry,unit,points in time,time | active=False
+    VEU25 | Participants in supplementary courses | 1996-2011 | field of education,achievement evaluation,age,sex,ancestry,points in time,time | active=False
+    VEUVUC1 | Participation in supplementary courses | 1996-2014 | field of education,age,sex,ancestry,points in time,unit,time | active=False
+    VEUVUC10 | Participation in supplementary courses | 2005-2017 | field of education,age,sex,ancestry,points in time,unit,time | active=False
+    VEU31 | Participation in supplementary courses, vocational courses | 1996-2011 | field of education,highest education completed,age,sex,ancestry,unit,points in time,time | active=False
+    VEU35 | Participants in supplementary courses | 1996-2011 | field of education,achievement evaluation,age,sex,ancestry,points in time,time | active=False
+    VEUAMU1 | Participants in supplementary courses | 1996-2014 | field of education,origin,age,sex,highest education completed,points in time,unit,time | active=False
+    VEUAMU10 | Participants in supplementary courses | 2005-2017 | field of education,origin,age,sex,highest education completed,points in time,unit,time | active=False
+    FOHOJ01 | Participation at folk high schools | 2016-2025 | type of course,sex,age,ancestry,unit,points in time,time | active=True
+    KORN | The utilization of cereals | 1995-2025 | crop,period,origin,type,time | active=True
+    FODER1 | Feed Stuffs in Agriculture | 1990:1991-2023:2024 | type of fodder,origin,unit,time | active=False
+    VANDRER | Nights spent in Youth Hostels by region and citizenship | 1998-2026 | region,nationality of the guest,period,time | active=True
+    TURR1 | Nights spent at hotels and holiday resorts | 2006M01-2007M12 | region,citizenship,type,time | active=False
+    TUR1 | Nights spent at hotels and holiday resorts | 2005M01-2006M12 | region,citizenship,type,time | active=False
+    TUR11 | Nights spent at hotels and holiday resorts | 1988M01-2006M12 | region,citizenship,time | active=False
+    TURL11 | Nights spent at hotels and holiday resorts | 2006M01-2007M12 | region/province,citizenship,time | active=False
+    TURL9 | Nights spent in Youth Hostels | 2006M01-2007M12 | region/province,citizenship,time | active=False
+    TUR9 | Nights spent in Youth Hostels | 1997M01-2006M12 | region,citizenship,time | active=False
+    TUR6 | Contracts, weeks of rental and nights spent in holiday dwellings | 1989:1990-1996:1997 | region,citizenship,type,time | active=False
+    TUR7 | Contracts, weeks of rental and nights spent in holiday dwellings | 1998-2006 | region,citizenship,type,time | active=False
+    TURL3 | Nights spent at camping sites | 2006M03-2007M12 | region/province,citizenship,time | active=False
+    TUR3 | Nights spent at camping sites | 1988M03-2006M12 | region,citizenship,time | active=False
+    TUR8 | Nights spent at marinas with overnight accommodations | 1994-2006 | region,citizenship,season,time | active=False
+    TURL8 | Nights spent at marinas with overnight accommodations | 2006-2007 | region,citizenship,season,time | active=False
+    DNUDL1 | Banks' lending and bonds (assets) by original maturity | 1991M01-2013M10 | balance sheet item,data type,maturity (original maturity),time | active=False
+    DNUDL2 | Banks' lending to domestic households by purpose and maturity | 1991M01-2013M10 | sector,data type,maturity (original maturity),time | active=False
+    DNINDL1 | Banks' deposit and bonds (liabilities) by maturity | 1991M01-2013M10 | balance sheet item,data type,sector,maturity (original maturity),time | active=False
+    DNPINDK | Domestic deposits in banks | 2003M01-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNPUD | Loans in total from banks | 2003M01-2026M08 | data type,sector,country,currency,maturity (original maturity),time | active=True
+    DNPUDDK | Domestics loans from banks | 2013M09-2026M08 | instrument,data type,domestic sector,currency,maturity (original maturity),time | active=True
+    DNPUDDK1 | Domestic loans from banks to households and businesses | 2013M09-2026M08 | instrument,data type,domestic sector,maturity (original maturity),remaining maturity,time remaining to next interest rate fixation,purpose of loans to households,time | active=True
+    DNEJER | Mortgage-credit institutes domestic lending | 1993M01-2013M10 | balance sheet item,data type,type og property,maturity (original maturity),time | active=False
+    DNUDL4 | Mortgage-credit institutes domestic lending | 1993M01-2013M10 | balance sheet item,maturity (original maturity),currency,time | active=False
+    DNBAL5 | MFI-sector: Selected balance sheets items | 2000M07-2013M10 | balance sheet item,sector,maturity (original maturity),time | active=False
+    BOG03 | Book production | 2007-2024 | subject,original language,published on,media,time | active=True
+    BOG06 | Book releases, commercial | 2009-2024 | subject,extent,edition,media,original language,time | active=True
+    BOGS03 | Sold books | 2022Q3-2025Q4 | genre,original language,published language,time | active=True
+    KV2FS1 | Consumption of films and series | 2024-2025 | country of origin,frequency,sex,age,time | active=True
+    TEAT10 | Theatre activity | 2009/2010-2014/2015 | year of origin,authors nationality,genre,activity,time | active=False
+    KV2MK4 | Consumption of music | 2024-2025 | country of origin,sex,age,time | active=True
+    KUARB2 | Employees in cultural sector | 2008-2023 | cultural domains,age,ancestry,time | active=True
+    AFTRYK | Climate footprint of Danish Consumption (Experimental statistics) | 1990-2021 | types of use (Causes of emissions),industries (Origin of emissions),countries/economies (Origin of emissions),time | active=False
