@@ -1,58 +1,37 @@
-hungary: KSH census 2022 database, version V67
-  197 districts, 20 counties (Budapest one of them), 101 single ages up to 100+
-  counties and Budapest against Hungary: parts sum to 9,603,634 = 9,603,634
-  Budapest: its 23 districts make 1,685,342 of 1,685,342; 0 are counted in no district
-  districts against Pest county: parts sum to 1,333,533 = 1,333,533
-  districts against Fejér county: parts sum to 419,656 = 419,656
-  districts against Komárom-Esztergom county: parts sum to 300,631 = 300,631
-  districts against Veszprém county: parts sum to 335,361 = 335,361
-  districts against Győr-Moson-Sopron county: parts sum to 465,945 = 465,945
-  districts against Vas county: parts sum to 249,513 = 249,513
-  districts against Zala county: parts sum to 260,800 = 260,800
-  districts against Baranya county: parts sum to 354,022 = 354,022
-  districts against Somogy county: parts sum to 293,470 = 293,470
-  districts against Tolna county: parts sum to 207,931 = 207,931
-  districts against Borsod-Abaúj-Zemplén county: parts sum to 623,024 = 623,024
-  districts against Heves county: parts sum to 285,892 = 285,892
-  districts against Nógrád county: parts sum to 182,459 = 182,459
-  districts against Hajdú-Bihar county: parts sum to 519,141 = 519,141
-  districts against Jász-Nagykun-Szolnok county: parts sum to 355,809 = 355,809
-  districts against Szabolcs-Szatmár-Bereg county: parts sum to 529,381 = 529,381
-  districts against Bács-Kiskun county: parts sum to 495,318 = 495,318
-  districts against Békés county: parts sum to 315,222 = 315,222
-  districts against Csongrád-Csanád county: parts sum to 391,184 = 391,184
-  national median 44.2 against Eurostat's 44.2 (HU, 1 January 2023)
-  2014 gazetteer: 3,176 settlements in 198 districts
-  2022 census: 3,154 settlements outside Budapest; 16 in another district than in 2014: [('06114', ('083', '085')), ('06576', ('083', '079')), ('07269', ('083', '079')), ('09982', ('106', '107')), ('12210', ('057', '066')), ('13134', ('057', '066')), ('13903', ('083', '085')), ('15750', ('085', '077')), ('15972', ('083', '085')), ('16948', ('083', '079')), ('17525', ('083', '085')), ('22248', ('131', '130')), ('27678', ('085', '082')), ('28990', ('083', '079')), ('29407', ('091', '088')), ('30650', ('083', '085'))]
-  2014 district 057 Gönci: 32 settlements, 17,784 people, 367 blanked cells; differs from 2022 by 2,119 (11.9%): ['Tállya', 'Golop']
-  2014 district 066 Szerencsi: 14 settlements, 34,596 people, 235 blanked cells; differs from 2022 by 2,119 (6.1%): ['Tállya', 'Golop']
-  2014 district 077 Bicskei: 14 settlements, 35,344 people, 236 blanked cells; differs from 2022 by 747 (2.1%): ['Gánt']
-  2014 district 079 Enyingi: 5 settlements, 12,041 people, 81 blanked cells; differs from 2022 by 7,491 (62.2%): ['Mezőszentgyörgy', 'Lepsény', 'Mátyásdomb', 'Kisláng']
-  2014 district 082 Móri: 12 settlements, 32,133 people, 167 blanked cells; differs from 2022 by 1,629 (5.1%): ['Magyaralmás']
-  2014 district 083 Polgárdi: 9 settlements, 19,425 people, 134 blanked cells; differs from 2022 by 19,425 (100.0%): ['Füle', 'Mezőszentgyörgy', 'Lepsény', 'Nádasdladány', 'Jenő', 'Mátyásdomb', 'Polgárdi', 'Kisláng', 'Kőszárhegy']
-  2014 district 085 Székesfehérvári: 22 settlements, 140,106 people, 381 blanked cells; differs from 2022 by 14,310 (10.2%): ['Füle', 'Nádasdladány', 'Gánt', 'Jenő', 'Polgárdi', 'Magyaralmás', 'Kőszárhegy']
-  2014 district 088 Kapuvári: 19 settlements, 23,111 people, 253 blanked cells; differs from 2022 by 959 (4.1%): ['Agyagosszergény']
-  2014 district 091 Soproni: 39 settlements, 102,165 people, 545 blanked cells; differs from 2022 by 959 (0.9%): ['Agyagosszergény']
-  2014 district 106 Gyöngyösi: 25 settlements, 68,383 people, 402 blanked cells; differs from 2022 by 1,452 (2.1%): ['Szűcsi']
-  2014 district 107 Hatvani: 13 settlements, 48,814 people, 203 blanked cells; differs from 2022 by 1,452 (3.0%): ['Szűcsi']
-  2014 district 130 Monori: 11 settlements, 71,410 people, 171 blanked cells; differs from 2022 by 1,894 (2.7%): ['Pánd']
-  2014 district 131 Nagykátai: 16 settlements, 75,240 people, 307 blanked cells; differs from 2022 by 1,894 (2.5%): ['Pánd']
-  the rebuilt 2014 districts against their 2022 districts: parts sum to 680,552 = 680,552
-  spread trial on 174 districts: median missed by 0.07 years on average, 0.3 at most (Hegyháti district)
-  2014 district 057 Gönci: median 40.7 (its 2022 namesake's 39.7)
-  2014 district 066 Szerencsi: median 41.3 (its 2022 namesake's 41.6)
-  2014 district 077 Bicskei: median 43.1 (its 2022 namesake's 43.3)
-  2014 district 079 Enyingi: median 44.1 (its 2022 namesake's 43.0)
-  2014 district 082 Móri: median 44.3 (its 2022 namesake's 44.2)
-  2014 district 083 Polgárdi: median 42.5 (its 2022 namesake's -)
-  2014 district 085 Székesfehérvári: median 44.9 (its 2022 namesake's 44.8)
-  2014 district 088 Kapuvári: median 46.1 (its 2022 namesake's 46.1)
-  2014 district 091 Soproni: median 44.1 (its 2022 namesake's 44.1)
-  2014 district 106 Gyöngyösi: median 45.8 (its 2022 namesake's 45.7)
-  2014 district 107 Hatvani: median 44.9 (its 2022 namesake's 45.0)
-  2014 district 130 Monori: median 41.2 (its 2022 namesake's 41.2)
-  2014 district 131 Nagykátai: median 43.4 (its 2022 namesake's 43.4)
-  hungary: 0 office units unbound
-  hungary: 0 polygons without an office unit
-  wrote data/processed/hungary_census.json (1391 kB)
-  wrote hungary_census.json: 217 records
+norway: SSB 07459 and 12026 for the 2017 kommuner
+  KLASS 2017: 427 codes, 426 with people; none for ['9999 Uoppgitt']
+    07459 2017: kommuner -> Norway: 426 parts sum to 5,258,317 against 5,258,317
+  Norway 1 January 2017: 5,258,317 people, median age 39.3
+  07459 2017: national median 39.3 against Eurostat's 39.3 for 1 January 2017 (+0.00 years, bound 0.3)
+  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
+    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
+    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
+  309 of 426 kommuner unchanged since 2017 (1 January 2026); the rest at their last whole year: 2017: 8, 2019: 108, 2025: 1
+  membership: KOSTRA's latest year counting the communities outside the Church is 2020; kommuner by year: 2017: 8, 2019: 108, 2020: 310
+  12026 Klepp: withheld -- a parish spans it and its neighbour
+  12026 Time: withheld -- a parish spans it and its neighbour
+  no membership figures for 2: ['Klepp', 'Time']
+  pieces given a stated reason: 5
+  12026 Oslo 2025: no members outside the Church among 728,714 people -- not published rather than none; left out
+  12026 Oslo 2024: no members outside the Church among 724,290 people -- not published rather than none; left out
+  12026 Rogaland 2025: no members outside the Church among 508,922 people -- not published rather than none; left out
+  12026 Rogaland 2024: no members outside the Church among 504,496 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2025: no members outside the Church among 273,169 people -- not published rather than none; left out
+  12026 Møre og Romsdal 2024: no members outside the Church among 272,413 people -- not published rather than none; left out
+  12026 Nordland 2025: no members outside the Church among 243,272 people -- not published rather than none; left out
+  12026 Nordland 2024: no members outside the Church among 243,582 people -- not published rather than none; left out
+  12026 Innlandet 2025: no members outside the Church among 379,488 people -- not published rather than none; left out
+  12026 Innlandet 2024: no members outside the Church among 377,556 people -- not published rather than none; left out
+    HTTP 429; waiting 5s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 10s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 20s :: https://data.ssb.no/api/v0/en/table/12026
+    HTTP 429; waiting 40s :: https://data.ssb.no/api/v0/en/table/12026
+  12026 Agder 2025: no members outside the Church among 323,930 people -- not published rather than none; left out
+  12026 Agder 2024: no members outside the Church among 322,188 people -- not published rather than none; left out
+  12026 Vestland 2025: no members outside the Church among 658,342 people -- not published rather than none; left out
+  12026 Vestland 2024: no members outside the Church among 655,210 people -- not published rather than none; left out
+  12026 Trøndelag 2025: no members outside the Church among 489,166 people -- not published rather than none; left out
+  12026 Trøndelag 2024: no members outside the Church among 486,815 people -- not published rather than none; left out
+  labels the group tree cannot place: []
+  wrote data/processed/norway_kommune.json (1333 kB)
+  wrote norway_kommune.json: 435 records
