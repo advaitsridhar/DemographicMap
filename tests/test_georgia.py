@@ -57,6 +57,51 @@ class Tbilisi(unittest.TestCase):
         self.assertIn("table 29", note)
 
 
+class MunicipalAges(unittest.TestCase):
+    """The 2014 census's five-year groups by unit, as OCHA's COD-PS relays them."""
+
+    COLUMNS = (["YEAR", "ADM1_EN", "ADM2_EN", "ADM2TYPE_EN", "F_TL", "M_TL", "T_TL"]
+               + [f"{s}_{a:02d}_{a + 4:02d}" for s in "FMT" for a in range(0, 85, 5)]
+               + ["F_85Plus", "M_85Plus", "T_85Plus"])
+
+    def row(self, name, kind, per_group):
+        out = {"YEAR": "2014", "ADM1_EN": "Kakheti", "ADM2_EN": name, "ADM2TYPE_EN": kind}
+        for a in range(0, 85, 5):
+            out[f"F_{a:02d}_{a + 4:02d}"] = str(per_group // 2)
+            out[f"M_{a:02d}_{a + 4:02d}"] = str(per_group - per_group // 2)
+            out[f"T_{a:02d}_{a + 4:02d}"] = str(per_group)
+        out["F_85Plus"] = out["M_85Plus"] = out["T_85Plus"] = "0"
+        out["F_TL"] = str(17 * (per_group // 2))
+        out["M_TL"] = str(17 * (per_group - per_group // 2))
+        out["T_TL"] = str(17 * per_group)
+        return out
+
+    def test_the_tables_cities_and_spellings_meet_the_boundary_files(self):
+        self.assertEqual(g.cod_key("c. Telavi"), g.cod_key("Telavi"))
+        self.assertEqual(g.cod_key("c. Batumi"), "batumi")
+        self.assertEqual(g.cod_key("Tskaltubo"), g.fold("Tsqaltubo"))
+        self.assertEqual(g.cod_key("Tetritskaro"), g.fold("Tetri Sqaro"))
+        self.assertEqual(g.cod_key("Ozurgeti "), "ozurgeti")
+
+    def test_a_city_and_its_municipality_make_one_median(self):
+        from scripts.fetch_census import cod_ps_age
+        cols = cod_ps_age.age_columns(self.COLUMNS)
+        self.assertEqual(cols["sexes"], "T")
+        rows = [self.row("c. Telavi", "city", 10), self.row("Telavi", "municipality", 30)]
+        total, median = g.census_ages(rows, cols, "Telavi")
+        self.assertEqual(total, 17 * 40)
+        self.assertEqual(median, 42.5)
+        self.assertEqual(g.unit_label(rows[0]), "Telavi (city)")
+
+    def test_ages_that_do_not_make_the_total_stop_the_run(self):
+        from scripts.fetch_census import cod_ps_age
+        cols = cod_ps_age.age_columns(self.COLUMNS)
+        bad = self.row("Telavi", "municipality", 30)
+        bad["T_TL"] = "999"
+        with self.assertRaises(SystemExit):
+            g.census_ages([bad], cols, "Telavi")
+
+
 class Numbers(unittest.TestCase):
     def test_suppressed_cells_read_as_none(self):
         self.assertIsNone(g.number(".."))

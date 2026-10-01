@@ -13,8 +13,15 @@ PX-Web at pc-axis.geostat.ge. This reads:
   single years of age for the country only, so the median is interpolated
   within the five-year group holding the middle person.
 * **Sex ratio, second level** -- the 2014 census's population by self-governed
-  unit and sex (census table 02). The census publishes no age by municipality
-  beyond three broad groups, so the second level has no median.
+  unit and sex (census table 02).
+* **Median age, second level** -- the 2014 census's population by
+  self-governed unit and five-year age group, to 85 and over. Geostat's
+  PC-Axis database and Main Results stop at three broad groups for a
+  municipality; OCHA's Common Operational Dataset for Georgia (cod-ps-geo)
+  relays Geostat's own five-year table (geo_admpop_adm2_geostat_2014). Every
+  unit's count there must be the census table 02's, unit by unit, or the run
+  stops; Tbilisi's ten districts together must give the median its region's
+  row gives.
 * **Ethnicity, religion and native language, first level** -- the 2014
   census's tables 17, 22 and 20 by region. Geostat's database stops at the
   region for all three.
@@ -51,7 +58,7 @@ from typing import Any
 
 from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
                       write_json)
-from . import east_geo
+from . import cod_ps, cod_ps_age, east_geo
 from .cod_ps_age import grouped_median
 from .east_checks import check_median
 from .pxweb import TIMEOUT
@@ -157,6 +164,20 @@ BY_REGION_ONLY = ("Geostat's database publishes the 2014 census's {what} (table 
 MEDIAN_NOTE = ("From the 2014 census's population by five-year age group and sex, "
                "interpolated within the group holding the middle person: Geostat publishes "
                "single years of age for the country only.")
+# OCHA's COD-PS for Georgia: Geostat's 2014 census by self-governed unit and
+# five-year age group, which Geostat's own database does not carry.
+COD_STUB = "cod-ps-geo"
+COD_SOURCE = ("National Statistics Office of Georgia (Geostat), 2014 census, population by "
+              "self-governed unit, sex and five-year age group, as OCHA's Common Operational "
+              "Dataset for Georgia (cod-ps-geo) relays it")
+# The 2014 table's spelling of a unit -> the boundary file's, where they differ.
+COD_SPELLING = {"tskaltubo": "tsqaltubo", "tetritskaro": "tetrisqaro"}
+MUNICIPAL_MEDIAN_NOTE = (
+    "From the 2014 census's population of {parts} by five-year age group (to 85 and over), "
+    "interpolated within the group holding the middle person. Geostat's own database and "
+    "Main Results give a municipality's ages in three broad groups only; this is Geostat's "
+    "five-year table as OCHA's COD-PS for Georgia relays it, whose counts are the census's "
+    "own (table 02), unit by unit.")
 
 
 def fold(text: str) -> str:
@@ -351,6 +372,62 @@ def sexes_2014() -> dict[str, dict[str, float]]:
         if label and n is not None:
             out[key[gi].strip()][label] = n
     return dict(out)
+
+
+def cod_key(name: str) -> str:
+    """The 2014 age table's unit for matching: its cities are 'c. Batumi'."""
+    key = fold(re.sub(r"(?i)^c\.\s*", "", str(name).strip()))
+    return COD_SPELLING.get(key, key)
+
+
+def municipal_ages() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any], str]:
+    """The 2014 census's units by five-year age group, as OCHA's COD-PS relays
+    Geostat's table: ({folded unit name: [rows]}, the columns, the licence)."""
+    package = cod_ps.get("package_show", id=COD_STUB)
+    if not cod_ps.is_usable(package):
+        raise SystemExit(f"georgia: {COD_STUB}'s licence is {cod_ps.licence(package)}")
+    table = next((t for t in cod_ps_age.tables(package)
+                  if t["level"] == "2" and t["label"].lower().endswith(".csv")), None)
+    if table is None:
+        raise SystemExit(f"georgia: {COD_STUB} has no second-level CSV")
+    cols = cod_ps_age.age_columns(table["columns"])
+    if cols is None or cols["sexes"] != "T":
+        raise SystemExit(f"georgia: {table['label']} has no five-year groups for both sexes")
+    out: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in table["rows"]:
+        if not any(str(v if v is not None else "").strip() for v in row.values()):
+            continue
+        if str(row.get("YEAR") or "").strip() != str(CENSUS_YEAR):
+            raise SystemExit(f"georgia: {table['label']} has a row of {row.get('YEAR')!r}")
+        out[cod_key(row.get("ADM2_EN") or "")].append(row)
+    log(f"  {table['label']}: {sum(len(v) for v in out.values())} units of the 2014 census "
+        f"in five-year groups to {cols['opens']['T'][0]} and over")
+    return dict(out), cols, cod_ps.licence(package)
+
+
+def unit_label(row: dict[str, Any]) -> str:
+    """'Batumi (city)' for the table's 'c. Batumi', a city."""
+    name = re.sub(r"(?i)^c\.\s*", "", str(row.get("ADM2_EN") or "").strip())
+    return f"{name} ({str(row.get('ADM2TYPE_EN') or 'unit').strip()})"
+
+
+def census_ages(rows: list[dict[str, Any]], cols: dict[str, Any],
+                name: str) -> tuple[float, float | None]:
+    """The count and median of one or more of the 2014 table's units together."""
+    groups: dict[tuple[int, int | None], float] = defaultdict(float)
+    total = 0.0
+    for row in rows:
+        got, why = cod_ps_age.unit_figures(row, cols)
+        if got is None:
+            raise SystemExit(f"georgia: {name}: the 2014 table's {row.get('ADM2_EN')}: {why}")
+        total += cod_ps_age.number(row.get(cols["totals"]["T"])) or 0.0
+        for band, column in cols["groups"]["T"].items():
+            groups[band] += cod_ps_age.number(row.get(column)) or 0.0
+        low, column = cols["opens"]["T"]
+        groups[(low, None)] += cod_ps_age.number(row.get(column)) or 0.0
+    counts = sorted(((lo, hi, n) for (lo, hi), n in groups.items()),
+                    key=lambda g: (g[1] is None, g[0]))
+    return total, grouped_median(counts)
 
 
 # ---------------------------------------------------------------------------
@@ -661,6 +738,35 @@ def main() -> int:
         elif k not in by_name and label not in regions_2014:
             log(f"  2014 unit {label!r} has no polygon")
 
+    # The same units' five-year age groups (OCHA's relay of Geostat's table),
+    # placed as table 02's rows are; Tbilisi's districts go to the city.
+    cod_rows, cod_cols, cod_licence = municipal_ages()
+    cod_units: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    tbilisi_rows: list[dict[str, Any]] = []
+    for k, rows in cod_rows.items():
+        if all(fold(r.get("ADM1_EN") or "").endswith("tbilisi") for r in rows) and k != "tbilisi":
+            tbilisi_rows += rows
+        elif k in CITIES:
+            if k in homes:
+                cod_units[homes[k]] += rows
+        elif k in by_name:
+            cod_units[by_name[k]] += rows
+        else:
+            log(f"  the 2014 age table's {[r.get('ADM2_EN') for r in rows]} has no polygon")
+    # Tbilisi's districts together are the city, whose median the census's
+    # region table (07) gives: the two tables must agree.
+    city_total, city_median = census_ages(tbilisi_rows, cod_cols, "Tbilisi")
+    region_groups = sorted((*age_band(a), n) for a, n in ages["C. Tbilisi"]["groups"].items())
+    region_median = grouped_median(region_groups)
+    if city_median != region_median or abs(city_total - sum(n for *_, n in region_groups)) > 0.5:
+        raise SystemExit(f"georgia: Tbilisi's {len(tbilisi_rows)} districts in the 2014 age "
+                         f"table make {city_total:,.0f} and a median of {city_median}; the "
+                         f"census's region table {sum(n for *_, n in region_groups):,.0f} and "
+                         f"{region_median}")
+    log(f"  Tbilisi's {len(tbilisi_rows)} districts in the 2014 age table make the city's "
+        f"{city_total:,.0f} and its median of {city_median}, as table 07 does")
+    cod_written = 0
+
     # The 2002 census's ethnicity, by the raion each polygon is and the city
     # drawn inside it.
     eth02 = ethnicity_2002(http_get(CENSUS_2002, binary=True, timeout=600))
@@ -766,10 +872,29 @@ def main() -> int:
             values["sex_ratio_note"] = (f"{int(men):,} men and {int(women):,} women "
                                         "enumerated in 2014 in " + " and ".join(crows) + ".")
             cites.append(cite("sex_ratio", "2014 census, table 02", CENSUS_YEAR))
-        values["median_age"] = gap(NOT_AVAILABLE, (
-            "Geostat publishes no age by municipality beyond the 2014 census's three broad "
-            "groups (0-14, 15-64, 65 and over, in its Main Results), from which no median "
-            "can be read; its single years of age and five-year groups stop at the region."))
+        arows = cod_units.get(sid, [])
+        if arows:
+            counted, median = census_ages(arows, cod_cols, name)
+            enumerated = sum(sex2[r].get("Both sexes", 0) for r in crows)
+            if abs(counted - enumerated) > 0.5:
+                raise SystemExit(f"georgia: {name}: the 2014 age table's "
+                                 f"{[r.get('ADM2_EN') for r in arows]} make {counted:,.0f}, "
+                                 f"the census's table 02 ({crows}) {enumerated:,.0f}")
+            what = " and ".join(unit_label(r) for r in arows)
+            values["median_age"] = measure(median, unit="years", year=CENSUS_YEAR,
+                                           source=COD_SOURCE)
+            values["median_age_note"] = MUNICIPAL_MEDIAN_NOTE.format(parts=what) + (
+                " The city counted apart is drawn inside this polygon." if len(arows) > 1
+                else "")
+            cites.append({"field": "median_age", "name": COD_SOURCE,
+                          "url": cod_ps.DATASET_PAGE.format(stub=COD_STUB),
+                          "license": cod_licence, "year": CENSUS_YEAR})
+            cod_written += 1
+        else:
+            values["median_age"] = gap(NOT_AVAILABLE, (
+                "Geostat publishes no age by municipality beyond the 2014 census's three "
+                "broad groups (0-14, 15-64, 65 and over, in its Main Results), and OCHA's "
+                "relay of its five-year table has no row for this unit."))
         for field, table in (("religion", "22"), ("language", "20")):
             values[field] = gap(NOT_AVAILABLE, BY_REGION_ONLY.format(
                 what={"religion": "religion", "language": "native language"}[field],
@@ -783,6 +908,8 @@ def main() -> int:
                               sources=cites, **values))
     if left:
         log(f"  polygons with no estimate row: {left}")
+    log(f"  second level: {cod_written} polygons with a median from the 2014 age table, "
+        "each one's count the census's own")
     # Every estimate row is somewhere: on a polygon, on a refused polygon's
     # city, or in the occupied territories.
     placed = {r for rows in units.values() for r in rows}
