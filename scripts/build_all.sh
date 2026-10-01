@@ -63,6 +63,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # districts below it, and Nomis publishes both. Without this, 150 rows
   # have no shape and the counties that do have one carry nothing.
   soft python3 -m scripts.fetch_census.uk_nomis --level county
+  soft python3 -m scripts.fetch_census.uk_nomis --level nation
+  soft python3 -m scripts.fetch_census.uk_mye
   # Reads three committed CSVs; no network, no key.
   soft python3 -m scripts.fetch_census.scotland_census
   # Likewise, three committed NISRA workbooks: the last of the UK shapes the
@@ -70,6 +72,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.northern_ireland
   # The Republic, from the CSO's PxStat. Needs the network; no key.
   soft python3 -m scripts.fetch_census.ireland
+  soft python3 -m scripts.fetch_census.ireland_age
   # KNBS 2019 religion by county, from the openAFRICA mirror: knbs.or.ke
   # itself fails TLS verification on a clean client.
   soft python3 -m scripts.fetch_census.kenya
@@ -166,6 +169,60 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.ibge_sidra --level municipality
   soft python3 -m scripts.fetch_census.eurostat --level nuts1
   soft python3 -m scripts.fetch_census.eurostat --level nuts2
+  soft python3 -m scripts.fetch_census.eurostat --level nuts3
+  # Europe from its own statistics offices, below the level Eurostat reaches:
+  # the PxWeb registers, then each office's reader. Several read the drawn
+  # units' vintage rather than today's (Estonia 2017, Norway 2017-2019,
+  # Iceland 2017, Switzerland's 2009 districts) and pin a year so a re-run
+  # reproduces what was checked.
+  soft python3 -m scripts.fetch_census.pxweb --country EST
+  soft python3 -m scripts.fetch_census.pxweb --country LVA
+  soft python3 -m scripts.fetch_census.pxweb --country FIN
+  soft python3 -m scripts.fetch_census.estonia
+  soft python3 -m scripts.fetch_census.latvia
+  soft python3 -m scripts.fetch_census.finland
+  soft python3 -m scripts.fetch_census.lithuania
+  soft python3 -m scripts.fetch_census.sweden
+  soft python3 -m scripts.fetch_census.norway
+  soft python3 -m scripts.fetch_census.denmark
+  soft python3 -m scripts.fetch_census.iceland
+  soft python3 -m scripts.fetch_census.austria --year 2026
+  soft python3 -m scripts.fetch_census.austria_census
+  soft python3 -m scripts.fetch_census.austria_religion
+  soft python3 -m scripts.fetch_census.liechtenstein --year 2025
+  soft python3 -m scripts.fetch_census.switzerland_ages --year 2025
+  soft python3 -m scripts.fetch_census.switzerland_census
+  soft python3 -m scripts.fetch_census.switzerland_religion
+  soft python3 -m scripts.fetch_census.poland_ages
+  soft python3 -m scripts.fetch_census.czechia_ages --year 2024
+  soft python3 -m scripts.fetch_census.slovakia_census
+  soft python3 -m scripts.fetch_census.slovakia --year 2025
+  soft python3 -m scripts.fetch_census.hungary
+  soft python3 -m scripts.fetch_census.slovenia --half 2026H1
+  soft python3 -m scripts.fetch_census.slovenia_census
+  soft python3 -m scripts.fetch_census.netherlands_gemeente
+  soft python3 -m scripts.fetch_census.netherlands_religion
+  soft python3 -m scripts.fetch_census.luxembourg
+  soft python3 -m scripts.fetch_census.romania_census
+  soft python3 -m scripts.fetch_census.bulgaria_census
+  soft python3 -m scripts.fetch_census.serbia_census
+  soft python3 -m scripts.fetch_census.montenegro
+  soft python3 -m scripts.fetch_census.north_macedonia
+  soft python3 -m scripts.fetch_census.north_macedonia_2002
+  soft python3 -m scripts.fetch_census.kosovo
+  soft python3 -m scripts.fetch_census.albania_census
+  soft python3 -m scripts.fetch_census.cyprus_census
+  soft python3 -m scripts.fetch_census.moldova_age
+  soft python3 -m scripts.fetch_census.greece_age
+  soft python3 -m scripts.fetch_census.bucharest_sectors
+  soft python3 -m scripts.fetch_census.bosnia_age
+  soft python3 -m scripts.fetch_census.spain_italy_age
+  soft python3 -m scripts.fetch_census.portugal_census
+  soft python3 -m scripts.fetch_census.malta_census
+  soft python3 -m scripts.fetch_census.basque_language
+  soft python3 -m scripts.fetch_census.microstates
+  soft python3 -m scripts.fetch_census.italy_language_survey
+  soft python3 -m scripts.fetch_census.spain_language_survey
   # The ABS publishes 2021-census religion/ancestry by LGA, SA2, postal area
   # and similar -- there is no state-level dataflow (see the G14 catalogue
   # listing in run 32566750604). LGAs join the admin-2 layer.

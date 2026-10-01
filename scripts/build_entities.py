@@ -87,6 +87,35 @@ ADAPTER_FILES = [
     # outline crosswalk. A survey, so it only fills (its name says so), and a
     # cross-national one, so a national survey stands in front of it too.
     "ess_region_survey.json",
+    # National offices' surveys for the fields their censuses do not ask, each
+    # a *_survey.json, so behind any count and in front of the ESS above.
+    # Austria's religion by Land in 2021 (austria_religion): Statistik Austria's
+    # estimate from questions added to the 2021 Mikrozensus (27,656
+    # respondents), cells under its own 3,000 threshold withheld.
+    "austria_religion_survey.json",
+    # Religion by canton from BFS's structural survey, the mean of the
+    # 2022-2024 annual estimates (switzerland_religion), each note with BFS's
+    # drawn sample for the canton.
+    "switzerland_religion_survey.json",
+    # Main languages by canton from BFS's structural survey 2024 (switzerland):
+    # a survey estimate with its drawn sample per canton, in its own file so
+    # counts outrank it; it replaces switzerland_canton.json and writes no
+    # population.
+    "switzerland_language_survey.json",
+    # Religion by province from CBS's own survey workbook, 2021/2025
+    # (netherlands_religion); CBS's 'ander geloof' kept as the residual it is.
+    "netherlands_religion_survey.json",
+    # ISTAT's 2015 survey 'I cittadini e il tempo libero' (24,000 households,
+    # every region a domain): language used mostly in the family, persons aged
+    # 6+, for the 20 regions and, added up, the 5 ripartizioni. Each note
+    # gives ISTAT's own sampling error (Prospetto C) and the effective sample
+    # it implies (980 to 8,250).
+    "italy_language_survey.json",
+    # Spain's regional offices' language surveys: the IGE's (table 2953, 2023)
+    # language usually spoken for Galicia and its four provinces, 5+ (design:
+    # 1,620 to 3,240 dwellings a province), and Idescat's EULP 2023 habitual
+    # language for Catalonia, 15+ (effective sample 8,682; not by province).
+    "spain_language_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
@@ -295,6 +324,32 @@ ADAPTER_FILES = [
     # Laender, Belgium's regions, Italy's macro-regions, Mazowieckie -- placed
     # only by outline; the finer files follow and hold their own ground.
     "eurostat_nuts1.json", "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # The three second-level shapes NUTS cannot reach (spain_italy_age): Las
+    # Palmas and Santa Cruz de Tenerife from INE's Estadistica Continua (single
+    # years, 1 January 2026; Eurostat splits the Canaries by island), and
+    # Trentino-Alto Adige as ISTAT's Bolzano plus Trento, age by age.
+    "spain_italy_age.json",
+    # Portugal's Censos 2021 from INE's JSON API (portugal_census): 308
+    # municipalities and the 20 districts and autonomous regions (summed from
+    # them) -- single years of age (median, sex ratio, head count) and
+    # religion aged 15+ with the unanswered as Not stated. The 21 km2 second
+    # 'Oliveira de Frades' polygon is written as a stated gap.
+    "portugal_census.json",
+    # Malta's 2021 census for the 68 localities, which both levels draw
+    # (malta_census): single years, religion 15+ (Table 5.3), racial origin
+    # (Table 4.3) and the Maltese citizens' main language (Vol. 3 Table 3.6)
+    # as shares of all residents 5+, read from the Internet Archive's copies
+    # (nso.gov.mt answers 403).
+    "malta_census.json",
+    # The Basque Country's language spoken at home, Eustat's 2021 Population
+    # and Housing Statistics (its own census, cepv3_lhc04): the community and
+    # its three provinces, everyone aged 2+ (basque_language).
+    "basque_language.json",
+    # The microstates' own offices (microstates): San Marino's castelli by sex
+    # at 31 December 2025, Monaco's 2025 register-based census (districts of
+    # Sovereign Order 4,481 of 2013) and Andorra's parishes in 2025, summed
+    # from the Departament d'Estadistica's settlements.
+    "microstates.json",
     # The 2020 census's median age for every municipality, bound by JIS code.
     "japan_municipal.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -401,11 +456,47 @@ ADAPTER_FILES = [
     "haiti_cod_ps_age.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
-    "switzerland_canton.json",
     # After Eurostat, which covers both countries at NUTS 3 with population and
     # nothing else: these are the national registers, and ethnicity is a
     # question Eurostat does not ask.
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
+    # Estonia's pre-2017 municipalities and counties (estonia): RV0241's single
+    # years on 1 January 2017 for all 214 drawn units; mother tongue, religion
+    # and (91 units) ethnicity from the 2011 census. After estonia_county.json.
+    "estonia_municipality.json",
+    # Latvia's 43 municipalities and 589 parishes and towns (latvia): CSB's
+    # 2026 register population, median age, sex ratio and ethnicity; home
+    # language from the 2011 census for 41 municipalities. After
+    # latvia_municipality.json, which it supersedes field for field.
+    "latvia_territorial.json",
+    # Finland's 70 sub-regions of 2020 (finland): 11rf's single years summed by
+    # the classification's key -- 31 December 2025 for the 57 unchanged since,
+    # 2020 for the rest -- and the register's mother tongue (11rm, 2025).
+    "finland_subregion.json",
+    # Lithuania's 60 municipalities and 10 counties (lithuania): the OSP's
+    # single years for 1 January 2026; mother tongue from the 2021 census;
+    # ethnicity 2021 for Vilnius county and 15 municipalities, 2011 elsewhere;
+    # religion from 2011.
+    "lithuania_municipality.json",
+    # Sweden's 290 kommuner and 21 lan (sweden): SCB's register population on
+    # 31 December 2025 by single year of age and sex (BefolkningCKM), with
+    # median age and sex ratio.
+    "sweden_kommun.json",
+    # Norway's 2017 kommuner and 2020-2023 fylker (norway): SSB 07459 today
+    # where no merger has touched a kommune, else its last whole year (2017,
+    # 2019, 2025); Church and other-faith membership (12026; 08531 by religion
+    # for fylker); Klepp and Time withheld, as SSB's own note advises.
+    "norway_kommune.json",
+    # Denmark's 98 kommuner and 5 regions (denmark): StatBank FOLK1A's single
+    # years (third quarter 2026) and KM6's National Church membership for every
+    # resident on 1 January 2026 -- membership, not belief, non-members one
+    # group.
+    "denmark_kommune.json",
+    # Iceland's 74 municipalities of 2017 and 8 regions (iceland): Hagstofa
+    # MAN02005's 2026 count for the 52 no merger has touched, MAN09000's last
+    # own 1 December count for each merged one; the regions summed from
+    # MAN02005's municipalities.
+    "iceland_municipality.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
     # Timor-Leste's 13 municipalities and 65 administrative posts: mother
@@ -463,9 +554,48 @@ ADAPTER_FILES = [
     # its place here is alphabetical company rather than precedence.
     "brunei.json",
     "poland_voivodeship.json", "poland_powiat.json",
+    # GUS's own population, median age and sex ratio for the 380 powiats and
+    # all 16 voivodeships (poland_ages, BDL, 31 December 2025): one definition
+    # at both levels, 2.3% above Eurostat's usual-resident figures, which the
+    # note measures and says.
+    "poland_powiat_age.json",
     "czechia_kraj.json", "czechia_okres.json",
+    # CZSO single years of age by okres, 31 December 2024 (czechia_ages):
+    # median age, sex ratio and population; Prague is the kraj and the okres
+    # at once.
+    "czechia_okres_age.json",
     "croatia_county.json", "croatia_unit.json",
     "bosnia_entity.json", "bosnia_canton.json",
+    # Bosnia's 2013 census by age and sex: median age and sex ratio for the
+    # entities and Brcko from single years (FR_T1), for the ten cantons from
+    # five-year groups (FR_T2). After bosnia_canton.json, which writes neither.
+    "bosnia_age.json",
+    # South-east Europe from its statistics offices' own tables, after the
+    # europe_wiki_* files (whose Wikipedia transcriptions these replace at
+    # the same year) and after Wikidata's head counts. Romania's 2021 census by
+    # county and UAT (romania_census), after romania_uat.json, the Wikipedia
+    # charts of the same INS tables; Bulgaria's 2021 by district and
+    # municipality (bulgaria_census); Serbia's 2022 by district and
+    # municipality from RZS's open data (serbia_census); Montenegro's 2023
+    # (montenegro_census), North Macedonia's 2021 (north_macedonia_census) and
+    # Kosovo's 2024 (kosovo_census) by municipality and region; Albania's 2023
+    # compositions by prefecture, and its 36 former districts' head count and
+    # sex ratio summed from the 2011 census's communes, or the 2023 count
+    # where a district is one municipality (albania_census); Cyprus's 2021 by
+    # district and community, with every polygon it does not reach saying why
+    # (cyprus_census); Moldova's 2024 age and sex by district
+    # (moldova_age); Greece's decentralized administrations' ages from
+    # Eurostat's single years and Mount Athos's 2021 count (greece_age); and
+    # Bucharest's six sectors' median age from DRSMB's population by legal
+    # domicile of July 2022, which the census's ages do not reach
+    # (bucharest_sectors); and the 2002 census's religion and mother tongue
+    # for the five municipalities merged into Kichevo in 2013, which the map
+    # draws as they were and the 2021 census does not reach
+    # (north_macedonia_2002).
+    "romania_census.json", "bulgaria_census.json", "serbia_census.json",
+    "montenegro_census.json", "north_macedonia_census.json", "kosovo_census.json",
+    "albania_census.json", "cyprus_census.json", "moldova_age.json", "greece_age.json",
+    "bucharest_sectors.json", "north_macedonia_2002.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
@@ -512,16 +642,94 @@ ADAPTER_FILES = [
     "caribbean_gaps.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
+    # Austria's 94 political districts (austria): population, median age and
+    # sex ratio on 1 January 2026, summed from Statistik Austria's OGD
+    # population by municipality, sex and single year of age; Vienna's 23
+    # Gemeindebezirke as the one district the map draws.
+    "austria_bezirk.json",
+    # Religion and Umgangssprache for the same 94 districts from the 2001
+    # census, the last to ask (austria_census): Statistik Austria's
+    # per-municipality census sheets, a municipality merged since 2001 read as
+    # its 2001 parts; municipalities checked to 8,032,926.
+    "austria_census.json",
+    # Liechtenstein's eleven Gemeinden at both levels (liechtenstein):
+    # population, median age and sex ratio on 31 December 2025 from eTab
+    # 211.004, religion and main language from the 2020 census.
+    "liechtenstein_gemeinde.json",
+    # Switzerland's districts as the map draws them (2009) (switzerland_ages):
+    # population, median age and sex ratio on 31 December 2025 from BFS
+    # STATPOP through AGVCH; the 27 a merged commune straddles take BFS's
+    # population for the last year their communes nested.
+    "switzerland_bezirk.json",
+    # Religion and main language for the same 2009 districts from the 2000
+    # census, the last to ask everyone (switzerland_census): BFS's commune
+    # tables carried to 2009 through AGVCH, communes and units each checked to
+    # 7,288,010.
+    "switzerland_census.json",
+    # Slovakia's 2021 census nationality, mother tongue and religion by kraj
+    # and okres (slovakia_census), the office's own tables; after
+    # europe_wiki_slovakia, whose Wikipedia-read compositions it replaces on
+    # all 87 units.
+    "slovakia_census.json",
+    # The office's own median age by okres, with population and sex ratio from
+    # DATAcube, 31 December 2025 (slovakia).
+    "slovakia_okres.json",
+    # Hungary's 2022 census by county and district (hungary): ages, sex,
+    # religion, nationality and mother tongue from KSH's census database; the
+    # 13 districts of 2013-14 whose settlements moved since (Polgardi among
+    # them) summed from settlements via KSH's 2014 gazetteer.
+    "hungary_census.json",
+    # Slovenia's 212 municipalities, 1 January 2026 (slovenia): SiStat single
+    # years of age and population by sex; an outlying sex ratio or median says
+    # why, from SiStat's settlements.
+    "slovenia_obcina.json",
+    # Ethnicity, religion and mother tongue from the 2002 census, the last to
+    # ask (slovenia_census): the 168 municipalities unchanged since 2002 and
+    # both cohesion regions; the 45 others are stated gaps.
+    "slovenia_census.json",
+    # The 344 gemeenten (Weesp inside Amsterdam) with CBS's key figures of 1
+    # January 2022, read from the wijk- en buurtkaart WFS on PDOK: population
+    # and sex ratio (netherlands_gemeente).
+    "netherlands_gemeente.json",
+    # Luxembourg's communes and cantons from the 2021 census (luxembourg):
+    # population, median age (five-year groups) and sex ratio; the six
+    # communes merged in 2018 take STATEC's 2017 population and the 2011
+    # census's age and sex.
+    "luxembourg_commune.json",
     "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "uk_county.json",
+    # England and Wales themselves, the map's first level: the same ONS 2021
+    # tables (TS021 ethnic group, TS030 religion, TS024 main language) asked
+    # of Nomis for the two nations rather than rolled up -- the Isles of
+    # Scilly are drawn outside England, so England's children are one short
+    # of it (uk_nomis --level nation).
+    "uk_nation.json",
     # Scotland's councils and Northern Ireland's districts are shapes the ONS
     # census cannot reach: it covers England and Wales. Neither overlaps the
     # two files above or each other, so the order between them never arises.
     "scotland_council.json", "northern_ireland_district.json",
+    # Population, median age and sex ratio for all 216 UK second-level shapes
+    # and the four nations (uk_mye): the ONS, NRS and NISRA mid-year estimates
+    # by single year of age (Nomis NM_2002_1), mid-2025 (Northern Ireland
+    # mid-2024). Newer than the census head counts above, which it replaces;
+    # Cumbria and Northamptonshire are their successor unitaries added age by
+    # age, and a figure far from its mid-2021 one carries the office's series
+    # in its note (City of London).
+    "uk_mye.json",
     # The other island. No overlap with anything above: the CSO's areas are in
     # the Republic and every UK file stops at the border.
     "ireland_lea.json",
+    # Ireland's four provinces (ireland): religion, ethnicity and home
+    # language, Census 2022, each the sum of its own local electoral areas by
+    # the county the CSO names -- not of the areas drawn inside its outline,
+    # which put Newport (Tipperary), a Munster area, inside Connacht.
+    "ireland_province.json",
+    # Ireland's median age and sex ratio, Census 2022 (ireland_age): the
+    # provinces from single years by county (FY006B, State median 38.8, the
+    # CSO's), the 166 local electoral areas interpolated within five-year
+    # groups (SAP2022T1T1ALEA22).
+    "ireland_age.json",
     "us_state.json", "us_county.json",
     # Guam, the Virgin Islands, American Samoa and the Northern Marianas, which
     # the ACS does not survey: their 2020 census, territory and district.
@@ -1870,7 +2078,11 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "cod_ps_age.json",
                        # Haiti's median ages: a 2024 projection from the 2003
                        # census, which a count would always replace.
-                       "haiti_cod_ps_age.json"})
+                       "haiti_cod_ps_age.json",
+                       # Bucharest's sectors' median age by legal domicile,
+                       # which is not the census's usual residence: it only
+                       # fills a sector no census median reaches.
+                       "bucharest_sectors.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A survey's share is an estimate from a sample, and a census's or a
@@ -1898,6 +2110,18 @@ def composition_rank(filename: str | None) -> int:
     if filename in CROSS_NATIONAL_SURVEYS:
         return 2
     return 1 if is_survey(filename) else 0
+
+
+# A census composition as Wikipedia transcribes it (europe_wiki.py) is the
+# office's figure at one remove, and dated by whatever the article cites --
+# often the year the results were published. Serbia's district articles cite
+# the 2022 census's 2023 release, so 22 districts' Wikipedia ethnicity read as
+# 2023 and held RZS's own 2022 tables back as the older. The office's table
+# stands in front of the transcription whatever the two years say, as the
+# Europe brief has it; between two transcriptions, or two tables, the newer
+# still stands.
+def is_wiki_composition(filename: str | None) -> bool:
+    return bool(filename) and filename.startswith("europe_wiki_")
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
@@ -1949,10 +2173,13 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     encyclopaedic = row.get("_source") in FILL_ONLY
     rank = composition_rank(row.get("_source"))
     origin = entity.get("_from") or {}
+    transcribed = is_wiki_composition(row.get("_source"))
     dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
              and (origin.get(key) in FILL_ONLY) == encyclopaedic
-             and composition_rank(origin.get(key)) == rank}
+             and composition_rank(origin.get(key)) == rank
+             and not (key in SURVEY_FIELDS and origin.get(key)
+                      and is_wiki_composition(origin.get(key)) != transcribed)}
     newer = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs > ours}
     older = {key for key, (theirs, ours) in dated.items()
@@ -1964,6 +2191,11 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     held |= {key for key in SURVEY_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
              and composition_rank(origin.get(key)) < rank}
+    # And a Wikipedia transcription stands behind an office's own table.
+    held |= {key for key in SURVEY_FIELDS
+             if transcribed and not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and origin.get(key) and composition_rank(origin.get(key)) == 0
+             and not is_wiki_composition(origin.get(key))}
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).
     for key in held:
@@ -2010,6 +2242,28 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # link, the settlement check below would read the town's classes and
         # refuse the municipality's figure as a town's.
         if key == "wikidata" and "population" in held and entity.get("wikidata"):
+            continue
+        # A statistics office's statement that its census does not reach a
+        # unit displaces an encyclopaedia's figure for it that is older than
+        # the year the statement names (``displaces_before``). Cyprus's
+        # censuses since 1974 are taken only where its Government governs,
+        # and Wikidata's figures for the communities beyond are the 1973
+        # census's: 1973 read as the population of Kyrenia. A count is never
+        # displaced, nor an encyclopaedia's figure of that year or later, and
+        # the figure is not kept aside to fall back to: the statement is
+        # that there is none for now.
+        if (key in FILL_ONLY_FIELDS and is_gap(value) and isinstance(value, dict)
+                and isinstance(value.get("displaces_before"), int) and not encyclopaedic
+                and not is_gap(entity.get(key)) and origin.get(key) in FILL_ONLY
+                and (year_of(entity, key) or value["displaces_before"]) < value["displaces_before"]):
+            entity[key] = value
+            for suffix in SATELLITES:
+                if f"{key}{suffix}" not in row:
+                    entity.pop(f"{key}{suffix}", None)
+            entity.get("_from", {}).pop(key, None)
+            entity.get("_how", {}).pop(key, None)
+            entity["sources"] = [src for src in entity.get("sources", [])
+                                 if set(str(src.get("field") or "").split("/")) != {key}]
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
@@ -3277,6 +3531,34 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # Factbook prints it (Protestant 23.6%, Hindu 22.3%, Roman Catholic 21.6%).
     ("SUR", "religion"): "its districts' religion comes from two censuses, 2004 "
                          "and 2012, and no sum across them is either",
+    # malta_census gives each locality the main language of its Maltese
+    # citizens (Volume 3, Table 3.6) as shares of all its residents aged 5 and
+    # over; the NSO tabulates the other fifth of residents by district only.
+    # Summed, the localities would describe Malta's citizens as if they were
+    # its population.
+    ("MLT", "language"): "its localities' language counts Maltese citizens only; "
+                         "the other residents are tabulated by district, not by locality",
+    # lithuania_municipality gives the ten counties the 2011 census's religion
+    # (the 2021 census published religion for the country only), and nine of
+    # them the 2011 census's ethnicity beside Vilnius county's 2021 figure. The
+    # country carries the 2021 census; a sum would put 2011 over it.
+    ("LTU", "religion"): "its counties' religion is the 2011 census's, and the "
+                         "country's is the 2021 census's",
+    ("LTU", "ethnicity"): "its counties' ethnicity is the 2011 census's for nine of "
+                          "them and the 2021 census's for Vilnius county",
+    # estonia_municipality draws the fifteen counties of before the 2017
+    # reform: eleven carry the 2011 census's language and religion and the
+    # register's ethnicity of 2017, and the four the reform left alone the
+    # 2021 census and the register of 2026 (estonia_county). A sum is of no
+    # one year, and older than the country's own 2021 figures.
+    ("EST", "religion"): "its pre-2017 counties mix the 2011 and 2021 censuses",
+    ("EST", "language"): "its pre-2017 counties mix the 2011 and 2021 censuses",
+    ("EST", "ethnicity"): "its pre-2017 counties mix the register of 2017 and of 2026",
+    # norway_kommune's fylker carry registered membership for 2020, the last
+    # year SSB counts the communities outside the Church by fylke (08531 is a
+    # closed series); the country's figure is 2021's.
+    ("NOR", "religion"): "its fylker's membership is 2020's, older than the country's "
+                         "2021 figure",
 }
 
 
@@ -4876,6 +5158,15 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
     ("IDN", "Q239494"): ("Danau Sentarum National Park in West Kalimantan, a park "
                          "and not any of the four lakes on Sumatra and Sulawesi "
                          "the shape called Danau draws"),
+    # Portugal's boundary file draws two polygons named Oliveira de Frades: a
+    # 144 km2 one under Aveiro, the municipality (145 km2), which
+    # portugal_census binds by id, and a 21 km2 one under Viseu, wedged
+    # between Tondela, Vouzela and Agueda, which is not the municipality and
+    # whose identity could not be established. By name and parent the
+    # Wikidata item took the second, and the municipality was shown twice.
+    ("PRT", "Q861584"): ("the municipality of Oliveira de Frades, whose census count "
+                         "is on the 144 km2 polygon of that name; this 21 km2 polygon "
+                         "is not the municipality"),
 }
 
 # Countries whose boundary file draws their first level one level down: under

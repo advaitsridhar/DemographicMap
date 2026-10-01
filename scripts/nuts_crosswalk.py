@@ -70,6 +70,26 @@ DECIDED: dict[str, tuple[str | None, str]] = {
     # the region's figures would contradict the population beside them.
     "HU1": (None, "Budapest and Pest county together, on a Pest polygon that counts "
                   "Pest county's people alone"),
+    # Portugal's first level is its eighteen districts and two autonomous
+    # regions, and NUTS-3 is a different grouping of the same municipalities.
+    # Six regions are a district exactly (Alto Minho, Algarve, Alto Alentejo,
+    # Alentejo Central, the Azores, Madeira); these three pass 0.8 and are
+    # not. Measured by laying the municipalities (bound to INE codes by
+    # portugal_census) on GISCO's 2024 outlines, and by the 2021 census
+    # counts of each side:
+    #   PT11E Terras de Tras-os-Montes: 9 of Braganca's 12 municipalities
+    #     (not Carrazeda de Ansiaes, Freixo de Espada a Cinta, Torre de
+    #     Moncorvo), 107,272 people in 2021 against the district's 122,804;
+    #   PT192 Regiao de Coimbra: Coimbra's 17 and Mealhada (Aveiro) and
+    #     Mortagua (Viseu), 436,862 against 408,551;
+    #   PT1C2 Baixo Alentejo: 13 of Beja's 14 (not Odemira, 29,538 people,
+    #     which is Alentejo Litoral), 114,863 against 144,401.
+    # Written on the districts, each region's figures stood beside the census
+    # district's religion as though they described the same people.
+    "PT11E": (None, "Terras de Tras-os-Montes, 9 of the Braganca district's 12 municipalities"),
+    "PT192": (None, "Regiao de Coimbra, the Coimbra district's 17 municipalities with "
+                    "Mealhada and Mortagua"),
+    "PT1C2": (None, "Baixo Alentejo, the Beja district without Odemira"),
 }
 ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 

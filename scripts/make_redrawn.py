@@ -53,6 +53,133 @@ REDRAWS: dict[str, list[dict]] = {
         {"merge": ["80513517B50126659359990", "80513517B19707809734230"],
          "keep": "80513517B50126659359990"},
     ],
+    "ROU": [
+        # UATs drawn as a main polygon and exclaves of the same name in the
+        # same county; INS counts each once (romania_census.py puts the
+        # figures on the largest). Checked: no part overlaps another UAT.
+        {"merge": ["2599482B53905982235691", "2599482B31785088370324"],
+         "keep": "2599482B53905982235691"},  # ARAD ARAD
+        {"merge": ["2599482B25282375738521", "2599482B8806038231558"],
+         "keep": "2599482B25282375738521"},  # ARAD LIPOVA
+        {"merge": ["2599482B5177022501599", "2599482B19247594544458"],
+         "keep": "2599482B5177022501599"},  # ARAD PAULIS
+        {"merge": ["2599482B32759719925344", "2599482B71150188153613"],
+         "keep": "2599482B32759719925344"},  # ARAD ZARAND
+        {"merge": ["2599482B7783599693239", "2599482B2994749554598"],
+         "keep": "2599482B7783599693239"},  # BOTOSANI UNGURENI
+        {"merge": ["2599482B21199067234878", "2599482B16674200014647", "2599482B2860524053107", "2599482B289507895873"],
+         "keep": "2599482B21199067234878"},  # BRASOV RUPEA
+        {"merge": ["2599482B81185008860025", "2599482B910434267190"],
+         "keep": "2599482B81185008860025"},  # BUZAU ULMENI
+        {"merge": ["2599482B73805615564390", "2599482B18753621764646"],
+         "keep": "2599482B73805615564390"},  # CALARASI CURCANI
+        {"merge": ["2599482B91976879692627", "2599482B74221959783433"],
+         "keep": "2599482B91976879692627"},  # DOLJ ROJISTE
+        {"merge": ["2599482B30524546463793", "2599482B67036234724680"],
+         "keep": "2599482B30524546463793"},  # HARGHITA MIERCUREA CIUC
+        {"merge": ["2599482B24277216401355", "2599482B64409374014432"],
+         "keep": "2599482B24277216401355"},  # HARGHITA BAILE TUSNAD
+        {"merge": ["2599482B50254025578700", "2599482B79706795726804", "2599482B7850722509394", "2599482B60669636608871", "2599482B68924224489535", "2599482B45078767996614"],
+         "keep": "2599482B50254025578700"},  # HARGHITA VLAHITA
+        {"merge": ["2599482B17231771008992", "2599482B45908659223453"],
+         "keep": "2599482B17231771008992"},  # HARGHITA BRADESTI
+        {"merge": ["2599482B15077063893597", "2599482B50193316932914"],
+         "keep": "2599482B15077063893597"},  # IASI ION NECULCE
+        {"merge": ["2599482B74723640056211", "2599482B48526584820869", "2599482B98677359077398", "2599482B37635492647761"],
+         "keep": "2599482B74723640056211"},  # ILFOV CERNICA
+        {"merge": ["2599482B53836836172440", "2599482B33990588848115"],
+         "keep": "2599482B53836836172440"},  # MEHEDINTI GRUIA
+        {"merge": ["2599482B90638587736477", "2599482B13448214050806"],
+         "keep": "2599482B90638587736477"},  # MURES BRANCOVENESTI
+        {"merge": ["2599482B40977514976433", "2599482B65561652185041"],
+         "keep": "2599482B40977514976433"},  # MURES SANTANA DE MURES
+        {"merge": ["2599482B53428634835124", "2599482B28547583336437"],
+         "keep": "2599482B53428634835124"},  # OLT VADASTRITA
+        {"merge": ["2599482B8839717617259", "2599482B77905945866588"],
+         "keep": "2599482B8839717617259"},  # SATU MARE RACSA
+        {"merge": ["2599482B43386440731502", "2599482B60287900413907"],
+         "keep": "2599482B43386440731502"},  # SATU MARE SANISLAU
+        {"merge": ["2599482B24946279921532", "2599482B4700394891348"],
+         "keep": "2599482B24946279921532"},  # SIBIU SIBIU
+        {"merge": ["2599482B68453018923397", "2599482B49493178649584"],
+         "keep": "2599482B68453018923397"},  # SIBIU SALISTE
+        {"merge": ["2599482B89024892263144", "2599482B75206169001308"],
+         "keep": "2599482B89024892263144"},  # SIBIU TALMACIU
+        {"merge": ["2599482B40816245945082", "2599482B42247101066007", "2599482B61474640296478"],
+         "keep": "2599482B40816245945082"},  # SIBIU CRISTIAN
+        {"merge": ["2599482B75853154347523", "2599482B54964729595352", "2599482B20961139122315"],
+         "keep": "2599482B75853154347523"},  # SIBIU POPLACA
+        {"merge": ["2599482B75916194776070", "2599482B81731395938028", "2599482B67392717014509"],
+         "keep": "2599482B75916194776070"},  # SIBIU TILISCA
+        {"merge": ["2599482B40288902158054", "2599482B29791980403734"],
+         "keep": "2599482B40288902158054"},  # TELEORMAN VIDELE
+        {"merge": ["2599482B28400494535503", "2599482B35029885284970", "2599482B260875686248"],
+         "keep": "2599482B28400494535503"},  # TELEORMAN BRAGADIRU
+        {"merge": ["2599482B24334179401508", "2599482B95855728618173"],
+         "keep": "2599482B24334179401508"},  # TELEORMAN BUJORU
+        {"merge": ["2599482B84154453637694", "2599482B70697570158857"],
+         "keep": "2599482B84154453637694"},  # TELEORMAN CIUPERCENI
+        {"merge": ["2599482B67240297186090", "2599482B23402185147760"],
+         "keep": "2599482B67240297186090"},  # TELEORMAN DRAGANESTI-VLASCA
+        {"merge": ["2599482B76423000679583", "2599482B71059292210776"],
+         "keep": "2599482B76423000679583"},  # TELEORMAN ISLAZ
+        {"merge": ["2599482B88621270188908", "2599482B1586311708085"],
+         "keep": "2599482B88621270188908"},  # TELEORMAN LUNCA
+        {"merge": ["2599482B15929975886396", "2599482B91737143557292"],
+         "keep": "2599482B15929975886396"},  # TIMIS TIMISOARA
+        {"merge": ["2599482B95910170912575", "2599482B95683361390026"],
+         "keep": "2599482B95910170912575"},  # TIMIS MARGINA
+    ],
+    "BGR": [
+        # Zlatitsa, drawn as two features of one name; NSI counts it once.
+        {"merge": ["11073933B76991292071364", "11073933B60320132010156"],
+         "keep": "11073933B76991292071364"},  # Zlatitsa
+    ],
+    "HRV": [
+        # Pirovac, Tisno, Tribunj and Murter-Kornati, which the file draws as
+        # three polygons that cut Tisno in two: 'Opicina Pirovac' (107.9 km2)
+        # holds Pirovac, Tribunj and mainland Tisno; 'Opicina Muter-Kornati'
+        # (17.3 km2) is the island of Murter, with Murter and Tisno's villages
+        # Betina and Jezera; 'Otok Kornat' (31.8 km2) is the rest of
+        # Murter-Kornati. Measured with GeoNames' settlements (no other
+        # municipality's falls in the three). croatia.py writes the four's sum
+        # on the kept id once they are one.
+        {"merge": ["41942358B56064565121242", "41942358B86068104638384",
+                   "41942358B73644152682265"],
+         "keep": "41942358B56064565121242"},  # Pirovac + Muter-Kornati + Otok Kornat
+    ],
+    "CYP": [
+        # Dromolaxia and Meneou, which CYSTAT's 2021 census counts as the one
+        # community Dromolaxia - Meneou (4014). (Not the two "Katydata" or the
+        # two "Trimithousa": each second polygon is another village --
+        # Agios Georgios (Lefkas), and the Trimithousa of the Chrysochou area,
+        # Wikidata Q7842235 -- and cyprus_census pins the community to the
+        # polygon that holds it.)
+        {"merge": ["46923920B21347225976460", "46923920B15655385768829"],
+         "keep": "46923920B21347225976460"},  # Dromolaxia + Meneou
+    ],
+    # Monaco: "The districts are those defined by Sovereign Order No. 4,481 of
+    # 13 September 2013. Ravin Sainte-Devote has been incorporated into the
+    # district of Les Moneghetti" (Monaco Statistics, 2025 Population census,
+    # note to Figure 3). The boundary file still draws the Ravin as a ninth
+    # district. Measured: the two touch and neither overlaps another district.
+    "MCO": [
+        {"merge": ["19026983B74744845285354", "19026983B23086528752726"],
+         "keep": "19026983B74744845285354"},
+    ],
+    # Portugal: Montijo really is in two pieces -- a 316 km2 part inland to
+    # the east (Canha and Pegoes, bordering Coruche, Montemor-o-Novo and
+    # Vendas Novas) and a 20 km2 part on the Tagus that holds the town
+    # (bordering Alcochete, Moita and Palmela) -- and Ilhavo is drawn as a
+    # 19 km2 and a 4 km2 feature; INE counts each municipality once. Neither
+    # part overlaps any other municipality; the census figures sit on the
+    # larger part.
+    "PRT": [
+        {"merge": ["2272694B10601306194261", "2272694B43421578736002"],
+         "keep": "2272694B10601306194261"},
+        {"merge": ["2272694B86153814936026", "2272694B64447610403706"],
+         "keep": "2272694B86153814936026"},
+    ],
 }
 
 

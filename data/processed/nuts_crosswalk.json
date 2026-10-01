@@ -38,6 +38,15 @@
   "NO094": {
     "refused": "covers 71437522B75605567014825 at 0.86 but also holds ['NO093']"
   },
+  "PT11E": {
+    "refused": "Terras de Tras-os-Montes, 9 of the Braganca district's 12 municipalities"
+  },
+  "PT192": {
+    "refused": "Regiao de Coimbra, the Coimbra district's 17 municipalities with Mealhada and Mortagua"
+  },
+  "PT1C2": {
+    "refused": "Baixo Alentejo, the Beja district without Odemira"
+  },
   "BE100": {
     "nuts_level": 3,
     "level": "admin2",
@@ -3858,13 +3867,6 @@
     "name": "VIANA DO CASTELO",
     "iou": 0.938
   },
-  "PT11E": {
-    "nuts_level": 3,
-    "level": "admin1",
-    "shape_id": "24955722B95387288640341",
-    "name": "BRAGANÇA",
-    "iou": 0.812
-  },
   "RS126": {
     "nuts_level": 3,
     "level": "admin1",
@@ -4046,20 +4048,6 @@
     "shape_id": "68755315B33676065986160",
     "name": "Kronobergs län",
     "iou": 0.955
-  },
-  "PT192": {
-    "nuts_level": 3,
-    "level": "admin1",
-    "shape_id": "24955722B78831183552196",
-    "name": "COIMBRA",
-    "iou": 0.862
-  },
-  "PT1C2": {
-    "nuts_level": 3,
-    "level": "admin1",
-    "shape_id": "24955722B69535494870966",
-    "name": "BEJA",
-    "iou": 0.808
   },
   "PT1C3": {
     "nuts_level": 3,
