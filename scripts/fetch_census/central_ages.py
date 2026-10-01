@@ -29,7 +29,7 @@ from typing import Any, Iterable
 
 from ._shared import log, measure
 from .redatam import median_age
-from common import ROOT  # noqa: E402  (_shared puts scripts/ on the path)
+from common import ROOT, as_drawn  # noqa: E402  (_shared puts scripts/ on the path)
 
 SITE = ROOT / "site" / "data"
 SEX_RATIO_UNIT = "males_per_100_females"
@@ -41,8 +41,8 @@ EUROSTAT_POPULATION = ("https://ec.europa.eu/eurostat/api/dissemination/statisti
 
 
 def units(iso3: str, level: str) -> list[dict[str, Any]]:
-    """The map's units at one level, as the site draws them."""
-    return json.loads((SITE / level / f"{iso3}.units.json").read_text())
+    """The map's units at one level, under the boundary file's own labels."""
+    return as_drawn(json.loads((SITE / level / f"{iso3}.units.json").read_text()))
 
 
 def fold(name: str) -> str:

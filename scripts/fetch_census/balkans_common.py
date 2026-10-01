@@ -30,7 +30,7 @@ from .redatam import median_age
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import USER_AGENT, shard_path  # noqa: E402
+from common import USER_AGENT, as_drawn, shard_path  # noqa: E402
 
 __all__ = ["px_meta", "px_table", "json_stat1", "spreadsheetml", "median_age", "grouped_median", "sex_ratio",
            "age_fields", "fold", "shapes", "match_names", "unstack", "check_sum", "exact_shares"]
@@ -187,7 +187,7 @@ def shapes(iso3: str, level: str) -> list[dict[str, Any]]:
     polygons still looked apart after the merge was written, and a reader run
     between the two steps wrote the cluster as three gaps.
     """
-    units = read_json(shard_path(level, iso3), [])
+    units = as_drawn(read_json(shard_path(level, iso3), []))
     if not units:
         raise SystemExit(f"no {level} shapes for {iso3} at {shard_path(level, iso3)}")
     if level == "admin2":

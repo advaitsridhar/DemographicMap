@@ -5812,6 +5812,12 @@ def main() -> int:
                     # An unnamed polygon's label is its id, not a spelling.
                     if label != entity["id"]:
                         row["aliases"] = [*(row.get("aliases") or []), label]
+                        # And the label itself is kept where nothing renames it
+                        # (``shape_name``): readers find their polygons by the
+                        # boundary file's labels, and a reader re-run after a
+                        # build that renamed one -- "District of Bardejov" to
+                        # "Bardejov" -- no longer found it under either name.
+                        entity.setdefault("shape_name", label)
                 matched.append((row, entity, "shape_id"))
                 continue
             if row.get("level") == "admin1":

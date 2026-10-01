@@ -217,8 +217,7 @@ class WhatIsRefused(unittest.TestCase):
 
 class WhereTheArticleIs(unittest.TestCase):
     def test_every_slovak_district_matches_its_own_spelling(self):
-        names = [u["name"][len("District of "):] for u in
-                 m.read_json(m.SITE / "admin2" / "SVK.units.json", [])]
+        names = [u["name"][len("District of "):] for u in m.shapes("SVK", "admin2")]
         matched, refused = m.match_spellings(names, list(m.SK_DISTRICTS))
         self.assertEqual(refused, {})
         self.assertEqual(len(matched), 79)

@@ -814,6 +814,17 @@ def _policy_entry(iso3: str | None, field: str) -> dict[str, str] | None:
     return {"status": declared["status"], "note": declared["note"]}
 
 
+def as_drawn(units: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Units under the boundary file's own labels, as readers find them.
+
+    The build gives a polygon the name of the census row bound to it by id
+    and keeps the boundary file's label as ``shape_name``; a reader that
+    matches the office's names to the drawn labels must see the labels, or
+    each rebuild would move the ground under its matching.
+    """
+    return [{**u, "name": u["shape_name"]} if u.get("shape_name") else u for u in units]
+
+
 def collection_policy(iso3: str | None, field: str) -> str | None:
     """The documented reason a country does not publish ``field``, or None."""
     entry = _policy_entry(iso3, field)

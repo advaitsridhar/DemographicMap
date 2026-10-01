@@ -35,6 +35,8 @@ from ._shared import PROCESSED, log, measure
 from .binding import bind, fold
 from .redatam import median_age
 
+from common import as_drawn  # noqa: E402  (_shared puts scripts/ on the path)
+
 SITE = PROCESSED.parent.parent / "site" / "data"
 USER_AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap) python-urllib"
 
@@ -99,7 +101,8 @@ def sex_ratio(males: float, females: float) -> float | None:
 
 
 def load_units(iso3: str, level: str) -> list[dict[str, Any]]:
-    return json.loads((SITE / level / f"{iso3}.units.json").read_text())
+    """The map's units under the boundary file's own labels (common.as_drawn)."""
+    return as_drawn(json.loads((SITE / level / f"{iso3}.units.json").read_text()))
 
 
 def parent_names(iso3: str) -> dict[str, str]:
