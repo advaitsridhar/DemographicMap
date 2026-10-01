@@ -1,12 +1,8 @@
-liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020), 211.002 (2025)
-  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14], 4494 values of type list
-  211.004: 4,034 cells; places ['Balzers', 'Eschen', 'Gamprin-Bendern', 'Liechtenstein', 'Mauren', 'Nendeln', 'Planken', 'Ruggell', 'Schaan', 'Schaanwald', 'Schellenberg', 'Triesen', 'Triesenberg', 'Vaduz']
-  Gemeinden against Liechtenstein: parts sum to 41,228 = 41,228
-  213.001d.px: asked {'Stichtag': 1, 'Religion': 13, 'Geschlecht': 1, 'Gemeinde': 12, 'Heimat': 1}, answered [1, 13, 1, 1, 12], 156 values of type list
-  213.011d.px: asked {'Stichtag': 1, 'Hauptsprache': 35, 'Geschlecht': 1, 'Gemeinde': 12}, answered [1, 35, 1, 12], 420 values of type list
-  Gemeinden against Liechtenstein, census 2020: parts sum to 39,055 = 39,055
-  211.002.px: asked {'Jahr': 1, 'Staatsbürgerschaft': 154, 'Geschlecht': 1, 'Wohngemeinde': 12}, answered [1, 154, 1, 12], 1848 values of type list
-  Gemeinden against Liechtenstein, citizenship: parts sum to 41,228 = 41,228
-  named: Liechtensteiner, Swiss, Austrian, German, Italian, Ukrainian, Portuguese, Turkish, Kosovan, Spanish, Bosnian and Herzegovinian
-  wrote data/processed/liechtenstein_gemeinde.json (159 kB)
-  wrote liechtenstein_gemeinde.json: 22 records
+germany: Zensus 2022 table 1000A-1018 (religion), cut by GEOBL1 (land)
+  16 areas in the GEOBL1 cut
+germany: Zensus 2022 table 1000A-1021 (nationality), cut by GEOBL1 (land)
+  16 areas in the GEOBL1 cut
+  named: German, Turkish, Syrian, Romanian, Polish, Ukrainian, Italian, Croatian, Bulgarian, Greek, Afghan, Kosovan, Russian, Iraqi, Serbian, Bosnian and Herzegovinian, Hungarian, Austrian
+  wrote data/processed/germany_land.json (76 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_land.json
+  16 records
