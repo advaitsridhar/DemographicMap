@@ -229,7 +229,13 @@ def sweden() -> list[dict[str, Any]]:
     scb_kommuner = {c: n for c, n in sv.items() if len(c) == 4}
     code_of = match_names(list(kommuner), scb_kommuner)
     if len(code_of) != len(scb_kommuner):
-        raise SystemExit(f"svenska kyrkan: {len(code_of)} kommuner of SCB's {len(scb_kommuner)}")
+        unread = sorted(set(scb_kommuner) - set(code_of.values()))
+        for code in unread:
+            stem = fold(scb_kommuner[code])
+            log(f"  {code} {scb_kommuner[code]}: lines naming it: "
+                f"{[ln for ln in lines if stem in fold(ln)][:4]}")
+        raise SystemExit(f"svenska kyrkan: {len(code_of)} kommuner of SCB's "
+                         f"{len(scb_kommuner)}; not read: {[scb_kommuner[c] for c in unread]}")
     # The kommuner must make their län, and the län with the people registered
     # without a property the whole of Sweden.
     lan_code = {name: next((c for c, n in sv.items() if len(c) == 2 and
