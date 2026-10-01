@@ -2320,6 +2320,19 @@ def zensus(argv: list[str]) -> int:
                     log(f"   {key}: " + json.dumps(content[key], ensure_ascii=False)[:1800])
             log("   other keys: " + ", ".join(sorted(content)))
         return 0
+    if argv[:1] in (["variables"], ["tables"], ["statistics"]) and len(argv) >= 2:
+        # catalogue/<kind> with a selection pattern, e.g. "GEO*" or "*1021*".
+        for selection in argv[1:]:
+            status, page = post(f"catalogue/{argv[0]}", {"selection": selection, "area": "all",
+                                                         "pagelength": "500", "language": "de"})
+            hits = re.findall(r'"Code"\s*:\s*"([^"]+)"\s*,\s*"Content"\s*:\s*"([^"]{0,140})"'
+                              r'(?:[^{}]{0,300}?"Values"\s*:\s*"?(-?\d+))?', page)
+            log(f"\n## catalogue/{argv[0]} {selection}: HTTP {status}, {len(hits)} entries")
+            for code, content, values in hits[:150]:
+                log(f"   - {code}: {' '.join(content.split())}" + (f" ({values} values)" if values else ""))
+            if not hits:
+                log("   " + " ".join(page[:400].split()))
+        return 0
     if argv[:1] == ["table"] and len(argv) >= 3:
         name, region = argv[1], argv[2]
         grep = re.compile(argv[3], re.I) if len(argv) > 3 else None
