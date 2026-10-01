@@ -77,8 +77,8 @@
     },
     "language_year": null,
     "ethnicity": {
-      "status": "not_collected",
-      "note": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only."
+      "status": "not_available",
+      "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie, Nur"
     },
     "ethnicity_year": null,
     "sources": [
@@ -1192,18 +1192,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Antiguan Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Antigua and Barbuda's census does not ask language. The 2011 person questionnaire (8 pages) asks ethnic group and religion and nothing on language, and the census's REDATAM base (ATGPHC2011) holds no language variable."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -1344,38 +1336,10 @@
       "note": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Italian",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "German",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "indigenous",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Argentina's 2022 census has no language question for the population; it asks only whether a person who recognises themselves as indigenous speaks or understands their people's language, which is not a composition. That share is given in each unit's ethnicity note."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -3601,41 +3565,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 65.0
-      },
-      {
-        "group": "Protestant",
-        "pct": 19.6
-      },
-      {
-        "group": "Believer",
-        "pct": 0.9
-      },
-      {
-        "group": "other",
-        "pct": 4.8
-      },
-      {
-        "group": "atheist",
-        "pct": 1.7
-      },
-      {
-        "group": "agnostic",
-        "pct": 0.6
-      },
-      {
-        "group": "none",
-        "pct": 6.1
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.3
-      }
-    ],
-    "religion_year": 2023,
+    "religion": {
+      "status": "not_collected",
+      "note": "Bolivia's 2024 census does not ask religion. INE's data dictionary for the census's person database lists every question it holds, 24 to 59 -- relationship, sex, age, birth registration, health care, nación o pueblo, languages spoken and first learned, birthplace, residence, schooling, literacy, disability, work, marital status and children -- and religion is not among them."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Spanish",
@@ -4225,7 +4159,7 @@
     "language_year": null,
     "ethnicity": [
       {
-        "group": "mixed",
+        "group": "Pardo",
         "pct": 45.3
       },
       {
@@ -7887,45 +7821,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 47.5
-      },
-      {
-        "group": "Evangelical and Pentecostal",
-        "pct": 19.8
-      },
-      {
-        "group": "Jehovah's Witness",
-        "pct": 1.4
-      },
-      {
-        "group": "other Protestant",
-        "pct": 1.2
-      },
-      {
-        "group": "other",
-        "pct": 3.1
-      },
-      {
-        "group": "none",
-        "pct": 27.0
-      }
-    ],
-    "religion_year": 2021,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Costa Rica's census does not ask religion. INEC's REDATAM base of the 2011 census holds, for every person, relationship, sex, age, birthplace and arrival, P07 whether indigenous, P08 which people, P09 whether they speak an indigenous language, P10 ethnic-racial self-identification, social security, disability, schooling, ICT use, residence five years before, marital status, occupation, industry, place of work and children born. Religion is not among them."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "Costa Rica's census has no language question for the population. The 2011 census asks only whether a person who said they are indigenous speaks an indigenous language (P09: its 'No Aplica' is everyone P07 did not count as indigenous, 4,197,569 people), which is not a composition of what anybody speaks."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -8185,53 +8089,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Christian",
-        "pct": 58.9
-      },
-      {
-        "group": "folk religion",
-        "pct": 17.6
-      },
-      {
-        "group": "Buddhist",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "Hindu",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "Jewish",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "Muslim",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "none",
-        "pct": 23.2
-      }
-    ],
-    "religion_year": 2020,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Cuba's census does not ask religion. ONEI's national report on the 2012 Censo de Población y Viviendas lists every topic its questionnaire covered (Informe Nacional, section IV, Temáticas y cuestionario censal): residence, birthplace and migration; sex, age, skin colour, household headship and relationships, and disabilities; marital status; schooling, degrees and literacy; economic activity and commuting; and the dwelling. Religion is not among them."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "Cuba's census does not ask language or mother tongue: ONEI's list of every topic of the 2012 Censo de Población y Viviendas (Informe Nacional, section IV) has none."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -9505,18 +9371,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Dominica's census does not ask language. The 2011 Population and Housing Census questionnaire (15 pages) asks ethnic group (Q44) and religion (Q45); 'language' appears only in its disability questions."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -10075,37 +9933,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 43.9
-      },
-      {
-        "group": "Protestant",
-        "pct": 39.6
-      },
-      {
-        "group": "none",
-        "pct": 16.3
-      },
-      {
-        "group": "unspecified",
-        "pct": 0.2
-      }
-    ],
-    "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Nawat",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "El Salvador's census does not ask religion. The BCR describes the 2024 census's 74 questions as six sections -- location, dwelling, household, mortality, international emigration and population, the last covering age, sex, marital status, birthplace, schooling and indigenous and Afro-descendant self-identification -- and its 135-page census report, whose chapters run from population structure through fertility, mortality, migration, ethnicity, disability, education, language, work and ICT to housing, has none on religion."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "El Salvador's census asks no first or main language. The 2024 census asks everyone aged 3 and over whether they speak a second language and which (the BCR's tables TAB_IDIO_1 and TAB_IDIO_2: 427,368 of 5,635,059 said yes, naming English, Náhuat, Pisbi, Potón, LESSA and others). That counts the speakers of second languages, several per person, not what the population speaks, so it is not a composition."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -13518,25 +13354,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Evangelical",
-        "pct": 45.7
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 42.4
-      },
-      {
-        "group": "none",
-        "pct": 11.0
-      },
-      {
-        "group": "unspecified",
-        "pct": 0.9
-      }
-    ],
-    "religion_year": 2023,
+    "religion": {
+      "status": "not_collected",
+      "note": "Guatemala's census does not ask religion. INE's data dictionary for the 2018 census's person database lists every question it holds -- age, sex, birthplace, residence in 2013, pueblo, the language a person learned to speak in, other languages, disability, schooling, literacy, phone and internet use, work, marital status and children -- and religion is not among them."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Spanish",
@@ -13554,7 +13376,7 @@
     "language_year": 2018,
     "ethnicity": [
       {
-        "group": "Mestizo",
+        "group": "Ladino",
         "pct": 56.0
       },
       {
@@ -14282,29 +14104,15 @@
       }
     ],
     "religion_year": 2018,
-    "language": [
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Haiti's census does not ask the language a person speaks: IHSI's coders' manual for the 2003 RGPH lists every person question, F1.1 to F4.34, and none asks it."
+    },
     "language_year": null,
-    "ethnicity": [
-      {
-        "group": "Black",
-        "pct": 95.0
-      },
-      {
-        "group": "mixed and White",
-        "pct": 5.0
-      }
-    ],
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Haiti's census does not ask ethnicity. IHSI's coders' manual for the 2003 Recensement Général de la Population et de l'Habitat (§5.1.1.6 and §7.2.6) describes every question put to each person, F1.1 to F4.34: relationship, sex, age, mother's survival, religion, disability, birthplace and residence (F1); residence five years before, literacy and schooling (F2); economic activity (F3); and fertility (F4). Neither ethnicity nor language is among them, nor in IHSI's national tables or the census plan's list of volumes. Haiti has held no census since."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -14548,37 +14356,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Evangelical",
-        "pct": 55.0
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 33.4
-      },
-      {
-        "group": "none",
-        "pct": 10.1
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.5
-      }
-    ],
-    "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Amerindian dialects",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Honduras's census does not ask religion. INE's REDATAM base of the 2013 census (CPVHND2013NAC) holds, for every person, relationship, sex, age, civil registration, how the person identifies (P05) and which people (P06), the disability questions, birthplace, literacy, schooling, residence five years before, work, marital status, e-mail and mobile phone, children born and the identity card. Religion is not among them."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "Honduras's census does not ask language or mother tongue. The 2013 census's person variables, as INE's REDATAM base lists them, are relationship, sex, age, registration, ethnic self-identification and people, disability, birthplace, literacy, schooling, migration, work, marital status, e-mail, phone, children born and the identity card; no language is among them. The census counts the Lenca, Miskito, Garifuna and other peoples by self-identification, which is on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -15576,10 +15362,43 @@
       }
     ],
     "religion_year": 2020,
-    "language": {
-      "status": "not_collected",
-      "note": "Iran's census does not ask language."
-    },
+    "language": [
+      {
+        "group": "Persian Farsi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Azeri and other Turkic dialects",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Kurdish",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Gilaki and Mazandarani",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Luri",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Balochi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Arabic",
+        "pct": null,
+        "pct_status": "not_available"
+      }
+    ],
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -16429,18 +16248,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Jamaican patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Jamaica's census does not ask language. STATIN's 2011 Individual Questionnaire (4 pages) asks relationship, sex, age, birthplace, religion and ethnic origin, education, training, work, fertility and disability; no question asks what language anyone speaks."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -18006,28 +17817,10 @@
       }
     ],
     "religion_year": 2015,
-    "language": [
-      {
-        "group": "Lao",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "various ethnic languages",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -21356,23 +21149,11 @@
       }
     ],
     "religion_year": 2020,
-    "language": [
-      {
-        "group": "Mongolian",
-        "pct": 90.0
-      },
-      {
-        "group": "Turkic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Russian",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
-    "language_year": 1999,
+    "language": {
+      "status": "not_collected",
+      "note": "Mongolia's census does not ask language or mother tongue. The individual questionnaire of the 2020 Population and Housing Census, reproduced in the appendix of the National Statistics Office's national report, runs from \"What is your relationship with household head?\" through gender, age, birthplace, migration, disability, education, literacy, employment and marital status to question 29, \"Do you have a religion?\", and asks nothing about a language at all. In the report's 298 pages the word appears twice: in the definition of literacy -- \"a person who can read and write simple sentences in any languages was considered as literate\" -- and in a note on sign language among the Washington Group's questions on functional difficulty. Ethnic group and religion are both asked, and the aimags carry them."
+    },
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Khalkh",
@@ -22054,7 +21835,7 @@
         "pct": 99.0
       },
       {
-        "group": "Mestizo",
+        "group": "Mestico",
         "pct": 0.8
       },
       {
@@ -23257,25 +23038,11 @@
       }
     ],
     "religion_year": 2020,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": 99.5
-      },
-      {
-        "group": "Indigenous",
-        "pct": 0.3
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.1
-      },
-      {
-        "group": "other",
-        "pct": 0.1
-      }
-    ],
-    "language_year": 2020,
+    "language": {
+      "status": "not_collected",
+      "note": "Nicaragua's census does not ask the population's language. The 2005 census's only language question (P08, \"¿Habla la lengua o idioma del pueblo indígena o comunidad étnica a la que pertenece?\") was put only to the members of the seven Caribbean-coast peoples and communities -- Rama, Garífuna, Mayangna, Miskitu, Ulwa, Creole and the coast's mestizos, whose 270,870 people are exactly its answers -- and asks whether they speak their people's language, not what anybody speaks. It is not a composition, and the rest of the country was not asked."
+    },
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -23962,17 +23729,17 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures."
+      "note": "North Korea's census does not ask religion. Its 2008 questionnaire has 53 questions -- H1 to H14 on the household, P1 to P29 on the person, M1 to M10 on deaths -- and none of them is about religion; in the 278 pages of the National Report the word occurs once, as the occupation 'religious professionals', 103 people, in Table 37. No table of the 53 is a religion table and the state publishes no other figures."
     },
     "religion_year": null,
     "language": {
       "status": "not_collected",
-      "note": "North Korea's 2008 census asked no language question."
+      "note": "North Korea's census does not ask language. In the 278 pages of the 2008 National Report 'mother tongue' appears nowhere and 'language' appears once, in Table 22's definition of literacy -- the ability to read and write a simple message in any language -- which counts an ability and records no language. No table of the 53 is a language table."
     },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "North Korea's 2008 census asked no ethnicity question."
+      "note": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province."
     },
     "ethnicity_year": null,
     "sources": [
@@ -24964,67 +24731,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Evangelical",
-        "pct": 55.0
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 33.4
-      },
-      {
-        "group": "none",
-        "pct": 10.1
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.5
-      }
-    ],
-    "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Indigenous languages",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Panamanian English Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Chinese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "other",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Panama's census does not ask religion. INEC's REDATAM base of the 2023 census (LP2023) holds, for every person, relationship, sex, age, civil registration, citizenship, marital status, birthplace, residence before and in 2018, indigenous group (P08), Afro-descendant group (P09), social security, the disability questions, ICT use, literacy, schooling, work, income and children born. Religion is not among its 82 person variables, nor among the 72 of the 2010 census's base (LP2010)."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "Panama's census does not ask language. The 2023 census's person variables, as INEC's REDATAM base LP2023 lists them, are relationship, sex, age, registration, citizenship, marital status, birthplace, migration, indigenous group, Afro-descendant group, social security, disability, ICT use, literacy, schooling, work, income and fertility; no language or mother tongue is among them, nor among the 2010 census's (LP2010). Which indigenous people a person belongs to is on the ethnicity field."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -25149,31 +24864,14 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "Tok Pisin",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Hiri Motu",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "some 839 living indigenous languages are spoken",
-        "pct": 12.0
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Papua New Guinea's census does not ask mother tongue or language spoken at home. The one language question is literacy: the 2011 National Report's Table 4.6 gives the share of people aged 10 and over who can read and write English, Pidgin (Tok Pisin), Motu or Tokples -- 'language of my place', the report's own name for all 800-odd local languages together. Those four are overlapping abilities in three lingua francas and one residual, not a composition of what anybody speaks, so no language share is published for the country or for any province."
+    },
     "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Melanesian, Papuan, Negrito, Micronesian, Polynesian"
+      "status": "not_collected",
+      "note": "Papua New Guinea's census does not ask ethnicity. Appendix 1 of the National Statistical Office's 2011 National Report lists what the 33 questions of the one-page census form collected -- age, sex, marital status, religion, migration, economic activity, occupation, industry, fertility, mortality and household income-generating activities -- and ethnicity is not among them; the country has no national ethnic classification, its people being counted instead by province and by the language of their place. The 2024 census's Final Figures publish nothing of the kind either."
     },
     "ethnicity_year": null,
     "sources": [
@@ -27359,18 +27057,10 @@
       }
     ],
     "religion_year": 2010,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Saint Lucian Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Saint Lucia's census does not ask language. Neither the 2022 census's REDATAM base (PHC2022) nor the 2010 base (PHC2010C) holds a language variable -- their data dictionaries list every variable -- only difficulty speaking."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -27731,23 +27421,10 @@
       }
     ],
     "religion_year": 2012,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Vincentian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French patois",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Saint Vincent and the Grenadines' census does not ask language. The 2012 census's REDATAM base (SVG2012) holds no language variable, its data dictionary listing every one, and the 2023 census report tabulates none."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -32129,18 +31806,10 @@
       }
     ],
     "religion_year": 2010,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Creole",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "The Bahamas' 2010 census did not ask language. The First Release's preface lists the individual questionnaire's topics -- age, sex, marital and union status, religion, racial group, citizenship and education -- and no island report tabulates language."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -32242,37 +31911,24 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Evangelical",
-        "pct": 50.2
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 30.1
-      },
-      {
-        "group": "none",
-        "pct": 18.5
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.2
-      }
-    ],
-    "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "The Dominican Republic's census does not ask religion. The 2022 questionnaire (ONE, X Censo Nacional de Población y Vivienda 2022, Informe General, Anexo II: Boleta censal) asks each person questions 25 to 67 -- relationship, sex, age, birthplace, identity document, migration, disability, schooling, work, perceived colour and features (64) and fertility -- and the words religión, idioma and lengua appear nowhere in it. Nor are they among the 2010 census's person variables (ONE's REDATAM dictionary, P26 to P60)."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "The Dominican Republic's census does not ask language: neither the 2022 questionnaire (ONE, X CNPV 2022, Anexo II, questions 25 to 67) nor the 2010 census's person variables contain a language question."
+    },
     "language_year": null,
     "ethnicity": [
       {
-        "group": "mixed",
-        "pct": 70.4
+        "group": "Mestizo or Indio",
+        "pct": 58.0
+      },
+      {
+        "group": "Mulatto",
+        "pct": 12.4
       },
       {
         "group": "Black",
@@ -32599,8 +32255,8 @@
     ],
     "language_year": 2015,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Austronesian (Malayo-Polynesian) (includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan (includes Bunak, Fataluku, Bakasai), small Chinese minority"
+      "status": "not_collected",
+      "note": "Timor-Leste's census does not ask ethnicity. The 2022 questionnaire, reproduced as Annex III of INETL's census main report, runs its individual module from E1 to E77 -- marital status, parents, birth registration, place of birth, migration, citizenship, literacy, education, labour, religion, mother tongues, disability, fertility, birth attendance -- and asks nothing about ethnicity, race, tribe or ancestry. What it does ask, at E58, is \"what languages did <Name> learn as a child?\", and Timorese identity largely tracks that answer; the Factbook's ethnic-groups line for Timor-Leste is the census's mother-tongue list sorted into Austronesian and Papuan, with no shares, so it is not used here. The mother tongues themselves are on the language field, which is the question that was actually asked."
     },
     "ethnicity_year": null,
     "sources": [
@@ -33163,43 +32819,10 @@
       }
     ],
     "religion_year": 2011,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Trinidadian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tobagonian Creole English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Caribbean Hindustani",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Trinidadian Creole French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Chinese",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Trinidad and Tobago's census does not ask language. The CSO's 2011 questionnaire (21 pages) asks religion and ethnic group; 'speak' appears only among its disability questions."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -34855,40 +34478,15 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 42.0
-      },
-      {
-        "group": "Protestant",
-        "pct": 15.0
-      },
-      {
-        "group": "other",
-        "pct": 6.0
-      },
-      {
-        "group": "agnostic",
-        "pct": 3.0
-      },
-      {
-        "group": "atheist",
-        "pct": 10.0
-      },
-      {
-        "group": "unspecified",
-        "pct": 24.0
-      }
-    ],
-    "religion_year": 2023,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Uruguay's 2023 census does not ask religion. The questionnaire's only 'religioso' is a kind of collective dwelling (Internado religioso), and INE's data dictionary for the census's person file has no religion variable."
+    },
+    "religion_year": null,
+    "language": {
+      "status": "not_collected",
+      "note": "Uruguay's 2023 census does not ask language: neither its questionnaire nor INE's data dictionary for the person file has a language question or variable."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -35309,25 +34907,11 @@
       "note": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": 98.2
-      },
-      {
-        "group": "indigenous",
-        "pct": 1.3
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.1
-      },
-      {
-        "group": "other",
-        "pct": 0.4
-      }
-    ],
-    "language_year": 2023,
+    "language": {
+      "status": "not_collected",
+      "note": "Venezuela's 2011 census asked which languages a person speaks only of those who said they belong to an indigenous people (question 5, INE's Meta_Persona); no one else was asked, and INE's REDATAM base of the census carries no language variable. That is not a composition of what the population speaks."
+    },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: unspecified Spanish, Italian, Portuguese, Arab, German, African, Indigenous"
