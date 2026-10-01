@@ -1,9 +1,4 @@
-pxweb: Statistics Finland (FIN)
-  vaerak/11rl.px
-    left out (code does not start 'MK'): 2 — MA1 MA1 MAINLAND FINLAND, MA2 MA2 ÅLAND
-    left out (the country itself): 1 — SSS WHOLE COUNTRY
-    19 units, categories sum to the published total in each
-    ...and to 5,652,881 against a published national 5,652,881
-  language labels the group tree cannot place: none
-  wrote data/processed/finland_region.json (74 kB)
-  19 records
+fetch_factbook: syncing source
+  cloning https://github.com/factbook/factbook.json (shallow)
+  260 Factbook entities
+  ERROR: run scripts/fetch_natural_earth.py first (it writes data/raw/codes/country_index.json).
