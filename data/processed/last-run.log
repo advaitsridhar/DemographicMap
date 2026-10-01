@@ -1,86 +1,302 @@
-== r18_isl_walk
-  Faedingarland [l] Country of birth
-    MAN12103.px [t] Population by country of birth, sex and age 1 January 1998-2026
-    MAN12104.px [t] Population by sex, municipality and country of birth 1 January 1998-2026
-  title: Population by sex, municipality and country of birth 1 January 1998-2026
-  var 'Sveitarfélag' (Municipality): 63 values
-      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
-      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
-  var 'Fæðingarland' (Country of birth): 215 values
-      9999=Total; 99IS=Iceland; 99DK=Denmark; 99FI=Finland; 99FO=Faroe Islands; 99GL=Greenland ... 99NZ=New Zealand; 99PG=Papua New Guinea; 99SB=Solomon Islands; 99TO=Tonga; 99XV=Oceania, country not specified; 99XX=Foreign country not specified
-      code lengths {4: 215}; prefixes {'': 215}
-  var 'Kyn' (Sex): 4 values
-      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
-  var 'Ár' (Year) [time]: 29 values
-      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 29}; prefixes {'': 29}
-  Rikisfang [l] Citizenship
-    MAN04001.px [t] Foreign citizens 1950-2026
-    MAN04103.px [t] Population by country of citizenship, sex and age 1 January 1998-2026
-    MAN04203.px [t] Population by sex, municipality and citizenship 1 January 1998-2026
-  title: Population by sex, municipality and citizenship 1 January 1998-2026
-  var 'Sveitarfélag' (Municipality): 63 values
-      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
-      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
-  var 'Ríkisfang' (Citizenship): 190 values
-      01=Total; IS=Iceland; DK=Denmark; FI=Finland; NO=Norway; SE=Sweden ... PG=Papua New Guinea; SB=Solomon Islands; TO=Tonga; VU=Vanuatu; XX=Foreign country not specified; XZ=Stateless
-      code lengths {2: 190}; prefixes {'': 1, 'IS': 1, 'DK': 1, 'FI': 1, 'NO': 1, 'SE': 1, 'AT': 1, 'BE': 1}
-  var 'Kyn' (Sex): 4 values
-      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
-  var 'Ár' (Year) [time]: 29 values
-      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 29}; prefixes {'': 29}
-    MAN04208.px [t] Population by sex, municipality, citizenship and age 1 January 1998-2026
-  title: Population by sex, municipality, citizenship and age 1 January 1998-2026
-  var 'Sveitarfélag' (Municipality): 63 values
-      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
-      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
-  var 'Ríkisfang' (Citizenship): 3 values
-      Tot=Total; IS=Icelandic citizenship; Erl=Foreign citizenship
-  var 'Aldur' (Age): 112 values
-      999=Total; 0=Under 1 year; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 105=105 years; 106=106 years; 107=107 years; 108=108 years; 109=109 years; 110=110 years
-      code lengths {1: 10, 2: 90, 3: 12}; prefixes {'': 112}
-  var 'Ár' (Year) [time]: 29 values
-      1998=1998; 1999=1999; 2000=2000; 2001=2001; 2002=2002; 2003=2003 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 29}; prefixes {'': 29}
-  var 'Kyn' (Sex): 4 values
-      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
-  Rikisfbr [l] Changes of citizenship
-    MAN04119.px [t] Foreign citizens gaining Icelandic citizenship by former citizenship, sex and age 1991-2025
-    MAN04120.px [t] Foreign citizens gaining Icelandic citizenship by country of birth, sex and age 1991-2025
-  Uppruni [l] Origin
-    MAN43000.px [t] Population by origin, sex and age 1996-2026
-    MAN43002.px [t] Population born abroad by background, sex, age and country of birth 1996-2026
-    MAN43004.px [t] Population born abroad by background, sex and country of birth 1996-2026
-    MAN43005.px [t] Immigrants by sex and municipality 1 January 1996-2026
-  title: Immigrants by sex and municipality 1 January 1996-2026
-  var 'Sveitarfélag' (Municipality): 63 values
-      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
-      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
-  var 'Aldur' (Age): 113 values
-      999=Total; 0=Under 1 year; 1=1 year; 2=2 years; 3=3 years; 4=4 years ... 106=106 years; 107=107 years; 108=108 years; 109=109 years; 110=110 years; 150=Unkown
-      code lengths {1: 10, 2: 90, 3: 13}; prefixes {'': 113}
-  var 'Kyn' (Sex): 4 values
-      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
-  var 'Ár' (Year) [time]: 31 values
-      1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 31}; prefixes {'': 31}
-    MAN43006.px [t] Immigrants in Reykjavík by districts 1998-2026
-    MAN43007.px [t] Immigrants by length of stay and municipality 1 January 1996-2026
-  title: Immigrants by length of stay and municipality 1 January 1996-2026
-  var 'Ár' (Year) [time]: 31 values
-      1996=1996; 1997=1997; 1998=1998; 1999=1999; 2000=2000; 2001=2001 ... 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025; 2026=2026
-      code lengths {4: 31}; prefixes {'': 31}
-  var 'Sveitarfélag' (Municipality): 63 values
-      IS=Total; 0000=Reykjavikurborg; 1000=Kopavogsbaer; 1100=Seltjarnarnesbaer; 1300=Gardabaer; 1400=Hafnarfjardarkaupstadur ... 8716=Hveragerdisbaer; 8717=Sveitarfelagid Olfus; 8719=Grimsnes- og Grafningshreppur; 8720=Skeida- og Gnupverjahreppur; 8721=Blaskogabyggd; 8722=Floahreppur
-      code lengths {2: 1, 4: 62}; prefixes {'': 62, 'IS': 1}
-  var 'Kyn' (Sex): 4 values
-      0=Total; 1=Males; 2=Females; 3=Non-binary/Other
-  var 'Lengd dvalar' (Lenght of stay): 6 values
-      0=Total; 1=Under 1 year; 2=1-2 years; 3=3-5 years; 4=6-10 years; 5=11 years or longer
-  Vernd_dvalarleyfi [l] International protection and residence permits
-    MAN44001.px [t] New residence permits by type, citizenship and sex 2008-2023
-    MAN44002.px [t] New residence permits by type, age and sex 2008-2023
-    MAN45001.px [t] Asylum applications by citizenship, sex and age 1997-2019
-    MAN45002.px [t] International protection grants by citizenship, type, age and sex 1997-2019
-    MAN46001.px [t] Outgoing Dublin transfers by partner country and sex 2008-2023
+== r18_swe_kyrkan
+  61,549 characters, 94 links
+     -> https://www.svenskakyrkan.se/statistik
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+     -> https://app-eu.readspeaker.com/cgi-bin/rsent?customerid=4936&lang=sv_se&readid=innehall&url=https%3a%2f%2fwww.svenskakyrkan.se%2fstatistik%3fid%3d645562
+    Medlemmar i Svenska kyrkan 1972-2025 -> https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2025.pdf?id=3016165
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fMedlemmar%2520i%2520Svenska%2520kyrkan%25201972-2025.pdf%3fid%3d3016165
+    In- och utträden 1970-2025 -> https://www.svenskakyrkan.se/filer/1374643/In-%20och%20uttr%c3%a4den%201970-2025.pdf?id=3016152
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fIn-%2520och%2520uttr%25c3%25a4den%25201970-2025.pdf%3fid%3d3016152
+    Döpta, konfirmerade, vigda och begravda i Svenska kyrkan 1970-2025 -> https://www.svenskakyrkan.se/filer/1374643/D%c3%b6pta,%20konfirmerade,%20vigda%20och%20begravda%20i%20Svenska%20kyrkan%201970-2025.pdf?id=3016163
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fD%25c3%25b6pta%2c%2520konfirmerade%2c%2520vigda%2520och%2520begravda%2520i%2520Svenska%2520kyrkan%25201970-2025.pdf%3fid%3d3016163
+    Gudstjänstbesök 1990-2025 -> https://www.svenskakyrkan.se/filer/1374643/Gudstj%c3%a4nstbes%c3%b6k%201990-2025.pdf?id=3016161
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fGudstj%25c3%25a4nstbes%25c3%25b6k%25201990-2025.pdf%3fid%3d3016161
+    Barn- och ungdomsverksamhet 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/Barn-%20och%20ungdomsverksamhet%202001-2025.pdf?id=3016162
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fBarn-%2520och%2520ungdomsverksamhet%25202001-2025.pdf%3fid%3d3016162
+    Syföreningar och arbetskretsar 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/Syf%c3%b6reningar%20och%20arbetskretsar%202001-2025.pdf?id=3016166
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fSyf%25c3%25b6reningar%2520och%2520arbetskretsar%25202001-2025.pdf%3fid%3d3016166
+    Körer 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/K%c3%b6rer%202001-2025.pdf?id=3016164
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fK%25c3%25b6rer%25202001-2025.pdf%3fid%3d3016164
+    Diakonalt arbete - uppsökande verksamhet, kontakttillfällen och ekonomiska bidrag 2015-2025 -> https://www.svenskakyrkan.se/filer/1374643/Diakonalt%20arbete%20-%20upps%c3%b6kande%20verksamhet,%20kontakttillf%c3%a4llen%20och%20ekonomiska%20bidrag%202015-2025.pdf?id=3016174
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fDiakonalt%2520arbete%2520-%2520upps%25c3%25b6kande%2520verksamhet%2c%2520kontakttillf%25c3%25a4llen%2520och%2520ekonomiska%2520bidrag%25202015-2025.pdf%3fid%3d3016174
+    Antal sverigefinländare per stift och församling 31 december 2025 -> https://www.svenskakyrkan.se/filer/1374643/Antal%20sverigefinl%c3%a4ndare%20per%20stift%20och%20f%c3%b6rsamling%2031%20december%202025%20.xlsx?id=3085875
+    Preliminär månadsstatistik för aktiva in- och utträden 2004-juli 2026 (pdf). -> https://www.svenskakyrkan.se/default.aspx?id=3115155
+    Statistik -> https://www.svenskakyrkan.se/statistik
+    Anledningar att vara medlem -> https://www.svenskakyrkan.se/medlem/anledningar
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+== r18_fin_evl_311
+  10,027 characters
+  /(?:src|href|data-[a-z-]+|url|file)\s*[=:]\s*[\"'][^\"']{4,220}[\"']/: 20 -- ['href="styles/reset.css"', "href='https://fonts.googleapis.com/css?family=Hind:400,600'", 'href="styles/styles.css"', 'href="icon/icon-style.css"', 'src="js/jquery-3.0.0.min.js"', 'src="js/ResizeSensor.js"', 'src="js/main.js"', 'href="https://www.kirkontilastot.fi/"', 'src="images/home.png"', "src='images/settings.png'", 'src="images/ring.gif"', "src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Js&#47;Jsentilasto2025kirkkoonkuuluvuus&#47;KirkkoonkuuluvuusTalousyksikt&#47;1_rss.png'", "src = 'https://public.tableau.com/javascripts/api/viz_v1.js'", 'src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.6"', 'data-href="https://www.kirkontilastot.fi/viz?id=311"', 'data-layout="button_count"', 'data-mobile-iframe="true"', 'href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.kirkontilastot.fi%2Fviz%3Fid%3D311&amp;src=sdkpreparse"', 'href="https://twitter.com/share"', 'src="js/classie.js"']
+== r18_fin_evl_286
+  9,404 characters
+  /(?:src|href|data-[a-z-]+|url|file)\s*[=:]\s*[\"'][^\"']{4,220}[\"']/: 20 -- ['href="styles/reset.css"', "href='https://fonts.googleapis.com/css?family=Hind:400,600'", 'href="styles/styles.css"', 'href="icon/icon-style.css"', 'src="js/jquery-3.0.0.min.js"', 'src="js/ResizeSensor.js"', 'src="js/main.js"', 'href="https://www.kirkontilastot.fi/"', 'src="images/home.png"', "src='images/settings.png'", 'src="images/ring.gif"', "src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Js&#47;Jsentilasto2025&#47;Tilastotaulukko&#47;1_rss.png'", "src = 'https://public.tableau.com/javascripts/api/viz_v1.js'", 'src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.6"', 'data-href="https://www.kirkontilastot.fi/viz?id=286"', 'data-layout="button_count"', 'data-mobile-iframe="true"', 'href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.kirkontilastot.fi%2Fviz%3Fid%3D286&amp;src=sdkpreparse"', 'href="https://twitter.com/share"', 'src="js/classie.js"']
+== r18_fin_evl_files
+  30 captures
+    20250103014434 https://www.kirkontilastot.fi/%22tiedostot//Beskrivning_av_statistikuppgifterna.pdf/%22 text/html 500
+    20250103014430 https://www.kirkontilastot.fi/%22tiedostot//Seurakuntamuutokset_2024_yv.xlsx/%22 text/html 500
+    20250103014432 https://www.kirkontilastot.fi/%22tiedostot//Tilastotietojen_kuvaukset.pdf/%22 text/html 500
+    20211128053630 https://www.kirkontilastot.fi/tiedostot/Beskrivning_av_statistikuppgifterna.pdf application/pdf 200
+    20190630121916 https://www.kirkontilastot.fi/tiedostot/J%C3%A4senm%C3%A4%C3%A4r%C3%A42018.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220707222524 https://www.kirkontilastot.fi/tiedostot/J%C3%A4senm%C3%A4%C3%A4r%C3%A42019aluejako2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220705145540 https://www.kirkontilastot.fi/tiedostot/J%C3%A4senm%C3%A4%C3%A4r%C3%A42020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20201020203140 https://www.kirkontilastot.fi/tiedostot/Kirkontilastot_fi_saavutettavuusseloste.html text/html 200
+    20201205014729 https://www.kirkontilastot.fi/tiedostot/Kirkontilastot_fi_saavutettavuusseloste_sv.html text/html 200
+    20220705151710 http://www.kirkontilastot.fi/tiedostot/Saavutettavuusseloste_15.6.2022.pdf text/html 301
+    20210728051208 https://www.kirkontilastot.fi/tiedostot/Saavutettavuusseloste_23.4.2021.pdf application/pdf 200
+    20250316195109 http://www.kirkontilastot.fi/tiedostot/Saavutettavuusseloste_5.3.2025.pdf text/html 301
+    20240329133348 http://www.kirkontilastot.fi/tiedostot/Saavutettavuusseloste_7.2.2024.pdf text/html 301
+    20220412004055 https://www.kirkontilastot.fi/tiedostot/Seurakuntamuutokset_2022_yv.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221017031002 https://kirkontilastot.fi/tiedostot/Seurakuntamuutokset_2023_yv.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240116120510 https://kirkontilastot.fi/tiedostot/Seurakuntamuutokset_2024_yv.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220412004042 https://www.kirkontilastot.fi/tiedostot/Seurakuntien_verotuloennuste_202111.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221017031030 https://kirkontilastot.fi/tiedostot/Seurakuntien_verotuloennuste_202210.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221211052836 https://kirkontilastot.fi/tiedostot/Seurakuntien_verotuloennuste_202212.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250807000234 http://www.kirkontilastot.fi/tiedostot/Seurakuntien_verotuloennuste_202212.xlsx%C2%A0 text/html 301
+    20240116061808 https://kirkontilastot.fi/tiedostot/Seurakuntien_verotuloennuste_202308.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20211128060039 https://www.kirkontilastot.fi/tiedostot/Tilastotietojen_kuvaukset.pdf application/pdf 200
+    20220321140502 http://www.kirkontilastot.fi/tiedostot/Tillg text/html 301
+    20231020212838 http://www.kirkontilastot.fi/tiedostot/Tillg%C3%A4nglighetsutl%C3%A5tande_15.6.2022.pdf text/html 301
+    20210728025738 https://www.kirkontilastot.fi/tiedostot/Tillg%C3%A4nglighetsutl%C3%A5tande_23.4.2021.pdf application/pdf 200
+    20250103014141 http://www.kirkontilastot.fi/tiedostot/Tillg%C3%A4nglighetsutl%C3%A5tande_7.2.2024.pdf text/html 301
+    20220705160008 http://www.kirkontilastot.fi/tiedostot/Tillg&auml;nglighetsutl&aring;tande_15.6.2022.pdf text/html 301
+    20220126010441 http://www.kirkontilastot.fi/tiedostot/Tillg&auml;nglighetsutl&aring;tande_23.4.2021.pdf text/html 301
+    20250316222337 http://www.kirkontilastot.fi/tiedostot/Tillg&auml;nglighetsutl&aring;tande_5.3.2025.pdf text/html 301
+    20240329133330 http://www.kirkontilastot.fi/tiedostot/Tillg&auml;nglighetsutl&aring;tande_7.2.2024.pdf text/html 301
+== r18_isl_skra_cdx
+  89 captures
+    20250119101012 https://www.skra.is/library/Myndir/Frettir/mynd_fj_tru_1jan2020.PNG image/png 200
+    20191102012657 https://www.skra.is/library/Myndir/Frettir/mynd_fj_truf_agust19-b.PNG image/png 200
+    20190528182708 https://www.skra.is/library/Myndir/Frettir/mynd_hlutfallslegar_breytingar_a_staerstu_trulifsskodunarfelogum_sidst12manudum.PNG image/png 200
+    20211111192954 https://skra.is/library/Myndir/Frettir/mynd_tru_1feb2020.PNG image/png 200
+    20190209042300 https://www.skra.is/library/Myndir/Frettir/mynd_trufelog_breytingar_feb19.PNG image/png 200
+    20190528200535 https://skra.is/library/Myndir/Frettir/mynd_trufelog_mai19.PNG image/png 200
+    20191115010623 https://skra.is/library/Myndir/Frettir/mynd_truokt.PNG image/png 200
+    20190416190414 https://www.skra.is/library/Myndir/Frettir/trufelogokt18.PNG image/png 200
+    20190217174639 https://skra.is/library/Myndir/Frettir/truoglifsskodunarfelsept18.PNG image/png 200
+    20190209042333 https://www.skra.is/library/Myndir/icon/fyrir-fagadila/byggingarfulltrui.svg image/svg+xml 200
+    20190209042313 https://www.skra.is/library/Myndir/icon/tru_lifsskodun_1.svg image/svg+xml 200
+    20241202054316 https://www.skra.is/library/Myndir/temp/core-js/modules/es.number.constructor.js text/html 404
+    20241202054313 https://www.skra.is/library/Myndir/temp/core-js/modules/es.reflect.construct.js text/html 404
+    20241202054304 https://www.skra.is/library/Myndir/temp/core-js/modules/es.regexp.constructor.js text/html 404
+    20131001174315 http://www.skra.is:80/library/Samnyttar-skrar-/Eydublod-thi/A-280-trufelag-lifsskodunarfelag.pdf application/pdf 200
+    20230321192644 https://www.skra.is/library/Samnyttar-skrar-/Frettir/202300309_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230415055840 https://www.skra.is/library/Samnyttar-skrar-/Frettir/202300411_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230113113842 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230110_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230314124941 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230209_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230521082932 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230509_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230614015214 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230613_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230711113647 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230711_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230811025844 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20230810_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20231109151625 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20231109_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20231214113616 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20231214_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240109092859 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240109_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240208112517 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240208_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240307114047 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240307_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240411113246 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240411_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240507233350 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240507_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240612165618 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240611_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240710052116 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240709_Tru_lifskodunarfelog%20(1).xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240815182538 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240815_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240913121026 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20240910_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20241008092304 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20241004_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20241107113514 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20241107_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20241218225826 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20241212_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250111143232 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20250109_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250214134511 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20250211_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250316105830 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20250311_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250414134651 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20250401_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250513113415 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20250513_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20251121111532 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20251111_Tru_lifskodunarfelog%20-%20Copy%20(1).xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20260109124345 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260109_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20260209113150 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260209_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20260313204949 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260310_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20260414120327 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260414_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20260512133517 https://www.skra.is/library/Samnyttar-skrar-/Frettir/20260512_Tru_lifskodunarfelog.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240416101445 https://www.skra.is/library/Samnyttar-skrar-/Frettir/fj_trufelagsskr_des18.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20230614175954 https://www.skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1april2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20241225170645 https://www.skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1des2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240715031238 https://skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1feb2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20210112005405 https://skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1jan2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20210711154852 https://www.skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1jul2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20251125112638 https://www.skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1juli2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220214152547 https://skra.is/library/Samnyttar-skrar-/Frettir/fjoldi_eftir_trufelogum_1mars2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220408052505 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1april2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20211206202806 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1des2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220711123952 https://skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1juli2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220608001021 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1juni2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220608034549 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1mai2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220308104936 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1mars2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20211102073206 https://skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1okt2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250324074646 https://www.skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1sept2021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220908104821 https://skra.is/library/Samnyttar-skrar-/Frettir/tafla_fjoldi_eftir_trufelogum_1sept2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221209061348 https://www.skra.is/library/Samnyttar-skrar-/Frettir/Tru_lifskounarfelog_des2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221007234236 https://www.skra.is/library/Samnyttar-skrar-/Frettir/Tru_lifskounarfelog_okt2022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240704090131 https://skra.is/library/Samnyttar-skrar-/Frettir/trufelagsskraning.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20220827233858 https://www.skra.is/library/Samnyttar-skrar-/Frettir/trufelog_1desember2019.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20191015100013 https://www.skra.is/library/Samnyttar-skrar-/Frettir/trufelog_1feb19.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250119100946 https://www.skra.is/library/Samnyttar-skrar-/Frettir/trufelog_1jan2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20190528200539 https://skra.is/library/Samnyttar-skrar-/Frettir/trufelog_1mai2019.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20191015084258 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Eignaskiptayfirl%C3%BDsing%20hesth%C3%BAs%20skipt%20%C3%AD%20st%C3%ADur.pdf application/pdf 200
+    20210621093509 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Fylgiskjal%20sept%20me%C3%B0%20lei%C3%B0beiningum%20%C3%A1%20skr%C3%A1ningart%C3%B6flu,%20%C3%BAtg%C3%A1fa%205.00.pdf application/pdf 200
+    20220129122425 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Lei%C3%B0beiningar text/html 404
+    20210507215655 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Lei%C3%B0beiningar%20Bygging%201.3.30.pdf application/pdf 200
+    20220129122350 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Lei%C3%B0beiningar%20me%C3%B0%20skr%C3%A1ningart%C3%B6flu%20%C3%BAtg%C3%A1fa%205,00.pdf application/pdf 200
+    20210621101201 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Lei%C3%B0beiningar%20me%C3%B0%20skr%C3%A1ningart%C3%B6flu%20%C3%BAtg%C3%A1fa%205,00_v2.pdf application/pdf 200
+    20191015085300 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/S%C3%BDnisgata%201.pdf application/pdf 200
+    20191015084342 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/S%C3%BDnisgata%202_ESK.pdf application/pdf 200
+    20191015220346 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/skr%C3%A1ningarreglur%20fasteignamats%20r%C3%ADkisins%20og%20f%C3%A9lag%20byggingafulltr%C3%BAa%202000.pdf application/pdf 200
+    20191015084110 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/skr%C3%A1ningarreglur%20fasteignamats%20r%C3%ADkisins%20og%20f%C3%A9lag%20byggingafulltr%C3%BAa%202005.pdf application/pdf 200
+    20220712201009 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/skr%C3%A1ningarreglur%20fasteignamats%20r%C3%ADkisins%20og%20f%C3%A9lag%20byggingafulltr%C3%BAa%202005.pdf?fbclid=IwAR3LRBBWg29UTCHp4JtuPs8I1Xj4XADxYs-ZgsulPhzY3u9wH755IfJ-dK4 application/pdf 200
+    20210507214818 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/tekklistiskraningartaflaokt18.pdf application/pdf 200
+    20210507230928 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/Vandam%C3%A1l%20vi%C3%B0%20tengingu%20vi%C3%B0%20Bygging.pdf application/pdf 200
+    20210507231525 https://www.skra.is/library/Samnyttar-skrar-/Fyrirtaeki-stofnanir/Byggingafulltruar/verklagafhendingbyggingokt18.pdf application/pdf 200
+    20150714034201 http://www.skra.is:80/library/Samnyttar-skrar-/Markadsfrettir/Breytingar-a-tru--og-lifsskodunarfelagsadild/Tr%C3%BAf%C3%A9lagsbreytingar%20-20150630.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20251231171913 https://www.skra.is/library/Samnyttar-skrar-/Markadurinn/Markadsfrettir/Breytingar-a-tru--og-lifsskodunarfelagsadild/Tr%C3%BAf%C3%A9lagsbreytingar%20-20151231.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20221007032014 https://skra.is/library/Samnyttar-skrar-/Markadurinn/Markadsfrettir/manadarvelta.hbsv/fjoldi_eftir_trufelogum_1juni2020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+== r18_est_smin_cdx
+  120 captures
+    20220817234040 https://www.siseministeerium.ee/en/activities/rahvusvaheline-koostoo/brexit text/html 200
+    20220817233952 https://www.siseministeerium.ee/en/activities/rahvusvaheline-koostoo/international-sanctions text/html 200
+    20240523161520 https://www.siseministeerium.ee/en/news/eestis-toimus-rahvusvaheline-terrorismivastane-oppus-athos text/html 200
+    20180321210021 https://www.siseministeerium.ee/et/eesmark-tegevused/rahvastikutoimingud/rahvastikuregister text/html 200
+    20250413003439 https://www.siseministeerium.ee/et/eesmark-tegevused/rahvastikutoimingud/rahvastikuregisterhttps://www.eesti.ee/portaal/rrteenus.index text/html 404
+    20250716112612 https://www.siseministeerium.ee/et/eesmark-tegevused/rahvastikutoimingud/rahvastikuregisterhttps://www.riha.ee/Infos%C3%BCsteemid/Vaata/rr text/html 404
+    20181118101335 https://www.siseministeerium.ee/et/eesmark-tegevused/rahvusvaheline-ja-euroopa-liidu-koostoo/'+o+' text/html 404
+    20180831200150 https://www.siseministeerium.ee/et/eesmark-tegevused/rahvusvaheline-ja-euroopa-liidu-koostoo/eesti-euroopa-liidu-noukogu-eesistumine text/html 200
+    20160422122818 https://www.siseministeerium.ee/et/public/avaldus_elukohatoendi_voi_rahvastikuregistri_valjavotte_valjastamiseks.pdf text/html 404
+    20190820055319 https://www.siseministeerium.ee/et/rahvastikuregistri-ametnikuportaali-ja-x-tee-uldtingimused text/html 200
+    20190820062557 https://www.siseministeerium.ee/et/rahvastikuregistri-menetlustarkvara-kasutamise-uldtingimused text/html 200
+    20200810185817 https://www.siseministeerium.ee/et/rahvusvahelised-sanktsioonid-piiravad-meetmed text/html 200
+    20150622211515 https://www.siseministeerium.ee/et/tegevusvaldkond/ruumiline-planeerimine/rahvusvaheline-koostoo text/html 200
+    20150622211152 https://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvastikutoimingud/rahvastikuregister text/html 200
+    20250505113846 https://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvastikutoimingud/rahvastikuregister. text/html 404
+    20221016123338 http://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvastikutoimingud/rahvastikuregisterTiit unk 301
+    20150622211531 https://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvusvaheline-ja-euroopa-liidu-koostoo text/html 200
+    20170406060555 https://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvusvaheline-ja-euroopa-liidu-koostoo/'+o+' text/html 404
+    20170301015351 https://www.siseministeerium.ee/et/tegevusvaldkonnad/rahvusvaheline-ja-euroopa-liidu-koostoo/eesti-euroopa-liidu-noukogu-eesistumine text/html 200
+    20200924051300 https://www.siseministeerium.ee/et/uudised/avanes-taotlusvoor-kultuuri-ja-spordiprogrammi-valjatootamiseks-rahvusvahelise-kaitse text/html 200
+    20201106072331 https://www.siseministeerium.ee/et/uudised/eestis-toimus-rahvusvaheline-terrorismivastane-oppus-athos text/html 200
+    20190822113741 https://www.siseministeerium.ee/et/uudised/elukohaandmed-tasub-rahvastikuregistris-hoida-tapsetena text/html 200
+    20200815173744 https://www.siseministeerium.ee/et/uudised/rahvastikuregistri-andmete-oigsuse-tagamiseks-igauhe-panus-oluline text/html 200
+    20201127023225 https://www.siseministeerium.ee/et/uudised/rahvastikuregistris-olevate-elukohaandmete-oigsust-saab-kontrollida-ja-vajadusel-muuta-e text/html 200
+    20240612213453 https://www.siseministeerium.ee/et/uudised/rahvastikuregistrisse-lisandub- text/html 404
+    20240612212815 http://www.siseministeerium.ee/et/uudised/rahvastikuregistrisse-lisandub-tulevikus-inimeste-viibimiskoht text/html 301
+    20201026013902 https://www.siseministeerium.ee/et/uudised/rahvastikuregistrit-haldab-uuest-aastast-smit text/html 200
+    20240808235912 https://www.siseministeerium.ee/et/uudised/rahvusvaheline-tooruhm-arutab-tallinnas- text/html 404
+    20240809001157 http://www.siseministeerium.ee/et/uudised/rahvusvaheline-tooruhm-arutab-tallinnas-laanemere-keskkonnaohtusid text/html 301
+    20200924053835 https://www.siseministeerium.ee/et/uudised/siseministeerium-kuulutab-valja-taotlusvooru-eesti-keele-opetamiseks-rahvusvahelise-kaitse-0 text/html 200
+    20200924055723 https://www.siseministeerium.ee/et/uudised/siseministeerium-otsib-partnerit-kogukondades-koostoourituste-korraldamiseks-rahvusvahelise text/html 200
+    20200921192653 https://www.siseministeerium.ee/et/uudised/siseministeerium-otsib-partnerit-rahvusvahelise-kaitse-saajatele-suunatud-kohanemisprogrammi text/html 200
+    20211024211727 https://www.siseministeerium.ee/et/uudised/siseministeerium-soovitab-enne-kov-valimisi-oma-rahvastikuregistri-andmed-ule-vaadata text/html 200
+    20190822112119 https://www.siseministeerium.ee/et/uudised/uus-rahvastikuregistri-seadus-annab-rahvastikust-tapsema-ulevaate text/html 200
+    20150922111926 https://www.siseministeerium.ee/et/uudised/valitsus-kiitis-heaks-muudatused-rahvusvahelise-kaitse-andmisel text/html 200
+    20251017083645 https://siseministeerium.ee/korduma-kippuvad-kusimused-rahvusvahelise-kaitse-oigustiku-reformi-kohta text/html 200
+    20110528200718 http://www.siseministeerium.ee:80/president-ilves-rahvusvaheline-koostoo-suuronnetuste-korral-on-elutahtis/ text/html 200
+    20160305094141 http://siseministeerium.ee/public/avaldus_elukohatoendi_voi_rahvastikuregistri_valjavotte_valjastamiseks.pdf unk 301
+    20110601092917 http://www.siseministeerium.ee:80/public/rahvastikuregister_A4voldik.pdf application/pdf 200
+    20211208124025 https://siseministeerium.ee/rahvastikuregistri-ametnikuportaali-ja-x-tee-uldtingimused text/html 200
+    20231208130310 https://www.siseministeerium.ee/rahvastikuregistri-andmelao-kasutamise-uldtingimused text/html 200
+    20231014111532 https://www.siseministeerium.ee/rahvastikuregistri-andmete-valjastamise-kkk text/html 200
+    20250709114953 https://www.siseministeerium.ee/rahvastikuregistri-andmetele-juurdepaasu-menetlemise-infosusteemi-kasutusjuhend text/html 200
+    20211205122210 https://www.siseministeerium.ee/rahvastikuregistri-menetlustarkvara-kasutamise-uldtingimused text/html 200
+    20100123183335 http://www.siseministeerium.ee:80/rahvastikuregistrisse-tehti-2009-aastal-ule-20-miljoni-paringu/ text/html 200
+    20230513235926 https://siseministeerium.ee/rahvastikuregistrist-andmete-valjastamine text/html 200
+    20211202184202 https://www.siseministeerium.ee/rahvusvahelised-sanktsioonid-piiravad-meetmed text/html 200
+    20110901062707 http://www.siseministeerium.ee:80/siseminister-tanab-rahvusvahelisel-kriisireguleerimisoppusel-osalenud-inimesi-2/ text/html 200
+    20250709115059 https://www.siseministeerium.ee/sites/default/files/2021-11/rahvastikuregistri_juhend.png image/png 200
+    20230124114009 https://www.siseministeerium.ee/sites/default/files/2023-01/Rahvastikuregistri%20andmed.png image/png 200
+    20230810113747 https://www.siseministeerium.ee/sites/default/files/2023-08/rahvastikuregister.png image/png 200
+    20241003054128 http://www.siseministeerium.ee/sites/default/files/docu-ments/2023-06/Rahvusvahelise%20kaitse%20taotlejate%20ja%20tagasisaadetavate%20 text/html 301
+    20241003070621 http://www.siseministeerium.ee/sites/default/files/docu-ments/2023-06/Rahvusvahelise%20kaitse%20taotlejate%20ja%20tagasisaadetavate%20n%C3%B5ustamisteenuse%20anal%C3%BC%C3%BCs.pdf text/html 301
+    20240702035708 https://siseministeerium.ee/sites/default/files/documents/2020-12/2011_eestis_rahvusvahelise_kaitse_saanud_isikute_olukord_ja_integreeritus_1.pdf application/pdf 200
+    20240702035721 https://siseministeerium.ee/sites/default/files/documents/2020-12/2011_rahvusvahelise_kaitse_oigusanalyys_1.pdf application/pdf 200
+    20240702035731 https://siseministeerium.ee/sites/default/files/documents/2020-12/Euroopa%20Liidu%20ja%20rahvusvaheliste%20%C3%B5igusaktide%20anal%C3%BC%C3%BCs%20identiteedihalduse%20valdkonnas%202018.pdf application/pdf 200
+    20240702035611 https://siseministeerium.ee/sites/default/files/documents/2020-12/Rahvusvaheliste%20kaitse%20saajate%20%C3%BCmberasustamise%20ja%20-paigutamise%20programmides%20osalemise%20v%C3%B5imalikud%20riskid%20Eesti%20sisejulgeolekule.pdf application/pdf 200
+    20240630085038 https://siseministeerium.ee/sites/default/files/documents/2022-10/rahvastikuregistris%20leiduvad%20nimed_01%2002%202018.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240630085045 https://siseministeerium.ee/sites/default/files/documents/2022-10/rahvastikuregistris%20leiduvad%20nimed_08%2002%202016.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240630085032 https://siseministeerium.ee/sites/default/files/documents/2022-10/rahvastikuregistris%20leiduvad%20nimed_19%2005%202020.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240630085017 https://siseministeerium.ee/sites/default/files/documents/2022-10/rahvastikuregistris%20leiduvad%20nimed_23%2005%202022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20241003035240 http://www.siseministeerium.ee/sites/default/files/documents/2023-06/Rahvusvahelise%20kaitse%20taotlejate%20ja%20 text/html 301
+    20240702035451 https://siseministeerium.ee/sites/default/files/documents/2023-06/Rahvusvahelise%20kaitse%20taotlejate%20ja%20tagasisaadetavate%20n%C3%B5ustamisteenuse%20anal%C3%BC%C3%BCs.pdf application/pdf 200
+    20250110050133 https://siseministeerium.ee/sites/default/files/documents/2023-07/Varjupaiga-,%20R%C3%A4nde-%20ja%20Integratsioonifondi%20meetme%201.2%20%E2%80%9ESotsiaalvaldkonnas%20kolmandate%20riikide%20kodanike,%20sh%20rahvusvahelise%20kaitse%20taotlejate%20ja%20kaitse%20saanute%20vastuv%C3%B5tutingimuste%20t%C3%B5hustamine%E2%80%9C%20toetuse%20andmise%20ti.pdf text/html 403
+    20240630085011 https://siseministeerium.ee/sites/default/files/documents/2023-08/rahvastikuregistris%20leiduvad%20nimed_%2027%2007%202023.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20240807164633 https://www.siseministeerium.ee/sites/default/files/documents/2023-09/Rahvastikuregister_2023.ppt application/vnd.ms-powerpoint 200
+    20250110171635 https://siseministeerium.ee/sites/default/files/documents/2023-09/Varjupaiga-,%20R%C3%A4nde-%20ja%20Integratsioonifondi%20meetme%202.3%20Tugiisikuteenus%20rahvusvahelise%20kaitse%20saajatele%20toetuse%20andmise%20tingimused_0.pdf text/html 403
+    20250607042254 https://info@siseministeerium.ee/sites/default/files/documents/2024-10/Rahvastikuregister%202024.pptx application/vnd.openxmlformats-officedocument.presentationml.presentation 200
+    20260303183943 https://www.siseministeerium.ee/sites/default/files/documents/2024-11/Rahvastikuregistri%20seaduse%20juur- text/html 404
+    20241119201643 https://www.siseministeerium.ee/sites/default/files/documents/2024-11/Rahvastikuregistri%20seaduse%20juurdep%C3%A4%C3%A4suregulatsiooni%20vastavus%20isikuandmete%20kaitse%20%C3%BCldm%C3%A4%C3%A4rusele.pdf application/pdf 200
+    20250529145852 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/Rahvastikuregistris%20leiduvad%20nimed%202021.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250529145845 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/Rahvastikuregistris%20leiduvad%20nimed%202022.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250529145837 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/Rahvastikuregistris%20leiduvad%20nimed%202023.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250529145904 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/rahvastikuregistris%20leiduvad%20nimed_01%2002%202018%20%281%29.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250529145911 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/rahvastikuregistris%20leiduvad%20nimed_08%2002%202016.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250529145859 https://vabatahtlikud@siseministeerium.ee/sites/default/files/documents/2025-01/rahvastikuregistris%20leiduvad%20nimed_19%2005%202020%20%281%29.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+    20250602164415 https://info@siseministeerium.ee/sites/default/files/documents/2025-05/Ettekirjutused%20rahvastikuregistri%20seaduse%20alusel_1.pdf application/pdf 200
+    20250702025003 https://siseministeerium.ee/sites/default/files/documents/2025-06/Rahvusvahelise%20kaitse%20saajate%20perekonnaliikmete%20taas%C3%BChinemise%20regulatsiooni%20anal%C3%BC%C3%BCs.pdf application/pdf 200
+    20260510114449 https://www.siseministeerium.ee/sites/default/files/documents/2025-12/Ettekirjutused%20rahvastikuregistri%20seaduse%20alusel.pdf application/pdf 200
+    20160527031253 https://www.siseministeerium.ee/sites/default/files/dokumendid/avaldus_elukohatoendi_voi_rahvastikuregistri_valjavotte_valjastamiseks.pdf application/pdf 200
+    20190917124358 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvastiku-statistika/19a_avaldus_elukohatoendi_rahvastikuregistri_valjavotte_valjastamiseks_2019_eng.pdf application/pdf 200
+    20190917124146 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvastiku-statistika/avaldus_elukohatoendirahvastikuregistri_valjavotte_saamiseks_est.pdf application/pdf 200
+    20211123035958 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvastikutoimingud/avaldus_elukohatoendirahvastikuregistri_valjavotte_saamiseks_est_muudetav.pdf text/html 404
+    20260829053212 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_E text/html 404
+    20170406081100 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_ELi_koostoo/annika_haas125_1.jpg image/jpeg 200
+    20170406055520 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_ELi_koostoo/annika_haas168_1.jpg image/jpeg 200
+    20160527024649 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_ELi_koostoo/inimoiguste_juhend_toimetatud.pdf application/pdf 200
+    20181118124119 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_ELi_koostoo/IT-agentuur/euroopa_liidu_it-agentuuri_peahoone_2.jpg image/jpeg 200
+    20181118142304 https://www.siseministeerium.ee/sites/default/files/dokumendid/Rahvusvaheline_ja_ELi_koostoo/IT-agentuur/euroopa_liidu_it-agentuuri_peahoone_3.jpg image/jpeg 200
+    20160527103250 https://www.siseministeerium.ee/sites/default/files/dokumendid/usuasjad/valjavote_rahvusvahelise_eraoiguse_seadusest_25.03.2015.pdf application/pdf 200
+    20240630083314 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Kodakondsus_ja_r2nne/2011_eestis_rahvusvahelise_kaitse_saanud_isikute_olukord_ja_i text/html 404
+    20160607060651 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Kodakondsus_ja_r2nne/2011_eestis_rahvusvahelise_kaitse_saanud_isikute_olukord_ja_integreeritus.pdf application/pdf 200
+    20160607063052 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Kodakondsus_ja_r2nne/2011_rahvusvahelise_kaitse_oigusanalyys.pdf application/pdf 200
+    20160607063116 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Kodakondsus_ja_r2nne/2013_varjupaigataotlejatele_ja_rahvusvahelise.pdf application/pdf 200
+    20260109001332 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Kodakondsus_ja_r2nne/2013_varjupaigataotlejatele_ja_rahvusvahelise.pdfV%C3%A4lismaalasele text/html 404
+    20160607055529 https://www.siseministeerium.ee/sites/default/files/dokumendid/Uuringud/Regionaalhaldus_ja_maavalitsused/2014_maavalitsuste_osalemine_rahvusvahelistes_koostooorganisatsioonides.pdf application/pdf 200
+    20150623005627 https://www.siseministeerium.ee/sites/default/files/pildid/avaleht-rahvastikuregister.png image/png 200
+    20230124113656 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2023-01/Rahvastikuregistri%20andmed.png image/png 200
+    20230124113702 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2023-01/Rahvastikuregistri%20andmed.png?itok=8VRJkkxt image/png 200
+    20230810113523 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2023-08/rahvastikuregister.png image/png 200
+    20230810113655 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2023-08/rahvastikuregister.png?itok=KcGdR0BJ warc/revisit -
+    20251009121828 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2025-10/Rahvastikuregister_pilt.png image/png 200
+    20251009121830 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/2025-10/Rahvastikuregister_pilt.png?itok=599QfR7I image/png 200
+    20211121041117 https://www.siseministeerium.ee/sites/default/files/styles/crop_rotate_full/public/imported/rahvastikuregister.png?itok=Q06VbOhD image/png 200
+    20211102025508 https://www.siseministeerium.ee/sites/default/files/styles/frontpage_first_news_thumbnail/public/news-cover-images/rahvastikuregister.png?itok=5JHFRVaP image/png 200
+    20211103034433 https://www.siseministeerium.ee/sites/default/files/styles/news_detail_cover_image/public/news-cover-images/rahvastikuregister.png image/png 200
+    20211103034123 https://www.siseministeerium.ee/sites/default/files/styles/news_detail_cover_image/public/news-cover-images/rahvastikuregister.png?itok=GutTvr9d image/png 200
+    20230124113940 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2023-01/Rahvastikuregistri%20andmed.png image/png 200
+    20230124113957 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2023-01/Rahvastikuregistri%20andmed.png?itok=AoaQV3QK warc/revisit -
+    20230810113758 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2023-08/rahvastikuregister.png image/png 200
+    20230810113800 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2023-08/rahvastikuregister.png?itok=OHvfc7R7 image/png 200
+    20251009121909 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2025-10/Rahvastikuregister_pilt.png image/png 200
+    20251009121953 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/2025-10/Rahvastikuregister_pilt.png?itok=UEkGdxMy image/png 200
+    20240716213456 https://siseministeerium.ee/sites/default/files/styles/news_thumbnail_full/public/imported/rahvastikuregister.png?itok=0BicnQKe image/png 200
+    20211121034012 https://www.siseministeerium.ee/sites/default/files/styles/news_thumbnail_medium/public/imported/rahvastikuregister.png?itok=gx0KI7oU image/png 200
+    20240905065713 https://siseministeerium.ee/sites/default/files/styles/opengraph/public/2023-01/Rahvastikuregistri%20andmed.png image/png 200
+    20240702040853 https://siseministeerium.ee/sites/default/files/styles/opengraph/public/2023-01/Rahvastikuregistri%20andmed.png?itok=cjqHKaW3 image/png 200
+    20240917234509 https://siseministeerium.ee/sites/default/files/styles/opengraph/public/2023-08/rahvastikuregister.png image/png 200
+    20240705040828 https://siseministeerium.ee/sites/default/files/styles/opengraph/public/2023-08/rahvastikuregister.png?itok=WaRHsRcU image/png 200
+    20251009121850 https://www.siseministeerium.ee/sites/default/files/styles/opengraph/public/2025-10/Rahvastikuregister_pilt.png image/png 200
+== r18_lva_od_parish
+  1 hits
+    TSG11-01.px | /tautassk/demogr/tsk2011 | Resident population on 1 March 2011 by territorial unit and sex
+== r18_lva_od_lang
+  20 hits
+    PIA77.px | /apsekojumi/pieaug_izgl | Mother tongue and language used at home by region in 2022 (per cent of the population in the relevant group)
+    IZG100.px | /sociala/izgl/vispskolas | General full-time school enrolment by language of instruction (at the beginning of the school year; excluding special schools and grades)
+    TSK00-106.px | /tautassk/taut/tsk2000 | Population by mother tongue and more widespread language skills
+    PIA74.px | /apsekojumi/pieaug_izgl | Foreign language skills by language, sex, age, educational attainment and labour status in 2022 (aged 25-64/per cent of population in the respective age group)
+    PIA78.px | /apsekojumi/pieaug_izgl | Language skills by sex, age, educational attainment, labour status and region (population aged 25-64/per cent of population in the respective age group)
+    IZG050.px | /sociala/izgl/pirmsskolas | Language of instruction in pre-school establishments (at the beginning of the school year)
+    TSG11-R04.px | /tautassk/riga/tsk2011 | Population in Riga neighbourhoods by language mostly spoken at home; on 1 March 2011
+    PIA75.px | /apsekojumi/pieaug_izgl | Level of the best-known foreign languages in 2022 (people aged 25-64)
+    TSG11-08.px | /tautassk/taut/tsk2011 | Resident population of Latvia by main language spoken at home and use of latgalian, subtype of latvian language, on a daily basis by age group; on 1 March 2011
+    TSG11-071.px | /tautassk/taut/tsk2011 | Ethnicities of resident population in statistical regions, cities under state jurisdiction and counties by language mostly spoken at home; on 1 March 2011
+    TSK00-105.px | /tautassk/taut/tsk2000 | Population by ethnicity and mother tongue
+    TSG11-07.px | /tautassk/taut/tsk2011 | Resident population in statistical regions, cities under state jurisdiction and counties by sex, language mostly spoken at home and age group; on 1 March 2011
+    IZG110.px | /sociala/izgl/vispskolas | Teaching of foreign languages in the general schools (at the beginning of the school year)
+    A_TUG230.px | /arhivs/a_turisms | Evaluation of the trip to Latvia (%), 1999-2011
+    ARA37.px | /apsekojumi/arodizgl/1999_2005 | Time spent in vocational training by field of study and size of enterprise in 2005 (%)
+    ARA502.px | /apsekojumi/arodizgl/2010_2015_2020 | Main skills targeted by CVT courses by type of skill and size of enterprise (% of enterprises providing CVT courses)
+    PIA70.px | /apsekojumi/pieaug_izgl | Reasons for not participating in adult education by sex, age and educational attainment (per cent)
+    PIA71.px | /apsekojumi/pieaug_izgl | Most important reasons for not participating in adult education (per cent)
+    ARA36.px | /apsekojumi/arodizgl/1999_2005 | Time spent on vocational training by field of study and kind of activity of enterprise in 2005 (%)
+    ARA501.px | /apsekojumi/arodizgl/2010_2015_2020 | Main skills targeted by CVT courses by type of skill and kind of activity of enterprise (% of enterprises providing CVT courses)
