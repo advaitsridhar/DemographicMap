@@ -196,6 +196,25 @@ def last_counts(units: list[str], series: dict[int, dict[str, float]], names: di
     return last
 
 
+def region_note(region: str, drawn_in: dict[str, str], spelled: dict[str, str]) -> str:
+    """What a region's note says about the municipalities it is summed from.
+
+    ``drawn_in`` is today's number -> the region the map draws that
+    municipality in (its 2017 number's), and ``spelled`` today's number -> its
+    name as MAN09000 spells it. A municipality renumbered into another region
+    since 2017 is summed where the map draws it, and both regions say so.
+    """
+    came = sorted(spelled[n] for n in drawn_in
+                  if drawn_in[n] == region and REGION[n[0]] != region)
+    went = sorted(f"{spelled[n]} (drawn in the {drawn_in[n]})" for n in drawn_in
+                  if REGION[n[0]] == region and drawn_in[n] != region)
+    return (" Summed from the municipalities the map draws in the region."
+            + (f" That includes {', '.join(came)}, which Hagstofa has numbered in another "
+               "region since it was renumbered." if came else "")
+            + (f" It leaves out {', '.join(went)}, which Hagstofa now numbers here."
+               if went else ""))
+
+
 def read(url: str, year: str) -> tuple[dict[str, AgeSex], dict[str, float], dict[str, str]]:
     meta = {v["code"]: v for v in request_json(url, pause=PAUSE, attempts=ATTEMPTS)["variables"]}
     muni, age, when, sex = "Sveitarfélag", "Aldur", "Ár", "Kyn"
@@ -386,7 +405,10 @@ def main() -> int:
     regions: dict[str, AgeSex] = defaultdict(AgeSex)
     region_total: dict[str, float] = defaultdict(float)
     drawn_in = {n: REGION[c[0]] for c, n in today.items()}
-    moved = sorted(f"{now_names[n]} ({drawn_in[n]}, numbered in {REGION[n[0]]})"
+    # MAN02005 answers in ASCII ("Sveitarfelagid Hornafjordur"); a note names
+    # the place as MAN09000 spells it.
+    spelled = {n: names[c] for c, n in today.items()}
+    moved = sorted(f"{spelled[n]} ({drawn_in[n]}, numbered in {REGION[n[0]]})"
                    for n in drawn_in if REGION[n[0]] != drawn_in[n])
     log(f"  summed into the region the map draws them in, not their number's: {moved}")
     for code in now_units:
@@ -399,20 +421,9 @@ def main() -> int:
         shape = admin1.get(fold(region))
         if shape is None:
             raise SystemExit(f"iceland: region {region!r} has no polygon")
-        # A municipality renumbered into another region since 2017 is summed
-        # where the map draws it, and the note says which way it went.
-        came = sorted(now_names[n] for n in drawn_in
-                      if drawn_in[n] == region and REGION[n[0]] != region)
-        went = sorted(f"{now_names[n]} (drawn in the {drawn_in[n]})" for n in drawn_in
-                      if REGION[n[0]] == region and drawn_in[n] != region)
         fields = ages.fields(year=int(year), source=f"{SOURCE}, MAN02005", url=NOW_URL,
-                             date=f"1 January {year}", extra_note=(
-                                 " Summed from the municipalities the map draws in the region."
-                                 + (f" That includes {', '.join(came)}, which Hagstofa has "
-                                    "numbered in another region since it was renumbered."
-                                    if came else "")
-                                 + (f" It leaves out {', '.join(went)}, which Hagstofa now "
-                                    "numbers here." if went else "")))
+                             date=f"1 January {year}",
+                             extra_note=region_note(region, drawn_in, spelled))
         fields["population"]["value"] = int(round(region_total[region]))
         records.append(record(
             f"ISL-HAG-{fold(region)}", shape["name"], level="admin1", parent="ISL",

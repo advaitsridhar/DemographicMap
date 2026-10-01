@@ -487,6 +487,22 @@ class IcelandVintage(unittest.TestCase):
         self.assertIn("evacuated on 10 November 2023", note)
         self.assertIn("819", note)
 
+    def test_a_region_names_the_municipality_renumbered_out_of_it_in_icelandic(self):
+        # Hornafjörður: 7708 in the East in 2017, 8401 in the South today, and
+        # drawn in the East. MAN02005 spells it in ASCII; the notes do not.
+        drawn_in = {"8401": "Eastern Region", "7300": "Eastern Region",
+                    "8000": "Southern Region"}
+        spelled = {"8401": "Sveitarfélagið Hornafjörður", "7300": "Fjarðabyggð",
+                   "8000": "Vestmannaeyjabær"}
+        east = iceland.region_note("Eastern Region", drawn_in, spelled)
+        south = iceland.region_note("Southern Region", drawn_in, spelled)
+        self.assertIn("includes Sveitarfélagið Hornafjörður", east)
+        self.assertIn("leaves out Sveitarfélagið Hornafjörður (drawn in the Eastern Region)",
+                      south)
+        self.assertNotIn("Fjarðabyggð", east)
+        self.assertEqual(iceland.region_note("Westfjords", drawn_in, spelled),
+                         " Summed from the municipalities the map draws in the region.")
+
 
 class PxwebLabels(unittest.TestCase):
     def test_the_baltic_registers_labels_are_placed(self):
@@ -514,6 +530,29 @@ class PxwebLabels(unittest.TestCase):
                 mock.patch.object(pxweb, "http_json", return_value=payload):
             areas, _ = pxweb.fetch("base", table)
         self.assertEqual(areas["37"]["counts"], {"Estonian": 8, "Not stated": 2})
+
+    def test_finlands_long_tail_of_languages_is_folded_and_its_shares_make_the_total(self):
+        table = pxweb.INSTANCES["FIN"]["tables"][0]
+        # A region of 100,000: the national languages, Sami among them however
+        # few, three languages under 0.05% each, the register's unknowns, and a
+        # language nobody here speaks.
+        counts = {"Finnish": 90_000, "Swedish": 8_000, "Sami": 10, "Russian": 1_500,
+                  "Other language": 440, "Wolof": 20, "Zulu": 15, "Tamil": 5,
+                  "Unknown": 10, "Ainu": 0}
+        rows, note = pxweb.composition(table, counts, 100_000)
+        got = {r["group"]: r["count"] for r in rows}
+        self.assertEqual(got, {"Finnish": 90_000, "Swedish": 8_000, "Sami": 10,
+                               "Russian": 1_500, "Other language": 490})
+        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, delta=0.2)
+        self.assertIn("also counts the 3 languages each under 0.05%", note)
+        self.assertIn("the 10 recorded as unknown -- 50 people in all", note)
+
+    def test_a_table_that_does_not_fold_only_loses_its_empty_rows(self):
+        table = pxweb.INSTANCES["LVA"]["tables"][0]
+        rows, note = pxweb.composition(table, {"Latvian": 900, "Romani": 1, "Jewish": 0},
+                                       901)
+        self.assertEqual([r["group"] for r in rows], ["Latvian", "Romani"])
+        self.assertEqual(note, table.note)
 
 
 class Lithuania2021(unittest.TestCase):

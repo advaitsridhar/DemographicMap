@@ -62,8 +62,20 @@ class Table:
                  geo_len: int | None = None, geo_stem: int | None = None,
                  geo_prefix: str | None = None, national: str | None = None,
                  withhold: dict[str, str] | None = None,
-                 relabel: dict[str, str] | None = None):
+                 relabel: dict[str, str] | None = None,
+                 fold_into: str | None = None, fold_keep: tuple[str, ...] = (),
+                 unknown: str | None = None):
         self.path = path
+        # A classification with a long tail -- Finland's register names 166
+        # languages -- is drawn as a list in which most rows read 0.0% and the
+        # shares sum to 99.3%. Where ``fold_into`` is set, every category under
+        # 0.05% of its unit is counted in that category instead (nordic_common.
+        # fold_small), except those in ``fold_keep``; the note says how many
+        # and how many people. ``unknown`` names the category that is no
+        # answer at all, so the note does not call it a language.
+        self.fold_into = fold_into
+        self.fold_keep = fold_keep
+        self.unknown = unknown
         # The office's category label -> the map's. The group tree files a
         # people by its English adjective ("Polish") and knows the residuals
         # only by the map's words ("Other", "Not stated", "Other or not
@@ -249,6 +261,11 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # most of the country twice, and neither label is a word is_total()
             # knows.
             drop=("01", "02"),
+            # The national languages are always listed, however few speak one
+            # in a region; the rest of the tail goes into the register's own
+            # "Other language", as finland.py does for the sub-regions.
+            fold_into="Other language", fold_keep=("Finnish", "Swedish", "Sami"),
+            unknown="Unknown",
             note="Mother tongue as recorded in the population register on 31 "
                  "December 2025. Finland registers one language per resident, "
                  "so these are shares of everyone rather than of the people "
@@ -624,6 +641,37 @@ def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]],
     log(f"    ...and to {summed:,.0f} against a published national {national:,.0f}")
 
 
+NOUNS = {"language": "languages", "religion": "religions", "ethnicity": "groups"}
+
+
+def composition(table: Table, counts: dict[str, float],
+                total: float | None) -> tuple[list[dict[str, Any]], str]:
+    """One unit's shares and their note.
+
+    A category with nobody in it says nothing a reader can use, so it is
+    dropped; where the table folds its tail (``Table.fold_into``), every
+    category under 0.05% of the unit is counted in the fold, and the note says
+    how many and how many people.
+    """
+    kept = {k: v for k, v in counts.items() if v}
+    note = table.note
+    if table.fold_into:
+        from .nordic_common import fold_small
+        folded, _n, people = fold_small(kept, total or sum(kept.values()), table.fold_into,
+                                        keep=table.fold_keep)
+        gone = set(kept) - set(folded)
+        unknown = kept.get(table.unknown, 0) if table.unknown in gone else 0
+        named = len(gone - {table.unknown})
+        if gone:
+            note += (f" '{table.fold_into}' also counts the {named} "
+                     f"{NOUNS.get(table.field, 'categories')} each under 0.05% of the "
+                     "people here" + (f", and the {int(round(unknown)):,} recorded as unknown"
+                                      if unknown else "")
+                     + f" -- {int(round(people)):,} people in all.")
+        kept = folded
+    return shares(kept, total=total), note
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -658,10 +706,8 @@ def main() -> int:
                 "aliases": [entry["name"]] if local.get(code) else [],
                 "fields": {}, "population": None, "notes": {}})
             slot["population"] = slot["population"] or entry["total"]
-            # A category with nobody in it says nothing a reader can use.
-            slot["fields"][table.field] = shares({k: v for k, v in entry["counts"].items() if v},
-                                                total=entry["total"])
-            slot["notes"][table.field] = table.note
+            slot["fields"][table.field], slot["notes"][table.field] = composition(
+                table, entry["counts"], entry["total"])
             slot["year"] = table.year
 
     source = {"field": "/".join(sorted({t.field for t in spec["tables"]})),
