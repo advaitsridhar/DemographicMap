@@ -1,69 +1,211 @@
-== r18b_fin_vaerak
-  32 items
-    11ra.px [t] 11ra -- Key figures on population by region, 1990-2025
-    11rb.px [t] 11rb -- Population and change in population size by sex, 1750-2025
-    11rc.px [t] 11rc -- Population according to age (5-year) and sex, 1865-2025
-    11rd.px [t] 11rd -- Population according to age (1-year 0-112) and sex, 1972-2025
-    11re.px [t] 11re -- Population according to age (1-year) and sex by area, 1972-2025
-    11rf.px [t] 11rf -- Population according to age (1-year) and sex by area and the regional division of each statistical reference year, 2003-2025
-    11rg.px [t] 11rg -- Citizenship according to age and sex by region, 1990-2025
-    11rh.px [t] 11rh -- Citizenship according to sex by municipality, 1990-2025
-    11rk.px [t] 11rk -- Finnish citizens with dual nationality by age and second nationality, 2000-2025
-    11rl.px [t] 11rl -- Language according to age and sex by region, 1990-2025
-    11rm.px [t] 11rm -- Language according to sex by municipality, 1990-2025
-    11rp.px [t] 11rp -- Country of birth according to age and sex by region, 1990-2025
-    11rq.px [t] 11rq -- Country of birth according to sex by municipality, 1990-2025
-    11rs.px [t] 11rs -- Origin and background country by language, age (1-year) and sex, 1990-2025
-    11rt.px [t] 11rt -- Origin and background country according to age group and sex by region, 1990-2025
-    11ru.px [t] 11ru -- Origin according to background continent by area, 1990-2025
-    11rv.px [t] 11rv -- Origin and background country by sex, by municipality, 1990-2025
-    11rx.px [t] 11rx -- Belonging to a religious community by age and sex, 1990-2025
-    11ry.px [t] 11ry -- Marital status by age (1-year 0-112) and sex, 1990-2025
-    11rz.px [t] 11rz -- Marital status by age (1-year), language and sex by area, 1990-2025
-    11s1.px [t] 11s1 -- Mean population according to age and sex by area, 1981-2025
-    11s2.px [t] 11s2 -- Finnish-speaking and Swedish-speaking population by age and sex and by area, 1990-2025
-    11s3.px [t] 11s3 -- Population according to urban-rural classification by age and sex, 2000-2025
-    11s5.px [t] 11s5 -- Population by month and area, 1990M01-2025M12
-    14x3.px [t] 14x3 -- Degree of urbanisation by area, 2023
-    14x4.px [t] 14x4 -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2023
-    14x5.px [t] 14x5 -- Urban settlements by population and population density, 2023
-    159s.px [t] 159s -- Population according to citizenship, country of birth, language and origin (overlap of the groups), 1990-2025
-    159t.px [t] 159t -- Numbers and shares of persons with immigrant background by area, 1990-2025
-    15al.px [t] 15al -- Degree of urbanisation by area, 2024
-    15am.px [t] 15am -- Population in urban settlements and sparsely populated areas by age, sex and municipality, 2024
-    15an.px [t] 15an -- Urban settlements by population and population density, 2024
-== r18b_fin_11ru
-  title: Population 31.12.
-  var 'alue_23_20260101' (Area) [elimination]: 309 values
-      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... KU976=Ylitornio; KU977=Ylivieska; KU980=Ylöjärvi; KU981=Ypäjä; KU989=Ähtäri; KU992=Äänekoski
-      code lengths {3: 1, 5: 308}; prefixes {'KU': 308, 'SSS': 1}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 3 -- SSS=WHOLE COUNTRY; KU049=Espoo; KU091=Helsinki
-  var 'syntypera_101_20180101' (Origin) [elimination]: 7 values
-      SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-      ALL: SSS=Total; 1=Persons with Finnish background total; 11=Persons with Finnish background, born in Finland; 12=Persons with Finnish background, born abroad; 2=Persons with foreign background total; 22=Persons with foreign background, born abroad; 21=Persons with foreign background, born in Finland
-  var 'sukupuoli_9_20180101' (Sex) [elimination]: 3 values
-      SSS=Total; 1=Males; 2=Females
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=Total
-  var 'valtio_19_20190101' (Background country) [elimination]: 9 values
-      SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; AFR=AFRICA; AME=AMERICA; AAS=ASIA; OSE=OCEANIA; MUU=OTHER OR UNKNOWN
-      /^(KU091|KU049|SK011|MK01|SSS) /: 1 -- SSS=TOTAL
-      ALL: SSS=TOTAL; 246=Finland; ULK=FOREIGN COUNTRIES, TOTAL; EUR=EUROPE; AFR=AFRICA; AME=AMERICA; AAS=ASIA; OSE=OCEANIA; MUU=OTHER OR UNKNOWN
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Information): 1 values
-      vaerak-vaesto=Population 31 Dec
-== r18b_fin_159t
-  title: Population 31 Dec
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'alue_23_20260101' (Area) [elimination]: 568 values
-      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7Lapland; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 North Ostrobothnia; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
-      code lengths {3: 18, 4: 89, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
-      /^(KU091|KU049|SK011|MK01|SSS) /: 5 -- SSS=WHOLE COUNTRY; KU049=Espoo; KU091=Helsinki; MK01=MK01 Uusimaa; SK011=SK011 Helsinki
-  var 'contentscode' (Information): 13 values
-      vaerak-vaesto=Population 31 Dec; vaesto_kansa_ulk=Citizens of foreign countries; vaesto_svaltio_ulk=Persons born abroad; vaesto_kieli_ulk=Foreign-language speakers; vaesto_tausta_ulk=Persons with foreign background; vaesto_kansa_ulk_p=Share of foreign citizens, % ... vaesto_kieli_ulk_p=Share of foreign-language speakers, %; vaesto_tausta_ulk_p=Share of persons with foreign background , %; ulkom_kansa_ulk_p=Share of foreign citizens among foreign citizens in the whole country, %; ulkom_svaltio_ulk_p=Share of persons born abroad among persons born abroad in the whole country, %; ulkom_kieli_ulk_p=Share of foreign-language speakers among foreign-language speakers in the whole country, %; ulkom_tausta_ulk_p=Share of persons with foreign background among persons with foreign backgr. in the whole country, %
-      code lengths {13: 1, 16: 2, 17: 3, 18: 4, 19: 2, 20: 1}; prefixes {'vaesto': 8, 'ulkom': 4, 'vaerak-vaesto': 1}
-      ALL: vaerak-vaesto=Population 31 Dec; vaesto_kansa_ulk=Citizens of foreign countries; vaesto_svaltio_ulk=Persons born abroad; vaesto_kieli_ulk=Foreign-language speakers; vaesto_tausta_ulk=Persons with foreign background; vaesto_kansa_ulk_p=Share of foreign citizens, %; vaesto_svaltio_ulk_p=Share of persons born abroad, %; vaesto_kieli_ulk_p=Share of foreign-language speakers, %; vaesto_tausta_ulk_p=Share of persons with foreign background , %; ulkom_kansa_ulk_p=Share of foreign citizens among foreign citizens in the whole country, %; ulkom_svaltio_ulk_p=Share of persons born abroad among persons born abroad in the whole country, %; ulkom_kieli_ulk_p=Share of foreign-language speakers among foreign-language speakers in the whole country, %; ulkom_tausta_ulk_p=Share of persons with foreign background among persons with foreign backgr. in the whole country, %
+
+=== deu_zensus
+   account set: True; password set: True
+
+## POST helloworld/logincheck [] (headers): HTTP 200, 185 bytes, application/json;charset=UTF-8
+   {"Status":"Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.","Username":"***"}
+
+## POST helloworld/logincheck [] (body): HTTP 200, 165 bytes, application/json;charset=UTF-8
+   {"Status":"Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.","Username":"GAST"}
+
+## POST find/find ['category', 'language', 'pagelength', 'term'] (headers): HTTP 200, 519 bytes, application/json;charset=UTF-8
+   0 matches of '"Code"\\s*:\\s*"[^"]+"\\s*,\\s*"Content"\\s*:\\s*"[^"]{0,160}"'
+
+## POST find/find ['category', 'language', 'pagelength', 'term'] (headers): HTTP 200, 2,666 bytes, application/json;charset=UTF-8
+   21 matches of '"Code"\\s*:\\s*"[^"]+"\\s*,\\s*"Content"\\s*:\\s*"[^"]{0,160}"'
+   - "Code":"1000A-1014","Content":"Personen: Geburtsland (Gruppen)"
+   - "Code":"1000A-1015","Content":"Personen: Geburtsländer (Häufigste Länder)"
+   - "Code":"1000A-1016","Content":"Personen: Geburtsländer"
+   - "Code":"1000A-1W14","Content":"Personen: Geburtsland (Gruppen)"
+   - "Code":"1000A-1W15","Content":"Personen: Geburtsländer (Häufigste Länder)"
+   - "Code":"1000A-1W16","Content":"Personen: Geburtsländer"
+   - "Code":"1000A-2005","Content":"Personen: Alter (10er-Jahresgruppen)/Alter (11 Altersklassen) - Geburtsland (Häufigste Länder)"
+   - "Code":"1000A-2008","Content":"Personen: Alter (5 Altersklassen) - Familienstand (ausführlich)/Geburtsland (Gruppen)"
+   - "Code":"1000A-2011","Content":"Personen: Alter (Jahresschritte) - Geburtsländer"
+   - "Code":"1000A-2016","Content":"Personen: Alter (7 Altersklassen) - Geburtsland (Gruppen)"
+   - "Code":"1000A-2029","Content":"Personen: Geschlecht - Geburtsland (Gruppen)/Geburtsländer"
+   - "Code":"1000A-2030","Content":"Personen: Geschlecht - Geburtsland (Häufigste Länder)"
+   - "Code":"1000A-2T39","Content":"Personen: Geschlecht - Geburtsland (Gruppen)/Familienstand/Familienstand (ausführlich)/Religion"
+   - "Code":"1000A-3032","Content":"Personen: Alter (Jahresschritte) - Geburtsländer - Geschlecht"
+   - "Code":"1000X-1011","Content":"Personen: Geburtsland (Gruppen)"
+   - "Code":"1000X-1012","Content":"Personen: Geburtsländer"
+   - "Code":"1000X-2004","Content":"Personen: Alter (5 Altersklassen) -\nFamilienstand/Familienstand (ausführlich)/Geburtsland\n(Gruppen)/Religion"
+   - "Code":"1000X-2008","Content":"Personen: Alter (Jahresschritte) - Staatsangehörigkeit\n(Kontinente/Länder)/Geburtsländer"
+   - "Code":"1000X-2013","Content":"Personen: Geschlecht - Geburtsland (Gruppen)"
+   - "Code":"1000X-2014","Content":"Personen: Geschlecht - Geburtsländer/Staatsangehörigkeit\n(Länder)"
+   - "Code":"1000X-3010","Content":"Personen: Alter (Jahresschritte) -\nGeburtsländer/Staatsangehörigkeit - Geschlecht"
+
+## POST find/find ['category', 'language', 'pagelength', 'term'] (headers): HTTP 200, 31,113 bytes, application/json;charset=UTF-8
+   190 matches of '"Code"\\s*:\\s*"[^"]+"\\s*,\\s*"Content"\\s*:\\s*"[^"]{0,160}"'
+   - "Code":"2000X-1001","Content":"Personen: Art der Auspendler"
+   - "Code":"2000X-1002","Content":"Personen: Art der Einpendler"
+   - "Code":"2000X-1003","Content":"Personen: Beruf (KldB 2010)"
+   - "Code":"2000X-1004","Content":"Personen: Beruf (Hauptgruppen ISCO-08)"
+   - "Code":"2000X-1005","Content":"Personen: Höchster beruflicher Abschluss (ausführlich)"
+   - "Code":"2000X-1006","Content":"Personen: Höchster Schulabschluss"
+   - "Code":"2000X-1007","Content":"Schüler: Klassenstufen"
+   - "Code":"2000X-1008","Content":"Schüler: Schulform"
+   - "Code":"2000X-1009","Content":"Personen: Migrationshintergrund"
+   - "Code":"2000X-1010","Content":"Personen: Migrationshintergrund und -erfahrung"
+   - "Code":"2000X-1011","Content":"Personen: Migrationserfahrung (Zuzugsjahr)"
+   - "Code":"2000X-1012","Content":"Personen: Migrationserfahrung (Zuzugsjahrzehnt)"
+   - "Code":"2000X-1013","Content":"Personen: Migrationshintergrund (Aufenthaltsdauer)"
+   - "Code":"2000X-1014","Content":"Personen: Migrationshintergrund (Länder)"
+   - "Code":"2000X-1015","Content":"Personen: Migrationshintergrund (Kontinente)"
+   - "Code":"2000X-1016","Content":"Personen: Erwerbsstatus"
+   - "Code":"2000X-1017","Content":"Personen: Erwerbsstatus (ausführlich)"
+   - "Code":"2000X-1018","Content":"Personen: Stellung im Beruf"
+   - "Code":"2000X-1019","Content":"Personen: Wirt.zweig Wirtschafts(unter)bereiche"
+   - "Code":"2000X-1020","Content":"Personen: Wirtschaftszweig"
+   - "Code":"2000X-1021","Content":"Personen: Wirtschaftszweig (Abschnitte)"
+   - "Code":"2000X-1022","Content":"Personen: Religion (ausführlich)"
+   - "Code":"2000X-2001","Content":"Personen: Erwerbsstatus - Alter\n(5er-Jahresgruppen)/Geschlecht"
+   - "Code":"2000X-2002","Content":"Personen: Erwerbsstatus - Alter (10er-Jahresgruppen/11\nAltersklassen)/Migrationshintergrund/Staatsangehörigkeit\n(Ausgewählte Länder)"
+   - "Code":"2000X-2003","Content":"Personen: Erwerbsstatus - Gebäudetyp (Größe)/Größe des\nprivaten Haushalts/Typ des privaten Haushalts (nach\nFamilien)"
+   - "Code":"2000X-2004","Content":"Personen: Erwerbsstatus - Größe der Kernfamilie/Typ der\nKernfamilie (nach Familien)"
+   - "Code":"2000X-2005","Content":"Personen: Erwerbsstatus (ausführlich) - Alter\n(10er-Jahresgruppen)/Geschlecht/Migrationshintergrund und\n-erfahrung"
+   - "Code":"2000X-2006","Content":"Personen: Erwerbsstatus (ausführlich) - Alter\n(5er-Jahresgruppen)/Familienstand\n(ausführlich)/Staatsangehörigkeit"
+   - "Code":"2000X-2007","Content":"Personen: Erwerbsstatus (ausführlich) - Typ des privaten\nHaushalts (nach Familien)"
+   - "Code":"2000X-2008","Content":"Personen: Erwerbsstatus (ausführlich)/Religion (ausführlich)\n- Größe der Kernfamilie/Typ der Kernfamilie (nach\nFamilien)/Typ der Kernfamilie (nach Lebensform)"
+   - "Code":"2000X-2009","Content":"Personen: Migrationshintergrund - Alter\n(5er-Jahresgruppen)/Staatsangehörigkeit"
+   - "Code":"2000X-2010","Content":"Personen: Migrationshintergrund - Alter (11\nAltersklassen)/Geschlecht/Staatsangehörigkeit"
+   - "Code":"2000X-2011","Content":"Personen: Migrationshintergrund - Alter (10er-Jahresgruppen)/Erwerbsstatus-/Familienstand-/Religion (ausführlich)"
+   - "Code":"2000X-2012","Content":"Personen: Migrationshintergrund - Größe des privaten\nHaushalts/Typ des privaten Haushalts (nach Familien)"
+   - "Code":"2000X-2013","Content":"Personen: Migrationshintergrund - Typ der Kernfamilie (nach\nFamilien)/Typ der Kernfamilie (nach Lebensform)"
+   - "Code":"2000X-2014","Content":"Personen: Migrationshintergrund und -erfahrung - Alter/Erwerbsstatus/Familienstand (ausführlich)/Geschlecht/Staatsangehörigkeit (Ausgew. Länder)"
+   - "Code":"2000X-2015","Content":"Personen: Migrationshintergrund und -erfahrung - Alter\n(Jahresschritte)"
+   - "Code":"2000X-2016","Content":"Personen: Migrationshintergrund und -erfahrung -\nEigentumsverhältnisse der Wohnung/Typ des\nprivaten Haushalts (nach Familien)"
+   - "Code":"2000X-2017","Content":"Personen: Migrationshintergrund und -erfahrung - Art der Wohnungsnutzung/Austattung der Wohnung/Fläche/Gebäudetyp/Haushaltsgröße/Haushaltstyp/Räume"
+   - "Code":"2000X-2018","Content":"Personen: Migrationshintergrund und -erfahrung - Art des\nGebäudes/Baujahr (Jahrzehnte)/Eigentumsform des\nGebäudes/Gebäudetyp (Bauweise)/Wohnungen im Gebäude"
+   - "Code":"2000X-2019","Content":"Personen: Migrationshintergrund und -erfahrung - Typ der\nKernfamilie (nach Familien)"
+   - "Code":"2000X-2020","Content":"Personen: Religion (ausführlich) -\nAlter/Familienstand/Geschlecht/Staatsangehörigkeit"
+   - "Code":"2000X-2021","Content":"Personen: Religion (ausführlich) - Alter/Erwerbsstatus\n(ausführlich)/Staatsangehörigkeit (Kontinente)"
+   - "Code":"2000X-2022","Content":"Personen: Religion (ausführlich) - Typ des privaten\nHaushalts (nach Familien)"
+   - "Code":"2000X-2023","Content":"Personen: Höchster beruflicher Abschluss - Alter/Erwerbsstatus (ausführlich)/Geschlecht/Migrationshintergrund/Religion (ausführlich)"
+   - "Code":"2000X-2024","Content":"Personen: Höchster beruflicher Abschluss - Art des\nGebäudes/Baujahr (Jahrzehnte)/Fläche der Wohnung (10\nm²-Intervalle)"
+   - "Code":"2000X-2025","Content":"Personen: Höchster beruflicher Abschluss - Typ der\nKernfamilie (nach Familien)"
+   - "Code":"2000X-2027","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) -\nAlter/Erwerbsstatus (ausführlich)/Familienstand\n(ausführlich)/Religion"
+   - "Code":"2000X-2028","Content":"Personen: Höchster beruflicher Abschluss\n(ausführlich)/Höchster Schulabschluss - Staatsangehörigkeit\n(Gruppen)"
+   - "Code":"2000X-2029","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) - Art\nder Wohnungsnutzung/Gebäudetyp (Bauweise)/Gebäudetyp (Größe)"
+   - "Code":"2000X-2030","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) -\nGröße des privaten Haushalts/Typ des privaten Haushalts\n(nach Familien)"
+   - "Code":"2000X-2031","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) - Typ\ndes privaten Haushalts (nach Lebensform)"
+   - "Code":"2000X-2032","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) -\nGröße der Kernfamilie/Typ der Kernfamilie (nach Familien)"
+   - "Code":"2000X-2033","Content":"Personen: Höchster beruflicher Abschluss (ausführlich) - Typ\nder Kernfamilie (nach Lebensform)"
+   - "Code":"2000X-2034","Content":"Personen: Höchster Schulabschluss -\nAlter/Familienstand/Geschlecht/Migrationshintergrund und\n-erfahrung/Staatsangehörigkeit (Ausgewählte Länder)"
+   - "Code":"2000X-2035","Content":"Personen: Höchster Schulabschluss - Religion (ausführlich)"
+   - "Code":"2000X-2036","Content":"Personen: Höchster Schulabschluss - Familienstand\n(ausführlich)/Höchster beruflicher Abschluss (ausführlich)"
+   - "Code":"2000X-2037","Content":"Personen: Höchster Schulabschluss - Alter\n(5er-Jahresgruppen)/Erwerbsstatus (ausführlich)/Höchster\nberuflicher Abschluss/Religion"
+   - "Code":"2000X-2038","Content":"Personen: Höchster Schulabschluss - Art der\nWohnungsnutzung/Gebäudetyp (Bauweise)"
+   - "Code":"2000X-2039","Content":"Personen: Höchster Schulabschluss - Typ der Kernfamilie\n(nach Lebensform)"
+   - "Code":"2000X-2040","Content":"Personen: Art der Einpendler -\nAlter/Familienstand/Geschlecht/Höchster beruflicher\nAbschluss/Migrationshintergrund und -erfahrung/Religion"
+   - "Code":"2000X-2041","Content":"Personen: Art der Einpendler - Wirt.zweig\nWirtschafts(unter)bereiche"
+   - "Code":"2000X-2042","Content":"Personen: Art der Einpendler - Alter\n(10er-Jahresgruppen)/Beruf (Bereiche KldB 2010)"
+   - "Code":"2000X-2043","Content":"Personen: Art der Einpendler - Stellung im\nBeruf/Wirtschaftszweige (Abschnitte)"
+   - "Code":"2000X-2044","Content":"Personen: Art der Auspendler -\nAlter/Familienstand/Geschlecht/Höchster beruflicher\nAbschluss/Migrationshintergrund und -erfahrung/Religion"
+   - "Code":"2000X-2045","Content":"Personen: Art der Auspendler - Wirt.zweig\nWirtschafts(unter)bereiche"
+   - "Code":"2000X-2046","Content":"Personen: Art der Auspendler - Alter (10er-Jahresgruppen)"
+   - "Code":"2000X-2047","Content":"Personen: Art der Auspendler - Beruf (Bereiche KldB\n2010)/Stellung im Beruf/Wirtschaftszweige (Abschnitte)"
+   - "Code":"2000X-2048","Content":"Personen: Beruf (Bereiche KldB 2010) - Familienstand\n(ausführlich)/Geschlecht/Migrationshintergrund und\n-erfahrung/Staatsangehörigkeit (Ausgewählte Länder)"
+   - "Code":"2000X-2049","Content":"Personen: Beruf (Bereiche KldB 2010) - Alter/Höchster\nberuflicher Abschluss/Höchster\nSchulabschluss/Religion/Stellung im Beruf"
+   - "Code":"2000X-2050","Content":"Personen: Beruf (Bereiche KldB 2010) - Typ des privaten\nHaushalts (nach Lebensform)"
+   - "Code":"2000X-2051","Content":"Personen: Beruf (Bereiche KldB 2010) - Typ der Kernfamilie\n(nach Lebensform)"
+   - "Code":"2000X-2052","Content":"Personen: Beruf (Hauptgruppen ISCO-08) - Geschlecht/Höchster\nberuflicher Abschluss (ausführlich)/Höchster Schulabschluss"
+   - "Code":"2000X-2053","Content":"Personen: Beruf (Hauptgruppen ISCO-08) - Alter/Erwerbsstatus/Familienstand/Religion/Staatsangehörigkeit (Ausgewählte Länder)/Stellung im Beruf/Wirtschaftszweig"
+   - "Code":"2000X-2054","Content":"Personen: Beruf (Hauptgruppen ISCO-08) - Typ der Kernfamilie\n(nach Lebensform)"
+   - "Code":"2000X-2055","Content":"Personen: Beruf (Hauptgruppen ISCO-08) -\nMigrationshintergrund (ausgew. Länder)"
+   - "Code":"2000X-2056","Content":"Personen: Beruf (Hauptgruppen KldB 2010) - Alter\n(10er-Jahresgruppen)/Geschlecht"
+   - "Code":"2000X-2057","Content":"Personen: Beruf (Hauptgruppen KldB 2010) -\nMigrationshintergrund und -erfahrung/Wirtschaftszweige\n(Abschnitte)"
+   - "Code":"2000X-2058","Content":"Personen: Stellung im Beruf - Höchster beruflicher Abschluss\n(ausführlich)/Höchster Schulabschluss"
+   - "Code":"2000X-2059","Content":"Personen: Stellung im Beruf - Alter\n(10er-Jahresgruppen)/Geschlecht/Staatsangehörigkeit\n(Ausgewählte Länder)/Migrationshintergrund und -erfahrung"
+
+## POST catalogue/tables ['area', 'language', 'pagelength', 'selection'] (headers): HTTP 200, 59,265 bytes, application/json;charset=UTF-8
+   367 matches of '"Code"\\s*:\\s*"[^"]+"\\s*,\\s*"Content"\\s*:\\s*"[^"]{0,160}"'
+   - "Code":"1000A-0000","Content":"Personen: Bevölkerungszahl"
+   - "Code":"1000A-0001","Content":"Personen: Bevölkerungszahl und Fläche (Gemeinden)"
+   - "Code":"1000A-0002","Content":"Personenkennzahlen: Durchschnittliches Alter"
+   - "Code":"1000A-0003","Content":"Personenkennzahlen: Durchschnittliches Alter nach Geschlecht"
+   - "Code":"1000A-0004","Content":"Personenkennzahlen: Durchschnittliche Wohnfläche je Bewohner/-in"
+   - "Code":"1000A-0005","Content":"Personenkennzahlen: Durchschnittliche Wohnfläche je Bewohner/-in nach Einwanderungsgeschichte (ausführlich)"
+   - "Code":"1000A-0006","Content":"Personenkennzahlen: Durchschnittliche Wohnfläche je Bewohner/-in nach Staatsangehörigkeit (Gruppen)"
+   - "Code":"1000A-0007","Content":"Personenkennzahlen: Durchschnittliche Wohnfläche je Bewohner/-in nach Seniorenstatus eines privaten Haushalts"
+   - "Code":"1000A-0008","Content":"Personenkennzahlen: Durchschnittliche Wohnfläche je Bewohner/-in nach Typ des privaten Haushalts"
+   - "Code":"1000A-0009","Content":"Personenkennzahlen: Durchschnittliche Nettokaltmiete je Bewohner/-in"
+   - "Code":"1000A-0010","Content":"Personenkennzahlen: Durchschnittliche Nettokaltmiete je Bewohner/-in nach Alter (10er-Jahresgruppen)"
+   - "Code":"1000A-0011","Content":"Personenkennzahlen: Durchschnittliche Nettokaltmiete je Bewohner/-in nach Einwanderungsgeschichte (ausführlich)"
+   - "Code":"1000A-0012","Content":"Personenkennzahlen: Durchschnittliche Nettokaltmiete je Bewohner/-in nach Staatsangehörigkeit (Gruppen)"
+   - "Code":"1000A-0013","Content":"Personenkennzahlen: Durchschnittliche Nettokaltmiete je Bewohner/-in nach Wohndauer"
+   - "Code":"1000A-1001","Content":"Personen: Alter (10er-Jahresgruppen)"
+   - "Code":"1000A-1002","Content":"Personen: Alter (11 Altersklassen)"
+   - "Code":"1000A-1003","Content":"Personen: Alter (5 Altersklassen)"
+   - "Code":"1000A-1004","Content":"Personen: Alter (5er-Jahresgruppen)"
+   - "Code":"1000A-1005","Content":"Personen: Alter (7 Alterklassen)"
+   - "Code":"1000A-1006","Content":"Personen: Alter (Erwerbstätigkeits-Klassen)"
+   - "Code":"1000A-1007","Content":"Personen: Alter (Infrastrukturelle Altersgruppen)"
+   - "Code":"1000A-1008","Content":"Personen: Alter (Jahresschritte)"
+   - "Code":"1000A-1009","Content":"Personen: Alter (Lebensabschnitte/Lebensphasen)"
+   - "Code":"1000A-1010","Content":"Personen: Alter (Marktforschungsrelevante Altersgruppen)"
+   - "Code":"1000A-1011","Content":"Personen: Einwanderungsgeschichte (ausführlich)"
+   - "Code":"1000A-1012","Content":"Personen: Familienstand (ausführlich)"
+   - "Code":"1000A-1013","Content":"Personen: Familienstand"
+   - "Code":"1000A-1014","Content":"Personen: Geburtsland (Gruppen)"
+   - "Code":"1000A-1015","Content":"Personen: Geburtsländer (Häufigste Länder)"
+   - "Code":"1000A-1016","Content":"Personen: Geburtsländer"
+   - "Code":"1000A-1017","Content":"Personen: Geschlecht"
+   - "Code":"1000A-1018","Content":"Personen: Religion"
+   - "Code":"1000A-1019","Content":"Personen: Staatsangehörigkeit"
+   - "Code":"1000A-1020","Content":"Personen: Staatsangehörigkeit (Gruppen)"
+   - "Code":"1000A-1021","Content":"Personen: Staatsangehörigkeit (Häufigste Länder)"
+   - "Code":"1000A-1022","Content":"Personen: Staatsangehörigkeit (Kontinente)"
+   - "Code":"1000A-1023","Content":"Personen: Staatsangehörigkeit (Länder)"
+   - "Code":"1000A-1024","Content":"Personen: Art der Wohnungsnutzung"
+   - "Code":"1000A-1025","Content":"Personen: Art des Gebäudes"
+   - "Code":"1000A-1027","Content":"Personen: Fläche der Wohnung (10 m²-Intervalle)"
+   - "Code":"1000A-1028","Content":"Personen: Fläche der Wohnung (20 m²-Intervalle)"
+   - "Code":"1000A-1029","Content":"Personen: Größe des privaten Haushalts"
+   - "Code":"1000A-1030","Content":"Personen: Miete der Wohnung (1 €/m²-Schritte)"
+   - "Code":"1000A-1031","Content":"Personen: Miete der Wohnung (100 €-Schritte)"
+   - "Code":"1000A-1032","Content":"Personen: Miete der Wohnung (2 €/m²-Schritte)"
+   - "Code":"1000A-1033","Content":"Personen: Miete der Wohnung (250 €-Schritte)"
+   - "Code":"1000A-1034","Content":"Personen: Räume"
+   - "Code":"1000A-1035","Content":"Personen: Seniorenstatus eines privaten Haushalts (ausführlich)"
+   - "Code":"1000A-1036","Content":"Personen: Seniorenstatus eines privaten Haushalts"
+   - "Code":"1000A-1037","Content":"Personen: Typ des privaten Haushalts"
+   - "Code":"1000A-1038","Content":"Personen: Typ des privaten Haushalts (Familien)"
+   - "Code":"1000A-1039","Content":"Personen: Typ des privaten Haushalts (Kinder)"
+   - "Code":"1000A-1040","Content":"Personen: Typ des privaten Haushalts (Lebensform)"
+   - "Code":"1000A-1041","Content":"Personen: Wohnungen im Gebäude"
+   - "Code":"1000A-1042","Content":"Personen: Wohnungen im Gebäude (3 Klassen)"
+   - "Code":"1000A-1043","Content":"Personen: Größe der Kernfamilie"
+   - "Code":"1000A-1044","Content":"Personen: Typ der Kernfamilie"
+   - "Code":"1000A-1045","Content":"Personen: Typ der Kernfamilie (Familien)"
+   - "Code":"1000A-1046","Content":"Personen: Typ der Kernfamilie (Lebensform)"
+   - "Code":"1000A-1E18","Content":"Personen: Religion"
+   - "Code":"1000A-1K18","Content":"Personen: Religion"
+   - "Code":"1000A-1W01","Content":"Personen: Alter (10er-Jahresgruppen)"
+   - "Code":"1000A-1W02","Content":"Personen: Alter (11 Altersklassen)"
+   - "Code":"1000A-1W03","Content":"Personen: Alter (5 Altersklassen)"
+   - "Code":"1000A-1W04","Content":"Personen: Alter (5er-Jahresgruppen)"
+   - "Code":"1000A-1W05","Content":"Personen: Alter (7 Altersklassen)"
+   - "Code":"1000A-1W06","Content":"Personen: Alter (Erwerbstätigkeits-Klassen)"
+   - "Code":"1000A-1W07","Content":"Personen: Alter (Infrastrukturrelevante Altersgruppen)"
+   - "Code":"1000A-1W08","Content":"Personen: Alter (Jahresschritte)"
+   - "Code":"1000A-1W09","Content":"Personen: Alter (Lebensabschnitte/Lebensphasen)"
+   - "Code":"1000A-1W10","Content":"Personen: Alter (Marktforschungsrelevante Altersgruppen)"
+   - "Code":"1000A-1W11","Content":"Personen: Einwanderungsgeschichte (ausführlich)"
+   - "Code":"1000A-1W12","Content":"Personen: Familienstand (ausführlich)"
+   - "Code":"1000A-1W13","Content":"Personen: Familienstand"
+   - "Code":"1000A-1W14","Content":"Personen: Geburtsland (Gruppen)"
+   - "Code":"1000A-1W15","Content":"Personen: Geburtsländer (Häufigste Länder)"
+   - "Code":"1000A-1W16","Content":"Personen: Geburtsländer"
+   - "Code":"1000A-1W17","Content":"Personen: Geschlecht"
+   - "Code":"1000A-1W18","Content":"Personen: Religion"
+   - "Code":"1000A-1W19","Content":"Personen: Staatsangehörigkeit"
+
+## POST data/tablefile ['area', 'compress', 'format', 'language', 'name', 'regionalschluessel', 'regionalvariable'] (headers): HTTP 200, 27,409 bytes, application/zip
+   statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label 1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEOBL1;Bundesländer;05;Nordrhein-W
+
+## POST data/tablefile ['area', 'compress', 'format', 'language', 'name', 'regionalvariable'] (headers): HTTP 200, 27,409 bytes, application/zip
+   statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label 1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEOBL1;Bundesländer;05;Nordrhein-W
+
+## POST data/tablefile ['area', 'compress', 'format', 'language', 'name'] (headers): HTTP 200, 27,409 bytes, application/zip
+   statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label 1000A;Bevölkerung kompakt (Gebietsstand 15.05.2022);STAG;Stichtag;2022-05-15;GEOBL1;Bundesländer;05;Nordrhein-W
