@@ -60,6 +60,52 @@ class BindTest(unittest.TestCase):
         self.assertEqual(len(left_rows), 1)
         self.assertEqual(left_shapes, ["Merkez (P2)"])
 
+    def test_a_central_district_is_named_after_its_province(self):
+        admin1 = [{"id": "P1", "name": "Karabük"}, {"id": "P2", "name": "Kırıkkale"},
+                  {"id": "P3", "name": "Afyonkarahisar"}, {"id": "P4", "name": "Kütahya"}]
+        admin2 = [{"id": "A", "name": "Merkez", "parent": "P1"},
+                  {"id": "B", "name": "Kırıkkale (merkez)", "parent": "P2"},
+                  {"id": "C", "name": "Karakeçeli", "parent": "P2"},
+                  {"id": "D", "name": "Afyonkarahisar (Merkez İlçe)", "parent": "P3"},
+                  {"id": "E", "name": "Gediz Merkez", "parent": "P4"},
+                  {"id": "F", "name": "Kütahya merkez", "parent": "P4"}]
+        rows = [{"name": "Karabuk", "province": "Karabuk", "pcode": "1"},
+                {"name": "Kirikkale", "province": "Kirikkale", "pcode": "2"},
+                {"name": "Karakecili", "province": "Kirikkale", "pcode": "3"},
+                {"name": "Afyonkarahisar", "province": "Afyonkarahisar", "pcode": "4"},
+                {"name": "Gediz", "province": "Kutahya", "pcode": "5"},
+                {"name": "Kutahya", "province": "Kutahya", "pcode": "6"}]
+        got, left_rows, left_shapes = t.bind(rows, admin1, admin2)
+        self.assertEqual(got, {"1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F"})
+        self.assertEqual((left_rows, left_shapes), ([], []))
+
+    def test_a_polygon_named_like_a_row_keeps_its_own_name(self):
+        admin1 = [{"id": "P1", "name": "Denizli"}]
+        admin2 = [{"id": "A", "name": "Merkezefendi", "parent": "P1"},
+                  {"id": "B", "name": "Denizli merkez", "parent": "P1"}]
+        rows = [{"name": "Merkezefendi", "province": "Denizli", "pcode": "1"},
+                {"name": "Denizli", "province": "Denizli", "pcode": "2"}]
+        got, _, _ = t.bind(rows, admin1, admin2)
+        self.assertEqual(got, {"1": "A", "2": "B"})
+
+
+class BodyRowsTest(unittest.TestCase):
+    def table(self, *rows):
+        return {"label": "x.csv", "rows": list(rows)}
+
+    def test_rows_of_bare_commas_are_passed_over(self):
+        good = {"year": "2022", "ADM1_EN": "Adana", "type": "Resident population in Türkiye"}
+        blank = {"year": "", "ADM1_EN": "", "type": ""}
+        kept, empty = t.body_rows(self.table(good, blank, blank), "ADM1_EN")
+        self.assertEqual((kept, empty), ([good], 2))
+
+    def test_another_population_or_year_or_a_nameless_row_stops_the_run(self):
+        for bad in ({"year": "2022", "ADM1_EN": "Adana", "type": "Syrians under temporary"},
+                    {"year": "2021", "ADM1_EN": "Adana", "type": "Resident population"},
+                    {"year": "2022", "ADM1_EN": "", "type": "Resident population"}):
+            with self.assertRaises(SystemExit):
+                t.body_rows(self.table(bad), "ADM1_EN")
+
 
 if __name__ == "__main__":
     unittest.main()
