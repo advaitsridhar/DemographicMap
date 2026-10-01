@@ -505,6 +505,19 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 18e: the register keeper's list of Lutheran parishes, for the
+    # parish -> municipality key the church's membership file needs.
+    "r18e_fin_dvv_parishes": lambda: pdf(
+        "https://web.archive.org/web/20211024093927id_/https://dvv.fi/documents/16079645/"
+        "17003563/Evankelis-luterilaiset+seurakunnat+1.1.2021.pdf/65051844-c640-5ec4-f20d-"
+        "4b608debb5c8/Evankelis-luterilaiset+seurakunnat+1.1.2021.pdf?version=1.4&t=1623233423888",
+        pages="1-3", chars=3500),
+    "r18e_fin_dvv_cdx": lambda: cdx(
+        "url=dvv.fi/documents/16079645/17003563/*&filter=original:.*(?:seurakunnat|Seurakunnat).*",
+        limit=60),
+    "r18e_fin_evl_2018": lambda: xlsx(
+        "https://web.archive.org/web/20190630121916id_/https://www.kirkontilastot.fi/tiedostot/"
+        "J%C3%A4senm%C3%A4%C3%A4r%C3%A42018.xlsx", rows=6),
     # Round 18d: which edition the Church of Sweden's fixed file names hold
     # today, and the Finnish church's economic units in full.
     "r18d_swe_live": lambda: pdf_heads(
