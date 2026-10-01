@@ -1157,17 +1157,31 @@ class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
         return fetch_factbook.build_record("south-asia", gec, profile, iso3, None)
 
     def test_a_declared_country_shows_the_declaration(self):
+        """Where the Factbook gives nothing the parsers can read."""
         row = self.build("MDV", "mv")
-        for field in ("religion", "ethnicity", "language"):
+        for field in ("religion", "ethnicity"):
             self.assertEqual(row[field]["status"], common.NOT_COLLECTED, field)
             self.assertEqual(row[field]["note"],
                              common.NOT_COLLECTED_POLICY["MDV"][field], field)
 
-    def test_a_declaration_is_never_dated(self):
-        """The Factbook text carries "(2022 est.)"; nothing was measured."""
+    def test_a_declared_country_keeps_the_factbooks_language_list(self):
+        """A list with no shares is still what the Factbook says is spoken.
+
+        It cannot colour the map, but by the owner's instruction of 27
+        September 2026 it is not erased either: it stands, and its note carries
+        the declaration and says it has no shares.
+        """
         row = self.build("MDV", "mv")
-        self.assertIsNone(row["language_year"])
+        self.assertEqual([g["group"] for g in row["language"]], ["Dhivehi", "English"])
+        self.assertTrue(row["language_note"].startswith(
+            common.NOT_COLLECTED_POLICY["MDV"]["language"]))
+        self.assertIn("with no shares", row["language_note"])
+
+    def test_a_declaration_is_never_dated(self):
+        """The Factbook text carries a year; the declaration measured nothing."""
+        row = self.build("MDV", "mv")
         self.assertIsNone(row["religion_year"])
+        self.assertIsNone(row["ethnicity_year"])
 
     def test_a_declared_country_keeps_an_estimate_with_shares(self):
         """A census that does not ask is not the end of the search.

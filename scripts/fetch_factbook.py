@@ -487,13 +487,14 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         does not ask is not the end of the search: Italy's "Christian 80.8%,
         Muslim 4.9%, unaffiliated 13.4% (2020 est.)" is a measurement, and
         erasing it left the country saying "not collected" while one existed.
-        So a composition with shares stands, and the declaration goes into its
-        note (``factbook_notes``); a list with no shares -- "Japanese", the
-        Maldives' sentence about its alphabet -- is not one, and the
-        declaration is still the answer there.
+        So whatever the Factbook gives stands -- a composition with shares, or a
+        list of the languages spoken, which is information even where it cannot
+        colour the map -- and the declaration goes into its note
+        (``factbook_notes``). Only where the Factbook gives nothing the parsers
+        can read is the declaration the answer.
         """
         comp = parse_composition(text) if parsed is None else parsed
-        if field in policy and has_shares(comp):
+        if field in policy and comp:
             return comp
         if field in policy:
             # collection_gap, not gap(NOT_COLLECTED, policy[field]): a policy
@@ -606,13 +607,13 @@ def factbook_notes(iso3: str | None, fields: dict[str, tuple[Any, str | None]]) 
     notes: dict[str, str] = {}
     for field, (value, text) in fields.items():
         reason = collection_policy(iso3, field)
-        if reason and has_shares(value):
+        if reason and isinstance(value, list) and value:
             quoted = re.sub(r"\s+", " ", text or "").strip()
             if len(quoted) > 300:
                 quoted = quoted[:297].rsplit(" ", 1)[0] + "..."
-            notes[f"{field}_note"] = (
-                f"{reason} The figure shown is the CIA World Factbook's estimate, "
-                f"which reads: \"{quoted}\".")
+            what = ("figure shown is the CIA World Factbook's estimate" if has_shares(value)
+                    else "list shown is the CIA World Factbook's, with no shares")
+            notes[f"{field}_note"] = f"{reason} The {what}, which reads: \"{quoted}\"."
     return notes
 
 
