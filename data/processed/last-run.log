@@ -1,16 +1,75 @@
-germany: Zensus 2022 table 1000A-1018 (religion), cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  + 9 Laender that are a single region
-  + Koblenz: 11 Kreise, 1,517,589
-  + Trier: 5 Kreise, 521,418
-  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
-germany: Zensus 2022 table 1000A-1021 (nationality), cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  + 9 Laender that are a single region
-  + Koblenz: 11 Kreise, 1,517,589
-  + Trier: 5 Kreise, 521,418
-  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
-  named: German, Turkish, Syrian, Romanian, Polish, Ukrainian, Italian, Croatian, Bulgarian, Greek, Afghan, Kosovan, Russian, Iraqi, Serbian, Bosnian and Herzegovinian, Hungarian, Austrian
-  wrote data/processed/germany_regierungsbezirk.json (180 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
-  38 records
+
+## https://www.statistik.at/fileadmin/pages/407/Bev_Staatsangeh_Geburtsland_Gebietseinheiten_2026.ods
+   HTTP 200, 1,316,893 bytes, application/vnd.oasis.opendocument.spreadsheet 
+   24 sheets: Tabellenverzeichnis | Überblick | Staatsangehörigkeit | Geburtsland | 'file://xwwp0069/profiles$/mhilg/Documents/Alte_Website/Tabs_Fam6.xlsx'#Fam6 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Lebensformen2.ods'#Tabellenverzeichnis | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Lebensformen2.ods'#Tab_1_(2) | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Lebensformen2.ods'#H13 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Lebensformen2.ods'#Tab_1 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH1 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH1_engl | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH2 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH3 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH4 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH5 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH6 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH7 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#HH8 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#Fam1 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#Fam2 | 'file:///J:/_TEAM/Hilgarth/Website%20NEU/Volkszählung/Dokumente_alte_Website_VZ/VZ_Lebensformen/Alte_Website/Tabs.xls'#Fam3 | 'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Vorgaben | 'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_IST | 'file://xwwp0069/profiles$/fuchs/Downloads/Leitfaden-Excel-Tabellen%20(3).xlsx'#Tabelle_NEU
+   -- sheet 'Staatsangehörigkeit': 2267 rows x 29 cols
+     r6: Bundesländergruppen (NUTS 1)
+     r10: Bundesländer (NUTS 2)
+     r18: AT34 | Vorarlberg | 412307 | 326010 | 86297 | 20.930277681436404
+     r20: NUTS 3-Regionen
+     r54: AT341 | Bludenz-Bregenzer Wald | 94909 | 76534 | 18375 | 19.360650728592653
+     r55: AT342 | Rheintal-Bodenseegebiet | 317398 | 249476 | 67922 | 21.399630747515737
+     r56: Politische Bezirke bzw. Wiener
+     r57: 101 | Eisenstadt (Stadt) | 16396 | 13202 | 3194 | 19.480361063674067
+     r58: 102 | Rust (Stadt) | 1918 | 1781 | 137 | 7.1428571428571432
+     r59: 103 | Eisenstadt-Umgebung | 44805 | 40160 | 4645 | 10.367146523825467
+     r124: 601 | Graz (Stadt) | 306971 | 216103 | 90868 | 29.601493300670096
+     r125: 603 | Deutschlandsberg | 60962 | 57200 | 3762 | 6.1710573800072179
+     r126: 606 | Graz-Umgebung | 165656 | 146199 | 19457 | 11.74542425266818
+     r150: 901 | Wien 1., Innere Stadt | 15879 | 11032 | 4847 | 30.52459222872977
+     r151: 902 | Wien 2., Leopoldstadt | 114122 | 70042 | 44080 | 38.625330786351448
+     r152: 903 | Wien 3., Landstraße | 99954 | 61368 | 38586 | 38.603757728555138
+     r153: 904 | Wien 4., Wieden | 33450 | 20942 | 12508 | 37.393124065769804
+     r154: 905 | Wien 5., Margareten | 54060 | 30546 | 23514 | 43.496115427302996
+     r155: 906 | Wien 6., Mariahilf | 31070 | 19990 | 11080 | 35.661409719987127
+     r156: 907 | Wien 7., Neubau | 31394 | 20920 | 10474 | 33.363063005669872
+     r157: 908 | Wien 8., Josefstadt | 24232 | 15909 | 8323 | 34.347144272036978
+     r158: 909 | Wien 9., Alsergrund | 41782 | 26250 | 15532 | 37.173902637499403
+     r159: 910 | Wien 10., Favoriten | 225013 | 121109 | 103904 | 46.176887557607785
+     r160: 911 | Wien 11., Simmering | 112214 | 69227 | 42987 | 38.308054253479959
+     r161: 912 | Wien 12., Meidling | 102344 | 59801 | 42543 | 41.568631282732746
+     r162: 913 | Wien 13., Hietzing | 56496 | 42147 | 14349 | 25.398258283772304
+     r163: 914 | Wien 14., Penzing | 99469 | 68536 | 30933 | 31.098131076013633
+     r164: 915 | Wien 15., Rudolfsheim-Fünfhaus | 75384 | 40566 | 34818 | 46.187519898121614
+     r165: 916 | Wien 16., Ottakring | 101599 | 59276 | 42323 | 41.656906071910157
+     r166: 917 | Wien 17., Hernals | 56652 | 35176 | 21476 | 37.908635176163244
+     r167: 918 | Wien 18., Währing | 51177 | 35113 | 16064 | 31.389100572522814
+     r168: 919 | Wien 19., Döbling | 76203 | 52453 | 23750 | 31.166751965145728
+     r169: 920 | Wien 20., Brigittenau | 86686 | 47396 | 39290 | 45.324504533604042
+     r170: 921 | Wien 21., Floridsdorf | 191527 | 126779 | 64748 | 33.806199648091393
+     r171: 922 | Wien 22., Donaustadt | 235361 | 164287 | 71074 | 30.197866256516583
+     r172: 923 | Wien 23., Liesing | 124846 | 90271 | 34575 | 27.694119154798713
+     r173: Gemeinden (LAU 2)
+     r174: 10101 | Eisenstadt | 16396 | 13202 | 3194 | 19.480361063674067
+     r175: 10201 | Rust | 1918 | 1781 | 137 | 7.1428571428571432
+     r176: 10301 | Breitenbrunn am Neusiedler See | 1931 | 1777 | 154 | 7.9751424132573794
+     r177: 10302 | Donnerskirchen | 1856 | 1703 | 153 | 8.243534482758621
+     r178: 10303 | Großhöflein | 2078 | 1910 | 168 | 8.0846968238691055
+     r179: 10304 | Hornstein | 3329 | 2899 | 430 | 12.916791829378191
+     r180: 10305 | Klingenbach | 1196 | 977 | 219 | 18.31103678929766
+     r181: 10306 | Leithaprodersdorf | 1258 | 1200 | 58 | 4.6104928457869638
+     r182: 10307 | Mörbisch am See | 2163 | 1994 | 169 | 7.8132223763291728
+     r183: 10308 | Müllendorf | 1529 | 1414 | 115 | 7.5212557226945718
+     r184: 10309 | Neufeld an der Leitha | 3633 | 3166 | 467 | 12.85439031103771
+     r185: 10310 | Oggau am Neusiedler See | 1703 | 1647 | 56 | 3.288314738696418
+     r186: 10311 | Oslip | 1303 | 1194 | 109 | 8.3653108211818878
+     r187: 10312 | Purbach am Neusiedler See | 3128 | 2847 | 281 | 8.9833759590792841
+     r188: 10313 | Sankt Margarethen im Burgenlan | 2705 | 2552 | 153 | 5.6561922365988906
+     r189: 10314 | Schützen am Gebirge | 1453 | 1276 | 177 | 12.181693048864419
+     r190: 10315 | Siegendorf | 3199 | 2652 | 547 | 17.099093466708347
+     r191: 10316 | Steinbrunn | 2971 | 2668 | 303 | 10.198586334567485
+     r192: 10317 | Trausdorf an der Wulka | 2142 | 1948 | 194 | 9.056956115779645
+     r193: 10318 | Wimpassing an der Leitha | 1704 | 1509 | 195 | 11.443661971830986
+     r194: 10319 | Wulkaprodersdorf | 1919 | 1661 | 258 | 13.444502344971339
+     r195: 10320 | Loretto | 545 | 510 | 35 | 6.4220183486238529
+     r196: 10321 | Stotzing | 839 | 748 | 91 | 10.846245530393325
+     r197: 10322 | Zillingtal | 1052 | 910 | 142 | 13.49809885931559
+     r198: 10323 | Zagersdorf | 1169 | 998 | 171 | 14.627887082976903
+     r1607: 60101 | Graz | 306971 | 216103 | 90868 | 29.601493300670096
+     r1608: 60305 | Frauental an der Laßnitz | 3227 | 2999 | 228 | 7.0653858072513174
+     r1609: 60318 | Lannach | 3646 | 3368 | 278 | 7.6247942951179377
+     r1610: 60323 | Pölfing-Brunn | 1548 | 1440 | 108 | 6.9767441860465116
+     r1611: 60324 | Preding | 1860 | 1760 | 100 | 5.376344086021505
+     r1612: 60326 | Sankt Josef (Weststeiermark) | 1672 | 1591 | 81 | 4.8444976076555024
+     r1613: 60329 | Sankt Peter im Sulmtal | 1265 | 1230 | 35 | 2.766798418972332
+     r1614: 60341 | Wettmannstätten | 1631 | 1574 | 57 | 3.4947884733292458
