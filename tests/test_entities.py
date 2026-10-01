@@ -1135,6 +1135,9 @@ class MaldivesAndAfghanistanAreDeclaredNotEmpty(unittest.TestCase):
 class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
     """All three fields pass the policy gate, not two of them.
 
+    The gate decides only where the Factbook gives no shares; where it does,
+    its estimate stands with the declaration in its note.
+
     Language did not, and the map contradicted itself on one screen: every
     province of Japan, Turkey, Sweden, Austria, Algeria, Saudi Arabia, Iraq,
     Greece, North Korea and Afghanistan said the census asks no language
@@ -1165,6 +1168,33 @@ class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
         row = self.build("MDV", "mv")
         self.assertIsNone(row["language_year"])
         self.assertIsNone(row["religion_year"])
+
+    def test_a_declared_country_keeps_an_estimate_with_shares(self):
+        """A census that does not ask is not the end of the search.
+
+        By the owner's instruction of 27 September 2026: a Factbook estimate
+        with shares is a measurement, and a declaration no longer erases it.
+        It stands, dated, and its note carries both the declaration and the
+        Factbook's own words, so it cannot pass for a census count.
+        """
+        import fetch_factbook
+        profile = {"People and Society": {
+            "Religions": {"text": "Christian 80.8%, Muslim 4.9%, unaffiliated "
+                                  "13.4%, other 0.9% (2020 est.)"},
+            "Ethnic groups": {"text": "Italian"},
+            "Languages": {"Languages": {"text": "Italian (official)"}},
+        }}
+        row = fetch_factbook.build_record("europe", "it", profile, "ITA", None)
+        self.assertEqual([g["group"] for g in row["religion"]],
+                         ["Christian", "Muslim", "unaffiliated", "other"])
+        self.assertEqual(row["religion_year"], 2020)
+        self.assertTrue(row["religion_note"].startswith(
+            common.NOT_COLLECTED_POLICY["ITA"]["religion"]))
+        self.assertIn("CIA World Factbook's estimate", row["religion_note"])
+        self.assertIn("80.8%", row["religion_note"])
+        # A name with no share is still no measurement: the declaration stands.
+        self.assertEqual(row["ethnicity"]["status"], common.NOT_COLLECTED)
+        self.assertNotIn("ethnicity_note", row)
 
     def test_an_undeclared_country_keeps_what_the_factbook_says(self):
         """The gate narrows nothing else: Kenya declares no policy at all."""
@@ -7706,17 +7736,35 @@ class IrelandsSeatCountIsNotItsName(unittest.TestCase):
         shared = {k: v for k, v in keys.items() if len(v) > 1}
         self.assertEqual(sorted(shared), ["athlone"], shared)
 
-    def test_ireland_declares_why_it_has_no_language(self):
-        """Asked, and not as a composition -- which is not the same as unasked."""
+    def test_ireland_declares_no_field_away(self):
+        """Census 2022 asks home language, religion and ethnicity, and all three are read.
+
+        Language used to be declared not collected, because the foreign-language
+        table alone leaves English out; with everyone who speaks no other
+        language at home as "English or Irish only" it partitions the population
+        aged 3 and over, and scripts.fetch_census.ireland reads it so. The stored
+        country file must agree, or check_no_stale_country_declaration stops
+        the build.
+        """
         import common
-        reason = common.collection_policy("IRL", "language")
-        self.assertIsNotNone(reason)
-        self.assertIn("foreign languages", reason)
-        self.assertIn("counts an ability", reason)
-        # Religion and ethnicity come from the same census and must not be
-        # declared away with it.
-        self.assertIsNone(common.collection_policy("IRL", "religion"))
-        self.assertIsNone(common.collection_policy("IRL", "ethnicity"))
+        for field in ("language", "religion", "ethnicity"):
+            self.assertIsNone(common.collection_policy("IRL", field), field)
+        admin0 = json.loads((ROOT / "data" / "processed" / "admin0.json").read_text(
+            encoding="utf-8"))
+        ireland = next(row for row in admin0 if row.get("id") == "IRL")
+        self.assertNotEqual((ireland.get("language") or {}).get("status")
+                            if isinstance(ireland.get("language"), dict) else None,
+                            "not_collected")
+        path = ROOT / "data" / "processed" / "ireland_lea.json"
+        if not path.exists():
+            self.skipTest("ireland_lea.json needs a network run to exist")
+        for row in json.loads(path.read_text(encoding="utf-8")):
+            if row.get("level") != "admin2":
+                continue
+            groups = {g["group"] for g in row["language"]}
+            self.assertIn("English or Irish only", groups, row["name"])
+            self.assertAlmostEqual(sum(g["pct"] for g in row["language"]), 100.0,
+                                   delta=1.0, msg=row["name"])
 
     def test_the_four_way_religion_cost_is_stated_on_every_record(self):
         """Catholic is the only Christian denomination the CSO names here.
