@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Germany -- Zensus 2022 religion by Land, from the results database.
+"""Germany -- Zensus 2022 religion and nationality by Land and Regierungsbezirk.
 
 Germany was the largest European country with nothing below the national line:
 sixteen Laender, eleven carrying a population figure and none a composition.
@@ -36,6 +36,13 @@ The finer classification exists -- RELZG1, seven categories, table 2000X-1022
 -- and is published for Germany as a whole and no further. Germany publishes
 something coarser about its Laender than about itself.
 
+**Nationality as ethnicity.** Germany's census asks no ethnicity question; it
+counts citizenship. By the owner's decision of 19 September 2026 that count
+is carried on the ethnicity field under ``ethnicity_basis: "nationality"``
+(see ``central_nationality``), from table 1000A-1021, the 41 nationalities
+most frequent in Germany, read at the same cuts as religion. A person who
+holds German citizenship is counted German whatever else they hold.
+
 Usage:
     python -m scripts.fetch_census.germany --level land
     python -m scripts.fetch_census.germany --level regierungsbezirk
@@ -56,10 +63,17 @@ from typing import Any
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
 )
+from .central_nationality import DECISION, GERMAN, composition, label_for, named
 
 BASE = "https://ergebnisse.zensus2022.de/api/rest/2020"
 TABLE = "1000A-1018"
-TIMEOUT = 120
+TIMEOUT = 300
+# The two tables read, by what they give: religion (RELZG2) and the 41
+# nationalities most frequent in Germany (STALD4), both of the census day.
+TABLES: dict[str, str] = {"religion": "1000A-1018", "nationality": "1000A-1021"}
+LICENCE = "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+# A nationality is named when its people are at least this share of Germany's.
+NAMED_SHARE = 0.002
 
 # One table, four geographies. 1000A-1018 is published cut by Bundeslaender, by
 # 36 Regierungsbezirke, by 400 Landkreise and by 10,787 Gemeinden, and asking
@@ -107,7 +121,7 @@ RLP_REGIONS: dict[str, str] = {"071": "Koblenz", "072": "Trier", "073": "Rheinhe
 
 LEVELS: dict[str, tuple[str, str, str, int]] = {
     "land": ("GEOBL1", "admin1", "germany_land.json", 16),
-    "regierungsbezirk": ("GEORB1", "admin2", "germany_regierungsbezirk.json", 0),
+    "regierungsbezirk": ("GEORB1", "admin2", "germany_regierungsbezirk.json", 38),
 }
 
 # The census date the table itself carries, not the year the file was made.
@@ -137,6 +151,20 @@ NOTE = (
     "corporations. Germany publishes a seven-category classification for the "
     "country as a whole but not by Land."
 )
+
+NATIONALITY_SOURCE = ("Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 "
+                      "(Personen: Staatsangehörigkeit (Häufigste Länder))")
+NATIONALITY_URL = ("https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/"
+                   "1000A-1021")
+NATIONALITY_NOTE = (
+    "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table "
+    "1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, "
+    "which Germany's census does not ask. A person holding German citizenship is counted as "
+    "German whatever other citizenship they also hold, naturalised citizens and ethnic German "
+    f"resettlers included; nationalities below {NAMED_SHARE:.1%} of Germany's population, those "
+    "the table does not list, the stateless and those whose citizenship is unclear are 'Other "
+    "nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a "
+    "count by a few people. Written by the map owner's decision of " + DECISION + ".")
 
 
 def credentials() -> dict[str, str]:
@@ -211,20 +239,26 @@ def shape_name(label: str) -> str:
     return label
 
 
-def parse(text: str, region_code: str = "GEOBL1") -> dict[str, dict[str, Any]]:
-    """Land -> {name, counts by English group, total}.
+def parse(text: str, region_code: str = "GEOBL1", table: str = "religion"
+          ) -> dict[str, dict[str, Any]]:
+    """Area code -> {name, counts by group, total}.
 
     ffcsv is one row per cell: the variables spelled out with their codes and
     labels, then the value and its unit. Every figure appears twice, once as a
     percentage and once as a count, and only the counts are read -- a share
     reconstructed from a rounded percentage is out by thousands of people and
     carries no sign that it was never counted.
+
+    For religion a group is RELIGION's English name for the RELZG2 code, and
+    an unknown code stops the run. For nationality it is the country as the
+    table names it ("Türkei"); the labels are applied later, by
+    ``central_nationality``, which refuses a large one it has no label for.
     """
     rows = list(csv.DictReader(io.StringIO(text), delimiter=";"))
     if not rows:
         raise SystemExit("germany: the table came back with no rows")
 
-    laender: dict[str, dict[str, Any]] = {}
+    areas: dict[str, dict[str, Any]] = {}
     unknown: set[str] = set()
     for row in rows:
         if row.get("1_variable_code") != region_code:
@@ -241,15 +275,17 @@ def parse(text: str, region_code: str = "GEOBL1") -> dict[str, dict[str, Any]]:
             count = int(raw)
         except ValueError:
             continue                      # a suppressed or dashed cell
-        entry = laender.setdefault(code, {"name": name, "counts": {},
-                                          "total": None})
+        entry = areas.setdefault(code, {"name": name, "counts": {}, "total": None})
         if not group_code:                # "Insgesamt", the row's own total
             entry["total"] = count
             continue
-        group = RELIGION.get(group_code)
-        if group is None:
-            unknown.add(f"{group_code} ({row.get('2_variable_attribute_label')})")
-            continue
+        if table == "religion":
+            group = RELIGION.get(group_code)
+            if group is None:
+                unknown.add(f"{group_code} ({row.get('2_variable_attribute_label')})")
+                continue
+        else:
+            group = (row.get("2_variable_attribute_label") or "").strip()
         entry["counts"][group] = entry["counts"].get(group, 0) + count
 
     if unknown:
@@ -258,75 +294,78 @@ def parse(text: str, region_code: str = "GEOBL1") -> dict[str, dict[str, Any]]:
             + ", ".join(sorted(unknown))
             + ". Add them to RELIGION rather than letting a category fall out "
               "of a composition that is supposed to sum to the population.")
-    return laender
+    return areas
 
 
-def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--level", default="land", choices=list(LEVELS))
-    ap.add_argument("--out", default=None)
-    args = ap.parse_args(argv)
-
-    region_code, level, filename, expected = LEVELS[args.level]
-    log(f"germany: Zensus 2022 table {TABLE}, cut by {region_code} ({args.level})")
-    auth = credentials()
+def fetch(name: str, auth: dict[str, str], region: str) -> str:
     try:
-        text = tablefile(TABLE, auth, region_code)
+        return tablefile(name, auth, region)
     except urllib.error.HTTPError as err:
         body = (err.read() or b"")[:600].decode("utf-8", "replace")
         raise SystemExit(
-            f"germany: {TABLE} answered HTTP {err.code} {err.reason} ({body!r}). A 401 "
-            f"here means the account was not accepted -- this API reads the "
+            f"germany: {name} cut by {region} answered HTTP {err.code} {err.reason} ({body!r}). "
+            f"A 401 here means the account was not accepted -- this API reads the "
             f"credential from the request headers and ignores it as a query "
             f"parameter, so a working account presented the wrong way looks "
             f"exactly like a rejected one.") from err
 
-    areas = parse(text, region_code)
+
+def gather(table: str, auth: dict[str, str], level: str) -> dict[str, dict[str, Any]]:
+    """One table's areas at one level of the map, checked.
+
+    The Laender are GEOBL1's sixteen rows. The second level is GEORB1's
+    Regierungsbezirke and statistische Regionen, the nine Laender that are one
+    region each (WHOLE_LAND_REGIONS) from GEOBL1, and Rhineland-Palatinate's
+    three regions summed from GEOLK4's Kreise, which must make the Land.
+    """
+    name = TABLES[table]
+    region_code, _, _, expected = LEVELS[level]
+    log(f"germany: Zensus 2022 table {name} ({table}), cut by {region_code} ({level})")
+    areas = parse(fetch(name, auth, region_code), region_code, table)
     log(f"  {len(areas)} areas in the {region_code} cut")
 
-    if args.level == "regierungsbezirk":
+    if level == "regierungsbezirk":
         # The nine Laender that are one region. Their figures come from the
         # Land cut of the same table, because GEORB1 simply has no row for a
         # Land that never divided.
-        whole = parse(tablefile(TABLE, auth, "GEOBL1"), "GEOBL1")
+        whole = parse(fetch(name, auth, "GEOBL1"), "GEOBL1", table)
         added = 0
-        for code, name in WHOLE_LAND_REGIONS.items():
+        for code, land in WHOLE_LAND_REGIONS.items():
             entry = whole.get(code)
             if entry is None:
                 raise SystemExit(
-                    f"germany: {name} ({code}) is declared a whole-Land region "
+                    f"germany: {land} ({code}) is declared a whole-Land region "
                     f"and the Land cut has no row for it. One of the two lists "
                     f"has moved and guessing which would fill a shape with the "
                     f"wrong Land's figures.")
-            if entry["name"] != name:
+            if entry["name"] != land:
                 raise SystemExit(
-                    f"germany: Land {code} is declared as {name!r} and the "
+                    f"germany: Land {code} is declared as {land!r} and the "
                     f"table calls it {entry['name']!r}.")
             if code in areas:
                 raise SystemExit(
-                    f"germany: {name} is declared a whole-Land region and "
+                    f"germany: {land} is declared a whole-Land region and "
                     f"GEORB1 now has its own row for it. The declaration is "
                     f"stale and would double-count.")
             areas[code] = entry
             added += 1
         log(f"  + {added} Laender that are a single region")
-        kreise = parse(tablefile(TABLE, auth, "GEOLK4"), "GEOLK4")
+        kreise = parse(fetch(name, auth, "GEOLK4"), "GEOLK4", table)
         rlp = {code: e for code, e in kreise.items() if code.startswith("07") and len(code) >= 5}
         if {code[:3] for code in rlp} != set(RLP_REGIONS):
             raise SystemExit(f"germany: Rhineland-Palatinate's Kreise open with "
                              f"{sorted({code[:3] for code in rlp})}, not {sorted(RLP_REGIONS)}")
-        for prefix, name in RLP_REGIONS.items():
+        for prefix, region in RLP_REGIONS.items():
             members = [e for code, e in rlp.items() if code.startswith(prefix)]
             counts: dict[str, int] = {}
             for e in members:
                 for group, n in e["counts"].items():
                     counts[group] = counts.get(group, 0) + n
             if any(e["total"] is None for e in members):
-                raise SystemExit(f"germany: a Kreis of {name} has no total")
-            areas[prefix] = {"name": name, "counts": counts,
+                raise SystemExit(f"germany: a Kreis of {region} has no total")
+            areas[prefix] = {"name": region, "counts": counts,
                              "total": sum(e["total"] for e in members)}
-            log(f"  + {name}: {len(members)} Kreise, {areas[prefix]['total']:,}")
+            log(f"  + {region}: {len(members)} Kreise, {areas[prefix]['total']:,}")
         summed = sum(areas[p]["total"] for p in RLP_REGIONS)
         land = whole["07"]["total"]
         if summed != land:
@@ -340,33 +379,102 @@ def main(argv: list[str] | None = None) -> int:
             f"given it unchecked.")
     if not areas:
         raise SystemExit(f"germany: {region_code} returned no areas at all")
+    return areas
+
+
+def religion_fields(entry: dict[str, Any]) -> dict[str, Any]:
+    counts, total = entry["counts"], entry["total"]
+    if total and counts:
+        summed = sum(counts.values())
+        # The three categories are exhaustive by construction, so a gap
+        # between them and the published total means a category was missed
+        # -- exactly what shares() would silently paper over by using its
+        # own sum as the denominator.
+        if abs(summed - total) > max(16, total * 0.001):
+            raise SystemExit(
+                f"germany: {entry['name']} sums to {summed:,} against a "
+                f"published total of {total:,}. The categories are meant "
+                f"to be exhaustive; a difference this size means one was "
+                f"dropped.")
+    return {"religion": shares(counts, total=total) or gap(NOT_AVAILABLE),
+            "religion_note": NOTE, "religion_year": CENSUS_YEAR}
+
+
+def nationality_fields(areas: dict[str, dict[str, Any]], national: dict[str, Any]
+                       ) -> dict[str, dict[str, Any]]:
+    """{area code: the ethnicity fields} from 1000A-1021, every area named alike.
+
+    The table lists the 41 nationalities most frequent in Germany; those at
+    NAMED_SHARE of the country or more are named everywhere and the rest of
+    each area's people -- the other listed nationalities, those the table does
+    not list, the stateless and those whose citizenship is unclear -- are
+    "Other nationalities". The cell key method with which Zensus 2022 protects
+    its cells can move a count by a few people, so a composition is checked
+    against its area's total rather than its cells against each other.
+    """
+    total = national["total"]
+    labels: dict[str, str | None] = {c: label_for(c, GERMAN) for c in national["counts"]}
+    names = named(national["counts"], total, labels, share=NAMED_SHARE, always=["Deutschland"])
+    log(f"  named: {', '.join(str(labels[n]) for n in names)}")
+    out: dict[str, dict[str, Any]] = {}
+    for code, entry in areas.items():
+        if entry["total"] is None:
+            raise SystemExit(f"germany: {entry['name']} has no total in {TABLES['nationality']}")
+        counts = dict(entry["counts"])
+        listed = sum(counts.values())
+        if listed > entry["total"] + max(16, 0.001 * entry["total"]):
+            raise SystemExit(f"germany: {entry['name']}: the listed nationalities make "
+                             f"{listed:,}, more than the total {entry['total']:,}")
+        # The people of nationalities the table does not list, so that the
+        # categories make the total.
+        counts["__unlisted__"] = max(entry["total"] - listed, 0)
+        out[code] = {
+            "ethnicity": composition(counts, entry["total"], names,
+                                     {**labels, "__unlisted__": None},
+                                     where=f"germany: {entry['name']}"),
+            "ethnicity_year": CENSUS_YEAR, "ethnicity_basis": "nationality",
+            "ethnicity_note": NATIONALITY_NOTE,
+        }
+    return out
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--level", default="land", choices=list(LEVELS))
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args(argv)
+
+    _, level, filename, _ = LEVELS[args.level]
+    auth = credentials()
+    religion = gather("religion", auth, args.level)
+    citizens = gather("nationality", auth, args.level)
+    if set(religion) != set(citizens):
+        raise SystemExit(f"germany: the religion and nationality tables cover different areas: "
+                         f"{sorted(set(religion) ^ set(citizens))}")
+    for code in religion:
+        a, b = religion[code]["total"], citizens[code]["total"]
+        if a is not None and b is not None and a != b:
+            raise SystemExit(f"germany: {religion[code]['name']}: the two tables count "
+                             f"{a:,} and {b:,} people")
+    national = parse(fetch(TABLES["nationality"], auth, "GEOBL1"), "GEODL1", "nationality")
+    if len(national) != 1:
+        raise SystemExit(f"germany: {len(national)} national rows in the nationality table")
+    ethnicity = nationality_fields(citizens, next(iter(national.values())))
 
     records = []
-    for code, entry in sorted(areas.items()):
-        counts = entry["counts"]
+    for code, entry in sorted(religion.items()):
         total = entry["total"]
-        if total and counts:
-            summed = sum(counts.values())
-            # The three categories are exhaustive by construction, so a gap
-            # between them and the published total means a category was missed
-            # -- exactly what shares() would silently paper over by using its
-            # own sum as the denominator.
-            if abs(summed - total) > max(16, total * 0.001):
-                raise SystemExit(
-                    f"germany: {entry['name']} sums to {summed:,} against a "
-                    f"published total of {total:,}. The categories are meant "
-                    f"to be exhaustive; a difference this size means one was "
-                    f"dropped.")
         # A Regierungsbezirk's key opens with its Land's: 059 is Arnsberg in
         # 05, Nordrhein-Westfalen. So the parent is read off the code rather
         # than looked up, and the sixteen Laender parent Germany itself.
         parent = "DEU" if level == "admin1" else f"DEU-{code[:2]}"
         if level == "admin2" and code in RLP_REGIONS:
             entity_id = f"DEU-{code}-SR"
-        # A whole-Land region's key is its Land's, so its record id would
-        # collide with the Land's own. The suffix keeps them apart; the ags
-        # code stays the real one.
-        if not (level == "admin2" and code in RLP_REGIONS):
+        else:
+            # A whole-Land region's key is its Land's, so its record id would
+            # collide with the Land's own. The suffix keeps them apart; the
+            # ags code stays the real one.
             entity_id = (f"DEU-{code}-RB"
                          if level == "admin2" and code in WHOLE_LAND_REGIONS
                          else f"DEU-{code}")
@@ -375,11 +483,12 @@ def main(argv: list[str] | None = None) -> int:
             codes={"ags": code},
             population=(measure(int(total), year=CENSUS_YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
-            religion=shares(counts, total=total) or gap(NOT_AVAILABLE),
-            religion_note=NOTE,
-            religion_year=CENSUS_YEAR,
+            **religion_fields(entry),
+            **ethnicity[code],
             sources=[{"field": "religion/population", "name": SOURCE,
-                      "url": URL, "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"}],
+                      "url": URL, "license": LICENCE},
+                     {"field": "ethnicity", "name": NATIONALITY_SOURCE,
+                      "url": NATIONALITY_URL, "license": LICENCE}],
         ))
 
     out = args.out or PROCESSED / filename

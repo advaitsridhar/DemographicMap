@@ -22,8 +22,17 @@ seen to equal its children, so nobody is counted twice.
 first-level and as a second-level unit under the same shape id, so every
 figure is written twice, once for each level, bound by shape id.
 
-Ethnicity is not asked: the census records citizenship (Staatsbürgerschaft),
-which is a different question and is not used as a proxy.
+**Nationality as ethnicity.** Ethnicity is not asked; what the register
+counts is citizenship (Staatsbürgerschaft), and by the owner's decision of 19
+September 2026 that count is carried on the ethnicity field under
+``ethnicity_basis: "nationality"`` (see ``central_nationality``). A fourth
+table is read for it:
+
+* 211.002 -- the permanent population on 31 December by citizenship (some
+  150 countries under their continents), sex and Gemeinde. Liechtensteiners
+  and every nationality with at least ``NAMED_SHARE`` of the country's
+  people are named; the countries in each Gemeinde must make its total, and
+  the Gemeinden the country's.
 
 Usage:
     python -m scripts.fetch_census.liechtenstein
@@ -40,6 +49,7 @@ from typing import Any
 
 from ._shared import PROCESSED, dated, log, measure, record, shares, write_json
 from .central_ages import age_sex_fields, check_sum, fold, units
+from .central_nationality import GERMAN, composition, label_for, named, note
 from .pxweb import unstack
 from common import USER_AGENT  # noqa: E402
 
@@ -48,7 +58,12 @@ TABLES = {
     "age": "Bevölkerung/Bevölkerungsstand/Stichtag 31 Dezember/211.004.px",
     "religion": "Bevölkerung/Bevölkerungsstruktur/213.001d.px",
     "language": "Bevölkerung/Bevölkerungsstruktur/213.011d.px",
+    "nationality": "Bevölkerung/Bevölkerungsstand/Stichtag 31 Dezember/211.002.px",
 }
+SOURCE_NATIONALITY = "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, {year})"
+# A nationality is named when its people are at least this share of the
+# country's; the rest of the foreign population is "Other nationalities".
+NAMED_SHARE = 0.005
 PORTAL = "https://www.statistikportal.li/de/anwendungen-datenbanken/etab"
 SOURCE_AGE = "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, {year})"
 SOURCE_CENSUS = "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab {table}"
@@ -269,8 +284,83 @@ def census(key: str, labels: dict[str, str]) -> dict[str, dict[str, float]]:
     return out
 
 
+def read_nationality(rows: list[tuple[dict[str, tuple[str, str]], float]], place: str,
+                     citizenship: str) -> dict[str, dict[str, float]]:
+    """{Gemeinde: {country as the table writes it: people, "_total": all}} from
+    211.002's cells.
+
+    The citizenship list is two levels deep: continents ("- Europa") and,
+    beneath each, its countries ("... Albanien"). Only the countries are kept;
+    in every Gemeinde they must make the total, and so must the continents,
+    or a row has been misread as the other kind.
+    """
+    out: dict[str, dict[str, float]] = {}
+    continents: dict[str, float] = {}
+    for k, value in rows:
+        gemeinde = gemeinde_name(k[place][1])
+        text = k[citizenship][1]
+        unit = out.setdefault(gemeinde, {})
+        if "Total" in text:
+            unit["_total"] = unit.get("_total", 0.0) + value
+        elif text.lstrip().startswith("..."):
+            name = text.strip().lstrip(". ").strip()
+            unit[name] = unit.get(name, 0.0) + value
+        elif text.lstrip().startswith("-"):
+            continents[gemeinde] = continents.get(gemeinde, 0.0) + value
+        else:
+            raise SystemExit(f"liechtenstein: a citizenship row that is neither a continent nor "
+                             f"a country: {text!r}")
+    for gemeinde, unit in out.items():
+        total = unit.get("_total")
+        countries = sum(v for name, v in unit.items() if name != "_total")
+        if total is None or abs(countries - total) > 0.5 or abs(continents.get(gemeinde, 0) - total) > 0.5:
+            raise SystemExit(f"liechtenstein: {gemeinde}: countries make {countries:,.0f}, "
+                             f"continents {continents.get(gemeinde, 0):,.0f}, total {total}")
+    return out
+
+
+def nationality(year: int) -> dict[str, dict[str, float]]:
+    var = meta("nationality")
+    jahr, citizenship, sex, place = (pick(var, w) for w in
+                                     ("Jahr", "Staatsbürgerschaft", "Geschlecht", "Wohngemeinde"))
+    if str(year) not in var[jahr]:
+        raise SystemExit(f"liechtenstein: 211.002 has no {year}; it has {list(var[jahr])[-4:]}")
+    query = [
+        {"code": jahr, "selection": {"filter": "item", "values": [var[jahr][str(year)]]}},
+        {"code": citizenship, "selection": {"filter": "item", "values": list(var[citizenship].values())}},
+        {"code": sex, "selection": {"filter": "item", "values": [total_code(var[sex])]}},
+        {"code": place, "selection": {"filter": "item", "values": list(var[place].values())}},
+    ]
+    return read_nationality(post("nationality", query), place, citizenship)
+
+
+def nationality_fields(by_gemeinde: dict[str, dict[str, float]], year: int
+                       ) -> dict[str, dict[str, Any]]:
+    """{Gemeinde: the ethnicity fields} -- citizenship, named by the country's shares."""
+    national = by_gemeinde["Liechtenstein"]
+    total = national["_total"]
+    check_sum((by_gemeinde[g]["_total"] for g in GEMEINDEN), total,
+              "Gemeinden against Liechtenstein, citizenship")
+    countries = {k: v for k, v in national.items() if k != "_total"}
+    labels = {k: label_for(k, GERMAN) for k in countries}
+    names = named(countries, total, labels, share=NAMED_SHARE, always=["Liechtenstein"])
+    log(f"  named: {', '.join(labels[n] for n in names)}")
+    text = note("Permanent population by citizenship (Staatsbürgerschaft)", f"31 December {year}",
+                "the population register's count of each resident's citizenship (eTab 211.002)")
+    out: dict[str, dict[str, Any]] = {}
+    for gemeinde in (*GEMEINDEN, "Liechtenstein"):
+        unit = by_gemeinde[gemeinde]
+        counts = {k: v for k, v in unit.items() if k != "_total"}
+        out[gemeinde] = {
+            "ethnicity": composition(counts, unit["_total"], names, labels, where=gemeinde),
+            "ethnicity_year": year, "ethnicity_basis": "nationality", "ethnicity_note": text,
+        }
+    return out
+
+
 def build(year: int) -> list[dict[str, Any]]:
-    log(f"liechtenstein: eTab 211.004 ({year}), 213.001d and 213.011d (Volkszählung 2020)")
+    log(f"liechtenstein: eTab 211.004 ({year}), 213.001d and 213.011d (Volkszählung 2020), "
+        f"211.002 ({year})")
     males, females, totals = ages(year)
     missing = [g for g in (*GEMEINDEN, "Liechtenstein") if g not in totals]
     if missing:
@@ -281,6 +371,7 @@ def build(year: int) -> list[dict[str, Any]]:
     language = census("language", LANGUAGE)
     check_sum((religion[g]["_total"] for g in GEMEINDEN), religion["Liechtenstein"]["_total"],
               "Gemeinden against Liechtenstein, census 2020")
+    citizens = nationality_fields(nationality(year), year)
     source_age = SOURCE_AGE.format(year=year)
     shapes = {fold(u["name"]): u for u in units("LIE", "admin2")}
     firsts = {fold(u["name"]): u for u in units("LIE", "admin1")}
@@ -314,7 +405,10 @@ def build(year: int) -> list[dict[str, Any]]:
              "license": LICENCE, "year": CENSUS_YEAR},
             {"field": "language", "name": SOURCE_CENSUS.format(table="213.011d"), "url": PORTAL,
              "license": LICENCE, "year": CENSUS_YEAR},
+            {"field": "ethnicity", "name": SOURCE_NATIONALITY.format(year=year), "url": PORTAL,
+             "license": LICENCE, "year": year},
         ]
+        fields.update(citizens[gemeinde])
         for level, table in (("admin1", firsts), ("admin2", shapes)):
             shape = table.get(fold(gemeinde))
             if shape is None:
