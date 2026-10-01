@@ -1,84 +1,30 @@
-
-## https://lustat.statec.lu/rest/dataflow/LU1/all/latest
-   HTTP 200, 989,929 bytes, application/vnd.sdmx.structure+json; charset=utf-8; version=1.0 
-   361 matches of '.{0,70}(?:itizen|ationalit|anguage|angue).{0,50}'
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, sex, demography, density","descriptions":{"e
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, sex, demography, density"},"annotations":[{"
-   ~ :"1.0","agencyID":"LU1","isFinal":true,"name":"Population by sex and nationality on 1st January (x 1 000)","names":{"en":"Populat
-   ~ ion by sex and nationality on 1st January (x 1 000)"},"description":"Public
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, sex, demography","descriptions":{"en":"Publi
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, sex, demography"},"annotations":[{"type":"No
-   ~ version":"1.2","agencyID":"LU1","isFinal":true,"name":"Population by nationalities in detail on 1st January","names":{"en":"Popul
-   ~ ation by nationalities in detail on 1st January"},"description":"Publ
-   ~ lation and employment - Population structure - Keywords: population, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ lation and employment - Population structure - Keywords: population, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ Population and employment - Population - Keywords: population, age, citizenship, sex, demography","descriptions":{"en":"Publi
-   ~ Population and employment - Population - Keywords: population, age, citizenship, sex, demography"},"annotations":[{"type":"No
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, demography, proportion of foreigners","descr
-   ~ gory: Population and employment - Population - Keywords: population, citizenship, demography, proportion of foreigners"},"anno
-   ~ ry: Population and employment - Population - Keywords: birth, death, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ ry: Population and employment - Population - Keywords: birth, death, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ "Births, deaths, surplus of births, birth rate and mortality rate by nationality","names":{"en":"Births, deaths, surplus of birth
-   ~ s, birth rate and mortality rate by nationality"},"description":"Publication date: 05/05/2026 -
-   ~ ployment - Population - Keywords: birth, death, natality, mortality, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ ployment - Population - Keywords: birth, death, natality, mortality, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ and employment - Population - Keywords: birth, total fertility rate, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ and employment - Population - Keywords: birth, total fertility rate, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ ords: migration, immigration, emigration, net migration, population, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ ords: migration, immigration, emigration, net migration, population, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ ","agencyID":"LU1","isFinal":true,"name":"Different sex marriages by nationality","names":{"en":"Different sex marriages by natio
-   ~ tegory: Population and employment - Population - Keywords: marriage, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ tegory: Population and employment - Population - Keywords: marriage, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ :"1.0","agencyID":"LU1","isFinal":true,"name":"Same-sex marriages by nationality: Male","names":{"en":"Same-sex marriages by nati
-   ~ :"1.0","agencyID":"LU1","isFinal":true,"name":"Same-sex marriages by nationality: Female","names":{"en":"Same-sex marriages by na
-   ~ tegory: Population and employment - Population - Keywords: marriage, citizenship, demography","descriptions":{"en":"Publicatio
-   ~ tegory: Population and employment - Population - Keywords: marriage, citizenship, demography"},"annotations":[{"type":"NonProd
-   ~ ID":"LU1","isFinal":true,"name":"Naturalisations of the luxemburgish nationality by nationality of origin","names":{"en":"Natural
-   ~ isations of the luxemburgish nationality by nationality of origin"},"description":"Publication date: 05/
-   ~ sFinal":true,"name":"Naturalisations and options of the luxemburgish nationality by nationality of origin 1950 - 2009","names":{"
-   ~ en":"Naturalisations and options of the luxemburgish nationality by nationality of origin 1950 - 2009"},"description":"Publicati
-   ~ tier workers employed in Luxembourg according to their residence and nationality (in 1 000 persons)","names":{"en":"Frontier work
-   ~ ers employed in Luxembourg according to their residence and nationality (in 1 000 persons)"},"description":"Publication
-   ~ gencyID":"LU1","isFinal":true,"name":"Employment demands unfilled by nationality (in % of total)","names":{"en":"Employment deman
-   ~ ds unfilled by nationality (in % of total)"},"description":"Publication dat
-   ~ mption expenditures by product category, country of purchase and age/nationality of the household reference person","names":{"en"
-   ~ mption expenditures by product category, country of purchase and age/nationality of the household reference person"},"description
-   ~ rue,"name":"Student registrations at the University of Luxembourg by nationality and sex","names":{"en":"Student registrations at
-   ~ the University of Luxembourg by nationality and sex"},"description":"Publication date: 16/07
-   ~ ,"agencyID":"LU1","isFinal":true,"name":"Participants of the evening language classes","names":{"en":"Participants of the eveni
-   ~ ng language classes"},"description":"Publication date: 25/11/
-   ~ rue,"name":"Pupils registered at the Luxembourg-City Conservatory by nationality","names":{"en":"Pupils registered at the Luxembo
-   ~ urg-City Conservatory by nationality"},"description":"Publication date: 18/02/2020 -
-   ~ sion":"1.0","agencyID":"LU1","isFinal":true,"name":"Wage-earners per nationality and sex","names":{"en":"Wage-earners per nationa
-   ~ "1.0","agencyID":"LU1","isFinal":true,"name":"Insurance companies by nationality and legal form","names":{"en":"Insurance compani
-   ~ es by nationality and legal form"},"description":"Publication date
-   ~ nal":true,"name":"Share of people at risk of poverty by sex, age and nationality","names":{"en":"Share of people at risk of pover
-   ~ ty by sex, age and nationality"},"description":"Publication date: 30/04/2026 -
-   ~ "@SDMX","title":"AGE","type":"LAYOUT_COLUMN"},{"id":"@SDMX","title":"CITIZEN","type":"LAYOUT_ROW_SECTION"},{"title":"COMMENT_T
-   ~ ERIODS=1,AGE=_T+Y_LT18+Y18T64+Y18T24+Y25T49+Y50T64+Y_GE65,SEX=_T+M+F,CITIZEN=_T+LU+EU27_2020_FOR+NEU27_2020+BE+DE+FR+IT+LU+PT"
-   ~ ,"type":"DEFAULT"},{"title":"CITIZEN:LU1:HCL_C11xx_CITIZEN(1.0).H","type":"HIER_CONTEXT"}],"structure":"urn:
-   ~ are of people at risk of poverty or social exclusion by sex, age and nationality","names":{"en":"Share of people at risk of pover
-   ~ ty or social exclusion by sex, age and nationality"},"description":"Publication date: 30/04/2026 -
-   ~ "@SDMX","title":"AGE","type":"LAYOUT_COLUMN"},{"id":"@SDMX","title":"CITIZEN","type":"LAYOUT_ROW_SECTION"},{"title":"COMMENT_T
-   ~ NOBSERVATIONS=1,AGE=_T+Y_LT18+Y18T24+Y25T49+Y50T64+Y_GE65,SEX=_T+M+F,CITIZEN=_T+LU+EU27_2020_FOR+NEU27_2020+BE+DE+FR+IT+LU+PT"
-   ~ ,"type":"DEFAULT"},{"title":"CITIZEN:LU1:HCL_C11xx_CITIZEN(1.0).H","type":"HIER_CONTEXT"}],"structure":"urn:
-   ~ true,"name":"Applications for international protection by country of nationality","names":{"en":"Applications for international p
-   ~ rotection by country of nationality"},"description":"Publication date: 16/05/2025 -
-   ~ applicants for international protection according to the country of nationality","names":{"en":"Returns of applicants for intern
-   ~ ational protection according to the country of nationality"},"description":"Publication date: 16/05/2025 -
-   ~ ersion":"1.0","agencyID":"LU1","isFinal":false,"name":"Population by citizenship, age and sex","names":{"en":"Population by ci
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography","descriptions":{"en":"Pu
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography"},"annotations":[{"type":
-   ~ ataflow","text":"true","texts":{"en":"true"}},{"id":"@SDMX","title":"CITIZEN","type":"LAYOUT_ROW"},{"id":"@SDMX","title":"AGE"
-   ~ ersion":"1.0","agencyID":"LU1","isFinal":false,"name":"Population by citizenship, year of arrival in the country and sex","nam
-   ~ es":{"en":"Population by citizenship, year of arrival in the country and sex"},"de
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography","descriptions":{"en":"Pu
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography"},"annotations":[{"type":
-   ~ ataflow","text":"true","texts":{"en":"true"}},{"id":"@SDMX","title":"CITIZEN","type":"LAYOUT_ROW"},{"id":"@SDMX","title":"YAE"
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography","descriptions":{"en":"Pu
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography"},"annotations":[{"type":
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography","descriptions":{"en":"Pu
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography"},"annotations":[{"type":
-   ~ lse,"name":"Place of usual residence one year prior to the census by citizenship, country of birth and sex","names":{"en":"Pla
-   ~ ce of usual residence one year prior to the census by citizenship, country of birth and sex"},"description":"Pu
-   ~ lation and employment - Population - Keywords: population, sex, age, citizenship, census, demography","descriptions":{"en":"Pu
+nordic_origin: SWE
+  FolkmRegFlandKCKM 2025: 290 kommuner, 21 län, 188 countries of birth; Sweden 10,605,529
+  countries against each region's own total: worst 52 people (cell-key noise)
+    län -> Sweden: 21 parts sum to 10,605,535 against 10,605,529
+    kommuner -> Stockholms län: 26 parts sum to 2,486,253 against 2,486,251
+    kommuner -> Uppsala län: 8 parts sum to 410,572 against 410,575
+    kommuner -> Södermanlands län: 9 parts sum to 300,436 against 300,440
+    kommuner -> Östergötlands län: 13 parts sum to 472,530 against 472,529
+    kommuner -> Jönköpings län: 13 parts sum to 369,721 against 369,722
+    kommuner -> Kronobergs län: 8 parts sum to 203,122 against 203,121
+    kommuner -> Kalmar län: 12 parts sum to 245,483 against 245,477
+    kommuner -> Gotlands län: 1 parts sum to 60,852 against 60,852
+    kommuner -> Blekinge län: 5 parts sum to 156,620 against 156,616
+    kommuner -> Skåne län: 33 parts sum to 1,433,082 against 1,433,083
+    kommuner -> Hallands län: 6 parts sum to 346,087 against 346,090
+    kommuner -> Västra Götalands län: 49 parts sum to 1,777,794 against 1,777,803
+    kommuner -> Värmlands län: 16 parts sum to 283,028 against 283,037
+    kommuner -> Örebro län: 12 parts sum to 308,362 against 308,357
+    kommuner -> Västmanlands län: 10 parts sum to 280,762 against 280,756
+    kommuner -> Dalarnas län: 15 parts sum to 286,048 against 286,043
+    kommuner -> Gävleborgs län: 10 parts sum to 283,449 against 283,452
+    kommuner -> Västernorrlands län: 7 parts sum to 240,641 against 240,640
+    kommuner -> Jämtlands län: 8 parts sum to 132,736 against 132,736
+    kommuner -> Västerbottens län: 15 parts sum to 279,024 against 279,028
+    kommuner -> Norrbottens län: 14 parts sum to 248,918 against 248,927
+  named (49): Swedish, Syrian, Iraqi, Finnish, Polish, Iranian, Afghan, Somali, Indian, Yugoslav, Bosnian, German, Turkish, Eritrean, Ukrainian, Thai, Chinese, Norwegian, Danish, Romanian, British, Pakistani, Lebanese, Chilean, Russian, American, Ethiopian, Vietnamese, Greek, Filipino, Dutch, Serbian, Lithuanian, Italian, Hungarian, Bangladeshi, Spanish, French, Colombian, Brazilian, Moroccan, Kosovar, Croatian, Sri Lankan, Korean, Latvian, North Macedonian, Egyptian, Albanian
+  SWE admin2: 290 of 290 office units bound to 290 polygons (0 set aside as pieces)
+  all 290 kommuner bound one to one; pieces set aside: none
+  311 records: admin1 21, admin2 290; labels the group tree cannot place: ['Eritrean', 'Ethiopian', 'Kosovar']
+  wrote data/processed/sweden_origin.json (1565 kB)
