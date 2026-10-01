@@ -1,15 +1,68 @@
-netherlands_gemeente: CBS Kerncijfers wijken en buurten 2022, 03759ned and 84910NED, by gemeente
-  WFS: 428 features; water flags {'B': 1, 'JA': 82, 'NEE': 345}
-  345 gemeenten; Nederland 0
-  gemeenten against the Netherlands: parts sum to 17,590,672 = 17,590,672
-  men + women against the total: largest difference 0
-  03759ned against the key figures, men and women: largest difference 0.0050% (Haarlemmermeer men 79,261 / 79,257)
-  03759ned's national row: parts sum to 17,590,672 = 17,590,672
-  national median 42.7 against Eurostat's 42.7 (NL, 1 January 2022)
-  named backgrounds: Turkish, Moroccan, Surinamese, Indonesian, German, Polish, Dutch Caribbean, Syrian, Belgian, British, Chinese, Iraqi, Indian, Italian, Afghan, Spanish
-  provinces against the Netherlands, 84910NED: parts sum to 17,590,672 = 17,590,672
-  Amsterdam: Weesp added, 903,399
-  netherlands_gemeente: 0 office units unbound
-  netherlands_gemeente: 0 polygons without an office unit
-  wrote data/processed/netherlands_gemeente.json (1783 kB)
-  wrote netherlands_gemeente.json: 356 records
+
+## https://nepszamlalas2022.ksh.hu/api/structure/WBS003/V67
+   HTTP 200, 1,031,027 bytes, application/json 
+   97 matches of '(?:KOR_|_AGE|aged|years|korcsop)'
+   ~ :[{"type":"code","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).F"}]},{"id":"KEV_AGE10","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"annotations":[{"id":"@SDMX","type":"ORDER","text":
+   ~ ,"rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).F"}]},{"id":"KEV_AGE10","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"annotations":[{"id":"@SDMX","type":"ORDER","text":"004"}],"links":[{"
+   ~ mx:org.sdmx.infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).F"}]},{"id":"KEV_AGE10","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"annotations":[{"id":"@SDMX","type":"ORDER","text":"004"}],"links":[{"type":"code","rel":"self","
+   ~ 04"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).KEV_AGE10"}]},{"id":"Y_LT10","name":"10 évesnél fiatalabb","names":{"hu":"10 évesnél fiatalabb","en":"Under 10 years"},"parent"
+   ~ DAT(1.0).KEV_AGE10"}]},{"id":"Y_LT10","name":"10 évesnél fiatalabb","names":{"hu":"10 évesnél fiatalabb","en":"Under 10 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"005"}],"links":[{"type":"code","rel":"self",
+   ~ },{"id":"Y_LT10","name":"10 évesnél fiatalabb","names":{"hu":"10 évesnél fiatalabb","en":"Under 10 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"005"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y_LT10"}]},{"id":"Y10-19","name":"10–19 éves","names":{"hu":"10–19 éves","en":"10 to 19 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"006"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y_LT10"}]},{"id":"Y10-19","name":"10–19 éves","names":{"hu":"10–19 éves","en":"10 to 19 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"006"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y10-19"}]},{"id":"Y20-29","name":"20–29 éves","names":{"hu":"20–29 éves","en":"20 to 29 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"007"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y10-19"}]},{"id":"Y20-29","name":"20–29 éves","names":{"hu":"20–29 éves","en":"20 to 29 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"007"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y20-29"}]},{"id":"Y30-39","name":"30–39 éves","names":{"hu":"30–39 éves","en":"30 to 39 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"008"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y20-29"}]},{"id":"Y30-39","name":"30–39 éves","names":{"hu":"30–39 éves","en":"30 to 39 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"008"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y30-39"}]},{"id":"Y40-49","name":"40–49 éves","names":{"hu":"40–49 éves","en":"40 to 49 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"009"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y30-39"}]},{"id":"Y40-49","name":"40–49 éves","names":{"hu":"40–49 éves","en":"40 to 49 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"009"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y40-49"}]},{"id":"Y50-59","name":"50–59 éves","names":{"hu":"50–59 éves","en":"50 to 59 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"010"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y40-49"}]},{"id":"Y50-59","name":"50–59 éves","names":{"hu":"50–59 éves","en":"50 to 59 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"010"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y50-59"}]},{"id":"Y60-69","name":"60–69 éves","names":{"hu":"60–69 éves","en":"60 to 69 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"011"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y50-59"}]},{"id":"Y60-69","name":"60–69 éves","names":{"hu":"60–69 éves","en":"60 to 69 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"011"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y60-69"}]},{"id":"Y70-79","name":"70–79 éves","names":{"hu":"70–79 éves","en":"70 to 79 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"012"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y60-69"}]},{"id":"Y70-79","name":"70–79 éves","names":{"hu":"70–79 éves","en":"70 to 79 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"012"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ t.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y70-79"}]},{"id":"Y80-89","name":"80–89 éves","names":{"hu":"80–89 éves","en":"80 to 89 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"013"}],"links":[{"type":"code","rel":"self",
+   ~ _ADAT(1.0).Y70-79"}]},{"id":"Y80-89","name":"80–89 éves","names":{"hu":"80–89 éves","en":"80 to 89 years"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"013"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ O:CL_TEL_SZ_ADAT(1.0).Y80-89"}]},{"id":"Y_GE90","name":"90 éves és idősebb","names":{"hu":"90 éves és idősebb","en":"90 years and over"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"014"}],"links":[{"type":"code","rel
+   ~ ]},{"id":"Y_GE90","name":"90 éves és idősebb","names":{"hu":"90 éves és idősebb","en":"90 years and over"},"parent":"KEV_AGE10","annotations":[{"id":"@SDMX","type":"ORDER","text":"014"}],"links":[{"type":"code","rel":"self","urn":"urn:sdmx:org.
+   ~ ":"self","urn":"urn:sdmx:org.sdmx.infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y_GE90"}]},{"id":"NEME_KEV1","name":"Korcsoport, nemek","names":{"hu":"Korcsoport, nemek","en":"Age group, sex"},"annotations":[{"id":"@SDMX","type":"ORDER","text":
+   ~ infomodel.codelist.Code=HCSO:CL_TEL_SZ_ADAT(1.0).Y_GE90"}]},{"id":"NEME_KEV1","name":"Korcsoport, nemek","names":{"hu":"Korcsoport, nemek","en":"Age group, sex"},"annotations":[{"id":"@SDMX","type":"ORDER","text":"015"}],"links":[{"type":"code","r
+   ~ "}]},{"id":"MY_LT15","name":"15 évesnél fiatalabb férfi","names":{"hu":"15 évesnél fiatalabb férfi","en":"Male under 15 years"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"016"}],"links":[{"type":"code","rel":"self",
+   ~ SZ_ADAT(1.0).MY_LT15"}]},{"id":"MY15-64","name":"15–64 éves férfi","names":{"hu":"15–64 éves férfi","en":"Male 15 to 64 years"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"017"}],"links":[{"type":"code","rel":"self",
+   ~ 0).MY15-64"}]},{"id":"MY_GE65","name":"65 éves és idősebb férfi","names":{"hu":"65 éves és idősebb férfi","en":"Male 65 years and over"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"018"}],"links":[{"type":"code","rel
+   ~ GE65"}]},{"id":"FY_LT15","name":"15 évesnél fiatalabb nő","names":{"hu":"15 évesnél fiatalabb nő","en":"Female under 15 years"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"019"}],"links":[{"type":"code","rel":"self",
+   ~ TEL_SZ_ADAT(1.0).FY_LT15"}]},{"id":"FY15-64","name":"15–64 éves nő","names":{"hu":"15–64 éves nő","en":"Female 15 to 64 years"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"020"}],"links":[{"type":"code","rel":"self",
+   ~ T(1.0).FY15-64"}]},{"id":"FY_GE65","name":"65 éves és idősebb nő","names":{"hu":"65 éves és idősebb nő","en":"Female 65 years and over"},"parent":"NEME_KEV1","annotations":[{"id":"@SDMX","type":"ORDER","text":"021"}],"links":[{"type":"code","rel
+   ~ id":"LMS_INV","name":"15 évesnél fiatalabb személy","names":{"hu":"15 évesnél fiatalabb személy","en":"Persons under 15 years of age"},"parent":"CSPOT_LMS1","annotations":[{"id":"@SDMX","type":"ORDER","text":"027"}],"links":[{"type":"code","rel"
+   ~ idősebb nő 0 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 0 élve született gyermekkel","en":"Female aged 15 years and over with 0 liveborn child"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"029"}
+   ~ nő 0 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 0 élve született gyermekkel","en":"Female aged 15 years and over with 0 liveborn child"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"029"}],"links"
+   ~ idősebb nő 1 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 1 élve született gyermekkel","en":"Female aged 15 years and over with 1 liveborn child"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"030"}
+   ~ nő 1 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 1 élve született gyermekkel","en":"Female aged 15 years and over with 1 liveborn child"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"030"}],"links"
+   ~ idősebb nő 2 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 2 élve született gyermekkel","en":"Female aged 15 years and over with 2 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"03
+   ~ nő 2 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 2 élve született gyermekkel","en":"Female aged 15 years and over with 2 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"031"}],"lin
+   ~ idősebb nő 3 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 3 élve született gyermekkel","en":"Female aged 15 years and over with 3 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"03
+   ~ nő 3 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 3 élve született gyermekkel","en":"Female aged 15 years and over with 3 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"032"}],"lin
+   ~ idősebb nő 4 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 4 élve született gyermekkel","en":"Female aged 15 years and over with 4 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"03
+   ~ nő 4 élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 4 élve született gyermekkel","en":"Female aged 15 years and over with 4 liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"033"}],"lin
+   ~ öbb élve született gyermekkel","names":{"hu":"15 éves és idősebb nő 5 vagy több élve született gyermekkel","en":"Female aged 15 years and over with 5 or more liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","t
+   ~ született gyermekkel","names":{"hu":"15 éves és idősebb nő 5 vagy több élve született gyermekkel","en":"Female aged 15 years and over with 5 or more liveborn children"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"034
+   ~ GE05"}]},{"id":"FY_15LT","name":"15 évesnél fiatalabb nő","names":{"hu":"15 évesnél fiatalabb nő","en":"Female under 15 years old"},"parent":"TERM_KAT","annotations":[{"id":"@SDMX","type":"ORDER","text":"035"}],"links":[{"type":"code","rel":"sel
+   ~ ,{"id":"LISKNAP","name":"7 évesnél fiatalabb személy","names":{"hu":"7 évesnél fiatalabb személy","en":"Persons under 7 years of age"},"parent":"BISK_V2","annotations":[{"id":"@SDMX","type":"ORDER","text":"048"}],"links":[{"type":"code","rel":"s
+   ~ "id":"LT_MWA","name":"15 évesnél fiatalabb személy","names":{"hu":"15 évesnél fiatalabb személy","en":"Persons under 15 years of age"},"parent":"GAKT_V1","annotations":[{"id":"@SDMX","type":"ORDER","text":"054"}],"links":[{"type":"code","rel":"s
+   ~ ]},{"id":"DIGI4","name":"6 évesnél fiatalabb személy","names":{"hu":"6 évesnél fiatalabb személy","en":"Persons under 6 years of age"},"parent":"DIGI","annotations":[{"id":"@SDMX","type":"ORDER","text":"060"}],"links":[{"type":"code","rel":"self
+   ~ ],"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_NEME_SEX(1.0)"}},{"id":"KEV_AGE","name":"Korcsoport, részletes","names":{"hu":"Korcsoport, részletes","en":"Age group, itemized"},"links":[{"type":"con
+   ~ ntation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_NEME_SEX(1.0)"}},{"id":"KEV_AGE","name":"Korcsoport, részletes","names":{"hu":"Korcsoport, részletes","en":"Age group, itemized"},"links":[{"type":"concept","rel":"self
+   ~ sdmx.infomodel.codelist.Codelist=HCSO:CL_NEME_SEX(1.0)"}},{"id":"KEV_AGE","name":"Korcsoport, részletes","names":{"hu":"Korcsoport, részletes","en":"Age group, itemized"},"links":[{"type":"concept","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.c
+   ~ ks":[{"type":"concept","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=HCSO:HCSO_CONCEPTS(1.0).KEV_AGE"}],"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_KEV_AGE(1.0)"}},{"id":"OB
+   ~ _CONCEPTS(1.0).KEV_AGE"}],"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_KEV_AGE(1.0)"}},{"id":"OBS_STATUS","name":"Állapot","names":{"hu":"Állapot","en":"Status"},"links":[{"type":"concept","rel":"se
+   ~ coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_TEL_SZ_ADAT(1.0)"}},{"id":"KEV_AGE_FOGL_MUNK","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"links":[{"type":"concept","rel":"self","ur
+   ~ umeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_TEL_SZ_ADAT(1.0)"}},{"id":"KEV_AGE_FOGL_MUNK","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"links":[{"type":"concept","rel":"self","urn":"urn:sdmx:org.sdmx.infom
+   ~ mx.infomodel.codelist.Codelist=HCSO:CL_TEL_SZ_ADAT(1.0)"}},{"id":"KEV_AGE_FOGL_MUNK","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"links":[{"type":"concept","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=
+   ~ ks":[{"type":"concept","rel":"self","urn":"urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=HCSO:HCSO_CONCEPTS(1.0).KEV_AGE_FOGL_MUNK"}],"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_KEV_AGE_FOGL_MU
+   ~ 1.0).KEV_AGE_FOGL_MUNK"}],"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_KEV_AGE_FOGL_MUNK(1.0)"}},{"id":"CSPOT15_LMS1","name":"Családi állapot","names":{"hu":"Családi állapot","en":"Legal marital sta
+   ~ ,"coreRepresentation":{"enumeration":"urn:sdmx:org.sdmx.infomodel.codelist.Codelist=HCSO:CL_GAKT15_V1(1.0)"}},{"id":"KEV_AGE10","name":"Korcsoport","names":{"hu":"Korcsoport","en":"Age group"},"links":[{"type":"concept","rel":"self","urn":"urn:
+
+## https://nepszamlalas2022.ksh.hu/api/dataflows
+   HTTP 404, 84 bytes, application/json 
+   0 matches of '(?:KOR_|_AGE|aged|years|korcsop)'
