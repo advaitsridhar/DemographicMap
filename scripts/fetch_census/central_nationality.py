@@ -49,7 +49,7 @@ GERMAN: dict[str, str] = {
     "deutschland": "German", "osterreich": "Austrian", "schweiz": "Swiss",
     "liechtenstein": "Liechtensteiner", "italien": "Italian", "frankreich": "French",
     "spanien": "Spanish", "portugal": "Portuguese", "griechenland": "Greek",
-    "turkei": "Turkish", "polen": "Polish", "rumanien": "Romanian", "bulgarien": "Bulgarian",
+    "turkei": "Turkish", "turkiye": "Turkish", "polen": "Polish", "rumanien": "Romanian", "bulgarien": "Bulgarian",
     "ungarn": "Hungarian", "kroatien": "Croatian", "serbien": "Serbian",
     "serbienundmontenegro": "Serbian", "bosnienundherzegowina": "Bosnian and Herzegovinian",
     "bosnienherzegowina": "Bosnian and Herzegovinian", "kosovo": "Kosovan",
