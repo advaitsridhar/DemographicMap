@@ -196,6 +196,45 @@ def last_counts(units: list[str], series: dict[int, dict[str, float]], names: di
     return last
 
 
+def unchanged_since(units: list[str], totals: dict[str, float], names: dict[str, str],
+                    then: dict[str, float], now_totals: dict[str, float],
+                    now_names: dict[str, str]) -> tuple[dict[str, str], list[str]]:
+    """Each 2017 municipality that is the same territory today -> its number today.
+
+    ``totals`` and ``names`` are MAN09000's for 1 December 2017; ``then`` is
+    MAN02005's count for 1 January 2018 laid out in today's division, and
+    ``now_totals``/``now_names`` its latest year. A municipality keeps its own
+    number when that number's 2018 count agrees with its own of a month before
+    (within 8%: MAN02005's counts are recomputed by the method Hagstofa adopted
+    in 2024); otherwise the number went to a merger (Tálknafjarðarhreppur's
+    4604, which the Vesturbyggð of 2024 took). One that lost its number is
+    renumbered if a number not held in 2017 carries the same name and the same
+    count. ``ABSORBED`` and ``MERGED_RENUMBERED`` are merged whatever the counts
+    say. Also returns the numbers kept by a merger, as lines for the log.
+    """
+    def same(c: str, n: str) -> bool:
+        return abs(then.get(n, 0) - totals[c]) <= 0.08 * totals[c] + 30
+
+    now_units = sorted(c for c, n in now_totals.items() if c != "9999" and n > 0)
+    today: dict[str, str] = {}
+    kept_number = []
+    for c in units:
+        if c in ABSORBED or c in MERGED_RENUMBERED:
+            continue
+        if c in now_totals:
+            if same(c, c):
+                today[c] = c
+            else:
+                kept_number.append(f"{names[c]} {c}: {then.get(c, 0):,.0f} against "
+                                   f"{totals[c]:,.0f}")
+            continue
+        found = [n for n in now_units if n not in units and stem(now_names[n]) == stem(names[c])
+                 and same(c, n)]
+        if len(found) == 1:
+            today[c] = found[0]
+    return today, kept_number
+
+
 def region_note(region: str, drawn_in: dict[str, str], spelled: dict[str, str]) -> str:
     """What a region's note says about the municipalities it is summed from.
 
@@ -284,31 +323,8 @@ def main() -> int:
         {"code": "Kyn", "selection": {"filter": "item", "values": ["0"]}},
     ], "response": {"format": "json-stat2"}}, pause=PAUSE, attempts=ATTEMPTS))}
 
-    def same(c: str, n: str) -> bool:
-        return abs(then.get(n, 0) - totals[c]) <= 0.08 * totals[c] + 30
-
     now_units = sorted(c for c, n in now_totals.items() if c != "9999" and n > 0)
-    today: dict[str, str] = {}
-    kept_number = []
-    for c in units:
-        if c in ABSORBED or c in MERGED_RENUMBERED:
-            continue
-        if c in now_totals:
-            # Its own number: the same territory if the count agrees, else
-            # the number went to a merger (Tálknafjarðarhreppur's 4604, which
-            # the Vesturbyggð of 2024 took).
-            if same(c, c):
-                today[c] = c
-            else:
-                kept_number.append(f"{names[c]} {c}: {then.get(c, 0):,.0f} against "
-                                   f"{totals[c]:,.0f}")
-            continue
-        # A new number: renumbered if a number not held in 2017 carries the
-        # same name and the same count.
-        found = [n for n in now_units if n not in units and stem(now_names[n]) == stem(names[c])
-                 and same(c, n)]
-        if len(found) == 1:
-            today[c] = found[0]
+    today, kept_number = unchanged_since(units, totals, names, then, now_totals, now_names)
     log(f"  {len(today)} of {len(units)} municipalities are the same territory today; "
         f"renumbered: {sorted(f'{names[c]} {c}->{n}' for c, n in today.items() if n != c)}; "
         f"number taken by a merger: {kept_number}; "
