@@ -284,7 +284,7 @@
     "parent": "AFG",
     "parent_name": null,
     "country": "AFG",
-    "capital": "Chaghcharan",
+    "capital": "Firuzkoh",
     "coordinates": [
       65.255,
       34.51972
@@ -5254,7 +5254,7 @@
     "parent": "AZE",
     "parent_name": null,
     "country": "AZE",
-    "capital": "Khachmaz",
+    "capital": "Xaçmaz",
     "coordinates": [
       48.8,
       41.46667
@@ -5382,8 +5382,8 @@
     "inception": "1991-11-26",
     "iso_3166_2": "AZ-XVD",
     "population": {
-      "value": 43871,
-      "year": 2019,
+      "value": 4500,
+      "year": 2026,
       "source": "Wikidata (CC0)"
     },
     "sources": [
@@ -7142,7 +7142,7 @@
     "id": "BEL-WD-Q231",
     "wikidata": "Q231",
     "level": "admin1",
-    "name": "Walloon Region",
+    "name": "Wallonia",
     "parent": "BEL",
     "parent_name": null,
     "country": "BEL",
@@ -10229,7 +10229,7 @@
     "id": "BLR-WD-Q173822",
     "wikidata": "Q173822",
     "level": "admin1",
-    "name": "Byerastsye Region",
+    "name": "Brest Region",
     "parent": "BLR",
     "parent_name": null,
     "country": "BLR",
@@ -10287,7 +10287,7 @@
     "id": "BLR-WD-Q191061",
     "wikidata": "Q191061",
     "level": "admin1",
-    "name": "Horadnia Region",
+    "name": "Hrodna Region",
     "parent": "BLR",
     "parent_name": null,
     "country": "BLR",
@@ -17541,37 +17541,6 @@
     ]
   },
   {
-    "id": "COD-WD-Q843312",
-    "wikidata": "Q843312",
-    "level": "admin1",
-    "name": "Nord-Ubangi",
-    "parent": "COD",
-    "parent_name": null,
-    "country": "COD",
-    "capital": "Gbadolite",
-    "coordinates": [
-      21.01667,
-      4.28333
-    ],
-    "inception": {
-      "status": "not_available"
-    },
-    "iso_3166_2": "CD-NU",
-    "population": {
-      "value": 1269000,
-      "year": 2015,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q843312",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
     "id": "COD-WD-Q130625",
     "wikidata": "Q130625",
     "level": "admin1",
@@ -17598,6 +17567,37 @@
         "field": "population/capital/coordinates",
         "name": "Wikidata",
         "url": "https://www.wikidata.org/wiki/Q130625",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "COD-WD-Q843312",
+    "wikidata": "Q843312",
+    "level": "admin1",
+    "name": "North Ubangi",
+    "parent": "COD",
+    "parent_name": null,
+    "country": "COD",
+    "capital": "Gbadolite",
+    "coordinates": [
+      21.01667,
+      4.28333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": "CD-NU",
+    "population": {
+      "value": 1269000,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q843312",
         "license": "CC0"
       }
     ]
@@ -17668,7 +17668,7 @@
     "id": "COD-WD-Q834551",
     "wikidata": "Q834551",
     "level": "admin1",
-    "name": "Sud-Ubangi",
+    "name": "South Ubangi",
     "parent": "COD",
     "parent_name": null,
     "country": "COD",
@@ -17699,7 +17699,7 @@
     "id": "COD-WD-Q826585",
     "wikidata": "Q826585",
     "level": "admin1",
-    "name": "Tanganyika Province",
+    "name": "Tanganyika",
     "parent": "COD",
     "parent_name": null,
     "country": "COD",
@@ -21232,8 +21232,8 @@
     "inception": "2000-11-12",
     "iso_3166_2": "CZ-63",
     "population": {
-      "value": 517647,
-      "year": 2025,
+      "value": 514915,
+      "year": 2026,
       "source": "Wikidata (CC0)"
     },
     "sources": [
@@ -23416,7 +23416,7 @@
     "parent": "DOM",
     "parent_name": null,
     "country": "DOM",
-    "capital": "Puerto Plata",
+    "capital": "Luperon pto pta",
     "coordinates": [
       -70.68333,
       19.8
@@ -24644,7 +24644,7 @@
     "parent": "DZA",
     "parent_name": null,
     "country": "DZA",
-    "capital": "Khenchela",
+    "capital": "tangier",
     "coordinates": [
       7.147,
       35.434
@@ -25383,7 +25383,7 @@
     "parent": "DZA",
     "parent_name": null,
     "country": "DZA",
-    "capital": "القبة",
+    "capital": "Tizi-Ouzou",
     "coordinates": [
       4.05833,
       36.725
@@ -27449,7 +27449,7 @@
     "id": "ESP-WD-Q5748",
     "wikidata": "Q5748",
     "level": "admin1",
-    "name": "Castile–La Mancha",
+    "name": "Castilla–La Mancha",
     "parent": "ESP",
     "parent_name": null,
     "country": "ESP",
@@ -29708,8 +29708,8 @@
     "country": "FRA",
     "capital": "Basse-Terre",
     "coordinates": [
-      -61.5605,
-      16.2595
+      -61.5,
+      16.25
     ],
     "inception": "1946-03-21",
     "iso_3166_2": "FR-971",
@@ -36551,7 +36551,7 @@
     "parent": "IDN",
     "parent_name": null,
     "country": "IDN",
-    "capital": "Banjarmasin",
+    "capital": "Palangka Raya",
     "coordinates": [
       113.91667,
       -2.21667
@@ -37958,8 +37958,8 @@
     "country": "IND",
     "capital": "Gandhinagar",
     "coordinates": [
-      69.655,
-      23.22
+      71.838,
+      23.15644
     ],
     "inception": "1960-05-01",
     "iso_3166_2": "IN-GJ",
@@ -42126,8 +42126,8 @@
     "inception": "1927-01-02",
     "iso_3166_2": "IT-55",
     "population": {
-      "value": 882015,
-      "year": 2019,
+      "value": 852085,
+      "year": 2024,
       "source": "Wikidata (CC0)"
     },
     "sources": [
@@ -42731,8 +42731,8 @@
     "country": "JPN",
     "capital": "Chiba",
     "coordinates": [
-      140.12319,
-      35.60458
+      140.12306,
+      35.60444
     ],
     "inception": "1873-06-15",
     "iso_3166_2": "JP-12",
@@ -53729,7 +53729,7 @@
     "parent": "MDA",
     "parent_name": null,
     "country": "MDA",
-    "capital": "Bender",
+    "capital": "Bendery",
     "coordinates": [
       29.45,
       46.83333
@@ -53820,7 +53820,7 @@
     "parent": "MDA",
     "parent_name": null,
     "country": "MDA",
-    "capital": "Cahul, satul Gotești",
+    "capital": "Cahul",
     "coordinates": [
       28.33333,
       45.83333
@@ -66319,8 +66319,8 @@
     "country": "NIC",
     "capital": "Boaco",
     "coordinates": [
-      -85.65982,
-      12.47177
+      -85.65995,
+      12.47262
     ],
     "inception": "1936-01-01",
     "iso_3166_2": "NI-BO",
@@ -66406,8 +66406,8 @@
     "country": "NIC",
     "capital": "Juigalpa",
     "coordinates": [
-      -85.36894,
-      12.10857
+      -85.36521,
+      12.10606
     ],
     "inception": "1858-01-01",
     "iso_3166_2": "NI-CO",
@@ -66667,8 +66667,8 @@
     "country": "NIC",
     "capital": "Puerto Cabezas",
     "coordinates": [
-      -83.38313,
-      14.02941
+      -83.38226,
+      14.02837
     ],
     "inception": "1986-01-01",
     "iso_3166_2": "NI-AN",
@@ -66803,51 +66803,22 @@
     ]
   },
   {
-    "id": "NLD-WD-Q21203",
-    "wikidata": "Q21203",
+    "id": "NLD-WD-Q25396",
+    "wikidata": "Q25396",
     "level": "admin1",
-    "name": "Aruba",
+    "name": "Bonaire",
     "parent": "NLD",
     "parent_name": null,
     "country": "NLD",
-    "capital": "Oranjestad",
+    "capital": "Kralendijk",
     "coordinates": [
-      -69.975,
-      12.515
-    ],
-    "inception": "1986-01-01",
-    "iso_3166_2": "NL-AW",
-    "population": {
-      "value": 106739,
-      "year": 2022,
-      "source": "Wikidata (CC0)"
-    },
-    "sources": [
-      {
-        "field": "population/capital/coordinates",
-        "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q21203",
-        "license": "CC0"
-      }
-    ]
-  },
-  {
-    "id": "NLD-WD-Q25279",
-    "wikidata": "Q25279",
-    "level": "admin1",
-    "name": "Curaçao",
-    "parent": "NLD",
-    "parent_name": null,
-    "country": "NLD",
-    "capital": "Willemstad",
-    "coordinates": [
-      -69.0,
+      -68.25,
       12.2
     ],
-    "inception": "1954-01-01",
-    "iso_3166_2": "NL-CW",
+    "inception": "2010-10-10",
+    "iso_3166_2": "NL-BQ1",
     "population": {
-      "value": 152849,
+      "value": 24090,
       "year": 2023,
       "source": "Wikidata (CC0)"
     },
@@ -66855,67 +66826,421 @@
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q25279",
+        "url": "https://www.wikidata.org/wiki/Q25396",
         "license": "CC0"
       }
     ]
   },
   {
-    "id": "NLD-WD-Q55",
-    "wikidata": "Q55",
+    "id": "NLD-WD-Q772",
+    "wikidata": "Q772",
     "level": "admin1",
-    "name": "Netherlands",
+    "name": "Drenthe",
     "parent": "NLD",
     "parent_name": null,
     "country": "NLD",
-    "capital": "Amsterdam",
+    "capital": "Assen",
     "coordinates": [
-      5.55,
-      52.31667
+      6.5833,
+      52.9167
     ],
-    "inception": "1795-01-19",
-    "iso_3166_2": {
+    "inception": "1796-01-01",
+    "iso_3166_2": "NL-DR",
+    "population": {
+      "value": 491792,
+      "year": 2017,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q772",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q707",
+    "wikidata": "Q707",
+    "level": "admin1",
+    "name": "Flevoland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Lelystad",
+    "coordinates": [
+      5.66667,
+      52.53333
+    ],
+    "inception": "1986-01-01",
+    "iso_3166_2": "NL-FL",
+    "population": {
+      "value": 399893,
+      "year": 2013,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q707",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q770",
+    "wikidata": "Q770",
+    "level": "admin1",
+    "name": "Friesland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Leeuwarden",
+    "coordinates": [
+      5.8,
+      53.20139
+    ],
+    "inception": "1814-01-01",
+    "iso_3166_2": "NL-FR",
+    "population": {
+      "value": 651459,
+      "year": 2021,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q770",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q775",
+    "wikidata": "Q775",
+    "level": "admin1",
+    "name": "Gelderland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Arnhem",
+    "coordinates": [
+      5.9167,
+      52.0833
+    ],
+    "inception": {
       "status": "not_available"
     },
+    "iso_3166_2": "NL-GE",
     "population": {
-      "value": 17942942,
-      "year": 2024,
+      "value": 2019692,
+      "year": 2013,
       "source": "Wikidata (CC0)"
     },
     "sources": [
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q55",
+        "url": "https://www.wikidata.org/wiki/Q775",
         "license": "CC0"
       }
     ]
   },
   {
-    "id": "NLD-WD-Q26273",
-    "wikidata": "Q26273",
+    "id": "NLD-WD-Q752",
+    "wikidata": "Q752",
     "level": "admin1",
-    "name": "Sint Maarten",
+    "name": "Groningen",
     "parent": "NLD",
     "parent_name": null,
     "country": "NLD",
-    "capital": "Philipsburg",
+    "capital": "Groningen",
     "coordinates": [
-      -63.06778,
-      18.03194
+      6.73778,
+      53.25806
     ],
-    "inception": "2010-01-01",
-    "iso_3166_2": "SX",
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": "NL-GR",
     "population": {
-      "value": 43847,
-      "year": 2020,
+      "value": 582728,
+      "year": 2013,
       "source": "Wikidata (CC0)"
     },
     "sources": [
       {
         "field": "population/capital/coordinates",
         "name": "Wikidata",
-        "url": "https://www.wikidata.org/wiki/Q26273",
+        "url": "https://www.wikidata.org/wiki/Q752",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q1093",
+    "wikidata": "Q1093",
+    "level": "admin1",
+    "name": "Limburg",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Maastricht",
+    "coordinates": [
+      5.93333,
+      51.21667
+    ],
+    "inception": "1867-01-01",
+    "iso_3166_2": "NL-LI",
+    "population": {
+      "value": 1120006,
+      "year": 2013,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1093",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q1101",
+    "wikidata": "Q1101",
+    "level": "admin1",
+    "name": "North Brabant",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "'s-Hertogenbosch",
+    "coordinates": [
+      5.1,
+      51.63333
+    ],
+    "inception": "1815-01-01",
+    "iso_3166_2": "NL-NB",
+    "population": {
+      "value": 2256848,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1101",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q701",
+    "wikidata": "Q701",
+    "level": "admin1",
+    "name": "North Holland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Haarlem",
+    "coordinates": [
+      4.83333,
+      52.66667
+    ],
+    "inception": "1840-09-04",
+    "iso_3166_2": "NL-NH",
+    "population": {
+      "value": 2813466,
+      "year": 2017,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q701",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q773",
+    "wikidata": "Q773",
+    "level": "admin1",
+    "name": "Overijssel",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Zwolle",
+    "coordinates": [
+      6.5,
+      52.5
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": "NL-OV",
+    "population": {
+      "value": 1142360,
+      "year": 2015,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q773",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q25528",
+    "wikidata": "Q25528",
+    "level": "admin1",
+    "name": "Saba",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "The Bottom",
+    "coordinates": [
+      -63.2375,
+      17.6325
+    ],
+    "inception": "2010-10-10",
+    "iso_3166_2": "NL-BQ2",
+    "population": {
+      "value": 2035,
+      "year": 2023,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q25528",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q26180",
+    "wikidata": "Q26180",
+    "level": "admin1",
+    "name": "Sint Eustatius",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Oranjestad",
+    "coordinates": [
+      -62.96667,
+      17.48333
+    ],
+    "inception": "2010-10-10",
+    "iso_3166_2": "BQ-SE",
+    "population": {
+      "value": 3293,
+      "year": 2023,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q26180",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q694",
+    "wikidata": "Q694",
+    "level": "admin1",
+    "name": "South Holland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "The Hague",
+    "coordinates": [
+      4.66667,
+      52.0
+    ],
+    "inception": "1840-09-04",
+    "iso_3166_2": "NL-ZH",
+    "population": {
+      "value": 3577032,
+      "year": 2013,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q694",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q776",
+    "wikidata": "Q776",
+    "level": "admin1",
+    "name": "Utrecht",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Utrecht",
+    "coordinates": [
+      5.17917,
+      52.10333
+    ],
+    "inception": {
+      "status": "not_available"
+    },
+    "iso_3166_2": "NL-UT",
+    "population": {
+      "value": 1253672,
+      "year": 2013,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q776",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
+    "id": "NLD-WD-Q705",
+    "wikidata": "Q705",
+    "level": "admin1",
+    "name": "Zeeland",
+    "parent": "NLD",
+    "parent_name": null,
+    "country": "NLD",
+    "capital": "Middelburg",
+    "coordinates": [
+      3.75,
+      51.56667
+    ],
+    "inception": "1012-01-01",
+    "iso_3166_2": "NL-ZE",
+    "population": {
+      "value": 386707,
+      "year": 2022,
+      "source": "Wikidata (CC0)"
+    },
+    "sources": [
+      {
+        "field": "population/capital/coordinates",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q705",
         "license": "CC0"
       }
     ]
@@ -76152,8 +76477,8 @@
     "inception": "1968-02-01",
     "iso_3166_2": "RO-TM",
     "population": {
-      "value": 650533,
-      "year": 2021,
+      "value": 765763,
+      "year": 2026,
       "source": "Wikidata (CC0)"
     },
     "sources": [
@@ -84391,7 +84716,7 @@
     },
     "iso_3166_2": "SI-080",
     "population": {
-      "value": 18684,
+      "value": 18758,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -84649,7 +84974,7 @@
     },
     "iso_3166_2": "SI-049",
     "population": {
-      "value": 3549,
+      "value": 3529,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -85169,7 +85494,7 @@
     },
     "iso_3166_2": "SI-149",
     "population": {
-      "value": 1336,
+      "value": 1341,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -85638,15 +85963,15 @@
     "country": "SVN",
     "capital": "Divača",
     "coordinates": [
-      14.0225,
-      45.68444
+      13.9678,
+      45.6814
     ],
     "inception": {
       "status": "not_available"
     },
     "iso_3166_2": "SI-019",
     "population": {
-      "value": 4213,
+      "value": 4255,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -86197,7 +86522,7 @@
     },
     "iso_3166_2": "SI-031",
     "population": {
-      "value": 1995,
+      "value": 2000,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -86356,7 +86681,7 @@
     },
     "iso_3166_2": "SI-162",
     "population": {
-      "value": 3014,
+      "value": 3024,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -86544,8 +86869,8 @@
       "status": "not_available"
     },
     "coordinates": [
-      13.65655,
-      45.51123
+      13.6602,
+      45.5366
     ],
     "inception": {
       "status": "not_available"
@@ -88634,7 +88959,7 @@
     },
     "iso_3166_2": "SI-107",
     "population": {
-      "value": 3105,
+      "value": 3106,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -88731,7 +89056,7 @@
     },
     "iso_3166_2": "SI-178",
     "population": {
-      "value": 4493,
+      "value": 4579,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -90169,7 +90494,7 @@
     },
     "iso_3166_2": "SI-206",
     "population": {
-      "value": 3507,
+      "value": 3462,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -90202,7 +90527,7 @@
     },
     "iso_3166_2": "SI-125",
     "population": {
-      "value": 3265,
+      "value": 3291,
       "year": 2020,
       "source": "Wikidata (CC0)"
     },
@@ -110563,7 +110888,7 @@
     "parent": "VNM",
     "parent_name": null,
     "country": "VNM",
-    "capital": "Thục Phán",
+    "capital": "Thục Phán (ward)",
     "coordinates": [
       106.08333,
       22.75
@@ -111522,8 +111847,8 @@
     "country": "VNM",
     "capital": "Cao Lãnh",
     "coordinates": [
-      105.63396,
-      10.45501
+      106.0,
+      10.38835
     ],
     "inception": "1976-01-01",
     "iso_3166_2": "VN-45",
