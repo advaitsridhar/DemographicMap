@@ -414,6 +414,30 @@ def pdf(url: str, pages: str = "1-2", chars: int = 3000, grep: str | None = None
                 print("    " + text[:chars].replace("\n", "\n    "))
 
 
+def pdf_heads(urls: list[str], lines: int = 3) -> None:
+    """For each URL: its HTTP outcome and, for a PDF, its page count and the
+    first lines of page 1 -- which edition a fixed file name holds today."""
+    import io
+    import pdfplumber
+    for url in urls:
+        try:
+            raw = fetch(url, accept="*/*")
+        except Exception as exc:
+            print(f"  {url.rsplit('/', 1)[-1][:110]}: {str(exc)[:90]}")
+            continue
+        if not raw.startswith(b"%PDF"):
+            print(f"  {url.rsplit('/', 1)[-1][:110]}: {len(raw):,} bytes, not a PDF")
+            continue
+        with pdfplumber.open(io.BytesIO(raw)) as doc:
+            head = (doc.pages[0].extract_text() or "").splitlines()[:lines]
+            print(f"  {url.rsplit('/', 1)[-1][:110]}: {len(doc.pages)} pages -- "
+                  + " | ".join(h[:120] for h in head))
+        time.sleep(1.0)
+
+
+SVK = "https://www.svenskakyrkan.se/filer/1374643/"
+
+
 def klass_codes(url: str) -> None:
     body = get_json(url)
     codes = body.get("codes", [])
@@ -481,6 +505,20 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 18d: which edition the Church of Sweden's fixed file names hold
+    # today, and the Finnish church's economic units in full.
+    "r18d_swe_live": lambda: pdf_heads(
+        [SVK + n for n in ("MedlemsutvecklingLKF.pdf", "MedlemsutvecklingLKF(1).pdf",
+                           "MedlemsutvecklingLKF(2).pdf", "MedlemsutvecklingLKF(3).pdf",
+                           "NyckeltalLKF.pdf", "NyckeltalLKF(1).pdf", "NyckeltalLKF(2).pdf")]
+        + [SVK + "Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20"
+           f"december%20{y}%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf"
+           for y in range(2020, 2026)]
+        + [SVK + f"Medlemsutveckling%20{y - 1}-{y},%20lan,%20kommun%20och%20forsamling%20samt%20"
+           "riket%20(pdf).pdf" for y in range(2020, 2026)]),
+    "r18d_fin_evl_units": lambda: xlsx(
+        "https://web.archive.org/web/20220705145540id_/https://www.kirkontilastot.fi/tiedostot/"
+        "J%C3%A4senm%C3%A4%C3%A4r%C3%A42020.xlsx", rows=400, width=140),
     # Round 18c: the Church of Sweden's membership against the population by
     # kommun, which its statistics folder has published as PDFs.
     "r18c_swe_cdx": lambda: cdx(
