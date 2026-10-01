@@ -1,4 +1,8 @@
-nordic_church: SWE
-  https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf: 2,039 lines, 289 kommuner, 21 län, registered without a property: (17847, 5935, 33.2); 'Okänd' rows: [(17847, 5933, 33.2)]
-  1762 Munkfors: lines naming it: ['Forshaga-Munkfors församling (176301) 15 269 10 693 70,0% 70,0% 0,13% 0,31% 0,91%']
-svenska kyrkan: 289 kommuner of SCB's 290; not read: ['Munkfors']
+switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
+  nationalities against Switzerland: parts sum to 9,127,125 = 9,127,125
+  named: Swiss, Italian, German, Portuguese, French, Kosovan, Spanish, Turkish, Ukrainian, North Macedonian, Serbian, Polish, Austrian, Eritrean, Romanian, Afghan, British
+  the table's 2115 communes are the register's of 31-12-2025
+  communes against Switzerland: parts sum to 9,127,125 = 9,127,125
+  districts: 141 written, 27 straddled; unbound []; polygons with no unit ['Bodensee']
+  wrote data/processed/switzerland_nationality.json (580 kB)
+  wrote switzerland_nationality.json: 194 records
