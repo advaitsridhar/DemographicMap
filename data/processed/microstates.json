@@ -1090,6 +1090,50 @@
     "population_note": "Residents of the district at 31 December 2025, in the districts defined by Sovereign Order No. 4,481 of 13 September 2013 (the report's note to Figure 3), which put the Ravin de Sainte-Dévote in Les Moneghetti. A figure for this polygon from before 2013 counted a district drawn before that order and need not be the same ground; the Principality as a whole grew from 35,352 residents in 2008 to 38,857 in 2025 (Figure 2)."
   },
   {
+    "id": "MCO-IMSEE-lesmoneghetti",
+    "level": "admin2",
+    "name": "Les Monegetti",
+    "parent": "MCO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4498,
+      "year": 2025,
+      "source": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026",
+        "url": "https://imsee.mc/en/thematics/population/population-census",
+        "year": 2025
+      }
+    ],
+    "country": "MCO",
+    "match_by": "shape_id",
+    "shape_id": "19026983B74744845285354",
+    "population_note": "Residents of the district at 31 December 2025, in the districts defined by Sovereign Order No. 4,481 of 13 September 2013 (the report's note to Figure 3), which put the Ravin de Sainte-Dévote in Les Moneghetti. A figure for this polygon from before 2013 counted a district drawn before that order and need not be the same ground; the Principality as a whole grew from 35,352 residents in 2008 to 38,857 in 2025 (Figure 2)."
+  },
+  {
     "id": "MCO-IMSEE-fontvieille",
     "level": "admin2",
     "name": "Fontvieille",
