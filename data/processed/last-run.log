@@ -1,22 +1,54 @@
 
-## https://lustat.statec.lu/rest/dataflow/LU1/all/latest
-   HTTP 406, 471 bytes, text/plain 
-   2 lines
-   | acceptable: application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1, application/rdf+xml; charset=utf-8, application/vnd.sdmx.structure+xml; charset=utf-8; version=2.0, application/xml; charset=utf-8; version=2.1, text/xml; charset=utf-8; version=2.1, application/vnd.sdmx.structure+json; charset=utf-8; version=1.0, application/vnd.sdmx.structure+json; charset=utf-8; version=1.0.0-wd, text/json; charset=utf-8, application/json; charset=utf-8
-   | optional : urn=true
-   0 lines match '(?:itizen|ationalit|Luxembourg,|LU0000304)'
+## metadata/table 1000A-1E18: HTTP 200, 1,416 chars
+   title: 'Personen: Religion'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEOEV1", "Content": "Landeskirche (Evangelische Kirche)", "Type": "Merkmal", "Values": "19", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "RELZG2", "Content": "Religion", "Type": "Merkmal", "Values": "3", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
 
-## https://lustat.statec.lu/rest/data/LU1,DF_X021,1.0/all?dimensionAtObservation=AllDimensions&startPeriod=2025
-   HTTP 404, 65 bytes, text/plain 
-   1 lines
-   | Could not find Dataflow and/or DSD related with this data request
-   0 lines match '(?:itizen|ationalit|Luxembourg,|LU0000304)'
+## metadata/table 1000A-1K18: HTTP 200, 1,409 chars
+   title: 'Personen: Religion'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEORK1", "Content": "Bistum (Katholische Kirche)", "Type": "Merkmal", "Values": "27", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "RELZG2", "Content": "Religion", "Type": "Merkmal", "Values": "3", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
 
-## https://download.data.public.lu/resources/registre-national-des-personnes-physiques-rnpp-population-par-commune-population-per-municipality/20260706-115130/01-07-2026-rnrpp-population-commune.csv
-   HTTP 200, 3,492 bytes, text/csv 
-   101 lines
-   | COMMUNE_CODE,COMMUNE_NOM,FEMMES_MINEURES,HOMMES_MINEURS,FEMMES_MAJEURES,HOMMES_MAJEURS
-   | 1101,Beaufort,309,303,1270,1264
-   | 1102,Bech,101,132,561,572
-   1 lines match '(?:itizen|ationalit|Luxembourg,|LU0000304)'
-   > 0001,Luxembourg,9910,10212,56957,61136
+## metadata/table 1000A-1W18: HTTP 200, 1,403 chars
+   title: 'Personen: Religion'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEOWK1", "Content": "Bundestagswahlkreise", "Type": "Merkmal", "Values": "299", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "RELZG2", "Content": "Religion", "Type": "Merkmal", "Values": "3", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
+
+## metadata/table 1000A-1W19: HTTP 200, 1,425 chars
+   title: 'Personen: Staatsangehörigkeit'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEOWK1", "Content": "Bundestagswahlkreise", "Type": "Merkmal", "Values": "299", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STAZG1", "Content": "Staatsangehörigkeit", "Type": "Merkmal", "Values": "2", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
+
+## metadata/table 1000A-1E21: HTTP 200, 464 chars
+   title: None
+   other keys: 
+
+## metadata/table 1000A-1K21: HTTP 200, 464 chars
+   title: None
+   other keys: 
+
+## metadata/table 1000A-1W21: HTTP 200, 1,464 chars
+   title: 'Personen: Staatsangehörigkeit (Häufigste Länder)'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEOWK1", "Content": "Bundestagswahlkreise", "Type": "Merkmal", "Values": "299", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STALD4", "Content": "Staatsangehörigkeit (Häufigste Länder)", "Type": "Merkmal", "Values": "41", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
+
+## metadata/table 1000A-1E23: HTTP 200, 464 chars
+   title: None
+   other keys: 
+
+## metadata/table 1000A-1K23: HTTP 200, 464 chars
+   title: None
+   other keys: 
+
+## metadata/table 1000A-1W23: HTTP 200, 1,445 chars
+   title: 'Personen: Staatsangehörigkeit (Länder)'
+   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEOWK1", "Content": "Bundestagswahlkreise", "Type": "Merkmal", "Values": "299", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STALD3", "Content": "Staatsangehörigkeit (Länder)", "Type": "Merkmal", "Values": "203", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
+   other keys: Code, Content, Structure, Time, Updated, Valid
+
+## metadata/table 1000A-1E19: HTTP 200, 464 chars
+   title: None
+   other keys: 
+
+## metadata/table 1000A-1K19: HTTP 200, 464 chars
+   title: None
+   other keys: 
