@@ -46,6 +46,8 @@ FILE = re.compile(r'href="\.\./file/doc/(\d+)\.pdf"[^>]*>\s*Աղյուսակ\s*(
 SOURCE = ("Statistical Committee of the Republic of Armenia (Armstat), 2011 population "
           "census of the Republic of Armenia, {unit}: table {table}")
 LICENCE = "Armstat, open publication"
+CITY_NOTE = (" Yerevan is a marz and a city at once, which the map draws at both levels; "
+             "this is the city's own row.")
 
 # The Armenian-language page of each marz's results -> (the map's unit, the
 # stem of its name the table's own heading carries).
@@ -299,9 +301,7 @@ def main() -> int:
             f"{k} {v:,.0f}" for k, v in sorted(religions.items(), key=lambda kv: -kv[1])[:5]))
         src = {t: SOURCE.format(unit=name, table=t) for t in ("5.2-1", "5.4")}
         url = PAGE.format(nid=nid)
-        records.append(record(
-            f"ARM-2011-{unit['id']}", name, level="admin1", parent="ARM", country="ARM",
-            match_by="shape_id", shape_id=unit["id"],
+        values = dict(
             ethnicity=shares(dict(nations), total=total), ethnicity_year=YEAR,
             ethnicity_note=("Nationality (ազգություն) as each person stated it, 2011 census, "
                             "the permanent population. The 2022 census has published no "
@@ -326,7 +326,23 @@ def main() -> int:
                      {"field": "language", "name": src["5.2-1"], "url": url,
                       "license": LICENCE, "year": YEAR},
                      {"field": "religion", "name": src["5.4"], "url": url,
-                      "license": LICENCE, "year": YEAR}]))
+                      "license": LICENCE, "year": YEAR}])
+        records.append(record(f"ARM-2011-{unit['id']}", name, level="admin1", parent="ARM",
+                              country="ARM", match_by="shape_id", shape_id=unit["id"],
+                              **values))
+        if name == "Yerevan":
+            # A marz and a city at once, drawn at both levels: the second
+            # level's polygon is the same city and takes the same row.
+            city = [u for u in json.loads((SITE / "admin2" / "ARM.units.json").read_text())
+                    if u["name"] == "Yerevan" and u["parent"] == unit["id"]]
+            if len(city) != 1:
+                raise SystemExit(f"armenia_2011: {len(city)} second-level polygons named "
+                                 "Yerevan in the marz")
+            records.append(record(
+                f"ARM-2011-{city[0]['id']}", name, level="admin2", parent="ARM",
+                country="ARM", match_by="shape_id", shape_id=city[0]["id"],
+                **{k: (v + CITY_NOTE if k.endswith("_note") else v)
+                   for k, v in values.items()}))
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
     return 0

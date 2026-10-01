@@ -9,8 +9,14 @@ sheet per 1 January). That is each marz's population, men per hundred women
 and a median age, the median interpolated within the group holding the middle
 person, as Armstat publishes nothing finer by marz.
 
-The map's second level is the 37 raions and two cities Armenia had before the
-1995 reform into marzes; no Armstat table is published for them.
+The map's second level is the raions Armenia had before the 1995 reform into
+marzes, and Yerevan. Armstat publishes no table for those raions -- its
+censuses and yearly counts go by marz and by community -- so each is written
+as a gap that says so, on every field. (Wikidata's figures joined to them by
+name are the municipalities formed by consolidation in 2016-2021, another
+unit; shared.patch lists them in NOT_THIS_SHAPE.) Yerevan is a marz and a
+city at once, drawn at both levels, and its polygon at the second level
+takes the city's own row.
 
 Usage:
     python -m scripts.fetch_census.armenia
@@ -24,7 +30,7 @@ import re
 from datetime import date
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
 from .east_checks import check_median
 
@@ -42,6 +48,37 @@ MARZ = {"Yerevan": "Yerevan", "Aragatsotn": "Aragatsotn", "Ararat": "Ararat",
         "Kotayk": "Kotayk", "Shirak": "Shirak", "Syunik": "Syunik",
         "Vayots Dzor": "Vayots Dzor", "Tavush": "Tavush"}
 BLOCKS = {"total population": "total", "male": "men", "female": "women"}
+# The map's second-level polygons other than Yerevan.
+RAION_NOTE = ("The map draws here one of the raions Armenia had before the 1995 reform into "
+              "marzes. Armstat publishes its censuses (2011, 2022) and its yearly counts by "
+              "marz and by community, and no table for these raions, so no figure describes "
+              "this polygon; the marz it lies in has its own, one level up.")
+CITY_NOTE = (" Yerevan is a marz and a city at once, which the map draws at both levels; "
+             "this is the city's own row.")
+FIELDS = ("population", "median_age", "sex_ratio", "ethnicity", "language", "religion")
+
+
+def second_level(admin2: list[dict[str, Any]], city_id: str, city: dict[str, Any],
+                 cites: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Yerevan's polygon with the city's values; every raion a gap that says why."""
+    out = []
+    capitals = [u for u in admin2 if u["name"] == "Yerevan" and u["parent"] == city_id]
+    if len(capitals) != 1:
+        raise SystemExit(f"armenia: {len(capitals)} second-level polygons named Yerevan "
+                         "in the marz")
+    for u in admin2:
+        if u is capitals[0]:
+            values = {k: (v + CITY_NOTE if k.endswith("_note") else v)
+                      for k, v in city.items()}
+            out.append(record(f"ARM-ARMSTAT-{u['id']}", u["name"], level="admin2",
+                              parent="ARM", country="ARM", match_by="shape_id",
+                              shape_id=u["id"], sources=cites, **values))
+            continue
+        why = gap(NOT_AVAILABLE, RAION_NOTE)
+        out.append(record(f"ARM-ARMSTAT-{u['id']}", u["name"], level="admin2", parent="ARM",
+                          country="ARM", match_by="shape_id", shape_id=u["id"],
+                          **{f: why for f in FIELDS}))
+    return out
 
 
 def clean(cell: Any) -> str:
@@ -188,8 +225,15 @@ def main() -> int:
         records.append(record(f"ARM-ARMSTAT-{u['id']}", name, level="admin1", parent="ARM",
                               country="ARM", match_by="shape_id", shape_id=u["id"],
                               sources=cites, **values))
+        if name == "Yerevan":
+            city = (u["id"], values, cites)
         log(f"  {name}: {int(b['total']['all']):,}, median {median}, "
             f"{100 * men / women:.1f} men per 100 women")
+    admin2 = json.loads((SITE / "admin2" / "ARM.units.json").read_text())
+    second = second_level(admin2, *city)
+    records += second
+    log(f"  second level: Yerevan's polygon takes the city's row; {len(second) - 1} raions "
+        "of before 1995 are written as gaps that say why")
     write_json(PROCESSED / OUT, records)
     return 0
 
