@@ -1,35 +1,189 @@
-
-## catalogue/variables GEO*: HTTP 200, 27 entries
-   - GEOBL1: Bundesländer (16 values)
-   - GEOBL3: Bundesländer (16 values)
-   - GEOBZ1: Bezirke (Hamburg und Berlin) (19 values)
-   - GEODL1: Deutschland (1 values)
-   - GEODL3: Deutschland (1 values)
-   - GEOEV1: Landeskirche (Evangelische Kirche) (19 values)
-   - GEOEV2: Kirchenkreis (Evangelische Kirche) (489 values)
-   - GEOEV3: Kirchengemeinde (Evangelische Kirche) (14055 values)
-   - GEOGM1: Gemeinden (Gebietsstand 09.05.2011) (11340 values)
-   - GEOGM2: Gemeinden mit mindestens 10 000 Einwohnern (1574 values)
-   - GEOGM3: Gemeinden mit mindestens 10 000 Einwohnern (1574 values)
-   - GEOGM4: Gemeinden (Gebietsstand 15.05.2022) (10787 values)
-   - GEOGM5: Gemeinden > 10.000 Einwohner (Stand 15.05.2022) (1578 values)
-   - GEOLK1: Landkreise u. krsfr. Städte (Stand 09.05.11) (412 values)
-   - GEOLK3: Landkreise und kreisfreie Städte (412 values)
-   - GEOLK4: Landkreise u. krsfr. Städte (Stand 15.05.22) (400 values)
-   - GEORB1: Regierungsbezirke/Statistische Regionen (36 values)
-   - GEORB3: Regierungsbezirke/Statistische Regionen (36 values)
-   - GEORK1: Bistum (Katholische Kirche) (27 values)
-   - GEORK2: Dekanat (Katholische Kirche) (517 values)
-   - GEORK3: Pfarrei (Katholische Kirche) (9696 values)
-   - GEOVB1: Gemeindeverbände (Gebietsstand 09.05.2011) (1333 values)
-   - GEOVB2: Gemeindeverbände mit mindestens 10 000 Einwohnern (338 values)
-   - GEOVB3: Gemeindeverbände mit mindestens 10 000 Einwohnern (157 values)
-   - GEOVB4: Gemeindeverbände (Gebietsstand 15.05.2022) (1207 values)
-   - GEOVB5: Gemeindeverbände > 10.000 Einw. (Stand 15.05.2022) (588 values)
-   - GEOWK1: Bundestagswahlkreise (299 values)
-
-## catalogue/variables STALD*: HTTP 200, 4 entries
-   - STALD1: Staatsangehörigkeit (Länder) (210 values)
-   - STALD2: Staatsangehörigkeit (Ausgewählte Länder) (14 values)
-   - STALD3: Staatsangehörigkeit (Länder) (203 values)
-   - STALD4: Staatsangehörigkeit (Häufigste Länder) (41 values)
+== r18e_fin_dvv_parishes
+  240,306 bytes, starts b'%PDF-'
+  11 pages
+  --- page 1
+    EVANKELIS-LUTERILAISET SEURAKUNNAT
+    DE EVANGELISK-LUTHERSKA FÖRSAMLINGARNA
+    1.1.2021
+    Koodi Seurakunnan nimi Rekisteriviranomainen, jonka toimialueelle seurakunta
+    kuuluu
+    Kod Församlingens namn Registermyndighet, till vars verksamhetsområde
+    församlingen hör till
+    002 Askolan seurakunta 777 Digi- ja väestötietovirasto
+    004 Espoon tuomiokirkkoseurakunta 777 Digi- ja väestötietovirasto
+    005 Leppävaaran seurakunta 777 Digi- ja väestötietovirasto
+    006 Tapiolan seurakunta 777 Digi- ja väestötietovirasto
+    007 Hangon suomalainen seurakunta 777 Digi- ja väestötietovirasto
+    008 Tikkurilan seurakunta 777 Digi- ja väestötietovirasto
+    009 Helsingin ev. -lut. seurakuntien keskusrekisteri/ 777 Digi- ja väestötietovirasto
+    Helsingfors ev. -luth. församlingars centralregister 777 Myndigheten för digitalisering
+    och befolkningsdata
+    010 Hyvinkään seurakunta 777 Digi- ja väestötietovirasto
+    011 Järvenpään seurakunta 777 Digi- ja väestötietovirasto
+    013 Keravan seurakunta 777 Digi- ja väestötietovirasto
+    014 Kirkkonummen suomalainen seurakunta 777 Digi- ja väestötietovirasto
+    016 Lohjan seurakunta/ 777 Digi- ja väestötietovirasto
+    Lojo församling 777 Myndigheten för digitalisering
+    och befolkningsdata
+    018 Myrskylän seurakunta/ 777 Digi- ja väestötietovirasto
+    Mörskoms församling 777 Myndigheten för digitalisering
+    och befolkningsdata
+    019 Mäntsälän seurakunta 777 Digi- ja väestötietovirasto
+    021 Nurmijärven seurakunta 777 Digi- ja väestötietovirasto
+    022 Orimattilan seurakunta 777 Digi- ja väestötietovirasto
+    024 Pornaisten seurakunta 777 Digi- ja väestötietovirasto
+    025 Porvoon suomalainen seurakunta 777 Digi- ja väestötietovirasto
+    026 Pukkilan seurakunta 777 Digi- ja väestötietovirasto
+    028 Karkkilan seurakunta 777 Digi- ja väestötietovirasto
+    030 Tuusulan seurakunta 777 Digi- ja väestötietovirasto
+    031 Vihdin seurakunta 777 Digi- ja väestötietovirasto
+    036 Euran seurakunta 777 Digi- ja väestötietovirasto
+    037 Eurajoen seurakunta 777 Digi- ja väestötietovirasto
+    039 Harjavallan seurakunta 777 Digi- ja väestötietovirasto
+    042 Huittisten seurakunta 777 Digi- ja väestötietovirasto
+    044 Kankaanpään seurakunta 777 Digi- ja väestötietovirasto
+    056 Kokemäen seurakunta 777 Digi- ja väestötietovirasto
+    059 Kustavin seurakunta 777 Digi- ja väestötietovirasto
+    062 Laitilan seurakunta 777 Digi- ja väestötietovirasto
+    066 Liedon seurakunta 777 Digi- ja väestötietovirasto
+    072 Maskun seurakunta 777 Digi- ja väestötietovirasto
+    074 Merikarvian seurakunta 777 Digi- ja väestötietovirasto
+    075 Merimaskun seurakunta 777 Digi- ja väestötietovirasto
+    080 Mynämäen seurakunta 777 Digi- ja väestötietovirasto
+    081 Naantalin seurakunta 777 Digi- ja väestötietovirasto
+    082 Nakkilan seurakunta 777 Digi- ja väestötietovirasto
+    083 Noormarkun seurakunta 777 Digi- ja väestötietovirasto
+    084 Nousiaisten seurakunta 777 Digi- ja väestötietovirasto
+    086 Paattisten seurakunta 777 Digi- ja väestötietovirasto
+    087 Paimion seurakunta 777 Digi- ja väestötietovirasto
+    1/11
+  --- page 2
+    DIGI- JA VÄESTÖTIETOVIRASTO
+    MYNDIGHETEN FÖR DIGITALISERING OCH BEFOLKNINGSDATA
+    Koodi Seurakunnan nimi Rekisteriviranomainen, jonka toimialueelle seurakunta
+    kuuluu
+    Kod Församlingens namn Registermyndighet, till vars verksamhetsområde
+    församlingen hör till
+    091 Piikkiön seurakunta 777 Digi- ja väestötietovirasto
+    093 Keski-Porin seurakunta 777 Digi- ja väestötietovirasto
+    094 Länsi-Porin seurakunta 777 Digi- ja väestötietovirasto
+    096 Porin Teljän seurakunta 777 Digi- ja väestötietovirasto
+    097 Punkalaitumen seurakunta 777 Digi- ja väestötietovirasto
+    099 Pyhärannan seurakunta 777 Digi- ja väestötietovirasto
+    100 Pöytyän seurakunta 777 Digi- ja väestötietovirasto
+    101 Raision seurakunta 777 Digi- ja väestötietovirasto
+    102 Rauman seurakunta 777 Digi- ja väestötietovirasto
+    104 Ruskon seurakunta 777 Digi- ja väestötietovirasto
+    105 Rymättylän seurakunta 777 Digi- ja väestötietovirasto
+    108 Siikaisten seurakunta 777 Digi- ja väestötietovirasto
+    114 Taivassalon seurakunta 777 Digi- ja väestötietovirasto
+    116 Turun tuomiokirkkoseurakunta 777 Digi- ja väestötietovirasto
+    117 Turun Martin seurakunta 777 Digi- ja väestötietovirasto
+    118 Turun Mikaelin seurakunta 777 Digi- ja väestötietovirasto
+    119 Turun Henrikin seurakunta 777 Digi- ja väestötietovirasto
+    120 Turun Katariinan seurakunta 777 Digi- ja väestötietovirasto
+    121 Maarian seurakunta 777 Digi- ja väestötietovirasto
+    123 Ulvilan seurakunta 777 Digi- ja väestötietovirasto
+    124 Uudenkaupungin seurakunta 777 Digi- ja väestötietovirasto
+    127 Vehmaan seurakunta 777 Digi- ja väestötietovirasto
+    131 Akaan seurakunta 777 Digi- ja väestötietovirasto
+    132 Asikkalan seurakunta 777 Digi- ja väestötietovirasto
+    134 Forssan seurakunta 777 Digi- ja väestötietovirasto
+    135 Hattulan seurakunta 777 Digi- ja väestötietovirasto
+    136 Hauhon seurakunta 777 Digi- ja väestötietovirasto
+    137 Hausjärven seurakunta 777 Digi- ja väestötietovirasto
+    138 Hollolan seurakunta 777 Digi- ja väestötietovirasto
+    139 Humppilan seurakunta 777 Digi- ja väestötietovirasto
+    140 Hämeenkyrön seurakunta 777 Digi- ja väestötietovirasto
+    142 Ikaalisten seurakunta 777 Digi- ja väestötietovirasto
+    143 Janakkalan seurakunta 777 Digi- ja väestötietovirasto
+    144 Jokioisten seurakunta 777 Digi- ja väestötietovirasto
+    147 Jämsän seurakunta 777 Digi- ja väestötietovirasto
+    149 Kalvolan seurakunta 777 Digi- ja väestötietovirasto
+    150 Kangasalan seurakunta 777 Digi- ja väestötietovirasto
+    160 Keski-Lahden seurakunta 777 Digi- ja väestötietovirasto
+    161 Lahden Launeen seurakunta 777 Digi- ja väestötietovirasto
+    162 Lahden Joutjärven seurakunta 777 Digi- ja väestötietovirasto
+    163 Lahden Salpausselän seurakunta 777 Digi- ja väestötietovirasto
+    164 Lammin seurakunta 777 Digi- ja väestötietovirasto
+    165 Lempäälän seurakunta 777 Digi- ja väestötietovirasto
+    166 Lopen seurakunta 777 Digi- ja väestötietovirasto
+    169 Nastolan seurakunta 777 Digi- ja väestötietovirasto
+    170 Nokian seurakunta 777 Digi- ja väestötietovirasto
+    2/11
+  --- page 3
+    DIGI- JA VÄESTÖTIETOVIRASTO
+    MYNDIGHETEN FÖR DIGITALISERING OCH BEFOLKNINGSDATA
+    Koodi Seurakunnan nimi Rekisteriviranomainen, jonka toimialueelle seurakunta
+    kuuluu
+    Kod Församlingens namn Registermyndighet, till vars verksamhetsområde
+    församlingen hör till
+    171 Oriveden seurakunta 777 Digi- ja väestötietovirasto
+    173 Pirkkalan seurakunta 777 Digi- ja väestötietovirasto
+    174 Pälkäneen seurakunta 777 Digi- ja väestötietovirasto
+    176 Riihimäen seurakunta 777 Digi- ja väestötietovirasto
+    177 Ruoveden seurakunta 777 Digi- ja väestötietovirasto
+    180 Someron seurakunta 777 Digi- ja väestötietovirasto
+    181 Sääksmäen seurakunta 777 Digi- ja väestötietovirasto
+    182 Tammelan seurakunta 777 Digi- ja väestötietovirasto
+    189 Tampereen Harjun seurakunta 777 Digi- ja väestötietovirasto
+    194 Urjalan seurakunta 777 Digi- ja väestötietovirasto
+    197 Vesilahden seurakunta 777 Digi- ja väestötietovirasto
+    200 Ylöjärven seurakunta 777 Digi- ja väestötietovirasto
+    201 Ypäjän seurakunta 777 Digi- ja väestötietovirasto
+    203 Alavieskan seurakunta 777 Digi- ja väestötietovirasto
+    204 Enontekiön seurakunta 777 Digi- ja väestötietovirasto
+    205 Haapajärven seurakunta 777 Digi- ja väestötietovirasto
+    206 Haapaveden seurakunta 777 Digi- ja väestötietovirasto
+    207 Hailuodon seurakunta 777 Digi- ja väestötietovirasto
+    208 Halsuan seurakunta 777 Digi- ja väestötietovirasto
+    209 Haukiputaan seurakunta 777 Digi- ja väestötietovirasto
+    211 Iin seurakunta 777 Digi- ja väestötietovirasto
+    212 Inarin seurakunta 777 Digi- ja väestötietovirasto
+    213 Kalajoen seurakunta 777 Digi- ja väestötietovirasto
+    214 Kannuksen seurakunta 777 Digi- ja väestötietovirasto
+    217 Kemin seurakunta 777 Digi- ja väestötietovirasto
+    218 Keminmaan seurakunta 777 Digi- ja väestötietovirasto
+    219 Kemijärven seurakunta 777 Digi- ja väestötietovirasto
+    220 Kempeleen seurakunta 777 Digi- ja väestötietovirasto
+    222 Kiimingin seurakunta 777 Digi- ja väestötietovirasto
+    223 Kittilän seurakunta 777 Digi- ja väestötietovirasto
+    224 Kokkolan suomalainen seurakunta 777 Digi- ja väestötietovirasto
+    225 Kolarin seurakunta 777 Digi- ja väestötietovirasto
+    227 Kuusamon seurakunta 777 Digi- ja väestötietovirasto
+    228 Kälviän seurakunta 777 Digi- ja väestötietovirasto
+    229 Kärsämäen seurakunta 777 Digi- ja väestötietovirasto
+    231 Limingan seurakunta 777 Digi- ja väestötietovirasto
+    232 Lohtajan seurakunta 777 Digi- ja väestötietovirasto
+    233 Lumijoen seurakunta 777 Digi- ja väestötietovirasto
+    235 Muhoksen seurakunta 777 Digi- ja väestötietovirasto
+    236 Muonion seurakunta 777 Digi- ja väestötietovirasto
+    237 Nivalan seurakunta 777 Digi- ja väestötietovirasto
+    238 Oulaisten seurakunta 777 Digi- ja väestötietovirasto
+    239 Heinolan seurakunta 777 Digi- ja väestötietovirasto
+    240 Oulun aluekeskusrekisteri 777 Digi- ja väestötietovirasto
+    242 Oulunsalon seurakunta 777 Digi- ja väestötietovirasto
+    245 Pelkosenniemen seurakunta 777 Digi- ja väestötietovirasto
+    3/11
+== r18e_fin_dvv_cdx
+  4 captures
+    20211024093927 https://dvv.fi/documents/16079645/17003563/Evankelis-luterilaiset+seurakunnat+1.1.2021.pdf/65051844-c640-5ec4-f20d-4b608debb5c8/Evankelis-luterilaiset+seurakunnat+1.1.2021.pdf?version=1.4&t=1623233423888 application/pdf 200
+    20240624044859 https://dvv.fi/documents/16079645/17003563/Evankelis-luterilaiset+seurakunnat+1.1.2022.pdf/65051844-c640-5ec4-f20d-4b608debb5c8/Evankelis-luterilaiset+seurakunnat+1.1.2022.pdf?version=1.5&t=1641210483954 text/html 404
+    20240705214913 https://dvv.fi/documents/16079645/17003563/Evankelis-luterilaiset+seurakunnat+1.1.2023.pdf/65051844-c640-5ec4-f20d-4b608debb5c8/Evankelis-luterilaiset+seurakunnat+1.1.2023.pdf?version=1.7&t=1672661677626 text/html 404
+    20211024092440 https://dvv.fi/documents/16079645/17003563/Ortodoksiset+seurakunnat+1.1.2021.pdf/54e0ec44-1435-49f2-2337-9b0dd03fd1ba/Ortodoksiset+seurakunnat+1.1.2021.pdf?version=1.4&t=1623233673051 application/pdf 200
+== r18e_fin_evl_2018
+  32,890 bytes, starts b'PK\x03\x04'
+  sheet 'SeurakunnatFörsamlingar': 388 rows x 4 columns
+    1: Seurakuntien jäsenmäärä / Församlingarnas medlemsantal 31.12.2018
+    2: 
+    3: Seurakunta / Församling | Tunnus/Kod | Hiippakunta/Stift | Henk./Pers.
+    4: Agricola sv | 001025 | Borgå | 7130
+    5: Agricolan suom | 001024 | Helsinki | 5928
+    6: Akaa | 000131 | Tampere | 12165
+  sheet 'TalousyksikötEkonomiskaenheter': 273 rows x 4 columns
+    1: Talousyksiköiden jäsenmäärä / Medlemsantal av ekonomiska enheter 31.12.2018
+    2: 
+    3: Talousyksikkö/Ekonomisk enhet | Tunnus(Kod | Hiippakunta/Stift | Henk./Pers.
+    4: Akaa | 000131 | Tampere | 12165
+    5: Alajärvi | 000420 | Lapua | 8357
+    6: Alavieska | 000203 | Oulu | 2305
