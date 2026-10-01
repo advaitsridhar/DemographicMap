@@ -1,4 +1,17 @@
 
-## https://lustat.statec.lu/rest/dataflow/LU1/all/latest
-   HTTP 200, 989,929 bytes, application/vnd.sdmx.structure+json; charset=utf-8; version=1.0 
-   0 matches of 'DF_[A-Z0-9_]{2,14}.{0,12}name.{0,4}.{0,150}(?:itizen|ationalit|angu|Census|census)'
+## catalogue/statistics *: HTTP 200, 12 entries
+   - 1000A: Bevölkerung kompakt (Gebietsstand 15.05.2022)
+   - 1000X: Bevölkerung kompakt (Gebietsstand 09.05.2011)
+   - 2000S: Bevölkerung: Bildung, Erwerb (Stand 15.05.2022)
+   - 2000X: Bev: Bildung, Erwerb, Migration (Stand 09.05.2011)
+   - 3000G: Gebäude (Gebietsstand 15.05.2022)
+   - 3000X: Gebäude (Gebietsstand 09.05.2011)
+   - 4000W: Wohnungen (Gebietsstand 15.05.2022)
+   - 4000X: Wohnungen (Gebietsstand 09.05.2011)
+   - 5000H: Haushalte (Gebietsstand 15.05.2022)
+   - 5000X: Haushalte (Gebietsstand 09.05.2011)
+   - 6000F: Familien (Gebietsstand 15.05.2022)
+   - 6000X: Familien (Gebietsstand 09.05.2011)
+
+## catalogue/statistics --: HTTP 200, 0 entries
+   {"Ident":{"Service":"catalogue","Method":"statistics"},"Status":{"Code":104,"Content":"Es gibt keine Objekte zum angegebenen Selektionskriterium (Mindestens ein Parameter enthält ungültige Werte. Er wurde angepasst, um den Service starten zu können.: sortcriterion)","Type":"Information"},"Parameter":{"username":"********************","password":"********************","selection":"--","searchcriter
