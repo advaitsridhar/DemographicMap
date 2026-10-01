@@ -1,16 +1,22 @@
-fetch_factbook: syncing source
-  cloning https://github.com/factbook/factbook.json (shallow)
-  260 Factbook entities
-  no country index; building it from Natural Earth's admin-0 countries
-  fetched ne_10m_admin_0_countries.geojson (13.3 MB)
-  wrote data/raw/codes/country_index.json (77 kB)
-  note: at and as both map to AUS; keeping both, ids suffixed
-  note: cr and as both map to AUS; keeping both, ids suffixed
-  note: wq and um both map to UMI; keeping both, ids suffixed
-  note: bq and um both map to UMI; keeping both, ids suffixed
-  note: sv and jn both map to SJM; keeping both, ids suffixed
-  note: we and gz both map to PSE; keeping both, ids suffixed
-  note: ip and fr both map to FRA; keeping both, ids suffixed
-  10 entities without an ISO3 code (kept with GEC- ids): east-n-southeast-asia/pf, east-n-southeast-asia/pg, europe/ax, europe/dx, europe/ee, oceans/oo, oceans/xo, oceans/xq, oceans/zh, oceans/zn
-  wrote data/processed/admin0.json (894 kB)
-  260 records | 250 ISO3-matched | religion 223 | ethnicity 201 | ethnicity not-collected 10
+iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
+    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
+  74 municipalities on 1 December 2017
+  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
+    office units with no polygon (1): Vestmannaeyjabær (8000)
+  MAN02005 2026: national median 37.5 against Eurostat's 37.2 for 1 January 2025 (+0.30 years, bound 0.7)
+    HTTP 429; waiting 5s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px
+    HTTP 429; waiting 10s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px
+    HTTP 429; waiting 20s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px
+  53 of 74 municipalities are the same territory today; renumbered: ['Sveitarfélagið Hornafjörður 7708->8401']; number taken by a merger: ['Tálknafjarðarhreppur 4604: 1,243 against 245']; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
+  1 January 2018 in today's division against 1 December 2017: largest gaps Grundarfjarðarbær 3.5%, Skorradalshreppur 3.6%, Norðurþing 3.6%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%
+  merged municipalities, 1 December 2017 against today's in 1 January 2018: Eastern Region 9,751/9,650, Northeastern Region 2,034/1,977, Northwestern Region 5,510/5,469, Southern Peninsula 3,384/3,335, Western Region 1,237/1,215, Westfjords 1,268/1,243
+    HTTP 429; waiting 5s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 10s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 20s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 40s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+    HTTP 429; waiting 80s :: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/x_eldraefni/MAN09000.px
+  merged municipalities' last own count (1 December): Sandgerðisbær 2017; Sveitarfélagið Garður 2017; Fjarðabyggð 2017; Breiðdalshreppur 2017; Seyðisfjarðarkaupstaður 2019; Borgarfjarðarhreppur 2019; Djúpavogshreppur 2019; Fljótsdalshérað 2019; Helgafellssveit 2021; Stykkishólmsbær 2021; Sveitarfélagið Skagafjörður 2021; Blönduósbær 2021; Húnavatnshreppur 2021; Akrahreppur 2021; Skútustaðahreppur 2021; Þingeyjarsveit 2021; Svalbarðshreppur 2021; Langanesbyggð 2021; Tálknafjarðarhreppur 2022; Vesturbyggð 2022; Skagabyggð 2022
+  summed into the region the map draws them in, not their number's: ['Sveitarfélagið Hornafjörður (Eastern Region, numbered in Southern Region)']
+    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
+  wrote data/processed/iceland_municipality.json (157 kB)
+  wrote iceland_municipality.json: 81 records
