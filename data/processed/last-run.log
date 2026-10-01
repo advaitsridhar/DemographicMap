@@ -1,152 +1,18 @@
 
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_101/px-x-0103010000_101.px
-   HTTP 200, 6,474 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Geschlecht, Altersklasse und Staatsangehörigkeit
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (Kanton): 28 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Anwesenheitsbewilligung (Anwesenheitsbewilligung): 12 values; -99999=Anwesenheitsbewilligung - Total, -2=Schweizer, 2=Aufenthalter (B), 3=Niedergelassener (C), 4=Aufenthalter mit Erwerbstätigkeit (Ci), 5=Vorläufig Aufgenommener (F), 7=Kurzaufenthalter (L), 8=Asylsuchender (N) ... last 9=Schutzbedürftiger (S)
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Altersklasse (Altersklasse): 22 values; -99999=Altersklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-   Staatsangehörigkeit (Staatsangehörigkeit): 203 values; -99999=Staatsangehörigkeit - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last -9=Ohne Angabe
+## PxWeb https://etab.llv.li/PXWeb/api/v1/de/eTab/Bev%C3%B6lkerung/Bev%C3%B6lkerungsstand/Stichtag%2031%20Dezember/211.002.px
+   HTTP 200, 4,274 bytes
+   title: 211.002 Ständige Bevölkerung bei Jahr, Staatsbürgerschaft, Geschlecht und Wohngemeinde
+   Jahr (Jahr): 26 values; 2000=2000, 2001=2001, 2002=2002, 2003=2003, 2004=2004, 2005=2005, 2006=2006, 2007=2007 ... last 2025=2025
+   Staatsbürgerschaft (Staatsbürgerschaft): 154 values; 0=Staatsbürgerschaft - Total, 1=- Europa, 2=... Albanien, 3=... Andorra, 4=... Belarus, 5=... Belgien, 6=... Bosnien-Herzegowina, 7=... Bulgarien ... last 153=... Staatenlos
+   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Frauen, 2=Männer
+   Wohngemeinde (Wohngemeinde): 12 values; 0=Liechtenstein, 1=Vaduz, 2=Triesen, 3=Balzers, 4=Triesenberg, 5=Schaan, 6=Planken, 7=Eschen ... last 11=Schellenberg
 
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_102/px-x-0103010000_102.px
-   HTTP 200, 3,753 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Geburtsort, Geschlecht und Alter
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (Kanton): 28 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Anwesenheitsbewilligung (Anwesenheitsbewilligung): 12 values; -99999=Anwesenheitsbewilligung - Total, -2=Schweizer, 2=Aufenthalter (B), 3=Niedergelassener (C), 4=Aufenthalter mit Erwerbstätigkeit (Ci), 5=Vorläufig Aufgenommener (F), 7=Kurzaufenthalter (L), 8=Asylsuchender (N) ... last 13=Nicht zugeteilt
-   Geburtsort (Geburtsort): 3 values; -99999=Geburtsort - Total, 1=In der Schweiz, 2=Im Ausland
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_120/px-x-0103010000_120.px
-   HTTP 200, 7,393 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
-   Jahr (Jahr): 1 values; 2020=2020
-   Kanton (Kanton): 27 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last JU=Jura
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Anwesenheitsbewilligung (Anwesenheitsbewilligung): 11 values; -99999=Anwesenheitsbewilligung - Total, -2=Schweizer, 2=Aufenthalter (B), 3=Niedergelassener (C), 4=Aufenthalter mit Erwerbstätigkeit (Ci), 5=Vorläufig Aufgenommener (F), 7=Kurzaufenthalter (L), 8=Asylsuchender (N) ... last 13=Nicht zugeteilt
-   Staatsangehörigkeit (Staatsangehörigkeit): 203 values; -99999=Staatsangehörigkeit - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_151/px-x-0103010000_151.px
-   HTTP 200, 5,816 bytes
-   title: Demografische Bilanz nach Staatsangehörigkeit
-   Jahr (Jahr): 45 values; 1981=1981, 1982=1982, 1983=1983, 1984=1984, 1985=1985, 1986=1986, 1987=1987, 1988=1988 ... last 2025=2025
-   Staatsangehörigkeit (Staatsangehörigkeit): 210 values; 0=Staatsangehörigkeit - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last 8999=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Mann, 2=Frau
-   Demografische Komponente (Demografische Komponente): 16 values; 0=Bestand am 1. Januar, 1=Lebendgeburt, 2=Todesfall, 3=Geburtenüberschuss, 4=Einwanderung inkl. Änderung des Bevölkerungstyps, 5=Auswanderung, 6=Wanderungssaldo inkl. Änderung des Bevölkerungstyps, 7=Änderung des Bevölkerungstyps ... last 15=Veränderung
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_201/px-x-0103010000_201.px
-   HTTP 200, 71,913 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Staatsangehörigkeit (Kategorie), Geburtsort, Geschlecht und Altersklasse
-   Jahr (Jahr): 6 values; 2020=2020, 2021=2021, 2022=2022, 2023=2023, 2024=2024, 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Staatsangehörigkeit (Kategorie) (Staatsangehörigkeit (Kategorie)): 3 values; -99999=Staatsangehörigkeit (Kategorie) - Total, 1=Schweiz, 2=Ausland
-   Geburtsort (Geburtsort): 3 values; -99999=Geburtsort - Total, 1=In der Schweiz, 2=Im Ausland
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Altersklasse (Altersklasse): 22 values; -99999=Altersklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010200_101/px-x-0103010200_101.px
-   HTTP 200, 3,349 bytes
-   title: Binnenzuwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht, Zivilstand und Alter
-   Jahr (Jahr): 15 values; 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017, 2018=2018 ... last 2025=2025
-   Kanton (Kanton): 28 values; 0=Schweiz, 1=Zürich, 2=Bern / Berne, 3=Luzern, 4=Uri, 5=Schwyz, 6=Obwalden, 7=Nidwalden ... last 27=Ohne Angabe
-   Staatsangehörigkeit (Kategorie) (Staatsangehörigkeit (Kategorie)): 3 values; 0=Staatsangehörigkeit (Kategorie) - Total, 1=Schweiz, 2=Ausland
-   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Mann, 2=Frau
-   Zivilstand (Zivilstand): 9 values; 0=Zivilstand - Total, 1=Ledig, 2=Verheiratet, 3=Verwitwet, 4=Geschieden, 5=Unverheiratet, 6=In eingetragener Partnerschaft, 7=Aufgelöste Partnerschaft ... last 8=Ohne Angabe
-   Alter (Alter): 102 values; 0=Alter - Total, 1=0 Jahre, 2=1 Jahr, 3=2 Jahre, 4=3 Jahre, 5=4 Jahre, 6=5 Jahre, 7=6 Jahre ... last 101=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010200_111/px-x-0103010200_111.px
-   HTTP 200, 3,369 bytes
-   title: Binnenabwanderung der ständigen Wohnbevölkerung nach Jahr, Kanton, Staatsangehörigkeit (Kategorie), Geschlecht, Zivilstand und Alter
-   Jahr (Jahr): 15 values; 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017, 2018=2018 ... last 2025=2025
-   Kanton (Kanton): 28 values; 0=Schweiz, 1=Zürich, 2=Bern / Berne, 3=Luzern, 4=Uri, 5=Schwyz, 6=Obwalden, 7=Nidwalden ... last 27=Ohne Angabe
-   Staatsangehörigkeit (Kategorie) (Staatsangehörigkeit (Kategorie)): 3 values; 0=Staatsangehörigkeit (Kategorie) - Total, 1=Schweiz, 2=Ausland
-   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Mann, 2=Frau
-   Zivilstand (Zivilstand): 9 values; 0=Zivilstand - Total, 1=Ledig, 2=Verheiratet, 3=Verwitwet, 4=Geschieden, 5=Unverheiratet, 6=In eingetragener Partnerschaft, 7=Aufgelöste Partnerschaft ... last 8=Ohne Angabe
-   Alter (Alter): 103 values; 0=Alter - Total, 1=0 Jahre, 2=1 Jahr, 3=2 Jahre, 4=3 Jahre, 5=4 Jahre, 6=5 Jahre, 7=6 Jahre ... last 102=Ohne Angabe
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010200_121/px-x-0103010200_121.px
-   HTTP 200, 70,356 bytes
-   title: Wanderung der ständigen Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Staatsangehörigkeit (Auswahl), Geschlecht und Migrationstyp
-   Jahr (Jahr): 15 values; 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017, 2018=2018 ... last 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 0=Schweiz, 1=- Zürich, 2=>> Bezirk Affoltern, 3=......0001 Aeugst am Albis, 4=......0002 Affoltern am Albis, 5=......0003 Bonstetten, 6=......0004 Hausen am Albis, 7=......0005 Hedingen ... last 2285=Ohne Angabe
-   Staatsangehörigkeit (Auswahl) (Staatsangehörigkeit (Auswahl)): 13 values; 0=Staatsangehörigkeit (Auswahl) - Total, 1=Schweiz, 2=Mitgliedstaat der Europäischen Union (EU), 3=Mitgliedstaat der EFTA, 4=Anderer europäischer Staat, 5=Afrika, 6=Nordamerika, 7=Süd- und Zentralamerika, Karibik ... last 12=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Mann, 2=Frau
-   Migrationstyp (Migrationstyp): 6 values; 0=Einwanderung inkl. Änderung des Bevölkerungstyps, 1=Auswanderung, 2=Interkantonaler Zuzug, 3=Interkantonaler Wegzug, 4=Intrakantonaler Zuzug, 5=Intrakantonaler Wegzug
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010200_151/px-x-0103010200_151.px
-   HTTP 200, 3,941 bytes
-   title: Binnenwanderung der ständigen Wohnbevölkerung nach Jahr, Zuzugskanton, Wegzugskanton, Staatsangehörigkeit (Kategorie), Geschlecht und Alter
-   Jahr (Jahr): 15 values; 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017, 2018=2018 ... last 2025=2025
-   Zuzugskanton (Zuzugskanton): 28 values; 0=Zuzug Schweiz, 1=Zuzug Zürich, 2=Zuzug Bern, 3=Zuzug Luzern, 4=Zuzug Uri, 5=Zuzug Schwyz, 6=Zuzug Obwalden, 7=Zuzug Nidwalden ... last 27=Zuzug Ohne Angabe
-   Wegzugskanton (Wegzugskanton): 28 values; 0=Wegzug Schweiz, 1=Wegzug Zürich, 2=Wegzug Bern, 3=Wegzug Luzern, 4=Wegzug Uri, 5=Wegzug Schwyz, 6=Wegzug Obwalden, 7=Wegzug Nidwalden ... last 27=Wegzug Ohne Angabe
-   Staatsangehörigkeit (Kategorie) (Staatsangehörigkeit (Kategorie)): 3 values; 0=Staatsangehörigkeit (Kategorie) - Total, 1=Schweiz, 2=Ausland
-   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; 0=Alter - Total, 1=0 Jahre, 2=1 Jahr, 3=2 Jahre, 4=3 Jahre, 5=4 Jahre, 6=5 Jahre, 7=6 Jahre ... last 101=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_100/px-x-0102010000_100.px
-   HTTP 200, 71,604 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geburtsort, Geschlecht und Zivilstand
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Geburtsort (Geburtsort): 3 values; -99999=Geburtsort - Total, 1=In der Schweiz, 2=Im Ausland
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Zivilstand (Zivilstand): 6 values; -99999=Zivilstand - Total, 1=Ledig, 2=Verheiratet, in eingetragener Partnerschaft, 3=Verwitwet, durch Tod aufgelöste Partnerschaft, 4=Geschieden, unverheiratet, gerichtlich aufgelöste Partnerschaft, -9=Ohne Angabe
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_102/px-x-0102010000_102.px
-   HTTP 200, 3,348 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Geschlecht, Zivilstand und Alter
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (Kanton): 28 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Zivilstand (Zivilstand): 6 values; -99999=Zivilstand - Total, 1=Ledig, 2=Verheiratet, in eingetragener Partnerschaft, 3=Verwitwet, durch Tod aufgelöste Partnerschaft, 4=Geschieden, unverheiratet, gerichtlich aufgelöste Partnerschaft, -9=Ohne Angabe
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_103/px-x-0102010000_103.px
-   HTTP 200, 71,974 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geschlecht, Zivilstand und Altersklasse
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht- Total, 1=Mann, 2=Frau
-   Zivilstand (Zivilstand): 6 values; -99999=Zivilstand - Total, 1=Ledig, 2=Verheiratet, in eingetragener Partnerschaft, 3=Verwitwet, durch Tod aufgelöste Partnerschaft, 4=Geschieden, unverheiratet, gerichtlich aufgelöste Partnerschaft, -9=Ohne Angabe
-   Altersklasse (Altersklasse): 22 values; -99999=Altersklasse - Total, 0=0-4 Jahre, 5=5-9 Jahre, 10=10-14 Jahre, 15=15-19 Jahre, 20=20-24 Jahre, 25=25-29 Jahre, 30=30-34 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102010000_104/px-x-0102010000_104.px
-   HTTP 200, 75,184 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton (-) / Bezirk (>>) / Gemeinde (......), Bevölkerungstyp, Geburtsort und Staatsangehörigkeit
-   Jahr (Jahr): 16 values; 2010=2010, 2011=2011, 2012=2012, 2013=2013, 2014=2014, 2015=2015, 2016=2016, 2017=2017 ... last 2025=2025
-   Kanton (-) / Bezirk (>>) / Gemeinde (......) (Kanton (-) / Bezirk (>>) / Gemeinde (......)): 2286 values; 8100=Schweiz, ZH=- Zürich, 000101=>> Bezirk Affoltern, 0001=......0001 Aeugst am Albis, 0002=......0002 Affoltern am Albis, 0003=......0003 Bonstetten, 0004=......0004 Hausen am Albis, 0005=......0005 Hedingen ... last -9=Ohne Angabe
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Geburtsort (Geburtsort): 3 values; -99999=Geburtsort - Total, 1=In der Schweiz, 2=Im Ausland
-   Staatsangehörigkeit (Staatsangehörigkeit): 203 values; -99999=Staatsangehörigkeit - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last -9=Ohne Angabe
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_110/px-x-0103010000_110.px
-   HTTP 200, 7,382 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Anwesenheitsbewilligung, Staatsangehörigkeit, Geschlecht und Alter
-   Jahr (Jahr): 1 values; 2010=2010
-   Kanton (Kanton): 27 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last JU=Jura
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Anwesenheitsbewilligung (Anwesenheitsbewilligung): 11 values; -99999=Anwesenheitsbewilligung - Total, -2=Schweizer, 2=Aufenthalter (B), 3=Niedergelassener (C), 4=Aufenthalter mit Erwerbstätigkeit (Ci), 5=Vorläufig Aufgenommener (F), 7=Kurzaufenthalter (L), 8=Asylsuchender (N) ... last 13=Nicht zugeteilt
-   Staatsangehörigkeit (Staatsangehörigkeit): 203 values; -99999=Staatsangehörigkeit - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
-
-## PxWeb https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0103010000_310/px-x-0103010000_310.px
-   HTTP 200, 7,306 bytes
-   title: Ständige und nichtständige Wohnbevölkerung nach Jahr, Kanton, Bevölkerungstyp, Staatsangehörigkeit (Auswahl), Geburtsstaat, Geschlecht und Alter
-   Jahr (Jahr): 1 values; 2010=2010
-   Kanton (Kanton): 27 values; 8100=Schweiz, ZH=Zürich, BE=Bern / Berne, LU=Luzern, UR=Uri, SZ=Schwyz, OW=Obwalden, NW=Nidwalden ... last JU=Jura
-   Bevölkerungstyp (Bevölkerungstyp): 2 values; 1=Ständige Wohnbevölkerung, 2=Nichtständige Wohnbevölkerung
-   Staatsangehörigkeit (Auswahl) (Staatsangehörigkeit (Auswahl)): 13 values; -99999=Staatsangehörigkeit (Auswahl) - Total, 1=Schweiz, 2=EU-Staaten, 3=EFTA-Staaten, 4=Übriges Europa (Europa ohne EU und EFTA), 5=Afrika, 6=Nordamerika, 7=Lateinamerika und Karibik ... last -9=Ohne Angabe
-   Geburtsstaat (Geburtsstaat): 203 values; -99999=Geburtsstaat - Total, 8100=Schweiz, 8201=Albanien, 8202=Andorra, 8204=Belgien, 8205=Bulgarien, 8206=Dänemark, 8207=Deutschland ... last -9=Ohne Angabe
-   Geschlecht (Geschlecht): 3 values; -99999=Geschlecht - Total, 1=Mann, 2=Frau
-   Alter (Alter): 102 values; -99999=Alter - Total, 0=0 Jahre, 1=1 Jahr, 2=2 Jahre, 3=3 Jahre, 4=4 Jahre, 5=5 Jahre, 6=6 Jahre ... last 100=100 Jahre und mehr
+## PxWeb https://etab.llv.li/PXWeb/api/v1/de/eTab/Bev%C3%B6lkerung/Bev%C3%B6lkerungsstruktur/213.021d.px
+   HTTP 200, 1,493 bytes
+   title: 213.021d Ständige Bevölkerung nach Stichtag, Jahr der Ankunft, Wohnland bei Geburt, Heimat, Geschlecht und Gemeinde
+   Stichtag (Stichtag): 3 values; 0=31.12.2020, 1=31.12.2015, 2=31.12.2010
+   Jahr der Ankunft (Jahr der Ankunft): 11 values; 0=Jahr der Ankunft - Total, 1=Ankunft im Jahr des Stichtags, 2=1 - 5 Jahre vor dem Stichtag, 3=6 - 10 Jahre vor dem Stichtag, 4=11 - 15 Jahre vor dem Stichtag, 5=16 - 20 Jahre vor dem Stichtag, 6=21 - 25 Jahre vor dem Stichtag, 7=26 - 30 Jahre vor dem Stichtag ... last 10=Ohne Angabe
+   Wohnland bei Geburt (Wohnland bei Geburt): 6 values; 0=Wohnland bei Geburt - Total, 1=Liechtenstein, 2=Schweiz, 3=EWR-Länder, 4=Andere Länder, 5=Ohne Angabe
+   Heimat (Heimat): 3 values; 0=Heimat - Total, 1=Liechtensteiner, 2=Ausländer
+   Geschlecht (Geschlecht): 3 values; 0=Geschlecht - Total, 1=Frauen, 2=Männer
+   Gemeinde (Gemeinde): 12 values; 0=Liechtenstein, 1=Vaduz, 2=Triesen, 3=Balzers, 4=Triesenberg, 5=Schaan, 6=Planken, 7=Eschen ... last 11=Schellenberg
