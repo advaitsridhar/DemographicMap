@@ -1949,7 +1949,297 @@ def che16() -> None:
             log(f"   {first} | 1 Jan {r[1]} | 31 Dec {r[9]} | under {context}")
 
 
+# ---------------------------------------------------------------------------
+# Generic probes, driven by options rather than by a named function, so that a
+# question about one more file costs a dispatch and not a commit. Every
+# argument is one whitespace-free token, because the workflow splits its
+# command on whitespace.
+#
+#   fetch URL [URL ...] [--grep RE] [--rows N] [--bytes N] [--context N]
+#         [--links RE] [--sheets N] [--sheet-match RE] [--start N] [--cols N]
+#         [--width N] [--member RE] [--delim C] [--wayback TS|latest]
+#         [--post JSON] [--form K=V&K=V] [--accept TYPE] [--jpath A.B.0]
+#       Fetch each URL and describe it: a workbook's sheets and rows, a zip's
+#       members (and the CSV or workbook member matching --member), CSV's
+#       header and the lines matching --grep, JSON's shape, or a page's
+#       links and text.
+#   cdx PREFIX [--match RE] [--rows N] [--cdx-filter F]
+#       The Internet Archive's captures under PREFIX, one per URL.
+# ---------------------------------------------------------------------------
+
+CDX = "https://web.archive.org/cdx/search/cdx"
+
+
+def _clip(value: Any, width: int) -> str:
+    return ("" if value is None else " ".join(str(value).split()))[:width]
+
+
+def _wayback(url: str, stamp: str) -> str | None:
+    if stamp != "latest":
+        return f"https://web.archive.org/web/{stamp}id_/{url}"
+    query = urllib.parse.urlencode({"url": url, "output": "json", "filter": "statuscode:200",
+                                    "fl": "timestamp", "limit": "-1"})
+    status, _, body = fetch(f"{CDX}?{query}", timeout=120)
+    try:
+        rows = json.loads(text(body) or "[]")
+    except json.JSONDecodeError:
+        rows = []
+    if status != 200 or len(rows) < 2:
+        log(f"   no capture of {url} (HTTP {status})")
+        return None
+    return f"https://web.archive.org/web/{rows[-1][0]}id_/{url}"
+
+
+def _book_rows(blob: bytes) -> list[tuple[str, list[list[Any]]]]:
+    import io as _io
+    if blob[:2] == b"PK":
+        import openpyxl
+        book = openpyxl.load_workbook(_io.BytesIO(blob), read_only=True, data_only=True)
+        return [(ws.title, [list(r) for r in ws.iter_rows(values_only=True)])
+                for ws in book.worksheets]
+    import xlrd
+    book = xlrd.open_workbook(file_contents=blob)
+    return [(ws.name, [ws.row_values(i) for i in range(ws.nrows)]) for ws in book.sheets()]
+
+
+def _show_book(blob: bytes, args: Any) -> None:
+    sheets = _book_rows(blob)
+    log(f"   {len(sheets)} sheets: " + " | ".join(t for t, _ in sheets[:60]))
+    if args.sheet_match:
+        sheets = [s for s in sheets if re.search(args.sheet_match, s[0], re.I)]
+    grep = re.compile(args.grep, re.I) if args.grep else None
+    for title, rows in sheets[:args.sheets]:
+        width = max((len(r) for r in rows), default=0)
+        log(f"   -- sheet {title!r}: {len(rows)} rows x {width} cols")
+        shown = 0
+        for i, row in enumerate(rows):
+            if i < args.start:
+                continue
+            line = " | ".join(_clip(c, args.width) for c in row[:args.cols])
+            if grep and not grep.search(line) and i >= args.start + args.head:
+                continue
+            log(f"     r{i}: {line}")
+            shown += 1
+            if shown >= args.rows:
+                break
+
+
+def _show_csv(page: str, args: Any) -> None:
+    lines = page.splitlines()
+    log(f"   {len(lines):,} lines")
+    for line in lines[:args.head or 2]:
+        log("   | " + line[:args.bytes])
+    if args.grep:
+        grep = re.compile(args.grep, re.I)
+        hits = [line for line in lines[1:] if grep.search(line)]
+        log(f"   {len(hits)} lines match {args.grep!r}")
+        for line in hits[:args.rows]:
+            log("   > " + line[:args.bytes])
+
+
+def _show_zip(blob: bytes, args: Any) -> None:
+    import io as _io
+    import zipfile
+    with zipfile.ZipFile(_io.BytesIO(blob)) as archive:
+        infos = archive.infolist()
+        log(f"   zip, {len(infos)} members")
+        for info in infos[:args.rows]:
+            log(f"     {info.filename} ({info.file_size:,})")
+        if not args.member:
+            return
+        for info in infos:
+            if re.search(args.member, info.filename, re.I):
+                data = archive.read(info)
+                log(f"   member {info.filename}:")
+                _describe(data, info.filename, args)
+                return
+        log(f"   no member matches {args.member!r}")
+
+
+def _describe(blob: bytes, url: str, args: Any) -> None:
+    lower = url.lower().split("?")[0]
+    if blob[:2] == b"PK":
+        import io as _io
+        import zipfile
+        try:
+            names = zipfile.ZipFile(_io.BytesIO(blob)).namelist()
+        except zipfile.BadZipFile:
+            names = []
+        if "[Content_Types].xml" in names and not lower.endswith(".ods"):
+            _show_book(blob, args)
+        else:
+            _show_zip(blob, args)
+        return
+    if blob[:8] == bytes.fromhex("d0cf11e0a1b11ae1"):
+        _show_book(blob, args)
+        return
+    if blob[:4] == b"%PDF":
+        log(f"   a PDF of {len(blob):,} bytes")
+        return
+    page = text(blob)
+    stripped = page.lstrip("﻿").lstrip()
+    if stripped.startswith(("{", "[")) and not args.grep:
+        try:
+            data = json.loads(stripped)
+        except ValueError:
+            data = None
+        if data is not None:
+            if args.jpath:
+                data = jpath(data, args.jpath)
+            log("   json: " + json.dumps(data, ensure_ascii=False)[:args.bytes])
+            return
+    if lower.endswith((".csv", ".txt", ".tsv")) or (args.delim and "<html" not in page[:400].lower()):
+        _show_csv(page, args)
+        return
+    if args.grep:
+        hits = list(re.finditer(args.grep, page, re.I))
+        log(f"   {len(hits)} matches of {args.grep!r}")
+        for m in hits[:args.rows]:
+            s = max(0, m.start() - args.context)
+            log("   ~ " + " ".join(page[s:m.end() + args.context].split())[:args.bytes])
+        return
+    links = re.findall(r"""(?is)<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", page)
+    if links:
+        match = re.compile(args.links, re.I) if args.links else None
+        shown = 0
+        for href, label in links:
+            label = " ".join(re.sub(r"<[^>]+>", " ", label).split())
+            if match and not (match.search(href) or match.search(label)):
+                continue
+            log(f"   link: {label[:90]!r} -> {urllib.parse.urljoin(url, href)}")
+            shown += 1
+            if shown >= args.rows:
+                break
+        log(f"   ({len(links)} links in all)")
+    words = " ".join(re.sub(r"(?is)<(script|style).*?</\1>|<[^>]+>", " ", page).split())
+    log("   text: " + words[:args.bytes])
+
+
+def generic(argv: list[str]) -> int:
+    import argparse
+    ap = argparse.ArgumentParser(prog="central_probe")
+    ap.add_argument("cmd", choices=["fetch", "cdx"])
+    ap.add_argument("target", nargs="+")
+    for flag, default in (("--rows", 40), ("--bytes", 1500), ("--context", 160),
+                          ("--sheets", 2), ("--start", 0), ("--cols", 14), ("--width", 24),
+                          ("--head", 2), ("--timeout", TIMEOUT)):
+        ap.add_argument(flag, type=int, default=default)
+    for flag in ("--grep", "--links", "--sheet-match", "--member", "--delim", "--wayback",
+                 "--post", "--form", "--accept", "--jpath", "--match", "--cdx-filter"):
+        ap.add_argument(flag)
+    args = ap.parse_args(argv)
+    if args.cmd == "cdx":
+        for prefix in args.target:
+            params = [("url", prefix), ("matchType", "prefix"), ("output", "json"),
+                      ("filter", "statuscode:200"), ("fl", "original,timestamp,mimetype,length"),
+                      ("collapse", "urlkey"), ("limit", "20000")]
+            if args.cdx_filter:
+                params.append(("filter", args.cdx_filter))
+            status, _, body = fetch(f"{CDX}?{urllib.parse.urlencode(params)}", timeout=180)
+            try:
+                rows = json.loads(text(body) or "[]")
+            except json.JSONDecodeError:
+                rows = []
+            match = re.compile(args.match, re.I) if args.match else None
+            shown = 0
+            for row in rows[1:]:
+                original = urllib.parse.unquote(row[0])
+                if match and not match.search(original):
+                    continue
+                log(f"   {row[1]} {row[2][:24]:24} {row[3]:>9} {original}")
+                shown += 1
+                if shown >= args.rows:
+                    break
+            log(f"   cdx {prefix}: HTTP {status}, {shown} shown of {max(len(rows) - 1, 0)}")
+        return 0
+    for url in args.target:
+        target = _wayback(url, args.wayback) if args.wayback else url
+        if target is None:
+            continue
+        data, headers = None, {}
+        if args.post:
+            data, headers = args.post.encode(), {"Content-Type": "application/json"}
+        elif args.form:
+            data = args.form.encode()
+            headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        if args.accept:
+            headers["Accept"] = args.accept
+        status, head, body = fetch(target, data=data, headers=headers, timeout=args.timeout)
+        kind = head.get("Content-Type") or head.get("content-type") or head.get("error", "")
+        disp = head.get("Content-Disposition") or head.get("content-disposition") or ""
+        log(f"\n## {target}\n   HTTP {status}, {len(body):,} bytes, {kind} {disp[:80]}")
+        if body:
+            try:
+                _describe(body, url, args)
+            except Exception as exc:  # noqa: BLE001 - a probe reports, it does not stop
+                log(f"   could not describe it: {exc.__class__.__name__}: {exc}")
+    return 0
+
+
+def deu_zensus() -> None:
+    """The Zensus 2022 database with the account: who it thinks we are, which tables carry
+    citizenship, and which form of the tablefile request it accepts.
+
+    The credentials come from the environment and are scrubbed out of every
+    line printed; the run's product is a log that gets committed.
+    """
+    import os
+    base = "https://ergebnisse.zensus2022.de/api/rest/2020"
+    user = os.environ.get("ZENSUS_USER", "").strip()
+    password = os.environ.get("ZENSUS_PASSWORD", "").strip()
+    secrets = [s for s in (user, password) if s]
+
+    def scrub(value: str) -> str:
+        for secret in secrets:
+            value = value.replace(secret, "***")
+        return value
+
+    log(f"   account set: {bool(user)}; password set: {bool(password)}")
+
+    def post(path: str, params: dict[str, str], *, how: str = "headers", show_bytes: int = 600,
+             grep: str | None = None) -> tuple[int, bytes]:
+        body = dict(params)
+        headers = {"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded"}
+        if how == "headers":
+            headers.update({"username": user, "password": password})
+        elif how == "body":
+            body.update({"username": user, "password": password})
+        status, head, blob = fetch(f"{base}/{path}", data=urllib.parse.urlencode(body).encode(),
+                                   headers=headers, timeout=180)
+        if blob[:2] == b"PK":
+            import io as _io
+            import zipfile
+            with zipfile.ZipFile(_io.BytesIO(blob)) as archive:
+                blob = archive.read(archive.namelist()[0])
+        shown = scrub(text(blob))
+        log(f"\n## POST {path} {sorted(params)} ({how}): HTTP {status}, {len(blob):,} bytes, "
+            f"{head.get('Content-Type') or head.get('error', '')}")
+        if grep:
+            hits = re.findall(grep, shown)
+            log(f"   {len(hits)} matches of {grep!r}")
+            for hit in hits[:80]:
+                log("   - " + " ".join(str(hit).split())[:240])
+        else:
+            log("   " + " ".join(shown[:show_bytes].split()))
+        return status, blob
+
+    post("helloworld/logincheck", {}, how="headers")
+    post("helloworld/logincheck", {}, how="body")
+    title = r'"Code"\s*:\s*"[^"]+"\s*,\s*"Content"\s*:\s*"[^"]{0,160}"'
+    for term in ("Staatsangehörigkeit", "Geburtsland", "Migration"):
+        post("find/find", {"term": term, "category": "tables", "pagelength": "200",
+                           "language": "de"}, grep=title)
+    post("catalogue/tables", {"selection": "1000A-*", "area": "all", "pagelength": "500",
+                              "language": "de"}, grep=title)
+    for variant in ({"regionalvariable": "GEOBL1", "regionalschluessel": ""},
+                    {"regionalvariable": "GEOBL1"}, {}):
+        params = {"name": "1000A-1018", "area": "all", "format": "ffcsv", "compress": "false",
+                  "language": "de", **variant}
+        post("data/tablefile", params, show_bytes=400)
+
+
 PROBES: dict[str, Callable[[], None]] = {
+    "deu_zensus": deu_zensus,
     "che16": che16,
     "che15": che15, "nld13": nld13, "svn9": svn9,
     "aut12": aut12, "nld12": nld12, "che14": che14, "lux8": lux8, "svn8": svn8, "hun15": hun15,
@@ -1997,6 +2287,8 @@ def main(argv: list[str]) -> int:
     if argv[0] == "get":
         show(argv[1], argv[2] if len(argv) > 2 else None, raw=0 if len(argv) > 2 else 1500)
         return 0
+    if argv[0] in ("fetch", "cdx"):
+        return generic(argv)
     if argv[0] == "px":
         for url in argv[1:]:
             pxweb_meta(url)
