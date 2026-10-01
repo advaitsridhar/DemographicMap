@@ -184,6 +184,9 @@ class SwedishChurch(unittest.TestCase):
                          {"Karlshamns": "1082", "Borås": "1490", "Faluns": "2080"})
         with self.assertRaises(SystemExit):
             church.match_names(["Atlantis"], scb)
+        # Folded, Håbo and Habo are one name; spelled, they are two kommuner.
+        self.assertEqual(church.match_names(["Håbo", "Habo"], {"0305": "Håbo", "0643": "Habo"}),
+                         {"Håbo": "0305", "Habo": "0643"})
 
 
 class FinnishChurch(unittest.TestCase):

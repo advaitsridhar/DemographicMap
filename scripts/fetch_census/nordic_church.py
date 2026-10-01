@@ -87,6 +87,7 @@ RATIO_SLACK = 0.06
 PCT_SLACK = 0.6
 ROW = re.compile(r"^(?P<name>.+?) (?P<kind>kommun|län)(?: \(\d+\))? (?P<rest>\d.*)$")
 UNPLACED = "På kommunen skrivna "
+UNKNOWN_NAME = "Okänd"
 
 
 def numbers(groups: list[str]) -> int | None:
@@ -167,14 +168,25 @@ def svk_rows(lines: list[str]) -> tuple[dict[str, Row], dict[str, Row], Row | No
 
 def match_names(printed: list[str], scb: dict[str, str]) -> dict[str, str]:
     """The table's genitive names ("Karlshamns", "Faluns", "Borås") -> SCB's
-    codes: the name as printed, else without its genitive s. One to one, or
-    the run stops."""
-    by_name = {fold(n): c for c, n in scb.items()}
+    codes: the name as printed, else without its genitive s; each as spelled
+    before it is folded, since folding makes Håbo and Habo one name. One to
+    one, or the run stops."""
+    exact = {n: c for c, n in scb.items()}
+    folded: dict[str, set[str]] = defaultdict(set)
+    for c, n in scb.items():
+        folded[fold(n)].add(c)
+
+    def find(name: str) -> str | None:
+        if name in exact:
+            return exact[name]
+        hits = folded.get(fold(name), set())
+        return next(iter(hits)) if len(hits) == 1 else None
+
     out, missing = {}, []
     for name in printed:
-        code = by_name.get(fold(name))
+        code = find(name)
         if code is None and name.endswith("s"):
-            code = by_name.get(fold(name[:-1]))
+            code = find(name[:-1])
         if code is None:
             missing.append(name)
         else:
@@ -205,8 +217,12 @@ def sweden() -> list[dict[str, Any]]:
     if not any(SVK_TITLE in " ".join(line.split()) for line in lines[:5]):
         raise SystemExit(f"svenska kyrkan: {used} is not the 2021 table: {lines[:2]}")
     kommuner, lan, nowhere = svk_rows(lines)
+    # The people SCB cannot place in a parish are printed as a parish of their
+    # own ("På kommunen skrivna") of a kommun and a län called "Okänd"
+    # (unknown): one count, set aside from the kommuner and the län.
+    unknown = [rows.pop(UNKNOWN_NAME) for rows in (lan, kommuner) if UNKNOWN_NAME in rows]
     log(f"  {used}: {len(lines):,} lines, {len(kommuner)} kommuner, {len(lan)} län, "
-        f"registered without a property: {nowhere}")
+        f"registered without a property: {nowhere}; '{UNKNOWN_NAME}' rows: {unknown}")
     meta = {v["code"]: v for v in request_json(BASE.format(lang="sv", table="BefolkningNy"))
             ["variables"]}
     sv = dict(zip(meta["Region"]["values"], meta["Region"]["valueTexts"]))
@@ -235,7 +251,8 @@ def sweden() -> list[dict[str, Any]]:
         f"{100 * worst[0]:.2f}% ({worst[1]})")
     if worst[0] > 0.03:
         raise SystemExit(f"svenska kyrkan: {worst[1]} is {100 * worst[0]:.1f}% off SCB's count")
-    total = sum(row[0] for row in lan.values()) + (nowhere[0] if nowhere else 0)
+    unplaced_people = (unknown or [nowhere or (0, 0, 0.0)])[0][0]
+    total = sum(row[0] for row in lan.values()) + unplaced_people
     if abs(total - scb["00"]) > 0.0005 * scb["00"]:
         raise SystemExit(f"svenska kyrkan: the län and the unplaced make {total:,} against "
                          f"SCB's {scb['00']:,.0f}")
