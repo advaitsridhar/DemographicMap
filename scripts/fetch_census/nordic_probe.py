@@ -363,6 +363,35 @@ def text(url: str, grep: str | None = None, chars: int = 1500) -> None:
         print("  " + " ".join(raw[:chars].split()))
 
 
+def px_walk(url: str, title: str | None = None, depth: int = 2, meta: str | None = None,
+            pause: float = 0.4, grep: str | None = None, allvals: str | None = None) -> None:
+    """A PxWeb folder, walked ``depth`` levels down: every table's id and title
+    (those matching ``title``), and the variables of each whose id or title
+    matches ``meta`` -- one call to see what a folder holds and how."""
+    def walk(at: str, level: int) -> None:
+        time.sleep(pause)
+        try:
+            items = get_json(at)
+        except Exception as exc:                  # a folder's failure is its answer
+            print(f"  {at}: FAILED {exc.__class__.__name__}: {str(exc)[:200]}")
+            return
+        for item in items:
+            line = f"{item.get('id')} [{item.get('type')}] {item.get('text')}"
+            if item.get("type") == "l":
+                print(f"  {'  ' * (2 - level)}{line}")
+                if level > 1:
+                    walk(f"{at.rstrip('/')}/{item['id']}", level - 1)
+            elif not title or re.search(title, line, re.I):
+                print(f"  {'  ' * (2 - level)}{line}")
+                if meta and re.search(meta, line, re.I):
+                    time.sleep(pause)
+                    try:
+                        px_meta(f"{at.rstrip('/')}/{item['id']}", grep=grep, allvals=allvals)
+                    except Exception as exc:
+                        print(f"    meta FAILED {exc.__class__.__name__}: {str(exc)[:200]}")
+    walk(url, depth)
+
+
 def klass_codes(url: str) -> None:
     body = get_json(url)
     codes = body.get("codes", [])
@@ -430,6 +459,53 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 18 (the gap round): nationality, country of birth and background
+    # by the units the map draws, as the owner's decision of 19 September 2026
+    # allows on the ethnicity field; the churches' own membership by
+    # municipality; and the last places the 2011 Baltic censuses might reach.
+    "r18_swe_walk": lambda: px_walk(
+        f"{SCB}/BE/BE0101", title=r"born|birth|citizen|background|foreign|nationalit|country",
+        depth=2, meta=r"region|kommun|county|municipal", grep=r"^(0114|0180|01|00) ",
+        allvals=r"(?i)(fodel|medb|land|bakgr|utl).*"),
+    "r18_swe_search": lambda: px_search(f"{SCB}?query=country%20of%20birth", limit=60),
+    "r18_nor_search1": lambda: px_search(f"{SSB}/?query=country%20background", limit=60),
+    "r18_nor_search2": lambda: px_search(f"{SSB}/?query=landbakgrunn", limit=60),
+    "r18_nor_search3": lambda: px_search(f"{SSB}/?query=citizenship%20municipality", limit=40),
+    "r18_dnk_folk1c": lambda: statbank_info("FOLK1C", grep=r"^(101|147|851|000|084)"),
+    "r18_dnk_tables": lambda: statbank_tables(
+        r"ancestry|origin|citizenship|country of birth|immigrant|descendant"),
+    "r18_fin_11rt": lambda: px_meta(
+        f"{STATFIN}/vaerak/11rt.px", grep=r"^(KU091|KU049|SK011|MK01|SSS) ",
+        allvals=r"(?i)(?!alue|vuosi|timeperiod|sukupuoli|ikaryhma|contentscode).*"),
+    "r18_fin_11rg": lambda: px_meta(
+        f"{STATFIN}/vaerak/11rg.px", grep=r"^(KU091|KU049|SK011|MK01|SSS) ",
+        allvals=r"(?i)(?!alue|vuosi|timeperiod|sukupuoli|ikaryhma|contentscode).*"),
+    "r18_fin_11rp": lambda: px_meta(
+        f"{STATFIN}/vaerak/11rp.px", grep=r"^(KU091|KU049|SK011|MK01|SSS) ",
+        allvals=r"(?i)(?!alue|vuosi|timeperiod|sukupuoli|ikaryhma|contentscode).*"),
+    "r18_isl_walk": lambda: px_walk(
+        f"{HAGSTOFA}/Ibuar/mannfjoldi/3_bakgrunnur", depth=2, pause=7.0,
+        meta=r"municipal|region|sveitarf|landshl"),
+    "r18_swe_kyrkan": lambda: links(
+        "https://www.svenskakyrkan.se/statistik",
+        r"statistik|siffror|medlem|kommun|xls|filer|pdf|tillh", limit=120),
+    "r18_fin_evl_311": lambda: text(
+        "https://www.kirkontilastot.fi/viz.php?id=311",
+        grep=r"(?:src|href|data-[a-z-]+|url|file)\s*[=:]\s*[\"'][^\"']{4,220}[\"']"),
+    "r18_fin_evl_286": lambda: text(
+        "https://www.kirkontilastot.fi/viz.php?id=286",
+        grep=r"(?:src|href|data-[a-z-]+|url|file)\s*[=:]\s*[\"'][^\"']{4,220}[\"']"),
+    "r18_fin_evl_files": lambda: cdx(
+        "url=kirkontilastot.fi/*&filter=original:.*(?:xlsx|xls|csv|tiedostot).*", limit=150),
+    "r18_isl_skra_cdx": lambda: cdx(
+        "url=skra.is/library/*&filter=original:.*(?:[Tt]ru|[Ll]ifssk|[Tt]rufel).*", limit=150),
+    "r18_est_smin_cdx": lambda: cdx(
+        "url=siseministeerium.ee/*&filter=original:.*(?:[Rr]ahvus|[Rr]ahvastikuregist).*",
+        limit=120),
+    "r18_lva_od_parish": lambda: px_search(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD?query=parish", limit=60),
+    "r18_lva_od_lang": lambda: px_search(
+        "https://data.stat.gov.lv/api/v1/en/OSP_OD?query=language", limit=60),
     # Round 17: retries of the archive's refusals, and SSB's own words on
     # where the members of a community outside the Church are counted.
     "r17_ltu_vilnius": lambda: xlsx(
