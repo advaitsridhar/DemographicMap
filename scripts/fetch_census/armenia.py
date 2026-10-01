@@ -26,6 +26,7 @@ from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
+from .nordic_common import check_national_median
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "armenia.json"
@@ -151,6 +152,14 @@ def main() -> int:
         raise SystemExit(f"armenia: {sheet.name} has no column for {missing}")
     log(f"  {sheet.name}: {len(MARZ)} marzes make the republic's "
         f"{table['RA']['total']['all']:,.0f}; every block's groups make its total")
+    # The republic's median from the same groups, against Eurostat's (from
+    # Armstat's single years), as the marzes' are made the same way. For
+    # 1 January 2024 Eurostat's median (33.7) does not agree with its own age
+    # groups for that date, which are Armstat's row for row and put the
+    # middle person at 39.1; that year is not this sheet's, so it is said here
+    # and not checked against.
+    check_national_median("AM", when.year, grouped_median(sorted(table["RA"]["total"]["groups"])),
+                          "armenia: the republic")
 
     admin1 = {u["name"]: u for u in json.loads((SITE / "admin1" / "ARM.units.json").read_text())}
     source = SOURCE.format(year=when.year)

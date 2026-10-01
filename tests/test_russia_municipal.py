@@ -113,6 +113,73 @@ class MergedOkrugTest(unittest.TestCase):
         self.assertEqual(bound, {0: "a"})
 
 
+class DrawnElsewhereTest(unittest.TestCase):
+    """A settlement the census counts in one unit and the map draws in another."""
+
+    def labytnangi(self):
+        town = cunit("Городской округ город Лабытнанги", total=30532, rural=0,
+                     towns=["Лабытнанги"], urban_only=True)
+        town["men"], town["women"] = 15558, 14974
+        town["places"] = [["г.", "Лабытнанги", 25501, 12399, 13102],
+                          ["пгт", "Харп", 5031, 3159, 1872]]
+        district = cunit("Муниципальный округ Приуральский район", total=9860)
+        district["men"], district["women"] = 4837, 5023
+        shapes = [shape("L", "городской округ Лабытнанги"), shape("P", "Priuralsky Rayon")]
+        return [town, district], shapes
+
+    def test_the_settlements_row_keeps_its_sex(self):
+        self.assertEqual(rm.settlements("пгт Харп", 5031, 3159, 1872),
+                         [["пгт", "Харп", 5031, 3159, 1872]])
+
+    def test_kharp_moves_to_the_polygon_that_draws_it(self):
+        units, shapes = self.labytnangi()
+        members = {"L": [0], "P": [1]}
+        out, into, refused, _ = rm.drawn_elsewhere("ЯНАО", units, shapes, members)
+        self.assertFalse(refused)
+        town = {"shape": "L", "members": [units[0]], "moved_out": out["L"]}
+        district = {"shape": "P", "members": [units[1]], "moved_in": into["P"]}
+        # The okrug less Kharp is the town of Labytnangi, row for row.
+        self.assertEqual(rm.figures(town), (25501, 12399, 13102))
+        self.assertEqual(rm.figures(district), (14891, 7996, 6895))
+        self.assertIn("23 April 2021", rm.moved_note(district))
+
+    def test_a_move_with_one_side_unbound_refuses_instead(self):
+        units, shapes = self.labytnangi()
+        out, into, refused, _ = rm.drawn_elsewhere("ЯНАО", units, shapes, {"L": [0]})
+        self.assertFalse(out or into)
+        self.assertEqual(sorted(refused), ["L", "P"])
+
+    def test_chechnyas_moved_villages_refuse_both_polygons(self):
+        def unit(name, place, people):
+            u = cunit(name)
+            u["places"] = [["село", place, people, people // 2, people - people // 2]]
+            return u
+        units = [unit("Городской округ город Аргун", "Чечен-Аул", 9208),
+                 unit("Урус-Мартановский муниципальный район", "Старые-Атаги", 14280),
+                 unit("Ачхой-Мартановский муниципальный район", "Кулары", 5918),
+                 unit("Серноводский муниципальный район", "Бамут", 5838),
+                 cunit("Грозненский муниципальный район", total=84348)]
+        shapes = [shape("A", "городской округ Аргун"),
+                  shape("U", "Urus-Martanovsky District"),
+                  shape("K", "Achkhoy-Martanovsky District"),
+                  shape("G", "Groznensky District"), shape("S", "Sunzhensky District")]
+        # Sernovodsky binds nowhere: its villages lie in two polygons.
+        members = {"A": [0], "U": [1], "K": [2], "G": [4]}
+        out, into, refused, _ = rm.drawn_elsewhere("Чеченская Республика", units, shapes,
+                                                   members)
+        self.assertFalse(out or into)
+        self.assertEqual(sorted(refused), ["A", "G", "K", "U"])
+        self.assertEqual(len(refused["G"]), 3)
+        self.assertEqual(len(refused["K"]), 2)          # Kulary out, Bamut in
+        self.assertIn("Chechen-Aul (9,208 people)", " ".join(refused["G"]))
+
+    def test_a_stale_declaration_stops_the_run(self):
+        units, shapes = self.labytnangi()
+        units[0]["places"] = units[0]["places"][:1]          # no Kharp row
+        with self.assertRaises(SystemExit):
+            rm.drawn_elsewhere("ЯНАО", units, shapes, {"L": [0], "P": [1]})
+
+
 class KindTest(unittest.TestCase):
     def test_kinds(self):
         self.assertEqual(rm.shape_kind("Abansky Rayon"), "district")

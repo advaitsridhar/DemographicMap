@@ -72,6 +72,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, RAW, download, gap, http_get, lo
                       record, shares, write_json)
 from . import east_geo, uscb
 from .cod_ps_age import grouped_median
+from .nordic_common import check_national_median
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 OUT = "ukraine_raion.json"
@@ -356,6 +357,21 @@ def age_fields(r: dict[str, Any], year: int, source: str, note: str) -> dict[str
                              unit="males_per_100_females", year=year, source=source),
         "sex_ratio_note": f"{int(r['men']):,} men and {int(r['women']):,} women." + note,
     }
+
+
+def refused_record(sid: str, name: str, why: str) -> dict[str, Any]:
+    """The record for a polygon no census figure is written on, saying why.
+
+    The reason goes on every field the census would have filled: left bare,
+    nationality and language kept the Wikidata sweep's placeholder ("nothing
+    has been fetched"), which is no reason. Religion stays with the country's
+    collection policy -- the census never asked it.
+    """
+    refusal = gap(NOT_AVAILABLE, why)
+    return record(f"UKR-2001-{sid}", name, level="admin2", parent="UKR", country="UKR",
+                  match_by="shape_id", shape_id=sid, population=refusal,
+                  median_age=refusal, sex_ratio=refusal, ethnicity=refusal,
+                  language=refusal)
 
 
 def bind_raions(raions: list[tuple[tuple[str, str], dict[str, Any]]],
@@ -836,12 +852,7 @@ def main() -> int:
                               country="UKR", match_by="shape_id", shape_id=sid,
                               sources=cites, **values))
     for sid, why in sorted(refused.items()):
-        shape = site_ids[sid]
-        refusal = gap(NOT_AVAILABLE, why)
-        records.append(record(f"UKR-2001-{sid}", shape["name"], level="admin2",
-                              parent="UKR", country="UKR", match_by="shape_id",
-                              shape_id=sid, population=refusal, median_age=refusal,
-                              sex_ratio=refusal))
+        records.append(refused_record(sid, site_ids[sid]["name"], why))
 
     # First level: the 2017 estimate by age where it exists, 2001 otherwise.
     first = {u["name"]: u for u in admin1}
@@ -869,6 +880,13 @@ def main() -> int:
         records.append(record(f"UKR-AGE-{shape['id']}", name, level="admin1", parent="UKR",
                               country="UKR", match_by="shape_id", shape_id=shape["id"],
                               sources=cites, **values))
+    # The oblasts' 2017 groups together, the country less Crimea and
+    # Sevastopol as the Service counts it, give a national median to hold
+    # against Eurostat's for 1 January 2017 (from the Service's single years).
+    used17 = [r for r in ages17.values() if r["level"] == 1 and r["total"]]
+    if used17:
+        check_national_median("UA", 2017, grouped_median(list(add(used17)["groups"])),
+                              f"ukraine_raion: the {len(used17)} regions of 2017 together")
     placed = {r["shape_id"] for r in records if r["level"] == "admin2"}
     left = sorted(u["name"] for u in admin2 if u["id"] not in placed)
     log(f"  {len(members) - len(set(members) & set(refused))} polygons written from "

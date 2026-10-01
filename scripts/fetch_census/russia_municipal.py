@@ -26,7 +26,13 @@ unit is bound to a polygon only when all of these hold:
 - nothing else in the subject claims either of them (one to one);
 - an okrug that the census made from a district and its town is not bound
   when the boundary file still draws that town as a polygon of its own: its
-  count covers two polygons and belongs to neither.
+  count covers two polygons and belongs to neither;
+- a settlement the census counts in one unit and the boundary file draws in
+  another unit's polygon (Kharp, joined to Labytnangi in 2021; the villages
+  Chechnya moved between districts) is carried to the polygon that draws it,
+  from its own row of the table, where that row is the whole change -- and
+  where it is not, neither polygon is bound (DRAWN_ELSEWHERE). Every
+  settlement GeoNames places well outside its unit's polygon is logged.
 
 Wikidata is the name crosswalk here and nothing more: it supplies a Russian
 spelling for a polygon the boundary file romanised. No figure comes from it.
@@ -111,14 +117,15 @@ SETTLEMENT = re.compile(
     r"([А-ЯЁ][^,;()]*?)\s*$")
 
 
-def settlements(label: str, people: float | None) -> list[list[Any]]:
-    """[[kind, name, people]] for a row that names a settlement."""
+def settlements(label: str, people: float | None, men: float | None = None,
+                women: float | None = None) -> list[list[Any]]:
+    """[[kind, name, people, men, women]] for a row that names a settlement."""
     found = SETTLEMENT.search(label)
     if not found or not people:
         return []
     kind = found.group(1)
     kind = "г." if kind in {"г.", "город"} else kind
-    return [[kind, " ".join(found.group(2).split()), people]]
+    return [[kind, " ".join(found.group(2).split()), people, men, women]]
 
 
 def subject_key(name: str) -> str:
@@ -182,13 +189,13 @@ def units(blob: bytes) -> dict[str, dict[str, Any]]:
                        "rural": 0.0}
             block["units"].append(current)
             current["towns"] += [" ".join(t.split()) for t in TOWN.findall(name)]
-            current["places"] = settlements(name, values[0])
+            current["places"] = settlements(name, *values)
             continue
         if current is not None and depth > tier:
             if name.startswith("Сельское население") and values[0]:
                 current["rural"] += values[0]
             current["towns"] += [" ".join(t.split()) for t in TOWN.findall(name)]
-            current["places"] += settlements(name, values[0])
+            current["places"] += settlements(name, *values)
     book.close()
     return out
 
@@ -520,6 +527,119 @@ DECLARED = {
 }
 
 
+# Settlements the 2020 census files under one unit that the boundary file
+# draws inside another unit's polygon, because the outlines are older than
+# the change. Found by putting every settlement the table names (all towns,
+# and every village of 3,000 or more) at its GeoNames point and keeping those
+# that land in a polygon other than their unit's -- a scan run over all 2,311
+# formations, whose other hits were each read and are same-named villages or
+# simplified borders (logged by the run as "placed elsewhere"). Each entry:
+# (subject, settlement as the table spells it) -> (the polygon that draws it,
+# what is done, the evidence).
+#
+# "move": the census counts the settlement on its own row with its sex, so the
+# polygon that draws it gets its people and the unit it was joined to loses
+# them: the office's own counts, re-assembled for the outlines the map draws.
+# "refuse": the change cannot be undone from the census's rows -- other
+# villages moved with it that the table does not name, or that GeoNames cannot
+# place -- so neither polygon gets a figure.
+#
+# Each value is (the polygon, the action, the settlement's English name, a
+# clause about it: for a move one that follows "it", for a refusal one that
+# follows the name).
+DRAWN_ELSEWHERE: dict[tuple[str, str], tuple[str, str, str, str]] = {
+    # Kharp was the urban settlement (городское поселение) of Kharp in
+    # Priuralsky District until 23 April 2021, when it was joined to the
+    # Labytnangi urban okrug (Wikidata P131 history of Q1067697). The census
+    # of 1 October 2021 counts the okrug as Labytnangi (25,501) and Kharp
+    # (5,031) and nothing else; the boundary file still draws Kharp inside
+    # Priuralsky District, 13 km from the Labytnangi polygon (GeoNames
+    # 66.80 N, 65.81 E).
+    ("ЯНАО", "Харп"): (
+        "Priuralsky Rayon", "move", "Kharp",
+        "was part of Priuralsky District until 23 April 2021, when it was joined to the "
+        "Labytnangi urban okrug, and the boundary file still draws it inside Priuralsky "
+        "District"),
+    # Chechnya's districts were redrawn after the boundary file's outlines
+    # were made. The census of 2021 files Starye Atagi under Urus-Martanovsky
+    # District, Kulary under Achkhoy-Martanovsky District and Chechen-Aul
+    # (with Berdykel) under the city of Argun; all three of the first lie
+    # inside the map's Groznensky District (GeoNames: 43.12 N 45.74 E, 43.24 N
+    # 45.50 E, 43.20 N 45.79 E), the district Wikidata still files Starye
+    # Atagi under until its 2009 municipal reform. Bamut, which the census
+    # counts in the new Sernovodsky District, lies inside the map's
+    # Achkhoy-Martanovsky District. Berdykel (8,346) cannot be placed by
+    # GeoNames, and the table names no village under 3,000 that may have
+    # moved with these, so the drawn districts cannot be re-assembled.
+    ("Чеченская Республика", "Старые-Атаги"): (
+        "Groznensky District", "refuse", "Starye Atagi",
+        "which the census counts in Urus-Martanovsky District, lies inside the map's "
+        "Groznensky District"),
+    ("Чеченская Республика", "Кулары"): (
+        "Groznensky District", "refuse", "Kulary",
+        "which the census counts in Achkhoy-Martanovsky District, lies inside the map's "
+        "Groznensky District"),
+    ("Чеченская Республика", "Чечен-Аул"): (
+        "Groznensky District", "refuse", "Chechen-Aul",
+        "which the census counts in the city of Argun with Berdykel (8,346 people, "
+        "whom GeoNames cannot place), lies inside the map's Groznensky District"),
+    ("Чеченская Республика", "Бамут"): (
+        "Achkhoy-Martanovsky District", "refuse", "Bamut",
+        "which the census counts in the new Sernovodsky District, lies inside the map's "
+        "Achkhoy-Martanovsky District"),
+}
+
+
+def drawn_elsewhere(subject: str, cunits: list[dict[str, Any]],
+                    shapes: list[dict[str, Any]], members: dict[str, list[int]]
+                    ) -> tuple[dict[str, list[tuple]], dict[str, list[tuple]],
+                               dict[str, list[str]], list[str]]:
+    """Apply DRAWN_ELSEWHERE to one subject's bindings.
+
+    Returns (moved out, moved in, refused, log): per polygon, the settlements
+    it loses and gains as (name, people, men, women, other unit, why), the
+    polygons refused with the sentences that say why, and the run's lines.
+    A declared settlement the table or the polygons no longer hold stops the
+    run: a stale declaration is a mistake, not a gap.
+    """
+    out: dict[str, list[tuple]] = defaultdict(list)
+    into: dict[str, list[tuple]] = defaultdict(list)
+    refused: dict[str, list[str]] = defaultdict(list)
+    report: list[str] = []
+    by_name = {sh["name"]: sh["id"] for sh in shapes}
+    for (subj, place), (polygon, action, english, clause) in DRAWN_ELSEWHERE.items():
+        if subj != subject:
+            continue
+        rows = [(j, p) for j, cu in enumerate(cunits) for p in cu.get("places", [])
+                if p[1] == place]
+        if len(rows) != 1 or polygon not in by_name:
+            raise SystemExit(f"russia_municipal: {subject}: {place!r} is in {len(rows)} "
+                             f"formations, and {polygon!r} is "
+                             f"{'' if polygon in by_name else 'not '}drawn")
+        j, (_, name, people, men, women) = rows[0]
+        home = next((sid for sid, js in members.items() if j in js), None)
+        there = by_name[polygon]
+        unit = cunits[j]["name"]
+        if action == "move" and home and there in members and home != there:
+            out[home].append((name, people, men, women, polygon,
+                              f" {english} ({people:,.0f} people) is not in this figure, "
+                              f"though the census counts it in this unit: it {clause}, "
+                              f"so its own row in the census's table is counted there."))
+            into[there].append((name, people, men, women, unit,
+                                f" With {english} ({people:,.0f} people), from its own row "
+                                f"in the census's table: it {clause}."))
+            report.append(f"{subject}: {name} ({people:,.0f}) moved from {unit!r} to "
+                          f"{polygon!r}: it {clause}")
+            continue
+        sentence = f"{english} ({people:,.0f} people), {clause}"
+        for sid in (home, there):
+            if sid:
+                refused[sid].append(sentence)
+        report.append(f"{subject}: {name} ({people:,.0f}) is counted in {unit!r} and drawn "
+                      f"in {polygon!r}; neither polygon is bound")
+    return out, into, refused, report
+
+
 def candidates(cunit: dict[str, Any], shape: dict[str, Any],
                label: dict[str, Any] | None) -> tuple[str, float] | None:
     """How a census formation and a polygon agree, if they do: the basis and a score."""
@@ -590,8 +710,9 @@ KIND = 0.01
 
 
 def gazetteer(shapes_geo: dict[str, Any], parent_of: dict[str, str]
-              ) -> dict[tuple[str, str], list[tuple[str, int]]]:
-    """{(admin1 shape, romanised skeleton): [(polygon, population)]} for GeoNames' places.
+              ) -> dict[tuple[str, str], list[tuple[str, int, float, float]]]:
+    """{(admin1 shape, romanised skeleton): [(polygon, population, lon, lat)]} for
+    GeoNames' places.
 
     Each place is put in the map's polygons once, and filed under the
     first-level unit its polygon belongs to, so a town is only ever looked for
@@ -602,7 +723,7 @@ def gazetteer(shapes_geo: dict[str, Any], parent_of: dict[str, str]
 
     ids = list(shapes_geo)
     tree = STRtree([shapes_geo[i][0] for i in ids])
-    out: dict[tuple[str, str], list[tuple[str, int]]] = defaultdict(list)
+    out: dict[tuple[str, str], list[tuple[str, int, float, float]]] = defaultdict(list)
     for place in east_geo.places("RUS"):
         point = Point(place["lon"], place["lat"])
         hits = [ids[k] for k in tree.query(point, predicate="within")]
@@ -611,8 +732,50 @@ def gazetteer(shapes_geo: dict[str, Any], parent_of: dict[str, str]
         if len(hits) != 1 or hits[0] not in parent_of:
             continue
         sid = hits[0]
-        out[(parent_of[sid], latin_stem(place["name"]))].append((sid, place["population"]))
+        out[(parent_of[sid], latin_stem(place["name"]))].append(
+            (sid, place["population"], place["lon"], place["lat"]))
     return out
+
+
+# A settlement GeoNames puts this far outside its unit's polygon, with a
+# population that agrees with the census's to within a factor of two, is
+# logged for review; nearer than this is a simplified border.
+OUTSIDE_KM = 2.0
+
+
+def placed_elsewhere(subject: str, subject_shape: str, cunits: list[dict[str, Any]],
+                     members: dict[str, list[int]],
+                     index: dict[tuple[str, str], list[tuple[str, int, float, float]]],
+                     shapes_geo: dict[str, Any], name_of: dict[str, str]) -> list[str]:
+    """The run's review list: settlements of a bound unit that GeoNames places
+    well inside another polygon. Each is either declared in DRAWN_ELSEWHERE or
+    has been read and found to be a same-named village or a simplified
+    border; the list is printed so a new one is seen, not acted on blindly."""
+    import math
+    from shapely.geometry import Point
+
+    lines = []
+    for sid, js in members.items():
+        own_poly = shapes_geo[sid][0]
+        for j in js:
+            own = cunits[j]["stems"][0]
+            for kind, name, people, *_ in cunits[j].get("places", []):
+                hits = index.get((subject_shape, latin_stem(translit(ru_core_place(name)))), [])
+                if len(hits) != 1 or hits[0][0] == sid or ru_stem(ru_core(name)) in own:
+                    continue
+                other, population, lon, lat = hits[0]
+                if not population or not 0.5 <= people / population <= 2.0:
+                    continue
+                km = own_poly.distance(Point(lon, lat)) * 111.32 * math.cos(math.radians(lat))
+                if km < OUTSIDE_KM:
+                    continue
+                state = ("declared" if (subject, name) in DRAWN_ELSEWHERE
+                         else "read: a namesake or a simplified border")
+                lines.append(f"{subject}: placed elsewhere -- {kind} {name} ({people:,.0f}) "
+                             f"of {cunits[j]['name']!r} is {km:.1f} km outside "
+                             f"{name_of.get(sid, sid)!r}, in {name_of.get(other, other)!r} "
+                             f"({state})")
+    return lines
 
 
 def locate(unit: dict[str, Any], subject_shape: str,
@@ -625,7 +788,7 @@ def locate(unit: dict[str, Any], subject_shape: str,
     dozen others are left out rather than guessed.
     """
     got = []
-    for kind, name, people in unit.get("places", []):
+    for kind, name, people, *_ in unit.get("places", []):
         hits = index.get((subject_shape, latin_stem(translit(ru_core_place(name)))), [])
         if len(hits) == 1:
             got.append((hits[0][0], people, name, kind))
@@ -902,10 +1065,28 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             why.setdefault(other["id"], reason)
             del members[sid]
 
+        # Settlements the census counts in one unit and the map draws in
+        # another's polygon: moved where the census's rows allow it, the
+        # polygons refused where they do not.
+        report += placed_elsewhere(subject, first["id"], cunits, members, index,
+                                   shapes_geo, name_of)
+        moved_out, moved_in, wrong, lines = drawn_elsewhere(subject, cunits, shapes,
+                                                            members)
+        report += lines
+        for sid, sentences in wrong.items():
+            if sid in members:
+                del members[sid]
+            why[sid] = ("The 2020 census's unit and this polygon are not the same "
+                        "ground: " + "; ".join(sentences) + ". The census's figure for "
+                        "the unit would describe a different area, and the change "
+                        "cannot be undone from its rows, so none is written.")
+
         for sid, js in members.items():
             shape = next(sh for sh in shapes if sh["id"] == sid)
             groups[sid] = {"subject": subject, "shape": shape["name"], "how": how[sid],
-                           "members": [cunits[j] for j in js], "extra": extra.get(sid, "")}
+                           "members": [cunits[j] for j in js], "extra": extra.get(sid, ""),
+                           "moved_out": moved_out.get(sid, []),
+                           "moved_in": moved_in.get(sid, [])}
         left = [cu["name"] for j, cu in enumerate(cunits)
                 if not any(j in js for js in members.values())]
         empty = [sh for sh in shapes if sh["id"] not in members]
@@ -919,6 +1100,30 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             report.append(f"{subject}: formations left {left}; polygons left "
                           f"{[sh['name'] for sh in empty]}")
     return groups, report, why
+
+
+def figures(group: dict[str, Any]) -> tuple[float, float, float]:
+    """(people, men, women) on one polygon: its units, less the settlements the
+    map draws elsewhere, plus those it draws here from another unit."""
+    total = sum(u["total"] for u in group["members"])
+    men = sum(u["men"] for u in group["members"])
+    women = sum(u["women"] for u in group["members"])
+    for sign, moved in ((-1, group.get("moved_out", [])), (1, group.get("moved_in", []))):
+        for _, people, m, w, *_ in moved:
+            if m is None or w is None or abs(m + w - people) > 0.5:
+                raise SystemExit(f"russia_municipal: a moved settlement's men and women "
+                                 f"do not make its {people:,.0f}")
+            total, men, women = total + sign * people, men + sign * m, women + sign * w
+    if total <= 0 or men <= 0 or women <= 0:
+        raise SystemExit(f"russia_municipal: {group['shape']} is left with {total:,.0f}")
+    return total, men, women
+
+
+def moved_note(group: dict[str, Any]) -> str:
+    """What the note says about settlements moved to or from this polygon: the
+    count is the unit's less what the map draws elsewhere, or with what the
+    map draws here, each from its own row of the census's table."""
+    return "".join(why for *_, why in group.get("moved_out", []) + group.get("moved_in", []))
 
 
 def main() -> int:
@@ -957,9 +1162,7 @@ def main() -> int:
     how_many: Counter = Counter()
     for sid, g in sorted(groups.items()):
         members = g["members"]
-        total = sum(u["total"] for u in members)
-        men = sum(u["men"] for u in members)
-        women = sum(u["women"] for u in members)
+        total, men, women = figures(g)
         names = [u["name"] for u in members]
         how_many[g["how"]] += 1
         note = ("Everyone the 2020 census counted (reference date 1 October 2021) in "
@@ -967,7 +1170,7 @@ def main() -> int:
         if len(names) > 1:
             note += (" and in " + ", ".join(names[1:]) + ", which the census counts "
                      "apart and the map draws inside this polygon")
-        note += "." + g.get("extra", "")
+        note += "." + g.get("extra", "") + moved_note(g)
         records.append(record(
             f"RUS-VPN2020-{sid}", g["shape"], level="admin2", parent="RUS",
             country="RUS", match_by="shape_id", shape_id=sid,
@@ -991,6 +1194,13 @@ def main() -> int:
             f"RUS-VPN2020-{sid}", site[sid]["name"], level="admin2", parent="RUS",
             country="RUS", match_by="shape_id", shape_id=sid,
             population=refusal, sex_ratio=refusal, **UNREAD))
+    # A settlement moved between polygons leaves one and joins another: what
+    # the polygons are written with must be what their units count.
+    written = sum(figures(g)[0] for g in groups.values())
+    held = sum(u["total"] for g in groups.values() for u in g["members"])
+    if abs(written - held) > 0.5:
+        raise SystemExit(f"russia_municipal: the polygons are written with {written:,.0f} "
+                         f"people and their units count {held:,.0f}")
     formations = sum(len(b["units"]) for k, b in table.items() if k not in NOT_DRAWN)
     placed = sum(len(g["members"]) for g in groups.values())
     bound_n = len(groups)

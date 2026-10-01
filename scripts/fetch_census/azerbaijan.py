@@ -45,6 +45,7 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
+from .nordic_common import check_national_median
 
 SITE = PROCESSED.parent.parent / "site" / "data"
 BASE = "https://www.stat.gov.az/source/demoqraphy/az/"
@@ -316,6 +317,10 @@ def main() -> int:
                          f"country {table[COUNTRY]['total']:,.0f}")
     log(f"  the {len(rows)} rayons and cities make the country's "
         f"{table[COUNTRY]['total']:,.0f}")
+    # The country's median from the same five-year groups the rayons' come
+    # from, against Eurostat's (from Azstat's single years).
+    check_national_median("AZ", year, grouped_median(sorted(table[COUNTRY]["groups"])),
+                          "azerbaijan: the country (table 1.23)")
 
     records: list[dict[str, Any]] = []
 

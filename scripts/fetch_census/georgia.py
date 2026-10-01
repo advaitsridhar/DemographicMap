@@ -53,6 +53,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, rec
                       write_json)
 from . import east_geo
 from .cod_ps_age import grouped_median
+from .nordic_common import check_national_median
 from .pxweb import TIMEOUT
 
 
@@ -551,6 +552,22 @@ def main() -> int:
     comps = compositions()
     ages = ages_by_region()
     sex2 = sexes_2014()
+
+    # The country's median from the same five-year groups the regions' come
+    # from (its own row, or the regions together), against Eurostat's for
+    # 1 January 2015 -- two months after the census of 5 November 2014, and
+    # computed from Geostat's single years.
+    whole = ages.get("Georgia") or ages.get("GEORGIA")
+    if whole is not None:
+        country_groups = sorted((*age_band(a), n) for a, n in whole["groups"].items())
+    else:
+        summed: dict[str, float] = defaultdict(float)
+        for census in REGION:
+            for a, n in ages[census]["groups"].items():
+                summed[a] += n
+        country_groups = sorted((*age_band(a), n) for a, n in summed.items())
+    check_national_median("GE", CENSUS_YEAR + 1, grouped_median(country_groups),
+                          "georgia: the country's 2014 census ages")
 
     # The estimate: regions and their units add up, and the regions make the country.
     country = pop.get("Georgia")

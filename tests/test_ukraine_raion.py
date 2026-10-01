@@ -56,6 +56,15 @@ class Figures(unittest.TestCase):
         self.assertEqual(got["median_age"]["value"], 10.0)
         self.assertEqual(got["sex_ratio"]["value"], 66.7)
 
+    def test_a_refused_polygon_says_why_on_every_census_field(self):
+        got = u.refused_record("S1", "Zmiiv", "Chuhuiv lies in it.")
+        for field in ("population", "median_age", "sex_ratio", "ethnicity", "language"):
+            self.assertEqual(got[field], {"status": "not_available",
+                                          "note": "Chuhuiv lies in it."}, field)
+        # Religion is the country's collection policy's to explain.
+        self.assertNotIn("note", got["religion"])
+        self.assertEqual((got["match_by"], got["shape_id"]), ("shape_id", "S1"))
+
 
 class Placing(unittest.TestCase):
     """Two raions, Umanskyi and Khrystynivskyi, drawn coarsely, and the city of Uman."""
