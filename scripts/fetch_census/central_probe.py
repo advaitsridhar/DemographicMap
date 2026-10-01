@@ -1990,8 +1990,44 @@ def _wayback(url: str, stamp: str) -> str | None:
     return f"https://web.archive.org/web/{rows[-1][0]}id_/{url}"
 
 
+def ods_rows(blob: bytes) -> list[tuple[str, list[list[str]]]]:
+    """An OpenDocument spreadsheet's sheets as rows of cell texts, repeats expanded
+    (a repeat of more than 50 empty cells or rows is the sheet's padding and is cut)."""
+    import io as _io
+    import zipfile
+    import xml.etree.ElementTree as ET
+    ns = {"table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
+          "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0",
+          "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0"}
+    t = "{%s}" % ns["table"]
+    root = ET.fromstring(zipfile.ZipFile(_io.BytesIO(blob)).read("content.xml"))
+    out: list[tuple[str, list[list[str]]]] = []
+    for sheet in root.iter(f"{t}table"):
+        rows: list[list[str]] = []
+        for row in sheet.iter(f"{t}table-row"):
+            cells: list[str] = []
+            for cell in row:
+                if cell.tag not in (f"{t}table-cell", f"{t}covered-table-cell"):
+                    continue
+                kind = cell.get("{%s}value-type" % ns["office"])
+                value = cell.get("{%s}value" % ns["office"])
+                words = " ".join("".join(p.itertext()) for p in cell.iter("{%s}p" % ns["text"]))
+                content = value if kind in ("float", "percentage", "currency") and value else words
+                repeat = int(cell.get(f"{t}number-columns-repeated", "1"))
+                cells += [content] * (repeat if repeat <= 50 or content else 0)
+            while cells and not cells[-1]:
+                cells.pop()
+            repeat = int(row.get(f"{t}number-rows-repeated", "1"))
+            rows += [cells] * (repeat if repeat <= 50 or cells else 0)
+        out.append((sheet.get(f"{t}name") or "", rows))
+    return out
+
+
 def _book_rows(blob: bytes) -> list[tuple[str, list[list[Any]]]]:
     import io as _io
+    import zipfile
+    if blob[:2] == b"PK" and "content.xml" in zipfile.ZipFile(_io.BytesIO(blob)).namelist():
+        return ods_rows(blob)
     if blob[:2] == b"PK":
         import openpyxl
         book = openpyxl.load_workbook(_io.BytesIO(blob), read_only=True, data_only=True)
@@ -2065,7 +2101,7 @@ def _describe(blob: bytes, url: str, args: Any) -> None:
             names = zipfile.ZipFile(_io.BytesIO(blob)).namelist()
         except zipfile.BadZipFile:
             names = []
-        if "[Content_Types].xml" in names and not lower.endswith(".ods"):
+        if "[Content_Types].xml" in names or "content.xml" in names:
             _show_book(blob, args)
         else:
             _show_zip(blob, args)
