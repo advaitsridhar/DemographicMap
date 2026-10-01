@@ -392,6 +392,28 @@ def px_walk(url: str, title: str | None = None, depth: int = 2, meta: str | None
     walk(url, depth)
 
 
+def pdf(url: str, pages: str = "1-2", chars: int = 3000, grep: str | None = None) -> None:
+    """A PDF's page count and the text of some pages (pdfplumber), or the lines
+    matching ``grep`` on every page."""
+    import io
+    import pdfplumber
+    raw = fetch(url, accept="*/*")
+    print(f"  {len(raw):,} bytes, starts {raw[:5]!r}")
+    with pdfplumber.open(io.BytesIO(raw)) as doc:
+        print(f"  {len(doc.pages)} pages")
+        lo, _, hi = pages.partition("-")
+        wanted = range(int(lo) - 1, min(int(hi or lo), len(doc.pages)))
+        for i, page in enumerate(doc.pages):
+            text = page.extract_text() or ""
+            if grep:
+                for line in text.splitlines():
+                    if re.search(grep, line, re.I):
+                        print(f"    p{i + 1}: {line[:220]}")
+            elif i in wanted:
+                print(f"  --- page {i + 1}")
+                print("    " + text[:chars].replace("\n", "\n    "))
+
+
 def klass_codes(url: str) -> None:
     body = get_json(url)
     codes = body.get("codes", [])
@@ -459,6 +481,27 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 18c: the Church of Sweden's membership against the population by
+    # kommun, which its statistics folder has published as PDFs.
+    "r18c_swe_cdx": lambda: cdx(
+        "url=svenskakyrkan.se/filer/1374643/*&filter=original:.*(?:[Ff]olkm|[Kk]ommun|LKF|"
+        "[Mm]edlemsutv|[Ff]orsamling).*", limit=300),
+    "r18c_swe_page": lambda: text(
+        "https://www.svenskakyrkan.se/statistik",
+        grep=r"[^<>\"]{0,160}(?:folkm[aä]ngd|per kommun|kommun och l[aä]n|LKF)[^<>\"]{0,160}"),
+    "r18c_swe_pdf2020": lambda: pdf(
+        "https://web.archive.org/web/20220120151620id_/https://www.svenskakyrkan.se/filer/"
+        "1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20"
+        "december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf",
+        pages="1-2", chars=2500),
+    "r18c_swe_pdf2020_tail": lambda: pdf(
+        "https://web.archive.org/web/20220120151620id_/https://www.svenskakyrkan.se/filer/"
+        "1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20"
+        "december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf",
+        grep=r"(?:kommun|l[aä]n|riket|totalt|summa)"),
+    "r18c_swe_lkf": lambda: pdf(
+        "https://web.archive.org/web/20220401215811id_/https://www.svenskakyrkan.se/filer/"
+        "1374643/MedlemsutvecklingLKF(1).pdf", pages="1-2", chars=2500),
     # Round 18b: what round 18 pointed at.
     "r18b_fin_vaerak": lambda: px_list(f"{STATFIN}/vaerak/"),
     "r18b_fin_11ru": lambda: px_meta(
