@@ -459,6 +459,40 @@ PROBES: dict[str, Any] = {
     # Lithuania
     "ltu_flows": lambda: sdmx_dataflows(
         r"amži|age|tautyb|ethnic|kalb|langu|tikyb|relig|surašym|census"),
+    # Round 18b: what round 18 pointed at.
+    "r18b_fin_vaerak": lambda: px_list(f"{STATFIN}/vaerak/"),
+    "r18b_fin_11ru": lambda: px_meta(
+        f"{STATFIN}/vaerak/11ru.px", grep=r"^(KU091|KU049|SK011|MK01|SSS) ",
+        allvals=r"(?i)(?!alue|vuosi|timeperiod|sukupuoli|ikaryhma|contentscode).*"),
+    "r18b_fin_159t": lambda: px_meta(
+        f"{STATFIN}/vaerak/159t.px", grep=r"^(KU091|KU049|SK011|MK01|SSS) ",
+        allvals=r"(?i)(?!alue|vuosi|timeperiod|sukupuoli|ikaryhma).*"),
+    "r18b_nor_09817": lambda: px_meta(
+        f"{SSB}/09817", grep=r"^(0710|0301|1804|5001|3005|1120|0101|K-0301) ",
+        allvals=r"(?i)(?!region|tid).*"),
+    "r18b_nor_11366": lambda: px_meta(
+        f"{SSB}/11366", grep=r"^(0710|0301|1804|5001|3005|1120|0101) ",
+        allvals=r"(?i)(?!region|tid).*"),
+    "r18b_fin_evl_2019": lambda: xlsx(
+        "https://web.archive.org/web/20220707222524id_/https://www.kirkontilastot.fi/tiedostot/"
+        "J%C3%A4senm%C3%A4%C3%A4r%C3%A42019aluejako2020.xlsx", rows=25),
+    "r18b_fin_evl_2019_live": lambda: xlsx(
+        "https://www.kirkontilastot.fi/tiedostot/J%C3%A4senm%C3%A4%C3%A4r%C3%A42019aluejako2020.xlsx",
+        rows=8),
+    "r18b_fin_evl_2020": lambda: xlsx(
+        "https://web.archive.org/web/20220705145540id_/https://www.kirkontilastot.fi/tiedostot/"
+        "J%C3%A4senm%C3%A4%C3%A4r%C3%A42020.xlsx", rows=25),
+    "r18b_fin_tableau1": lambda: text(
+        "https://public.tableau.com/views/Jsentilasto2025/Tilastotaulukko.csv", chars=2500),
+    "r18b_fin_tableau2": lambda: text(
+        "https://public.tableau.com/views/Jsentilasto2025kirkkoonkuuluvuus/"
+        "KirkkoonkuuluvuusTalousyksikt.csv", chars=2500),
+    "r18b_swe_kyrkan_cdx": lambda: cdx(
+        "url=svenskakyrkan.se/filer/*&filter=original:.*(?:[Kk]ommun|[Mm]edlem|[Tt]illh).*",
+        limit=150),
+    "r18b_isl_skra_old": lambda: xlsx(
+        "https://web.archive.org/web/20240704090131id_/https://skra.is/library/Samnyttar-skrar-/"
+        "Frettir/trufelagsskraning.xlsx", rows=12),
     # Round 18 (the gap round): nationality, country of birth and background
     # by the units the map draws, as the owner's decision of 19 September 2026
     # allows on the ethnicity field; the churches' own membership by
