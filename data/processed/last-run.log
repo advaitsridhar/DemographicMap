@@ -1,84 +1,32 @@
 
-## https://opendata.cbs.nl/ODataApi/odata/84910NED/Migratieachtergrond?$format=json
-   HTTP 200, 21,050 bytes, application/json 
-   61 matches of '(?:Key.{4,16}Title.{4,90})'
-   ~ Key":"T001040","Title":"Totaal","Description":"","CategoryGroupID":1
-   ~ Key":"1012600","Title":"Nederlandse achtergrond","Description":"Persoon met een Nederlandse achtergrond \r\n \r
-   ~ Key":"2012605","Title":"Met migratieachtergrond","Description":"Persoon met een migratieachtergrond \r\n \r\nPe
-   ~ Key":"2012655","Title":"Westerse migratieachtergrond","Description":"Persoon met een westerse migratieachtergro
-   ~ Key":"2012657","Title":"Niet-westerse migratieachtergrond","Description":"Persoon met een niet-westerse migrati
-   ~ Key":"H008519","Title":"Afrika","Description":"","CategoryGroupID":3
-   ~ Key":"H008520","Title":"Amerika","Description":"","CategoryGroupID":3
-   ~ Key":"H008524","Title":"Azi\u00eb","Description":"","CategoryGroupID":3
-   ~ Key":"H007933","Title":"Europa (excl. Nederlandse achtergrond)","Description":"Europa (exclusief personen met e
-   ~ Key":"H008531","Title":"Oceani\u00eb","Description":"","CategoryGroupID":3
-   ~ Key":"H007935","Title":"Europese Unie (excl. Nederlandse acht...","Description":"Europese Unie (exclusief perso
-   ~ Key":"H007936","Title":"GIPS landen in de EU","Description":"Landen rond de Middellandse zee die zijn toegetred
-   ~ Key":"H007937","Title":"Midden- en Oost-Europese landen in de EU","Description":"Landen in Midden- en Oost-Euro
-   ~ Key":"H008533","Title":"Afghanistan","Description":"","CategoryGroupID":9
-   ~ Key":"H008544","Title":"Aruba","Description":"Nieuw land ontstaan door afscheiding van de Nederlandse Antillen
-   ~ Key":"H008552","Title":"Belgi\u00eb","Description":"","CategoryGroupID":10
-   ~ Key":"H008559","Title":"Bosni\u00eb-Herzegovina","Description":"Nieuw land ontstaan uit de opsplitsing van Joeg
-   ~ Key":"H008562","Title":"Brazili\u00eb","Description":"","CategoryGroupID":8
-   ~ Key":"H008567","Title":"Bulgarije","Description":"","CategoryGroupID":10
-   ~ Key":"H008575","Title":"China","Description":"China, Tibet.","CategoryGroupID":9
-   ~ Key":"H008579","Title":"Colombia","Description":"","CategoryGroupID":8
-   ~ Key":"H008586","Title":"Cura\u00e7ao","Description":"Nieuw land ontstaan na de ontbinding van de Nederlandse An
-   ~ Key":"H008592","Title":"Duitsland","Description":"Bondsrepubliek Duitsland, Duitse Democratische Republiek, Dui
-   ~ Key":"H008594","Title":"Egypte","Description":"Egypte, Verenigde Arabische Republiek.","CategoryGroupID":7
-   ~ Key":"H008597","Title":"Eritrea","Description":"","CategoryGroupID":7
-   ~ Key":"H008599","Title":"Ethiopi\u00eb","Description":"Ethiopi\u00eb, Abessini\u00eb.","CategoryGroupID":7
-   ~ Key":"H008603","Title":"Filippijnen","Description":"","CategoryGroupID":9
-   ~ Key":"H008605","Title":"Frankrijk","Description":"","CategoryGroupID":10
-   ~ Key":"H008612","Title":"Ghana","Description":"Ghana, Goudkust.","CategoryGroupID":7
-   ~ Key":"H008615","Title":"Griekenland","Description":"","CategoryGroupID":10
-   ~ Key":"H008627","Title":"Hongarije","Description":"","CategoryGroupID":10
-   ~ Key":"H008631","Title":"India","Description":"India, Brits-Indi\u00eb, Frans-Indi\u00eb, Goa, Kashmir, Portugee
-   ~ Key":"H008632","Title":"Indonesi\u00eb","Description":"Tot en met 20 mei 2002: Indonesi\u00eb, Nederlands-Indi\
-   ~ Key":"H008633","Title":"Irak","Description":"","CategoryGroupID":9
-   ~ Key":"H008634","Title":"Iran","Description":"","CategoryGroupID":9
-   ~ Key":"H008636","Title":"Itali\u00eb","Description":"","CategoryGroupID":10
-   ~ Key":"H007072","Title":"Joegoslavi\u00eb (oud)","Description":"Betreft het Joegoslavi\u00eb van v\u00f3\u00f3r
-   ~ Key":"H007069","Title":"(voormalig) Joegoslavi\u00eb","Description":"Betreft een samentelling van de landen die
-   ~ Key":"H008644","Title":"Kaapverdi\u00eb","Description":"Kaapverdi\u00eb, Kaapverdische Eilanden.","CategoryGrou
-   ~ Key":"H008673","Title":"Marokko","Description":"Marokko, Ifni, Spaanse Sahara, Westelijke Sahara.","CategoryGro
-   ~ Key":"H007128","Title":"Nederlandse Antillen (oud)","Description":"Betreft de Nederlandse Antillen van v\u00f3\
-   ~ Key":"H007119","Title":"(voormalige) Nederlandse Antillen, Aruba","Description":"Betreft een samentelling van d
-   ~ Key":"H008706","Title":"Oekra\u00efne","Description":"Nieuw land ontstaan uit de opsplitsing van de Sovjet-Unie
-   ~ Key":"H008710","Title":"Pakistan","Description":"","CategoryGroupID":9
-   ~ Key":"H008718","Title":"Polen","Description":"Polen en Dantzig.","CategoryGroupID":10
-   ~ Key":"H008719","Title":"Portugal","Description":"Portugal, Azoren, Madeira-eilanden.","CategoryGroupID":10
-   ~ Key":"H008723","Title":"Roemeni\u00eb","Description":"","CategoryGroupID":10
-   ~ Key":"H008724","Title":"Rusland","Description":"Nieuw land ontstaan uit de opsplitsing van de Sovjet-Unie in 19
-   ~ Key":"H008747","Title":"Somali\u00eb","Description":"Somali\u00eb, Brits-Somaliland, Italiaans-Somaliland.","Ca
-   ~ Key":"H007186","Title":"Sovjet-Unie (oud)","Description":"Betreft de Sovjet-Unie van v\u00f3\u00f3r de opsplits
-   ~ Key":"H007172","Title":"(voormalige) Sovjet-Unie","Description":"Betreft een samentelling van de landen die tot
-   ~ Key":"H008749","Title":"Spanje","Description":"Spanje, Canarische eilanden, Spaans Noord-Afrika.","CategoryGrou
-   ~ Key":"H008751","Title":"Suriname","Description":"","CategoryGroupID":8
-   ~ Key":"H008753","Title":"Syri\u00eb","Description":"","CategoryGroupID":9
-   ~ Key":"H008757","Title":"Thailand","Description":"Thailand, Siam.","CategoryGroupID":9
-   ~ Key":"H007204","Title":"(voormalig) Tsjecho-Slowakije","Description":"Betreft een samentelling van de landen di
-   ~ Key":"H008766","Title":"Turkije","Description":"","CategoryGroupID":10
-   ~ Key":"H008776","Title":"Verenigd Koninkrijk","Description":"Groot-Brittanni\u00eb.","CategoryGroupID":10
-   ~ Key":"H008778","Title":"Verenigde Staten van Amerika","Description":"Verenigde Staten van Amerika, Hawaii-eilan
-   ~ Key":"H008780","Title":"Vietnam","Description":"Vietnam, Frans Indochina, Indochina, Noord-Vietnam, Zuid-Vietna
-   ~ Key":"H008787","Title":"Zuid-Afrika","Description":"","CategoryGroupID":7
+## https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2026
+   HTTP 200, 19,108 bytes, text/html;charset=UTF-8 
+   link: 'OGD_bevstandjbab2002_BevStand_2026.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026.csv
+   link: 'OGD_bevstandjbab2002_BevStand_2026_HEADER.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_HEADER.csv
+   link: 'OGD_bevstandjbab2002_BevStand_2026_C-A10-0.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-A10-0.csv
+   link: 'OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv
+   link: 'OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv
+   link: 'OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv' -> https://data.statistik.gv.at/data/OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv
+   (21 links in all)
+   text: Statistik Austria Open.data Daten Formate Nutzungsbedingungen Anwendungen Kontakt Bev&ouml;lkerungsstand zu Jahresbeginn 2026 Metadaten Inhalt Inhaltliche Beschreibung des Datensatzes/Dienstes Bev&ouml;lkerung zu Jahresbeginn 2026 (einheitlicher Gebietsstand 2026) Beschlagwortung des Datensatzes/Dienstes Bevölkerung, Geschlecht, Gemeinde, Alter F&uuml;r den Datensatz/Dienst zust&auml;ndige Organisation Statistik Austria, Guglgasse 13, 1110 Wien, Austria Lizenz Creative Commons Namensnennung 4.0 International Titel und Beschreibung in englischer Sprache Population at the beginning of the year 2026 (regional status of 2026) Datensatz/Dienst 1 - OGD_bevstandjbab2002_BevStand_2026 URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Datensatz/Dienst 2 - OGD_bevstandjbab2002_BevStand_2026_HEADER URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026_HEADER.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Datensatz/Dienst 3 - OGD_bevstandjbab2002_BevStand_2026_C-A10-0 URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026_C-A10-0.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Datensatz/Dienst 4 - OGD_bevstandjbab2002_BevStand_2026_C-C11-0 URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026_C-C11-0.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Datensatz/Dienst 5 - OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0 URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026_C-GRGEMAKT-0.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Datensatz/Dienst 6 - OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0 URL f&uuml;r den Zugriff auf den Datensatz/Dienst OGD_bevstandjbab2002_BevStand_2026_C-GALTEJ112-0.csv Format csv Datum der erstmaligen Ver&ouml;ffentlichung des Datensatzes/Dienstes 02.05.2024, 20:00:00 Datum der letzten Aktualisierung des Datensatzes/Dienstes 29.06.2026, 09:10:48 Zus&auml;tzliche Informationen Eindeutiger Identifikator 966be8b9-9f30-3c07-8a4c-73b0e3f1d84f Datum des Metadatensatzes 29.06.2026 Bezeichnung der Metadatenstruktur OGD Austria Metadata 2.3 Sprache des Metadatensatzes ger Zeichensatzcode des Metadatensatzes utf8 Weiterf&uuml;hrende Metadaten https://statcube.at/statcub
 
-## https://opendata.cbs.nl/ODataApi/odata/84910NED/RegioS?$format=json&$filter=startswith(Key,%27GM0457%27)%20or%20startswith(Key,%27GM0363%27)%20or%20startswith(Key,%27PV%27)%20or%20startswith(Key,%27NL%27)
-   HTTP 200, 8,228 bytes, application/json 
-   15 matches of '(?:Key.{4,16}Title.{4,90})'
-   ~ Key":"NL01 ","Title":"Nederland","Description":"Grenswijziging per 01-01-2018:\r\n- Ontvangen van Buitenland
-   ~ Key":"PV20 ","Title":"Groningen (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van he
-   ~ Key":"PV21 ","Title":"Frysl\u00e2n (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van
-   ~ Key":"PV22 ","Title":"Drenthe (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
-   ~ Key":"PV23 ","Title":"Overijssel (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van h
-   ~ Key":"PV24 ","Title":"Flevoland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van he
-   ~ Key":"PV25 ","Title":"Gelderland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van h
-   ~ Key":"PV26 ","Title":"Utrecht (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
-   ~ Key":"PV27 ","Title":"Noord-Holland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling va
-   ~ Key":"PV28 ","Title":"Zuid-Holland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van
-   ~ Key":"PV29 ","Title":"Zeeland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
-   ~ Key":"PV30 ","Title":"Noord-Brabant (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling va
-   ~ Key":"PV31 ","Title":"Limburg (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
-   ~ Key":"GM0363","Title":"Amsterdam","Description":"Grenswijziging per 01-01-2014, ontvangen van:\r\n- Haarlemmer
-   ~ Key":"GM0457","Title":"Weesp","Description":"Grenswijziging per 01-01-2016, ontvangen van:\r\n- Muiden (GM0424
+## https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstand/bevoelkerung-nach-staatsangehoerigkeit/-geburtsland
+   HTTP 200, 200,595 bytes, text/html; charset=utf-8 
+   link: 'DE' -> https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstand/bevoelkerung-nach-staatsangehoerigkeit/-geburtsland
+   link: 'Blick auf die Gemeinde' -> https://www.statistik.at/services/tools/regionale-internationale-daten/blick-auf-die-gemeinde
+   link: 'Bevölkerung nach Staatsangehörigkeit/Geburtsland' -> https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bevoelkerung/bevoelkerungsstand/bevoelkerung-nach-staatsangehoerigkeit/-geburtsland
+   link: 'Bevölkerung zu Jahresbeginn nach detaillierter Staatsangehörigkeit seit 2002 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Staatsangeh_Bundesland_Zeitreihe.ods
+   link: 'Bevölkerung zu Jahresbeginn nach detailliertem Geburtsland seit 2002 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Geburtsland_Bundesland_Zeitreihe.ods
+   link: 'Bevölkerung am 01.01.2026 nach Staatsangehörigkeit bzw. Geburtsland und administrative Geb' -> https://www.statistik.at/fileadmin/pages/407/Bev_Staatsangeh_Geburtsland_Gebietseinheiten_2026.ods
+   link: 'Bevölkerung nach Staatsangehörigkeit, Geschlecht und Bundesland 2024 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Staatb_Geschl_Bundesl_2024.ods
+   link: 'Bevölkerung nach Geburtsland, Geschlecht und Bundesland 2024 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Gebland_Geschl_Bundesl_2024.ods
+   link: 'Indikatoren und Gemeindeergebnisse 2024 (.ods)' -> https://www.statistik.at/fileadmin/pages/54/AEST_Gemeindeergebnisse_2024.ods
+   link: 'STATatlas: Bevölkerung nach Staatsangehörigkeitsgruppen 2008 bis 2022 (Karte)' -> https://www.statistik.at/atlas/?mapid=them_bevoelkerung_staatsangehoerigkeit&amp;layerid=layer1&amp;sublayerid=sublayer0&amp;languageid=0&amp;bbox=1062181,5796410,1828998,6322909,8
+   link: 'Bevölkerung nach Staatsbürgerschaft, Geschlecht und Bundesland seit 2011 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Staatb_Geschl_Bundesl_seit_2011.ods
+   link: 'Bevölkerung nach Geburtsland, Geschlecht und Bundesland seit 2011 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Gebland_Geschl_Bundesl_seit_2011.ods
+   link: 'Bevölkerung nach Staatsbürgerschaft seit 1951 (.ods)' -> https://www.statistik.at/fileadmin/pages/407/Bev_Staatb_seit_1951.ods
+   link: 'Gemeindeergebnisse ab 2022 (.ods)' -> https://www.statistik.at/fileadmin/pages/54/AEST_Gemeindeergebnisse_ab_2022.ods
+   link: 'Indikatoren und Gemeindeergebnisse 2021 (.ods)' -> https://www.statistik.at/fileadmin/pages/54/Zensus2021_Indikatoren_Gemeindeergebnisse.ods
+   link: 'Gemeindeergebnisse 2012 bis 2020 (.ods)' -> https://www.statistik.at/fileadmin/pages/402/AEST_Gemeindeergebnisse_2012-2020.ods
+   (190 links in all)
+   text: Bevölkerung nach Staatsangehörigkeit/Geburtsland - STATISTIK AUSTRIA - Die Informationsmanager Zum Hauptinhalt springen Navigation STATISTIK AUSTRIA - Die Informationsmanager Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Warenkorb 0 Karriere Erhebungen Merkliste DE EN Deutsch Englisch Statistiken zurück Statistiken Arbeitsmarkt Bevölkerung und Soziales Energie und Umwelt Forschung, Innovation, Digitalisierung Industrie, Bau, Handel und Dienstleistungen Internationaler Handel Land- und Forstwirtschaft Tourismus und Verkehr Volkswirtschaft und Öffentliche Finanzen Datenbanken zurück Datenbanken STATcube - Statistische Datenbank Klassifikationsdatenbank Unternehmensregister Adress-, Gebäude- und Wohnungsregister Verbrauchergesundheitsinformationssystem (VIS) Forschungsstättenkatalog Services/Tools zurück Services/Tools Serviceangebote Auskunftsservices Statistik Austria Portal – Login für Erhebungen Publikationen STATjournal Mail-Abonnements Wertsicherungsrechner Persönlicher Inflationsrechner Lebenserwartungsrechner Gehaltsrechner STATbox – Datenübertragung Regionale &amp; internationale Daten STATatlas – interaktive Karten Blick auf die Gemeinde Regionale Daten und Gliederungen European Statistical Monitor – Eurostat-Dashboard Euro-Indikatoren Datenzugang Center Wissenschaft &amp; AMDC Open data SDGs – Entwicklungsziele Transparenzdatenbank – Auswertungen Wirtschaftsdaten Konjunkturmonitor Wirtschaftsatlas – Daten nach Regionen ITGS-Tool – Außenhandel Daten nach SDDS+ Medien zurück Medien Pressemitteilungen Veröffentlichungskalender Veröffentlichungsrichtlinie Pressebilder Pressekontakt Über uns zurück Über uns Organisation Werte und Grundlagen Veranstaltungen Erhebungen Karriere Internationales Innovationen und experimentelle Statistik Suche Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Suche. Zur Auswahl von autovervollständigten Ergebnissen die Auf- und Abwärtspfeile sowie die Eingabetaste nutzen. Startseite Statistiken Bevölkerung und Soziales Bevölkerung Bevölkerungsstand Bevölkerung nach Staatsangehörigkeit/Geburtsland Bevölkerung nach Staatsangehörigkeit/Geburtsland Ausländische Staatsangehörige in Österreich am 01.01.2026 endgültiges Ergebnis 1 881 309 Gestiegen +25 890 zum 01.01.2025 Anteil ausländischer Staatsangehöriger in Österreich am 01.01.2026 endgültiges Ergebnis 20,4 % Gestiegen +0,2 Prozentpunkte zum 01.01.2025 Anteil im Ausland Geborener in Österreich am 01.01.2026 endgültiges Ergebnis 22,9 % Gestiegen +0,2 Prozentpunkte zum 01.01.2025 Beschreibung Statistiken über die Bevölkerungsstruktur nach Staatsangehörigkeit und Geburtsland basieren seit 2002 auf den Daten des Zentralen Melderegisters (ZMR), wobei im Rahmen der Registerzählung und der Abgestimmten Erwerbsstatistik zur Qualitätssicherung auch auf weitere administrative Datenquellen zurückgegriffen wird. Es werden jene Personen gezählt, di
