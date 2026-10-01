@@ -196,7 +196,9 @@ class Estonia(unittest.TestCase):
             self.assertIn(skind, ("vald", "linn"))
 
     def test_the_relabelled_polygon_is_bound_only_as_the_last_of_its_county(self):
-        drawn = {u["name"] for u in units("EST", "admin2")}
+        # The labels the reader binds by: the boundary file's own, which the
+        # build keeps as shape_name once a census row has renamed a polygon.
+        drawn = {u["name"] for u in nc.load_units("EST", "admin2")}
         self.assertTrue(set(estonia.DRAWN) <= drawn)
         self.assertIn("Maidla vald", estonia.RELABELLED)
         shapes = [{"id": "m", "name": "Maidla vald"}, {"id": "k", "name": "Kivi"}]
